@@ -1,1206 +1,1216 @@
 {
- "marknad": "NO",
- "datum": "2026-09-08",
- "skapad": "2026-09-08T06:15:40.874Z",
- "kvot": {
-  "heygen": 13,
-  "kie": 16009.2
- },
- "jobb": [
-  {
-   "notion": {
-    "id": "3cc270ab908c8170b705cd7a9dd07746",
-    "namn": "Beltgrinder_SP_4_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Belt grinder creative hub",
-    "url": "https://app.notion.com/3cc270ab908c8170b705cd7a9dd07746",
-    "kalla": "rader-fil"
-   },
-   "namn": "Beltgrinder_SP_4_H1",
-   "status": "HOPPA",
-   "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
-   "se": {
-    "annonsId": "120250117678640291",
-    "status": "ACTIVE",
-    "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-    "kampanjId": "120249902177470291",
-    "adset": "Balteslipmaskin SP"
-   },
-   "prefix": "Beltgrinder",
-   "K": "SP",
-   "nr": "4",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Beltgrinder",
-    "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-    "no_prefix": "Beltesliper",
-    "adset_prefix": "Beltesliper NO",
-    "campaign_id": "120251998498540233",
-    "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251998498540233",
-    "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
-    "utfall": "AVVECKLAD",
-    "spend": 7110.45,
-    "adsetNamn": "Beltesliper NO - SP",
-    "annonsNamn": "Beltesliper_NO_SP_4_H1",
-    "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
-    "prefix": "Beltesliper"
-   }
+  "marknad": "NO",
+  "datum": "2026-09-08",
+  "skapad": "2026-09-08T06:15:40.874Z",
+  "kvot": {
+    "heygen": 13,
+    "kie": 16009.2
   },
-  {
-   "notion": {
-    "id": "3d0270ab908c81e590dbf91968702768",
-    "namn": "Overvakningskamera_SP_9_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Surveillance Camera creative hub",
-    "url": "https://app.notion.com/3d0270ab908c81e590dbf91968702768",
-    "kalla": "rader-fil"
-   },
-   "namn": "Overvakningskamera_SP_9_H1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250135376990291",
-    "status": "ACTIVE",
-    "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "kampanjId": "120249989799680291",
-    "adset": "Overvakningskamera SP",
-    "copy": {
-     "message": "Direkt notis i mobilen, var du än är.\nTvå linser, AI-spårning som bara larmar när det gäller.\n799 kronor idag med 30 dagars garanti.",
-     "headline": "Två linser, AI-spårning, 799 kr",
-     "description": "30 dagars nöjd-kundgaranti.",
-     "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+  "jobb": [
+    {
+      "notion": {
+        "id": "3cc270ab908c8170b705cd7a9dd07746",
+        "namn": "Beltgrinder_SP_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cc270ab908c8170b705cd7a9dd07746",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_SP_4_H1",
+      "status": "HOPPA",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
+      "se": {
+        "annonsId": "120250117678640291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin SP"
+      },
+      "prefix": "Beltgrinder",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "AVVECKLAD",
+        "spend": 7110.45,
+        "adsetNamn": "Beltesliper NO - SP",
+        "annonsNamn": "Beltesliper_NO_SP_4_H1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "1339987791540054",
-     "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQP5AuC4P2c9Zz0j90w5f_afLHpvK70HC1p7UKEmcbAdVZbQ_TZXIXoiT13znj3Lg5xffgbEx8RN-10z-xjdMgxCyKbGmx2vFPhY8i6hSRWYoQ.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=c4IpCRP6CA4Q7kNvwF_EhPk&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE4MDI2MDQyOTA4OTQ5MDUsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=bdf10f90d96dcf32&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9CMDRERkNERDg5MkRDNEI1Q0U0MjRGMUY2NDFERkM5MV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzUzNEYwOEQzOTQxMDlBMEVDRUNEMkVFMUNGNTNDODg5X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbysO_GsN2zBhUCKAJDMywXQC4zMzMzMzMYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=4B0hgh_13QYJMTD2z2xbCw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKnyHIkrVlj-shIQLl7soV8l_aGhlnN3Tu4g1UwkqQXMt__OL361uPOpROQjuYsJ9JYF391N9Ofxw&oh=00_AQI1sj_bearJjbHE-RUMceTyv7bc7HIMV0d1_wzheR-yhw&oe=6AA5755A&bitrate=1123467&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 15.1
-    }
-   },
-   "prefix": "Overvakningskamera",
-   "K": "SP",
-   "nr": "9",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Overvakningskamera",
-    "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "no_prefix": "Overvåkingskamera",
-    "adset_prefix": "Overvåkingskamera NO",
-    "campaign_id": "120251998582640233",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251998582640233",
-    "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Overvåkingskamera NO - SP",
-    "annonsNamn": "Overvåkingskamera_NO_SP_9_H1",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-    "prefix": "Overvåkingskamera"
-   },
-   "pris": {
-    "pris": "899.00",
-    "jamforpris": "1169.00",
-    "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
-    "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d0270ab908c8155bfdecae19ecd5f26",
-    "namn": "Overvakningskamera_SP_8_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Surveillance Camera creative hub",
-    "url": "https://app.notion.com/3d0270ab908c8155bfdecae19ecd5f26",
-    "kalla": "rader-fil"
-   },
-   "namn": "Overvakningskamera_SP_8_H1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250126898730291",
-    "status": "ACTIVE",
-    "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "kampanjId": "120249989799680291",
-    "adset": "Overvakningskamera SP",
-    "copy": {
-     "message": "Den ser skillnad på människa och husdjur.\nDu larmas bara när det gäller – inte varje gång katten går förbi.\nTvå linser täcker hela tomten. Notis direkt i mobilen.\n799 kr idag, jämförpris 1000 kr. 30 dagars öppet köp.",
-     "headline": "Ser skillnad på människa och husdjur",
-     "description": "",
-     "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+    {
+      "notion": {
+        "id": "3d0270ab908c81e590dbf91968702768",
+        "namn": "Overvakningskamera_SP_9_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3d0270ab908c81e590dbf91968702768",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_SP_9_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250135376990291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "Overvakningskamera SP",
+        "copy": {
+          "message": "Direkt notis i mobilen, var du än är.\nTvå linser, AI-spårning som bara larmar när det gäller.\n799 kronor idag med 30 dagars garanti.",
+          "headline": "Två linser, AI-spårning, 799 kr",
+          "description": "30 dagars nöjd-kundgaranti.",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1339987791540054",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQP5AuC4P2c9Zz0j90w5f_afLHpvK70HC1p7UKEmcbAdVZbQ_TZXIXoiT13znj3Lg5xffgbEx8RN-10z-xjdMgxCyKbGmx2vFPhY8i6hSRWYoQ.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=c4IpCRP6CA4Q7kNvwF_EhPk&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE4MDI2MDQyOTA4OTQ5MDUsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=bdf10f90d96dcf32&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9CMDRERkNERDg5MkRDNEI1Q0U0MjRGMUY2NDFERkM5MV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzUzNEYwOEQzOTQxMDlBMEVDRUNEMkVFMUNGNTNDODg5X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbysO_GsN2zBhUCKAJDMywXQC4zMzMzMzMYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=4B0hgh_13QYJMTD2z2xbCw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKnyHIkrVlj-shIQLl7soV8l_aGhlnN3Tu4g1UwkqQXMt__OL361uPOpROQjuYsJ9JYF391N9Ofxw&oh=00_AQI1sj_bearJjbHE-RUMceTyv7bc7HIMV0d1_wzheR-yhw&oe=6AA5755A&bitrate=1123467&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 15.1
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "SP",
+      "nr": "9",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - SP",
+        "annonsNamn": "Overvåkingskamera_NO_SP_9_H1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "4055932077875915",
-     "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQMTVSdtXdGkMeJClaHaGqUxg5TsupsjAvLqbcVfRG15Js7K8DHg5zOCEl3iO8e-9UCX3FSBoUXSWRjmAyBCCOfkRDRjeFGkopUM2xETzsCTqw.mp4?_nc_cat=103&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=T0RsQyg_UusQ7kNvwEN8cB8&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExMDU0MTI1MTg0OTI1MjcsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=15429655fc78d1a3&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8yODRDMTExNTg5NkM5NTE3MDA3OUI3Q0E5NzcxQzZCMl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzlGNEU3QjQ2NTZEQjM3NzIwNTg5MEIxRTNEMkI1MkEyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbe5fWHvdf2AxUCKAJDMywXQDCAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=NACecLJ3jmvhau8DHfbFmA&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQItvfzt3OGWKAGt4FGwNh97guyXGp_h7QVlmwr_rIzv6lEpQHhK1TnEIn6lg-fUOm2TFIC2DajcvA&oh=00_AQJhuudPm8dZfV8tfRRcns1jH-Qah9TqmuwyJqwnLhgChQ&oe=6AA593AD&bitrate=980688&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 16.532
-    }
-   },
-   "prefix": "Overvakningskamera",
-   "K": "SP",
-   "nr": "8",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Overvakningskamera",
-    "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "no_prefix": "Overvåkingskamera",
-    "adset_prefix": "Overvåkingskamera NO",
-    "campaign_id": "120251998582640233",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251998582640233",
-    "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Overvåkingskamera NO - SP",
-    "annonsNamn": "Overvåkingskamera_NO_SP_8_H1",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-    "prefix": "Overvåkingskamera"
-   },
-   "pris": {
-    "pris": "899.00",
-    "jamforpris": "1169.00",
-    "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
-    "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d3270ab908c8144afb9c3de7da6a72c",
-    "namn": "Overvakningskamera_CS_6_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Surveillance Camera creative hub",
-    "url": "https://app.notion.com/3d3270ab908c8144afb9c3de7da6a72c",
-    "kalla": "rader-fil"
-   },
-   "namn": "Overvakningskamera_CS_6_H1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250126185970291",
-    "status": "ACTIVE",
-    "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "kampanjId": "120249989799680291",
-    "adset": "Overvakningskamera CS",
-    "copy": {
-     "message": "Tre personer i bild. En hund bredvid dem.\nKameran larmar för personerna – inte för hunden.\nTvå linser. 355 grader. Hela tomten.\n799 kr i stället för 1 000 kr.",
-     "headline": "Larmar för personer. Inte för hunden.",
-     "description": "",
-     "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+    {
+      "notion": {
+        "id": "3d0270ab908c8155bfdecae19ecd5f26",
+        "namn": "Overvakningskamera_SP_8_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3d0270ab908c8155bfdecae19ecd5f26",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_SP_8_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250126898730291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "Overvakningskamera SP",
+        "copy": {
+          "message": "Den ser skillnad på människa och husdjur.\nDu larmas bara när det gäller – inte varje gång katten går förbi.\nTvå linser täcker hela tomten. Notis direkt i mobilen.\n799 kr idag, jämförpris 1000 kr. 30 dagars öppet köp.",
+          "headline": "Ser skillnad på människa och husdjur",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "4055932077875915",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQMTVSdtXdGkMeJClaHaGqUxg5TsupsjAvLqbcVfRG15Js7K8DHg5zOCEl3iO8e-9UCX3FSBoUXSWRjmAyBCCOfkRDRjeFGkopUM2xETzsCTqw.mp4?_nc_cat=103&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=T0RsQyg_UusQ7kNvwEN8cB8&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExMDU0MTI1MTg0OTI1MjcsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=15429655fc78d1a3&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8yODRDMTExNTg5NkM5NTE3MDA3OUI3Q0E5NzcxQzZCMl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzlGNEU3QjQ2NTZEQjM3NzIwNTg5MEIxRTNEMkI1MkEyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbe5fWHvdf2AxUCKAJDMywXQDCAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=NACecLJ3jmvhau8DHfbFmA&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQItvfzt3OGWKAGt4FGwNh97guyXGp_h7QVlmwr_rIzv6lEpQHhK1TnEIn6lg-fUOm2TFIC2DajcvA&oh=00_AQJhuudPm8dZfV8tfRRcns1jH-Qah9TqmuwyJqwnLhgChQ&oe=6AA593AD&bitrate=980688&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 16.532
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "SP",
+      "nr": "8",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - SP",
+        "annonsNamn": "Overvåkingskamera_NO_SP_8_H1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "2711249119290173",
-     "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQONntI0tSbj8d-B5-5YlIhiNcwRuLIv2V-nwpKDVEoqKo5t5LE_VjlYEzV4gfh6S7_m9niKc1oC-vAMaGfrzarxQJWk9yljSU0sE3t4pNakbw.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=6HXb4-HPOzkQ7kNvwGH1gVr&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjIxNDg5OTcyMjkzNDIzOTIsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=8b6ae385b79670b5&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8wRTQ5QTk2MUQzNjMyN0YyRjU0NURFOUM1ODQ4MDFBNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzFCNDQyOTAyNjJDN0Q4QTUwRkMzRkI3MDZGN0JCQTgyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbwutOHjaDRBxUCKAJDMywXQCszMzMzMzMYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=Q7FYlZaLQXgl0t2i5OQPHg&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQIKBBJptQcSFoQhDiHG9ZOqYe2SNoASRrHbeF7MyEtIpaGF0ipAcffiw6omH3zTKtzs8psslnrEQA&oh=00_AQKX35BodjXMGxxMlynH9ARZmt9hX2d618Lp3I97Bc6w2Q&oe=6AA56EA0&bitrate=1002285&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 13.6
-    }
-   },
-   "prefix": "Overvakningskamera",
-   "K": "CS",
-   "nr": "6",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Overvakningskamera",
-    "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "no_prefix": "Overvåkingskamera",
-    "adset_prefix": "Overvåkingskamera NO",
-    "campaign_id": "120251998582640233",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251998582640233",
-    "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Overvåkingskamera NO - CS",
-    "annonsNamn": "Overvåkingskamera_NO_CS_6_H1",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-    "prefix": "Overvåkingskamera"
-   },
-   "pris": {
-    "pris": "899.00",
-    "jamforpris": "1169.00",
-    "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
-    "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d3270ab908c81beaaa8c4f320df6bf8",
-    "namn": "Overvakningskamera_SP_13_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Surveillance Camera creative hub",
-    "url": "https://app.notion.com/3d3270ab908c81beaaa8c4f320df6bf8",
-    "kalla": "rader-fil"
-   },
-   "namn": "Overvakningskamera_SP_13_H1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250126674350291",
-    "status": "ACTIVE",
-    "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "kampanjId": "120249989799680291",
-    "adset": "Overvakningskamera SP",
-    "copy": {
-     "message": "\"Jag sover bättre nu.\" – det säger våra kunder om övervakningskameran med dubbel lins och AI-spårning.\nTvå linser ser hela tomten samtidigt, ingen blind vinkel.\n799 kr idag (ord. 1000 kr) – 30 dagars nöjd-kund-garanti.",
-     "headline": "Jag sover bättre nu.",
-     "description": "",
-     "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+    {
+      "notion": {
+        "id": "3d3270ab908c8144afb9c3de7da6a72c",
+        "namn": "Overvakningskamera_CS_6_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3d3270ab908c8144afb9c3de7da6a72c",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_CS_6_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250126185970291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "Overvakningskamera CS",
+        "copy": {
+          "message": "Tre personer i bild. En hund bredvid dem.\nKameran larmar för personerna – inte för hunden.\nTvå linser. 355 grader. Hela tomten.\n799 kr i stället för 1 000 kr.",
+          "headline": "Larmar för personer. Inte för hunden.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "2711249119290173",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQONntI0tSbj8d-B5-5YlIhiNcwRuLIv2V-nwpKDVEoqKo5t5LE_VjlYEzV4gfh6S7_m9niKc1oC-vAMaGfrzarxQJWk9yljSU0sE3t4pNakbw.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=6HXb4-HPOzkQ7kNvwGH1gVr&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjIxNDg5OTcyMjkzNDIzOTIsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=8b6ae385b79670b5&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8wRTQ5QTk2MUQzNjMyN0YyRjU0NURFOUM1ODQ4MDFBNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzFCNDQyOTAyNjJDN0Q4QTUwRkMzRkI3MDZGN0JCQTgyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbwutOHjaDRBxUCKAJDMywXQCszMzMzMzMYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=Q7FYlZaLQXgl0t2i5OQPHg&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQIKBBJptQcSFoQhDiHG9ZOqYe2SNoASRrHbeF7MyEtIpaGF0ipAcffiw6omH3zTKtzs8psslnrEQA&oh=00_AQKX35BodjXMGxxMlynH9ARZmt9hX2d618Lp3I97Bc6w2Q&oe=6AA56EA0&bitrate=1002285&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 13.6
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "CS",
+      "nr": "6",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - CS",
+        "annonsNamn": "Overvåkingskamera_NO_CS_6_H1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "4116837891783442",
-     "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQPVRp4a4PnsecD7_0BCoxNTVuDJA2Xdaj32pn3C3y7vdWb8Vz1uh-qZu2UiHl_jh3T3hxZpYMdanxLsbrdtcVNPN-fftyjqSCExuHi0lqZmEg.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=1G4nFF74a68Q7kNvwGXcj8n&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE0MjUwMDM1MzYxODAyOTEsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=36da41b165842901&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8zQTRBMDUxRjdFN0E4OEVFQTg2RDQyNDI5RDlGNEVBQV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0U3NEY1ODFEMEU4MTlFNTIxM0FEQUE4NEIwN0Q4Nzk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaGkZ_Zj4KIBRUCKAJDMywXQCtU_fO2RaIYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=wMj4_akHxkXgs1N1fOIhKQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKD7N_bogXctlx6ZeaoqLh6LE19VfS8zGXQsUrefepqJHo4HbOdEPX7gWmAb5OXgYvjLsAgUHcgFQ&oh=00_AQLnHUIesr7L1paxc-JwCAZPL68Nwod3Zf667iqbN4CzdA&oe=6AA57096&bitrate=961492&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 13.7
-    }
-   },
-   "prefix": "Overvakningskamera",
-   "K": "SP",
-   "nr": "13",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Overvakningskamera",
-    "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "no_prefix": "Overvåkingskamera",
-    "adset_prefix": "Overvåkingskamera NO",
-    "campaign_id": "120251998582640233",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251998582640233",
-    "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Overvåkingskamera NO - SP",
-    "annonsNamn": "Overvåkingskamera_NO_SP_13_H1",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-    "prefix": "Overvåkingskamera"
-   },
-   "pris": {
-    "pris": "899.00",
-    "jamforpris": "1169.00",
-    "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
-    "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d3270ab908c81f885e8c928b1c8ec1b",
-    "namn": "Overvakningskamera_SP_12_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Surveillance Camera creative hub",
-    "url": "https://app.notion.com/3d3270ab908c81f885e8c928b1c8ec1b",
-    "kalla": "rader-fil"
-   },
-   "namn": "Overvakningskamera_SP_12_H1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250126401840291",
-    "status": "ACTIVE",
-    "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "kampanjId": "120249989799680291",
-    "adset": "Overvakningskamera SP",
-    "copy": {
-     "message": "\"Jag sover bättre nu.\" Det är vad våra kunder säger.\nTvå linser täcker hela tomten. AI larmar bara på människor – aldrig på hunden.\nDirekt notis i mobilen, var du än är.\n799 kr idag – 30 dagars garanti. Handla nu.",
-     "headline": "799 kr idag – spara 201 kr",
-     "description": "",
-     "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+    {
+      "notion": {
+        "id": "3d3270ab908c81beaaa8c4f320df6bf8",
+        "namn": "Overvakningskamera_SP_13_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3d3270ab908c81beaaa8c4f320df6bf8",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_SP_13_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250126674350291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "Overvakningskamera SP",
+        "copy": {
+          "message": "\"Jag sover bättre nu.\" – det säger våra kunder om övervakningskameran med dubbel lins och AI-spårning.\nTvå linser ser hela tomten samtidigt, ingen blind vinkel.\n799 kr idag (ord. 1000 kr) – 30 dagars nöjd-kund-garanti.",
+          "headline": "Jag sover bättre nu.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "4116837891783442",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQPVRp4a4PnsecD7_0BCoxNTVuDJA2Xdaj32pn3C3y7vdWb8Vz1uh-qZu2UiHl_jh3T3hxZpYMdanxLsbrdtcVNPN-fftyjqSCExuHi0lqZmEg.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=1G4nFF74a68Q7kNvwGXcj8n&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE0MjUwMDM1MzYxODAyOTEsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTMsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=36da41b165842901&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8zQTRBMDUxRjdFN0E4OEVFQTg2RDQyNDI5RDlGNEVBQV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0U3NEY1ODFEMEU4MTlFNTIxM0FEQUE4NEIwN0Q4Nzk0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaGkZ_Zj4KIBRUCKAJDMywXQCtU_fO2RaIYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=wMj4_akHxkXgs1N1fOIhKQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKD7N_bogXctlx6ZeaoqLh6LE19VfS8zGXQsUrefepqJHo4HbOdEPX7gWmAb5OXgYvjLsAgUHcgFQ&oh=00_AQLnHUIesr7L1paxc-JwCAZPL68Nwod3Zf667iqbN4CzdA&oe=6AA57096&bitrate=961492&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 13.7
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "SP",
+      "nr": "13",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - SP",
+        "annonsNamn": "Overvåkingskamera_NO_SP_13_H1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "1015708278155418",
-     "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQMTuMtibhLblR-x8RG7iIRf575KOEhYc4e90A0Kno8zwyd2lqIvt7J64tsyxooCDuhFreNPOtElJO1MkGBpc0K4XPonXFecQaf4vUaf_XJ-AQ.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=VaDW-DkcjWEQ7kNvwF55yZu&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE4MzYzNDU3OTc3NDUzNDQsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=6a059571c749a6d3&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC83ODRBM0I2N0YxMTYwNDExRjQzNURDMjk2OTgyMjI4OV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzNBNDM1QjJGRUREMjYyMzc2QzE0MEMxRDI2NkZBRkJCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaA66yvsonDBhUCKAJDMywXQC7dsi0OVgQYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=hZff4gN81wBP1H-LBDHdLQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJvw04ehobww-5qtgflSnZ4t09prXyQYgmLtqRPEFB14hwYzO5e2VKes7dI32_V27oEeGzI4ofdMw&oh=00_AQIzCL5Wb-McDUVKl8YMBNq4Tt1U-Cuz3KLIYKmqXsup2w&oe=6AA58E70&bitrate=997551&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 15.433
-    }
-   },
-   "prefix": "Overvakningskamera",
-   "K": "SP",
-   "nr": "12",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Overvakningskamera",
-    "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-    "no_prefix": "Overvåkingskamera",
-    "adset_prefix": "Overvåkingskamera NO",
-    "campaign_id": "120251998582640233",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251998582640233",
-    "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Overvåkingskamera NO - SP",
-    "annonsNamn": "Overvåkingskamera_NO_SP_12_H1",
-    "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
-    "prefix": "Overvåkingskamera"
-   },
-   "pris": {
-    "pris": "899.00",
-    "jamforpris": "1169.00",
-    "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
-    "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
-   }
-  },
-  {
-   "notion": {
-    "id": "3cf270ab908c819da17dcfddc4a7cec6",
-    "namn": "Batmotor_UG_1_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Boat motor cover creative hub",
-    "url": "https://app.notion.com/3cf270ab908c819da17dcfddc4a7cec6",
-    "kalla": "rader-fil"
-   },
-   "namn": "Batmotor_UG_1_H1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250126154060291",
-    "status": "ACTIVE",
-    "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "kampanjId": "120250009325850291",
-    "adset": "UG | Notionrunda 2026-09-07",
-    "copy": {
-     "message": "Båten åker upp om några veckor. I år får motorn ett riktigt skydd.\n420D Oxford-tyg, kåpa till rigg – inte bara toppen.\nIngen verktyg. Dra över, spänn remmen.\n579 kr (ord. 965 kr). 30 dagars öppet köp.",
-     "headline": "420D-skydd, kåpa till riggen",
-     "description": "",
-     "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+    {
+      "notion": {
+        "id": "3d3270ab908c81f885e8c928b1c8ec1b",
+        "namn": "Overvakningskamera_SP_12_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Surveillance Camera creative hub",
+        "url": "https://app.notion.com/3d3270ab908c81f885e8c928b1c8ec1b",
+        "kalla": "rader-fil"
+      },
+      "namn": "Overvakningskamera_SP_12_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250126401840291",
+        "status": "ACTIVE",
+        "kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "kampanjId": "120249989799680291",
+        "adset": "Overvakningskamera SP",
+        "copy": {
+          "message": "\"Jag sover bättre nu.\" Det är vad våra kunder säger.\nTvå linser täcker hela tomten. AI larmar bara på människor – aldrig på hunden.\nDirekt notis i mobilen, var du än är.\n799 kr idag – 30 dagars garanti. Handla nu.",
+          "headline": "799 kr idag – spara 201 kr",
+          "description": "",
+          "link": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1015708278155418",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQMTuMtibhLblR-x8RG7iIRf575KOEhYc4e90A0Kno8zwyd2lqIvt7J64tsyxooCDuhFreNPOtElJO1MkGBpc0K4XPonXFecQaf4vUaf_XJ-AQ.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=VaDW-DkcjWEQ7kNvwF55yZu&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE4MzYzNDU3OTc3NDUzNDQsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=6a059571c749a6d3&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC83ODRBM0I2N0YxMTYwNDExRjQzNURDMjk2OTgyMjI4OV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzNBNDM1QjJGRUREMjYyMzc2QzE0MEMxRDI2NkZBRkJCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaA66yvsonDBhUCKAJDMywXQC7dsi0OVgQYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=hZff4gN81wBP1H-LBDHdLQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJvw04ehobww-5qtgflSnZ4t09prXyQYgmLtqRPEFB14hwYzO5e2VKes7dI32_V27oEeGzI4ofdMw&oh=00_AQIzCL5Wb-McDUVKl8YMBNq4Tt1U-Cuz3KLIYKmqXsup2w&oe=6AA58E70&bitrate=997551&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 15.433
+        }
+      },
+      "prefix": "Overvakningskamera",
+      "K": "SP",
+      "nr": "12",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Overvakningskamera",
+        "se_kampanj": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+        "no_prefix": "Overvåkingskamera",
+        "adset_prefix": "Overvåkingskamera NO",
+        "campaign_id": "120251998582640233",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998582640233",
+        "kampanjNamn": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Overvåkingskamera NO - SP",
+        "annonsNamn": "Overvåkingskamera_NO_SP_12_H1",
+        "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
+        "prefix": "Overvåkingskamera",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "899.00",
+        "jamforpris": "1169.00",
+        "titel": "Overvåkingskamera Trådløst – Dobbeltlinse PTZ med AI-Sporing",
+        "handle": "overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "4446021522319102",
-     "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQNcQRZCHcj1kV7_uH69vmPcMYOJPg7vtyuy-h8uOPW-P5rlZYwRkW71OYDBWsU_Djs8lcxFj8QcHQ5lbIiGI0x0fI21ArfQkdOXiyfrX1MnCw.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=Tb6eVwUA2-gQ7kNvwH15Uh9&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEzOTk1MTA3NzIyMTI0NzksImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTksInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=11bba9a52d5d083a&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC82NTQ4QTE2MUYwRUNERTcwQ0EwMEE5ODY0ODBCMjNBN19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzk4NDE4NUZDODFFQjYyRjc5MkMwNTczQkNFNjE4MDhCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb-i__mn7b8BBUCKAJDMywXQDOAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=ia3mvgQMtSctz4lA7L6YIw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQLDsAOFsXUNoBZO-jLdNfmWsEjJSB5BbJ-cv1Rka1XNceyexkNFvVwEjy1kDo7CQgoYWo-I0oM1qQ&oh=00_AQKUOzA_U_sBFqWBLopDhpfTUFx2bdODMhtfODq_VjD05g&oe=6AA55F46&bitrate=1606065&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 19.528
-    }
-   },
-   "prefix": "Batmotor",
-   "K": "UG",
-   "nr": "1",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Batmotor",
-    "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "no_prefix": "Batmotortrekk",
-    "adset_prefix": "Båtmotortrekk NO",
-    "campaign_id": "120252047563660233",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120252047563660233",
-    "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Båtmotortrekk NO - UG",
-    "annonsNamn": "Batmotortrekk_NO_UG_1_H1",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
-    "prefix": "Batmotortrekk"
-   },
-   "pris": {
-    "pris": "529.00",
-    "jamforpris": "882.00",
-    "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
-    "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d2270ab908c81668a97eeba41397e84",
-    "namn": "Batmotor_SP_1_H5",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Boat motor cover creative hub",
-    "url": "https://app.notion.com/3d2270ab908c81668a97eeba41397e84",
-    "kalla": "rader-fil"
-   },
-   "namn": "Batmotor_SP_1_H5",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250125804850291",
-    "status": "ACTIVE",
-    "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "kampanjId": "120250009325850291",
-    "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
-    "copy": {
-     "message": "Dra över. Spänn remmen. Klart.\n\nKraftigt 420D Oxford-tyg som täcker hela motorn – inga verktyg, inga krångliga fästen.\n\nFör dig som fiskar, bor i skärgården eller bara vill slippa krångel vid bryggan.",
-     "headline": "Dra över. Spänn. Klart.",
-     "description": "Heltäckande skydd, 579 kr",
-     "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+    {
+      "notion": {
+        "id": "3cf270ab908c819da17dcfddc4a7cec6",
+        "namn": "Batmotor_UG_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3cf270ab908c819da17dcfddc4a7cec6",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_UG_1_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250126154060291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "UG | Notionrunda 2026-09-07",
+        "copy": {
+          "message": "Båten åker upp om några veckor. I år får motorn ett riktigt skydd.\n420D Oxford-tyg, kåpa till rigg – inte bara toppen.\nIngen verktyg. Dra över, spänn remmen.\n579 kr (ord. 965 kr). 30 dagars öppet köp.",
+          "headline": "420D-skydd, kåpa till riggen",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "4446021522319102",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQNcQRZCHcj1kV7_uH69vmPcMYOJPg7vtyuy-h8uOPW-P5rlZYwRkW71OYDBWsU_Djs8lcxFj8QcHQ5lbIiGI0x0fI21ArfQkdOXiyfrX1MnCw.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=Tb6eVwUA2-gQ7kNvwH15Uh9&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEzOTk1MTA3NzIyMTI0NzksImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTksInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=11bba9a52d5d083a&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC82NTQ4QTE2MUYwRUNERTcwQ0EwMEE5ODY0ODBCMjNBN19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzk4NDE4NUZDODFFQjYyRjc5MkMwNTczQkNFNjE4MDhCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACb-i__mn7b8BBUCKAJDMywXQDOAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=ia3mvgQMtSctz4lA7L6YIw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQLDsAOFsXUNoBZO-jLdNfmWsEjJSB5BbJ-cv1Rka1XNceyexkNFvVwEjy1kDo7CQgoYWo-I0oM1qQ&oh=00_AQKUOzA_U_sBFqWBLopDhpfTUFx2bdODMhtfODq_VjD05g&oe=6AA55F46&bitrate=1606065&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 19.528
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "UG",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - UG",
+        "annonsNamn": "Batmotortrekk_NO_UG_1_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "1933072994546708",
-     "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQMdWtjW6S6w2FmUOCLodU49qcc7JkMkNTmemjDimp5oiZ3xEvk5SM3U5rFctvvObhS-o4QYRZmlypTFBbLSNtKhGaHc7OpAMMCrPPeethTG0Q.mp4?_nc_cat=111&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=POOJRZyltG0Q7kNvwFJc9zL&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEzODczMzE1NDY3MDQ1OTQsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjcsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=d56e5feecbe3dbb2&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC80QjQ0NkExOUUwMUY0QTU1QUIwNEQ2MEVGRkZGNTM5OV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzg1NEREQjdBNDFGMTNCQ0NGRDEwNUUzNDY4MTU2M0IzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACakq7fAqfH2BBUCKAJDMywXQDuZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=w6pt15ZGtib9_SuwXGPuFg&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQIiDvps8zkVjpcGGz_sZbZxUhL67qvEU27XQzllvLxQi7Er3PIqVsbzx_lpg862fw_QMziIXXXd8w&oh=00_AQLCmD_iK-akm2CFCpnttoi7lfgP4xQhJl1yV0xObhFULA&oe=6AA587E9&bitrate=1213416&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 27.62
-    }
-   },
-   "prefix": "Batmotor",
-   "K": "SP",
-   "nr": "1",
-   "hook": "H5",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Batmotor",
-    "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "no_prefix": "Batmotortrekk",
-    "adset_prefix": "Båtmotortrekk NO",
-    "campaign_id": "120252047563660233",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120252047563660233",
-    "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Båtmotortrekk NO - SP",
-    "annonsNamn": "Batmotortrekk_NO_SP_1_H5",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
-    "prefix": "Batmotortrekk"
-   },
-   "pris": {
-    "pris": "529.00",
-    "jamforpris": "882.00",
-    "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
-    "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d2270ab908c817499bdf5638a413f71",
-    "namn": "Batmotor_SP_1_H6",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Boat motor cover creative hub",
-    "url": "https://app.notion.com/3d2270ab908c817499bdf5638a413f71",
-    "kalla": "rader-fil"
-   },
-   "namn": "Batmotor_SP_1_H6",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250126119630291",
-    "status": "ACTIVE",
-    "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "kampanjId": "120250009325850291",
-    "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
-    "copy": {
-     "message": "Regn, sol och salt sliter på motorn varje dag. Båtmotorskydd 420D i kraftigt Oxford-tyg täcker hela motorn och spänns fast vid kaj. 579 kr istället för 965 kr – Bäverbutiken.se",
-     "headline": "579 kr: skydd mot regn, sol, salt",
-     "description": "",
-     "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+    {
+      "notion": {
+        "id": "3d2270ab908c81668a97eeba41397e84",
+        "namn": "Batmotor_SP_1_H5",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3d2270ab908c81668a97eeba41397e84",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_SP_1_H5",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250125804850291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+        "copy": {
+          "message": "Dra över. Spänn remmen. Klart.\n\nKraftigt 420D Oxford-tyg som täcker hela motorn – inga verktyg, inga krångliga fästen.\n\nFör dig som fiskar, bor i skärgården eller bara vill slippa krångel vid bryggan.",
+          "headline": "Dra över. Spänn. Klart.",
+          "description": "Heltäckande skydd, 579 kr",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1933072994546708",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQMdWtjW6S6w2FmUOCLodU49qcc7JkMkNTmemjDimp5oiZ3xEvk5SM3U5rFctvvObhS-o4QYRZmlypTFBbLSNtKhGaHc7OpAMMCrPPeethTG0Q.mp4?_nc_cat=111&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=POOJRZyltG0Q7kNvwFJc9zL&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEzODczMzE1NDY3MDQ1OTQsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjcsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=d56e5feecbe3dbb2&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC80QjQ0NkExOUUwMUY0QTU1QUIwNEQ2MEVGRkZGNTM5OV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzg1NEREQjdBNDFGMTNCQ0NGRDEwNUUzNDY4MTU2M0IzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACakq7fAqfH2BBUCKAJDMywXQDuZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=w6pt15ZGtib9_SuwXGPuFg&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQIiDvps8zkVjpcGGz_sZbZxUhL67qvEU27XQzllvLxQi7Er3PIqVsbzx_lpg862fw_QMziIXXXd8w&oh=00_AQLCmD_iK-akm2CFCpnttoi7lfgP4xQhJl1yV0xObhFULA&oe=6AA587E9&bitrate=1213416&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 27.62
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "1",
+      "hook": "H5",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_1_H5",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "2004189113613630",
-     "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPspl8TkAd2Ri1WJfvfoSVeG0uA1aNCX9x_JmFEtNaQ28jKMKdF03tCFnjnWB429cwi2t4mhR_3lwQlMJTziRVM3Uxi9kyKzPyYISHkra3Srg.mp4?_nc_cat=111&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=1nHPPcU2AM8Q7kNvwFh5cF6&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExMDg3MTM2MDgzMDU1NjgsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjksInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=d36946b0a5250b62&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85MjRBNEM3REQ2ODRGQjYzQTgwQThGN0ExRDkwNEU5Rl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzI0NEQwNjkyMzY1MzA4MDI0RUY4NDI5QzcyNjNFMkJBX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbA7r6M0Jf4AxUCKAJDMywXQD0iDEm6XjUYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=emV2p1s67XNtM187-dZPgQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKHw00RP2QmCroxJZ-HARGRTpXFh67NF6wMI5GCrg2hascDAM8Lj0Ij86HtIcgp9IlrquUr76QOxA&oh=00_AQL13DwbF1IUnAFKskEAsTUeIec_UMJEt_hmE4-jBUgT3Q&oe=6AA56CB5&bitrate=1088744&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 29.14
-    }
-   },
-   "prefix": "Batmotor",
-   "K": "SP",
-   "nr": "1",
-   "hook": "H6",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Batmotor",
-    "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "no_prefix": "Batmotortrekk",
-    "adset_prefix": "Båtmotortrekk NO",
-    "campaign_id": "120252047563660233",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120252047563660233",
-    "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Båtmotortrekk NO - SP",
-    "annonsNamn": "Batmotortrekk_NO_SP_1_H6",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
-    "prefix": "Batmotortrekk"
-   },
-   "pris": {
-    "pris": "529.00",
-    "jamforpris": "882.00",
-    "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
-    "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d2270ab908c817f9544c8279c371556",
-    "namn": "Batmotor_CS_5_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Boat motor cover creative hub",
-    "url": "https://app.notion.com/3d2270ab908c817f9544c8279c371556",
-    "kalla": "rader-fil"
-   },
-   "namn": "Batmotor_CS_5_H1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250126099880291",
-    "status": "ACTIVE",
-    "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "kampanjId": "120250009325850291",
-    "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
-    "copy": {
-     "message": "Regn, sol och saltvatten – hela motorn skyddad under tätt 420D-tyg. 579 kr. Ordinarie pris 965 kr, 386 kr redan avdraget i priset. Ingen rabattkod, inget nedräkningsur. Det här är priset – i dag och imorgon.",
-     "headline": "Regn, sol, salt – 579 kr, inte 965 kr.",
-     "description": "",
-     "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+    {
+      "notion": {
+        "id": "3d2270ab908c817499bdf5638a413f71",
+        "namn": "Batmotor_SP_1_H6",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3d2270ab908c817499bdf5638a413f71",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_SP_1_H6",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250126119630291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+        "copy": {
+          "message": "Regn, sol och salt sliter på motorn varje dag. Båtmotorskydd 420D i kraftigt Oxford-tyg täcker hela motorn och spänns fast vid kaj. 579 kr istället för 965 kr – Bäverbutiken.se",
+          "headline": "579 kr: skydd mot regn, sol, salt",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "2004189113613630",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPspl8TkAd2Ri1WJfvfoSVeG0uA1aNCX9x_JmFEtNaQ28jKMKdF03tCFnjnWB429cwi2t4mhR_3lwQlMJTziRVM3Uxi9kyKzPyYISHkra3Srg.mp4?_nc_cat=111&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=1nHPPcU2AM8Q7kNvwFh5cF6&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExMDg3MTM2MDgzMDU1NjgsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjksInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=d36946b0a5250b62&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85MjRBNEM3REQ2ODRGQjYzQTgwQThGN0ExRDkwNEU5Rl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzI0NEQwNjkyMzY1MzA4MDI0RUY4NDI5QzcyNjNFMkJBX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbA7r6M0Jf4AxUCKAJDMywXQD0iDEm6XjUYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=emV2p1s67XNtM187-dZPgQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKHw00RP2QmCroxJZ-HARGRTpXFh67NF6wMI5GCrg2hascDAM8Lj0Ij86HtIcgp9IlrquUr76QOxA&oh=00_AQL13DwbF1IUnAFKskEAsTUeIec_UMJEt_hmE4-jBUgT3Q&oe=6AA56CB5&bitrate=1088744&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 29.14
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "1",
+      "hook": "H6",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_1_H6",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "1056183513996276",
-     "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQOebTqptaEwZAsVAMLWuEJnMV8u9OHKFThJmCan1glqLUxFk5VCmgHK1XrWIjgWAcKzTsPC9SQzFqvJdyn8Emqx6LKSTq_-rSmXeqoKS7_92g.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=aFwr3OK5ps4Q7kNvwHQ5rQy&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjQ3MjE1MjIzMTgxNjkxOTMsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=4c7b7cfb9d3429a7&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9BMzRENDY1NDIxQTlBQzU2NTY4MDI1QjFFRDBGQTVCNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzNENDcwQjMyMDRERDg5NkZEODdCMDkzRTQxRDRFQjgxX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbS0ZbJ4ozjEBUCKAJDMywXQDAiDEm6XjUYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=Xm6P98FLkh-r3U2XeZ8p1A&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKPwEE0iUw58kSMpHhTqxfzDrv2jtmDU1pBnYYyG6aEFXSl7G51VMc0WgHR08dzyeFJgP4BmLjDxA&oh=00_AQL_dEVXK4d3nTErShIprY314zaKXYaaTHDHJOX81cQUSg&oe=6AA57566&bitrate=1500598&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 16.16
-    }
-   },
-   "prefix": "Batmotor",
-   "K": "CS",
-   "nr": "5",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Batmotor",
-    "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "no_prefix": "Batmotortrekk",
-    "adset_prefix": "Båtmotortrekk NO",
-    "campaign_id": "120252047563660233",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120252047563660233",
-    "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Båtmotortrekk NO - CS",
-    "annonsNamn": "Batmotortrekk_NO_CS_5_H1",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
-    "prefix": "Batmotortrekk"
-   },
-   "pris": {
-    "pris": "529.00",
-    "jamforpris": "882.00",
-    "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
-    "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d2270ab908c8153978ecfff393aded4",
-    "namn": "Batmotor_UG_2_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Boat motor cover creative hub",
-    "url": "https://app.notion.com/3d2270ab908c8153978ecfff393aded4",
-    "kalla": "rader-fil"
-   },
-   "namn": "Batmotor_UG_2_H1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250125793010291",
-    "status": "ACTIVE",
-    "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "kampanjId": "120250009325850291",
-    "adset": "UG | Notionrunda 2026-09-07",
-    "copy": {
-     "message": "8 recensioner. Alla 5 stjärnor.\n\nJag drog skyddet över motorn och spände remmen. Klart – inga verktyg.\n\n420D Oxford-tyg som suttit en hel säsong, i regn och sol.",
-     "headline": "8 av 8 recensioner – 5 stjärnor",
-     "description": "579 kr, ingen kod behövs",
-     "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+    {
+      "notion": {
+        "id": "3d2270ab908c817f9544c8279c371556",
+        "namn": "Batmotor_CS_5_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3d2270ab908c817f9544c8279c371556",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_CS_5_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250126099880291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
+        "copy": {
+          "message": "Regn, sol och saltvatten – hela motorn skyddad under tätt 420D-tyg. 579 kr. Ordinarie pris 965 kr, 386 kr redan avdraget i priset. Ingen rabattkod, inget nedräkningsur. Det här är priset – i dag och imorgon.",
+          "headline": "Regn, sol, salt – 579 kr, inte 965 kr.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1056183513996276",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQOebTqptaEwZAsVAMLWuEJnMV8u9OHKFThJmCan1glqLUxFk5VCmgHK1XrWIjgWAcKzTsPC9SQzFqvJdyn8Emqx6LKSTq_-rSmXeqoKS7_92g.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=aFwr3OK5ps4Q7kNvwHQ5rQy&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjQ3MjE1MjIzMTgxNjkxOTMsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=4c7b7cfb9d3429a7&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9BMzRENDY1NDIxQTlBQzU2NTY4MDI1QjFFRDBGQTVCNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzNENDcwQjMyMDRERDg5NkZEODdCMDkzRTQxRDRFQjgxX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbS0ZbJ4ozjEBUCKAJDMywXQDAiDEm6XjUYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=Xm6P98FLkh-r3U2XeZ8p1A&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKPwEE0iUw58kSMpHhTqxfzDrv2jtmDU1pBnYYyG6aEFXSl7G51VMc0WgHR08dzyeFJgP4BmLjDxA&oh=00_AQL_dEVXK4d3nTErShIprY314zaKXYaaTHDHJOX81cQUSg&oe=6AA57566&bitrate=1500598&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 16.16
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "CS",
+      "nr": "5",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - CS",
+        "annonsNamn": "Batmotortrekk_NO_CS_5_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
     },
-    "media": {
-     "typ": "video",
-     "video_id": "1597942948690717",
-     "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPFcGUBHA5dFoTLQOp7g_EuvkFj74_JOinLcekOqk734KLVPoWtZZrJnVPHpabyG11iXAPouK4HYQFqeGkrBSuHYUNksvXqQbAYvxm__i6pWg.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=eH5kUvFYNj8Q7kNvwEvaaiI&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2MTcyMjY5NjY3MjI0MTQsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=293a378390ad209b&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC84MDRCOERFNzc0MjdENDNEODBENUQwODkxN0U5N0M5OF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0JBNEE2N0E5Njg0NzRFMDM4QkM5NkZEM0VGMkExNzg2X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbcnfvt_7bfBRUCKAJDMywXQDSZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=36MpTH6hIlSmic7ZtkLQ1A&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJt4lkujesKIBxCqhIiaInBCcBv928dpwQUQKiceVvzOju2ewMjBkhKOhsXsRlBj3q08HaGwWoA6g&oh=00_AQKpdrDcCmGDR-NEyLVQLBKr5l0fr7fY9SDfFJ9aqmqfZA&oe=6AA579B3&bitrate=1916272&tag=dash_h264-basic-gen2_720p",
-     "langd_s": 20.619
-    }
-   },
-   "prefix": "Batmotor",
-   "K": "UG",
-   "nr": "2",
-   "hook": "H1",
-   "typ": "video",
-   "produkt": {
-    "se_prefix": "Batmotor",
-    "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-    "no_prefix": "Batmotortrekk",
-    "adset_prefix": "Båtmotortrekk NO",
-    "campaign_id": "120252047563660233",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120252047563660233",
-    "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "Båtmotortrekk NO - UG",
-    "annonsNamn": "Batmotortrekk_NO_UG_2_H1",
-    "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
-    "prefix": "Batmotortrekk"
-   },
-   "pris": {
-    "pris": "529.00",
-    "jamforpris": "882.00",
-    "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
-    "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d4270ab908c8120bb76edbdcd1ce026",
-    "namn": "IBC_CS_4_1",
-    "typ": "Image - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "IBC Tank Cover creative hub",
-    "url": "https://app.notion.com/3d4270ab908c8120bb76edbdcd1ce026",
-    "kalla": "rader-fil"
-   },
-   "namn": "IBC_CS_4_1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250134494990291",
-    "status": "ACTIVE",
-    "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "kampanjId": "120250001079150291",
-    "adset": "CS",
-    "copy": {
-     "message": "489 kr istället för 636 kr.\n147 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.\nAlgerna kommer aldrig igång.",
-     "headline": "489 kr istället för 636 kr",
-     "description": "23 % rabatt. Fri frakt inom Sverige.",
-     "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    {
+      "notion": {
+        "id": "3d2270ab908c8153978ecfff393aded4",
+        "namn": "Batmotor_UG_2_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3d2270ab908c8153978ecfff393aded4",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_UG_2_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250125793010291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "UG | Notionrunda 2026-09-07",
+        "copy": {
+          "message": "8 recensioner. Alla 5 stjärnor.\n\nJag drog skyddet över motorn och spände remmen. Klart – inga verktyg.\n\n420D Oxford-tyg som suttit en hel säsong, i regn och sol.",
+          "headline": "8 av 8 recensioner – 5 stjärnor",
+          "description": "579 kr, ingen kod behövs",
+          "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1597942948690717",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPFcGUBHA5dFoTLQOp7g_EuvkFj74_JOinLcekOqk734KLVPoWtZZrJnVPHpabyG11iXAPouK4HYQFqeGkrBSuHYUNksvXqQbAYvxm__i6pWg.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=eH5kUvFYNj8Q7kNvwEvaaiI&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2MTcyMjY5NjY3MjI0MTQsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=293a378390ad209b&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC84MDRCOERFNzc0MjdENDNEODBENUQwODkxN0U5N0M5OF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0JBNEE2N0E5Njg0NzRFMDM4QkM5NkZEM0VGMkExNzg2X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbcnfvt_7bfBRUCKAJDMywXQDSZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=36MpTH6hIlSmic7ZtkLQ1A&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJt4lkujesKIBxCqhIiaInBCcBv928dpwQUQKiceVvzOju2ewMjBkhKOhsXsRlBj3q08HaGwWoA6g&oh=00_AQKpdrDcCmGDR-NEyLVQLBKr5l0fr7fY9SDfFJ9aqmqfZA&oe=6AA579B3&bitrate=1916272&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 20.619
+        }
+      },
+      "prefix": "Batmotor",
+      "K": "UG",
+      "nr": "2",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Båtmotortrekk NO - UG",
+        "annonsNamn": "Batmotortrekk_NO_UG_2_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk",
+        "status": "DRY"
+      },
+      "pris": {
+        "pris": "529.00",
+        "jamforpris": "882.00",
+        "titel": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+        "handle": "batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      }
     },
-    "media": {
-     "typ": "bild",
-     "image_hash": "c4b9bd7170b5e239a8a22d016bf6f7bb",
-     "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/799561499_2056096591770600_6993927240287119850_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=1UIukX8gBL4Q7kNvwHhZXpr&_nc_oc=AdqYk8AG7A-S456vc6tuNBa2hHAVkU3oHwkUuL1U5pCOypR14g9mR_3CteJ48uFRIoM&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQIJOOhDl7hgkQ200YfluzlIgEBrOr1QAHboY3uOLRwFskkzt79INo4CvvvpCoH1_RXDWX7j9TmFMA&oh=00_AQJFE0sGMeufVu5M8owJiOBfwZbetTCWC8Y29OUtxjKVdA&oe=6AA58E21",
-     "bredd": 1080,
-     "hojd": 1350
-    }
-   },
-   "prefix": "IBC",
-   "K": "CS",
-   "nr": "4",
-   "hook": "1",
-   "typ": "bild",
-   "produkt": {
-    "se_prefix": "IBC",
-    "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "no_prefix": "IBC-tanktrekk",
-    "adset_prefix": "IBC-tanktrekk NO",
-    "campaign_id": "120251996323340233",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251996323340233",
-    "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "IBC-tanktrekk NO - CS",
-    "annonsNamn": "IBC-tanktrekk_NO_CS_4_1",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-    "prefix": "IBC-tanktrekk",
-    "status": "ACTIVE",
-    "annonsId": "120252125205990233",
-    "creativeId": "1056784026997142",
-    "adsetId": "120251996675700233",
-    "adsetSkapat": false,
-    "effective_status": "IN_PROCESS"
-   },
-   "pris": {
-    "pris": "439.00",
-    "jamforpris": "586.00",
-    "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-    "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d4270ab908c813d8f3dcc229e615399",
-    "namn": "IBC_BOF_6_1",
-    "typ": "Image - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "IBC Tank Cover creative hub",
-    "url": "https://app.notion.com/3d4270ab908c813d8f3dcc229e615399",
-    "kalla": "rader-fil"
-   },
-   "namn": "IBC_BOF_6_1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250134665590291",
-    "status": "ACTIVE",
-    "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "kampanjId": "120250001079150291",
-    "adset": "BOF | Notionrunda 2026-09-05",
-    "copy": {
-     "message": "Fri frakt inom Sverige, 5–10 arbetsdagar.\nBeställ nu så är den på plats innan tanken hinner grönska.\nKlarna – betala sen. 30 dagars öppet köp.",
-     "headline": "Fri frakt, 5–10 arbetsdagar",
-     "description": "Klarna – betala sen. 30 dagars öppet köp.",
-     "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    {
+      "notion": {
+        "id": "3d4270ab908c8120bb76edbdcd1ce026",
+        "namn": "IBC_CS_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3d4270ab908c8120bb76edbdcd1ce026",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_CS_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250134494990291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "CS",
+        "copy": {
+          "message": "489 kr istället för 636 kr.\n147 kr mindre för samma 210D Oxford-tyg som stänger ute ljuset.\nAlgerna kommer aldrig igång.",
+          "headline": "489 kr istället för 636 kr",
+          "description": "23 % rabatt. Fri frakt inom Sverige.",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "c4b9bd7170b5e239a8a22d016bf6f7bb",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/799561499_2056096591770600_6993927240287119850_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=1UIukX8gBL4Q7kNvwHhZXpr&_nc_oc=AdqYk8AG7A-S456vc6tuNBa2hHAVkU3oHwkUuL1U5pCOypR14g9mR_3CteJ48uFRIoM&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQIJOOhDl7hgkQ200YfluzlIgEBrOr1QAHboY3uOLRwFskkzt79INo4CvvvpCoH1_RXDWX7j9TmFMA&oh=00_AQJFE0sGMeufVu5M8owJiOBfwZbetTCWC8Y29OUtxjKVdA&oe=6AA58E21",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "CS",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - CS",
+        "annonsNamn": "IBC-tanktrekk_NO_CS_4_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252125205990233",
+        "creativeId": "1056784026997142",
+        "adsetId": "120251996675700233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
     },
-    "media": {
-     "typ": "bild",
-     "image_hash": "5b238743a16a2b4868879f47668c26cc",
-     "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799958715_2056105908436335_1605438107598283516_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=DOpbCoEtomMQ7kNvwFu9CWG&_nc_oc=Adppr_sGU7bL3gmVchOEL_C81XnL6LGVk5VY73mHhqcWmZPD3VdP0q3HguZ5mIniXVY&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQLJSpt1B1aJiU-z9HV-0pgG1Lphf0iPwmzaDo4Z1enzXJgwpkiSs26HlXM00_Sn3n5ebMPzyrvSvg&oh=00_AQLaC8HueuLvQ-gqSy2BA9AhlxuNW350GesOcXty_Zjb2w&oe=6AA5611A",
-     "bredd": 1080,
-     "hojd": 1350
-    }
-   },
-   "prefix": "IBC",
-   "K": "BOF",
-   "nr": "6",
-   "hook": "1",
-   "typ": "bild",
-   "produkt": {
-    "se_prefix": "IBC",
-    "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "no_prefix": "IBC-tanktrekk",
-    "adset_prefix": "IBC-tanktrekk NO",
-    "campaign_id": "120251996323340233",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251996323340233",
-    "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "IBC-tanktrekk NO - BOF",
-    "annonsNamn": "IBC-tanktrekk_NO_BOF_6_1",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-    "prefix": "IBC-tanktrekk",
-    "status": "ACTIVE",
-    "annonsId": "120252125209460233",
-    "creativeId": "28162991546675838",
-    "adsetId": "120252092535700233",
-    "adsetSkapat": false,
-    "effective_status": "IN_PROCESS"
-   },
-   "pris": {
-    "pris": "439.00",
-    "jamforpris": "586.00",
-    "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-    "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d4270ab908c815a8f55d5d1ef2aed21",
-    "namn": "IBC_RV_4_1",
-    "typ": "Image - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "IBC Tank Cover creative hub",
-    "url": "https://app.notion.com/3d4270ab908c815a8f55d5d1ef2aed21",
-    "kalla": "rader-fil"
-   },
-   "namn": "IBC_RV_4_1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250135235730291",
-    "status": "ACTIVE",
-    "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "kampanjId": "120250001079150291",
-    "adset": "RV | Notionrunda 2026-09-05",
-    "copy": {
-     "message": "\"Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem.\"\n— Johan, ★★★★★",
-     "headline": "Johan: Passade tanken utan problem",
-     "description": "Passar standard 1000L IBC-tank.",
-     "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    {
+      "notion": {
+        "id": "3d4270ab908c813d8f3dcc229e615399",
+        "namn": "IBC_BOF_6_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3d4270ab908c813d8f3dcc229e615399",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_BOF_6_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250134665590291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "BOF | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Fri frakt inom Sverige, 5–10 arbetsdagar.\nBeställ nu så är den på plats innan tanken hinner grönska.\nKlarna – betala sen. 30 dagars öppet köp.",
+          "headline": "Fri frakt, 5–10 arbetsdagar",
+          "description": "Klarna – betala sen. 30 dagars öppet köp.",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "5b238743a16a2b4868879f47668c26cc",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799958715_2056105908436335_1605438107598283516_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=DOpbCoEtomMQ7kNvwFu9CWG&_nc_oc=Adppr_sGU7bL3gmVchOEL_C81XnL6LGVk5VY73mHhqcWmZPD3VdP0q3HguZ5mIniXVY&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQLJSpt1B1aJiU-z9HV-0pgG1Lphf0iPwmzaDo4Z1enzXJgwpkiSs26HlXM00_Sn3n5ebMPzyrvSvg&oh=00_AQLaC8HueuLvQ-gqSy2BA9AhlxuNW350GesOcXty_Zjb2w&oe=6AA5611A",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "BOF",
+      "nr": "6",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - BOF",
+        "annonsNamn": "IBC-tanktrekk_NO_BOF_6_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252125209460233",
+        "creativeId": "28162991546675838",
+        "adsetId": "120252092535700233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
     },
-    "media": {
-     "typ": "bild",
-     "image_hash": "029ed25aff2d3b397dfe6d35735cc361",
-     "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/798884875_2056152091765050_5382882945600491065_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=WjKzmInl0aQQ7kNvwFRPcJm&_nc_oc=AdpAQw-K4X6n4R-tadd-frP3DKHRjTF4UV5-1AYoKtFfgacmx-IDoTEEbKWKYrIlLoo&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQJDA2tX9FD6fJBVXFCr9TjqDe1VcaGREPaOkhTGBGkTHR7XadCgJgC8tBP11NApXfpIgLlS5yGIRg&oh=00_AQI8NTZn5sXQwhjWeDEmd2RG0qUSdu7GTFs2j0skXda2MQ&oe=6AA5777B",
-     "bredd": 1080,
-     "hojd": 1350
-    }
-   },
-   "prefix": "IBC",
-   "K": "RV",
-   "nr": "4",
-   "hook": "1",
-   "typ": "bild",
-   "produkt": {
-    "se_prefix": "IBC",
-    "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "no_prefix": "IBC-tanktrekk",
-    "adset_prefix": "IBC-tanktrekk NO",
-    "campaign_id": "120251996323340233",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251996323340233",
-    "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "IBC-tanktrekk NO - RV",
-    "annonsNamn": "IBC-tanktrekk_NO_RV_4_1",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-    "prefix": "IBC-tanktrekk",
-    "status": "ACTIVE",
-    "annonsId": "120252125212850233",
-    "creativeId": "1709244380152284",
-    "adsetId": "120252092599000233",
-    "adsetSkapat": false,
-    "effective_status": "IN_PROCESS"
-   },
-   "pris": {
-    "pris": "439.00",
-    "jamforpris": "586.00",
-    "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-    "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d4270ab908c818bb010d3b32c7fd526",
-    "namn": "IBC_BOF_5_1",
-    "typ": "Image - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "IBC Tank Cover creative hub",
-    "url": "https://app.notion.com/3d4270ab908c818bb010d3b32c7fd526",
-    "kalla": "rader-fil"
-   },
-   "namn": "IBC_BOF_5_1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250135240320291",
-    "status": "ACTIVE",
-    "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "kampanjId": "120250001079150291",
-    "adset": "BOF | Notionrunda 2026-09-05",
-    "copy": {
-     "message": "Presenningen som skulle skydda blåser av vid första höststormen.\nEtt 210D Oxford-överdrag med blixtlås sitter kvar.\nSkydda tanken innan hösten.",
-     "headline": "Presenningen blåser av i höststormen",
-     "description": "210D Oxford-överdrag med blixtlås.",
-     "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    {
+      "notion": {
+        "id": "3d4270ab908c815a8f55d5d1ef2aed21",
+        "namn": "IBC_RV_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3d4270ab908c815a8f55d5d1ef2aed21",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_RV_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250135235730291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "RV | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "\"Bra kvalitet och lätt att använda. Passade min 1000 liters tank utan problem.\"\n— Johan, ★★★★★",
+          "headline": "Johan: Passade tanken utan problem",
+          "description": "Passar standard 1000L IBC-tank.",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "029ed25aff2d3b397dfe6d35735cc361",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/798884875_2056152091765050_5382882945600491065_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=WjKzmInl0aQQ7kNvwFRPcJm&_nc_oc=AdpAQw-K4X6n4R-tadd-frP3DKHRjTF4UV5-1AYoKtFfgacmx-IDoTEEbKWKYrIlLoo&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQJDA2tX9FD6fJBVXFCr9TjqDe1VcaGREPaOkhTGBGkTHR7XadCgJgC8tBP11NApXfpIgLlS5yGIRg&oh=00_AQI8NTZn5sXQwhjWeDEmd2RG0qUSdu7GTFs2j0skXda2MQ&oe=6AA5777B",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "RV",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - RV",
+        "annonsNamn": "IBC-tanktrekk_NO_RV_4_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252125212850233",
+        "creativeId": "1709244380152284",
+        "adsetId": "120252092599000233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
     },
-    "media": {
-     "typ": "bild",
-     "image_hash": "f9898c7c28c9b7aa20ea8c9271aa0646",
-     "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799983710_2056152335098359_4778190765768555591_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=84IuUZnn_3oQ7kNvwHoe4GB&_nc_oc=Adr1vpYznlbDmXEPhJZ5rjVaiI36opKC8nz-KDdczMcMwLOBc4-5R3Kk0eBbRBcaB7M&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQIoUx1lk0whN7CT17dyfV89Kfd6_heODIyqNleg5Hp34veCkK9rXVaYGdog0-vWF1wFtCbb-AjBKg&oh=00_AQK3ik4kGDEpus-QOqoBmNv6B-N9vIg5zRgg-BsChtsieQ&oe=6AA57276",
-     "bredd": 1080,
-     "hojd": 1350
-    }
-   },
-   "prefix": "IBC",
-   "K": "BOF",
-   "nr": "5",
-   "hook": "1",
-   "typ": "bild",
-   "produkt": {
-    "se_prefix": "IBC",
-    "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "no_prefix": "IBC-tanktrekk",
-    "adset_prefix": "IBC-tanktrekk NO",
-    "campaign_id": "120251996323340233",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251996323340233",
-    "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "IBC-tanktrekk NO - BOF",
-    "annonsNamn": "IBC-tanktrekk_NO_BOF_5_1",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-    "prefix": "IBC-tanktrekk",
-    "status": "ACTIVE",
-    "annonsId": "120252125214910233",
-    "creativeId": "2284234942431466",
-    "adsetId": "120252092535700233",
-    "adsetSkapat": false,
-    "effective_status": "IN_PROCESS"
-   },
-   "pris": {
-    "pris": "439.00",
-    "jamforpris": "586.00",
-    "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-    "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d4270ab908c81deb289dec65634e96d",
-    "namn": "IBC_BOF_4_1",
-    "typ": "Image - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "IBC Tank Cover creative hub",
-    "url": "https://app.notion.com/3d4270ab908c81deb289dec65634e96d",
-    "kalla": "rader-fil"
-   },
-   "namn": "IBC_BOF_4_1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250135368810291",
-    "status": "ACTIVE",
-    "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "kampanjId": "120250001079150291",
-    "adset": "BOF | Notionrunda 2026-09-05",
-    "copy": {
-     "message": "Blixtlås. Inte presenning och gummiband.\nPå och av med dragkedja — ingen kamp med väder eller vind.\nÖppning upptill. Passar 1000-liters IBC-tank.",
-     "headline": "Blixtlås. Inte presenning.",
-     "description": "Öppning upptill. Passar 1000-liters IBC.",
-     "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    {
+      "notion": {
+        "id": "3d4270ab908c818bb010d3b32c7fd526",
+        "namn": "IBC_BOF_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3d4270ab908c818bb010d3b32c7fd526",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_BOF_5_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250135240320291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "BOF | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Presenningen som skulle skydda blåser av vid första höststormen.\nEtt 210D Oxford-överdrag med blixtlås sitter kvar.\nSkydda tanken innan hösten.",
+          "headline": "Presenningen blåser av i höststormen",
+          "description": "210D Oxford-överdrag med blixtlås.",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "f9898c7c28c9b7aa20ea8c9271aa0646",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799983710_2056152335098359_4778190765768555591_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=84IuUZnn_3oQ7kNvwHoe4GB&_nc_oc=Adr1vpYznlbDmXEPhJZ5rjVaiI36opKC8nz-KDdczMcMwLOBc4-5R3Kk0eBbRBcaB7M&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQIoUx1lk0whN7CT17dyfV89Kfd6_heODIyqNleg5Hp34veCkK9rXVaYGdog0-vWF1wFtCbb-AjBKg&oh=00_AQK3ik4kGDEpus-QOqoBmNv6B-N9vIg5zRgg-BsChtsieQ&oe=6AA57276",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "BOF",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - BOF",
+        "annonsNamn": "IBC-tanktrekk_NO_BOF_5_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252125214910233",
+        "creativeId": "2284234942431466",
+        "adsetId": "120252092535700233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
     },
-    "media": {
-     "typ": "bild",
-     "image_hash": "f3abdbe02e0ca08cd79f78aeb7dc190f",
-     "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799676008_2056159255097667_8579832903931213734_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ZhrTpEqx6pkQ7kNvwFyeD5u&_nc_oc=Adpre2A0NcSqvFbGG51HAPi1zcnnTlkIr_T5znmjZ7JZ6PbfnWeswmumsj4WGw7BF5I&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQIxssn9odptnGDLlyDflhIxuJj6Itp_ejQ40_Fb6QR8v__j1pDEZ1KEKlKMB-oQSqmVTCnPS9XMtw&oh=00_AQJZUCuFcXQPaFVerm5dXIifWEtg9w8e3auVv1vBiYYKzg&oe=6AA59129",
-     "bredd": 1080,
-     "hojd": 1350
-    }
-   },
-   "prefix": "IBC",
-   "K": "BOF",
-   "nr": "4",
-   "hook": "1",
-   "typ": "bild",
-   "produkt": {
-    "se_prefix": "IBC",
-    "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "no_prefix": "IBC-tanktrekk",
-    "adset_prefix": "IBC-tanktrekk NO",
-    "campaign_id": "120251996323340233",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251996323340233",
-    "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "IBC-tanktrekk NO - BOF",
-    "annonsNamn": "IBC-tanktrekk_NO_BOF_4_1",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-    "prefix": "IBC-tanktrekk",
-    "status": "ACTIVE",
-    "annonsId": "120252125217030233",
-    "creativeId": "1379949370963930",
-    "adsetId": "120252092535700233",
-    "adsetSkapat": false,
-    "effective_status": "IN_PROCESS"
-   },
-   "pris": {
-    "pris": "439.00",
-    "jamforpris": "586.00",
-    "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-    "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d4270ab908c8129b904cdaf226e0378",
-    "namn": "IBC_PD_5_1",
-    "typ": "Image - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "IBC Tank Cover creative hub",
-    "url": "https://app.notion.com/3d4270ab908c8129b904cdaf226e0378",
-    "kalla": "rader-fil"
-   },
-   "namn": "IBC_PD_5_1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250134496480291",
-    "status": "ACTIVE",
-    "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "kampanjId": "120250001079150291",
-    "adset": "PD",
-    "copy": {
-     "message": "210D Oxford-tyg mellan solen och ditt regnvatten.\nIngen presenning, inga gummiband — bara ett blixtlås.\nAlgerna kommer aldrig igång.",
-     "headline": "210D Oxford-tyg mot solen",
-     "description": "Ingen presenning, inga gummiband.",
-     "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    {
+      "notion": {
+        "id": "3d4270ab908c81deb289dec65634e96d",
+        "namn": "IBC_BOF_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3d4270ab908c81deb289dec65634e96d",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_BOF_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250135368810291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "BOF | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Blixtlås. Inte presenning och gummiband.\nPå och av med dragkedja — ingen kamp med väder eller vind.\nÖppning upptill. Passar 1000-liters IBC-tank.",
+          "headline": "Blixtlås. Inte presenning.",
+          "description": "Öppning upptill. Passar 1000-liters IBC.",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "f3abdbe02e0ca08cd79f78aeb7dc190f",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799676008_2056159255097667_8579832903931213734_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ZhrTpEqx6pkQ7kNvwFyeD5u&_nc_oc=Adpre2A0NcSqvFbGG51HAPi1zcnnTlkIr_T5znmjZ7JZ6PbfnWeswmumsj4WGw7BF5I&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQIxssn9odptnGDLlyDflhIxuJj6Itp_ejQ40_Fb6QR8v__j1pDEZ1KEKlKMB-oQSqmVTCnPS9XMtw&oh=00_AQJZUCuFcXQPaFVerm5dXIifWEtg9w8e3auVv1vBiYYKzg&oe=6AA59129",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "BOF",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - BOF",
+        "annonsNamn": "IBC-tanktrekk_NO_BOF_4_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252125217030233",
+        "creativeId": "1379949370963930",
+        "adsetId": "120252092535700233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
     },
-    "media": {
-     "typ": "bild",
-     "image_hash": "e44a6e3f0fccf690fdbf036e460db227",
-     "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/798743763_2056096798437246_3722382470864632934_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ym0L-nTM2ykQ7kNvwEtNIpJ&_nc_oc=Adqs6iPDYDMFOuAsyAopyRwUqAmjLhKuoB2f8THROo61GWB5ekuioZMVwhtsppKalS4&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQK4X-gJ_YMJRrT2FZBkknbE5VVCj-yzqNVXv2umTQt7XGML0WiwyuGHb-qlJ1YiWOf229G98eLbWA&oh=00_AQIDyHKrImJLh7hWH3TwQSG2Fd4V_wF4s4cIGxJ8IHED2w&oe=6AA56C08",
-     "bredd": 1080,
-     "hojd": 1350
-    }
-   },
-   "prefix": "IBC",
-   "K": "PD",
-   "nr": "5",
-   "hook": "1",
-   "typ": "bild",
-   "produkt": {
-    "se_prefix": "IBC",
-    "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "no_prefix": "IBC-tanktrekk",
-    "adset_prefix": "IBC-tanktrekk NO",
-    "campaign_id": "120251996323340233",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251996323340233",
-    "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "IBC-tanktrekk NO - PD",
-    "annonsNamn": "IBC-tanktrekk_NO_PD_5_1",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-    "prefix": "IBC-tanktrekk",
-    "status": "ACTIVE",
-    "annonsId": "120252125294000233",
-    "creativeId": "2798579180527310",
-    "adsetId": "120251996667400233",
-    "adsetSkapat": false,
-    "effective_status": "IN_PROCESS"
-   },
-   "pris": {
-    "pris": "439.00",
-    "jamforpris": "586.00",
-    "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-    "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d4270ab908c81d5bd69dac83f9100e2",
-    "namn": "IBC_RV_3_1",
-    "typ": "Image - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "IBC Tank Cover creative hub",
-    "url": "https://app.notion.com/3d4270ab908c81d5bd69dac83f9100e2",
-    "kalla": "rader-fil"
-   },
-   "namn": "IBC_RV_3_1",
-   "status": "KÖR",
-   "skal": null,
-   "se": {
-    "annonsId": "120250135358520291",
-    "status": "ACTIVE",
-    "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "kampanjId": "120250001079150291",
-    "adset": "RV | Notionrunda 2026-09-05",
-    "copy": {
-     "message": "\"Passar bra på tanken och skyddar mot solen. Precis vad jag behövde.\"\n— Sofia, ★★★★★\n489 kr, 23 % rabatt.",
-     "headline": "Sofia: Skyddar mot solen",
-     "description": "489 kr, 23 % rabatt.",
-     "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+    {
+      "notion": {
+        "id": "3d4270ab908c8129b904cdaf226e0378",
+        "namn": "IBC_PD_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3d4270ab908c8129b904cdaf226e0378",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_PD_5_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250134496480291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "PD",
+        "copy": {
+          "message": "210D Oxford-tyg mellan solen och ditt regnvatten.\nIngen presenning, inga gummiband — bara ett blixtlås.\nAlgerna kommer aldrig igång.",
+          "headline": "210D Oxford-tyg mot solen",
+          "description": "Ingen presenning, inga gummiband.",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "e44a6e3f0fccf690fdbf036e460db227",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/798743763_2056096798437246_3722382470864632934_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ym0L-nTM2ykQ7kNvwEtNIpJ&_nc_oc=Adqs6iPDYDMFOuAsyAopyRwUqAmjLhKuoB2f8THROo61GWB5ekuioZMVwhtsppKalS4&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQK4X-gJ_YMJRrT2FZBkknbE5VVCj-yzqNVXv2umTQt7XGML0WiwyuGHb-qlJ1YiWOf229G98eLbWA&oh=00_AQIDyHKrImJLh7hWH3TwQSG2Fd4V_wF4s4cIGxJ8IHED2w&oe=6AA56C08",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "PD",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - PD",
+        "annonsNamn": "IBC-tanktrekk_NO_PD_5_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252125294000233",
+        "creativeId": "2798579180527310",
+        "adsetId": "120251996667400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
     },
-    "media": {
-     "typ": "bild",
-     "image_hash": "07d69a2f60eed8640eda62f2c6464503",
-     "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799601947_2056159025097690_4525924759003601326_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=VIBGeovFdw0Q7kNvwHhzGn6&_nc_oc=AdqwkkioOHWRfZVya9sARiEd99GNRZePmpj9vXbfN0uSJwhostoeHm7liEl-AcO08kY&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQL84Cf1yDxt2k4xZNi2jmHp0cBonTsQRz59uUmPSoaT_poIGWy5YOJrghvMg3m-ydwI5A4pnDw2BA&oh=00_AQIccNZMBHzGg25VgiTOf8eDAMgND6nwTltXHv2wejoBCg&oe=6AA57F03",
-     "bredd": 1080,
-     "hojd": 1350
+    {
+      "notion": {
+        "id": "3d4270ab908c81d5bd69dac83f9100e2",
+        "namn": "IBC_RV_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "IBC Tank Cover creative hub",
+        "url": "https://app.notion.com/3d4270ab908c81d5bd69dac83f9100e2",
+        "kalla": "rader-fil"
+      },
+      "namn": "IBC_RV_3_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250135358520291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "RV | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "\"Passar bra på tanken och skyddar mot solen. Precis vad jag behövde.\"\n— Sofia, ★★★★★\n489 kr, 23 % rabatt.",
+          "headline": "Sofia: Skyddar mot solen",
+          "description": "489 kr, 23 % rabatt.",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "07d69a2f60eed8640eda62f2c6464503",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799601947_2056159025097690_4525924759003601326_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=VIBGeovFdw0Q7kNvwHhzGn6&_nc_oc=AdqwkkioOHWRfZVya9sARiEd99GNRZePmpj9vXbfN0uSJwhostoeHm7liEl-AcO08kY&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=AS9PVeadFA6NTPAGbZnLPQ&_nc_tpa=Q5bMBQL84Cf1yDxt2k4xZNi2jmHp0cBonTsQRz59uUmPSoaT_poIGWy5YOJrghvMg3m-ydwI5A4pnDw2BA&oh=00_AQIccNZMBHzGg25VgiTOf8eDAMgND6nwTltXHv2wejoBCg&oe=6AA57F03",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "RV",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - RV",
+        "annonsNamn": "IBC-tanktrekk_NO_RV_3_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252125295590233",
+        "creativeId": "1747486036460778",
+        "adsetId": "120252092599000233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d2270ab908c813c9512e4eb4c9f67aa",
+        "namn": "Damasker_SP_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Damasker vandring",
+        "url": "https://app.notion.com/3d2270ab908c813c9512e4eb4c9f67aa",
+        "kalla": "hubbsökning 2026-09-08 (hubbtiteln slutar inte på 'creative hub')"
+      },
+      "namn": "Damasker_SP_4_H1",
+      "status": "KÖ",
+      "typ": "video",
+      "skal": "HeyGen API-plånboken tom (0,22 USD) — kopplingen mot SE-kontot görs när videorna kan köras"
+    },
+    {
+      "notion": {
+        "id": "3d2270ab908c8151b363c9855bb6da10",
+        "namn": "Damasker_FO_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Damasker vandring",
+        "url": "https://app.notion.com/3d2270ab908c8151b363c9855bb6da10",
+        "kalla": "hubbsökning 2026-09-08 (hubbtiteln slutar inte på 'creative hub')"
+      },
+      "namn": "Damasker_FO_1_H1",
+      "status": "KÖ",
+      "typ": "video",
+      "skal": "HeyGen API-plånboken tom (0,22 USD) — kopplingen mot SE-kontot görs när videorna kan köras"
     }
-   },
-   "prefix": "IBC",
-   "K": "RV",
-   "nr": "3",
-   "hook": "1",
-   "typ": "bild",
-   "produkt": {
-    "se_prefix": "IBC",
-    "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-    "no_prefix": "IBC-tanktrekk",
-    "adset_prefix": "IBC-tanktrekk NO",
-    "campaign_id": "120251996323340233",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
-   },
-   "mal": {
-    "kod": "NO",
-    "kampanjId": "120251996323340233",
-    "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
-    "utfall": "ACTIVE",
-    "spend": null,
-    "adsetNamn": "IBC-tanktrekk NO - RV",
-    "annonsNamn": "IBC-tanktrekk_NO_RV_3_1",
-    "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-    "prefix": "IBC-tanktrekk",
-    "status": "ACTIVE",
-    "annonsId": "120252125295590233",
-    "creativeId": "1747486036460778",
-    "adsetId": "120252092599000233",
-    "adsetSkapat": false,
-    "effective_status": "IN_PROCESS"
-   },
-   "pris": {
-    "pris": "439.00",
-    "jamforpris": "586.00",
-    "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
-    "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
-   }
-  },
-  {
-   "notion": {
-    "id": "3d2270ab908c813c9512e4eb4c9f67aa",
-    "namn": "Damasker_SP_4_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Damasker vandring",
-    "url": "https://app.notion.com/3d2270ab908c813c9512e4eb4c9f67aa",
-    "kalla": "hubbsökning 2026-09-08 (hubbtiteln slutar inte på 'creative hub')"
-   },
-   "namn": "Damasker_SP_4_H1",
-   "status": "KÖ",
-   "typ": "video",
-   "skal": "HeyGen API-plånboken tom (0,22 USD) — kopplingen mot SE-kontot görs när videorna kan köras"
-  },
-  {
-   "notion": {
-    "id": "3d2270ab908c8151b363c9855bb6da10",
-    "namn": "Damasker_FO_1_H1",
-    "typ": "Video - Pending Approval",
-    "status": "SE-ACTIVE to be translated",
-    "hub": "Damasker vandring",
-    "url": "https://app.notion.com/3d2270ab908c8151b363c9855bb6da10",
-    "kalla": "hubbsökning 2026-09-08 (hubbtiteln slutar inte på 'creative hub')"
-   },
-   "namn": "Damasker_FO_1_H1",
-   "status": "KÖ",
-   "typ": "video",
-   "skal": "HeyGen API-plånboken tom (0,22 USD) — kopplingen mot SE-kontot görs när videorna kan köras"
-  }
- ]
+  ]
 }

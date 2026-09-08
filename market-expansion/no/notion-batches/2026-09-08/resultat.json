@@ -75,5 +75,75 @@
   "status": "OK",
   "fil": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_RV_3_1.jpg",
   "qa": "market-expansion/no/notion-batches/2026-09-08/no/IBC-tanktrekk_NO_RV_3_1.jpg.qa.png"
+ },
+ "overvakingskamera_SP_9_H1": {
+  "malnamn": "Overvåkingskamera_NO_SP_9_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Overvåkingskamera_NO_SP_9_H1.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-captions-precis, pill min/max)"
+ },
+ "overvakingskamera_SP_8_H1": {
+  "malnamn": "Overvåkingskamera_NO_SP_8_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Overvåkingskamera_NO_SP_8_H1.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-captions-precis, pill min/max)"
+ },
+ "overvakingskamera_CS_6_H1": {
+  "malnamn": "Overvåkingskamera_NO_CS_6_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Overvåkingskamera_NO_CS_6_H1.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-captions-precis, pill min/max)"
+ },
+ "overvakingskamera_SP_13_H1": {
+  "malnamn": "Overvåkingskamera_NO_SP_13_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Overvåkingskamera_NO_SP_13_H1.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-captions-precis, pill min/max)"
+ },
+ "overvakingskamera_SP_12_H1": {
+  "malnamn": "Overvåkingskamera_NO_SP_12_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Overvåkingskamera_NO_SP_12_H1.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-captions-precis, pill min/max)"
+ },
+ "batmotortrekk_UG_1_H1": {
+  "malnamn": "Batmotortrekk_NO_UG_1_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Batmotortrekk_NO_UG_1_H1.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-precis: slutkort + grafiklager, två omtag)"
+ },
+ "batmotortrekk_SP_1_H5": {
+  "malnamn": "Batmotortrekk_NO_SP_1_H5",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Batmotortrekk_NO_SP_1_H5.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-precis: slutkort + grafiklager, två omtag)"
+ },
+ "batmotortrekk_SP_1_H6": {
+  "malnamn": "Batmotortrekk_NO_SP_1_H6",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Batmotortrekk_NO_SP_1_H6.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-precis: slutkort + grafiklager, två omtag)"
+ },
+ "batmotortrekk_CS_5_H1": {
+  "malnamn": "Batmotortrekk_NO_CS_5_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Batmotortrekk_NO_CS_5_H1.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-precis: slutkort + grafiklager, två omtag)"
+ },
+ "batmotortrekk_UG_2_H1": {
+  "malnamn": "Batmotortrekk_NO_UG_2_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-08/no/Batmotortrekk_NO_UG_2_H1.mp4",
+  "skal": null,
+  "qa": "QA-rutor/kontaktark lästa 2026-09-08 (no-precis: slutkort + grafiklager, två omtag)"
  }
 }
