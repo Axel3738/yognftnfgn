@@ -20,11 +20,19 @@
   leveransrapporten — påverkar vilken/vilka färger som är säkra att visa i
   nya creatives om lagret inte fylls på.
 - **Konkurrentbevakning:** 0 träffar i Meta Ad Library på svenska sökord
-  2026-09-02 — obevakad nisch just nu. Kör om sökningen vid nästa `/cs` för
-  att se om det förändrats. [Ej omkörd 2026-09-05 — prioriterades bort för
-  feedbackloop + batch #3, fortfarande aktuell att göra.]
-- **PD_2 (0 köp på 369 kr, samma copy som PD_1):** bevaka nästa avläsning —
-  identisk copy men noll köp så här långt, för lite data för en dom men värt
-  att titta på igen 2026-09-05 (se batch-log.md).
+  2026-09-02, omkört och bekräftat oförändrat 2026-09-08 — obevakad nisch.
+  Kör om igen om ett par veckor, inte varje körning.
+- **PD_2 (0 köp, nu 464,72 kr, samma copy som PD_1):** växer negativt utan
+  köp trots identisk copy som vinnaren — inte längre "bevaka", nu en del av
+  teardownets mönster 3 (creativen förklarar inte hela utfallet, se dna.md).
+  Fortsätt bevaka nästa avläsning för att se om den någonsin konverterar.
+- **Batch #3:s 6 olaunchade briefer** (`PD_8_H1`, `FO_1_H1`, `ID_1_1`,
+  `BOF_4_1`, `BOF_5_1`, `BOF_6_1`): tre dagar gamla, syns fortfarande inte i
+  Meta. Produktionsflaskhalsen, inte ett brief-problem — flagga till
+  Axel/managern, bygg inte om dem.
+- **Drive-mapp för batch #4:** inte skapad denna körning (Notion-only-scope).
+  Skapa `Batch #4` i produktens befintliga Drive-mapp nästa gång Drive-flödet
+  körs, så brieferna får riktiga Drive-länkar i stället för "Not created
+  this round".
 
 (fylls vidare av `/koncept`)

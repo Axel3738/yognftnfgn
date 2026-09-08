@@ -1,5 +1,77 @@
 # Batch-logg — Damasker Vandring
 
+## Feedbackloop 2026-09-08 (`/cs`-runda nr 3, flaggad av `/rond-auto`: "3 dagar sedan senaste batchen")
+
+Kampanj kontrollerad ACTIVE före körning (`mcp__ADsmanagaer__ads_get_ad_entities`,
+`effective_status`). Hela kampanjen omhämtad på nytt, ad-nivå, `date_preset:
+maximum`, sorterad på spend, verifierade fältnamn. Datakvalitet ren:
+`amount_spent × purchase_roas` matchar `omni_purchase_values` inom
+rundningsfel på alla rader med köp — inget nytt 100×-fel.
+
+**Signifikansgrind:** bedömbara = `Damasker_PD_1` (8 509,16 kr, 46 köp) och
+`Damasker_SP_2` (1 064,24 kr, 4 köp). Resten (PD_2, SP_3, PD_2_1, SP_1, CS_1,
+PD_3, SP_4_H1, G/CS-svansen) för tidigt — se full tabell i `dna.md`.
+
+**Vinstbidrag (BE-ROAS 1,60):** PD_1 ≈+6 785 kr (≈113 % av kampanjens
+≈+5 997 kr totalt) — bär mer än hela vinsten för fjärde avläsningen i rad.
+**SP_2 regredierade under break-even** sedan 2026-09-05 (ROAS 1,84→1,46,
+vinstbidrag +127→−92 kr, 0 nya köp på 216 kr ny spend) — se rättelsen i
+`dna.md`: den preliminära "bekräftat lönsam"-domen höll inte.
+
+**Feedback på batch #3 (2026-09-05):** endast `Damasker_SP_4_H1` launchad
+(15,06 kr, 0 köp — för tidigt att döma specificitets-hypotesen).
+`Damasker_PD_8_H1`, `FO_1_H1`, `ID_1_1`, `BOF_4_1`, `BOF_5_1`, `BOF_6_1`
+syns fortfarande INTE i kontot 3 dagar efter leverans — samma
+produktionsflaskhals som batch #2, nu bekräftad en tredje gång.
+
+**Creative-teardown:** 3 mönster utpekade och kopplade till nästa batch, se
+`dna.md` (proof-typ PD vs SP; regression på preliminära domar; identisk copy
+i ny annons ger inte samma utfall — PD_2 fortsatt 0 köp på nu 464,72 kr).
+
+**Recension-koll omkörd** (WebFetch, 2026-09-08): fortsatt "No reviews" —
+0 review-bilder byggda denna batch, tredje identiska slutsats i rad.
+**Konkurrentbevakning omkörd** (Ad Library, 2026-09-08): fortfarande bara
+kontots egna 3 annonser i Sverige på "damasker vandring" — oförändrat.
+
+**Modellpolicy-avvikelse (samma som batch #2/#3):** inget Agent/Task-verktyg
+för att spawna en sonnet/haiku-subagent var tillgängligt i denna körning
+(kontrollerat via ToolSearch). All copy i denna batch är skriven av
+huvudsessionen själv. Tre-frågorstestet kört rad för rad i varje brief i
+Notion (se hubben, verifierat med `notion-fetch` på `Damasker_PD_9_H1`).
+
+## Batch #4 — 2026-09-08 (`/cs`, feedbackloop-baserad)
+4 briefer i rundan (3 video + 1 bild) + 3 BOF-bilder. 0 review-bilder (ingen
+recension finns, se ovan). Rundans storlek (4 + 3 BOF) given direkt av
+`/rond-auto` (produkten saknar egen rad i `products/products.json`, styrs via
+`agent/produktkarta.json`, samma mönster som batch #2/#3).
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| Damasker_PD_9_H1 | video | Ett negationshook ("Sluta gå hem med kalla, blöta fötter") isolerar HOOK-TYP medan PD:s bevisade fakta+format hålls konstant | vinnare PD_1, isolerar hook-typ (aldrig isolerad ensam tidigare — tidigare iterationer bytte proof/format samtidigt) |
+| Damasker_PD_10_H1 | video | Samma manus/fakta som PD_1 men levererat av en creator (UGC talking-head) i stället för röst utan ansikte isolerar TALARE | vinnare PD_1, isolerar talare (skiljer sig från UG_1_H1 i batch #2 som bytte format+copy samtidigt) |
+| Damasker_SP_5_H1 | video | SP:s testimonial-format med PD:s verifierbara fakta i stället för det vaga påståendet isolerar om PROOF eller FORMAT drev SP_2:s regression | SP_2:s regression denna körning, isolerar proof inom SP-formatet |
+| Damasker_PD_11_1 | bild | PD:s fyra bevisade fakta som ikon-rad + produktbild — aldrig testat i detta statiska format | vinnare PD_1, nytt bildformat (skiljer sig från PD_7_1:s flatlay-demo och LI_1_1:s checklista) |
+| Damasker_BOF_7_1 | bild (BOF) | Cart-reminder-vinkel ("Dina Damasker väntar fortfarande på 389 kr") stänger retargeting-trafik som redan sett priset | ny BOF-vinkel: pris/erbjudande riktat mot varm trafik, inte förstagångsavslöjande som CS_5_1 |
+| Damasker_BOF_8_1 | bild (BOF) | Riskfri-badgerad ikonrad (öppet köp/Klarna/frakt) som snabbläst format stänger fler än BOF_2/BOF_6:s textkort | ny BOF-vinkel: garanti/frakt i badge-format i stället för textkort |
+| Damasker_BOF_9_1 | bild (BOF) | Jämförelse mot dyra vandringskängor adresserar en ny invändning ("varför inte bara köpa bättre kängor?") som ingen tidigare BOF täcker | formatöverföring av CO_1_H1:s videovinkel till en ny BOF-invändning |
+
+**Naming:** `PD_9/PD_10/PD_11` och `SP_5` fortsätter kontots löpnummer
+(kontrollerat mot Meta-svaret och Notion-hubben — högsta befintliga var PD_8,
+SP_4, ingen kollision). `BOF_7/8/9` fortsätter batch #2/#3:s BOF-numrering.
+
+**Levererat 2026-09-08:**
+- Notion: 7 nya items i "Damasker vandring"-hubben
+  (https://app.notion.com/p/3cf270ab908c81a09b0dc486f6467ce7), Typ
+  "Video - Pending Approval" (3) / "Image - Pending Approval" (4), Status
+  Draft, hela briefen i sidan (verifierat med `notion-fetch` på
+  `Damasker_PD_9_H1`).
+- Drive: INTE skapad denna körning — uppdraget för denna specifika `/cs`-runda
+  avgränsade leveransen till Notion + repo, ingen Drive-mapp begärd. Flaggas
+  här så nästa körning vet att Drive-länkarna i brieferna pekar mot "Not
+  created this round" och kan skapas retroaktivt om redigerarna behöver det.
+- `products/damasker-vandring/dna.md` och `batch-log.md` uppdaterade och
+  pushade till `claude/daily-agent-discussion-uos5df`.
+
 ## Batch #1 — originaladsen (launch 2026-08-29, före OS:et)
 16 annonser i kampanjen (PD/SP/CS/G-serier, en enda annonsgrupp). Utfall
 t.o.m. 2026-09-02 (livstid): 3 440 kr spend, 16 köp, ROAS 2,71 mot break-even

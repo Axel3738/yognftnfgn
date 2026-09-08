@@ -1,5 +1,57 @@
 # Creative DNA — Damasker Vandring
 
+## Uppdatering 2026-09-08 (`/cs`-feedbackloop, körning nr 3, `/rond-auto`: "3 dagar sedan senaste batchen")
+
+Kampanj kontrollerad ACTIVE (dagsbudget-fältet inte rört av denna körning).
+Hela kampanjen omhämtad (`date_preset: maximum`, ad-nivå, sorterad på spend).
+Lifetime nu: **10 998,53 kr spend, 53 köp, kampanj-ROAS ≈2,47, totalt
+vinstbidrag ≈+5 997 kr** (BE-ROAS 1,60). Datakvalitet ren: `amount_spent ×
+purchase_roas` matchar `omni_purchase_values` inom rundningsfel på alla rader
+med köp (PD_1, SP_2, SP_3, PD_2_1, PD_3) — inget nytt 100×-fel.
+
+**⚠️ VIKTIG RÄTTELSE — SP_2:s "bekräftat lönsam"-dom från 2026-09-05 höll
+inte.** Den var uttryckligen märkt preliminär (ANALYSMETOD steg 2c, endast 4
+köp) och skulle överleva denna körning för att skrivas in i Winning DNA. Den
+gjorde inte det: SP_2 fick 216,50 kr mer spend (847,74 → 1 064,24 kr) utan en
+enda ny köp — samma 4 köp som förut. ROAS föll från 1,84 till **1,46 — under
+break-even 1,60.** Vinstbidrag nu **−92 kr** (var +127 kr). Detta är precis
+det regressionsmönster ANALYSMETOD steg 5 varnar för: tidig framgång på låg
+spend regredierar när algoritmen ger den mer trafik. SP-vinkeln flyttas
+tillbaka till Losing/rotorsaker nedan — INTE bevisad lönsam.
+
+**PD_1 fortsätter dominera obestritt.** Nu 46 köp (var 34), CPA 184,98 kr,
+ROAS 2,88, 8 509,16 kr spend (77,4 % av kampanjens spend). Vinstbidrag
+≈+6 785 kr — **mer än 100 % av kampanjens totala vinst** (samma mönster som
+tidigare körningar, nu på fyra på varandra följande avläsningar).
+
+**PD_2 (identisk copy som PD_1, annan annons) fortsätter växa negativt utan
+köp:** 464,72 kr spend, fortfarande 0 köp (var 369,25 kr/0 köp 2026-09-05).
+Identisk copy garanterar alltså INTE identiskt utfall — stärker hypotesen att
+placering/adset-tilldelning, inte bara creativen, avgör utfallet (se mönster
+3 i teardownet).
+
+**Batch #3:s briefer (2026-09-05) — produktionsflaskhalsen är nu bekräftad
+tredje gången:** endast `Damasker_SP_4_H1` har launchats i Meta (15,06 kr
+spend, 0 köp — långt under signifikansgrinden, ingen dom möjlig på
+specificitets-hypotesen ännu). `PD_8_H1`, `FO_1_H1`, `ID_1_1`, `BOF_4_1`,
+`BOF_5_1`, `BOF_6_1` syns fortfarande INTE i kontot 3 dagar efter leverans.
+Samma mönster som batch #2 (18 briefer, fortfarande olaunchade vid
+2026-09-05-avläsningen). Flaggas till Axel/managern igen — detta är nu den
+faktiska flaskhalsen, inte briefkvoten.
+
+**Recension-koll omkörd** (WebFetch, 2026-09-08): fortsatt "No reviews" —
+ingen review-static byggd denna runda heller, tredje gången samma slutsats.
+
+**Konkurrentbevakning omkörd** (Ad Library, 2026-09-08): fortfarande bara
+kontots egna 3 annonser på "damasker vandring" i Sverige — obevakad nisch,
+oförändrat sedan 2026-09-02.
+
+**Batch #4 levererad denna körning** (7 briefer: 3 video + 1 bild i rundan +
+3 BOF-bilder, 0 review). Se `batch-log.md` för fullständig tabell och
+hypoteser, och creative-teardownet nedan för de 3 nya mönstren som styr den.
+
+---
+
 ## Uppdatering 2026-09-05 (`/cs`-feedbackloop, körning nr 2)
 Kampanjen omhämtad (`date_preset: maximum`, sorterad på spend). Lifetime nu:
 7 570 kr spend, 40 köp, ROAS 2,71 (kampanjnivå), dagsbudget oförändrad 1 200 kr.
@@ -83,33 +135,68 @@ i stället för en påhittad/overifierad testimonial-static byggdes
 **Om Axel kan bekräfta att recensionerna i sheetet är riktiga och importera
 dem till Judge.me: nästa batch kan bygga en äkta review-static.**
 
-## Siffrorna (bedömbara annonser, ≥300 kr + ≥3 köp; BE-ROAS 1,60)
+## Siffrorna 2026-09-08 (bedömbara annonser, ≥300 kr + ≥3 köp; BE-ROAS 1,60)
 
-| Annons | Format | Vinkel | Spend | Andel spend | Köp | CPA | ROAS | **Vinstbidrag*** |
-|---|---|---|---|---|---|---|---|---|
-| **Damasker_PD_1** (benchmark/top spender) | video | demo/problem | 2 162 kr | 62,8 % | **14** | 154 kr | **3,96** | **≈+3 187 kr** |
+| Annons | Format | Vinkel | Spend | Andel spend | Köp | CPA | ROAS | **Vinstbidrag*** | Andel vinst |
+|---|---|---|---|---|---|---|---|---|---|
+| **Damasker_PD_1** (benchmark/top spender) | video | demo/problem | 8 509,16 kr | 77,4 % | **46** | 184,98 kr | **2,88** | **≈+6 785 kr** | ≈113 % |
+| Damasker_SP_2 | video | social proof/testimonial | 1 064,24 kr | 9,7 % | 4 | 266,06 kr | **1,46** | **−92 kr** | ≈−2 % |
 
 *Vinstbidrag = intäkt/1,60 − spend (ROAS-baserad, AOV-oberoende — se
-ANALYSMETOD steg 4). Kampanjens totala vinstbidrag är **≈+2 396 kr**; PD_1
-ensam bidrar med ≈3 187 kr — **mer än 100 % av kampanjens totala vinst**,
-vilket betyder att resten av kontot (SP/CS/G-svansen) tillsammans är en
-nettoförlust som PD_1 täcker upp för. PD_1 bär 14 av 16 köp (87,5 %).
+ANALYSMETOD steg 4). Kampanjens totala vinstbidrag är **≈+5 997 kr**; PD_1
+ensam bidrar med ≈6 785 kr — **mer än 100 % av kampanjens totala vinst för
+fjärde avläsningen i rad**, vilket betyder att resten av kontot är en
+nettoförlust som PD_1 täcker upp för. PD_1 bär 46 av 53 köp (87 %).
+
+**⚠️ SP_2 gick UNDER break-even sedan förra avläsningen** (var ROAS 1,84/+127
+kr på 847,74 kr spend 2026-09-05). Den preliminära domen "bekräftat lönsam"
+höll inte — se rättelsen högst upp i filen. Bytt hög: SP_2 räknas nu som
+bedömbar men OLÖNSAM, inte längre preliminärt lönsam.
 
 **För tidigt (ingen dom, redovisas ändå för mönstret):**
 
 | Annons | Format | Vinkel | Spend | Köp | ROAS | Vinstbidrag | Kommentar |
 |---|---|---|---|---|---|---|---|
-| Damasker_SP_2 | video | social proof/testimonial | 438 kr | 1 | 0,89 | −195 kr | Under BE men <3 köp — kan inte dömas än |
-| Damasker_SP_3 | video | social proof/testimonial (samma copy) | 340 kr | 1 | 1,14 | −97 kr | Samma mönster som SP_2 |
-| Damasker_PD_2 | video | demo/problem (samma copy som PD_1) | 247 kr | 0 | – | −247 kr | Precis under tröskeln, bevakas |
-| Damasker_CS_1 | video | äkta rabatt 40 % | 44 kr | 0 | – | −44 kr | Högst CTR i svansen (4,59 %) men för lite spend |
-| Damasker_PD_3, SP_1, CS_2/3/2_1, G_1/2/3/2_1, PD_2_1 | – | – | 0–42 kr vardera | 0 | – | – | CBO-svält, aldrig fått en chans (≈187 kr totalt) |
+| Damasker_PD_2 | video | demo/problem (samma copy som PD_1) | 464,72 kr | 0 | – | −465 kr | Växer negativt utan köp, samma copy som vinnaren — se mönster 3 |
+| Damasker_SP_3 | video | social proof/testimonial (samma copy) | 405,34 kr | 1 | 0,96 | −162 kr | Samma svaghet som SP_2 |
+| Damasker_PD_2_1 | video | demo/problem | 198,85 kr | 1 | 1,96 | +44 kr | Under tröskeln (<300 kr) |
+| Damasker_SP_1 | video | social proof/testimonial | 105,85 kr | 0 | – | −106 kr | CBO-svält |
+| Damasker_CS_1 | video | äkta rabatt 40 % | 100,49 kr | 0 | – | −100 kr | CBO-svält |
+| Damasker_PD_3 | video | demo/problem | 62,89 kr | 1 | 6,19 | +180 kr | För lite spend för dom |
+| Damasker_SP_4_H1 (batch #3) | video | social proof, specificitetstest | 15,06 kr | 0 | – | −15 kr | Precis launchad, ingen dom möjlig |
+| Damasker_G_2_1, SP_2_1, CS_2_1/3/2, G_3/2/1 | – | – | 0,35–27,71 kr vardera | 0 | – | – | CBO-svält, aldrig fått en chans (≈63 kr totalt) |
+
+## Creative-teardown 2026-09-08 (variabeltabell, ANALYSMETOD steg 6b)
+
+Ingen ny bedömbar annons denna körning (PD_1 och SP_2 var redan granskade
+2026-09-05) — teardownet nedan bygger på den bekräftade regressionen och
+PD_2:s nollresultat, som är NY data denna körning.
+
+| Variabelvärde | Antal annonser | Total spend | Vinstbidrag | Slutsats |
+|---|---|---|---|---|
+| Proof: konkreta verifierbara fakta (PD:s 4 punkter) | 1 (PD_1) | 8 509 kr | +6 785 kr | **Bevisad** (46 köp) — bär mer än hela kampanjens vinst |
+| Proof: vagt/obestyrkt påstående ("älskade av tusentals vandrare", SP) | 2 (SP_2, SP_3) | 1 470 kr | −254 kr | **Bevisad** (SP_2 4 köp, regredierade under break-even när spend ökade) — vagt proof konverterar inte i skala |
+| Identisk copy, ny annons-instans (PD_2 = PD_1:s manus, ny placering) | 1 (PD_2) | 465 kr | −465 kr | **Hypotes** (0 köp, under köpgränsen) — creativen förklarar inte hela utfallet, sannolikt placering/adset-tilldelning |
+
+**Tre mönster, översatta till brief-instruktioner:**
+1. **Bevisad — konkreta fakta slår vagt proof i skala.** PD_1:s fyra fakta
+   (46 köp) mot SP:s vaga påstående (SP_2 nu −92 kr efter regression).
+   → Instruktion: `Damasker_SP_5_H1` (denna batch) behåller SP:s
+   testimonial-format men byter det vaga påståendet mot PD:s verifierbara
+   fakta — isolerar om PROOF eller FORMAT var SP:s svaghet.
+2. **Bevisad — domar på 3–4 köp regredierar och ska inte skrivas in som
+   bevisade förrän de överlever en andra avläsning** (ANALYSMETOD steg 2c,
+   2/5). SP_2 är levande bevis: +127 kr → −92 kr på 216 kr mer spend, 0 nya
+   köp. → Instruktion: ingen ny annons byggd på en enda preliminär avläsning
+   framöver utan att vänta på bekräftelse.
+3. **Hypotes — samma copy i en annan annons/adset ger inte samma utfall**
+   (PD_2: 0 köp på 465 kr, identisk copy som PD_1). → Instruktion: vid
+   iteration på PD_1, ändra alltid minst en synlig variabel (hook-typ,
+   talare) i stället för att klona rakt av — annars går det inte att skilja
+   creative-effekt från serveringseffekt. `PD_9_H1` (hook-typ) och `PD_10_H1`
+   (talare) i denna batch isolerar just detta, en variabel i taget.
 
 ## Winning DNA
-0. **(2026-09-05) SP (social proof) är inte längre "obevisad/svag" — den är
-   bekräftat lönsam men svagare än PD** (SP_2: 4 köp, ROAS 1,84, se
-   uppdateringen ovan). Nästa avläsning avgör om `Damasker_SP_4_H1`:s
-   specifika/falsifierbara scenario stänger gapet till PD eller inte.
 1. **PD (demo/problem)-vinkeln är produktens bevisade angle** — inte SP
    (social proof), vilket är motsatsen till mönstret hos Kranskydd Frost
    420D (där SP vann). **Varje produkt har sin egen vinnare — vinklar
@@ -125,15 +212,19 @@ nettoförlust som PD_1 täcker upp för. PD_1 bär 14 av 16 köp (87,5 %).
    opreciserat påstående som inte klarar tre-frågorstestets
    falsifierbarhets-fråga lika bra — matchar den svagare ROAS:en.
 
-## Losing/rotorsaker (hypotes, ej bevisad — för lite data per enskild annons)
-- **SP (social proof/testimonial) har ok CTR (2,3–3,2 %) men svag ROAS och
-  högre CPM än PD.** Hypotes: "tusentals vandrare"-påståendet är
+## Losing/rotorsaker
+- **SP (social proof/testimonial) är BEVISAD svagare än PD, inte längre en
+  öppen fråga.** 2026-09-05 passerade SP_2 signifikansgrinden preliminärt
+  (4 köp, ROAS 1,84, +127 kr) — men den domen var uttryckligen preliminär
+  (ANALYSMETOD steg 2c) och höll inte: 2026-09-08 hade SP_2 fått 216 kr mer
+  spend utan en enda ny köp, ROAS föll till 1,46 — under break-even 1,60,
+  vinstbidrag −92 kr. Hypotesen om att "tusentals vandrare"-påståendet är
   ospecificerat och obestyrkt (ingen riktig recension finns att luta det
-  emot, se datakvalitet ovan) — annonsen lovar bekräftelse men levererar
-  ingen konkret bekräftelse. Isolerad variabel att testa: byt det vaga
-  social-proof-löftet mot PD:s verifierbara fakta i samma format (se
-  `Damasker_HL_1_1` i denna batch — en ärlig produktlöftes-static i stället
-  för en påhittad kundröst).
+  emot) står kvar och är nu bevisad av regressionen, inte bara en gissning.
+  Isolerad variabel som testas nu: `Damasker_SP_5_H1` (denna batch) byter
+  det vaga social-proof-löftet mot PD:s verifierbara fakta i SP:s
+  testimonial-format — svarar på om PROOF eller FORMAT var SP:s svaghet.
+  `Damasker_HL_1_1` (batch #2, ej launchad ännu) gör samma sak som static.
 - **G (gåva/present) fick i praktiken ingen spend** (4 annonser, ≈14 kr av
   3 440 kr totalt). För lite data för att döma copyn — matchar mer troligt
   samma CBO-svält-mönster som setts hos andra produkter (Kranskydd, IBC)
