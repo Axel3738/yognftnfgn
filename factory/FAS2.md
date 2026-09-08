@@ -173,25 +173,58 @@ i Bäverbutikens rutiner. Det enda riktiga skyddet i dag är prefixkartan ur Mag
 (`leveranskon.mjs` rad 175) — **och det skyddet brister för OPS, eftersom OPS-butiken
 säljer samma produkt som Bäverbutiken.**
 
-**Bygg:**
-1. Ett **hubbregister** som binder hub → butik → teamspace → annonskonto → sida/pixel →
-   prefix → landningssida. I dag ligger kopplingarna utspridda i `products/products.json`
-   (4 hubbar), `commission/hubbar.json` (18), `products/prefix-alias.json` och
-   `market-expansion/*/produkter.json` — ingen bär annonskonto per hub.
-   `commission/hubbar.json` har redan `{ id, namn, verksamhet, marknad }` — utöka den.
-2. **Kontoparametrisering** av `tools/notion-till-meta.mjs` (rad 39 hårdkodar
-   `BAVERBUTIKEN_ACT`, rad 157 och 297 dödar körningen) och `tools/leveranskon.mjs`
-   (rad 90, 96–100, 115). Riv aldrig spärren — byt den mot "kontot som butikens
-   hubbregister anger".
-3. **Commission för OPS.** `915422744950975` står i `UTLANDSKA_KONTON`
-   (`commission/berakning.mjs` rad 35) — all OPS-spend ger 0 kr i dag. Raden kan inte
-   bara tas bort: Bäverbutikens danska annonser ligger i samma konto, och de ska
-   fortsatt vara utan commission (Axels beslut 2026-08-31). Filtret måste bli
-   per brandprefix, inte per konto.
+**Bygg:** ✅ **KLART 2026-09-08.** Alla tre punkterna nedan är byggda. Kvar i
+uppdraget: fallgroparna längst ned, och kön-frågan (`SE-ACTIVE to be translated`).
+
+1. ✅ Ett **hubbregister** som binder hub → butik → teamspace → annonskonto →
+   sida/pixel → prefix → landningssida. Ligger i `commission/hubbar.json`
+   (nytt `butiker`-block + `butik`/`prefix` per hub) och läses av
+   `tools/hubbregister.mjs`. Nio butiker över fyra verksamheter; prefixen från
+   `products.json` och `prefix-alias.json` läggs på automatiskt, så de fyra
+   skalningsprodukterna aldrig skrivs två gånger. **Samma prefix på två butiker
+   är ett avbrott**, aldrig en gissning — då går det inte att veta vilket konto
+   en leverans hör hemma i. Ett prefix i ett DELAT konto härleds aldrig ur
+   kontot: det måste stå explicit på butiken.
+2. ✅ **Kontoparametrisering** av `tools/notion-till-meta.mjs` och
+   `tools/leveranskon.mjs`. Båda tar `--butik <id>` och läser kontot ur
+   registret; utan flaggan är butiken `baverbutiken` = MagiBorsten
+   `1867947880635861`, exakt som förut. Spärrarna är inte rivna utan flyttade,
+   och två nya kom till: annonsnamnets prefix får inte höra till en annan butik
+   (`notion-till-meta`), och rader ur en hub som registret ger en annan butik
+   plockas ur kön och rapporteras med vilket kommando som hämtar dem
+   (`leveranskon`). Hubbar som inte står i registret körs som standardbutiken
+   och listas — "Damasker vandring" är en sådan i dag.
+3. ✅ **Commission per brandprefix** (`bedomCommission` i
+   `commission/berakning.mjs`). `UTLANDSKA_KONTON` står kvar oförändrad och är
+   fortfarande sista ordet; prefixet går före men bara när butiken det pekar på
+   kör i annonsens EGET konto. Bäverbutikens danska annonser i `915422744950975`
+   faller därför fortfarande igenom till kontospärren och ger noll, medan
+   `HeimGuard_…` i samma konto ger commission. Marknadskod i namnet
+   diskvalificerar alltid — även `HeimGuard_NO_…`, tills Axel svarat på
+   beslutsfråga 1 i uppdrag F. Verifierat mot 1 364 riktiga annonser med spend
+   (2026-09-01–08): **identisk dom som kontofiltret gav**, noll ändrade.
+   Rapporten skriver ut varför varje bortfiltrerad annons föll bort, och vilken
+   butik som räknas med via prefix trots spärrat konto.
+
+⚠️ **En ny OPS-butik ger 0 kr i commission tills den står i registret**, och
+dess leveranser hamnar i standardbutikens kö. Registrera butiken (konto, prefix,
+`commission`) i samma session som den byggs.
+
+**Kvar att göra (registret finns nu, användarna saknas):**
+- `tools/notion-till-marknad.mjs` och `/oversatt` slår fortfarande upp annonsnamnet
+  i MagiBorsten SE. En OPS-rad i kön `SE-ACTIVE to be translated` rapporteras därför
+  som "inte uppe i Sverige". Registret kan svara på frågan — koppla in det, eller
+  bestäm en egen kö för OPS-rader.
+- `.claude/commands/cs.md` rad 25 och `market-expansion/marknader.json` hårdkodar
+  fortfarande konton. Samma register gäller där.
 
 **Fallgropar:**
 - ⚠️ Notion-åtkomst ges per sida. Ärvd behörighet från Bäverbutikens teamspace-toppsida
   **följer inte med** när databasen flyttas. Resultat: 404 = "inte inbjuden".
+- ⚠️ Titelregeln "… creative hub" missar hubbar. `Damasker vandring`
+  (`3cf270ab-908c-81a0-9b0d-c486f6467ce7`) har 32 rader varav 10 med Ansvarig och
+  hittades aldrig av sökningen — den står i registret sedan 2026-09-08. Dyker en
+  hub upp i `leveranskon.mjs` rad "står inte i hubbregistret": skriv in den.
 - ⚠️ `commission/run.mjs` (rad 227–233) **avbryter hela körningen** om en känd hub inte
   gick att läsa. `IBC Tank Cover creative hub` står i `hubbar.json` som Bäverbutiken —
   flyttas den utan att registret uppdateras dör commission-rutinen.

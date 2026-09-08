@@ -143,8 +143,21 @@ gjord av någon oavsett var i flödet den står. *(Incident 2026-08-31: filtret
 produktion, som ligger som `Video - Approved`. Rapporten blev 33,74 kr i stället
 för drygt 2 200 kr, och tre av fem redigerare fick noll.)*
 
-⚠️ **Hubbarna står i `commission/hubbar.json`** — 12 svenska över tre
-verksamheter. En sökning i Bäverbutikens teamspace hittar bara 2 av dem.
+⚠️ **Hubbarna står i `commission/hubbar.json`** — 18 svenska över tre
+verksamheter per 2026-09-08 (räkna i filen, citera aldrig siffran ur en text).
+En sökning i Bäverbutikens teamspace hittar bara 2 av dem, och titelregeln
+"… creative hub" missar dem som heter något annat (`Damasker vandring` har
+32 rader, 10 med Ansvarig — läst 2026-09-08).
+
+⚠️ **Samma fil är hubbregistret** (`butiker`-blocket, läst av
+`tools/hubbregister.mjs`): hub → butik → teamspace → annonskonto → sida/pixel →
+prefix → landningssida. Filtret "endast svenska annonser" går sedan 2026-09-08
+på **brandprefix**, inte på konto: OPS-fabrikens butiker och Bäverbutikens
+danska annonser ligger i samma konto `915422744950975`. En annons räknas när
+dess prefix hör till en butik i annonsens eget konto och butiken har
+`commission: true`; i övrigt gäller kontolistan `UTLANDSKA_KONTON` oförändrad.
+Marknadskod i annonsnamnet diskvalificerar alltid — även för en OPS-butik.
+En ny OPS-butik ger alltså **0 kr tills den står i registret**.
 
 ## Steg 1 — Läs raderna ur alla hubbar (MCP-vägen)
 

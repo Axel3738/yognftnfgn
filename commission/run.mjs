@@ -16,10 +16,11 @@
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
-import { berakna, arSvensk, SATS, arKordag, period, UTLANDSKA_KONTON } from './berakning.mjs';
+import { berakna, bedomCommission, SATS, arKordag, period, UTLANDSKA_KONTON } from './berakning.mjs';
 import { hamtaAllSpend } from './meta.mjs';
 import * as Notion from './notion.mjs';
 import { byggHubbregister, kopplaAnnons } from './koppling.mjs';
+import { laddaRegister } from '../tools/hubbregister.mjs';
 import { uppdateraLeaderboard, skrivTerminal as skrivLeaderboard } from './leaderboard.mjs';
 
 const ROT = resolve(new URL('..', import.meta.url).pathname);
@@ -82,6 +83,13 @@ function skrivRapport(r, kallor) {
     rad.push(`**Endast svenska annonser räknas.** ${kallor.bortfiltrerat} annonser `
       + `(${kallor.bortfiltreradSpend.toFixed(2)} SEK) filtrerades bort: utländska marknadskonton `
       + `(${[...UTLANDSKA_KONTON.values()].join(', ')}) och annonser med marknadskod i namnet.`);
+    for (const [skal, x] of Object.entries(kallor.bortfiltreratSkal ?? {})) {
+      rad.push(`- ${skal}: ${x.antal} annonser, ${x.spend.toFixed(2)}`);
+    }
+    for (const b of Object.values(kallor.viaPrefix ?? {})) {
+      rad.push(`- **${b.namn}** räknas MED via sitt brandprefix trots att konto ${b.konto} `
+        + `är spärrat: ${b.antal} annonser, ${b.spend.toFixed(2)}. Butiken delar konto med en marknad.`);
+    }
   }
   if (!kallor.teamspaceVerifierad) {
     rad.push('');
@@ -170,6 +178,9 @@ function skrivTerminal(r, kallor) {
   const p = r.period;
   console.log(`\nCommission ${p.manad}  ·  ${p.fran} – ${p.till}${p.heltMatad ? '  (SLUTAVRÄKNING)' : '  (månaden hittills)'}`);
   if (kallor.svenskaBara) console.log(`Endast svenska annonser — ${kallor.bortfiltrerat} utländska annonser (${kallor.bortfiltreradSpend.toFixed(0)} SEK) borträknade.`);
+  for (const b of Object.values(kallor.viaPrefix ?? {})) {
+    console.log(`  + ${b.namn}: ${b.antal} annonser (${b.spend.toFixed(0)}) räknas via brandprefix i det delade kontot ${b.konto}.`);
+  }
   console.log(`${(r.sats * 100).toFixed(1).replace('.', ',')} % av spenden · ${r.godkandaRader} godkända rader · ${kallor.konton.length} annonskonton\n`);
   if (!r.redigerare.length) console.log('  (ingen redigerare med spend i perioden)');
   for (const e of r.redigerare) {
@@ -242,11 +253,32 @@ async function main() {
   const { konton, annonser: allaAnnonser, fel: metaFel } = await hamtaAllSpend({ fran: p.fran, till: p.till });
 
   // Bara svenska annonser ger commission. --alla-marknader stänger av filtret.
+  // Filtret går på BRANDPREFIX via hubbregistret, inte på konto: OPS-butikerna
+  // och Bäverbutikens danska annonser delar konto 915422744950975.
+  const hubbregister = laddaRegister();
   const svenskaBara = !finns('alla-marknader');
-  const annonser = svenskaBara ? allaAnnonser.filter(arSvensk) : allaAnnonser;
-  const bortfiltrerat = allaAnnonser.length - annonser.length;
-  const bortfiltreradSpend = allaAnnonser.filter((a) => !annonser.includes(a))
-    .reduce((s, a) => s + a.spend, 0);
+  const domar = new Map(allaAnnonser.map((a) => [a, bedomCommission(a, hubbregister)]));
+  const annonser = svenskaBara ? allaAnnonser.filter((a) => domar.get(a).ger) : allaAnnonser;
+  const bortsorterade = svenskaBara ? allaAnnonser.filter((a) => !domar.get(a).ger) : [];
+  const bortfiltrerat = bortsorterade.length;
+  const bortfiltreradSpend = bortsorterade.reduce((s, a) => s + a.spend, 0);
+  // Varför de föll bort, grupperat. En rad "N annonser filtrerades bort" utan
+  // skäl går inte att kontrollera — och det är utbetalningar det handlar om.
+  const bortfiltreratSkal = {};
+  for (const a of bortsorterade) {
+    const s = domar.get(a).skal;
+    (bortfiltreratSkal[s] ??= { antal: 0, spend: 0 }).antal++;
+    bortfiltreratSkal[s].spend += a.spend;
+  }
+  // Butiker vars spend kom med tack vare prefixet, trots spärrat konto.
+  const viaPrefix = {};
+  for (const a of annonser) {
+    const b = domar.get(a)?.butik;
+    if (b && UTLANDSKA_KONTON.has(String(b.annonskonto))) {
+      (viaPrefix[b.id] ??= { namn: b.namn, konto: b.annonskonto, antal: 0, spend: 0 }).antal++;
+      viaPrefix[b.id].spend += a.spend;
+    }
+  }
 
   // Kopplingen: hubbrad per annons (båda namnsystemen), produkt som reserv.
   const { produkter } = JSON.parse(readFileSync(`${ROT}/commission/produkter.json`, 'utf8'));
@@ -272,7 +304,7 @@ async function main() {
   }
 
   const kallor = { hubbar, konton, teamspaceVerifierad, svenskaBara, bortfiltrerat, bortfiltreradSpend,
-    fel: [...notionFel, ...metaFel] };
+    bortfiltreratSkal, viaPrefix, fel: [...notionFel, ...metaFel] };
 
   if (finns('json')) {
     console.log(JSON.stringify({ ...rapport, kallor }, null, 2));

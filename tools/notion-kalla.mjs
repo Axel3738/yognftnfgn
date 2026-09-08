@@ -202,8 +202,11 @@ export async function klaraRader(hub, val = {}) {
       .map(([, v]) => värde(v).match(/https?:\/\/[^\s)\]]+/)?.[0])
       .find(Boolean) ?? null;
 
+    // hubId följer med raden: hubbregistret (tools/hubbregister.mjs) slår upp
+    // butiken på id i första hand och på titel i andra — titlar döps om.
     ut.push({ id: s.id, namn, status, typ, filer, drive, leverans, url: s.url, landning,
-              skapad: s.created_time, redigerad: s.last_edited_time, hub: hub.titel });
+              skapad: s.created_time, redigerad: s.last_edited_time,
+              hub: hub.titel, hubId: hub.id });
   }
   return ut;
 }

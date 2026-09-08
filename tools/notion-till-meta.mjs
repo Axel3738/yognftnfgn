@@ -1,17 +1,22 @@
 #!/usr/bin/env node
 // notion-till-meta.mjs — laddar upp EN godkänd creative från redigerarna till
-// produktens aktiva kampanj i MagiBorsten. Används av /notionkorning.
+// produktens aktiva kampanj i butikens annonskonto. Används av /notionkorning.
 //
 //   node tools/notion-till-meta.mjs --produkt <id> --namn <annonsnamn> --fil <sökväg>
 //        --primar "..." --rubrik "..." [--beskrivning "..."] [--lank <url>]
-//        [--koncept <kod>] [--aktivera] [--torr]
+//        [--koncept <kod>] [--butik <id>] [--aktivera] [--torr]
 //
 //   node tools/notion-till-meta.mjs --lista --produkt <id>     visa kampanjens adsets/annonser
 //
 // Kräver env: META_ACCESS_TOKEN (ads_management + ads_read).
 //
 // SPÄRRAR SOM INTE GÅR ATT FLAGGA BORT:
-//  1. Endast MagiBorsten 1867947880635861 (Bäverbutiken). Fel konto = avbryt.
+//  1. Endast butikens eget annonskonto, hämtat ur hubbregistret
+//     (commission/hubbar.json via tools/hubbregister.mjs). Utan --butik är det
+//     baverbutiken = MagiBorsten 1867947880635861, precis som förut. Fel konto
+//     = avbryt. Bär annonsnamnet ett prefix som hör till en ANNAN butik avbryts
+//     körningen också — OPS-butikerna säljer samma produkter som Bäverbutiken,
+//     och prefixet är det enda som skiljer dem åt i ett delat konto.
 //     Sidan och pixeln ärvs alltid från kampanjen — kopieras aldrig in för hand.
 //  2. Allt skapas PAUSED. --aktivera slar pa annonsen och det adset korningen SJALV
 //     skapade — aldrig ett befintligt adset eller en befintlig kampanj, oavsett spend.
@@ -23,6 +28,7 @@
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { basename, extname, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { laddaRegister, prefixAvAnnons, STANDARDBUTIK } from './hubbregister.mjs';
 
 // Utan detta går fetch() rakt ut förbi miljöns agentproxy och Metas Graph-API
 // slår i ett delat per-IP-tak nästan direkt ("User request limit reached"
@@ -36,7 +42,6 @@ if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
 
 const API = `https://graph.facebook.com/${process.env.META_API_VERSION || 'v23.0'}`;
 const TOKEN = process.env.META_ACCESS_TOKEN;
-const BAVERBUTIKEN_ACT = '1867947880635861';   // MagiBorsten (SEK) — enda tillåtna kontot
 const ROT = new URL('..', import.meta.url).pathname;
 
 // Meta pensionerade den samlade "standard_enhancements"-flaggan (400 Invalid
@@ -149,16 +154,43 @@ async function spend(id) {
 
 // ------------------------------------------------------------- Produkten
 
-function laddaProdukt(id) {
+function laddaProdukt(id, butik) {
   const fil = resolve(ROT, 'products/products.json');
   const { products } = JSON.parse(readFileSync(fil, 'utf8'));
   const p = products.find(x => x.id === id);
   if (!p) dö(`Okänd produkt "${id}". Finns: ${products.map(x => x.id).join(', ')}`);
-  if (p.ad_account_id !== BAVERBUTIKEN_ACT) {
-    dö(`${id} pekar på konto ${p.ad_account_id}, inte Bäverbutikens ${BAVERBUTIKEN_ACT}. Avbryter — fel annonskonto kostar riktiga pengar.`);
+  if (String(p.ad_account_id) !== String(butik.annonskonto)) {
+    dö(`${id} pekar på konto ${p.ad_account_id}, inte ${butik.namn}s ${butik.annonskonto}. Avbryter — fel annonskonto kostar riktiga pengar.`);
   }
   if (!p.campaign_ids?.length) dö(`${id} saknar campaign_ids i products.json — ingen kampanj att ladda upp i.`);
   return p;
+}
+
+/** Butiken körningen jobbar mot. Utan --butik: standardbutiken, samma konto som
+ *  före hubbregistret. Spärren är inte borttagen — den läses ur registret. */
+function väljButik() {
+  const reg = laddaRegister(ROT);
+  const vald = flagga('butik', STANDARDBUTIK);
+  let butik;
+  try {
+    butik = reg.butik(vald);
+  } catch (e) {
+    dö(`${e.message}\n   Butiken styr vilket annonskonto uppladdningen får röra — den gissas aldrig.`);
+  }
+  return { reg, butik };
+}
+
+/** Annonsnamnets prefix får aldrig peka på en annan butik än den valda.
+ *  OPS-butikerna säljer samma produkter som Bäverbutiken och delar konto med
+ *  Bäverbutikens danska annonser — prefixet är det enda som skiljer dem åt. */
+function kontrolleraPrefix(namn, butik, reg) {
+  const pfx = prefixAvAnnons(namn);
+  const ägare = pfx ? reg.butikForPrefix(pfx) : null;
+  if (ägare && ägare.id !== butik.id) {
+    dö(`Annonsnamnet "${namn}" bär prefixet "${pfx}", som hör till butiken ${ägare.id} `
+     + `(${ägare.namn}, konto ${ägare.annonskonto}) — inte ${butik.id} (konto ${butik.annonskonto}).\n`
+     + `   Avbryter. Kör om med --butik ${ägare.id} om creativen hör hemma där.`);
+  }
 }
 
 /** Konceptkoden ur annonsnamnet: Enginecover_SP_6_H1 → "SP", Kranskydd_CI_1_1 → "CI".
@@ -285,18 +317,20 @@ async function main() {
   const kampanjFlagga = flagga('kampanj');
   if (!produktId && !kampanjFlagga) dö('Ange --produkt <id> eller --kampanj <kampanj-id>.');
 
+  const { reg, butik } = väljButik();
+
   // Nya produkter dyker upp standigt i Baverbutiken och star inte i products.json.
   // Da anges kampanjen direkt — leveranskon.mjs har redan hittat ratt kampanj ur
-  // kontot. Kontokontrollen gors anda: kampanjen maste ligga i MagiBorsten.
+  // kontot. Kontokontrollen gors anda: kampanjen maste ligga i butikens konto.
   let produkt;
   if (produktId) {
-    produkt = laddaProdukt(produktId);
+    produkt = laddaProdukt(produktId, butik);
   } else {
     const k = await api(kampanjFlagga, { params: { fields: 'name,account_id' } });
-    if (k.account_id !== BAVERBUTIKEN_ACT) {
-      dö(`Kampanj ${kampanjFlagga} ligger på konto ${k.account_id}, inte Bäverbutikens ${BAVERBUTIKEN_ACT}. Avbryter — fel annonskonto kostar riktiga pengar.`);
+    if (String(k.account_id) !== String(butik.annonskonto)) {
+      dö(`Kampanj ${kampanjFlagga} ligger på konto ${k.account_id}, inte ${butik.namn}s ${butik.annonskonto}. Avbryter — fel annonskonto kostar riktiga pengar.`);
     }
-    produkt = { id: k.name, ad_account_id: BAVERBUTIKEN_ACT, campaign_ids: [kampanjFlagga] };
+    produkt = { id: k.name, ad_account_id: butik.annonskonto, campaign_ids: [kampanjFlagga] };
   }
   const act = produkt.ad_account_id;
 
@@ -322,9 +356,12 @@ async function main() {
   if (!fil || !existsSync(fil)) dö(`Filen finns inte: ${fil}`);
   if (!primär || !rubrik) dö('Ange både --primar och --rubrik (ad copy ur briefen).');
 
+  // Spärr 1b — prefixet i annonsnamnet måste tillhöra den valda butiken.
+  kontrolleraPrefix(namn, butik, reg);
+
   const kampanjId = produkt.campaign_ids[0];
   const kampanj = await api(kampanjId, { params: { fields: 'name,status,daily_budget' } });
-  logg(`Produkt ${produkt.id} → kampanj "${kampanj.name}" (${kampanjId}) på MagiBorsten ${act}`);
+  logg(`Produkt ${produkt.id} → kampanj "${kampanj.name}" (${kampanjId}) på ${butik.annonskonto_namn ?? butik.namn} ${act} (butik ${butik.id})`);
 
   // SPÄRR 0 — en avstängd kampanj som har spenderat ar avvecklad, inte tom.
   // Nya creatives ska inte in dar: de begravs bakom en pausad kampanj, forsvinner

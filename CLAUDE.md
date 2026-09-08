@@ -194,6 +194,12 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   butik. ⚠️ Förväxla ALDRIG med MagiBorsten `1867947880635861`
   (Bäverbutiken) — namnen är nästan identiska, kontona är olika
   verksamheter.
+- **Kopplingen butik → konto/sida/pixel/prefix bor i hubbregistret**
+  (`commission/hubbar.json` + `tools/hubbregister.mjs`), aldrig hårdkodad i
+  ett skript. En ny OPS-butik som inte står där ger **0 kr i commission** och
+  hamnar i Bäverbutikens leveranskö — registrera butiken i samma session som
+  den byggs. Prefixet är dessutom det enda som skiljer OPS-butikerna från
+  Bäverbutikens danska annonser i det delade kontot.
 - Två järnregler härifrån: namnregeln (funkar på svenska OCH engelska,
   aldrig å/ä/ö) och trippelkollen (säg aldrig "klart" utan tre kontroller
   mot kundens riktiga vy — regeln föddes här 2026-09-07).
@@ -540,6 +546,14 @@ Ansvarig och på okända Notion-användare redovisas separat som obetald.
 Marknadskontona (NO, DK, FI, UK, Snark mexico, SNarklös FI, Norge, Finland DK,
 NYC Grill) filtreras bort, liksom annonser med marknadskod i namnet. Listan står
 som `UTLANDSKA_KONTON` i `commission/berakning.mjs`.
+Sedan 2026-09-08 avgörs domen **per brandprefix**, inte per konto
+(`bedomCommission`): OPS-fabrikens butiker och Bäverbutikens danska annonser
+delar konto `915422744950975`. Hör annonsens prefix till en butik i annonsens
+eget konto styr butikens `commission`-flagga i hubbregistret; annars gäller
+kontolistan som förut. Marknadskod i namnet diskvalificerar alltid — även
+OPS-butikernas norska annonser (Axels beslut om dem saknas, FAS2 uppdrag F).
+Verifierat på 1 364 annonser med spend 2026-09-01–08: **identisk dom** som
+kontofiltret gav.
 
 ⚠️ **Valutor summeras aldrig.** NYC Grill-kontot är i USD, resten i SEK.
 
@@ -549,8 +563,9 @@ Grillklinikens löpnummer (`235 H1` → raden `235`) — och produkten per kampa
 som reserv via `commission/produkter.json`. **Filtrera aldrig hubbraderna på Typ
 eller Status**; en rad med Ansvarig är gjord av någon. *(Incident 2026-08-31:
 Typ-filtret dolde hela Masterns produktion och gav 33,74 kr i stället för
-2 260 kr.)* Hubbarna står i `commission/hubbar.json` — 12 svenska över tre
-verksamheter, inte bara Bäverbutikens.
+2 260 kr.)* Hubbarna står i `commission/hubbar.json` — 18 svenska över tre
+verksamheter per 2026-09-08, inte bara Bäverbutikens. Räkna alltid i filen,
+citera aldrig siffran ur en text.
 
 ⚠️ **De fyra skalningsprodukternas creative hubs är ARKIVERADE i Notion** och
 syns inte i en teamspace-sökning. Hubbarna måste därför alltid unionsläggas med
@@ -639,14 +654,15 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | Mapp/fil | Vad |
 |---|---|
 | `pipeline/ads.mjs`, `meta.mjs` | Laddar upp creatives till Meta som **PAUSED** |
-| `tools/leveranskon.mjs` | Kön för `/notionkorning`: Notion-rader i `To be Reviewed` med fil, kopplade till kampanj i kontot (`--drive` läser även gamla Drive-mappar) |
+| **`tools/hubbregister.mjs` + `commission/hubbar.json`** | **Hubbregistret: hub → butik → teamspace → annonskonto → sida/pixel → prefix → landningssida. Enda stället som vet vilket konto något hör till.** |
+| `tools/leveranskon.mjs` | Kön för `/notionkorning`: Notion-rader i `To be Reviewed` med fil, kopplade till kampanj i kontot (`--butik <id>` väljer butik, `--drive` läser även gamla Drive-mappar) |
 | `tools/notion-aterkoppling.mjs` | Kommentar på en Notion-rad, och `--status Draft` för en stoppad bildannons (REST, `NOTION_TOKEN`) |
 | `tools/qa-frames.py` | Drar frames ur en levererad video (tätt i hooken) så briefkontrollen går att göra på riktigt |
 | `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
 | `tools/notion-kalla.mjs` | Notion som leveranskälla: hittar alla creative hubs dynamiskt, plockar rader med färdig fil |
 | `tools/notion-fil.mjs` | Hämtar hem en Notion-bilaga (signerad URL, kortlivad — hämta vid körning, cacha aldrig) |
 | `products/prefix-alias.json` | Annonsprefix som inte går att härleda ur kontot (Notion engelska, kontot svenska) |
-| `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
+| `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto (butikens konto ur hubbregistret, `--butik <id>`) och mot att röra avstängt |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
 | `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |

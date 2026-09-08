@@ -5,20 +5,29 @@
 //   Vad som SKA laddas upp  = Notion-rader med status "To be Reviewed" och en fil
 //                             i "Filer och media" — video OCH bild (Axels beslut
 //                             2026-09-02: Notion är enda källan).
-//   Vilken kampanj           = annonsprefixet slås upp mot MagiBorsten.
+//   Vilken kampanj           = annonsprefixet slås upp mot butikens annonskonto.
 //   Dubblettspärren mot annonsnamnen i kontot finns kvar som säkerhet, men den är
 //   inte grinden: det som står i "To be Reviewed" har aldrig legat uppe.
 //
-//   node tools/leveranskon.mjs [--produkt <id>] [--json] [--alla] [--drive]
+//   node tools/leveranskon.mjs [--butik <id>] [--produkt <id>] [--json] [--alla] [--drive]
 //
+//   --butik  butiken i hubbregistret (commission/hubbar.json). Utan flaggan:
+//            baverbutiken = MagiBorsten 1867947880635861, precis som förut.
 //   --drive  läser dessutom redigerarnas gamla leveransmappar i Drive
 //            (Edited Folder/Week N). Av som standard sedan 2026-09-02.
+//
+// ⚠️ Kontospärren är inte borttagen, bara parametriserad: kön läser ETT konto —
+// butikens, hämtat ur hubbregistret. Rader ur en hub som registret säger hör
+// till en annan butik, och rader vars prefix ägs av en annan butik, plockas
+// bort och rapporteras. Det skyddet behövs för att OPS-butikerna säljer SAMMA
+// produkter som Bäverbutiken och delar konto med Bäverbutikens danska annonser.
 //
 // Kräver env: META_ACCESS_TOKEN (prefix → kampanj) och NOTION_TOKEN (kön).
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { allaKlaraRader } from './notion-kalla.mjs';
+import { laddaRegister, STANDARDBUTIK } from './hubbregister.mjs';
 
 // Redigerarnas leveransrot. Innehåller "Week N"-mappar, en mapp per annons.
 const EDITED_FOLDER = '1V4V8y4QQnX0tvZ3MQUicu1Y1k-l95yFM';
@@ -87,14 +96,24 @@ function prefixKarta(annonser) {
 const annonsdel = (s) => s.split(/\s+[–—-]\s+/)[0].trim();
 
 const { products } = JSON.parse(readFileSync(`${ROT}products/products.json`, 'utf8'));
-const BAVERBUTIKEN_ACT = '1867947880635861';
 const filter = flagga('produkt');
 
+// Butiken avgör vilket annonskonto kön läser. Hubbregistret är facit — kontot
+// star inte langre hardkodat har, men spärren ar densamma: ETT konto per körning.
+const reg = laddaRegister(ROT);
+let butik;
+try {
+  butik = reg.butik(flagga('butik', STANDARDBUTIK));
+} catch (e) {
+  dö(`${e.message}\n   Butiken styr vilket annonskonto kön läser — den gissas aldrig.`);
+}
+const AKTUELLT_ACT = butik.annonskonto;
+
 // products.json ar en explicit override for de fyra skalningsprodukterna.
-// Allt annat i Baverbutiken hittas via kontot i prefixKarta().
+// Allt annat i butiken hittas via kontot i prefixKarta().
 const konfig = {};
 for (const p of products) {
-  if (p.creative_prefix && p.ad_account_id === BAVERBUTIKEN_ACT) {
+  if (p.creative_prefix && String(p.ad_account_id) === String(AKTUELLT_ACT)) {
     konfig[p.creative_prefix.replace(/_$/, '').toLowerCase()] = p;
   }
 }
@@ -112,7 +131,7 @@ try {
 // Drive-mappen heter bara annonsdelen. Jamfor alltid pa annonsdelen.
 
 // 1. Kontot: vad som redan ar gjort, och vilket prefix som hor till vilken kampanj.
-const annonser = await metaAnnonser(BAVERBUTIKEN_ACT);
+const annonser = await metaAnnonser(AKTUELLT_ACT);
 const uppe = new Set(annonser.map(a => a.name.trim().toLowerCase()));
 const karta = prefixKarta(annonser);
 
@@ -120,12 +139,18 @@ const karta = prefixKarta(annonser);
 // källan; Drive-vägen finns kvar för att kunna läsa gamla leveransmappar vid behov.
 const veckor = finns('drive') ? driveLs(EDITED_FOLDER).filter(x => x.typ === 'mapp') : [];
 const leveranser = [];
+const annanButik = [];       // rader/mappar som hör till en annan butik i registret
 for (const v of veckor) {
   for (const m of driveLs(v.id)) {
     if (m.typ !== 'mapp') continue;
     const namn = annonsdel(m.titel);
     const pfx = prefixAv(namn);
     if (!pfx) continue;                       // inte ett annonsnamn — hoppa tyst
+    const prefixButik = reg.butikForPrefix(pfx);
+    if (prefixButik && prefixButik.id !== butik.id) {
+      annanButik.push({ namn, hub: v.titel, butik: prefixButik, varfor: 'prefixet' });
+      continue;
+    }
     const p = konfig[pfx] ?? null;
     const al = alias[pfx];
     const kampanj = p ? { id: p.campaign_ids[0], name: null, status: null }
@@ -158,10 +183,17 @@ let notionFel = null;
 let notionInfo = null;
 let notionHubbar = 0;
 let hubbNamn = [];
+let oregistreradeHubbar = [];
 try {
   const { hubbar, rader, fel } = await allaKlaraRader();
   notionHubbar = hubbar.length;
   hubbNamn = hubbar.map(h => h.titel).sort();
+  // Hubbar registret inte känner igen körs som standardbutikens, precis som före
+  // registret (nya Bäverbutiks-produkter ska komma med av sig själva). De listas
+  // ändå: en OPS-hub som glömts bort i registret ska synas, inte gissas rätt.
+  oregistreradeHubbar = hubbar
+    .filter(h => !reg.butikForHubb({ id: h.id, namn: h.titel }))
+    .map(h => h.titel).sort();
   const larm = Object.entries(fel).filter(([h]) => !avvecklade.has(h));
   const tysta = Object.entries(fel).filter(([h]) => avvecklade.has(h));
   if (larm.length) notionFel = larm.map(([h, f]) => `${h}: ${f}`).join(' · ');
@@ -170,10 +202,21 @@ try {
     const namn = annonsdel(r.namn);
     const pfx = prefixAv(namn);
     if (!pfx) continue;
+
+    // Hubbregistret gar fore allt annat. Hor hubben eller prefixet till en ANNAN
+    // butik ar raden inte den har korningens — den plockas bort och rapporteras.
+    // (Utan detta kan en OPS-butiks creative matcha Baverbutikens prefixkarta och
+    // hamna i Baverbutikens kampanj: OPS-butikerna saljer samma produkter.)
+    const hubbButik = reg.butikForHubb({ id: r.hubId, namn: r.hub });
+    const prefixButik = reg.butikForPrefix(pfx);
+    const tillAnnanButik = (annan, varfor) => annanButik.push({ namn, hub: r.hub, butik: annan, varfor });
+    if (hubbButik && hubbButik.id !== butik.id) { tillAnnanButik(hubbButik, 'hubben'); continue; }
+    if (prefixButik && prefixButik.id !== butik.id) { tillAnnanButik(prefixButik, 'prefixet'); continue; }
+
     const p = konfig[pfx] ?? null;
     const al = alias[pfx];
-    // Kampanjkartan ur MagiBorsten ar ocksa teamspace-sparren: en hub vars prefix inte
-    // finns i Baverbutikens konto hor till en annan verksamhet och laddas aldrig upp.
+    // Kampanjkartan ur butikens konto ar ocksa verksamhetssparren: en hub vars
+    // prefix inte finns i kontot hor till en annan verksamhet och laddas aldrig upp.
     const kampanj = p ? { id: p.campaign_ids[0], name: null, status: null }
                   : (karta[pfx] ?? (al ? { id: al.kampanj_id, name: al.kampanj_namn, status: null } : null));
     leveranser.push({
@@ -268,7 +311,10 @@ for (const k of kö) {
 if (finns('json')) {
   console.log(JSON.stringify({
     hämtadAt: new Date().toISOString(),
+    butik: { id: butik.id, namn: butik.namn, annonskonto: butik.annonskonto },
     levereratTotalt: leveranser.length,
+    annanButik: annanButik.map(a => ({ ...a, butik: a.butik.id })),
+    oregistreradeHubbar,
     kö,
   }, null, 2));
   process.exit(0);
@@ -287,6 +333,9 @@ if (notionInfo) {
 }
 const frånDrive = leveranser.filter(l => l.kalla2 === 'drive').length;
 const frånNotion = leveranser.filter(l => l.kalla2 === 'notion').length;
+// Butiken forst: allt nedan galler ETT konto, och vilket det ar far aldrig vara
+// underforstatt i en rapport som styr uppladdningar.
+console.log(`Butik: ${butik.namn} (${butik.id}) → annonskonto ${butik.annonskonto}${butik.annonskonto_namn ? ` (${butik.annonskonto_namn})` : ''}\n`);
 // Lista hubbarna vid namn. En integration ser bara de hubbar den blivit inbjuden
 // till, och en hub den inte ser ar helt osynlig — man kan inte sakna det man aldrig
 // vetat om. Namnen i rapporten ar enda sattet att upptacka en ny hub som glomts bort.
@@ -294,6 +343,23 @@ if (hubbNamn.length) {
   console.log(`Notion-hubbar som lästes (${hubbNamn.length}):`);
   for (const n of hubbNamn) console.log(`  · ${n}`);
   console.log(`  Saknas en hub här har integrationen inte bjudits in till den.\n`);
+}
+// Rader som hör till en annan butik. Aldrig tyst bortkastade: en OPS-creative
+// som hamnar i Bäverbutikens kampanj kostar riktiga pengar, och en som ingen
+// kör hämtar fastnar för alltid i "To be Reviewed".
+if (annanButik.length) {
+  const per = {};
+  for (const a of annanButik) (per[a.butik.id] ??= []).push(a);
+  console.log(`⚠️  ${annanButik.length} leverans(er) hör till en ANNAN butik och ingår inte i den här kön:`);
+  for (const [bid, rader] of Object.entries(per)) {
+    console.log(`  · ${bid} (${rader.length}): ${rader.slice(0, 6).map(r => r.namn).join(', ')}${rader.length > 6 ? ` … (+${rader.length - 6})` : ''}`);
+    console.log(`      kör dem med: node tools/leveranskon.mjs --butik ${bid}`);
+  }
+  console.log('');
+}
+if (oregistreradeHubbar.length) {
+  console.log(`ℹ️  ${oregistreradeHubbar.length} hub(bar) står inte i hubbregistret och körs som ${butik.id}: ${oregistreradeHubbar.join(', ')}`);
+  console.log(`    Hör någon av dem till en annan butik: skriv in den i commission/hubbar.json innan nästa körning.\n`);
 }
 console.log(`Källor: ${frånNotion} i Notion (${notionHubbar} hubbar)${finns('drive') ? ` · ${frånDrive} i Drive` : ''} · ${leveranser.length - nya.length} redan i kontot · ${Object.keys(karta).length} kända prefix\n`);
 

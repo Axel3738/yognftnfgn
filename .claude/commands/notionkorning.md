@@ -326,14 +326,21 @@ produktsidans URL i fältet `Landing page`, och `leveranskon.mjs` skriver ut den
 Utan den skulle annonsen peka på butikens startsida, vilket aldrig syns som ett
 fel — bara som usel konvertering.
 
-`--kampanj` kontrollerar att kampanjen ligger i MagiBorsten innan något skrivs —
-kontospärren gäller lika hårt där.
+`--kampanj` kontrollerar att kampanjen ligger i butikens konto innan något
+skrivs — kontospärren gäller lika hårt där.
 
 Verktyget bär spärrarna som inte får kringgås:
 
-- Endast MagiBorsten `1867947880635861`. Sida och Instagram-konto **ärvs från
-  kampanjens befintliga annonser** — kopieras aldrig in för hand. Fel sida/pixel
-  bokför köpen på fel verksamhet, och det syns aldrig som ett felmeddelande.
+- Endast **butikens eget annonskonto**, hämtat ur hubbregistret
+  (`commission/hubbar.json` via `tools/hubbregister.mjs`). Utan `--butik` är
+  butiken `baverbutiken` = MagiBorsten `1867947880635861`, precis som förut —
+  den här rutinen kör alltid så. Bär annonsnamnet ett prefix som registret säger
+  hör till en **annan** butik avbryts körningen: OPS-butikerna säljer samma
+  produkter som Bäverbutiken och delar konto med Bäverbutikens danska annonser,
+  och prefixet är det enda som skiljer dem åt. Sida och Instagram-konto **ärvs
+  från kampanjens befintliga annonser** — kopieras aldrig in för hand. Fel
+  sida/pixel bokför köpen på fel verksamhet, och det syns aldrig som ett
+  felmeddelande.
 - Adset väljs på konceptkoden i annonsnamnet, aktiva och nyaste först. Saknas
   ett: nytt adset klonas ur ett befintligt i samma kampanj (targeting, pixel,
   optimering) — **aldrig egen budget**, budgeten bor på kampanjen i en CBO.

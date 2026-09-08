@@ -48,10 +48,59 @@ const FRAMMANDE_MARKNAD = /(^|[_\s-])(NO|DK|FI|UK|GB|DE|NL|US|MX|ES|FR|PL)([_\s-
 /**
  * Är annonsen svensk? Två spärrar: kontot får inte vara ett marknadskonto, och
  * namnet får inte bära en marknadskod. Båda måste hålla.
+ *
+ * Kontospärren ensam räcker bara så länge ett konto = en verksamhet. Det gäller
+ * inte längre — se `bedomCommission` nedan, som är den funktion körningen använder.
  */
 export function arSvensk(annons) {
   if (UTLANDSKA_KONTON.has(String(annons.konto?.id))) return false;
   return !FRAMMANDE_MARKNAD.test(annons.adNamn ?? '');
+}
+
+/**
+ * Ska annonsen ge commission? Bedömningen görs per BRANDPREFIX, inte per konto.
+ *
+ * Bakgrunden: OPS-fabrikens butiker och Bäverbutikens danska annonser ligger i
+ * SAMMA konto (MagiBorsten DK 915422744950975). Kontot står i UTLANDSKA_KONTON,
+ * så före det här gav all OPS-spend 0 kr. Raden går inte att bara ta bort —
+ * Bäverbutikens danska annonser ska fortsatt vara utan commission (Axels beslut
+ * 2026-08-31). Därför avgör annonsens prefix vilken butik den hör till, och
+ * butikens `commission`-flagga i hubbregistret avgör utbetalningen.
+ *
+ * Ordningen är medvetet snäv — spärren rivs aldrig, den flyttas bara:
+ *   1. Marknadskod i namnet diskvalificerar alltid. Även en OPS-butiks norska
+ *      annonser (`HeimGuard_NO_…`) faller här. Axels beslut om OPS-redigerarnas
+ *      norska annonser saknas (FAS2 uppdrag F) — tills det finns gäller nej.
+ *   2. Prefixet räknas BARA när butiken det pekar på kör i annonsens eget konto.
+ *      En Bäverbutiks-annons som ligger i DK-kontot matchar alltså inte butiken
+ *      baverbutiken (fel konto) och faller vidare till punkt 3.
+ *   3. Kontolistan UTLANDSKA_KONTON, oförändrad. Okänt prefix i ett spärrat
+ *      konto ger fortfarande noll.
+ *
+ * @param {object} annons  {adNamn, konto:{id}}
+ * @param {object} [register] tools/hubbregister.mjs. Utan register: som förr.
+ * @returns {{ger:boolean, skal:string, butik:object|null}}
+ */
+export function bedomCommission(annons, register = null) {
+  const konto = String(annons.konto?.id ?? '');
+  if (FRAMMANDE_MARKNAD.test(annons.adNamn ?? '')) {
+    return { ger: false, skal: 'marknadskod i annonsnamnet', butik: null };
+  }
+  const butik = register?.butikForAnnons?.(annons.adNamn) ?? null;
+  if (butik && String(butik.annonskonto) === konto) {
+    return butik.commission === false
+      ? { ger: false, skal: `butiken ${butik.id} ger ingen commission`, butik }
+      : { ger: true, skal: `butiken ${butik.id}`, butik };
+  }
+  if (UTLANDSKA_KONTON.has(konto)) {
+    return { ger: false, skal: `utländskt marknadskonto (${UTLANDSKA_KONTON.get(konto)})`, butik: null };
+  }
+  return { ger: true, skal: butik ? 'svenskt konto' : 'svenskt konto, okänt prefix', butik: null };
+}
+
+/** Kortformen av bedomCommission — ersätter arSvensk i körningen. */
+export function gerCommission(annons, register = null) {
+  return bedomCommission(annons, register).ger;
 }
 
 /** Statusen som gör en rad utbetalningsgrundande. */
