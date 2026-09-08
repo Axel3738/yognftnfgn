@@ -509,7 +509,7 @@ rapporten till `commission/korningar/<YYYY-MM>/<datum>.md`.
 
 **Leaderboarden** (`leaderboard.mjs` + `valuta.mjs`, 18 tester) är samma siffror
 som topplista för redigerarna:
-https://claude.ai/code/artifact/77145ba8-a1cc-4791-9757-0715a8d97ff8
+https://claude.ai/code/artifact/8f3afdbc-f285-46bf-b55d-a75b9e7feebb
 Den räknar aldrig om något — den läser rapportens tal, så sidan och utbetalningen
 kan inte säga olika saker. `run.mjs` skriver `commission/leaderboard.json` vid
 **varje** körning (även icke-kördagar); `leaderboard.mjs` bakar in datan i
