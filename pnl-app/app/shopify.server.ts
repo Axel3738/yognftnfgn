@@ -26,6 +26,28 @@ export const billingExemptShops = new Set(
  *  BILLING_ENABLED=1; custom-tjänsterna (egna butiker) lämnar den osatt. */
 export const billingEnabled = process.env.BILLING_ENABLED === "1";
 
+/**
+ * StonePNL:s client_id (publikt, står i shopify.app.toml). Det är den ENDA
+ * registreringen som får begära `read_customers`: scopen kräver godkänd
+ * Protected Customer Data, och det har bara App Store-appen. De fem egna
+ * butikerna har varsin egen registrering utan det godkännandet.
+ *
+ * 2026-09-08 sattes SCOPES med read_customers på ALLA sex tjänsterna. Shopify
+ * gav de egna butikerna nya nycklar utan scopen, biblioteket såg fortfarande
+ * en skillnad mot konfigurationen och skickade butiken till en ny
+ * auktorisering vid varje sidladdning — panelen laddade aldrig. Här tas
+ * scopen bort för alla registreringar utom StonePNL, så att env-variabeln
+ * kan vara likadan överallt utan att låsa ute de egna butikerna. Kundvärdet
+ * (LTV) slås av sig självt av för butiker utan scopen (harKundScope).
+ */
+const STONEPNL_CLIENT_ID = "8200cbe4502be19ac6ebe75ac65e3ad2";
+const scopesForService = (): string[] | undefined => {
+  const alla = process.env.SCOPES?.split(",").map((s) => s.trim()).filter(Boolean);
+  if (!alla) return undefined;
+  if (process.env.SHOPIFY_API_KEY === STONEPNL_CLIENT_ID) return alla;
+  return alla.filter((s) => s !== "read_customers" && s !== "read_all_orders");
+};
+
 const shopify = shopifyApp({
   apiKey: process.env.SHOPIFY_API_KEY!,
   apiSecretKey: process.env.SHOPIFY_API_SECRET!,
@@ -34,7 +56,7 @@ const shopify = shopifyApp({
      App Store-appar fick blank 403 på varenda anrop. Versionen låses därför
      explicit till samma som webhook-konfigurationen. */
   apiVersion: "2026-07" as ApiVersion,
-  scopes: process.env.SCOPES?.split(","),
+  scopes: scopesForService(),
   appUrl: process.env.SHOPIFY_APP_URL!,
   authPathPrefix: "/auth",
   sessionStorage: new PrismaSessionStorage(prisma),

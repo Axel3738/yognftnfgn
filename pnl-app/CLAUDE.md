@@ -620,6 +620,23 @@ Vägen: Distribution → Redigera (English) → Pricing details → Manage.
    butik öppnar sidan, och skriv in utfallet här.
 4. När Shopify mejlar att Read all orders är godkänt: prompt 4b.
 
+### De egna butikerna låstes ute av read_customers (2026-09-08, build scope-fix-v76)
+Axel: "appen funkar bara inte efter cowork gjorde massa skit". Orsak: SCOPES
+med `read_customers` sattes på ALLA sex Railway-tjänsterna (steg 1 i listan
+ovan). Scopen kräver godkänd Protected Customer Data, som bara StonePNL:s
+registrering har. De fem egna butikerna har varsin egen registrering: Shopify
+gav dem nya nycklar UTAN scopen (SE/NO/FI fick dessutom utgående nycklar i
+stället för sina eviga), biblioteket såg fortfarande skillnad mot
+konfigurationen och skickade butiken till ny auktorisering vid varje
+sidladdning. Fix i `shopify.server.ts`: `scopesForService()` tar bort
+`read_customers`/`read_all_orders` för alla registreringar utom StonePNL
+(client_id-jämförelse). SCOPES-variabeln får därmed vara likadan överallt.
+Konsekvens: kundvärdet (LTV) finns bara i App Store-appen — de egna
+butikerna saknar scopen tills deras registreringar får PCD-godkännande.
+Regel: **scopes som kräver godkännande läggs aldrig på de egna butikernas
+tjänster.** Diagnostiserat med tillfällig `/debug-scope` (env-scopes mot
+Session.scope per butik), borttagen i v76.
+
 ### Logga in med Facebook för Meta-kopplingen (2026-09-07, build meta-login-v64)
 Axels beslut 2026-08-31 (bygg efter App Store-godkännandet) — byggt två dagar
 efter godkännandet. Handlaren klickar **Logga in med Facebook** i Inställningar,
