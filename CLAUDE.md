@@ -613,7 +613,17 @@ Default: rösten `Svensk Martin` + modellen `eleven_v3` (förstår taggar som
 Rena arbetsdokument, ingen kod. Börja i `market-expansion/README.md` och
 `BESLUT.md`. Batcherna ligger i `<land>/batches/`.
 
-### `pnl-app/` — P&L som Shopify-app
+### `pnl-app/` — StonePNL, P&L som Shopify-app
+
+⚠️ **Den riktiga appen ligger INTE på `main`.** StonePNL (publicerad i App
+Store 2026-09-05, sex Railway-tjänster) byggs från grenen
+**`claude/bäverbutiken-settkopplingen-nba21z`** — push dit deployar till alla
+sex tjänster. Kopian av `pnl-app/` på `main` är en gammal snapshot och ska
+inte utvecklas vidare. Börja alltid i den grenens `pnl-app/CLAUDE.md`
+(572 rader: arkitektur, misstagslogg, backlog). *(Mätt 2026-09-08: en session
+byggde Meta-knapp och växelkurs på main-kopian — båda fanns redan på den
+riktiga grenen sedan 2026-09-07.)*
+
 Riktig applikation, inte ett skript: Remix + Prisma + Docker, kopplad till både
 Shopify och Meta. Visar täckningsbidrag per produkt. TypeScript, inte `.mjs`.
 ```bash
