@@ -191,9 +191,9 @@
    "1": [
     {
      "box": [
-      33,
+      290,
       1086,
-      1047,
+      790,
       1132
      ],
      "post": 0,
@@ -208,6 +208,31 @@
      "textljus": true
     }
    ]
-  }
+  },
+  "_anm": "Fototextrutan smalnad till textens bredd — full bredd gav grå kanter på det ljusa golvet (mätt 2026-09-08)."
+ },
+ "IBC_CS_4_1": {
+  "box_for_form": {
+   "2": [
+    {
+     "box": [
+      318,
+      1212,
+      762,
+      1298
+     ],
+     "post": 0,
+     "fet": true,
+     "storlek": 39,
+     "rader": 1,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  },
+  "_anm": "Detektorn hittade en skräpform (1 rad, 10 px) ovanför knappen och matchade knappen dit — texten hamnade som miniatyr ovanpå den svenska. Rutan ligger innanför pillens rundade hörn."
  }
 }
