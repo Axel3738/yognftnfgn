@@ -23,6 +23,19 @@ const en = {
     settings: "Settings",
   },
 
+  chat: {
+    title: "Ask StonePNL",
+    intro: "Ask anything about the app or your numbers.\nFor example: \"How do I import costs for 20 products?\", \"How did the last 30 days go?\", \"Set the cost of X to 89\".",
+    placeholder: "Type a question…",
+    send: "Send",
+    thinking: "Thinking…",
+    saving: "Saving…",
+    done: "Done",
+    applied: (n: number) => `${n} variants updated.`,
+    applyFailed: (why: string) => `Could not save${why ? `: ${why}` : ""}.`,
+    failed: (err: string) => `Something went wrong${err ? `: ${err}` : ""}. Try again.`,
+  },
+
   dashboard: {
     title: "Profit",
     hero: {
@@ -666,6 +679,19 @@ const sv: Texts = {
     stores: "Butiker",
     ltv: "Kundvärde (LTV)",
     settings: "Inställningar",
+  },
+
+  chat: {
+    title: "Fråga StonePNL",
+    intro: "Fråga vad du vill om appen eller dina siffror.\nTill exempel: \"Hur importerar jag kostnader för 20 produkter?\", \"Hur gick senaste 30 dagarna?\", \"Sätt kostnaden på X till 89\".",
+    placeholder: "Skriv en fråga…",
+    send: "Skicka",
+    thinking: "Tänker…",
+    saving: "Sparar…",
+    done: "Klart",
+    applied: (n: number) => `${n} varianter uppdaterade.`,
+    applyFailed: (why: string) => `Kunde inte spara${why ? `: ${why}` : ""}.`,
+    failed: (err: string) => `Något gick fel${err ? `: ${err}` : ""}. Försök igen.`,
   },
 
   dashboard: {

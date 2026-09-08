@@ -13,6 +13,8 @@ import {
 } from "../shopify.server";
 import prisma from "../db.server";
 import { asLang, t } from "../lib/texts";
+import { aiChattEnabled } from "../lib/ai-chat.server";
+import { ChatBubble } from "../components/ChatBubble";
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
@@ -56,11 +58,11 @@ export async function loader({ request }: LoaderFunctionArgs) {
     update: {},
   });
 
-  return json({ apiKey: process.env.SHOPIFY_API_KEY || "", lang: asLang(settings.language), billingError });
+  return json({ apiKey: process.env.SHOPIFY_API_KEY || "", lang: asLang(settings.language), billingError, chat: aiChattEnabled });
 }
 
 export default function App() {
-  const { apiKey, lang, billingError } = useLoaderData<typeof loader>();
+  const { apiKey, lang, billingError, chat } = useLoaderData<typeof loader>();
   const T = t(lang);
   /* Ett fel i betalvägen ska synas som text, inte som en död vit sida.
      Panelen renderas inte förrän prenumerationsfrågan går att avgöra. */
@@ -86,6 +88,8 @@ export default function App() {
         <Link to="/app/settings">{T.nav.settings}</Link>
       </NavMenu>
       <Outlet />
+      {/* Hjälpassistenten — bara när ANTHROPIC_API_KEY finns på tjänsten. */}
+      {chat ? <ChatBubble T={T} /> : null}
     </AppProvider>
   );
 }

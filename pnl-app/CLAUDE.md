@@ -516,6 +516,33 @@ valuta räknas inte om utan rapporteras i `notes`.
   på de fem egna butikernas tjänster (de har redan COGS sedan 2026-09-05).
   Flerpack följer med: AI:n skriver `tiers` → CSV `a|b|c` → `CostTier`.
 
+**Chattbubblan "Fråga StonePNL" (build chat-v73)** — Axels ord: "en AI-
+chattbubbla som svarar på simpla frågor, med vår API. Typ 'hur importerar
+jag COGS om jag har 20+ produkter' → 'du har förmodligen ett sheet, skicka
+ditt + vår mall till Claude och be den fylla i, importera sen'." Knapp `?`
+nere till höger på alla sidor (`app/components/ChatBubble.tsx`, renderas i
+`app.tsx` när `aiChattEnabled`). Server: resursrutten `app/routes/app.chat.tsx`
+(POST, `intent=ask|apply`) + `app/lib/ai-chat.server.ts`.
+- **Kunskapen är skriven, inte gissad:** `HJALP` i `ai-chat.server.ts` beskriver
+  varje sida, alla fem sätten att fylla i COGS, flerpack, planer, integritet.
+  **Ändras UI:t: uppdatera HJALP i samma commit** — annars svarar bubblan
+  om knappar som inte finns.
+- Kontext per fråga (`byggKontext`): senaste 30 dagarna ur `DailyPnl`
+  (nettoförsäljning, ordrar, COGS via `rowCost` + CostTier — null om någon
+  rad saknar kostnad), `DailySpend`, fasta kostnader, täckning, uppskattning,
+  antal flerpacksteg, plan, och hela katalogen med pris + kostnad. Inga nya
+  Shopify-anrop utöver katalogcachen.
+- **Modellen ändrar aldrig något.** Ber handlaren om en kostnadsändring
+  returnerar den `actions: [{type:"set_cost", product, variant, cost, tiers,
+  label}]` som visas som knapp; klicket kör `intent=apply` →
+  `actionTillCsv` → **samma `importCostCsv`** som filen (matchning, flerpack).
+  Tvetydig produkt ⇒ modellen ska fråga, inte gissa.
+- Modell för chatten är den snabbare Sonnet-klassen (många små anrop);
+  bildläsningen kör den större. Historik max 20 meddelanden, bor i
+  webbläsaren, sparas aldrig på servern. Svar på butikens språk, ingen
+  markdown. ⚠ Oprövat skarpt (ingen nyckel i sessionen) — typecheck/build
+  gröna.
+
 **Offert från leverantören (build quote-v71)** — Axels ord: "droppa en bild
 på en quote man fått från sin leverantör, klicka vilken produkt den hör
 till, så läggs COGS:en in." Kortet **Släpp en offert från leverantören**
