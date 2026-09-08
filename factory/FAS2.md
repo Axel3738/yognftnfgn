@@ -19,8 +19,13 @@ Varje uppdrag nedan är ett eget avsnitt: **vad**, **återanvänd detta**,
 | HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video | Axel fyller på |
 | `standby.md` har noll rader | ny redigerare per butik | ansökningar ur de två utskicken |
 
-Uppdrag A, C, D och E går att köra UTAN dessa. Uppdrag B väntar bara på Meta-SIDAN
-(pixeln kan skapas så snart sidan finns — `META_ACCESS_TOKEN` finns redan i molnet).
+Uppdrag A, C, D och E går att köra UTAN dessa.
+
+**Uppdrag B, uppdaterat 2026-09-08:** kampanj- och adsetnivån är byggd och
+tillbakaläst för TankGuard (se avsnittet längst ner i uppdrag B). Pixeln fanns
+redan. Kvar för annonsnivån: butikens Meta-SIDA (blockerare 1 ovan) **och** de
+brand-swappade svenska videofilerna (blockerare 3 → uppdrag A2). Skriptet som
+gör resten finns: `pipeline/ops-video-launch.mjs`.
 
 ---
 
@@ -140,6 +145,54 @@ hämta ner filen → brand-swappa → ladda upp på nytt till `act_9154227449509
 
 **Klart när:** kampanjen är tillbakaläst ur kontot och `page_id`, `pixel_id`,
 `daily_budget`, länk och status på alla tre nivåer matchar butikens konfig exakt.
+
+### Läget 2026-09-08 — TankGuard (första OPS-kampanjen)
+
+Byggt och tillbakaläst ur kontot med
+`node pipeline/ops-video-launch.mjs pipeline/waves/tankguard-video.config.mjs --verifiera`:
+**24 av 24 kontrollpunkter gröna** på kampanj- och adsetnivå.
+
+| | |
+|---|---|
+| Kampanj | `TANKGUARD_Tanköverdraget SE \| BE-ROAS 1,62 \| 2026-09-08` (`120248995235740172`) |
+| Konto | Magiborsten DK `915422744950975`, **valuta SEK** (avläst — `marknader.json` säger fortfarande DKK och har fortfarande fel) |
+| Budget | `daily_budget 100000` = 1000 kr/dag, CBO, LOWEST_COST_WITHOUT_CAP ✅ |
+| Pixel | `2196132151319625` ("TankGuard", ägs av målkontot) på alla fyra adsets, `custom_event_type PURCHASE` ✅ |
+| Adsets | PD / SP / CS / GT, geo SE, ingen egen budget ✅ |
+| Status | PAUSED på alla tre nivåer, explicit satt ✅ |
+| Länk | `https://tankguard.se/products/tankoverdraget` ✅ (i konfigen; sitter på creative-nivå, så den kan inte läsas tillbaka förrän annonserna finns) |
+
+**Annonsnivån är inte byggd — två saker saknas, båda utanför kod:**
+
+1. **Butikens Meta-sida finns inte.** Verifierat i Graph 2026-09-08: varken
+   `me/accounts` (39 sidor) eller MagiBorsten-företagets `owned_pages`
+   (HeimGuard, Bæverbutiken, BeaverShop, MagiBorsten) har en TankGuard-sida.
+   Sidan kan inte skapas via API:t — den är VA:ns/Axels steg i BM (PROCESS fas 5
+   punkt 17), blockerad av FB-kontots verifiering. `page: null` i konfigen tills
+   dess; skriptet vägrar bygga annonser utan den och gissar aldrig en sida.
+2. **Videofilerna finns inte.** Källan för SE är Bäverbutikens **svenska** IBC-annonser
+   (kampanj `120250001079150291`: `IBC_PD_1_H1…H3`, `IBC_SP_1_H1…H3`, `IBC_CS_1_H2…H3`,
+   `IBC_GT_1_H1…H3`) — inte den norska batchen, som är dubbad till norska.
+   Alla elva säger "Bäverbutiken" i talet, så de måste dubbas om svenska→svenska
+   först = uppdrag A2, blockerat av HeyGen-krediterna.
+
+När båda finns: sätt `page` i konfigen, lägg de elva mp4:orna i
+`factory/output/tankoverdraget/video/` och kör skriptet utan `--bara-struktur`.
+Kampanj och adsets återanvänds på namn — inget byggs om.
+
+⚠️ TankGuards butikskonfig ligger **inte på `main`**: `factory/butiker/tankguard.yaml`,
+`factory/produkter/tankoverdraget.yaml`, `factory/state/tankguard--tankoverdraget.json`
+och `factory/output/tankoverdraget/STATUS.md` finns bara på grenen
+`claude/ny-ops-ibc-tank-cover-jjwesr`. Siffrorna ovan är lästa därifrån och
+inlagda i vågkonfigen, så kampanjbygget står på egna ben — men grenen behöver
+mergas, annars ser nästa session TankGuard som obyggd (samma fälla som
+axelbältets produktminne).
+
+Copyn är redan skriven (copy-subagent, sonnet, 2026-09-08) ur den svenska
+källcopyn som spenderar pengar i dag, med TankGuards egna siffror: betyget
+4,81 av 5 (16 recensioner) i stället för Bäverbutikens 4,4, och CS-konceptets
+"IDAG ENDAST" utbytt mot introduktionspris — en nylanserad butik kan inte hålla
+ett dygnspåstående.
 
 ---
 

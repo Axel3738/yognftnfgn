@@ -154,10 +154,38 @@ som genereras per bygge).
     när META_ACCESS_TOKEN finns. 🖐 WeTracked: nytt konto per butik,
     klistra in pixel-id.
 
-## Fas 6 — Annonser (nästa fas, ej bevisad än)
-18. ⚙️ Brand-swap av Bäverbutikens vinnare (PLAN.md punkt 1).
-19. ⚙️ Q4-ramverket i annonsplanen: banka creatives i förväg (dubbla antalet),
+## Fas 6 — Annonser
+18. ⚙️ Kampanjstrukturen byggs med `pipeline/ops-video-launch.mjs` +
+    `pipeline/waves/<butik>-video.config.mjs` (mall: `tankguard-video.config.mjs`).
+    Allt Graph-anrop går genom `tools/meta-lib.mjs`. Kör
+    `--dry` först, `--bara-struktur` när sidan eller videofilerna saknas, och
+    alltid `--verifiera` efteråt — den läser tillbaka kampanj, adsets och
+    annonser ur kontot och jämför mot konfigen på alla tre nivåer.
+19. ⚙️ Brand-swap av Bäverbutikens vinnare (PLAN.md punkt 1). Källan är
+    **marknadens egna** videor: svenska annonser för SE, norska för NO — den
+    norska batchen är dubbad till norska och duger inte som SE-källa.
+20. ⚙️ Q4-ramverket i annonsplanen: banka creatives i förväg (dubbla antalet),
     större PO innan säsong (PLAN.md punkt 6).
+
+### Namnregeln i annonskontot (spikad 2026-09-08)
+Tre konkurrerande regler fanns i repot. Detta är den som gäller för OPS, vald
+för att den är den enda som verktygen faktiskt läser (prefixuppslaget i
+`tools/leveranskon.mjs`, kopplingen i `commission/koppling.mjs`):
+
+```
+kampanj  <BRANDPREFIX><Produkt> <MARKNAD> | BE-ROAS <x,xx> | <YYYY-MM-DD>
+adset    <BRANDPREFIX><Produkt> <MARKNAD> - <KONCEPT>
+annons   <BRANDPREFIX><MARKNAD>_<KONCEPT>_<batch>_H<hook>
+```
+
+- `BRANDPREFIX` är versaler + understreck: `TANKGUARD_`, `HEIMGUARD_`. Det är
+  obligatoriskt på **alla tre nivåerna** — kontot bär alla OPS-butiker plus
+  Bäverbutikens sex danska kampanjer, och utan prefix går datan varken att
+  skära per butik eller filtrera i skalningsrutinen.
+  `ops-video-launch.mjs` vägrar köra om prefixet saknas.
+- Datumet i kampanjnamnet är det datum kampanjen skapas i kontot (samma som
+  `created_time`), inte ett önskat launchdatum.
+- BE-ROAS läses ur butikens STATUS-fil, aldrig ur huvudet.
 
 ## Regler som bevisats den hårda vägen
 - **Alltid svensk lag, aldrig egna köplöften** (Axels beslut 2026-09-08:
