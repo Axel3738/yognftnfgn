@@ -416,7 +416,8 @@ skarpt** — proxyn nådde varken Shopify, Meta eller Railway från sessionen.
   (numeriska id ⇒ `gid://shopify/Order/<id>`), `customers/data_request`
   loggas hashat, `shop/redact` tar `kundOrder`. `/privacy` omskriven (kund-ID
   som pseudonym; datum 2026-09-08). Scopes i `shopify.app.toml` och
-  env-hinten: `read_customers,read_all_orders`.
+  env-hinten: `read_customers` (och `read_all_orders` först när Shopify
+  godkänt ansökan — se "Gjort via Cowork" nedan).
 
 **Räknemotorn** `ltv.server.ts` (ren, 11 tester i `test/ltv.test.mjs`,
 `npm test`, Node ≥ 22.6): kohort = första köpmånad; horisonter 30/60/90/180;
@@ -487,9 +488,29 @@ Enter/blur skriver till Shopify (`intent=set-cost`, alla varianter i
 produkten; "Sätt per variant" fäller ut ett fält per variant). Ingen
 CostChange-historik från snabbfältet — den finns på produktsidan. (3) Mallen
 och filimporten ligger hopfällda under "Importera från fil (avancerat)".
-Det som fortfarande saknas för "automatiskt": en leverantörsoffert-tolk
-(klistra in vad som helst → AI matchar produkter) — kräver en LLM-nyckel i
-miljön och är nästa steg om Axel vill.
+Det som fortfarande saknas för "automatiskt" byggdes i nästa steg (nedan).
+
+**AI läser av Juicy (build ai-cogs-v70)** — Axels ord: "vadå, vi kan inte ha
+en AI som bara läser av Juicy-appen?" Kortet **Låt AI läsa av din gamla app**
+på Kostnader: handlaren släpper skärmbilder av Juicys kostnadstabell (och/
+eller klistrar in text), klickar en knapp, och `ai-kostnad.server.ts` skickar
+bilderna + butikens EXAKTA produkt- och varianttitlar till Claude
+(`@anthropic-ai/sdk`, `messages.parse` med zod-schema). Modellen får bara
+mappa mot titlarna i listan; osäkra rader hamnar i `unmatched` och visas
+under kortet i stället för att gissas. Svaret blir CSV i vårt format
+(`tillCsv`) och går genom **samma `importCostCsv`** som filimporten — samma
+matchning, flerpack (tiers), CostChange-historik och "hoppades över". Annan
+valuta räknas inte om utan rapporteras i `notes`.
+- **Kräver `ANTHROPIC_API_KEY`** på tjänsten; saknas den finns kortet inte
+  (`aiKostnadEnabled` i loadern). Ingen annan konfiguration.
+- Bilderna base64-kodas i webbläsaren (FileReader) och skickas i actionen
+  `intent=ai-import` — de sparas aldrig, varken på disk eller i databasen.
+- Max 16 000 utdata-tokens; en tabell med några hundra rader ryms. Fel från
+  modellen (avböjd bild, otolkbart svar) visas som text i kortet.
+- ⚠ Oprövat skarpt (ingen nyckel i sessionen, proxyn nådde inte API:t):
+  typecheck/build/test gröna. Första riktiga körningen: kontrollera att
+  produkttitlarna matchar (stavning identisk) och att "hoppades över"-listan
+  är tom eller begriplig.
 
 **Hero-kortet i panelen (build hero-v68)** — Axels ord: "dashboarden borde se
 lite mer levande ut, man vill ha en dopaminkick." Överst i panelen: den stora
@@ -508,28 +529,37 @@ privata planer: **shopify-test** ($0) och **friends-50** ("Friends 50%",
 $4.99/månad, 0 dagars trial, 1 butik: stonepnl-test.myshopify.com, "Free for
 partners and developers" på). Privata planer KRÄVER minst en butik under
 *Stores with plan access*; fakturanamn och handle kan inte ändras efteråt.
-Vägen: Distribution → Redigera (English) → Pricing details → Manage. Ingen
-Pro-plan fanns ännu — grinden i plan.server.ts letar efter "pro" i namnet.
+Vägen: Distribution → Redigera (English) → Pricing details → Manage.
+
+**Gjort via Cowork senare samma dag (2026-09-08, skarpt):**
+- **basic**: prov 1 → **14 dagar**. **Pro** skapad: handle `pro`, 14,99 USD/
+  månad, 14 dagars prov, "Free for partners and developers" på, display name
+  "Pro" + fyra feature-rader (fältet tar max 40 tecken). Grinden matchar
+  namnet ("pro" som eget ord).
+- Dev Dashboard har **ingen Configuration-sida** längre — scopes släpps som
+  en ny **version**. **stonepnl-4** är aktiv med `read_customers` tillagd.
+  `read_all_orders` nekades ("ogiltig omfattning") tills ansökan godkänts —
+  därför står den INTE i `shopify.app.toml`/env-hinten just nu. Raden i toml
+  måste alltid vara identisk med aktiva versionen (annars omauktoriserings-
+  loop). ⚠ `npx shopify app deploy` skriver över versionen med toml-raden.
+- Protected customer data nivå 1 var **redan godkänd 2026-09-05** (inga
+  customer fields, reason Analytics) och rördes inte. **Read all orders**
+  ansökt 2026-09-08, upp till 7 arbetsdagar, besked via mejl → då: ny version
+  med scopen + `SCOPES` på Railway + toml/env-hint (prompt 4b i
+  `docs/cowork-prompts.md`).
 
 **Axel måste göra (i ordning):**
-1. Partner Dashboard → StonePNL → **Distribution → Prissättning**: plan
-   **Pro**, 14,99 USD/30 dagar, 1 dags prov, namnet MÅSTE innehålla "Pro".
-2. Railway → alla sex tjänster → `SCOPES` =
-   `read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders`.
-   Partner Dashboard → appens **Konfiguration** → samma scopes → spara →
-   **Släpp version** (toml kräver `npx @shopify/cli app deploy` med en
-   tillfällig automation-token som raderas efteråt, samma mönster som
-   compliance-webhookarna). Befintliga handlare får en godkännandeskärm
-   nästa gång de öppnar appen — normalt, ska stå i release-noten.
-3. Partner Dashboard → **API-åtkomst** → *Protected customer data*: nivå 1,
-   reason "analytics", dataminimeringstexten ur `docs/ltv-tillagg.md`
-   avsnitt 2. Ansök om **Read all orders** i samma vy.
-4. Railway → **bara App Store-tjänsten** (pnl-app-store-production):
+1. Railway → alla sex tjänster → `SCOPES` =
+   `read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers`
+   (UTAN read_all_orders tills godkänt) och `ANTHROPIC_API_KEY` (AI-läsaren
+   på Kostnader). Prompt 4 i `docs/cowork-prompts.md`.
+2. Railway → **bara App Store-tjänsten** (pnl-app-store-production):
    `PLAN_GATE=1` och `APP_HANDLE=<handle ur listningen>`.
-5. Öppna appen i varje egen butik en gång (godkänn scopes) och gå till
+3. Öppna appen i varje egen butik en gång (godkänn scopes) och gå till
    **Kundvärde (LTV)** — bakfyllnaden startar då. Kolla loggraden
    "Planavläsning för …" på App Store-tjänsten första gången en betalande
    butik öppnar sidan, och skriv in utfallet här.
+4. När Shopify mejlar att Read all orders är godkänt: prompt 4b.
 
 ### Logga in med Facebook för Meta-kopplingen (2026-09-07, build meta-login-v64)
 Axels beslut 2026-08-31 (bygg efter App Store-godkännandet) — byggt två dagar

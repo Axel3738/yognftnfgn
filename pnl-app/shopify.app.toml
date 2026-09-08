@@ -6,10 +6,18 @@ application_url = "https://pnl-app-store-production.up.railway.app"
 embedded = true
 
 [access_scopes]
-# read_customers + read_all_orders: kundvärdet (LTV) behöver kund-ID per order
-# (lagras bara som HMAC) och ordrar äldre än 60 dagar. Kräver även Protected
-# Customer Data nivå 1 i Partner Dashboard.
-scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders"
+# read_customers: kundvärdet (LTV) behöver kund-ID per order (lagras bara som
+# HMAC). Protected Customer Data nivå 1 godkänd 2026-09-05. Släppt som version
+# stonepnl-4 i Dev Dashboard 2026-09-08 (via Cowork).
+#
+# ⚠ read_all_orders (ordrar äldre än 60 dagar) står MEDVETET inte här: Shopify
+# vägrar scopen ("ogiltig omfattning") tills ansökan "Read all orders" är
+# godkänd (skickad 2026-09-08, upp till 7 arbetsdagar). Lägg till den här OCH
+# i SCOPES på Railway samma dag godkännandet kommer — och släpp en ny version.
+# Raden måste alltid vara identisk med den aktiva versionen, annars ser
+# biblioteket en scope-skillnad och skickar butiken till en omauktorisering
+# som inte går att slutföra.
+scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers"
 
 [auth]
 redirect_urls = [

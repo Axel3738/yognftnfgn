@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "cogs-quick-v69", db });
+  return json({ ok: true, build: "ai-cogs-v70", db });
 }

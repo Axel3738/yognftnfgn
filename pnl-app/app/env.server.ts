@@ -11,8 +11,14 @@ const REQUIRED = {
   SHOPIFY_API_SECRET: "Client secret från samma sida",
   SHOPIFY_APP_URL: "Hostingens publika URL, t.ex. https://xxx.up.railway.app",
   DATABASE_URL: "Sätts automatiskt när en PostgreSQL-databas kopplas till tjänsten",
-  SCOPES: "read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders",
+  // Måste vara identisk med den aktiva appversionen i Dev Dashboard (stonepnl-4).
+  // read_all_orders läggs till först när Shopify godkänt ansökan.
+  SCOPES: "read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers",
 } as const;
+
+/* Valfria variabler (funktionen döljs utan dem, inget fel):
+   ANTHROPIC_API_KEY — kortet "Låt AI läsa av din gamla app" på Kostnader
+   (skärmbild/text → inköpspriser). Sätts på varje tjänst som ska ha kortet. */
 
 const missing = Object.entries(REQUIRED).filter(([key]) => !process.env[key]?.trim());
 

@@ -4,7 +4,11 @@ Axel klistrar in en ruta i taget i Cowork (Claude med webbläsarstyrning).
 Varje prompt är fristående. Underlag: `foretag-admin.md`, `CLAUDE.md`
 ("Axel måste göra"). Skrivet 2026-09-08.
 
-## 1. Pro-planen (Partner Dashboard)
+## 1. Pro-planen (Partner Dashboard) — ✅ GJORD 2026-09-08
+
+Utfall: Pro / handle `pro` / 14,99 USD per månad / **14 dagars** prov (Axel
+valde 14, inte 1) / "Free for partners and developers" på. Feature-fältet tar
+max 40 tecken — två rader förkortades. basic fick samtidigt 14 dagars prov.
 
 ```
 Du styr min webbläsare. Jag är inloggad på partners.shopify.com.
@@ -51,7 +55,13 @@ Uppgift: skapa en PRIVAT prisplan för min app StonePNL som bara mina vänner ka
 Text Axel skickar till vännen efteråt (ur `foretag-admin.md` del A):
 > Öppna StonePNL i din Shopify-admin → Inställningar → "Ändra plan". Välj **Friends 50%** (4,99 USD/mån) och godkänn.
 
-## 3. Nya behörigheter (scopes) för kundvärdet
+## 3. Nya behörigheter (scopes) för kundvärdet — ✅ GJORD 2026-09-08
+
+Utfall: Dev Dashboard har ingen Configuration-sida längre — scopes släpps som
+en ny **version**. stonepnl-4 är aktiv med `read_customers`. Protected
+customer data nivå 1 var redan godkänd 2026-09-05 (rördes inte). "Read all
+orders" är ansökt och under granskning; scopen kan inte läggas in förrän då
+(prompt 4b).
 
 ```
 Du styr min webbläsare. Jag är inloggad på partners.shopify.com.
@@ -77,22 +87,47 @@ Fråga mig om något ser annorlunda ut — gissa inte.
 
 ## 4. Railway-variabler
 
+> Utfall 2026-09-08 av prompt 1 och 3 (Cowork): basic har 14 dagars prov, Pro
+> finns (handle `pro`, 14,99 USD, 14 dagar), version **stonepnl-4** är aktiv
+> med `read_customers`. `read_all_orders` nekades tills ansökan godkänts
+> (skickad, upp till 7 arbetsdagar) — därför står den INTE i SCOPES nedan.
+
 ```
 Du styr min webbläsare. Jag är inloggad på railway.app.
 Uppgift: uppdatera miljövariabler på mina PNL-tjänster.
 
 För VARJE tjänst i projektet (beautiful-curiosity, yognftnfgn-production, yognftnfgn-copy, pnl-uk, Danmark-tjänsten, pnl-app-store):
 1. Öppna tjänsten → Variables.
-2. Ändra SCOPES till exakt:
-   read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders
-3. Deploy om tjänsten om Railway inte gör det själv.
+2. Ändra SCOPES till exakt (utan read_all_orders):
+   read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers
+3. Lägg till ANTHROPIC_API_KEY = <nyckeln jag ger dig> (jag klistrar in den själv i fältet om du säger till).
+4. Deploy om tjänsten om Railway inte gör det själv.
 
 BARA på tjänsten pnl-app-store (App Store-versionen):
-4. Lägg till PLAN_GATE = 1
-5. Lägg till APP_HANDLE = <app-handle från listningens URL, t.ex. "stonepnl">
+5. Lägg till PLAN_GATE = 1
+6. Lägg till APP_HANDLE = <app-handle från listningens URL, t.ex. "stonepnl">
 
-Ta en skärmbild av variabellistan per tjänst och visa mig. Ändra inga andra variabler.
+Ta en skärmbild av variabellistan per tjänst (dölj värdet på ANTHROPIC_API_KEY) och visa mig. Ändra inga andra variabler.
 ```
+
+Nyckeln hämtas på https://console.anthropic.com → **API Keys** → **Create Key**.
+Den visas bara en gång — klistra in den direkt i Railway, spara den aldrig i
+repot eller i en chatt.
+
+## 4b. När "Read all orders" godkänts (mejl från Shopify)
+
+```
+Du styr min webbläsare. Jag är inloggad på dev.shopify.com (Dev Dashboard).
+Uppgift: släpp en ny version av min app StonePNL med en extra behörighet.
+
+1. Öppna appen StonePNL → Versions (Versioner) → skapa ny version från den aktiva (stonepnl-4).
+2. Under Access scopes: lägg till read_all_orders. Behåll alla befintliga.
+3. Släpp versionen (Release). Skärmbild av scopes-listan → visa mig.
+Fråga mig om Shopify fortfarande säger "ogiltig omfattning" — gissa inte.
+```
+
+Samma dag: Railway → varje tjänst → `SCOPES` får `,read_all_orders` på slutet,
+och `shopify.app.toml` + `app/env.server.ts` uppdateras i repot.
 
 ## 5. SNI-kod på verksamt.se
 

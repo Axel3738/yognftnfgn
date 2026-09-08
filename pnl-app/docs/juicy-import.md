@@ -5,6 +5,11 @@
 > "Ser rätt ut" → `ShopSettings.juicyCardDismissedAt`; läge B pekar på den
 > befintliga dropzonen). Scenario B (Juicy-adapter) väntar fortfarande på en
 > riktig exportfil från Axel — avsnitt 6.
+>
+> **Build ai-cogs-v70:** i väntan på exportfilen läser en AI av en skärmbild
+> (eller inklistrad text) av Juicys kostnadstabell och mappar raderna mot
+> butikens produkttitlar — kortet "Låt AI läsa av din gamla app" på
+> Kostnader. Kräver `ANTHROPIC_API_KEY` på tjänsten. Se `CLAUDE.md`.
 
 Research + design, 2026-09-07. Ingen kod är ändrad. Axels mål, i andemening:
 *"alla som använder Juicy sedan tidigare ska på max 3 knapptryck få in sina

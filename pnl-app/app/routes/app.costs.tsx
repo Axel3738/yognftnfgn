@@ -33,6 +33,7 @@ import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
 import { importCostCsv } from "../lib/cost-import.server";
+import { aiKostnadEnabled, lasKostnaderMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
 import { asLang, localeOf, t } from "../lib/texts";
 
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -75,6 +76,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
        (släpp filen). Dolt när handlaren tryckt "Ser rätt ut". */
     juicyDismissed: Boolean(settings.juicyCardDismissedAt),
     cogsEstimatePct: settings.cogsEstimatePct ?? null,
+    aiEnabled: aiKostnadEnabled,
   });
 }
 
@@ -115,6 +117,43 @@ export async function action({ request }: ActionFunctionArgs) {
   // Meddelandena visas i UI:t — hämta butikens språk först.
   const settings = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
   const T = t(asLang(settings?.language));
+
+  /* AI läser av skärmbild/text → vårt CSV-format → samma import som filen. */
+  if (intent === "ai-import") {
+    if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
+    let bilder: Bild[] = [];
+    try {
+      bilder = JSON.parse(String(form.get("bilder") ?? "[]"));
+    } catch {
+      bilder = [];
+    }
+    const text = String(form.get("text") ?? "");
+    if (!bilder.length && !text.trim()) return json({ ok: false, message: T.costs.ai.failed("empty") }, { status: 400 });
+    try {
+      const katalog = await loadCatalog(admin, session.shop, prisma);
+      const svar = await lasKostnaderMedAi({
+        bilder: bilder.slice(0, 6),
+        text,
+        produkter: katalog.all.map((v) => ({ productTitle: v.productTitle, variantTitle: v.variantTitle, price: v.price })),
+        currency: settings?.currency ?? "SEK",
+      });
+      const csv = tillCsv(svar);
+      const res = csv ? await importCostCsv(admin, session.shop, prisma, csv, "", T) : { ok: true, message: "", applied: [], skipped: [] };
+      const unmatched = [...svar.unmatched, ...res.skipped];
+      const currencyNote =
+        svar.currency_seen && svar.currency_seen.toUpperCase() !== (settings?.currency ?? "SEK").toUpperCase()
+          ? T.costs.ai.currencyNote(svar.currency_seen, settings?.currency ?? "SEK")
+          : "";
+      return json({
+        ok: true,
+        message: T.costs.ai.result(res.applied.length, unmatched.length),
+        ai: { unmatched, notes: [svar.notes, currencyNote].filter(Boolean).join(" ") },
+      });
+    } catch (e) {
+      console.error("AI-kostnadsläsning misslyckades:", e);
+      return json({ ok: false, message: T.costs.ai.failed((e as Error).message) }, { status: 500 });
+    }
+  }
   // Excel och vår egen mall skriver BOM först i filen — annars ser rad ett ut
   // som data istället för kommentar och tolkningen börjar snett.
   const csv = String(form.get("csv") ?? "").replace(/^\ufeff/, "");
@@ -125,10 +164,14 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct } = useLoaderData<typeof loader>();
+  const { lang, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const juicyFetcher = useFetcher<typeof action>();
   const estimateFetcher = useFetcher<typeof action>();
+  const aiFetcher = useFetcher<typeof action>();
+  const [aiBilder, setAiBilder] = useState<{ name: string; mediaType: string; base64: string }[]>([]);
+  const [aiText, setAiText] = useState("");
+  const aiData = aiFetcher.data as { ok: boolean; message: string; ai?: { unmatched: string[]; notes: string } } | undefined;
   const [visaImport, setVisaImport] = useState(false);
   /* Produktgrupper för snabbfältet: en rad per produkt, varianterna under. */
   const produkter = (() => {
@@ -230,6 +273,71 @@ export default function Costs() {
             ) : (
               <Banner tone="success">{T.costs.allHaveCost}</Banner>
             )}
+
+            {/* AI läser av skärmbild av Juicy (eller vad som helst). */}
+            {aiEnabled ? (
+              <Card>
+                <BlockStack gap="300">
+                  <Text as="h2" variant="headingMd">{T.costs.ai.title}</Text>
+                  <Text as="p" tone="subdued">{T.costs.ai.body}</Text>
+                  <DropZone
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    type="image"
+                    allowMultiple
+                    onDrop={(_all, accepted) => {
+                      for (const file of accepted.slice(0, 6)) {
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                          const url = String(reader.result ?? "");
+                          const base64 = url.split(",")[1] ?? "";
+                          setAiBilder((b) => [...b, { name: file.name, mediaType: file.type || "image/png", base64 }]);
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    }}
+                  >
+                    {aiBilder.length ? (
+                      <div style={{ padding: 16 }}>
+                        <Text as="p" fontWeight="semibold">{aiBilder.map((b) => b.name).join(", ")}</Text>
+                      </div>
+                    ) : (
+                      <DropZone.FileUpload actionTitle={T.costs.ai.drop} actionHint={T.costs.ai.dropHint} />
+                    )}
+                  </DropZone>
+                  <TextField label={T.costs.ai.pasteLabel} value={aiText} onChange={setAiText} multiline={4} autoComplete="off" />
+                  <InlineStack gap="300" blockAlign="center">
+                    <Button
+                      variant="primary"
+                      disabled={!aiBilder.length && !aiText.trim()}
+                      loading={aiFetcher.state !== "idle"}
+                      onClick={() =>
+                        aiFetcher.submit(
+                          { intent: "ai-import", bilder: JSON.stringify(aiBilder.map(({ mediaType, base64 }) => ({ mediaType, base64 }))), text: aiText },
+                          { method: "POST" },
+                        )
+                      }
+                    >
+                      {aiFetcher.state !== "idle" ? T.costs.ai.reading : T.costs.ai.run}
+                    </Button>
+                    {aiBilder.length ? <Button variant="plain" onClick={() => setAiBilder([])}>×</Button> : null}
+                  </InlineStack>
+                  {aiData ? (
+                    <Banner tone={aiData.ok ? "success" : "critical"}>
+                      <p>{aiData.message}</p>
+                      {aiData.ai?.notes ? <p>{aiData.ai.notes}</p> : null}
+                      {aiData.ai?.unmatched.length ? (
+                        <>
+                          <p><strong>{T.costs.ai.unmatchedTitle}</strong></p>
+                          <ul style={{ margin: 0, paddingLeft: 18 }}>
+                            {aiData.ai.unmatched.slice(0, 20).map((u) => <li key={u}>{u}</li>)}
+                          </ul>
+                        </>
+                      ) : null}
+                    </Banner>
+                  ) : null}
+                </BlockStack>
+              </Card>
+            ) : null}
 
             {/* Uppskattning tills riktiga kostnader finns — ett klick. */}
             {missing > 0 || cogsEstimatePct ? (
