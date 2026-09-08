@@ -157,7 +157,9 @@ Allt annat gör en VA med fabriken. Uppdelningen:
 4. Företagskortet in i Meta Business Manager EN gång + VA:n med
    Fullständig åtkomst → det gemensamma OPS-kontot MagiBorsten DK
    915422744950975 drar från samma kort. Inga nya annonskonton skapas.
-5. VA:n använder sitt eget Discord-konto — boten bygger kanalerna.
+5. VA:n använder personalkontot Axel skapat åt henne på Discord
+   (Axels besked 2026-09-08) — hon skapar servrarna där, boten bygger
+   kanalerna. Kontot är Axels, så serverägandet stannar i huset.
 
 **Per ny butik:**
 - 🖐 Axel: väljer produkt. VA:n skapar butiken på free trial; Axel väljer
