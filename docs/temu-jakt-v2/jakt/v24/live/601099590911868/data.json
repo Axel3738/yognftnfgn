@@ -3,21 +3,31 @@
  "url": "https://www.temu.com/se/g-601099590911868.html",
  "final_url": "https://www.temu.com/se/g-601099590911868.html",
  "http_status": 200,
- "fetched": "2026-09-08T06:33:37Z",
+ "fetched": "2026-09-08T07:38:12Z",
  "market": "se",
- "verified": false,
- "verdict": "BLOCKED",
- "title": "Temu",
- "category_path": null,
- "price": null,
- "currency": null,
- "availability": null,
- "rating": null,
- "review_count": null,
- "review_dates": [],
- "images": [],
- "video_url": null,
- "video_uploaded": null,
+ "verified": true,
+ "verdict": "LIVE",
+ "title": "Utomhus IBC-tankslock 1000L Fatöverdrag Utomhushinköksöverdrag 120cm-100cm-116cm med Dragkedja + Stängning + Elastiskt Fästband",
+ "category_path": [
+  "Gräsmatta, trädgård & *",
+  "Bevattning & irrigation"
+ ],
+ "price": "107.37",
+ "currency": "SEK",
+ "availability": "InStock",
+ "rating": 4.8,
+ "review_count": 9298,
+ "review_dates": [
+  "*25-07-*",
+  "2026-06-08",
+  "2026-05-26",
+  "2025-05-02"
+ ],
+ "images": [
+  "https://img.kwcdn.com/product/fancy/a5b4c60a-aa09-46dd-b278-a864e31643b8.jpg"
+ ],
+ "video_url": "https://goods-vod.kwcdn.com/goods-video/4002f32fe0bae8530cc0aa57635666fdc8153492gs2CV.f30.mp4",
+ "video_uploaded": "2025-02-13T14:35:52.00Z",
  "sku": null,
- "captcha": false
+ "hero_file": "hero.jpg"
 }
