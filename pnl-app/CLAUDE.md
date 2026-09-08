@@ -329,6 +329,19 @@ Varje svar till honom följer detta, utan undantag:
 
 ## Kvarvarande backlog
 
+**Välkomstguide (onboarding) — Axels beslut 2026-09-08: VÄNTA, bygg inte
+utan att han säger till.** Underlag: Juicys onboarding (7 skärmbilder Axel
+skickade 2026-09-08): fem steg med progressbar, "kvitto"-panel till vänster
+som fylls i efter hand, ordrar importeras i bakgrunden under tiden, konfetti
+vid 100 %. Stegen: (1) "Vad för dig hit?" (följ vinsten / attribution /
+annonskostnader / LTV / produktanalys), (2) "Var hörde du om oss?" + värvnings-
+kod, (3) annonsplattformar + attribution ja/senare, (4) Anslut Meta (läs-
+behörighet, hoppa över möjligt), (5) lagermodell (dropshipping / eget lager /
+3PL / print on demand). Vår skiss när det blir aktuellt: 4 steg — mål,
+varifrån (ger egen CAC), koppla Meta (finns redan), kostnader (Juicy-
+skärmbild / offert / snabbfält / uppskattning) — och starta `refreshDaily` i
+bakgrunden vid första inloggningen. Ny handlare landar i dag på en tom panel.
+
 **Axels riktning 2026-09-07 (ordagrant i andemening): "det enda jag vill greja
 på i det här kontot är appen StonePNL" — inte Bäverbutikens OS.** Hans lista,
 i hans ordning:
