@@ -1,0 +1,27 @@
+1
+00:00:00,119 --> 00:00:03,480
+23 % rabatt, men bare 1 begrenset antall igjen.
+
+2
+00:00:03,819 --> 00:00:05,960
+Benkhylle med uttrekkbar kurv.
+
+3
+00:00:06,079 --> 00:00:08,720
+Ordinær pris 1104 kroner.
+
+4
+00:00:08,880 --> 00:00:13,519
+I dag 849 kroner. Begrenset lager. Når den er utsolgt, er den utsolgt.
+
+5
+00:00:13,619 --> 00:00:15,439
+Fri frakt over 300 kroner.
+
+6
+00:00:15,539 --> 00:00:16,799
+Betal senere med Klarna.
+
+7
+00:00:16,920 --> 00:00:19,719
+Trykk på "legg i handlekurv" før den blir utsolgt.
