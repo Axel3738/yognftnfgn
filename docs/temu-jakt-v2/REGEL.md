@@ -19,7 +19,7 @@ Det ena utan det andra är inte en kandidat — det är en anteckning i `UNIVERS
 
 | # | Gate | Kill | Varning | Grönt | Källa |
 |---|---|---|---|---|---|
-| G1 | **Temu-recensioner** (antal, inte betyg) | > 800 | 300–800 | < 150 | JSON-LD `reviewCount` på **US-sajten** `temu.com/g-<id>.html`. SE-sajten räknar annorlunda — se avsnitt 5 |
+| G1 | **Temu-recensioner** (antal, inte betyg) — **rankar, dödar aldrig** | — | > 1 500: räkna med tunn marginal, kräv starkt ankare | < 50: prioritera (kontots tre bästa marginaler hade 13, 25 och 30) | JSON-LD `reviewCount` på **US-sajten** `temu.com/g-<id>.html`. Rättat 2026-09-08 på 9 mätpunkter: strandtofflorna har 3 628 och vann. SE-sajten visar ett annat tal — se avsnitt 5 |
 | G2 | **Annonsörer i Sverige** | ≥ 3 aktiva | 2 | 0–1 | Meta Ad Library SE, `active_status=active`, sökt på ägarens svenska ord. Går den inte att nå (mätt 2026-09-08: WebFetch 403, Chromium connection reset, Ads-API utan behörighet) används **proxyn**: antal svenska butiker som **annonserar formen mot konsument** — one-product-stores, Shopify-dropshippers, "fri frakt"-landningssidor med samma Temu-bilder. ≥ 3 = kill, och raden märks `annonsörer: proxy`. **Fackhandel med katalog räknas inte här** (poolbutiker, jaktbutiker, marinhandel) — den är hylla (G4), inte annonsör. *(Mätt 2026-09-08: proxyn dömde poolpumpsöverdraget på sex poolbutiker som alla säljer Poolex — det är ett hyllgolv, inte sex Meta-annonsörer.)* |
 | G3 | **Objekt + presens** (DNA steg 0–1) | ägaren äger inte objektet, det står inomhus, eller problemet syns inte i launchmånaden | — | — | Oförändrad. Det här är strukturella kills som fyndet inte ändrar |
 | G4 | **Svenska hyllan** | **bara** när golvet ligger under vårt pris **OCH** inget märkesankare ≥ 1,6 × vårt pris finns i lager **OCH** G2 ≥ 3 | golv under vårt pris (marketplace räknas) | ingen svensk aktör i samma form | PriceRunner, Fyndiq, Amazon.se, CDON, vidaXL, Jula, Biltema, Clas, Rusta, Bauhaus, fackhandel |
@@ -28,6 +28,11 @@ Det ena utan det andra är inte en kandidat — det är en anteckning i `UNIVERS
 | G7 | **Publik** | < 100 000 ägare (problemlösare) | 100–200 k | > 200 k | SCB, Trafikanalys, Jordbruksverket, branschorgan — med källa |
 
 **Temu-betyg ignoreras helt.** 4,8 på kontots förlorare, 4,3 på dess bästa vinnare.
+
+**G2 är den enda hårda gaten bland marknadssignalerna.** Det som skilde kontots förlorare (Tofflor
+Ergonomiska, 648 aktiva annonsörer, BilligaBoden 229 kr *under*) från vinnaren i samma klass
+(Strandtofflorna, få annonsörer, Crocs 289–600 kr *över*) var kombinationen *någon annonserar redan*
+∧ *kopian är billigare än vi*. Inget annat i materialet separerar dem.
 
 **Varför ordningen är den här:** G1 och G2 mäter samma sak — hur många som redan hittat produkten —
 och G1 kostar noll (står på sidan), G2 kostar en sökning. Hyllan (G4) är en **släpande** indikator:
@@ -88,21 +93,23 @@ MAIN RISK               den ena risken som fäller den
 - Listan ska gå att öppna rad för rad och börja jobba från. Fil: `jakt/v24/SLUTLISTA-<datum>.md`.
 - Allt som prövades men föll står i `jakt/v24/STATUS-<datum>.md` med orsak — det är kvittot, inte listan.
 
-## 5. Kalibrering: SE-sajten räknar recensioner annorlunda än US-sajten
+## 5. SE-sajtens recensionstal är en annan storhet än US-sajtens
 
-Trösklarna i G1 är mätta på US-sajten (`temu.com/g-<id>.html`). SE-sajten visar ett annat tal för
-samma listning: kattkojan 601101118338671 = **72 (US) mot 410 (SE)**, samma dag (2026-09-08).
-Tills tabellen nedan är fylld gäller: **G1 mäts på US-sajten**; SE-sajten används för pris i SEK och
-för länken Axel öppnar.
+G1 är mätt på US-sajten (`temu.com/g-<id>.html`). SE-sajten (`temu.com/se/g-<id>.html`) visar ett
+annat tal för samma listning, och kvoten är inte konstant — så SE-talet kan **inte** räknas om till
+US-talet:
 
-| Produkt | Utfall | US-recensioner (2026-09-08) | SE-recensioner | Datum SE |
-|---|---|---|---|---|
-| IBC-tanköverdrag 601099590911868 | ROAS 2,94 | 13 | *mäts nästa fönster* | |
-| PTZ-kamera 601100938731214 | ROAS 3,38 | 30 | | |
-| Marin motorhölje 606445101752663 | ROAS 1,93 · ~523 köp | 244 | | |
-| Fiskespöhållare 605991496175497 | ROAS 2,24 · 307 köp | 339 | | |
-| Tofflor Ergonomiska 601099553900496 | **förlorare** ROAS 1,59 | 1 781 | | |
-| Utekattkoja 601101118338671 | ej testad | 72 | 410 | 2026-09-08 06:28 |
+| Produkt | Utfall | US-rec (2026-09-08) | SE-rec (2026-09-08) | Kvot |
+|---|---|---:|---:|---:|
+| IBC-tanköverdrag 601099590911868 | ROAS 2,94 (bäst marginal) | 13 | **9 298** | 715× |
+| Tofflor Ergonomiska 601099553900496 | **förlorare** ROAS 1,59 | 1 781 | 6 306 | 3,5× |
+| Utekattkoja 601101118338671 | ej testad | 72 | 410 | 5,7× |
+
+Med SE-talet försvinner sambandet helt (vinnaren IBC har *fler* än förloraren). Rimligaste läsningen:
+SE-sajten visar ett globalt tal, US-sajten ett amerikanskt — och det som bär signalen är just
+**"opopulär i USA"**: en produkt som få amerikaner köpt har få amerikanska dropshippers och därför få
+svenska kopior. Regel: **G1 läses alltid på US-sajten eller ur US-utdrag (Seznam/Yahoo). SE-sajten
+används för pris i SEK, lager och länken Axel öppnar — aldrig för G1.**
 
 ## 6. Var sakerna ligger
 

@@ -1,0 +1,23 @@
+{
+ "goods_id": "601103866118857",
+ "url": "https://www.temu.com/se/g-601103866118857.html",
+ "final_url": "https://www.temu.com/se/g-601103866118857.html",
+ "http_status": 200,
+ "fetched": "2026-09-08T07:47:36Z",
+ "market": "se",
+ "verified": false,
+ "verdict": "BLOCKED",
+ "title": "Temu",
+ "category_path": null,
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "rating": null,
+ "review_count": null,
+ "review_dates": [],
+ "images": [],
+ "video_url": null,
+ "video_uploaded": null,
+ "sku": null,
+ "captcha": false
+}
