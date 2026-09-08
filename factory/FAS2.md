@@ -14,18 +14,21 @@ Varje uppdrag nedan är ett eget avsnitt: **vad**, **återanvänd detta**,
 
 | Blockerare | Blockerar | Löses av |
 |---|---|---|
-| FB-kontot väntar på verifiering | brandets Meta-SIDA → hela kampanjbygget | Meta (väntan) |
+| Meta-sidan **TankGuard** (`61594435402676`) är skapad men inte i Business Manager och inte tilldelad annonskontot — Graph ser den inte alls | annonsnivån i kampanjbygget | Axel/VA:n i BM |
+| Butiken **tankguard.se är lösenordsskyddad** ("Opening soon", mätt 2026-09-08) | all launch — annonser till en låst dörr bränner pengar | Axel: Online Store → Preferences |
+| Pixeln `2196132151319625` finns men skickar inga events (WeTracked ej kopplad) | optimering och mätning | VA:n |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
-| HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video | Axel fyller på |
+| ~~HeyGen-plånboken tom~~ — **18 008 api-krediter**, mätt 2026-09-08 kväll. Den siffran (13) var fel. | inget | — |
+| HeyGens modereringskö höll 8 av 8 renderingar 2026-09-08 kväll | de sista videofilerna | HeyGen (släpper enligt logg inom ~1 h) |
 | `standby.md` har noll rader | ny redigerare per butik | ansökningar ur de två utskicken |
 
 Uppdrag A, C, D och E går att köra UTAN dessa.
 
 **Uppdrag B, uppdaterat 2026-09-08:** kampanj- och adsetnivån är byggd och
 tillbakaläst för TankGuard (se avsnittet längst ner i uppdrag B). Pixeln fanns
-redan. Kvar för annonsnivån: butikens Meta-SIDA (blockerare 1 ovan) **och** de
-brand-swappade svenska videofilerna (blockerare 3 → uppdrag A2). Skriptet som
-gör resten finns: `pipeline/ops-video-launch.mjs`.
+redan. Kvar för annonsnivån: sidan i BM, det öppna butikslåset och de sista
+videofilerna. Skripten som gör resten finns: `pipeline/ops-video-launch.mjs`,
+`pipeline/brand-swap.mjs`, `pipeline/brand-caption.py`.
 
 ---
 
@@ -77,16 +80,19 @@ fyra ytor, och `factory/produkter/<id>.yaml` bär källkopplingen maskinläsbart
 
 ---
 
-## Uppdrag A2 — Brand-swap av video (väntar på HeyGen-krediter)
+## Uppdrag A2 — Brand-swap av video (BEVISAD 2026-09-08, se uppdrag B)
 
 **Vad:** byt "Bäverbutiken" mot OPS-brandet i tal, inbränd text och slutkort.
 
 **Återanvänd detta:**
-- `pipeline/translate-batch.mjs` + `pipeline/heygen.mjs` — hela HeyGen-kedjan med state
-  till disk. Kör med `--lang="Swedish (Sweden)"` (samma språk in och ut).
-  ⚠️ **Otestat:** ingen av de 217 körningarna har varit svenska→svenska.
-  Kör `node pipeline/localize.mjs langs` FÖRST (gratis) och verifiera att språket finns.
-  Håller det inte: plan B är att klippa bort/skriva över meningen, inte dubba om allt.
+- **`pipeline/brand-swap.mjs`** — hela kedjan, byggd 2026-09-08: proofread (gratis) →
+  brandordet byts i SRT:en → render → nedladdning, med state till disk.
+  Svenska→svenska är **testat och fungerar** (`Swedish (Sweden)`, transkripten kom
+  tillbaka i stort sett identiska med originalen). Plan B behövdes aldrig.
+- **`pipeline/brand-caption.py`** — byter brandordet i den INBRÄNDA captionen utan att
+  röra resten av captionspåret: mäter pillret per frame, segmenterar cuen på textens
+  bläcksignatur (karaokefärgning ändrar färg, inte glyfposition) och skriver en
+  `no-precis.py`-konfig för just det segmentet.
 - `pipeline/no-precis.py` — byter inbränd text **exakt i sin egen ruta**. Detta ÄR
   verktyget för yta 3; bygg ingen ny caption-motor.
 - `market-expansion/no/notion-batches/2026-09-05-video-batmotor/lager.py` — bevisad
@@ -162,21 +168,61 @@ Byggt och tillbakaläst ur kontot med
 | Status | PAUSED på alla tre nivåer, explicit satt ✅ |
 | Länk | `https://tankguard.se/products/tankoverdraget` ✅ (i konfigen; sitter på creative-nivå, så den kan inte läsas tillbaka förrän annonserna finns) |
 
-**Annonsnivån är inte byggd — två saker saknas, båda utanför kod:**
+### Videorna — läget 2026-09-08 kväll
 
-1. **Butikens Meta-sida finns inte.** Verifierat i Graph 2026-09-08: varken
-   `me/accounts` (39 sidor) eller MagiBorsten-företagets `owned_pages`
-   (HeimGuard, Bæverbutiken, BeaverShop, MagiBorsten) har en TankGuard-sida.
-   Sidan kan inte skapas via API:t — den är VA:ns/Axels steg i BM (PROCESS fas 5
-   punkt 17), blockerad av FB-kontots verifiering. `page: null` i konfigen tills
-   dess; skriptet vägrar bygga annonser utan den och gissar aldrig en sida.
-2. **Videofilerna finns inte.** Källan för SE är Bäverbutikens **svenska** IBC-annonser
-   (kampanj `120250001079150291`: `IBC_PD_1_H1…H3`, `IBC_SP_1_H1…H3`, `IBC_CS_1_H2…H3`,
-   `IBC_GT_1_H1…H3`) — inte den norska batchen, som är dubbad till norska.
-   Alla elva säger "Bäverbutiken" i talet, så de måste dubbas om svenska→svenska
-   först = uppdrag A2, blockerat av HeyGen-krediterna.
+Hela kedjan är byggd och bevisad på en video; det som återstår är HeyGens
+modereringskö.
 
-När båda finns: sätt `page` i konfigen, lägg de elva mp4:orna i
+- **Källvideorna hämtas hem ur SE-kontot.** ⚠️ `creative.video_id` är INTE
+  annonskontots video — den ligger i `creative.object_story_spec.video_data.video_id`.
+  Och `GET /<video_id>` är spärrat för tokenen (`(#10) Application does not have
+  permission`); källan läses i stället ur EDGEN `act_<id>/advideos?fields=id,title,source`.
+  Alla 11 svenska IBC-videor är 720×1280 @ 30 fps (textscan.json från NO-batchen
+  mätte en 1080×1920-kopia — räkna aldrig band i fel upplösning).
+- **`pipeline/brand-swap.mjs`** kör HeyGens proofread-flöde svenska→svenska.
+  Språket finns (`Swedish (Sweden)`), transkripten kom tillbaka i stort sett
+  identiska med originalen, och brandordet byttes i alla 11 (1–2 träffar per video).
+- **Proofreaden hittade tre falska påståenden** som följt med från Bäverbutiken och
+  som rättats av copy-subagent (sonnet), stavelse för stavelse:
+  `IBC_CS_1_H2` "25 % rabatt" → **23 %** (489/636 är 23,1 %; samma video sa redan
+  636/489), `IBC_CS_1_H3` "till halva priset" → **"för under 500 kronor"** (falskt
+  claim), `IBC_SP_1_H2` "Tusentals svenskar" → **"Redan 4,81 av 5 stjärnor"**
+  (Bäverbutikens social proof, inte en nystartad butiks).
+  De rättade transkripten ligger i `factory/output/tankoverdraget/srt/`.
+- **`pipeline/brand-caption.py`** löser den inbrända texten. Captionpillret säger
+  "från bäberbutiken." även efter omdubben — HeyGen rör bara ljudet. Verktyget
+  mäter pillret per frame, segmenterar cuen på TEXTENS bläcksignatur (karaoke-
+  färgningen ändrar färg men inte glyfposition) och byter bara det segment som bär
+  brandordet. `no-precis.py` gör själva bränningen. Verifierat i bild på
+  IBC_PD_1_H1: "Ett IBC-tanköverdrag" orört, "från bäberbutiken." → "från TankGuard."
+- ⚠️ **HeyGen: 8 av 8 renderingar fastnade i `video pending moderation by our team`.**
+  Systematiskt, inte per video (tidigare batcher fick 1–2). Kvoten är inte problemet
+  — 18 008 api-krediter. Det släpper enligt körloggen inom ~30–60 min; rendera
+  ALDRIG om, det kostar krediter en gång till. Polla i stället.
+
+**Annonsnivån är inte byggd — dessa saker saknas, alla utanför kod:**
+
+1. **Butikens Meta-sida är inte åtkomlig för annonskontot.** Axel skapade sidan och
+   gav id:t `61594435402676` 2026-09-08, men Graph svarar `does not exist, cannot be
+   loaded due to missing permissions` på den, och den syns varken i `me/accounts`
+   (39 sidor), i MagiBorsten-företagets `owned_pages` (HeimGuard, Bæverbutiken,
+   BeaverShop, MagiBorsten) eller i kontots `promote_pages` (0). Sidan måste läggas
+   till i Business Manager OCH tilldelas annonskontot innan en creative kan byggas.
+   `page: null` i konfigen tills dess; skriptet vägrar bygga annonser utan den och
+   gissar aldrig en sida.
+2. **Butiken är lösenordsskyddad.** `https://tankguard.se/products/tankoverdraget`
+   svarar 200 men levererar Shopifys lösenordssida (`page_type: "password"`,
+   "Opening soon"), mätt 2026-09-08. Annonser dit bränner pengar på en låst dörr.
+   Lösenordet stängs av i **Online Store → Preferences**.
+3. **Pixeln skickar inga events.** `2196132151319625` finns i kontot men är inte
+   kopplad i WeTracked (VA:ns besked, STATUS-filens punkt 3–4). Utan events
+   optimerar kampanjen på ingenting.
+4. **Videofilerna är under produktion.** Källan för SE är Bäverbutikens **svenska**
+   IBC-annonser (kampanj `120250001079150291`: `IBC_PD_1_H1…H3`, `IBC_SP_1_H1…H3`,
+   `IBC_CS_1_H2…H3`, `IBC_GT_1_H1…H3`) — inte den norska batchen, som är dubbad till
+   norska. Allt utom HeyGens modereringskö är gjort, se avsnittet ovan.
+
+När allt fyra är löst: sätt `page` i konfigen, lägg de elva mp4:orna i
 `factory/output/tankoverdraget/video/` och kör skriptet utan `--bara-struktur`.
 Kampanj och adsets återanvänds på namn — inget byggs om.
 
