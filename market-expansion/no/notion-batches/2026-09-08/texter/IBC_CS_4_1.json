@@ -1,0 +1,47 @@
+[
+ {
+  "form": 0,
+  "text": "439 kr i stedet for 586 kr",
+  "rad": 0,
+  "se": "489 kr istället för 636 kr",
+  "stryk": "586 kr",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "147 kr mindre for samme 210D Oxford-stoff som stenger ute lyset.",
+  "rader": [
+   1,
+   2
+  ],
+  "se_rader": [
+   "147 kr mindre för samma 210D Oxford-tyg som",
+   "stänger ute ljuset."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "210D Oxford-stoff · Glidelås · Åpning på toppen",
+  "rad": 0,
+  "se": "210D Oxford-tyg · Blixtlås · Öppning upptill",
+  "vanster": false
+ },
+ {
+  "box": [
+   318,
+   1212,
+   762,
+   1298
+  ],
+  "fet": true,
+  "storlek": 39,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Bestill i dag – 439 kr"
+ }
+]
