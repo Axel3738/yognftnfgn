@@ -578,7 +578,7 @@ partners and developers" på). Privata planer KRÄVER minst en butik under
 Vägen: Distribution → Redigera (English) → Pricing details → Manage.
 
 **Gjort via Cowork senare samma dag (2026-09-08, skarpt):**
-- **basic**: prov 1 → **14 dagar**. **Pro** skapad: handle `pro`, 14,99 USD/
+- **basic**: prov 1 → **14 dagar**. **friends-50**: prov 0 → **14 dagar** (Cowork, senare samma kväll). **Pro** skapad: handle `pro`, 14,99 USD/
   månad, 14 dagars prov, "Free for partners and developers" på, display name
   "Pro" + fyra feature-rader (fältet tar max 40 tecken). Grinden matchar
   namnet ("pro" som eget ord).
