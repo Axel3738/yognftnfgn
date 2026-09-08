@@ -134,3 +134,27 @@ märkesprodukt ligger ofta bara 1,2–1,5× över vårt pris — under 1,6×-kra
 45–70 använder utomhus i säsong, och leta Temu-kopian som *ser ut som märket*. Den ordningen gav de
 enda nya kandidaterna med både ankare och noll svenska säljare. Att börja i Temu och hoppas på ett
 ankare på slutet ger 0 av 78.
+
+## 8. Incident 2026-09-08: tre länkar visades utan LIVE-kontroll — alla tre var slutsålda
+
+Axel bad att få se de tre bästa nya kandidaterna. Jag gav honom länkarna trots att ingen av dem hade
+passerat LIVE-gaten (Temu var blockerad). **Han öppnade dem och alla tre visade "sold out."**
+
+| goods-id | Produkt | Varifrån id:t kom |
+|---|---|---|
+| 601100060543863 | Motorlås utombordare | Yahoo-sökutdrag `site:temu.com`, aldrig hämtad |
+| 602472961667889 | Teleskopisk stångsåg | Seznam-utdrag, pris/rec ur snippet |
+| 601104861575272 | Takrännerensningssats | Yahoo-sökutdrag, aldrig hämtad |
+
+**Två regler skärps:**
+
+1. **Visa aldrig en Temu-länk för Axel som inte står i `live/<id>/data.json` med `verdict: LIVE`.**
+   Gäller i chatten, i swipe-vyn och i varje dokument — inte bara i SLUTLISTA.md. Kan listningen inte
+   verifieras: skriv produktnamnet utan länk, eller säg att den väntar på kontroll.
+2. **Ett goods-id ur ett sökutdrag är en ledtråd, inte en listning.** Seznam och Yahoo indexerar
+   Temu-sidor som legat uppe för veckor sedan; utdragets pris och recensionsantal kan vara sanna
+   samtidigt som listningen är död. Tre av tre stickprov var slutsålda. Räkna med att en stor del av
+   snippet-id:na i `ko.txt` och `UNIVERSUM.csv` är döda tills motsatsen är hämtad.
+
+**En människa som öppnar sidan slår vår blockerade hämtning.** Axels avläsning skrevs in som
+`verdict: OUT_OF_STOCK` i `live/<id>/data.json` med källa. Gör likadant varje gång han kollar en länk.
