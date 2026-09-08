@@ -107,7 +107,12 @@
         "annonsNamn": "Overvåkingskamera_NO_SP_9_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131274960233",
+        "creativeId": "1049829294620957",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -171,7 +176,12 @@
         "annonsNamn": "Overvåkingskamera_NO_SP_8_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131279140233",
+        "creativeId": "1054980180680333",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -235,7 +245,12 @@
         "annonsNamn": "Overvåkingskamera_NO_CS_6_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131283160233",
+        "creativeId": "1101165795676379",
+        "adsetId": "120251998624020233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -299,7 +314,12 @@
         "annonsNamn": "Overvåkingskamera_NO_SP_13_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131287110233",
+        "creativeId": "1130697126150856",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -363,7 +383,12 @@
         "annonsNamn": "Overvåkingskamera_NO_SP_12_H1",
         "link": "https://beverbutikken.no/products/overvakingskamera-tradlost-dobbeltlinse-ptz-med-ai-sporing",
         "prefix": "Overvåkingskamera",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131291070233",
+        "creativeId": "1037771515768506",
+        "adsetId": "120251998602380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "899.00",
@@ -427,7 +452,12 @@
         "annonsNamn": "Batmotortrekk_NO_UG_1_H1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131301640233",
+        "creativeId": "1286353156841041",
+        "adsetId": "120252131292590233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -491,7 +521,12 @@
         "annonsNamn": "Batmotortrekk_NO_SP_1_H5",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131315330233",
+        "creativeId": "1712733903172724",
+        "adsetId": "120252047565350233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -555,7 +590,12 @@
         "annonsNamn": "Batmotortrekk_NO_SP_1_H6",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131427630233",
+        "creativeId": "851863147916777",
+        "adsetId": "120252047565350233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -619,7 +659,12 @@
         "annonsNamn": "Batmotortrekk_NO_CS_5_H1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131433030233",
+        "creativeId": "1614159693393002",
+        "adsetId": "120252047986380233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
@@ -683,7 +728,12 @@
         "annonsNamn": "Batmotortrekk_NO_UG_2_H1",
         "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
         "prefix": "Batmotortrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252131437850233",
+        "creativeId": "1082231980926941",
+        "adsetId": "120252131292590233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "529.00",
