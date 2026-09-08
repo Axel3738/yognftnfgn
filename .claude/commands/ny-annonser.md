@@ -1,8 +1,18 @@
 # /ny-annonser – Ta en OPS-butik från byggd till annonser som snurrar
 
-Argument: `$ARGUMENTS` — butiks-id (ex: `tankguard`) + ev. `--dry` för att visa
-planen utan att skapa något i Meta.
-Exempel: `/ny-annonser tankguard`
+Argument: `$ARGUMENTS` — butiks-id (ex: `tankguard`), plus källänken till
+Bäverbutikens produkt FÖRSTA gången butiken körs. `--dry` visar planen utan
+att skapa något i Meta.
+
+```
+/ny-annonser tankguard https://bäverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv
+/ny-annonser tankguard          # när kopplingen redan är sparad
+```
+
+Källänken behövs bara en gång: kommandot skriver ett `kalla:`-block i
+`factory/produkter/<id>.yaml` (annonsprefix + produkt-handle) och läser det
+därefter själv. Saknas både länk och block: stoppa och be om länken — leta
+aldrig upp en källprodukt på gissning.
 
 Fas 2 i OPS Factory. `/ny-ops` bygger butiken; det här kommandot ger den
 annonser. Processen och alla fallgropar står i **`factory/FAS2.md`** — det
@@ -52,9 +62,20 @@ filtrera på butikens brandprefix — annars träffar du fel verksamhet.
 Gör i ordning, utan att invänta godkännande mellan stegen:
 
 1. **Rätt konto och rätt butik.** Läs `factory/produkter/<id>.yaml` och
-   verifiera att `meta.ad_account_id` är `915422744950975`, att `meta.page_id`
-   och `meta.pixel_id` är ifyllda, och att `kalla.annonsprefix` pekar på
-   källprodukten. Saknas något: stoppa och säg exakt vad.
+   verifiera att `meta.ad_account_id` är `915422744950975` och att
+   `meta.page_id` + `meta.pixel_id` är ifyllda. Saknas något: stoppa och säg
+   exakt vad.
+
+   **Källkopplingen.** Finns `kalla:`-blocket: använd det. Annars, med en
+   källänk som argument: hämta produktens handle ur länken, slå upp
+   annonsprefixet genom att läsa kampanjerna i MagiBorsten och hitta det
+   prefix vars annonser pekar på den handlen, och SKRIV blocket i
+   produktfilen (`kalla.annonsprefix`, `kalla.handle`, `kalla.produkt_id`).
+   Hittas inget prefix: visa de kandidater du såg och fråga — gissa aldrig.
+   ⚠️ Produktfilens rad 2 kan bära källänken som en ren kommentar (så gjorde
+   `/ny-ops` fram till 2026-09-08). Den får läsas som förslag, men bekräfta
+   alltid mot kontot innan blocket skrivs.
+
    Rapportera direkt: `Source: <prefix> in MagiBorsten · Target: <BRAND> in
    MagiBorsten DK ✓`.
 
@@ -154,6 +175,7 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 ## DEFINITION OF DONE
 
 - [ ] Rätt konto verifierat före första skrivningen (mål ≠ källa)
+- [ ] `kalla:`-blocket finns i produktfilen — bekräftat mot kontot, inte gissat
 - [ ] Båda källkampanjerna lästa (SE + NO), bara ACTIVE-annonser med
 - [ ] Brand-detektorns tabell visad: varje källannons klassad över fem ytor
       (copy, tal, inbränd text, recensioner, PRIS)
