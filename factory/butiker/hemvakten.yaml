@@ -25,6 +25,9 @@ butik:
   # produktfilen är inklusive moms, så annonsekonomin räknas på ex-moms-
   # intäkten. ⚠️ Bäverbutiken säljer UTAN moms — dess break-even-tal gäller
   # aldrig här, hur lika produkterna än är.
+  # ⚠️ OBEKRÄFTAT: fältet styr prisvisning och är INTE ett besked om bolagets
+  # momsstatus. Axel har aldrig sagt om HeimGuard redovisar moms. Stämmer det
+  # inte är break-even-ROAS 1,49 i stället för 2,11. Fråga före första domen.
   moms_i_pris: true
   moms_procent: 25
 

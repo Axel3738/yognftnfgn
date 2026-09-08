@@ -53,6 +53,32 @@ test('filtret stoppar en ANNAN OPS-butik i samma konto', () => {
   assert.equal(tillhorButiken('TankGuard_ibc_PD_ugc_lack_v1', prefix), false);
 });
 
+test('brandprefixet kräver ordgräns — "Heim" läser inte HeimGuards annonser', () => {
+  // Utan ordgräns matchar startsWith('heim') varje HeimGuard-annons, och de
+  // två butikerna delar konto. Detta är den tystaste varianten av fel konto:
+  // siffrorna ser helt rimliga ut.
+  const heim = prefixFor({ butik: 'heim', brand: 'Heim', kampanjprefix: 'HEIM_', annonsprefix: 'Heim_' });
+  assert.equal(tillhorButiken('HEIMGUARD_SALES_20260910', heim), false);
+  assert.equal(tillhorButiken('HeimGuard_kamera_TR_ugc_v1', heim), false);
+  // Men sina egna hittar den.
+  assert.ok(tillhorButiken('HEIM_SALES_20260910', heim));
+  assert.ok(tillhorButiken('Heim_lampa_PD_v1', heim));
+  assert.ok(tillhorButiken('Heim', heim), 'exakt brandnamn är butikens');
+  assert.ok(tillhorButiken('Heim - nya kampanjen', heim), 'mellanslag och bindestreck är gränser');
+});
+
+test('ordgränsen släpper igenom HeimGuards egna namnformer', () => {
+  const prefix = prefixFor(post());
+  for (const namn of [
+    'HEIMGUARD_SALES_20260910',
+    'HeimGuard_kamera_TR_ugc_natt_v1',
+    'HEIMGUARD | BE-ROAS 2,11 | 2026-09-10',
+    'HeimGuard',
+  ]) {
+    assert.ok(tillhorButiken(namn, prefix), `${namn} är butikens och ska släppas igenom`);
+  }
+});
+
 test('filtret matchar bara i BÖRJAN av namnet', () => {
   // "Kopia av HEIMGUARD_…" är inte butikens kampanj förrän någon döpt om den.
   const prefix = prefixFor(post());
@@ -105,6 +131,27 @@ test('varje post i registret pekar på OPS-kontot och har ekonomi i YAML:en, int
     // hinner det bli olikt produktfilens, och nästa körning dömer mot fel linje.
     for (const falt of ['break_even_roas', 'break_even_cpa_sek', 'target_roas', 'target_cpa_sek', 'aov_sek', 'pris']) {
       assert.equal(p[falt], undefined, `${p.id}: ${falt} hör hemma i produktfilen, inte i registret`);
+    }
+  }
+});
+
+test('registrets prefix och budget stämmer med produktfilens', () => {
+  // De två fälten står med flit på två ställen (ops.mjs läser produktfilen,
+  // skalningen läser registret). Testet finns för att de inte ska glida isär
+  // tyst — ett prefix som bara ändrats på ett ställe gör butikens annonser
+  // osynliga för nästa avläsning.
+  for (const p of lasRegister().produkter) {
+    const { produkt } = laddaButik(p.id);
+    const iFil = produkt?.meta?.creative_prefix;
+    if (iFil) {
+      assert.equal(
+        p.annonsprefix.replace(/_$/, '').toLowerCase(), iFil.replace(/_$/, '').toLowerCase(),
+        `${p.id}: registrets annonsprefix och produktfilens creative_prefix skiljer sig`
+      );
+    }
+    const budgetIFil = produkt?.meta?.testbudget_per_dag;
+    if (budgetIFil) {
+      assert.equal(p.daily_budget_sek, budgetIFil, `${p.id}: dagsbudgeten skiljer sig mellan register och produktfil`);
     }
   }
 });
@@ -192,4 +239,11 @@ test('steg 4: vinstbidrag rangordnar top spendern över den med högst ROAS', ()
   // En annons över break-even-CPA ger negativt vinstbidrag — det är kill-signalen.
   const forlust = rad({ cost_per_action_type: [{ action_type: 'omni_purchase', value: '500' }] });
   assert.ok(vinstbidrag(forlust, 378) < 0);
+});
+
+test('vinstbidrag kastar utan break-even-linje i stället för att nolla tabellen', () => {
+  // Ett tyst 0 hade gett en tabell full av nollor som läses som "ingen tjänade
+  // något" i stället för "vi vet inte vad linjen är".
+  assert.throws(() => vinstbidrag(rad(), null), /break-even-CPA saknas/);
+  assert.throws(() => vinstbidrag(rad(), 0), /break-even-CPA saknas/);
 });

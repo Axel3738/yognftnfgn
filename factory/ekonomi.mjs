@@ -7,6 +7,21 @@
 // därför olika break-even i de två verksamheterna, och skillnaden är stor nog
 // att vända ett kill-beslut.
 //
+// ⚠️ TVÅ ANTAGANDEN SOM BÄR HELA KILL-LINJEN OCH SOM INGEN HAR MÄTT:
+//  1. Att butiken faktiskt redovisar moms. Det enda stödet i repot är
+//     `moms_i_pris: true` i butikskonfigen — ett fält som styr prisvisning,
+//     inte ett besked om bolagets momsstatus. (Jämför docs/grillkliniken-
+//     ekonomi.md, som lämnar Bäverbutikens momsläge öppet med "Fråga Axel".)
+//  2. Att Metas purchase value är bruttot kunden betalade (inkl. moms).
+//     Standardpixeln skickar ordertotalen, men butiken kan vara konfigurerad
+//     att skicka ex moms.
+// Håller antagande 1 inte är break-even 2,11 i stället för 1,49 — för strängt,
+// och lönsamma annonser ser ut att gå med förlust. Håller antagande 2 inte ska
+// `brutto` bytas mot `netto` i breakEvenRoas/targetRoas.
+// BÅDA går att stänga med en mätning: jämför en Meta-rads purchase value mot
+// samma orders totalbelopp i Shopify vid första ordern. /skalningskungen steg
+// 1a kräver den kontrollen. Tills dess är talen preliminära — säg det.
+//
 // Formlerna (allt per order):
 //   brutto   = det kunden betalar = det Meta räknar som purchase value
 //   netto    = brutto / (1 + moms)      (moms_i_pris: false ⇒ netto = brutto)
@@ -32,7 +47,12 @@
 // skriver ut ekonomiblocket färdigt att klistra in i produktfilen.
 
 import { readFileSync } from 'node:fs';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { dirname, join } from 'node:path';
+
+// Registrets sökvägar är repo-rot-relativa och måste läsas mot roten, inte
+// mot den katalog kommandot råkade köras från.
+const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 export const STANDARD_MOMS_PROCENT = 25;
 export const STANDARD_MALMARGINAL = 0.25; // 25 % nettomarginal = husets target-nivå
@@ -72,12 +92,41 @@ export function raknaEkonomi({
   if (p === null || kostnad === null || p <= 0 || kostnad < 0) return null;
 
   const moms = momsIPris ? (tal(momsProcent) ?? STANDARD_MOMS_PROCENT) : 0;
-  const brutto = tal(aov) ?? p;
-  if (brutto <= 0) return null;
+  // aov 0 eller negativ = "inte satt" (mallen levererar fältet som 0), inte
+  // "en order är värd noll kronor".
+  const angivenAov = tal(aov) > 0 ? tal(aov) : null;
+  const brutto = angivenAov ?? p;
 
-  // Varukostnaden per order skalar med ordervärdet när AOV är högre än
-  // styckpriset — annars ser ett flerpack ut som ren vinst.
-  const varukostnad = tal(varukostnadPerOrder) ?? kostnad * (brutto / p);
+  // Varukostnaden per order. ⚠️ Den går INTE att härleda ur ordervärdet när
+  // AOV är ett flerpack: husets paket är rabatterade (HeimGuard −16 till
+  // −37 %) och bär dessutom en gratis bonusprodukt, så antalet varor växer
+  // snabbare än intäkten. En proportionell skalning underskattar då COGS
+  // systematiskt och gör break-even FÖR GENERÖS — exakt åt det håll som
+  // låter förlustannonser överleva. Därför gissar vi inte: saknas
+  // varukostnad_per_order när AOV avviker från styckpriset vägrar vi räkna.
+  const explicitVarukostnad = tal(varukostnadPerOrder);
+  const enEnhetPerOrder = angivenAov === null || Math.abs(brutto - p) < 0.005;
+  if (explicitVarukostnad === null && !enEnhetPerOrder) {
+    return {
+      brutto: avrunda(brutto),
+      netto: avrunda(brutto / (1 + moms / 100)),
+      momsProcent: moms,
+      varukostnad: null,
+      tackningsbidrag: null,
+      marginalProcent: null,
+      breakEvenRoas: null,
+      breakEvenCpa: null,
+      targetRoas: null,
+      targetCpa: null,
+      olonsam: false,
+      osaker: true,
+      varning:
+        `ekonomi.aov_sek (${avrunda(brutto)}) skiljer sig från ekonomi.pris (${p}), så ordern innehåller ` +
+        'mer än en vara — men ekonomi.varukostnad_per_order saknas. Antalet varor går inte att räkna ut ' +
+        'ur ordervärdet när paketen är rabatterade. Sätt varukostnad_per_order ur paketnivåerna i offer.bundle.',
+    };
+  }
+  const varukostnad = explicitVarukostnad ?? kostnad;
   const netto = brutto / (1 + moms / 100);
   const tackningsbidrag = netto - varukostnad - (tal(ovrigaKostnaderPerOrder) ?? 0);
 
@@ -96,6 +145,7 @@ export function raknaEkonomi({
       // Utan täckningsbidrag finns ingen annonsbudget alls — produkten går
       // inte att marknadsföra lönsamt till det här priset.
       olonsam: true,
+      osaker: false,
     };
   }
 
@@ -116,6 +166,7 @@ export function raknaEkonomi({
     targetRoas: targetCpa > 0 ? avrunda(brutto / targetCpa) : null,
     targetCpa: targetCpa > 0 ? Math.round(targetCpa) : null,
     olonsam: false,
+    osaker: false,
   };
 }
 
@@ -125,8 +176,12 @@ export function ekonomiForProdukt(produkt) {
   return raknaEkonomi({
     pris: eko.pris,
     inkopskostnad: eko.inkopskostnad,
-    // `moms_i_pris` saknas ⇒ anta moms. Det ger en strängare break-even, och
-    // fel åt det hållet dödar inga vinnare — fel åt andra hållet gör det.
+    // `moms_i_pris` saknas ⇒ anta moms. ⚠️ Det är ett NÖDLÄGE, inte en
+    // säkerhet: gissas momsen fel åt det här hållet blir break-even för
+    // sträng och lönsamma annonser ser ut att gå med förlust. Momsen ska
+    // alltid komma ur butikskonfigen — sammanfoga() i butik.mjs väver in
+    // den, så en produkt som validerats via ops.mjs träffar aldrig
+    // fallbacken. Träffas den ändå lägger validera() en varning.
     momsIPris: eko.moms_i_pris !== false,
     momsProcent: eko.moms_procent,
     aov: eko.aov_sek,
@@ -144,7 +199,11 @@ export function ekonomiForProdukt(produkt) {
 export function granskaEkonomiblock(produkt, tolerans = 0.02) {
   const eko = produkt?.ekonomi ?? {};
   const raknat = ekonomiForProdukt(produkt);
-  if (!raknat) return [];
+  // "Kunde inte granska" får ALDRIG se ut som "granskat och OK" — en tyst tom
+  // lista läses som ett godkännande.
+  if (!raknat) return ['ekonomiblocket kunde inte granskas — ekonomi.pris eller ekonomi.inkopskostnad saknas'];
+  if (raknat.osaker) return [raknat.varning];
+
   const avvikelser = [];
   const par = [
     ['break_even_roas', raknat.breakEvenRoas],
@@ -153,8 +212,17 @@ export function granskaEkonomiblock(produkt, tolerans = 0.02) {
     ['target_cpa_sek', raknat.targetCpa],
   ];
   for (const [falt, vantat] of par) {
-    const angivet = tal(eko[falt]);
-    if (angivet === null || vantat === null) continue;
+    const ravarde = eko[falt];
+    const angivet = tal(ravarde);
+    if (angivet === null) {
+      // Ett fält som finns men inte är ett tal ("2,11" med decimalkomma ur
+      // YAML:en) hoppades tidigare över tyst.
+      if (ravarde !== undefined && ravarde !== null && ravarde !== '') {
+        avvikelser.push(`ekonomi.${falt} är inte ett tal (${JSON.stringify(ravarde)}) — använd decimalpunkt`);
+      }
+      continue;
+    }
+    if (vantat === null) continue;
     const skillnad = Math.abs(angivet - vantat) / Math.max(vantat, 1e-9);
     if (skillnad > tolerans) {
       avvikelser.push(`ekonomi.${falt} står som ${angivet} men räknas till ${vantat}`);
@@ -181,16 +249,23 @@ async function huvud() {
   if (!butik) {
     // Utan butiksfil: slå upp butiken i OPS-registret. Momsen MÅSTE komma
     // från butiken — gissas den fel flyttas break-even med tiotals procent.
+    let post;
     try {
       const { hittaPost } = await import('./register.mjs');
-      const post = hittaPost(raProdukt?.produkt?.id);
-      butik = lasYaml(readFileSync(post.butiksfil, 'utf8'));
-      console.log(`(butikskonfig ur registret: ${post.butiksfil})`);
-    } catch {
+      post = hittaPost(raProdukt?.produkt?.id);
+    } catch (e) {
       console.error(
-        '❌ Hittar ingen butikskonfig. Ange den som andra argument, eller lägg produkten i factory/produkter/register.json.\n' +
+        `❌ Hittar ingen butikskonfig: ${e.message}\n` +
+        '   Ange butiksfilen som andra argument, eller lägg produkten i factory/produkter/register.json.\n' +
         '   Momsen står i butiksfilen och får inte gissas.'
       );
+      process.exit(1);
+    }
+    try {
+      butik = lasYaml(readFileSync(join(ROT, post.butiksfil), 'utf8'));
+      console.log(`(butikskonfig ur registret: ${post.butiksfil})`);
+    } catch (e) {
+      console.error(`❌ Butiksfilen ${post.butiksfil} gick inte att läsa: ${e.message}`);
       process.exit(1);
     }
   }
@@ -204,6 +279,10 @@ async function huvud() {
 
   const moms = e.momsProcent > 0 ? `moms ${e.momsProcent} % i priset` : 'ingen moms i priset';
   console.log(`\n${raProdukt?.produkt?.namn ?? produktfil} — skalningsekonomi (${moms})\n`);
+  if (e.osaker) {
+    console.error(`❌ ${e.varning}\n`);
+    process.exit(1);
+  }
   console.log(`  brutto (det Meta räknar)   ${e.brutto}`);
   console.log(`  netto (ex moms)            ${e.netto}`);
   console.log(`  − varukostnad per order    ${e.varukostnad}`);

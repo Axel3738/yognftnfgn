@@ -46,9 +46,15 @@ ekonomi:
   aov_sek: 799
   aov_kalla: "Styckpriset. Butiken har ingen försäljningsdata 2026-09-08 — INGEN uppmätt AOV finns."
   # ⚠️ AOV:n kommer att bli högre än 799: 2-packet är förvalt. Räknat på
-  # paketpriserna blir break-even-ROAS 2,22 (A 1 342 kr) och 2,45 (B 1 199 kr),
-  # alltså STRÄNGARE än talet nedan. Första skalningsronden ska därför läsa
-  # verklig AOV (intäkt / köp) och räkna om blocket innan något döms.
+  # paketpriserna blir break-even-ROAS 2,22 (A 1 342 kr, 2 st à 235 kr) och
+  # 2,45 (B 1 199 kr, samma varukostnad), alltså STRÄNGARE än talet nedan.
+  # Första skalningsronden ska läsa verklig AOV och räkna om blocket.
+  # ⚠️ Sätt då BÅDA fälten. Enbart aov_sek ändrar INTE break-even-ROAS:
+  # utan varukostnad_per_order kan verktyget inte veta hur många varor en
+  # order innehåller (paketen är rabatterade och bär en gratis bonus), och
+  # det vägrar räkna hellre än att gissa för generöst. För A-paketet:
+  #   aov_sek: 1342  +  varukostnad_per_order: 470   → 2,22
+  #   aov_sek: 1199  +  varukostnad_per_order: 470   → 2,45   (B)
   break_even_roas: 2.11
   break_even_cpa_sek: 378
   target_roas: 3.66

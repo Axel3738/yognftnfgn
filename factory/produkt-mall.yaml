@@ -28,13 +28,18 @@ ekonomi:
   # Kör:  node factory/ekonomi.mjs factory/produkter/<id>.yaml
   # och klistra in talen den skriver ut. (Bäverbutiken säljer UTAN moms,
   # OPS-butikerna MED — samma pris ger ~40 % olika break-even.)
-  aov_sek: 0                  # verklig AOV ur Shopify. Ingen data än ⇒ sätt styckpriset
+  aov_sek:                    # verklig AOV ur Shopify. Lämna TOM tills butiken sålt — då används styckpriset
   aov_kalla: ""               # var talet kommer ifrån + datum. "ingen data" är ett giltigt svar
   break_even_roas: 0          # KILL-linjen. Under denna gör annonsen förlust
   break_even_cpa_sek: 0       # = täckningsbidraget per order
   target_roas: 0              # 25 % nettomarginal — skalningsnivå, aldrig killnivå
   target_cpa_sek: 0
-  # varukostnad_per_order: 0        # sätt när AOV är ett flerpack (annars skalas den ur priset)
+  # ⚠️ Sätter du aov_sek till något ANNAT än pris (= ordern innehåller flera
+  # varor) MÅSTE varukostnad_per_order sättas också. Verktyget vägrar räkna
+  # annars: antalet varor går inte att härleda ur ordervärdet när paketen är
+  # rabatterade och bär en gratis bonusprodukt — en gissning där underskattar
+  # COGS och gör kill-linjen för generös.
+  # varukostnad_per_order: 0        # varukostnaden för en SÅDAN order (ur offer.bundle)
   # ovriga_kostnader_per_order: 0   # betalväxel/returer — bara VERIFIERADE siffror
 
 varianter:                    # tom lista = one-product utan varianter

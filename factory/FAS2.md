@@ -223,8 +223,10 @@ per OPS-butik.
 | `factory/test/ekonomi.test.mjs`, `skalning.test.mjs` | 26 tester på ekonomin och filtret |
 
 **Mätt vid bygget 2026-09-08** (läs-bara Graph-anrop mot `act_915422744950975`):
-- Kontots valuta är **SEK** och tidszonen **Europe/Copenhagen** — FAS2:s påstående
-  bekräftat, `market-expansion/marknader.json` (DKK) är alltså fel.
+- Kontot **faktureras i SEK** och har tidszonen **Europe/Copenhagen**.
+  (`market-expansion/marknader.json` säger DKK för DK — det är marknadens pris-
+  och annonsvaluta, inte kontots faktureringsvaluta. Båda är rätta; samma
+  mönster i NO, där kontot är SEK trots `valuta: NOK`.)
 - Kontot innehöll **6 kampanjer och 69 annonser, samtliga Bäverbutikens danska**
   (Motorhöljet DK, Axelbältet DK, Sätesöverdraget DK, Strandtofflorna DK,
   Tofflorna DK, Fiskespöhållaren DK). **Noll OPS-kampanjer.** Prefixfiltret
@@ -265,8 +267,19 @@ praxis, aldrig ett skript.
   tull, bonusproduktens COGS) — varje sådan post gör break-even strängare.
   ⚠️ HeimGuards `aov_sek` är styckpriset, för butiken har ingen försäljningsdata.
   2-packet är förvalt, så verklig AOV blir högre och break-even strängare
-  (2,22 på A-paketet, 2,45 på B). `skalning.mjs` läser verklig AOV ur kontot och
-  larmar vid >10 % avvikelse; kommandots steg 1a kräver omräkning före varje dom.
+  (2,22 på A-paketet, 2,45 på B). `skalning.mjs` läser verklig AOV ur kontot
+  (minst 10 köp) och larmar vid >10 % avvikelse; kommandots steg 1a kräver
+  omräkning före varje dom.
+  ⚠️ Omräkningen kräver **två** tal: `aov_sek` OCH `varukostnad_per_order`.
+  Antalet varor går inte att härleda ur ordervärdet — paketen är rabatterade
+  (−16 till −37 %) och bär en gratis bonus, så en proportionell gissning
+  underskattar COGS och gör kill-linjen för generös. `ekonomi.mjs` vägrar
+  därför räkna när `aov_sek` avviker från priset utan att kostnaden är satt.
+  ⚠️ **Två antaganden är obekräftade och bär hela kill-linjen:** att butiken
+  redovisar moms (enda stödet är `moms_i_pris: true`, ett prisvisningsfält —
+  Axel har inte sagt det) och att Metas purchase value är bruttot. Båda stängs
+  med en mätning vid första ordern (kommandots steg 1a-2). Håller det första
+  inte är break-even 1,49 i stället för 2,11.
 - **Butiksfilter på det gemensamma kontot:** `factory/skalning.mjs` filtrerar varje
   läsning på butikens brandprefix (kampanjnamn ELLER annonsnamn, skiftlägesokänsligt,
   bara i början av namnet) och **skriver alltid ut vad den slängde**, så ett felstavat

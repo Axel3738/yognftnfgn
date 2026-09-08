@@ -199,15 +199,19 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   mot kundens riktiga vy — regeln föddes här 2026-09-07).
 - **OPS-produkter registreras i `factory/produkter/register.json`, ALDRIG i
   `products/products.json`** (beslut 2026-09-08). products.json är
-  Bäverbutikens och läses av ett tjugotal skript som antar ett enda
-  annonskonto — en OPS-rad där drar tyst in butiken i Bäverbutikens
-  commission, kvot och redigerardashboard. Registret bär kopplingen och
-  driftläget; **ekonomin bor i `factory/produkter/<id>.yaml`** och räknas av
-  `factory/ekonomi.mjs`. Ett tal har exakt ett hem.
-- **Break-even räknas alltid om från grunden per butik.** OPS-butikerna säljer
-  MED moms (`moms_i_pris` i butikskonfigen), Bäverbutiken utan. Samma produkt
-  och samma inköp ger break-even-ROAS 2,11 respektive 1,49 — kopieras
-  Bäverbutikens tal blir kill-linjen 42 % för generös.
+  Bäverbutikens och läses av sju filer (räknat 2026-09-08) som alla antar ett
+  enda annonskonto — commission, kvoten och dashboarden/leveranskön, tre
+  skilda pengavägar. En OPS-rad där drar tyst in butiken i alla tre.
+  Registret bär kopplingen och driftläget; **ekonomin bor i
+  `factory/produkter/<id>.yaml`** och räknas av `factory/ekonomi.mjs`.
+- **Break-even räknas alltid om från grunden per butik**, aldrig kopierad.
+  Räkningen antar att OPS-butikerna redovisar moms — det enda stödet är
+  `moms_i_pris: true` i butikskonfigen, ett fält som styr prisvisning.
+  ⚠️ **Axel har inte bekräftat OPS-butikernas momsstatus** (Bäverbutikens
+  är bekräftad UTAN moms, 2026-08-29). Håller antagandet inte är
+  övervakningskamerans break-even-ROAS 1,49 i stället för 2,11 — och den
+  strängare siffran får lönsamma annonser att se olönsamma ut. Fråga innan
+  någon skalningsrunda dömer på talen.
 - **Varje läsning av OPS-kontot filtreras på butikens brandprefix.** Kontot är
   delat och bär dessutom Bäverbutikens danska kampanjer: avläst 2026-09-08 låg
   där 6 kampanjer och 69 annonser, samtliga Bäverbutikens, noll OPS. Kör
@@ -343,7 +347,7 @@ npm run dash       # node dashboard/build.mjs     — bygger dashboard/index.htm
 npm run status     # node dashboard/cli.mjs status
 npm run review     # node dashboard/cli.mjs review-queue
 npm run seed       # node dashboard/seed.mjs --force  (⚠️ skriver över testdata)
-npm test           # node --test dashboard/test/*.test.mjs — 17 tester, ska vara gröna
+npm test           # dashboard + bildannonser + commission + factory — 247 tester, ska vara gröna
 ```
 
 Enskilt test: `node --test --test-name-pattern "<del av testnamnet>" dashboard/test/rules.test.mjs`

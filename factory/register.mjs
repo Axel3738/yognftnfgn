@@ -1,14 +1,16 @@
 // OPS-produktregistret: uppslagningen butik → produkt → annonskonto → prefix →
 // ekonomi → kvot. Noll beroenden.
 //
-//   node factory/register.mjs                 → hela registret
-//   node factory/register.mjs <butik|produkt> → en butik, med ekonomi och kvot
+//   node factory/register.mjs                          → hela registret
+//   node factory/register.mjs <butik|produkt>           → en butik, med ekonomi och kvot
+//   node factory/register.mjs log <butik> <antal> [YYYY-MM-DD]  → logga launchade creatives
 //
 // BESLUTET (2026-09-08): OPS-produkter registreras i factory/produkter/register.json,
 // ALDRIG i products/products.json. Motiveringen står i registrets `kommentar`.
-// Kort: products.json är Bäverbutikens och läses av ett tjugotal skript som antar
-// ett enda annonskonto och en enda verksamhet — en OPS-rad där hade tyst dragit
-// butiken in i Bäverbutikens commission, kvot och redigerardashboard.
+// Kort: products.json är Bäverbutikens och läses av sju filer (räknat 2026-09-08)
+// som alla antar ett enda annonskonto och en enda verksamhet — och de är tre
+// skilda pengavägar: commission, kvoten och dashboarden/leveranskön. En OPS-rad
+// där hade tyst dragit butiken in i alla tre.
 //
 // Arbetsdelningen mellan filerna:
 //   factory/produkter/<id>.yaml   → produktens sanning (pris, inköp, ekonomi, vinklar)
@@ -88,15 +90,38 @@ export function prefixFor(post) {
   return [...ut];
 }
 
-/** true om namnet BÖRJAR med något av butikens prefix (skiftlägesokänsligt). */
+// Tecken som räknas som ordgräns efter ett brandprefix i ett kampanj- eller
+// annonsnamn. Namnkonventionen skiljer fält med `_`; kontot innehåller även
+// mellanslag, bindestreck och `|`.
+const ORDGRANS = /[_\-\s|.:/]/;
+
+/**
+ * true om namnet BÖRJAR med något av butikens prefix (skiftlägesokänsligt)
+ * OCH prefixet slutar vid en ordgräns.
+ *
+ * ⚠️ Ordgränsen är inte kosmetisk. Utan den matchar brandet "Heim" varje
+ * annons som tillhör "HeimGuard", och alla OPS-butiker delar konto — en
+ * butik hade då rangordnat en grannbutiks annonser mot sin egen break-even.
+ * Prefixen ur registret slutar redan på `_`; brandnamnet gör det inte, och
+ * det är just brandnamnet som är den farliga matchningen.
+ */
 export function tillhorButiken(namn, prefix) {
   const n = normalisera(namn);
-  return prefix.some((p) => n.startsWith(p));
+  if (!n) return false;
+  return prefix.some((p) => {
+    if (!n.startsWith(p)) return false;
+    if (n.length === p.length) return true;              // exakt namn
+    if (ORDGRANS.test(p.slice(-1))) return true;         // prefixet bär sin egen gräns (…_)
+    return ORDGRANS.test(n[p.length]);                   // annars måste nästa tecken vara en gräns
+  });
 }
 
 /** Hela bilden av en OPS-butik: register + butikskonfig + produktfil + ekonomi. */
 export function laddaButik(nyckel, register = lasRegister()) {
   const post = hittaPost(nyckel, register);
+  // Kontospärren körs vid VARJE uppslagning, inte bara före ett Meta-anrop.
+  // En post med fel konto får aldrig hinna bli en tabell någon läser.
+  sakerstallOpsKonto(post);
   const butik = lasYaml(readFileSync(join(ROT, post.butiksfil), 'utf8'));
   const raProdukt = lasYaml(readFileSync(join(ROT, post.produktfil), 'utf8'));
   const produkt = sammanfoga(butik, raProdukt);
@@ -141,7 +166,7 @@ export function loggaLaunch(nyckel, antal, datum = new Date().toISOString().slic
 function skrivButik(nyckel) {
   const { post, ekonomi, prefix, kvot } = laddaButik(nyckel);
   console.log(`\n${post.namn}  ·  butik ${post.butik}  ·  brand ${post.brand}`);
-  console.log(`  Annonskonto:  ${post.ad_account_id} (delat OPS-konto — filtrera på prefix)`);
+  console.log(`  Annonskonto:  ${post.ad_account_id} — verifierat som OPS-kontot (delat, filtrera på prefix)`);
   console.log(`  Brandprefix:  ${prefix.join(' · ')}`);
   console.log(`  Status:       ${post.status}${post.cycle_start ? ` · cykelstart ${post.cycle_start}` : ' · ingen cykel startad'}`);
   console.log(`  Dagsbudget:   ${post.daily_budget_sek} kr`);
@@ -161,7 +186,21 @@ function skrivButik(nyckel) {
 }
 
 function huvud() {
-  const nyckel = process.argv[2];
+  const [nyckel, ...rest] = process.argv.slice(2);
+
+  // Motsvarigheten till `node pipeline/quota.mjs log <id> <antal>`.
+  if (nyckel === 'log') {
+    const [butik, antalArg, datumArg] = rest;
+    if (!butik || !antalArg) {
+      console.error('Användning: node factory/register.mjs log <butik> <antal> [YYYY-MM-DD]');
+      process.exit(1);
+    }
+    const post = loggaLaunch(butik, Number(antalArg), datumArg ?? new Date().toISOString().slice(0, 10));
+    console.log(`Loggat: ${antalArg} creatives på ${post.namn} (${post.launches.at(-1).date})`);
+    skrivButik(post.id);
+    return;
+  }
+
   if (nyckel && !nyckel.startsWith('--')) {
     skrivButik(nyckel);
     return;

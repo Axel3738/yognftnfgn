@@ -62,14 +62,31 @@ Ekonomiblocket är räknat på styckpriset så länge butiken saknar
 försäljningsdata. Varje OPS-butik har **förvalt flerpack**, så verklig AOV blir
 högre — och då är break-even fel åt det generösa hållet.
 
-`skalning.mjs` skriver ut verklig AOV (intäkt / köp) och larmar vid >10 %
-avvikelse. Larmar den:
+`skalning.mjs` skriver ut verklig AOV (intäkt / köp, minst 10 köp) och larmar
+vid >10 % avvikelse. Larmar den, sätt **båda** talen i produktfilen:
 
-1. Sätt `ekonomi.aov_sek` i produktfilen till den uppmätta AOV:n (och
-   `varukostnad_per_order` om ordern är ett flerpack).
-2. Kör `node factory/ekonomi.mjs factory/produkter/<id>.yaml` och klistra in
+1. `ekonomi.aov_sek` = den uppmätta AOV:n.
+2. `ekonomi.varukostnad_per_order` = varukostnaden för en **sådan** order.
+   ⚠️ Detta tal går INTE att räkna ut ur ordervärdet, och verktyget vägrar
+   räkna utan det. Paketen är rabatterade (HeimGuard −16 till −37 %) och bär
+   en gratis bonusprodukt, så antalet varor växer snabbare än intäkten — en
+   proportionell gissning underskattar COGS och gör kill-linjen för generös.
+   Ta antalet ur produktfilens `offer.bundle` och multiplicera med
+   paketets styckinköp (`ekonomi`-kommentaren bär inköpspriset per paketnivå).
+   Räkna med bonusproduktens inköpspris också om den ingår gratis.
+3. Kör `node factory/ekonomi.mjs factory/produkter/<id>.yaml` och klistra in
    de nya talen.
-3. **Först därefter** får någon annons dömas.
+4. **Först därefter** får någon annons dömas.
+
+#### 1a-2. Pixelkontrollen — en gång, vid första ordern
+
+Hela ekonomin antar att Metas purchase value är **bruttot kunden betalade
+(inkl. moms)**. Ingen har mätt det. Vid första ordern: jämför en Meta-rads
+purchase value mot samma orders totalbelopp i Shopify.
+
+- Samma belopp → antagandet håller, skriv in datumet i `dna.md`.
+- Meta ~20 % lägre → pixeln skickar ex moms. Säg det rakt ut och stanna:
+  break-even-ROAS ska då räknas på nettot, och talen i produktfilen är fel.
 
 Hitta aldrig på en AOV. Finns ingen försäljningsdata: säg det rakt ut, använd
 styckpriset och skriv i rapporten att linjerna är preliminära.
@@ -113,6 +130,8 @@ Kraven, kort:
 
 - Hela **butikens** annonsuppsättning hämtad, sorterad på spend, prefixfiltrerad,
   med antalet bortfiltrerade rader redovisat.
+- **Färsk dagsbudget läses ur kontot samtidigt** — ändra `daily_budget_sek` i
+  `factory/produkter/register.json` om den rört sig, före kvoträkningen.
 - Datakvalitetskontrollen körd (`spend × ROAS` vs `omni_purchase_values`) och
   trasiga rader flaggade. Intäkt räknas alltid som `spend × ROAS`.
 - Signifikansgrind först: <300 kr spend eller <3 köp = **"för tidigt", ingen dom,
@@ -180,9 +199,9 @@ med ≥3 köp vardera i det här kontot. Annat brand, annat pris, annan sida.
   ⚠️ Saknar registret en hub (`notion.database_id` tom): lägg INTE briefarna i
   en Bäverbutikshub. Leverera dem i chatten + Discord och skriv att hubben
   saknas.
-- Logga launchade creatives: `node factory/register.mjs` visar läget,
-  `loggaLaunch` i `factory/register.mjs` skriver dem (första loggningen startar
-  cykeln och sätter status `aktiv`).
+- Logga launchade creatives:
+  `node factory/register.mjs log <butik> <antal> [YYYY-MM-DD]`
+  (första loggningen startar cykeln och sätter status `aktiv`).
 - Skriv batchen i `factory/minne/<butik>/batch-log.md` med datum + hypotes +
   **variabeltaggar** per annons (utfallet fylls i av nästa körning).
 - Committa och pusha `factory/minne/`, `factory/produkter/` och registret.
@@ -198,6 +217,13 @@ med ≥3 köp vardera i det här kontot. Annat brand, annat pris, annan sida.
 - Butikens egen `page_id` och `pixel_id` ur produktfilen. **Kopiera aldrig
   page/pixel från Bäverbutiken** — fel pixel bokför köpen på fel verksamhet och
   syns inte som ett fel, bara som konstig data.
+- ⛔ **STOPPREGEL: tomt `page_id` eller tomt `pixel_id` = launcha inte.**
+  Fråga Axel. **Hämta ALDRIG en sida eller pixel ur det delade kontot** — de
+  som ligger där är Bäverbutikens (sidan `1324465810740336`, pixeln
+  `1554276343018184` byggde dess danska kampanjer). Per 2026-09-08 är
+  HeimGuards båda fält tomma; sidan väntar på Metas verifiering.
+- Kör `node factory/validera.mjs factory/produkter/<produkt-id>.yaml` före
+  uppladdning och åtgärda varje launch-blockerande varning först.
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
 

@@ -173,8 +173,13 @@ som genereras per bygge).
     ⚠️ **Kopiera ALDRIG Bäverbutikens break-even.** Bäverbutiken säljer utan
     moms, OPS-butikerna med. Övervakningskameran: 2,11 med moms mot 1,49 utan —
     42 % skillnad, och den generösa varianten låter förlustannonser överleva.
-    Har butiken sålt: läs verklig AOV ur kontot och räkna om. Förvalt flerpack
-    gör AOV högre och break-even strängare (HeimGuard: 2,22 / 2,45 på paketen).
+    Har butiken sålt: läs verklig AOV ur kontot och räkna om — med BÅDA talen,
+    `aov_sek` och `varukostnad_per_order`. Antalet varor går inte att härleda
+    ur ordervärdet när paketen är rabatterade och bär en gratis bonus, så
+    verktyget vägrar räkna utan kostnaden i stället för att gissa för generöst.
+    Förvalt flerpack gör break-even strängare (HeimGuard: 2,22 / 2,45).
+    ⚠️ Momsstatusen är ett ANTAGANDE tills Axel bekräftat den — `moms_i_pris`
+    styr prisvisning, inte bolagets momsredovisning.
 22. ⚙️ **Läs kontot filtrerat:** `node factory/skalning.mjs <butik>` gör
     ANALYSMETOD steg 0–6 (datakvalitet → signifikansgrind → vinstbidrag →
     spendfördelning → metrik-diagnos). Steg 6b, creative-teardownet, går inte

@@ -98,10 +98,22 @@ export function validera(p) {
   // butikskonfigen. Marginalen rakt på priset (den gamla räkningen) gäller
   // bara butiker utan moms i priset och får aldrig visas för en momsbutik —
   // den gör break-even ~25 % för generös.
+  // ops.mjs och build-store.mjs läser nyckeltal.breakEvenRoas så fort fel är
+  // tomt. Invarianten "inga fel ⇒ nyckeltal är ett objekt" måste därför hålla:
+  // går ekonomin inte att räkna är det ett KRITISKT FEL med en läsbar rad, inte
+  // ett tyst null som blir TypeError tre filer bort.
   let nyckeltal = null;
   if (fel.length === 0) {
     const e = ekonomiForProdukt(p);
-    if (e) {
+    if (!e) {
+      fel.push('ekonomi: går inte att räkna (pris/inkopskostnad saknas eller är ogiltiga)');
+    } else if (e.osaker) {
+      fel.push(`ekonomi: ${e.varning}`);
+    } else if (e.olonsam) {
+      fel.push(
+        `ekonomi: täckningsbidraget är ${e.tackningsbidrag} — priset ${eko.pris} bär inte varukostnaden efter moms`
+      );
+    } else {
       nyckeltal = {
         marginal: e.tackningsbidrag,
         marginalProcent: e.marginalProcent,
@@ -111,14 +123,17 @@ export function validera(p) {
         targetCpa: e.targetCpa,
         momsProcent: e.momsProcent,
         netto: e.netto,
-        olonsam: e.olonsam,
+        olonsam: false,
       };
-      if (e.olonsam) {
-        fel.push(
-          `ekonomi: täckningsbidraget är ${e.tackningsbidrag} — priset ${eko.pris} bär inte varukostnaden efter moms`
-        );
-      }
     }
+  }
+  // Momsen ska komma ur butikskonfigen. Saknas fältet helt har produkten inte
+  // vävts ihop med sin butik, och då är break-even gissad.
+  if (p?.ekonomi && p.ekonomi.moms_i_pris === undefined) {
+    varningar.push(
+      'ekonomi.moms_i_pris saknas — butikskonfigen är inte invävd, så momsen ANTOGS till 25 %. ' +
+      'Validera via ops.mjs (som kör sammanfoga) i stället för på den orörda produktfilen.'
+    );
   }
 
   // Ekonomiblocket i YAML:en är för människor; siffrorna blir inaktuella så

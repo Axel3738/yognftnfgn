@@ -21,6 +21,12 @@ ordningen det var vid varje uppdatering.
 | Target-ROAS | 3,66 | budgetallokering och skalning |
 | Target-CPA | 218 kr | samma |
 
+⚠️ **Två obekräftade antaganden bär de här talen.** (1) Att butiken redovisar
+moms — det enda stödet är `moms_i_pris: true` i butikskonfigen, ett fält som
+styr prisvisning; Axel har inte sagt det. Håller det inte är break-even 1,49.
+(2) Att Metas purchase value är bruttot kunden betalade. Båda stängs med en
+mätning vid första ordern (kommandots steg 1a-2). Tills dess: preliminära.
+
 ⚠️ Räknade på styckpriset 799 kr, moms 25 %, varukostnad 261 kr. **Butiken har
 ingen uppmätt AOV.** 2-packet är förvalt, så verklig AOV blir högre och
 break-even STRÄNGARE (2,22 på A-paketet 1 342 kr, 2,45 på B-paketet 1 199 kr).

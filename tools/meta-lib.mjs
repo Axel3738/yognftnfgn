@@ -117,16 +117,28 @@ export async function alla(sökväg, params = {}, limit = 100) {
   const ut = [];
   let svar = await api(sökväg, { params: { ...params, limit } });
   ut.push(...(svar.data || []));
+  let försök = 0;
   while (svar.paging?.next) {
     const väntaTill = senastAnrop + FÖRDRÖJNING_MS;
     if (väntaTill > Date.now()) await vänta(väntaTill - Date.now());
     senastAnrop = Date.now();
     const res = await fetch(svar.paging.next);
-    svar = await res.json().catch(() => ({}));
-    if (svar.error) {
-      if (svar.error.code === 17) { await vänta(20000); continue; }
-      throw new Error(`Meta paging: ${svar.error.message}`);
+    // ⚠️ Svaret får INTE skrivas över `svar` förrän det lyckats. Tidigare
+    // gjorde det det, och vid rate limit (kod 17) saknade felobjektet
+    // `paging` — då avslutades loopen tyst med HALVA datan, som om sidan
+    // varit den sista. En rangordning på partiell data ser helt normal ut.
+    const nästa = await res.json().catch(() => ({}));
+    if (nästa.error) {
+      const rateLimited = nästa.error.code === 17 || /user request limit reached/i.test(nästa.error.message || '');
+      if (rateLimited && försök < BACKOFF_MS.length) {
+        logg(`  ⏳ Meta rate limit i pagineringen (försök ${försök + 1}/${BACKOFF_MS.length}) — väntar ${BACKOFF_MS[försök] / 1000}s`);
+        await vänta(BACKOFF_MS[försök++]);
+        continue; // samma next-URL igen — aldrig hoppa över en sida
+      }
+      throw new Error(`Meta paging: ${nästa.error.message}`);
     }
+    försök = 0;
+    svar = nästa;
     ut.push(...(svar.data || []));
   }
   return ut;

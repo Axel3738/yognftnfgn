@@ -30,10 +30,14 @@
 import { pathToFileURL } from 'node:url';
 import { alla, api, säkerställProxy } from '../tools/meta-lib.mjs';
 import { laddaButik, sakerstallOpsKonto, tillhorButiken } from './register.mjs';
+export { sakerstallOpsKonto };
 
 // Signifikansgrinden ur ANALYSMETOD steg 2 — oförändrad, den är produktagnostisk.
 export const GRIND_SPEND_SEK = 300;
 export const GRIND_KOP = 3;
+// Egen, hårdare grind för AOV-rekommendationen: den flyttar kill-linjen för
+// HELA butiken, så den får inte vila på ett par order.
+export const AOV_GRIND_KOP = 10;
 
 const nr = (v) => (Number.isFinite(Number(v)) ? Number(v) : 0);
 
@@ -98,9 +102,15 @@ export function trasigaRader(rader, tolerans = 0.05) {
 /** Steg 2 — signifikansgrinden. */
 export const arBedombar = (r) => r.amount_spent >= GRIND_SPEND_SEK && r.kop >= GRIND_KOP;
 
-/** Steg 4 — vinstbidrag. Aldrig ROAS eller CPA ensamt. */
+/** Steg 4 — vinstbidrag. Aldrig ROAS eller CPA ensamt.
+ *  Saknas break-even-CPA finns ingen linje att mäta mot — då kastar vi.
+ *  Ett tyst 0 hade gett en tabell full av nollor som ser ut som "ingen
+ *  tjänade något" i stället för "vi vet inte". */
 export function vinstbidrag(rad, breakEvenCpa) {
-  if (!rad.cpa || !breakEvenCpa) return 0;
+  if (!breakEvenCpa) {
+    throw new Error('vinstbidrag: break-even-CPA saknas — ingen rangordning kan göras.');
+  }
+  if (!rad.cpa) return 0; // inga köp ⇒ inget bidrag, och raden är ändå "för tidigt"
   return (breakEvenCpa - rad.cpa) * rad.kop;
 }
 
@@ -155,19 +165,27 @@ export async function hamtaButikensAnnonser(butik, { dagar = 14, sedan = null } 
 
   const behall = [];
   const slang = [];
+  const baraAnnonsnamn = new Set();
   for (const rad of rader) {
     // Filtret får träffa på ANTINGEN annonsnamnet eller kampanjnamnet: en
     // brand-swappad Bäverbutiksannons kan ha behållit sitt gamla annonsnamn
     // men ligga i butikens egen kampanj.
-    const min =
-      tillhorButiken(rad.ad_name, butik.prefix) || tillhorButiken(rad.campaign_name, butik.prefix);
-    (min ? behall : slang).push(rad);
+    const viaKampanj = tillhorButiken(rad.campaign_name, butik.prefix);
+    const viaAnnons = tillhorButiken(rad.ad_name, butik.prefix);
+    if (viaKampanj || viaAnnons) {
+      behall.push(rad);
+      if (viaAnnons && !viaKampanj) baraAnnonsnamn.add(`${rad.ad_name} (i "${rad.campaign_name}")`);
+    } else {
+      slang.push(rad);
+    }
   }
 
   return {
     rader: behall.map((r) => normalisera(r, status)).sort((a, b) => b.amount_spent - a.amount_spent),
     slangda: slang.length,
     slangdaKampanjer: [...new Set(slang.map((r) => r.campaign_name))].sort(),
+    behallnaKampanjer: [...new Set(behall.map((r) => r.campaign_name))].sort(),
+    baraAnnonsnamn: [...baraAnnonsnamn].sort(),
     totalt: rader.length,
     prefix: butik.prefix,
     period: typeof period === 'string' ? period : `${period.since} → ${period.until}`,
@@ -201,7 +219,11 @@ export function byggRapport(butik, hamtning) {
     totalSpend, totalKop, totalIntakt, totalVinst,
     // Verklig AOV ur kontot. Finns den avviker den nästan alltid från
     // styckpriset (paketen är förvalda) — och då är break-even fel.
-    verkligAov: totalKop > 0 ? totalIntakt / totalKop : null,
+    // ⚠️ Egen signifikansgrind: en AOV på två order är brus, och en
+    // rekommendation att flytta kill-linjen på det underlaget är farligare
+    // än ingen rekommendation alls.
+    verkligAov: totalKop >= AOV_GRIND_KOP ? totalIntakt / totalKop : null,
+    aovKop: totalKop,
   };
 }
 
@@ -213,8 +235,19 @@ export function skrivRapport(r) {
     `Butiksfiltret: ${hamtning.rader.length} av ${hamtning.totalt} annonser i kontot är butikens. ` +
     `${hamtning.slangda} rader tillhör andra verksamheter och är BORTFILTRERADE.`
   );
+  if (hamtning.behallnaKampanjer.length) {
+    console.log(`  Butikens kampanjer:       ${hamtning.behallnaKampanjer.join(' · ')}`);
+  }
   if (hamtning.slangdaKampanjer.length) {
     console.log(`  Bortfiltrerade kampanjer: ${hamtning.slangdaKampanjer.join(' · ')}`);
+  }
+  if (hamtning.baraAnnonsnamn.length) {
+    // En annons som bär butikens prefix men ligger i en kampanj som inte gör
+    // det är antingen felplacerad eller en felaktig träff. Båda ska synas.
+    console.log(
+      `  ⚠️ ${hamtning.baraAnnonsnamn.length} rader matchade bara på ANNONSNAMNET och ligger i en kampanj\n` +
+      `     utan butikens prefix: ${hamtning.baraAnnonsnamn.join(' · ')}`
+    );
   }
 
   if (!hamtning.rader.length) {
@@ -232,14 +265,23 @@ export function skrivRapport(r) {
 
   if (r.verkligAov) {
     const avvikelse = Math.abs(r.verkligAov - ekonomi.brutto) / ekonomi.brutto;
-    console.log(`\nVerklig AOV i perioden: ${kr(r.verkligAov)} (registrerad: ${kr(ekonomi.brutto)})`);
+    console.log(`\nVerklig AOV i perioden: ${kr(r.verkligAov)} på ${r.aovKop} köp (registrerad: ${kr(ekonomi.brutto)})`);
     if (avvikelse > 0.1) {
       console.log(
-        `  ⚠️ Avviker ${(avvikelse * 100).toFixed(0)} % från talet ekonomin är räknad på.\n` +
-        `     Sätt ekonomi.aov_sek = ${Math.round(r.verkligAov)} i produktfilen och räkna om\n` +
-        `     (node factory/ekonomi.mjs ${post.produktfil}) INNAN någon annons döms.`
+        `  ⚠️ Avviker ${(avvikelse * 100).toFixed(0)} % från talet ekonomin är räknad på. Linjerna nedan är fel.\n` +
+        '     Räkna om INNAN någon annons döms — och sätt BÅDA talen:\n' +
+        `       ekonomi.aov_sek: ${Math.round(r.verkligAov)}\n` +
+        '       ekonomi.varukostnad_per_order: <varukostnaden för en SÅDAN order>\n' +
+        '     Varukostnaden går inte att räkna ut ur ordervärdet: paketen är rabatterade och\n' +
+        '     bär en gratis bonusprodukt, så antalet varor växer snabbare än intäkten. Ta talet\n' +
+        `     ur paketnivåerna i produktfilens offer.bundle. Kör sedan:\n` +
+        `       node factory/ekonomi.mjs ${post.produktfil}`
       );
     }
+  } else if (r.totalKop > 0) {
+    console.log(
+      `\nVerklig AOV: för få order för att mäta (${r.totalKop} av ${AOV_GRIND_KOP}). Linjerna står kvar.`
+    );
   }
 
   if (r.trasiga.length) {
@@ -311,14 +353,31 @@ async function huvud() {
   };
 
   const butik = laddaButik(nyckel);
+  // Kontospärren FÖRST — inget Graph-anrop får gå mot ett okontrollerat konto.
+  const kontoId = sakerstallOpsKonto(butik.post);
+
   if (!butik.ekonomi) {
     console.error(`❌ ${butik.post.butik}: ekonomin går inte att räkna — pris/inköp saknas i ${butik.post.produktfil}.`);
     process.exit(1);
   }
+  if (butik.ekonomi.osaker) {
+    console.error(`❌ ${butik.post.butik}: ${butik.ekonomi.varning}`);
+    process.exit(1);
+  }
+  if (butik.ekonomi.olonsam || !butik.ekonomi.breakEvenCpa) {
+    console.error(
+      `❌ ${butik.post.butik}: täckningsbidraget är ${butik.ekonomi.tackningsbidrag} — det finns ingen\n` +
+      '   break-even-linje att mäta mot, så ingen dom kan avges. Rätta priset eller inköpskostnaden först.'
+    );
+    process.exit(1);
+  }
 
-  // Kontots valuta ska stämma med talen i produktfilen. Mätt 2026-09-08 är
-  // kontot SEK (market-expansion/marknader.json påstår DKK — det är fel).
-  const konto = await api(`act_${butik.post.ad_account_id}`, { params: { fields: 'name,currency' } });
+  // Kontot faktureras i SEK (avläst 2026-09-08). Produkten måste räknas i
+  // samma valuta — annars jämförs kronor med något annat.
+  // (`market-expansion/marknader.json` säger DKK om DK — det är MARKNADENS
+  // pris- och annonsvaluta, inte kontots. Båda talen är rätta. Samma sak i
+  // NO: kontot är SEK trots `valuta: NOK`.)
+  const konto = await api(`act_${kontoId}`, { params: { fields: 'name,currency' } });
   if (konto.currency !== (butik.produkt?.ekonomi?.valuta ?? 'SEK')) {
     console.log(
       `⚠️ Kontots valuta är ${konto.currency} men produkten räknas i ` +
