@@ -9,6 +9,7 @@
  * läsning, dag för dag, med ECB-kursen (`fx.server.ts`).
  */
 
+import "../env.server"; // miljön kontrolleras innan META_APP_* läses
 import { createHmac, timingSafeEqual } from "node:crypto";
 import prisma from "../db.server";
 import { getRates, fxSammanfattning, type FxDay } from "./fx.server";

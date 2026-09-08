@@ -8,7 +8,9 @@ embedded = true
 
 [access_scopes]
 # read_reports krävs för ShopifyQL. write_inventory krävs för att skriva unitCost.
-scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory"
+# read_customers + read_all_orders krävs för kundvärdet (LTV): kund-ID per order
+# och ordrar äldre än 60 dagar. Kräver också Protected Customer Data nivå 1.
+scopes = "read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders"
 
 [auth]
 redirect_urls = [ "https://REPLACE.fly.dev/auth/callback" ]

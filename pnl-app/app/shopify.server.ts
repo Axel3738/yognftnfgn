@@ -10,6 +10,9 @@ import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prism
 import prisma from "./db.server";
 
 export const STANDARD_PLAN = "Standard";
+/** Standard + kundvärde (LTV-prognos). 5 USD mer i månaden. */
+export const PREMIUM_PLAN = "Standard + LTV";
+export const ALL_PLANS = [STANDARD_PLAN, PREMIUM_PLAN] as const;
 
 /**
  * Butiker som aldrig debiteras: egna butiker och custom-installationerna.
@@ -40,6 +43,12 @@ const shopify = shopifyApp({
       lineItems: [
         // ~100 SEK — App Store debiterar i USD.
         { amount: 9.99, currencyCode: "USD", interval: BillingInterval.Every30Days },
+      ],
+      trialDays: 7,
+    },
+    [PREMIUM_PLAN]: {
+      lineItems: [
+        { amount: 14.99, currencyCode: "USD", interval: BillingInterval.Every30Days },
       ],
       trialDays: 7,
     },

@@ -43,7 +43,7 @@ fly secrets set \
   SHOPIFY_API_KEY=<client id från steg 1> \
   SHOPIFY_API_SECRET=<client secret från steg 1> \
   SHOPIFY_APP_URL=https://<ditt-appnamn>.fly.dev \
-  SCOPES=read_products,read_orders,read_inventory,read_reports,write_inventory
+  SCOPES=read_products,read_orders,read_inventory,read_reports,write_inventory,read_customers,read_all_orders
 fly deploy
 ```
 
@@ -59,17 +59,34 @@ Varje butik får sin egen permanenta token — inget mer connector-byte.
 
 ## Meta-koppling (annonskostnad)
 
-Två lägen:
+Två vägar in, samma resultat:
 
 | | Vad krävs | När |
 |---|---|---|
-| **Dev mode** | Inget. Fungerar direkt på dina egna annonskonton. | Nu |
-| **Publik** | Meta App Review på `ads_read`. Veckor. | När du ska sälja appen |
+| **Knappen "Koppla Meta"** | Env `META_APP_ID` + `META_APP_SECRET` från en Meta-app med Facebook Login for Business och redirect-URI `https://<app-domän>/meta/callback`. Utan Meta App Review fungerar den bara för konton med roll i Meta-appen. | Egna butiker nu, externa efter review |
+| **Inklistrad token** | En long-lived token från developers.facebook.com, klistras in under *Inställningar*. | Alltid |
 
-Skapa en app på developers.facebook.com → Marketing API → hämta en long-lived
-token → klistra in under *Inställningar* i appen. Tills dess visas panelen utan
-annonskostnad, och täckningsbidraget flaggas som ofullständigt istället för att
-tyst visas för högt.
+Handlaren väljer annonskonto ur en lista; kontots valuta följer med. Står
+kontot i en annan valuta än butiken räknas annonskostnaden om **dag för dag**
+med ECB:s dagskurs (Frankfurter), cachad i `FxRate`. Dagar utan kurs
+rapporteras som saknade — aldrig som noll. Utan Meta-koppling visas panelen
+utan annonskostnad och täckningsbidraget flaggas som ofullständigt.
+
+## Flytta hit (COGS från en annan vinstapp)
+
+Sidan *Flytta hit* tar emot en export från Juicy, TrueProfit, BeProfit eller
+ett kalkylblad: kolumnerna känns igen automatiskt (variant-ID, SKU, produkt,
+variant, kostnad), tolkningen visas innan något skrivs, och kostnaderna
+hamnar i Shopifys `unitCost`. Har den gamla appen redan skrivit dit står det
+"Klart — inget att flytta".
+
+## Kundvärde (LTV) — tilläggsplan
+
+Planen *Standard + LTV* (14,99 USD/mån) låser upp sidan *Kundvärde*: kohorter
+per första köpmånad, ackumulerat värde per kund månad 0–12, återköpsgrad och
+en prognos byggd på butikens egna äldre kohorter. Kräver scopes
+`read_customers` + `read_all_orders` och Protected Customer Data nivå 1 (bara
+kund-ID hämtas). Egna butiker i `BILLING_EXEMPT_SHOPS` ser sidan utan plan.
 
 ---
 
@@ -96,6 +113,8 @@ separat i inställningarna.
 npm install
 npx prisma migrate dev
 npm run dev          # Shopify CLI öppnar en tunnel och installerar i din dev-butik
+npm run typecheck    # tsc --noEmit
+npm test             # node --test (kräver Node ≥ 22.6 för strip-types)
 ```
 
 ## Struktur
@@ -103,9 +122,16 @@ npm run dev          # Shopify CLI öppnar en tunnel och installerar i din dev-b
 | Fil | Vad |
 |---|---|
 | `app/lib/pnl.server.ts` | Räknemotorn — TB, BE ROAS, MER, viktade kostnadsändringar |
-| `app/lib/shopify-data.server.ts` | ShopifyQL + GraphQL: försäljning, sessioner, produktmix, kostnader |
-| `app/lib/meta.server.ts` | Annonskostnad per dag från Marketing API |
+| `app/lib/shopify-data.server.ts` | Bulk-export + GraphQL: försäljning, produktmix, kostnader, LTV-underlag |
+| `app/lib/meta.server.ts` | Annonskostnad per dag från Marketing API, Meta-inloggningen (OAuth) |
+| `app/lib/fx.server.ts` | ECB-dagskurser, cache i `FxRate`, omräkning dag för dag |
+| `app/lib/cost-import.server.ts` | Tolken för COGS-exporter från andra appar (ren, testad) |
+| `app/lib/ltv.server.ts` | Kohorter och LTV-prognos (ren, testad) |
 | `app/routes/app._index.tsx` | Panelen |
 | `app/routes/app.costs.tsx` | COGS-editor + CSV-import |
-| `app/routes/app.settings.tsx` | Tull, kortavgift, växelkurs, annonskonto |
-| `prisma/schema.prisma` | Sessioner, inställningar, kostnadsändringar, cachad adspend |
+| `app/routes/app.import.tsx` | Flytta hit — COGS från Juicy m.fl. i tre steg |
+| `app/routes/app.ltv.tsx` | Kundvärde (LTV), låst bakom planen Standard + LTV |
+| `app/routes/app.settings.tsx` | Tull, kortavgift, målmarginal, Meta-koppling och annonskonto |
+| `app/routes/app.meta.connect.tsx`, `meta.callback.tsx` | Meta-inloggningen: ut ur ramen, tillbaka med token |
+| `prisma/schema.prisma` | Sessioner, inställningar, kostnadsändringar, cachad adspend, växelkurser |
+| `test/` | Enhetstester för tolken och LTV-motorn |

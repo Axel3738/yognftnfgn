@@ -599,9 +599,11 @@ function SetupChecklist({
       key: "costs",
       done: costsDone,
       title: "Lägg in inköpspriser",
-      hint: costsHint,
-      to: "/app/costs",
-      cta: "Till Kostnader",
+      hint: costsDone
+        ? costsHint
+        : `${costsHint} Kommer du från Juicy eller en annan vinstapp? Släpp exporten under Flytta hit.`,
+      to: costsDone ? "/app/costs" : "/app/import",
+      cta: costsDone ? "Till Kostnader" : "Flytta hit",
     },
     {
       key: "meta",

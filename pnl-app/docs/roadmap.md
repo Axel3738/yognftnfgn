@@ -1,65 +1,81 @@
 # Roadmap — PNL-appen efter App Store-lanseringen
 
-Axels önskelista, skickad 2026-09-08 (ordagrant i andemening, sorterad).
-Appen är **publicerad på Shopify App Store** — checklistan i `app-store.md`
-är avklarad. Det här är vad som byggs härnäst.
+Axels önskelista, skickad 2026-09-08. Appen är **publicerad på Shopify App
+Store** — checklistan i `app-store.md` är avklarad. Status per punkt nedan;
+Axels egna klick står i `axel-klick.md`.
 
 ## Läget i koden 2026-09-08 (mätt, inte gissat)
 
-- **Ingen växelkurs finns.** Panelen visar allt i butikens valuta
-  (`shop.currencyCode`). Meta-spend hämtas rakt från annonskontot utan
-  omräkning — ett NOK-annonskonto mot en SEK-butik summeras alltså fel.
-  Det finns en färdig ECB-hämtare i `commission/valuta.mjs` (dagskurs,
-  cachad per dygn) att porta.
-- **Meta kopplas med inklistrad long-lived token** (Inställningar). Ingen
-  OAuth-knapp.
-- Billing: 9,99 USD/mån via Shopify Billing API, en plan (`STANDARD_PLAN`).
-  Ingen tilläggsplan ännu.
+Före dagens bygge fanns ingen växelkurs alls, Meta kopplades bara med
+inklistrad token, en enda betalplan, och COGS-importen krävde exakt formatet
+`produkttitel;varianttitel;kostnad`. Allt fyra är byggt i dag (commit-serien
+på `claude/stonepnl-overview-development-zh06uw`), typecheck grön, bygget
+grönt, 13 enhetstester gröna.
 
-## 1. Meta-knapp (OAuth) i stället för inklistrad token
+## 1. Meta-knapp (OAuth) — ✅ byggd, väntar på Meta-app
 
-Två delar, olika tidsskalor:
+| Del | Status |
+|---|---|
+| Koden: `Koppla Meta` → Facebook-inloggning → long-lived token → välj annonskonto ur lista | ✅ `app/routes/app.meta.connect.tsx`, `meta.callback.tsx`, `lib/meta.server.ts` |
+| Utgångsvarning (token ≈ 60 dagar), "Koppla om", "Koppla bort" | ✅ Inställningar |
+| Token-fältet finns kvar (hopfällt) för den som hellre klistrar in | ✅ |
+| Meta-app + env `META_APP_ID`/`META_APP_SECRET` | 🖐 Axel, `axel-klick.md` steg 1 |
+| Meta App Review för externa handlare | 🖐 Axel, steg 3 — 2–6 veckor |
 
-| Del | Tid | Vem |
-|---|---|---|
-| Koden: Facebook Login → välj annonskonto → spara token per butik, förnya automatiskt | ~1 arbetsdag | Claude |
-| Meta App Review för `ads_read` (Advanced Access) + företagsverifiering | 2–6 veckor, kan avslås | Axel klickar, Claude skriver texterna + screencast-manus |
+Utan env-variablerna är knappen dold och appen beter sig exakt som förut.
 
-Utan godkänd review fungerar knappen bara för konton med roll i Meta-appen
-(Axel själv). Därför: **videoinstruktion för token-vägen nu**, knappen byggs
-och skickas till review parallellt. Videon blir inte bortkastad — den
-behövs som screencast i review-ansökan.
+## 2. Live växelkurs, dagligen — ✅ byggd
 
-## 2. Live växelkurs, uppdateras dagligen
+- Spend sparas i **annonskontots** valuta (`DailySpend.currency`, läses ur
+  Metas `account_currency`) och räknas om till butikens valuta **dag för dag**
+  med ECB:s dagskurs via Frankfurter. Kurser cachas i `FxRate`; dagens och
+  gårdagens sparas inte (ECB publicerar ~16:00 CET) utan hämtas på nytt.
+- Butikens valuta läses från Shopify vid varje laddning, inte ur en default.
+- Dag utan kurs → dagen rapporteras som **saknad annonskostnad**, aldrig som
+  noll. Panelen visar "Annonskostnad (från NOK)" och kursspannet + kursdatum.
+- Inte gjort: butiker som säljer i flera valutor via Shopify Markets. Vi läser
+  `shopMoney` överallt, så beloppen är redan i butiksvaluta — inget att räkna
+  om. Det som saknas är en vy per marknad; kräver `presentmentMoney` +
+  marknadsfältet per order. Byggs när någon ber om det.
 
-- Kurs per dygn från ECB (samma källa som commission-leaderboarden).
-- Meta-spend räknas om från annonskontots valuta till butikens valuta
-  per dag med den dagens kurs. Kursdatum visas i panelen.
-- Butiker som säljer i flera valutor (Shopify Markets): orderbelopp finns
-  redan i butiksvaluta via `presentmentMoney`/`shopMoney` — verifiera att
-  vi läser `shopMoney`.
+## 3. COGS-överföring från Juicy (max 3 klick) — ✅ byggd
 
-## 3. COGS-överföring från Juicy (max 3 klick)
+Sidan **Flytta hit** (`app/routes/app.import.tsx`), tre steg:
 
-Mål: en handlare som redan använder Juicy ska få in alla sina inköpspriser
-utan manuellt arbete.
+1. **Kollen** — hur många varianter har redan inköpspris i Shopifys
+   `unitCost`? Är allt ifyllt (appen skrev till Shopify, eller Shopify
+   självt) står det "Klart — inget att flytta". Noll klick.
+2. **Filen** — släpp exporten eller klistra in. Tolken
+   (`lib/cost-import.server.ts`, 7 tester) hittar avgränsare och kolumner
+   själv: variant-ID, SKU, produkt, variant, kostnad — engelska eller
+   svenska rubriker, komma- eller punktdecimal, valutasymboler.
+   Matchning variant-ID → SKU → titel, aldrig närmaste likhet.
+3. **Skrivningen** — förhandsgranskning med "matchad via" per rad, sedan en
+   knapp. Kostnaderna hamnar i Shopifys `unitCost` = butikens egendom.
 
-- Först att mäta: **skriver Juicy till Shopifys `unitCost`?** Gör den det
-  läser vår app redan allt, noll klick — då är verktyget en "Hittade N
-  inköpspriser, klart"-ruta.
-- Annars: importera Juicys CSV-export (befintlig CSV-import i Kostnader-
-  fliken, plus en mappning av Juicys kolumnnamn) och skriv till `unitCost`
-  så datan blir butikens egen.
-- Onboardingen ska kännas som en flytt, inte en installation:
-  "Kommer du från Juicy?" som första fråga i Kom igång-checklistan.
+Kom igång-checklistan och Kostnader-sidan pekar hit när inköpspriser saknas.
 
-## 4. LTV-prognos som tilläggsplan (+5 USD/mån)
+**Öppen fråga att mäta:** exakt vilka kolumnrubriker Juicys export har.
+Sajten går inte att nå från byggcontainern. Tolken täcker de vanliga
+(`Product`, `Variant`, `SKU`, `Variant ID`, `Cost`/`COGS`/`Unit cost`); har
+Juicy en avvikande rubrik läggs den till i `NAMES` i tolken — en rad.
 
-- Andra plan i Billing (`PREMIUM_PLAN`), låses upp i panelen.
-- Räknar kundens livstidsvärde per kohort (första köpmånad): återköpsgrad,
-  tid till andra köp, prognos 90/180/365 dagar.
-- Kräver ordrar äldre än 60 dagar → scope `read_all_orders` måste sökas.
-- Kräver kund-ID per order (bara ID:t, inga namn/adresser) → uppdatera
-  Protected Customer Data-ansökan innan koden skrivs.
-- Ska vara låst på riktig data: kohorter med för få kunder visas som
-  "för lite data", aldrig som en siffra.
+## 4. LTV-prognos som tilläggsplan (+5 USD/mån) — ✅ byggd, väntar på scopes
+
+- Plan `Standard + LTV` 14,99 USD/mån (7 dagars prov) i `shopify.server.ts`.
+  Sidan **Kundvärde (LTV)** visar en säljsida med knappen "Lägg till för
+  5 USD/mån" tills planen är aktiv; egna butiker (`BILLING_EXEMPT_SHOPS`)
+  och custom-deployments ser den direkt.
+- Räknemotorn `lib/ltv.server.ts` (6 tester): kohort = första köpmånad,
+  ackumulerad nettointäkt per kund månad 0–12, återköpsgrad, ordrar/kund.
+  Prognos genom **kurvstapling** ur butikens egna äldre kohorter — inga
+  branschsnitt, ingen kurvanpassning. Kohorter < 30 kunder märks "för lite
+  data" och påverkar inte prognosen. Saknas underlag visas "—", aldrig en
+  siffra. Kurvan får aldrig sjunka.
+- Underlag: alla ordrar med kund-ID via bulk-export, cachat 6 h. Vid
+  `customers/redact` slängs cachen.
+- Kräver scopes `read_customers` + `read_all_orders` och Protected Customer
+  Data nivå 1 → 🖐 Axel, `axel-klick.md` steg 2. Utan dem visar sidan felet i
+  klartext med vad som ska godkännas.
+- Nästa steg när datan finns: max-CPA räknad på kundvärde i stället för
+  första ordern (motorn har allt som behövs — `ltv12 × marginal`).
