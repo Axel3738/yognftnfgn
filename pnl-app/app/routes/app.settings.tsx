@@ -47,6 +47,9 @@ import { glomMetaFel } from "../lib/meta.server";
 import { dagarKvar, kontoId, VARNA_DAGAR, type Annonskonto } from "../lib/meta-login";
 import { asLang, t } from "../lib/texts";
 
+/** Axels Loom: "så kopplar du Meta". Embed-adressen, inte delningslänken. */
+const LOOM_META = "https://www.loom.com/embed/13de78aa18c14f78bc28845ff219e42a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true";
+
 export async function loader({ request }: LoaderFunctionArgs) {
   const { session } = await authenticate.admin(request);
   const s = await prisma.shopSettings.upsert({
@@ -216,6 +219,7 @@ export default function Settings() {
      mellan fönstren, och då är databasen det enda som säkert vet. */
   const popup = useRef<Window | null>(null);
   const [popupBlocked, setPopupBlocked] = useState(false);
+  const [visaMetaVideo, setVisaMetaVideo] = useState(false);
   const [loginUrl, setLoginUrl] = useState<string | null>(null);
   const [vantar, setVantar] = useState(false);
   const [loginBesked, setLoginBesked] = useState<string | null>(null);
@@ -481,6 +485,20 @@ export default function Settings() {
                   <Text as="p" variant="bodySm" tone="subdued">
                     {T.settings.loginHelp}
                   </Text>
+                  {/* Axels Loom-inspelning (2026-09-08): hela Meta-kopplingen, klick för klick. */}
+                  <Button variant="plain" disclosure={visaMetaVideo ? "up" : "down"} onClick={() => setVisaMetaVideo((x) => !x)}>
+                    {visaMetaVideo ? T.settings.metaHideVideo : T.settings.metaVideo}
+                  </Button>
+                  {visaMetaVideo ? (
+                    <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: 8, overflow: "hidden" }}>
+                      <iframe
+                        src={LOOM_META}
+                        title={T.settings.metaVideo}
+                        allowFullScreen
+                        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+                      />
+                    </div>
+                  ) : null}
                   {popupBlocked ? (
                     <Banner tone="warning">
                       <BlockStack gap="200">
