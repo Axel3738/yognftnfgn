@@ -160,6 +160,20 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+- **Bas-zip:ens startsida pekar på MATSTRUMPOR** (mätt 2026-09-09 i
+  `factory/tema/ops-tema.zip`: `templates/index.json` har
+  `produkt.product = "sushi-strumpor"` och `sortiment.collection =
+  "strumporna"`). Ingen kod i `factory/*.mjs` rör `index.json` — startsidan
+  byggs för hand av sessionen varje gång. Missas det får butiken en startsida
+  som pekar på en produkt som inte finns. **Kontrollera startsidan i kundens
+  vy innan "klart" sägs**, och bygg helst steget i fabriken (se
+  `factory/FLERPRODUKT.md`).
+- **`creative_prefix` ska vara per PRODUKT, aldrig per brand.** I dag står
+  brandet där (`TankGuard`, `HeimGuard`). Det håller så länge en butik säljer
+  en produkt — men prefixet är det ENDA fyra system använder för att skilja
+  produkter åt (prefixkartan i `leveranskon.mjs`, översättningskön,
+  adsetuppslaget i `notion-till-meta.mjs`, commission-kopplingen). Brandet
+  hör hemma i kampanjnamnet, prefixet i produkten.
 - **Alltid svensk lag, aldrig egna köplöften** (Axels beslut 2026-09-08:
   "30 dagars öppet köp" överallt har ruinerat folks trust). Standard är
   14 dagars ångerrätt — i policyn, i USP-strippen, i garantierna.

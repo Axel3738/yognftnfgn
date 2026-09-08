@@ -64,6 +64,14 @@ den producerar tillräckligt mycket creative för att motivera en egen person.
 - **Commission** måste se OPS-kontot (i dag filtreras `915422744950975` bort som
   utländskt) innan steg 4 kan ge någon betalt. Se `FAS2.md` uppdrag D.
 
+## Flerproduktsbutik
+
+Vissa produkter med samma målgrupp ska dela en butik (första fallet:
+Fiskespöhållaren + Fiskekalendern). Underlaget står i
+**`factory/FLERPRODUKT.md`** — butiksbygget är billigt, men den delade pixeln
+gör kill-beslut systematiskt fel om varje produkt inte får en EGEN kampanj och
+ett EGET `creative_prefix`.
+
 ## Öppna beslut
 
 1. **Vad är "tillräckligt bra" i steg 2?** Förslag att bedöma: X köp till en CPA
