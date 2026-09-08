@@ -1,5 +1,12 @@
 # Roadmap — PNL-appen efter App Store-lanseringen
 
+> ⚠️ **Fel gren.** Den här filen och koden runt den skrevs 2026-09-08 mot
+> `main`-kopian av `pnl-app/`, som är en gammal snapshot. Den riktiga appen
+> (StonePNL) ligger på `claude/bäverbutiken-settkopplingen-nba21z` och hade
+> redan Meta-inloggning och växelkurs per dag. Det som är nytt härifrån
+> (LTV-motorn, kolumnigenkänningen i importen) portas dit. Läs den grenens
+> `pnl-app/CLAUDE.md` och `docs/ltv-tillagg.md` i stället för det här.
+
 Axels önskelista, skickad 2026-09-08. Appen är **publicerad på Shopify App
 Store** — checklistan i `app-store.md` är avklarad. Status per punkt nedan;
 Axels egna klick står i `axel-klick.md`.
