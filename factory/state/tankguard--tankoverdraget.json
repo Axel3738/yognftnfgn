@@ -66,12 +66,12 @@
       "valuta": "SEK"
     }
   },
-  "uppdaterad": "2026-09-08T07:12:35.093Z",
+  "uppdaterad": "2026-09-08T07:47:35.565Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "tracking"
     ],
-    "tid": "2026-09-08T07:12:35.093Z"
+    "tid": "2026-09-08T07:47:35.565Z"
   }
 }

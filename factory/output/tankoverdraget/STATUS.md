@@ -5,6 +5,8 @@ Tema: **TankGuard – CRO v1 (utkast)** `gid://shopify/OnlineStoreTheme/19813027
 
 ## Definition of done (kommandots lista)
 
+Rättat 2026-09-08 efter Axels tre bakläxor: produkterna är ACTIVE + publicerade i Online Store (DRAFT gav 404); policyn är svensk lag överallt (14 dagars ångerrätt — inga "30 dagars öppet köp" kvar i produkt, metafält, sidor, policyer, tema eller norska översättningar); loggan är variant C (monogram TG, Axels val av tre).
+
 - [x] Rätt Shopify-butik verifierad innan första skrivningen — Connected: y1sj1i-3d ✓, tom butik, ingen gammal state
 - [x] Brand-config byggd från produkt + målgrupp, inte återanvänd — skogsgrön/sand, Archivo/Work Sans (`butiker/tankguard.yaml`)
 - [x] Namnregeln: TankGuard, helt engelskt, inga å/ä/ö; tankguard.se kopplad, tankguard.no ledig (Norid RDAP 404)
