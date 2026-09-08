@@ -140,3 +140,88 @@ alla ännu ej uppladdade i Meta.
   tre-frågorstestet per rad.
 - Ingen git-commit/push gjord av den här körningen (rondens instruktion —
   huvudsessionen committar åt alla produkter samlat i efterhand).
+
+## Batch #2 — utfall (avläst 2026-09-08, inför batch #3)
+
+| Annons | Hypotes | Utfall |
+|---|---|---|
+| `SP_1_H5` | Ny hook: mekanism-demo | Live, men bara 87,77 kr spend / 0 köp — **för tidigt**, ingen dom möjlig än. |
+| `SP_1_H6` | Ny hook: problem-först | Live, bara 3,37 kr spend — knappt startad, **för tidigt**. |
+| `UG_2_H1` | UGC talking-head, andra försöket | Live, bara 3,83 kr spend — knappt startad, **för tidigt**. |
+| `CS_5_H1` | Ärligt erbjudande + båtvisual, video | Live, 63,67 kr spend / 0 köp — **för tidigt**. |
+| `CS_6_1` | Samma isolering, statiskt | **Inte live i Meta 2026-09-08** — hittades inte i ad-nivåns lista, fortfarande i produktion/Notion. |
+| `PD_6_1` | Materialfakta + storleksfakta, ny båtbild | **Inte live i Meta 2026-09-08.** |
+| `BF_4_1`/`BF_5_1`/`BF_6_1` | BOF-serie, andra exekveringar | **Ingen av de tre live i Meta 2026-09-08.** |
+| `RV_4_1`/`RV_5_1` | Recensionsbilder (Mikael Svensson, Lars Johansson) | **Ingen av de två live i Meta 2026-09-08.** |
+
+**Slutsats:** 4 av 11 batch #2-briefer har nått kontot men ingen har hunnit
+samla meningsfull data (alla under 100 kr utom `CS_5_H1`). 7 av 11 har ännu
+inte laddats upp i Meta alls, 3 dagar efter briefen. Det här är andra gången i
+rad (samma mönster loggades för batch #1:s videokoncept 2026-09-05) — flaggat
+vidare till backlog som en produktionskö-fråga, inte ett brief-kvalitetsproblem.
+
+## Batch #3 — 2026-09-08 (`/cs`, del av `/rond-auto` — behov "mata vinnaren")
+
+**Trigger:** 3 dagar sedan senaste batchen, kampanjen skalad 5 gånger på en
+vecka. Fokus enligt rondens instruktion: mata vinnaren med mer material.
+Kampanjstatus verifierad ACTIVE direkt innan batchen skrevs
+(`effective_status: ACTIVE`, campaign `120250009325850291`).
+
+**Feedbackloop (kort — full analys i `dna.md`):**
+1. Två annonser till har korsat signifikansgränsen sedan 2026-09-05: `BF_3_1`
+   (6 köp, ROAS 2,79) och `FM_1_H1` (4 köp, ROAS 2,88) — fem bedömbara
+   annonser totalt nu.
+2. `FM_1_H1` (säsongsvinkeln, tidigare bara hypotes) har kontots klart bästa
+   hook rate (42,8 %) och hold (60,3 %) och är lönsam — flyttad till Winning
+   DNA. Batch #3 bygger vidare med `FM_2_H1` (video) och `FM_3_1` (statisk).
+3. `SP_1_H3` (toppspendern, 29,3 % av spenden) levererar fortsatt bara 12,0 %
+   av vinsten — solitt lönsam (ROAS 2,41 mot break-even 1,62), INTE en
+   kill-kandidat, men mönstret från 2026-09-05 håller: "svagare vinnare".
+   Batch #3 fortsätter mata `SP_1`-manuset med två nya hook-varianter
+   (`SP_1_H7`, `SP_1_H8`) i stället för att röra `SP_1_H3` eller `SP_1_H1`.
+4. Batch #2:s produktionsstatus (se tabell ovan): 7 av 11 briefer ännu inte
+   uppladdade i Meta 3 dagar senare. Batch #3 briefar därför inte en tredje
+   omgång av samma exakta koncept utan flyttar fokus mot nya hook-variabler
+   på redan bevisade vinklar (SP, FM) plus en ny CTA-hypotes för gift-vinkeln.
+5. Datakvalitet: ad-nivåns spend/köp stämmer mot kampanjnivån inom 0,1 %/
+   exakt. `omni_purchase_values` (42 814,99 kr) råkar stämma mot spend×ROAS
+   den här gången — används ändå aldrig som källa (känd bugg i kontot).
+
+**Levererat: 11 briefer** — 6 i kärnbatchen (4 video, 2 statisk — 67 % video,
+möter 2/3-regeln) + 3 BOF-statiska + 2 recensionsbilder (utöver `rundaAntal`).
+
+| Annons | Format | Koncept | Hypotes / källa |
+|---|---|---|---|
+| Batmotor_SP_1_H7 | Video | Ny hook: visuell demo (oskyddad → skyddad, wipe-cut) på vinnarens manus | Isolerar hook-variabeln vidare med ett visuellt hook i stället för talat. Källa: SP_1_H1/H3-jämförelsen. |
+| Batmotor_SP_1_H8 | Video | Ny hook: aggregat-recension ("8 av 8 ger 5 stjärnor") på vinnarens manus | Konkretiserad social proof-hook, byggd på verifierad Judge.me-siffra. |
+| Batmotor_FM_2_H1 | Video | Iteration på nyligen bevisad säsongsvinkel, visuellt haul-out-hook | FM_1_H1 har kontots bästa hook/hold — testar om ett visuellt öppningsklipp slår det talade. |
+| Batmotor_GT_4_H1 | Video | Gift-vinkel med fastare, produktnämnande CTA | Backlog-hypotes: CTA:n har varit för mjuk, inte vinkeln som är fel. |
+| Batmotor_FM_3_1 | Statisk | Säsongsvinkeln, billig statisk transfer | FM_1_H1 nu bevisad — bilder är billiga (Axel 2026-09-02). |
+| Batmotor_CS_7_1 | Statisk | Tredje exemplet på båtmiljö + ärligt erbjudande | Bygger hypotesen (2 tidigare exempel) mot bevisad. |
+| Batmotor_BF_7_1 | BOF-statisk | Pris/erbjudande, tredje exekveringen | Extra BOF-serie. |
+| Batmotor_BF_8_1 | BOF-statisk | Garanti (30 dagars öppet köp, Klarna) | Ingen fri frakt-koll gjord — utelämnad, ej verifierad. |
+| Batmotor_BF_9_1 | BOF-statisk | Invändning: presenning vs. skräddarsytt skydd | Ny objection, bara verifierade egna produktfakta (inga konkurrentpåståenden). |
+| Batmotor_RV_6_1 | Recensionsbild | Verbatim citat (Anders Nilsson) | Judge.me, från backloggens opåbrjuade pool. |
+| Batmotor_RV_7_1 | Recensionsbild | Verbatim citat (Daniel Lindberg) | Judge.me, från backloggens opåbrjuade pool. |
+
+**Naming:** upptagna ID:n avlästa direkt ur Meta (ad-nivå, hela kampanjen)
+innan numrering — högsta befintliga: SP_1_H6, FM_1, GT_3, CS_6, BF_6, RV_5.
+Nya: SP_1_H7/H8, FM_2_H1/FM_3_1, GT_4_H1, CS_7_1, BF_7–9_1, RV_6_1/RV_7_1.
+
+**Leverans:**
+- Notion: samma hub, **"Boat motor cover creative hub"**
+  (`3cf270ab-908c-8113-a35c-f9c1cd61d727`, data source
+  `1dc270ab-908c-836b-a048-073bfaa48353`). Ingen ny hub skapad. 11 items,
+  Status Draft, Typ Video/Image - Pending Approval, hela briefen inklistrad
+  (verifierat: hämtade `Batmotor_SP_1_H7` med notion-fetch och läste tillbaka
+  Make/Format/Why/Hook/tre-frågorstest/shot list/Rules). `<ancestor-path>`
+  visar hubben under sitt data source vid denna kontroll — ingen privat-flagga
+  märktes den här gången.
+- Drive: ingen batchmapp skapad denna runda — Notion-only leverans, samma
+  avvikelse som batch #2 (dokumenterad, inte ett fel).
+- Modellpolicy-avvikelse: inget Agent/Task-verktyg med `model`-parameter var
+  tillgängligt i den här körningen. Huvudsessionen skrev all copy och körde
+  tre-frågorstestet per rad — samma dokumenterade avvikelse som batch #1/#2.
+- `products/batmotorskyddet-420d/dna.md` och `backlog.md` uppdaterade i samma
+  körning. Commit/push görs av huvudsessionen mot
+  `claude/daily-agent-discussion-uos5df`.

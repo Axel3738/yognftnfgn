@@ -97,6 +97,48 @@ break-even), `PD_5_1` (319,54 kr, 0 köp), samt alla batch #1-statiska under
 `RV_2_1`, `RV_3_1`) och äldre för-tidigt-poster (`GT_1_H1/H2/H3`, `GT_2_1`,
 `PD_1_H1/H2`, `PD_2_1`, `PD_EXTRA`, `SP_1_H2`, `SP_2_1`).
 
+## Siffrorna 2026-09-08 (bedömbara annonser, ≥300 kr + ≥3 köp; BE-ROAS 1,62, BE-CPA 357,41 kr)
+
+Kampanjens livstid (`maximum`, 2026-09-08): 15 873,37 kr spend, 68 köp,
+ROAS 2,70. Datakvalitet: ad-nivåns summerade spend (15 872,19 kr) och köp (68)
+stämmer mot kampanjnivån inom 0,1 %/exakt. `omni_purchase_values`
+(42 814,99 kr) stämmer den här gången mot `spend × ROAS` (≈42 814 kr) — använd
+den ändå aldrig som källa, bara som kryssbekräftelse.
+
+Två annonser har nu korsat signifikansgränsen sedan 2026-09-05: `BF_3_1` och
+`FM_1_H1`. Fem bedömbara annonser totalt (upp från tre):
+
+| Annons | Format | Vinkel | Spend | Andel spend | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|---|---|
+| Batmotor_CS_2_1 | statisk | offer (40 % rabatt, falsk brådska) | 2 552,73 kr | 16,1 % | 16 | 159,55 kr | 3,86 | **+3 165,76 kr (35,6 %)** |
+| Batmotor_SP_1_H1 | video | social proof | 2 256,75 kr | 14,2 % | 15 | 150,45 kr | 4,50 | +3 104,40 kr (34,9 %) |
+| Batmotor_SP_1_H3 | video | social proof (identisk copy som H1) | 4 650,19 kr | **29,3 % (toppspendern)** | 16 | 290,64 kr | 2,41 | +1 068,32 kr (12,0 %) |
+| Batmotor_BF_3_1 | BOF-statisk | invändning/storlek | 1 305,70 kr | 8,2 % | 6 | 217,62 kr | 2,79 | +838,74 kr (9,4 %) |
+| Batmotor_FM_1_H1 | video | säsong/haul-out | 723,56 kr | 4,6 % | 4 | 180,89 kr | 2,88 | +706,08 kr (8,0 %) |
+
+*Vinstbidrag = (357,41 − CPA) × köp. Totalt bedömbart vinstbidrag: 8 883,30 kr
+(bedömbara annonser tar 72,4 % av spenden och 83,8 % av köpen).*
+
+**Fortsatt mönster:** `SP_1_H3` (toppspendern, 29,3 % av spenden) levererar
+bara 12,0 % av vinsten — klart under sin spend-andel, men fortfarande solitt
+lönsam (ROAS 2,41 långt över break-even 1,62). Det är INTE en kill-kandidat —
+den är en svagare vinnare, exakt som noterat 2026-09-05. ROAS har till och med
+sjunkit något sedan 2026-09-05 (2,72 → 2,41) i takt med att spenden vuxit —
+värt att fortsätta bevaka, inte agera på ännu (för få datapunkter för en trend).
+
+**Nytt fynd:** `FM_1_H1` (säsongs-/haul-out-vinkeln, tidigare bara hypotes) har
+nu korsat signifikansgränsen och är lönsam. Hook/hold-analys (video_p25/p50/
+thruplay ÷ impressions) visar att den har **klart bäst hook rate (42,8 %) och
+hold (60,3 %) av alla bedömbara videor** — betydligt högre än `SP_1_H1` (hook
+19,4 %, hold 35,5 %) och `SP_1_H3` (hook 16,4 %, hold 37,4 %). Detta är en ny,
+databaserad grund att bygga vidare på (se Winning DNA).
+
+**För tidigt, ingen dom:** `SP_1_H2` (1 002,03 kr, 2 köp, ROAS 0,93 — under
+break-even men under 3-köpsgränsen), `PD_1_H3` (922,15 kr, 2 köp, ROAS 1,26),
+`RV_1_H1` (373,19 kr, 2 köp, ROAS 3,10 — lovande signal), `PD_5_1` (384,85 kr,
+0 köp), samt alla poster under 300 kr spend (batch #2:s `SP_1_H5`, `SP_1_H6`,
+`UG_2_H1`, `CS_5_H1` inkluderade — se batch-log för produktionsstatus).
+
 ## Winning DNA
 
 - **Hook-videot är den avgörande variabeln, inte manuset.** Bevisat genom en
@@ -130,6 +172,19 @@ break-even), `PD_5_1` (319,54 kr, 0 köp), samt alla batch #1-statiska under
   ersatte den redan 2026-09-02). Batch #2:s `CS_5_H1` (video) och `CS_6_1`
   (statisk) isolerar variabeln: samma båtbild, ärligt 40%-budskap i stället
   för brådska — för att se om bilden bär resultatet utan brådskan.
+
+- **NY 2026-09-08, bevisad: säsongs-/haul-out-vinkeln (`FM_1_H1`) har den
+  bästa hook rate och hold av alla bedömbara videor** (42,8 % / 60,3 %,
+  betydligt över `SP_1_H1`s 19,4 % / 35,5 %) och är nu lönsam (ROAS 2,88).
+  Flyttad från "Obevisat / hypotes" — batch #3 (2026-09-08) briefar en video-
+  iteration (`FM_2_H1`, visuellt haul-out-öppning i stället för talad rad) och
+  en billig statisk transfer (`FM_3_1`) för att bygga mönstret vidare.
+- **Uppdaterat 2026-09-08:** `SP_1_H3` (toppspendern) fortsätter vara en
+  svagare vinnare, inte en förlorare — ROAS 2,41 (över break-even 1,62), men
+  bara 12,0 % av vinsten mot 29,3 % av spenden. Släpp aldrig kill-tanken bara
+  för spend-andelen; fortsätt i stället mata `SP_1`-manuset med nya hook-
+  varianter (`SP_1_H7` visuell demo-hook, `SP_1_H8` aggregat-recensionshook,
+  batch #3) för att hitta en video som slår H1/H3 båda.
 
 ## Losing DNA
 
@@ -172,19 +227,29 @@ briefar en tredje omgång av samma vinklar.
 
 ## Testa kontrollerat
 - Fler hook-videovarianter av `SP_1_H1`s manus (isolerad variabel) — pågår:
-  `SP_1_H4` (batch #1, ej producerad), `SP_1_H5`/`SP_1_H6` (batch #2,
-  2026-09-05).
+  `SP_1_H4` (batch #1), `SP_1_H5`/`SP_1_H6` (batch #2, live men <100 kr spend
+  2026-09-08), `SP_1_H7` (visuell demo-hook)/`SP_1_H8` (aggregat-recensionshook)
+  (batch #3, 2026-09-08).
 - UGC/talking-head-format mot det bevisade röst+broll-formatet — pågår:
-  `UG_1_H1` (batch #1, ej producerad), `UG_2_H1` (batch #2).
-- Stöldskydds-vinkeln (batch #1: `TH_1_H1`, ej producerad, hypotes).
-- Investeringsskydds-vinkeln (batch #1: `CS_3_H1`, ej producerad, hypotes).
-- **NY 2026-09-05:** riktig båtmiljö-bild vs. äkta erbjudande utan brådska,
-  isolerat i `CS_5_H1`/`CS_6_1`/`PD_6_1` (batch #2) — se Winning DNA.
+  `UG_1_H1` (batch #1), `UG_2_H1` (batch #2) — båda under 100 kr spend
+  2026-09-08, ingen data ännu.
+- Stöldskydds-vinkeln (batch #1: `TH_1_H1`, för tidigt).
+- Investeringsskydds-vinkeln (batch #1: `CS_3_H1`, för tidigt).
+- Riktig båtmiljö-bild vs. äkta erbjudande utan brådska, isolerat i
+  `CS_5_H1`/`CS_6_1`/`PD_6_1` (batch #2, `CS_6_1`/`PD_6_1` ännu ej live
+  2026-09-08) — se Winning DNA. Batch #3 lägger ett tredje exempel: `CS_7_1`.
+- **NY 2026-09-08:** säsongs-/haul-out-vinkeln som video med visuellt hook
+  (`FM_2_H1`) och som billig statisk transfer (`FM_3_1`).
+- **NY 2026-09-08:** fastare, produktnämnande CTA för gift-vinkeln (`GT_4_H1`)
+  mot backlogens hypotes om att mjuk CTA orsakar tvekan i kassan.
 
 ## Obevisat / hypotes
-- Säsongs-/haul-out-vinkeln (`FM_1_H1`) — grundad i produktsidans egen
-  öppningsrad ("Snart står båten på land igen"), aldrig testad som ad hook.
-- Riktig recensionsvideo (`RV_1_H1`) — ny formatidé för kontot, obeprövad.
+- Riktig recensionsvideo (`RV_1_H1`) — ROAS 3,10 på 2 köp, lovande men under
+  3-köpsgränsen, obeprövat format i övrigt.
+- Gift-vinkelns mjuka CTA som konverteringsproblem (backlog-hypotes,
+  batch #3 testar `GT_4_H1` med en fastare, produktnämnande CTA).
+
+*(Säsongs-/haul-out-vinkeln flyttad till Winning DNA 2026-09-08 — se ovan.)*
 
 ## Modellpolicy-avvikelse (dokumenterad, samma som tidigare batcher)
 
@@ -194,4 +259,6 @@ tre-frågorstestet (`docs/copy-regler.md`) explicit per rad i varje brief —
 samma avvikelse som redan dokumenterats för Kranskydd Frost 420D,
 Surveillance Camera, IBC-Tanköverdraget och Fish rod holder NO
 (2026-08-29/31, 2026-09-01), och som upprepades i batch #2 (2026-09-05,
-`/cs`-körning nr 1, nattlig rond steg 4b).
+`/cs`-körning nr 1, nattlig rond steg 4b) och batch #3 (2026-09-08, `/cs`-
+körning nr 2, del av `/rond-auto`). Huvudsessionen skrev all svensk copy
+själv och körde tre-frågorstestet explicit per rad i varje brief.

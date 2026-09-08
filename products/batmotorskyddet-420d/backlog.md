@@ -2,11 +2,13 @@
 
 Koncept som väntar, inte briefade ännu.
 
-- ~~**Fler recensionsbilder/videor**~~ — **2 av 6 använda i batch #2**
-  (2026-09-05): Mikael Svensson (`Batmotor_RV_4_1`), Lars Johansson
-  (`Batmotor_RV_5_1`). **4 kvar:** Anders Nilsson, Daniel Lindberg, Peter
-  Andersson, Thomas Eriksson (se `dna.md` för exakta citat). Ordagranna, redo
-  för nästa runda.
+- ~~**Fler recensionsbilder/videor**~~ — **4 av 6 använda** nu: Mikael
+  Svensson (`Batmotor_RV_4_1`, batch #2, ej live i Meta 2026-09-08), Lars
+  Johansson (`Batmotor_RV_5_1`, batch #2, ej live i Meta 2026-09-08), Anders
+  Nilsson (`Batmotor_RV_6_1`, batch #3, 2026-09-08), Daniel Lindberg
+  (`Batmotor_RV_7_1`, batch #3, 2026-09-08). **2 kvar:** Peter Andersson
+  ("Lätt att använda och täcker motorn bra."), Thomas Eriksson ("Bra skydd när
+  båten står ute. Väldigt nöjd."). Ordagranna, redo för nästa runda.
 - **Visuell teardown av SP_1_H1 vs SP_1_H3** — fortfarande olöst 2026-09-05.
   `ads_get_ad_videos` gav ingen ytterligare metadata (bara ID:n, inga
   titlar/beskrivningar). Kräver fortfarande att en redigerare eller Axel
@@ -22,14 +24,27 @@ Koncept som väntar, inte briefade ännu.
 
 ## Nytt 2026-09-05 (från batch #2-analysen, ej ännu briefat)
 
-- **Livstidsspend-avvikelsen** (dna.md Datakvalitet): varför sjönk
-  `date_preset: maximum` från 14 692 kr 2026-09-02 till 8 935 kr 2026-09-05
-  på en oavbrutet aktiv kampanj? Olöst — inte en briefingfråga men bör
-  utredas innan nästa `/cs` litar blint på lifetime-talen.
-- **Produktionsstatus på batch #1:s 9 videokoncept** — inget av dem har
-  spenderat en krona 2026-09-05. Nästa `/cs` bör läsa av var de står i
-  Notion (In progress / To be Reviewed) innan en tredje omgång av samma
-  vinklar briefas — annars byggs på för mycket olevererat material samtidigt.
-- **Hubben "Boat motor cover creative hub" ligger privat** (tomt
-  `<ancestor-path>` 2026-09-05) — kräver Axels handpåläggning i Notion-UI:t,
-  ingen rutin kan fixa det själv.
+- ~~**Livstidsspend-avvikelsen**~~ — inte längre synlig 2026-09-08 (livstiden
+  ökar nu monotont: 8 935 → 15 873 kr), men roten till 2026-09-02-talet (som
+  var HÖGRE än 2026-09-05-talet) förblir okänd och outredd.
+- ~~**Produktionsstatus på batch #1:s videokoncept**~~ — löst 2026-09-08:
+  flera är nu live (`FM_1_H1`, `AU_1_H1`, `TH_1_H1`, `PD_3_H1`, `CS_3_H1`,
+  `RV_1_H1` m.fl.), men se NYTT 2026-09-08 nedan — samma mönster upprepas nu
+  för batch #2.
+- ~~**Hubben låg privat**~~ — löst 2026-09-08: `<ancestor-path>` visar hubben
+  korrekt under sitt data source vid kontroll denna körning.
+
+## Nytt 2026-09-08 (från batch #3-analysen, ej ännu briefat)
+
+- **Produktionskön är strukturellt långsam, andra gången i rad:** 7 av
+  batch #2:s 11 briefer (`CS_6_1`, `PD_6_1`, `BF_4_1`, `BF_5_1`, `BF_6_1`,
+  `RV_4_1`, `RV_5_1`) hade inte laddats upp i Meta alls 3 dagar efter briefen,
+  och ytterligare 4 hade under 100 kr spend. Inte en briefingfråga, men värt
+  att flagga till Axel: kön mellan Notion-brief och live-annons verkar ta
+  längre än en 3-dagarscykel för den här produkten.
+- **`SP_1_H3`s ROAS-trend** (2,72 → 2,41 mellan 2026-09-05 och 2026-09-08) —
+  för tidigt att kalla det en nedåtgående trend (bara två datapunkter), men
+  nästa `/cs` bör kolla om mönstret fortsätter innan video-filen prioriteras
+  bort helt.
+- **2 recensionscitat kvar i banken**: Peter Andersson, Thomas Eriksson (se
+  dna.md/ovan för exakta citat) — redo för nästa runda.
