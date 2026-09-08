@@ -88,10 +88,14 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    translationsRegister på ALLT, språkversionerade bilder med
    [SV]/[NO]-alt-märkning. Fler marknader läggs till på samma sätt.
    Trippelkolla mot kundens riktiga vy.
-9. **Checklistan:** generera `output/<id>/CHECKLISTA.md` och ge VA:n den.
+9. **Värdena till VA:n.** Hon sitter redan i den här chatten och följer
+   sitt Google-dokument — skicka ALDRIG en checklistfil till Axel och be
+   ingen vidarebefordra något. Skriv värdena rakt i chatten till henne:
+   STORE NAME, DOMAIN och STORE EMAIL (hello@domänen) + "continue at
+   step 4". `output/<id>/CHECKLISTA.md` skrivs bara som arkivkopia.
    Ändrades mallen (VA-CHECKLIST.md/checklista.mjs) i sessionen: för in
    ändringen i VA:ns Google-dokument också (länken står i VA-CHECKLIST.md).
-   Vänta på hennes klick — fortsätt bygga det som inte kräver dem under tiden.
+   Fortsätt bygga det som inte kräver hennes klick under tiden.
 10. **"Store ready: <namn>"** från VA:n = slutsteget: importera recensionerna
     (`tools/judgeme-import.mjs --mejlsuffix <domän>.invalid` med hennes token —
     en delmängd av recensionerna översätts ALLTID till norska och importeras
