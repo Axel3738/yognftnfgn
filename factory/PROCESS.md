@@ -228,6 +228,24 @@ blev `{ '"Vi säljer …konkret': 'spön …"' }` och renderades som
 `factory/test/yaml.test.mjs`. Kolon i löptext är vanligt — buggen träffade
 `benefits`, `problem` och `features` precis lika lätt.
 
+⚠️ **Admin-tokenen lever 24 timmar — spara klientuppgifterna, inte tokenen.**
+`/ny-ops` steg 1 säger att en rad `SHOPIFY_ADMIN_TOKEN_<butiks-id>` ska sparas
+i `factory/.env` "så gamla butiker förblir nåbara". Mätt 2026-09-09: en token
+hämtad med `client_credentials` svarar `expires_in: 86399` — den är
+färskvara och räcker för dagens körning, inte för nästa vecka. Det som är
+durabelt är butikens **CLIENT ID + CLIENT SECRET**, en uppsättning per butik.
+Ska en gammal butik nås igen: hämta en ny token med den butikens
+klientuppgifter. Raden med tokenen sparas ändå — den är gratis och gäller
+resten av dygnet — men den är inte vägen tillbaka till en gammal butik.
+
+⚠️ **Klistras en Client secret i chatten måste den bytas.** Hände 2026-09-09
+på TackleBay: VA:n klistrade `SHOPIFY_SHOP` + `SHOPIFY_CLIENT_ID` +
+`SHOPIFY_CLIENT_SECRET` direkt i chatten i stället för i Environment.
+Bygget fungerade, men hemligheten ligger kvar i transkriptet. Rutinen är
+dev.shopify.com → appen → Settings → Client secret → generera ny → lägg den
+nya i Environment. Den redan hämtade tokenen fortsätter fungera tills den
+går ut, så bytet stoppar inte ett pågående bygge.
+
 ⚠️ **LÄS PRODUKTBILDERNA INNAN COPYN SKRIVS — källans text kan vara fel.**
 Mätt 2026-09-09 på TackleBay: Bäverbutikens beskrivning av fiskespöhållaren
 säger *"monteras enkelt på vägg eller i båten"* och *"fyra hållare som håller
