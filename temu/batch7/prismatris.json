@@ -1,0 +1,135 @@
+[
+ {
+  "namn": "Fjäderbelastat stödhjul till grinden",
+  "temu": "https://www.aliexpress.com/item/1005012424721588.html",
+  "variant": null,
+  "notering": "8 tum, 600 lbs, 360° svängbart, med monteringsplatta",
+  "land": {
+   "SE": {
+    "usd": 54.98,
+    "harledd": false,
+    "cogs": 520.65,
+    "pris": 1659,
+    "jamfor": 2159
+   },
+   "NO": {
+    "usd": 62.31,
+    "harledd": true,
+    "cogs": 579.4,
+    "pris": 1739,
+    "jamfor": 2269
+   }
+  }
+ },
+ {
+  "namn": "Utvändigt termoskydd till husbilens vindruta",
+  "temu": "https://www.aliexpress.com/item/1005012308576360.html",
+  "variant": null,
+  "notering": "Mörkläggande, för husbil — ange vilka modeller ni gör\nbased on 211*171*90",
+  "land": {
+   "SE": {
+    "usd": 15.99,
+    "harledd": false,
+    "cogs": 151.42,
+    "pris": 559,
+    "jamfor": 729
+   },
+   "NO": {
+    "usd": 17.99,
+    "harledd": false,
+    "cogs": 167.29,
+    "pris": 509,
+    "jamfor": 669
+   }
+  }
+ },
+ {
+  "namn": "Solcellsdrivet rörelselarm med siren och blixt",
+  "temu": "https://www.aliexpress.com/item/32978924544.html",
+  "variant": null,
+  "notering": "Vattentätt, IR-sensor — offert på 2-pack också",
+  "land": {
+   "SE": {
+    "usd": 23.66,
+    "harledd": false,
+    "cogs": 224.06,
+    "pris": 769,
+    "jamfor": 1009
+   },
+   "NO": {
+    "usd": 25.56,
+    "harledd": false,
+    "cogs": 237.68,
+    "pris": 719,
+    "jamfor": 939
+   }
+  }
+ },
+ {
+  "namn": "Väggstöd/stegstöd till anliggande stege",
+  "temu": "https://www.aliexpress.com/item/1005008588672073.html",
+  "variant": null,
+  "notering": "2-i-1, för vägg och takfot",
+  "land": {
+   "SE": {
+    "usd": 38.38,
+    "harledd": false,
+    "cogs": 363.45,
+    "pris": 1189,
+    "jamfor": 1549
+   },
+   "NO": {
+    "usd": 47.51,
+    "harledd": false,
+    "cogs": 441.79,
+    "pris": 1329,
+    "jamfor": 1729
+   }
+  }
+ },
+ {
+  "namn": "Trådlöst infartslarm med rörelsesensor",
+  "temu": "https://www.aliexpress.com/item/1005012632601062.html",
+  "variant": null,
+  "notering": "Väderbeständigt, 38 ringsignaler — offert på 1 sensor + 1 mottagare",
+  "land": {
+   "SE": {
+    "usd": 13.48,
+    "harledd": false,
+    "cogs": 127.65,
+    "pris": 489,
+    "jamfor": 639
+   },
+   "NO": {
+    "usd": 15.02,
+    "harledd": false,
+    "cogs": 139.67,
+    "pris": 429,
+    "jamfor": 559
+   }
+  }
+ },
+ {
+  "namn": "Hopfällbar sittkäpp",
+  "temu": "https://www.aliexpress.com/item/1005008660328370.html",
+  "variant": null,
+  "notering": "2-i-1 käpp och stol, aluminium",
+  "land": {
+   "SE": {
+    "usd": 29.92,
+    "harledd": false,
+    "cogs": 283.34,
+    "pris": 949,
+    "jamfor": 1239
+   },
+   "NO": {
+    "usd": 33.91,
+    "harledd": true,
+    "cogs": 315.31,
+    "pris": 949,
+    "jamfor": 1239
+   }
+  }
+ }
+]
+
