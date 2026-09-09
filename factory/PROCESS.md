@@ -163,6 +163,13 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+- **Bas-zip:en bär MATSTRUMPORS TEXT i tre mallar** (mätt 2026-09-09):
+  `templates/index.json` (hero, rubriker, kollektionen `strumporna`,
+  produkten `sushi-strumpor`), `sections/footer-group.json` (bolagsblocket
+  med `kundsupport@matstrumpor.se`) och `templates/product.json` (samma
+  mejl). Kör **`factory/kallskanning.mjs`** mot hela temat innan butiken
+  lämnas — rapporten ska vara tom. DryTrek nådde förhandsvisning med
+  "Kilometer fyra. Fortfarande torr strumpa." som hero.
 - **Bas-zip:ens startsida pekar på MATSTRUMPOR** (mätt 2026-09-09 i
   `factory/tema/ops-tema.zip`: `templates/index.json` har
   `produkt.product = "sushi-strumpor"` och `sortiment.collection =
