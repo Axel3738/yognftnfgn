@@ -94,8 +94,8 @@
    "notis": "2026-09-07 sen kväll, tre Axel-beslut i följd: (1) Judge.me-widgeten ska vara APPENS EGEN — all jdgm-styling borttagen ur byggBrandCss; widgeten ligger i temats egen Appyta-sektion (ms-app-slot, Axels ursprungsmönster) i stället för rå apps-sektion. (2) Stjärnorna ALLTID gröna #00B77F i varje butik — STJARNFARG i branding.mjs, enda jdgm-regeln som får finnas. (3) ROTORSAKEN till 'Judge.me avaktiveras hela tiden': app-embedden (judgeme_core) bor i settings_data.json current.blocks och följer INTE med i nya temakloner — Axel fick aktivera om vid v8 och v9. Regeln (PROCESS.md): kopiera current.blocks från live-temat in i varje ny klon. TEMALÄGE: v9 (204088377692) LIVE = ren widget i Appyta, allt funkar, men saknar grön stjärnfärg + embed-raden (Axel aktiverade i editorn). v10 (204086116700, fd v8 omdöpt/uppdaterad — hade redan alla nb-översättningar + embed-raden) = v9 + gröna stjärnor, KLAR ATT PUBLICERA när Axel vill; ingen brådska, nästa riktiga ändring kan åka med. CSS-filen verifierad via API; CDN-cachen på förhandsvisningen släpper av sig själv."
   },
   "fas2-annonser-se": {
-   "klar": false,
-   "notis": "DELVIS 2026-09-08 (/ny-annonser heimguard). BYGGT i MagiBorsten DK 915422744950975: kampanj HEIMGUARD_SE_Overvakningskameran | BE-ROAS 2,11 | 2026-09-08 (id 120249005476160172, PAUSED, 1000 kr/dag CBO), 1 adset (SP, PAUSED, pixel 1125401473242596, geo SE), 23 videor uppladdade i kontot. STOPPAT: annonserna kan inte skapas - Meta svarar att sidan 1262406533629248 inte ar tillganglig for kontot. Token:en kan inte ratta det (assigned_users/promote_pages/BM-pages ger alla missing permissions). Kravs ett klick i Business Manager: ge sidan HeimGuard till annonskontot Magiborsten DK. Nar det ar gjort: node pipeline/no-video-launch.mjs waves/se-heimguard-video.config.mjs och sedan no-image-launch.mjs med --imgdir - bada ar idempotenta och tar vid dar de slutade. Verifiera med node factory/kampanjkoll.mjs pa bada konfigarna (ska ge 9 adsets, 38 annonser). Uteslutna med flit: SP_4_H1 och RI_1_H1 har BAVERBUTIKEN inbrant pa slutkortet."
+   "klar": true,
+   "notis": "KLART 2026-09-09 (/ny-annonser heimguard). I MagiBorsten DK 915422744950975: kampanj HEIMGUARD_SE_Overvakningskameran | BE-ROAS 2,11 | 2026-09-08 (id 120249005476160172), PAUSED, 1000 kr/dag CBO. 9 adsets (SP CS PD LI CO BOF AU G RI), 38 annonser (23 video, 15 bild), allt PAUSED, sida 1262406533629248, pixel 1125401473242596, geo SE, lank heimguard.se/products/overvakningskameran. Trippelkoll gron via factory/kampanjkoll.mjs. VA:n satter ACTIVE efter granskning (factory/output/overvakningskameran/VA-ANNONSER.md). Uteslutna med flit: SP_4_H1 och RI_1_H1 har BAVERBUTIKEN inbrant pa slutkortet. Sidbehorigheten var blockeraren och lostes av Axel i Business Manager 2026-09-08."
   },
   "fas2-annonser-no": {
    "klar": false,
@@ -113,5 +113,5 @@
   "tid": "2026-09-05T14:48:43.504Z",
   "notis": "Mobil-QA på riktig rendering OK: ordning main→problem→losning→funktioner→lifestyle→garanti→judgeme→faq→sticky. Judge.me ej installerad (kräver admin), butiksnamnet My Store kan inte ändras via API, startsidan bär kvar Matstrumpor-innehåll."
  },
- "uppdaterad": "2026-09-08T22:39:19.707Z"
+ "uppdaterad": "2026-09-09T00:46:51.834524Z"
 }

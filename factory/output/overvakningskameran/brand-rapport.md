@@ -119,41 +119,39 @@ när materialet är sett.
 
 ---
 
-## Vad som byggdes — och var det stannade
+## Vad som byggdes — KLART 2026-09-09
 
 **Byggt i MagiBorsten DK `915422744950975` (PAUSED, orört av andra kampanjer):**
 
 | Nivå | Läge |
 |---|---|
 | Kampanj | `HEIMGUARD_SE_Övervakningskameran \| BE-ROAS 2,11 \| 2026-09-08` — id `120249005476160172`, PAUSED, 1 000 kr/dag CBO, OUTCOME_SALES |
-| Adset | 1 av 9 skapat (SP) — PAUSED, pixel `1125401473242596`, geo SE |
-| Media | 23 videor uppladdade i målkontot (`image_hash`/`video_id` är per konto — källans går inte att referera) |
-| Annonser | **0 av 38** |
+| Adsets | **9 av 9** — PAUSED, pixel `1125401473242596`, geo SE |
+| Media | 23 videor + 15 bilder uppladdade i målkontot (`image_hash`/`video_id` är per konto — källans går inte att referera) |
+| Annonser | **38 av 38** — alla PAUSED |
 
-**Varför det stannade:** `act_915422744950975/adcreatives` svarar
+**Sidbehörigheten löstes 2026-09-08 kväll.** Meta vägrade först skapa annonser
+med sidan `1262406533629248` (*"Sidan du har valt för din annons är inte
+tillgänglig"*). Axel kopplade sidan till annonskontot i Business Manager och
+skapandet gick igenom direkt.
 
-> Sidan du har valt för din annons är inte tillgänglig, eller har du kanske inte
-> behörighet att se den här sidan.
+⚠️ **Lärdomen står kvar:** att sidan finns i businessens `owned_pages` och att
+pixeln avfyrar säger INGENTING om huruvida kontot får annonsera med sidan.
+Kontots `promote_pages` är fortfarande tomt även nu när annonserna ligger uppe —
+den kanten är alltså inte ett svar på frågan. Det enda som svarar är ett skarpt
+`adcreatives`-anrop. Gör det tidigt i nästa butik, med EN annons, innan 23 videor
+laddas upp i onödan.
 
-för sidan `1262406533629248` (HeimGuard). Sidan finns och ägs av businessen
-(`owned_pages`), men annonskontot får inte annonsera med den. Kontots
-`promote_pages` är tomt. Token:en kan inte rätta det själv — `assigned_users`,
-`promote_pages` och `BM/pages` svarar alla "missing permissions".
+**Trippelkollen, läst tillbaka ur Meta 2026-09-09:**
 
-⚠️ **Det här är sannolikt inte HeimGuard-specifikt.** TankGuard-kampanjen i samma
-konto har **0 annonser** — dess sida är också bara sedd i `client_pages`, aldrig
-prövad i ett skarpt `adcreatives`-anrop.
-
-**När sidan är kopplad, ta vid här** (båda skripten är idempotenta):
-
-```bash
-cd pipeline
-node no-video-launch.mjs waves/se-heimguard-video.config.mjs
-node no-image-launch.mjs waves/se-heimguard-image.config.mjs --imgdir=../.scratch/heimguard/se/bild
-cd .. && node factory/kampanjkoll.mjs pipeline/waves/se-heimguard-video.config.mjs pipeline/waves/se-heimguard-image.config.mjs
 ```
-
-Kollen ska ge **9 adsets och 38 annonser**, allt PAUSED.
+✅ kampanjen PAUSED, 1000 kr/dag CBO
+✅ 9 av 9 adsets — HeimGuard-pixeln 1125401473242596, geo SE, PAUSED
+✅ 38 av 38 annonser — alla PAUSED
+✅ alla på sidan 1262406533629248
+✅ alla länkar till https://heimguard.se/products/overvakningskameran
+✅ kontots övriga 7 kampanjer orörda
+```
 
 ## Den norska halvan — inte byggd, med flit
 
@@ -184,14 +182,14 @@ admin och NOK-paketnivåer satts.
 | ✅ | Bilderna brand-swappade med QA före/efter | **0 av 15 bildannonser bär brandet** — ingen swap behövdes, alltså ingen QA-bild att producera |
 | ✅ | Videorna omdubbade eller listade som väntande med orsak | ingen omdubbning behövdes (0 av 26 svenska transkript). 2 videor med inbränt slutkort listade som uteslutna. |
 | ✅ | All copy pekar på butikens EGEN produktsida | `https://heimguard.se/products/overvakningskameran`, verifierad live |
-| ⚠️ | Media uppladdat i målkontot | 23 videor uppe. Bilderna inte — launchen stannade före det steget. |
+| ✅ | Media uppladdat i målkontot | 23 videor + 15 bilder uppladdade i `act_915422744950975` |
 | ❌ | TVÅ kampanjer byggda, `<BRAND>_SE_…` och `<BRAND>_NO_…` | SE påbörjad. **NO inte byggd** — källan är prissatt i NOK, butikens /nb tar betalt i SEK. |
 | ✅ | Svensk copy på svenska mot `/` | 32 varianter, skrivna av sonnet-subagenter mot `docs/copy-regler.md` |
 | ✅ | Allt skapat PAUSED, status explicit på alla tre nivåer | kampanj + adset PAUSED, konfigen sätter alla tre fälten |
-| ❌ | Tillbakaläst ur Meta: sida, pixel, budget, länk, status | kampanj och adset gröna. **0 av 38 annonser** — sidbehörigheten stoppar dem. |
+| ✅ | Tillbakaläst ur Meta: sida, pixel, budget, länk, status | `factory/kampanjkoll.mjs` grön 2026-09-09: 9 adsets, 38 annonser, allt PAUSED |
 | ✅ | VA:n har sin granskningslista och vet att hon sätter ACTIVE | `factory/output/overvakningskameran/VA-ANNONSER.md` |
 | ✅ | state + FAS2.md uppdaterade, pushat | båda, plus produktminne i `products/hemvakten/` |
 
-**Två ❌ och en ⚠️, båda med samma rot:** annonserna kan inte skapas förrän
-HeimGuard-sidan är kopplad till annonskontot i Business Manager. Den norska
-halvan är en egen, medveten stopp — inte samma sak.
+**Ett ❌ kvar:** den norska kampanjen. Den är en medveten stopp — källans
+annonser är prissatta i NOK, butikens /nb tar betalt i SEK. Allt annat är grönt
+och tillbakaläst ur kontot.

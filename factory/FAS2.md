@@ -16,23 +16,21 @@ kommandot är körordningen. Uppdrag D och E är systemarbete utanför det.
 
 ---
 
-## Blockerare just nu (2026-09-08)
+## Blockerare just nu (2026-09-09)
 
 | Blockerare | Blockerar | Löses av |
 |---|---|---|
-| ⛔ **Sidan går inte att annonsera med.** Mätt 2026-09-08 när HeimGuards annonser skulle skapas: `act_915422744950975/adcreatives` svarar *"Sidan du har valt för din annons är inte tillgänglig, eller har du kanske inte behörighet att se den här sidan"* för sida `1262406533629248`. Kampanj, adset och 23 uppladdade videor gick igenom — bara annonserna faller. ⚠️ **Detta gäller troligen varje OPS-butik, inte bara HeimGuard:** kontots `promote_pages` är TOMT, och TankGuard-kampanjen i samma konto har **0 annonser** — dess sida är alltså aldrig heller bevisad i skarpt läge, bara sedd i `client_pages`. Token:en (Axels användartoken) kan inte rätta det själv: `assigned_users`, `promote_pages` och `BM/pages` svarar alla "missing permissions". | annonsskapandet i ALLA OPS-butiker | Axel i Business Manager: ge sidan **HeimGuard** till annonskontot **Magiborsten DK** och sig själv rollen annonsör/admin på sidan |
+| ~~Sidan går inte att annonsera med~~ — **LÖST 2026-09-08.** Meta vägrade skapa annonser med sida `1262406533629248` (*"Sidan du har valt för din annons är inte tillgänglig"*) trots att sidan låg i businessens `owned_pages` och pixeln avfyrade. Axel kopplade sidan till annonskontot i Business Manager och skapandet gick igenom direkt. ⚠️ **Kontots `promote_pages` är TOMT även nu när 38 annonser ligger uppe** — den kanten svarar alltså inte på frågan, och `client_pages`/`owned_pages` gör det inte heller. Det enda som svarar är ett skarpt `adcreatives`-anrop. Gör det tidigt i varje ny butik, med EN annons, innan hela mediabiblioteket laddas upp i onödan. | inget | — |
 | ~~FB-kontot~~ — LÖST 2026-09-08: TankGuards Meta-sida är `1399193996606775` (verifierad i MagiBorstens `client_pages`), pixeln `2196132151319625` avfyrar och WeTracked är kopplat. ⚠️ "Verifierad i `client_pages`" visade sig INTE betyda att sidan går att annonsera med — se raden ovan. | inget | — |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
-| HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video — ⚠️ blockerar INTE HeimGuard: 0 av 26 svenska transkript nämner brandet, ingen omdubbning behövs där | Axel fyller på |
+| ~~HeyGen-plånboken tom~~ — påfylld. **16 818 krediter mätt 2026-09-09** (siffran 13 var en ögonblicksbild 2026-09-08). Blockerade heller aldrig HeimGuard: 0 av 26 svenska transkript nämner brandet. | inget | — |
 | HeimGuards NO-marknad betalar i SEK medan Bäverbutikens norska annonser är prissatta 899/1 169 NOK | den norska HeimGuard-kampanjen | Axel slår på NOK i Shopify admin och sätter NOK-paketnivåer |
 | `standby.md` har ännu ingen ifylld rad | tilldelning av redigerare | Axel ger namnet på personen som redan står på standby |
 
-**Läget 2026-09-08 kväll (uppdaterat efter HeimGuard-körningen):** A, C, D och E
-kan köra. **B kommer till sista steget och stannar där** — kampanj, adsets och
-media går upp, men annonserna kan inte skapas förrän sidan är kopplad till
-annonskontot i Business Manager (se blockeraren överst). A2 väntar på
-HeyGen-krediter, men blockerar inte HeimGuard: 0 av 26 svenska transkript
-nämner brandet.
+**Läget 2026-09-09: A, B, C, D och E kan alla köra.** Uppdrag B är nu bevisat
+hela vägen — HeimGuards svenska kampanj står i MagiBorsten DK med 9 adsets och
+38 annonser, allt PAUSED och tillbakaläst. A2 väntar inte längre på krediter
+heller: plånboken har **16 818** krediter (mätt 2026-09-09), inte 13.
 
 ⚠️ **Lärdomen är dyrköpt: bygg annonsen FÖRST i en ny butik.** Sidan och pixeln
 såg klara ut i varje läsning som gjordes — sidan fanns i `owned_pages`, pixeln
@@ -46,9 +44,9 @@ Gör det tidigt, med EN annons, innan 23 videor laddas upp i onödan.
 
 1. **A — Brand-detektorn** (gratis, läser bara). Ger listan över vad som måste göras om.
 2. **C — Bildannonserna** (gratis, ingen väntan). Snabbaste vägen till färdiga creatives.
-3. **B — Kampanjbygget** (sida + pixel KLARA 2026-09-08 — kan köra nu).
+3. **B — Kampanjbygget** (bevisat hela vägen 2026-09-09 på HeimGuard).
    Det som gör att pengar rör sig.
-4. **A2 — Videodubbningen** (väntar på HeyGen-krediter).
+4. **A2 — Videodubbningen** (krediter finns, 16 818 st).
 5. **D — Notion + commission** (kod, ingen väntan). Måste vara klart INNAN redigeraren börjar.
 6. **E — Skalningsrutinen** (kod). Kan byggas parallellt, används först när data finns.
 
