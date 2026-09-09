@@ -54,6 +54,12 @@ export function byggPlan(p) {
       price: p.ekonomi.pris.toFixed(2),
       ...(p.ekonomi.jamforpris > 0 ? { compareAtPrice: p.ekonomi.jamforpris.toFixed(2) } : {}),
       ...(v.sku ? { sku: v.sku } : {}),
+      // Sälj vidare när lagret tar slut (Axels regel 2026-09-09). Shopifys
+      // default är DENY — då slutar produkten säljas tyst mitt i en kampanj
+      // medan annonserna fortsätter kosta pengar. Dropshipping har inget
+      // eget lager att ta slut, så saldot ska aldrig få stoppa ett köp.
+      inventoryPolicy: 'CONTINUE',
+      inventoryItem: { tracked: false },
     })),
     files: bilder.map((url) => ({
       originalSource: url,

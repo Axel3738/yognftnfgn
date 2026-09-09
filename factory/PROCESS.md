@@ -32,7 +32,10 @@ som genereras per bygge).
    byggdes från; incheckad 2026-09-08 så molnet alltid har den)
    → staged upload → themeCreate. Temat är
    strukturen — brandingen genereras alltid om (opf-brand.css + settings).
-6. ⚙️ Produkt som **ACTIVE** (Axels bakläxa 2026-09-08 på TankGuard:
+6. ⚙️ Produkt som **ACTIVE** med **`inventoryPolicy: CONTINUE`** och
+   `inventoryItem.tracked: false` (Axels regel 2026-09-09 — Shopifys default
+   DENY stoppar försäljningen tyst när saldot tar slut, medan annonserna
+   fortsätter kosta pengar; dropshipping har inget eget lager) (Axels bakläxa 2026-09-08 på TankGuard:
    DRAFT ger 404 i menyn och "Exempel på produktnamn" i kundvyn —
    butiken är ändå lösenordsskyddad under trialen) → metafält →
    opf-sektioner → produktmall → startsida →

@@ -12,6 +12,14 @@ import { byggSidaHtml, byggForhandsvisning, byggSektioner, formatPris, kundUnder
 import { dummy, medButiksfrakt, raprodukt } from './hjalp.mjs';
 
 
+test('varianterna säljer vidare när lagret tar slut', () => {
+  const { input } = byggPlan(dummy());
+  for (const v of input.variants) {
+    assert.equal(v.inventoryPolicy, 'CONTINUE');
+    assert.equal(v.inventoryItem.tracked, false);
+  }
+});
+
 test('planen: titel, handle, DRAFT och vendor', () => {
   const { input } = byggPlan(dummy());
   assert.equal(input.title, 'Nackmagneten');
