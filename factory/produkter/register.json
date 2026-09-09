@@ -7,5 +7,157 @@
   "ops_annonskonto_namn": "MagiBorsten DK",
   "varning_kontot_ar_delat": "Kontot bär ALLA OPS-butiker OCH Bäverbutikens danska kampanjer. Avläst 2026-09-08: sex kampanjer, samtliga Bäverbutikens (Fiskespöhållaren DK, Tofflorna DK, Strandtofflorna DK, Sätesöverdraget DK, Axelbältet DK, Motorhöljet DK) — noll OPS-kampanjer. Varje läsning MÅSTE filtreras på produktens prefix, annars läses en annan verksamhets annonser som om de vore produktens egna.",
   "troskel": "Startskottets nivå (spend 1500 kr + 20 % vinst) står som TROSKEL i factory/register.mjs. Talen är avlästa ur den körande rutinen agent/rond.mjs på grenen claude/daily-agent-discussion-uos5df, inte påhittade här. Nivån är ett öppet ägarbeslut — TRAPPAN.md Öppna beslut punkt 1. En post kan överstyra den med ett eget troskel-objekt.",
-  "poster": {}
+  "poster": {
+    "baverbutiken/ai-glasogon": {
+      "lage": "test",
+      "redigerare": null,
+      "notion": {
+        "name": "",
+        "database_id": ""
+      },
+      "kordag_offset": 0,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur products.json."
+    },
+    "baverbutiken/axelbaltet": {
+      "lage": "test",
+      "redigerare": null,
+      "notion": {
+        "name": "Trimmer belt creative hub",
+        "database_id": "3aa270ab-908c-808b-9d87-d1f1a0d70cbc",
+        "collection_id": "2f1270ab-908c-820a-9a08-07b73d53710b",
+        "url": "https://app.notion.com/p/3aa270ab908c808b9d87d1f1a0d70cbc"
+      },
+      "kordag_offset": 1,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur products.json."
+    },
+    "baverbutiken/motorholjet": {
+      "lage": "test",
+      "redigerare": null,
+      "notion": {
+        "name": "Boat cover 420D creative hub",
+        "database_id": "3b0270ab-908c-80a7-8793-fa11d8c0f6e4",
+        "collection_id": "785270ab-908c-82e5-ac71-07d7b7ef3770",
+        "url": "https://app.notion.com/p/3b0270ab908c80a78793fa11d8c0f6e4"
+      },
+      "kordag_offset": 2,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur products.json."
+    },
+    "baverbutiken/satesoverdragaren": {
+      "lage": "test",
+      "redigerare": null,
+      "notion": {
+        "name": "Mower seat creative hub",
+        "database_id": "3aa270ab-908c-80c0-88aa-cb4935db8f33",
+        "collection_id": "6c9270ab-908c-8362-aa2a-87c073045ebf",
+        "url": "https://app.notion.com/p/3aa270ab908c80c088aacb4935db8f33"
+      },
+      "kordag_offset": 0,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur products.json."
+    },
+    "baverbutiken/strandtofflorna": {
+      "lage": "test",
+      "redigerare": null,
+      "notion": {
+        "name": "Beach crocs creative hub",
+        "database_id": "3aa270ab-908c-802b-a7a4-eb74d08d7eb7",
+        "collection_id": "50c270ab-908c-8266-aa1f-872b99fe61e0",
+        "url": "https://app.notion.com/p/3aa270ab908c802ba7a4eb74d08d7eb7"
+      },
+      "kordag_offset": 1,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur products.json."
+    },
+    "baverbutiken/vaggfastet": {
+      "lage": "test",
+      "redigerare": null,
+      "notion": {
+        "name": "",
+        "database_id": ""
+      },
+      "kordag_offset": 2,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur products.json."
+    },
+    "drytrek/damasker": {
+      "lage": "skala",
+      "redigerare": null,
+      "notion": {
+        "name": "",
+        "database_id": ""
+      },
+      "kordag_offset": 0,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
+    },
+    "hemvakten/overvakningskameran": {
+      "lage": "skala",
+      "redigerare": null,
+      "notion": {
+        "name": "",
+        "database_id": ""
+      },
+      "kordag_offset": 1,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
+    },
+    "tacklebay/adventskalender-fiskedrag": {
+      "lage": "skala",
+      "redigerare": null,
+      "notion": {
+        "name": "",
+        "database_id": ""
+      },
+      "kordag_offset": 2,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
+    },
+    "tacklebay/fiskespohallare-4-pack": {
+      "lage": "skala",
+      "redigerare": null,
+      "notion": {
+        "name": "",
+        "database_id": ""
+      },
+      "kordag_offset": 0,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
+    },
+    "tankguard/tankguard": {
+      "lage": "skala",
+      "redigerare": null,
+      "notion": {
+        "name": "",
+        "database_id": ""
+      },
+      "kordag_offset": 1,
+      "senaste_korning": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
+    }
+  }
 }

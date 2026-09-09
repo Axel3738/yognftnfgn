@@ -35,7 +35,7 @@
 
 import { pathToFileURL } from 'node:url';
 import { alla, api, säkerställProxy } from '../tools/meta-lib.mjs';
-import { laddaButik, sakerstallKonto, TROSKEL, redigerareFor, arKordag } from './register.mjs';
+import { laddaButik, sakerstallKonto, tillhorButiken, TROSKEL, redigerareFor, arKordag } from './register.mjs';
 import { linjetext } from './ekonomi.mjs';
 import { formateraStartskott } from './startskott.mjs';
 
@@ -306,7 +306,6 @@ export async function hamtaButikensAnnonser(butik, { dagar = 14, sedan = null } 
   if (!butik.prefix) {
     throw new Error(`${butik.post.nyckel}: ${butik.prefixfel} — utan prefix läses hela kontot, och det är en annan verksamhets data.`);
   }
-  const { tillhorButiken } = await import('./register.mjs');
 
   const params = { level: 'ad', fields: INSIGHTS_FALT, sort: 'spend_descending' };
   let period;
