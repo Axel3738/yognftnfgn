@@ -235,41 +235,76 @@ som genereras per bygge).
 
 **Symptom (Axel, HeimGuard + TankGuard, båda LIVE och spenderar):** första
 gången kunden lägger i varukorgen skickas hen till `/cart` i stället för att
-lådan glider in. Gäller sannolikt varje butik byggd ur `ops-tema.zip`.
+lådan glider in.
 
-**Verifierat i zip:en 2026-09-09 (allt detta är RÄTT, felet ligger inte här):**
-- `config/settings_data.json` → `cart_type: 'drawer'` ✓
-- `layout/theme.liquid` rad 308-310 renderar `{% render 'cart-drawer' %}`
-  när `settings.cart_type == 'drawer'` ✓
-- `snippets/cart-drawer.liquid` finns och är Dawns riktiga låda ✓
+### Vad som MÄTTES på de publicerade temana 2026-09-09
 
-**Huvudmisstanke — sektionen saknar `{% schema %}`.** `sections/cart-drawer.liquid`
-i zip:en är en ren wrapper (`{%- render 'cart-drawer' -%}`, noll `schema`-träffar).
-Dawns `cart-drawer.js` hämtar `?sections=cart-drawer` vid varje varukorgsändring —
-en sektion utan schema kan inte hämtas via sektions-API:t. Samma wrapper skrivs
-dessutom om av `byggKorgUpsell` i `factory/tema.mjs`.
+Kört i riktig Chromium mot heimguard.se och tankguard.se, svenska och `/nb`,
+med tom kundvagn. Tre hypoteser föll:
 
-**Andra kandidater, i tur och ordning:**
-1. Det PUBLICERADE temats `settings_data.json` har inte `cart_type: 'drawer'`
-   — kloner tappar inställningar precis som de tappar app-embeds.
-2. `product-form.js` hittar inget `<cart-drawer>`-element vid första laddningen
-   och faller tillbaka på vanlig formulär-POST.
+| Hypotes | Mätning | Dom |
+|---|---|---|
+| `sections/cart-drawer.liquid` saknar `{% schema %}` | `GET /?sections=cart-drawer` svarar 200 med `#CartDrawer` på båda butikerna | ❌ inte orsaken — sektions-API:t kräver inget schema |
+| Publicerade temat saknar `cart_type: 'drawer'` | `component-cart-drawer.css`, `cart-drawer.js` och `<cart-drawer class="drawer is-empty">` finns alla i första laddningen — alla tre renderas bara när `cart_type == 'drawer'` | ❌ värdet var redan satt på båda |
+| `product-form.js` hittar inget `<cart-drawer>` (rad 11 → rad 64 redirect) | `document.querySelector('cart-drawer')` ger elementet, och det är uppgraderat (`renderContents` finns) | ❌ rad 64 kördes aldrig |
 
-**ROTORSAKEN (funnen 2026-09-09):** `assets/product-form.js` rad 11 gör
-`this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer')`
-och rad 64 `} else if (!this.cart) {` → **redirect till `/cart`**. Hittar den
-inget av elementen faller formuläret tillbaka på en vanlig POST. Layouten
-renderar lådan bara när `settings.cart_type == 'drawer'`, och det värdet
-ÄRVDES från vilket tema klonen råkade utgå från i stället för att sättas.
+Redirecten kom inte från temat alls, utan från `assets/ms-paket.js` — filen som
+äger paketnivåerna. **Två fel, båda med samma symptom:**
 
-**FIXEN:** `byggSettingsPatch` i `factory/branding.mjs` sätter numera
-`cart_type: 'drawer'` explicit i varje bygge. Brandingsteget körs på varje
-butik, så värdet kan inte längre gå förlorat i en klon.
+**1. Båda A/B-korten köpte samtidigt.** `ms-ab.js` tar aldrig bort den
+förlorande varianten, den sätter bara `hidden` på omslaget. Båda `<ms-paket>`
+band därför sin köplyssnare till SAMMA formulär, och `ev.stopPropagation()`
+når inte ett syskon som lyssnar på samma nod (`document`). Ett klick gav:
 
-⚠️ **De butiker som redan är byggda måste rättas för hand** — brandingsteget
-körs om, eller `cart_type` sätts direkt i det publicerade temats
-`settings_data.json`.
+- `/cart/add.js` **två gånger** — kunden fick 4 kameror när hen valt 2
+- `/discount/PAKET2` och `/discount/PAKET2B` efter varandra, sista vann
 
-**Regel:** varukorgen ska ändå testas på RIKTIGT i kundens vy innan en butik
-får annonser — tom korg, lägg i varan, se att lådan glider in. Det står i
+**2. Rabattkoden lades på FÖRE varorna.** `/discount/<kod>` fäster **inte** på
+en TOM kundvagn. Koden föll bort, `kontrollera()` hittade den inte, och
+reservvägen `laddaOm()` navigerade till `/discount/<kod>?redirect=/cart`.
+**Det var redirecten** — och den slår exakt vid kundens FÖRSTA köp, precis som
+Axel beskrev. Mätt på heimguard.se, 2-pack med PAKET2 i tom vagn:
+
+```
+koden först   → discount_codes []      · 0 kr rabatt   · 1 598 kr · redirect
+varorna först → PAKET2 applicable=true · 405 kr rabatt · 1 193 kr · lådan glider in
+```
+
+### Fixen
+
+`factory/tema/assets/ms-paket.js` ägs nu av fabriken och skrivs över i varje
+butik via `TEMAFILER` i `factory/tema.mjs` (tema-steget i `ops.mjs`). Tre
+spärrar + ändrad ordning:
+
+1. `doljd()` — ett gömt kort köper aldrig, och skriver aldrig antal i det
+   delade formuläret.
+2. `ev.msPaketHanterad` + `stopImmediatePropagation()` — en submit hanteras
+   en gång, hur många kort som än finns.
+3. Varorna i vagnen FÖRST, rabattkoden efter, och lådan hämtas därefter i ett
+   eget `?sections=`-anrop så den visar det rabatterade priset.
+
+Bas-zip:en (`factory/tema/ops-tema.zip`) bär samma fil, och ett test jämför
+dem byte för byte så zip:en inte kan halka efter.
+
+**Verifierat efter fixen** (riktig webbläsare, tom korg, mobilvy):
+
+| Vy | Före | Efter |
+|---|---|---|
+| heimguard.se | redirect · 4 st · 2 946 kr | ✅ lådan glider in · 2 st · 1 199 kr |
+| heimguard.se/nb | redirect · 4 st · 2 946 kr | ✅ lådan glider in · 2 st · 1 342 kr |
+| tankguard.se | redirect · 4+4 st · 2 175 kr | ✅ lådan glider in · 2 st · 799 kr |
+| tankguard.se/nb | redirect · 4+4 st · 2 175 kr | ✅ lådan glider in · 2 st · 799 kr |
+
+1-pack (utan rabattkod) testades separat på båda butikerna: lådan glider in.
+
+### `cart_type: 'drawer'` sätts ändå
+
+`byggSettingsPatch` i `factory/branding.mjs` sätter `cart_type: 'drawer'`
+explicit. Det var **inte** orsaken här — båda butikerna hade redan värdet — men
+en klon kan tappa inställningar precis som den tappar app-embeds, och då blir
+`product-form.js` rad 64 en riktig redirect. Spärren står kvar.
+
+**Regel:** varukorgen testas på RIKTIGT i kundens vy innan en butik får
+annonser — tom korg, lägg i varan, se att lådan glider in, och **räkna varorna
+i vagnen**. Ett dubbelköp syns inte på sidan, bara i vagnen. Det står i
 `/ny-ops` Definition of done.

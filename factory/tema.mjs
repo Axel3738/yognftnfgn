@@ -15,6 +15,8 @@
 // Tokens: var(--ms-*) med neutrala fallbacks — på CRO-temat tar ms-cro.css
 // över, på ett naket tema ser sektionerna fortfarande rätt ut.
 
+import { readFileSync } from 'node:fs';
+
 const BAS_CSS = `
   .opf-block { padding-block: var(--ms-section-y, clamp(32px, 6vw, 64px)); }
   .opf-wrap { max-width: 760px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 32px); }
@@ -340,6 +342,37 @@ export const SVENSK_SIGNAL =
   `padding:10px 14px;border:1px solid var(--ms-line,#dde);` +
   `border-radius:var(--ms-radius-sm,6px);background:var(--ms-surface-2,#f5f7f9);` +
   `font-size:.88em;line-height:1.35}</style>`;
+
+// ---------------------------------------------------------------------------
+// Köprutans JS ägs av fabriken, inte av bas-zip:en.
+//
+// `assets/ms-paket.js` är den enda filen i temat som rör pengar. Bas-zip:ens
+// kopia bar två fel som båda gav samma symptom — kunden kastades till /cart i
+// stället för att lådan gled in — och båda är mätta på riktigt 2026-09-09 mot
+// heimguard.se och tankguard.se, som stod live och spenderade:
+//
+//   1. A/B-testet (`ms-ab.js`) tar aldrig bort den förlorande paketvarianten,
+//      det sätter bara `hidden` på omslaget. Båda korten band därför sin
+//      köplyssnare till SAMMA formulär, och ett klick körde två köp:
+//      `/cart/add.js` två gånger (kunden fick 4 kameror när hen valt 2) och
+//      två rabattkoder som tävlade om samma session.
+//   2. Koden lades på FÖRE varorna. `/discount/<kod>` fäster inte på en TOM
+//      kundvagn, så koden föll bort, sista kontrollen hittade den inte, och
+//      reservvägen `laddaOm()` navigerade till `/discount/<kod>?redirect=/cart`.
+//      Det var redirecten — och den slog exakt vid kundens FÖRSTA köp.
+//
+// Därför skrivs filen till VARJE butik av fabriken. Ändra den i
+// `factory/tema/assets/ms-paket.js`, aldrig i en enskild butiks tema.
+const MS_PAKET_JS = readFileSync(
+  new URL('./tema/assets/ms-paket.js', import.meta.url),
+  'utf8'
+);
+
+// Temats filer som fabriken äger och skriver över i varje butik, oavsett vad
+// klonen råkade ha med sig. Bas-zip:en är en startpunkt, inte facit.
+export const TEMAFILER = {
+  'assets/ms-paket.js': MS_PAKET_JS,
+};
 
 // Lägger in OPF-sektionerna i en befintlig product.json utan att röra "main".
 // Innehållsblocken hamnar direkt efter main; FAQ:n efter Judge.me-widgeten

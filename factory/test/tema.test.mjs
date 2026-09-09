@@ -6,7 +6,8 @@ import assert from 'node:assert/strict';
 import { kundUnderrubrik, byggKortBeskrivning } from '../sida.mjs';
 import { byggMetafalt, snittbetyg } from '../metafalt.mjs';
 import { byggJudgeMeCsv, JUDGEME_KOLUMNER } from '../judgeme.mjs';
-import { SEKTIONER, SEKTIONSORDNING_TEMA, byggProduktTemplate } from '../tema.mjs';
+import { fileURLToPath } from 'node:url';
+import { SEKTIONER, SEKTIONSORDNING_TEMA, TEMAFILER, byggProduktTemplate } from '../tema.mjs';
 import { dummy, medButiksfrakt } from './hjalp.mjs';
 
 const falt = (p) => Object.fromEntries(byggMetafalt(p, { kundUnderrubrik }).map((m) => [m.key, m]));
@@ -244,4 +245,49 @@ test('hårdkodad icon-with-text plockas bort ur produktmallen', () => {
   assert.ok(!('icon-row' in ut.sections.main.blocks));
   // Svensk varumärkes-strip (opf_svensk) läggs alltid till i main-blocken.
   assert.deepEqual(ut.sections.main.block_order, ['price', 'opf_svensk']);
+});
+
+// --- Köprutans JS: varukorgsbuggen 2026-09-09 ------------------------------
+// Buggen kostade riktiga pengar på två butiker som stod live. Testerna finns
+// för att den inte ska kunna smyga tillbaka via en ny bas-zip eller en klon.
+
+test('fabriken äger ms-paket.js och skriver den till varje butik', () => {
+  assert.ok(TEMAFILER['assets/ms-paket.js'], 'ms-paket.js ska ligga i TEMAFILER');
+  assert.ok(TEMAFILER['assets/ms-paket.js'].includes('ms-paket.js — paketnivåerna'));
+});
+
+test('bas-zip:ens ms-paket.js är samma fil som fabrikens', async () => {
+  // En zip som halkat efter ger nya butiker den gamla, trasiga koden.
+  const { execFileSync } = await import('node:child_process');
+  const url = new URL('../tema/ops-tema.zip', import.meta.url);
+  const ur_zip = execFileSync('unzip', ['-p', fileURLToPath(url), 'assets/ms-paket.js'], {
+    encoding: 'utf8',
+    maxBuffer: 4 * 1024 * 1024,
+  });
+  assert.equal(ur_zip, TEMAFILER['assets/ms-paket.js']);
+});
+
+test('gömt A/B-kort köper aldrig, och samma submit körs bara en gång', () => {
+  const js = TEMAFILER['assets/ms-paket.js'];
+  // A/B-motorn gömmer förloraren med hidden i stället för att ta bort den.
+  assert.match(js, /doljd\(\)\s*\{/);
+  assert.match(js, /if \(this\.doljd\(\)\) return;/);
+  assert.match(js, /if \(ev\.msPaketHanterad\) return;/);
+  // stopPropagation når inte syskonlyssnaren på samma nod.
+  assert.match(js, /ev\.stopImmediatePropagation\(\);/);
+  assert.ok(!/ev\.stopPropagation\(\);/.test(js), 'stopPropagation räcker inte här');
+  // Det gömda kortet ska inte heller skriva antal i det delade formuläret.
+  assert.match(js, /if \(this\.form && !this\.doljd\(\)\)/);
+});
+
+test('varorna läggs i FÖRE rabattkoden — koden fäster inte på en tom vagn', () => {
+  const js = TEMAFILER['assets/ms-paket.js'];
+  const add = js.indexOf("fetch(rutt + 'cart/add.js'");
+  // Bara koden i själva köpkedjan räknas — reservvägen laddaOm() pekar också
+  // på /discount, men den skickar kunden till /cart och ligger tidigare i filen.
+  const rabatt = js.indexOf("encodeURIComponent('/cart.js')");
+  assert.ok(add > 0 && rabatt > 0, 'båda anropen ska finnas');
+  assert.ok(add < rabatt, 'cart/add.js måste komma före /discount/<kod>');
+  // Lådan hämtas färsk efter att koden fäst, annars visar den fullpris.
+  assert.match(js, /rutt \+ '\?sections=' \+ idn/);
 });
