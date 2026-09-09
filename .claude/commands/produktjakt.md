@@ -1,6 +1,8 @@
 # /produktjakt — hitta nya produkter och lägg dem i ett offertark
 
-**Rutin, körs varje morgon 06:30 svensk tid.** Uppdraget: hitta nya varor som passar Bäverbutiken,
+**Rutin, körs varje morgon 06:30 svensk tid** (cron `30 4 * * *` UTC), bunden till den fasta sessionen
+`session_016jBJVGuyny8S3j2XPSM26Z` (tagg `routine:produktjakt`, trigger `trig_01JeTQZNtheq6FfPoaZgxqBJ`)
+som har repot som källa och `main` som utgren — annars kan rutinen inte pusha. Uppdraget: hitta nya varor som passar Bäverbutiken,
 räkna ekonomin, skriva dem i leverantörens offertark och lägga arket där Axel kan hämta det.
 Axel ska bara trycka på en knapp och skicka filen vidare.
 
