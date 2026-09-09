@@ -269,19 +269,39 @@ plus omrenderingar). Använd dem, bygg inget nytt bredvid.
 
 **Fyra saker som kostade tid och inte behöver kosta det igen:**
 
-1. **Manusets längd är en kvalitetsgrind.** HeyGen pressar in manuset på källans
-   taltid. Ett manus 1,7 gånger längre än originalet ger en stressad röst — och
-   det upptäcks först när någon lyssnar, vilket är precis vad järnregel 3 finns
-   för att slippa. `srt-fixa.mjs` stoppar nu allt över 1,15× källans tecken per
-   sekund och skriver ut ett konkret teckentak per manus.
-2. **`failed` från HeyGen betyder inte alltid misslyckat.** Status `failed` med
+1. **⛔ MANUSET SKRIVS MOT CUE-LISTAN. En replik per cue. Inga undantag.**
+   Detta är den dyraste lärdomen i hela fas 2 — sjutton videor fick renderas om.
+
+   HeyGen läser upp varje cues text på exakt den cuens tid. Skrivs manuset som
+   fri text och fördelas sedan över cues får en cue fyra gånger för mycket text
+   (läses fyra gånger för fort) och nästa för lite (dras ut). Rösten jojjar
+   genom hela filmen. Axels ord: *"den saktar ner och sen speedar upp hela
+   tiden."*
+
+   **Helhetsmåttet döljer det fullständigt.** Filer som låg på 0,72–0,97×
+   tecken/sekund över hela videon svängde 4–10× per cue.
+
+   Verktygen: `factory/cuebudget.mjs` skriver golv och tak i tecken per cue —
+   manuset skrivs mot den listan. `factory/rostkoll.py` mäter spridningen i
+   den färdiga filen. `fördela()` i `srt-fixa.mjs` är avvecklad och kastar.
+
+   ⚠️ **Skriv manuset mot den session som faktiskt ska renderas.** Byter man
+   HeyGen-läge transkriberas videon om och delas in i ANDRA cues: 8 blev 10,
+   6 blev 4, 8 blev 11. Ett manus mot en tidigare cue-lista passar inte.
+
+2. **⛔ ANVÄND `mode: "quality"`.** Axels besked 2026-09-09. Det slår på
+   avatar-inferens: munrörelserna renderas om i stället för att nytt ljud läggs
+   över bilden. Default är `fast`, och den användes i första omgången.
+   ⚠️ Dokumentationen kallar lägena "precision"/"speed" — endpointen svarar att
+   bara `fast` och `quality` är giltiga. Gå på API:ets felmeddelande.
+3. **`failed` från HeyGen betyder inte alltid misslyckat.** Status `failed` med
    `failure_message: "video pending moderation by our team"` är ett väntläge.
    Elva färdiga renderingar såg ut att ha dött på det.
-3. **Ett captionbyte är inte en mediagrind.** `no-precis.py` byter pillret; text
+4. **Ett captionbyte är inte en mediagrind.** `no-precis.py` byter pillret; text
    som ligger någon annanstans i bild står kvar. TankGuards `CS_4_H1` bar ett
    andra piller mitt i bilden med "489 kr, spara 147 kr" som överlevde bytet.
    **OCR-grinda alltid den FÄRDIGA filen, inte bara källan.**
-4. **Captionbandet sitter inte på samma höjd i alla creatives.** De norska hade
+5. **Captionbandet sitter inte på samma höjd i alla creatives.** De norska hade
    pillret kring y=912 i 720×1280, två senare svenska kring y=971. Mät per
    uppsättning; en gissad zon suddar fel rad eller ingen alls.
 

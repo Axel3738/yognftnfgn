@@ -137,8 +137,39 @@ Noll avvikelser. Ingen annons pekar på källbutikens sida, länk eller pixel, o
 ingenting kan spendera.
 
 ### Röstkontrollen (CLAUDE.md järnregel 3)
-Axel lyssnade 2026-09-09 på de elva svenska omdubbade videorna:
-**"Alla okej. Men inget super — bra, men helt okej liksom."** Godkända.
+
+**⛔ Första omgången underkändes av Axel 2026-09-09:**
+*"Dom flesta voiceovers låter helt okej faktiskt"* blev efter mer lyssnande
+*"det här må vara de sämsta annonserna jag sett — den saktar ner och sen
+speedar upp hela tiden."*
+
+**Orsaken, mätt:** manuset packades med flera repliker i samma cue. HeyGen
+läser varje cue på exakt den cuens tid, så en cue med fyra gånger så mycket
+text som källan lästes fyra gånger så fort — och nästa, som fick för lite,
+drogs ut. Helhetsmåttet dolde det: CS_1_H3 låg på 0,72× över hela filen och
+2,52× i cue 8.
+
+`factory/rostkoll.py` mäter nu tecken per sekund per cue och rapporterar
+**spridningen** mellan cues. Det är svängningen örat hör.
+
+| | Första omgången | Omtagningen |
+|---|---|---|
+| Sämsta video | 10,29× (`GT_1_H3` NO) | 2,07× |
+| Spann över alla 17 | 2,16–10,29× | 1,31–2,07× |
+| HeyGen-läge | `fast` (default) | `quality` — avatar-inferens, munrörelserna renderas om |
+| Manus | fri text, fördelad över cues | en replik per cue, inom cuens teckenbudget |
+
+**Sjutton videor gjordes om** — nio svenska och åtta norska. Nya
+proofread-sessioner, nya manus skrivna mot varje sessions egen cue-lista, nya
+renderingar i quality-läget, nya captionspår, och annonserna ompekade till de
+nya creativesen. Annonsernas id, namn, adset och status står kvar.
+
+De sex `replikbyte`-videorna gjordes INTE om: de ligger på 1,45–2,62× och
+matchar källvideornas egen spridning på tiondelen. Den svängningen finns i
+Bäverbutikens original och är inget vi infört.
+
+⚠️ **Ingen har ännu lyssnat på omtagningen.** Mätningen säger att tempot är
+jämnt. Den säger ingenting om hur rösten låter.
 
 ⚠️ **Sjutton omdubbade filer är INTE avlyssnade ännu — sex svenska och elva norska:** `SP_3_H1`, `CS_4_H1` och de
 fyra omrenderade `GT_1_H2`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`. De elva norska är

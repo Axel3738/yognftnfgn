@@ -144,10 +144,32 @@ manuset på källans taltid. Ett manus 1,7 gånger längre än originalet ger en
 stressad röst som ingen hör förrän någon lyssnar. `srt-fixa.mjs` mäter nu tecken
 per sekund mot källan och stoppar allt över 1,15×.
 
-**Röstkontrollen (järnregel 3), Axels besked 2026-09-09:** de elva svenska
-omdubbade lät *"alla okej — men inget super, bra, men helt okej liksom"*.
-Godkända. Rösten går inte att välja i `/v2/video_translate`, så "helt okej" är
-taket med nuvarande metod.
+**Röstkontrollen (järnregel 3) — och varför den underkändes.** Axels första
+besked 2026-09-09 var *"alla okej — men inget super"*. Efter mer lyssnande blev
+det *"de sämsta annonserna jag sett — den saktar ner och sen speedar upp hela
+tiden."*
+
+**Det som gick fel är den viktigaste lärdomen om omdubbning i hela repot:**
+HeyGen läser varje cue på exakt den cuens tid. Ett manus som skrivs som fri text
+och sedan fördelas över cues ger cues med fyra gånger för mycket text — de
+läses fyra gånger för fort — och cues med för lite, som dras ut. Rösten jojjar.
+
+Måttet som fångar det är **spridningen i tecken per sekund mellan cues**, inte
+snittet över filen. Snittet låg på 0,72–0,97× på videor som svängde 4–10× per
+cue. `factory/rostkoll.py`.
+
+Reglerna som följer:
+1. **En replik per cue.** `factory/cuebudget.mjs` skriver ut golv och tak i
+   tecken per cue; manuset skrivs mot den listan. `fördela()` är avvecklad.
+2. **Skriv manuset mot den session som ska renderas.** Byter man HeyGen-läge
+   transkriberas videon om och delas in i andra cues — 8 blir 10, 6 blir 4.
+3. **`mode: "quality"`, inte default.** Avatar-inferens renderar om
+   munrörelserna i stället för att lägga nytt ljud över bilden. Axels besked:
+   använd det dyra läget.
+
+Efter omtagningen: 1,31–2,07× spridning på alla sjutton, mot 2,16–10,29×.
+Rösten går fortfarande inte att VÄLJA — `/v2/video_translate` klonar källans
+röst — men tempot går att styra, och det var tempot som var trasigt.
 
 **Källkampanjen växer under bygget.** 34 annonser vid brand-detektorns körning,
 40 samma kväll. Läs om källan före räkningen, varje gång — annars missas nya
