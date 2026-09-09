@@ -1,9 +1,14 @@
 # Produktjakt 2026-09-09
 
 Två sökomgångar (6 + 14 sökord, månad 9). 22 kandidater klarade ekonomin,
-9 gick igenom läsningen, 13 ströks. USD/SEK 9,6022 (ECB 2026-09-09).
+8 gick igenom läsningen, 14 ströks. USD/SEK 9,6022 (ECB 2026-09-09).
 
-## Kvar — 9 produkter
+**Säsongen bedöms mot halvan av månaden, inte mot månadsnumret** (Axels påpekande
+2026-09-09). Mitten av september i Sverige: eldningssäsongen börjar, älgjakten är
+igång i norr, båtarna tas upp, mörkret märks. Det som ska *användas* på vattnet
+eller i trädgården nästa säsong hör hemma i april–juni.
+
+## Kvar — 8 produkter
 
 | # | Produkt | Grupp | Landad | Tänkt pris | Uppslag |
 |---|---|---|---|---|---|
@@ -13,17 +18,20 @@ Två sökomgångar (6 + 14 sökord, månad 9). 22 kandidater klarade ekonomin,
 | 4 | Båtkapellstötta teleskop | båt och trailer | 155 kr | 399 kr | 2,57× |
 | 5 | Motorspolare utombordare | båt och trailer | 361 kr | 899 kr | 2,49× |
 | 6 | Stegstabilisator för tak/hängränna | tomt hus och tak | 397 kr | 999 kr | 2,52× |
-| 7 | Solcellslanterna båt | belysning och mörker | 158 kr | 399 kr | 2,52× |
-| 8 | Vindrutekåpa husbil (Ducato/Boxer/Relay) | husvagn och husbil | 283 kr | 699 kr | 2,47× |
-| 9 | Solcellslarm PIR med siren | belysning och mörker | 332 kr | 799 kr | 2,40× |
+| 7 | Vindrutekåpa husbil (Ducato/Boxer/Relay) | husvagn och husbil | 283 kr | 699 kr | 2,47× |
+| 8 | Solcellslarm PIR med siren | belysning och mörker | 332 kr | 799 kr | 2,40× |
 
-Alla nio ligger i katalogens kollektioner, står ute eller bärs, och har sin
-säsong nu (eldningssäsong, jakt, båtupptagning, höstregn, mörker).
+Alla åtta ligger i katalogens kollektioner, står ute eller bärs, och har sin
+säsong just nu: sotset och larm när mörkret och eldningen kommer, sittkäppen till
+jakten, kapellstöttan och motorspolaren till båtupptagningen, stegstabilisatorn
+till takrundan före höstregnet, husbilskåpan till avställningen, utestugan till
+de kalla nätterna.
 
-## Strukna — 13 produkter
+## Strukna — 14 produkter
 
 | Produkt | Orsak |
 |---|---|
+| Solar Marine Signal Lights (1005011767102250) | Fel halva av säsongen. Mitten av september är båtupptagning — navigationsljus köps av den som ska ut på vattnet, alltså på våren. Sökordet flyttat till månad 4–6. |
 | 3 in 1 Aluminum Boat Cover Support Pole (1005010318124054) | Dubblett i sak med båtkapellstöttan. Sämre uppslag (2,41× mot 2,57×). |
 | Solar Charging LED Longshot Warning Light (1005010712839288) | Dubblett i sak med solcellslanternan. Sämre uppslag (2,45× mot 2,52×). |
 | JVEE 30W Solar Flood Light (1005007487622885) | Kedjevara utan ankare: Biltema, Jula och Clas Ohlson säljer samma form i samma prisläge (vinnar-DNA regel E). Träffen matchar dessutom inte sökordet — det är en villalampa, inte marin belysning. |
@@ -40,6 +48,11 @@ säsong nu (eldningssäsong, jakt, båtupptagning, höstregn, mörker).
 
 ## Ändring i sökordskatalogen
 
-`downpipe rain diverter water butt` flyttad från månad 9–3 till månad 4–6.
-Sökordet gav sex träffar på två omgångar och alla föll på samma sak: regnvatten­uppsamling
-säljs på våren. Kranskyddsfällan i omvänd riktning.
+Ny grupp `vår och försäsong`, månad 4–6, med två sökord flyttade dit:
+
+- `downpipe rain diverter water butt` (låg på 9–3). Sex träffar på två omgångar,
+  alla på samma fel: regnvattenuppsamling säljs på våren.
+- `solar dock light marine` (låg på 9–1). Navigationsljus är utrustning för den
+  som ska ut på vattnet, inte för den som tar upp båten.
+
+Kranskyddsfällan i omvänd riktning: produkten säljs för sent i stället för för tidigt.

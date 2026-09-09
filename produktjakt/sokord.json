@@ -198,8 +198,7 @@
     "solar shed light separate panel",
     "wireless driveway alarm motion sensor",
     "solar strobe alarm motion outdoor",
-    "solar house number sign illuminated",
-    "solar dock light marine"
+    "solar house number sign illuminated"
    ]
   },
   {
@@ -251,7 +250,7 @@
    ]
   },
   {
-   "grupp": "regnvatten och bevattning",
+   "grupp": "vår och försäsong",
    "manader": [
     4,
     5,
@@ -259,7 +258,8 @@
    ],
    "vikt": 1,
    "ord": [
-    "downpipe rain diverter water butt"
+    "downpipe rain diverter water butt",
+    "solar dock light marine"
    ]
   }
  ]

@@ -38,6 +38,11 @@ Skriptet kan bara räkna. Du ska läsa. Gå igenom `fynd.json` och **stryk** var
   N-i-1, lek, allt som förvaras inomhus, montering som kräver inlärning.
 - **Kranskyddsfällan:** skadan inträffar nov–feb men produkten säljs nu. Flytta den till rätt månad
   i `sokord.json` i stället för att sälja den för tidigt.
+- **Fel halva av månaden.** Bedöm säsongen mot dagens datum, inte mot månadsnumret — en månad rymmer
+  två olika lägen. *(Axels påpekande 2026-09-09.)* Mitten av september i Sverige: eldningssäsongen
+  börjar, älgjakten är igång i norr, båtarna tas upp, mörkret märks. Fråga alltid åt vilket håll varan
+  pekar: **avställning och skydd säljs nu, utrustning som ska användas nästa säsong hör hemma i
+  april–juni.** Ett båtkapell och en motorspolare är rätt i dag; ett navigationsljus är det inte.
 - **Dubblett i sak** — två rader som är samma produkt från olika säljare. Behåll den med bäst uppslag.
 
 Skriv en rad per struken produkt i körningens `STATUS.md` med orsaken. Det är kvittot.
