@@ -163,6 +163,12 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+- **Grön konfiguration är inte en grön butik.** Fabrikens QA läser metafält,
+  priser och sektioner — inte hur sidan ser ut. DryTrek rapporterades
+  2026-09-09 som "14 gröna, 0 fel" medan butiken hette **My Store 3**,
+  saknade logga, visade Shopifys default-illustration som hero, hade Dawns
+  meny (Home/Catalog/Contact) och stod på engelska. Kör alltid
+  **`factory/kundvy.mjs`** mot startsidans riktiga HTML som SISTA kontroll.
 - **Bas-zip:en bär MATSTRUMPORS TEXT i tre mallar** (mätt 2026-09-09):
   `templates/index.json` (hero, rubriker, kollektionen `strumporna`,
   produkten `sushi-strumpor`), `sections/footer-group.json` (bolagsblocket
