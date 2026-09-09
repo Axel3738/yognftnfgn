@@ -518,6 +518,13 @@ facit. Vår egen räkning står som anteckning i kolumn E.
 ⚠️ **Sidan publiceras mot samma artefakt-URL varje dag** (`url`-parametern) — annars tappar Axel
 bort vilken länk som gäller. URL:en står i `.claude/commands/produktjakt.md`.
 
+⚠️ **Rutinen kör från grenen `claude/fortsatta-pa-denna-c28bmv`, inte från `main`** (per 2026-09-09).
+`produktjakt/` finns bara där. Undantaget från nattrutinsregeln ovan är möjligt just för att rutinen
+är bunden till en **fast session** — dess prompt börjar därför alltid med `git fetch` + `git checkout -B`
+mot grenen, eftersom en omstartad container klonar `main` och då saknar hela mappen. Trigger
+`trig_01AnGMfca7s1thCUqNbMSRoR`, fast session `session_016jBJVGuyny8S3j2XPSM26Z`. Når koden `main`:
+byt tillbaka checkouten och pushen till `main` i kommandofilen och stryk den här raden.
+
 ### `commission/` — redigerarnas commission
 Motorn bakom `/commission`. Fristående, **inga npm-beroenden**.
 **Läs-bara mot både Notion och Meta** — den ändrar ingen status och rör inte kontot.

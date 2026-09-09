@@ -1,8 +1,8 @@
 # /produktjakt — hitta nya produkter och lägg dem i ett offertark
 
 **Rutin, körs varje morgon 06:30 svensk tid** (cron `30 4 * * *` UTC), bunden till den fasta sessionen
-`session_016jBJVGuyny8S3j2XPSM26Z` (tagg `routine:produktjakt`, trigger `trig_01JeTQZNtheq6FfPoaZgxqBJ`)
-som har repot som källa och `main` som utgren — annars kan rutinen inte pusha. Uppdraget: hitta nya varor som passar Bäverbutiken,
+`session_016jBJVGuyny8S3j2XPSM26Z` (tagg `routine:produktjakt`, trigger `trig_01AnGMfca7s1thCUqNbMSRoR`)
+som har repot som källa — annars kan rutinen inte pusha. Uppdraget: hitta nya varor som passar Bäverbutiken,
 räkna ekonomin, skriva dem i leverantörens offertark och lägga arket där Axel kan hämta det.
 Axel ska bara trycka på en knapp och skicka filen vidare.
 
@@ -69,10 +69,17 @@ Sidan bär arket inbakat och lämnar det till Axel via `downloads`-capability. E
 ### 5. Spara och rapportera
 
 ```bash
-git add produktjakt && git commit -m "produktjakt <datum>: N produkter" && git push -u origin main
+git add produktjakt && git commit -m "produktjakt <datum>: N produkter" \
+  && git push -u origin claude/fortsatta-pa-denna-c28bmv
 ```
 
 `sedda.json` måste med i commiten — annars föreslår rutinen samma varor i morgon.
+
+⚠️ **Rutinen kör från grenen `claude/fortsatta-pa-denna-c28bmv`, inte från `main`.**
+`produktjakt/` finns bara där. Rutinens prompt börjar därför alltid med
+`git fetch` + `git checkout -B` mot den grenen — containern kan ha startats om och
+klonat `main`, och då saknas allt. Når koden `main` någon gång: byt tillbaka både
+checkouten och pushen ovan till `main` och ta bort de här raderna.
 
 Skicka morgonrapporten till Discord (`DISCORD_WEBHOOK_URL`) med antal produkter och länken till sidan.
 
