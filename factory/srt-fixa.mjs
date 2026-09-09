@@ -1,10 +1,39 @@
 // Bygger rättade SRT:er. HeyGens timings styr; våra repliker fördelas över dem
 // efter hur lång tid varje cue faktiskt har. Rör inga krediter.
+//
+//   node factory/srt-fixa.mjs            # Sverige (default)
+//   node factory/srt-fixa.mjs --marknad=no
+//
+// Marknaderna skiljer sig på tre punkter: vilket manus som läses, var HeyGens
+// proofread-SRT:er ligger, och vad som är förbjudet i texten. Norge har INGET
+// känt NOK-pris, så där är varje pris och varje procentsats förbjuden — i
+// Sverige får TankGuards riktiga paketrabatter (18 %, 25 %) stå kvar när
+// paketnivån nämns i samma mening.
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 const S = '/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad';
-const UT = `${S}/srt-fixad`;
+
+const MARKNAD = (process.argv.find((a) => a.startsWith('--marknad=')) || '--marknad=se').split('=')[1].toLowerCase();
+const MARKNADER = {
+  se: {
+    manusfil: '/home/user/yognftnfgn/factory/output/tankguard/se-videomanus.json',
+    proof: `${S}/proof`, prefix: 'TankGuard_', ut: `${S}/srt-fixad`,
+    // 18 % och 25 % är TankGuards RIKTIGA paketrabatter och får stå — men bara
+    // när paketnivån nämns i samma mening. En lös procentsats är källbutikens.
+    förbjudet: /b[aä]v[eo]r?\w*butiken|636|ordinarie|halva priset|23 ?%|bara idag|lagret krymper|innan det är slut|tusentals|så många trädgårdsägare|kunderna älskar/i,
+    procentKräverPaket: true,
+  },
+  no: {
+    manusfil: '/home/user/yognftnfgn/factory/output/tankguard/no-videomanus.json',
+    proof: `${S}/proof-no`, prefix: 'TankGuardNO_', ut: `${S}/srt-fixad-no`,
+    förbjudet: /b[aä]v[eo]r?\w*butik\w*|586|439|ordinær|kampanjepris|halve prisen|bare i dag|lageret|så lenge lageret|tusenvis|kundene elsker|rabatt|kroner|\bkr\b/i,
+    procentKräverPaket: false,   // i Norge är varje procentsats förbjuden
+  },
+};
+const M = MARKNADER[MARKNAD];
+if (!M) throw new Error(`Okänd marknad "${MARKNAD}" — välj se eller no.`);
+const UT = M.ut;
 if (!existsSync(UT)) mkdirSync(UT, { recursive: true });
-const manus = JSON.parse(readFileSync('/home/user/yognftnfgn/factory/output/tankguard/se-videomanus.json', 'utf8')).manus;
+const manus = JSON.parse(readFileSync(M.manusfil, 'utf8')).manus;
 
 const läsSrt = (t) => t.replace(/\r/g, '').trim().split(/\n{2,}/).map(b => {
   const r = b.split('\n');
@@ -48,7 +77,7 @@ for (const [id, m] of Object.entries(manus)) {
 
 const rapport = [];
 for (const [id, m] of Object.entries(manus)) {
-  const fil = `${S}/proof/TankGuard_${id}-translated.srt`;
+  const fil = `${M.proof}/${M.prefix}${id}-translated.srt`;
   if (!existsSync(fil)) { rapport.push({ id, status: 'VÄNTAR' }); continue; }
   const cues = läsSrt(readFileSync(fil, 'utf8'));
 
@@ -73,23 +102,32 @@ for (const [id, m] of Object.entries(manus)) {
 
 console.log('id'.padEnd(12) + 'status'.padEnd(14) + 'cues'.padEnd(6) + 'metod');
 for (const r of rapport) console.log(`${r.id.padEnd(12)}${r.status.padEnd(14)}${String(r.cues ?? '-').padEnd(6)}${r.metod || ''}`);
-writeFileSync(`${S}/srtrapport.json`, JSON.stringify(rapport, null, 2));
+writeFileSync(`${S}/srtrapport-${MARKNAD}.json`, JSON.stringify(rapport, null, 2));
 
 // Kontroll: inget förbjudet kvar i någon fixad SRT.
-// 18 % och 25 % är TankGuards RIKTIGA paketrabatter och får stå — men bara när
-// paketnivån nämns i samma mening. En lös procentsats är källbutikens.
-const FÖRBJUDET = /b[aä]v[eo]r?\w*butiken|636|ordinarie|halva priset|23 ?%|bara idag|lagret krymper|innan det är slut|tusentals|så många trädgårdsägare|kunderna älskar/i;
+const FÖRBJUDET = M.förbjudet;
 const LÖS_PROCENT = /(\d{1,2})\s?%/g;
-console.log('\nKONTROLL av de fixade SRT:erna:');
+// Talet skrivs ut i bokstäver i tal-SRT:er — "fire hundre og trettini kroner"
+// slinker förbi en siffergrind. Norge har inget NOK-pris alls, så varje
+// prisord är förbjudet oavsett hur det stavas.
+const SKRIVNA_TAL_NO = /(hundre|tusen)\s+og\b|\b(femhundre|firehundre|åttiseks|trettini|prosent)\b/i;
+console.log(`\nKONTROLL av de fixade SRT:erna (${MARKNAD.toUpperCase()}):`);
+let fel = 0;
 for (const r of rapport.filter(x => x.status === 'KLAR')) {
   const t = readFileSync(`${UT}/${r.id}.srt`, 'utf8');
   const träff = t.match(new RegExp(FÖRBJUDET.source, 'gi')) || [];
-  // Varje procentsats måste bära sin paketnivå i samma mening.
+  if (MARKNAD === 'no' && SKRIVNA_TAL_NO.test(t)) träff.push('pris utskrivet i bokstäver');
   for (const mening of t.split(/[.!?\n]/)) {
     for (const p of mening.match(LÖS_PROCENT) || []) {
+      if (!M.procentKräverPaket) { träff.push(`${p} (procent förbjuden på denna marknad)`); continue; }
       // ⚠️ JS \b är ASCII-baserat: \btvå\b matchar ALDRIG, för å är inget \w.
       if (!/(^|[^\p{L}])(tv[åa]|tre|2|3)([^\p{L}]|$)/iu.test(mening)) träff.push(`${p} utan paketnivå`);
     }
   }
+  if (träff.length) fel++;
   console.log(`  ${träff.length ? '❌' : '✅'} ${r.id}${träff.length ? '  → ' + [...new Set(träff)].join(', ') : ''}`);
+}
+if (fel) {
+  console.log(`\n⛔ ${fel} SRT bär förbjuden text. Rätta manuset — rendera inget förrän raden är ren.`);
+  process.exitCode = 1;
 }
