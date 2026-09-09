@@ -360,11 +360,30 @@ Butiken som helhet ligger på 0,899 %. Motorhöljet ensamt ligger alltså mer ä
 tre gånger över kortnätverkens gräns (0,9 %), och står för 16 av butikens 22
 tvister trots att produkten är en av trettio.
 
-**Vad tvisterna har gemensamt:** samtliga är `INQUIRY`, inte fullskaliga
-chargebacks. Alla ordrar var skickade, alla med YunExpress-spårning, och de
-flesta skickades inom ett dygn. Det är alltså inte utebliven leverans —
-mönstret pekar på leveranstid eller på att kunden inte känner igen debiteringen.
-Rotorsaken är **inte fastställd** och får inte gissas.
+**Vad tvisterna har gemensamt — mätt, inte gissat:**
+
+Samtliga är `INQUIRY`, inte fullskaliga chargebacks. Alla ordrar skickades
+inom ett dygn, alla med YunExpress-spårning. Flaskhalsen sitter alltså inte i
+lagret utan i frakten.
+
+| | Leveranstid order → framme |
+|---|---|
+| Butikens normalordrar (juli, 36 st) | **13–17 dagar**, alla levererade |
+| Ordrar som fick tvist | **15–33 dagar**, snitt ~22 |
+| `#4407` (bär två tvister) | står som `NOT_DELIVERED` — aldrig framme |
+
+De fjorton augusti-tvisterna har dessutom både `deliveredAt` och `inTransitAt`
+tomma: spårningen har slutat uppdateras helt.
+
+**Slutsatsen: kunden bestrider när paketet inte kommer fram, inte när det är
+långsamt men rör sig.** Gränsen går runt tre veckor. Det är en förvarning som
+går att se i förväg, och den ligger nu som larmet `fastnat-i-frakt` i
+`/kundvakten` med tröskeln 21 dagar.
+
+⚠️ **Detta förklarar tidpunkten, inte varför just motorhöljet.** Sätesöverdraget
+går med samma frakt och samma leveranstid men ligger på 0,51 %. Vad som gör
+motorhöljets kunder mer benägna att gå till banken är **inte fastställt** och
+får inte gissas.
 
 **Vad detta betyder för creative-arbetet:** en produkt som drar 3 % tvister
 bär en dold kostnad som inte syns i ROAS. Vid 529 ordrar och 331 kr AOV är

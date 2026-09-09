@@ -185,7 +185,27 @@ export function forvarningar({ disputes = [], ordrar = [], mail = [], nu = new D
     });
   }
 
-  // 4. Mail där kunden nämner banken. Steget före en riktig chargeback.
+  // 4. Skickad men aldrig framme. Den starkaste förvarningen vi har bevis för.
+  //
+  // Mätt 2026-09-09: butikens normala leveranstid är 13–17 dagar (YunExpress).
+  // De ordrar som fick tvist låg på 15–33 dagar, snitt ~22 — och en av dem
+  // (#4407) står som NOT_DELIVERED och bär två tvister. Kunden bestrider när
+  // paketet inte kommer, inte när det är långsamt men rör sig.
+  for (const o of ordrar) {
+    if (!o.skickad || o.levererad) continue;
+    const alder = dagarMellan(nu, o.skapad);
+    if (alder < TROSKLAR.dagar_utan_leverans) continue;
+    larm.push({
+      typ: 'fastnat-i-frakt',
+      allvar: 'akut',
+      order: o.namn,
+      belopp: o.belopp,
+      dagarKvar: null,
+      text: `${o.namn} skickades för ${alder} dagar sedan och är inte framme.`,
+    });
+  }
+
+  // 5. Mail där kunden nämner banken. Steget före en riktig chargeback.
   for (const m of mail) {
     if (!m.hot || !m.hot.niva) continue;
     larm.push({
@@ -200,7 +220,7 @@ export function forvarningar({ disputes = [], ordrar = [], mail = [], nu = new D
     });
   }
 
-  // 5. Kunder som fått maila om och om igen utan svar.
+  // 6. Kunder som fått maila om och om igen utan svar.
   const perAvsandare = new Map();
   for (const m of mail) {
     const nyckel = (m.fran || '').toLowerCase();

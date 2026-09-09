@@ -55,7 +55,7 @@ const ORDERFALT = `
   totalPriceSet { shopMoney { amount currencyCode } }
   disputes { id status initiatedAs }
   lineItems(first: 20) { edges { node { title quantity } } }
-  fulfillments(first: 5) { createdAt displayStatus trackingInfo { number } }
+  fulfillments(first: 5) { createdAt displayStatus deliveredAt inTransitAt trackingInfo { number } }
 `;
 
 // Hämtar alla ordrar som har eller har haft en tvist. Paginerar tills slut —
@@ -131,6 +131,11 @@ export async function hamtaOrdrar(dagar = FONSTER.jamforelse_dagar) {
         belopp: Number(node.totalPriceSet?.shopMoney?.amount) || 0,
         produkter: node.lineItems.edges.map((e) => e.node.title),
         skickad,
+        // Levererad = minst en leverans står som DELIVERED eller bär ett
+        // deliveredAt. Utan det räknas ordern som fortfarande på väg.
+        levererad: node.fulfillments.some(
+          (f) => f.displayStatus === 'DELIVERED' || f.deliveredAt
+        ),
         harTracking: node.fulfillments.some((f) =>
           (f.trackingInfo || []).some((t) => t.number)
         ),

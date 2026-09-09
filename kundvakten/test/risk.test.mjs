@@ -259,3 +259,62 @@ test('maskera döljer kundadressen men behåller domänen', () => {
   assert.equal(maskera('anna.andersson@gmail.com'), 'a***@gmail.com');
   assert.equal(maskera(''), '');
 });
+
+test('skickad order som inte är framme efter 21 dagar blir akut', () => {
+  const larm = forvarningar({
+    ordrar: [
+      {
+        namn: '#4407',
+        skapad: '2026-08-01T00:00:00Z',
+        financialStatus: 'PAID',
+        fulfillmentStatus: 'FULFILLED',
+        belopp: 509,
+        skickad: true,
+        levererad: false,
+        harTracking: true,
+      },
+    ],
+    nu: new Date('2026-09-09T00:00:00Z'),
+  });
+  assert.equal(larm[0].typ, 'fastnat-i-frakt');
+  assert.equal(larm[0].allvar, 'akut');
+});
+
+test('levererad order larmar inte om frakt', () => {
+  const larm = forvarningar({
+    ordrar: [
+      {
+        namn: '#4345',
+        skapad: '2026-08-01T00:00:00Z',
+        financialStatus: 'PAID',
+        fulfillmentStatus: 'FULFILLED',
+        belopp: 509,
+        skickad: true,
+        levererad: true,
+        harTracking: true,
+      },
+    ],
+    nu: new Date('2026-09-09T00:00:00Z'),
+  });
+  assert.equal(larm.length, 0);
+});
+
+test('order på väg inom normal leveranstid larmar inte', () => {
+  // Butikens normala leveranstid är 13-17 dagar. 14 dagar är inte ett larm.
+  const larm = forvarningar({
+    ordrar: [
+      {
+        namn: '#6000',
+        skapad: '2026-08-26T00:00:00Z',
+        financialStatus: 'PAID',
+        fulfillmentStatus: 'FULFILLED',
+        belopp: 349,
+        skickad: true,
+        levererad: false,
+        harTracking: true,
+      },
+    ],
+    nu: new Date('2026-09-09T00:00:00Z'),
+  });
+  assert.equal(larm.length, 0);
+});
