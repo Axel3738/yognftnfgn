@@ -40,6 +40,7 @@ import { fileURLToPath } from 'node:url';
 
 import { lasYaml } from './yaml.mjs';
 import { sökBrand } from './brandord.mjs';
+import { skannaVillkor } from './villkorsskanning.mjs';
 import { säkerställProxy, api, alla } from '../tools/meta-lib.mjs';
 
 const ROT = resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -97,7 +98,34 @@ export function läsKälla(produktId) {
     dö(`factory/produkter/${produktId}.yaml saknar kalla.annonsprefix — utan den vet ingen körning vilka annonser som hör till butiken (FAS2, Uppdrag A).`);
   }
   if (!k.annonskonto) dö(`${produktId}.yaml saknar kalla.annonskonto (källkontots id).`);
-  return { produkt: p, kalla: k };
+  return { produkt: p, kalla: k, butik: läsButik(produktId) };
+}
+
+/** Butikskonfigen bakom produkten — behövs för villkorsjämförelsen (sjätte
+ *  ytan). Slås upp ur state-filnamnet `<butik>--<produkt>.json`, som kedjan
+ *  skriver vid varje bygge. Hittas den inte får villkorsskanningen inget att
+ *  jämföra mot, och det sägs rakt ut i stället för att tyst fria annonserna. */
+export function läsButik(produktId) {
+  const stateMapp = join(ROT, 'factory', 'state');
+  const butiksId = existsSync(stateMapp)
+    ? readdirSync(stateMapp).find((f) => f.endsWith(`--${produktId}.json`))?.split('--')[0]
+    : null;
+  if (!butiksId) return null;
+  const fil = join(ROT, 'factory', 'butiker', `${butiksId}.yaml`);
+  if (!existsSync(fil)) return null;
+  return lasYaml(readFileSync(fil, 'utf8'))?.butik || null;
+}
+
+/** Texterna som villkorsskanningen jämför, märkta med den yta de står på —
+ *  ytan avgör vad det kostar att rätta felet (tal = omdubb, inbränd =
+ *  slutkort, copy = gratis). */
+export function villkorstexter(annons, ocrPost, transkript) {
+  const ut = copyFält(annons).map((f) => ({ yta: 'copy', text: f.text }));
+  for (const f of ocrPost?.filer || []) {
+    for (const t of f.texter || []) ut.push({ yta: 'inbränd', text: t.text });
+  }
+  for (const rad of transkript || []) ut.push({ yta: 'tal', text: rad });
+  return ut;
 }
 
 /** srt_slug kan vara en sträng eller en lista — samma video finns under både
@@ -523,12 +551,24 @@ export function sökVillkor(texter) {
 // ------------------------------------------------------------------ domen
 
 /** Dyraste ytan bestämmer klassen. Alla fyra ytor redovisas ändå alltid —
- *  en annons kan behöva både omdubb och nytt slutkort. */
-export function klassa({ copy, tal, inbränd, bild }) {
+ *  en annons kan behöva både omdubb och nytt slutkort.
+ *
+ *  SJÄTTE YTAN: `villkorsfel` är utfallet ur villkorsskanning.skannaVillkor()
+ *  — källbutikens erbjudandevillkor jämförda mot OPS-butikens EGNA. Ett fel
+ *  där väger exakt lika tungt som brandnamnet, för det är samma sorts fel:
+ *  ett löfte butiken inte håller. Ytan där felet står bestämmer priset att
+ *  rätta det (tal = omdubb, inbränd = slutkort, copy = gratis).
+ *
+ *  Regeln som gör skillnaden: en annons med ett villkorsfel kan ALDRIG bli
+ *  `ren`. (Axels bakläxa 2026-09-09: brand-detektorn friade 38 av 40 svenska
+ *  HeimGuard-annonser; fem bar "fri frakt över 300 kr", två av dem bevisade
+ *  vinnare. Felet upptäcktes först när annonserna låg uppe i kontot.) */
+export function klassa({ copy, tal, inbränd, bild, villkorsfel = [] }) {
   const okänd = [tal, inbränd, bild].some((y) => y?.tillämplig && y.träff == null && !y.dom?.startsWith('ej'));
-  if (tal?.träff) return DOMAR.omdubb;
-  if (inbränd?.träff) return DOMAR.slutkort;
-  if (copy?.träff || bild?.träff) return DOMAR.baraCopy;
+  const villkorPa = (yta) => villkorsfel.some((f) => f.yta === yta);
+  if (tal?.träff || villkorPa('tal')) return DOMAR.omdubb;
+  if (inbränd?.träff || villkorPa('inbränd')) return DOMAR.slutkort;
+  if (copy?.träff || bild?.träff || villkorsfel.length > 0) return DOMAR.baraCopy;
   if (okänd) return DOMAR.okänd;
   return DOMAR.ren;
 }
@@ -561,6 +601,9 @@ export function attGöra(ytor) {
   for (const [namn, y] of [['tal', ytor.tal], ['inbränd text', ytor.inbränd], ['bildtext', ytor.bild]]) {
     if (y?.tillämplig && y.träff == null && !y.dom?.startsWith('ej')) ut.push(`${namn} (oläst)`);
   }
+  // Villkorsfelen skrivs ut med sin egen text ("lovar fraktgräns … — butiken
+  // har fri frakt UTAN gräns"), för de syns inte i någon av de fyra ytorna.
+  for (const f of ytor.villkorsfel || []) ut.push(`${f.regel} i ${f.yta}: ${f.fel}`);
   return ut;
 }
 
@@ -666,8 +709,12 @@ function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, d
 async function main() {
   const produktId = flagga('produkt');
   if (!produktId) dö('Ange --produkt <id>, t.ex. --produkt tankguard.');
-  const { produkt, kalla } = läsKälla(produktId);
+  const { produkt, kalla, butik } = läsKälla(produktId);
   const extraOrd = kalla.extra_brandord || [];
+  if (!butik) {
+    console.log('  ⚠️ ingen butikskonfig hittad — villkorsjämförelsen (sjätte ytan) körs INTE.');
+    console.log('     Annonserna kan alltså bära källbutikens fraktgräns utan att någon dom fångar det.');
+  }
   const utMapp = join(ROT, 'factory', 'output', produktId);
   const ocrFil = join(utMapp, 'brand-ocr.json');
 
@@ -728,6 +775,13 @@ async function main() {
       ytor.inbränd = vägSamman(ytor.inbränd, synPost.yta3);
       ytor.bild = vägSamman(ytor.bild, synPost.yta4);
     }
+    // Sjätte ytan: källbutikens villkor mot OPS-butikens egna. Talet läses ur
+    // samma transkript som yta 2 redan hittat — gratis, inga krediter.
+    const talfil = transkriptFör(a.name, kalla, index);
+    const talrader = talfil ? readFileSync(talfil.fil, 'utf8').split('\n') : [];
+    ytor.villkorsfel = butik
+      ? skannaVillkor(villkorstexter(a, ocr[a.name], talrader), butik)
+      : [];
     const dom = klassa(ytor);
     const allText = [
       ...copyFält(a).map((f) => f.text),
@@ -736,7 +790,8 @@ async function main() {
     rader.push({
       annons: a.name, id: a.id, typ: m.typ, status: a.effective_status,
       adset: a.adset?.name, kampanj: a.campaign?.name,
-      ytor, dom, attgöra: attGöra(ytor), villkor: sökVillkor(allText), belägg: byggBelägg(ytor),
+      ytor, dom, attgöra: attGöra(ytor), villkor: sökVillkor(allText),
+      villkorsfel: ytor.villkorsfel, belägg: byggBelägg(ytor),
     });
   }
 
