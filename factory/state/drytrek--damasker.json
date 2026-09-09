@@ -55,7 +55,7 @@
     }
   },
   "datum": "2026-09-09",
-  "lage": "BUTIKEN KLAR OCH LIVE-VERIFIERAD · kampanjen byggd PAUSED",
+  "lage": "BUTIKEN KLAR PÅ SVENSKA OCH NORSKA · SE-kampanj ombyggd till ABO · NO-kampanj under bygge (PAUSED)",
   "kallkoppling": {
     "annonskonto": "1867947880635861",
     "kampanj_id": "120250009391470291",
@@ -233,5 +233,32 @@
     "Installera Judge.me och skicka API-token.",
     "Lös recensionsfrågan — källan har noll.",
     "Sourca bonusprodukten (reflexband) så paket B kan byggas."
-  ]
+  ],
+  "annonser": {
+    "SE": {
+      "kampanj_id": "120249020401880172",
+      "kampanj": "DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "struktur": "ABO, 4 adsets (PD/SP/CS/G) à 250 kr/dag, is_adset_budget_sharing_enabled=false, 16 annonser, allt PAUSED",
+      "kallannonser": 18,
+      "byggda": 16,
+      "ej_byggda": [
+        "Damasker_FO_1_H1 (dom okänd: talet oläst, inget transkript)",
+        "Damasker_SP_4_H1 (dom okänd: talet oläst, inget transkript)"
+      ],
+      "notis": "Första bygget 2026-09-09 var CBO med alla 16 i ett adset (120249017854400172) — raderat samma dag med 0 kr spend, ombyggt enligt regel 11."
+    }
+  },
+  "norge": {
+    "marknad": "aktiv, locale nb publicerad, NOK som basvaluta satt via marketUpdate (inget admin-klick)",
+    "pris_nok": {
+      "styck": 381,
+      "jamfor": 635,
+      "kalla": "läst ur /nb/products/damasker?country=NO, Shopifys egen omräkning — flyter med kursen"
+    },
+    "paketnivaer": "rabatt_procent 15/20 + procentkoder DAMASKER2PACK/DAMASKER3PACK → 647,70 / 914,40 NOK, verifierat i kundvyn",
+    "oversattning": "74 nb-rader registrerade 2026-09-09 (produkt, varianter, meny, sidor, policyer, metafält, fraktmetoder, tema-JSON, sektionsgrupper) + 2 prisrättningar i index-mallen",
+    "bilder": "klart-matt/spanne/karborre-benskydd-no.jpg i Filer, startsidans galleri + opf.media_losning pekar på dem (nb), produktgalleriet [SV]/[NO]-märkt med filter i ms-head",
+    "sprakkoll": "grön 2026-09-09 på 9 sidor (node factory/sprakkoll.mjs drytrek damasker)",
+    "kallcreatives": "Bäverbutikens egna Gamasjer_NO_* (Magiborsten NO 1050941584152547), 16/16 rena i brand-detektor-no, 16/16 media uppe i MagiBorsten DK"
+  }
 }

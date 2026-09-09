@@ -187,6 +187,18 @@ som genereras per bygge).
       dolda bilder (clientWidth-filtret), så pilar och räknare stämmer.
     ⚠️ Filtret bor i temat — tills nya klonen är publicerad ser LIVE-temat
     båda språkens galleribilder. Lägg median sist i bygget, publicera snabbt.
+    **Sedan 2026-09-09 ligger filtret i mallen** (`ops-tema.zip` →
+    `snippets/ms-head.liquid`, `<style id="ms-galleri-sprak">`), liksom
+    leveransbeskedets språkval (`ms-delivery-estimate.liquid` +
+    `ms-cro.js` läser `request.locale` / `data-locale`). Gjort på DryTrek:
+    de tre textbilderna (`klart-*-benskydd-sv.jpg`) fick norska tvillingar
+    ritade med PIL + DejaVu Sans Bold (samma typsnitt som originalen — vitt
+    band, svart text, inget kie behövdes), uppladdade som `…-no.jpg`,
+    inlagda i galleriet med `productCreateMedia` (alt `[NO] …`), de svenska
+    ommärkta `[SV] …` med `productUpdateMedia`, och sorterade parvis med
+    `productReorderMedia`. ⚠️ Reorder är ett JOBB — polla `job.done`
+    innan tillbakaläsningen; första körningen lästes tillbaka för tidigt
+    och såg oförändrad ordning ut.
 16. ⚙️ NOK-paketnivåer innan norska annonser (SEK-belopp räknar fel i NOK).
     **Lösningen är PROCENT, inte ett översatt belopp** (mätt 2026-09-09):
     `fastpris` är number_decimal och saknar translatable capability — Shopify
