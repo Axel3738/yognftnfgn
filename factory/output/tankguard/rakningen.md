@@ -33,7 +33,7 @@ som räknar mot sin gamla lista säger "klart" om något som saknar sex annonser
 
 **40 av 40. Ingen saknas. Allt PAUSED.**
 
-Sex adsets (BOF, CO, CS, GT, PD, SP), TankGuards egen sida `1399193996606775`
+Sju adsets (BOF, CO, CS, GT, PD, RV, SP), TankGuards egen sida `1399193996606775`
 och egen pixel `2196132151319625`, geo SE, CBO 1 000 kr/dag,
 länk `https://tankguard.se/products/tankoverdraget`.
 
@@ -71,8 +71,8 @@ sekunderna.
 
 ## NORGE — `TANKGUARD_NO_Tanktrekket | 2026-09-09` (`120249012213810172`)
 
-Samma konto som den svenska, PAUSED, 1 000 kr/dag, CBO. Sex adsets
-(BOF, CO, CS, GT, PD, SP). Targeting läst ur den norska källkampanjens eget
+Samma konto som den svenska, PAUSED, 1 000 kr/dag, CBO. Sju adsets
+(BOF, CO, CS, GT, PD, RV, SP). Targeting läst ur den norska källkampanjens eget
 adset — geo `["NO"]`, aldrig en fallback-geo.
 Länk: `https://tankguard.se/nb/products/tankoverdraget`. TankGuards egen pixel.
 
@@ -124,6 +124,17 @@ i bilden. De svenska gör det inte — den norska lokaliseringen lade till domä
 | OCR på omplåstrade bilder, NO | 11 bilder | 0 träffar |
 | OCR på omplåstrade bilder, SE | 11 bilder | 0 träffar |
 | Manuslängd mot källans taltid | 21 manus | alla ≤ 1,15× |
+
+### Trippelkollen — tillbakaläst ur Meta 2026-09-09
+
+| Nivå | SE | NO |
+|---|---|---|
+| Kampanj | PAUSED, 1 000 kr/dag, CBO | PAUSED, 1 000 kr/dag, CBO |
+| Adsets | 7 — alla PAUSED, geo `SE`, pixel `2196132151319625` | 7 — alla PAUSED, geo `NO`, samma pixel |
+| Annonser | 40 — alla PAUSED, sida `1399193996606775`, länk `/products/tankoverdraget` | 33 — alla PAUSED, samma sida, länk `/nb/products/tankoverdraget` |
+
+Noll avvikelser. Ingen annons pekar på källbutikens sida, länk eller pixel, och
+ingenting kan spendera.
 
 ### Röstkontrollen (CLAUDE.md järnregel 3)
 Axel lyssnade 2026-09-09 på de elva svenska omdubbade videorna:

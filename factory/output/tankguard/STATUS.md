@@ -10,7 +10,12 @@
 | Norge | `TANKGUARD_NO_Tanktrekket \| 2026-09-09` (`120249012213810172`) | 33 | **33** | allt PAUSED |
 
 Konto: MagiBorsten DK `915422744950975`. Sida `1399193996606775`, pixel
-`2196132151319625`, CBO 1 000 kr/dag per kampanj.
+`2196132151319625`, CBO 1 000 kr/dag per kampanj, sju adsets per marknad
+(BOF, CO, CS, GT, PD, RV, SP).
+
+**Trippelkollen är gjord** — kampanj, adsets och varje enskild annons lästa
+tillbaka ur Meta: alla PAUSED, rätt geo, rätt pixel, rätt sida, rätt länk.
+Noll avvikelser.
 
 ## Vad som återstår innan något går ACTIVE
 
