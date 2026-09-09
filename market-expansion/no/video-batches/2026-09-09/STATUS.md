@@ -79,7 +79,19 @@ uppladdade med `drive-push.mjs`. Källmappen i LAUNCHED orörd.
 
 ## Fas 3 — launch
 
-Kampanj **`Adventskalender NO | BE-ROAS 1,62 | 2026-09-09`** i act_1050941584152547.
-CBO 1000 kr/dag, ett adset per koncept (CS/G/PD/SP), allt ACTIVE, enhancements OPT_OUT.
-Norsk adcopy skriven av sonnet-subagent, tre-frågorstestet redovisat (alla fyra
-headlines ✅/✅/✅). Konfig: `pipeline/waves/no-adventskalender-video.config.mjs`.
+Kampanj **`Adventskalender NO | BE-ROAS 1,62 | 2026-09-09`**
+(`120252140554000233`) i act_1050941584152547. CBO 1000 kr/dag, ett adset per
+koncept (CS/G/PD/SP), allt ACTIVE, enhancements OPT_OUT. Norsk adcopy skriven av
+sonnet-subagent, tre-frågorstestet redovisat (alla fyra headlines ✅/✅/✅).
+Konfig: `pipeline/waves/no-adventskalender-video.config.mjs`.
+
+⚠️ **Kontot rate-limitat (Meta-fel 17) mitt i launchen** — samma mönster som
+2026-09-04/05/06. 9 av 12 videoannonser skapades (CS ×3, G ×3, PD ×3) innan
+backoffen tog slut på SP-adsetet (7 försök, upp till 105 s). Adsetet finns och är
+ACTIVE men fick inga annonser i första körningen. Skriptet är idempotent — SP-annonserna
+och de 4 bildannonserna lades in i en andra körning när spärren släppte.
+
+⚠️ **Rate-limiten läser som tom lista, inte som ett fel**, om man bara plockar
+`data` ur svaret: `{"error": {"code": 17}}` blev "0 annonser" i tre kontroller i rad
+under natten och såg ut som att launchen inte skapat något alls. Kontrollera alltid
+`error`-nyckeln innan du drar en slutsats om kontots innehåll.
