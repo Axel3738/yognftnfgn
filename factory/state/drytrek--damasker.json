@@ -1,8 +1,8 @@
 {
   "butik": {
-    "domän": "i1da39-zd.myshopify.com",
-    "namn_i_shopify": "My Store 3",
-    "brand": "DryTrek"
+    "doman": "drytrek.se",
+    "namn_i_shopify": "DryTrek",
+    "myshopify": "i1da39-zd.myshopify.com"
   },
   "produkt": "damasker",
   "steg": {
@@ -55,7 +55,7 @@
     }
   },
   "datum": "2026-09-09",
-  "lage": "DELVIS KLART — butiken byggd, annonserna förberedda men inte byggda",
+  "lage": "BUTIKEN KLAR OCH LIVE-VERIFIERAD · kampanjen byggd PAUSED",
   "kallkoppling": {
     "annonskonto": "1867947880635861",
     "kampanj_id": "120250009391470291",
@@ -172,7 +172,7 @@
     "tid": "2026-09-09T09:35:19.674Z"
   },
   "annonsfas": {
-    "lage": "BLOCKERAD på Meta-sidan",
+    "lage": "Kampanjen byggd och tillbakaläst — PAUSED på alla tre nivåer",
     "kalla_se": {
       "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
       "annonser": 18,
@@ -209,18 +209,29 @@
       "ren": 16,
       "okand": 2,
       "media_uppe": 16,
-      "annonser_byggda": 0,
-      "varfor": "DryTrek har ingen Meta-sida och API:t kan inte skapa en. Utan page_id går ingen creative att bygga."
-    }
+      "annonser_byggda": 16,
+      "lasta_ur_meta": 16
+    },
+    "kampanj": {
+      "id": "120249017854400172",
+      "namn": "DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "adset": "120249017855740172 (DRYTREK_SE_Test_ABO)",
+      "annonser": 16,
+      "status": "PAUSED",
+      "budget_sek_per_dag": 1000,
+      "sida": "1339381299252136",
+      "pixel": "945311424682796",
+      "lank": "https://drytrek.se/products/damasker",
+      "geo": "SE, 25-65"
+    },
+    "norge": "Byggs INTE — källans NO-kampanj (Gamasjer NO) är helt pausad, och en pausad annons är ett beslut."
   },
   "vantar_pa_manniska": [
-    "Publicera temat \"DryTrek – CRO (utkast)\" — kunden ser Horizon i dag. API-spärrat.",
-    "Sätt svenska som standardspråk — butiken står på en. API-spärrat.",
-    "Testa varukorgen i en webbläsare — molnsessionen har ingen som når ut.",
-    "Skapa Meta-sidan DryTrek i Business Manager — API:t kan inte.",
-    "Köp drytrek.se och koppla den.",
+    "Sätt kampanjen ACTIVE när granskningen är grön — fabriken startar aldrig annonser.",
+    "Testa varukorgen i en webbläsare: tom korg, 2-paket, lådan ska glida in.",
+    "Ta bort lösenordsskyddet när butiken ska ta trafik.",
     "Installera Judge.me och skicka API-token.",
-    "Sourca bonusprodukten (reflexband) så paket B kan byggas.",
-    "Lös recensionsfrågan — källan har inga."
+    "Lös recensionsfrågan — källan har noll.",
+    "Sourca bonusprodukten (reflexband) så paket B kan byggas."
   ]
 }
