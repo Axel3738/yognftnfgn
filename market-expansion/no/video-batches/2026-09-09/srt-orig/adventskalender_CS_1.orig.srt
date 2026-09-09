@@ -1,0 +1,15 @@
+1
+00:00:00,079 --> 00:00:03,939
+Idag 649 blir 499 kronor.
+
+2
+00:00:04,139 --> 00:00:11,739
+649 kronor? Nej. Idag 499. 24 bilar, 24 luckor, ett helt garage till julafton.
+
+3
+00:00:11,840 --> 00:00:14,479
+Lagret är begränsat och priset gäller inte länge.
+
+4
+00:00:14,599 --> 00:00:16,279
+Beställ innan den är slut.
