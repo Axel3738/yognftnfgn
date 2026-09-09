@@ -90,7 +90,7 @@ Alla fyra ytor lästa på alla 34, plus ögongranskade.** Rapport:
 | `ren` | 20 | alla bildannonserna (BOF ×6, RV ×4, CS ×3, PD ×4, GT_2, CO, SP_2) |
 | `kräver-omdubb` | 11 | CS_1_H2/H3, GT_1_H1–H3, PD_1_H1–H3, SP_1_H1–H3 |
 | `kräver-slutkortsbygge` | 2 | GT_3_H1, PD_3_H1 |
-| `okänd` | 1 | PD_Extra — inget transkript finns, talet är oläst |
+| `okänd` | 1 | PD_Extra — inget transkript finns, talet är oläst → **avgjord 2026-09-09: filen har inget tal. Domen är `ren`.** |
 
 - **Yta 1 (copy): 0 träffar.** Ingen av de 34 nämner Bäverbutiken i text.
   Länken gör det däremot i alla 34 (se nedan).
@@ -99,8 +99,34 @@ Alla fyra ytor lästa på alla 34, plus ögongranskade.** Rapport:
 - **Yta 3 (inbränd text): 13 av 14 videor.** 11 har det som vanlig undertext, 2 har ett
   byggt slutkort med ordmärke, symbol och en mockup av produktsidan.
 - **Yta 4 (bildattribution): 0 av 20.** Inga recensionskort tillskriver butiken.
-- **Enda kvarvarande okända ytan:** talet i `IBC_PD_Extra` (10 s). Billigaste stängningen
-  är att lyssna på den eller fråga redigeraren — inte att dubba om den i onödan.
+- ~~**Enda kvarvarande okända ytan:** talet i `IBC_PD_Extra` (10 s).~~ Stängd 2026-09-09.
+
+⚠️ **"tal (oläst)" är inte samma sak som "tal som inte gick att läsa."**
+Detektorn skriver `okänd` så fort ett transkript saknas. På `IBC_PD_Extra` fanns
+inget transkript av den enkla anledningen att det inte finns något tal — videon är
+rena produktnärbilder utan röst och utan inbränd text. Den domen höll annonsen
+pausad i ett dygn helt i onödan.
+
+**Så stänger du en `okänd` talyta — fem minuter, noll krediter:**
+
+```bash
+node -e "import('./pipeline/heygen.mjs').then(async h => {
+  const url = await h.uploadAsset('video.mp4');
+  const id  = await h.proofreadCreate({ videoUrl: url, outputLanguage: 'Swedish (Sweden)', title: 'talkoll' });
+  console.log(id);   // pollas med h.proofreadStatus(id)
+})"
+```
+
+| Svar från HeyGen | Vad det betyder |
+|---|---|
+| `failed — No speaker is detected in the video` | **Ingen röst i filen.** Ytan är ren — det finns inget brandnamn att säga. |
+| `completed` + SRT | Läs SRT:n. Nu är talet läst på riktigt. |
+| `failed — video pending moderation by our team` | Väntläge, inte ett fel. Polla vidare. |
+
+Rendera aldrig för att svara på frågan — proofread är gratis (järnregel 1).
+Två billigare kontroller pekar åt samma håll och kan köras först: `ffmpeg
+-af volumedetect` per sekund (tal ger pauser, konstant ljud gör det inte) och
+frame-OCR (ingen inbränd text = inga påståenden i bild).
 
 ### Så här kör du den
 

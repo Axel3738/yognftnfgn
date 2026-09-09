@@ -67,7 +67,16 @@ renderats om. "QA grön" utan röstraden räknas inte som QA.
    Språknamn måste matcha HeyGens lista exakt (`listTargetLanguages`), t.ex.
    "Norwegian Bokmål (Norway)", "Danish (Denmark)", "Finnish (Finland)", "English (UK)",
    "English (Australia)", "Spanish (Mexico)", "Dutch (Netherlands)".
+   Bara "Norwegian" eller "Swedish (Sweden)"-varianter som inte står i listan avvisas
+   med `Invalid language` — hämta listan i stället för att gissa.
    **Spara alla session-ID:n till en JSON-fil på disk DIREKT** — containern kan starta om.
+   - `failed — No speaker is detected in the video`: **videon innehåller inget tal.**
+     Det är ett svar, inte ett fel — ren b-roll utan voiceover finns och är en fullt
+     giltig annons. Dubba den inte; leverera källan som den är.
+     Samma anrop är också det billigaste sättet att svara på frågan "säger den här
+     videon källbutikens namn?" när ett transkript saknas: ingen röst = inget att säga.
+     *(Mätt 2026-09-09 på `IBC_PD_Extra` — en dom på "talet är oläst" höll annonsen
+     pausad i ett dygn innan någon frågade om det fanns något tal alls.)*
 4. **Lokalisera transkripten.** Läs varje SRT och rätta enligt checklistan i
    `docs/video-localization.md` (§Lokaliseringschecklista). Kortversion:
    - Varumärken/produktnamn enligt marknadens namn (fråga användaren om okänt).

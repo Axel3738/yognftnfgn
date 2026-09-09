@@ -342,11 +342,26 @@
   "12_live": {
    "status": "KLAR",
    "datum": "2026-09-09",
-   "se": "TANKGUARD_SE_Tanköverdraget ACTIVE — 39 av 40 annonser levererar",
+   "se": "TANKGUARD_SE_Tanköverdraget ACTIVE — 40 av 40 annonser levererar",
    "no": "TANKGUARD_NO_Tanktrekket ACTIVE — 33 av 33 annonser levererar",
    "budget": "1 000 kr/dag per kampanj, 2 000 kr/dag totalt",
    "godkannande": "Axel bekräftade att han hört rösten och sa \"kör allt live nu\".",
-   "anmarkning": "Meta strypte API-anropen, så Axel slog på kampanjerna för hand parallellt. PD_Extra följde med i den manuella markeringen och gick live trots att skriptet höll den — pausad igen. En annons som ska hållas undan överlever inte en \"markera alla\"."
+   "anmarkning": "Meta strypte API-anropen, så Axel slog på kampanjerna för hand parallellt. PD_Extra följde med i den manuella markeringen och gick live trots att skriptet höll den — pausades igen samma kväll, och slogs på igen när domen kom. En annons som ska hållas undan överlever inte en \"markera alla\"."
+  },
+  "13_pd_extra": {
+   "status": "KLAR",
+   "datum": "2026-09-09",
+   "fraga": "Bar PD_Extras tal källbutikens brandnamn? Ingen visste — det fanns inget transkript.",
+   "svar": "Det finns inget tal. Annonsen är rena produktnärbilder utan röst och utan inbränd text.",
+   "bevis": {
+    "heygen_proofread": "failed — \"No speaker is detected in the video\" (0 krediter, ingen rendering)",
+    "ljudniva": "−18,2 dB snitt, jämnt över alla tio sekunderna, inga talpauser",
+    "ocr": "media-grind.json: fynd: [], ocrFanns: true — noll inbränd text",
+    "media": "källfilen oförändrad: ingen dubb, ingen captionbyte, inget plåster"
+   },
+   "kallans_utfall": "IBC_PD_Extra: 423 kr spend, 4 köp, ROAS 4,62, CPA 106 kr — den tjänade pengar utan röst",
+   "atgard": "ACTIVE 2026-09-09 (120249008687250172, adset TANKGUARD_Tanköverdraget SE - PD)",
+   "lardom": "\"tal (oläst)\" är inte samma sak som \"tal som inte gick att läsa\". Brand-detektorn skriver okänd så fort ett transkript saknas, och den domen blockerade annonsen i ett dygn. Kolla först om det finns något att transkribera — proofreadCreate svarar på fem minuter och drar noll krediter."
   }
  },
  "uppdaterad": "2026-09-09",
@@ -359,7 +374,5 @@
   "butiksfil": "Delvis lost 2026-09-08: Axel lamnade pris (489 kr) och produktlank direkt i chatten. factory/butiker/tankguard.yaml saknas fortfarande — frakt, returer, betalsatt och NOK-nivaer ar darfor okanda och pastas aldrig i copyn.",
   "sidroll": "Last 2026-09-09: Axel gav full tillgang till TankGuard-sidan. Alla tio annonserna gick igenom direkt. Rotorsaken var att sidan lag i businessens client_pages men saknades helt i me/accounts — HeimGuard ligger i owned_pages och fungerade darfor."
  },
- "blockerare": {
-  "pd_extra": "TankGuard_PD_Extra är pausad och har ingen dom. Talet gick aldrig att läsa och det finns inget transkript. Någon måste lyssna på de tio sekunderna innan den får köras."
- }
+ "blockerare": {}
 }

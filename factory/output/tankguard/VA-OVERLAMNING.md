@@ -58,9 +58,11 @@ Six videos were left alone (`PD_1_H1/H2/H3` in both markets, plus Swedish
 `SP_3_H1`): their pacing matches the source footage, so there was nothing to
 fix.
 
-**`TankGuard_PD_Extra` has no verdict.** Its speech could never be read and
-there is no transcript. Leave it paused until someone listens to those ten
-seconds.
+**`TankGuard_PD_Extra` has no voiceover at all** — that is not a defect. It is
+pure product footage: hands working the zip, the fabric, the cover on the tank.
+HeyGen's transcription returns `No speaker is detected in the video`, and OCR
+finds no burned-in text. The source ad earned ROAS 4.62 exactly like this. It is
+live.
 
 **Norwegian ads carry no price.** That is deliberate — the store has no NOK
 price set, and inventing one is not allowed. The price is on the `/nb` page.

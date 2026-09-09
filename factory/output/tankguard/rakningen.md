@@ -28,10 +28,10 @@ som räknar mot sin gamla lista säger "klart" om något som saknar sex annonser
 | `ren` (bild + video) | 21 | 21 | **21** | 0 |
 | `kräver-omdubb` | 13 | 13 | **13** | 0 |
 | `kräver-slutkortsbygge` | 5 | 5 | **5** | 0 |
-| `okänd` (`PD_Extra`) | 1 | 0 | 1 ⚠️ | — |
-| **Summa** | **40** | **39** | **40** | **0** |
+| `utan tal` (`PD_Extra`) | 1 | 1 | **1** | 0 |
+| **Summa** | **40** | **40** | **40** | **0** |
 
-**40 av 40. Ingen saknas. Allt PAUSED.**
+**40 av 40. Ingen saknas. Alla ACTIVE sedan 2026-09-09.**
 
 Sju adsets (BOF, CO, CS, GT, PD, RV, SP), TankGuards egen sida `1399193996606775`
 och egen pixel `2196132151319625`, geo SE, CBO 1 000 kr/dag,
@@ -61,11 +61,15 @@ låg uppe: `BOF_1_1`, `BOF_2_1`, `BOF_6_1`, `CS_2_1`, `CS_3_1`, `CS_4_1`,
 `RV_1_1`, `RV_2_1`, `RV_3_1`, `RV_4_1`, `SP_2_1`. Raderna är utbytta med
 `factory/bildplaster.py` och annonserna ompekade.
 
-### `PD_Extra` — uppe men pausad, utan dom
-Talet gick aldrig att läsa och det finns inget transkript. Den laddades upp i
-den allra första körningen, innan räkningsspärren fanns. **Pausad**
-(`120249008687250172`). Ska inte gå ACTIVE förrän någon lyssnat på de tio
-sekunderna.
+### `PD_Extra` — domen kom 2026-09-09: annonsen har inget tal
+Den stod länge som `okänd` med skälet "talet gick aldrig att läsa". Fel skäl:
+det finns inget tal att läsa. HeyGens proofread (0 krediter) svarar
+`No speaker is detected in the video`, ljudet ligger jämnt på −18,2 dB över alla
+tio sekunderna utan talpauser, och OCR hittar noll inbränd text. Videon är
+källfilen oförändrad — rena produktnärbilder, ingen röst, ingen text.
+
+Källan `IBC_PD_Extra`: 423 kr spend, 4 köp, ROAS 4,62, CPA 106 kr. Den tjänade
+pengar utan röst. **ACTIVE sedan 2026-09-09** (`120249008687250172`).
 
 ---
 

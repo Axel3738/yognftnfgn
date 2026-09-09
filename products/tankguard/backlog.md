@@ -79,3 +79,29 @@ säljer på väder i stället för på alger, och den ligger på 7 kr spend — 
 aldrig prövad. Säsongen är rätt nu.
 
 **Status:** copyn är ren och kan köras oförändrad. Ligger i första batchen.
+
+---
+
+## 5. Tyst b-roll — ingen röst, ingen text, bara produkten
+
+**Källa:** `IBC_PD_Extra`, en annons som redan spenderat pengar bra: 423 kr,
+4 köp, ROAS 4,62, **CPA 106 kr — kontots lägsta**. Uppmätt 2026-09-09 innehåller
+den varken voiceover eller inbränd text (HeyGen: `No speaker is detected in the
+video`; OCR: noll träffar). Tio sekunder rena närbilder — händer som drar
+blixtlåset, tyget, överdraget på tanken — med bara omgivningsljud.
+
+**Varför den är intressant:** ingen briefade den så. Den låg i kontot som en
+extrafil och råkade bli den effektivaste annonsen i hela kampanjen. Hypotesen är
+enkel och testbar: **flödet spelas ändå utan ljud, så en annons som inte behöver
+ljudet tappar ingenting** — den slipper dessutom hela dubbningsledet och kan
+kopieras till en ny marknad utan en enda HeyGen-credit.
+
+**Vad som gör den svag som bevis:** 4 köp. Under ANALYSMETODENS gräns för en dom
+med tyngd. Riktningen finns, tyngden gör den inte.
+
+**Vad som ska testas:** samma mekanik som `PD_1_H1` — problemet, mekaniken,
+bockarna — men helt utan röst och utan captions. Bäraren blir bilden och
+annonstexten. Kör den i test-ABO med lika budget mot en dubbad tvilling, så att
+enda skillnaden är ljudspåret.
+
+**Status:** otestad. `PD_Extra` själv är live sedan 2026-09-09 i SE.

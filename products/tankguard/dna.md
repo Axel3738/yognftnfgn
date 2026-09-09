@@ -65,6 +65,18 @@ bockar, sedan CTA. Ingen rabatt, ingen brådska, ingen social proof.
 (ANALYSMETOD). Att den tar 87 % av spenden är ett skalningsfaktum, inte ett bevis
 för att de andra är dåliga.
 
+**Undervinkeln som ingen briefat med flit: tyst b-roll.** `PD_Extra` är kontots
+lägsta CPA (106 kr på 4 köp, ROAS 4,62) — och den har varken voiceover eller
+inbränd text. Uppmätt 2026-09-09: HeyGen svarar `No speaker is detected in the
+video`, ljudet är jämnt utan talpauser, OCR hittar noll text. Tio sekunder rena
+närbilder: händer som drar blixtlåset, tyget, överdraget på tanken.
+
+Volymen är för låg för en dom med tyngd (4 köp), men riktningen är tydlig och
+hypotesen är billig att pröva: **flödet spelas ändå utan ljud, så en annons som
+inte behöver ljudet tappar ingenting.** Nästa PD-batch ska bära minst en medveten
+tyst variant — samma mekanik som `PD_1_H1`, noll röst, noll text — så att vinkeln
+får ett riktigt test i stället för att fortsätta vara en olycka som råkade fungera.
+
 ### 3. Samma annons vinner inte på båda marknaderna
 
 | Annons | SE | NO |
@@ -183,3 +195,4 @@ leveranser tyst.
 |---|---|---|
 | 2026-09-08 | `/ny-annonser tankguard`, körning 1 | Filen skapad. Ärvt DNA från 67 källannonser i två konton. Erbjudandet inskrivet ur Axels skärmbild. Inga egna annonser launchade. |
 | 2026-09-09 | `/ny-annonser tankguard`, körning 2 | Båda kampanjerna byggda och fyllda. Fem-ytors-lärdomen, manuslängden som kvalitetsgrind, slutkortet utan credits, röstbeskedet. Den norska halvan prisfri. |
+| 2026-09-09 | `/ny-annonser tankguard`, körning 3 | Båda kampanjerna live. `PD_Extra`-domen stängd: annonsen har inget tal alls — tyst b-roll inskriven som egen undervinkel under PD, och som koncept 5 i backloggen. |

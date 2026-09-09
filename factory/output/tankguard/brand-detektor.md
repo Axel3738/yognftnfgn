@@ -50,7 +50,7 @@ Bytet ingår i kampanjbygget (Uppdrag B) och håller sig därför utanför klass
 | `IBC_PD_3_H1` | video | ✅ ren | ✅ ren | ⚠️ träff 👁 | – | **kräver-slutkortsbygge** | inbränd text |
 | `IBC_PD_4_1` | bild | ✅ ren | – | – | ✅ ren 👁 | **ren** | — |
 | `IBC_PD_5_1` | bild | ✅ ren | – | – | ✅ ren 👁 | **ren** | — |
-| `IBC_PD_Extra` | video | ✅ ren | ❔ okänd | ✅ ren 👁 (bara ögat) | – | **okänd** | tal (oläst) |
+| `IBC_PD_Extra` | video | ✅ ren | ✅ inget tal | ✅ ren 👁 (bara ögat) | – | **ren** | — |
 | `IBC_RV_1_1` | bild | ✅ ren | – | – | ✅ ren 👁 | **ren** | — |
 | `IBC_RV_2_1` | bild | ✅ ren | – | – | ✅ ren 👁 | **ren** | — |
 | `IBC_RV_3_1` | bild | ✅ ren | – | – | ✅ ren 👁 | **ren** | — |
@@ -134,8 +134,10 @@ Metod: Ögongranskning av exakt samma frames och bildannonser som OCR:en läste 
 - yta 3 · ögongranskat (slutkort + logotyp + skärmdump, 22.50s): "BÄVERBUTIKEN / IBC-TANKÖVERDRAG 1000 L - STOPPAR ALGER & UV | 10 recensioner | 636 kr  489 kr | Handla nu"
 - yta 3 · ⚠️ logotyp/symbol UTAN text — osynlig för OCR, bara ögat ser den
 
-**`IBC_PD_Extra`** — okänd
-- yta 2 · okänd (inget transkript i repot)
+**`IBC_PD_Extra`** — ren
+- yta 2 · **inget tal i filen.** HeyGen proofread (0 krediter) svarar
+  `No speaker is detected in the video`. Ljudet ligger jämnt på −18,2 dB över alla
+  tio sekunderna utan talpauser. Ingen röst = inget brandnamn i ljudet. Avgjort 2026-09-09.
 
 **`IBC_SP_1_H1`** — kräver-omdubb
 - yta 2 · 00:00:09,139 --> 00:00:13,039: "Inte kul. Sen skaffade jag ett IBC-tanköverdrag från Bäverbutiken."
@@ -181,9 +183,14 @@ egna villkor måste de bytas innan annonsen körs, precis som brandnamnet.
 
 ## Kvar att läsa
 
-- `IBC_PD_Extra`: tal (oläst) — yta 2 · okänd (inget transkript i repot)
+Inget. `IBC_PD_Extra` var den sista, och den lästes 2026-09-09: filen
+innehåller inget tal.
 
-Ingen av dem får räknas som `ren` förrän ytan faktiskt lästs.
+⚠️ **"tal (oläst)" är inte samma sak som "tal som inte gick att läsa".**
+Detektorn skriver `okänd` så fort ett transkript saknas, och den domen blockerade
+annonsen i ett dygn. Kontrollen är gratis: skicka filen genom `proofreadCreate`
+i `pipeline/heygen.mjs` och läs felmeddelandet. `No speaker is detected` = ingen
+röst = ingen brandrisk i ljudet. Rendera aldrig — proofread drar noll krediter.
 
 ## Kampanjer annonserna ligger i
 

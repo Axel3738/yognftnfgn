@@ -35,6 +35,14 @@ de har inte fått chansen, inte misslyckats.
   benchmark, inte en kandidat att döma småannonser mot.
 - PD-vinkeln (produktdemo) bär både vinnaren och den effektivaste annonsen
   (`PD_Extra`, CPA 106 kr på 4 köp — låg volym, men samma riktning).
+- ⚠️ **`PD_Extra` har varken voiceover eller inbränd text.** Uppmätt 2026-09-09:
+  HeyGens transkribering svarar `No speaker is detected in the video`, ljudet är
+  jämnt utan talpauser, OCR hittar noll text. Tio sekunder rena produktnärbilder
+  — händer som drar blixtlåset, tyget, överdraget på tanken — med bara
+  omgivningsljud. Det är kontots lägsta CPA. **Tyst b-roll är en egen vinkel
+  värd att testa på riktigt**, inte en trasig annons att laga; hypotesen är att
+  den vinner för att flödet ändå spelas utan ljud. Nästa batch bör ha minst en
+  medveten tyst PD-variant.
 - Video slår bild rakt av: alla fyra annonser med köp är video. Ingen av de 20
   bildannonserna har ett enda köp, och den dyraste (`PD_2_1`, 362 kr) har noll.
 - `CS_1_H3` (23 %-rabattvinkeln) håller högst ROAS av allt som fått volym.

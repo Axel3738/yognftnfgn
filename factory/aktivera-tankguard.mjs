@@ -21,9 +21,17 @@ const KAMPANJER = {
 };
 
 // Annonser som INTE får gå live, med skäl. Namngivna, aldrig ett mönster.
-const HÅLLS = {
-  TankGuard_PD_Extra: 'ingen dom — talet gick aldrig att läsa och det finns inget transkript',
-};
+//
+// `TankGuard_PD_Extra` stod här t.o.m. 2026-09-09 med skälet "talet gick aldrig
+// att läsa". Skälet var fel: filen innehåller inget tal alls. HeyGens proofread
+// (0 krediter) svarar `No speaker is detected in the video`, ljudet ligger jämnt
+// på −18,2 dB utan talpauser och OCR hittar ingen inbränd text. Ingen röst =
+// ingen brandrisk i ljudet. Annonsen är live sedan samma dag.
+//
+// ⚠️ Skriv aldrig `okänd` som blockerare bara för att ett transkript saknas —
+// kolla först om det finns något att transkribera. Det tar fem minuter och
+// kostar noll.
+const HÅLLS = {};
 
 const TORR = !process.argv.includes('--kor');
 const valdMarknad = (process.argv.find((a) => a.startsWith('--marknad=')) || '').split('=')[1];

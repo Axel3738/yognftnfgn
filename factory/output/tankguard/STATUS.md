@@ -1,13 +1,13 @@
 # TankGuard — status 2026-09-09
 
 **BÅDA KAMPANJERNA ÄR LIVE sedan 2026-09-09.** Axel hörde om rösten och gav
-klartecken. 72 annonser levererar, 2 000 kr/dag totalt. Räkningen med varje siffra:
+klartecken. 73 annonser levererar, 2 000 kr/dag totalt. Räkningen med varje siffra:
 `factory/output/tankguard/rakningen.md`. VA:ns granskningslista:
 `factory/output/tankguard/VA-OVERLAMNING.md`.
 
 | Marknad | Kampanj | Källa | Byggt | Status |
 |---|---|--:|--:|---|
-| Sverige | `TANKGUARD_SE_Tanköverdraget \| 2026-09-08` (`120248995235740172`) | 40 | **40** | ACTIVE — 39 levererar, `PD_Extra` pausad |
+| Sverige | `TANKGUARD_SE_Tanköverdraget \| 2026-09-08` (`120248995235740172`) | 40 | **40** | ACTIVE — alla 40 levererar |
 | Norge | `TANKGUARD_NO_Tanktrekket \| 2026-09-09` (`120249012213810172`) | 33 | **33** | ACTIVE — alla 33 levererar |
 
 Konto: MagiBorsten DK `915422744950975`. Sida `1399193996606775`, pixel
@@ -24,13 +24,40 @@ Meta strypte API-anropen hårt (upp till 300 sekunders backoff per försök), s�
 Axel slog på kampanjerna för hand i Ads Manager parallellt med skriptet.
 
 ⚠️ **`TankGuard_PD_Extra` följde med i den manuella markeringen och gick live.**
-Den har ingen dom — talet gick aldrig att läsa och det finns inget transkript.
-Den är pausad igen. Vill den köras måste någon först lyssna på de tio
-sekunderna.
+Den pausades igen samma kväll, och är nu påslagen på riktigt — se nedan.
 
 **Lärdom:** en annons som ska hållas kvar pausad överlever inte en manuell
 "markera alla". Ska något hållas undan vid live-sättning: flytta det till ett
 eget adset, eller lyssna igenom det innan resten går på.
+
+## `PD_Extra` — domen som saknades (avgjord 2026-09-09)
+
+Annonsen hölls pausad för att "talet aldrig gick att läsa och det finns inget
+transkript". **Det fanns inget tal.** Axel såg videon och sa "det där var ju en
+ASMR-video — asså inge VO".
+
+Mätt samma kväll:
+
+| Kontroll | Utfall |
+|---|---|
+| HeyGen proofread (0 krediter) | `failed — No speaker is detected in the video` |
+| Ljudnivå | −18,2 dB snitt, jämn över alla tio sekunderna — ingen tystnad, inga talpauser |
+| Inbränd text (OCR) | ingen alls (`media-grind.json`: `fynd: []`, `ocrFanns: true`) |
+| Bild | rena produktnärbilder: händer som drar blixtlåset, tyget, överdraget på tanken |
+
+Videon är källannonsens fil oförändrad — ingen dubb, ingen captionbyte, inget
+plåster. Källan `IBC_PD_Extra` gjorde 423 kr spend, 4 köp, ROAS 4,62, CPA 106 kr.
+Den tjänade alltså pengar precis så här: utan röst och utan text.
+
+Annonsen är ACTIVE sedan 2026-09-09 (`120249008687250172`, adset
+`TANKGUARD_Tanköverdraget SE - PD`).
+
+⚠️ **Lärdom — "tal (oläst)" är inte samma sak som "tal som inte gick att läsa".**
+Brand-detektorn skrev `okänd` på en annons som helt saknar tal, och den domen
+blockerade annonsen i ett dygn. Kontrollen är gratis och tar fem minuter:
+skicka filen genom `proofreadCreate` och läs felmeddelandet. `No speaker is
+detected` = ingen röst = ingen brandrisk i ljudet. Rendera aldrig — proofread
+drar noll krediter (järnregel 1).
 
 ## Vad som återstår
 
@@ -58,8 +85,8 @@ eget adset, eller lyssna igenom det innan resten går på.
    De sex `replikbyte`-videorna (`PD_1_H1/H2/H3` i båda marknaderna) rördes
    inte — de ligger på 1,45–2,62× och matchar källvideornas egen spridning.
    `SP_3_H1` ligger på 1,25× och rördes inte heller.
-2. **`PD_Extra` har ingen dom.** Talet gick aldrig att läsa. Pausad
-   (`120249008687250172`), räknas inte som byggd.
+2. ~~**`PD_Extra` har ingen dom.**~~ Avgjord 2026-09-09: annonsen har inget tal
+   alls. Live sedan samma dag. Se avsnittet ovan.
 
 ## Öppna ägarfrågor
 
