@@ -208,3 +208,15 @@ Scangrip MAG 569 kr mot vårt 599, Ajax DoorProtect 367 kr mot vårt 499. Vi bli
 i kategorin utan märke — tvärtemot mönstret som bar strandtofflorna, axelbältet och kameran.
 
 **Dagens slutresultat: 1 produkt av 82 kandidater.** Vedklyvborren.
+
+
+## Axels beslut 2026-09-09, kväll: alla nio på arket
+
+Axel ville ha med även de sex som föll på wow-testet. **Det är rätt, och regeln ändras:**
+offertarket är en *förfrågan*, inte ett launchbeslut. Att fråga leverantören om pris
+kostar ingenting, och ett riktigt inköpspris är data vi annars aldrig får — flera av
+domarna ovan hängde på prisläget, och det priset var vår egen räkning, inte leverantörens.
+
+Grinden flyttar därför ett steg: **wow-testet avgör vad som launchas, inte vad som
+offereras.** Domen står kvar i den här filen så att den som väljer ur offerten vet
+vilka varor som saknar payoff i ett tystat flöde.

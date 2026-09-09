@@ -51,7 +51,13 @@ Skriptet kan bara räkna. Du ska läsa. Gå igenom `fynd.json` och **stryk** var
   Axel såg det direkt. Gårdagens jakt låg dessutom i `docs/temu-jakt-v2/jakt/v24/` och hade aldrig
   matats in i `sedda.json`.)* Hittar du en upprepning: stryk den och lägg gårdagens id i `sedda.json`.
 
-### 2b. Mekanismgrinden — den som avgör
+### 2b. Wow- och mekanismgrinden — den avgör vad som LAUNCHAS
+
+⚠️ **Grinden stryker inget från offertarket.** *(Axels beslut 2026-09-09.)* Arket är en
+förfrågan till leverantören, inte ett launchbeslut — att fråga om pris kostar ingenting,
+och leverantörens riktiga pris är data vi annars aldrig får. Lägg alla kandidater som
+klarat läsningen i steg 2 på arket, och skriv domen i `STATUS.md` i stället. Domen är
+till för den som sedan väljer ur offerten.
 
 Ekonomin säger bara att marginalen finns. **Mekanismen avgör om varan är värd att testa.**
 *(Axels besked 2026-09-09: leta gemensamma variabler i mekanik och funktion, inte i nisch.
