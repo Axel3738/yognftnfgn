@@ -75,16 +75,43 @@ def kurs():
         raise SystemExit("Ingen valutakurs: ECB svarade inte och kurs.json saknas.")
 
 
-def dagens_ord(katalog, manad, antal, frö, undvik=()):
+def las_vikter():
+    """Axels svar, räknade av feedback.py. Saknas filen är allt 0,5 och inget stoppas."""
+    p = os.path.join(HERE, "vikter.json")
+    if not os.path.exists(p):
+        return {"dimensioner": {}, "stopp": [], "lyft": [], "antal_svar": 0}
+    return json.load(open(p, encoding="utf-8"))
+
+
+def vikt_for(kand, vikter):
+    """Produkten av scorerna för kandidatens grupp och taggar; None om något värde är stoppat."""
+    varden = {"grupp": kand.get("grupp", "")}
+    varden.update(kand.get("taggar") or {})
+    v = 1.0
+    for dim, val in varden.items():
+        for x in (val if isinstance(val, list) else [val]):
+            if not x:
+                continue
+            if f"{dim}:{x}" in vikter.get("stopp", []):
+                return None
+            v *= vikter.get("dimensioner", {}).get(dim, {}).get(str(x), {}).get("score", 0.5)
+    return round(v, 4)
+
+
+def dagens_ord(katalog, manad, antal, frö, undvik=(), vikter=None):
     """undvik = sökord som körts nyligen. Samma ord ger samma hylla, och då kommer samma varor
-    tillbaka dag efter dag från olika säljare — det är så gårdagens ark upprepas."""
+    tillbaka dag efter dag från olika säljare — det är så gårdagens ark upprepas.
+    vikter = Axels svar (feedback.py): en grupp med ≥ 3 nej och 0 ja söks inte alls. Gruppen
+    viktas aldrig UPP av ja — SIGNALER.md: att en vara gått bra säger inget om nischen."""
+    vikter = vikter or {"stopp": [], "lyft": []}
+    stoppade = {g["grupp"] for g in katalog["grupper"] if f"grupp:{g['grupp']}" in vikter.get("stopp", [])}
     pool = []
     for g in katalog["grupper"]:
-        if manad in g["manader"]:
+        if manad in g["manader"] and g["grupp"] not in stoppade:
             pool += [(o, g["grupp"]) for o in g["ord"] if o not in undvik] * g.get("vikt", 1)
-    if not pool:  # alla ord förbrukade — släpp spärren hellre än att leverera tomt
+    if not pool:  # alla ord förbrukade — släpp karantänen hellre än att leverera tomt
         for g in katalog["grupper"]:
-            if manad in g["manader"]:
+            if manad in g["manader"] and g["grupp"] not in stoppade:
                 pool += [(o, g["grupp"]) for o in g["ord"]] * g.get("vikt", 1)
     if not pool:
         return []
@@ -145,10 +172,12 @@ def main():
     logg = json.load(open(logg_p, encoding="utf-8")) if os.path.exists(logg_p) else {}
     grans = (datetime.date.fromisoformat(a.datum) - datetime.timedelta(days=KARANTAN_DAGAR)).isoformat()
     undvik = {o for o, d in logg.items() if d >= grans}
-    ord_lista = dagens_ord(katalog, a.manad, a.sokord, fro, undvik)
-    print(f"månad {a.manad} · {len(ord_lista)} sökord · USD/SEK {k} ({kurskalla}) · {len(sedda)} sedda sedan tidigare")
+    vikter = las_vikter()
+    ord_lista = dagens_ord(katalog, a.manad, a.sokord, fro, undvik, vikter)
+    print(f"månad {a.manad} · {len(ord_lista)} sökord · USD/SEK {k} ({kurskalla}) · {len(sedda)} sedda sedan tidigare · "
+          f"{vikter.get('antal_svar', 0)} svar från Axel, {len(vikter.get('stopp', []))} stopp, {len(vikter.get('lyft', []))} lyft")
 
-    fynd, hoppade = [], {"stoppord": 0, "pris saknas": 0, "ekonomi": 0, "dubblett": 0}
+    fynd, hoppade = [], {"stoppord": 0, "pris saknas": 0, "ekonomi": 0, "dubblett": 0, "axel_nej": 0}
     for i, (o, grupp) in enumerate(ord_lista, 1):
         try:
             traffar, sok_url = ali.sok(o, antal=8)
@@ -172,13 +201,20 @@ def main():
                 hoppade["ekonomi"] += 1
                 continue
             t.update({"grupp": grupp, "sok_url": sok_url, "ekonomi": ek, "usd_sek": k})
+            v = vikt_for(t, vikter)
+            if v is None:
+                hoppade["axel_nej"] += 1
+                continue
+            t["vikt"] = v
+            t["rank"] = round(ek["multipel"] * v, 3)
             fynd.append(t)
             sedda.add(t["product_id"])
             nya += 1
         print(f"  {i:2}. {o[:44]:44} {len(traffar):>2} träffar → {nya} nya")
         time.sleep(1.5)
 
-    fynd.sort(key=lambda x: -x["ekonomi"]["multipel"])
+    # uppslag × Axels vikt: en grupp han sagt nej till tre gånger är redan borta (stopp), resten sjunker/stiger
+    fynd.sort(key=lambda x: -x["rank"])
     valda = fynd[:a.antal]
     ut = a.ut or os.path.join(HERE, "korningar", a.datum, "fynd.json")
     os.makedirs(os.path.dirname(ut), exist_ok=True)

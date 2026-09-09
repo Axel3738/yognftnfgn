@@ -3,9 +3,11 @@
 
     python3 sida.py --fynd korningar/<datum>/fynd.json [--xlsx <fil>] [--ut korningar/<datum>/sida.html]
 
-Sidan publiceras som artefakt med `capabilities: {downloads: true}`. Arket ligger inbakat i sidan som
+Sidan publiceras som artefakt med `capabilities: {downloads: true, db: {}}`. Arket ligger inbakat i sidan som
 base64 och `claude.use("downloads")` → `save({filename, data})` lämnar det till Axel. Det är enda
 vägen: en vanlig `<a download>` är död i artefaktens sandlåda, och ett ark på 15 KB ryms med marginal.
+`db` bär Axels ja/kanske/nej per produkt (samlingen `feedback`, dokument `<datum>__<product_id>`) —
+rutinen läser den nästa morgon med `Artifact read_db` och `feedback.py` räknar om vikterna.
 
 Bilderna krymps och bakas in som data-URI — externa bilder blockeras av artefaktens CSP.
 """
@@ -64,7 +66,10 @@ def main():
     kort = []
     for p in d["produkter"]:
         e = p["ekonomi"]
-        kort.append({"namn": kort_namn(p["titel"]), "hela_namn": p["titel"], "url": p["url"], "grupp": p.get("grupp", ""),
+        kort.append({"product_id": str(p["product_id"]), "namn": kort_namn(p["titel"]), "hela_namn": p["titel"],
+                     "url": p["url"], "grupp": p.get("grupp", ""),
+                     # taggarna följer med in i feedback-dokumentet så vikterna kan räknas utan fynd.json
+                     "taggar": p.get("taggar", {}),
                      "inkop": p.get("pris_text"), "landad": e["landad"], "pris": e["forslag_pris"],
                      "multipel": e["multipel"], "sald": p.get("sald", ""),
                      "bild": bild_data_uri(p.get("bild"), os.path.join(katalog, "bilder"), p["product_id"])})

@@ -2,23 +2,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
 <style>
-  /* Produktjaktens dagsleverans. Ett kort per produkt, och en knapp som lämnar offertarket till Axel
-     via downloads-capability (en vanlig <a download> är död i artefaktens sandlåda). */
+  /* Produktjaktens dagsleverans. Ett kort per produkt med Axels ja/kanske/nej (sparas i artefaktens db —
+     rutinen läser det nästa morgon och räknar om vikterna), och en knapp som lämnar offertarket via
+     downloads-capability (en vanlig <a download> är död i artefaktens sandlåda). */
   :root {
     --ground: #F3F5F0; --surface: #FFFFFF; --ink: #17201B; --muted: #5B6B61; --line: #D9DFD9;
     --accent: #2E6B4E; --accent-ink: #FFFFFF; --chip: #E6ECE6; --warn: #8C6D1F;
+    --ja: #2E6B4E; --ja-bg: #DDEDE3; --nej: #9B3B2E; --nej-bg: #F5E0DB; --kanske: #6B5B1F; --kanske-bg: #F2EBD0;
     --shadow: 0 2px 10px rgba(23,32,27,.07); --shadow-lg: 0 10px 28px rgba(23,32,27,.14);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --ground: #121714; --surface: #1B231E; --ink: #E9EEE9; --muted: #9AA89F; --line: #2C362F;
       --accent: #5FB58C; --accent-ink: #0F1712; --chip: #263029; --warn: #D4A83A;
+      --ja: #5FB58C; --ja-bg: #1F3A2C; --nej: #E07A6A; --nej-bg: #3E2420; --kanske: #D4A83A; --kanske-bg: #3A3220;
       --shadow: 0 2px 10px rgba(0,0,0,.4); --shadow-lg: 0 10px 28px rgba(0,0,0,.5);
     }
   }
   :root[data-theme="dark"] {
     --ground: #121714; --surface: #1B231E; --ink: #E9EEE9; --muted: #9AA89F; --line: #2C362F;
     --accent: #5FB58C; --accent-ink: #0F1712; --chip: #263029; --warn: #D4A83A;
+    --ja: #5FB58C; --ja-bg: #1F3A2C; --nej: #E07A6A; --nej-bg: #3E2420; --kanske: #D4A83A; --kanske-bg: #3A3220;
     --shadow: 0 2px 10px rgba(0,0,0,.4); --shadow-lg: 0 10px 28px rgba(0,0,0,.5);
   }
   * { box-sizing: border-box; }
@@ -34,10 +38,14 @@
                   border: 0; border-radius: 14px; padding: 18px 12px; cursor: pointer; box-shadow: var(--shadow-lg); }
   .hamta button:active { transform: translateY(1px); }
   .hamta button:disabled { opacity: .55; cursor: default; }
-  .hamta button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
   .status { margin: 8px 2px 0; font-size: 16px; color: var(--muted); min-height: 1.5em; text-align: center; }
   .status.fel { color: var(--warn); }
-  .card { background: var(--surface); border-radius: 16px; box-shadow: var(--shadow); margin: 14px 0; overflow: hidden; }
+  .svarat { margin: 4px 0 0; text-align: center; font-size: 16px; color: var(--muted); }
+  .card { background: var(--surface); border-radius: 16px; box-shadow: var(--shadow); margin: 14px 0; overflow: hidden; border: 2px solid transparent; }
+  .card[data-dom="ja"] { border-color: var(--ja); }
+  .card[data-dom="nej"] { border-color: var(--nej); opacity: .82; }
+  .card[data-dom="kanske"] { border-color: var(--kanske); }
   .top { display: grid; grid-template-columns: 104px 1fr; gap: 12px; padding: 12px; align-items: start; }
   .thumb { width: 104px; height: 104px; border-radius: 11px; background: var(--chip); overflow: hidden; display: grid; place-items: center; }
   .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -48,20 +56,36 @@
   .chip { display: inline-block; background: var(--chip); border-radius: 999px; padding: 2px 9px;
           font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
   .rad { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
-  .links { padding: 0 12px 14px; }
+  .links { padding: 0 12px 10px; }
   .links a { display: block; text-align: center; text-decoration: none; font-weight: 700; font-size: 16px;
              padding: 11px 8px; border-radius: 11px; background: var(--chip); color: var(--ink); }
+  /* ja / kanske / nej */
+  .dom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 0 12px 12px; }
+  .dom button { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 20px; padding: 13px 4px;
+                border-radius: 12px; border: 2px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+  .dom button[data-v="ja"].on { background: var(--ja-bg); border-color: var(--ja); color: var(--ja); }
+  .dom button[data-v="kanske"].on { background: var(--kanske-bg); border-color: var(--kanske); color: var(--kanske); }
+  .dom button[data-v="nej"].on { background: var(--nej-bg); border-color: var(--nej); color: var(--nej); }
+  .dom button:disabled { opacity: .5; cursor: default; }
+  .orsaker { display: none; flex-wrap: wrap; gap: 8px; padding: 0 12px 14px; }
+  .orsaker.visa { display: flex; }
+  .orsaker p { width: 100%; margin: 0 0 2px; font-size: 15px; color: var(--muted); }
+  .orsaker button { font-size: 15px; font-weight: 700; padding: 8px 12px; border-radius: 999px; border: 2px solid var(--line);
+                    background: var(--surface); color: var(--ink); cursor: pointer; }
+  .orsaker button.on { background: var(--chip); border-color: var(--accent); }
+  .sparat { padding: 0 12px 12px; font-size: 15px; color: var(--muted); min-height: 1.4em; }
   footer { color: var(--muted); font-size: 14px; text-align: center; padding: 24px 8px 0; }
 </style>
 
 <div class="wrap">
   <h1>Dagens produkter</h1>
   <p class="lede"><b id="antal">0</b> nya varor hittade <span id="datum"></span>.</p>
-  <p class="lede">Priserna är räknade. Leverantören fyller i sina egna.</p>
+  <p class="lede">Tryck <b>Ja</b>, <b>Kanske</b> eller <b>Nej</b> på varje. Jag lär mig av svaren.</p>
 
   <div class="hamta">
     <button type="button" id="ladda">Ladda ner offertarket</button>
     <p class="status" id="status">Skicka filen till leverantören.</p>
+    <p class="svarat" id="svarat"></p>
   </div>
 
   <div id="lista"></div>
@@ -73,15 +97,22 @@
   const XLSX_B64 = /*__XLSX__*/"";
   const DATUM = /*__DATUM__*/"";
   const FILNAMN = /*__FILNAMN__*/"";
+  // Orsakerna är etiketterna feedback.py räknar vikter på. Ändra dem här OCH i feedback.py (ORSAKER).
+  const ORSAKER_NEJ = ["Verktyg / pryl", "Kedjan har den", "Fel kund", "Syns inget i bild", "Har redan", "Fel säsong", "För dyr", "Tråkig"];
+  const ORSAKER_JA = ["Skyddar något", "Deadline nu", "Bra ankare", "Snygg bild", "Känns rätt"];
   const $ = id => document.getElementById(id);
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
   $('datum').textContent = DATUM;
   $('antal').textContent = DATA.length;
   const lista = $('lista');
+  const svar = {};            // product_id → {dom, orsaker}
+  const kort = {};            // product_id → element
+
   DATA.forEach(p => {
     const el = document.createElement('article');
     el.className = 'card';
+    el.dataset.pid = p.product_id;
     el.innerHTML = `
       <div class="top">
         <div class="thumb">${p.bild ? `<img alt="${esc(p.namn)}" src="${p.bild}" loading="lazy">` : `<span aria-hidden="true">${esc((p.namn || '?').trim()[0])}</span>`}</div>
@@ -92,9 +123,79 @@
           ${p.sald ? `<p class="rad">${esc(p.sald)}</p>` : ''}
         </div>
       </div>
-      <div class="links"><a href="${p.url}" target="_blank" rel="noopener">Öppna produkten ↗</a></div>`;
+      <div class="links"><a href="${p.url}" target="_blank" rel="noopener">Öppna produkten ↗</a></div>
+      <div class="dom" role="group" aria-label="Ditt svar">
+        <button type="button" data-v="ja">Ja</button>
+        <button type="button" data-v="kanske">Kanske</button>
+        <button type="button" data-v="nej">Nej</button>
+      </div>
+      <div class="orsaker" aria-label="Varför"></div>
+      <p class="sparat"></p>`;
     lista.appendChild(el);
+    kort[p.product_id] = el;
+    el.querySelectorAll('.dom button').forEach(b => b.addEventListener('click', () => valj(p, b.dataset.v)));
   });
+
+  function rita(p) {
+    const el = kort[p.product_id], s = svar[p.product_id] || {};
+    el.dataset.dom = s.dom || '';
+    el.querySelectorAll('.dom button').forEach(b => b.classList.toggle('on', b.dataset.v === s.dom));
+    const box = el.querySelector('.orsaker');
+    const lista = s.dom === 'nej' ? ORSAKER_NEJ : s.dom === 'ja' ? ORSAKER_JA : [];
+    box.classList.toggle('visa', lista.length > 0);
+    box.innerHTML = lista.length ? `<p>${s.dom === 'nej' ? 'Varför nej?' : 'Varför ja?'}</p>` + lista.map(o =>
+      `<button type="button" class="${(s.orsaker || []).includes(o) ? 'on' : ''}">${esc(o)}</button>`).join('') : '';
+    box.querySelectorAll('button').forEach(b => b.addEventListener('click', () => orsak(p, b.textContent)));
+  }
+  function valj(p, dom) {
+    const s = svar[p.product_id] || {};
+    svar[p.product_id] = { dom, orsaker: s.dom === dom ? (s.orsaker || []) : [] };
+    rita(p); spara(p);
+  }
+  function orsak(p, o) {
+    const s = svar[p.product_id]; if (!s) return;
+    s.orsaker = s.orsaker.includes(o) ? s.orsaker.filter(x => x !== o) : [...s.orsaker, o];
+    rita(p); spara(p);
+  }
+
+  // --- lagringen: artefaktens db. Dokument-id <datum>__<product_id>, allt om produkten ligger i dokumentet
+  //     så rutinen kan räkna vikter utan att slå upp fynd.json. ---
+  let db = null;
+  const docId = p => `${DATUM}__${p.product_id}`;
+  async function spara(p) {
+    const el = kort[p.product_id], ut = el.querySelector('.sparat'), s = svar[p.product_id];
+    if (!db) { ut.textContent = 'Kunde inte spara här. Skriv svaret i chatten i stället.'; return; }
+    ut.textContent = 'Sparar…';
+    try {
+      await db.doc(`feedback/${docId(p)}`).set({
+        datum: DATUM, product_id: String(p.product_id), namn: p.hela_namn || p.namn, url: p.url,
+        grupp: p.grupp || '', taggar: p.taggar || {}, pris: p.pris, landad: p.landad,
+        dom: s.dom, orsaker: s.orsaker, ts: new Date().toISOString(), kalla: 'sida',
+      });
+      ut.textContent = 'Sparat.';
+    } catch (e) {
+      ut.textContent = 'Gick inte att spara. Tryck igen.';
+    }
+    raknaSvar();
+  }
+  function raknaSvar() {
+    const n = Object.values(svar).filter(s => s.dom).length;
+    $('svarat').textContent = n ? `Du har svarat på ${n} av ${DATA.length}.` : '';
+  }
+  (async () => {
+    try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch (e) { db = null; }
+    if (!db) return;
+    try {
+      db.collection('feedback').where('datum', '==', DATUM).onSnapshot(snap => {
+        snap.docs.forEach(d => {
+          const x = d.data(); if (!x || !x.product_id || !kort[x.product_id]) return;
+          svar[x.product_id] = { dom: x.dom, orsaker: Array.isArray(x.orsaker) ? x.orsaker : [] };
+          rita(DATA.find(p => String(p.product_id) === String(x.product_id)));
+        });
+        raknaSvar();
+      }, () => {});
+    } catch (e) {}
+  })();
 
   // --- nedladdningen ---
   function bytes(b64) {
