@@ -10,23 +10,18 @@
    "id": "SP_3_H1",
    "repliker": [
     "Så här ser en oskyddad IBC-tank ut i trädgården.",
-    "Sol och regn nöter på tanken varje dag.",
-    "UV-ljus gör plasten spröd med tiden.",
+    "Sol och UV gör plasten spröd med tiden.",
     "Så här ser samma tank ut med TankGuard monterat.",
     "Kraftigt 210D Oxford-tyg blockerar solljus och UV helt.",
-    "Blixtlås runt hela tanken, på plats på under två minuter.",
-    "Öppning upptill gör att du når locket utan att lyfta av allt.",
-    "Ingen sol når plasten längre.",
-    "Tanken håller längre, vattnet hålls renare.",
-    "Skillnaden syns på bilden — skyddad eller inte.",
-    "Passar standard 1000-literstank perfekt.",
+    "Öppning upptill — du når locket ändå.",
     "TankGuard. Beställ nu."
    ],
    "andringar": [
-    "Tog bort alla påhittade kundcitat (Maria, Lena, fem stjärnor, tio recensioner) — TankGuard har inga kunder än.",
-    "Bytte social-proof-vinkeln mot en ren före/efter-vinkel: tanken oskyddad i trädgården mot samma tank med TankGuard monterat.",
-    "Behöll den äkta produktmekaniken (210D Oxford-tyg, blockerar solljus/UV, öppning upptill) rakt av.",
-    "Lade till mätbar installationstid (under två minuter) i stället för det lösa 'enkelt att öppna'."
+    "Kortat från 12 till 6 repliker (249 tecken, budget 310) — taltempot krävde färre rader, inte kortare rader.",
+    "Strök alla påhittade kundcitat (Maria, Lena, fem stjärnor, tio recensioner) — TankGuard har inga kunder än.",
+    "Behöll ren före/efter-vinkel: tank oskyddad i trädgården mot samma tank med TankGuard monterat.",
+    "Strök 'ingen sol når plasten längre', 'tanken håller längre, vattnet hålls renare' och slutraden om passform — samma budskap bärs redan av rad 1–4.",
+    "Slog ihop installationstiden med öppningsraden till en kortare mening ('du når locket ändå') för att få plats inom teckenbudgeten."
    ],
    "tre_fragor": [
     {
@@ -34,77 +29,35 @@
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": false,
-     "kommentar": "Ren scenbeskrivning kopplad till bilden, men generisk för kategorin."
+     "kommentar": "Scenbeskrivning kopplad till bilden, generisk för kategorin."
     },
     {
-     "rad": "Sol och regn nöter på tanken varje dag.",
+     "rad": "Sol och UV gör plasten spröd med tiden.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": false,
-     "kommentar": "Fysikalisk fakta, gäller alla exponerade tankar."
-    },
-    {
-     "rad": "UV-ljus gör plasten spröd med tiden.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": false,
-     "kommentar": "Materialfakta, delas av kategorin."
+     "kommentar": "Materialfakta, gäller alla exponerade tankar."
     },
     {
      "rad": "Så här ser samma tank ut med TankGuard monterat.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": true,
-     "kommentar": "Bundet till varumärket och samma bild som hook-raden, ingen konkurrent kan äga den."
+     "kommentar": "Bundet till varumärket och samma bild som hook-raden."
     },
     {
      "rad": "Kraftigt 210D Oxford-tyg blockerar solljus och UV helt.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": false,
-     "kommentar": "Materialfakta, generisk för liknande tyger."
+     "kommentar": "Materialfakta, delas av liknande tyger."
     },
     {
-     "rad": "Blixtlås runt hela tanken, på plats på under två minuter.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": true,
-     "kommentar": "Mätbar installationstid, inte en åsikt."
-    },
-    {
-     "rad": "Öppning upptill gör att du når locket utan att lyfta av allt.",
+     "rad": "Öppning upptill — du når locket ändå.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": true,
      "kommentar": "Specifik konstruktionsdetalj, går att kontrollera."
-    },
-    {
-     "rad": "Ingen sol når plasten längre.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": false,
-     "kommentar": "Produktmekanik, delas av liknande överdrag."
-    },
-    {
-     "rad": "Tanken håller längre, vattnet hålls renare.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": false,
-     "kommentar": "Produktutfall, generiskt för kategorin."
-    },
-    {
-     "rad": "Skillnaden syns på bilden — skyddad eller inte.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": false,
-     "kommentar": "Kopplar till före/efter-bilden men fungerar för vilket liknande överdrag som helst."
-    },
-    {
-     "rad": "Passar standard 1000-literstank perfekt.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": false,
-     "kommentar": "Passformsfakta, generisk formulering."
     },
     {
      "rad": "TankGuard. Beställ nu.",
@@ -119,74 +72,51 @@
   "CS_4_H1": {
    "id": "CS_4_H1",
    "repliker": [
-    "489 kronor för ett IBC-tanköverdrag till din tank.",
-    "Innan frosten kommer i höst.",
-    "Skydda din IBC-tank från alger och UV.",
-    "Kraftigt 210D Oxford-tyg blockerar solljus helt.",
-    "Blixtlås runt hela tanken, på plats på under två minuter.",
-    "Öppning upptill — du kommer åt locket utan krångel.",
-    "Passar standard 1000-literstank perfekt.",
+    "489 kronor för ett IBC-tanköverdrag.",
+    "Skyddar din tank från alger och UV.",
+    "Kraftigt 210D Oxford-tyg, blixtlås, öppning upptill.",
+    "Passar standard 1000-literstank.",
     "489 kronor styck — eller spara 18 % med två.",
-    "Eller spara 25 % med tre, plus kranskydd på köpet.",
-    "Hösten är här, frosten är på väg.",
-    "489 kronor — beställ innan kylan kommer.",
+    "Eller spara 25 % med tre, plus kranskydd.",
+    "Frosten är på väg.",
     "TankGuard. Beställ nu."
    ],
    "andringar": [
-    "Bytte det påhittade jämförpriset (636 kr, 147 kr mindre, 23 procent rabatt från källbutiken) mot TankGuards riktiga flatpris 489 kronor.",
-    "Lade till de äkta paketrabatterna — 18 procent med två, 25 procent med tre — alltid efter priset, aldrig som lös procentsats.",
-    "Ersatte den generiska köpuppmaningen 'beställ idag' med säsongsbrådska (frost/höst).",
-    "Behöll den äkta produktmekaniken (210D Oxford-tyg, blixtlås, öppning upptill, passar 1000-literstank)."
+    "Kortat från 12 till 8 repliker (280 tecken, budget 330) — taltempot krävde färre rader, inte kortare rader.",
+    "Ersatte källans påhittade jämförpris (636 kr, 147 kr mindre, 23 procent rabatt) med TankGuards riktiga flatpris 489 kronor, som fortfarande leder raden.",
+    "Slog ihop material, blixtlås och öppning upptill till en enda mening för att spara tecken utan att tappa fakta.",
+    "Strök upprepningen 'innan frosten kommer i höst' och 'hösten är här' till en enda säsongsrad ('Frosten är på väg').",
+    "Behöll båda paketrabatterna (18 % med två, 25 % med tre) — procentsatsen står fortfarande i samma mening som paketnivån.",
+    "Strök den avslutande prisraden ('489 kronor — beställ innan kylan kommer') — priset är redan sagt två gånger tidigare i manuset."
    ],
    "tre_fragor": [
     {
-     "rad": "489 kronor för ett IBC-tanköverdrag till din tank.",
+     "rad": "489 kronor för ett IBC-tanköverdrag.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": true,
      "kommentar": "Exakt pris knyter raden till TankGuard, ingen falsk jämförelse."
     },
     {
-     "rad": "Innan frosten kommer i höst.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": false,
-     "kommentar": "Äkta säsongsfakta men generisk — gäller vilken vinterprodukt som helst."
-    },
-    {
-     "rad": "Skydda din IBC-tank från alger och UV.",
+     "rad": "Skyddar din tank från alger och UV.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": false,
      "kommentar": "Grundfunktionen, delas av liknande överdrag."
     },
     {
-     "rad": "Kraftigt 210D Oxford-tyg blockerar solljus helt.",
+     "rad": "Kraftigt 210D Oxford-tyg, blixtlås, öppning upptill.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": false,
-     "kommentar": "Materialfakta, delas av andra 210D-produkter."
+     "kommentar": "Tre produktfakta i en mening, var för sig generiska för kategorin."
     },
     {
-     "rad": "Blixtlås runt hela tanken, på plats på under två minuter.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": true,
-     "kommentar": "Mätbar installationstid, ingen åsikt."
-    },
-    {
-     "rad": "Öppning upptill — du kommer åt locket utan krångel.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": true,
-     "kommentar": "Specifik konstruktionsdetalj, går att kontrollera."
-    },
-    {
-     "rad": "Passar standard 1000-literstank perfekt.",
+     "rad": "Passar standard 1000-literstank.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": false,
-     "kommentar": "'Perfekt' är löst, men passformen går att kolla."
+     "kommentar": "Passformsfakta, generisk formulering."
     },
     {
      "rad": "489 kronor styck — eller spara 18 % med två.",
@@ -196,25 +126,18 @@
      "kommentar": "Riktig 2-paketsrabatt, procentsatsen står i samma mening som 'två'."
     },
     {
-     "rad": "Eller spara 25 % med tre, plus kranskydd på köpet.",
+     "rad": "Eller spara 25 % med tre, plus kranskydd.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": true,
      "kommentar": "Riktig 3-paketsrabatt inklusive bonusprodukt, procentsatsen står i samma mening som 'tre'."
     },
     {
-     "rad": "Hösten är här, frosten är på väg.",
+     "rad": "Frosten är på väg.",
      "visualisera": true,
      "falsifiera": true,
      "ingen_annan": false,
      "kommentar": "Äkta säsongsbrådska, ingen fejk."
-    },
-    {
-     "rad": "489 kronor — beställ innan kylan kommer.",
-     "visualisera": true,
-     "falsifiera": true,
-     "ingen_annan": true,
-     "kommentar": "Pris + verklig deadline, ingen fejkad knapphet."
     },
     {
      "rad": "TankGuard. Beställ nu.",

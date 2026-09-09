@@ -16,7 +16,11 @@ const IN = `${S}/dubbad-no`;
 const UT = `${S}/no-klar`;
 for (const d of [UT, `${S}/qa-no-precis`]) if (!existsSync(d)) mkdirSync(d, { recursive: true });
 
-const CAPTIONS = { zon: [860, 960], max_chars: 32, font_px: 30, standard_cy: 912, pad_x: 8, pad_y: 6 };
+// ⚠️ `pad_x` styr hur långt UTANFÖR den hittade texten suddrutan går, och
+// no-precis.py letar bara i x 120–600. De norska pillren är bredare än så —
+// med pad_x 8 stod första bokstavens stapel kvar som ett svart streck i
+// vänsterkanten. 22 räcker för att täcka hela pillret (mätt: 102–617).
+const CAPTIONS = { zon: [860, 960], max_chars: 32, font_px: 30, standard_cy: 912, pad_x: 22, pad_y: 8 };
 
 if (!existsSync(SRT)) { console.log(`Ingen ${SRT} ännu — kör factory/srt-fixa.mjs --marknad=no först.`); process.exit(0); }
 
