@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>TackleBay – variant B, kroken</title>
+  <circle cx="256" cy="256" r="256" fill="#0F2A33"/>
+
+  <!-- stor krok som huvudmärke -->
+  <g stroke="#D9A441" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="272" cy="118" r="19" stroke-width="11"/>
+    <path d="M 272 137 L 272 228" stroke-width="15"/>
+    <path d="M 272 228 C 272 288, 224 310, 194 286 C 168 265, 172 228, 198 218" stroke-width="15"/>
+    <path d="M 198 218 L 204 184" stroke-width="15"/>
+    <path d="M 204 184 L 186 236" stroke-width="10"/>
+  </g>
+
+  <text x="256" y="396" text-anchor="middle" fill="#F5F2EA"
+        font-family="Liberation Sans, Helvetica, Arial, sans-serif"
+        font-size="62" font-weight="bold" letter-spacing="1">TACKLEBAY</text>
+</svg>

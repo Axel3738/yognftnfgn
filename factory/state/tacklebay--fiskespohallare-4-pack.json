@@ -1,0 +1,28 @@
+{
+  "butik": "tacklebay",
+  "produkt": "fiskespohallare-4-pack",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/9414189252844",
+      "handle": "fiskespohallare-4-pack",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 11
+    }
+  },
+  "uppdaterad": "2026-09-09T12:04:36.132Z",
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "beskrivning",
+      "tracking",
+      "doman",
+      "checkout"
+    ],
+    "tid": "2026-09-09T12:04:36.132Z"
+  }
+}

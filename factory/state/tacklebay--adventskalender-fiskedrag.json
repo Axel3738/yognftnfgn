@@ -1,0 +1,29 @@
+{
+  "butik": "tacklebay",
+  "produkt": "adventskalender-fiskedrag",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/9414189285612",
+      "handle": "adventskalender-fiskedrag",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 11
+    }
+  },
+  "uppdaterad": "2026-09-09T12:04:36.311Z",
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "beskrivning",
+      "reviews",
+      "tracking",
+      "doman",
+      "checkout"
+    ],
+    "tid": "2026-09-09T12:04:36.310Z"
+  }
+}

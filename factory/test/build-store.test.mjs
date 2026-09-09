@@ -20,11 +20,14 @@ test('varianterna säljer vidare när lagret tar slut', () => {
   }
 });
 
-test('planen: titel, handle, DRAFT och vendor', () => {
+test('planen: titel, handle, ACTIVE och vendor', () => {
   const { input } = byggPlan(dummy());
   assert.equal(input.title, 'Nackmagneten');
   assert.equal(input.handle, 'nackmagneten');
-  assert.equal(input.status, 'DRAFT');
+  // ACTIVE sedan 2026-09-09 (Axels bakläxa på TankGuard): en DRAFT produkt
+  // ger 404 i menyn och "Exempel på produktnamn" i kundvyn. Trialbutiken är
+  // lösenordsskyddad, så ACTIVE exponerar ingenting.
+  assert.equal(input.status, 'ACTIVE');
   assert.equal(input.vendor, 'Nackmagneten');
 });
 

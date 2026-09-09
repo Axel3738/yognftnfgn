@@ -1,6 +1,16 @@
-// OPS Factory — hela kedjan: butikskonfig + produktfil → färdig OPS-butik.
+// OPS Factory — hela kedjan: butikskonfig + produktfiler → färdig OPS-butik.
 //
 //   node factory/ops.mjs factory/butiker/<butik>.yaml factory/produkter/<produkt>.yaml
+//
+// FLERA PRODUKTER I SAMMA BUTIK — lista bara fler produktfiler:
+//
+//   node factory/ops.mjs factory/butiker/<butik>.yaml \
+//        factory/produkter/<a>.yaml factory/produkter/<b>.yaml
+//
+// Butikens steg körs då EN gång, produktens steg en gång per produkt, och
+// QA körs per produkt så butiken aldrig kan gå live med halva sortimentet
+// i 404 (factory/FLERPRODUKT.md). Varje produkt behöver eget creative_prefix
+// — motorn stoppar om två delar prefix.
 //
 //   --dry-run   visa exakt vad som skulle göras, rör aldrig Shopify
 //   --resume    hoppa över steg som redan är gröna i factory/state/
@@ -34,6 +44,8 @@ import {
   hamtaProduktViaHandle,
   skapaProdukt,
   publiceraProdukt,
+  publiceraIButiken,
+  skrivKollektion,
   skrivPolicy,
   skrivSida,
   skrivMetafalt,
@@ -45,6 +57,9 @@ import {
   hamtaFraktzoner,
   tillampaFraktatgarder,
 } from './shopify.mjs';
+import { laddaUppTema, vantaPaUppackning } from './tema-upload.mjs';
+import { byggStartsida, byggFooterGroup, startsideRader } from './startsida.mjs';
+import { KANDA_SMITTADE, skannaTema, rapport as kallrapport } from './kallskanning.mjs';
 import { kontrolleraLaunch } from './kontroll.mjs';
 import { byggPolicyer, kontaktsida, saknadeUppgifter } from './policyer.mjs';
 import { byggMetafalt } from './metafalt.mjs';
@@ -71,42 +86,76 @@ function stopp(rubrik, rader) {
 }
 
 // ---------------------------------------------------------------------------
-// Stegen. Varje steg: { id, namn, torrt(ctx) → rader, kor(ctx) → resultat }.
+// Stegen. Varje steg: { id, namn, niva, torrt(ctx, pk) → rader, kor(ctx, pk) }.
 // `torrt` beskriver vad som skulle hända; `kor` gör det. Båda idempotenta.
+//
+// niva: 'butik'   — körs EN gång per butik (tema, sidor, frakt, startsida …)
+//       'produkt' — körs en gång PER PRODUKT (`pk` är produktkontexten)
+//
+// Delningen är produktloopen (factory/FLERPRODUKT.md punkt 1). Före den tog
+// motorn en enda produktfil, och sju av nio steg kördes om i onödan så fort
+// någon ville ha två produkter i samma butik.
 // ---------------------------------------------------------------------------
 
 const STEG = [
   {
+    id: 'tema-upload',
+    namn: 'CRO-temat upp i butiken',
+    niva: 'butik',
+    torrt: () => ['ops-tema.zip laddas upp som UNPUBLISHED om inget utkasttema finns'],
+    async kor(ctx) {
+      const befintligt = await hamtaUtkastTema();
+      if (befintligt) return { temaId: befintligt.id, temaNamn: befintligt.name, redanUppe: true };
+      const tema = await laddaUppTema(`${ctx.butik.butik.brand} v1`);
+      const lage = await vantaPaUppackning(tema.id);
+      if (!lage.klart) {
+        throw new Error('Temat packades inte upp i tid — kör om steget med --resume.');
+      }
+      return { temaId: tema.id, temaNamn: tema.name, redanUppe: false };
+    },
+  },
+  {
     id: 'produkt',
-    namn: 'Produkten i Shopify (DRAFT)',
-    torrt: (ctx) => {
-      const i = ctx.plan.input;
+    namn: 'Produkten i Shopify',
+    niva: 'produkt',
+    torrt: (ctx, pk) => {
+      const i = pk.plan.input;
       return [
         `${i.title} (handle ${i.handle}) som ${i.status}`,
         ...i.variants.map(
-          (v) => `variant ${v.optionValues[0].name}: ${v.price} ${ctx.p.ekonomi.valuta}${v.compareAtPrice ? ` (jämförpris ${v.compareAtPrice})` : ''}`
+          (v) => `variant ${v.optionValues[0].name}: ${v.price} ${pk.p.ekonomi.valuta}${v.compareAtPrice ? ` (jämförpris ${v.compareAtPrice})` : ''}`
         ),
         `${i.files.length} bilder, SEO-titel "${i.seo.title}"`,
       ];
     },
-    async kor(ctx) {
-      const produkt = await skapaProdukt(ctx.plan.input);
-      ctx.produkt = produkt;
-      return { id: produkt.id, handle: produkt.handle, status: produkt.status };
+    async kor(ctx, pk) {
+      // productSet skapar på handle men UPPDATERAR bara på id — utan id:t
+      // svarar Shopify "Handle already in use" så fort produkten finns.
+      // Mätt 2026-09-09 när spöhållarens copy skulle skrivas om.
+      const befintlig = await hamtaProduktViaHandle(pk.p.produkt.id);
+      const input = befintlig ? { ...pk.plan.input, id: befintlig.id } : pk.plan.input;
+      const produkt = await skapaProdukt(input);
+      pk.produkt = produkt;
+      // Publiceras i Online Store direkt. En ACTIVE produkt som inte ligger i
+      // kanalen ger 404 i kundvyn precis som en DRAFT gör.
+      const pub = await publiceraIButiken(produkt.id);
+      return { id: produkt.id, handle: produkt.handle, status: produkt.status, publicerad: pub.publicerad };
     },
   },
   {
     id: 'metafalt',
     namn: 'Metafälten (säljinnehållet)',
-    torrt: (ctx) => ctx.metafalt.map((m) => `opf.${m.key} (${m.type})`),
-    async kor(ctx) {
-      if (!ctx.produkt) ctx.produkt = await hamtaProduktViaHandle(ctx.p.produkt.id);
-      if (!ctx.produkt) throw new Error('Produkten finns inte — kör utan --resume.');
-      await skrivMetafalt(ctx.produkt.id, ctx.metafalt);
-      return { antal: ctx.metafalt.length };
+    niva: 'produkt',
+    torrt: (ctx, pk) => pk.metafalt.map((m) => `opf.${m.key} (${m.type})`),
+    async kor(ctx, pk) {
+      if (!pk.produkt) pk.produkt = await hamtaProduktViaHandle(pk.p.produkt.id);
+      if (!pk.produkt) throw new Error('Produkten finns inte — kör utan --resume.');
+      await skrivMetafalt(pk.produkt.id, pk.metafalt);
+      return { antal: pk.metafalt.length };
     },
   },
   {
+    niva: 'butik',
     // Brand-steget före theme-bygget: butikens egen identitet läggs på temat.
     // Strukturen återanvänds mellan butiker — brandingen aldrig.
     id: 'brand',
@@ -145,15 +194,21 @@ const STEG = [
   {
     id: 'tema',
     namn: 'OPS-temat (sektioner + produktmall)',
+    niva: 'butik',
     torrt: (ctx) => {
-      const { visas, doljs } = sektionerSomVisas(ctx.metafalt.map((m) => m.key));
+      // Produktmallen är EN fil för alla produkter — sektionerna döljer sig
+      // själva per produkt när metafältet saknas. Därför redovisas vad varje
+      // produkt kommer att visa, inte ett butiksgemensamt facit.
+      const perProdukt = ctx.produkter.map((pk) => {
+        const { visas, doljs } = sektionerSomVisas(pk.metafalt.map((m) => m.key));
+        return `${pk.p.produkt.id}: visar ${visas.join(', ')}${doljs.length > 0 ? ` · döljer ${doljs.join(', ')}` : ''}`;
+      });
       return [
         `${Object.keys(SEKTIONER).length} opf-sektioner in i utkasttemat`,
         `${Object.keys(TEMAFILER).length} fabriksägda temafiler skrivs över (${Object.keys(TEMAFILER).join(', ')})`,
         'produktmallen kopplar in dem efter main (hårdkodad icon-rad rensas)',
         'varje fil verifieras byte för byte efter uppladdning',
-        `visas för den här produkten: ${visas.join(', ')}`,
-        ...(doljs.length > 0 ? [`döljer sig själva (data saknas): ${doljs.join(', ')}`] : []),
+        ...perProdukt,
       ];
     },
     async kor() {
@@ -180,8 +235,61 @@ const STEG = [
     },
   },
   {
+    id: 'kollektion',
+    namn: 'Sortimentskollektionen',
+    niva: 'butik',
+    torrt: (ctx) => [
+      `${ctx.kollektion.handle} — "${ctx.kollektion.titel}"`,
+      ...ctx.produkter.map((pk) => `  ${pk.p.produkt.namn}`),
+    ],
+    async kor(ctx) {
+      const ids = [];
+      for (const pk of ctx.produkter) {
+        if (!pk.produkt) pk.produkt = await hamtaProduktViaHandle(pk.p.produkt.id);
+        if (!pk.produkt) throw new Error(`Produkten ${pk.p.produkt.id} finns inte i butiken.`);
+        ids.push(pk.produkt.id);
+      }
+      const kollektion = await skrivKollektion(
+        ctx.kollektion.handle,
+        ctx.kollektion.titel,
+        ids,
+        ctx.kollektion.beskrivning
+      );
+      const pub = await publiceraIButiken(kollektion.id);
+      return { handle: kollektion.handle, produkter: ids.length, publicerad: pub.publicerad };
+    },
+  },
+  {
+    id: 'startsida',
+    namn: 'Startsidan (templates/index.json)',
+    niva: 'butik',
+    torrt: (ctx) => startsideRader(ctx.butik, ctx.produkter.map((pk) => pk.p), ctx.kollektion.handle),
+    async kor(ctx) {
+      const tema = await hamtaUtkastTema();
+      if (!tema) return { manuell: 'Inget utkasttema finns i butiken.' };
+
+      const filer = {
+        'templates/index.json': byggStartsida(
+          ctx.butik,
+          ctx.produkter.map((pk) => pk.p),
+          ctx.kollektion.handle
+        ),
+      };
+
+      // Sidfotens bolagsblock bär källbutikens uppgifter i bas-zip:en.
+      const footer = await hamtaTemafil(tema.id, 'sections/footer-group.json');
+      if (footer) filer['sections/footer-group.json'] = byggFooterGroup(footer, ctx.butik);
+
+      await skrivTemafiler(tema.id, filer);
+      const avvikande = await verifieraTemafiler(tema.id, filer);
+      if (avvikande.length > 0) throw new Error(`Startsidan förvanskad: ${avvikande.join('; ')}`);
+      return { temaId: tema.id, filer: Object.keys(filer) };
+    },
+  },
+  {
     id: 'sidor',
     namn: 'Sidorna (villkor + kontakt)',
+    niva: 'butik',
     torrt: (ctx) => [...ctx.policyer.map((x) => `${x.namn} (/pages/${x.handle})`), 'Kontakt (/pages/contact)'],
     async kor(ctx) {
       for (const policy of ctx.policyer) await skrivSida(policy.handle, policy.namn, policy.body);
@@ -193,6 +301,7 @@ const STEG = [
   {
     id: 'policyer',
     namn: 'Officiella policyfälten',
+    niva: 'butik',
     torrt: (ctx) => ctx.policyer.map((x) => x.type),
     async kor(ctx) {
       const utanScope = [];
@@ -214,16 +323,27 @@ const STEG = [
   },
   {
     id: 'meny',
-    namn: 'Sidfotsmenyn',
-    torrt: (ctx) => ctx.menylankar.map((l) => `${l.titel} → ${l.url}`),
+    namn: 'Menyerna (huvudmeny + sidfot)',
+    niva: 'butik',
+    torrt: (ctx) => [
+      ...ctx.huvudmenylankar.map((l) => `huvudmeny: ${l.titel} → ${l.url}`),
+      ...ctx.menylankar.map((l) => `sidfot: ${l.titel} → ${l.url}`),
+    ],
     async kor(ctx) {
+      // Huvudmenyn får en rad per produkt (factory/FLERPRODUKT.md punkt 3).
+      // Bas-temat ärver annars källbutikens meny och länkar till 404.
+      const huvud = await skrivMeny('main-menu', 'Main menu', ctx.huvudmenylankar);
       const meny = await skrivMeny('footer', 'Footer menu', ctx.menylankar);
-      return { handle: meny.handle, orord: meny.orord === true };
+      return {
+        huvudmeny: { handle: huvud.handle, orord: huvud.orord === true },
+        sidfot: { handle: meny.handle, orord: meny.orord === true },
+      };
     },
   },
   {
     id: 'frakt',
     namn: 'Fraktzonerna',
+    niva: 'butik',
     torrt: (ctx) =>
       byggFraktplan(ctx.butik).map(
         (z) =>
@@ -247,6 +367,7 @@ const STEG = [
   {
     id: 'huvudmarknad',
     namn: 'Huvudmarknaden',
+    niva: 'butik',
     torrt: (ctx) => [`${ctx.butik.butik.huvudmarknad} med ${ctx.butik.butik.valuta} ska vara butikens hemmamarknad`],
     async kor(ctx) {
       // Butikens land och valuta sätts vid registreringen och kan inte bytas via
@@ -269,14 +390,15 @@ const STEG = [
     // tools/judgeme-import.mjs — inget nytt importsystem.
     id: 'recensioner',
     namn: 'Recensionerna → Judge.me',
-    torrt(ctx) {
-      const antal = (ctx.p.reviews ?? []).filter(Boolean).length;
-      const kalla = ctx.p.kallor?.drive_mapp
-        ? `recensions-CSV ur Drive-mappen ${ctx.p.kallor.drive_mapp}`
-        : `${antal} recensioner ur produktfilen (output/${ctx.p.produkt.id}/judgeme-import.csv)`;
+    niva: 'produkt',
+    torrt(ctx, pk) {
+      const antal = (pk.p.reviews ?? []).filter(Boolean).length;
+      const kalla = pk.p.kallor?.drive_mapp
+        ? `recensions-CSV ur Drive-mappen ${pk.p.kallor.drive_mapp}`
+        : `${antal} recensioner ur produktfilen (output/${pk.p.produkt.id}/judgeme-import.csv)`;
       return [kalla, `importeras med tools/judgeme-import.mjs mot butikens Judge.me`];
     },
-    async kor(ctx) {
+    async kor(ctx, pk) {
       const tokenEnv = ctx.butik.judgeme?.token_env ?? 'JUDGEME_API_TOKEN';
       const shopDomain = ctx.butik.judgeme?.shop_domain ?? process.env.JUDGEME_SHOP_DOMAIN;
       if (!process.env[tokenEnv] || !shopDomain) {
@@ -287,12 +409,12 @@ const STEG = [
         };
       }
 
-      const mapp = join(FACTORY_ROT, 'output', ctx.p.produkt.id);
+      const mapp = join(FACTORY_ROT, 'output', pk.p.produkt.id);
       mkdirSync(mapp, { recursive: true });
       let csv = join(mapp, 'judgeme-import.csv');
 
       // Drive-mappen vinner när den finns: samma CSV som resten av flödet använder.
-      const driveMapp = ctx.p.kallor?.drive_mapp;
+      const driveMapp = pk.p.kallor?.drive_mapp;
       if (driveMapp) {
         const id = String(driveMapp).match(/folders\/([-\w]+)/)?.[1] ?? String(driveMapp).trim();
         const ls = spawnSync('python3', [join(FACTORY_ROT, '..', 'tools', 'drive-ls.py'), id], {
@@ -311,7 +433,7 @@ const STEG = [
         csv = join(mapp, 'judgeme-import-drive.csv');
         writeFileSync(csv, await svar.text());
       } else if (!existsSync(csv)) {
-        const inneh = byggJudgeMeCsv(ctx.p);
+        const inneh = byggJudgeMeCsv(pk.p);
         if (!inneh) return { manuell: 'Produkten har inga recensioner — inget att importera.' };
         writeFileSync(csv, inneh);
       }
@@ -319,7 +441,7 @@ const STEG = [
       const arg = [
         join(FACTORY_ROT, '..', 'tools', 'judgeme-import.mjs'),
         csv,
-        '--product-handle', ctx.p.produkt.id,
+        '--product-handle', pk.p.produkt.id,
         '--store-url', `https://${shopDomain}`,
         '--shop-domain', shopDomain,
         '--token-env', tokenEnv,
@@ -331,81 +453,150 @@ const STEG = [
       return { csv: basename(csv), rapport: kor.stdout.trim().split('\n').slice(-3).join(' · ') };
     },
   },
+  {
+    // Sista spärren före överlämning: ingen text från bas-temats ursprungsbutik
+    // får finnas kvar (Axels bakläxa 2026-09-09). Körs efter startsidan, så
+    // den mäter det som FAKTISKT ligger i temat — inte vad fabriken tänkte.
+    id: 'kallskanning',
+    namn: 'Källskanningen (ingen Matstrumpor-text kvar)',
+    niva: 'butik',
+    torrt: () => [`${KANDA_SMITTADE.length} kända mallar + temats övriga JSON-filer skannas`],
+    async kor(ctx) {
+      const tema = await hamtaUtkastTema();
+      if (!tema) return { manuell: 'Inget utkasttema finns i butiken.' };
+      const filer = {};
+      for (const namn of KANDA_SMITTADE) {
+        const innehall = await hamtaTemafil(tema.id, namn);
+        if (innehall) filer[namn] = innehall;
+      }
+      const resultat = skannaTema(filer);
+      ctx.kallskanning = resultat;
+      if (!resultat.rent) {
+        throw new Error(`${kallrapport(resultat)}\nSkanningen är en spärr — butiken får inte lämnas så här.`);
+      }
+      return { skannade: Object.keys(filer).length, rent: true };
+    },
+  },
 ];
 
 // ---------------------------------------------------------------------------
 
-function lasKonfig(butiksfil, produktfil) {
+function lasKonfig(butiksfil, produktfiler) {
   // LAUNCH-INPUT läses först och läggs ovanpå råfilerna — sen valideras allt
   // som vanligt, så det Axel fyllt i mäts av exakt samma spärrar.
   const rabutik = lasYaml(readFileSync(butiksfil, 'utf8'));
-  const rap = lasYaml(readFileSync(produktfil, 'utf8'));
-  const launchInput = lasLaunchInput(join(FACTORY_ROT, 'LAUNCH-INPUT.yaml'));
-  if (launchInput) tillampaLaunchInput(rabutik, rap, launchInput.input);
+  const rader = produktfiler.map((fil) => lasYaml(readFileSync(fil, 'utf8')));
+  // LAUNCH-INPUT beskriver EN produkt — läggs bara på när butiken bär en.
+  // I en flerproduktsbutik vet filen inte vilken produkt den gäller, och att
+  // gissa vore att skriva Axels värden på fel produkt.
+  const launchInput = rader.length === 1 ? lasLaunchInput(join(FACTORY_ROT, 'LAUNCH-INPUT.yaml')) : null;
+  if (launchInput) tillampaLaunchInput(rabutik, rader[0], launchInput.input);
 
   const { fel: butiksfel, varningar: butiksvarningar } = valideraButik(rabutik);
   if (butiksfel.length > 0) stopp(`${butiksfel.length} kritiska fel i butikskonfigen`, butiksfel);
   const butik = rabutik;
 
-  const p = sammanfoga(butik, rap);
-  const { fel, varningar, nyckeltal } = validera(p);
-  if (fel.length > 0) stopp(`${fel.length} kritiska fel i produktfilen`, fel);
-  const brandvarningar = valideraBranding(butik?.branding);
-  return {
-    butik,
-    p,
-    varningar: [...butiksvarningar, ...brandvarningar, ...varningar],
-    nyckeltal,
-    launchInput,
-  };
+  const produkter = [];
+  const varningar = [...butiksvarningar, ...valideraBranding(butik?.branding)];
+  for (const [i, rad] of rader.entries()) {
+    const p = sammanfoga(butik, rad);
+    const { fel, varningar: pv, nyckeltal } = validera(p);
+    if (fel.length > 0) stopp(`${fel.length} kritiska fel i ${produktfiler[i]}`, fel);
+    produkter.push({ p, nyckeltal });
+    varningar.push(...pv.map((v) => `${p.produkt.id}: ${v}`));
+  }
+
+  // Prefixregeln (factory/FLERPRODUKT.md fynd 1): creative_prefix skiljer
+  // produkter åt i fyra system. Delar två produkter prefix blir prefixkartan,
+  // översättningskön, adsetuppslaget och commission-kopplingen tysta fel.
+  const prefix = produkter.map((x) => x.p.meta?.creative_prefix).filter(Boolean);
+  const dubbletter = prefix.filter((x, i) => prefix.indexOf(x) !== i);
+  if (dubbletter.length > 0) {
+    stopp('creative_prefix delas mellan produkter', [
+      `Prefixet "${dubbletter[0]}" står på mer än en produkt.`,
+      'Prefixet ska vara per PRODUKT — brandet hör hemma i kampanjnamnet.',
+    ]);
+  }
+
+  return { butik, produkter, varningar, launchInput };
 }
 
-function byggKontext(butik, p) {
-  const policyer = byggPolicyer(p);
+// Produktkontexten: allt som gäller EN produkt.
+function byggProduktKontext(p) {
   return {
-    butik,
     p,
     plan: byggPlan(p),
     metafalt: byggMetafalt(p, { kundUnderrubrik }),
+    produkt: null,
+  };
+}
+
+// Butikskontexten: allt som gäller HELA butiken, plus produktkontexterna.
+// Policyerna och kontaktsidan byggs ur den FÖRSTA produkten — de innehåller
+// bara bolagsuppgifter, som kommer ur butiksfilen och är lika för alla.
+function byggButiksKontext(butik, produkter) {
+  const produktkontexter = produkter.map((x) => byggProduktKontext(x.p));
+  const policyer = byggPolicyer(produkter[0].p);
+  const kollektionHandle = butik?.butik?.kollektion?.handle ?? 'sortimentet';
+
+  return {
+    butik,
+    p: produkter[0].p, // representant för butiksgemensamma texter
+    produkter: produktkontexter,
     policyer,
+    kollektion: {
+      handle: kollektionHandle,
+      titel: butik?.butik?.kollektion?.titel ?? 'Sortimentet',
+      beskrivning: butik?.butik?.kollektion?.beskrivning ?? '',
+    },
+    // Huvudmenyn: en rad per produkt (FLERPRODUKT.md punkt 3).
+    huvudmenylankar: [
+      ...(produktkontexter.length > 1
+        ? [{ titel: butik?.butik?.kollektion?.titel ?? 'Sortimentet', url: `/collections/${kollektionHandle}` }]
+        : []),
+      ...produktkontexter.map((pk) => ({
+        titel: pk.p.produkt.menynamn ?? pk.p.produkt.namn,
+        url: `/products/${pk.p.produkt.id}`,
+      })),
+      { titel: 'Kontakt', url: '/pages/contact' },
+    ],
     menylankar: [
       ...policyer.map((x) => ({ titel: x.namn, url: `/pages/${x.handle}` })),
       { titel: 'Kontakt', url: '/pages/contact' },
     ],
-    produkt: null,
     shop: null,
   };
 }
 
 // Empty-state-QA: mallfilerna och den byggda sidan. Ett fel här är en bugg i
 // fabriken, inte i produktdatan — därför hårt stopp, aldrig en varning.
-function korTemaQa(ctx, forhandsvisning) {
+function korTemaQa(pk, forhandsvisning) {
   const fel = [...qaSektionsfiler(SEKTIONER), ...qaRenderadSida(forhandsvisning)];
   if (fel.length > 0) stopp('tema-QA (empty states)', fel);
-  const { doljs } = sektionerSomVisas(ctx.metafalt.map((m) => m.key));
+  const { doljs } = sektionerSomVisas(pk.metafalt.map((m) => m.key));
   return { doljs };
 }
 
-function skrivUtdatafiler(ctx, varningar, qa) {
-  const mapp = join(FACTORY_ROT, 'output', ctx.p.produkt.id);
+function skrivUtdatafiler(ctx, pk, varningar, qa) {
+  const mapp = join(FACTORY_ROT, 'output', pk.p.produkt.id);
   mkdirSync(mapp, { recursive: true });
-  const forhandsvisning = byggForhandsvisning(ctx.p);
-  const temaQa = korTemaQa(ctx, forhandsvisning);
+  const forhandsvisning = byggForhandsvisning(pk.p);
+  const temaQa = korTemaQa(pk, forhandsvisning);
   console.log(
-    `✅ Tema-QA grön.${temaQa.doljs.length > 0 ? ` Sektioner som döljer sig (data saknas): ${temaQa.doljs.join(', ')}.` : ' Alla sektioner har data.'}`
+    `✅ Tema-QA grön för ${pk.p.produkt.id}.${temaQa.doljs.length > 0 ? ` Sektioner som döljer sig (data saknas): ${temaQa.doljs.join(', ')}.` : ' Alla sektioner har data.'}`
   );
   writeFileSync(join(mapp, 'forhandsvisning.html'), forhandsvisning);
-  writeFileSync(join(mapp, 'plan.json'), `${JSON.stringify({ input: ctx.plan.input, metafalt: ctx.metafalt }, null, 2)}\n`);
+  writeFileSync(join(mapp, 'plan.json'), `${JSON.stringify({ input: pk.plan.input, metafalt: pk.metafalt }, null, 2)}\n`);
   for (const policy of ctx.policyer) {
     writeFileSync(join(mapp, `policy-${policy.type.toLowerCase()}.html`), policy.body);
   }
   // Judge.me-underlaget: importeras med tools/judgeme-import.mjs efter launch.
-  const judgeMeCsv = byggJudgeMeCsv(ctx.p);
+  const judgeMeCsv = byggJudgeMeCsv(pk.p);
   if (judgeMeCsv) writeFileSync(join(mapp, 'judgeme-import.csv'), judgeMeCsv);
   // VA:ns manuella klick, i rätt ordning — hela hennes att-göra efter bygget.
-  writeFileSync(join(mapp, 'CHECKLISTA.md'), byggChecklista(ctx.p, ctx.butik));
+  writeFileSync(join(mapp, 'CHECKLISTA.md'), byggChecklista(pk.p, ctx.butik));
   const qaRader = [
-    `# QA — ${ctx.p.produkt.namn}`,
+    `# QA — ${pk.p.produkt.namn}`,
     '',
     ...(qa
       ? qa.punkter.map((x) => `- [${x.utfall === 'ok' ? 'x' : ' '}] ${IKON[x.utfall]} ${x.namn}: ${x.detalj}`)
@@ -417,21 +608,31 @@ function skrivUtdatafiler(ctx, varningar, qa) {
   return mapp;
 }
 
-async function korQa(ctx) {
-  const produkt = await hamtaProduktViaHandle(ctx.p.produkt.id);
-  return kontrolleraLaunch(ctx.p, {
+async function korQa(ctx, pk) {
+  const produkt = await hamtaProduktViaHandle(pk.p.produkt.id);
+  return kontrolleraLaunch(pk.p, {
     shop: ctx.shop,
     produkt,
     policyer: ctx.shop?.shopPolicies ?? null,
   });
 }
 
-async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
-  const { butik, p, varningar, nyckeltal, launchInput } = lasKonfig(butiksfil, produktfil);
-  const ctx = byggKontext(butik, p);
+// Butikssteget har sitt eget state — annars skulle temat, sidorna och
+// fraktzonerna bokföras en gång per produkt och --resume tro att de var
+// ogjorda för produkt 2.
+const BUTIKSNYCKEL = '_butik';
+
+async function huvudflode({ butiksfil, produktfiler, dryRun, resume, launch }) {
+  const { butik, produkter, varningar, launchInput } = lasKonfig(butiksfil, produktfiler);
+  const ctx = byggButiksKontext(butik, produkter);
   const lage = dryRun ? 'DRY-RUN' : launch ? 'LAUNCH' : resume ? 'RESUME' : 'BUILD';
-  console.log(`\nOPS Factory · ${p.produkt.namn} · butik ${butik.butik.brand} · ${lage}\n`);
-  console.log(`✅ Konfig validerad. Break-even-ROAS ${nyckeltal.breakEvenRoas}, marginal ${nyckeltal.marginal} ${p.ekonomi.valuta}.`);
+  const rubrik = produkter.map((x) => x.p.produkt.namn).join(' + ');
+  console.log(`\nOPS Factory · ${rubrik} · butik ${butik.butik.brand} · ${lage}\n`);
+  for (const { p, nyckeltal } of produkter) {
+    console.log(
+      `✅ ${p.produkt.id}: break-even-ROAS ${nyckeltal.breakEvenRoas}, marginal ${nyckeltal.marginal} ${p.ekonomi.valuta}, prefix ${p.meta?.creative_prefix ?? '(saknas)'}.`
+    );
+  }
   if (launchInput) {
     console.log(
       `📋 LAUNCH-INPUT: ${launchInput.ifyllt.length} av ${launchInput.ifyllt.length + launchInput.saknas.length} ifyllda.${
@@ -442,15 +643,22 @@ async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
 
   if (dryRun) {
     for (const steg of STEG) {
-      console.log(`\n▫️ ${steg.namn}`);
-      for (const rad of steg.torrt(ctx)) console.log(`   ${rad}`);
+      if (steg.niva === 'produkt') {
+        for (const pk of ctx.produkter) {
+          console.log(`\n▫️ ${steg.namn} — ${pk.p.produkt.id}`);
+          for (const rad of steg.torrt(ctx, pk)) console.log(`   ${rad}`);
+        }
+      } else {
+        console.log(`\n▫️ ${steg.namn}`);
+        for (const rad of steg.torrt(ctx)) console.log(`   ${rad}`);
+      }
     }
-    const mapp = skrivUtdatafiler(ctx, varningar, null);
+    const mappar = ctx.produkter.map((pk) => skrivUtdatafiler(ctx, pk, varningar, null));
     if (varningar.length > 0) {
       console.log(`\n⚠️  ${varningar.length} varningar:`);
       for (const v of varningar) console.log(`   • ${v}`);
     }
-    console.log(`\nOutput: ${mapp}`);
+    for (const mapp of mappar) console.log(`\nOutput: ${mapp}`);
     console.log('\n✅ Dry-run klar — inget skickades till Shopify.\n');
     return;
   }
@@ -463,43 +671,66 @@ async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
     stopp('Shopify-kopplingen', [e.message]);
   }
 
-  const state = lasState(butik.butik.id, p.produkt.id);
+  const butiksstate = lasState(butik.butik.id, BUTIKSNYCKEL);
+  const produktstate = new Map(
+    ctx.produkter.map((pk) => [pk.p.produkt.id, lasState(butik.butik.id, pk.p.produkt.id)])
+  );
   const manuella = [];
 
-  for (const steg of STEG) {
+  // Ett steg körs en gång per butik, eller en gång per produkt. Varje körning
+  // bokförs i SITT state — därför kan en produkt läggas till i en färdig butik
+  // utan att butikens steg görs om.
+  async function korSteg(steg, pk) {
+    const state = pk ? produktstate.get(pk.p.produkt.id) : butiksstate;
+    const etikett = pk ? `${steg.namn} — ${pk.p.produkt.id}` : steg.namn;
     if (resume && arKlart(state, steg.id)) {
-      console.log(`⏭  ${steg.namn} — redan grönt, hoppar över.`);
-      continue;
+      console.log(`⏭  ${etikett} — redan grönt, hoppar över.`);
+      return;
     }
     try {
-      const resultat = await steg.kor(ctx);
+      const resultat = await steg.kor(ctx, pk);
       if (resultat?.manuell) {
-        manuella.push(`${steg.namn}: ${resultat.manuell}`);
-        console.log(`🖐 ${steg.namn}: ${resultat.manuell}`);
+        manuella.push(`${etikett}: ${resultat.manuell}`);
+        console.log(`🖐 ${etikett}: ${resultat.manuell}`);
         // Ett manuellt steg är inte klart — resume ska försöka igen.
       } else {
         markeraKlart(state, steg.id, resultat);
-        console.log(`✅ ${steg.namn}`);
+        console.log(`✅ ${etikett}`);
       }
     } catch (e) {
       skrivState(state);
-      stopp(`steget "${steg.namn}"`, [e.message, 'Rätta felet och kör igen med --resume.']);
+      stopp(`steget "${etikett}"`, [e.message, 'Rätta felet och kör igen med --resume.']);
     }
     skrivState(state);
   }
 
-  // QA körs alltid färskt — aldrig ur state.
-  const qa = await korQa(ctx);
-  console.log('\nQA:');
-  for (const punkt of qa.punkter) console.log(`${IKON[punkt.utfall]} ${punkt.namn}: ${punkt.detalj}`);
-  state.qa = { gron: qa.gron, kritiska: qa.kritiska.map((k) => k.namn), tid: new Date().toISOString() };
-  skrivState(state);
+  for (const steg of STEG) {
+    if (steg.niva === 'produkt') {
+      for (const pk of ctx.produkter) await korSteg(steg, pk);
+    } else {
+      await korSteg(steg, null);
+    }
+  }
 
-  const mapp = skrivUtdatafiler(ctx, varningar, qa);
-  console.log(`\nOutput: ${mapp}`);
+  // QA körs alltid färskt — aldrig ur state — och en gång PER PRODUKT.
+  // (FLERPRODUKT.md punkt 4: annars kan produkt 2 vara trasig medan QA är grön.)
+  const qaPerProdukt = [];
+  for (const pk of ctx.produkter) {
+    const qa = await korQa(ctx, pk);
+    qaPerProdukt.push({ pk, qa });
+    console.log(`\nQA — ${pk.p.produkt.id}:`);
+    for (const punkt of qa.punkter) console.log(`${IKON[punkt.utfall]} ${punkt.namn}: ${punkt.detalj}`);
+    const state = produktstate.get(pk.p.produkt.id);
+    state.qa = { gron: qa.gron, kritiska: qa.kritiska.map((k) => k.namn), tid: new Date().toISOString() };
+    skrivState(state);
+    const mapp = skrivUtdatafiler(ctx, pk, varningar, qa);
+    console.log(`Output: ${mapp}`);
+  }
+  const allaGrona = qaPerProdukt.every((x) => x.qa.gron);
+  const kritiskaTotalt = qaPerProdukt.reduce((n, x) => n + x.qa.kritiska.length, 0);
 
   if (!launch) {
-    console.log(`\nSTATUS: REVIEW — inget är publicerat.${qa.gron ? ' QA är grön.' : ` QA har ${qa.kritiska.length} kritiska punkter.`}`);
+    console.log(`\nSTATUS: REVIEW — inget är publicerat.${allaGrona ? ' QA är grön för alla produkter.' : ` QA har ${kritiskaTotalt} kritiska punkter.`}`);
     if (manuella.length > 0) {
       console.log('NEEDS ME:');
       for (const m of manuella) console.log(`   • ${m}`);
@@ -508,18 +739,27 @@ async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
     return;
   }
 
-  // --launch: bara när QA är helt grön.
-  if (!qa.gron) {
-    stopp(`QA har ${qa.kritiska.length} kritiska punkter — LAUNCH vägrar`, qa.kritiska.map((k) => `${k.namn}: ${k.detalj}`));
+  // --launch: bara när QA är grön för VARJE produkt. En butik får aldrig gå
+  // live med halva sortimentet i 404.
+  if (!allaGrona) {
+    stopp(
+      `QA har ${kritiskaTotalt} kritiska punkter — LAUNCH vägrar`,
+      qaPerProdukt.flatMap((x) => x.qa.kritiska.map((k) => `${x.pk.p.produkt.id} · ${k.namn}: ${k.detalj}`))
+    );
   }
-  const produkt = await hamtaProduktViaHandle(p.produkt.id);
-  const resultat = await publiceraProdukt(produkt.id);
-  markeraKlart(state, 'launch', { status: resultat.status, publicerad: resultat.publicerad });
-  skrivState(state);
-  console.log(`\n✅ LIVE: produkten är ${resultat.status}${resultat.publicerad ? ` och publicerad i ${resultat.kanal}` : ''}.`);
-  if (!resultat.publicerad) console.log(`🖐 ${resultat.notis ?? 'Publicera produkten i Online Store-kanalen för hand.'}`);
+  for (const { pk } of qaPerProdukt) {
+    const produkt = await hamtaProduktViaHandle(pk.p.produkt.id);
+    const resultat = await publiceraProdukt(produkt.id);
+    const state = produktstate.get(pk.p.produkt.id);
+    markeraKlart(state, 'launch', { status: resultat.status, publicerad: resultat.publicerad });
+    skrivState(state);
+    console.log(`\n✅ LIVE: ${pk.p.produkt.namn} är ${resultat.status}${resultat.publicerad ? ` och publicerad i ${resultat.kanal}` : ''}.`);
+    if (!resultat.publicerad) console.log(`🖐 ${resultat.notis ?? 'Publicera produkten i Online Store-kanalen för hand.'}`);
+  }
   console.log('\nKvar att göra för hand:');
-  for (const m of qa.manuella) console.log(`   • ${m.namn}: ${m.detalj}`);
+  for (const { pk, qa } of qaPerProdukt) {
+    for (const m of qa.manuella) console.log(`   • ${pk.p.produkt.id} · ${m.namn}: ${m.detalj}`);
+  }
   console.log('   • Publicera temat i Shopify-admin (API:t tillåter det inte).');
   console.log('   • Starta annonserna — fabriken rör aldrig annonskontot.\n');
 }
@@ -557,26 +797,32 @@ async function huvud() {
 
   laddaEnv();
 
-  let butiksfil;
-  let produktfil;
   const forsta = (positioner[0] ?? '').toUpperCase();
   if (forsta === 'BUILD' || forsta === 'LAUNCH') {
-    // Gamla formen: BUILD/LAUNCH <produktfil> [--butik <id>]
-    produktfil = positioner[1];
-    butiksfil = valjButik(argv);
-    if (!produktfil) stopp('produktfil saknas', ['Användning: node factory/ops.mjs BUILD <produktfil.yaml>']);
-    return huvudflode({ butiksfil, produktfil, dryRun, resume, launch: launch || forsta === 'LAUNCH' });
+    // Gamla formen: BUILD/LAUNCH <produktfil …> [--butik <id>]
+    const produktfiler = positioner.slice(1);
+    const butiksfil = valjButik(argv);
+    if (produktfiler.length === 0) {
+      stopp('produktfil saknas', ['Användning: node factory/ops.mjs BUILD <produktfil.yaml> [fler …]']);
+    }
+    return huvudflode({ butiksfil, produktfiler, dryRun, resume, launch: launch || forsta === 'LAUNCH' });
   }
 
-  [butiksfil, produktfil] = positioner;
-  if (!butiksfil || !produktfil) {
-    console.error('Användning: node factory/ops.mjs <butik.yaml> <produkt.yaml> [--dry-run] [--resume] [--launch]');
+  // Nya formen: <butik.yaml> <produkt.yaml> [<produkt2.yaml> …]
+  // Butiksfilen känns igen på att den ligger i butiker/ — ordningen spelar
+  // därför ingen roll, och en flerproduktsbutik listar bara fler filer.
+  const butiksfiler = positioner.filter((f) => basename(dirname(f)) === 'butiker');
+  const produktfiler = positioner.filter((f) => basename(dirname(f)) !== 'butiker');
+  const butiksfil = butiksfiler[0] ?? produktfiler.shift();
+
+  if (!butiksfil || produktfiler.length === 0) {
+    console.error('Användning: node factory/ops.mjs <butik.yaml> <produkt.yaml> [fler produktfiler …] [--dry-run] [--resume] [--launch]');
     process.exit(1);
   }
-  if (basename(dirname(butiksfil)) !== 'butiker' && basename(dirname(produktfil)) === 'butiker') {
-    [butiksfil, produktfil] = [produktfil, butiksfil];
+  if (butiksfiler.length > 1) {
+    stopp('flera butiksfiler angavs', ['En körning bygger EN butik. Ange bara en fil ur butiker/.']);
   }
-  return huvudflode({ butiksfil, produktfil, dryRun, resume, launch });
+  return huvudflode({ butiksfil, produktfiler, dryRun, resume, launch });
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
