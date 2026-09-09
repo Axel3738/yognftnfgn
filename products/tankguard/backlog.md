@@ -55,8 +55,16 @@ Att ärva någon annans är att hitta på data. Verktyget finns —
 `tools/judgeme-import.mjs`, samma väg som `/no-recensioner` — men det är ett
 butiksjobb, inte ett creative-jobb.
 
-**Status:** blockerad. Tio annonser (fyra RV, fyra SP, två slutkort) väntar på
-att butiken får egna recensioner.
+**Status:** inte längre blockerande för launch. Annonserna är byggda 2026-09-09
+**utan** socialt bevis: stjärnor, betyg, kundnamn och citat är utbytta mot
+produktpåståenden i samma layout (`factory/bildplaster.py`), och de två
+slutkorten har fått recensionsraden bortmålad (`factory/slutkort.py`).
+
+Det som väntar är alltså inte annonserna utan **vinkeln**. Får butiken egna
+recensioner går RV- och SP-blocket att köra som det var tänkt, med riktigt
+socialt bevis — och då blir det ett nytt test mot de produktpåstående-versioner
+som nu ligger uppe. Det är en bättre jämförelse än den ursprungliga planen:
+samma bild, samma layout, enda skillnaden är om raden bär ett kundomdöme.
 
 ---
 
