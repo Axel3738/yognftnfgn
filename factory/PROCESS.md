@@ -160,6 +160,51 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+- **Anslutningskontrollen ska döma på butikens NAMN, inte på om det finns
+  en state-fil.** `/ny-ops` steg 1 har en spärr mot gammal miljö formulerad
+  som "har `SHOPIFY_SHOP`-butiken redan en state-fil under `factory/state/`".
+  Den spärren räcker inte: mätt 2026-09-09 stod miljöns tre variabler kvar på
+  **TankGuard** (`y1sj1i-3d.myshopify.com`), och TankGuard har ingen state-fil
+  — bara HeimGuard har det. State-filstestet hade alltså släppt igenom bygget
+  rakt in i förra butiken. Det som fångade det var `kontrolleraAnslutning()`,
+  som svarade `name: "TankGuard"`. **Läs alltid ut butikens namn och jämför med
+  produkten du bygger** innan första skrivningen; en butik som redan har ett
+  brandnamn är per definition inte den nya butiken.
+- **Kaching-nivåerna läses ur ett JSON-script i HTML:en, inte ur en renderad
+  widget.** Kommandot säger "bundle-widgeten renderas där", men widgeten
+  ritas av JS i webbläsaren — `curl` på produktsidan ger ingen tabell.
+  Nivåerna ligger ändå i sidan, ordagrant, i
+  `<script class="kaching-bundles-deal-block-settings" type="application/json">`:
+  `dealBars[]` (antal, `discountType`, `discountValue`) plus
+  `preselectedDealBarId` som säger vilken nivå som är förvald. Bevisat på
+  damaskerna 2026-09-09 — noll credits, ingen webbläsare, ingen inloggning
+  mot källbutiken. Spara råkonfigen i `output/<id>/kalla-kaching-paket.json`
+  så nivåerna går att granska i efterhand.
+- **Playwright når INTE ut på nätet i molnsessionen.** Chromium finns
+  förinstallerat, men varje `page.goto()` mot en extern sajt dör på
+  `ERR_CONNECTION_RESET` (agentproxyns tunnel stängs mitt i utbytet, mätt
+  2026-09-09 mot baverbutiken.se, både med och utan `proxy:`-inställning).
+  Lokala `file://`-sidor funkar däremot — det är så loggvarianterna
+  renderas till PNG. Bygg alltså aldrig ett fabrikssteg som förutsätter
+  att en publik sida kan renderas i webbläsare; läs HTML:en med `curl`
+  och plocka JSON:en ur den.
+- **`whois` finns inte i containern.** Domänkollen i brand-steget görs med
+  RDAP: `https://rdap.org/domain/<domän>` (404 = ledig, 200 = tagen), följ
+  omdirigeringen med `curl -L`. Registrets egen `rdap.iis.se` är
+  proxyblockerad (502 på CONNECT). Dubbelkolla med ett DNS-uppslag —
+  ingen A-post styrker att domänen är oregistrerad.
+- **`ops.mjs` skapar produkten som DRAFT, inte ACTIVE.** `build-store.mjs`
+  hårdkodar `status: 'DRAFT'` och ACTIVE sätts först av `publiceraProdukt()`
+  under `--launch`. Regeln i fas 2 steg 6 (produkten ska vara ACTIVE under
+  bygget) uppfylls alltså inte av motorn — **sessionen måste aktivera
+  produkten själv** efter bygget, annars upprepas TankGuard-bakläxan med
+  404 i menyn och "Exempel på produktnamn" i kundvyn.
+- **Den minimala YAML-läsaren förstår inte `[]`.** `factory/yaml.mjs` läser
+  `videor: []` som strängen `"[]"`, och nästa `.filter()` kraschar hela
+  körningen med `((intermediate value) ?? []).filter is not a function` —
+  ett fel som inte säger något om vilken fil eller rad det gäller. Skriv
+  tomma listor som mallen gör: nyckeln följd av `- ""`, eller bara nyckeln
+  med kommentarer under.
 - **Bas-zip:ens startsida pekar på MATSTRUMPOR** (mätt 2026-09-09 i
   `factory/tema/ops-tema.zip`: `templates/index.json` har
   `produkt.product = "sushi-strumpor"` och `sortiment.collection =

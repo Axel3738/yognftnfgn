@@ -52,11 +52,18 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    `SHOPIFY_ADMIN_TOKEN_<butiks-id>` där (det blir MÅNGA butiker:
    miljöns tre variabler skrivs över per bygge, men varje butiks egen
    token ska finnas kvar så gamla butiker förblir nåbara).
-   ⚠️ SPÄRR MOT GAMMAL MILJÖ: har `SHOPIFY_SHOP`-butiken redan en
-   state-fil under `factory/state/` är miljön inte uppdaterad för den
-   nya butiken — stoppa och be VA:n skriva över de tre variablerna.
-   Verifiera med fabrikens anslutningskontroll att domänen är DEN NYA
-   butiken — fel butik = stoppa direkt.
+   ⚠️ SPÄRR MOT GAMMAL MILJÖ, i den här ordningen:
+   (a) **Butikens NAMN ur anslutningskontrollen är facit.** Svarar den ett
+   brandnamn som redan finns i `factory/butiker/` eller `factory/output/`
+   är miljön kvar på en tidigare butik — stoppa direkt. En ny butik på
+   free trial heter aldrig något färdigt brand.
+   (b) State-fil under `factory/state/` för samma butik = samma sak.
+   ⚠️ (b) ENSAM RÄCKER INTE. Mätt 2026-09-09: miljön stod kvar på
+   **TankGuard** (`y1sj1i-3d.myshopify.com`), som saknar state-fil — bara
+   HeimGuard har en. State-filstestet hade släppt igenom bygget rakt in i
+   förra butiken; namnet var det som fångade det.
+   Stoppa och be VA:n skriva över de tre variablerna. Fel butik = stoppa
+   direkt, före första skrivningen.
    ⚠️ **Shopify-MCP:n är FÖRBJUDEN i hela den här rutinen** (incident
    2026-09-07: MCP:n i molnsessionen stod på HeimGuard och rutinen
    försökte växla butik med `switch-shop`). MCP:n pekar på fel butik,
@@ -67,8 +74,18 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 2. **Hämta produktdata** från källänken (`/products/<handle>.json` +
    Judge.me-recensioner). Aldrig påhittade specs. Pris från produktsidan.
    Källans Kaching-paketnivåer läses ur den PUBLIKA produktsidans HTML
-   (bundle-widgeten renderas där) — aldrig via MCP mot källbutiken.
+   — aldrig via MCP mot källbutiken, och aldrig genom att rendera sidan
+   i en webbläsare (Playwright når inte ut genom proxyn, mätt 2026-09-09).
+   Nivåerna ligger som ren JSON i taggen
+   `<script class="kaching-bundles-deal-block-settings" type="application/json">`:
+   `dealBars[]` ger antal + `discountType`/`discountValue`, och
+   `preselectedDealBarId` säger vilken nivå källan har förvald.
+   Spara råkonfigen som `output/<id>/kalla-kaching-paket.json`.
    Går de inte att läsa: fråga Axel efter nivåerna, växla aldrig butik.
+   ⚠️ Källan kan ha NOLL recensioner — kolla både Judge.me
+   (`number_of_reviews`) och Loox-metafälten i sidans HTML. Är båda tomma
+   finns det inget att importera i steg 10: säg det rakt ut i
+   slutrapporten, hitta aldrig på recensioner.
 3. **Brand-steget** (`factory/PROCESS.md` fas 1): analysera köpare, emotion
    och förväntat brand → positionering, tonalitet, färger, typografi i
    `branding:`-blocket. **Brandingen byggs från noll utifrån produkten och

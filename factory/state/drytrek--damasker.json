@@ -1,0 +1,79 @@
+{
+  "butik": "drytrek",
+  "produkt": "damasker",
+  "datum": "2026-09-09",
+  "lage": "BLOCKERAD — ingen Shopify-butik finns ännu för DryTrek",
+  "blockering": {
+    "vad": "Miljöns SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET pekar på TankGuard (y1sj1i-3d.myshopify.com), inte på en ny butik.",
+    "hur_det_upptacktes": "kontrolleraAnslutning() svarade name: 'TankGuard'. State-filstestet i /ny-ops steg 1 hade INTE fångat det — TankGuard saknar state-fil.",
+    "loses_av": "VA:n gör checklistans steg 1–2 för DryTrek: ny free trial, egen app på dev.shopify.com, och skriver över de tre miljövariablerna.",
+    "sen": "Kör /ny-ops igen med samma två konfigfiler — allt förarbete ligger klart."
+  },
+  "steg": {
+    "anslutningskontroll": {
+      "klar": true,
+      "resultat": "FEL BUTIK",
+      "domän": "y1sj1i-3d.myshopify.com",
+      "butiksnamn": "TankGuard",
+      "notis": "Token hämtad med client_credentials och sparad som SHOPIFY_ADMIN_TOKEN_tankguard i factory/.env. SHOPIFY_STORE_DOMAIN/SHOPIFY_ADMIN_TOKEN sattes MEDVETET INTE, så inget senare steg kan råka skriva till TankGuard."
+    },
+    "produktdata": {
+      "klar": true,
+      "kalla": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+      "produkt_id": "16454828720477",
+      "pris": 389,
+      "jamforpris": 649,
+      "varianter": 18,
+      "bilder": 22,
+      "recensioner": 0,
+      "notis": "Judge.me svarar number_of_reviews 0 och Loox-metafälten i sidans HTML är null. Källan har alltså NOLL recensioner — slutstegets import har inget att importera."
+    },
+    "paketnivaer_kalla": {
+      "klar": true,
+      "kalla": "kaching-bundles-deal-block-settings i källsidans HTML",
+      "nivaer": "1 par 389 kr (0 %) · 2 par 661,30 kr (15 %, FÖRVALD, badge 'Mest populär') · 3 par 933,60 kr (20 %)",
+      "preselectedDealBarId": "st2b",
+      "notis": "Mitten redan förvald på källan — stämmer med fabriksregeln ⌈n/2⌉. Rådata i output/damasker/kalla-kaching-paket.json, A/B-planen i output/damasker/PAKETNIVAER.md."
+    },
+    "brand": {
+      "klar": true,
+      "namn": "DryTrek",
+      "doman": "drytrek.se",
+      "supportmail": "hello@drytrek.se",
+      "domankoll": "RDAP via rdap.org 2026-09-09 (whois saknas i containern) + DNS: drytrek.se LEDIG, drytrek.no LEDIG, drytrek.com TAGEN. Ingen A-post på .se eller .no.",
+      "logga": "Variant B vald av tre — granmörk cirkel, tre toppar, orange torrlinje, ordmärket DRYTREK. Filer i output/damasker/logo-a|b|c.png, jämförelsen i logo-varianter.png.",
+      "notis": "Medvetet INTE ett tredje '-Guard' efter HeimGuard och TankGuard."
+    },
+    "konfig": {
+      "klar": true,
+      "butiksfil": "factory/butiker/drytrek.yaml",
+      "produktfil": "factory/produkter/damasker.yaml",
+      "dry_run": "grön — break-even-ROAS 1,60, marginal 243 SEK, tema-QA grön",
+      "varningar": [
+        "media.gif_problem saknas — redigerarjobb, källan har inga gifar",
+        "media.media_losning saknas — samma sak",
+        "reviews: 0 — källan har inga att importera",
+        "meta.page_id saknas — Meta-sidan skapas av VA:n i BM",
+        "meta.pixel_id saknas — skapas när sidan finns"
+      ]
+    },
+    "checklista": {
+      "klar": true,
+      "fil": "factory/output/damasker/CHECKLISTA.md",
+      "notis": "Genererad med STORE NAME DryTrek, DOMAIN drytrek.se, STORE EMAIL hello@drytrek.se."
+    },
+    "shopify_bygge": { "klar": false, "notis": "Blockerad — ingen butik." },
+    "paket_ab": { "klar": false, "notis": "Planerade i PAKETNIVAER.md, inte byggda." },
+    "bilder_sprak": { "klar": false, "notis": "Tre källbilder har inbränd svensk text (mått, spänne, kardborre) och ska språkversioneras för /nb." },
+    "marknad_no": { "klar": false },
+    "recensioner": { "klar": false, "notis": "Källan har noll recensioner — frågan måste lösas innan butiken tar trafik." },
+    "pixel": { "klar": false },
+    "discord": { "klar": false }
+  },
+  "kallkoppling": {
+    "annonskonto": "1867947880635861",
+    "kampanj_id": "120250009391470291",
+    "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+    "utfall_avlast_2026_09_09": "12 198 kr spend, 58 köp, CPA 210 kr över 18 annonser. Vinnaren Damasker_PD_1: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr — 79 % av spenden, 88 % av köpen. Näst bästa vinkel (SP) ligger på ROAS 1,42, alltså UNDER break-even 1,60."
+  }
+}
