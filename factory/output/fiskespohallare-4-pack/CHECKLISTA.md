@@ -22,6 +22,9 @@ Everything not on this list is done by Claude Code.
   `SHOPIFY_CLIENT_SECRET` = the Client secret
 - [ ] Back in the app → **Distribution** → Custom distribution → enter the store's .myshopify.com address → **Generate link** → open it → **Install app**
   Note: keys go ONLY in the Environment – never in chat or email.
+  If a Client secret ever ends up in a chat: the app → Settings → Client secret
+  → generate a new one → put the new value in the Environment. The build keeps
+  running on the token it already has, so this never blocks anything.
 
 ## 3. Start the build
 - [ ] Write **/ny-ops** + the product link in Claude Code
