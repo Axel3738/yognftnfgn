@@ -44,7 +44,9 @@ export function stamAv({ kallannonser, domar, media, byggda, marknad = 'SE' }) {
     return {
       namn: k.namn,
       typ: k.typ,
-      aktiv: k.med,
+      // SE: `med` = ACTIVE hela vägen upp. NO: kampanjen är nedlagd med flit
+      // (marknadsbeslut, 6 kr spend) — räkna annons + adset, som media-upload.
+      aktiv: marknad === 'NO' ? k.status === 'ACTIVE' && k.adset?.status === 'ACTIVE' : k.med,
       status: k.status,
       dom: d?.dom ?? 'okänd',
       attgora: d?.attgöra ?? d?.attgora ?? null,
@@ -74,13 +76,19 @@ if (process.argv[1] && process.argv[1].endsWith('rakning.mjs')) {
   const produktId = arg.find((a) => !a.startsWith('--') && !String(arg[arg.indexOf(a) - 1] ?? '').startsWith('--'));
   const marknad = arg.includes('--marknad') ? arg[arg.indexOf('--marknad') + 1] : 'SE';
 
+  if (marknad !== 'SE' && marknad !== 'NO') throw new Error(`--marknad ${marknad} finns inte. Välj SE eller NO.`);
+  // ⚠️ Varje marknad har EGNA domar och EGEN media. Mätt 2026-09-09: räkningen
+  // för NO läste de svenska filerna, dömde alla 16 norska "okänd" och
+  // rapporterade ändå grönt — för att inget skulle laddas upp och inget
+  // saknades. En räkning som råkar bli rätt är ingen räkning.
+  const suffix = marknad === 'NO' ? '-no' : '';
   const ut = join(ROT, 'output', produktId);
-  for (const f of ['kallannonser.json', 'brand-detektor.json', 'media-i-malkontot.json']) {
-    if (!existsSync(join(ut, f))) throw new Error(`Saknar ${f} — kör stegen före räkningen först.`);
+  for (const f of ['kallannonser.json', `brand-detektor${suffix}.json`, `media-i-malkontot${suffix}.json`]) {
+    if (!existsSync(join(ut, f))) throw new Error(`Saknar ${f} — kör stegen före räkningen för ${marknad} först.`);
   }
   const kallannonser = JSON.parse(readFileSync(join(ut, 'kallannonser.json'), 'utf8'));
-  const domar = JSON.parse(readFileSync(join(ut, 'brand-detektor.json'), 'utf8'));
-  const media = JSON.parse(readFileSync(join(ut, 'media-i-malkontot.json'), 'utf8'));
+  const domar = JSON.parse(readFileSync(join(ut, `brand-detektor${suffix}.json`), 'utf8'));
+  const media = JSON.parse(readFileSync(join(ut, `media-i-malkontot${suffix}.json`), 'utf8'));
   const p = lasYaml(readFileSync(join(ROT, 'produkter', `${produktId}.yaml`), 'utf8'));
   const brand = (p.brand?.namn ?? '').toUpperCase();
 

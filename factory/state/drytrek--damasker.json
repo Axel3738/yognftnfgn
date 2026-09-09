@@ -55,7 +55,7 @@
     }
   },
   "datum": "2026-09-09",
-  "lage": "BUTIKEN KLAR PÅ SVENSKA OCH NORSKA · SE-kampanj ombyggd till ABO · NO-kampanj under bygge (PAUSED)",
+  "lage": "BUTIKEN KLAR PÅ SVENSKA OCH NORSKA · SE + NO byggda som ABO per vinkel, allt PAUSED · väntar på Axels aktivering",
   "kallkoppling": {
     "annonskonto": "1867947880635861",
     "kampanj_id": "120250009391470291",
@@ -246,6 +246,17 @@
         "Damasker_SP_4_H1 (dom okänd: talet oläst, inget transkript)"
       ],
       "notis": "Första bygget 2026-09-09 var CBO med alla 16 i ett adset (120249017854400172) — raderat samma dag med 0 kr spend, ombyggt enligt regel 11."
+    },
+    "NO": {
+      "kampanj_id": "120249020611450172",
+      "kampanj": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "status": "PAUSED",
+      "struktur": "ABO, 4 adsets (PD/SP/CS/G) à 250 kr/dag, geo NO, länk /nb/products/damasker, 16 annonser, allt PAUSED",
+      "kallannonser": 16,
+      "byggda": 16,
+      "ej_byggda": [],
+      "copy": "factory/annonscopy/damasker-no.json (bokmål, jury-workflow 30 agenter), 381/635 NOK",
+      "creatives": "Bäverbutikens egna Gamasjer_NO_* — redan dubbade, ingen HeyGen"
     }
   },
   "norge": {
