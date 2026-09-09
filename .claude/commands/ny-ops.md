@@ -97,6 +97,31 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
     standby än"). Varje NYTT bevisat steg in i `factory/PROCESS.md` i samma
     session. Committa och pusha.
 
+## Bygga om en butik som redan finns
+
+En butik som byggdes med äldre kod har inte de fixarna. Bas-temat rensades vid
+källan 2026-09-09 (`factory/rensa-kalla.mjs`), så en butik byggd före det kör
+fortfarande källbutikens popup, cookieruta och bilder. Konfigen finns redan —
+hoppa över steg 2–4 och kör kedjan.
+
+1. **Vad som är fel, ur butikens egen state-fil.** `factory/state/<butik>--*.json`
+   bär `blockerat_av_manniska` och `ofullstandigt`, och steglistan visar vad som
+   ALDRIG kördes. Regel: leta efter det som saknas i steglistan, inte efter fel
+   i yaml:en. En butik som ser obrandad ut saknar oftast `logga`-steget.
+2. **VA:ns klick först.** Valuta, hemmamarknad och språk kan inget API ändra.
+   Är de fel skrivs rabattkoderna i fel valuta igen — paketsteget vägrar, och
+   det är meningen.
+3. **Nytt tema, alltid.** `--igen tema-upload` laddar upp det RENSADE temat som
+   ett nytt utkast och låser dess id i state. Patcha aldrig det gamla: det bär
+   källbutikens sektionsgrupper, och en patch lämnar det som inte skrivs över.
+4. **Kör hela kedjan**, inte `--resume`: gröna steg i state är gröna enligt den
+   GAMLA koden.
+   `node factory/ops.mjs factory/butiker/<b>.yaml factory/produkter/<p>.yaml … `
+5. **QA mot riktig HTML** med butikens storefront-lösenord i
+   `SHOPIFY_STOREFRONT_PASSWORD`. Utan det är kundvyn röd, aldrig grön.
+6. **Säg vad som ändrades mot förra bygget** i slutrapporten, inte bara vad som
+   är klart. Den som läser vet redan hur butiken såg ut.
+
 ## DEFINITION OF DONE
 - [ ] Steg 0: "Connected: <domän> ✓" före första skrivningen, butiksnamnet matchar den nya butiken
 - [ ] Brand-config byggd från produkt + målgrupp, inte återanvänd; namnregeln följd, domän kollad
