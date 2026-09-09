@@ -11,14 +11,21 @@
 //
 // Regeln: ingen butik lämnas för publicering förrän skanningen är tom.
 
-// Ord ur bas-temats ursprungsbutik. Träff = källtext som ska bort.
+// Strängar som ENTYDIGT tillhör bas-temats ursprungsbutik.
+//
+// ⚠️ Skanna aldrig på vanliga produktord. "Strumpa" är källbutikens produkt
+// men också en giltig NYTTA för andra produkter — DryTrek säljer damasker,
+// och "torra strumpor" är precis vad de gör (Axel 2026-09-09). Ett falskt
+// larm som tvingar en session att skriva om korrekt copy är lika dyrt som
+// ett missat. Därför bara butiksnamn, mejl, handles och hela citat.
 export const KALLORD = [
   'matstrumpor',
-  'strumpor',
-  'strumpan',
-  'strumporna',
-  'sushi-strumpor',
+  'matstrumpor.se',
   'kundsupport@matstrumpor.se',
+  'sushi-strumpor',
+  'collections/strumporna',
+  'strumpor som ser ut som mat',
+  'strumpor man aldrig blandar ihop',
 ];
 
 // Filer där källtexten bevisligen bor. Skanna alltid ALLA temats JSON-mallar

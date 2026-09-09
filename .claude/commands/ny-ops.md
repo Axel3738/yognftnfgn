@@ -110,6 +110,14 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    ⚠️ Testa varukorgen på RIKTIGT innan "klart": tom korg → lägg i varan →
    lådan ska glida in, inte skicka kunden till `/cart` (öppen bugg
    2026-09-09, se PROCESS.md).
+   ⚠️ **KUNDVYN — sista kontrollen, och den som gäller.** Hämta startsidans
+   riktiga HTML och kör `factory/kundvy.mjs`. Fabrikens övriga QA läser
+   KONFIGURATION (metafält finns, priser stämmer) och kan bli helt grön på en
+   butik som ser trasig ut. (Axels bakläxa 2026-09-09: DryTrek rapporterades
+   "14 gröna, 0 fel" medan butiken hette **My Store 3**, saknade logga, visade
+   Shopifys default-illustration som hero, hade Dawns meny och stod på
+   engelska.) Grön konfiguration är inte en grön butik.
+
    ⚠️ **KÄLLSKANNINGEN — obligatorisk innan butiken lämnas.** Bas-temat är
    exporterat från Matstrumpor, och TRE mallar bär källbutikens text:
    `templates/index.json` (hela startsidan — hero, rubriker, kollektionen
@@ -183,6 +191,11 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Varukorgen testad med TOM korg: lådan glider in, ingen redirect till /cart
 - [ ] Källskanningen REN: ingen Matstrumpor-text kvar i något temaläge
       (`node factory/kallskanning.mjs` — startsida, footer, produktmall)
+- [ ] **KUNDVYN GRÖN** (`factory/kundvy.mjs` mot startsidans riktiga HTML):
+      butiksnamnet är brandet — inte "My Store"; loggan syns i headern;
+      hero-bilden är butikens egen — inte Shopifys illustration; menyn är
+      butikens — inte Home/Catalog/Contact; produkten med riktig bild och
+      köpknapp syns. Ingen konfigurationskontroll ersätter den här.
 - [ ] Paket A/B med riktiga koder, mitten förvald, bonus + korg-upsell inne
 - [ ] Bilder utan engelsk text, svensk vektortext pålagd
 - [ ] Marknad Norge + locale nb publicerad, allt översatt via translationsRegister, trippelkollat mot /nb

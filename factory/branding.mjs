@@ -152,6 +152,15 @@ export function byggSettingsPatch(branding) {
     },
   });
   return {
+    // Varukorgen ska ALLTID vara lådan, aldrig sidan eller notisen.
+    // Axels bakläxa 2026-09-09 (HeimGuard + TankGuard, båda live och
+    // spenderande): första "lägg i varukorgen" skickade kunden till /cart.
+    // Orsaken sitter i product-form.js rad 11 och 64 — hittar den varken
+    // <cart-notification> eller <cart-drawer> i DOM:en faller formuläret
+    // tillbaka på en vanlig POST med redirect. Layouten renderar lådan bara
+    // när settings.cart_type == 'drawer', så värdet måste sättas explicit
+    // här i stället för att ärvas från vilket tema klonen råkade utgå från.
+    cart_type: 'drawer',
     type_header_font: t.typografi.rubriker,
     type_body_font: t.typografi.brodtext,
     buttons_radius: form.knapp_radius,

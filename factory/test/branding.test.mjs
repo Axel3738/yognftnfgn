@@ -22,6 +22,11 @@ import {
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const hemvakten = () => lasYaml(readFileSync(join(ROT, 'butiker', 'hemvakten.yaml'), 'utf8'));
 
+test('settings-patchen tvingar alltid varukorgslådan', () => {
+  assert.equal(byggSettingsPatch({}).cart_type, 'drawer');
+  assert.equal(byggSettingsPatch(undefined).cart_type, 'drawer');
+});
+
 test('utan branding används neutrala tokens — förra butikens look ärvs aldrig', () => {
   const t = hamtaTokens(null);
   assert.equal(t.farger.accent, NEUTRAL.farger.accent);
