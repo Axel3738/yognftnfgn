@@ -193,3 +193,89 @@ admin och NOK-paketnivåer satts.
 **Ett ❌ kvar:** den norska kampanjen. Den är en medveten stopp — källans
 annonser är prissatta i NOK, butikens /nb tar betalt i SEK. Allt annat är grönt
 och tillbakaläst ur kontot.
+
+---
+
+# RÄKNINGEN PER MARKNAD (2026-09-09)
+
+Källannonser lästa genom att svepa **hela** kontot efter produktprefixet, inte
+bara kampanjen i `kalla.kampanj_id`: 1 679 annonser i MagiBorsten och 574 i
+Magiborsten NO. Båda marknaderna hade exakt **en** kampanj med prefixet, och i
+båda var alla 40 annonser ACTIVE i ACTIVE adsets.
+
+Uppladdade räknas ur `act_915422744950975/ads` — aldrig ur `advideos`/`adimages`.
+
+## SVERIGE
+
+```
+Källannonser:        40   (25 video, 15 bild — alla ACTIVE i ACTIVE adset)
+  ren                38  → ska bli 38 annonser
+  kräver-slutkortsbygge 2  → ska INTE laddas upp
+Uppladdade i kontot: 38   ← läst ur Meta
+```
+
+✅ **Räkningen går ihop.** Kampanjen är ACTIVE sedan 2026-09-08 (Axels beslut).
+
+**Uteslutna, namngivna:**
+
+| Annons | Spend | Vad den behöver |
+|---|---:|---|
+| `Overvakningskamera_SP_4_H1` | 20 kr | "BAVERBUTIKEN" inbränt på slutkortet, frames 66–73 → `no-precis.py` |
+| `Overvakningskamera_RI_1_H1` | 4 kr | "BAVERBUTIKEN" inbränt, frames 71–77 → `no-precis.py` |
+
+**Uppladdade men med fel villkor (sjätte ytan, funnen efter uppladdning):**
+
+| Annons | Spend | ROAS | Var felet sitter |
+|---|---:|---:|---|
+| `HeimGuard_CS_3` | 5 010 kr | 3,44 | säger OCH visar "fri frakt över trehundra kronor" |
+| `HeimGuard_CS_2` | 2 631 kr | 2,34 | samma |
+| `HeimGuard_CS_1` | 246 kr | 5,45 | samma |
+| `HeimGuard_CS_4_1` | 448 kr | 1,78 | inbränt i bilden — **rättad bild finns färdig** |
+| `HeimGuard_RI_2_1` | 22 kr | — | inbränt i bilden — **rättad bild finns färdig** |
+
+Axels beslut 2026-09-09: **låt dem rulla, rätta sedan.** Löftet är sämre än
+verkligheten (butiken har fri frakt utan gräns), så ingen kund förlorar pengar.
+
+## NORGE
+
+```
+Källannonser:        40   (25 video, 15 bild — alla ACTIVE i ACTIVE adset)
+  ren                33
+  kräver-omdubb       5  → talet säger baverbutiken.se
+  kräver-slutkortsbygge 2  → brandet inbränt
+Byggbara efter bildfixen: 27
+Uppladdade i kontot: 27   ← läst ur Meta
+```
+
+✅ **Räkningen går ihop.** Kampanjen `HEIMGUARD_NO_Overvåkingskamera` är ACTIVE
+sedan 2026-09-09 på Axels begäran: 9 adsets, 27 annonser, 1 000 kr/dag.
+
+**De 13 uteslutna, var och en namngiven:**
+
+| Annons | Spend | Vad den behöver |
+|---|---:|---|
+| `NO_CS_1` | 2 923 kr | priset 899 kr inbränt i 11 frames + fraktgränsen |
+| `NO_CS_3` | 1 489 kr | "Fri frakt over 300 kroner" inbränt i 5 frames |
+| `NO_CS_2` | 198 kr | samma, 5 frames |
+| `NO_CS_4_1` | 347 kr | bild — suddet lämnade spökbild i bakgrunden, kie.ai-reserven |
+| `NO_BOF_2_1` | 53 kr | bild — samma, texten sitter direkt på fotot utan platta |
+| `NO_CS_5_1` | 2 kr | bild — genomstrykningen klumpade ihop sig med glyferna |
+| `NO_SP_12_H1` | 6 kr | talet säger baverbutiken.se + inbränt |
+| `NO_SP_11_H1` | 1 kr | samma |
+| `NO_SP_4_H1` | 1 kr | brandet inbränt + priset 899/1 169 |
+| `NO_SP_8_H1` | 0 kr | talet säger baverbutiken.se + inbränt |
+| `NO_SP_9_H1` | 0 kr | samma |
+| `NO_SP_13_H1` | 0 kr | samma |
+| `NO_RI_1_H1` | 0 kr | brandet inbränt |
+
+Åtgärderna står i `KO-ATERSTAR.md`. HeyGen-plånboken har 16 818 krediter, så
+omdubbningen är inte blockerad.
+
+## Vad som återstår i siffror
+
+| | SE | NO |
+|---|---:|---:|
+| Källannonser | 40 | 40 |
+| Uppe och körande | 38 | 27 |
+| I kö med namngiven åtgärd | 2 | 13 |
+| Uppe men med fel villkor | 5 | 0 |
