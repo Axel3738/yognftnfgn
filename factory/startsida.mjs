@@ -48,7 +48,7 @@ export function byggIndex(copy, { produktHandle, bilder, farger }) {
       block_order: ['h', 't', 'b'],
       settings: {
         image: bilder.hero,
-        image_overlay_opacity: 22,
+        image_overlay_opacity: 20,
         image_height: 'medium',
         image_behavior: 'none',
         desktop_content_position: 'middle-center',
