@@ -1,13 +1,14 @@
 # TankGuard — status 2026-09-09
 
-**Båda kampanjerna är kompletta och pausade.** Räkningen med varje siffra:
+**BÅDA KAMPANJERNA ÄR LIVE sedan 2026-09-09.** Axel hörde om rösten och gav
+klartecken. 72 annonser levererar, 2 000 kr/dag totalt. Räkningen med varje siffra:
 `factory/output/tankguard/rakningen.md`. VA:ns granskningslista:
 `factory/output/tankguard/VA-OVERLAMNING.md`.
 
 | Marknad | Kampanj | Källa | Byggt | Status |
 |---|---|--:|--:|---|
-| Sverige | `TANKGUARD_SE_Tanköverdraget \| 2026-09-08` (`120248995235740172`) | 40 | **40** | allt PAUSED |
-| Norge | `TANKGUARD_NO_Tanktrekket \| 2026-09-09` (`120249012213810172`) | 33 | **33** | allt PAUSED |
+| Sverige | `TANKGUARD_SE_Tanköverdraget \| 2026-09-08` (`120248995235740172`) | 40 | **40** | ACTIVE — 39 levererar, `PD_Extra` pausad |
+| Norge | `TANKGUARD_NO_Tanktrekket \| 2026-09-09` (`120249012213810172`) | 33 | **33** | ACTIVE — alla 33 levererar |
 
 Konto: MagiBorsten DK `915422744950975`. Sida `1399193996606775`, pixel
 `2196132151319625`, CBO 1 000 kr/dag per kampanj, sju adsets per marknad
@@ -17,9 +18,24 @@ Konto: MagiBorsten DK `915422744950975`. Sida `1399193996606775`, pixel
 tillbaka ur Meta: alla PAUSED, rätt geo, rätt pixel, rätt sida, rätt länk.
 Noll avvikelser.
 
-## Vad som återstår innan något går ACTIVE
+## Vad som hände vid live-sättningen
 
-1. **Sjutton videor är omrenderade och ingen har lyssnat på dem.**
+Meta strypte API-anropen hårt (upp till 300 sekunders backoff per försök), så
+Axel slog på kampanjerna för hand i Ads Manager parallellt med skriptet.
+
+⚠️ **`TankGuard_PD_Extra` följde med i den manuella markeringen och gick live.**
+Den har ingen dom — talet gick aldrig att läsa och det finns inget transkript.
+Den är pausad igen. Vill den köras måste någon först lyssna på de tio
+sekunderna.
+
+**Lärdom:** en annons som ska hållas kvar pausad överlever inte en manuell
+"markera alla". Ska något hållas undan vid live-sättning: flytta det till ett
+eget adset, eller lyssna igenom det innan resten går på.
+
+## Vad som återstår
+
+1. **Sjutton videor är omrenderade. Axel bekräftade rösten 2026-09-09 och gav
+   klartecken att köra.**
 
    Första omgången underkändes av Axel 2026-09-09: rösten rusade och bromsade.
    Orsaken var att manuset packades med flera repliker i samma textruta, och

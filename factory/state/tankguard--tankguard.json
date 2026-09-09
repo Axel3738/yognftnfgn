@@ -338,6 +338,15 @@
    },
    "rors_inte": "De sex replikbytena (PD_1_H1/H2/H3 i båda marknaderna) — 1,45-2,62x, matchar källvideornas egen spridning.",
    "inbytta": "9 svenska + 8 norska annonser ompekade till nya creatives, alla PAUSED, tillbakalästa"
+  },
+  "12_live": {
+   "status": "KLAR",
+   "datum": "2026-09-09",
+   "se": "TANKGUARD_SE_Tanköverdraget ACTIVE — 39 av 40 annonser levererar",
+   "no": "TANKGUARD_NO_Tanktrekket ACTIVE — 33 av 33 annonser levererar",
+   "budget": "1 000 kr/dag per kampanj, 2 000 kr/dag totalt",
+   "godkannande": "Axel bekräftade att han hört rösten och sa \"kör allt live nu\".",
+   "anmarkning": "Meta strypte API-anropen, så Axel slog på kampanjerna för hand parallellt. PD_Extra följde med i den manuella markeringen och gick live trots att skriptet höll den — pausad igen. En annons som ska hållas undan överlever inte en \"markera alla\"."
   }
  },
  "uppdaterad": "2026-09-09",
@@ -351,7 +360,6 @@
   "sidroll": "Last 2026-09-09: Axel gav full tillgang till TankGuard-sidan. Alla tio annonserna gick igenom direkt. Rotorsaken var att sidan lag i businessens client_pages men saknades helt i me/accounts — HeimGuard ligger i owned_pages och fungerade darfor."
  },
  "blockerare": {
-  "rostkontroll": "INGEN har lyssnat på omtagningen. Sjutton videor är omrenderade i quality-läget och mätt jämna i tempo (rostkoll.py), men mätningen säger ingenting om hur rösten LÅTER. Järnregel 3 gäller: de går inte ACTIVE förrän någon hört hook, mitt och slut.",
-  "pd_extra": "IBC_PD_Extra ligger uppe utan dom — talet gick aldrig att läsa. PAUSED, annons 120249008687250172."
+  "pd_extra": "TankGuard_PD_Extra är pausad och har ingen dom. Talet gick aldrig att läsa och det finns inget transkript. Någon måste lyssna på de tio sekunderna innan den får köras."
  }
 }
