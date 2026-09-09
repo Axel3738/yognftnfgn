@@ -3,72 +3,96 @@
   "assetUrl": "https://resource2.heygen.ai/video/76c634ab20b14d2993d929576d8b91ff/original.mp4",
   "proofreadId": "2f8504488cae4537beec59d7502160f4-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "137b083c41504e58a6ba8b7194508e3b-nb",
+  "downloaded": true
  },
  "adventskalender_CS_2": {
   "assetUrl": "https://resource2.heygen.ai/video/e51de8ae7c7c45adb516ff0836064984/original.mp4",
   "proofreadId": "d2b8f597ff3944c69b47274fc2b0131f-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "2a75cdda1e84448e8f5deefebda996e1-nb",
+  "downloaded": true
  },
  "adventskalender_CS_3": {
   "assetUrl": "https://resource2.heygen.ai/video/69bc1c727fea4ca986d4d272d8a64a94/original.mp4",
   "proofreadId": "70773be2d1784a62a109d8dd8234c540-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "63250b812cac4686b42bed9f35aa4013-nb",
+  "downloaded": true
  },
  "adventskalender_G_1": {
   "assetUrl": "https://resource2.heygen.ai/video/c29611695b2f4655a0f13c5294ce028e/original.mp4",
   "proofreadId": "0e023d6047a847d1be891f01f3c12c62-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "66c9b9202dfc4181a423eee4e301c1a9-nb",
+  "downloaded": true
  },
  "adventskalender_G_2": {
   "assetUrl": "https://resource2.heygen.ai/video/8ab5ba55d153481ea7454584c8753f00/original.mp4",
   "proofreadId": "b35a6cf6d2d94844b3ef7e25325c0919-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "9ad34fb512744c01ad788578016453d1-nb",
+  "downloaded": true
  },
  "adventskalender_G_3": {
   "assetUrl": "https://resource2.heygen.ai/video/b0e68b47f811420290321fa806c589b5/original.mp4",
   "proofreadId": "2590ee09c8834825be852e055c784097-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "c09a9f72f6ca40668e13770e89099d96-nb",
+  "downloaded": true
  },
  "adventskalender_PD_1": {
   "assetUrl": "https://resource2.heygen.ai/video/96bbc95bfdec45f1a8c3f470ded23de9/original.mp4",
   "proofreadId": "1cea3dbe535f4c158d61f37f9cf05248-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "5f1743de274e4d6992dade86ba27d5b1-nb",
+  "downloaded": true
  },
  "adventskalender_PD_2": {
   "assetUrl": "https://resource2.heygen.ai/video/3e2d1928b2384b0392588607a4180a70/original.mp4",
   "proofreadId": "526c3b576acb47a4afb75af35c3a854f-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "52ede0fe7b7d4904bceefcd3d5080119-nb",
+  "downloaded": true
  },
  "adventskalender_PD_3": {
   "assetUrl": "https://resource2.heygen.ai/video/453c80a68c9245569576f3a28460856b/original.mp4",
   "proofreadId": "554af1f0d85540c1a0598c001c70acee-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "eb0ae9aae8114ade90475a3b9a26bb9b-nb",
+  "downloaded": true
  },
  "adventskalender_SP_1": {
   "assetUrl": "https://resource2.heygen.ai/video/ada418499ad84923b7a74b4222ddb17f/original.mp4",
   "proofreadId": "ab28ef2083554f20b3a30a8ca47d82c6-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "1af9f58886ff443f8e749b3dfe4bc171-nb",
+  "downloaded": true
  },
  "adventskalender_SP_2": {
   "assetUrl": "https://resource2.heygen.ai/video/210108369af84b25907c34533d3b04f5/original.mp4",
   "proofreadId": "09127c15cee1458eaafe8a84477330f2-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "7320facdde914ca1a9374392a8842fc0-nb",
+  "downloaded": true
  },
  "adventskalender_SP_3": {
   "assetUrl": "https://resource2.heygen.ai/video/29e1a12094e84849b089113bc1dc2883/original.mp4",
   "proofreadId": "8660616d193a4ed68b7f182cda4cd2c5-nb-nb-NO",
   "srtDone": true,
-  "srtApplied": true
+  "srtApplied": true,
+  "renderId": "ac1db8b8c82545199c3db924758bdbb5-nb",
+  "downloaded": true
  }
 }
