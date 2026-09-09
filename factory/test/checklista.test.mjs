@@ -19,13 +19,29 @@ const pos = (md, s) => {
 
 test('valutan, huvudmarknaden och språket kommer FÖRE butiksnamnet i sektion 5', () => {
   const md = byggChecklista(butik(), [raprodukt()]);
-  const valuta = pos(md, '**Store currency** → **SEK**');
-  const marknad = pos(md, 'make **Sweden** the primary market');
-  const sprak = pos(md, 'make **Swedish** default');
+  const valuta = pos(md, '**Store currency** says **SEK**');
+  const marknad = pos(md, '**Sweden** is the primary market');
+  const sprak = pos(md, '**Swedish** is the default');
   const namn = pos(md, 'Store name → **Nackmagneten**');
   assert.ok(valuta < marknad && marknad < sprak && sprak < namn, 'ordningen: valuta → marknad → språk → namn');
   assert.ok(pos(md, '## 5. Shopify – basics') < valuta, 'valutasteget ligger i sektion 5');
   assert.ok(pos(md, 'currency and language are set') < namn, 'VA:n säger till innan hon döper butiken');
+});
+
+test('registreringen kräver BOLAGETS adress — den avgör valutan', () => {
+  // TackleBay 2026-09-09: VA:n sitter i Filippinerna och skrev sin egen
+  // adress, så butiken föddes i PHP med engelska och Filippinerna som
+  // hemmamarknad. Åtta rabattkoder skrevs i fel valuta innan någon märkte
+  // det. Adressen står nu i steg 1, och steg 5 är en kontroll av utfallet.
+  const md = byggChecklista(butik(), [raprodukt()]);
+  const adress = pos(md, 'Exempelbolaget AB');
+  assert.ok(adress > 0, 'bolagsnamnet ska stå i registreringssteget');
+  assert.ok(pos(md, '## 1. Shopify – create the store') < adress);
+  assert.ok(adress < pos(md, '## 2.'), 'adressen hör till steg 1, inte senare');
+  assert.ok(md.includes('decides the currency'), 'varför adressen spelar roll ska stå där');
+  // Kontrollen i steg 1 ska nämna både valutan och landet.
+  const kontroll = md.slice(pos(md, '## 1.'), pos(md, '## 2.'));
+  assert.ok(kontroll.includes('**SEK**') && kontroll.includes('**Sweden**'));
 });
 
 test('EN fil på butiksnivå listar alla produkter och en recensionsrad per produkt', () => {
@@ -87,9 +103,9 @@ test('valuta och land följer butiksfilen — en NOK-butik i Norge får inte SEK
   b.butik.land = 'NO';
   b.butik.supportmail = 'hello@nakkemagnet.no';
   const md = byggChecklista(b, [raprodukt()]);
-  assert.ok(md.includes('**Store currency** → **NOK**'));
-  assert.ok(md.includes('make **Norway** the primary market'));
-  assert.ok(md.includes('make **Norwegian** default'));
+  assert.ok(md.includes('**Store currency** says **NOK**'));
+  assert.ok(md.includes('**Norway** is the primary market'));
+  assert.ok(md.includes('**Norwegian** is the default'));
   assert.ok(md.includes('Judge.me → Settings → Language → **Norwegian**'));
   assert.ok(!md.includes('**SEK**'), 'ingen SEK i en NOK-butik');
   assert.ok(md.includes('Buy **nakkemagnet.no**'), 'domänen ur supportmailen');

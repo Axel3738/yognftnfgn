@@ -25,6 +25,12 @@ korta rader. Axel svaras på svenska. Språket följer LÄSAREN. Facit: `factory
 `switch-shop` eller något `mcp__*`-Shopify-verktyg. All åtkomst via token i
 `factory/.env`. Rör aldrig pzjagy-mz (HeimGuard) eller Bäverbutiken.
 
+**Innan du säger att något inte går att automatisera: läs
+`factory/API-GRANSER.md`.** Varje påstående där är märkt MÄTT, OBEKRÄFTAT
+eller MÄNSKLIGT. Temapublicering stod som "API-spärrad" i tre filer tills
+någon provade — den fungerade. Skriv aldrig "API:t kan inte" utan en felkod
+och ett datum; skriv "ingen har provat" i stället.
+
 Gör i ordning, utan att invänta godkännande mellan stegen:
 
 1. **Rätt butik — FÖRSTA handlingen, före allt annat.**

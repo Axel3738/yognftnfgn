@@ -54,6 +54,41 @@ export function oppetKop(p) {
   return null;
 }
 
+/** URL:en till ångerknappen — kundkontosidan där kunden ångrar sitt köp.
+ *
+ *  `/account` på butikens egen domän skickar vidare till kundkontona, både
+ *  klassiska och nya. En butik som fått en annan adress ur Shopify sätter
+ *  `butik.angerknapp_url` i konfigen. */
+export function angerknappUrl(p) {
+  return p.butik?.angerknapp_url ?? p.angerknapp_url ?? '/account';
+}
+
+/** EU:s ångerknapp, obligatorisk sedan 19 juni.
+ *
+ *  Kravet: en tydlig knapp kunden hittar, en tvåstegsbekräftelse där hen
+ *  anger sitt namn och sin order, och ett automatiskt bekräftelsemejl.
+ *  Shopifys självbetjäningsreturer uppfyller alla tre — förutsatt att
+ *  kundkonton och självbetjäning är PÅSLAGNA. Det är VA:ns klick, och det
+ *  står i checklistan.
+ *
+ *  Att strunta i det kostar: rättsliga varningar, böter upp till 4 % av
+ *  årsomsättningen i vissa medlemsstater, och ångerfristen förlängs från
+ *  14 dagar till 12 månader och 14 dagar.
+ *
+ *  ⚠️ Kunden får logga in. Shopifys eget utskick påstod motsatsen, men det
+ *  står ingenstans i direktivet. Kravet är att ångra INTE får vara krångligare
+ *  än att köpa — och att klicka i sitt konto är enklare än att göra ett köp
+ *  med kort och BankID. (Agnes Hammarstrand, e-handelsjurist, gör samma
+ *  tolkning.) Bygg därför aldrig en egen inloggningsfri returformulärsida:
+ *  den blir sämre, och den behövs inte. */
+export function angerknapp(p, dagar) {
+  const url = angerknappUrl(p);
+  return `<h2>Ångra ditt köp</h2>
+<p>Du ångrar köpet själv, direkt i ditt konto. Du behöver inte mejla oss först.</p>
+<p><a href="${url}"><strong>Klicka här för att ångra ditt köp</strong></a></p>
+<p>Knappen heter <strong>Ångra köp</strong> och finns längst ner på varje sida. Du väljer order, anger orsak och skickar in. Du kan använda den i ${dagar} dagar från den dag du tog emot varan, och du får ett bekräftelsemejl direkt när vi tagit emot din ångring.</p>`;
+}
+
 export function returpolicy(p) {
   const f = foretag(p);
   const r = retur(p);
@@ -70,6 +105,8 @@ export function returpolicy(p) {
       ? 'Du ansvarar för returfrakten om inget annat avtalats.'
       : 'Vi betalar returfrakten.'
   }</p>
+
+${angerknapp(p, r.angerratt)}
 
 <h2>Så gör du en retur</h2>
 <ol>

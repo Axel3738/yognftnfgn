@@ -54,7 +54,7 @@ node factory/ops.mjs factory/butiker/<butik>.yaml factory/produkter/<p1>.yaml [<
 | 10 | `paket` | produkt | `paket.mjs` (valutaspärr mot `shop.currencyCode`) | manuell "byt valuta i admin, kör `--igen paket`" |
 | 11 | `kollektion` | butik | `shopify.skrivKollektion` (bara flerprodukt) | stoppar |
 | 12 | `startsida` | butik | `startsida.mjs` + `filer.mjs` (hero/trygghet/galleri upp i Files först) + sidfotens bolagsblock | stoppar |
-| 13 | `sidor`, `policyer`, `meny`, `frakt`, `huvudmarknad` | butik | `policyer.mjs`, `shopify.skrivPolicy`, `meny.mjs` (Hem / [kollektion] / produkter / Frakt & retur / Kontakt), `frakt.mjs`, valutakontroll | stoppar (policyer utan scope `write_legal_policies` → manuell) |
+| 13 | `sidor`, `policyer`, `meny`, `frakt`, `huvudmarknad` | butik | `policyer.mjs` (inkl. EU:s ångerknapp i returpolicyn), `shopify.skrivPolicy`, `meny.mjs` (Hem / [kollektion] / produkter / Frakt & retur / Kontakt) + sidfotsraden **Ångra köp** → `angerknappUrl()`, `frakt.mjs`, valutakontroll | stoppar (policyer utan scope `write_legal_policies` → manuell) |
 | 14 | `kallskanning` | butik | `kallskanning-kor.mjs` + `kallskanning.mjs` på ALLA temafiler | stoppar — en träff = spärr |
 | 15 | `recensioner` | produkt | `judgeme.mjs`: app-CSV med originaldatum alltid; API-import via `tools/judgeme-import.mjs` bara om butikens token finns i env | manuell (VA:n laddar upp filen i appen) |
 | 16 | `marknad` | butik | `marknad.mjs`: marknad + locale + webPresence per rad i `butik.marknader` | stoppar (tom `butik.marknader` = stopp) |
@@ -438,6 +438,15 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
 - **Alltid svensk lag, aldrig egna köplöften** (2026-09-08): 14 dagars
   ångerrätt i policyn, USP-strippen och garantierna. "30 dagars öppet köp" är
   ett stoppord i kundvyn.
+- **EU:s ångerknapp är obligatorisk sedan 19 juni** (2026-09-09): en synlig
+  knapp kunden hittar, tvåstegsbekräftelse och automatiskt bekräftelsemejl.
+  Fabriken skriver knappen i returpolicyn (`policyer.angerknapp`) och lägger
+  raden **Ångra köp** i sidfotsmenyn; Shopifys självbetjäningsreturer gör
+  själva jobbet och slås på av VA:n i checklistans **5b**. Bygg ALDRIG en egen
+  inloggningsfri returformulärsida — Shopifys eget utskick påstod att kunden
+  inte får behöva logga in, men direktivet kräver bara att det inte är
+  krångligare än att köpa. Utan knappen kan ångerfristen förlängas från 14
+  dagar till 12 månader och 14 dagar, och böterna når 4 % av årsomsättningen.
 - **Loggan visas i chatten innan den sätts** — tre varianter, Axel väljer
   (första TankGuard-loggan underkändes 2026-09-08). Bytet är ett API-anrop.
 - **Widgeten stylas aldrig från temat** (2026-09-07) — Judge.mes egna

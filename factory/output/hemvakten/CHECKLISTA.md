@@ -11,9 +11,18 @@ Everything not on this list is done by Claude Code.
 * PRODUCT: **Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning** (overvakningskameran)
 
 ## 1. Shopify – create the store
+**The address you type here decides the currency, the language and the home
+market.** Shopify takes them from the store address, not from your account.
+Type the COMPANY address below – never your own, wherever you are sitting.
+Get this right and section 5 is three checks instead of seven clicks.
 - [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
+- [ ] When it asks where the business is located, enter:
+      **STONEBITE ECOM AB**, Sjöhed 160, 442 74 Harestad, Sweden
 - [ ] Stay on the free trial – never pick a plan, never enter any card
   Note: staff invites need a paid plan – the owner is added at hand over.
+- [ ] Settings → General → check it says **SEK** and **Sweden**.
+      If it does not, the address went in wrong – fix it before you continue.
+      Everything built on the wrong currency has to be built again.
 
 ## 2. Shopify – connect Claude Code
 - [ ] Go to **dev.shopify.com** → log in with the work Gmail → Apps → **Create app** → name it: **Fabriken** + the store's address start (example: Fabriken y1sj1i)
@@ -41,18 +50,37 @@ Everything not on this list is done by Claude Code.
 - [ ] Send a test email to **hello@heimguard.se** – confirm it arrives
 
 ## 5. Shopify – basics
-Do these FIRST, before anything else in this section.
-A new trial store keeps the country, currency and language of the account
-that created it. Claude cannot change any of the three – they are your clicks,
-and the prices, the checkout and the discount codes are wrong until they are done.
-- [ ] Settings → General → **Store currency** → **SEK** → Save
-- [ ] Settings → Markets → make **Sweden** the primary market
-- [ ] Settings → Languages → make **Swedish** default
-- [ ] Tell Claude Code: **currency and language are set** – the discount codes
-      are stored in the store's currency and have to be written again
+The first three should ALREADY be right if you typed the company address in
+section 1. Check them – do not skip them. Claude cannot change any of the
+three, and the prices, the checkout and the discount codes are wrong until
+they are correct.
+- [ ] Settings → General → **Store currency** says **SEK**
+      Wrong? Change it here, then write those exact words to Claude Code:
+      **currency and language are set**
+      The discount codes are stored in the store's currency and have to be
+      written again, and that sentence is what starts it.
+- [ ] Settings → Markets → **Sweden** is the primary market
+- [ ] Settings → Languages → **Swedish** is the default
 - [ ] Settings → General → Store name → **HeimGuard** → Save
 - [ ] Settings → Domains → Connect existing domain → **heimguard.se** → follow the DNS steps → Set as primary
 - [ ] Settings → Notifications → Sender email → **hello@heimguard.se** → Save → click the verification link in the inbox
+
+## 5b. Shopify – the EU withdrawal button (required by law)
+Since 19 June every EU store must have a clear "cancel my order" button the
+customer can find, a two-step confirmation, and an automatic confirmation
+email. Shopify's self-serve returns do all three — but only once you switch
+them on. Claude writes the button into the return policy and the footer menu;
+these four switches are yours.
+Skipping this is not a cosmetic risk: the withdrawal period can stretch from
+14 days to 12 months and 14 days, and fines reach 4% of annual turnover in
+some member states.
+- [ ] Settings → **Customer accounts** → turn customer accounts on
+- [ ] Same page → turn on **Self-serve returns** (and cancellations)
+- [ ] Settings → Policies → **Return rules** → return window **14 days**
+      from delivery, and say who pays the return shipping
+- [ ] Same page → **Cancellation window** → until the order is fulfilled
+- [ ] Open the store and check: **Ångra köp** is in the footer, and it opens
+      the account page. If it opens nothing, the account setting above is off.
 
 ## 6. Shopify – payments
 - [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you

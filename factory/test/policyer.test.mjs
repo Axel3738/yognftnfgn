@@ -15,6 +15,7 @@ import {
   kontaktsida,
   oppetKop,
   saknadeUppgifter,
+  angerknappUrl,
 } from '../policyer.mjs';
 import { kontrolleraLaunch } from '../kontroll.mjs';
 import { dummy, medButiksfrakt, raprodukt } from './hjalp.mjs';
@@ -204,4 +205,46 @@ test('extra fraktsätt i kassan står också på fraktpolicyn', () => {
   assert.ok(html.includes('Express'));
   assert.ok(html.includes('99 kr'));
   assert.ok(html.includes('1–2 arbetsdagar'));
+});
+
+// -------------------------------------------------- EU:s ångerknapp
+//
+// Obligatorisk sedan 19 juni: en tydlig knapp kunden hittar, en
+// tvåstegsbekräftelse och ett automatiskt bekräftelsemejl. Shopifys
+// självbetjäningsreturer uppfyller alla tre när de är påslagna (VA:ns klick,
+// checklistan 5b). Saknas knappen kan ångerfristen förlängas från 14 dagar
+// till 12 månader och 14 dagar, och böterna når 4 % av årsomsättningen i
+// vissa medlemsstater.
+
+test('returpolicyn bär ångerknappen med en klickbar länk', () => {
+  const p = byggPolicyer(dummy()).find((x) => x.type === 'REFUND_POLICY');
+  assert.ok(p.body.includes('Ångra ditt köp'), 'rubriken saknas');
+  assert.match(p.body, /<a href="\/account">/, 'länken ska vara klickbar, inte en instruktion');
+  assert.ok(p.body.includes('Ångra köp'), 'knappens NAMN ska stå så kunden känner igen den i sidfoten');
+  assert.ok(/bekräftelsemejl/.test(p.body), 'kunden ska veta att bekräftelsen kommer');
+});
+
+test('ångerknappen anger samma antal dagar som ångerrätten', () => {
+  // Två olika tal i samma butik ger två svar på samma fråga, och det svar
+  // som gäller är kundens fördel.
+  const b = dummy();
+  b.retur = { ...(b.retur ?? {}), angerratt_dagar: 30 };
+  const p = byggPolicyer(b).find((x) => x.type === 'REFUND_POLICY');
+  const i = p.body.indexOf('Ångra ditt köp');
+  assert.ok(p.body.slice(i).includes('30 dagar'), 'knappens text ska följa butikens ångerrätt');
+});
+
+test('url:en går att styra per butik men har /account som default', () => {
+  assert.equal(angerknappUrl({}), '/account');
+  assert.equal(angerknappUrl({ butik: { angerknapp_url: 'https://shopify.com/123/account' } }), 'https://shopify.com/123/account');
+});
+
+test('ångerknappen bygger ALDRIG en egen inloggningsfri formulärsida', () => {
+  // Shopifys eget utskick påstod att kunden inte får behöva logga in. Det
+  // står ingenstans i direktivet — kravet är att ångra inte får vara
+  // krångligare än att köpa, och ett klick i sitt konto är enklare än ett
+  // köp med kort och BankID.
+  const p = byggPolicyer(dummy()).find((x) => x.type === 'REFUND_POLICY');
+  assert.ok(!/formulär|fyll i din e-post|utan att logga in/i.test(p.body),
+    'policyn ska peka på kundkontot, inte på en egen returformulärsida');
 });

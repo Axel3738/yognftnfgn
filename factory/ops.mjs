@@ -84,7 +84,7 @@ import { skannaTema, rapport as kallrapport, tackning } from './kallskanning.mjs
 import { hamtaAllaTemafiler } from './kallskanning-kor.mjs';
 import { avbranda } from './avbranda.mjs';
 import { kontrolleraLaunch } from './kontroll.mjs';
-import { byggPolicyer, kontaktsida } from './policyer.mjs';
+import { byggPolicyer, kontaktsida, angerknappUrl } from './policyer.mjs';
 import { huvudmenyRader } from './meny.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { sattContinue } from './lagerpolicy.mjs';
@@ -1032,6 +1032,12 @@ export function byggButiksKontext(butik, produkter) {
     huvudmenylankar: huvudmenyRader(butik, ps),
     menylankar: [
       ...policyer.map((x) => ({ titel: x.namn, url: `/pages/${x.handle}` })),
+      // EU:s ångerknapp, obligatorisk sedan 19 juni: en TYDLIG knapp kunden
+      // hittar utan att leta. Den ska stå i sidfoten på varje sida, inte bara
+      // inuti returpolicyn. Saknas den kan ångerfristen förlängas från 14
+      // dagar till 12 månader och 14 dagar, och böterna går till 4 % av
+      // årsomsättningen i vissa medlemsstater. Se factory/policyer.mjs.
+      { titel: 'Ångra köp', url: angerknappUrl(ps[0]) },
       { titel: 'Kontakt', url: '/pages/contact' },
     ],
     shop: null,
