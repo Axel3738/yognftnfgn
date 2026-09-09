@@ -192,3 +192,19 @@ och duger inte som annons — filmen får hämtas från leverantörens eget soci
 
 Tre av de sju gick inte att bedöma: fel bild-URL skickades in i körningen, så agenterna
 fick en platshållare i stället för produktbilden. De döms om separat.
+
+### De tre omdömda (rätt bild denna gång)
+
+| Dom | Produkt | Varför |
+|---|---|---|
+| skippa | Tvättmoppen | Rörelsen syns inom tre sekunder men den är inte oväntad: roterande tvättborste med slanganslutning är en av de mest hyllade varorna i svensk handel, och ankaret ligger under oss i stället fö |
+| tveksam | Vibrationslarmet | Ägarjakten stämmer — mitten av september är exakt när båt, släp och verktygsbod ställs undan för mörka halvåret i svensk villaträdgård, så problemet pågår nu och ägarfrågan får ett rent ja.  |
+| tveksam | Arbetslampan | Ägarhalvan sitter: mörkret är tillbaka i mitten av september och mannen med villa, båt och ved lyser under motorhuven med mobilen just nu, så problemet pågår och rörligt demomaterial finns i |
+
+Alla tre föll på samma två saker. **Payoffen syns inte i ett tystat flöde** — larmets
+110 dB är ljud, lampans ljus är basfunktion, tvättborstens rörelse är något svensken
+sett i tjugo år. Och **ankaret pekar åt fel håll**: Kärcher 377 kr mot vårt 499,
+Scangrip MAG 569 kr mot vårt 599, Ajax DoorProtect 367 kr mot vårt 499. Vi blir dyrast
+i kategorin utan märke — tvärtemot mönstret som bar strandtofflorna, axelbältet och kameran.
+
+**Dagens slutresultat: 1 produkt av 82 kandidater.** Vedklyvborren.
