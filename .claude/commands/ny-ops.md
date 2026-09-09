@@ -165,7 +165,15 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    2026-09-08): fas 4 i PROCESS.md — marknad Norge + locale nb, webPresence,
    translationsRegister på ALLT, språkversionerade bilder med
    [SV]/[NO]-alt-märkning. Fler marknader läggs till på samma sätt.
-   Trippelkolla mot kundens riktiga vy.
+   Trippelkolla mot kundens riktiga vy — **avsluta alltid med
+   `node factory/sprakkoll.mjs <butik> <handle> --losenord X`**: den läser
+   /nb-sidorna på riktigt och larmar på varje svensk rest. "Allt" betyder
+   13 resurstyper (produkt, varianter, meny, sidor, policyer, blogg,
+   metaobjekt, metafält, fraktmetoder, tema-JSON, sektionsgrupper,
+   temainställningar) — `oversatt.mjs` ensam täcker fyra av dem.
+   NOK som basvaluta sätts via `marketUpdate`, inget admin-klick.
+   Paketrabatter är PROCENT (`rabatt_procent`), aldrig belopp — belopp
+   går inte att översätta och visar SEK på /nb.
 9. **Värdena till VA:n.** Hon sitter redan i den här chatten och följer
    sitt Google-dokument — skicka ALDRIG en checklistfil till Axel och be
    ingen vidarebefordra något. Skriv värdena rakt i chatten till henne:
@@ -221,6 +229,11 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Paket A/B med riktiga koder, mitten förvald, bonus + korg-upsell inne
 - [ ] Bilder utan engelsk text, svensk vektortext pålagd
 - [ ] Marknad Norge + locale nb publicerad, allt översatt via translationsRegister, trippelkollat mot /nb
+- [ ] **SPRÅKKOLLEN GRÖN** (`node factory/sprakkoll.mjs <butik> <handle> --losenord X`,
+      läser de riktiga /nb-sidorna): inga svenska former och inga svenska
+      priser på startsida, produktsida, alla sidor och alla policyer.
+      Shopify faller tyst tillbaka på svenskan för varje oöversatt sträng —
+      "locale nb finns" bevisar ingenting (Axels bakläxa 2026-09-09, DryTrek)
 - [ ] CHECKLISTA.md genererad och överlämnad till VA:n
 - [ ] Recensioner importerade när token kommit
 - [ ] Trippelkollat mot kundens vy — annars står det "delvis klart"
