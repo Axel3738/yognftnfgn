@@ -372,3 +372,18 @@ sätts, och lådan visar ändå rabatterat pris.
 **Regel:** varukorgen ska testas på RIKTIGT i kundens vy innan en butik får
 annonser — lägg i varukorgen med tom korg och se att lådan glider in.
 Lägg in det i trippelkollen.
+
+⚠️ **Molnsessionen kan INTE göra det testet själv.** Två spärrar, båda mätta
+2026-09-09:
+1. Playwright/Chromium finns förinstallerat men når ingen extern sajt —
+   varje `page.goto()` dör på `ERR_CONNECTION_RESET` genom agentproxyn.
+   `curl` fungerar, en webbläsare gör det inte. Utan webbläsare finns inget
+   klick och därmed inget varukorgstest.
+2. En ny butik är lösenordsskyddad under trialen, och Admin-API:t lämnar
+   inte ut lösenordet (`shop.json` ger bara `password_enabled: true`).
+
+Konsekvens: **en molnsession får aldrig skriva "varukorgen testad".** Den
+skriver "varukorgen INTE testad — kräver en människa i en webbläsare", och
+butiken står som delvis klar tills någon gjort klicket. Testa aldrig genom
+att lägga i varukorgen på en LIVE-butik för att komma runt det — det skickar
+en AddToCart till pixeln och smutsar ner annonsdatan.
