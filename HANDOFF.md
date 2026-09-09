@@ -229,3 +229,26 @@ kräver npm `docx`).
 
 Efter mergen till `main` är `main` enda källan — rutinerna klonar `main`.
 Testerna: `node --test factory/test/*.test.mjs`.
+
+## 11. ⚠️ Nattrutinerna syns inte på kontot (mätt 2026-09-09)
+
+CLAUDE.md beskriver sex schemalagda rutiner (`/translate-no` 04:15,
+`/no-recensioner` 05:30, `/bildannonser` 20:00, `/notionkorning` 13:20,
+`/oversatt` 15:00, `/commission` 06:00). Två mätningar från en molnsession
+2026-09-09 säger att de inte finns på det konto sessionen kör under:
+
+- `list_triggers` (även med `include_completed`) returnerar **noll Routines**.
+- `get_session session_012EUCCZUPS5hCn5zMp9Fq7R` — den fasta session CLAUDE.md
+  pekar ut för Leveransrundan — svarar **not found**. Kontot har tre sessioner
+  totalt, alla interaktiva.
+
+**Vad det INTE betyder:** att rutinerna bevisligen är raderade. De kan ligga på
+ett annat Claude-konto än det sessionen kör under. Vad mätningen säger är att
+INGEN rutin är synlig härifrån, och att den fasta sessionen som pekas ut i
+dokumentationen inte längre svarar.
+
+**Avgörs så här:** öppna Routines-vyn på claude.ai. Står de sex rutinerna där
+är allt bra och den här noteringen ska bort. Är listan tom har den dagliga
+automationen (bildannonser, leveransrundan, commission, översättningskön,
+NO-videobatchen, norska recensioner) stått stilla — och ingen rapport hade
+sagt det, för en rutin som inte finns skickar ingenting.
