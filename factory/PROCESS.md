@@ -129,6 +129,16 @@ som genereras per bygge).
     **#00B77F** (alltid, varje butik — `STJARNFARG` i branding.mjs).
     Judge.mes settings-API är läs-bara (skrivförsök ger 404), så de två
     fälten är klick i checklistan.
+    **Har den svenska källprodukten noll recensioner: läs den NORSKA
+    tvillingen först** (mätt 2026-09-09, DryTrek: baverbutiken.se 0 st,
+    beverbutikken.no 10 st à 4,4 på samma produkt). Recensionerna ligger
+    serverrenderade i produktsidans HTML (`jdgm-rev__body`, `data-score`,
+    `jdgm-rev__author`) — inget token behövs för att läsa dem. Riktningen
+    blir då omvänd: de norska importeras som original, och fabriken
+    översätter dem till svenska med svenska namn för huvudmarknaden.
+    `judgeme-import.mjs` har ingen `--mejlsuffix`-flagga — fyll
+    `reviewer_email` i CSV:n med `<namn>@<brand>.invalid` (reserverad TLD).
+    ⚠️ v1-API:t skriver aldrig `created_at`: alla får importdagen som datum.
 
 ## Fas 4 — Marknader (STANDARD i varje ny OPS, Axel 2026-09-08: SE huvudspråk + marknad Norge locale nb; fler marknader läggs till på samma sätt)
 13. ⚙️ Marknad Norge + locale nb (publicerad) + nb som alternateLocale på
