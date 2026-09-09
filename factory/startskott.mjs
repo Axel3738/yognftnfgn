@@ -136,6 +136,19 @@ export function formateraStartskott(jobb) {
  * `datum` skickas in — skriptet läser aldrig klockan själv, så testerna kan
  * köras på ett fast datum och två körningar samma dygn ger samma rad.
  */
+// ⚠️ RADEN FÅR ALDRIG BÄRA `ny_budget`. Kontrollerat mot agent/logg.mjs
+// 2026-09-09: `dagarSedanAndring` räknar bara rader med `genomford: true` OCH
+// ett ändligt `ny_budget`. Lägger någon till fältet här blir startskottet en
+// budgetändring i kadensspärrens ögon, och kampanjen fryses i tre dygn utan
+// att någon rört budgeten.
+//
+// Samma kontroll för de tre andra läsarna, alla säkra som koden ser ut i dag:
+//   arAvstangd (agent/rond.mjs)  — läser bara STANG_AV och ATERAKTIVERA
+//   annonsbehov KLAR-listan      — bara FORSTA_BATCH_KLAR och CS_BATCH_KLAR,
+//                                  så raden tystar inte brief-kön
+//   senasteRadMedKod             — tar en uttrycklig kodlista
+// `OPS_STARTSKOTT` krockar inte med någon av de 20 koder som finns i
+// budgetloggen i dag (avläst 2026-09-09, 374 rader).
 export function byggLoggrad(jobb, { datum, adAccountId = '1867947880635861' } = {}) {
   if (!datum) throw new Error('byggLoggrad kräver ett datum (YYYY-MM-DD).');
   const saknade = saknadeFalt(jobb);

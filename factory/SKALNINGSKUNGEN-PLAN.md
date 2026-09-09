@@ -128,21 +128,21 @@ OPS-butiken och lansera den. Rutinen bygger aldrig butiken själv.
 Varje steg är klart när dess "Klart när" stämmer. Nästa steg börjar inte förrän
 förra är pushat.
 
-### Steg 0 — Gör systemet synligt från `main` 🔴 GÖRS FÖRST
+### Steg 0 — Gör systemet synligt från `main` ✅ GJORT 2026-09-09
 Utan det här bygger nästa session en konkurrerande rutin igen.
 
-- Skriv in i `CLAUDE.md`: rutinen finns, den heter Skalnings kungen, den kör
-  07:30 varje dag, den bor på grenen `claude/daily-agent-discussion-uos5df`,
-  och den ändrar budgetar på riktigt.
-- Rätta `factory/FAS2.md` uppdrag E — påståendet "Den finns inte" är falskt.
-- Ta ställning till om `agent/` ska merge:as till `main`. **Mät först:**
-  rutinens trigger-prompt checkar ut grenen explicit, så en merge utan att
-  prompten ändras gör ingen skada — men två kopior av `budgetlogg.jsonl` som
-  båda tar emot rader vore ett tyst dataras. Slå ihop bara om prompten ändras
-  i samma vända.
+- ✅ `CLAUDE.md`: rutinen står i nattrutinstabellen och har ett eget
+  varningsblock — den finns, den kör 07:30, den bor på grenen
+  `claude/daily-agent-discussion-uos5df`, och den ändrar budgetar på riktigt.
+- ✅ `factory/FAS2.md` uppdrag E: det falska "Den finns inte" struket och rättat.
+- 🖐 **Kvar till Axel:** ska `agent/` merge:as till `main`? Rutinens
+  trigger-prompt checkar ut grenen explicit, så en merge utan att prompten
+  ändras gör ingen skada — men två kopior av `budgetlogg.jsonl` som båda tar
+  emot rader vore ett tyst dataras. Slå ihop bara om prompten ändras i samma
+  vända.
 
 **Klart när:** en session som bara läser `main` får veta att rutinen finns,
-innan den föreslår att bygga en.
+innan den föreslår att bygga en. ✅
 
 ### Steg 1 — Bäverbutikens batcher blir bild
 Skriv om `rond-auto.md` 4b: på Bäverbutiken beställs bara bildannonser.
@@ -183,6 +183,18 @@ köp, CPA, break-even och vinstprocent.
 
 Skriptet sätter samtidigt en rad i budgetloggen med en egen kod
 (`OPS_STARTSKOTT`), idempotent — en andra körning skickar inte om meddelandet.
+
+✅ **Byggt 2026-09-09 som `factory/startskott.mjs` + 19 tester.** Den formaterar
+meddelandet och loggraden, men skickar ingenting och skriver ingenting — därför
+går den att koppla in från vilken gren som helst. Inkopplingslistan står som
+kommentar sist i filen.
+
+⚠️ **Loggraden får aldrig bära `ny_budget`.** Kontrollerat mot `agent/logg.mjs`:
+`dagarSedanAndring` räknar bara rader med `genomford: true` och ett ändligt
+`ny_budget`. Läggs fältet till blir startskottet en budgetändring i
+kadensspärrens ögon, och kampanjen fryses i tre dygn utan att någon rört
+budgeten. `arAvstangd`, `annonsbehov`s KLAR-lista och `senasteRadMedKod` läser
+alla uttryckliga kodlistor och är säkra som koden ser ut i dag.
 
 ⚠️ Discord-poster läses av det engelsktalande teamet. Startskottet går till
 **Axel eller VA:n**, så det får vara svenska om det landar i en kanal bara de
