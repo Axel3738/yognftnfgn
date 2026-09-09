@@ -15,7 +15,7 @@ Varje uppdrag nedan är ett eget avsnitt: **vad**, **återanvänd detta**,
 | Blockerare | Blockerar | Löses av |
 |---|---|---|
 | Meta-sidan **TankGuard** (`61594435402676`) är skapad men inte i Business Manager och inte tilldelad annonskontot — Graph ser den inte alls | annonsnivån i kampanjbygget | Axel/VA:n i BM |
-| Butiken **tankguard.se är lösenordsskyddad** ("Opening soon", mätt 2026-09-08) | all launch — annonser till en låst dörr bränner pengar | Axel: Online Store → Preferences |
+| ~~Butiken lösenordsskyddad~~ — **öppen 2026-09-09** (`page_type: "product"`, pris 489 / jämförpris 636 kr live, samma tal som copy och voiceover) | inget | — |
 | Pixeln `2196132151319625` finns men skickar inga events (WeTracked ej kopplad) | optimering och mätning | VA:n |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
 | ~~HeyGen-plånboken tom~~ — **18 008 api-krediter**, mätt 2026-09-08 kväll. Den siffran (13) var fel. | inget | — |
@@ -224,10 +224,10 @@ för i en container. Kvar är enbart att skapa annonserna, vilket kräver sidan.
    till i Business Manager OCH tilldelas annonskontot innan en creative kan byggas.
    `page: null` i konfigen tills dess; skriptet vägrar bygga annonser utan den och
    gissar aldrig en sida.
-2. **Butiken är lösenordsskyddad.** `https://tankguard.se/products/tankoverdraget`
-   svarar 200 men levererar Shopifys lösenordssida (`page_type: "password"`,
-   "Opening soon"), mätt 2026-09-08. Annonser dit bränner pengar på en låst dörr.
-   Lösenordet stängs av i **Online Store → Preferences**.
+2. ~~**Butiken lösenordsskyddad**~~ — LÖST 2026-09-09. Produktsidan svarar
+   `page_type: "product"` och `.json` ger pris **489** / jämförpris **636 kr**, alltså
+   exakt de tal copyn och voiceovern använder (23,1 % rabatt). Kontrollera priset mot
+   produktsidan vid varje körning — aldrig mot en äldre brief.
 3. **Pixeln skickar inga events.** `2196132151319625` finns i kontot men är inte
    kopplad i WeTracked (VA:ns besked, STATUS-filens punkt 3–4). Utan events
    optimerar kampanjen på ingenting.
