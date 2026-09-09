@@ -1,0 +1,325 @@
+{
+ "datum": "2026-09-09",
+ "manad": 9,
+ "usd_sek": 9.6022,
+ "kurskalla": "kurs.json 2026-09-09",
+ "sokord": [
+  {
+   "ord": "boat cover support pole adjustable",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "motorhome thermal windscreen cover external",
+   "grupp": "husvagn och husbil"
+  },
+  {
+   "ord": "outdoor cat house insulated waterproof",
+   "grupp": "lantbruk och djur"
+  },
+  {
+   "ord": "solar strobe alarm motion outdoor",
+   "grupp": "belysning och mörker"
+  },
+  {
+   "ord": "solar dock light marine",
+   "grupp": "belysning och mörker"
+  },
+  {
+   "ord": "downpipe rain diverter water butt",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "motor flusher muffs outboard",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "chimney cleaning brush rod set",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "folding seat stick hunting",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "kindling splitter cast iron",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "ladder stabilizer standoff roof gutter",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "rifle sling neoprene padded",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "boat trailer guide post",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "lawn mower seat cover riding",
+   "grupp": "trädgård och maskin"
+  }
+ ],
+ "hoppade": {
+  "stoppord": 1,
+  "pris saknas": 0,
+  "ekonomi": 91,
+  "dubblett": 5
+ },
+ "antal_kandidater": 15,
+ "produkter": [
+  {
+   "product_id": "1005008077527346",
+   "titel": "Flexible Chimney Sweep Set Flue Sweeping Brush & Rod Kit Soot Cleaning Rods Nylon Brush Cleaning Tool Kit",
+   "url": "https://www.aliexpress.com/item/1005008077527346.html",
+   "pris": 15.81,
+   "valuta": "USD",
+   "pris_text": "US $15.81",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd362c7c33848404bb3e573470af41733h.jpg",
+   "sald": "",
+   "sokord": "chimney cleaning brush rod set",
+   "grupp": "ved och eldning",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chimney-cleaning-brush-rod-set.html",
+   "ekonomi": {
+    "landad": 228,
+    "forslag_pris": 599,
+    "multipel": 2.63,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005011927514185",
+   "titel": "Foldable Cane Easy To Carry Seat Portable Stool Folding Chair Non Slip Handle Super Light Walking Stick For Outdoor Walking",
+   "url": "https://www.aliexpress.com/item/1005011927514185.html",
+   "pris": 16.08,
+   "valuta": "USD",
+   "pris_text": "US $16.08",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sddf296c4c78d43d7a1d84ca5614acb6fL.jpg",
+   "sald": "",
+   "sokord": "folding seat stick hunting",
+   "grupp": "jakt",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-folding-seat-stick-hunting.html",
+   "ekonomi": {
+    "landad": 232,
+    "forslag_pris": 599,
+    "multipel": 2.59,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012303793980",
+   "titel": "C 70-110 Rain Collector Plastic Downpipe Rainwater Collector Roof Water Collection Hose Rain Collector",
+   "url": "https://www.aliexpress.com/item/1005012303793980.html",
+   "pris": 13.45,
+   "valuta": "USD",
+   "pris_text": "US $13.45",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sb0303d2a1b46411884566f36e5a42d9e2.jpg",
+   "sald": "",
+   "sokord": "downpipe rain diverter water butt",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-downpipe-rain-diverter-water-butt.html",
+   "ekonomi": {
+    "landad": 194,
+    "forslag_pris": 499,
+    "multipel": 2.58,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012448767856",
+   "titel": "Rainwater Collection System Easy Installation Multipurpose Efficient Rainwater Diverter Professional Reusable for Irrigation",
+   "url": "https://www.aliexpress.com/item/1005012448767856.html",
+   "pris": 18.87,
+   "valuta": "USD",
+   "pris_text": "US $18.87",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S6e547b4d118d45ffa0d45c0f07ca3ccdA.jpg",
+   "sald": "",
+   "sokord": "downpipe rain diverter water butt",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-downpipe-rain-diverter-water-butt.html",
+   "ekonomi": {
+    "landad": 272,
+    "forslag_pris": 699,
+    "multipel": 2.57,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012414077421",
+   "titel": "Winter Warm Waterproof Stray Cat Dog House Foldable Washable Pet Cave Outdoor Shelter Sleeping Bed for Small Puppy Pet Supplies",
+   "url": "https://www.aliexpress.com/item/1005012414077421.html",
+   "pris": 21.66,
+   "valuta": "USD",
+   "pris_text": "US $21.66",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S20416daaf99f4237ab753083a39afac5H.jpg",
+   "sald": "",
+   "sokord": "outdoor cat house insulated waterproof",
+   "grupp": "lantbruk och djur",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cat-house-insulated-waterproof.html",
+   "ekonomi": {
+    "landad": 312,
+    "forslag_pris": 799,
+    "multipel": 2.56,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005003742893543",
+   "titel": "100/150/200mm Brush Rotary Chimney Brush Long Handle Flexible Rod For Chimney Dryer Pipe Fireplace Inner Wall Cleaning Tools",
+   "url": "https://www.aliexpress.com/item/1005003742893543.html",
+   "pris": 16.39,
+   "valuta": "USD",
+   "pris_text": "US $16.39",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S06ef04d6690246d691b410c50a1a7344U.png",
+   "sald": "",
+   "sokord": "chimney cleaning brush rod set",
+   "grupp": "ved och eldning",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chimney-cleaning-brush-rod-set.html",
+   "ekonomi": {
+    "landad": 236,
+    "forslag_pris": 599,
+    "multipel": 2.54,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005008555907589",
+   "titel": "Cane with Seat Portable Stool Chair Supports Up 240Lb cameping Chairs Lightweight 1.4 Lbs Suitable for Outdoor Chair Crutch Fold",
+   "url": "https://www.aliexpress.com/item/1005008555907589.html",
+   "pris": 13.64,
+   "valuta": "USD",
+   "pris_text": "US $13.64",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S65cd703840804b1ebf68f8c122d9afe7x.jpg",
+   "sald": "",
+   "sokord": "folding seat stick hunting",
+   "grupp": "jakt",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-folding-seat-stick-hunting.html",
+   "ekonomi": {
+    "landad": 196,
+    "forslag_pris": 499,
+    "multipel": 2.54,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012386302696",
+   "titel": "Roof Ladder Stabilizer, Ladder Standoff, Extension Ladder Stabilizer, Wall Bracket, Heavy Duty Secure",
+   "url": "https://www.aliexpress.com/item/1005012386302696.html",
+   "pris": 27.55,
+   "valuta": "USD",
+   "pris_text": "US $27.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S4f5c23377f414f0c868c1af6496a8f73E.jpg",
+   "sald": "",
+   "sokord": "ladder stabilizer standoff roof gutter",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-ladder-stabilizer-standoff-roof-gutter.html",
+   "ekonomi": {
+    "landad": 397,
+    "forslag_pris": 999,
+    "multipel": 2.52,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005011764722846",
+   "titel": "Outboard Motor Flusher Muffs Kit with 16mm Quick Connect Fitting, Adjustable Dual/Single Tube for Boat Motor Cleaning & Test Run",
+   "url": "https://www.aliexpress.com/item/1005011764722846.html",
+   "pris": 25.05,
+   "valuta": "USD",
+   "pris_text": "US $25.05",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1765e6b203364ba5b2b27145c16238989.jpg",
+   "sald": "",
+   "sokord": "motor flusher muffs outboard",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motor-flusher-muffs-outboard.html",
+   "ekonomi": {
+    "landad": 361,
+    "forslag_pris": 899,
+    "multipel": 2.49,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005013087159806",
+   "titel": "Chimney Sweep Brush Set with 2 Brush Heads and Flexible Extendable Rods for Air Ducts, Dryer Drains, and Kitchen Cleaning",
+   "url": "https://www.aliexpress.com/item/1005013087159806.html",
+   "pris": 27.81,
+   "valuta": "USD",
+   "pris_text": "US $27.81",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S293a91b66172476bba7f39c78372194cy.jpg",
+   "sald": "",
+   "sokord": "chimney cleaning brush rod set",
+   "grupp": "ved och eldning",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chimney-cleaning-brush-rod-set.html",
+   "ekonomi": {
+    "landad": 401,
+    "forslag_pris": 999,
+    "multipel": 2.49,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005008715557858",
+   "titel": "Riding Mower Seat Cover with Two Storage Bags, 600D Oxford Tractor Seat Protection Tractor Seat Cover Fits Most Mowers",
+   "url": "https://www.aliexpress.com/item/1005008715557858.html",
+   "pris": 25.15,
+   "valuta": "USD",
+   "pris_text": "US $25.15",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S3a78810e8314443095a483c79f0f7da5a.jpg",
+   "sald": "",
+   "sokord": "lawn mower seat cover riding",
+   "grupp": "trädgård och maskin",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-lawn-mower-seat-cover-riding.html",
+   "ekonomi": {
+    "landad": 362,
+    "forslag_pris": 899,
+    "multipel": 2.48,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005010031374297",
+   "titel": "2 Pieces 316 Stainless Steel Stanchion Hand Rail Fitting Left Front 22mm 25mm Stanchion Brackets Boat Yacht Accessories",
+   "url": "https://www.aliexpress.com/item/1005010031374297.html",
+   "pris": 19.9,
+   "valuta": "USD",
+   "pris_text": "US $19.90",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Se1ce4ec4f1b544c5a0ae4936b3a10b21w.jpg",
+   "sald": "",
+   "sokord": "boat trailer guide post",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-boat-trailer-guide-post.html",
+   "ekonomi": {
+    "landad": 287,
+    "forslag_pris": 699,
+    "multipel": 2.44,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  }
+ ]
+}

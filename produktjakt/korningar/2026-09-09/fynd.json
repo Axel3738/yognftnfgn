@@ -2,7 +2,7 @@
  "datum": "2026-09-09",
  "manad": 9,
  "usd_sek": 9.6022,
- "kurskalla": "ECB 2026-09-09",
+ "kurskalla": "kurs.json 2026-09-09",
  "sokord": [
   {
    "ord": "boat cover support pole adjustable",
@@ -27,16 +27,111 @@
   {
    "ord": "downpipe rain diverter water butt",
    "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "motor flusher muffs outboard",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "chimney cleaning brush rod set",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "folding seat stick hunting",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "kindling splitter cast iron",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "ladder stabilizer standoff roof gutter",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "rifle sling neoprene padded",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "boat trailer guide post",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "lawn mower seat cover riding",
+   "grupp": "trädgård och maskin"
   }
  ],
  "hoppade": {
-  "stoppord": 0,
+  "dubblett": 5,
+  "ekonomi": 129,
   "pris saknas": 0,
-  "ekonomi": 38,
-  "dubblett": 0
+  "stoppord": 1
  },
- "antal_kandidater": 10,
+ "antal_kandidater": 25,
  "produkter": [
+  {
+   "product_id": "1005008077527346",
+   "titel": "Flexible Chimney Sweep Set Flue Sweeping Brush & Rod Kit Soot Cleaning Rods Nylon Brush Cleaning Tool Kit",
+   "url": "https://www.aliexpress.com/item/1005008077527346.html",
+   "pris": 15.81,
+   "valuta": "USD",
+   "pris_text": "US $15.81",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd362c7c33848404bb3e573470af41733h.jpg",
+   "sald": "",
+   "sokord": "chimney cleaning brush rod set",
+   "grupp": "ved och eldning",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chimney-cleaning-brush-rod-set.html",
+   "ekonomi": {
+    "landad": 228,
+    "forslag_pris": 599,
+    "multipel": 2.63,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005011927514185",
+   "titel": "Foldable Cane Easy To Carry Seat Portable Stool Folding Chair Non Slip Handle Super Light Walking Stick For Outdoor Walking",
+   "url": "https://www.aliexpress.com/item/1005011927514185.html",
+   "pris": 16.08,
+   "valuta": "USD",
+   "pris_text": "US $16.08",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sddf296c4c78d43d7a1d84ca5614acb6fL.jpg",
+   "sald": "",
+   "sokord": "folding seat stick hunting",
+   "grupp": "jakt",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-folding-seat-stick-hunting.html",
+   "ekonomi": {
+    "landad": 232,
+    "forslag_pris": 599,
+    "multipel": 2.59,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012414077421",
+   "titel": "Winter Warm Waterproof Stray Cat Dog House Foldable Washable Pet Cave Outdoor Shelter Sleeping Bed for Small Puppy Pet Supplies",
+   "url": "https://www.aliexpress.com/item/1005012414077421.html",
+   "pris": 21.66,
+   "valuta": "USD",
+   "pris_text": "US $21.66",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S20416daaf99f4237ab753083a39afac5H.jpg",
+   "sald": "",
+   "sokord": "outdoor cat house insulated waterproof",
+   "grupp": "lantbruk och djur",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cat-house-insulated-waterproof.html",
+   "ekonomi": {
+    "landad": 312,
+    "forslag_pris": 799,
+    "multipel": 2.56,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
   {
    "product_id": "1005009100129778",
    "titel": "Professional Telescopic Boat Cover Support Pole Windproof Adjustable Height 22\"-70\" Heavy-Duty Steel/Aluminum for Pontoon Patio",
@@ -53,6 +148,48 @@
     "landad": 155,
     "forslag_pris": 399,
     "multipel": 2.57,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005011764722846",
+   "titel": "Outboard Motor Flusher Muffs Kit with 16mm Quick Connect Fitting, Adjustable Dual/Single Tube for Boat Motor Cleaning & Test Run",
+   "url": "https://www.aliexpress.com/item/1005011764722846.html",
+   "pris": 25.05,
+   "valuta": "USD",
+   "pris_text": "US $25.05",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1765e6b203364ba5b2b27145c16238989.jpg",
+   "sald": "",
+   "sokord": "motor flusher muffs outboard",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motor-flusher-muffs-outboard.html",
+   "ekonomi": {
+    "landad": 361,
+    "forslag_pris": 899,
+    "multipel": 2.49,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012386302696",
+   "titel": "Roof Ladder Stabilizer, Ladder Standoff, Extension Ladder Stabilizer, Wall Bracket, Heavy Duty Secure",
+   "url": "https://www.aliexpress.com/item/1005012386302696.html",
+   "pris": 27.55,
+   "valuta": "USD",
+   "pris_text": "US $27.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S4f5c23377f414f0c868c1af6496a8f73E.jpg",
+   "sald": "",
+   "sokord": "ladder stabilizer standoff roof gutter",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-ladder-stabilizer-standoff-roof-gutter.html",
+   "ekonomi": {
+    "landad": 397,
+    "forslag_pris": 999,
+    "multipel": 2.52,
     "dom": "PASS",
     "orsak": ""
    },
@@ -101,132 +238,6 @@
    "usd_sek": 9.6022
   },
   {
-   "product_id": "1005007487622885",
-   "titel": "JVEE 30W 1000mAh Solar Flood Lights Remote Control Powered Spotlight Outdoor Waterproof IP67 Villa Street Lamp Adjustable Angle",
-   "url": "https://www.aliexpress.com/item/1005007487622885.html",
-   "pris": 11.33,
-   "valuta": "USD",
-   "pris_text": "US $11.33",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S4d8623aa49aa4b18bfe95b3f674c7ba8T.jpg",
-   "sald": "",
-   "sokord": "solar dock light marine",
-   "grupp": "belysning och mörker",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-solar-dock-light-marine.html",
-   "ekonomi": {
-    "landad": 163,
-    "forslag_pris": 399,
-    "multipel": 2.45,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
-   "product_id": "1005010712839288",
-   "titel": "1/2/3Pcs Solar Charging LED Longshot Warning Light 3 Color Flashing Torch Light Portable Flashlight Boat Navigation Signal Light",
-   "url": "https://www.aliexpress.com/item/1005010712839288.html",
-   "pris": 22.62,
-   "valuta": "USD",
-   "pris_text": "US $22.62",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S15d605ad9579448ba3c140e67d273f235.jpg",
-   "sald": "",
-   "sokord": "solar dock light marine",
-   "grupp": "belysning och mörker",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-solar-dock-light-marine.html",
-   "ekonomi": {
-    "landad": 326,
-    "forslag_pris": 799,
-    "multipel": 2.45,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
-   "product_id": "1005012797654262",
-   "titel": "FLYY-Water Butt Filler Set For Downpipes, Rainwater Collector, Rain Barrel Diverter Kit Connects Downpipe To Water Butt",
-   "url": "https://www.aliexpress.com/item/1005012797654262.html",
-   "pris": 22.64,
-   "valuta": "USD",
-   "pris_text": "US $22.64",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Seabb27633c8549378b013f0e7843e929k.jpg",
-   "sald": "",
-   "sokord": "downpipe rain diverter water butt",
-   "grupp": "tomt hus och tak",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-downpipe-rain-diverter-water-butt.html",
-   "ekonomi": {
-    "landad": 326,
-    "forslag_pris": 799,
-    "multipel": 2.45,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
-   "product_id": "1005010580025501",
-   "titel": "Rainwater Collection System Easy Installation Efficient Rain Barrel Diverter Kit For Downspout Brown",
-   "url": "https://www.aliexpress.com/item/1005010580025501.html",
-   "pris": 20.03,
-   "valuta": "USD",
-   "pris_text": "US $20.03",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S7eb1605108374fc9bbb9c200eb2dc734f.jpg",
-   "sald": "",
-   "sokord": "downpipe rain diverter water butt",
-   "grupp": "tomt hus och tak",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-downpipe-rain-diverter-water-butt.html",
-   "ekonomi": {
-    "landad": 288,
-    "forslag_pris": 699,
-    "multipel": 2.42,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
-   "product_id": "1005010318124054",
-   "titel": "3 in 1 Aluminum Ship Boat Cover Support Pole Marine Adjustable Stand 22'' to",
-   "url": "https://www.aliexpress.com/item/1005010318124054.html",
-   "pris": 28.81,
-   "valuta": "USD",
-   "pris_text": "US $28.81",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S31821eb7745f4de694136cf4e2a6df7cX.jpg",
-   "sald": "",
-   "sokord": "boat cover support pole adjustable",
-   "grupp": "båt och trailer",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-boat-cover-support-pole-adjustable.html",
-   "ekonomi": {
-    "landad": 415,
-    "forslag_pris": 999,
-    "multipel": 2.41,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
-   "product_id": "1005012502051940",
-   "titel": "Downpipe Diverter Rectangular Shape Plastic Rainwater Diverter Downspout Rain Collector Corrugated Hose",
-   "url": "https://www.aliexpress.com/item/1005012502051940.html",
-   "pris": 25.87,
-   "valuta": "USD",
-   "pris_text": "US $25.87",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Scbcc18495dd14007a943eb5d126f2372v.jpg",
-   "sald": "",
-   "sokord": "downpipe rain diverter water butt",
-   "grupp": "tomt hus och tak",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-downpipe-rain-diverter-water-butt.html",
-   "ekonomi": {
-    "landad": 373,
-    "forslag_pris": 899,
-    "multipel": 2.41,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
    "product_id": "1005012241693262",
    "titel": "Solar Alarm IP65 Waterproof PIR Motion Detection Alarm with Siren and Strobe Light For Home Security Alarm System",
    "url": "https://www.aliexpress.com/item/1005012241693262.html",
@@ -247,5 +258,6 @@
    },
    "usd_sek": 9.6022
   }
- ]
+ ],
+ "granskade_bort": 13
 }
