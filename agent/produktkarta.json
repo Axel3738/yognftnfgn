@@ -691,6 +691,30 @@
       "lage_motivering": "startad 2026-09-06 (NO), saknades i kartan — tillagd av /rond-auto",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250147343350291",
+      "produkt": "Takövedraget för Husvagn 6,5 × 3 m",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-09, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250147309170291",
+      "produkt": "Isolerade Utekattkojan",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-09, saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252140554000233",
+      "produkt": "Adventskalender NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-09 (NO), saknades i kartan — tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
     }
   ],
   "valutakurser": {
