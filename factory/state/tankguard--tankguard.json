@@ -85,8 +85,24 @@
       ]
     },
     "kampanj_no": {
-      "klar": false,
-      "notis": "Finns inte annu. Byggs i SAMMA konto 915422744950975 med geo NO och lank mot /nb."
+      "klar": "delvis",
+      "id": "120249012213810172",
+      "namn": "TANKGUARD_NO_Tanktrekket | 2026-09-09",
+      "status": "PAUSED",
+      "daily_budget_ore": 100000,
+      "adsets": {
+        "BOF": "120249012214920172",
+        "CO": "120249012231600172",
+        "GT": "120249012420680172",
+        "PD": "120249012810040172"
+      },
+      "annonser_hittills": 9,
+      "mal_rena_bilder": 10,
+      "lank": "https://tankguard.se/nb/products/tankoverdraget",
+      "pixel": "2196132151319625",
+      "geo": "NO (targeting last ur norska kallkampanjens adset, aldrig en fallback-geo)",
+      "copy": "Bokmal, UTAN priser — TankGuard har inget kant NOK-pris, priset star pa /nb-sidan.",
+      "notis": "13 norska videor ar INTE byggda: mediat ar inte grindat och behover samma frame-OCR som de svenska."
     },
     "bilder": {
       "klar": false,
@@ -95,9 +111,9 @@
       "verktyg": "pipeline/oversatt-bild.py, gratis"
     },
     "videor": {
-      "klar": "delvis",
+      "klar": true,
       "renderade": 11,
-      "byggda": 5,
+      "byggda": 13,
       "omdubbade_och_byggda": [
         "PD_1_H1",
         "PD_1_H2",
@@ -118,7 +134,18 @@
         "SP_1_H3"
       ],
       "heygen": "Swedish (Sweden) fungerar. Moderationskon ar ett vantlage — PD_1_H1 slapptes efter ~5 min.",
-      "rostkontroll": "INTE GJORD. Kraver att nagon lyssnar (CLAUDE.md jarnregel 3). De fem byggda ligger PAUSED."
+      "rostkontroll": "INTE GJORD. Kraver att nagon lyssnar (CLAUDE.md jarnregel 3). De fem byggda ligger PAUSED.",
+      "captionsbyte_klart": [
+        "CS_1_H2",
+        "CS_1_H3",
+        "GT_1_H1",
+        "GT_1_H2",
+        "GT_1_H3",
+        "SP_1_H1",
+        "SP_1_H2",
+        "SP_1_H3"
+      ],
+      "ocr_kontroll": "Alla atta caption-bytta videor OCR-grindade pa 160 frames: noll traffar pa forbjudna pastaenden."
     },
     "copy": {
       "klar": "delvis",
@@ -245,6 +272,14 @@
       ],
       "dom": "DELVIS KLART",
       "saknas_orsak": "Fick nytt manus, inte ordbyte. Ljudet ar omdubbat och klart, men den inbranda undertexten visar fortfarande det GAMLA talet hela videon igenom. Hela captionsparet maste bytas med pipeline/no-precis.py."
+    },
+    "no_mediagrind": {
+      "klar": true,
+      "bilder_grindade": 20,
+      "rena": 10,
+      "smutsiga": 10,
+      "fil": "factory/output/tankguard/no-mediagrind.md",
+      "no_specifikt": "De fyra norska RV-bilderna bar kallbutikens doman baverbutiken.se inbrand. De svenska gor det inte."
     }
   },
   "uppdaterad": "2026-09-09",
