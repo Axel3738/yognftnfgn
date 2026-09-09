@@ -21,6 +21,12 @@ butik:
       locale: nb
       valuta: SEK
   valuta: SEK
+  # ⚠️ Styr butikens PRISVISNING — aldrig en break-even-beräkning.
+  # Verksamheten säljer DDP, alltså utan moms (Axels besked 2026-09-09):
+  # marginalen räknas rakt på priset, precis som Bäverbutiken. Drar någon av
+  # 25 % här ser lönsamma annonser ut att gå med förlust, och felet syns inte
+  # som ett felmeddelande. Beslutstalen står i
+  # factory/produkter/overvakningskameran.yaml under `ekonomi:`.
   moms_i_pris: true
 
 frakt:

@@ -264,6 +264,34 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 15:00 | `0 13 * * *` | Översättning till Norge (bild + video ur Notion-kön `SE-ACTIVE to be translated`) | `/oversatt NO` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
+| **07:30** | `30 5 * * *` | **Skalnings kungen** (budget + brief-rundor) | `/rond-auto` ⚠️ **kör från EN GREN** |
+
+### ⚠️ Skalningskungen finns, kör varje morgon, och syns INTE i `main`
+
+Avläst 2026-09-09 mot Routines-API:t och grenen. Läs det här innan du föreslår
+något som rör Bäverbutikens budgetar eller brief-rundor.
+
+| | |
+|---|---|
+| Rutin | "Skalnings kungen" `trig_016ocyXom7XxCJKHHyfkaQWC`, 07:30 svensk tid, varje dag |
+| Kommando | `.claude/commands/rond-auto.md` — **finns bara på grenen** |
+| Gren | `claude/daily-agent-discussion-uos5df` (rutinens prompt checkar ut den explicit) |
+| Motor | `agent/rond.mjs`, `agent/besked.mjs`, `agent/logg.mjs` — all matematik i kod |
+| Minne | `agent/budgetlogg.jsonl`. **Pushen ÄR minnet.** |
+| Konton | SE `1867947880635861` och NO `1050941584152547` |
+
+Den gör **två** jobb: (A) ändrar budgetar på riktigt — höjer, sänker, stänger
+av, kör åtgärdstrappan; (B) beställer brief-rundor på SE via `/forsta-batch`
+och `/cs`. Tröskeln test → skalning är `1 500 kr total spend OCH ≥ 20 % vinst`
+(`FORSTA_BATCH_SPEND_SEK` / `FORSTA_BATCH_VINST_PROCENT` i `agent/rond.mjs`).
+
+⚠️ **Bygg ALDRIG en ny skalnings- eller rondrutin mot `1867947880635861`.**
+Två rutiner som ändrar samma budgetar skriver över varandra, och kadensspärren
+räknas ur en budgetlogg som bara den ena skriver i. Ombyggnadsplanen står i
+`factory/SKALNINGSKUNGEN-PLAN.md` — den bygger om den som finns.
+
+⚠️ Raden "de klonar `main`" ovan gäller alltså inte den här rutinen. Den är
+undantaget, och undantaget är med flit.
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
 kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag). Siffrorna räknas ändå

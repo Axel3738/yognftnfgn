@@ -1,102 +1,178 @@
 # Skalningskungen — kravspec
 
-**Vad det är:** rutinen som var tredje dag läser annonsdatan, bestämmer vad som
-ska göras härnäst, och skriver nya briefs som kapitel i Notion.
+**Vad det är:** den dagliga rutinen som läser annonsdatan, ändrar budgetarna,
+och beställer nya brief-rundor.
 
-I dag heter den `/cs` och kör mot Bäverbutikens produkter. Enligt
-`factory/TRAPPAN.md` ska den flytta till OPS-butikerna. Den här filen beskriver
-vad den ska bli.
+⚠️ **Den finns redan och kör varje morgon.** Den här filen beskrev tidigare en
+rutin som skulle byggas från noll. Det var fel. Omskriven 2026-09-09 efter en
+avläsning av den körande rutinen. Ombyggnadsplanen står i
+**`SKALNINGSKUNGEN-PLAN.md`**.
 
-**Byggordningen står i `SKALNINGSKUNGEN-PLAN.md`** (2026-09-09). Regel nummer
-ett där: kärnan i creative strategy (`/cs` steg 2–5, `ANALYSMETOD.md`,
-copy-reglerna) flyttas ordagrant och skrivs aldrig om — bara skalet byts.
+| | |
+|---|---|
+| Rutin | "Skalnings kungen" `trig_016ocyXom7XxCJKHHyfkaQWC` |
+| Schema | `30 5 * * *` UTC = **07:30 svensk tid**, varje dag |
+| Kommando | `.claude/commands/rond-auto.md` |
+| Gren | `claude/daily-agent-discussion-uos5df` — **inte `main`** |
+| Motor | `agent/rond.mjs`, `agent/besked.mjs`, `agent/logg.mjs` |
+| Minne | `agent/budgetlogg.jsonl`. Pushen ÄR minnet. |
+| Konton | SE `1867947880635861` · NO `1050941584152547` |
 
 ---
 
-## Kärnidén: samma rutin, två lägen
+## De två jobben
 
-Rutinen kör mot **en butik** och läser butikens läge ur konfigen. Läget avgör
-vad den gör.
+### Jobb A — pengarna (SE och NO)
+Läser Meta, kör `agent/rond.mjs`, utför planen: höj, sänk, stäng av,
+åtgärdstrappan. All matematik ligger i kod — modellen hämtar siffror och utför,
+den räknar aldrig själv.
 
-### Läge TEST (Bäverbutiken)
-Produkten testas. Rutinen gör **bara en sak**: kollar om tröskeln är passerad.
+Spärrarna: golv 500 kr, tak 4 000 kr, max 20 % åt gången (utom raketspåret vid
+ROAS ≥ 5), högst en ändring var tredje dag per kampanj, ingen dom under 300 kr
+spend eller 3 köp, kontospärr, öre-verifiering med tillbakaläsning, och
+livstidsspärren som skyddar en kampanj som tjänat pengar totalt.
 
-- Läser produktens siffror ur Meta (spend, köp, CPA, ROAS).
-- Är tröskeln INTE passerad: rapportera läget, gör inget mer. **Inga briefs.**
-- Är tröskeln passerad: **skjut startskottet** (se nedan).
+**Jobb A ändras inte av den här ombyggnaden.**
 
-Den skriver alltså aldrig nya briefs för en produkt som fortfarande testas.
-Det är hela poängen med att Bäverbutiken blir testbädd.
+### Jobb B — annonserna (bara SE)
+`annonsbehov` i `agent/rond.mjs` flaggar vad som behöver material:
 
-### Läge SKALA (OPS-butik)
-Produkten har egen butik. Rutinen kör full creative-loop, precis som `/cs` gör
-i dag: analys → klassificering → hypoteser → nya briefs i butikens egen
-Notion-hub.
+| Behov | Utlöses av | Kör i dag |
+|---|---|---|
+| `forsta_batch` | **1 500 kr total spend OCH ≥ 20 % vinst**, ingen batch ännu | `/forsta-batch` |
+| `brief_runda` | har batch, senaste `*_KLAR` ≥ 3 dagar gammal | `/cs` |
+| `ersatt` | annonser pausade i trappan senaste veckan | `/cs` |
+| `mata_vinnare` | ≥ 2 höjningar på en vecka | `/cs` |
+
+Norge får aldrig briefer — norska annonser är svenska annonser översatta via
+`/translate-no` (Axels besked 2026-09-01).
+
+**Jobb B är det som byggs om.**
+
+---
+
+## Ombyggnaden: samma rutin, två lägen
+
+Rutinen kör mot **en butik** och läser butikens läge ur konfigen.
+
+### Läge BILD — Bäverbutiken
+Bäverbutiken är testbädd (`TRAPPAN.md`). Jobb A fortsätter oförändrat. Jobb B
+beställer **bara bildannonser**.
+
+Bilder kostar nästan ingenting och tar ingen redigerartid, så testandet kan
+fortsätta i efterhand utan att kosta något. Video och full creative strategy hör
+hemma på OPS-butiken.
+
+Rutinen skriver alltså fortfarande briefs på Bäverbutiken — den slutar bara
+beställa video.
+
+⚠️ Det står i konflikt med dagens `rond-auto.md` 4b, som kräver *"minst två
+tredjedelar av varje batch är video"*. Den meningen ska skrivas om, inte tolkas
+bort.
+
+⚠️ De två extra bildserierna Axel beslutade 2026-09-02 står kvar oförändrade:
+**+3 BOF-bilder** och **+2 review-bilder** per batch. Review-bilderna byggs på
+riktiga recensioner ur produktsidan eller Judge.me, citatet ordagrant. Finns
+inga recensioner: inga review-bilder, och skriv det i leveransen.
+
+### Läge SKALA — OPS-butiken
+Produkten har egen butik. Full creative-loop, alla format, butikens egen
+Notion-hub i butikens eget teamspace och butikens egen Discord-kanal.
 
 ---
 
 ## Startskottet
 
-När en produkt i läge TEST passerar tröskeln ska rutinen:
+Tröskeln finns redan: `FORSTA_BATCH_SPEND_SEK = 1500` och
+`FORSTA_BATCH_VINST_PROCENT = 20` i `agent/rond.mjs`. `vinstProcent` räknas i
+`agent/besked.mjs` som vinst i procent av omsättningen — inte som ROAS-marginal.
 
-1. **Säga det tydligt** i sin rapport: `KLAR FÖR OPS: <produkt>` med siffrorna
-   som motiverar det.
-2. **Skriva det i repot** — en rad i produktens `batch-log.md` och en
-   markering i produktkonfigen, så nästa session ser det utan att räkna om.
-3. **Ge VA:n kommandot att köra**, färdigt att klistra in:
-   `/ny-ops <källänken till produkten>`
-4. **Sluta bevaka produkten** i läge TEST tills butiken finns.
+I dag betyder passerad tröskel "bygg en full batch på Bäverbutiken". Efter
+ombyggnaden betyder den:
 
-Startskottet är en **rapport, inte en handling**. Rutinen bygger aldrig en
-butik själv — VA:n gör det, och hon behöver bara veta att det är dags.
+1. **Meddelande till Axel eller VA:n:** bygg OPS-butiken och lansera den.
+   Med siffrorna som motiverar det: spend, köp, CPA, break-even och vinstprocent.
+2. **`/ny-ops <källänk>`** färdigt att klistra in.
+3. **En rad i budgetloggen** med egen kod (`OPS_STARTSKOTT`), idempotent — en
+   andra körning skickar inte om meddelandet.
+4. **En bildbatch** på Bäverbutiken, inte en videobatch.
+
+Startskottet är en **rapport, inte en handling**. Rutinen bygger aldrig en butik
+själv — VA:n gör det, och hon behöver bara veta att det är dags.
+
+🖐 **Axels beslut som saknas:** ska OPS-tröskeln ligga på samma nivå som
+`forsta_batch` (1 500 kr + 20 %) eller lägre? `TRAPPAN.md` varnar för att sätta
+den för högt — en generalbutik konverterar sämre per produkt än en fokuserad
+OPS-butik med paket, bonus och eget brand. Tills beslutet finns används samma
+tal, och rapporten säger att nivån är oförändrad.
+
+---
 
 ## Överlämningen
 
 När OPS-butiken är byggd och annonserna körts över med `/ny-annonser`:
 
-1. Produkten byter läge från TEST till SKALA i konfigen.
-2. **Produktminnet följer med.** `dna.md`, `batch-log.md` och `backlog.md`
-   kopieras till butikens mapp — den bevisade historiken är det mest
-   värdefulla en ny butik ärver. Utan den ser rutinens första körning
-   tolv annonser utan hypoteser.
-3. Butiken får sin egen Notion-hub i sitt eget teamspace.
-4. Från och med nästa körning skriver rutinen briefs mot den hubben.
+1. Butiken får sitt läge (`skala`) i konfigen.
+2. **Produktminnet DUPLICERAS.** `dna.md`, `batch-log.md` och `backlog.md`
+   kopieras till butikens mapp och **ligger kvar på Bäverbutiken också**.
+   Ingenting flyttas bort, ingenting raderas. Bäverbutiken fortsätter köra sin
+   egen loop med sitt eget minne.
+   ⚠️ Från kopieringsdagen är det två minnen som driver isär. Skriv överst i
+   kopian varifrån den kom och vilket datum.
+3. De brand-swappade annonserna skrivs in i kopians `batch-log.md` med sina
+   bevisade utfall, märkta `ärvd från Bäverbutiken` — annars ser butikens första
+   körning tolv annonser utan hypoteser.
+   ⚠️ Bäverbutikens tal är HISTORIK, inte facit. Butiken konverterar annorlunda.
+4. Butiken får sin egen Notion-hub i sitt **eget teamspace** (Axels beslut
+   2026-09-09), klonad ur `Creative hub MALL`
+   `3cc270ab-908c-8005-a50e-db6b1b179794` — aldrig byggd från noll.
+
+---
 
 ## Egen instans per butik
 
 Varje OPS-butik har sin egen schemalagda körning var tredje dag.
 
-**Måste vara en FAST molnsession** med repot som källa och `main` som utgren.
-En rutin som startar ny session varje gång kan inte pusha — allt den lär sig
-dör med containern. (Mätt tre gånger i repot; står i CLAUDE.md.)
+**Måste vara en FAST molnsession** med repot som källa. En rutin som startar ny
+session varje gång kan inte pusha — allt den lär sig dör med containern (mätt
+tre gånger, står i CLAUDE.md). Kör `list_triggers` före bygget; en dubblett
+skapades av misstag 2026-09-08.
 
 Vad som skiljer instanserna åt är bara konfigen:
 
 | Fält | Vad det styr |
 |---|---|
 | butik | vilken butik körningen gäller |
-| läge | `test` eller `skala` |
-| annonskonto | Bäverbutiken respektive MagiBorsten DK |
+| läge | `bild` eller `skala` |
+| annonskonto | Bäverbutiken `1867947880635861` · OPS `915422744950975` |
 | creative_prefix | vilka annonser i kontot som är produktens — **per produkt, aldrig per brand** |
 | notion_hub | vart briefsen skrivs |
-| kanal | var rapporten landar (Discord per butik) |
+| kanal | var rapporten landar |
 | ekonomi | pris, inköp, break-even-CPA, break-even-ROAS, target-CPA |
+
+⚠️ **Prefixfiltret är obligatoriskt på OPS-kontot.** `915422744950975` bär alla
+OPS-butiker **och** Bäverbutikens danska kampanjer, med Bäverbutikens DK-sida
+`1324465810740336` och pixel `1554276343018184`. Utan filter läser rutinen fel
+verksamhets annonser som om de vore samma produkt.
+
+⚠️ Kontots valuta är **SEK**, inte DKK, trots namnet "Magiborsten DK"
+(bekräftat mot Meta 2026-09-09). 1 000 kr/dag = `daily_budget: 100000`.
 
 ---
 
-## Vad som måste finnas innan den kan byggas
+## Vad som måste finnas innan bygget
 
-1. **Ekonomiblocket per produkt.** `factory/produkter/*.yaml` har i dag bara
-   `pris` och `inkopskostnad`. Rutinen kan varken rangordna eller döma utan
-   break-even och target. ⚠️ Räkna om från grunden per butik — Bäverbutiken
-   säljer utan moms, OPS-butikerna har `moms_i_pris: true`. Kopiera aldrig tal
-   mellan verksamheterna.
-2. **`creative_prefix` per produkt**, inte per brand. Prefixet är det enda
-   fyra system använder för att skilja produkter åt.
-3. **Butiksfilter på det gemensamma annonskontot.** MagiBorsten DK bär alla
-   OPS-butiker. Utan filter läser rutinen andra butikers annonser som om de
-   vore samma produkt.
-4. **Tröskeln.** Vad "tillräckligt bra" betyder är inte satt. Se nedan.
+1. **Systemet synligt från `main`.** Utan det bygger nästa session en
+   konkurrerande rutin mot samma annonskonto. Gjort 2026-09-09 i CLAUDE.md och
+   `FAS2.md`; se `SKALNINGSKUNGEN-PLAN.md` steg 0.
+2. **Ekonomiblocket per OPS-produkt** — räknat **utan moms** (DDP, Axels beslut
+   2026-09-09). Marginal rakt på priset, precis som Bäverbutiken.
+   Kopiera aldrig ett break-even-tal mellan verksamheterna.
+3. **`creative_prefix` per produkt**, inte per brand (`FLERPRODUKT.md`, fällan 1).
+4. **Butiksfilter på det gemensamma annonskontot.**
+5. **Tröskelbeslutet** — samma nivå som `forsta_batch`, eller lägre.
+
+---
 
 ## Det som inte ändras
 
@@ -105,19 +181,13 @@ Rangordna på vinstbidrag `(break-even-CPA − CPA) × köp`, aldrig på ROAS el
 CPA ensamt. Signifikansgrind 300 kr spend eller 3 köp. Kill mot break-even,
 skalning mot target. Nya tester i separat test-ABO (regel 11).
 
-Copyn skrivs av en subagent med `model: "sonnet"` som får
-`docs/copy-regler.md`. Huvudsessionen gör strategi och klassificering, aldrig
-slutgiltig text.
+Beslutsmotorn (`agent/besked.mjs`, `agent/rond.mjs`, `agent/logg.mjs`) rörs
+inte. All matematik ligger i kod av ett skäl: tre regler i CLAUDE.md finns för
+att en tidigare chatt räknade fel. Ligger räkningen i kod blir svaret detsamma
+varje gång och går att testa.
 
----
+Copyn skrivs av en subagent med `model: "sonnet"` som får `docs/copy-regler.md`.
+Huvudsessionen gör strategi och klassificering, aldrig slutgiltig text.
 
-## Öppet: tröskeln
-
-Vad ska krävas för att skjuta startskottet? Förslag att bedöma:
-
-> **N köp till en CPA under break-even, över minst M dagars spend.**
-
-⚠️ Sätt den **lägre än den känns rimlig**. Bäverbutiken är en generalbutik och
-konverterar sämre per produkt än en fokuserad OPS-butik med paket, bonus och
-eget brand. En produkt som gör 1,8 i ROAS där kan göra mer på sin egen butik.
-Sätts tröskeln för högt dödas produkter som hade funkat.
+Statusspärren i `rond-auto.md` 4b gäller oförändrad: **ingen brief till en
+pausad kampanj, någonsin** — inte ens en som rutinen själv pausade samma morgon.

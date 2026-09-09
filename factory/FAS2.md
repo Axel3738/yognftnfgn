@@ -333,10 +333,21 @@ Bäverbutikens produkter fasas ut i takt med att de får egna butiker.
 **Vad:** en `/skalningskungen <butik>` som analyserar, skalar och briefar — en instans
 per OPS-butik.
 
-⚠️ **Den finns inte.** Verifierat med `git log --all --diff-filter=A -- .claude/commands/*`:
-22 kommandofiler har någonsin skapats, ingen heter skalning/scaling. Ordet
-"skalningsronden" förekommer 8 gånger men bara som **ägare av PAUSED-beslut** — en
-mänsklig praxis, aldrig ett skript. Bygg från `/cs` som mall.
+🔴 **RÄTTELSE 2026-09-09: den FINNS, och den kör varje morgon.** Påståendet
+nedan var fel och stod kvar i ett dygn.
+
+> ~~Den finns inte. Verifierat med `git log --all --diff-filter=A --
+> .claude/commands/*`: 22 kommandofiler har någonsin skapats, ingen heter
+> skalning/scaling.~~
+
+Rutinen heter **"Skalnings kungen"** (`trig_016ocyXom7XxCJKHHyfkaQWC`), kör
+07:30 varje dag, och ligger på grenen `claude/daily-agent-discussion-uos5df` som
+`.claude/commands/rond-auto.md` + hela `agent/`-mappen. Sökningen missade den
+för att varken kommandofilen eller motorn någonsin har funnits i `main`.
+
+Den ändrar budgetar på riktigt och beställer redan brief-rundor via `/cs` och
+`/forsta-batch`. **Bygg alltså inte en ny rutin — bygg om den som finns.**
+Planen står i `factory/SKALNINGSKUNGEN-PLAN.md`, kortfattat i CLAUDE.md.
 
 **Återanvänd detta:**
 - `.claude/commands/cs.md` — kärnloopens fem steg. Byt fyra saker: annonskontot

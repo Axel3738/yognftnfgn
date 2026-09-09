@@ -24,6 +24,41 @@ ekonomi:
   pris: 799
   jamforpris: 1000
 
+  # ----------------------------------------------------------------------
+  # BESLUTSTALEN — räknade 2026-09-09 för Skalningskungen (SKALNINGSKUNGEN.md).
+  #
+  # UTAN MOMS. Verksamheten säljer DDP (Axels besked 2026-09-09), så marginalen
+  # räknas rakt på priset — precis som Bäverbutiken och Grillkliniken.
+  # `moms_i_pris: true` i factory/butiker/hemvakten.yaml styr butikens
+  # prisvisning och får ALDRIG användas för att dra av moms här.
+  #
+  # Husets formel, avläst ur products/products.json och kontrollerad mot
+  # Motorhöljet och AI-glasögonen (stämmer på avrundningen):
+  #   täckningsbidrag = pris − inköp            = 799 − 261 = 538 kr
+  #   break_even_roas = pris / täckningsbidrag  = 799 / 538  = 1,49
+  #   break_even_cpa  = täckningsbidrag                     = 538 kr
+  #   target_cpa      = täckningsbidrag − 0,25 × pris       = 338 kr
+  #   target_roas     = pris / target_cpa                   = 2,36
+  #
+  # KILL-beslut mäts mot break-even, skalning mot target. Aldrig tvärtom.
+  # (docs/os/ANALYSMETOD.md — obligatorisk.)
+  # ----------------------------------------------------------------------
+  break_even_roas: 1.49
+  break_even_cpa_sek: 538
+  target_roas: 2.36
+  target_cpa_sek: 338
+  talen_kalla: "Räknat 2026-09-09 ur pris 799 + inkopskostnad 261 i den här filen, utan moms (DDP). Formel kontrollerad mot products.json."
+
+  # ⚠️ ANTAGANDE, inte en mätning. AOV är inte samma sak som styckpriset när
+  # butiken säljer paket (se offer.bundle nedan: 2-pack, 3-pack, 4-pack).
+  # HeimGuard har ingen försäljning än, så det finns ingen verklig AOV att
+  # hämta. Talen ovan är därför räknade på EN enhet och är konservativa —
+  # verklig AOV blir högre när paketen säljer, och då blir break-even lägre.
+  # BYT till verklig AOV ur Shopify analytics så snart butiken har order,
+  # och räkna om alla fyra talen. Hitta aldrig på en AOV.
+  aov_sek: 799
+  aov_kalla: "ANTAGANDE — styckpriset. Ingen försäljning än. Ersätt med Shopify analytics 14d när order finns."
+
 varianter:
   - namn: "Svart"
     sku: "TEMU-601100938731214"

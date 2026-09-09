@@ -38,10 +38,28 @@ ekonomi:
   # Referens vid KÄLLBUTIKENS pris 489 kr utan moms: täckningsbidrag 334 kr,
   # break-even-ROAS 1,46, break-even-CPA 334 kr. SE-kampanjen heter "BE ROAS
   # 1.51" — den räknades på en äldre kurs.
-  # ⚠️ Detta är INTE TankGuards break-even. Butiken har inget eget pris satt i
-  # repot och `factory/butiker/tankguard.yaml` finns inte, så momsfrågan är
-  # oavgjord. Räkna om från grunden när priset är spikat — kopiera aldrig
-  # break-even-tal mellan verksamheterna (FAS2, Uppdrag E).
+  # ⚠️ Detta är INTE TankGuards break-even — det är källbutikens.
+  #
+  # MOMSFRÅGAN ÄR AVGJORD 2026-09-09: ingen moms. Verksamheten säljer DDP
+  # (Axels besked), så marginalen räknas rakt på priset, precis som
+  # Bäverbutiken. Den gamla raden om att frågan var "oavgjord" är struken.
+  #
+  # 🖐 DET SOM SAKNAS ÄR ETT ENDA TAL: TankGuards EGET pris.
+  # Butiken har inget pris satt i repot och `factory/butiker/tankguard.yaml`
+  # finns inte. Utan priset går break-even inte att räkna, och utan break-even
+  # kan Skalningskungen varken rangordna eller döma butikens annonser
+  # (SKALNINGSKUNGEN.md, "Vad som måste finnas innan bygget").
+  #
+  # NÄR PRISET FINNS, räkna med husets formel — samma som HeimGuard fick
+  # 2026-09-09 i produkter/overvakningskameran.yaml:
+  #   täckningsbidrag = pris − 155
+  #   break_even_roas = pris / täckningsbidrag
+  #   break_even_cpa  = täckningsbidrag
+  #   target_cpa      = täckningsbidrag − 0,25 × pris
+  #   target_roas     = pris / target_cpa
+  # Skriv sedan in break_even_roas, break_even_cpa_sek, target_roas,
+  # target_cpa_sek och aov_sek här, med källa och datum.
+  # Kopiera aldrig ett break-even-tal mellan verksamheterna (FAS2, Uppdrag E).
 
 # KÄLLKOPPLINGEN — vilken Bäverbutiks-produkt och vilka Bäverbutiks-annonser
 # TankGuard är byggd av. Maskinläsbart (factory/FAS2.md, Uppdrag A).
