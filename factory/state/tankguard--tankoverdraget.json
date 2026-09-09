@@ -1,0 +1,86 @@
+{
+  "butik": "tankguard",
+  "produkt": "tankoverdraget",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/15989715108184",
+      "handle": "tankoverdraget",
+      "status": "ACTIVE"
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 12
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/198130270552",
+      "filer": [
+        "assets/opf-brand.css",
+        "snippets/ms-head.liquid",
+        "config/settings_data.json"
+      ]
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/198130270552",
+      "temaNamn": "TankGuard – CRO v1 (utkast)",
+      "sektioner": 6
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "meny": {
+      "klar": true,
+      "huvudmeny": "main-menu",
+      "handle": "footer",
+      "orord": false
+    },
+    "startsida": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/198130270552",
+      "filer": [
+        "templates/index.json",
+        "sections/header-group.json",
+        "sections/footer-group.json",
+        "templates/product.json",
+        "config/settings_data.json",
+        "snippets/opf-korg-upsell.liquid",
+        "sections/cart-drawer.liquid",
+        "snippets/opf-tillagg.liquid",
+        "snippets/ms-head.liquid",
+        "snippets/ms-paket.liquid"
+      ],
+      "abTest": "paket"
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 5,
+      "orort": false
+    },
+    "huvudmarknad": {
+      "klar": true,
+      "valuta": "SEK"
+    },
+    "recensioner": {
+      "klar": true,
+      "rapport": {
+        "judgeme-import.csv": "klart: 10 ok, 0 fel · Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg.",
+        "judgeme-import-nb.csv": "klart: 6 ok, 0 fel · Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg."
+      }
+    }
+  },
+  "uppdaterad": "2026-09-08T08:23:06.166Z",
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "tracking"
+    ],
+    "tid": "2026-09-08T08:23:06.166Z"
+  }
+}

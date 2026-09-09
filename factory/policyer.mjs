@@ -59,7 +59,9 @@ export function returpolicy(p) {
   const r = retur(p);
   const dagar = oppetKop(p);
   const eget = dagar && dagar > r.angerratt;
-  return `<h2>Ångerrätt och öppet köp</h2>
+  // Rubriken nämner öppet köp bara när butiken faktiskt ger mer än lagen
+  // (Axels beslut 2026-09-08: svensk lag, inga egna köplöften).
+  return `<h2>${eget ? 'Ångerrätt och öppet köp' : 'Ångerrätt'}</h2>
 <p>Du har enligt distansavtalslagen ${r.angerratt} dagars ångerrätt från den dag du tog emot varan.${
     eget ? ` Vi ger dig utöver det ${dagar} dagars öppet köp.` : ''
   }</p>

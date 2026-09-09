@@ -2,13 +2,15 @@
 // Discord-server + en redigerare plockad ur standby-listan (Axels beslut
 // 2026-09-07). Noll beroenden — inbyggda fetch mot Discords REST-API.
 //
-//   node factory/discord.mjs factory/butiker/<butik>.yaml            # skapa server
-//   node factory/discord.mjs factory/butiker/<butik>.yaml --guild <id>  # kanaler i befintlig server
+//   node factory/discord.mjs factory/butiker/<butik>.yaml --guild <id> [--ikon <logga.png>]
 //   ... --torr        visa planen utan att röra Discord eller listan
 //
-// Kräver env DISCORD_BOT_TOKEN (bot-token, INTE webhook). En bot kan bara
-// skapa nya servrar så länge den sitter i färre än 10 — därefter måste Axel
-// skapa servern för hand och boten bygga kanalerna med --guild.
+// Kräver env DISCORD_BOT_TOKEN (bot-token, INTE webhook). ⚠️ Boten kan INTE
+// skapa servrar: POST /guilds svarar 400 kod 20001 "Bots cannot use this
+// endpoint" (mätt på TankGuard 2026-09-08, boten satt i 3 servrar — gränsen
+// "färre än 10" gäller alltså inte längre). Servern skapas därför alltid av
+// VA:n (checklistans steg 9) som auktoriserar boten via länken skriptet
+// skriver ut utan --guild; sen bygger boten kanalerna med --guild <id>.
 //
 // Redigerarlistan bor i factory/redigerare/standby.md (byggs av
 // rekryteringsmotorn, se factory/PLAN.md punkt 4). Första raden med status
@@ -153,6 +155,18 @@ async function huvud() {
   }
 
   if (torr) { console.log('\n(torrkörning — inget skapades)'); return; }
+
+  // Boten kan inte skapa servrar (20001) — utan --guild skrivs auktoriserings-
+  // länken ut som VA:n öppnar efter att hon skapat servern (steg 9).
+  if (!guildId) {
+    const app = await discord('/oauth2/applications/@me');
+    // Manage Channels + Manage Roles + Manage Guild (ikon) + Create Invite.
+    const lank = `https://discord.com/oauth2/authorize?client_id=${app.id}&scope=bot&permissions=268435505`;
+    console.log(`\n🖐 Boten kan inte skapa servrar. VA:n: skapa servern "${plan.servernamn}" i Discord, öppna länken och välj servern:`);
+    console.log(`   ${lank}`);
+    console.log('   Sen: node factory/discord.mjs <butik.yaml> --guild <server-id> [--ikon <logga.png>]');
+    process.exit(1);
+  }
 
   const resultat = await byggServer(brand, guildId, ikonFil);
   console.log(`\n✅ Server klar (guild ${resultat.guildId})`);

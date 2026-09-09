@@ -175,11 +175,16 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Ändrades mallen (VA-CHECKLIST.md/checklista.mjs) i sessionen: för in
    ändringen i VA:ns Google-dokument också (länken står i VA-CHECKLIST.md).
    Fortsätt bygga det som inte kräver hennes klick under tiden.
-10. **"Store ready: <namn>"** från VA:n = slutsteget: importera recensionerna
-    (`tools/judgeme-import.mjs --mejlsuffix <domän>.invalid` med hennes token —
-    en delmängd av recensionerna översätts ALLTID till norska och importeras
+10. **"Store ready: <namn>"** från VA:n = slutsteget: recensionerna
+    (fabrikens `recensioner`-steg skriver `output/<id>/judgeme-app-import.csv`
+    i Judge.mes mallformat med källans ORIGINALDATUM — VA:n laddar upp den i
+    appen: Settings → Import reviews → Import from apps → Judge.me format.
+    ALDRIG via API:t: det sätter importögonblicket som datum och "för 12
+    minuter sedan" på allt skriker fejk — Axels regel 2026-09-08. En delmängd
+    av recensionerna översätts ALLTID till norska och ligger i samma fil
     med norska namn — Norge är standardmarknad i varje butik; Judge.mes
-    auto-översättning är paid och köps ALDRIG, se PROCESS.md fas 3),
+    auto-översättning är paid och köps ALDRIG, se PROCESS.md fas 3. Efter
+    hennes import: verifiera i kundvyn att datumen är originalen),
     skapa pixeln (`skapaPixel` i `factory/meta-setup.mjs`, kräver
     META_ACCESS_TOKEN i `factory/.env`) i det gemensamma OPS-annonskontot
     **MagiBorsten DK 915422744950975** — samma konto för varje OPS-butik,
@@ -223,6 +228,6 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Bilder utan engelsk text, svensk vektortext pålagd
 - [ ] Marknad Norge + locale nb publicerad, allt översatt via translationsRegister, trippelkollat mot /nb
 - [ ] CHECKLISTA.md genererad och överlämnad till VA:n
-- [ ] Recensioner importerade när token kommit
+- [ ] Recensioner: app-CSV med originaldatum byggd och överlämnad; efter VA:ns import verifierade datum i kundvyn (aldrig "nyss")
 - [ ] Trippelkollat mot kundens vy — annars står det "delvis klart"
 - [ ] state + PROCESS.md uppdaterade, pushat

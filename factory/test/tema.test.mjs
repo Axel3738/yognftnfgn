@@ -8,6 +8,8 @@ import { byggMetafalt, snittbetyg } from '../metafalt.mjs';
 import { byggJudgeMeCsv, JUDGEME_KOLUMNER } from '../judgeme.mjs';
 import { fileURLToPath } from 'node:url';
 import { SEKTIONER, SEKTIONSORDNING_TEMA, TEMAFILER, byggProduktTemplate } from '../tema.mjs';
+import { byggJudgeMeCsv, byggJudgeMeAppCsv, judgeMeDatum, JUDGEME_KOLUMNER, JUDGEME_APP_KOLUMNER } from '../judgeme.mjs';
+import { SEKTIONER, SEKTIONSORDNING_TEMA, byggProduktTemplate } from '../tema.mjs';
 import { dummy, medButiksfrakt } from './hjalp.mjs';
 
 const falt = (p) => Object.fromEntries(byggMetafalt(p, { kundUnderrubrik }).map((m) => [m.key, m]));
@@ -117,6 +119,26 @@ test('judgeme-csv klämmer betyg till 1–5 och citerar citattecken', () => {
 
 test('judgeme-csv är null utan recensioner', () => {
   assert.equal(byggJudgeMeCsv({ produkt: { id: 'x' }, reviews: [] }), null);
+});
+
+// Appens importfil: originaldatum i dd/mm/yyyy, produkt-id + handle, och de
+// översatta raderna i samma fil. Utan datum stoppar den — aldrig "nyss".
+test('judgeme-app-csv skriver källans datum som dd/mm/yyyy med produkt-id och handle', () => {
+  const p = { produkt: { id: 'tankoverdraget' }, reviews: [{ namn: 'Anders', betyg: 5, text: 'Bra', titel: 'Bra produkt', datum: '2026-08-10' }] };
+  const csv = byggJudgeMeAppCsv(p, { produktId: '15989715108184', oversattningar: { nb: { 'recension.0.text': 'Bra trekk', 'recension.0.namn': 'Kari' } } });
+  const rader = csv.trim().split('\n');
+  assert.equal(rader[0], JUDGEME_APP_KOLUMNER.join(','));
+  assert.equal(rader.length, 3);
+  assert.ok(rader[1].includes('"10/08/2026"') && rader[1].includes('"15989715108184"') && rader[1].includes('"tankoverdraget"'));
+  assert.ok(rader[2].includes('"Kari"') && rader[2].includes('"Bra trekk"') && rader[2].includes('"10/08/2026"'));
+});
+
+test('judgeme-app-csv stoppar på en recension utan originaldatum', () => {
+  const p = { produkt: { id: 'x' }, reviews: [{ namn: 'Utan', betyg: 5, text: 'Hej' }] };
+  assert.throws(() => byggJudgeMeAppCsv(p), /saknar originaldatum/);
+  assert.equal(judgeMeDatum('2026-08-19T08:00:00.000Z'), '19/08/2026');
+  assert.equal(judgeMeDatum('nyss'), null);
+  assert.equal(judgeMeDatum('2026-13-01'), null);
 });
 
 // --- Temafilerna ---

@@ -1,0 +1,142 @@
+{
+  "input": {
+    "title": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV",
+    "handle": "tankoverdraget",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Stänger ute ljuset så algerna aldrig kommer igång – och tar solen i stället för plasten. Passar 1000-liters IBC.</p>",
+    "vendor": "TankGuard",
+    "seo": {
+      "title": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV – TankGuard",
+      "description": "Vattnet håller sig klart – tyget stänger ute ljuset som får alger att växa. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Variant",
+        "values": [
+          {
+            "name": "Grön"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Grön"
+          }
+        ],
+        "price": "489.00",
+        "compareAtPrice": "636.00",
+        "sku": "TEMU-601099590911868"
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg?v=1787626428",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg?v=1787626428",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-tankoverdrag.jpg?v=1787626427",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1012/7648/3928/files/tankguard-forefter-sv.jpg?v=1788847014",
+        "contentType": "IMAGE",
+        "alt": "[SV] Före och efter – IBC-tank utan och med överdrag"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1012/7648/3928/files/tankguard-forefter-no.jpg?v=1788847017",
+        "contentType": "IMAGE",
+        "alt": "[NO] Før og etter – IBC-tank uten og med trekk"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-05.jpg?v=1787626428",
+        "contentType": "IMAGE",
+        "alt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Regnvattnet grönskar innan sommaren ens börjat"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Solljus rakt in i tanken får alger att växa i vattnet, och UV-strålningen gör plasten spröd år för år. Presenningen som skulle skydda blåser av vid första höststormen."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-forefter-tankoverdrag-sv.jpg?v=1787626428"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Ett överdrag som håller ljuset ute och tanken hel"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Trä överdraget över tanken och stäng dragkedjan – det gröna 210D-oxfordtyget stänger ute ljuset så algerna aldrig kommer igång, och tar solen i stället för plasten. Öppningen upptill gör att du kommer åt locket utan att ta av något, och måtten 120 × 100 × 116 cm passar en standardtank på 1000 liter."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg?v=1787626428"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Vattnet håller sig klart – tyget stänger ute ljuset som får alger att växa\",\"Tanken åldras inte i solen – 210D oxfordtyg tar UV-strålningen i stället för plasten\",\"Locket alltid åtkomligt – öppning upptill, fyll på utan att ta av överdraget\",\"På och av med dragkedja – ingen kamp med presenning och gummiband\",\"Passar standardtanken – 120 × 100 × 116 cm för 1000-liters IBC\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Grönt 210D oxfordtyg som stänger ute ljus och UV\",\"Dragkedja längs sidan – på och av utan verktyg\",\"Öppning upptill så locket alltid går att nå\",\"Mått 120 × 100 × 116 cm, för 1000-liters IBC-tank\",\"Dragsnören nertill som håller överdraget på plats\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-tankoverdrag.jpg?v=1787626427"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 6–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Passar överdraget min tank?\",\"svar\":\"Måtten är 120 × 100 × 116 cm och passar en standardtank på 1000 liter.\"},{\"fraga\":\"Kommer jag åt locket när överdraget sitter på?\",\"svar\":\"Ja, öppningen upptill gör att du fyller på och kommer åt locket utan att ta av något.\"},{\"fraga\":\"Varför blir vattnet i tanken grönt?\",\"svar\":\"Solljus rakt in i tanken får alger att växa. Tyget stänger ute ljuset så algerna aldrig kommer igång.\"},{\"fraga\":\"Hur sätter jag på det?\",\"svar\":\"Trä överdraget över tanken och stäng dragkedjan – inga verktyg, ingen presenning och inga gummiband.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"6–10 arbetsdagar med fri frakt inom Sverige.\"},{\"fraga\":\"Kan jag ångra köpet?\",\"svar\":\"Ja, du har 14 dagars ångerrätt enligt distansavtalslagen. Mejla hello@tankguard.se så får du en returinstruktion.\"}]"
+    }
+  ]
+}

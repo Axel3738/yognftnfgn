@@ -43,10 +43,11 @@ VIDEO:
 
 * Go to dev.shopify.com → log in with the work Gmail → Apps → Create app → name it: Fabriken + the store's address start (example: Fabriken y1sj1i)
 * The app → Settings → copy the Client ID and the Client secret
-* Open the Claude session's Environment → set these 3 (overwrite the old values):
+* Open the Claude session's Environment → set these 4 (overwrite the old values):
   SHOPIFY_SHOP = the store's .myshopify.com address
   SHOPIFY_CLIENT_ID = the Client ID
   SHOPIFY_CLIENT_SECRET = the Client secret
+  SHOPIFY_STOREFRONT_PASSWORD = Online Store → Preferences → Password (the store password – Claude needs it to check the pages like a customer sees them; added 2026-09-08)
 * Back in the app → Distribution → Custom distribution → enter the store's .myshopify.com address → Generate link → open it → Install app
   Note: keys go ONLY in the Environment – never in chat or email.
 
@@ -86,7 +87,8 @@ VIDEO:
 * Apps → search "Judge.me" → Install (free plan)
 * Judge.me → Settings → Language → Swedish
 * Judge.me → Settings → Review Widget → star color: 00B77F
-* Judge.me → Settings → Integrations → copy API Token → paste it into Claude Code when asked (never in chat or email)
+* Judge.me → Settings → Import reviews → Import from apps → Judge.me format → upload the reviews file Claude gives you → Import
+* Open the product page → check the reviews show their original dates (never "just now")
 
 ## 8. Meta
 VIDEO:
@@ -111,7 +113,8 @@ VIDEO:
 * When Claude says the Norway market is ready: Settings → Markets → Norway → activate NOK → Save
 * Install the WeTracked app from the Shopify App Store
 * WeTracked → paste the pixel ID Claude gives you
-* WeTracked → connect the Conversions API token (WeTracked shows the steps)
+* Events Manager → Data sources → STORE NAME → Settings → Conversions API → Generate access token → copy it
+* WeTracked → paste the Conversions API token (never send it in chat or email)
 * The owner logs in with the work Gmail, picks the plan and adds his card
 * Then: Settings → Users and permissions → ⋯ → Transfer ownership → the owner
 * Owner changes the Loopia password afterwards
