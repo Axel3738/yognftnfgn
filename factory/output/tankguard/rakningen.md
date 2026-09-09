@@ -136,6 +136,10 @@ i bilden. De svenska gör det inte — den norska lokaliseringen lade till domä
 Noll avvikelser. Ingen annons pekar på källbutikens sida, länk eller pixel, och
 ingenting kan spendera.
 
+Läst om efter att de sjutton omrenderade videorna bytts in: samma resultat —
+40 svenska och 33 norska annonser, alla PAUSED, rätt geo, rätt pixel, rätt
+sida, rätt länk.
+
 ### Röstkontrollen (CLAUDE.md järnregel 3)
 
 **⛔ Första omgången underkändes av Axel 2026-09-09:**
