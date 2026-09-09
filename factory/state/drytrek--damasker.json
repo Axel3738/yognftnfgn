@@ -2,12 +2,6 @@
   "butik": "drytrek",
   "produkt": "damasker",
   "steg": {
-    "produkt": {
-      "klar": true,
-      "id": "gid://shopify/Product/10617212141834",
-      "handle": "damasker",
-      "status": "DRAFT"
-    },
     "metafalt": {
       "klar": true,
       "antal": 10
@@ -48,6 +42,12 @@
     "policyer": {
       "klar": true,
       "antal": 3
+    },
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/10617212141834",
+      "handle": "damasker",
+      "status": "ACTIVE"
     }
   },
   "datum": "2026-09-09",
@@ -58,7 +58,7 @@
     "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
     "utfall_avlast_2026_09_09": "12 198 kr spend, 58 köp, CPA 210 kr över 18 annonser. Vinnaren Damasker_PD_1: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr — 79 % av spenden, 88 % av köpen. Näst bästa vinkel (SP) ligger på ROAS 1,42, alltså UNDER break-even 1,60."
   },
-  "uppdaterad": "2026-09-09T06:44:56.220Z",
+  "uppdaterad": "2026-09-09T09:35:19.674Z",
   "forarbete": {
     "anslutningskontroll": {
       "klar": true,
@@ -146,6 +146,6 @@
       "tracking",
       "doman"
     ],
-    "tid": "2026-09-09T06:44:56.220Z"
+    "tid": "2026-09-09T09:35:19.674Z"
   }
 }

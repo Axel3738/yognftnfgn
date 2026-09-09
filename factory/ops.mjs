@@ -78,7 +78,9 @@ function stopp(rubrik, rader) {
 const STEG = [
   {
     id: 'produkt',
-    namn: 'Produkten i Shopify (DRAFT)',
+    // Inte "(DRAFT)" längre: nya produkter skapas som DRAFT, men en
+    // omkörning behåller den status produkten redan har.
+    namn: 'Produkten i Shopify',
     torrt: (ctx) => {
       const i = ctx.plan.input;
       return [
@@ -90,7 +92,21 @@ const STEG = [
       ];
     },
     async kor(ctx) {
-      const produkt = await skapaProdukt(ctx.plan.input);
+      // ⚠️ productSet är INTE idempotent på handle ensam. Finns produkten
+      // redan svarar Shopify "Handle 'x' already in use. Please provide a new
+      // handle." och hela steget stannar (mätt 2026-09-09 på DryTrek). För
+      // att uppdatera i stället för att skapa måste produktens `id` med.
+      //
+      // Och när id:t är med skriver productSet över ALLT — även statusen.
+      // Planen säger DRAFT, så en omkörning skulle då degradera en ACTIVE
+      // produkt tillbaka till DRAFT: 404 i menyn, "Exempel på produktnamn" i
+      // kundvyn och en startsida som pekar på ingenting. Därför behålls den
+      // status produkten faktiskt har.
+      const befintlig = await hamtaProduktViaHandle(ctx.plan.input.handle);
+      const input = befintlig
+        ? { ...ctx.plan.input, id: befintlig.id, status: befintlig.status }
+        : ctx.plan.input;
+      const produkt = await skapaProdukt(input);
       ctx.produkt = produkt;
       return { id: produkt.id, handle: produkt.handle, status: produkt.status };
     },

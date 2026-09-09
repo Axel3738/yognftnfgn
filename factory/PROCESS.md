@@ -325,17 +325,49 @@ lådan glider in. Gäller sannolikt varje butik byggd ur `ops-tema.zip`.
   när `settings.cart_type == 'drawer'` ✓
 - `snippets/cart-drawer.liquid` finns och är Dawns riktiga låda ✓
 
-**Huvudmisstanke — sektionen saknar `{% schema %}`.** `sections/cart-drawer.liquid`
-i zip:en är en ren wrapper (`{%- render 'cart-drawer' -%}`, noll `schema`-träffar).
-Dawns `cart-drawer.js` hämtar `?sections=cart-drawer` vid varje varukorgsändring —
-en sektion utan schema kan inte hämtas via sektions-API:t. Samma wrapper skrivs
-dessutom om av `byggKorgUpsell` i `factory/tema.mjs`.
+### ⛔ ALLA TRE URSPRUNGLIGA MISSTANKARNA ÄR MOTBEVISADE (2026-09-09, DryTrek-sessionen)
 
-**Andra kandidater, i tur och ordning:**
-1. Det PUBLICERADE temats `settings_data.json` har inte `cart_type: 'drawer'`
-   — kloner tappar inställningar precis som de tappar app-embeds.
-2. `product-form.js` hittar inget `<cart-drawer>`-element vid första laddningen
-   och faller tillbaka på vanlig formulär-POST.
+Mätt mot de LIVE-butikernas publika HTML (bara läsning, inget lades i någon
+varukorg — en add-to-cart hade skickat en AddToCart-händelse till pixeln och
+smutsat ner deras annonsdata):
+
+| Misstanke | Test | Utfall |
+|---|---|---|
+| Sektionen saknar `{% schema %}` och kan inte hämtas | `GET tankguard.se/?sections=cart-drawer` | **200, 4 489 tecken, innehåller `id="CartDrawer"`** — en sektion utan schema renderas alldeles utmärkt |
+| Publicerade temat saknar `cart_type: 'drawer'` | söker `<cart-drawer>` i live-HTML | **finns på både tankguard.se och heimguard.se** |
+| `product-form.js` hittar ingen låda och gör formulär-POST | samma HTML | elementet finns i `<body>` före `<main>`, så `this.cart` kan inte vara null — och redirect-raden `else if (!this.cart)` kan alltså inte fira |
+
+### Var redirecten FAKTISKT bor
+
+Kunden klickar inte Dawns köpknapp — hen klickar **paketwidgetens**. Vägen är
+`assets/ms-paket.js → kop()`, och den har TVÅ egna redirects, båda via
+`laddaOm()` (rad 238-242, `window.location.href = …/cart`):
+
+1. **rad 286:** `data.sections` saknas i svaret från `/cart/add.js`.
+2. **rad 282 → `kontrollera()` rad 309:** rabattkoden hittas inte i
+   `/cart.js` → `discount_codes` efteråt.
+
+**Väg 2 är den som matchar symptomet "första gången".** Ordningen i `kop()` är
+rabattkod FÖRST (rad 244-247), sen `/cart/add.js`. Vid första köpet är
+varukorgen TOM när koden sätts, och paketkoderna har minsta antal (2+ / 3+) —
+villkoret är alltså inte uppfyllt i det ögonblicket. Är koden då inte kvar i
+`discount_codes` när `kontrollera()` läser tillbaka, laddar den om till `/cart`.
+Andra gången ligger varor redan i vagnen, koden fastnar, och lådan glider in.
+Det förklarar varför felet bara syns på FÖRSTA köpet.
+
+⚠️ **Hypotesen är inte körd i en riktig webbläsare.** Sista ledet — om Shopify
+behåller en icke-tillämplig kod i `discount_codes` eller släpper den — går inte
+att avgöra genom att läsa kod, och DryTreks front är lösenordsskyddad under
+trialen. **Rör inte `ms-paket.js` förrän testet är gjort:** filen är delad, och
+HeimGuard och TankGuard är live och spenderar.
+
+**Testet som stänger frågan:** öppna en butik med tom varukorg, välj
+2-paketet, lägg i varukorgen, och läs `/cart.js` i konsolen. Står koden i
+`discount_codes`? Då är det väg 1 som brister, inte väg 2.
+
+**Fixen om hypotesen håller:** lägg i varan FÖRST, sätt rabattkoden EFTER, och
+hämta om sektionerna innan lådan ritas — då är minsta antal uppfyllt när koden
+sätts, och lådan visar ändå rabatterat pris.
 
 **Regel:** varukorgen ska testas på RIKTIGT i kundens vy innan en butik får
 annonser — lägg i varukorgen med tom korg och se att lådan glider in.

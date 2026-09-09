@@ -80,7 +80,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-NG"
+        "sku": "TEMU-601101617191068-NG",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -91,7 +95,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-OR"
+        "sku": "TEMU-601101617191068-OR",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -102,7 +110,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-GU"
+        "sku": "TEMU-601101617191068-GU",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -113,7 +125,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-SV"
+        "sku": "TEMU-601101617191068-SV",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -124,7 +140,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-GR"
+        "sku": "TEMU-601101617191068-GR",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -135,7 +155,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-MB"
+        "sku": "TEMU-601101617191068-MB",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -146,7 +170,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-BL"
+        "sku": "TEMU-601101617191068-BL",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -157,7 +185,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-LB"
+        "sku": "TEMU-601101617191068-LB",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -168,7 +200,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-RD"
+        "sku": "TEMU-601101617191068-RD",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -179,7 +215,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-LI"
+        "sku": "TEMU-601101617191068-LI",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -190,7 +230,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-RA"
+        "sku": "TEMU-601101617191068-RA",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -201,7 +245,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-BR"
+        "sku": "TEMU-601101617191068-BR",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -212,7 +260,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-VI"
+        "sku": "TEMU-601101617191068-VI",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -223,7 +275,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-OL"
+        "sku": "TEMU-601101617191068-OL",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -234,7 +290,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-KG"
+        "sku": "TEMU-601101617191068-KG",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -245,7 +305,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-KS"
+        "sku": "TEMU-601101617191068-KS",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -256,7 +320,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-BN"
+        "sku": "TEMU-601101617191068-BN",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -267,7 +335,11 @@
         ],
         "price": "389.00",
         "compareAtPrice": "649.00",
-        "sku": "TEMU-601101617191068-CN"
+        "sku": "TEMU-601101617191068-CN",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       }
     ],
     "files": [
