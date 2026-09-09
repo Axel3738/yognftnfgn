@@ -73,11 +73,27 @@ export async function laddaUppFiler(urlar, { alt = {} } = {}) {
     }
   }
 
+  // ⚠️ HANDLEN MÅSTE HÄRLEDAS UR DET LAGRADE FILNAMNET, aldrig ur käll-URL:en.
+  // Finns namnet redan i butiken lägger Shopify på ett UUID:
+  // benskydd-benskydd-08.jpg blir benskydd-benskydd-08_3ecbd654-….jpg. Det
+  // händer garanterat i en OPS-butik, för produktbilderna laddas upp från
+  // SAMMA käll-URL:er innan startsidan byggs.
+  //
+  // Mätt 2026-09-09 på DryTrek: alla fem startsidesbilder pekade på
+  // shopify://shop_images/<namn utan uuid> — filer som inte fanns. Hero,
+  // galleriet och trygghetsbilden renderade temats placeholder, och det såg
+  // ut som "Shopifys default-illustration" i kundvyn.
   const slutlig = await befintligaFiler();
+  const lagrade = [...slutlig.keys()];
   return Object.fromEntries(
     urlar.map((u) => {
       const namn = filnamnUrUrl(u);
-      return [namn, slutlig.has(namn) ? `shopify://shop_images/${namn.replace(/\.[^.]+$/, '')}` : null];
+      const bas = namn.replace(/\.[^.]+$/, '');
+      // Exakt träff först, annars den UUID-suffixade varianten.
+      const traff =
+        lagrade.find((n) => n.replace(/\.[^.]+$/, '') === bas) ??
+        lagrade.find((n) => n.startsWith(`${bas}_`));
+      return [namn, traff ? `shopify://shop_images/${traff.replace(/\.[^.]+$/, '')}` : null];
     })
   );
 }

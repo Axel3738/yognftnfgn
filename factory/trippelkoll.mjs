@@ -90,9 +90,9 @@ if (process.argv[1] && process.argv[1].endsWith('trippelkoll.mjs')) {
   }
 
   // ---- temat
-  const utkast = d.themes.nodes.find((t) => t.role === 'UNPUBLISHED');
+  const opsTema = d.themes.nodes.find((t) => /\bcro\b/i.test(t.name));
   const live = d.themes.nodes.find((t) => t.role === 'MAIN');
-  lagg(utkast ? 'ok' : 'fel', 'utkasttema', utkast ? utkast.name : 'saknas');
+  lagg(opsTema ? 'ok' : 'fel', 'OPS-temat', opsTema ? `${opsTema.name} (${opsTema.role})` : 'saknas');
   lagg(
     live && /cro/i.test(live.name) ? 'ok' : 'manuell',
     'publicerat tema',

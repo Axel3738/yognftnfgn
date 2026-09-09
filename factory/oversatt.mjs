@@ -124,7 +124,10 @@ if (process.argv[1] && process.argv[1].endsWith('oversatt.mjs')) {
   if (!text) throw new Error(`startsidor/${butikId}.json saknar blocket "${locale}".`);
 
   const res = await kartlaggResurser(produktHandle);
-  const tema = (res.themes?.nodes ?? []).find((t) => t.role === 'UNPUBLISHED');
+  // Samma fälla som i oversatt-tema.mjs: efter publicering är UNPUBLISHED
+  // Shopifys default-tema, inte vårt.
+  const cro = (res.themes?.nodes ?? []).filter((t) => /\bcro\b/i.test(t.name));
+  const tema = cro.find((t) => t.role === 'MAIN') ?? cro[0] ?? (res.themes?.nodes ?? []).find((t) => t.role === 'UNPUBLISHED');
   if (!tema) throw new Error('Inget utkasttema — kör factory/tema-upload.mjs först.');
 
   console.log(`Översätter till ${locale}${torr ? ' (TORRKÖRNING)' : ''}`);

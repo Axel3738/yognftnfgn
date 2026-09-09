@@ -54,7 +54,7 @@ if (process.argv[1] && process.argv[1].endsWith('kallskanning-kor.mjs')) {
   const t = await graphql(`query { themes(first: 20) { nodes { id name role } } }`);
   const teman = alla
     ? t.themes.nodes
-    : t.themes.nodes.filter((x) => x.role === 'UNPUBLISHED');
+    : t.themes.nodes.filter((x) => /\bcro\b/i.test(x.name)).slice(0, 1);
   if (teman.length === 0) throw new Error('Inget tema att skanna.');
 
   let totaltTraffar = 0;

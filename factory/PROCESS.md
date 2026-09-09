@@ -194,6 +194,48 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+
+- **TEMAT GÅR ATT PUBLICERA VIA API:t.** Det här dokumentet har sagt motsatsen
+  sedan HeimGuard ("Publicerat tema är API-låst", "tema-publicering är
+  API-spärrad — det klicket är hennes"). Det stämmer inte. Mätt 2026-09-09 på
+  DryTrek: `themePublish(id:)` svarade `role: MAIN`, noll userErrors.
+  Butiken var lösenordsskyddad, så ingenting exponerades publikt.
+  Konsekvens: fabriken kan ta butiken hela vägen till kundens vy själv, och
+  varje bygge som lämnats "väntar på publicering" har väntat i onödan.
+- **Efter publicering pekar `hamtaUtkastTema()` på FEL TEMA.** Rollerna byter
+  plats: OPS-temat blir MAIN och Shopifys default-tema (Horizon) blir
+  UNPUBLISHED. Startsidesteget skrev då mot Horizon och nb-registreringen
+  hittade noll strängar (mätt 2026-09-09). Använd `hamtaArbetstema()`, som
+  letar upp OPS-temat på NAMNET oavsett roll.
+- **`shopify://shop_images/<namn>` måste byggas ur det LAGRADE filnamnet.**
+  Finns namnet redan i butiken lägger Shopify på ett UUID —
+  `benskydd-benskydd-08.jpg` blir `benskydd-benskydd-08_3ecbd654-….jpg`. Det
+  händer garanterat i en OPS-butik, för produktbilderna laddas upp från samma
+  käll-URL:er innan startsidan byggs. Mätt 2026-09-09: ALLA FEM
+  startsidesbilder pekade på filer som inte fanns, och temat renderade sin
+  placeholder. I kundvyn såg det ut som "Shopifys default-illustration".
+- **Loggan, faviconen och huvudmenyn sattes aldrig av fabriken.**
+  `settings.logo` pekade på bas-temats logga (en fil som inte finns i den nya
+  butiken) så headern föll tillbaka på ren text; `settings.favicon` var osatt;
+  och `main-menu` var kvar på Dawns Home / Catalog / Contact, där "Catalog"
+  går till `/collections/all` — tom i en enproduktsbutik. Fabriken skrev bara
+  FOOTER-menyn. Steget heter nu `factory/identitet.mjs`.
+  ⚠️ `brand_image` och `logo` är TVÅ olika inställningar. Av-brandningen
+  städade den första och missade den andra.
+- **Butiksnamnet går INTE att sätta via API.** Testat 2026-09-09 med både
+  REST (`PUT /admin/api/2025-07/shop.json` → 406) och GraphQL (`shopUpdate`
+  och `shopSettingsUpdate` finns inte på Mutation). "My Store 3" i kundvyn är
+  ett klick i admin, och det syns i webbläsarfliken och i alla mejl.
+- **Grön konfiguration är inte en grön butik.** Fabrikens QA rapporterade
+  "14 gröna, 0 fel" på en butik som hette My Store 3, saknade logga, visade
+  temats placeholder som hero och stod på engelska. Varenda kontroll läste
+  KONFIGURATION. Kör `factory/kundvy-kor.mjs` mot den riktiga startsidan
+  innan något rapporteras som klart.
+  ⚠️ Molnsessionen kan inte hämta en lösenordsskyddad butiks startsida:
+  Admin-API:t lämnar inte ut storefront-lösenordet (fältet `enabled` är allt
+  som finns), och Shopify svarar dessutom 429 "Verifying your connection" på
+  proxyns IP. Kör kontrollen med `--losenord` eller `--fil`. Utan den är
+  butiken inte kontrollerad — och då säger man det.
 - **En färsk trial-butik har `en` som PRIMÄRT språk, inte svenska.** Mätt
   2026-09-09 på DryTrek: `shopLocales` svarade bara `en (primärt)`. All
   svensk text fabriken skriver hamnar därmed i `en`-slotten. Kundvyn blir

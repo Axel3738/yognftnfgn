@@ -18,7 +18,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { laddaEnv } from './env.mjs';
-import { graphql } from './shopify.mjs';
+import { graphql, hamtaArbetstema } from './shopify.mjs';
 import { hamtaOversattbart, temaResurser } from './oversatt.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
@@ -98,9 +98,10 @@ if (process.argv[1] && process.argv[1].endsWith('oversatt-tema.mjs')) {
   const par = byggPar(konf.sv, mal);
   console.log(`${par.size} strängpar sv → ${locale}`);
 
-  const teman = await graphql(`query { themes(first: 20) { nodes { id name role } } }`);
-  const tema = teman.themes.nodes.find((t) => t.role === 'UNPUBLISHED');
-  if (!tema) throw new Error('Inget utkasttema.');
+  // OPS-temat, oavsett roll. Är det publicerat är UNPUBLISHED Shopifys
+  // default-tema — och då översätter man dess strängar i stället för sina egna.
+  const tema = await hamtaArbetstema();
+  if (!tema) throw new Error('Inget OPS-tema i butiken.');
   const resurs = temaResurser(tema.id, { mallar: [mall], grupper: [] })[0];
 
   const r = await oversattResurs(resurs.id, locale, par, { torr });

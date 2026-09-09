@@ -22,7 +22,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { laddaEnv } from './env.mjs';
-import { graphql, hamtaUtkastTema, skrivTemafiler, verifieraTemafiler } from './shopify.mjs';
+import { graphql, hamtaArbetstema, skrivTemafiler, verifieraTemafiler } from './shopify.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 
@@ -231,8 +231,8 @@ if (process.argv[1] && process.argv[1].endsWith('startsida.mjs')) {
     throw new Error(`Produkten ${produktHandle} är ${p.productByIdentifier.status} — startsidan skulle visa en exempelprodukt. Aktivera den först.`);
   }
 
-  const tema = await hamtaUtkastTema();
-  if (!tema) throw new Error('Inget utkasttema i butiken — kör factory/tema-upload.mjs först.');
+  const tema = await hamtaArbetstema();
+  if (!tema) throw new Error('Inget OPS-tema i butiken — kör factory/tema-upload.mjs först.');
 
   const mall = byggIndex(konf.sv, {
     produktHandle,

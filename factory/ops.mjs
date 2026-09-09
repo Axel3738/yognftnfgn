@@ -38,6 +38,7 @@ import {
   skrivSida,
   skrivMetafalt,
   hamtaUtkastTema,
+  hamtaArbetstema,
   skrivTemafiler,
   hamtaTemafil,
   verifieraTemafiler,
@@ -131,7 +132,7 @@ const STEG = [
     namn: 'Brandingen (butikens egna tokens)',
     torrt: (ctx) => brandRader(ctx.butik?.branding),
     async kor(ctx) {
-      const tema = await hamtaUtkastTema();
+      const tema = await hamtaArbetstema();
       if (!tema) {
         return { manuell: 'Inget utkasttema finns i butiken — installera ett tema först.' };
       }
@@ -174,7 +175,7 @@ const STEG = [
       ];
     },
     async kor() {
-      const tema = await hamtaUtkastTema();
+      const tema = await hamtaArbetstema();
       if (!tema) {
         return { manuell: 'Inget utkasttema finns i butiken — installera ett tema först.' };
       }
@@ -524,7 +525,7 @@ async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
   // i butiksinställningarna och i sektionernas defaults. Utan det här steget
   // ärver varje ny butik källbutikens bolagsblock och supportmejl tills en
   // människa råkar se det (Axels bakläxa 2026-09-09 på DryTrek).
-  const utkast = await hamtaUtkastTema();
+  const utkast = await hamtaArbetstema();
   if (utkast) {
     const temafiler = await hamtaAllaTemafiler(utkast.id);
     const skanning = skannaTema(temafiler);

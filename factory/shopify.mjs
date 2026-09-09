@@ -167,10 +167,33 @@ export async function skrivMetafalt(produktId, falt) {
 
 // Temat som sektionerna läggs i. Live-temat rörs ALDRIG — Shopify blockerar
 // dessutom skrivningar mot MAIN. Saknas ett utkasttema returneras null.
+// ⚠️ ANVÄND `hamtaArbetstema()` I NYA STEG, inte den här.
+//
+// "Utkasttemat" var en säker definition så länge OPS-temat alltid låg som
+// utkast. I det ögonblick temat publiceras byter rollerna plats: OPS-temat
+// blir MAIN och Shopifys default-tema (Horizon) blir UNPUBLISHED — och då
+// pekar den här funktionen på DEFAULT-TEMAT. Mätt 2026-09-09 på DryTrek:
+// efter publiceringen skrev startsidesteget mot Horizon och
+// nb-registreringen hittade noll strängar.
 export async function hamtaUtkastTema() {
   const data = await graphql(`
     query opsFactoryTeman { themes(first: 20) { nodes { id name role } } }`);
   const teman = data.themes?.nodes ?? [];
+  return teman.find((t) => t.role === 'UNPUBLISHED') ?? null;
+}
+
+// Temat fabriken ska skriva i: OPS-temat, oavsett om det ligger som utkast
+// eller är publicerat. Känns igen på namnet (byggs alltid som "<Brand> – CRO
+// (utkast)"), med utkastet som reserv för en butik som ännu inte fått ett.
+export async function hamtaArbetstema() {
+  const data = await graphql(`
+    query opsFactoryArbetstema { themes(first: 20) { nodes { id name role } } }`);
+  const teman = data.themes?.nodes ?? [];
+  const cro = teman.filter((t) => /\bcro\b/i.test(t.name));
+  if (cro.length > 0) {
+    // Är OPS-temat publicerat är det DET kunden ser — skriv där.
+    return cro.find((t) => t.role === 'MAIN') ?? cro[0];
+  }
   return teman.find((t) => t.role === 'UNPUBLISHED') ?? null;
 }
 

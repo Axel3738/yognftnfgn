@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
-import { graphql, hamtaUtkastTema, skrivTemafiler, verifieraTemafiler } from './shopify.mjs';
+import { graphql, hamtaArbetstema, skrivTemafiler, verifieraTemafiler } from './shopify.mjs';
 import { hamtaAllaTemafiler } from './kallskanning-kor.mjs';
 import { skannaTema, rapport } from './kallskanning.mjs';
 
@@ -126,7 +126,7 @@ if (process.argv[1] && process.argv[1].endsWith('avbranda.mjs')) {
   if (!butikId) throw new Error('Ange butiks-id: node factory/avbranda.mjs <butik-id>');
 
   const butik = lasYaml(readFileSync(join(ROT, 'butiker', `${butikId}.yaml`), 'utf8'));
-  const tema = await hamtaUtkastTema();
+  const tema = await hamtaArbetstema();
   if (!tema) throw new Error('Inget utkasttema.');
 
   const filer = await hamtaAllaTemafiler(tema.id);
