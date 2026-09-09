@@ -46,6 +46,7 @@ FRAKT_PASLAG = 1.5          # landad kostnad ≈ inköpspris × 1,5
 KRAV_MULTIPEL = 2.4         # svenskt pris ≥ 2,4 × landad
 GOLV_SEK = 300              # under 300 kr har aldrig vunnit
 TAK_LANDAD_SEK = 420        # över det spräcker 2,4× 1 000-kronorstaket
+KARANTAN_DAGAR = 14         # ett sökord vilar så här länge innan det får köras igen
 
 
 def kurs():
@@ -74,11 +75,17 @@ def kurs():
         raise SystemExit("Ingen valutakurs: ECB svarade inte och kurs.json saknas.")
 
 
-def dagens_ord(katalog, manad, antal, frö):
+def dagens_ord(katalog, manad, antal, frö, undvik=()):
+    """undvik = sökord som körts nyligen. Samma ord ger samma hylla, och då kommer samma varor
+    tillbaka dag efter dag från olika säljare — det är så gårdagens ark upprepas."""
     pool = []
     for g in katalog["grupper"]:
         if manad in g["manader"]:
-            pool += [(o, g["grupp"]) for o in g["ord"]] * g.get("vikt", 1)
+            pool += [(o, g["grupp"]) for o in g["ord"] if o not in undvik] * g.get("vikt", 1)
+    if not pool:  # alla ord förbrukade — släpp spärren hellre än att leverera tomt
+        for g in katalog["grupper"]:
+            if manad in g["manader"]:
+                pool += [(o, g["grupp"]) for o in g["ord"]] * g.get("vikt", 1)
     if not pool:
         return []
     rnd = random.Random(frö)
@@ -134,7 +141,11 @@ def main():
     sedda = set(json.load(open(sedda_p, encoding="utf-8"))["product_id"]) if os.path.exists(sedda_p) else set()
 
     fro = a.fro if a.fro is not None else int(a.datum.replace("-", ""))
-    ord_lista = dagens_ord(katalog, a.manad, a.sokord, fro)
+    logg_p = os.path.join(HERE, "anvanda-sokord.json")
+    logg = json.load(open(logg_p, encoding="utf-8")) if os.path.exists(logg_p) else {}
+    grans = (datetime.date.fromisoformat(a.datum) - datetime.timedelta(days=KARANTAN_DAGAR)).isoformat()
+    undvik = {o for o, d in logg.items() if d >= grans}
+    ord_lista = dagens_ord(katalog, a.manad, a.sokord, fro, undvik)
     print(f"månad {a.manad} · {len(ord_lista)} sökord · USD/SEK {k} ({kurskalla}) · {len(sedda)} sedda sedan tidigare")
 
     fynd, hoppade = [], {"stoppord": 0, "pris saknas": 0, "ekonomi": 0, "dubblett": 0}
@@ -176,6 +187,8 @@ def main():
                "hoppade": hoppade, "antal_kandidater": len(fynd), "produkter": valda},
               open(ut, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump({"product_id": sorted(sedda)}, open(sedda_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    logg.update({o: a.datum for o, _ in ord_lista})
+    json.dump(logg, open(logg_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)
 
     print(f"\n{len(fynd)} kandidater klarade ekonomin, {len(valda)} valda → {ut}")
     print(f"bortgallrade: {hoppade}")

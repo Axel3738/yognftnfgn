@@ -86,3 +86,15 @@ produkt men olika rader.
 
 Åtgärd: gårdagens sex id:n är inlagda i `sedda.json`, och läsningen jämför nu
 mot föregående körnings lista på **produkt**, inte på id.
+
+
+## Axels dom 2026-09-09
+
+Axel behöll **sotsetet** och **båtkapellstöttan**. Allt annat kände han igen sedan
+tidigare — utestugan, motorspolaren och stolplagningsankaret ströks på hans ord.
+
+Rotorsaken bakom upprepningarna är sökorden, inte produkterna: samma ord ger samma
+hylla, och då kommer samma vara tillbaka från en ny säljare med nytt `product_id`.
+Därför har `hitta.py` nu en **karantän på 14 dagar per sökord**
+(`anvanda-sokord.json`, konstanten `KARANTAN_DAGAR`). Dagens 28 använda ord är
+inlagda, så nästa körning tvingas till hyllor vi inte varit på.

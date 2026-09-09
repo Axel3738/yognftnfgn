@@ -6,4 +6,4 @@ offertark, publicerad sida, Discord.
 
 | Datum | Kandidater | Levererade | Strukna | Sida publicerad | Discord |
 |---|---|---|---|---|---|
-| 2026-09-09 | 43 | 5 | 27 | ja | ja |
+| 2026-09-09 | 43 | 2 | 41 | ja | ja |
