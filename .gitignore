@@ -16,3 +16,5 @@ docs/temu-jakt-v2/jakt/v22/hamtkologg.txt
 # Nedladdade leverantörsbilder och rådata från AliExpress — artefakter, inte källkod
 docs/temu-jakt-v2/jakt/v24/ali-bild/
 docs/temu-jakt-v2/jakt/v24/ali-prod-*.json
+# Produktjaktens nedladdade produktbilder — hämtas om vid varje körning
+produktjakt/korningar/*/bilder/
