@@ -211,6 +211,25 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Ordet "klart" får bara skrivas när varje källannons antingen ligger uppe
    eller står namngiven med sin orsak.
 
+   ⚠️ **Läs om källkontona precis före räkningen.** Källkampanjen växer medan
+   bygget pågår — TankGuard hade 34 annonser när brand-detektorn kördes och 40
+   samma kväll. En räkning mot den gamla listan säger "klart" om något som
+   saknar sex annonser.
+
+   ⚠️ **Slå upp målkampanjen på ID, aldrig på namn.** Kampanjer döps om under
+   bygget, och en namnbaserad uppslagning rapporterar då noll byggda annonser
+   av fyrtio.
+
+   ⚠️ **Grinda den FÄRDIGA filen, inte källan.** Ett captionbyte rör bara
+   captionpillret; text som ligger någon annanstans i bild står kvar. Kör
+   `factory/brand-text.py` på frames ur den färdiga videon och på den
+   omplåstrade bilden — och bygg ingen annons förrän den läsningen är tom.
+
+   ⚠️ **En smutsig bild är inte ett stopp, den är ett plåster.** Källbutikens
+   bildannonser är panelbyggda: `factory/bildplaster.py` byter en textrad i
+   dess egen ruta utan att generera om bilden. Håll bara det som inte går att
+   plåstra, och namnge det.
+
 10. **Trippelkolla mot kontot.** Läs TILLBAKA hela strukturen ur Meta och
    jämför mot butikens konfig: `page_id`, `pixel_id`, `daily_budget`, länk och
    status på alla tre nivåer. Stämmer något inte: rätta och läs tillbaka igen.
@@ -247,6 +266,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] TVÅ kampanjer byggda: `<BRAND>_SE_…` och `<BRAND>_NO_…`
 - [ ] Svensk copy på svenska mot `/`, norsk copy på bokmål mot `/nb`
 - [ ] Allt skapat PAUSED, status explicit på alla tre nivåer
+- [ ] Källkontona omlästa PRECIS före räkningen — inte den gamla listan
+- [ ] Varje omdubbad video och varje omplåstrad bild OCR-grindad som FÄRDIG fil
+- [ ] Manuslängden mätt mot källans taltid (`srt-fixa.mjs`, tak 1,15×)
 - [ ] **Räkningen visad:** källannonser per dom vs. uppladdade annonser i kontot
 - [ ] Varje saknad annons NAMNGIVEN med orsak — annars står det "delvis klart"
 - [ ] Tillbakaläst ur Meta: sida, pixel, budget, länk och status stämmer
