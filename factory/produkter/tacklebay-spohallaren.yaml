@@ -1,6 +1,21 @@
 # TackleBay — produkt 1 av 2: Fiskespöhållare 4-pack.
 # Källa: baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring
 # Specs, pris och recensioner lästa ur källan 2026-09-09. Inget påhittat.
+#
+# ⚠️ KÄLLANS EGEN BESKRIVNING ÄR FEL — rättad 2026-09-09 mot produktbilderna.
+# Bäverbutikens text säger "monteras enkelt på vägg eller i båten" och
+# "fyra hållare som håller ordning". Leverantörens egna bilder visar något
+# annat: en KLÄMMA som låser runt spöt och håller ihop spökroppen under
+# TRANSPORT. Bilderna säger ordagrant "Enhands, omedelbar låsning",
+# "Inbyggd hög-elastisk svamp — skadar inte fiskespöet", "förhindrar
+# kollision eller trassel av spökroppen under transport" och visar
+# låssekvensen "Sätt i → Första sektionen låst → Andra låset åtdraget".
+# Ingen skruv, ingen vägg. Bilderna är facit — de är leverantörens.
+#
+# ⚠️ OKLART, FRÅGA AXEL: bild 3 säger "Fyra färgalternativ" (orange, blå,
+# grön, rosa) medan källan bara har EN variant och heter 4-Pack. Om setet
+# innehåller en av varje färg, eller om färgen väljs, går inte att läsa ur
+# källan. Färg nämns därför inte alls i copyn.
 
 produkt:
   namn: "Fiskespöhållare 4-Pack"
@@ -34,43 +49,44 @@ media:
   videor:
   # Gif:arna är redigerarjobb — källan har inga. Sektionerna döljer sig utan.
   gif_problem: ""
-  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053329_603c77a7-8931-41c1-89be-0f2aea0f7fcf.png"
+  # Bilden som visar låssekvensen i tre steg — den bevisar lösningen.
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053344_a0863231-8cf7-430b-8f54-381e52beff10.png"
   bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053401_5af027d7-9c68-4e4a-8281-6267b400664e.png"
 
 beskrivning:
-  problem_rubrik: "Femton minuter på en knut innan första kastet"
-  problem_text: "Spöna har legat i en hög i garaget sedan sist. Linorna har hittat varandra, en krok sitter i fel spö, och nu står du på bryggan och petar i stället för att fiska."
-  losning_rubrik: "Fyra spön, fyra platser"
-  losning_text: "Fyra hållare skruvas upp på väggen eller i båten och tar ett spö var. Spöna står upp, linorna hänger fritt och ingenting hakar i något annat. Nästa gång lyfter du ner ett spö och går."
+  problem_rubrik: "Det som går sönder händer på vägen dit"
+  problem_text: "Spöna ligger löst i baksätet och slår mot varandra i varje kurva. Linan hittar fel ögla, toppen skaver mot en rullhållare, och det du reder ut på bryggan hände under transporten."
+  losning_rubrik: "En hand, två klick, spöt sitter"
+  losning_text: "Klämman går runt spöt och låser i två steg: första sektionen först, sedan andra låset. Insidan är en hög-elastisk svamp som håller hårt utan att skava lacken. Spökroppen sitter still hela vägen, och du lossar den med en hand när du är framme."
 
 vinkel:
-  huvudvinkel: "Ordning i utrustningen — fyra spön, fyra platser. Källa: källproduktens egen problemformulering plus 7 Judge.me-recensioner där ordning och stabilitet är det enda som nämns (playbook-vinkeln 'löser en fysisk irritation kunden ser varje gång')."
-  underrubrik: "Fyra spön. Fyra platser. Slut på trasslet."
+  huvudvinkel: "Transportskadan, inte förvaringen — spöt tar stryk på vägen till vattnet, inte vid vattnet. Källa: leverantörens egna produktbilder ('förhindrar kollision eller trassel av spökroppen under transport') plus 7 Judge.me-recensioner som alla nämner stabilitet. Vinkeln bytt 2026-09-09 sedan bilderna visat att källans förvaringstext är fel."
+  underrubrik: "Håller ihop spöt hela vägen till vattnet."
 
 malgrupp:
-  beskrivning: "Sport- och fritidsfiskare 30–65 som har fler spön än plats. Båtägare, stugägare och garagefiskare — de säger 'spö' och 'drag', inte 'fiskeutrustning', och de vet vad ett skeddrag är."
+  beskrivning: "Sport- och fritidsfiskare 30–65 som kör till vattnet med spön i bilen eller båten. Båtägare, stugägare och helgfiskare — de säger 'spö' och 'drag', inte 'fiskeutrustning', och de vet vad en ny topp kostar."
 
 problem:
-  - "Spöna ligger i en hög och linorna trasslar in i varandra."
-  - "Krokar och drag hakar fast i fel spö när allt ligger löst."
-  - "Spöna står i vägen i båten och tar plats i garaget."
+  - "Spöna slår mot varandra i bilen och båten på vägen dit."
+  - "Linan glider ur och hittar fel ögla under transporten."
+  - "Toppen skaver mot rullhållare och lacken tar stryk."
 
 benefits:
-  - "Varje spö får sin egen plats — inget trassel att reda ut före fisket."
-  - "Fyra hållare i ett set räcker till hela uppsättningen."
-  - "Sitter lika bra på garageväggen som i båten."
-  - "Spöna står upp, så linorna hänger fritt och håller sig hela."
+  - "Spökroppen och linan sitter still hela transporten."
+  - "Låses och lossas med en hand — inget att knäppa upp med båda."
+  - "Svampen inuti håller hårt utan att skava spöts lack."
+  - "Fyra i ett set, så hela uppsättningen är fixerad på en gång."
 
 features:
   - "Fyra hållare i ett set"
-  - "Kraftig konstruktion som håller spöna stadigt"
-  - "Monteras på vägg eller i båten"
-  - "För strand-, sjö- och båtfiske"
-  - "Passar både proffs och nybörjare"
+  - "Enhands, omedelbar låsning i två steg"
+  - "Inbyggd hög-elastisk svamp som inte skadar spöet"
+  - "Passar spinnspön och havsfiskespön"
+  - "Förhindrar kollision och trassel av spökroppen under transport"
 
 offer:
   beskrivning: "Fyra hållare i ett set, 289 kr. Fri frakt i Sverige och Norge, 14 dagars ångerrätt."
-  bundle: "2-pack ger 8 platser — 15 % rabatt. 3-pack ger 12 platser — 20 % rabatt."
+  bundle: "2-pack ger 8 hållare — 15 % rabatt. 3-pack ger 12 hållare — 20 % rabatt."
   # Q4-ramverket: den betalda korg-upsellen är butikens ANDRA produkt.
   # ⚠️ Den GRATIS bonusprodukten saknas — butiken har ingen billig
   # komplementprodukt än, och en sådan hittas inte på. Axel väljer den.
@@ -120,14 +136,14 @@ reviews:
     datum: "2026-01-08"
 
 faq:
-  - fraga: "Hur många spön får plats?"
-    svar: "Fyra — ett per hållare. Fler set kan sättas upp bredvid varandra."
-  - fraga: "Passar den i båten?"
-    svar: "Ja. Hållarna monteras på vägg eller i båten och är gjorda för strand-, sjö- och båtfiske."
+  - fraga: "Hur många följer med?"
+    svar: "Fyra hållare i ett set."
+  - fraga: "Hur sätts den på?"
+    svar: "Med en hand, i två steg: sätt i spöt, lås första sektionen, dra åt andra låset."
   - fraga: "Passar alla spön?"
-    svar: "Hållarna är gjorda för vanliga spön till strand-, sjö- och båtfiske, både grövre och klenare."
-  - fraga: "Ingår skruvar?"
-    svar: "Montering sker med vanliga skruvar mot vägg eller båt. Vilket infäste som passar beror på underlaget."
+    svar: "Den är gjord för olika typer av fiskespön, bland annat spinnspön och havsfiskespön."
+  - fraga: "Skadar den spöet?"
+    svar: "Nej. Insidan är en hög-elastisk svamp som håller hårt utan att skava lacken."
 
 leveranstid: "5–10 arbetsdagar"
 
@@ -163,6 +179,6 @@ meta:
   creative_prefix: "TackleBayRod"
   testbudget_per_dag: 500
   vinklar:
-    - "Ordning: fyra spön, fyra platser"
-    - "Före/efter: högen i garaget mot väggen med fyra spön"
-    - "Trasslet: femton minuter på en knut innan första kastet"
+    - "Transportskadan: det som går sönder händer på vägen dit"
+    - "Enhandsgreppet: två klick, spöt sitter"
+    - "Svampen: håller hårt utan att skava lacken"

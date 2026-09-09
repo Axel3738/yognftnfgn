@@ -143,7 +143,9 @@ startsida:
       - "Vi säljer inte allt. Vi säljer det som löser något konkret: spön som inte trasslar, och en present som inte blir ett presentkort."
       - "Varje sak i sortimentet är vald för att den håller en säsong i båten, inte för att den fyller en katalog."
   statement:
-    rubrik: "Fyra spön, fyra platser"
+    # Rättad 2026-09-09 tillsammans med produkttexten: spöhållaren är en
+    # transportklämma, inte en väggmontering. "Fyra platser" var fel.
+    rubrik: "Håller ihop spöt hela vägen till vattnet."
     knapp: "Se sortimentet"
   trygghet:
     rubrik: "Handla tryggt hos oss"

@@ -129,7 +129,12 @@ const STEG = [
       ];
     },
     async kor(ctx, pk) {
-      const produkt = await skapaProdukt(pk.plan.input);
+      // productSet skapar på handle men UPPDATERAR bara på id — utan id:t
+      // svarar Shopify "Handle already in use" så fort produkten finns.
+      // Mätt 2026-09-09 när spöhållarens copy skulle skrivas om.
+      const befintlig = await hamtaProduktViaHandle(pk.p.produkt.id);
+      const input = befintlig ? { ...pk.plan.input, id: befintlig.id } : pk.plan.input;
+      const produkt = await skapaProdukt(input);
       pk.produkt = produkt;
       // Publiceras i Online Store direkt. En ACTIVE produkt som inte ligger i
       // kanalen ger 404 i kundvyn precis som en DRAFT gör.

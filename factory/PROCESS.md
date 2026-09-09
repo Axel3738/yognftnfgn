@@ -228,6 +228,23 @@ blev `{ '"Vi säljer …konkret': 'spön …"' }` och renderades som
 `factory/test/yaml.test.mjs`. Kolon i löptext är vanligt — buggen träffade
 `benefits`, `problem` och `features` precis lika lätt.
 
+⚠️ **LÄS PRODUKTBILDERNA INNAN COPYN SKRIVS — källans text kan vara fel.**
+Mätt 2026-09-09 på TackleBay: Bäverbutikens beskrivning av fiskespöhållaren
+säger *"monteras enkelt på vägg eller i båten"* och *"fyra hållare som håller
+ordning"*. Leverantörens egna bilder visar något helt annat — en **klämma**
+som låser runt spöt i två steg, med inbyggd svamp, och texten *"förhindrar
+kollision eller trassel av spökroppen under transport"*. Ingen skruv, ingen
+vägg. Hela produktsidan (rubriker, benefits, features, FAQ, annonsvinklar och
+den norska översättningen) byggdes först på den falska premissen och fick
+skrivas om. **Bilderna är facit — de kommer från leverantören, texten kan vara
+skriven av någon som aldrig sett produkten.** Öppna varje produktbild och läs
+den inbrända texten som ett eget steg i fas 1, före brand-steget.
+
+⚠️ **`productSet` skapar på handle men UPPDATERAR bara på id.** Utan `id` i
+inputen svarar Shopify *"Handle already in use"* så fort produkten finns —
+alltså varje gång en färdig butiks copy ska skrivas om. `ops.mjs` slår därför
+upp produkten först och skickar med id:t.
+
 ## Regler som bevisats den hårda vägen
 - **Bas-zip:en bär MATSTRUMPORS TEXT i tre mallar** (mätt 2026-09-09):
   `templates/index.json` (hero, rubriker, kollektionen `strumporna`,

@@ -3,11 +3,11 @@
     "title": "Fiskespöhållare 4-Pack",
     "handle": "fiskespohallare-4-pack",
     "status": "ACTIVE",
-    "descriptionHtml": "<p>Fyra spön. Fyra platser. Slut på trasslet.</p>",
+    "descriptionHtml": "<p>Håller ihop spöt hela vägen till vattnet.</p>",
     "vendor": "TackleBay",
     "seo": {
       "title": "Fiskespöhållare 4-Pack – TackleBay",
-      "description": "Varje spö får sin egen plats — inget trassel att reda ut före fisket.. 14 dagars ångerrätt"
+      "description": "Spökroppen och linan sitter still hela transporten.. 14 dagars ångerrätt"
     },
     "productOptions": [
       {
@@ -67,43 +67,43 @@
       "namespace": "opf",
       "key": "problem_rubrik",
       "type": "single_line_text_field",
-      "value": "Femton minuter på en knut innan första kastet"
+      "value": "Det som går sönder händer på vägen dit"
     },
     {
       "namespace": "opf",
       "key": "problem_text",
       "type": "multi_line_text_field",
-      "value": "Spöna har legat i en hög i garaget sedan sist. Linorna har hittat varandra, en krok sitter i fel spö, och nu står du på bryggan och petar i stället för att fiska."
+      "value": "Spöna ligger löst i baksätet och slår mot varandra i varje kurva. Linan hittar fel ögla, toppen skaver mot en rullhållare, och det du reder ut på bryggan hände under transporten."
     },
     {
       "namespace": "opf",
       "key": "losning_rubrik",
       "type": "single_line_text_field",
-      "value": "Fyra spön, fyra platser"
+      "value": "En hand, två klick, spöt sitter"
     },
     {
       "namespace": "opf",
       "key": "losning_text",
       "type": "multi_line_text_field",
-      "value": "Fyra hållare skruvas upp på väggen eller i båten och tar ett spö var. Spöna står upp, linorna hänger fritt och ingenting hakar i något annat. Nästa gång lyfter du ner ett spö och går."
+      "value": "Klämman går runt spöt och låser i två steg: första sektionen först, sedan andra låset. Insidan är en hög-elastisk svamp som håller hårt utan att skava lacken. Spökroppen sitter still hela vägen, och du lossar den med en hand när du är framme."
     },
     {
       "namespace": "opf",
       "key": "media_losning",
       "type": "url",
-      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053329_603c77a7-8931-41c1-89be-0f2aea0f7fcf.png"
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053344_a0863231-8cf7-430b-8f54-381e52beff10.png"
     },
     {
       "namespace": "opf",
       "key": "benefits",
       "type": "list.single_line_text_field",
-      "value": "[\"Varje spö får sin egen plats — inget trassel att reda ut före fisket.\",\"Fyra hållare i ett set räcker till hela uppsättningen.\",\"Sitter lika bra på garageväggen som i båten.\",\"Spöna står upp, så linorna hänger fritt och håller sig hela.\"]"
+      "value": "[\"Spökroppen och linan sitter still hela transporten.\",\"Låses och lossas med en hand — inget att knäppa upp med båda.\",\"Svampen inuti håller hårt utan att skava spöts lack.\",\"Fyra i ett set, så hela uppsättningen är fixerad på en gång.\"]"
     },
     {
       "namespace": "opf",
       "key": "features",
       "type": "list.single_line_text_field",
-      "value": "[\"Fyra hållare i ett set\",\"Kraftig konstruktion som håller spöna stadigt\",\"Monteras på vägg eller i båten\",\"För strand-, sjö- och båtfiske\",\"Passar både proffs och nybörjare\"]"
+      "value": "[\"Fyra hållare i ett set\",\"Enhands, omedelbar låsning i två steg\",\"Inbyggd hög-elastisk svamp som inte skadar spöet\",\"Passar spinnspön och havsfiskespön\",\"Förhindrar kollision och trassel av spökroppen under transport\"]"
     },
     {
       "namespace": "opf",
@@ -127,7 +127,7 @@
       "namespace": "opf",
       "key": "faq",
       "type": "json",
-      "value": "[{\"fraga\":\"Hur många spön får plats?\",\"svar\":\"Fyra — ett per hållare. Fler set kan sättas upp bredvid varandra.\"},{\"fraga\":\"Passar den i båten?\",\"svar\":\"Ja. Hållarna monteras på vägg eller i båten och är gjorda för strand-, sjö- och båtfiske.\"},{\"fraga\":\"Passar alla spön?\",\"svar\":\"Hållarna är gjorda för vanliga spön till strand-, sjö- och båtfiske, både grövre och klenare.\"},{\"fraga\":\"Ingår skruvar?\",\"svar\":\"Montering sker med vanliga skruvar mot vägg eller båt. Vilket infäste som passar beror på underlaget.\"}]"
+      "value": "[{\"fraga\":\"Hur många följer med?\",\"svar\":\"Fyra hållare i ett set.\"},{\"fraga\":\"Hur sätts den på?\",\"svar\":\"Med en hand, i två steg: sätt i spöt, lås första sektionen, dra åt andra låset.\"},{\"fraga\":\"Passar alla spön?\",\"svar\":\"Den är gjord för olika typer av fiskespön, bland annat spinnspön och havsfiskespön.\"},{\"fraga\":\"Skadar den spöet?\",\"svar\":\"Nej. Insidan är en hög-elastisk svamp som håller hårt utan att skava lacken.\"}]"
     }
   ]
 }

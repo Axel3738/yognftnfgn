@@ -13,41 +13,43 @@ export const LOCALE = 'nb';
 // --- Produkterna -----------------------------------------------------------
 
 export const PRODUKTER = {
+  // Rettet 2026-09-09 sammen med den svenske teksten: leverandørens egne
+  // bilder viser en KLEMME for transport, ikke en veggholder.
   'fiskespohallare-4-pack': {
     produkt: {
       title: 'Fiskestangholder 4-pakning',
-      body_html: '<p>Fire stenger. Fire plasser. Slutt på flokene.</p>',
+      body_html: '<p>Holder stanga samlet hele veien til vannet.</p>',
       meta_title: 'Fiskestangholder 4-pakning – TackleBay',
       meta_description:
-        'Hver stang får sin egen plass — ingen floker å greie ut før fisketuren. 14 dagers angrerett.',
+        'Stangkroppen og snøret sitter stille hele transporten. Låses med én hånd. 14 dagers angrerett.',
     },
     metafalt: {
-      problem_rubrik: 'Femten minutter på en floke før første kast',
+      problem_rubrik: 'Det som ryker, ryker på veien dit',
       problem_text:
-        'Stengene har ligget i en haug i garasjen siden sist. Snørene har funnet hverandre, en krok sitter i feil stang, og nå står du på brygga og piller i stedet for å fiske.',
-      losning_rubrik: 'Fire stenger, fire plasser',
+        'Stengene ligger løst i baksetet og slår mot hverandre i hver sving. Snøret finner feil løkke, tuppen skraper mot en snelleholder, og det du greier ut på brygga skjedde under transporten.',
+      losning_rubrik: 'Én hånd, to klikk, stanga sitter',
       losning_text:
-        'Fire holdere skrus opp på veggen eller i båten og tar én stang hver. Stengene står oppreist, snørene henger fritt og ingenting hekter seg i noe annet. Neste gang løfter du ned en stang og går.',
+        'Klemmen går rundt stanga og låser i to trinn: første seksjon først, så andre låsen. Innsiden er en høyelastisk svamp som holder hardt uten å skrape lakken. Stangkroppen sitter stille hele veien, og du løsner den med én hånd når du er framme.',
       benefits: [
-        'Hver stang får sin egen plass — ingen floker å greie ut før fisketuren.',
-        'Fire holdere i ett sett rekker til hele oppsettet.',
-        'Sitter like godt på garasjeveggen som i båten.',
-        'Stengene står oppreist, så snørene henger fritt og holder seg hele.',
+        'Stangkroppen og snøret sitter stille hele transporten.',
+        'Låses og løsnes med én hånd — ingenting å kneppe opp med begge.',
+        'Svampen inni holder hardt uten å skrape lakken på stanga.',
+        'Fire i ett sett, så hele oppsettet er sikret på én gang.',
       ],
       features: [
         'Fire holdere i ett sett',
-        'Kraftig konstruksjon som holder stengene stødig',
-        'Monteres på vegg eller i båten',
-        'For strand-, sjø- og båtfiske',
-        'Passer både proffe og nybegynnere',
+        'Låsing med én hånd, i to trinn',
+        'Innebygd høyelastisk svamp som ikke skader stanga',
+        'Passer spinnstenger og havfiskestenger',
+        'Hindrer sammenstøt og floker på stangkroppen under transport',
       ],
       garantier: ['14 dagers angrerett'],
       frakt: ['Leveringstid: 5–10 virkedager', 'Gratis frakt i hele Norge'],
       faq: [
-        { fraga: 'Hvor mange stenger får plass?', svar: 'Fire — én per holder. Flere sett kan settes opp ved siden av hverandre.' },
-        { fraga: 'Passer den i båten?', svar: 'Ja. Holderne monteres på vegg eller i båten og er laget for strand-, sjø- og båtfiske.' },
-        { fraga: 'Passer alle stenger?', svar: 'Holderne er laget for vanlige stenger til strand-, sjø- og båtfiske, både grovere og slankere.' },
-        { fraga: 'Følger det med skruer?', svar: 'Montering skjer med vanlige skruer mot vegg eller båt. Hvilket feste som passer avhenger av underlaget.' },
+        { fraga: 'Hvordan settes den på?', svar: 'Med én hånd, i to trinn: sett i stanga, lås første seksjon, stram andre låsen.' },
+        { fraga: 'Passer alle stenger?', svar: 'Den er laget for ulike typer fiskestenger, blant annet spinnstenger og havfiskestenger.' },
+        { fraga: 'Skader den stanga?', svar: 'Nei. Innsiden er en høyelastisk svamp som holder hardt uten å skrape lakken.' },
+        { fraga: 'Hvor mange følger med?', svar: 'Fire holdere i ett sett.' },
       ],
     },
   },
@@ -119,7 +121,7 @@ export const STARTSIDA_PAR = [
     '<p>Vi säljer inte allt. Vi säljer det som löser något konkret: spön som inte trasslar, och en present som inte blir ett presentkort.</p><p>Varje sak i sortimentet är vald för att den håller en säsong i båten, inte för att den fyller en katalog.</p>',
     '<p>Vi selger ikke alt. Vi selger det som løser noe konkret: stenger som ikke floker seg, og en gave som ikke blir et gavekort.</p><p>Hver ting i sortimentet er valgt fordi den holder en sesong i båten, ikke fordi den fyller en katalog.</p>',
   ],
-  ['Fyra spön, fyra platser', 'Fire stenger, fire plasser'],
+  ['Håller ihop spöt hela vägen till vattnet.', 'Holder stanga samlet hele veien til vannet.'],
   ['Handla tryggt hos oss', 'Handle trygt hos oss'],
   [
     '<p>Fri frakt till hela Sverige och Norge, och 14 dagars ångerrätt enligt svensk lag.</p><p>Betala som du vill — Klarna, kort, Apple Pay eller Google Pay.</p>',
