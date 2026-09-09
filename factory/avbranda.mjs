@@ -66,7 +66,14 @@ export function byggRegler(butik) {
   const r = (re, ers) => [re, () => ers];
 
   const alla = [
+    // 0. Platshållaren ur det RENSADE bas-temat (factory/rensa-kalla.mjs).
+    //    Källan bär inte längre någon riktig adress — den bär SUPPORTMEJL,
+    //    och här får den butikens egen. Utan den här raden renderas ett tomt
+    //    mailto, vilket är en trasig länk i kundens vy.
+    r(/SUPPORTMEJL/g, supportmail),
     // 1. Supportmejlen — måste före domänregeln.
+    //    Behålls för butiker som byggdes ur det OSTÄDADE temat (HeimGuard,
+    //    TankGuard, TackleBay, DryTrek). Den blir en no-op på nya butiker.
     r(/kundsupport@matstrumpor\.se/gi, supportmail),
     // 2. Domänen i löptext och länkar.
     r(/matstrumpor\.se/gi, doman),

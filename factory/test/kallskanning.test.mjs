@@ -3,6 +3,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import {
@@ -23,6 +24,15 @@ import {
 
 const ZIP = fileURLToPath(new URL('../tema/ops-tema.zip', import.meta.url));
 const urZip = (fil) => execFileSync('unzip', ['-p', ZIP, fil], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 });
+
+// Det SMUTSIGA bas-temat som fixtur. Källan rensades 2026-09-09
+// (factory/rensa-kalla.mjs), så den bär inget att hitta längre — men de här
+// testerna ska bevisa att funktionerna STÄDAR smutsig indata. Mot en ren zip
+// hade de blivit gröna för att det inte fanns något att städa, vilket är
+// samma falska grönt som gav "14 gröna, 0 fel" på en trasig butik.
+const urSmutsigt = (fil) =>
+  readFileSync(fileURLToPath(new URL(`./fixtur-smutsigt-tema/${fil}`, import.meta.url)), 'utf8');
+
 
 test('hittar källbutikens hero-text i startsidemallen', () => {
   const traffar = skannaFil('templates/index.json', '"heading": "Strumpor som ser ut som mat"');
@@ -52,7 +62,7 @@ test('escapade snedstreck i minifierad JSON hindrar inte träffen', () => {
 });
 
 test('zip:ens riktiga index.json ger träff på kollektionslänken', () => {
-  const traffar = skannaFil('templates/index.json', urZip('templates/index.json'));
+  const traffar = skannaFil('templates/index.json', urSmutsigt('templates/index.json'));
   assert.ok(traffar.some((t) => t.ord.includes('collections/strumporna')), 'kollektionslänken ska hittas i den riktiga filen');
 });
 
@@ -147,7 +157,7 @@ test('nyhetsbrevet är en INSTÄLLNING på footern och slås av, inte en sektion
 });
 
 test('avbrandaSektionsgrupp på zip:ens riktiga footer-group: sektioner bort, nyhetsbrev av, giltig JSON', () => {
-  const ra = urZip('sections/footer-group.json');
+  const ra = urSmutsigt('sections/footer-group.json');
   const fore = skannaSektionsgrupp('sections/footer-group.json', ra);
   assert.ok(fore.some((t) => t.ord.includes('ms-skrapkort')));
   assert.ok(fore.some((t) => t.ord.includes('newsletter_enable')));
@@ -162,7 +172,7 @@ test('avbrandaSektionsgrupp på zip:ens riktiga footer-group: sektioner bort, ny
 });
 
 test('avbrandaSektionsgrupp på zip:ens riktiga header-group: källbutikens tre annonsblock bort', () => {
-  const ra = urZip('sections/header-group.json');
+  const ra = urSmutsigt('sections/header-group.json');
   const fore = skannaSektionsgrupp('sections/header-group.json', ra);
   assert.equal(fore.length, 3, 'tre källannonser i zip:en');
   const { json, borttaget } = avbrandaSektionsgrupp(ra);
@@ -212,7 +222,7 @@ test('skannaSektionsgrupp hittar källsektioner utan att ändra', () => {
 });
 
 test('skannaTema skannar sektionsgrupperna strukturellt — zip:ens footer-group larmar för skrapkortet', () => {
-  const res = skannaTema({ 'sections/footer-group.json': urZip('sections/footer-group.json') });
+  const res = skannaTema({ 'sections/footer-group.json': urSmutsigt('sections/footer-group.json') });
   assert.ok(res.traffar.some((t) => t.ord.includes('ms-skrapkort')));
   assert.ok(res.traffar.some((t) => t.ord.includes('newsletter_enable')));
 });

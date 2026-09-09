@@ -16,6 +16,15 @@ import { rabutik } from './hjalp.mjs';
 
 const ZIP = fileURLToPath(new URL('../tema/ops-tema.zip', import.meta.url));
 const urZip = (fil) => execFileSync('unzip', ['-p', ZIP, fil], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 });
+
+// Bas-temat RENSADES vid källan 2026-09-09 (factory/rensa-kalla.mjs), så det
+// bär inte längre något att av-branda. Av-brandningen behövs ändå: HeimGuard,
+// TankGuard, DryTrek och TackleBay byggdes ur det SMUTSIGA temat och ska gå
+// att städa. Den smutsiga versionen ligger därför kvar som fixtur — annars
+// hade testerna blivit gröna för att det inte fanns något att hitta, vilket är
+// samma sorts falska grönt som gav "14 gröna, 0 fel" på en trasig butik.
+const urSmutsigt = (fil) =>
+  readFileSync(fileURLToPath(new URL(`./fixtur-smutsigt-tema/${fil}`, import.meta.url)), 'utf8');
 const BINAR = /\.(png|jpg|jpeg|gif|webp|svg|woff2?|eot|ttf|mp4|ico)$/i;
 
 // Hela zip:en som { fil: innehåll }, som hamtaAllaTemafiler ger.
@@ -90,8 +99,8 @@ test('footerns bolagsblock är butikens juridiska text — samma rad som startsi
   assert.ok(!blk.includes('om-oss'));
 });
 
-test('zip:ens riktiga footer-group blir giltig JSON utan källsektioner, nyhetsbrev eller om-oss-länk', () => {
-  const { innehall, borttaget } = tillampa('sections/footer-group.json', urZip('sections/footer-group.json'), butik());
+test('det SMUTSIGA temats footer-group blir giltig JSON utan källsektioner, nyhetsbrev eller om-oss-länk', () => {
+  const { innehall, borttaget } = tillampa('sections/footer-group.json', urSmutsigt('sections/footer-group.json'), butik());
   const j = JSON.parse(innehall);
   assert.deepEqual(j.order, ['footer']);
   assert.equal(j.sections.footer.settings.newsletter_enable, false);
@@ -100,23 +109,23 @@ test('zip:ens riktiga footer-group blir giltig JSON utan källsektioner, nyhetsb
   assert.ok(borttaget.length >= 4, `borttaget: ${borttaget.join('; ')}`);
 });
 
-test('zip:ens riktiga header-group: källannonserna bort, fabrikens egna (opf_) kvar', () => {
+test('det SMUTSIGA temats header-group: källannonserna bort, fabrikens egna (opf_) kvar', () => {
   const b = butik();
   // Fabriken har redan skrivit sina egna rader (steget tema körs före avbrandning).
-  const egen = byggHeaderGroup(b, { befintlig: urZip('sections/header-group.json') });
+  const egen = byggHeaderGroup(b, { befintlig: urSmutsigt('sections/header-group.json') });
   const { innehall, borttaget } = tillampa('sections/header-group.json', egen, b);
   const bar = JSON.parse(innehall).sections['announcement-bar'];
   assert.deepEqual(bar.block_order, ['opf_a1', 'opf_a2', 'opf_a3']);
   assert.equal(borttaget.length, 0, 'inget av fabrikens eget ska tas bort');
   // Och den orörda zip-filen: alla tre källannonserna åker.
-  const ra = tillampa('sections/header-group.json', urZip('sections/header-group.json'), b);
+  const ra = tillampa('sections/header-group.json', urSmutsigt('sections/header-group.json'), b);
   assert.equal(ra.borttaget.length, 3);
   assert.deepEqual(JSON.parse(ra.innehall).sections['announcement-bar'].block_order, []);
 });
 
-test('stadaSettings på zip:ens riktiga settings_data: sociala länkar, logga, brand-text, Klaviyo och presetnamnet', () => {
+test('stadaSettings på det SMUTSIGA temats settings_data: sociala länkar, logga, brand-text, Klaviyo och presetnamnet', () => {
   const b = butik();
-  const ut = stadaSettings(urZip('config/settings_data.json'), b);
+  const ut = stadaSettings(urSmutsigt('config/settings_data.json'), b);
   const j = JSON.parse(ut);
   const c = j.current;
   assert.equal(c.social_facebook_link, '');
@@ -146,25 +155,75 @@ test('tillampa är idempotent — andra varvet ändrar ingenting', () => {
 // Det avgörande testet: hela bas-zip:en genom av-brandningen (+ produktmallen
 // och header-gruppen ur tema.mjs, som steget `tema` skriver) ska vara
 // skanningsren. Varje nytt KALLORD utan regel faller här.
-test('hela bas-zip:en är skanningsren efter av-brandningen', () => {
-  const b = butik();
+test('BAS-TEMAT ÄR RENT VID KÄLLAN — inget att av-branda', () => {
+  // Rensat 2026-09-09 med factory/rensa-kalla.mjs, efter Axels rapport om
+  // TackleBays förhandsvisning: "Matstrumpor email popup är liksom kvar samt
+  // cookie förfrågan, det är verkligen horribelt."
+  //
+  // Det här är den viktigaste raden i filen. Så länge källan var smutsig
+  // räckte det att ETT bygge avbröts före av-brandningssteget för att en
+  // butik skulle gå live med en annan firmas popup, en annan firmas kunder
+  // och påståendet "Älskad av tusentals svenskar" på dag ett.
   const filer = helaZipen();
   assert.ok(Object.keys(filer).length > 250, 'zip:en ska packas upp helt');
-  const fore = skannaTema(filer);
-  assert.ok(fore.traffar.length >= 20, `zip:en bär källtext (${fore.traffar.length} träffar före)`);
+  const r = skannaTema(filer);
+  assert.equal(r.traffar.length, 0, rapport(r));
+});
 
-  filer['templates/product.json'] = byggProduktTemplate(filer['templates/product.json'], { butik: b, produkt: { offer: { paket: { test: 'paket' } }, varianter: [] } });
-  filer['sections/header-group.json'] = byggHeaderGroup(b, { befintlig: filer['sections/header-group.json'] });
+test('bas-temat renderar varken popupen, cookierutan eller nyhetsbrevet', () => {
+  const filer = helaZipen();
+  const footer = JSON.parse(filer['sections/footer-group.json']);
+  assert.deepEqual(footer.order, ['footer'], 'sidfoten ska bara rendera footer');
+  assert.equal(footer.sections.footer.settings.newsletter_enable, false);
+  // Sektionsfilen är borta, inte bara avstängd — annars går den att lägga
+  // tillbaka med ett klick i temaredigeraren, och den bär källans Klaviyo.
+  assert.ok(!('sections/ms-skrapkort.liquid' in filer), 'skrapkortets fil ska vara borta');
+});
+
+test('bas-temat bär varken källans logga, sociala länkar eller app-embeds', () => {
+  const c = JSON.parse(helaZipen()['config/settings_data.json']).current;
+  for (const f of ['social_facebook_link', 'social_instagram_link', 'logo', 'brand_image', 'brand_description']) {
+    assert.equal(c[f], '', `${f} ska vara tom i källan`);
+  }
+  // Bara Judge.me. Klaviyo var källans e-postverktyg — samma verktyg som
+  // drev popupen, och inte ens installerat i en ny butik.
+  const typer = Object.values(c.blocks || {}).map((b) => b.type);
+  assert.equal(typer.length, 1, `app-embeds: ${typer.join(', ')}`);
+  assert.match(typer[0], /judge-?me/i);
+});
+
+test('av-brandningen städar ändå ett SMUTSIGT tema — butikerna som redan är byggda', () => {
+  // HeimGuard, TankGuard, DryTrek och TackleBay byggdes ur det smutsiga
+  // temat. Av-brandningen är deras väg ut, och måste fortsätta fungera.
+  const b = butik();
+  const filer = {
+    'sections/footer-group.json': urSmutsigt('sections/footer-group.json'),
+    'sections/header-group.json': urSmutsigt('sections/header-group.json'),
+    'config/settings_data.json': urSmutsigt('config/settings_data.json'),
+  };
+  const fore = skannaTema(filer);
+  assert.ok(fore.traffar.length >= 3, `fixturen ska vara smutsig (${fore.traffar.length} träffar)`);
+
   const { andrade, borttagnaSektioner } = avbrandaFiler(filer, b);
   const efter = skannaTema({ ...filer, ...andrade });
   assert.equal(efter.traffar.length, 0, rapport(efter));
   assert.ok(borttagnaSektioner.some((x) => x.includes('ms-skrapkort')));
   assert.ok(borttagnaSektioner.some((x) => x.includes('newsletter_enable')));
-  // Varje omskriven JSON-fil ska fortfarande vara giltig JSON.
   for (const [namn, innehall] of Object.entries(andrade)) {
     if (namn.endsWith('.json')) JSON.parse(String(innehall).replace(/^\s*\/\*[\s\S]*?\*\//, ''));
   }
-  // Och inget KALLORD står kvar i någon fil, oavsett escapning.
-  const allt = Object.values({ ...filer, ...andrade }).join('\n').toLowerCase().replaceAll('\\/', '/');
-  for (const ord of KALLORD) assert.ok(!allt.includes(ord), `"${ord}" finns kvar`);
+});
+
+test('varje JSON-fil i bas-temat är fortfarande giltig JSON efter rensningen', () => {
+  // Rensningen skriver om JSON med en textregel på flera ställen. En trasig
+  // JSON-fil i temat visar sig som en tom sektion i kundens vy, inte som ett
+  // felmeddelande.
+  const filer = helaZipen();
+  let n = 0;
+  for (const [namn, innehall] of Object.entries(filer)) {
+    if (!namn.endsWith('.json')) continue;
+    JSON.parse(String(innehall).replace(/^\s*\/\*[\s\S]*?\*\//, ''));
+    n++;
+  }
+  assert.ok(n >= 5, `bara ${n} JSON-filer lästes`);
 });

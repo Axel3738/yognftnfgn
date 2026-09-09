@@ -149,6 +149,35 @@ function hörTill(produktfil, butiksId) {
 
 // Bas-temat är exporterat från Matstrumpor. Skanningen ska vara ren efter
 // av-brandningen — annars går källbutikens text ut i kundens vy.
+// Den här raden är hela skillnaden mellan "av-brandningen städar" och "det
+// finns inget att städa". Så länge källan var smutsig räckte det att ETT bygge
+// avbröts före av-brandningen för att en butik skulle gå live med en annan
+// firmas popup. (Axel 2026-09-09 om TackleBay: "Matstrumpor email popup är
+// liksom kvar samt cookie förfrågan, det är verkligen horribelt.")
+kor('Bas-temat är rent vid källan', 'node', [
+  '-e',
+  `Promise.all([import('./factory/kallskanning.mjs'), import('node:child_process'), import('node:fs'), import('node:os'), import('node:path')])
+     .then(([k, cp, fs, os, path]) => {
+       const mapp = fs.mkdtempSync(path.join(os.tmpdir(), 'sjalvtest-tema-'));
+       try {
+         cp.execFileSync('unzip', ['-o', '-q', 'factory/tema/ops-tema.zip', '-d', mapp]);
+         const filer = {};
+         const ga = (d) => { for (const n of fs.readdirSync(d, { withFileTypes: true })) {
+           const f = path.join(d, n.name);
+           if (n.isDirectory()) ga(f);
+           else if (!/\\.(png|jpg|jpeg|gif|webp|svg|woff2?|eot|ttf|mp4|ico)$/i.test(f)) filer[path.relative(mapp, f)] = fs.readFileSync(f, 'utf8');
+         } };
+         ga(mapp);
+         const r = k.skannaTema(filer);
+         if (r.traffar.length) { console.error(k.rapport(r)); process.exit(1); }
+         const footer = JSON.parse(filer['sections/footer-group.json']);
+         if (JSON.stringify(footer.order) !== JSON.stringify(['footer'])) {
+           console.error('sidfoten renderar mer än footer: ' + JSON.stringify(footer.order)); process.exit(1);
+         }
+       } finally { fs.rmSync(mapp, { recursive: true, force: true }); }
+     })`,
+]);
+
 kor('Källskanningen känner igen Matstrumpor-texten', 'node', [
   '-e',
   `import('./factory/kallskanning.mjs').then(m => {

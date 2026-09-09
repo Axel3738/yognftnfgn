@@ -1,10 +1,47 @@
-# Av-brandningen: allt som tillhör Matstrumpor i bas-temat
+# Av-brandningen — källan är rensad 2026-09-09
 
-**Kartlagt 2026-09-09** med sex parallella granskare över `factory/tema/ops-tema.zip`.
-**157 fynd** varav 84 kritiska.
+**Läget nu:** `factory/tema/ops-tema.zip` är RENT. `npm run sjalvtest` har en
+rad som kräver det, och `factory/test/avbranda.test.mjs` skannar hela zip:en
+och kräver noll träffar.
 
-Bas-temat är exporterat från **Matstrumpor.se** och används som mall för varje ny
-OPS-butik. Allt nedan följde med till HeimGuard, TankGuard och DryTrek.
+Rensningen gjordes med `node factory/rensa-kalla.mjs` efter Axels rapport om
+TackleBays förhandsvisning: *"Matstrumpor email popup är liksom kvar samt
+cookie förfrågan, det är verkligen horribelt."* Han hade rätt, och det var
+inte butikens fel — det var källans.
+
+Vad som togs bort ur bas-temat:
+
+| Vad | Var | Varför det var illa |
+|---|---|---|
+| E-postpopupen `ms-skrapkort` | sidfotens sektionsgrupp + filen | Annan firmas kampanj: byter rabattkod mot mejladress |
+| Cookierutan `ms-cookies` | sidfotens sektionsgrupp | Källbutikens, inte fabrikens |
+| Nyhetsbrevet | `newsletter_enable` på footer-sektionen | Deras e-postklubb, på från början |
+| Klaviyo-embed | `settings_data.json` | Deras e-postverktyg, inte ens installerat i en ny butik |
+| Facebook + Instagram | `settings_data.json` | Länkade till deras konton |
+| Logga, brand_image, brand_description | `settings_data.json` | Deras logga syntes i headern |
+| Fem bildreferenser | `templates/index.json` | `shop_images` är per butik — döda länkar i en ny butik |
+| Fyra kunders recensioner | `templates/index.json` | Riktiga personer hos en annan firma |
+| Deras produkt och kollektion | `templates/index.json` | `sushi-strumpor`, `collections/strumporna` |
+| "Levereras presentklart" | USP-rad, marquee, annonsrad, startsida | Presentlöfte OPS-butiken inte håller |
+| **"Älskad av tusentals svenskar"** | USP-rad, marquee, startsida | **Falskt.** En butik som öppnade i förrgår har inga tusentals kunder |
+| "Presenten som alltid landar rätt" | recensionssektionerna | Presentbutikens copy |
+| "Fri frakt i hela Sverige", "30 dagars öppet köp" | annonsrad, trust-rad, produktmall | Källans villkor — OPS har 14 dagars ångerrätt enligt lag |
+| "En storlek passar de flesta", "Strl 36–44" | FAQ, produktmall | Strumpstorlekar |
+| Presetnamnet | `settings_data.json` | Källbutikens namn i temaredigeraren |
+
+**Av-brandningen finns kvar och behövs fortfarande.** HeimGuard, TankGuard,
+DryTrek och TackleBay byggdes ur det SMUTSIGA temat. `factory/avbranda.mjs`
+är deras väg ut, och den testas mot `factory/test/fixtur-smutsigt-tema/` —
+en sparad kopia av det gamla temat. Utan den fixturen hade testerna blivit
+gröna för att det inte fanns något att hitta.
+
+**Regeln härifrån:** bygger du om bas-temat ur en butiksexport, kör
+`node factory/rensa-kalla.mjs` innan det checkas in. Självtestet stoppar
+annars.
+
+---
+
+## Historik: så såg det ut innan
 
 ## Läget efter kodrundan 2026-09-09 (KEDJAN.md, steget `avbrandning`)
 

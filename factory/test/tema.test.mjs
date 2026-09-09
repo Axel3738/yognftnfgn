@@ -3,6 +3,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { kundUnderrubrik, byggKortBeskrivning } from '../sida.mjs';
 import { byggMetafalt, snittbetyg } from '../metafalt.mjs';
 import { byggJudgeMeCsv, byggJudgeMeAppCsv, judgeMeDatum, JUDGEME_KOLUMNER, JUDGEME_APP_KOLUMNER } from '../judgeme.mjs';
@@ -33,6 +34,15 @@ import { execFileSync } from 'node:child_process';
 
 const ZIP = fileURLToPath(new URL('../tema/ops-tema.zip', import.meta.url));
 const urZip = (fil) => execFileSync('unzip', ['-p', ZIP, fil], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 });
+
+// Det SMUTSIGA bas-temat som fixtur. Källan rensades 2026-09-09
+// (factory/rensa-kalla.mjs), så den bär inget att hitta längre — men de här
+// testerna ska bevisa att funktionerna STÄDAR smutsig indata. Mot en ren zip
+// hade de blivit gröna för att det inte fanns något att städa, vilket är
+// samma falska grönt som gav "14 gröna, 0 fel" på en trasig butik.
+const urSmutsigt = (fil) =>
+  readFileSync(fileURLToPath(new URL(`./fixtur-smutsigt-tema/${fil}`, import.meta.url)), 'utf8');
+
 const butikMedNorge = () => {
   const b = rabutik();
   b.butik.marknader = [{ land: 'NO', locale: 'nb', valuta: 'NOK' }];
@@ -349,7 +359,7 @@ test('varorna läggs i FÖRE rabattkoden — koden fäster inte på en tom vagn'
 // --- Köprutan ur konfigen (förenat ur tema-mall.mjs 2026-09-09, KEDJAN.md) ---
 
 test('utan produkt/butik rörs inte köprutans block — bara opf-sektionerna läggs till', () => {
-  const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json')));
+  const ut = JSON.parse(byggProduktTemplate(urSmutsigt('templates/product.json')));
   const bo = ut.sections.main.block_order;
   assert.ok(bo.includes('ms_paket') && !bo.includes('ms_paket_a'));
   assert.ok(ut.sections.main.blocks.ms_trust.settings.custom_liquid.includes('Fri frakt i Sverige'));
@@ -445,7 +455,7 @@ test('byggHeaderGroup utan befintlig fil bygger gruppen från skelettet; en mark
 test('rensaSettings på zip:ens riktiga settings_data: sociala länkar tömda, brand-text, enbart Judge.me, källoggan bort', () => {
   const b = butikMedNorge();
   b.branding = { positionering: 'Nackvärk borta på 10 minuter' };
-  const j = rensaSettings(JSON.parse(urZip('config/settings_data.json')), { butik: b, produkt: { offer: { paket: { test: 'paket' } } } });
+  const j = rensaSettings(JSON.parse(urSmutsigt('config/settings_data.json')), { butik: b, produkt: { offer: { paket: { test: 'paket' } } } });
   const c = j.current;
   for (const k of Object.keys(c).filter((x) => /^social_.*_link$/.test(x))) assert.equal(c[k], '', k);
   assert.equal(c.brand_description, '<p>Nackvärk borta på 10 minuter</p>');
