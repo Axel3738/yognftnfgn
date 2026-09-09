@@ -28,6 +28,45 @@ export const KALLORD = [
   'strumpor man aldrig blandar ihop',
 ];
 
+// Sektioner som tillhör källbutikens KAMPANJER, inte OPS-butikens funktion.
+// De bär ingen text som skanningen hittar — de är typer i sektionsgrupperna,
+// och följer därför tyst med i varje ny butik.
+//
+// ms-skrapkort  = "skrapa fram rabatten"-popup som byter rabattkod mot en
+//                 mejladress. Matstrumpors e-postklubb, inte vår.
+// ms-cookies    = källbutikens egen cookieruta.
+// newsletter    = Dawns nyhetsbrevsblock i footern.
+//
+// Axel tog bort alla tre för hand på HeimGuard 2026-09-06 ("rensa-popups"),
+// men de låg kvar i zip:en och kom tillbaka på nästa butik. Nu rensas de
+// automatiskt av avbrandaSektionsgrupp().
+export const KALLSEKTIONER = ['ms-skrapkort', 'ms-cookies', 'newsletter'];
+
+// Tar bort källbutikens kampanjsektioner ur en sektionsgrupp (footer-group
+// eller header-group). Returnerar { json, borttagna }.
+export function avbrandaSektionsgrupp(rajson) {
+  const data = typeof rajson === 'string' ? JSON.parse(rajson) : rajson;
+  const borttagna = [];
+  for (const [namn, sektion] of Object.entries(data.sections ?? {})) {
+    if (KALLSEKTIONER.includes(sektion?.type)) {
+      delete data.sections[namn];
+      borttagna.push(`${namn} (${sektion.type})`);
+    }
+  }
+  if (Array.isArray(data.order)) {
+    data.order = data.order.filter((n) => n in (data.sections ?? {}));
+  }
+  return { json: data, borttagna };
+}
+
+// Skannar en sektionsgrupp efter källsektioner utan att ändra något.
+export function skannaSektionsgrupp(namn, rajson) {
+  const data = typeof rajson === 'string' ? JSON.parse(rajson) : rajson;
+  return Object.entries(data.sections ?? {})
+    .filter(([, s]) => KALLSEKTIONER.includes(s?.type))
+    .map(([id, s]) => ({ fil: namn, rad: 0, ord: [s.type], text: `källsektion "${id}" av typen ${s.type}` }));
+}
+
 // Filer där källtexten bevisligen bor. Skanna alltid ALLA temats JSON-mallar
 // och Liquid-filer — listan är var man börjar leta, inte var man slutar.
 export const KANDA_SMITTADE = [
