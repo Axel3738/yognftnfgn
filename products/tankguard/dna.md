@@ -119,7 +119,39 @@ Det gör tre saker med DNA:t:
 | Break-even | Hänger på om TankGuards pris innehåller moms. Utan moms 1,46, med moms 2,07 — 42 % isär. Butiksfilen svarar, och den saknas. |
 | Fraktvillkor, öppet köp, betalsätt | Står bara i butiksfilen. Elva svenska annonser lovar källbutikens villkor. |
 | Verklig AOV | Paketnivåerna gör att 489 kr inte är AOV. Räkna ur Shopify när ordrar finns. |
-| Norska priser | TankGuard har inga NOK-nivåer i repot. Den norska halvan står stilla tills de finns. |
+| Norska priser | TankGuard har inga NOK-nivåer i repot. Hela den norska uppsättningen är därför **prisfri** — priset står bara på `/nb`-sidan. Sätts NOK-nivåer kan pris läggas till i copyn. |
+
+---
+
+## Vad ombygget lärde om materialet (2026-09-09)
+
+**Fem ytor bär källbutikens påståenden, inte en.** Copy, tal, inbränd text,
+recensionsattribution och pris. En ren annonstext är inte en ren annons: 24 av 34
+svenska creatives bar källans påståenden i pixlarna eller i ljudet trots omskriven
+text. Grinda alltid creativen, aldrig bara texten.
+
+**Talet är den dyraste ytan.** Åtta av elva svenska videor och åtta av elva norska
+bar hela det falska erbjudandet eller ett påhittat kundvittnesmål i voiceovern.
+De behövde nytt manus, inte ordbyte. Tre per marknad (`PD_1_*`) bar bara
+varumärkesordet i slutrepliken.
+
+**Slutkortet kostar ingenting att byta.** Fem videor slutade med en skärmdump av
+källans produktsida. `factory/slutkort.py` lägger en overlay över ordmärket,
+recensionsraden och prisparet. Noll HeyGen-credits, cirka 30 sekunder per video.
+
+**Manusets längd är en kvalitetsfråga, inte en stilfråga.** HeyGen pressar in
+manuset på källans taltid. Ett manus 1,7 gånger längre än originalet ger en
+stressad röst som ingen hör förrän någon lyssnar. `srt-fixa.mjs` mäter nu tecken
+per sekund mot källan och stoppar allt över 1,15×.
+
+**Röstkontrollen (järnregel 3), Axels besked 2026-09-09:** de elva svenska
+omdubbade lät *"alla okej — men inget super, bra, men helt okej liksom"*.
+Godkända. Rösten går inte att välja i `/v2/video_translate`, så "helt okej" är
+taket med nuvarande metod.
+
+**Källkampanjen växer under bygget.** 34 annonser vid brand-detektorns körning,
+40 samma kväll. Läs om källan före räkningen, varje gång — annars missas nya
+leveranser tyst.
 
 ---
 
@@ -128,3 +160,4 @@ Det gör tre saker med DNA:t:
 | Datum | Körning | Vad som ändrades |
 |---|---|---|
 | 2026-09-08 | `/ny-annonser tankguard`, körning 1 | Filen skapad. Ärvt DNA från 67 källannonser i två konton. Erbjudandet inskrivet ur Axels skärmbild. Inga egna annonser launchade. |
+| 2026-09-09 | `/ny-annonser tankguard`, körning 2 | Båda kampanjerna byggda och fyllda. Fem-ytors-lärdomen, manuslängden som kvalitetsgrind, slutkortet utan credits, röstbeskedet. Den norska halvan prisfri. |

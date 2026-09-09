@@ -32,8 +32,8 @@ const NYA = {
   GT_4_H1: { dom: 'slutkort ombyggt', fil: `${S}/se-nya-klar/GT_4_H1.mp4` },
   PD_4_H1: { dom: 'slutkort ombyggt', fil: `${S}/se-nya-klar/PD_4_H1.mp4` },
   PD_4_H2: { dom: 'slutkort ombyggt', fil: `${S}/se-nya-klar/PD_4_H2.mp4` },
-  SP_3_H1: { dom: 'kräver-omdubb', fil: `${S}/klar2/SP_3_H1.mp4` },
-  CS_4_H1: { dom: 'kräver-omdubb', fil: `${S}/klar2/CS_4_H1.mp4` },
+  SP_3_H1: { dom: 'kräver-omdubb', fil: `${S}/klar-se2/SP_3_H1.mp4` },
+  CS_4_H1: { dom: 'kräver-omdubb', fil: `${S}/klar-se2/CS_4_H1.mp4` },
 };
 
 const KOPIA = `${S}/se-nya-copy.json`;
