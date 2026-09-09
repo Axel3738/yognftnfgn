@@ -229,6 +229,9 @@ som genereras per bygge).
     steg 8) →
     `factory/discord.mjs --guild <id> --ikon <logga>` bygger de sex kanalerna
     och plockar redigerare ur standby-listan.
+    ⚠️ Servern går INTE att skapa från fabriken (mätt 2026-09-09, DryTrek:
+    `POST /guilds` → 20001 "Bots cannot use this endpoint"). Steget är
+    alltid 🖐 först, ⚙️ sen — hoppa aldrig över människan här.
 17. 🖐 Meta: VA:n har **Fullständig åtkomst** i Business Manager (Axels
     beslut 2026-09-07 — hon får se betalningarna) och skapar brandets SIDA
     direkt i BM själv (API:t kan fortfarande inte skapa sidor). **Annonskontot är alltid

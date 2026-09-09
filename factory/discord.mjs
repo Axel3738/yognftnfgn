@@ -6,9 +6,14 @@
 //   node factory/discord.mjs factory/butiker/<butik>.yaml --guild <id>  # kanaler i befintlig server
 //   ... --torr        visa planen utan att röra Discord eller listan
 //
-// Kräver env DISCORD_BOT_TOKEN (bot-token, INTE webhook). En bot kan bara
-// skapa nya servrar så länge den sitter i färre än 10 — därefter måste Axel
-// skapa servern för hand och boten bygga kanalerna med --guild.
+// Kräver env DISCORD_BOT_TOKEN (bot-token, INTE webhook).
+//
+// ⚠️ Boten kan INTE skapa servern. Mätt 2026-09-09 på DryTrek:
+// POST /guilds → 400 {"code":20001,"message":"Bots cannot use this endpoint"}.
+// Regeln "färre än 10 servrar" som stod här gäller inte den här boten —
+// Discord vitlistar inte vanliga botar för guild-skapande. Servern skapas
+// därför alltid för hand (VA:n, checklistans steg 8), boten bjuds in, och
+// kanalerna byggs med --guild <id>. Kör aldrig utan --guild i skarpt läge.
 //
 // Redigerarlistan bor i factory/redigerare/standby.md (byggs av
 // rekryteringsmotorn, se factory/PLAN.md punkt 4). Första raden med status

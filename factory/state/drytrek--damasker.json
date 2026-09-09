@@ -55,7 +55,7 @@
     }
   },
   "datum": "2026-09-09",
-  "lage": "BUTIKEN KLAR PÅ SVENSKA OCH NORSKA · SE + NO byggda som ABO per vinkel, allt PAUSED · väntar på Axels aktivering",
+  "lage": "BUTIKEN LIVE PÅ SV+NO · recensioner inne · SE+NO-kampanjer aktiveras 2026-09-09 på Axels order · pixel-id ej inklistrat i WeTracked",
   "kallkoppling": {
     "annonskonto": "1867947880635861",
     "kampanj_id": "120250009391470291",
@@ -271,5 +271,23 @@
     "bilder": "klart-matt/spanne/karborre-benskydd-no.jpg i Filer, startsidans galleri + opf.media_losning pekar på dem (nb), produktgalleriet [SV]/[NO]-märkt med filter i ms-head",
     "sprakkoll": "grön 2026-09-09 på 9 sidor (node factory/sprakkoll.mjs drytrek damasker)",
     "kallcreatives": "Bäverbutikens egna Gamasjer_NO_* (Magiborsten NO 1050941584152547), 16/16 rena i brand-detektor-no, 16/16 media uppe i MagiBorsten DK"
+  },
+  "recensioner": {
+    "datum": "2026-09-09",
+    "kalla": "beverbutikken.no (Bäverbutikens norska tvilling): 10 recensioner à 4,4 på samma produkt. baverbutiken.se hade 0.",
+    "importerat": "16 via tools/judgeme-import.mjs: 10 svenska (översatta av sonnet-agent, svenska namn) + 6 norska original. API count 16.",
+    "datumnotis": "Judge.me v1-API skriver inte created_at — alla står som 2026-09-09. Källdatumen var 2026-08-30. CSV ligger i sessionens scratchpad om appimport önskas.",
+    "widget": "appblock review_widget + preview_badge i product.json, judgeme_core i settings_data.",
+    "klick_kvar": "Judge.me-appen: Language Svenska, star color #00B77F (settings-API är läs-bara)."
+  },
+  "pixel": {
+    "id": "945311424682796",
+    "agare": "MagiBorsten (business), delad till MagiBorsten DK",
+    "pa_sajten": "NEJ per 2026-09-09: ingen fbq i HTML, last_fired_time saknas. wetracked.io Connect är installerad i butiken men pixel-id är inte inklistrat.",
+    "klick_kvar": "WeTracked → klistra in 945311424682796."
+  },
+  "discord": {
+    "status": "väntar på människa",
+    "notis": "Boten kan inte skapa servern (20001). VA/Axel skapar servern, bjuder in boten, ger guild-id → factory/discord.mjs --guild <id> --ikon drytrek-logga.png"
   }
 }
