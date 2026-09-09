@@ -42,9 +42,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 55
     },
     "bild": {
      "yta": "bild",
@@ -52,10 +53,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "rabatt",
@@ -70,9 +69,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_CS_2",
@@ -100,9 +97,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 57
     },
     "bild": {
      "yta": "bild",
@@ -110,10 +108,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "rabatt",
@@ -128,9 +124,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_CS_2_1",
@@ -160,15 +154,12 @@
     "bild": {
      "yta": "bild",
      "tillämplig": true,
-     "träff": null,
-     "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "träff": false,
+     "fynd": []
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "bildtext (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "rabatt",
@@ -183,9 +174,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 4 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_CS_3",
@@ -213,9 +202,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 56
     },
     "bild": {
      "yta": "bild",
@@ -223,10 +213,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "rabatt",
@@ -241,9 +229,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_FO_1_H1",
@@ -271,9 +257,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 52
     },
     "bild": {
      "yta": "bild",
@@ -283,8 +270,7 @@
    },
    "dom": "okänd",
    "attgöra": [
-    "tal (oläst)",
-    "inbränd text (oläst)"
+    "tal (oläst)"
    ],
    "villkor": [
     {
@@ -295,8 +281,7 @@
     }
    ],
    "belägg": [
-    "yta 2 · okänd (inget transkript i repot)",
-    "yta 3 · okänd (media inte hämtad)"
+    "yta 2 · okänd (inget transkript i repot)"
    ]
   },
   {
@@ -325,9 +310,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 68
     },
     "bild": {
      "yta": "bild",
@@ -335,14 +321,10 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_G_2",
@@ -370,9 +352,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 68
     },
     "bild": {
      "yta": "bild",
@@ -380,14 +363,10 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_G_2_1",
@@ -417,9 +396,8 @@
     "bild": {
      "yta": "bild",
      "tillämplig": true,
-     "träff": null,
-     "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "dom": "okänd (fetch failed)",
+     "fynd": []
     }
    },
    "dom": "okänd",
@@ -428,7 +406,7 @@
    ],
    "villkor": [],
    "belägg": [
-    "yta 4 · okänd (media inte hämtad)"
+    "yta 4 · okänd (fetch failed)"
    ]
   },
   {
@@ -457,9 +435,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 75
     },
     "bild": {
      "yta": "bild",
@@ -467,14 +446,10 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_PD_1",
@@ -502,9 +477,8 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
-     "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "dom": "okänd (fetch failed)",
+     "fynd": []
     },
     "bild": {
      "yta": "bild",
@@ -518,7 +492,7 @@
    ],
    "villkor": [],
    "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
+    "yta 3 · okänd (fetch failed)"
    ]
   },
   {
@@ -547,9 +521,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 103
     },
     "bild": {
      "yta": "bild",
@@ -557,14 +532,10 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_PD_2_1",
@@ -594,19 +565,14 @@
     "bild": {
      "yta": "bild",
      "tillämplig": true,
-     "träff": null,
-     "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "träff": false,
+     "fynd": []
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "bildtext (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 4 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_PD_3",
@@ -634,9 +600,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 107
     },
     "bild": {
      "yta": "bild",
@@ -644,14 +611,10 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_SP_1",
@@ -679,9 +642,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 86
     },
     "bild": {
      "yta": "bild",
@@ -689,10 +653,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -701,9 +663,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_SP_2",
@@ -731,9 +691,8 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
-     "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "dom": "okänd (fetch failed)",
+     "fynd": []
     },
     "bild": {
      "yta": "bild",
@@ -754,7 +713,7 @@
     }
    ],
    "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
+    "yta 3 · okänd (fetch failed)"
    ]
   },
   {
@@ -785,26 +744,22 @@
     "bild": {
      "yta": "bild",
      "tillämplig": true,
-     "träff": null,
-     "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "träff": false,
+     "fynd": []
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "bildtext (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
      "värden": [
-      "30 dagars öppet köp"
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
      ]
     }
    ],
-   "belägg": [
-    "yta 4 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_SP_3",
@@ -832,9 +787,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 92
     },
     "bild": {
      "yta": "bild",
@@ -842,10 +798,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -854,9 +808,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (media inte hämtad)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Damasker_SP_4_H1",
@@ -884,9 +836,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "träff": null,
+     "träff": false,
      "fynd": [],
-     "dom": "okänd (media inte hämtad)"
+     "sent_i_filmen": false,
+     "frames": 45
     },
     "bild": {
      "yta": "bild",
@@ -896,13 +849,11 @@
    },
    "dom": "okänd",
    "attgöra": [
-    "tal (oläst)",
-    "inbränd text (oläst)"
+    "tal (oläst)"
    ],
    "villkor": [],
    "belägg": [
-    "yta 2 · okänd (inget transkript i repot)",
-    "yta 3 · okänd (media inte hämtad)"
+    "yta 2 · okänd (inget transkript i repot)"
    ]
   }
  ]

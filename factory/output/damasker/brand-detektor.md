@@ -10,11 +10,11 @@ Läser bara. Inga krediter, ingen HeyGen, ingen kie.ai, inget skrivet i något a
 
 | Dom | Antal | Vad det kostar |
 |---|---|---|
-| `ren` | 0 | inget brandarbete — ⚠️ men läs länken och villkoren nedan innan något laddas upp |
+| `ren` | 13 | inget brandarbete — ⚠️ men läs länken och villkoren nedan innan något laddas upp |
 | `bara-copy` | 0 | gratis — skriv om texten / kör `pipeline/oversatt-bild.py` |
 | `kräver-slutkortsbygge` | 0 | arbetstid — `pipeline/no-precis.py` byter texten i sin egen ruta |
 | `kräver-omdubb` | 0 | HeyGen-krediter — blockerat tills plånboken fylls på |
-| `okänd` | 18 | en yta gick inte att läsa — står aldrig som "ren" |
+| `okänd` | 5 | en yta gick inte att läsa — står aldrig som "ren" |
 
 ⚠️ **Länken gäller alla 18:** varje annons pekar på källbutiken och måste peka på OPS-butiken.
 Bytet ingår i kampanjbygget (Uppdrag B) och håller sig därför utanför klassningen — annars blir varje annons `bara-copy` och tabellen slutar säga något.
@@ -25,24 +25,24 @@ Bytet ingår i kampanjbygget (Uppdrag B) och håller sig därför utanför klass
 
 | Annons | Typ | 1 copy | 2 tal | 3 inbränd text | 4 bildattribution | Dom | Måste åtgärdas |
 |---|---|---|---|---|---|---|---|
-| `Damasker_CS_1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_CS_2` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_CS_2_1` | bild | ✅ ren | – | – | ❔ okänd | **okänd** | bildtext (oläst) |
-| `Damasker_CS_3` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_FO_1_H1` | video | ✅ ren | ❔ okänd | ❔ okänd | – | **okänd** | tal (oläst) + inbränd text (oläst) |
-| `Damasker_G_1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_G_2` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Damasker_CS_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Damasker_CS_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Damasker_CS_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
+| `Damasker_CS_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Damasker_FO_1_H1` | video | ✅ ren | ❔ okänd | ✅ ren | – | **okänd** | tal (oläst) |
+| `Damasker_G_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Damasker_G_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Damasker_G_2_1` | bild | ✅ ren | – | – | ❔ okänd | **okänd** | bildtext (oläst) |
-| `Damasker_G_3` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Damasker_G_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Damasker_PD_1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_PD_2` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_PD_2_1` | bild | ✅ ren | – | – | ❔ okänd | **okänd** | bildtext (oläst) |
-| `Damasker_PD_3` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_SP_1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Damasker_PD_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Damasker_PD_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
+| `Damasker_PD_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Damasker_SP_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Damasker_SP_2` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_SP_2_1` | bild | ✅ ren | – | – | ❔ okänd | **okänd** | bildtext (oläst) |
-| `Damasker_SP_3` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Damasker_SP_4_H1` | video | ✅ ren | ❔ okänd | ❔ okänd | – | **okänd** | tal (oläst) + inbränd text (oläst) |
+| `Damasker_SP_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
+| `Damasker_SP_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Damasker_SP_4_H1` | video | ✅ ren | ❔ okänd | ✅ ren | – | **okänd** | tal (oläst) |
 
 ## Hur säkra siffrorna är
 
@@ -58,61 +58,20 @@ eller en textrad mellan två frames. Lägg `brand-syn.json` bredvid rapporten n�
 
 ## Belägg
 
-**`Damasker_CS_1`** — okänd
-- yta 3 · okänd (media inte hämtad)
-
-**`Damasker_CS_2`** — okänd
-- yta 3 · okänd (media inte hämtad)
-
-**`Damasker_CS_2_1`** — okänd
-- yta 4 · okänd (media inte hämtad)
-
-**`Damasker_CS_3`** — okänd
-- yta 3 · okänd (media inte hämtad)
-
 **`Damasker_FO_1_H1`** — okänd
 - yta 2 · okänd (inget transkript i repot)
-- yta 3 · okänd (media inte hämtad)
-
-**`Damasker_G_1`** — okänd
-- yta 3 · okänd (media inte hämtad)
-
-**`Damasker_G_2`** — okänd
-- yta 3 · okänd (media inte hämtad)
 
 **`Damasker_G_2_1`** — okänd
-- yta 4 · okänd (media inte hämtad)
-
-**`Damasker_G_3`** — okänd
-- yta 3 · okänd (media inte hämtad)
+- yta 4 · okänd (fetch failed)
 
 **`Damasker_PD_1`** — okänd
-- yta 3 · okänd (media inte hämtad)
-
-**`Damasker_PD_2`** — okänd
-- yta 3 · okänd (media inte hämtad)
-
-**`Damasker_PD_2_1`** — okänd
-- yta 4 · okänd (media inte hämtad)
-
-**`Damasker_PD_3`** — okänd
-- yta 3 · okänd (media inte hämtad)
-
-**`Damasker_SP_1`** — okänd
-- yta 3 · okänd (media inte hämtad)
+- yta 3 · okänd (fetch failed)
 
 **`Damasker_SP_2`** — okänd
-- yta 3 · okänd (media inte hämtad)
-
-**`Damasker_SP_2_1`** — okänd
-- yta 4 · okänd (media inte hämtad)
-
-**`Damasker_SP_3`** — okänd
-- yta 3 · okänd (media inte hämtad)
+- yta 3 · okänd (fetch failed)
 
 **`Damasker_SP_4_H1`** — okänd
 - yta 2 · okänd (inget transkript i repot)
-- yta 3 · okänd (media inte hämtad)
 
 ## Källbutikens villkor i materialet (utanför FAS2:s fyra ytor)
 
@@ -122,36 +81,23 @@ egna villkor måste de bytas innan annonsen körs, precis som brandnamnet.
 
 | Annons | Dom | Villkor som står i materialet |
 |---|---|---|
-| `Damasker_CS_1` | okänd | rabatt: 40% · öppet köp: 30 dagars öppet köp |
-| `Damasker_CS_2` | okänd | rabatt: 40% · öppet köp: 30 dagars öppet köp |
-| `Damasker_CS_2_1` | okänd | rabatt: 40% · öppet köp: 30 dagars öppet köp |
-| `Damasker_CS_3` | okänd | rabatt: 40% · öppet köp: 30 dagars öppet köp |
+| `Damasker_CS_1` | ren | rabatt: 40% · öppet köp: 30 dagars öppet köp |
+| `Damasker_CS_2` | ren | rabatt: 40% · öppet köp: 30 dagars öppet köp |
+| `Damasker_CS_2_1` | ren | rabatt: 40% · öppet köp: 30 dagars öppet köp |
+| `Damasker_CS_3` | ren | rabatt: 40% · öppet köp: 30 dagars öppet köp |
 | `Damasker_FO_1_H1` | okänd | pris: 389 kr |
-| `Damasker_SP_1` | okänd | öppet köp: 30 dagars öppet köp |
+| `Damasker_SP_1` | ren | öppet köp: 30 dagars öppet köp |
 | `Damasker_SP_2` | okänd | öppet köp: 30 dagars öppet köp |
-| `Damasker_SP_2_1` | okänd | öppet köp: 30 dagars öppet köp |
-| `Damasker_SP_3` | okänd | öppet köp: 30 dagars öppet köp |
+| `Damasker_SP_2_1` | ren | öppet köp: 30 dagars öppet köp, 30 dagars oppet kop |
+| `Damasker_SP_3` | ren | öppet köp: 30 dagars öppet köp |
 
 ## Kvar att läsa
 
-- `Damasker_CS_1`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_CS_2`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_CS_2_1`: bildtext (oläst) — yta 4 · okänd (media inte hämtad)
-- `Damasker_CS_3`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_FO_1_H1`: tal (oläst), inbränd text (oläst) — yta 2 · okänd (inget transkript i repot)
-- `Damasker_G_1`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_G_2`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_G_2_1`: bildtext (oläst) — yta 4 · okänd (media inte hämtad)
-- `Damasker_G_3`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_PD_1`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_PD_2`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_PD_2_1`: bildtext (oläst) — yta 4 · okänd (media inte hämtad)
-- `Damasker_PD_3`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_SP_1`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_SP_2`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_SP_2_1`: bildtext (oläst) — yta 4 · okänd (media inte hämtad)
-- `Damasker_SP_3`: inbränd text (oläst) — yta 3 · okänd (media inte hämtad)
-- `Damasker_SP_4_H1`: tal (oläst), inbränd text (oläst) — yta 2 · okänd (inget transkript i repot)
+- `Damasker_FO_1_H1`: tal (oläst) — yta 2 · okänd (inget transkript i repot)
+- `Damasker_G_2_1`: bildtext (oläst) — yta 4 · okänd (fetch failed)
+- `Damasker_PD_1`: inbränd text (oläst) — yta 3 · okänd (fetch failed)
+- `Damasker_SP_2`: inbränd text (oläst) — yta 3 · okänd (fetch failed)
+- `Damasker_SP_4_H1`: tal (oläst) — yta 2 · okänd (inget transkript i repot)
 
 Ingen av dem får räknas som `ren` förrän ytan faktiskt lästs.
 
@@ -159,4 +105,4 @@ Ingen av dem får räknas som `ren` förrän ytan faktiskt lästs.
 
 - Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29 — 18 annonser
 
-OCR-källa: `factory/output/damasker/brand-ocr.json`.
+OCR-källa: `factory/output/damasker/brand-ocr.json (läst 2026-09-09)`.

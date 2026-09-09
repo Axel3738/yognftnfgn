@@ -32,13 +32,32 @@ som genereras per bygge).
    byggdes från; incheckad 2026-09-08 så molnet alltid har den)
    → staged upload → themeCreate. Temat är
    strukturen — brandingen genereras alltid om (opf-brand.css + settings).
+   **Steget är kod sedan 2026-09-09: `node factory/tema-upload.mjs "<Brand>
+   – CRO (utkast)"`.** `ops.mjs` förutsatte att ett utkasttema redan fanns
+   och sa "installera ett tema först" på en färsk butik, som bara har
+   live-temat. ⚠️ `stagedUploadsCreate` har INGEN `THEME`-resurs i
+   Admin-API 2025-07 — använd `FILE`, den signerade URL:en läses av
+   `themeCreate` lika bra.
 6. ⚙️ Produkt som **ACTIVE** (Axels bakläxa 2026-09-08 på TankGuard:
    DRAFT ger 404 i menyn och "Exempel på produktnamn" i kundvyn —
    butiken är ändå lösenordsskyddad under trialen) → metafält →
    opf-sektioner → produktmall → startsida →
    meny → policysidor (adress från allabolag.se) → fraktzoner.
+6b. ⚙️ **Startsidan byggs av fabriken sedan 2026-09-09:**
+   `node factory/startsida.mjs <butik-id> <produkt-handle>`, med innehållet i
+   `factory/startsidor/<butik-id>.json`. Bilderna måste först ligga i
+   butikens FILARKIV — `node factory/filer.mjs <url> ...` — för temats
+   bildinställningar pekar på `shopify://shop_images/<namn>` och produktens
+   egna media går inte att välja i en sektion. Två sektioner ur basmallen
+   utelämnas alltid: kollektionen (enproduktsbutik) och omdömesslidern (en
+   butik utan riktiga recensioner får inte rita en).
+
 7. ⚙️ Paketen: metaobjekt `ms_paketniva` (translatable-capability PÅ från
-   start!) + riktiga rabattkoder som ger exakt paketpriserna. A = originalets
+   start!) + riktiga rabattkoder som ger exakt paketpriserna.
+   **Steget är kod sedan 2026-09-09: `node factory/paket.mjs <handle>`,
+   nivåerna i `factory/paketnivaer/<handle>.json`.** Skriptet skapar
+   definitionen, nivåerna OCH rabattkoderna i samma körning och vägrar en
+   nivå vars fastpris är högre än ordinarie. A = originalets
    Kaching-nivåer, B = testoffer. A/B via temats ms-ab (test "paket",
    orderattribut "AB paket" mäter). **Förvald nivå är ALLTID mitten**
    (position ⌈n/2⌉), aldrig första — Axels beslut 2026-09-07, gäller varje
@@ -111,6 +130,17 @@ som genereras per bygge).
 13. ⚙️ Marknad Norge + locale nb (publicerad) + nb som alternateLocale på
     huvuddomänens webPresence (`webPresenceUpdate` — INTE market-varianten).
     NOK slås på i admin (API-spärrat i unified markets).
+    **Steget är kod sedan 2026-09-09: `node factory/marknad.mjs
+    factory/butiker/<butik>.yaml`** — det fanns inte alls, HeimGuards Norge
+    gjordes för hand och lämnade ingen kod. Tre mätningar sitter i filen:
+    `marketCreate` ger status DRAFT och marknaden måste aktiveras separat,
+    `webPresences` måste läsas på ROTNIVÅ (fältet under `markets` svarar
+    tomt även när butiken har en), och `webPresenceUpdate` tar `id` + `input`.
+13b. ⚙️ Översättningarna: `node factory/oversatt.mjs <butik-id>
+    <produkt-handle> --locale nb`, texterna i
+    `factory/startsidor/<butik-id>.json` under språkets nyckel. Kör med
+    `--torr` först — den listar vilka nycklar resursen faktiskt har, så en
+    felstavad nyckel syns i stället för att tyst hoppas över.
 14. ⚙️ ALLT översätts via translationsRegister — trippelkolla mot /nb:
     produkt+metafält, tema-JSON-mallar (index/product), sektionsgrupper
     (header/footer), menylänkar, sidor, paket-METAOBJEKT. locales/nb.json för
@@ -160,6 +190,41 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+- **En färsk trial-butik har `en` som PRIMÄRT språk, inte svenska.** Mätt
+  2026-09-09 på DryTrek: `shopLocales` svarade bara `en (primärt)`. All
+  svensk text fabriken skriver hamnar därmed i `en`-slotten. Kundvyn blir
+  ändå rätt — besökaren ser den svenska texten — men slotten är
+  felmärkt, och `sv` får ALDRIG publiceras tom: då byter en svensk besökare
+  till ett tomt språk. Byte av primärspråk är API-spärrat och står som
+  VA:ns klick (checklistans steg 5). Ordningen som fungerar: bygg klart,
+  låt henne byta default till svenska, publicera INTE `sv` innan dess.
+- **Ett annonskonto kan bara ha EN pixel skapad via `act_<id>/adspixels`.**
+  Butik nummer tre får `(#6200) A pixel already exists for this account`
+  och står utan pixel (mätt 2026-09-09: HeimGuard och TankGuard hade redan
+  var sin). Skapa pixeln på FÖRETAGET (`/<business_id>/adspixels`,
+  MagiBorsten `1164852855167090`) och dela den till kontot med
+  `/<pixel_id>/shared_accounts`. ⚠️ Bäverbutikens egen pixel
+  `1554276343018184` ligger i SAMMA konto — kontrollera alltid namnet på
+  pixeln du väljer, och begär `fields=name` explicit, annars svarar Graph
+  bara `{ id }` och namnkollen blir meningslös.
+- **Verifiera produktmallen, inte bara sektionsfilerna.** Temasteget skrev
+  `templates/product.json` men verifierade bara `SEKTIONER`, och
+  skrivningen kunde försvinna tyst — ett tema som just packats upp ur
+  zip:en skriver över filen under tiden. Mätt 2026-09-09 på DryTrek: steget
+  rapporterade ✅ medan produktsidan saknade alla opf-sektioner och bar
+  Matstrumpors FAQ ("Hur fungerar Köp 1 – Få 1?") och deras "30 dagars
+  öppet köp" i trust-raden. Fixat i `ops.mjs` (skriv om tills byte-kollen
+  går igenom), men regeln gäller varje temaskrivning: **en skrivning utan
+  tillbakaläsning är inte gjord.**
+- **Trust-raden i produktmallen är hårdkodad i zip:en.** `main.blocks.ms_trust`
+  bär Matstrumpors löften i klartext. Den är `custom_liquid` och därmed INTE
+  översättningsbar — locale-brancha i Liquid i stället
+  (`{% if request.locale.iso_code == 'nb' %}`).
+- **Skriv aldrig egna nycklar i `factory/state/`.** Filens `steg`-nycklar är
+  motorns steg-id:n. En handskriven `brand`-nyckel (mina anteckningar om
+  brand-steget) läste `--resume` som "brandingsteget är klart" och hoppade
+  över det — butiken hade nästan gått vidare utan sina egna färger
+  (mätt 2026-09-09). Anteckningar hör hemma under en EGEN toppnyckel.
 - **Anslutningskontrollen ska döma på butikens NAMN, inte på om det finns
   en state-fil.** `/ny-ops` steg 1 har en spärr mot gammal miljö formulerad
   som "har `SHOPIFY_SHOP`-butiken redan en state-fil under `factory/state/`".
