@@ -101,6 +101,16 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Shopifys default-illustration som hero, hade Dawns meny och stod på
    engelska.) Grön konfiguration är inte en grön butik.
 
+   ⚠️ **AV-BRANDNINGEN — körs ALLTID, före allt annat i temat.** Bas-temat bär
+   källbutikens KAMPANJER som sektioner i sektionsgrupperna: `ms-skrapkort`
+   (popup som byter rabattkod mot mejladress — Matstrumpors e-postklubb),
+   `ms-cookies` och Dawns `newsletter`. De innehåller ingen text som
+   skanningen hittar, så de följer tyst med i varje ny butik. Kör
+   `avbrandaSektionsgrupp` ur `factory/kallskanning.mjs` på BÅDE
+   `footer-group.json` och `header-group.json` och rapportera vad som togs
+   bort. (Axel tog bort dem för hand på HeimGuard 2026-09-06 — de kom
+   tillbaka på DryTrek 2026-09-09.)
+
    ⚠️ **KÄLLSKANNINGEN — obligatorisk innan butiken lämnas.** Bas-temat är
    exporterat från Matstrumpor, och TRE mallar bär källbutikens text:
    `templates/index.json` (hela startsidan — hero, rubriker, kollektionen
@@ -172,6 +182,8 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Produktsida med alla opf-sektioner + Judge.me i Appyta, ostylad
 - [ ] Varje variant säljer vidare vid slut i lager (CONTINUE, tracked false)
 - [ ] Varukorgen testad med TOM korg: lådan glider in, ingen redirect till /cart
+- [ ] Av-brandningen körd: inga `ms-skrapkort`/`ms-cookies`/`newsletter`
+      kvar i footer-group eller header-group
 - [ ] Källskanningen REN: ingen Matstrumpor-text kvar i något temaläge
       (`node factory/kallskanning.mjs` — startsida, footer, produktmall)
 - [ ] **KUNDVYN GRÖN** (`factory/kundvy.mjs` mot startsidans riktiga HTML):
