@@ -1,0 +1,546 @@
+{
+  "datum": "2026-09-09",
+  "fonsterDagar": 90,
+  "butik": {
+    "rate": 0.008990600735594606,
+    "niva": "gul",
+    "tvister": 22,
+    "ordrar": 2447
+  },
+  "produkter": [
+    {
+      "produkt": "Marin Motorhölje 420D – Universellt Skydd",
+      "tvister": 16,
+      "blandadeOrdrar": 2,
+      "obesvarade": 11,
+      "forlorade": 0,
+      "pengarIRisk": 6153,
+      "ordrar": 529,
+      "rate": 0.030245746691871456,
+      "niva": "rod"
+    },
+    {
+      "produkt": "Axelbälte för Trimmer – Justerbart Nylonbälte",
+      "tvister": 3,
+      "blandadeOrdrar": 1,
+      "obesvarade": 2,
+      "forlorade": 0,
+      "pengarIRisk": 1492,
+      "ordrar": 159,
+      "rate": 0.018867924528301886,
+      "niva": "rod"
+    },
+    {
+      "produkt": "Strandtofflor för Herr – Halkfria Trädgårdsskor",
+      "tvister": 2,
+      "blandadeOrdrar": 1,
+      "obesvarade": 2,
+      "forlorade": 0,
+      "pengarIRisk": 1063,
+      "ordrar": 210,
+      "rate": 0.009523809523809525,
+      "niva": "rod"
+    },
+    {
+      "produkt": "Sätesöverdrag för Åkgräsklippare – Slittåligt 600D Oxford",
+      "tvister": 1,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 649,
+      "ordrar": 196,
+      "rate": 0.00510204081632653,
+      "niva": "gul"
+    },
+    {
+      "produkt": "Återanvändbar Trädgårdssäck med Handtag – Kraftig för Löv & Gräs",
+      "tvister": 1,
+      "blandadeOrdrar": 1,
+      "obesvarade": 1,
+      "forlorade": 0,
+      "pengarIRisk": 631,
+      "ordrar": 12,
+      "rate": 0.08333333333333333,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Lastnät – Kraftigt Släpvagnsnät för Säker Transport",
+      "tvister": 1,
+      "blandadeOrdrar": 1,
+      "obesvarade": 1,
+      "forlorade": 0,
+      "pengarIRisk": 631,
+      "ordrar": 8,
+      "rate": 0.125,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Båtsitsöverdrag 210D – Vädertåligt Stolsskydd",
+      "tvister": 1,
+      "blandadeOrdrar": 1,
+      "obesvarade": 1,
+      "forlorade": 0,
+      "pengarIRisk": 419,
+      "ordrar": 9,
+      "rate": 0.1111111111111111,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Tvättpåse för Skor – Skyddar Sneakers i Maskinen",
+      "tvister": 1,
+      "blandadeOrdrar": 1,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 234,
+      "ordrar": null,
+      "rate": null,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Fiskespöhållare 4-Pack – Kraftig Förvaring",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 369,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 92,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Klistermärken för Soptunnan – 4-pack Tecknade Motiv",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 84,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Båtmotorskydd 420D – Heltäckande för Utombordare",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 73,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 63,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Bälteslipmaskin Mini 3-i-1 – Knivslip & Polerare",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 63,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "MC-Kapell 218×118 cm – Regn, Damm & UV",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 63,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Damasker Vandring – Håller Snö, Väta & Grus Ute",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 59,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Cykelshorts Herr – Vadderade med Kompression",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 52,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Skoreparationslappar – Lagar Hälslitage & Mesh",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 47,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Ståltrådsborsthuvuden för Trimmer – Kraftiga Ogräs- & Mossröjare",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 36,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Tofflor Ergonomiska – Tjocksulade för Inne & Ute",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 32,
+      "rate": 0,
+      "niva": "gron"
+    },
+    {
+      "produkt": "Kranskydd Frost 420D – Skyddar Utekranen i Vinter",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 28,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Gravstenspenna – Återställer Blekt Text på Sten",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 24,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Surfplatteställ – Roterande & Justerbart",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 22,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Magnetfiskesats 320lb – Neodymmagnet med 10m Rep",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 18,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Plyschtofflor Herr – Varma med TPR-Sula för Inne & Ute",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 15,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Gräsklippartäcke 600D Oxford – med Dragsko",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 13,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Golfklubbsborste med Vattenspray – Portabel Rengöring",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 12,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Bäverkoppling - Slipp jobbiga kabelskor",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 11,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Badshorts med Skämttryck – Rumpan Bak",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 11,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Cargoshorts 3-Pack – Avslappnade Herrshorts med Fickor",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 10,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Batterifrånskiljare – Huvudströmbrytare 12/24V",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 10,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Handdriven Kedjeslip – Slipverktyg för Motorsåg",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 10,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Bävertratt - Tanka snabbt utan spill",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 9,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Väggfäste för Grästrimmer – Kraftig Verktygshållare",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 9,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Första Hjälpen-Kit 260 Delar – Hem, Bil & Camping",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 8,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "Skotvättpåse med Dragkedja – Blå, för Sneakers",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 7,
+      "rate": 0,
+      "niva": "for-lite-data"
+    },
+    {
+      "produkt": "4-Vägs Krananslutning – Slangsplitter med Avstängning",
+      "tvister": 0,
+      "blandadeOrdrar": 0,
+      "obesvarade": 0,
+      "forlorade": 0,
+      "pengarIRisk": 0,
+      "ordrar": 7,
+      "rate": 0,
+      "niva": "for-lite-data"
+    }
+  ],
+  "arenden": [],
+  "larm": [
+    {
+      "typ": "obefordrad",
+      "allvar": "akut",
+      "order": "#4565",
+      "text": "#4565 är betald men inte skickad — 38 dagar gammal."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#5435",
+      "text": "Tvist på #5435 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#5289",
+      "text": "Tvist på #5289 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#5262",
+      "text": "Tvist på #5262 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#5230",
+      "text": "Tvist på #5230 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#5213",
+      "text": "Tvist på #5213 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#5130",
+      "text": "Tvist på #5130 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#5122",
+      "text": "Tvist på #5122 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#5044",
+      "text": "Tvist på #5044 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#4980",
+      "text": "Tvist på #4980 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#4971",
+      "text": "Tvist på #4971 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#4914",
+      "text": "Tvist på #4914 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#4845",
+      "text": "Tvist på #4845 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#4706",
+      "text": "Tvist på #4706 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#4446",
+      "text": "Tvist på #4446 är obesvarad."
+    },
+    {
+      "typ": "obesvarad-tvist",
+      "allvar": "hog",
+      "order": "#4407",
+      "text": "Tvist på #4407 är obesvarad."
+    },
+    {
+      "typ": "obefordrad",
+      "allvar": "hog",
+      "order": "#6369",
+      "text": "#6369 är betald men inte skickad — 7 dagar gammal."
+    },
+    {
+      "typ": "obefordrad",
+      "allvar": "hog",
+      "order": "#5681",
+      "text": "#5681 är betald men inte skickad — 18 dagar gammal."
+    },
+    {
+      "typ": "obefordrad",
+      "allvar": "hog",
+      "order": "#5651",
+      "text": "#5651 är betald men inte skickad — 19 dagar gammal."
+    },
+    {
+      "typ": "obefordrad",
+      "allvar": "hog",
+      "order": "#5603",
+      "text": "#5603 är betald men inte skickad — 20 dagar gammal."
+    }
+  ],
+  "mailStatus": {
+    "ok": false,
+    "fel": "Brevlådan är inte kopplad. Sätt MAIL_BREVLADA_URL och MAIL_BREVLADA_KEY i miljön (se kundvakten/brevlada.gs)."
+  }
+}

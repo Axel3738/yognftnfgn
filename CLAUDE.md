@@ -249,6 +249,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
+| `/kundvakten` | **Rutin måndag 07:00:** veckans supportmail + Shopify-tvister → återkommande problem, chargeback-förvarningar, riskrankning per produkt |
 
 ### Nattrutinerna
 
@@ -264,6 +265,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 15:00 | `0 13 * * *` | Översättning till Norge (bild + video ur Notion-kön `SE-ACTIVE to be translated`) | `/oversatt NO` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
+| Mån 07:00 | `0 5 * * 1` | Kundvakten | `/kundvakten` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
 kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag). Siffrorna räknas ändå
@@ -563,6 +565,48 @@ syns inte i en teamspace-sökning. Hubbarna måste därför alltid unionsläggas
 rader lästes. *(Incident 2026-08-31: rutinen hittade 2 hubbar av 6 och
 rapporterade 0 kr som augustis slutavräkning.)*
 
+### `kundvakten/` — kundproblem och chargeback-risk
+Motorn bakom `/kundvakten`. Fristående, **inga npm-beroenden**.
+**Läs-bara mot både Shopify och mailen** — den ändrar ingen order, ingen
+Notion-rad och rör inte annonskontona.
+
+```bash
+node kundvakten/run.mjs --torr            # räkna och visa, skriv ingen fil
+node kundvakten/run.mjs --rutin           # skriv rapport + Discord-notis
+node kundvakten/run.mjs --in data.json    # räkna på sparad data i stället för API
+```
+`risk.mjs` är rankningslogiken, `kategorisering.mjs` klassar mailen,
+`rapport.mjs` bygger markdownen, `run.mjs` knyter ihop. Rapporterna hamnar i
+`kundvakten/korningar/<datum>.md` med en `.json` bredvid som nästa körning
+läser för trendpilarna. 38 tester.
+
+⚠️ **Rangordningen går på pengar i risk, aldrig på rate ensamt** — samma regel
+som analysmetodens förbud mot enmetriksdomar. Och **ingen dom under 30 ordrar**:
+1 tvist på 8 ordrar är inte 12,5 % rate, det är för lite data (⚪).
+Trösklarna är absoluta (gul 0,5 %, röd 0,9 %) och kommer ur kortnätverkens egna
+övervakningsprogram — rotera dem inte, och gör dem aldrig relativa.
+
+⚠️ **En tvist på en order med flera produkter går inte att tillskriva en av dem.**
+Den räknas mot varje produkt i ordern, beloppet delas, och raden märks ¹.
+Bygg aldrig om det till en tyst gissning på "huvudprodukten".
+
+⚠️ **IMAP går inte att nå härifrån.** Mätt 2026-09-09 i rutinens container:
+`mailcluster.loopia.se` port 993 och 143 ger timeout, och tunnlad genom
+agent-proxyn stängs förbindelsen efter 6 sekunder. Bara HTTPS 443 går ut.
+Därför hämtas Loopia-mailen via `kundvakten/brevlada.gs` (Apps Script hos
+Google, läser Gmail, svarar JSON över HTTPS) — samma mönster som
+`tools/drive-brevlada.gs`. Bygg ingen IMAP-klient här; den kan inte köras.
+
+⚠️ **Shopify-tokenen i miljön var utgången 2026-09-09** — 401 på alla fem
+marknader (SE, NO, DK, FI, UK). Första körningen gjordes därför via
+Shopify-MCP:n med `--in`. Rutinen behöver en ny Admin API-token som
+`SHOPIFY_TOKEN_SE` innan den kan köra själv.
+
+⚠️ **`shopifyPaymentsAccount` är stängt för butikens token** (kräver scopet
+`read_shopify_payments`). Det betyder att tvisternas **svarsfrist inte går att
+läsa** — `Order.disputes` bär bara status och typ. Fältet står som `null`
+i stället för att gissas, och larmet blir "hög" i stället för "akut".
+
 ### `pipeline/` — bildannonser (Grillkliniken/Mastern, legacy)
 ⚠️ **Trots mappnamnet är det här inte Bäverbutiken.** `brand.mjs` sätter
 `LOGO_WORDMARK = 'GRILLKLINIKEN'` och grillfärger, och `package.json` säger
@@ -787,7 +831,8 @@ teamspaces). `products.json` känner bara fyra av hubbarna — den är inte faci
 
 **Env-nycklar rutinerna behöver:** `KIE_API_KEY` (bildannonser),
 `HEYGEN_API_KEY` (`/translate`), `META_ACCESS_TOKEN`, `DISCORD_WEBHOOK_URL`
-(nattrapporterna), `JUDGEME_API_TOKEN`, `SHOPIFY_TOKEN_*`, `NOTION_TOKEN`.
+(nattrapporterna), `JUDGEME_API_TOKEN`, `SHOPIFY_TOKEN_*`, `NOTION_TOKEN`,
+`MAIL_BREVLADA_URL` + `MAIL_BREVLADA_KEY` (`/kundvakten`).
 
 `NOTION_TOKEN` är det som gör `/commission` helt klickfri: med den läser
 `commission/run.mjs` hubbarna via REST och rör inga `mcp__*`-verktyg, så inget
