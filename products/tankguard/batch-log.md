@@ -71,12 +71,59 @@ antagande som gör att en bevisad vinnare svälter ihjäl på fel marknad.
 
 ---
 
-## Vad som väntar
+## Batch #1 — TankGuards egna annonser, byggda 2026-09-08/09
 
-Ingen TankGuard-annons är byggd. Kampanjskalet
-`TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08`
-(`120248995235740172`) står PAUSED i Magiborsten DK med fyra tomma adsets.
+Två kampanjer i MagiBorsten DK `915422744950975`, båda PAUSED, CBO 1 000 kr/dag,
+TankGuards egen sida `1399193996606775` och egen pixel `2196132151319625`:
 
-Blockeraren är `factory/butiker/tankguard.yaml` — utan den finns varken
-produktlänk, eget pris eller egna villkor, och break-even går inte att räkna om.
-Hela läget: `factory/output/tankguard/kallannonser.md`.
+| Kampanj | Id | Geo | Länk |
+|---|---|---|---|
+| `TANKGUARD_Tanköverdraget SE \| BE-ROAS 1,62 \| 2026-09-08` | `120248995235740172` | SE | `tankguard.se/products/tankoverdraget` |
+| `TANKGUARD_NO_Tanktrekket \| 2026-09-09` | `120249012213810172` | NO | `tankguard.se/nb/products/tankoverdraget` |
+
+Läget per marknad räknas ur `act/ads` i
+`factory/output/tankguard/rakningen.md` — aldrig ur den här filen.
+
+### Vad som faktiskt hände med materialet
+
+**Fem ytor måste bytas, inte en.** Copy, tal, inbränd text, recensionsattribution
+och pris. En ren annonstext är inte en ren annons: 24 av 34 svenska creatives bar
+källbutikens påståenden i pixlarna eller i ljudet trots att texten var omskriven.
+
+**Åtta av elva svenska videor behövde nytt manus, inte ordbyte.** Deras tal bar
+hela det falska erbjudandet (489 istället för 636, spara 147, 23 % rabatt) eller
+ett påhittat kundvittnesmål. Tre (`PD_1_*`) bar bara varumärkesordet i
+slutrepliken — där byttes ordet. Norge visade exakt samma fördelning: åtta nya
+manus, tre replikbyten.
+
+**Slutkortet går att bygga om utan HeyGen-credits.** Fem videor slutade med en
+skärmdump av källbutikens produktsida — ordmärke, stjärnor, "10 recensioner" och
+prispar inbränt. `factory/slutkort.py` lägger en overlay över de tre rutorna.
+Talet rörs aldrig. Noll credits, ~30 sekunder per video.
+
+**Norge har inget NOK-pris.** All norsk copy, alla norska manus och de norska
+slutkorten är därför prisfria — priset står bara på `/nb`-sidan. Källans
+439/586 kr är Bäverbutiken NO:s tal och får inte återanvändas, och ett SEK-tal i
+en norsk annons räknar fel.
+
+**NO-specifikt fynd:** de fyra norska RV-bilderna bär `baverbutiken.se` inbränd i
+bilden. De svenska gör det inte — den norska lokaliseringen lade till domänen.
+
+### Två fel som fångades sent, och vad de lärde
+
+**Källkampanjen växer under bygget.** 34 annonser när brand-detektorn kördes,
+40 vid kvällens räkning. Sex nya videor tillkom. En körning som bygger sin gamla
+lista missar dem **tyst**. Läs om källan före räkningen, varje gång.
+
+**Replikordningen kastades om i fyra svenska videor.** `fördela()` fyllde tomma
+cues genom att `pop()`:a från en föregående cue, en åt gången — två tomma cues i
+rad tog de två sista replikerna i omvänd ordning. `SP_1_H3` slutade på en
+utfyllnadsreplik i stället för sitt avslut. Fångades först när samma kod kördes
+på Norge. `GT_1_H2`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3` renderas om.
+
+### Röstkontrollen (CLAUDE.md järnregel 3)
+
+Axel lyssnade 2026-09-09 på de elva svenska omdubbade videorna:
+**"Alla okej. Men inget super — bra, men helt okej liksom."**
+Godkända att gå ACTIVE. Rösten går inte att välja i `/v2/video_translate`, så
+"helt okej" är taket med nuvarande metod — inte något som går att justera.

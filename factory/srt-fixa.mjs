@@ -35,8 +35,23 @@ const MARKNADER = {
     procentKräverPaket: false,   // i Norge är varje procentsats förbjuden
   },
 };
+
+// Två svenska efterkörningar, samma regler som `se` men egna manus och
+// egna proofread-sessioner:
+//   se2 — de källannonser som tillkom efter första körningen (SP_3_H1, CS_4_H1)
+//   se3 — omrenderingen av de fyra videor som fick omkastad replikordning
+MARKNADER.se2 = {
+  ...MARKNADER.se,
+  manusfil: '/home/user/yognftnfgn/factory/output/tankguard/se-nya-videomanus.json',
+  proof: `${S}/proof-se2`, prefix: 'TankGuard2_', ut: `${S}/srt-fixad-se2`,
+};
+MARKNADER.se3 = {
+  ...MARKNADER.se,
+  proof: `${S}/proof-se3`, prefix: 'TankGuard3_', ut: `${S}/srt-fixad-se3`,
+};
+
 const M = MARKNADER[MARKNAD];
-if (!M) throw new Error(`Okänd marknad "${MARKNAD}" — välj se eller no.`);
+if (!M) throw new Error(`Okänd marknad "${MARKNAD}" — välj ${Object.keys(MARKNADER).join(', ')}.`);
 const UT = M.ut;
 if (!existsSync(UT)) mkdirSync(UT, { recursive: true });
 const manus = JSON.parse(readFileSync(M.manusfil, 'utf8')).manus;
@@ -91,11 +106,23 @@ for (const [id, m] of Object.entries(manus)) {
   }
 }
 
+/** Tecken per sekund tal. HeyGen pressar in manuset på källans taltid — ett
+ *  manus som är dubbelt så långt som originalet blir en stressad röst, och det
+ *  hörs först när någon lyssnar (CLAUDE.md järnregel 3). Mät i stället. */
+function täthet(cues) {
+  const t0 = sek(cues[0].tid.split('-->')[0].trim());
+  const t1 = sek(cues[cues.length - 1].tid.split('-->')[1].trim());
+  const tecken = cues.map((c) => c.text).join(' ').length;
+  return { sek: t1 - t0, tecken, per: tecken / Math.max(0.1, t1 - t0) };
+}
+const TÄTHETSTAK = 1.15;   // 15 % över källan är den marginal ett manus får ta
+
 const rapport = [];
 for (const [id, m] of Object.entries(manus)) {
   const fil = `${M.proof}/${M.prefix}${id}-translated.srt`;
   if (!existsSync(fil)) { rapport.push({ id, status: 'VÄNTAR' }); continue; }
   const cues = läsSrt(readFileSync(fil, 'utf8'));
+  const källtäthet = täthet(cues);
 
   if (m.typ === 'replikbyte') {
     let bytta = 0;
@@ -113,12 +140,31 @@ for (const [id, m] of Object.entries(manus)) {
   const texter = nya.length === cues.length ? nya : fördela(nya, cues);
   const tomma = texter.filter(t => !t).length;
   cues.forEach((c, i) => { c.text = texter[i]; });
+  const ny = täthet(cues);
+  const kvot = ny.per / källtäthet.per;
   writeFileSync(`${UT}/${id}.srt`, skrivSrt(cues));
-  rapport.push({ id, status: tomma ? 'TOM CUE' : 'KLAR', cues: cues.length, repliker: nya.length, metod });
+  rapport.push({
+    id, status: tomma ? 'TOM CUE' : (kvot > TÄTHETSTAK ? 'FÖR LÅNGT' : 'KLAR'),
+    cues: cues.length, repliker: nya.length, metod,
+    tathet: +kvot.toFixed(2), tecken: ny.tecken, kalltecken: källtäthet.tecken,
+  });
 }
 
-console.log('id'.padEnd(12) + 'status'.padEnd(14) + 'cues'.padEnd(6) + 'metod');
-for (const r of rapport) console.log(`${r.id.padEnd(12)}${r.status.padEnd(14)}${String(r.cues ?? '-').padEnd(6)}${r.metod || ''}`);
+console.log('id'.padEnd(12) + 'status'.padEnd(12) + 'cues'.padEnd(6) + 'täthet'.padEnd(8) + 'metod');
+for (const r of rapport) {
+  const t = r.tathet ? `${r.tathet}×` : '-';
+  console.log(`${r.id.padEnd(12)}${r.status.padEnd(12)}${String(r.cues ?? '-').padEnd(6)}${t.padEnd(8)}${r.metod || ''}`);
+}
+const förLånga = rapport.filter((r) => r.status === 'FÖR LÅNGT');
+if (förLånga.length) {
+  console.log(`\n⛔ ${förLånga.length} manus är för långa för videons taltid (tak ${TÄTHETSTAK}× källan):`);
+  for (const r of förLånga) {
+    const tak = Math.round(r.kalltecken * TÄTHETSTAK);
+    console.log(`   ${r.id}: ${r.tecken} tecken mot källans ${r.kalltecken} — korta till högst ${tak}.`);
+  }
+  console.log('   Rendera inte. HeyGen pressar in texten på samma sekunder och rösten blir stressad.');
+  process.exitCode = 1;
+}
 writeFileSync(`${S}/srtrapport-${MARKNAD}.json`, JSON.stringify(rapport, null, 2));
 
 // Kontroll: inget förbjudet kvar i någon fixad SRT.
