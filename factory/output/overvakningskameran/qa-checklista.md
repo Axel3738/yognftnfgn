@@ -4,5 +4,7 @@ QA kördes inte (dry-run).
 
 ## Varningar
 
-- [ ] meta.page_id är inte satt (krävs före launch)
-- [ ] meta.pixel_id är inte satt (krävs före launch)
+- [ ] butik.markorer_sv saknas — kundvyns markörskanning på översatta sidor blir manuell
+- [ ] startsida saknas i butik.yaml — startsidan får bara neutrala defaults ur butikens villkor
+- [ ] overvakningskameran: offer.bonus_produkt.bilder är tom — bonusen kan inte skapas som produkt (steget bonus blir manuellt)
+- [ ] overvakningskameran: vinkel.usp är inte satt (fjärde USP-punkten och annonsraden får ingen produkt-USP)

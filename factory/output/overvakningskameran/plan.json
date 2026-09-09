@@ -2,7 +2,7 @@
   "input": {
     "title": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning",
     "handle": "overvakningskameran",
-    "status": "DRAFT",
+    "status": "ACTIVE",
     "descriptionHtml": "<p>Ett ljud på tomten klockan tre på natten? Se direkt i mobilen vad det är – utan att gå ut.</p>",
     "vendor": "HeimGuard",
     "seo": {
@@ -29,7 +29,11 @@
         ],
         "price": "799.00",
         "compareAtPrice": "1000.00",
-        "sku": "TEMU-601100938731214"
+        "sku": "TEMU-601100938731214",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       }
     ],
     "files": [

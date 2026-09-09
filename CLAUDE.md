@@ -787,3 +787,18 @@ att bygga om det från början.
 De går **inte** att slå ihop rakt av. Ska något återupplivas: hämta det till en
 **egen mapp** — annars försvinner redigerarpanelen och nästa `/dashboard` skriver
 över det du hämtade.
+
+### Självtestet — ett kommando som mäter i stället för att bedöma
+
+```bash
+npm run sjalvtest          # allt som går att mäta utan nycklar och utan webbläsare
+npm run sjalvtest -- --snabb   # utan dry-run mot butikerna
+```
+
+Kör tester, syntax, importer, en dry-run per butik och de tre spärrarna
+(räkningen, villkorsdomen, kadensen). **En kontroll som inte kan köras
+rapporteras som HOPPAD med orsak — aldrig som grön.** Exit 1 vid rött.
+
+⚠️ Grönt självtest är inte en grön butik. Det bevisar att koden håller ihop,
+inte hur sidan ser ut för kunden. Kundvyn kräver `factory/kundvy-kor.mjs` mot
+riktig HTML, och varukorgen kräver en människa i en webbläsare.
