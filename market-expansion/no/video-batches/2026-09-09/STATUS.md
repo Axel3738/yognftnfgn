@@ -87,11 +87,19 @@ koncept (CS/G/PD/SP), allt ACTIVE, enhancements OPT_OUT. Norsk adcopy skriven av
 sonnet-subagent, tre-frågorstestet redovisat (alla fyra headlines ✅/✅/✅).
 Konfig: `pipeline/waves/no-adventskalender-video.config.mjs`.
 
+**API-verifierat slutläge:** kampanjen ACTIVE, dagsbudget 100 000 öre = 1000 kr,
+4 adsets ACTIVE, **16 annonser, alla ACTIVE/ACTIVE** — 3 videor + 1 bildannons per
+koncept:
+`Adventskalender_NO_{CS,G,PD,SP}_{1,2,3}` + `Adventskalender_NO_{CS,G,PD,SP}_2_1`.
+
 ⚠️ **Kontot rate-limitat (Meta-fel 17) mitt i launchen** — samma mönster som
 2026-09-04/05/06. 9 av 12 videoannonser skapades (CS ×3, G ×3, PD ×3) innan
-backoffen tog slut på SP-adsetet (7 försök, upp till 105 s). Adsetet finns och är
-ACTIVE men fick inga annonser i första körningen. Skriptet är idempotent — SP-annonserna
-och de 4 bildannonserna lades in i en andra körning när spärren släppte.
+backoffen tog slut på SP-adsetet (7 försök, upp till 105 s) och skriptet avbröts.
+Spärren släppte efter ~2 min; en idempotent omkörning la in de 3 SP-annonserna
+("annons finns redan" på de 9 övriga, inget dubbletterades) och en tredje körning
+la in de 4 bildannonserna — varje bildannons kostade 6 backoff-försök men alla gick
+igenom. **Bildannonserna kördes samma natt**, till skillnad från 2026-09-04/05/06
+då Fas 3.2 aldrig hanns med.
 
 ⚠️ **Rate-limiten läser som tom lista, inte som ett fel**, om man bara plockar
 `data` ur svaret: `{"error": {"code": 17}}` blev "0 annonser" i tre kontroller i rad
