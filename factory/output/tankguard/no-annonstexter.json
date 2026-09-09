@@ -1,0 +1,699 @@
+{
+  "produkt": "tankguard",
+  "marknad": "NO",
+  "datum": "2026-09-09",
+  "notis": "Bokmål. INGA priser — TankGuard har inget känt NOK-pris, priset står på /nb-sidan.",
+  "block": {
+    "BOF_1_1": {
+      "id": "BOF_1_1",
+      "message": "Stoffet er 210D Oxford og tar UV-strålingen i stedet for plasten.",
+      "title": "210D Oxford mot UV-stråling",
+      "beskrivning": "Blokkerer sollys og stopper algeveksten.",
+      "andringar": [
+        "Fjernet pris/rabatt (439 kr, 586 kr)",
+        "Fjernet 'Gratis frakt over 300 kr' fra DES",
+        "TIT bygget om på produktmekanikken (UV) i stedet for rabatt"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Stoffet er 210D Oxford og tar UV-strålingen i stedet for plasten.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret materialfakta, ingen pris eller rabatt kvar."
+        },
+        {
+          "rad": "210D Oxford mot UV-stråling",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Peker på spesifikt stoff, ikke en generisk rabattlinje."
+        },
+        {
+          "rad": "Blokkerer sollys og stopper algeveksten.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Algevekst er synlig og etterprøvbar."
+        }
+      ]
+    },
+    "BOF_2_1": {
+      "id": "BOF_2_1",
+      "message": "Er stoffet solid nok? 210D Oxford tåler vær og vind, med glidelås for enkel av og på.",
+      "title": "210D Oxford-stoff med glidelås",
+      "beskrivning": "Passer standard 1000-liters IBC-tank, 120×100×116 cm.",
+      "andringar": [
+        "Fjernet returvillkoret (30 dagers åpent kjøp, pengene tilbake)",
+        "Bygget om på material och mått i stället, behöll spørsmål+svar-strukturen"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Er stoffet solid nok? 210D Oxford tåler vær og vind, med glidelås for enkel av og på.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Spesifikk stoffbetegnelse og mekanisme, ikke en generisk trygghetsgaranti."
+        },
+        {
+          "rad": "210D Oxford-stoff med glidelås",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret spesifikasjon."
+        },
+        {
+          "rad": "Passer standard 1000-liters IBC-tank, 120×100×116 cm.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Eksakte mål, etterprøvbart."
+        }
+      ]
+    },
+    "BOF_3_1": {
+      "id": "BOF_3_1",
+      "message": "Passer den tanken min? Målene er 120 × 100 × 116 cm — standard for en 1000-literstank.",
+      "title": "120×100×116 cm, standard 1000L",
+      "beskrivning": "210D Oxford-stoff, glidelås, åpning på toppen.",
+      "andringar": [
+        "MSG och TIT oförändrade (redan rena)",
+        "DES: tog bort '30 dagers åpent kjøp' (returvillkor), ersatte med produktfakta"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Passer den tanken min? Målene er 120 × 100 × 116 cm — standard for en 1000-literstank.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Eksakt mål, direkte svar på fit-spørsmålet."
+        },
+        {
+          "rad": "120×100×116 cm, standard 1000L",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        },
+        {
+          "rad": "210D Oxford-stoff, glidelås, åpning på toppen.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ingen returvillkor kvar."
+        }
+      ]
+    },
+    "BOF_4_1": {
+      "id": "BOF_4_1",
+      "message": "Glidelås. Ikke presenning og strikk. Av og på med glidelås — ingen kamp med vær eller vind. Åpning på toppen. Passer 1000-liters IBC-tank.",
+      "title": "Glidelås. Ikke presenning.",
+      "beskrivning": "Åpning på toppen. Passer 1000-liters IBC.",
+      "andringar": [
+        "oförändrad"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Glidelås. Ikke presenning og strikk. Av og på med glidelås — ingen kamp med vær eller vind.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konflikt-drevet (glidelås vs presenning), konkret."
+        },
+        {
+          "rad": "Glidelås. Ikke presenning.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Kort, parallell struktur."
+        },
+        {
+          "rad": "Åpning på toppen. Passer 1000-liters IBC.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "BOF_5_1": {
+      "id": "BOF_5_1",
+      "message": "Presenningen som skulle beskytte, blåser av i den første høststormen. Et 210D Oxford-trekk med glidelås blir sittende. Beskytt tanken før høsten.",
+      "title": "Presenningen blåser av i høststormen",
+      "beskrivning": "210D Oxford-trekk med glidelås.",
+      "andringar": [
+        "oförändrad — passar redan säsongen (høst)"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Presenningen som skulle beskytte, blåser av i den første høststormen.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret bilde, matcher september-säsongen."
+        },
+        {
+          "rad": "Presenningen blåser av i høststormen",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Stark bild."
+        },
+        {
+          "rad": "210D Oxford-trekk med glidelås.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "BOF_6_1": {
+      "id": "BOF_6_1",
+      "message": "Frosten kommer, og tanken din står ute hele vinteren. Sett på trekket nå, før algene og UV-strålingen tar overhånden. På plass på under to minutter.",
+      "title": "Frosten kommer. Tanken står ute hele vinteren.",
+      "beskrivning": "På plass på under to minutter.",
+      "andringar": [
+        "Fjernet frakt (5-10 virkedager), Klarna/betal senere och 30 dagers åpent kjøp",
+        "Bygget om på säsong (frost, vinter) i stället, behöll CTA-strukturen"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Frosten kommer, og tanken din står ute hele vinteren.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Verklig säsongsbrådska, inte påhittad knapphet."
+        },
+        {
+          "rad": "Sett på trekket nå, før algene og UV-strålingen tar overhånden.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "CTA kopplad till faktisk risk."
+        },
+        {
+          "rad": "På plass på under to minutter.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "CO_1_1": {
+      "id": "CO_1_1",
+      "message": "Uten beskyttelse blir tankvannet grønt av alger. 210D oxfordstoffet blokkerer sollyset helt og stopper algeveksten. Samme tank, ulikt resultat – forskjellen er trekket.",
+      "title": "210D oxfordstoff stopper UV og alger",
+      "beskrivning": "IBC-tanktrekk, 1000 L",
+      "andringar": [
+        "oförändrad"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Uten beskyttelse blir tankvannet grønt av alger.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Före-bilden är konkret."
+        },
+        {
+          "rad": "Samme tank, ulikt resultat – forskjellen er trekket.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Klassisk före/efter-konflikt."
+        },
+        {
+          "rad": "210D oxfordstoff stopper UV og alger",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "CS_2_1": {
+      "id": "CS_2_1",
+      "message": "⏰ FROSTEN KOMMER — BESKYTT TANKEN NÅ\n210D Oxford-stoff blokkerer sollys og UV. Ingen alger i vannet, og plasten blir ikke sprø.\nSett på trekket før vinteren 👇",
+      "title": "Beskytt tanken før vinteren",
+      "beskrivning": "210D Oxford-stoff. Ingen alger, ingen sprø plast.",
+      "andringar": [
+        "Fjernet 'TIDSBEGRENSET TILBUD — 25% RABATT', pris (439/586 kr) och 'lageret krymper' (påhittad brådska)",
+        "Ersatte med verklig säsongsbrådska (frost) och produktmekanik, samma emoji (⏰, 👇) och struktur bevarad",
+        "TIT: 'før sommeren' → 'før vinteren' för att matcha säsongen",
+        "DES: pris → produktfakta"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "FROSTEN KOMMER — BESKYTT TANKEN NÅ",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Verklig säsong, inte påhittad knapphet."
+        },
+        {
+          "rad": "210D Oxford-stoff blokkerer sollys og UV. Ingen alger i vannet, og plasten blir ikke sprø.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Två konkreta mekanismpåståenden."
+        },
+        {
+          "rad": "Beskytt tanken før vinteren",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Matchar september-säsongen."
+        },
+        {
+          "rad": "210D Oxford-stoff. Ingen alger, ingen sprø plast.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "CS_3_1": {
+      "id": "CS_3_1",
+      "message": "Stoffet er 210D Oxford og stenger ute lyset — algene kommer aldri i gang.",
+      "title": "210D Oxford-stoff stenger ute lyset",
+      "beskrivning": "Stopper algeveksten før den starter.",
+      "andringar": [
+        "Fjernet pris (439/586 kr) och '25% rabatt'",
+        "Fjernet 'Gratis frakt over 300 kr' från DES",
+        "Behöll kärnpåståendet om stoff och algevekst"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Stoffet er 210D Oxford og stenger ute lyset — algene kommer aldri i gang.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret mekanism, ingen rabatt kvar."
+        },
+        {
+          "rad": "210D Oxford-stoff stenger ute lyset",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        },
+        {
+          "rad": "Stopper algeveksten før den starter.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "CS_4_1": {
+      "id": "CS_4_1",
+      "message": "Samme 210D Oxford-stoff som stenger ute lyset — på plass på under to minutter. Algene kommer aldri i gang.",
+      "title": "Ferdig montert på under 2 minutter",
+      "beskrivning": "210D Oxford-stoff blokkerer sollys og UV.",
+      "andringar": [
+        "Fjernet pris (439/586 kr, 147 kr) och '25% rabatt'",
+        "Fjernet 'Fri frakt i Norge over 300 kr' från DES",
+        "Bytte prisjämförelsen mot monteringstid (under to minutter) för att inte upprepa CS_3_1"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Samme 210D Oxford-stoff som stenger ute lyset — på plass på under to minutter.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret tidsangivelse."
+        },
+        {
+          "rad": "Ferdig montert på under 2 minutter",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        },
+        {
+          "rad": "210D Oxford-stoff blokkerer sollys og UV.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "GT_2_1": {
+      "id": "GT_2_1",
+      "message": "Kjenner du noen som har klaget på alger i IBC-tanken sin i flere somre? 🎁\nEt trekk i 210D Oxford blokkerer sollys og UV, så vannet holdes klart.\nSatt på med glidelås på under to minutter — ingen kamp med presenning og strikk.\nNoen ganger er den beste gaven den som løser noe de allerede har brydd seg om lenge.\nFinn den perfekte gaven 👇",
+      "title": "Gaven som stopper algene",
+      "beskrivning": "Ett trekk. Ingen nye alger.",
+      "andringar": [
+        "Fjernet jag-berättelsen om ett genomfört köp ('Jeg ga mannen min...', 'Han trodde jeg hadde glemt...', 'viser tanken til naboene')",
+        "Ersatte med direkt tal om vad gåvan gör (210D Oxford, UV, glidelås, under to minutter)",
+        "Samma emoji (🎁, 👇) och struktur bevarad",
+        "TIT och DES oförändrade",
+        "Huvudsessionens rättelse: titel och description påstod kundutfall (bruker/verdsettelse) som TankGuard inte har — bytta mot produktfakta."
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Kjenner du noen som har klaget på alger i IBC-tanken sin i flere somre?",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret, igenkännbart problem."
+        },
+        {
+          "rad": "Et trekk i 210D Oxford blokkerer sollys og UV, så vannet holdes klart.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ersätter köpberättelsen med fakta."
+        },
+        {
+          "rad": "Satt på med glidelås på under to minutter — ingen kamp med presenning og strikk.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret mekanism."
+        },
+        {
+          "rad": "Gaven han faktisk bruker",
+          "visualisera": true,
+          "falsifiera": false,
+          "ingen_annan": true,
+          "kommentar": "Mjukt, inte strikt testbart påstående — men oförändrad, ligger utanför uppdraget för denna rad."
+        },
+        {
+          "rad": "Enkel gave. Stor verdsettelse.",
+          "visualisera": false,
+          "falsifiera": false,
+          "ingen_annan": false,
+          "kommentar": "Adjektivdrivet ('enkel', 'stor verdsettelse') — luft enligt Kaplans lag, men oförändrad per uppdraget."
+        }
+      ]
+    },
+    "PD_2_1": {
+      "id": "PD_2_1",
+      "message": "Lei av grønt, algefylt regnvann? 💧\nDette trekket blokkerer sollys og UV helt — så vannet i IBC-tanken din holdes klart, og tanken slites ikke ut før tiden.\n✓ Kraftig 210D Oxford-stoff\n✓ Enkel glidelås — klart på 2 minutter\n✓ Åpning på toppen, du kommer fortsatt til lokket\nBeskytt tanken din i dag 👇",
+      "title": "Klart vann. Ingen alger. Enkelt.",
+      "beskrivning": "Passer standard 1000L IBC-tank.",
+      "andringar": [
+        "oförändrad"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Lei av grønt, algefylt regnvann?",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret bild av problemet."
+        },
+        {
+          "rad": "✓ Kraftig 210D Oxford-stoff / ✓ Enkel glidelås — klart på 2 minutter / ✓ Åpning på toppen",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Tre konkreta, verifierbara påståenden."
+        },
+        {
+          "rad": "Klart vann. Ingen alger. Enkelt.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Kort, parallell struktur."
+        }
+      ]
+    },
+    "PD_3_1": {
+      "id": "PD_3_1",
+      "message": "210D oxfordstoffet blokkerer UV-lys og holder algene borte. Glidelåsen kan settes på under to minutter. Åpningen på toppen gir tilgang til lokket uten å ta av hele trekket.",
+      "title": "Sett på glidelåsen på 2 minutter",
+      "beskrivning": "210D Oxford-stoff, glidelås, åpning på toppen",
+      "andringar": [
+        "oförändrad"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "210D oxfordstoffet blokkerer UV-lys og holder algene borte.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        },
+        {
+          "rad": "Glidelåsen kan settes på under to minutter.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret tid."
+        },
+        {
+          "rad": "Sett på glidelåsen på 2 minutter",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "PD_4_1": {
+      "id": "PD_4_1",
+      "message": "210D oxfordstoff stenger ute lyset. Algene kommer aldri i gang.",
+      "title": "210D oxfordstoff. Ingen alger.",
+      "beskrivning": "Tar UV-strålingen i stedet for plasten.",
+      "andringar": [
+        "oförändrad"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "210D oxfordstoff stenger ute lyset. Algene kommer aldri i gang.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Kort och konkret."
+        },
+        {
+          "rad": "210D oxfordstoff. Ingen alger.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        },
+        {
+          "rad": "Tar UV-strålingen i stedet for plasten.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konflikt (stoff vs plast)."
+        }
+      ]
+    },
+    "PD_5_1": {
+      "id": "PD_5_1",
+      "message": "210D oxfordstoff mellom solen og regnvannet ditt.\nIngen presenning, ingen strikk — bare en glidelås.\nAlgene kommer aldri i gang.",
+      "title": "210D oxfordstoff mot solen",
+      "beskrivning": "Ingen presenning, ingen strikk.",
+      "andringar": [
+        "oförändrad"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "210D oxfordstoff mellom solen og regnvannet ditt.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Rumslig, konkret bild."
+        },
+        {
+          "rad": "Ingen presenning, ingen strikk — bare en glidelås.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konflikt-drevet."
+        },
+        {
+          "rad": "210D oxfordstoff mot solen",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "RV_1_1": {
+      "id": "RV_1_1",
+      "message": "Trekket stenger ute sollyset, og tanken ser penere ut.",
+      "title": "Stenger ute sollyset",
+      "beskrivning": "210D Oxford-stoff.",
+      "andringar": [
+        "Tog bort citattecken, namn (Maria), stjärnor och domänen baverbutiken.se",
+        "Gjorde citatet till ett sakligt produktpåstående (från jag-form till faktapåstående)",
+        "Tog bort priset (439 kr) från DES"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Trekket stenger ute sollyset, og tanken ser penere ut.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret och testbart, saklig efter borttaget citat."
+        },
+        {
+          "rad": "Stenger ute sollyset",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        },
+        {
+          "rad": "210D Oxford-stoff.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta, inget pris."
+        }
+      ]
+    },
+    "RV_2_1": {
+      "id": "RV_2_1",
+      "message": "Enkel å åpne når du trenger tilgang til lokket.",
+      "title": "Enkel å åpne",
+      "beskrivning": "Passer 1000L-tank.",
+      "andringar": [
+        "Tog bort citattecken, namn (Lena), stjärnor och domänen",
+        "Gjorde citatet till produktpåstående om öppningen på toppen",
+        "Tog bort priset (439 kr) från DES"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Enkel å åpne når du trenger tilgang til lokket.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret öppningsmekanism."
+        },
+        {
+          "rad": "Enkel å åpne",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        },
+        {
+          "rad": "Passer 1000L-tank.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta, inget pris."
+        }
+      ]
+    },
+    "RV_3_1": {
+      "id": "RV_3_1",
+      "message": "Passer på tanken og beskytter mot solen.",
+      "title": "Beskytter mot solen",
+      "beskrivning": "210D Oxford-stoff blokkerer UV.",
+      "andringar": [
+        "Tog bort citattecken, namn (Sofia), stjärnor, domänen och pris/rabatt (439 kr, 25%)",
+        "Gjorde citatet till produktpåstående om solskydd",
+        "DES bytte från pris/rabatt till produktfakta"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Passer på tanken og beskytter mot solen.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret, ingen rabatt kvar."
+        },
+        {
+          "rad": "Beskytter mot solen",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        },
+        {
+          "rad": "210D Oxford-stoff blokkerer UV.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "RV_4_1": {
+      "id": "RV_4_1",
+      "message": "Solid kvalitet og lett å bruke. Passer 1000-liters IBC-tank uten problem.",
+      "title": "Passer tanken uten problem",
+      "beskrivning": "Passer standard 1000L IBC-tank.",
+      "andringar": [
+        "Tog bort citattecken, namn (Johan), stjärnor och domänen",
+        "Gjorde citatet till produktpåstående",
+        "DES oförändrad (redan ren)"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Solid kvalitet og lett å bruke.",
+          "visualisera": false,
+          "falsifiera": false,
+          "ingen_annan": false,
+          "kommentar": "Adjektivdrivet ('solid kvalitet') — luft enligt Kaplans lag, bevarat från originalcitatet."
+        },
+        {
+          "rad": "Passer 1000-liters IBC-tank uten problem.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Konkret fit-påstående."
+        },
+        {
+          "rad": "Passer tanken uten problem",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Ren fakta."
+        }
+      ]
+    },
+    "SP_2_1": {
+      "id": "SP_2_1",
+      "message": "Endelig klart vann i tanken — ingen alger hele sommeren!\n✓ Blokkerer UV og sol helt\n✓ Sitter perfekt med glidelås\n✓ Du kommer fortsatt til lokket",
+      "title": "Klart vann hele sommeren",
+      "beskrivning": "",
+      "andringar": [
+        "Tog bort stjärnorna (⭐⭐⭐⭐⭐)",
+        "Tog bort citattecknen runt hooken, behöll texten som produktpåstående",
+        "Tog bort 'Hundrevis av hageeiere har allerede byttet ut...' (socialt bevis)",
+        "Tog bort CTA-raden 'Se hvorfor kundene elsker det 👇'",
+        "✓-blocket orört, enligt instruktion",
+        "DES-raden borttagen helt ('Vurdert av ekte hageeiere' var socialt bevis)",
+        "TIT oförändrad"
+      ],
+      "tre_fragor": [
+        {
+          "rad": "Endelig klart vann i tanken — ingen alger hele sommeren!",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Sant som produktpåstående nu när citattecken och stjärnor är borta."
+        },
+        {
+          "rad": "✓ Blokkerer UV og sol helt / ✓ Sitter perfekt med glidelås / ✓ Du kommer fortsatt til lokket",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Oförändrat block, redan konkret."
+        },
+        {
+          "rad": "Klart vann hele sommeren",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": true,
+          "kommentar": "Behållen oförändrad — säsongsordet 'sommeren' rörs inte per uppdraget."
+        }
+      ]
+    }
+  }
+}

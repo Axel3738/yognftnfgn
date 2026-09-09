@@ -1,0 +1,323 @@
+{
+  "butik": "tankguard",
+  "produkt": "tankguard",
+  "kommando": "/ny-annonser tankguard",
+  "steg": {
+    "konto_verifierat": {
+      "klar": true,
+      "mal_ad_account_id": "915422744950975",
+      "mal_konto_namn": "Magiborsten DK",
+      "valuta": "SEK",
+      "business_id": "1164852855167090",
+      "page_id": "1399193996606775",
+      "page_bevis": "ligger i MagiBorstens client_pages som \"TankGuard\"; direktuppslag på sid-id svarar (#100) permission",
+      "pixel_id": "2196132151319625",
+      "pixel_bevis": "agd av malkontot, senast avfyrad 2026-09-08T23:19:43+0200",
+      "notis": "Malkontot bar aven Baverbutikens DK-pixel 1554276343018184 och sex danska Baverbutiks-kampanjer — filtrera alltid pa TANKGUARD_"
+    },
+    "kalla_kopplad": {
+      "klar": true,
+      "se": {
+        "annonskonto": "1867947880635861",
+        "kampanj_id": "120250001079150291",
+        "annonser": 34,
+        "alla_active": true,
+        "dagsbudget_ore": 230000
+      },
+      "no": {
+        "annonskonto": "1050941584152547",
+        "kampanj_id": "120251996323340233",
+        "annonser": 33,
+        "alla_active": true,
+        "dagsbudget_ore": 100000
+      }
+    },
+    "brand_detektor": {
+      "klar": "delvis",
+      "se": "alla fem ytor lasta (factory/output/tankguard/brand-detektor.md + kallannonser.md)",
+      "no": "ytor 1, 2 och 5 lasta; ytor 3 och 4 OLASTA — ffmpeg och rapidocr-onnxruntime saknas i containern",
+      "brand_i_copy_se": 0,
+      "brand_i_copy_no": 5,
+      "brand_i_copy_no_vilka": [
+        "RV_1_1",
+        "RV_2_1",
+        "RV_3_1",
+        "RV_4_1",
+        "GT_3_H1"
+      ],
+      "priser_se": [
+        "489 kr",
+        "636 kr",
+        "23 %",
+        "300 kr",
+        "147 kr"
+      ],
+      "priser_no": [
+        "439 kr",
+        "586 kr",
+        "25 %",
+        "300 kr",
+        "147 kr"
+      ]
+    },
+    "kampanj_se": {
+      "klar": true,
+      "id": "120248995235740172",
+      "namn": "TANKGUARD_SE_Tanköverdraget | 2026-09-08",
+      "status": "PAUSED",
+      "daily_budget_ore": 100000,
+      "adsets": {
+        "GT": "120248995239680172",
+        "CS": "120248995238110172",
+        "SP": "120248995237610172",
+        "PD": "120248995237140172",
+        "CO": "120249005848350172",
+        "BOF": "120249005849710172"
+      },
+      "annonser": 10,
+      "spend": 0,
+      "notis": "Byggd klart 2026-09-09. Tio annonser, alla PAUSED. VA:n satter ACTIVE efter granskning.",
+      "namn_tidigare": "TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08",
+      "omdopt_varfor": "Det gamla namnet bar BE-ROAS 1,62 — ett tal som stammer med varken 1,46 (utan moms) eller 2,07 (med moms). Ett falskt tal i kampanjnamnet styr varje framtida skalningsrunda fel.",
+      "adsets_nyskapade": [
+        "CO",
+        "BOF"
+      ]
+    },
+    "kampanj_no": {
+      "klar": "delvis",
+      "id": "120249012213810172",
+      "namn": "TANKGUARD_NO_Tanktrekket | 2026-09-09",
+      "status": "PAUSED",
+      "daily_budget_ore": 100000,
+      "adsets": {
+        "BOF": "120249012214920172",
+        "CO": "120249012231600172",
+        "GT": "120249012420680172",
+        "PD": "120249012810040172"
+      },
+      "annonser_hittills": 9,
+      "mal_rena_bilder": 10,
+      "lank": "https://tankguard.se/nb/products/tankoverdraget",
+      "pixel": "2196132151319625",
+      "geo": "NO (targeting last ur norska kallkampanjens adset, aldrig en fallback-geo)",
+      "copy": "Bokmal, UTAN priser — TankGuard har inget kant NOK-pris, priset star pa /nb-sidan.",
+      "notis": "13 norska videor ar INTE byggda: mediat ar inte grindat och behover samma frame-OCR som de svenska.",
+      "annonser": 10,
+      "adsets_alla": [
+        "BOF",
+        "CO",
+        "GT",
+        "PD",
+        "SP"
+      ]
+    },
+    "bilder": {
+      "klar": false,
+      "orsak": "vantar pa butiksfilen (pris och villkor)",
+      "antal_att_stada": 11,
+      "verktyg": "pipeline/oversatt-bild.py, gratis"
+    },
+    "videor": {
+      "klar": true,
+      "renderade": 11,
+      "byggda": 13,
+      "omdubbade_och_byggda": [
+        "PD_1_H1",
+        "PD_1_H2",
+        "PD_1_H3"
+      ],
+      "slutkortsbygge_klart": [
+        "GT_3_H1",
+        "PD_3_H1"
+      ],
+      "vantar_pa_captionsbyte": [
+        "CS_1_H2",
+        "CS_1_H3",
+        "GT_1_H1",
+        "GT_1_H2",
+        "GT_1_H3",
+        "SP_1_H1",
+        "SP_1_H2",
+        "SP_1_H3"
+      ],
+      "heygen": "Swedish (Sweden) fungerar. Moderationskon ar ett vantlage — PD_1_H1 slapptes efter ~5 min.",
+      "rostkontroll": "INTE GJORD. Kraver att nagon lyssnar (CLAUDE.md jarnregel 3). De fem byggda ligger PAUSED.",
+      "captionsbyte_klart": [
+        "CS_1_H2",
+        "CS_1_H3",
+        "GT_1_H1",
+        "GT_1_H2",
+        "GT_1_H3",
+        "SP_1_H1",
+        "SP_1_H2",
+        "SP_1_H3"
+      ],
+      "ocr_kontroll": "Alla atta caption-bytta videor OCR-grindade pa 160 frames: noll traffar pa forbjudna pastaenden."
+    },
+    "copy": {
+      "klar": "delvis",
+      "orsak": "7 SE-block omskrivna mot TankGuards eget erbjudande; 6 av dem kan anda inte ga upp for att mediat ar smutsigt",
+      "kan_ga_upp_nu": [
+        "BOF_3_1"
+      ],
+      "brief_till_nytt_media": [
+        "CS_block",
+        "CS_3_1",
+        "CS_4_1",
+        "GT_3_H1",
+        "PD_3_H1",
+        "BOF_1_1"
+      ],
+      "lank_saknas_fortfarande": true,
+      "fil": "factory/output/tankguard/se-copy.md"
+    },
+    "media_uppladdat": {
+      "klar": true,
+      "konto": "915422744950975",
+      "antal": 10,
+      "notis": "image_hash och video_id ar PER KONTO — kallkontots gar inte att referera. Filerna ar nedladdade, uppladdade pa nytt och kvitterade.",
+      "assets": {
+        "BOF_4_1": "f3abdbe02e0ca08cd79f78aeb7dc190f",
+        "BOF_5_1": "f9898c7c28c9b7aa20ea8c9271aa0646",
+        "PD_5_1": "e44a6e3f0fccf690fdbf036e460db227",
+        "PD_4_1": "e18f7e4d9e63267d37ddd957af8e0853",
+        "BOF_3_1": "7404403ed8b96e00eafeb5741c1848bf",
+        "PD_3_1": "97033fd162b17c46ce2072427d12b626",
+        "CO_1_1": "14d9d15043d281b77441336865037341",
+        "GT_2_1": "900670c5eee2052a2599d9f3da260f1c",
+        "PD_2_1": "c960f752b13a5ff68c7e9740903b6823",
+        "PD_Extra": "1094252123041841"
+      }
+    },
+    "tillbakalast": {
+      "klar": true,
+      "datum": "2026-09-09",
+      "kontroll_1_struktur": "kampanj PAUSED, 1000 kr/dag, OUTCOME_SALES, CBO. 6 adsets alla PAUSED med pixel 2196132151319625, geo SE, ingen egen budget.",
+      "kontroll_2_annonser": "10 av 10 med ratt sida 1399193996606775 och ratt lank https://tankguard.se/products/tankoverdraget. 0 fel.",
+      "kontroll_3_copy": "Titel och description jamforda ord for ord mot den godkanda texten pa alla tio. Noll traffar pa forbjudna pastaenden (jamforpris, rabatt pa enstyck, frakt, betalsatt, oppet kop, socialt bevis, pahittad bradska, brandnamn).",
+      "notis": "Metas forhandsvisning ligger bakom inloggning (previews-endpointen ger bara en signerad iframe-URL) — den kontrollen gor VA:n i Ads Manager."
+    },
+    "mediagrind": {
+      "klar": true,
+      "kalla": "brand-ocr.json + brand-syn.json join mot 34 SE-annonser",
+      "rena_creatives": 10,
+      "smutsiga_creatives": 24,
+      "rena": [
+        "PD_Extra",
+        "PD_2_1",
+        "CO_1_1",
+        "PD_4_1",
+        "PD_5_1",
+        "BOF_3_1",
+        "PD_3_1",
+        "BOF_5_1",
+        "GT_2_1",
+        "BOF_4_1"
+      ],
+      "notis": "En ren annonstext ar inte en ren annons. Vinnaren PD_1_H1 ar smutsig (brandnamn i tal och bild). Nio av tio rena ar bildannonser med noll kop."
+    },
+    "klassning_motprovad": {
+      "klar": true,
+      "block_provade": 15,
+      "holl": 13,
+      "revs": [
+        "GT_block",
+        "SP_block"
+      ],
+      "GT_block": "REN -> OMSKRIVNING. Kundvittnesmal i forsta person om en genomford order; TankGuard har salt noll enheter. Gavo-emojin lovar dessutom bonus som bara finns fran 2 st.",
+      "SP_block": "HALL -> OMSKRIVNING. Premissen ar mekanik, inte socialt bevis; bara fyra fragment ar kallbutikens. Huvudsessionen dommde fyra annonser pa en annons copy (brott mot regel 3). Tillagg: citattecknen kring hooken ska bort med stjarnorna."
+    },
+    "agarbeslut": {
+      "datum": "2026-09-08",
+      "ingangspris": "489 kr — annonserna ska leda med enstyckspriset. Paketnivan far namnas efter priset, aldrig forst.",
+      "landningssida_se": "https://tankguard.se/products/tankoverdraget"
+    },
+    "annonser_byggda": {
+      "klar": "delvis",
+      "datum": "2026-09-09",
+      "antal": 21,
+      "varav_ren": 20,
+      "varav_okand_pausad": 1,
+      "fordelning": {
+        "PD": 5,
+        "BOF": 6,
+        "CS": 3,
+        "RV": 4,
+        "CO": 1,
+        "GT": 1,
+        "SP": 1
+      },
+      "adsets_nyskapade_omgang2": [
+        "RV"
+      ],
+      "notis": "Alla 20 ren-annonser ligger uppe. PD_Extra (okand) ar pausad. 13 videor saknas."
+    },
+    "rakningen": {
+      "datum": "2026-09-09",
+      "fil": "factory/output/tankguard/rakningen.md",
+      "kalla_svept": "Bada kontona, ALLA kampanjer, grupperat pa campaign_id. En kampanj per konto.",
+      "se": {
+        "kalla": 36,
+        "med_dom": 34,
+        "utan_dom": [
+          "PD_4_H1",
+          "PD_4_H2"
+        ],
+        "mal": 33,
+        "uppe": 33,
+        "saknas": 0,
+        "okand_pausad": "PD_Extra"
+      },
+      "no": {
+        "kalla": 33,
+        "bild_ren": 10,
+        "bild_smutsig": 10,
+        "video": 13,
+        "mal": 23,
+        "uppe": 10,
+        "saknas": 13,
+        "saknas_namngivna": [
+          "CS_1_H2",
+          "CS_1_H3",
+          "GT_1_H1",
+          "GT_1_H2",
+          "GT_1_H3",
+          "GT_3_H1",
+          "PD_1_H1",
+          "PD_1_H2",
+          "PD_1_H3",
+          "PD_3_H1",
+          "SP_1_H1",
+          "SP_1_H2",
+          "SP_1_H3"
+        ],
+        "saknas_orsak": "Mediat ar inte grindat. De svenska videorna fick frame-OCR; de norska har inte fatt den lasningen. Olast ar aldrig ren."
+      },
+      "dom": "DELVIS KLART — Sverige komplett, Norge saknar 13 videor"
+    },
+    "no_mediagrind": {
+      "klar": true,
+      "bilder_grindade": 20,
+      "rena": 10,
+      "smutsiga": 10,
+      "fil": "factory/output/tankguard/no-mediagrind.md",
+      "no_specifikt": "De fyra norska RV-bilderna bar kallbutikens doman baverbutiken.se inbrand. De svenska gor det inte."
+    }
+  },
+  "uppdaterad": "2026-09-09",
+  "oppna_beslut": [
+    "Ingangspriset: 489 kr eller 799 kr? Att ta bort 636 kr flyttade ankaret till 2-packet i fyra av sju block och hojde ingangspriset 63 %. Agarens beslut.",
+    "Annonsens jamfortal (978/1467 kr) matchar inte produktsidans overstrukna (1376/2064 kr). Ska annonsen folja sidan eller sidan folja annonsen?",
+    "Utloser offer.bonus_produkt faktiskt Kranskydd Frost i korgen? Fyra annonser lovar den."
+  ],
+  "tidigare_blockerare_lost": {
+    "butiksfil": "Delvis lost 2026-09-08: Axel lamnade pris (489 kr) och produktlank direkt i chatten. factory/butiker/tankguard.yaml saknas fortfarande — frakt, returer, betalsatt och NOK-nivaer ar darfor okanda och pastas aldrig i copyn.",
+    "sidroll": "Last 2026-09-09: Axel gav full tillgang till TankGuard-sidan. Alla tio annonserna gick igenom direkt. Rotorsaken var att sidan lag i businessens client_pages men saknades helt i me/accounts — HeimGuard ligger i owned_pages och fungerade darfor."
+  },
+  "blockerare": {
+    "se": "13 videoannonser. Mediat maste dubbas om (HeyGen, 16 460 krediter, Swedish (Sweden) finns) och fa inbrand text bytt innan de far bli annonser. Rostkontrollen kraver att nagon LYSSNAR — den kan inte goras harifran.",
+    "se_olast": "PD_4_H1 och PD_4_H2 tillkom i kallkontot efter brand-detektorns korning och saknar dom.",
+    "no": "Inga NOK-priser och ingen norsk produktlank. factory/butiker/tankguard.yaml saknas."
+  }
+}

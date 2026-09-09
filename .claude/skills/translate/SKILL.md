@@ -37,6 +37,35 @@ Fråga med AskUserQuestion om något av detta saknas: **marknader** och **priser
    ⚠️ **Är källan nästan bara musik ska videon inte översättas alls** — HeyGen har
    ingen röst att klona och hittar på en. Det var därför `PD_EXTRA` hoppades över
    i motorhöljesbatchen. Röstkollen flaggar det när källvideon anges.
+3. **Lyssna på varje renderad video innan den levereras. En keff röst går aldrig ut.**
+   (Axels besked 2026-09-08.)
+
+### Röstkontrollen (regel 3)
+
+⚠️ **Det går INTE att välja röst.** `/v2/video_translate` klonar källans röst
+automatiskt — det finns ingen röstparameter i anropet (verifierat i
+`pipeline/heygen.mjs` 2026-09-08). En dålig röst kan alltså inte förebyggas med
+en inställning. Den kan bara **fångas genom att någon lyssnar**.
+
+Lyssna på tre ställen i varje renderad fil — hooken (0–3 s), mitten och slutet:
+
+| Vad du lyssnar efter | Hur det låter när det är fel |
+|---|---|
+| Fel kön eller fel tonläge | rösten byter person mot källvideon |
+| Robotljud / metalliskt | knastrande konsonanter, platt melodi |
+| Fel brytning | svenskt uttal i en norsk dubb, engelsk accent i en svensk |
+| Uppskruvat tempo | rösten hetsar för att hinna med bildens timing |
+| Klippt eller överstyrt ljud | orden kapas i början eller slutet av en cue |
+| Läppsynk som glider | munnen rör sig ur takt sent i filmen |
+
+Låter något av det fel: **leverera inte filen.** Skapa en NY proofread-session för
+just den videon och rendera om (samma sessions-ID går inte att köra om — den är
+låst). Håller rösten inte andra gången heller: lämna videon som väntande med
+orsak i rapporten, och säg det rakt ut. Hellre en video mindre än en annons som
+låter som en robot under ett nytt varumärke.
+
+Redovisa alltid i leveransen hur många filer som lyssnats igenom och hur många som
+renderats om. "QA grön" utan röstraden räknas inte som QA.
 
 ## Miljö
 
