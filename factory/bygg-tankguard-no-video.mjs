@@ -101,10 +101,21 @@ for (const kort of VIDEOR) {
   if (TORR) { logg(`(torr) skulle ladda upp ${kort} och bygga ${namn}`); continue; }
 
   if (!state.media[kort]?.klar) {
-    const videoId = await laddaUppVideo(ACT, fil);
-    const thumb = await väntaPåThumb(videoId);
-    state.media[kort] = { video_id: videoId, thumb, klar: true }; spara();
-    logg(`⬆ ${kort} → video ${videoId}`);
+    // Spara video-id:t INNAN thumbnailen väntas in. Metas thumbnail kan dröja
+    // längre än väntetiden, och gör den det får en omkörning annars ladda upp
+    // hela videon en gång till och lämna en föräldralös kopia i biblioteket.
+    if (!state.media[kort]?.video_id) {
+      state.media[kort] = { video_id: await laddaUppVideo(ACT, fil) }; spara();
+      logg(`⬆ ${kort} → video ${state.media[kort].video_id}`);
+    }
+    try {
+      state.media[kort].thumb = await väntaPåThumb(state.media[kort].video_id);
+      state.media[kort].klar = true; spara();
+    } catch (e) {
+      logg(`⏳ ${kort}: ${e.message} Videon ligger uppe — kör om skriptet.`);
+      väntar.push(`${kort} (väntar på Metas thumbnail)`);
+      continue;
+    }
   }
 
   const adsetId = await adsetFor(kort.split('_')[0]);

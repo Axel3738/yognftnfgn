@@ -254,6 +254,42 @@ i TankGuards butik — den överstrukna siffran på produktsidan är en paketsum
 (1 376 / 2 064 kr), inte ett enstyckspris. Byggs slutkortet om med bara ordmärket
 bytt lovar TankGuard en rabatt butiken inte ger.
 
+### ✅ BYGGT 2026-09-09 — A2 är ett kommando nu, inte handarbete
+
+Fyra verktyg gjorde jobbet på TankGuards 27 videor (13 svenska, 13 norska,
+plus omrenderingar). Använd dem, bygg inget nytt bredvid.
+
+| Verktyg | Vad det gör |
+|---|---|
+| `factory/heygen-omdubb.sh proofread\|render\|hamta <marknad>` | Hela HeyGen-kedjan per marknad. Proofread är gratis, render drar credits, hämta pollar tills filen finns. |
+| `factory/srt-fixa.mjs --marknad=<m>` | Lägger manuset på HeyGens egna cue-tider, grindar texten och **mäter manusets längd** mot källans. |
+| `factory/captionbyte.mjs <marknad>` | Skriver konfigfilerna till `pipeline/no-precis.py` med den uppmätta captionzonen. |
+| `factory/slutkort.py` | Bygger om produktsidans slutkort — ordmärke, recensionsrad, prispar — **utan HeyGen-credits**. Ersätter handmätta `lager.py`-koordinater per video. |
+| `factory/byt-video-tankguard.mjs` | Pekar om en redan byggd annons till en omrenderad video, samma copy och adset. |
+
+**Fyra saker som kostade tid och inte behöver kosta det igen:**
+
+1. **Manusets längd är en kvalitetsgrind.** HeyGen pressar in manuset på källans
+   taltid. Ett manus 1,7 gånger längre än originalet ger en stressad röst — och
+   det upptäcks först när någon lyssnar, vilket är precis vad järnregel 3 finns
+   för att slippa. `srt-fixa.mjs` stoppar nu allt över 1,15× källans tecken per
+   sekund och skriver ut ett konkret teckentak per manus.
+2. **`failed` från HeyGen betyder inte alltid misslyckat.** Status `failed` med
+   `failure_message: "video pending moderation by our team"` är ett väntläge.
+   Elva färdiga renderingar såg ut att ha dött på det.
+3. **Ett captionbyte är inte en mediagrind.** `no-precis.py` byter pillret; text
+   som ligger någon annanstans i bild står kvar. TankGuards `CS_4_H1` bar ett
+   andra piller mitt i bilden med "489 kr, spara 147 kr" som överlevde bytet.
+   **OCR-grinda alltid den FÄRDIGA filen, inte bara källan.**
+4. **Captionbandet sitter inte på samma höjd i alla creatives.** De norska hade
+   pillret kring y=912 i 720×1280, två senare svenska kring y=971. Mät per
+   uppsättning; en gissad zon suddar fel rad eller ingen alls.
+
+⚠️ **Spara sessions-id:t till en FIL, inte bara till stdout.** En buffrad pipe
+eller ett `| tail` tappar det, och utan sessions-id finns ingen väg tillbaka till
+en proofread man redan väntat på. `heygen-omdubb.sh` skriver därför en logg i
+proof-mappen.
+
 ---
 
 ## Uppdrag B — Kampanjbygget i OPS-kontot
