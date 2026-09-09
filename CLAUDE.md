@@ -181,6 +181,11 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
 - **`factory/PROCESS.md`** är rutinen: hela steg-för-steg-flödet, med ⚙️
   (fabriken gör) och 🖐 (Axels klick). Lyckas ett nytt steg: uppdatera den
   filen i samma session. Det är inte valfritt — det är hela poängen.
+- **`factory/TRAPPAN.md`** är arbetsdelningen (Axels modell 2026-09-09):
+  Bäverbutiken är ren TESTBÄDD, all creative strategy sker på OPS-butiken.
+  Trappan: test → egen butik → all-around-redigerare → egen redigerare vid
+  5000 kr/dag. Läs den innan du planerar creative-arbete på någon produkt.
+- **`factory/FAS2.md`** är annonsfasen (uppdrag A–F) och `/ny-annonser`.
 - **`factory/PLAN.md`** är planen framåt (namnregeln, annonsöversättaren,
   rekryteringsmotorn, Discord per butik, **Q4-ramverket punkt 6**).
 - Konfig: `factory/butiker/<id>.yaml` + `factory/produkter/<id>.yaml`,

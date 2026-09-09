@@ -106,9 +106,19 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    svenska kampanjen, NO-annonser den norska. Blanda dem aldrig.
    ⚠️ Ta bara ACTIVE-annonser ur aktiva adsets. En PAUSED annons är ett
    beslut — den har dömts ut och ska inte återupplivas i en ny butik.
-   Finns ingen norsk kampanj för produkten: bygg bara den svenska och
-   rapportera det. Uppfinn aldrig norska annonser ur de svenska här — det
-   är `/oversatt`:s jobb, inte det här kommandots.
+   ⚠️ **DEN NORSKA HALVAN ÄR INTE VALFRI** (Axels bakläxa 2026-09-09:
+   varken HeimGuard eller TankGuard fick någon norsk kampanj — det norska
+   kontot lästes aldrig). Kommandot är inte klart förrän BÅDA kontona är
+   lästa och båda kampanjerna byggda. Har du bara läst det svenska kontot:
+   du är halvvägs, inte färdig.
+   Finns det bevisligen ingen norsk kampanj för produkten i Magiborsten NO:
+   skriv det som ett eget konstaterande med antalet lästa kampanjer, bygg
+   den svenska och säg "delvis klart". Uppfinn aldrig norska annonser ur de
+   svenska här — det är `/oversatt`:s jobb, inte det här kommandots.
+
+   ⚠️ **Leta i FLER än en kampanj per konto.** Sök varje kampanj vars
+   annonser bär produktens prefix — inte bara den som `kalla.kampanj_id`
+   pekar på. En produkt kan ha både en test-ABO och en skalnings-CBO.
 
 3. **Brand-detektorn** (FAS2 uppdrag A). Klassa varje annons över FEM ytor:
    copy, tal, inbränd text/slutkort, recensionsattribution — **och priset**.
@@ -169,19 +179,51 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
      En SE-fallback i den norska kampanjen visar annonserna i fel land.
    - EU-konton kan kräva `dsa_beneficiary`/`dsa_payor` — kolla innan.
 
-9. **Trippelkolla mot kontot.** Läs TILLBAKA hela strukturen ur Meta och
+9. **RÄKNINGEN — kommandots viktigaste spärr.** (Axels bakläxa 2026-09-09:
+   TankGuard fick 10 annonser av 33 möjliga och rapporterades som klart.)
+
+   Innan något rapporteras: ställ upp räkningen och visa den i chatten.
+
+   ```
+   Källannonser:        34
+     rena               20  → ska bli 20 annonser
+     kräver-omdubb      11  → ska bli 11 annonser
+     slutkortsbygge      2  → ska bli 2 annonser
+     okänd               1  → ska INTE laddas upp
+   Uppladdade i kontot: __  ← läst ur Meta, inte ur minnet
+   ```
+
+   **Ställ upp räkningen en gång per marknad** — en tabell för SE, en för NO.
+   En marknad som saknar tabell är en marknad du inte gjort.
+
+   **Varje rad som inte stämmer ska namnges.** Vilka annonser saknas, och
+   varför saknas var och en. "Resten misslyckades" är inte ett svar —
+   skriv ut namnen.
+
+   ⚠️ **Media i kontot är INTE en annons.** En uppladdad video eller bild
+   ligger i biblioteket tills en creative byggs på den. Räkna annonser med
+   `act_<id>/ads`, aldrig `advideos`/`adimages`.
+
+   ⚠️ **En `okänd` dom laddas aldrig upp.** Den betyder att en yta inte gick
+   att läsa — stäng den först (lyssna, fråga redigeraren), döm sen.
+
+   Är summan lägre än källan: **säg "delvis klart" och lista vad som fattas.**
+   Ordet "klart" får bara skrivas när varje källannons antingen ligger uppe
+   eller står namngiven med sin orsak.
+
+10. **Trippelkolla mot kontot.** Läs TILLBAKA hela strukturen ur Meta och
    jämför mot butikens konfig: `page_id`, `pixel_id`, `daily_budget`, länk och
    status på alla tre nivåer. Stämmer något inte: rätta och läs tillbaka igen.
    Delvis klart heter delvis klart.
 
-10. **Lämna över till VA:n.** Skriv i chatten, på engelska:
+11. **Lämna över till VA:n.** Skriv i chatten, på engelska:
     - vad som byggdes (kampanj, antal adsets, antal annonser)
     - vad som INTE gjordes och varför (t.ex. videor som väntar på krediter)
     - hennes granskningslista: öppna Ads Manager, kolla att länken går till
       butikens produktsida, att pixeln är butikens egen, att budgeten stämmer
     - **hon sätter kampanjen ACTIVE när granskningen är grön.**
 
-11. **Dokumentera.** `factory/state/<butik>--<produkt>.json`, ärvd historik in i
+12. **Dokumentera.** `factory/state/<butik>--<produkt>.json`, ärvd historik in i
     `products/<butik>/batch-log.md` (de brand-swappade annonserna bär med sig
     sitt bevisade DNA), och varje NYTT bevisat steg in i `factory/FAS2.md` i
     samma session. Committa och pusha.
@@ -200,9 +242,13 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Videorna omdubbade — eller listade som väntande med orsak
 - [ ] All copy pekar på butikens EGEN produktsida, ingen gissad länk
 - [ ] Media uppladdat i målkontot (inte refererat från källkontot)
+- [ ] BÅDA källkontona lästa: MagiBorsten (SE) OCH Magiborsten NO
+- [ ] Alla kampanjer per konto genomsökta, inte bara `kalla.kampanj_id`
 - [ ] TVÅ kampanjer byggda: `<BRAND>_SE_…` och `<BRAND>_NO_…`
 - [ ] Svensk copy på svenska mot `/`, norsk copy på bokmål mot `/nb`
 - [ ] Allt skapat PAUSED, status explicit på alla tre nivåer
+- [ ] **Räkningen visad:** källannonser per dom vs. uppladdade annonser i kontot
+- [ ] Varje saknad annons NAMNGIVEN med orsak — annars står det "delvis klart"
 - [ ] Tillbakaläst ur Meta: sida, pixel, budget, länk och status stämmer
 - [ ] VA:n har sin granskningslista och vet att hon sätter ACTIVE
 - [ ] state + FAS2.md uppdaterade, pushat

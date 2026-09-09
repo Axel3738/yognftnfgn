@@ -70,6 +70,11 @@ Målet: aldrig vänta på en redigerare när en ny OPS-butik launchar.
    sig att vara redo att börja direkt när en butik behöver dem.
 4. Ny OPS-butik → plocka nästa namn ur listan → anställ på riktigt.
 
+⚠️ **ÄNDRAT 2026-09-09:** rekryteringen triggas av en TRÖSKEL, inte av att en
+butik byggs. En ny redigerare anställs först när en OPS-butik passerar
+**5000 kr/dag i budget** (`factory/TRAPPAN.md` steg 4). Under den tröskeln
+sköts butikens annonser av de befintliga all-around-redigerarna.
+
 ⚠️ **ÄNDRAT 2026-09-08 (Axels besked):** punkt 3 ovan gäller inte — **ingen
 löpande beredskapsersättning betalas.** Poolen byggs ur ansökningsflödet i
 stället: jobbannonsen är ute, ansökningar kommer in, och en person står redan

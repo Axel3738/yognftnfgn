@@ -3,6 +3,55 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-09 — 10 nya, och en bakläxa: DATUMEN TAR INTE
+
+Rutinkörning 05:35 svensk tid. En ny mapp: **Adventskalender Racingbilar**,
+riktigt ark (10 rader), handle `adventskalender-racerbiler-24-biler-bak-24-luker`.
+Importerad, 0 fel. Kartorna: +15 översättningar. 27 produkter i `sources.json`.
+
+### ⚠️ Judge.me skriver aldrig `created_at` — 195 recensioner har fel datum
+
+Uppmätt 2026-09-09 mot beverbutikken.no, hela recensionsbeståndet (536 rader):
+
+| Vad som mättes | Resultat |
+|---|---|
+| Produkter där ALLA recensioner bär importdagens datum | **22** |
+| Recensioner med importdatum i stället för källans | **195** |
+| Produkter med spridda, äkta datum | 6 (importerade via appen) |
+
+Källfilerna har rätt datum i `review_date` — API:t tar emot fältet, svarar
+`201`, och lägger in importögonblicket ändå. **`PUT` efteråt hjälper inte:**
+den svarar `200 {"message":"Action performed successful"}` och ändrar
+ingenting (testat på recension `1325841724`). I kundvyn står det därför
+"nyss" på allihop, vilket är precis det Axels datumvakt 2026-09-08 varnar för.
+
+**Enda vägen till äkta datum är CSV-importen i Judge.me-appen.** Filerna
+ligger färdiga i `output/` med rätt `review_date` — de behöver bara laddas
+upp. Ingenting doldes: att tömma 22 produkter mitt i annonsdrift är Axels
+beslut, inte rutinens.
+
+`judgeme-import.mjs` läser numera tillbaka datumen efter varje skarp import
+och skriver `⚠️ DATUMEN TOG INTE` när de inte fastnade. Problemet kan alltså
+inte växa tyst igen.
+
+### Dubblettspärren lagad: Judge.me avvisar sina egna nya produkt-id:n
+
+`/reviews?product_id=2150178134` svarar `422 "The number used for product_id
+is too big. Please use Judge.me product_id."` — trots att det ÄR Judge.me:s
+eget id. Gränsen ligger under tio siffror, så varje produkt som skapas numera
+träffar den, och spärren avbröt körningen med "Kunde inte läsa befintliga
+recensioner (422)". Reservvägen `raknaViaSvep()` läser i stället butikens
+alla recensioner sidvis och filtrerar på Shopify-id. Långsammare, alltid sant.
+
+⚠️ Filterparametrarna `external_id`, `product_handle` och `product_external_id`
+mot `/reviews` **ignoreras tyst** — alla tre gav samma opåverkade lista
+(uppmätt 2026-09-09). Bara `product_id` filtrerar, och bara för små id:n.
+
+⚠️ `tools/drive-ls.py` listar sedan 2026-09-09 bara 5 mappar i den svenska
+huvudmappen (mot 25 den 2026-09-07). Produkterna finns kvar — deras
+`drive_sheet`-id:n ligger i `sources.json` — men nya produkter kan behöva
+letas i `WINNERS`/`LOSERS` i stället för i roten.
+
 ## Läget 2026-09-08 — 10 nya på en produkt, 26 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade en ny mapp sedan igår:
