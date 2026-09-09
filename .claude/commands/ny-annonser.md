@@ -151,6 +151,25 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Inbränd text byts med `pipeline/no-precis.py`, aldrig med en ny caption-motor.
    ⚠️ Rendera aldrig före proofread (rendering drar krediter, proofread är gratis).
 
+   ⛔ **MANUSET SKRIVS MOT CUE-LISTAN — EN REPLIK PER CUE.** Axels bakläxa
+   2026-09-09: *"den saktar ner och sen speedar upp hela tiden."* HeyGen läser
+   varje cues text på exakt den cuens tid. Fri text som fördelas över cues ger
+   en cue fyra gånger för mycket (läses fyra gånger för fort) och nästa för
+   lite (dras ut). Sjutton videor fick renderas om.
+   - `node factory/cuebudget.mjs <marknad>` skriver golv och tak i tecken per
+     cue. Manuset skrivs mot den listan, inte som en fri text.
+   - `node factory/srt-fixa.mjs --marknad=<m>` vägrar köra om antalet repliker
+     inte är exakt lika många som cuesen, och mäter VARJE cue mot sin källcue.
+   - `python3 factory/rostkoll.py <video> <srt>` mäter spridningen i tecken per
+     sekund i den färdiga filen. Över 2,2× hörs det.
+   - ⚠️ Skriv manuset mot den session som faktiskt ska renderas. Byter man
+     HeyGen-läge delas videon in i ANDRA cues — 8 blev 10, 6 blev 4.
+
+   ⛔ **HeyGen körs i `mode: "quality"`** (Axels besked 2026-09-09), aldrig
+   default `fast`. Quality slår på avatar-inferens: munrörelserna renderas om
+   i stället för att nytt ljud läggs över bilden. Ligger i `KVALITET` i
+   `pipeline/heygen.mjs`.
+
 6. **Skriv om copyn — per marknad.** Varje `link` pekas om till OPS-butikens
    produktsida: svenska annonser till `/products/<handle>`, norska till
    `/nb/products/<handle>`. **Gissa aldrig länken** — ta den ur produktfilen
@@ -268,7 +287,10 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Allt skapat PAUSED, status explicit på alla tre nivåer
 - [ ] Källkontona omlästa PRECIS före räkningen — inte den gamla listan
 - [ ] Varje omdubbad video och varje omplåstrad bild OCR-grindad som FÄRDIG fil
-- [ ] Manuslängden mätt mot källans taltid (`srt-fixa.mjs`, tak 1,15×)
+- [ ] Manuset skrivet mot cue-listan: EN replik per cue, inom cuens teckenbudget
+- [ ] Varje cue mätt mot sin källcue (`srt-fixa.mjs`, tak 1,15×)
+- [ ] Tempospridningen mätt i varje FÄRDIG fil (`rostkoll.py`, tak 2,2×)
+- [ ] HeyGen kört i `quality`-läget, inte default `fast`
 - [ ] **Räkningen visad:** källannonser per dom vs. uppladdade annonser i kontot
 - [ ] Varje saknad annons NAMNGIVEN med orsak — annars står det "delvis klart"
 - [ ] Tillbakaläst ur Meta: sida, pixel, budget, länk och status stämmer
