@@ -18,3 +18,6 @@ docs/temu-jakt-v2/jakt/v24/ali-bild/
 docs/temu-jakt-v2/jakt/v24/ali-prod-*.json
 # Produktjaktens nedladdade produktbilder — hämtas om vid varje körning
 produktjakt/korningar/*/bilder/
+
+# produktjakt: rådumpen från artefaktens db (feedback.json är facit)
+produktjakt/feedback/db/

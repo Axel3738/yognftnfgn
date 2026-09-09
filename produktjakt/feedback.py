@@ -36,7 +36,9 @@ LARDOMAR = os.path.join(HERE, "LARDOMAR.md")
 DOM = ("ja", "kanske", "nej")
 # Samma etiketter som i sida-mall.html (ORSAKER_NEJ / ORSAKER_JA). Ändra på båda ställena.
 ORSAKER = ["Verktyg / pryl", "Kedjan har den", "Fel kund", "Syns inget i bild", "Har redan", "Fel säsong",
-           "För dyr", "Tråkig", "Skyddar något", "Deadline nu", "Bra ankare", "Snygg bild", "Känns rätt"]
+           "För dyr", "Lågt upplevt värde", "Tråkig",                       # nej
+           "Osäker på priset", "Tveksam bild", "Kan bli bra",               # kanske
+           "Skyddar något", "Deadline nu", "Bra ankare", "Snygg bild", "Känns rätt"]  # ja
 STOPP_NEJ = 3
 LYFT_JA = 3
 

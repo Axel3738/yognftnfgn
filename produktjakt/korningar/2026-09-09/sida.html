@@ -98,7 +98,8 @@
   const DATUM = "2026-09-09";
   const FILNAMN = "Leverantorsoffert-2026-09-09.xlsx";
   // Orsakerna är etiketterna feedback.py räknar vikter på. Ändra dem här OCH i feedback.py (ORSAKER).
-  const ORSAKER_NEJ = ["Verktyg / pryl", "Kedjan har den", "Fel kund", "Syns inget i bild", "Har redan", "Fel säsong", "För dyr", "Tråkig"];
+  const ORSAKER_NEJ = ["Verktyg / pryl", "Kedjan har den", "Fel kund", "Syns inget i bild", "Har redan", "Fel säsong", "För dyr", "Lågt upplevt värde", "Tråkig"];
+  const ORSAKER_KANSKE = ["Lågt upplevt värde", "Osäker på priset", "Tveksam bild", "Kan bli bra"];
   const ORSAKER_JA = ["Skyddar något", "Deadline nu", "Bra ankare", "Snygg bild", "Känns rätt"];
   const $ = id => document.getElementById(id);
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -141,9 +142,9 @@
     el.dataset.dom = s.dom || '';
     el.querySelectorAll('.dom button').forEach(b => b.classList.toggle('on', b.dataset.v === s.dom));
     const box = el.querySelector('.orsaker');
-    const lista = s.dom === 'nej' ? ORSAKER_NEJ : s.dom === 'ja' ? ORSAKER_JA : [];
+    const lista = s.dom === 'nej' ? ORSAKER_NEJ : s.dom === 'ja' ? ORSAKER_JA : s.dom === 'kanske' ? ORSAKER_KANSKE : [];
     box.classList.toggle('visa', lista.length > 0);
-    box.innerHTML = lista.length ? `<p>${s.dom === 'nej' ? 'Varför nej?' : 'Varför ja?'}</p>` + lista.map(o =>
+    box.innerHTML = lista.length ? `<p>${s.dom === 'nej' ? 'Varför nej?' : s.dom === 'ja' ? 'Varför ja?' : 'Varför kanske?'}</p>` + lista.map(o =>
       `<button type="button" class="${(s.orsaker || []).includes(o) ? 'on' : ''}">${esc(o)}</button>`).join('') : '';
     box.querySelectorAll('button').forEach(b => b.addEventListener('click', () => orsak(p, b.textContent)));
   }

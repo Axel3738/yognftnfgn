@@ -23,6 +23,26 @@ kunna dela samma mekaniska variabel — det är den variabeln som ska jaga näst
 | 2026-09-09 | Kattkojan | "verkar gå bra" | Att djurnischen är öppen. Varan ville han ändå inte ha på arket. |
 | 2026-09-09 | Sotset, båtkapellstötta | valde dessa två av fem | — |
 
+## Axels svar på sidan 2026-09-09 (första omgången med knapparna)
+
+Nio svar: 3 ja, 4 kanske, 2 nej. Ja på tvättmoppen, vibrationslarmet och båtkapellstöttan
+(orsak "Skyddar något" + "Känns rätt" på alla tre). Nej på COB-arbetslampan och navskydden
+("För dyr", "Kedjan har den", "Tråkig"). Kanske på vedklyvborren, sotsetet, oljepumpen och
+rännskopan — och Axels egen förklaring i chatten:
+
+> "De som jag valt kanske på är också ofta att det är väldigt lågt upplevt värde."
+
+> "Det är viktigt att tänka på, för är det ett högt upplevt värde gör det stooor skillnad."
+
+**Upplevt värde är alltså en egen, tung variabel**: ser varan ut att vara värd 500–1 000 kr i en
+bild, eller ser den ut som en plastpryl för 99 kr? Vedklyvborren, sotsetet, oljepumpen och
+rännskopan är alla små, billiga i utseendet och verktygslika — ekonomin gick ihop på papperet
+men varan *ser* inte ut som sitt pris. Etiketten "Lågt upplevt värde" finns nu på sidan.
+
+Obs: Axels ja på moppen och larmet går emot wow-testets dom samma dag ("payoffen syns inte i
+ett tystat flöde"). Båda står. Facit kommer från leverantörens pris och en eventuell launch —
+inte från vem som hade rätt.
+
 ## Känd begränsning i verktyget
 
 AliExpress **produktsidor** svarar med ett tomt skal i containern — varken `ali.py`, en egen

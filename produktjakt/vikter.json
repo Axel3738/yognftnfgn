@@ -1,0 +1,95 @@
+{
+ "datum": "2026-09-09",
+ "antal_svar": 9,
+ "per_dom": {
+  "ja": 3,
+  "kanske": 4,
+  "nej": 2
+ },
+ "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar",
+ "dimensioner": {
+  "grupp": {
+   "vedsäsongens verktyg": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "höst på tomten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "husvagn och husbil": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ved och eldning": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "båt och trailer": {
+    "ja": 1,
+    "kanske": 1,
+    "nej": 1,
+    "score": 0.5
+   },
+   "belysning och mörker": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "tomt hus och tak": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   }
+  }
+ },
+ "orsaker": {
+  "Skyddar något": {
+   "ja": 3,
+   "kanske": 0,
+   "nej": 0
+  },
+  "Känns rätt": {
+   "ja": 3,
+   "kanske": 0,
+   "nej": 0
+  },
+  "Bra ankare": {
+   "ja": 1,
+   "kanske": 0,
+   "nej": 0
+  },
+  "Snygg bild": {
+   "ja": 1,
+   "kanske": 0,
+   "nej": 0
+  },
+  "För dyr": {
+   "ja": 0,
+   "kanske": 0,
+   "nej": 2
+  },
+  "Kedjan har den": {
+   "ja": 0,
+   "kanske": 0,
+   "nej": 1
+  },
+  "Tråkig": {
+   "ja": 0,
+   "kanske": 0,
+   "nej": 1
+  }
+ },
+ "stopp": [],
+ "lyft": []
+}
