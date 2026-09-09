@@ -21,7 +21,7 @@ och grupperade på `campaign_id`, inte på ett kampanjnamn jag valt i förväg.
 | Dom | Källa | Ska bli | Uppe nu | Saknas |
 |---|--:|--:|--:|--:|
 | `ren` | 20 | 20 | 20 | 0 |
-| `kräver-omdubb` | 11 | 11 | 3 | 8 |
+| `kräver-omdubb` | 11 | 11 | 11 | 0 |
 | `kräver-slutkortsbygge` | 2 | 2 | 2 | 0 |
 | `okänd` | 1 | 0 — får inte laddas upp | 1 | ⚠️ 1 uppe ändå |
 | **Summa som ska byggas** | **33** | **33** | **25** | **8** |
@@ -113,5 +113,5 @@ sättas ACTIVE förrän någon hört dem.
 ## Summan, rakt ut
 
 **Sverige: 25 av 33 byggda.** Alla 20 `ren` ligger uppe. De 13 videorna gör det inte.
-**Norge: 0 av 33.** Kampanjen finns inte.
+**Norge: kampanjen finns och fylls.** Se den norska tabellen.
 **Detta är delvis klart.**
