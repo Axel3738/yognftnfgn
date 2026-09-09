@@ -28,6 +28,11 @@ brand:
     - "tankguard.no"
 
 ekonomi:
+  # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
+  # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset — dra
+  # aldrig av 25 % en gång till, då ser lönsamma annonser ut att gå med
+  # förlust. Fältet styr break-even och därmed varje kill-beslut.
+  moms_antagen: false
   # Källbutikens priser 2026-09-08 (baverbutiken.se). OPS-butiken satte
   # SAMMA priser — avläst i butiken 2026-09-09: 489 kr, jämförpris 636 kr.
   pris: 489

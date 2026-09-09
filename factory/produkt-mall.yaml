@@ -27,6 +27,16 @@ ekonomi:
   pris: 0                     # KRITISKT — försäljningspris (måste vara högre än inköp)
   jamforpris: 0               # jämförpris/överstruket pris (måste vara högre än pris)
   # Valutan kommer ur butikskonfigen. Marginalen räknas rakt på priset.
+  #
+  # MOMSEN: false = räkna UTAN moms. Axels besked 2026-09-09 gäller varje
+  # OPS-butik, samma regel som Bäverbutiken och Grillkliniken — marginalen
+  # räknas rakt på priset, dra aldrig av 25 % en gång till. Fältet styr
+  # break-even och därmed varje kill-beslut, så det får aldrig gissas: utan
+  # det räknar skalningsronden två linjer och dömer ingen annons däremellan.
+  # ⚠️ Läs ALDRIG butikens `moms_i_pris` här — det styr prisVISNINGEN i
+  # butiken, är true i varje OPS-butiksfil, och att låta det avgöra
+  # break-even vore precis det tysta valet regeln finns för.
+  moms_antagen: false
 
 varianter:                    # tom lista = one-product utan varianter
   # - namn: "Svart"

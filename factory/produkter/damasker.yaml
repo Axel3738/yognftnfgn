@@ -23,6 +23,11 @@ brand:
     - "dryhike.se"      # LEDIG — reserv
 
 ekonomi:
+  # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
+  # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset — dra
+  # aldrig av 25 % en gång till, då ser lönsamma annonser ut att gå med
+  # förlust. Fältet styr break-even och därmed varje kill-beslut.
+  moms_antagen: false
   # Inköpet är INTE gissat: det är räknat baklänges ur källkampanjens egen
   # break-even, som Axel satte i kampanjnamnet
   # ("Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29"):

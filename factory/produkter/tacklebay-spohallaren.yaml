@@ -29,6 +29,11 @@ brand:
     - "tacklebay.no"
 
 ekonomi:
+  # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
+  # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset — dra
+  # aldrig av 25 % en gång till, då ser lönsamma annonser ut att gå med
+  # förlust. Fältet styr break-even och därmed varje kill-beslut.
+  moms_antagen: false
   # ⚠️ GISSNING — inköpskostnaden finns INTE i källan och är räknad som 40 %
   # av priset, vilket är mitten i Bäverbutikens fyra skalningsprodukter
   # (break-even-ROAS 1,47–1,72 ⇒ COGS 32–42 % av priset).

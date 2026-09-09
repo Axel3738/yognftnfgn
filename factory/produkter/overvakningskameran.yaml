@@ -26,16 +26,18 @@ ekonomi:
   valuta: SEK
   # Ekonomiblocket (FAS2 Uppdrag E) — ifyllt 2026-09-08 av /ny-annonser.
   # Priset läst ur heimguard.se/products/overvakningskameran.json samma dag.
-  # Räknat MED moms i priset: butikskonfigen säger moms_i_pris: true och
-  # produktsidan skriver "Inklusive moms". 799/1,25 − 261 = 378 kr.
-  # ⚠️ SÄLJER BUTIKEN UTAN MOMS blir talen TB 538, BE-ROAS 1,49, BE-CPA 538.
-  # Skillnaden avgör varje kill-beslut. Bäverbutikens 1,57 på samma produkt är
-  # räknat på EN ANNAN verksamhet och får aldrig kopieras hit.
-  # Detta är det enda talet i butiken som behöver Axels bekräftelse.
-  tackningsbidrag_sek: 378
-  break_even_roas: 2.11
-  break_even_cpa_sek: 378
-  moms_antagen: true
+  # MOMSEN ÄR AVGJORD 2026-09-09 (Axels besked): räknas UTAN moms, samma
+  # regel som Bäverbutiken och Grillkliniken. Marginalen räknas rakt på
+  # priset: 799 − 261 = 538 kr.
+  # Talen stod tidigare räknade MED moms (TB 378, BE-ROAS 2,11) medan grenarna
+  # skrev fyra olika svar. Skillnaden avgör varje kill-beslut, så den fick
+  # aldrig gissas — nu är den beslutad och står här.
+  # ⚠️ Bäverbutikens 1,57 på samma produkt är räknat på EN ANNAN verksamhet
+  # och får aldrig kopieras hit.
+  tackningsbidrag_sek: 538
+  break_even_roas: 1.49
+  break_even_cpa_sek: 538
+  moms_antagen: false
 
 varianter:
   - namn: "Svart"
