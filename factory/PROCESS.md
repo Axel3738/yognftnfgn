@@ -257,6 +257,17 @@ en människa i en webbläsare".
 ---
 
 ## Regler som bevisats den hårda vägen
+- **"Butiken ser obrandad ut" är nästan aldrig brandingen — det är ett steg som
+  inte kördes.** Mätt 2026-09-09 när Axel jämförde sina tre OPS-butiker och
+  gillade DryTrek mest: TackleBays `branding:`-block är lika genomarbetat som
+  DryTreks, färg för färg och regel för regel. Skillnaden låg i vad som blev
+  gjort. DryTreks state har ett `logga`-steg; TackleBays har inget — dess tre
+  loggvarianter ligger genererade i `factory/output/tacklebay/` och kom aldrig
+  in i butiken, så headern visar butiksnamnet som text. HeimGuard har dessutom
+  ett `rensa-popups`-steg som Axel körde för hand 2026-09-06.
+  **Diagnosen görs i state-filen, inte i yaml:en:** jämför steglistan mot
+  kedjans, och leta efter det som SAKNAS. Att skriva om ett branding-block som
+  redan är rätt löser ingenting, och kostar en runda.
 - **Demot i beskrivningen är en loopad MP4, aldrig en GIF eller WebP**
   (Axels beslut 2026-09-09). Samma sekvens som GIF är ofta 10–20× större och
   begränsad till 256 färger. Temat väljer på filändelsen: `.mp4`, `.webm` och
