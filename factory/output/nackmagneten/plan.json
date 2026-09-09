@@ -2,12 +2,12 @@
   "input": {
     "title": "Nackmagneten",
     "handle": "nackmagneten",
-    "status": "DRAFT",
-    "descriptionHtml": "<p>Stel nacke efter en dag vid skärmen? Lindring på 10 minuter i soffan.</p>\n<ul>\n  <li>Löser upp spänningarna på 10 minuter hemma i soffan</li>\n  <li>Engångskostnad i stället för återkommande massagebesök</li>\n</ul>",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Stel nacke efter en dag vid skärmen? Lindring på 10 minuter i soffan.</p>",
     "vendor": "Nackmagneten",
     "seo": {
       "title": "Nackmagneten – Nackmagneten",
-      "description": "Löser upp spänningarna på 10 minuter hemma i soffan. 30 dagars öppet köp"
+      "description": "Löser upp spänningarna på 10 minuter hemma i soffan. 14 dagars ångerrätt"
     },
     "productOptions": [
       {
@@ -32,7 +32,11 @@
         ],
         "price": "399.00",
         "compareAtPrice": "599.00",
-        "sku": "NM-GRA"
+        "sku": "NM-GRA",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       },
       {
         "optionValues": [
@@ -43,7 +47,11 @@
         ],
         "price": "399.00",
         "compareAtPrice": "599.00",
-        "sku": "NM-SVART"
+        "sku": "NM-SVART",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
       }
     ],
     "files": [
@@ -62,15 +70,39 @@
   "metafalt": [
     {
       "namespace": "opf",
-      "key": "hero_underrubrik",
+      "key": "problem_rubrik",
       "type": "single_line_text_field",
-      "value": "Stel nacke efter en dag vid skärmen? Lindring på 10 minuter i soffan."
+      "value": "Klockan är 15 och nacken är redan stel."
     },
     {
       "namespace": "opf",
-      "key": "problem",
-      "type": "list.single_line_text_field",
-      "value": "[\"Stel nacke och spänningshuvudvärk efter en hel dag vid skärmen\",\"Massage och naprapat kostar 700 kr per besök\"]"
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Du sträcker på dig, rullar axlarna, inget hjälper. Kvällen går åt till att må dåligt i soffan."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://exempel.se/bilder/nackmagneten-problem.gif"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Tio minuter på Nackmagneten löser upp spänningarna"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Nackbågen bär upp huvudet så musklerna vågar släppa, och tryckpunkterna jobbar på nackfästet där värken sitter."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://exempel.se/bilder/nackmagneten-losning.gif"
     },
     {
       "namespace": "opf",
@@ -86,33 +118,21 @@
     },
     {
       "namespace": "opf",
-      "key": "frakt",
-      "type": "list.single_line_text_field",
-      "value": "[\"Leveranstid: 5–8 arbetsdagar\",\"Fri frakt till alla länder\",\"Express inom Sverige: 99 kr, 1–2 arbetsdagar\"]"
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://exempel.se/bilder/nackmagneten-soffa.jpg"
     },
     {
       "namespace": "opf",
       "key": "garantier",
       "type": "list.single_line_text_field",
-      "value": "[\"30 dagars öppet köp\",\"Full återbetalning om du inte känner skillnad\"]"
+      "value": "[\"14 dagars ångerrätt\",\"Full återbetalning om du inte känner skillnad\"]"
     },
     {
       "namespace": "opf",
-      "key": "erbjudande",
-      "type": "single_line_text_field",
-      "value": "399 kr i stället för 599 kr — spara 200 kr"
-    },
-    {
-      "namespace": "opf",
-      "key": "bundle",
-      "type": "single_line_text_field",
-      "value": "2-pack 649 kr (en till jobbet, en hemma)"
-    },
-    {
-      "namespace": "opf",
-      "key": "reviews",
-      "type": "json",
-      "value": "[{\"namn\":\"Eva L.\",\"betyg\":5,\"text\":\"Första natten på månader jag sovit utan värk.\"},{\"namn\":\"Mats H.\",\"betyg\":5,\"text\":\"Skeptisk först. Nu ligger jag på den varje kväll.\"},{\"namn\":\"Karin S.\",\"betyg\":4,\"text\":\"Tar några dagar att vänja sig, sen gör den jobbet.\"}]"
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–8 arbetsdagar\",\"Fri frakt till alla länder\",\"Express inom Sverige: 99 kr, 1–2 arbetsdagar\"]"
     },
     {
       "namespace": "opf",

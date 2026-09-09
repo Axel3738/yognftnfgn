@@ -5,7 +5,7 @@
 //
 // Flöde: validera filen (kritiska fel = stopp) → bygg sidan ur mallen →
 // skriv förhandsvisning + plan till factory/output/<id>/ →
-// dry-run: stanna där · skarpt: skapa produkten i Shopify som DRAFT.
+// dry-run: stanna där · skarpt: skapa produkten i Shopify som ACTIVE.
 // Publicerar ALDRIG tema eller butik live. Rör inga annonsflöden.
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -22,14 +22,43 @@ const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 const kortText = (text, max) =>
   String(text ?? '').length <= max ? String(text ?? '') : `${String(text).slice(0, max - 1).trimEnd()}…`;
 
+// Produktens handle i butiken: `produkt.handle` när det står i filen, annars
+// `produkt.id`. De två skiljer sig när butiken byggdes under ett annat namn
+// än filens id (TankGuard: id `tankguard`, handle `tankoverdraget`, produkt
+// 15989715108184). Alla uppslag mot Shopify ska gå på det här värdet —
+// id:t är filens och statens namn, inte butikens.
+export const produktHandle = (p) =>
+  (typeof p?.produkt?.handle === 'string' && p.produkt.handle.trim() !== ''
+    ? p.produkt.handle.trim()
+    : p?.produkt?.id);
+
+// En bild i `media.bilder` (och `offer.bonus_produkt.bilder`) är antingen en
+// URL-sträng (alt = produktnamnet) eller { url, alt }. Alt-texten bär
+// språkmärkningen [SV]/[NO] som temats gallerifilter läser (omärkt = visas
+// för alla språk). Returnerar { url, alt } eller null för en tom rad.
+export function bildPost(b, standardAlt) {
+  if (typeof b === 'string') return b.trim() ? { url: b.trim(), alt: standardAlt } : null;
+  if (b && typeof b === 'object' && typeof b.url === 'string' && b.url.trim()) {
+    const alt = typeof b.alt === 'string' && b.alt.trim() ? b.alt.trim() : standardAlt;
+    return { url: b.url.trim(), alt };
+  }
+  return null;
+}
+
 // Bygger hela planen (ProductSetInput + kringdata) ur en validerad produktfil.
 // Ren funktion utan nätverk — samma plan i dry-run och skarpt läge.
-export function byggPlan(p) {
+// `butik` är valfri (KEDJAN.md: byggPlan(produkt, butik)) — vendor faller
+// tillbaka på butikens brand när produktfilen saknar eget brandnamn.
+export function byggPlan(p, butik = null) {
   const riktigaVarianter = Array.isArray(p.varianter) && p.varianter.length > 0;
   const optionNamn = riktigaVarianter ? 'Variant' : 'Title';
   const varianter = riktigaVarianter ? p.varianter : [{ namn: 'Default Title' }];
-  const bilder = (p.media?.bilder ?? []).filter(Boolean);
-  const videor = (p.media?.videor ?? []).filter(Boolean);
+  // Listorna tål null, tom sträng och (efter yaml-fixen) `[]` — men aldrig
+  // krascha på en felskriven rad: valideringen har redan sagt sitt.
+  const lista = (v) => (Array.isArray(v) ? v : []);
+  const bilder = lista(p.media?.bilder).map((b) => bildPost(b, p.produkt.namn)).filter(Boolean);
+  const videor = lista(p.media?.videor).filter((v) => typeof v === 'string' && v.trim() !== '');
+  const vendor = p.brand?.namn ?? butik?.butik?.brand ?? '';
 
   const seoBeskrivning = kortText(
     [p.benefits?.[0], p.garantier?.[0]].filter(Boolean).join('. '),
@@ -38,12 +67,15 @@ export function byggPlan(p) {
 
   const input = {
     title: p.produkt.namn,
-    handle: p.produkt.id,
-    status: 'DRAFT',
+    handle: produktHandle(p),
+    // ACTIVE, inte DRAFT (Axels bakläxa 2026-09-08 på TankGuard): en DRAFT
+    // produkt ger 404 i menyn och "Exempel på produktnamn" i kundvyn. Butiken
+    // är ändå lösenordsskyddad under trialen, så ACTIVE exponerar ingenting.
+    status: 'ACTIVE',
     descriptionHtml: byggKortBeskrivning(p),
-    vendor: p.brand.namn,
+    vendor,
     seo: {
-      title: kortText(`${p.produkt.namn} – ${p.brand.namn}`, 70),
+      title: kortText(`${p.produkt.namn} – ${vendor}`, 70),
       description: seoBeskrivning,
     },
     productOptions: [
@@ -61,10 +93,13 @@ export function byggPlan(p) {
       inventoryPolicy: 'CONTINUE',
       inventoryItem: { tracked: false },
     })),
-    files: bilder.map((url) => ({
-      originalSource: url,
+    // Sträng eller { url, alt } — se bildPost. Alt-texten är det enda som
+    // skiljer en [NO]-bild från en [SV]-bild i temats gallerifilter, så den
+    // får aldrig ersättas med produktnamnet när filen satt en egen.
+    files: bilder.map((b) => ({
+      originalSource: b.url,
       contentType: 'IMAGE',
-      alt: p.produkt.namn,
+      alt: b.alt,
     })),
   };
 
@@ -128,7 +163,8 @@ async function huvud() {
     console.log('');
   }
 
-  const plan = byggPlan(p);
+  // Fristående körning: produktfilen ensam, ingen butikskonfig (vendor = brand.namn).
+  const plan = byggPlan(p, null);
   const filer = skrivUtdata(p, plan);
   visaPlan(p, plan);
   console.log(`\n   Break-even-ROAS: ${nyckeltal.breakEvenRoas}  ·  Marginal: ${nyckeltal.marginal} ${p.ekonomi.valuta} (${nyckeltal.marginalProcent} %)`);
@@ -142,7 +178,7 @@ async function huvud() {
 
   console.log('\nSkickar till Shopify …');
   const produkt = await skapaProdukt(plan.input);
-  console.log(`\n✅ Produkten skapad som DRAFT (inte publicerad).`);
+  console.log(`\n✅ Produkten skapad som ACTIVE (butiken är lösenordsskyddad under trialen).`);
   console.log(`   Admin:  https://${process.env.SHOPIFY_STORE_DOMAIN}/admin/products/${produkt.legacyResourceId}`);
   if (produkt.onlineStorePreviewUrl) console.log(`   Förhandsvisning i butiken: ${produkt.onlineStorePreviewUrl}`);
   console.log('');

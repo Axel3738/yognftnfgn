@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>TackleBay – variant C, horisont</title>
+  <defs>
+    <clipPath id="rund"><circle cx="256" cy="256" r="256"/></clipPath>
+  </defs>
+  <circle cx="256" cy="256" r="256" fill="#0F2A33"/>
+
+  <!-- vattenlinjen -->
+  <g clip-path="url(#rund)">
+    <path d="M -20 344 Q 84 320, 188 344 T 396 344 T 604 344 L 604 532 L -20 532 Z"
+          fill="#16404F"/>
+    <path d="M -20 344 Q 84 320, 188 344 T 396 344 T 604 344"
+          fill="none" stroke="#D9A441" stroke-width="3.5"/>
+    <path d="M -20 392 Q 84 370, 188 392 T 396 392 T 604 392"
+          fill="none" stroke="#D9A441" stroke-width="2" opacity="0.3"/>
+  </g>
+
+  <!-- liten krok ovanför ordmärket -->
+  <g stroke="#D9A441" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <circle cx="260" cy="132" r="9" stroke-width="5"/>
+    <path d="M 260 141 L 260 174" stroke-width="6"/>
+    <path d="M 260 174 C 260 196, 241 205, 229 195 C 219 187, 220 172, 231 167" stroke-width="6"/>
+    <path d="M 231 167 L 233 154" stroke-width="6"/>
+  </g>
+
+  <text x="256" y="266" text-anchor="middle" fill="#F5F2EA"
+        font-family="Liberation Sans, Helvetica, Arial, sans-serif"
+        font-size="62" font-weight="bold" letter-spacing="1">TACKLE</text>
+  <text x="256" y="322" text-anchor="middle" fill="#D9A441"
+        font-family="Liberation Sans, Helvetica, Arial, sans-serif"
+        font-size="62" font-weight="bold" letter-spacing="12">BAY</text>
+</svg>

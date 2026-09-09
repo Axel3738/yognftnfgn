@@ -159,11 +159,16 @@ for (const adsetCfg of cfg.adsets) {
     if (priorAds.has(ad.name)) { console.log(`  · annons finns redan: ${ad.name}`); continue; }
     const vid = vids.get(ad.name);
     const thumb = await thumbnailFor(vid.id);
+    // Copy per ANNONS när den finns, annars adsetets gemensamma (gamla formen).
+    // Källkontots annonser bär ofta egen copy per annons — läggs de alla under
+    // adsetets copy tappas det som faktiskt spenderade pengarna.
+    const copy = ad.copy || adsetCfg.copy;
+    if (!copy) { console.error(`✗ ${ad.name} saknar copy — varken ad.copy eller adset.copy finns.`); process.exit(1); }
     const creative = await api(`${cfg.act}/adcreatives`, { method: 'POST', form: {
       name: ad.name,
       object_story_spec: JSON.stringify({ page_id: cfg.page, video_data: {
-        video_id: vid.id, title: adsetCfg.copy.headline, message: adsetCfg.copy.message,
-        link_description: adsetCfg.copy.description, image_url: thumb,
+        video_id: vid.id, title: copy.headline, message: copy.message,
+        link_description: copy.description, image_url: thumb,
         call_to_action: { type: 'SHOP_NOW', value: { link: cfg.link } },
       } }),
       degrees_of_freedom_spec: NO_ENHANCEMENTS,

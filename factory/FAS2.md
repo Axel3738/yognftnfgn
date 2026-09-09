@@ -16,18 +16,27 @@ kommandot är körordningen. Uppdrag D och E är systemarbete utanför det.
 
 ---
 
-## Blockerare just nu (2026-09-08)
+## Blockerare just nu (2026-09-09)
 
 | Blockerare | Blockerar | Löses av |
 |---|---|---|
-| ~~FB-kontot~~ — LÖST 2026-09-08: TankGuards Meta-sida är `1399193996606775` (verifierad i MagiBorstens `client_pages`), pixeln `2196132151319625` avfyrar och WeTracked är kopplat | inget | — |
+| ~~Sidan går inte att annonsera med~~ — **LÖST 2026-09-08.** Meta vägrade skapa annonser med sida `1262406533629248` (*"Sidan du har valt för din annons är inte tillgänglig"*) trots att sidan låg i businessens `owned_pages` och pixeln avfyrade. Axel kopplade sidan till annonskontot i Business Manager och skapandet gick igenom direkt. ⚠️ **Kontots `promote_pages` är TOMT även nu när 38 annonser ligger uppe** — den kanten svarar alltså inte på frågan, och `client_pages`/`owned_pages` gör det inte heller. Det enda som svarar är ett skarpt `adcreatives`-anrop. Gör det tidigt i varje ny butik, med EN annons, innan hela mediabiblioteket laddas upp i onödan. | inget | — |
+| ~~FB-kontot~~ — LÖST 2026-09-08: TankGuards Meta-sida är `1399193996606775` (verifierad i MagiBorstens `client_pages`), pixeln `2196132151319625` avfyrar och WeTracked är kopplat. ⚠️ "Verifierad i `client_pages`" visade sig INTE betyda att sidan går att annonsera med — se raden ovan. | inget | — |
 | ~~`META_ACCESS_TOKEN`~~ — finns i MOLNETS miljö (Axels besked 2026-09-08). `env.mjs` sätter aldrig över en variabel som redan finns i miljön, så all Meta-kod funkar i molnet. Saknas bara LOKALT. | inget i molnet | — |
-| HeyGen-plånboken tom (13 krediter, mätt 2026-09-08) | omdubbning av video | Axel fyller på |
+| ~~HeyGen-plånboken tom~~ — påfylld. **16 818 krediter mätt 2026-09-09** (siffran 13 var en ögonblicksbild 2026-09-08). Blockerade heller aldrig HeimGuard: 0 av 26 svenska transkript nämner brandet. | inget | — |
+| HeimGuards NO-marknad betalar i SEK medan Bäverbutikens norska annonser är prissatta 899/1 169 NOK | den norska HeimGuard-kampanjen | Axel slår på NOK i Shopify admin och sätter NOK-paketnivåer |
 | `standby.md` har ännu ingen ifylld rad | tilldelning av redigerare | Axel ger namnet på personen som redan står på standby |
 
-**Läget 2026-09-08 kväll: A, B, C, D och E kan alla köra NU.** TankGuards sida,
-pixel och WeTracked är klara, och Meta-nyckeln finns i molnets miljö. Bara A2
-(videodubbningen) väntar — på HeyGen-krediter.
+**Läget 2026-09-09: A, B, C, D och E kan alla köra.** Uppdrag B är nu bevisat
+hela vägen — HeimGuards svenska kampanj står i MagiBorsten DK med 9 adsets och
+38 annonser, allt PAUSED och tillbakaläst. A2 väntar inte längre på krediter
+heller: plånboken har **16 818** krediter (mätt 2026-09-09), inte 13.
+
+⚠️ **Lärdomen är dyrköpt: bygg annonsen FÖRST i en ny butik.** Sidan och pixeln
+såg klara ut i varje läsning som gjordes — sidan fanns i `owned_pages`, pixeln
+avfyrade. Ingen av de kontrollerna säger något om huruvida kontot får annonsera
+med sidan. Det enda som svarar på den frågan är ett skarpt `adcreatives`-anrop.
+Gör det tidigt, med EN annons, innan 23 videor laddas upp i onödan.
 
 ---
 
@@ -35,9 +44,9 @@ pixel och WeTracked är klara, och Meta-nyckeln finns i molnets miljö. Bara A2
 
 1. **A — Brand-detektorn** (gratis, läser bara). Ger listan över vad som måste göras om.
 2. **C — Bildannonserna** (gratis, ingen väntan). Snabbaste vägen till färdiga creatives.
-3. **B — Kampanjbygget** (sida + pixel KLARA 2026-09-08 — kan köra nu).
+3. **B — Kampanjbygget** (bevisat hela vägen 2026-09-09 på HeimGuard).
    Det som gör att pengar rör sig.
-4. **A2 — Videodubbningen** (väntar på HeyGen-krediter).
+4. **A2 — Videodubbningen** (krediter finns, 16 818 st).
 5. **D — Notion + commission** (kod, ingen väntan). Måste vara klart INNAN redigeraren börjar.
 6. **E — Skalningsrutinen** (kod). Kan byggas parallellt, används först när data finns.
 
@@ -165,18 +174,88 @@ TankGuard Bäverbutikens fraktgräns och visar Bäverbutikens recensenter.
 en inbränd brandrad; läser någon bara domen kommer den tillbaka från HeyGen med
 Bäverbutiken kvar i bild.
 
+### ✅ KÖRD 2026-09-08 — HeimGuard (butik nr 1)
+
+**40 källannonser i `Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21`,
+alla ACTIVE i ACTIVE adsets. 25 video, 15 bild.** Rapport:
+`factory/output/overvakningskameran/brand-rapport.md`.
+
+Fem saker den körningen lärde, som inte stod här förut:
+
+1. ⚠️ **`advideos?title=<prefix>` hittar inte alla videor — och tiger om det.**
+   Mätt: 13 av 25 videor bar prefixet i sin titel. Den första launchbatchens
+   filer (SP_1/2/3, CS_1/2/3, PD_1/2/3, G_1/2/3) laddades upp under andra
+   filnamn och saknades helt — och bland dem låg kampanjens **toppspender**
+   (`SP_2`, 13 338 kr, ROAS 2,89). Yta 3 blev alltså oläst på precis den annons
+   som betydde mest, medan rapporten bara sa "okänd". Detektorn faller nu
+   tillbaka på hela videobiblioteket (1 076 rader i MagiBorsten) när ett id
+   saknas efter titelfiltret. **Nolltröskeln i koden räckte inte** — larmet gick
+   bara vid noll träffar, inte vid 13 av 25.
+2. ⚠️ **Blanda aldrig `srt-orig/*.orig.srt` med `srt-fixed/*.srt`.** En
+   fritextsökning över alla SRT:er för produkten gav fem träffar på
+   "baverbutiken.se" och såg ut att kräva omdubbning av fem videor. Alla fem
+   satt i de **norska** `srt-fixed`-filerna — översättningarna, inte det
+   svenska källjudet. De svenska originalen: **0 av 26 träffar.** Skilj alltid
+   på original och översättning innan du dömer yta 2, annars köper du HeyGen-
+   krediter för ett problem som inte finns.
+   *(Sidofynd värt att ta vidare: att de norska captionsen bär "baverbutiken.se"
+   är en defekt i NO-batchen — den hör hemma i Bäverbutikens NO-konto, inte här.)*
+3. ⚠️ **Priset kan vara identiskt — kolla innan du bygger en prisswapp.**
+   HeimGuard säljer samma kamera till exakt samma 799 / 1 000 kr som
+   Bäverbutiken. Noll pristal behövde ändras. TankGuards fall (489/636 mot eget
+   pris) är inte regeln.
+4. ⚠️ **Det som faktiskt måste bytas är villkoren och den sociala proofen.**
+   Källan lovade "fri frakt över 300 kr" (HeimGuard har fri frakt utan gräns)
+   och påstod "Tusentals nöjda hushåll i Sverige har redan bytt ut sina gamla
+   system" plus ett kundcitat ingen kund sagt. En ny OPS-butik med tio
+   recensioner kan inte skriva något av det. **Copy-subagenten behöll citatet
+   i första försöket** — den måste få butikens riktiga recensioner ordagrant i
+   prompten, annars saneras bara volymclaimet.
+5. ⚠️ **Break-even skiljer sig mer mellan butikerna än man tror.** Bäverbutiken
+   hade BE-ROAS 1,57 på produkten. HeimGuard landar på **2,11** — samma pris,
+   men moms i priset. Utan moms hade det blivit 1,49. Skillnaden avgör varje
+   kill-beslut, så talet ska bekräftas av Axel före första skalningsronden och
+   aldrig kopieras mellan verksamheterna.
+
 ---
 
-## Uppdrag A2 — Brand-swap av video (väntar på HeyGen-krediter)
+## Uppdrag A2 — Brand-swap av video
 
 **Vad:** byt "Bäverbutiken" mot OPS-brandet i tal, inbränd text och slutkort.
 
+### ⚠️ RÄTTELSE 2026-09-09: det är inte ett ord, det är hela manuset
+
+Rubriken ovan har varit missvisande. När de elva svenska transkripten lästes ord
+för ord (`market-expansion/no/video-batches/2026-08-29/srt-orig/`, gratis) visade
+det sig att brandnamnet är den **minsta** delen av problemet. Tre olika jobb, inte
+ett:
+
+| Video | Vad talet faktiskt säger | Jobb |
+|---|---|---|
+| `PD_1_H1`, `PD_1_H2`, `PD_1_H3` | Ren produktmekanik hela vägen. **En enda** brandreplik på slutet: "Ett IBC-tanköverdrag från Bäverbutiken." | byt EN replik |
+| `CS_1_H2`, `CS_1_H3` | Hela erbjudandet talas ut och är falskt för OPS-butiken: "25 % rabatt", "bara idag", "ordinarie pris 636 kronor, idag 489", "men lagret krymper snabbt", "innan det är slut" | **nytt manus** |
+| `GT_1_H1/H2/H3` | Ett kundvittnesmål i jag-form, uppläst: "Min man … så jag beställde … han visar upp den för alla grannar" | **nytt manus** |
+| `SP_1_H1/H2/H3` | Samma sak plus antal: "Innan hade jag alger … sen skaffade jag …", "Tusentals svenskar har redan löst sitt algproblem", "därför så många trädgårdsägare väljer" | **nytt manus** |
+
+**Åtta av elva videor behöver alltså ett omskrivet manus, inte ett ordbyte.** En
+ny OPS-butik har sålt noll enheter — varje talad mening som förutsätter en tidigare
+kund är lika falsk som en påhittad recension, och den hörs dessutom högt.
+
+**Läs transkripten FÖRST, innan någon budget läggs på omdubb.** De ligger gratis i
+repot och avgör om jobbet är en replik eller tolv.
+
+⚠️ **Svenska→svenska fungerar i HeyGen** (mätt 2026-09-09, sessions-id får suffixet
+`-sv-sv-SE`). FAS2 sa tidigare att det var otestat — det är det inte längre.
+Språknamnet är `Swedish (Sweden)`, och proofread kostar noll krediter.
+
+⚠️ **Röstkontrollen (CLAUDE.md järnregel 3) kan inte göras av en molnsession** —
+den kräver att någon lyssnar. En session kan rendera och lämna över; den kan
+aldrig själv säga att rösten håller.
+
 **Återanvänd detta:**
 - `pipeline/translate-batch.mjs` + `pipeline/heygen.mjs` — hela HeyGen-kedjan med state
-  till disk. Kör med `--lang="Swedish (Sweden)"` (samma språk in och ut).
-  ⚠️ **Otestat:** ingen av de 217 körningarna har varit svenska→svenska.
-  Kör `node pipeline/localize.mjs langs` FÖRST (gratis) och verifiera att språket finns.
-  Håller det inte: plan B är att klippa bort/skriva över meningen, inte dubba om allt.
+  till disk. Kör med `--lang="Swedish (Sweden)"` (samma språk in och ut —
+  mätt 2026-09-09, se rättelsen ovan).
 - `pipeline/no-precis.py` — byter inbränd text **exakt i sin egen ruta**. Detta ÄR
   verktyget för yta 3; bygg ingen ny caption-motor.
 - `market-expansion/no/notion-batches/2026-09-05-video-batmotor/lager.py` — bevisad
@@ -186,6 +265,12 @@ Bäverbutiken kvar i bild.
 **Fallgropar:** järnreglerna i `.claude/skills/translate/SKILL.md` gäller oförändrat —
 rendera aldrig före proofread (rendering drar krediter, proofread är gratis), skanna
 alltid källvideon efter inbränd text före leverans, spara session-ID till disk direkt.
+
+⚠️ **Röstkontrollen är obligatorisk också här** (Axels besked 2026-09-08): lyssna på
+hook, mitt och slut i varje renderad fil, och leverera aldrig en keff röst. Rösten går
+inte att välja — HeyGen klonar källans röst och har ingen röstparameter — så den kan
+bara fångas genom att någon lyssnar. Det väger extra tungt för TankGuard: en butik
+utan en enda order har bara annonsen att bygga förtroende med.
 
 **Mätt på TankGuards 14 videor 2026-09-08 (brand-detektorns ögongranskning) — två helt
 olika jobb som lätt förväxlas:**
@@ -201,6 +286,19 @@ olika jobb som lätt förväxlas:**
   pris — och symbolen är osynlig för all textbaserad detektion.
 - ⚠️ En träff sent i filmen betyder alltså INTE slutkort. Positionen kan inte skilja
   dem åt; bara ett öga kan.
+
+**Vad de två jobben konkret ska producera för TankGuard** (spikat 2026-09-08 när
+butikens eget erbjudande blev känt — se `offer:` i produktfilen):
+
+| Jobb | Antal | Verktyg | Vad som byts |
+|---|---|---|---|
+| Undertextraden | 11 videor | `pipeline/no-precis.py` + HeyGen-omdubb | ETT ord i ETT band: "från bäverbutiken" → "från TankGuard". Ingen prisändring — de elva har inget pris i bild. |
+| Slutkortet | 2 videor (`IBC_GT_3_H1` 16,5–17,8 s, `IBC_PD_3_H1` 22,5–24,4 s) | `market-expansion/no/notion-batches/2026-09-05-video-batmotor/lager.py` | ordmärket · **bäversymbolen** (rött huvud som gnager på en gul gren — måste bort, den är osynlig för OCR) · "10 recensioner" (TankGuard har noll) · prisparet **"636 kr 489 kr" → "489 kr"** utan överstrykning, eftersom TankGuard inte har något jämförpris |
+
+⚠️ **Prisparet på slutkortet är lika falskt som brandnamnet.** `636 kr` finns inte
+i TankGuards butik — den överstrukna siffran på produktsidan är en paketsumma
+(1 376 / 2 064 kr), inte ett enstyckspris. Byggs slutkortet om med bara ordmärket
+bytt lovar TankGuard en rabatt butiken inte ger.
 
 ---
 
@@ -254,6 +352,142 @@ hämta ner filen → brand-swappa → ladda upp på nytt till `act_9154227449509
 
 **Klart när:** kampanjen är tillbakaläst ur kontot och `page_id`, `pixel_id`,
 `daily_budget`, länk och status på alla tre nivåer matchar butikens konfig exakt.
+
+### Utökat 2026-09-08 — copy per ANNONS, inte per adset
+
+Källkontots annonser bär **egen copy per annons**, inte en gemensam per koncept:
+40 HeimGuard-annonser hade 32 unika copyvarianter. Både `no-video-launch.mjs`
+och `no-image-launch.mjs` antog en copy per adset, och `no-image-launch.mjs`
+byggde dessutom bara EN annons per adset. Läggs allt under adsetets copy tappas
+det som faktiskt spenderade pengarna.
+
+Båda är därför utökade, bakåtkompatibelt (befintliga vågkonfigar är orörda):
+- `no-video-launch.mjs`: `ad.copy` vinner över `adset.copy`. Saknas båda avbryts körningen.
+- `no-image-launch.mjs`: `adset.ads[]` med `{ adName, img, copy }` per annons.
+  Gamla formen (`adset.adName`/`img`/`copy`) fungerar oförändrat.
+
+Kör video- och bildkonfigen mot **samma** `campaignName` och samma adsetnamn —
+båda skripten återanvänder kampanj och adsets på namn, så bild- och
+videoannonserna hamnar i samma adset i stället för i två parallella strukturer.
+### ✅ Sidrollen — LÖST 2026-09-09
+
+Axel gav full tillgång till sidan, och samma sekund gick alla tio annonserna
+igenom. Avsnittet nedan står kvar för att **kontrollen** är återanvändbar — den
+ska köras på varje ny OPS-butik innan media laddas upp.
+
+### ⛔ Sidrollen — det som stoppade TankGuard (mätt 2026-09-08)
+
+Kampanjen, sex adsets, tio uppladdade creatives och godkänd copy är på plats.
+**Noll annonser kan ändå skapas.** Varje `adcreatives`-anrop svarar:
+
+```
+(#200) Application does not have permission for this action —
+Om du vill skapa inlägg för sidan 1399193996606775 kontaktar du en
+administratör för att få behörighet för rollen Annonsör eller högre.
+```
+
+**Rotorsaken, mätt 2026-09-09 — och den är inte den man först tror.**
+Nyckelns användare är **Axel Odhner själv** (`2012328296147430`). Skillnaden mot
+HeimGuard sitter i hur businessen `1164852855167090` håller de två sidorna:
+
+| | Sida | Businessens relation | Axels roll | Går att annonsera med |
+|---|---|---|---|---|
+| HeimGuard | `1262406533629248` | **`owned_pages`** — businessen äger den | `MANAGE,CREATE_CONTENT,ADVERTISE,…` | ✅ |
+| TankGuard | `1399193996606775` | **`client_pages`** — bara utlånad dit | **ingen alls** | ❌ |
+
+`owned_pages` (4): HeimGuard · Bæverbutiken · BeaverShop · MagiBorsten
+`client_pages` (2): Bäverbutiken.se · **TankGuard**
+
+⚠️ **`client_pages` är inte ägarskap.** Den tidigare noteringen "sidan är verifierad
+i MagiBorstens `client_pages`" (FAS2 rad 23) bevisade bara att businessen *ser*
+sidan. Att skapa ett inlägg med den kräver att den enskilda **användaren** har en
+roll på sidan, och `me/accounts` — 40 sidor per 2026-09-09 — listar den inte.
+Tre kontroller som ser lika ut men svarar på olika frågor:
+
+```
+BIZ/client_pages   → ser businessen sidan?        (TankGuard: JA)
+BIZ/owned_pages    → äger businessen sidan?       (TankGuard: NEJ)
+me/accounts        → har ANVÄNDAREN roll på den?  (TankGuard: NEJ)  ← den som avgör
+```
+
+Bara den tredje avgör om en annons går att skapa. **Kör den kontrollen innan media
+laddas upp**, inte efter — och lägg in den som ett eget steg i `/ny-ops`: en ny
+OPS-sida är inte klar när den existerar, den är klar när `me/accounts` listar den.
+
+**Åtgärd:** ge Axel rollen på TankGuard-sidan i Meta Business
+(`business.facebook.com/settings/pages` → TankGuard → Lägg till personer →
+Hantera sida). Alternativt flytta sidan från `client_pages` till `owned_pages`,
+vilket är det HeimGuard redan har och skälet till att den fungerar.
+
+### Läget 2026-09-08 kväll — skalet står, annonserna saknas
+
+`/ny-annonser tankguard` läste båda källkontona och hela målkontot. Rapporten:
+`factory/output/tankguard/kallannonser.md` (+ `.json`). Allt verifierat står nu
+maskinläsbart i `factory/produkter/tankguard.yaml`.
+
+**Kampanjskalet finns redan i målkontot** — `TANKGUARD_Tanköverdraget SE |
+BE-ROAS 1,62 | 2026-09-08` (`120248995235740172`), byggt 11:18 samma dag av en
+körning som aldrig pushade. CBO 1 000 kr/dag, fyra adsets (GT/CS/SP/PD med
+id:n i produktfilen), rätt pixel, geo SE, allt PAUSED, **0 annonser, 0 kr
+spend**. Nästa körning ska FYLLA det skalet — bygg aldrig ett nytt bredvid, då
+står två TANKGUARD-kampanjer i kontot och datan går inte att skära.
+Någon norsk TankGuard-kampanj finns inte ännu.
+
+### ⚠️ Mediagrinden — den dyraste lärdomen i hela fas 2
+
+**En ren annonstext är inte en ren annons.** Mätt 2026-09-08 på alla 34 svenska
+källannonser (`factory/output/tankguard/se-copy.md`): **24 av 34 creatives bär
+källbutikens påståenden inbränt i bilden eller uppläst i ljudet** — 636 kr,
+23 %-rabatten, fri frakt, Klarna, öppet köp, stjärnbetyg, "lagret krymper" eller
+namnet Bäverbutiken. Meta-texten kan vara oklanderlig och annonsen ändå ljuga i
+pixlarna.
+
+En hel copy-runda (51 agenter) skrev om sju block innan någon kontrollerade
+mediat. Sex av de sju kunde ändå inte gå upp. **Kör grinden FÖRST** — den är
+gratis, den är en join av `brand-ocr.json` mot annonslistan, och den avgör vad
+det ens är lönt att skriva copy till:
+
+```
+✅ ren creative      → copyn kan skrivas, annonsen kan byggas
+⛔ smutsig creative  → mediat måste göras om; copyn blir en brief, inte en annons
+```
+
+Tre saker grinden avslöjade som ingen textgranskning kunde:
+1. **Arbetet lades på fel sju.** De omskrivna blocken var exakt de vars media är
+   smutsig. De sex bevisat rena creativesen behövde ingen copy alls.
+2. **Vinnaren är smutsig.** `PD_1_H1` (16 997 kr, 77 köp, ROAS 2,92) säger
+   brandnamnet högt och visar det i bild — den kan inte köras förrän den dubbats om.
+3. **Det som är rent är obeprövat.** Nio av tio rena creatives är bildannonser
+   med noll köp. En OPS-butik kan alltså inte starta på "det som råkar vara rent";
+   den måste städa vinnaren först.
+
+En fjärde sak dök upp på köpet: att byta bort `636 kr` flyttade ankaret till
+2-packet i fyra av sju block, vilket höjde ingångspriset i majoriteten av kontot
+från 489 till 799 kr (+63 %). **Det är ett erbjudandebeslut, inte ett copybeslut** —
+lägg det hos ägaren innan texterna skrivs, inte efter.
+
+**Källorna, båda ACTIVE:** SE 34 annonser (`120250001079150291`, MagiBorsten,
+2 300 kr/dag), NO 33 annonser (`120251996323340233`, Magiborsten NO,
+1 000 kr/dag). Alla 67 är ACTIVE i ACTIVE-adsets — inget PAUSED-beslut att
+respektera, hela materialet är kandidatmaterial.
+
+**Tre saker NO-halvan visade som SE-halvan inte kunde visa:**
+1. NO speglar SE annons för annons — samma 13 videokoncept, samma 20
+   bildkoncept, och yta 2 faller ut identiskt (11 av 13 säger brandet,
+   `GT_3_H1` och `PD_3_H1` är rena i talet och bär slutkortet i stället).
+2. **Fem norska annonser har brandet i COPYN — noll svenska har det.** Fyra
+   RV-annonser tillskriver recensionen `baverbutiken.se`, alltså den SVENSKA
+   domänen i en norsk annons; felet finns redan i källan. `GT_3_H1` skriver
+   `4,7 av 5 på beverbutikken.no`. Brand-detektorn läser bara SE-kampanjen —
+   kör copy-ytan mot NO-kontot separat, annars går de fem obemärkta.
+3. **Priserna skiljer per marknad:** SE `489/636 kr, 23 %`, NO `439/586 kr,
+   25 %`, båda dessutom `300 kr` (fraktgräns) och `147 kr` (rabattbelopp).
+
+⚠️ **Två ytor är OLÄSTA på de norska annonserna:** inbränd text (13 videor) och
+bildattribution (20 bilder). `ffmpeg` och `rapidocr-onnxruntime` finns inte i
+molncontainern, så de gick inte att OCR:a här. `❔ oläst` är aldrig `ren` — läs
+dem innan något norskt laddas upp. Att den norska SRT:en säger `Beverbutikken`
+gör det sannolikt att den inbrända undertexten gör det också; sannolikt är inte mätt.
 
 ---
 

@@ -185,7 +185,14 @@ Järnreglerna (kostar pengar eller förtroende att bryta):
 1. **Rendera ALDRIG före proofread** — rendering drar HeyGen-credits, proofread är gratis.
 2. **Skanna ALLTID källvideon efter inbränd svensk text före leverans** — HeyGen
    översätter bara ljudet.
-3. Captions är opt-in; max 2 rader. Komprimera aldrig hårdare än 30 MiB-gränsen kräver.
+3. **Kör ALLTID `python3 pipeline/rostkoll.py` på varje renderad video före leverans**
+   (Axels beslut 2026-09-08: ingen video går ut med keff röst). Gratis, bara ffmpeg.
+   Fångar tyst spår, längddrift, avhugget slut och tappat tal. En video med ❌
+   levereras inte — rendera om den eller stryk den. Grönt betyder "inga mätbara fel",
+   inte "godkänd": lyssna själv på den video som ska bära mest spend.
+   Är källan nästan bara musik ska den inte översättas alls — HeyGen har ingen röst
+   att klona och hittar på en.
+4. Captions är opt-in; max 2 rader. Komprimera aldrig hårdare än 30 MiB-gränsen kräver.
 
 Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
@@ -780,3 +787,18 @@ att bygga om det från början.
 De går **inte** att slå ihop rakt av. Ska något återupplivas: hämta det till en
 **egen mapp** — annars försvinner redigerarpanelen och nästa `/dashboard` skriver
 över det du hämtade.
+
+### Självtestet — ett kommando som mäter i stället för att bedöma
+
+```bash
+npm run sjalvtest          # allt som går att mäta utan nycklar och utan webbläsare
+npm run sjalvtest -- --snabb   # utan dry-run mot butikerna
+```
+
+Kör tester, syntax, importer, en dry-run per butik och de tre spärrarna
+(räkningen, villkorsdomen, kadensen). **En kontroll som inte kan köras
+rapporteras som HOPPAD med orsak — aldrig som grön.** Exit 1 vid rött.
+
+⚠️ Grönt självtest är inte en grön butik. Det bevisar att koden håller ihop,
+inte hur sidan ser ut för kunden. Kundvyn kräver `factory/kundvy-kor.mjs` mot
+riktig HTML, och varukorgen kräver en människa i en webbläsare.

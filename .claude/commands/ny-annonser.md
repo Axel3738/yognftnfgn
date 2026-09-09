@@ -121,19 +121,21 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    annonser bär produktens prefix — inte bara den som `kalla.kampanj_id`
    pekar på. En produkt kan ha både en test-ABO och en skalnings-CBO.
 
-3. **Brand-detektorn** (FAS2 uppdrag A). Klassa varje annons över SEX ytor:
-   copy, tal, inbränd text/slutkort, recensionsattribution, priset — **och
-   källbutikens ERBJUDANDEVILLKOR**.
-
-   ⚠️ **Sjätte ytan: villkoren** (funnen 2026-09-09 på HeimGuard, efter att
-   svenska annonser redan laddats upp med felet). Källbutikens annonser bär
-   Bäverbutikens regler — "fri frakt över 300 kr", "30 dagars öppet köp",
-   leveranstider, garantier — i copy, i inbränd text OCH i talet. OPS-butiken
-   har egna: fri frakt utan gräns och 14 dagars ångerrätt enligt svensk lag.
-   Ett kvarglömt "över 300 kr" är ett löfte butiken inte håller.
-   Läs villkoren ur `factory/butiker/<id>.yaml` (`frakt`, `retur`,
-   `garantier`) och jämför mot varje yta.
+3. **Brand-detektorn** (FAS2 uppdrag A):
+   `node factory/brand-detektor.mjs --produkt <id> --hamta`
+   Klassar varje annons över SEX ytor: copy, tal, inbränd text/slutkort,
+   recensionsattribution, priset — och källbutikens ERBJUDANDEVILLKOR.
    Dom per annons: `ren` / `bara-copy` / `kräver-omdubb` / `kräver-slutkortsbygge`.
+
+   Sjätte ytan är kod sedan 2026-09-09: `villkorsskanning.skannaVillkor`
+   jämför källannonsens löften mot butikens EGNA villkor ur
+   `factory/butiker/<id>.yaml` (`frakt`, `retur`, `leveranstid`), och en
+   annons med villkorsfel kan aldrig få domen `ren`. Ytan där felet står
+   avgör priset: tal → omdubb, inbränd → slutkort, copy → gratis.
+   Regel: säger detektorn "ingen butikskonfig hittad" körs jämförelsen INTE
+   — stoppa och peka den på butiken i stället för att lita på domarna.
+   *(Utan den här spärren friades 38 av 40 svenska HeimGuard-annonser; fem bar
+   "fri frakt över 300 kr", två av dem bevisade vinnare.)*
 
    **Priset är lika viktigt som brandnamnet.** Jämför källannonsens pris mot
    OPS-butikens `ekonomi.pris` i produktfilen. Skiljer de sig måste priset
@@ -195,38 +197,34 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
      En SE-fallback i den norska kampanjen visar annonserna i fel land.
    - EU-konton kan kräva `dsa_beneficiary`/`dsa_payor` — kolla innan.
 
-9. **RÄKNINGEN — kommandots viktigaste spärr.** (Axels bakläxa 2026-09-09:
-   TankGuard fick 10 annonser av 33 möjliga och rapporterades som klart.)
-
-   Innan något rapporteras: ställ upp räkningen och visa den i chatten.
+9. **RÄKNINGEN — kommandots viktigaste spärr.** Den är kod sedan 2026-09-09
+   och avgörs av en exitkod, inte av en bedömning:
 
    ```
-   Källannonser:        34
-     rena               20  → ska bli 20 annonser
-     kräver-omdubb      11  → ska bli 11 annonser
-     slutkortsbygge      2  → ska bli 2 annonser
-     okänd               1  → ska INTE laddas upp
-     uteslutna           __  → var och en NAMNGIVEN med vad som krävs
-   Uppladdade i kontot: __  ← läst ur Meta, inte ur minnet
+   node factory/rakning.mjs <butik-id>          # exit 0 = KLART, exit 1 = DELVIS KLART
+   node factory/rakning.mjs <butik-id> --torr   # utan att läsa kontot
    ```
 
-   **Ställ upp räkningen en gång per marknad** — en tabell för SE, en för NO.
-   En marknad som saknar tabell är en marknad du inte gjort.
+   Den läser källdomarna ur `brand-detektor.json` + `kallannonser.json`,
+   läser de faktiskt uppladdade annonserna ur `act_<id>/ads`, och skriver
+   `factory/output/<id>/rakningen.md` med en tabell PER MARKNAD.
+   Visa tabellen i chatten. **Ordet "klart" får bara skrivas när exitkoden
+   är 0.** *(Axels bakläxa: TankGuard fick 10 annonser av 33 och
+   rapporterades som klart.)*
 
-   **Varje rad som inte stämmer ska namnges.** Vilka annonser saknas, och
-   varför saknas var och en. "Resten misslyckades" är inte ett svar —
-   skriv ut namnen.
+   Vad spärren räknar som fel, och som ingen bedömning får runda:
+   - En marknad vars källor inte lästs står som **MARKNADEN INTE LÄST** —
+     aldrig som en nolla. Den norska halvan kan alltså inte glömmas bort.
+   - En annons utan dom är **odömd**, varken ren eller okänd, och räknas som
+     saknad. Domar slås upp på exakt namn — en norsk annons ärver aldrig sin
+     svenska systers dom.
+   - `okänd` och `odömd` laddas aldrig upp och räknas aldrig som förväntade,
+     men redovisas. En ACTIVE annons uppe med sådan dom blockerar "klart".
+   - Media i kontot är INTE en annons — räkningen läser `ads`, aldrig
+     `advideos`/`adimages`.
 
-   ⚠️ **Media i kontot är INTE en annons.** En uppladdad video eller bild
-   ligger i biblioteket tills en creative byggs på den. Räkna annonser med
-   `act_<id>/ads`, aldrig `advideos`/`adimages`.
-
-   ⚠️ **En `okänd` dom laddas aldrig upp.** Den betyder att en yta inte gick
-   att läsa — stäng den först (lyssna, fråga redigeraren), döm sen.
-
-   Är summan lägre än källan: **säg "delvis klart" och lista vad som fattas.**
-   Ordet "klart" får bara skrivas när varje källannons antingen ligger uppe
-   eller står namngiven med sin orsak.
+   Varje saknad rad kommer namngiven med orsak. Saknas orsaken skriver
+   rapporten "orsak saknas — måste namnges"; fyll i den, ta inte bort raden.
 
 10. **Trippelkolla mot kontot.** Läs TILLBAKA hela strukturen ur Meta och
    jämför mot butikens konfig: `page_id`, `pixel_id`, `daily_budget`, länk och
@@ -267,8 +265,10 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] TVÅ kampanjer byggda: `<BRAND>_SE_…` och `<BRAND>_NO_…`
 - [ ] Svensk copy på svenska mot `/`, norsk copy på bokmål mot `/nb`
 - [ ] Allt skapat PAUSED, status explicit på alla tre nivåer
-- [ ] **Räkningen visad:** källannonser per dom vs. uppladdade annonser i kontot
-- [ ] Varje saknad annons NAMNGIVEN med orsak — annars står det "delvis klart"
+- [ ] **`node factory/rakning.mjs <butik-id>` körd och tabellen visad — exit 0,
+      annars står det "delvis klart"**
+- [ ] Varje saknad annons NAMNGIVEN med orsak (rapporten skriver ut vilka)
+- [ ] Ingen marknad står som "MARKNADEN INTE LÄST"
 - [ ] Tillbakaläst ur Meta: sida, pixel, budget, länk och status stämmer
 - [ ] VA:n har sin granskningslista och vet att hon sätter ACTIVE
 - [ ] state + FAS2.md uppdaterade, pushat

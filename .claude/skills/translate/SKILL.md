@@ -11,13 +11,61 @@ Du levererar: färdiga dubbade videor per marknad, zippade i chatten.
 Fråga med AskUserQuestion om något av detta saknas: **marknader** och **priser**
 (eller beskedet att priser ska strykas/ersättas med t.ex. "23 % rabatt").
 
-## Två järnregler (brutna = pengar eller förtroende förlorat)
+## Tre järnregler (brutna = pengar eller förtroende förlorat)
 
 1. **Rendera ALDRIG före proofread.** Rendering drar HeyGen-credits, proofread är gratis.
    Transkriptet ska vara lokaliserat, verifierat och godkänt INNAN generate anropas.
 2. **Skanna ALLTID källvideon efter inbränd text före leverans.** HeyGen översätter bara
    ljudet — svensk text i bild följer med oöversatt. Hittas text: täck och ersätt med
    lokaliserade captions. Annars levereras inga captions (captions är opt-in).
+3. **Kör ALLTID röstkollen på varje renderad video före leverans** (Axels regel
+   2026-09-08: ingen video går ut med keff röst). Proofread läser TEXTEN och säger
+   ingenting om hur rösten låter.
+
+   ```bash
+   python3 pipeline/rostkoll.py --mapp final/ --kallmapp original/ --srtmapp srt-fixed/
+   ```
+
+   Gratis, bara ffmpeg lokalt. Fångar tyst spår, längddrift mot källan, avhugget
+   slut och tappat tal. **En video med ❌ levereras inte** — rendera om den i
+   HeyGens UI eller stryk den ur batchen. Ladda aldrig upp den ändå.
+
+   ⚠️ **Grönt betyder "inga mätbara fel", inte "godkänd".** ffmpeg hör inte
+   skillnad på tal och musik, så bara det som går att mäta mäts. Lyssna själv på
+   minst den video som ska bära mest spend, och redovisa i leveransen att du gjort det.
+
+   ⚠️ **Är källan nästan bara musik ska videon inte översättas alls** — HeyGen har
+   ingen röst att klona och hittar på en. Det var därför `PD_EXTRA` hoppades över
+   i motorhöljesbatchen. Röstkollen flaggar det när källvideon anges.
+3. **Lyssna på varje renderad video innan den levereras. En keff röst går aldrig ut.**
+   (Axels besked 2026-09-08.)
+
+### Röstkontrollen (regel 3)
+
+⚠️ **Det går INTE att välja röst.** `/v2/video_translate` klonar källans röst
+automatiskt — det finns ingen röstparameter i anropet (verifierat i
+`pipeline/heygen.mjs` 2026-09-08). En dålig röst kan alltså inte förebyggas med
+en inställning. Den kan bara **fångas genom att någon lyssnar**.
+
+Lyssna på tre ställen i varje renderad fil — hooken (0–3 s), mitten och slutet:
+
+| Vad du lyssnar efter | Hur det låter när det är fel |
+|---|---|
+| Fel kön eller fel tonläge | rösten byter person mot källvideon |
+| Robotljud / metalliskt | knastrande konsonanter, platt melodi |
+| Fel brytning | svenskt uttal i en norsk dubb, engelsk accent i en svensk |
+| Uppskruvat tempo | rösten hetsar för att hinna med bildens timing |
+| Klippt eller överstyrt ljud | orden kapas i början eller slutet av en cue |
+| Läppsynk som glider | munnen rör sig ur takt sent i filmen |
+
+Låter något av det fel: **leverera inte filen.** Skapa en NY proofread-session för
+just den videon och rendera om (samma sessions-ID går inte att köra om — den är
+låst). Håller rösten inte andra gången heller: lämna videon som väntande med
+orsak i rapporten, och säg det rakt ut. Hellre en video mindre än en annons som
+låter som en robot under ett nytt varumärke.
+
+Redovisa alltid i leveransen hur många filer som lyssnats igenom och hur många som
+renderats om. "QA grön" utan röstraden räknas inte som QA.
 
 ## Miljö
 

@@ -1,6 +1,7 @@
 // Meta-steget: skapar pixeln för en ny OPS-butik i det GEMENSAMMA
-// annonskontot. Sidor kan inte skapas via API (Meta tog bort det) —
-// sidan skapar VA:n själv i Business Manager (VA-checklistans steg 7).
+// annonskontot och ger företagets CAPI-användare tillgång till den. Sidor
+// kan inte skapas via API (Meta tog bort det) — sidan skapar VA:n själv i
+// Business Manager (VA-checklistans Meta-steg).
 //
 //   node factory/meta-setup.mjs factory/produkter/<id>.yaml [--torr]
 //
@@ -12,6 +13,11 @@
 // norska. Det skapas inga nya konton och kontot döps aldrig om —
 // kampanjnamn prefixas med brandet så datan går att skära per butik.
 // Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken).
+//
+// Exportkontrakt (KEDJAN.md):
+//   skapaPixel(namn, { kontoId, foretagId }) → { id }
+//   hamtaPixlar(kontoId) → [{ id, namn }]
+//   tilldelaCapiAnvandare(pixelId) → { tilldelad, ... }
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
@@ -22,6 +28,9 @@ const GRAPH = 'https://graph.facebook.com/v21.0';
 
 // Gemensamma OPS-annonskontot — ändras aldrig (samma konstant i kontroll.mjs).
 export const OPS_ANNONSKONTO = '915422744950975';
+
+// Företaget som äger OPS-kontot. Pixlarna bor här, inte på annonskontot.
+export const OPS_BUSINESS = '1164852855167090'; // MagiBorsten
 
 async function graph(sokvag, { metod = 'GET', form = null } = {}) {
   const token = process.env.META_ACCESS_TOKEN;
@@ -39,8 +48,72 @@ async function graph(sokvag, { metod = 'GET', form = null } = {}) {
   return data;
 }
 
-export async function skapaPixel(adAccountId, namn) {
-  return graph(`/act_${adAccountId}/adspixels`, { metod: 'POST', form: { name: namn } });
+// ⚠️ Kontot kan bara ha EN pixel skapad via /act_<id>/adspixels. Den andra
+// butiken i ordningen får "(#6200) A pixel already exists for this account"
+// och står utan pixel (mätt 2026-09-09: HeimGuard och TankGuard hade redan
+// var sin, DryTrek blev nekad). Rätt väg är att skapa pixeln på FÖRETAGET
+// och sen dela den till annonskontot — då får varje OPS-butik en egen pixel
+// i samma konto, vilket är hela poängen med brandprefixade kampanjer.
+export async function skapaPixel(namn, { kontoId = OPS_ANNONSKONTO, foretagId = OPS_BUSINESS } = {}) {
+  if (!namn) throw new Error('skapaPixel: pixeln behöver ett namn (brandet).');
+  let pixel;
+  try {
+    pixel = await graph(`/act_${kontoId}/adspixels`, { metod: 'POST', form: { name: namn } });
+  } catch (e) {
+    if (!/6200|already exists/i.test(e.message)) throw e;
+    pixel = await graph(`/${foretagId}/adspixels`, { metod: 'POST', form: { name: namn } });
+    await graph(`/${pixel.id}/shared_accounts`, {
+      metod: 'POST',
+      form: { account_id: kontoId, business: foretagId },
+    });
+  }
+  return { id: pixel.id };
+}
+
+// Läser pixlarna kontot når, så en körning kan se om brandet redan har en.
+export async function hamtaPixlar(kontoId = OPS_ANNONSKONTO) {
+  // fields=name måste anges explicit — utan den svarar Graph bara { id } och
+  // namnkollen blir "null" på varje pixel (mätt 2026-09-09).
+  const svar = await graph(`/act_${kontoId}/adspixels`, {});
+  const ut = [];
+  for (const p of svar.data ?? []) {
+    const detalj = await graph(`/${p.id}`, { form: { fields: 'id,name' } });
+    ut.push({ id: p.id, namn: detalj.name ?? null });
+  }
+  return ut;
+}
+
+// Ren hjälpfunktion (testbar): pixeln som redan bär brandets namn, annars null.
+export function hittaBrandpixel(pixlar, brand) {
+  const mal = String(brand ?? '').trim().toLowerCase();
+  if (!mal) return null;
+  return (pixlar ?? []).find((p) => String(p.namn ?? '').trim().toLowerCase() === mal) ?? null;
+}
+
+// Conversions API-tokenen (WeTracked) kan INTE skapas via API:t utan appens
+// hemlighet: POST /<systemanvändare>/access_tokens kräver appsecret_proof
+// (mätt på TankGuard 2026-09-08, kod 100). Den knappen sitter i Events
+// Manager (Data sources → pixeln → Settings → Conversions API → Generate
+// access token) och trycks av VA:n — tokenen ska aldrig passera chatten.
+// Det fabriken KAN göra är att ge företagets befintliga "Conversions API
+// System User" tillgång till den nya pixeln, så knappen fungerar direkt.
+export async function tilldelaCapiAnvandare(pixelId) {
+  const pixel = await graph(`/${pixelId}`, { form: { fields: 'owner_business' } });
+  const business = pixel.owner_business?.id;
+  if (!business) return { tilldelad: false, varfor: 'pixeln saknar owner_business' };
+  const su = await graph(`/${business}/system_users`, { form: { fields: 'id,name,role' } });
+  const capi = (su.data ?? []).find((u) => /conversions api/i.test(u.name ?? ''));
+  if (!capi) {
+    return {
+      tilldelad: false,
+      varfor: `ingen "Conversions API System User" i företag ${business} — VA:n skapar tokenen i Events Manager (Meta skapar användaren då)`,
+    };
+  }
+  await graph(`/${pixelId}/assigned_users`, {
+    metod: 'POST',
+    form: { user: capi.id, tasks: '["ADVERTISE","ANALYZE"]', business },
+  });
+  return { tilldelad: true, anvandare: capi.name, business };
 }
 
 async function huvud() {
@@ -68,8 +141,19 @@ async function huvud() {
   console.log('  (Sidan skapar VA:n i Business Manager — API:t kan inte.)');
   if (torr) { console.log('\n(torrkörning — inget skapades)'); return; }
 
-  const pixel = await skapaPixel(OPS_ANNONSKONTO, brand);
-  console.log(`✅ Pixel skapad: ${pixel.id}`);
+  // Har brandet redan en pixel återanvänds den — annars får varje körning en
+  // ny pixel med samma namn och ingen vet vilken som är den riktiga.
+  const befintliga = await hamtaPixlar(OPS_ANNONSKONTO);
+  const redan = hittaBrandpixel(befintliga, brand);
+  const pixel = redan ?? (await skapaPixel(brand, { kontoId: OPS_ANNONSKONTO, foretagId: OPS_BUSINESS }));
+  console.log(`${redan ? '⏭  Pixel fanns redan' : '✅ Pixel skapad'}: ${pixel.id} ("${brand}")`);
+  console.log(`   Andra pixlar i kontot: ${befintliga.filter((x) => x.id !== pixel.id).map((x) => `${x.namn} ${x.id}`).join(', ') || '(inga)'}`);
+  console.log('   ⚠️ Bäverbutiken.se-pixeln finns i samma konto — ta ALDRIG den.');
+
+  const capi = await tilldelaCapiAnvandare(pixel.id).catch((e) => ({ tilldelad: false, varfor: e.message }));
+  console.log(capi.tilldelad
+    ? `✅ "${capi.anvandare}" har pixeln — Generate access token i Events Manager fungerar direkt.`
+    : `⚠️  CAPI-användaren fick inte pixeln: ${capi.varfor}`);
 
   // Skriv tillbaka till produktfilen så inget hamnar bara i chatten.
   let text = readFileSync(produktfil, 'utf8');
@@ -77,7 +161,8 @@ async function huvud() {
   text = text.replace(/pixel_id: ".*"/, `pixel_id: "${pixel.id}"`);
   writeFileSync(produktfil, text);
   console.log('✅ Produktfilen uppdaterad med id:na.');
-  console.log('\n🖐 Kvar för hand: VA:n skapar sidan i Business Manager + klistrar pixel-id:t i WeTracked.');
+  console.log('\n🖐 Kvar för hand: VA:n skapar sidan i Business Manager, klistrar pixel-id:t i WeTracked och');
+  console.log('   hämtar CAPI-tokenen själv: Events Manager → Data sources → pixeln → Settings → Conversions API → Generate access token → WeTracked.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

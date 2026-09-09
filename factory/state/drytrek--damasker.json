@@ -1,0 +1,226 @@
+{
+  "butik": {
+    "domän": "i1da39-zd.myshopify.com",
+    "namn_i_shopify": "My Store 3",
+    "brand": "DryTrek"
+  },
+  "produkt": "damasker",
+  "steg": {
+    "metafalt": {
+      "klar": true,
+      "antal": 10
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193915617546",
+      "temaNamn": "DryTrek – CRO (utkast)",
+      "sektioner": 6
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193915617546",
+      "filer": [
+        "assets/opf-brand.css",
+        "snippets/ms-head.liquid",
+        "config/settings_data.json"
+      ]
+    },
+    "meny": {
+      "klar": true,
+      "handle": "footer",
+      "orord": false
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 5,
+      "orort": false
+    },
+    "huvudmarknad": {
+      "klar": true,
+      "valuta": "SEK"
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/10617212141834",
+      "handle": "damasker",
+      "status": "ACTIVE"
+    }
+  },
+  "datum": "2026-09-09",
+  "lage": "DELVIS KLART — butiken byggd, annonserna förberedda men inte byggda",
+  "kallkoppling": {
+    "annonskonto": "1867947880635861",
+    "kampanj_id": "120250009391470291",
+    "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+    "utfall_avlast_2026_09_09": "12 198 kr spend, 58 köp, CPA 210 kr över 18 annonser. Vinnaren Damasker_PD_1: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr — 79 % av spenden, 88 % av köpen. Näst bästa vinkel (SP) ligger på ROAS 1,42, alltså UNDER break-even 1,60."
+  },
+  "uppdaterad": "2026-09-09",
+  "forarbete": {
+    "anslutningskontroll": {
+      "klar": true,
+      "resultat": "FEL BUTIK",
+      "domän": "y1sj1i-3d.myshopify.com",
+      "butiksnamn": "TankGuard",
+      "notis": "Token hämtad med client_credentials och sparad som SHOPIFY_ADMIN_TOKEN_tankguard i factory/.env. SHOPIFY_STORE_DOMAIN/SHOPIFY_ADMIN_TOKEN sattes MEDVETET INTE, så inget senare steg kan råka skriva till TankGuard."
+    },
+    "produktdata": {
+      "klar": true,
+      "kalla": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+      "produkt_id": "16454828720477",
+      "pris": 389,
+      "jamforpris": 649,
+      "varianter": 18,
+      "bilder": 22,
+      "recensioner": 0,
+      "notis": "Judge.me svarar number_of_reviews 0 och Loox-metafälten i sidans HTML är null. Källan har alltså NOLL recensioner — slutstegets import har inget att importera."
+    },
+    "paketnivaer_kalla": {
+      "klar": true,
+      "kalla": "kaching-bundles-deal-block-settings i källsidans HTML",
+      "nivaer": "1 par 389 kr (0 %) · 2 par 661,30 kr (15 %, FÖRVALD, badge 'Mest populär') · 3 par 933,60 kr (20 %)",
+      "preselectedDealBarId": "st2b",
+      "notis": "Mitten redan förvald på källan — stämmer med fabriksregeln ⌈n/2⌉. Rådata i output/damasker/kalla-kaching-paket.json, A/B-planen i output/damasker/PAKETNIVAER.md."
+    },
+    "konfig": {
+      "klar": true,
+      "butiksfil": "factory/butiker/drytrek.yaml",
+      "produktfil": "factory/produkter/damasker.yaml",
+      "dry_run": "grön — break-even-ROAS 1,60, marginal 243 SEK, tema-QA grön",
+      "varningar": [
+        "media.gif_problem saknas — redigerarjobb, källan har inga gifar",
+        "media.media_losning saknas — samma sak",
+        "reviews: 0 — källan har inga att importera",
+        "meta.page_id saknas — Meta-sidan skapas av VA:n i BM",
+        "meta.pixel_id saknas — skapas när sidan finns"
+      ]
+    },
+    "checklista": {
+      "klar": true,
+      "fil": "factory/output/damasker/CHECKLISTA.md",
+      "notis": "Genererad med STORE NAME DryTrek, DOMAIN drytrek.se, STORE EMAIL hello@drytrek.se."
+    },
+    "shopify_bygge": {
+      "klar": false,
+      "notis": "Blockerad — ingen butik."
+    },
+    "paket_ab": {
+      "klar": false,
+      "notis": "Planerade i PAKETNIVAER.md, inte byggda."
+    },
+    "bilder_sprak": {
+      "klar": false,
+      "notis": "Tre källbilder har inbränd svensk text (mått, spänne, kardborre) och ska språkversioneras för /nb."
+    },
+    "marknad_no": {
+      "klar": true,
+      "notis": "Marknad Norge ACTIVE, locale nb publicerad och hakad på webPresence."
+    },
+    "pixel": {
+      "klar": true,
+      "id": "945311424682796",
+      "notis": "Skapad på företaget och delad till OPS-kontot — kontot kan bara ha en pixel skapad direkt på sig."
+    },
+    "discord": {
+      "klar": false
+    },
+    "brand_anteckning": {
+      "klar": true,
+      "namn": "DryTrek",
+      "doman": "drytrek.se",
+      "supportmail": "hello@drytrek.se",
+      "domankoll": "RDAP via rdap.org 2026-09-09 (whois saknas i containern) + DNS: drytrek.se LEDIG, drytrek.no LEDIG, drytrek.com TAGEN. Ingen A-post på .se eller .no.",
+      "logga": "Variant B vald av tre — granmörk cirkel, tre toppar, orange torrlinje, ordmärket DRYTREK. GODKÄND av Axel 2026-09-09, ingen ny runda. Filer i output/damasker/logo-a|b|c.png, jämförelsen i logo-varianter.png.",
+      "notis": "Medvetet INTE ett tredje '-Guard' efter HeimGuard och TankGuard."
+    },
+    "recensioner": {
+      "klar": false,
+      "notis": "Källan har NOLL recensioner (Judge.me 0, Loox-metafälten null). Det finns inget att importera. Måste lösas innan butiken tar trafik."
+    },
+    "startsida": {
+      "klar": true,
+      "notis": "Tio sektioner mot produkten damasker. Kollektionssektionen och omdömesslidern utelämnade — enproduktsbutik och noll recensioner. Copyn skriven av en jury-workflow, nb registrerad med värdematchning (27 rader)."
+    },
+    "paket_a": {
+      "klar": true,
+      "notis": "Källans bevisade stege 389 / 661,30 / 933,60 kr med riktiga rabattkoder DAMASKER2PACK och DAMASKER3PACK. Mitten förvald."
+    },
+    "paket_b": {
+      "klar": false,
+      "notis": "Q4-ramverkets bonusnivåer väntar på att bonusprodukten (reflexband) sourcas. Planen i output/damasker/PAKETNIVAER.md."
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "notis": "Alla 18 varianter stod på DENY och hade slutat sälja tyst när saldot tog slut. Nu CONTINUE + tracked:false, tillbakaläst."
+    }
+  },
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "beskrivning",
+      "reviews",
+      "tracking",
+      "doman"
+    ],
+    "tid": "2026-09-09T09:35:19.674Z"
+  },
+  "annonsfas": {
+    "lage": "BLOCKERAD på Meta-sidan",
+    "kalla_se": {
+      "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+      "annonser": 18,
+      "alla_aktiva": true,
+      "vinnare": "Damasker_PD_1 — 9 689 kr, 51 köp, ROAS 2,81"
+    },
+    "kalla_no": {
+      "kampanj": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+      "annonser": 16,
+      "alla_pausade": true,
+      "beslut": "En pausad annons är ett beslut. Den norska kampanjen byggs INTE av källmaterialet."
+    },
+    "brand_detektor": {
+      "ren": 16,
+      "okand": 2,
+      "okanda": [
+        "Damasker_FO_1_H1",
+        "Damasker_SP_4_H1"
+      ],
+      "notis": "De två saknar transkript och har ljudspår — talytan går inte att döma. Laddas inte upp."
+    },
+    "media_i_malkontot": {
+      "antal": 16,
+      "fil": "output/damasker/media-i-malkontot.json"
+    },
+    "copy": {
+      "klar": true,
+      "fil": "factory/annonscopy/damasker-se.json",
+      "vinklar": 6,
+      "notis": "Sex unika copyblock täcker alla 18 annonser. Tre bröt mot järnreglerna."
+    },
+    "rakning": {
+      "kallannonser_se": 18,
+      "ren": 16,
+      "okand": 2,
+      "media_uppe": 16,
+      "annonser_byggda": 0,
+      "varfor": "DryTrek har ingen Meta-sida och API:t kan inte skapa en. Utan page_id går ingen creative att bygga."
+    }
+  },
+  "vantar_pa_manniska": [
+    "Publicera temat \"DryTrek – CRO (utkast)\" — kunden ser Horizon i dag. API-spärrat.",
+    "Sätt svenska som standardspråk — butiken står på en. API-spärrat.",
+    "Testa varukorgen i en webbläsare — molnsessionen har ingen som når ut.",
+    "Skapa Meta-sidan DryTrek i Business Manager — API:t kan inte.",
+    "Köp drytrek.se och koppla den.",
+    "Installera Judge.me och skicka API-token.",
+    "Sourca bonusprodukten (reflexband) så paket B kan byggas.",
+    "Lös recensionsfrågan — källan har inga."
+  ]
+}

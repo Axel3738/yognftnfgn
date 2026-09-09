@@ -1,0 +1,53 @@
+{
+  "BOF_4_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "f3abdbe02e0ca08cd79f78aeb7dc190f"
+  },
+  "BOF_5_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "f9898c7c28c9b7aa20ea8c9271aa0646"
+  },
+  "PD_5_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "e44a6e3f0fccf690fdbf036e460db227"
+  },
+  "PD_4_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "e18f7e4d9e63267d37ddd957af8e0853"
+  },
+  "BOF_3_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "7404403ed8b96e00eafeb5741c1848bf"
+  },
+  "PD_3_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "97033fd162b17c46ce2072427d12b626"
+  },
+  "CO_1_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "14d9d15043d281b77441336865037341"
+  },
+  "GT_2_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "900670c5eee2052a2599d9f3da260f1c"
+  },
+  "PD_2_1": {
+    "klar": true,
+    "typ": "bild",
+    "image_hash": "c960f752b13a5ff68c7e9740903b6823"
+  },
+  "PD_Extra": {
+    "klar": true,
+    "typ": "video",
+    "video_id": "1094252123041841",
+    "thumb": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800965356_1082884310997029_7268804478905600428_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3495b&_nc_ohc=UwzAYvCwR8YQ7kNvwGUNsqe&_nc_oc=AdpToWI7PiQ5ZWayVODu6UsnHmmYWGRcVEiCI_cTtECKQGUOYSLer5g_XT7BB0Hj3YQ&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=APRAPSkEAAAA&_nc_gid=9hGCMTvENjRBPWyg9s2h7Q&_nc_tpa=Q5bMBQL1rQPKNgDXEOcclSxjf28uYVHA7-ZzB9_G5DUNsHYHDzOfShQR-rrhoCf_TAuTmrUTC7MIVYxk9A&oh=00_AQI_yZxoKseqIqJcmj_ZeU_jFoRcSKhOFEOKISorNS2SOw&oe=6AA66D6A"
+  }
+}

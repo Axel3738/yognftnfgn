@@ -59,7 +59,9 @@ export function returpolicy(p) {
   const r = retur(p);
   const dagar = oppetKop(p);
   const eget = dagar && dagar > r.angerratt;
-  return `<h2>Ångerrätt och öppet köp</h2>
+  // Rubriken nämner öppet köp bara när butiken faktiskt ger mer än lagen
+  // (Axels beslut 2026-09-08: svensk lag, inga egna köplöften).
+  return `<h2>${eget ? 'Ångerrätt och öppet köp' : 'Ångerrätt'}</h2>
 <p>Du har enligt distansavtalslagen ${r.angerratt} dagars ångerrätt från den dag du tog emot varan.${
     eget ? ` Vi ger dig utöver det ${dagar} dagars öppet köp.` : ''
   }</p>
@@ -99,8 +101,18 @@ export function fraktpolicy(p) {
     return `<li>${delar.join(': ').replace(/:(?=[^:]*$)/, ',')}</li>`;
   });
 
+  // "Fri frakt" ensamt svarar inte på frågan en norsk besökare har. Står
+  // länderna i konfigen sätts de i raden.
+  const lander = lista(s.lander);
+  const till =
+    lander.length === 0
+      ? ''
+      : lander.length === 1
+        ? ` till ${lander[0]}`
+        : ` till ${lander.slice(0, -1).join(', ')} och ${lander[lander.length - 1]}`;
+
   const rader = [
-    s.kostnad === 0 ? '<li>Fri frakt</li>' : `<li>Frakt: ${kostnad ?? 'anges i kassan'}</li>`,
+    s.kostnad === 0 ? `<li>Fri frakt${till}</li>` : `<li>Frakt${till}: ${kostnad ?? 'anges i kassan'}</li>`,
     ...(gratis ? [`<li>Fri frakt vid köp över ${gratis}</li>`] : []),
     ...extra,
   ];

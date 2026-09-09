@@ -7,86 +7,125 @@
 </head>
 <body style="margin:0; padding-bottom:5rem; background:#fff; color:#111;">
 <style>
-.opf { max-width: 640px; margin: 0 auto; font-family: system-ui, sans-serif; line-height: 1.5; }
-.opf section { padding: 1.5rem 1rem; border-bottom: 1px solid #eee; }
-.opf h1 { font-size: 1.8rem; margin: 0 0 .5rem; }
-.opf h2 { font-size: 1.3rem; }
-.opf img { display: block; max-width: 100%; border-radius: 8px; margin: 0 0 1rem; }
+:root {
+  --ms-accent: #3A3A3A; --ms-accent-ink: #FFFFFF;
+  --ms-ink: #1A1A1A; --ms-ink-soft: color-mix(in srgb, #1A1A1A 66%, #FFFFFF);
+  --ms-ink-faint: color-mix(in srgb, #1A1A1A 44%, #FFFFFF);
+  --ms-surface: #FFFFFF; --ms-surface-2: #F5F5F5; --ms-line: #DDDDDD;
+  --ms-good: #3A3A3A; --ms-radius: 4px;
+  --ms-shadow: 0 1px 2px rgba(18,18,18,.06), 0 8px 24px -12px rgba(18,18,18,.18);
+}
+.opf { max-width: 720px; margin: 0 auto; font-family: system-ui, sans-serif;
+  line-height: 1.55; color: var(--ms-ink); }
+.opf section { padding: clamp(32px, 6vw, 64px) clamp(16px, 4vw, 32px); }
+.opf h1 { font-size: 1.9rem; line-height: 1.15; margin: 0 0 .4rem; }
+.opf h2 { font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.1rem); line-height: 1.15;
+  margin: 0 0 .35em; text-wrap: balance; }
+.opf .opf-eyebrow { display: inline-block; font-size: .78rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ms-accent); margin-bottom: .6em; }
+.opf .opf-lede { margin: 0; color: var(--ms-ink-soft); max-width: 62ch; }
+.opf .opf-media { display: block; width: 100%; height: auto; margin-top: 1.5rem;
+  border-radius: var(--ms-radius); box-shadow: var(--ms-shadow); }
+.opf .opf-hero { padding-top: 16px; }
+.opf .opf-hero img { display: block; width: 100%; border-radius: var(--ms-radius);
+  margin-bottom: 1rem; }
+.opf .opf-brand { margin: 0; font-size: .78rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ms-ink-faint); }
+.opf .opf-vinkel { margin: .2rem 0 .6rem; color: var(--ms-ink-soft); }
 .opf .opf-pris strong { font-size: 1.5rem; }
-.opf .opf-jamfor { color: #888; margin-right: .5rem; }
-.opf .opf-cta { display: inline-block; background: #111; color: #fff; padding: .8rem 2rem;
-  border-radius: 6px; text-decoration: none; font-weight: 600; }
-.opf .opf-checklista { list-style: none; padding: 0; }
-.opf .opf-review { border-left: 3px solid #ddd; margin: 1rem 0; padding: .5rem 1rem; }
-.opf .opf-trust { margin: 0; font-size: .95rem; }
-.opf .opf-stjarnor { color: #f5a623; }
-.opf .opf-faq-rad summary { cursor: pointer; font-weight: 600; padding: .5rem 0; }
+.opf .opf-jamfor { color: var(--ms-ink-faint); margin-right: .5rem; }
+.opf .opf-paket { margin: .3rem 0 .8rem; font-size: .9rem; color: var(--ms-ink-soft); }
+.opf .opf-cta { display: inline-block; background: var(--ms-accent); color: var(--ms-accent-ink);
+  padding: .85rem 2.2rem; border-radius: var(--ms-radius); text-decoration: none;
+  font-weight: 700; box-shadow: var(--ms-shadow); }
+.opf .opf-trust { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: 1rem;
+  padding: 14px; border: 1px solid var(--ms-line); border-radius: var(--ms-radius);
+  background: var(--ms-surface-2); font-size: .85rem; }
+.opf .opf-losning { background: var(--ms-surface-2); }
+.opf .opf-funk-grid { display: grid; gap: 12px; margin-top: 1.25rem; }
+@media (min-width: 750px) { .opf .opf-funk-grid { grid-template-columns: 1fr 1fr; } }
+.opf .opf-funk-kort { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px;
+  border: 1px solid var(--ms-line); border-radius: var(--ms-radius);
+  background: var(--ms-surface); box-shadow: var(--ms-shadow); }
+.opf .opf-bock { flex: none; color: var(--ms-good); font-weight: 700; }
+.opf .opf-funk-lista { margin: 1.5rem 0 0; padding-left: 1.2em; display: grid; gap: .55rem;
+  font-size: .9rem; color: var(--ms-ink-soft); }
+.opf .opf-lifestyle { padding-block: 0; }
+.opf .opf-lifestyle .opf-media { margin-top: 0; }
+.opf .opf-garanti-kort { display: flex; gap: 16px; align-items: flex-start; padding: 20px;
+  border: 1px solid var(--ms-line); border-radius: var(--ms-radius); background: var(--ms-surface-2); }
+.opf .opf-garanti-sigill { flex: none; display: grid; place-items: center; width: 48px; height: 48px;
+  border-radius: 50%; background: var(--ms-surface); border: 1px solid var(--ms-line); font-size: 1.3rem; }
+.opf .opf-garanti-rubrik { margin: 0 0 .3em; font-size: 1.1rem; font-weight: 700; }
+.opf .opf-garanti-lista { margin: 0; padding-left: 1.1em; display: grid; gap: .35rem;
+  color: var(--ms-ink-soft); font-size: .9rem; }
+.opf .opf-garanti-frakt { margin: .6em 0 0; font-size: .78rem; color: var(--ms-ink-faint); }
+.opf .opf-judgeme-ram { border: 2px dashed var(--ms-line); border-radius: var(--ms-radius);
+  padding: 2rem; text-align: center; color: var(--ms-ink-faint); font-size: .9rem; }
+.opf .opf-faq-rad { border-bottom: 1px solid var(--ms-line); }
+.opf .opf-faq-rad summary { cursor: pointer; font-weight: 600; padding: 1rem 0; }
+.opf .opf-faq-rad p { margin: 0 0 1rem; color: var(--ms-ink-soft); }
 .opf-sticky { position: fixed; bottom: 0; left: 0; right: 0; display: flex; gap: 1rem;
-  align-items: center; justify-content: space-between; background: #fff; padding: .6rem 1rem;
-  border-top: 1px solid #ddd; box-shadow: 0 -2px 8px rgba(0,0,0,.08); }
+  align-items: center; justify-content: space-between; background: var(--ms-surface, #fff);
+  padding: .6rem 1rem; border-top: 1px solid var(--ms-line, #ddd);
+  box-shadow: 0 -2px 8px rgba(0,0,0,.08); }
 .opf-sticky .opf-sticky-namn { font-weight: 600; }
+.opf-sticky .opf-cta { display: inline-block; background: var(--ms-accent, #111);
+  color: var(--ms-accent-ink, #fff); padding: .7rem 1.6rem; border-radius: 4px;
+  text-decoration: none; font-weight: 700; }
 </style>
 <div class="opf">
 <section class="opf-hero" id="opf-hero">
+  <img src="https://exempel.se/bilder/nackmagneten-1.jpg" alt="Nackmagneten" loading="eager">
+  <p class="opf-brand">Nackmagneten</p>
   <h1>Nackmagneten</h1>
   <p class="opf-vinkel">Stel nacke efter en dag vid skärmen? Lindring på 10 minuter i soffan.</p>
   <p class="opf-pris"><s class="opf-jamfor">599 kr</s> <strong>399 kr</strong></p>
-  <img src="https://exempel.se/bilder/nackmagneten-1.jpg" alt="Nackmagneten" loading="eager">
+  <p class="opf-paket">2-pack 649 kr (en till jobbet, en hemma)</p>
   <a class="opf-cta" href="#opf-kop">Köp nu</a>
-</section>
-<section class="opf-socialproof" id="opf-socialproof">
-  <p class="opf-trust">
-    <span class="opf-stjarnor" aria-label="4.7 av 5">★★★★★</span>
-    <strong>4.7/5</strong> · 3 recensioner · 30 dagars öppet köp
-  </p>
+  <div class="opf-trust"><span>✓ 14 dagars ångerrätt</span><span>✓ Leveranstid: 5–8 arbetsdagar</span><span>✓ Fri frakt till alla länder</span></div>
 </section>
 <section class="opf-problem" id="opf-problem">
-  <h2>Känner du igen dig?</h2>
-  <ul>
-    <li>Stel nacke och spänningshuvudvärk efter en hel dag vid skärmen</li>
-    <li>Massage och naprapat kostar 700 kr per besök</li>
-  </ul>
-  <p class="opf-losning"><strong>Nackmagneten</strong> — Löser upp spänningarna på 10 minuter hemma i soffan</p>
+  <span class="opf-eyebrow">Känner du igen det?</span>
+  <h2>Klockan är 15 och nacken är redan stel.</h2>
+  <p class="opf-lede">Du sträcker på dig, rullar axlarna, inget hjälper. Kvällen går åt till att må dåligt i soffan.</p>
+  <img class="opf-media" src="https://exempel.se/bilder/nackmagneten-problem.gif" alt="Nackmagneten" loading="lazy">
 </section>
-<section class="opf-benefits" id="opf-benefits">
+<section class="opf-losning" id="opf-losning">
+  <span class="opf-eyebrow">Lösningen</span>
+  <h2>Tio minuter på Nackmagneten löser upp spänningarna</h2>
+  <p class="opf-lede">Nackbågen bär upp huvudet så musklerna vågar släppa, och tryckpunkterna jobbar på nackfästet där värken sitter.</p>
+  <img class="opf-media" src="https://exempel.se/bilder/nackmagneten-losning.gif" alt="Nackmagneten" loading="lazy">
+</section>
+<section class="opf-funktioner" id="opf-funktioner">
   <h2>Det här får du</h2>
-  <ul class="opf-checklista">
-    <li>✓ Löser upp spänningarna på 10 minuter hemma i soffan</li>
-    <li>✓ Engångskostnad i stället för återkommande massagebesök</li>
-  </ul>
-  <h3>Specifikationer</h3>
-  <ul>
+  <div class="opf-funk-grid">
+    <div class="opf-funk-kort"><span class="opf-bock">✓</span><span>Löser upp spänningarna på 10 minuter hemma i soffan</span></div>
+    <div class="opf-funk-kort"><span class="opf-bock">✓</span><span>Engångskostnad i stället för återkommande massagebesök</span></div>
+  </div>
+  <ul class="opf-funk-lista">
     <li>Ergonomisk nackbåge i minnesskum</li>
     <li>Två magnetiska tryckpunkter mot nackfästet</li>
     <li>Väger 340 gram, tål att packas i väskan</li>
   </ul>
 </section>
-<section class="opf-reviews" id="opf-reviews">
-  <h2>Vad kunderna säger</h2>
-  <blockquote class="opf-review">
-    <span class="opf-stjarnor" aria-label="5 av 5">★★★★★</span>
-    <p>Första natten på månader jag sovit utan värk.</p>
-    <cite>Eva L.</cite>
-  </blockquote>
-  <blockquote class="opf-review">
-    <span class="opf-stjarnor" aria-label="5 av 5">★★★★★</span>
-    <p>Skeptisk först. Nu ligger jag på den varje kväll.</p>
-    <cite>Mats H.</cite>
-  </blockquote>
-  <blockquote class="opf-review">
-    <span class="opf-stjarnor" aria-label="4 av 5">★★★★☆</span>
-    <p>Tar några dagar att vänja sig, sen gör den jobbet.</p>
-    <cite>Karin S.</cite>
-  </blockquote>
+<section class="opf-lifestyle" id="opf-lifestyle">
+  <img class="opf-media" src="https://exempel.se/bilder/nackmagneten-soffa.jpg" alt="Nackmagneten" loading="lazy">
 </section>
-<section class="opf-offer" id="opf-offer">
-  <h2>Erbjudandet</h2>
-  <p class="opf-erbjudande">399 kr i stället för 599 kr — spara 200 kr</p>
+<section class="opf-garanti" id="opf-garanti">
+  <div class="opf-garanti-kort">
+    <span class="opf-garanti-sigill" aria-hidden="true">🛡</span>
+    <div>
+      <p class="opf-garanti-rubrik">14 dagars ångerrätt</p>
+      <ul class="opf-garanti-lista">
+      <li>Full återbetalning om du inte känner skillnad</li>
+    </ul>
+      <p class="opf-garanti-frakt">Leveranstid: 5–8 arbetsdagar · Fri frakt till alla länder · Express inom Sverige: 99 kr, 1–2 arbetsdagar</p>
+    </div>
+  </div>
 </section>
-<section class="opf-bundle" id="opf-bundle">
-  <h2>Köp fler och spara</h2>
-  <p class="opf-bundle-rad">2-pack 649 kr (en till jobbet, en hemma)</p>
-  <a class="opf-cta" href="#opf-kop">Välj antal</a>
+<section class="opf-judgeme" id="opf-judgeme" aria-label="Judge.me">
+  <div class="opf-judgeme-ram">Judge.me-widgeten renderas här av appen (3 recensioner i importunderlaget)</div>
 </section>
 <section class="opf-faq" id="opf-faq">
   <h2>Vanliga frågor</h2>
@@ -99,26 +138,11 @@
     <p>Fråga alltid läkare först vid diagnostiserad skada.</p>
   </details>
 </section>
-<section class="opf-shipping" id="opf-shipping">
-  <h2>Leverans</h2>
-  <ul>
-    <li>Leveranstid: 5–8 arbetsdagar</li>
-    <li>Fri frakt till alla länder</li>
-    <li>Express inom Sverige: 99 kr, 1–2 arbetsdagar</li>
-  </ul>
-</section>
-<section class="opf-garanti" id="opf-garanti">
-  <h2>Vår garanti</h2>
-  <ul>
-    <li>🛡 30 dagars öppet köp</li>
-    <li>🛡 Full återbetalning om du inte känner skillnad</li>
-  </ul>
-</section>
 </div>
 <div class="opf-sticky" id="opf-kop">
   <span class="opf-sticky-namn">Nackmagneten</span>
   <span class="opf-sticky-pris">399 kr</span>
-  <a class="opf-cta" href="#opf-hero">Lägg i varukorgen</a>
+  <a class="opf-cta" href="#opf-hero">Köp nu</a>
 </div>
 </body>
 </html>

@@ -1,0 +1,56 @@
+{
+  "BOF_1_1": [
+    "pris/jämförpris",
+    "rabatt",
+    "frakt"
+  ],
+  "BOF_2_1": [
+    "betalning",
+    "retur"
+  ],
+  "BOF_3_1": [],
+  "BOF_4_1": [],
+  "BOF_5_1": [],
+  "BOF_6_1": [
+    "frakt",
+    "betalning"
+  ],
+  "CO_1_1": [],
+  "CS_2_1": [
+    "pris/jämförpris",
+    "rabatt"
+  ],
+  "CS_3_1": [
+    "pris/jämförpris",
+    "rabatt",
+    "frakt",
+    "betalning"
+  ],
+  "CS_4_1": [
+    "pris/jämförpris",
+    "rabatt"
+  ],
+  "GT_2_1": [],
+  "PD_2_1": [],
+  "PD_3_1": [],
+  "PD_4_1": [],
+  "PD_5_1": [],
+  "RV_1_1": [
+    "socialt bevis",
+    "brand"
+  ],
+  "RV_2_1": [
+    "socialt bevis",
+    "brand"
+  ],
+  "RV_3_1": [
+    "rabatt",
+    "socialt bevis",
+    "brand"
+  ],
+  "RV_4_1": [
+    "socialt bevis",
+    "brand"
+  ],
+  "SP_2_1": []
+}

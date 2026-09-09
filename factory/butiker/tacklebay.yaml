@@ -1,0 +1,166 @@
+# Butikskonfig för TackleBay — fiskenischbutik med TVÅ jämlika produkter
+# (Axels beslut 2026-09-09: "båda lika stora"). Underlaget för formen står i
+# factory/FLERPRODUKT.md; produktloopen i ops.mjs byggdes för det här bygget.
+#
+# Bolaget är samma AB som driver Matstrumpor.se och HeimGuard.
+# Adress från allabolag.se via Axels länk 2026-09-07.
+
+butik:
+  id: tacklebay
+  brand: "TackleBay"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@tacklebay.se"
+  land: SE
+  huvudmarknad: Sverige
+  # SE + NO är standard i varje OPS (Axel 2026-09-08). Betalar i SEK tills
+  # NOK slås på i admin — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  valuta: SEK
+  moms_i_pris: true
+  # Flerproduktsbutik: startsidan visar KOLLEKTIONEN, inte en enskild produkt.
+  kollektion:
+    handle: sortimentet
+    titel: "Sortimentet"
+    beskrivning: "<p>Utrustning och presenter för den som fiskar.</p>"
+
+frakt:
+  fri_globalt: true
+  leveranstid: "5–10 arbetsdagar"
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  # Axels beslut 2026-09-08: ALLTID svensk lag, aldrig egna köplöften.
+  # 14 dagar är lagens ångerrätt — sätts aldrig högre.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när VA:n installerat Judge.me i butiken. Tokenen är PER BUTIK
+  # och läggs i env, aldrig i filen.
+  shop_domain: "iahe0c-b1.myshopify.com"
+  token_env: "JUDGEME_TACKLEBAY_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — byggd från noll för TackleBay (Axels regel: strukturen
+# återanvänds mellan butiker, brandingen aldrig).
+#
+# Analys bakom valen:
+#   Vem köper:      TVÅ köpare i samma hushåll. Spöhållaren köps av fiskaren
+#                   själv (30–65, båt/stuga/garage, fler spön än plats).
+#                   Kalendern köps av NÅGON ANNAN — den som ska ge honom en
+#                   present och inte vet vad. Källans egen ingress säger det:
+#                   "Vad ger man den som redan har allt i fiskelådan?"
+#   Problemet:      oordning i utrustningen · presentproblemet
+#   Emotionen:      kontroll ("allt på sin plats") · lättnad ("presenten är löst")
+#   Förväntat brand: en riktig fiskebutik. Sportfiske är en bransch med
+#                   yrkesstolthet — den som säljer dit får inte låta som en
+#                   pryl-shop. Sakligt, robust, torrt. Aldrig utropstecken.
+#   Känsla:         robust, nordisk, saklig, varm i kanten
+#
+# Paletten är djupt sjövatten + mässing. Mässingen är skeddraget och
+# spinnaren — den enda färgen som får ropa, och den bär CTA:n. Ingen
+# rea-röd, inget neon: en fiskebutik säljs av trovärdighet, inte av brus.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Fiskebutiken för den som redan har spöna — ordning i utrustningen, och presenter som faktiskt kommer i vattnet"
+  tonalitet: "Rak och torr. Korta meningar, konkreta substantiv. Inga utropstecken, ingen hype — fiskare känner igen säljsnack direkt."
+  kansla: "robust, nordisk, saklig, varm"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F3F5F4"            # ljus dimma över vattnet
+    yta_djup: "#E7EBEA"
+    mork: "#0F2A33"           # djupt sjövatten — mörka sektioner, sidfot
+    text: "#10222A"
+    text_pa_mork: "#F5F2EA"
+    linje: "#DDE3E2"
+    linje_stark: "#BFC9C8"
+    accent: "#D9A441"         # mässing: skeddraget. Enda färgen som ropar.
+    accent_text: "#12222A"    # mörk text på mässing — vit blir grötig
+    god: "#0F2A33"            # bockar i samma djupa ton, ingen extra färg
+    varning: "#B54708"
+  typografi:
+    rubriker: "archivo_n6"    # kraftig grotesk — tål versaler, känns som utrustning
+    brodtext: "dm_sans_n4"    # neutral och läsbar i långa specstycken
+  form:
+    knapp_radius: 8
+    kort_radius: 12
+    input_radius: 8
+    badge_radius: 6
+  stil:
+    ikoner: "Linjeikoner, 1.9 i stroke. Krok, spö, låda — aldrig emojis i gränssnittet."
+    bilder: "Riktiga foton av utrustning, båt och brygga. Nordiskt gråväder och mässingsglimt, aldrig solnedgångsklyschor eller leende stockmodeller."
+    rubrikstil: "Korta påståenden med eyebrow i versaler. Rubriken säger vad kunden slipper hålla på med."
+    cta: "Solid mässingsknapp med mörk text. Verb och lugn: Lägg i varukorgen, Se sortimentet. Aldrig SISTA CHANSEN."
+    trust: "Diskreta rader med bock i djup sjöblå på ljus yta — ångerrätt, frakt, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt, max 62 tecken per rad. En fiskebutik ska kännas välordnad — det är hela löftet."
+    logo: "Rund emblem: cirkel i djupt sjövatten, en mässingsfärgad fiskekrok över ordmärket TACKLEBAY i versaler, tunn linje och FISHING GEAR under. Fungerar i en färg."
+    favicon: "Samma mörka cirkel med mässingskroken ensam."
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json.
+# Utan det här blocket ärver butiken Matstrumpors startsida ur bas-zip:en
+# (Axels bakläxa 2026-09-09 på DryTrek).
+# ---------------------------------------------------------------------------
+startsida:
+  usp:
+    - "truck:Fri frakt – Sverige & Norge"
+    - "shield:14 dagars ångerrätt"
+    - "star:Betala med Klarna"
+  hero:
+    rubrik: "Allt på sin plats"
+    text: "Utrustning för den som redan fiskar — och presenter till den som redan har allt i lådan."
+    knapp: "Se sortimentet"
+  marquee:
+    - "Fri frakt i Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Trygg betalning med Klarna"
+    - "Skickas från Sverige"
+  sortiment_rubrik: "Sortimentet"
+  berattelse:
+    rubrik: "Fiskeprylar som gör en sak, och gör den bra"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
+    text:
+      - "Vi säljer inte allt. Vi säljer det som löser något konkret: spön som inte trasslar, och en present som inte blir ett presentkort."
+      - "Varje sak i sortimentet är vald för att den håller en säsong i båten, inte för att den fyller en katalog."
+  statement:
+    # Rättad 2026-09-09 tillsammans med produkttexten: spöhållaren är en
+    # transportklämma, inte en väggmontering. "Fyra platser" var fel.
+    rubrik: "Håller ihop spöt hela vägen till vattnet."
+    knapp: "Se sortimentet"
+  trygghet:
+    rubrik: "Handla tryggt hos oss"
+    text:
+      - "Fri frakt till hela Sverige och Norge, och 14 dagars ångerrätt enligt svensk lag."
+      - "Betala som du vill — Klarna, kort, Apple Pay eller Google Pay."
+  faq_rubrik: "Vanliga frågor"
+  faq:
+    - fraga: "Hur snabbt kommer paketet?"
+      svar: "5–10 arbetsdagar, med fri frakt inom Sverige och Norge."
+    - fraga: "Kan jag ångra köpet?"
+      svar: "Ja. Du har 14 dagars ångerrätt enligt svensk lag. Hör av dig till hello@tacklebay.se så löser vi det."
+    - fraga: "Skickar ni till Norge?"
+      svar: "Ja. Norge är en av våra två hemmamarknader och frakten är fri dit också."
+  garanti:
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Ångrar du dig har du 14 dagar på dig enligt svensk lag. Hör av dig så löser vi det."
