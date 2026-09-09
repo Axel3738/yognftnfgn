@@ -321,6 +321,22 @@
    "ocr_grind": "13 svenska videor, 11 norska, 5 slutkort, 22 bilder — noll träffar",
    "manuslangd": "21 manus, alla ≤1,15× källans taltid",
    "tillbakalast": "sida, pixel, geo, länk och status lästa ur Meta per annons"
+  },
+  "11_omtagning_rost": {
+   "status": "PÅGÅR",
+   "orsak": "Axels bakläxa 2026-09-09: rösten jojjade — \"den saktar ner och sen speedar upp hela tiden\".",
+   "rotorsak": "fördela() packade flera repliker i samma cue. HeyGen läser varje cue på cuens egen tid.",
+   "antal": 17,
+   "atgard": [
+    "Nya proofread-sessioner i HeyGens quality-läge (mode: quality, speaker_num 1, speech enhancement).",
+    "Nya manus skrivna mot varje sessions egen cue-budget: en replik per cue.",
+    "Nya renderingar, nya captionspår, annonserna ompekade till nya creatives."
+   ],
+   "matning": {
+    "fore": "2,16-10,29x spridning i tecken/sekund mellan cues",
+    "efter": "1,31-2,07x"
+   },
+   "rors_inte": "De sex replikbytena (PD_1_H1/H2/H3 i båda marknaderna) — 1,45-2,62x, matchar källvideornas egen spridning."
   }
  },
  "uppdaterad": "2026-09-09",
@@ -334,7 +350,7 @@
   "sidroll": "Last 2026-09-09: Axel gav full tillgang till TankGuard-sidan. Alla tio annonserna gick igenom direkt. Rotorsaken var att sidan lag i businessens client_pages men saknades helt i me/accounts — HeimGuard ligger i owned_pages och fungerade darfor."
  },
  "blockerare": {
-  "rostkontroll": "Sjutton omdubbade är inte avlyssnade: sex svenska (SP_3_H1, CS_4_H1, GT_1_H2, SP_1_H1, SP_1_H2, SP_1_H3) och alla elva norska omdubbade är INTE avlyssnade. En molnsession kan inte lyssna. Järnregel 3 gäller: de går inte ACTIVE förrän någon hört hook, mitt och slut.",
+  "rostkontroll": "INGEN har lyssnat på omtagningen. Sjutton videor är omrenderade i quality-läget och mätt jämna i tempo (rostkoll.py), men mätningen säger ingenting om hur rösten LÅTER. Järnregel 3 gäller: de går inte ACTIVE förrän någon hört hook, mitt och slut.",
   "pd_extra": "IBC_PD_Extra ligger uppe utan dom — talet gick aldrig att läsa. PAUSED, annons 120249008687250172."
  }
 }
