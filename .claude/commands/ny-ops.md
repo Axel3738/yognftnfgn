@@ -110,6 +110,16 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    ⚠️ Testa varukorgen på RIKTIGT innan "klart": tom korg → lägg i varan →
    lådan ska glida in, inte skicka kunden till `/cart` (öppen bugg
    2026-09-09, se PROCESS.md).
+   ⚠️ **KÄLLSKANNINGEN — obligatorisk innan butiken lämnas.** Bas-temat är
+   exporterat från Matstrumpor, och TRE mallar bär källbutikens text:
+   `templates/index.json` (hela startsidan — hero, rubriker, kollektionen
+   `strumporna`, produkten `sushi-strumpor`), `sections/footer-group.json`
+   (bolagsblocket med `kundsupport@matstrumpor.se`) och
+   `templates/product.json` (samma supportmejl). Kör
+   `factory/kallskanning.mjs` mot ALLA temats filer och skriv om varje träff
+   till butikens eget innehåll. Rapporten ska vara tom.
+   (Axels bakläxa 2026-09-09: DryTrek gick till förhandsvisning med
+   "Kilometer fyra. Fortfarande torr strumpa." som hero.)
    CRO-temat från `factory/tema/ops-tema.zip`
    (ligger i repot — hämta ALDRIG tema från HeimGuard, Dawn eller
    publika assets) → produkt → metafält →
@@ -171,7 +181,8 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Produktsida med alla opf-sektioner + Judge.me i Appyta, ostylad
 - [ ] Varje variant säljer vidare vid slut i lager (CONTINUE, tracked false)
 - [ ] Varukorgen testad med TOM korg: lådan glider in, ingen redirect till /cart
-- [ ] Startsidan pekar på butikens egen produkt — inte zip:ens sushi-strumpor
+- [ ] Källskanningen REN: ingen Matstrumpor-text kvar i något temaläge
+      (`node factory/kallskanning.mjs` — startsida, footer, produktmall)
 - [ ] Paket A/B med riktiga koder, mitten förvald, bonus + korg-upsell inne
 - [ ] Bilder utan engelsk text, svensk vektortext pålagd
 - [ ] Marknad Norge + locale nb publicerad, allt översatt via translationsRegister, trippelkollat mot /nb

@@ -274,6 +274,13 @@ som genereras per bygge).
   ett fel som inte säger något om vilken fil eller rad det gäller. Skriv
   tomma listor som mallen gör: nyckeln följd av `- ""`, eller bara nyckeln
   med kommentarer under.
+- **Bas-zip:en bär MATSTRUMPORS TEXT i tre mallar** (mätt 2026-09-09):
+  `templates/index.json` (hero, rubriker, kollektionen `strumporna`,
+  produkten `sushi-strumpor`), `sections/footer-group.json` (bolagsblocket
+  med `kundsupport@matstrumpor.se`) och `templates/product.json` (samma
+  mejl). Kör **`factory/kallskanning.mjs`** mot hela temat innan butiken
+  lämnas — rapporten ska vara tom. DryTrek nådde förhandsvisning med
+  "Kilometer fyra. Fortfarande torr strumpa." som hero.
 - **Bas-zip:ens startsida pekar på MATSTRUMPOR** (mätt 2026-09-09 i
   `factory/tema/ops-tema.zip`: `templates/index.json` har
   `produkt.product = "sushi-strumpor"` och `sortiment.collection =
