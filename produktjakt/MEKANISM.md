@@ -1,4 +1,33 @@
-# Mekanismmallen — vad en vinnare faktiskt delar
+# Urvalsmallen — vad en vinnare faktiskt delar
+
+> ## ⚠️ Rättelse 2026-09-09, samma dag som filen skrevs
+>
+> Filen hette först "Mekanismmallen" och vägde mekaniken tyngst. **Det är fel**, och felet
+> står redan utpekat i `docs/temu-vinnar-dna.md`:
+>
+> > **A. STÖRSTA UPPTÄCKTEN.** Vinnarna är inte produkter med bättre mekanism. De är
+> > listningar vars eget material redan är en färdig Meta-annons (7 av 9), riktade mot en
+> > ägare som redan lever med problemet i launchmånaden (8 av 9), i en form som svensk
+> > handel inte har hyllat (6 av 9, resten med ett märkesankare 1,6–3× högre).
+> > Produktjakten är i praktiken **materialjakt + ägarjakt**, inte mekanismjakt.
+>
+> Samma fil listar under **J** vad som varit överviktat i tidigare matriser: *"G- och
+> SP-vinklarna, 'problemlösare', mekanismnyhet"* — och vad som saknats: *"materialöverförbarhet
+> som urvalskriterium"*. Mekanismgrinden 2026-09-09 gick rakt i den fällan.
+>
+> **Två följder, båda mätta samma dag:**
+>
+> 1. **Hyllan dödar inte ensam.** Tre av kontots vinnare säljs billigare av en kedja och vann
+>    ändå: strandtofflorna (Rusta 35 kr), axelbältet (Jula 349 kr), kameran (Tapo 679 kr).
+>    Variabel E är "HÖGT PREDIKTIV, **villkorad**" — den faller bara när ankaret saknas.
+>    Slutsatsen "död för att Sverige säljer den billigare" var för hård.
+> 2. **Wow-testet saknades helt.** Det som bär är leverantörens **rörliga material**: produkten
+>    i bruk inom 3 sekunder, samma produkt, ingen inbränd text. Videon behöver inte ligga på
+>    produktsidan — spöhållarens vinnare var leverantörens TikTok-klipp. Grinden 2026-09-09
+>    tittade bara på en stillbild och kunde därför inte se det som avgör.
+>
+> Läs variablerna nedan med den rangordningen: **ägarpresens först, material näst, mekanik sist.**
+
 
 Framtagen 2026-09-09 ur kontots egna vinnare och förlorare (`docs/temu-vinnar-dna.md`,
 `docs/playbook.md`, produkternas `dna.md`) av tre analyser med var sin lins — mekanik,
