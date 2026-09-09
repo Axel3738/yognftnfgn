@@ -145,11 +145,27 @@ export function hittaOrdernummer(mail) {
   return [...funna];
 }
 
-// Grupperar veckans mail per ärendetyp och rankar på antal.
+// Grupperar veckans ärenden per typ och rankar på antal.
 // `foregaende` är förra veckans motsvarande resultat, för trendpilen.
+//
+// ⚠️ Ett ärende är en TRÅD, inte ett mail. En kund som påminner tre gånger om
+// samma försenade order har ett problem, inte tre — räknas mailen rakt av ser
+// "Var är min order" dubbelt så stort ut som det är, och just de kunderna
+// mailar flest gånger. Trådens FÖRSTA mail avgör typen: det är där ärendet
+// föddes, innan tonen hann bli en annan.
 export function toppArenden(mail, foregaende = {}) {
-  const grupper = new Map();
+  const trader = new Map();
   for (const m of mail) {
+    // Saknas trådnyckel är mailet sin egen tråd.
+    const nyckel = m.tradId || m.id || Symbol('losa');
+    const forra = trader.get(nyckel);
+    if (!forra || new Date(m.datum || 0) < new Date(forra.datum || 0)) {
+      trader.set(nyckel, m);
+    }
+  }
+
+  const grupper = new Map();
+  for (const m of trader.values()) {
     const kat = kategorisera(m);
     if (!grupper.has(kat.id)) {
       grupper.set(kat.id, { id: kat.id, namn: kat.namn, antal: 0, exempel: [] });

@@ -103,3 +103,40 @@ test('toppArenden ger tom trend när förra veckan saknas', () => {
   assert.equal(topp[0].forandring, null);
   assert.equal(topp[0].forra, null);
 });
+
+test('ett ärende är en tråd, inte ett mail', () => {
+  // Kunden påminner tre gånger om samma försenade order. Det är ETT problem.
+  const topp = toppArenden([
+    { tradId: 't1', datum: '2026-09-01T08:00:00Z', amne: 'Var är min order' },
+    { tradId: 't1', datum: '2026-09-03T08:00:00Z', amne: 'Hallå? Var är min order' },
+    { tradId: 't1', datum: '2026-09-05T08:00:00Z', amne: 'Tredje gången: var är min order' },
+  ]);
+  assert.equal(topp.length, 1);
+  assert.equal(topp[0].antal, 1);
+});
+
+test('trådens första mail avgör ärendetypen', () => {
+  // Ärendet föddes som en leveransfråga. Att kunden senare hotar med banken
+  // gör det inte till ett betalningsärende — hotet fångas av hotniva().
+  const topp = toppArenden([
+    { tradId: 't1', datum: '2026-09-05T08:00:00Z', amne: 'Jag bestrider betalningen' },
+    { tradId: 't1', datum: '2026-09-01T08:00:00Z', amne: 'Var är min order' },
+  ]);
+  assert.equal(topp[0].id, 'leverans');
+});
+
+test('skilda trådar räknas var för sig', () => {
+  const topp = toppArenden([
+    { tradId: 't1', datum: '2026-09-01T08:00:00Z', amne: 'Var är min order' },
+    { tradId: 't2', datum: '2026-09-02T08:00:00Z', amne: 'Leverans försenad' },
+  ]);
+  assert.equal(topp[0].antal, 2);
+});
+
+test('mail utan trådnyckel är sin egen tråd', () => {
+  const topp = toppArenden([
+    { id: 'a', amne: 'Var är min order' },
+    { id: 'b', amne: 'Leverans försenad' },
+  ]);
+  assert.equal(topp[0].antal, 2);
+});
