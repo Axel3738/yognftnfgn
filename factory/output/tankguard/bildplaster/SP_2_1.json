@@ -1,0 +1,117 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-media/SP_2_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-bild-ren/SP_2_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    760,
+    88,
+    988,
+    196
+   ],
+   "fyll": [
+    255,
+    255,
+    255
+   ]
+  },
+  {
+   "ruta": [
+    762,
+    100,
+    986,
+    130
+   ],
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "Endelig klart vann i",
+   "font_px": 21
+  },
+  {
+   "ruta": [
+    762,
+    134,
+    986,
+    164
+   ],
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "tanken — ingen alger",
+   "font_px": 21
+  },
+  {
+   "ruta": [
+    762,
+    167,
+    986,
+    196
+   ],
+   "fyll": [
+    255,
+    255,
+    255
+   ],
+   "text": "hele høsten!",
+   "font_px": 21
+  },
+  {
+   "ruta": [
+    762,
+    30,
+    986,
+    68
+   ],
+   "fyll": [
+    42,
+    52,
+    15
+   ]
+  },
+  {
+   "ruta": [
+    750,
+    262,
+    1000,
+    296
+   ],
+   "fyll": [
+    26,
+    36,
+    14
+   ],
+   "text": "Blokkerer UV og sol.",
+   "font_px": 26,
+   "farg": [
+    255,
+    255,
+    255
+   ]
+  },
+  {
+   "ruta": [
+    750,
+    300,
+    1005,
+    344
+   ],
+   "fyll": [
+    26,
+    36,
+    14
+   ],
+   "text": "Passer 1000L-tank",
+   "font_px": 26,
+   "farg": [
+    255,
+    255,
+    255
+   ]
+  }
+ ]
+}

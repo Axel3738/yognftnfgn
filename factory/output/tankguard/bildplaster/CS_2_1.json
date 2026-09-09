@@ -1,0 +1,76 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-media/CS_2_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-bild-ren/CS_2_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    765,
+    234,
+    968,
+    308
+   ],
+   "fyll": "auto",
+   "text": "210D"
+  },
+  {
+   "ruta": [
+    755,
+    332,
+    976,
+    375
+   ],
+   "fyll": "auto",
+   "text": "OXFORD"
+  },
+  {
+   "ruta": [
+    765,
+    399,
+    966,
+    450
+   ],
+   "fyll": "auto",
+   "text": "MOT UV"
+  },
+  {
+   "ruta": [
+    777,
+    528,
+    956,
+    588
+   ],
+   "fyll": "auto",
+   "text": "INGEN"
+  },
+  {
+   "ruta": [
+    789,
+    616,
+    942,
+    665
+   ],
+   "fyll": "auto",
+   "text": "ALGER"
+  },
+  {
+   "ruta": [
+    767,
+    715,
+    963,
+    747
+   ],
+   "fyll": "auto",
+   "text": "PASSER 1000L"
+  },
+  {
+   "ruta": [
+    792,
+    752,
+    938,
+    787
+   ],
+   "fyll": "auto",
+   "text": "IBC-TANK"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-media/CS_3_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-bild-ren/CS_3_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    94,
+    100,
+    990,
+    163
+   ],
+   "fyll": "auto",
+   "text": "210D Oxford stenger lyset"
+  },
+  {
+   "ruta": [
+    335,
+    461,
+    740,
+    504
+   ],
+   "fyll": "auto",
+   "text": "Ingen sprø plast."
+  },
+  {
+   "ruta": [
+    213,
+    1099,
+    868,
+    1130
+   ],
+   "fyll": "auto",
+   "text": "Stopper algeveksten før den starter."
+  }
+ ]
+}

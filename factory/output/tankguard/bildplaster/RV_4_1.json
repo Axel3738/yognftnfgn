@@ -1,0 +1,59 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-media/RV_4_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-bild-ren/RV_4_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    432,
+    64,
+    648,
+    104
+   ],
+   "fyll": "auto",
+   "text": "LÅS"
+  },
+  {
+   "ruta": [
+    398,
+    125,
+    700,
+    158
+   ],
+   "fyll": "auto",
+   "text": "Passer standard 1000L."
+  },
+  {
+   "ruta": [
+    162,
+    198,
+    940,
+    260
+   ],
+   "fyll": "auto",
+   "text": "210D Oxford, glidelås rundt.",
+   "font_px": 44
+  },
+  {
+   "ruta": [
+    115,
+    276,
+    985,
+    325
+   ],
+   "fyll": "auto",
+   "text": "Passer 1000-liters IBC-tank uten",
+   "font_px": 44
+  },
+  {
+   "ruta": [
+    407,
+    346,
+    700,
+    407
+   ],
+   "fyll": "auto",
+   "text": "problem.",
+   "font_px": 44
+  }
+ ]
+}

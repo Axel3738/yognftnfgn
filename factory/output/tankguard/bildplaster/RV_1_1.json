@@ -1,0 +1,59 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-media/RV_1_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-bild-ren/RV_1_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    377,
+    69,
+    706,
+    123
+   ],
+   "fyll": "auto",
+   "text": "210D"
+  },
+  {
+   "ruta": [
+    132,
+    156,
+    975,
+    224
+   ],
+   "fyll": "auto",
+   "text": "Trekket stenger ute",
+   "font_px": 46
+  },
+  {
+   "ruta": [
+    116,
+    231,
+    990,
+    293
+   ],
+   "fyll": "auto",
+   "text": "sollyset, og tanken ser",
+   "font_px": 46
+  },
+  {
+   "ruta": [
+    317,
+    299,
+    800,
+    367
+   ],
+   "fyll": "auto",
+   "text": "penere ut.",
+   "font_px": 46
+  },
+  {
+   "ruta": [
+    388,
+    392,
+    720,
+    419
+   ],
+   "fyll": "auto",
+   "text": "210D Oxford-stoff."
+  }
+ ]
+}

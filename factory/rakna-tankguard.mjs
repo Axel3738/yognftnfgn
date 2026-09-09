@@ -8,15 +8,16 @@
 //     kontot är inte en annons.
 //  2. Källkontona svepts på ALLA kampanjer, inte på ett kampanj-id ur konfigen.
 //     Källkampanjen växer medan bygget pågår — 34 annonser blev 40 på en kväll.
-import { säkerställProxy, alla, logg } from '/home/user/yognftnfgn/tools/meta-lib.mjs';
+import { säkerställProxy, api, alla, logg } from '/home/user/yognftnfgn/tools/meta-lib.mjs';
 import { writeFileSync } from 'node:fs';
 säkerställProxy();
 
 const MÅL = '915422744950975';                 // MagiBorsten DK (alla OPS-butiker)
-const KAMPANJER = {
-  SE: 'TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08',
-  NO: 'TANKGUARD_NO_Tanktrekket | 2026-09-09',
-};
+// Slås upp på ID, aldrig på namn. Kampanjer döps om under bygget — den svenska
+// hette "TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08" när skalet
+// byggdes och "TANKGUARD_SE_Tanköverdraget | 2026-09-08" efteråt. En räkning
+// som letar på namn hittar då ingenting och rapporterar noll byggda annonser.
+const KAMPANJER = { SE: '120248995235740172', NO: '120249012213810172' };
 const KÄLLOR = {
   SE: { act: '1867947880635861', prefix: /^IBC_/ },
   NO: { act: '1050941584152547', prefix: /^IBC-tanktrekk_NO_/ },
@@ -35,12 +36,12 @@ for (const [marknad, k] of Object.entries(KÄLLOR)) {
   logg(`${marknad}: ${träff.length} källannonser med prefixet, i ${kampanjer.length} kampanj(er) (av ${ads.length} i kontot)`);
 }
 
-const mål = await alla(`act_${MÅL}/campaigns`, { fields: 'id,name' }, 200);
-for (const [marknad, namn] of Object.entries(KAMPANJER)) {
-  const k = mål.find((x) => x.name === namn);
-  if (!k) { ut[marknad].byggda = []; logg(`⚠️ ${marknad}: kampanjen "${namn}" hittades inte`); continue; }
+for (const [marknad, kampanjId] of Object.entries(KAMPANJER)) {
+  const k = await api(kampanjId, { params: { fields: 'id,name' } });
+  const namn = k.name;
   const ads = await alla(`${k.id}/ads`, { fields: 'id,name,status,effective_status' }, 200);
   ut[marknad].kampanjId = k.id;
+  ut[marknad].kampanjNamn = namn;
   ut[marknad].byggda = ads.map((a) => ({
     kort: a.name.replace(/^TankGuard_(NO_)?/, ''), namn: a.name, status: a.status, id: a.id,
   })).sort((a, b) => a.kort.localeCompare(b.kort));

@@ -1,0 +1,74 @@
+{
+ "BOF_1_1": {
+  "h1": "210D Oxford mot UV-stråling",
+  "h2": "Blokkerer UV",
+  "fot": "Ingen alger i vannet"
+ },
+ "BOF_2_1": {
+  "h1": "210D Oxford-stoff",
+  "h2": "tåler vær og vind.",
+  "h3": "Glidelås rundt.",
+  "fot": "120×100×116 cm, standard 1000L"
+ },
+ "BOF_6_1": {
+  "h1": "Frosten kommer snart.",
+  "h2": "Beskytt nå.",
+  "fot": "På plass på under to minutter."
+ },
+ "CS_2_1": {
+  "kort1": "210D",
+  "kort2": "OXFORD",
+  "kort3": "MOT UV",
+  "kort4": "INGEN",
+  "kort5": "ALGER",
+  "kort6": "PASSER 1000L",
+  "kort7": "IBC-TANK"
+ },
+ "CS_3_1": {
+  "h1": "210D Oxford stenger lyset",
+  "h3": "Ingen sprø plast.",
+  "fot": "Stopper algeveksten før den starter."
+ },
+ "CS_4_1": {
+  "h1": "Ferdig på under 2 minutter",
+  "h2": "Samme 210D Oxford-stoff som stenger ute lyset",
+  "h3": "Ingen alger igjen.",
+  "knapp": "Beskytt tanken nå"
+ },
+ "RV_1_1": {
+  "stjarnor": "210D",
+  "q1": "Trekket stenger ute",
+  "q2": "sollyset, og tanken ser",
+  "q3": "penere ut.",
+  "namn": "210D Oxford-stoff."
+ },
+ "RV_2_1": {
+  "stjarnor": "LOKK",
+  "q1": "Åpning på toppen — du kommer",
+  "q2": "fortsatt til lokket uten å ta av",
+  "q3": "trekket.",
+  "namn": "Passer 1000L-tank."
+ },
+ "RV_3_1": {
+  "stjarnor": "UV",
+  "namn": "Passer 1000L IBC-tank.",
+  "q1": "Passer på tanken og beskytter mot",
+  "q2": "solen. Blokkerer UV-stråling.",
+  "fot": "210D Oxford-stoff."
+ },
+ "RV_4_1": {
+  "stjarnor": "LÅS",
+  "namn": "Passer standard 1000L.",
+  "q1": "210D Oxford, glidelås rundt.",
+  "q2": "Passer 1000-liters IBC-tank uten",
+  "q3": "problem."
+ },
+ "SP_2_1": {
+  "q1": "Endelig klart vann i",
+  "q2": "tanken — ingen alger",
+  "q3": "hele høsten!",
+  "namn": "Blokkerer UV og sol.",
+  "fot": "Passer 1000L-tank",
+  "stjarnor": ""
+ }
+}

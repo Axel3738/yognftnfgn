@@ -1,0 +1,36 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-media/BOF_1_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-bild-ren/BOF_1_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    92,
+    93,
+    983,
+    155
+   ],
+   "fyll": "auto",
+   "text": "210D Oxford mot UV-stråling"
+  },
+  {
+   "ruta": [
+    329,
+    216,
+    746,
+    276
+   ],
+   "fyll": "auto",
+   "text": "Blokkerer UV"
+  },
+  {
+   "ruta": [
+    377,
+    1103,
+    705,
+    1132
+   ],
+   "fyll": "auto",
+   "text": "Ingen alger i vannet"
+  }
+ ]
+}

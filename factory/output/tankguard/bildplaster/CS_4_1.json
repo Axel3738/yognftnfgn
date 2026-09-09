@@ -1,0 +1,51 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-media/CS_4_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/no-bild-ren/CS_4_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    95,
+    93,
+    989,
+    156
+   ],
+   "fyll": "auto",
+   "text": "Ferdig på under 2 minutter"
+  },
+  {
+   "ruta": [
+    111,
+    223,
+    969,
+    260
+   ],
+   "fyll": "auto",
+   "text": "Samme 210D Oxford-stoff som stenger ute lyset"
+  },
+  {
+   "ruta": [
+    385,
+    283,
+    695,
+    329
+   ],
+   "fyll": "auto",
+   "text": "Ingen alger igjen."
+  },
+  {
+   "ruta": [
+    352,
+    1247,
+    732,
+    1287
+   ],
+   "fyll": "auto",
+   "text": "Beskytt tanken nå",
+   "farg": [
+    255,
+    255,
+    255
+   ]
+  }
+ ]
+}
