@@ -1,0 +1,132 @@
+# Butikskonfig för TANKGUARD (tankguard.se, y1sj1i-3d.myshopify.com).
+# OPS-butik nr 2. Egen butik, helt separat från Bäverbutiken och HeimGuard.
+#
+# ⚠️ HUR DEN HÄR FILEN BLEV TILL — läs innan du litar på den som "beslutet".
+# Butiken byggdes 2026-09-08 UTANFÖR repot och lämnade ingen butiksfil efter
+# sig. Den här filen är skriven 2026-09-09 genom att LÄSA AV den live butiken
+# via Admin-API:t — färgerna ur assets/opf-brand.css, typsnitt och radier ur
+# config/settings_data.json, bolagsuppgifterna ur köpvillkoren och shop-
+# adressen, frakten ur fraktprofilen. Siffrorna och hexkoderna är alltså
+# butikens riktiga värden, inte nya förslag.
+#
+# Analystexterna (positionering, tonalitet, känsla, stil) är däremot en
+# REKONSTRUKTION i efterhand: de beskriver den branding butiken faktiskt bär.
+# Ingen vet i dag exakt hur den ursprungliga brand-analysen var formulerad.
+# Ändras något visuellt ska den här filen vara källan — då blir den beslutet.
+#
+# Bolaget är samma AB som driver Matstrumpor.se och HeimGuard.
+# Adress ur allabolag.se: Sjöhed 160, 442 74 Harestad.
+
+butik:
+  id: tankguard
+  brand: "TankGuard"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@tankguard.se"
+  land: SE
+  huvudmarknad: Sverige
+  # NO-marknaden live 2026-09-08: locale nb publicerad, nb som alternateLocale
+  # på tankguard.se webPresence. Betalar i SEK tills NOK slås på i admin
+  # (API-spärrat i unified markets) — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  valuta: SEK
+  # Avläst i butiken 2026-09-09: shop.taxesIncluded = true, alla varianter
+  # taxable = true. OPS-butikerna räknar alltså MED moms i priset — till
+  # skillnad från Bäverbutiken, som säljer utan moms (Axels besked 2026-08-29).
+  # Break-even räknas därför på nettot, se produkter/tankguard.yaml.
+  moms_i_pris: true
+
+frakt:
+  # Avläst ur fraktprofilen 2026-09-09: "Fri frakt" 0 kr i alla tre zoner
+  # (Sverige, EU, Internationell). Norge ligger i Internationell — därför
+  # stämmer nb-USP:en "Gratis frakt i hele Norge".
+  fri_globalt: true
+  leveranstid: "6–10 arbetsdagar"
+  express:
+    aktiv: false
+
+retur:
+  # Axels beslut 2026-09-08: alltid svensk lag, aldrig egna köplöften.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Tokenen är PER BUTIK och ligger i env, aldrig i filen. TankGuards token
+  # finns ännu inte i den här sessionens miljö — recensionerna importerades
+  # 2026-09-08 med VA:ns token (16 st, snitt 4,81, avläst i butiken 2026-09-09).
+  shop_domain: "y1sj1i-3d.myshopify.com"
+  token_env: "JUDGEME_TANKGUARD_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — TankGuards identitet.
+#
+# Färger, typsnitt och radier är AVLÄSTA ur butiken 2026-09-09 och stämmer
+# exakt med opf-brand.css och settings_data.json. Analysen under är
+# rekonstruerad ur det butiken bär (se filhuvudet).
+#
+#   Vem köper:      villa-, fritidshus- och kolonilottsägare 35–70 som samlar
+#                   regnvatten i en IBC-tank till trädgården.
+#   Problemet:      vattnet blir grönt av alger, och tanken blir spröd i solen.
+#                   Presenningen som skulle skydda blåser av.
+#   Emotionen:      omsorg om något man byggt — inte rädsla, utan skötsel.
+#                   Köpet är att ta hand om sin tank och sitt vatten.
+#   Förväntat brand: praktisk trädgårds- och lantbruksutrustning. Något man
+#                   köper på en välskött lanthandel: rejält, jordnära,
+#                   inte teknikpryligt och inte rea-skrikigt.
+#   Känsla:         jordnära + rejäl + lugn.
+#
+# Paletten är hämtad ur produkten själv: det gröna 210D-oxfordtyget som
+# accent, och en varm beige-sand som ljus yta i stället för kall grå. Den
+# kombinationen läser som "utomhus och slitstarkt" utan att bli kamouflage.
+# Grönt är också den enda färg som får ropa — CTA, bockar och mörka ytor
+# ligger alla i samma gröna familj.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Skydd för regnvattentanken — överdraget som stänger ute ljuset så algerna aldrig kommer igång"
+  tonalitet: "Jordnära och konkret. Talar om tanken, vattnet och årstiderna, aldrig om teknik. Korta meningar, inga utropstecken."
+  kansla: "jordnära, rejäl, praktisk, lugn"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F4F1EA"            # varm sand — lanthandel, inte laboratorium
+    yta_djup: "#E8E3D8"
+    mork: "#1B3325"           # djup granskog — mörka sektioner och sidfot
+    text: "#1A231D"
+    text_pa_mork: "#F3F1EA"
+    linje: "#DDD7CA"
+    linje_stark: "#BFB7A6"
+    accent: "#2A5A3C"         # tygets gröna — CTA och bockar, enda färgen som ropar
+    accent_text: "#FFFFFF"
+    god: "#2A5A3C"
+    varning: "#B45309"
+  typografi:
+    rubriker: "archivo_n7"    # kraftig grotesk — rejält utan att skrika
+    brodtext: "work_sans_n4"  # lugn och lättläst i långa stycken
+  form:
+    knapp_radius: 8
+    kort_radius: 12
+    input_radius: 8
+    badge_radius: 6
+  stil:
+    ikoner: "Linjeikoner i samma gröna som accenten — truck, refresh, lock, shield. Aldrig emojis i gränssnittet."
+    bilder: "Riktiga foton av tanken i en trädgård, i dagsljus. Före/efter på grönt kontra klart vatten. Aldrig stockbilder av leende folk."
+    rubrikstil: "Rubriken beskriver vad kunden slipper: grönt vatten, spröd plast, presenning som blåser av."
+    cta: "Solid grön knapp med vit text. Köp nu. Aldrig REA eller sista chansen."
+    trust: "Diskret rad med bock i grönt på sandfärgad yta — fri frakt, 14 dagars ångerrätt, Klarna."
+    spacing: "Luftigt, generösa sektionsavstånd. Sidan ska kännas ordnad som ett välskött uthus."
+    logo: "Rund emblem: djupgrön cirkel med ordmärket TANKGUARD i versaler, vitt, spärrad text. Bara namnet, ingen symbol. Fungerar i en färg."
+    favicon: "Samma mörkgröna cirkel med ett vitt T."
