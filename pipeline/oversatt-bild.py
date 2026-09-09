@@ -645,12 +645,18 @@ def rita_box(bild, im, b):
     bild = Image.fromarray(arr.astype(np.uint8))
     lager = bild.convert("RGBA")
     if b.get("fyll"):
+        # "alfa": 255 = helt täckande. Behövs på halvgenomskinliga plattor över foto: suddningen
+        # fyller den svenska texten med plattans median (vitare än plattan runt om) och lämnar
+        # en VIT spökskugga som 225 alfa inte döljer (Batmotor_CS_7_1/FM_3_1, mätt 2026-09-09).
+        alfa = int(b.get("alfa", 225 if b["fyll"] == "ljus" else 200))
         platta = Image.new("RGBA", (x1 - x0, y1 - y0),
-                           (248, 248, 248, 225) if b["fyll"] == "ljus" else (10, 14, 18, 200))
+                           (248, 248, 248, alfa) if b["fyll"] == "ljus" else (10, 14, 18, alfa))
         mask = Image.new("L", platta.size, 0)
         ImageDraw.Draw(mask).rounded_rectangle([0, 0, platta.width - 1, platta.height - 1],
                                                radius=int(b.get("radie", 24)), fill=255)
-        platta.putalpha(Image.fromarray((np.asarray(mask) * (225 if b["fyll"] == "ljus" else 200) // 255).astype(np.uint8)))
+        # uint8 × 255 svämmar över i numpy (255·225 mod 256 = 57 → //255 = 0): plattan fick
+        # alfa 0 och "fyll" var ett tomt kommando tills 2026-09-09. Räkna i uint16.
+        platta.putalpha(Image.fromarray((np.asarray(mask).astype(np.uint16) * alfa // 255).astype(np.uint8)))
         lager.alpha_composite(platta, (x0, y0))
     rita = ImageDraw.Draw(lager)
     if b.get("outline") and b.get("rita_ram"):

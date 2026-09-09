@@ -2,6 +2,49 @@
  "_kommentar": "Manuella rutor (mätt ur bilderna 2026-09-09). box=[x0,y0,x1,y1], post=index i den norska formens texter.",
  "Batmotor_BF_7_1": {
   "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      46,
+      1047,
+      305
+     ],
+     "post": 0,
+     "fet": true,
+     "storlek": 72,
+     "rader": 2,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.7,
+     "fyll": "ljus",
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "box": [
+      33,
+      305,
+      1047,
+      402
+     ],
+     "post": 1,
+     "fet": false,
+     "storlek": 40,
+     "rader": 1,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "radie": 0,
+     "alfa": 255
+    }
+   ],
    "1": [
     {
      "box": [
@@ -22,7 +65,8 @@
      "textljus": true
     }
    ]
-  }
+  },
+  "_anm": "halvgenomskinlig platta över foto: rutorna täcker hela plattan och fylls helt (alfa 255) — 225 alfa lämnade en vit spökskugga av den suddade svenska texten"
  },
  "Batmotor_BF_8_1": {
   "box_for_form": {
@@ -110,10 +154,10 @@
    "1": [
     {
      "box": [
-      33,
-      1086,
-      1047,
-      1132
+      235,
+      1082,
+      845,
+      1136
      ],
      "post": 0,
      "fet": true,
@@ -124,10 +168,13 @@
       255,
       255
      ],
-     "textljus": true
+     "textljus": true,
+     "fyll": "mork",
+     "radie": 27
     }
    ]
-  }
+  },
+  "_anm": "fototexten ligger över mörkt skydd med ljusa kanter — suddningen blir svart vid kanterna; en mörk pill (fyll mork) gör det till ett medvetet element"
  },
  "Batmotor_CS_7_1": {
   "box_for_form": {
@@ -135,9 +182,9 @@
     {
      "box": [
       33,
-      55,
+      46,
       1047,
-      390
+      405
      ],
      "post": 0,
      "fet": true,
@@ -148,14 +195,17 @@
       18,
       16
      ],
-     "radavstand": 1.65
+     "radavstand": 1.62,
+     "fyll": "ljus",
+     "radie": 0,
+     "alfa": 255
     },
     {
      "box": [
       33,
-      418,
+      405,
       1047,
-      485
+      499
      ],
      "post": 1,
      "fet": false,
@@ -165,7 +215,10 @@
       19,
       18,
       16
-     ]
+     ],
+     "fyll": "ljus",
+     "radie": 0,
+     "alfa": 255
     }
    ],
    "1": [
@@ -188,7 +241,8 @@
      "textljus": true
     }
    ]
-  }
+  },
+  "_anm": "halvgenomskinlig platta över foto: rutorna täcker hela plattan och fylls helt (alfa 255) — 225 alfa lämnade en vit spökskugga av den suddade svenska texten"
  },
  "Batmotor_FM_3_1": {
   "box_for_form": {
@@ -196,7 +250,7 @@
     {
      "box": [
       33,
-      55,
+      47,
       1047,
       300
      ],
@@ -209,14 +263,17 @@
       18,
       16
      ],
-     "radavstand": 1.72
+     "radavstand": 1.7,
+     "fyll": "ljus",
+     "radie": 0,
+     "alfa": 255
     },
     {
      "box": [
       33,
-      322,
+      300,
       1047,
-      385
+      399
      ],
      "post": 1,
      "fet": false,
@@ -226,7 +283,10 @@
       19,
       18,
       16
-     ]
+     ],
+     "fyll": "ljus",
+     "radie": 0,
+     "alfa": 255
     }
    ],
    "1": [
@@ -248,7 +308,8 @@
      ]
     }
    ]
-  }
+  },
+  "_anm": "halvgenomskinlig platta över foto: rutorna täcker hela plattan och fylls helt (alfa 255) — 225 alfa lämnade en vit spökskugga av den suddade svenska texten"
  },
  "Batmotor_RV_6_1": {
   "box_for_form": {
