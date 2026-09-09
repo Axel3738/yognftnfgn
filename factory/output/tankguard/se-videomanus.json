@@ -2,65 +2,65 @@
   "produkt": "tankguard",
   "marknad": "SE",
   "datum": "2026-09-09",
-  "kalla": "Svenska transkript i market-expansion/no/video-batches/2026-08-29/srt-orig/",
-  "modellpolicy": "Manusraderna för de åtta omskrivna är skrivna av subagent med model sonnet mot docs/copy-regler.md. PD-trions replikbyte är en ren substitution, gjord av huvudsessionen.",
+  "kalla": "Svenska transkript i market-expansion/no/video-batches/2026-08-29/srt-orig/ + HeyGens proofread-SRT (0 krediter)",
+  "modellpolicy": "De åtta omskrivna manusen är skrivna av subagent med model sonnet mot docs/copy-regler.md. PD-trions replikbyte är en ren substitution, gjord av huvudsessionen.",
   "manus": {
     "CS_1_H2": {
       "id": "CS_1_H2",
       "repliker": [
-        "489 kronor fÃ¶r ett IBC-tankÃ¶verdrag.",
+        "489 kronor för ett IBC-tanköverdrag.",
         "Innan frosten kommer.",
-        "Skydda din IBC-tank frÃ¥n alger och UV.",
-        "Redo pÃ¥ under tvÃ¥ minuter.",
-        "489 kronor styck â eller spara 25 % med tre.",
+        "Skydda din IBC-tank från alger och UV.",
+        "Redo på under två minuter.",
+        "489 kronor styck — eller spara 25 % med tre.",
         "Kraftigt oxfordtyg, 210D.",
-        "BlixtlÃ¥s runt hela tanken.",
+        "Blixtlås runt hela tanken.",
         "Passar standard 1000-literstank perfekt.",
-        "Vintern vÃ¤ntar inte.",
-        "489 kronor â bestÃ¤ll innan kylan kommer.",
-        "TankGuard. BestÃ¤ll nu."
+        "Vintern väntar inte.",
+        "489 kronor — beställ innan kylan kommer.",
+        "TankGuard. Beställ nu."
       ],
       "andringar": [
-        "Bytte det pÃ¥hittade 636â489-jÃ¤mfÃ¶rpriset mot TankGuards riktiga flatpris 489 kr och den Ã¤kta 25%-rabatten pÃ¥ 3-pack.",
-        "Ersatte fejkad brÃ¥dska ('bara idag', 'lagret krymper', 'innan det Ã¤r slut') med sÃ¤songsbrÃ¥dska (frost/vinter).",
-        "Tog bort BÃ¤verbutiken, bytte till TankGuard.",
-        "Lade till en mÃ¤tbar produktfakta (under tvÃ¥ minuter) i stÃ¤llet fÃ¶r luftordet 'kampanjpris'."
+        "Bytte det påhittade 636→489-jämförpriset mot TankGuards riktiga flatpris 489 kr och den äkta 25%-rabatten på 3-pack.",
+        "Ersatte fejkad brådska ('bara idag', 'lagret krymper', 'innan det är slut') med säsongsbrådska (frost/vinter).",
+        "Tog bort Bäverbutiken, bytte till TankGuard.",
+        "Lade till en mätbar produktfakta (under två minuter) i stället för luftordet 'kampanjpris'."
       ],
       "tre_fragor": [
         {
-          "rad": "489 kronor fÃ¶r ett IBC-tankÃ¶verdrag.",
+          "rad": "489 kronor för ett IBC-tanköverdrag.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Exakt pris knyter raden till TankGuard, ingen falsk jÃ¤mfÃ¶relse."
+          "kommentar": "Exakt pris knyter raden till TankGuard, ingen falsk jämförelse."
         },
         {
           "rad": "Innan frosten kommer.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Ãkta sÃ¤songsfakta men generisk â gÃ¤ller vilken vinterprodukt som helst."
+          "kommentar": "Äkta säsongsfakta men generisk — gäller vilken vinterprodukt som helst."
         },
         {
-          "rad": "Skydda din IBC-tank frÃ¥n alger och UV.",
+          "rad": "Skydda din IBC-tank från alger och UV.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Grundfunktionen, delas av liknande Ã¶verdrag."
+          "kommentar": "Grundfunktionen, delas av liknande överdrag."
         },
         {
-          "rad": "Redo pÃ¥ under tvÃ¥ minuter.",
+          "rad": "Redo på under två minuter.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "MÃ¤tbar siffra ur produktfaktan, ingen Ã¥sikt."
+          "kommentar": "Mätbar siffra ur produktfaktan, ingen åsikt."
         },
         {
-          "rad": "489 kronor styck â eller spara 25 % med tre.",
+          "rad": "489 kronor styck — eller spara 25 % med tre.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Riktig paketrabatt, inget pÃ¥hittat jÃ¤mfÃ¶rpris."
+          "kommentar": "Riktig paketrabatt, inget påhittat jämförpris."
         },
         {
           "rad": "Kraftigt oxfordtyg, 210D.",
@@ -70,86 +70,86 @@
           "kommentar": "Materialfakta, delas av andra 210D-produkter."
         },
         {
-          "rad": "BlixtlÃ¥s runt hela tanken.",
+          "rad": "Blixtlås runt hela tanken.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Konkret men inte unikt fÃ¶r TankGuard."
+          "kommentar": "Konkret men inte unikt för TankGuard."
         },
         {
           "rad": "Passar standard 1000-literstank perfekt.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "'Perfekt' Ã¤r lÃ¶st, men passformen gÃ¥r att kolla."
+          "kommentar": "'Perfekt' är löst, men passformen går att kolla."
         },
         {
-          "rad": "Vintern vÃ¤ntar inte.",
+          "rad": "Vintern väntar inte.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Ãkta sÃ¤songsbrÃ¥dska ersÃ¤tter det pÃ¥hittade lagerhotet."
+          "kommentar": "Äkta säsongsbrådska ersätter det påhittade lagerhotet."
         },
         {
-          "rad": "489 kronor â bestÃ¤ll innan kylan kommer.",
+          "rad": "489 kronor — beställ innan kylan kommer.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
           "kommentar": "Pris + verklig deadline, ingen fejkad knapphet."
         },
         {
-          "rad": "TankGuard. BestÃ¤ll nu.",
+          "rad": "TankGuard. Beställ nu.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "VarumÃ¤rke + uppmaning, ingen konkurrent kan Ã¤ga namnet."
+          "kommentar": "Varumärke + uppmaning, ingen konkurrent kan äga namnet."
         }
       ]
     },
     "CS_1_H3": {
       "id": "CS_1_H3",
       "repliker": [
-        "210D oxfordtyg, gjort fÃ¶r att stÃ¥ emot vintern.",
-        "Skydda din IBC-tank frÃ¥n alger och UV.",
-        "SÃ¤tts pÃ¥ plats pÃ¥ under tvÃ¥ minuter.",
-        "489 kronor styck, eller spara 18 % med tvÃ¥.",
+        "210D oxfordtyg, gjort för att stå emot vintern.",
+        "Skydda din IBC-tank från alger och UV.",
+        "Sätts på plats på under två minuter.",
+        "489 kronor styck, eller spara 18 % med två.",
         "Blockerar solljus och UV.",
-        "BlixtlÃ¥s runt hela tanken.",
+        "Blixtlås runt hela tanken.",
         "Passar standard tusen liters tank perfekt.",
         "Frosten kommer snart.",
-        "489 kronor â bestÃ¤ll innan kylan kommer.",
-        "TankGuard. BestÃ¤ll nu."
+        "489 kronor — beställ innan kylan kommer.",
+        "TankGuard. Beställ nu."
       ],
       "andringar": [
-        "Bytte 'halva priset' och det falska 636/489-jÃ¤mfÃ¶rpriset mot flatpris 489 kr och Ã¤kta 18%-rabatt pÃ¥ 2-pack.",
-        "Ersatte lagerhotet med sÃ¤songsbrÃ¥dska.",
-        "Tog bort BÃ¤verbutiken.",
-        "Skrev prisbelopp som siffror (489) i stÃ¤llet fÃ¶r bokstÃ¤ver, enligt HeyGen-instruktionen."
+        "Bytte 'halva priset' och det falska 636/489-jämförpriset mot flatpris 489 kr och äkta 18%-rabatt på 2-pack.",
+        "Ersatte lagerhotet med säsongsbrådska.",
+        "Tog bort Bäverbutiken.",
+        "Skrev prisbelopp som siffror (489) i stället för bokstäver, enligt HeyGen-instruktionen."
       ],
       "tre_fragor": [
         {
-          "rad": "210D oxfordtyg, gjort fÃ¶r att stÃ¥ emot vintern.",
+          "rad": "210D oxfordtyg, gjort för att stå emot vintern.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Materialfakta, generisk fÃ¶r liknande tyger."
+          "kommentar": "Materialfakta, generisk för liknande tyger."
         },
         {
-          "rad": "Skydda din IBC-tank frÃ¥n alger och UV.",
+          "rad": "Skydda din IBC-tank från alger och UV.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Grundfunktionen, delas av kategorin."
         },
         {
-          "rad": "SÃ¤tts pÃ¥ plats pÃ¥ under tvÃ¥ minuter.",
+          "rad": "Sätts på plats på under två minuter.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "MÃ¤tbar installationstid."
+          "kommentar": "Mätbar installationstid."
         },
         {
-          "rad": "489 kronor styck, eller spara 18 % med tvÃ¥.",
+          "rad": "489 kronor styck, eller spara 18 % med två.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
@@ -163,7 +163,7 @@
           "kommentar": "Funktionsfakta, delas av liknande produkter."
         },
         {
-          "rad": "BlixtlÃ¥s runt hela tanken.",
+          "rad": "Blixtlås runt hela tanken.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
@@ -181,67 +181,67 @@
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Ãkta sÃ¤songsbrÃ¥dska, ingen fejk."
+          "kommentar": "Äkta säsongsbrådska, ingen fejk."
         },
         {
-          "rad": "489 kronor â bestÃ¤ll innan kylan kommer.",
+          "rad": "489 kronor — beställ innan kylan kommer.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
           "kommentar": "Pris + verklig deadline."
         },
         {
-          "rad": "TankGuard. BestÃ¤ll nu.",
+          "rad": "TankGuard. Beställ nu.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "VarumÃ¤rke + uppmaning."
+          "kommentar": "Varumärke + uppmaning."
         }
       ]
     },
     "GT_1_H1": {
       "id": "GT_1_H1",
       "repliker": [
-        "Vet du nÃ¥gon med en IBC-tank i trÃ¤dgÃ¥rden?",
-        "Ge dem den hÃ¤r presenten.",
-        "Kanske nÃ¥gon som Ã¤lskar sin trÃ¤dgÃ¥rd, men klagat pÃ¥ samma sak i flera somrar.",
+        "Vet du någon med en IBC-tank i trädgården?",
+        "Ge dem den här presenten.",
+        "Kanske någon som älskar sin trädgård, men klagat på samma sak i flera somrar.",
         "Alger i regnvattentanken.",
-        "Ge dem nÃ¥got de faktiskt kommer anvÃ¤nda, inte en pryl i ett skÃ¥p.",
-        "Ett IBC-tankÃ¶verdrag som lÃ¶ser problemet pÃ¥ riktigt.",
-        "Det blir en riktig Ã¶verraskning.",
-        "Ett tag kommer de tro att du glÃ¶mt bort problemet de pratat om hela sommaren.",
-        "Sen Ã¤r tanken skyddad, vattnet klart, och algerna borta.",
-        "Ibland Ã¤r den bÃ¤sta presenten den som lÃ¶ser ett problem nÃ¥gon redan haft lÃ¤nge.",
-        "Ge bort ett IBC-tankÃ¶verdrag.",
+        "Ge dem något de faktiskt kommer använda, inte en pryl i ett skåp.",
+        "Ett IBC-tanköverdrag som löser problemet på riktigt.",
+        "Det blir en riktig överraskning.",
+        "Ett tag kommer de tro att du glömt bort problemet de pratat om hela sommaren.",
+        "Sen är tanken skyddad, vattnet klart, och algerna borta.",
+        "Ibland är den bästa presenten den som löser ett problem någon redan haft länge.",
+        "Ge bort ett IBC-tanköverdrag.",
         "Enkel present, stor uppskattning."
       ],
       "andringar": [
-        "Tog bort hela jag-berÃ¤ttelsen (min man, jag bestÃ¤llde, han visar upp den fÃ¶r grannarna) â TankGuard har noll sÃ¥lda enheter.",
-        "Skrev om till uppmaning till tittaren ('ge dem', 'du') i stÃ¤llet fÃ¶r ett genomfÃ¶rt kÃ¶p.",
-        "Tog bort BÃ¤verbutiken (tvÃ¥ gÃ¥nger).",
-        "BehÃ¶ll presentvinkeln och 12-repliksstrukturen."
+        "Tog bort hela jag-berättelsen (min man, jag beställde, han visar upp den för grannarna) — TankGuard har noll sålda enheter.",
+        "Skrev om till uppmaning till tittaren ('ge dem', 'du') i stället för ett genomfört köp.",
+        "Tog bort Bäverbutiken (två gånger).",
+        "Behöll presentvinkeln och 12-repliksstrukturen."
       ],
       "tre_fragor": [
         {
-          "rad": "Vet du nÃ¥gon med en IBC-tank i trÃ¤dgÃ¥rden?",
+          "rad": "Vet du någon med en IBC-tank i trädgården?",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Generisk Ã¶ppningsfrÃ¥ga, fungerar fÃ¶r vilken IBC-produkt som helst."
+          "kommentar": "Generisk öppningsfråga, fungerar för vilken IBC-produkt som helst."
         },
         {
-          "rad": "Ge dem den hÃ¤r presenten.",
+          "rad": "Ge dem den här presenten.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Uppmaning, inget sakpÃ¥stÃ¥ende att falsifiera."
+          "kommentar": "Uppmaning, inget sakpåstående att falsifiera."
         },
         {
-          "rad": "Kanske nÃ¥gon som Ã¤lskar sin trÃ¤dgÃ¥rd, men klagat pÃ¥ samma sak i flera somrar.",
+          "rad": "Kanske någon som älskar sin trädgård, men klagat på samma sak i flera somrar.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Specifik koppling till algklagomÃ¥l, svÃ¥r att kopiera rakt av."
+          "kommentar": "Specifik koppling till algklagomål, svår att kopiera rakt av."
         },
         {
           "rad": "Alger i regnvattentanken.",
@@ -251,49 +251,49 @@
           "kommentar": "Ren fakta, delas av alla."
         },
         {
-          "rad": "Ge dem nÃ¥got de faktiskt kommer anvÃ¤nda, inte en pryl i ett skÃ¥p.",
+          "rad": "Ge dem något de faktiskt kommer använda, inte en pryl i ett skåp.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Generellt presentresonemang."
         },
         {
-          "rad": "Ett IBC-tankÃ¶verdrag som lÃ¶ser problemet pÃ¥ riktigt.",
+          "rad": "Ett IBC-tanköverdrag som löser problemet på riktigt.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "'PÃ¥ riktigt' lÃ¶st, men algproblemet Ã¤r verifierbart."
+          "kommentar": "'På riktigt' löst, men algproblemet är verifierbart."
         },
         {
-          "rad": "Det blir en riktig Ã¶verraskning.",
+          "rad": "Det blir en riktig överraskning.",
           "visualisera": false,
           "falsifiera": false,
           "ingen_annan": false,
-          "kommentar": "Svagast i manuset â 'riktig' Ã¤r adjektiv utan mÃ¤tbart innehÃ¥ll, behÃ¥llen fÃ¶r rytmen (matchar originalets lika vaga 'Han blev helt Ã¶verraskad')."
+          "kommentar": "Svagast i manuset — 'riktig' är adjektiv utan mätbart innehåll, behållen för rytmen (matchar originalets lika vaga 'Han blev helt överraskad')."
         },
         {
-          "rad": "Ett tag kommer de tro att du glÃ¶mt bort problemet de pratat om hela sommaren.",
+          "rad": "Ett tag kommer de tro att du glömt bort problemet de pratat om hela sommaren.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
           "kommentar": "Specifik, tidsbunden situation kopplad till algsamtalet."
         },
         {
-          "rad": "Sen Ã¤r tanken skyddad, vattnet klart, och algerna borta.",
+          "rad": "Sen är tanken skyddad, vattnet klart, och algerna borta.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Produktutfall, delas av liknande produkter."
         },
         {
-          "rad": "Ibland Ã¤r den bÃ¤sta presenten den som lÃ¶ser ett problem nÃ¥gon redan haft lÃ¤nge.",
+          "rad": "Ibland är den bästa presenten den som löser ett problem någon redan haft länge.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Universell presentsanning, inte unik fÃ¶r TankGuard."
+          "kommentar": "Universell presentsanning, inte unik för TankGuard."
         },
         {
-          "rad": "Ge bort ett IBC-tankÃ¶verdrag.",
+          "rad": "Ge bort ett IBC-tanköverdrag.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
@@ -304,47 +304,47 @@
           "visualisera": false,
           "falsifiera": false,
           "ingen_annan": false,
-          "kommentar": "TvÃ¥ adjektiv, inget att peka pÃ¥ â behÃ¥llen fÃ¶r avslutningens rytm."
+          "kommentar": "Två adjektiv, inget att peka på — behållen för avslutningens rytm."
         }
       ]
     },
     "GT_1_H2": {
       "id": "GT_1_H2",
       "repliker": [
-        "Presenten till trÃ¤dgÃ¥rdsmÃ¤staren som lÃ¶ser algproblemet.",
-        "Ge dem den hÃ¤r presenten.",
-        "Kanske nÃ¥gon som Ã¤lskar sin trÃ¤dgÃ¥rd, men klagat pÃ¥ samma sak i flera somrar.",
+        "Presenten till trädgårdsmästaren som löser algproblemet.",
+        "Ge dem den här presenten.",
+        "Kanske någon som älskar sin trädgård, men klagat på samma sak i flera somrar.",
         "Alger i regnvattentanken.",
-        "Ge dem nÃ¥got de faktiskt kommer anvÃ¤nda, inte en pryl i ett skÃ¥p.",
-        "Ett IBC-tankÃ¶verdrag som lÃ¶ser problemet pÃ¥ riktigt.",
-        "Det blir en riktig Ã¶verraskning.",
-        "Ett tag kommer de tro att du glÃ¶mt bort problemet de pratat om hela sommaren.",
-        "Sen Ã¤r tanken skyddad, vattnet klart, och algerna borta.",
-        "Ibland Ã¤r den bÃ¤sta presenten den som lÃ¶ser ett problem nÃ¥gon redan haft lÃ¤nge.",
-        "Ge bort ett IBC-tankÃ¶verdrag.",
+        "Ge dem något de faktiskt kommer använda, inte en pryl i ett skåp.",
+        "Ett IBC-tanköverdrag som löser problemet på riktigt.",
+        "Det blir en riktig överraskning.",
+        "Ett tag kommer de tro att du glömt bort problemet de pratat om hela sommaren.",
+        "Sen är tanken skyddad, vattnet klart, och algerna borta.",
+        "Ibland är den bästa presenten den som löser ett problem någon redan haft länge.",
+        "Ge bort ett IBC-tanköverdrag.",
         "Enkel present, stor uppskattning."
       ],
       "andringar": [
-        "Bytte Ã¶ppningsrepliken mot en konkret variant utan subjektivt 'perfekta' â behÃ¶ll samma anda (present till trÃ¤dgÃ¥rdsmÃ¤staren).",
-        "Ãvriga rader = samma omskrivna brÃ¶dtext som GT_1_H1 (jag-berÃ¤ttelsen och BÃ¤verbutiken borttagna dÃ¤r ocksÃ¥)."
+        "Bytte öppningsrepliken mot en konkret variant utan subjektivt 'perfekta' — behöll samma anda (present till trädgårdsmästaren).",
+        "Övriga rader = samma omskrivna brödtext som GT_1_H1 (jag-berättelsen och Bäverbutiken borttagna där också)."
       ],
       "tre_fragor": [
         {
-          "rad": "Presenten till trÃ¤dgÃ¥rdsmÃ¤staren som lÃ¶ser algproblemet.",
+          "rad": "Presenten till trädgårdsmästaren som löser algproblemet.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Konkret koppling presentâalgproblem, byter ut det subjektiva 'perfekta'."
+          "kommentar": "Konkret koppling present→algproblem, byter ut det subjektiva 'perfekta'."
         },
         {
-          "rad": "Ge dem den hÃ¤r presenten.",
+          "rad": "Ge dem den här presenten.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Uppmaning."
         },
         {
-          "rad": "Kanske nÃ¥gon som Ã¤lskar sin trÃ¤dgÃ¥rd, men klagat pÃ¥ samma sak i flera somrar.",
+          "rad": "Kanske någon som älskar sin trädgård, men klagat på samma sak i flera somrar.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
@@ -358,49 +358,49 @@
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ge dem nÃ¥got de faktiskt kommer anvÃ¤nda, inte en pryl i ett skÃ¥p.",
+          "rad": "Ge dem något de faktiskt kommer använda, inte en pryl i ett skåp.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ett IBC-tankÃ¶verdrag som lÃ¶ser problemet pÃ¥ riktigt.",
+          "rad": "Ett IBC-tanköverdrag som löser problemet på riktigt.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Det blir en riktig Ã¶verraskning.",
+          "rad": "Det blir en riktig överraskning.",
           "visualisera": false,
           "falsifiera": false,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ett tag kommer de tro att du glÃ¶mt bort problemet de pratat om hela sommaren.",
+          "rad": "Ett tag kommer de tro att du glömt bort problemet de pratat om hela sommaren.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Sen Ã¤r tanken skyddad, vattnet klart, och algerna borta.",
+          "rad": "Sen är tanken skyddad, vattnet klart, och algerna borta.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ibland Ã¤r den bÃ¤sta presenten den som lÃ¶ser ett problem nÃ¥gon redan haft lÃ¤nge.",
+          "rad": "Ibland är den bästa presenten den som löser ett problem någon redan haft länge.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ge bort ett IBC-tankÃ¶verdrag.",
+          "rad": "Ge bort ett IBC-tanköverdrag.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
@@ -418,41 +418,41 @@
     "GT_1_H3": {
       "id": "GT_1_H3",
       "repliker": [
-        "Hon pratar om sin IBC-tank varje sommar. SÃ¥hÃ¤r Ã¶verraskar du henne.",
-        "Ge dem den hÃ¤r presenten.",
-        "Kanske nÃ¥gon som Ã¤lskar sin trÃ¤dgÃ¥rd, men klagat pÃ¥ samma sak i flera somrar.",
+        "Hon pratar om sin IBC-tank varje sommar. Såhär överraskar du henne.",
+        "Ge dem den här presenten.",
+        "Kanske någon som älskar sin trädgård, men klagat på samma sak i flera somrar.",
         "Alger i regnvattentanken.",
-        "Ge dem nÃ¥got de faktiskt kommer anvÃ¤nda, inte en pryl i ett skÃ¥p.",
-        "Ett IBC-tankÃ¶verdrag som lÃ¶ser problemet pÃ¥ riktigt.",
-        "Det blir en riktig Ã¶verraskning.",
-        "Ett tag kommer de tro att du glÃ¶mt bort problemet de pratat om hela sommaren.",
-        "Sen Ã¤r tanken skyddad, vattnet klart, och algerna borta.",
-        "Ibland Ã¤r den bÃ¤sta presenten den som lÃ¶ser ett problem nÃ¥gon redan haft lÃ¤nge.",
-        "Ge bort ett IBC-tankÃ¶verdrag.",
+        "Ge dem något de faktiskt kommer använda, inte en pryl i ett skåp.",
+        "Ett IBC-tanköverdrag som löser problemet på riktigt.",
+        "Det blir en riktig överraskning.",
+        "Ett tag kommer de tro att du glömt bort problemet de pratat om hela sommaren.",
+        "Sen är tanken skyddad, vattnet klart, och algerna borta.",
+        "Ibland är den bästa presenten den som löser ett problem någon redan haft länge.",
+        "Ge bort ett IBC-tanköverdrag.",
         "Enkel present, stor uppskattning."
       ],
       "andringar": [
-        "Bytte Ã¶ppningens jag-form ('Ã¶verraskade jag henne') mot uppmaning till tittaren ('Ã¶verraskar du henne').",
-        "BehÃ¶ll Ã¶ppningens egen vinkel (hon pratar om tanken varje sommar).",
-        "Ãvriga rader = samma omskrivna brÃ¶dtext som GT_1_H1."
+        "Bytte öppningens jag-form ('överraskade jag henne') mot uppmaning till tittaren ('överraskar du henne').",
+        "Behöll öppningens egen vinkel (hon pratar om tanken varje sommar).",
+        "Övriga rader = samma omskrivna brödtext som GT_1_H1."
       ],
       "tre_fragor": [
         {
-          "rad": "Hon pratar om sin IBC-tank varje sommar. SÃ¥hÃ¤r Ã¶verraskar du henne.",
+          "rad": "Hon pratar om sin IBC-tank varje sommar. Såhär överraskar du henne.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Specifik situation + direkt uppmaning till tittaren, ingen jag-berÃ¤ttelse om ett genomfÃ¶rt kÃ¶p."
+          "kommentar": "Specifik situation + direkt uppmaning till tittaren, ingen jag-berättelse om ett genomfört köp."
         },
         {
-          "rad": "Ge dem den hÃ¤r presenten.",
+          "rad": "Ge dem den här presenten.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Kanske nÃ¥gon som Ã¤lskar sin trÃ¤dgÃ¥rd, men klagat pÃ¥ samma sak i flera somrar.",
+          "rad": "Kanske någon som älskar sin trädgård, men klagat på samma sak i flera somrar.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
@@ -466,49 +466,49 @@
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ge dem nÃ¥got de faktiskt kommer anvÃ¤nda, inte en pryl i ett skÃ¥p.",
+          "rad": "Ge dem något de faktiskt kommer använda, inte en pryl i ett skåp.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ett IBC-tankÃ¶verdrag som lÃ¶ser problemet pÃ¥ riktigt.",
+          "rad": "Ett IBC-tanköverdrag som löser problemet på riktigt.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Det blir en riktig Ã¶verraskning.",
+          "rad": "Det blir en riktig överraskning.",
           "visualisera": false,
           "falsifiera": false,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ett tag kommer de tro att du glÃ¶mt bort problemet de pratat om hela sommaren.",
+          "rad": "Ett tag kommer de tro att du glömt bort problemet de pratat om hela sommaren.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Sen Ã¤r tanken skyddad, vattnet klart, och algerna borta.",
+          "rad": "Sen är tanken skyddad, vattnet klart, och algerna borta.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ibland Ã¤r den bÃ¤sta presenten den som lÃ¶ser ett problem nÃ¥gon redan haft lÃ¤nge.",
+          "rad": "Ibland är den bästa presenten den som löser ett problem någon redan haft länge.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se GT_1_H1."
         },
         {
-          "rad": "Ge bort ett IBC-tankÃ¶verdrag.",
+          "rad": "Ge bort ett IBC-tanköverdrag.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
@@ -526,87 +526,87 @@
     "SP_1_H1": {
       "id": "SP_1_H1",
       "repliker": [
-        "SÃ¥ hÃ¤r ser en IBC-tank ut efter tre mÃ¥nader, med och utan Ã¶verdrag.",
-        "Utan skydd vÃ¤xer alger i tanken varje sommar.",
-        "GrÃ¶nt, grumligt vatten. Inte kul.",
-        "Med ett IBC-tankÃ¶verdrag stannar algerna borta.",
-        "Tyget Ã¤r tjockt. 210D Oxford, gjort fÃ¶r att stÃ¥ emot vÃ¤der och sol.",
-        "BlixtlÃ¥set gÃ¶r att det sitter perfekt runt tanken.",
-        "Och det bÃ¤sta: locket gÃ¥r fortfarande att nÃ¥ genom Ã¶ppningen upptill.",
-        "Ingen krÃ¥ngel vid pÃ¥fyllning eller avlÃ¤sning.",
-        "Efter tre mÃ¥nader: kristallklart vatten, inga alger.",
+        "Så här ser en IBC-tank ut efter tre månader, med och utan överdrag.",
+        "Utan skydd växer alger i tanken varje sommar.",
+        "Grönt, grumligt vatten. Inte kul.",
+        "Med ett IBC-tanköverdrag stannar algerna borta.",
+        "Tyget är tjockt. 210D Oxford, gjort för att stå emot väder och sol.",
+        "Blixtlåset gör att det sitter perfekt runt tanken.",
+        "Och det bästa: locket går fortfarande att nå genom öppningen upptill.",
+        "Ingen krångel vid påfyllning eller avläsning.",
+        "Efter tre månader: kristallklart vatten, inga alger.",
         "Tanken ser fortfarande ny ut.",
-        "Skillnaden Ã¤r skyddet â inte turen.",
+        "Skillnaden är skyddet — inte turen.",
         "Det bara fungerar."
       ],
       "andringar": [
-        "Tog bort jag-berÃ¤ttelsen (innan hade jag alger, sen skaffade jag, jag kommer Ã¥t, jag ska fylla pÃ¥) och BÃ¤verbutiken.",
-        "Skrev om till beskrivande fÃ¶re/efter-rader kopplade till bilden i stÃ¤llet fÃ¶r en kunds upplevelse.",
-        "Bytte 'sÃ¥ mÃ¥nga trÃ¤dgÃ¥rdsÃ¤gare vÃ¤ljer' (pÃ¥hittad social proof) mot en konfliktrad: skyddet, inte turen."
+        "Tog bort jag-berättelsen (innan hade jag alger, sen skaffade jag, jag kommer åt, jag ska fylla på) och Bäverbutiken.",
+        "Skrev om till beskrivande före/efter-rader kopplade till bilden i stället för en kunds upplevelse.",
+        "Bytte 'så många trädgårdsägare väljer' (påhittad social proof) mot en konfliktrad: skyddet, inte turen."
       ],
       "tre_fragor": [
         {
-          "rad": "SÃ¥ hÃ¤r ser en IBC-tank ut efter tre mÃ¥nader, med och utan Ã¶verdrag.",
+          "rad": "Så här ser en IBC-tank ut efter tre månader, med och utan överdrag.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Konkret jÃ¤mfÃ¶relse kopplad till bilden."
+          "kommentar": "Konkret jämförelse kopplad till bilden."
         },
         {
-          "rad": "Utan skydd vÃ¤xer alger i tanken varje sommar.",
+          "rad": "Utan skydd växer alger i tanken varje sommar.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Mekanikfakta, gÃ¤ller alla oskyddade tankar."
+          "kommentar": "Mekanikfakta, gäller alla oskyddade tankar."
         },
         {
-          "rad": "GrÃ¶nt, grumligt vatten. Inte kul.",
+          "rad": "Grönt, grumligt vatten. Inte kul.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Beskrivning, delas av kategorin."
         },
         {
-          "rad": "Med ett IBC-tankÃ¶verdrag stannar algerna borta.",
+          "rad": "Med ett IBC-tanköverdrag stannar algerna borta.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Produktmekanik, generisk fÃ¶r kategorin."
+          "kommentar": "Produktmekanik, generisk för kategorin."
         },
         {
-          "rad": "Tyget Ã¤r tjockt. 210D Oxford, gjort fÃ¶r att stÃ¥ emot vÃ¤der och sol.",
+          "rad": "Tyget är tjockt. 210D Oxford, gjort för att stå emot väder och sol.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Materialfakta."
         },
         {
-          "rad": "BlixtlÃ¥set gÃ¶r att det sitter perfekt runt tanken.",
+          "rad": "Blixtlåset gör att det sitter perfekt runt tanken.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "'Perfekt' lÃ¶st, passform Ã¤ndÃ¥ verifierbar."
+          "kommentar": "'Perfekt' löst, passform ändå verifierbar."
         },
         {
-          "rad": "Och det bÃ¤sta: locket gÃ¥r fortfarande att nÃ¥ genom Ã¶ppningen upptill.",
+          "rad": "Och det bästa: locket går fortfarande att nå genom öppningen upptill.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Specifik konstruktionsdetalj (Ã¶ppning upptill)."
+          "kommentar": "Specifik konstruktionsdetalj (öppning upptill)."
         },
         {
-          "rad": "Ingen krÃ¥ngel vid pÃ¥fyllning eller avlÃ¤sning.",
+          "rad": "Ingen krångel vid påfyllning eller avläsning.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Funktionsfakta."
         },
         {
-          "rad": "Efter tre mÃ¥nader: kristallklart vatten, inga alger.",
+          "rad": "Efter tre månader: kristallklart vatten, inga alger.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Bundet till samma tre-mÃ¥nadersbild som hook-raden."
+          "kommentar": "Bundet till samma tre-månadersbild som hook-raden."
         },
         {
           "rad": "Tanken ser fortfarande ny ut.",
@@ -616,100 +616,100 @@
           "kommentar": "Beskrivning, generisk."
         },
         {
-          "rad": "Skillnaden Ã¤r skyddet â inte turen.",
+          "rad": "Skillnaden är skyddet — inte turen.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
-          "kommentar": "Konfliktdriven rad (skydd mot tur), specifik fÃ¶r mekaniken i bilden."
+          "kommentar": "Konfliktdriven rad (skydd mot tur), specifik för mekaniken i bilden."
         },
         {
           "rad": "Det bara fungerar.",
           "visualisera": false,
           "falsifiera": false,
           "ingen_annan": false,
-          "kommentar": "Kort avslutningsrad utan mÃ¤tbart innehÃ¥ll, behÃ¥llen fÃ¶r rytmen."
+          "kommentar": "Kort avslutningsrad utan mätbart innehåll, behållen för rytmen."
         }
       ]
     },
     "SP_1_H2": {
       "id": "SP_1_H2",
       "repliker": [
-        "SÃ¥ lÃ¶ser du algproblemet i tanken. SÃ¥hÃ¤r:",
-        "Utan skydd vÃ¤xer alger i tanken varje sommar.",
-        "GrÃ¶nt, grumligt vatten. Inte kul.",
-        "Med ett IBC-tankÃ¶verdrag stannar algerna borta.",
-        "Tyget Ã¤r tjockt. 210D Oxford, gjort fÃ¶r att stÃ¥ emot vÃ¤der och sol.",
-        "BlixtlÃ¥set gÃ¶r att det sitter perfekt runt tanken.",
-        "Och det bÃ¤sta: locket gÃ¥r fortfarande att nÃ¥ genom Ã¶ppningen upptill.",
-        "Ingen krÃ¥ngel vid pÃ¥fyllning eller avlÃ¤sning.",
-        "Efter tre mÃ¥nader: kristallklart vatten, inga alger.",
+        "Så löser du algproblemet i tanken. Såhär:",
+        "Utan skydd växer alger i tanken varje sommar.",
+        "Grönt, grumligt vatten. Inte kul.",
+        "Med ett IBC-tanköverdrag stannar algerna borta.",
+        "Tyget är tjockt. 210D Oxford, gjort för att stå emot väder och sol.",
+        "Blixtlåset gör att det sitter perfekt runt tanken.",
+        "Och det bästa: locket går fortfarande att nå genom öppningen upptill.",
+        "Ingen krångel vid påfyllning eller avläsning.",
+        "Efter tre månader: kristallklart vatten, inga alger.",
         "Tanken ser fortfarande ny ut.",
-        "Skillnaden Ã¤r skyddet â inte turen.",
+        "Skillnaden är skyddet — inte turen.",
         "Det bara fungerar."
       ],
       "andringar": [
-        "Bytte den fÃ¶rbjudna Ã¶ppningen ('Tusentals svenskar har redan lÃ¶st...') mot ett lÃ¶fte utan pÃ¥hittat kundantal.",
-        "Ãvriga rader = samma omskrivna brÃ¶dtext som SP_1_H1."
+        "Bytte den förbjudna öppningen ('Tusentals svenskar har redan löst...') mot ett löfte utan påhittat kundantal.",
+        "Övriga rader = samma omskrivna brödtext som SP_1_H1."
       ],
       "tre_fragor": [
         {
-          "rad": "SÃ¥ lÃ¶ser du algproblemet i tanken. SÃ¥hÃ¤r:",
+          "rad": "Så löser du algproblemet i tanken. Såhär:",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "LÃ¶fte + kolon-Ã¶vergÃ¥ng, ingen pÃ¥hittad kundsiffra."
+          "kommentar": "Löfte + kolon-övergång, ingen påhittad kundsiffra."
         },
         {
-          "rad": "Utan skydd vÃ¤xer alger i tanken varje sommar.",
-          "visualisera": true,
-          "falsifiera": true,
-          "ingen_annan": false,
-          "kommentar": "Se SP_1_H1."
-        },
-        {
-          "rad": "GrÃ¶nt, grumligt vatten. Inte kul.",
+          "rad": "Utan skydd växer alger i tanken varje sommar.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Med ett IBC-tankÃ¶verdrag stannar algerna borta.",
+          "rad": "Grönt, grumligt vatten. Inte kul.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Tyget Ã¤r tjockt. 210D Oxford, gjort fÃ¶r att stÃ¥ emot vÃ¤der och sol.",
+          "rad": "Med ett IBC-tanköverdrag stannar algerna borta.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "BlixtlÃ¥set gÃ¶r att det sitter perfekt runt tanken.",
+          "rad": "Tyget är tjockt. 210D Oxford, gjort för att stå emot väder och sol.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Och det bÃ¤sta: locket gÃ¥r fortfarande att nÃ¥ genom Ã¶ppningen upptill.",
+          "rad": "Blixtlåset gör att det sitter perfekt runt tanken.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": false,
+          "kommentar": "Se SP_1_H1."
+        },
+        {
+          "rad": "Och det bästa: locket går fortfarande att nå genom öppningen upptill.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Ingen krÃ¥ngel vid pÃ¥fyllning eller avlÃ¤sning.",
+          "rad": "Ingen krångel vid påfyllning eller avläsning.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Efter tre mÃ¥nader: kristallklart vatten, inga alger.",
+          "rad": "Efter tre månader: kristallklart vatten, inga alger.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
@@ -723,7 +723,7 @@
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Skillnaden Ã¤r skyddet â inte turen.",
+          "rad": "Skillnaden är skyddet — inte turen.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
@@ -741,82 +741,82 @@
     "SP_1_H3": {
       "id": "SP_1_H3",
       "repliker": [
-        "Det hÃ¤r Ã¤r anledningen till att algerna fÃ¶rsvinner.",
-        "Utan skydd vÃ¤xer alger i tanken varje sommar.",
-        "GrÃ¶nt, grumligt vatten. Inte kul.",
-        "Med ett IBC-tankÃ¶verdrag stannar algerna borta.",
-        "Tyget Ã¤r tjockt. 210D Oxford, gjort fÃ¶r att stÃ¥ emot vÃ¤der och sol.",
-        "BlixtlÃ¥set gÃ¶r att det sitter perfekt runt tanken.",
-        "Och det bÃ¤sta: locket gÃ¥r fortfarande att nÃ¥ genom Ã¶ppningen upptill.",
-        "Ingen krÃ¥ngel vid pÃ¥fyllning eller avlÃ¤sning.",
-        "Efter tre mÃ¥nader: kristallklart vatten, inga alger.",
+        "Det här är anledningen till att algerna försvinner.",
+        "Utan skydd växer alger i tanken varje sommar.",
+        "Grönt, grumligt vatten. Inte kul.",
+        "Med ett IBC-tanköverdrag stannar algerna borta.",
+        "Tyget är tjockt. 210D Oxford, gjort för att stå emot väder och sol.",
+        "Blixtlåset gör att det sitter perfekt runt tanken.",
+        "Och det bästa: locket går fortfarande att nå genom öppningen upptill.",
+        "Ingen krångel vid påfyllning eller avläsning.",
+        "Efter tre månader: kristallklart vatten, inga alger.",
         "Tanken ser fortfarande ny ut.",
-        "Skillnaden Ã¤r skyddet â inte turen.",
+        "Skillnaden är skyddet — inte turen.",
         "Det bara fungerar."
       ],
       "andringar": [
-        "Bytte den fÃ¶rbjudna Ã¶ppningen ('kunderna Ã¤lskar det hÃ¤r Ã¶verdraget') mot en mekanikrad utan kundomdÃ¶me.",
-        "Ãvriga rader = samma omskrivna brÃ¶dtext som SP_1_H1."
+        "Bytte den förbjudna öppningen ('kunderna älskar det här överdraget') mot en mekanikrad utan kundomdöme.",
+        "Övriga rader = samma omskrivna brödtext som SP_1_H1."
       ],
       "tre_fragor": [
         {
-          "rad": "Det hÃ¤r Ã¤r anledningen till att algerna fÃ¶rsvinner.",
+          "rad": "Det här är anledningen till att algerna försvinner.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
-          "kommentar": "Kopplar till mekaniken i stÃ¤llet fÃ¶r ett kundomdÃ¶me."
+          "kommentar": "Kopplar till mekaniken i stället för ett kundomdöme."
         },
         {
-          "rad": "Utan skydd vÃ¤xer alger i tanken varje sommar.",
-          "visualisera": true,
-          "falsifiera": true,
-          "ingen_annan": false,
-          "kommentar": "Se SP_1_H1."
-        },
-        {
-          "rad": "GrÃ¶nt, grumligt vatten. Inte kul.",
+          "rad": "Utan skydd växer alger i tanken varje sommar.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Med ett IBC-tankÃ¶verdrag stannar algerna borta.",
+          "rad": "Grönt, grumligt vatten. Inte kul.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Tyget Ã¤r tjockt. 210D Oxford, gjort fÃ¶r att stÃ¥ emot vÃ¤der och sol.",
+          "rad": "Med ett IBC-tanköverdrag stannar algerna borta.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "BlixtlÃ¥set gÃ¶r att det sitter perfekt runt tanken.",
+          "rad": "Tyget är tjockt. 210D Oxford, gjort för att stå emot väder och sol.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Och det bÃ¤sta: locket gÃ¥r fortfarande att nÃ¥ genom Ã¶ppningen upptill.",
+          "rad": "Blixtlåset gör att det sitter perfekt runt tanken.",
+          "visualisera": true,
+          "falsifiera": true,
+          "ingen_annan": false,
+          "kommentar": "Se SP_1_H1."
+        },
+        {
+          "rad": "Och det bästa: locket går fortfarande att nå genom öppningen upptill.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Ingen krÃ¥ngel vid pÃ¥fyllning eller avlÃ¤sning.",
+          "rad": "Ingen krångel vid påfyllning eller avläsning.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": false,
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Efter tre mÃ¥nader: kristallklart vatten, inga alger.",
+          "rad": "Efter tre månader: kristallklart vatten, inga alger.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
@@ -830,7 +830,7 @@
           "kommentar": "Se SP_1_H1."
         },
         {
-          "rad": "Skillnaden Ã¤r skyddet â inte turen.",
+          "rad": "Skillnaden är skyddet — inte turen.",
           "visualisera": true,
           "falsifiera": true,
           "ingen_annan": true,
