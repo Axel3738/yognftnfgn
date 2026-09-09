@@ -21,9 +21,24 @@ const MARKNAD = (process.argv[2] || 'no').toLowerCase();
 
 const ZONER = {
   no:  { zon: [860, 960],  standard_cy: 912 },
+  no2: { zon: [860, 960],  standard_cy: 912 },
   se:  { zon: [860, 960],  standard_cy: 908 },
   se2: { zon: [900, 1040], standard_cy: 971 },
   se3: { zon: [860, 960],  standard_cy: 908 },
+  se4: { zon: [860, 960],  standard_cy: 908 },
+};
+
+// ⚠️ En uppsättning kan blanda creatives med olika layout. CS_4_H1 kom till
+// senare och har captionbandet 60 px längre ner än de andra åtta i se4.
+// En zon per marknad räcker inte — mät per video när de inte är byggda lika.
+const PER_VIDEO = {
+  'se4:CS_4_H1': { zon: [900, 1040], standard_cy: 971 },
+};
+
+// Statiska PNG-lager som ska ligga kvar oavsett omdubb. CS_4_H1 bär ett andra
+// inbränt piller mitt i bilden som captionbytet aldrig rör.
+const LAGER = {
+  'se4:CS_4_H1': [{ png: `${S}/lager-CS_4_H1.png`, t: [0, 7.45] }],
 };
 const z = ZONER[MARKNAD];
 if (!z) throw new Error(`Ingen uppmätt captionzon för "${MARKNAD}" — mät den innan du kör.`);
@@ -40,13 +55,17 @@ for (const f of readdirSync(SRT).filter((x) => x.endsWith('.srt'))) {
   const id = f.replace(/\.srt$/, '');
   const inFil = `${IN}/${id}.mp4`;
   if (!existsSync(inFil)) { console.log(`↩︎ ${id}: ingen omdubbad fil ännu`); continue; }
-  writeFileSync(`${S}/np-${MARKNAD}-${id}.json`, JSON.stringify({
+  const zon = PER_VIDEO[`${MARKNAD}:${id}`] || z;
+  const konfig = {
     in: inFil,
     ut: `${UT}/${id}.mp4`,
     srt: `${SRT}/${f}`,
-    captions: { ...z, max_chars: 32, font_px: 30, pad_x: 22, pad_y: 8 },
+    captions: { ...zon, max_chars: 32, font_px: 30, pad_x: 22, pad_y: 8 },
     qa: `${S}/qa-${MARKNAD}`,
-  }, null, 2));
+  };
+  const lager = LAGER[`${MARKNAD}:${id}`];
+  if (lager) konfig.lager = lager;
+  writeFileSync(`${S}/np-${MARKNAD}-${id}.json`, JSON.stringify(konfig, null, 2));
   console.log(`✅ np-${MARKNAD}-${id}.json`);
   n++;
 }
