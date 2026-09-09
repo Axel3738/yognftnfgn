@@ -59,7 +59,15 @@ def main():
             text = post[1]
             konf = float(post[2])
             if konf >= MIN_KONFIDENS and str(text).strip():
-                rader.append({"text": str(text).strip(), "konfidens": round(konf, 3)})
+                # Rutan följer med. Utan den går det att SE att en bild bär ett
+                # förbjudet påstående, men inte att BYTA ut det.
+                xs = [float(p[0]) for p in post[0]]
+                ys = [float(p[1]) for p in post[0]]
+                rader.append({
+                    "text": str(text).strip(),
+                    "konfidens": round(konf, 3),
+                    "ruta": [round(min(xs)), round(min(ys)), round(max(xs)), round(max(ys))],
+                })
         ut[f] = rader
     json.dump(ut, sys.stdout, ensure_ascii=False)
 
