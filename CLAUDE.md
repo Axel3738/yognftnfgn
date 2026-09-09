@@ -629,6 +629,19 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   beslut 2026-08-29 — den låg i fallback-stegen och syntes på varje produkt).
   Rensas med `temu/kaching-cli/fixa-standardpris.mjs <butik>` på Axels dator
   (kräver inloggad Kaching-session). Sätt aldrig texten i nya stegar.
+  ⚠️ **Den ligger fortfarande kvar** — verifierat i storefronten 2026-09-09.
+  Skriptet har aldrig körts. Kolla alltid live i stället för att tro på en tidigare
+  rapport: `curl -sL <produktsida> | grep -o 'kaching-bundles-deal-block-settings'`
+  och läs `<script class="kaching-bundles-deal-block-settings">`-taggen. Där syns
+  hela stegen med `title`, `subtitle`, `quantity` och `discountValue` — det är
+  också enda sättet att läsa Kaching-konfigen utan inloggad webbläsare.
+- **Är produkten ett flerpack ska Kaching-stegen räkna i FÖRPACKNINGAR, inte köp.**
+  Säljs 2 byglar per köp ska stegen heta 2-pack / 4-pack / 6-pack, inte 1/2/3 st.
+  *(Axels beslut 2026-09-09.)* Egen stege per sådan produkt:
+  `temu/kaching-cli/bundle-staketbygel.mjs <butik>` med payload i `payloads/`.
+  Bygg payloaden genom att kopiera det LIVE-block som redan gäller produkten
+  (ur storefronten, se ovan) och byta identitet, synlighet och steg — då ärvs
+  färger, typsnitt och layout exakt i stället för att gissas.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.

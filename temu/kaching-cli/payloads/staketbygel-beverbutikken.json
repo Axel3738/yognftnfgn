@@ -1,0 +1,311 @@
+{
+ "blockTitle": "KJØP FLERE STOLPER – SPAR MER",
+ "blockVisibility": "selected-products",
+ "discountName": "",
+ "excludeB2bCustomers": false,
+ "blockLayout": "vertical",
+ "differentVariantsEnabled": true,
+ "hideVariantPicker": false,
+ "disableVariantOptionSync": false,
+ "hideUnavailableOptions": false,
+ "showPricesPerItem": false,
+ "showBothPrices": false,
+ "unitLabel": "",
+ "useProductCompareAtPrice": true,
+ "showPricesWithoutDecimals": false,
+ "priceRounding": false,
+ "priceRoundingPrecision": ".00",
+ "updateNativePrice": false,
+ "updateNativePriceType": "item",
+ "skipCart": false,
+ "lowStockAlertEnabled": false,
+ "lowStockAlert": null,
+ "showVariantsForSingleQuantity": true,
+ "preselectedDealBarId": "sb4p",
+ "dealBars": [
+  {
+   "id": "sb2p",
+   "title": "2-pk",
+   "subtitle": "2 bøyler – rekker til 2 stolper",
+   "label": "",
+   "badgeStyle": "simple",
+   "badgeText": "",
+   "badgeImageGID": null,
+   "mediaImageGID": null,
+   "featuredMediaGID": null,
+   "featuredProductGID": null,
+   "featuredImages": [],
+   "freeGifts": [],
+   "freeGiftsSummary": null,
+   "multipleGiftsSelectors": [],
+   "upsells": [],
+   "productPersonalisation": null,
+   "highlights": null,
+   "sellingPlanEnabled": false,
+   "sellingPlanGid": null,
+   "hideBehindScratchOff": false,
+   "showAsSoldOutEnabled": false,
+   "showAsSoldOut": null,
+   "dealBarType": "quantity-break",
+   "quantity": 1,
+   "quantitySelector": false,
+   "discountType": "percentage",
+   "discountValue": 0
+  },
+  {
+   "id": "sb4p",
+   "title": "4-pk",
+   "subtitle": "4 bøyler – spar 15 %",
+   "label": "",
+   "badgeStyle": "simple",
+   "badgeText": "",
+   "badgeImageGID": null,
+   "mediaImageGID": null,
+   "featuredMediaGID": null,
+   "featuredProductGID": null,
+   "featuredImages": [],
+   "freeGifts": [],
+   "freeGiftsSummary": null,
+   "multipleGiftsSelectors": [],
+   "upsells": [],
+   "productPersonalisation": null,
+   "highlights": null,
+   "sellingPlanEnabled": false,
+   "sellingPlanGid": null,
+   "hideBehindScratchOff": false,
+   "showAsSoldOutEnabled": false,
+   "showAsSoldOut": null,
+   "dealBarType": "quantity-break",
+   "quantity": 2,
+   "quantitySelector": false,
+   "discountType": "percentage",
+   "discountValue": 15
+  },
+  {
+   "id": "sb6p",
+   "title": "6-pk",
+   "subtitle": "6 bøyler – spar 20 %",
+   "label": "",
+   "badgeStyle": "simple",
+   "badgeText": "",
+   "badgeImageGID": null,
+   "mediaImageGID": null,
+   "featuredMediaGID": null,
+   "featuredProductGID": null,
+   "featuredImages": [],
+   "freeGifts": [],
+   "freeGiftsSummary": null,
+   "multipleGiftsSelectors": [],
+   "upsells": [],
+   "productPersonalisation": null,
+   "highlights": null,
+   "sellingPlanEnabled": false,
+   "sellingPlanGid": null,
+   "hideBehindScratchOff": false,
+   "showAsSoldOutEnabled": false,
+   "showAsSoldOut": null,
+   "dealBarType": "quantity-break",
+   "quantity": 3,
+   "quantitySelector": false,
+   "discountType": "percentage",
+   "discountValue": 20
+  }
+ ],
+ "badgesEnabled": false,
+ "badges": [],
+ "cornerRadius": 0,
+ "spacing": 0.65,
+ "colors": {
+  "background": {
+   "red": 237,
+   "green": 237,
+   "blue": 237,
+   "alpha": 1
+  },
+  "selectedBackground": {
+   "red": 255,
+   "green": 255,
+   "blue": 255,
+   "alpha": 1
+  },
+  "border": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "blockTitle": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "title": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "subtitle": {
+   "red": 85,
+   "green": 85,
+   "blue": 85,
+   "alpha": 1
+  },
+  "price": {
+   "red": 188,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "fullPrice": {
+   "red": 85,
+   "green": 85,
+   "blue": 85,
+   "alpha": 1
+  },
+  "labelBackground": {
+   "red": 217,
+   "green": 217,
+   "blue": 217,
+   "alpha": 1
+  },
+  "label": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "badgeBackground": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "badgeText": {
+   "red": 255,
+   "green": 255,
+   "blue": 255,
+   "alpha": 1
+  },
+  "freeGiftBackground": {
+   "red": 179,
+   "green": 179,
+   "blue": 179,
+   "alpha": 1
+  },
+  "freeGiftText": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "freeGiftSelectedBackground": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "freeGiftSelectedText": {
+   "red": 255,
+   "green": 255,
+   "blue": 255,
+   "alpha": 1
+  },
+  "upsellBackground": {
+   "red": 204,
+   "green": 204,
+   "blue": 204,
+   "alpha": 1
+  },
+  "upsellText": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  },
+  "upsellSelectedBackground": {
+   "red": 204,
+   "green": 204,
+   "blue": 204,
+   "alpha": 1
+  },
+  "upsellSelectedText": {
+   "red": 0,
+   "green": 0,
+   "blue": 0,
+   "alpha": 1
+  }
+ },
+ "fonts": {
+  "fontFamily": null,
+  "blockTitle": {
+   "size": 14,
+   "style": "bold"
+  },
+  "title": {
+   "size": 20,
+   "style": "bold"
+  },
+  "subtitle": {
+   "size": 14,
+   "style": "regular"
+  },
+  "label": {
+   "size": 12,
+   "style": "regular"
+  },
+  "freeGift": {
+   "size": 13,
+   "style": "bold"
+  },
+  "upsell": {
+   "size": 13,
+   "style": "bold"
+  },
+  "unitLabel": {
+   "size": 14,
+   "style": "regular"
+  }
+ },
+ "customStylesEnabled": false,
+ "customStyles": "",
+ "swatchOptions": [],
+ "swatchSize": 18,
+ "swatchShape": "circle",
+ "showSelectedSwatchName": false,
+ "imageSize": 48,
+ "imageCornerRadius": 6,
+ "collectionBreaksEnabled": false,
+ "collectionBreaks": null,
+ "chooseProductModal": null,
+ "timerEnabled": false,
+ "scratchOffEnabled": false,
+ "scratchOff": null,
+ "subscriptionsEnabled": false,
+ "subscriptions": null,
+ "currency": null,
+ "stickyAtcEnabled": false,
+ "stickyAtc": null,
+ "progressiveGiftsEnabled": false,
+ "checkboxUpsellsEnabled": false,
+ "savingsSummaryEnabled": false,
+ "savingsSummary": null,
+ "marketId": null,
+ "excludedMarketIds": [],
+ "timer": null,
+ "progressiveGifts": null,
+ "checkboxUpsells": null,
+ "id": "38b39d0c-4f43-4103-88ae-d18654254905",
+ "nanoId": "g6Fl",
+ "versionId": "5c345432-cbc0-4ebb-9515-72ce3d49fc33",
+ "blockName": "Gjerdestolpebøyle — 2/4/6-pk",
+ "selectedProducts": [
+  {
+   "id": "gid://shopify/Product/15552229933431"
+  }
+ ],
+ "selectedCollections": [],
+ "excludedProducts": [],
+ "excludedCollections": []
+}
