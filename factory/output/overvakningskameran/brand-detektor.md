@@ -1,6 +1,6 @@
 # Brand-detektor — HeimGuard (overvakningskameran)
 
-Körd 2026-09-08 av `factory/brand-detektor.mjs` (Uppdrag A i `factory/FAS2.md`).
+Körd 2026-09-09 av `factory/brand-detektor.mjs` (Uppdrag A i `factory/FAS2.md`).
 Läser bara. Inga krediter, ingen HeyGen, ingen kie.ai, inget skrivet i något annonskonto.
 
 **Källa:** https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning · annonsprefix `Overvakningskamera_` · konto `1867947880635861` (MagiBorsten, Bäverbutiken SE).
@@ -10,11 +10,11 @@ Läser bara. Inga krediter, ingen HeyGen, ingen kie.ai, inget skrivet i något a
 
 | Dom | Antal | Vad det kostar |
 |---|---|---|
-| `ren` | 24 | inget brandarbete — ⚠️ men läs länken och villkoren nedan innan något laddas upp |
+| `ren` | 38 | inget brandarbete — ⚠️ men läs länken och villkoren nedan innan något laddas upp |
 | `bara-copy` | 0 | gratis — skriv om texten / kör `pipeline/oversatt-bild.py` |
 | `kräver-slutkortsbygge` | 2 | arbetstid — `pipeline/no-precis.py` byter texten i sin egen ruta |
 | `kräver-omdubb` | 0 | HeyGen-krediter — blockerat tills plånboken fylls på |
-| `okänd` | 14 | en yta gick inte att läsa — står aldrig som "ren" |
+| `okänd` | 0 | en yta gick inte att läsa — står aldrig som "ren" |
 
 ⚠️ **Länken gäller alla 40:** varje annons pekar på källbutiken och måste peka på OPS-butiken.
 Bytet ingår i kampanjbygget (Uppdrag B) och håller sig därför utanför klassningen — annars blir varje annons `bara-copy` och tabellen slutar säga något.
@@ -33,38 +33,38 @@ Bytet ingår i kampanjbygget (Uppdrag B) och håller sig därför utanför klass
 | `Overvakningskamera_CO_1_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_CO_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
 | `Overvakningskamera_CO_3_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
-| `Overvakningskamera_CS_1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Overvakningskamera_CS_2` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_CS_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Overvakningskamera_CS_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_CS_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
-| `Overvakningskamera_CS_3` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_CS_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_CS_4_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
 | `Overvakningskamera_CS_5_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
 | `Overvakningskamera_CS_6_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
-| `Overvakningskamera_G_1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Overvakningskamera_G_2` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_G_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Overvakningskamera_G_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_G_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
-| `Overvakningskamera_G_3` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_G_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_LI_1_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
-| `Overvakningskamera_PD_1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
-| `Overvakningskamera_PD_2` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_PD_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
+| `Overvakningskamera_PD_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_PD_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
-| `Overvakningskamera_PD_3` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_PD_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_PD_4_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
 | `Overvakningskamera_RI_1_H1` | video | ✅ ren | ✅ ren | ⚠️ träff | – | **kräver-slutkortsbygge** | inbränd text |
 | `Overvakningskamera_RI_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
-| `Overvakningskamera_SP_1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_SP_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_SP_11_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_SP_12_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_SP_13_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
-| `Overvakningskamera_SP_2` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_SP_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_SP_2_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
-| `Overvakningskamera_SP_3` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_SP_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_SP_4_H1` | video | ✅ ren | ✅ ren | ⚠️ träff | – | **kräver-slutkortsbygge** | inbränd text |
 | `Overvakningskamera_SP_5_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
-| `Overvakningskamera_SP_6_H1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_SP_6_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 | `Overvakningskamera_SP_7_1` | bild | ✅ ren | – | – | ✅ ren | **ren** | — |
 | `Overvakningskamera_SP_8_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
-| `Overvakningskamera_SP_9_H1` | video | ✅ ren | ✅ ren | ❔ okänd | – | **okänd** | inbränd text (oläst) |
+| `Overvakningskamera_SP_9_H1` | video | ✅ ren | ✅ ren | ✅ ren | – | **ren** | — |
 
 ## Hur säkra siffrorna är
 
@@ -80,53 +80,11 @@ eller en textrad mellan två frames. Lägg `brand-syn.json` bredvid rapporten n�
 
 ## Belägg
 
-**`Overvakningskamera_CS_1`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 2267591950474615)
-
-**`Overvakningskamera_CS_2`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 1824570421842561)
-
-**`Overvakningskamera_CS_3`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 1003991642690395)
-
-**`Overvakningskamera_G_1`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 1392769592827807)
-
-**`Overvakningskamera_G_2`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 1054895097283660)
-
-**`Overvakningskamera_G_3`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 1505121754989060)
-
-**`Overvakningskamera_PD_1`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 1616077380303203)
-
-**`Overvakningskamera_PD_2`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 4477513255911698)
-
-**`Overvakningskamera_PD_3`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 2179823166279740)
-
 **`Overvakningskamera_RI_1_H1`** — kräver-slutkortsbygge
 - yta 3 · sent i filmen, 21–23.04s (8 frames): "baverbutiken" (exakt)
 
-**`Overvakningskamera_SP_1`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 2908533632857658)
-
-**`Overvakningskamera_SP_2`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 895629906674982)
-
-**`Overvakningskamera_SP_3`** — okänd
-- yta 3 · okänd (ingen source i kontots advideos för video 2136330963906932)
-
 **`Overvakningskamera_SP_4_H1`** — kräver-slutkortsbygge
 - yta 3 · sent i filmen, 19.8–21.86s (8 frames): "baverbutiken" (exakt)
-
-**`Overvakningskamera_SP_6_H1`** — okänd
-- yta 3 · okänd (fetch failed)
-
-**`Overvakningskamera_SP_9_H1`** — okänd
-- yta 3 · okänd (fetch failed)
 
 ## Källbutikens villkor i materialet (utanför FAS2:s fyra ytor)
 
@@ -144,56 +102,37 @@ egna villkor måste de bytas innan annonsen körs, precis som brandnamnet.
 | `Overvakningskamera_CO_1_H1` | ren | pris: 799 kr, 000 kr · öppet köp: 30 dagars garanti |
 | `Overvakningskamera_CO_2_1` | ren | pris: 799 kr, 1000 kr · öppet köp: 30 dagars garanti |
 | `Overvakningskamera_CO_3_1` | ren | öppet köp: 30 dagars garanti · pris: 799 kr |
-| `Overvakningskamera_CS_1` | okänd | pris: 799 kr, 1000 kr, 300 kr · rabatt: 20% · frakt: Fri frakt över 300 kr · betalsätt: Klarna |
-| `Overvakningskamera_CS_2` | okänd | pris: 799 kr, 1000 kr, 300 kr · rabatt: 20% · frakt: Fri frakt över 300 kr · betalsätt: Klarna |
+| `Overvakningskamera_CS_1` | ren | pris: 799 kr, 1000 kr, 300 kr · rabatt: 20% · frakt: Fri frakt över 300 kr · betalsätt: Klarna |
+| `Overvakningskamera_CS_2` | ren | pris: 799 kr, 1000 kr, 300 kr · rabatt: 20% · frakt: Fri frakt över 300 kr · betalsätt: Klarna |
 | `Overvakningskamera_CS_2_1` | ren | pris: 799 kr, 1000 kr, 300 kr · rabatt: 20% · frakt: Fri frakt över 300 kr · betalsätt: Klarna |
-| `Overvakningskamera_CS_3` | okänd | pris: 799 kr, 1000 kr, 300 kr · rabatt: 20% · frakt: Fri frakt över 300 kr · betalsätt: Klarna |
+| `Overvakningskamera_CS_3` | ren | pris: 799 kr, 1000 kr, 300 kr · rabatt: 20% · frakt: Fri frakt över 300 kr · betalsätt: Klarna · öppet köp: 30 dagars oppet kop |
 | `Overvakningskamera_CS_4_1` | ren | pris: 1000 kr, 799 kr, 300 kr, 201 kr, 000 kr · frakt: Fri frakt över 300 kr, och Klarna om du, Fri frakt over 300 kr · betalsätt: Klarna · öppet köp: 30 dagars garanti om den inte känn, 30 dagars nojd-kund-garanti |
 | `Overvakningskamera_CS_5_1` | ren | pris: 799 kr, 000 kr · frakt: Fri frakt · 30 dagars nöjd-kund-garanti, Fri frakt · 30 dagars nojd-kund-garanti · betalsätt: Klarna · öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars nojd-kund-garanti |
 | `Overvakningskamera_CS_6_H1` | ren | pris: 799 kr, 000 kr · öppet köp: 30 dagars garanti |
-| `Overvakningskamera_G_1` | okänd | öppet köp: 30 dagars nöjd-kund-garanti |
-| `Overvakningskamera_G_2` | okänd | öppet köp: 30 dagars nöjd-kund-garanti |
+| `Overvakningskamera_G_1` | ren | öppet köp: 30 dagars nöjd-kund-garanti |
+| `Overvakningskamera_G_2` | ren | öppet köp: 30 dagars nöjd-kund-garanti |
 | `Overvakningskamera_G_2_1` | ren | öppet köp: 30 dagars nöjd-kund-garanti |
-| `Overvakningskamera_G_3` | okänd | öppet köp: 30 dagars nöjd-kund-garanti |
+| `Overvakningskamera_G_3` | ren | öppet köp: 30 dagars nöjd-kund-garanti |
 | `Overvakningskamera_LI_1_1` | ren | pris: 799 kr, 1000 kr · öppet köp: 30 dagars garanti |
 | `Overvakningskamera_PD_4_1` | ren | pris: 799 kr · öppet köp: 30 dagars garanti, 30 dagars nojd-kund-garanti |
 | `Overvakningskamera_RI_1_H1` | kräver-slutkortsbygge | pris: 799 kr, 799KR · öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars ga, 30 dagars garanti, 30 dagars · recensioner: 10recensioner |
 | `Overvakningskamera_RI_2_1` | ren | pris: 799 kr, 1000 kr, 300 kr · öppet köp: 30 dagars garanti, 30 dagars nojd-kund-garanti · frakt: Fri frakt over 300 kr |
-| `Overvakningskamera_SP_1` | okänd | öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars öppet köp |
+| `Overvakningskamera_SP_1` | ren | öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars öppet köp |
 | `Overvakningskamera_SP_11_H1` | ren | pris: 799 kr, 000 kr · öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars nojd, 30 dagars n |
 | `Overvakningskamera_SP_12_H1` | ren | pris: 799 kr, 201 kr · öppet köp: 30 dagars garanti, 30 dagars nojd |
 | `Overvakningskamera_SP_13_H1` | ren | pris: 799 kr, 1000 kr · öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars nojd, 30 dagars garanti |
-| `Overvakningskamera_SP_2` | okänd | öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars öppet köp |
+| `Overvakningskamera_SP_2` | ren | öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars öppet köp |
 | `Overvakningskamera_SP_2_1` | ren | öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars öppet köp, 30 dagars nojd-kund-garanti |
-| `Overvakningskamera_SP_3` | okänd | öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars öppet köp |
+| `Overvakningskamera_SP_3` | ren | öppet köp: 30 dagars nöjd-kund-garanti, 30 dagars öppet köp |
 | `Overvakningskamera_SP_4_H1` | kräver-slutkortsbygge | pris: 799 kr, 000 kr, 799KR, 799kr · öppet köp: 30 dagars garanti · recensioner: 10recensioner |
 | `Overvakningskamera_SP_5_H1` | ren | pris: 799 kr · öppet köp: 30 dagars garanti om jag ångrar mi, 30 dagars |
-| `Overvakningskamera_SP_6_H1` | okänd | pris: 799 kr · öppet köp: 30 dagars garanti |
+| `Overvakningskamera_SP_6_H1` | ren | pris: 799 kr · öppet köp: 30 dagars garanti |
 | `Overvakningskamera_SP_7_1` | ren | pris: 799 kr · öppet köp: 30 dagars garanti, 30 dagars nojd-kund-garanti |
 | `Overvakningskamera_SP_8_H1` | ren | pris: 799 kr, 1000 kr · öppet köp: 30 dagars öppet köp, 30 dagars nojd, 30 dagars garanti |
-| `Overvakningskamera_SP_9_H1` | okänd | öppet köp: 30 dagars garanti, 30 dagars nöjd-kundgaranti · pris: 799 kr |
-
-## Kvar att läsa
-
-- `Overvakningskamera_CS_1`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 2267591950474615)
-- `Overvakningskamera_CS_2`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 1824570421842561)
-- `Overvakningskamera_CS_3`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 1003991642690395)
-- `Overvakningskamera_G_1`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 1392769592827807)
-- `Overvakningskamera_G_2`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 1054895097283660)
-- `Overvakningskamera_G_3`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 1505121754989060)
-- `Overvakningskamera_PD_1`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 1616077380303203)
-- `Overvakningskamera_PD_2`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 4477513255911698)
-- `Overvakningskamera_PD_3`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 2179823166279740)
-- `Overvakningskamera_SP_1`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 2908533632857658)
-- `Overvakningskamera_SP_2`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 895629906674982)
-- `Overvakningskamera_SP_3`: inbränd text (oläst) — yta 3 · okänd (ingen source i kontots advideos för video 2136330963906932)
-- `Overvakningskamera_SP_6_H1`: inbränd text (oläst) — yta 3 · okänd (fetch failed)
-- `Overvakningskamera_SP_9_H1`: inbränd text (oläst) — yta 3 · okänd (fetch failed)
-
-Ingen av dem får räknas som `ren` förrän ytan faktiskt lästs.
+| `Overvakningskamera_SP_9_H1` | ren | öppet köp: 30 dagars garanti, 30 dagars nöjd-kundgaranti, 30 dagars nojd · pris: 799 kr |
 
 ## Kampanjer annonserna ligger i
 
 - Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21 — 40 annonser
 
-OCR-källa: `factory/output/overvakningskameran/brand-ocr.json (läst 2026-09-08)`.
+OCR-källa: `factory/output/overvakningskameran/brand-ocr.json (läst 2026-09-09)`.

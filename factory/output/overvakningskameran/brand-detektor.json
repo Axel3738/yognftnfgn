@@ -1,6 +1,6 @@
 {
  "produkt": "overvakningskameran",
- "datum": "2026-09-08",
+ "datum": "2026-09-09",
  "kalla": {
   "butik": "baverbutiken.se",
   "produkt_id": "16427870060893",
@@ -13,7 +13,11 @@
   "srt_slug": [
    "overvakningskamera",
    "overvakingskamera"
-  ]
+  ],
+  "no_annonskonto": "1050941584152547",
+  "no_kampanj_id": "120251998582640233",
+  "no_kampanj": "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29",
+  "no_annonsprefix": "Overvåkingskamera_NO"
  },
  "annonser": [
   {
@@ -485,8 +489,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 2267591950474615)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 78
     },
     "bild": {
      "yta": "bild",
@@ -494,10 +500,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "pris",
@@ -526,9 +530,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 2267591950474615)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_CS_2",
@@ -556,8 +558,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 1824570421842561)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 82
     },
     "bild": {
      "yta": "bild",
@@ -565,10 +569,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "pris",
@@ -597,9 +599,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 1824570421842561)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_CS_2_1",
@@ -691,8 +691,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 1003991642690395)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 78
     },
     "bild": {
      "yta": "bild",
@@ -700,10 +702,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "pris",
@@ -730,11 +730,15 @@
      "värden": [
       "Klarna"
      ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 1003991642690395)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_CS_4_1",
@@ -951,8 +955,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 1392769592827807)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 93
     },
     "bild": {
      "yta": "bild",
@@ -960,10 +966,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -972,9 +976,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 1392769592827807)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_G_2",
@@ -1002,8 +1004,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 1054895097283660)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 98
     },
     "bild": {
      "yta": "bild",
@@ -1011,10 +1015,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -1023,9 +1025,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 1054895097283660)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_G_2_1",
@@ -1097,8 +1097,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 1505121754989060)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 96
     },
     "bild": {
      "yta": "bild",
@@ -1106,10 +1108,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -1118,9 +1118,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 1505121754989060)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_LI_1_1",
@@ -1199,8 +1197,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 1616077380303203)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 122
     },
     "bild": {
      "yta": "bild",
@@ -1208,14 +1208,10 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 1616077380303203)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_PD_2",
@@ -1243,8 +1239,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 4477513255911698)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 124
     },
     "bild": {
      "yta": "bild",
@@ -1252,14 +1250,10 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 4477513255911698)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_PD_2_1",
@@ -1324,8 +1318,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 2179823166279740)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 126
     },
     "bild": {
      "yta": "bild",
@@ -1333,14 +1329,10 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 2179823166279740)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_PD_4_1",
@@ -1604,8 +1596,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 2908533632857658)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 86
     },
     "bild": {
      "yta": "bild",
@@ -1613,10 +1607,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -1626,9 +1618,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 2908533632857658)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_SP_11_H1",
@@ -1829,8 +1819,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 895629906674982)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 84
     },
     "bild": {
      "yta": "bild",
@@ -1838,10 +1830,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -1851,9 +1841,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 895629906674982)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_SP_2_1",
@@ -1927,8 +1915,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (ingen source i kontots advideos för video 2136330963906932)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 86
     },
     "bild": {
      "yta": "bild",
@@ -1936,10 +1926,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -1949,9 +1937,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (ingen source i kontots advideos för video 2136330963906932)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_SP_4_H1",
@@ -2160,8 +2146,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (fetch failed)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 53
     },
     "bild": {
      "yta": "bild",
@@ -2169,10 +2157,8 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "pris",
@@ -2187,9 +2173,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (fetch failed)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Overvakningskamera_SP_7_1",
@@ -2326,8 +2310,10 @@
     "inbränd": {
      "yta": "inbränd",
      "tillämplig": true,
-     "dom": "okänd (fetch failed)",
-     "fynd": []
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 50
     },
     "bild": {
      "yta": "bild",
@@ -2335,16 +2321,15 @@
      "dom": "ej tillämplig (video)"
     }
    },
-   "dom": "okänd",
-   "attgöra": [
-    "inbränd text (oläst)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "öppet köp",
      "värden": [
       "30 dagars garanti",
-      "30 dagars nöjd-kundgaranti"
+      "30 dagars nöjd-kundgaranti",
+      "30 dagars nojd"
      ]
     },
     {
@@ -2354,9 +2339,7 @@
      ]
     }
    ],
-   "belägg": [
-    "yta 3 · okänd (fetch failed)"
-   ]
+   "belägg": []
   }
  ]
 }
