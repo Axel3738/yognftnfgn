@@ -1,6 +1,6 @@
 // media-upload.mjs — laddar upp källannonsernas media i MÅLKONTOT.
 //
-//   node factory/media-upload.mjs <produkt-id> [--torr]
+//   node factory/media-upload.mjs <produkt-id> [--marknad SE|NO] [--torr]
 //
 // Steg 7 i `/ny-annonser`. `image_hash` och `video_id` är PER KONTO —
 // Bäverbutikens creatives går inte att referera från OPS-kontot. Filen måste
@@ -57,17 +57,20 @@ export async function laddaUppBild(kontoId, fil, namn) {
 if (process.argv[1] && process.argv[1].endsWith('media-upload.mjs')) {
   laddaEnv();
   const arg = process.argv.slice(2);
-  const produktId = arg.find((a) => !a.startsWith('--'));
+  const produktId = arg.find((a) => !a.startsWith('--') && !String(arg[arg.indexOf(a) - 1] ?? '').startsWith('--'));
+  const marknad = (arg.includes('--marknad') ? arg[arg.indexOf('--marknad') + 1] : 'SE').toUpperCase();
   const torr = arg.includes('--torr');
   if (!produktId) throw new Error('Ange produkt-id.');
+  if (marknad !== 'SE' && marknad !== 'NO') throw new Error(`--marknad ${marknad} finns inte. Välj SE eller NO.`);
 
   const p = lasYaml(readFileSync(join(ROT, 'produkter', `${produktId}.yaml`), 'utf8'));
   if (String(p.meta?.ad_account_id) !== MALKONTO.id) {
     throw new Error(`meta.ad_account_id är ${p.meta?.ad_account_id}, ska vara ${MALKONTO.id}. Stoppar.`);
   }
-  const prefix = p.kalla.annonsprefix;
+  const suffix = marknad === 'NO' ? '-no' : '';
+  const prefix = marknad === 'NO' ? (p.kalla.no_annonsprefix ?? p.kalla.annonsprefix) : p.kalla.annonsprefix;
 
-  const domar = JSON.parse(readFileSync(join(ROT, 'output', produktId, 'brand-detektor.json'), 'utf8'));
+  const domar = JSON.parse(readFileSync(join(ROT, 'output', produktId, `brand-detektor${suffix}.json`), 'utf8'));
   const kallor = JSON.parse(readFileSync(join(ROT, 'output', produktId, 'kallannonser.json'), 'utf8'));
   const mediaMapp = join(ROT, '..', '.scratch', 'brand-detektor', prefix, 'media');
 
@@ -75,12 +78,22 @@ if (process.argv[1] && process.argv[1].endsWith('media-upload.mjs')) {
     (Array.isArray(domar) ? domar : (domar.annonser ?? domar.rader ?? [])).map((d) => [d.namn ?? d.annons, d.dom])
   );
 
-  const utfil = join(ROT, 'output', produktId, 'media-i-malkontot.json');
+  const utfil = join(ROT, 'output', produktId, `media-i-malkontot${suffix}.json`);
   const redan = existsSync(utfil) ? JSON.parse(readFileSync(utfil, 'utf8')) : {};
 
-  const kandidater = kallor.SE.annonser.filter((a) => a.med);
-  console.log(`Målkonto: ${MALKONTO.namn} ${MALKONTO.id}`);
-  console.log(`${kandidater.length} ACTIVE källannonser\n`);
+  // `med` kräver ACTIVE hela vägen upp till kampanjen. Det är rätt i Sverige,
+  // där en pausad annons är en utdömd annons.
+  //
+  // I Norge stängdes hela KAMPANJEN ner (Gamasjer NO, 6 kr spend totalt) —
+  // marknaden lades ner, annonserna dömdes aldrig ut. Alla 16 ligger ACTIVE
+  // i ACTIVE adsets inuti den pausade kampanjen. Att läsa det som 16
+  // utdömda annonser vore att blanda ihop ett marknadsbeslut med en
+  // creative-dom. Därför räknas annons + adset för NO, aldrig kampanjen.
+  const kandidater = marknad === 'NO'
+    ? (kallor.NO?.annonser ?? []).filter((a) => a.status === 'ACTIVE' && a.adset?.status === 'ACTIVE')
+    : (kallor.SE?.annonser ?? []).filter((a) => a.med);
+  console.log(`Målkonto: ${MALKONTO.namn} ${MALKONTO.id} · marknad ${marknad}`);
+  console.log(`${kandidater.length} källannonser (ACTIVE annons i ACTIVE adset)\n`);
 
   let uppe = 0;
   let hoppade = 0;

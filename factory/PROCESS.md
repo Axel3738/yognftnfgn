@@ -133,7 +133,12 @@ som genereras per bygge).
 ## Fas 4 — Marknader (STANDARD i varje ny OPS, Axel 2026-09-08: SE huvudspråk + marknad Norge locale nb; fler marknader läggs till på samma sätt)
 13. ⚙️ Marknad Norge + locale nb (publicerad) + nb som alternateLocale på
     huvuddomänens webPresence (`webPresenceUpdate` — INTE market-varianten).
-    NOK slås på i admin (API-spärrat i unified markets).
+    **NOK som marknadens basvaluta går via API** (`marketUpdate` med
+    `currencySettings.baseCurrency: NOK`, mätt 2026-09-09 på DryTrek — raden
+    "API-spärrat i unified markets" som stod här var fel; inget klick i admin
+    behövs). Priset blir Shopifys egen omräkning (389 SEK → 381 NOK den
+    dagen) och FLYTER med kursen — läs det ur `/nb/products/<handle>?country=NO`
+    innan någon norsk siffra skrivs i copy eller paketnivåer.
     **Steget är kod sedan 2026-09-09: `node factory/marknad.mjs
     factory/butiker/<butik>.yaml`** — det fanns inte alls, HeimGuards Norge
     gjordes för hand och lämnade ingen kod. Tre mätningar sitter i filen:
@@ -152,6 +157,22 @@ som genereras per bygge).
     locale-brancha i Liquid. Sektionsdefaults = locale-medvetna i opf-koden.
     ⚠️ Tema-översättningar är knutna till TEMA-ID — ny temaklon = registrera
     om (nycklar/digests är stabila mellan kloner).
+    ⚠️ **Shopify faller TYST tillbaka på svenskan för varje sträng som
+    saknar nb** — mitt i en annars norsk sida, utan felmeddelande. Axels
+    bakläxa 2026-09-09 (DryTrek): marknaden var uppe, paketen översatta, och
+    ändå stod meny, sidfot, sidor, färgnamn, fraktmetoder och hela
+    produktbeskrivningen på svenska för en norsk kund. `oversatt.mjs` täckte
+    4 av 13 resurstyper. Facit är därför alltid två saker:
+    (a) `translatableResources` per resurstyp — PRODUCT, PRODUCT_OPTION,
+    PRODUCT_OPTION_VALUE, COLLECTION, LINK, SHOP_POLICY, PAGE, BLOG,
+    METAOBJECT, METAFIELD, DELIVERY_METHOD_DEFINITION, ONLINE_STORE_THEME_*
+    — och varje rad med text ska ha en nb-rad (appgenererade metafält som
+    Judge.me-widgetar, rabattkoder och Liquid räknas inte);
+    (b) **`node factory/sprakkoll.mjs <butik> <handle> --losenord X`** —
+    läser de riktiga /nb-sidorna och slår larm på svenska former som inte
+    finns i bokmål ("och", "är", "känga", "färger", "ångerrätt" …) och på
+    svenska priser. Butiken får inga norska annonser förrän den är tom.
+    Juridiken BYTS, översätts inte: distansavtalslagen → angrerettloven.
 15. ⚙️ Bilder per marknad (bevisat på HeimGuard 2026-09-07): språkversionera
     med husets metod (kie rensar text → sharp lägger vektortext, samma
     koordinater per språk). Tre lager, alla via API:
@@ -167,6 +188,16 @@ som genereras per bygge).
     ⚠️ Filtret bor i temat — tills nya klonen är publicerad ser LIVE-temat
     båda språkens galleribilder. Lägg median sist i bygget, publicera snabbt.
 16. ⚙️ NOK-paketnivåer innan norska annonser (SEK-belopp räknar fel i NOK).
+    **Lösningen är PROCENT, inte ett översatt belopp** (mätt 2026-09-09):
+    `fastpris` är number_decimal och saknar translatable capability — Shopify
+    översätter bara textfält, så 661,30 stod kvar som 661,30 på /nb trots
+    381 NOK styck. Därför bär `ms_paketniva` fältet `rabatt_procent`,
+    rabattkoderna är procentkoder, och `snippets/ms-paket.liquid` +
+    `assets/ms-paket.js` räknar avdraget ur procenten (variant × antal ×
+    procent) så kortet blir rätt i varje valuta. `factory/paket.mjs` gör
+    detta som standard och lägger till fältet på äldre butiker.
+    Verifierat: SE 661,30 / 933,60 kr, NO 647,70 / 914,40 kr — lästa ur
+    kundvyn, inte ur API:t.
 17. ⚙️ Norge ska SYNAS i kundvyn (Axel 2026-09-08): svenska USP-strippen
     säger "Fri frakt – Sverige & Norge", nb-versionen "Gratis frakt i
     hele Norge". Kunden ska aldrig behöva gissa att vi postar till Norge.

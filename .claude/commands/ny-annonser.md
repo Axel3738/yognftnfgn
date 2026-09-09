@@ -179,9 +179,24 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    och ladda upp på nytt till `act_915422744950975` (`advideos`/`adimages`).
 
 8. **Bygg TVÅ kampanjer — en svensk och en norsk.**
-   `pipeline/no-video-launch.mjs` + `no-image-launch.mjs` med en vågkonfig per
-   marknad. Allt Graph-anrop går genom `tools/meta-lib.mjs` — skriv aldrig egna
-   anrop, spärrarna där är dyrköpta.
+   `node factory/kampanj.mjs <produkt> --marknad SE` och `--marknad NO`
+   (media först: `factory/media-upload.mjs <produkt> --marknad …`). Allt
+   Graph-anrop går genom `tools/meta-lib.mjs` — skriv aldrig egna anrop,
+   spärrarna där är dyrköpta.
+   - ⚠️ **Strukturen är ABO med ETT ADSET PER VINKEL, lika budget i varje,
+     `is_adset_budget_sharing_enabled: false`.** Aldrig CBO, aldrig alla
+     annonser i en uppsättning. (Axels bakläxa 2026-09-09: DryTrek SE
+     byggdes som CBO med 16 annonser i ett adset — bryter regel 11 i
+     CLAUDE.md och gör datan omöjlig att skära per vinkel. Källkampanjen
+     som gav ROAS 2,83 har ett adset per vinkel; spegla den.)
+   - ⚠️ **Norge har oftast EGNA källcreatives.** Bäverbutiken kör en norsk
+     tvilling per produkt i Magiborsten NO `1050941584152547` (prefix t.ex.
+     `Gamasjer_NO_`), redan dubbad och med norsk inbränd text. Skanna den med
+     `brand-detektor.mjs --marknad NO --hamta` och brand-swappa rakt av —
+     dubba ALDRIG om de svenska med HeyGen när en norsk version redan finns.
+     Att den norska källkampanjen är PAUSED är ett marknadsbeslut (6 kr
+     spend), inte en dom över annonserna: räkna annons + adset ACTIVE, inte
+     kampanjen. `kalla.no_annonskonto` + `kalla.no_annonsprefix` i produktfilen.
    - Kampanjnamnen prefixas ALLTID med brandet OCH marknaden:
      `TANKGUARD_SE_…` och `TANKGUARD_NO_…`. Alla OPS-butiker delar ett konto,
      och utan marknaden i namnet går datan inte att skära per land.

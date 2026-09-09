@@ -1,8 +1,19 @@
 // kampanj.mjs — bygger OPS-butikens kampanj i det gemensamma annonskontot.
 //
-//   node factory/kampanj.mjs <produkt-id> --marknad SE [--torr]
+//   node factory/kampanj.mjs <produkt-id> --marknad SE|NO [--torr]
 //
 // Steg 8 i `/ny-annonser`. ALLT föds PAUSED, på alla tre nivåer.
+//
+// ⚠️ STRUKTUREN ÄR ABO MED ETT ADSET PER VINKEL — aldrig CBO med ett adset.
+// Axels bakläxa 2026-09-09: DryTreks första svenska kampanj byggdes som CBO
+// med alla 16 annonser i EN annonsuppsättning. Två fel i ett:
+//   1. Det bryter CLAUDE.md regel 11 (nya tester = separat test-ABO med lika
+//      budget per annons). I en CBO går pengarna dit Meta vill, och tre
+//      vinklar svälter ihjäl bredvid en — precis mönster 5 i motorhöljets DNA.
+//   2. Med alla vinklar i samma adset går datan inte att skära per vinkel.
+//      Hela poängen med namnkonventionen är att kunna svara "vilken vinkel
+//      bär den här produkten" — en enda uppsättning gör den frågan omöjlig.
+// Källkampanjen som gav ROAS 2,83 har ett adset per vinkel. Vi speglar den.
 //
 // ⚠️ Kontokartan kontrolleras på ID, aldrig på namn:
 //   källa SE  MagiBorsten      1867947880635861
@@ -26,10 +37,17 @@ import { MALKONTO } from './kallannonser.mjs';
 const ROT = dirname(fileURLToPath(import.meta.url));
 
 // Vinkeln ur annonsnamnet: Damasker_PD_2_1 → PD, Damasker_SP_4_H1 → SP4.
-export function vinkelAv(namn) {
-  const del = String(namn).split('_');
-  const kod = del[1] ?? '';
-  if (kod === 'SP' && del[2] === '4') return 'SP4';
+//
+// ⚠️ Prefixet måste skickas med när det är fler än ett ord. Det norska
+// prefixet är `Gamasjer_NO`, så Gamasjer_NO_PD_2_1 ger "NO" som vinkel om
+// man bara tar andra ordet — och då hittas ingen copy alls.
+export function vinkelAv(namn, prefix = '') {
+  let rest = String(namn);
+  if (prefix && rest.startsWith(`${prefix}_`)) rest = rest.slice(prefix.length + 1);
+  else rest = rest.split('_').slice(1).join('_');
+  const del = rest.split('_');
+  const kod = del[0] ?? '';
+  if (kod === 'SP' && del[1] === '4') return 'SP4';
   return kod;
 }
 
@@ -78,15 +96,24 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
   if (!pixelId) throw new Error('meta.pixel_id är tom.');
   if (pixelId === '1554276343018184') throw new Error('Det är BÄVERBUTIKENS pixel. Stoppar.');
 
+  if (marknad !== 'SE' && marknad !== 'NO') throw new Error(`--marknad ${marknad} finns inte. Välj SE eller NO.`);
+  const suffix = marknad === 'NO' ? '-no' : '';
+
   const doman = (butik.butik.supportmail ?? '').split('@')[1];
   if (!doman) throw new Error('Butikens domän går inte att härleda ur supportmail.');
-  const lank = `https://${doman}/products/${produktId}`;
+  // Norska annonser ska landa på den NORSKA sidan. Utan /nb får kunden svensk
+  // text efter ett norskt löfte, och Shopify byter inte språk åt en besökare
+  // som redan fått en svensk URL.
+  const lank = marknad === 'NO'
+    ? `https://${doman}/nb/products/${produktId}`
+    : `https://${doman}/products/${produktId}`;
 
-  const mediaFil = join(ROT, 'output', produktId, 'media-i-malkontot.json');
-  if (!existsSync(mediaFil)) throw new Error('media-i-malkontot.json saknas — kör factory/media-upload.mjs först.');
+  const mediaFil = join(ROT, 'output', produktId, `media-i-malkontot${suffix}.json`);
+  if (!existsSync(mediaFil)) throw new Error(`${mediaFil.split('/').pop()} saknas — kör factory/media-upload.mjs --marknad ${marknad} först.`);
   const media = JSON.parse(readFileSync(mediaFil, 'utf8'));
 
-  const copyFil = join(ROT, 'annonscopy', `${produktId}-se.json`);
+  const copyFil = join(ROT, 'annonscopy', `${produktId}-${marknad.toLowerCase()}.json`);
+  if (!existsSync(copyFil)) throw new Error(`${copyFil.split('/').pop()} saknas — copyn för ${marknad} är inte skriven.`);
   const copyblock = JSON.parse(readFileSync(copyFil, 'utf8')).vinklar;
 
   const brand = butik.butik.brand;
@@ -97,24 +124,34 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
   console.log(`Sida: ${pageId} · Pixel: ${pixelId}`);
   console.log(`Länk: ${lank}`);
   console.log(`Kampanj: ${kampanjnamn}`);
-  console.log(`Budget: ${budget / 100} ${MALKONTO.valuta}/dag (CBO)\n`);
+  console.log(`Budget: ${budget / 100} ${MALKONTO.valuta}/dag, fördelad lika över adseten (ABO)\n`);
+
+  const kallprefix = marknad === 'NO'
+    ? (p.kalla?.no_annonsprefix ?? p.kalla?.annonsprefix ?? '')
+    : (p.kalla?.annonsprefix ?? '');
 
   const attBygga = Object.entries(media).map(([namn, m]) => ({
     namn,
     typ: m.typ === 'video_id' ? 'video' : 'bild',
     id: m.id,
-    vinkel: vinkelAv(namn),
+    vinkel: vinkelAv(namn, kallprefix),
   }));
   const utanCopy = attBygga.filter((a) => !copyblock[a.vinkel]);
   if (utanCopy.length > 0) {
     throw new Error(`Saknar copy för vinklarna: ${[...new Set(utanCopy.map((a) => a.vinkel))].join(', ')}`);
   }
-  console.log(`${attBygga.length} annonser att bygga:`);
-  for (const a of attBygga) console.log(`   ${a.typ.padEnd(5)} ${a.vinkel.padEnd(4)} ${a.namn}`);
+  // Ett adset per vinkel, lika budget i varje (regel 11 + källans struktur).
+  const vinklar = [...new Set(attBygga.map((a) => a.vinkel))].sort();
+  const perAdset = Math.round(budget / vinklar.length);
+  console.log(`${attBygga.length} annonser i ${vinklar.length} annonsuppsättningar (ABO, ${perAdset / 100} ${MALKONTO.valuta}/dag styck):`);
+  for (const v of vinklar) {
+    const i = attBygga.filter((a) => a.vinkel === v);
+    console.log(`   ${v.padEnd(4)} ${i.length} annonser: ${i.map((a) => a.namn).join(', ')}`);
+  }
 
   if (torr) { console.log('\n(torrkörning — inget skapades i Meta)'); process.exit(0); }
 
-  // --- kampanjen
+  // --- kampanjen. INGEN kampanjbudget: budgeten bor i adseten (ABO).
   const kampanj = await api(`act_${act}/campaigns`, {
     form: {
       name: kampanjnamn,
@@ -122,52 +159,62 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
       status: 'PAUSED',
       special_ad_categories: '[]',
       buying_type: 'AUCTION',
-      daily_budget: String(budget),
-      bid_strategy: 'LOWEST_COST_WITHOUT_CAP',
+      // ⚠️ Meta KRÄVER det här fältet så fort kampanjen saknar egen budget.
+      // FALSKT med flit: sant låter adseten låna 20 % av varandras budget,
+      // och då är budgeten inte längre lika per annons — hela poängen med
+      // ett test-ABO faller (regel 11).
+      is_adset_budget_sharing_enabled: 'false',
     },
   });
-  console.log(`\n✅ Kampanj ${kampanj.id} (PAUSED)`);
+  console.log(`\n✅ Kampanj ${kampanj.id} (PAUSED, ABO utan budgetdelning)`);
 
-  // --- adsetet. Targeting sätts EXPLICIT — ingen fallback-geo.
-  const adset = await api(`act_${act}/adsets`, {
-    form: {
-      name: `${brand.toUpperCase()}_${marknad}_Test_ABO`,
-      campaign_id: kampanj.id,
-      status: 'PAUSED',
-      billing_event: 'IMPRESSIONS',
-      optimization_goal: 'OFFSITE_CONVERSIONS',
-      destination_type: 'WEBSITE',
-      promoted_object: JSON.stringify({ pixel_id: pixelId, custom_event_type: 'PURCHASE' }),
-      targeting: JSON.stringify({
-        geo_locations: { countries: [marknad] },
-        age_min: 25,
-        age_max: 65,
-        targeting_automation: { advantage_audience: 1 },
-      }),
-    },
-  });
-  console.log(`✅ Adset ${adset.id} (PAUSED, geo ${marknad})`);
+  // --- adseten, ett per vinkel. Targeting sätts EXPLICIT — ingen fallback-geo.
+  const adsetAv = new Map();
+  for (const v of vinklar) {
+    const adset = await api(`act_${act}/adsets`, {
+      form: {
+        name: `${brand.toUpperCase()}_${marknad}_${v}`,
+        campaign_id: kampanj.id,
+        status: 'PAUSED',
+        daily_budget: String(perAdset),
+        billing_event: 'IMPRESSIONS',
+        optimization_goal: 'OFFSITE_CONVERSIONS',
+        bid_strategy: 'LOWEST_COST_WITHOUT_CAP',
+        destination_type: 'WEBSITE',
+        promoted_object: JSON.stringify({ pixel_id: pixelId, custom_event_type: 'PURCHASE' }),
+        targeting: JSON.stringify({
+          geo_locations: { countries: [marknad] },
+          age_min: 25,
+          age_max: 65,
+          targeting_automation: { advantage_audience: 1 },
+        }),
+      },
+    });
+    adsetAv.set(v, adset.id);
+    console.log(`✅ Adset ${v}: ${adset.id} (PAUSED, geo ${marknad}, ${perAdset / 100} ${MALKONTO.valuta}/dag)`);
+  }
 
   // --- annonserna
   const byggda = [];
   const misslyckade = [];
   for (const a of attBygga) {
     const copy = copyblock[a.vinkel].slutlig ?? copyblock[a.vinkel];
+    const adsetId = adsetAv.get(a.vinkel);
     try {
       const m = { id: a.id };
       if (a.typ === 'video') m.thumb = await väntaPåThumb(a.id);
       const spec = byggSpec({ typ: a.typ, media: m, copy, pageId, igId: null, lank });
       const creative = await api(`act_${act}/adcreatives`, {
         form: {
-          name: `DRYTREK_${a.namn}`,
+          name: `${brand.toUpperCase()}_${a.namn}`,
           object_story_spec: JSON.stringify(spec),
           degrees_of_freedom_spec: JSON.stringify(ingaEnhancements()),
         },
       });
       const annons = await api(`act_${act}/ads`, {
         form: {
-          name: `DryTrek_${a.namn.replace(/^Damasker_/, 'Damasker_')}`,
-          adset_id: adset.id,
+          name: `${brand}_${a.namn}`,
+          adset_id: adsetId,
           creative: JSON.stringify({ creative_id: creative.id }),
           status: 'PAUSED',
         },

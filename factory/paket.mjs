@@ -7,8 +7,17 @@
 //   2. en riktig rabattkod per nivå som ger exakt nivåns pris i kassan
 //
 // Ärlighetsspärren i snippets/ms-paket.liquid visar ett rabatterat pris BARA
-// när nivån har både `fastpris` och `rabattkod`. Skapas nivåerna utan koder
-// visar sidan fullpris — vilket är rätt, men då är erbjudandet meningslöst.
+// när nivån har både en rabattnivå och en `rabattkod`. Skapas nivåerna utan
+// koder visar sidan fullpris — vilket är rätt, men då är erbjudandet meningslöst.
+//
+// ⚠️ RABATTEN ÄR EN PROCENT, ALDRIG ETT BELOPP (mätt 2026-09-09 på DryTrek).
+// Varje OPS-butik säljer i minst två valutor (SE + NO är standard, inte
+// tillval). Ett fast belopp är alltid skrivet i EN valuta: rabattkoden drar
+// då 116,70 SEK även i den norska kassan, och kortet på /nb visar samma
+// SEK-siffra eftersom `fastpris` är number_decimal och Shopify bara översätter
+// textfält. Procent skalar med både variant och valuta, i kortet och i kassan.
+// `fastpris` skrivs fortfarande, som svensk referenssiffra och som fallback
+// för äldre butiker.
 //
 // Definitionen skapas med translatable-capability PÅ från start. Slås den på
 // i efterhand går nivåerna inte att översätta till nb (PROCESS.md fas 2 steg 7).
@@ -33,6 +42,8 @@ const FALT = [
   { key: 'bricka', name: 'Bricka', type: 'single_line_text_field' },
   { key: 'forvald', name: 'Förvald', type: 'boolean' },
   { key: 'fastpris', name: 'Fastpris', type: 'number_decimal' },
+  // Rabatten som procent. Det här fältet är det som gäller — se filhuvudet.
+  { key: 'rabatt_procent', name: 'Rabatt i procent', type: 'number_integer' },
   { key: 'rabattkod', name: 'Rabattkod', type: 'single_line_text_field' },
   { key: 'bogo_gratis', name: 'BOGO gratis', type: 'number_integer' },
   { key: 'gratis_produkt', name: 'Gratisprodukt', type: 'product_reference' },
@@ -43,11 +54,37 @@ const FALT = [
 export async function sakerstallDefinition() {
   const finns = await graphql(
     `query opsFactoryPaketDef {
-      metaobjectDefinitions(first: 50) { nodes { id type } }
+      metaobjectDefinitions(first: 50) { nodes { id type fieldDefinitions { key } } }
     }`
   );
   const traff = (finns.metaobjectDefinitions?.nodes ?? []).find((n) => n.type === 'ms_paketniva');
-  if (traff) return { id: traff.id, skapad: false };
+  if (traff) {
+    // En butik byggd före `rabatt_procent` saknar fältet. Lägg till det som
+    // fattas i stället för att låta nivåerna falla tillbaka på fastpris.
+    const har = new Set((traff.fieldDefinitions ?? []).map((f) => f.key));
+    const saknas = FALT.filter((f) => !har.has(f.key));
+    if (saknas.length > 0) {
+      const d = await graphql(
+        `mutation opsFactoryPaketDefFalt($id: ID!, $definition: MetaobjectDefinitionUpdateInput!) {
+          metaobjectDefinitionUpdate(id: $id, definition: $definition) {
+            metaobjectDefinition { id }
+            userErrors { field message }
+          }
+        }`,
+        {
+          id: traff.id,
+          definition: {
+            fieldDefinitions: saknas.map((f) => ({
+              create: { key: f.key, name: f.name, type: f.type },
+            })),
+          },
+        }
+      );
+      const fel = d.metaobjectDefinitionUpdate?.userErrors ?? [];
+      if (fel.length > 0) throw new Error(`Definitionen: ${fel.map((f) => f.message).join('; ')}`);
+    }
+    return { id: traff.id, skapad: false, tillagda: saknas.map((f) => f.key) };
+  }
 
   const data = await graphql(
     `mutation opsFactoryPaketDefSkapa($definition: MetaobjectDefinitionCreateInput!) {
@@ -121,10 +158,12 @@ export async function skrivNiva(handle, falt) {
   return { ...d.metaobjectCreate.metaobject, ny: true };
 }
 
-// Rabattkod som drar ett FAST BELOPP på just den här produkten, och bara när
-// kunden har minst `minAntal` i korgen. Beloppet räknas ut av anroparen ur
-// nivåns fastpris — koden och kortet kan då aldrig säga olika saker.
-export async function skrivRabattkod({ kod, titel, belopp, minAntal, produktId }) {
+// Rabattkod som drar en PROCENT på just den här produkten, och bara när
+// kunden har minst `minAntal` i korgen. Procenten räknas ut av anroparen ur
+// nivåns pris — koden och kortet kan då aldrig säga olika saker, i någon valuta.
+//
+// ⚠️ `procent` är hela procenttal (15 = 15 %). Shopify vill ha andel (0.15).
+export async function skrivRabattkod({ kod, titel, procent, minAntal, produktId }) {
   const finns = await graphql(
     `query opsFactoryKod($fraga: String!) {
       codeDiscountNodes(first: 5, query: $fraga) {
@@ -147,14 +186,16 @@ export async function skrivRabattkod({ kod, titel, belopp, minAntal, produktId }
       quantity: { greaterThanOrEqualToQuantity: String(minAntal) },
     },
     customerGets: {
-      value: {
-        discountAmount: { amount: belopp.toFixed(2), appliesOnEachItem: false },
-      },
+      value: { percentage: Math.round(procent) / 100 },
       items: { products: { productsToAdd: [produktId] } },
     },
   };
 
   if (befintlig) {
+    // ⚠️ `code` får INTE skickas med på en uppdatering av en kod som redan
+    // har det värdet — Shopify svarar "Code must be unique" och jämför mot
+    // koden själv (mätt 2026-09-09).
+    const { code, ...utanKod } = basic;
     const d = await graphql(
       `mutation opsFactoryKodUppdatera($id: ID!, $basicCodeDiscount: DiscountCodeBasicInput!) {
         discountCodeBasicUpdate(id: $id, basicCodeDiscount: $basicCodeDiscount) {
@@ -162,7 +203,7 @@ export async function skrivRabattkod({ kod, titel, belopp, minAntal, produktId }
           userErrors { field message }
         }
       }`,
-      { id: befintlig.id, basicCodeDiscount: basic }
+      { id: befintlig.id, basicCodeDiscount: utanKod }
     );
     const fel = d.discountCodeBasicUpdate?.userErrors ?? [];
     if (fel.length > 0) throw new Error(`Koden ${kod}: ${fel.map((f) => f.message).join('; ')}`);
@@ -205,24 +246,44 @@ if (process.argv[1] && process.argv[1].endsWith('paket.mjs')) {
 
   const def = await sakerstallDefinition();
   console.log(`${def.skapad ? '✅ Definition skapad' : '⏭  Definition fanns'}: ms_paketniva`);
+  if (def.tillagda?.length) console.log(`   ➕ fält tillagda: ${def.tillagda.join(', ')}`);
 
   for (const n of konf.nivaer) {
     const ordinarie = styckpris * n.antal;
     if (n.fastpris != null && n.fastpris > ordinarie + 0.001) {
       throw new Error(`Nivå ${n.handle}: fastpris ${n.fastpris} är HÖGRE än ordinarie ${ordinarie}.`);
     }
+
+    // Procenten räknas ur konfigens fastpris, så siffrorna i JSON-filen får
+    // stå kvar som de är. Den MÅSTE bli ett helt procenttal: en kod på
+    // 14,7 % går inte att skriva, och en avrundad kod gör att kortet och
+    // kassan säger olika saker.
+    let procent = null;
+    if (n.rabatt_procent != null) {
+      procent = n.rabatt_procent;
+    } else if (n.fastpris != null && n.fastpris < ordinarie) {
+      const exakt = (1 - n.fastpris / ordinarie) * 100;
+      procent = Math.round(exakt);
+      if (Math.abs(exakt - procent) > 0.001) {
+        const rakt = Math.round(ordinarie * (1 - procent / 100) * 100) / 100;
+        throw new Error(
+          `Nivå ${n.handle}: fastpris ${n.fastpris} av ${ordinarie} är ${exakt.toFixed(2)} % — ` +
+            `inte ett helt procenttal. Sätt fastpris ${rakt} (${procent} %) eller ange rabatt_procent i konfigen.`
+        );
+      }
+    }
+
     let kod = null;
-    if (n.fastpris != null && n.fastpris < ordinarie) {
-      const belopp = Math.round((ordinarie - n.fastpris) * 100) / 100;
+    if (procent != null && procent > 0) {
       kod = n.rabattkod;
       const r = await skrivRabattkod({
         kod,
-        titel: `${konf.brand} ${n.rubrik} — fast pris ${n.fastpris} kr`,
-        belopp,
+        titel: `${konf.brand} ${n.rubrik} — ${procent} % rabatt`,
+        procent,
         minAntal: n.antal,
         produktId,
       });
-      console.log(`   ${r.ny ? '✅' : '♻️ '} kod ${kod}: −${belopp.toFixed(2)} kr vid ${n.antal}+ st`);
+      console.log(`   ${r.ny ? '✅' : '♻️ '} kod ${kod}: −${procent} % vid ${n.antal}+ st`);
     }
     const r = await skrivNiva(n.handle, {
       produkt: produktId,
@@ -233,6 +294,7 @@ if (process.argv[1] && process.argv[1].endsWith('paket.mjs')) {
       bricka: n.bricka ?? '',
       forvald: n.forvald ? 'true' : 'false',
       fastpris: n.fastpris != null ? String(n.fastpris) : '',
+      rabatt_procent: procent != null ? String(procent) : '',
       rabattkod: kod ?? '',
     });
     const pris = n.fastpris != null ? n.fastpris : ordinarie;
