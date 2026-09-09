@@ -1,0 +1,104 @@
+{
+ "videor": [
+  {
+   "key": "ibc-tanktrekk_PD_4_H2",
+   "malnamn": "IBC-tanktrekk_NO_PD_4_H2",
+   "andringar": [
+    "Pris 489 kr → 439 kr, jämförpris 636 kr → 586 kr (verifierade NO-priser).",
+    "'algfilt regnvatten' = felhörning av 'algfyllt' → 'algefylt regnvann'.",
+    "Materialet talat med bokstäver: 'tvåhundratio D Oxford tyg' → 'to hundre og ti D oxfordstoff', aldrig siffror i talraden.",
+    "'Öppning upp till' → 'Åpning på toppen'; 'Skydda din tank i dag' → 'Beskytt tanken din i dag'."
+   ],
+   "hoppa": null,
+   "trefragor": {
+    "headline": "ok",
+    "message": "ok"
+   }
+  },
+  {
+   "key": "ibc-tanktrekk_PD_4_H1",
+   "malnamn": "IBC-tanktrekk_NO_PD_4_H1",
+   "andringar": [
+    "Pris 489 kr → 439 kr, jämförpris 636 kr → 586 kr (verifierade NO-priser).",
+    "Materialet talat med bokstäver: 'tvåhundratio D Oxford-tyg' → 'to hundre og ti D oxfordstoff'.",
+    "'Öppning upptill. Du kommer åt locket ändå.' → 'Åpning på toppen. Lokket er alltid tilgjengelig.'",
+    "'Skydda din tank idag' → 'Beskytt tanken din i dag'."
+   ],
+   "hoppa": null,
+   "trefragor": {
+    "headline": "ok",
+    "message": "ok"
+   }
+  },
+  {
+   "key": "ibc-tanktrekk_PD_4_H3",
+   "malnamn": "IBC-tanktrekk_NO_PD_4_H3",
+   "andringar": [
+    "Pris 489 kr → 439 kr, jämförpris 636 kr → 586 kr (verifierade NO-priser).",
+    "Materialet talat med bokstäver: 'Tvåhundra tio D Oxford tyg' → 'To hundre og ti D oxfordstoff'.",
+    "'Skydda din tank idag' → 'Beskytt tanken din i dag'."
+   ],
+   "hoppa": null,
+   "trefragor": {
+    "headline": "ok",
+    "message": "ok"
+   }
+  },
+  {
+   "key": "ibc-tanktrekk_SP_3_H1",
+   "malnamn": "IBC-tanktrekk_NO_SP_3_H1",
+   "andringar": [
+    "'Maria, fem stjärnor' → 'Maria, fem stjerner hos baverbutiken.se' (svensk recension, aldrig norsk).",
+    "'Lena, fem stjärnor' → 'Lena, fem stjerner hos baverbutiken.se'.",
+    "'Tio riktiga recensioner, fem stjärnor' → 'Ti anmeldelser hos baverbutiken.se, fem stjerner' — norska betyget 4,7 påstås aldrig som 5.",
+    "Materialet talat med bokstäver: '210D Oxford tyg' → 'to hundre og ti D oxfordstoff'.",
+    "'Skydda din tank i dag' → 'Beskytt tanken din i dag'."
+   ],
+   "hoppa": null,
+   "trefragor": {
+    "headline": "ok",
+    "message": "ok"
+   }
+  },
+  {
+   "key": "ibc-tanktrekk_CS_4_H1",
+   "malnamn": "IBC-tanktrekk_NO_CS_4_H1",
+   "andringar": [
+    "Pris 489 kr → 439 kr, jämförpris 636 kr → 586 kr, rabatt 23 % → 25 % (verifierade NO-tal).",
+    "Alla priser talade med bokstäver: 'fire hundre og trettini kroner', 'fem hundre og åttiseks kroner', 'hundre og førtisju kroner', 'tjuefem prosent'.",
+    "Materialet: 'tvåhundra Tio Deoxford tyg' → 'to hundre og ti D oxfordstoff'.",
+    "'Beställ idag' → 'Bestill i dag'."
+   ],
+   "hoppa": null,
+   "trefragor": {
+    "headline": "ok",
+    "message": "ok"
+   }
+  },
+  {
+   "key": "ibc-tanktrekk_GT_4_H1",
+   "malnamn": "IBC-tanktrekk_NO_GT_4_H1",
+   "andringar": [
+    "'Present till den som just skaffat en IBC-tank' → 'Gave til den som nettopp har skaffet IBC-tank'.",
+    "'Blixtlås istället för presenning och gummiband' → 'Glidelås i stedet for presenning og strikk'.",
+    "Materialet talat med bokstäver: '210D Oxford-tyg' → 'to hundre og ti D oxfordstoff'.",
+    "'Öppning upptill, locket är alltid nåbart' → 'Åpning på toppen, lokket er alltid tilgjengelig'.",
+    "'Måttbeställt för en standard tusen liters IBC-tank' → 'Laget for en standard tusen liters IBC-tank'."
+   ],
+   "hoppa": null,
+   "trefragor": {
+    "headline": "ok",
+    "message": "ok"
+   }
+  }
+ ],
+ "grafik": {
+  "topp_pill_spara": "439 kr, spar 147 kr",
+  "topp_pill_idag": "439 kr i dag",
+  "rubrik_orange_2_rader": ["210D", "Oxfordstoff"],
+  "slutkort_titel": "IBC-TANKTREKK 1000 L - STOPPER ALGER & UV",
+  "slutkort_recensioner": "10 anmeldelser",
+  "slutkort_pris": "586 kr (struket) 439 kr",
+  "slutkort_knapp": "Kjøp nå"
+ }
+}

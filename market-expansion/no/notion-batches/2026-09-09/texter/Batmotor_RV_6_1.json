@@ -1,0 +1,47 @@
+[
+ {
+  "form": 0,
+  "text": "”Trekket passer bra og holder motoren ren.”",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "”Skyddet passar bra och håller motorn",
+   "ren.”"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "— Anders Nilsson, baverbutiken.se",
+  "rad": 2,
+  "se": "— Anders Nilsson",
+  "vanster": false
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "529 kr i stedet for 882 kr"
+ },
+ {
+  "form": 1,
+  "text": "Bestill Båtmotortrekket 420D",
+  "rad": 0,
+  "se": "Beställ Båtmotorskyddet 420D",
+  "vanster": false
+ }
+]

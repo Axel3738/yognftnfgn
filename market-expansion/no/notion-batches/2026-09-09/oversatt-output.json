@@ -1,0 +1,340 @@
+{
+ "Batmotor_BF_7_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [0, 1],
+      "text": "529 kr (ord. 882 kr) — spar 353 kr.",
+      "stryk": true,
+      "stryk_del": "882 kr"
+     },
+     {
+      "rader": [2],
+      "text": "420D Oxford-stoff, 9 størrelser, 0–350 hk."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Betal med Klarna."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Bestill Båtmotortrekket 420D"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "529 kr i stedet for 882 kr – spar 353 kr.\n420D Oxford-stoff, 9 størrelser, 0–350 hk.\nBetal med Klarna.",
+   "headline": "529 kr (ord. 882 kr) – spar 353 kr",
+   "description": "Betal med Klarna"
+  },
+  "andringar": [
+   "Priser 579/965 kr, spara 386 kr → 529/882 kr, spar 353 kr (verifierade NO-priser, 40 % rabatt).",
+   "'9 storlekar, 0–350 hk' → '9 størrelser, 0–350 hk' (stämmer i Norge).",
+   "'Betala med Klarna.' → 'Betal med Klarna.'",
+   "Knappen: 'Beställ Båtmotorskyddet 420D' → 'Bestill Båtmotortrekket 420D'."
+  ],
+  "hoppa": null,
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  }
+ },
+ "Batmotor_BF_8_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "30 dagers åpent kjøp."
+     },
+     {
+      "rader": [1, 2],
+      "text": "Passer det ikke motoren din? Send det tilbake innen 30 dager."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Betaling med Klarna."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Bestill Båtmotortrekket 420D"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Passer trekket ikke motoren din?\nSend det tilbake innen 30 dager.\nBetaling med Klarna.",
+   "headline": "30 dagers åpent kjøp",
+   "description": "Betaling med Klarna"
+  },
+  "andringar": [
+   "'Passar skyddet inte din motor? Skicka tillbaka det inom 30 dagar.' → 'Passer trekket ikke motoren din? Send det tilbake innen 30 dager.'",
+   "'30 dagars öppet köp' → '30 dagers åpent kjøp' (ingen garanti finns).",
+   "'Betalning med Klarna.' → 'Betaling med Klarna.'",
+   "Knappen: 'Beställ Båtmotorskyddet 420D' → 'Bestill Båtmotortrekket 420D'."
+  ],
+  "hoppa": null,
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  }
+ },
+ "Batmotor_BF_9_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [0, 1, 2],
+      "text": "Ingen presenning. Et trekk formet etter motoren din."
+     },
+     {
+      "rader": [3],
+      "text": "420D Oxford-stoff, 9 størrelser – 0–5 hk til 250–350 hk."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Trekkes over og strammes, ingen verktøy."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Bestill Båtmotortrekket 420D"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Ingen presenning.\n420D Oxford-stoff i 9 størrelser, 0–5 hk til 250–350 hk.\nTrekkes over og strammes – ingen verktøy.",
+   "headline": "Ikke en presenning. Et formet trekk.",
+   "description": "Trekkes over, strammes – ingen verktøy"
+  },
+  "andringar": [
+   "'Ingen presenning. Ett skydd format efter din motor.' → 'Ingen presenning. Et trekk formet etter motoren din.'",
+   "'Dras över och spänns fast, inga verktyg.' → 'Trekkes over og strammes, ingen verktøy.' (fast oversettelse)",
+   "'0–5 hk till 250–350 hk' → '0–5 hk til 250–350 hk'.",
+   "Knappen: 'Beställ Båtmotorskyddet 420D' → 'Bestill Båtmotortrekket 420D'."
+  ],
+  "hoppa": null,
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  }
+ },
+ "Batmotor_CS_7_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [0, 1, 2],
+      "text": "529 kr for Båtmotortrekket 420D (ord. 882 kr).",
+      "stryk": true,
+      "stryk_del": "882 kr"
+     },
+     {
+      "rader": [3],
+      "text": "Spar 353 kr på 420D Oxford-trekket."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "30 dagers åpent kjøp · Klarna"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Bestill Båtmotortrekket 420D"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "529 kr for Båtmotortrekket 420D.\nOrdinær pris 882 kr – spar 353 kr.\n30 dagers åpent kjøp, betaling med Klarna.",
+   "headline": "529 kr for 420D-trekket (ord. 882 kr)",
+   "description": "30 dagers åpent kjøp · Klarna"
+  },
+  "andringar": [
+   "Priser 579/965 kr, spara 386 kr → 529/882 kr, spar 353 kr (40 % rabatt, verifierade NO-priser).",
+   "'Båtmotorskyddet 420D' → 'Båtmotortrekket 420D'.",
+   "'30 dagars öppet köp, betalning med Klarna' → '30 dagers åpent kjøp, betaling med Klarna'.",
+   "Knappen: 'Beställ Båtmotorskyddet 420D' → 'Bestill Båtmotortrekket 420D'."
+  ],
+  "hoppa": null,
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  }
+ },
+ "Batmotor_FM_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [0, 1],
+      "text": "Snart tas båten opp for sesongen."
+     },
+     {
+      "rader": [2],
+      "text": "Beskytt motoren med 420D Oxford-stoff før det."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "529 kr i stedet for 882 kr · 30 dagers åpent kjøp"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Bestill Båtmotortrekket 420D"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Snart tas båten opp for sesongen.\n420D Oxford-stoff beskytter motoren i mellomtiden.\n529 kr i stedet for 882 kr.",
+   "headline": "529 kr i stedet for 882 kr",
+   "description": "30 dagers åpent kjøp"
+  },
+  "andringar": [
+   "'Snart läggs båten upp för säsongen.' → 'Snart tas båten opp for sesongen.' (fast oversettelse)",
+   "Priser 579/965 kr → 529/882 kr (verifierade NO-priser).",
+   "Bandet: 579/965 → 529/882 kr.",
+   "Knappen: 'Beställ Båtmotorskyddet 420D' → 'Bestill Båtmotortrekket 420D'."
+  ],
+  "hoppa": null,
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  }
+ },
+ "Batmotor_RV_6_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [0, 1],
+      "text": "”Trekket passer bra og holder motoren ren.”"
+     },
+     {
+      "rader": [2],
+      "text": "— Anders Nilsson, baverbutiken.se"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "529 kr i stedet for 882 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Bestill Båtmotortrekket 420D"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Trekket passer bra og holder motoren ren.\"\n– Anders Nilsson, baverbutiken.se\n529 kr i stedet for 882 kr.",
+   "headline": "\"Holder motoren ren\" – Anders N.",
+   "description": "529 kr i stedet for 882 kr"
+  },
+  "andringar": [
+   "Recensionen är svensk (Judge.me, Bäverbutiken) — översatt, attribuerad '— Anders Nilsson, baverbutiken.se'. Norska betyg påstås aldrig.",
+   "Priser 579/965 kr → 529/882 kr.",
+   "Knappen: 'Beställ Båtmotorskyddet 420D' → 'Bestill Båtmotortrekket 420D'."
+  ],
+  "hoppa": null,
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  }
+ },
+ "Batmotor_RV_7_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "”Gjør jobben bra og holder motoren ren.”"
+     },
+     {
+      "rader": [1],
+      "text": "— Daniel Lindberg, baverbutiken.se"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "529 kr i stedet for 882 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [0],
+      "text": "Bestill Båtmotortrekket 420D"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "\"Gjør jobben bra og holder motoren ren.\"\n– Daniel Lindberg, baverbutiken.se\n529 kr i stedet for 882 kr.",
+   "headline": "\"Motoren holdes ren\" – Daniel L.",
+   "description": "529 kr i stedet for 882 kr"
+  },
+  "andringar": [
+   "Recensionen är svensk — översatt, attribuerad '— Daniel Lindberg, baverbutiken.se'. Norska betyg påstås aldrig.",
+   "Priser 579/965 kr → 529/882 kr.",
+   "Knappen: 'Beställ Båtmotorskyddet 420D' → 'Bestill Båtmotortrekket 420D'."
+  ],
+  "hoppa": null,
+  "trefragor": {
+   "headline": "ok",
+   "message": "ok"
+  }
+ }
+}

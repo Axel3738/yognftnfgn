@@ -1,0 +1,67 @@
+[
+ {
+  "box": [
+   33,
+   47,
+   1047,
+   300
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.7,
+  "fyll": "ljus",
+  "radie": 0,
+  "alfa": 255,
+  "text": "Snart tas båten opp for sesongen."
+ },
+ {
+  "box": [
+   33,
+   300,
+   1047,
+   399
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "radie": 0,
+  "alfa": 255,
+  "text": "Beskytt motoren med 420D Oxford-stoff før det."
+ },
+ {
+  "box": [
+   60,
+   1080,
+   1020,
+   1138
+  ],
+  "fet": false,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "529 kr i stedet for 882 kr · 30 dagers åpent kjøp"
+ },
+ {
+  "form": 4,
+  "text": "Bestill Båtmotortrekket 420D",
+  "rad": 0,
+  "se": "Beställ Båtmotorskyddet 420D",
+  "vanster": false
+ }
+]

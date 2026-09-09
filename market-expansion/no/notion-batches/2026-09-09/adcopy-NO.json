@@ -1,0 +1,67 @@
+{
+ "Batmotortrekk_NO_BF_7_1": {
+  "message": "529 kr i stedet for 882 kr – spar 353 kr.\n420D Oxford-stoff, 9 størrelser, 0–350 hk.\nBetal med Klarna.",
+  "headline": "529 kr (ord. 882 kr) – spar 353 kr",
+  "description": "Betal med Klarna"
+ },
+ "Batmotortrekk_NO_BF_8_1": {
+  "message": "Passer trekket ikke motoren din?\nSend det tilbake innen 30 dager.\nBetaling med Klarna.",
+  "headline": "30 dagers åpent kjøp",
+  "description": "Betaling med Klarna"
+ },
+ "Batmotortrekk_NO_BF_9_1": {
+  "message": "Ingen presenning.\n420D Oxford-stoff i 9 størrelser, 0–5 hk til 250–350 hk.\nTrekkes over og strammes – ingen verktøy.",
+  "headline": "Ikke en presenning. Et formet trekk.",
+  "description": "Trekkes over, strammes – ingen verktøy"
+ },
+ "Batmotortrekk_NO_CS_7_1": {
+  "message": "529 kr for Båtmotortrekket 420D.\nOrdinær pris 882 kr – spar 353 kr.\n30 dagers åpent kjøp, betaling med Klarna.",
+  "headline": "529 kr for 420D-trekket (ord. 882 kr)",
+  "description": "30 dagers åpent kjøp · Klarna"
+ },
+ "Batmotortrekk_NO_FM_3_1": {
+  "message": "Snart tas båten opp for sesongen.\n420D Oxford-stoff beskytter motoren i mellomtiden.\n529 kr i stedet for 882 kr.",
+  "headline": "529 kr i stedet for 882 kr",
+  "description": "30 dagers åpent kjøp"
+ },
+ "Batmotortrekk_NO_RV_6_1": {
+  "message": "\"Trekket passer bra og holder motoren ren.\"\n– Anders Nilsson, baverbutiken.se\n529 kr i stedet for 882 kr.",
+  "headline": "\"Holder motoren ren\" – Anders N.",
+  "description": "529 kr i stedet for 882 kr"
+ },
+ "Batmotortrekk_NO_RV_7_1": {
+  "message": "\"Gjør jobben bra og holder motoren ren.\"\n– Daniel Lindberg, baverbutiken.se\n529 kr i stedet for 882 kr.",
+  "headline": "\"Motoren holdes ren\" – Daniel L.",
+  "description": "529 kr i stedet for 882 kr"
+ },
+ "IBC-tanktrekk_NO_PD_4_H2": {
+  "message": "Lei av grønt, algefylt vann i IBC-tanken?\n210D oxfordstoff stenger ute lyset – algene kommer aldri i gang.\nÅpning på toppen, glidelås.",
+  "headline": "Stenger ute lyset. Ingen alger.",
+  "description": "Åpning på toppen. Glidelås."
+ },
+ "IBC-tanktrekk_NO_PD_4_H1": {
+  "message": "Grønt, algefylt regnvann i tanken?\n210D oxfordstoff blokkerer sollys og UV helt.\nÅpning på toppen, du kommer alltid til lokket.",
+  "headline": "Blokkerer sollys og UV helt",
+  "description": "210D oxfordstoff. Åpning på toppen."
+ },
+ "IBC-tanktrekk_NO_PD_4_H3": {
+  "message": "Grønt vann i tanken?\n210D oxfordstoff blokkerer sollys og UV helt.\n439 kr.",
+  "headline": "Beskytt tanken. 439 kr.",
+  "description": "210D oxfordstoff, blokkerer UV."
+ },
+ "IBC-tanktrekk_NO_SP_3_H1": {
+  "message": "«Nå slipper jeg mye sollys på tanken. Det ser også penere ut.» – Maria, fem stjerner hos baverbutiken.se\n«Kjøpte dette til regnvannstanken min. Enkelt å åpne ved behov.» – Lena, fem stjerner hos baverbutiken.se",
+  "headline": "10 anmeldelser, 4,7 av 5",
+  "description": "Ekte anmeldelser hos beverbutikken.no, 4,7 av 5."
+ },
+ "IBC-tanktrekk_NO_CS_4_H1": {
+  "message": "439 kr i stedet for 586 kr — 147 kr mindre.\n210D oxfordstoff blokkerer sollys og UV helt.\n25 % rabatt.",
+  "headline": "439 kr i stedet for 586 kr",
+  "description": "Spar 147 kr — 25 % rabatt."
+ },
+ "IBC-tanktrekk_NO_GT_4_H1": {
+  "message": "Gave til den som nettopp har skaffet IBC-tank.\nGlidelås i stedet for presenning og strikk.\n210D oxfordstoff stenger ute lyset som får algene til å vokse.",
+  "headline": "Glidelås, ikke presenning",
+  "description": "Passer standard 1000-liters IBC-tank."
+ }
+}

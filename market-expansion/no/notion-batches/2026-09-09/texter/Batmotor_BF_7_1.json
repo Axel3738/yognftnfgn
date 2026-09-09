@@ -1,0 +1,68 @@
+[
+ {
+  "box": [
+   33,
+   46,
+   1047,
+   305
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 2,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.7,
+  "fyll": "ljus",
+  "radie": 0,
+  "alfa": 255,
+  "text": "529 kr (ord. 882 kr) — spar 353 kr."
+ },
+ {
+  "box": [
+   33,
+   305,
+   1047,
+   402
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "radie": 0,
+  "alfa": 255,
+  "text": "420D Oxford-stoff, 9 størrelser, 0–350 hk."
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Betal med Klarna."
+ },
+ {
+  "form": 1,
+  "text": "Bestill Båtmotortrekket 420D",
+  "rad": 0,
+  "se": "Beställ Båtmotorskyddet 420D",
+  "vanster": false
+ }
+]

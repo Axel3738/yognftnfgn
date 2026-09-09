@@ -1,0 +1,57 @@
+[
+ {
+  "form": 0,
+  "text": "30 dagers åpent kjøp.",
+  "rad": 0,
+  "se": "30 dagars öppet köp.",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Passer det ikke motoren din? Send det tilbake innen 30 dager.",
+  "rader": [
+   1,
+   2
+  ],
+  "se_rader": [
+   "Passar den inte din motor? Skicka tillbaka den inom",
+   "30 dagar."
+  ],
+  "vanster": false
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Betaling med Klarna."
+ },
+ {
+  "box": [
+   240,
+   1212,
+   840,
+   1298
+  ],
+  "fet": true,
+  "storlek": 39,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Bestill Båtmotortrekket 420D"
+ }
+]

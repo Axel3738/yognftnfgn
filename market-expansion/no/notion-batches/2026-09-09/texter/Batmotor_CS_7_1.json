@@ -1,0 +1,68 @@
+[
+ {
+  "box": [
+   33,
+   46,
+   1047,
+   405
+  ],
+  "fet": true,
+  "storlek": 70,
+  "rader": 3,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.62,
+  "fyll": "ljus",
+  "radie": 0,
+  "alfa": 255,
+  "text": "529 kr for Båtmotortrekket 420D (ord. 882 kr)."
+ },
+ {
+  "box": [
+   33,
+   405,
+   1047,
+   499
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "radie": 0,
+  "alfa": 255,
+  "text": "Spar 353 kr på 420D Oxford-trekket."
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "30 dagers åpent kjøp · Klarna"
+ },
+ {
+  "form": 3,
+  "text": "Bestill Båtmotortrekket 420D",
+  "rad": 0,
+  "se": "Beställ Båtmotorskyddet 420D",
+  "vanster": false
+ }
+]
