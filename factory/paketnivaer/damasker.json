@@ -1,0 +1,51 @@
+{
+  "brand": "DryTrek",
+  "kommentar": [
+    "PAKET A — källans egna Kaching-nivåer, ordagrant.",
+    "Läst 2026-09-09 ur baverbutiken.se produktsidas kaching-bundles-deal-block-settings:",
+    "1 st 0 %, 2 st 15 % (förvald, badge 'Mest populär'), 3 st 20 %.",
+    "Styckpriset 389 kr ger 389 / 661,30 / 933,60 kr. Rabattkoderna drar exakt",
+    "mellanskillnaden, så kortet och kassan aldrig kan säga olika saker.",
+    "",
+    "ab_variant är TOM med flit: alla kunder ser den bevisade stegen.",
+    "PAKET B (Q4-ramverket: gratis bonusprodukt i stället för djupare rabatt)",
+    "är planerat i factory/output/damasker/PAKETNIVAER.md men INTE byggt —",
+    "bonusprodukten (reflexband) är vald men inte sourcad, och en gratisnivå",
+    "utan en produkt att ge bort går inte att bygga ärligt.",
+    "",
+    "Mittennivån är förvald enligt fabriksregeln ⌈n/2⌉ = 2. Källan hade redan",
+    "st2b förvald, så regeln och källan säger samma sak."
+  ],
+  "nivaer": [
+    {
+      "handle": "damasker-a1",
+      "antal": 1,
+      "rubrik": "1 par",
+      "underrubrik": "Standardpris",
+      "bricka": "",
+      "forvald": false,
+      "fastpris": null,
+      "rabattkod": null
+    },
+    {
+      "handle": "damasker-a2",
+      "antal": 2,
+      "rubrik": "2 par",
+      "underrubrik": "330,65 kr per par",
+      "bricka": "Mest populär",
+      "forvald": true,
+      "fastpris": 661.3,
+      "rabattkod": "DAMASKER2PACK"
+    },
+    {
+      "handle": "damasker-a3",
+      "antal": 3,
+      "rubrik": "3 par",
+      "underrubrik": "311,20 kr per par",
+      "bricka": "",
+      "forvald": false,
+      "fastpris": 933.6,
+      "rabattkod": "DAMASKER3PACK"
+    }
+  ]
+}

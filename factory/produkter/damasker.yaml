@@ -221,7 +221,7 @@ meta:
   # ⚠️ Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken SE) ovan.
   ad_account_id: "915422744950975"
   page_id: ""                 # kan inte skapas via API — väntar på Meta-sidan
-  pixel_id: ""                # skapas när sidan finns
+  pixel_id: "945311424682796"                # skapas när sidan finns
   # creative_prefix är per PRODUKT, aldrig per brand (regeln i PROCESS.md):
   # brandet bor i kampanjnamnet, prefixet i produkten. Samma prefix som källan
   # så prefixkartan, översättningskön och commission-kopplingen håller ihop.
