@@ -1,15 +1,65 @@
 {
   "butik": "drytrek",
   "produkt": "damasker",
-  "datum": "2026-09-09",
-  "lage": "BLOCKERAD — ingen Shopify-butik finns ännu för DryTrek",
-  "blockering": {
-    "vad": "Miljöns SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET pekar på TankGuard (y1sj1i-3d.myshopify.com), inte på en ny butik.",
-    "hur_det_upptacktes": "kontrolleraAnslutning() svarade name: 'TankGuard'. State-filstestet i /ny-ops steg 1 hade INTE fångat det — TankGuard saknar state-fil.",
-    "loses_av": "VA:n gör checklistans steg 1–2 för DryTrek: ny free trial, egen app på dev.shopify.com, och skriver över de tre miljövariablerna.",
-    "sen": "Kör /ny-ops igen med samma två konfigfiler — allt förarbete ligger klart."
-  },
   "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/10617212141834",
+      "handle": "damasker",
+      "status": "DRAFT"
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 10
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193915617546",
+      "temaNamn": "DryTrek – CRO (utkast)",
+      "sektioner": 6
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193915617546",
+      "filer": [
+        "assets/opf-brand.css",
+        "snippets/ms-head.liquid",
+        "config/settings_data.json"
+      ]
+    },
+    "meny": {
+      "klar": true,
+      "handle": "footer",
+      "orord": false
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 5,
+      "orort": false
+    },
+    "huvudmarknad": {
+      "klar": true,
+      "valuta": "SEK"
+    }
+  },
+  "datum": "2026-09-09",
+  "lage": "BYGGS — butik i1da39-zd.myshopify.com (My Store 3)",
+  "kallkoppling": {
+    "annonskonto": "1867947880635861",
+    "kampanj_id": "120250009391470291",
+    "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+    "utfall_avlast_2026_09_09": "12 198 kr spend, 58 köp, CPA 210 kr över 18 annonser. Vinnaren Damasker_PD_1: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr — 79 % av spenden, 88 % av köpen. Näst bästa vinkel (SP) ligger på ROAS 1,42, alltså UNDER break-even 1,60."
+  },
+  "uppdaterad": "2026-09-09T06:26:27.482Z",
+  "forarbete": {
     "anslutningskontroll": {
       "klar": true,
       "resultat": "FEL BUTIK",
@@ -35,15 +85,6 @@
       "preselectedDealBarId": "st2b",
       "notis": "Mitten redan förvald på källan — stämmer med fabriksregeln ⌈n/2⌉. Rådata i output/damasker/kalla-kaching-paket.json, A/B-planen i output/damasker/PAKETNIVAER.md."
     },
-    "brand": {
-      "klar": true,
-      "namn": "DryTrek",
-      "doman": "drytrek.se",
-      "supportmail": "hello@drytrek.se",
-      "domankoll": "RDAP via rdap.org 2026-09-09 (whois saknas i containern) + DNS: drytrek.se LEDIG, drytrek.no LEDIG, drytrek.com TAGEN. Ingen A-post på .se eller .no.",
-      "logga": "Variant B vald av tre — granmörk cirkel, tre toppar, orange torrlinje, ordmärket DRYTREK. Filer i output/damasker/logo-a|b|c.png, jämförelsen i logo-varianter.png.",
-      "notis": "Medvetet INTE ett tredje '-Guard' efter HeimGuard och TankGuard."
-    },
     "konfig": {
       "klar": true,
       "butiksfil": "factory/butiker/drytrek.yaml",
@@ -62,18 +103,49 @@
       "fil": "factory/output/damasker/CHECKLISTA.md",
       "notis": "Genererad med STORE NAME DryTrek, DOMAIN drytrek.se, STORE EMAIL hello@drytrek.se."
     },
-    "shopify_bygge": { "klar": false, "notis": "Blockerad — ingen butik." },
-    "paket_ab": { "klar": false, "notis": "Planerade i PAKETNIVAER.md, inte byggda." },
-    "bilder_sprak": { "klar": false, "notis": "Tre källbilder har inbränd svensk text (mått, spänne, kardborre) och ska språkversioneras för /nb." },
-    "marknad_no": { "klar": false },
-    "recensioner": { "klar": false, "notis": "Källan har noll recensioner — frågan måste lösas innan butiken tar trafik." },
-    "pixel": { "klar": false },
-    "discord": { "klar": false }
+    "shopify_bygge": {
+      "klar": false,
+      "notis": "Blockerad — ingen butik."
+    },
+    "paket_ab": {
+      "klar": false,
+      "notis": "Planerade i PAKETNIVAER.md, inte byggda."
+    },
+    "bilder_sprak": {
+      "klar": false,
+      "notis": "Tre källbilder har inbränd svensk text (mått, spänne, kardborre) och ska språkversioneras för /nb."
+    },
+    "marknad_no": {
+      "klar": false
+    },
+    "pixel": {
+      "klar": false
+    },
+    "discord": {
+      "klar": false
+    },
+    "brand_anteckning": {
+      "klar": true,
+      "namn": "DryTrek",
+      "doman": "drytrek.se",
+      "supportmail": "hello@drytrek.se",
+      "domankoll": "RDAP via rdap.org 2026-09-09 (whois saknas i containern) + DNS: drytrek.se LEDIG, drytrek.no LEDIG, drytrek.com TAGEN. Ingen A-post på .se eller .no.",
+      "logga": "Variant B vald av tre — granmörk cirkel, tre toppar, orange torrlinje, ordmärket DRYTREK. GODKÄND av Axel 2026-09-09, ingen ny runda. Filer i output/damasker/logo-a|b|c.png, jämförelsen i logo-varianter.png.",
+      "notis": "Medvetet INTE ett tredje '-Guard' efter HeimGuard och TankGuard."
+    },
+    "recensioner": {
+      "klar": false,
+      "notis": "Källan har noll recensioner — frågan måste lösas innan butiken tar trafik."
+    }
   },
-  "kallkoppling": {
-    "annonskonto": "1867947880635861",
-    "kampanj_id": "120250009391470291",
-    "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
-    "utfall_avlast_2026_09_09": "12 198 kr spend, 58 köp, CPA 210 kr över 18 annonser. Vinnaren Damasker_PD_1: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr — 79 % av spenden, 88 % av köpen. Näst bästa vinkel (SP) ligger på ROAS 1,42, alltså UNDER break-even 1,60."
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "beskrivning",
+      "reviews",
+      "tracking",
+      "doman"
+    ],
+    "tid": "2026-09-09T06:26:27.482Z"
   }
 }

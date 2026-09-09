@@ -112,19 +112,23 @@ export async function skrivPolicy(type, body) {
 // Skapar eller uppdaterar en vanlig sida (returpolicy, frakt, villkor, kontakt).
 // Sidor är inte publicering av butiken — de får finnas innan LAUNCH.
 export async function skrivSida(handle, title, body) {
+  // pageByHandle togs bort ur Admin-API:t i 2025-07 (mätt 2026-09-09: fältet
+  // finns inte på QueryRoot och hela sidsteget stannade). Slås upp med
+  // pages(query:) i stället — samma svar, stöds i alla versioner vi kör.
   const befintlig = await graphql(
-    `query opsFactorySida($handle: String!) {
-      pageByHandle(handle: $handle) { id }
+    `query opsFactorySida($fraga: String!) {
+      pages(first: 1, query: $fraga) { nodes { id handle } }
     }`,
-    { handle }
+    { fraga: `handle:${handle}` }
   );
+  const traff = (befintlig.pages?.nodes ?? []).find((n) => n.handle === handle) ?? null;
 
-  if (befintlig.pageByHandle?.id) {
+  if (traff?.id) {
     const data = await graphql(
       `mutation opsFactorySidaUppdatera($id: ID!, $page: PageUpdateInput!) {
         pageUpdate(id: $id, page: $page) { page { id handle } userErrors { field message } }
       }`,
-      { id: befintlig.pageByHandle.id, page: { title, body } }
+      { id: traff.id, page: { title, body } }
     );
     const fel = data.pageUpdate?.userErrors ?? [];
     if (fel.length > 0) throw new Error(`Kunde inte uppdatera sidan ${handle}: ${fel.map((f) => f.message).join('; ')}`);
@@ -234,10 +238,13 @@ export async function hamtaTemafil(temaId, filnamn) {
 // Läser sidfotsmenyn. null om den inte finns.
 export async function hamtaMeny(handle) {
   const data = await graphql(
-    `query opsFactoryMeny($handle: String!) {
+    // Ingen $handle-variabel: menus() filtrerar inte på handle, listan gås
+    // igenom nedan. Admin-API 2025-07 avvisar en deklarerad men oanvänd
+    // variabel med "Variable $handle is declared but not used" (mätt
+    // 2026-09-09) — tidigare versioner släppte igenom den.
+    `query opsFactoryMeny {
       menus(first: 20) { nodes { id handle title items { title url } } }
-    }`,
-    { handle }
+    }`
   );
   return (data.menus?.nodes ?? []).find((m) => m.handle === handle) ?? null;
 }
@@ -310,16 +317,35 @@ export async function hamtaFraktzoner() {
   return {
     profilId: profil.id,
     gruppId: grupp?.locationGroup?.id,
-    zoner: (grupp?.locationGroupZones?.nodes ?? []).map((z) => ({
-      zonId: z.zone.id,
-      zon: z.zone.name,
-      metoder: (z.methodDefinitions?.nodes ?? []).map((m) => ({
-        id: m.id,
-        namn: m.name,
-        pris: Number(m.rateProvider?.price?.amount ?? 0),
-        rateId: m.rateProvider?.id ?? null,
-      })),
-    })),
+    // ⚠️ En färsk butik kan ha villkorade fraktrader ("fri frakt över X").
+    // Shopify returnerar dem som EXTRA metodrader vars id är basmetodens id
+    // med "?source=RateRangeCondition&source_id=…" på slutet — samma metod,
+    // en gång per villkor. Försöker man uppdatera basmetoden svarar API:t
+    // "cannot be updated because it uses new configurations that are only
+    // available through Shopify's updated APIs" (mätt 2026-09-09 på DryTrek,
+    // Sverige-zonens "Normal" 65 kr med en 0-krona-rad över ett belopp).
+    // Därför: släpp de syntetiska raderna, och märk basmetoden `villkorad`
+    // så den raderas och byggs om i stället för att uppdateras.
+    zoner: (grupp?.locationGroupZones?.nodes ?? []).map((z) => {
+      const rader = z.methodDefinitions?.nodes ?? [];
+      const basId = (id) => String(id).split('?')[0];
+      const villkorade = new Set(
+        rader.filter((m) => String(m.id).includes('?source=')).map((m) => basId(m.id))
+      );
+      return {
+        zonId: z.zone.id,
+        zon: z.zone.name,
+        metoder: rader
+          .filter((m) => !String(m.id).includes('?source='))
+          .map((m) => ({
+            id: m.id,
+            namn: m.name,
+            pris: Number(m.rateProvider?.price?.amount ?? 0),
+            rateId: m.rateProvider?.id ?? null,
+            villkorad: villkorade.has(basId(m.id)),
+          })),
+      };
+    }),
   };
 }
 
