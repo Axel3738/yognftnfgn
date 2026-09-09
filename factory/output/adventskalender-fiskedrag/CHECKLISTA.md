@@ -35,9 +35,17 @@ Everything not on this list is done by Claude Code.
 - [ ] Send a test email to **hello@tacklebay.se** – confirm it arrives
 
 ## 5. Shopify – basics
+Do these FIRST, before anything else in this section.
+A new trial store keeps the country, currency and language of the account
+that created it. Claude cannot change any of the three – they are your clicks,
+and the prices, the checkout and the discount codes are wrong until they are done.
+- [ ] Settings → General → **Store currency** → **SEK** → Save
+- [ ] Settings → Markets → make **Sweden** the primary market
+- [ ] Settings → Languages → make **Swedish** default
+- [ ] Tell Claude Code: **currency and language are set** – the discount codes
+      are stored in the store's currency and have to be written again
 - [ ] Settings → General → Store name → **TackleBay** → Save
 - [ ] Settings → Domains → Connect existing domain → **tacklebay.se** → follow the DNS steps → Set as primary
-- [ ] Settings → Languages → make **Swedish** default
 - [ ] Settings → Notifications → Sender email → **hello@tacklebay.se** → Save → click the verification link in the inbox
 
 ## 6. Shopify – payments
