@@ -36,6 +36,21 @@ const NYCKEL = /^("[^"]*"|'[^']*'|[^:]+):(.*)$/;
 // Ett objekt i en lista: "- nyckel: ..." (kolon följt av blank eller radslut).
 const LISTOBJEKT = /^("[^"]*"|'[^']*'|[^:]+):(\s|$)/;
 
+// En HEL citerad sträng är alltid en skalär, aldrig ett objekt.
+//
+// Utan det här greppet vann `[^:]+`-alternativet i LISTOBJEKT så fort texten
+// bar ett kolon: raden
+//   - "Vi säljer det som löser något konkret: spön som inte trasslar."
+// lästes som { '"Vi säljer det som löser något konkret': 'spön …"' } och
+// renderades sedan som "[object Object]" på startsidan.
+// (Hittat 2026-09-09 på TackleBays startsida.) Kolon i löptext är vanligt —
+// buggen träffar benefits, problem och features precis lika lätt.
+function arHelCiteradStrang(text) {
+  const q = text[0];
+  if (q !== '"' && q !== "'") return false;
+  return text.length >= 2 && text[text.length - 1] === q && text.indexOf(q, 1) === text.length - 1;
+}
+
 function lasObjekt(rader, pos, indent) {
   const objekt = {};
   while (pos.i < rader.length) {
@@ -72,7 +87,7 @@ function lasLista(rader, pos, indent) {
       pos.i++;
       const nasta = rader[pos.i];
       lista.push(nasta && nasta.indent > indent ? lasBlock(rader, pos, nasta.indent) : null);
-    } else if (LISTOBJEKT.test(rest)) {
+    } else if (!arHelCiteradStrang(rest) && LISTOBJEKT.test(rest)) {
       // "- nyckel: värde" — skriv om raden som en objektrad två steg in,
       // så hamnar den och de djupare raderna under i samma objekt.
       rader[pos.i] = { indent: indent + 2, text: rest };

@@ -162,6 +162,72 @@ som genereras per bygge).
 19. ⚙️ Q4-ramverket i annonsplanen: banka creatives i förväg (dubbla antalet),
     större PO innan säsong (PLAN.md punkt 6).
 
+## ✅ BEVISAT 2026-09-09 — flerproduktsbutik (TackleBay)
+
+Axels beslut: fiskespöhållaren och fiskeadventskalendern delar EN butik som
+två **jämlika** produkter. Det byggdes, och det som fattades i fabriken finns
+nu. `factory/FLERPRODUKT.md` punkt 1–4 är avbockade.
+
+**Kör en flerproduktsbutik så här — lista bara fler produktfiler:**
+
+```bash
+node factory/ops.mjs factory/butiker/<butik>.yaml \
+     factory/produkter/<a>.yaml factory/produkter/<b>.yaml
+node factory/paket.mjs factory/butiker/<butik>.yaml <a>.yaml <b>.yaml
+node factory/marknad.mjs factory/butiker/<butik>.yaml
+node factory/oversatt-butik.mjs factory/oversattningar/<butik>-nb.mjs
+```
+
+**Vad som är nytt i motorn**
+- `ops.mjs`: varje steg har `niva` — `'butik'` körs en gång, `'produkt'` en
+  gång per produkt. Eget state per nivå (`<butik>--_butik.json`), så en ny
+  produkt kan läggas till i en färdig butik utan att butikens steg görs om.
+- **QA körs per produkt** och `--launch` vägrar om NÅGON produkt är röd.
+- Motorn **stoppar** om två produkter delar `creative_prefix`.
+- `tema-upload.mjs` — steget fanns inte förut; HeimGuard fick sitt tema
+  uppladdat för hand och varje ny butik stod med Shopifys standardtema.
+  ⚠️ `THEME` finns inte som staged-upload-resurs i 2025-07 — använd `FILE`,
+  vars `resourceUrl` themeCreate hämtar zip:en från.
+- `startsida.mjs` — skriver `templates/index.json` OCH sidfotens bolagsblock
+  ur konfigen. Flerprodukt ⇒ kollektionen (`sortiment`), enprodukt ⇒
+  `featured-product`. Detta var buggen som gav DryTrek Matstrumpors hero.
+- `meny`-steget skriver även `main-menu`, en rad per produkt.
+- `kallskanning`-steget körs som **spärr efter startsidan**, så den mäter
+  det som faktiskt ligger i temat.
+- `paket.mjs` — metaobjektet `ms_paketniva` (translatable på från start),
+  A/B-nivåer och de riktiga rabattkoderna. Mitten alltid förvald.
+- `marknad.mjs` + `oversatt-butik.mjs` — marknad, locale, webPresence och
+  translationsRegister.
+
+**API-fällor mätta 2026-09-09 mot 2025-07** (alla rättade i koden):
+- `pageByHandle` finns inte längre på QueryRoot → `pages(first:, query:)`.
+- En query som deklarerar en variabel den inte använder avvisas (`hamtaMeny`).
+- `webPresenceUpdate` tar `input:`, inte `webPresence:`.
+- Tema-JSON kan bära ett `/* … */`-block överst som `JSON.parse` kvävs på.
+- Mallarnas översättningsnycklar har prefixet `section.<mall>.json.`
+  (**singular**). `sections.` i plural är temats schemaetiketter.
+- **Menyns RADER är egna resurser** (`gid://shopify/Link/…`) — menyn själv
+  exponerar bara sin titel. Översätts bara menyn får kunden en norsk sida
+  med svenska menylänkar.
+
+⚠️ **VALUTASPÄRREN — en rabattkod lagras i BUTIKENS valuta.** TackleBays åtta
+koder skrevs som PHP-belopp för att trialbutiken registrerades i Filippinerna
+och ingen hade bytt valuta än. Felet syns inte i adminen, bara i kassan på
+riktiga ordrar. `paket.mjs` vägrar numera skriva koder när butikens valuta
+skiljer sig från konfigens. **Byt valuta FÖRE paketsteget.**
+
+⚠️ **VA:ns butik kommer med sitt eget land och språk.** TackleBay startade som
+`en` primärspråk, marknad Filippinerna, valuta PHP. Primärspråk och valuta går
+INTE att sätta via API:t — de är klick i checklistan, och de måste göras innan
+paket och kassa stämmer.
+
+⚠️ **YAML-läsaren tolkade en citerad listrad med kolon som ett objekt.**
+Raden `- "Vi säljer det som löser något konkret: spön som inte trasslar."`
+blev `{ '"Vi säljer …konkret': 'spön …"' }` och renderades som
+`[object Object]` på startsidan. Rättat i `yaml.mjs` med regressionstest i
+`factory/test/yaml.test.mjs`. Kolon i löptext är vanligt — buggen träffade
+`benefits`, `problem` och `features` precis lika lätt.
+
 ## Regler som bevisats den hårda vägen
 - **Bas-zip:en bär MATSTRUMPORS TEXT i tre mallar** (mätt 2026-09-09):
   `templates/index.json` (hero, rubriker, kollektionen `strumporna`,
