@@ -168,9 +168,38 @@ Bäverbutiken kvar i bild.
 
 ---
 
-## Uppdrag A2 — Brand-swap av video (väntar på HeyGen-krediter)
+## Uppdrag A2 — Brand-swap av video
 
 **Vad:** byt "Bäverbutiken" mot OPS-brandet i tal, inbränd text och slutkort.
+
+### ⚠️ RÄTTELSE 2026-09-09: det är inte ett ord, det är hela manuset
+
+Rubriken ovan har varit missvisande. När de elva svenska transkripten lästes ord
+för ord (`market-expansion/no/video-batches/2026-08-29/srt-orig/`, gratis) visade
+det sig att brandnamnet är den **minsta** delen av problemet. Tre olika jobb, inte
+ett:
+
+| Video | Vad talet faktiskt säger | Jobb |
+|---|---|---|
+| `PD_1_H1`, `PD_1_H2`, `PD_1_H3` | Ren produktmekanik hela vägen. **En enda** brandreplik på slutet: "Ett IBC-tanköverdrag från Bäverbutiken." | byt EN replik |
+| `CS_1_H2`, `CS_1_H3` | Hela erbjudandet talas ut och är falskt för OPS-butiken: "25 % rabatt", "bara idag", "ordinarie pris 636 kronor, idag 489", "men lagret krymper snabbt", "innan det är slut" | **nytt manus** |
+| `GT_1_H1/H2/H3` | Ett kundvittnesmål i jag-form, uppläst: "Min man … så jag beställde … han visar upp den för alla grannar" | **nytt manus** |
+| `SP_1_H1/H2/H3` | Samma sak plus antal: "Innan hade jag alger … sen skaffade jag …", "Tusentals svenskar har redan löst sitt algproblem", "därför så många trädgårdsägare väljer" | **nytt manus** |
+
+**Åtta av elva videor behöver alltså ett omskrivet manus, inte ett ordbyte.** En
+ny OPS-butik har sålt noll enheter — varje talad mening som förutsätter en tidigare
+kund är lika falsk som en påhittad recension, och den hörs dessutom högt.
+
+**Läs transkripten FÖRST, innan någon budget läggs på omdubb.** De ligger gratis i
+repot och avgör om jobbet är en replik eller tolv.
+
+⚠️ **Svenska→svenska fungerar i HeyGen** (mätt 2026-09-09, sessions-id får suffixet
+`-sv-sv-SE`). FAS2 sa tidigare att det var otestat — det är det inte längre.
+Språknamnet är `Swedish (Sweden)`, och proofread kostar noll krediter.
+
+⚠️ **Röstkontrollen (CLAUDE.md järnregel 3) kan inte göras av en molnsession** —
+den kräver att någon lyssnar. En session kan rendera och lämna över; den kan
+aldrig själv säga att rösten håller.
 
 **Återanvänd detta:**
 - `pipeline/translate-batch.mjs` + `pipeline/heygen.mjs` — hela HeyGen-kedjan med state
