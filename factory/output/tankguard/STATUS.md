@@ -19,12 +19,29 @@ Noll avvikelser.
 
 ## Vad som återstår innan något går ACTIVE
 
-1. **Sjutton omdubbade videor är inte avlyssnade.** Rösten går inte att välja i
-   HeyGen, så en dålig röst kan bara fångas med örat (CLAUDE.md järnregel 3).
-   - Svenska: `SP_3_H1`, `CS_4_H1`, `GT_1_H2`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
-   - Norska: alla elva omdubbade
-   De elva första svenska godkändes av Axel 2026-09-09: *"Alla okej. Men inget
-   super — bra, men helt okej liksom."*
+1. **Sjutton videor är omrenderade och ingen har lyssnat på dem.**
+
+   Första omgången underkändes av Axel 2026-09-09: rösten rusade och bromsade.
+   Orsaken var att manuset packades med flera repliker i samma textruta, och
+   HeyGen läser varje ruta på exakt den rutans tid. Sjutton videor gjordes om
+   med ett manus per ruta och i HeyGens `quality`-läge.
+
+   | | Före | Efter |
+   |---|---|---|
+   | Tempospridning mellan rutor | 2,16–10,29× | **1,31–2,07×** |
+   | HeyGen-läge | `fast` | `quality` (avatar-inferens) |
+
+   - Svenska (9): `CS_1_H2`, `CS_1_H3`, `CS_4_H1`, `GT_1_H1`, `GT_1_H2`,
+     `GT_1_H3`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
+   - Norska (8): `CS_1_H2`, `CS_1_H3`, `GT_1_H1`, `GT_1_H2`, `GT_1_H3`,
+     `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
+
+   ⚠️ **Mätningen säger att tempot är jämnt. Den säger ingenting om hur rösten
+   låter.** Järnregel 3 gäller: någon måste höra hook, mitt och slut.
+
+   De sex `replikbyte`-videorna (`PD_1_H1/H2/H3` i båda marknaderna) rördes
+   inte — de ligger på 1,45–2,62× och matchar källvideornas egen spridning.
+   `SP_3_H1` ligger på 1,25× och rördes inte heller.
 2. **`PD_Extra` har ingen dom.** Talet gick aldrig att läsa. Pausad
    (`120249008687250172`), räknas inte som byggd.
 
@@ -48,3 +65,7 @@ Noll avvikelser.
 | `factory/byt-video-tankguard.mjs` | Pekar om en byggd annons till en omrenderad video. |
 | `factory/byt-bild-tankguard.mjs` | Pekar om en byggd annons till en omplåstrad bild. |
 | `factory/rakna-tankguard.mjs` | Räkningen: källannonser per marknad mot `act/ads`. |
+| `factory/cuebudget.mjs` | Golv och tak i tecken per cue — manuset skrivs mot den listan. |
+| `factory/rostkoll.py` | Mäter tempospridningen mellan cues i en färdig fil. |
+| `factory/rostsvep.sh` | Kör röstkollen på en hel uppsättning. |
+| `factory/mediagrind.py` | Läser den FÄRDIGA filen och letar källbutikens påståenden. |

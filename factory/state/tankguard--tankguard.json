@@ -323,7 +323,7 @@
    "tillbakalast": "sida, pixel, geo, länk och status lästa ur Meta per annons"
   },
   "11_omtagning_rost": {
-   "status": "PÅGÅR",
+   "status": "KLAR",
    "orsak": "Axels bakläxa 2026-09-09: rösten jojjade — \"den saktar ner och sen speedar upp hela tiden\".",
    "rotorsak": "fördela() packade flera repliker i samma cue. HeyGen läser varje cue på cuens egen tid.",
    "antal": 17,
@@ -336,7 +336,8 @@
     "fore": "2,16-10,29x spridning i tecken/sekund mellan cues",
     "efter": "1,31-2,07x"
    },
-   "rors_inte": "De sex replikbytena (PD_1_H1/H2/H3 i båda marknaderna) — 1,45-2,62x, matchar källvideornas egen spridning."
+   "rors_inte": "De sex replikbytena (PD_1_H1/H2/H3 i båda marknaderna) — 1,45-2,62x, matchar källvideornas egen spridning.",
+   "inbytta": "9 svenska + 8 norska annonser ompekade till nya creatives, alla PAUSED, tillbakalästa"
   }
  },
  "uppdaterad": "2026-09-09",

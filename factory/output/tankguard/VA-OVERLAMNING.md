@@ -38,15 +38,25 @@ are almost identical; the accounts are different businesses. Check the ID.
 
 ## What is NOT done, and must not be skipped
 
-**Seventeen re-dubbed videos have not been listened to.** The voice is cloned
-from the source video and cannot be chosen, so a bad voice can only be caught
-by ear. These must be heard — hook, middle and end — before they go live:
+**Seventeen re-dubbed videos have not been listened to.**
 
-- Swedish: `SP_3_H1`, `CS_4_H1`, `GT_1_H2`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
-- Norwegian: all eleven — `CS_1_H2`, `CS_1_H3`, `GT_1_H1`, `GT_1_H2`,
-  `GT_1_H3`, `PD_1_H1`, `PD_1_H2`, `PD_1_H3`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
+The first version was rejected: the voice sped up and slowed down through the
+film. The script had been packed several lines into one caption slot, and
+HeyGen reads each slot in exactly that slot's time. All seventeen were rebuilt
+with one line per slot and re-rendered in HeyGen's `quality` mode. Measured
+pacing spread went from 2.16–10.29× down to 1.31–2.07×.
 
-The other eleven Swedish re-dubs were approved by Axel on 2026-09-09.
+The measurement says the pacing is even. It says nothing about how the voice
+sounds. These must be heard — hook, middle and end — before they go live:
+
+- Swedish (9): `CS_1_H2`, `CS_1_H3`, `CS_4_H1`, `GT_1_H1`, `GT_1_H2`,
+  `GT_1_H3`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
+- Norwegian (8): `CS_1_H2`, `CS_1_H3`, `GT_1_H1`, `GT_1_H2`, `GT_1_H3`,
+  `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
+
+Six videos were left alone (`PD_1_H1/H2/H3` in both markets, plus Swedish
+`SP_3_H1`): their pacing matches the source footage, so there was nothing to
+fix.
 
 **`TankGuard_PD_Extra` has no verdict.** Its speech could never be read and
 there is no transcript. Leave it paused until someone listens to those ten
