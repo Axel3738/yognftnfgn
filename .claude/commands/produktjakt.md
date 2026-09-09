@@ -68,6 +68,10 @@ Sidan bär arket inbakat och lämnar det till Axel via `downloads`-capability. E
 
 ### 5. Spara och rapportera
 
+Lägg först en rad i `produktjakt/RUTIN-KVITTO.md` — datum, kandidater, levererade,
+strukna, sida publicerad, Discord. Kvittot är det en utomstående session läser för att
+se att körningen gick hela vägen; utan raden ser en lyckad körning ut som en utebliven.
+
 ```bash
 git add produktjakt && git commit -m "produktjakt <datum>: N produkter" \
   && git push -u origin claude/fortsatta-pa-denna-c28bmv
@@ -90,7 +94,8 @@ Skicka morgonrapporten till Discord (`DISCORD_WEBHOOK_URL`) med antal produkter 
 - [ ] `Leverantorsoffert-<datum>.xlsx` byggd, prisfälten tomma, en rad per produkt
 - [ ] Sidan publicerad mot **samma URL** som föregående dag
 - [ ] Nedladdningsknappen testad (öppna sidan, tryck, filen kommer)
-- [ ] `sedda.json` uppdaterad och pushad till `main`
+- [ ] `sedda.json` uppdaterad och pushad till arbetsgrenen
+- [ ] Raden i `RUTIN-KVITTO.md` skriven och med i commiten
 - [ ] Discord-rapport skickad
 
 ## Svaret till Axel
