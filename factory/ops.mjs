@@ -57,7 +57,7 @@ import {
   brandRader,
   valideraBranding,
 } from './branding.mjs';
-import { SEKTIONER, byggProduktTemplate, sektionerSomVisas } from './tema.mjs';
+import { SEKTIONER, TEMAFILER, byggProduktTemplate, sektionerSomVisas } from './tema.mjs';
 import { qaSektionsfiler, qaRenderadSida } from './tema-qa.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
@@ -149,6 +149,7 @@ const STEG = [
       const { visas, doljs } = sektionerSomVisas(ctx.metafalt.map((m) => m.key));
       return [
         `${Object.keys(SEKTIONER).length} opf-sektioner in i utkasttemat`,
+        `${Object.keys(TEMAFILER).length} fabriksägda temafiler skrivs över (${Object.keys(TEMAFILER).join(', ')})`,
         'produktmallen kopplar in dem efter main (hårdkodad icon-rad rensas)',
         'varje fil verifieras byte för byte efter uppladdning',
         `visas för den här produkten: ${visas.join(', ')}`,
@@ -160,14 +161,22 @@ const STEG = [
       if (!tema) {
         return { manuell: 'Inget utkasttema finns i butiken — installera ett tema först.' };
       }
-      await skrivTemafiler(tema.id, SEKTIONER);
+      // Fabriksägda filer skrivs alltid över — bas-zip:ens kopia av
+      // ms-paket.js bar varukorgsbuggen från 2026-09-09, och en klon som
+      // utgick från ett gammalt tema bär den fortfarande.
+      await skrivTemafiler(tema.id, { ...SEKTIONER, ...TEMAFILER });
       const befintlig = await hamtaTemafil(tema.id, 'templates/product.json');
       if (befintlig) {
         await skrivTemafiler(tema.id, { 'templates/product.json': byggProduktTemplate(befintlig) });
       }
-      const avvikande = await verifieraTemafiler(tema.id, SEKTIONER);
+      const avvikande = await verifieraTemafiler(tema.id, { ...SEKTIONER, ...TEMAFILER });
       if (avvikande.length > 0) throw new Error(`Temafiler förvanskade: ${avvikande.join('; ')}`);
-      return { temaId: tema.id, temaNamn: tema.name, sektioner: Object.keys(SEKTIONER).length };
+      return {
+        temaId: tema.id,
+        temaNamn: tema.name,
+        sektioner: Object.keys(SEKTIONER).length,
+        temafiler: Object.keys(TEMAFILER),
+      };
     },
   },
   {
