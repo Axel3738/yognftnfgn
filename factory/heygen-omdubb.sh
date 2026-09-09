@@ -31,18 +31,36 @@ proofread)
   : > "$S/sessions-$M.txt"
   for f in "$@"; do
     if [ ! -f "$S/proof-$M/${PREFIX}${f}-translated.srt" ]; then
-      echo "PROOFREAD $f"
+      # ⚠️ Skriv videons namn till LOGGEN, inte bara till stdout. Sessions-id:t
+      # paras ihop med namnet efteråt, och en video som misslyckas måste synas
+      # i loggen — annars tappas den tyst ur listan.
+      echo "PROOFREAD $f" | tee -a "$S/proof-$M/logg.txt"
       node localize.mjs proofread --file="$MAPP/${f}.mp4" --lang="$SPRAK" \
         --title="${PREFIX}${f}" --out="$S/proof-$M" 2>&1 \
-        | grep -E "Proofread-session|SRT nedladdad|Fel|Error" \
+        | grep -E "Proofread-session|SRT nedladdad|Fel|Error|error" \
         | tee -a "$S/proof-$M/logg.txt"
     else
-      echo "SKIP $f"
+      echo "SKIP $f" | tee -a "$S/proof-$M/logg.txt"
     fi
   done
   # Sessions-id:na läses ur loggen, inte ur stdout — en buffrad pipe kan annars
   # tappa dem helt och då finns ingen väg tillbaka till sessionen.
-  grep -oP 'PROOFREAD \K\S+|krediter\): \K\S+' "$S/proof-$M/logg.txt" | paste - - > "$S/sessions-$M.txt"
+  #
+  # ⚠️ Para id:t med SRT-FILNAMNET, aldrig med "PROOFREAD"-raden via `paste - -`.
+  # En video som misslyckas skriver en PROOFREAD-rad men inget id, och då
+  # förskjuts hela listan: varenda video får fel sessions-id.
+  python3 - "$S/proof-$M/logg.txt" "$PREFIX" > "$S/sessions-$M.txt" <<'PY'
+import re, sys
+logg, prefix = sys.argv[1], sys.argv[2]
+sess = None
+for rad in open(logg, encoding='utf-8'):
+    m = re.search(r'krediter\): (\S+)', rad)
+    if m:
+        sess = m.group(1); continue
+    m = re.search(re.escape(prefix) + r'(\S+)-translated\.srt', rad)
+    if m and sess:
+        print(f'{m.group(1)}\t{sess}'); sess = None
+PY
   echo "PROOFREADS KLARA — $(wc -l < "$S/sessions-$M.txt") sessioner"
   ;;
 

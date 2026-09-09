@@ -152,7 +152,7 @@ for (const [id, m] of Object.entries(manus)) {
     return (texter[i].length / sek_) / Math.max(0.01, källcues[i].text.length / sek_);
   });
   const värsta = Math.max(...perCue);
-  const trånga = perCue.filter((x) => x > TÄTHETSTAK).length;
+  const tranga = perCue.filter((x) => x > TÄTHETSTAK).length;
   writeFileSync(`${UT}/${id}.srt`, skrivSrt(cues));
   rapport.push({
     id,
