@@ -25,7 +25,14 @@
     "chimney cleaning brush rod set",
     "ash vacuum fireplace",
     "firewood moisture meter",
-    "log rack bracket kit outdoor"
+    "log rack bracket kit outdoor",
+    "firewood splitting ring chopping block",
+    "firewood cutting rack chainsaw sawbuck",
+    "timber skidding grapple chain atv",
+    "screw cone log splitter drill",
+    "fire pit spark screen mesh dome",
+    "wood stove fan heat powered",
+    "ash bucket metal airtight lid"
    ]
   },
   {
@@ -48,7 +55,18 @@
     "boat dehumidifier winter storage",
     "motor flusher muffs outboard",
     "boat fender cover set",
-    "solar vent fan boat caravan"
+    "solar vent fan boat caravan",
+    "hand winch self locking wire rope",
+    "solar battery trickle charger 12v",
+    "trailer wheel bearing protector stainless",
+    "lower unit gear oil pump outboard",
+    "trailer stabilizer jack support leg",
+    "folding truck bed step boat trailer",
+    "manual oil extractor pump 6l outboard",
+    "4g gps tracker magnetic long standby",
+    "trailer light tester 13 pin",
+    "gps tracker magnetic long standby",
+    "trailer dolly hand mover swivel wheel"
    ]
   },
   {
@@ -69,7 +87,9 @@
     "awning storm strap tie down",
     "caravan hitch lock security",
     "gas bottle cover caravan",
-    "caravan step mat outdoor"
+    "caravan step mat outdoor",
+    "solar trickle charger 12v battery maintainer",
+    "vibration alarm remote caravan boat"
    ]
   },
   {
@@ -93,7 +113,12 @@
     "driveway marker reflective stake",
     "gate wheel spring loaded",
     "fence post repair spike bracket",
-    "outdoor tap cover frost"
+    "outdoor tap cover frost",
+    "tubular frost heater greenhouse shed",
+    "pressure washer surface cleaner patio",
+    "electric rat trap rodent zapper",
+    "gsm temperature alarm sms alert",
+    "ladder leveller adjustable legs uneven ground"
    ]
   },
   {
@@ -113,7 +138,15 @@
     "car battery monitor bluetooth 12v",
     "windscreen cover magnetic frost",
     "trailer light board magnetic",
-    "snow brush telescopic car"
+    "snow brush telescopic car",
+    "ultrasonic rodent repeller car engine",
+    "tyre storage rack wall mount",
+    "waterproof car trunk cargo liner mat",
+    "recovery traction boards car snow mud",
+    "waterproof car back seat cover hammock",
+    "solar wireless tpms tyre pressure monitor",
+    "kinetic recovery tow rope heavy duty 10 ton",
+    "rustproofing spray gun cavity wand undercarriage"
    ]
   },
   {
@@ -135,7 +168,19 @@
     "game cart deer hauling folding",
     "hunting blind camo netting",
     "rifle sling neoprene padded",
-    "bore sighter laser"
+    "bore sighter laser",
+    "deer hoist gambrel pulley hunting",
+    "blood tracking flashlight hunting rechargeable",
+    "dog tracking leash long line",
+    "breathable game bag deer carcass",
+    "deer drag harness rope hunting",
+    "shooting tripod rifle rest adjustable",
+    "electronic shooting earmuff hearing protection",
+    "binocular harness chest strap hunting",
+    "hunting spotlight red green rechargeable",
+    "blood tracking flashlight hunting led",
+    "automatic game feeder spinner timer 12v",
+    "laser rangefinder hunting 1000m"
    ]
   },
   {
@@ -157,7 +202,16 @@
     "electric fence tester",
     "hay net slow feeder",
     "poultry feeder rain cover",
-    "livestock water trough de-icer"
+    "livestock water trough de-icer",
+    "automatic chicken coop door opener",
+    "treadle chicken feeder rat proof",
+    "electric fence polywire reel winder",
+    "fence post puller lifter jack",
+    "round hay bale cover waterproof",
+    "chicken plucker drill attachment",
+    "earth auger drill bit post hole",
+    "solar predator deterrent light nocturnal",
+    "automatic chicken coop door light sensor"
    ]
   },
   {
@@ -179,7 +233,10 @@
     "robot mower garage cover",
     "leaf grabber hand rake",
     "wheelbarrow cover waterproof",
-    "garden hose reel wall mount heavy duty"
+    "garden hose reel wall mount heavy duty",
+    "plant caddy wheels heavy duty",
+    "garden auger spiral drill bit",
+    "rolling lawn aerator spike roller push"
    ]
   },
   {
@@ -198,7 +255,10 @@
     "solar shed light separate panel",
     "wireless driveway alarm motion sensor",
     "solar strobe alarm motion outdoor",
-    "solar house number sign illuminated"
+    "solar house number sign illuminated",
+    "alarm padlock 110db shed door",
+    "rechargeable handheld searchlight long range",
+    "rechargeable hanging work light 360 degree"
    ]
   },
   {
@@ -213,7 +273,8 @@
     "hot tub cover cap protector",
     "pool heat pump winter cover",
     "hot tub handrail spa",
-    "pool cover reel strap set"
+    "pool cover reel strap set",
+    "pool cover pump submersible rainwater cover"
    ]
   },
   {
@@ -277,7 +338,9 @@
     "garden furniture cover waterproof rectangular",
     "patio umbrella cover waterproof",
     "heat pump outdoor unit cover winter",
-    "air conditioner outdoor unit roof cover"
+    "air conditioner outdoor unit roof cover",
+    "outdoor cushion storage bag waterproof",
+    "waterproof cargo trailer cover tarp"
    ]
   },
   {
@@ -293,7 +356,10 @@
     "downspout extension flexible drainage",
     "crawl space vent cover winter",
     "roof moss removal brush telescopic",
-    "well pump frost protection cover"
+    "well pump frost protection cover",
+    "drain auger drill attachment 25ft",
+    "rolling nut gatherer wire basket",
+    "pond cover netting leaves protection"
    ]
   },
   {
@@ -338,7 +404,34 @@
    "ord": [
     "chicken coop heater panel safe",
     "dog house heating pad outdoor",
-    "solar electric fence energiser"
+    "solar electric fence energiser",
+    "squirrel proof bird feeder metal",
+    "insulated horse water bucket cover",
+    "horse bucket holder fence mount"
+   ]
+  },
+  {
+   "grupp": "halka och spridning",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "handheld broadcast spreader grit sand salt"
+   ]
+  },
+  {
+   "grupp": "skörd och förråd",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "manual fruit press apple cider 6l"
    ]
   }
  ]

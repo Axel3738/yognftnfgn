@@ -1,0 +1,391 @@
+{
+ "datum": "2026-09-09",
+ "manad": 9,
+ "usd_sek": 9.6022,
+ "kurskalla": "kurs.json 2026-09-09",
+ "sokord": [
+  {
+   "ord": "outdoor kitchen cover heavy duty",
+   "grupp": "grill och utekök"
+  },
+  {
+   "ord": "fire pit cover round waterproof",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "manual oil extractor pump 6l outboard",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "lower unit gear oil pump outboard",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "laser rangefinder hunting 1000m",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "vibration alarm remote caravan boat",
+   "grupp": "husvagn och husbil"
+  },
+  {
+   "ord": "heat pump outdoor unit cover winter",
+   "grupp": "överdrag och skydd"
+  },
+  {
+   "ord": "outboard motor cover waterproof",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "solar flagpole light top mount",
+   "grupp": "belysning och mörker"
+  },
+  {
+   "ord": "gps tracker magnetic long standby",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "rechargeable hanging work light 360 degree",
+   "grupp": "belysning och mörker"
+  },
+  {
+   "ord": "roof moss removal brush telescopic",
+   "grupp": "höst på tomten"
+  },
+  {
+   "ord": "gutter cleaning tool from ground",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "wood stove fan heat powered",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "solar predator deterrent light nocturnal",
+   "grupp": "lantbruk och djur"
+  },
+  {
+   "ord": "log splitting wedge twisted",
+   "grupp": "vedsäsongens verktyg"
+  },
+  {
+   "ord": "hand winch self locking wire rope",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "trailer wheel bearing protector stainless",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "waterproof cargo trailer cover tarp",
+   "grupp": "överdrag och skydd"
+  },
+  {
+   "ord": "breathable game bag deer carcass",
+   "grupp": "jakt"
+  }
+ ],
+ "hoppade": {
+  "stoppord": 6,
+  "pris saknas": 0,
+  "ekonomi": 115,
+  "dubblett": 0
+ },
+ "antal_kandidater": 39,
+ "produkter": [
+  {
+   "product_id": "1005009563954460",
+   "titel": "Multi-size Large Rectangular Table Cover Durable Garden Furniture Protective Cover UV Protection Suitable for Outdoor Use",
+   "url": "https://www.aliexpress.com/item/1005009563954460.html",
+   "pris": 9.99,
+   "valuta": "USD",
+   "pris_text": "US $9.99",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S3b15feb36f504d96ba862e789901a2ddx.jpg",
+   "sald": "",
+   "sokord": "outdoor kitchen cover heavy duty",
+   "grupp": "grill och utekök",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-kitchen-cover-heavy-duty.html",
+   "ekonomi": {
+    "landad": 144,
+    "forslag_pris": 399,
+    "multipel": 2.77,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005007159566417",
+   "titel": "Car Washer Mop Foam Wash Brush Double Brush Head Roof Window Cleaning Maintenance Three-Section Telescopic Mop Car Accessories",
+   "url": "https://www.aliexpress.com/item/1005007159566417.html",
+   "pris": 12.88,
+   "valuta": "USD",
+   "pris_text": "US $12.88",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S460c4c1b988e42a1b514fe6616d50baae.png",
+   "sald": "",
+   "sokord": "roof moss removal brush telescopic",
+   "grupp": "höst på tomten",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-roof-moss-removal-brush-telescopic.html",
+   "ekonomi": {
+    "landad": 186,
+    "forslag_pris": 499,
+    "multipel": 2.69,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012226137331",
+   "titel": "Universal Round Fire Pit Cover, Oxford Cloth UV Dust Rain Resistant Protector with Silver Coating and Drawstring Closure",
+   "url": "https://www.aliexpress.com/item/1005012226137331.html",
+   "pris": 12.97,
+   "valuta": "USD",
+   "pris_text": "US $12.97",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1adaa9f8fdeb46468d347c4abe0a1f6ei.jpg",
+   "sald": "",
+   "sokord": "fire pit cover round waterproof",
+   "grupp": "ved och eldning",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fire-pit-cover-round-waterproof.html",
+   "ekonomi": {
+    "landad": 187,
+    "forslag_pris": 499,
+    "multipel": 2.67,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005008249258612",
+   "titel": "For Standard Quart Bottles Lower Unit Gear Oil Pump Includes Metal Swivel 8mm 10mm Adapters Fit Most Marine Boat Outboard Motors",
+   "url": "https://www.aliexpress.com/item/1005008249258612.html",
+   "pris": 10.46,
+   "valuta": "USD",
+   "pris_text": "US $10.46",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S42dc5c6554c844a3ae5ff63df1f81a04E.jpg",
+   "sald": "",
+   "sokord": "lower unit gear oil pump outboard",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-lower-unit-gear-oil-pump-outboard.html",
+   "ekonomi": {
+    "landad": 151,
+    "forslag_pris": 399,
+    "multipel": 2.65,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012694054863",
+   "titel": "Gutter Cleaner MAX Use Of Any Hand Tool In The Scoop Coupler, Gutter Cleaning From The Ground, Roof And Ladders",
+   "url": "https://www.aliexpress.com/item/1005012694054863.html",
+   "pris": 13.18,
+   "valuta": "USD",
+   "pris_text": "US $13.18",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sb74de03bb0c04c87b52041a3cdae4e4eH.jpg",
+   "sald": "",
+   "sokord": "gutter cleaning tool from ground",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-gutter-cleaning-tool-from-ground.html",
+   "ekonomi": {
+    "landad": 190,
+    "forslag_pris": 499,
+    "multipel": 2.63,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005013063219246",
+   "titel": "2Pcs Trailer Wheel Hub Protector Stainless Steel Bearing Dust Caps Easy Install Covers for Boat Rv Utility Trailer Bearings",
+   "url": "https://www.aliexpress.com/item/1005013063219246.html",
+   "pris": 15.79,
+   "valuta": "USD",
+   "pris_text": "US $15.79",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1796d655966d41398efb39f5d195ea08n.jpg",
+   "sald": "",
+   "sokord": "trailer wheel bearing protector stainless",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-trailer-wheel-bearing-protector-stainless.html",
+   "ekonomi": {
+    "landad": 227,
+    "forslag_pris": 599,
+    "multipel": 2.63,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005007345104914",
+   "titel": "New 110dB Door And Window Vibration Alarm Wireless Anti-Theft  Alarm With Remote Control Home Bicycle Security Burglar Alarm",
+   "url": "https://www.aliexpress.com/item/1005007345104914.html",
+   "pris": 13.23,
+   "valuta": "USD",
+   "pris_text": "US $13.23",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S46f2a551fb2044e6b96fc5ce0181a075w.png",
+   "sald": "",
+   "sokord": "vibration alarm remote caravan boat",
+   "grupp": "husvagn och husbil",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-vibration-alarm-remote-caravan-boat.html",
+   "ekonomi": {
+    "landad": 191,
+    "forslag_pris": 499,
+    "multipel": 2.62,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005010580308237",
+   "titel": "5 Pieces Wire Tube Cable Thimble Winch Wire Rope Cable Wire Rope Thimbles",
+   "url": "https://www.aliexpress.com/item/1005010580308237.html",
+   "pris": 15.93,
+   "valuta": "USD",
+   "pris_text": "US $15.93",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sf9bdbab6496c4dce8132dadcd630ec50F.jpg",
+   "sald": "",
+   "sokord": "hand winch self locking wire rope",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-hand-winch-self-locking-wire-rope.html",
+   "ekonomi": {
+    "landad": 229,
+    "forslag_pris": 599,
+    "multipel": 2.61,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012197673762",
+   "titel": "COB LED Work Light Rechargeable Outdoor Emergency Lighting Led Work Light with 360° Swivel Hose,Magnetic,Hanging Hook Car Repair",
+   "url": "https://www.aliexpress.com/item/1005012197673762.html",
+   "pris": 16.01,
+   "valuta": "USD",
+   "pris_text": "US $16.01",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S8256719988c545fa8eae78575fd2166fC.jpg",
+   "sald": "",
+   "sokord": "rechargeable hanging work light 360 degree",
+   "grupp": "belysning och mörker",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-rechargeable-hanging-work-light-360-degree.html",
+   "ekonomi": {
+    "landad": 231,
+    "forslag_pris": 599,
+    "multipel": 2.6,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005005933847691",
+   "titel": "Wood Drill Bit Twist Firewood Splitting Drill Bit Wood Splitter Screw Cones Bit Square Round Drill Bit For Wood Cleaving Tool",
+   "url": "https://www.aliexpress.com/item/1005005933847691.html",
+   "pris": 18.66,
+   "valuta": "USD",
+   "pris_text": "US $18.66",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S3d1bb460c45b4fc19792ccbc5f88c027E.jpg",
+   "sald": "",
+   "sokord": "log splitting wedge twisted",
+   "grupp": "vedsäsongens verktyg",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-log-splitting-wedge-twisted.html",
+   "ekonomi": {
+    "landad": 269,
+    "forslag_pris": 699,
+    "multipel": 2.6,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005008527018756",
+   "titel": "210D Fire Pit Cover Round Stove Waterproof Cover Outdoor Garden Furniture Tabletop Fire Pit Stones Dust Proof Cover",
+   "url": "https://www.aliexpress.com/item/1005008527018756.html",
+   "pris": 16.08,
+   "valuta": "USD",
+   "pris_text": "US $16.08",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sf25653aa8b6f4c0d873b4073edf63eddR.jpg",
+   "sald": "",
+   "sokord": "fire pit cover round waterproof",
+   "grupp": "ved och eldning",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fire-pit-cover-round-waterproof.html",
+   "ekonomi": {
+    "landad": 232,
+    "forslag_pris": 599,
+    "multipel": 2.59,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005013066657447",
+   "titel": "2Pcs Trailer Wheel Bearing Protectors Stainless Steel Hub Caps Dust Covers Replacement 1.98 Inch for Rv Utility Boat Trailers",
+   "url": "https://www.aliexpress.com/item/1005013066657447.html",
+   "pris": 16.12,
+   "valuta": "USD",
+   "pris_text": "US $16.12",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S7bf6b53d95ef4513a8cbc9bfe0979eed6.jpg",
+   "sald": "",
+   "sokord": "trailer wheel bearing protector stainless",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-trailer-wheel-bearing-protector-stainless.html",
+   "ekonomi": {
+    "landad": 232,
+    "forslag_pris": 599,
+    "multipel": 2.58,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005013095046114",
+   "titel": "B95F Plush Crossbody Bag Small Shoulder Purses Phone Deer Shaped Purses with Closure for Womens Girls",
+   "url": "https://www.aliexpress.com/item/1005013095046114.html",
+   "pris": 10.78,
+   "valuta": "USD",
+   "pris_text": "US $10.78",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S2a2171801d78420aa4fa12fb9c00cd82G.jpg",
+   "sald": "",
+   "sokord": "breathable game bag deer carcass",
+   "grupp": "jakt",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-breathable-game-bag-deer-carcass.html",
+   "ekonomi": {
+    "landad": 155,
+    "forslag_pris": 399,
+    "multipel": 2.57,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012262864893",
+   "titel": "Solar Column Light Auto Night On Day Off 3 Colors IP65 Waterproof for Yard Stone Post Step Decor Solar Post Light Pillar Light",
+   "url": "https://www.aliexpress.com/item/1005012262864893.html",
+   "pris": 21.64,
+   "valuta": "USD",
+   "pris_text": "US $21.64",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sb6c78c3cb60d40789aa8de7a637afb05Q.jpg",
+   "sald": "",
+   "sokord": "solar flagpole light top mount",
+   "grupp": "belysning och mörker",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-solar-flagpole-light-top-mount.html",
+   "ekonomi": {
+    "landad": 312,
+    "forslag_pris": 799,
+    "multipel": 2.56,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  }
+ ]
+}
