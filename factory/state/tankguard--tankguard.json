@@ -95,14 +95,30 @@
       "verktyg": "pipeline/oversatt-bild.py, gratis"
     },
     "videor": {
-      "klar": false,
-      "orsak": "vantar pa butiksfilen; HeyGen ar INTE blockeraren",
-      "heygen_krediter": 16951,
-      "jobb": {
-        "omdubb_plus_undertext": 11,
-        "slutkortsbygge": 2
-      },
-      "rostkontroll": "Obligatorisk fran 2026-09-08 (Axels besked): lyssna hook, mitt och slut i varje renderad fil. En keff rost gar aldrig ut."
+      "klar": "delvis",
+      "renderade": 11,
+      "byggda": 5,
+      "omdubbade_och_byggda": [
+        "PD_1_H1",
+        "PD_1_H2",
+        "PD_1_H3"
+      ],
+      "slutkortsbygge_klart": [
+        "GT_3_H1",
+        "PD_3_H1"
+      ],
+      "vantar_pa_captionsbyte": [
+        "CS_1_H2",
+        "CS_1_H3",
+        "GT_1_H1",
+        "GT_1_H2",
+        "GT_1_H3",
+        "SP_1_H1",
+        "SP_1_H2",
+        "SP_1_H3"
+      ],
+      "heygen": "Swedish (Sweden) fungerar. Moderationskon ar ett vantlage — PD_1_H1 slapptes efter ~5 min.",
+      "rostkontroll": "INTE GJORD. Kraver att nagon lyssnar (CLAUDE.md jarnregel 3). De fem byggda ligger PAUSED."
     },
     "copy": {
       "klar": "delvis",
@@ -213,8 +229,8 @@
         "PD_4_H2"
       ],
       "se_mal": 33,
-      "se_uppe": 20,
-      "se_saknas": 13,
+      "se_uppe": 25,
+      "se_saknas": 8,
       "no_kalla": 33,
       "no_uppe": 0,
       "saknas_namngivna": [
@@ -223,16 +239,12 @@
         "GT_1_H1",
         "GT_1_H2",
         "GT_1_H3",
-        "PD_1_H1",
-        "PD_1_H2",
-        "PD_1_H3",
         "SP_1_H1",
         "SP_1_H2",
-        "SP_1_H3",
-        "GT_3_H1",
-        "PD_3_H1"
+        "SP_1_H3"
       ],
-      "dom": "DELVIS KLART"
+      "dom": "DELVIS KLART",
+      "saknas_orsak": "Fick nytt manus, inte ordbyte. Ljudet ar omdubbat och klart, men den inbranda undertexten visar fortfarande det GAMLA talet hela videon igenom. Hela captionsparet maste bytas med pipeline/no-precis.py."
     }
   },
   "uppdaterad": "2026-09-09",
