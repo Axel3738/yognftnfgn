@@ -93,6 +93,16 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    ⚠️ Testa varukorgen på RIKTIGT innan "klart": tom korg → lägg i varan →
    lådan ska glida in, inte skicka kunden till `/cart` (öppen bugg
    2026-09-09, se PROCESS.md).
+   ⚠️ **SKRIV ALLTID TILL DET PUBLICERADE TEMAT — och läs tillbaka därifrån.**
+   (Axels bakläxa 2026-09-09, DryTrek: sessionen rapporterade fem fixar som
+   klara medan butiken var oförändrad.) Ett bygge har ofta flera teman:
+   Horizon/Dawn som live, butikens eget som utkast. Publicerar du utkastet
+   mitt i körningen byter `role: main` tema, och varje verktyg som slår upp
+   "huvudtemat" pekar plötsligt någon annanstans. Regel: lås tema-id:t i
+   början, skriv alltid dit, och **läs tillbaka varje ändrad fil ur det tema
+   som faktiskt är `role: main`** innan något rapporteras. Säg aldrig "fixat"
+   om en fil du inte läst tillbaka.
+
    ⚠️ **KUNDVYN — sista kontrollen, och den som gäller.** Hämta startsidans
    riktiga HTML och kör `factory/kundvy.mjs`. Fabrikens övriga QA läser
    KONFIGURATION (metafält finns, priser stämmer) och kan bli helt grön på en
