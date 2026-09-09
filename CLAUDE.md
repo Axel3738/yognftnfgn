@@ -564,6 +564,14 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   varning stod tre stycken bort och lästes inte.)* Regeln: varje instruktion som
   rör `.env` slutar med raden **"Skicka inte innehållet till mig."** Hamnar nycklar
   ändå i chatten: skriv aldrig in dem någonstans, och säg vilka som bör bytas.
+- **Är produkten ett flerpack ska antalet synas på tre ställen:** i titeln, som
+  **etikett direkt på huvudbilden** (sharp-text, inte AI), och som FÖRSTA bulleten.
+  En rad inne i beskrivningen räcker inte — kunden scannar bild och titel.
+  *(2026-09-09: staketbygeln sålde 2 byglar men "2-pack" stod bara i titeln och i
+  bullet 3. Axel: "det hade vart nice om vi kunde tydligt förklara mer att 1 st är
+  2 pack".)* Mall: `temu/batch6/antalsbadge.mjs` + `staketbygel-2pack.mjs`.
+  Flerpack döljer sig ofta i offertens Qty-ruta som `1(2pcs)` — `temu/offert.mjs`
+  flaggar det, men läs alltid leverantörsbilden också.
 - **Nya produkter skapas bara i SE och NO** (Axels beslut 2026-09-07).
   Skapa aldrig en ny produkt i DK, FI eller UK utan att Axel sagt till.
   Det som redan ligger där underhålls som vanligt.
