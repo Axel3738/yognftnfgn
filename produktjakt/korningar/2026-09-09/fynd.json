@@ -59,6 +59,62 @@
   {
    "ord": "lawn mower seat cover riding",
    "grupp": "trädgård och maskin"
+  },
+  {
+   "ord": "trail camera solar panel 12v",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "outdoor tap cover frost",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "log lifting tongs firewood",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "caravan roof cover waterproof",
+   "grupp": "husvagn och husbil"
+  },
+  {
+   "ord": "gas bottle cover caravan",
+   "grupp": "husvagn och husbil"
+  },
+  {
+   "ord": "dog kennel run cover waterproof",
+   "grupp": "lantbruk och djur"
+  },
+  {
+   "ord": "fence post repair spike bracket",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "solar vent fan boat caravan",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "trailer wheel lock clamp",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "tree stand seat cushion hunting",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "firewood moisture meter",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "wireless driveway alarm motion sensor",
+   "grupp": "belysning och mörker"
+  },
+  {
+   "ord": "gate wheel spring loaded",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "caravan hitch lock security",
+   "grupp": "husvagn och husbil"
   }
  ],
  "hoppade": {
@@ -67,7 +123,7 @@
   "pris saknas": 0,
   "stoppord": 1
  },
- "antal_kandidater": 25,
+ "antal_kandidater": 46,
  "produkter": [
   {
    "product_id": "1005008077527346",
@@ -85,27 +141,6 @@
     "landad": 228,
     "forslag_pris": 599,
     "multipel": 2.63,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
-   "product_id": "1005011927514185",
-   "titel": "Foldable Cane Easy To Carry Seat Portable Stool Folding Chair Non Slip Handle Super Light Walking Stick For Outdoor Walking",
-   "url": "https://www.aliexpress.com/item/1005011927514185.html",
-   "pris": 16.08,
-   "valuta": "USD",
-   "pris_text": "US $16.08",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sddf296c4c78d43d7a1d84ca5614acb6fL.jpg",
-   "sald": "",
-   "sokord": "folding seat stick hunting",
-   "grupp": "jakt",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-folding-seat-stick-hunting.html",
-   "ekonomi": {
-    "landad": 232,
-    "forslag_pris": 599,
-    "multipel": 2.59,
     "dom": "PASS",
     "orsak": ""
    },
@@ -175,63 +210,21 @@
    "usd_sek": 9.6022
   },
   {
-   "product_id": "1005012386302696",
-   "titel": "Roof Ladder Stabilizer, Ladder Standoff, Extension Ladder Stabilizer, Wall Bracket, Heavy Duty Secure",
-   "url": "https://www.aliexpress.com/item/1005012386302696.html",
-   "pris": 27.55,
+   "product_id": "1005009145737438",
+   "titel": "1/2 Pack Heavy Duty Steel Fence Post Repair Kit - Anchor Brackets & Ground Spike for Fixing Tilted/Broken Wooden Fence Posts",
+   "url": "https://www.aliexpress.com/item/1005009145737438.html",
+   "pris": 18.74,
    "valuta": "USD",
-   "pris_text": "US $27.55",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S4f5c23377f414f0c868c1af6496a8f73E.jpg",
+   "pris_text": "US $18.74",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sda69235967df40a5a5442b5e4f1323c5M.jpg",
    "sald": "",
-   "sokord": "ladder stabilizer standoff roof gutter",
+   "sokord": "fence post repair spike bracket",
    "grupp": "tomt hus och tak",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-ladder-stabilizer-standoff-roof-gutter.html",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fence-post-repair-spike-bracket.html",
    "ekonomi": {
-    "landad": 397,
-    "forslag_pris": 999,
-    "multipel": 2.52,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
-   "product_id": "1005011618553986",
-   "titel": "Windshield Sunshade Front Motorhome Thermal Windscreen Screen Cover For Fiat Ducato Peugeot Boxer Citroen Relay RV Cover",
-   "url": "https://www.aliexpress.com/item/1005011618553986.html",
-   "pris": 19.67,
-   "valuta": "USD",
-   "pris_text": "US $19.67",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd45dbbc9fcb64ef4a78670e4fe959d40T.png",
-   "sald": "",
-   "sokord": "motorhome thermal windscreen cover external",
-   "grupp": "husvagn och husbil",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-motorhome-thermal-windscreen-cover-external.html",
-   "ekonomi": {
-    "landad": 283,
+    "landad": 270,
     "forslag_pris": 699,
-    "multipel": 2.47,
-    "dom": "PASS",
-    "orsak": ""
-   },
-   "usd_sek": 9.6022
-  },
-  {
-   "product_id": "1005012241693262",
-   "titel": "Solar Alarm IP65 Waterproof PIR Motion Detection Alarm with Siren and Strobe Light For Home Security Alarm System",
-   "url": "https://www.aliexpress.com/item/1005012241693262.html",
-   "pris": 23.07,
-   "valuta": "USD",
-   "pris_text": "US $23.07",
-   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc87ec94ba4b94ae1b0f39ca26cfcad8dT.png",
-   "sald": "",
-   "sokord": "solar strobe alarm motion outdoor",
-   "grupp": "belysning och mörker",
-   "sok_url": "https://www.aliexpress.com/w/wholesale-solar-strobe-alarm-motion-outdoor.html",
-   "ekonomi": {
-    "landad": 332,
-    "forslag_pris": 799,
-    "multipel": 2.4,
+    "multipel": 2.59,
     "dom": "PASS",
     "orsak": ""
    },

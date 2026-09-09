@@ -44,6 +44,12 @@ Skriptet kan bara räkna. Du ska läsa. Gå igenom `fynd.json` och **stryk** var
   pekar: **avställning och skydd säljs nu, utrustning som ska användas nästa säsong hör hemma i
   april–juni.** Ett båtkapell och en motorspolare är rätt i dag; ett navigationsljus är det inte.
 - **Dubblett i sak** — två rader som är samma produkt från olika säljare. Behåll den med bäst uppslag.
+- **Stod den på förra körningens ark?** Öppna föregående `korningar/<datum>/STATUS.md` och jämför på
+  **produkt, inte på id**. `sedda.json` stoppar bara exakt samma `product_id`, och samma vara säljs av
+  många säljare med olika id — så en husbilskåpa kan komma tillbaka dag efter dag utan att skriptet
+  märker det. *(Incident 2026-09-09: fyra av åtta levererade varor stod redan på gårdagens ark, och
+  Axel såg det direkt. Gårdagens jakt låg dessutom i `docs/temu-jakt-v2/jakt/v24/` och hade aldrig
+  matats in i `sedda.json`.)* Hittar du en upprepning: stryk den och lägg gårdagens id i `sedda.json`.
 
 Skriv en rad per struken produkt i körningens `STATUS.md` med orsaken. Det är kvittot.
 
