@@ -1,0 +1,901 @@
+{
+ "produkt": "tankguard",
+ "marknad": "SE",
+ "datum": "2026-09-09",
+ "kalla": "HeyGen proofread i quality-läge; manuset skrivet mot cue-budgeten",
+ "modellpolicy": "Repliker skrivna av sonnet-subagenter (17 st) med docs/copy-regler.md och cue-budgeten. Klassificering, budget och grindning av huvudsessionen.",
+ "notis": "Omtagning efter att rösten jojjade. EN replik per cue, varje replik inom cuens teckenintervall.",
+ "manus": {
+  "CS_1_H2": {
+   "id": "CS_1_H2",
+   "typ": "nytt manus",
+   "repliker": [
+    "489 kronor stoppar algerna i tanken.",
+    "Snart frost.",
+    "Utan solljus växer inga alger i vattnet.",
+    "Sitter på under två minuter.",
+    "489 kronor styck, eller spara 18 % med två.",
+    "Kraftigt 210D Oxford-tyg.",
+    "Blixtlås runt om.",
+    "Passar en standard 1000 liters IBC-tank.",
+    "Du når locket genom öppningen.",
+    "489 kronor innan frosten kommer.",
+    "TankGuard. Beställ nu."
+   ],
+   "andringar": [
+    "En replik per ruta, elva repliker mot elva rutor, varje längd inom rutans golv och tak. Förra manuset hade rätt innehåll men fel fördelning, så HeyGen rusade i vissa rutor och drog ut andra.",
+    "Ruta 5 bar tidigare 3-packets 25 % men rutan rymmer mer text: den bär nu 2-packets 18 % i samma mening som sin paketnivå, och 489 kronor står först i meningen.",
+    "Hooken leder fortfarande med 489 kronor men pekar nu på utfallet i tanken i stället för att bara nämna produktnamnet — samma vinkel, konkretare rad.",
+    "Ruta 3 säger nu mekanismen (utan solljus, inga alger) i stället för källans platta 'skydda från alger och UV'.",
+    "Ruta 9 bar förr en tom bråskerad ('Vintern väntar inte'); den bär nu öppningen upptill, en produktfakta som ingen konkurrentmodell utan topplucka kan skriva under.",
+    "Ruta 2 kortades till 'Snart frost.' för att rymmas i 0,86 sekunder — säsongsbrådskan finns kvar, men i rutans budget.",
+    "Behöll säsongsavslutet och varumärkesavslutet TankGuard. Beställ nu."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "489 kronor stoppar algerna i tanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Grönt vatten som blir klart är en bild. Priset och effekten är båda sanna eller falska. Exakt pris plus algpåståendet binder raden till TankGuard."
+    },
+    {
+     "rad": "Snart frost.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Äkta septemberfakta och lätt att se, men vilken vinterprodukt som helst kan säga det. Raden bär bara tempo mellan hook och mekanism."
+    },
+    {
+     "rad": "Utan solljus växer inga alger i vattnet.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Mekanismen går att pröva: alger behöver ljus. Bara ett överdrag som blockerar ljus helt kan skriva under raden."
+    },
+    {
+     "rad": "Sitter på under två minuter.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Mätbar tid, går att klocka i kameran. En presenning med spännband klarar inte tiden."
+    },
+    {
+     "rad": "489 kronor styck, eller spara 18 % med två.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två tal som går att kontrollera mot butiken. Procenten står i samma mening som sin paketnivå."
+    },
+    {
+     "rad": "Kraftigt 210D Oxford-tyg.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "210D är ett kontrollerbart materialtal, men en konkurrent med samma tyg kan säga samma sak. Raden bär bevis, inte särskiljning."
+    },
+    {
+     "rad": "Blixtlås runt om.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Ett blixtlås hela vägen runt tanken syns i bild och saknas på överdrag med bara dragsko."
+    },
+    {
+     "rad": "Passar en standard 1000 liters IBC-tank.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Måttet är kontrollerbart mot köparens egen tank. Passformen delas av alla överdrag för samma standardmått."
+    },
+    {
+     "rad": "Du når locket genom öppningen.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Handgreppet syns: locket öppnas utan att överdraget tas av. Överdrag utan topplucka kan inte påstå det."
+    },
+    {
+     "rad": "489 kronor innan frosten kommer.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Priset är kontrollerbart och frosten är verklig säsong, inte påhittad brådska."
+    },
+    {
+     "rad": "TankGuard. Beställ nu.",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": true,
+     "kommentar": "Varumärkesavslut enligt formatkravet. Bär namnet, inte ett påstående."
+    }
+   ]
+  },
+  "CS_1_H3": {
+   "id": "CS_1_H3",
+   "typ": "nytt manus",
+   "repliker": [
+    "210D oxfordtyg som stänger ute allt solljus från tanken.",
+    "Skydda din IBC-tank från alger och UV.",
+    "Sitter på under två minuter.",
+    "489 kronor, eller spara arton procent med två.",
+    "Blixtlås runt tanken, öppning upptill.",
+    "Passar en standard IBC-tank på 1000 liter.",
+    "Hösten är här och frosten kommer, så skydda tanken för 489 kronor.",
+    "TankGuard. Beställ nu."
+   ],
+   "andringar": [
+    "Skrivet mot rutlistan i stället för som fri text: 8 repliker mot 8 rutor, en replik per ruta, så HeyGen inte längre måste pressa eller dra ut rösten.",
+    "Förra manuset hade 10 repliker på 8 rutor — två rutor fick dubbel text och lästes för fort. Slog ihop 'Blockerar solljus och UV' i hookens materialrad och 'Frosten kommer snart' + 'beställ innan kylan kommer' i den långa ruta 7.",
+    "Varje replik ligger nu innanför sin rutas golv och tak: 56/38/28/46/38/42/66/22 tecken mot 40-61/29-44/19-29/33-51/27-41/34-52/58-89/19-29.",
+    "Vinkel och ton oförändrade från det godkända manuset: 210D-material, alger och UV, monteringstid, flatpris 489 kr med äkta 2-pack-nivå, blixtlås och öppning upptill, passform 1000 liter, säsong, varumärkesavslut.",
+    "Ruta 3 kortades från 'Sätts på plats på under två minuter' till 'Sitter på under två minuter' för att komma under taket 29 utan att tappa siffran.",
+    "Procentsatsen skrivs ut i bokstäver ('arton procent') eftersom bara 210D, 1000 liter och tillåtna priser får stå i sifferform. Den står i samma mening som sin paketnivå, och 489 kronor nämns före den.",
+    "Ruta 6 säger nu passformen rakt ut ('en standard IBC-tank på 1000 liter') i stället för det lösa 'perfekt'.",
+    "Ruta 7 bär säsongen i stället för lagerhot: 'Hösten är här och frosten kommer' — verklig säsong, ingen påhittad brådska."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "210D oxfordtyg som stänger ute allt solljus från tanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Materialsiffra plus mekanismen i samma rad: tyget mot ljuset. Går att peka på och att mäta."
+    },
+    {
+     "rad": "Skydda din IBC-tank från alger och UV.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Grundfunktionen. Sann och konkret, men delas av hela kategorin."
+    },
+    {
+     "rad": "Sitter på under två minuter.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Mätbar monteringstid ur produktfaktan, ingen åsikt."
+    },
+    {
+     "rad": "489 kronor, eller spara arton procent med två.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Riktigt styckpris först, riktig 2-pack-nivå efter. Inget jämförpris, ingen överstruken siffra."
+    },
+    {
+     "rad": "Blixtlås runt tanken, öppning upptill.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Två konstruktionsdetaljer man ser i bild. Kontrollerbara, men inte unika."
+    },
+    {
+     "rad": "Passar en standard IBC-tank på 1000 liter.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Ren passformsfakta med måttet utskrivet i stället för adjektivet 'perfekt'."
+    },
+    {
+     "rad": "Hösten är här och frosten kommer, så skydda tanken för 489 kronor.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Äkta säsong plus riktigt pris. Ingen påhittad knapphet, inget lagerhot."
+    },
+    {
+     "rad": "TankGuard. Beställ nu.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Varumärkesavslut. Ingen konkurrent kan sätta sin logga under raden."
+    }
+   ]
+  },
+  "GT_1_H1": {
+   "id": "GT_1_H1",
+   "typ": "nytt manus",
+   "repliker": [
+    "Ska du köpa present till någon med IBC-tank?",
+    "Ge bort det här i höst.",
+    "Kanske någon som klagat på exakt samma sak två somrar i rad.",
+    "Grönt vatten i tanken.",
+    "Ge något som faktiskt används varje sommar, inte en pryl som hamnar i ett skåp.",
+    "Ett IBC-tanköverdrag från TankGuard, 489 kronor.",
+    "Present ingen väntar sig.",
+    "Ett tag kommer de tro att du glömt bort problemet de pratat om hela sommaren.",
+    "Sen sitter överdraget på, solljuset blockeras och algerna uteblir.",
+    "Ibland är den bästa presenten den som löser ett problem någon redan haft länge.",
+    "Ge bort ett IBC-tanköverdrag före frosten.",
+    "TankGuard. Beställ det nu."
+   ],
+   "andringar": [
+    "Skrivet MOT rutlistan: exakt 12 repliker mot 12 rutor, en talbar mening per ruta, varje längd inom rutans golv och tak — det var den ojämna fördelningen som fick rösten att sakta ner och rusa.",
+    "Vinkel och ton från det godkända manuset behålls: presentvinkeln, tilltalet till tittaren (du/de), algproblemet och slutsatsen om presenten som löser ett gammalt problem.",
+    "Ruta 3, 5, 9 och 11 omskrivna i längd så de fyller sina fönster utan att byta innehåll (tidigare för korta eller för långa mot sin ruta).",
+    "Ruta 6 bär nu priset: 489 kronor som enda och första tal, ingen paketnivå och ingen procentsats i den här videon.",
+    "Ruta 7 bytte ut 'Det blir en riktig överraskning' — den föll på alla tre frågorna — mot 'Present ingen väntar sig' i samma längdfönster.",
+    "Ruta 9 bytte resultatuppräkning mot mekaniken (solljus blockeras, alger uteblir), vilket ger en falsifierbar rad i stället för ett löst utfall.",
+    "Ruta 12 är varumärkesavslutet; 'det' lagt till eftersom 'TankGuard. Beställ nu.' är 22 tecken och faller under rutans golv på 25.",
+    "Inga jag-berättelser, inga kundomdömen, ingen Bäverbutiken, inga förbjudna tal (636, 147, 23 %) och ingen påhittad brådska — bara höst och frost, som är verklig säsong."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Ska du köpa present till någon med IBC-tank?",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Direkt fråga till presentköparen, konkret objekt i trädgården — men vilken IBC-produkt som helst kan öppna så."
+    },
+    {
+     "rad": "Ge bort det här i höst.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Uppmaning med äkta säsong (höst), inget påhittat lagerhot."
+    },
+    {
+     "rad": "Kanske någon som klagat på exakt samma sak två somrar i rad.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två somrar i rad med samma klagomål är en observation, inte en åsikt — bunden till just det här problemet."
+    },
+    {
+     "rad": "Grönt vatten i tanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Grönt vatten går att peka på i bild; själva algfaktumet delas av kategorin."
+    },
+    {
+     "rad": "Ge något som faktiskt används varje sommar, inte en pryl som hamnar i ett skåp.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Konkret motsatspar present-som-används mot pryl-i-skåp, men resonemanget är generellt."
+    },
+    {
+     "rad": "Ett IBC-tanköverdrag från TankGuard, 489 kronor.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Produktnamn plus riktigt styckpris 489 kronor — ingen konkurrent kan signera raden."
+    },
+    {
+     "rad": "Present ingen väntar sig.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Kort överraskningsbeat utan adjektivluft; ersätter den gamla raden som föll på alla tre frågor."
+    },
+    {
+     "rad": "Ett tag kommer de tro att du glömt bort problemet de pratat om hela sommaren.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Specifik, tidsbunden situation kopplad till sommarens algsamtal."
+    },
+    {
+     "rad": "Sen sitter överdraget på, solljuset blockeras och algerna uteblir.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Mekaniken i tre led: överdrag på, solljus blockerat, alger uteblir — falsifierbart och kopplat till 210D-tygets funktion."
+    },
+    {
+     "rad": "Ibland är den bästa presenten den som löser ett problem någon redan haft länge.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Presentprincipen är sann men universell; bär manusets slutsats."
+    },
+    {
+     "rad": "Ge bort ett IBC-tanköverdrag före frosten.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Uppmaning med verklig säsongsdeadline (frosten), ingen fejkad brådska."
+    },
+    {
+     "rad": "TankGuard. Beställ det nu.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Varumärkesavslut plus order-uppmaning; ingen annan kan äga namnet TankGuard."
+    }
+   ]
+  },
+  "GT_1_H3": {
+   "id": "GT_1_H3",
+   "typ": "nytt manus",
+   "repliker": [
+    "Hon pratar om sin IBC-tank varje sommar.",
+    "Så här överraskar du henne.",
+    "Hon älskar sin trädgård och har klagat på samma sak i två somrar.",
+    "Alger i regnvattentanken.",
+    "Ge henne något hon faktiskt kommer att använda, inte en pryl som hamnar i ett skåp.",
+    "Ett IBC-tanköverdrag i 210D Oxford från TankGuard.",
+    "Blixtlås runt hela tanken.",
+    "Ett tag tror hon att du glömt problemet hon pratat om hela sommaren.",
+    "Sen blockerar tyget solljuset, algerna försvinner och vattnet blir klart.",
+    "Ibland är den bästa presenten den som löser ett problem hon haft i två somrar.",
+    "Ge bort ett IBC-tanköverdrag för 489 kronor.",
+    "Ge bort TankGuard. Beställ nu."
+   ],
+   "andringar": [
+    "Skrev manuset mot rutlistan i stället för som fri text: exakt 12 repliker mot 12 rutor, en talbar mening per ruta, varje replik inom rutans golv och tak. Det var detta som gjorde att rösten saktade ner och rusade.",
+    "Delade den gamla hookraden, som låg som en dubbelmening i ruta 1, i två repliker: situationen i ruta 1 och löftet i ruta 2. Ruta 1 har bara 2,58 sekunder.",
+    "Behöll vinkeln och tonen från det godkända manuset: present till någon som klagat på alger i regnvattentanken, tittartilltal i stället för jag-berättelse, inget Bäverbutiken.",
+    "Bytte de tomma adjektivraderna. 'Det blir en riktig överraskning' blev produktfaktan 'Blixtlås runt hela tanken', och 'Enkel present, stor uppskattning' blev varumärkesavslutet.",
+    "Bytte 'Sen är tanken skyddad, vattnet klart, och algerna borta' mot mekaniken bakom utfallet: tyget blockerar solljuset, därför uteblir algerna.",
+    "Lade in produktnamnet och materialet 210D Oxford i ruta 6, där det gamla manuset nämnde butiken.",
+    "Lade in styckpriset 489 kronor i ruta 11. Det är det enda talet i manuset, ingen paketnivå och ingen procentsats behövde följa efter.",
+    "Tog bort tankstreck och parenteser, allt läses högt som hela meningar."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Hon pratar om sin IBC-tank varje sommar.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret person och konkret föremål, upprepat varje sommar. Går att kolla mot en verklig person, och kopplar direkt till IBC-tanken."
+    },
+    {
+     "rad": "Så här överraskar du henne.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Uppmaning till tittaren, ingen jag-berättelse. Övergångsrad som vilken presentannons som helst kan säga."
+    },
+    {
+     "rad": "Hon älskar sin trädgård och har klagat på samma sak i två somrar.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Tidsbunden observation, inte ett omdöme. Två somrars klagomål på samma sak är specifikt för algproblemet."
+    },
+    {
+     "rad": "Alger i regnvattentanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Ren fakta som går att se i tanken, men delas av hela kategorin."
+    },
+    {
+     "rad": "Ge henne något hon faktiskt kommer att använda, inte en pryl som hamnar i ett skåp.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Konkret motsatspar present mot pryl i skåp. Generellt presentresonemang, ingen konkurrent hindras."
+    },
+    {
+     "rad": "Ett IBC-tanköverdrag i 210D Oxford från TankGuard.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Materialfakta plus varumärke. Ingen annan kan sätta sin logga under raden."
+    },
+    {
+     "rad": "Blixtlås runt hela tanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Konstruktionsdetalj som går att peka på, men finns på liknande överdrag."
+    },
+    {
+     "rad": "Ett tag tror hon att du glömt problemet hon pratat om hela sommaren.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Specifik, tidsbunden situation kopplad till algsamtalet. Starkaste raden i det godkända manuset, behållen."
+    },
+    {
+     "rad": "Sen blockerar tyget solljuset, algerna försvinner och vattnet blir klart.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Mekaniken, inte adjektiv: solljus blockeras, alger uteblir. Sant för alla ljustäta överdrag."
+    },
+    {
+     "rad": "Ibland är den bästa presenten den som löser ett problem hon haft i två somrar.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Bytte det luddiga 'redan haft länge' mot den mätbara tidsramen två somrar, samma som replik 3."
+    },
+    {
+     "rad": "Ge bort ett IBC-tanköverdrag för 489 kronor.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Riktigt styckpris, ingen överstruken siffra och ingen procentsats utan paketnivå."
+    },
+    {
+     "rad": "Ge bort TankGuard. Beställ nu.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Varumärkesavslut plus uppmaning, ingen annan kan äga namnet."
+    }
+   ]
+  },
+  "GT_1_H2": {
+   "id": "GT_1_H2",
+   "typ": "nytt manus",
+   "repliker": [
+    "Presenten till trädgårdsmästaren som löser algproblemet.",
+    "Kanske någon som älskar sin trädgård, men klagat på samma sak i flera somrar.",
+    "Alger i regnvattnet.",
+    "Ge dem något de faktiskt kommer att använda, inte en pryl som blir stående i ett skåp.",
+    "Ett IBC-tanköverdrag från TankGuard, 489 kronor.",
+    "Sitter på under två minuter.",
+    "Blixtlås runt hela tanken och en öppning upptill för locket.",
+    "Tyget är 210D Oxford och stänger ute allt solljus, så algerna uteblir.",
+    "Den bästa presenten är den som löser ett problem de haft i åratal.",
+    "Spara arton procent med två, tjugofem med tre.",
+    "TankGuard. Beställ ditt överdrag nu."
+   ],
+   "andringar": [
+    "Skrivet mot rutlistan: exakt 11 repliker mot 11 rutor, en replik per ruta, varje längd kontrollerad mot rutans golv och tak (56/77/20/86/48/28/60/70/66/46/36 mot 44-68, 55-84, 19-29, 71-108, 42-64, 19-29, 58-89, 59-90, 59-91, 35-54, 24-37).",
+    "Behöll presentvinkeln och du-tilltalet från det godkända manuset: replik 1, 2, 4 och 9 är den godkända textens rader, bara längdjusterade så de ryms i sin ruta.",
+    "Slog ihop tolv beats till elva: den godkända raden om överraskningen och raden 'ett tag tror de att du glömt bort problemet' ströks, eftersom rutorna 6-8 är för korta för dem och rutorna behövde produktfakta i stället.",
+    "Replik 4 förlängdes från 65 till 86 tecken ('kommer att använda' + 'som blir stående i ett skåp') för att nå rutans golv på 71 - den gamla varianten låg under golvet och hade gett en utdragen, långsam uppläsning.",
+    "Replik 3 skrevs om från källvideons 'Alger i regnvattentanken' till 'Alger i regnvattnet' så källbutikens formulering inte återanvänds rakt av.",
+    "Bytte källbutikens namn mot TankGuard och lade in det riktiga priset 489 kronor i replik 5 - det är första talet i manuset, paketnivåerna kommer först i replik 10.",
+    "Rabatterna står med sin paketnivå i samma mening (arton procent med två, tjugofem med tre) och skrivs i bokstäver, eftersom sifferform bara är tillåten för 210D, 1000 liter och priser.",
+    "Lade in tre produktfakta som saknades helt i det gamla manuset: blixtlås runt hela tanken, öppningen upptill och 210D Oxford som blockerar solljuset.",
+    "Slutrepliken är varumärkesavslutet, men rutan har golv 24 tecken och 'TankGuard. Beställ nu.' är bara 22 - lade därför till 'ditt överdrag' (36 tecken) så rösten inte pausar i slutet.",
+    "Inget av källbutikens gamla priser eller rabattal finns kvar, inga betalnings- eller returlöften, inga stjärnor, betyg eller kundcitat, och ingen påhittad brådska."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Presenten till trädgårdsmästaren som löser algproblemet.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret koppling present till algproblem, inget subjektivt 'perfekt'. Godkänd rad sedan tidigare."
+    },
+    {
+     "rad": "Kanske någon som älskar sin trädgård, men klagat på samma sak i flera somrar.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Pekar ut en person mottagaren känner igen, med ett återkommande klagomål som går att kontrollera."
+    },
+    {
+     "rad": "Alger i regnvattnet.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Grönt vatten går att se, men vilken tankprodukt som helst kan säga det."
+    },
+    {
+     "rad": "Ge dem något de faktiskt kommer att använda, inte en pryl som blir stående i ett skåp.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Konflikt present mot pryl i skåp, konkret bild men inte unik för TankGuard."
+    },
+    {
+     "rad": "Ett IBC-tanköverdrag från TankGuard, 489 kronor.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Exakt produkt och exakt pris, ingen konkurrent kan sätta sin logga under raden."
+    },
+    {
+     "rad": "Sitter på under två minuter.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Mätbar tid som går att stoppa klockan på, kommer ur produktfakta."
+    },
+    {
+     "rad": "Blixtlås runt hela tanken och en öppning upptill för locket.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två fysiska detaljer man kan peka på i bilden, båda specifika för det här överdraget."
+    },
+    {
+     "rad": "Tyget är 210D Oxford och stänger ute allt solljus, så algerna uteblir.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Materialsiffra plus orsakskedja ljus till alger, allt kontrollerbart."
+    },
+    {
+     "rad": "Den bästa presenten är den som löser ett problem de haft i åratal.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Bär vinkeln hem, men formuleringen är generell för presentannonser."
+    },
+    {
+     "rad": "Spara arton procent med två, tjugofem med tre.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Riktiga paketnivåer, varje procentsats står med sitt antal i samma mening."
+    },
+    {
+     "rad": "TankGuard. Beställ ditt överdrag nu.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Varumärkesavslut med uppmaning, namnet gör raden omöjlig för en konkurrent."
+    }
+   ]
+  },
+  "SP_1_H1": {
+   "id": "SP_1_H1",
+   "typ": "nytt manus",
+   "repliker": [
+    "Så här ser en IBC-tank ut efter tre månader, med och utan överdrag. Utan skydd växer alger i tanken varje sommar. Grönt, grumligt vatten.",
+    "Med ett överdrag stannar algerna borta. Tyget är 210D Oxford och blockerar solljuset helt, så plasten inte blir spröd och vattnet håller sig klart.",
+    "Blixtlåset löper runt hela tanken och sitter på plats på under två minuter. Öppningen upptill gör att du når locket ändå.",
+    "Inget krångel vid påfyllning eller avläsning.",
+    "Tre månader senare: kristallklart vatten, inga alger.",
+    "Tanken ser fortfarande ny ut.",
+    "Skillnaden är skyddet, inte turen. TankGuard kostar 489 kronor.",
+    "TankGuard. Beställ nu"
+   ],
+   "andringar": [
+    "Skrev manuset mot rutlistan i stället för som fri text: 12 repliker blev exakt 8, en per ruta, var och en inom rutans teckenintervall. Det är detta som tar bort inbromsningen och rusningen i rösten.",
+    "Slog ihop förra manusets fyra öppningsrader (jämförelse, algorsak, grönt vatten, lösning) till en enda hook-replik som fyller ruta 1, och la lösningsraden i ruta 2 där tyget ändå förklaras.",
+    "Slog ihop materialraden och UV-mekaniken i ruta 2 så rutans 107-teckengolv nås utan utfyllnad: solljus blockeras helt, därför inga alger och ingen spröd plast.",
+    "Slog ihop blixtlåset, monteringstiden och öppningen upptill i ruta 3 — tre konstruktionsfakta som hör ihop och tillsammans fyller rutan.",
+    "Tog bort 'perfekt' från blixtlåsraden och 'och det bästa' från lockraden: adjektiv och luftord ersatta av det som går att peka på (runt hela tanken, under två minuter, når locket).",
+    "Rättade 'Ingen krångel' till 'Inget krångel'.",
+    "Bytte konfliktraden 'Skillnaden är skyddet — inte turen' till samma rad utan tankstreck och la 489 kronor i samma replik, så priset finns i manuset och är den enda prissiffran som sägs.",
+    "Bytte slutrepliken 'Det bara fungerar' (inget att peka på) mot varumärkesavslutet TankGuard. Beställ nu, som ryms i rutans 21 tecken.",
+    "Behöll vinkeln och tonen från det godkända manuset: beskrivande före/efter mot bilden, ingen jag-berättelse, ingen social proof, ingen Bäverbutiken."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Så här ser en IBC-tank ut efter tre månader, med och utan överdrag. Utan skydd växer alger i tanken varje sommar. Grönt, grumligt vatten.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Pekar rakt på delad bild med tidsangivelse. Grönt, grumligt vatten går att se, och påståendet är sant eller falskt mot bilden."
+    },
+    {
+     "rad": "Med ett överdrag stannar algerna borta. Tyget är 210D Oxford och blockerar solljuset helt, så plasten inte blir spröd och vattnet håller sig klart.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Mätbar materialfakta plus orsakskedja ljus till alger. En konkurrent med samma 210D-tyg kan skriva raden."
+    },
+    {
+     "rad": "Blixtlåset löper runt hela tanken och sitter på plats på under två minuter. Öppningen upptill gör att du når locket ändå.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Tre kontrollerbara fakta: dragkedjans dragning, tiden, och öppningen upptill. Kombinationen hör till den här konstruktionen."
+    },
+    {
+     "rad": "Inget krångel vid påfyllning eller avläsning.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Följdsats till öppningen upptill, syns i klippet. Generisk formulering, inte ägbar."
+    },
+    {
+     "rad": "Tre månader senare: kristallklart vatten, inga alger.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Bunden till samma tremånadersram som hooken, alltså samma bevis stängs. Sant eller falskt mot bilden."
+    },
+    {
+     "rad": "Tanken ser fortfarande ny ut.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Beskriver bilden i rutan, kort och konkret. Kan sägas om vilken skyddad tank som helst."
+    },
+    {
+     "rad": "Skillnaden är skyddet, inte turen. TankGuard kostar 489 kronor.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konfliktrad mot trosuppfattningen att klart vatten är slump, plus exakt pris som ingen annan kan sätta sitt namn under."
+    },
+    {
+     "rad": "TankGuard. Beställ nu",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Varumärkesavslut. Punkten på slutet är struken för att rutans tak är 21 tecken, orden som läses upp är oförändrade."
+    }
+   ]
+  },
+  "SP_1_H2": {
+   "id": "SP_1_H2",
+   "typ": "nytt manus",
+   "repliker": [
+    "Grönt, grumligt vatten i tanken varje sommar.",
+    "Det är solljuset som göder algerna i vattnet och gör plasten spröd med tiden.",
+    "Ett TankGuard-överdrag stänger ute allt solljus och UV.",
+    "Tyget är 210D Oxford, tjockt och tätt.",
+    "Inga alger i vattnet. Ingen spröd plast.",
+    "Blixtlåset löper runt hela tanken och sitter tätt.",
+    "Och det bästa: locket når du genom öppningen upptill, utan att lyfta av.",
+    "Inget krångel när du fyller på eller läser av nivån.",
+    "Tre månader senare: kristallklart vatten, inga alger.",
+    "Tanken ser fortfarande ny ut.",
+    "489 kronor styck, eller två för 799 kronor före frosten. TankGuard. Beställ nu."
+   ],
+   "andringar": [
+    "Skrev om manuset mot rutlistan i stället för som fri text: elva repliker mot elva rutor, en replik per ruta, varje längd inom rutans golv och tak. Det var ojämn textmängd per ruta som fick rösten att sakta ner och rusa.",
+    "Slog ihop förra manusets tolv repliker till elva. Förra rad 2 och 3 (utan skydd växer alger / grönt grumligt vatten) blev en enda hookreplik i ruta 1, och den lediga plats som uppstod fylldes med orsaken i ruta 2.",
+    "Ny ruta 2 säger varför algerna växer: solljuset göder algerna och gör plasten spröd. Det är produktfakta och det bär rutans 62 till 95 tecken utan utfyllnad.",
+    "Bytte det generiska 'Med ett IBC-tanköverdrag' mot 'Ett TankGuard-överdrag' så varumärket bärs genom hela manuset, inte bara i avslutet.",
+    "Slog ihop 210D-raden och väder-och-sol-raden till två korta rutor: material i ruta 4, resultat i ruta 5. Förra manuset hade båda i en enda lång replik, vilket är exakt den obalans som gjorde rösten stressad.",
+    "Tog bort förra manusets 'Skillnaden är skyddet, inte turen' och 'Det bara fungerar'. Båda föll på tre-frågorstestet och rutorna behövdes till pris och avslut.",
+    "Lade in priset i sista rutan: 489 kronor styck först, paketnivån 799 kronor för två efter. Ingen procentsats, inget jämförpris, inget av källbutikens tal.",
+    "Behöll före-och-efter-vinkeln, tonen och ordningen från det godkända manuset. Det var längden och rutindelningen som ändrades, inte innehållet."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Grönt, grumligt vatten i tanken varje sommar.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Konkret bild av före-läget, matchar det tittaren ser i rutan. Generisk för kategorin, men den bär hooken."
+    },
+    {
+     "rad": "Det är solljuset som göder algerna i vattnet och gör plasten spröd med tiden.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Pekar på orsaken i stället för att beskriva problemet igen. Sant eller falskt, och det är den orsak just det här överdraget tar bort."
+    },
+    {
+     "rad": "Ett TankGuard-överdrag stänger ute allt solljus och UV.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Namngiven produkt plus mätbart löfte. En konkurrent kan inte sätta sin logga under raden."
+    },
+    {
+     "rad": "Tyget är 210D Oxford, tjockt och tätt.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Materialsiffra i stället för adjektiv. Går att kontrollera mot produkten."
+    },
+    {
+     "rad": "Inga alger i vattnet. Ingen spröd plast.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Två resultat man kan se i tanken. Parallell form gör den lätt att ta emot i en kort ruta."
+    },
+    {
+     "rad": "Blixtlåset löper runt hela tanken och sitter tätt.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konstruktionsdetalj som syns i bilden och som inte alla överdrag har."
+    },
+    {
+     "rad": "Och det bästa: locket når du genom öppningen upptill, utan att lyfta av.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Öppningen upptill är produktens egna särdrag och den syns i rutan."
+    },
+    {
+     "rad": "Inget krångel när du fyller på eller läser av nivån.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Följdnyttan av föregående rad, i två handgrepp tittaren känner igen."
+    },
+    {
+     "rad": "Tre månader senare: kristallklart vatten, inga alger.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Efter-läget med tidsram. Samma påstående som i det godkända manuset."
+    },
+    {
+     "rad": "Tanken ser fortfarande ny ut.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Kort avläsbar rad som matchar rutans korta fönster."
+    },
+    {
+     "rad": "489 kronor styck, eller två för 799 kronor före frosten. TankGuard. Beställ nu.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Riktigt pris först, paketnivån efter, verklig säsong och varumärkesavslutet. Ingen påhittad brådska."
+    }
+   ]
+  },
+  "SP_1_H3": {
+   "id": "SP_1_H3",
+   "typ": "nytt manus",
+   "repliker": [
+    "Det här är anledningen till att algerna försvinner ur tanken. Utan överdrag växer de fritt varje sommar.",
+    "Grönt, grumligt vatten.",
+    "Ett IBC-tanköverdrag från TankGuard blockerar solljuset helt.",
+    "Tyget är tjockt. 210D Oxford, gjort för att stå emot väder och sol.",
+    "Blixtlåset gör att det sitter tight runt hela tanken.",
+    "Och det bästa?",
+    "Du når locket genom öppningen upptill, utan att ta av något.",
+    "Inget krångel när du fyller på eller läser av nivån.",
+    "Efter tre månader: kristallklart vatten, inga alger.",
+    "Tanken ser fortfarande ny ut.",
+    "Skillnaden är skyddet, inte turen. 489 kronor styck.",
+    "TankGuard. Beställ nu"
+   ],
+   "andringar": [
+    "Skrivet mot rutlistan i stället för som fri text: exakt en replik per ruta, tolv repliker mot tolv rutor, varje längd inom sitt golv och tak. Det är detta som tar bort tempoväxlingen ägaren hörde.",
+    "Vinkel och ton är oförändrade från det godkända manuset: mekanikhook, före/efter på alger, materialfakta, öppning upptill, tre-månadersutfallet och konfliktraden om skyddet mot turen.",
+    "Ruta 1 (golv 83) var tidigare en enda kort mening på 50 tecken och lästes därför för långsamt. Hooken bär nu både mekanikpåståendet och orsaken: utan överdrag växer algerna fritt.",
+    "Ruta 3 (golv 50) fick produktnamnet och den fysikaliska orsaken (blockerar solljuset helt) i stället för den korta raden om att algerna stannar borta, som låg under golvet.",
+    "Ruta 7 (golv 43) skrevs om från jag-form till du-form och fick den saknade halvan: du behöver inte ta av något för att nå locket.",
+    "Priset lades i ruta 11 tillsammans med konfliktraden. 489 kronor är det enda talet i manuset, alltså det tal annonsen leder med. Ingen paketnivå, ingen procentsats, inget jämförpris.",
+    "Slutrepliken behåller varumärkesavslutets ordalydelse men utan avslutande punkt: med punkt blir raden 22 tecken mot rutans tak på 21. Uttalet är identiskt.",
+    "Bäverbutiken, kundomdömen och påhittad brådska finns inte i någon replik. Tre månader och säsongen är kvar eftersom bilden visar dem."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Det här är anledningen till att algerna försvinner ur tanken. Utan överdrag växer de fritt varje sommar.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Pekar på mekaniken i bilden i stället för på ett kundomdöme. Sant eller falskt, inte tyckande, men vilket överdrag som helst kan säga det."
+    },
+    {
+     "rad": "Grönt, grumligt vatten.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Konkret bild av problemet, delas av hela kategorin."
+    },
+    {
+     "rad": "Ett IBC-tanköverdrag från TankGuard blockerar solljuset helt.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Produktfakta med varumärket i, går att kontrollera mot tyget."
+    },
+    {
+     "rad": "Tyget är tjockt. 210D Oxford, gjort för att stå emot väder och sol.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Materialsiffra att peka på, men 210D Oxford finns hos fler."
+    },
+    {
+     "rad": "Blixtlåset gör att det sitter tight runt hela tanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Konkret detalj som syns i videon. Tight ersätter det lösa perfekt."
+    },
+    {
+     "rad": "Och det bästa?",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": false,
+     "kommentar": "Ren övergång på 0,62 sekunder. Bär inget påstående och ska inte göra det."
+    },
+    {
+     "rad": "Du når locket genom öppningen upptill, utan att ta av något.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Specifik konstruktionsdetalj, direkt falsifierbar av den som har överdraget på."
+    },
+    {
+     "rad": "Inget krångel när du fyller på eller läser av nivån.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Följdfakta av öppningen upptill, generisk formulering."
+    },
+    {
+     "rad": "Efter tre månader: kristallklart vatten, inga alger.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Bunden till samma tre-månadersbild som hooken, tidsatt och kontrollerbar."
+    },
+    {
+     "rad": "Tanken ser fortfarande ny ut.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Beskriver bilden, men vem som helst kan säga det."
+    },
+    {
+     "rad": "Skillnaden är skyddet, inte turen. 489 kronor styck.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konflikt plus exakt pris. Ingen konkurrent kan sätta sin logga under 489 kronor styck."
+    },
+    {
+     "rad": "TankGuard. Beställ nu",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Varumärkesavslut, ägs bara av TankGuard."
+    }
+   ]
+  },
+  "CS_4_H1": {
+   "id": "CS_4_H1",
+   "typ": "nytt manus",
+   "repliker": [
+    "489 kronor för ett IBC-tanköverdrag som stänger ute solljuset.",
+    "Två stycken kostar 799 kronor, spara 18 %.",
+    "Tyget blockerar solljus och UV helt, så inga alger växer i vattnet.",
+    "Kraftigt 210D Oxford-tyg.",
+    "Blixtlås runt hela tanken, på plats på under två minuter, och öppningen upptill ger dig locket. TankGuard.",
+    "Beställ nu."
+   ],
+   "andringar": [
+    "Skrev manuset mot rutlistan i stället för som fri text: en replik per ruta, sex rutor, sex repliker, varje replik inom sin rutas golv och tak. Det är det som tar bort inbromsningen och uppspeedningen.",
+    "Rutans teckenbudget styrde längden: ruta 1 fick 62 av 50-76, ruta 2 42 av 30-46, ruta 3 67 av 44-68, ruta 4 25 av 18-28, ruta 5 106 av 92-141, ruta 6 11 av 10-15. Ingen ruta ligger på kanten.",
+    "Tog bort källbutikens jämförpris 636 kr, mellanskillnaden 147 kr och 23 % rabatt. Annonsen leder nu med TankGuards riktiga pris 489 kr, och procentsatsen står bara i samma mening som sin paketnivå (799 kr för två, spara 18 %).",
+    "Behöll vinkeln och tonen från det godkända SE-manuset (CS-linjen: pris först, sedan material, sedan blixtlås och öppning upptill, sedan avslut). Innehållet är detsamma, det är fördelningen som är ny.",
+    "Varumärkesavslutet ligger kvar ordagrant men delat över de två sista rutorna: ruta 5 slutar med TankGuard och ruta 6 är Beställ nu. Rösten säger alltså TankGuard. Beställ nu. Hela frasen i en 0,76-sekundersruta blir 22 tecken mot taket 15, alltså exakt den uppspeedning som skulle rättas.",
+    "Ruta 4 fick materialfaktan ensam, så ruta 2 kunde bära paketnivån utan att någon rad upprepar 210D-tyget.",
+    "Inga stjärnor, betyg, kundcitat, fri frakt, Klarna eller påhittad brådska. Ingen säsongsrad behövdes: rutorna räckte inte till den utan att någon annan faktarad fick strykas."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "489 kronor för ett IBC-tanköverdrag som stänger ute solljuset.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Exakt pris plus konkret objekt. Sant eller falskt vid en klick på sidan. Bara TankGuard säljer överdraget för 489 kr."
+    },
+    {
+     "rad": "Två stycken kostar 799 kronor, spara 18 %.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två tal som går att räkna efter. Paketnivån och procenten sitter i samma mening, så siffran kan inte lösgöras."
+    },
+    {
+     "rad": "Tyget blockerar solljus och UV helt, så inga alger växer i vattnet.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Grönt vatten går att se framför sig och påståendet går att motbevisa. En konkurrent med samma tyg kan skriva raden, därför står den efter prisraden och inte som hook."
+    },
+    {
+     "rad": "Kraftigt 210D Oxford-tyg.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Materialsiffran är en fakta, inte ett adjektiv. Delas med andra 210D-överdrag, men rutan är 1,92 sekunder och bär bara en fakta."
+    },
+    {
+     "rad": "Blixtlås runt hela tanken, på plats på under två minuter, och öppningen upptill ger dig locket. TankGuard.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Tre saker man kan peka på i bilden: dragkedjan, tiden, hålet upptill. Kombinationen plus varumärket är TankGuards egen."
+    },
+    {
+     "rad": "Beställ nu.",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": false,
+     "kommentar": "Ren uppmaning i en 0,76-sekundersruta. Den bär andra halvan av varumärkesavslutet och testas inte som påstående."
+    }
+   ]
+  }
+ }
+}

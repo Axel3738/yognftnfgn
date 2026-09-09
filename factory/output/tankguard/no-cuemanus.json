@@ -1,0 +1,761 @@
+{
+ "produkt": "tankguard",
+ "marknad": "NO",
+ "datum": "2026-09-09",
+ "kalla": "HeyGen proofread i quality-läge; manuset skrivet mot cue-budgeten",
+ "modellpolicy": "Repliker skrivna av sonnet-subagenter (17 st) med docs/copy-regler.md och cue-budgeten. Klassificering, budget och grindning av huvudsessionen.",
+ "notis": "Omtagning efter att rösten jojjade. EN replik per cue, varje replik inom cuens teckenintervall. Inga priser — TankGuard har inget NOK-pris.",
+ "manus": {
+  "CS_1_H2": {
+   "id": "CS_1_H2",
+   "typ": "nytt manus",
+   "repliker": [
+    "Frosten kommer, og IBC-tanken står ubeskyttet.",
+    "Sola gjør plasten sprø, og vannet blir grønt av alger.",
+    "Dette trekket stopper det.",
+    "Et tykt 210D Oxford-stoff som blokkerer sollys og UV-stråling helt.",
+    "Ingen alger, ingen sprø plast.",
+    "Dra glidelåsen.",
+    "Den passer standard 1000 liters IBC-tank og er på plass på under to minutter.",
+    "Åpningen på toppen gjør at du kommer til lokket uten å ta av trekket.",
+    "TankGuard. Bestill nå."
+   ],
+   "andringar": [
+    "Manuset är omskrivet MOT rutlistan: exakt 9 repliker mot videons 9 textrutor, en replik per ruta (förra manuset hade 11 repliker som fördelades fritt och gav HeyGens ojämna tempo).",
+    "Varje replik ligger nu inom sin rutas golv och tak: 46/32-48, 54/45-69, 26/21-32, 67/61-93, 30/22-33, 15/11-17, 77/65-99, 69/50-76, 22/20-30.",
+    "Vinkeln och tonen från det godkända manuset behålls: säsongshook (frost, tanken står ute), UV- och algemekaniken, 210D Oxford, glidelås, 1000 liters passform och det obligatoriska TankGuard-avslutet.",
+    "Ruta 2 gör om 'Beskytt IBC-tanken din mot alger og UV' till de två synliga skadorna (sprø plast, grønt vann) så att ruta 5 kan bli en parallell payoff — samma fakta, mer tempoanpassad längd.",
+    "Repliken 'Vinteren venter ikke' är struken: den föll på alla tre frågorna i förra granskningen och fanns bara för rytmen. Utrymmet gick i stället till öppningen på toppen, som är riktig produktfakta.",
+    "De korta rutorna 3, 5 och 6 fick korta talbara meningar i stället för avhuggna fragment, så rösten inte pausar mitt i ett led.",
+    "Inget pris, ingen procentsats, ingen påhittad brådska, inget socialt bevis och inget butiksnamn kvar. Källans 'tjuefem prosent rabatt', 'kampanjepris', prisraderna och 'så lenge lageret rekker' är ersatta med produktfakta.",
+    "Källvideons formuleringar återanvänds inte rakt av; bara de godkända produktfakta bakom dem."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Frosten kommer, og IBC-tanken står ubeskyttet.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret säsongsbild: frosten och en tank som står ute. Ingen konkurrent utan IBC-täcke kan signera raden."
+    },
+    {
+     "rad": "Sola gjør plasten sprø, og vannet blir grønt av alger.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två synliga skador: sprö plast och grönt vatten. Går att kontrollera på en riktig tank."
+    },
+    {
+     "rad": "Dette trekket stopper det.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Pekar på överdraget som lösning på just de två skadorna, inte ett allmänt löfte."
+    },
+    {
+     "rad": "Et tykt 210D Oxford-stoff som blokkerer sollys og UV-stråling helt.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Ren materialfakta: 210D Oxford och total UV-blockering. Falsifierbar spec."
+    },
+    {
+     "rad": "Ingen alger, ingen sprø plast.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Parallell payoff mot ruta 2, punkt för punkt. Bara ett heltäckande överdrag kan påstå det."
+    },
+    {
+     "rad": "Dra glidelåsen.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Ett handgrepp man ser i bild. Kortaste möjliga demonstration av blixtlåset."
+    },
+    {
+     "rad": "Den passer standard 1000 liters IBC-tank og er på plass på under to minutter.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två mätbara tal: standard 1000-litersmått och monteringstid under två minuter."
+    },
+    {
+     "rad": "Åpningen på toppen gjør at du kommer til lokket uten å ta av trekket.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret konstruktionsdetalj: öppningen upptill ger åtkomst till locket utan att ta av överdraget."
+    },
+    {
+     "rad": "TankGuard. Bestill nå.",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": true,
+     "kommentar": "Obligatoriskt varumärkesavslut. Varumärket gör raden unik."
+    }
+   ]
+  },
+  "CS_1_H3": {
+   "id": "CS_1_H3",
+   "typ": "nytt manus",
+   "repliker": [
+    "210D Oxford-stoff, laget for å tåle vinteren ute.",
+    "Beskytt IBC-tanken din mot alger og UV.",
+    "På plass på under to minutter.",
+    "Stoffet blokkerer sollys og UV helt, så algene ikke får vokse og plasten ikke blir sprø. Glidelås rundt hele tanken, ingen kamp med presenning og strikk.",
+    "Passer standard 1000 liters tank perfekt.",
+    "Åpningen på toppen gir deg lokket uten å ta av trekket. Få den på plass før frosten kommer.",
+    "TankGuard.",
+    "Bestill nå."
+   ],
+   "andringar": [
+    "Skrevet mot rutelisten: nøyaktig 8 replikker, én per rute, hver innenfor rutens golv og tak — det var lengden og fordelingen som fikk stemmen til å bremse og rase.",
+    "Beholdt den godkjente faktavinkelen fra forrige manus (210D Oxford + vinter i hooken, mekanikk i midten, sesong mot slutten). Innholdet er ikke endret, bare pakket per rute.",
+    "Slo sammen tre korte replikker fra forrige manus til rute 4 (110–169 tegn): UV-mekanismen, glidelåsen og konfliktlinjen mot presenning og strikk — ruten er 8,58 sekunder og sultet på tekst før.",
+    "Fjernet all pris og prosent fra kildens ruter 1, 3, 4 og 6 (ordinærpris, kampanjepris, dagens pris) — erstattet med produktfakta og reell sesong.",
+    "Fjernet kildens påfunne hastverk i rute 6 (lageret minker, kun så lenge lageret rekker) — erstattet med åpningen på toppen og frosten som faktisk kommer.",
+    "Merkevareavslutningen er delt over de to siste rutene fordi de bare rommer 9–14 og 8–13 tegn: rute 7 sier TankGuard, rute 8 sier Bestill nå — lest sammenhengende blir det TankGuard. Bestill nå."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "210D Oxford-stoff, laget for å tåle vinteren ute.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret materialtall knyttet til sesongen tanken skal stå ute i."
+    },
+    {
+     "rad": "Beskytt IBC-tanken din mot alger og UV.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Navngir tanktypen og de to konkrete truslene."
+    },
+    {
+     "rad": "På plass på under to minutter.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Etterprøvbar monteringstid, ikke et adjektiv."
+    },
+    {
+     "rad": "Stoffet blokkerer sollys og UV helt, så algene ikke får vokse og plasten ikke blir sprø. Glidelås rundt hele tanken, ingen kamp med presenning og strikk.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Mekanisme plus konflikt: hvorfor algene uteblir, og hva glidelåsen erstatter."
+    },
+    {
+     "rad": "Passer standard 1000 liters tank perfekt.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Eksakt passform mot standard 1000 liters tank."
+    },
+    {
+     "rad": "Åpningen på toppen gir deg lokket uten å ta av trekket. Få den på plass før frosten kommer.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret produktfunksjon og en sesong som faktisk kommer."
+    },
+    {
+     "rad": "TankGuard.",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": true,
+     "kommentar": "Merkenavnet — ingen annen kan si det."
+    },
+    {
+     "rad": "Bestill nå.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Obligatorisk CTA, generisk alene men bundet til merkenavnet i ruten før."
+    }
+   ]
+  },
+  "GT_1_H1": {
+   "id": "GT_1_H1",
+   "typ": "nytt manus",
+   "repliker": [
+    "Kjenner du noen med en IBC-tank i hagen?",
+    "Gi dem denne gaven.",
+    "Kanskje noen som elsker hagen sin og har klaget i to somre.",
+    "Alger i regnvannstanken.",
+    "Gi dem noe de faktisk bruker i hagen, ikke en dings som havner i et skap.",
+    "Et IBC-tanktrekk som løser problemet for godt.",
+    "De blir helt overrasket.",
+    "En liten stund tror de at du har glemt problemet de klaget på hele sommeren.",
+    "Så er tanken dekket, vannet er klart, og algene holder seg borte.",
+    "Den beste gaven er den som fikser noe de har irritert seg over i årevis.",
+    "Gi bort et IBC-tanktrekk før frosten kommer.",
+    "TankGuard. Bestill trekket nå."
+   ],
+   "andringar": [
+    "Manuset er nå skrevet mot rutlistan: én replikk per ruta, tolv rutor og tolv replikker, hver innenfor sitt tegnintervall. Forrige manus ble fordelt fritt, så noen rutor fikk fire ganger for mye tekst og stemmen jaget.",
+    "Vinkel og tone er beholdt: gaveidéen, algeproblemet, den nyttige gaven mot dingsen i skapet, avsløringen og resultatet — samme rekkefølge som i det godkjente manuset.",
+    "Replikk 5 utvidet fra 52 til 73 tegn (ruta har golv 67): la til 'faktisk bruker i hagen' og 'en dings', som gjør konflikten nyttig gave mot glemt gave konkret.",
+    "Replikk 7 kortet fra 35 til 24 tegn (ruta har tak 28): 'Det blir en ordentlig overraskelse' ble 'De blir helt overrasket' — adjektivet 'ordentlig' var luft etter Kaplans lov.",
+    "Replikk 8 utvidet fra 48 til 76 tegn (golv 63): problemet er nå navngitt som noe de klaget på hele sommeren, ikke bare 'sommerens problem'.",
+    "Replikk 9 utvidet fra 54 til 65 tegn (golv 59): resultatet står som tre observerbare ting — tanken dekket, vannet klart, algene borte.",
+    "Replikk 10 skrevet om fra 'løser et gammelt problem' til 'fikser noe de har irritert seg over i årevis' — konkret irritasjon i stedet for abstrakt problem, og treffer rutas golv på 64.",
+    "Replikk 11 utvidet fra 25 til 44 tegn (golv 33): la til säsongen (før frosten kommer), som er reell og tillatt, i stedet for påfunnet hastverk.",
+    "Replikk 12: merkevareavslutningen 'TankGuard. Bestill nå.' er 22 tegn og faller under rutas golv på 23. Utvidet minimalt til 'TankGuard. Bestill trekket nå.' (30 tegn) — merkenavn og bestill-nå beholdt ordrett, bare objektet lagt til.",
+    "Ingen pris, ingen prosent, ingen frakt eller betalingsmåte, ingen stjerner, kundesitat eller butikknavn. Frost og somre er reell säsong."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Kjenner du noen med en IBC-tank i hagen?",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret gjenstand i en konkret hage. Spørsmålet er sant eller usant for seeren, og bare et IBC-produkt kan stille det."
+    },
+    {
+     "rad": "Gi dem denne gaven.",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": false,
+     "kommentar": "Kort overgangslinje på 19 tegn i en ruta på 1,2 sekunder. Generisk, men bærer videoens bytte fra spørsmål til gave."
+    },
+    {
+     "rad": "Kanskje noen som elsker hagen sin og har klaget i to somre.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "To somre er en tellbar tidsramme, ikke en stemning. Klagingen er en observasjon seeren kjenner igjen."
+    },
+    {
+     "rad": "Alger i regnvannstanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Grønt vann er noe man ser. Påstanden er sann eller usann for den enkelte tanken."
+    },
+    {
+     "rad": "Gi dem noe de faktisk bruker i hagen, ikke en dings som havner i et skap.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konflikt A: nyttig gave mot dingsen i skapet. Skapet er et bilde, ikke et adjektiv."
+    },
+    {
+     "rad": "Et IBC-tanktrekk som løser problemet for godt.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Navngir produktkategorien og knytter den til algeproblemet som nettopp ble vist."
+    },
+    {
+     "rad": "De blir helt overrasket.",
+     "visualisera": false,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Ruta tar bare 24 tegn, så beaten må være kort. Adjektivet 'ordentlig' er fjernet; reaksjonen er nå påstanden."
+    },
+    {
+     "rad": "En liten stund tror de at du har glemt problemet de klaget på hele sommeren.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret fortellerbeat med tidsangivelse. Ingen annen gave i hagen har akkurat denne klagen bak seg."
+    },
+    {
+     "rad": "Så er tanken dekket, vannet er klart, og algene holder seg borte.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Tre observerbare tilstander, hentet rett fra produktfakta om UV og sollys. Ikke et kundeutsagn."
+    },
+    {
+     "rad": "Den beste gaven er den som fikser noe de har irritert seg over i årevis.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Mer konkret enn forrige versjons 'gammelt problem', men prinsippet kunne fortsatt signeres av en annen gaveannonse."
+    },
+    {
+     "rad": "Gi bort et IBC-tanktrekk før frosten kommer.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Produktnavn og reell säsong i samme linje. Frosten er kalender, ikke påfunnet hastverk."
+    },
+    {
+     "rad": "TankGuard. Bestill trekket nå.",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": true,
+     "kommentar": "Obligatorisk merkevareavslutning. Merkenavnet gjør raden umulig for andre å signere."
+    }
+   ]
+  },
+  "GT_1_H2": {
+   "id": "GT_1_H2",
+   "typ": "nytt manus",
+   "repliker": [
+    "Gaven til hageeieren som løser algeproblemet.",
+    "Kanskje kjenner du noen som elsker hagen, men har klaget i flere somre.",
+    "Alger i regnvannstanken. Gi dem noe de faktisk bruker, ikke en dings som havner i et skap.",
+    "Derfor gir du et IBC-tanktrekk fra TankGuard.",
+    "Ansiktet deres sier alt.",
+    "En stund tror de at du har glemt problemet de snakket om hele sommeren.",
+    "Nå er tanken dekket, vannet er klart og algene borte, og de viser den frem til hele nabolaget. Noen ganger er den beste gaven den som løser et problem som har vart i årevis.",
+    "Gi bort et IBC-tanktrekk til hagen deres.",
+    "Enkel gave. TankGuard. Bestill nå."
+   ],
+   "andringar": [
+    "Manuset skrivs nu mot rutlistan: exakt 9 repliker mot 9 rutor, en replik per ruta, varje replik inom rutans teckenintervall. Förra manuset hade 12 fria repliker som HeyGen tvingade in i 9 tidsfönster — det var därför rösten saktade ner och rusade.",
+    "Ruta 7 (10,36 sek) bär nu två beats i EN replik, precis som källvideon gör: resultatet (tanken dekket, vannet klart, algene borte, viser den frem) plus gåvo-sensmoralen. Förra manuset delade upp de två beatsen på var sin replik, vilket lämnade ruta 7 med för lite text.",
+    "Ruta 5 (1,46 sek, tak 28 tecken) fick en kortare rad: \"Ansiktet deres sier alt.\" i stället för förra \"Det blir en ordentlig overraskelse.\" (34 tecken, över taket). Den nya raden är dessutom visuell i stället för adjektivdriven — Kaplans lag.",
+    "Ruta 3 slår ihop problemet (alger i regnvannstanken) med gåvo-konflikten (noe de bruker mot en dings i et skap) för att fylla 86–131 tecken.",
+    "Vinkel och ton oförändrade: gåva till hageeieren, andra person genomgående, ingen kundberättelse, samma beats i samma ordning som det godkända manuset.",
+    "Varumärket TankGuard ersätter Bever-butikken i ruta 4 och i avslutet. Inget pris, ingen procent, ingen påhittad brådska."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Gaven til hageeieren som løser algeproblemet.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Namnger mottagaren och det exakta problemet i samma rad — en konkurrent utan algelösning kan inte signera den."
+    },
+    {
+     "rad": "Kanskje kjenner du noen som elsker hagen, men har klaget i flere somre.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret, igenkännbar person och ett återkommande problem över flera somrar."
+    },
+    {
+     "rad": "Alger i regnvannstanken. Gi dem noe de faktisk bruker, ikke en dings som havner i et skap.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konflikt typ A: nyttig gåva mot bortglömd gåva, förankrad i ett specifikt problem."
+    },
+    {
+     "rad": "Derfor gir du et IBC-tanktrekk fra TankGuard.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Namnger produkten och varumärket, konkret handling."
+    },
+    {
+     "rad": "Ansiktet deres sier alt.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Visuell reaktionsbeat men generisk formulering — vilken gåvoannonsör som helst kan signera den. Behålls för att rutan bara rymmer 28 tecken."
+    },
+    {
+     "rad": "En stund tror de at du har glemt problemet de snakket om hele sommeren.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret berättarbeat kopplad till just det här problemet."
+    },
+    {
+     "rad": "Nå er tanken dekket, vannet er klart og algene borte, og de viser den frem til hele nabolaget. Noen ganger er den beste gaven den som løser et problem som har vart i årevis.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Första meningen är ett konkret, kontrollerbart produktresultat. Andra meningen är sensmoralen — generell, men bärs av den första."
+    },
+    {
+     "rad": "Gi bort et IBC-tanktrekk til hagen deres.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret CTA med produktnamn och plats."
+    },
+    {
+     "rad": "Enkel gave. TankGuard. Bestill nå.",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": true,
+     "kommentar": "Obligatoriskt varumärkesavslut — varumärket gör raden unik."
+    }
+   ]
+  },
+  "GT_1_H3": {
+   "id": "GT_1_H3",
+   "typ": "nytt manus",
+   "repliker": [
+    "Slik overrasker du henne som klager på algene i IBC-tanken.",
+    "Hun elsker hagen sin, og har klaget over det samme i to somre.",
+    "Alger i regnvannstanken.",
+    "Gi henne noe hun faktisk bruker, ikke enda en dings som havner i et skap.",
+    "Et 210D-tanktrekk som passer standard 1000 liters tank.",
+    "Hun blir helt overrasket.",
+    "En stund tror hun at du har glemt problemet hun snakket om hele sommeren.",
+    "Nå stenger stoffet ute sollyset, og vannet holder seg klart hele høsten.",
+    "Glidelåsen går rundt hele tanken, og trekket sitter på under to minutter.",
+    "Lokket når hun uten å ta av trekket.",
+    "Det er TankGuard. Bestill nå."
+   ],
+   "andringar": [
+    "Skrivet mot rutlistan: 11 repliker mot 11 rutor, en replik per ruta, varje längd inom rutans golv och tak. Förra manuset hade 12 repliker som fördelades fritt, vilket gjorde att rösten bromsade och rusade.",
+    "Behöll gåvovinkeln och andra person-tilltalet från det godkända manuset (hon klagar på tanken, du överraskar henne) — det var längden, inte innehållet, som var fel.",
+    "Tog bort de tre rader som föll på tre-frågorstestet i förra manuset (Gi dem denne gaven, Det blir en ordentlig overraskelse, Noen ganger er den beste gaven...) och satte produktfakta på deras platser: 210D och 1000 liter, glidelås och två minuter, åpning på toppen.",
+    "Ersatte den bortklippta korta rutan genom att slå ihop hookens två meningar till en talbar mening i ruta 1.",
+    "Inga priser, procent, frakt, betyg eller butiksnamn. Endast verklig säsong (sommeren, høsten).",
+    "Sista repliken bär varumärkesavslutet ordagrant; ledet Det er lades till för att nå rutans golv på 23 tecken."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Slik overrasker du henne som klager på algene i IBC-tanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret person och konkret problem: algene i IBC-tanken. Ingen konkurrent utan IBC-produkt kan signera raden."
+    },
+    {
+     "rad": "Hun elsker hagen sin, og har klaget over det samme i to somre.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "To somre er en etterprøvbar tidsramme, ikke en følelse."
+    },
+    {
+     "rad": "Alger i regnvannstanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Ren observasjon av problemet, går å se i bildet."
+    },
+    {
+     "rad": "Gi henne noe hun faktisk bruker, ikke enda en dings som havner i et skap.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konflikt: nyttig gave mot dings i skapet. Konkret bilde av skapet."
+    },
+    {
+     "rad": "Et 210D-tanktrekk som passer standard 1000 liters tank.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "To harde spesifikasjoner, 210D og 1000 liter. Falsifiserbart mot produktet."
+    },
+    {
+     "rad": "Hun blir helt overrasket.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Fortellerbeat som bærer overraskelsen videre. Generisk alene, men bunden til gaven i replikk 4 og 5."
+    },
+    {
+     "rad": "En stund tror hun at du har glemt problemet hun snakket om hele sommeren.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret beat: hun tror problemet er glemt. Knyttet til sommerens klaging."
+    },
+    {
+     "rad": "Nå stenger stoffet ute sollyset, og vannet holder seg klart hele høsten.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Mekanisme, ikke adjektiv: stoffet stenger sollyset ute, derfor klart vann."
+    },
+    {
+     "rad": "Glidelåsen går rundt hele tanken, og trekket sitter på under to minutter.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Glidelås rundt hele tanken og to minutter er begge målbare."
+    },
+    {
+     "rad": "Lokket når hun uten å ta av trekket.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Åpningen på toppen gjort til en handling man ser: hun når lokket."
+    },
+    {
+     "rad": "Det er TankGuard. Bestill nå.",
+     "visualisera": false,
+     "falsifiera": false,
+     "ingen_annan": true,
+     "kommentar": "Obligatorisk merkevareavslutning. Varemerket gjør at ingen annen kan signere raden."
+    }
+   ]
+  },
+  "SP_1_H1": {
+   "id": "SP_1_H1",
+   "typ": "nytt manus",
+   "repliker": [
+    "To like IBC-tanker, tre måneder senere. En med trekk, en uten.",
+    "Uten beskyttelse fikk jeg alger i tanken hver eneste sommer.",
+    "Grønt, grumsete vann. Så kjøpte jeg et IBC-tanktrekk.",
+    "Stoffet er tykt. 210D Oxford, laget for å tåle vær og sol.",
+    "Glidelåsen går rundt hele tanken, så trekket sitter stramt. Og du kommer fortsatt til lokket gjennom åpningen på toppen.",
+    "Ingen styr når jeg skal fylle på eller lese av nivået.",
+    "Tre måneder senere er vannet krystallklart, uten en eneste alge. Tanken ser fortsatt ny ut.",
+    "Trekket stenger ute sollyset, og da starter algene aldri. TankGuard. Bestill nå."
+   ],
+   "andringar": [
+    "Skrevet mot rutlistan: åtta repliker mot åtta rutor, en replik per ruta, alla inom sitt golv-tak-intervall. Förra manuset hade tolv repliker mot åtta rutor, vilket gav den ojämna uppläsningshastigheten.",
+    "Vinkel och ton från det godkända manuset behållna: före/efter tre månader, alger, 210D Oxford, glidelås, öppning upptill, klart vatten.",
+    "Slog ihop de tidigare korta replikerna 'Glidelåsen gjør at det sitter perfekt' och 'Og det beste: du kommer fortsatt til lokket' till EN replik, eftersom ruta 5 är 6,2 sekunder och kräver 93-143 tecken.",
+    "Slog ihop 'Etter tre måneder: krystallklart vann, ingen alger' och 'Tanken ser fortsatt ny ut' till ruta 7 av samma skäl.",
+    "Hooken omskriven från källans formulering till 'To like IBC-tanker, tre måneder senere' så jämförelsen syns direkt i första sekunden.",
+    "Källans slutreplik 'Det er derfor så mange hageeiere velger dette trekket' är socialt bevis och togs bort. Ersatt med mekanismen (stänger ute sollyset) plus det obligatoriska varumärkesavslutet.",
+    "Butiksnamnet i källans replik 3 borttaget, produkten nämns generiskt som IBC-tanktrekk.",
+    "Inget pris, ingen procent, ingen frakt, ingen brådska, inga betyg eller kundcitat i någon replik."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "To like IBC-tanker, tre måneder senere. En med trekk, en uten.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två tankar sida vid sida är en bild man ser direkt, och påståendet är sant eller falskt i rutan."
+    },
+    {
+     "rad": "Uten beskyttelse fikk jeg alger i tanken hver eneste sommer.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret problem bundet till IBC-tanken, inte ett allmänt påstående."
+    },
+    {
+     "rad": "Grønt, grumsete vann. Så kjøpte jeg et IBC-tanktrekk.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två färgord man ser, och vändpunkten namnger produkten."
+    },
+    {
+     "rad": "Stoffet er tykt. 210D Oxford, laget for å tåle vær og sol.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Ren materialfakta med siffra, går att kontrollera mot produkten."
+    },
+    {
+     "rad": "Glidelåsen går rundt hele tanken, så trekket sitter stramt. Og du kommer fortsatt til lokket gjennom åpningen på toppen.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två mekanismer man kan peka på i bilden: dragkedjan runt tanken och öppningen upptill."
+    },
+    {
+     "rad": "Ingen styr når jeg skal fylle på eller lese av nivået.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret bruksmoment som följer direkt av öppningen upptill."
+    },
+    {
+     "rad": "Tre måneder senere er vannet krystallklart, uten en eneste alge. Tanken ser fortsatt ny ut.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Resultatet med tidsram, samma tre månader som hooken lovade."
+    },
+    {
+     "rad": "Trekket stenger ute sollyset, og da starter algene aldri. TankGuard. Bestill nå.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Orsakskedjan bakom hela videon i en mening, plus varumärkesavslutet."
+    }
+   ]
+  },
+  "SP_1_H2": {
+   "id": "SP_1_H2",
+   "typ": "nytt manus",
+   "repliker": [
+    "Slik løser du algeproblemet i IBC-tanken. Uten beskyttelse vokser det alger i tanken hver sommer.",
+    "Grønt, grumsete vann. Ikke gøy. Med et IBC-tanktrekk holder algene seg borte.",
+    "Stoffet er tykt. 210D Oxford, laget for å tåle vær og sol.",
+    "Glidelåsen gjør at det sitter perfekt rundt tanken. Og det beste: du kommer fortsatt til lokket gjennom åpningen på toppen. Ingen styr med påfylling eller avlesning.",
+    "Etter tre måneder: krystallklart vann.",
+    "Ingen alger.",
+    "Tanken ser fortsatt ny ut.",
+    "Forskjellen er beskyttelsen, ikke hellet. TankGuard. Bestill nå."
+   ],
+   "andringar": [
+    "Skrevet mot rutlistan: 8 repliker mot 8 rutor, mot förra manusets 12 fria repliker som fördelades ojämnt över samma rutor och gav rusande och släpande röst.",
+    "Ruta 1 (74-113): slog ihop förra manusets hook och problemrad till en replik så hooken fyller hela sitt fönster utan paus.",
+    "Ruta 2 (65-99): slog ihop 'Grønt, grumsete vann' med lösningsraden om tanktrekket.",
+    "Ruta 3 (44-67): materialraden behållen ordagrant från godkänt manus, låg redan i intervallet.",
+    "Ruta 4 (138-212, 9,4 sek): slog ihop tre korta repliker (glidelås, åpning på toppen, ingen styr) till en sammanhängande replik så den långa rutan inte drar ut rösten.",
+    "Ruta 5-7: delade förra manusets sammanslagna resultatrad i tre, en per ruta, eftersom rutorna 6 och 7 är korta egna fönster (0,74 respektive 1,8 sek).",
+    "Ruta 8 (55-84): konfliktraden 'Forskjellen er beskyttelsen, ikke hellet' flyttad in i slutrutan så varumärkesavslutet TankGuard. Bestill nå. fyller sitt fönster i stället för att ligga ensamt på 22 tecken.",
+    "Ersatte tankstrecket i konfliktraden med komma - tankstreck går inte att läsa högt.",
+    "Vinkel och ton oförändrade: problem, lösning, material, mekanik, resultat, varumärkesavslut. Inga priser, inga procent, ingen frakt, inga recensioner."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Slik løser du algeproblemet i IBC-tanken. Uten beskyttelse vokser det alger i tanken hver sommer.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret problembilde bundet til IBC-tanken, ikke et generelt lofte."
+    },
+    {
+     "rad": "Grønt, grumsete vann. Ikke gøy. Med et IBC-tanktrekk holder algene seg borte.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Visuell tilstand plus navngitt losning i samme replikk."
+    },
+    {
+     "rad": "Stoffet er tykt. 210D Oxford, laget for å tåle vær og sol.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Ren materialspesifikasjon, etterprovbar."
+    },
+    {
+     "rad": "Glidelåsen gjør at det sitter perfekt rundt tanken. Og det beste: du kommer fortsatt til lokket gjennom åpningen på toppen. Ingen styr med påfylling eller avlesning.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Tre konkrete mekanismer, alle hentet fra produktfakta."
+    },
+    {
+     "rad": "Etter tre måneder: krystallklart vann.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret resultat med tidsramme."
+    },
+    {
+     "rad": "Ingen alger.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Kortest mulige faktalinje, direkte folge av UV-blokkeringen."
+    },
+    {
+     "rad": "Tanken ser fortsatt ny ut.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Generisk pastand, kunne signeres av enhver beskyttelsesprodusent. Beholdt fordi rutan er 1,8 sek og barer sluttbildet."
+    },
+    {
+     "rad": "Forskjellen er beskyttelsen, ikke hellet. TankGuard. Bestill nå.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konfliktdrevet linje plus obligatorisk merkevareavslutning."
+    }
+   ]
+  },
+  "SP_1_H3": {
+   "id": "SP_1_H3",
+   "typ": "nytt manus",
+   "repliker": [
+    "Dette er grunnen til at algene forsvinner fra tanken.",
+    "Uten trekk vokser det alger hver eneste sommer.",
+    "Grønt og grumsete vann.",
+    "Løsningen er et IBC-tanktrekk som dekker hele tanken.",
+    "Stoffet er tykt 210D Oxford og slipper ikke sollys gjennom.",
+    "Glidelåsen går rundt hele tanken, og åpningen på toppen gjør at du kommer til lokket uten å ta av trekket.",
+    "Ingen styr når du skal fylle på eller lese av nivået.",
+    "Tre måneder etterpå.",
+    "Vannet er klart, og algene er borte.",
+    "Og plasten er ikke blitt sprø.",
+    "Beskyttelsen gjorde jobben, ikke flaksen. TankGuard. Bestill nå."
+   ],
+   "andringar": [
+    "Skrevet mot rutlistan: exakt 11 repliker mot 11 rutor, en replik per ruta, var och en inom rutans golv och tak. Förra manuset hade 12 fria rader som fördelades över rutorna, vilket gjorde att rösten rusade i vissa rutor och drogs ut i andra.",
+    "Vinkeln och tonen från det godkända manuset är behållen: förklaringshook om varför algerna försvinner, problem, produkt, material, glidelås och toppöppning, resultat efter tre månader, varumärkesavslut.",
+    "Hooken kortades till en ruta på 53 tecken och pekar direkt på algerna, samma förklaringsvinkel som förut men i rutans längd.",
+    "De två raderna om glidelås och toppöppning slogs ihop till en enda replik, eftersom ruta 6 är videons längsta ruta och behöver 93 till 143 tecken för att rösten ska hålla normalt tempo.",
+    "Replik 5 säger nu mekanismen i stället för egenskapen: stoffet slipper inte sollys igenom, vilket är orsaken till att algerna uteblir.",
+    "Källans repliker 3, 8 och 9 var nästan identiska med tidigare formuleringar och är omskrivna så att ingen rad återanvänds rakt av.",
+    "Källans replik 4 nämnde källbutikens namn och replik 1 nämnde att kunderna älskar trekket. Båda är borttagna: inget butiksnamn, inget socialt bevis.",
+    "Replik 10 byttes från att tanken ser ny ut till att plasten inte blivit spröd, som är en produktfakta i stället för ett allmänt påstående.",
+    "Slutrepliken bär varumärkesavslutet men behövde 55 till 84 tecken, så den fick en konfliktrad före: beskyttelsen gjorde jobben, ikke flaksen.",
+    "Inga priser, inga procentsatser, ingen frakt, ingen brådska, inga betyg eller kundcitat."
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Dette er grunnen til at algene forsvinner fra tanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Pekar på ett konkret utfall i tanken och lovar mekanismen som följer."
+    },
+    {
+     "rad": "Uten trekk vokser det alger hver eneste sommer.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret problembild kopplad till just en oskyddad vattentank."
+    },
+    {
+     "rad": "Grønt og grumsete vann.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Rent visuellt tillstånd som syns i bild och går att kontrollera."
+    },
+    {
+     "rad": "Løsningen er et IBC-tanktrekk som dekker hele tanken.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Namnger produkten och säger exakt vad den täcker."
+    },
+    {
+     "rad": "Stoffet er tykt 210D Oxford og slipper ikke sollys gjennom.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Materialspecifikation plus mekanismen som ger utfallet."
+    },
+    {
+     "rad": "Glidelåsen går rundt hele tanken, og åpningen på toppen gjør at du kommer til lokket uten å ta av trekket.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Två kontrollerbara konstruktionsdetaljer som konkurrenter utan toppöppning inte kan skriva under."
+    },
+    {
+     "rad": "Ingen styr når du skal fylle på eller lese av nivået.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konkret bruksmoment vid tanken, följd av toppöppningen."
+    },
+    {
+     "rad": "Tre måneder etterpå.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": false,
+     "kommentar": "Tidsmarkör mellan före och efter. Generisk i sig, men bär före-efter-strukturen."
+    },
+    {
+     "rad": "Vannet er klart, og algene er borte.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Kontrollerbart resultat som syns i samma tank som i replik 3."
+    },
+    {
+     "rad": "Og plasten er ikke blitt sprø.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Produktfakta om UV-skyddet, inte ett allmänt skrytpåstående."
+    },
+    {
+     "rad": "Beskyttelsen gjorde jobben, ikke flaksen. TankGuard. Bestill nå.",
+     "visualisera": true,
+     "falsifiera": true,
+     "ingen_annan": true,
+     "kommentar": "Konfliktrad som knyter resultatet till trekket, plus det obligatoriska varumärkesavslutet."
+    }
+   ]
+  }
+ }
+}
