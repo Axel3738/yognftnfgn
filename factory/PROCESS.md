@@ -232,6 +232,10 @@ som genereras per bygge).
     ⚠️ Servern går INTE att skapa från fabriken (mätt 2026-09-09, DryTrek:
     `POST /guilds` → 20001 "Bots cannot use this endpoint"). Steget är
     alltid 🖐 först, ⚙️ sen — hoppa aldrig över människan här.
+    Invite-länken till boten (Bävern, id 1543628123289952277) ska bära
+    `permissions=268438577` (Manage Channels + Manage Roles + **Manage
+    Server** + Create Invite + View + Send) — utan Manage Server går
+    kanalerna in men serverikonen får 403 (mätt 2026-09-09, DryTrek).
 17. 🖐 Meta: VA:n har **Fullständig åtkomst** i Business Manager (Axels
     beslut 2026-09-07 — hon får se betalningarna) och skapar brandets SIDA
     direkt i BM själv (API:t kan fortfarande inte skapa sidor). **Annonskontot är alltid
