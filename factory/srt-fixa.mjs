@@ -49,6 +49,19 @@ MARKNADER.se3 = {
   ...MARKNADER.se,
   proof: `${S}/proof-se3`, prefix: 'TankGuard3_', ut: `${S}/srt-fixad-se3`,
 };
+// se4 / no2 — omtagningen 2026-09-09 med ett manus per cue och HeyGens
+// quality-läge. Alla nio svenska respektive åtta norska videor vars röst
+// jojjade ligger här.
+MARKNADER.se4 = {
+  ...MARKNADER.se,
+  manusfil: '/home/user/yognftnfgn/factory/output/tankguard/se-cuemanus.json',
+  proof: `${S}/proof-se4`, prefix: 'TankGuard4_', ut: `${S}/srt-fixad-se4`,
+};
+MARKNADER.no2 = {
+  ...MARKNADER.no,
+  manusfil: '/home/user/yognftnfgn/factory/output/tankguard/no-cuemanus.json',
+  proof: `${S}/proof-no2`, prefix: 'TankGuardNO2_', ut: `${S}/srt-fixad-no2`,
+};
 
 const M = MARKNADER[MARKNAD];
 if (!M) throw new Error(`Okänd marknad "${MARKNAD}" — välj ${Object.keys(MARKNADER).join(', ')}.`);
@@ -64,37 +77,22 @@ const skrivSrt = (c) => c.map(x => `${x.nr}\n${x.tid}\n${x.text}`).join('\n\n') 
 const sek = (s) => { const [h, m, r] = s.split(':'); const [ss, ms] = r.split(','); return +h * 3600 + +m * 60 + +ss + +ms / 1000; };
 const längd = (tid) => { const [a, b] = tid.split('-->').map(x => x.trim()); return Math.max(0.3, sek(b) - sek(a)); };
 
-/** Fördelar repliker över cues så att varje cue får text i proportion till sin tid.
- *  Ordningen bevaras alltid — en replik hamnar aldrig före en tidigare replik.
+/** ⛔ AVVECKLAD 2026-09-09 — Axels bakläxa: "den saktar ner och sen speedar upp
+ *  hela tiden".
  *
- *  ⚠️ Den tidigare versionen fyllde tomma cues genom att `pop()`:a från en
- *  FÖREGÅENDE cue, en åt gången. Två tomma cues i rad plockade då de två sista
- *  replikerna i omvänd ordning: videon slutade "TankGuard. Bestill nå." och
- *  sedan CTA:n, i stället för tvärtom. Nu kan en cue aldrig bli tom — bytet
- *  tvingas fram så fort antalet återstående repliker är lika med antalet
- *  återstående cues. */
-function fördela(repliker, cues) {
-  const n = cues.length;
-  if (repliker.length < n) {
-    throw new Error(`Färre repliker (${repliker.length}) än cues (${n}) — då blir en cue tom och HeyGen tappar taltiden. Skriv fler repliker.`);
-  }
-  const tot = cues.reduce((s, c) => s + längd(c.tid), 0);
-  const totTecken = repliker.join(' ').length;
-  const kvot = cues.map(c => (längd(c.tid) / tot) * totTecken);
-  const ut = cues.map(() => []);
-  let i = 0, använt = 0;
-  for (let r = 0; r < repliker.length; r++) {
-    const kvar = repliker.length - r;   // repliker kvar, inklusive denna
-    const cuerKvar = n - i;             // cues kvar, inklusive den vi står i
-    const budgetFull = använt > 0 && använt + repliker[r].length > kvot[i] * 1.45;
-    // Byt cue om budgeten är full OCH det finns repliker nog kvar att fylla
-    // resten — eller när det är exakt en replik kvar per återstående cue.
-    if (i < n - 1 && använt > 0 && ((budgetFull && kvar > cuerKvar - 1) || kvar === cuerKvar)) {
-      i++; använt = 0;
-    }
-    ut[i].push(repliker[r]); använt += repliker[r].length + 1;
-  }
-  return ut.map(x => x.join(' ').trim());
+ *  Funktionen packade flera repliker i samma cue när manuset hade fler repliker
+ *  än cues. HeyGen respekterar VARJE cues tidsfönster: en cue som fick 4× så
+ *  mycket text som källan lästes upp 4× så fort, och nästa, som fick för lite,
+ *  drogs ut. Rösten jojjade genom hela videon.
+ *
+ *  Helhetsmåttet (tecken/sekund över hela filen) dolde det helt — CS_1_H3 låg på
+ *  0,72× totalt och 2,52× i cue 8.
+ *
+ *  Ett manus måste därför ha EXAKT en replik per cue, och varje replik måste
+ *  rymmas i sin egen cues taltid. Skriv manuset mot cue-listan, inte mot videon
+ *  som helhet: factory/cuebudget.mjs skriver ut budgeten per cue. */
+function fördela() {
+  throw new Error('fördela() är avvecklad. Ett manus måste ha exakt en replik per cue — kör factory/cuebudget.mjs och skriv manuset mot den listan.');
 }
 
 // Encoding-vakt. Ett dubbelkodat manus ("Ã¶" i stället för "ö") ger HeyGen
@@ -122,6 +120,7 @@ for (const [id, m] of Object.entries(manus)) {
   const fil = `${M.proof}/${M.prefix}${id}-translated.srt`;
   if (!existsSync(fil)) { rapport.push({ id, status: 'VÄNTAR' }); continue; }
   const cues = läsSrt(readFileSync(fil, 'utf8'));
+  const källcues = cues.map((c) => ({ ...c }));
   const källtäthet = täthet(cues);
 
   if (m.typ === 'replikbyte') {
@@ -136,17 +135,31 @@ for (const [id, m] of Object.entries(manus)) {
   }
 
   const nya = m.repliker || [];
-  const metod = nya.length === cues.length ? 'ett-till-ett' : `fördelad (${nya.length}→${cues.length})`;
-  const texter = nya.length === cues.length ? nya : fördela(nya, cues);
+  if (nya.length !== cues.length) {
+    rapport.push({ id, status: 'FEL ANTAL', cues: cues.length, repliker: nya.length,
+      metod: `manuset har ${nya.length} repliker, videon har ${cues.length} cues` });
+    continue;
+  }
+  const metod = 'ett-till-ett';
+  const texter = nya;
   const tomma = texter.filter(t => !t).length;
   cues.forEach((c, i) => { c.text = texter[i]; });
   const ny = täthet(cues);
   const kvot = ny.per / källtäthet.per;
+  // ⚠️ Det är den VÄRSTA cuen som avgör hur rösten låter, inte snittet.
+  const perCue = cues.map((c, i) => {
+    const sek_ = längd(c.tid);
+    return (texter[i].length / sek_) / Math.max(0.01, källcues[i].text.length / sek_);
+  });
+  const värsta = Math.max(...perCue);
+  const trånga = perCue.filter((x) => x > TÄTHETSTAK).length;
   writeFileSync(`${UT}/${id}.srt`, skrivSrt(cues));
   rapport.push({
-    id, status: tomma ? 'TOM CUE' : (kvot > TÄTHETSTAK ? 'FÖR LÅNGT' : 'KLAR'),
+    id,
+    status: tomma ? 'TOM CUE' : ((kvot > TÄTHETSTAK || värsta > TÄTHETSTAK) ? 'FÖR LÅNGT' : 'KLAR'),
     cues: cues.length, repliker: nya.length, metod,
-    tathet: +kvot.toFixed(2), tecken: ny.tecken, kalltecken: källtäthet.tecken,
+    tathet: +kvot.toFixed(2), varsta: +värsta.toFixed(2), tranga,
+    tecken: ny.tecken, kalltecken: källtäthet.tecken,
   });
 }
 

@@ -84,11 +84,32 @@ export async function getTranslateStatus(id) {
 // --- Proofread-flödet (kreditsnålt: granska/rätta transkriptet FÖRE rendering) ---
 
 // Skapar en proofread-session: transkriberar + översätter utan att rendera video.
-export async function proofreadCreate({ videoUrl, outputLanguage, title }) {
+//
+// ⚠️ Dokumentationen kallar lägena "precision"/"speed". Den här endpointen gör
+// det INTE — den svarar `mode is invalid: Input should be 'fast' or 'quality'`.
+// Gå på API:ets eget felmeddelande, inte på docs.
+//
+// `mode: "quality"` slår på avatar-inferens: HeyGen renderar om munrörelserna
+// med flera modeller i stället för att bara lägga nytt ljud över bilden. Det tar
+// längre tid och kostar mer, och det är det läge som ska användas — Axels besked
+// 2026-09-09 efter att "speed" gav en röst som hackade fram och tillbaka.
+//
+// `speaker_num: 1` är sant för alla annonser vi kör (en röst) och gör
+// talarseparationen exakt, vilket enligt HeyGens dokumentation direkt förbättrar
+// avatar-inferensen. `enable_speech_enhancement` städar källjudet före klonen.
+export const KVALITET = {
+  mode: 'quality',
+  speaker_num: 1,
+  enable_speech_enhancement: true,
+};
+
+export async function proofreadCreate({ videoUrl, outputLanguage, title, läge = KVALITET }) {
   const body = await call(API, '/v2/video_translate/proofread', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ video_url: videoUrl, output_language: outputLanguage, title }),
+    body: JSON.stringify({
+      video_url: videoUrl, output_language: outputLanguage, title, ...läge,
+    }),
   });
   const id = body?.data?.proofread_id ?? body?.data?.id;
   if (!id) throw new Error(`Inget proofread_id i svaret: ${JSON.stringify(body)}`);
