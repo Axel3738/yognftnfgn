@@ -169,6 +169,12 @@ som genereras per bygge).
   saknade logga, visade Shopifys default-illustration som hero, hade Dawns
   meny (Home/Catalog/Contact) och stod på engelska. Kör alltid
   **`factory/kundvy.mjs`** mot startsidans riktiga HTML som SISTA kontroll.
+- **`shopify://shop_images/<namn>` kräver FILÄNDELSEN.** Utan `.jpg`/`.png`
+  pekar referensen på ingenting och Dawn renderar sin platshållare — utan
+  felmeddelande. Temats filer ser rätt ut vid inspektion. (DryTrek 2026-09-09:
+  hero och tre galleribilder var tomma i kundvyn eftersom ändelsen strippats.)
+  Shopify lägger dessutom till ett UUID i filnamnet vid uppladdning — läs
+  alltid tillbaka det FAKTISKA filnamnet ur Files, gissa aldrig.
 - 🔴 **BAS-TEMAT ÄR GENOMSYRAT AV MATSTRUMPOR — 157 fynd i 50 filer**
   (kartlagt 2026-09-09, hela listan i `factory/AVBRANDNING.md`). De värsta:
   fyra av deras RIKTIGA kundrecensioner ligger i startsidan märkta
