@@ -10,7 +10,12 @@
     "",
     "Bilderna ligger i butikens filarkiv (factory/filer.mjs). Galleriets tre",
     "bilder visar produktens tre fästpunkter — kardborren, remmen och måttet —",
-    "vilket är den bevisade vinkeln (Damasker_PD_1, ROAS 2,83 på 9 638 kr)."
+    "vilket är den bevisade vinkeln (Damasker_PD_1, ROAS 2,83 på 9 638 kr).",
+    "",
+    "Hero-raden sa först \"Fortfarande torr strumpa\". Den var DryTreks egen",
+    "copy om torra fötter, inte ärvd text — men ordet läses som källbutikens",
+    "och kostade en granskningsrunda. Nu står det fötter. Samma insikt,",
+    "ingen tvekan."
   ],
   "bilder": {
     "hero": "shopify://shop_images/benskydd-benskydd-08",
@@ -30,7 +35,7 @@
       "check:På och av med kängan på",
       "shield:Stoppar snö, grus och väta"
     ],
-    "hero_heading": "Kilometer fyra. Fortfarande torr strumpa.",
+    "hero_heading": "Kilometer fyra. Fortfarande torra fötter.",
     "hero_text": "Krok i snörningen, rem under foten, kardborre längs hela utsidan. Damaskerna sitter kvar hela turen – i snö, sly och grus.",
     "hero_knapp": "Köp för 389 kr",
     "marquee_items": [
@@ -80,7 +85,7 @@
       "check:På og av med støvelen på",
       "shield:Stopper snø, grus og søle"
     ],
-    "hero_heading": "Kilometer fire. Fortsatt tørr sokk.",
+    "hero_heading": "Kilometer fire. Fortsatt tørre føtter.",
     "hero_text": "Krok i snøringen, stropp under foten, borrelås langs hele utsiden. Gamasjene sitter der hele turen – i snø, kratt og grus.",
     "hero_knapp": "Kjøp for 389 kr",
     "marquee_items": [

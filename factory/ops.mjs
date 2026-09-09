@@ -46,6 +46,8 @@ import {
   tillampaFraktatgarder,
 } from './shopify.mjs';
 import { kontrolleraLaunch } from './kontroll.mjs';
+import { skannaTema, rapport } from './kallskanning.mjs';
+import { hamtaAllaTemafiler } from './kallskanning-kor.mjs';
 import { byggPolicyer, kontaktsida, saknadeUppgifter } from './policyer.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggJudgeMeCsv } from './judgeme.mjs';
@@ -515,6 +517,22 @@ async function huvudflode({ butiksfil, produktfil, dryRun, resume, launch }) {
       stopp(`steget "${steg.namn}"`, [e.message, 'Rätta felet och kör igen med --resume.']);
     }
     skrivState(state);
+  }
+
+  // KÄLLSKANNINGEN — obligatorisk, körs alltid färskt, aldrig ur state.
+  // Bas-temat är exporterat från Matstrumpor och bär deras text i footern,
+  // i butiksinställningarna och i sektionernas defaults. Utan det här steget
+  // ärver varje ny butik källbutikens bolagsblock och supportmejl tills en
+  // människa råkar se det (Axels bakläxa 2026-09-09 på DryTrek).
+  const utkast = await hamtaUtkastTema();
+  if (utkast) {
+    const temafiler = await hamtaAllaTemafiler(utkast.id);
+    const skanning = skannaTema(temafiler);
+    console.log('\nKÄLLSKANNING:');
+    console.log(rapport(skanning));
+    if (!skanning.rent) {
+      console.log('\n   Kör: node factory/avbranda.mjs <butik-id> — och skanna om.');
+    }
   }
 
   // QA körs alltid färskt — aldrig ur state.
