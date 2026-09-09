@@ -81,7 +81,8 @@ export async function laddaUppLokalBild(sokvag, filnamn) {
       { fraga: bas }
     );
     const url = d.files?.nodes?.map((n) => n.image?.url).find(Boolean);
-    if (url) return { url, handle: `shopify://shop_images/${bas}` };
+    // Filändelsen ska vara kvar — se filer.mjs.
+    if (url) return { url, handle: `shopify://shop_images/${filnamn}` };
   }
   throw new Error(`Bilden ${filnamn} blev aldrig färdigbearbetad.`);
 }

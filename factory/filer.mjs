@@ -93,7 +93,13 @@ export async function laddaUppFiler(urlar, { alt = {} } = {}) {
       const traff =
         lagrade.find((n) => n.replace(/\.[^.]+$/, '') === bas) ??
         lagrade.find((n) => n.startsWith(`${bas}_`));
-      return [namn, traff ? `shopify://shop_images/${traff.replace(/\.[^.]+$/, '')}` : null];
+      // ⚠️ FILÄNDELSEN SKA VARA KVAR. Shopify resolvar
+      // shopify://shop_images/<filnamn MED ändelse>. Utan den hittar temat
+      // ingen bild och Dawn renderar sin placeholder-svg — mätt 2026-09-09
+      // på DryTrek, där hero, galleri och trygghetsbild alla var tomma i
+      // kundvyn trots att filerna fanns. Bas-temats egna värden bär ändelsen
+      // ("shopify://shop_images/…-2026-03-19T120925.579.png").
+      return [namn, traff ? `shopify://shop_images/${traff}` : null];
     })
   );
 }

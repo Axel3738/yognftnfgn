@@ -18,11 +18,11 @@
     "ingen tvekan."
   ],
   "bilder": {
-    "hero": "shopify://shop_images/benskydd-benskydd-08",
-    "trygghet": "shopify://shop_images/benskydd-benskydd-09",
-    "galleri_1": "shopify://shop_images/klart-karborre-benskydd-sv",
-    "galleri_2": "shopify://shop_images/klart-spanne-benskydd-sv",
-    "galleri_3": "shopify://shop_images/klart-matt-benskydd-sv"
+    "hero": "shopify://shop_images/benskydd-benskydd-08.jpg",
+    "trygghet": "shopify://shop_images/benskydd-benskydd-09.jpg",
+    "galleri_1": "shopify://shop_images/klart-karborre-benskydd-sv.jpg",
+    "galleri_2": "shopify://shop_images/klart-spanne-benskydd-sv.jpg",
+    "galleri_3": "shopify://shop_images/klart-matt-benskydd-sv.jpg"
   },
   "farger": {
     "accent": "#C25617",

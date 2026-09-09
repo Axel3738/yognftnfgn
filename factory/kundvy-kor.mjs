@@ -42,13 +42,21 @@ export async function hamtaStartsida(bas, losenord = null) {
       body: form,
       redirect: 'manual',
     });
-    kaka = (r.headers.getSetCookie?.() ?? [])
-      .map((c) => c.split(';')[0])
-      .filter((c) => /storefront_digest|_secure_session_id|cart/.test(c))
+    // ⚠️ Behåll ALLA kakor. Shopify sätter numera sessionen i
+    // `_shopify_essential`, inte i `storefront_digest` — ett filter på det
+    // gamla namnet kastar bort den enda kaka som betyder något (mätt
+    // 2026-09-09: rätt lösenord gav 302 till "/" och exakt en kaka).
+    kaka = (r.headers.getSetCookie?.() ?? [r.headers.get('set-cookie')])
+      .filter(Boolean)
+      .map((c) => String(c).split(';')[0])
       .join('; ');
-    if (!/storefront_digest/.test(kaka)) {
-      throw new Error(`Lösenordet avvisades (HTTP ${r.status}) — ingen storefront_digest-kaka.`);
+    // Rätt lösenord ger 302 till startsidan. Fel lösenord renderar om
+    // /password med 200 och ett felmeddelande.
+    const dit = r.headers.get('location') ?? '';
+    if (r.status !== 302 || /\/password/.test(dit)) {
+      throw new Error(`Lösenordet avvisades (HTTP ${r.status}, location ${dit || 'saknas'}).`);
     }
+    if (!kaka) throw new Error('Inloggningen gav ingen kaka tillbaka.');
   }
 
   const svar = await fetch(`${bas}/`, { headers: kaka ? { ...huvuden, Cookie: kaka } : huvuden });

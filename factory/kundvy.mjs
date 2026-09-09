@@ -19,18 +19,38 @@ export const DEFAULTSPAR = [
   { monster: /Example Product Title|Exempel på produktnamn/i, vad: 'en exempelprodukt visas' },
 ];
 
+// HTML escapar &, < och >. En titel som "Väta & Grus" står som "Väta &amp;
+// Grus" i sidan, och en rak includes() missar den. Mätt 2026-09-09 på
+// DryTrek: produkten SYNTES på startsidan, kontrollen sa nej.
+export function htmlEscape(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// Sidan innehåller texten, escapad eller inte.
+function harText(h, text) {
+  if (!text) return false;
+  return h.includes(text) || h.includes(htmlEscape(text));
+}
+
+// En riktig, uppladdad bild. TVÅ värdformer räknas:
+//   /cdn/shop/files/…    butikens egen domän (det vanliga)
+//   cdn.shopify.com/s/files/…   delade CDN:en
+// Mätt 2026-09-09: DryTrek serverar allt från sin egen domän, så det gamla
+// mönstret gav noll träffar på en sida med 16 riktiga bilder.
+const BILDMONSTER = /(?:cdn\.shopify\.com\/s\/files|\/cdn\/shop\/(?:files|products))\/[^"'\s?]+\.(?:jpg|jpeg|png|webp)/i;
+
 // Saker som MÅSTE finnas på en färdig OPS-startsida.
 export function byggKrav(butik, produkt) {
   const brand = butik?.butik?.brand ?? '';
   const produktnamn = produkt?.produkt?.namn ?? '';
   return [
-    { namn: 'brandnamn', finns: (h) => brand !== '' && h.includes(brand),
+    { namn: 'brandnamn', finns: (h) => brand !== '' && harText(h, brand),
       fel: `brandnamnet "${brand}" står ingenstans på startsidan` },
     { namn: 'logga', finns: (h) => /<img[^>]+class="[^"]*header__heading-logo/i.test(h),
       fel: 'ingen logga i headern — bara text' },
-    { namn: 'produkt', finns: (h) => produktnamn !== '' && h.includes(produktnamn),
+    { namn: 'produkt', finns: (h) => harText(h, produktnamn),
       fel: `produkten "${produktnamn}" syns inte på startsidan` },
-    { namn: 'produktbild', finns: (h) => /cdn\.shopify\.com\/s\/files\/[^"']+\.(jpg|jpeg|png|webp)/i.test(h),
+    { namn: 'produktbild', finns: (h) => BILDMONSTER.test(h),
       fel: 'ingen riktig produktbild laddad' },
     { namn: 'köpknapp', finns: (h) => /Köp|Lägg i varukorg|Kjøp|Legg i handlekurv/i.test(h),
       fel: 'ingen köpknapp på startsidan' },
