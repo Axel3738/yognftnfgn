@@ -7,7 +7,7 @@ med datum. Hitta aldrig på utfall.
 | Datum | Produkt | Vad Axel sa | Följd |
 |---|---|---|---|
 | 2026-09-09 | Husvagnsöverdrag | "verkar gå bra" | Gruppen `husvagn och husbil` fick vikt 3 → 5. |
-| 2026-09-09 | Kattkojan (utestuga katt/hund) | "verkar gå bra" | Gruppen `lantbruk och djur` fick vikt 3 → 5. Varan var struken 2026-09-09 och ska prövas igen. |
+| 2026-09-09 | Kattkojan (utestuga katt/hund) | "verkar gå bra" | Gruppen `lantbruk och djur` fick vikt 3 → 5. **Själva varan ville Axel inte ha på arket** — lägg inte tillbaka den. Det är formen som ska följas upp, inte artikeln. |
 
 ## Vad detta betyder för jakten
 
