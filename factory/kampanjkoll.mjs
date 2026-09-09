@@ -96,10 +96,18 @@ if (ads.length) {
   ok(lankfel === 0, `alla länkar till ${c.link} (avvikande: ${lankfel})`);
 }
 
-console.log(`\n=== 4. RÖRDE KÖRNINGEN NÅGON ANNAN VERKSAMHET? ===`);
+console.log(`\n=== 4. KONTOTS ÖVRIGA KAMPANJER ===`);
+// ⚠️ En ACTIVE kampanj här är INTE ett fel. Launch-skripten skapar allt PAUSED
+// och aktiverar aldrig något — står en annan kampanj på ACTIVE har en människa
+// slagit på den. Att kalla det "väckt av körningen" är att skylla ägarens eget
+// beslut på skriptet, och det gjorde kollen 2026-09-09: Axel satte igång den
+// svenska kampanjen, och den norska körningen rapporterades som misslyckad för
+// det. Raden är därför upplysning, inte grind.
 const andra = kampanjer.filter(x => x.name !== c.campaignName);
-const vackta = andra.filter(x => x.status === 'ACTIVE');
-ok(vackta.length === 0, `kontots övriga ${andra.length} kampanjer orörda${vackta.length ? ' → VÄCKTA: ' + vackta.map(x => x.name).join(', ') : ''}`);
+const aktiva = andra.filter(x => x.status === 'ACTIVE');
+console.log(`  · ${andra.length} andra kampanjer i kontot, varav ${aktiva.length} ACTIVE`);
+for (const a of aktiva) console.log(`      ACTIVE: ${a.name}`);
+console.log('    (körningen aktiverar aldrig något — en ACTIVE kampanj är någons beslut)');
 
 console.log(fel === 0 ? '\n✅ TRIPPELKOLLEN GRÖN.' : `\n❌ ${fel} avvikelse(r) — delvis klart heter delvis klart.`);
 process.exit(fel === 0 ? 0 : 1);
