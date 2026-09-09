@@ -26,6 +26,22 @@ import { MALKONTO } from './kallannonser.mjs';
 const ROT = dirname(fileURLToPath(import.meta.url));
 const GRAPH = 'https://graph.facebook.com/v21.0';
 
+/** Butikens brandprefix för media i det GEMENSAMMA OPS-kontot.
+ *
+ *  Alla OPS-butiker delar konto 915422744950975 (Axels beslut 2026-09-07), så
+ *  varje uppladdad fil måste bära sin butiks namn för att biblioteket ska gå
+ *  att skära per butik. Källan är produktfilens `brand.namn`, med
+ *  `creative_prefix` som reserv — samma två fält som kampanjnamnen byggs av.
+ *  VERSALER utan å/ä/ö, precis som kampanjprefixet (TANKGUARD_SE_…). */
+export function brandprefixAv(produkt) {
+  const rå = produkt?.brand?.namn || produkt?.creative_prefix || produkt?.produkt?.id;
+  if (!rå) throw new Error('Produktfilen saknar brand.namn och creative_prefix — utan dem går media inte att skära per butik i det delade kontot.');
+  return String(rå)
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')   // å/ä/ö → a/a/o
+    .replace(/[^A-Za-z0-9]+/g, '')
+    .toUpperCase();
+}
+
 async function graphPost(sokvag, form) {
   const token = process.env.META_ACCESS_TOKEN;
   if (!token) throw new Error('Saknar META_ACCESS_TOKEN.');
@@ -66,6 +82,11 @@ if (process.argv[1] && process.argv[1].endsWith('media-upload.mjs')) {
     throw new Error(`meta.ad_account_id är ${p.meta?.ad_account_id}, ska vara ${MALKONTO.id}. Stoppar.`);
   }
   const prefix = p.kalla.annonsprefix;
+  // Media döps efter BUTIKENS brand, aldrig efter den butik modulen råkade
+  // skrivas för. Alla OPS-butiker delar konto 915422744950975 — hårdkodas
+  // prefixet får nästa butiks filer förra butikens namn, och biblioteket går
+  // inte att skära per butik. (Stod som `DRYTREK_` till 2026-09-09.)
+  const brandprefix = brandprefixAv(p);
 
   const domar = JSON.parse(readFileSync(join(ROT, 'output', produktId, 'brand-detektor.json'), 'utf8'));
   const kallor = JSON.parse(readFileSync(join(ROT, 'output', produktId, 'kallannonser.json'), 'utf8'));
@@ -108,7 +129,7 @@ if (process.argv[1] && process.argv[1].endsWith('media-upload.mjs')) {
       continue;
     }
     try {
-      const namn = `DRYTREK_${a.namn}`;
+      const namn = `${brandprefix}_${a.namn}`;
       const id =
         a.typ === 'video'
           ? await laddaUppVideo(MALKONTO.id, fil, namn)

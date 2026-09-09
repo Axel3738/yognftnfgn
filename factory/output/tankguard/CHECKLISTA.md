@@ -77,10 +77,10 @@ and the prices, the checkout and the discount codes are wrong until they are don
 
 ## 10. Hand over
 - [ ] Tell Claude Code: **"Store ready: TankGuard"** – it creates the pixel, builds Discord channels and imports reviews
-- [ ] When Claude says the theme is ready: Online Store → Themes → the theme Claude names → **Publish**
+- [ ] When Claude says the theme is ready: Online Store → Themes → **TankGuard – CRO v1** → **Publish**
 - [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
 - [ ] Install the **WeTracked** app from the Shopify App Store
-- [ ] WeTracked → paste the **pixel ID** Claude gives you
+- [ ] WeTracked → paste the **pixel ID**: **2196132151319625**
 - [ ] Events Manager → Data sources → **TankGuard** → Settings → Conversions API → **Generate access token** → copy it
 - [ ] WeTracked → paste the **Conversions API token** (never send it in chat or email)
 - [ ] The owner logs in with the work Gmail, picks the plan and adds his card
