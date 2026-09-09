@@ -169,6 +169,16 @@ som genereras per bygge).
   saknade logga, visade Shopifys default-illustration som hero, hade Dawns
   meny (Home/Catalog/Contact) och stod på engelska. Kör alltid
   **`factory/kundvy.mjs`** mot startsidans riktiga HTML som SISTA kontroll.
+- 🔴 **BAS-TEMAT ÄR GENOMSYRAT AV MATSTRUMPOR — 157 fynd i 50 filer**
+  (kartlagt 2026-09-09, hela listan i `factory/AVBRANDNING.md`). De värsta:
+  fyra av deras RIKTIGA kundrecensioner ligger i startsidan märkta
+  "Verifierade köp"; deras Facebook och Instagram i footern; Klaviyos
+  app-embed aktiverad; och villkoren ("Fri frakt i Sverige", "30 dagars
+  öppet köp") är hårdkodade som FALLBACK i koden — de återuppstår när ett
+  fält lämnas tomt. `sections/header-group.json` var helt missad: den säger
+  "Levereras presentklart" högst upp på varje sida.
+  **Beslutet: en REN bas-zip byggs, en gång.** Tills den finns är varje ny
+  butik en manuell rensning — läs AVBRANDNING.md innan du bygger.
 - **Bas-zip:en bär MATSTRUMPORS TEXT i tre mallar** (mätt 2026-09-09):
   `templates/index.json` (hero, rubriker, kollektionen `strumporna`,
   produkten `sushi-strumpor`), `sections/footer-group.json` (bolagsblocket
