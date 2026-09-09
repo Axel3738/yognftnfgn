@@ -1,0 +1,73 @@
+{
+  "BOF_1_1": {
+    "h1": "489 kr. 2-pack 799 kr",
+    "h2": "2 Kranskydd",
+    "fot": "210D Oxford, blixtlås"
+  },
+  "BOF_2_1": {
+    "h1": "Blixtlås, 2 minuter.",
+    "h2": "Öppning upptill – du når",
+    "h3": "locket direkt.",
+    "fot": "210D Oxford blockerar UV, sol"
+  },
+  "BOF_6_1": {
+    "h1": "Frosten är på väg.",
+    "h2": "210D Oxford-tyg",
+    "fot": "Blockerar UV och sol. Blixtlås. Öppning upptill."
+  },
+  "CS_2_1": {
+    "kort1": "UV",
+    "kort2": "SKYDD",
+    "kort3": "MOT SOL",
+    "kort4": "489 kr",
+    "kort5": "STYCK",
+    "kort6": "1000L",
+    "kort7": "IBC-TANK"
+  },
+  "CS_3_1": {
+    "h1": "489 kr. 2 för 799 kr",
+    "h4": "Kranskydd på köpet",
+    "fot": "210D Oxford-tyg blockerar UV och sol helt."
+  },
+  "CS_4_1": {
+    "h1": "489 kr. 2-pack 799 kr",
+    "h2": "179 kr mindre för samma 210D Oxford-tyg som",
+    "h3": "stänger ute ljuset.",
+    "knapp": "Beställ – 489 kr"
+  },
+  "RV_1_1": {
+    "stjarnor": "210D",
+    "q1": "Oxford-tyget",
+    "q2": "blockerar solljuset helt på tanken.",
+    "q3": "Inga alger, klart vatten.",
+    "namn": "489 kr"
+  },
+  "RV_2_1": {
+    "stjarnor": "210D",
+    "q1": "Öppning upptill genom blixtlåset.",
+    "q2": "Du når locket utan att lyfta kapellet.",
+    "q3": "Under 2 min.",
+    "namn": "489 kr"
+  },
+  "RV_3_1": {
+    "stjarnor": "210D",
+    "namn": "1000L",
+    "q1": "Skyddar tanken mot solen och UV —",
+    "q2": "ingen",
+    "q3": "alg får fäste i vattnet.",
+    "fot": "På under 2 min."
+  },
+  "RV_4_1": {
+    "stjarnor": "210D",
+    "namn": "2 min",
+    "q1": "Kraftigt 210D Oxford-tyg —",
+    "q2": "passar standard 1000L IBC-tank.",
+    "q3": "Ingen alg"
+  },
+  "SP_2_1": {
+    "q1": "Äntligen klart vatten i tanken",
+    "q2": "Inga alger hela säsongen.",
+    "namn": "210D Oxford blockerar UV",
+    "fot": "På under 2 minuter."
+  }
+}

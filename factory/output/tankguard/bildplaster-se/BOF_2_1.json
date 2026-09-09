@@ -1,0 +1,46 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/BOF_2_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/BOF_2_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    146,
+    70,
+    928,
+    156
+   ],
+   "fyll": "auto",
+   "text": "Blixtlås, 2 minuter."
+  },
+  {
+   "ruta": [
+    101,
+    187,
+    980,
+    270
+   ],
+   "fyll": "auto",
+   "text": "Öppning upptill – du når"
+  },
+  {
+   "ruta": [
+    206,
+    310,
+    871,
+    399
+   ],
+   "fyll": "auto",
+   "text": "locket direkt."
+  },
+  {
+   "ruta": [
+    296,
+    1092,
+    786,
+    1127
+   ],
+   "fyll": "auto",
+   "text": "210D Oxford blockerar UV, sol"
+  }
+ ]
+}

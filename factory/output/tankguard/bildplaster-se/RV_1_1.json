@@ -1,0 +1,59 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/RV_1_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/RV_1_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    377,
+    67,
+    706,
+    124
+   ],
+   "fyll": "auto",
+   "text": "210D"
+  },
+  {
+   "ruta": [
+    396,
+    141,
+    679,
+    197
+   ],
+   "fyll": "auto",
+   "text": "Oxford-tyget",
+   "font_px": 47
+  },
+  {
+   "ruta": [
+    106,
+    216,
+    972,
+    271
+   ],
+   "fyll": "auto",
+   "text": "blockerar solljuset helt på tanken.",
+   "font_px": 47
+  },
+  {
+   "ruta": [
+    200,
+    289,
+    879,
+    345
+   ],
+   "fyll": "auto",
+   "text": "Inga alger, klart vatten.",
+   "font_px": 47
+  },
+  {
+   "ruta": [
+    485,
+    381,
+    605,
+    417
+   ],
+   "fyll": "auto",
+   "text": "489 kr"
+  }
+ ]
+}

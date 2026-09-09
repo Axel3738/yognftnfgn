@@ -1,0 +1,99 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/SP_2_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/SP_2_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    546,
+    36,
+    990,
+    192
+   ],
+   "fyll": [
+    26,
+    38,
+    16
+   ]
+  },
+  {
+   "ruta": [
+    556,
+    80,
+    980,
+    120
+   ],
+   "fyll": [
+    26,
+    38,
+    16
+   ],
+   "text": "Äntligen klart vatten i tanken",
+   "font_px": 31,
+   "farg": [
+    255,
+    255,
+    255
+   ]
+  },
+  {
+   "ruta": [
+    556,
+    118,
+    980,
+    155
+   ],
+   "fyll": [
+    26,
+    38,
+    16
+   ],
+   "text": "Inga alger hela säsongen.",
+   "font_px": 31,
+   "farg": [
+    255,
+    255,
+    255
+   ]
+  },
+  {
+   "ruta": [
+    700,
+    158,
+    980,
+    188
+   ],
+   "fyll": [
+    26,
+    38,
+    16
+   ],
+   "text": "210D Oxford blockerar UV",
+   "font_px": 25,
+   "farg": [
+    255,
+    255,
+    255
+   ]
+  },
+  {
+   "ruta": [
+    735,
+    252,
+    990,
+    292
+   ],
+   "fyll": [
+    26,
+    38,
+    16
+   ],
+   "text": "På under 2 minuter.",
+   "font_px": 26,
+   "farg": [
+    255,
+    255,
+    255
+   ]
+  }
+ ]
+}

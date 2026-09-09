@@ -1,0 +1,36 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/BOF_1_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/BOF_1_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    100,
+    74,
+    976,
+    141
+   ],
+   "fyll": "auto",
+   "text": "489 kr. 2-pack 799 kr"
+  },
+  {
+   "ruta": [
+    322,
+    198,
+    752,
+    261
+   ],
+   "fyll": "auto",
+   "text": "2 Kranskydd"
+  },
+  {
+   "ruta": [
+    401,
+    1095,
+    681,
+    1125
+   ],
+   "fyll": "auto",
+   "text": "210D Oxford, blixtlås"
+  }
+ ]
+}

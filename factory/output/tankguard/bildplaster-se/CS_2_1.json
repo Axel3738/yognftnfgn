@@ -1,0 +1,167 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/CS_2_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/CS_2_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    784,
+    208,
+    981,
+    306
+   ],
+   "fyll": "auto",
+   "text": "UV",
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "kontur": [
+    4,
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "ruta": [
+    739,
+    308,
+    977,
+    381
+   ],
+   "fyll": "auto",
+   "text": "SKYDD",
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "kontur": [
+    4,
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "ruta": [
+    739,
+    387,
+    974,
+    463
+   ],
+   "fyll": "auto",
+   "text": "MOT SOL",
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "kontur": [
+    4,
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "ruta": [
+    769,
+    538,
+    993,
+    620
+   ],
+   "fyll": "auto",
+   "text": "489 kr",
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "kontur": [
+    4,
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "ruta": [
+    778,
+    621,
+    991,
+    694
+   ],
+   "fyll": "auto",
+   "text": "STYCK",
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "kontur": [
+    4,
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "ruta": [
+    811,
+    715,
+    979,
+    764
+   ],
+   "fyll": "auto",
+   "text": "1000L",
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "kontur": [
+    4,
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "ruta": [
+    774,
+    761,
+    988,
+    800
+   ],
+   "fyll": "auto",
+   "text": "IBC-TANK",
+   "farg": [
+    255,
+    255,
+    255
+   ],
+   "kontur": [
+    4,
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  }
+ ]
+}

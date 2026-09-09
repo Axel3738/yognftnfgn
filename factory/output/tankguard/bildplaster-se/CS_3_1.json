@@ -1,0 +1,36 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/CS_3_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/CS_3_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    107,
+    76,
+    974,
+    140
+   ],
+   "fyll": "auto",
+   "text": "489 kr. 2 för 799 kr"
+  },
+  {
+   "ruta": [
+    367,
+    451,
+    712,
+    492
+   ],
+   "fyll": "auto",
+   "text": "Kranskydd på köpet"
+  },
+  {
+   "ruta": [
+    227,
+    1086,
+    852,
+    1123
+   ],
+   "fyll": "auto",
+   "text": "210D Oxford-tyg blockerar UV och sol helt."
+  }
+ ]
+}

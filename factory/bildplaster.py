@@ -82,7 +82,14 @@ def plastra(konfig):
         bredd, hojd = bb[2] - bb[0], bb[3] - bb[1]
         tx = x0 + ((x1 - x0) - bredd) // 2 - bb[0] if p.get("centrera", True) else x0 - bb[0]
         ty = y0 + ((y1 - y0) - hojd) // 2 - bb[1]
-        rita.text((tx, ty), text, font=font, fill=tuple(p.get("farg", (17, 17, 17))))
+        # "kontur": [bredd, [r,g,b]] — vit text med svart kontur direkt på ett
+        # foto är källbutikens egen stil på flera annonser. Utan konturen byter
+        # rutan utseende och sticker ut mot resten av bilden.
+        kontur = p.get("kontur")
+        extra = {}
+        if kontur:
+            extra = {"stroke_width": kontur[0], "stroke_fill": tuple(kontur[1])}
+        rita.text((tx, ty), text, font=font, fill=tuple(p.get("farg", (17, 17, 17))), **extra)
     im.save(konfig["ut"], quality=95)
     return konfig["ut"]
 

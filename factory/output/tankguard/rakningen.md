@@ -1,122 +1,141 @@
 # Räkningen — TankGuard, steg 9 i `/ny-annonser`
 
-Körd 2026-09-09. **Annonser räknade ur `act_915422744950975/ads`** — aldrig ur
-`advideos`/`adimages`. Media i kontot är inte en annons.
+Körd 2026-09-09, andra körningen. **Annonser räknade ur
+`act_915422744950975/ads`** — aldrig ur `advideos`/`adimages`. Media i kontot är
+inte en annons. Skriptet är `factory/rakna-tankguard.mjs`.
 
-## Källkontona — svepta på ALLA kampanjer, inte en per konto
+## Källkontona — svepta på ALLA kampanjer
 
-| Konto | Annonser totalt | Med IBC-prefix | Kampanjer med prefixet |
+| Konto | Annonser i kontot | Med IBC-prefix | Kampanjer med prefixet |
 |---|--:|--:|--:|
-| MagiBorsten SE `1867947880635861` | 1 679 | 36 | 1 |
-| Magiborsten NO `1050941584152547` | 572 | 33 | 1 |
+| MagiBorsten SE `1867947880635861` | 1 683 | **40** | 1 |
+| Magiborsten NO `1050941584152547` | 581 | **33** | 1 |
 
 SE: `IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28` (ACTIVE)
 NO: `IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29` (ACTIVE)
 
-Svepet gick på **varje annons** i båda kontona och grupperade på `campaign_id`,
-inte på ett kampanjnamn valt i förväg. **En kampanj per konto — inga fler.**
+⚠️ **Källkampanjen växte under bygget.** Den svenska hade 34 annonser när
+brand-detektorn kördes och 40 samma kväll — sex nya videor tillkom mitt i.
+Räkningen läser därför om källkontona precis innan den ställs upp. En körning
+som räknar mot sin gamla lista säger "klart" om något som saknar sex annonser.
 
 ---
 
-## SVERIGE — `TANKGUARD_SE_Tanköverdraget | 2026-09-08`
+## SVERIGE — `TANKGUARD_SE_Tanköverdraget | 2026-09-08` (`120248995235740172`)
 
 | Dom | Källa | Ska bli | Uppe | Saknas |
 |---|--:|--:|--:|--:|
-| `ren` | 20 | 20 | **20** | 0 |
-| `kräver-omdubb` | 11 | 11 | **11** | 0 |
-| `kräver-slutkortsbygge` | 2 | 2 | **2** | 0 |
-| `okänd` | 1 | 0 — får inte laddas upp | 1 ⚠️ | — |
-| **Summa** | **34** | **33** | **33** | **0** |
+| `ren` (bild + video) | 21 | 21 | **21** | 0 |
+| `kräver-omdubb` | 13 | 13 | **13** | 0 |
+| `kräver-slutkortsbygge` | 5 | 5 | **5** | 0 |
+| `okänd` (`PD_Extra`) | 1 | 0 | 1 ⚠️ | — |
+| **Summa** | **40** | **39** | **40** | **0** |
 
-**33 av 33. Ingen saknas.**
+**40 av 40. Ingen saknas. Allt PAUSED.**
 
-Sex adsets (BOF, CO, CS, GT, PD, SP), allt PAUSED, TankGuards egen pixel
-`2196132151319625`, geo SE, CBO 1 000 kr/dag.
+Sex adsets (BOF, CO, CS, GT, PD, SP), TankGuards egen sida `1399193996606775`
+och egen pixel `2196132151319625`, geo SE, CBO 1 000 kr/dag,
+länk `https://tankguard.se/products/tankoverdraget`.
 
-**Vad som gjordes med de 13 videorna:**
+### Vad som gjordes med de svenska videorna
 
 | Grupp | Antal | Åtgärd |
 |---|--:|---|
-| `PD_1_H1/H2/H3` | 3 | Omdubbade (HeyGen, svenska→svenska). Bara EN talreplik bar brandet. Den inbrända captionraden bytt från "från bäverbutiken." till "från TankGuard." |
-| `CS_1_H2/H3`, `GT_1_H1/H2/H3`, `SP_1_H1/H2/H3` | 8 | **Nytt manus**, inte ordbyte — deras tal bar hela det falska erbjudandet respektive ett kundvittnesmål. Omdubbade OCH hela captionspåret utbytt med `no-precis.py`, eftersom rösten annars sagt en sak och texten en annan |
-| `GT_3_H1`, `PD_3_H1` | 2 | Ingen omdubb — talet var rent. **Slutkortet ombyggt:** ordmärket, bäversymbolen, svenska flaggan, stjärnorna, "10 recensioner" och prisparet "636 kr 489 kr" → TANKGUARD-banderoll och "489 kr" |
+| `PD_1_H1/H2/H3` | 3 | Omdubbade. Bara EN talreplik bar brandet — ordet byttes, resten av manuset är produktmekanik. |
+| `CS_1_H2/H3`, `GT_1_H1/H2/H3`, `SP_1_H1/H2/H3` | 8 | **Nytt manus.** Deras tal bar hela det falska erbjudandet respektive ett kundvittnesmål. Omdubbade OCH hela captionspåret utbytt. |
+| `SP_3_H1`, `CS_4_H1` | 2 | Tillkom senare. `SP_3_H1` läste upp två påhittade recensioner, `CS_4_H1` hela rabatterbjudandet. Nytt manus, omdubb, captionbyte. `CS_4_H1` hade dessutom ett andra inbränt piller mitt i bilden ("489 kr, spara 147 kr") som byttes mot "489 kr per överdrag". |
+| `GT_3_H1`, `PD_3_H1`, `GT_4_H1`, `PD_4_H1`, `PD_4_H2` | 5 | Talet var rent. **Slutkortet ombyggt** med `factory/slutkort.py` — ordmärke, recensionsrad och prispar. Noll HeyGen-credits. |
 
-De åtta caption-bytta OCR-grindades på 160 frames före uppladdning: **noll
-träffar** på förbjudna påståenden.
+### Två rättelser i efterhand
 
-### `PD_Extra` — uppe men pausad
-Domen är `okänd`: talet gick aldrig att läsa, det finns inget transkript. Den
-laddades upp i den första körningen innan räkningsspärren fanns. **Nu pausad**
-(`120249008687250172`). Räknas inte mot målet och ska inte gå ACTIVE förrän
-någon lyssnat på de tio sekunderna.
+**Fyra videor renderades om.** `GT_1_H2`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3` fick
+replikerna i fel ordning av en bugg i fördelningen — `SP_1_H3` slutade på en
+utfyllnadsreplik i stället för sitt avslut. Nya proofread-sessioner, nya
+renderingar, nytt captionspår, och annonserna pekades om till de nya
+creativesen. Annonsernas id, namn, adset och status står kvar.
 
-### Två källannonser utan dom
-`PD_4_H1` och `PD_4_H2` tillkom i källkontot **efter** brand-detektorns körning
-(34 → 36). De har ingen dom och är därför inte byggda. De är **olästa**, inte
-rena. Kör brand-detektorn igen innan de får en plats i räkningen.
+**Elva bildannonser fick sina pixlar bytta.** Den första bildgrinden sökte bara
+pris, brand och stjärnor. En strikt omgrindning som också täcker frakt,
+betalsätt, returrätt och kundetiketter hittade elva smutsiga bilder som redan
+låg uppe: `BOF_1_1`, `BOF_2_1`, `BOF_6_1`, `CS_2_1`, `CS_3_1`, `CS_4_1`,
+`RV_1_1`, `RV_2_1`, `RV_3_1`, `RV_4_1`, `SP_2_1`. Raderna är utbytta med
+`factory/bildplaster.py` och annonserna ompekade.
+
+### `PD_Extra` — uppe men pausad, utan dom
+Talet gick aldrig att läsa och det finns inget transkript. Den laddades upp i
+den allra första körningen, innan räkningsspärren fanns. **Pausad**
+(`120249008687250172`). Ska inte gå ACTIVE förrän någon lyssnat på de tio
+sekunderna.
 
 ---
 
-## NORGE — `TANKGUARD_NO_Tanktrekket | 2026-09-09`
+## NORGE — `TANKGUARD_NO_Tanktrekket | 2026-09-09` (`120249012213810172`)
 
-Kampanjen byggd i **samma konto** som den svenska (`915422744950975`), PAUSED,
-1 000 kr/dag, CBO. Fem adsets (BOF, CO, GT, PD, SP). Targeting läst ur den
-norska källkampanjens eget adset — geo `["NO"]`, aldrig en fallback-geo.
-Länk: `https://tankguard.se/nb/products/tankoverdraget`. Pixel: TankGuards egen.
+Samma konto som den svenska, PAUSED, 1 000 kr/dag, CBO. Sex adsets
+(BOF, CO, CS, GT, PD, SP). Targeting läst ur den norska källkampanjens eget
+adset — geo `["NO"]`, aldrig en fallback-geo.
+Länk: `https://tankguard.se/nb/products/tankoverdraget`. TankGuards egen pixel.
 
-| Grupp | Källa | Ska bli | Uppe | Saknas |
+| Dom | Källa | Ska bli | Uppe | Saknas |
 |---|--:|--:|--:|--:|
-| Bild, **ren** media | 10 | 10 | **10** | 0 |
-| Bild, **smutsig** media | 10 | 0 | 0 | — |
-| Video | 13 | 13 | **0** | 13 |
-| **Summa** | **33** | **23** | **10** | **13** |
+| Bild, media ren | 9 | 9 | **9** | 0 |
+| Bild, media omplåstrad | 11 | 11 | **11** | 0 |
+| Video, `replikbyte` | 3 | 3 | **3** | 0 |
+| Video, nytt manus | 8 | 8 | **8** | 0 |
+| Video, slutkort ombyggt | 2 | 2 | **2** | 0 |
+| **Summa** | **33** | **33** | **33** | **0** |
 
-### De 10 som hålls, och varför
+**33 av 33. Ingen saknas. Allt PAUSED.**
 
-| Creative | Vad som sitter inbränt i bilden |
-|---|---|
-| `BOF_1_1` | pris 439/586, 25 % rabatt, gratis frakt |
-| `BOF_2_1` | Klarna, 30 dagers åpent kjøp |
-| `BOF_6_1` | frakt, Klarna |
-| `CS_2_1` | pris 439/586, 25 % |
-| `CS_3_1` | pris, rabatt, frakt, Klarna |
-| `CS_4_1` | pris 439/586, 147 kr, 25 % |
-| `RV_1_1` · `RV_2_1` · `RV_4_1` | stjärnor + **`baverbutiken.se` inbränd i bilden** |
-| `RV_3_1` | samma, plus 25 % rabatt |
+### Den norska halvan är inte en kopia av den svenska
 
-⚠️ **NO-specifikt fynd:** de fyra norska RV-bilderna bär källbutikens domän
-inbränd. De svenska gör det inte — den norska lokaliseringen lade till den.
+**Fördelningen är identisk, innehållet är det inte.** Åtta av elva norska videor
+behövde nytt manus och tre räckte med ett ordbyte — exakt som Sverige. Men
+manusen är egna: den norska copyn och de norska replikerna **nämner inget pris
+alls**.
 
-### De 13 videorna som saknas
+**Varför Norge är prisfritt:** TankGuard har inget känt NOK-pris i repot.
+Källans 439/586 kr är Bäverbutiken NO:s tal, ett SEK-tal i en norsk annons
+räknar fel, och ett påhittat NOK-tal är förbjudet. Priset står på `/nb`-sidan.
+Sätts NOK-nivåer i butiken kan pris läggas till i copyn — då är det en
+textändring, inte ett ombygge.
 
-`CS_1_H2`, `CS_1_H3`, `GT_1_H1`, `GT_1_H2`, `GT_1_H3`, `GT_3_H1`, `PD_1_H1`,
-`PD_1_H2`, `PD_1_H3`, `PD_3_H1`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
-
-**Orsak, gemensam för alla 13:** mediat är inte grindat. De svenska videorna
-fick frame-OCR som visade exakt vad som satt inbränt; de norska har inte fått
-den läsningen. Utan den vet ingen vilka som behöver omdubb och vilka som bara
-behöver en textrad bytt — och `❔ oläst` är aldrig `ren`.
-
-### Priset i den norska copyn
-Den norska texten **nämner inget pris alls**. TankGuard har inget känt NOK-pris
-i repot, och källans 439/586 kr är Bäverbutiken NO:s tal. Ett SEK-tal i en norsk
-annons räknar fel, och ett påhittat NOK-tal är förbjudet. Priset står på
-`/nb`-sidan i stället. Sätts NOK-nivåer i butiken kan pris läggas till.
+**NO-specifikt fynd:** de fyra norska RV-bilderna bar `baverbutiken.se` inbränd
+i bilden. De svenska gör det inte — den norska lokaliseringen lade till domänen.
 
 ---
 
 ## Summan
 
-| Marknad | Byggt | Mål | Läge |
+| Marknad | Källa | Byggt | Läge |
 |---|--:|--:|---|
-| Sverige | **33** | 33 | ✅ komplett |
-| Norge | **10** | 23 | ⚠️ 13 videor saknas |
+| Sverige | 40 | **40** | ✅ komplett, allt PAUSED |
+| Norge | 33 | **33** | ✅ komplett, allt PAUSED |
 
-**DELVIS KLART.** Sverige är färdigt. Norge har sin kampanj och alla creatives
-vars media är bevisat rena — de 13 videorna väntar på samma mediagrind som den
-svenska sidan fick.
+**KLART.** Varje källannons i båda kontona ligger uppe i sin marknads kampanj.
 
-⚠️ **Röstkontrollen är inte gjord på de 11 svenska omdubbade videorna.**
-CLAUDE.md järnregel 3 kräver att någon lyssnar på hook, mitt och slut. En
-molnsession kan inte lyssna. De ligger PAUSED och ska inte gå ACTIVE förrän
-någon hört dem.
+### Grindarna som passerades före uppladdning
+
+| Grind | Omfattning | Utfall |
+|---|---|---|
+| OCR på färdiga svenska videor | 13 videor, 247 frames | 0 träffar |
+| OCR på färdiga norska videor | 11 videor, 226 frames | 0 träffar |
+| OCR på ombyggda slutkort | 5 videor, 48 frames | 0 träffar |
+| OCR på omplåstrade bilder, NO | 11 bilder | 0 träffar |
+| OCR på omplåstrade bilder, SE | 11 bilder | 0 träffar |
+| Manuslängd mot källans taltid | 21 manus | alla ≤ 1,15× |
+
+### Röstkontrollen (CLAUDE.md järnregel 3)
+Axel lyssnade 2026-09-09 på de elva svenska omdubbade videorna:
+**"Alla okej. Men inget super — bra, men helt okej liksom."** Godkända.
+
+⚠️ **Sex omdubbade filer är INTE avlyssnade ännu:** `SP_3_H1`, `CS_4_H1` och de
+fyra omrenderade `GT_1_H2`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`. De elva norska är
+heller inte avlyssnade. En molnsession kan inte lyssna. De ligger PAUSED.
+
+### Öppna ägarfrågor
+- **Momsen.** Break-even är 1,46 utan moms i priset och 2,07 med. 42 % isär.
+  Ingen annons ska dömas förrän frågan är avgjord.
+- **Jämförpriset i annonsen.** Butikssidan visar 1 376 / 2 064 kr som överstruket
+  på paketen. Ingen annons använder dem — de är paketsummor, inte enstyckspris.
+- **NOK-nivåer.** Saknas. Den norska copyn är prisfri tills de finns.

@@ -1,0 +1,51 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/CS_4_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/CS_4_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    108,
+    78,
+    973,
+    138
+   ],
+   "fyll": "auto",
+   "text": "489 kr. 2-pack 799 kr"
+  },
+  {
+   "ruta": [
+    121,
+    207,
+    960,
+    251
+   ],
+   "fyll": "auto",
+   "text": "179 kr mindre för samma 210D Oxford-tyg som"
+  },
+  {
+   "ruta": [
+    380,
+    271,
+    698,
+    313
+   ],
+   "fyll": "auto",
+   "text": "stänger ute ljuset."
+  },
+  {
+   "ruta": [
+    336,
+    1234,
+    745,
+    1280
+   ],
+   "fyll": "auto",
+   "text": "Beställ – 489 kr",
+   "farg": [
+    255,
+    255,
+    255
+   ]
+  }
+ ]
+}

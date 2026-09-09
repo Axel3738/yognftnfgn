@@ -1,0 +1,36 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/BOF_6_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/BOF_6_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    126,
+    66,
+    946,
+    154
+   ],
+   "fyll": "auto",
+   "text": "Frosten är på väg."
+  },
+  {
+   "ruta": [
+    207,
+    193,
+    864,
+    273
+   ],
+   "fyll": "auto",
+   "text": "210D Oxford-tyg"
+  },
+  {
+   "ruta": [
+    172,
+    1085,
+    906,
+    1125
+   ],
+   "fyll": "auto",
+   "text": "Blockerar UV och sol. Blixtlås. Öppning upptill."
+  }
+ ]
+}

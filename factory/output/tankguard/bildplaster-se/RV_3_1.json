@@ -1,0 +1,69 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/RV_3_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/RV_3_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    433,
+    64,
+    648,
+    105
+   ],
+   "fyll": "auto",
+   "text": "210D"
+  },
+  {
+   "ruta": [
+    495,
+    116,
+    586,
+    156
+   ],
+   "fyll": "auto",
+   "text": "1000L"
+  },
+  {
+   "ruta": [
+    106,
+    188,
+    978,
+    238
+   ],
+   "fyll": "auto",
+   "text": "Skyddar tanken mot solen och UV —",
+   "font_px": 50
+  },
+  {
+   "ruta": [
+    471,
+    259,
+    611,
+    310
+   ],
+   "fyll": "auto",
+   "text": "ingen",
+   "font_px": 50
+  },
+  {
+   "ruta": [
+    263,
+    333,
+    806,
+    386
+   ],
+   "fyll": "auto",
+   "text": "alg får fäste i vattnet.",
+   "font_px": 50
+  },
+  {
+   "ruta": [
+    411,
+    1093,
+    671,
+    1128
+   ],
+   "fyll": "auto",
+   "text": "På under 2 min."
+  }
+ ]
+}

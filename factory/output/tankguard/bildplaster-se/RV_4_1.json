@@ -1,0 +1,59 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/RV_4_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/RV_4_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    433,
+    65,
+    647,
+    105
+   ],
+   "fyll": "auto",
+   "text": "210D"
+  },
+  {
+   "ruta": [
+    490,
+    115,
+    590,
+    156
+   ],
+   "fyll": "auto",
+   "text": "2 min"
+  },
+  {
+   "ruta": [
+    177,
+    190,
+    903,
+    233
+   ],
+   "fyll": "auto",
+   "text": "Kraftigt 210D Oxford-tyg —",
+   "font_px": 47
+  },
+  {
+   "ruta": [
+    172,
+    263,
+    908,
+    304
+   ],
+   "fyll": "auto",
+   "text": "passar standard 1000L IBC-tank.",
+   "font_px": 47
+  },
+  {
+   "ruta": [
+    428,
+    332,
+    651,
+    386
+   ],
+   "fyll": "auto",
+   "text": "Ingen alg",
+   "font_px": 47
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "in": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-alla-bilder/RV_2_1.jpg",
+ "ut": "/tmp/claude-0/-home-user-yognftnfgn/ff667879-d253-581e-87c9-68230f965fb7/scratchpad/se-bild-ren/RV_2_1.jpg",
+ "plaster": [
+  {
+   "ruta": [
+    376,
+    68,
+    707,
+    123
+   ],
+   "fyll": "auto",
+   "text": "210D"
+  },
+  {
+   "ruta": [
+    139,
+    141,
+    939,
+    198
+   ],
+   "fyll": "auto",
+   "text": "Öppning upptill genom blixtlåset.",
+   "font_px": 49
+  },
+  {
+   "ruta": [
+    99,
+    218,
+    984,
+    267
+   ],
+   "fyll": "auto",
+   "text": "Du når locket utan att lyfta kapellet.",
+   "font_px": 49
+  },
+  {
+   "ruta": [
+    387,
+    287,
+    687,
+    346
+   ],
+   "fyll": "auto",
+   "text": "Under 2 min.",
+   "font_px": 49
+  },
+  {
+   "ruta": [
+    490,
+    381,
+    600,
+    417
+   ],
+   "fyll": "auto",
+   "text": "489 kr"
+  }
+ ]
+}
