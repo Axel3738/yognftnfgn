@@ -1,0 +1,168 @@
+# TackleBay — produkt 1 av 2: Fiskespöhållare 4-pack.
+# Källa: baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring
+# Specs, pris och recensioner lästa ur källan 2026-09-09. Inget påhittat.
+
+produkt:
+  namn: "Fiskespöhållare 4-Pack"
+  id: "fiskespohallare-4-pack"
+  menynamn: "Spöhållaren"
+
+brand:
+  namn: "TackleBay"
+  domanideer:
+    - "tacklebay.se"
+    - "tacklebay.no"
+
+ekonomi:
+  # ⚠️ GISSNING — inköpskostnaden finns INTE i källan och är räknad som 40 %
+  # av priset, vilket är mitten i Bäverbutikens fyra skalningsprodukter
+  # (break-even-ROAS 1,47–1,72 ⇒ COGS 32–42 % av priset).
+  # Axel måste bekräfta den riktiga siffran — break-even-talet nedan styr
+  # kill-beslut och får inte vila på en gissning.
+  inkopskostnad: 116
+  pris: 289
+  jamforpris: 0
+
+varianter:
+media:
+  bilder:
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d426b7a-cfe0-49df-8b44-03c3aabbc326.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053307_df302002-861d-427d-9913-52d6b61d43ec.png"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053329_603c77a7-8931-41c1-89be-0f2aea0f7fcf.png"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053344_a0863231-8cf7-430b-8f54-381e52beff10.png"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053401_5af027d7-9c68-4e4a-8281-6267b400664e.png"
+  videor:
+  # Gif:arna är redigerarjobb — källan har inga. Sektionerna döljer sig utan.
+  gif_problem: ""
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053329_603c77a7-8931-41c1-89be-0f2aea0f7fcf.png"
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053401_5af027d7-9c68-4e4a-8281-6267b400664e.png"
+
+beskrivning:
+  problem_rubrik: "Femton minuter på en knut innan första kastet"
+  problem_text: "Spöna har legat i en hög i garaget sedan sist. Linorna har hittat varandra, en krok sitter i fel spö, och nu står du på bryggan och petar i stället för att fiska."
+  losning_rubrik: "Fyra spön, fyra platser"
+  losning_text: "Fyra hållare skruvas upp på väggen eller i båten och tar ett spö var. Spöna står upp, linorna hänger fritt och ingenting hakar i något annat. Nästa gång lyfter du ner ett spö och går."
+
+vinkel:
+  huvudvinkel: "Ordning i utrustningen — fyra spön, fyra platser. Källa: källproduktens egen problemformulering plus 7 Judge.me-recensioner där ordning och stabilitet är det enda som nämns (playbook-vinkeln 'löser en fysisk irritation kunden ser varje gång')."
+  underrubrik: "Fyra spön. Fyra platser. Slut på trasslet."
+
+malgrupp:
+  beskrivning: "Sport- och fritidsfiskare 30–65 som har fler spön än plats. Båtägare, stugägare och garagefiskare — de säger 'spö' och 'drag', inte 'fiskeutrustning', och de vet vad ett skeddrag är."
+
+problem:
+  - "Spöna ligger i en hög och linorna trasslar in i varandra."
+  - "Krokar och drag hakar fast i fel spö när allt ligger löst."
+  - "Spöna står i vägen i båten och tar plats i garaget."
+
+benefits:
+  - "Varje spö får sin egen plats — inget trassel att reda ut före fisket."
+  - "Fyra hållare i ett set räcker till hela uppsättningen."
+  - "Sitter lika bra på garageväggen som i båten."
+  - "Spöna står upp, så linorna hänger fritt och håller sig hela."
+
+features:
+  - "Fyra hållare i ett set"
+  - "Kraftig konstruktion som håller spöna stadigt"
+  - "Monteras på vägg eller i båten"
+  - "För strand-, sjö- och båtfiske"
+  - "Passar både proffs och nybörjare"
+
+offer:
+  beskrivning: "Fyra hållare i ett set, 289 kr. Fri frakt i Sverige och Norge, 14 dagars ångerrätt."
+  bundle: "2-pack ger 8 platser — 15 % rabatt. 3-pack ger 12 platser — 20 % rabatt."
+  # Q4-ramverket: den betalda korg-upsellen är butikens ANDRA produkt.
+  # ⚠️ Den GRATIS bonusprodukten saknas — butiken har ingen billig
+  # komplementprodukt än, och en sådan hittas inte på. Axel väljer den.
+  bonus_produkt:
+    titel: "Adventskalender Fiskedrag – 24 Drag"
+    handle: "adventskalender-fiskedrag"
+    pris: 469
+    i_paket: ""
+
+reviews:
+  # 7 riktiga recensioner, hämtade ur källproduktens Judge.me 2026-09-09
+  # (snitt 5,00). Namn och datum är källans egna — inget påhittat.
+  - namn: "Daniel"
+    betyg: 5
+    titel: "Rekommenderar"
+    text: "Stabil och enkel. Jag är nöjd."
+    datum: "2026-07-08"
+  - namn: "Lars"
+    betyg: 5
+    titel: "Nöjd"
+    text: "Bra hållare som sparar plats."
+    datum: "2026-06-08"
+  - namn: "Fredrik"
+    betyg: 5
+    titel: "Enkel att använda"
+    text: "Lätt att sätta upp och spöna sitter bra."
+    datum: "2026-05-08"
+  - namn: "Mikael"
+    betyg: 5
+    titel: "Bra köp"
+    text: "Fungerar bra och känns stabil."
+    datum: "2026-04-08"
+  - namn: "Peter"
+    betyg: 5
+    titel: "Smidigt"
+    text: "Perfekt för att hålla ordning på fiskespöna."
+    datum: "2026-03-08"
+  - namn: "Johan"
+    betyg: 5
+    titel: "Mycket nöjd"
+    text: "Bra kvalitet och smidig att använda."
+    datum: "2026-02-08"
+  - namn: "Anders"
+    betyg: 5
+    titel: "Bra hållare"
+    text: "Enkel att montera och håller spöna bra."
+    datum: "2026-01-08"
+
+faq:
+  - fraga: "Hur många spön får plats?"
+    svar: "Fyra — ett per hållare. Fler set kan sättas upp bredvid varandra."
+  - fraga: "Passar den i båten?"
+    svar: "Ja. Hållarna monteras på vägg eller i båten och är gjorda för strand-, sjö- och båtfiske."
+  - fraga: "Passar alla spön?"
+    svar: "Hållarna är gjorda för vanliga spön till strand-, sjö- och båtfiske, både grövre och klenare."
+  - fraga: "Ingår skruvar?"
+    svar: "Montering sker med vanliga skruvar mot vägg eller båt. Vilket infäste som passar beror på underlaget."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+leverantor:
+  url: "https://www.temu.com/goods.html?goods_id=601104615671651"
+  anteckning: "Temu-artikel, samma som Bäverbutikens SKU TEMU-601104615671651. Ledtid och MOQ ej verifierade för TackleBay."
+
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16268173214045"
+  produkt_handle: "fiskespohallare-4-pack-kraftig-forvaring"
+  produkt_url: "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring"
+  annonskonto: "1867947880635861"
+  annonsprefix: "Rodholder"
+  kampanj_id: ""
+  kampanj: ""
+  srt_slug:
+kallor:
+  drive_mapp: ""
+
+meta:
+  # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
+  # 1867947880635861 (Bäverbutiken).
+  ad_account_id: "915422744950975"
+  page_id: ""
+  pixel_id: ""
+  # ⚠️ Prefixet är PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1) —
+  # det är det enda fyra system använder för att skilja produkter åt.
+  # Brandet ligger med i prefixet här för att Bäverbutiken redan använder
+  # "Rodholder_" på källprodukten; två butiker med samma prefix skulle
+  # kollidera i prefixkartan, översättningskön, adsetuppslaget och commission.
+  creative_prefix: "TackleBayRod"
+  testbudget_per_dag: 500
+  vinklar:
+    - "Ordning: fyra spön, fyra platser"
+    - "Före/efter: högen i garaget mot väggen med fyra spön"
+    - "Trasslet: femton minuter på en knut innan första kastet"

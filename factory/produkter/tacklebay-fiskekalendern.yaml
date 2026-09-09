@@ -1,0 +1,128 @@
+# TackleBay — produkt 2 av 2: Adventskalender med fiskedrag.
+# Källa: baverbutiken.se/products/adventskalender-fiskedrag-24-drag-bakom-24-luckor
+# Specs och pris lästa ur källan 2026-09-09. Inget påhittat.
+#
+# ⚠️ SÄSONG: kalendern säljer fram till 24 december och är död därefter.
+# Spöhållaren är butikens året-runt-produkt. Läs aldrig de två produkternas
+# siffror mot varandra utan att väga in det.
+
+produkt:
+  namn: "Adventskalender Fiskedrag – 24 Drag"
+  id: "adventskalender-fiskedrag"
+  menynamn: "Fiskekalendern"
+
+brand:
+  namn: "TackleBay"
+  domanideer:
+    - "tacklebay.se"
+    - "tacklebay.no"
+
+ekonomi:
+  # ⚠️ GISSNING — samma antagande som spöhållaren: 40 % av priset, mitten i
+  # Bäverbutikens fyra skalningsprodukter. Axel måste bekräfta den riktiga
+  # inköpskostnaden innan break-even-talet används för kill-beslut.
+  inkopskostnad: 188
+  pris: 469
+  jamforpris: 619
+
+varianter:
+media:
+  bilder:
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender-2.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-ai.png"
+  videor:
+  gif_problem: ""
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender-2.jpg"
+  # ⚠️ Lifestylebilden är en AI-genererad illustration. Källsidan märker ut
+  # det, och det ska stå kvar i kundvyn — annars är bilden ett påstående.
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-ai.png"
+
+beskrivning:
+  problem_rubrik: "Vad ger man den som redan har allt i fiskelådan?"
+  problem_text: "Han har wobblers i tre storlekar, skeddrag han aldrig använder och en låda som inte går att stänga. En ny rulle är för dyrt att chansa på, och ett presentkort säger ”jag visste inte”. Så det blir strumpor. Igen."
+  losning_rubrik: "Ett drag om dagen fram till jul"
+  losning_text: "Bakom varje lucka sitter ett drag — en wobbler ena dagen, ett skeddrag nästa, en mjukbeteräka den tredje. Tjugofyra morgnar med något att vända på i handen och fundera över var det ska provas. Vid julafton är det en ny låda, byggd en lucka i taget."
+
+vinkel:
+  huvudvinkel: "Presentproblemet, inte fisket: köparen är den som ska GE bort kalendern och inte vet vad hon ska välja. Källa: källsidans egen ingress, som redan är skriven mot gåvogivaren och sålde produkten in i Bäverbutikens sortiment."
+  underrubrik: "24 luckor. 24 drag. Slut på presentgissandet."
+
+malgrupp:
+  beskrivning: "Den som ska köpa julklapp till en fiskare — partner, barn eller förälder, 25–65. Hon vet att han fiskar men inte vad han saknar, och vill slippa välja fel märke eller storlek."
+
+problem:
+  - "Fiskaren i familjen har redan allt man kan komma på att köpa."
+  - "Ett presentkort läses som att man inte orkade tänka."
+  - "Man vet inte vilket märke, vilken storlek eller vilken vikt som är rätt."
+  - "Det blir strumpor. Igen."
+
+benefits:
+  - "Något att öppna varje dag, inte bara den 24:e."
+  - "Ingen behöver gissa storlek eller märke — dragen passar alla spön."
+  - "Lådan är fylld till våren med drag som ska ut och provas."
+  - "Presentproblemet är löst med ett köp."
+
+features:
+  - "24 luckor med ett fiskedrag bakom varje"
+  - "Blandat innehåll: wobblers, skeddrag och mjukbeten"
+  - "Färdig att ge bort som den är"
+  - "För den som fiskar sött- eller saltvatten"
+
+offer:
+  beskrivning: "24 drag bakom 24 luckor, 469 kr i stället för 619 kr. Fri frakt i Sverige och Norge, 14 dagars ångerrätt."
+  bundle: "2-pack — 15 % rabatt. 3-pack — 20 % rabatt. En till fiskaren, en till svågern."
+  # Q4-ramverket: betald korg-upsell är butikens andra produkt.
+  # ⚠️ Gratis bonusprodukt saknas — se spöhållarens fil, Axel väljer den.
+  bonus_produkt:
+    titel: "Fiskespöhållare 4-Pack"
+    handle: "fiskespohallare-4-pack"
+    pris: 289
+    i_paket: ""
+
+reviews:
+  # ⚠️ Källprodukten har NOLL recensioner i Judge.me (mätt 2026-09-09).
+  # Inga hittas på. Sektionen döljer sig tills riktiga finns.
+
+faq:
+  - fraga: "Vad ligger bakom luckorna?"
+    svar: "Ett fiskedrag per lucka — wobblers, skeddrag och mjukbeten om vartannat. Inte 24 av samma sort."
+  - fraga: "Hinner den fram före advent?"
+    svar: "Leveranstiden är 5–10 arbetsdagar. Beställ i god tid före den 1 december."
+  - fraga: "Passar dragen alla spön?"
+    svar: "Ja. Dragen är vanliga storlekar som fungerar med normala spinn- och haspelset."
+  - fraga: "Kan jag ge bort den som den är?"
+    svar: "Ja. Kalendern är färdig att ge bort direkt ur paketet."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+leverantor:
+  url: "https://www.temu.com/goods.html?goods_id=0"
+  anteckning: "⚠️ Leverantörslänken är INTE verifierad. Källans SKU är TEMU-B6-FISKEKALENDER, som inte bär något Temu-artikelnummer — Axel eller VA:n måste fylla i den riktiga länken före inköp."
+
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16516746969437"
+  produkt_handle: "adventskalender-fiskedrag-24-drag-bakom-24-luckor"
+  produkt_url: "https://baverbutiken.se/products/adventskalender-fiskedrag-24-drag-bakom-24-luckor"
+  annonskonto: "1867947880635861"
+  annonsprefix: ""
+  kampanj_id: ""
+  kampanj: ""
+  srt_slug:
+kallor:
+  drive_mapp: ""
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: ""
+  pixel_id: ""
+  # Eget prefix — delas ALDRIG med spöhållaren. De två produkterna har olika
+  # break-even och olika säsong; delat prefix gör spenden omöjlig att skära.
+  creative_prefix: "TackleBayKalender"
+  testbudget_per_dag: 500
+  vinklar:
+    - "Presentproblemet: den som redan har allt i lådan"
+    - "24 morgnar, inte en"
+    - "Alternativet är strumpor. Igen."

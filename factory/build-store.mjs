@@ -5,7 +5,7 @@
 //
 // Flöde: validera filen (kritiska fel = stopp) → bygg sidan ur mallen →
 // skriv förhandsvisning + plan till factory/output/<id>/ →
-// dry-run: stanna där · skarpt: skapa produkten i Shopify som DRAFT.
+// dry-run: stanna där · skarpt: skapa produkten i Shopify som ACTIVE.
 // Publicerar ALDRIG tema eller butik live. Rör inga annonsflöden.
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -39,7 +39,10 @@ export function byggPlan(p) {
   const input = {
     title: p.produkt.namn,
     handle: p.produkt.id,
-    status: 'DRAFT',
+    // ACTIVE, inte DRAFT (Axels bakläxa 2026-09-08 på TankGuard): en DRAFT
+    // produkt ger 404 i menyn och "Exempel på produktnamn" i kundvyn. Butiken
+    // är ändå lösenordsskyddad under trialen, så ACTIVE exponerar ingenting.
+    status: 'ACTIVE',
     descriptionHtml: byggKortBeskrivning(p),
     vendor: p.brand.namn,
     seo: {
@@ -142,7 +145,7 @@ async function huvud() {
 
   console.log('\nSkickar till Shopify …');
   const produkt = await skapaProdukt(plan.input);
-  console.log(`\n✅ Produkten skapad som DRAFT (inte publicerad).`);
+  console.log(`\n✅ Produkten skapad som ACTIVE (butiken är lösenordsskyddad under trialen).`);
   console.log(`   Admin:  https://${process.env.SHOPIFY_STORE_DOMAIN}/admin/products/${produkt.legacyResourceId}`);
   if (produkt.onlineStorePreviewUrl) console.log(`   Förhandsvisning i butiken: ${produkt.onlineStorePreviewUrl}`);
   console.log('');

@@ -1,0 +1,66 @@
+{
+  "butik": "tacklebay",
+  "produkt": "_butik",
+  "steg": {
+    "tema-upload": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/165394579692",
+      "temaNamn": "TackleBay v1",
+      "redanUppe": true
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/165394579692",
+      "filer": [
+        "assets/opf-brand.css",
+        "snippets/ms-head.liquid",
+        "config/settings_data.json"
+      ]
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/165394579692",
+      "temaNamn": "TackleBay v1",
+      "sektioner": 6
+    },
+    "kollektion": {
+      "klar": true,
+      "handle": "sortimentet",
+      "produkter": 2,
+      "publicerad": true
+    },
+    "startsida": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/165394579692",
+      "filer": [
+        "templates/index.json",
+        "sections/footer-group.json"
+      ]
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "meny": {
+      "klar": true,
+      "huvudmeny": {
+        "handle": "main-menu",
+        "orord": false
+      },
+      "sidfot": {
+        "handle": "footer",
+        "orord": false
+      }
+    },
+    "kallskanning": {
+      "klar": true,
+      "skannade": 3,
+      "rent": true
+    }
+  },
+  "uppdaterad": "2026-09-09T10:33:10.980Z"
+}

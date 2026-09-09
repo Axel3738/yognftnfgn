@@ -70,8 +70,8 @@ export async function hamtaProduktViaHandle(handle) {
 }
 
 // Skapar/uppdaterar hela produkten i ett anrop (productSet är idempotent på
-// handle vid nykörning av samma fil). Produkten skapas som DRAFT — publiceras
-// aldrig live av det här skriptet.
+// handle vid nykörning av samma fil). Statusen kommer ur planen (ACTIVE sedan
+// 2026-09-09) — butiken är lösenordsskyddad under trialen, så inget exponeras.
 export async function skapaProdukt(input) {
   const mutation = `
     mutation opsFactoryProduktSet($input: ProductSetInput!) {
@@ -112,19 +112,22 @@ export async function skrivPolicy(type, body) {
 // Skapar eller uppdaterar en vanlig sida (returpolicy, frakt, villkor, kontakt).
 // Sidor är inte publicering av butiken — de får finnas innan LAUNCH.
 export async function skrivSida(handle, title, body) {
+  // `pageByHandle` togs bort ur QueryRoot (mätt 2026-09-09 mot 2025-07) —
+  // sidan slås numera upp med en query mot pages.
   const befintlig = await graphql(
-    `query opsFactorySida($handle: String!) {
-      pageByHandle(handle: $handle) { id }
+    `query opsFactorySida($q: String!) {
+      pages(first: 10, query: $q) { nodes { id handle } }
     }`,
-    { handle }
+    { q: `handle:${handle}` }
   );
+  const traff = (befintlig.pages?.nodes ?? []).find((s) => s.handle === handle) ?? null;
 
-  if (befintlig.pageByHandle?.id) {
+  if (traff?.id) {
     const data = await graphql(
       `mutation opsFactorySidaUppdatera($id: ID!, $page: PageUpdateInput!) {
         pageUpdate(id: $id, page: $page) { page { id handle } userErrors { field message } }
       }`,
-      { id: befintlig.pageByHandle.id, page: { title, body } }
+      { id: traff.id, page: { title, body } }
     );
     const fel = data.pageUpdate?.userErrors ?? [];
     if (fel.length > 0) throw new Error(`Kunde inte uppdatera sidan ${handle}: ${fel.map((f) => f.message).join('; ')}`);
@@ -233,12 +236,12 @@ export async function hamtaTemafil(temaId, filnamn) {
 
 // Läser sidfotsmenyn. null om den inte finns.
 export async function hamtaMeny(handle) {
-  const data = await graphql(
-    `query opsFactoryMeny($handle: String!) {
-      menus(first: 20) { nodes { id handle title items { title url } } }
-    }`,
-    { handle }
-  );
+  // Menyerna filtreras i klienten — Shopify avvisar en query som deklarerar
+  // en variabel den inte använder (mätt 2026-09-09 mot 2025-07).
+  const data = await graphql(`
+    query opsFactoryMeny {
+      menus(first: 50) { nodes { id handle title items { title url } } }
+    }`);
   return (data.menus?.nodes ?? []).find((m) => m.handle === handle) ?? null;
 }
 
@@ -278,6 +281,79 @@ export async function skrivMeny(handle, title, lankar) {
   const fel = data.menuCreate?.userErrors ?? [];
   if (fel.length > 0) throw new Error(`Menyn ${handle}: ${fel.map((f) => f.message).join('; ')}`);
   return data.menuCreate.menu;
+}
+
+// ---- Kollektionen: butikens sortiment, startsidans `sortiment`-sektion ----
+//
+// En flerproduktsbutik visar en KOLLEKTION på startsidan i stället för en
+// enskild produkt (factory/FLERPRODUKT.md). Kollektionen är manuell — inga
+// regler — så ordningen är den fabriken sätter, inte Shopifys gissning.
+
+export async function hamtaKollektion(handle) {
+  const data = await graphql(
+    `query opsFactoryKollektion($q: String!) {
+      collections(first: 10, query: $q) { nodes { id handle title } }
+    }`,
+    { q: `handle:${handle}` }
+  );
+  return (data.collections?.nodes ?? []).find((k) => k.handle === handle) ?? null;
+}
+
+export async function skrivKollektion(handle, titel, produktIds, beskrivning = '') {
+  const befintlig = await hamtaKollektion(handle);
+  const input = {
+    handle,
+    title: titel,
+    descriptionHtml: beskrivning,
+    products: produktIds,
+    sortOrder: 'MANUAL',
+  };
+
+  if (befintlig) {
+    const data = await graphql(
+      `mutation opsFactoryKollektionUppdatera($input: CollectionInput!) {
+        collectionUpdate(input: $input) {
+          collection { id handle title }
+          userErrors { field message }
+        }
+      }`,
+      { input: { ...input, id: befintlig.id } }
+    );
+    const fel = data.collectionUpdate?.userErrors ?? [];
+    if (fel.length > 0) throw new Error(`Kollektionen ${handle}: ${fel.map((f) => f.message).join('; ')}`);
+    return { ...data.collectionUpdate.collection, skapad: false };
+  }
+
+  const data = await graphql(
+    `mutation opsFactoryKollektionSkapa($input: CollectionInput!) {
+      collectionCreate(input: $input) {
+        collection { id handle title }
+        userErrors { field message }
+      }
+    }`,
+    { input }
+  );
+  const fel = data.collectionCreate?.userErrors ?? [];
+  if (fel.length > 0) throw new Error(`Kollektionen ${handle}: ${fel.map((f) => f.message).join('; ')}`);
+  return { ...data.collectionCreate.collection, skapad: true };
+}
+
+// Publicerar vad som helst publicerbart (produkt, kollektion) i Online Store.
+// Utan det syns kollektionen inte i kundvyn ens när den finns.
+export async function publiceraIButiken(id) {
+  const pub = await graphql(`
+    query opsFactoryKanaler { publications(first: 20) { nodes { id name } } }`);
+  const kanal = (pub.publications?.nodes ?? []).find((k) => /online store/i.test(k.name)) ?? null;
+  if (!kanal) return { publicerad: false, notis: 'Online Store-kanalen hittades inte.' };
+  const data = await graphql(
+    `mutation opsFactoryPublicera($id: ID!, $input: [PublicationInput!]!) {
+      publishablePublish(id: $id, input: $input) { userErrors { field message } }
+    }`,
+    { id, input: [{ publicationId: kanal.id }] }
+  );
+  const fel = data.publishablePublish?.userErrors ?? [];
+  if (fel.length > 0) return { publicerad: false, notis: fel.map((f) => f.message).join('; ') };
+  return { publicerad: true, kanal: kanal.name };
 }
 
 // Läser fraktzonerna i den form frakt.mjs jämför mot.
