@@ -125,3 +125,37 @@ ofta till samma pris, och ingen av de tolv har ett fästdon eller en konstruktio
 den annorlunda. Att leta fler sökord i samma stil ger fler sådana här. Nästa steg är att
 söka på **mekanismen** — formuleringar som beskriver hur varan sitter fast eller vad den
 gör — i stället för på objektets namn.
+
+
+## Mekanismgrinden, omgång 2 — de nya hyllorna (2026-09-09)
+
+71 nya sökord ur hyllresearchen gav 39 kandidater som klarade ekonomin. De sex med
+tydligast mekanik kördes genom mallen. **Noll gick igenom.**
+
+| Poäng | Produkt | Varför inte |
+|---|---|---|
+| 9 | Vedklyvkon till borrmaskin – skruvkon med tr | Nio poäng ligger i hoppa-spannet, och de två nollorna sitter på variabel 1 och variabel 5 — två av de tre strukturvariablerna, alltså förlorarprofilen |
+| 9 | Drevoljepump för utombordare | Bilden visar en äkta ägarsituation — båt på trailer, växelhuset öppnat, oljan på väg ner i tråget mitt i svensk upptagningssäsong — men själva pumpen  |
+| 9 | Överdrag till rund eldkorg / eldfat (Oxford, | Bilden visar en helt vanlig dragsko-huv över ett eldfat, och exakt samma form med kantrep och plastklämma står redan på Biltemas hylla billigare än vå |
+| 6 | Hängrännerensare – skopa med universalklämma | Bilden gick att hämta och läsa: det är en perforerad plastskopa plus en orange skruvklämma på vit studiobotten, utan stång, utan hängränna och utan te |
+| 5 | Lagerskydd navkapsel båttrailer, rostfritt 2 | Bilden går att läsa och visar en helt vanlig rostfri navkapsel med gummidamask — ingen särskiljande mekanism, och Biltema, Jula och trailerbutikerna s |
+| 5 | Navkapslar i rostfritt stål till släpvagn/bå | Bilden gick att hämta och läsa: två presspassade fettkapslar i rostfritt med svart ände, på vit studiobotten utan trailer, hand eller kontext — alltså |
+
+### Det verkliga hindret är svenska nätbutiker, inte kedjorna
+
+Vedklyvkonen till borrmaskin är fallet som lär oss mest. Den har en riktig mekanism, ingen
+av de fyra kedjorna säljer den, säsongen är rätt och bilden duger som annons rakt av — och
+ändå faller den. Jämtfire säljer identisk kon med samma tre skaft för **169 kr**, och samma
+set finns på Amazon.se, Fyndiq och CDON för 150–400 kr. Vårt tänkta pris var 699 kr.
+
+Samma sak fällde drevoljepumpen (Jula, 80 kr), hängrännerensaren (Jula, 299 kr), eldfatshuven
+(Biltema) och båda lagerskydden (standardvara i svensk släpvagnshandel).
+
+**Hyllkontrollen får därför inte stanna vid Biltema, Jula, Clas Ohlson och Rusta.** Ligger
+varan hos en svensk nätbutik under vårt tänkta pris är den lika död som om Biltema hade den.
+Det är infört i `MEKANISM.md` variabel 5.
+
+### Dagens facit
+
+18 kandidater bedömdes mot mallen i två omgångar. Noll passerade. Det är inte ett fel i
+grinden — det är grinden som gör sitt jobb. Axels två valda varor står kvar på arket.

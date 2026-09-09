@@ -31,7 +31,7 @@ Kan du lägga upp den här bilden i ett svenskt Meta-flöde i morgon utan att g�
 
 ### 5. Hyllfrånvaro, annars ett synligt ankare ovanför — vikt 3
 
-Sök varan i Biltema, Jula, Clas Ohlson och Rusta på tio minuter — kommer det upp en bild som ser ut som vår? Om NEJ: full poäng. Om JA: får poäng bara när ett känt märke ligger 1,6–3× över vårt pris och vår produkt visuellt tillhör den övre klassen (Crocs, Husqvarna, Kjell), eller när bilden visar mer hårdvara än kedjans variant utan att någon text behövs. Ligger närmaste look-alike UNDER vårt pris: noll.
+Sök varan i Biltema, Jula, Clas Ohlson och Rusta **och i svensk näthandel** (Amazon.se, Fyndiq, CDON, branschbutiker) på tio minuter — kommer det upp en bild som ser ut som vår? Om NEJ: full poäng. Om JA: får poäng bara när ett känt märke ligger 1,6–3× över vårt pris och vår produkt visuellt tillhör den övre klassen (Crocs, Husqvarna, Kjell), eller när bilden visar mer hårdvara än kedjans variant utan att någon text behövs. Ligger närmaste look-alike UNDER vårt pris: noll.
 
 ### 6. Prisfönstret 300–1 000 kr — vikt 3
 
@@ -44,6 +44,13 @@ Visar bilden eller titeln något ägaren har flera av — flera spön, flera hö
 ### 8. Kunden slipper mäta — vikt 1
 
 Går det att beställa utan att kunden mäter eller gissar? (Ja = en enda variant, ett elastiskt eller justerbart parti i kanten — dragsko, resår, spännband, skum — eller en parameter ägaren kan utantill: hästkrafter, liter. Nej = storlekstabell, skostorlek, 'passar de flesta'.)
+
+### Tillägg 2026-09-09 till variabel 5
+
+Kedjorna räcker inte som hyllkontroll. Vedklyvkonen till borrmaskin passerade alla fyra
+kedjorna men såldes av Jämtfire för 169 kr mot vårt tänkta 699 kr — och föll därmed.
+**Ligger närmaste svenska look-alike under vårt tänkta pris är variabeln noll**, oavsett
+var den ligger. Detta fällde fem av sex kandidater i omgång 2.
 
 ## Så läses summan
 
