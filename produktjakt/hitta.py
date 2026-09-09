@@ -98,33 +98,47 @@ def vikt_for(kand, vikter):
     return round(v, 4)
 
 
-def dagens_ord(katalog, manad, antal, frö, undvik=(), vikter=None):
-    """undvik = sökord som körts nyligen. Samma ord ger samma hylla, och då kommer samma varor
-    tillbaka dag efter dag från olika säljare — det är så gårdagens ark upprepas.
-    vikter = Axels svar (feedback.py): en grupp med ≥ 3 nej och 0 ja söks inte alls. Gruppen
-    viktas aldrig UPP av ja — SIGNALER.md: att en vara gått bra säger inget om nischen."""
-    vikter = vikter or {"stopp": [], "lyft": []}
-    stoppade = {g["grupp"] for g in katalog["grupper"] if f"grupp:{g['grupp']}" in vikter.get("stopp", [])}
+def bygg_pool(katalog, objektkat, manad, undvik, vikter, kalla="bada"):
+    """Sökfraserna att dra ur, viktade (en fras ligger i poolen lika många gånger som sin vikt).
+
+    Två källor:
+      • objekt.json — MASTERPROMPTENS väg: objektet som far illa × deadline-månaderna × skyddsformen.
+        Frasen taggas med objekt + arketyp så Axels svar kan räknas på variabler, inte på nisch.
+      • sokord.json — den gamla katalogen (objekt × tillbehör). Kvar som reserv; ger kedjevaror.
+    undvik = fraser i karantän (körda de senaste KARANTAN_DAGAR dagarna). Samma fras ger samma hylla.
+    vikter = Axels svar (feedback.py): ≥ 3 nej utan ja på en grupp/objekt/arketyp → söks inte alls.
+    Ingen källa viktas UPP av ja — SIGNALER.md: att en vara gått bra säger inget om nischen."""
+    stopp = set((vikter or {}).get("stopp", []))
     pool = []
-    for g in katalog["grupper"]:
-        if manad in g["manader"] and g["grupp"] not in stoppade:
-            pool += [(o, g["grupp"]) for o in g["ord"] if o not in undvik] * g.get("vikt", 1)
-    if not pool:  # alla ord förbrukade — släpp karantänen hellre än att leverera tomt
+    if kalla in ("bada", "objekt") and objektkat:
+        for ob in objektkat.get("objekt", []):
+            if manad not in ob.get("manader", []):
+                continue
+            taggar = {"objekt": ob["objekt"], "arketyp": ob.get("arketyp", "")}
+            if f"grupp:{ob['objekt']}" in stopp or any(f"{d}:{v}" in stopp for d, v in taggar.items() if v):
+                continue
+            pool += [(f, ob["objekt"], taggar) for f in ob.get("sokfraser_en", []) if f not in undvik] * ob.get("vikt", 3)
+    if kalla in ("bada", "sokord") and katalog:
         for g in katalog["grupper"]:
-            if manad in g["manader"] and g["grupp"] not in stoppade:
-                pool += [(o, g["grupp"]) for o in g["ord"]] * g.get("vikt", 1)
+            if manad in g["manader"] and f"grupp:{g['grupp']}" not in stopp:
+                pool += [(o, g["grupp"], {}) for o in g["ord"] if o not in undvik] * g.get("vikt", 1)
+    return pool
+
+
+def dagens_ord(katalog, manad, antal, frö, undvik=(), vikter=None, objektkat=None, kalla="bada"):
+    """Drar dagens fraser ur poolen. Returnerar (fras, grupp, taggar)."""
+    pool = bygg_pool(katalog, objektkat, manad, set(undvik), vikter, kalla)
+    if not pool:  # alla fraser förbrukade — släpp karantänen hellre än att leverera tomt
+        pool = bygg_pool(katalog, objektkat, manad, set(), vikter, kalla)
     if not pool:
         return []
     rnd = random.Random(frö)
-    unika = list(dict.fromkeys(pool))
-    rnd.shuffle(unika)
-    # viktningen ligger i pool; dra ur den men behåll unika ord
     vald, sedda = [], set()
-    for o, g in rnd.sample(pool, k=min(len(pool), antal * 4)):
+    for o, g, taggar in rnd.sample(pool, k=min(len(pool), antal * 4)):
         if o in sedda:
             continue
         sedda.add(o)
-        vald.append((o, g))
+        vald.append((o, g, taggar))
         if len(vald) >= antal:
             break
     return vald
@@ -160,9 +174,13 @@ def main():
     ap.add_argument("--datum", default=datetime.date.today().isoformat())
     ap.add_argument("--ut")
     ap.add_argument("--fro", type=int, help="slumpfrö (samma frö = samma sökord, för omkörning)")
+    ap.add_argument("--kalla", choices=("bada", "objekt", "sokord"), default="bada",
+                    help="objekt.json (masterprompten), sokord.json (gamla katalogen) eller båda")
     a = ap.parse_args()
 
     katalog = json.load(open(os.path.join(HERE, "sokord.json"), encoding="utf-8"))
+    objekt_p = os.path.join(HERE, "objekt.json")
+    objektkat = json.load(open(objekt_p, encoding="utf-8")) if os.path.exists(objekt_p) else None
     k, kurskalla = kurs()
     sedda_p = os.path.join(HERE, "sedda.json")
     sedda = set(json.load(open(sedda_p, encoding="utf-8"))["product_id"]) if os.path.exists(sedda_p) else set()
@@ -173,12 +191,14 @@ def main():
     grans = (datetime.date.fromisoformat(a.datum) - datetime.timedelta(days=KARANTAN_DAGAR)).isoformat()
     undvik = {o for o, d in logg.items() if d >= grans}
     vikter = las_vikter()
-    ord_lista = dagens_ord(katalog, a.manad, a.sokord, fro, undvik, vikter)
-    print(f"månad {a.manad} · {len(ord_lista)} sökord · USD/SEK {k} ({kurskalla}) · {len(sedda)} sedda sedan tidigare · "
-          f"{vikter.get('antal_svar', 0)} svar från Axel, {len(vikter.get('stopp', []))} stopp, {len(vikter.get('lyft', []))} lyft")
+    ord_lista = dagens_ord(katalog, a.manad, a.sokord, fro, undvik, vikter, objektkat, a.kalla)
+    n_obj = sum(1 for _, _, t in ord_lista if t)
+    print(f"månad {a.manad} · {len(ord_lista)} sökord ({n_obj} ur objekt.json) · USD/SEK {k} ({kurskalla}) · "
+          f"{len(sedda)} sedda sedan tidigare · {vikter.get('antal_svar', 0)} svar från Axel, "
+          f"{len(vikter.get('stopp', []))} stopp, {len(vikter.get('lyft', []))} lyft")
 
     fynd, hoppade = [], {"stoppord": 0, "pris saknas": 0, "ekonomi": 0, "dubblett": 0, "axel_nej": 0}
-    for i, (o, grupp) in enumerate(ord_lista, 1):
+    for i, (o, grupp, taggar) in enumerate(ord_lista, 1):
         try:
             traffar, sok_url = ali.sok(o, antal=8)
         except Exception as e:
@@ -200,7 +220,7 @@ def main():
             if not ek or ek["dom"] != "PASS":
                 hoppade["ekonomi"] += 1
                 continue
-            t.update({"grupp": grupp, "sok_url": sok_url, "ekonomi": ek, "usd_sek": k})
+            t.update({"grupp": grupp, "taggar": taggar, "sok_url": sok_url, "ekonomi": ek, "usd_sek": k})
             v = vikt_for(t, vikter)
             if v is None:
                 hoppade["axel_nej"] += 1
@@ -219,11 +239,11 @@ def main():
     ut = a.ut or os.path.join(HERE, "korningar", a.datum, "fynd.json")
     os.makedirs(os.path.dirname(ut), exist_ok=True)
     json.dump({"datum": a.datum, "manad": a.manad, "usd_sek": k, "kurskalla": kurskalla,
-               "sokord": [{"ord": o, "grupp": g} for o, g in ord_lista],
+               "sokord": [{"ord": o, "grupp": g, "taggar": t} for o, g, t in ord_lista],
                "hoppade": hoppade, "antal_kandidater": len(fynd), "produkter": valda},
               open(ut, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump({"product_id": sorted(sedda)}, open(sedda_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    logg.update({o: a.datum for o, _ in ord_lista})
+    logg.update({o: a.datum for o, _, _ in ord_lista})
     json.dump(logg, open(logg_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)
 
     print(f"\n{len(fynd)} kandidater klarade ekonomin, {len(valda)} valda → {ut}")
