@@ -7,6 +7,10 @@ I dag heter den `/cs` och kör mot Bäverbutikens produkter. Enligt
 `factory/TRAPPAN.md` ska den flytta till OPS-butikerna. Den här filen beskriver
 vad den ska bli.
 
+**Byggordningen står i `SKALNINGSKUNGEN-PLAN.md`** (2026-09-09). Regel nummer
+ett där: kärnan i creative strategy (`/cs` steg 2–5, `ANALYSMETOD.md`,
+copy-reglerna) flyttas ordagrant och skrivs aldrig om — bara skalet byts.
+
 ---
 
 ## Kärnidén: samma rutin, två lägen

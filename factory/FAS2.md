@@ -322,7 +322,8 @@ säljer samma produkt som Bäverbutiken.**
 ## Uppdrag E — Skalningsrutinen per OPS-butik
 
 ⚠️ **Kravspecen står i `factory/SKALNINGSKUNGEN.md`** (2026-09-09) — läs den
-först, avsnittet nedan är bara återanvändning och fallgropar.
+först, avsnittet nedan är bara återanvändning och fallgropar. **Byggordningen
+står i `factory/SKALNINGSKUNGEN-PLAN.md`** — sju steg, kärnan i `/cs` fryst.
 
 ⚠️ **Uppgraderad 2026-09-09:** detta är inte längre en sidogrej. Enligt
 `factory/TRAPPAN.md` sker ALL creative strategy på OPS-butikerna — den här

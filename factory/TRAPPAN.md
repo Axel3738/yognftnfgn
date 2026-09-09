@@ -53,7 +53,8 @@ den producerar tillräckligt mycket creative för att motivera en egen person.
 
 ## Vad det betyder för systemet
 
-- **Skalningsrutinen** — kravspec i **`factory/SKALNINGSKUNGEN.md`**. Två
+- **Skalningsrutinen** — kravspec i **`factory/SKALNINGSKUNGEN.md`**,
+  byggordning i **`factory/SKALNINGSKUNGEN-PLAN.md`** (kärnan fryst). Två
   lägen i samma rutin: TEST (bevaka tröskeln på Bäverbutiken, inga briefs) och
   SKALA (full creative-loop på OPS-butiken). Den är inte längre en sidogrej — den
   blir HUVUDloopen, en instans per OPS-butik. `/cs` mot Bäverbutikens produkter
