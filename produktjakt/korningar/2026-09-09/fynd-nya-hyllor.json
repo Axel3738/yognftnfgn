@@ -1,0 +1,341 @@
+{
+ "datum": "2026-09-09",
+ "manad": 9,
+ "usd_sek": 9.6022,
+ "kurskalla": "kurs.json 2026-09-09",
+ "sokord": [
+  {
+   "ord": "timberjack log lifter cant hook",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "telescopic pole saw manual",
+   "grupp": "trädgård och maskin"
+  },
+  {
+   "ord": "car cover waterproof outdoor winter",
+   "grupp": "överdrag och skydd"
+  },
+  {
+   "ord": "outdoor waterproof electrical box lockable",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "boat cover trailerable waterproof",
+   "grupp": "överdrag och skydd"
+  },
+  {
+   "ord": "driveway marker reflective stake",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "dog house heating pad outdoor",
+   "grupp": "djuren i kylan"
+  },
+  {
+   "ord": "felling lever timber",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "caravan wheel cover set",
+   "grupp": "husvagn och husbil"
+  },
+  {
+   "ord": "downspout extension flexible drainage",
+   "grupp": "höst på tomten"
+  },
+  {
+   "ord": "transom saver outboard",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "game bag breathable deer meat",
+   "grupp": "vilthantering"
+  },
+  {
+   "ord": "solar post cap light fence",
+   "grupp": "belysning och mörker"
+  },
+  {
+   "ord": "poultry feeder rain cover",
+   "grupp": "lantbruk och djur"
+  },
+  {
+   "ord": "outboard motor lock stainless",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "patio umbrella cover waterproof",
+   "grupp": "överdrag och skydd"
+  },
+  {
+   "ord": "air conditioner outdoor unit roof cover",
+   "grupp": "överdrag och skydd"
+  },
+  {
+   "ord": "hay net slow feeder",
+   "grupp": "lantbruk och djur"
+  }
+ ],
+ "hoppade": {
+  "stoppord": 12,
+  "pris saknas": 0,
+  "ekonomi": 109,
+  "dubblett": 0
+ },
+ "antal_kandidater": 23,
+ "produkter": [
+  {
+   "product_id": "1005012262862861",
+   "titel": "Expandable Flexible Downspout Extension Pipe Adjustable Rainwater Drainage Solution for Home Exterior",
+   "url": "https://www.aliexpress.com/item/1005012262862861.html",
+   "pris": 10.09,
+   "valuta": "USD",
+   "pris_text": "US $10.09",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S2a3e27c26c3a478f88f3fc5d93ef3e7af.jpg",
+   "sald": "",
+   "sokord": "downspout extension flexible drainage",
+   "grupp": "höst på tomten",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-downspout-extension-flexible-drainage.html",
+   "ekonomi": {
+    "landad": 145,
+    "forslag_pris": 399,
+    "multipel": 2.75,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005013015852787",
+   "titel": "Self-warming Cat and Dog Bed Super Soft Cat Pet Heating Pad Suitable for Indoor Outdoor Anti-slip Heating Cat Pad Warm Blanket",
+   "url": "https://www.aliexpress.com/item/1005013015852787.html",
+   "pris": 10.35,
+   "valuta": "USD",
+   "pris_text": "US $10.35",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S2d2efde55cd84170a93c3719fe85ecd14.jpg",
+   "sald": "",
+   "sokord": "dog house heating pad outdoor",
+   "grupp": "djuren i kylan",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-house-heating-pad-outdoor.html",
+   "ekonomi": {
+    "landad": 149,
+    "forslag_pris": 399,
+    "multipel": 2.68,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012733390511",
+   "titel": "4 Pieces Universal Wheel Tire Covers for RV Motorhome for Camper Car Truck 27-32inch Trailer RV Waterproof UV Weather Resistant",
+   "url": "https://www.aliexpress.com/item/1005012733390511.html",
+   "pris": 12.91,
+   "valuta": "USD",
+   "pris_text": "US $12.91",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S7cb6abd9285e4cd9a1dba82a7d575b19L.jpg",
+   "sald": "",
+   "sokord": "caravan wheel cover set",
+   "grupp": "husvagn och husbil",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-wheel-cover-set.html",
+   "ekonomi": {
+    "landad": 186,
+    "forslag_pris": 499,
+    "multipel": 2.68,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005013108896285",
+   "titel": "Downspout Extension Flexible Rain Gutter Drainage Pipe Thickened PE Tool Free DIY Foundation Protection Brown Outdoor 18.82in",
+   "url": "https://www.aliexpress.com/item/1005013108896285.html",
+   "pris": 10.48,
+   "valuta": "USD",
+   "pris_text": "US $10.48",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S8067939078c84c028e9ba6229e496660f.jpg",
+   "sald": "",
+   "sokord": "downspout extension flexible drainage",
+   "grupp": "höst på tomten",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-downspout-extension-flexible-drainage.html",
+   "ekonomi": {
+    "landad": 151,
+    "forslag_pris": 399,
+    "multipel": 2.64,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005010135909043",
+   "titel": "Cast Aluminum Solar Road Nails, Highway Ground Street Lights, Garden Lights, Flash Lights, Reflective Warning Lights",
+   "url": "https://www.aliexpress.com/item/1005010135909043.html",
+   "pris": 13.26,
+   "valuta": "USD",
+   "pris_text": "US $13.26",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S9eb7d15b7c6f4a238e7078cfc2545331W.jpg",
+   "sald": "",
+   "sokord": "driveway marker reflective stake",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-driveway-marker-reflective-stake.html",
+   "ekonomi": {
+    "landad": 191,
+    "forslag_pris": 499,
+    "multipel": 2.61,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005011971582314",
+   "titel": "Outboard Transom Saver Replacement Sturdy Motor Holder Easy Install for Mercury Yamaha Suzuki Honda Johnson Evinrude Boats",
+   "url": "https://www.aliexpress.com/item/1005011971582314.html",
+   "pris": 18.84,
+   "valuta": "USD",
+   "pris_text": "US $18.84",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S6868cba7b1334a1d9ea80fc79971acfaU.jpg",
+   "sald": "",
+   "sokord": "transom saver outboard",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-transom-saver-outboard.html",
+   "ekonomi": {
+    "landad": 271,
+    "forslag_pris": 699,
+    "multipel": 2.58,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005011845835703",
+   "titel": "6Pcs Elk Game Bags 120x30cm 70x30cm Hunting Meat Bags Breathable Rolled Deer Game Pouch with Reflective Strip for Caribou Duck",
+   "url": "https://www.aliexpress.com/item/1005011845835703.html",
+   "pris": 18.78,
+   "valuta": "USD",
+   "pris_text": "US $18.78",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S30c4a5efa23e48b1b0c975afa129e7663.jpg",
+   "sald": "",
+   "sokord": "game bag breathable deer meat",
+   "grupp": "vilthantering",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-game-bag-breathable-deer-meat.html",
+   "ekonomi": {
+    "landad": 270,
+    "forslag_pris": 699,
+    "multipel": 2.58,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012823594897",
+   "titel": "4Pcs Wheel Tire Covers For RV Motorhome Car Truck Rainproof Sunproof Universal Car Tires Storage Bag Vehicle Wheel Protector",
+   "url": "https://www.aliexpress.com/item/1005012823594897.html",
+   "pris": 16.24,
+   "valuta": "USD",
+   "pris_text": "US $16.24",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S0274ae68deb94b50800fb7a0c8abb33fV.jpg",
+   "sald": "",
+   "sokord": "caravan wheel cover set",
+   "grupp": "husvagn och husbil",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-wheel-cover-set.html",
+   "ekonomi": {
+    "landad": 234,
+    "forslag_pris": 599,
+    "multipel": 2.56,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005011848968696",
+   "titel": "Elk Game Bags Hunting Meat Bags Game Bag Reusable & Breathable Game Bag with Reflective Strip for Elk Caribou Deer Moose 6 Packs",
+   "url": "https://www.aliexpress.com/item/1005011848968696.html",
+   "pris": 10.87,
+   "valuta": "USD",
+   "pris_text": "US $10.87",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S093330bc71f648ff8245d01493b6bd8a7.jpg",
+   "sald": "",
+   "sokord": "game bag breathable deer meat",
+   "grupp": "vilthantering",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-game-bag-breathable-deer-meat.html",
+   "ekonomi": {
+    "landad": 157,
+    "forslag_pris": 399,
+    "multipel": 2.55,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005009774906159",
+   "titel": "Bird Feeder Protective Cover Shield for Outdoor Hanging Bird",
+   "url": "https://www.aliexpress.com/item/1005009774906159.html",
+   "pris": 19,
+   "valuta": "USD",
+   "pris_text": "US $19.00",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S9d13b99dec4f48a1b5bf99e655fdf67aG.jpg",
+   "sald": "",
+   "sokord": "poultry feeder rain cover",
+   "grupp": "lantbruk och djur",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-poultry-feeder-rain-cover.html",
+   "ekonomi": {
+    "landad": 274,
+    "forslag_pris": 699,
+    "multipel": 2.55,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012861923410",
+   "titel": "Outdoor Umbrella Storage Bag Oversized Waterproof Carrying Pouch for Patio Umbrella Up to 9 Feet Beach Hammock Stand Cover",
+   "url": "https://www.aliexpress.com/item/1005012861923410.html",
+   "pris": 13.66,
+   "valuta": "USD",
+   "pris_text": "US $13.66",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd5e023352d8542a5acc38b3168a011a4a.jpg",
+   "sald": "",
+   "sokord": "patio umbrella cover waterproof",
+   "grupp": "överdrag och skydd",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-patio-umbrella-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 197,
+    "forslag_pris": 499,
+    "multipel": 2.54,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005011938709830",
+   "titel": "2/2.3/2.5/2.7/3m Replaceable Parasol Top Cloth Garden Patio Canopy Umbrella Cover Cantilever Waterproof Sunshade 6 Ribs/8 Ribs",
+   "url": "https://www.aliexpress.com/item/1005011938709830.html",
+   "pris": 19.29,
+   "valuta": "USD",
+   "pris_text": "US $19.29",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S745e322d26674766a2eae6c4392ed144G.jpg",
+   "sald": "",
+   "sokord": "patio umbrella cover waterproof",
+   "grupp": "överdrag och skydd",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-patio-umbrella-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 278,
+    "forslag_pris": 699,
+    "multipel": 2.52,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  }
+ ]
+}

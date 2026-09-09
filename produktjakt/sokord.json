@@ -60,7 +60,7 @@
     3,
     4
    ],
-   "vikt": 5,
+   "vikt": 3,
    "ord": [
     "caravan roof cover waterproof",
     "motorhome thermal windscreen cover external",
@@ -148,7 +148,7 @@
     1,
     2
    ],
-   "vikt": 5,
+   "vikt": 3,
    "ord": [
     "chicken coop run cover waterproof",
     "outdoor cat house insulated waterproof",
@@ -260,6 +260,85 @@
    "ord": [
     "downpipe rain diverter water butt",
     "solar dock light marine"
+   ]
+  },
+  {
+   "grupp": "överdrag och skydd",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "caravan cover full waterproof breathable",
+    "car cover waterproof outdoor winter",
+    "boat cover trailerable waterproof",
+    "garden furniture cover waterproof rectangular",
+    "patio umbrella cover waterproof",
+    "heat pump outdoor unit cover winter",
+    "air conditioner outdoor unit roof cover"
+   ]
+  },
+  {
+   "grupp": "höst på tomten",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "gutter guard mesh leaf protection",
+    "downspout extension flexible drainage",
+    "crawl space vent cover winter",
+    "roof moss removal brush telescopic",
+    "well pump frost protection cover"
+   ]
+  },
+  {
+   "grupp": "vedsäsongens verktyg",
+   "manader": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "vikt": 3,
+   "ord": [
+    "chainsaw sharpener bench mount",
+    "chainsaw carry case bar cover",
+    "log splitting wedge twisted"
+   ]
+  },
+  {
+   "grupp": "vilthantering",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "deer drag harness hunting",
+    "game bag breathable deer meat",
+    "meat hanging gambrel hoist"
+   ]
+  },
+  {
+   "grupp": "djuren i kylan",
+   "manader": [
+    9,
+    10,
+    11,
+    12,
+    1
+   ],
+   "vikt": 3,
+   "ord": [
+    "chicken coop heater panel safe",
+    "dog house heating pad outdoor",
+    "solar electric fence energiser"
    ]
   }
  ]

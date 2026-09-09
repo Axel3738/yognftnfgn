@@ -1,17 +1,32 @@
-# Signaler från Axel — vad som faktiskt går bra
+# Signaler från Axel — och hur de ska läsas
 
-Detta är återkoppling från verkligheten, inte från räkningen. Den styr vikten i
-`sokord.json` och vad läsningen ska leta efter. Skriv bara det Axel själv sagt,
-med datum. Hitta aldrig på utfall.
+## Grundregeln, Axels besked 2026-09-09
 
-| Datum | Produkt | Vad Axel sa | Följd |
+> "Jag bara säger produkter som har gått bra, och det betyder inte att de nischerna är op.
+> Du ska ju hitta gemensamma variabler i alla produkter som gör det till vinnare genom att
+> kolla på AliExpress- och Temu-sidorna och kolla om produkterna har unika mekanismer och
+> funktioner och liknande."
+
+**Att en vara sålt bra är inte ett kvitto på dess nisch.** Vikta aldrig upp en sökordsgrupp
+för att en produkt i den gick bra — det var precis felet 2026-09-09, när husvagn och djur
+fick högre vikt och sedan sänktes tillbaka igen samma dag.
+
+Signalen ligger i **mekanismen och funktionen**, inte i kategorin. Frågan om varje kandidat är:
+*gör den något som kedjans variant inte gör, och syns det?* Två vinnare i olika nischer ska
+kunna dela samma mekaniska variabel — det är den variabeln som ska jaga nästa produkt.
+
+## Vad Axel sagt om enskilda produkter
+
+| Datum | Produkt | Vad han sa | Vad det INTE betyder |
 |---|---|---|---|
-| 2026-09-09 | Husvagnsöverdrag | "verkar gå bra" | Gruppen `husvagn och husbil` fick vikt 3 → 5. |
-| 2026-09-09 | Kattkojan (utestuga katt/hund) | "verkar gå bra" | Gruppen `lantbruk och djur` fick vikt 3 → 5. **Själva varan ville Axel inte ha på arket** — lägg inte tillbaka den. Det är formen som ska följas upp, inte artikeln. |
+| 2026-09-09 | Husvagnsöverdrag | "verkar gå bra" | Att husvagnsnischen är öppen. |
+| 2026-09-09 | Kattkojan | "verkar gå bra" | Att djurnischen är öppen. Varan ville han ändå inte ha på arket. |
+| 2026-09-09 | Sotset, båtkapellstötta | valde dessa två av fem | — |
 
-## Vad detta betyder för jakten
+## Känd begränsning i verktyget
 
-Två av grupperna är alltså bevisad mark, inte gissningar. Överdrag och skydd till
-det som står ute — husvagn, djur — är en form som fungerar för den här kunden.
-Leta fler varianter av **samma form** i andra objektfamiljer, inte fler varianter
-av samma vara.
+AliExpress **produktsidor** svarar med ett tomt skal i containern — varken `ali.py`, en egen
+hämtning eller `WebFetch` får ut specifikationer eller säljtext (mätt 2026-09-09). Temu stryper
+till ~1 hämtning/timme. Mekanismen måste därför bedömas på det vi faktiskt får:
+**produktbilderna** (de visar konstruktionen), titeln och `sald`-talet ur sökträffen.
+Bygg inte en bedömning som förutsätter beskrivningstext vi inte kan hämta.
