@@ -78,14 +78,26 @@ async function uploadImage(file) {
   return Object.values(json.images)[0].hash;
 }
 
+// Ett adset bär antingen FLERA annonser (a.ads[]) eller en enda i gamla formen
+// (a.adName/a.img/a.copy). Samma uppackning används av förkontrollen, torrkörningen
+// och skapandet — härleds den på tre ställen glöms ett av dem bort.
+// (Det hände 2026-09-08: bara skapandet uppdaterades och förkontrollen kraschade på
+//  `path.join(imgdir, undefined)` innan en enda bild hunnit laddas upp.)
+const annonserI = (a) => a.ads ?? [{ adName: a.adName, img: a.img, copy: a.copy }];
+
 for (const a of cfg.adsets) {
-  const img = path.join(opt.imgdir, a.img);
-  if (!existsSync(img)) { console.error(`✗ bildfil saknas: ${img}`); process.exit(1); }
+  for (const ann of annonserI(a)) {
+    if (!ann.img) { console.error(`✗ ${a.name}: annonsen "${ann.adName ?? '(namnlös)'}" saknar img`); process.exit(1); }
+    const img = path.join(opt.imgdir, ann.img);
+    if (!existsSync(img)) { console.error(`✗ bildfil saknas: ${img}`); process.exit(1); }
+  }
 }
 
 console.log(`\n=== ${cfg.campaignName} → ${cfg.act} (${DRY ? 'DRY RUN' : 'SKARPT'}) ===`);
 if (DRY) {
-  for (const a of cfg.adsets) console.log(`  [dry] skulle skapa adset "${a.name}" + annons "${a.adName}" (${a.img})`);
+  for (const a of cfg.adsets)
+    for (const ann of annonserI(a))
+      console.log(`  [dry] skulle skapa adset "${a.name}" + annons "${ann.adName}" (${ann.img})`);
   console.log('\nDry run — inget skapat i kontot.');
   process.exit(0);
 }
@@ -127,10 +139,7 @@ for (const a of cfg.adsets) {
   }
 
   const priorAds = new Set(((await api(`${adsetId}/ads`, { params: { fields: 'name', limit: '100' } })).data || []).map(x => x.name));
-  // Ett adset kan bära FLERA bildannonser med var sin copy (a.ads[]). Den gamla
-  // formen — ett adset = en annons via a.adName/a.img/a.copy — funkar oförändrat.
-  const annonser = a.ads ?? [{ adName: a.adName, img: a.img, copy: a.copy }];
-  for (const ann of annonser) {
+  for (const ann of annonserI(a)) {
     if (priorAds.has(ann.adName)) { console.log(`  · annons finns redan: ${ann.adName}`); continue; }
     const hash = await uploadImage(path.join(opt.imgdir, ann.img));
     const creative = await api(`${cfg.act}/adcreatives`, { method: 'POST', form: {
