@@ -29,12 +29,66 @@ const BAS_CSS = `
     margin: 0; max-width: 62ch; }
   .opf-media { display: block; width: 100%; height: auto; margin-top: 1.5rem;
     border-radius: var(--ms-radius, 14px); box-shadow: var(--ms-shadow, 0 8px 24px rgba(18,18,18,.12)); }
+  video.opf-media { background: var(--ms-surface-2, #f4f4f4); object-fit: cover; }
 `;
+
+/** Beskrivningsblockens media: en loopad MP4 när filen är video, annars bild.
+ *
+ *  Axels beslut 2026-09-09: demot i produktbeskrivningen ska vara en MP4 som
+ *  loopar — inte en GIF och inte en WebP. En GIF på samma sekvens är ofta
+ *  10–20× större och begränsad till 256 färger; en MP4 är mindre, skarpare och
+ *  hårdvaruavkodad på mobilen. Kunden ser ingen skillnad i beteendet: den
+ *  startar själv, är ljudlös och rullar om.
+ *
+ *  MetafältsNAMNEN ändras inte (`gif_problem`, `media_losning`,
+ *  `bild_lifestyle`). De ligger live på heimguard.se och tankguard.se — byter
+ *  vi nyckel tappar båda butikerna sitt innehåll tyst. Fälten är av typen
+ *  `url` och bär redan vad som helst; det är RENDERINGEN som väljer.
+ *
+ *  Attributen är inte utbytbara:
+ *    muted + playsinline  utan dem vägrar iOS och Chrome starta uppspelningen,
+ *                         och kunden ser en svart ruta i stället för demot.
+ *    preload="metadata"   första bildrutan ritas utan att hela filen laddas.
+ *    disablepictureinpicture + inga controls  gör den till ett demo, inte en
+ *                         spelare kunden ska pilla på.
+ *
+ *  Respekterar `prefers-reduced-motion`: den som stängt av rörelse i sitt
+ *  system får första bildrutan stillastående i stället för en loop.
+ */
+export function opfMedia(uttryck) {
+  return `{%- assign opf_url = ${uttryck} -%}
+{%- assign opf_ext = opf_url | split: '?' | first | split: '.' | last | downcase -%}
+{%- if opf_ext == 'mp4' or opf_ext == 'webm' or opf_ext == 'mov' -%}
+  {%- if opf_ext == 'webm' -%}{%- assign opf_typ = 'video/webm' -%}
+  {%- elsif opf_ext == 'mov' -%}{%- assign opf_typ = 'video/quicktime' -%}
+  {%- else -%}{%- assign opf_typ = 'video/mp4' -%}{%- endif -%}
+  <video class="opf-media" autoplay muted loop playsinline preload="metadata"
+         disablepictureinpicture aria-label="{{ product.title | escape }}">
+    <source src="{{ opf_url }}" type="{{ opf_typ }}">
+  </video>
+{%- else -%}
+  <img class="opf-media" src="{{ opf_url }}" alt="{{ product.title | escape }}" loading="lazy">
+{%- endif -%}`;
+}
+
+/** Pausar de loopande demona för den som bett systemet om mindre rörelse.
+ *  Körs en gång per sida, oavsett hur många sektioner som ritat en video. */
+export const OPF_MEDIA_SKRIPT = `<script>
+  (function () {
+    if (window.opfMediaRedan) return;
+    window.opfMediaRedan = true;
+    if (!window.matchMedia || !matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('video.opf-media').forEach(function (v) {
+        v.autoplay = false; v.removeAttribute('loop'); v.pause();
+      });
+    });
+  })();
+</script>`;
 
 // --- 1 + 2. Problem/emotion och gif ---
 const PROBLEM = `{%- assign rubrik = product.metafields.opf.problem_rubrik.value -%}
 {%- assign text = product.metafields.opf.problem_text.value -%}
-{%- assign gif = product.metafields.opf.gif_problem.value -%}
 {%- assign eyebrow = section.settings.eyebrow -%}
 {%- if eyebrow == blank -%}{%- if request.locale.iso_code == 'nb' -%}{%- assign eyebrow = 'Kjenner du deg igjen?' -%}{%- else -%}{%- assign eyebrow = 'Känner du igen det?' -%}{%- endif -%}{%- endif -%}
 {%- if rubrik != blank or text != blank -%}
@@ -43,12 +97,13 @@ const PROBLEM = `{%- assign rubrik = product.metafields.opf.problem_rubrik.value
     <span class="opf-eyebrow">{{ eyebrow }}</span>
     {%- if rubrik != blank -%}<h2 class="opf-h2">{{ rubrik }}</h2>{%- endif -%}
     {%- if text != blank -%}<p class="opf-lede">{{ text | newline_to_br }}</p>{%- endif -%}
-    {%- if gif != blank -%}
-      <img class="opf-media" src="{{ gif }}" alt="{{ product.title | escape }}" loading="lazy">
+    {%- if product.metafields.opf.gif_problem.value != blank -%}
+${opfMedia('product.metafields.opf.gif_problem.value')}
     {%- endif -%}
   </div>
 </div>
 {%- endif -%}
+${OPF_MEDIA_SKRIPT}
 <style>
   {{ bas_css }}
 </style>
@@ -65,7 +120,6 @@ const PROBLEM = `{%- assign rubrik = product.metafields.opf.problem_rubrik.value
 // --- 3 + 4. Lösningen och gif/bild ---
 const LOSNING = `{%- assign rubrik = product.metafields.opf.losning_rubrik.value -%}
 {%- assign text = product.metafields.opf.losning_text.value -%}
-{%- assign media = product.metafields.opf.media_losning.value -%}
 {%- assign eyebrow = section.settings.eyebrow -%}
 {%- if eyebrow == blank -%}{%- if request.locale.iso_code == 'nb' -%}{%- assign eyebrow = 'Løsningen' -%}{%- else -%}{%- assign eyebrow = 'Lösningen' -%}{%- endif -%}{%- endif -%}
 {%- if rubrik != blank or text != blank -%}
@@ -74,12 +128,13 @@ const LOSNING = `{%- assign rubrik = product.metafields.opf.losning_rubrik.value
     <span class="opf-eyebrow">{{ eyebrow }}</span>
     {%- if rubrik != blank -%}<h2 class="opf-h2">{{ rubrik }}</h2>{%- endif -%}
     {%- if text != blank -%}<p class="opf-lede">{{ text | newline_to_br }}</p>{%- endif -%}
-    {%- if media != blank -%}
-      <img class="opf-media" src="{{ media }}" alt="{{ product.title | escape }}" loading="lazy">
+    {%- if product.metafields.opf.media_losning.value != blank -%}
+${opfMedia('product.metafields.opf.media_losning.value')}
     {%- endif -%}
   </div>
 </div>
 {%- endif -%}
+${OPF_MEDIA_SKRIPT}
 <style>
   {{ bas_css }}
 </style>
@@ -144,15 +199,16 @@ const FUNKTIONER = `{%- assign benefits = product.metafields.opf.benefits.value 
 {% endschema %}`;
 
 // --- 6. Stark produkt-/lifestylebild ---
-const LIFESTYLE = `{%- assign bild = product.metafields.opf.bild_lifestyle.value -%}
-{%- if bild != blank -%}
+const LIFESTYLE = `{%- if product.metafields.opf.bild_lifestyle.value != blank -%}
 <div class="ms-scope opf-block opf-lifestyle" style="padding-block: 0;">
-  <div class="opf-wrap">
-    <img class="opf-media" style="margin-top: 0;" src="{{ bild }}" alt="{{ product.title | escape }}" loading="lazy">
+  <div class="opf-wrap opf-lifestyle__media">
+${opfMedia('product.metafields.opf.bild_lifestyle.value')}
   </div>
 </div>
 {%- endif -%}
+${OPF_MEDIA_SKRIPT}
 <style>
+  .opf-lifestyle__media .opf-media { margin-top: 0; }
   {{ bas_css }}
 </style>
 {% schema %}

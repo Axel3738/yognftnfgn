@@ -9,6 +9,8 @@ import { byggJudgeMeCsv, byggJudgeMeAppCsv, judgeMeDatum, JUDGEME_KOLUMNER, JUDG
 import { fileURLToPath } from 'node:url';
 import {
   SEKTIONER,
+  opfMedia,
+  OPF_MEDIA_SKRIPT,
   SEKTIONSORDNING_TEMA,
   TEMAFILER,
   byggProduktTemplate,
@@ -201,10 +203,15 @@ test('sektionerna läser opf-metafälten och använder temats ms-klasser', () =>
 });
 
 test('media-sektionerna döljer sig utan media i stället för att rendera trasigt', () => {
+  // Villkoret läser metafältet direkt sedan 2026-09-09 (renderingen väljer
+  // video eller bild på filändelsen, så mellanvariabeln föll bort). Kravet är
+  // detsamma: tomt fält = ingen tagg alls, aldrig en tom src.
   const lifestyle = SEKTIONER['sections/opf-lifestyle.liquid'];
-  assert.ok(/if bild != blank/.test(lifestyle));
+  assert.ok(/if product\.metafields\.opf\.bild_lifestyle\.value != blank/.test(lifestyle));
   const problem = SEKTIONER['sections/opf-problem.liquid'];
-  assert.ok(/if gif != blank/.test(problem), 'gif:en ska villkoras, aldrig tom src');
+  assert.ok(/if product\.metafields\.opf\.gif_problem\.value != blank/.test(problem), 'median ska villkoras, aldrig tom src');
+  const losning = SEKTIONER['sections/opf-losning.liquid'];
+  assert.ok(/if product\.metafields\.opf\.media_losning\.value != blank/.test(losning));
 });
 
 test('produkttemplaten lägger innehållsblocken efter main och FAQ:n efter Judge.me', () => {
@@ -499,4 +506,66 @@ test('gallerifiltret döljer de andra språkens märken per locale, märkt för 
   assert.ok(tre.includes('[DK]'));
   assert.ok(msHeadGallerifilter().includes('[NO]'), 'default = sv + nb');
   assert.ok(!liquid.includes('\\'), 'inga backslash-escaper på väg genom JSON');
+});
+
+// -------------------------------------------------- demot i beskrivningen
+//
+// Axels beslut 2026-09-09: demot ska vara en MP4 som loopar, inte en GIF och
+// inte en WebP. Metafältsnamnen ändras INTE (gif_problem, media_losning,
+// bild_lifestyle) — de ligger live på heimguard.se och tankguard.se, och ett
+// nyckelbyte hade tömt båda butikernas beskrivningar tyst. Det är renderingen
+// som väljer, på filändelsen.
+
+test('en mp4 blir en loopad video, en jpg blir en bild', () => {
+  const liquid = opfMedia('produkt.media');
+  // Båda vägarna ska finnas — annars slutar gamla GIF:ar och WebP:ar fungera.
+  assert.ok(liquid.includes('<video'), 'ingen videogren');
+  assert.ok(liquid.includes('<img'), 'ingen bildgren');
+  assert.ok(/opf_ext == 'mp4'/.test(liquid), 'mp4 känns inte igen');
+  assert.ok(/opf_ext == 'webm'/.test(liquid) && /opf_ext == 'mov'/.test(liquid));
+});
+
+test('videon startar själv, är ljudlös och rullar om', () => {
+  const liquid = opfMedia('produkt.media');
+  // Utan muted + playsinline vägrar iOS och Chrome spela, och kunden ser en
+  // svart ruta i stället för demot. De är alltså inte valfria attribut.
+  for (const attr of ['autoplay', 'muted', 'loop', 'playsinline']) {
+    assert.ok(new RegExp(`<video[^>]*\\b${attr}\\b`, 's').test(liquid), `saknar ${attr}`);
+  }
+  assert.ok(!/<video[^>]*\bcontrols\b/s.test(liquid), 'demot ska inte ha spelarkontroller');
+  assert.ok(/preload="metadata"/.test(liquid), 'första bildrutan ska ritas utan att hela filen laddas');
+});
+
+test('filändelsen läses även när URL:en bär frågetecken', () => {
+  // Shopify Files lägger på ?v=1234 — utan split på '?' blir ändelsen "mp4?v=1234".
+  const liquid = opfMedia('x');
+  assert.ok(/split: '\?'/.test(liquid), 'frågesträngen strippas inte före ändelsen');
+  assert.ok(/downcase/.test(liquid), 'MP4 med versaler skulle inte kännas igen');
+});
+
+test('mov får rätt mime-typ, inte "video/mov"', () => {
+  const liquid = opfMedia('x');
+  assert.ok(liquid.includes('video/quicktime'), 'video/mov finns inte som mime-typ');
+  assert.ok(liquid.includes('video/webm') && liquid.includes('video/mp4'));
+});
+
+test('alla tre beskrivningssektioner kan visa både video och bild', () => {
+  for (const namn of ['sections/opf-problem.liquid', 'sections/opf-losning.liquid', 'sections/opf-lifestyle.liquid']) {
+    const s = SEKTIONER[namn];
+    assert.ok(s.includes('<video'), `${namn} saknar videogrenen`);
+    assert.ok(s.includes('<img'), `${namn} saknar bildgrenen`);
+  }
+});
+
+test('metafältsnamnen är orörda — de ligger live i två butiker', () => {
+  // Ett nyckelbyte hade tömt HeimGuards och TankGuards beskrivningar utan
+  // felmeddelande. Renderingen bytte, inte fälten.
+  assert.ok(SEKTIONER['sections/opf-problem.liquid'].includes('opf.gif_problem'));
+  assert.ok(SEKTIONER['sections/opf-losning.liquid'].includes('opf.media_losning'));
+  assert.ok(SEKTIONER['sections/opf-lifestyle.liquid'].includes('opf.bild_lifestyle'));
+});
+
+test('den som stängt av rörelse får en stillbild, inte en loop', () => {
+  assert.ok(OPF_MEDIA_SKRIPT.includes('prefers-reduced-motion'));
+  assert.ok(OPF_MEDIA_SKRIPT.includes('opfMediaRedan'), 'skriptet ska bara köra en gång per sida');
 });

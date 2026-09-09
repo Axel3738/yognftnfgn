@@ -257,6 +257,18 @@ en människa i en webbläsare".
 ---
 
 ## Regler som bevisats den hårda vägen
+- **Demot i beskrivningen är en loopad MP4, aldrig en GIF eller WebP**
+  (Axels beslut 2026-09-09). Samma sekvens som GIF är ofta 10–20× större och
+  begränsad till 256 färger. Temat väljer på filändelsen: `.mp4`, `.webm` och
+  `.mov` blir en ljudlös `<video autoplay muted loop playsinline>`, allt annat
+  blir `<img>` — så gamla GIF:ar slutar aldrig fungera.
+  `muted` och `playsinline` är inte valfria: utan dem vägrar iOS och Chrome
+  starta, och kunden ser en svart ruta i stället för demot.
+  Den som stängt av rörelse i sitt system får första bildrutan stilla.
+  ⚠️ **Byt aldrig metafältsnamnen** (`gif_problem`, `media_losning`,
+  `bild_lifestyle`) för att de låter som bilder. De ligger live på
+  heimguard.se och tankguard.se — ett nyckelbyte tömmer båda butikernas
+  beskrivningar utan ett enda felmeddelande. Det är renderingen som bytte.
 
 Varje regel en gång, med datum. Koden bär dem; det här är varför.
 

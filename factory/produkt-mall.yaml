@@ -40,12 +40,20 @@ media:
   videor:
     - ""
   # Beskrivningsblockens media (URL:er). Aldrig placeholderbilder eller stock.
-  gif_problem: ""             # block 2 — gif direkt efter problemet. KRITISK: launch-QA stoppar utan.
-  media_losning: ""           # block 4 — gif eller bild som demonstrerar lösningen. KRITISK.
-  bild_lifestyle: ""          # block 6 — stark produkt/lifestylebild. Valfri: sektionen döljs utan.
+  #
+  # ⚠️ DEMOT SKA VARA EN MP4 SOM LOOPAR (Axels beslut 2026-09-09) — inte en
+  # GIF och inte en WebP. Samma sekvens som GIF är ofta 10–20× större och
+  # begränsad till 256 färger; MP4:an är mindre, skarpare och avkodas av
+  # mobilens hårdvara. Temat väljer på FILÄNDELSEN: .mp4/.webm/.mov blir en
+  # ljudlös video som startar själv och rullar om, allt annat blir en bild.
+  # Fältnamnen står kvar som de är — de ligger live i två butiker, och ett
+  # nyckelbyte hade tömt deras beskrivningar utan felmeddelande.
+  gif_problem: ""             # block 2 — demot direkt efter problemet (helst .mp4). KRITISK: launch-QA stoppar utan.
+  media_losning: ""           # block 4 — demot som visar lösningen (helst .mp4). KRITISK.
+  bild_lifestyle: ""          # block 6 — stark produkt/lifestylebild eller .mp4. Valfri: sektionen döljs utan.
 
 # Produktsidans beskrivning följer ALLTID samma sju block i samma ordning:
-# 1 problem/emotion → 2 gif → 3 lösningen → 4 gif/bild → 5 funktioner →
+# 1 problem/emotion → 2 demo → 3 lösningen → 4 demo → 5 funktioner →
 # 6 bild → 7 garanti. Texterna för block 1 och 3 skrivs här.
 beskrivning:
   problem_rubrik: ""          # block 1 — kort stark rubrik som träffar känslan
