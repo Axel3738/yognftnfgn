@@ -37,8 +37,11 @@ KORT_BAKGRUND = (255, 255, 255)
 # poppar upp under ~0,4 s, så rutan är unionen av dess största och minsta läge.
 RUTA_BANDEROLL = (161, 166, 557, 322)
 RUTA_BANDEROLL_STILLA = (168, 169, 551, 319)
-RUTA_RECENSION = (300, 838, 420, 853)
-RUTA_PRIS = (322, 854, 400, 870)
+# Mätt på fem slutkort (SE och NO): recensionsraden 299–421 × 841–852, prisparet
+# 321–392 × 858–867. Rutorna har fyra pixlars marginal — utan den står en tunn
+# kant av den överstrukna siffran kvar och syns som ett streck bredvid priset.
+RUTA_RECENSION = (295, 836, 425, 855)
+RUTA_PRIS = (316, 853, 397, 871)
 
 FET = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"
 

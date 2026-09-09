@@ -1,0 +1,292 @@
+{
+  "SP_3_H1": {
+    "id": "SP_3_H1",
+    "message": "Innan: grönt, algfyllt vatten i solen. ☀️\nEfter: klart vatten, hela sommaren.\n210D Oxford-tyg blockerar solljus och UV helt – inga alger, ingen spröd plast.\nBlixtlås runt hela tanken – på under två minuter.",
+    "title": "Innan grönt. Efter klart.",
+    "beskrivning": "210D Oxford-tyg blockerar solljus och UV helt.",
+    "andringar": [
+      "Tog bort båda kundcitaten (namn Maria, Lena) och stjärnbetygen — TankGuard är en ny butik utan en enda recension, det var påhittat socialt bevis.",
+      "Tog bort titel 'Tio recensioner, 4,5 av 5' och beskrivning 'Riktiga recensioner, 4,5 av 5 stjärnor' av samma skäl.",
+      "Byggde om vinkeln från social proof till en före/efter-vinkel på produkten själv, enligt uppdraget: grönt vatten i solen kontra klart vatten med 210D Oxford-tyget.",
+      "Allt nytt innehåll hämtat direkt ur produktfaktan: solljus/UV-blockering, ingen spröd plast, blixtlås runt hela tanken, monteringstid under två minuter."
+    ],
+    "tre_fragor": [
+      {
+        "rad": "Innan: grönt, algfyllt vatten i solen. ☀️",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Sätter upp kontrasten och bygger på produktfaktumet att sol/UV ger alger — men vilken tanksäljare som helst kan visa samma 'innan'-bild."
+      },
+      {
+        "rad": "Efter: klart vatten, hela sommaren.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Resultatpåstående som stämmer när ljuset stängs ute, men generiskt format i sig — styrks av raden efter."
+      },
+      {
+        "rad": "210D Oxford-tyg blockerar solljus och UV helt – inga alger, ingen spröd plast.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen specificerade materialspec kopplad till två separata, verifierbara effekter."
+      },
+      {
+        "rad": "Blixtlås runt hela tanken – på under två minuter.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Sant och mätbart, men installationstiden är inte unik för TankGuard specifikt."
+      },
+      {
+        "rad": "Titel: Innan grönt. Efter klart.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Generisk kontrastformel — bärs av de TankGuard-specifika fakta i brödtexten."
+      },
+      {
+        "rad": "Beskrivning: 210D Oxford-tyg blockerar solljus och UV helt.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen materialspec och fullständiga UV-blockering."
+      }
+    ]
+  },
+  "PD_4_H3": {
+    "id": "PD_4_H3",
+    "message": "Grönt vatten i tanken?\n210D Oxford-tyg blockerar solljus och UV helt.\n489 kr.",
+    "title": "Skydda tanken. 489 kr.",
+    "beskrivning": "210D Oxford-tyg, blockerar UV.",
+    "andringar": [
+      "Inga ändringar — källtexten var redan ren: 489 kr är TankGuards eget riktiga pris utan jämförpris, och inget socialt bevis, ingen brådska eller källvarumärke förekommer."
+    ],
+    "tre_fragor": [
+      {
+        "rad": "Grönt vatten i tanken?",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Frågeform vilken konkurrent som helst kan ställa — bärs av nästa rads unika fakta."
+      },
+      {
+        "rad": "210D Oxford-tyg blockerar solljus och UV helt.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen specificerade produktfakta."
+      },
+      {
+        "rad": "489 kr.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards eget, verifierbara pris utan jämförpris."
+      },
+      {
+        "rad": "Titel: Skydda tanken. 489 kr.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Kopplar handling till TankGuards eget pris."
+      },
+      {
+        "rad": "Beskrivning: 210D Oxford-tyg, blockerar UV.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Ren materialspec ur produktfaktan."
+      }
+    ]
+  },
+  "GT_4_H1": {
+    "id": "GT_4_H1",
+    "message": "Present till den som just skaffat en IBC-tank.\nBlixtlås i stället för presenning och gummiband.\n210D Oxford-tyg stänger ute ljuset som får algerna att växa.",
+    "title": "Blixtlås, inte presenning",
+    "beskrivning": "Passar standard 1000-liters IBC-tank.",
+    "andringar": [
+      "Inga ändringar — källtexten var redan ren: inget pris, ingen rabatt, inget socialt bevis, ingen brådska, inget källvarumärke."
+    ],
+    "tre_fragor": [
+      {
+        "rad": "Present till den som just skaffat en IBC-tank.",
+        "visualisera": true,
+        "falsifiera": false,
+        "ingen_annan": false,
+        "kommentar": "Adresserar målgruppen snarare än ett sakpåstående — bärs av de konkreta faktaraderna."
+      },
+      {
+        "rad": "Blixtlås i stället för presenning och gummiband.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Sant konstruktionspåstående, men blixtlås som lösning är inte unikt för just TankGuard."
+      },
+      {
+        "rad": "210D Oxford-tyg stänger ute ljuset som får algerna att växa.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen materialspec kopplad till den exakta mekanismen ur produktfaktan."
+      },
+      {
+        "rad": "Titel: Blixtlås, inte presenning",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": false,
+        "kommentar": "Kategorijämförelse (blixtlås mot presenning) — inte unikt ägd, men sann."
+      },
+      {
+        "rad": "Beskrivning: Passar standard 1000-liters IBC-tank.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen produktspec (standardmått för 1000L IBC)."
+      }
+    ]
+  },
+  "CS_4_H1": {
+    "id": "CS_4_H1",
+    "message": "489 kr per överdrag.\n210D Oxford-tyg blockerar solljus och UV helt.\nTa 2 för 799 kr – spara 18 %, med 2 Kranskydd Frost 420D på köpet.",
+    "title": "489 kr per överdrag",
+    "beskrivning": "2 för 799 kr – spara 18 %, inkl. 2 Kranskydd Frost 420D.",
+    "andringar": [
+      "Tog bort det påhittade jämförpriset '636 kr' och besparingen '147 kr' — TankGuard har inget jämförpris på enstycket.",
+      "Tog bort '23 % rabatt' — den siffran hör till Bäverbutikens rabatt, inte TankGuards.",
+      "Byggde om erbjudandevinkeln kring TankGuards riktiga pristrappa: 489 kr styck, sedan 2-pack 799 kr (spara 18 %) med 2 Kranskydd Frost 420D på köpet.",
+      "Ledde med 489 kr som första tal enligt uppdraget — paketnivån nämns efter, inte som första siffran.",
+      "Behöll originalets materialrad ('210D Oxford-tyg blockerar solljus och UV helt') orörd — redan sann och bevisad."
+    ],
+    "tre_fragor": [
+      {
+        "rad": "489 kr per överdrag.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards riktiga styckpris, utan påhittat jämförpris."
+      },
+      {
+        "rad": "210D Oxford-tyg blockerar solljus och UV helt.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen materialspec, orörd från källtexten."
+      },
+      {
+        "rad": "Ta 2 för 799 kr – spara 18 %, med 2 Kranskydd Frost 420D på köpet.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen paketrabatt och namngiven bonusprodukt — ingen konkurrent kan signera exakt detta erbjudande."
+      },
+      {
+        "rad": "Titel: 489 kr per överdrag",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Leder med TankGuards riktiga pris, inget jämförpris."
+      },
+      {
+        "rad": "Beskrivning: 2 för 799 kr – spara 18 %, inkl. 2 Kranskydd Frost 420D.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Exakt paketpris plus namngiven bonusprodukt — unikt för TankGuard."
+      }
+    ]
+  },
+  "PD_4_H2": {
+    "id": "PD_4_H2",
+    "message": "Trött på grönt algfyllt vatten i IBC-tanken?\n210D Oxford-tyg stänger ute ljuset – algerna kommer aldrig igång.\nÖppning upptill, blixtlås.",
+    "title": "Stänger ute ljuset. Ingen alg.",
+    "beskrivning": "Öppning upptill. Blixtlås.",
+    "andringar": [
+      "Inga ändringar — källtexten var redan ren: inget pris, ingen rabatt, inget socialt bevis, ingen brådska, inget källvarumärke."
+    ],
+    "tre_fragor": [
+      {
+        "rad": "Trött på grönt algfyllt vatten i IBC-tanken?",
+        "visualisera": true,
+        "falsifiera": false,
+        "ingen_annan": false,
+        "kommentar": "Adresserar problemet retoriskt — bärs av nästa rads produktfakta."
+      },
+      {
+        "rad": "210D Oxford-tyg stänger ute ljuset – algerna kommer aldrig igång.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen materialspec och mekanism ur produktfaktan."
+      },
+      {
+        "rad": "Öppning upptill, blixtlås.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Konkreta, kollbara konstruktionsdetaljer ur produktfaktan."
+      },
+      {
+        "rad": "Titel: Stänger ute ljuset. Ingen alg.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Kort form av samma bevisade mekanismpåstående."
+      },
+      {
+        "rad": "Beskrivning: Öppning upptill. Blixtlås.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Ren konstruktionsfakta ur produktfaktan."
+      }
+    ]
+  },
+  "PD_4_H1": {
+    "id": "PD_4_H1",
+    "message": "Grönt, algfyllt regnvatten i tanken?\n210D Oxford-tyg blockerar solljus och UV helt.\nÖppning upptill så du kommer åt locket.",
+    "title": "Blockerar solljus och UV helt",
+    "beskrivning": "210D Oxford-tyg. Öppning upptill.",
+    "andringar": [
+      "Inga ändringar — källtexten var redan ren: inget pris, ingen rabatt, inget socialt bevis, ingen brådska, inget källvarumärke."
+    ],
+    "tre_fragor": [
+      {
+        "rad": "Grönt, algfyllt regnvatten i tanken?",
+        "visualisera": true,
+        "falsifiera": false,
+        "ingen_annan": false,
+        "kommentar": "Retorisk problemfråga — bärs av nästa rads produktfakta."
+      },
+      {
+        "rad": "210D Oxford-tyg blockerar solljus och UV helt.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "TankGuards egen specificerade produktfakta."
+      },
+      {
+        "rad": "Öppning upptill så du kommer åt locket.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Konkret, kollbar konstruktionsdetalj ur produktfaktan."
+      },
+      {
+        "rad": "Titel: Blockerar solljus och UV helt",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Kort form av samma bevisade materialpåstående."
+      },
+      {
+        "rad": "Beskrivning: 210D Oxford-tyg. Öppning upptill.",
+        "visualisera": true,
+        "falsifiera": true,
+        "ingen_annan": true,
+        "kommentar": "Ren produktspec ur produktfaktan."
+      }
+    ]
+  }
+}

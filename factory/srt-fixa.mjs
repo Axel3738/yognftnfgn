@@ -20,12 +20,18 @@ const MARKNADER = {
     // 18 % och 25 % är TankGuards RIKTIGA paketrabatter och får stå — men bara
     // när paketnivån nämns i samma mening. En lös procentsats är källbutikens.
     förbjudet: /b[aä]v[eo]r?\w*butiken|636|ordinarie|halva priset|23 ?%|bara idag|lagret krymper|innan det är slut|tusentals|så många trädgårdsägare|kunderna älskar/i,
+    // Vad ett `replikbyte` byter ut mot varumärkesnamnet.
+    brandord: /[Bb][aä]v[eo]r?\w*butiken/g,
     procentKräverPaket: true,
   },
   no: {
     manusfil: '/home/user/yognftnfgn/factory/output/tankguard/no-videomanus.json',
     proof: `${S}/proof-no`, prefix: 'TankGuardNO_', ut: `${S}/srt-fixad-no`,
-    förbjudet: /b[aä]v[eo]r?\w*butik\w*|586|439|ordinær|kampanjepris|halve prisen|bare i dag|lageret|så lenge lageret|tusenvis|kundene elsker|rabatt|kroner|\bkr\b/i,
+    förbjudet: /b[aäe]v[eo]r?[\s-]?butik\w*|586|439|ordinær|kampanjepris|tilbudspris|halve prisen|bare i dag|lageret|så lenge lageret|tusenvis|kundene elsker|rabatt|kroner|\bkr\b/i,
+    // Norska källvideorna säger "Bever-butikken" och "Beverbutikken" — och en
+    // av dem "BB butikken". Bindestrecket och mellanslaget måste med, annars
+    // går brandet igenom replikbytet oförändrat.
+    brandord: /[Bb][aäe]v[eo]r?[\s-]?butikken|\bBB[\s-]?butikken\b/g,
     procentKräverPaket: false,   // i Norge är varje procentsats förbjuden
   },
 };
@@ -44,24 +50,34 @@ const sek = (s) => { const [h, m, r] = s.split(':'); const [ss, ms] = r.split(',
 const längd = (tid) => { const [a, b] = tid.split('-->').map(x => x.trim()); return Math.max(0.3, sek(b) - sek(a)); };
 
 /** Fördelar repliker över cues så att varje cue får text i proportion till sin tid.
- *  Ordningen bevaras alltid — en replik hamnar aldrig före en tidigare replik. */
+ *  Ordningen bevaras alltid — en replik hamnar aldrig före en tidigare replik.
+ *
+ *  ⚠️ Den tidigare versionen fyllde tomma cues genom att `pop()`:a från en
+ *  FÖREGÅENDE cue, en åt gången. Två tomma cues i rad plockade då de två sista
+ *  replikerna i omvänd ordning: videon slutade "TankGuard. Bestill nå." och
+ *  sedan CTA:n, i stället för tvärtom. Nu kan en cue aldrig bli tom — bytet
+ *  tvingas fram så fort antalet återstående repliker är lika med antalet
+ *  återstående cues. */
 function fördela(repliker, cues) {
+  const n = cues.length;
+  if (repliker.length < n) {
+    throw new Error(`Färre repliker (${repliker.length}) än cues (${n}) — då blir en cue tom och HeyGen tappar taltiden. Skriv fler repliker.`);
+  }
   const tot = cues.reduce((s, c) => s + längd(c.tid), 0);
   const totTecken = repliker.join(' ').length;
   const kvot = cues.map(c => (längd(c.tid) / tot) * totTecken);
   const ut = cues.map(() => []);
-  let i = 0, budget = kvot[0], använt = 0;
-  for (const r of repliker) {
-    if (använt > 0 && använt + r.length > budget * 1.45 && i < cues.length - 1) {
-      i++; budget = kvot[i]; använt = 0;
+  let i = 0, använt = 0;
+  for (let r = 0; r < repliker.length; r++) {
+    const kvar = repliker.length - r;   // repliker kvar, inklusive denna
+    const cuerKvar = n - i;             // cues kvar, inklusive den vi står i
+    const budgetFull = använt > 0 && använt + repliker[r].length > kvot[i] * 1.45;
+    // Byt cue om budgeten är full OCH det finns repliker nog kvar att fylla
+    // resten — eller när det är exakt en replik kvar per återstående cue.
+    if (i < n - 1 && använt > 0 && ((budgetFull && kvar > cuerKvar - 1) || kvar === cuerKvar)) {
+      i++; använt = 0;
     }
-    ut[i].push(r); använt += r.length + 1;
-  }
-  // Ingen cue får bli tom — låna från grannen.
-  for (let j = 0; j < ut.length; j++) {
-    if (ut[j].length) continue;
-    const giv = ut.slice(0, j).reverse().find(x => x.length > 1) || ut.slice(j + 1).find(x => x.length > 1);
-    if (giv) ut[j].push(giv.pop());
+    ut[i].push(repliker[r]); använt += repliker[r].length + 1;
   }
   return ut.map(x => x.join(' ').trim());
 }
@@ -84,7 +100,8 @@ for (const [id, m] of Object.entries(manus)) {
   if (m.typ === 'replikbyte') {
     let bytta = 0;
     for (const c of cues) {
-      if (/b[aä]v[eo]r?\w*butiken/i.test(c.text)) { c.text = c.text.replace(/[Bb][aä]v[eo]r?\w*butiken/g, 'TankGuard'); bytta++; }
+      if (M.brandord.test(c.text)) { M.brandord.lastIndex = 0; c.text = c.text.replace(M.brandord, 'TankGuard'); bytta++; }
+      M.brandord.lastIndex = 0;
     }
     if (bytta) writeFileSync(`${UT}/${id}.srt`, skrivSrt(cues));
     rapport.push({ id, status: bytta ? 'KLAR' : 'INGEN TRÄFF', cues: cues.length, bytta, metod: 'replikbyte' });
@@ -110,11 +127,16 @@ const LÖS_PROCENT = /(\d{1,2})\s?%/g;
 // Talet skrivs ut i bokstäver i tal-SRT:er — "fire hundre og trettini kroner"
 // slinker förbi en siffergrind. Norge har inget NOK-pris alls, så varje
 // prisord är förbjudet oavsett hur det stavas.
-const SKRIVNA_TAL_NO = /(hundre|tusen)\s+og\b|\b(femhundre|firehundre|åttiseks|trettini|prosent)\b/i;
+// ⚠️ "to hundre og ti D Oxford" är TYGET, inte ett pris. Grinden får därför
+// inte slå på "hundre og" i sig — bara på de faktiska prisorden, och på ett
+// skrivet tal som bär "kroner" i samma mening.
+const SKRIVNA_TAL_NO = /\b(femhundre|firehundre|åttiseks|trettini|prosent)\b|\b(hundre|tusen)\b[^.!?\n]{0,40}\bkroner\b/i;
 console.log(`\nKONTROLL av de fixade SRT:erna (${MARKNAD.toUpperCase()}):`);
 let fel = 0;
 for (const r of rapport.filter(x => x.status === 'KLAR')) {
-  const t = readFileSync(`${UT}/${r.id}.srt`, 'utf8');
+  // ⚠️ Läs BARA replikraderna. Tidkoderna innehåller siffror — "00:00:07,439"
+  // ser ut som det norska källpriset 439 för en grind som läser hela filen.
+  const t = läsSrt(readFileSync(`${UT}/${r.id}.srt`, 'utf8')).map(c => c.text).join('\n');
   const träff = t.match(new RegExp(FÖRBJUDET.source, 'gi')) || [];
   if (MARKNAD === 'no' && SKRIVNA_TAL_NO.test(t)) träff.push('pris utskrivet i bokstäver');
   for (const mening of t.split(/[.!?\n]/)) {
