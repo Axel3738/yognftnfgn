@@ -115,6 +115,11 @@ function täthet(cues) {
 }
 const TÄTHETSTAK = 1.15;   // 15 % över källan är den marginal ett manus får ta
 
+// Varumärkesavslutet är en fast sträng och går inte att korta. Råkar källans
+// sista cue vara kortare än den blir kvoten hög på en rad som ändå är två ord.
+// Den enda undantagna raden i hela grinden — allt annat mäts.
+const AVSLUT = ['TankGuard. Beställ nu.', 'TankGuard. Bestill nå.', 'TankGuard. Bestill nå'];
+
 const rapport = [];
 for (const [id, m] of Object.entries(manus)) {
   const fil = `${M.proof}/${M.prefix}${id}-translated.srt`;
@@ -148,6 +153,7 @@ for (const [id, m] of Object.entries(manus)) {
   const kvot = ny.per / källtäthet.per;
   // ⚠️ Det är den VÄRSTA cuen som avgör hur rösten låter, inte snittet.
   const perCue = cues.map((c, i) => {
+    if (AVSLUT.includes(texter[i].trim())) return 1;
     const sek_ = längd(c.tid);
     return (texter[i].length / sek_) / Math.max(0.01, källcues[i].text.length / sek_);
   });

@@ -43,7 +43,10 @@ for (const f of filer) {
   const cues = läsSrt(readFileSync(`${M.proof}/${f}`, 'utf8'));
   rader.push(`### ${id} — ${cues.length} repliker, en per cue`);
   ut[id] = cues.map((c, i) => {
-    const tak = Math.round(c.text.length * 1.15);
+    // ⚠️ FLOOR, inte round. Avrundning uppåt gör att budgetens tak kan hamna
+    // ÖVER grindens 1,15× — en replik som följer budgeten underkänns då av
+    // grinden, och de två reglerna säger emot varandra.
+    const tak = Math.floor(c.text.length * 1.15);
     const golv = Math.max(6, Math.round(c.text.length * 0.75));
     rader.push(`  ${String(i + 1).padStart(2)}  ${längd(c.tid).toFixed(2)}s  ${golv}–${tak} tecken   NU: "${c.text}"`);
     return { nr: i + 1, sek: +längd(c.tid).toFixed(2), golv, tak, kalla: c.text };
