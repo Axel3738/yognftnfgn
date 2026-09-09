@@ -120,8 +120,18 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    annonser bär produktens prefix — inte bara den som `kalla.kampanj_id`
    pekar på. En produkt kan ha både en test-ABO och en skalnings-CBO.
 
-3. **Brand-detektorn** (FAS2 uppdrag A). Klassa varje annons över FEM ytor:
-   copy, tal, inbränd text/slutkort, recensionsattribution — **och priset**.
+3. **Brand-detektorn** (FAS2 uppdrag A). Klassa varje annons över SEX ytor:
+   copy, tal, inbränd text/slutkort, recensionsattribution, priset — **och
+   källbutikens ERBJUDANDEVILLKOR**.
+
+   ⚠️ **Sjätte ytan: villkoren** (funnen 2026-09-09 på HeimGuard, efter att
+   svenska annonser redan laddats upp med felet). Källbutikens annonser bär
+   Bäverbutikens regler — "fri frakt över 300 kr", "30 dagars öppet köp",
+   leveranstider, garantier — i copy, i inbränd text OCH i talet. OPS-butiken
+   har egna: fri frakt utan gräns och 14 dagars ångerrätt enligt svensk lag.
+   Ett kvarglömt "över 300 kr" är ett löfte butiken inte håller.
+   Läs villkoren ur `factory/butiker/<id>.yaml` (`frakt`, `retur`,
+   `garantier`) och jämför mot varje yta.
    Dom per annons: `ren` / `bara-copy` / `kräver-omdubb` / `kräver-slutkortsbygge`.
 
    **Priset är lika viktigt som brandnamnet.** Jämför källannonsens pris mot
@@ -139,7 +149,12 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    `Bawebutiken` och `Spavebutiken`.
    Visa tabellen i chatten innan något ändras.
 
-4. **Fixa bilderna** (FAS2 uppdrag C, gratis). `pipeline/oversatt-bild.py`
+4. **Fixa bilderna** (FAS2 uppdrag C, gratis).
+   ⚠️ **Utesluten är inte klar.** En annons som bär källans pris eller villkor
+   ska FIXAS, inte slängas — det är bevisade vinnare. Bild = gratis med
+   verktygen nedan. Video = arbete, men den ska stå i en namngiven kö med
+   vad som krävs, aldrig försvinna ur räkningen. (HeimGuard 2026-09-09:
+   20 av 40 norska källor uteslöts i första bygget — hälften av materialet.) `pipeline/oversatt-bild.py`
    byter text i sin egen ruta utan krediter; `bildannonser/kie.mjs` är
    reservvägen när texten sitter direkt på fotot. Text läggs ALLTID med
    `bildannonser/text.py` — kie.ai klarar inte svensk text.
@@ -190,6 +205,7 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
      kräver-omdubb      11  → ska bli 11 annonser
      slutkortsbygge      2  → ska bli 2 annonser
      okänd               1  → ska INTE laddas upp
+     uteslutna           __  → var och en NAMNGIVEN med vad som krävs
    Uppladdade i kontot: __  ← läst ur Meta, inte ur minnet
    ```
 
@@ -238,6 +254,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Brand-detektorns tabell visad: varje källannons klassad över fem ytor
       (copy, tal, inbränd text, recensioner, PRIS)
 - [ ] Priset bytt överallt det förekommer — SEK i den svenska, NOK i den norska
+- [ ] Källbutikens VILLKOR borta: fraktgräns, öppet köp, leveranstid, garanti
+      — i copy, i bild och i talet. Butikens egna står i butiksfilen.
+- [ ] Uteslutna annonser namngivna med vad som krävs — aldrig bara borttagna
 - [ ] Bilderna brand-swappade med QA före/efter
 - [ ] Videorna omdubbade — eller listade som väntande med orsak
 - [ ] All copy pekar på butikens EGEN produktsida, ingen gissad länk

@@ -163,6 +163,13 @@ som genereras per bygge).
     större PO innan säsong (PLAN.md punkt 6).
 
 ## Regler som bevisats den hårda vägen
+- **Bas-zip:en bär MATSTRUMPORS TEXT i tre mallar** (mätt 2026-09-09):
+  `templates/index.json` (hero, rubriker, kollektionen `strumporna`,
+  produkten `sushi-strumpor`), `sections/footer-group.json` (bolagsblocket
+  med `kundsupport@matstrumpor.se`) och `templates/product.json` (samma
+  mejl). Kör **`factory/kallskanning.mjs`** mot hela temat innan butiken
+  lämnas — rapporten ska vara tom. DryTrek nådde förhandsvisning med
+  "Kilometer fyra. Fortfarande torr strumpa." som hero.
 - **Bas-zip:ens startsida pekar på MATSTRUMPOR** (mätt 2026-09-09 i
   `factory/tema/ops-tema.zip`: `templates/index.json` har
   `produkt.product = "sushi-strumpor"` och `sortiment.collection =
@@ -202,7 +209,7 @@ som genereras per bygge).
   skapa/publicera teman mot live, shop-mejl, checkout-branding
   (Plus), shopPolicyUpdate (scope), Meta-sidor, byta primärspråk.
 
-## ⚠️ ÖPPEN BUGG 2026-09-09 — varukorgen redirectar i stället för att poppa upp
+## ✅ LÖST 2026-09-09 — varukorgen redirectade i stället för att poppa upp
 
 **Symptom (Axel, HeimGuard + TankGuard, båda LIVE och spenderar):** första
 gången kunden lägger i varukorgen skickas hen till `/cart` i stället för att
@@ -226,6 +233,21 @@ dessutom om av `byggKorgUpsell` i `factory/tema.mjs`.
 2. `product-form.js` hittar inget `<cart-drawer>`-element vid första laddningen
    och faller tillbaka på vanlig formulär-POST.
 
-**Regel:** varukorgen ska testas på RIKTIGT i kundens vy innan en butik får
-annonser — lägg i varukorgen med tom korg och se att lådan glider in.
-Lägg in det i trippelkollen.
+**ROTORSAKEN (funnen 2026-09-09):** `assets/product-form.js` rad 11 gör
+`this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer')`
+och rad 64 `} else if (!this.cart) {` → **redirect till `/cart`**. Hittar den
+inget av elementen faller formuläret tillbaka på en vanlig POST. Layouten
+renderar lådan bara när `settings.cart_type == 'drawer'`, och det värdet
+ÄRVDES från vilket tema klonen råkade utgå från i stället för att sättas.
+
+**FIXEN:** `byggSettingsPatch` i `factory/branding.mjs` sätter numera
+`cart_type: 'drawer'` explicit i varje bygge. Brandingsteget körs på varje
+butik, så värdet kan inte längre gå förlorat i en klon.
+
+⚠️ **De butiker som redan är byggda måste rättas för hand** — brandingsteget
+körs om, eller `cart_type` sätts direkt i det publicerade temats
+`settings_data.json`.
+
+**Regel:** varukorgen ska ändå testas på RIKTIGT i kundens vy innan en butik
+får annonser — tom korg, lägg i varan, se att lådan glider in. Det står i
+`/ny-ops` Definition of done.
