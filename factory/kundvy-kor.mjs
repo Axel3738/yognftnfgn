@@ -21,12 +21,12 @@ import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
 import { graphql } from './shopify.mjs';
-import { kontrolleraKundvy, rapport } from './kundvy.mjs';
+import { kontrolleraKundvy, kontrolleraProduktsida, rapport } from './kundvy.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 
 // Hämtar startsidan. Med lösenord: posta det först och behåll kakan.
-export async function hamtaStartsida(bas, losenord = null) {
+export async function hamtaStartsida(bas, losenord = null, vag = '/') {
   const huvuden = {
     'User-Agent':
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36',
@@ -59,7 +59,7 @@ export async function hamtaStartsida(bas, losenord = null) {
     if (!kaka) throw new Error('Inloggningen gav ingen kaka tillbaka.');
   }
 
-  const svar = await fetch(`${bas}/`, { headers: kaka ? { ...huvuden, Cookie: kaka } : huvuden });
+  const svar = await fetch(`${bas}${vag}`, { headers: kaka ? { ...huvuden, Cookie: kaka } : huvuden });
   const html = await svar.text();
   return { status: svar.status, url: svar.url, html };
 }
@@ -104,7 +104,8 @@ if (process.argv[1] && process.argv[1].endsWith('kundvy-kor.mjs')) {
       process.exit(2);
     }
 
-    const svar = await hamtaStartsida(bas, losenord);
+    const produktsida = arg.includes('--produktsida');
+    const svar = await hamtaStartsida(bas, losenord, produktsida ? `/products/${handle}` : '/');
     html = svar.html;
     console.log(`Kundvy hämtad: ${svar.url} — HTTP ${svar.status}, ${html.length} tecken\n`);
     if (svar.status === 429 || /Verifying your connection/i.test(html)) {
@@ -113,7 +114,9 @@ if (process.argv[1] && process.argv[1].endsWith('kundvy-kor.mjs')) {
     }
   }
 
-  const res = kontrolleraKundvy(html, butik, produkt);
+  const res = arg.includes('--produktsida')
+    ? kontrolleraProduktsida(html, butik, produkt)
+    : kontrolleraKundvy(html, butik, produkt);
   console.log(rapport(res));
   process.exit(res.gron ? 0 : 1);
 }
