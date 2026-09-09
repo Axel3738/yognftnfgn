@@ -121,19 +121,21 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    annonser bär produktens prefix — inte bara den som `kalla.kampanj_id`
    pekar på. En produkt kan ha både en test-ABO och en skalnings-CBO.
 
-3. **Brand-detektorn** (FAS2 uppdrag A). Klassa varje annons över SEX ytor:
-   copy, tal, inbränd text/slutkort, recensionsattribution, priset — **och
-   källbutikens ERBJUDANDEVILLKOR**.
-
-   ⚠️ **Sjätte ytan: villkoren** (funnen 2026-09-09 på HeimGuard, efter att
-   svenska annonser redan laddats upp med felet). Källbutikens annonser bär
-   Bäverbutikens regler — "fri frakt över 300 kr", "30 dagars öppet köp",
-   leveranstider, garantier — i copy, i inbränd text OCH i talet. OPS-butiken
-   har egna: fri frakt utan gräns och 14 dagars ångerrätt enligt svensk lag.
-   Ett kvarglömt "över 300 kr" är ett löfte butiken inte håller.
-   Läs villkoren ur `factory/butiker/<id>.yaml` (`frakt`, `retur`,
-   `garantier`) och jämför mot varje yta.
+3. **Brand-detektorn** (FAS2 uppdrag A):
+   `node factory/brand-detektor.mjs --produkt <id> --hamta`
+   Klassar varje annons över SEX ytor: copy, tal, inbränd text/slutkort,
+   recensionsattribution, priset — och källbutikens ERBJUDANDEVILLKOR.
    Dom per annons: `ren` / `bara-copy` / `kräver-omdubb` / `kräver-slutkortsbygge`.
+
+   Sjätte ytan är kod sedan 2026-09-09: `villkorsskanning.skannaVillkor`
+   jämför källannonsens löften mot butikens EGNA villkor ur
+   `factory/butiker/<id>.yaml` (`frakt`, `retur`, `leveranstid`), och en
+   annons med villkorsfel kan aldrig få domen `ren`. Ytan där felet står
+   avgör priset: tal → omdubb, inbränd → slutkort, copy → gratis.
+   Regel: säger detektorn "ingen butikskonfig hittad" körs jämförelsen INTE
+   — stoppa och peka den på butiken i stället för att lita på domarna.
+   *(Utan den här spärren friades 38 av 40 svenska HeimGuard-annonser; fem bar
+   "fri frakt över 300 kr", två av dem bevisade vinnare.)*
 
    **Priset är lika viktigt som brandnamnet.** Jämför källannonsens pris mot
    OPS-butikens `ekonomi.pris` i produktfilen. Skiljer de sig måste priset
