@@ -159,3 +159,36 @@ Det är infört i `MEKANISM.md` variabel 5.
 
 18 kandidater bedömdes mot mallen i två omgångar. Noll passerade. Det är inte ett fel i
 grinden — det är grinden som gör sitt jobb. Axels två valda varor står kvar på arket.
+
+
+## Wow-testet (2026-09-09) — den rättade metoden
+
+Sju kandidater dömdes om på frågan *händer det något synligt inom tre sekunder*, med
+leverantörs- och kundfilm eftersökt på TikTok, YouTube Shorts och Reels. **En passerade.**
+
+### Vedklyvborren — den enda som klarade
+
+De tre sekunderna: Sekund 0: en kubbe står på marken, borrmaskinen sätts mot träytan. Sekund 1-2: den svarta koniska skruven skruvar sig ned i veden, spån sprutar ut, en spricka löper genom kubben. Sekund 3: kubben spricker isär i två halvor som faller åt var sitt håll. Förvandlingen är helt visuell, sker i ett svep och kräver ingen text för att förstås.
+
+Ägarfrågan: **"Har du ved kvar att klyva?"** — och problemet pågår nu, mitten av september är
+när villaägaren gör vinterveden.
+
+Materialet finns i mängd: flera TikTok-klipp och YouTube-demos som visar borren mot riktig
+ved, utomhus, utan inbränd text. Listningens egen bild är dock en studiobild på vit botten
+och duger inte som annons — filmen får hämtas från leverantörens eget sociala material.
+
+**Den öppna frågan är priset.** Delvis. Proffsvarianten är samma koniska klyvskruv för traktor och kompaktlastare — Jansen JSK-500-MS03 konklyv och Jansen KL-200 SET (jansen-sverige.se), samt hydrauliska vedklyvar 4-40 ton hos klyvaved.se. Formen är identisk med vår, vilket ger visuell koppling, men de ligger flera tusen kronor upp, alltså långt över bandet 1 118-2 097 kr. Ett ankare i rätt band hittar jag inte. Åt andra hållet finns svensk handel klart under oss: Elgiganten (vedborr med 4 skaft), Amazon.se, Fyndiq (42 mm konisk vedklyv) och Direktimporter, från cirka 230 kr. Vårt pris 699 kr står alltså utan ankare ovanför sig och med billiga kopior under sig.
+
+### Domarna i övrigt
+
+| Dom | Produkt | Varför |
+|---|---|---|
+| skippa | Rännskopan | Hjälten i listningen är en universalkoppling som klämmer fast ett redskap på en stång — ett monteringssteg, och montering har inge |
+| tveksam | Växelhuspumpen – oljepump för utombord | Timingen är perfekt men wow-faktorn saknas helt: mitten av september är exakt upptagnings- och konserveringssäsong i Sverige, då v |
+| vet ej | Skumborsten | Produktbilden gick inte att läsa — alla AliExpress-CDN-värdar (ae01, ae04, ae-pic-a1, samtliga storleksvarianter) returnerar ident |
+| vet ej | Fonstervakten | Bilden gick inte att lasa - URL:en levererade en 1 kB stor "No Photo"-platshallare pa 100x100 px, sa jag kan inte se varan och gis |
+| vet ej | Uppladdningsbar COB-arbetslampa med ma | Domen är "vet ej" enligt regeln, eftersom bilden inte gick att läsa: länken gav AliExpress "No Photo"-platshållare på 100x100 px,  |
+| tveksam | Navskyddet | Ägarjakten stämmer — mitten av september är upptagningssäsong i Sverige, båttrailern används just nu för årets tyngsta körning, oc |
+
+Tre av de sju gick inte att bedöma: fel bild-URL skickades in i körningen, så agenterna
+fick en platshållare i stället för produktbilden. De döms om separat.
