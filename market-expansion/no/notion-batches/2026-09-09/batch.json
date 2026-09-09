@@ -1,0 +1,16 @@
+{
+ "ibc-tanktrekk": {
+  "produkt": "IBC-tanktrekk",
+  "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+  "pris_nok": 439,
+  "jamforpris_nok": 586,
+  "videos": {
+   "PD_4_H2": "meta:1080771684433274",
+   "PD_4_H1": "meta:973184302489895",
+   "PD_4_H3": "meta:1461480642480301",
+   "SP_3_H1": "meta:1049024191076191",
+   "CS_4_H1": "meta:1096638769714378",
+   "GT_4_H1": "meta:990453767422328"
+  }
+ }
+}
