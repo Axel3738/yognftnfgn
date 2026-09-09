@@ -33,7 +33,8 @@ OPS-kontot: en svensk och en norsk, med samma bevisade creatives fast
 ommärkta för OPS-butiken.
 
 Den som kör är oftast **VA:n (engelsktalande)** — svara henne på engelska,
-korta rader; svara Axel på svenska enligt CLAUDE.md. Hon gör allt i den här
+korta rader. Axel svaras på svenska. Språket följer LÄSAREN — hennes språk
+vinner över allt annat i CLAUDE.md. Hon gör allt i den här
 fasen: kör kommandot, granskar, och sätter kampanjen ACTIVE när den är grön.
 
 **Kräver:** `META_ACCESS_TOKEN` i miljön, butikens Meta-sida och pixel ifyllda

@@ -28,7 +28,8 @@ utan att vänta — bara klicken i checklistan återstår för VA:n.
 Detta är fabrikens huvudrutin. Processen i sin helhet står i
 `factory/PROCESS.md` — det dokumentet är facit, det här kommandot är
 körordningen. Den som kör är oftast **VA:n (engelsktalande)** — svara henne
-på engelska, korta rader; svara Axel på svenska enligt CLAUDE.md.
+på engelska, korta rader. Axel svaras på svenska. Språket följer LÄSAREN —
+hennes språk vinner över allt annat i CLAUDE.md.
 VA:ns egna klick står i `factory/VA-CHECKLIST.md`; fabriken genererar den
 ifylld till `factory/output/<id>/CHECKLISTA.md`.
 
