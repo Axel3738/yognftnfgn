@@ -1,0 +1,217 @@
+<title>Bäverjakten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
+<style>
+  /* Bäverjakten — swipe-vy för produktkandidater. Text på svenska, kort, en tanke per rad (Axel har dyslexi). */
+  :root {
+    --ground: #F3F5F0; --surface: #FFFFFF; --ink: #17201B; --muted: #5B6B61; --line: #D9DFD9;
+    --accent: #2E6B4E; --accent-ink: #FFFFFF; --yes: #2E6B4E; --no: #B9472C; --maybe: #8C6D1F;
+    --chip: #E6ECE6; --shadow: 0 10px 30px rgba(23, 32, 27, .14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #121714; --surface: #1B231E; --ink: #E9EEE9; --muted: #9AA89F; --line: #2C362F;
+      --accent: #5FB58C; --accent-ink: #0F1712; --yes: #5FB58C; --no: #E0704F; --maybe: #D4A83A;
+      --chip: #263029; --shadow: 0 10px 30px rgba(0, 0, 0, .45);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #121714; --surface: #1B231E; --ink: #E9EEE9; --muted: #9AA89F; --line: #2C362F;
+    --accent: #5FB58C; --accent-ink: #0F1712; --yes: #5FB58C; --no: #E0704F; --maybe: #D4A83A;
+    --chip: #263029; --shadow: 0 10px 30px rgba(0, 0, 0, .45);
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.45; -webkit-font-smoothing: antialiased; overscroll-behavior: none; }
+  .app { max-width: 480px; margin: 0 auto; min-height: 100dvh; display: flex; flex-direction: column; padding: 12px 12px 16px; gap: 10px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; padding: 4px 6px; }
+  header h1 { font-family: "Barlow Semi Condensed", "Atkinson Hyperlegible", system-ui, sans-serif; font-weight: 700; font-size: 22px; margin: 0; letter-spacing: .01em; }
+  header .count { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 700; }
+  .stack { position: relative; flex: 1; min-height: 520px; }
+  .card { position: absolute; inset: 0; background: var(--surface); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; touch-action: pan-y; user-select: none; will-change: transform; }
+  .card.behind { transform: scale(.96) translateY(10px); opacity: .6; pointer-events: none; }
+  .card.gone { transition: transform .32s ease-out, opacity .32s ease-out; }
+  .hero { aspect-ratio: 4 / 3; max-height: 33vh; width: 100%; background: var(--chip); position: relative; flex: 0 0 auto; }
+  .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .stamp { position: absolute; top: 18px; font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .06em; padding: 4px 14px; border: 4px solid; border-radius: 10px; opacity: 0; transform: rotate(-12deg); background: rgba(255,255,255,.82); }
+  .stamp.ja { left: 18px; color: var(--yes); border-color: var(--yes); }
+  .stamp.nej { right: 18px; color: var(--no); border-color: var(--no); transform: rotate(12deg); }
+  .body { padding: 12px 16px 14px; display: flex; flex-direction: column; gap: 8px; overflow: auto; }
+  .name { font-family: "Barlow Semi Condensed", "Atkinson Hyperlegible", sans-serif; font-weight: 700; font-size: 26px; line-height: 1.15; margin: 0; text-wrap: balance; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; color: var(--muted); font-size: 16px; }
+  .meta b { color: var(--ink); font-size: 20px; font-variant-numeric: tabular-nums; }
+  .chip { display: inline-block; background: var(--chip); color: var(--ink); border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .chip.live { background: var(--yes); color: var(--accent-ink); }
+  .chip.sedd { background: transparent; color: var(--muted); border: 1px solid var(--line); text-transform: none; letter-spacing: 0; }
+  .row { display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: start; }
+  .row .lbl { font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+  .row .txt { margin: 0; font-size: 17px; }
+  .row .txt.short { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .row.risk .lbl { color: var(--no); }
+  .links { display: flex; gap: 14px; align-items: center; margin-top: 2px; }
+  .links a, .links button { font: inherit; font-weight: 700; color: var(--accent); background: none; border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .links a:focus-visible, .links button:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .btn { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .04em; border: 0; border-radius: 16px; padding: 16px 10px; color: #fff; cursor: pointer; box-shadow: var(--shadow); }
+  .btn.no { background: var(--no); }
+  .btn.yes { background: var(--yes); color: var(--accent-ink); }
+  .btn:active { transform: translateY(1px); }
+  .small { display: flex; justify-content: space-between; padding: 0 6px; color: var(--muted); font-size: 15px; }
+  .small button { font: inherit; color: var(--muted); background: none; border: 0; padding: 6px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .small button.maybe { color: var(--maybe); font-weight: 700; }
+  .done { background: var(--surface); border-radius: 18px; box-shadow: var(--shadow); padding: 20px 18px; display: flex; flex-direction: column; gap: 12px; }
+  .done h2 { font-family: "Barlow Semi Condensed", sans-serif; font-size: 28px; margin: 0; }
+  .done ul { margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .done li { display: grid; grid-template-columns: 34px 1fr; gap: 8px; align-items: center; }
+  .done li .mark { font-weight: 700; font-family: "Barlow Semi Condensed", sans-serif; font-size: 20px; }
+  .done li.ja .mark { color: var(--yes); } .done li.nej .mark { color: var(--no); } .done li.kanske .mark { color: var(--maybe); }
+  .done a { color: var(--accent); font-weight: 700; }
+  .status { font-size: 14px; color: var(--muted); text-align: center; }
+  [hidden] { display: none !important; }
+  @media (prefers-reduced-motion: reduce) { .card.gone { transition: none; } }
+</style>
+
+<div class="app">
+  <header>
+    <h1>Bäverjakten</h1>
+    <div class="count" id="count">–</div>
+  </header>
+
+  <div class="stack" id="stack"></div>
+
+  <div class="actions" id="actions">
+    <button class="btn no" id="btnNo" type="button">NEJ</button>
+    <button class="btn yes" id="btnYes" type="button">JA</button>
+  </div>
+  <div class="small" id="small">
+    <button type="button" id="btnUndo">Ångra</button>
+    <button type="button" class="maybe" id="btnMaybe">Kanske</button>
+  </div>
+
+  <section class="done" id="done" hidden>
+    <h2 id="doneTitle">Klart.</h2>
+    <p id="doneText" style="margin:0"></p>
+    <ul id="doneList"></ul>
+    <div class="links"><button type="button" id="btnRestart">Se korten igen</button></div>
+  </section>
+
+  <div class="status" id="status">Laddar…</div>
+</div>
+
+<script>
+  const DATA = /*__DATA__*/[];
+  const ROUND = /*__ROUND__*/"";
+  const $ = (id) => document.getElementById(id);
+  const state = { decisions: {}, history: [], db: null, queue: [], storeName: 'lokalt' };
+
+  // --- lagring: db (delad, läses av Claude) med localStorage som reserv ---
+  function loadLocal() { try { return JSON.parse(localStorage.getItem('baverjakten:' + ROUND) || '{}'); } catch (e) { return {}; } }
+  function saveLocal() { try { localStorage.setItem('baverjakten:' + ROUND, JSON.stringify(state.decisions)); } catch (e) {} }
+  async function persist(id, decision) {
+    const p = DATA.find(x => x.id === id);
+    const doc = { goods_id: id, product: p ? p.namn : id, decision, round: ROUND, at: new Date().toISOString(), price_sek: p ? p.pris_sek : null, temu_url: p ? p.temu_url : null };
+    state.decisions[id] = doc; saveLocal();
+    if (state.db) {
+      try { await state.db.collection('swipes').doc(id).set(doc); setStatus('Sparat i molnet'); }
+      catch (e) { setStatus('Sparat lokalt (molnet svarade inte)'); }
+    } else { setStatus('Sparat lokalt'); }
+  }
+  async function unpersist(id) {
+    delete state.decisions[id]; saveLocal();
+    if (state.db) { try { await state.db.collection('swipes').doc(id).delete(); } catch (e) {} }
+  }
+  function setStatus(t) { $('status').textContent = t; }
+
+  // --- kortstack ---
+  function remaining() { return DATA.filter(p => !state.decisions[p.id]); }
+  function render() {
+    const stack = $('stack'); stack.innerHTML = '';
+    const rest = remaining();
+    $('count').textContent = (DATA.length - rest.length) + ' / ' + DATA.length;
+    if (!rest.length) { showDone(); return; }
+    $('done').hidden = true; $('actions').hidden = false; $('small').hidden = false; stack.hidden = false;
+    rest.slice(0, 2).reverse().forEach((p, i, arr) => {
+      const top = i === arr.length - 1;
+      const el = card(p); if (!top) el.classList.add('behind'); stack.appendChild(el);
+      if (top) attachDrag(el, p);
+    });
+  }
+  function card(p) {
+    const el = document.createElement('article'); el.className = 'card'; el.dataset.id = p.id;
+    el.innerHTML = `
+      <div class="hero"><img alt="${esc(p.namn)}" src="${p.hero}"><div class="stamp ja">JA</div><div class="stamp nej">NEJ</div></div>
+      <div class="body">
+        <h2 class="name">${esc(p.namn)}</h2>
+        <div class="meta"><b>${p.pris_sek} kr</b><span>Temu ${p.temu_pris_sek} kr</span><span class="chip">${esc(p.q4)}</span><span class="chip ${p.verif === 'LIVE' ? 'live' : 'sedd'}">${p.verif === 'LIVE' ? 'Länk kollad i dag' : 'Länk kollad ' + esc(p.verif_datum)}</span></div>
+        <div class="row"><div class="lbl">Varför</div><p class="txt short">${esc(p.hypotes)}</p></div>
+        <div class="row"><div class="lbl">Pengarna</div><p class="txt short">${esc(p.print)}</p></div>
+        <div class="row risk"><div class="lbl">Risken</div><p class="txt short">${esc(p.risk)}</p></div>
+        <div class="links"><a href="${p.temu_url}" target="_blank" rel="noopener">Öppna på Temu ↗</a><button type="button" class="more">Läs mer</button></div>
+      </div>`;
+    el.querySelector('.more').addEventListener('click', (e) => {
+      const open = el.classList.toggle('open');
+      el.querySelectorAll('.txt').forEach(t => t.classList.toggle('short', !open));
+      e.target.textContent = open ? 'Visa mindre' : 'Läs mer';
+    });
+    return el;
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+  function attachDrag(el, p) {
+    let sx = 0, sy = 0, dx = 0, dragging = false;
+    const ja = el.querySelector('.stamp.ja'), nej = el.querySelector('.stamp.nej');
+    el.addEventListener('pointerdown', (e) => { if (e.target.closest('a,button')) return; dragging = true; sx = e.clientX; sy = e.clientY; el.setPointerCapture(e.pointerId); el.style.transition = 'none'; });
+    el.addEventListener('pointermove', (e) => {
+      if (!dragging) return; dx = e.clientX - sx; const dy = e.clientY - sy;
+      el.style.transform = `translate(${dx}px, ${dy * .3}px) rotate(${dx / 18}deg)`;
+      ja.style.opacity = Math.min(1, Math.max(0, dx / 90)); nej.style.opacity = Math.min(1, Math.max(0, -dx / 90));
+    });
+    const end = () => {
+      if (!dragging) return; dragging = false;
+      if (dx > 90) decide(p.id, 'ja', el, 1); else if (dx < -90) decide(p.id, 'nej', el, -1);
+      else { el.style.transition = 'transform .2s'; el.style.transform = ''; ja.style.opacity = 0; nej.style.opacity = 0; }
+      dx = 0;
+    };
+    el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+  }
+  function decide(id, decision, el, dir) {
+    const top = el || document.querySelector('.card:not(.behind)');
+    if (top) { top.classList.add('gone'); top.style.transform = `translate(${(dir || (decision === 'nej' ? -1 : 1)) * 140}%, -6%) rotate(${(dir || 1) * 20}deg)`; top.style.opacity = '0'; }
+    state.history.push(id);
+    persist(id, decision).then(() => {});
+    setTimeout(render, el ? 300 : 280);
+  }
+  function showDone() {
+    $('actions').hidden = true; $('small').hidden = true; $('stack').hidden = true;
+    const done = $('done'); done.hidden = false;
+    const ds = DATA.map(p => ({ p, d: state.decisions[p.id] })).filter(x => x.d);
+    const ja = ds.filter(x => x.d.decision === 'ja').length, nej = ds.filter(x => x.d.decision === 'nej').length, kanske = ds.filter(x => x.d.decision === 'kanske').length;
+    $('doneTitle').textContent = 'Klart. ' + ja + ' ja.';
+    $('doneText').textContent = nej + ' nej, ' + kanske + ' kanske. Jag läser dina svar och kör nästa runda.';
+    $('doneList').innerHTML = ds.map(x => `<li class="${x.d.decision}"><span class="mark">${x.d.decision === 'ja' ? 'JA' : x.d.decision === 'nej' ? 'NEJ' : '?'}</span><span>${esc(x.p.namn)} · <a href="${x.p.temu_url}" target="_blank" rel="noopener">Temu</a></span></li>`).join('');
+  }
+
+  $('btnYes').addEventListener('click', () => decide(topId(), 'ja', null, 1));
+  $('btnNo').addEventListener('click', () => decide(topId(), 'nej', null, -1));
+  $('btnMaybe').addEventListener('click', () => decide(topId(), 'kanske', null, 1));
+  $('btnUndo').addEventListener('click', async () => { const id = state.history.pop(); if (!id) return; await unpersist(id); render(); });
+  $('btnRestart').addEventListener('click', () => { state.history = []; Object.keys(state.decisions).forEach(k => unpersist(k)); state.decisions = {}; render(); });
+  function topId() { const t = document.querySelector('.card:not(.behind)'); return t ? t.dataset.id : null; }
+  document.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') decide(topId(), 'ja', null, 1); if (e.key === 'ArrowLeft') decide(topId(), 'nej', null, -1); });
+
+  // --- start: rendera direkt, ljus upp molnet när det svarar ---
+  state.decisions = loadLocal();
+  render();
+  setStatus(Object.keys(state.decisions).length ? 'Fortsätter där du var' : 'Svep höger = ja, vänster = nej');
+  (async () => {
+    try {
+      const db = window.claude && window.claude.use ? await window.claude.use('db') : null;
+      if (!db) return;
+      state.db = db;
+      const snap = await db.collection('swipes').where('round', '==', ROUND).get();
+      snap.docs.forEach(d => { const v = d.data(); if (v && v.goods_id) state.decisions[v.goods_id] = v; });
+      saveLocal(); render();
+      setStatus('Kopplad. Svep höger = ja, vänster = nej');
+    } catch (e) { setStatus('Sparar lokalt'); }
+  })();
+</script>

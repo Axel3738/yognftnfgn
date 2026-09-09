@@ -1,0 +1,43 @@
+{
+ "goods_id": "601099553900496",
+ "url": "https://www.temu.com/se/g-601099553900496.html",
+ "final_url": "https://www.temu.com/se/g-601099553900496.html",
+ "http_status": 200,
+ "fetched": "2026-09-08T07:38:47Z",
+ "market": "se",
+ "verified": true,
+ "verdict": "LIVE",
+ "title": "Herrskor, Slippers för Herrar och Damer, Casual Non-Slip Sandaler, Inomhus &amp; Utomhus Sportstrand Duschskor, Öppen Tå, EVA-överdel, Rutigt Mönster, Läm",
+ "category_path": [
+  "Herrskor",
+  "Tofflor herr"
+ ],
+ "price": "116.18",
+ "currency": "SEK",
+ "availability": "InStock",
+ "rating": 4.8,
+ "review_count": 6306,
+ "review_dates": [
+  "2025-09-08",
+  "2025-09-17",
+  "2025-11-09",
+  "2024-*-09"
+ ],
+ "images": [
+  "https://img.kwcdn.com/product/fancy/991e2d1c-3c3e-49b6-9ff0-9866da2aad51.jpg",
+  "https://img.kwcdn.com/product/fancy/f70b4a91-68c6-4071-9502-7f6dec305e18.jpg",
+  "https://img.kwcdn.com/product/fancy/8951a60c-fae1-40e9-b795-c393fcd20332.jpg",
+  "https://img.kwcdn.com/product/fancy/26199887-9eac-4a2e-94a9-f4cc04af6e2a.jpg",
+  "https://img.kwcdn.com/product/fancy/bec6367c-a3f3-4a7b-a165-ca2f09f6a5d1.jpg",
+  "https://img.kwcdn.com/product/fancy/dece752e-a9b6-4793-9a67-b54be92b0535.jpg",
+  "https://img.kwcdn.com/product/fancy/814b3fab-a141-41f9-b16a-f53eb671c6a5.jpg",
+  "https://img.kwcdn.com/product/fancy/a0600e77-96c1-4b24-a238-7010e00d3943.jpg",
+  "https://img.kwcdn.com/product/fancy/a7562e89-a797-4ed8-be53-4d33c22e6f73.jpg",
+  "https://img.kwcdn.com/product/fancy/df4e4942-01db-4d4b-b78b-cbaf44ae9516.jpg",
+  "https://img.kwcdn.com/product/fancy/f5f358dd-031b-41a9-b6d6-e39b28186723.jpg"
+ ],
+ "video_url": null,
+ "video_uploaded": null,
+ "sku": null,
+ "hero_file": "hero.jpg"
+}

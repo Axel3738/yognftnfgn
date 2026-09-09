@@ -12,3 +12,9 @@ market-expansion/no/video-batches/fran-meta/
 
 # Sessionens tillfälliga arbetsyta (nedladdad media, QA-frames) — inte källkod
 .scratch/
+docs/temu-jakt-v2/jakt/v22/hamtkologg.txt
+# Nedladdade leverantörsbilder och rådata från AliExpress — artefakter, inte källkod
+docs/temu-jakt-v2/jakt/v24/ali-bild/
+docs/temu-jakt-v2/jakt/v24/ali-prod-*.json
+# Produktjaktens nedladdade produktbilder — hämtas om vid varje körning
+produktjakt/korningar/*/bilder/

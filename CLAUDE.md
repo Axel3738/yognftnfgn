@@ -222,6 +222,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
+| `/produktjakt` | **Rutin 06:30 varje dag:** nya produkter ur AliExpress → ekonomigallring → offertark → sida Axel laddar ner från |
 
 ### Nattrutinerna
 
@@ -237,6 +238,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 15:00 | `0 13 * * *` | Översättning till Norge (bild + video ur Notion-kön `SE-ACTIVE to be translated`) | `/oversatt NO` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
+| 06:30 | `30 4 * * *` | Produktjakt | `/produktjakt` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
 kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag). Siffrorna räknas ändå
@@ -471,6 +473,35 @@ referensbilder `google/nano-banana-edit` (matchar en Winning Creative).
 namn (`..._4_1` är bild, `..._4_H1` är video) och görs av redigerarna.
 
 ⚠️ **Importera aldrig från `pipeline/` här** — det är Grillklinikens brand kit.
+
+### `produktjakt/` — automatisk produkthittare (AKTIV)
+Motorn bakom `/produktjakt`. Fristående; **kräver `openpyxl`** (`pip install openpyxl`), inget annat.
+
+```bash
+cd produktjakt
+python3 hitta.py --antal 12 --sokord 14        # sök AliExpress, gallra, skriv korningar/<datum>/fynd.json
+python3 offert.py --fynd korningar/<datum>/fynd.json   # bygg leverantörens offertark (xlsx)
+python3 sida.py  --fynd korningar/<datum>/fynd.json    # bygg sidan Axel laddar ner från
+```
+
+⚠️ **Källan är AliExpress, inte Temu.** Temu stryper containerns IP till ~1 hämtning per timme (mätt
+hela 2026-09-08: fyra lyckade av tjugo försök). Samma leverantörsvaror finns på AliExpress, som
+svarar utan strypning och vars länkar går att öppna. `docs/temu-jakt-v2/REGEL.md` avsnitt 8.
+
+⚠️ **`sedda.json` måste committas** efter varje körning — annars föreslås samma varor i morgon.
+
+⚠️ **Prisfälten i arket lämnas alltid tomma.** Arket är en förfrågan till leverantören, inte ett
+facit. Vår egen räkning står som anteckning i kolumn E.
+
+⚠️ **Sidan publiceras mot samma artefakt-URL varje dag** (`url`-parametern) — annars tappar Axel
+bort vilken länk som gäller. URL:en står i `.claude/commands/produktjakt.md`.
+
+⚠️ **Rutinen kör från grenen `claude/fortsatta-pa-denna-c28bmv`, inte från `main`** (per 2026-09-09).
+`produktjakt/` finns bara där. Undantaget från nattrutinsregeln ovan är möjligt just för att rutinen
+är bunden till en **fast session** — dess prompt börjar därför alltid med `git fetch` + `git checkout -B`
+mot grenen, eftersom en omstartad container klonar `main` och då saknar hela mappen. Trigger
+`trig_01AnGMfca7s1thCUqNbMSRoR`, fast session `session_016jBJVGuyny8S3j2XPSM26Z`. Når koden `main`:
+byt tillbaka checkouten och pushen till `main` i kommandofilen och stryk den här raden.
 
 ### `commission/` — redigerarnas commission
 Motorn bakom `/commission`. Fristående, **inga npm-beroenden**.

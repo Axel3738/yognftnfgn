@@ -1,0 +1,244 @@
+<title>Produktjakt V2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F2F3EF; --paper:#FAFAF7; --ink:#1B2320; --ink-2:#4A5450; --ink-3:#7A847F;
+  --line:#D6DAD4; --line-2:#E6E8E3;
+  --skog:#2E5B4E; --skog-soft:#DFE9E3; --skog-ink:#1F4034;
+  --varning:#B8891B; --varning-soft:#F6EBCC; --varning-ink:#6E5008;
+  --stopp:#9E3F2E; --stopp-soft:#F2DDD7;
+  --mark:#C9A96E;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131917; --paper:#1B2321; --ink:#E8EBE6; --ink-2:#B4BCB6; --ink-3:#7F8983;
+    --line:#2E3834; --line-2:#252E2A;
+    --skog:#7FB8A2; --skog-soft:#1F3129; --skog-ink:#BFE0D0;
+    --varning:#D9AB3C; --varning-soft:#3A2F12; --varning-ink:#F0D68A;
+    --stopp:#D9705C; --stopp-soft:#3A201B;
+    --mark:#C9A96E;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131917; --paper:#1B2321; --ink:#E8EBE6; --ink-2:#B4BCB6; --ink-3:#7F8983;
+  --line:#2E3834; --line-2:#252E2A;
+  --skog:#7FB8A2; --skog-soft:#1F3129; --skog-ink:#BFE0D0;
+  --varning:#D9AB3C; --varning-soft:#3A2F12; --varning-ink:#F0D68A;
+  --stopp:#D9705C; --stopp-soft:#3A201B;
+  --mark:#C9A96E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:40px 24px 80px}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,"Times New Roman",serif;font-weight:400;line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,6vw,64px);letter-spacing:-0.01em}
+h2{font-size:32px;margin:56px 0 16px;padding-top:24px;border-top:1px solid var(--line)}
+h3{font-size:24px;margin:28px 0 10px}
+p{max-width:68ch;margin:0 0 12px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--skog);margin-bottom:12px}
+.lede{font-size:19px;color:var(--ink-2);max-width:60ch;margin-top:16px}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--skog-ink);text-decoration-color:var(--line);overflow-wrap:anywhere}
+a:hover{text-decoration-color:currentColor}
+:focus-visible{outline:2px solid var(--skog);outline-offset:2px}
+.lage{margin-top:32px;border:1px solid var(--varning);background:var(--varning-soft);color:var(--ink);padding:18px 20px;border-radius:4px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.lage .ikon{font-family:"IBM Plex Mono",monospace;font-weight:500;color:var(--varning-ink);border:1px solid var(--varning);border-radius:3px;padding:2px 7px;font-size:12px;letter-spacing:.08em;margin-top:3px}
+.lage p{margin:0 0 6px;max-width:none}
+.lage p:last-child{margin:0}
+.rank{display:grid;gap:8px;margin:20px 0}
+.rad{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:12px 16px}
+.rad .n{font-family:"Instrument Serif",Georgia,serif;font-size:28px;color:var(--ink-3);text-align:center}
+.rad .t{font-weight:600}
+.rad .t small{display:block;font-weight:400;color:var(--ink-3);font-size:13px}
+.rad.top{border-left:4px solid var(--skog)}
+.rad.if{border-left:4px solid var(--varning)}
+.pill{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;padding:2px 8px;border-radius:3px;border:1px solid var(--line);white-space:nowrap}
+.pill.ok{border-color:var(--skog);color:var(--skog-ink);background:var(--skog-soft)}
+.pill.os{border-color:var(--varning);color:var(--varning-ink);background:var(--varning-soft)}
+.pill.fail{border-color:var(--stopp);color:var(--stopp);background:var(--stopp-soft)}
+.pill.pend{border-color:var(--ink-3);color:var(--ink-2);background:var(--line-2)}
+.kort{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--skog);padding:22px 24px;margin:18px 0;border-radius:2px}
+.kort.if{border-left-color:var(--varning)}
+.kort header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;margin-bottom:10px}
+.kort h3{margin:0}
+.kort .id{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3)}
+.kort .hook{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:22px;color:var(--skog-ink);margin:4px 0 14px}
+.spec{display:grid;grid-template-columns:170px 1fr;gap:6px 16px;font-size:14px;margin:0}
+.spec dt{color:var(--ink-3);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+.spec dd{margin:0;max-width:72ch}
+.spec dd.next{background:var(--skog-soft);padding:8px 10px;border-radius:3px}
+@media (max-width:600px){.spec{grid-template-columns:1fr;gap:2px 0}.spec dt{margin-top:8px}.rad{grid-template-columns:36px 1fr}.rad .p{grid-column:2}}
+.tabell{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--paper);margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:1100px}
+th{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--ink-3);padding:10px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid var(--line-2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.id{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3)}
+.fot{font-size:13px;color:var(--ink-3);max-width:72ch;margin-top:10px}
+ol.lar{max-width:72ch;padding-left:22px}
+ol.lar li{margin-bottom:10px}
+code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--line-2);padding:1px 5px;border-radius:3px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Bäverbutiken · 2026-09-04 11:00 UTC · konsoliderad slutrapport</div>
+  <h1>Produktjakt V2</h1>
+  <p class="lede">Två pass, 1 042 Temu-listningar, 386 + 9 kluster koncept, nio gater. En sanning: <strong>en produkt är testklar</strong>, tre väntar på leverantörsmaterial, sjutton bevakas, resten är fällda med orsak.</p>
+
+  <div class="lage">
+    <span class="ikon">LÄGET</span>
+    <div>
+      <p><strong>Allt parallellt är stoppat</strong> (0 processer, 0 routines, kontrollerat 10:57 UTC). Den här sidan och <code>docs/temu-jakt-slutrapport.md</code> är den enda beslutsgrunden; V2.2:s <code>v22/RESULTAT.md</code> är facit för konceptdomarna och V2.1-datasetet är avstämt mot den.</p>
+      <p><strong>Temu är blockerat</strong> (<code>/se</code> sedan 00:58, USA-vägen sedan ~09:00, sista prov 10:29 UTC). Fält som kräver produktsidan — video, galleri, SE-pris, varianter — står som <span class="pill pend">PENDING</span>. Pris i USD kommer ur sökutdrag eller USA-sidan och räknas om (SE-Temu ≈ USD × 6,96–8,16, landad ≈ × 1,5).</p>
+    </div>
+  </div>
+
+  <h2>Rangordningen</h2>
+  <div class="rank">
+    <div class="rad top"><span class="n num">1</span><span class="t">Isolerad utekattkoja i Oxford-tyg<small>601101118338671 · DNA 79 · 599 kr · HIGH / MEDIUM (publik)</small></span><span class="p"><span class="pill ok">TEST NOW</span></span></div>
+    <div class="rad if"><span class="n num">2</span><span class="t">Taköverdrag till husvagn/husbil, 5–12 m<small>601101311828193 · DNA 72 · 799 kr · LOW</small></span><span class="p"><span class="pill os">TEST IF MATERIAL VERIFIED</span></span></div>
+    <div class="rad if"><span class="n num">3</span><span class="t">Staketstolps-reparationsbygel<small>601103866118857 · DNA 78 · 499 / 799 kr · MEDIUM</small></span><span class="p"><span class="pill os">TEST IF MATERIAL VERIFIED</span></span></div>
+    <div class="rad if"><span class="n num">4</span><span class="t">Tändvedsklyv i gjutjärn (ring + kil)<small>601099583674464 m.fl. · DNA 72 · 599 kr · MEDIUM / LOW</small></span><span class="p"><span class="pill os">TEST IF MATERIAL VERIFIED</span></span></div>
+    <div class="rad"><span class="n num">5–21</span><span class="t">Sjutton koncept som håller strukturellt men saknar listning, pris eller publik<small>se WATCH nedan · DNA 42–82 · LOW</small></span><span class="p"><span class="pill pend">WATCH</span></span></div>
+    <div class="rad"><span class="n num">—</span><span class="t">370+ fällda koncept, tjugo lärorika nedan<small>alla med orsak i koncept.json och v22/</small></span><span class="p"><span class="pill fail">REJECT</span></span></div>
+  </div>
+  <p class="fot">Räknat strikt enligt fingeravtrycket finns en produkt som kan testas i dag. De tre i prioritet 2 blir TEST NOW eller REJECT den dag leverantörsmaterialet går att se — ett tekniskt hinder, inte ett kommersiellt.</p>
+
+  <h2>1 · TEST NOW</h2>
+  <article class="kort">
+    <header><h3>1 · Isolerad utekattkoja i Oxford-tyg, hopfällbar</h3><span class="id">601101118338671 · djur</span></header>
+    <div class="hook">”Har du en utekatt?”</div>
+    <dl class="spec">
+      <dt>Bästa Temu-länk</dt><dd><a href="https://www.temu.com/se/g-601101118338671.html">temu.com/se/g-601101118338671</a> — 10,93 USD · ★4,9 (98 %) · 71–72 rec · 6 bilder · video 61 s. Live på SE-sajten. Reserv 601102077704284 (12 USD, ★4,7, 99+, material oläst).</dd>
+      <dt>Konceptdom</dt><dd><span class="pill ok">PASS</span> objekt · presens (regn och kyla i sep–okt) · hylla · variant (med villkor) · hook · publik (med villkor)</dd>
+      <dt>Listningsdom</dt><dd><span class="pill ok">PASS</span> Enda listningen i hela jakten där material och pris är sedda och godkända. Ingen av 14 alternativ slår den.</dd>
+      <dt>Materialdom</dt><dd><span class="pill ok">PASS (sedd)</span> Hero: riktig orange katt sover i kojan, utomhus i höstlöv, textfri — exakt fingeravtryckets hero. Video 61 s: studiodemo (hopfällning, vatten pärlar av) = bevisklipp i mitten, aldrig öppning.</dd>
+      <dt>Ekonomidom</dt><dd><span class="pill ok">PASS</span> Landad 114–134 kr. Vid 599 kr: 4,48–5,25× · BE-CPA 465–485 kr · BE-ROAS 1,24–1,29 — bäst i hela products.json.</dd>
+      <dt>Svensk hylla</dt><dd><span class="pill ok">PASS (verifierad)</span> Kedjorna har bara inomhusbäddar. Ankare: Supercat 1 799, Kerbl 1 017, VEVOR 1 048. Look-alikes: Shein 424, Fyndiq 395/504, PriceRunner 157. Ad Library SE: 3 aktiva annonsörer sedan 18–29 aug.</dd>
+      <dt>Vinnar-DNA</dt><dd><strong>79 / 100</strong></dd>
+      <dt>Konfidens</dt><dd>HIGH på material, ekonomi och hylla · MEDIUM på publiken</dd>
+      <dt>Största risk</dt><dd>Look-alike-priset 157–504 kr + tre konkurrenter igång sedan två veckor — strandtofflornas felläge. Publikbasen ~538 000 utekatter: räcker för 1 000 kr/dag, taket kommer tidigare vid skalning.</dd>
+      <dt>Exakt nästa åtgärd</dt><dd class="next"><strong>/ny-produkt utekattkoja 1000</strong> — test-ABO enligt regel 11, <strong>599 kr</strong>, <strong>EN SKU: största storleken, svart</strong>. Creativen öppnar på heron och sätter trähusankaret 1 017–1 799 kr i bild. Copyn skrivs till ägaren vid huset — trappan, altanen, höstregnet — aldrig till ”kattmänniskor”. Mått i cm på produktsidan, ingen storlekstabell. Beställ provexemplar och kontrollera isoleringen före skalning.</dd>
+    </dl>
+  </article>
+
+  <h2>2 · TEST IF MATERIAL VERIFIED</h2>
+  <article class="kort if">
+    <header><h3>2 · Taköverdrag till husvagn/husbil, 5–12 m</h3><span class="id">601101311828193 · husvagn-mc (V2.2)</span></header>
+    <div class="hook">”Står husvagnen ute i vinter?”</div>
+    <dl class="spec">
+      <dt>Bästa Temu-länk</dt><dd><a href="https://www.temu.com/se/g-601101311828193.html">temu.com/se/g-601101311828193</a> — 25 USD · ★4,5 (90 %) · 46 rec (Seznam-utdrag). Alternativ helöverdrag 601102273698057 — 28 USD · ★4,6 · 99+ rec.</dd>
+      <dt>Konceptdom</dt><dd><span class="pill ok">PASS</span> Motorhöljets struktur punkt för punkt: dyrt fordon som står ute, uppställning pågår nu, improviserad old way, ingen kedja i formen, ankare långt över.</dd>
+      <dt>Listningsdom</dt><dd><span class="pill pend">PENDING_VERIFICATION</span> pris ur utdrag, SKU-lista oläst</dd>
+      <dt>Materialdom</dt><dd><span class="pill pend">PENDING</span> BLOCKED_SOURCE. Krav: överdraget dras över taket på en riktig vagn, utomhus, inom 3 s; textfri hero på fordonet.</dd>
+      <dt>Ekonomidom</dt><dd><span class="pill ok">PASS</span> Landad 261–306 kr → vid 799 kr 2,61–3,06× · BE-CPA 493–538 kr.</dd>
+      <dt>Svensk hylla</dt><dd><span class="pill ok">PASS via ankare (verifierat)</span> Ingen kedja säljer tak-only-formen. Campmaster takskydd från 1 495 (= 1,87×), EuroTrail 1 599–2 395, Brunner 2 999, Hindermann 1 145–2 195.</dd>
+      <dt>Vinnar-DNA</dt><dd><strong>72 / 100</strong></dd>
+      <dt>Konfidens</dt><dd>LOW — material och variantlista osedda, priset är proxy</dd>
+      <dt>Största risk</dt><dd>25 USD är misstänkt lite för ett 5–12 m tak: tunnare och mindre än titeln lovar. Näst: att Biltema/Jula har ett husvagnsöverdrag under 700 kr (fällde 19 av 34 i husvagnsklustret).</dd>
+      <dt>Exakt nästa åtgärd</dt><dd class="next">När Temu svarar: hämta båda listningarna (<code>hamta-langsam.py --burst 7</code> i en aktiv tur), frames 0–3,5 s + hero, döm enligt material-instruktionen. Beställ prov i vagnens längd, mät tygvikt och mått mot titeln. Fyra kedjesökningar i butik. Först då /ny-produkt vid 799 kr.</dd>
+    </dl>
+  </article>
+
+  <article class="kort if">
+    <header><h3>3 · Staketstolps-reparationsbygel med markspett</h3><span class="id">601103866118857 · tomt (V2.2)</span></header>
+    <div class="hook">”Lutar staketstolpen efter höststormen?”</div>
+    <dl class="spec">
+      <dt>Bästa Temu-länk</dt><dd><a href="https://www.temu.com/se/g-601103866118857.html">temu.com/se/g-601103866118857</a> — 16 USD · ★4,8 (96 %) · 89 rec (Seznam-utdrag). 2-set / 4-set.</dd>
+      <dt>Konceptdom</dt><dd><span class="pill ok">PASS</span> Skadan har redan inträffat (stolpen ruttnad, sektionen på sned), old way = bräda och spik eller gjuta ny, payoffen syns i en stillbild, äkta flerköp.</dd>
+      <dt>Listningsdom</dt><dd><span class="pill pend">PENDING_VERIFICATION</span></dd>
+      <dt>Materialdom</dt><dd><span class="pill pend">PENDING</span> BLOCKED_SOURCE. Krav: spettet slås ned bredvid stolpen och staketet rätas inom 3 s.</dd>
+      <dt>Ekonomidom</dt><dd><span class="pill ok">PASS</span> Landad 167–196 kr → vid 499 kr (2-set) 2,55–2,99× · BE-CPA 303–332 kr; 4-set 799 kr.</dd>
+      <dt>Svensk hylla</dt><dd><span class="pill pend">PENDING (stark PASS-indikation)</span> Bauhaus: 232 stolptillbehör, noll reparationsbyglar — kedjorna säljer stolpskor för <em>nya</em> stolpar. Ad Library SE: 0 i reparationsformen. Kvar: Biltema i butik.</dd>
+      <dt>Vinnar-DNA</dt><dd><strong>78 / 100</strong></dd>
+      <dt>Konfidens</dt><dd>MEDIUM</dd>
+      <dt>Största risk</dt><dd>Hyllan: har Biltema/Bauhaus samma bygel för 149 kr faller konceptet. Näst: montering — slägga och 20–30 minuter (30 % av förlorarna; PTZ-kameran klarade det för att payoffen syns direkt).</dd>
+      <dt>Exakt nästa åtgärd</dt><dd class="next">Kolla Biltema i butik/app (”stolpsko”, ”stolpspjut”). När Temu svarar: hämta och döm materialet. Beställ 2-set som prov och laga en stolpe på riktigt — filma det; saknas leverantörsvideon är den egna filmen annonsen. Sedan /ny-produkt vid 499/799 kr.</dd>
+    </dl>
+  </article>
+
+  <article class="kort if">
+    <header><h3>4 · Tändvedsklyv i gjutjärn (ring + kil)</h3><span class="id">601099583674464 · ved</span></header>
+    <div class="hook">”Klyver du tändved med yxa?”</div>
+    <dl class="spec">
+      <dt>Bästa Temu-länk</dt><dd>Prissatt referens <a href="https://www.temu.com/se/g-601099583674464.html">temu.com/se/g-601099583674464</a> — 16,25 USD · ★4,9 · 28 rec · 1 bild (packshot). Strukturellt bäst: 601099561039096 (9 lbs, ett stycke, pris olöst). För material: 601099702553211 (handskar ingår → hand i bild), 601099595396016 (GoPlus).</dd>
+      <dt>Konceptdom</dt><dd><span class="pill ok">PASS</span> Ägd sak (ved, klubba, huggkubb), daglig friktion från oktober, kroppslig risk, improviserad old way, ~1,1 M vedeldade eldstäder i bruk.</dd>
+      <dt>Listningsdom</dt><dd><span class="pill os">ALTERNATIVE_LISTING_REQUIRED</span> Den enda sedda listningen har bara en packshot (bultad ram = montering); 24 andra är BLOCKED_SOURCE.</dd>
+      <dt>Materialdom</dt><dd><span class="pill pend">PENDING</span> FAIL på det enda som setts. Krav: slaget och den kluvna stickan inom 3 s.</dd>
+      <dt>Ekonomidom</dt><dd><span class="pill ok">PASS</span> Landad 170–199 kr → vid 599 kr 3,0–3,5× · BE-CPA 400+. +50 kr frakt spräcker 499 men inte 599 — därför 599. Köp 3–5 kg-versionen.</dd>
+      <dt>Svensk hylla</dt><dd><span class="pill ok">PASS via ankare, med förbehåll</span> Kindling Cracker 1 249 (= 2,08×), Jula/Clas 999. Aduro 295 / Northix 419 ej i lager. Kvar som hot: setrimmer.se 288/365 i lager.</dd>
+      <dt>Vinnar-DNA</dt><dd><strong>72 / 100</strong></dd>
+      <dt>Konfidens</dt><dd>MEDIUM på ekonomi · LOW på material</dd>
+      <dt>Största risk</dt><dd>Prispositionen mot setrimmer 288 kr (klyvkonens mönster). Trippeln ”old way funkar ∧ jämförelsehandlad ∧ &lt; 300” slår inte till vid 599; setrimmers bundling 729 kr visar att svenskar betalar &gt; 700 när det paketeras rätt. Spela mot 1 249, aldrig mot 288.</dd>
+      <dt>Exakt nästa åtgärd</dt><dd class="next">När Temu svarar: hämta 601099702553211, 601099595396016, 601099561039096 och döm materialet. Beställ 3–5 kg-versionen, väg den, räkna frakten på riktigt. Sedan /ny-produkt vid 599 kr med Kindling Cracker-ankaret i creativen.</dd>
+    </dl>
+  </article>
+
+  <h2>3 · WATCH</h2>
+  <p>Koncept som håller strukturellt men saknar en användbar listning, ett verifierat pris eller ligger under publikgolvet. Fält som kräver Temus produktsida står som PENDING.</p>
+  <div class="tabell"><table>
+    <thead><tr><th>#</th><th>Produkt</th><th>Bästa Temu-länk</th><th>Koncept</th><th>Listning</th><th>Material</th><th>Ekonomi</th><th>Svensk hylla</th><th>DNA</th><th>Konf.</th><th>Största risk</th><th>Exakt nästa åtgärd</th></tr></thead>
+    <tbody>
+      <tr><td>5</td><td>Vinterhuv till hönsgården</td><td class="id">601103333430208 · 27 USD · 99+ rec</td><td>PASS gate 1–3, <strong>publik under golvet</strong> (35–70 000 hushåll)</td><td>PENDING</td><td>PENDING</td><td>PASS (799: 2,42–2,83×)</td><td>PASS (15 träffar, alla hela gårdar)</td><td class="num">82</td><td>MED/LOW</td><td>Formen kan vara ”en presenning”; mått i fot</td><td>Bevaka; test bara om publiken bevisas &gt; 100 000</td></tr>
+      <tr><td>6</td><td>Överdrag till hydraulisk vedklyv</td><td class="id">601099603802865 (+601099589782206)</td><td>PASS (ton = ägarkänd)</td><td>ALT. LISTING REQUIRED</td><td>PENDING</td><td><strong>FAIL på lästa priset</strong> (SE 437–494 kr)</td><td>PASS</td><td class="num">76</td><td>MED</td><td>Klyven rullas in i garaget</td><td>Sök överdrag till liten el-klyv 5–7 ton (&lt; 200 kr)</td></tr>
+      <tr><td>7</td><td>Solpanel till åtelkameran</td><td class="id">601099525192346 (pris oläst); syster 41 USD</td><td>PASS</td><td>ALT. LISTING REQUIRED</td><td>PENDING</td><td>FAIL på 41 USD; PASS om 18–25 USD</td><td>PASS via ankare (Hunter 1 299)</td><td class="num">71</td><td>MED/LOW</td><td>Fackhandeln säljer formen</td><td>Läs primärens pris; under 25 USD → material → test 599–799</td></tr>
+      <tr><td>8</td><td>Stödhjul till grinden</td><td class="id">601102369829095 · 18 USD · ★4,9</td><td>PASS objekt/hylla, <strong>presens svag</strong> (kronisk)</td><td>PENDING</td><td>PENDING</td><td>PASS (549: 2,49–2,92×)</td><td>PASS verifierad</td><td class="num">74</td><td>LOW</td><td>Kronisk friktion = kranskyddets fälla</td><td>Bevaka; ev. andra produkt till bygelns publik</td></tr>
+      <tr><td>9</td><td>Fruktplockare på teleskopstång</td><td class="id">601101790468176 · 16 USD · ★4,9</td><td>PASS</td><td>PENDING</td><td>PENDING</td><td>PASS (499: 2,55–2,99×)</td><td>PENDING</td><td class="num">66</td><td>MED</td><td>Säsongen slut mitten av oktober; 20 min/år</td><td><strong>Backlog augusti 2027</strong></td></tr>
+      <tr><td>10</td><td>Frontskydd till husvagn</td><td class="id">ingen listning funnen</td><td>PASS</td><td>—</td><td>—</td><td>—</td><td>PASS (Hindermann 1 145–2 195)</td><td>—</td><td>—</td><td>Listningen saknas</td><td>Sök ”caravan front cover” när Temu svarar</td></tr>
+      <tr><td>11</td><td>Regn-/vinterhuv till hundgården</td><td class="id">601099679566501 (pris oläst); syster 49 USD</td><td>PASS</td><td>ALT. LISTING REQUIRED</td><td>PENDING</td><td>FAIL på syster, PENDING primär</td><td>PASS (alla hela hundgårdar)</td><td class="num">70</td><td>LOW</td><td>Prissatta listningar för dyra</td><td>Läs primärens pris; under 25 USD → material</td></tr>
+      <tr><td>12</td><td>Stocklyft / vändhake med stödben</td><td class="id">601099592756087</td><td>PASS</td><td>PENDING</td><td>PENDING</td><td>UNKNOWN (4–6 kg stål)</td><td>PENDING</td><td class="num">64</td><td>LOW</td><td>Frakt + smal ägarklass + ”5-i-1”</td><td>Pris först; över 25 USD → REJECT</td></tr>
+      <tr><td>13</td><td>Solcellsventilation till vinterförvarad båt</td><td class="id">601099699520443</td><td>PASS objekt/hylla, <strong>payoff feb–apr</strong></td><td>PENDING</td><td>PENDING</td><td>UNKNOWN</td><td>PASS via ankare (Seatec 1 249)</td><td class="num">55</td><td>LOW</td><td>Kranskyddsfällan; marin form saknas</td><td>Bevaka; kräver rund däcksventilator &lt; 20 USD</td></tr>
+      <tr><td>14</td><td>Låsbar utomhus-eldosa</td><td class="id">601102831921599 · 24 USD · ★4,4</td><td>PASS men <strong>latent behov</strong></td><td>PENDING</td><td>PENDING</td><td>PASS (749: 2,55–2,99×)</td><td>PENDING</td><td class="num">54</td><td>LOW</td><td>Latent behov = 55 % av förlorarna</td><td>Bevaka. Inte nu</td></tr>
+      <tr><td>15</td><td>Jaktparaply, spänns runt stam</td><td class="id">601103949421856</td><td>PASS</td><td>BLOCKED_SOURCE</td><td>PENDING</td><td>PENDING</td><td>PASS verifierad (Ameristep 479)</td><td class="num">68</td><td>LOW</td><td>Dyr frakt; många torn har tak</td><td>Pris först när Temu svarar</td></tr>
+      <tr><td>16</td><td>Tornsits med spännrem</td><td class="id">601099667428425 (+3)</td><td>PASS</td><td>BLOCKED_SOURCE</td><td>PENDING</td><td>PENDING</td><td>PASS verifierad (Carinthia 559)</td><td class="num">60</td><td>LOW</td><td>Ser ut som 49-kronors sittunderlag</td><td>Pris + hero när Temu svarar</td></tr>
+      <tr><td>17</td><td>Sopkärlslocklås med rem</td><td class="id">601101587576926 (+2)</td><td>PASS (objektet bevisat)</td><td>BLOCKED_SOURCE</td><td>PENDING</td><td>PENDING (troligen &lt; 100 kr)</td><td>PASS verifierad (Smartaskydd 459)</td><td class="num">62</td><td>LOW</td><td>Låses upp varje hämtdag</td><td>Pris först; kräver 2-pack för 300 kr</td></tr>
+      <tr><td>18</td><td>Hängrännesats till lövblås</td><td class="id">601103248788835 (+1)</td><td>PASS</td><td>BLOCKED_SOURCE</td><td>PENDING</td><td>PENDING</td><td>PASS verifierad (Stihl 745)</td><td class="num">68</td><td>LOW</td><td>Adapterpassform → returer</td><td>Läs variantlistan när Temu svarar</td></tr>
+      <tr><td>19</td><td>Väggstöd till stege</td><td class="id">601099637369908 (+8)</td><td>PASS, negativ rymd (inomhus, montering)</td><td>BLOCKED_SOURCE</td><td>PENDING</td><td>PENDING</td><td>PASS verifierad (Wibe 779–974)</td><td class="num">62</td><td>LOW</td><td>Biltema (403) kan ha 300-kronorsstöd; 1 m stålfrakt</td><td>Biltema i butik först</td></tr>
+      <tr><td>20</td><td>Hårdbottnat baksätesskydd för hund</td><td class="id">601099578348331 (+5)</td><td>PASS</td><td>BLOCKED_SOURCE</td><td>PENDING</td><td>PENDING</td><td>PASS verifierad (Kleinmetall 1 059)</td><td class="num">62</td><td>LOW</td><td>”Universal” utan mått; skrymmande</td><td>Pris + mått när Temu svarar</td></tr>
+      <tr><td>21</td><td>Övriga V2.1-B: poolvärmepumpsskydd, hjulpiggar robot, gevärshållare ATV, husbil termoskydd, styrstolpar, spatrappa, kupolnät, tyghundkoja, spa-räcke</td><td class="id">se koncept.json</td><td>PASS/PENDING</td><td>BLOCKED_SOURCE</td><td>PENDING</td><td>PENDING (räcket: FAIL på 79,99 USD)</td><td>PASS verifierad</td><td class="num">55–64</td><td>LOW</td><td>per rad i koncept.json</td><td>Hämtas i prioritetsordning när Temu svarar</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>4 · REJECT — lärorika avslag</h2>
+  <p>370+ koncept är fällda med orsak i <code>koncept.json</code> och i V2.2:s klusterfiler. Här bara de som lär oss något om filtret.</p>
+  <div class="tabell"><table>
+    <thead><tr><th>Produkt</th><th>Temu</th><th>DNA före</th><th>Varför REJECT</th></tr></thead>
+    <tbody>
+      <tr><td>Lockskydd till spabad</td><td class="id">601099619866532 (+alt)</td><td class="num">78 → 52</td><td><strong>Marketplace-golvet:</strong> Fyndiq säljer identisk oxford cover cap för 343–389 kr, Hemson 499. Ekonomin var grön och en alternativ listning hade användbar hero — spelar ingen roll när det identiska billiga alternativet ligger under vårt pris.</td></tr>
+      <tr><td>Vedställsöverdrag (cover only)</td><td class="id">601099615828436 (+7)</td><td class="num">78 → 60</td><td>Fyra priser 24–34 USD → 2,4× kräver 607–711 kr; vidaXL 293 kr i lager i samma form — under 300-kronorsgolvet.</td></tr>
+      <tr><td>Kikarsele / bröstväska</td><td class="id">601099566089885 (+5)</td><td class="num">78 → FAIL</td><td>Fem listningar 26,59–68,59 USD → 2,4× ≥ 670 kr, mer än Blaser 999 bär. Felet sitter i formen.</td></tr>
+      <tr><td>Manuell mossräfsa</td><td class="id">601103047271003</td><td class="num">71</td><td>Jula Hard Head gräsmatteluftare 199 kr i 75 varuhus, ”tar bort mossa”. Klyvkonsmönstret.</td></tr>
+      <tr><td>Bildörrsteg till biltaket</td><td class="id">garage-fordon</td><td class="num">64</td><td>Taktältarna 289, SmartaSaker 375 — ankaret ligger <em>under</em> vårt pris.</td></tr>
+      <tr><td>Hängrännerensare till högtryckstvätt</td><td class="id">maskiner</td><td class="num">42</td><td>Identisk lans 270,50 på PriceRunner; Stihl 345, Kärcher 309.</td></tr>
+      <tr><td>Överdrag till åkgräsklipparen</td><td class="id">maskiner</td><td>—</td><td>Bäst ekonomi i jakten (8,41 USD, 742 rec) och ändå dubbelt död: klipparen står i garaget, hyllan har prisstege 199 → 990.</td></tr>
+      <tr><td>Spa-räcke (som test)</td><td class="id">601099575291512</td><td class="num">72</td><td>79,99 USD → landad 836–980 → 2,4× kräver &gt; 2 000 kr. WATCH #21 bara för att fyra alternativ är olästa.</td></tr>
+      <tr><td>Fågelskydd för solceller</td><td class="id">hus</td><td>—</td><td>Starkaste hus-konceptet, fällt av Amazon.se i samma form.</td></tr>
+      <tr><td>Klyvkon till borrmaskin</td><td class="id">601099512512218 (+2)</td><td class="num">62</td><td>CDON 279 kr i samma form, <em>under</em> vårt 399; vridmoment/säkerhet i recensionerna.</td></tr>
+      <tr><td>Transom saver-kil</td><td class="id">601100312972322 (+1)</td><td class="num">55</td><td>Latent behov — hydraulikskadan syns om år (55 % av förlorarna).</td></tr>
+      <tr><td>Automatisk hönslucka</td><td class="id">601103331613427 (+2)</td><td class="num">50</td><td>Montering + ström, förklaring, Kerbl i fackhandeln — tre flaggor.</td></tr>
+      <tr><td>Hinkfälla möss</td><td class="id">601100216234049</td><td class="num">68</td><td>Djur-klustrets starkaste presens; Clas Ohlson 59,90 vippbräda-för-hink.</td></tr>
+      <tr><td>Torkrock hund</td><td class="id">601105260939830 (+3)</td><td class="num">48</td><td>Rusta 39,90 samma form + personlig passform.</td></tr>
+      <tr><td>Kranskydd 2-pack</td><td class="id">601099530394801</td><td class="num">55</td><td>Redan testad (ROAS 1,59 mot BE 1,49). Ett omtest i oktober är en annan fråga.</td></tr>
+      <tr><td>Hydraulisk locklyft spabad</td><td class="id">601101853422243</td><td class="num">62</td><td>&gt; 1 000 kr + skruvmontering.</td></tr>
+      <tr><td>USB-värmedyna</td><td class="id">601099898313877 (+1)</td><td class="num">52</td><td>Commodity 155 kr på PriceRunner.</td></tr>
+      <tr><td>Kajaköverdrag</td><td class="id">601099616420647</td><td class="num">60</td><td>Lixada 380–436 i samma form; sjätte överdraget.</td></tr>
+      <tr><td>Motorsågens benskydd (PPE)</td><td class="id">maskiner</td><td>—</td><td>Perfekt fingeravtryck och 2 495-ankare — men EN ISO 11393: osäljbart utan certifiering.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Vad de två passen lärde</h2>
+  <ol class="lar">
+    <li><strong>Marketplace-golvet är den verkliga hyllan.</strong> Fyndiq 343, vidaXL 293, setrimmer 288, Taktältarna 289, PriceRunner 270 — fyra av sju fällda högpoängare kom från sajter som inte stod i gate 3:s lista. Sök alltid det billigaste svenska priset först.</li>
+    <li><strong>Ett tal som fäller får aldrig stå i en kommentar.</strong> h4.json hade Fyndiq-nivån i fritext efter ordet ”dock” — domen blev PASS. Det enskilt dyraste felet i V2.1.</li>
+    <li><strong>Koncept ≠ listning.</strong> Lockskyddets badkar-hero och klyvens packshot var listningsfel; kikarselens pris var ett formfel. Utan modellen hade lockskyddet fällts på fel grund och kikarselen överlevt på fel grund.</li>
+    <li><strong>Huset är bygghandelns hemmaplan</strong> (hus 0 av 13, garage/fordon 0 av 30, maskiner 0 av 23). Kontots vinnare är tillbehör till maskiner, fordon och kärl som står stilla utomhus.</li>
+    <li><strong>Tummen är variantfällan.</strong> Svenska ägare tänker i meter, cm, hk, ton, liter — aldrig i tum eller fot.</li>
+    <li><strong>Temu-popularitet diskriminerar inte.</strong> 2 309 recensioner (kedjeslipen) är en bevisad förlorare; 742 (åkgräsklipparöverdraget) är dubbelt död.</li>
+    <li><strong>Temu ger ~8 anrop per timme</strong> och blockerar sedan i 60–80 min, per väg. Bakgrundsprocesser dör när containern somnar. Hämta i korta skurar i aktiva turer, cachat, prioriterat — aldrig parallellt.</li>
+    <li><strong>Utanför uppdraget:</strong> kontots eget sätesöverdrag till åkgräsklipparen ligger på PriceRunner för 485 kr mot vårt 649 — en /cs-fråga.</li>
+  </ol>
+
+  <h2>Underlag</h2>
+  <p>Allt ligger i repot: <code>docs/temu-jakt-slutrapport.md</code> (den här rapporten), <code>docs/temu-vinnar-dna.md</code> (metoden), <code>docs/temu-jakt-v2.md</code> + <code>docs/temu-jakt-v2/jakt/</code> (dataset.json, koncept.json, hylla/, material/, PIPELINE-V2.1.md) och <code>docs/temu-jakt-v2/jakt/v22/</code> (RESULTAT.md, fas1, fas2, DATAVAGAR.md). Saknat värde = PENDING/UNKNOWN, aldrig gissat.</p>
+</div>

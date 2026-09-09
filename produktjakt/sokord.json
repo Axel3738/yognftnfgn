@@ -1,0 +1,438 @@
+{
+ "_om": "Sökordskatalogen. Varje post är ett OBJEKT som Bäverbutikens kund (man 45–70, villa/landsbygd, båt, jakt, ved, fordon) redan äger, plus tillbehöret till det. `manader` styr när ordet får användas — kranskyddsfällan (DNA:t): produkten ska säljas när skadan syns, inte innan. `vikt` höjer chansen att ordet dras i en körning. Nya ord läggs till här, aldrig i koden.",
+ "_negativ_rymd": "Ord som aldrig ska sökas: kläder, skor, passform, kit, förbrukning, N-i-1, lek, barn, inomhusprylar, mobiltillbehör. De ligger i STOPPORD i hitta.py.",
+ "grupper": [
+  {
+   "grupp": "ved och eldning",
+   "manader": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "vikt": 3,
+   "ord": [
+    "firewood log rack cover only",
+    "kindling splitter cast iron",
+    "log lifting tongs firewood",
+    "timberjack log lifter cant hook",
+    "felling lever timber",
+    "firewood carrier bag heavy duty",
+    "log splitter cover waterproof",
+    "fire pit cover round waterproof",
+    "chimney cleaning brush rod set",
+    "ash vacuum fireplace",
+    "firewood moisture meter",
+    "log rack bracket kit outdoor",
+    "firewood splitting ring chopping block",
+    "firewood cutting rack chainsaw sawbuck",
+    "timber skidding grapple chain atv",
+    "screw cone log splitter drill",
+    "fire pit spark screen mesh dome",
+    "wood stove fan heat powered",
+    "ash bucket metal airtight lid"
+   ]
+  },
+  {
+   "grupp": "båt och trailer",
+   "manader": [
+    9,
+    10,
+    11,
+    4,
+    5
+   ],
+   "vikt": 3,
+   "ord": [
+    "outboard motor cover waterproof",
+    "boat cover support pole adjustable",
+    "transom saver outboard",
+    "outboard motor lock stainless",
+    "boat trailer guide post",
+    "trailer wheel lock clamp",
+    "boat dehumidifier winter storage",
+    "motor flusher muffs outboard",
+    "boat fender cover set",
+    "solar vent fan boat caravan",
+    "hand winch self locking wire rope",
+    "solar battery trickle charger 12v",
+    "trailer wheel bearing protector stainless",
+    "lower unit gear oil pump outboard",
+    "trailer stabilizer jack support leg",
+    "folding truck bed step boat trailer",
+    "manual oil extractor pump 6l outboard",
+    "4g gps tracker magnetic long standby",
+    "trailer light tester 13 pin",
+    "gps tracker magnetic long standby",
+    "trailer dolly hand mover swivel wheel"
+   ]
+  },
+  {
+   "grupp": "husvagn och husbil",
+   "manader": [
+    9,
+    10,
+    11,
+    3,
+    4
+   ],
+   "vikt": 3,
+   "ord": [
+    "caravan roof cover waterproof",
+    "motorhome thermal windscreen cover external",
+    "caravan wheel cover set",
+    "levelling ramp caravan heavy duty",
+    "awning storm strap tie down",
+    "caravan hitch lock security",
+    "gas bottle cover caravan",
+    "caravan step mat outdoor",
+    "solar trickle charger 12v battery maintainer",
+    "vibration alarm remote caravan boat"
+   ]
+  },
+  {
+   "grupp": "tomt hus och tak",
+   "manader": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "vikt": 3,
+   "ord": [
+    "ladder stabilizer standoff roof gutter",
+    "gutter cleaning tool from ground",
+    "roof snow rake telescopic",
+    "snow rake foam blade solar panel",
+    "outdoor waterproof electrical box lockable",
+    "driveway marker reflective stake",
+    "gate wheel spring loaded",
+    "fence post repair spike bracket",
+    "outdoor tap cover frost",
+    "tubular frost heater greenhouse shed",
+    "pressure washer surface cleaner patio",
+    "electric rat trap rodent zapper",
+    "gsm temperature alarm sms alert",
+    "ladder leveller adjustable legs uneven ground"
+   ]
+  },
+  {
+   "grupp": "fordon inför vintern",
+   "manader": [
+    10,
+    11,
+    12,
+    1
+   ],
+   "vikt": 2,
+   "ord": [
+    "car door step roof access",
+    "wheel hanger alignment pin set",
+    "tyre lifting strap wheel change",
+    "undercarriage cleaner pressure washer",
+    "car battery monitor bluetooth 12v",
+    "windscreen cover magnetic frost",
+    "trailer light board magnetic",
+    "snow brush telescopic car",
+    "ultrasonic rodent repeller car engine",
+    "tyre storage rack wall mount",
+    "waterproof car trunk cargo liner mat",
+    "recovery traction boards car snow mud",
+    "waterproof car back seat cover hammock",
+    "solar wireless tpms tyre pressure monitor",
+    "kinetic recovery tow rope heavy duty 10 ton",
+    "rustproofing spray gun cavity wand undercarriage"
+   ]
+  },
+  {
+   "grupp": "jakt",
+   "manader": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    1
+   ],
+   "vikt": 2,
+   "ord": [
+    "tree stand seat cushion hunting",
+    "folding seat stick hunting",
+    "trail camera solar panel 12v",
+    "padded rifle case molle",
+    "game cart deer hauling folding",
+    "hunting blind camo netting",
+    "rifle sling neoprene padded",
+    "bore sighter laser",
+    "deer hoist gambrel pulley hunting",
+    "blood tracking flashlight hunting rechargeable",
+    "dog tracking leash long line",
+    "breathable game bag deer carcass",
+    "deer drag harness rope hunting",
+    "shooting tripod rifle rest adjustable",
+    "electronic shooting earmuff hearing protection",
+    "binocular harness chest strap hunting",
+    "hunting spotlight red green rechargeable",
+    "blood tracking flashlight hunting led",
+    "automatic game feeder spinner timer 12v",
+    "laser rangefinder hunting 1000m"
+   ]
+  },
+  {
+   "grupp": "lantbruk och djur",
+   "manader": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "vikt": 3,
+   "ord": [
+    "chicken coop run cover waterproof",
+    "outdoor cat house insulated waterproof",
+    "dog kennel run cover waterproof",
+    "heated water bowl livestock",
+    "electric fence tester",
+    "hay net slow feeder",
+    "poultry feeder rain cover",
+    "livestock water trough de-icer",
+    "automatic chicken coop door opener",
+    "treadle chicken feeder rat proof",
+    "electric fence polywire reel winder",
+    "fence post puller lifter jack",
+    "round hay bale cover waterproof",
+    "chicken plucker drill attachment",
+    "earth auger drill bit post hole",
+    "solar predator deterrent light nocturnal",
+    "automatic chicken coop door light sensor"
+   ]
+  },
+  {
+   "grupp": "trädgård och maskin",
+   "manader": [
+    9,
+    10,
+    11,
+    3,
+    4,
+    5
+   ],
+   "vikt": 2,
+   "ord": [
+    "thatch rake lawn dethatching",
+    "telescopic pole saw manual",
+    "fruit picker pole basket",
+    "lawn mower seat cover riding",
+    "robot mower garage cover",
+    "leaf grabber hand rake",
+    "wheelbarrow cover waterproof",
+    "garden hose reel wall mount heavy duty",
+    "plant caddy wheels heavy duty",
+    "garden auger spiral drill bit",
+    "rolling lawn aerator spike roller push"
+   ]
+  },
+  {
+   "grupp": "belysning och mörker",
+   "manader": [
+    9,
+    10,
+    11,
+    12,
+    1
+   ],
+   "vikt": 2,
+   "ord": [
+    "solar flagpole light top mount",
+    "solar post cap light fence",
+    "solar shed light separate panel",
+    "wireless driveway alarm motion sensor",
+    "solar strobe alarm motion outdoor",
+    "solar house number sign illuminated",
+    "alarm padlock 110db shed door",
+    "rechargeable handheld searchlight long range",
+    "rechargeable hanging work light 360 degree"
+   ]
+  },
+  {
+   "grupp": "pool och spabad",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 1,
+   "ord": [
+    "hot tub cover cap protector",
+    "pool heat pump winter cover",
+    "hot tub handrail spa",
+    "pool cover reel strap set",
+    "pool cover pump submersible rainwater cover"
+   ]
+  },
+  {
+   "grupp": "grill och utekök",
+   "manader": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "vikt": 1,
+   "ord": [
+    "patio heater cover waterproof zipper",
+    "fire pit grill grate swing",
+    "outdoor kitchen cover heavy duty",
+    "wireless meat thermometer dual probe"
+   ]
+  },
+  {
+   "grupp": "present till mannen",
+   "manader": [
+    10,
+    11,
+    12
+   ],
+   "vikt": 2,
+   "ord": [
+    "inline spinner making kit lure",
+    "whittling kit spoon kuksa",
+    "leather sheath knife belt",
+    "sharpening system knife angle guide",
+    "hip flask leather outdoor",
+    "fishing rod holder car suction"
+   ]
+  },
+  {
+   "grupp": "vår och försäsong",
+   "manader": [
+    4,
+    5,
+    6
+   ],
+   "vikt": 1,
+   "ord": [
+    "downpipe rain diverter water butt",
+    "solar dock light marine"
+   ]
+  },
+  {
+   "grupp": "överdrag och skydd",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "caravan cover full waterproof breathable",
+    "car cover waterproof outdoor winter",
+    "boat cover trailerable waterproof",
+    "garden furniture cover waterproof rectangular",
+    "patio umbrella cover waterproof",
+    "heat pump outdoor unit cover winter",
+    "air conditioner outdoor unit roof cover",
+    "outdoor cushion storage bag waterproof",
+    "waterproof cargo trailer cover tarp"
+   ]
+  },
+  {
+   "grupp": "höst på tomten",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "gutter guard mesh leaf protection",
+    "downspout extension flexible drainage",
+    "crawl space vent cover winter",
+    "roof moss removal brush telescopic",
+    "well pump frost protection cover",
+    "drain auger drill attachment 25ft",
+    "rolling nut gatherer wire basket",
+    "pond cover netting leaves protection"
+   ]
+  },
+  {
+   "grupp": "vedsäsongens verktyg",
+   "manader": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "vikt": 3,
+   "ord": [
+    "chainsaw sharpener bench mount",
+    "chainsaw carry case bar cover",
+    "log splitting wedge twisted"
+   ]
+  },
+  {
+   "grupp": "vilthantering",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "deer drag harness hunting",
+    "game bag breathable deer meat",
+    "meat hanging gambrel hoist"
+   ]
+  },
+  {
+   "grupp": "djuren i kylan",
+   "manader": [
+    9,
+    10,
+    11,
+    12,
+    1
+   ],
+   "vikt": 3,
+   "ord": [
+    "chicken coop heater panel safe",
+    "dog house heating pad outdoor",
+    "solar electric fence energiser",
+    "squirrel proof bird feeder metal",
+    "insulated horse water bucket cover",
+    "horse bucket holder fence mount"
+   ]
+  },
+  {
+   "grupp": "halka och spridning",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "handheld broadcast spreader grit sand salt"
+   ]
+  },
+  {
+   "grupp": "skörd och förråd",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "vikt": 3,
+   "ord": [
+    "manual fruit press apple cider 6l"
+   ]
+  }
+ ]
+}

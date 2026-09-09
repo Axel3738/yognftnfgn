@@ -1,0 +1,3704 @@
+[
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "IBC-tank / stuprör",
+  "goods_id": "601100120365485",
+  "url_se": "https://www.temu.com/se/g-601100120365485.html",
+  "title": "90-graders böj IBC Ton * Filter Cap med inbyggd filternät, 165mm regnvattenfilterlock för utomhus trädgårdsvattenförsörjning, bevattning, jordbrukslagring, enkel installation, funktionell * med tvättbar filternät",
+  "temu_price_sek": 259.37,
+  "rating": 4.9,
+  "review_count": 31,
+  "review_dates": [
+   "2026-06-17",
+   "2025-11-28",
+   "2026-01-12",
+   "2025-05-16"
+  ],
+  "category_path": [
+   "Gräsmatta, trädgård & *",
+   "Fontäner & dammar"
+  ],
+  "image_count": 2,
+  "hero_url": "https://img.kwcdn.com/product/fancy/cc77e588-aa96-4b78-ba10-3ec7b41cdb70.jpg",
+  "video_url": "https://goods-vod.kwcdn.com/goods-video/b35809a606403a4a52916172e804cd3fae43d212.f30.mp4",
+  "video_checked": true,
+  "fetch_blocked": false,
+  "object": "IBC-tank (1000 l) med regnvatten från stuprör",
+  "owner_owns": true,
+  "friction": "Löv och skräp från taket följer med regnvattnet ner i tanken; standardlocket saknar sil",
+  "old_way": "Nylonstrumpa/gammal gardin över inloppet, eller ingenting",
+  "variants": "1 variant (DN150/163 mm lock, S160-gänga)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Skruvas på IBC-tankens lock; tanken står ute året om"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall sep–okt, tanken fylls av bruna löv — fotograferbart",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "IBC-tillbehör säljs inte av de fyra kedjorna enligt minne (Biltema/Jula har inga IBC-lock med sil). EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "FAIL",
+    "reason": "Videon visar produkten i hand på ett grått golv, aldrig på en tank eller vid ett stuprör; ingen payoff, ingen text. Heron är 3D-render av IBC-tank med rött lock+böj — textfri, i kontext, kan användas som referens.",
+    "sec_0_3": "0–3 s: rött/svart lock med vit 90°-böj och nylonstrumpa ligger på golvet, händer skruvar isär böjen. Ingen tank, inget vatten, inga löv.",
+    "hero_note": "Textfri 3D-render: IBC-tank med rött lock + böj, inklippt detalj med filterstrumpan. Bild 2: samma med kran+slang. Ingen bild i verklig trädgård."
+   },
+   "economics": {
+    "landed_est_sek": 389,
+    "se_price_est_sek": 949,
+    "multiple": 2.44,
+    "be_cpa_est": 560,
+    "multibuy_reason": "0 — en tank, ett lock",
+    "result": "PASS",
+    "note": "uppskattning: landad = Temu × 1,5 IBC-överdraget landade 165 och såldes för 489; här är Temu-priset 259 → landad ≈389 → 2,4× = 934 kr. För dyrt för ett lock; vid 599 kr blir uppslaget 1,5× (FAIL)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant; ägaren vet att han har ett S160-lock (standard 1000 l IBC)"
+   },
+   "hook": {
+    "text": "Löv i IBC-tanken i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Samma ägare som IBC-överdraget (bevisad vinnare, 40 köp): man 45–70 med tomt/fritidshus"
+   }
+  },
+  "negative_space_flags": [
+   "> 2,4× landad ger pris nära 1 000 kr",
+   "leverantörsvideo utan objekt/kontext"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 55,
+  "category_novelty": 45,
+  "tier": "C",
+  "biggest_risk": "Priset: 259 kr på Temu ger inget prisutrymme under 900 kr; hitta billigare listning (samma form finns troligen för ~100 kr) innan den kan bli B.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com IBC tank filter lid inlet rainwater leaf",
+   "https://www.temu.com/se/g-601100120365485.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "IBC-tank",
+  "goods_id": "601099574693078",
+  "url_se": "https://www.temu.com/se/g-601099574693078.html",
+  "title": "* IBC Lock Filter, IBC Filter Nylon Filter Skydd Ton * Skydd Tote Tank Lock Andnings Skydd IBC Tank Pass Filter Mesh",
+  "temu_price_sek": 42.22,
+  "rating": 4.7,
+  "review_count": 33,
+  "review_dates": [
+   "2025-05-*",
+   "2025-01-08",
+   "2025-03-22",
+   "2025-03-22"
+  ],
+  "category_path": [
+   "Näringsliv, industri & vetenskap",
+   "Arbetsmiljö & säkerhet"
+  ],
+  "image_count": 2,
+  "hero_url": "https://img.kwcdn.com/product/open/2024-05-07/1715051147032-672f19d81dab4c0ab85beee2727e7178-goods.jpeg",
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "IBC-tank, inloppslock",
+  "owner_owns": true,
+  "friction": "Löv/insekter i tanken genom öppet lock",
+  "old_way": "Gardintyg + gummiband",
+  "variants": "2-pack, en storlek",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Nylonstrumpa över IBC-inloppet"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv sep–okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ingen video i listningen; 2 bilder, ej öppnade (gate 5 föll först)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 63,
+    "se_price_est_sek": 199,
+    "multiple": 3.16,
+    "be_cpa_est": 136,
+    "multibuy_reason": "2-pack i listningen — ägare med två tankar",
+    "result": "FAIL",
+    "note": "uppskattning: landad = Temu × 1,5 42 kr × 1,5 = 63 landad; 199 kr ger 3,2× men < 300 kr; 299 kr för en nylonstrumpa är inte trovärdigt (gardintyg är gratis)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek"
+   },
+   "hook": {
+    "text": "Löv i IBC-tanken?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "IBC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "< 300 kr",
+   "gratis old way som fungerar (tyg + gummiband)",
+   "kräver att kunden redan har öppet inlopp"
+  ],
+  "eliminated_at": "economics",
+  "structure_match": 45,
+  "category_novelty": 40,
+  "tier": "C",
+  "biggest_risk": "Produkten är en nylonstrumpa — old way är gratis och lika bra.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com IBC tank filter lid inlet rainwater leaf",
+   "https://www.temu.com/se/g-601099574693078.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "stuprör/takränna",
+  "goods_id": "601099652248882",
+  "url_se": "https://www.temu.com/se/g-601099652248882.html",
+  "title": "5-Pack metalltakräcken, nerledningsfilter * skräp, anti-blockerande lövfilter, rostfria takavloppsskydd",
+  "temu_price_sek": 70.98,
+  "rating": 4.5,
+  "review_count": 15,
+  "review_dates": [
+   "2024-12-25",
+   "2024-09-22",
+   "2024-*-31",
+   "2025-01-09"
+  ],
+  "category_path": [
+   "Verktyg & hemförbättring",
+   "Byggmaterial"
+  ],
+  "image_count": 1,
+  "hero_url": "https://img.kwcdn.com/product/open/2024-08-28/1724839986148-83d53aead32149958c9fbeb870bbc6e7-goods.jpeg",
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Stuprörets utlopp i hängrännan",
+  "owner_owns": true,
+  "friction": "Löv täpper stupröret i oktober, rännan svämmar över",
+  "old_way": "Rensa för hand från stege",
+  "variants": "5-pack metall, en storlek (passar 2–4 tums utlopp)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Bauhaus (lövsil, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Sätts i hängrännans utlopp; huset står ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu — igensatt stuprör är höstens klassiker",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "'Lövsil' är en standardvara i svensk bygghandel i exakt samma form (trådboll i utloppet) för ~20–40 kr styck enligt minne. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ingen video; 1 bild, ej granskad (föll i gate 3)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 106,
+    "se_price_est_sek": 249,
+    "multiple": 2.35,
+    "be_cpa_est": 143,
+    "multibuy_reason": "Flera stuprör per hus (4–8) — 5-pack är naturligt",
+    "result": "FAIL",
+    "note": "uppskattning: landad = Temu × 1,5 70,98 × 1,5 = 106 landad; 249 kr ger 2,3× och < 300 kr"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek"
+   },
+   "hook": {
+    "text": "Löv i stupröret igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering (lövsil)",
+   "< 300 kr med kostnad > 100"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan: lövsil finns överallt.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com gutter guard leaf downspout strainer filter",
+   "https://www.temu.com/se/g-601099652248882.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "stuprör/takränna",
+  "goods_id": "601099596922285",
+  "url_se": "https://www.temu.com/se/g-601099596922285.html",
+  "title": "4pcs leaf gutter downspout filter guard mesh (plast)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprörets utlopp",
+  "owner_owns": true,
+  "friction": "Löv täpper stupröret",
+  "old_way": "Rensa för hand",
+  "variants": "4–5-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Bauhaus (lövsil, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Utlopp i hängränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form som svensk lövsil. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (föll i gate 3; Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Flera stuprör per hus",
+    "result": "UNKNOWN",
+    "note": "Temu-pris UNKNOWN (IP strypt) pris UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek"
+   },
+   "hook": {
+    "text": "Löv i stupröret igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com gutter guard leaf downspout strainer filter",
+   "https://www.temu.com/se/g-601099596922285.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "stuprör/takränna",
+  "goods_id": "601099528313858",
+  "url_se": "https://www.temu.com/se/g-601099528313858.html",
+  "title": "4pcs gutter filter strainer guard (no-en)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprörets utlopp",
+  "owner_owns": true,
+  "friction": "Löv täpper stupröret",
+  "old_way": "Rensa för hand",
+  "variants": "4–5-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Bauhaus (lövsil, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Utlopp i hängränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form som svensk lövsil. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (föll i gate 3; Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Flera stuprör per hus",
+    "result": "UNKNOWN",
+    "note": "Temu-pris UNKNOWN (IP strypt) pris UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek"
+   },
+   "hook": {
+    "text": "Löv i stupröret igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com gutter guard leaf downspout strainer filter",
+   "https://www.temu.com/se/g-601099528313858.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "stuprör/takränna",
+  "goods_id": "601099543370352",
+  "url_se": "https://www.temu.com/se/g-601099543370352.html",
+  "title": "5pcs leaf filter gutter strainer (au)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprörets utlopp",
+  "owner_owns": true,
+  "friction": "Löv täpper stupröret",
+  "old_way": "Rensa för hand",
+  "variants": "4–5-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Bauhaus (lövsil, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Utlopp i hängränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form som svensk lövsil. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (föll i gate 3; Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Flera stuprör per hus",
+    "result": "UNKNOWN",
+    "note": "Temu-pris UNKNOWN (IP strypt) pris UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek"
+   },
+   "hook": {
+    "text": "Löv i stupröret igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com gutter guard leaf downspout strainer filter",
+   "https://www.temu.com/se/g-601099543370352.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "stuprör/takränna",
+  "goods_id": "601099817227800",
+  "url_se": "https://www.temu.com/se/g-601099817227800.html",
+  "title": "4pcs aluminum gutter guard mesh leaf trap 2–4 inch",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprörets utlopp",
+  "owner_owns": true,
+  "friction": "Löv täpper stupröret",
+  "old_way": "Rensa för hand",
+  "variants": "4–5-pack",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Bauhaus (lövsil, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Utlopp i hängränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form som svensk lövsil. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (föll i gate 3; Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 249,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "Flera stuprör per hus",
+    "result": "UNKNOWN",
+    "note": "Temu-pris UNKNOWN (IP strypt) pris UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek"
+   },
+   "hook": {
+    "text": "Löv i stupröret igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com gutter guard leaf downspout strainer filter",
+   "https://www.temu.com/se/g-601099817227800.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "stuprör/takränna",
+  "goods_id": "601102767033167",
+  "url_se": "https://www.temu.com/se/g-601102767033167.html",
+  "title": "3x4 Type-A gutter downspout extension with leaf guard",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprörets nedre utkast",
+  "owner_owns": true,
+  "friction": "Löv/skräp vid utkastet, stänk mot grunden",
+  "old_way": "Betongplatta/utkastare",
+  "variants": "3x4 tum rektangulärt (USA-mått)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (stuprörsutkastare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fästs på stupröret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Regn+löv i höst",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Utkastare finns i bygghandeln; denna form (rektangulär med sil) inte. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Passar 3x4 tum rektangulära USA-stuprör; svenska stuprör är runda 75/87/100 mm"
+   },
+   "hook": {
+    "text": "Stänker stupröret på grunden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "passform mot svenska stuprör"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 65,
+  "tier": "ELIM",
+  "biggest_risk": "Passar inte svenska runda stuprör.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com downspout leaf catcher rain diverter filter downpipe",
+   "https://www.temu.com/se/g-601102767033167.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "regntunna/stuprör",
+  "goods_id": "601100436936733",
+  "url_se": "https://www.temu.com/se/g-601100436936733.html",
+  "title": "rain barrel diverter kit fits 2x3 standard gutter downspout (uk)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprör + regntunna",
+  "owner_owns": true,
+  "friction": "Vill leda regnvatten till tunnan",
+  "old_way": "Kapa stupröret, Biltema-avledare",
+  "variants": "2x3 tum rektangulärt",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (regnvattenavledare/regnsamlare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Monteras i stupröret"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Regnet finns, men önskan att samla vatten är vår/sommar; i oktober kopplar man ur tunnan inför frost",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Regnvattenavledare i stuprör är en standardvara i svensk bygghandel. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "USA-mått 2x3/3x4 tum rektangulärt; svenska stuprör runda 75–100 mm"
+   },
+   "hook": {
+    "text": "Rinner regnvattnet förbi tunnan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong (urkoppling inför frost)",
+   "svensk hylla",
+   "passform"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong + hylla + passform.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com rain barrel diverter downspout gutter",
+   "https://www.temu.com/se/g-601100436936733.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "regntunna/stuprör",
+  "goods_id": "601099609413954",
+  "url_se": "https://www.temu.com/se/g-601099609413954.html",
+  "title": "rainwater collection downpipe diverter water butt kit 2x3 (uk)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprör + regntunna",
+  "owner_owns": true,
+  "friction": "Vill leda regnvatten till tunnan",
+  "old_way": "Kapa stupröret, Biltema-avledare",
+  "variants": "2x3 tum rektangulärt",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (regnvattenavledare/regnsamlare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Monteras i stupröret"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Regnet finns, men önskan att samla vatten är vår/sommar; i oktober kopplar man ur tunnan inför frost",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Regnvattenavledare i stuprör är en standardvara i svensk bygghandel. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "USA-mått 2x3/3x4 tum rektangulärt; svenska stuprör runda 75–100 mm"
+   },
+   "hook": {
+    "text": "Rinner regnvattnet förbi tunnan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong (urkoppling inför frost)",
+   "svensk hylla",
+   "passform"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong + hylla + passform.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com rain barrel diverter downspout gutter",
+   "https://www.temu.com/se/g-601099609413954.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "regntunna/stuprör",
+  "goods_id": "601104885518461",
+  "url_se": "https://www.temu.com/se/g-601104885518461.html",
+  "title": "outdoor rain collection system downspout diverter 2x3/3x4 with mesh",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprör + regntunna",
+  "owner_owns": true,
+  "friction": "Vill leda regnvatten till tunnan",
+  "old_way": "Kapa stupröret, Biltema-avledare",
+  "variants": "2x3/3x4 tum",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (regnvattenavledare/regnsamlare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Monteras i stupröret"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Regnet finns, men önskan att samla vatten är vår/sommar; i oktober kopplar man ur tunnan inför frost",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Regnvattenavledare i stuprör är en standardvara i svensk bygghandel. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "USA-mått 2x3/3x4 tum rektangulärt; svenska stuprör runda 75–100 mm"
+   },
+   "hook": {
+    "text": "Rinner regnvattnet förbi tunnan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong (urkoppling inför frost)",
+   "svensk hylla",
+   "passform"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong + hylla + passform.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com rain barrel diverter downspout gutter",
+   "https://www.temu.com/se/g-601104885518461.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "regntunna/stuprör",
+  "goods_id": "601103603861161",
+  "url_se": "https://www.temu.com/se/g-601103603861161.html",
+  "title": "rain diverter and spigot kit for 2x3 downspout",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprör + regntunna",
+  "owner_owns": true,
+  "friction": "Vill leda regnvatten till tunnan",
+  "old_way": "Kapa stupröret, Biltema-avledare",
+  "variants": "2x3 tum",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (regnvattenavledare/regnsamlare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Monteras i stupröret"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Regnet finns, men önskan att samla vatten är vår/sommar; i oktober kopplar man ur tunnan inför frost",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Regnvattenavledare i stuprör är en standardvara i svensk bygghandel. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "USA-mått 2x3/3x4 tum rektangulärt; svenska stuprör runda 75–100 mm"
+   },
+   "hook": {
+    "text": "Rinner regnvattnet förbi tunnan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong (urkoppling inför frost)",
+   "svensk hylla",
+   "passform"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong + hylla + passform.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com rain barrel diverter downspout gutter",
+   "https://www.temu.com/se/g-601103603861161.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "regntunna/stuprör",
+  "goods_id": "601099523106289",
+  "url_se": "https://www.temu.com/se/g-601099523106289.html",
+  "title": "universal downspout water diverter with 127 cm hose (es-en)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprör + regntunna",
+  "owner_owns": true,
+  "friction": "Vill leda regnvatten till tunnan",
+  "old_way": "Kapa stupröret, Biltema-avledare",
+  "variants": "universal — mått okänt",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (regnvattenavledare/regnsamlare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Monteras i stupröret"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Regnet finns, men önskan att samla vatten är vår/sommar; i oktober kopplar man ur tunnan inför frost",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Regnvattenavledare i stuprör är en standardvara i svensk bygghandel. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Universal — måste kontrolleras mot runda svenska rör"
+   },
+   "hook": {
+    "text": "Rinner regnvattnet förbi tunnan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "fel säsong (urkoppling inför frost)",
+   "svensk hylla",
+   "passform"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 55,
+  "tier": "ELIM",
+  "biggest_risk": "Säsong + hylla + passform.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com rain barrel diverter downspout gutter",
+   "https://www.temu.com/se/g-601099523106289.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "stuprör",
+  "goods_id": "601099647114403",
+  "url_se": "https://www.temu.com/se/g-601099647114403.html",
+  "title": "flexible rain gutter downspout extension 2-pack (ca)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Stuprörets nedre ände",
+  "owner_owns": true,
+  "friction": "Vatten mot grunden",
+  "old_way": "Utkastare",
+  "variants": "2-pack, 21–60 tum, brun",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula (obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fästs på stupröret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höstregn",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "USA-mått (rektangulär anslutning)"
+   },
+   "hook": {
+    "text": "Rinner stupröret rakt ner i grunden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhus"
+   }
+  },
+  "negative_space_flags": [
+   "passform",
+   "behovet måste skapas (dränering syns inte)"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 25,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Passform.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com rain barrel diverter downspout gutter",
+   "https://www.temu.com/se/g-601099647114403.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "takränna",
+  "goods_id": "601101666072542",
+  "url_se": "https://www.temu.com/se/g-601101666072542.html",
+  "title": "multi-angle gutter cleaning tools spoon+scoop with extension poles",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Hängrännan",
+  "owner_owns": true,
+  "friction": "Rännan full av löv och slam i oktober",
+  "old_way": "Handen + hink på stege",
+  "variants": "1 variant",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema (rännskopa/rännrensare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Verktyg för ägd hängränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Rännskopor säljs i bygghandeln enligt minne; formen varierar. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Rännan full av löv igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare 45–70 som inte vill upp på stegen"
+   }
+  },
+  "negative_space_flags": [
+   "plastverktyg < 199 kr",
+   "köpt old way som fungerar"
+  ],
+  "eliminated_at": null,
+  "structure_match": 35,
+  "category_novelty": 65,
+  "tier": "C",
+  "biggest_risk": "Plastskopa — pris under 199 kr, ingen hävstång.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com gutter cleaning tool scoop leaf gutter cleaner",
+   "https://www.temu.com/se/g-601101666072542.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "takränna",
+  "goods_id": "601099606869339",
+  "url_se": "https://www.temu.com/se/g-601099606869339.html",
+  "title": "gutter scoop flexible roof cleaning tool",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Hängrännan",
+  "owner_owns": true,
+  "friction": "Rännan full av löv och slam i oktober",
+  "old_way": "Handen + hink på stege",
+  "variants": "1 variant",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema (rännskopa/rännrensare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Verktyg för ägd hängränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Rännskopor säljs i bygghandeln enligt minne; formen varierar. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Rännan full av löv igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare 45–70 som inte vill upp på stegen"
+   }
+  },
+  "negative_space_flags": [
+   "plastverktyg < 199 kr",
+   "köpt old way som fungerar"
+  ],
+  "eliminated_at": null,
+  "structure_match": 35,
+  "category_novelty": 65,
+  "tier": "C",
+  "biggest_risk": "Plastskopa — pris under 199 kr, ingen hävstång.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com gutter cleaning tool scoop leaf gutter cleaner",
+   "https://www.temu.com/se/g-601099606869339.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "takränna",
+  "goods_id": "601099573177747",
+  "url_se": "https://www.temu.com/se/g-601099573177747.html",
+  "title": "2pcs gutter scoop cleaning tool",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Hängrännan",
+  "owner_owns": true,
+  "friction": "Rännan full av löv och slam i oktober",
+  "old_way": "Handen + hink på stege",
+  "variants": "1 variant",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema (rännskopa/rännrensare, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Verktyg för ägd hängränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Rännskopor säljs i bygghandeln enligt minne; formen varierar. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Rännan full av löv igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhusägare 45–70 som inte vill upp på stegen"
+   }
+  },
+  "negative_space_flags": [
+   "plastverktyg < 199 kr",
+   "köpt old way som fungerar"
+  ],
+  "eliminated_at": null,
+  "structure_match": 35,
+  "category_novelty": 65,
+  "tier": "C",
+  "biggest_risk": "Plastskopa — pris under 199 kr, ingen hävstång.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com gutter cleaning tool scoop leaf gutter cleaner",
+   "https://www.temu.com/se/g-601099573177747.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "utekran (frost)",
+  "goods_id": "601099530394801",
+  "url_se": "https://www.temu.com/se/g-601099530394801.html",
+  "title": "2st Utvändiga Kranskydd För Vintern, Förtjockat Utomhuskranskydd, Stort Isolerat Skydd Utomhus Kranskydd För Vintern Från Att * Sprängning",
+  "temu_price_sek": 38.09,
+  "rating": 5.0,
+  "review_count": 11,
+  "review_dates": [
+   "2026-07-24"
+  ],
+  "category_path": [
+   "Sport & friluftsliv",
+   "Vintersport"
+  ],
+  "image_count": 4,
+  "hero_url": "https://img.kwcdn.com/product/open/2023-10-20/1697787004615-bae665c4d9464dcd83a1d2fbed6f9b60-goods.jpeg",
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Utekran på husväggen",
+  "owner_owns": true,
+  "friction": "Frost spränger kranen/ledningen — kommer i november",
+  "old_way": "Stänga av + tömma, handduk",
+  "variants": "2-pack, stor/förtjockad",
+  "swedish_equivalent": {
+   "retailer": "bygghandel (kranskydd finns, enligt förlorare-analysen)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Träs över utekranen"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Frost i november — 6–8 veckor bort; i oktober är det 'snart', inte 'nu'. Bättre än augusti-launchen.",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Kranskydd finns i bygghandeln (forlorare.md: 'kranskydd finns i bygghandeln'). EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ingen video; 4 bilder ej granskade — produkten är redan testad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": 57,
+    "se_price_est_sek": 309,
+    "multiple": 5.42,
+    "be_cpa_est": 252,
+    "multibuy_reason": "2-pack: de flesta hus har 2 utekranar",
+    "result": "PASS",
+    "note": "uppskattning: landad = Temu × 1,5 38 × 1,5 = 57 landad; 309 kr = 5,4× (2-pack)"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek"
+   },
+   "hook": {
+    "text": "Har du en utekran utan skydd?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla småhusägare"
+   }
+  },
+  "negative_space_flags": [
+   "framtida skada (frost)",
+   "bygghandelsvara"
+  ],
+  "eliminated_at": null,
+  "structure_match": 55,
+  "category_novelty": 0,
+  "tier": "C (omtest, inte ny produkt)",
+  "biggest_risk": "REDAN TESTAD (Kranskydd Frost 420D: 7 416 kr / 28 köp / ROAS 1,59 mot BE 1,49, pausad). Detta är ett OMTEST i rätt månad (oktober), inte en ny produkt. Risk: bygghandelns kranskydd för 49–99 kr.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com outdoor faucet cover freeze protection insulated tap",
+   "https://www.temu.com/se/g-601099530394801.html",
+   "docs/temu-vinnar-dna/analys/forlorare.md rad 35, 227"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "kranskydd 2-pack: REDAN TESTAD (7 416 kr / 28 köp / ROAS 1,59 mot BE 1,49). Ett omtest i oktober är en annan fråga än produktjakten"
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "pump (frost)",
+  "goods_id": "601099527510459",
+  "url_se": "https://www.temu.com/se/g-601099527510459.html",
+  "title": "insulated pouch cover for backflow preventer / well pump / sprinkler valve",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Backventil/sprinklerventil/brunnspump ovan mark",
+  "owner_owns": false,
+  "friction": "Frost på ventil ovan mark",
+  "old_way": "—",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "USA-objekt: backflow preventer/sprinklerventil ovan mark finns inte på svenska tomter; svenska pumpar sitter i brunnen eller i huset"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "Frost i november",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": ""
+   },
+   "hook": {
+    "text": "—",
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Objektet finns inte i svenska hushåll"
+   }
+  },
+  "negative_space_flags": [
+   "oklart ägande"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 10,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Objektet saknas i Sverige.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com water pump cover insulated protection well pump frost",
+   "https://www.temu.com/se/g-601099527510459.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "trädgårdsslang",
+  "goods_id": "601099541498314",
+  "url_se": "https://www.temu.com/se/g-601099541498314.html",
+  "title": "heavy duty metal garden hose holder wall mount",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Trädgårdsslangen",
+  "owner_owns": true,
+  "friction": "Slangen ligger i en hög på marken",
+  "old_way": "Hänga på spik/kran",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta (slanghållare vägg, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Håller ägd slang, på husväggen"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Slangen ska in för vintern i oktober — hållaren löser inte det",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Väggmonterade slanghållare i metall säljs av alla fyra kedjorna i samma form enligt minne. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Ligger slangen i en hög?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhus"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com garden hose reel holder wall mount storage winter",
+   "https://www.temu.com/se/g-601099541498314.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "trädgårdsslang",
+  "goods_id": "601099639105241",
+  "url_se": "https://www.temu.com/se/g-601099639105241.html",
+  "title": "heavy duty garden hose holder wall mounted decorative",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Trädgårdsslangen",
+  "owner_owns": true,
+  "friction": "Slangen ligger i en hög på marken",
+  "old_way": "Hänga på spik/kran",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta (slanghållare vägg, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Håller ägd slang, på husväggen"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Slangen ska in för vintern i oktober — hållaren löser inte det",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Väggmonterade slanghållare i metall säljs av alla fyra kedjorna i samma form enligt minne. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Ligger slangen i en hög?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhus"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com garden hose reel holder wall mount storage winter",
+   "https://www.temu.com/se/g-601099639105241.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "trädgårdsslang",
+  "goods_id": "601102068985743",
+  "url_se": "https://www.temu.com/se/g-601102068985743.html",
+  "title": "metal garden hose reel holder wall mounted (uk)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Trädgårdsslangen",
+  "owner_owns": true,
+  "friction": "Slangen ligger i en hög på marken",
+  "old_way": "Hänga på spik/kran",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta (slanghållare vägg, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Håller ägd slang, på husväggen"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Slangen ska in för vintern i oktober — hållaren löser inte det",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Väggmonterade slanghållare i metall säljs av alla fyra kedjorna i samma form enligt minne. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Ligger slangen i en hög?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Småhus"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 50,
+  "tier": "ELIM",
+  "biggest_risk": "Hyllan.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com garden hose reel holder wall mount storage winter",
+   "https://www.temu.com/se/g-601102068985743.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "trädgårdsslang",
+  "goods_id": "601099629312930",
+  "url_se": "https://www.temu.com/se/g-601099629312930.html",
+  "title": "expandable hose storage bag mesh (uk)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Slangen (vinterförvaring)",
+  "owner_owns": true,
+  "friction": "Slangen ska in i garaget",
+  "old_way": "Rulla ihop, lägga i hörnet",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Förvaringspåse för något som ligger inomhus när det används så — inomhus-commodity"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vinterförvaring i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": ""
+   },
+   "hook": {
+    "text": "Slangen i en hög i garaget?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": ""
+   }
+  },
+  "negative_space_flags": [
+   "inomhus-commodity",
+   "< 199 kr"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Nätpåse.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com garden hose winter storage bag hose hanger frost drain",
+   "https://www.temu.com/se/g-601099629312930.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "IBC-tank",
+  "goods_id": "601099567493037",
+  "url_se": "https://www.temu.com/se/g-601099567493037.html",
+  "title": "2-pack IBC tote adapter 2 NPT fine thread to 3/4 garden hose valve",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "IBC-tankens S60-utlopp",
+  "owner_owns": true,
+  "friction": "Få slang på tanken",
+  "old_way": "Adapter från Biltema/Amazon",
+  "variants": "gängstandard (S60 grov / NPT fin — kunden vet sällan)",
+  "swedish_equivalent": {
+   "retailer": "Bäverbutiken säljer redan IBC-kranadapter och 4-vägs fördelare (butiksprodukter)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "IBC-utlopp"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Tömning inför vintern kräver kran — men adaptern är redan butiksprodukt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Redan testad kategori: IBC-kranadapter/4-vägs fördelare är butiksprodukter; 4-vägs kran förlorade mot Gardena"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "S60/NPT/fin/grov gänga — kunden vet inte utantill"
+   },
+   "hook": {
+    "text": "Läcker kranen på IBC-tanken?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "IBC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "redan testad",
+   "gängvariant"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 0,
+  "tier": "ELIM",
+  "biggest_risk": "Redan i butiken.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com IBC tank tote outlet faucet drain adapter",
+   "https://www.temu.com/se/g-601099567493037.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "IBC-tank",
+  "goods_id": "601099578146676",
+  "url_se": "https://www.temu.com/se/g-601099578146676.html",
+  "title": "IBC tote tank adapter connector with spigot 3/4",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "IBC-tankens S60-utlopp",
+  "owner_owns": true,
+  "friction": "Få slang på tanken",
+  "old_way": "Adapter från Biltema/Amazon",
+  "variants": "gängstandard (S60 grov / NPT fin — kunden vet sällan)",
+  "swedish_equivalent": {
+   "retailer": "Bäverbutiken säljer redan IBC-kranadapter och 4-vägs fördelare (butiksprodukter)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "IBC-utlopp"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Tömning inför vintern kräver kran — men adaptern är redan butiksprodukt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Redan testad kategori: IBC-kranadapter/4-vägs fördelare är butiksprodukter; 4-vägs kran förlorade mot Gardena"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "S60/NPT/fin/grov gänga — kunden vet inte utantill"
+   },
+   "hook": {
+    "text": "Läcker kranen på IBC-tanken?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "IBC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "redan testad",
+   "gängvariant"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 0,
+  "tier": "ELIM",
+  "biggest_risk": "Redan i butiken.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com IBC tank tote outlet faucet drain adapter",
+   "https://www.temu.com/se/g-601099578146676.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "IBC-tank",
+  "goods_id": "601099587160515",
+  "url_se": "https://www.temu.com/se/g-601099587160515.html",
+  "title": "IBC S60 dual outlet splitter valve with filter (uk)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "IBC-tankens S60-utlopp",
+  "owner_owns": true,
+  "friction": "Få slang på tanken",
+  "old_way": "Adapter från Biltema/Amazon",
+  "variants": "gängstandard (S60 grov / NPT fin — kunden vet sällan)",
+  "swedish_equivalent": {
+   "retailer": "Bäverbutiken säljer redan IBC-kranadapter och 4-vägs fördelare (butiksprodukter)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "IBC-utlopp"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Tömning inför vintern kräver kran — men adaptern är redan butiksprodukt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Redan testad kategori: IBC-kranadapter/4-vägs fördelare är butiksprodukter; 4-vägs kran förlorade mot Gardena"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "S60/NPT/fin/grov gänga — kunden vet inte utantill"
+   },
+   "hook": {
+    "text": "Läcker kranen på IBC-tanken?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "IBC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "redan testad",
+   "gängvariant"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 0,
+  "tier": "ELIM",
+  "biggest_risk": "Redan i butiken.",
+  "confidence": "HIGH",
+  "sources": [
+   "site:temu.com IBC tank tote outlet faucet drain adapter",
+   "https://www.temu.com/se/g-601099587160515.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "IBC-tank (frost)",
+  "goods_id": "601099554092916",
+  "url_se": "https://www.temu.com/se/g-601099554092916.html",
+  "title": "1000L IBC tank cover waterproof insulated UV (de-en)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "IBC-tank",
+  "owner_owns": true,
+  "friction": "Frost — tanken ska tömmas, eller isoleras",
+  "old_way": "Tömma tanken",
+  "variants": "1",
+  "swedish_equivalent": {
+   "retailer": "Bäverbutiken (IBC-överdraget, vinnare 40 köp)",
+   "price_sek": 489,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "IBC-tank"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Frost i november; 'isolerad' hindrar inte 1000 l från att frysa — löftet håller inte",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form som vår egen vinnare IBC-överdraget — ingen ny kategori, bara en vinterinkling på befintlig produkt"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "1000 l"
+   },
+   "hook": {
+    "text": "Står IBC-tanken ute i vinter?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "IBC-ägare"
+   }
+  },
+  "negative_space_flags": [
+   "ingen kategorinyhet",
+   "löfte som inte håller (frost)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 50,
+  "category_novelty": 0,
+  "tier": "ELIM",
+  "biggest_risk": "Är samma produkt som vinnaren; 'frostskydd' på 1000 l vatten är ett tomt löfte. Vinkeln 'vinterförvaring/UV' kan testas som ny creative på befintlig produkt i stället.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com IBC tank cover UV protection 1000L",
+   "https://www.temu.com/se/g-601099554092916.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "damm/pool",
+  "goods_id": "601099529094177",
+  "url_se": "https://www.temu.com/se/g-601099529094177.html",
+  "title": "leaf net cover for inground/above ground pool winter",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Pool (över/nedgrävd)",
+  "owner_owns": true,
+  "friction": "Löv i poolen under vintertäckningen",
+  "old_way": "Vintertäcke",
+  "variants": "8 storlekar (poolmått)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta (pooltäcken vinter, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Pool står ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Poolen stängs i september — vintertäcket läggs på nu, men de flesta har redan ett täcke",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Vintertäcken finns hos kedjorna; lövnät som separat lager ovanpå är en USA-vara. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "8 storlekar i fot/tum, kunden måste mäta"
+   },
+   "hook": {
+    "text": "Löv i poolen hela hösten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Poolägare med nedgrävd pool är färre än 100 000 hushåll; ovanmarkspooler töms"
+   }
+  },
+  "negative_space_flags": [
+   "passform/storlek",
+   "köpt old way som fungerar (vintertäcke)"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Storlekar + befintligt vintertäcke.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pond net leaf cover autumn pond pump winter",
+   "https://www.temu.com/se/g-601099529094177.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "damm/pool",
+  "goods_id": "601099595155681",
+  "url_se": "https://www.temu.com/se/g-601099595155681.html",
+  "title": "pool leaf net cover with rope winter rectangle",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Pool (över/nedgrävd)",
+  "owner_owns": true,
+  "friction": "Löv i poolen under vintertäckningen",
+  "old_way": "Vintertäcke",
+  "variants": "8 storlekar (poolmått)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta (pooltäcken vinter, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Pool står ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Poolen stängs i september — vintertäcket läggs på nu, men de flesta har redan ett täcke",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Vintertäcken finns hos kedjorna; lövnät som separat lager ovanpå är en USA-vara. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "8 storlekar i fot/tum, kunden måste mäta"
+   },
+   "hook": {
+    "text": "Löv i poolen hela hösten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Poolägare med nedgrävd pool är färre än 100 000 hushåll; ovanmarkspooler töms"
+   }
+  },
+  "negative_space_flags": [
+   "passform/storlek",
+   "köpt old way som fungerar (vintertäcke)"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Storlekar + befintligt vintertäcke.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pond net leaf cover autumn pond pump winter",
+   "https://www.temu.com/se/g-601099595155681.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "damm/pool",
+  "goods_id": "601099711438229",
+  "url_se": "https://www.temu.com/se/g-601099711438229.html",
+  "title": "8 sizes leaf net cover pool winter",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Pool (över/nedgrävd)",
+  "owner_owns": true,
+  "friction": "Löv i poolen under vintertäckningen",
+  "old_way": "Vintertäcke",
+  "variants": "8 storlekar (poolmått)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta (pooltäcken vinter, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Pool står ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Poolen stängs i september — vintertäcket läggs på nu, men de flesta har redan ett täcke",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Vintertäcken finns hos kedjorna; lövnät som separat lager ovanpå är en USA-vara. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "8 storlekar i fot/tum, kunden måste mäta"
+   },
+   "hook": {
+    "text": "Löv i poolen hela hösten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Poolägare med nedgrävd pool är färre än 100 000 hushåll; ovanmarkspooler töms"
+   }
+  },
+  "negative_space_flags": [
+   "passform/storlek",
+   "köpt old way som fungerar (vintertäcke)"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Storlekar + befintligt vintertäcke.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pond net leaf cover autumn pond pump winter",
+   "https://www.temu.com/se/g-601099711438229.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "damm/pool",
+  "goods_id": "601099527314189",
+  "url_se": "https://www.temu.com/se/g-601099527314189.html",
+  "title": "net cover leaf netting rectangle pools (uk)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Pool (över/nedgrävd)",
+  "owner_owns": true,
+  "friction": "Löv i poolen under vintertäckningen",
+  "old_way": "Vintertäcke",
+  "variants": "8 storlekar (poolmått)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Rusta (pooltäcken vinter, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Pool står ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Poolen stängs i september — vintertäcket läggs på nu, men de flesta har redan ett täcke",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Vintertäcken finns hos kedjorna; lövnät som separat lager ovanpå är en USA-vara. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "8 storlekar i fot/tum, kunden måste mäta"
+   },
+   "hook": {
+    "text": "Löv i poolen hela hösten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Poolägare med nedgrävd pool är färre än 100 000 hushåll; ovanmarkspooler töms"
+   }
+  },
+  "negative_space_flags": [
+   "passform/storlek",
+   "köpt old way som fungerar (vintertäcke)"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Storlekar + befintligt vintertäcke.",
+  "confidence": "MEDIUM",
+  "sources": [
+   "site:temu.com pond net leaf cover autumn pond pump winter",
+   "https://www.temu.com/se/g-601099527314189.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "dräneringsbrunn",
+  "goods_id": "601099553754940",
+  "url_se": "https://www.temu.com/se/g-601099553754940.html",
+  "title": "large stainless steel drain cover leaf guard outdoor",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Dagvattenbrunn/golvbrunn ute",
+  "owner_owns": true,
+  "friction": "Löv täpper brunnsgallret, vatten på uppfarten",
+  "old_way": "Kratta bort",
+  "variants": "tum-mått (USA)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Brunnen finns på tomten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Svenska brunnsgaller är runda 200/315/400 mm eller 250x250 betong — USA-mått passar inte, kunden måste mäta"
+   },
+   "hook": {
+    "text": "Löv på brunnsgallret igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Objektet är litet och svårt att känna igen i flödet"
+   }
+  },
+  "negative_space_flags": [
+   "passform",
+   "objektet syns dåligt"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Passar inte svenska brunnar.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com drain grate cover leaf guard outdoor drainage catch basin",
+   "https://www.temu.com/se/g-601099553754940.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "dräneringsbrunn",
+  "goods_id": "601099602765546",
+  "url_se": "https://www.temu.com/se/g-601099602765546.html",
+  "title": "stainless steel drain cover leaf guard square grid (de)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Dagvattenbrunn/golvbrunn ute",
+  "owner_owns": true,
+  "friction": "Löv täpper brunnsgallret, vatten på uppfarten",
+  "old_way": "Kratta bort",
+  "variants": "tum-mått (USA)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Brunnen finns på tomten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Svenska brunnsgaller är runda 200/315/400 mm eller 250x250 betong — USA-mått passar inte, kunden måste mäta"
+   },
+   "hook": {
+    "text": "Löv på brunnsgallret igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Objektet är litet och svårt att känna igen i flödet"
+   }
+  },
+  "negative_space_flags": [
+   "passform",
+   "objektet syns dåligt"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Passar inte svenska brunnar.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com drain grate cover leaf guard outdoor drainage catch basin",
+   "https://www.temu.com/se/g-601099602765546.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "dräneringsbrunn",
+  "goods_id": "601099581150578",
+  "url_se": "https://www.temu.com/se/g-601099581150578.html",
+  "title": "outdoor drain cover 19.7x19.7 cast iron grate USA",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Dagvattenbrunn/golvbrunn ute",
+  "owner_owns": true,
+  "friction": "Löv täpper brunnsgallret, vatten på uppfarten",
+  "old_way": "Kratta bort",
+  "variants": "tum-mått (USA)",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Brunnen finns på tomten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Ej hämtad (Temu-IP strypt)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Svenska brunnsgaller är runda 200/315/400 mm eller 250x250 betong — USA-mått passar inte, kunden måste mäta"
+   },
+   "hook": {
+    "text": "Löv på brunnsgallret igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Objektet är litet och svårt att känna igen i flödet"
+   }
+  },
+  "negative_space_flags": [
+   "passform",
+   "objektet syns dåligt"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "Passar inte svenska brunnar.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com drain grate cover leaf guard outdoor drainage catch basin",
+   "https://www.temu.com/se/g-601099581150578.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "damm",
+  "goods_id": "601099601980879",
+  "url_se": "https://www.temu.com/se/g-601099601980879.html",
+  "title": "Kapler pond garden cover dome net 14x11ft for leaves/fish/winter, zipper + stakes",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Trädgårdsdamm",
+  "owner_owns": true,
+  "friction": "Löven faller i dammen nu — bottenslam, syrebrist, fiskdöd under isen",
+  "old_way": "Håva varje dag, eller ett platt nät som sjunker ner i vattnet",
+  "variants": "storlek 14x11 ft (en storlek i titeln)",
+  "swedish_equivalent": {
+   "retailer": "fackhandel (Oase/Pontec dammnät via Hornbach/Bauhaus/zoo) enligt minne; ingen av de fyra kedjorna",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Oase AquaNet dammnät (obekräftat)",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Dammen är grävd på tomten, står ute året om, ofta med fisk"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall sep–okt är EXAKT när dammnätet ska på; löv på vattenytan är fotograferbart i varje svensk trädgård",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNCERTAIN",
+    "reason": "Kupolform med dragkedja hittades inte hos någon kedja eller svensk fackhandel – bara platta nät med markspik (Bauhaus 104 kr, Oase 159–379 kr). Det finns alltså inget ankare att prissätta mot, och kategoripriset 'dammnät' ligger lågt.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": null,
+     "price_sek": null,
+     "url": null
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Kupolnät/lövnät för trädgårdsdamm med dragkedja"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Listningen kunde inte hämtas (Temu strypte IP:n, blocked=true efter retry) — material ej verifierat",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "0 — en damm per hus",
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Dammens mått — ägaren vet ungefär (ägarkunskap 1); kupolen måste täcka hela dammen"
+   },
+   "hook": {
+    "text": "Har du en damm i trädgården?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Dammen är omisskännlig i bild; ägarklass i Sverige okänd — troligen 100 000–200 000 hushåll (ej verifierat)"
+   }
+  },
+  "negative_space_flags": [
+   "storlek måste mätas"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 75,
+  "tier": "B",
+  "biggest_risk": "Storleksvarianter + om Temu-priset ligger över ~200 kr blir uppslaget för litet.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com pond net leaf cover autumn pond pump winter",
+   "https://www.temu.com/se/g-601099601980879.html"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "kupolnät damm: kupolformen finns inte i Sverige (UNCERTAIN); dammens mått måste mätas; publik okänd"
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "damm",
+  "goods_id": "601099516089983",
+  "url_se": "https://www.temu.com/se/g-601099516089983.html",
+  "title": "heavy duty mesh pond netting plastic leaf cover, flexible",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": true,
+  "object": "Trädgårdsdamm",
+  "owner_owns": true,
+  "friction": "Löv i dammen",
+  "old_way": "Håva",
+  "variants": "storlek (m²)",
+  "swedish_equivalent": {
+   "retailer": "fackhandel (dammnät, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Damm ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Lövfall nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Platt dammnät = samma form som fackhandelns. EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Listningen kunde inte hämtas (Temu strypte IP:n, blocked=true efter retry) — material ej verifierat",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "0",
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Storlek"
+   },
+   "hook": {
+    "text": "Har du en damm i trädgården?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Dammägare"
+   }
+  },
+  "negative_space_flags": [
+   "samma form som fackhandel"
+  ],
+  "eliminated_at": null,
+  "structure_match": 45,
+  "category_novelty": 75,
+  "tier": "C",
+  "biggest_risk": "Commodity-nät.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com pond net leaf cover autumn pond pump winter",
+   "https://www.temu.com/se/g-601099516089983.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "damm/pump",
+  "goods_id": "601099537193860",
+  "url_se": "https://www.temu.com/se/g-601099537193860.html",
+  "title": "45 cm pond water pump anti-blocking mesh bag, drawstring (se-en-listning)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Dammpumpen (dränkbar)",
+  "owner_owns": true,
+  "friction": "Löv och slam sätter igen pumpen i oktober; pumpen måste tas upp och rensas var vecka",
+  "old_way": "Ta upp pumpen och skölja, eller en hink med hål",
+  "variants": "45x45 cm (en storlek i SE-listningen)",
+  "swedish_equivalent": {
+   "retailer": "fackhandel (Oase pumpkorg/pumpsäck, obekräftat minne)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": "Oase Pumpskydd (Vattenliv)",
+   "price_sek": 329,
+   "url": "https://www.vattenliv.se/produkt/pumpskydd/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Pumpen ligger i dammen året om (eller tas upp inför vintern — då är det nu)"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv i dammen sätter igen pumpen nu; en igensatt pump i handen är fotograferbar",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Ingen kedja säljer pumpsäck och Pricerunner listar ingen alls; det enda svenska ankaret är Oases pumpskydd för 329 kr hos fackhandeln. Ett pris på 149–199 kr ligger gott under 1,6×-gränsen.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Oase Pumpskydd (Vattenliv)",
+     "price_sek": 329,
+     "url": "https://www.vattenliv.se/produkt/pumpskydd/"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Pumpsäck/skyddsnät för dammpump"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Listningen kunde inte hämtas (Temu strypte IP:n, blocked=true efter retry) — material ej verifierat",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "0–1 — en pump per damm, men filter+skimmer",
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek 45x45 cm — pumpen ryms alltid"
+   },
+   "hook": {
+    "text": "Sätter löven igen dammpumpen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Dammägare med pump — delmängd av dammägarna; pumpen i sig är svår att känna igen i flödet, dammen är det"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (pumpen) syns dåligt",
+   "lågt Temu-pris → svårt nå 300 kr"
+  ],
+  "eliminated_at": null,
+  "structure_match": 55,
+  "category_novelty": 80,
+  "tier": "C (< 300 + osynligt objekt)",
+  "biggest_risk": "En nätpåse för ~50 kr är svår att sälja för 299 kr; payoffen (pumpen slutar stoppa) är fördröjd.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com submersible pump filter bag pre-filter pond pump protection",
+   "https://www.temu.com/se-en/g-601099537193860.html"
+  ],
+  "tier_agent": "B",
+  "tier_reason": "pumpsäck: nätpåse för ~50 kr, pumpen känns inte igen i flödet"
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "damm/pump",
+  "goods_id": "601100782710160",
+  "url_se": "https://www.temu.com/se/g-601100782710160.html",
+  "title": "extra large fountain mesh pond pump filter bag 24x26 in",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Dammpumpen",
+  "owner_owns": true,
+  "friction": "Löv sätter igen pumpen",
+  "old_way": "Skölja pumpen",
+  "variants": "XL 24x26 tum",
+  "swedish_equivalent": {
+   "retailer": "fackhandel (obekräftat)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Pump i damm"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Listningen kunde inte hämtas (Temu strypte IP:n, blocked=true efter retry) — material ej verifierat",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "0",
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En storlek"
+   },
+   "hook": {
+    "text": "Sätter löven igen dammpumpen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "OSÄKER",
+    "reason": "Dammägare med pump"
+   }
+  },
+  "negative_space_flags": [],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 80,
+  "tier": "C",
+  "biggest_risk": "Som 601099537193860 (dubblett, XL-storlek).",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com submersible pump filter bag pre-filter pond pump protection",
+   "https://www.temu.com/se/g-601100782710160.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "regntunna",
+  "goods_id": "601099514396363",
+  "url_se": "https://www.temu.com/se/g-601099514396363.html",
+  "title": "rain barrel net cover drawstring 97 cm",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Regntunnan (öppen)",
+  "owner_owns": true,
+  "friction": "Löv i tunnan i oktober → ruttet vatten, igensatt kran; myggen är över",
+  "old_way": "Lock som blåser av, gammalt nät, eller ingenting",
+  "variants": "97 cm diameter, dragsko",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN (kedjorna säljer tunnor MED lock; separat nät enligt minne inte)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tunnan står vid stupröret ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Löven finns nu, men tunnan töms och vänds i oktober inför frost — halva säsongen kvar; myggvinkeln är död",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Listningen kunde inte hämtas (Temu strypte IP:n, blocked=true efter retry) — material ej verifierat",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2-pack möjligt — två stuprör = två tunnor",
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Dragsko — passar de flesta tunnor (mått anges i listningen)"
+   },
+   "hook": {
+    "text": "Löv i regntunnan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Regntunna är vanlig i småhus, syns tydligt i bild"
+   }
+  },
+  "negative_space_flags": [
+   "lågt Temu-pris",
+   "gratis old way (lock)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 40,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Nätpåse < 50 kr — når inte 300 kr; tunnan töms snart.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com rain barrel lid cover mesh mosquito water butt",
+   "https://www.temu.com/se/g-601099514396363.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "regntunna",
+  "goods_id": "601099626589279",
+  "url_se": "https://www.temu.com/se/g-601099626589279.html",
+  "title": "PE garden rain barrel net cover mesh filter screen",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Regntunnan (öppen)",
+  "owner_owns": true,
+  "friction": "Löv i tunnan i oktober → ruttet vatten, igensatt kran; myggen är över",
+  "old_way": "Lock som blåser av, gammalt nät, eller ingenting",
+  "variants": "en storlek",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN (kedjorna säljer tunnor MED lock; separat nät enligt minne inte)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tunnan står vid stupröret ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Löven finns nu, men tunnan töms och vänds i oktober inför frost — halva säsongen kvar; myggvinkeln är död",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Listningen kunde inte hämtas (Temu strypte IP:n, blocked=true efter retry) — material ej verifierat",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2-pack möjligt — två stuprör = två tunnor",
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Dragsko — passar de flesta tunnor (mått anges i listningen)"
+   },
+   "hook": {
+    "text": "Löv i regntunnan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Regntunna är vanlig i småhus, syns tydligt i bild"
+   }
+  },
+  "negative_space_flags": [
+   "lågt Temu-pris",
+   "gratis old way (lock)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 40,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Nätpåse < 50 kr — når inte 300 kr; tunnan töms snart.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com rain barrel lid cover mesh mosquito water butt",
+   "https://www.temu.com/se/g-601099626589279.html"
+  ]
+ },
+ {
+  "kluster": "vatten",
+  "kluster_objekt": "regntunna",
+  "goods_id": "601099575760217",
+  "url_se": "https://www.temu.com/se/g-601099575760217.html",
+  "title": "2pcs rain bucket mesh cover",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": 0,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "fetch_blocked": false,
+  "object": "Regntunnan (öppen)",
+  "owner_owns": true,
+  "friction": "Löv i tunnan i oktober → ruttet vatten, igensatt kran; myggen är över",
+  "old_way": "Lock som blåser av, gammalt nät, eller ingenting",
+  "variants": "2-pack",
+  "swedish_equivalent": {
+   "retailer": "UNKNOWN (kedjorna säljer tunnor MED lock; separat nät enligt minne inte)",
+   "price_sek": null,
+   "url": null,
+   "same_form": null
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Tunnan står vid stupröret ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Löven finns nu, men tunnan töms och vänds i oktober inför frost — halva säsongen kvar; myggvinkeln är död",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "EJ VERIFIERAD 2026-09-04: WebSearch-budget slut, Biltema/Jula/Rusta/Prisjakt svarar 403/404 — bygger på obekräftat minne"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Listningen kunde inte hämtas (Temu strypte IP:n, blocked=true efter retry) — material ej verifierat",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2-pack möjligt — två stuprör = två tunnor",
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll tidigare eller pris saknas"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Dragsko — passar de flesta tunnor (mått anges i listningen)"
+   },
+   "hook": {
+    "text": "Löv i regntunnan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Regntunna är vanlig i småhus, syns tydligt i bild"
+   }
+  },
+  "negative_space_flags": [
+   "lågt Temu-pris",
+   "gratis old way (lock)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 40,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Nätpåse < 50 kr — når inte 300 kr; tunnan töms snart.",
+  "confidence": "LOW",
+  "sources": [
+   "site:temu.com rain barrel lid cover mesh mosquito water butt",
+   "https://www.temu.com/se/g-601099575760217.html"
+  ]
+ }
+]

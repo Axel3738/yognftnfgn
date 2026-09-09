@@ -1,0 +1,72 @@
+[
+ {
+  "goods_id": "601099566089885", "concept": "Kikarsele/bröstväska med regnskydd", "kluster": "jakt",
+  "source": "US-sidan 2026-09-04 07:22 UTC (SE blockerad). Galleri identiskt mellan SE och US på IBC-kontrollen; video finns på US-sidan här.",
+  "video_len_s": 37.1, "video_format": "720x720 kvadrat, 30 fps",
+  "sec_0_3": "0–1 s: svart titelkort med logotypen 'NEW VIEW HUNTING'. 1–3,5 s: jägare i camo i höstskog öppnar bröstväskan, tar upp kikaren, lyfter den mot ögonen. En Canon-kamerarigg står i bild till höger.",
+  "product_in_use_by_3s": "JA (efter 1 s logotyp)",
+  "same_product_as_hero": "JA — camo bröstväska med orange NEW VIEW-logga",
+  "burned_text": "Logotypkort 0–1 s (klipps bort). Varumärket är broderat på själva väskan (inte inbränd text, men ett utländskt märkesnamn i bild).",
+  "muted_ok": "JA — öppna, ta upp, titta: självförklarande",
+  "owner_or_object_visible": "JA — jägare, kikare, höstskog (lövfällning)",
+  "clean_framing": "NEJ — Canon-kamerarigg i bild i de flesta bilder; från ~5 s bågjägare med compoundbåge i trädstand (bågjakt är förbjuden i Sverige = amerikansk kod); en vertikal unboxing-klipp mitt i",
+  "raw_plus_captions_viable": "KANSKE — sekvensen 1–6 s (öppna väskan, ta kikaren, spana) + 14–20 s duger med tight beskärning; bågen och riggen måste klippas bort; kvadratformat kräver 9:16-crop",
+  "hero_alone_viable": "NEJ — studio-packshot utan ägare/objekt (textfri, ren)",
+  "material_result": "PASS (villkorat)",
+  "material_reason": "Riktig jägare, riktig kikare, riktig höstskog inom 3 s — det är strukturen. Men bara ~10 användbara sekunder utan båge/kamerarigg, och logotypkortet först.",
+  "temu_us": {"price_usd": 26.59, "rating": 4.7, "review_count": 303, "images": 3, "video": true},
+  "hero_check": "img_0: packshot vit bakgrund, textfri utom broderat märke"
+ },
+ {
+  "goods_id": "601099619866532", "concept": "Lockskydd (cover cap) spabad", "kluster": "pool",
+  "source": "US-sidan 2026-09-04. 1 bild, ingen video på US-sidan (SE-sidans video okänd — US-sidan utelämnade IBC:s video som SE-sidan hade).",
+  "video_len_s": null, "sec_0_3": "UNKNOWN — ingen video via US",
+  "product_in_use_by_3s": "UNKNOWN", "same_product_as_hero": "—",
+  "burned_text": "Heron: ingen text. Men motivet är ett hopvikt brunt överdrag framför ett FRISTÅENDE BADKAR i djungelmiljö — inte ett spabad, inte ett spalock, produkten inte i bruk.",
+  "muted_ok": "—", "owner_or_object_visible": "NEJ — badkar, inte spabad",
+  "raw_plus_captions_viable": "UNKNOWN (ingen video sedd)",
+  "hero_alone_viable": "NEJ — fel objekt, produkten hopvikt",
+  "material_result": "FAIL på heron (video UNKNOWN)",
+  "material_reason": "Det enda material som finns att se visar fel objekt (badkar) och produkten hopvikt. Ett lockskydd i bruk på ett spalock med löv syns ingenstans.",
+  "temu_us": {"price_usd": 19.39, "rating": 4.7, "review_count": 204, "images": 1, "video": false}
+ },
+ {
+  "goods_id": "601099575291512", "concept": "Spa-räcke", "kluster": "pool",
+  "source": "US-sidan 2026-09-04. 2 bilder, ingen video på US-sidan.",
+  "video_len_s": null, "sec_0_3": "UNKNOWN — ingen video via US",
+  "product_in_use_by_3s": "UNKNOWN", "same_product_as_hero": "—",
+  "burned_text": "Heron: rendering av spabad med räcket monterat + produkt-cutout; två orange ikoner (sol/snöflinga) uppe till vänster — beskärbara.",
+  "muted_ok": "—", "owner_or_object_visible": "Objekt JA (spabad, rendering), ägare NEJ",
+  "raw_plus_captions_viable": "UNKNOWN",
+  "hero_alone_viable": "KANSKE — tydlig, räcket i bruk, men en rendering utan människa",
+  "material_result": "PASS (hero) / video UNKNOWN",
+  "material_reason": "Heron visar produkten i bruk på rätt objekt utan text (ikonerna kan beskäras). Ingen rörlig bild sedd.",
+  "temu_us": {"price_usd": 79.99, "rating": 4.5, "review_count": 118, "images": 2, "video": false}
+ },
+ {
+  "goods_id": "601099615828436", "concept": "Vedställsöverdrag (8 ft-variant på US-sidan)", "kluster": "ved",
+  "source": "US-sidan 2026-09-04. 1 bild, ingen video på US-sidan. Bildbeskrivningen säger '8 ft … only cover no rack'.",
+  "video_len_s": null, "sec_0_3": "UNKNOWN — ingen video via US",
+  "product_in_use_by_3s": "UNKNOWN", "same_product_as_hero": "—",
+  "burned_text": "Heron: rendering av överdraget på ett fullt vedställ med 'cutaway' som visar veden; röd inbränd text längst ner 'NOTE: Cover Only, No Rack' — i kanten, beskärbar.",
+  "muted_ok": "—", "owner_or_object_visible": "Objekt JA (vedställ med ved, rendering), ägare NEJ",
+  "raw_plus_captions_viable": "UNKNOWN",
+  "hero_alone_viable": "KANSKE — produkten i bruk på rätt objekt, rendering, text i kanten",
+  "material_result": "PASS (hero, beskuren) / video UNKNOWN",
+  "material_reason": "Heron visar överdraget på ett vedställ; den röda texten sitter i nederkanten och går att beskära. Ingen video sedd.",
+  "temu_us": {"price_usd": 34.47, "rating": 4.4, "review_count": 10, "images": 1, "video": false}
+ },
+ {
+  "goods_id": "601099583674464", "concept": "Tändvedsklyv gjutjärn", "kluster": "ved",
+  "source": "US-sidan 2026-09-04. 1 bild, ingen video på US-sidan.",
+  "video_len_s": null, "sec_0_3": "UNKNOWN — ingen video via US",
+  "product_in_use_by_3s": "UNKNOWN", "same_product_as_hero": "—",
+  "burned_text": "Heron: textfri packshot på vitt — klyven ensam, ingen ved, ingen klubba, ingen hand.",
+  "muted_ok": "—", "owner_or_object_visible": "NEJ",
+  "raw_plus_captions_viable": "UNKNOWN",
+  "hero_alone_viable": "NEJ — packshot utan handling",
+  "material_result": "FAIL på heron (video UNKNOWN)",
+  "material_reason": "Det enda som syns är produkten ensam. Handlingen (slaget, stickan) som bär hela annonsen finns inte i materialet som gick att läsa.",
+  "temu_us": {"price_usd": 16.25, "rating": 4.9, "review_count": 28, "images": 1, "video": false}
+ }
+]

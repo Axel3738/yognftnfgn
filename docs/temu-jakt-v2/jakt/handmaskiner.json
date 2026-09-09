@@ -1,0 +1,1880 @@
+[
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099512512218",
+  "url_se": "https://www.temu.com/se/g-601099512512218.html",
+  "title": "Wood Splitting Drill Bit High Speed Steel Firewood Log Splitter Drill Bit Wood Punch Cone Driver Drill Bit Woodworking Tool With Connecting Rod For Electric Drill Power Tool",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Vedhögen på tomten + ägarens borrmaskin (klyvkon som skruvas in i stocken)",
+  "owner_owns": "Ved (kamin/vedbod, 45–70 småhus/fritidshus) och en 13 mm-borrmaskin — nästan alla",
+  "friction": "Vedklyvning för hand i september–oktober: rygg, axlar, handleder; yxan studsar i kvistig ved",
+  "old_way": "Yxa/klyvyxa + huggkubbe (improvisation: kilar, slägga) eller hydraulisk vedklyv 2 000–4 000 kr",
+  "variants": "Skaft: hex/rund/fyrkant; diameter 32/42 mm — ägaren vet om han har chuck (rund) eller slagskruvdragare (hex); enkel variant möjlig (42 mm rundskaft + hexadapter)",
+  "swedish_equivalent": {
+   "retailer": "Ingen av Biltema/Jula/Clas Ohlson/Rusta ur kunskap — EJ VERIFIERAD (sökbudget slut i sessionen); säljs på Amazon.se/Fyndiq",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Vedborr till borrmaskin med 4 skaft (CDON/Elgiganten-listning)",
+   "price_sek": 279,
+   "url": "https://cdon.se/bygg-verktyg/vedborr-till-borrmaskin-med-4-olika-skaft-svart-c107314280230273"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används med borrmaskinen ägaren har, på ved som ligger ute i höst; universellt höstobjekt"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vedklyvning pågår i sept–okt; vedhögen och yxan kan fotograferas på tomten; kroppslig payoff (rygg) bevisad stark",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNCERTAIN",
+    "reason": "Biltema/Jula/Clas/Rusta säljer inte klyvkonen (ur sökutdrag), men ingen fackhandel säljer den heller – bara marknadsplatser (CDON/Elgiganten 279, Pricerunner 229, Jämtfire 169) med betyg 2,2/5 och forumklagomål om att den fastnar. Det finns inget ankare ≥1,6× ett pris runt 199–249 kr, så hyllan är ledig men prisgolvet och produktkvaliteten talar emot.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Vedborr till borrmaskin med 4 skaft (CDON/Elgiganten-listning)",
+     "price_sek": 279,
+     "url": "https://cdon.se/bygg-verktyg/vedborr-till-borrmaskin-med-4-olika-skaft-svart-c107314280230273"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Klyvkon/vedklyv-borr till borrmaskin"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch — video ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 399,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Svagt: en kon räcker; 2-pack (32+42 mm) möjligt som meningsfull ×2",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Skafttyp kräver att kunden vet chuck vs hex — 'vet ungefär' (nivå 1); löses med en SKU: rundskaft 42 mm + hexadapter"
+   },
+   "hook": {
+    "text": "Klyver du fortfarande ved med yxa?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Vedhög + borrmaskin är omisskännligt i flödet; ≥ 500 000 hushåll eldar med ved; man 45–70 småhus/fritidshus"
+   }
+  },
+  "negative_space_flags": [
+   "säkerhet: högt vridmoment kan vrida borrmaskinen ur handen — recensionsrisk",
+   "köpt old way som fungerar (yxa)",
+   "kräver kraftig borrmaskin — svaga skruvdragare orkar inte → returer"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "C (ankare under vårt pris)",
+  "biggest_risk": "Säkerhet/returer: konen fastnar i kvistig björk och sliter borren ur handen; material ej verifierad",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com log splitter drill bit cone firewood",
+   "https://www.temu.com/wood-splitting-drill-bit-high-speed-steel-firewood-log-splitter-drill-bit-wood-punch-cone-driver-drill-bit-woodworking-tool-with-connecting-rod-for-electric-drill-power-tool-g-601099512512218.html"
+  ],
+  "tier_provisional": true,
+  "tier_agent": "B",
+  "tier_reason": "klyvkon till borrmaskin: CDON/Elgiganten 279 kr i samma form är LÄGRE än vårt 399; vridmoment/säkerhet i recensionerna"
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099760920889",
+  "url_se": "https://www.temu.com/se/g-601099760920889.html",
+  "title": "High Speed Firewood Drill Bit 42mm Screw Cone Splitter For Electric Drills Durable Carbon Steel Versatile Handles",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Ved + borrmaskin (42 mm klyvkon)",
+  "owner_owns": "Som 601099512512218",
+  "friction": "Som 601099512512218",
+  "old_way": "Som 601099512512218",
+  "variants": "42 mm, 'versatile handles' — troligen flera skafttyper; oklart",
+  "swedish_equivalent": {
+   "retailer": "Ingen av kedjorna ur kunskap — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Vedborr till borrmaskin med 4 skaft (CDON/Elgiganten-listning)",
+   "price_sek": 279,
+   "url": "https://cdon.se/bygg-verktyg/vedborr-till-borrmaskin-med-4-olika-skaft-svart-c107314280230273"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601099512512218"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vedsäsong sept–okt",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNCERTAIN",
+    "reason": "Biltema/Jula/Clas/Rusta säljer inte klyvkonen (ur sökutdrag), men ingen fackhandel säljer den heller – bara marknadsplatser (CDON/Elgiganten 279, Pricerunner 229, Jämtfire 169) med betyg 2,2/5 och forumklagomål om att den fastnar. Det finns inget ankare ≥1,6× ett pris runt 199–249 kr, så hyllan är ledig men prisgolvet och produktkvaliteten talar emot.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Vedborr till borrmaskin med 4 skaft (CDON/Elgiganten-listning)",
+     "price_sek": 279,
+     "url": "https://cdon.se/bygg-verktyg/vedborr-till-borrmaskin-med-4-olika-skaft-svart-c107314280230273"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Klyvkon/vedklyv-borr till borrmaskin"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 399,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Svagt",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Skafttyp"
+   },
+   "hook": {
+    "text": "Klyver du fortfarande ved med yxa?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601099512512218"
+   }
+  },
+  "negative_space_flags": [
+   "säkerhet/vridmoment",
+   "köpt old way som fungerar"
+  ],
+  "eliminated_at": null,
+  "structure_match": 60,
+  "category_novelty": 85,
+  "tier": "C (ankare under vårt pris)",
+  "biggest_risk": "Samma som 601099512512218 — dublett-listning; välj den med bäst video",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com log splitter drill bit cone firewood",
+   "https://www.temu.com/high-speed-firewood-drill-bit-42mm-screw-cone-splitter-for-electric-drills-durable-carbon-steel-versatile-handles-g-601099760920889.html"
+  ],
+  "tier_provisional": true,
+  "tier_agent": "B",
+  "tier_reason": "klyvkon till borrmaskin: CDON/Elgiganten 279 kr i samma form är LÄGRE än vårt 399; vridmoment/säkerhet i recensionerna"
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099525606604",
+  "url_se": "https://www.temu.com/se/g-601099525606604.html",
+  "title": "3pcs Firewood Log Splitter Drill Bit Removable Cones Wood Splitting Logs Bits Heavy Duty Electric Drills Screw Cone Driver Hex",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Ved + borrmaskin — 3-delars set med utbytbara koner",
+  "owner_owns": "Som 601099512512218",
+  "friction": "Som 601099512512218",
+  "old_way": "Som 601099512512218",
+  "variants": "3-delars set (kon + skaft + adapter) — kit-karaktär",
+  "swedish_equivalent": {
+   "retailer": "Ingen av kedjorna ur kunskap — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Samma objekt, men listningen är ett 3-delars kit — fingeravtrycket straffar kit"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vedsäsong",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Som 601099512512218"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Kit med flera delar att montera"
+   },
+   "hook": {
+    "text": "Klyver du fortfarande ved med yxa?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601099512512218"
+   }
+  },
+  "negative_space_flags": [
+   "kit",
+   "montering"
+  ],
+  "eliminated_at": null,
+  "structure_match": 50,
+  "category_novelty": 85,
+  "tier": "C",
+  "biggest_risk": "Kit-formatet; enkelvarianten 601099512512218 är bättre om videon duger",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com log splitter drill bit cone firewood",
+   "https://www.temu.com/3pcs-firewood-log-splitter-drill-bit-removable-cones--wood-splitting-logs-bits-heavy-duty-electric-drills-screw-cone-driver-hex-g-601099525606604.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099547786201",
+  "url_se": "https://www.temu.com/se/g-601099547786201.html",
+  "title": "2pcs Firewood Log Splitter 32mm High Carbon Log Drill Bit With Hex Shank Titanium Coated Sturdy Wood Splitting Screw Cone For Electric Drill Camping",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Ved + borrmaskin — 2-pack 32 mm hexskaft",
+  "owner_owns": "Som 601099512512218",
+  "friction": "Som 601099512512218",
+  "old_way": "Som 601099512512218",
+  "variants": "2-pack, hexskaft (passar slagskruvdragare och chuck) — en variant",
+  "swedish_equivalent": {
+   "retailer": "Ingen av kedjorna ur kunskap — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Vedborr till borrmaskin med 4 skaft (CDON/Elgiganten-listning)",
+   "price_sek": 279,
+   "url": "https://cdon.se/bygg-verktyg/vedborr-till-borrmaskin-med-4-olika-skaft-svart-c107314280230273"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601099512512218"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Vedsäsong",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNCERTAIN",
+    "reason": "Biltema/Jula/Clas/Rusta säljer inte klyvkonen (ur sökutdrag), men ingen fackhandel säljer den heller – bara marknadsplatser (CDON/Elgiganten 279, Pricerunner 229, Jämtfire 169) med betyg 2,2/5 och forumklagomål om att den fastnar. Det finns inget ankare ≥1,6× ett pris runt 199–249 kr, så hyllan är ledig men prisgolvet och produktkvaliteten talar emot.",
+    "verified": true,
+    "verified_by": "h1.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Vedborr till borrmaskin med 4 skaft (CDON/Elgiganten-listning)",
+     "price_sek": 279,
+     "url": "https://cdon.se/bygg-verktyg/vedborr-till-borrmaskin-med-4-olika-skaft-svart-c107314280230273"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Klyvkon/vedklyv-borr till borrmaskin"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 399,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "2-pack inbyggt — ger inte flerköp men motiverar pris ≥ 399",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Hexskaft passar både chuck och slagskruvdragare — en variant"
+   },
+   "hook": {
+    "text": "Klyver du fortfarande ved med yxa?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601099512512218"
+   }
+  },
+  "negative_space_flags": [
+   "säkerhet/vridmoment",
+   "köpt old way som fungerar",
+   "'camping' i titeln — fel publikkod, ignorera"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "C (ankare under vårt pris)",
+  "biggest_risk": "32 mm är för liten för grov ved — kunden får inte den payoff videon lovar",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com log splitter drill bit cone firewood",
+   "https://www.temu.com/2pcs-firewood-log-splitter-32mm--high-carbon--log-drill-bit-with-hex--shank-titanium-coated-sturdy-wood-splitting-screw-cone-for-electric-drill-camping-wood-splitting-drill-bit-firewood-drill-bit-g-601099547786201.html"
+  ],
+  "tier_provisional": true,
+  "tier_agent": "B",
+  "tier_reason": "klyvkon till borrmaskin: CDON/Elgiganten 279 kr i samma form är LÄGRE än vårt 399; vridmoment/säkerhet i recensionerna"
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099519754003",
+  "url_se": "https://www.temu.com/se/g-601099519754003.html",
+  "title": "1pc Shoulder Strap Trimmer Strap Blower Straps Strap Universal For Weedeater Leaf Blower Multi Head System Grass Trimmer Shoulder Strap Adjustable Brush Cutter Harness Universal Leaf Blower Straps",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Lövblåsen (handhållen, batteri/bensin 3–5 kg) — och trimmern",
+  "owner_owns": "Villaägare med lövblås; oktober = varje helg",
+  "friction": "Arm/axel efter 30–60 min lövblåsning; maskinen hänger i en hand",
+  "old_way": "Byter hand, pausar; trimmerns bärsele passar inte lövblåsen",
+  "variants": "En variant (universalrem med karbinhake)",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula säljer enkel bärsele för trimmer/röjsåg (samma form, 60–150 kr ur kunskap — EJ VERIFIERAD); ingen säljer den positionerad för lövblås",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Stihl Röjsele (Pricerunner)",
+   "price_sek": 488,
+   "url": "https://www.pricerunner.se/results?q=r%C3%B6jsele"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på lövblåsen/trimmern, bärs kroppsligt, används ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktober = lövblåsning varje helg; öm arm är i presens; kroppslig payoff bevisad (axelbältet)",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula säljer en vadderad universalsele (Meec) för 349 kr och Clas Ohlson en dubbelsele för 499 kr, och den enkla remformen ligger redan på 149 kr på Pricerunner. Vi kan inte rimligen ta mer än ~249 kr för en enkel vadderad rem, och då finns kedjans bättre produkt ett steg upp.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 349,
+    "anchor": {
+     "name": "Stihl Röjsele (Pricerunner)",
+     "price_sek": 488,
+     "url": "https://www.pricerunner.se/results?q=r%C3%B6jsele"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Axelrem/bärsele till lövblås eller trimmer, universal, vadderad"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 349,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Lövblås + trimmer = två maskiner, en rem var",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant, justerbar"
+   },
+   "hook": {
+    "text": "Trött i armen av lövblåsen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Lövblås är omisskännlig i flödet; > 1 miljon hushåll med tomt; man 45–70"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet: många batterilövblåsar saknar remögla — 'passar min?'",
+   "samma kategori som befintlig vinnare (trimmer-axelbälte) — vinkel snarare än ny produkt"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 70,
+  "category_novelty": 15,
+  "tier": "ELIM",
+  "biggest_risk": "Detta är inte en ny produkt utan en höstvinkel (lövblås) på axelbältet som redan säljs — och lövblåsar utan remögla ger 'passar inte'-returer",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower shoulder strap harness",
+   "https://www.temu.com/1pc-shoulder-strap-trimmer-strap-blower-straps-strap-universal-for-weedeater-leaf-blower-multi-head-system----grass-trimmer--eater-shoulder-strap-adjustable-brush-cutter-harness-universal-leaf-blower-straps-g-601099519754003.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099555571658",
+  "url_se": "https://www.temu.com/se/g-601099555571658.html",
+  "title": "1pc Adjustable Universal Shoulder Strap For Trimmers Blowers 70cm Padded Garden Tool Harness Lawn Mower Shoulder Belt Accessory Secure Weed Eater Leaf Blower Strap",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Lövblås/trimmer — vadderad 70 cm rem",
+  "owner_owns": "Som 601099519754003",
+  "friction": "Som 601099519754003",
+  "old_way": "Som 601099519754003",
+  "variants": "En variant",
+  "swedish_equivalent": {
+   "retailer": "Som 601099519754003 — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Stihl Röjsele (Pricerunner)",
+   "price_sek": 488,
+   "url": "https://www.pricerunner.se/results?q=r%C3%B6jsele"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601099519754003"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som 601099519754003",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula säljer en vadderad universalsele (Meec) för 349 kr och Clas Ohlson en dubbelsele för 499 kr, och den enkla remformen ligger redan på 149 kr på Pricerunner. Vi kan inte rimligen ta mer än ~249 kr för en enkel vadderad rem, och då finns kedjans bättre produkt ett steg upp.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 349,
+    "anchor": {
+     "name": "Stihl Röjsele (Pricerunner)",
+     "price_sek": 488,
+     "url": "https://www.pricerunner.se/results?q=r%C3%B6jsele"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Axelrem/bärsele till lövblås eller trimmer, universal, vadderad"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 349,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Två maskiner",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Trött i armen av lövblåsen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601099519754003"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet remögla",
+   "samma kategori som befintlig vinnare"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 68,
+  "category_novelty": 15,
+  "tier": "ELIM",
+  "biggest_risk": "Som 601099519754003",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower shoulder strap harness",
+   "https://www.temu.com/ma-en/1pc-adjustable--shoulder-strap-for-trimmers-blowers-70cm-padded-garden-tool-harness-lawn-mower-shoulder-belt-accessory-secure--eater-leaf-blower-strap-g-601099555571658.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099520763077",
+  "url_se": "https://www.temu.com/se/g-601099520763077.html",
+  "title": "1pc Trimmer Strap Adjustable Universal Leaf Blower Shoulder Harness Strap String Trimmer Replacement Parts For Weeder Leaf Blower Multi Head System And All Types",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Lövblås/trimmer — universalrem",
+  "owner_owns": "Som 601099519754003",
+  "friction": "Som 601099519754003",
+  "old_way": "Som 601099519754003",
+  "variants": "En variant",
+  "swedish_equivalent": {
+   "retailer": "Som 601099519754003 — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": "Husqvarna bärsele",
+   "price_sek": 819,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601099519754003"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som 601099519754003",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Som 601099519754003"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad (dublett — prioriterades bort när Temu blockerade)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 349,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Två maskiner",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Trött i armen av lövblåsen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601099519754003"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet remögla",
+   "samma kategori som befintlig vinnare"
+  ],
+  "eliminated_at": null,
+  "structure_match": 65,
+  "category_novelty": 15,
+  "tier": "C",
+  "biggest_risk": "Dublett av 601099519754003 — bara en av remmarna behövs",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower shoulder strap harness",
+   "https://www.temu.com/1pc-trimmer-strap-adjustable-universal-leaf-blower-shoulder-harness--strap-string-trimmer-replacement-parts-for-weeder-leaf-blower-multi-head-system-and-all-types-g-601099520763077.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099516184801",
+  "url_se": "https://www.temu.com/se/g-601099516184801.html",
+  "title": "1pc Trimmer Strap For Weed Eater Shoulder Strap Harness Upgraded Metal Clip Compatible With EGO String Trimmer Leaf Blower",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "EGO-trimmer/lövblås — märkesbunden rem",
+  "owner_owns": "Bara EGO-ägare (liten andel i Sverige)",
+  "friction": "Som 601099519754003",
+  "old_way": "Som 601099519754003",
+  "variants": "Märkesbunden (EGO)",
+  "swedish_equivalent": {
+   "retailer": "EGO-återförsäljare säljer originalrem",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på maskinen"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Höst",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "Ej verifierad"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad — föll på variant",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Märkesbunden kompatibilitet (EGO) — 'passar min maskin?' är den kända risken"
+   },
+   "hook": {
+    "text": "Har du en EGO-lövblås?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "EGO-ägare i Sverige är långt under 100 000 hushåll"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet",
+   "oklart ägande"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 35,
+  "category_novelty": 15,
+  "tier": "ELIM",
+  "biggest_risk": "Publik för liten",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower shoulder strap harness",
+   "https://www.temu.com/1pc-trimmer-strap-for--eater-shoulder-strap-harness-upgraded-metal-clip-compatible-with-ego-string-trimmer-leaf-blower-g-601099516184801.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601103248788835",
+  "url_se": "https://www.temu.com/se/g-601103248788835.html",
+  "title": "Universal Leaf Blower Gutter Attachment Gutter Cleaning Tools With Supportive Structure And Telescopic Hose Cleaning 11 Feet Yard Maintenance Tool",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Hängrännorna på huset + lövblåsen (rörsats som når 3,3 m från marken)",
+  "owner_owns": "Villaägare med lövblås och träd nära huset",
+  "friction": "Oktober: rännorna fulla med löv, vatten rinner över; stegen är farlig för en 60-åring",
+  "old_way": "Stege + hand/skopa (fallrisk), eller betala 1 500–3 000 kr för rensning",
+  "variants": "Universal med adaptrar 'passar de flesta blåsar' — kompatibilitet mot munstycksdiameter",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula säljer teleskopisk hängränneskrapa/-skopa (samma kategori, annan form) ur kunskap — EJ VERIFIERAD; blåstillsats: ingen kedja ur kunskap",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare",
+   "price_sek": 745,
+   "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på lövblåsen, används på huset — båda ägda, ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktober = löv i rännorna; syns från marken; rädsla för stegen är verklig och nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Biltema/Jula/Clas säljer bara skrapor på skaft eller Kärcher-högtryckssatser, ingen rörsats till lövblås (ur sökutdrag). Märkesankarna är modellspecifika: Husqvarna 329–399 kr, Stihl 745 kr – en universalsats kan tas betalt runt 399–449 kr.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare",
+     "price_sek": 745,
+     "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Hängrännerensar-sats till lövblås (universal, teleskoprör 11 ft)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN — risk att landad kostnad (rörsats, skrymmande) driver priset över 1 000 kr"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'Passar de flesta blåsar' med adaptersats — regeln säger OSÄKER/FAIL utan mått"
+   },
+   "hook": {
+    "text": "Är hängrännorna fulla med löv igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Hängränna + lövblås omisskännliga; alla småhus; 45–70 vill slippa stegen"
+   }
+  },
+  "negative_space_flags": [
+   "montering (rör skruvas ihop)",
+   "kompatibilitet munstycke",
+   "skrymmande frakt → pris > 1 000 kr-risk",
+   "gutter-kitet är byggt för amerikanska blåsar (2,5\")"
+  ],
+  "eliminated_at": null,
+  "structure_match": 55,
+  "category_novelty": 90,
+  "tier": "B",
+  "biggest_risk": "Kompatibilitet: europeiska batteriblåsar har platta/ovala munstycken utan standarddiameter — 'passar min?' dödar CVR",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower gutter cleaning attachment kit",
+   "https://www.temu.com/-universal-leaf-blower-gutter-attachment-gutter-cleaning-tools--with-suppotive-structure-and-telescopic-hose--cleaning-11-feet-yard-maintenance-tool--cleaning--adjustable-structure-reinforced-hose--material-garden-blower-accessory--property-maintenance-g-601103248788835.html"
+  ],
+  "tier_provisional": true,
+  "tier_agent": "C",
+  "tier_reason": "hängrännesats till lövblås: adapterpassform mot svenska blåsar; Husqvarna-sats 359–399 kr är ett lågt sekundärankare"
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601103296007046",
+  "url_se": "https://www.temu.com/se/g-601103296007046.html",
+  "title": "Gutter Cleaning Kit With New Supportive Structure Vacuum Attachment Heavy Duty Metal Construction 11ft Reach Adjustable Height Fit For Leaf Blowers Compatible With Most Blower Brands 4 Adapter",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Hängrännor + lövblås — metallrör, 4 adaptrar",
+  "owner_owns": "Som 601103248788835",
+  "friction": "Som 601103248788835",
+  "old_way": "Som 601103248788835",
+  "variants": "4 adaptrar 'compatible with most blower brands'",
+  "swedish_equivalent": {
+   "retailer": "Som 601103248788835 — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare",
+   "price_sek": 745,
+   "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601103248788835"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som 601103248788835",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Biltema/Jula/Clas säljer bara skrapor på skaft eller Kärcher-högtryckssatser, ingen rörsats till lövblås (ur sökutdrag). Märkesankarna är modellspecifika: Husqvarna 329–399 kr, Stihl 745 kr – en universalsats kan tas betalt runt 399–449 kr.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {
+     "name": "Stihl Takrengöringsset (Duab); Husqvarna Hängrännesats 359–399 kr (Söderströms/GPLshop) som sekundärt ankare",
+     "price_sek": 745,
+     "url": "https://duab.se/skog-tradgard/skog-tradgardsmaskiner/lovblasar-tillbehor/tillbehor-lovblasar"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Hängrännerensar-sats till lövblås (universal, teleskoprör 11 ft)"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "'Most blower brands' + 4 adaptrar"
+   },
+   "hook": {
+    "text": "Är hängrännorna fulla med löv igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601103248788835"
+   }
+  },
+  "negative_space_flags": [
+   "montering",
+   "kompatibilitet",
+   "skrymmande frakt"
+  ],
+  "eliminated_at": null,
+  "structure_match": 55,
+  "category_novelty": 90,
+  "tier": "B",
+  "biggest_risk": "Som 601103248788835",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower gutter cleaning attachment kit",
+   "https://www.temu.com/-gutter-cleaning-kit-with-new-supportive-structure-vacuum-attachment-heavy-duty-metal-construction-11--reach-adjustable-height-fit-for-leaf-blowers--gutter-system-compatible-with-most-blower-brands-easy-setup-storage-safe-ladder-free-operation--4--adapter-ideal-for-residential-commercial-use-gutter-tool-g-601103296007046.html"
+  ],
+  "tier_provisional": true,
+  "tier_agent": "C",
+  "tier_reason": "hängrännesats till lövblås: adapterpassform mot svenska blåsar; Husqvarna-sats 359–399 kr är ett lågt sekundärankare"
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099813074405",
+  "url_se": "https://www.temu.com/se/g-601099813074405.html",
+  "title": "MTM Gutter Cleaning Kit For 30cc Leaf Blowers With Extension Adaptor Attachment",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Hängrännor + bensinlövblås 30cc (MTM-märke, AU-listning)",
+  "owner_owns": "Bara bensinblåsägare med rund pipa",
+  "friction": "Som 601103248788835",
+  "old_way": "Som 601103248788835",
+  "variants": "Märkes-/motorstorleksbunden (30cc)",
+  "swedish_equivalent": {
+   "retailer": "Som 601103248788835 — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601103248788835"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Som 601103248788835",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Som 601103248788835"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad — föll på variant",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Byggd för ett märke/motorstorlek (MTM 30cc) — svensk ägare vet inte om den passar"
+   },
+   "hook": {
+    "text": "Är hängrännorna fulla med löv igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "MTM säljs inte i Sverige"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet",
+   "oklart ägande"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 30,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Passar inte svenska maskiner",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower gutter cleaning attachment kit",
+   "https://www.temu.com/au/mtm-gutter-cleaning-kit-for-30cc-leaf-blowers-with-extension-adaptor-attachment-g-601099813074405.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601102604471037",
+  "url_se": "https://www.temu.com/se/g-601102604471037.html",
+  "title": "CMXZVBE38640 2-1/2in Gutter Cleaning Attachment Kit Industrial-grade Shop Vacuum Accessory For Cleaning Or Blowing From Gutters Fits 2-1/2in Hose Diameter",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Hängrännor + grovdammsugare (2,5-tums slang, amerikansk standard)",
+  "owner_owns": "Grovdammsugare förvaras inne i garaget; slangstandarden är amerikansk",
+  "friction": "Som 601103248788835",
+  "old_way": "Som 601103248788835",
+  "variants": "2,5-tums slang — passar inte europeiska 32/35 mm",
+  "swedish_equivalent": {
+   "retailer": "Ej sökt",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Objektet (grovdammsugaren) förvaras inomhus och slangstandarden är amerikansk — kompatibilitet mot 2,5\" som svenska maskiner inte har"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Löv i rännorna",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "Ej sökt — föll i gate 1"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "2,5-tums slang"
+   },
+   "hook": {
+    "text": "Är hängrännorna fulla med löv igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "FAIL",
+    "reason": "Kräver amerikansk grovdammsugare"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet",
+   "inomhusförvarat objekt"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 20,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Passar inte",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower gutter cleaning attachment kit",
+   "https://www.temu.com/cmxzvbe38640-21-2in-gutter-cleaning--attachment-kit-industrialgrade-shop-vacuum-accessory-for-cleaning-or-blowing--from-gutters-fits-21-2in-hose-diameter--removal---accessory---sturdy-build-gutter-blower-construction-workers--g-601102604471037.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099606869339",
+  "url_se": "https://www.temu.com/se/g-601099606869339.html",
+  "title": "1pc Gutter Scoop Flexible Roof Cleaning Tool For Dirt Debris Removal Multi-use For Eaves Garden And Leaf Gutters Plastic Material",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Hängrännor — plastskopa",
+  "owner_owns": "Alla småhus",
+  "friction": "Löv i rännorna i oktober",
+  "old_way": "Handen / trädgårdsspade",
+  "variants": "En variant",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson säljer hängränneskopa i plast för ~30–60 kr ur kunskap — EJ VERIFIERAD; samma form",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Används på huset, ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "Oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form i kedjorna för under 60 kr (ur kunskap); inget ankare; commodity"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad — föll i gate 3",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": null,
+    "result": "FAIL — kan inte bära 300 kr"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": "Är hängrännorna fulla med löv igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla småhus"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "köpt old way som fungerar"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Commodity",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com leaf blower gutter cleaning attachment kit",
+   "https://www.temu.com/1pc-gutter--scoop-flexible-roof-cleaning-tool-for-dirt-debris-removal-multi-use-for-eaves-garden-and-leaf-gutters-plastic-material-cleaning-supplies-g-601099606869339.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099541368579",
+  "url_se": "https://www.temu.com/se/g-601099541368579.html",
+  "title": "1pc Adjustable String Trimmer Support Wheel Attachment 28mm 26mm Grass Cutter Parts Gas Petrol Electric Brush Cutter Strimmer",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Grästrimmern/röjsågen — stödhjul som klamras på skaftet (26/28 mm)",
+  "owner_owns": "Trimmerägare (samma publik som axelbälte-vinnaren)",
+  "friction": "Rygg och armar av att hålla trimmern svävande; ojämn klipphöjd",
+  "old_way": "Håller upp maskinen, bärsele",
+  "variants": "Skaftdiameter 26/28 mm — ägaren vet inte skaftdiametern utantill; batteritrimmers har ofta böjt/smalare skaft",
+  "swedish_equivalent": {
+   "retailer": "Ingen av kedjorna ur kunskap — EJ VERIFIERAD; finns på Amazon.se",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Fäster på trimmern, används kroppsligt ute"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Trimning pågår i september men säsongen slutar ~mitten av oktober — färre än 6 veckor kvar efter launch. Vårkandidat (april–maj 2027)",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Kedjorna säljer inte stödhjul för trimmer ur kunskap"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 449,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Skaftdiameter i mm — kunden måste mäta (nivå 0)"
+   },
+   "hook": {
+    "text": "Ont i ryggen efter trimningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Trimmer i bild = bevisad CPM-proxy"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet/passform (skaft-mm)",
+   "montering",
+   "säsongen tar slut"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 45,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Säsong slut + 'passar min trimmer?'",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com grass trimmer support wheels attachment",
+   "https://www.temu.com/1pc-adjustable-string-trimmer-support-wheel-attachment-28mm-26mm--grass-cutter-parts-gas-petrol-electric-brush-cutter-strimmer-g-601099541368579.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099553167011",
+  "url_se": "https://www.temu.com/se/g-601099553167011.html",
+  "title": "1 Pack Universal Grass Trimmer Support Wheels Adjustable 26-28mm Lawn Mower Brush Cutter Strimmer Attachment Portable Weed Eater Stabilizer 12.8in Wide With 4.84in Durable Wheels",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Trimmer — dubbla stödhjul 26–28 mm",
+  "owner_owns": "Som 601099541368579",
+  "friction": "Som 601099541368579",
+  "old_way": "Som 601099541368579",
+  "variants": "26–28 mm skaft",
+  "swedish_equivalent": {
+   "retailer": "Som 601099541368579 — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601099541368579"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Som 601099541368579",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Som 601099541368579"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade fetch",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 449,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Skaft-mm"
+   },
+   "hook": {
+    "text": "Ont i ryggen efter trimningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601099541368579"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet/passform",
+   "montering",
+   "säsongen tar slut"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 45,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Som 601099541368579",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com grass trimmer support wheels attachment",
+   "https://www.temu.com/1-pack-universal-grass-trimmer-support-wheels-adjustable-26-28mm-1-02-1-1in-lawn-mower-brush-cutter-strimmer-attachment-portable--eater-stabilizer-12-8in-wide-with-4-84in-durable-wheels-garden-tool-accessory-g-601099553167011.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099522684444",
+  "url_se": "https://www.temu.com/se/g-601099522684444.html",
+  "title": "1 Set Lawn Mower Support Wheel New Adjustable Attachment Wheels 26mm 28mm Portable String Trimmer Wheel Mower Trimmer Auxiliary — Reducing Fatigue And Pain",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Trimmer — stödhjul 26/28 mm",
+  "owner_owns": "Som 601099541368579",
+  "friction": "Som 601099541368579 (leverantören själv säger 'reducing fatigue and pain')",
+  "old_way": "Som 601099541368579",
+  "variants": "26/28 mm",
+  "swedish_equivalent": {
+   "retailer": "Som 601099541368579 — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601099541368579"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Som 601099541368579",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Som 601099541368579"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad (dublett)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": 449,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Skaft-mm"
+   },
+   "hook": {
+    "text": "Ont i ryggen efter trimningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601099541368579"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet/passform",
+   "montering",
+   "säsongen tar slut"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 45,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Som 601099541368579",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com grass trimmer support wheels attachment",
+   "https://www.temu.com/1-set-lawn-mower-support-wheel-new-adjustable-attachment-wheels-26mm-28mm-portable-string-trimmer-wheel-mower--trimmer-auxiliary-for---and-ability--reducing-fatigue-and-pain-and--to--g-601099522684444.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099578269133",
+  "url_se": "https://www.temu.com/se/g-601099578269133.html",
+  "title": "Bilateral Wheels For Electric Grass Trimmer Enhance Work Efficiency Easy Installation Lawn Mower Accessories",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Eltrimmer — hjulpar",
+  "owner_owns": "Som 601099541368579",
+  "friction": "Som 601099541368579",
+  "old_way": "Som 601099541368579",
+  "variants": "Okänt (titeln anger ingen skaftdiameter)",
+  "swedish_equivalent": {
+   "retailer": "Som 601099541368579 — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "Som 601099541368579"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Som 601099541368579",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "PASS (ej verifierad)",
+    "reason": "Som 601099541368579"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad (dublett)",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": "Nej",
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "Passform okänd"
+   },
+   "hook": {
+    "text": "Ont i ryggen efter trimningen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Som 601099541368579"
+   }
+  },
+  "negative_space_flags": [
+   "kompatibilitet/passform",
+   "säsongen tar slut"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 40,
+  "category_novelty": 70,
+  "tier": "C",
+  "biggest_risk": "Som 601099541368579",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com grass trimmer support wheels attachment",
+   "https://www.temu.com/bilateral-wheels-for-electric-grass-trimmer-enhance-work-efficiency-easy-installation-lawn-mower-accessories-g-601099578269133.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099621198951",
+  "url_se": "https://www.temu.com/se/g-601099621198951.html",
+  "title": "53 Inch Portable Survival Chainsaw Kit Double Sided Teeth Hand Rope Saw With 72 Sharp Blades High Speed Steel Manual Pocket Chain Saw For Wood Cutting Tree Pruning 15 Piece Set With Handles Straps Gloves Carrying Bag",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Höga grenar på tomtens träd — repsåg som kastas över grenen",
+  "owner_owns": "Villa/fritidshus med stora träd",
+  "friction": "Grenar över taket/hängrännan; stege + såg är farligt",
+  "old_way": "Stege + hopfällbar såg (förlorare i kontot) eller stångsåg",
+  "variants": "15-delars set",
+  "swedish_equivalent": {
+   "retailer": "Ej sökt — föll i gate 1",
+   "price_sek": null,
+   "url": null,
+   "same_form": false
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "'15 piece set … survival … gloves … carrying bag' = kit i survival-flöde; kategori nära hopfällbar såg (förlorare)"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Grenkapning görs efter lövfällning (nov) — problemet syns i oktober men ingen akut friktion",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "UNKNOWN",
+    "reason": "Ej sökt"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "Kit"
+   },
+   "hook": {
+    "text": "Har du grenar du inte når?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Träd i bild"
+   }
+  },
+  "negative_space_flags": [
+   "kit",
+   "kräver förklaring (hur kastar man repet?)",
+   "samma kategori som förlorare (hopfällbar såg)"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 30,
+  "category_novelty": 40,
+  "tier": "ELIM",
+  "biggest_risk": "Kit + survival-kodad",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com rope chain saw high branch pruning",
+   "https://www.temu.com/53-inch-portable-survival-chainsaw-kit-double-sided-teeth-hand-rope-saw-with-72-sharp-blades-high-speed-steel-manual-pocket-chain-saw-for-wood-cutting-tree-pruning-outdoor-gear-15-piece-set-with-handles-straps-gloves-carrying-bag-no-electricity-needed-g-601099621198951.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601099514794110",
+  "url_se": "https://www.temu.com/se/g-601099514794110.html",
+  "title": "1set China Professional Manufacturer Chain Saw Wood Handheld Chain Saws Folding Pruning Chain Saw Cutter High Limb Chainsaw",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Grenar — hopfällbar handsåg",
+  "owner_owns": "Alla med träd",
+  "friction": "Grenar",
+  "old_way": "Såg",
+  "variants": "Okänt",
+  "swedish_equivalent": {
+   "retailer": "Biltema/Jula/Clas Ohlson säljer hopfällbara sågar 79–199 kr (samma form) ur kunskap",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "Samma kategori som hopfällbar såg — redan testad förlorare; commodity i kedjorna"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Beskärning i höst",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Kedjorna säljer hopfällbar såg"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": null,
+    "result": "UNKNOWN"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "En variant"
+   },
+   "hook": {
+    "text": null,
+    "result": "FAIL"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Alla"
+   }
+  },
+  "negative_space_flags": [
+   "redan testad förlorare",
+   "svensk mass-commoditisering"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 0,
+  "tier": "ELIM",
+  "biggest_risk": "Redan förlorat",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com rope chain saw high branch pruning",
+   "https://www.temu.com/1set-china-professional-manufacturer-chain-saw-wood-handheld-chain-saws-folding-pruning-chain-saw-cutter-hig-limb-chainsaw-g-601099514794110.html"
+  ],
+  "tier_provisional": true
+ },
+ {
+  "kluster": "handmaskiner",
+  "goods_id": "601100284784097",
+  "url_se": "https://www.temu.com/se/g-601100284784097.html",
+  "title": "Cordless Pole Saw High Branch Saw With Brushless Chainsaw Pruner Shear 2m Telescopic Rod Battery And Charger Included",
+  "title_source": "sökutdrag (Temu blockerade fetch)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "temu_fetch_blocked": true,
+  "object": "Träd — batteristångsåg med batteri (hel maskin)",
+  "owner_owns": "Alla med träd",
+  "friction": "Höga grenar",
+  "old_way": "Stege + såg",
+  "variants": "1 eller 2 batterier",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema/Clas Ohlson säljer batteristångsågar 1 000–2 500 kr (samma form) ur kunskap — EJ VERIFIERAD",
+   "price_sek": null,
+   "url": null,
+   "same_form": true
+  },
+  "brand_anchor": {
+   "name": null,
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "OSÄKER",
+    "reason": "Hel maskin, inte tillbehör; objektet (träd) är universellt"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "Beskärning görs efter lövfällning",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Samma form i alla fyra kedjorna; dessutom pris > 1 000 kr"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Ej hämtad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": "UNKNOWN",
+    "se_price_est_sek": null,
+    "multiple": "UNKNOWN",
+    "be_cpa_est": "UNKNOWN",
+    "multibuy_reason": null,
+    "result": "FAIL (> 1 000 kr)"
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "Batteriantal"
+   },
+   "hook": {
+    "text": "Har du grenar du inte når?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "Träd"
+   }
+  },
+  "negative_space_flags": [
+   "> 1 000 kr",
+   "svensk mass-commoditisering",
+   "batteri/laddare = garanti- och fraktrisk"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 20,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "Pris och hylla",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com rope chain saw high branch pruning",
+   "https://www.temu.com/cordless-pole-saw-high-branch-saw-with-brushless-chainsaw-pruner-shear-2m-telescopic-rod-battery-and-charger-included-for-garden-tree-trimming-pruning-2-batteries-three-piece-set-g-601100284784097.html"
+  ],
+  "tier_provisional": true
+ }
+]

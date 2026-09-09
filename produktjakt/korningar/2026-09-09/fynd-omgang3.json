@@ -1,0 +1,291 @@
+{
+ "datum": "2026-09-09",
+ "manad": 9,
+ "usd_sek": 9.6022,
+ "kurskalla": "kurs.json 2026-09-09",
+ "sokord": [
+  {
+   "ord": "trail camera solar panel 12v",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "outdoor tap cover frost",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "lawn mower seat cover riding",
+   "grupp": "trädgård och maskin"
+  },
+  {
+   "ord": "log lifting tongs firewood",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "caravan roof cover waterproof",
+   "grupp": "husvagn och husbil"
+  },
+  {
+   "ord": "gas bottle cover caravan",
+   "grupp": "husvagn och husbil"
+  },
+  {
+   "ord": "dog kennel run cover waterproof",
+   "grupp": "lantbruk och djur"
+  },
+  {
+   "ord": "fence post repair spike bracket",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "solar vent fan boat caravan",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "trailer wheel lock clamp",
+   "grupp": "båt och trailer"
+  },
+  {
+   "ord": "tree stand seat cushion hunting",
+   "grupp": "jakt"
+  },
+  {
+   "ord": "firewood moisture meter",
+   "grupp": "ved och eldning"
+  },
+  {
+   "ord": "wireless driveway alarm motion sensor",
+   "grupp": "belysning och mörker"
+  },
+  {
+   "ord": "gate wheel spring loaded",
+   "grupp": "tomt hus och tak"
+  },
+  {
+   "ord": "caravan hitch lock security",
+   "grupp": "husvagn och husbil"
+  },
+  {
+   "ord": "boat cover support pole adjustable",
+   "grupp": "båt och trailer"
+  }
+ ],
+ "hoppade": {
+  "stoppord": 2,
+  "pris saknas": 0,
+  "ekonomi": 103,
+  "dubblett": 2
+ },
+ "antal_kandidater": 21,
+ "produkter": [
+  {
+   "product_id": "1005012229732280",
+   "titel": "Lawn Mower Seat Cover Rainproof Riding Lawn Mower Seat Covering  Full Coberage Tractor Part Outdoor Protection for Yard Garden",
+   "url": "https://www.aliexpress.com/item/1005012229732280.html",
+   "pris": 10.04,
+   "valuta": "USD",
+   "pris_text": "US $10.04",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Se2a7d78ae00a42d9be0662e5e387ba10Q.jpg",
+   "sald": "",
+   "sokord": "lawn mower seat cover riding",
+   "grupp": "trädgård och maskin",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-lawn-mower-seat-cover-riding.html",
+   "ekonomi": {
+    "landad": 145,
+    "forslag_pris": 399,
+    "multipel": 2.76,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012540661105",
+   "titel": "Lawn Mower Seat Cover Waterproof Riding Lawn Mower Seat Protector Tractor Part Full Coverage Protection For Garden Field Lawn",
+   "url": "https://www.aliexpress.com/item/1005012540661105.html",
+   "pris": 10.17,
+   "valuta": "USD",
+   "pris_text": "US $10.17",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S637523c2583f4afbb98c1651f4e105ebo.jpg",
+   "sald": "",
+   "sokord": "lawn mower seat cover riding",
+   "grupp": "trädgård och maskin",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-lawn-mower-seat-cover-riding.html",
+   "ekonomi": {
+    "landad": 146,
+    "forslag_pris": 399,
+    "multipel": 2.72,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012542695580",
+   "titel": "Gate Wheel Swivel Casters Spring Loaded Gate Caster Gate Caster Wheel for Metal",
+   "url": "https://www.aliexpress.com/item/1005012542695580.html",
+   "pris": 15.89,
+   "valuta": "USD",
+   "pris_text": "US $15.89",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S113a12df27ab4588907e81bf3cb5699eV.jpg",
+   "sald": "",
+   "sokord": "gate wheel spring loaded",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-gate-wheel-spring-loaded.html",
+   "ekonomi": {
+    "landad": 229,
+    "forslag_pris": 599,
+    "multipel": 2.62,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005009542376311",
+   "titel": "Fence Brackets For Wood Fencing 10 Pieces Fence Support Post Clips With Screws Heavy Duty Hardware Repair Tool For Farmers",
+   "url": "https://www.aliexpress.com/item/1005009542376311.html",
+   "pris": 15.96,
+   "valuta": "USD",
+   "pris_text": "US $15.96",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sed776016d999458584703c81dccb5b6aG.jpg",
+   "sald": "",
+   "sokord": "fence post repair spike bracket",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fence-post-repair-spike-bracket.html",
+   "ekonomi": {
+    "landad": 230,
+    "forslag_pris": 599,
+    "multipel": 2.61,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005009145737438",
+   "titel": "1/2 Pack Heavy Duty Steel Fence Post Repair Kit - Anchor Brackets & Ground Spike for Fixing Tilted/Broken Wooden Fence Posts",
+   "url": "https://www.aliexpress.com/item/1005009145737438.html",
+   "pris": 18.74,
+   "valuta": "USD",
+   "pris_text": "US $18.74",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sda69235967df40a5a5442b5e4f1323c5M.jpg",
+   "sald": "",
+   "sokord": "fence post repair spike bracket",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fence-post-repair-spike-bracket.html",
+   "ekonomi": {
+    "landad": 270,
+    "forslag_pris": 699,
+    "multipel": 2.59,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012736729716",
+   "titel": "15W 12V Solar Panel Polycrystalline Solar Charger Suitable For Garden Light RV Outdoor Solar Panels Camera Security Monitoring",
+   "url": "https://www.aliexpress.com/item/1005012736729716.html",
+   "pris": 19.01,
+   "valuta": "USD",
+   "pris_text": "US $19.01",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc81ab923001a4e8b84feb69dd54b5839v.jpeg",
+   "sald": "",
+   "sokord": "trail camera solar panel 12v",
+   "grupp": "jakt",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-trail-camera-solar-panel-12v.html",
+   "ekonomi": {
+    "landad": 274,
+    "forslag_pris": 699,
+    "multipel": 2.55,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005007038733096",
+   "titel": "CAWAYI KENNEL Pet Dog Carrier Car Seat Cover Carry Cat Puppy Bag Car Travel Folding Hammock Waterproof Dogs Basket Pet Carriers",
+   "url": "https://www.aliexpress.com/item/1005007038733096.html",
+   "pris": 27.42,
+   "valuta": "USD",
+   "pris_text": "US $27.42",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S3cb349ed25f644e5941ed62b84efd6eeg.jpg",
+   "sald": "",
+   "sokord": "dog kennel run cover waterproof",
+   "grupp": "lantbruk och djur",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-kennel-run-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 395,
+    "forslag_pris": 999,
+    "multipel": 2.53,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005013079743287",
+   "titel": "Fence Post Repair Support Metal Holder for Wood Post Reinforcement, Ground Entry Install Method for Outdoor Repair D2RD",
+   "url": "https://www.aliexpress.com/item/1005013079743287.html",
+   "pris": 24.75,
+   "valuta": "USD",
+   "pris_text": "US $24.75",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S16d70d11eb4941c7b53f3121dc7c3f549.jpg",
+   "sald": "",
+   "sokord": "fence post repair spike bracket",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fence-post-repair-spike-bracket.html",
+   "ekonomi": {
+    "landad": 356,
+    "forslag_pris": 899,
+    "multipel": 2.52,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005012765922159",
+   "titel": "12Pcs Metal Anti-Climb Fence Security Spikes Intruder Deterrent Bird Pigeon Spikes for Yard Balcony Garden Outdoor Use",
+   "url": "https://www.aliexpress.com/item/1005012765922159.html",
+   "pris": 16.52,
+   "valuta": "USD",
+   "pris_text": "US $16.52",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sbaec3ef6b660444e8fc17b8fb1268a0ap.jpg",
+   "sald": "",
+   "sokord": "fence post repair spike bracket",
+   "grupp": "tomt hus och tak",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fence-post-repair-spike-bracket.html",
+   "ekonomi": {
+    "landad": 238,
+    "forslag_pris": 599,
+    "multipel": 2.52,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  },
+  {
+   "product_id": "1005010031513892",
+   "titel": "1 Piece Two Tube White Black Plastic Fishing Boat Rod Pole Holder Marine Yacht Hardware Fishing Pole Rod Holders For Boats",
+   "url": "https://www.aliexpress.com/item/1005010031513892.html",
+   "pris": 16.55,
+   "valuta": "USD",
+   "pris_text": "US $16.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S40db915694c24c818b695a2082f7494fz.jpg",
+   "sald": "",
+   "sokord": "boat cover support pole adjustable",
+   "grupp": "båt och trailer",
+   "sok_url": "https://www.aliexpress.com/w/wholesale-boat-cover-support-pole-adjustable.html",
+   "ekonomi": {
+    "landad": 238,
+    "forslag_pris": 599,
+    "multipel": 2.51,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.6022
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "goods_id": "601101118338671",
+ "url": "https://www.temu.com/se/g-601101118338671.html",
+ "final_url": "https://www.temu.com/se/g-601101118338671.html",
+ "http_status": 200,
+ "fetched": "2026-09-08T22:52:23Z",
+ "market": "se",
+ "verified": true,
+ "verdict": "LIVE",
+ "title": "Utomhusly för katter, lämplig för * katter, designad för att vara * och isolerad för alla väderförhållanden. Detta kattstall kan också användas som hundkoja och är hopfällbart, vilket gör det idealiskt för * * och hem för hemlösa katter.",
+ "category_path": [
+  "Husdjur",
+  "Sängar & sovplatser husdjur"
+ ],
+ "price": "129.09",
+ "currency": "SEK",
+ "availability": "InStock",
+ "rating": 4.7,
+ "review_count": 410,
+ "review_dates": [
+  "2026-02-16",
+  "2025-12-16",
+  "2025-*-01",
+  "2025-11-17"
+ ],
+ "images": [
+  "https://img.kwcdn.com/product/fancy/71c40ea9-c815-4e06-bd81-677e6add8636.jpg",
+  "https://img.kwcdn.com/product/fancy/e5c45164-7894-48cd-9a40-7efd0013b846.jpg",
+  "https://img.kwcdn.com/product/fancy/bd950c29-5ca3-4a38-92c1-5dc0b60f4c7a.jpg",
+  "https://img.kwcdn.com/product/fancy/c0ee78ca-056b-45e4-870f-ef3f7af1bcec.jpg",
+  "https://img.kwcdn.com/product/fancy/181cab20-d88c-4a6e-8556-ad0e70d7fcf5.jpg",
+  "https://img.kwcdn.com/product/fancy/9c6864ff-57ad-4af5-9bb7-059f6e9019fc.jpg"
+ ],
+ "video_url": "https://goods-vod.kwcdn.com/goods-video/89589fe82822e2da67076648f2fdd92b78aa2900.f30.mp4",
+ "video_uploaded": "2025-05-21T07:11:09.00Z",
+ "sku": null,
+ "hero_file": "hero.jpg"
+}

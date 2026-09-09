@@ -1,0 +1,131 @@
+<title>Dagens produkter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
+<style>
+  /* Produktjaktens dagsleverans. Ett kort per produkt, och en knapp som lämnar offertarket till Axel
+     via downloads-capability (en vanlig <a download> är död i artefaktens sandlåda). */
+  :root {
+    --ground: #F3F5F0; --surface: #FFFFFF; --ink: #17201B; --muted: #5B6B61; --line: #D9DFD9;
+    --accent: #2E6B4E; --accent-ink: #FFFFFF; --chip: #E6ECE6; --warn: #8C6D1F;
+    --shadow: 0 2px 10px rgba(23,32,27,.07); --shadow-lg: 0 10px 28px rgba(23,32,27,.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #121714; --surface: #1B231E; --ink: #E9EEE9; --muted: #9AA89F; --line: #2C362F;
+      --accent: #5FB58C; --accent-ink: #0F1712; --chip: #263029; --warn: #D4A83A;
+      --shadow: 0 2px 10px rgba(0,0,0,.4); --shadow-lg: 0 10px 28px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #121714; --surface: #1B231E; --ink: #E9EEE9; --muted: #9AA89F; --line: #2C362F;
+    --accent: #5FB58C; --accent-ink: #0F1712; --chip: #263029; --warn: #D4A83A;
+    --shadow: 0 2px 10px rgba(0,0,0,.4); --shadow-lg: 0 10px 28px rgba(0,0,0,.5);
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-size: 18px; line-height: 1.5;
+         font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 18px 14px 40px; }
+  h1 { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 32px; margin: 0 0 4px; }
+  .lede { margin: 0 0 4px; color: var(--muted); font-size: 17px; }
+  .hamta { position: sticky; top: 8px; z-index: 5; margin: 16px 0 8px; }
+  .hamta button { width: 100%; font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700;
+                  font-size: 24px; letter-spacing: .02em; color: var(--accent-ink); background: var(--accent);
+                  border: 0; border-radius: 14px; padding: 18px 12px; cursor: pointer; box-shadow: var(--shadow-lg); }
+  .hamta button:active { transform: translateY(1px); }
+  .hamta button:disabled { opacity: .55; cursor: default; }
+  .hamta button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .status { margin: 8px 2px 0; font-size: 16px; color: var(--muted); min-height: 1.5em; text-align: center; }
+  .status.fel { color: var(--warn); }
+  .card { background: var(--surface); border-radius: 16px; box-shadow: var(--shadow); margin: 14px 0; overflow: hidden; }
+  .top { display: grid; grid-template-columns: 104px 1fr; gap: 12px; padding: 12px; align-items: start; }
+  .thumb { width: 104px; height: 104px; border-radius: 11px; background: var(--chip); overflow: hidden; display: grid; place-items: center; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb span { font-family: "Barlow Semi Condensed", sans-serif; font-size: 38px; font-weight: 700; color: var(--muted); }
+  h2 { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 19px; line-height: 1.22; margin: 0 0 6px; text-wrap: balance; }
+  .nums { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+  .pris { font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .chip { display: inline-block; background: var(--chip); border-radius: 999px; padding: 2px 9px;
+          font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .rad { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
+  .links { padding: 0 12px 14px; }
+  .links a { display: block; text-align: center; text-decoration: none; font-weight: 700; font-size: 16px;
+             padding: 11px 8px; border-radius: 11px; background: var(--chip); color: var(--ink); }
+  footer { color: var(--muted); font-size: 14px; text-align: center; padding: 24px 8px 0; }
+</style>
+
+<div class="wrap">
+  <h1>Dagens produkter</h1>
+  <p class="lede"><b id="antal">0</b> nya varor hittade <span id="datum"></span>.</p>
+  <p class="lede">Priserna är räknade. Leverantören fyller i sina egna.</p>
+
+  <div class="hamta">
+    <button type="button" id="ladda">Ladda ner offertarket</button>
+    <p class="status" id="status">Skicka filen till leverantören.</p>
+  </div>
+
+  <div id="lista"></div>
+  <footer>Inköp = AliExpress-pris. Landad = inköp plus frakt och avgifter. Sälj = vårt tänkta pris i butiken.</footer>
+</div>
+
+<script>
+  const DATA = /*__DATA__*/[];
+  const XLSX_B64 = /*__XLSX__*/"";
+  const DATUM = /*__DATUM__*/"";
+  const FILNAMN = /*__FILNAMN__*/"";
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  $('datum').textContent = DATUM;
+  $('antal').textContent = DATA.length;
+  const lista = $('lista');
+  DATA.forEach(p => {
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.innerHTML = `
+      <div class="top">
+        <div class="thumb">${p.bild ? `<img alt="${esc(p.namn)}" src="${p.bild}" loading="lazy">` : `<span aria-hidden="true">${esc((p.namn || '?').trim()[0])}</span>`}</div>
+        <div>
+          <h2>${esc(p.namn)}</h2>
+          <div class="nums"><span class="pris">${p.pris} kr</span><span class="chip">${esc(p.grupp)}</span></div>
+          <p class="rad">Inköp ${esc(p.inkop)} · landad ${p.landad} kr · ${p.multipel}× uppslag</p>
+          ${p.sald ? `<p class="rad">${esc(p.sald)}</p>` : ''}
+        </div>
+      </div>
+      <div class="links"><a href="${p.url}" target="_blank" rel="noopener">Öppna produkten ↗</a></div>`;
+    lista.appendChild(el);
+  });
+
+  // --- nedladdningen ---
+  function bytes(b64) {
+    const bin = atob(b64), arr = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+    return arr;
+  }
+  const knapp = $('ladda'), status = $('status');
+  let dl = null;
+  (async () => {
+    try { dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null; }
+    catch (e) { dl = null; }
+    if (!dl) {
+      knapp.disabled = true;
+      status.className = 'status fel';
+      status.textContent = 'Nedladdning fungerar inte här. Filen ligger också i repot.';
+    }
+  })();
+  knapp.addEventListener('click', async () => {
+    if (!dl) return;
+    knapp.disabled = true;
+    status.className = 'status';
+    status.textContent = 'Förbereder filen…';
+    try {
+      await dl.save({ filename: FILNAMN, data: bytes(XLSX_B64) });
+      status.textContent = 'Klart. Skicka filen till leverantören.';
+    } catch (e) {
+      status.className = 'status fel';
+      status.textContent = e && e.code === 'declined' ? 'Avbrutet. Tryck igen när du vill.' : 'Det gick inte. Tryck igen.';
+    } finally {
+      knapp.disabled = false;
+    }
+  });
+</script>

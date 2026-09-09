@@ -1,0 +1,256 @@
+[
+  {
+    "concept": "Isolerad utekattkoja i Oxford-tyg, vinter",
+    "goods_ids": ["601101118338671"],
+    "queries": [
+      "WebSearch: utekattkoja isolerad vinter kattkoja oxford jula OR biltema OR rusta OR \"clas ohlson\"",
+      "WebSearch: isolerad utekattkoja vinter pris kr arkenzoo OR zoo.se OR granngården OR vetzoo",
+      "WebSearch: site:jula.se kattkoja OR katthus utomhus isolerad",
+      "WebSearch: site:rusta.com hundkoja OR kattkoja OR katthus utomhus",
+      "WebSearch: biltema kattkoja pris kr",
+      "WebSearch: arkenzoo OR zoo.se OR vetzoo kattkoja utomhus isolerad utekatt pris kr",
+      "curl pricerunner.se/search?q=utekattkoja",
+      "curl pricerunner.se/search?q=kattkoja utomhus",
+      "WebFetch supercat.se/kattkoja-katthus/",
+      "WebFetch biltema.se hund--kattkoja-2000039681 (403)",
+      "WebFetch facebook.com/ads/library q=kattkoja (403)"
+    ],
+    "findings": [
+      {"source": "Biltema (ur sökutdrag)", "item": "Kattkoja – mjuk fluffig insida, uttagbar dyna (inomhusbädd)", "price_sek": null, "url": "https://www.biltema.se/fritid/husdjur/katt/kattbaddar/kattkoja-2000033675", "same_form": false},
+      {"source": "Biltema (ur sökutdrag)", "item": "Hund-, kattkoja, vadderade väggar (utförsäljning, inomhus)", "price_sek": null, "url": "https://www.biltema.se/fritid/utforsaljning-fritid/hund--kattkoja-2000039681", "same_form": false},
+      {"source": "Jula (ur sökutdrag)", "item": "Pall med kattkoja Ø35x44 cm (inomhus, sammet)", "price_sek": null, "url": "https://www.jula.se/catalog/outlet/outlet/outlet-produkter/outlet-fritid/pall-med-kattkoja-029937/", "same_form": false},
+      {"source": "Rusta (ur sökutdrag)", "item": "Katthus med klösbräda 39x39x62 cm (inomhus, kartong/plysch)", "price_sek": null, "url": "https://www.rusta.com/sv-se/husdjur/kattillbehor/kattbaddar-och-filtar/katthus-med-klosbrada-39x39x62-cm-beige-756016350101", "same_form": false},
+      {"source": "Supercat (fackhandel, hämtad sida)", "item": "Katthus 4 season – isolerat & vinterbonat, trä", "price_sek": 1799, "url": "https://www.supercat.se/kattkoja-katthus/", "same_form": false},
+      {"source": "Pricerunner", "item": "Kerbl Outdoor Cat House Family 57x55x80 cm", "price_sek": 1017, "url": "https://www.pricerunner.se/results?q=kattkoja%20utomhus", "same_form": false},
+      {"source": "Pricerunner", "item": "QLS Katthus Kattgrotta Vintersäker Isolerad trä", "price_sek": 1162, "url": "https://www.pricerunner.se/results?q=kattkoja%20utomhus", "same_form": false},
+      {"source": "Pricerunner", "item": "Northix Isolerat Utomhuskatthus Trä 88x55x71 cm", "price_sek": 1919, "url": "https://www.pricerunner.se/results?q=hundkoja%20isolerad", "same_form": false},
+      {"source": "Pricerunner (Shein)", "item": "Shein Varmt Isolerat Katthem 45x40x55 cm (mjuk tygkoja – närmast samma form)", "price_sek": 424, "url": "https://www.pricerunner.se/results?q=hundkoja%20isolerad", "same_form": true}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Supercat Katthus 4 season (isolerat trä)", "price_sek": 1799, "url": "https://www.supercat.se/kattkoja-katthus/"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Ingen av kedjorna säljer en isolerad utomhuskoja – Biltema/Jula/Rusta har bara inomhusbäddar. Fackhandeln ligger på 1 017–1 919 kr för isolerade trähus; enda samma-form-konkurrenten som syns är Shein via Pricerunner på 424 kr."
+  },
+  {
+    "concept": "Hinkfälla för möss (rullande, bucket mouse trap)",
+    "goods_ids": ["601100216234049"],
+    "queries": [
+      "WebSearch: hinkfälla möss rullande musfälla hink biltema OR jula OR \"clas ohlson\" OR rusta OR granngården",
+      "WebSearch: \"rullande\" musfälla hink \"rolling\" OR \"rullfälla\" OR \"walk the plank\" pris kr Sverige",
+      "WebSearch: site:clasohlson.com kattkoja OR hundkoja OR hönslucka OR musfälla hink",
+      "curl pricerunner.se/search?q=musfälla hink",
+      "curl pricerunner.se/search?q=musfälla vipp",
+      "WebFetch clasohlson.com Silverline Vipper 31-6888",
+      "WebFetch jula.se musfalla-717037 (403)",
+      "curl biltema.se musfalla-vippbrada-2000046794 (403)",
+      "WebFetch fyndiq rullfälla log grip hink (404)",
+      "WebFetch facebook.com/ads/library q=musfälla (403)"
+    ],
+    "findings": [
+      {"source": "Clas Ohlson (hämtad sida)", "item": "Silverline Vipper mus & råttfälla, vippfälla för hink (hink säljs separat), Naturvårdsverket L98", "price_sek": 59.9, "url": "https://www.clasohlson.com/se/Silverline-Vipper-mus-&-rattfalla-vippfalla/p/31-6888", "same_form": true},
+      {"source": "Jula (ur sökutdrag)", "item": "Musfälla | Vippbräda placeras på 10 l-hink | No brand EMV", "price_sek": null, "url": "https://www.jula.se/catalog/tradgard/tradgardsmiljo/skadedjursbekampning/musfallor-och-rattfallor/musfalla-717037/", "same_form": true},
+      {"source": "Biltema (ur sökutdrag)", "item": "Musfälla, vippbräda – stege + vippbräda på 10 l-hink, levandefångst", "price_sek": null, "url": "https://www.biltema.se/fritid/tradgard/skadedjur-och-insektsbekampning/musfalla-vippbrada-2000046794", "same_form": true},
+      {"source": "Pricerunner (Hylte Jakt & Lantman)", "item": "Västbo Musfälla Vipp", "price_sek": 30, "url": "https://www.pricerunner.se/results?q=musf%C3%A4lla%20vipp", "same_form": true},
+      {"source": "jem & fix (ur sökutdrag)", "item": "Musfälla vipp för hink", "price_sek": 29.95, "url": "https://www.jemfix.se/musfaella-vipp/5137/9036989/", "same_form": true},
+      {"source": "Amazon.se (ur sökutdrag)", "item": "SASKATE musfälla hink, automatisk återställning, rullfälla (rullande stock – exakt Temu-formen)", "price_sek": null, "url": "https://www.amazon.se/SASKATE-automatisk-%C3%A5terst%C3%A4llning-rullf%C3%A4lla-exklusive/dp/B097GW517S", "same_form": true}
+    ],
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 59.9,
+    "anchor": {"name": "Clas Ohlson Silverline Vipper (vippfälla för hink)", "price_sek": 59.9, "url": "https://www.clasohlson.com/se/Silverline-Vipper-mus-&-rattfalla-vippfalla/p/31-6888"},
+    "adlib_active": "ej läsbar",
+    "verdict": "FAIL",
+    "reason": "Jula, Biltema och Clas Ohlson säljer alla hinkfällan (vippbräda på hink) och Clas-priset är 59,90 kr, Västbo/jem & fix ~30 kr. Den rullande varianten är en detalj – kunden googlar 'musfälla hink' och ser 30–60 kr hos kedjan."
+  },
+  {
+    "concept": "Hårdbottnad baksätesförlängare / hundplattform för bil",
+    "goods_ids": ["601099578348331"],
+    "queries": [
+      "WebSearch: baksätesförlängare hund bil plattform hårdbotten baksäte hundplattform pris Sverige",
+      "WebSearch: Trixie baksätesförlängare OR \"Kleinmetall\" baksäte hund plattform pris kr",
+      "WebSearch: site:jula.se baksätesskydd hund OR bilskydd hund",
+      "WebSearch: site:biltema.se baksätesskydd hund",
+      "curl pricerunner.se/search?q=baksätesförlängare hund",
+      "curl pricerunner.se/search?q=baksätesskydd hund biltema",
+      "curl pricerunner.se/search?q=baksätesskydd hamron",
+      "WebFetch zooplus.se Kleinmetall Bridge 249894",
+      "WebFetch stockholmget.com/products/caeat",
+      "WebFetch dogempires.com baksateskojan-flatbed (404)",
+      "curl jula.se baksatesskydd-606027 (403)",
+      "curl biltema.se baksatesskydd-2000030802 (403)",
+      "WebFetch facebook.com/ads/library q=baksätesförlängare (403)"
+    ],
+    "findings": [
+      {"source": "Jula (ur sökutdrag)", "item": "Hamron Baksätesskydd 140x110 cm – hängmatta/skydd mot lera och hår (ingen hårdbotten)", "price_sek": null, "url": "https://www.jula.se/catalog/bil-och-garage/biltillbehor/interior-bilstyling/bilkladslar/baksatesskydd-606027/", "same_form": false},
+      {"source": "Biltema (ur sökutdrag)", "item": "Baksätesskydd 160x140 cm polyester (ingen hårdbotten)", "price_sek": null, "url": "https://www.biltema.se/bil---mc/styling/bilkladsel/baksatesskydd-2000030802", "same_form": false},
+      {"source": "zooplus.se (hämtad sida)", "item": "Kleinmetall Bridge baksätesskydd med stödplattor (träplattor täcker fotutrymmet), 138x167 cm", "price_sek": 1059, "url": "https://www.zooplus.se/shop/hund/hundburar_transport/bil_skydd_for_hundar/baksatesskydd/249894", "same_form": true},
+      {"source": "stockholmget.com (hämtad sida)", "item": "Bilsätesförlängare med hård botten, 280 kg, memory foam", "price_sek": 1600, "url": "https://stockholmget.com/products/caeat", "same_form": true},
+      {"source": "Pricerunner", "item": "Baksätesförlängare hårdbottnad hundbilstolsöverdrag (no-name)", "price_sek": 1167, "url": "https://www.pricerunner.se/results?q=baks%C3%A4tesf%C3%B6rl%C3%A4ngare%20hund", "same_form": true},
+      {"source": "Pricerunner", "item": "Trixie Baksätesskydd hundar 155x130 delbart (hängmatta)", "price_sek": 849, "url": "https://www.pricerunner.se/results?q=baks%C3%A4tesskydd%20hund%20biltema", "same_form": false},
+      {"source": "Pricerunner", "item": "Trixie Friends on Tour baksätesskydd (ur sökutdrag zooplus)", "price_sek": 299, "url": "https://www.zooplus.se/shop/hund/hundburar_transport/bil_skydd_for_hundar/baksatesskydd/249896", "same_form": false}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Kleinmetall Bridge baksätesskydd med stödplattor (zooplus.se)", "price_sek": 1059, "url": "https://www.zooplus.se/shop/hund/hundburar_transport/bil_skydd_for_hundar/baksatesskydd/249894"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Jula och Biltema säljer bara hängmatte-skydd utan hårdbotten; ingen kedja har en förlängare/plattform. Synliga svenska ankare för samma form ligger på 1 059–1 600 kr (Kleinmetall, stockholmget), gott om utrymme över ett pris kring 699–899 kr."
+  },
+  {
+    "concept": "Ekorrbaffel / ekorrskydd till fågelmatare",
+    "goods_ids": ["606387388178611"],
+    "queries": [
+      "WebSearch: ekorrskydd fågelmatare ekorrbaffel jula OR biltema OR granngården OR \"clas ohlson\" OR rusta",
+      "WebSearch: ekorrskydd fågelmatare \"ekorrbaffel\" OR \"ekorrhinder\" OR \"squirrel baffle\" pris kr Sverige köp",
+      "WebSearch: ekorrbaffel OR ekorrskydd fågelmatare vivara OR naturbutiken OR \"cj wildlife\" pris kr",
+      "WebSearch: vivara.se OR naturbutiken.se OR fageln.se ekorre skydd matarstolpe baffel kr",
+      "curl pricerunner.se/search?q=ekorrskydd fågelmatare",
+      "curl pricerunner.se/search?q=ekorrbaffel",
+      "curl pricerunner.se/search?q=ekorrskydd",
+      "WebFetch fyndiq.se ekorrskydd-for-fagelmatare-omslutande-skydd",
+      "WebFetch pippifoder.se fagelmatare-med-skydd (404)",
+      "WebFetch lyckrea.se squirrel-proof-bird-feeder (404)",
+      "WebFetch facebook.com/ads/library q=ekorrskydd (403)"
+    ],
+    "findings": [
+      {"source": "Jula (ur sökutdrag)", "item": "Fågelmatare-kategori – flera modeller, inget ekorrskydd/baffel", "price_sek": null, "url": "https://www.jula.se/catalog/tradgard/tradgardsmiljo/mata-faglar/fagelmatare/", "same_form": false},
+      {"source": "Biltema (ur sökutdrag)", "item": "Fågelmatare + Ställning för fågelmatare – ingen baffel", "price_sek": null, "url": "https://www.biltema.se/fritid/tradgard/faglar/fagelmatare/", "same_form": false},
+      {"source": "Clas Ohlson (ur sökutdrag)", "item": "Fågelmatare-kategori – ingen baffel", "price_sek": null, "url": "https://www.clasohlson.com/se/Fritid/Utemilj%C3%B6/F%C3%A5gelmatare/c/1056", "same_form": false},
+      {"source": "Fyndiq (hämtad sida)", "item": "Ekorrskydd för fågelmatare, omslutande skydd 12/14/16 tum, plast", "price_sek": 238, "url": "https://fyndiq.se/produkt/ekorrskydd-for-fagelmatare-omslutande-skydd-eb6dfcbd7724479a/", "same_form": true},
+      {"source": "Pricerunner (Temu-listning)", "item": "Temu Squirrel-proof Outdoor Bird Feeder", "price_sek": 125, "url": "https://www.pricerunner.se/results?q=ekorrskydd%20f%C3%A5gelmatare", "same_form": false},
+      {"source": "Pricerunner", "item": "CARE-Bird Foderhus & Ekorrskydd 26x29 cm (matare med skydd)", "price_sek": 329, "url": "https://www.pricerunner.se/results?q=ekorrskydd", "same_form": false},
+      {"source": "Amazon.se (ur sökutdrag)", "item": "13,4 tums wrap-around ekorrbaffel; 18 tums foldable squirrel baffle", "price_sek": null, "url": "https://www.amazon.se/Effektivt-F%C3%A5gelmat-Ekorrbest%C3%A4ndig-Ekorrskydd-F%C3%A5gelmatningsstolpe/dp/B0CB87D38T", "same_form": true}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Fyndiq – Ekorrskydd för fågelmatare, omslutande (marknadsplats, ej märkesankare)", "price_sek": 238, "url": "https://fyndiq.se/produkt/ekorrskydd-for-fagelmatare-omslutande-skydd-eb6dfcbd7724479a/"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Ingen kedja (Jula/Biltema/Clas/Rusta/Granngården) säljer en ekorrbaffel – bara matare och ställningar. Synligt svenskt pris är Fyndiq 238 kr och Amazon-listningar; inget fackhandelsankare (Vivara/Naturbutiken) hittades, så prisutrymmet över ~199 kr är obevisat."
+  },
+  {
+    "concept": "Hundbadrock / torkrock",
+    "goods_ids": ["601105260939830"],
+    "queries": [
+      "WebSearch: hundbadrock torkrock hund jula OR biltema OR rusta OR \"clas ohlson\" OR \"arken zoo\"",
+      "WebSearch: Siccaro hundbadrock pris kr OR Rukka badrock hund pris kr arkenzoo zoo.se",
+      "WebSearch: site:biltema.se hundbadrock OR badrock hund OR torkrock",
+      "WebSearch: site:jula.se badrock hund OR hundbadrock OR \"handduk hund\"",
+      "curl pricerunner.se/search?q=hundbadrock",
+      "curl pricerunner.se/search?q=hundbadrock rusta",
+      "WebFetch rusta.com hundbadrock-xss-blandade-farger",
+      "WebFetch facebook.com/ads/library q=hundbadrock (403)"
+    ],
+    "findings": [
+      {"source": "Rusta (hämtad sida)", "item": "Hundbadrock – högabsorberande microfiber, justerbar magrem med tryckknapp, hög krage, XS/S & M-L, kampanjpris, endast i butik", "price_sek": 39.9, "url": "https://www.rusta.com/sv-se/fritid/husdjur/hundklader/hundbadrock-xss-blandade-farger", "same_form": true},
+      {"source": "Jula (ur sökutdrag)", "item": "Husdjurshandduk microfiber 120x60 cm (handduk, inte rock)", "price_sek": null, "url": "https://www.jula.se/catalog/fritid/husdjur/hund/skotsel/husdjurshandduk-021484/", "same_form": false},
+      {"source": "Biltema (ur sökutdrag)", "item": "Ingen badrock hittad – bara hundbäddar/regntäcke", "price_sek": null, "url": "https://www.biltema.se/fritid/husdjur/hund/", "same_form": false},
+      {"source": "Arken Zoo / Pricerunner", "item": "Rukka Medea Eco Badrock", "price_sek": 349, "url": "https://www.arkenzoo.se/rukka-medea-eco-badrock-till-hund-gron", "same_form": true},
+      {"source": "Pricerunner", "item": "Rukka Pets Medea Eco Badrock (större storlekar)", "price_sek": 539, "url": "https://www.pricerunner.se/results?q=hundbadrock", "same_form": true},
+      {"source": "Pricerunner", "item": "Danish Design Badrock för hund 30–70 cm", "price_sek": 319, "url": "https://www.pricerunner.se/results?q=hundbadrock", "same_form": true},
+      {"source": "Pricerunner", "item": "Pomppa BathPomppa Badrock", "price_sek": 599, "url": "https://www.pricerunner.se/results?q=hundbadrock", "same_form": true}
+    ],
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 39.9,
+    "anchor": {"name": "Rukka Medea Eco Badrock (Arken Zoo)", "price_sek": 349, "url": "https://www.arkenzoo.se/rukka-medea-eco-badrock-till-hund-gron"},
+    "adlib_active": "ej läsbar",
+    "verdict": "FAIL",
+    "reason": "Rusta säljer exakt samma form (microfiberrock med justerbar magrem) för 39,90 kr i butik. Märkesankare finns (Rukka 349–539, Pomppa 599–1 099), men kedjepriset är under vad Temu-varan kostar i inköp med frakt."
+  },
+  {
+    "concept": "Hopfällbar isolerad hundkoja",
+    "goods_ids": ["601105490445990"],
+    "queries": [
+      "WebSearch: hopfällbar isolerad hundkoja vinter hundhus jula OR biltema OR rusta OR granngården OR \"arken zoo\"",
+      "WebSearch: hopfällbar hundkoja isolerad \"fällbar\" OR \"hopfällbar\" hundhus vinter pris kr Sverige",
+      "WebSearch: site:rusta.com hundkoja OR kattkoja OR katthus utomhus",
+      "curl pricerunner.se/search?q=hundkoja isolerad",
+      "curl pricerunner.se/search?q=hundkoja plast biltema",
+      "WebFetch kellfri.se hundkoja-isolerad",
+      "WebFetch granngarden.se hundkoja-hundhus",
+      "WebFetch biltema.se hundkoja-2000042495 (403)",
+      "WebFetch facebook.com/ads/library q=hundkoja (403)"
+    ],
+    "findings": [
+      {"source": "Biltema (ur sökutdrag)", "item": "Hundkoja 92x90x89 cm, tålig plast, väderskyddad året runt, ventilation och dränering (styv, ej hopfällbar)", "price_sek": null, "url": "https://www.biltema.se/fritid/husdjur/hund/hundburar/hundkoja-2000042495", "same_form": false},
+      {"source": "Granngården (hämtad sida)", "item": "Kategori Hundkoja & Hundhus – visar just nu bara strö och värmeskål, ingen koja", "price_sek": null, "url": "https://www.granngarden.se/husdjur/hund/hundkoja-hundhus", "same_form": false},
+      {"source": "Jula / Rusta (ur sökutdrag)", "item": "Ingen hundkoja för utomhusbruk hittad", "price_sek": null, "url": "https://www.jula.se/catalog/fritid/husdjur/hund/", "same_form": false},
+      {"source": "Kellfri (hämtad sida)", "item": "Hundkoja isolerad 4-Season, dubbla väggar cellplast, trä, levereras omonterad (ej hopfällbar)", "price_sek": 2699, "url": "https://www.kellfri.se/djur/hund/hundburar/hundkoja-isolerad", "same_form": false},
+      {"source": "Pricerunner", "item": "VEVOR Outdoor Dog House Waterproof Insulated with Elevated Floor", "price_sek": 1810, "url": "https://www.pricerunner.se/results?q=hundkoja%20isolerad", "same_form": false},
+      {"source": "Pricerunner", "item": "vidaXL Hundkoja grå 92x87x91 plast", "price_sek": 2117, "url": "https://www.pricerunner.se/results?q=hundkoja%20plast%20biltema", "same_form": false},
+      {"source": "Pricerunner (Shein)", "item": "Shein Varmt Isolerat Katthem 45x40x55 cm (mjuk isolerad tygkoja, liten)", "price_sek": 424, "url": "https://www.pricerunner.se/results?q=hundkoja%20isolerad", "same_form": true}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Kellfri Hundkoja isolerad 4-Season", "price_sek": 2699, "url": "https://www.kellfri.se/djur/hund/hundburar/hundkoja-isolerad"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Kedjorna säljer bara styva plast-/träkojor (Biltema, pris ej läsbart) – ingen hopfällbar isolerad tygkoja. Isolerade svenska ankare ligger på 1 810–2 699 kr, väl över 1,6× ett pris kring 699–899 kr; närmaste samma-form är Shein 424 kr i kattstorlek."
+  },
+  {
+    "concept": "Automatisk hönslucka",
+    "goods_ids": ["601103331613427"],
+    "queries": [
+      "WebSearch: automatisk hönslucka granngården OR jula OR biltema OR chickenguard pris",
+      "WebSearch: automatisk hönslucka jula OR biltema OR \"clas ohlson\" OR rusta OR bauhaus OR byggmax",
+      "WebSearch: site:jula.se hönslucka OR hönshus lucka automatisk",
+      "curl pricerunner.se/search?q=automatisk hönslucka",
+      "curl pricerunner.se/search?q=hönslucka",
+      "curl pricerunner.se/search?q=chickenguard",
+      "WebFetch granngarden.se honslucka-kerbl-med-automatisk-luckoppnare-300x400mm",
+      "WebFetch lantbutiken.se luckoppnare-hons",
+      "WebFetch facebook.com/ads/library q=hönslucka (403)"
+    ],
+    "findings": [
+      {"source": "Granngården (hämtad sida; pris via Pricerunner)", "item": "Automatisk hönslucka Kerbl 300x400 mm – timer, ljussensor, batteri/230 V, säkerhetsstopp", "price_sek": 1899, "url": "https://www.granngarden.se/honslucka-kerbl-med-automatisk-luckoppnare-300x400mm", "same_form": true},
+      {"source": "Pricerunner", "item": "Kerbl Hönslucka med automatisk lucköppnare 430x400", "price_sek": 1313, "url": "https://www.pricerunner.se/results?q=automatisk%20h%C3%B6nslucka", "same_form": true},
+      {"source": "Pricerunner", "item": "Kerbl Automatisk Kycklingdörrsats 220x330 mm", "price_sek": 1203, "url": "https://www.pricerunner.se/results?q=automatisk%20h%C3%B6nslucka", "same_form": true},
+      {"source": "Jula/Biltema/Clas/Rusta/Bauhaus/Byggmax (ur sökutdrag)", "item": "Ingen automatisk hönslucka hittad", "price_sek": null, "url": "https://www.jula.se/", "same_form": false},
+      {"source": "Lantbutiken (hämtad sida)", "item": "Automatisk lucköppnare för höns (B-49-70592, NYHET)", "price_sek": 2119, "url": "https://www.lantbutiken.se/hons-fjaderfa/luckoppnare-hons", "same_form": true},
+      {"source": "Lantbutiken (hämtad sida)", "item": "Automatisk lucköppnare för höns (b-49-705501)", "price_sek": 1499, "url": "https://www.lantbutiken.se/hons-fjaderfa/luckoppnare-hons", "same_form": true},
+      {"source": "djursajten.se (ur sökutdrag)", "item": "ChickenGuard Locking Combi Premium", "price_sek": 1881, "url": "https://djursajten.se/automatisk-honslucka/", "same_form": true}
+    ],
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 1313,
+    "anchor": {"name": "ChickenGuard Locking Combi Premium", "price_sek": 1881, "url": "https://djursajten.se/automatisk-honslucka/"},
+    "adlib_active": "ej läsbar",
+    "verdict": "PASS",
+    "reason": "Bara Granngården bland kedjorna säljer formen, och då Kerbl på 1 313–1 899 kr – dyrare än vi behöver ta. Fackhandelsankarna (ChickenGuard 1 881, Lantbutiken 1 499–2 119) är ≥1,6× ett pris kring 899–999 kr."
+  },
+  {
+    "concept": "Uppvärmd / frostfri hönsvattenautomat",
+    "goods_ids": ["603266490408979"],
+    "queries": [
+      "WebSearch: uppvärmd hönsvattenautomat frostfri vattenautomat höns granngården OR jula OR biltema",
+      "WebSearch: uppvärmd vattenautomat höns frostfri hönsvatten pris kr granngården OR lantbutiken OR hönsbutiken",
+      "WebSearch: uppvärmd vattenautomat höns kr hönsbutiken OR lantkompaniet OR eldorado OR olba frostfri elektrisk",
+      "WebSearch: \"vattenautomat\" höns \"med värme\" OR \"uppvärmd\" 5 liter OR 10 liter pris kr köp",
+      "WebSearch: uppvärmd vattenautomat höns inbyggd värme elektrisk kr hornbach OR nordlant OR hönsbutiken OR bonden.se OR p-lindberg",
+      "WebSearch: Kerbl vattenautomat uppvärmd OR frostfri höns 5 liter OR 10 liter Sverige pris",
+      "curl pricerunner.se/search?q=vattenautomat höns värme",
+      "curl pricerunner.se/search?q=vattenautomat uppvärmd",
+      "curl pricerunner.se/search?q=värmeplatta vattenautomat kerbl",
+      "curl pricerunner.se/search?q=vattenautomat frostfri höns",
+      "WebFetch lantkompaniet.se vinterprodukter",
+      "WebFetch lantkompaniet.se vattenfoersoerjning-hoens",
+      "WebFetch granngarden.se varmeplatta",
+      "WebFetch facebook.com/ads/library q=vattenautomat höns (403)"
+    ],
+    "findings": [
+      {"source": "Granngården (hämtad sida)", "item": "Värmeplatta Kerbl för vattenautomat 15 W Ø25 cm och 18 W 24x24 cm (tillbehör, inte inbyggd värme; pris laddas dynamiskt)", "price_sek": null, "url": "https://www.granngarden.se/foderladan/hons-fjaderfa/varmeplatta", "same_form": false},
+      {"source": "Pricerunner", "item": "Kerbl Värmeplatta 25 cm till vattenautomat fjäderfä 20 W", "price_sek": 389, "url": "https://www.pricerunner.se/results?q=v%C3%A4rmeplatta%20vattenautomat%20kerbl", "same_form": false},
+      {"source": "Lantbutiken (ur sökutdrag)", "item": "Värmeplatta för vattenautomat till höns 15 W / 22 W", "price_sek": 259, "url": "https://www.lantbutiken.se/hons-fjaderfa/varmekallor/varmeplattor/varmeplatta-for-vattenautomat-till-hons-15-w", "same_form": false},
+      {"source": "Jula / Biltema / Clas / Rusta (ur sökutdrag)", "item": "Ingen uppvärmd vattenautomat för höns hittad", "price_sek": null, "url": "https://www.jula.se/", "same_form": false},
+      {"source": "Lantkompaniet (hämtad sida)", "item": "Kerbl Eluppvärmd vattenautomat NoFrost 330 ml (kanin/kyckling/fågel, frostfri till -20 °C)", "price_sek": 399, "url": "https://www.lantkompaniet.se/eluppvaermd-vattenautomat-nofrost-frostfri-vattenautomat-foer-kanin-kyckling-fagel-330-ml.html", "same_form": false},
+      {"source": "Lantkompaniet (hämtad sida)", "item": "Elvattenkopp flottör SH30 230 V 31 W (uppvärmd vattenkopp)", "price_sek": 1389, "url": "https://www.lantkompaniet.se/hem-gard-stall/vinterprodukter.html", "same_form": false},
+      {"source": "Pricerunner", "item": "Vattenautomat för höns fjäderfä 20 liter (ouppvärmd)", "price_sek": 479, "url": "https://www.pricerunner.se/results?q=vattenautomat%20frostfri%20h%C3%B6ns", "same_form": false}
+    ],
+    "same_form_in_chain": "NEJ",
+    "chain_min_price_sek": null,
+    "anchor": {"name": "Kerbl NoFrost eluppvärmd vattenautomat 330 ml (Lantkompaniet) – småformat, inte hönsstorlek", "price_sek": 399, "url": "https://www.lantkompaniet.se/eluppvaermd-vattenautomat-nofrost-frostfri-vattenautomat-foer-kanin-kyckling-fagel-330-ml.html"},
+    "adlib_active": "ej läsbar",
+    "verdict": "UNCERTAIN",
+    "reason": "Ingen kedja säljer en hönsvattenautomat med inbyggd värme, men Granngården/Lantbutiken täcker samma behov med värmeplatta för 259–389 kr under en vanlig automat. Inget svenskt ankare för en integrerad uppvärmd hönsautomat i 5–10 l hittades, så prisutrymmet går inte att styrka."
+  }
+]

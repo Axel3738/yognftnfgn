@@ -1,0 +1,156 @@
+<title>Produktlistan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
+<style>
+  /* Produktlistan — 25 kandidater med söklänkar. Söklänken kan inte bli slutsåld, till skillnad från
+     en länk till en enskild annons (REGEL.md avsnitt 8). Svensk text, en tanke per rad. */
+  :root {
+    --ground: #F3F5F0; --surface: #FFFFFF; --ink: #17201B; --muted: #5B6B61; --line: #D9DFD9;
+    --accent: #2E6B4E; --accent-ink: #FFFFFF; --warn: #8C6D1F; --bad: #B9472C; --chip: #E6ECE6;
+    --shadow: 0 2px 10px rgba(23,32,27,.07); --shadow-lg: 0 10px 28px rgba(23,32,27,.13);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #121714; --surface: #1B231E; --ink: #E9EEE9; --muted: #9AA89F; --line: #2C362F;
+      --accent: #5FB58C; --accent-ink: #0F1712; --warn: #D4A83A; --bad: #E0704F; --chip: #263029;
+      --shadow: 0 2px 10px rgba(0,0,0,.4); --shadow-lg: 0 10px 28px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #121714; --surface: #1B231E; --ink: #E9EEE9; --muted: #9AA89F; --line: #2C362F;
+    --accent: #5FB58C; --accent-ink: #0F1712; --warn: #D4A83A; --bad: #E0704F; --chip: #263029;
+    --shadow: 0 2px 10px rgba(0,0,0,.4); --shadow-lg: 0 10px 28px rgba(0,0,0,.5);
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-size: 18px; line-height: 1.5;
+         font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 18px 14px 40px; }
+  header { padding: 6px 4px 14px; }
+  h1 { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 32px; margin: 0 0 6px; letter-spacing: .01em; }
+  .lede { margin: 0; color: var(--muted); font-size: 17px; }
+  .lede b { color: var(--ink); }
+  .filter { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 4px; }
+  .filter button { font: inherit; font-size: 15px; font-weight: 700; border: 1px solid var(--line); background: var(--surface);
+                   color: var(--muted); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+  .filter button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .filter button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .card { background: var(--surface); border-radius: 16px; box-shadow: var(--shadow); margin: 14px 0; overflow: hidden; }
+  .card:first-of-type { box-shadow: var(--shadow-lg); }
+  .top { display: grid; grid-template-columns: 104px 1fr; gap: 12px; padding: 12px; align-items: start; }
+  .thumb { width: 104px; height: 104px; border-radius: 11px; background: var(--chip); overflow: hidden; display: grid; place-items: center; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb span { font-family: "Barlow Semi Condensed", sans-serif; font-size: 40px; font-weight: 700; color: var(--muted); }
+  h2 { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 21px; line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
+  .nums { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+  .pris { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .chip { display: inline-block; background: var(--chip); border-radius: 999px; padding: 2px 9px;
+          font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .chip.nu { background: var(--accent); color: var(--accent-ink); }
+  .chip.inkop { background: transparent; border: 1px solid var(--line); color: var(--muted); text-transform: none; letter-spacing: 0; }
+  .hook { margin: 8px 0 0; font-size: 17px; color: var(--muted); font-style: italic; }
+  .body { padding: 0 12px 12px; }
+  details { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 10px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--accent); font-size: 16px; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: " ▾"; }
+  details[open] summary::after { content: " ▴"; }
+  .row { display: grid; grid-template-columns: 88px 1fr; gap: 8px; margin-top: 10px; }
+  .row .lbl { font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+  .row p { margin: 0; font-size: 16px; }
+  .row.risk .lbl { color: var(--bad); }
+  .links { display: flex; gap: 10px; padding: 0 12px 14px; }
+  .links a { flex: 1; text-align: center; text-decoration: none; font-weight: 700; font-size: 16px;
+             padding: 12px 8px; border-radius: 11px; }
+  .links a.primar { background: var(--accent); color: var(--accent-ink); }
+  .links a.sekundar { background: var(--chip); color: var(--ink); }
+  .note { background: var(--surface); border-left: 4px solid var(--warn); border-radius: 0 12px 12px 0;
+          padding: 12px 14px; margin: 18px 0 4px; box-shadow: var(--shadow); }
+  .note p { margin: 0 0 6px; font-size: 16px; }
+  .note p:last-child { margin: 0; }
+  footer { color: var(--muted); font-size: 14px; text-align: center; padding: 24px 8px 0; }
+  [hidden] { display: none !important; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Produktlistan</h1>
+    <p class="lede"><b id="antal">25</b> kandidater till hösten. Tryck <b>Öppna produkten</b> så ser du varan.</p>
+  </header>
+
+  <div class="note">
+    <p><b>Länkarna går till AliExpress.</b></p>
+    <p>Temu släpper bara in mig en gång i timmen.</p>
+    <p>Samma varor, samma fabriker, länkar som öppnas.</p>
+  </div>
+
+  <div class="filter" role="group" aria-label="Filtrera">
+    <button type="button" data-f="alla" aria-pressed="true">Alla</button>
+    <button type="button" data-f="nu" aria-pressed="false">Bråttom nu</button>
+    <button type="button" data-f="topp" aria-pressed="false">Starkast</button>
+    <button type="button" data-f="bild" aria-pressed="false">Med bild</button>
+  </div>
+
+  <div id="lista"></div>
+
+  <footer>Priset är vad vi skulle ta i butiken. Inköp = vad den kostar hos leverantören. Golv = billigaste svenska. Ankare = märket ovanför.</footer>
+</div>
+
+<script>
+  const DATA = /*__DATA__*/[];
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const nu = p => /Q4 NOW|OCTOBER/i.test(p.q4);
+
+  function kort(p) {
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.dataset.nu = nu(p) ? '1' : '0';
+    el.dataset.topp = p.poang >= 58 ? '1' : '0';
+    el.dataset.bild = p.hero ? '1' : '0';
+    const golv = p.golv ? `Billigast i Sverige i dag: ${p.golv} kr${p.golv_namn ? ' — ' + esc(p.golv_namn) : ''}.` : 'Ingen svensk säljare hittad.';
+    const ank = p.ankare ? `Märket ovanför kostar ${p.ankare} kr${p.ankare_namn ? ' — ' + esc(p.ankare_namn) : ''}.` : 'Inget märke ovanför oss hittat.';
+    const ann = p.annonsorer === 0 ? 'Ingen annonserar den i Sverige.' :
+                p.annonsorer === 1 ? 'En svensk butik annonserar den.' :
+                p.annonsorer ? `${p.annonsorer} svenska butiker annonserar den.` : 'Antal annonsörer okänt.';
+    el.innerHTML = `
+      <div class="top">
+        <div class="thumb">${p.hero ? `<img alt="${esc(p.namn)}" src="${p.hero}" loading="lazy">` : `<span aria-hidden="true">${esc(p.namn.trim()[0])}</span>`}</div>
+        <div>
+          <h2>${esc(p.namn)}</h2>
+          <div class="nums"><span class="pris">${p.pris_sek} kr</span><span class="chip ${nu(p) ? 'nu' : ''}">${esc(p.q4)}</span>${p.ali_bast ? `<span class="chip inkop">Inköp ${esc(p.ali_bast.pris_text || '')}</span>` : ''}</div>
+          <p class="hook">”${esc(p.hook)}”</p>
+        </div>
+      </div>
+      <div class="body">
+        <details>
+          <summary>Läs mer</summary>
+          ${p.ali_bast ? `<div class="row"><div class="lbl">Varan</div><p>${esc(p.ali_bast.titel)}</p></div>` : ''}
+          <div class="row"><div class="lbl">Varför</div><p>${esc(p.hypotes)}</p></div>
+          <div class="row"><div class="lbl">Pengarna</div><p>${esc(p.print)}</p></div>
+          <div class="row"><div class="lbl">Läget</div><p>${golv}<br>${ank}<br>${ann}</p></div>
+          <div class="row risk"><div class="lbl">Risken</div><p>${esc(p.risk)}</p></div>
+        </details>
+      </div>
+      <div class="links">
+        ${p.ali_bast ? `<a class="primar" href="${p.ali_bast.url}" target="_blank" rel="noopener">Öppna produkten ↗</a>` : ''}
+        <a class="sekundar" href="${p.ali_sok_url}" target="_blank" rel="noopener">Fler liknande ↗</a>
+      </div>`;
+    return el;
+  }
+
+  const lista = document.getElementById('lista');
+  DATA.forEach(p => lista.appendChild(kort(p)));
+  document.getElementById('antal').textContent = DATA.length;
+
+  document.querySelectorAll('.filter button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.filter button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    const f = b.dataset.f;
+    let n = 0;
+    lista.querySelectorAll('.card').forEach(c => {
+      const visa = f === 'alla' || c.dataset[f] === '1';
+      c.hidden = !visa;
+      if (visa) n++;
+    });
+    document.getElementById('antal').textContent = n;
+  }));
+</script>

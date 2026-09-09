@@ -1,0 +1,4809 @@
+[
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601099637369908",
+  "url_se": "https://www.temu.com/se/g-601099637369908.html",
+  "title": "Ladder Stabilizer for Roof Gutter, Wing Span Wall Ladder Standoff, attaches with U-bolt, 485 lbs",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd (Stegproffsen), ord. 974 kr",
+   "price_sek": 779,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "Bauhaus har formen men för 1 195 kr (Stabilomat); Biltema och Jula saknar den. Med Wibe 779–974 kr och Bauhaus 1 195 kr som synliga ankare klarar ett pris runt 449–499 kr 1,6×-regeln med marginal.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 1195,
+    "anchor": {
+     "name": "Wibe Väggstöd (Stegproffsen), ord. 974 kr",
+     "price_sek": 779,
+     "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Väggstöd/avståndsstöd till stege"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B (provisorisk — material/pris ej hämtat)",
+  "tier_reason": "väggstöd till stege: Wibe 779–974 / Bauhaus 1 195 som ankare; stegen förvaras inomhus (negativ rymd), U-bultsmontering, 1 m stålfrakt"
+ },
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601099608814085",
+  "url_se": "https://www.temu.com/se/g-601099608814085.html",
+  "title": "Heavy Duty Ladder Stabilizer Accessory Roof Gutter Wing Wall Ladder Standoff",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja bekräftad (Bauhaus verifierat utan; Jula utan träff; Biltema OSÄKER); fackhandel säljer Wibe för 974 kr = synligt märkesankare ≥ 1,6× ett pris på 599 kr, och Temu-varianten ser ut som Wibe (samma vingform). Ad Library SE 'väggstöd stege' + 'stegstöd hängränna': 0 annonsörer"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "dubblett av väggstödet 601099637369908"
+ },
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601099758833312",
+  "url_se": "https://www.temu.com/se/g-601099758833312.html",
+  "title": "Heavy Duty Metal Ladder Stabilizer Roof Gutter Safety Standoff, wall extension support with wing",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja bekräftad (Bauhaus verifierat utan; Jula utan träff; Biltema OSÄKER); fackhandel säljer Wibe för 974 kr = synligt märkesankare ≥ 1,6× ett pris på 599 kr, och Temu-varianten ser ut som Wibe (samma vingform). Ad Library SE 'väggstöd stege' + 'stegstöd hängränna': 0 annonsörer"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "dubblett av väggstödet 601099637369908"
+ },
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601100623182916",
+  "url_se": "https://www.temu.com/se/g-601100623182916.html",
+  "title": "Heavy-duty Steel Ladder Stabilizer for Roof Gutters/Walls, adjustable, safety clamps, orange",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja bekräftad (Bauhaus verifierat utan; Jula utan träff; Biltema OSÄKER); fackhandel säljer Wibe för 974 kr = synligt märkesankare ≥ 1,6× ett pris på 599 kr, och Temu-varianten ser ut som Wibe (samma vingform). Ad Library SE 'väggstöd stege' + 'stegstöd hängränna': 0 annonsörer"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "dubblett av väggstödet 601099637369908"
+ },
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601099675920422",
+  "url_se": "https://www.temu.com/se/g-601099675920422.html",
+  "title": "Modern Metal Ladder Stabilizer Anti-slip Roof Gutter Wall Ladder Standoff",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja bekräftad (Bauhaus verifierat utan; Jula utan träff; Biltema OSÄKER); fackhandel säljer Wibe för 974 kr = synligt märkesankare ≥ 1,6× ett pris på 599 kr, och Temu-varianten ser ut som Wibe (samma vingform). Ad Library SE 'väggstöd stege' + 'stegstöd hängränna': 0 annonsörer"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "dubblett av väggstödet 601099637369908"
+ },
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601100243969867",
+  "url_se": "https://www.temu.com/se/g-601100243969867.html",
+  "title": "Ladder Stabilizer for Roof, wall ladder standoff, non-slip rubber, adjustable",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja bekräftad (Bauhaus verifierat utan; Jula utan träff; Biltema OSÄKER); fackhandel säljer Wibe för 974 kr = synligt märkesankare ≥ 1,6× ett pris på 599 kr, och Temu-varianten ser ut som Wibe (samma vingform). Ad Library SE 'väggstöd stege' + 'stegstöd hängränna': 0 annonsörer"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "dubblett av väggstödet 601099637369908"
+ },
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601099601260136",
+  "url_se": "https://www.temu.com/se/g-601099601260136.html",
+  "title": "Ladder Stabilizer for Roof Gutters, Ladder Standoff, extension ladder accessories",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja bekräftad (Bauhaus verifierat utan; Jula utan träff; Biltema OSÄKER); fackhandel säljer Wibe för 974 kr = synligt märkesankare ≥ 1,6× ett pris på 599 kr, och Temu-varianten ser ut som Wibe (samma vingform). Ad Library SE 'väggstöd stege' + 'stegstöd hängränna': 0 annonsörer"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "dubblett av väggstödet 601099637369908"
+ },
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601099592830760",
+  "url_se": "https://www.temu.com/se/g-601099592830760.html",
+  "title": "Ladder Stabilizer Accessory for Roof Gutter, multiply ladder standoff, steel silver",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja bekräftad (Bauhaus verifierat utan; Jula utan träff; Biltema OSÄKER); fackhandel säljer Wibe för 974 kr = synligt märkesankare ≥ 1,6× ett pris på 599 kr, och Temu-varianten ser ut som Wibe (samma vingform). Ad Library SE 'väggstöd stege' + 'stegstöd hängränna': 0 annonsörer"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "dubblett av väggstödet 601099637369908"
+ },
+ {
+  "kluster": "hus",
+  "family": "vaggstod",
+  "goods_id": "601100130932624",
+  "url_se": "https://www.temu.com/se/g-601100130932624.html",
+  "title": "Ladder Stabilizer Roof Gutters Ladder Standoff Extension Ladder Accessories",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "anliggande stege (ägd) mot husets takränna/fasad",
+  "owner_owns": true,
+  "friction": "stegen vilar i takrännan när rännan ska rensas i oktober: rännan bucklas, stegen glider i sidled på plåtkanten, och man når inte rännan rakt framför sig",
+  "old_way": "en träkloss eller handduk i rännan, eller 'stå snett och sträck dig'",
+  "variants": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk",
+  "swedish_equivalent": {
+   "retailer": "Stegproffsen (fackhandel, Wibe)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+   "same_form": true,
+   "note": "Wibe Väggstöd WL-717529, 974 kr (rea 779 kr), bredd 1050 mm djup 340 mm, elförzinkat stål — Stegproffsen/Stegmannen. Bauhaus tillbehörssida (11 produkter) saknar väggstöd. Biltema har kategorin 'stegtillbehör' (innehåll EJ verifierat — sidan 403). Jula: inga träffar på väggstöd/stegstöd"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen och används mot huset; stegen förvaras visserligen i garaget (negativ-rymd-flagga) men varje användning sker utomhus mot fasad/ränna"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning i september–oktober är stegens högsäsong; bucklan i rännan och den vinglande stegen finns i varje villaträdgård den månaden",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja bekräftad (Bauhaus verifierat utan; Jula utan träff; Biltema OSÄKER); fackhandel säljer Wibe för 974 kr = synligt märkesankare ≥ 1,6× ett pris på 599 kr, och Temu-varianten ser ut som Wibe (samma vingform). Ad Library SE 'väggstöd stege' + 'stegstöd hängränna': 0 annonsörer"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 599,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "Temu SE-pris ej läsbart (blockerad). Landad kostnad och uppslag kan inte räknas — sätts när priset finns. Tänkt pris 599 kr (Wibe-ankare 974). Flerköp: nej (en stege)."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en modell, universalfäste med U-bult (två bultar) — passar stegar med standardbalk"
+   },
+   "hook": {
+    "text": "Står stegen mot takrännan när du rensar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "montering (2 U-bultar)",
+   "tung/lång frakt (~1 m stål)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 62,
+  "category_novelty": 85,
+  "tier": "B (dubblett)",
+  "biggest_risk": "Biltemas stegtillbehör innehåller ett väggstöd för ~300 kr (ej verifierat, sidan svarar 403) — då faller hyllgaten; och frakten på 1 m stål äter marginalen",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder stabilizer wall standoff gutter",
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: väggstöd till stege pris jula biltema wibe",
+   "WebFetch stegproffsen.se Wibe väggstöd (974/779 kr)",
+   "WebFetch bauhaus.se stegar tillbehör (11 produkter, inget väggstöd)",
+   "Ad Library SE: väggstöd stege (0), stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "dubblett av väggstödet 601099637369908"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannstod",
+  "goods_id": "601100198525980",
+  "url_se": "https://www.temu.com/se/g-601100198525980.html",
+  "title": "17 inch Non-slip Gutter Ladder Safety Rest, durable plastic guard stabilizer for gutter protection, blue",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takrännan + anliggande stege",
+  "owner_owns": true,
+  "friction": "stegens överdel trycker mot och bucklar rännan, och glider i sidled på den runda plåtkanten",
+  "old_way": "handduk/träbit i rännan, eller stegen mot takfoten bredvid",
+  "variants": "en storlek (17 tum), 1- eller 2-pack (två stegbalkar) — en variant",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": false,
+   "note": "Yahoo SE 'stegskydd hängränna takränneskydd stege': inga resultat; träffar bara glidskydd för TAKSTEGE (annan produkt, Bauhaus/Byggmax). Bauhaus stegtillbehör (11 st): inget rännstöd. Biltema stegtillbehör EJ verifierat (403)"
+  },
+  "brand_anchor": {
+   "name": "Bauhaus Rännkrok svart 100 mm PVC",
+   "price_sek": 59.95,
+   "url": "https://www.bauhaus.se/rannkrok-svart-100-mm"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "hakas över takrännan, används varje gång stegen reses mot huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning oktober = stegen mot rännan; bucklade rännor syns på varannan villa",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Bauhaus säljer exakt formen (rännkrok i PVC-plast) för 59,95 kr styck och Plastmo-krokar ligger på 63–117 kr i fackhandeln. En byggvara som köps i multipel och måste passa rännprofilen går inte att sälja dyrare från Temu.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 59.95,
+    "anchor": {
+     "name": "Bauhaus Rännkrok svart 100 mm PVC",
+     "price_sek": 59.95,
+     "url": "https://www.bauhaus.se/rannkrok-svart-100-mm"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Rännstöd i plast för takränna"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 699,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2-pack = två stegbalkar",
+    "result": "UNKNOWN",
+    "note": "Endast US-pris känt ($37,99 för 2 st ur sökutdrag). Om SE-pris ≈ 150–200 kr/st: 2-pack 699 kr (>500 kr-zonen), flerköpsskäl inbyggt (två stegbalkar). Räknas om när SE-priset finns."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en storlek (17 tum), 1- eller 2-pack (två stegbalkar) — en variant"
+   },
+   "hook": {
+    "text": "Bucklar stegen takrännan varje höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "ekonomi osäker (US-pris $37,99/2-pack ≈ 190 kr/st)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 58,
+  "category_novelty": 88,
+  "tier": "ELIM",
+  "biggest_risk": "Temu SE-priset är okänt; ligger 2-packet nära 360 kr blir svenskt pris ~900 kr för två plastbitar — mer än rännan är värd i kundens ögon",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo: site:temu.com ladder gutter guard rest protector plastic hook",
+   "Yahoo SE: stegskydd hängränna takränneskydd stege skydda takrännan (inga resultat)",
+   "Ad Library SE: stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannstod",
+  "goods_id": "601100858917684",
+  "url_se": "https://www.temu.com/se/g-601100858917684.html",
+  "title": "2pcs 17 inch Gutter Ladder Safety Rest, non-slip gutter guard ladder stabilizer",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takrännan + anliggande stege",
+  "owner_owns": true,
+  "friction": "stegens överdel trycker mot och bucklar rännan, och glider i sidled på den runda plåtkanten",
+  "old_way": "handduk/träbit i rännan, eller stegen mot takfoten bredvid",
+  "variants": "en storlek (17 tum), 1- eller 2-pack (två stegbalkar) — en variant",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": false,
+   "note": "Yahoo SE 'stegskydd hängränna takränneskydd stege': inga resultat; träffar bara glidskydd för TAKSTEGE (annan produkt, Bauhaus/Byggmax). Bauhaus stegtillbehör (11 st): inget rännstöd. Biltema stegtillbehör EJ verifierat (403)"
+  },
+  "brand_anchor": {
+   "name": "Wibe Väggstöd (samma jobb, dyrare form)",
+   "price_sek": 974,
+   "url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "hakas över takrännan, används varje gång stegen reses mot huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning oktober = stegen mot rännan; bucklade rännor syns på varannan villa",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen svensk kanal hittad för formen (plastskydd som hakar över rännan); kategorin 'stegtillbehör' finns hos Biltema/Bauhaus utan denna form i det som gick att läsa. Ad Library SE: 0"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 699,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2-pack = två stegbalkar",
+    "result": "UNKNOWN",
+    "note": "Endast US-pris känt ($37,99 för 2 st ur sökutdrag). Om SE-pris ≈ 150–200 kr/st: 2-pack 699 kr (>500 kr-zonen), flerköpsskäl inbyggt (två stegbalkar). Räknas om när SE-priset finns."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en storlek (17 tum), 1- eller 2-pack (två stegbalkar) — en variant"
+   },
+   "hook": {
+    "text": "Bucklar stegen takrännan varje höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "ekonomi osäker (US-pris $37,99/2-pack ≈ 190 kr/st)"
+  ],
+  "eliminated_at": null,
+  "structure_match": 58,
+  "category_novelty": 88,
+  "tier": "B",
+  "biggest_risk": "Temu SE-priset är okänt; ligger 2-packet nära 360 kr blir svenskt pris ~900 kr för två plastbitar — mer än rännan är värd i kundens ögon",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo: site:temu.com ladder gutter guard rest protector plastic hook",
+   "Yahoo SE: stegskydd hängränna takränneskydd stege skydda takrännan (inga resultat)",
+   "Ad Library SE: stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN",
+  "tier_agent": "B-dubblett (provisorisk)",
+  "tier_reason": "rännstöd i plast till stegen: ingen svensk kanal hittad; ekonomi okänd (US 2-pack $37,99)"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannstod",
+  "goods_id": "601100859729434",
+  "url_se": "https://www.temu.com/se/g-601100859729434.html",
+  "title": "2pcs 17-inch Gutter Ladder Safety Rest non-slip gutter guard ladder stabilizer (US: $37.99, 4.8/5, 62 rec — ur Yahoo-utdrag)",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takrännan + anliggande stege",
+  "owner_owns": true,
+  "friction": "stegens överdel trycker mot och bucklar rännan, och glider i sidled på den runda plåtkanten",
+  "old_way": "handduk/träbit i rännan, eller stegen mot takfoten bredvid",
+  "variants": "en storlek (17 tum), 1- eller 2-pack (två stegbalkar) — en variant",
+  "swedish_equivalent": {
+   "retailer": null,
+   "price_sek": null,
+   "url": null,
+   "same_form": false,
+   "note": "Yahoo SE 'stegskydd hängränna takränneskydd stege': inga resultat; träffar bara glidskydd för TAKSTEGE (annan produkt, Bauhaus/Byggmax). Bauhaus stegtillbehör (11 st): inget rännstöd. Biltema stegtillbehör EJ verifierat (403)"
+  },
+  "brand_anchor": {
+   "name": "Bauhaus Rännkrok svart 100 mm PVC",
+   "price_sek": 59.95,
+   "url": "https://www.bauhaus.se/rannkrok-svart-100-mm"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "hakas över takrännan, används varje gång stegen reses mot huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "rännrensning oktober = stegen mot rännan; bucklade rännor syns på varannan villa",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Bauhaus säljer exakt formen (rännkrok i PVC-plast) för 59,95 kr styck och Plastmo-krokar ligger på 63–117 kr i fackhandeln. En byggvara som köps i multipel och måste passa rännprofilen går inte att sälja dyrare från Temu.",
+    "verified": true,
+    "verified_by": "h2.json",
+    "same_form_in_chain": "JA",
+    "chain_min_price_sek": 59.95,
+    "anchor": {
+     "name": "Bauhaus Rännkrok svart 100 mm PVC",
+     "price_sek": 59.95,
+     "url": "https://www.bauhaus.se/rannkrok-svart-100-mm"
+    },
+    "adlib_active": "ej läsbar",
+    "concept": "Rännstöd i plast för takränna"
+   },
+   "material": {
+    "result": "UNKNOWN — ej hämtad",
+    "reason": "Temu blockerade IP:n (verify-sida utan JSON-LD) 2026-09-04 01:00–01:30 UTC; video/hero hämtas centralt av huvudsessionen",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": 699,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": "2-pack = två stegbalkar",
+    "result": "UNKNOWN",
+    "note": "Endast US-pris känt ($37,99 för 2 st ur sökutdrag). Om SE-pris ≈ 150–200 kr/st: 2-pack 699 kr (>500 kr-zonen), flerköpsskäl inbyggt (två stegbalkar). Räknas om när SE-priset finns."
+   },
+   "variant": {
+    "result": "PASS",
+    "reason": "en storlek (17 tum), 1- eller 2-pack (två stegbalkar) — en variant"
+   },
+   "hook": {
+    "text": "Bucklar stegen takrännan varje höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "villaägare 45–70 med stege/hus; objektet igenkännbart"
+   }
+  },
+  "negative_space_flags": [
+   "objektet (stegen) förvaras inomhus",
+   "ekonomi osäker (US-pris $37,99/2-pack ≈ 190 kr/st)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 58,
+  "category_novelty": 88,
+  "tier": "ELIM",
+  "biggest_risk": "Temu SE-priset är okänt; ligger 2-packet nära 360 kr blir svenskt pris ~900 kr för två plastbitar — mer än rännan är värd i kundens ögon",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo: site:temu.com ladder gutter guard rest protector plastic hook",
+   "Yahoo SE: stegskydd hängränna takränneskydd stege skydda takrännan (inga resultat)",
+   "Ad Library SE: stegstöd hängränna (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "husnummer",
+  "goods_id": "601099549065170",
+  "url_se": "https://www.temu.com/se/g-601099549065170.html",
+  "title": "1pc Solar House Number Light, LED doorplate, IP55, auto on/off, black, with screws (CA-listning; SE-pris ej läsbart)",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "husets fasad/grind (universellt: alla hus har ett nummer)",
+  "owner_owns": true,
+  "friction": "i mörkret från september hittar bud, taxi och ambulans inte numret — men ägaren märker det sällan själv",
+  "old_way": "siffror i rostfritt från Clas Ohlson/Biltema utan ljus, eller en lampa över dörren",
+  "variants": "en SKU: siffror/bokstäver medföljer som klistermärken (ej verifierat för denna listning)",
+  "swedish_equivalent": {
+   "retailer": "Amazon.se / CDON / Fyndiq / Megabilligt (marketplace)",
+   "price_sek": null,
+   "url": "https://cdon.se/produkt/husnummerskylt-led-solcell-fa56ec298a0d54e1/",
+   "same_form": true,
+   "note": "Kedjorna (Biltema husnummer, Clas Ohlson 31-2010 rostfri siffra 4,5/5 147 rec, Jula hussiffror) säljer OBELYSTA nummer; solcellsskylten finns bara på marketplace (Amazon.se TINYOUTH, CDON Izoxis, Fyndiq, Megabilligt) — ur sökutdrag. Hyllfrånvaro 1"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "universellt objekt (husets fasad), sitter ute året om"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "mörkret är här från september och synligt — men problemet (att andra inte hittar) upplevs av besökaren, inte ägaren; annonsen måste peka ut det",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "PASS",
+    "reason": "ingen kedja säljer solcellsvarianten (bara marketplace); Ad Library SE 'husnummer solcell': 1 annonsör (Ristal, 4 aktiva annonser 'Solcellsdriven Husskylt' sedan juni 2026) = 0–1 ok men upptaget"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Temu blockerad — ej granskad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "SE-pris ej läsbart; troligt läge 349–399 kr men siffran är inte mätt"
+   },
+   "variant": {
+    "result": "OSÄKER",
+    "reason": "klistersiffror = en SKU; om siffrorna är förtryckta blir det 10+ SKU:er — ej verifierat"
+   },
+   "hook": {
+    "text": "Hittar ambulansen ditt hus i mörkret?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "PASS",
+    "reason": "alla villaägare; objektet (mörk fasad, lysande nummer) är tydligt i flödet"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas (latent)",
+   "solcell laddar dåligt nov–feb i Sverige — payoff försvinner mitt i säsongen",
+   "1 aktiv svensk Meta-annonsör"
+  ],
+  "eliminated_at": null,
+  "structure_match": 45,
+  "category_novelty": 85,
+  "tier": "C (provisorisk — material/pris ej hämtat)",
+  "biggest_risk": "Svensk vinter: solcellen ger inte ljus hela natten i december — recensionerna blir 'slocknade i november'",
+  "confidence": "LOW",
+  "sources": [
+   "WebSearch: site:temu.com reflective house number sign solar",
+   "Yahoo SE: husnummerskylt solcell belysning pris kr",
+   "Yahoo SE: husnummer solcell belyst skylt clas ohlson jula biltema pris",
+   "Ad Library SE: husnummer solcell (1 annonsör: Ristal)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "lovsil",
+  "goods_id": "601099596922285",
+  "url_se": "https://www.temu.com/se/g-601099596922285.html",
+  "title": "4pcs Leaf Gutter Downspout Filter Guard Mesh Anti-blocking",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör/takränna (fast på huset, står ute året om)",
+  "owner_owns": true,
+  "friction": "löv och barr täpper stuprörsmynningen i september–oktober; vattnet rinner över rännkanten",
+  "old_way": "peta upp med handen från stege, eller ingenting",
+  "variants": "4–5-pack, en storlek (2–4 tum) — passar 75/87/100 mm stuprör ungefärligt",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": 119,
+   "url": "https://www.biltema.se/bygg/vvs/takavvattning/renstratt-2000032600",
+   "same_form": true,
+   "note": "Biltema Renstratt 119 kr + Lövskydd för hängränna Ø100/Ø120; Jula Lövavskiljare 353441; Bygghemma lövsil — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster i stupröret som redan sitter på huset; ute året om"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "lövfall september–oktober är exakt problemets månad; fotograferbart i varje villaträdgård",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema Renstratt 119 kr och Lövskydd för hängränna är samma form (sil i stuprörsmynningen); Jula Lövavskiljare; Bygghemma-kategori 'Lövsil'"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "4–5-pack, en storlek (2–4 tum) — passar 75/87/100 mm stuprör ungefärligt"
+   },
+   "hook": {
+    "text": "Rinner takrännan över när det regnar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "förbrukningsliknande (byts när den rostar/täpps)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema säljer samma sak för 119 kr vid kassan — ingen prisrymd",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter guard leaf filter downspout",
+   "Brave: lövsil takränna biltema",
+   "Yahoo SE: lövsil stuprör jula biltema pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "lovsil",
+  "goods_id": "601099652248882",
+  "url_se": "https://www.temu.com/se/g-601099652248882.html",
+  "title": "5-pack Metal Gutter Guards Downspout Filter Anti-blocking Leaf Strainer",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör/takränna (fast på huset, står ute året om)",
+  "owner_owns": true,
+  "friction": "löv och barr täpper stuprörsmynningen i september–oktober; vattnet rinner över rännkanten",
+  "old_way": "peta upp med handen från stege, eller ingenting",
+  "variants": "4–5-pack, en storlek (2–4 tum) — passar 75/87/100 mm stuprör ungefärligt",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": 119,
+   "url": "https://www.biltema.se/bygg/vvs/takavvattning/renstratt-2000032600",
+   "same_form": true,
+   "note": "Biltema Renstratt 119 kr + Lövskydd för hängränna Ø100/Ø120; Jula Lövavskiljare 353441; Bygghemma lövsil — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster i stupröret som redan sitter på huset; ute året om"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "lövfall september–oktober är exakt problemets månad; fotograferbart i varje villaträdgård",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema Renstratt 119 kr och Lövskydd för hängränna är samma form (sil i stuprörsmynningen); Jula Lövavskiljare; Bygghemma-kategori 'Lövsil'"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "4–5-pack, en storlek (2–4 tum) — passar 75/87/100 mm stuprör ungefärligt"
+   },
+   "hook": {
+    "text": "Rinner takrännan över när det regnar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "förbrukningsliknande (byts när den rostar/täpps)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema säljer samma sak för 119 kr vid kassan — ingen prisrymd",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter guard leaf filter downspout",
+   "Brave: lövsil takränna biltema",
+   "Yahoo SE: lövsil stuprör jula biltema pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "lovsil",
+  "goods_id": "601099543370352",
+  "url_se": "https://www.temu.com/se/g-601099543370352.html",
+  "title": "5pcs Gutter Strainer Gutter Guard Filter Downspout Mesh",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör/takränna (fast på huset, står ute året om)",
+  "owner_owns": true,
+  "friction": "löv och barr täpper stuprörsmynningen i september–oktober; vattnet rinner över rännkanten",
+  "old_way": "peta upp med handen från stege, eller ingenting",
+  "variants": "4–5-pack, en storlek (2–4 tum) — passar 75/87/100 mm stuprör ungefärligt",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": 119,
+   "url": "https://www.biltema.se/bygg/vvs/takavvattning/renstratt-2000032600",
+   "same_form": true,
+   "note": "Biltema Renstratt 119 kr + Lövskydd för hängränna Ø100/Ø120; Jula Lövavskiljare 353441; Bygghemma lövsil — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster i stupröret som redan sitter på huset; ute året om"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "lövfall september–oktober är exakt problemets månad; fotograferbart i varje villaträdgård",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema Renstratt 119 kr och Lövskydd för hängränna är samma form (sil i stuprörsmynningen); Jula Lövavskiljare; Bygghemma-kategori 'Lövsil'"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "4–5-pack, en storlek (2–4 tum) — passar 75/87/100 mm stuprör ungefärligt"
+   },
+   "hook": {
+    "text": "Rinner takrännan över när det regnar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "förbrukningsliknande (byts när den rostar/täpps)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema säljer samma sak för 119 kr vid kassan — ingen prisrymd",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter guard leaf filter downspout",
+   "Brave: lövsil takränna biltema",
+   "Yahoo SE: lövsil stuprör jula biltema pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "lovsil",
+  "goods_id": "601099817227800",
+  "url_se": "https://www.temu.com/se/g-601099817227800.html",
+  "title": "4pcs Aluminum Gutter Guard Mesh Leaf Trap for 2-4 inch Drains",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör/takränna (fast på huset, står ute året om)",
+  "owner_owns": true,
+  "friction": "löv och barr täpper stuprörsmynningen i september–oktober; vattnet rinner över rännkanten",
+  "old_way": "peta upp med handen från stege, eller ingenting",
+  "variants": "4–5-pack, en storlek (2–4 tum) — passar 75/87/100 mm stuprör ungefärligt",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": 119,
+   "url": "https://www.biltema.se/bygg/vvs/takavvattning/renstratt-2000032600",
+   "same_form": true,
+   "note": "Biltema Renstratt 119 kr + Lövskydd för hängränna Ø100/Ø120; Jula Lövavskiljare 353441; Bygghemma lövsil — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster i stupröret som redan sitter på huset; ute året om"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "lövfall september–oktober är exakt problemets månad; fotograferbart i varje villaträdgård",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema Renstratt 119 kr och Lövskydd för hängränna är samma form (sil i stuprörsmynningen); Jula Lövavskiljare; Bygghemma-kategori 'Lövsil'"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "4–5-pack, en storlek (2–4 tum) — passar 75/87/100 mm stuprör ungefärligt"
+   },
+   "hook": {
+    "text": "Rinner takrännan över när det regnar?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "förbrukningsliknande (byts när den rostar/täpps)"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "Biltema säljer samma sak för 119 kr vid kassan — ingen prisrymd",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter guard leaf filter downspout",
+   "Brave: lövsil takränna biltema",
+   "Yahoo SE: lövsil stuprör jula biltema pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannrensare",
+  "goods_id": "601100989408772",
+  "url_se": "https://www.temu.com/se/g-601100989408772.html",
+  "title": "10 ft Gutter Cleaning Brush with Telescopic Pole, Long Reach",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takränna (fast på huset)",
+  "owner_owns": true,
+  "friction": "rännan full av löv i oktober; ägaren vill slippa stegen",
+  "old_way": "stege + hand/skopa, eller hängrännerensare från Jula/Biltema",
+  "variants": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 299,
+   "url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/",
+   "same_form": true,
+   "note": "Jula Hard Head hängrännerensare teleskopisk 158–240 cm (299/349/699 kr i kategorin), Hard Head skrap-borste 706045, Fiskars QuikFit borste/skrapa 2,2–4 m; Biltema Hängrännerensare 2000032603; Clas Ohlson 31-5607 — ur sökutdrag"
+  },
+  "brand_anchor": {
+   "name": "Fiskars QuikFit",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot takrännan som redan sitter på huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "löv i rännan är synligt i september–oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula (Hard Head 158–240 cm 299 kr, skrap-borste), Biltema, Clas Ohlson och Fiskars säljer samma form: teleskopskaft + borste/skrapa från marken. Ad Library SE 'hängrännerensare': 0 annonsörer — men hyllan avgör"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot"
+   },
+   "hook": {
+    "text": "Rensar du takrännan från stegen i år?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "svensk mass-commoditisering",
+   "variant i fot"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer kategorin för 299 kr — vårt pris kan inte nå 300 kr med marginal",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter cleaning tool from the ground telescopic",
+   "Yahoo SE: jula hängrännerensare teleskopisk pris",
+   "Yahoo SE: hängrännerensare hard head jula 016749",
+   "Ad Library SE: hängrännerensare (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannrensare",
+  "goods_id": "601099616714090",
+  "url_se": "https://www.temu.com/se/g-601099616714090.html",
+  "title": "Extendable Gutter Cleaning Brush 2ft–8ft Telescopic Ground-based Tool (EJ TILLGÄNGLIG FÖR KÖP på /se, WebFetch 2026-09-04)",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takränna (fast på huset)",
+  "owner_owns": true,
+  "friction": "rännan full av löv i oktober; ägaren vill slippa stegen",
+  "old_way": "stege + hand/skopa, eller hängrännerensare från Jula/Biltema",
+  "variants": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 299,
+   "url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/",
+   "same_form": true,
+   "note": "Jula Hard Head hängrännerensare teleskopisk 158–240 cm (299/349/699 kr i kategorin), Hard Head skrap-borste 706045, Fiskars QuikFit borste/skrapa 2,2–4 m; Biltema Hängrännerensare 2000032603; Clas Ohlson 31-5607 — ur sökutdrag"
+  },
+  "brand_anchor": {
+   "name": "Fiskars QuikFit",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot takrännan som redan sitter på huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "löv i rännan är synligt i september–oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula (Hard Head 158–240 cm 299 kr, skrap-borste), Biltema, Clas Ohlson och Fiskars säljer samma form: teleskopskaft + borste/skrapa från marken. Ad Library SE 'hängrännerensare': 0 annonsörer — men hyllan avgör"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot"
+   },
+   "hook": {
+    "text": "Rensar du takrännan från stegen i år?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "svensk mass-commoditisering",
+   "variant i fot"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer kategorin för 299 kr — vårt pris kan inte nå 300 kr med marginal",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter cleaning tool from the ground telescopic",
+   "Yahoo SE: jula hängrännerensare teleskopisk pris",
+   "Yahoo SE: hängrännerensare hard head jula 016749",
+   "Ad Library SE: hängrännerensare (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannrensare",
+  "goods_id": "601099586261313",
+  "url_se": "https://www.temu.com/se/g-601099586261313.html",
+  "title": "Telescopic Gutter Cleaning Brush Extendable 2 ft–8.2 ft",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takränna (fast på huset)",
+  "owner_owns": true,
+  "friction": "rännan full av löv i oktober; ägaren vill slippa stegen",
+  "old_way": "stege + hand/skopa, eller hängrännerensare från Jula/Biltema",
+  "variants": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 299,
+   "url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/",
+   "same_form": true,
+   "note": "Jula Hard Head hängrännerensare teleskopisk 158–240 cm (299/349/699 kr i kategorin), Hard Head skrap-borste 706045, Fiskars QuikFit borste/skrapa 2,2–4 m; Biltema Hängrännerensare 2000032603; Clas Ohlson 31-5607 — ur sökutdrag"
+  },
+  "brand_anchor": {
+   "name": "Fiskars QuikFit",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot takrännan som redan sitter på huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "löv i rännan är synligt i september–oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula (Hard Head 158–240 cm 299 kr, skrap-borste), Biltema, Clas Ohlson och Fiskars säljer samma form: teleskopskaft + borste/skrapa från marken. Ad Library SE 'hängrännerensare': 0 annonsörer — men hyllan avgör"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot"
+   },
+   "hook": {
+    "text": "Rensar du takrännan från stegen i år?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "svensk mass-commoditisering",
+   "variant i fot"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer kategorin för 299 kr — vårt pris kan inte nå 300 kr med marginal",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter cleaning tool from the ground telescopic",
+   "Yahoo SE: jula hängrännerensare teleskopisk pris",
+   "Yahoo SE: hängrännerensare hard head jula 016749",
+   "Ad Library SE: hängrännerensare (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannrensare",
+  "goods_id": "601099933721077",
+  "url_se": "https://www.temu.com/se/g-601099933721077.html",
+  "title": "11 ft Telescopic Gutter Cleaning Brush with Curved Hook + replacement heads",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takränna (fast på huset)",
+  "owner_owns": true,
+  "friction": "rännan full av löv i oktober; ägaren vill slippa stegen",
+  "old_way": "stege + hand/skopa, eller hängrännerensare från Jula/Biltema",
+  "variants": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 299,
+   "url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/",
+   "same_form": true,
+   "note": "Jula Hard Head hängrännerensare teleskopisk 158–240 cm (299/349/699 kr i kategorin), Hard Head skrap-borste 706045, Fiskars QuikFit borste/skrapa 2,2–4 m; Biltema Hängrännerensare 2000032603; Clas Ohlson 31-5607 — ur sökutdrag"
+  },
+  "brand_anchor": {
+   "name": "Fiskars QuikFit",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot takrännan som redan sitter på huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "löv i rännan är synligt i september–oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula (Hard Head 158–240 cm 299 kr, skrap-borste), Biltema, Clas Ohlson och Fiskars säljer samma form: teleskopskaft + borste/skrapa från marken. Ad Library SE 'hängrännerensare': 0 annonsörer — men hyllan avgör"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot"
+   },
+   "hook": {
+    "text": "Rensar du takrännan från stegen i år?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "svensk mass-commoditisering",
+   "variant i fot"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer kategorin för 299 kr — vårt pris kan inte nå 300 kr med marginal",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter cleaning tool from the ground telescopic",
+   "Yahoo SE: jula hängrännerensare teleskopisk pris",
+   "Yahoo SE: hängrännerensare hard head jula 016749",
+   "Ad Library SE: hängrännerensare (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannrensare",
+  "goods_id": "601099747808733",
+  "url_se": "https://www.temu.com/se/g-601099747808733.html",
+  "title": "8.2 ft Telescopic Gutter Cleaning Brush, adjustable angle, aluminium pole",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takränna (fast på huset)",
+  "owner_owns": true,
+  "friction": "rännan full av löv i oktober; ägaren vill slippa stegen",
+  "old_way": "stege + hand/skopa, eller hängrännerensare från Jula/Biltema",
+  "variants": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 299,
+   "url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/",
+   "same_form": true,
+   "note": "Jula Hard Head hängrännerensare teleskopisk 158–240 cm (299/349/699 kr i kategorin), Hard Head skrap-borste 706045, Fiskars QuikFit borste/skrapa 2,2–4 m; Biltema Hängrännerensare 2000032603; Clas Ohlson 31-5607 — ur sökutdrag"
+  },
+  "brand_anchor": {
+   "name": "Fiskars QuikFit",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot takrännan som redan sitter på huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "löv i rännan är synligt i september–oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula (Hard Head 158–240 cm 299 kr, skrap-borste), Biltema, Clas Ohlson och Fiskars säljer samma form: teleskopskaft + borste/skrapa från marken. Ad Library SE 'hängrännerensare': 0 annonsörer — men hyllan avgör"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot"
+   },
+   "hook": {
+    "text": "Rensar du takrännan från stegen i år?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "svensk mass-commoditisering",
+   "variant i fot"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer kategorin för 299 kr — vårt pris kan inte nå 300 kr med marginal",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter cleaning tool from the ground telescopic",
+   "Yahoo SE: jula hängrännerensare teleskopisk pris",
+   "Yahoo SE: hängrännerensare hard head jula 016749",
+   "Ad Library SE: hängrännerensare (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "rannrensare",
+  "goods_id": "601099620598265",
+  "url_se": "https://www.temu.com/se/g-601099620598265.html",
+  "title": "Heavy Duty Telescopic Gutter Cleaning Tool with adjustable brush head",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "takränna (fast på huset)",
+  "owner_owns": true,
+  "friction": "rännan full av löv i oktober; ägaren vill slippa stegen",
+  "old_way": "stege + hand/skopa, eller hängrännerensare från Jula/Biltema",
+  "variants": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": 299,
+   "url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/hangrannerensare/",
+   "same_form": true,
+   "note": "Jula Hard Head hängrännerensare teleskopisk 158–240 cm (299/349/699 kr i kategorin), Hard Head skrap-borste 706045, Fiskars QuikFit borste/skrapa 2,2–4 m; Biltema Hängrännerensare 2000032603; Clas Ohlson 31-5607 — ur sökutdrag"
+  },
+  "brand_anchor": {
+   "name": "Fiskars QuikFit",
+   "price_sek": null,
+   "url": null
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot takrännan som redan sitter på huset"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "löv i rännan är synligt i september–oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula (Hard Head 158–240 cm 299 kr, skrap-borste), Biltema, Clas Ohlson och Fiskars säljer samma form: teleskopskaft + borste/skrapa från marken. Ad Library SE 'hängrännerensare': 0 annonsörer — men hyllan avgör"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd (8/10/11 ft) och borsthuvud — ägaren vet inte takhöjden utantill i fot"
+   },
+   "hook": {
+    "text": "Rensar du takrännan från stegen i år?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "svensk mass-commoditisering",
+   "variant i fot"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 40,
+  "category_novelty": 75,
+  "tier": "ELIM",
+  "biggest_risk": "Jula säljer kategorin för 299 kr — vårt pris kan inte nå 300 kr med marginal",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com gutter cleaning tool from the ground telescopic",
+   "Yahoo SE: jula hängrännerensare teleskopisk pris",
+   "Yahoo SE: hängrännerensare hard head jula 016749",
+   "Ad Library SE: hängrännerensare (0)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "dropptrag",
+  "goods_id": "601099522761031",
+  "url_se": "https://www.temu.com/se/g-601099522761031.html",
+  "title": "Air Conditioner Drip Pan, PP water tray for indoor/outdoor split unit (EJ TILLGÄNGLIG FÖR KÖP på /se, WebFetch 2026-09-04)",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "luftvärmepumpens utedel",
+  "owner_owns": true,
+  "friction": "avfrostningsvatten droppar under utedelen, blir en isfläck på stenläggningen/trappan vid frost",
+  "old_way": "en balja eller grus under, eller dräneringstråg från Clas Ohlson/Bauhaus",
+  "variants": "tråg: mått; slang: längd — mått ej kända av ägaren",
+  "swedish_equivalent": {
+   "retailer": "Clas Ohlson",
+   "price_sek": null,
+   "url": "https://www.clasohlson.com/se/Draneringstrag-luftvarmepump,-dropptrag-med-varmekabel/p/36-221",
+   "same_form": true,
+   "note": "Clas Ohlson Klimatkoncept dräneringstråg 850×400 mm med termostatstyrd värmekabel (5/5, 1 rec); Bauhaus dräneringstråg Ø16 mm 850×400; Klimatshoppen uppvärmt tråg; varmepumptillbehor.se — ur sökutdrag, priser ej visade"
+  },
+  "brand_anchor": {
+   "name": "Klimatkoncept dräneringstråg med värmekabel (Clas Ohlson 36-221)",
+   "price_sek": null,
+   "url": "https://www.clasohlson.com/se/Draneringstrag-luftvarmepump,-dropptrag-med-varmekabel/p/36-221"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "tråget står under utedelen som redan sitter på väggen"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "vattnet droppar nu, isfläcken kommer vid första frosten (oktober i norr, november i söder) — ≥ 6 veckor kvar av säsongen men problemet syns inte i september",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Clas Ohlson (kedja) och Bauhaus säljer samma form — tråg 850×400 under utedelen; den svenska versionen har värmekabel, vilket ett kallt PP-tråg saknar: vattnet fryser i tråget och mekanismen slutar fungera exakt när problemet uppstår"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "tråg: mått; slang: längd — mått ej kända av ägaren"
+   },
+   "hook": {
+    "text": "Blir det en isfläck under värmepumpen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "fördröjd payoff (fungerar bara när det fryser — och då fryser tråget)",
+   "kräver förklaring"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Tråget fryser till is i december och kunden får en isklump i stället för en fläck",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com air conditioner outdoor unit drain drip tray winter",
+   "Yahoo SE: kondenstråg dropptråg luftvärmepump utedel is pris",
+   "Yahoo SE: clas ohlson dräneringstråg luftvärmepump 36-221",
+   "Ad Library SE: dropptråg värmepump (0)",
+   "WebFetch temu.com/se/g-601099522761031 → 'Ej tillgänglig för köp'"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "dropptrag",
+  "goods_id": "601099536987161",
+  "url_se": "https://www.temu.com/se/g-601099536987161.html",
+  "title": "Air Conditioning Drain Extension Pipe, outdoor thickened anti-corrosion drip hose",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "luftvärmepumpens utedel",
+  "owner_owns": true,
+  "friction": "avfrostningsvatten droppar under utedelen, blir en isfläck på stenläggningen/trappan vid frost",
+  "old_way": "en balja eller grus under, eller dräneringstråg från Clas Ohlson/Bauhaus",
+  "variants": "tråg: mått; slang: längd — mått ej kända av ägaren",
+  "swedish_equivalent": {
+   "retailer": "Clas Ohlson",
+   "price_sek": null,
+   "url": "https://www.clasohlson.com/se/Draneringstrag-luftvarmepump,-dropptrag-med-varmekabel/p/36-221",
+   "same_form": true,
+   "note": "Clas Ohlson Klimatkoncept dräneringstråg 850×400 mm med termostatstyrd värmekabel (5/5, 1 rec); Bauhaus dräneringstråg Ø16 mm 850×400; Klimatshoppen uppvärmt tråg; varmepumptillbehor.se — ur sökutdrag, priser ej visade"
+  },
+  "brand_anchor": {
+   "name": "Klimatkoncept dräneringstråg med värmekabel (Clas Ohlson 36-221)",
+   "price_sek": null,
+   "url": "https://www.clasohlson.com/se/Draneringstrag-luftvarmepump,-dropptrag-med-varmekabel/p/36-221"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "tråget står under utedelen som redan sitter på väggen"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "vattnet droppar nu, isfläcken kommer vid första frosten (oktober i norr, november i söder) — ≥ 6 veckor kvar av säsongen men problemet syns inte i september",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Clas Ohlson (kedja) och Bauhaus säljer samma form — tråg 850×400 under utedelen; den svenska versionen har värmekabel, vilket ett kallt PP-tråg saknar: vattnet fryser i tråget och mekanismen slutar fungera exakt när problemet uppstår"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "tråg: mått; slang: längd — mått ej kända av ägaren"
+   },
+   "hook": {
+    "text": "Blir det en isfläck under värmepumpen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar ∧ jämförelsehandlad",
+   "fördröjd payoff (fungerar bara när det fryser — och då fryser tråget)",
+   "kräver förklaring"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 35,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Tråget fryser till is i december och kunden får en isklump i stället för en fläck",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com air conditioner outdoor unit drain drip tray winter",
+   "Yahoo SE: kondenstråg dropptråg luftvärmepump utedel is pris",
+   "Yahoo SE: clas ohlson dräneringstråg luftvärmepump 36-221",
+   "Ad Library SE: dropptråg värmepump (0)",
+   "WebFetch temu.com/se/g-601099522761031 → 'Ej tillgänglig för köp'"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "vp_overdrag",
+  "goods_id": "601099541516375",
+  "url_se": "https://www.temu.com/se/g-601099541516375.html",
+  "title": "Outdoor Unit Air Conditioning Cover for Winter, waterproof windproof snowproof",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "luftvärmepumpens utedel (1 M+ svenska hus; står ute, går hela vintern)",
+  "owner_owns": true,
+  "friction": "snö/is på och under utedelen, droppande avfrostningsvatten",
+  "old_way": "ingenting, eller ett värmepumpstak från fackhandeln (Bygghemma, Qlimatteknik, AL-Ide)",
+  "variants": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill",
+  "swedish_equivalent": {
+   "retailer": "Bygghemma (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.bygghemma.se/hus-och-bygg/varme-och-ventilation/varmepump/varmepumpsskydd/",
+   "same_form": false,
+   "note": "Svensk hylla säljer TAK över utedelen (Bygghemma, Qlimatteknik värmepumpstak, AL-Ide skyddstak); Biltema/Jula/Bauhaus gav inga träffar i sökutdraget. Helöverdrag säljs inte — av rätt skäl"
+  },
+  "brand_anchor": {
+   "name": "värmepumpstak (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.qlimatteknik.se/produkt/varmepumpstak/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "utedelen står ute och är omisskännlig i bild"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "helöverdraget är för AC-aggregat som står AV på vintern; en svensk luftvärmepump går hela vintern och får inte täckas (kväver luftflödet). Annonsen skulle skapa ett skadligt behov. Snö/is kommer dessutom först nov–dec i söder",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "ingen kedja säljer helöverdrag; taken finns i fackhandel"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'presence'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'presence'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill"
+   },
+   "hook": {
+    "text": "Har du en luftvärmepump på väggen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "fel produkt för objektet (kväver utedelen)",
+   "mått i tum",
+   "presens först i november"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Kunden täcker en pump i drift och ringer arg i december",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com heat pump outdoor unit cover snow protection",
+   "Yahoo: site:temu.com heat pump outdoor unit cover winter snow awning roof",
+   "Yahoo SE: värmepumpstak skyddstak värmepump utedel jula biltema bauhaus pris",
+   "WebFetch temu.com/se/g-601099638696156 → 'Denna produkt är utsåld'"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "vp_overdrag",
+  "goods_id": "601099520504633",
+  "url_se": "https://www.temu.com/se/g-601099520504633.html",
+  "title": "Outdoor Unit Air Conditioner Cover 30x30x32 in, winter waterproof snowproof",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "luftvärmepumpens utedel (1 M+ svenska hus; står ute, går hela vintern)",
+  "owner_owns": true,
+  "friction": "snö/is på och under utedelen, droppande avfrostningsvatten",
+  "old_way": "ingenting, eller ett värmepumpstak från fackhandeln (Bygghemma, Qlimatteknik, AL-Ide)",
+  "variants": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill",
+  "swedish_equivalent": {
+   "retailer": "Bygghemma (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.bygghemma.se/hus-och-bygg/varme-och-ventilation/varmepump/varmepumpsskydd/",
+   "same_form": false,
+   "note": "Svensk hylla säljer TAK över utedelen (Bygghemma, Qlimatteknik värmepumpstak, AL-Ide skyddstak); Biltema/Jula/Bauhaus gav inga träffar i sökutdraget. Helöverdrag säljs inte — av rätt skäl"
+  },
+  "brand_anchor": {
+   "name": "värmepumpstak (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.qlimatteknik.se/produkt/varmepumpstak/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "utedelen står ute och är omisskännlig i bild"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "helöverdraget är för AC-aggregat som står AV på vintern; en svensk luftvärmepump går hela vintern och får inte täckas (kväver luftflödet). Annonsen skulle skapa ett skadligt behov. Snö/is kommer dessutom först nov–dec i söder",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "ingen kedja säljer helöverdrag; taken finns i fackhandel"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'presence'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'presence'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill"
+   },
+   "hook": {
+    "text": "Har du en luftvärmepump på väggen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "fel produkt för objektet (kväver utedelen)",
+   "mått i tum",
+   "presens först i november"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Kunden täcker en pump i drift och ringer arg i december",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com heat pump outdoor unit cover snow protection",
+   "Yahoo: site:temu.com heat pump outdoor unit cover winter snow awning roof",
+   "Yahoo SE: värmepumpstak skyddstak värmepump utedel jula biltema bauhaus pris",
+   "WebFetch temu.com/se/g-601099638696156 → 'Denna produkt är utsåld'"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "vp_overdrag",
+  "goods_id": "601103031854369",
+  "url_se": "https://www.temu.com/se/g-601103031854369.html",
+  "title": "Heavy Duty All-Weather Outdoor AC Unit Cover 28x28, open mesh top",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "luftvärmepumpens utedel (1 M+ svenska hus; står ute, går hela vintern)",
+  "owner_owns": true,
+  "friction": "snö/is på och under utedelen, droppande avfrostningsvatten",
+  "old_way": "ingenting, eller ett värmepumpstak från fackhandeln (Bygghemma, Qlimatteknik, AL-Ide)",
+  "variants": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill",
+  "swedish_equivalent": {
+   "retailer": "Bygghemma (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.bygghemma.se/hus-och-bygg/varme-och-ventilation/varmepump/varmepumpsskydd/",
+   "same_form": false,
+   "note": "Svensk hylla säljer TAK över utedelen (Bygghemma, Qlimatteknik värmepumpstak, AL-Ide skyddstak); Biltema/Jula/Bauhaus gav inga träffar i sökutdraget. Helöverdrag säljs inte — av rätt skäl"
+  },
+  "brand_anchor": {
+   "name": "värmepumpstak (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.qlimatteknik.se/produkt/varmepumpstak/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "utedelen står ute och är omisskännlig i bild"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "helöverdraget är för AC-aggregat som står AV på vintern; en svensk luftvärmepump går hela vintern och får inte täckas (kväver luftflödet). Annonsen skulle skapa ett skadligt behov. Snö/is kommer dessutom först nov–dec i söder",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "ingen kedja säljer helöverdrag; taken finns i fackhandel"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'presence'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'presence'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill"
+   },
+   "hook": {
+    "text": "Har du en luftvärmepump på väggen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "fel produkt för objektet (kväver utedelen)",
+   "mått i tum",
+   "presens först i november"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Kunden täcker en pump i drift och ringer arg i december",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com heat pump outdoor unit cover snow protection",
+   "Yahoo: site:temu.com heat pump outdoor unit cover winter snow awning roof",
+   "Yahoo SE: värmepumpstak skyddstak värmepump utedel jula biltema bauhaus pris",
+   "WebFetch temu.com/se/g-601099638696156 → 'Denna produkt är utsåld'"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "vp_overdrag",
+  "goods_id": "601099555142366",
+  "url_se": "https://www.temu.com/se/g-601099555142366.html",
+  "title": "Air Conditioner External Protective Cover, rainproof windproof anti-drip",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "luftvärmepumpens utedel (1 M+ svenska hus; står ute, går hela vintern)",
+  "owner_owns": true,
+  "friction": "snö/is på och under utedelen, droppande avfrostningsvatten",
+  "old_way": "ingenting, eller ett värmepumpstak från fackhandeln (Bygghemma, Qlimatteknik, AL-Ide)",
+  "variants": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill",
+  "swedish_equivalent": {
+   "retailer": "Bygghemma (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.bygghemma.se/hus-och-bygg/varme-och-ventilation/varmepump/varmepumpsskydd/",
+   "same_form": false,
+   "note": "Svensk hylla säljer TAK över utedelen (Bygghemma, Qlimatteknik värmepumpstak, AL-Ide skyddstak); Biltema/Jula/Bauhaus gav inga träffar i sökutdraget. Helöverdrag säljs inte — av rätt skäl"
+  },
+  "brand_anchor": {
+   "name": "värmepumpstak (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.qlimatteknik.se/produkt/varmepumpstak/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "utedelen står ute och är omisskännlig i bild"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "helöverdraget är för AC-aggregat som står AV på vintern; en svensk luftvärmepump går hela vintern och får inte täckas (kväver luftflödet). Annonsen skulle skapa ett skadligt behov. Snö/is kommer dessutom först nov–dec i söder",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "ingen kedja säljer helöverdrag; taken finns i fackhandel"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'presence'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'presence'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill"
+   },
+   "hook": {
+    "text": "Har du en luftvärmepump på väggen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "fel produkt för objektet (kväver utedelen)",
+   "mått i tum",
+   "presens först i november"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Kunden täcker en pump i drift och ringer arg i december",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com heat pump outdoor unit cover snow protection",
+   "Yahoo: site:temu.com heat pump outdoor unit cover winter snow awning roof",
+   "Yahoo SE: värmepumpstak skyddstak värmepump utedel jula biltema bauhaus pris",
+   "WebFetch temu.com/se/g-601099638696156 → 'Denna produkt är utsåld'"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "vp_overdrag",
+  "goods_id": "601099591137437",
+  "url_se": "https://www.temu.com/se/g-601099591137437.html",
+  "title": "All-Weather Outdoor Air Conditioner Cover protects from rain sun dust",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "luftvärmepumpens utedel (1 M+ svenska hus; står ute, går hela vintern)",
+  "owner_owns": true,
+  "friction": "snö/is på och under utedelen, droppande avfrostningsvatten",
+  "old_way": "ingenting, eller ett värmepumpstak från fackhandeln (Bygghemma, Qlimatteknik, AL-Ide)",
+  "variants": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill",
+  "swedish_equivalent": {
+   "retailer": "Bygghemma (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.bygghemma.se/hus-och-bygg/varme-och-ventilation/varmepump/varmepumpsskydd/",
+   "same_form": false,
+   "note": "Svensk hylla säljer TAK över utedelen (Bygghemma, Qlimatteknik värmepumpstak, AL-Ide skyddstak); Biltema/Jula/Bauhaus gav inga träffar i sökutdraget. Helöverdrag säljs inte — av rätt skäl"
+  },
+  "brand_anchor": {
+   "name": "värmepumpstak (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.qlimatteknik.se/produkt/varmepumpstak/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "utedelen står ute och är omisskännlig i bild"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "helöverdraget är för AC-aggregat som står AV på vintern; en svensk luftvärmepump går hela vintern och får inte täckas (kväver luftflödet). Annonsen skulle skapa ett skadligt behov. Snö/is kommer dessutom först nov–dec i söder",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "ingen kedja säljer helöverdrag; taken finns i fackhandel"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'presence'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'presence'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill"
+   },
+   "hook": {
+    "text": "Har du en luftvärmepump på väggen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "fel produkt för objektet (kväver utedelen)",
+   "mått i tum",
+   "presens först i november"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Kunden täcker en pump i drift och ringer arg i december",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com heat pump outdoor unit cover snow protection",
+   "Yahoo: site:temu.com heat pump outdoor unit cover winter snow awning roof",
+   "Yahoo SE: värmepumpstak skyddstak värmepump utedel jula biltema bauhaus pris",
+   "WebFetch temu.com/se/g-601099638696156 → 'Denna produkt är utsåld'"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "vp_overdrag",
+  "goods_id": "601099638696156",
+  "url_se": "https://www.temu.com/se/g-601099638696156.html",
+  "title": "Outdoor Air Conditioner Sun Shade Cover, heat insulation and snow protection, metal mesh (UTSÅLD på /se, WebFetch 2026-09-04)",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "luftvärmepumpens utedel (1 M+ svenska hus; står ute, går hela vintern)",
+  "owner_owns": true,
+  "friction": "snö/is på och under utedelen, droppande avfrostningsvatten",
+  "old_way": "ingenting, eller ett värmepumpstak från fackhandeln (Bygghemma, Qlimatteknik, AL-Ide)",
+  "variants": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill",
+  "swedish_equivalent": {
+   "retailer": "Bygghemma (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.bygghemma.se/hus-och-bygg/varme-och-ventilation/varmepump/varmepumpsskydd/",
+   "same_form": false,
+   "note": "Svensk hylla säljer TAK över utedelen (Bygghemma, Qlimatteknik värmepumpstak, AL-Ide skyddstak); Biltema/Jula/Bauhaus gav inga träffar i sökutdraget. Helöverdrag säljs inte — av rätt skäl"
+  },
+  "brand_anchor": {
+   "name": "värmepumpstak (fackhandel)",
+   "price_sek": null,
+   "url": "https://www.qlimatteknik.se/produkt/varmepumpstak/"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "utedelen står ute och är omisskännlig i bild"
+   },
+   "presence": {
+    "result": "FAIL",
+    "reason": "helöverdraget är för AC-aggregat som står AV på vintern; en svensk luftvärmepump går hela vintern och får inte täckas (kväver luftflödet). Annonsen skulle skapa ett skadligt behov. Snö/is kommer dessutom först nov–dec i söder",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "ingen kedja säljer helöverdrag; taken finns i fackhandel"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'presence'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'presence'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "mått i tum (28x28, 30x30x32) — ägaren kan inte sin utedels mått utantill"
+   },
+   "hook": {
+    "text": "Har du en luftvärmepump på väggen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "behovet måste skapas",
+   "fel produkt för objektet (kväver utedelen)",
+   "mått i tum",
+   "presens först i november"
+  ],
+  "eliminated_at": "presence",
+  "structure_match": 25,
+  "category_novelty": 90,
+  "tier": "ELIM",
+  "biggest_risk": "Kunden täcker en pump i drift och ringer arg i december",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com heat pump outdoor unit cover snow protection",
+   "Yahoo: site:temu.com heat pump outdoor unit cover winter snow awning roof",
+   "Yahoo SE: värmepumpstak skyddstak värmepump utedel jula biltema bauhaus pris",
+   "WebFetch temu.com/se/g-601099638696156 → 'Denna produkt är utsåld'"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stegfot",
+  "goods_id": "601099539318755",
+  "url_se": "https://www.temu.com/se/g-601099539318755.html",
+  "title": "2pcs Adjustable Ladder Leveler with anti-slip rubber feet, up to 550 lb",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stege",
+  "owner_owns": true,
+  "friction": "stegen står snett på ojämn/mjuk höstmark",
+  "old_way": "en bräda under ena foten",
+  "variants": "passar 'de flesta' stegbalkar — kunden måste mäta balkprofilen; skruvmontering med nyckel",
+  "swedish_equivalent": {
+   "retailer": "Bauhaus",
+   "price_sek": 599,
+   "url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor",
+   "same_form": false,
+   "note": "Bauhaus: Krause stabiliseringsfot 74,95, Corda fot 84,95, Krause Monto stabilisator 599, Telesteps säkerhetsfot 2 075; Bygghemma 'stegfot'; Jula reservdelsfötter — samma kategori, annan form"
+  },
+  "brand_anchor": {
+   "name": "Telesteps säkerhetsfot justerbar",
+   "price_sek": 2075,
+   "url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen, används ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "mjuk och ojämn mark i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "kategorin finns (Bauhaus, Bygghemma, Jula fötter) men den justerbara bult-på-formen bara som Telesteps 2 075 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Temu blockerad — inte granskad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "pris okänt"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "'passar de flesta stegar' + skruvmontering med medföljande nyckel — kunden måste mäta balkprofil; fotskydden (601099533453972) är < 199 kr-commodity"
+   },
+   "hook": {
+    "text": "Står stegen snett på gräsmattan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "personlig passform (stegbalk)",
+   "montering/inlärning",
+   "objektet förvaras inomhus"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "Returer när fästet inte passar stegens balk",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: stegfötter justerbara stege ojämnt underlag pris jula biltema",
+   "WebFetch bauhaus.se stegar tillbehör"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stegfot",
+  "goods_id": "601101965167689",
+  "url_se": "https://www.temu.com/se/g-601101965167689.html",
+  "title": "Heavy Duty Ladder Stabilizer with anti-slip silicone pad, adjustable leveler 500 lb",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stege",
+  "owner_owns": true,
+  "friction": "stegen står snett på ojämn/mjuk höstmark",
+  "old_way": "en bräda under ena foten",
+  "variants": "passar 'de flesta' stegbalkar — kunden måste mäta balkprofilen; skruvmontering med nyckel",
+  "swedish_equivalent": {
+   "retailer": "Bauhaus",
+   "price_sek": 599,
+   "url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor",
+   "same_form": false,
+   "note": "Bauhaus: Krause stabiliseringsfot 74,95, Corda fot 84,95, Krause Monto stabilisator 599, Telesteps säkerhetsfot 2 075; Bygghemma 'stegfot'; Jula reservdelsfötter — samma kategori, annan form"
+  },
+  "brand_anchor": {
+   "name": "Telesteps säkerhetsfot justerbar",
+   "price_sek": 2075,
+   "url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen, används ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "mjuk och ojämn mark i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "kategorin finns (Bauhaus, Bygghemma, Jula fötter) men den justerbara bult-på-formen bara som Telesteps 2 075 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Temu blockerad — inte granskad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "pris okänt"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "'passar de flesta stegar' + skruvmontering med medföljande nyckel — kunden måste mäta balkprofil; fotskydden (601099533453972) är < 199 kr-commodity"
+   },
+   "hook": {
+    "text": "Står stegen snett på gräsmattan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "personlig passform (stegbalk)",
+   "montering/inlärning",
+   "objektet förvaras inomhus"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "Returer när fästet inte passar stegens balk",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: stegfötter justerbara stege ojämnt underlag pris jula biltema",
+   "WebFetch bauhaus.se stegar tillbehör"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stegfot",
+  "goods_id": "601099608236022",
+  "url_se": "https://www.temu.com/se/g-601099608236022.html",
+  "title": "Ladder Leveling Feet 2pcs 60 cm extension ladder leveler, screws and wrench included",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stege",
+  "owner_owns": true,
+  "friction": "stegen står snett på ojämn/mjuk höstmark",
+  "old_way": "en bräda under ena foten",
+  "variants": "passar 'de flesta' stegbalkar — kunden måste mäta balkprofilen; skruvmontering med nyckel",
+  "swedish_equivalent": {
+   "retailer": "Bauhaus",
+   "price_sek": 599,
+   "url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor",
+   "same_form": false,
+   "note": "Bauhaus: Krause stabiliseringsfot 74,95, Corda fot 84,95, Krause Monto stabilisator 599, Telesteps säkerhetsfot 2 075; Bygghemma 'stegfot'; Jula reservdelsfötter — samma kategori, annan form"
+  },
+  "brand_anchor": {
+   "name": "Telesteps säkerhetsfot justerbar",
+   "price_sek": 2075,
+   "url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen, används ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "mjuk och ojämn mark i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "kategorin finns (Bauhaus, Bygghemma, Jula fötter) men den justerbara bult-på-formen bara som Telesteps 2 075 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Temu blockerad — inte granskad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "pris okänt"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "'passar de flesta stegar' + skruvmontering med medföljande nyckel — kunden måste mäta balkprofil; fotskydden (601099533453972) är < 199 kr-commodity"
+   },
+   "hook": {
+    "text": "Står stegen snett på gräsmattan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "personlig passform (stegbalk)",
+   "montering/inlärning",
+   "objektet förvaras inomhus"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "Returer när fästet inte passar stegens balk",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: stegfötter justerbara stege ojämnt underlag pris jula biltema",
+   "WebFetch bauhaus.se stegar tillbehör"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stegfot",
+  "goods_id": "601099533453972",
+  "url_se": "https://www.temu.com/se/g-601099533453972.html",
+  "title": "2/4pcs Ladder Feet Cover, rubber non-slip for step ladders",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stege",
+  "owner_owns": true,
+  "friction": "stegen står snett på ojämn/mjuk höstmark",
+  "old_way": "en bräda under ena foten",
+  "variants": "passar 'de flesta' stegbalkar — kunden måste mäta balkprofilen; skruvmontering med nyckel",
+  "swedish_equivalent": {
+   "retailer": "Bauhaus",
+   "price_sek": 599,
+   "url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor",
+   "same_form": false,
+   "note": "Bauhaus: Krause stabiliseringsfot 74,95, Corda fot 84,95, Krause Monto stabilisator 599, Telesteps säkerhetsfot 2 075; Bygghemma 'stegfot'; Jula reservdelsfötter — samma kategori, annan form"
+  },
+  "brand_anchor": {
+   "name": "Telesteps säkerhetsfot justerbar",
+   "price_sek": 2075,
+   "url": "https://www.bauhaus.se/bygg/stegar-byggstallningar/stegar/tillbehor"
+  },
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stegen, används ute"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "mjuk och ojämn mark i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "OSÄKER",
+    "reason": "kategorin finns (Bauhaus, Bygghemma, Jula fötter) men den justerbara bult-på-formen bara som Telesteps 2 075 kr"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "Temu blockerad — inte granskad",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "result": "UNKNOWN",
+    "reason": "pris okänt"
+   },
+   "variant": {
+    "result": "FAIL",
+    "reason": "'passar de flesta stegar' + skruvmontering med medföljande nyckel — kunden måste mäta balkprofil; fotskydden (601099533453972) är < 199 kr-commodity"
+   },
+   "hook": {
+    "text": "Står stegen snett på gräsmattan?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "personlig passform (stegbalk)",
+   "montering/inlärning",
+   "objektet förvaras inomhus"
+  ],
+  "eliminated_at": "variant",
+  "structure_match": 40,
+  "category_novelty": 85,
+  "tier": "ELIM",
+  "biggest_risk": "Returer när fästet inte passar stegens balk",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com ladder feet leveler ladder mitts gutter protector",
+   "Yahoo SE: stegfötter justerbara stege ojämnt underlag pris jula biltema",
+   "WebFetch bauhaus.se stegar tillbehör"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stuprorsforlangning",
+  "goods_id": "601099647114403",
+  "url_se": "https://www.temu.com/se/g-601099647114403.html",
+  "title": "Flexible Rain Gutter Downspout Extensions 2-pack, 21–60 in, brown",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör",
+  "owner_owns": true,
+  "friction": "höstregnet slår mot grunden/källartrappan",
+  "old_way": "Biltema utkastare i plåt eller en ränna av betong",
+  "variants": "diameter 75/80/100 mm + längd",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bygg/tak/takavvattning/",
+   "same_form": true,
+   "note": "Biltema takavvattning: utkastare; Fyndiq QU flexibel förlängning 80/100 mm 47–150 cm; Hemmatema; Bygghemma — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stupröret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "höstregn mot grunden syns nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema utkastare + flexibel förlängning på Fyndiq/Hemmatema/Bygghemma i samma form; < 199 kr-vara"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "diameter 75/80/100 mm + längd"
+   },
+   "hook": {
+    "text": "Rinner stupröret rakt ner mot grunden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "diameter-variant"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com downspout extension rain diverter foundation",
+   "Yahoo SE: utkastare stuprör flexibel förlängning biltema jula pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stuprorsforlangning",
+  "goods_id": "601099522704498",
+  "url_se": "https://www.temu.com/se/g-601099522704498.html",
+  "title": "Rain Gutter Downspout Extension Drain Adapter, no-dig catch basin kit",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör",
+  "owner_owns": true,
+  "friction": "höstregnet slår mot grunden/källartrappan",
+  "old_way": "Biltema utkastare i plåt eller en ränna av betong",
+  "variants": "diameter 75/80/100 mm + längd",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bygg/tak/takavvattning/",
+   "same_form": true,
+   "note": "Biltema takavvattning: utkastare; Fyndiq QU flexibel förlängning 80/100 mm 47–150 cm; Hemmatema; Bygghemma — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stupröret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "höstregn mot grunden syns nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema utkastare + flexibel förlängning på Fyndiq/Hemmatema/Bygghemma i samma form; < 199 kr-vara"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "diameter 75/80/100 mm + längd"
+   },
+   "hook": {
+    "text": "Rinner stupröret rakt ner mot grunden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "diameter-variant"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com downspout extension rain diverter foundation",
+   "Yahoo SE: utkastare stuprör flexibel förlängning biltema jula pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stuprorsforlangning",
+  "goods_id": "601099542680654",
+  "url_se": "https://www.temu.com/se/g-601099542680654.html",
+  "title": "Gutter Downspout Extension flexible, 20–150 cm, with screws",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör",
+  "owner_owns": true,
+  "friction": "höstregnet slår mot grunden/källartrappan",
+  "old_way": "Biltema utkastare i plåt eller en ränna av betong",
+  "variants": "diameter 75/80/100 mm + längd",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bygg/tak/takavvattning/",
+   "same_form": true,
+   "note": "Biltema takavvattning: utkastare; Fyndiq QU flexibel förlängning 80/100 mm 47–150 cm; Hemmatema; Bygghemma — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stupröret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "höstregn mot grunden syns nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema utkastare + flexibel förlängning på Fyndiq/Hemmatema/Bygghemma i samma form; < 199 kr-vara"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "diameter 75/80/100 mm + längd"
+   },
+   "hook": {
+    "text": "Rinner stupröret rakt ner mot grunden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "diameter-variant"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com downspout extension rain diverter foundation",
+   "Yahoo SE: utkastare stuprör flexibel förlängning biltema jula pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stuprorsforlangning",
+  "goods_id": "601099522917120",
+  "url_se": "https://www.temu.com/se/g-601099522917120.html",
+  "title": "Downspout Extender telescopic flexible drainage tool",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör",
+  "owner_owns": true,
+  "friction": "höstregnet slår mot grunden/källartrappan",
+  "old_way": "Biltema utkastare i plåt eller en ränna av betong",
+  "variants": "diameter 75/80/100 mm + längd",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bygg/tak/takavvattning/",
+   "same_form": true,
+   "note": "Biltema takavvattning: utkastare; Fyndiq QU flexibel förlängning 80/100 mm 47–150 cm; Hemmatema; Bygghemma — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stupröret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "höstregn mot grunden syns nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema utkastare + flexibel förlängning på Fyndiq/Hemmatema/Bygghemma i samma form; < 199 kr-vara"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "diameter 75/80/100 mm + längd"
+   },
+   "hook": {
+    "text": "Rinner stupröret rakt ner mot grunden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "diameter-variant"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com downspout extension rain diverter foundation",
+   "Yahoo SE: utkastare stuprör flexibel förlängning biltema jula pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "stuprorsforlangning",
+  "goods_id": "601099524916867",
+  "url_se": "https://www.temu.com/se/g-601099524916867.html",
+  "title": "Downspout Extension flexible, 50–57 in",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "stuprör",
+  "owner_owns": true,
+  "friction": "höstregnet slår mot grunden/källartrappan",
+  "old_way": "Biltema utkastare i plåt eller en ränna av betong",
+  "variants": "diameter 75/80/100 mm + längd",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bygg/tak/takavvattning/",
+   "same_form": true,
+   "note": "Biltema takavvattning: utkastare; Fyndiq QU flexibel förlängning 80/100 mm 47–150 cm; Hemmatema; Bygghemma — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "fäster på stupröret"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "höstregn mot grunden syns nu",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema utkastare + flexibel förlängning på Fyndiq/Hemmatema/Bygghemma i samma form; < 199 kr-vara"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "diameter 75/80/100 mm + längd"
+   },
+   "hook": {
+    "text": "Rinner stupröret rakt ner mot grunden?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "diameter-variant"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com downspout extension rain diverter foundation",
+   "Yahoo SE: utkastare stuprör flexibel förlängning biltema jula pris kr"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "ventilgaller",
+  "goods_id": null,
+  "url_se": "https://www.temu.com/mouse-proof-dryer-vent-cover-5050366476741-s.html",
+  "title": "Temu-kategori 'mouse proof dryer vent cover' (2pcs stainless mesh exterior wall vent; 4/6-inch 304 stainless) — ingen enskild g-listning hittad",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "husets ventilationsöppningar/krypgrundsventiler",
+  "owner_owns": true,
+  "friction": "möss söker sig in i oktober",
+  "old_way": "Biltema ventilgaller eller stålull i hålet",
+  "variants": "diameter 100/125/160 mm — ägaren vet sällan måttet",
+  "swedish_equivalent": {
+   "retailer": "Biltema",
+   "price_sek": null,
+   "url": "https://www.biltema.se/bygg/vvs/ventilation/ventilationsgaller/",
+   "same_form": true,
+   "note": "Biltema Ventilgaller rostfritt Ø4\"/Ø5\" (AISI 316) + Ventilgaller 100 mm; Anticimex ventilgaller gnagarsäkert; Granngården musnät; Hornbach — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "monteras i husets ventil"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "mössen kommer in i oktober; synligt problem",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Biltema säljer rostfritt ventilgaller i samma form; Anticimex/Granngården i fackhandel; diameter-variant som kunden måste mäta"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "diameter 100/125/160 mm — ägaren vet sällan måttet"
+   },
+   "hook": {
+    "text": "Kommer mössen in i höst?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "variant kräver mätning",
+   "montering"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 30,
+  "category_novelty": 80,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "Yahoo: site:temu.com vent cover mouse proof stainless mesh outdoor wall",
+   "Yahoo SE: ventilgaller rostfritt musnät biltema pris kr",
+   "WebSearch: site:temu.com stainless steel vent cover mesh rodent mouse air vent (0 Temu-träffar)"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "garageport",
+  "goods_id": "601099552259600",
+  "url_se": "https://www.temu.com/se/g-601099552259600.html",
+  "title": "10–20 ft Garage Door Bottom Seal Weather Stripping PVC rubber",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "garageport",
+  "owner_owns": true,
+  "friction": "drag, löv och möss under porten inför vintern",
+  "old_way": "gammal list, eller ingenting",
+  "variants": "längd i fot + profil (T-ände, single-slot) — måste matcha portens spår",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bygg-och-farg/beslag/fonster-dorrbeslag/tatningslister/tatningslist-for-garageport-024671/",
+   "same_form": true,
+   "note": "Jula Hard Head tätningslist för garageport (EPDM) 024671; Biltema tätningslister — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "monteras på porten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "drag och möss i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hard Head tätningslist för garageport = samma form; dörrbottenlist är dessutom en bevisad förlorare i kontot (bygghandel)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd i fot + profil (T-ände, single-slot) — måste matcha portens spår"
+   },
+   "hook": {
+    "text": "Drar det under garageporten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering",
+   "profil måste matcha porten",
+   "samma struktur som förloraren dörrbottenlist"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "Upprepning av dörrbottenlist-förlusten",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com garage door bottom seal weather strip",
+   "Yahoo: garageport tätningslist bottenlist gummi biltema jula pris"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "garageport",
+  "goods_id": "601099945396630",
+  "url_se": "https://www.temu.com/se/g-601099945396630.html",
+  "title": "20 ft Universal Garage Door Seal Strip bottom weather stripping",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "garageport",
+  "owner_owns": true,
+  "friction": "drag, löv och möss under porten inför vintern",
+  "old_way": "gammal list, eller ingenting",
+  "variants": "längd i fot + profil (T-ände, single-slot) — måste matcha portens spår",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bygg-och-farg/beslag/fonster-dorrbeslag/tatningslister/tatningslist-for-garageport-024671/",
+   "same_form": true,
+   "note": "Jula Hard Head tätningslist för garageport (EPDM) 024671; Biltema tätningslister — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "monteras på porten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "drag och möss i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hard Head tätningslist för garageport = samma form; dörrbottenlist är dessutom en bevisad förlorare i kontot (bygghandel)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd i fot + profil (T-ände, single-slot) — måste matcha portens spår"
+   },
+   "hook": {
+    "text": "Drar det under garageporten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering",
+   "profil måste matcha porten",
+   "samma struktur som förloraren dörrbottenlist"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "Upprepning av dörrbottenlist-förlusten",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com garage door bottom seal weather strip",
+   "Yahoo: garageport tätningslist bottenlist gummi biltema jula pris"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "garageport",
+  "goods_id": "601099524825217",
+  "url_se": "https://www.temu.com/se/g-601099524825217.html",
+  "title": "Garage Door Seals Bottom Rubber Weather Stripping Kit 16 ft black",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "garageport",
+  "owner_owns": true,
+  "friction": "drag, löv och möss under porten inför vintern",
+  "old_way": "gammal list, eller ingenting",
+  "variants": "längd i fot + profil (T-ände, single-slot) — måste matcha portens spår",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bygg-och-farg/beslag/fonster-dorrbeslag/tatningslister/tatningslist-for-garageport-024671/",
+   "same_form": true,
+   "note": "Jula Hard Head tätningslist för garageport (EPDM) 024671; Biltema tätningslister — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "monteras på porten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "drag och möss i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hard Head tätningslist för garageport = samma form; dörrbottenlist är dessutom en bevisad förlorare i kontot (bygghandel)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd i fot + profil (T-ände, single-slot) — måste matcha portens spår"
+   },
+   "hook": {
+    "text": "Drar det under garageporten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering",
+   "profil måste matcha porten",
+   "samma struktur som förloraren dörrbottenlist"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "Upprepning av dörrbottenlist-förlusten",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com garage door bottom seal weather strip",
+   "Yahoo: garageport tätningslist bottenlist gummi biltema jula pris"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "garageport",
+  "goods_id": "601101903801579",
+  "url_se": "https://www.temu.com/se/g-601101903801579.html",
+  "title": "Replacement Garage Door Bottom Seal Strip, EPDM, single-slot doors, 10.5 ft",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "garageport",
+  "owner_owns": true,
+  "friction": "drag, löv och möss under porten inför vintern",
+  "old_way": "gammal list, eller ingenting",
+  "variants": "längd i fot + profil (T-ände, single-slot) — måste matcha portens spår",
+  "swedish_equivalent": {
+   "retailer": "Jula",
+   "price_sek": null,
+   "url": "https://www.jula.se/catalog/bygg-och-farg/beslag/fonster-dorrbeslag/tatningslister/tatningslist-for-garageport-024671/",
+   "same_form": true,
+   "note": "Jula Hard Head tätningslist för garageport (EPDM) 024671; Biltema tätningslister — ur sökutdrag"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "monteras på porten"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "drag och möss i oktober",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "Jula Hard Head tätningslist för garageport = samma form; dörrbottenlist är dessutom en bevisad förlorare i kontot (bygghandel)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd i fot + profil (T-ände, single-slot) — måste matcha portens spår"
+   },
+   "hook": {
+    "text": "Drar det under garageporten?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "montering",
+   "profil måste matcha porten",
+   "samma struktur som förloraren dörrbottenlist"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 45,
+  "tier": "ELIM",
+  "biggest_risk": "Upprepning av dörrbottenlist-förlusten",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com garage door bottom seal weather strip",
+   "Yahoo: garageport tätningslist bottenlist gummi biltema jula pris"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "spindelborste",
+  "goods_id": "601101571293235",
+  "url_se": "https://www.temu.com/se/g-601101571293235.html",
+  "title": "Cobweb Duster with extension pole, spider web brush for outdoor cleaning",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "fasad/takfot",
+  "owner_owns": true,
+  "friction": "spindelnät under takfoten i september (korsspindelns högsäsong)",
+  "old_way": "kvast på skaft",
+  "variants": "längd i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "teleskopborstar/spindelborstar är standardsortiment (ej URL-verifierat, sökbudget slut)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot fasaden"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "spindelnät syns i september",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "teleskopborste = kedjornas standardsortiment, < 199 kr; jämförelsehandlad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd i fot"
+   },
+   "hook": {
+    "text": "Spindelnät under takfoten igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "köpt old way (kvast) som fungerar"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com cobweb duster telescopic eaves cleaning brush"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "spindelborste",
+  "goods_id": "601103037360883",
+  "url_se": "https://www.temu.com/se/g-601103037360883.html",
+  "title": "20/26 ft Extendable Cobweb Duster with telescopic pole",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "fasad/takfot",
+  "owner_owns": true,
+  "friction": "spindelnät under takfoten i september (korsspindelns högsäsong)",
+  "old_way": "kvast på skaft",
+  "variants": "längd i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "teleskopborstar/spindelborstar är standardsortiment (ej URL-verifierat, sökbudget slut)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot fasaden"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "spindelnät syns i september",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "teleskopborste = kedjornas standardsortiment, < 199 kr; jämförelsehandlad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd i fot"
+   },
+   "hook": {
+    "text": "Spindelnät under takfoten igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "köpt old way (kvast) som fungerar"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com cobweb duster telescopic eaves cleaning brush"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "spindelborste",
+  "goods_id": "601100729934304",
+  "url_se": "https://www.temu.com/se/g-601100729934304.html",
+  "title": "26 ft Reach Cobweb Duster with extension pole, outdoor/indoor",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "fasad/takfot",
+  "owner_owns": true,
+  "friction": "spindelnät under takfoten i september (korsspindelns högsäsong)",
+  "old_way": "kvast på skaft",
+  "variants": "längd i fot",
+  "swedish_equivalent": {
+   "retailer": "Jula/Biltema",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "teleskopborstar/spindelborstar är standardsortiment (ej URL-verifierat, sökbudget slut)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "PASS",
+    "reason": "används mot fasaden"
+   },
+   "presence": {
+    "result": "PASS",
+    "reason": "spindelnät syns i september",
+    "season_sep_oct": true
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "teleskopborste = kedjornas standardsortiment, < 199 kr; jämförelsehandlad"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'shelf'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'shelf'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "längd i fot"
+   },
+   "hook": {
+    "text": "Spindelnät under takfoten igen?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "svensk mass-commoditisering",
+   "< 199 kr",
+   "köpt old way (kvast) som fungerar"
+  ],
+  "eliminated_at": "shelf",
+  "structure_match": 25,
+  "category_novelty": 70,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "MEDIUM",
+  "sources": [
+   "WebSearch: site:temu.com cobweb duster telescopic eaves cleaning brush"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "fageldekal",
+  "goods_id": "601099518437500",
+  "url_se": "https://www.temu.com/se/g-601099518437500.html",
+  "title": "Window Strike Prevention Stickers, butterfly/leaf shapes",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "fönster",
+  "owner_owns": true,
+  "friction": "fåglar flyger in i rutan",
+  "old_way": "ingenting",
+  "variants": "motiv/antal",
+  "swedish_equivalent": {
+   "retailer": "Clas Ohlson/Jula",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "fönsterdekaler mot fågelkollision är standardsortiment; ej verifierat med URL (sökbudget slut)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "klistermärke/dekal — förbrukning, inte ett tillbehör till ett ägt objekt med friktion; < 199 kr"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "fågelkollisioner sker, men syns inte som ett pågående problem i september",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "standardsortiment i kedjorna (ej URL-verifierat)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'object'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'object'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "motiv/antal"
+   },
+   "hook": {
+    "text": "Flyger fåglar in i ditt fönster?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "behovet måste skapas",
+   "inomhus-commodity"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com window bird protection anti collision"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "fageldekal",
+  "goods_id": "601099574443963",
+  "url_se": "https://www.temu.com/se/g-601099574443963.html",
+  "title": "20pcs Anti-collision Bird Electrostatic Window Stickers",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "fönster",
+  "owner_owns": true,
+  "friction": "fåglar flyger in i rutan",
+  "old_way": "ingenting",
+  "variants": "motiv/antal",
+  "swedish_equivalent": {
+   "retailer": "Clas Ohlson/Jula",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "fönsterdekaler mot fågelkollision är standardsortiment; ej verifierat med URL (sökbudget slut)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "klistermärke/dekal — förbrukning, inte ett tillbehör till ett ägt objekt med friktion; < 199 kr"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "fågelkollisioner sker, men syns inte som ett pågående problem i september",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "standardsortiment i kedjorna (ej URL-verifierat)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'object'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'object'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "motiv/antal"
+   },
+   "hook": {
+    "text": "Flyger fåglar in i ditt fönster?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "behovet måste skapas",
+   "inomhus-commodity"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com window bird protection anti collision"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "fageldekal",
+  "goods_id": "601102362460185",
+  "url_se": "https://www.temu.com/se/g-601102362460185.html",
+  "title": "Clear Round Bird Deterrent Sticker, anti-collision, retro grid",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "fönster",
+  "owner_owns": true,
+  "friction": "fåglar flyger in i rutan",
+  "old_way": "ingenting",
+  "variants": "motiv/antal",
+  "swedish_equivalent": {
+   "retailer": "Clas Ohlson/Jula",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "fönsterdekaler mot fågelkollision är standardsortiment; ej verifierat med URL (sökbudget slut)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "klistermärke/dekal — förbrukning, inte ett tillbehör till ett ägt objekt med friktion; < 199 kr"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "fågelkollisioner sker, men syns inte som ett pågående problem i september",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "standardsortiment i kedjorna (ej URL-verifierat)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'object'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'object'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "motiv/antal"
+   },
+   "hook": {
+    "text": "Flyger fåglar in i ditt fönster?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "behovet måste skapas",
+   "inomhus-commodity"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com window bird protection anti collision"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ },
+ {
+  "kluster": "hus",
+  "family": "fageldekal",
+  "goods_id": "601099513797710",
+  "url_se": "https://www.temu.com/se/g-601099513797710.html",
+  "title": "16pcs Anti-collision Window Bird Stickers, clear, 4 sheets",
+  "title_source": "sökutdrag (engelsk titel)",
+  "temu_price_sek": null,
+  "rating": null,
+  "review_count": null,
+  "review_dates": [],
+  "category_path": null,
+  "image_count": null,
+  "hero_url": null,
+  "video_url": null,
+  "video_checked": false,
+  "object": "fönster",
+  "owner_owns": true,
+  "friction": "fåglar flyger in i rutan",
+  "old_way": "ingenting",
+  "variants": "motiv/antal",
+  "swedish_equivalent": {
+   "retailer": "Clas Ohlson/Jula",
+   "price_sek": null,
+   "url": null,
+   "same_form": true,
+   "note": "fönsterdekaler mot fågelkollision är standardsortiment; ej verifierat med URL (sökbudget slut)"
+  },
+  "brand_anchor": null,
+  "gates": {
+   "object": {
+    "result": "FAIL",
+    "reason": "klistermärke/dekal — förbrukning, inte ett tillbehör till ett ägt objekt med friktion; < 199 kr"
+   },
+   "presence": {
+    "result": "OSÄKER",
+    "reason": "fågelkollisioner sker, men syns inte som ett pågående problem i september",
+    "season_sep_oct": false
+   },
+   "shelf": {
+    "result": "FAIL",
+    "reason": "standardsortiment i kedjorna (ej URL-verifierat)"
+   },
+   "material": {
+    "result": "UNKNOWN",
+    "reason": "ej granskad — föll i gate 'object'",
+    "sec_0_3": null,
+    "hero_note": null
+   },
+   "economics": {
+    "landed_est_sek": null,
+    "se_price_est_sek": null,
+    "multiple": null,
+    "be_cpa_est": null,
+    "multibuy_reason": null,
+    "result": "UNKNOWN",
+    "note": "ej räknad — föll i gate 'object'"
+   },
+   "variant": {
+    "result": "UNKNOWN",
+    "reason": "motiv/antal"
+   },
+   "hook": {
+    "text": "Flyger fåglar in i ditt fönster?",
+    "result": "PASS"
+   },
+   "audience": {
+    "result": "UNKNOWN",
+    "reason": "ej bedömd — föll tidigare"
+   }
+  },
+  "negative_space_flags": [
+   "< 199 kr",
+   "behovet måste skapas",
+   "inomhus-commodity"
+  ],
+  "eliminated_at": "object",
+  "structure_match": 15,
+  "category_novelty": 60,
+  "tier": "ELIM",
+  "biggest_risk": "—",
+  "confidence": "HIGH",
+  "sources": [
+   "WebSearch: site:temu.com window bird protection anti collision"
+  ],
+  "data_note": "Temu-listningen kunde inte läsas: IP:n blockerad (verify-sida) under hela körningen; pris/betyg/recensioner/video = UNKNOWN"
+ }
+]

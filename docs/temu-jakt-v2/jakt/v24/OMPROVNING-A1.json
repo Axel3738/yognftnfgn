@@ -1,0 +1,2298 @@
+{
+ "summary": {
+  "WEAK": 19,
+  "REFUTED": 4
+ },
+ "results": [
+  {
+   "assessment": {
+    "concept_id": "utekattkoja",
+    "product_name_sv": "Isolerad utekattkoja i Oxford-tyg, hopfällbar",
+    "strong_hypothesis": false,
+    "hypothesis_score": 52,
+    "winner_hypothesis": "Villaägaren på landet vars katt sover i vedboden eller under altanen. Kojan står ute, och kylan och höstregnet syns på katten i september–november — problemet är fotograferbart nu. DNA:t säger att den vinner på ankaret (Kerbl 1 017 / Supercat 1 799 / VOFF 5 295 kr i lager mot vårt 599) och på kontots bästa uppslag (4,5–5,3×). Den faller på G2: tre svenska annonsörer i Ad Library SE (2026-09-04), alla dropship-sidor som startade 18–29 augusti — strandtofflornas läge, inte IBC-tankens.",
+    "why_it_could_print": "• Ankare i lager: Kerbl 1 017 kr (PriceRunner 2026-09-04), Supercat 1 799 kr (supercat.se), VOFF trä 5 295 kr (voffsweden.se 2026-09-08) = 1,7–8,8 × 599 kr.\n• Ekonomi: 10,92 USD → landad 114–134 kr → 599 kr = 4,5–5,3×, BE-CPA 465–485 kr.\n• Material: heron med riktig katt i höstlöv, video 61 s (live 2026-09-05); US-recensioner 72 = orörd listning.\n• Publik 330 000–540 000 hushåll med utekatt (Agria/Novus 2024, Agria/Hedvig 2025).",
+    "main_risk": "Tre svenska dropship-annonsörer aktiva sedan 18–29 augusti (Ad Library SE 2026-09-04) plus look-alikes på 157–504 kr på marketplace — samma struktur som fällde strandtofflorna. G2 ≥ 3 är kill i REGEL.md.",
+    "hook_sv": "Har du en utekatt?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 599,
+    "reviews_gate": {
+     "count": 72,
+     "source": "US-sajten 2026-09-08 (REGEL.md §5): 72 US / 410 SE, samma dag",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 3,
+     "method": "adlibrary-prior",
+     "evidence": [
+      "Meta Ad Library SE ACTIVE, läst 2026-09-04: Lunrandom, Lantecy, Marriny — namnlösa dropship-sidor, alla startade 18–29 aug 2026 (v22/fas1/utekattkoja.md)",
+      "DTC-proxy 2026-09-08 (Yahoo SE ×2): 0 egna .se-butiker i Oxford-formen. Oxford-kojan finns bara på marketplace: fyndiq.se ×2 (kattält Oxford S 395 / L 504 kr per 2026-09-04), amazon.se B0FXG68MQ2, onbuy.com/se, joom.com, pricerunner.se 157 kr",
+      "Svenska märkesbutiker säljer TRÄ-kojor, inte formen: supercat.se 1 799, voffsweden.se 5 295 kr (2 kvar), kattkompaniet.nu (artikel)"
+     ],
+     "verdict": "KILL"
+    },
+    "shelf_gate": {
+     "floor_name": "Look-alike Oxford-koja: PriceRunner 'Vattentätt Isolerat Katthus Vikbart Fyra Säsonger' 157 kr; Fyndiq kattält Oxford L 504 kr (2026-09-04)",
+     "floor_price_sek": 157,
+     "floor_url": "https://www.pricerunner.se/sp/katthus-utomhus.html",
+     "anchor_name": "Kerbl Outdoor Cat House (trä) 1 017 kr — PriceRunner i lager 2026-09-04; Supercat Katthus 4 season 1 799 kr; VOFF Katthus 5 295 kr (voffsweden.se 2026-09-08, 'Endast 2 kvar i lager')",
+     "anchor_price_sek": 1017,
+     "anchor_url": "https://supercat.se/katthus-4-season-isolerat",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Ägd katt, kojan står ute, kyla/regn syns i launchmånaden; en SKU; ingen montering på primärlistningen. Kedjan (Biltema/Jula/Clas/Rusta/Granngården) saknar formen (2026-09-04). Inte i KATALOG.md."
+    },
+    "audience": {
+     "size": 330000,
+     "source": "330 000–540 000 hushåll med utekatt: Agria/Novus 2024 × Agria/Hedvig 2025 (v23/PORTFOLJ.md); utekatt = äldre, landsbygd, småhus",
+     "verdict": "PASS"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601101118338671",
+      "url_se": "https://www.temu.com/se/g-601101118338671.html",
+      "title": "Outdoor cat house insulated Oxford, foldable (primär)",
+      "source": "live 2026-09-05 09:49 UTC (v23/PORTFOLJ.md) + REGEL.md §5 2026-09-08",
+      "price_usd": 10.92,
+      "reviews": 72,
+      "why_this_one": "Verifierad live: 10,92 USD, ★4,9, 72 US-rec/410 SE, 6 bilder, video 61 s, heron med riktig katt i höstlöv. Lägst recensioner i formen."
+     },
+     {
+      "goods_id": "601099854739439",
+      "url_se": "https://www.temu.com/se/g-601099854739439.html",
+      "title": "Modern Oxford Cloth Cat House Condo, Waterproof Outdoor Cat Shelter, Easy Assembly, High Density Sponge",
+      "source": "seznam-snippet (v22/fas1/utekattkoja.json)",
+      "price_usd": 15,
+      "reviews": 46,
+      "why_this_one": "Alternativ i samma tyg med låga recensioner (46); 'easy assembly' = kontrollera monteringssteg vid live-hämtning."
+     },
+     {
+      "goods_id": "601103147304759",
+      "url_se": "https://www.temu.com/se/g-601103147304759.html",
+      "title": "Large All-Weather Outdoor Cat House with Lockable Door, Soft Cushioned Bed, Foldable",
+      "source": "seznam-snippet (v22/fas1/utekattkoja.json)",
+      "price_usd": 21,
+      "reviews": 9,
+      "why_this_one": "Störst variant (L) med 9 recensioner; dyrare (landad 219–257 kr → 599 = 2,3–2,7×, låga änden faller) — bara om primären är borta."
+     },
+     {
+      "goods_id": "601099539458313",
+      "url_se": "https://www.temu.com/se/g-601099539458313.html",
+      "title": "Oxford utekattkoja (dubblett, V2.1)",
+      "source": "dataset(V2.1) via UNIVERSUM.csv",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Dubblett av primären; pris/recensioner olästa — reserv om primären blockeras."
+     },
+     {
+      "goods_id": "601102077704284",
+      "url_se": "https://www.temu.com/se/g-601102077704284.html",
+      "title": "Oxford utekattkoja 'easy to assemble' (dubblett, V2.1)",
+      "source": "dataset(V2.1) via UNIVERSUM.csv",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Reserv; 'easy to assemble' i titeln = monteringssteg, lägre prioritet."
+     }
+    ],
+    "priority_for_live_check": 3,
+    "confidence": "HIGH",
+    "notes": "Alla gater mätta. Faller enbart på G2 (3 aktiva annonsörer 2026-09-04). Öppnas igen bara om en ny Ad Library-mätning visar < 3 aktiva. amazon.se-listningen (B0FXG68MQ2) pris ej läst. Landad 114–134 kr; SE-Temu-pris 76–89 kr.",
+    "landed_low_sek": 114,
+    "landed_high_sek": 134,
+    "multiple_low": 4.47,
+    "multiple_high": 5.25,
+    "variants": "En SKU (störst, svart) — ägaren behöver inte mäta något."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "staketbygel",
+    "product_name_sv": "Staketstolps-reparationsbygel med markspett, 2/4-set",
+    "strong_hypothesis": true,
+    "hypothesis_score": 74,
+    "winner_hypothesis": "Småhusägaren som satte upp trästaketet själv för 10–20 år sedan och vars stolpe ruttnat av i marklinjen — höstregnet mjukar upp jorden och septemberstormen lägger sektionen på sned, synligt på tomten i dag. Spettet slås ned bredvid stolpen, bygeln skruvas i friskt virke, staketet står rakt utan att något rivs. DNA:t säger att den vinner för att problemet finns nu (igenkänningsfråga, ingen agitation), old way är improvisation (bräda + spik) eller en helg med betong, hävstången mot den ägda saken är ≫ 10×, och ingen svensk kanal säljer formen under vårt pris — den enda som säljer den (Fyndiq) tar 988 kr.",
+    "why_it_could_print": "• Prisutrymme: enda svenska försäljningen i samma form är Fyndiq 'Reparationsspik för staketstolpe 2-pack' 988 kr i lager (2026-09-08) = 1,65 × 599; Bauhaus 232 stolptillbehör utan bygel (2026-09-04); kedjorna säljer stolpskor för NYA stolpar.\n• Hyllfrånvaro i flödet: Ad Library SE 0 annonsörer i reparationsformen (2026-09-04); DTC-proxy 0 (Yahoo SE ×3, 2026-09-08).\n• Ekonomi: 16,95 USD → landad 177–208 kr → 599 kr = 2,9–3,4×, BE-CPA 391–422 kr; > 500 kr har aldrig förlorat.\n• Flerköp: ett staket har fler än en rutten stolpe — 2-set/4-set (799 kr) är fysiskt motiverat, spöhållarens AOV-hävstång.\n• Material sett live 2026-09-04: textfri hero med bygeln nedslagen intill stolpen (genomskärning) + video; 109 US-recensioner.",
+    "main_risk": "Efterfrågan på formen är obevisad i Sverige (staket lagas med stolpsko/gjutning) och monteringen kräver slägga och 20–30 minuter — 'montering/installation' finns hos 30 % av kontrollgruppens förlorare. Näst: andelen småhus med trästaket på stolpar är okänd.",
+    "hook_sv": "Lutar staketstolpen efter höststormen?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 599,
+    "reviews_gate": {
+     "count": 109,
+     "source": "US-sajten live 2026-09-04 22:1x UTC (v23/PORTFOLJ.md); seznam-snippet 2026-09-04: 89 rec, ★4,8/96 %",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "adlibrary-prior",
+     "evidence": [
+      "Meta Ad Library SE ACTIVE 2026-09-04: 'staketstolpe' 2 annonser/2 annonsörer (Stängselexperten.se hela staket, recal.se insynsskydd) — 0 i reparationsformen; 'grind staket trädgård' 0 (v22/fas2/tomt.md)",
+      "DTC-proxy 2026-09-08, Yahoo SE 'staketstolpe reparation bygel markspett köp': bara kedjor (byggmax.se, hornbach.se, granngarden.se, jula.se, jemfix.se) + cdon.se (stolpar) + fyndiq.se (reparationsspik) — 0 egna DTC-butiker",
+      "Yahoo SE 'reparera lutande staketstolpe utan att gräva …' och 'reparationsspik staketstolpe stolpstöd …': 0 butiksträffar (2026-09-08)"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Fyndiq 'Reparationsspik för staketstolpe – 2-pack Staketstolpsstöd markspik för lutande trasiga trästaketstolpar' (76 cm spik, pulverlackat stål) — samma form, ÖVER vårt pris",
+     "floor_price_sek": 988,
+     "floor_url": "https://fyndiq.se/produkt/reparationsspik-for-staketstolpe-2-pack-staketstolpsstod-markspik-for-lutande-trasiga-trastaketstolpar-7b973e7110f04505/",
+     "anchor_name": "Inget märkesankare i formen. Fyndiq 988 kr i lager (2026-09-08) = 1,65 × 599 fungerar som svenskt prisankare; Bauhaus 232 stolptillbehör utan bygel (2026-09-04); amazon.se ej läsbar (HTTP 503 ×2, 2026-09-08)",
+     "anchor_price_sek": 988,
+     "anchor_url": "https://fyndiq.se/produkt/reparationsspik-for-staketstolpe-2-pack-staketstolpsstod-markspik-for-lutande-trasiga-trastaketstolpar-7b973e7110f04505/",
+     "anchor_in_stock": true,
+     "verdict": "PASS"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Ägd sak (trästaket) ute på tomten; skadan syns i sep–nov (höststormar) och igen vid tjällossning — ingen kranskyddsfälla; en parameter ägaren kan utantill (antal stolpar). Varning: montering med slägga (negativ rymd 30 %). Inte i KATALOG.md (stängselsträckare/trådspännare/grindlås är annan objektklass)."
+    },
+    "audience": {
+     "size": 1900000,
+     "source": "SCB Bostadsbestånd 2024-12-31: 2 136 854 bostäder i småhus, varav 90 % (drygt 1,9 M) ägda (scb.se statistiknyhet 'Nästan 5,3 miljoner bostäder i landet'). Andel med trästaket på stolpar: UNKNOWN — ingen källa hittad",
+     "verdict": "PASS på ägarklassen; andelen med trästaket UNKNOWN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601103866118857",
+      "url_se": "https://www.temu.com/se/g-601103866118857.html",
+      "title": "4 Set/2 Set Heavy Duty Steel Fence Post Repair Kit With 32in Ground Stakes, Adjustable Brackets, Pre-drilled Holes",
+      "source": "live 2026-09-04 22:1x UTC (v23/PORTFOLJ.md); seznam-snippet 2026-09-04",
+      "price_usd": 16.95,
+      "reviews": 109,
+      "why_this_one": "Verifierad live 4 dagar sedan: 16,95 USD, ★4,8, 109 rec, 3 bilder, video, textfri hero med bygeln i jorden. Beskär bort skruvhögen i heron."
+     },
+     {
+      "goods_id": "606113365862248",
+      "url_se": "https://www.temu.com/se/g-606113365862248.html",
+      "title": "2pcs Fence Post Repair Kits, Thickened Fence Post Repair Stakes for Repairing Tilted or Broken Wooden Fence Posts",
+      "source": "Yahoo site:temu.com 2026-09-08",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Enda alternativa goods-id som gick att läsa (Yahoo 503 på två av tre försök, seznam tomt). Pris/recensioner olästa — reserv om primären blockeras."
+     }
+    ],
+    "priority_for_live_check": 1,
+    "confidence": "MEDIUM",
+    "notes": "amazon.se ej läsbar (503) — marketplace-golvet under 599 kr är alltså inte uteslutet, bara inte funnet. Temus kategorisida 'fence post anchors' visar ett 2/4-set à 18,85 USD med 6 rec (utan goods-id). Landad 177–208 kr; SE-Temu-pris 118–138 kr. 499 kr ger 2,40 i låga änden — för tight, sälj 599 (2-set) / 799 (4-set).",
+    "landed_low_sek": 177,
+    "landed_high_sek": 208,
+    "multiple_low": 2.88,
+    "multiple_high": 3.38,
+    "variants": "2-set / 4-set — ägaren räknar sina lutande stolpar, mäter inget (ägarkunskap 2)."
+   },
+   "verdict": {
+    "concept_id": "staketbygel",
+    "hylla_refuted": true,
+    "hylla_reasons": [
+     "Annonsör-proxyn faller: minst 5 svenska webbutiker säljer exakt samma form (mätt 2026-09-08, Yahoo SE 'reparationssats för staketstolpe köp kr' + 'wieanfedy staketstolpe reparationssats'): sebutik.se/products/fencerepair (Shopify-DTC, publicerad 2026-07-29), wieanfedy.com/products/heavy-duty-fence-post-repair-kit (Shopify-DTC, publicerad 2026-03-17), estore.nu (artikel 164185), pryloteket.se (samma listningstext, sidan 403), verktygbutik.se (affiliate mot Amazon.se, 6-pack) — plus CDON, Fyndiq och OnBuy/se. Bedömningens 'DTC-proxy 0' byggde på en enda Yahoo-fras med ordet 'bygel' som ingen svensk säljare använder.",
+     "Golvet ligger UNDER vårt pris, inte över: wieanfedy.com 329 kr (jämförpris 699, 80 cm, 'Material: Järn', antal per paket ej angivet — Shopify-JSON läst 2026-09-08); sebutik.se 'FenceRepair' 565 kr (jämförpris 1 130, 80 cm, 'passar standard 3-tums och 4-tums trästolpar', 9 dropship-bilder, antal ej angivet); estore.nu 'Reparationssats för staketstolpar – 2-pack' 489 kr (81 cm, 41 cm över/40 cm under mark, 'tillfälligt slut'). Per spett: 245 kr (estore) mot våra 300 kr.",
+     "Inget märkesankare ≥ 1,6× finns. Fyndiq 988 kr (bekräftat i lager 2026-09-08, leverans 22–24 sep, 76 cm, 39 kr frakt) är bara ännu en dropship-listning — inte ett märke som Crocs/Husqvarna — och den jämförelsehandlande ser 329/489/565 kr bredvid den. DNA:s hylla-undantag (steg 2) kräver ett synligt märkesankare; det saknas.",
+     "4-setet är också hyllat: CDON 'Reparationssats för Staketstolpar 4-Pack, 3,5 x 3,5 tum' 864 kr, säljare Bancros, i lager, leverans 11–16 sep (läst 2026-09-08) — vårt 4-set 799 kr ligger alltså inte ensamt i flödet. CDON har dessutom en 2-pack '2x2 tum'-listning.",
+     "Hyllfrånvaro-poängen enligt DNA avsnitt 9 punkt 3 blir högst 1 (marketplace + minst två svenska DTC-butiker), inte 2 som bedömningen antar. Kedjehyllan (Bauhaus/Hornbach/Byggmax/Jula/Biltema) gick fortfarande inte att läsa (Bauhaus-sök tomt JS-skal, Hornbach 'client challenge', Byggmax 404, Fyndiq-sök 404, amazon.se 503 igen 2026-09-08) — så kedjegolvet är fortfarande obekräftat, inte friat."
+    ],
+    "dna_refuted": true,
+    "dna_reasons": [
+     "Passform mot stolpen är en variant ägaren INTE kan utantill: svenska staketstolpar är 70x70 mm, 95x95 mm eller runda 80–100 mm (Byggmax produktinfo via Yahoo SE-snippet 2026-09-08; Bauhaus 'STOLPE VIDA 70X70MM'), medan kitet är en US 4x4-form — sebutik.se säger 'passar standard 3-tums och 4-tums trästolpar' (76/89 mm), CDON-listningen '3,5 x 3,5 tum'. 95x95 kräver att 'Adjustable Brackets' verkligen spänner till 95 mm (oläst — temu-sidan får inte hämtas), och runda stolpar passar inte en fyrkantsbygel alls. Det är DNA steg 5-varningen 'passar de flesta' — bedömningen räknade bara 'antal stolpar' som parameter.",
+     "Säsongsfönstret är kortare än 'Q4 NOW' antyder: åtgärden kräver att ett 80 cm spett slås ned i ofrusen, stenfri mark. Tjäle från november i Svealand/Norrland ger ~6–8 veckor från 2026-09-08 (DNA-bonus 'säsong ≥ 6 v kvar' är på gränsen), och skador från nov–feb-stormar kan inte lagas förrän tjällossningen — en halv kranskyddsfälla för allt som launchas efter oktober. Stenig morän gör dessutom att spettet stoppar/böjs — DNA:s 'montering/installation' (30 % av förlorarna) med slägga i 20–30 min.",
+     "Publiken ≥ 100 000 är påstådd, inte mätt: SCB:s 1,9 M ägda småhus är ägarklassen, men bedömningen skriver själv 'andel med trästaket på stolpar: UNKNOWN', och den köpande delmängden är de som har en rutten stolpe just denna höst. Ingen källa hittad av mig heller — osäker = fälld.",
+     "'Why it could print' vilar på hyllpåståenden som nu är falska ('enda svenska försäljningen … Fyndiq 988 kr', 'DTC-proxy 0'); det enda mätta är 109 recensioner/★4,8 (v22/material-json, hämtad 2026-09-04 22:13 UTC, video uppladdad 2025-10-09). Ägd sak ute ✓, problemet syns ✓, hook 'Lutar staketstolpen efter höststormen?' 5 ord ✓, pris 599 > 500 ✓ — men DNA:s egen old way i Sverige är 'låta det stå snett i ett år till' (bedömningens ord), dvs latent brådska: skadan syns men lagas traditionellt på våren."
+    ],
+    "corrections": "advertiser_gate.count: 0 → ≥ 5 svenska webbutiker i formen (sebutik.se, wieanfedy.com, estore.nu, pryloteket.se, verktygbutik.se) + CDON/Fyndiq/OnBuy; verdict GREEN → RED. shelf_gate.floor: Fyndiq 988 kr → wieanfedy.com 329 kr (antal ej angivet) / estore.nu 489 kr 2-pack (tillfälligt slut) / sebutik.se 565 kr; floor_url https://sebutik.se/products/fencerepair och https://wieanfedy.com/products/heavy-duty-fence-post-repair-kit; verdict PASS → FAIL. anchor: 'Fyndiq 988 = 1,65×' är inget märkesankare — sätt anchor_name 'Inget'. 4-set: CDON Bancros 864 kr i lager (https://cdon.se/produkt/reparationssats-for-staketstolpar-4-pack-…-81543b7ac35b51df/), 610 mm totalhöjd, spett 325 mm, för 89 mm-stolpe. structural_gate.reason: lägg till passform 70x70/95x95/rund + tjälfönster. variants: 'ägarkunskap 2' → 0–1 (stolpdimension måste mätas). listing_candidates[1] 606113365862248: ej verifierad av mig; seznam 'site:temu.com fence post repair kit ground stake' gav inga goods-id, bara kategorislugs steel-fence-post-repair-stakes-5050189513396 och wooden-fence-post-repair-kit-5050212895044. amazon.se: HTTP 503 igen 2026-09-08 (tredje gången) — verktygbutik.se länkar en 6-pack dit, så Amazon-golvet finns men är oläst. Kedjehyllan (Bauhaus/Hornbach/Byggmax) fortfarande oläsbar — skriv 'ej läsbar', inte '232 stolptillbehör utan bygel' som om det vore verifierat.",
+    "confidence": "HIGH på hylla (fem butiker och tre priser under 599 lästa direkt från sidorna 2026-09-08); MEDIUM på DNA (passform och tjäle är resonemang mot mätta stolpdimensioner, inte mätta utfall)"
+   },
+   "status": "REFUTED"
+  },
+  {
+   "assessment": {
+    "concept_id": "spinnarbyggsats",
+    "product_name_sv": "Spinnarbyggsats 155–228 delar",
+    "strong_hypothesis": false,
+    "hypothesis_score": 30,
+    "winner_hypothesis": "Frun eller det vuxna barnet köper till mannen 35–70 som spinnfiskar — eller han köper själv som vinterprojekt i november–mars. Det är ett motiv (identitet + aktivitet), inte ett problem som syns i september: byggsatsen används vid köksbordet, dragen kommer i vattnet först i april. DNA:t säger att den INTE vinner: 'kit' står i negativ rymd (0/9 vinnare), objektet används inomhus, och presentklockan (nov–dec) är en annan än launchmånadens — samma fälla som kranskyddet fast åt andra hållet.",
+    "why_it_could_print": "• Ekonomi: 17,92 USD → landad 187–219 kr → 549 kr = 2,5–2,9×, BE-CPA 330–362 kr.\n• 0 svenska annonsörer på byggsatsformen (Ad Library SE 2026-09-05); 39 US-recensioner = orörd listning med video (live 2026-09-05).\n• Publik 1,1 M fritidsfiskare (HaV 2025), fiskekollektionen finns redan (spöhållaren är bevisad vinnare).",
+    "main_risk": "Strukturellt: kit + inomhus + present = tre punkter i negativ rymd, och fönstret (v.45–50) är två månader bort. Näst: golvet — Örjans Fiske säljer byggsats 279 kr och amazon.se säljer samma varumärke (Dovesun) som står tryckt på Temu-lådan.",
+    "hook_sv": "Bygger du egna spinnare i vinter?",
+    "q4_label": "BLACK WEEK / GIFT",
+    "se_price_sek": 549,
+    "reviews_gate": {
+     "count": 39,
+     "source": "US-sajten live 2026-09-05 08:47 UTC (v23/PORTFOLJ.md): ★4,9, 39 rec, 4 bilder, video",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "adlibrary-prior",
+     "evidence": [
+      "Meta Ad Library SE 2026-09-05: 'egna spinnare' 2 irrelevanta träffar (Jaktia Visby, B8Shield); 'spinnare' 36 = färdiga drag (Norolan/Happy Angler), inga byggsatser (v23/present-hobby.json)",
+      "DTC-proxy 2026-09-08 (Yahoo SE): fackhandel med formen — orjansfiske.se (byggsats 279 kr), lundgrensfiske.com (kategori 'Betesbyggnad'), olssonsfiske.se (kategori 'Byggsatser', sida ej läsbar) = 3 specialistbutiker, ingen one-product-store; amazon.se Dovesun-kit (B0879FR79X) samma varumärke, pris ej läsbart (HTTP 500)"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Örjans Fiske – 'Göra egna spinnare' byggsats ca 20 spinnare (utan krokar)",
+     "floor_price_sek": 279,
+     "floor_url": "https://www.orjansfiske.se/butik/startkit-spinnare/gora-egna-spinnare/",
+     "anchor_name": "Inget märkesankare ≥ 1,6 × 549 (= 878 kr) i formen. Örjans ord. pris 389 kr; Sportfiskeboden DIY-kit 199–329 kr; amazon.se Dovesun 'Fiskespinnare tillverkning spinnare rostfritt' — identiskt varumärke som Temu-lådan, pris ej läsbart (HTTP 500 2026-09-08)",
+     "anchor_price_sek": null,
+     "anchor_url": "https://www.amazon.se/Dovesun-Fiskespinnare-tillverkning-spinnare-rostfritt/dp/B0879FR79X",
+     "anchor_in_stock": null,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "FAIL",
+     "reason": "Fingeravtryckets steg 0 eliminerar 'kit'; objektet (byggsatsen) används inomhus vid bordet; ingen synlig friktion i launchmånaden — want med presentklocka nov–dec (annan klocka än september). Gåvovinkeln är 0/3 i kontot. Inte i KATALOG.md (fiskeset 499 kr är färdiga drag, annan form)."
+    },
+    "audience": {
+     "size": 1100000,
+     "source": "Havs- och vattenmyndigheten 'Fakta om fritidsfiske' 2025: ~1,1 M fritidsfiskare (752 000 män)",
+     "verdict": "PASS"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601100910111663",
+      "url_se": "https://www.temu.com/se/g-601100910111663.html",
+      "title": "Spinner Making Kit, Fishing Lure Making Kit, Inline Spinners 228/155/107 pcs (Dovesun)",
+      "source": "live 2026-09-05 08:47 UTC (v23/PORTFOLJ.md)",
+      "price_usd": 17.92,
+      "reviews": 39,
+      "why_this_one": "Verifierad live: 17,92 USD, ★4,9, 39 rec, 4 bilder, video (öppnar på färdiga spinnare vid vatten). Varumärket Dovesun tryckt på lådan."
+     },
+     {
+      "goods_id": "601100146291462",
+      "url_se": "https://www.temu.com/se/g-601100146291462.html",
+      "title": "Spinnarbyggsats (alt 1, present-hobby.json)",
+      "source": "v23/present-hobby.json alt_goods_ids",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Alternativ utan läst pris — reserv om primären blockeras."
+     },
+     {
+      "goods_id": "601105436848678",
+      "url_se": "https://www.temu.com/se/g-601105436848678.html",
+      "title": "Spinnarbyggsats (alt 2, present-hobby.json)",
+      "source": "v23/present-hobby.json alt_goods_ids",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Alternativ utan läst pris — reserv."
+     },
+     {
+      "goods_id": "602833646645929",
+      "url_se": "https://www.temu.com/se/g-602833646645929.html",
+      "title": "246pcs Fishing Lure Making Kit Spinner DIY Kit with Multi-function Pliers",
+      "source": "seznam-snippet 2026-09-05 (69 USD, 'Není skladem') + seznam 2026-09-08",
+      "price_usd": 69,
+      "reviews": null,
+      "why_this_one": "Bara som referens: 69 USD → landad 720–845 kr = över 420-taket. Utesluts på ekonomi."
+     }
+    ],
+    "priority_for_live_check": 5,
+    "confidence": "MEDIUM",
+    "notes": "Seznam 2026-09-08 gav i övrigt bara färdiga drag (601099753039774 5-pack 4,26 USD/76 rec; 601100304773420 10-pack 7,44 USD/192 rec) — fel form. Olssons Fiske-kategorin ej läsbar. Landad 187–219 kr; SE-Temu-pris 125–146 kr. Om Axel ändå vill testa: launch v.44–45, aldrig september.",
+    "landed_low_sek": 187,
+    "landed_high_sek": 219,
+    "multiple_low": 2.5,
+    "multiple_high": 2.93,
+    "variants": "155 / 228 delar — en SKU räcker; inget ägaren måste mäta."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "honsgardshuv",
+    "product_name_sv": "Vinterhuv/regntak till hönsgården (klar väv med öljetter)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 60,
+    "winner_hypothesis": "Hobbyhönsägaren på landet med en walk-in-gård i nät som står ute — septemberregnet slår rakt in, marken blir sörja och presenningen han snörde fast i våras har blåst av. Huven spänns över tak och vindsida med kulspännare på gården han redan har. DNA:t säger att den vinner på samma struktur som IBC-överdraget (ROAS 2,94): formsytt skydd till ägd sak ute, synligt problem nu, ett märkesankare (Kellfri 1 488 kr) 1,9 × över vårt pris och ingen kedja i formen. Den faller på publiken: 351 167 registrerade hobbyhöns ger 35–70 000 hushåll vid 5–10 höns per hushåll — under golvet 100 000 — och hushållstalet gick inte att belägga direkt.",
+    "why_it_could_print": "• Ankare i lager: Kellfri 'Tak till Hönsgård HHR300' 600D Oxford/PVC 1 488 kr (kellfri.se 2026-09-08) = 1,86 × 799; hela gårdar vidaXL 2 377–15 558 kr.\n• Hyllfrånvaro: ingen kedja säljer en formsydd huv; DTC-proxy 0 (Yahoo SE ×2, 2026-09-08); enda samma-form-golvet är en CDON 2-pack PE-presenning med oläst pris.\n• Ekonomi: 21,60 USD → landad 226–264 kr → 799 kr = 3,0–3,5×, BE-CPA 535–573 kr.\n• Material sett live 2026-09-05: video visar huven i bruk på gården; 127 US-recensioner.",
+    "main_risk": "Publiken: 351 167 hobbyhöns (Jordbruksverket) ÷ 5–10 per hushåll = 35 000–70 000 ägare, under fingeravtryckets golv; antal hushåll gick inte att källbelägga i dag. Näst: åtta storlekar i tum — ägaren vet inte gårdens mått utantill, och produkten ÄR en PE-presenning med öljetter (commodity i varje bygghandel).",
+    "hook_sv": "Blåser presenningen av hönsgården?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 799,
+    "reviews_gate": {
+     "count": 127,
+     "source": "US-sajten live 2026-09-05 09:49 UTC (v23/PORTFOLJ.md): ★4,6, 127 rec, 2 bilder, video",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Ad Library SE aldrig mätt för formen (ingen rad i källfilerna).",
+      "DTC-proxy 2026-09-08, Yahoo SE 'hönsgård tak regnskydd överdrag köp': kellfri.se (eget märke, formsytt tak till egen gård, 1 488 kr) + återförsäljare hast1.se, lantbutiken.se, bygghemma.se (samma Kellfri-tak); cdon.se 2-pack PE-överdrag + hela gårdar. 0 egna DTC/one-product-stores i formen.",
+      "Yahoo SE 'hönsgård överdrag skuggduk presenning kulspännare 2-pack pris': bara CDON hela gårdar (2026-09-08)."
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "CDON 'Hönsgård Överdrag – Skuggduk Presenning – Vattentät – UV-skydd PE med kulspännare 2-pack 3,5 × 2 m vit' — samma form; pris ej läsbart (produktsidan omdirigerar till kategori, cdon.se/search 404, 2026-09-08)",
+     "floor_price_sek": null,
+     "floor_url": "https://cdon.se/produkt/honsgard-overdrag-skuggduk-presenning-vattentat-uv-skydd-pe-med-kulspannare-2-pack-35-x-2-m-vit-60bd338d7cd45b6c/",
+     "anchor_name": "Kellfri Tak till Hönsgård HHR300 — grå 600D Oxford med vattentät PVC, skräddarsytt för Kellfris Premium-gård, 'I lager' 2026-09-08",
+     "anchor_price_sek": 1488,
+     "anchor_url": "https://kellfri.se/djur/hons-fjaderfa/honshus-honsgard/tak-till-honsgard-hhr300",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Hönsgården står ute och ägs redan; regn/sörja syns i sep–nov (ingen kranskyddsfälla); man 45–70 på landet köper lika ofta som kvinnan. Varning DNA steg 5: åtta storlekar i tum, ägaren måste mäta gården. Inte i KATALOG.md."
+    },
+    "audience": {
+     "size": null,
+     "source": "Jordbruksverket (via Newsworthy 2025-06-25): 351 167 höns registrerade som hobbydjur i hela landet. Antal hushåll/anläggningar: UNKNOWN — WebSearch ×2 och Yahoo SE gav inget hushållstal; Jordbruksverkets sidor listar bara registreringskravet. Härlett 35 000–70 000 hushåll vid 5–10 höns/hushåll (v23)",
+     "verdict": "KILL (härlett < 100 000) — direkt hushållstal UNKNOWN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601103333430208",
+      "url_se": "https://www.temu.com/se/g-601103333430208.html",
+      "title": "Chicken coop / poultry run cover, waterproof tarp with elastic cords (primär)",
+      "source": "live 2026-09-05 09:49 UTC (v23/PORTFOLJ.md); seznam-snippet 27 USD 2026-09-04",
+      "price_usd": 21.6,
+      "reviews": 127,
+      "why_this_one": "Verifierad live: 21,60 USD, ★4,6, 127 rec, video som visar huven på gården (klar PE med öljetter). Kontrollera storlekstabellen (åtta storlekar i tum)."
+     },
+     {
+      "goods_id": "601099639534098",
+      "url_se": "https://www.temu.com/se/g-601099639534098.html",
+      "title": "Chicken run cover waterproof tarp (alt, 19 USD)",
+      "source": "seznam-snippet+ (v22/fas2/djur.json)",
+      "price_usd": 19,
+      "reviews": 99,
+      "why_this_one": "Billigare (landad 198–233 kr → 799 = 3,4–4,0×) med 99+ rec; välj om primärens video visar fel produkt."
+     },
+     {
+      "goods_id": "601105812919031",
+      "url_se": "https://www.temu.com/se/g-601105812919031.html",
+      "title": "Chicken run cover waterproof tarp (alt, 19 USD)",
+      "source": "seznam-snippet+ (v22/fas2/djur.json)",
+      "price_usd": 19,
+      "reviews": 99,
+      "why_this_one": "Samma prisläge som ovan, 99+ rec — reserv."
+     },
+     {
+      "goods_id": "606061826278697",
+      "url_se": "https://www.temu.com/se/g-606061826278697.html",
+      "title": "Chicken run cover waterproof tarp (alt, 21 USD)",
+      "source": "seznam-snippet (v22/fas2/djur.json)",
+      "price_usd": 21,
+      "reviews": 91,
+      "why_this_one": "91 rec, 21 USD — reserv med lägst recensioner bland de prissatta alternativen."
+     },
+     {
+      "goods_id": "601101311897045",
+      "url_se": "https://www.temu.com/se/g-601101311897045.html",
+      "title": "Chicken run cover waterproof tarp (alt, 23 USD)",
+      "source": "seznam-snippet 2026-09-04 (51 rec) + seznam 2026-09-08 ($23)",
+      "price_usd": 23,
+      "reviews": 51,
+      "why_this_one": "Lägst recensioner (51) men dyrast (landad 240–282 kr → 799 = 2,8–3,3×) — reserv."
+     }
+    ],
+    "priority_for_live_check": 2,
+    "confidence": "MEDIUM",
+    "notes": "Alla gater utom G7 gröna/varning. 599 kr ger 2,3–2,7× (låga änden under 2,4) — priset måste vara 799. Granngården-sök ej läsbar (404). Om Axel accepterar publikrisken är detta den näst starkaste kandidaten; annars bara som andra produkt till en publik som redan svarat. Landad 226–264 kr; SE-Temu-pris 150–176 kr.",
+    "landed_low_sek": 226,
+    "landed_high_sek": 264,
+    "multiple_low": 3.02,
+    "multiple_high": 3.54,
+    "variants": "Åtta storlekar i tum ('large walk-in pen') — ägaren vet inte gårdens mått utantill; DNA steg 5 = varning. Sälj max två storlekar."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "tandvedsklyv",
+    "product_name_sv": "Tändvedsklyv i gjutjärn (ring + kil, Kindling Cracker-typ)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 40,
+    "winner_hypothesis": "Villa-/fritidshusägaren med kamin eller vedspis som klyver tändved med yxa på huggkubben i september när eldningssäsongen börjar — fingrarna nära eggen, syns i varje svensk vedbod nu. Vedträet ställs i ringen och slås ned med klubba, ingen yxa som slinter. DNA:t säger att den vinner på ankaret (Kindling Cracker 1 249–1 760 kr i 9+ butiker, 2,1–2,9 × vårt pris), stor publik (~1,1 M vedeldade eldstäder) och 599 kr = 3,0–3,5×. Den faller strukturellt: butiken säljer redan 'Manuell Vedklyv – Väggmonterad Gjutjärn' 1 489 kr (nära variant i KATALOG.md), och ingen listning ≤ 20 USD har material — den billiga är en packshot av en bultad ram.",
+    "why_it_could_print": "• Ankare i lager: Kindling Cracker Standard 1 249 kr (Hylte/PriceRunner 9+ butiker 2026-09-04), sagro.se 1 760 kr (2026-09-08), Granngården/smartasaker.se listar den = 2,1–2,9 × 599.\n• Ad Library SE 0 annonsörer på ringformen (2026-09-04); DTC-proxy 1 (setrimmer.se).\n• Ekonomi: 16,25 USD → landad 170–199 kr → 599 kr = 3,0–3,5×; tål +50 kr frakt (2,4–2,7×) men inte +100.\n• Publik ~1,1 M vedeldade eldstäder i bruk (MSB, sekundärkälla); huggkubb + vedhög är omisskännliga i flödet.",
+    "main_risk": "Nära variant av katalogens väggmonterade vedklyv (1 489 kr) och ingen listning med material ≤ 20 USD — fyra prövade, den billiga visar en bultad hexagonram (montering) utan video. Näst: setrimmer.se säljer samma form för 288/365 kr i lager, halva vårt pris.",
+    "hook_sv": "Klyver du tändved med yxa?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 599,
+    "reviews_gate": {
+     "count": 28,
+     "source": "US-sajten live 2026-09-04 22:2x UTC (v23/PORTFOLJ.md) för 601099583674464: ★4,9, 28 rec, 1 bild, ingen video. Nya ring-id:n (601099657775450, 601099594141689): UNKNOWN",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "adlibrary-prior",
+     "evidence": [
+      "Meta Ad Library SE 2026-09-04: 0 annonsörer på ring+kil-formen; 'vedklyv' 68 träffar = bolist.se hydraulklyv + VaruZone.se klyvkon 299 kr (annan form); Viking FireTools körde 15 okt–19 nov 2025, inte nu; IToolMax internationellt på väggmodellen (v22/fas1/tandvedsklyv.md)",
+      "DTC-proxy 2026-09-08 (Yahoo SE 'tändvedsklyv gjutjärn köp fri frakt'): setrimmer.se (egen butik, ringformen 288/365 kr) = 1; sagro.se, smartasaker.se, granngarden.se säljer ankaret Kindling Cracker; cdon.se ×2 + stikkan.com = väggformen"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "setrimmer.se 'Vedklyv för tändved – Standard' 288 kr (ord. 339) / 'Stor' 365 kr, i lager 1–3 dagar (2026-09-04); Aduro 295 / Northix 419 ej i lager",
+     "floor_price_sek": 288,
+     "floor_url": "https://setrimmer.se",
+     "anchor_name": "Kindling Cracker Standard 1 249 kr (Hylte Jakt & Lantman / PriceRunner 9+ butiker 2026-09-04); sagro.se 'Kindling Cracker Standard vedklyv' 4,8 kg 1 760 kr, 3–5 dagar (2026-09-08); Kindling Cracker King 1 799 kr",
+     "anchor_price_sek": 1249,
+     "anchor_url": "https://www.hylte-lantman.com/kindling-cracker-original-vedklyv",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "FAIL",
+     "reason": "KATALOG.md har redan 'Manuell Vedklyv – Väggmonterad Gjutjärn' 1 489 kr — samma funktion (manuell tändvedsklyvning i gjutjärn), samma köpare; ringen är en nära variant. Dessutom: enda prissatta ringlistningen visar bultad ram = montering (negativ rymd 30 %). Objekt/presens i sig PASS (veden ute, huggkubben nu)."
+    },
+    "audience": {
+     "size": 1100000,
+     "source": "MSB:s register över eldstäder: > 1,7 M vedeldade eldstäder, ~600 000 registrerade oanvända → ~1,1 M i bruk (sekundärkälla, v22/fas1/tandvedsklyv.md; MEDIUM på exakt tal)",
+     "verdict": "PASS"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601099657775450",
+      "url_se": "https://www.temu.com/se/g-601099657775450.html",
+      "title": "14.5in Splitter Solid Cast Log Splitter for Wood, 9lbs Heavy Duty with Half Ring, Manual Firewood Cracker",
+      "source": "Yahoo site:temu.com 2026-09-08 (ny)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Ny listning i exakt ringform (half ring, solid cast, 9 lbs ≈ 4 kg = rätt fraktklass). Pris/rec/video olästa — PASS bara om ≤ 20 USD och video i bruk."
+     },
+     {
+      "goods_id": "601099594141689",
+      "url_se": "https://www.temu.com/se/g-601099594141689.html",
+      "title": "12in XXL Splitter for Wood 9lbs Firewood Splitter with 6lbs Wood Splitting Ring Design, Manual Log Splitter",
+      "source": "Yahoo site:temu.com 2026-09-08 (ny)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "'Ring design' i titeln, 9 lbs. Pris/video olästa."
+     },
+     {
+      "goods_id": "601099792195367",
+      "url_se": "https://www.temu.com/se/g-601099792195367.html",
+      "title": "Cast Steel Manual Log Splitter, Heavy Duty Double-blade, Metal Fire Pit Ring Stand",
+      "source": "alt/tandvedsklyv.json (WebSearch)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "'Ring stand' explicit; enda i alt-filen med både ring och stativ i titeln. Pris oläst."
+     },
+     {
+      "goods_id": "601099702553211",
+      "url_se": "https://www.temu.com/se/g-601099702553211.html",
+      "title": "Portable Manual Log Splitter With Stand, High Carbon Steel, Protective Gloves included",
+      "source": "v22/fas1/tandvedsklyv.md prioritet 1; v23: 0 rec",
+      "price_usd": null,
+      "reviews": 0,
+      "why_this_one": "Handskar ingår → sannolikt hand i bild (materialkravet). 0 recensioner = orörd; pris oläst."
+     },
+     {
+      "goods_id": "601099583674464",
+      "url_se": "https://www.temu.com/se/g-601099583674464.html",
+      "title": "Splitter with Dual Blades, Hand Log Splitter, Cast Iron Firewood Cracker (känd primär)",
+      "source": "live 2026-09-04 22:2x UTC (v23/PORTFOLJ.md)",
+      "price_usd": 16.25,
+      "reviews": 28,
+      "why_this_one": "Enda ringlistning med läst pris (16,25 USD) och recensioner (28) — men 1 packshot av bultad ram, ingen video. Faller på G5 om inget annat hittas."
+     }
+    ],
+    "priority_for_live_check": 4,
+    "confidence": "MEDIUM",
+    "notes": "601099561039096 (halvring, bäst form) kostar 34,11 USD = landad 356–417 → 1,4–1,7× (kill); 601099811562065 51,81 USD (kill); 605775086907035 14,46 USD/18 rec är klyvkilar, inte ring; 601099597036357 58,98 USD/1,5K+ sålda (Yahoo 2026-09-08) för dyr. Seznam gav inga priser för de nya ring-id:na. Landad 170–199 kr; SE-Temu-pris 113–133 kr. Om Axel bedömer ringen som egen produkt (inte variant av väggklyven) återstår bara materialkravet — verifiera 601099657775450 först.",
+    "landed_low_sek": 170,
+    "landed_high_sek": 199,
+    "multiple_low": 3.01,
+    "multiple_high": 3.53,
+    "variants": "En variant; vikten avgör frakten — köp 3–5 kg-versionen, aldrig 8 kg."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "takoverdrag-husvagn",
+    "product_name_sv": "Taköverdrag husvagn/husbil 5–12 m (tak-only)",
+    "strong_hypothesis": true,
+    "hypothesis_score": 78,
+    "winner_hypothesis": "Husvagnsägaren (man 45–70 med småhus/fritidshus) ställer upp vagnen på gårdsplanen i september–oktober; taket är den enda ytan han inte når, och löv, barr och stående vatten ligger kvar till april — det är därifrån de svarta strimmorna på sidorna kommer. Old way är presenning med spännband som blåser av, eller ingenting. DNA:t säger vinnare: dyrt ägt objekt som står ute (motorhöljets struktur, kluster 1), problemet finns nu, varianten anges i meter som ägaren kan utantill, fackhandelsankare 1,5–2,9× över och priszon > 500 kr som aldrig förlorat.",
+    "why_it_could_print": "• Ankare i lager: Brunner Takskydd fr 1 790 kr (camping4u.se, 'fåtal kvar') = 2,24× vid 799; Hindermann Wintertime fr 2 295 kr; Campmaster Takskydd 1 196 kr (Campingvaruhuset, ord. 1 495, i lager, 500–1 000 cm) = 1,50×.\n• Hyllan: ingen kedja i tak-only-formen (Jula säljer bara helöverdrag Hamron/Kayoba); 0 DTC-annonsörer i proxyn; marketplace-golv Fyndiq 664 kr (210D, 7,5×3 m, i lager) = 0,83× vårt pris → varning, inte kill.\n• Prisutrymme: 26,52 USD → landad 277–325 kr → 799 kr = 2,46–2,89×, BE-CPA 474–522 kr.\n• Publik: 283 840 husvagnar varav 116 344 avställda (Trafikanalys 2024) — husvagnen är omisskännlig i flödet (CPM-proxy som utombordaren).",
+    "main_risk": "Materialet: primärlistningens hero är en amerikansk Class A-husbil på vit botten med inbränd text och videon visar en pickup (v23 live) — sju nya listningssökningar gav ingen tak-only-listning ≤ 30 USD med rätt fordon i bild. G5 avgörs vid live-hämtningen. Näst: Fyndiq säljer exakt formen (210D, 7,5×3 m) för 664 kr i lager.",
+    "hook_sv": "Står husvagnen ute i vinter?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 799,
+    "reviews_gate": {
+     "count": 48,
+     "source": "US-sajten live 2026-09-04 22:11 UTC (v23/PORTFOLJ.md) — 601101311828193. Alternativ 601102273698057: 99+ (seznam-snippet, helöverdrag)",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'husvagnsöverdrag köp fri frakt' + 'taköverdrag husvagn takskydd husbil' 2026-09-08: inga DTC/one-product-butiker i formen",
+      "Fackhandel (räknas inte som DTC): campingvaruhuset.se Campmaster Takskydd 1 196 kr https://www.campingvaruhuset.se/sv/campmaster-takskydd-husvagn-husbil",
+      "camping4u.se Brunner fr 1 790 / Hindermann fr 2 295 https://www.camping4u.se/sv/artiklar/vinter-isolering/takskydd/index.html",
+      "campingshopen.se (överdrag-kategori), getcamping.se (EuroTrail 1 599–2 395)",
+      "Marketplace: Fyndiq 664 kr (210D 7,5×3 m) https://fyndiq.se/produkt/vattentatt-skyddsoverdrag-for-husbilar-tillverkat-av-210d-oxford-tyg-for-husvagnar-75m-x-3m-0efeb3500c144eb6/ ; CDON 10,5×3 m 1 675 kr",
+      "Kedja: jula.se Hamron/Kayoba = helöverdrag, annan form"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Fyndiq: Vattentätt skyddsöverdrag 210D Oxford 7,5×3 m (tak-only), i lager 2026-09-08. (Prisjakt-utdrag 'Takskydd husvagn' generisk 210D 479 kr — bara sökutdrag, ej bekräftat)",
+     "floor_price_sek": 664,
+     "floor_url": "https://fyndiq.se/produkt/vattentatt-skyddsoverdrag-for-husbilar-tillverkat-av-210d-oxford-tyg-for-husvagnar-75m-x-3m-0efeb3500c144eb6/",
+     "anchor_name": "Brunner Takskydd (camping4u.se, 'fåtal kvar') = 2,24× vid 799. Även Campmaster Takskydd 1 196 kr (ord. 1 495) i lager på Campingvaruhuset = 1,50× (under 1,6); Hindermann Wintertime fr 2 295",
+     "anchor_price_sek": 1790,
+     "anchor_url": "https://www.camping4u.se/sv/artiklar/vinter-isolering/takskydd/index.html",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Husvagnen är ägd, står ute på uppställningsplats från september–oktober, och löv/barr/vatten på taket är fotograferbart i launchmånaden. Ingen Kranskyddsfälla: skyddet träs på när vagnen ställs upp (nu), inte mot en skada i februari."
+    },
+    "audience": {
+     "size": 283840,
+     "source": "Trafikanalys 2024 via Husvagn & Camping 2026-01-16 ('Sista resan för husvagnen'): 283 840 husvagnar, 116 344 avställda; bekräftat i WebSearch 2026-09-08 ('nästan 300 000, mer än var tredje avställd'). Husbilar UNKNOWN.",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601101311828193",
+      "url_se": "https://www.temu.com/se/g-601101311828193.html",
+      "title": "RV roof cover for motorhomes, travel trailers and buses, UV protection, 5–12 m",
+      "source": "v23 live 2026-09-04: 26,52 USD, ★4,6, 48 rec, 17 bilder, video",
+      "price_usd": 26.52,
+      "reviews": 48,
+      "why_this_one": "Enda tak-only-listningen ≤ 30 USD med recensioner; varianten i meter. Måste ses: hero (Class A + inbränd text) och video (pickup) — G5-risken."
+     },
+     {
+      "goods_id": "601102273698057",
+      "url_se": "https://www.temu.com/se/g-601102273698057.html",
+      "title": "Patio outdoor RV cover anti-sunshade heavy duty waterproof oxford fabric for motorhome, foldable",
+      "source": "seznam-snippet 2026-09-04/08: 28 USD, 99+ rec",
+      "price_usd": 28,
+      "reviews": 99,
+      "why_this_one": "Helöverdrag (annan form, 899 kr) — reserv om tak-only faller på material; starkast kommersiell signal i klustret."
+     },
+     {
+      "goods_id": "601099626431144",
+      "url_se": "https://www.temu.com/se/g-601099626431144.html",
+      "title": "3 sizes motorhome roof cover, all-weather roof tarp waterproof",
+      "source": "v23 material live 2026-09-05: 51,14 USD, 1 bild",
+      "price_usd": 51.14,
+      "reviews": null,
+      "why_this_one": "Rätt form (tak, 3 storlekar) men US-pris ger landad 534–626 = över taket. Bara om SE-priset visar sig ≤ 30 USD-ekvivalent."
+     },
+     {
+      "goods_id": "601099750739552",
+      "url_se": "https://www.temu.com/se/g-601099750739552.html",
+      "title": "RV roof cover for motorhomes/travel trailers/campers, polyester, UV/dust/snow/frost/leaves",
+      "source": "v23 material live 2026-09-05: 60,24 USD, 1 bild",
+      "price_usd": 60.24,
+      "reviews": null,
+      "why_this_one": "Titeln säljer på löv/snö (rätt nytta) men priset faller. Sist i kön."
+     }
+    ],
+    "priority_for_live_check": 1,
+    "confidence": "MEDIUM",
+    "landed_low_sek": 277,
+    "landed_high_sek": 325,
+    "multiple_low": 2.46,
+    "multiple_high": 2.89,
+    "variants": "Längd i meter 5–12 m — ägaren kan vagnlängden utantill, och fackhandeln säljer samma parameter (Campmaster 500–1 000 cm). Listningens faktiska SKU-lista är oläst.",
+    "notes": "Konfidens: pris US-proxy (HIGH på 26,52 USD live 2026-09-04, MEDIUM på SE-kurs); ankare HIGH (produktsidor lästa 2026-09-08); golv HIGH (Fyndiq-sida läst); publik HIGH; material LOW (ej sett av mig — v23:s beskrivning). Yahoo-kategorisidan 'roof-cover-for-travel-trailer-5050206311352-s' visar 4,9 (96 rec) — huvudsessionen kan hitta fler tak-only-id där. Priset 799 är golvet för 2,4× i båda ändarna (749 ger 2,31× i låga änden)."
+   },
+   "verdict": {
+    "concept_id": "takoverdrag-husvagn",
+    "hylla_refuted": true,
+    "hylla_reasons": [
+     "ANKARE ≥1,6× ÄR INTE I LAGER PÅ DJUPET: camping4u.se takskydd-sidan läst 2026-09-08 — Brunner Takskydd fr 1 790 kr och Hindermann Wintertime fr 2 295 kr står BÅDA som 'Fåtal kvar'. Det enda ankaret med full lagerbredd är Campmaster (campingvaruhuset.se, läst 2026-09-08): 1 196 kr (20 % rabatt, ord. 1 495) i alla tio storlekar 500–1000×300 cm = 1,50× vid 799 — under 1,6×-kravet. Även CDON/Buyersclub 'Takskydd för husvagn grå 600x300 non-woven' 1 163 kr i lager = 1,46×. Ankarbandet som faktiskt finns att köpa ligger 1,46–1,50×.",
+     "PRODUKTEN LIKNAR GOLVET, INTE ANKARET (DNA-variabel E, villkoret 'ser ut som ankaret'): ankarna (Brunner, Hindermann, Campmaster, vidaXL) är grå andningsaktiv non-woven/SFS; Temu-listningen är vattentät 210D Oxford silver/svart — exakt samma form och material som Fyndiq 664 kr (sida läst 2026-09-08: 7,5×3 m, 'I lager', lev 18–24 sep) och Amazon.se:s ≥6 listningar 'takskydd husbil/husvagn 210D-oxfordtyg' (Yahoo SE site:amazon.se 2026-09-08: B0CJY4DQ4F med 2,7/5, 7 rec; B0CTT91VWM; B0CFTY9B1X; B0CNCDJ2YN; B0CNR5PMK6; B0DNQ5XXJ8 — priser ej läsbara, amazon.se gav 503/500). CDON listar dessutom 210D-formen i 8,5×3 och 6,5×3 m (pris ej läst). Golvet är bekräftat ≤ 664 kr = 0,83× och sannolikt lägre (Prisjakt-utdrag 479 kr obekräftat) — i motsats till tofflor 9 (look-alike 229 kr) finns här ingen synlig 'Crocs' som vår produkt liknar.",
+     "HYLLAN ÄR TRÄNGRE ÄN 'INGEN KEDJA': utöver fackhandeln säljer vidaXL (vidaxl.se takskydd 600/800/900/1000×300 non-woven + via CDON; kedjeskalig Meta-annonsör i Sverige), walser-shop.se (takskydd 500×300 och 650×300), skrotahusvagn.com (VanProtect takskydd st. 8 + 'Takskydd L750–800 – Ny'), lagahusvagn.se (650 cm), butik.husvagn-svensson.se, campingshopen.se, billigcampingshop.se, getcamping.se, CDON (ProPlus 610279, Buyersclub, vidaXL) — ≥ 12 svenska säljare av exakt formen (Yahoo SE 'takskydd husvagn' + 'taköverdrag husvagn köp' + WebSearch 2026-09-08). 0 one-product-DTC stämmer, men hyllfrånvaro-poängen är 1 (fackhandel/marketplace), inte 2, och Ad Library kunde inte läsas — annonsörantalet är okänt, inte 0.",
+     "EKONOMIN HAR INGET UTRYMME: 799 kr är enligt bedömningen själv golvet för 2,4× i höga änden (325 landad). Med bekräftat marketplacegolv 664 kr och ankarband 1 163–1 196 kr kan priset varken sänkas mot golvet eller motiveras mot ett djupt lagerankare ≥1,6×. Inte över 1 000-taket, men låst.",
+     "KATALOG/KONTO: finns inte i v23/KATALOG.md och inte bland kontots förlorare i ground-truth.md — ingen dubblett. v23/PORTFOLJ.md rad 78 för konceptet som WATCH med 'listning FAIL'; v23/STATUS.md rad 18 säger detsamma. Bedömningen har uppgraderat till strong_hypothesis utan att listningsläget ändrats."
+    ],
+    "dna_refuted": true,
+    "dna_reasons": [
+     "STEG 3 MATERIALET FALLER PÅ DEN ENDA LISTNINGEN ≤ 30 USD: 601101311828193 sågs live 2026-09-04 (v23/STATUS.md rad 18): hero = amerikansk Class A-husbil på vit botten MED inbränd text, video = röd pickup med skynke. Det är exakt DNA avsnitt 6:s förlorarmönster 'leverantörsvideo som visar en annan fysisk produkt än listningen (7): ROAS 0,56' plus inbränd text. Bedömaren skriver själv 'material LOW (ej sett av mig)'. Alternativen 601099626431144 (51,14 USD) och 601099750739552 (60,24 USD) spräcker prisgrinden (landad 534–626). Sju listningssökningar i v23 + mina seznam/Yahoo-sök 2026-09-08 gav inget tak-only-id ≤ 30 USD med rätt fordon — bara två oprissatta kandidater (se corrections). Enligt DNA avsnitt 10 är materialöverförbarhet ett URVALSKRITERIUM: utan listning som klarar steg 3 är konceptet WATCH, inte TEST.",
+     "MONTERING + FEL MATERIALKLASS I ÄGARKULTUREN: skyddet måste dras upp över ett 2,6 m högt tak (stege) och spännas under vagnen — 'montering/installation' är 30 % av förlorarna (avsnitt 6). Svenska vinterförvaringsguider (Trygg-Hansa, husvagn.se, campingvaruhuset-guiden, husbilsklubben-tråden 'Täcka husbil/husvagn på vintern?' — WebSearch 2026-09-08) varnar uttryckligen för presenning som ligger tryckt mot vagnen (lackskador, kondens) och rekommenderar andningsaktivt överdrag. Temu-varan är en vattentät 210D-presenning med spännband — den old way guiderna avråder från — medan alla ankare är andningsaktiv non-woven/SFS. Identisk form på Amazon.se har 2,7/5 (7 rec) — kvalitets-/returvarning som saknas i main_risk.",
+     "VARIANTEN ÄR OLÄST: 'Längd i meter 5–12 m' kommer ur den översatta SE-titeln; SKU-listan är enligt bedömningen själv oläst. Listningen är US-orienterad (Class A, pickup) — anges storlekarna i fot ('18–20 ft') är det en variant ägaren INTE kan utantill (steg 5-varning). Osäkert → fällande tills SKU-listan setts.",
+     "PUBLIKEN ÄR RÄTT MEN OMÄTT PÅ RÄTT NIVÅ: 283 840 husvagnar / 116 344 avställda (Trafikanalys 2024 via Husvagn & Camping) stämmer och ≥100 000 håller. Men andelen som står ute hemma på gårdsplanen (mot inomhus-/takförvaring hos förvaringsfirmor som asalager.se, eller säsongsplats med skärmtak) är okänd, och husbilar är UNKNOWN. Hooken 'Står husvagnen ute i vinter?' (5 ord) är bra — det är inte där det faller.",
+     "'WHY IT COULD PRINT' ÄR PÅSTÅTT, INTE MÄTT: hela vinnarhypotesen är en analogi till motorhöljet. Kontots faktiska skydds-analoger är blandade: Båtmotorskyddet (launch 08-29, ROAS 3,50) och MC-Kapellet (2,20 mot BE 1,49) stödjer 'skydd till fordon vid uppställning'; Gräsklippartäcket (LOSER 1,29) och Kranskydd Frost (1,59, PAUSED) varnar för Oxford-skydd som säljs på framtida skada. Presens (löv/barr på taket i oktober, 'takskydd mot löv' står i svenska checklistor) håller — det är inte kranskyddsfällan. Steg 0, 1, 4, 6, 7 passerar; steg 3 faller och steg 2/5 är osäkra."
+    ],
+    "corrections": "(1) anchor_in_stock: 'true' är för starkt — Brunner 1 790 och Hindermann 2 295 står båda som 'Fåtal kvar' på camping4u.se 2026-09-08; enda ankaret med full lagerbredd är Campmaster 1 196 kr (ord. 1 495, 20 % rabatt, alla 10 storlekar 'Finns i lager') = 1,50×. (2) v23/PORTFOLJ.md:s 'Campmaster från 1 495 = 1,87×' och 'Brunner 2 999' är inaktuella; bedömningens 1 196/1 790 stämmer med sidorna 2026-09-08. (3) shelf_gate saknar: CDON/Buyersclub 'Takskydd för husvagn grå 600x300 cm non-woven' 1 163 kr i lager (lev 16–17 sep); CDON ProPlus 610279 takskydd; CDON 210D 8,5×3 och 6,5×3 m (priser ej lästa — 8,5×3-sidan redirectade till kategorin vid hämtning 2026-09-08); Campingvaruhusets egna 'Takskydd Husvagn Grå' art 67278 (3-lagers SFS) är SLUT ('Åter i lager'-bevakning). (4) advertiser_gate evidence saknar vidaXL (vidaxl.se 600/800/900/1000×300 non-woven, pris ej läsbart), walser-shop.se (takskydd 500×300 + 650×300, pris ej läst), skrotahusvagn.com (VanProtect takskydd st. 8 766–805 cm; 'Takskydd för husvagn L750–800 – Ny'), lagahusvagn.se, butik.husvagn-svensson.se och Amazon.se ≥6 listningar av 210D-takskydd (B0CJY4DQ4F 2,7/5 7 rec; B0CTT91VWM; B0CFTY9B1X; B0CNCDJ2YN; B0CNR5PMK6; B0DNQ5XXJ8 — amazon.se svarade 503/500, priser ej läsbara). (5) listing_candidates: lägg till 601099622982684 ('Kryt střechy obytného vozu – vhodný pro všechny obytné vozy, karavany a obytné auta; ochrana proti sněhu, ptáčím exkrementům, slunci a padajícímu listí' — seznam-snippet 2026-09-08, pris/betyg ej i utdraget) och 601099712826680 ('Odolná střešní plachta pro obytné vozy – chrání obytný vůz, karavan, kempovací přívěs, turistický autobus' — seznam-snippet 2026-09-08, inget pris). 601099606558550 (första seznam-träffen) är en car side awning, inte takskydd — stryk. (6) main_risk saknar Amazon.se-betyget 2,7/5 på identisk form och att svenska vinterförvaringsguider avråder från vattentät presenning mot lacken (materialklassen). (7) structural_gate bör nämna montering (stege, 2,6 m tak, band under vagnen). (8) Fyndiq-sidans egen text säger 'för husbilar, skåpbilar, bussar, husvagnar' 7,5×3 m — flat tak-only, som bedömningen säger; bekräftat i lager 2026-09-08.",
+    "confidence": "MEDIUM"
+   },
+   "status": "REFUTED"
+  },
+  {
+   "assessment": {
+    "concept_id": "flaggstangslampa",
+    "product_name_sv": "Solcellslampa för flaggstångstoppen",
+    "strong_hypothesis": false,
+    "hypothesis_score": 60,
+    "winner_hypothesis": "Villaägaren 45–70 med flaggstång på tomten: från oktober är det mörkt kl 16 och tomtens högsta objekt står svart hela kvällen; flaggregeln säger att en hissad flagga ska vara belyst. Lampan skruvas på toppen i stället för knoppen — ingen elektriker, ingen kabel över gräsmattan. DNA:t: ägt objekt som står ute året runt, universellt, noll montering, och ett synligt märkesankare (Flaggmax LED Max 849 kr, i lager i dag) som produkten ser ut som. Men det är ett want, inte en skada som syns, och publiken saknar ett mätt tal.",
+    "why_it_could_print": "• Ankare i lager 2026-09-08: Flaggmax Flaggstångsbelysning LED Max 849 kr (ord. 999) = 1,89× vid 449; Flaggstångsexperten solcellsbelysning 598,75 kr = 1,33×.\n• Annonsörer: Ad Library SE 0 på belysningsformen (2026-09-05).\n• Material: leverantörsvideon visar riktig montering på stångtoppen inom 3 s (v23 live); heron bär amerikansk flagga (måste bytas).\n• Prisutrymme: 13,26 USD → landad 138–162 kr → 449 kr = 2,77–3,24×, BE-CPA 287–311 kr.\n• Ingen kedja i formen (Clas Ohlson Northlight är 230 V-slinga, ej i lager).",
+    "main_risk": "Passformen mot svenska stångtoppar (gängad tapp/knopp på 6–12 m glasfiberstänger) — listningen anger 'fits 15–25 ft poles'; passar den inte är returgraden dödlig. Näst: Amazon.se Brubaker 344,99 kr i lager (2026-09-05) under vårt pris, fyra svenska specialistbutiker säljer formen, och publiken har inget mätt tal (G7 UNKNOWN → ingen stark hypotes).",
+    "hook_sv": "Står flaggstången mörk i höst?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 449,
+    "reviews_gate": {
+     "count": 167,
+     "source": "US-sajten live 2026-09-05 09:51 UTC (v23/material/605583893712528) — 605583893712528, ★4,9",
+     "verdict": "OK"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "adlibrary-prior",
+     "evidence": [
+      "Meta Ad Library SE ACTIVE 2026-09-05 (v23/dolda-parlor.json): 'flaggstångsbelysning' = 0; 'flaggstång' = 5 (Flaggstångs Experten stänger, Flaggmax flaggor, Skultuna, Langkilde DKK) — 0 på belysningsformen",
+      "Proxy-bild 2026-09-08 (Yahoo SE): fyra specialistbutiker med egen domän säljer formen — flaggmax.se (Shopify-brand, LED Max 849) https://flaggmax.se/collections/belysning ; flaggstangsexperten.se 598,75 https://flaggstangsexperten.se/produkt/solcellsbelysning/ ; allflagg.se (26 LED, pris oläst) https://allflagg.se/flaggtillbehor/belysning/solcellslampa-till-flaggstang ; uteprodukter.se (oläst, redirect)",
+      "Ingen av dem är en one-product-/dropship-butik — de är flaggstångs-/flaggfackhandel; hade proxyn räknat dem rakt av vore det ≥ 3 = kill",
+      "Marketplace: Fyndiq 48 LED toppmonterad (pris oläst), Amazon.se Brubaker 344,99 (2026-09-05)"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Amazon.se Brubaker flaggstångs-solcellslampa 26 LED, i lager (mätt 2026-09-05, v23/STATUS.md; produktsidan gav 500/503 i dag 2026-09-08). Generisk 426,63 samma dag. Flaggstångsexperten solcellsbelysning 598,75 kr (läst 2026-09-08)",
+     "floor_price_sek": 345,
+     "floor_url": "https://www.amazon.se/Brubaker-flaggst%C3%A5ngs-solcellslampa-flaggst%C3%A5ng-flaggst%C3%A5ngsbelysning-flaggt%C3%A4ckande/dp/B09L56C3T4",
+     "anchor_name": "Flaggmax Flaggstångsbelysning LED Max (solcell, toppmonterad) 849 kr, ord. 999 — 'I lager' 2026-09-08 (var slutsåld 2026-09-05)",
+     "anchor_price_sek": 849,
+     "anchor_url": "https://flaggmax.se/collections/belysning",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Flaggstången är ägd och står ute året runt; mörkret från oktober syns i launchmånaden och lampan ersätter knoppen utan verktyg. Det är ett want (som klistermärkena), inte en skada — kräver noll friktion och pris under 500."
+    },
+    "audience": {
+     "size": null,
+     "source": "Ingen officiell källa. flaggstang.se: 'flera hundra tusen flaggstänger' = uppskattning (v23). WebSearch ×2 + Yahoo SE 2026-09-08 gav inget tal (SCB/Formenta saknar räkning).",
+     "verdict": "UNKNOWN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "605583893712528",
+      "url_se": "https://www.temu.com/se/g-605583893712528.html",
+      "title": "Luxurious Solar Flagpole Light – IP65, 26 LED, suitable for 15–25 ft flagpoles",
+      "source": "v23 live 2026-09-05: 13,26 USD, ★4,9, 167 rec, 2 bilder, video",
+      "price_usd": 13.26,
+      "reviews": 167,
+      "why_this_one": "Primär: video visar montering på stångtoppen inom 3 s; rec i OK-bandet. Kolla fästets diameter i galleriet."
+     },
+     {
+      "goods_id": "601099979928378",
+      "url_se": "https://www.temu.com/se/g-601099979928378.html",
+      "title": "Outdoor solar flagpole lights / flag lights / camping tent / umbrella top lights, waterproof",
+      "source": "seznam-snippet 2026-09-08: Cena $14, 4,8 / 96 %, 99+",
+      "price_usd": 14,
+      "reviews": 99,
+      "why_this_one": "Alternativ med 99+ rec — men multi-use-titel (tält/parasoll) antyder annan fästform; verifiera att den är flaggstångs-toppmonterad."
+     },
+     {
+      "goods_id": "601099527265647",
+      "url_se": "https://www.temu.com/se/g-601099527265647.html",
+      "title": "1pc Solar Flagpole Light 136 LED, suitable for flagpoles 15–25 ft, automatic switch",
+      "source": "Yahoo (AU-sajten) 2026-09-08; kategorisidan 'flag-poles-lights' visar 136 LED $22,03, 4,8 (20 rec)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Spec-skillnaden (136 LED mot Brubakers 26) som syns i bild — om priset ≤ 22 USD håller 2,4× vid 449 (landad max 269)."
+     }
+    ],
+    "priority_for_live_check": 2,
+    "confidence": "MEDIUM",
+    "landed_low_sek": 138,
+    "landed_high_sek": 162,
+    "multiple_low": 2.77,
+    "multiple_high": 3.24,
+    "variants": "En SKU (26 LED, svart). Fästet: 'fits 15–25 ft poles', skruvas på toppens tapp/klämmer runt toppen — svensk toppdiameter/gänga okänd (ägaren kan den inte utantill) → provexemplar mot en svensk 8 m-stång före launch.",
+    "notes": "Konfidens: ankare HIGH (Flaggmax-sidan läst i dag, i lager); golv MEDIUM (Amazon 345 tre dagar gammalt, sidan oläsbar i dag); annonsörer MEDIUM (Ad Library 3 dagar gammalt); publik UNKNOWN — det är den gate som fäller den starka hypotesen, inte hyllan. Faller till stark om ett publiktal ≥ 100 000 hittas (branschorgan/Formenta) och ett provexemplar passar. Priset 449 valt för ankarkvoten 1,89× — vid 399 blir Brubaker-golvet 0,86× och ankaret 2,13×."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "eldblasare",
+    "product_name_sv": "Teleskopisk eldblåsare i rostfritt (2-pack)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 22,
+    "winner_hypothesis": "Ägaren av braskamin eller bålpanna blåser liv i glöden med munnen eller en tidning; blåsröret riktar luftstrålen i glöden utan aska i ansiktet. Objektet är ägt och används kroppsligt i höst — men DNA:t säger nej: 249 kr ligger under 300-kronorsgränsen, produkten är ett gadget-/presentköp som jämförelsehandlas, materialet är 2 recensioner och 1 bild, och formen säljs redan av ett svenskt dropship-nätverk.",
+    "why_it_could_print": "• Prisutrymme på papperet: 2,46 USD → landad 26–30 kr/st, 2-pack 51–60 kr → 249 kr = 4,1–4,8×.\n• Ankare: Röda Stjärnan teleskopiskt blåsrör 419 kr = 1,68× vid 249.\n• Publik: ~1,1 M vedeldade eldstäder i bruk (MSB).\n• Inget mer är mätt: 2 recensioner, ingen video, textig hero.",
+    "main_risk": "Annonsör-proxyn: nio svenska butiker säljer exakt formen, varav sex med identisk produktslug 'teleskopiskt-blasror-i-rostfritt-for-eldstart' (vildmarksexperten.com, vaderjacka.com, camppryl.com, liggunderlagbt.com, campingstolsvea.com, loyalgrocery.com) = ett dropship-nätverk som redan annonserar den — och Mylar säljer den för 69,90 kr. Priset 249 är dessutom under 300-kronorsgränsen (G6 kill).",
+    "hook_sv": "Blåser du på elden med munnen?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 249,
+    "reviews_gate": {
+     "count": 2,
+     "source": "US-sajten live 2026-09-05 08:44 UTC (v23/material/601099516094068) — ★5,0, 2 rec. 2-packslistningen 601105175249704 oläst",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 9,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'eldblåsare teleskopisk blåsrör eld köp' + 'blåsrör för eldning teleskop rostfritt pris' 2026-09-08",
+      "vildmarksexperten.com (Shopify, Boles Marketing AB, Bollnäs — svensk DTC) https://vildmarksexperten.com/products/teleskopiskt-blasror-rostfritt-eldstart",
+      "vaderjacka.com, camppryl.com, liggunderlagbt.com, campingstolsvea.com, loyalgrocery.com — samma produktslug '/product/teleskopiskt-blasror-i-rostfritt-for-eldstart/' = svenskt dropship-nätverk",
+      "rodastjarnan.com 419 kr https://rodastjarnan.com/verktyg-och-utrustning/bra-att-ha/teleskopiskt-blasror-for-oppen-eld-45863",
+      "savenmaa.se https://www.savenmaa.se/eldstartarens-blasror-teleskopisk/p/arm0000003335/",
+      "lunzo.se (dropship-aggregator) https://www.lunzo.se/teleskopisk-rostfri-blasror-15-60-cm-latt-33-g-praktisk-hjalpmedel-for-att-gora-upp-eld-camping-vandring-grillning",
+      "Ad Library SE 0 (v23, 2026-09-05) — proxyn säger motsatsen: ≥ 3 = kill"
+     ],
+     "verdict": "KILL"
+    },
+    "shelf_gate": {
+     "floor_name": "Mylar.se 'Blåsrör för eldning' 69,90 kr/st (v23 2026-09-05; 5-/10-pack finns)",
+     "floor_price_sek": 69.9,
+     "floor_url": "https://www.mylar.se/",
+     "anchor_name": "Röda Stjärnan teleskopiskt blåsrör för öppen eld 419 kr (v23 2026-09-05; produktsidan i Yahoo-träff 2026-09-08, pris ej i utdraget)",
+     "anchor_price_sek": 419,
+     "anchor_url": "https://rodastjarnan.com/verktyg-och-utrustning/bra-att-ha/teleskopiskt-blasror-for-oppen-eld-45863",
+     "anchor_in_stock": null,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Eldstaden är ägd och används i höst; blåsröret används kroppsligt. Passerar steg 0–1 — men bär tre negativ-rymd-markörer: pris < 300 kr, gadget/present som jämförelsehandlas, och braskaminen (halva målgruppen) står inomhus."
+    },
+    "audience": {
+     "size": 1100000,
+     "source": "MSB: ~1,1 M vedeldade eldstäder i bruk (via jakt/sverige-viabilitet-bedomning.md 2026-09-04)",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601105175249704",
+      "url_se": "https://www.temu.com/se/g-601105175249704.html",
+      "title": "2-pack teleskopiskt blåsrör (KONCEPT.json)",
+      "source": "v23/present-hobby.json — pris/rec oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "2-packslistningen som konceptet bygger på; oläst."
+     },
+     {
+      "goods_id": "605587249199471",
+      "url_se": "https://www.temu.com/se/g-605587249199471.html",
+      "title": "2pcs pack portable stainless steel retractable fire bellows pocket fire blower tube, BBQ/camping/fireplace",
+      "source": "Yahoo (de-en) 2026-09-08 — pris/rec oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Färdig 2-pack med 'fireplace' i titeln."
+     },
+     {
+      "goods_id": "601102339578104",
+      "url_se": "https://www.temu.com/se/g-601102339578104.html",
+      "title": "Heavy duty collapsible fire blower, extendable 5,91–23,62\", windproof, stainless",
+      "source": "seznam-snippet 2026-09-08 (troligt block: 4,9 / 98 %, 12 rec, Cena $10 — kopplingen id↔utdrag osäker)",
+      "price_usd": 10,
+      "reviews": 12,
+      "why_this_one": "Längre rör (60 cm) — den form Röda Stjärnan säljer för 419."
+     },
+     {
+      "goods_id": "601099516094068",
+      "url_se": "https://www.temu.com/se/g-601099516094068.html",
+      "title": "1pc collapsible stainless steel fire blowing tube for camping, cooking, survival",
+      "source": "v23 live 2026-09-05: 2,46 USD, ★5,0, 2 rec, 1 bild, ingen video",
+      "price_usd": 2.46,
+      "reviews": 2,
+      "why_this_one": "Billigaste; bara som prisreferens."
+     },
+     {
+      "goods_id": "601099551860390",
+      "url_se": "https://www.temu.com/se/g-601099551860390.html",
+      "title": "5/6/8 sections blow fire tube blowpipe stainless steel telescopic fire blower",
+      "source": "Yahoo (ge-en) 2026-09-08 — pris/rec oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Sektionsvarianter; reserv."
+     }
+    ],
+    "priority_for_live_check": 5,
+    "confidence": "HIGH",
+    "landed_low_sek": 51,
+    "landed_high_sek": 60,
+    "multiple_low": 4.14,
+    "multiple_high": 4.84,
+    "variants": "En variant (5–8 sektioner, 48–60 cm utdraget). 2-pack (kamin + bålpanna) är hela prisidén.",
+    "notes": "Två oberoende kills: G2-proxyn (9 butiker, 6 i ett dropship-nätverk) och G6 (249 kr < 300). Att prissätta 2-packet till 329 kr (5,5–6,4×) räddar G6 men inte G2. Landad avser 2-pack (2 × 26–30 kr). Konfidens HIGH på proxyn (URL:er lästa), MEDIUM på golv/ankare (v23-tal, ej omlästa i dag)."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "sakerhetsbom",
+    "product_name_sv": "Löstagbar säkerhetsbom dörr/fönster (tomma fritidshuset)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 34,
+    "winner_hypothesis": "Fritidshusägaren (607 000 hus, SCB) stänger stugan sista helgen i oktober och vet att ett vanligt lås inte håller för en kofot när huset står tomt till maj; bommen kilas under handtaget och tas med hem i vår. Objektet är ägt och står ute — men skadan (inbrottet) inträffar nov–apr och syns inte i september: det är Kranskydd Frost-mönstret (ROAS 1,59, pausad), plus ett latent behov som annonsen först måste övertyga om (55 % av kontots förlorare).",
+    "why_it_could_print": "• Publik: 607 000 fritidshus (SCB).\n• Hyllan: ingen kedja i formen (Clas Ohlsons 'Dörrspärr' 249 kr är en Habo-hake 110×63 mm, ej i lager); 0 DTC-annonsörer i proxyn (brincksafe.se/skyddsfaktorn.se/stgeorge.se säljer fasta stållåsbommar 735–1 285 kr, annan form).\n• Material: textfri hero med två kontextbilder, video (v23 live).\n• Prisutrymme bara vid 649 kr: 20,75 USD → landad 217–254 kr → 2,56–3,00× (vid 599: 2,36× i låga änden = fail).",
+    "main_risk": "Strukturellt: skadan kommer nov–apr och syns inte i launchmånaden (Kranskyddsfällan) och behovet är latent. Dessutom 425 recensioner (varning), Fyndiq 261 kr identisk i lager (2026-09-05) och CDON 647 kr i lager i dag — utan något märkesankare ≥ 1,6× i samma form, så 649 kr står naket mot 261.",
+    "hook_sv": "Låser du stugan ordentligt i vinter?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 649,
+    "reviews_gate": {
+     "count": 425,
+     "source": "US-sajten live 2026-09-05 07:30 UTC (v23/material/601099970240430) — ★4,8, 425 rec. Alternativ 601101482201265: 19 rec (seznam-snippet 2026-09-04)",
+     "verdict": "WARN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'säkerhetsbom dörr fönster justerbar köp fri frakt' 2026-09-08: 0 svenska DTC-butiker i den teleskopiska formen",
+      "Annan form (fast stållåsbom): brincksafe.se https://brincksafe.se/sv/categories/lasbommar ; skyddsfaktorn.se Basic 600–1 100 mm 735–1 285 kr https://www.skyddsfaktorn.se/lasbommar-intrangsskydd/lasbom-lagpris/ ; stgeorge.se https://www.stgeorge.se/collections/lasbommar",
+      "Marketplace i samma form: CDON 'Kraftig dörrsäkerhetsstång – justerbar' 647 kr (säljare Pure Craft Goods, i lager 2026-09-08) https://cdon.se/produkt/kraftig-dorrsakerhetsstang-justerbar-for-ytterdorr-skjutdorr-fonster-altandorr-lagenhet-hus-och-hotell-6181550ea70457c5/ ; Fyndiq 261 kr identisk (2026-09-05, v23) — dagens Fyndiq-URL gav 404",
+      "Yahoo SE 'dörrspärr inbrott teleskopisk stång fritidshus butik' gav bara YouTube-träffar",
+      "Ad Library: ej sökt i någon körning (batch1 skrev 'ej sökt')"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Fyndiq identisk teleskopbom 261 kr i lager (2026-09-05, v23/STATUS.md; 2026-09-08 gav produkt-URL:en 404). Bekräftat i dag: CDON 'Kraftig dörrsäkerhetsstång justerbar' 647 kr i lager. Clas Ohlson 'Dörrspärr' 249 = Habo-hake, annan form",
+     "floor_price_sek": 261,
+     "floor_url": "https://cdon.se/produkt/kraftig-dorrsakerhetsstang-justerbar-for-ytterdorr-skjutdorr-fonster-altandorr-lagenhet-hus-och-hotell-6181550ea70457c5/",
+     "anchor_name": "Inget märkesankare i samma form. Närmast: Skyddsfaktorn Basic låsbom 1 100 mm 865 kr / Basic Plus 1 075 kr (fast stålbom, annan klass); ABUS FTS16 fönsterlås 785 kr (fast montage, PriceRunner v23)",
+     "anchor_price_sek": 865,
+     "anchor_url": "https://www.skyddsfaktorn.se/lasbommar-intrangsskydd/lasbom-lagpris/",
+     "anchor_in_stock": null,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "FAIL",
+     "reason": "Kranskyddsfällan: skadan (inbrott i tomt hus) inträffar nov–apr, syns inte i september–oktober och kan inte fotograferas i en svensk trädgård i launchmånaden. Behovet är latent (annonsen måste först övertyga om att problemet finns) — 55 % av kontots förlorare, 1/9 vinnare."
+    },
+    "audience": {
+     "size": 607000,
+     "source": "SCB 'Borta bra men nära bäst för fritidshuset' (scb.se, 2026): 607 000–610 000 fritidshus (batch1/fritidshus.json)",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601099970240430",
+      "url_se": "https://www.temu.com/se/g-601099970240430.html",
+      "title": "Door Security 52 inch Adjustable Door Stoppers 1/2 Pack Heavy Duty, Security Bars for Windows",
+      "source": "v23 live 2026-09-05: 20,75 USD, ★4,8, 425 rec, 3 bilder, video",
+      "price_usd": 20.75,
+      "reviews": 425,
+      "why_this_one": "Primär: rätt form (teleskop, dörr + fönster), material PASS enligt v23. Rec i varningsbandet."
+     },
+     {
+      "goods_id": "601101152066240",
+      "url_se": "https://www.temu.com/se/g-601101152066240.html",
+      "title": "Door stoppers security bar, sliding glass door lock, adjustable with interchangeable caps, rubber tips",
+      "source": "seznam-snippet 2026-09-08 (troligt block: 4,8 / 96 %, 99+, Cena $19 — kopplingen id↔utdrag osäker)",
+      "price_usd": 19,
+      "reviews": 99,
+      "why_this_one": "Samma form, utbytbara ändar (dörr + skjutdörr); billigare landad om $19 stämmer."
+     },
+     {
+      "goods_id": "601101482201265",
+      "url_se": "https://www.temu.com/se/g-601101482201265.html",
+      "title": "2pcs Heavy Duty Door Blocker Anti-Pry Metal Construction Door Security Barrier",
+      "source": "seznam-snippet 2026-09-04: Cena $11, 94 %, 19 rec",
+      "price_usd": 11,
+      "reviews": 19,
+      "why_this_one": "2-pack för 399 kr = 2,96–3,47× — men formen ('door blocker') kan vara golvkil, inte teleskopbom. Verifiera."
+     },
+     {
+      "goods_id": "601105054000428",
+      "url_se": "https://www.temu.com/se/g-601105054000428.html",
+      "title": "Heavy duty adjustable window and glass door safety rod, sliding lock, non-slip rubber",
+      "source": "seznam 2026-09-08 — pris/rec ej säkert kopplat",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Fönstervarianten; reserv."
+     }
+    ],
+    "priority_for_live_check": 4,
+    "confidence": "HIGH",
+    "landed_low_sek": 217,
+    "landed_high_sek": 254,
+    "multiple_low": 2.56,
+    "multiple_high": 3,
+    "variants": "En variant, självjusterande 52\" (passar dörr och fönster utan mätning), 1- eller 2-pack. Gate 5 PASS.",
+    "notes": "Faller på strukturen (G3 FAIL), inte på hyllan: under nya regeln är Fyndiq 261/CDON 647 bara en varning eftersom proxyn ger 0 annonsörer. Ekonomin kräver 649 kr för 2,4× i båda ändarna — samma pris som CDON:s marketplace-listning. Konfidens HIGH på struktur och golv (CDON-sida läst i dag), MEDIUM på Fyndiq 261 (tre dagar gammalt, URL 404 i dag)."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "grindhjul",
+    "product_name_sv": "Fjäderbelastat stödhjul till grinden",
+    "strong_hypothesis": false,
+    "hypothesis_score": 44,
+    "winner_hypothesis": "Fastighetsägaren med tung trä- eller gårdsgrind: grinden har satt sig på gångjärnen och släpar i grus och lera — i oktober är marken sörja och han lyfter den varje gång. Hjulet med fjäder bär upp grinden så den svänger fritt; payoffen syns i en stillbild. Ägt objekt ute, fyraordshook, rätt kön och ålder — men friktionen är kronisk (presens 1, inte 2: han har levt med den i år), CDON säljer exakt formen för 249 kr och det finns inget märkesankare över vårt pris.",
+    "why_it_could_print": "• Hooken: 'Släpar grinden i leran?' — bara grindägaren svarar ja.\n• Annonsörer: 0 DTC i proxyn — bara fackhandel (AFSA 384, Lantkompaniet VOSS 559, Djurgårdens Ridsport) och marketplace (CDON 249/458).\n• Prisutrymme: 18,89 USD → landad 197–231 kr → 599 kr = 2,59–3,04×, BE-CPA 368–402 kr.\n• Ingen kedja i formen (Biltema/Jula har släpvagnsstödhjul, inte grindhjul — v22 2026-09-04); Granngården 0 träffar 2026-09-08.",
+    "main_risk": "Inget ankare: dyraste svenska i lager är VOSS.farming 559 kr (0,93× vårt pris, ej fjädrat) medan CDON säljer fjäderbelastat grindhjul för 249 kr och AFSA för 384 kr i lager — tofflor 9-mönstret (look-alike under, inget märke över). Näst: presens 1 (grinden släpar året om) och montering med U-bult som kan kräva mätning.",
+    "hook_sv": "Släpar grinden i leran?",
+    "q4_label": "EVERGREEN",
+    "se_price_sek": 599,
+    "reviews_gate": {
+     "count": 77,
+     "source": "US-sajten live 2026-09-05 07:31 UTC (v23/material/601102369829095) — ★4,8, 77 rec. Seznam-utdrag 2026-09-08 visar äldre 14 rec / $18",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'grindhjul stödhjul grind fjädrande köp' + 'stödhjul till grind pris nordmagasinet cdon lantkompaniet' 2026-09-08: 0 DTC/one-product-butiker",
+      "Fackhandel (räknas inte): afsa.nu Stödhjul för grind Large 368 mm 384 kr, fjäderbelastat, i lager https://www.afsa.nu/product/stodhjul-for-grind-large-368mm ; lantkompaniet.se VOSS.farming 559 kr i lager https://www.lantkompaniet.se/stoedhjul-pu-till-gardsgrind-inkl-u-bult-voss-farming.html ; djurgardensridsport.com (pris oläst); Ahlsell",
+      "Marketplace: CDON 'Fjäderbelastat grindhjul 100 mm 57 kg' 249 kr i lager, '4 tum 70 kg' 458 kr https://cdon.se/bygg/staket-avsparrningar/staket-grindtillbehor/ ; nordmagasinet.com = CDON/Fyndiq-återförsäljare",
+      "Ad Library SE 'grind staket trädgård' = 0 (v22, 2026-09-04)"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "CDON 'Fjäderbelastat grindhjul 100 mm för grindar – 57 kg' i lager 2026-09-08 (samt '4 tum 70 kg' 458 kr); AFSA Large 368 mm 384 kr i lager (fackhandel)",
+     "floor_price_sek": 249,
+     "floor_url": "https://cdon.se/bygg/staket-avsparrningar/staket-grindtillbehor/",
+     "anchor_name": "Inget ankare ≥ 1,6× (≥ 958 kr) hittat. Dyraste i lager: VOSS.farming stödhjul PU till gårdsgrind inkl. U-bult 559 kr (Lantkompaniet) = 0,93× — ej fjädrat. Djurgårdens Ridsport 'kraftig' pris oläst",
+     "anchor_price_sek": 559,
+     "anchor_url": "https://www.lantkompaniet.se/stoedhjul-pu-till-gardsgrind-inkl-u-bult-voss-farming.html",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Grinden är ägd och står ute; en släpande grind går att fotografera i oktoberlera. Passerar steg 0–1 formellt, men presens är 1 (kronisk friktion, ingen säsongsspets) och U-bultsmonteringen är en negativ-rymd-markör."
+    },
+    "audience": {
+     "size": 76800,
+     "source": "Jordbruksverket 'Hästar och anläggningar med häst 2016': 76 800 platser med häst, 355 500 hästar (WebSearch 2026-09-08) = gårdsgrindsklassen < 100 000. Småhus ~2,0 M (SCB) men andelen med tung grind är inte mätt → totalen UNKNOWN.",
+     "verdict": "WARN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601102369829095",
+      "url_se": "https://www.temu.com/se/g-601102369829095.html",
+      "title": "1pc/2pcs Heavy Duty Spring Loaded 4 Inch Rubber Gate Wheel, 250–500 lbs",
+      "source": "v23 live 2026-09-05: 18,89 USD, ★4,8, 77 rec, 3 bilder packshot, ingen video",
+      "price_usd": 18.89,
+      "reviews": 77,
+      "why_this_one": "Primär: enda listningen med bekräftat pris under taket; 1/2-pack."
+     },
+     {
+      "goods_id": "601099566724772",
+      "url_se": "https://www.temu.com/se/g-601099566724772.html",
+      "title": "1pc gate wheels spring loaded gate casters 4 inch heavy duty 220 lbs, 360° swivel rubber",
+      "source": "Yahoo 2026-09-08 (ad-en/rs-en) — pris/rec oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Samma form, svängbart hjul; alternativ om primären saknar SE-lager."
+     },
+     {
+      "goods_id": "601099553933827",
+      "url_se": "https://www.temu.com/se/g-601099553933827.html",
+      "title": "1pack 4\" gate wheels spring loaded gate casters heavy duty 220 lbs swivel rubber",
+      "source": "Yahoo 2026-09-08 — pris/rec oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Trolig 1-pack-syskon till ovan."
+     },
+     {
+      "goods_id": "601099594874458",
+      "url_se": "https://www.temu.com/se/g-601099594874458.html",
+      "title": "Heavy duty fence/farm gate wheel, adjustable U-bolt, anti-sagging caster",
+      "source": "v22/fas2/djur.json 2026-09-04 — pris oläst (syskon $45/$85 över taket)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Gårdsgrindsformen (U-bult) som VOSS/AFSA säljer — bara om priset ≤ 25 USD."
+     },
+     {
+      "goods_id": "601099552675528",
+      "url_se": "https://www.temu.com/se/g-601099552675528.html",
+      "title": "1pack 4\" gate wheels spring loaded gate casters heavy duty 220 lbs",
+      "source": "Yahoo 2026-09-08 (mt-en) — pris/rec oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Reserv."
+     }
+    ],
+    "priority_for_live_check": 3,
+    "confidence": "MEDIUM",
+    "landed_low_sek": 197,
+    "landed_high_sek": 231,
+    "multiple_low": 2.59,
+    "multiple_high": 3.04,
+    "variants": "1 eller 2 hjul; infästningen (U-bult/bygel) ska passa grindens rörprofil eller regel — ägaren ser profilen men kan behöva mäta (gate 5 varning).",
+    "notes": "Vid 549 kr blir låga änden 2,38× (fail) → 599 krävs, vilket gör gapet till CDON 249 och AFSA 384 större utan ankare. G4 är formellt varning (proxy 0), men DNA:ts ankarvillkor är inte uppfyllt: ingen svensk märkesprodukt över 559 kr. Konfidens HIGH på golv/ankare (tre produktsidor lästa i dag), MEDIUM på publik (hästplatser 2016 är en delmängd; villagrindar omätt)."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "bilspohallare",
+    "product_name_sv": "Bilspöhållare med sugkopp för bilruta/tak, 4 spön",
+    "strong_hypothesis": true,
+    "hypothesis_score": 64,
+    "winner_hypothesis": "Den bilburna gäddfiskaren (sep–nov, flyttar mellan vikar flera gånger per dag) har sina riggade spön löst i baksätet där de trasslar och knäcks. Hållaren fäster med sugkoppar på rutan/taket och tar spöna utanpå bilen mellan fiskeplatserna. Kontot har redan bevisat köparen och payoffen: båtspöhållaren (289 kr) gav 307 köp, 1,49 enheter/order och vinnarannonsen heter 'Aldrig mer trassliga fiskespön' — samma ägare, samma problem, nytt objekt (bilen).",
+    "why_it_could_print": "- Ankare i lager: Guideline Vac-Rac Standard 1 699 kr och SUMO Suction Mount 2 399 kr hos Sportfiskeprylar (2026-09-08) = 4,3–6,0× av 399 kr; fackhandelns egen 'Bilspöhållare Vacuum' 499 kr är slutsåld.\n- Prisutrymme: 7,56 USD (US live 2026-09-05) → landad 79–93 kr → 4,3–5,1× vid 399 kr, BE-CPA 306–320 kr.\n- Annonsörer: proxy 1 DTC-butik (estore.nu); Ad Library ej nåbar.\n- Recensioner: 67 på US-sajten (grönt < 150).\n- Publik: 1,1 M svenskar fiskade 2025 (HaV/SCB).",
+    "main_risk": "Fyndiq säljer identisk 4-spöns sugkoppshållare för 251 kr i lager (mätt 2026-09-05; formen bekräftad med fyra Fyndiq-listningar 2026-09-08) — jämförelsehandlad form under vårt pris. Näst: sugkoppar som släpper i oktober-kyla med 12 000 kr spön på taket, och listningen har 1 bild/ingen video.",
+    "hook_sv": "Ligger spöna löst i bilen?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 399,
+    "reviews_gate": {
+     "count": 67,
+     "source": "US-sajten, live-hämtning 2026-09-05 (v23/material/601105758637623/data.json); Seznam-snippet äldre: ★4,4 (53), $5",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 1,
+     "method": "dtc-proxy",
+     "evidence": [
+      "DTC: estore.nu 'Spöhållare för Bil – Sugkoppsfunktion' (Yahoo SE 2026-09-08, pris ej i utdrag)",
+      "Fackhandel (ej DTC, ej kedja): fishline.se 'Spöhållare Bil'; sportfiskeprylar.se kategori Spöhållare Bil 17 SKU (Bilspöhållare Vacuum 499 slutsåld, Stonfo Magnetic 199 i lager, Savage Gear Carseat 389 i lager)",
+      "Marketplace (räknas ej): fyndiq.se 4 listningar sugkoppshållare bil, cdon.se, amazon.se"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Fyndiq '2 st Fiske Spöhållare Bil Justerbar' / 'Bilhållare för fiskespö med sugkopp – 4 platser' (identisk form, i lager 2026-09-05; pris ej läsbart i dagens utdrag)",
+     "floor_price_sek": 251,
+     "floor_url": "https://fyndiq.se/ (sök 'spöhållare bil sugkopp')",
+     "anchor_name": "Guideline Vac-Rac Rod Rac Standard (sugkopp/vakuum, i lager) — även SUMO Suction Mount Rod Carrier 2 399 i lager",
+     "anchor_price_sek": 1699,
+     "anchor_in_stock": true,
+     "anchor_url": "https://www.sportfiskeprylar.se/sv/verktyg-bra-att-ha/spohallare/spohallare-bil",
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Ägaren äger spön + bilen; spön är ute/bärs varje fisketur; höstens gäddfiske (sep–nov) är bilburet → problemet syns i launchmånaden. Ingen mode/passform/kit."
+    },
+    "audience": {
+     "size": 1100000,
+     "source": "Havs- och vattenmyndigheten/SCB pressmeddelande: ~1,1 M svenskar fiskade minst en gång 2025 (752 000 män) — citerat i batch1/hostfiske.md. Bilburen andel ej mätt.",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601105758637623",
+      "url_se": "https://www.temu.com/se/g-601105758637623.html",
+      "title": "Heavy-Duty Suction Cup Fishing Rod Rack – No Drilling Required, Holds 4 Fishing Rods",
+      "source": "US live 2026-09-05 (v23/material): 7,56 USD, ★4,5, 67 rec, 1 bild, ingen video",
+      "price_usd": 7.56,
+      "reviews": 67,
+      "why_this_one": "Enda listningen med lästa tal; hero visar hållaren på biltak med spön. Hämta hero + kolla om video tillkommit."
+     },
+     {
+      "goods_id": "601100966945729",
+      "url_se": "https://www.temu.com/se/g-601100966945729.html",
+      "title": "Heavy duty 4-rod suction cup car rod holder (v23-alternativ)",
+      "source": "v23/dolda-parlor.md, pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Samma form, möjligen kraftigare sugkoppar och bättre material — pröva om primären saknar användbar hero."
+     },
+     {
+      "goods_id": "601099516061976",
+      "url_se": "https://www.temu.com/se/g-601099516061976.html",
+      "title": "Suction cup car fishing rod holder (v23-alternativ)",
+      "source": "v23/dolda-parlor.md, pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Reserv i samma form."
+     },
+     {
+      "goods_id": "601100543830067",
+      "url_se": "https://www.temu.com/se/g-601100543830067.html",
+      "title": "Suction cup car fishing rod holder (v23-alternativ)",
+      "source": "v23/dolda-parlor.md, pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Reserv i samma form."
+     },
+     {
+      "goods_id": "601099664597992",
+      "url_se": "https://www.temu.com/se/g-601099664597992.html",
+      "title": "Magnetic hood/roof fishing rod holder (v23-alternativ)",
+      "source": "v23/dolda-parlor.md, pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Bara om sugkoppsformen faller på materialet — magnet fungerar inte på aluminiumhuvar, lägre prioritet."
+     }
+    ],
+    "priority_for_live_check": 2,
+    "confidence": "MEDIUM",
+    "landed_low_sek": 79,
+    "landed_high_sek": 93,
+    "multiple_low": 4.3,
+    "multiple_high": 5.1,
+    "variants": "En SKU (sugkopp, 4 spön). Ägaren behöver inte mäta något.",
+    "notes": "Yahoo US 503 tre gånger och Seznam indexerar bara primären → alternativen har olästa priser. G5 avgörs vid live: 1 bild, ingen video (2026-09-05). Pris 399 ligger i 300–500-bandet ('blandat'); 449 är möjligt mot fackhandelns 499 men Fyndiq 251 talar emot."
+   },
+   "verdict": {
+    "concept_id": "bilspohallare",
+    "hylla_refuted": true,
+    "hylla_reasons": [
+     "GOLV under en tredjedel av vårt pris: mytrendyphone.se 'Bilhållare för fiskespö med sugkopp - 4 platser' 122 kr (ord. 166 kr), 'Finns i lager – Omgående leverans', ABS, 4 spön, sugkoppar (produktsida läst 2026-09-08). Identisk form med Temu-primären. 399 kr = 3,3× en synlig svensk butikspris.",
+     "Fyndiq: 'Justerbar horisontell fiskespöhållare med sugkoppar … håller 4 fiskespön' 240 kr + 29 kr frakt (WebSearch-snippet 2026-09-08); minst 5 separata Fyndiq-listningar av formen (2 st justerbar / TG Spöhållare för Bil / Sugproppsfunktion / [HK]-varianten). Amazon.se har två ASIN (B0CKJ3MHB4, B0CRRN8JR9), pris ej läsbart (503 ×2).",
+     "ANKARET håller inte DNA-undantaget: Vac-Rac Standard 1 699 och SUMO 2 399 (i lager, sportfiskeprylar.se läst 2026-09-08) är vakuumpump-/magnetsystem för 2 spön — annan form. Like-for-like i fackhandeln är 'Bilspöhållare Vacuum' 499 kr och den är SLUTSÅLD; 499/399 = 1,25× < 1,6×. Vår ABS-sugkoppshållare ser ut som 122-kronorsvaran, inte som Vac-Rac (DNA steg 2: 'vår produkt ser ut som ankaret' uppfylls inte).",
+     "Annonsör-proxy: 2 DTC (estore.nu + mytrendyphone.se, Yahoo SE 2026-09-08) + fishline.se + sportfiskeprylar.se online. Repots egen Ad Library-mätning (analys/w2.md, 2026-09-03): 'spöhållare' SE ACTIVE = 10 träffar — inte 0–1.",
+     "Ekonomi: 4,3–5,1× gäller bara vid 399 kr. Mot ett synligt golv 122–240 kr måste priset ned mot 249 → 2,7× och BE-CPA ~160 kr, alltså <300-bandet som enligt DNA (rad 183, 259) bara vinner med kostnad ≤100 kr OCH gratis leverantörsmaterial — listningen har 1 bild, ingen video.",
+     "Kedjor: Biltema 'Spöhållare, 3 spön', Jula/Clas 'Spöhållare' är relingsfästen/väggställ, inte bilform (Yahoo SE 2026-09-08 + w2.md rad 143) — ingen kedja, men det räddar inte golvet. Finns inte i v23/KATALOG.md eller bland förlorarna i ground-truth.md."
+    ],
+    "dna_refuted": true,
+    "dna_reasons": [
+     "'Kontot har redan bevisat köparen' är feltolkat: 289-kronorsvinnaren är INTE en båtspöhållare utan 'Fiskespöhållare 4-Pack' = spöklämmor som sitter PÅ spöt (analys/w2.md rad 9, 47; SKU TEMU-601104615671651). Klämman löser redan exakt frictionen 'spöna trasslar i båten/bilen/garaget' åt samma ägare för 289 kr — bilhållaren för 399 kr konkurrerar med kontots egen vinnare om samma payoff, utan klämmans nollrisk.",
+     "Publiken är påstådd, inte mätt: 'flyttar mellan vikar flera gånger per dag' är båtbeteende (spöna ligger i båten, inte på biltaket). Bilburna landfiskare med 4 riggade spön är en okänd andel av 1,1 M som fiskade minst en gång (bedömningen skriver själv 'Bilburen andel ej mätt'). ≥100 000 går inte att visa ur källan.",
+     "Montering varje tur: 4 sugkoppar ska tryckas fast på vått/smutsigt tak vid varje stopp och lossas igen — DNA-avsnitt 6: montering/installation 30 % av förlorarna, 1/9 vinnare. Produkten skapar dessutom en ny rädsla (12 000 kr spön på taket i 90 km/h, sugkoppar i oktoberkyla) som hooken inte kan besvara utan agitation → steg 6 ned en klass.",
+     "Material: 1 bild, ingen video (US live 2026-09-05) → materialöverförbarhet ≤1. Steg 3 kräver video i bruk inom 3 s eller textfri hero som duger som annons; DNA-rad 216: nivå 1 räckte inte för axelbältet utan UGC. Hero 'på biltak med spön' är oläst av mig — osäker = fälld.",
+     "Jämförelsehandlad form under 300 kr (Fyndiq 240, mytrendyphone 122) med en köpt old way som fungerar (spöband 50–150 kr, klämman 289 kr) = DNA-rad 156-mönstret (30 % av förlorarna, 0/9 vinnare) så snart priset tvingas ned.",
+     "Vad som HÅLLER: objektet (bil + spön) står ute/används varje tur; säsongen sep–nov är rätt; hook 'Ligger spöna löst i bilen?' = 5 ord; en SKU. Det räcker inte mot punkterna ovan."
+    ],
+    "corrections": "(1) 'Båtspöhållaren (289 kr) gav 307 köp' → produkten är 'Fiskespöhållare 4-Pack – Kraftig Förvaring' = spöklämmor (w2.md rad 9); AOV 431 kr kom av fri-fraktgränsen 300 kr, inte av 'samma objekt'. (2) advertiser_gate.count 1 → 2 DTC (mytrendyphone.se 'Bilhållare för fiskespö med sugkopp - 4 platser' 122 kr i lager, produktsida 2026-09-08; estore.nu). (3) shelf_gate.floor_price_sek 251 → 122 kr (mytrendyphone.se, ord. 166) resp. Fyndiq 240 kr + 29 kr frakt (WebSearch-snippet 2026-09-08). floor_url: https://www.mytrendyphone.se/shop/bilhaallare-for-fiskespo-368472p.html och https://fyndiq.se/produkt/justerbar-horisontell-fiskespohallare-med-sugkoppar-for-fordon-bil-lastbil-suv-bat-slat-glas-haller-4-fiskespon-latt-att-installera-och-e0d8ec3dbe784195/. (4) Sportfiskeprylar läst 2026-09-08: Vac-Rac Standard 1 699 i lager, SUMO Suction 2 399 i lager, Bilspöhållare Vacuum 499 SLUTSÅLD, Bilspöhållare Magnetisk 499 slutsåld, Stonfo Magnetic 199 i lager, Savage Gear Carseat 3 Rods 389 i lager, Thule RodVault 2-rod 3 969 i lager — 17 SKU stämmer. (5) Amazon.se: ASIN B0CKJ3MHB4 och B0CRRN8JR9 finns (WebSearch 2026-09-08), pris ej läsbart (503). (6) Seznam 'site:temu.com suction cup car fishing rod holder' 2026-09-08 gav g-601105758637623 (primären) + g-601099520665477 (ny, ej i listan) med betyg 4,4 resp. 4,9 och $5 / $9 i snippet — id↔pris-koppling ej säker (seznam-snippet); resultatet var dessutom uppblandat med RV-överdrag (query-drift), lita inte på det som fullständig lista. (7) Ad Library-proxy finns i repot: 'spöhållare' SE ACTIVE = 10 träffar 2026-09-03 (analys/w2.md rad 118).",
+    "confidence": "HIGH"
+   },
+   "status": "REFUTED"
+  },
+  {
+   "assessment": {
+    "concept_id": "solpanel-atelkamera",
+    "product_name_sv": "Solcellspanel med inbyggt batteri till åtelkamera",
+    "strong_hypothesis": false,
+    "hypothesis_score": 32,
+    "winner_hypothesis": "Jägaren (271 500 jaktkort 2025/26) har 2–5 åtelkameror ute hela hösten och batterierna tar slut mitt i älg- och vildsvinssäsongen. Panelen fäster på trädet bredvid kameran. Konceptet klarar objekt, presens och publik — men Temu har ingen listning under 22 USD och den svenska hyllan är redan full av formen.",
+    "why_it_could_print": "- Ankare: Hunter Solcellspanel Åtelkamera 1 299 kr (jakt.se) — men slut i lager 2026-09-04.\n- Publik: 271 500 lösta jaktkort jaktåret 2025–26 (Naturvårdsverket).\n- Recensioner: 23 (US live) / 58 (snippet) — grönt.\nDet räcker inte: ekonomin och hyllan faller.",
+    "main_risk": "Ekonomin: billigaste lästa listning 34,99 USD → landad 365–428 kr (taket 420) och 41 USD → 428–502 kr; ingen listning ≤ 22 USD hittad i tre sökningar. Dessutom säljer Elgiganten, Bygghemma, CDON och ≥ 5 svenska webbutiker Trekker-panelen (Prisjakt lägsta 499 kr) och Jula en 5 W-panel för batterikamera.",
+    "hook_sv": "Tar batterierna slut i åtelkameran?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 599,
+    "reviews_gate": {
+     "count": 23,
+     "source": "601099525192346: US live 2026-09-05 ★3,8 (23) (v23/ALL-CANDIDATES). 601099637786914: Seznam-snippet 2026-09-04 ★4,6 (58)",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 5,
+     "method": "dtc-proxy",
+     "evidence": [
+      "blackweek.se 'Solpanel för åtelkamera 9V – Trekker'",
+      "nordicprostore.se 'Solpanel för åtelkamera 9V – Trekker'",
+      "hobbyhallen.se 'Solpanel för åtelkamera 9V – Trekker' (4,8/5, 9 rec)",
+      "hunterworld.se 'Hunter Solar Panel Plus SP150 – Solcellspanel för viltkamera'",
+      "bearplayshop.se 'Hunter Solcellspanel Plus till Åtelkamera'",
+      "Kedjor (räknas separat i G4): elgiganten.se, bygghemma.se, jula.se (5 W panel till batteridriven övervakningskamera); marketplace: cdon.se, tradera.com (KeepGuard KS26)",
+      "Alla via Yahoo SE 2026-09-08"
+     ],
+     "verdict": "KILL"
+    },
+    "shelf_gate": {
+     "floor_name": "Trekker Solpanel för Viltkamera 9V — Prisjakt 'lägsta pris 499 kr' (snippet 2026-09-08); PriceRunner-snippet '299 kr' (dansk titel, valuta osäker); säljs hos Elgiganten/Bygghemma/CDON",
+     "floor_price_sek": 499,
+     "floor_url": "https://www.prisjakt.nu/ (Trekker Solpanel för Viltkamera 9V)",
+     "anchor_name": "Hunter Solcellspanel Åtelkamera (jakt.se) — slut i lager 2026-09-04; Hunter BL6A 10 000 mAh pris oläst",
+     "anchor_price_sek": 1299,
+     "anchor_in_stock": false,
+     "anchor_url": "https://www.jakt.se/hunter-solcellspanel-atelkamera-1",
+     "verdict": "KILL"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Åtelkameran ägs, står ute hela hösten, batteriproblemet finns i september–november. Montering (kabel + rem) är en negativ-rymd-flagga men inte strukturell."
+    },
+    "audience": {
+     "size": 271500,
+     "source": "Naturvårdsverket: 'Under jaktåret 2025–2026 löste drygt 271 500 personer statligt jaktkort' (Yahoo SE-snippet 2026-09-08); 2024–25: 260 047",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601099525192346",
+      "url_se": "https://www.temu.com/se/g-601099525192346.html",
+      "title": "1pc 4W trail camera solar panel, 12V output, 6000 mAh battery, DC 5.5/2.1 mm",
+      "source": "US live 2026-09-05: 34,99 USD, ★3,8 (23), 1 bild, ingen video",
+      "price_usd": 34.99,
+      "reviews": 23,
+      "why_this_one": "Billigaste lästa — och ändå över taket. Bara värd ett anrop om priset sjunkit under 22 USD."
+     },
+     {
+      "goods_id": "601099637786914",
+      "url_se": "https://www.temu.com/se/g-601099637786914.html",
+      "title": "Trail cameras solar panel 12V/1A 6V/2A with 5000mAh battery",
+      "source": "Seznam-snippet 2026-09-04: 41 USD, ★4,6 (58)",
+      "price_usd": 41,
+      "reviews": 58,
+      "why_this_one": "Dubbla utgångar täcker flest kameror, men landad 428–502 kr = kill."
+     },
+     {
+      "goods_id": "601099958398659",
+      "url_se": "https://www.temu.com/se/g-601099958398659.html",
+      "title": "Outdoor wildlife camera solar panel IP65, 360° rotatable, 4000mAh",
+      "source": "v22/fas2/jakt.json, pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Formen liknar Hunter-ankaret; enda kortet med oläst pris."
+     }
+    ],
+    "priority_for_live_check": 5,
+    "confidence": "HIGH",
+    "landed_low_sek": 365,
+    "landed_high_sek": 428,
+    "multiple_low": 1.4,
+    "multiple_high": 1.64,
+    "variants": "Kontaktdon per kameramodell (DC 5,5/2,1 vs 3,5 mm) och 6/9/12 V — ägaren vet det sällan utantill → SKU-fråga.",
+    "notes": "Sökt efter listning ≤ 22 USD: Seznam 'trail camera solar panel 12V battery', Seznam 'solar panel hunting camera 6V charger kit', WebSearch site:temu.com — bara samma två goods-id (+ en 4G-kamera). Konceptet dör på G2 (proxy 5), G4 (golv 299–499 under pris, ankare slut) och G6 samtidigt."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "sopkarlslocklas",
+    "product_name_sv": "Sopkärlslocklås med rem/bungee (vind och djur)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 38,
+    "winner_hypothesis": "Småhusägaren har sitt kommunala 190/240 l-kärl vid gatan; i höststormarna blåser locket upp och innehållet ut, och kråkor/råttor kommer åt matavfallet. Remmen spänns över locket utan verktyg. Objektet står ute och problemet syns i sep–nov, men Temu-listningen har 0 recensioner, en amerikansk tvättbjörnshero och Smartaskydd säljer redan ett bättre svenskt lås (gravitationslås som öppnas självt vid tömning) för 459 kr — under det pris ekonomin kräver.",
+    "why_it_could_print": "- Prisutrymme: 15,63 USD (US live 2026-09-05) → landad 163–191 kr → 2,6–3,1× vid 499 kr, BE-CPA 308–336 kr.\n- Hyllan: ingen svensk aktör säljer remformen (Yahoo SE + WebSearch 2026-09-08); kedjorna saknar formen.\n- Annonsörer: proxy 0 DTC i remformen.\n- Publik: 2 040 833 småhus (Energimyndigheten 2024).",
+    "main_risk": "Smartaskydd 'Lås till avfallskärl' 459 kr är ett svenskt gravitationslås som öppnar sig självt vid tömning — vår rem måste lossas varje hämtdag, annars töms inte kärlet. Ett bättre konkurrentlås under vårt pris, plus 0 recensioner och en hero med tvättbjörn (amerikansk kod) som inte går att använda.",
+    "hook_sv": "Blåser locket upp på soptunnan?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 499,
+    "reviews_gate": {
+     "count": 0,
+     "source": "601101587576926: US live 2026-09-05 (v23/ALL-CANDIDATES): 15,63 USD, 0 rec, 1 bild, ingen video. Övriga tre listningar: oläst",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'lås till sopkärl lock vind djur köp' 2026-09-08: inga träffar i remformen (bara kamlås, vindsluckelås, barnlås)",
+      "Yahoo SE 'smartaskydd lås avfallskärl pris': smartaskydd.se (eget gravitationslås, annan form), pwsab.se och sansac.se (B2B-kärllås), jula.se 'Avfallsförvaring' (inget locklås i utdraget)",
+      "WebSearch 2026-09-08: Smartaskydd 459 kr, i lager"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Ingen svensk aktör i samma form (rem/bungee) funnen; närmaste form = Smartaskydd Lås till avfallskärl (gravitationslås, öppnas automatiskt vid tömning)",
+     "floor_price_sek": 459,
+     "floor_url": "https://smartaskydd.se/products/53-las/las-till-soptunna-avfallskarl/las-till-soptunna-oppnas-automatiskt-vid-tomning",
+     "anchor_name": "Inget märkesankare ≥ 1,6 × 499 kr hittat — Smartaskydd 459 är ett tak, inte ett ankare",
+     "anchor_price_sek": null,
+     "anchor_in_stock": null,
+     "anchor_url": "",
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Kärlet står ute vid gatan; stormlocket är ett sep–nov-problem. Men friktionen är smal (fyrfackskärlens tunga lock blåser sällan upp) och remmen kräver ett handgrepp varje hämtdag."
+    },
+    "audience": {
+     "size": 2040833,
+     "source": "Energimyndigheten, Energistatistik för småhus 2024: 2 040 833 småhus (citerad i v22/fas1/vedstallsoverdrag.md). Andel med lockproblem: ej mätt",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601101587576926",
+      "url_se": "https://www.temu.com/se/g-601101587576926.html",
+      "title": "Heavy Duty Trash Lock with Adjustable Strap 31.5–51.2\", Animal-Proof, Windproof, Nylon Strap",
+      "source": "US live 2026-09-05: 15,63 USD, 0 rec, 1 bild (tvättbjörn + ekorre på grönt kärl)",
+      "price_usd": 15.63,
+      "reviews": 0,
+      "why_this_one": "Enda listningen med läst pris; heron är amerikansk och troligen oanvändbar."
+     },
+     {
+      "goods_id": "605655280787928",
+      "url_se": "https://www.temu.com/se/g-605655280787928.html",
+      "title": "Premium 2X Outdoor Trash Can Locks for Animals — Universal Garbage Straps, Wheelie Bin Locks",
+      "source": "dataset(V2.1), pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "2-pack passar fyrfackshushållet (två kärl) — flerköpsskälet inbyggt."
+     },
+     {
+      "goods_id": "601099601018284",
+      "url_se": "https://www.temu.com/se/g-601099601018284.html",
+      "title": "Trash Lid Lock — Secure Garbage Bin Bungee Cord System, keeps out pests",
+      "source": "dataset(V2.1) + WebSearch 2026-09-08 (sidan finns), pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Bungee-formen kan släppa av sig själv när kärlet tippas — det skulle lösa hämtdagsproblemet; måste ses i bild."
+     },
+     {
+      "goods_id": "601099600572909",
+      "url_se": "https://www.temu.com/se/g-601099600572909.html",
+      "title": "Outdoor Trash Can Lid Lock Strap – Plastic Utility Hooks, Garbage Bin Lid Securing Kit",
+      "source": "WebSearch site:temu.com 2026-09-08 (ny), pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Ny listning i samma form; oläst pris och material."
+     }
+    ],
+    "priority_for_live_check": 4,
+    "confidence": "MEDIUM",
+    "landed_low_sek": 163,
+    "landed_high_sek": 191,
+    "multiple_low": 2.61,
+    "multiple_high": 3.06,
+    "variants": "Justerbar rem 80–130 cm passar 140–370 l — en SKU.",
+    "notes": "Seznam 'trash can lid lock strap' och 'garbage can lid lock animals bungee wheelie bin': noll Temu-träffar i formen. Pris under 499 spräcker 2,4× i den dyra änden (449 → 2,35×). Smartaskydds produktsida gav 404 via WebFetch; priset 459 kommer ur WebSearch-snippet 2026-09-08 och v23."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "vedstallsoverdrag",
+    "product_name_sv": "Vedställsöverdrag, endast överdrag (4–8 ft, spännen)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 44,
+    "winner_hypothesis": "Småhusägaren som eldar (848 482 småhus med biobränsle) har veden i ställ eller stapel ute; i september–oktober blåser presenningen av och veden blir blöt inför eldningssäsongen. Ett formsytt 600D-överdrag med spännen ersätter presenningen. Objekt, presens, publik och annonsörer (0) är gröna — men Temu säljer inte formen billigt nog: alla lästa priser (24–34 USD) ger en landad kostnad som ingen svensk prisnivå bär.",
+    "why_it_could_print": "- Annonsörer: Meta Ad Library SE 0 aktiva (mätt 2026-09-04).\n- Recensioner: 10 (grönt).\n- Publik: 848 482 småhus med biobränsle (Energimyndigheten 2024).\n- Säsong: ≥ 7 veckor kvar till 31 okt.\nMen: inget ankare ≥ 1,6× och landad 253–422 kr.",
+    "main_risk": "Ekonomin: billigaste cover-only som gått att prissätta är 24,22 USD → landad 253–297 kr → 2,4× kräver 607–711 kr, medan vidaXL säljer samma form för 293 kr (i lager 2026-09-04, även via Braskaminer.se) och Dealproffsen 2-pack för 549. Ingen listning ≤ 13,58 USD hittad; tre 4 ft-listningar har oläst pris.",
+    "hook_sv": "Blåser presenningen av veden igen?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 399,
+    "reviews_gate": {
+     "count": 10,
+     "source": "601099615828436: Seznam-snippet 2026-09-04 (UNIVERSUM.csv). Övriga listningar oläst",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "adlibrary-prior",
+     "evidence": [
+      "Meta Ad Library SE 'vedställ överdrag' + 'vedskydd presenning vedstapel': 0 aktiva annonser, mätt 2026-09-04 (v22/fas1/vedstallsoverdrag.md)",
+      "Yahoo SE 'vedställsöverdrag pris' 2026-09-08: dealproffsen.se (2 listningar), amazon.se, tradera.com, cdon.se/fyndiq.se (ställ+överdrag-set) — ingen DTC/dropship-butik i cover-only-formen"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "vidaXL Vedställsskydd 61×122×106 cm 210D Oxford (i lager 2026-09-04); säljs även via braskaminer.se i 210D/420D/600D (pris oläst 2026-09-08, sidan 404 via WebFetch)",
+     "floor_price_sek": 293,
+     "floor_url": "https://www.braskaminer.se/produkt/vidaxl-vedstallsskydd-enfargad-svart-61-x-122-x-106-cm-210d-oxford-tyg/",
+     "anchor_name": "Inget ankare ≥ 1,6 × 399 = 638 kr funnet; Dealproffsen Vedställsöverdrag 2 st 174×173 cm 549 kr (ord. 899) är 274,50/st",
+     "anchor_price_sek": 549,
+     "anchor_in_stock": true,
+     "anchor_url": "https://www.dealproffsen.se/ (Vedställsöverdrag 2 st 174 x 173 & 174 x 161,5 Svart)",
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Vedstapeln står ute året om; höststormarna är nu. Varianten (4/8 ft i tum) är en svaghet — ägaren kan inte måttet utantill."
+    },
+    "audience": {
+     "size": 848482,
+     "source": "Energimyndigheten, Energistatistik för småhus 2024, tabell 2.5/2.8: 848 482 småhus använde biobränsle (modellskattat år) — citerad i v22/fas1/vedstallsoverdrag.md",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601101195826933",
+      "url_se": "https://www.temu.com/se/g-601101195826933.html",
+      "title": "Firewood Rack Cover 4 Feet, 600D Wood Rack Cover, Waterproof, Heavy Duty, for 4ft Standard Firewood Rack Stands",
+      "source": "alt/vedstallsoverdrag.json prio 1; bekräftad live-URL via WebSearch 2026-09-08; pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Det enda öppna kortet: 4 ft + 600D. Är priset ≤ 13,58 USD lever konceptet vid 399 kr; annars dör det."
+     },
+     {
+      "goods_id": "601099596693599",
+      "url_se": "https://www.temu.com/se/g-601099596693599.html",
+      "title": "Firewood Rack Cover 4 Feet, Wood Rack Cover, Waterproof Heavy Duty, Rain/Snow/Sun",
+      "source": "alt/vedstallsoverdrag.json prio 2; WebSearch 2026-09-08; pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Samma 4 ft-form, material ej utskrivet."
+     },
+     {
+      "goods_id": "601100317742962",
+      "url_se": "https://www.temu.com/se/g-601100317742962.html",
+      "title": "Firewood Rack Cover 4 Feet, 500D, 48×24×41 inch",
+      "source": "KONCEPT.json; WebSearch 2026-09-08; pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "500D 4 ft — tredje priskollen."
+     },
+     {
+      "goods_id": "601099615828436",
+      "url_se": "https://www.temu.com/se/g-601099615828436.html",
+      "title": "Vedställsöverdrag 4–8 ft, PU-belagt, 4 nylonspännen (8 ft-variant)",
+      "source": "Verifierat pris 2026-09-04: 34,47 USD; rec 10 (snippet)",
+      "price_usd": 34.47,
+      "reviews": 10,
+      "why_this_one": "Referens: heron sedd och godkänd, men priset ger landad 360–422 kr = kill. Hämta inte igen."
+     }
+    ],
+    "priority_for_live_check": 3,
+    "confidence": "HIGH",
+    "landed_low_sek": 253,
+    "landed_high_sek": 422,
+    "multiple_low": 0.95,
+    "multiple_high": 1.58,
+    "variants": "4 ft / 8 ft i tum för amerikanska ställ — svensk ägare måste mäta → returrisk.",
+    "notes": "Multiplarna ovan är räknade på 399 kr mot billigaste (24,22 USD) resp. primär (34,47 USD) listning; även vid 549 kr (hyllans tak) blir det 1,30–2,17×. Seznam har inga cover-only-listningar i kategorin (två nya sökningar 2026-09-08); Yahoo US 503. Produkten säljs i USA för 9–16 USD (Woot/Amazon, jan 2026) — den är billig att göra, Temu saknar bara en billig listning."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "lockskydd-spabad",
+    "product_name_sv": "Lockskydd / cover cap till fast spabad",
+    "strong_hypothesis": true,
+    "hypothesis_score": 70,
+    "winner_hypothesis": "Spabadsägaren (160 000 spabad, 45–70 med villa) har ett styvt isolerat lock som står ute året om; i september–november ligger löv, barr och regn på det, locket suger vatten och blir tungt, och spabadet används mer när det blir kallt. Ett 600D-överdrag med kjol och spännband träs över locket. DNA:t säger vinst för att objektet är ute, problemet är fotograferbart nu, ett synligt märkesankare ligger 2,2× över vårt pris och priset 599 kr ligger i bandet som aldrig förlorat.",
+    "why_it_could_print": "- Ankare: Spabadsbutiken Cover Cap deLuxe 1 295 kr (leverans 4–8 vardagar, läst 2026-09-08) = 2,16 × 599 kr; samma form i fackhandeln 1 290–1 495 (Kuben, Swiim, Spasupport, Denform).\n- Prisutrymme: 19,39 USD → landad 202–237 kr → 2,5–3,0× vid 599 kr, BE-CPA 362–397 kr.\n- Annonsörer: proxy 1 DTC (Hemson 499 i lager); Ad Library ej nåbar.\n- Recensioner: 204 (OK-bandet 150–300).\n- Publik: 160 000 spabad (Svenska Badbranschen 2023).",
+    "main_risk": "Passformen: kunden måste mäta lockets sida (200–230 cm) och hörnradie — inget ägaren kan utantill — samtidigt som Fyndiq säljer identisk 218×218×30 cm-form för 389 kr och Hemson för 499 kr. Ett skydd i fel storlek som blåser av i första höststormen ger returer. Näst: primärlistningens hero visar ett badkar, inte ett spalock.",
+    "hook_sv": "Ligger löven på ditt spalock?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 599,
+    "reviews_gate": {
+     "count": 204,
+     "source": "601099619866532: Seznam-snippet 2026-09-04 (UNIVERSUM.csv) — sajt ej angiven, troligen US-index. Övriga listningar oläst",
+     "verdict": "OK"
+    },
+    "advertiser_gate": {
+     "count": 1,
+     "method": "dtc-proxy",
+     "evidence": [
+      "DTC: hemson.se 'Oxford Spa Cover Cap 2100×2100 mm' 499 kr i lager (produktsida läst 2026-09-08); även 2300×2300 och Ø1900",
+      "Fackhandel (ej DTC): spabadsbutiken.se, spabutikken.se, spaochpoolbutiken.se 'Skyddsöverdrag spalock', osterlenspoolcenter.se, kuben.se (Yahoo SE 2026-09-08)",
+      "Marketplace (räknas ej): fyndiq.se 218×218×30 cm 2100D Oxford 389/391/465 kr (WebSearch-snippet 2026-09-08), amazon.se 634,49 kr (2026-09-04)"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Fyndiq 'Skyddande överdrag för spa-lock … Oxford-tyg 218×218×30 cm' (identisk form) — 389 kr, fler listningar 391/465 kr; Hemson 499 kr i lager",
+     "floor_price_sek": 389,
+     "floor_url": "https://fyndiq.se/produkt/skyddande-overdrag-for-spa-lock-bubbelpool-simbassang-badkar-oxford-tyg-spa-lock-for-utomhustradgard-dammtat-vattentat-anti-uv-218x218x30cm-d1dd161126c54f97/",
+     "anchor_name": "Spabadsbutiken Cover Cap deLuxe (Round Ø 200/205/220 cm; fyrkantig 210×210 i tidigare läsning) — 1 295 kr",
+     "anchor_price_sek": 1295,
+     "anchor_in_stock": true,
+     "anchor_url": "https://www.spabadsbutiken.se/search?q=cover+cap",
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Spalocket ägs, står ute året om och löven faller nu; spabadet används mer på hösten. Varianten (mått + hörnradie) är en DNA-steg-5-varning, inte en strukturell kill."
+    },
+    "audience": {
+     "size": 160000,
+     "source": "Svenska Badbranschen, prognos 2023 (±15 %): ~160 000 spabad i Sverige — citerad i v22/fas1/lockskydd-spabad.md",
+     "verdict": "WARN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601099619866532",
+      "url_se": "https://www.temu.com/se/g-601099619866532.html",
+      "title": "Hot Tub Cover Rainproof Dustproof Protector — cover cap, hot tub covers for winter, brown",
+      "source": "Seznam-snippet 2026-09-04: rec 204; pris 19,39 USD (v22/fas1); enda bilden visar hopvikt överdrag framför ett badkar",
+      "price_usd": 19.39,
+      "reviews": 204,
+      "why_this_one": "Lästa tal (pris + recensioner) men troligen oanvändbar hero — verifiera galleriet, inte bara heron."
+     },
+     {
+      "goods_id": "601099816288753",
+      "url_se": "https://www.temu.com/se/g-601099816288753.html",
+      "title": "Hot tub cover square outdoor spa pool cover, windproof, prevents leaves and debris",
+      "source": "alt/lockskydd-spabad.json prio 1; pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Enda titeln som nämner löv — säljaren marknadsför mot rätt friktion; bilden beskrivs som rendering, videoförekomst okänd."
+     },
+     {
+      "goods_id": "601099525298121",
+      "url_se": "https://www.temu.com/se/g-601099525298121.html",
+      "title": "1pc 420D Hot Tub Cover Protector, Spa Cover Cap 76×76/80×80/86×86/96 in, black",
+      "source": "alt/lockskydd-spabad.json; pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Explicit 'cover cap' i fyra storlekar — mogen listning, sannolikt fler bilder."
+     },
+     {
+      "goods_id": "601100870942586",
+      "url_se": "https://www.temu.com/se/g-601100870942586.html",
+      "title": "Outdoor waterproof hot tub cover 85×85 in, fits 84/83/82 in / 7 ft spa, 600D, protective cover cap",
+      "source": "alt/lockskydd-spabad.json; pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "600D + 'cover cap' på det vanligaste svenska måttet (~210 cm)."
+     },
+     {
+      "goods_id": "601099624781221",
+      "url_se": "https://www.temu.com/se/g-601099624781221.html",
+      "title": "Waterproof above-ground spa cover, 600D heavy duty Oxford, outdoor square hot tub protector",
+      "source": "WebSearch site:temu.com 2026-09-08 (UK-listning lever); pris oläst",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Bekräftat levande 2026-09-08; 600D fyrkantig — reserv."
+     }
+    ],
+    "priority_for_live_check": 1,
+    "confidence": "MEDIUM",
+    "landed_low_sek": 202,
+    "landed_high_sek": 237,
+    "multiple_low": 2.52,
+    "multiple_high": 2.96,
+    "variants": "Lockets sida (200–230 cm) + hörnradie. Sälj EN storlek (210×210, 30 cm kjol, elastisk kant) som Hemson gör — då blir det 'passar de flesta' utan mått = DNA-varning.",
+    "notes": "Under nya regeln vänds v22:s hyllkill till varning: golv 389 (Fyndiq) < 599 men ankare 1 295 ≥ 1,6× och proxy 1 < 3. G7 ligger i varningsbandet (160 000 ±15 %). Spabadsbutiken svarade 404 på /sok men 200 på /search. Seznam har inga cover cap-listningar (bekräftat igen 2026-09-08); Yahoo US 503. Recensionstalet 204 är från snippet — sajt (US/SE) ej bekräftad, vilket live-verifieringen bör avgöra (SE räknar ~5× högre)."
+   },
+   "verdict": {
+    "concept_id": "lockskydd-spabad",
+    "hylla_refuted": true,
+    "hylla_reasons": [
+     "GOLV under vårt pris hos svensk DTC: hemson.se 'Oxford Spa Cover Cap 2100mm×2100mm' 499 kr, 'I lager', 30 cm kjol, hörnradie 10 cm, 2,8 kg — och 2400×2400 samt Ø2050 också 499 kr (produktsida läst 2026-09-08). Identisk form (Oxford cover cap med kjol) för 100 kr mindre än 599.",
+     "Fyndiq: fyrkantiga spa-överdrag 207–231 cm listade 295–528 kr (kategorisida läst 2026-09-08; 218×218×30 cm-listningarna bekräftade via Yahoo SE). premiumpoolshop.com 'Skyddsöverdrag spalock' kr 297,50 (ord. 1 190) i Yahoo-snippet 2026-09-08 (sidan 403). Tre svenska kanaler under 599 kr — inte bara Fyndiq.",
+     "Annonsör-proxy ≥ 3: svenska webbutiker som säljer formen 2026-09-08 (Yahoo SE): hemson.se, spaochpoolbutiken.se, poolbutiken.se, spabutikken.se, kuben.se, osterlenspoolcenter.se, spabadsbutiken.se, premiumpoolshop.com, viskanspa.se (995 kr 210×210) = 9. Bedömningens etikett 'fackhandel (ej DTC)' på pool-e-handlare är ett definitionstrick — de är exakt de butiker som annonserar på Meta i september.",
+     "Ankaret bär inte undantaget: Spabadsbutiken Cover Cap deLuxe 1 295 visas i dag bara RUNT (Ø200/205/220) med '4–8 vardagar' = leveranstid, inte 'i lager'; fyrkantig deLuxe syntes inte (search?q=cover+cap läst 2026-09-08). Vår 600D-kjolmodell ser ut som Hemsons 499-kronors cap, inte som deLuxe → DNA steg 2-undantaget ('ser ut som ankaret') faller.",
+     "Ekonomi: 2,52–2,96× gäller vid 599. Matchas Hemson 499 blir det 2,1–2,5× — under/vid 2,4×-gränsen. Landad 202–237 kr är oprövad för en 2,8 kg-vara (Hemsons vikt) — fraktdelen kan vara högre. Finns inte i v23/KATALOG.md eller bland förlorarna i ground-truth.md."
+    ],
+    "dna_refuted": true,
+    "dna_reasons": [
+     "Presens (steg 1) faller: löv på locket är inte skadan — de borstas av. Skadan i hypotesen ('locket suger vatten, blir tungt') är långsam och osynlig i launchmånaden = DNA avsnitt 6 'latent behov' (55 % av förlorarna) och steg 1 'osynlig långsam skada'. Samma mönster som Kranskyddet/Gräsklippartäcket. Hooken 'Ligger löven på ditt spalock?' får ja av alla spaägare utan att någon känner ett problem → agitation krävs → steg 6 ned en klass.",
+     "Varianten (steg 5): kunden måste mäta sida OCH hörnradie — Hemson säljer själva R10 och R23 samt 200/210/215/230/240 och Ø200/205/221 (Yahoo SE 2026-09-08). 'EN storlek 210×210, passar de flesta utan mått' är ordagrant DNA-varningen på rad 319; runda och 200/230-spabad passar inte alls.",
+     "Montering/friktion vid varje bad: capen med spännband måste av och på varje gång spabadet används — och hypotesen säger själv att badet används MER på hösten. DNA avsnitt 6: montering 30 % av förlorarna, 1/9 vinnare.",
+     "Publiken: '160 000 spabad (Svenska Badbranschen 2023, ±15 %)' — pressmeddelandet finns (mynewsdesk, statistik aug/okt 2023) men siffran 160 000 syns inte i det (WebSearch 2026-09-08). Dessutom: de flesta spabad säljs med cover cap som tillbehör i samma butik (Hemson, Spabadsbutiken) — andelen ägare UTAN cap är okänd. ≥100 000 kan inte visas.",
+     "Material (steg 3): primärlistningens hero visar ett badkar (bedömningen), alternativen har oläst pris/bild. Ingen video bekräftad → materialöverförbarhet 0–1, osäker = fälld.",
+     "Vad som HÅLLER: locket ägs och står ute; pris 599 i bandet >500; hook ≤7 ord; säsong sep–nov. Räcker inte mot steg 1, 5 och 6."
+    ],
+    "corrections": "(1) shelf_gate.floor_price_sek 389 → 295 kr (Fyndiq kategorisida, fyrkantiga 207–231 cm 295–528 kr, läst 2026-09-08) alt. premiumpoolshop.com 297,50 kr (Yahoo-snippet, ord. 1 190). Hemson 499 kr bekräftat i lager i TRE storlekar (2100×2100, 2400×2400, Ø2050), inte bara en. (2) advertiser_gate: DTC-räkningen 1 → minst 9 svenska webbutiker säljer formen (lista ovan); viskanspa.se 995 kr 210×210 tillkommer. (3) anchor_in_stock true → oklart: Spabadsbutiken visar '4–8 vardagar' (leveranstid), bara runda Ø200/205/220 i sökresultatet 2026-09-08. (4) Seznam 'site:temu.com hot tub cover cap spa cover protector' 2026-09-08 (curl avbröts med connection reset, fil 200 kB): goods-id g-601099700017371 och g-606455033885834 (båda nya, ej i listan) med product-snippets 17,90 USD ★4,2 (9 rec) och 19,61 USD ★5,0 (35 rec) — id↔pris-koppling ej säker (seznam-snippet). Bedömningens notering 'Seznam har inga cover cap-listningar' stämmer alltså inte längre. (5) audience.source: 160 000 ej återfunnet i Svenska Badbranschens pressmeddelande via sökning — behåll WARN men märk 'ej verifierad'. (6) Hemson kallar sin cap 'anpassad för lock som är 210 cm, dvs något större' + R10 — bekräftar att varianten (radie) är verklig.",
+    "confidence": "HIGH"
+   },
+   "status": "REFUTED"
+  },
+  {
+   "assessment": {
+    "concept_id": "overdrag-vedklyv",
+    "product_name_sv": "Överdrag till hydraulisk vedklyv",
+    "strong_hypothesis": false,
+    "hypothesis_score": 34,
+    "winner_hypothesis": "Vedhuggaren 45–70 med småhus/fritidshus har en hydraulisk vedklyv (4 000–20 000 kr) som står ute eller under carporten hela klyvsäsongen september–oktober; höstregnet går ner i motor och hydraulik och presenningen blåser av. Samma struktur som motorhöljet och IBC-överdraget (ägd sak ute, improviserad old way). DNA:t säger att formen vinner — men bara om ekonomin håller, och det gör den inte på någon läst listning.",
+    "why_it_could_print": "- Objektet står ute i launchmånaden, hävstång mot ägd sak > 10× (v22 ved-eldstad).\n- Annonsörer: 0 DTC-butiker i formen (Yahoo SE 2026-09-08 — bara Kindling Cracker-överdrag, annan form).\n- Ingen kedja säljer ett generiskt överdrag: Jula Meec 380055/380056 är modellspecifika för Julas egna klyvar, Clas Ohlson 40-1033 har utgått (2026-09-08).\n- Prisutrymme finns INTE på lästa priser: SE-Temu 436,75–493,90 kr → landad 655–741 kr.",
+    "main_risk": "Ekonomin: båda lästa SE-Temu-priserna ger landad 655–741 kr, över 420-kronorstaket, och Fyndiq säljer samma form för 403 kr i lager utan att något märkesankare ≥ 1,6× finns. Tre nya Seznam-sökningar 2026-09-08 gav ingen listning under 28 USD.",
+    "hook_sv": "Står vedklyven ute i regnet?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 599,
+    "landed_low_sek": 655,
+    "landed_high_sek": 741,
+    "multiple_low": 0.81,
+    "multiple_high": 0.91,
+    "reviews_gate": {
+     "count": null,
+     "source": "UNKNOWN — inget recensionstal läst för 601099603802865/601099589782206. Karusellens två samma-form-listningar hade 3 rec vardera (SE, 2026-09-04). Seznam 2026-09-08 (4 sökningar + goods-id) gav inga snippets.",
+     "verdict": "UNKNOWN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'överdrag vedklyv skydd köp' 2026-09-08: jula.se (Meec Tools skyddsöverdrag 380056/380055, modellspecifika), clasohlson.com/se/Overdrag-for-vedklyv-40-9122/p/40-1033 (utgått), fyndiq.se (3 listningar 'Skyddande överdrag för horisontell gasdriven vedklyv från 30') — kedja/marketplace, räknas inte",
+      "Kindling Cracker-överdrag (annan form: manuell tändvedsklyv) hos soderstroms.nu, bastuspecialisten.se, bagarenochkocken.se, shop.byggahus.se — fackhandel, annan form, räknas inte",
+      "Yahoo SE 'överdrag vedklyv fri frakt butik' 2026-09-08: ingen DTC-butik i formen (vedteknik.se säljer vedklyvar, inget överdrag sett)",
+      "Ad Library SE: ej nåbart (2026-09-08)"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Fyndiq 'Skyddande överdrag för horisontell gasdriven vedklyv från 30' 210×115×100 cm, I lager (2026-09-08). Jula Meec Tools Skyddsöverdrag 380056 finns i vedklyvskategorin (pris 403-blockerat). Clas Ohlson 40-1033 utgått.",
+     "floor_price_sek": 403,
+     "floor_url": "https://fyndiq.se/produkt/skyddande-overdrag-for-horisontell-gasdriven-vedklyv-fran-30-cdc6e74b3add4721/",
+     "anchor_name": "Inget märkesankare i formen funnet (Amazon.se-sök tom, CDON 404, PriceRunner 'vedklyvare' listar 32 maskiner och inget överdrag per 2026-09-04)",
+     "anchor_price_sek": null,
+     "anchor_url": "",
+     "anchor_in_stock": null,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Ägd sak (klyv 4 000–20 000 kr) som står ute under klyvsäsongen sept–okt; regnet på maskinen syns nu. Flagga ur negativa rymden: klyven kan förvaras i förråd mellan passen (v22-anteckning)."
+    },
+    "audience": {
+     "size": null,
+     "source": "UNKNOWN — WebSearch 2026-09-08 ('hur många vedklyvar finns i Sverige') gav ingen statistik (SCB/Boverket har inget). Tak: ~1,1 M vedeldade eldstäder i bruk (MSB, via sverige-viabilitet-bedomning.md). Vedklyvsägare är en delmängd; kan ligga under 100 000-golvet.",
+     "verdict": "UNKNOWN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601099589782206",
+      "url_se": "https://www.temu.com/se/g-601099589782206.html",
+      "title": "Heavy duty log splitter cover waterproof oxford cloth, 45 ton (SE-titel: loggsplitterskydd 210,82×114,3 cm, stängningsrem)",
+      "source": "v22/fas2/ved-eldstad.json + KONCEPT.json",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Eget pris aldrig läst — enda listningen där en live-hämtning kan ändra ekonomidomen. Stängningsrem = spännpayoff att visa. 2026-09-04 visade SE-sidan 'Ej tillgänglig för köp' — kan vara död."
+     },
+     {
+      "goods_id": "601099603802865",
+      "url_se": "https://www.temu.com/se/g-601099603802865.html",
+      "title": "Heavy duty log splitter cover waterproof oxford cloth, 15–45 ton, 83×45×39 in",
+      "source": "v22/fas2/ved-eldstad.json + KONCEPT.json",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Primären ur v23 — men SE-sidan sa 'Ej tillgänglig för köp' 2026-09-04 och karusellens samma-form-priser var 436,75/493,90 kr. Verifiera bara om 601099589782206 faller."
+     }
+    ],
+    "priority_for_live_check": 4,
+    "confidence": "MEDIUM",
+    "variants": "En storlek (210×114 cm / 83×45×39 in) för klyvar 15–45 ton — passar de stora bensinklyvarna, inte de små el-klyvar (5–7 ton) som svenska villaägare oftast har. Ägaren kan inte parametern utantill.",
+    "notes": "Uppgiften 'hitta listning ≤ 28 USD för små klyvar' misslyckades: Seznam 'log splitter cover waterproof', 'log splitter cover small electric 5 ton', 'log splitter cover', 'electric log splitter cover oxford waterproof' (2026-09-08) gav bara vedställ, presenningar och borrklyvar. Yahoo US site:temu.com svarade 503. Jula.se 403, Amazon.se tomt, CDON 404, Clas Ohlson läsbar (utgått). Katalogkontroll: butiken säljer 'Manuell Vedklyv – Väggmonterad Gjutjärn' 1 489 kr — annan produkt, ingen krock."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "kopplingskamera",
+    "product_name_sv": "Magnetisk trådlös kopplingskamera för släp/husvagn (telefon)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 30,
+    "winner_hypothesis": "Släpvagnsägaren 45–70 (1,34 M släp i trafik) kopplar oftast ensam och kliver ur två–tre gånger per koppling för att gissa de sista tio centimetrarna. En batterikamera med magnet på dragbalken som visar kulan i telefonen är PTZ-kamerans arketyp: synlig hårdvaruskillnad mot kedjornas kablade kit. DNA:t säger att arketypen bär vid 799 kr — men bara med ett märkesankare ≥ 1,6× och en listning under 28 USD, och ingetdera finns.",
+    "why_it_could_print": "- Publik 1 341 430 släpvagnar i trafik (Trafikanalys, Fordon i län och kommuner 2024).\n- Annonsörer: 0 DTC-butiker i magnet+telefon-formen; bara två nischhandlare (Yahoo SE 2026-09-08).\n- Kedjorna saknar formen: Biltema har enbart kablade monitorkit (v23, 2026-09-05).\n- Prisutrymme finns INTE: lästa listningar 89,75–107,33 USD → landad 937–1 314 kr.",
+    "main_risk": "Fyndiq säljer exakt formen ('Trådlös Magnetisk Dragkrok Backkamera 1080p 32g') för 224–399 kr och det enda samma-form-ankaret (Amazon.se MHCABSR 1 050 kr) ligger under 1,6 × 799 — ankarläget saknas. Därtill är alla prissatta Temu-listningar 90–107 USD, och 720p-listningen 601099523116633 är fortfarande opris efter fyra Seznam-sökningar.",
+    "hook_sv": "Kopplar du släpet ensam?",
+    "q4_label": "EVERGREEN",
+    "se_price_sek": 799,
+    "landed_low_sek": 937,
+    "landed_high_sek": 1314,
+    "multiple_low": 0.61,
+    "multiple_high": 0.85,
+    "reviews_gate": {
+     "count": null,
+     "source": "UNKNOWN för 601099523116633 (Seznam gav inga snippets 2026-09-05 och 2026-09-08). Monitor-varianten 601101021099794 hade 44 rec (seznam-snippet 2026-09-05) — annan form.",
+     "verdict": "UNKNOWN"
+    },
+    "advertiser_gate": {
+     "count": 1,
+     "method": "dtc-proxy",
+     "evidence": [
+      "radioteknik.se 'TRÅDLÖS WIFI KAMERA MED MAGNETFÄSTE' (Yahoo SE 2026-09-08) — nischhandlare (alkolås/dashcams), inte one-product-store; räknad som 1",
+      "lastatungt.se 'Trådlös backkamera med Wifi & magnetfäste 1080p HD' (Yahoo SE 2026-09-08) — bred fordonstillbehörshandlare med 40+ bilmärken; räknas inte som DTC",
+      "fyndiq.se: 7 listningar magnetisk dragkrokskamera (224 kr, 278 kr, 399 kr; Yahoo SE 'site:fyndiq.se backkamera dragkrok magnetisk trådlös' 2026-09-08) — marketplace, räknas i hyllan",
+      "Ad Library SE ej nåbart 2026-09-08"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Fyndiq 'Trådlös Magnetisk Dragkrok Backkamera, 1080p Backövervakningsenhet 32g' 224 kr (Yahoo SE-utdrag 2026-09-08; produktsidan gav fel innehåll vid hämtning); syskon 278 kr och 'Backkamera för dragkrok trådlös HD' 399 kr",
+     "floor_price_sek": 224,
+     "floor_url": "https://fyndiq.se/produkt/tradlos-magnetisk-dragkrok-backkamera-1080p-backovervakningsenhet-32g-deb4388379464011/",
+     "anchor_name": "Samma form: Amazon.se MHCABSR magnetisk hitch-kamera 1 050 kr (v23/PORTFOLJ.md 2026-09-05; sidan HTTP 500 i dag) = 1,31× — under 1,6×. Annan form: Camping4u RVC-50 trådlös 5\" monitor 1 995 kr, Prylstaden 895 kr (ord. 1 495)",
+     "anchor_price_sek": 1050,
+     "anchor_url": "https://www.amazon.se/MHCABSR-F%C3%B6rb%C3%A4ttrad-backup-kamera-uppladdningsbar-batteridriven/dp/B0C993S4R5",
+     "anchor_in_stock": null,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Släpet står ute på uppfarten, friktionen uppstår varje koppling (ved, löv, återvinning i höst). Flaggor ur negativa rymden: app-parning + wifi = montering/inlärning (30 % av förlorarna); ingen deadline (EVERGREEN) så presensen är per tur, inte per säsong."
+    },
+    "audience": {
+     "size": 1341430,
+     "source": "Trafikanalys 'Fordon i län och kommuner 2024' Tabell 1 (årsskiftet 2024/2025): 1 341 430 släpvagnar i trafik; 349 000 avställda; husvagnar 283 840. https://www.trafa.se/globalassets/statistik/vagtrafik/fordon/2025/fordon-i-lan-och-kommuner-2024.pdf",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601099523116633",
+      "url_se": "https://www.temu.com/se/g-601099523116633.html",
+      "title": "Wireless wifi magnetic hitch camera 5G HD 720p backup camera with rechargeable battery for iPhone/Android",
+      "source": "v23/evergreen.json",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Enda 720p-listningen i telefon-app-formen — prisklassen som kan ligga under 28 USD. Priset har aldrig lästs; det är det enda som kan ändra ekonomidomen."
+     },
+     {
+      "goods_id": "601099520200892",
+      "url_se": "https://www.temu.com/se/g-601099520200892.html",
+      "title": "Magnetic hitch wireless backup camera with rechargeable battery, smartphone app, 5G wifi, night vision waterproof",
+      "source": "v23/evergreen.json (alt)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Samma form, opris. Andrahandsval om 601099523116633 är död eller blockeras."
+     },
+     {
+      "goods_id": "601099527243893",
+      "url_se": "https://www.temu.com/se/g-601099527243893.html",
+      "title": "5G hitch trådlös backup camera, truck/RV/car DVR, för iOS och Android (SE-titel)",
+      "source": "v23/evergreen.json (alt)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Har SE-sida bekräftad i v23. DVR-variant — troligen dyrare (89–107-familjen)."
+     },
+     {
+      "goods_id": "605857362316888",
+      "url_se": "https://www.temu.com/se/g-605857362316888.html",
+      "title": "Magnetic hitch camera with BSD + recording (telefon-app)",
+      "source": "v23/evergreen.json, Temu -s.html 2026-09-05",
+      "price_usd": 89.93,
+      "reviews": null,
+      "why_this_one": "Prissatt referens: 89,93 USD = landad ~937–1 100 kr. Visar att familjen ligger över taket — verifiera inte, bara som prisbevis."
+     }
+    ],
+    "priority_for_live_check": 3,
+    "confidence": "MEDIUM",
+    "variants": "En SKU (kamera + magnetfot + USB-laddning). Inga mått ägaren måste kunna. Kräver app-parning.",
+    "notes": "Seznam 2026-09-08: 'magnetic hitch camera wireless', 'hitch camera magnetic 720p wifi phone', 'hitch camera magnetic wireless 1080p rechargeable', 'trailer hitch backup camera magnetic phone app' — noll relevanta goods-id. Yahoo US site:temu.com 503. Amazon.se B0C993S4R5 HTTP 500 (tredje gången). Katalogkontroll: butiken har PTZ-övervakningskamera 799 kr och endoskop 699 kr — annan produkt, ingen krock. Fyndiq-priserna 224–278 kr antyder att inköpspriset på formen är 10–20 USD — men ingen sådan Temu-listning gick att hitta."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "spa-dammsugare",
+    "product_name_sv": "Handhållen spa-/pooldammsugare (batteri)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 28,
+    "winner_hypothesis": "Ägaren av ett fast utomhusspabad (160 000 i Sverige) får löv, barr och grus på botten varje gång locket är av i höst; filtret tar det inte och håven når inte. En sladdlös handdammsugare suger upp det på 30 sekunder utan att tömma badet. Strukturen är spöklämmans per-bad-friktion — men objektet ligger på en hylla där Jula redan säljer exakt formen (Bestway) för 399 kr och åtta fackhandlare 999–1 395 kr, så DNA:t förutsäger jämförelsehandel, inte impuls.",
+    "why_it_could_print": "- Ankare i lager: Spabadsbutiken Pool Blaster Spa Vac Plus 1 189 kr = 1,99 × 599 (curl 2026-09-04); Kuben 1 295, Spa Kompaniet 1 395 (2026-09-08).\n- Presens: skräp på botten syns i klart vatten varje höstbad, spabadet står ute året runt.\n- En variant, ingen montering, payoff = handling (video).\n- Prisutrymme: UNKNOWN — Temu-pris aldrig läst.",
+    "main_risk": "Hyllan är full och kunden är redan jämförelsehandlad: Jula säljer exakt formen (Bestway Lay-Z-Spa) för 399 kr rea / 599 ordinarie, PriceRunner från 289 kr, och åtta svenska spa-handlare ligger 999–1 395 kr. Samtidigt är Temu-priset och recensionstalet okända, så ekonomin går inte att räkna.",
+    "hook_sv": "Ligger det skräp på botten i spabadet?",
+    "q4_label": "EVERGREEN",
+    "se_price_sek": 599,
+    "landed_low_sek": null,
+    "landed_high_sek": null,
+    "multiple_low": null,
+    "multiple_high": null,
+    "reviews_gate": {
+     "count": null,
+     "source": "UNKNOWN — inget recensionstal för 601099612894629 i dataset(V2.1), hylla/h4.json eller Seznam (3 sökningar + goods-id 2026-09-08).",
+     "verdict": "UNKNOWN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "0 one-product-/dropship-butiker i formen (Yahoo SE 'spadammsugare batteridriven spabad köp' + 'spadammsugare fri frakt … butik' 2026-09-08)",
+      "Fackhandel (räknas i hyllan, inte som DTC): spaochpoolbutiken.se/products/spadammsugare-lektra-elektrisk; spakompaniet.se/product/spadammsugare-batteridriven/ 1 395 kr (danskt bolag, .se-sajt); spabadsbutiken.se uppladdningsbar BC02 + Pool Blaster 1 189 kr; osterlenspoolcenter.se Gullberg & Jansson 999 kr (ord. 1 199); poolstore.se ES02; svenskapoolspa.se Aqua Broom; kuben.se 1 295 kr; spasupport.se",
+      "Jula Bestway Lay-Z-Spa uppladdningsbar pooldammsugare 399/599 kr (kedja)",
+      "Ad Library SE ej nåbart 2026-09-08. Proxyn skiljer inte annonsörer från hylla här — åtta fackhandlare i formen är ett hyllproblem, inte ett annonsörsproblem"
+     ],
+     "verdict": "WARN"
+    },
+    "shelf_gate": {
+     "floor_name": "Jula 'Uppladdningsbar pooldammsugare Bestway Lay-Z-Spa' 399 kr rea / 599 kr ord. (sökutdrag 2026-09-04, jula.se 403). PriceRunner B2X 60323 SPA Rengöringsdammsugare 289 kr (2026-09-04)",
+     "floor_price_sek": 399,
+     "floor_url": "https://www.jula.se/catalog/fritid/pool-och-bad/pooltillbehor/poolrengoring/uppladdningsbar-pooldammsugare-027677/",
+     "anchor_name": "Spabadsbutiken Pool Blaster Spa Vac Plus Bottensug (curl 2026-09-04); Kuben 'Dammsugare för Spa och Pool' 1 295; Spa Kompaniet 1 395 (rek. 1 695); Österlens Poolcenter G&J 999 (2026-09-08)",
+     "anchor_price_sek": 1189,
+     "anchor_url": "https://spabadsbutiken.se/spabad/spatillbehor/pool-blaster-spa-vac-plus-bottensug/",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Fast spabad står ute året runt; skräp på botten syns i september–november. Villkor: leverantörsvideon får inte visa pool/uppblåsbart spa (fel objekt = ROAS 0,56-fallet). Q4-klockan är svag — rengöring har ingen deadline."
+    },
+    "audience": {
+     "size": 160000,
+     "source": "Svenska Badbranschen, branschstatistik okt 2023: 'totalt 160 000 spabad' (prognos 2023, produkter ≥ 15 000 kr, ±15 %). https://www.mynewsdesk.com/se/svenska-badbranschen/pressreleases/svenska-badbranschen-delar-branschstatistik-foer-pooler-och-spabad-3277173 (läst 2026-09-08)",
+     "verdict": "WARN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601099612894629",
+      "url_se": "https://www.temu.com/se/g-601099612894629.html",
+      "title": "Hot Tub Vacuum Spa Vac — portable handheld, strong suction, for hot tub/pond/inflatable pool",
+      "source": "dataset(V2.1) / pool.md A2",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Konceptets primär; pris, recensioner och material aldrig lästa. Titeln nämner 'inflatable pool' — risk för fel objekt i video."
+     },
+     {
+      "goods_id": "603255895604627",
+      "url_se": "https://www.temu.com/se/g-603255895604627.html",
+      "title": "Handheld pool vacuum 8.5 GPM cordless spa hot tub vacuum with extension pole and 2 brush heads, 60 min running, rechargeable",
+      "source": "seznam-snippet 2026-09-08 ('spa vacuum hot tub rechargeable cordless')",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Uppladdningsbar (inte C-batterier) och 60 min drift — närmast Julas Bestway-form. Pris oläst."
+     },
+     {
+      "goods_id": "601103702625409",
+      "url_se": "https://www.temu.com/se/g-601103702625409.html",
+      "title": "Cordless pool vacuum, all-angle head, LED display, handheld rechargeable spa vacuum cleaner for hot tub, IPX8",
+      "source": "seznam-snippet 2026-09-08",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "IPX8 + LED-display = ser ut som Pool Blaster-ankaret. Pris oläst."
+     },
+     {
+      "goods_id": "606359605103019",
+      "url_se": "https://www.temu.com/se/g-606359605103019.html",
+      "title": "Handheld pool vacuum with telescopic pole, cordless spa/hot tub vacuum, 9.5 GPM, 2 brush heads",
+      "source": "seznam-snippet 2026-09-08 ('hot tub vacuum spa vac handheld')",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Teleskopstång = når botten utan att böja sig (55+-vinkel). Pris oläst."
+     },
+     {
+      "goods_id": "605817281608633",
+      "url_se": "https://www.temu.com/se/g-605817281608633.html",
+      "title": "Cordless handheld pool vacuum, 2 brush heads, hot tub, for leaves/sand/hair",
+      "source": "seznam-snippet 2026-09-08",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Reserv i samma form. Titeln säger 'summer pool cleaning' — kontrollera att heron visar spabad."
+     }
+    ],
+    "priority_for_live_check": 5,
+    "confidence": "LOW",
+    "variants": "En variant (universell). Batteri- vs handpumpsdrift ej läst för primären.",
+    "notes": "Under nya regeln är hyllan WARN (ankare 1 189 ≥ 1,6 × 599) i stället för V2.1:s ELIM — men G1 och G6 är UNKNOWN och proxyn visar åtta fackhandlare i formen. Katalogkontroll: 'Poolfilter Rengöringsborste 279 kr' är en annan produkt (filterrengöring), ingen krock. Spakompaniet.se är ett danskt bolag (Hinnerup) med svensk sajt."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "spa-racke",
+    "product_name_sv": "Handräcke till spabadets insteg (bas under kabinettet)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 40,
+    "winner_hypothesis": "Spabadsägaren 45–70 (och föräldrarna) kliver i och ur en 90 cm hög kant i mörker, kyla och halka i oktober utan något att hålla i. Ett räcke vars platta skjuts in under kabinettet — ingen skruv — är kroppslig friktion plus rädsla hos exakt kontots publik, och den svenska hyllan ligger 1 795–2 995 kr för samma form. DNA:t säger att ankarläget är det bästa av de fem koncepten — men stålräcket kostar 80 USD på Temu, vilket landar på 835–979 kr, dubbla taket.",
+    "why_it_could_print": "- Ankare i lager, samma form: poolbutiken.se 'Handtag till Spabad' 2 295 kr ('skjut in plattan under spabadet', 2026-09-08), Skånska Byggvaror Handledare 1 989 kr i lager (2026-09-08), Bauhaus Denform säkerhetsgrepp 1 795 kr, Folkpool SPA Side LED 2 995 kr (JSON-LD 2026-09-04) — alla ≥ 1,6 × 999.\n- Recensioner 118 (US-snippet) = under 150, grönt.\n- Ingen av Biltema/Jula/Clas/Rusta säljer formen (h4.json 2026-09-04).\n- Prisutrymme finns INTE på läst listning: 79,99 USD → landad 835–979 kr.",
+    "main_risk": "Ekonomin: originalet är 100 kg-klassat stål på 1,2 m för 79,99 USD → landad 835–979 kr, långt över 420-taket; aluminiumlistningens pris är oläst. Näst: tre .com-butiker med svenska produktsidor 'Handtag till Spabad' (dropship-mönster) tyder på att formen redan annonseras i Sverige.",
+    "hook_sv": "Svårt att kliva ur spabadet?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 999,
+    "landed_low_sek": 835,
+    "landed_high_sek": 979,
+    "multiple_low": 1.02,
+    "multiple_high": 1.2,
+    "reviews_gate": {
+     "count": 118,
+     "source": "Sökutdrag (dataset V2.1 / UNIVERSUM.csv 'snippet'), US-sajtens tal. Ej omläst 2026-09-08 (Seznam goods-id-sökning gav inget snippet).",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 3,
+     "method": "dtc-proxy",
+     "evidence": [
+      "linxinran.com/product/handtag-till-spabad/ — svensk produktsida, .com, dropship-mönster (Yahoo SE 2026-09-08); sidan HTTP 403 — OBEKRÄFTAD",
+      "jinghangsports.com/produkt/handtag-spabad/ — svensk produktsida, .com (Yahoo SE 2026-09-08); HTTP 403 — OBEKRÄFTAD",
+      "canesphere.com/product/handtag-till-spabad-for-i-och-urstigning/ — identisk titel som poolbutiken.se (Yahoo SE 2026-09-08); HTTP 520 — OBEKRÄFTAD",
+      "Fackhandel (hylla, inte DTC): poolbutiken.se 2 295 kr; relaxospabad.se (Viskan Spa, platta under badet, pris oläst); spaobad.com 1 453 kr; skanskabyggvaror.se 1 989 kr; folkpool.se 2 995 kr; bauhaus.se Denform 1 795 kr; magiskpool.se + spaochpoolbutiken.se säljer bara POOL-handledare (ingjutning, 3 995 kr — annan form)",
+      "Ad Library SE ej nåbart 2026-09-08. Domen bygger på tre obekräftade .com-sajter — huvudsessionen bör öppna en av dem innan räkningen används som kill"
+     ],
+     "verdict": "KILL"
+    },
+    "shelf_gate": {
+     "floor_name": "VEVOR Ledstång Spa 54,2×37×160 cm (PriceRunner 2026-09-04; marketplace/brand-DTC). spaobad.com Handtag till Spabad 1 453 kr (2026-09-08)",
+     "floor_price_sek": 860,
+     "floor_url": "https://www.pricerunner.se/results?q=spa+r%C3%A4cke",
+     "anchor_name": "poolbutiken.se 'Handtag till Spabad för i och urstigning' 2 295 kr (platta under spabadet, 2026-09-08); Skånska Byggvaror Handledare 1 989 kr i lager (2026-09-08); Bauhaus Säkerhetsgrepp Denform 1 795 kr; Folkpool SPA Side LED Handrail 2 995 kr",
+     "anchor_price_sek": 2295,
+     "anchor_url": "https://poolbutiken.se/webbutik/handtag-till-spabad-for-i-och-urstigning/",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Fast spabad ute; halt, mörkt och kallt insteg är oktobers verklighet — presens 2. Risker: basen passar inte spabad infällt i trädäck; leverantörsvideon kan visa husbil (RV) i stället för spa; 1,2 m stål = frakt."
+    },
+    "audience": {
+     "size": 160000,
+     "source": "Svenska Badbranschen, branschstatistik okt 2023: 'totalt 160 000 spabad' (prognos 2023, ≥ 15 000 kr, ±15 %). https://www.mynewsdesk.com/se/svenska-badbranschen/pressreleases/svenska-badbranschen-delar-branschstatistik-foer-pooler-och-spabad-3277173 (läst 2026-09-08)",
+     "verdict": "WARN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601099615552288",
+      "url_se": "https://www.temu.com/se/g-601099615552288.html",
+      "title": "360° rotatable spa side handrail, 35–57 in adjustable height, rust-proof aluminum, slide-under base, 600 lbs",
+      "source": "alt/spa-racke.json (WebSearch site:temu.com spa handrail pivot 360)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Enda ALUMINIUM-listningen — bästa chansen att ligga ≤ 34 USD (landad ≤ 416 kr vid 999 kr). Verifiera denna först; den avgör om konceptet lever."
+     },
+     {
+      "goods_id": "601099581735142",
+      "url_se": "https://www.temu.com/se/g-601099581735142.html",
+      "title": "600 lbs capacity hot tub handrail 56 in, pivots 360°, adjustable height, slide under base",
+      "source": "alt/spa-racke.json",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Exakt konceptets mekanism (slide under base). Pris oläst."
+     },
+     {
+      "goods_id": "601099631535125",
+      "url_se": "https://www.temu.com/se/g-601099631535125.html",
+      "title": "600 lbs capacity hot tub handrail 56 in, pivots 360°, adjustable height, slide under base (annan säljare)",
+      "source": "alt/spa-racke.json",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Dubblett av föregående hos annan säljare — prisjämförelse. Pris oläst."
+     },
+     {
+      "goods_id": "601099575291512",
+      "url_se": "https://www.temu.com/se/g-601099575291512.html",
+      "title": "221 lbs steel 48 in hot tub handrail spa stair ladder side hand rail, silver",
+      "source": "dataset(V2.1) / material/us-raw",
+      "price_usd": 79.99,
+      "reviews": 118,
+      "why_this_one": "Originalet — enda listningen med lästa tal (79,99 USD, 118 rec, US-sida hämtad i V2.1). Ekonomin faller; behåll bara som referens och materialkälla."
+     }
+    ],
+    "priority_for_live_check": 2,
+    "confidence": "MEDIUM",
+    "variants": "En variant (justerbar höjd 35–57 in på alu-listningen). Ägaren behöver inte mäta.",
+    "notes": "Seznam 2026-09-08 ('hot tub handrail spa', 'spa handrail slide under base', 'hot tub handrail 600lbs adjustable height') gav bara RV-trappsteg, duschhandtag och poolstegar — inga nya räckeslistningar. Ankarstrukturen är den starkaste av de fem koncepten (fyra svenska ankare 1 795–2 995 i samma form), så en alu-listning ≤ 34 USD skulle vända G6 — därav prioritet 2 trots strong=false. Ingen katalogkrock."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "mossrafsa",
+    "product_name_sv": "Manuell mossräfsa/vertikalräfsa med stålblad",
+    "strong_hypothesis": false,
+    "hypothesis_score": 52,
+    "winner_hypothesis": "Villaägaren 45–70 (~2 M småhus) ser i september–oktober att gräsmattan är grönare av mossa än av gräs efter en fuktig sensommar; lövkrattan river inte loss den och en elektrisk vertikalskärare kostar 1 500–3 500 kr. En handräfsa med vinklade stålblad tar mossan där den syns. DNA:t säger att presensen är perfekt (fotograferbar i varje trädgård i oktober), publiken är den bredaste i universumet och ingen annonserar — men Jula säljer en gräsmatteluftare i samma form för 199 kr och det finns inget märkesankare, vilket är exakt mönstret som fällde tofflor 9.",
+    "why_it_could_print": "- Prisutrymme: 21 USD → landad 219–257 kr → 2,53–2,96× vid 649 kr (seznam-snippet 2026-09-04).\n- Annonsörer: Meta Ad Library SE ACTIVE 'mossräfsa vertikalskärare' = 0 (2026-09-04); 'mossa gräsmatta' = 1 annonsör (Xeed, gräsfrö — annan produkt).\n- Publik ~2 000 000 småhus (SCB), objektet omisskännligt i flödet (mossig gräsmatta).\n- Presens 2: mossan syns nu, arbetet görs i höst; hooken går att skriva på 6 ord.",
+    "main_risk": "Hyllan utan ankare: Jula Hard Head Gräsmatteluftare 150 cm 199 kr ('tar bort mossa', rostfria tänder, 75 varuhus) och Bauhaus Gardol Gräsmatteluftare 289 kr är samma form till 0,3–0,45× vårt pris, och det finns inget märkesankare ≥ 1 038 kr i handräfseform — bara elmaskiner. Kunden googlar 'mossräfsa' och hittar Jula.",
+    "hook_sv": "Mer mossa än gräs i gräsmattan?",
+    "q4_label": "OCTOBER",
+    "se_price_sek": 649,
+    "landed_low_sek": 219,
+    "landed_high_sek": 257,
+    "multiple_low": 2.53,
+    "multiple_high": 2.96,
+    "reviews_gate": {
+     "count": 99,
+     "source": "seznam-snippet 2026-09-04 (US-sajt) visar '99+' med betyg 4,8/96 % — exakt tal ≥ 99, okänt om det ligger under 150 eller upp mot 300. Alternativet 602927901026045: 19 rec (seznam 2026-09-04).",
+     "verdict": "OK"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "adlibrary-prior (datum)",
+     "evidence": [
+      "Meta Ad Library SE ACTIVE 'mossräfsa vertikalskärare' = 0 annonser (v22/fas2/tomt.json, 2026-09-04)",
+      "Meta Ad Library SE ACTIVE 'mossa gräsmatta' = 2 annonser / 1 annonsör (Xeed.se — gräsfrö och gödsel, inte verktyg) (2026-09-04)",
+      "DTC-proxy 2026-09-08 (Yahoo SE 'mossräfsa', 'mossräfsa vertikalräfsa manuell köp' = 0 träffar, 'site:fyndiq.se mossräfsa…'): inga DTC-butiker i formen — bara Granngården/Bauhaus-kategorier, Jula, CDON-kategori och guider (Expressen, Trädgårdsmästarna, Villaälskarna)"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Jula Hard Head 'Gräsmatteluftare 150 cm — ger gräset syre, tar bort mossa, tänder av rostfritt stål' 199 kr, i lager online + varuhus (WebSearch-utdrag jula.se 2026-09-08; v23 'HARD REJECT' 2026-09-05). Bauhaus Gardol Gräsmatteluftare 178,5 cm 289 kr (bauhaus.se krattor-räfsor, 2026-09-08)",
+     "floor_price_sek": 199,
+     "floor_url": "https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/krattor-och-rafsor/grasmatteluftare-028582/",
+     "anchor_name": "Inget märkesankare i handräfseform ≥ 1 038 kr: Bauhaus dyraste räfsor är Xeed Dressraka 1 295 (planeringsraka, annan form) och Hörby Planeringskratta 869 (annan form); Granngården visar bara Fiskars löv-/krattor (priser 'Hämtar pris'). Elektriska vertikalskärare (Jula/Biltema/Bauhaus 1 500–3 500) är en annan form.",
+     "anchor_price_sek": null,
+     "anchor_url": "https://www.bauhaus.se/tradgardsskotsel/tradgardsredskap/krattor-rafsor",
+     "anchor_in_stock": null,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Gräsmattan står ute; mossan syns och känns i september–oktober (presens 2, fotograferbar). Ingen kranskyddsfälla — skadan är nu, inte i februari. Flagga: hårt kroppsarbete sänker upplevd payoff mot en maskin; den som redan har elmaskin har ett fungerande old way."
+    },
+    "audience": {
+     "size": 2000000,
+     "source": "~2 000 000 bostäder i småhus (SCB 2022, via v22/fas2/tomt.json som citerar sv.wikipedia Småhus) — nästan alla med gräsmatta",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601103047271003",
+      "url_se": "https://www.temu.com/se/g-601103047271003.html",
+      "title": "Thatch Rake for Lawn 15 in, thatching rake with sharp dethatching blade, manual dethatcher scarifier tool",
+      "source": "v22/fas2/tomt.json; seznam 2026-09-04 + 2026-09-08",
+      "price_usd": 21,
+      "reviews": 99,
+      "why_this_one": "Primären: 21 USD ger 2,5–3× vid 649; 4,8/96 %. Live-hämtningen ska ge exakt recensionstal (US), video i bruk ≤ 3 s och om bladen är stål (inte plast som Julas huvud)."
+     },
+     {
+      "goods_id": "602927901026045",
+      "url_se": "https://www.temu.com/se/g-602927901026045.html",
+      "title": "Lawn Thatch Rake 17 in steel dethatching tool, adjustable 0–15° angle, 38–68 in length, heavy duty",
+      "source": "v22/fas2/tomt.json; seznam 2026-09-04 + 2026-09-08",
+      "price_usd": 30,
+      "reviews": 19,
+      "why_this_one": "Justerbart skaft 97–173 cm + vinkel = 55+-ergonomi och ser dyrare ut än Julas. 30 USD → landad 313–367, kräver 799 kr (2,18–2,55×) — övre kanten."
+     }
+    ],
+    "priority_for_live_check": 1,
+    "confidence": "MEDIUM",
+    "variants": "En variant (15 in); alternativet har justerbart skaft och vinkel — inga SKU:er ägaren måste mäta.",
+    "notes": "Enda konceptet där alla gater passerar eller står på varning — men strong=false eftersom hyllan (Jula 199 samma form) saknar ankare, vilket DNA:t klassar som fallet tofflor 9 (look-alike 229 utan ankare). Prioritet 1 för live-kontroll ändå: en video som visar stålblad som river loss mossa inom 3 s plus ett exakt recensionstal < 150 är det enda som kan lyfta den till test. Katalogkontroll: 'Ståltrådsborsthuvuden för Trimmer – Mossröjare' 349 kr är för trimmer/stenplattor, annan form och annat objekt — ingen krock. Amazon.se tomt, CDON 404, Fyndiq inga träffar 2026-09-08."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "takboxhiss",
+    "product_name_sv": "Takboxhiss/takhiss för garaget (remhiss med block, 45 kg)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 30,
+    "winner_hypothesis": "Villaägaren med takbox (Thule/Calix, 2 m, 15–25 kg) tar av boxen i oktober–november och den står på garagegolvet eller lutad mot väggen hela vintern. Hissen (fyra krokar, remmar, block) lyfter boxen upp i garagetaket. DNA:t säger emot: produkten är en takinstallation inomhus (skruv i bjälke), problemet finns inte i september (boxen sitter kvar på bilen, och många svenskar sätter PÅ boxen inför vintern/sportlovet), och kedjorna säljer exakt formen (Jula Hamron garagehiss, Mekonomen Boxlift, Fasty 295 kr).",
+    "why_it_could_print": "• Ankare i lager: Thule Multilift 2 / Boxlift 40 kg 2 995 kr (takbox.se, I lager, 2026-09-08); gamla Thule MultiLift 572 är utgången.\n• Ekonomin räcker: Temu 18 USD (Seznam-snippet) → SE-Temu 125–147 kr → landad 188–220 kr → 599 kr ger 2,7–3,2×.\n• DTC-proxy 0: verktygbutik.se är en Amazon-affiliate (\"Se pris\"-länkar), lastat.se säljer ingen hiss, mellbyhome.com är Fasty-återförsäljare — inga one-product-butiker hittade.\n• Flerköpsskäl svagt men finns (cykel/kajak i samma garage).",
+    "main_risk": "Hyllan + strukturen: Jula säljer samma remhissform (Hamron garagehiss), Fasty 295 kr i lager och 150 kr via Mekonomen (guide), Packline 350 kr på Amazon.se — och vår 18-dollarshiss ser ut som Fasty, inte som Thule-ankaret. Dessutom takmontering inomhus och ett problem som inte syns förrän boxen tas av (okt–nov).",
+    "hook_sv": "Står takboxen i vägen i garaget?",
+    "q4_label": "OCTOBER",
+    "se_price_sek": 599,
+    "reviews_gate": {
+     "count": 9,
+     "source": "seznam-snippet 2026-09-08: 606455033885834 = 9 rec, 4,2, $18 (US); 601099700017371 = 35 rec, 5,0, $20 (US). De två ursprungliga id:na (601099714039172, 606866444784512) saknar tal → UNKNOWN för dem.",
+     "verdict": "GREEN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'takboxhiss' + 'takboxhiss köp fri frakt butik' (2026-09-08): jula.se Hamron Garagehiss (kedja), mekonomen.se Boxlift (kedja), bauhaus.se (kedja), takboxspecialisten.com (fackhandel med fysisk butik; Menabo 695/595, Mont Blanc/Thule 3 000/2 700 ur snippet), lastat.se (fackhandel, ingen hiss i sortimentet vid läsning), mellbyhome.com (Fasty-återförsäljare, sida ej läsbar), verktygbutik.se/e/garagehiss-for-takbox/ (WordPress-affiliate, alla priser 'Se pris' → Amazon)",
+      "Ad Library ej nåbar — proxy. 0 DTC/one-product-butiker i samma form."
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Fasty Multilift/Boxlift (takupphängning) — samma remhissform",
+     "floor_price_sek": 295,
+     "floor_url": "https://www.takbox.se/search?q=multilift (Fasty 295 kr, I lager, 2026-09-08). Billigare i guiden bästatakboxen.se: Fasty Boxlift 150 kr via Mekonomen, Packline Box Lift 350 kr via Amazon.se. Jula Hamron Garagehiss för takbox finns (Yahoo-träff), pris ej läsbart i denna körning (tidigare mätt 299 kr).",
+     "anchor_name": "Thule Multilift 2 / Boxlift 40 kg (572050)",
+     "anchor_price_sek": 2995,
+     "anchor_url": "https://www.takbox.se/search?q=multilift",
+     "anchor_in_stock": true,
+     "verdict": "WARN"
+    },
+    "structural_gate": {
+     "verdict": "FAIL",
+     "reason": "Produkten är en takinstallation inomhus (garage) och kräver montering i bjälke — DNA negativ rymd: 'objektet förvaras inomhus när det inte används' 0/9 vinnare, 'montering/installation' 30 % av förlorarna. Problemet (boxen på golvet) finns inte i september; boxen tas av okt–nov och många sätter tvärtom PÅ den inför vintern. Kan inte fotograferas i en svensk trädgård i launchmånaden."
+    },
+    "audience": {
+     "size": null,
+     "source": "UNKNOWN — två WebSearch (SCB/Transportstyrelsen/branschsidor) gav ingen siffra på takboxägare i Sverige; Trafikanalys räknar inte takboxar.",
+     "verdict": "UNKNOWN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "606455033885834",
+      "url_se": "https://www.temu.com/se/g-606455033885834.html",
+      "title": "Garage Pulley Lift Rack Ceiling-Mounted Hoist for Bicycles, Kayaks & Roof Boxes, 45 kg (99.21 lb)",
+      "source": "seznam-snippet 2026-09-08: $18, 4,2, 9 rec, i lager",
+      "price_usd": 18,
+      "reviews": 9,
+      "why_this_one": "Enda listningen med 'roof boxes' i titeln, 45 kg räcker för takbox, lägst pris (landad ~190–220 kr), 9 rec = grönt. Kolla att videon visar lyftet, inte skruvandet."
+     },
+     {
+      "goods_id": "601099700017371",
+      "url_se": "https://www.temu.com/se/g-601099700017371.html",
+      "title": "1pc Garage Ceiling Storage Lift, adjustable, kayak and bike hoist system, no power supply needed",
+      "source": "seznam-snippet 2026-09-08: $20, 5,0, 35 rec, i lager",
+      "price_usd": 20,
+      "reviews": 35,
+      "why_this_one": "Alternativ med bättre betyg/fler bilder sannolikt; titeln nämner inte takbox — verifiera lastgräns och att heron duger."
+     },
+     {
+      "goods_id": "601099714039172",
+      "url_se": "https://www.temu.com/se/g-601099714039172.html",
+      "title": "Heavy duty stainless lift, overhead ceiling-mounted hoist with pulley system, 100 lb capacity",
+      "source": "V2.1 dataset (garage.md B3) — pris/rec aldrig hämtade",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Ursprungskandidaten, 45 kg-klassen; bara om de två ovan faller vid live-koll."
+     },
+     {
+      "goods_id": "606866444784512",
+      "url_se": "https://www.temu.com/se/g-606866444784512.html",
+      "title": "Garage Ceiling Lift Storage Hanger, load 45 lbs (se-en-listning)",
+      "source": "V2.1 dataset (garage.md B4) — pris/rec aldrig hämtade",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Sista reserv; 20 kg-gränsen ligger nära takboxens vikt — svag."
+     }
+    ],
+    "priority_for_live_check": 5,
+    "confidence": "MEDIUM",
+    "notes": "Ej i KATALOG (173 produkter, grep takbox/hiss/garage: bara sladdhållare och garagebelysning). Kranskyddsfällan gäller: skadan/friktionen inträffar okt–nov, launch i september. Jula-priset kunde inte läsas (jula.se ej läsbar); prisjakt.nu och amazon.se svarade tomt. Rekommendation: lägg i UNIVERSUM som 'koncept lever, strukturellt fel säsong och inomhus' — inte live-verifiera i denna körning.",
+    "landed_low_sek": 188,
+    "landed_high_sek": 220,
+    "multiple_low": 2.7,
+    "multiple_high": 3.2,
+    "variants": "En variant per lastkapacitet (45 kg resp. 20 kg). Ägaren vet ungefär boxens vikt (15–25 kg) — ofarlig parameter om 45 kg-varianten väljs."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "stegstod",
+    "product_name_sv": "Väggstöd/stegstöd till anliggande stege (stålvinge ~1 m, U-bult, gummiskydd)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 58,
+    "winner_hypothesis": "Villaägaren (2 136 854 småhus, SCB 2024-12-31) reser sin anliggande stege mot takrännan i oktober för att rensa löv. Rännan bucklas, stegen glider i sidled på plåtkanten och han når inte rakt fram. Väggstödet klamras på översta stegpinnen och flyttar anliggningen 34 cm ut till fasaden — rännan blir fri rakt framför. DNA:t säger ja: ägd sak som används utomhus mot huset, problemet syns i launchmånaden+1 (bucklan finns redan), ingen kedja säljer formen (Biltema, Jula, Byggmax, Bauhaus mätta), fackhandeln ankrar på 974–1 083 kr, och payoffen syns i en stillbild.",
+    "why_it_could_print": "• Ankare i lager: Wibe Väggstöd WL-717529 974 kr ord. (rea 779) hos Stegproffsen 'I lager'; Bygghemma Toppstöd Wibe WTB TOS 1 017 kr lagervara; W.steps Toppstöd 1 083 kr på stegar.se — alla 2026-09-08.\n• Hyllfrånvaro i kedjorna: Biltema stegtillbehör = upphängningsbeslag/stegkrok/snökedja/linda (inget väggstöd), Byggmax tillbehörssida utan väggstöd i träffarna, Bauhaus 11 tillbehör utan väggstöd (tidigare verifierad), Jula inga träffar. Golvet i samma form är Wibe 779 kr — ÖVER vårt pris.\n• DTC-proxy 0: enbart stegfackhandel (Stegproffsen, Stegmannen, Stegar.se, Stegfabriken) och kedjor/B2B (Bygghemma, Ahlsell).\n• Publik grön: 2 136 854 småhus (SCB, bostadsbeståndet 2024-12-31).",
+    "main_risk": "Ekonomin på 27 USD: SE-Temu 188–220 kr → landad 282–330 kr (1 m stål — frakten kan bli värre än ×1,5); 749 kr ger 2,3–2,7×, alltså under 2,4× i den dyra änden, och 799 kr hamnar över Wibes reapris 779. Näst: recensionstalet är Seznam-cappat på '99+' — kan vara 100 eller 900.",
+    "hook_sv": "Står stegen i takrännan när du rensar?",
+    "q4_label": "OCTOBER",
+    "se_price_sek": 749,
+    "reviews_gate": {
+     "count": 99,
+     "source": "seznam-snippet 2026-09-08: 606033590229831 = '99+' rec (cappat), 4,8, $27 (US-sajt). Exakt tal kräver live-JSON-LD. Alternativen 603294273508298 = 44 rec/$45 och 603274946159238 = 47 rec/$55 ligger över landat-taket. Ursprungs-id 601099637369908 m.fl.: inga tal → UNKNOWN.",
+     "verdict": "UNKNOWN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'väggstöd stege' (2026-09-08): stegproffsen.se (Zarges/Wibe väggstöd), stegmannen.se (Wibe), stegar.se (Wakü, Pa-So), stegfabriken.se (W.steps), byggmax.se (tillbehör stege), ahlsell.se (Zarges) — alla fackhandel/kedja/B2B",
+      "Yahoo SE 'stegstöd hängränna stege köp fri frakt': bygghemma.se, bauhaus.se, byggmax.se, stegfabriken.se, jula.se, ahlsell.se — inga one-product-butiker",
+      "Ad Library ej nåbar (tidigare mätning hus.md 2026-09-04: 0 annonsörer på 'väggstöd stege' och 'stegstöd hängränna')"
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "Wibe Väggstöd WL-717529 (rea) — samma form, fackhandel",
+     "floor_price_sek": 779,
+     "floor_url": "https://www.stegproffsen.se/stegar/anliggande-stegar/tillbehor-3/wibe-ladders/wibe-vaggstod",
+     "anchor_name": "Wibe Väggstöd ord.pris 974 kr (Stegproffsen) / Toppstöd Wibe WTB TOS 1 017 kr (Bygghemma) / W.steps Toppstöd 1 083 kr (stegar.se)",
+     "anchor_price_sek": 1017,
+     "anchor_url": "https://www.bygghemma.se/hus-och-bygg/stege-och-stallning/tillbehor-stege/ovriga-stegtillbehor/toppstod-wibe-wtb-tos/p-485932",
+     "anchor_in_stock": true,
+     "verdict": "PASS"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Ägaren äger stegen och huset; stegen används alltid utomhus mot fasaden (förvaras visserligen i garaget — flaggat). Problemet (bucklad ränna, stege som glider) är fotograferbart vid rännrensningen i oktober, 3–6 veckor efter launch — inte Kranskyddsfällan (nov–feb). En variant, universal U-bult."
+    },
+    "audience": {
+     "size": 2136854,
+     "source": "SCB, Bostadsbeståndet 2024-12-31: 2 136 854 lägenheter i småhus av 5 260 876 (scb.se/hitta-statistik/.../bostadsbestandet-31-december-2024/). Stegägande inom småhus ej mätt.",
+     "verdict": "GREEN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "606033590229831",
+      "url_se": "https://www.temu.com/se/g-606033590229831.html",
+      "title": "Heavy Duty Steel Gutter Guard Ladder Stabilizer — protect your gutters during painting and roof access, adjustable",
+      "source": "seznam-snippet 2026-09-08: $27, 4,8, 99+ rec, i lager",
+      "price_usd": 27,
+      "reviews": 99,
+      "why_this_one": "Enda listningen med pris under landat-taket (landad 282–330 kr). Live-koll måste ge exakt reviewCount (99+ cappat), SE-pris och att heron visar vingen på stegen mot vägg."
+     },
+     {
+      "goods_id": "601099637369908",
+      "url_se": "https://www.temu.com/se/g-601099637369908.html",
+      "title": "Ladder Stabilizer for Roof Gutter, Wing Span Wall Ladder Standoff, attaches with U-bolt, 485 lbs",
+      "source": "V2.1 hus.md B1 — pris/rec aldrig hämtade",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Bästa titeln (U-bult, 485 lbs); okänt pris kan vara lägre än 27 USD — värd en live-koll om primären fäller på recensionstalet."
+     },
+     {
+      "goods_id": "603294273508298",
+      "url_se": "https://www.temu.com/se/g-603294273508298.html",
+      "title": "Ladder Stabilizer Extension Ladder Standoff Heavy Duty Wing",
+      "source": "seznam-snippet 2026-09-08: $45, 5,0, 44 rec",
+      "price_usd": 45,
+      "reviews": 44,
+      "why_this_one": "Bara som referens: 45 USD → landad 470–551 kr = över 420-taket. Använd enbart om SE-priset visar sig vara mycket lägre än US-priset."
+     },
+     {
+      "goods_id": "601099608814085",
+      "url_se": "https://www.temu.com/se/g-601099608814085.html",
+      "title": "Heavy Duty Ladder Stabilizer Accessory Roof Gutter Wing Wall Ladder Standoff",
+      "source": "V2.1 hus.md B1 dubblett — pris/rec aldrig hämtade",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Reserv om båda ovan faller."
+     }
+    ],
+    "priority_for_live_check": 1,
+    "confidence": "MEDIUM",
+    "notes": "Ej i KATALOG (grep stege/stegst: 0 träffar). MUNK Väggfäste Enkel VFZ 340 kr på stegar.se är ett upphängningsfäste för förvaring, inte ett avståndsstöd — räknas inte som golv. Amazon.se/Prisjakt/PriceRunner ej läsbara i denna miljö → marketplace-golvet är omätt (tidigare hus.md: inga träffar). Blir stark hypotes om live-kollen ger: US-rec < 300, SE-pris ≤ 200 kr (→ landad ≤ 300, 749 kr = 2,5×) och en textfri hero i bruk. Prissättningen 749 kr ligger medvetet under Wibe-rean 779 och 1,36× under Bygghemma-ankaret 1 017.",
+    "landed_low_sek": 282,
+    "landed_high_sek": 330,
+    "multiple_low": 2.3,
+    "multiple_high": 2.7,
+    "variants": "En modell, universal U-bult — passar alla anliggande stegar. Ingen mätning krävs av kunden."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  },
+  {
+   "assessment": {
+    "concept_id": "husbils-termoskydd",
+    "product_name_sv": "Utvändigt termoskydd/isolermatta till husbilens vindruta (Ducato-form)",
+    "strong_hypothesis": false,
+    "hypothesis_score": 45,
+    "winner_hypothesis": "Husbilsägaren (55+, villa) ställer upp husbilen på uppfarten i september–oktober och den står ute till april: frost på rutan från oktober, sol som bleker instrumentbrädan, insyn hela vintern. Termoskyddet spänns över hytten utifrån på 30 sekunder — samma 'trä på och glöm' som motorhöljet och sätesöverdraget. DNA:t säger ja på objekt (ute, omisskännligt i flödet, hävstång ≥ 10×), hyllan (ingen kedja, fackhandel 1 529–1 675 kr) och hook — men Temu-listningens pris, recensioner, variantlista och hero är fortfarande osedda, så hypotesen kan inte skrivas utan gissning på ekonomin.",
+    "why_it_could_print": "• Ankare i lager: CDON/Monstershop 'Husbil Vindruteskärm Externt Termoskydd' 1 529 kr (ord. 1 599), I lager, passar Fiat Ducato III/Boxer II/Relay II, 352×132 cm, 3 kg — samma form som Temu-listningen (silverfoam, dragkedja, fickor). Hindermann Four Seasons hos Camping4u/GetCamping/Campingshopen/Förtältsbutiken (tidigare mätt 1 565 kr; i denna körning bara Knaus-modellen 5 365 kr läsbar).\n• Hyllfrånvaro i kedjorna: Biltema/Jula/Clas/Rusta 0 träffar (husvagn.md 2026-09-04; bekräftat i Yahoo-träffarna 2026-09-08 — bara camping-fackhandel + CDON + bildelsgrossister).\n• DTC-proxy 0: Camping4u, ScandiHills (Milenco), Campingvaruhuset, GetCamping, Reimo, OL Pro Shop, Campingshopen, Förtältsbutiken = fackhandel; autodoc/bildelaronline24/reservdelar24/motea = grossister.\n• Prisutrymme finns om Temu-priset håller: 899 kr ligger 1,7× under CDON-ankaret.",
+    "main_risk": "Ekonomin är oläst: SE-Temu-priset måste vara ≤ ~250 kr (landad ≤ 375) för att 899 kr ska ge 2,4× — ligger det över ~280 kr faller allt under 1 000 kr-taket. Därefter Kranskyddsfällan: frosten kommer i oktober–november, launch i september (Kranskydd Frost ROAS 1,59), och publiken ligger kring tröskeln (89 630–120 000 husbilar beroende på källa).",
+    "hook_sv": "Står husbilen ute i vinter?",
+    "q4_label": "Q4 NOW",
+    "se_price_sek": 899,
+    "reviews_gate": {
+     "count": null,
+     "source": "UNKNOWN — 601102148404312 saknas i Seznam/Yahoo-index (8 Seznam-frågor på motorhome/RV/campervan windscreen thermal cover gav bara personbilssolskydd, bilöverdrag och skuggnät; Yahoo US site:temu.com svarade 503). Måste läsas live.",
+     "verdict": "UNKNOWN"
+    },
+    "advertiser_gate": {
+     "count": 0,
+     "method": "dtc-proxy",
+     "evidence": [
+      "Yahoo SE 'termoskydd husbil utvändigt vindruta' (2026-09-08): camping4u.se (Thermomatta Husbil utvändig), scandihills.se (Milenco termomatta framruta utvändig), campingvaruhuset.se (Isolermatta till husbil), cdon.se (Monster Shop, 1 529 kr), getcamping.se (isolermattor), reimo.com/se (universell vindruteisolering 2,67×1,3 m)",
+      "Yahoo SE 'vindruteskydd husbil ducato köp fri frakt butik': olproshop.se (Termiskt vindruteskydd Ducato/Boxer/Relay), bildelaronline24.se, autodoc.se, reservdelar24.se, motea.com (Vanit fleece) — inga one-product-butiker",
+      "Ad Library ej nåbar — proxy."
+     ],
+     "verdict": "GREEN"
+    },
+    "shelf_gate": {
+     "floor_name": "CDON/Monstershop Husbil Vindruteskärm Externt Termoskydd (Ducato III) — samma form, marketplace",
+     "floor_price_sek": 1529,
+     "floor_url": "https://cdon.se/produkt/husbil-vindruteskarm-externt-termoskydd-husbil-vindruta-solskydd-dragkedja-nedfallbar-flik-silver-vattentat-forvaringsfickor-barvaska-6386f166faf55248/",
+     "anchor_name": "Hindermann Four Seasons utvändig isolermatta Ducato 250/290 (Campingshopen/Förtältsbutiken/Camping4u/GetCamping)",
+     "anchor_price_sek": 1565,
+     "anchor_url": "Tidigare mätt 1 565 kr (Campingtillbehör4u, husvagn.md). I denna körning: camping4u.se/olproshop.se/campingvaruhuset.se sök-URL:er gav 404/403 — priset ej ombekräftat. CDON 1 529 kr i lager fungerar som verifierat ankare (≥ 1,6 × 899 = 1 438).",
+     "anchor_in_stock": true,
+     "verdict": "PASS"
+    },
+    "structural_gate": {
+     "verdict": "PASS",
+     "reason": "Ägaren äger husbilen, den står ute på uppfarten från september–oktober, hytten är omisskännlig i flödet. Uppställningen sker i launchmånaden; frosten (payoffen) kommer 4–8 veckor senare — varning för Kranskyddsfällan, inte kill. Chassivariant (Ducato X250/X290 dominerar) är en parameter ägaren kan utantill — OM listningens varianter är chassinamn (oläst)."
+    },
+    "audience": {
+     "size": 89630,
+     "source": "Motstridiga tal: Dagens Infrastruktur 2026-07-08 (citerar Trafikanalys) 89 630 registrerade husbilar; Telgenytt (Trafikanalys) 'från drygt 92 000 (2017) till över 120 000'; HRF: 2 875 nyregistrerade 2024. Trafikanalys-PDF 'Fordon i län och kommuner 2024' hämtad men texten gick inte att extrahera. Tröskeln 100 000 avgörs av om avställda räknas — måste läsas ur Trafikanalys tabell.",
+     "verdict": "WARN"
+    },
+    "listing_candidates": [
+     {
+      "goods_id": "601102148404312",
+      "url_se": "https://www.temu.com/se/g-601102148404312.html",
+      "title": "Motorhome thermal windscreen screen cover wrap, blackout blinds, windshield protection, reinforced edges, windshield shade outdoor",
+      "source": "V2.1 husvagn.md B1 (Temu UK-listning) — pris/rec/varianter aldrig hämtade",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Enda kända listningen i rätt (utvändig) form. Live-kollen avgör allt: SE-pris ≤ 250 kr, reviewCount, variantlista = chassinamn, hero med skyddet PÅ en husbil utan inbränd text."
+     },
+     {
+      "goods_id": "601099514611565",
+      "url_se": "https://www.temu.com/se/g-601099514611565.html",
+      "title": "3pcs set internal thermal blinds 7 layers cover windscreen for Fiat Ducato 2006–2022",
+      "source": "V2.1 husvagn.md C1 — annan form (invändig)",
+      "price_usd": null,
+      "reviews": null,
+      "why_this_one": "Bara som nödreserv: samma ägare men INVÄNDIG (payoffen syns inte utifrån, GoCamp/Campingvaruhuset säljer formen). Inte samma koncept — ta den bara om primären är borta och videon är stark."
+     }
+    ],
+    "priority_for_live_check": 3,
+    "confidence": "LOW",
+    "notes": "Ej i KATALOG (grep husbil/husvagn/vindrut/termo: 0 träffar). Kalkylen (räkneexempel, inte data): SE-Temu 250 → landad 375 → 899 kr = 2,4×, BE-CPA ≈ 524; SE-Temu 300 → landad 450 → 2,0× = kill; landad > 420 (SE-Temu > 280) = över taket. Inget flerköpsskäl. Passform per chassi = returrisk om varianten är 'universal'. Ombekräfta Hindermann-priset och Trafikanalys-talet centralt.",
+    "landed_low_sek": null,
+    "landed_high_sek": null,
+    "multiple_low": null,
+    "multiple_high": null,
+    "variants": "Chassispecifik (Fiat Ducato X250/X290 ≈ majoriteten av svenska husbilar; Transit, Sprinter). Ägaren kan chassit utantill — ofarligt OM Temu-listningens varianter är chassinamn. Variantlistan är oläst."
+   },
+   "verdict": null,
+   "status": "WEAK"
+  }
+ ],
+ "discovered": [],
+ "fresh_unassessed": []
+}

@@ -1,0 +1,2802 @@
+[
+ {
+  "goods_id": "601103866118857",
+  "title": "4 Set/2 Set Heavy Duty Steel Fence Post Repair Kit With 32\" Ground Stakes, Adjustable Brackets, Pre-drilled Holes",
+  "concept": "staketstolps-reparationsbygel",
+  "object": "trästaketet / plankets stolpar vid tomtgränsen",
+  "owner_owns": "staketet han själv satte upp för 10–20 år sedan",
+  "friction": "stolpen har ruttnat av vid marken; höstregnet mjukar upp jorden och septemberstormen lägger sektionen på sned — syns på tomten i dag",
+  "old_way": "stötta med en bräda och en spik, eller gräva upp hela stolpen och gjuta ny (en helg + betong), eller låta staketet stå snett",
+  "price_usd": 16.0,
+  "rating": "4.8 / 96%",
+  "review_count": "89",
+  "sold": null,
+  "variants": "2-set eller 4-set (antal stolpar) — en parameter ägaren kan räkna själv",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Kedjorna säljer stolpskor/stolpfötter för NYA stolpar (gjuts eller slås ned före montering). En bygel som lagar en redan monterad, rutten stolpe utan att staketet demonteras är en brittisk/amerikansk form ('post repair spur / post mender'). Gick inte att verifiera 2026-09-04: WebSearch-budgeten slut, Jula 403, Biltema/Rusta 404, PriceRunner 403.",
+   "searches": [
+    "Meta Ad Library SE ACTIVE 'staketstolpe' = 2 annonser / 2 annonsörer (Stängselexperten.se: staket+grindar; recal.se: insynsskydd) — 0 annonserar reparationsbygeln",
+    "Meta Ad Library SE ACTIVE 'grind staket trädgård' = 0 annonser",
+    "jula.se/sok stolpstöd staket → 403",
+    "pricerunner.se → 403"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Lutar staketstolpen efter höststormen?",
+  "audience": {
+   "owner_class_size": "~2 000 000 bostäder i småhus i Sverige (2022); andelen med trästaket/plank är inte mätt",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus (citerar SCB)",
+   "verdict": "PASS",
+   "note": "Ett snett staket är omisskännligt i ett Meta-flöde och pekar rakt på man 45–70 med småhus. Delmängden med trästaket är inte kvantifierad — men även 10 % av 2 M är 200 000 hushåll."
+  },
+  "negative_space_flags": [],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 78,
+  "category_novelty_0_100": 92,
+  "tier": "B",
+  "confidence": "MEDIUM",
+  "main_risk": "Hyllan är overifierad i dag. Faller den (Biltema/Bauhaus har en likadan reparationsbygel) faller konceptet, för formen är billig att kopiera. Näst största risken: monteringen kräver slägga och 30 minuters arbete — 'montering/inlärning' finns i negativa rymden hos 30 % av förlorarna, även om payoffen här är synlig direkt.",
+  "sources": [
+   "Seznam: site:temu.com fence post repair (+ fence post anchor, fence repair kit, tilted fence post, fence post support bracket steel)",
+   "Meta Ad Library SE"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601103866118857.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 167.0,
+   "landed_high_sek": 195.8,
+   "se_price_sek": 499,
+   "multiple_low": 2.55,
+   "multiple_high": 2.99,
+   "be_cpa": 303.2,
+   "be_cpa_range": [
+    303.2,
+    332.0
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PASS",
+   "note": "2.55–2.99x uppslag, BE-CPA 303.2–332.0 kr"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "605539333446038",
+  "title": "3D Heavy Duty 6ft No Dig Metal Fence Posts, Pack Of 10 Steel U Posts For Garden Yard Outdoor Wire Fencing",
+  "concept": "staketstolps-reparationsbygel (alternativ listning — fel produkt)",
+  "object": "trästaketet",
+  "owner_owns": "staketet",
+  "friction": "samma",
+  "old_way": "samma",
+  "price_usd": 39.0,
+  "rating": "4.7 / 94%",
+  "review_count": "29",
+  "sold": null,
+  "variants": "10-pack",
+  "swedish_shelf": {
+   "verdict": "UNKNOWN",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "FAIL",
+   "shelf": "UNKNOWN",
+   "material": "BLOCKED_SOURCE",
+   "economics": "UNKNOWN",
+   "variant": "UNKNOWN",
+   "hook": "UNKNOWN",
+   "audience": "UNKNOWN"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": null,
+   "source": null,
+   "verdict": "UNKNOWN"
+  },
+  "negative_space_flags": [
+   "behovet måste skapas — detta bygger ett NYTT staket, det lagar inget befintligt"
+  ],
+  "eliminated_at": "objekt",
+  "winner_dna_match_0_100": 22,
+  "category_novelty_0_100": 40,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Fel produkt för friktionen — U-stolpar för nätstängsel, inte reparation av befintligt trästaket.",
+  "sources": [
+   "Seznam: site:temu.com fence post repair"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-605539333446038.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 407.2,
+   "landed_high_sek": 477.4,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601103047271003",
+  "title": "Thatch Rake For Lawn 15in Thatching Rake With Sharp Dethatching Blade, Manual Dethatcher Scarifier Tool For Dead Grass Removal",
+  "concept": "manuell mossräfsa/vertikalräfsa för gräsmattan",
+  "object": "gräsmattan",
+  "owner_owns": "gräsmattan han klipper varje vecka",
+  "friction": "efter en fuktig svensk sensommar är gräsmattan grön av MOSSA i september–oktober; mossan går inte att kratta bort med en vanlig lövkratta och höstens mossbekämpning är exakt nu",
+  "old_way": "vanlig kratta (river inte loss mossan), hyra en vertikalskärare för en dag, köpa en elektrisk vertikalskärare för 1 500–3 500 kr, eller järnsulfat och sedan låta mossan ligga kvar",
+  "price_usd": 21.0,
+  "rating": "4.8 / 96%",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "15 tum, en variant",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": "elektrisk vertikalskärare/mossrivare (kategorin finns hos Jula och Biltema)",
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Kedjorna äger MASKIN-kategorin (elektrisk vertikalskärare). Frågan är om de säljer en manuell mossräfsa med vinklat stålblad i samma form — det gick inte att verifiera i dag. Ankarundantaget är svagt här: en handräfsa 'ser inte ut som' en elmaskin, så hyllfrånvaron måste stå på egna ben.",
+   "searches": [
+    "Meta Ad Library SE ACTIVE 'mossräfsa vertikalskärare' = 0 annonser",
+    "Meta Ad Library SE ACTIVE 'mossa gräsmatta' = 2 annonser / 1 annonsör (Xeed.se — gräsfrö och gödsel, alltså förbrukning, inte verktyg)",
+    "jula.se/biltema.se sök → 403/404"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du mer mossa än gräs i gräsmattan?",
+  "audience": {
+   "owner_class_size": "~2 000 000 bostäder i småhus i Sverige (2022) — nästan alla med gräsmatta",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus (citerar SCB)",
+   "verdict": "PASS",
+   "note": "Den bredaste ägarklassen i hela klustret. Mossig gräsmatta är omisskännlig i bild."
+  },
+  "negative_space_flags": [
+   "gränsfall: den som redan köpt en elektrisk vertikalskärare har ett fungerande old way"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 71,
+  "category_novelty_0_100": 80,
+  "tier": "B",
+  "confidence": "MEDIUM",
+  "main_risk": "Hyllan. Trädgårdsredskap är Jula/Biltemas hemmaplan — samma mönster som fällde rännrensaren och lövsilen i hus-klustret ('bygghandelns hemmaplan'). Om Jula har en mossräfsa för 249 kr är 649 kr omöjligt. Näst största risken: mossräfsning är hårt kroppsarbete, vilket sänker den upplevda payoffen jämfört med en maskin.",
+  "sources": [
+   "Seznam: site:temu.com dethatching rake / thatch rake lawn scarifier / lawn scarifier manual",
+   "Meta Ad Library SE"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601103047271003.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 219.2,
+   "landed_high_sek": 257.0,
+   "se_price_sek": 649,
+   "multiple_low": 2.53,
+   "multiple_high": 2.96,
+   "be_cpa": 392.0,
+   "be_cpa_range": [
+    392.0,
+    429.8
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PASS",
+   "note": "2.53–2.96x uppslag, BE-CPA 392.0–429.8 kr"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "602927901026045",
+  "title": "Lawn Thatch Rake 17 Inch Steel Dethatching Tool, Adjustable 0–15° Angle And 38–68 Inch Length, Heavy Duty Yard Rake",
+  "concept": "manuell mossräfsa/vertikalräfsa för gräsmattan (alternativ listning)",
+  "object": "gräsmattan",
+  "owner_owns": "gräsmattan",
+  "friction": "samma som ovan",
+  "old_way": "samma som ovan",
+  "price_usd": 30.0,
+  "rating": "4.9 / 98%",
+  "review_count": "19",
+  "sold": null,
+  "variants": "17 tum, justerbar vinkel 0–15° och skaft 38–68 tum — två inställningar, ingen SKU-risk",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "se listning 601103047271003"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Har du mer mossa än gräs i gräsmattan?",
+  "audience": {
+   "owner_class_size": "~2 000 000 bostäder i småhus (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PASS"
+  },
+  "negative_space_flags": [],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 69,
+  "category_novelty_0_100": 80,
+  "tier": "B",
+  "confidence": "MEDIUM",
+  "main_risk": "799 kr för en handräfsa är i den övre delen av vad kontot bevisat (>500 kr har aldrig förlorat, men aldrig testat på ett handredskap).",
+  "sources": [
+   "Seznam: site:temu.com thatch rake lawn scarifier"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-602927901026045.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 313.2,
+   "landed_high_sek": 367.2,
+   "se_price_sek": 799,
+   "multiple_low": 2.18,
+   "multiple_high": 2.55,
+   "be_cpa": 431.8,
+   "be_cpa_range": [
+    431.8,
+    485.8
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PENDING_VERIFICATION",
+   "note": "uppslaget 2.18x i höga landad-änden < 2,4 — håller bara i låga änden (2.55x)"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601101790468176",
+  "title": "Fruit Picker Pole With Basket, 8–10ft Adjustable Height, Fruit Picker Tool With Stainless Steel Fruit Picking Pole",
+  "concept": "fruktplockare på teleskopstång med korg",
+  "object": "äppelträdet på tomten",
+  "owner_owns": "äppelträdet han inte planterade själv och som bär för mycket vartannat år",
+  "friction": "september–oktober är svensk äppelskörd: de bästa äpplena sitter högst upp, resten ligger som fallfrukt och ruttnar på gräsmattan — och han är 60+ och ska inte stå på en stege",
+  "old_way": "stege (som han vet att han inte borde klättra på), skaka trädet så äpplena slår sig och inte går att lagra, eller låta dem sitta kvar",
+  "price_usd": 16.0,
+  "rating": "4.9 / 98%",
+  "review_count": "10",
+  "sold": null,
+  "variants": "justerbar höjd 8–10 fot — en parameter, ingen mätning krävs",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Trädgårdsfackhandeln (Granngården, Plantagen) säljer 'fruktplockare' — men oftast bara korghuvudet som skruvas på ett eget skaft. En komplett teleskopstång i rostfritt med vadderad korg är en annan form. Gick inte att verifiera i dag.",
+   "searches": [
+    "Meta Ad Library SE ACTIVE 'fruktplockare äppelplockare' = 0 annonser, 0 annonsörer",
+    "granngarden.se sök → 301",
+    "pricerunner.se → 403"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Står du på stege för att nå äpplena?",
+  "audience": {
+   "owner_class_size": "UNKNOWN — andelen svenska småhus med fruktträd är inte mätt; basen är ~2 000 000 småhusbostäder (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus (citerar SCB)",
+   "verdict": "PENDING_VERIFICATION",
+   "note": "Äppelträd är mycket vanligt i svenska villaträdgårdar men jag har ingen verifierad siffra. Objektet (man på stege under ett äppelträd) är starkt i ett Meta-flöde."
+  },
+  "negative_space_flags": [
+   "säsongen är kort: äppelskörden tar slut mitten/slutet av oktober — 6-veckorsregeln klaras precis, inte med marginal"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 66,
+  "category_novelty_0_100": 85,
+  "tier": "B",
+  "confidence": "MEDIUM",
+  "main_risk": "Säsongsfönstret. Sex veckor kvar är minimum enligt gaten, och en produkt som används 20 minuter om året har låg upplevd värde — 499 kr kan möta ett prisankare på 149 kr (korghuvud i fackhandeln). Faller hyllan blir konceptet en engångsprodukt utan prisutrymme.",
+  "sources": [
+   "Seznam: site:temu.com fruit picker pole / fruit picking tool basket pole / fruit picker telescopic",
+   "Meta Ad Library SE"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601101790468176.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 167.0,
+   "landed_high_sek": 195.8,
+   "se_price_sek": 499,
+   "multiple_low": 2.55,
+   "multiple_high": 2.99,
+   "be_cpa": 303.2,
+   "be_cpa_range": [
+    303.2,
+    332.0
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PASS",
+   "note": "2.55–2.99x uppslag, BE-CPA 303.2–332.0 kr"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601099965739667",
+  "title": "Fruit Picking Tool, Fruit Picking Pole With Basket, Height Adjustable",
+  "concept": "fruktplockare på teleskopstång med korg (alternativ listning)",
+  "object": "äppelträdet",
+  "owner_owns": "äppelträdet",
+  "friction": "svensk äppelskörd sep–okt",
+  "old_way": "stege / skaka trädet",
+  "price_usd": 14.0,
+  "rating": "4.8 / 96%",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "justerbar längd",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "se listning 601101790468176"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Står du på stege för att nå äpplena?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "kort säsong"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 62,
+  "category_novelty_0_100": 85,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "billigast — mest prisutrymme",
+  "sources": [
+   "Seznam: site:temu.com fruit picker pole"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601099965739667.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 146.2,
+   "landed_high_sek": 171.4,
+   "se_price_sek": 499,
+   "multiple_low": 2.91,
+   "multiple_high": 3.41,
+   "be_cpa": 327.6,
+   "be_cpa_range": [
+    327.6,
+    352.8
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PASS",
+   "note": "2.91–3.41x uppslag, BE-CPA 327.6–352.8 kr"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601102887759172",
+  "title": "13.8ft Adjustable Stainless Steel Telescopic Fruit Picking Pole With Cloth Basket",
+  "concept": "fruktplockare på teleskopstång med korg (alternativ listning)",
+  "object": "äppelträdet",
+  "owner_owns": "äppelträdet",
+  "friction": "svensk äppelskörd sep–okt",
+  "old_way": "stege / skaka trädet",
+  "price_usd": 22.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "justerbar längd",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "se listning 601101790468176"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Står du på stege för att nå äpplena?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "kort säsong"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 62,
+  "category_novelty_0_100": 85,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "längst räckvidd (4,2 m)",
+  "sources": [
+   "Seznam: site:temu.com fruit picker pole"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601102887759172.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 229.7,
+   "landed_high_sek": 269.3,
+   "se_price_sek": 599,
+   "multiple_low": 2.22,
+   "multiple_high": 2.61,
+   "be_cpa": 329.7,
+   "be_cpa_range": [
+    329.7,
+    369.3
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PENDING_VERIFICATION",
+   "note": "uppslaget 2.22x i höga landad-änden < 2,4 — håller bara i låga änden (2.61x)"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601099670327285",
+  "title": "1pc Adjustable Metal Fruit Picker Pole Tool With Cushioned Basket 9.6ft/116in",
+  "concept": "fruktplockare på teleskopstång med korg (alternativ listning)",
+  "object": "äppelträdet",
+  "owner_owns": "äppelträdet",
+  "friction": "svensk äppelskörd sep–okt",
+  "old_way": "stege / skaka trädet",
+  "price_usd": 28.0,
+  "rating": "5 / 100%",
+  "review_count": "13",
+  "sold": null,
+  "variants": "justerbar längd",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "se listning 601101790468176"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Står du på stege för att nå äpplena?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "kort säsong"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 62,
+  "category_novelty_0_100": 85,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "vadderad korg — skonar frukten, men kräver 799 kr för att nå 2,4x",
+  "sources": [
+   "Seznam: site:temu.com fruit picker pole"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601099670327285.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 292.3,
+   "landed_high_sek": 342.7,
+   "se_price_sek": 799,
+   "multiple_low": 2.33,
+   "multiple_high": 2.73,
+   "be_cpa": 456.3,
+   "be_cpa_range": [
+    456.3,
+    506.7
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PENDING_VERIFICATION",
+   "note": "uppslaget 2.33x i höga landad-änden < 2,4 — håller bara i låga änden (2.73x)"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "606334422455464",
+  "title": "Fruit Picker Pole Tool With Basket 9.6 Feet/116 Inch Adjustable Fruit Grabber Reacher Tool",
+  "concept": "fruktplockare på teleskopstång (alternativ listning — faller på ekonomi)",
+  "object": "äppelträdet",
+  "owner_owns": "äppelträdet",
+  "friction": "äppelskörd",
+  "old_way": "stege",
+  "price_usd": 67.0,
+  "rating": "4.1 / 82%",
+  "review_count": "14",
+  "sold": null,
+  "variants": "justerbar",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Står du på stege för att nå äpplena?",
+  "audience": {
+   "owner_class_size": "UNKNOWN",
+   "source": null,
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "betyg 4,1 / 82 % — lägst i hela urvalet"
+  ],
+  "eliminated_at": "ekonomi",
+  "winner_dna_match_0_100": 40,
+  "category_novelty_0_100": 85,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "landad kostnad 700–820 kr spränger 420 kr-taket; 2,4x hamnar långt över 1 000 kr.",
+  "sources": [
+   "Seznam: site:temu.com fruit picker telescopic"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-606334422455464.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 699.5,
+   "landed_high_sek": 820.1,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601102369829095",
+  "title": "1pc/2pcs Heavy Duty Spring Loaded 4 Inch Rubber Gate Wheel, 250–500 lbs Loading Capacity",
+  "concept": "fjädrande stödhjul till tung trägrind",
+  "object": "grinden i staketet/plånket",
+  "owner_owns": "grinden han öppnar varje dag",
+  "friction": "grinden har sjunkit på gångjärnen och släpar i grus och gräs; höstregnet gör marken mjuk så den kilar fast",
+  "old_way": "lyfta grinden varje gång, hyvla av underkanten, eller byta gångjärn",
+  "price_usd": 18.0,
+  "rating": "4.9 / 98%",
+  "review_count": "14",
+  "sold": null,
+  "variants": "1 eller 2 hjul; infästningen kräver att ägaren vet stolpens/grindens dimension",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "nej i kedjorna, ja i fackhandeln",
+   "anchor_name": "VOSS.farming stödhjul till gårdsgrind (Lantkompaniet); 'Stödhjul för grind medium/kraftig' (Djurgårdens Ridsport); Ahlsell 550080",
+   "anchor_price_sek": null,
+   "anchor_url": "https://www.lantkompaniet.se/stoedhjul-pu-till-gardsgrind-inkl-u-bult-voss-farming.html",
+   "reasoning": "VERIFIERAT ur Google-sökutdrag 2026-09-04: formen finns i svensk fackhandel (lantbruk/ridsport/Ahlsell) och som kategori hos Bauhaus ('Tillbehör till staket & grindar'), men INTE hos Biltema/Jula/Clas Ohlson/Rusta — Biltemas och Julas träffar var stödhjul till SLÄPVAGN, en annan produkt. Hyllfrånvaro 1 (fackhandel/marketplace), inte 2. Priser gick inte att läsa ur utdragen.",
+   "searches": [
+    "WebSearch: grind stödhjul grindhjul grinden släpar marken biltema jula pris",
+    "Meta Ad Library SE ACTIVE 'grind staket trädgård' = 0 annonser"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PENDING_VERIFICATION",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Släpar grinden i marken när du öppnar?",
+  "audience": {
+   "owner_class_size": "~2 000 000 bostäder i småhus (2022); andelen med tung trägrind ej mätt",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PASS"
+  },
+  "negative_space_flags": [
+   "presens är inte höstspecifik — grinden släpar året om, så säsongen ger ingen extra kraft",
+   "infästningen kan kräva att ägaren mäter (U-bult mot stolpdimension)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 57,
+  "category_novelty_0_100": 88,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "Ägarpresens 1, inte 2: friktionen är kronisk och han har levt med den i fem år utan att göra något. Det är precis vad som skiljer en vinnare (grön tank i augusti) från en förlorare.",
+  "sources": [
+   "Seznam: site:temu.com gate wheel",
+   "WebSearch (Google) grind stödhjul",
+   "Meta Ad Library SE"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601102369829095.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 187.9,
+   "landed_high_sek": 220.3,
+   "se_price_sek": 549,
+   "multiple_low": 2.49,
+   "multiple_high": 2.92,
+   "be_cpa": 328.7,
+   "be_cpa_range": [
+    328.7,
+    361.1
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PASS",
+   "note": "2.49–2.92x uppslag, BE-CPA 328.7–361.1 kr"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601100011207973",
+  "title": "Heavy Duty Metal Gate Caster Wheel Swivel Outdoor With Adjustable Mounting Bracket",
+  "concept": "fjädrande stödhjul till tung trägrind (alternativ listning — faller på ekonomi)",
+  "object": "grinden",
+  "owner_owns": "grinden",
+  "friction": "grinden släpar",
+  "old_way": "lyfta grinden",
+  "price_usd": 45.0,
+  "rating": "5 / 100%",
+  "review_count": "12",
+  "sold": null,
+  "variants": "justerbart fäste",
+  "swedish_shelf": {
+   "verdict": "PASS",
+   "chain_same_form": "nej i kedjorna",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "se 601102369829095"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PENDING_VERIFICATION",
+   "shelf": "PASS",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PENDING_VERIFICATION",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Släpar grinden i marken när du öppnar?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PASS"
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "ekonomi",
+  "winner_dna_match_0_100": 45,
+  "category_novelty_0_100": 88,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "landad 470–551 kr > 420 kr-stoppet.",
+  "sources": [
+   "Seznam: site:temu.com gate wheel"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601100011207973.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 469.8,
+   "landed_high_sek": 550.8,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601100065845749",
+  "title": "Birdhouse Pole 60–102 Inch Tall Bird Feeder Pole For Outside, Heavy Duty Adjustable, 5-Prong Windproof Stake",
+  "concept": "fågelmatarstolpe med 5-benad vindsäker markfot",
+  "object": "fågelmataren/fågelbordet",
+  "owner_owns": "fågelmataren han redan har",
+  "friction": "svensk vinterfågelmatning startar i oktober; mataren hänger i en gren där katten och ekorren når den, eller står på ett stativ som blåser omkull i höststormen",
+  "old_way": "hänga mataren i en gren, en käpp i rabatten, eller ett hemmasnickrat fågelbord som ruttnat",
+  "price_usd": 18.0,
+  "rating": "4.7 / 94%",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "teleskopisk höjd 60–102 tum — en parameter",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Granngården och Plantagen säljer fågelbord och stativ; om de har en teleskopisk 5-bensstolpe i samma form är overifierat.",
+   "searches": [
+    "Meta Ad Library SE ACTIVE 'fågelmatare' = 6 annonser: 4 utländska dropship-sidor (Greedass us/uk, Flolyeb, Byteberst — USD) + Lone Hansen (DKK) 'Fåglarna älskar min råttsäkra fågelmatare'. Alltså 0 svenska annonsörer men aktiv nordisk dropship-konkurrens i kategorin."
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PENDING_VERIFICATION",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Kommer katten åt din fågelmatare?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder (2022); fågelmatning är en av Sveriges vanligaste vinteraktiviteter men andelen är ej mätt",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PASS"
+  },
+  "negative_space_flags": [
+   "gränsar till ett redan avgjort koncept (ekorrbaffel till fågelmatare) — samma objekt, angränsande friktion",
+   "fyra utländska dropshippers annonserar redan i kategorin i Norden"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 58,
+  "category_novelty_0_100": 55,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "Objektet är samma som det redan fällda ekorrbaffel-konceptet, och kategorin bearbetas redan av nordiska dropshippers. Uppslaget 2,27–2,66x vid 499 kr håller bara i den låga landad-änden.",
+  "sources": [
+   "Seznam: site:temu.com bird feeder pole",
+   "Meta Ad Library SE 'fågelmatare'"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601100065845749.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 187.9,
+   "landed_high_sek": 220.3,
+   "se_price_sek": 499,
+   "multiple_low": 2.27,
+   "multiple_high": 2.66,
+   "be_cpa": 278.7,
+   "be_cpa_range": [
+    278.7,
+    311.1
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PENDING_VERIFICATION",
+   "note": "uppslaget 2.27x i höga landad-änden < 2,4 — håller bara i låga änden (2.66x)"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "605990036540200",
+  "title": "Outdoor 1pc 73 Inch Bird Feeder Pole Heavy Duty Shepherd's Hook With 5-Prong Base",
+  "concept": "fågelmatarstolpe (alternativ listning)",
+  "object": "fågelmataren",
+  "owner_owns": "fågelmataren",
+  "friction": "vinterfågelmatning startar i oktober",
+  "old_way": "hänga i en gren",
+  "price_usd": 14.0,
+  "rating": "4.4 / 88%",
+  "review_count": "42",
+  "sold": null,
+  "variants": "teleskopisk höjd",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "se 601100065845749"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Kommer katten åt din fågelmatare?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PASS"
+  },
+  "negative_space_flags": [
+   "angränsar till redan avgjort koncept (ekorrbaffel)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 55,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "Betyg 4,0–4,4 är lägst bland kandidaterna — kvalitetsrisk på en produkt som ska stå ute hela vintern.",
+  "sources": [
+   "Seznam: site:temu.com bird feeder pole"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-605990036540200.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 146.2,
+   "landed_high_sek": 171.4,
+   "se_price_sek": 399,
+   "multiple_low": 2.33,
+   "multiple_high": 2.73,
+   "be_cpa": 227.6,
+   "be_cpa_range": [
+    227.6,
+    252.8
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PENDING_VERIFICATION",
+   "note": "uppslaget 2.33x i höga landad-änden < 2,4 — håller bara i låga änden (2.73x)"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601101052027566",
+  "title": "Bird House Pole Adjustable 60–102 Inch, 5-Prong Windproof Stake With Mounting",
+  "concept": "fågelmatarstolpe (alternativ listning)",
+  "object": "fågelmataren",
+  "owner_owns": "fågelmataren",
+  "friction": "vinterfågelmatning startar i oktober",
+  "old_way": "hänga i en gren",
+  "price_usd": 11.0,
+  "rating": "4 / 80%",
+  "review_count": "36",
+  "sold": null,
+  "variants": "teleskopisk höjd",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "searches": [
+    "se 601100065845749"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Kommer katten åt din fågelmatare?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PASS"
+  },
+  "negative_space_flags": [
+   "angränsar till redan avgjort koncept (ekorrbaffel)"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 52,
+  "category_novelty_0_100": 55,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "Betyg 4,0–4,4 är lägst bland kandidaterna — kvalitetsrisk på en produkt som ska stå ute hela vintern.",
+  "sources": [
+   "Seznam: site:temu.com bird feeder pole"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601101052027566.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 114.8,
+   "landed_high_sek": 134.6,
+   "se_price_sek": 399,
+   "multiple_low": 2.96,
+   "multiple_high": 3.48,
+   "be_cpa": 264.4,
+   "be_cpa_range": [
+    264.4,
+    284.2
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PASS",
+   "note": "2.96–3.48x uppslag, BE-CPA 264.4–284.2 kr"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "606055870390826",
+  "title": "Moss Remover Brush With Long Handle 59in, Crack Weeder Moss Removal Tool With Wire Brush Scraper, For Roof/Deck/Driveway/Paver",
+  "concept": "mossborste med långt skaft för plattor, uppfart och trall",
+  "object": "uppfartens plattor och altanens trall",
+  "owner_owns": "stenplattorna och trädäcket",
+  "friction": "septemberfukten gör plattor och trall gröna och hala; mossan sitter i fogarna",
+  "old_way": "högtryckstvätt (som han redan äger och som fungerar), skurborste, ättika, eller inget",
+  "price_usd": 24.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "59 tum, en variant",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "trolig kedjeträff",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Fogborste/ogräsborste med stålborste är en välkänd svensk kedjevara (Jula/Biltema) i prisklassen ett par hundralappar. Gick inte att verifiera i dag, men risken bedöms hög.",
+   "searches": [
+    "biltema.se/jula.se sök → 403/404"
+   ]
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PENDING_VERIFICATION",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PASS"
+  },
+  "hook_sv": "Är altanen grön och hal i höstfukten?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PASS"
+  },
+  "negative_space_flags": [
+   "köpt old way som fungerar (högtryckstvätten) ∧ jämförelsehandlad kategori — två av kontrollgruppens starkaste flaggor",
+   "svensk mass-commoditisering: fogborste finns i varje bygghandel"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 44,
+  "category_novelty_0_100": 45,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "Träffar två punkter i negativa rymden samtidigt: ägaren har redan en högtryckstvätt som gör jobbet, och kategorin är jämförelsehandlad i svensk bygghandel. Uppslaget 2,38x i höga landad-änden ligger dessutom precis under kravet.",
+  "sources": [
+   "Seznam: site:temu.com moss removal tool / moss removal brush / moss scraper deck"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-606055870390826.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 250.6,
+   "landed_high_sek": 293.8,
+   "se_price_sek": 699,
+   "multiple_low": 2.38,
+   "multiple_high": 2.79,
+   "be_cpa": 405.2,
+   "be_cpa_range": [
+    405.2,
+    448.4
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PENDING_VERIFICATION",
+   "note": "uppslaget 2.38x i höga landad-änden < 2,4 — håller bara i låga änden (2.79x)"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601102313087988",
+  "title": "Weed Puller Tool Stand Up Manual Weeder Heavy Duty With 60 Inch Long Handle, 4-Claw Steel Head",
+  "concept": "stående ogräsdragare med fotspak",
+  "object": "gräsmattan",
+  "owner_owns": "gräsmattan",
+  "friction": "maskrosor och maskrosrosetter i gräsmattan",
+  "old_way": "ogräsjärn på knä, eller inget",
+  "price_usd": 13.0,
+  "rating": "4.7 / 94%",
+  "review_count": "55",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Fiskars ogräsrensare är ett synligt svenskt märkesankare i samma form — ankarundantaget kan gälla om vårt pris ligger klart under. Priset gick inte att verifiera i dag.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du maskrosor i hela gräsmattan?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "ogräs är en vår- och sommarfriktion; i september är den avklingande"
+  ],
+  "eliminated_at": "presens",
+  "winner_dna_match_0_100": 48,
+  "category_novelty_0_100": 60,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "Presens: friktionen finns men den toppar i maj, inte i september. Höstlanseringen tappar 6–8 månaders säsong.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601102313087988.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 135.7,
+   "landed_high_sek": 159.1,
+   "se_price_sek": 449,
+   "multiple_low": 2.82,
+   "multiple_high": 3.31,
+   "be_cpa": 289.9,
+   "be_cpa_range": [
+    289.9,
+    313.3
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PASS",
+   "note": "2.82–3.31x uppslag, BE-CPA 289.9–313.3 kr"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601099538091680",
+  "title": "Weed Puller Stand Up Weeder Hand Tool Long Handle With 5 Claws",
+  "concept": "stående ogräsdragare (alternativ listning)",
+  "object": "gräsmattan",
+  "owner_owns": "gräsmattan",
+  "friction": "maskrosor",
+  "old_way": "ogräsjärn",
+  "price_usd": 39.0,
+  "rating": "4.6 / 92%",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "se 601102313087988",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PENDING_VERIFICATION",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har du maskrosor i hela gräsmattan?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "fel säsong"
+  ],
+  "eliminated_at": "presens",
+  "winner_dna_match_0_100": 40,
+  "category_novelty_0_100": 60,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Samma presensfel, dessutom landad 407–477 kr som tangerar 420-stoppet.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601099538091680.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 407.2,
+   "landed_high_sek": 477.4,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "606111973368608",
+  "title": "Lawn Aerator Tool With 17 Steel Spikes, Spring Loaded Design, Adjustable T-Handle",
+  "concept": "manuell gräsmatteluftare",
+  "object": "gräsmattan",
+  "owner_owns": "gräsmattan",
+  "friction": "höstluftning av gräsmattan hör ihop med mossbekämpningen och görs sep–okt",
+  "old_way": "grep, hyrd luftare, eller inget",
+  "price_usd": 30.0,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Luftningsvals/luftningsskor finns i svensk trädgårdshandel; formen med fjädrande T-handtag är overifierad.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Står vattnet kvar på gräsmattan efter regn?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "799 kr för ett handredskap är i den övre delen av vad kontot bevisat"
+  ],
+  "eliminated_at": null,
+  "winner_dna_match_0_100": 55,
+  "category_novelty_0_100": 70,
+  "tier": "C",
+  "confidence": "MEDIUM",
+  "main_risk": "Samma hyllrisk som mossräfsan, men svagare hook — luftning är en osynlig payoff (ägaren ser inget resultat på veckor), vilket är en punkt i negativa rymden.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-606111973368608.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 313.2,
+   "landed_high_sek": 367.2,
+   "se_price_sek": 799,
+   "multiple_low": 2.18,
+   "multiple_high": 2.55,
+   "be_cpa": 431.8,
+   "be_cpa_range": [
+    431.8,
+    485.8
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "PENDING_VERIFICATION",
+   "note": "uppslaget 2.18x i höga landad-änden < 2,4 — håller bara i låga änden (2.55x)"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601099582573269",
+  "title": "Heavy Duty Manual Lawn Aerator With Replaceable Spikes, Yard Aerator For Soil Aeration",
+  "concept": "manuell gräsmatteluftare (alternativ listning)",
+  "object": "gräsmattan",
+  "owner_owns": "gräsmattan",
+  "friction": "höstluftning",
+  "old_way": "grep",
+  "price_usd": 37.0,
+  "rating": "4.8 / 96%",
+  "review_count": "9",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "se 606111973368608",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Står vattnet kvar på gräsmattan efter regn?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "landad 386–453 kr; 2,4x kräver 927–1 087 kr, alltså över 1 000 kr-taket"
+  ],
+  "eliminated_at": "ekonomi",
+  "winner_dna_match_0_100": 50,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Landad kostnad tangerar 420 kr-stoppet och 2,4x hamnar över takpriset.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601099582573269.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 386.3,
+   "landed_high_sek": 452.9,
+   "se_price_sek": 999,
+   "multiple_low": 2.21,
+   "multiple_high": 2.59,
+   "be_cpa": 546.1,
+   "be_cpa_range": [
+    546.1,
+    612.7
+   ],
+   "economics_source": "us-proxy (seznam-snippet)",
+   "verdict": "FAIL",
+   "note": "landad 452.9 kr > 420 kr-stoppet"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601100470712536",
+  "title": "Heavy Duty Manual Lawn Aerator With 42 Spikes, 15 Inch Rolling Lawn Aerator, Adjustable Handle",
+  "concept": "manuell gräsmatteluftare (alternativ listning)",
+  "object": "gräsmattan",
+  "owner_owns": "gräsmattan",
+  "friction": "höstluftning",
+  "old_way": "grep",
+  "price_usd": 80.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Står vattnet kvar på gräsmattan efter regn?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [],
+  "eliminated_at": "ekonomi",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "landad 835–979 kr — långt över 420 kr-stoppet.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601100470712536.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 835.2,
+   "landed_high_sek": 979.2,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601099631345617",
+  "title": "Garden Kneeler And Seat, Garden Folding Bench With Tool Pouch, Gloves And Kneeling Pad",
+  "concept": "knäpall/trädgårdssits",
+  "object": "rabatten och ryggen",
+  "owner_owns": "rabatten och ryggen",
+  "friction": "höstplantering av lökar och rensning inför vintern görs på knä",
+  "old_way": "en gammal kudde, en hink att sitta på",
+  "price_usd": 21.0,
+  "rating": "4.9 / 98%",
+  "review_count": "41",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Trädgårdspall med knädyna är standardvara i svensk trädgårdshandel varje vår.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Ont i knäna när du planterar lökarna?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "kit (pall + handskar + verktygsficka) — 'kit' är i negativa rymden",
+   "svensk mass-commoditisering: trädgårdspall/knäskydd finns hos Jula, Rusta, Granngården och Plantagen"
+  ],
+  "eliminated_at": "hyllan",
+  "winner_dna_match_0_100": 38,
+  "category_novelty_0_100": 25,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Hyllan och kit-formen. Kroppslig friktion är rätt spår (axelbältet vann på det) men produkten är redan commoditiserad i Sverige.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601099631345617.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 219.2,
+   "landed_high_sek": 257.0,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "606218659721430",
+  "title": "Stainless Steel Telescoping Leaf Rake, Width Adjustable Metal Garden Rake, Max 63 Inch",
+  "concept": "teleskopisk lövkratta med justerbar bredd",
+  "object": "gräsmattan och löven",
+  "owner_owns": "gräsmattan och löven",
+  "friction": "löven faller nu",
+  "old_way": "vanlig lövräfsa",
+  "price_usd": 14.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Justerbara lövräfsor säljs av alla fyra kedjorna varje höst.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Faller löven snabbare än du hinner kratta?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "lövräfsor är uttryckligen kedjornas hylla (Biltema, Jula, Rusta) — jämförelsehandlat"
+  ],
+  "eliminated_at": "hyllan",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 15,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Rakt in i den hylla uppdraget varnade för.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-606218659721430.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 146.2,
+   "landed_high_sek": 171.4,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601099835969370",
+  "title": "Adjustable Metal Leaf Rake With Long Handle, Expandable Head",
+  "concept": "teleskopisk lövkratta (alternativ listning)",
+  "object": "löven",
+  "owner_owns": "löven",
+  "friction": "löven faller",
+  "old_way": "vanlig räfsa",
+  "price_usd": 2.0,
+  "rating": "4.7 / 94%",
+  "review_count": "23",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "hyllan",
+   "pris under prisgolvet"
+  ],
+  "eliminated_at": "hyllan",
+  "winner_dna_match_0_100": 20,
+  "category_novelty_0_100": 15,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Hyllan + landad 21–24 kr ger ingen produkt att bygga ett 300-kronorserbjudande på.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601099835969370.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 20.9,
+   "landed_high_sek": 24.5,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "606306589057926",
+  "title": "Trunk Protector Tree Cover, Courtyard Fruit Tree Seedling Cage 5pcs, Plant Animal Damage Fence, Breathable",
+  "concept": "stamskydd mot gnagare",
+  "object": "fruktträden",
+  "owner_owns": "fruktträden",
+  "friction": "harar och rådjur gnager bark under vintern",
+  "old_way": "hönsnät runt stammen",
+  "price_usd": 11.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Granngården säljer stamskydd (ej verifierat i dag).",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Gnager hararna på dina fruktträd i vinter?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "framtida skada — gnaget sker i januari–mars, inte nu. Samma fälla som kranskyddet och gräsklippartäcket."
+  ],
+  "eliminated_at": "presens",
+  "winner_dna_match_0_100": 32,
+  "category_novelty_0_100": 70,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Gate 2 fäller den: skadan ligger i framtiden och kan inte fotograferas i en svensk trädgård i september.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-606306589057926.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 114.8,
+   "landed_high_sek": 134.6,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601105601001774",
+  "title": "2-In-1 Extendable 10-Section Telescopic Pole Pruner With Saw, Alloy Steel Pole Saw",
+  "concept": "teleskopisk grensåg/stamkvistare",
+  "object": "träden på tomten",
+  "owner_owns": "träden på tomten",
+  "friction": "grenar som hänger över tomtgränsen och över taket efter höststormen",
+  "old_way": "stege + bågsåg",
+  "price_usd": 54.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Kategorin är kedjornas standardsortiment.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Hänger grenarna över taket?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "Jula, Biltema och Bauhaus säljer teleskopiska grensågar; Fiskars UPX är ett etablerat märke i kategorin"
+  ],
+  "eliminated_at": "hyllan",
+  "winner_dna_match_0_100": 35,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Hyllan, plus landad 564–661 kr över 420-stoppet.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601105601001774.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 563.8,
+   "landed_high_sek": 661.0,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601103473654820",
+  "title": "3.96 Meter Pole Saw For Tree Trimming, Lightweight Stainless Steel Long Handle Pruner",
+  "concept": "teleskopisk grensåg (alternativ listning)",
+  "object": "träden",
+  "owner_owns": "träden",
+  "friction": "grenar efter höststorm",
+  "old_way": "stege + bågsåg",
+  "price_usd": 24.0,
+  "rating": "4.8 / 96%",
+  "review_count": "8",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Hänger grenarna över taket?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "hyllan"
+  ],
+  "eliminated_at": "hyllan",
+  "winner_dna_match_0_100": 33,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Samma hylla.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601103473654820.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 250.6,
+   "landed_high_sek": 293.8,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "602626137660090",
+  "title": "Landscape Rake 36 Inch Wide Head, 102 Inch Handle, Heavy Duty Aluminum Landscaping Leaf Rake",
+  "concept": "grus-/planeringsräfsa för uppfarten",
+  "object": "grusuppfarten",
+  "owner_owns": "grusuppfarten",
+  "friction": "höstregnet spolar gruset ur uppfarten och lämnar hjulspår",
+  "old_way": "vanlig kratta, eller en bräda efter bilen",
+  "price_usd": 40.0,
+  "rating": "4.5 / 90%",
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Formen (US landscape rake) är ovanlig i svensk handel — konceptet kan förtjäna en billigare listning.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Har höstregnet spolat bort gruset i uppfarten?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "36 tums huvud och 2,6 m skaft — fraktvolymen gör den dyr"
+  ],
+  "eliminated_at": "ekonomi",
+  "winner_dna_match_0_100": 42,
+  "category_novelty_0_100": 75,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "landad 418–490 kr tangerar/spränger stoppet. ALTERNATIVE_LISTING_REQUIRED snarare än död.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-602626137660090.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 417.6,
+   "landed_high_sek": 489.6,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601104652886479",
+  "title": "Water Hose Reel Cart Holds 65–100 ft Of 5/8 Inch Hose, Portable Garden Hose Cart",
+  "concept": "slangvagn/slangvinda",
+  "object": "trädgårdsslangen",
+  "owner_owns": "trädgårdsslangen",
+  "friction": "slangen ska tömmas och rullas in före frosten",
+  "old_way": "rulla ihop den för hand",
+  "price_usd": 72.0,
+  "rating": "4.6 / 92%",
+  "review_count": "8",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Kedjornas standardsortiment.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "Biltema, Jula och Rusta säljer slangvindor och slangvagnar varje sommar"
+  ],
+  "eliminated_at": "hyllan",
+  "winner_dna_match_0_100": 25,
+  "category_novelty_0_100": 10,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Hyllan + landad 752–881 kr.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601104652886479.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 751.7,
+   "landed_high_sek": 881.3,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601099626585322",
+  "title": "4pcs Garden Hose Holder Wall Mount Metal Hose Reel For Outside Yard",
+  "concept": "slanghållare för vägg",
+  "object": "trädgårdsslangen",
+  "owner_owns": "trädgårdsslangen",
+  "friction": "slangen ska upp från marken inför vintern",
+  "old_way": "en spik i väggen",
+  "price_usd": 24.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Biltema/Jula.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "kedjevara"
+  ],
+  "eliminated_at": "hyllan",
+  "winner_dna_match_0_100": 22,
+  "category_novelty_0_100": 10,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Hyllan.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601099626585322.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 250.6,
+   "landed_high_sek": 293.8,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "605506114568090",
+  "title": "Multifunctional 3-In-1 Metal Wire Weeding Brush With Telescopic Long Handle For Concrete/Deck/Tile/Moss",
+  "concept": "mossborste för plattor (alternativ listning)",
+  "object": "plattorna",
+  "owner_owns": "plattorna",
+  "friction": "grön beläggning i septemberfukten",
+  "old_way": "högtryckstvätt",
+  "price_usd": 4.0,
+  "rating": "4.6 / 92%",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Är altanen grön och hal i höstfukten?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "'3-i-1' — N-i-1 är i negativa rymden"
+  ],
+  "eliminated_at": "ekonomi",
+  "winner_dna_match_0_100": 28,
+  "category_novelty_0_100": 45,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "landad 42–49 kr; för billig produkt för att bära ett 300-kronorspris utan att kännas som lågprisvara.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-605506114568090.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 41.8,
+   "landed_high_sek": 49.0,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "607502905272895",
+  "title": "Stainless Steel Crack Weeder Tool, L-Shaped Garden Knife For Pavement And Driveway",
+  "concept": "fogkniv för plattfogar",
+  "object": "plattorna",
+  "owner_owns": "plattorna",
+  "friction": "ogräs i fogarna",
+  "old_way": "skruvmejsel",
+  "price_usd": 3.0,
+  "rating": "4.3 / 86%",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Jula/Biltema har fogskrapor.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "under prisgolvet"
+  ],
+  "eliminated_at": "ekonomi",
+  "winner_dna_match_0_100": 18,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "landad 31–37 kr — omöjligt att nå 300 kr utan hävstång.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-607502905272895.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 31.3,
+   "landed_high_sek": 36.7,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "602297841098230",
+  "title": "Bin/Trash Can Storage Single Wheelie Bin Shed, Poly Rattan",
+  "concept": "sopkärlsskjul",
+  "object": "sopkärlet",
+  "owner_owns": "sopkärlet",
+  "friction": "kärlet står synligt vid uppfarten",
+  "old_way": "låta det stå",
+  "price_usd": 105.0,
+  "rating": "4.2 / 84%",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "FAIL",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Rusta/Jula/Bauhaus säljer sopkärlsskjul.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "FAIL",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "fälldes redan i V2-körningen på hyllan"
+  ],
+  "eliminated_at": "hyllan",
+  "winner_dna_match_0_100": 20,
+  "category_novelty_0_100": 10,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Hyllan + landad 1 096–1 285 kr.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-602297841098230.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 1096.2,
+   "landed_high_sek": 1285.2,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "606135444673862",
+  "title": "All Weather Greenhouse Cover Transparent Waterproof Plastic Sheeting 12mil",
+  "concept": "växthusplast/täckduk",
+  "object": "växthuset",
+  "owner_owns": "växthuset",
+  "friction": "växthuset ska tömmas och rustas inför vintern",
+  "old_way": "byggplast från bygghandeln",
+  "price_usd": 14.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Byggplast finns i varje bygghandel.",
+   "searches": []
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "förbrukningsvara",
+   "ägaren måste mäta sitt växthus — variantrisk"
+  ],
+  "eliminated_at": "objekt",
+  "winner_dna_match_0_100": 15,
+  "category_novelty_0_100": 20,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Förbrukningsvara med mätfriktion — två punkter i negativa rymden.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-606135444673862.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 146.2,
+   "landed_high_sek": 171.4,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "606486222739811",
+  "title": "25pcs Greenhouse Clips, Shade Net Clips, Plant Clips",
+  "concept": "växthusklips",
+  "object": "växthuset",
+  "owner_owns": "växthuset",
+  "friction": "rutorna blåser ur växthuset i höststormen",
+  "old_way": "silvertejp",
+  "price_usd": 4.0,
+  "rating": "4.8 / 96%",
+  "review_count": "99+",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "Willab och växthusbutikerna säljer W-klips.",
+   "searches": []
+  },
+  "gates": {
+   "object": "PASS",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Blåser rutorna ur växthuset?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "under prisgolvet"
+  ],
+  "eliminated_at": "ekonomi",
+  "winner_dna_match_0_100": 25,
+  "category_novelty_0_100": 55,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Riktig friktion, men landad 42–49 kr gör att den aldrig når 300 kr.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-606486222739811.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 41.8,
+   "landed_high_sek": 49.0,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "606034177414557",
+  "title": "58pcs Heavy Duty Raised Garden Bed Corner Brackets, 90 Degree Metal Connectors",
+  "concept": "beslag för pallkragar/odlingsbäddar",
+  "object": "odlingsbädden",
+  "owner_owns": "odlingsbädden",
+  "friction": "—",
+  "old_way": "—",
+  "price_usd": 11.0,
+  "rating": "4.9 / 98%",
+  "review_count": "20",
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "FAIL",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "bygger något nytt — behovet måste skapas",
+   "vårprodukt"
+  ],
+  "eliminated_at": "objekt",
+  "winner_dna_match_0_100": 18,
+  "category_novelty_0_100": 50,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Fel gate 0 och fel säsong.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-606034177414557.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 114.8,
+   "landed_high_sek": 134.6,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "605894188327796",
+  "title": "Heavy Duty Metal Garden Tool Organizer Rack With Storage Bags, Long Handled Tool Holder",
+  "concept": "redskapsställ för långskaftade trädgårdsredskap",
+  "object": "redskapsboden",
+  "owner_owns": "redskapsboden",
+  "friction": "redskapen står huller om buller i boden",
+  "old_way": "ställa dem mot väggen",
+  "price_usd": 37.0,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "PASS",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": "Faller krattorna omkull i boden?",
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "objektet förvaras inomhus när det inte används — 0 av 9 vinnare"
+  ],
+  "eliminated_at": "objekt",
+  "winner_dna_match_0_100": 30,
+  "category_novelty_0_100": 60,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Gate 0 fäller den. Spöhållaren löste samma sorts kaos men för spön som ägaren bär med sig ut.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-605894188327796.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 386.3,
+   "landed_high_sek": 452.9,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601103154990378",
+  "title": "Reusable Collapsible Garden Trash Bags, Heavy Duty Foldable Outdoor Waste Bags",
+  "concept": "trädgårdssäck",
+  "object": "lövhögen",
+  "owner_owns": "lövhögen",
+  "friction": "löven ska bort",
+  "old_way": "sopsäckar",
+  "price_usd": 13.0,
+  "rating": "5 / 100%",
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "REDAN AVGJORD i uppdraget — får inte föreslås"
+  ],
+  "eliminated_at": "redan avgjord",
+  "winner_dna_match_0_100": 0,
+  "category_novelty_0_100": 0,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Ligger på uppdragets stopplista.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601103154990378.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 135.7,
+   "landed_high_sek": 159.1,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601099547901300",
+  "title": "Custom Wheelie Bin Stickers, Personalized House Number Street Name Decals For Trash Cans",
+  "concept": "soptunneklistermärken",
+  "object": "sopkärlet",
+  "owner_owns": "sopkärlet",
+  "friction": "—",
+  "old_way": "—",
+  "price_usd": 3.0,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "PASS",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "REDAN VUNNEN produkt i kontot (199 kr, CTR 5,55 %) — får inte föreslås"
+  ],
+  "eliminated_at": "redan avgjord",
+  "winner_dna_match_0_100": 0,
+  "category_novelty_0_100": 0,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Ligger på uppdragets stopplista.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601099547901300.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 31.3,
+   "landed_high_sek": 36.7,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ },
+ {
+  "goods_id": "601103928842927",
+  "title": "Lawn Aerator Shoes With Adjustable Strap, Spiked Sole, Heavy Duty Plastic Garden Sandals",
+  "concept": "luftningsskor för gräsmattan",
+  "object": "gräsmattan",
+  "owner_owns": "gräsmattan",
+  "friction": "höstluftning",
+  "old_way": "grep",
+  "price_usd": 6.0,
+  "rating": null,
+  "review_count": null,
+  "sold": null,
+  "variants": "UNKNOWN",
+  "swedish_shelf": {
+   "verdict": "PENDING_VERIFICATION",
+   "chain_same_form": "UNKNOWN",
+   "anchor_name": null,
+   "anchor_price_sek": null,
+   "anchor_url": null,
+   "reasoning": "",
+   "searches": []
+  },
+  "gates": {
+   "object": "FAIL",
+   "presence": "PASS",
+   "shelf": "PENDING_VERIFICATION",
+   "material": "BLOCKED_SOURCE",
+   "economics": "FAIL",
+   "variant": "PASS",
+   "hook": "FAIL",
+   "audience": "PENDING_VERIFICATION"
+  },
+  "hook_sv": null,
+  "audience": {
+   "owner_class_size": "~2 000 000 småhusbostäder i Sverige (2022)",
+   "source": "https://sv.wikipedia.org/wiki/Sm%C3%A5hus",
+   "verdict": "PENDING_VERIFICATION"
+  },
+  "negative_space_flags": [
+   "personlig passform (skostorlek) — 0 av 9 vinnare utom tofflorna, gruppens tunnaste",
+   "under prisgolvet"
+  ],
+  "eliminated_at": "objekt",
+  "winner_dna_match_0_100": 12,
+  "category_novelty_0_100": 40,
+  "tier": "ELIM",
+  "confidence": "HIGH",
+  "main_risk": "Passform + prisgolv. Precis kontrollpunktens profil.",
+  "sources": [
+   "Seznam site:temu.com — se sökfraslistan i tomt.md"
+  ],
+  "kluster": "tomt",
+  "url": "https://www.temu.com/se/g-601103928842927.html",
+  "already_known": false,
+  "price_source": "seznam-snippet 2026-09-04",
+  "economics": {
+   "landed_low_sek": 62.6,
+   "landed_high_sek": 73.4,
+   "se_price_sek": null,
+   "multiple_low": null,
+   "multiple_high": null,
+   "be_cpa": null,
+   "verdict": "UNKNOWN",
+   "note": "inget tänkt svenskt pris satt"
+  },
+  "material": {
+   "status": "BLOCKED_SOURCE",
+   "indication": "bilder/video går inte att nå (DATAVAGAR avsnitt 4)"
+  }
+ }
+]
