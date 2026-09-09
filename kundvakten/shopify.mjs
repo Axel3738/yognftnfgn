@@ -142,20 +142,33 @@ export async function hamtaOrdrar(dagar = FONSTER.jamforelse_dagar) {
   return alla;
 }
 
+// ShopifyQL lämnar `rows` som en lista av OBJEKT med kolumnnamnen som nycklar
+// — inte som arrayer — och alla tal som strängar. Verifierat mot API:t
+// 2026-09-09.
+//
+// ⚠️ Läs aldrig raderna med index (`r[0]`, `r[1]`). Det ger `undefined` rakt
+// igenom, vilket blir ordervolym 0 på varje produkt — och då blir varje rate
+// antingen noll eller oändlig utan att något kastar ett fel.
+export function tolkaVolymrader(rows) {
+  return (rows || []).map((r) => ({
+    produkt: r.product_title,
+    ordrar: Number(r.orders) || 0,
+    netto: Number(r.net_sales) || 0,
+    aov: Number(r.average_order_value) || 0,
+  }));
+}
+
 // Ordervolym per produkt — nämnaren i chargeback-raten. Utan den går det inte
 // att säga något om rate alls, bara om antal.
 export async function hamtaOrdervolym(dagar = FONSTER.jamforelse_dagar) {
+  // Formen är verifierad mot schemat 2026-09-09: shopifyqlQuery(query: String!)
+  // ger ett vanligt objekt (ingen union), parseErrors är [String!]! och raderna
+  // heter `rows`, inte `rowData`.
   const data = await graphql(
     `query kundvaktenVolym($q: String!) {
       shopifyqlQuery(query: $q) {
-        __typename
-        ... on TableResponse {
-          tableData {
-            rowData
-            columns { name dataType }
-          }
-        }
-        parseErrors { code message }
+        parseErrors
+        tableData { rows }
       }
     }`,
     {
@@ -167,17 +180,9 @@ export async function hamtaOrdervolym(dagar = FONSTER.jamforelse_dagar) {
   );
   const svar = data.shopifyqlQuery;
   if (svar?.parseErrors?.length) {
-    throw new Error(
-      `ShopifyQL-fel: ${svar.parseErrors.map((e) => e.message).join('; ')}`
-    );
+    throw new Error(`ShopifyQL-fel: ${svar.parseErrors.join('; ')}`);
   }
-  const rader = svar?.tableData?.rowData || [];
-  return rader.map((r) => ({
-    produkt: r[0],
-    ordrar: Number(r[1]) || 0,
-    netto: Number(r[2]) || 0,
-    aov: Number(r[3]) || 0,
-  }));
+  return tolkaVolymrader(svar?.tableData?.rows);
 }
 
 // Butikens totala antal ordrar i fönstret — nämnaren i den samlade raten.
@@ -185,12 +190,15 @@ export async function hamtaTotaltAntalOrdrar(dagar = FONSTER.jamforelse_dagar) {
   const data = await graphql(
     `query kundvaktenTotal($q: String!) {
       shopifyqlQuery(query: $q) {
-        ... on TableResponse { tableData { rowData } }
-        parseErrors { code message }
+        parseErrors
+        tableData { rows }
       }
     }`,
     { q: `FROM sales SHOW orders SINCE -${dagar}d UNTIL today` }
   );
-  const rader = data.shopifyqlQuery?.tableData?.rowData || [];
-  return Number(rader[0]?.[0]) || 0;
+  const svar = data.shopifyqlQuery;
+  if (svar?.parseErrors?.length) {
+    throw new Error(`ShopifyQL-fel: ${svar.parseErrors.join('; ')}`);
+  }
+  return Number(svar?.tableData?.rows?.[0]?.orders) || 0;
 }

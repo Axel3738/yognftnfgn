@@ -341,3 +341,38 @@ har ungefär hundra fler lägg-i-varukorg än köp.
 - **Inga recensioner nåbara.** Inga citat och inga kundantal får användas.
 - **Köp per klick är beräknat på `ctr`, inte på länkklick.** Rangordningen håller, absolutnivåerna
   är ungefärliga.
+
+---
+
+## Chargebacks — första mätningen 2026-09-09
+
+**Motorhöljet drar tvister långt över alla andra produkter i butiken.**
+
+| | Tal |
+|---|---|
+| Tvister, 90 dagar | 16 |
+| Ordrar, 90 dagar | 529 |
+| Rate | **3,02 %** |
+| Pengar i risk | 6 153 kr |
+| Obesvarade | 11 |
+
+Butiken som helhet ligger på 0,899 %. Motorhöljet ensamt ligger alltså mer än
+tre gånger över kortnätverkens gräns (0,9 %), och står för 16 av butikens 22
+tvister trots att produkten är en av trettio.
+
+**Vad tvisterna har gemensamt:** samtliga är `INQUIRY`, inte fullskaliga
+chargebacks. Alla ordrar var skickade, alla med YunExpress-spårning, och de
+flesta skickades inom ett dygn. Det är alltså inte utebliven leverans —
+mönstret pekar på leveranstid eller på att kunden inte känner igen debiteringen.
+Rotorsaken är **inte fastställd** och får inte gissas.
+
+**Vad detta betyder för creative-arbetet:** en produkt som drar 3 % tvister
+bär en dold kostnad som inte syns i ROAS. Vid 529 ordrar och 331 kr AOV är
+6 153 kr i risk ungefär 3,5 % av produktens omsättning — utöver de avgifter
+varje tvist kostar oavsett utfall. Räkna med det innan nästa skalningsbeslut.
+
+⚠️ **Raten är underskattad för de senaste veckorna.** En tvist kommer typiskt
+veckor efter ordern, så ordrar från fönstrets slut har inte hunnit få sina
+tvister än. Talet ovan är ett golv, inte ett tak.
+
+Mätt av `/kundvakten`, första körningen. Underlag: Shopify Admin API.

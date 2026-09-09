@@ -222,3 +222,27 @@ mekanismdiagram (`PD_10_1`).
 - Upptagna AD-ID:n: SO 1, 2, 3, 4, 6, 7 · PD 1–17 · SP 3, 4, 5, 6 · SF 1, 2
   (SF = äldre benämning på social proof, räknas ihop med SP vid numrering).
 - Äldre annonser med data döps aldrig om.
+
+---
+
+## Chargebacks — första mätningen 2026-09-09
+
+| | Tal |
+|---|---|
+| Tvister, 90 dagar | 3 |
+| Ordrar, 90 dagar | 159 |
+| Rate | **1,89 %** |
+| Pengar i risk | 1 492 kr |
+| Obesvarade | 2 |
+
+Näst sämst i butiken efter motorhöljet, och dubbelt över kortnätverkens gräns
+(0,9 %). Butiken som helhet ligger på 0,899 %.
+
+En av ordrarna (`#4407`) bär **två** tvister — kunden kom tillbaka en andra
+gång. Den första vanns, den andra är obesvarad.
+
+⚠️ **Tre tvister är ett tunt underlag för en rate.** 159 ordrar räcker för att
+tala om raten alls, men en tvist till eller från flyttar den kraftigt. Signal,
+inte dom. Två av de tre kom från blandade ordrar.
+
+Mätt av `/kundvakten`, första körningen. Underlag: Shopify Admin API.

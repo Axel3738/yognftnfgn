@@ -370,3 +370,26 @@ som skilde de två åt.
 (batch 5: 7, batch 6: 6) skrivna men oproducerade. Nästa `/cs` ska kontrollera hur många
 som faktiskt blivit bilder innan den skriver fler — kvoten mäter launchade creatives, och
 en växande briefhög är slöseri, inte försprång.
+
+---
+
+## Chargebacks — första mätningen 2026-09-09
+
+| | Tal |
+|---|---|
+| Tvister, 90 dagar | 2 |
+| Ordrar, 90 dagar | 210 |
+| Rate | **0,95 %** |
+| Pengar i risk | 1 063 kr |
+| Obesvarade | 2 |
+
+Ligger precis över kortnätverkens gräns (0,9 %). Butiken som helhet ligger på
+0,899 %.
+
+⚠️ **Två tvister är ett tunt underlag för en rate.** 210 ordrar räcker för att
+tala om raten alls, men skillnaden mellan 2 och 3 tvister flyttar den från
+0,95 % till 1,43 %. Behandla nivån som en signal att titta igen nästa vecka,
+inte som en dom. Båda tvisterna kom dessutom från ordrar med flera produkter,
+så det går inte att veta att strandtofflorna utlöste dem.
+
+Mätt av `/kundvakten`, första körningen. Underlag: Shopify Admin API.

@@ -105,6 +105,12 @@ export function byggRapport({
       'är inte ett problem — den är för lite data.'
   );
   rader.push('');
+  rader.push(
+    '⚠️ Raterna är ett **golv, inte ett tak**. En tvist kommer typiskt veckor ' +
+      'efter ordern, så ordrar från fönstrets slut har inte hunnit få sina ' +
+      'tvister än. Ju nyare produkten är, desto mer underskattad är dess rate.'
+  );
+  rader.push('');
   rader.push('| | Produkt | Tvister | Ordrar | Rate | Pengar i risk | Obesvarade |');
   rader.push('|---|---|---:|---:|---:|---:|---:|');
   for (const p of produkter.slice(0, 20)) {
