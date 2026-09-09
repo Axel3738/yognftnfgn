@@ -119,17 +119,45 @@ if (!produktSvar.ok && produktSvar.kropp?.error !== 'Product not found') {
 }
 const judgemeId = produktSvar.kropp?.product?.id ?? null;
 
+// Reservväg när Judge.me vägrar filtrera: butikens alla recensioner läses
+// sidvis och filtreras här på Shopify-id:t. Långsammare men alltid sant.
+async function raknaViaSvep(shopifyId) {
+  let synliga = 0;
+  for (let sida = 1; sida <= 50; sida++) {
+    const svar = await judgemeGet('/reviews', { per_page: '100', page: String(sida) });
+    if (!svar.ok) {
+      console.error(`Kunde inte läsa butikens recensioner (${svar.status}) — vägrar gissa.`);
+      process.exit(1);
+    }
+    const rev = svar.kropp.reviews ?? [];
+    if (rev.length === 0) break;
+    synliga += rev.filter(
+      (r) => Number(r.product_external_id) === Number(shopifyId) && r.published && !r.hidden,
+    ).length;
+  }
+  return synliga;
+}
+
 if (judgemeId) {
   const revSvar = await judgemeGet('/reviews', { product_id: String(judgemeId), per_page: '100' });
-  if (!revSvar.ok) {
-    console.error(`Kunde inte läsa befintliga recensioner (${revSvar.status}).`);
-    process.exit(1);
-  }
   // Bara det kunden faktiskt ser räknas. En avpublicerad eller dold recension
   // är bortstädad i praktiken (Judge.me:s v1-API kan inte radera, bara dölja),
   // och ska inte spärra en omkörning som ersätter den.
-  const antal = (revSvar.kropp.reviews ?? [])
-    .filter((r) => r.published && !r.hidden).length;
+  let antal;
+  if (revSvar.ok) {
+    antal = (revSvar.kropp.reviews ?? []).filter((r) => r.published && !r.hidden).length;
+  } else if (/too big/i.test(String(revSvar.kropp?.error ?? ''))) {
+    // Judge.me avvisar sina EGNA nyare produkt-id:n som "too big" (422) —
+    // gränsen ligger under 10 siffror, så varje produkt som skapas numera
+    // träffar den. Utan reservvägen skulle spärren avbryta varje ny produkt
+    // och rutinen stanna. Uppmätt 2026-09-09 på Adventskalender Racerbiler
+    // (Judge.me-id 2150178134): products/-1 svarar 200, /reviews svarar 422.
+    console.log(`Judge.me avvisar produkt-id ${judgemeId} som "för stort" — räknar via butikssvep i stället.`);
+    antal = await raknaViaSvep(productId);
+  } else {
+    console.error(`Kunde inte läsa befintliga recensioner (${revSvar.status}).`);
+    process.exit(1);
+  }
   if (antal > 0 && !args.includes('--anda')) {
     console.log(`Produkt ${productId} har redan ${antal} synliga recensioner i ${SHOP} — hoppar över.`);
     console.log('Ska de läggas till ändå (t.ex. en påbyggnadsbatch): kör om med --anda.');
@@ -174,8 +202,41 @@ for (const r of rader) {
   await new Promise((res) => setTimeout(res, 1200));   // spamma inte deras API
 }
 console.log(`klart: ${ok} ok, ${fel} fel`);
+
+// Efterkontroll av datumen (uppmätt 2026-09-09 på beverbutikken.no): Judge.me:s
+// v1-API tar emot created_at utan att klaga men SKRIVER ALDRIG in det — varken
+// vid POST eller vid PUT efteråt (PUT svarar "Action performed successful" och
+// ändrar ingenting). Recensionerna får importögonblicket i stället, och i
+// kundvyn står det "nyss" på allihop. Datumvakten ovan fångar bara rader UTAN
+// datum; den här läser tillbaka och säger ifrån när datumet inte tog.
+// Enda vägen till äkta datum är CSV-importen i Judge.me-appen.
+if (!dry && ok > 0) {
+  await new Promise((res) => setTimeout(res, 20000));   // bakgrundsjobbet hos Judge.me
+  const idag = new Date().toISOString().slice(0, 10);
+  const kalladatum = new Set(
+    rader.map((r) => String(r.review_date ?? '').trim().slice(0, 10)).filter(Boolean),
+  );
+  let importdag = 0, lasta = 0;
+  for (let sida = 1; sida <= 50; sida++) {
+    const svar = await judgemeGet('/reviews', { per_page: '100', page: String(sida) });
+    if (!svar.ok) break;
+    const rev = svar.kropp.reviews ?? [];
+    if (rev.length === 0) break;
+    for (const r of rev) {
+      if (Number(r.product_external_id) !== Number(productId)) continue;
+      lasta++;
+      if (String(r.created_at ?? '').slice(0, 10) === idag && !kalladatum.has(idag)) importdag++;
+    }
+  }
+  if (importdag > 0) {
+    console.error(`⚠️ DATUMEN TOG INTE: ${importdag} av ${lasta} recensioner står som ${idag} i stället för källans datum.`);
+    console.error('Judge.me:s API skriver inte created_at. I kundvyn står det "nyss" på allihop.');
+    console.error(`Rätt väg: ladda upp ${csvFil} som CSV-import i Judge.me-appen — den bevarar datumen.`);
+  } else if (lasta > 0) {
+    console.log(`Datumen ser rätt ut: ${lasta} recensioner bär källans datum.`);
+  }
+}
 if (!dry && !fel) {
   console.log('Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg.');
-  console.log('Verifiera också DATUMEN i kundvyn: står det "nyss" på allt har API:t ignorerat created_at — dölj och ta CSV-importen i Judge.me-appen i stället.');
 }
 process.exit(fel ? 1 : 0);

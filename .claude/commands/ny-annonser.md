@@ -169,19 +169,48 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
      En SE-fallback i den norska kampanjen visar annonserna i fel land.
    - EU-konton kan kräva `dsa_beneficiary`/`dsa_payor` — kolla innan.
 
-9. **Trippelkolla mot kontot.** Läs TILLBAKA hela strukturen ur Meta och
+9. **RÄKNINGEN — kommandots viktigaste spärr.** (Axels bakläxa 2026-09-09:
+   TankGuard fick 10 annonser av 33 möjliga och rapporterades som klart.)
+
+   Innan något rapporteras: ställ upp räkningen och visa den i chatten.
+
+   ```
+   Källannonser:        34
+     rena               20  → ska bli 20 annonser
+     kräver-omdubb      11  → ska bli 11 annonser
+     slutkortsbygge      2  → ska bli 2 annonser
+     okänd               1  → ska INTE laddas upp
+   Uppladdade i kontot: __  ← läst ur Meta, inte ur minnet
+   ```
+
+   **Varje rad som inte stämmer ska namnges.** Vilka annonser saknas, och
+   varför saknas var och en. "Resten misslyckades" är inte ett svar —
+   skriv ut namnen.
+
+   ⚠️ **Media i kontot är INTE en annons.** En uppladdad video eller bild
+   ligger i biblioteket tills en creative byggs på den. Räkna annonser med
+   `act_<id>/ads`, aldrig `advideos`/`adimages`.
+
+   ⚠️ **En `okänd` dom laddas aldrig upp.** Den betyder att en yta inte gick
+   att läsa — stäng den först (lyssna, fråga redigeraren), döm sen.
+
+   Är summan lägre än källan: **säg "delvis klart" och lista vad som fattas.**
+   Ordet "klart" får bara skrivas när varje källannons antingen ligger uppe
+   eller står namngiven med sin orsak.
+
+10. **Trippelkolla mot kontot.** Läs TILLBAKA hela strukturen ur Meta och
    jämför mot butikens konfig: `page_id`, `pixel_id`, `daily_budget`, länk och
    status på alla tre nivåer. Stämmer något inte: rätta och läs tillbaka igen.
    Delvis klart heter delvis klart.
 
-10. **Lämna över till VA:n.** Skriv i chatten, på engelska:
+11. **Lämna över till VA:n.** Skriv i chatten, på engelska:
     - vad som byggdes (kampanj, antal adsets, antal annonser)
     - vad som INTE gjordes och varför (t.ex. videor som väntar på krediter)
     - hennes granskningslista: öppna Ads Manager, kolla att länken går till
       butikens produktsida, att pixeln är butikens egen, att budgeten stämmer
     - **hon sätter kampanjen ACTIVE när granskningen är grön.**
 
-11. **Dokumentera.** `factory/state/<butik>--<produkt>.json`, ärvd historik in i
+12. **Dokumentera.** `factory/state/<butik>--<produkt>.json`, ärvd historik in i
     `products/<butik>/batch-log.md` (de brand-swappade annonserna bär med sig
     sitt bevisade DNA), och varje NYTT bevisat steg in i `factory/FAS2.md` i
     samma session. Committa och pusha.
@@ -203,6 +232,8 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] TVÅ kampanjer byggda: `<BRAND>_SE_…` och `<BRAND>_NO_…`
 - [ ] Svensk copy på svenska mot `/`, norsk copy på bokmål mot `/nb`
 - [ ] Allt skapat PAUSED, status explicit på alla tre nivåer
+- [ ] **Räkningen visad:** källannonser per dom vs. uppladdade annonser i kontot
+- [ ] Varje saknad annons NAMNGIVEN med orsak — annars står det "delvis klart"
 - [ ] Tillbakaläst ur Meta: sida, pixel, budget, länk och status stämmer
 - [ ] VA:n har sin granskningslista och vet att hon sätter ACTIVE
 - [ ] state + FAS2.md uppdaterade, pushat

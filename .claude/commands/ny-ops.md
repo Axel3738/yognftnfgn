@@ -6,6 +6,19 @@ annan källa) + ev. önskat brandnamn. SE (huvudspråk svenska) + NO
 bara för YTTERLIGARE marknader utöver dessa.
 Exempel: `/ny-ops https://bäverbutiken.se/products/lastnat`
 
+**Flera länkar = en nischbutik med flera produkter** (Axels beslut 2026-09-09,
+underlag i `factory/FLERPRODUKT.md`). Skickas två länkar bygger du EN butik som
+bär båda — förutsatt att de delar målgrupp. Vad som ändras:
+- **Brandet** ska bära nischen, inte en enskild produkt (`fiske`, inte `spöhållare`).
+- **Startsidan** blir en kollektion (`sortiment`-sektionen), inte en produkt.
+- **Huvudmenyn** får en rad per produkt.
+- **Varje produkt får eget `creative_prefix` och egen kampanj** — brandet bor i
+  kampanjnamnet. Delas prefixet går fyra system sönder tyst.
+- **Break-even skrivs per produkt**, aldrig ett gemensamt butikstal.
+⚠️ `ops.mjs` tar i dag EN produktfil (produktloopen är inte byggd, se
+FLERPRODUKT.md). Tills den finns: säg det rakt ut och fråga om butiken ska
+byggas som huvudprodukt + tillbehör i stället — hitta aldrig på en väg runt.
+
 Kommandot körs EFTER att VA:n gjort checklistans steg 1–2: butiken är
 skapad på free trial och appen är kopplad via miljövariablerna
 `SHOPIFY_SHOP` + `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET`
