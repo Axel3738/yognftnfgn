@@ -106,9 +106,19 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    svenska kampanjen, NO-annonser den norska. Blanda dem aldrig.
    ⚠️ Ta bara ACTIVE-annonser ur aktiva adsets. En PAUSED annons är ett
    beslut — den har dömts ut och ska inte återupplivas i en ny butik.
-   Finns ingen norsk kampanj för produkten: bygg bara den svenska och
-   rapportera det. Uppfinn aldrig norska annonser ur de svenska här — det
-   är `/oversatt`:s jobb, inte det här kommandots.
+   ⚠️ **DEN NORSKA HALVAN ÄR INTE VALFRI** (Axels bakläxa 2026-09-09:
+   varken HeimGuard eller TankGuard fick någon norsk kampanj — det norska
+   kontot lästes aldrig). Kommandot är inte klart förrän BÅDA kontona är
+   lästa och båda kampanjerna byggda. Har du bara läst det svenska kontot:
+   du är halvvägs, inte färdig.
+   Finns det bevisligen ingen norsk kampanj för produkten i Magiborsten NO:
+   skriv det som ett eget konstaterande med antalet lästa kampanjer, bygg
+   den svenska och säg "delvis klart". Uppfinn aldrig norska annonser ur de
+   svenska här — det är `/oversatt`:s jobb, inte det här kommandots.
+
+   ⚠️ **Leta i FLER än en kampanj per konto.** Sök varje kampanj vars
+   annonser bär produktens prefix — inte bara den som `kalla.kampanj_id`
+   pekar på. En produkt kan ha både en test-ABO och en skalnings-CBO.
 
 3. **Brand-detektorn** (FAS2 uppdrag A). Klassa varje annons över FEM ytor:
    copy, tal, inbränd text/slutkort, recensionsattribution — **och priset**.
@@ -183,6 +193,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Uppladdade i kontot: __  ← läst ur Meta, inte ur minnet
    ```
 
+   **Ställ upp räkningen en gång per marknad** — en tabell för SE, en för NO.
+   En marknad som saknar tabell är en marknad du inte gjort.
+
    **Varje rad som inte stämmer ska namnges.** Vilka annonser saknas, och
    varför saknas var och en. "Resten misslyckades" är inte ett svar —
    skriv ut namnen.
@@ -229,6 +242,8 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Videorna omdubbade — eller listade som väntande med orsak
 - [ ] All copy pekar på butikens EGEN produktsida, ingen gissad länk
 - [ ] Media uppladdat i målkontot (inte refererat från källkontot)
+- [ ] BÅDA källkontona lästa: MagiBorsten (SE) OCH Magiborsten NO
+- [ ] Alla kampanjer per konto genomsökta, inte bara `kalla.kampanj_id`
 - [ ] TVÅ kampanjer byggda: `<BRAND>_SE_…` och `<BRAND>_NO_…`
 - [ ] Svensk copy på svenska mot `/`, norsk copy på bokmål mot `/nb`
 - [ ] Allt skapat PAUSED, status explicit på alla tre nivåer

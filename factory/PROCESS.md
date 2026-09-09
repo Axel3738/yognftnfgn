@@ -38,7 +38,11 @@ som genereras per bygge).
    live-temat. ⚠️ `stagedUploadsCreate` har INGEN `THEME`-resurs i
    Admin-API 2025-07 — använd `FILE`, den signerade URL:en läses av
    `themeCreate` lika bra.
-6. ⚙️ Produkt som **ACTIVE** (Axels bakläxa 2026-09-08 på TankGuard:
+6. ⚙️ Produkt som **ACTIVE** med **`inventoryPolicy: CONTINUE`** och
+   `inventoryItem.tracked: false` (Axels regel 2026-09-09 — Shopifys default
+   DENY stoppar försäljningen tyst när saldot tar slut, medan annonserna
+   fortsätter kosta pengar; dropshipping har inget eget lager)
+   (Axels bakläxa 2026-09-08 på TankGuard:
    DRAFT ger 404 i menyn och "Exempel på produktnamn" i kundvyn —
    butiken är ändå lösenordsskyddad under trialen) → metafält →
    opf-sektioner → produktmall → startsida →
@@ -308,3 +312,31 @@ som genereras per bygge).
 - API:t kan inte (custom app-token; Shopify-MCP:n är FÖRBJUDEN i /ny-ops):
   skapa/publicera teman mot live, shop-mejl, checkout-branding
   (Plus), shopPolicyUpdate (scope), Meta-sidor, byta primärspråk.
+
+## ⚠️ ÖPPEN BUGG 2026-09-09 — varukorgen redirectar i stället för att poppa upp
+
+**Symptom (Axel, HeimGuard + TankGuard, båda LIVE och spenderar):** första
+gången kunden lägger i varukorgen skickas hen till `/cart` i stället för att
+lådan glider in. Gäller sannolikt varje butik byggd ur `ops-tema.zip`.
+
+**Verifierat i zip:en 2026-09-09 (allt detta är RÄTT, felet ligger inte här):**
+- `config/settings_data.json` → `cart_type: 'drawer'` ✓
+- `layout/theme.liquid` rad 308-310 renderar `{% render 'cart-drawer' %}`
+  när `settings.cart_type == 'drawer'` ✓
+- `snippets/cart-drawer.liquid` finns och är Dawns riktiga låda ✓
+
+**Huvudmisstanke — sektionen saknar `{% schema %}`.** `sections/cart-drawer.liquid`
+i zip:en är en ren wrapper (`{%- render 'cart-drawer' -%}`, noll `schema`-träffar).
+Dawns `cart-drawer.js` hämtar `?sections=cart-drawer` vid varje varukorgsändring —
+en sektion utan schema kan inte hämtas via sektions-API:t. Samma wrapper skrivs
+dessutom om av `byggKorgUpsell` i `factory/tema.mjs`.
+
+**Andra kandidater, i tur och ordning:**
+1. Det PUBLICERADE temats `settings_data.json` har inte `cart_type: 'drawer'`
+   — kloner tappar inställningar precis som de tappar app-embeds.
+2. `product-form.js` hittar inget `<cart-drawer>`-element vid första laddningen
+   och faller tillbaka på vanlig formulär-POST.
+
+**Regel:** varukorgen ska testas på RIKTIGT i kundens vy innan en butik får
+annonser — lägg i varukorgen med tom korg och se att lådan glider in.
+Lägg in det i trippelkollen.
