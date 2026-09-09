@@ -1,16 +1,20 @@
-// kallskanning-kor.mjs — kör källskanningen mot ALLA filer i butikens teman.
+// kallskanning-kor.mjs — hämtar ALLA filer i ett tema, paginerat, och kör
+// källskanningen mot dem.
 //
-//   node factory/kallskanning-kor.mjs [--tema utkast|alla] [--json]
+//   hamtaAllaTemafiler(temaId) → { fil: innehåll }        (kontraktet, KEDJAN.md)
+//   node factory/kallskanning-kor.mjs [--tema <id>|alla] [--json]
 //
-// `kallskanning.mjs` är ren logik utan nätverk. Det här är körningen: den
-// hämtar varje temafil ur Shopify och skannar den. Listan KANDA_SMITTADE är
-// var man börjar leta, inte var man slutar — därför läses ALLA filer.
+// `kallskanning.mjs` är ren logik utan nätverk (och har den butiksbundna
+// CLI:n: `node factory/kallskanning.mjs <butik-id>`). Det här är hämtningen:
+// varje temafil ur Shopify, 50 i taget tills pageInfo säger stopp. Listan
+// KANDA_SMITTADE är var man börjar leta, inte var man slutar — därför läses
+// ALLA filer. Används av avbranda.mjs och av steget `kallskanning` i ops.mjs.
 //
 // Regeln: ingen butik lämnas för publicering förrän rapporten är tom.
 
 import { laddaEnv } from './env.mjs';
-import { graphql } from './shopify.mjs';
-import { skannaTema, rapport, KANDA_SMITTADE } from './kallskanning.mjs';
+import { graphql, hamtaArbetstema } from './shopify.mjs';
+import { skannaTema, rapport, tackning } from './kallskanning.mjs';
 
 // Binärfiler och tredjepartsbibliotek skannas inte — en träff där är ändå
 // inget vi kan skriva om, och de dränker rapporten i brus.
@@ -48,13 +52,19 @@ export async function hamtaAllaTemafiler(temaId) {
 if (process.argv[1] && process.argv[1].endsWith('kallskanning-kor.mjs')) {
   laddaEnv();
   const arg = process.argv.slice(2);
-  const alla = arg.includes('--alla') || (arg.includes('--tema') && arg[arg.indexOf('--tema') + 1] === 'alla');
+  const temaArg = arg.includes('--tema') ? arg[arg.indexOf('--tema') + 1] : null;
+  const alla = arg.includes('--alla') || temaArg === 'alla';
   const somJson = arg.includes('--json');
 
-  const t = await graphql(`query { themes(first: 20) { nodes { id name role } } }`);
-  const teman = alla
-    ? t.themes.nodes
-    : t.themes.nodes.filter((x) => /\bcro\b/i.test(x.name)).slice(0, 1);
+  // Ett tema: arbetstemat (id om givet, annars CRO-temat — aldrig "första
+  // UNPUBLISHED"). --alla: varje tema i butiken.
+  let teman;
+  if (alla) {
+    const t = await graphql(`query { themes(first: 20) { nodes { id name role } } }`);
+    teman = t.themes.nodes;
+  } else {
+    teman = [await hamtaArbetstema(temaArg && temaArg !== 'utkast' ? temaArg : null)];
+  }
   if (teman.length === 0) throw new Error('Inget tema att skanna.');
 
   let totaltTraffar = 0;
@@ -62,16 +72,15 @@ if (process.argv[1] && process.argv[1].endsWith('kallskanning-kor.mjs')) {
   for (const tema of teman) {
     const filer = await hamtaAllaTemafiler(tema.id);
     const res = skannaTema(filer);
+    const { lasta, saknade } = tackning(filer);
     totaltTraffar += res.traffar.length;
-    allt.push({ tema: tema.name, roll: tema.role, ...res, antalFiler: Object.keys(filer).length });
+    allt.push({ tema: tema.name, roll: tema.role, ...res, antalFiler: Object.keys(filer).length, lasta, saknade });
 
     if (!somJson) {
       console.log(`\n━━━ ${tema.name} (${tema.role}) — ${Object.keys(filer).length} filer skannade ━━━`);
       console.log(rapport(res));
       // Redovisa alltid att de kända smittade faktiskt lästes — annars går
       // det inte att skilja "ren" från "aldrig hämtad".
-      const lasta = KANDA_SMITTADE.filter((f) => f in filer);
-      const saknade = KANDA_SMITTADE.filter((f) => !(f in filer));
       console.log(`\n  kända smittade filer lästa: ${lasta.join(', ') || '(inga)'}`);
       if (saknade.length > 0) console.log(`  ⚠️ fanns inte i temat: ${saknade.join(', ')}`);
     }

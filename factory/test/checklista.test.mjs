@@ -1,0 +1,119 @@
+// Tester för VA-checklistan: butiksnivå, valutan först, alla produkter
+// listade, inga hårdkodade butiksvärden. Ren logik — ingen fil skrivs.
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { byggChecklista, checklistaVarden } from '../checklista.mjs';
+import { rabutik, raprodukt } from './hjalp.mjs';
+
+const butik = () => ({
+  ...rabutik(),
+  butik: { ...rabutik().butik, id: 'testbutiken', brand: 'Nackmagneten', marknader: [{ land: 'NO', locale: 'nb', valuta: 'SEK' }] },
+});
+const produktB = () => ({ produkt: { namn: 'Nackkudden', id: 'nackkudden' }, brand: { domanideer: ['nackkudden.se'] } });
+
+const pos = (md, s) => {
+  const i = md.indexOf(s);
+  assert.ok(i >= 0, `saknas i checklistan: ${s}`);
+  return i;
+};
+
+test('valutan, huvudmarknaden och språket kommer FÖRE butiksnamnet i sektion 5', () => {
+  const md = byggChecklista(butik(), [raprodukt()]);
+  const valuta = pos(md, '**Store currency** → **SEK**');
+  const marknad = pos(md, 'make **Sweden** the primary market');
+  const sprak = pos(md, 'make **Swedish** default');
+  const namn = pos(md, 'Store name → **Nackmagneten**');
+  assert.ok(valuta < marknad && marknad < sprak && sprak < namn, 'ordningen: valuta → marknad → språk → namn');
+  assert.ok(pos(md, '## 5. Shopify – basics') < valuta, 'valutasteget ligger i sektion 5');
+  assert.ok(pos(md, 'currency and language are set') < namn, 'VA:n säger till innan hon döper butiken');
+});
+
+test('EN fil på butiksnivå listar alla produkter och en recensionsrad per produkt', () => {
+  const md = byggChecklista(butik(), [raprodukt(), produktB()]);
+  assert.ok(md.includes('* PRODUCT: **Nackmagneten** (nackmagneten)'));
+  assert.ok(md.includes('* PRODUCT: **Nackkudden** (nackkudden)'));
+  assert.ok(md.includes('several products – it is still ONE store'));
+  assert.ok(md.includes('reviews file Claude gives you for **Nackmagneten**'));
+  assert.ok(md.includes('reviews file Claude gives you for **Nackkudden**'));
+  assert.equal((md.match(/# Store Launch Checklist/g) ?? []).length, 1, 'en rubrik = en fil');
+});
+
+test('storefront-lösenordet är den fjärde env-variabeln och ägare/inkorg är två adresser', () => {
+  const md = byggChecklista(butik(), [raprodukt()]);
+  assert.ok(md.includes('set these 4'));
+  const rad = md.split('\n').filter((r) => r.includes('SHOPIFY_'));
+  assert.deepEqual(
+    rad.map((r) => r.match(/`(SHOPIFY_[A-Z_]+)`/)[1]),
+    ['SHOPIFY_SHOP', 'SHOPIFY_CLIENT_ID', 'SHOPIFY_CLIENT_SECRET', 'SHOPIFY_STOREFRONT_PASSWORD']
+  );
+  const v = checklistaVarden(butik(), [raprodukt()]);
+  assert.notEqual(v.inkorg, v.agare, 'vidarebefordran och ägarbyte går till olika adresser');
+  assert.ok(md.includes(`forward to **${v.inkorg}**`));
+  assert.ok(md.includes(`**Transfer store ownership** → **${v.agare}**`));
+});
+
+test('Judge.me-importen sker i appen (originaldatum), aldrig via API-token', () => {
+  const md = byggChecklista(butik(), [raprodukt()]);
+  assert.ok(md.includes('Import from apps → **Judge.me format**'));
+  assert.ok(md.includes('original dates (never "just now")'));
+  assert.ok(!md.includes('copy **API Token**'), 'API-vägen sätter importögonblicket som datum');
+});
+
+test('pixel-id och temanamn skrivs in när de finns, annars "Claude gives you"', () => {
+  const utan = byggChecklista(butik(), [raprodukt()]);
+  assert.ok(utan.includes('paste the **pixel ID** Claude gives you'));
+  assert.ok(utan.includes('the theme Claude names → **Publish**'));
+  const med = byggChecklista(butik(), [raprodukt()], { pixelId: '987654321', temaNamn: 'OPS Nackmagneten v2' });
+  assert.ok(med.includes('paste the **pixel ID**: **987654321**'));
+  assert.ok(med.includes('Themes → **OPS Nackmagneten v2** → **Publish**'));
+});
+
+test('marknaderna kommer ur yaml, inte ur koden: NOK-steget bara när NO finns', () => {
+  const med = byggChecklista(butik(), [raprodukt()]);
+  assert.ok(med.includes('Settings → Markets → **Norway** → activate **NOK** → Save'));
+  const b = butik();
+  b.butik.marknader = [{ land: 'DK', locale: 'da', valuta: 'SEK' }];
+  const dk = byggChecklista(b, [raprodukt()]);
+  assert.ok(dk.includes('**Denmark** → activate **DKK**'));
+  assert.ok(!dk.includes('Norway'), 'ingen norsk rad utan norsk marknad');
+  delete b.butik.marknader;
+  const ingen = byggChecklista(b, [raprodukt()]);
+  assert.ok(!ingen.includes('activate **NOK**') && !ingen.includes('activate **DKK**'));
+});
+
+test('valuta och land följer butiksfilen — en NOK-butik i Norge får inte SEK/Sweden', () => {
+  const b = butik();
+  b.butik.valuta = 'NOK';
+  b.butik.land = 'NO';
+  b.butik.supportmail = 'hello@nakkemagnet.no';
+  const md = byggChecklista(b, [raprodukt()]);
+  assert.ok(md.includes('**Store currency** → **NOK**'));
+  assert.ok(md.includes('make **Norway** the primary market'));
+  assert.ok(md.includes('make **Norwegian** default'));
+  assert.ok(md.includes('Judge.me → Settings → Language → **Norwegian**'));
+  assert.ok(!md.includes('**SEK**'), 'ingen SEK i en NOK-butik');
+  assert.ok(md.includes('Buy **nakkemagnet.no**'), 'domänen ur supportmailen');
+});
+
+test('domänen härleds ur supportmail (hello@<domän>), annars ur produktens domänidé', () => {
+  const v = checklistaVarden(butik(), [raprodukt()]);
+  assert.equal(v.doman, 'nackmagneten.se');
+  assert.equal(v.mail, 'hello@nackmagneten.se');
+  const b = butik();
+  delete b.butik.supportmail;
+  const v2 = checklistaVarden(b, [produktB()]);
+  assert.equal(v2.doman, 'nackkudden.se');
+  assert.equal(v2.mail, 'hello@nackkudden.se');
+});
+
+test('stjärnfärgen kommer ur branding.mjs och butiks-id:t sitter i /ny-annonser-raden', () => {
+  const md = byggChecklista(butik(), [raprodukt()]);
+  assert.ok(md.includes('star color: **00B77F**'));
+  assert.ok(md.includes('**/ny-annonser testbutiken**'));
+});
+
+test('bakåtkompatibel: den gamla ordningen (produkt, butik) ger samma fil', () => {
+  const ny = byggChecklista(butik(), [raprodukt()]);
+  const gammal = byggChecklista(raprodukt(), butik());
+  assert.equal(gammal, ny);
+});

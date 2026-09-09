@@ -150,6 +150,45 @@ features:
 offer:
   beskrivning: "389 kr per par (ord. 649 kr). Fri frakt till Sverige och Norge, 14 dagars ångerrätt."
   bundle: "Paketnivåer 1/2/3 par — mittennivån förvald enligt fabriksregeln"
+  # PAKET A — källans egna Kaching-nivåer, ordagrant. Läst 2026-09-09 ur
+  # baverbutiken.se produktsidas kaching-bundles-deal-block-settings:
+  # 1 st 0 %, 2 st 15 % (förvald, badge 'Mest populär'), 3 st 20 %.
+  # Styckpriset 389 kr ger 389 / 661,30 / 933,60 kr. Rabattkoderna drar exakt
+  # mellanskillnaden (factory/paket.mjs räknar i öre), så kortet och kassan
+  # aldrig kan säga olika saker.
+  #
+  # variant är TOM med flit: alla kunder ser den bevisade stegen, inget A/B.
+  # PAKET B (Q4-ramverket: gratis bonusprodukt i stället för djupare rabatt)
+  # är planerat i factory/output/damasker/PAKETNIVAER.md men INTE byggt —
+  # bonusprodukten (reflexband) är vald men inte sourcad, och en gratisnivå
+  # utan en produkt att ge bort går inte att bygga ärligt.
+  #
+  # handle står uttryckligen: nivåerna skrevs live i DryTrek 2026-09-09 med
+  # de här handles (paket_a klar i state) — utan raden skulle fabrikens
+  # standardhandle (damasker-x-N) ge dubbla kort på produktsidan.
+  # Mittennivån är förvald enligt fabriksregeln ⌈n/2⌉ = 2. Källan hade redan
+  # st2b förvald, så regeln och källan säger samma sak.
+  paket:
+    test: ""
+    nivaer:
+      - antal: 1
+        handle: "damasker-a1"
+        rubrik: "1 par"
+        underrubrik: "Standardpris"
+      - antal: 2
+        handle: "damasker-a2"
+        rubrik: "2 par"
+        underrubrik: "330,65 kr per par"
+        bricka: "Mest populär"
+        pris: 661.30
+        kod: "DAMASKER2PACK"
+        forvald: true
+      - antal: 3
+        handle: "damasker-a3"
+        rubrik: "3 par"
+        underrubrik: "311,20 kr per par"
+        pris: 933.60
+        kod: "DAMASKER3PACK"
   # Q4-RAMVERKET (standard för varje OPS). Vald bonus: reflexband.
   # Varför just det: produktens fjärde sälj-punkt är redan "syns i terrängen",
   # så bonusen förstärker ett löfte sidan redan gör i stället för att införa

@@ -18,11 +18,16 @@ import { join, dirname } from 'node:path';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 
+// Valfritt verktyg UTANFÖR kedjan (KEDJAN.md regel 5): får använda sharp,
+// men säger tydligt ifrån när det saknas. overlaySvg() är ren logik utan sharp.
 function sharpModul() {
   try {
     return createRequire(join(FACTORY_ROT, '..', 'pipeline', 'package.json'))('sharp');
   } catch {
-    throw new Error('sharp saknas — kör `cd pipeline && npm install`.');
+    throw new Error(
+      'sharp saknas — bildtext.mjs kan inte lägga text på bilden utan det. Kör `cd pipeline && npm install` en gång ' +
+        '(sharp bor där, fabriken själv har noll beroenden).'
+    );
   }
 }
 

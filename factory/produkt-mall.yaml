@@ -11,6 +11,11 @@
 produkt:
   namn: ""                    # KRITISKT — produktnamnet som kunden ser
   id: ""                      # KRITISKT — kort-id: små bokstäver, siffror, bindestreck (ex: nackmagneten)
+  # Butikens produkt-handle (/products/<handle>) när det SKILJER sig från id.
+  # Tomt = id. Behövs bara när butiken redan byggts under ett annat namn
+  # (TankGuard: id tankguard, handle tankoverdraget). Alla uppslag mot Shopify
+  # går på handlet; id:t är filens och statens namn.
+  handle: ""
 
 brand:
   namn: ""                    # tomt = butikens brand används
@@ -124,9 +129,11 @@ reviews:                      # riktiga recensioner (namn, betyg 1–5, text).
   #   betyg: 5
   #   text: ""
   #   titel: ""               # valfri
-  #   datum: ""               # OBLIGATORISKT, YYYY-MM-DD — källans originaldatum
+  #   datum: ""               # YYYY-MM-DD — källans originaldatum
   #                           # (reviews_for_widget → reviews[].created_at).
-  #                           # Hitta aldrig på ett; saknas det stoppar bygget.
+  #                           # Saknas det: VARNING i valideringen, inte stopp
+  #                           # (KEDJAN.md: datumkravet är opt-in, --krav-datum
+  #                           # i tools/judgeme-import.mjs). Hitta ALDRIG på ett.
 
 faq:
   # - fraga: ""

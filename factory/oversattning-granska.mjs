@@ -1,23 +1,25 @@
-// Översättningslagret — fas 4 i factory/PROCESS.md, steg 14.
+// Översättningsgranskaren — läs-bar. Mäter vad som saknas per resurstyp
+// efter att marknad.oversattAllt kört (KEDJAN.md steg 17).
 //
 // PROCESS.md kräver att ALLT översätts via translationsRegister och
 // trippelkollas mot /nb. Fram till 2026-09-09 fanns ingen kod för det:
 // HeimGuard och TankGuard översattes för hand utanför repot, och det syntes
 // — TankGuard låg kvar med otränslade sidtitlar, menylänkar, meta-
 // beskrivningar och startsidans omdömen (mätt 2026-09-09 i den här filens
-// egen granskning). Handarbete lämnar alltid rester. Därför bor mekaniken
-// här i stället, och varje ny OPS granskas med samma mått.
+// egen granskning). Handarbete lämnar alltid rester. Därför mäts varje ny
+// OPS med samma mått.
 //
-//   node factory/oversattning.mjs granska <locale>     — vad saknas
-//   node factory/oversattning.mjs granska nb --allt    — även maskinvärden
+//   node factory/oversattning-granska.mjs <locale> [--allt] [--tema <id>]
 //
-// Modulen skriver ALDRIG något av sig själv. `registrera()` anropas av den
-// som har texterna; CLI:t är läs-bart med flit.
+// Modulen skriver ALDRIG något. Registrering görs av marknad.mjs.
 //
 // ⚠️ Tema-översättningar är knutna till TEMA-ID (PROCESS.md steg 14). En ny
 // temaklon ärver INTE dem — granska om efter varje klon. Nycklar och digests
 // är stabila mellan kloner, så samma texter går att registrera om rakt av.
+// ⚠️ translatableResources(resourceType: …) listar temaraderna för LIVE-temat
+// (mätt 2026-09-08). Ange --tema för att bara räkna rader med vårt theme_id.
 
+import { pathToFileURL } from 'node:url';
 import { graphql } from './shopify.mjs';
 
 // Resurstyper som bär kundsynlig text. Ordningen är den ordning en kund
@@ -26,6 +28,7 @@ export const RESURSTYPER = [
   'PRODUCT',
   'PRODUCT_OPTION',
   'PRODUCT_OPTION_VALUE',
+  'COLLECTION',
   'PAGE',
   'LINK',
   'METAOBJECT',
@@ -60,111 +63,123 @@ export function arMaskinvarde(varde) {
 
 // Judge.me lägger sina widget-cachar som metafält i klartext. De skrivs om
 // av appen vid varje synk, så en översättning där överlever inte natten —
-// och appen lokaliserar själv. Rör dem aldrig.
-export function arAppcache(resourceId) {
-  return /Metafield\//.test(String(resourceId));
+// och appen lokaliserar själv. Våra opf-metafält är däremot riktig text och
+// översätts av marknad.mjs; här räknas de när noden bär namespace opf.
+export function arAppcache(resourceId, namespace = null) {
+  return /Metafield\//.test(String(resourceId)) && namespace !== 'opf';
 }
 
-export async function lasResurser(resurstyp, locale, antal = 50) {
-  const d = await graphql(
-    `query opsFactoryOversattning($t: TranslatableResourceType!, $locale: String!, $antal: Int!) {
-      translatableResources(first: $antal, resourceType: $t) {
-        nodes {
-          resourceId
-          translatableContent { key value digest }
-          translations(locale: $locale) { key value }
+// En sida av en resurstyp, med befintliga översättningar. Paginerar tills
+// allt är läst (max 20 sidor à `antal`).
+export async function lasResurser(resurstyp, locale, antal = 100) {
+  const ut = [];
+  let cursor = null;
+  for (let i = 0; i < 20; i++) {
+    const d = await graphql(
+      `query opsFactoryGranska($t: TranslatableResourceType!, $locale: String!, $antal: Int!, $cursor: String) {
+        translatableResources(first: $antal, resourceType: $t, after: $cursor) {
+          nodes {
+            resourceId
+            translatableContent { key value digest }
+            translations(locale: $locale) { key value outdated }
+          }
+          pageInfo { hasNextPage endCursor }
         }
-      }
-    }`,
-    { t: resurstyp, locale, antal }
-  );
-  return d.translatableResources.nodes;
+      }`,
+      { t: resurstyp, locale, antal, cursor }
+    );
+    ut.push(...(d.translatableResources?.nodes ?? []));
+    if (!d.translatableResources?.pageInfo?.hasNextPage) break;
+    cursor = d.translatableResources.pageInfo.endCursor;
+  }
+  return ut;
 }
 
-// Vad som saknas i en resurslista. `allt: true` tar med maskinvärdena också
-// — bara för felsökning, aldrig som arbetslista.
-export function granska(noder, { allt = false } = {}) {
+// Ren logik: vad som saknas i en nodlista. `allt: true` tar med maskinvärdena
+// också — bara för felsökning, aldrig som arbetslista. En outdated
+// översättning räknas som saknad: källan har ändrats sedan den skrevs.
+export function granskaNoder(noder, { allt = false } = {}) {
   const saknade = [];
   let kallor = 0;
   let oversatta = 0;
-  for (const r of noder) {
-    if (!allt && arAppcache(r.resourceId)) continue;
-    const gjorda = new Map((r.translations ?? []).map((t) => [t.key, t.value]));
-    for (const c of r.translatableContent) {
+  for (const r of noder ?? []) {
+    if (!allt && arAppcache(r.resourceId, r.namespace ?? null)) continue;
+    const gjorda = new Map((r.translations ?? []).map((t) => [t.key, t]));
+    for (const c of r.translatableContent ?? []) {
       if (!allt && (ALDRIG.has(c.key) || arMaskinvarde(c.value) || SENTINELVARDEN.has(c.value))) continue;
       kallor++;
-      if (gjorda.get(c.key)) oversatta++;
-      else saknade.push({ resourceId: r.resourceId, key: c.key, value: c.value, digest: c.digest });
+      const t = gjorda.get(c.key);
+      if (t?.value && !t.outdated) oversatta++;
+      else saknade.push({ resourceId: r.resourceId, key: c.key, value: c.value, digest: c.digest, outdated: Boolean(t?.outdated) });
     }
   }
   return { kallor, oversatta, saknade };
 }
 
-// Registrerar översättningar på EN resurs. `poster` = [{ key, value, digest }].
-// Digesten måste komma från samma läsning som texten — ändras källtexten
-// efteråt vägrar Shopify, och det är meningen: då är översättningen inaktuell.
-export async function registrera(resourceId, locale, poster) {
-  if (poster.length === 0) return { antal: 0, fel: [] };
-  const d = await graphql(
-    `mutation opsFactoryRegistrera($id: ID!, $t: [TranslationInput!]!) {
-      translationsRegister(resourceId: $id, translations: $t) {
-        translations { key value }
-        userErrors { field message }
-      }
-    }`,
-    {
-      id: resourceId,
-      t: poster.map((p) => ({
-        key: p.key,
-        value: p.value,
-        locale,
-        translatableContentDigest: p.digest,
-      })),
-    }
-  );
-  const svar = d.translationsRegister;
-  return { antal: (svar.translations ?? []).length, fel: svar.userErrors ?? [] };
+// Filtrerar temarader på vårt theme_id när ett tema anges; rader utan
+// theme_id i id:t lämnas kvar (de är inte temaspecifika).
+export function filtreraPaTema(noder, temaId) {
+  if (!temaId) return noder;
+  const nr = String(temaId).split('/').pop();
+  return (noder ?? []).filter((r) => !/theme_id=/.test(String(r.resourceId)) || String(r.resourceId).includes(`theme_id=${nr}`));
 }
 
-// Slår upp digesten för en nyckel — den som har texterna behöver sällan
-// hålla reda på digests själv.
-export function digestFor(noder, resourceId, key) {
-  const r = noder.find((n) => n.resourceId === resourceId);
-  return r?.translatableContent.find((c) => c.key === key)?.digest ?? null;
-}
-
-// ---------------------------------------------------------------------------
-// CLI — läs-bart. Skriver aldrig.
-// ---------------------------------------------------------------------------
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const [kommando, locale, ...flaggor] = process.argv.slice(2);
-  if (kommando !== 'granska' || !locale) {
-    console.error('Användning: node factory/oversattning.mjs granska <locale> [--allt]');
-    process.exit(1);
-  }
-  const { laddaEnv } = await import('./env.mjs');
-  laddaEnv();
-  const allt = flaggor.includes('--allt');
-  let totaltKallor = 0;
-  let totaltOversatta = 0;
+// Kontraktet (KEDJAN.md): granska(locale, { allt }) → { perTyp:[{ typ, kallor,
+// oversatta, saknade }], kallor, oversatta }. Resurstyper API-versionen inte
+// känner hoppas över tyst — de finns då inte att granska.
+export async function granska(locale, { allt = false, temaId = null } = {}) {
+  const perTyp = [];
+  let kallor = 0;
+  let oversatta = 0;
   for (const typ of RESURSTYPER) {
     let noder;
     try {
       noder = await lasResurser(typ, locale);
     } catch {
-      continue; // resurstypen finns inte i den här API-versionen
+      continue;
     }
-    const { kallor, oversatta, saknade } = granska(noder, { allt });
-    if (kallor === 0) continue;
-    totaltKallor += kallor;
-    totaltOversatta += oversatta;
-    const ikon = saknade.length === 0 ? '✅' : '❌';
-    console.log(`\n${ikon} ${typ}  ${oversatta}/${kallor}`);
-    for (const s of saknade.slice(0, 20)) {
-      console.log(`     ${s.resourceId.split('/').slice(-2).join('/')}  ${s.key} = ${JSON.stringify(s.value).slice(0, 64)}`);
-    }
-    if (saknade.length > 20) console.log(`     … +${saknade.length - 20} till`);
+    const r = granskaNoder(filtreraPaTema(noder, temaId), { allt });
+    if (r.kallor === 0) continue;
+    kallor += r.kallor;
+    oversatta += r.oversatta;
+    perTyp.push({ typ, ...r });
   }
-  console.log(`\nSUMMA ${locale}: ${totaltOversatta}/${totaltKallor}`);
-  process.exit(totaltOversatta === totaltKallor ? 0 : 2);
+  return { locale, perTyp, kallor, oversatta, komplett: kallor === oversatta };
+}
+
+// Slår upp digesten för en nyckel — den som har texterna behöver sällan
+// hålla reda på digests själv.
+export function digestFor(noder, resourceId, key) {
+  const r = (noder ?? []).find((n) => n.resourceId === resourceId);
+  return r?.translatableContent?.find((c) => c.key === key)?.digest ?? null;
+}
+
+// ---------------------------------------------------------------------------
+// CLI — läs-bart. Skriver aldrig.
+// ---------------------------------------------------------------------------
+async function huvud() {
+  const arg = process.argv.slice(2);
+  const locale = arg.find((a) => !a.startsWith('--') && arg[arg.indexOf(a) - 1] !== '--tema');
+  if (!locale) {
+    console.error('Användning: node factory/oversattning-granska.mjs <locale> [--allt] [--tema <id>]');
+    process.exit(1);
+  }
+  const { laddaEnv } = await import('./env.mjs');
+  laddaEnv();
+  const allt = arg.includes('--allt');
+  const temaId = arg.includes('--tema') ? arg[arg.indexOf('--tema') + 1] : null;
+  const r = await granska(locale, { allt, temaId });
+  for (const t of r.perTyp) {
+    console.log(`\n${t.saknade.length === 0 ? '✅' : '❌'} ${t.typ}  ${t.oversatta}/${t.kallor}`);
+    for (const s of t.saknade.slice(0, 20)) {
+      console.log(`     ${s.resourceId.split('/').slice(-2).join('/')}  ${s.key}${s.outdated ? ' (outdated)' : ''} = ${JSON.stringify(s.value).slice(0, 64)}`);
+    }
+    if (t.saknade.length > 20) console.log(`     … +${t.saknade.length - 20} till`);
+  }
+  console.log(`\nSUMMA ${locale}: ${r.oversatta}/${r.kallor}`);
+  process.exit(r.komplett ? 0 : 2);
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  huvud().catch((e) => { console.error(`\n❌ ${e.message}\n`); process.exit(1); });
 }

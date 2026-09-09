@@ -6,6 +6,66 @@
 Bas-temat är exporterat från **Matstrumpor.se** och används som mall för varje ny
 OPS-butik. Allt nedan följde med till HeimGuard, TankGuard och DryTrek.
 
+## Läget efter kodrundan 2026-09-09 (KEDJAN.md, steget `avbrandning`)
+
+Zip:en är **inte** rensad (Axels beslut "rensa källan" står kvar nedan, se
+"Vad som återstår"). Men kedjan tvättar nu varje butik automatiskt, och
+skanningen är en spärr som fungerar. Mätt mot zip:ens 309 textfiler:
+**27 träffar före, 0 efter** — det är testet `hela bas-zip:en är skanningsren
+efter av-brandningen` i `factory/test/avbranda.test.mjs`, och det faller den
+dag någon lägger till ett KALLORD utan regel.
+
+**Görs av kod nu:**
+
+| Fynd | Var | Hur |
+|---|---|---|
+| Startsidan (25 fynd) | `startsida.mjs` (steget `startsida`) | `templates/index.json` byggs ur `butiker/<id>.yaml`; recensioner bara ur produktfilerna |
+| `ms-skrapkort`, `ms-cookies` i footer-group | `kallskanning.avbrandaSektionsgrupp` via `avbranda.avbranda` | sektionerna tas bort, `order` rensas |
+| Nyhetsbrevet (`newsletter_enable`) | samma | `KALLINSTALLNINGAR`: `newsletter_enable: false`, rubriken tom |
+| Annonsraden i header-group (7 fynd) | `tema.byggHeaderGroup` + `avbrandaSektionsgrupp` | fabriken skriver egna rader (`opf_a1..3`) ur butikens villkor; källbutikens tre (`KALLANNONSER`) tas bort, fabrikens rörs aldrig |
+| Footerns bolagsblock + `/pages/om-oss` | `avbranda.byggFooterblock`, `startsida.byggFooterGroup` | brand/bolag/orgnr/mejl ur yaml, ingen länk |
+| `brand_description`, alla `social_*_link`, `logo`/`brand_image` (källoggan), Klaviyo-embedden, presetnamnet | `tema.rensaSettings` + `avbranda.stadaSettings` | sociala länkar töms alltid; app-embeds = enbart Judge.me; källoggan känns igen via `KALLORD` (`arKalltext`), en riktig logga lämnas i fred |
+| `currency_code_enabled` | `tema.rensaSettings` | på när någon marknad har annan valuta än butikens |
+| Trust-raden, leveransestimatet, FAQ, `hide_variants` i produktmallen (11 fynd) | `tema.byggProduktTemplate(befintlig, { produkt, butik, nb })` | ms_trust/ms_delivery ur yaml med norsk gren; `ms-faq-section` bort (UTGANGNA_TYPER); variantväljaren synlig vid riktiga varianter |
+| Supportmejl, domän, brandnamn, `sushi-strumpor`, `collections/strumporna`, hero-citaten, presentlöftena, sockstorleks-defaults, källoggan, Facebook-id:t — i ALLA filer | `avbranda.byggRegler` (gruppen `alla`) | körs på varje temafil |
+| Produktorden (`strumporna` → `varorna` …) i schema-defaults, kommentarer, fallbacks | `avbranda.byggRegler` (gruppen `liquid`) | körs BARA i `.liquid/.js/.css` — i JSON-mallarna kan de träffa butikens egen copy ("torra strumpor" är DryTreks nytta, Axel 2026-09-09) |
+| `ms-head.liquid` "Matstrumpor A/B" + saknad schema-grupp | `byggRegler` + `tema.settingsSchemaMedAb` | gruppen "OPS A/B-test" läggs till en gång |
+| `ms-paket.liquid`:s svenska ord | `tema.patchaMsPaket` | locale-branchas en gång |
+| `collections/strumporna` träffade aldrig (escapade snedstreck) | `kallskanning.normalisera` | `\/` → `/`, `\uXXXX` → tecknet, före matchning |
+| Ingen CLI | `node factory/kallskanning.mjs <butik-id> [--tema <id>]` | arbetstemat ur state (regel 1), exit 1 vid träff |
+| Citatet visade början av en 7 000-teckensrad | `skannaFil` | ±80 tecken runt träffen |
+| `KANDA_SMITTADE` saknade två filer | `kallskanning.mjs` | + `sections/header-group.json`, `config/settings_data.json` |
+
+**Vad som återstår** (ingen kod rör det ännu — zip:en bär det fortfarande):
+
+- **Kodfallbacks med villkor**: `ms-trust-row.liquid` (`assign fallback = 'truck:Fri frakt i
+  Sverige|…'`), `ms-guarantee.liquid` (`default: '30 dagars öppet köp'`),
+  `ms-delivery-estimate.liquid` (`default: 5/10`), `ms-cro.js` (`min = 5; max = 10`).
+  De återuppstår när ett fält lämnas tomt. Kedjan fyller fälten (trust, delivery), så
+  fallbacken slår inte i en fabriksbyggd butik — men den ligger kvar i filen.
+  Inget KALLORD: "Fri frakt i Sverige" och "30 dagars öppet köp" är giltig copy.
+- **Schema-defaults med villkor** i `ms-usp-bar`, `ms-marquee`, `blocks/ms-trust`,
+  `blocks/ms-guarantee`, `ms-guarantee-section`, `blocks/ms-delivery`
+  ("Fri frakt i Sverige", "30 dagars öppet köp", 5–10 dagar). Presentlöftena i samma
+  strängar tas bort av reglerna; villkoren står kvar av samma skäl som ovan.
+- **`sections/ms-skrapkort.liquid` och `sections/ms-cookies.liquid` som FILER** (KLUBB10,
+  svensk cookietext). Sektionerna plockas ur grupperna, men filerna följer med och går
+  att lägga till igen i temaeditorn.
+- **Hårdkodad svenska i `ms-cro.js`/`ms-paket.js`** (tidszon, "Lägger i…", datumformat).
+  Kräver egen översättningsväg — ingen textregel.
+- `assets/ms-cro-nytt.css` (död fil), `ms-cro.css`:s Mochiy-fallback och mörka läge,
+  `ms-tema.css`:s `#3A1F00`, `blocks/ms-bundle` `unit_word: "par"`, `ms-video` "Se dem i
+  rörelse", `ms-bundle-products` rubriker, `ms-size` storlekstabellen (fotnoten skrivs om,
+  tabellen inte), `password.json`/`article.json`/`list-collections.json` på engelska,
+  `collection.json`/`search.json` med filter för en enproduktsbutik.
+- **Sidfotens `snabblankar` → `main-menu`** och `enable_follow_on_shop` — menysteget i
+  ops.mjs skriver `main-menu`; följ-på-Shop-inställningen rörs inte av någon.
+- **`ms_paketniva`-definitionen** finns inte i en ny butik förrän `paket.mjs` skapat den —
+  ingen textfråga, men samma symptom (tom köpruta).
+
+**Rätt fix är fortfarande en ren bas-zip** (nedan). Tills den finns är reglerna ovan
+skyddsnätet, och testet mot zip:en är beviset att nätet håller.
+
 ## De fem värsta
 
 1. **Fyra riktiga kundrecensioner från Matstrumpor** ligger inbakade i startsidan,
@@ -24,13 +84,19 @@ OPS-butik. Allt nedan följde med till HeimGuard, TankGuard och DryTrek.
 
 ## Buggar i mina egna verktyg (funna i samma granskning)
 
-- `collections/strumporna` i KALLORD kan **aldrig** träffa: `templates/index.json` är
-  minifierad JSON där snedstrecken är escapade (`collections\\/strumporna`).
-- `avbrandaSektionsgrupp()` är **död kod** — ingen byggfil importerar den.
-- `newsletter` i KALLSEKTIONER matchar aldrig: nyhetsbrevet är en INSTÄLLNING på
-  footer-sektionen (`newsletter_enable: true`), inte en egen sektion.
-- `kundvy.mjs` letar bara efter spår av ett OBYGGT Dawn-tema, aldrig efter
-  källbutikens text.
+- ✅ **Rättad 2026-09-09.** `collections/strumporna` i KALLORD kunde **aldrig** träffa:
+  `templates/index.json` är minifierad JSON där snedstrecken är escapade
+  (`collections\\/strumporna`). Nu normaliseras texten före matchning
+  (`kallskanning.normalisera`), med test mot zip:ens riktiga fil.
+- ✅ **Rättad 2026-09-09.** `avbrandaSektionsgrupp()` var **död kod** — ingen byggfil
+  importerade den. Nu kör `avbranda.avbranda()` den på både `footer-group.json` och
+  `header-group.json` (steget `avbrandning` i KEDJAN.md).
+- ✅ **Rättad 2026-09-09.** `newsletter` i KALLSEKTIONER matchade aldrig: nyhetsbrevet är
+  en INSTÄLLNING på footer-sektionen (`newsletter_enable: true`), inte en egen sektion.
+  Nu `KALLINSTALLNINGAR` — inställningen slås av och rubriken töms.
+- ❌ Kvar: `kundvy.mjs` letar bara efter spår av ett OBYGGT Dawn-tema, aldrig efter
+  källbutikens text. (`kundvy.mjs` ägs av ett annat steg; `KALLORD` är exporterad och
+  går att importera där.)
 
 ## Beslutet: rensa KÄLLAN, inte varje kopia
 

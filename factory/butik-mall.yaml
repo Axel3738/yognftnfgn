@@ -18,13 +18,40 @@ butik:
   land: SE                    # KRITISKT — tvåbokstavskod där bolaget sitter
   huvudmarknad: Sverige       # KRITISKT — zonen som är hemmamarknad
   # STANDARD i varje OPS (Axel 2026-09-08): marknad Norge (locale nb) från
-  # start — fler marknader = fler rader. NOK slås på i admin (API-spärrat).
+  # start — fler marknader = fler rader. NOK slås på i admin (API-spärrat),
+  # så valutan står SEK tills dess (som DryTrek/TackleBay) — NOK-paketnivåer
+  # krävs före norska annonser.
+  # Raderna styr marknad.mjs (marknad + locale + webPresence), och
+  # startsida.mjs härleder "Fri frakt – Sverige & Norge" ur huvudmarknad +
+  # de här länderna. Landnamnet ska SYNAS för kunden — skriv aldrig
+  # fraktländer för hand i startsidan, de kommer härifrån.
   marknader:
-    - land: NO
-      locale: nb
-      valuta: NOK
+    - land: NO                # tvåbokstavskod: NO, DK, FI, DE, GB
+      locale: nb              # Shopify-locale: nb, da, fi, de, en
+      valuta: SEK             # NOK först när admin slagit på den
   valuta: SEK                 # KRITISKT — SEK, NOK, DKK, EUR, USD eller GBP
-  moms_i_pris: true           # true = priserna inkluderar skatt
+  # true = priserna inkluderar skatt. OPS-butikerna säljer MED moms (avläst
+  # TankGuard 2026-09-09: shop.taxesIncluded = true), till skillnad från
+  # Bäverbutiken. Break-even räknas då på nettot (pris / 1,25 − inköp).
+  moms_i_pris: true
+  # SVENSKA MARKÖRER — butikens EGNA ord (rubriker, knapptexter, produktord)
+  # som aldrig får stå kvar på en översatt sida (/nb, /da …). kundvy.mjs
+  # skannar de översatta sidorna efter exakt de här orden; ingen lista finns
+  # i koden ("överdrag" är TankGuards ord, inte varje butiks — KEDJAN.md
+  # regel 7). Utan listan hoppas skanningen över och rapporteras som manuell,
+  # aldrig som grön. Ord som är lika på målspråket filtreras bort av sig själva.
+  markorer_sv:
+    - "Köp nu"
+    - "Fri frakt"
+    - "Vanliga frågor"
+  # FLERPRODUKTSBUTIK (två eller fler produktfiler i samma körning): startsidan
+  # visar KOLLEKTIONEN, inte en enskild produkt, och menyn får en rad till den.
+  # Enproduktsbutik: lämna blocket borta — startsidan visar produkten direkt.
+  # (factory/FLERPRODUKT.md, TackleBay 2026-09-09.)
+  kollektion:
+    handle: sortimentet       # /collections/<handle>
+    titel: "Sortimentet"      # rubrik på startsidan och i menyn
+    beskrivning: ""           # HTML, ex "<p>Utrustning för den som fiskar.</p>"
 
 frakt:
   fri_globalt: true           # fri frakt till alla länder (default)
@@ -96,3 +123,64 @@ branding:
     spacing: ""
     logo: ""                  # logo direction
     favicon: ""               # favicon direction
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json
+# (steget `startsida` i ops.mjs). Utan det här blocket ärver butiken
+# Matstrumpors startsida ur bas-zip:en: deras hero, deras recensioner,
+# deras FAQ (Axels bakläxa 2026-09-09 på DryTrek).
+#
+# Copyn här är SVENSK. Norskan (och varje annat språk) skrivs av en subagent
+# som en egen text i output/<butik>/oversattning-<locale>.json och läggs på
+# med marknad.mjs — aldrig i den här filen, aldrig av koden.
+#
+# TEXTREGLER: repots YAML-läsare stödjer inte flerradiga block (| och >).
+# Skriv ett stycke per listrad och citera rader som innehåller kolon.
+# Utelämnade fält får neutrala defaults härledda ur butikens EGNA villkor
+# (frakt, retur, marknader) — aldrig ur en annan butiks text.
+#
+# BILDER: ange käll-URL eller filnamn. ops.mjs laddar upp via filer.mjs och
+# ger startsida.mjs den lagrade handlen (shopify://shop_images/<namn.ext>).
+# Ett filnamn skrivs ALDRIG rakt in i temat — tomt = temats platshållare.
+# ---------------------------------------------------------------------------
+startsida:
+  usp:                        # ikon:text per rad; ikoner: truck, shield, refresh, check, star, lock
+    - ""
+  hero:
+    rubrik: ""                # tom = brandnamnet
+    text: ""
+    knapp: ""                 # tom = "Handla nu". Länken sätts av koden: kollektionen eller produkten.
+    bild: ""                  # käll-URL eller filnamn; tom = temats platshållare
+  marquee:                    # det rullande bandet; tom = frakt + ångerrätt + trygg betalning
+    - ""
+  sortiment_rubrik: ""        # bara flerproduktsbutik; tom = kollektion.titel
+  produkt_etikett: ""         # bara enproduktsbutik, liten text över titeln; tom = inget block
+  berattelse:
+    rubrik: ""                # tom = brandnamnet
+    text:                     # ett stycke per rad
+      - ""
+  galleri:                    # valfritt; utelämnas helt när kolumner saknas
+    rubrik: ""
+    kolumner:                 # max 3, i den ordning de visas
+      - titel: ""
+        bild: ""              # käll-URL eller filnamn
+    markning: ""              # ex "Miljöbilderna är AI-genererade illustrationer" — BARA om det är sant
+  statement:                  # ett påstående + knapp på mörk yta; utelämnas när rubriken är tom
+    rubrik: ""
+    knapp: ""                 # tom = "Se sortimentet" (flera) / "Handla nu" (en)
+  omdomen:                    # sektionen visar ENDAST riktiga reviews ur produktfilerna
+    eyebrow: ""               # tom = "Verifierade köp"
+    rubrik: ""                # tom = "Vad kunderna säger"
+  trygghet:
+    rubrik: ""                # tom = "Handla tryggt hos oss"
+    text:                     # tom = frakt + ångerrätt ur butikens villkor
+      - ""
+    bild: ""                  # käll-URL eller filnamn
+  faq_rubrik: ""              # tom = "Vanliga frågor"
+  faq:                        # utelämnas helt utan frågor; svaret ett stycke per rad eller en sträng
+    - fraga: ""
+      svar: ""
+  garanti:
+    rubrik: ""                # tom = "<retur.angerratt_dagar> dagars ångerrätt"
+    text:                     # tom = härledd ur retur + supportmail
+      - ""

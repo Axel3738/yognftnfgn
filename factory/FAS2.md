@@ -37,13 +37,6 @@ såg klara ut i varje läsning som gjordes — sidan fanns i `owned_pages`, pixe
 avfyrade. Ingen av de kontrollerna säger något om huruvida kontot får annonsera
 med sidan. Det enda som svarar på den frågan är ett skarpt `adcreatives`-anrop.
 Gör det tidigt, med EN annons, innan 23 videor laddas upp i onödan.
-| ~~HeyGen-plånboken tom~~ — LÖST: **16 951 krediter** kvar, mätt 2026-09-08 kväll med `node pipeline/localize.mjs check` (ny nyckel i miljön). De "13 krediter" som stod här var den gamla nyckeln. | inget | — |
-| **`factory/butiker/tankguard.yaml` SAKNAS** — finns inte på någon gren. Utan den: ingen produktlänk, inget SEK-pris, inget NOK-pris, inga villkor. | hela kampanjbygget för TankGuard (uppdrag B), och prisytan i A och C | Axel eller VA:n kör butiksbygget klart så filen skrivs |
-| `standby.md` har ännu ingen ifylld rad | tilldelning av redigerare | Axel ger namnet på personen som redan står på standby |
-
-**Läget 2026-09-08 kväll:** A är kört på båda marknaderna och A2 är avblockerat
-(HeyGen har krediter). **B och C står still på en enda sak — butiksfilen.**
-Priset, länken och villkoren bor där, och de tre får aldrig gissas.
 
 ---
 
@@ -261,10 +254,8 @@ aldrig själv säga att rösten håller.
 
 **Återanvänd detta:**
 - `pipeline/translate-batch.mjs` + `pipeline/heygen.mjs` — hela HeyGen-kedjan med state
-  till disk. Kör med `--lang="Swedish (Sweden)"` (samma språk in och ut).
-  ⚠️ **Otestat:** ingen av de 217 körningarna har varit svenska→svenska.
-  Kör `node pipeline/localize.mjs langs` FÖRST (gratis) och verifiera att språket finns.
-  Håller det inte: plan B är att klippa bort/skriva över meningen, inte dubba om allt.
+  till disk. Kör med `--lang="Swedish (Sweden)"` (samma språk in och ut —
+  mätt 2026-09-09, se rättelsen ovan).
 - `pipeline/no-precis.py` — byter inbränd text **exakt i sin egen ruta**. Detta ÄR
   verktyget för yta 3; bygg ingen ny caption-motor.
 - `market-expansion/no/notion-batches/2026-09-05-video-batmotor/lager.py` — bevisad
@@ -280,9 +271,6 @@ hook, mitt och slut i varje renderad fil, och leverera aldrig en keff röst. Rö
 inte att välja — HeyGen klonar källans röst och har ingen röstparameter — så den kan
 bara fångas genom att någon lyssnar. Det väger extra tungt för TankGuard: en butik
 utan en enda order har bara annonsen att bygga förtroende med.
-⚠️ Och omdubbningen här är svenska→svenska, vilket **ingen av de 217 körningarna har
-gjort**. Kör `node pipeline/localize.mjs langs` först och lyssna extra noga på de
-första filerna innan resten renderas.
 
 **Mätt på TankGuards 14 videor 2026-09-08 (brand-detektorns ögongranskning) — två helt
 olika jobb som lätt förväxlas:**
@@ -430,9 +418,6 @@ OPS-sida är inte klar när den existerar, den är klar när `me/accounts` lista
 (`business.facebook.com/settings/pages` → TankGuard → Lägg till personer →
 Hantera sida). Alternativt flytta sidan från `client_pages` till `owned_pages`,
 vilket är det HeimGuard redan har och skälet till att den fungerar.
-
-**Lägg in det som ett eget steg i `/ny-ops`:** en ny OPS-sida är inte klar när den
-existerar, den är klar när `me/accounts` listar den.
 
 ### Läget 2026-09-08 kväll — skalet står, annonserna saknas
 

@@ -121,3 +121,80 @@ branding:
     spacing: "Luftigt men inte glest — generösa sektionsavstånd, max 62 tecken per rad. Sidan ska kännas som en lugn genomgång."
     logo: "Rund emblem, variant B (GODKÄND av Axel 2026-09-09): granmörk cirkel, tre ljusa toppar, en terrängorange linje under topparna — torrlinjen som vätan inte passerar — och ordmärket DRYTREK i versaler under, med OUTDOOR spärrat därunder. Fungerar i en färg."
     favicon: "Samma granmörka cirkel med bara den orange torrlinjen under en ljus topp."
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json.
+# Flyttad hit 2026-09-09 från factory/startsidor/drytrek.json (svenska delen)
+# så DryTrek går att bygga om ur samma kedja som varje annan OPS-butik.
+#
+# Copyn skrevs 2026-09-09 av en jury-workflow: tre oberoende copysets med
+# olika ingång, tre jurymedlemmar (copy-reglerna, järnreglerna, målgruppen),
+# syntes av vinnaren plus de bättre raderna ur de andra.
+#
+# Hero-raden sa först "Fortfarande torr strumpa". Den var DryTreks egen copy
+# om torra fötter, inte ärvd text — men ordet läses som källbutikens och
+# kostade en granskningsrunda. Nu står det fötter. Samma insikt, ingen tvekan.
+#
+# Galleriets tre bilder visar produktens tre fästpunkter — kardborren, remmen
+# och måttet — den bevisade vinkeln (Damasker_PD_1, ROAS 2,83 på 9 638 kr).
+# Bilderna är käll-URL:er: ops.mjs laddar upp dem via filer.mjs och ger
+# startsida.mjs den lagrade handlen (shopify://shop_images/<namn med uuid>.jpg).
+#
+# NORSKAN: produkten heter GAMASJER på norska, inte damasker — ordet betyder
+# något annat där. Den norska texten är egen copy (inte översatt svenska) och
+# ligger i översättningskedjan (output/drytrek/oversattning-nb.json), inte här.
+# ---------------------------------------------------------------------------
+startsida:
+  usp:
+    - "truck:Frakt till Sverige och Norge"
+    - "refresh:14 dagars ångerrätt"
+    - "check:På och av med kängan på"
+    - "shield:Stoppar snö, grus och väta"
+  hero:
+    rubrik: "Kilometer fyra. Fortfarande torra fötter."
+    text: "Krok i snörningen, rem under foten, kardborre längs hela utsidan. Damaskerna sitter kvar hela turen – i snö, sly och grus."
+    knapp: "Köp för 389 kr"
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-08.jpg"
+  marquee:
+    - "44 cm, känga till knä"
+    - "18 färger, bl.a. neon"
+    - "389 kr, ord. 649 kr"
+    - "En storlek, justerbar"
+  produkt_etikett: "Vandringsdamask"
+  berattelse:
+    rubrik: "Det är aldrig vädret som vänder turen"
+    text:
+      - "Snön smälter över kängkanten. Sly och grus river mot vaden. Vid nästa rast är foten kall och blöt."
+      - "Damaskerna tätar från känga till knä. Snö, väta, grus och barr stannar på utsidan, hela turen."
+  galleri:
+    rubrik: "På tur, oavsett terräng"
+    kolumner:
+      - titel: "I nysnö på fjället"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-karborre-benskydd-sv.jpg"
+      - titel: "Genom tät granskog"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-spanne-benskydd-sv.jpg"
+      - titel: "På jakt i blöt sly"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-benskydd-sv.jpg"
+  statement:
+    rubrik: "Det som ska hålla dig torr är 44 centimeter tätvävd polyester, inte tur."
+    knapp: "Se alla 18 färger"
+  trygghet:
+    rubrik: "Frakt, betalning och retur"
+    text:
+      - "Vi skickar till Sverige och Norge. Betala med Klarna, kort, Apple Pay eller Google Pay."
+      - "Ångrar du dig har du 14 dagars ångerrätt från att paketet kommer fram."
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-09.jpg"
+  faq_rubrik: "Vanliga frågor"
+  faq:
+    - fraga: "Passar damaskerna min kängstorlek?"
+      svar: "Ja. En storlek, justerbar – 44 cm hög och 43 cm i omkrets, med rem under foten som spänns efter kängan."
+    - fraga: "Behöver jag ta av kängan för att sätta på dem?"
+      svar: "Nej. Kardborren löper längs hela utsidan, så du kan ta på och av damaskerna med kängan kvar på foten."
+    - fraga: "Vilka färger finns damaskerna i?"
+      svar: "18 färger, bland annat neongrönt, orange och gult för dig som vill synas i terrängen."
+    - fraga: "Skickar ni till Norge också?"
+      svar: "Ja, vi skickar till både Sverige och Norge."
+  garanti:
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Passar inte damaskerna som du tänkt dig? Skicka tillbaka inom 14 dagar och få pengarna åter, enligt svensk lag."

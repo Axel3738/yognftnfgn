@@ -1,125 +1,107 @@
-// Laddar upp butikens logga och favicon till Shopify Files och sätter dem
-// i utkasttemats inställningar.
+// logga.mjs — loggan och faviconen in i temat.
 //
-//   node factory/logga.mjs <logga.png> [--favicon <favicon.png>] [--bredd 180]
+//   laddaUppLogga(temaId, { logga, favicon?, bredd? }) → { logo, favicon, bredd }
+//
+//   node factory/logga.mjs <logga.png> [--favicon <fil.png>] [--bredd 140] [--tema <id>]
 //
 // Loggan VISAS i chatten innan den sätts (Axels krav 2026-09-08) — det här
-// skriptet kör bara det Axel redan godkänt.
+// skriptet kör bara det Axel redan godkänt. Varianterna görs av
+// logga-generera.mjs; uppladdningen till Files görs av filer.mjs.
+//
+// Varför steget finns (Axels bakläxa 2026-09-09 på DryTrek — butiken nådde
+// granskning utan logga): `settings.logo` pekade fortfarande på BAS-TEMATS
+// logga, en fil som inte ens finns i den nya butiken, och headern föll
+// tillbaka på ren text. ⚠️ Av-brandningen städade `brand_image` men inte
+// `logo` — två olika inställningar, samma fel. `settings.favicon` var osatt
+// och fliken visade Shopifys default.
+//
+// Temat är alltid `hamtaArbetstema(temaId)` (KEDJAN.md regel 1), aldrig
+// "första UNPUBLISHED". Efter skrivningen läses settings_data.json tillbaka
+// ur samma tema och VÄRDET jämförs — Shopify skriver om filen vid mottagning,
+// så en byte-jämförelse (verifieraTemafiler) larmar falskt här.
 
-import { readFileSync, existsSync } from 'node:fs';
-import { basename } from 'node:path';
+import { existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { laddaEnv } from './env.mjs';
-import { graphql, hamtaUtkastTema, hamtaTemafil, skrivTemafiler } from './shopify.mjs';
+import { hamtaArbetstema, hamtaTemafil, skrivTemafiler } from './shopify.mjs';
+import { laddaUppBild, arUrl } from './filer.mjs';
 
-async function stagedUpload(filnamn, storlek, mime) {
-  const data = await graphql(
-    `mutation opsFactoryBildStaged($input: [StagedUploadInput!]!) {
-      stagedUploadsCreate(input: $input) {
-        stagedTargets { url resourceUrl parameters { name value } }
-        userErrors { field message }
-      }
-    }`,
-    {
-      input: [
-        { resource: 'FILE', filename: filnamn, mimeType: mime, httpMethod: 'POST', fileSize: String(storlek) },
-      ],
-    }
-  );
-  const fel = data.stagedUploadsCreate?.userErrors ?? [];
-  if (fel.length > 0) throw new Error(fel.map((f) => f.message).join('; '));
-  return data.stagedUploadsCreate.stagedTargets[0];
+// Dawns/CRO-temats logo_width när ingen anges och temat saknar värde.
+export const STANDARDBREDD = 140;
+
+// settings_data.json får ha en /* kommentar */ överst — bort med den först.
+export function lasSettings(text) {
+  if (text === null || text === undefined) throw new Error('Temat har ingen config/settings_data.json.');
+  return JSON.parse(String(text).replace(/^\s*\/\*[\s\S]*?\*\//, '').trim());
 }
 
-// Shopify packar upp filen asynkront — utan väntan får man tillbaka en fil
-// utan `image.url` och temat pekar på ingenting.
-async function vantaPaFil(id, { forsok = 30, paus = 2000 } = {}) {
-  for (let i = 0; i < forsok; i += 1) {
-    const data = await graphql(
-      `query opsFactoryFil($id: ID!) {
-        node(id: $id) { ... on MediaImage { id fileStatus image { url } } }
-      }`,
-      { id }
-    );
-    const n = data.node;
-    if (n?.fileStatus === 'READY' && n.image?.url) return n;
-    if (n?.fileStatus === 'FAILED') throw new Error('Shopify kunde inte behandla bilden.');
-    await new Promise((r) => setTimeout(r, paus));
-  }
-  throw new Error('Bilden blev inte klar i tid.');
-}
-
-export async function laddaUppBild(sokvag) {
-  if (!existsSync(sokvag)) throw new Error(`Filen saknas: ${sokvag}`);
-  const buf = readFileSync(sokvag);
-  const filnamn = basename(sokvag);
-  const mal = await stagedUpload(filnamn, buf.length, 'image/png');
-
-  const form = new FormData();
-  for (const { name, value } of mal.parameters) form.append(name, value);
-  form.append('file', new Blob([buf], { type: 'image/png' }), filnamn);
-  const svar = await fetch(mal.url, { method: 'POST', body: form });
-  if (!svar.ok) throw new Error(`Uppladdningen nekades (${svar.status})`);
-
-  const data = await graphql(
-    `mutation opsFactoryFilSkapa($files: [FileCreateInput!]!) {
-      fileCreate(files: $files) {
-        files { ... on MediaImage { id fileStatus } }
-        userErrors { field message }
-      }
-    }`,
-    { files: [{ originalSource: mal.resourceUrl, contentType: 'IMAGE', alt: filnamn }] }
-  );
-  const fel = data.fileCreate?.userErrors ?? [];
-  if (fel.length > 0) throw new Error(fel.map((f) => f.message).join('; '));
-
-  const fil = await vantaPaFil(data.fileCreate.files[0].id);
-  // Temat refererar filer på formen shopify://shop_images/<filnamn utan query>.
-  const namn = new URL(fil.image.url).pathname.split('/').pop();
-  return { id: fil.id, url: fil.image.url, refererbar: `shopify://shop_images/${namn}` };
-}
-
-export async function sattILogga(temaId, logoRef, faviconRef, bredd) {
-  const ra = await hamtaTemafil(temaId, 'config/settings_data.json');
-  if (!ra) throw new Error('Temat har ingen config/settings_data.json.');
-  const settings = JSON.parse(String(ra).replace(/^\s*\/\*[\s\S]*?\*\//, '').trim());
-  settings.current = {
-    ...settings.current,
-    logo: logoRef,
-    logo_width: bredd,
-    ...(faviconRef ? { favicon: faviconRef } : {}),
+// Ren logik: sätter logo/favicon/logo_width i `current` och lämnar allt annat
+// orört. bredd null = behåll temats, annars standard.
+export function sattLoggaISettings(settings, { logo, favicon = null, bredd = null }) {
+  if (!logo) throw new Error('Ingen logga att sätta.');
+  const current = settings?.current ?? {};
+  const nyBredd = Number(bredd) > 0 ? Number(bredd) : Number(current.logo_width) > 0 ? Number(current.logo_width) : STANDARDBREDD;
+  return {
+    ...settings,
+    current: {
+      ...current,
+      logo,
+      logo_width: nyBredd,
+      ...(favicon ? { favicon } : {}),
+    },
   };
-  await skrivTemafiler(temaId, {
-    'config/settings_data.json': `${JSON.stringify(settings, null, 2)}\n`,
-  });
-  return { logo: logoRef, favicon: faviconRef ?? null, bredd };
+}
+
+export function serialiseraSettings(settings) {
+  return `${JSON.stringify(settings, null, 2)}\n`;
+}
+
+// Loggan (och faviconen) upp i Files och in i temats inställningar.
+// `logga`/`favicon` är lokala filer eller URL:er. Saknas favicon används
+// loggan även där — fliken ska aldrig visa Shopifys default.
+export async function laddaUppLogga(temaId, { logga, favicon = null, bredd = null, filnamn = null } = {}) {
+  if (!logga) throw new Error('laddaUppLogga: ingen logga angiven.');
+  if (!arUrl(logga) && !existsSync(logga)) throw new Error(`Loggan saknas: ${logga}`);
+  if (favicon && !arUrl(favicon) && !existsSync(favicon)) throw new Error(`Faviconen saknas: ${favicon}`);
+
+  const tema = await hamtaArbetstema(temaId);
+
+  const l = await laddaUppBild(logga, { alt: 'Logga', filnamn });
+  const f = favicon ? await laddaUppBild(favicon, { alt: 'Favicon' }) : l;
+
+  const fil = 'config/settings_data.json';
+  const settings = lasSettings(await hamtaTemafil(tema.id, fil));
+  const nya = sattLoggaISettings(settings, { logo: l.handle, favicon: f.handle, bredd });
+  await skrivTemafiler(tema.id, { [fil]: serialiseraSettings(nya) });
+
+  // Tillbakaläsning på värde, inte byte (se filhuvudet).
+  const efter = lasSettings(await hamtaTemafil(tema.id, fil));
+  const fel = [];
+  if (efter.current?.logo !== l.handle) fel.push(`logo: temat säger ${JSON.stringify(efter.current?.logo)}`);
+  if (efter.current?.favicon !== f.handle) fel.push(`favicon: temat säger ${JSON.stringify(efter.current?.favicon)}`);
+  if (fel.length > 0) throw new Error(`Loggan fastnade inte i "${tema.name}": ${fel.join('; ')}`);
+
+  return { logo: l.handle, favicon: f.handle, bredd: efter.current.logo_width, temaId: tema.id, temaNamn: tema.name };
 }
 
 async function huvud() {
   laddaEnv();
   const argv = process.argv.slice(2);
-  const logga = argv.find((a) => !a.startsWith('--'));
-  const fi = argv.indexOf('--favicon');
-  const favicon = fi !== -1 ? argv[fi + 1] : null;
-  const bi = argv.indexOf('--bredd');
-  const bredd = bi !== -1 ? Number(argv[bi + 1]) : 180;
+  const varde = (flagga) => (argv.includes(flagga) ? argv[argv.indexOf(flagga) + 1] : null);
+  const flaggvarden = new Set(['--favicon', '--bredd', '--tema'].map(varde).filter(Boolean));
+  const logga = argv.find((a) => !a.startsWith('--') && !flaggvarden.has(a));
   if (!logga) {
-    console.error('Användning: node factory/logga.mjs <logga.png> [--favicon <fil.png>] [--bredd 180]');
+    console.error('Användning: node factory/logga.mjs <logga.png> [--favicon <fil.png>] [--bredd 140] [--tema <id>]');
     process.exit(1);
   }
-
-  const tema = await hamtaUtkastTema();
-  if (!tema) throw new Error('Inget utkasttema i butiken.');
-
-  const l = await laddaUppBild(logga);
-  console.log(`✅ Logga uppladdad: ${l.refererbar}`);
-  let f = null;
-  if (favicon) {
-    f = await laddaUppBild(favicon);
-    console.log(`✅ Favicon uppladdad: ${f.refererbar}`);
-  }
-  const r = await sattILogga(tema.id, l.refererbar, f?.refererbar ?? null, bredd);
-  console.log(`✅ Satt i temat "${tema.name}" — bredd ${r.bredd}px.`);
+  const r = await laddaUppLogga(varde('--tema'), {
+    logga,
+    favicon: varde('--favicon'),
+    bredd: varde('--bredd') ? Number(varde('--bredd')) : null,
+  });
+  console.log(`✅ Logga: ${r.logo}`);
+  console.log(`✅ Favicon: ${r.favicon}`);
+  console.log(`✅ Satt i temat "${r.temaNamn}" — bredd ${r.bredd}px, tillbakaläst.`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

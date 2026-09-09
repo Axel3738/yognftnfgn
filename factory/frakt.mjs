@@ -71,19 +71,17 @@ export function byggFraktatgarder(befintliga, plan) {
         attSkapa.push({ zon: zon.zon, metod: onskad });
       } else if (traff.villkorad) {
         // En metod med villkor ("fri frakt över X") går inte att uppdatera via
-        // deliveryProfileUpdate — Shopify avvisar den. Riv och bygg om i
-        // stället, så zonen hamnar rätt oavsett hur butiken var förkonfad.
+        // deliveryProfileUpdate — Shopify avvisar den (mätt 2026-09-08). Riv
+        // och bygg om i stället, ALLTID — även när namn och pris råkar
+        // stämma, för villkoret i sig är fel mot planen (planen har inga
+        // villkorade metoder utom friOver). Så hamnar zonen rätt oavsett hur
+        // butiken var förkonfad.
+        // (DryTrek och TankGuard löste det var för sig; auto-mergen lade
+        // båda varianterna ovanpå varandra — förenat 2026-09-09.)
         attTaBort.push({ zon: zon.zon, id: traff.id, namn: traff.namn });
         attSkapa.push({ zon: zon.zon, metod: onskad });
       } else if (traff.namn !== onskad.namn || Number(traff.pris) !== onskad.pris) {
-        // Villkorade metoder (t.ex. "fri frakt över X") kan inte uppdateras
-        // via deliveryProfileUpdate (mätt 2026-09-08) — byt ut i stället.
-        if (traff.villkorad) {
-          attTaBort.push({ zon: zon.zon, id: traff.id, namn: traff.namn });
-          attSkapa.push({ zon: zon.zon, metod: onskad });
-        } else {
-          attUppdatera.push({ zon: zon.zon, id: traff.id, rateId: traff.rateId, metod: onskad });
-        }
+        attUppdatera.push({ zon: zon.zon, id: traff.id, rateId: traff.rateId, metod: onskad });
       }
     }
     for (const overbliven of kvar) {

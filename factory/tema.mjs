@@ -16,6 +16,7 @@
 // över, på ett naket tema ser sektionerna fortfarande rätt ut.
 
 import { readFileSync } from 'node:fs';
+import { arKalltext } from './kallskanning.mjs';
 
 const BAS_CSS = `
   .opf-block { padding-block: var(--ms-section-y, clamp(32px, 6vw, 64px)); }
@@ -374,12 +375,183 @@ export const TEMAFILER = {
   'assets/ms-paket.js': MS_PAKET_JS,
 };
 
-// Lägger in OPF-sektionerna i en befintlig product.json utan att röra "main".
-// Innehållsblocken hamnar direkt efter main; FAQ:n efter Judge.me-widgeten
-// (sektion av typen "apps" eller med judgeme i id:t) om templaten har en.
-// Temats egna ms-sektioner (sticky ATC, paket) lämnas orörda.
-export function byggProduktTemplate(befintlig) {
-  const mall = JSON.parse(String(befintlig).replace(/\/\*[\s\S]*?\*\//, '').trim());
+// ---------------------------------------------------------------------------
+// Hjälpare ur konfigen (förenade ur tema-mall.mjs 2026-09-09, KEDJAN.md).
+// Allt nedan är ren logik utan nätverk: ops.mjs skriver filerna.
+const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
+const text = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
+const eskapa = (s) => String(s ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+
+// Shopifys tema-JSON får bära ett /* … */-block överst. JSON.parse kvävs på det.
+export function lasTemaJson(ra) {
+  if (typeof ra !== 'string') return ra;
+  return JSON.parse(String(ra).replace(/^﻿/, '').replace(/^\s*\/\*[\s\S]*?\*\//, '').trim());
+}
+
+// Filnamnen i Files som temat pekar på (shopify://shop_images/<fil>).
+export function temabilder(butiksId) {
+  return {
+    logga: `${butiksId}-logga.png`,
+    favicon: `${butiksId}-favicon.png`,
+    hero: `${butiksId}-hero.jpg`,
+    trygghet: `${butiksId}-trygghet.jpg`,
+  };
+}
+
+// "6–10 arbetsdagar" → { min: 6, max: 10 }
+export function leveransdagar(leveranstid) {
+  const m = String(leveranstid ?? '').match(/(\d+)\s*[–-]\s*(\d+)/);
+  if (m) return { min: Number(m[1]), max: Number(m[2]) };
+  const e = String(leveranstid ?? '').match(/(\d+)/);
+  return e ? { min: Number(e[1]), max: Number(e[1]) } : { min: 5, max: 10 };
+}
+
+// Trygghetsraden under köpknappen och annonsraden — samma källa som
+// fraktzonerna och returvillkoren, så de kan inte säga olika saker.
+// Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08).
+export function angerrattRad(butik) {
+  const dagar = Number(butik?.retur?.angerratt_dagar) || 14;
+  return `${dagar} dagars ångerrätt`;
+}
+
+// Fraktraden nämner VARJE marknad butiken skickar till (Axels beslut
+// 2026-09-08: "Fri frakt – Sverige & Norge"). Länderna kommer ur
+// butik.marknader — aldrig skrivna för hand.
+const LANDNAMN = { SE: 'Sverige', NO: 'Norge', DK: 'Danmark', FI: 'Finland', DE: 'Tyskland', GB: 'Storbritannien', UK: 'Storbritannien' };
+export function fraktRad(butik) {
+  const b = butik?.butik ?? {};
+  const fri = butik?.frakt?.fri_globalt !== false;
+  if (!fri) return 'Snabb leverans';
+  const hem = text(b.huvudmarknad) ?? LANDNAMN[String(b.land ?? '').toUpperCase()] ?? 'Sverige';
+  const ovriga = lista(b.marknader).map((m) => LANDNAMN[String(m?.land ?? '').toUpperCase()] ?? text(m?.land)).filter(Boolean);
+  const lander = [...new Set([hem, ...ovriga])];
+  return lander.length > 1 ? `Fri frakt – ${lander.join(' & ')}` : `Fri frakt i ${hem}`;
+}
+
+export function trustPunkter(butik) {
+  return [`truck:${fraktRad(butik)}`, `refresh:${angerrattRad(butik)}`, 'lock:Trygg betalning'];
+}
+
+export function uspPunkter(butik, p) {
+  const bas = trustPunkter(butik).map((x) => x.replace('lock:Trygg betalning', 'lock:Trygg betalning med Klarna'));
+  const usp = text(p?.vinkel?.usp);
+  return usp ? [...bas, `shield:${usp}`] : bas;
+}
+
+// Annonsradens texter (max 3): butik.startsida.usp om det är ifyllt (samma
+// källa som startsidans USP-rad), annars butikens egna villkor. Ikonprefixet
+// ("truck:") plockas bort — annonsraden visar bara text.
+export function annonsrader(butik, p = null) {
+  const egna = lista(butik?.startsida?.usp).map((x) => String(x).trim()).filter(Boolean);
+  const rader = egna.length > 0 ? egna : uspPunkter(butik, p);
+  return rader.map((x) => (x.includes(':') ? x.split(':').slice(1).join(':') : x)).map((x) => x.trim()).filter(Boolean).slice(0, 3);
+}
+
+// Två paketblock (A synligt, B hidden tills ms-ab.js lottar) — samma
+// custom_liquid som temats egna ms_paket-block, plus test-attributet.
+// section_id får en suffix så A och B inte delar radioknappsnamn.
+export function paketBlock(test, produktUttryck = 'product', { tillagg = false } = {}) {
+  const rad = (variant) =>
+    `{% assign sid = section.id | append: '-${variant}' %}` +
+    `<div {% render 'ms-ab-attrs', test: '${test}', variant: '${variant}' %}>` +
+    `{% render 'ms-paket', product: ${produktUttryck}, variant: '${variant}', section_id: sid %}</div>`;
+  // Fullpris-kryssrutan (snippets/opf-tillagg, byggTillagg) ligger som eget
+  // block direkt efter paketblocken och hakar i alla ms-paket i sektionen.
+  const tillaggBlock = tillagg ? { opf_tillagg: { type: 'custom_liquid', settings: { custom_liquid: "{% render 'opf-tillagg' %}" } } } : {};
+  if (!text(test)) {
+    return { ms_paket: { type: 'custom_liquid', settings: { custom_liquid: `{% render 'ms-paket', product: ${produktUttryck}, section_id: section.id %}` } }, ...tillaggBlock };
+  }
+  return {
+    ms_paket_a: { type: 'custom_liquid', settings: { custom_liquid: rad('a') } },
+    ms_paket_b: { type: 'custom_liquid', settings: { custom_liquid: rad('b') } },
+    ...tillaggBlock,
+  };
+}
+
+export function harTillagg(p) {
+  return p?.offer?.bonus_produkt?.tillagg_kryssruta === true && !!text(p?.offer?.bonus_produkt?.handle);
+}
+
+// Kryssrutans svenska texter — samma källa för temat och översättningsunderlaget.
+export function tillaggTexter(p) {
+  const b = p?.offer?.bonus_produkt ?? {};
+  const namn = text(b.kortnamn) ?? String(b.titel ?? '').split(/\s[–-]\s/)[0];
+  return { label: `Lägg till ${namn}`, info: 'Fullpris – gratis bara i paketen' };
+}
+
+// custom_liquid-block kan inte översättas via translationsRegister — texten
+// locale-branchas i Liquid i stället (HeimGuard-lärdom 2026-09-07). `nb` är
+// översättningsmappen (nyckel → norsk text) ur oversattning-nb.json.
+function localeBranch(svLiquid, nbLiquid) {
+  if (!nbLiquid || nbLiquid === svLiquid) return svLiquid;
+  return `{% if request.locale.iso_code == 'nb' %}${nbLiquid}{% else %}${svLiquid}{% endif %}`;
+}
+
+const PAKETBLOCK_IDN = ['ms_paket', 'ms_paket_a', 'ms_paket_b', 'opf_tillagg'];
+
+// Köprutans block ur produkt- och butiksfilen: paketblocken (A/B + fullpris-
+// kryssruta när offer säger det), trygghetsraden, leveransdagarna och
+// varianterna. Rör bara main-sektionen. Idempotent.
+function patchaKoprutan(main, { produkt, butik, nb }) {
+  const blocks = { ...main.blocks };
+  let order = [...(main.block_order ?? [])];
+
+  if (produkt) {
+    const test = text(produkt.offer?.paket?.test) ?? '';
+    const nya = paketBlock(test, 'product', { tillagg: harTillagg(produkt) });
+    // Första paketblockets plats — räknad FÖRE filtreringen, så det måste
+    // vara det lägsta indexet (annars glider blocken vid varje nytt varv).
+    const platser = PAKETBLOCK_IDN.map((id) => order.indexOf(id)).filter((i) => i >= 0);
+    const plats = platser.length > 0 ? Math.min(...platser) : -1;
+    for (const id of PAKETBLOCK_IDN) delete blocks[id];
+    order = order.filter((id) => !PAKETBLOCK_IDN.includes(id));
+    // Samma plats som temats enkla ms_paket; annars efter variantväljaren,
+    // annars före köpknappen.
+    let efter = plats;
+    if (efter === -1 && order.includes('variant_picker')) efter = order.indexOf('variant_picker') + 1;
+    if (efter === -1 && order.includes('buy_buttons')) efter = order.indexOf('buy_buttons');
+    if (efter === -1) efter = order.length;
+    Object.assign(blocks, nya);
+    order.splice(efter, 0, ...Object.keys(nya));
+  }
+
+  if (butik && blocks.ms_trust) {
+    const sv = trustPunkter(butik);
+    const no = sv.map((x, i) => (nb?.[`liquid.trust.${i}`] ? `${x.split(':')[0]}:${nb[`liquid.trust.${i}`]}` : x));
+    const rad = (punkter) => `{% render 'ms-trust-row', items: '${punkter.join('|')}' %}`;
+    blocks.ms_trust = { type: 'custom_liquid', settings: { custom_liquid: localeBranch(rad(sv), rad(no)) } };
+  }
+  if ((butik || produkt) && blocks.ms_delivery) {
+    const d = leveransdagar(produkt?.leveranstid ?? produkt?.shipping?.tid ?? butik?.frakt?.leveranstid);
+    const rad = (t) => `{% render 'ms-delivery-estimate', min_days: ${d.min}, max_days: ${d.max}, cutoff_hour: 0, text: '${t}' %}`;
+    // Norska vyn får en STATISK rad: temats ms-delivery skriver datum med
+    // svenska månadsnamn (Intl sv-SE i ms-cro.js) och reservtexten säger
+    // "arbetsdagar" — sågs på /nb i kundvyn 2026-09-08. Samma klasser, ingen JS.
+    const nbText = nb?.['liquid.delivery.text'] ?? 'Beräknad leverans';
+    const nbDagar = nb?.['liquid.delivery.dagar'] ?? `${d.min}–${d.max} virkedager`;
+    const statisk = `<div class="ms-delivery ms-scope"><span aria-hidden="true">🚚</span><div>${nbText} <span class="ms-delivery__date">${nbDagar}</span></div></div>`;
+    blocks.ms_delivery = { type: 'custom_liquid', settings: { custom_liquid: localeBranch(rad('Beräknad leverans'), statisk) } };
+  }
+
+  // Bas-temat döljer varianterna (källbutiken sålde paket via ms-paket). En
+  // produkt med riktiga varianter — färg, storlek — ska gå att välja.
+  const settings = { ...main.settings };
+  if (produkt && lista(produkt.varianter).length > 1) settings.hide_variants = false;
+
+  return { ...main, blocks, block_order: order, settings };
+}
+
+// Lägger in OPF-sektionerna i en befintlig product.json utan att röra "main"s
+// egna block. Innehållsblocken hamnar direkt efter main; FAQ:n efter
+// Judge.me-widgeten (sektion av typen "apps" eller med judgeme i id:t) om
+// templaten har en. Temats egna ms-sektioner (sticky ATC) lämnas orörda.
+//
+// Med { produkt, butik, nb } byggs dessutom köprutan ur konfigen: A/B-paket-
+// blocken + fullpris-kryssrutan när offer säger det, trygghetsraden,
+// leveransdagarna, och Judge.me-widgeten flyttar in i temats Appyta
+// (ms-app-slot — Axels ursprungsmönster, widgeten stylas aldrig av temat).
+export function byggProduktTemplate(befintlig, { produkt = null, butik = null, nb = {} } = {}) {
+  const mall = lasTemaJson(befintlig);
   const sektioner = { ...mall.sections };
 
   // Temats icon-with-text har texten hårdkodad i templaten och skulle följa med
@@ -412,6 +584,19 @@ export function byggProduktTemplate(befintlig) {
     const efterTrust = ordningMain.indexOf('ms_trust');
     ordningMain.splice(efterTrust === -1 ? ordningMain.length : efterTrust + 1, 0, 'opf_svensk');
     sektioner.main = { ...huvud, blocks, block_order: ordningMain };
+  }
+
+  // Köprutan ur konfigen (paket A/B, kryssruta, trust, leverans, varianter).
+  if ((produkt || butik) && sektioner.main?.blocks) {
+    sektioner.main = patchaKoprutan(sektioner.main, { produkt, butik, nb });
+  }
+
+  // Judge.me i Appyta (Axels ursprungsmönster) — widgeten stylas aldrig av
+  // temat. Blocken (själva app-widgeten) följer med oförändrade.
+  for (const [id, sek] of Object.entries(sektioner)) {
+    if (sek?.type === 'apps' && /judge/i.test(id)) {
+      sektioner[id] = { ...sek, type: 'ms-app-slot', settings: { visible: true, eyebrow: '', heading: '', width: 1100, ab_test: '', ab_variant: '' } };
+    }
   }
 
   // Städa bort gamla opf-id:n och utgångna sektionstyper.
@@ -665,4 +850,211 @@ export function byggKorgUpsell(upsellHandle) {
     'sections/cart-drawer.liquid': wrapper,
     msHeadTillagg,
   };
+}
+
+// ---------------------------------------------------------------------------
+// Sektionsgruppen header-group.json: annonsraden + headern, ur butiksfilen.
+//
+// Bas-zip:ens annonsrad bär källbutikens tre löften ("Levereras presentklart"
+// …) högst upp på VARJE sida (AVBRANDNING.md). Här byggs den om ur butikens
+// egna villkor. Blocken får id:n med prefixet opf_ så av-brandningen kan
+// skilja fabrikens rader från källbutikens. Utan `befintlig` byggs gruppen
+// från Dawns skelett — det räcker, temat har inga fler sektioner i gruppen.
+// Land-/språkväljaren slås på när butiken har fler marknader än hemma-
+// marknaden (butik.marknader), annars av.
+const HEADER_SKELETT = {
+  name: 't:sections.header.name',
+  type: 'header',
+  sections: {
+    'announcement-bar': {
+      type: 'announcement-bar',
+      blocks: {},
+      block_order: [],
+      settings: {
+        auto_rotate: true,
+        change_slides_speed: 4,
+        color_scheme: 'scheme-3',
+        show_line_separator: false,
+        show_social: false,
+        enable_country_selector: false,
+        enable_language_selector: false,
+      },
+    },
+    header: {
+      type: 'header',
+      settings: {
+        logo_position: 'middle-left',
+        mobile_logo_position: 'center',
+        menu: 'main-menu',
+        menu_type_desktop: 'dropdown',
+        sticky_header_type: 'on-scroll-up',
+        show_line_separator: true,
+        color_scheme: 'scheme-1',
+        menu_color_scheme: 'scheme-1',
+        enable_country_selector: false,
+        enable_language_selector: false,
+        enable_customer_avatar: false,
+        margin_bottom: 0,
+        padding_top: 16,
+        padding_bottom: 16,
+      },
+    },
+  },
+  order: ['announcement-bar', 'header'],
+};
+
+export function byggHeaderGroup(butik, alternativ = {}, ...rest) {
+  // Tål även den äldre anropsformen (befintlig, butik, produkt).
+  if (typeof butik === 'string') {
+    return byggHeaderGroup(alternativ, { befintlig: butik, produkt: rest[0] ?? null });
+  }
+  const { befintlig = null, produkt = null } = alternativ ?? {};
+  const grupp = befintlig ? lasTemaJson(befintlig) : structuredClone(HEADER_SKELETT);
+  grupp.sections ??= {};
+  const fleraMarknader = lista(butik?.butik?.marknader).length > 0;
+  const valjare = { enable_country_selector: fleraMarknader, enable_language_selector: fleraMarknader };
+
+  const rader = annonsrader(butik, produkt);
+  const blocks = Object.fromEntries(rader.map((t, i) => [`opf_a${i + 1}`, { type: 'announcement', settings: { text: t, link: '' } }]));
+  const bar = grupp.sections['announcement-bar'] ?? structuredClone(HEADER_SKELETT.sections['announcement-bar']);
+  grupp.sections['announcement-bar'] = { ...bar, blocks, block_order: Object.keys(blocks), settings: { ...bar.settings, ...valjare } };
+
+  const header = grupp.sections.header ?? structuredClone(HEADER_SKELETT.sections.header);
+  grupp.sections.header = { ...header, settings: { ...header.settings, menu: 'main-menu', ...valjare } };
+
+  if (!Array.isArray(grupp.order) || grupp.order.length === 0) grupp.order = ['announcement-bar', 'header'];
+  for (const id of ['announcement-bar', 'header']) if (!grupp.order.includes(id)) grupp.order.push(id);
+  return `${JSON.stringify(grupp, null, 2)}\n`;
+}
+
+// ---------------------------------------------------------------------------
+// Temainställningarna (config/settings_data.json): det som pekar på
+// källbutiken utan att nämna den vid namn. Skanningen hittar det aldrig —
+// därför nollas det explicit (AVBRANDNING.md: brand_description, sociala
+// länkar, logga, app-inbäddningar).
+//
+//   rensaSettings(settingsData, { butik?, produkt?, logga?, favicon?, abTest? })
+//
+//  - sociala länkar töms ALLTID: en ny butik har inga konton, och att peka
+//    kunden till källbutikens Instagram är värre än att inte peka alls.
+//  - brand_description = butikens positionering (eller brandnamnet); utan
+//    butik: tom.
+//  - app-inbäddningar (current.blocks) = ENBART Judge.me. Klaviyo är
+//    källbutikens e-postinsamling. Appinbäddningar dör i varje klon
+//    (PROCESS.md) — därför sätts judgeme_core här varje gång.
+//  - logga/favicon sätts när de ges (Files-handles). Ges de inte, och
+//    logo/brand_image pekar på källbutikens fil, töms fälten — annars
+//    lämnas de (loggasteget kan redan ha satt en riktig logga).
+//  - A/B-testet (ms_ab_tests) ur produkt.offer.paket.test eller `abTest`.
+//  - currency_code_enabled slås på när någon marknad har en annan valuta
+//    än butikens (SEK och NOK skrivs båda "kr").
+// Tar sträng eller objekt; ger tillbaka samma sort.
+export const JUDGEME_EMBED = 'shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8';
+
+export function rensaSettings(settingsData, { butik = null, produkt = null, logga = null, favicon = null, abTest = undefined } = {}) {
+  const somStrang = typeof settingsData === 'string';
+  const j = somStrang ? lasTemaJson(settingsData) : { ...(settingsData ?? {}) };
+  const c = { ...(j.current ?? {}) };
+
+  for (const k of Object.keys(c)) if (/^social_.*_link$/.test(k)) c[k] = '';
+  c.brand_headline = '';
+  c.brand_description = butik ? `<p>${eskapa(text(butik.branding?.positionering) ?? butik.butik?.brand ?? '')}</p>` : '';
+
+  // App-inbäddningar: bara Judge.me. Ordningen behålls, resten åker ut.
+  const blocks = {};
+  for (const [id, b] of Object.entries(c.blocks ?? {})) {
+    if (/judge-?me/i.test(String(b?.type ?? ''))) blocks[id] = { ...b, disabled: false };
+  }
+  if (Object.keys(blocks).length === 0) blocks.judgeme_karna = { type: JUDGEME_EMBED, disabled: false, settings: {} };
+  c.blocks = blocks;
+
+  if (logga) {
+    c.logo = logga;
+    c.brand_image = logga;
+  } else {
+    for (const k of ['logo', 'brand_image']) if (typeof c[k] === 'string' && arKalltext(c[k])) c[k] = '';
+  }
+  if (favicon) c.favicon = favicon;
+
+  const test = abTest !== undefined ? abTest : produkt?.offer?.paket?.test;
+  if (test !== undefined && test !== null) {
+    c.ms_ab_tests = String(text(test) ?? '');
+    c.ms_ab_cookie_days = Number(c.ms_ab_cookie_days) > 0 ? c.ms_ab_cookie_days : 30;
+  }
+
+  if (butik) {
+    const egen = String(butik.butik?.valuta ?? '').toUpperCase();
+    const annan = lista(butik.butik?.marknader).some((m) => m?.valuta && String(m.valuta).toUpperCase() !== egen);
+    if (annan) c.currency_code_enabled = true;
+  }
+
+  j.current = c;
+  return somStrang ? `${JSON.stringify(j, null, 2)}\n` : j;
+}
+
+// ms-head läser settings.ms_ab_tests men zip:ens settings_schema saknar
+// fältet (mätt 2026-09-08) — utan schemat ignoreras värdet och Shopify
+// stryker det ur settings_data. Läggs till idempotent som egen grupp sist.
+// Returnerar null när gruppen redan finns.
+export function settingsSchemaMedAb(schemaText) {
+  const schema = lasTemaJson(schemaText);
+  if (schema.some((g) => (g.settings ?? []).some((s) => s.id === 'ms_ab_tests'))) return null;
+  schema.push({
+    name: 'OPS A/B-test',
+    settings: [
+      { type: 'textarea', id: 'ms_ab_tests', label: 'Aktiva tester', info: 'Ett test per rad: id (50/50) eller id:90:10 (viktat). Rad som börjar med # är avstängd. Utfallet stämplas som orderattribut "AB <id>".' },
+      { type: 'range', id: 'ms_ab_cookie_days', label: 'Kakans livslängd (dagar)', min: 1, max: 90, step: 1, default: 30 },
+    ],
+  });
+  return `${JSON.stringify(schema, null, 2)}\n`;
+}
+
+// Temats ms-paket-snippet har svenska ord inbakade ("Gratis på köpet", "värde",
+// "Välj paket") som ingen translationsRegister når — locale-brancha dem en
+// gång (idempotent: null om grenen redan finns). Sågs på /nb 2026-09-08.
+export const MS_PAKET_ORD = [
+  ['Gratis på köpet', 'Gratis med på kjøpet'],
+  ['värde {{ gvarde | money }}', 'verdi {{ gvarde | money }}'],
+  ['aria-label="Välj paket"', 'aria-label="Velg pakke"'],
+];
+export function patchaMsPaket(snippet) {
+  let s = String(snippet);
+  if (s.includes("request.locale.iso_code == 'nb'")) return null;
+  for (const [sv, nbOrd] of MS_PAKET_ORD) {
+    if (!s.includes(sv)) continue;
+    // aria-label sitter i ett attribut — grenen måste ligga inuti citattecknen.
+    if (sv.startsWith('aria-label=')) {
+      s = s.replaceAll(sv, `aria-label="{% if request.locale.iso_code == 'nb' %}Velg pakke{% else %}Välj paket{% endif %}"`);
+    } else {
+      s = s.replaceAll(sv, `{% if request.locale.iso_code == 'nb' %}${nbOrd}{% else %}${sv}{% endif %}`);
+    }
+  }
+  return s;
+}
+
+// Språkmärkta galleribilder: alt som börjar med [SV]/[NO]/… visas bara för
+// sitt språk (omärkt = alla). Dawns slider hoppar själv över dolda bilder.
+// `locales` är butikens Shopify-locales (sv, nb, da, fi, de, en) — märket
+// är landskoden folk faktiskt skriver i alt-texten. Idempotent på märket.
+export const GALLERIFILTER_MARKE = 'opf-gallerifilter';
+const LOCALE_MARKE = { sv: 'SV', nb: 'NO', no: 'NO', da: 'DK', fi: 'FI', de: 'DE', en: 'EN' };
+export function msHeadGallerifilter(locales = ['sv', 'nb']) {
+  const par = [...new Set(lista(locales).map((l) => String(l).toLowerCase()))]
+    .map((l) => [l, LOCALE_MARKE[l] ?? l.toUpperCase()]);
+  if (par.length === 0) par.push(['sv', 'SV'], ['nb', 'NO']);
+  const alla = par.map(([, m]) => `[${m}]`);
+  const regel = (marke) => `.product__media-item:has(img[alt^="${marke}"]),.thumbnail-list__item:has(img[alt^="${marke}"]),.product__media-list li:has(img[alt^="${marke}"])`;
+  // För varje locale: dölj alla ANDRA märken. Okänd locale ser det första
+  // språkets (huvudspråkets) bilder.
+  const cssFor = (m) => {
+    const dolj = alla.filter((x) => x !== `[${m}]`);
+    return dolj.length > 0 ? `<style>${dolj.map(regel).join(',')}{display:none!important}</style>` : '';
+  };
+  const grenar = par.map(([l, m], i) => `${i === 0 ? '{%- if' : '{%- elsif'} request.locale.iso_code == '${l}' -%}${cssFor(m)}`);
+  return `
+{%- comment -%} ${GALLERIFILTER_MARKE}: språkmärkta galleribilder (${alla.join('/')} i alt) döljs för fel språk. {%- endcomment -%}
+${grenar.join('\n')}
+{%- else -%}${cssFor(par[0][1])}
+{%- endif -%}
+`;
 }

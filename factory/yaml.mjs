@@ -114,6 +114,12 @@ function taBortKommentar(text) {
 function skalar(text) {
   if (text.startsWith('"') || text.startsWith("'")) return avcitera(text);
   if (text === 'null' || text === '~') return null;
+  // Tomma flow-värden: `videor: []` och `extra: {}` är vanliga sätt att säga
+  // "inget här". Utan det här blev "[]" en STRÄNG och `.filter` kraschade
+  // build-store (hittat 2026-09-09 på TankGuards `videor: []`). Fyllda
+  // flow-listor ([a, b]) stöds fortfarande inte — skriv dem som radlistor.
+  if (text === '[]') return [];
+  if (text === '{}') return {};
   if (text === 'true') return true;
   if (text === 'false') return false;
   if (/^-?\d+(\.\d+)?$/.test(text)) return Number(text);

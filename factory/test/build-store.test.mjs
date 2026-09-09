@@ -7,9 +7,61 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from '../yaml.mjs';
-import { byggPlan } from '../build-store.mjs';
+import { byggPlan, produktHandle, bildPost } from '../build-store.mjs';
 import { byggSidaHtml, byggForhandsvisning, byggSektioner, formatPris, kundUnderrubrik } from '../sida.mjs';
-import { dummy, medButiksfrakt, raprodukt } from './hjalp.mjs';
+import { dummy, medButiksfrakt, raprodukt, rabutik } from './hjalp.mjs';
+
+test('handle = produkt.handle när det finns, annars produkt.id', () => {
+  const data = dummy();
+  assert.equal(produktHandle(data), 'nackmagneten');
+  assert.equal(byggPlan(data).input.handle, 'nackmagneten');
+  data.produkt.handle = 'tankoverdraget';
+  assert.equal(produktHandle(data), 'tankoverdraget');
+  assert.equal(byggPlan(data).input.handle, 'tankoverdraget');
+  data.produkt.handle = '   ';
+  assert.equal(produktHandle(data), 'nackmagneten');
+});
+
+test('files tål sträng eller { url, alt } — egen alt behålls, sträng får produktnamnet', () => {
+  const data = dummy();
+  data.media.bilder = [
+    'https://exempel.se/a.jpg',
+    { url: 'https://exempel.se/sv.jpg', alt: '[SV] Före och efter' },
+    { url: 'https://exempel.se/no.jpg', alt: '[NO] Før og etter' },
+    { url: 'https://exempel.se/utan-alt.jpg' },
+    '',
+    null,
+  ];
+  const { input } = byggPlan(data);
+  assert.deepEqual(
+    input.files.map((f) => [f.originalSource, f.alt, f.contentType]),
+    [
+      ['https://exempel.se/a.jpg', 'Nackmagneten', 'IMAGE'],
+      ['https://exempel.se/sv.jpg', '[SV] Före och efter', 'IMAGE'],
+      ['https://exempel.se/no.jpg', '[NO] Før og etter', 'IMAGE'],
+      ['https://exempel.se/utan-alt.jpg', 'Nackmagneten', 'IMAGE'],
+    ]
+  );
+  assert.equal(bildPost({ alt: 'utan url' }, 'X'), null);
+});
+
+test('byggPlan(produkt, butik): vendor faller tillbaka på butikens brand', () => {
+  const data = dummy();
+  data.brand.namn = null;
+  const { input } = byggPlan(data, rabutik());
+  assert.equal(input.vendor, 'Nackmagneten');
+  assert.ok(input.seo.title.includes('Nackmagneten'));
+  // Utan butik och utan brand blir vendor tom sträng — aldrig "undefined".
+  assert.equal(byggPlan(data).input.vendor, '');
+});
+
+test('media.videor som inte är en lista kraschar inte planen', () => {
+  const data = dummy();
+  data.media.videor = null;
+  assert.deepEqual(byggPlan(data).hoppadeOver, []);
+  data.media.videor = [''];
+  assert.deepEqual(byggPlan(data).hoppadeOver, []);
+});
 
 
 test('varianterna säljer vidare när lagret tar slut', () => {

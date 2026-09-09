@@ -200,3 +200,32 @@ Skriv sedan här i filen, under en ny rubrik **"Ändrat i session <datum>"**:
 vad som gjordes, vad som återstår, och vad nästa session behöver veta.
 
 Det är så nästa session slipper börja om.
+
+---
+
+## 10. OPS Factory (`factory/`) — läget 2026-09-09
+
+Axels tredje verksamhet: one-product-stores byggda ur Bäverbutikens vinnare
+(CLAUDE.md-avsnittet "OPS Factory"). Läsordning: `factory/KEDJAN.md`
+(kontraktet) → `factory/PROCESS.md` (rutinen) → `.claude/commands/ny-ops.md`
+(körordningen) → `factory/README.md` (modulerna).
+
+**Koden ligger nu på EN gren.** Fram till 2026-09-09 byggde tre sessioner
+varsin komplett fabrik på varsin gren, och `main` fick bara dokumentationen.
+Grenarna slogs ihop till `claude/inspiring-babbage-5m3g0g` och dubbletterna
+förenades till en modul per funktion enligt `KEDJAN.md`:
+
+| Gren | Vad den bar |
+|---|---|
+| `claude/baverbutiken-product-links-iqneba` | TackleBay 2026-09-09: produktloopen, tema-upload, startsida, paket, marknad, logga |
+| `claude/damasker-vandring-product-t9orw7` | DryTrek 2026-09-09: kundvy-kor, lagerpolicy, avbranda, filer, identitet, trippelkoll |
+| `claude/ny-ops-ibc-tank-cover-jjwesr` | TankGuard 2026-09-08: token, tema-mall, marknader, kolla, bonus, bildtext, Judge.me app-CSV |
+| `claude/ny-ops-ibc-tank-cover-stoo16` | TankGuard-avläsning 2026-09-09: översättningsgranskaren, SEK-butiksfilen |
+| `claude/cart-drawer-redirect-fix-bbmiri` | Varukorgsfixen i `assets/ms-paket.js` |
+
+**Inte intagen:** `claude/ny-ops-ibc-tank-cover-51zqlx` (äldre än allt annat,
+förarbete som jjwesr gjorde om; enda unika är Word-export av checklistan som
+kräver npm `docx`).
+
+Efter mergen till `main` är `main` enda källan — rutinerna klonar `main`.
+Testerna: `node --test factory/test/*.test.mjs`.

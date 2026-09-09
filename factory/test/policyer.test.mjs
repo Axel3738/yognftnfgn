@@ -78,6 +78,40 @@ test('gratis frakt skrivs ut som fri frakt, inte som 0 kr', () => {
   assert.ok(!html.includes('0 kr'));
 });
 
+// Förenat 2026-09-09 (KEDJAN.md): TankGuard lade till länderna i fraktraden,
+// DryTrek tog bort "öppet köp" ur rubriken. Båda ska gälla.
+test('fraktpolicyn namnger länderna när de står i konfigen: "Fri frakt till Sverige och Norge"', () => {
+  const tva = fraktpolicy(medFrakt({ tid: '6–10 arbetsdagar', kostnad: 0, gratis_over: 0, lander: ['Sverige', 'Norge'] }));
+  assert.ok(tva.includes('<li>Fri frakt till Sverige och Norge</li>'), tva);
+  const tre = fraktpolicy(medFrakt({ kostnad: 0, gratis_over: 0, lander: ['Sverige', 'Norge', 'Danmark'] }));
+  assert.ok(tre.includes('Fri frakt till Sverige, Norge och Danmark'));
+  const en = fraktpolicy(medFrakt({ kostnad: 0, gratis_over: 0, lander: ['Sverige'] }));
+  assert.ok(en.includes('<li>Fri frakt till Sverige</li>'));
+  const betald = fraktpolicy(medFrakt({ kostnad: 49, gratis_over: 0, lander: ['Sverige', 'Norge'] }));
+  assert.ok(betald.includes('<li>Frakt till Sverige och Norge: 49 kr</li>'));
+  const utan = fraktpolicy(medFrakt({ kostnad: 0, gratis_over: 0 }));
+  assert.ok(utan.includes('<li>Fri frakt</li>'));
+});
+
+test('länderna i fraktpolicyn kommer ur butikens marknader via sammanvävningen', () => {
+  const p = dummy();
+  assert.deepEqual(p.shipping.lander, ['Sverige']);
+  assert.ok(fraktpolicy(p).includes('Fri frakt till Sverige'));
+});
+
+test('returpolicyns rubrik är "Ångerrätt" utan öppet köp när butiken bara ger lagens 14 dagar', () => {
+  const html = returpolicy(dummy());
+  assert.ok(html.includes('<h2>Ångerrätt</h2>'));
+  assert.ok(!html.includes('öppet köp'));
+});
+
+test('ger butiken mer än lagen nämner rubriken öppet köp', () => {
+  const p = { ...dummy(), retur: { oppet_kop_dagar: 30, angerratt_dagar: 14 } };
+  const html = returpolicy(p);
+  assert.ok(html.includes('<h2>Ångerrätt och öppet köp</h2>'));
+  assert.ok(html.includes('30 dagars öppet köp'));
+});
+
 test('köpvillkoren bär företagsnamn, orgnr och valuta', () => {
   const html = kopvillkor(dummy());
   assert.ok(html.includes('Exempelbolaget AB'));

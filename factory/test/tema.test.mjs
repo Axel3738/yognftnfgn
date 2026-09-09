@@ -7,8 +7,35 @@ import { kundUnderrubrik, byggKortBeskrivning } from '../sida.mjs';
 import { byggMetafalt, snittbetyg } from '../metafalt.mjs';
 import { byggJudgeMeCsv, byggJudgeMeAppCsv, judgeMeDatum, JUDGEME_KOLUMNER, JUDGEME_APP_KOLUMNER } from '../judgeme.mjs';
 import { fileURLToPath } from 'node:url';
-import { SEKTIONER, SEKTIONSORDNING_TEMA, TEMAFILER, byggProduktTemplate } from '../tema.mjs';
-import { dummy, medButiksfrakt } from './hjalp.mjs';
+import {
+  SEKTIONER,
+  SEKTIONSORDNING_TEMA,
+  TEMAFILER,
+  byggProduktTemplate,
+  byggHeaderGroup,
+  annonsrader,
+  rensaSettings,
+  settingsSchemaMedAb,
+  patchaMsPaket,
+  msHeadGallerifilter,
+  GALLERIFILTER_MARKE,
+  leveransdagar,
+  fraktRad,
+  paketBlock,
+  harTillagg,
+  tillaggTexter,
+  JUDGEME_EMBED,
+} from '../tema.mjs';
+import { dummy, medButiksfrakt, rabutik } from './hjalp.mjs';
+import { execFileSync } from 'node:child_process';
+
+const ZIP = fileURLToPath(new URL('../tema/ops-tema.zip', import.meta.url));
+const urZip = (fil) => execFileSync('unzip', ['-p', ZIP, fil], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 });
+const butikMedNorge = () => {
+  const b = rabutik();
+  b.butik.marknader = [{ land: 'NO', locale: 'nb', valuta: 'NOK' }];
+  return b;
+};
 
 const falt = (p) => Object.fromEntries(byggMetafalt(p, { kundUnderrubrik }).map((m) => [m.key, m]));
 
@@ -310,4 +337,166 @@ test('varorna läggs i FÖRE rabattkoden — koden fäster inte på en tom vagn'
   assert.ok(add < rabatt, 'cart/add.js måste komma före /discount/<kod>');
   // Lådan hämtas färsk efter att koden fäst, annars visar den fullpris.
   assert.match(js, /rutt \+ '\?sections=' \+ idn/);
+});
+
+// --- Köprutan ur konfigen (förenat ur tema-mall.mjs 2026-09-09, KEDJAN.md) ---
+
+test('utan produkt/butik rörs inte köprutans block — bara opf-sektionerna läggs till', () => {
+  const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json')));
+  const bo = ut.sections.main.block_order;
+  assert.ok(bo.includes('ms_paket') && !bo.includes('ms_paket_a'));
+  assert.ok(ut.sections.main.blocks.ms_trust.settings.custom_liquid.includes('Fri frakt i Sverige'));
+});
+
+test('med offer.paket.test byggs A/B-paketblocken på ms_pakets plats, plus fullpris-kryssrutan när bonusen säger det', () => {
+  const produkt = { offer: { paket: { test: 'paket' }, bonus_produkt: { handle: 'skyltar', tillagg_kryssruta: true, kortnamn: 'varningsskyltar' } }, varianter: [] };
+  const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt, butik: butikMedNorge() }));
+  const main = ut.sections.main;
+  const bo = main.block_order;
+  assert.ok(!bo.includes('ms_paket'));
+  assert.equal(bo.indexOf('ms_paket_a'), bo.indexOf('variant_picker') + 1);
+  assert.deepEqual(bo.slice(bo.indexOf('ms_paket_a'), bo.indexOf('ms_paket_a') + 4), ['ms_paket_a', 'ms_paket_b', 'opf_tillagg', 'buy_buttons']);
+  assert.ok(main.blocks.ms_paket_a.settings.custom_liquid.includes("variant: 'a'"));
+  assert.ok(main.blocks.ms_paket_b.settings.custom_liquid.includes("test: 'paket', variant: 'b'"));
+  assert.equal(main.blocks.opf_tillagg.settings.custom_liquid, "{% render 'opf-tillagg' %}");
+  assert.ok(harTillagg(produkt));
+  assert.deepEqual(tillaggTexter(produkt), { label: 'Lägg till varningsskyltar', info: 'Fullpris – gratis bara i paketen' });
+  // Idempotent: andra varvet ger samma blockordning.
+  const igen = JSON.parse(byggProduktTemplate(JSON.stringify(ut), { produkt, butik: butikMedNorge() }));
+  assert.deepEqual(igen.sections.main.block_order, bo);
+});
+
+test('utan test och utan bonus: ett enkelt ms_paket-block, ingen kryssruta', () => {
+  const blk = paketBlock('', 'product', { tillagg: false });
+  assert.deepEqual(Object.keys(blk), ['ms_paket']);
+  const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt: { offer: {}, varianter: [] } }));
+  assert.ok(ut.sections.main.block_order.includes('ms_paket') && !ut.sections.main.block_order.includes('opf_tillagg'));
+});
+
+test('trygghetsraden och leveransdagarna kommer ur butiks-/produktfilen, med norsk gren', () => {
+  const produkt = { offer: {}, varianter: [], leveranstid: '6–10 arbetsdagar' };
+  const nb = { 'liquid.trust.0': 'Gratis frakt – Sverige & Norge', 'liquid.delivery.text': 'Beregnet levering' };
+  const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt, butik: butikMedNorge(), nb }));
+  const trust = ut.sections.main.blocks.ms_trust.settings.custom_liquid;
+  assert.ok(trust.includes("items: 'truck:Fri frakt – Sverige & Norge|refresh:14 dagars ångerrätt|lock:Trygg betalning'"));
+  assert.ok(trust.includes("request.locale.iso_code == 'nb'") && trust.includes('truck:Gratis frakt – Sverige & Norge'));
+  assert.ok(!trust.includes('30 dagars öppet köp') && !trust.includes('Fri frakt i Sverige'));
+  const lev = ut.sections.main.blocks.ms_delivery.settings.custom_liquid;
+  assert.ok(lev.includes('min_days: 6, max_days: 10'));
+  assert.ok(lev.includes('Beregnet levering') && lev.includes('6–10 virkedager'));
+  assert.deepEqual(leveransdagar('5–8 arbetsdagar'), { min: 5, max: 8 });
+  assert.deepEqual(leveransdagar('7 dagar'), { min: 7, max: 7 });
+});
+
+test('Judge.me-widgeten flyttar in i temats Appyta (ms-app-slot) med blocken kvar, och FAQ:n ligger efter', () => {
+  const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { butik: rabutik() }));
+  assert.equal(ut.sections.judgeme_widget.type, 'ms-app-slot');
+  assert.deepEqual(Object.keys(ut.sections.judgeme_widget.blocks), ['w']);
+  assert.equal(ut.order.indexOf('opf_faq'), ut.order.indexOf('judgeme_widget') + 1);
+  assert.ok(!('ms_faq_section' in ut.sections), 'källbutikens FAQ ska bort');
+});
+
+test('produkt med riktiga varianter får variantväljaren synlig', () => {
+  const med = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt: dummy() }));
+  assert.equal(med.sections.main.settings.hide_variants, false);
+  const utan = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt: { offer: {}, varianter: [] } }));
+  assert.equal(utan.sections.main.settings.hide_variants, true);
+});
+
+// --- header-group ---
+
+test('annonsraden byggs ur butikens egna villkor, med länderna synliga', () => {
+  const b = butikMedNorge();
+  assert.equal(fraktRad(b), 'Fri frakt – Sverige & Norge');
+  assert.deepEqual(annonsrader(b), ['Fri frakt – Sverige & Norge', '14 dagars ångerrätt', 'Trygg betalning med Klarna']);
+  b.startsida = { usp: ['truck:Fri frakt', 'shield:2 års garanti', 'star:Bäst i test', 'lock:Fjärde raden'] };
+  assert.deepEqual(annonsrader(b), ['Fri frakt', '2 års garanti', 'Bäst i test']);
+});
+
+test('byggHeaderGroup på zip:ens riktiga header-group: källannonserna ersätts, väljarna på när butiken har fler marknader', () => {
+  const ut = JSON.parse(byggHeaderGroup(butikMedNorge(), { befintlig: urZip('sections/header-group.json') }));
+  const bar = ut.sections['announcement-bar'];
+  assert.deepEqual(bar.block_order, ['opf_a1', 'opf_a2', 'opf_a3']);
+  assert.equal(bar.blocks.opf_a1.settings.text, 'Fri frakt – Sverige & Norge');
+  assert.ok(!JSON.stringify(ut).includes('Levereras presentklart'));
+  assert.equal(bar.settings.enable_language_selector, true);
+  assert.equal(ut.sections.header.settings.enable_country_selector, true);
+  assert.equal(ut.sections.header.settings.menu, 'main-menu');
+  assert.deepEqual(ut.order, ['announcement-bar', 'header']);
+});
+
+test('byggHeaderGroup utan befintlig fil bygger gruppen från skelettet; en marknad = väljarna av', () => {
+  const ut = JSON.parse(byggHeaderGroup(rabutik()));
+  assert.deepEqual(ut.order, ['announcement-bar', 'header']);
+  assert.equal(ut.sections['announcement-bar'].blocks.opf_a1.settings.text, 'Fri frakt i Sverige');
+  assert.equal(ut.sections['announcement-bar'].settings.enable_language_selector, false);
+  assert.equal(ut.sections.header.settings.enable_language_selector, false);
+});
+
+// --- rensaSettings ---
+
+test('rensaSettings på zip:ens riktiga settings_data: sociala länkar tömda, brand-text, enbart Judge.me, källoggan bort', () => {
+  const b = butikMedNorge();
+  b.branding = { positionering: 'Nackvärk borta på 10 minuter' };
+  const j = rensaSettings(JSON.parse(urZip('config/settings_data.json')), { butik: b, produkt: { offer: { paket: { test: 'paket' } } } });
+  const c = j.current;
+  for (const k of Object.keys(c).filter((x) => /^social_.*_link$/.test(x))) assert.equal(c[k], '', k);
+  assert.equal(c.brand_description, '<p>Nackvärk borta på 10 minuter</p>');
+  assert.deepEqual(Object.keys(c.blocks), ['judgeme_karna']);
+  assert.equal(c.blocks.judgeme_karna.type, JUDGEME_EMBED);
+  assert.equal(c.logo, '');
+  assert.equal(c.brand_image, '');
+  assert.equal(c.ms_ab_tests, 'paket');
+  assert.equal(c.currency_code_enabled, true, 'NOK-marknad ⇒ valutakoden visas');
+  assert.ok('Matstrumpor' in j.presets, 'presetnamnet är avbranda.stadaSettings sak, inte rensaSettings');
+});
+
+test('rensaSettings sätter logga/favicon när de ges och lämnar en riktig logga i fred annars', () => {
+  const med = rensaSettings({ current: { logo: 'x', blocks: {} } }, { logga: 'shopify://shop_images/a-logga.png', favicon: 'shopify://shop_images/a-favicon.png' });
+  assert.equal(med.current.logo, 'shopify://shop_images/a-logga.png');
+  assert.equal(med.current.brand_image, 'shopify://shop_images/a-logga.png');
+  assert.equal(med.current.favicon, 'shopify://shop_images/a-favicon.png');
+  const kvar = rensaSettings(med, {});
+  assert.equal(kvar.current.logo, 'shopify://shop_images/a-logga.png');
+  // Utan butik: tom brand-text, Judge.me-inbäddningen läggs till ändå. Sträng in ⇒ sträng ut.
+  const tom = rensaSettings({ current: {} }, {});
+  assert.equal(tom.current.brand_description, '');
+  assert.deepEqual(Object.keys(tom.current.blocks), ['judgeme_karna']);
+  assert.equal(typeof rensaSettings('{"current":{}}', {}), 'string');
+  assert.equal(typeof rensaSettings({ current: {} }, {}), 'object');
+});
+
+test('Klaviyo-inbäddningen åker ut, Judge.me behålls med sitt id', () => {
+  const j = rensaSettings({ current: { blocks: { klaviyo: { type: 'shopify://apps/klaviyo-email-marketing-sms/blocks/x/1', disabled: false }, judgeme_karna: { type: JUDGEME_EMBED, disabled: true } } } }, {});
+  assert.deepEqual(Object.keys(j.current.blocks), ['judgeme_karna']);
+  assert.equal(j.current.blocks.judgeme_karna.disabled, false);
+});
+
+// --- settings_schema, ms-paket, gallerifilter ---
+
+test('A/B-gruppen läggs till i settings_schema en gång — andra varvet ger null', () => {
+  const forsta = settingsSchemaMedAb(urZip('config/settings_schema.json'));
+  assert.ok(forsta && forsta.includes('ms_ab_tests'));
+  assert.equal(settingsSchemaMedAb(forsta), null);
+});
+
+test('ms-paket-snippetens svenska ord locale-branchas en gång', () => {
+  const ra = urZip('snippets/ms-paket.liquid');
+  const patchad = patchaMsPaket(ra);
+  assert.ok(patchad && patchad.includes("request.locale.iso_code == 'nb'"));
+  assert.ok(patchad.includes('Gratis med på kjøpet'));
+  assert.ok(patchad.includes('aria-label="{% if request.locale.iso_code == \'nb\' %}Velg pakke{% else %}Välj paket{% endif %}"'));
+  assert.equal(patchaMsPaket(patchad), null);
+});
+
+test('gallerifiltret döljer de andra språkens märken per locale, märkt för idempotens', () => {
+  const liquid = msHeadGallerifilter(['sv', 'nb']);
+  assert.ok(liquid.includes(GALLERIFILTER_MARKE));
+  assert.ok(liquid.includes("iso_code == 'sv'") && liquid.includes("iso_code == 'nb'"));
+  const svGren = liquid.split("iso_code == 'nb'")[0];
+  assert.ok(svGren.includes('[NO]') && !svGren.includes('alt^="[SV]"'));
+  const tre = msHeadGallerifilter(['sv', 'nb', 'da']);
+  assert.ok(tre.includes('[DK]'));
+  assert.ok(msHeadGallerifilter().includes('[NO]'), 'default = sv + nb');
+  assert.ok(!liquid.includes('\\'), 'inga backslash-escaper på väg genom JSON');
 });

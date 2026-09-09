@@ -87,8 +87,10 @@ async function discord(sokvag, { metod = 'GET', kropp = null } = {}) {
   return data;
 }
 
-// Bygger kanalstrukturen. Utan guildId skapas en ny server (kräver att boten
-// sitter i < 10 servrar — Discords egen gräns för POST /guilds).
+// Bygger kanalstrukturen i servern guildId. Utan guildId försöks POST /guilds
+// — det svarar 20001 för botar (mätt 2026-09-08), så huvud() släpper aldrig
+// hit utan --guild; försöket ligger kvar bara för att ge Discords eget
+// felmeddelande om läget någon gång ändras.
 export async function byggServer(brand, guildId = null, ikonFil = null) {
   const plan = byggKanalplan(brand);
   let guild = guildId;
