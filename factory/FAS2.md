@@ -278,7 +278,13 @@ hämta ner filen → brand-swappa → ladda upp på nytt till `act_9154227449509
 **Klart när:** kampanjen är tillbakaläst ur kontot och `page_id`, `pixel_id`,
 `daily_budget`, länk och status på alla tre nivåer matchar butikens konfig exakt.
 
-### ⛔ Sidrollen — det som faktiskt stoppar TankGuard (mätt 2026-09-08)
+### ✅ Sidrollen — LÖST 2026-09-09
+
+Axel gav full tillgång till sidan, och samma sekund gick alla tio annonserna
+igenom. Avsnittet nedan står kvar för att **kontrollen** är återanvändbar — den
+ska köras på varje ny OPS-butik innan media laddas upp.
+
+### ⛔ Sidrollen — det som stoppade TankGuard (mätt 2026-09-08)
 
 Kampanjen, sex adsets, tio uppladdade creatives och godkänd copy är på plats.
 **Noll annonser kan ändå skapas.** Varje `adcreatives`-anrop svarar:
@@ -289,20 +295,38 @@ Om du vill skapa inlägg för sidan 1399193996606775 kontaktar du en
 administratör för att få behörighet för rollen Annonsör eller högre.
 ```
 
-**Bevis, inte gissning:** `me/accounts` listar **37 sidor** som token-användaren
-har roll på. HeimGuards sida `1262406533629248` finns där med
-`ADVERTISE,CREATE_CONTENT,MANAGE`. **TankGuards sida `1399193996606775` finns inte
-i listan alls.**
+**Rotorsaken, mätt 2026-09-09 — och den är inte den man först tror.**
+Nyckelns användare är **Axel Odhner själv** (`2012328296147430`). Skillnaden mot
+HeimGuard sitter i hur businessen `1164852855167090` håller de två sidorna:
 
-⚠️ **Att sidan syns i `client_pages` betyder INTE att man får annonsera med den.**
-Det är två olika saker: businessen äger sidan, men token-användaren saknar roll på
-den. Uppslaget som verifierade sidan (FAS2 rad 23) bevisade ägarskapet — inte
-rättigheten. Kontrollera båda vid nästa OPS-butik, och gör det **innan** media
-laddas upp, inte efter.
+| | Sida | Businessens relation | Axels roll | Går att annonsera med |
+|---|---|---|---|---|
+| HeimGuard | `1262406533629248` | **`owned_pages`** — businessen äger den | `MANAGE,CREATE_CONTENT,ADVERTISE,…` | ✅ |
+| TankGuard | `1399193996606775` | **`client_pages`** — bara utlånad dit | **ingen alls** | ❌ |
 
-**Åtgärd:** ge annonskontots användare rollen **Annonsör** (eller högre) på
-TankGuard-sidan i Meta Business. Det är ett klick för en sidadministratör.
-Samma grepp gjordes redan för HeimGuard — det är därför den sidan fungerar.
+`owned_pages` (4): HeimGuard · Bæverbutiken · BeaverShop · MagiBorsten
+`client_pages` (2): Bäverbutiken.se · **TankGuard**
+
+⚠️ **`client_pages` är inte ägarskap.** Den tidigare noteringen "sidan är verifierad
+i MagiBorstens `client_pages`" (FAS2 rad 23) bevisade bara att businessen *ser*
+sidan. Att skapa ett inlägg med den kräver att den enskilda **användaren** har en
+roll på sidan, och `me/accounts` — 40 sidor per 2026-09-09 — listar den inte.
+Tre kontroller som ser lika ut men svarar på olika frågor:
+
+```
+BIZ/client_pages   → ser businessen sidan?        (TankGuard: JA)
+BIZ/owned_pages    → äger businessen sidan?       (TankGuard: NEJ)
+me/accounts        → har ANVÄNDAREN roll på den?  (TankGuard: NEJ)  ← den som avgör
+```
+
+Bara den tredje avgör om en annons går att skapa. **Kör den kontrollen innan media
+laddas upp**, inte efter — och lägg in den som ett eget steg i `/ny-ops`: en ny
+OPS-sida är inte klar när den existerar, den är klar när `me/accounts` listar den.
+
+**Åtgärd:** ge Axel rollen på TankGuard-sidan i Meta Business
+(`business.facebook.com/settings/pages` → TankGuard → Lägg till personer →
+Hantera sida). Alternativt flytta sidan från `client_pages` till `owned_pages`,
+vilket är det HeimGuard redan har och skälet till att den fungerar.
 
 **Lägg in det som ett eget steg i `/ny-ops`:** en ny OPS-sida är inte klar när den
 existerar, den är klar när `me/accounts` listar den.

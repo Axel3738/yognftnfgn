@@ -1,1 +1,72 @@
-{}
+{
+  "TankGuard_PD_Extra": {
+    "creativeId": "4551836581729498",
+    "annonsId": "120249008687250172",
+    "adset": "PD",
+    "adsetId": "120248995237140172",
+    "typ": "video"
+  },
+  "TankGuard_PD_2_1": {
+    "creativeId": "4037867959846809",
+    "annonsId": "120249008688140172",
+    "adset": "PD",
+    "adsetId": "120248995237140172",
+    "typ": "bild"
+  },
+  "TankGuard_PD_3_1": {
+    "creativeId": "2542620999513231",
+    "annonsId": "120249008688900172",
+    "adset": "PD",
+    "adsetId": "120248995237140172",
+    "typ": "bild"
+  },
+  "TankGuard_PD_4_1": {
+    "creativeId": "1844642716910637",
+    "annonsId": "120249008689730172",
+    "adset": "PD",
+    "adsetId": "120248995237140172",
+    "typ": "bild"
+  },
+  "TankGuard_PD_5_1": {
+    "creativeId": "1955625258463256",
+    "annonsId": "120249008690580172",
+    "adset": "PD",
+    "adsetId": "120248995237140172",
+    "typ": "bild"
+  },
+  "TankGuard_CO_1_1": {
+    "creativeId": "2279945732801611",
+    "annonsId": "120249008691390172",
+    "adset": "CO",
+    "adsetId": "120249005848350172",
+    "typ": "bild"
+  },
+  "TankGuard_BOF_3_1": {
+    "creativeId": "1117733560935764",
+    "annonsId": "120249008692010172",
+    "adset": "BOF",
+    "adsetId": "120249005849710172",
+    "typ": "bild"
+  },
+  "TankGuard_BOF_4_1": {
+    "creativeId": "1694033211677101",
+    "annonsId": "120249008693620172",
+    "adset": "BOF",
+    "adsetId": "120249005849710172",
+    "typ": "bild"
+  },
+  "TankGuard_BOF_5_1": {
+    "creativeId": "1678054386620257",
+    "annonsId": "120249008694580172",
+    "adset": "BOF",
+    "adsetId": "120249005849710172",
+    "typ": "bild"
+  },
+  "TankGuard_GT_2_1": {
+    "creativeId": "1599391791834369",
+    "annonsId": "120249008696460172",
+    "adset": "GT",
+    "adsetId": "120248995239680172",
+    "typ": "bild"
+  }
+}

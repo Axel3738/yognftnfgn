@@ -1,4 +1,4 @@
-# TankGuard — läget efter `/ny-annonser tankguard` 2026-09-08
+# TankGuard — läget efter `/ny-annonser tankguard` 2026-09-09
 
 Den här filen är facit över var butiken står. De andra filerna i mappen är
 underlaget: `kallannonser.md` (källorna, fem ytor), `se-copy.md` (mediagrinden och
@@ -7,7 +7,7 @@ copy-rundan), `se-annonstexter.md` (den godkända copyn), `brand-detektor.md`
 
 ---
 
-## Tillbakaläst ur Meta 2026-09-08
+## Tillbakaläst ur Meta 2026-09-09 — kampanjen är byggd
 
 Konto **Magiborsten DK `915422744950975`** (SEK).
 
@@ -19,8 +19,31 @@ ADSETS    6 st, alla PAUSED, alla pixel 2196132151319625, alla geo ["SE"],
           ingen med egen budget (CBO håller ihop)
           BOF · CO · CS · GT · PD · SP
 
-ANNONSER  0
+ANNONSER  10 st, alla PAUSED
+          PD  ×5   PD_Extra (video) · PD_2_1 · PD_3_1 · PD_4_1 · PD_5_1
+          BOF ×3   BOF_3_1 · BOF_4_1 · BOF_5_1
+          CO  ×1   CO_1_1
+          GT  ×1   GT_2_1
 ```
+
+**Trippelkollen, 2026-09-09:**
+1. **Struktur** — kampanj, sex adsets: rätt pixel, rätt geo, PAUSED, CBO. 0 fel.
+2. **Annonserna** — 10 av 10 med rätt sida `1399193996606775` och rätt länk
+   `https://tankguard.se/products/tankoverdraget`. 0 fel.
+3. **Texten** — titel och description jämförda ord för ord mot den godkända copyn
+   på alla tio. Noll träffar på förbjudna påståenden (jämförpris, rabatt på
+   enstyck, frakt, betalsätt, öppet köp, socialt bevis, påhittad brådska,
+   butiksnamn). 0 fel.
+
+⚠️ Metas egen förhandsvisning ligger bakom inloggning — `previews`-endpointen ger
+bara en signerad iframe-URL. Den fjärde kontrollen, hur annonsen ser ut för
+kunden, görs i Ads Manager av den som sätter kampanjen ACTIVE.
+
+**Sidrollen löstes 2026-09-09.** Axel gav full tillgång till TankGuard-sidan och
+alla tio annonserna gick igenom direkt.
+
+**De tio är de rena creativesen.** De 24 smutsiga ligger kvar utanför kampanjen
+tills mediat är omgjort — se mediagrinden nedan.
 
 Sida `1399193996606775` (TankGuard) och pixel `2196132151319625` är butikens egna
 och verifierade. Kontot bär även Bäverbutikens danska kampanjer och deras pixel
@@ -37,29 +60,28 @@ hålls, se nedan).
 
 ---
 
-## ⛔ Det enda som stoppar annonserna
+## Sidrollen — löst, men kontrollen ska återanvändas
 
-Meta-nyckeln får inte skapa inlägg för TankGuards sida:
+Kampanjen stod färdig i ett dygn utan en enda annons. Orsaken var inte kontot,
+inte pixeln och inte sidan i sig:
 
 ```
-(#200) Application does not have permission for this action —
-Om du vill skapa inlägg för sidan 1399193996606775 kontaktar du en
-administratör för att få behörighet för rollen Annonsör eller högre.
+BIZ/client_pages   → ser businessen sidan?        TankGuard: JA
+BIZ/owned_pages    → äger businessen sidan?       TankGuard: NEJ
+me/accounts        → har ANVÄNDAREN roll på den?  TankGuard: NEJ  ← den som avgör
 ```
 
-**Bevis:** `me/accounts` listar **37 sidor** som token-användaren har roll på.
-HeimGuards sida `1262406533629248` finns där med `ADVERTISE,CREATE_CONTENT,MANAGE`.
-TankGuards sida finns **inte** i listan.
+HeimGuards sida ligger i `owned_pages` med full roll och fungerade därför direkt.
+TankGuards låg bara i `client_pages`, och `me/accounts` listade den inte alls —
+40 sidor, ingen av dem TankGuard. Varje `adcreatives`-anrop svarade
+`(#200) Application does not have permission for this action`.
 
-⚠️ Att sidan syns i businessens `client_pages` bevisar **ägarskapet, inte
-rättigheten**. Två olika saker. Kontrollera båda vid nästa OPS-butik, och gör det
-**innan** media laddas upp.
+**Kör `me/accounts`-kontrollen på varje ny OPS-butik innan media laddas upp.**
+En ny OPS-sida är inte klar när den existerar — den är klar när `me/accounts`
+listar den. Lägg in det som ett eget steg i `/ny-ops`.
 
-**Åtgärd:** ge annonskontots användare rollen **Annonsör** (eller högre) på
-TankGuard-sidan i Meta Business. Samma grepp är redan gjort för HeimGuard.
-
-När rollen finns: `node factory/bygg-tankguard.mjs` (skriptet är idempotent och
-hoppar över det som redan finns).
+Bygget körs med `node factory/bygg-tankguard.mjs`. Skriptet är idempotent och
+hoppar över kampanjnamn, adsets och annonser som redan finns.
 
 ---
 
@@ -73,14 +95,16 @@ hoppar över det som redan finns).
 | Media uppladdat i målkontot | ✅ 9 bilder + 1 video, nya hashar och video-id |
 | Copy | ✅ 19 block: 7 redan rena, 9 omskrivna, 3 hålls |
 | Kampanj + adsets | ✅ 1 kampanj, 6 adsets, allt PAUSED och tillbakaläst |
-| Annonser | ⛔ 0 — sidrollen saknas |
+| Annonser | ✅ 10 st, alla PAUSED, trippelkollade |
 | Norsk kampanj | ⛔ inte byggd — inga NOK-nivåer och ingen norsk länk |
 
 ---
 
 ## Vad som väntar, i ordning
 
-1. **Sidrollen.** Utan den händer ingenting mer i Meta.
+1. **VA:n granskar och sätter ACTIVE.** Öppna Ads Manager, kontrollera att länken
+   går till TankGuards produktsida, att pixeln är butikens egen och att budgeten
+   stämmer. Sätt sedan kampanjen ACTIVE.
 2. **De 24 smutsiga creativesen.** 11 bilder städas gratis med
    `pipeline/oversatt-bild.py`; 11 videor kräver omdubb (HeyGen har 16 951
    krediter) plus ett ord bytt i undertexten med `pipeline/no-precis.py`;

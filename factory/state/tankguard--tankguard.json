@@ -61,7 +61,7 @@
       ]
     },
     "kampanj_se": {
-      "klar": "skal_finns",
+      "klar": true,
       "id": "120248995235740172",
       "namn": "TANKGUARD_SE_Tanköverdraget | 2026-09-08",
       "status": "PAUSED",
@@ -74,9 +74,9 @@
         "CO": "120249005848350172",
         "BOF": "120249005849710172"
       },
-      "annonser": 0,
+      "annonser": 10,
       "spend": 0,
-      "notis": "Byggt 2026-09-08T11:18 av en korning som aldrig pushade. FYLL skalet — bygg aldrig ett nytt bredvid.",
+      "notis": "Byggd klart 2026-09-09. Tio annonser, alla PAUSED. VA:n satter ACTIVE efter granskning.",
       "namn_tidigare": "TANKGUARD_Tanköverdraget SE | BE-ROAS 1,62 | 2026-09-08",
       "omdopt_varfor": "Det gamla namnet bar BE-ROAS 1,62 — ett tal som stammer med varken 1,46 (utan moms) eller 2,07 (med moms). Ett falskt tal i kampanjnamnet styr varje framtida skalningsrunda fel.",
       "adsets_nyskapade": [
@@ -140,7 +140,12 @@
       }
     },
     "tillbakalast": {
-      "klar": false
+      "klar": true,
+      "datum": "2026-09-09",
+      "kontroll_1_struktur": "kampanj PAUSED, 1000 kr/dag, OUTCOME_SALES, CBO. 6 adsets alla PAUSED med pixel 2196132151319625, geo SE, ingen egen budget.",
+      "kontroll_2_annonser": "10 av 10 med ratt sida 1399193996606775 och ratt lank https://tankguard.se/products/tankoverdraget. 0 fel.",
+      "kontroll_3_copy": "Titel och description jamforda ord for ord mot den godkanda texten pa alla tio. Noll traffar pa forbjudna pastaenden (jamforpris, rabatt pa enstyck, frakt, betalsatt, oppet kop, socialt bevis, pahittad bradska, brandnamn).",
+      "notis": "Metas forhandsvisning ligger bakom inloggning (previews-endpointen ger bara en signerad iframe-URL) — den kontrollen gor VA:n i Ads Manager."
     },
     "mediagrind": {
       "klar": true,
@@ -176,22 +181,37 @@
       "datum": "2026-09-08",
       "ingangspris": "489 kr — annonserna ska leda med enstyckspriset. Paketnivan far namnas efter priset, aldrig forst.",
       "landningssida_se": "https://tankguard.se/products/tankoverdraget"
+    },
+    "annonser_byggda": {
+      "klar": true,
+      "datum": "2026-09-09",
+      "antal": 10,
+      "fordelning": {
+        "PD": 5,
+        "BOF": 3,
+        "CO": 1,
+        "GT": 1
+      },
+      "typ": {
+        "bild": 9,
+        "video": 1
+      },
+      "status": "PAUSED pa alla tre nivaer",
+      "fil": "factory/output/tankguard/byggda-annonser.json"
     }
   },
-  "blockerare": {
-    "vad": "Meta-nyckeln saknar roll pa TankGuards sida 1399193996606775",
-    "felmeddelande": "(#200) Application does not have permission for this action — for att skapa inlagg for sidan kravs rollen Annonsor eller hogre",
-    "bevis": "me/accounts listar 37 sidor som token-anvandaren har roll pa. HeimGuard 1262406533629248 finns dar. TankGuard 1399193996606775 gor det INTE.",
-    "atgard": "Ge annonskontots anvandare rollen Annonsor (eller hogre) pa TankGuard-sidan i Meta Business.",
-    "konsekvens": "Allt annat ar pa plats — kampanj, sex adsets, tio uppladdade creatives och godkand copy. Noll annonser kan skapas forran rollen finns."
-  },
-  "uppdaterad": "2026-09-08",
+  "uppdaterad": "2026-09-09",
   "oppna_beslut": [
     "Ingangspriset: 489 kr eller 799 kr? Att ta bort 636 kr flyttade ankaret till 2-packet i fyra av sju block och hojde ingangspriset 63 %. Agarens beslut.",
     "Annonsens jamfortal (978/1467 kr) matchar inte produktsidans overstrukna (1376/2064 kr). Ska annonsen folja sidan eller sidan folja annonsen?",
     "Utloser offer.bonus_produkt faktiskt Kranskydd Frost i korgen? Fyra annonser lovar den."
   ],
   "tidigare_blockerare_lost": {
-    "butiksfil": "Delvis lost 2026-09-08: Axel lamnade pris (489 kr) och produktlank direkt i chatten. factory/butiker/tankguard.yaml saknas fortfarande — frakt, returer, betalsatt och NOK-nivaer ar darfor okanda och pastas aldrig i copyn."
+    "butiksfil": "Delvis lost 2026-09-08: Axel lamnade pris (489 kr) och produktlank direkt i chatten. factory/butiker/tankguard.yaml saknas fortfarande — frakt, returer, betalsatt och NOK-nivaer ar darfor okanda och pastas aldrig i copyn.",
+    "sidroll": "Last 2026-09-09: Axel gav full tillgang till TankGuard-sidan. Alla tio annonserna gick igenom direkt. Rotorsaken var att sidan lag i businessens client_pages men saknades helt i me/accounts — HeimGuard ligger i owned_pages och fungerade darfor."
+  },
+  "blockerare": {
+    "vad": "Inget blockerar den svenska kampanjen langre.",
+    "kvar": "Norska halvan saknar NOK-nivaer och norsk produktlank. 24 av 34 creatives ar smutsiga och maste goras om innan de kan koras."
   }
 }

@@ -1,0 +1,97 @@
+{
+  "datum": "2026-09-09",
+  "kampanj": "TANKGUARD_SE_Tanköverdraget | 2026-09-08",
+  "kampanj_id": "120248995235740172",
+  "annonser": [
+    {
+      "namn": "TankGuard_BOF_3_1",
+      "id": "120249008692010172",
+      "status": "PAUSED",
+      "adset_id": "120249005849710172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild 7404403e"
+    },
+    {
+      "namn": "TankGuard_BOF_4_1",
+      "id": "120249008693620172",
+      "status": "PAUSED",
+      "adset_id": "120249005849710172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild f3abdbe0"
+    },
+    {
+      "namn": "TankGuard_BOF_5_1",
+      "id": "120249008694580172",
+      "status": "PAUSED",
+      "adset_id": "120249005849710172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild f9898c7c"
+    },
+    {
+      "namn": "TankGuard_CO_1_1",
+      "id": "120249008691390172",
+      "status": "PAUSED",
+      "adset_id": "120249005848350172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild 14d9d150"
+    },
+    {
+      "namn": "TankGuard_GT_2_1",
+      "id": "120249008696460172",
+      "status": "PAUSED",
+      "adset_id": "120248995239680172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild 900670c5"
+    },
+    {
+      "namn": "TankGuard_PD_2_1",
+      "id": "120249008688140172",
+      "status": "PAUSED",
+      "adset_id": "120248995237140172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild c960f752"
+    },
+    {
+      "namn": "TankGuard_PD_3_1",
+      "id": "120249008688900172",
+      "status": "PAUSED",
+      "adset_id": "120248995237140172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild 97033fd1"
+    },
+    {
+      "namn": "TankGuard_PD_4_1",
+      "id": "120249008689730172",
+      "status": "PAUSED",
+      "adset_id": "120248995237140172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild e18f7e4d"
+    },
+    {
+      "namn": "TankGuard_PD_5_1",
+      "id": "120249008690580172",
+      "status": "PAUSED",
+      "adset_id": "120248995237140172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "bild e44a6e3f"
+    },
+    {
+      "namn": "TankGuard_PD_Extra",
+      "id": "120249008687250172",
+      "status": "PAUSED",
+      "adset_id": "120248995237140172",
+      "sida": "1399193996606775",
+      "länk": "https://tankguard.se/products/tankoverdraget",
+      "media": "video 1094252123041841"
+    }
+  ]
+}
