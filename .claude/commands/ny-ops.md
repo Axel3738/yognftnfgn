@@ -86,7 +86,13 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    sammanfogar butik + produkt — kör ALDRIG validera.mjs fristående på
    bara produktfilen, den saknar butiksfälten och stoppar falskt).
 5. **Bygg i Shopify** (fas 2, produkten som ACTIVE — DRAFT ger 404 och
-   exempelprodukt i kundvyn; trial-lösenordet skyddar butiken):
+   exempelprodukt i kundvyn; trial-lösenordet skyddar butiken).
+   ⚠️ Varje variant: `inventoryPolicy: CONTINUE` + `inventoryItem.tracked:
+   false` (Axels regel 2026-09-09 — Shopifys default DENY stoppar
+   försäljningen tyst när saldot tar slut medan annonserna kostar pengar).
+   ⚠️ Testa varukorgen på RIKTIGT innan "klart": tom korg → lägg i varan →
+   lådan ska glida in, inte skicka kunden till `/cart` (öppen bugg
+   2026-09-09, se PROCESS.md).
    CRO-temat från `factory/tema/ops-tema.zip`
    (ligger i repot — hämta ALDRIG tema från HeimGuard, Dawn eller
    publika assets) → produkt → metafält →
@@ -146,6 +152,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Brand-config byggd från produkt + målgrupp, inte återanvänd
 - [ ] Namnregeln: helst helt engelskt namn (läsbart för svenskar/norrmän), ingen å/ä/ö, domän kollad
 - [ ] Produktsida med alla opf-sektioner + Judge.me i Appyta, ostylad
+- [ ] Varje variant säljer vidare vid slut i lager (CONTINUE, tracked false)
+- [ ] Varukorgen testad med TOM korg: lådan glider in, ingen redirect till /cart
+- [ ] Startsidan pekar på butikens egen produkt — inte zip:ens sushi-strumpor
 - [ ] Paket A/B med riktiga koder, mitten förvald, bonus + korg-upsell inne
 - [ ] Bilder utan engelsk text, svensk vektortext pålagd
 - [ ] Marknad Norge + locale nb publicerad, allt översatt via translationsRegister, trippelkollat mot /nb
