@@ -5,11 +5,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { kundUnderrubrik, byggKortBeskrivning } from '../sida.mjs';
 import { byggMetafalt, snittbetyg } from '../metafalt.mjs';
-import { byggJudgeMeCsv, JUDGEME_KOLUMNER } from '../judgeme.mjs';
+import { byggJudgeMeCsv, byggJudgeMeAppCsv, judgeMeDatum, JUDGEME_KOLUMNER, JUDGEME_APP_KOLUMNER } from '../judgeme.mjs';
 import { fileURLToPath } from 'node:url';
 import { SEKTIONER, SEKTIONSORDNING_TEMA, TEMAFILER, byggProduktTemplate } from '../tema.mjs';
-import { byggJudgeMeCsv, byggJudgeMeAppCsv, judgeMeDatum, JUDGEME_KOLUMNER, JUDGEME_APP_KOLUMNER } from '../judgeme.mjs';
-import { SEKTIONER, SEKTIONSORDNING_TEMA, byggProduktTemplate } from '../tema.mjs';
 import { dummy, medButiksfrakt } from './hjalp.mjs';
 
 const falt = (p) => Object.fromEntries(byggMetafalt(p, { kundUnderrubrik }).map((m) => [m.key, m]));
