@@ -54,16 +54,33 @@ async function allaSidor(sokvag, params = {}) {
   return ut;
 }
 
-export async function lasKonto(kontoId, prefix) {
-  const annonser = await allaSidor(`/act_${kontoId}/ads`, {
-    fields: [
-      'id', 'name', 'status', 'effective_status',
-      'adset{id,name,status,effective_status,daily_budget,targeting}',
-      'campaign{id,name,status,objective}',
-      'creative{id,name,object_story_spec,asset_feed_spec,effective_object_story_id,image_hash,image_url,video_id,thumbnail_url,object_type,url_tags,link_url}',
-    ].join(','),
-  });
-  const traff = annonser.filter((a) => String(a.name).startsWith(prefix));
+// ⚠️ Läs ALDRIG /act_<id>/ads med hela creative-blocket över ett helt konto —
+// Graph svarar "Please reduce the amount of data you're asking for" (mätt
+// 2026-09-09 på MagiBorsten, 80 kampanjer). Hitta kampanjerna först, läs
+// annonserna per kampanj.
+//
+// ⚠️ Annonsprefixet är INTE detsamma i båda källkontona. Damaskerna heter
+// `Damasker_` i SE och `Gamasjer_` i NO — produkten har olika namn på
+// språken. Därför matchas KAMPANJEN på ett mönster, och prefixet läses ur
+// annonserna i stället för att antas.
+export async function lasKonto(kontoId, kampanjMonster) {
+  const kampanjer = (
+    await allaSidor(`/act_${kontoId}/campaigns`, { fields: 'id,name,status,objective' })
+  ).filter((c) => kampanjMonster.test(c.name));
+
+  const annonser = [];
+  for (const k of kampanjer) {
+    const rader = await allaSidor(`/${k.id}/ads`, {
+      fields: [
+        'id', 'name', 'status', 'effective_status',
+        'adset{id,name,status,effective_status,daily_budget}',
+        'campaign{id,name,status,objective}',
+        'creative{id,name,object_story_spec,image_hash,image_url,video_id,thumbnail_url,object_type,link_url}',
+      ].join(','),
+    });
+    annonser.push(...rader);
+  }
+  const traff = annonser;
 
   // Spend per annons, för rangordningen. De bevisade först.
   const utfall = new Map();
@@ -139,11 +156,19 @@ if (process.argv[1] && process.argv[1].endsWith('kallannonser.mjs')) {
     throw new Error(`meta.ad_account_id är ${p.meta?.ad_account_id}, ska vara ${MALKONTO.id}. Stoppar.`);
   }
 
-  console.log(`Källprefix: ${prefix}_ · Mål: ${MALKONTO.namn} ${MALKONTO.id}\n`);
+  // Kampanjmönstret per marknad. SE slås upp på det kända kampanj-id:t när
+  // produktfilen bär ett; annars på prefixet. NO har egna produktnamn.
+  const MONSTER = {
+    SE: new RegExp(p.kalla?.kampanj ? p.kalla.kampanj.split('|')[0].trim() : prefix, 'i'),
+    NO: new RegExp((p.kalla?.no_kampanjmonster ?? 'gamasj|damask'), 'i'),
+  };
+
+  console.log(`Källprefix SE: ${prefix}_ · Mål: ${MALKONTO.namn} ${MALKONTO.id}`);
+  console.log(`Kampanjmönster: SE /${MONSTER.SE.source}/i · NO /${MONSTER.NO.source}/i\n`);
 
   const resultat = {};
   for (const [marknad, konto] of Object.entries(KONTON)) {
-    const rader = await lasKonto(konto.id, `${prefix}_`);
+    const rader = await lasKonto(konto.id, MONSTER[marknad]);
     resultat[marknad] = { konto, annonser: rader };
     const med = rader.filter((r) => r.med);
     console.log(`${marknad} — ${konto.namn} (${konto.id}): ${rader.length} annonser, ${med.length} ACTIVE`);
