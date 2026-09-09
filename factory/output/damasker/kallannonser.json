@@ -1,0 +1,1414 @@
+{
+  "SE": {
+    "konto": {
+      "id": "1867947880635861",
+      "namn": "MagiBorsten",
+      "valuta": "SEK"
+    },
+    "annonser": [
+      {
+        "id": "120250009503590291",
+        "namn": "Damasker_PD_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009398520291",
+          "namn": "Damasker Vandring | PD | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1565345582409271",
+          "image_hash": "aec622620dd9b25fd1de6778d36d8ac4",
+          "image_url": null,
+          "video_id": "1612114230501753",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/788924161_1612114307168412_2515030486362270398_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=ltaGimotd4wQ7kNvwHU2v-X&_nc_oc=AdqobyU5txExFunIBpS6cWvhngjT-k3IgD1tN-O63aZA2QCw5GiuZYPInvmdnxTZyy8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQJS7e9QlAKVZOl8tyN7qqdot5Nx_QedgAT-vBLGNRN_HyWRyp9TSy65b0IyaIPWe9PR691yJw5Xcg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLFepFUhYWED00SEC3_wlDdJYuu5dfTM-t5U0Atsnz0hQ&oe=6AA6CE88",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Trött på snö, väta och grus i skorna? 🥾\n✅ Håller snön ute - hela vandringen\n✅ Stoppar regn och blöt terräng\n✅ Skyddar mot grus, lera och sten\n✅ På med dem på 10 sekunder\nKlicka och beställ dina idag 👇",
+          "headline": "Vandra torrt - oavsett väder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 9689.11,
+          "kop": 51,
+          "roas": 2.81057
+        },
+        "med": true
+      },
+      {
+        "id": "120250009505320291",
+        "namn": "Damasker_SP_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009401670291",
+          "namn": "Damasker Vandring | SP | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1389806639179093",
+          "image_hash": "b9342a4e129c8624bcc776b0935141b5",
+          "image_url": null,
+          "video_id": "1058806683692555",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/787191100_1058806713692552_199707243351079801_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=xFzj_CrC4tIQ7kNvwEY4NcY&_nc_oc=AdoaV8TMgZq4rMLgPgpZZXpaITE6SG4N46kyheCfUHL5sL3Lhly1X0eiqGUKCJsitQo&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQIUSdmvTAymdYUfXI4AcETcwgdWTRJNI8oJWPvPKrIVw-tOhj2P6X24uD1IQLy1qJg7plVpxYYkPA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIqBWqehxkU2jTg9Z-wFhumino7ZijSvsF6cq_l1uC4JA&oe=6AA6E876",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "\"Helt torra strumpor - även i regn och lera\" 🙌\n✅ Älskade av tusentals vandrare\n✅ Håller tätt hela dagen\n✅ Enkla att ta på och av\n✅ 30 dagars öppet köp\nSe varför kunderna inte kan sluta prata om dem 👇",
+          "headline": "Kunderna älskar torra fötter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1094.65,
+          "kop": 4,
+          "roas": 1.421459
+        },
+        "med": true
+      },
+      {
+        "id": "120250009503920291",
+        "namn": "Damasker_PD_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009398520291",
+          "namn": "Damasker Vandring | PD | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1061839213236913",
+          "image_hash": "aec622620dd9b25fd1de6778d36d8ac4",
+          "image_url": null,
+          "video_id": "1042109885263701",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/790476093_1042109911930365_8451857695897479598_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=F7BQP1ftyHsQ7kNvwH-sAjZ&_nc_oc=Adr5k2UADD-yVRqL_b0pn2pEzHBwRZ-faAAgS6IyimJM13xo7Bi_4kBatvwdeUPKoZY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQJ1jWLCbAxHRMsr4b7nulkQq7E51jDTVIT5eiU9-OKG1-zRl-mWlp_0AgVqZfV8Y8bMCXnKwyeS9A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIo3RS0c5KzmIh6ak88t3cNRNoXYPjkET465Y_jENZEhA&oe=6AA6CE9A",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Trött på snö, väta och grus i skorna? 🥾\n✅ Håller snön ute - hela vandringen\n✅ Stoppar regn och blöt terräng\n✅ Skyddar mot grus, lera och sten\n✅ På med dem på 10 sekunder\nKlicka och beställ dina idag 👇",
+          "headline": "Vandra torrt - oavsett väder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 476.29,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250009509220291",
+        "namn": "Damasker_SP_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009401670291",
+          "namn": "Damasker Vandring | SP | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2065483604174825",
+          "image_hash": "b9342a4e129c8624bcc776b0935141b5",
+          "image_url": null,
+          "video_id": "1735247407625558",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/787522380_1735247440958888_664913097237703338_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=PrLwM9G___sQ7kNvwFqFAz4&_nc_oc=Adq4t17V5Gejqxd29mviUaor_KqNAZiolygghjH9FUTDFSDgw4r1U1PjpPeo44CyC8w&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQKGnwbckPirTAcSCv_ASS1aLaNrHUqLK1NADa3v15vKakX4GgyE9nRWFJsLpgjrk4VweMTPfUbTMA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKmCPOEfv-fEeL7Jg0YluQrkywxDBrDIT7qUguhsfacew&oe=6AA6EF99",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "\"Helt torra strumpor - även i regn och lera\" 🙌\n✅ Älskade av tusentals vandrare\n✅ Håller tätt hela dagen\n✅ Enkla att ta på och av\n✅ 30 dagars öppet köp\nSe varför kunderna inte kan sluta prata om dem 👇",
+          "headline": "Kunderna älskar torra fötter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 406.56,
+          "kop": 1,
+          "roas": 0.956808
+        },
+        "med": true
+      },
+      {
+        "id": "120250009503290291",
+        "namn": "Damasker_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009398520291",
+          "namn": "Damasker Vandring | PD | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1575900974043884",
+          "image_hash": "aec622620dd9b25fd1de6778d36d8ac4",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/788926761_2048078225905770_2696148637517611989_n.png?stp=dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ulOlN0anxh8Q7kNvwF1ORGy&_nc_oc=AdoOjPpTs_HKzdliciLdngXHM7iAAPdZzcNuHjTRX4JMy_mWbPpkxeUd_YvACySwVUI&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQJO0DtKYOHZxolhAy5n3M3Y3rw2mabHE9VBqbQnVgJYi0qOBOMFbXah1MymbGbiplr6nwYerKgq8Q&oh=00_AQLWqMOhoWnt6_6DzFJTcjdUTrTm-fiHehBIbch25HSjbw&oe=6AA6C98B",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/7715046095905177862?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQL4fsuXcJpRnMMYcbp_E3_RFl9-Qx76WGOCzIQcEo-b55DMoY_3GE8E3vQ76E9noKj1QzkguTUq7PMSGtHRGGjIKabJVDBKHOnrIHjQ4JSQy6JQdRBvNstnRAmIZZCUyBvJx9BdIlYjk5gz5e9IU-FC&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIAulNnk5T2CPC5AdKzGzLvtNwql7dpE1eS2313ZGLv22S8UAnlPjzjn_LNMGwu5BTyikMYY8Gg9Q&oh=06_Q3_DARyge1XyzIex68jJ3W5LVDeNpq_7Qj3jFQazADvI31Ct&oe=6AA2E37C",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Trött på snö, väta och grus i skorna? 🥾\n✅ Håller snön ute - hela vandringen\n✅ Stoppar regn och blöt terräng\n✅ Skyddar mot grus, lera och sten\n✅ På med dem på 10 sekunder\nKlicka och beställ dina idag 👇",
+          "headline": "Vandra torrt - oavsett väder",
+          "description": "Damasker som håller snö, väta & grus ute.",
+          "link": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 199.54,
+          "kop": 1,
+          "roas": 1.949484
+        },
+        "med": true
+      },
+      {
+        "id": "120250009505020291",
+        "namn": "Damasker_SP_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009401670291",
+          "namn": "Damasker Vandring | SP | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "38439872845626190",
+          "image_hash": "b9342a4e129c8624bcc776b0935141b5",
+          "image_url": null,
+          "video_id": "1075595921873311",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/788230808_1075595958539974_6423833207422177190_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=O3Zi72shu3UQ7kNvwHpJQvf&_nc_oc=AdpqgQr6Fqpk-VcXoWWhM4xtrBm2ExmzQls18JGs76cWVtZhcRaaLiK-bC8fArADr5Q&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQLty9phgJgjlBKkkm7cF88FRETX9mv9jtuAZ6RUr4aEu6VbpUkxGwLRz80MCI8DsMy0H2VGt3XFTw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKBX7hUDzrk3k5PtqsmceM0rliLn_1jQurrakSXBNrUKQ&oe=6AA6E752",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "\"Helt torra strumpor - även i regn och lera\" 🙌\n✅ Älskade av tusentals vandrare\n✅ Håller tätt hela dagen\n✅ Enkla att ta på och av\n✅ 30 dagars öppet köp\nSe varför kunderna inte kan sluta prata om dem 👇",
+          "headline": "Kunderna älskar torra fötter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 106.72,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250017817080291",
+        "namn": "Damasker_CS_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250017813210291",
+          "namn": "Damasker Vandring | CS | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1587236659693405",
+          "image_hash": "c5580e09d3551f34ddece6e362cb87b2",
+          "image_url": null,
+          "video_id": "1048830681224880",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/789505851_1048830707891544_1503500454246444855_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=xIcRxJLG5E0Q7kNvwFQPfw0&_nc_oc=AdqLrrU9C_9Z_4n9TOxVktuz4jOy9MNT1bYCSKKShHOD7d2o8uz-xJibIKbCAuEQtis&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQJZ-qVG_MvExPRF1nUZwgfVoLlSiA-dQttHFIGVmJed4r8S-IqEPsWVXbtYuV_4rM90ko4OyO709Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL6D3-bKJRjvLSYpgyheCch43epp7BDGe4R302X5kgWsA&oe=6AA6CF1E",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ BARA IDAG: 40% RABATT ⚡\nPriset gäller till midnatt - sen är det borta.\n✅ Snabb leverans\n✅ 30 dagars öppet köp\n✅ Lagret krymper - få kvar\nMissa inte chansen. Beställ nu innan det är slutsålt 👇",
+          "headline": "40% RABATT - Idag Endast",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 103.54,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250009504310291",
+        "namn": "Damasker_PD_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009398520291",
+          "namn": "Damasker Vandring | PD | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1619674386566313",
+          "image_hash": "aec622620dd9b25fd1de6778d36d8ac4",
+          "image_url": null,
+          "video_id": "1045696261699769",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/788728659_1045696301699765_3201267279345359427_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=ScMzcHLv9bcQ7kNvwGW5ZFr&_nc_oc=AdqeDMRqNtvC44Sl3MaYBUkPfQ_JxHTBUs-eWiXtT_iqDO61aMDjmscVcf12LvHJEdw&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQLlbbwU1rtxdk2_Bo_bgOAYbtPlgZt23bKMvdKVY3hh-G1mv1T2jg3-R2aHE7tzVcDRWPp0U-pNVg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQK3t0IEZ2jiE08HWpO-3OOz7SFsIIglGWTLuDfs9aCtvg&oe=6AA6B9B1",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Trött på snö, väta och grus i skorna? 🥾\n✅ Håller snön ute - hela vandringen\n✅ Stoppar regn och blöt terräng\n✅ Skyddar mot grus, lera och sten\n✅ På med dem på 10 sekunder\nKlicka och beställ dina idag 👇",
+          "headline": "Vandra torrt - oavsett väder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 64.72,
+          "kop": 1,
+          "roas": 6.010507
+        },
+        "med": true
+      },
+      {
+        "id": "120250009501060291",
+        "namn": "Damasker_G_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009397440291",
+          "namn": "Damasker Vandring | G | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2613717222377103",
+          "image_hash": "8dab0d4f2e54ccc2d250eb9c3cd9da8a",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/788060296_2048078185905774_2263133583761253080_n.png?stp=dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=U3kcQ4_H_e4Q7kNvwGhyloW&_nc_oc=AdqB2UCNntSEkEwA1DgVxBxuc-kkTebEZkW3wip_B8TlX5Aph3jPPWnTPwKBxh_tAIA&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQLWNEhCDSW1PCypJL-ebWNWJPp8gPlsflnYQYACsFiTo0bIBPXLt7qaUOJY4k-R0Rosu34yysVIEg&oh=00_AQIIYHikqMec0Xdj1eOlMop1HhdE6b3NAdzOLS65HeHrRg&oe=6AA6EECC",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/15149434249712088863?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLcOS69mPv0507u8lEPBot2jQrJxhnwKWFaRfW7PaFSIkYvh_gfmKy7JHD70i9tXfYkqeOcmxlfrolQkou9vrm2oKCxU29J2aZr265OoUWQKULUZUC4o_w6iQ19uujvYFe_oFOJTND6X_7K0AJl1_Rg&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKKTf6AOZdHgA0kpFdYMSL_-t_eoHI2igqHk-tlk5ILqR97rkWwIKwTzHsSEFgh87gWbUcTA7aQvw&oh=06_Q3_DAZmi3u08lzJMQbNX2NdluHCjQqmouhvAxj8AqiGVAQ6x&oe=6AA2EFA6",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Hittade äntligen den perfekta presenten till honom 🎁\nHan som alltid är ute - vandring, hund, skog, natur.\n✅ En present han faktiskt använder\n✅ Enkel, praktisk, uppskattad\n✅ Perfekt till jul, födelsedag eller bara \"en tanke\"\nSe hans min när han öppnar paketet 👇",
+          "headline": "Presenten han faktiskt använder",
+          "description": "Den perfekta gåvan till honom som älskar naturen.",
+          "link": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 27.71,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250135666540291",
+        "namn": "Damasker_FO_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250135663920291",
+          "namn": "FO | Notionrunda 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1611347683763742",
+          "image_hash": "9336e3371b28efc7fa5821f336669d53",
+          "image_url": null,
+          "video_id": "1411165407117812",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/799767404_1411165437117809_3314258319821454193_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=pb_VvJUP-cgQ7kNvwF4Sxvg&_nc_oc=Adqs85EDvSiHt2Domjf8SxTj4D0J7LcV94E4UnrIqNY5VlN2-rj5mCnnfEolNbCemIs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQKKHgArZ7Xrfr8f-wVF_Idjcq6jBhz99YRC4rcb5vADYa22Vsh1Ks4hJ8hBN_ERDyder6ILnCof2A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKxtX61uNZFp6Rpztc5NO2PnaUdlehhzbb5tDtm1QY2BA&oe=6AA6D515",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Snön är på väg — utan skydd blöts strumporna på minuter.\nTio sekunders montering stoppar snö, regn och grus.\n389 kr. Redo innan snön kommer.",
+          "headline": "Snön kommer. Tio sekunder skyddar.",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 20.02,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250116444830291",
+        "namn": "Damasker_SP_4_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009401670291",
+          "namn": "Damasker Vandring | SP | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1801695387642254",
+          "image_hash": "232acfa8e2209881295fda8f6501d810",
+          "image_url": null,
+          "video_id": "1368312592122589",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/798537681_1368312622122586_9001596949822118641_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=DncF6A4Yhf8Q7kNvwF0Yayg&_nc_oc=Adpj2XmMsK_xilpW7DA5tGhYyp70kv00yK6dieNG-EaypGFiiohULivMMcNYnnYL1lU&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQL4dTwYEsMVtQhLXD6YlgInlrBdZ87ulm1dF96sSZsy_7Fxjbj_XiuM3BY9mLxDs-N4K7OFTi1lcg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL4WNsJSBMC9EbAV1H-4Mpbu9SrQYGIWHDDfjWvsa2F5w&oe=6AA6DD85",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Tre veckors höstregn. Tre mil i lera varje tur.\n\nKrok i snörningen, rem under foten — satt still hela vandringen.\n\nVände upp skon efter tre mil. Strumpan helt torr, ingen fukt vid sömmen.",
+          "headline": "Tre mil regn. Strumpor torra.",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 17.54,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250009504870291",
+        "namn": "Damasker_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009401670291",
+          "namn": "Damasker Vandring | SP | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1719275096486787",
+          "image_hash": "b9342a4e129c8624bcc776b0935141b5",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/787996947_2048078259239100_3542677907017704002_n.png?stp=dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=QJz9gkGJ6fIQ7kNvwFI2Jn-&_nc_oc=AdokCaaSOlosSxq6HKOC5o1FbCvylJ12E8RCtNGvpt1zgoKp0n2VopO1toJOT3Yf89g&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQIT1qT0HDG1PZB_tRn42un2eFcNLffdNvpaesXaWRydxeSIBGuCRm3l3nUwumg91LzBXl_T9DWU0g&oh=00_AQIiR7oO4hnkFBeohMbcS-chzmdWgaJPvkmU7tpOclshsg&oe=6AA6CE18",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/706842777390014712?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJYI-bWEVR5mU8j-AjrsbrDxZi5Xfm0c4miybXkpWAHARBU4AXFkNMu55BOGMyUJL4f8r3C5EmOq-abOKsJSwi03g9Kk3PauSVSKN3jwXTpdne7CSlCSCbbICEwKgPJbgMdb6boo5rdHMkSgG83mbw6&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIbs9SjNeuglwQKpTuLVOwrUTErIWnj6utV5OcJR8dt47hZjCVdKZz1xIynTJUa6RiNt41Yb365zw&oh=06_Q3_DASxPsX1yiiYgDiOX_rcuCS2Cxo5ikfUMeEozO3VwRB3S&oe=6AA2E368",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "\"Helt torra strumpor - även i regn och lera\" 🙌\n✅ Älskade av tusentals vandrare\n✅ Håller tätt hela dagen\n✅ Enkla att ta på och av\n✅ 30 dagars öppet köp\nSe varför kunderna inte kan sluta prata om dem 👇",
+          "headline": "Kunderna älskar torra fötter",
+          "description": "Verifierade kunder - torra skor, varje gång.",
+          "link": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 10.48,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250017813990291",
+        "namn": "Damasker_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250017813210291",
+          "namn": "Damasker Vandring | CS | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1575478807643625",
+          "image_hash": "df667b119522ad7466cb573610abfdfe",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/789695331_2048778009169125_6055040085286707337_n.png?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=IEXYip-pv3QQ7kNvwEKofrI&_nc_oc=AdpQbYDV2XYcPxR6HgjBG9d5MHz_82RQBjsekMC2c19eE8Q5BS3HnV0dR0X_mXyXjCs&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQIQFpqZ5ZnSpJ_yxl8JOrWXVH9arkL8VSuM3Zu5mBZJ5QgnGxHeFCr-rsSPEryXlR5JqtRH_vl9PA&oh=00_AQIpYu7iS0p1cMuEJXFv_Ie2r3YBXGh0Kllju-Zmvnl9-g&oe=6AA6BEBF",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/1145019395983827240?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIZQVeNR0Ea0WdszBDoyqHTyhqYIXdLIQFEdFOijMGNiReqEgrBfuWcpRZB1LYS0GBFVMEU5w7NWzFbBBwuP2rT8KAcvOU0FubBGJhZfLXIVWdweycKoCULp1ROayKrB8dnL3ur59mqzIRzPbHzHq_W&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJmnzwpBgL_phFLGT8NPuQu6XjzxsBICgwekzikM3NNu7h0HMUvabCHBhmaCutBCn91PUlPZvvbhg&oh=06_Q3_DAV92__c9hcGEg_5lqRtKOUtrWt8EVjTY1x8o8tq-tdb6&oe=6AA2D9C7",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ BARA IDAG: 40% RABATT ⚡\nPriset gäller till midnatt - sen är det borta.\n✅ Snabb leverans\n✅ 30 dagars öppet köp\n✅ Lagret krymper - få kvar\nMissa inte chansen. Beställ nu innan det är slutsålt 👇",
+          "headline": "40% RABATT - Idag Endast",
+          "description": "Rean slutar snart - få kvar i lager.",
+          "link": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 8.93,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250017835050291",
+        "namn": "Damasker_CS_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250017813210291",
+          "namn": "Damasker Vandring | CS | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1096203819515505",
+          "image_hash": "0bfd0799170cdea8cda94da87cfb3c76",
+          "image_url": null,
+          "video_id": "1572277904358970",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/789633470_1572277977692296_7730169346096215562_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=G3qu7BsWViAQ7kNvwH6f051&_nc_oc=AdoCON8pKPrdB-UNngIJ2LkcRbUOrsvgPLTuiVQ9WG_5sWHstqe4ZsHcHlPuZI3UNhM&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQIxCMeumUKcEq3vDolLqGh2rterkZb7xpqcHaQtVhCKHAskhIc97QQDhCF1XCEgfpjWOSvwvMVL1g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQK9BU2xVZTKCCO-EkFFU-_udOmA54MTVImdpOO9RI6XQA&oe=6AA6E2FC",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ BARA IDAG: 40% RABATT ⚡\nPriset gäller till midnatt - sen är det borta.\n✅ Snabb leverans\n✅ 30 dagars öppet köp\n✅ Lagret krymper - få kvar\nMissa inte chansen. Beställ nu innan det är slutsålt 👇",
+          "headline": "40% RABATT - Idag Endast",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 8.56,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250009502970291",
+        "namn": "Damasker_G_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009397440291",
+          "namn": "Damasker Vandring | G | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "936706532195254",
+          "image_hash": "8dab0d4f2e54ccc2d250eb9c3cd9da8a",
+          "image_url": null,
+          "video_id": "1714225146453258",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/787872800_1714225173119922_1179832893795740767_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=T38UZdvNdagQ7kNvwH9EPwn&_nc_oc=AdrN0zHR7dJbyFhTcNRQZBBUEJhP2vEM9CRl_YAi0yRIjR6tzDpvj6ulCItcc_Y43q4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQJtMm10__NfPK6g9LsXvt0-lv17yMAGAEJ0LSDn_IFoKTLVUznLfca5SNeLnPmCTMh7VGkCk126PQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIh3Sh75oslBWXoy_C8Fth_I18qI3Tv1woBwqhU7QOrsQ&oe=6AA6EB13",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Hittade äntligen den perfekta presenten till honom 🎁\nHan som alltid är ute - vandring, hund, skog, natur.\n✅ En present han faktiskt använder\n✅ Enkel, praktisk, uppskattad\n✅ Perfekt till jul, födelsedag eller bara \"en tanke\"\nSe hans min när han öppnar paketet 👇",
+          "headline": "Presenten han faktiskt använder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.46,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250009502160291",
+        "namn": "Damasker_G_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009397440291",
+          "namn": "Damasker Vandring | G | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1059561433549095",
+          "image_hash": "8dab0d4f2e54ccc2d250eb9c3cd9da8a",
+          "image_url": null,
+          "video_id": "1060788953530082",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/787923504_1060788973530080_5586766350828762370_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=YjnmNSvdQT0Q7kNvwEk0qm6&_nc_oc=Adrc1WtkBywocPq7JtlSnMl-YbgZdqiYm6mC9p0q9Ne71-LLdfFQW_j75jOAPIJI3os&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQJSvTENxhZAkMNS14PlRJYqEy44UIfbj0d_-kfumduISvpAk9hAMR-SNybnOguhAuc6u93aR_yo9A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKdDHix2v-pDlSggTunWfWzHueYlmrX36OyyA8nz8hdlw&oe=6AA6E6D9",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Hittade äntligen den perfekta presenten till honom 🎁\nHan som alltid är ute - vandring, hund, skog, natur.\n✅ En present han faktiskt använder\n✅ Enkel, praktisk, uppskattad\n✅ Perfekt till jul, födelsedag eller bara \"en tanke\"\nSe hans min när han öppnar paketet 👇",
+          "headline": "Presenten han faktiskt använder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.07,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250009501540291",
+        "namn": "Damasker_G_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250009397440291",
+          "namn": "Damasker Vandring | G | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1041839161789125",
+          "image_hash": "8dab0d4f2e54ccc2d250eb9c3cd9da8a",
+          "image_url": null,
+          "video_id": "1373449854912055",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/786852260_1373449891578718_2598514342700734030_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=R9uTl7VgdTkQ7kNvwF1JUvu&_nc_oc=AdrtlAV_TqQhnUEVGYyacEJd9k6j9VYS_k3dxehXlkyl4S0I1RTpoQPjCOM30NXc8pk&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQK0XUQ2QV5QaMej17NGtoEbQlRrc9BCd8HAtGCGohcNSR-37WDFQXlai3z--P23kogebnomO92HzQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIIJL0nG91WP-1uFdpzJAlg89aoM1n2GQC9koaTemd5pw&oe=6AA6D235",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Hittade äntligen den perfekta presenten till honom 🎁\nHan som alltid är ute - vandring, hund, skog, natur.\n✅ En present han faktiskt använder\n✅ Enkel, praktisk, uppskattad\n✅ Perfekt till jul, födelsedag eller bara \"en tanke\"\nSe hans min när han öppnar paketet 👇",
+          "headline": "Presenten han faktiskt använder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.57,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250017823790291",
+        "namn": "Damasker_CS_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250017813210291",
+          "namn": "Damasker Vandring | CS | 2026-08-29",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250009391470291",
+          "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1986803472024308",
+          "image_hash": "72e15cb445a80124c3a72b15f784df10",
+          "image_url": null,
+          "video_id": "1103273095706815",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/791245650_1103273129040145_5059047130299149107_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=0wlw9Rsxdt8Q7kNvwFCnppG&_nc_oc=AdoxkBWG2OgzcCvOMAUbd1an_JD4TOweIeiO1kBrduFi9y_QQEwMy4QF5Vj7J82Ebis&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=_hjCZjYjwfa2xdW0H2CCVw&_nc_tpa=Q5bMBQKmQcV0llX1Du8bEO_pGiCTqvT2TB2eC-KHg1is7d1i8S77ar1FMZxVUL6JAGyaNECev6epbzgUkw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKEQGpP8DKVOX8KNON0DEWB2ZdEVZOMxqD9X1AzftLsLw&oe=6AA6DEBB",
+          "page_id": "678639638662543",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ BARA IDAG: 40% RABATT ⚡\nPriset gäller till midnatt - sen är det borta.\n✅ Snabb leverans\n✅ 30 dagars öppet köp\n✅ Lagret krymper - få kvar\nMissa inte chansen. Beställ nu innan det är slutsålt 👇",
+          "headline": "40% RABATT - Idag Endast",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.35,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  },
+  "NO": {
+    "konto": {
+      "id": "1050941584152547",
+      "namn": "Magiborsten NO",
+      "valuta": "NOK"
+    },
+    "annonser": [
+      {
+        "id": "120251999875430233",
+        "namn": "Gamasjer_NO_SP_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999874820233",
+          "namn": "Gamasjer NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1071599428929568",
+          "image_hash": "2dbc02cab9496708fe2aeaad4e201860",
+          "image_url": null,
+          "video_id": "1617260650022113",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/789032594_1617260690022109_4519288942539940150_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=CFQmnubhGrsQ7kNvwEpbavc&_nc_oc=AdqZHfG0_dQzb4_RJR_Fy85u_H6H1TyW60nSXXZ8cGLCXt1b5AWqsSx7H8c5HcZYMyI&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQJ8Ayu-3DHq8O5zwyhGRYOVBOXUaHUauV3ot1DEMeLeTRCYLuR-MZfj2y3ug7wueMbNNB3sdPg2Fw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLN4otPk0u5_QxyVHAHJp7FFjAFwRjHuOm2lEC1UoW-6A&oe=6AA6E352",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+          "headline": "Kundene elsker tørre føtter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1940.57,
+          "kop": 5,
+          "roas": 1.158118
+        },
+        "med": false
+      },
+      {
+        "id": "120251999952550233",
+        "namn": "Gamasjer_NO_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999873570233",
+          "namn": "Gamasjer NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "27771950739167773",
+          "image_hash": "c71c1407f38ddf3afad9adf5c5b01c11",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/789844731_2048781782502081_6754406964378971600_n.png?stp=dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=DJgtGTsFQPwQ7kNvwH-xiSm&_nc_oc=AdrrgFU7aYgOZQm9mFgE6PMTUlzX3WT3bapsklN6sz9Wn_Eec2ixqlMYaxjMLvoP0wk&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQKFwdKyTvw7aEw1zrhoezlMl7x73Ec6Ych0scu9mXiYGrIOGMpBUpHPCUsKHawd_OACVQPXYvcyZw&oh=00_AQKzZP1hvEpUKJ37fmPkeGIHB9ozdFHjWB0qm7zjfNmYlQ&oe=6AA6C8EE",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/14728477825988458358?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIaj15d9fphINxnEdB8XTTr9TzjmKwFtWnApszi_LDibRboFAu2fmovaPL1u47rC7VGqw7Vs_9d3owlEwNd-nRJ0iqBoBCv4Xb0_VXQWp3ZQLEQg_w0OUzZ_3zmFVqKBW9uvQEijeIz-TRfiVigMqFZ&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLImjUVbLIbLklkqpac6J57o3cnh_bolEpFOHAjllKHVdcAsuuSuBeZuwdcjtazSqFOkeLAW49HEQ&oh=06_Q3_DAT0QLSW9HtclxYVawWeQCqb7yUUoad43HZ6PVnukqRjb&oe=6AA2F563",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+          "headline": "Gå tørrskodd – uansett vær",
+          "description": "Gamasjer som holder snø, væte og grus ute.",
+          "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 135.37,
+          "kop": 1,
+          "roas": 2.341139
+        },
+        "med": false
+      },
+      {
+        "id": "120251999876910233",
+        "namn": "Gamasjer_NO_SP_3",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999874820233",
+          "namn": "Gamasjer NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1378344277130065",
+          "image_hash": "a6b886841a9dda1747e0cb0c78654a26",
+          "image_url": null,
+          "video_id": "1426539232698117",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/788230814_1426539269364780_4589549819857806185_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=XQrO5KfmC_sQ7kNvwEIjpZT&_nc_oc=Adq50oTgjkFEDX5GQurlsotg6_FjUmjJhTiToEALC3y5CCKy3AsSKvvbqjddaFiCvbs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQI0c9EiA4F5gTwseIkkmbcSd7Nkwjvsg7NDxMLIyfo0Kbng_dBoLRu75Bqw6DMvS6XOVgMOHjWPtw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL-eQH7QUKsUTMSV88xauCPaTZpZDW7VDES-t5OfCL61Q&oe=6AA6C0AF",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+          "headline": "Kundene elsker tørre føtter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 99.92,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999907150233",
+        "namn": "Gamasjer_NO_G_3",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999898020233",
+          "namn": "Gamasjer NO - G",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4092148134420461",
+          "image_hash": "d2e3b8ee456378d197f24afb12bd0a1e",
+          "image_url": null,
+          "video_id": "2044280472902759",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/790240039_2044280496236090_1341194314915813880_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=LC45f1Ka20IQ7kNvwFTgVxy&_nc_oc=AdoOjBtB63wvai6XzDP4xxSOzyWpBOEA_E-zb9pouRZhoGGBkwd-aNwESz2O7qQh8Hg&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQLBiNsKWS6KkVntNw2QLVRF0UjZhbRLvrtQJ6m3im7JHrlQJN65GmNGmicMaKTxJvrqg3GA-2-HfQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJQCYg2AAysCIXw47Jh1riaedKpLNadpAzEONth0dYFlQ&oe=6AA6D561",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+          "headline": "Gaven han faktisk bruker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 63.55,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999966480233",
+        "namn": "Gamasjer_NO_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999874820233",
+          "namn": "Gamasjer NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2162557501356899",
+          "image_hash": "01a0869914c4341ddf0074536b240f6a",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/789695299_2048784999168426_3600555075128528842_n.png?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=3JETD001ApcQ7kNvwHWu7z8&_nc_oc=Adq7MLDtYISRj3avQGc1hW4UaWRdWaVWN4dmFgh1lzcCtWzYnCiskf_eqWd9Qc0yYt4&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQKa6JBdp5SBXyUbXkhN_6jEs3scCLvICDEd4MNzQflzc9af675tl-BIcBTmNHrI7VtGMbf5Chhzzg&oh=00_AQLH6AktWCzKWjeb9eGaEXjK1VS9j9j_uiCGA8E29-a50g&oe=6AA6C0A3",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/1465310323033046443?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0j1aU87vaenGzJaDIfQdlqab-Brb-RLYYLKxyX7KQFbNiycpgtnl7KBSfGWQvt2-b902O0sxasYW90pRHhDlnDsImRdzYfjSFOGhNKq7LYYRCdnZNfzqrW2LPdgyQRlCDRssHDfkzhcwh6Ug8wnx_&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKdAZUOfHj2_7OVQZu9kF3gKJTx-78NVCYf5muAHj88X9dsgckCRV2iRmV2qLkCgkOm_3_Uc47_cQ&oh=06_Q3_DAUX7rI5AmHISI3j3oQnok8GrWT0KiSwnSmz_hXawd1vj&oe=6AA2F75A",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+          "headline": "Kundene elsker tørre føtter",
+          "description": "Bekreftede kunder – tørre sko, hver gang.",
+          "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 63.07,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999875810233",
+        "namn": "Gamasjer_NO_SP_2",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999874820233",
+          "namn": "Gamasjer NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "27765240256511929",
+          "image_hash": "b7ff4bc01adc446e925d96684cf29d1b",
+          "image_url": null,
+          "video_id": "1103333148819577",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/790547189_1103333162152909_8050181765330453485_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=9JucngsXVU8Q7kNvwEk9p_L&_nc_oc=AdoAeqjiX7TD66rSGkM2oVr2xeZXzDkFeToQJ-zMmDxur9bydnWD-63SMPmvziYciHE&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQL5LUpt65k8Pf_DJ9pdDvgfDB0YFu5iSV61mcu8QRw-hGcQ9i71o6BoRK4Q81ueM_JNnd8cL8VDHQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIuU5A5_oYEnDbm49lJrf9qqjZ5CVWBg7-goju1VxrgDQ&oe=6AA6E279",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+          "headline": "Kundene elsker tørre føtter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 50.78,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999874530233",
+        "namn": "Gamasjer_NO_PD_2",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999873570233",
+          "namn": "Gamasjer NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1405747121619386",
+          "image_hash": "2c6221de0fcd0035d3851a6b7d5e864c",
+          "image_url": null,
+          "video_id": "1426404916019293",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/789032593_1426404956019289_8205985449380170874_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=rl4dskrzZl4Q7kNvwHckflJ&_nc_oc=AdqDiL7B_zZVbXe0R8_HCIJoOvfRhgF-xybHnAdpEiDXu8NAESPSEZ82DnCUNWxorEY&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQIzb-bTgM1vY_AQsK5MB41iGeDZ0D_6yDqd97c1JDDftxK0ACkj9BkapjcrVR_hD-6taXZVGsCSWQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL3TuIGWdCcZldRhnAub1-YmvOpCoC2U5OPafrLKV3gyA&oe=6AA6E4FA",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+          "headline": "Gå tørrskodd – uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 33.92,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999874220233",
+        "namn": "Gamasjer_NO_PD_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999873570233",
+          "namn": "Gamasjer NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1705448944084611",
+          "image_hash": "a397772f8e4614b785b9ca0c7ee6a3ad",
+          "image_url": null,
+          "video_id": "2586569628455769",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/789843947_2586569658455766_8730071220222874723_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=RASwrWN8n4wQ7kNvwEsQtVt&_nc_oc=Adp5_L938eI70EfhEyWUi6ruIeA-yjADtL05YHHt4V9vYaCAz5Cy70f0KoftI76St0k&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQIP1lJ-vrdYPIAVttCYpNarK56OrnlZmaIHF6tFffKCAatbi_aOY9ajyGsPON-5fEcTul2Cm3g9iQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQI8GGV-2tyvS-02z8tastJLEmYmVjDhG5_rcJm0dDkaHw&oe=6AA6D0B6",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+          "headline": "Gå tørrskodd – uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 26.26,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999874630233",
+        "namn": "Gamasjer_NO_PD_3",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999873570233",
+          "namn": "Gamasjer NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1041764748631902",
+          "image_hash": "e1cf521b93f9e3ba1ea159a611a1f616",
+          "image_url": null,
+          "video_id": "28193008063643557",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/790113354_28193008310310199_8646624287561548032_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=S954Yn5JJ5IQ7kNvwEFV5Tb&_nc_oc=AdrWoIty6zMUeBqH7n-bCZ7Q8s6hrMUyKRtjKOhJGMXQijLToBHC6u4xGVebt5-slJ4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQLAVFBKm28UrTNnXW6svYaeSoTjtkflhOs-taQixN7W5lMAgeE_pcwxx9k8pQgM9jW7yC8F9ffBEA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLUqqqe7Wsl90gqH_OTWEXzKal47wVSSrZHBTxiIQ-Lvw&oe=6AA6C826",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+          "headline": "Gå tørrskodd – uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 20.04,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999897870233",
+        "namn": "Gamasjer_NO_CS_3",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999877170233",
+          "namn": "Gamasjer NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2374442649628810",
+          "image_hash": "6e20a57d0534a0daead4340e9b0cbadd",
+          "image_url": null,
+          "video_id": "1598692269063776",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/790240029_1598692285730441_5627905854750783743_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=hZvHYDHJxKoQ7kNvwGcNdeE&_nc_oc=AdqgVOYA_biGdEAycjp2HwAv-YBMlpJL4F5zThDkqskBqvB5vASaH7OA7t4Y0GOfK_4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQL6yZli5Zd3KjkHa_YtKMVgnqPBX5TrqQHt4e7px8jqIxDBqck9xo-0NtOfOTi3X7ERHBM6fTxguQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKHz_8zIqjxDRbzJR2UBQkY_eSTHsB3ymBAuHBaw65CUw&oe=6AA6DBF8",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+          "headline": "40 % rabatt – så lenge lageret rekker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 18.58,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999897610233",
+        "namn": "Gamasjer_NO_CS_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999877170233",
+          "namn": "Gamasjer NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1637305401294637",
+          "image_hash": "557668e78a59e2eeb32a54f8f650f140",
+          "image_url": null,
+          "video_id": "1335108258703659",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/788383804_1335108285370323_4549855738668517387_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=LvFygIgsO-YQ7kNvwGbuIcW&_nc_oc=AdrMQjU1xJccq2nAieAcckzYdShTlAQGk8ODjHm1kkfXmczd87G9sFao5uZp5Zz49d4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQL9Q53DWwGA3BxW7MtQ_03jAIkVoBaE1TsT_59GkAR9XV5BWzNYqNJJQZAHexx6YSViKR9nC3zZYA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIjky57DwJPXSadAf0CULGPNGTrc81rnexxOGVFfdEW-A&oe=6AA6CDC2",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+          "headline": "40 % rabatt – så lenge lageret rekker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.08,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999897730233",
+        "namn": "Gamasjer_NO_CS_2",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999877170233",
+          "namn": "Gamasjer NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4566722113647327",
+          "image_hash": "1665491aa03f32ee35f7eda95bea6e4a",
+          "image_url": null,
+          "video_id": "3149362785262591",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/788000495_3149362815262588_8111490263734200716_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=XX337HE79WMQ7kNvwF6DIA7&_nc_oc=AdoW9UKQ4uJjmM3eCNcVn9Axvw-w_MGJ1I12vh24PbIn5Oy6XFQAHBuH2j42Z1_rDko&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQLIvQ7cGp6voxAv7-PGqVh4TiZHqm6h_lYUgILydT86orACHj4qSJaOsgswZWzdJfQ3_0tAkgN9Qg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKaH0YPaElWdHEAqS8V2tMezteM_jJ2buNxw43jckC9NQ&oe=6AA6CD3E",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+          "headline": "40 % rabatt – så lenge lageret rekker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 5.04,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999974710233",
+        "namn": "Gamasjer_NO_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999877170233",
+          "namn": "Gamasjer NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2038973986738585",
+          "image_hash": "546f328a1282086037a67558d5834ba0",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/789694701_2048788805834712_8837739880594314030_n.png?stp=dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=3iCCmvCxy0MQ7kNvwE1WJrh&_nc_oc=AdrZfW8UXmLIqD9YBOI0ObU6nVLGri3Na6HuPw_-MIHQAQMQjs3gHiWvhdHz-5RYgbA&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQKr2AQv0jE24N129jkzVw_XyqMBaFLZ6Q15zG0bNribleSEF-wtOuLJOn2CaFh-Xh-ScaYDckPcaA&oh=00_AQJFysCbkBMiZDfuWqmDtzeoxOI3ab2oJrIG6Oi6JrGk7g&oe=6AA6C902",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/3857415129141645066?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQL97ue-zwUotVNd3nHMIgMszS6MGnzhCplCa-rsG_so6X8Y5_Y9Iwwl7JVxZad0Twb6HJsnLCEn14RnZBQRyVpCW84F0x8icS_BzUxQydgI32gHi5aalT-aJyPupEHBOiyTR6E8PAk11gzkr5YTmrI_&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJH5DO-OWp-afi1V8hHGt0Ni1I2tJDeV2-1oj4VzWQDCYkuGydlXKKXz211ocf-NYMu7sCR_2Wu6g&oh=06_Q3_DAY4CgJ0fDch43X1Y5kzSMC34UwRhzeQHwlRkIb1Pm3-T&oe=6AA2EFCC",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+          "headline": "40 % rabatt – så lenge lageret rekker",
+          "description": "Salget avsluttes snart – få igjen på lager.",
+          "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1.44,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999907120233",
+        "namn": "Gamasjer_NO_G_2",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999898020233",
+          "namn": "Gamasjer NO - G",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1483459763592351",
+          "image_hash": "f6a4dd8172d76158681895bd11d04883",
+          "image_url": null,
+          "video_id": "2919351515130189",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/788383818_2919351538463520_2694159178667015353_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=g995OaEhCbMQ7kNvwHM_CtU&_nc_oc=AdpKdSTzZz2p49p6mWWaXqvAc9GpBkxixDde4O2HjL0bfHANqI4wkfJ2Hh9gj0ESfmY&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQLOUK5LBtZ5zzo0fKELHMP08604FLWYMM7qQ5GpfvLqhMe1-jlxaEuau1WXO0N_ehp5zAd_2HiHfg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJIkRNnThe_jl-LMXYdkboPIIVlaUBkpPWjJXARL58-6A&oe=6AA6EE58",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+          "headline": "Gaven han faktisk bruker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.69,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999989150233",
+        "namn": "Gamasjer_NO_G_2_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999898020233",
+          "namn": "Gamasjer NO - G",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2062085051094791",
+          "image_hash": "b6ef432c4ef0d629a437ec2366d4992b",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/789844758_2048791519167774_3141679726025314249_n.png?stp=dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=xPv5kHLhIZ8Q7kNvwERYJ0o&_nc_oc=AdpKJN2nNs-QRFSoG26rktns4lKqYRxTxERMyWl_eP53HYdeosDEvyu9WNUOUJqXG2o&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQJENxzLPaIEH3mZmySqef4ITJTOeiwjTQPL1R97Bfb2viKk6vgy8N3v62juVh471R0uHbqsba584w&oh=00_AQLOkOioKMNIh7XYtgNJAlmcAiNcojmHximNsUrhklUGFQ&oe=6AA6EC0B",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/10628825660720941992?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKOa-puxYekOkp78xw_WAJ4PVySaIIy9eWu2mVwo1nPAQ2j4U0-7nzaChJHLbs8v6xTEO__Awho1gr24ZphAIXZVfH2F104DcPXyM-Fpyous7RI4B00cOWjREWAbY6_ybvTVoI_JaA2VZqtG19W_ysE&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJpo9iOJksm52vCckSHTmG4BikaqFUuj--ixQ8M-2LHVnkhV9cmFfU6FvFUchD-lQ0zwNzx_DDrTA&oh=06_Q3_DATZK5XKGhktBbchJiO_4br8-dON7TgpGCSkP6zPW4nfT&oe=6AA2DA67",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+          "headline": "Gaven han faktisk bruker",
+          "description": "Den perfekte gaven til ham som elsker naturen.",
+          "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.28,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999907070233",
+        "namn": "Gamasjer_NO_G_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999898020233",
+          "namn": "Gamasjer NO - G",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1544428710289645",
+          "image_hash": "20b0205318a445fa731d3a3368cf1504",
+          "image_url": null,
+          "video_id": "1405617958372164",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/789488907_1405617975038829_6908869782417272192_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=3oInm9kNm1IQ7kNvwHpTupO&_nc_oc=Adq1EIr-kHVP9Wb4nMVwMiJngFp6FsDSAtFlFLWfmSbiqSjw7XxLcj6kke9GPEzyNdk&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VT1prC7LsF8lfgBlGD0zrw&_nc_tpa=Q5bMBQJX9FhZCasYJ6ZFAMlzSVzRcaY_fJnCyZIxXq2NyILCpcFDzojM9-4Rmck-y4uCR2ZKieKzRotW9A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJGFk87U60JYlAzqUxGfQ2AQ7W-r7k9lCf76tVwm98vPg&oe=6AA6E658",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+          "headline": "Gaven han faktisk bruker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.23,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      }
+    ]
+  }
+}

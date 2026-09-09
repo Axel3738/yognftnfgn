@@ -1,0 +1,460 @@
+{
+  "input": {
+    "title": "Damasker Vandring – Håller Snö, Väta & Grus Ute",
+    "handle": "damasker",
+    "status": "DRAFT",
+    "descriptionHtml": "<p>44 cm skydd mellan känga och knä — snön, vätan och gruset stannar utanför</p>",
+    "vendor": "DryTrek",
+    "seo": {
+      "title": "Damasker Vandring – Håller Snö, Väta & Grus Ute – DryTrek",
+      "description": "Strumporna håller sig torra hela turen — inga blöta fötter vid kilometer fyra. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Variant",
+        "values": [
+          {
+            "name": "Neongrön"
+          },
+          {
+            "name": "Orange"
+          },
+          {
+            "name": "Gul"
+          },
+          {
+            "name": "Svart"
+          },
+          {
+            "name": "Grå"
+          },
+          {
+            "name": "Marinblå"
+          },
+          {
+            "name": "Blå"
+          },
+          {
+            "name": "Ljusblå"
+          },
+          {
+            "name": "Röd"
+          },
+          {
+            "name": "Lila"
+          },
+          {
+            "name": "Rosa"
+          },
+          {
+            "name": "Brun"
+          },
+          {
+            "name": "Vit"
+          },
+          {
+            "name": "Olivgrön"
+          },
+          {
+            "name": "Kamouflage Grön"
+          },
+          {
+            "name": "Kamouflage Svart"
+          },
+          {
+            "name": "Blå/Neongrön"
+          },
+          {
+            "name": "Cerise/Neongrön"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Neongrön"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-NG",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Orange"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-OR",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Gul"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-GU",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Svart"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-SV",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Grå"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-GR",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Marinblå"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-MB",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Blå"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-BL",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Ljusblå"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-LB",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Röd"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-RD",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Lila"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-LI",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Rosa"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-RA",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Brun"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-BR",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Vit"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-VI",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Olivgrön"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-OL",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Kamouflage Grön"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-KG",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Kamouflage Svart"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-KS",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Blå/Neongrön"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-BN",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Cerise/Neongrön"
+          }
+        ],
+        "price": "389.00",
+        "compareAtPrice": "649.00",
+        "sku": "TEMU-601101617191068-CN",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-08.jpg",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-09.jpg",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-benskydd-sv.jpg",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-spanne-benskydd-sv.jpg",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-karborre-benskydd-sv.jpg",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-SV.png",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-OL.jpg",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-KG.jpg",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-MB.png",
+        "contentType": "IMAGE",
+        "alt": "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Blöta strumpor avgör turen före trötta ben"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Snö nerifrån, blöt sly och grus som letar sig ner i kängan. Det är sällan vädret som avbryter turen — det är det som tar sig in nedtill. Två timmar in börjar strumpan suga, och resten av dagen går åt till att tänka på fötterna."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Damasker som stänger till mellan känga och knä"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Kroka fast i snörningen, dra remmen under foten och slut kardborren runt benet. 44 centimeter skydd i tätvävd polyester håller snö, väta och grus ute hela vägen upp. En storlek som justeras efter benet — de sitter kvar i steget, inte bara när du står still."
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Strumporna håller sig torra hela turen — inga blöta fötter vid kilometer fyra\",\"Inget grus i kängan, alltså inga stopp för att skaka ur skon\",\"Byxbenet håller sig torrt genom blöt sly och högt gräs\",\"Sitter kvar i steget tack vare krok, rem och kardborre — inte bara när du står still\",\"Syns i terrängen i neongrön, orange eller gul när ljuset går ner\",\"Passar de flesta vuxna direkt — en storlek som justeras efter benet\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"44 cm höjd — täcker hela vägen från känga till under knät\",\"43 cm omkrets, justerbar — en storlek som passar de flesta vuxna\",\"100 % polyester, tätvävd\",\"Krok som fäster i kängans snörning\",\"Justerbar rem under foten som håller damasken på plats\",\"Kardborrestängning längs hela utsidan — går på och av med kängan på\",\"18 färger, inklusive signalfärgerna neongrön, orange och gul\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-08.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\",\"Express inom Sverige: 99 kr, 1–2 arbetsdagar\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Passar de min kängstorlek?\",\"svar\":\"Ja. Damaskerna har en storlek med 43 cm omkrets och justeras med kardborre och remmen under foten, så de sitter på allt från lätta vandringskängor till grövre jaktkängor.\"},{\"fraga\":\"Går de att ta på med kängorna på?\",\"svar\":\"Ja. Kardborren löper längs hela utsidan, så du sveper dem runt benet utan att ta av skon.\"},{\"fraga\":\"Håller de för snö och inte bara regn?\",\"svar\":\"Ja. De är 44 cm höga och sluter tätt runt kängan, så snö som yr upp nerifrån stannar utanför.\"},{\"fraga\":\"Glider de inte ner när jag går?\",\"svar\":\"Nej. Kroken fäster i kängans snörning och remmen går under foten — det är de två sakerna som håller dem på plats i steget.\"},{\"fraga\":\"Kan jag tvätta dem?\",\"svar\":\"Skölj av lera och grus i kallt vatten och låt dem lufttorka. Materialet är 100 % polyester.\"},{\"fraga\":\"Levererar ni till Norge?\",\"svar\":\"Ja. Fri frakt till både Sverige och Norge.\"}]"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+# Butikskonfig för DryTrek — OPS-butik nr 3 (damasker/benskydd för vandring).
+# Byggd 2026-09-09 ur Bäverbutikens vinnare "Damasker Vandring".
+#
+# NAMNET: helt engelskt, läsbart och uttalbart för både svenskar och norrmän,
+# inga å/ä/ö (namnregeln, skärpt 2026-09-08). "Dry" + "trek" är låneord båda
+# marknaderna redan använder. Medvetet INTE ett tredje "-Guard" efter
+# HeimGuard och TankGuard — tre butiker med samma efterled går inte att skilja
+# åt i annonsflödet.
+# DOMÄNKOLL 2026-09-09 (RDAP via rdap.org — whois finns inte i containern;
+# kompletterad med DNS-uppslag, ingen A-post på någondera):
+#   drytrek.se  LEDIG    drytrek.no  LEDIG    drytrek.com  TAGEN
+# .com är tagen. Butiken kör .se som huvuddomän precis som heimguard.se och
+# tankguard.se, så det stoppar inte namnet.
+#
+# Bolaget är samma AB som driver Matstrumpor.se och HeimGuard.
+
+butik:
+  id: drytrek
+  brand: "DryTrek"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@drytrek.se"
+  land: SE
+  huvudmarknad: Sverige
+  # SE + NO är standard i varje OPS (Axels beslut 2026-09-08). Valutan står
+  # SEK tills NOK slås på i admin — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  valuta: SEK
+  moms_i_pris: true
+
+frakt:
+  fri_globalt: true
+  # Samma leverantörsled som källans övriga Temu-produkter.
+  leveranstid: "5–10 arbetsdagar"
+  express:
+    aktiv: true
+    namn: "Express inom Sverige"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  # Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08).
+  # ⚠️ KÄLLSIDAN lovar "30 dagars öppet köp" — det löftet följer INTE med hit.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när Judge.me-appen är installerad. Tokenen är PER BUTIK och
+  # ligger i env, aldrig i filen.
+  shop_domain: ""
+  token_env: "JUDGEME_DRYTREK_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — DryTreks egen identitet, byggd från noll för den här butiken
+# (Axels beslut 2026-09-05: strukturen återanvänds, brandingen aldrig).
+#
+# Analys bakom valen:
+#   Vem köper:      vandrare, jägare, hundägare och skogsfolk 30–65 i Sverige
+#                   och Norge. Praktiska. Äger redan kängorna. Köper det som
+#                   funkar, inte det som är snyggast.
+#   Problemet:      snö, väta och grus tar sig in nedtill och avbryter turen.
+#                   Det är inte vädret som vänder folk hem — det är blöta
+#                   strumpor efter två timmar.
+#   Emotionen:      lättnad, inte spänning. "Turen blir av hela vägen."
+#   Förväntat brand: nordiskt friluftsmärke — sakligt, slitstarkt, gjort av
+#                   folk som själva är ute. Inte modeoutdoor, inte teknik-hype.
+#   Känsla:         robust, jordnära, pålitlig, lugn.
+#
+# Paletten är tvådelad med flit: djup granmörk grön bär allt allvar, och EN
+# varm terrängorange är den enda färg som får ropa. Orangen är inte dekoration
+# — den är produktens egen signalfärg (gul/neongrön/orange säljs för att synas
+# i terrängen), så CTA:n bär samma löfte som produkten. Inget rea-rött,
+# ingen andra lekfull färg.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Nordiskt friluftsmärke för det som håller väta och grus ute — utrustningen som gör att turen blir av hela vägen"
+  tonalitet: "Jordnära, konkret och lugn. Korta meningar, terrängspråk, noll hype. Beskriver vad som händer på turen, inte hur grym produkten är."
+  kansla: "robust, jordnära, pålitlig, saklig"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F4F2EC"            # varm papperston — skog och kartpapper, aldrig kall grå
+    yta_djup: "#E8E4DA"
+    mork: "#14261E"           # granmörk — mörka sektioner, annonsrad, sidfot
+    text: "#15201B"
+    text_pa_mork: "#F2F0EA"
+    linje: "#DCD7CB"
+    linje_stark: "#BDB6A6"
+    accent: "#C25617"         # terrängorange — CTA, den enda färgen som ropar
+    accent_text: "#FFFFFF"
+    god: "#2E6B4A"            # skogsgrön bock — samma familj som mörka ytan
+    varning: "#8A5A00"
+  typografi:
+    rubriker: "archivo_n7"     # Archivo Bold — kompakt, sportig, robust utan att bli grov
+    brodtext: "dm_sans_n4"     # DM Sans Regular — hög läsbarhet i långa spec-listor
+  form:
+    knapp_radius: 8            # mjukt men aldrig pill — friluftsmärken är fyrkantiga
+    kort_radius: 12
+    input_radius: 8
+    badge_radius: 6
+  stil:
+    ikoner: "Linjeikoner, 2.0 i stroke, rundade ändar. Terrängsymboler före gränssnittssymboler: droppe, topp, känga, kardborre. Aldrig emojis."
+    bilder: "Riktiga foton i verklig terräng — blöt sly, snöskare, grusstig, våt granskog. Fötter och kängor i bild, sällan ansikten. Grått dagsljus, aldrig solig studiomiljö."
+    rubrikstil: "Kort påstående om vad kunden slipper, med eyebrow i versaler. Rubriken talar om turen, inte om plagget."
+    cta: "Solid terrängorange knapp med vit text. Verb + konkret: Köp nu, Håll fötterna torra. Aldrig SISTA CHANSEN."
+    trust: "Diskreta rader med skogsgrön bock på varm papperston — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt men inte glest — generösa sektionsavstånd, max 62 tecken per rad. Sidan ska kännas som en lugn genomgång."
+    logo: "Rund emblem, variant B (GODKÄND av Axel 2026-09-09): granmörk cirkel, tre ljusa toppar, en terrängorange linje under topparna — torrlinjen som vätan inte passerar — och ordmärket DRYTREK i versaler under, med OUTDOOR spärrat därunder. Fungerar i en färg."
+    favicon: "Samma granmörka cirkel med bara den orange torrlinjen under en ljus topp."

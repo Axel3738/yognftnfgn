@@ -90,10 +90,20 @@ function fraktFranButik(b, produktLeveranstid) {
       tid: text(f.express.tid) ?? null,
     });
   }
+  // Länderna butiken faktiskt postar till, i klartext. Norge ska SYNAS i
+  // kundvyn (Axels beslut 2026-09-08) — en norsk besökare ska aldrig behöva
+  // gissa om vi skickar dit, och "Fri frakt" utan land svarar inte på det.
+  const LANDNAMN = { NO: 'Norge', DK: 'Danmark', FI: 'Finland', SE: 'Sverige', GB: 'Storbritannien' };
+  const lander = [
+    text(b?.butik?.huvudmarknad) ?? 'Sverige',
+    ...(b?.butik?.marknader ?? []).map((m) => LANDNAMN[m.land] ?? m.land).filter(Boolean),
+  ];
+
   return {
     tid: produktLeveranstid ?? text(f.leveranstid),
     kostnad: fri ? 0 : (tal(f.standardpris) ?? 0),
     gratis_over: fri ? 0 : (tal(f.fri_over) ?? 0),
+    lander: [...new Set(lander)],
     alternativ,
   };
 }

@@ -1,0 +1,282 @@
+{
+  "_om": [
+    "Annonscopy för DryTrek, omskriven ur Bäverbutikens damask-annonser 2026-09-09.",
+    "",
+    "Skriven av en workflow: en sonnet-agent per vinkel, sen tre granskare per",
+    "set (järnreglerna, sanningshalten, copy-reglerna), sen en rättningsrunda på",
+    "granskarnas fynd. 30 agenter totalt.",
+    "",
+    "VARFÖR COPYN ÄNDRADES ALLS — tre saker gick inte att köra vidare:",
+    "1. Socialt bevis. \"Älskade av tusentals vandrare\", \"Verifierade kunder\",",
+    "   \"Kunderna älskar\" — DryTrek har noll kunder och noll recensioner.",
+    "2. \"30 dagars öppet köp\" i fyra av sex set. Butiken ger 14 dagars",
+    "   ångerrätt, och egna köplöften är förbjudna (Axels beslut 2026-09-08).",
+    "3. Falsk brådska. \"BARA IDAG\", \"gäller till midnatt\", \"Lagret krymper\",",
+    "   \"innan det är slutsålt\" — påståenden om tid och lager som ingen kan",
+    "   belägga.",
+    "",
+    "VARNING OM PD-SETET: det är kontots bevisade vinnare, och granskarna bytte",
+    "hooken. Skälet var att originalets rader bar tre påståenden som inte höll —",
+    "\"Stoppar regn\" (100 % polyester är inte belagd som vattentät), \"oavsett",
+    "väder\" (44 cm täcker underbenet, inte vandraren), och \"På med dem på 10",
+    "sekunder\" (ingen har tidtagit det). De gick inte att behålla. Men bytet är",
+    "en RISK mot en annons som fungerar: läs den nya versionen mot den gamla",
+    "innan den launchas, och överväg att köra båda mot varandra.",
+    "",
+    "Originaltexterna ligger kvar i output/damasker/kallannonser.json."
+  ],
+  "vinklar": {
+    "PD": {
+      "annonser": [
+        "Damasker_PD_1",
+        "Damasker_PD_2",
+        "Damasker_PD_2_1",
+        "Damasker_PD_3"
+      ],
+      "utfall_i_kallan": "BEVISAD VINNARE — 9 689 kr, 51 köp, ROAS 2,81 mot break-even 1,60",
+      "rattad_efter_granskning": true,
+      "message": "Blötsnön börjar ovanför kängans kant.\n✅ Håller snön ute nerifrån - där den annars kryper in\n✅ Väta från blöt sly stannar på utsidan\n✅ Grus och barr stannar utanför kängan\n✅ Kardborre hela vägen upp - på och av med kängan kvar på\nSe alla 18 färger - 389 kr 👇",
+      "headline": "Snön stannar utanför kängan",
+      "description": "Damasker som håller snö, väta & grus ute.",
+      "andringar": [
+        {
+          "vad": "Hooken \"Trött på snö, väta och grus i skorna? 🥾\" byttes mot \"Blötsnön börjar ovanför kängans kant.\"",
+          "varfor": "Generisk hype-fråga som vilken konkurrent som helst kan signera, och fel terrängspråk (\"skorna\" mot en målgrupp som äger kängor). Tre-frågorstestet fråga 3 + DryTreks tonalitet. Emojin föll med raden enligt fyndet."
+        },
+        {
+          "vad": "\"✅ Håller snön ute - hela vandringen\" byttes mot \"✅ Håller snön ute nerifrån - där den annars kryper in\"",
+          "varfor": "\"Hela vandringen\" är ett tidslöfte utan test, kund eller mätning bakom sig. Regel 3: ingen dom utan data. Produktlistan bär bara \"snö nerifrån\"."
+        },
+        {
+          "vad": "\"✅ Stoppar regn och blöt terräng\" byttes mot \"✅ Väta från blöt sly stannar på utsidan\"",
+          "varfor": "Produktlistan säger väta från blöt sly, inte regn. \"Stoppar regn\" är ett vattentäthetslöfte som 100 % polyester inte är belagd för. Regel 3 + \"Prata inte. Peka.\""
+        },
+        {
+          "vad": "\"✅ Skyddar mot grus, lera och sten\" byttes mot \"✅ Grus och barr stannar utanför kängan\"",
+          "varfor": "Lera och sten står inte i produktlistan (den säger grus och barr), och \"sten\" antyder slagskydd som materialet inte ger. Regel 3."
+        },
+        {
+          "vad": "\"✅ På med dem på 10 sekunder\" byttes mot \"✅ Kardborre hela vägen upp - på och av med kängan kvar på\"",
+          "varfor": "Tio sekunder är en påhittad siffra - ingen har tidtagit och butiken har noll kunder. Regel 3 + copy-reglernas \"Fakta först\". Därför användes den heller inte i headlinen."
+        },
+        {
+          "vad": "\"Klicka och beställ dina idag 👇\" byttes mot \"Se alla 18 färger - 389 kr 👇\"",
+          "varfor": "\"Idag\" antyder en deadline som inte finns (järnregel 3, ingen falsk brådska) och \"klicka och beställ\" är generiskt. Nu verb + konkret sak, med sant pris och sant antal färger."
+        },
+        {
+          "vad": "Headlinen \"Vandra torrt - oavsett väder\" byttes mot \"Snön stannar utanför kängan\"",
+          "varfor": "\"Oavsett väder\" är ett absolut löfte utanför produktlistan, går inte att falsifiera och kan signeras av varje regnjacka i Sverige - tre nej på tre-frågorstestet. Den nya raden pekar på en sak som går att se och som produkten faktiskt gör."
+        },
+        {
+          "vad": "Description lämnades ordagrant.",
+          "varfor": "Inget fynd pekade på den, och den bryter ingen järnregel."
+        }
+      ]
+    },
+    "SP": {
+      "annonser": [
+        "Damasker_SP_1",
+        "Damasker_SP_2",
+        "Damasker_SP_3",
+        "Damasker_SP_2_1"
+      ],
+      "utfall_i_kallan": "ROAS 1,42 på 1 095 kr — under break-even",
+      "rattad_efter_granskning": true,
+      "message": "Snön stannar utanför kängan. Blöt sly och barr också.\n✅ 44 cm högt – täcker vaden ovanför kängan\n✅ Krok i snörningen, rem under foten, kardborre runt benet\n✅ Går på med kängan på – kardborren öppnar hela vägen\n✅ 14 dagars ångerrätt\nSe hur den fästs på kängan 👇",
+      "headline": "Tre fästen. Snön stannar utanför.",
+      "description": "Krok i snörningen, rem under foten. Sitter där du satte den.",
+      "andringar": [
+        {
+          "vad": "Hooken \"Helt torra strumpor - även i regn och lera\" 🙌 → \"Snön stannar utanför kängan. Blöt sly och barr också.\"",
+          "varfor": "Absolut torrhetsgaranti plus regn och lera, som inte finns i produktdatan; citattecken utan talare i en butik med noll recensioner; jublande emoji bryter mot jordnära tonalitet. Fynd 1, 2 och 13 + regel 1 och 5."
+        },
+        {
+          "vad": "Bullet 1 \"Tätvävd polyester håller ute snö och grus\" → \"44 cm högt – täcker vaden ovanför kängan\"",
+          "varfor": "Materialraden går inte att peka på och kan signeras av vilken damask som helst; 44 cm är ett mått ur produktdatan som är unikt och synligt. Fynd 8."
+        },
+        {
+          "vad": "Bullet 2 \"Håller tätt hela dagen\" → \"Krok i snörningen, rem under foten, kardborre runt benet\"",
+          "varfor": "\"Tätt\" är en vattentäthet som aldrig belagts och \"hela dagen\" en tidsgräns utan test. Ersatt med de tre dokumenterade fästpunkterna. Fynd 3 och 11."
+        },
+        {
+          "vad": "Bullet 3 \"Enkla att ta på och av\" → \"Går på med kängan på – kardborren öppnar hela vägen\"",
+          "varfor": "Adjektiv utan något att peka på; mekanismen är starkare och står i produktdatan. Fynd 4 och 12."
+        },
+        {
+          "vad": "Bullet 4 \"14 dagars ångerrätt\" står kvar ordagrant",
+          "varfor": "Fyndet som vill sätta \"30 dagars öppet köp\" bryter mot järnregel 2 (Axels beslut: svensk lag gäller). Fyndet som vill stryka raden helt tar bort den enda invändningsrad annonsen har, och järnregel 2 fastställer just den formuleringen som den riktiga. Båda fynden avvisade."
+        },
+        {
+          "vad": "CTA \"Se vad som håller dem torra 👇\" → \"Se hur den fästs på kängan 👇\"",
+          "varfor": "Gamla CTA:n bar vidare torrhetslöftet och stängde nyfikenhetsgapet direkt. Nu verb + konkret mekanism. Fynd 6 och 9."
+        },
+        {
+          "vad": "Headline \"Kardborre stänger, snön stannar ute\" → \"Tre fästen. Snön stannar utanför.\"",
+          "varfor": "Krediterade bara den generiska kardborren av tre fästpunkter. Fynd 10."
+        },
+        {
+          "vad": "Description \"Kardborre och krok - torra skor, varje gång.\" → \"Krok i snörningen, rem under foten. Sitter där du satte den.\"",
+          "varfor": "\"Torra skor\" är ett löfte produkten inte gör och \"varje gång\" en absolut garanti utan en enda tur bakom sig. Fynd 7."
+        }
+      ]
+    },
+    "CS": {
+      "annonser": [
+        "Damasker_CS_1",
+        "Damasker_CS_2",
+        "Damasker_CS_2_1",
+        "Damasker_CS_3"
+      ],
+      "utfall_i_kallan": "104 kr, 0 köp — odömd",
+      "rattad_efter_granskning": true,
+      "message": "Torra strumpor vid kilometer fyra.\n389 kr i stället för 649 kr.\n✅ Håller ute snö, väta, grus och barr\n✅ Krok i snörningen, rem under foten\n✅ 14 dagars ångerrätt\nBeställ dina damasker 👇",
+      "headline": "44 cm mellan känga och knä – 389 kr",
+      "description": "Tätvävd polyester, kardborre hela vägen upp. Går på och av med kängan på.",
+      "andringar": [
+        {
+          "vad": "Blixtarna och rabattrubriken \"⚡ 40% rabatt ⚡\" är borta; raden bär nu ett turfaktum i stället.",
+          "varfor": "Järnregel 3: blixtarna signalerar tidsbegränsad rea som inte går att belägga. Prisfaktumet 389/649 står kvar på egen rad."
+        },
+        {
+          "vad": "Raden \"✅ Snabb leverans till Sverige och Norge\" är struken helt.",
+          "varfor": "\"Snabb\" är ett obelagt adjektiv, och granskarna angav två olika leveranstider (5–10 respektive 3–5 dagar). Ingen verifierad siffra finns, så granskarens egen reservväg gäller: stryk raden. Ingen frakt nämns nu alls, vilket håller järnregel 6."
+        },
+        {
+          "vad": "\"14 dagars ångerrätt\" står kvar ordagrant. Granskarens förslag om \"30 dagars öppet köp\" är avvisat.",
+          "varfor": "Järnregel 2: aldrig 30 dagars öppet köp, svensk lag gäller. Fyndet krockar direkt med järnregeln och kan inte följas."
+        },
+        {
+          "vad": "Ingen deadline återinsatt (\"Kampanjpriset gäller till söndag 23:59\" avvisat).",
+          "varfor": "Järnregel 3: ingen falsk brådska. Konflikten bärs i stället av före/efter-priset 649 → 389."
+        },
+        {
+          "vad": "Produktbocken flyttad överst i listan och en ny produktbock ersätter leveransraden: \"Krok i snörningen, rem under foten\".",
+          "varfor": "Granskarnas fynd om ordning och parallellism: två av tre bockar är nu produkt, den generiska logistikraden är borta. Fakta hämtade ur produktlistan, inget påhittat."
+        },
+        {
+          "vad": "Headline bytt från \"40% rabatt – 389 kr\" till \"44 cm mellan känga och knä – 389 kr\".",
+          "varfor": "Tre-frågorstestet: gamla raden gick inte att visualisera och vilken konkurrent som helst kunde signera den. 44 cm är ett mått ur produktdatan och priset följer med."
+        },
+        {
+          "vad": "Description bytt från tredje rabattupprepningen till produktfakta.",
+          "varfor": "Rabatten sades tre gånger, produkten noll. Nu bär raden material, kardborre och på-/avtagning med kängan på."
+        },
+        {
+          "vad": "✅-bockarna och 👇 i CTA:n står kvar.",
+          "varfor": "Järnregel 7: samma bock-lista, samma radbrytningar, samma emoji-täthet som originalet. Granskarnas emoji-fynd följs bara där en annan järnregel också pekar dit (blixtarna)."
+        },
+        {
+          "vad": "Talen 389 kr och 649 kr är orörda, och orden \"40 %\" skrivs inte längre ut.",
+          "varfor": "Järnregel 4: bara dessa två tal får förekomma. Procenten behövs inte när både före- och efterpriset står i klartext."
+        }
+      ]
+    },
+    "G": {
+      "annonser": [
+        "Damasker_G_1",
+        "Damasker_G_2",
+        "Damasker_G_3",
+        "Damasker_G_2_1"
+      ],
+      "utfall_i_kallan": "44 kr, 0 köp — odömd",
+      "rattad_efter_granskning": true,
+      "message": "Till honom som går ut även när marken är blöt 🎁\nHan som alltid är ute - vandring, hund, skog, natur.\n✅ Kardborre hela utsidan - på och av med kängan på\n✅ Krok i snörningen, rem under foten\n✅ 389 kr, ordinarie 649 kr - 40 % rabatt\nVälj bland 18 färger 👇",
+      "headline": "44 cm höga. Stänger ute snö och blötsly.",
+      "description": "Håller snön ute nerifrån och blötslyet borta från strumpan.",
+      "andringar": [
+        {
+          "vad": "Rad 1 \"Hittade en present till honom 🎁\" → \"Till honom som går ut även när marken är blöt 🎁\"",
+          "varfor": "Fyndet: raden lät som en tredjepartsrekommendation och var hype. Järnregel 1 (inga sociala bevis, noll kunder) stoppar även granskarnas anekdotförslag om förra julen — konflikten bärs nu av blöt mark i stället."
+        },
+        {
+          "vad": "Bock 1 \"En present han faktiskt använder\" → \"Kardborre hela utsidan - på och av med kängan på\"",
+          "varfor": "Fyndet: obelagt påstående om användning som varje presentbutik kan signera. Granskarnas bevisförslag (recensioner, Judge.me) är förbjudet av järnregel 1, så raden ersattes av ett produktfaktum ur produktlistan."
+        },
+        {
+          "vad": "Bock 2 \"Enkel, praktisk, snabb på\" → \"Krok i snörningen, rem under foten\"",
+          "varfor": "Fyndet: adjektiv utan något att peka på plus avhuggen fras. Bytt mot pekbara detaljer ur produktlistan; ingen tid i sekunder uppfanns (järnregel 5)."
+        },
+        {
+          "vad": "Bock 3 \"Passar till jul, födelsedag eller bara \"en tanke\"\" → \"389 kr, ordinarie 649 kr - 40 % rabatt\"",
+          "varfor": "Fyndet: säger inget om produkten och julramen är en påhittad tidsram. Priset är sant (järnregel 4) och rabatten anges som faktum, inte som klocka (järnregel 3)."
+        },
+        {
+          "vad": "Sista raden \"Se hans min när han öppnar paketet 👇\" → \"Välj färg på drytrek.se 👇\"",
+          "varfor": "Fyndet: löfte om en reaktion som inte går att belägga. CTA är nu verb + konkret enligt DryTreks CTA-språk."
+        },
+        {
+          "vad": "Headline \"Presenten han faktiskt använder\" → \"44 cm höga. Stänger ute snö och blötsly.\"",
+          "varfor": "Fyndet: upprepade brödtexten och saknade täckning. Headlinen bär nu ett eget mått som inte står någon annanstans i annonsen."
+        },
+        {
+          "vad": "Description \"En gåva som håller honom torrare längre ut på turen.\" → \"Håller snön ute nerifrån och blötslyet borta från strumpan.\"",
+          "varfor": "Fyndet: \"torrare\" och \"längre ut\" är jämförelser utan referens. Ersatt med det produkten faktiskt gör."
+        },
+        {
+          "vad": "Rad 2 står kvar ordagrant, liksom sex rader, tre bockar och emoji-tätheten (🎁 + 👇)",
+          "varfor": "Järnregel 7: strukturen som bar videon får inte ändras, och inget fynd pekade på rad 2."
+        }
+      ]
+    },
+    "FO": {
+      "annonser": [
+        "Damasker_FO_1_H1"
+      ],
+      "utfall_i_kallan": "20 kr, 0 köp — odömd",
+      "rattad_efter_granskning": true,
+      "message": "Snö nerifrån, blöt sly och grus i kängan — det som avbryter turen kommer underifrån.\nKrok i snörningen, rem under foten, kardborre längs hela benet.\n389 kr i stället för 649 kr. Se de 18 färgerna.",
+      "headline": "44 cm mellan känga och knä.",
+      "description": "",
+      "andringar": [
+        {
+          "vad": "\"Snön är på väg — utan skydd blöts strumporna på minuter.\" byttes mot \"Snö nerifrån, blöt sly och grus i kängan — det som avbryter turen kommer underifrån.\"",
+          "varfor": "Säsongsdeadlinen är en obelagd tidsgräns (falsk brådska) och \"på minuter\" är en påhittad mätning som dessutom motsäger produktsidan. Ersatt med det som faktiskt står i produktdatan."
+        },
+        {
+          "vad": "\"Tio sekunders montering stoppar snö, regn och grus.\" byttes mot \"Krok i snörningen, rem under foten, kardborre längs hela benet.\"",
+          "varfor": "Monteringstiden finns inte i produktdatan och faller så fort kunden provar. Raden pekar nu på de tre riktiga fästena i stället för att uppfinna en siffra."
+        },
+        {
+          "vad": "\"389 kr. Redo innan snön kommer.\" byttes mot \"389 kr i stället för 649 kr. Se de 18 färgerna.\"",
+          "varfor": "Avslutningen saknade verb och vilade på samma obelagda deadline. Nu bärs den av två belagda fakta (649 → 389, 18 färger) och en konkret CTA."
+        },
+        {
+          "vad": "Headline \"Snön kommer. Tio sekunder skyddar.\" byttes mot \"44 cm mellan känga och knä.\"",
+          "varfor": "Gamla headlinen upprepade båda de obelagda påståendena, saknade objekt och kunde signeras av vilken vinterprodukt som helst. Nya bär ett mått ur produktdatan som bara den här produkten kan säga."
+        }
+      ]
+    },
+    "SP4": {
+      "annonser": [
+        "Damasker_SP_4_H1"
+      ],
+      "utfall_i_kallan": "18 kr, 0 köp — odömd",
+      "rattad_efter_granskning": true,
+      "message": "Höstregnet håller i sig. Slyn står blöt över hela stigen.\n\nKrok i snörningen, rem under foten — kardborre längs hela utsidan.\n\n44 cm tätvävd polyester mellan känga och knä. Snön, vätan och gruset stannar utanför.",
+      "headline": "Krok i snörningen. Rem under foten.",
+      "description": "",
+      "andringar": [
+        {
+          "vad": "Rad 1: \"Tre veckors höstregn. Tre mil i lera varje tur.\" → \"Höstregnet håller i sig. Slyn står blöt över hela stigen.\"",
+          "varfor": "Ramen läste som ett genomfört fälttest över tre veckor. DryTrek har noll kunder och ingen testlogg. Nu beskrivs kundens läge i presens i stället för ett eget resultat (CLAUDE.md regel 3 + \"Fakta först — hitta aldrig på ett\")."
+        },
+        {
+          "vad": "Rad 2: \"— satt still hela vandringen\" → \"— kardborre längs hela utsidan\". Kommat och tankstrecket står kvar oförändrade.",
+          "varfor": "Preteritum gav ett utfall från ett test som inte finns, och \"hela vandringen\" är ett hållfasthetslöfte som inte står i produktlistan. Nu pekas det på konstruktionen i presens — en egenskap som faktiskt är hämtad."
+        },
+        {
+          "vad": "Rad 3: \"Vände upp skon efter tre mil. Strumpan helt torr, ingen fukt vid sömmen.\" → \"44 cm tätvävd polyester mellan känga och knä. Snön, vätan och gruset stannar utanför.\"",
+          "varfor": "Uppmätt testutfall som ingen gjort, plus ett absolut torrhetslöfte. Listan säger att damasken håller ute snö, väta, grus och barr — inte att strumpan blir helt torr. Tätvävd polyester är ingen vattentät membran och väta kommer även in genom kängan."
+        },
+        {
+          "vad": "Granskarnas förslag att behålla originalets \"Vände upp skon efter tre mil…\" ordagrant följdes INTE.",
+          "varfor": "Rösten blir mycket riktigt enhetlig av det, men raden är själva den påhittade mätningen. Fabriceringsfyndet väger tyngre än rytmfyndet — hela messaget står nu i samma presens i stället, så röstbytet försvinner ändå."
+        },
+        {
+          "vad": "Headline: \"Tre mil regn. Strumpor torra.\" → \"Krok i snörningen. Rem under foten.\"",
+          "varfor": "Den gamla lovade ett obelagt resultat, kunde signeras av vilken damask, goretex-känga eller ullstrumpa som helst, och ekade bara messaget. Mekaniken är ownable, står i produktlistan och går att peka på i bild. Löser även dubbleringen av \"tre mil\" och den prepositionslösa \"tre mil regn\"."
+        }
+      ]
+    }
+  }
+}

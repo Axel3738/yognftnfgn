@@ -69,6 +69,12 @@ export function byggFraktatgarder(befintliga, plan) {
       const traff = i !== -1 ? kvar.splice(i, 1)[0] : kvar.shift();
       if (!traff) {
         attSkapa.push({ zon: zon.zon, metod: onskad });
+      } else if (traff.villkorad) {
+        // En metod med villkor ("fri frakt över X") går inte att uppdatera via
+        // deliveryProfileUpdate — Shopify avvisar den. Riv och bygg om i
+        // stället, så zonen hamnar rätt oavsett hur butiken var förkonfad.
+        attTaBort.push({ zon: zon.zon, id: traff.id, namn: traff.namn });
+        attSkapa.push({ zon: zon.zon, metod: onskad });
       } else if (traff.namn !== onskad.namn || Number(traff.pris) !== onskad.pris) {
         attUppdatera.push({ zon: zon.zon, id: traff.id, rateId: traff.rateId, metod: onskad });
       }

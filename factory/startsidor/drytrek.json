@@ -1,0 +1,130 @@
+{
+  "_om": [
+    "Startsidans innehåll för DryTrek. Skrivet 2026-09-09 av en jury-workflow:",
+    "tre oberoende copysets med olika ingång, tre jurymedlemmar (copy-reglerna,",
+    "järnreglerna, målgruppen), syntes av vinnaren plus de bättre raderna ur",
+    "de andra. Norskan är egen text, inte översatt svenska.",
+    "",
+    "VARNING: produkten heter GAMASJER på norska, inte damasker — ordet betyder",
+    "något annat där. Källans egen NO-kampanj heter också \"Gamasjer NO\".",
+    "",
+    "Bilderna ligger i butikens filarkiv (factory/filer.mjs). Galleriets tre",
+    "bilder visar produktens tre fästpunkter — kardborren, remmen och måttet —",
+    "vilket är den bevisade vinkeln (Damasker_PD_1, ROAS 2,83 på 9 638 kr).",
+    "",
+    "Hero-raden sa först \"Fortfarande torr strumpa\". Den var DryTreks egen",
+    "copy om torra fötter, inte ärvd text — men ordet läses som källbutikens",
+    "och kostade en granskningsrunda. Nu står det fötter. Samma insikt,",
+    "ingen tvekan."
+  ],
+  "bilder": {
+    "hero": "shopify://shop_images/benskydd-benskydd-08.jpg",
+    "trygghet": "shopify://shop_images/benskydd-benskydd-09.jpg",
+    "galleri_1": "shopify://shop_images/klart-karborre-benskydd-sv.jpg",
+    "galleri_2": "shopify://shop_images/klart-spanne-benskydd-sv.jpg",
+    "galleri_3": "shopify://shop_images/klart-matt-benskydd-sv.jpg"
+  },
+  "farger": {
+    "accent": "#C25617",
+    "accent_text": "#FFFFFF"
+  },
+  "sv": {
+    "usp_items": [
+      "truck:Frakt till Sverige och Norge",
+      "refresh:14 dagars ångerrätt",
+      "check:På och av med kängan på",
+      "shield:Stoppar snö, grus och väta"
+    ],
+    "hero_heading": "Kilometer fyra. Fortfarande torra fötter.",
+    "hero_text": "Krok i snörningen, rem under foten, kardborre längs hela utsidan. Damaskerna sitter kvar hela turen – i snö, sly och grus.",
+    "hero_knapp": "Köp för 389 kr",
+    "marquee_items": [
+      "44 cm, känga till knä",
+      "18 färger, bl.a. neon",
+      "389 kr, ord. 649 kr",
+      "En storlek, justerbar"
+    ],
+    "produkt_etikett": "Vandringsdamask",
+    "berattelse_heading": "Det är aldrig vädret som vänder turen",
+    "berattelse_text": "<p>Snön smälter över kängkanten. Sly och grus river mot vaden. Vid nästa rast är foten kall och blöt.</p><p>Damaskerna tätar från känga till knä. Snö, väta, grus och barr stannar på utsidan, hela turen.</p>",
+    "statement_heading": "Det som ska hålla dig torr är 44 centimeter tätvävd polyester, inte tur.",
+    "statement_knapp": "Se alla 18 färger",
+    "trygghet_heading": "Frakt, betalning och retur",
+    "trygghet_text": "<p>Vi skickar till Sverige och Norge. Betala med Klarna, kort, Apple Pay eller Google Pay.</p><p>Ångrar du dig har du 14 dagars ångerrätt från att paketet kommer fram.</p>",
+    "galleri_titel": "På tur, oavsett terräng",
+    "galleri_1": "I nysnö på fjället",
+    "galleri_2": "Genom tät granskog",
+    "galleri_3": "På jakt i blöt sly",
+    "faq": [
+      {
+        "fraga": "Passar damaskerna min kängstorlek?",
+        "svar": "<p>Ja. En storlek, justerbar – 44 cm hög och 43 cm i omkrets, med rem under foten som spänns efter kängan.</p>"
+      },
+      {
+        "fraga": "Behöver jag ta av kängan för att sätta på dem?",
+        "svar": "<p>Nej. Kardborren löper längs hela utsidan, så du kan ta på och av damaskerna med kängan kvar på foten.</p>"
+      },
+      {
+        "fraga": "Vilka färger finns damaskerna i?",
+        "svar": "<p>18 färger, bland annat neongrönt, orange och gult för dig som vill synas i terrängen.</p>"
+      },
+      {
+        "fraga": "Skickar ni till Norge också?",
+        "svar": "<p>Ja, vi skickar till både Sverige och Norge.</p>"
+      }
+    ],
+    "garanti_titel": "14 dagars ångerrätt",
+    "garanti_text": "<p>Passar inte damaskerna som du tänkt dig? Skicka tillbaka inom 14 dagar och få pengarna åter, enligt svensk lag.</p>",
+    "faq_rubrik": "Vanliga frågor"
+  },
+  "nb_anmarkningar": "Avvik och varför:\n\n1. \"damasker\" → \"gamasjer\". Norskans ord för produkten är gamasjer; \"damasker\" betyder något annat på norska. Gäller alla slottar, inkl. produkt_etikett \"Turgamasje\" (turgamasje är det norska butiksordet, \"vandringsdamask\" existerar inte).\n\n2. statement_heading: svenskans ordlek på \"tur\" (= lycka) finns inte på norska, där \"tur\" bara betyder utflykt. Bytt till \"ikke flaks\" så kontrasten mot materialet står kvar. Raden är 76 tecken, exakt taket.\n\n3. Frakten: alla fraktrader säger nu \"Gratis frakt i hele Norge\" (usp, trygghet, FAQ 4). Sverige nämns inte alls — norska kunden ska se sitt eget land. FAQ 4 bytte därför fråga från \"Skickar ni till Norge också?\" till \"Sender dere i hele Norge?\", som är den fråga en norsk köpare faktiskt har.\n\n4. garanti_text hänvisar till norsk angrerettlov i stället för svensk lag. 14 dagar står kvar — samma rätt, rätt lagland. Ingen egen köplöftesformulering.\n\n5. Terrängorden är norska, inte översatt svenska: snøringen, stropp, borrelås, kratt (sly), søle, leggen, barnåler, støvel, fjellet.\n\n6. marquee: \"ord. 649 kr\" → \"før 649 kr\", som är det norska butiksuttrycket. Priset står kvar 389 kr / 649 kr, inga andra tal.\n\n7. galleri_2 kortades till \"I tett granskog\" — \"Gjennom tett granskog\" blev 21 tecken mot taket 20.\n\n8. Ikonnamnen är oförändrade (truck, refresh, check, shield). Inga recensioner, inga nya mått, material eller certifikat någonstans.",
+  "nb_ratext": {
+    "usp_items": [
+      "truck:Gratis frakt i hele Norge",
+      "refresh:14 dagers angrerett",
+      "check:På og av med støvelen på",
+      "shield:Stopper snø, grus og søle"
+    ],
+    "hero_heading": "Kilometer fire. Fortsatt tørre føtter.",
+    "hero_text": "Krok i snøringen, stropp under foten, borrelås langs hele utsiden. Gamasjene sitter der hele turen – i snø, kratt og grus.",
+    "hero_knapp": "Kjøp for 389 kr",
+    "marquee_items": [
+      "44 cm, støvel til kne",
+      "18 farger, bl.a. neon",
+      "389 kr, før 649 kr",
+      "Én størrelse, justerbar"
+    ],
+    "produkt_etikett": "Turgamasje",
+    "berattelse_heading": "Det er aldri været som snur turen",
+    "berattelse_text": "<p>Snøen smelter over støvelkanten. Kratt og grus river mot leggen. Ved neste pause er foten kald og våt.</p><p>Gamasjene tetter fra støvel til kne. Snø, søle, grus og barnåler blir på utsiden, hele turen.</p>",
+    "statement_heading": "Det som skal holde deg tørr er 44 centimeter tettvevd polyester, ikke flaks.",
+    "statement_knapp": "Se alle 18 fargene",
+    "trygghet_heading": "Frakt, betaling og retur",
+    "trygghet_text": "<p>Vi sender gratis i hele Norge. Betal med Klarna, kort, Apple Pay eller Google Pay.</p><p>Angrer du, har du 14 dagers angrerett fra pakken kommer fram.</p>",
+    "galleri_titel": "På tur, uansett terreng",
+    "galleri_1": "I nysnø på fjellet",
+    "galleri_2": "I tett granskog",
+    "galleri_3": "På jakt i vått kratt",
+    "faq": [
+      {
+        "fraga": "Passer gamasjene støvelstørrelsen min?",
+        "svar": "<p>Ja. Én størrelse, justerbar – 44 cm høy og 43 cm i omkrets, med stropp under foten som strammes etter støvelen.</p>"
+      },
+      {
+        "fraga": "Må jeg ta av støvelen for å få dem på?",
+        "svar": "<p>Nei. Borrelåsen går langs hele utsiden, så du kan ta gamasjene på og av med støvelen på foten.</p>"
+      },
+      {
+        "fraga": "Hvilke farger kommer gamasjene i?",
+        "svar": "<p>18 farger, blant annet neongrønt, oransje og gult for deg som vil synes i terrenget.</p>"
+      },
+      {
+        "fraga": "Sender dere i hele Norge?",
+        "svar": "<p>Ja. Vi sender gratis i hele Norge.</p>"
+      }
+    ],
+    "garanti_titel": "14 dagers angrerett",
+    "garanti_text": "<p>Passer ikke gamasjene som du tenkte? Send dem tilbake innen 14 dager og få pengene igjen, etter norsk angrerettlov.</p>",
+    "faq_rubrik": "Vanlige spørsmål"
+  }
+}

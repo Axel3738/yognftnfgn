@@ -1,0 +1,82 @@
+{
+  "Damasker_PD_1": {
+    "typ": "video_id",
+    "id": "1713226799790293",
+    "namn": "DRYTREK_Damasker_PD_1"
+  },
+  "Damasker_SP_2": {
+    "typ": "video_id",
+    "id": "952459583887236",
+    "namn": "DRYTREK_Damasker_SP_2"
+  },
+  "Damasker_PD_2": {
+    "typ": "video_id",
+    "id": "1015916738160581",
+    "namn": "DRYTREK_Damasker_PD_2"
+  },
+  "Damasker_SP_3": {
+    "typ": "video_id",
+    "id": "1632354241742016",
+    "namn": "DRYTREK_Damasker_SP_3"
+  },
+  "Damasker_PD_2_1": {
+    "typ": "image_hash",
+    "id": "7e82097a3c698f197a2b35297e2cc8ec",
+    "namn": "DRYTREK_Damasker_PD_2_1"
+  },
+  "Damasker_SP_1": {
+    "typ": "video_id",
+    "id": "1498025972367170",
+    "namn": "DRYTREK_Damasker_SP_1"
+  },
+  "Damasker_CS_1": {
+    "typ": "video_id",
+    "id": "1958954268394280",
+    "namn": "DRYTREK_Damasker_CS_1"
+  },
+  "Damasker_PD_3": {
+    "typ": "video_id",
+    "id": "1092312823712526",
+    "namn": "DRYTREK_Damasker_PD_3"
+  },
+  "Damasker_G_2_1": {
+    "typ": "image_hash",
+    "id": "16dc8791b1efab5577e836a30724c7d0",
+    "namn": "DRYTREK_Damasker_G_2_1"
+  },
+  "Damasker_SP_2_1": {
+    "typ": "image_hash",
+    "id": "5129c320d02daa37a7ca844be2308896",
+    "namn": "DRYTREK_Damasker_SP_2_1"
+  },
+  "Damasker_CS_2_1": {
+    "typ": "image_hash",
+    "id": "aae6f3ff52301a24ab15fffaf14bfd09",
+    "namn": "DRYTREK_Damasker_CS_2_1"
+  },
+  "Damasker_CS_3": {
+    "typ": "video_id",
+    "id": "1311913180869195",
+    "namn": "DRYTREK_Damasker_CS_3"
+  },
+  "Damasker_G_3": {
+    "typ": "video_id",
+    "id": "4482921255300836",
+    "namn": "DRYTREK_Damasker_G_3"
+  },
+  "Damasker_G_2": {
+    "typ": "video_id",
+    "id": "1707146173693119",
+    "namn": "DRYTREK_Damasker_G_2"
+  },
+  "Damasker_G_1": {
+    "typ": "video_id",
+    "id": "1392012949810471",
+    "namn": "DRYTREK_Damasker_G_1"
+  },
+  "Damasker_CS_2": {
+    "typ": "video_id",
+    "id": "28346251951662635",
+    "namn": "DRYTREK_Damasker_CS_2"
+  }
+}

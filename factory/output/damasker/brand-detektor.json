@@ -1,0 +1,852 @@
+{
+ "produkt": "damasker",
+ "datum": "2026-09-09",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16454828720477",
+  "produkt_handle": "damasker-vandring-haller-sno-vata-grus-ute",
+  "produkt_url": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": "Damasker",
+  "kampanj_id": "120250009391470291",
+  "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+  "srt_slug": [
+   "damask",
+   "damasker"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Damasker_CS_1",
+   "id": "120250017817080291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | CS | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_CS_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 55
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_CS_2",
+   "id": "120250017823790291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | CS | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_CS_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 57
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_CS_2_1",
+   "id": "120250017813990291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | CS | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_CS_3",
+   "id": "120250017835050291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | CS | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_CS_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 56
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_FO_1_H1",
+   "id": "120250135666540291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "FO | Notionrunda 2026-09-08",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 52
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "389 kr"
+     ]
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)"
+   ]
+  },
+  {
+   "annons": "Damasker_G_1",
+   "id": "120250009501540291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | G | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_G_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 68
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_G_2",
+   "id": "120250009502160291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | G | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_G_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 68
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_G_2_1",
+   "id": "120250009501060291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | G | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_G_3",
+   "id": "120250009502970291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | G | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_G_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 75
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_PD_1",
+   "id": "120250009503590291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | PD | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_PD_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 102
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_PD_2",
+   "id": "120250009503920291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | PD | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_PD_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 103
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_PD_2_1",
+   "id": "120250009503290291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | PD | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_PD_3",
+   "id": "120250009504310291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | PD | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_PD_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 107
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_SP_1",
+   "id": "120250009505020291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | SP | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_SP_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 86
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_SP_2",
+   "id": "120250009505320291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | SP | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_SP_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 87
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_SP_2_1",
+   "id": "120250009504870291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | SP | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_SP_3",
+   "id": "120250009509220291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | SP | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_SP_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 92
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp"
+     ]
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Damasker_SP_4_H1",
+   "id": "120250116444830291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Damasker Vandring | SP | 2026-08-29",
+   "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 45
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    }
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)"
+   ]
+  }
+ ]
+}
