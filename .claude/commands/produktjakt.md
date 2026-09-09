@@ -51,6 +51,25 @@ Skriptet kan bara räkna. Du ska läsa. Gå igenom `fynd.json` och **stryk** var
   Axel såg det direkt. Gårdagens jakt låg dessutom i `docs/temu-jakt-v2/jakt/v24/` och hade aldrig
   matats in i `sedda.json`.)* Hittar du en upprepning: stryk den och lägg gårdagens id i `sedda.json`.
 
+### 2b. Mekanismgrinden — den som avgör
+
+Ekonomin säger bara att marginalen finns. **Mekanismen avgör om varan är värd att testa.**
+*(Axels besked 2026-09-09: leta gemensamma variabler i mekanik och funktion, inte i nisch.
+Att en vara sålt bra betyder inte att dess nisch är öppen.)*
+
+Kör varje kvarvarande kandidat genom `produktjakt/MEKANISM.md` — åtta viktade ja/nej-frågor
+framtagna ur kontots egna vinnare, max 21 poäng. Bedömningen görs **mot produktbilden**:
+hämta bilden och titta på den. AliExpress produktsidor svarar med tomt skal i containern
+(mätt 2026-09-09, gäller `ali.py`, egen hämtning och `WebFetch`), så titeln räcker inte.
+
+- 15–21 poäng: offerera.
+- 11–14: bara om både ägarfrågan och hyllfrånvaron är ja.
+- 0–10: hoppa.
+- Priset utanför 300–1 000 kr diskvalificerar ensamt.
+
+Sök också varan hos Biltema, Jula, Clas Ohlson och Rusta. Säljer de samma form i samma
+prisläge utan att vi har ett synligt märkesankare är det en kedjevara, oavsett poäng.
+
 Skriv en rad per struken produkt i körningens `STATUS.md` med orsaken. Det är kvittot.
 
 ### 3. Bygg offertarket

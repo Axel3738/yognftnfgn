@@ -98,3 +98,30 @@ hylla, och då kommer samma vara tillbaka från en ny säljare med nytt `product
 Därför har `hitta.py` nu en **karantän på 14 dagar per sökord**
 (`anvanda-sokord.json`, konstanten `KARANTAN_DAGAR`). Dagens 28 använda ord är
 inlagda, så nästa körning tvingas till hyllor vi inte varit på.
+
+
+## Mekanismgranskning av 12 nya kandidater (2026-09-09)
+
+Nya sökord gav 12 kandidater som klarade ekonomin. Alla tolv kördes genom mekanismmallen
+(`produktjakt/MEKANISM.md`) med bilden framför sig. **Noll gick igenom.**
+
+| Poäng | Produkt | Mekanism | Kedjans variant |
+|---|---|---|---|
+| 12 | Viltpåsar 6-pack, andningsbara köttpåsar för | Ingen — det är en vanlig viltsäck/köttpåse. Bilden visar andningsbar vit bomulls-/gasväv | Biltema: "Viltsäck 75x50 cm" ca 199 kr — grönt andningsbart tyg, snörning i öppningen, f |
+| 11 | Stuprörsförlängaren (utdragbar avledningssla | Dragspelsveckad plastvägg som gör att röret kan dras ut från ca 60 cm till ca 240 cm och | Jula: Avledningsslang Raindrain Flex-Drain FXD8, 60–240 cm, 399 kr (ett prisflöde anger  |
+| 11 | Flexibel stuprörsförlängare i brun PE (drags | Dragspelsveckat PE-rör med två släta muffändar: det dras ut i längd, böjs i valfri vinke | Jula säljer exakt samma form: "Avledningsslang 60–240 cm, Raindrain Flex-Drain FXD8" för |
+| 11 | Vilthängpåse i bomull med dragsko (2 storlek | Ingen — det är en vanlig andningsbar tygpåse med dragsko för hängande viltkött. Bilden v | Biltema säljer exakt samma form: "Viltsäck, 75 x 50 cm" (luftgenomsläppligt tyg som håll |
+| 8 | Däcköverdrag för husbil, 4-pack | Ingen — det är ett vanligt däcköverdrag i tunn polyester/PU med resårkant. Silverpanelen | Biltema säljer samma form i minst fyra SKU:er: "Däckskydd, 4 st." (2000035014), "Däcksky |
+| 6 | Solcells-vägnagel i gjuten aluminium (uppfar | Ingen — det är en vanlig solcells-vägnagel. Kroppen är gjuten aluminium som tål att köra | Biltema, Jula, Clas Ohlson och Rusta säljer inte just den här formen — deras solcellsmar |
+| 6 | Motorstötta för utombordare (reservstötta ti | Ingen — det är ett vanligt aluminiumrör med gummiändar. Bilden visar en slät silverfärga | Hittar ingen i Biltema, Jula, Clas Ohlson eller Rusta. Biltema har motorfäste (aktertavl |
+| 6 | Regnkupa / ekorrbaffel för hängande fågelmat | Ingen — det är en vanlig regnkupa (weather dome / ekorrbaffel) till en hängande fågelmat | Ingen exakt träff hos Biltema, Jula, Clas Ohlson eller Rusta — de fyra säljer fågelmatar |
+| 6 | Parasollfodral / förvaringsväska för parasol | ingen — det är en vanlig avlång tygväska med dragkedja. Bilden visar en tom svart väska  | Jula säljer minst tre modeller "Skyddsöverdrag till parasoll" (EKVIP 28-41x198 cm, Axley |
+| 6 | Ersättningsduk till parasoll (6 eller 8 sprö | ingen — det är en vanlig parasollduk i polyester. Bilden visar bara en topp som träs öve | Kedjorna säljer inte lös ersättningsduk — de säljer parasollÖVERDRAG (förvaringshylsa),  |
+| 3 | Självvärmande husdjursmatta | Ett reflekterande innerskikt (metalliserad folie) som kastar tillbaka djurets egen kropp | Rusta säljer djurbäddar och hundbäddar i samma form för 119–649 kr (Djurbädd Cozy Round  |
+| 3 | Hjulöverdrag husbil 4-pack (27–32 tum) | Ingen — det är ett vanligt hjulöverdrag. Bilden visar tunn polyester/oxfordduk, svart ut | Finns hos flera kedjor i exakt samma form. Biltema: "Däckskydd, 4 st" (dragsko + bärhand |
+
+Mönstret är entydigt: sökorden hittar **kedjevaror**. Jula och Biltema säljer samma form,
+ofta till samma pris, och ingen av de tolv har ett fästdon eller en konstruktion som gör
+den annorlunda. Att leta fler sökord i samma stil ger fler sådana här. Nästa steg är att
+söka på **mekanismen** — formuleringar som beskriver hur varan sitter fast eller vad den
+gör — i stället för på objektets namn.
