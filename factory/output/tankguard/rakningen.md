@@ -129,7 +129,7 @@ i bilden. De svenska gör det inte — den norska lokaliseringen lade till domä
 Axel lyssnade 2026-09-09 på de elva svenska omdubbade videorna:
 **"Alla okej. Men inget super — bra, men helt okej liksom."** Godkända.
 
-⚠️ **Sex omdubbade filer är INTE avlyssnade ännu:** `SP_3_H1`, `CS_4_H1` och de
+⚠️ **Sjutton omdubbade filer är INTE avlyssnade ännu — sex svenska och elva norska:** `SP_3_H1`, `CS_4_H1` och de
 fyra omrenderade `GT_1_H2`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`. De elva norska är
 heller inte avlyssnade. En molnsession kan inte lyssna. De ligger PAUSED.
 

@@ -14,7 +14,7 @@ Konto: MagiBorsten DK `915422744950975`. Sida `1399193996606775`, pixel
 
 ## Vad som återstår innan något går ACTIVE
 
-1. **Sexton omdubbade videor är inte avlyssnade.** Rösten går inte att välja i
+1. **Sjutton omdubbade videor är inte avlyssnade.** Rösten går inte att välja i
    HeyGen, så en dålig röst kan bara fångas med örat (CLAUDE.md järnregel 3).
    - Svenska: `SP_3_H1`, `CS_4_H1`, `GT_1_H2`, `SP_1_H1`, `SP_1_H2`, `SP_1_H3`
    - Norska: alla elva omdubbade

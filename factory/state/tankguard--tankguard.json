@@ -334,7 +334,7 @@
   "sidroll": "Last 2026-09-09: Axel gav full tillgang till TankGuard-sidan. Alla tio annonserna gick igenom direkt. Rotorsaken var att sidan lag i businessens client_pages men saknades helt i me/accounts — HeimGuard ligger i owned_pages och fungerade darfor."
  },
  "blockerare": {
-  "rostkontroll": "Sex svenska (SP_3_H1, CS_4_H1, GT_1_H2, SP_1_H1, SP_1_H2, SP_1_H3) och alla elva norska omdubbade är INTE avlyssnade. En molnsession kan inte lyssna. Järnregel 3 gäller: de går inte ACTIVE förrän någon hört hook, mitt och slut.",
+  "rostkontroll": "Sjutton omdubbade är inte avlyssnade: sex svenska (SP_3_H1, CS_4_H1, GT_1_H2, SP_1_H1, SP_1_H2, SP_1_H3) och alla elva norska omdubbade är INTE avlyssnade. En molnsession kan inte lyssna. Järnregel 3 gäller: de går inte ACTIVE förrän någon hört hook, mitt och slut.",
   "pd_extra": "IBC_PD_Extra ligger uppe utan dom — talet gick aldrig att läsa. PAUSED, annons 120249008687250172."
  }
 }

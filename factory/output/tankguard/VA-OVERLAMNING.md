@@ -38,7 +38,7 @@ are almost identical; the accounts are different businesses. Check the ID.
 
 ## What is NOT done, and must not be skipped
 
-**Sixteen re-dubbed videos have not been listened to.** The voice is cloned
+**Seventeen re-dubbed videos have not been listened to.** The voice is cloned
 from the source video and cannot be chosen, so a bad voice can only be caught
 by ear. These must be heard — hook, middle and end — before they go live:
 
@@ -58,6 +58,6 @@ price set, and inventing one is not allowed. The price is on the `/nb` page.
 ## Setting it live
 
 **You set the campaign ACTIVE when your review is green** — and only after the
-sixteen videos above have been heard. If anything on the list fails, report it
+seventeen videos above have been heard. If anything on the list fails, report it
 instead of fixing it in Ads Manager: the fix belongs in the build, so the next
 store inherits it.
