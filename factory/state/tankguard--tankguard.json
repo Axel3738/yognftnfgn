@@ -102,7 +102,15 @@
       "pixel": "2196132151319625",
       "geo": "NO (targeting last ur norska kallkampanjens adset, aldrig en fallback-geo)",
       "copy": "Bokmal, UTAN priser — TankGuard har inget kant NOK-pris, priset star pa /nb-sidan.",
-      "notis": "13 norska videor ar INTE byggda: mediat ar inte grindat och behover samma frame-OCR som de svenska."
+      "notis": "13 norska videor ar INTE byggda: mediat ar inte grindat och behover samma frame-OCR som de svenska.",
+      "annonser": 10,
+      "adsets_alla": [
+        "BOF",
+        "CO",
+        "GT",
+        "PD",
+        "SP"
+      ]
     },
     "bilder": {
       "klar": false,
@@ -248,30 +256,45 @@
     "rakningen": {
       "datum": "2026-09-09",
       "fil": "factory/output/tankguard/rakningen.md",
-      "kalla_svept": "Bada kontona, ALLA kampanjer, grupperat pa campaign_id. En kampanj per konto — inga fler.",
-      "se_kalla": 36,
-      "se_kalla_med_dom": 34,
-      "se_utan_dom": [
-        "PD_4_H1",
-        "PD_4_H2"
-      ],
-      "se_mal": 33,
-      "se_uppe": 25,
-      "se_saknas": 8,
-      "no_kalla": 33,
-      "no_uppe": 0,
-      "saknas_namngivna": [
-        "CS_1_H2",
-        "CS_1_H3",
-        "GT_1_H1",
-        "GT_1_H2",
-        "GT_1_H3",
-        "SP_1_H1",
-        "SP_1_H2",
-        "SP_1_H3"
-      ],
-      "dom": "DELVIS KLART",
-      "saknas_orsak": "Fick nytt manus, inte ordbyte. Ljudet ar omdubbat och klart, men den inbranda undertexten visar fortfarande det GAMLA talet hela videon igenom. Hela captionsparet maste bytas med pipeline/no-precis.py."
+      "kalla_svept": "Bada kontona, ALLA kampanjer, grupperat pa campaign_id. En kampanj per konto.",
+      "se": {
+        "kalla": 36,
+        "med_dom": 34,
+        "utan_dom": [
+          "PD_4_H1",
+          "PD_4_H2"
+        ],
+        "mal": 33,
+        "uppe": 33,
+        "saknas": 0,
+        "okand_pausad": "PD_Extra"
+      },
+      "no": {
+        "kalla": 33,
+        "bild_ren": 10,
+        "bild_smutsig": 10,
+        "video": 13,
+        "mal": 23,
+        "uppe": 10,
+        "saknas": 13,
+        "saknas_namngivna": [
+          "CS_1_H2",
+          "CS_1_H3",
+          "GT_1_H1",
+          "GT_1_H2",
+          "GT_1_H3",
+          "GT_3_H1",
+          "PD_1_H1",
+          "PD_1_H2",
+          "PD_1_H3",
+          "PD_3_H1",
+          "SP_1_H1",
+          "SP_1_H2",
+          "SP_1_H3"
+        ],
+        "saknas_orsak": "Mediat ar inte grindat. De svenska videorna fick frame-OCR; de norska har inte fatt den lasningen. Olast ar aldrig ren."
+      },
+      "dom": "DELVIS KLART — Sverige komplett, Norge saknar 13 videor"
     },
     "no_mediagrind": {
       "klar": true,
