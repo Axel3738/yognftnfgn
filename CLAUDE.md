@@ -222,6 +222,8 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
+| `/skalningskungen <butik>` | **Var tredje dag per OPS-butik:** analys → nästa batch. 7 videor/dag, halva nya koncept |
+| `/rutin <kommando> <tid>` | Sätt upp en schemalagd rutin som faktiskt kör (fast session, rätt cron, inga dubbletter) |
 
 ### Nattrutinerna
 
