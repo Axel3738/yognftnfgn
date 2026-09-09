@@ -87,6 +87,14 @@ checkouten och pushen ovan till `main` och ta bort de här raderna.
 
 Skicka morgonrapporten till Discord (`DISCORD_WEBHOOK_URL`) med antal produkter och länken till sidan.
 
+## Bevisad i skarp körning
+
+Första riktiga rutinkörningen: **2026-09-09**. Två sökomgångar → 22 kandidater klarade ekonomin →
+9 kvar efter läsningen, 13 strukna med orsak. Arket byggt, sidan publicerad mot rätt URL, `sedda.json`
+(25 id:n) och en säsongsrättning i `sokord.json` pushade. Kedjan checkout → hitta → läs → offert →
+sida → push fungerar hela vägen. Bygg inte om något av det utan att först läsa den körningens
+`STATUS.md`.
+
 ## Definition of done
 
 - [ ] `korningar/<datum>/fynd.json` finns och har minst en produkt
