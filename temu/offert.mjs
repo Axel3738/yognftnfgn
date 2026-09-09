@@ -11,8 +11,26 @@ const KOL = {
   seKostnad: 9, seFrakt: 10, seTotal: 11,
   butikslank: 12, temu: 13, variant: 16,
 };
-// Landsblocken: startkolumn → [Qty, kostnad, frakt, total, leveranstid, metod]
-const LAND = { NO: 17, FI: 23, DK: 29, UK: 35, US: 41 };
+
+// Landsblocken hittas i HUVUDET, aldrig hårdkodat: arken har olika många kolumner
+// före NORWAY (batch 6 hade Qty på 17, batch 7 på 18). Hårdkodning läste
+// fraktkostnaden som totalpris och halverade Norges inköpspris. (2026-09-09)
+const LANDNAMN = { NORWAY: 'NO', FINLAND: 'FI', DENMARK: 'DK', UK: 'UK', US: 'US' };
+
+function hittaLandsblock(rader) {
+  const huvud = rader.find((r) => r.some((c) => /^NORWAY$/i.test((c || '').trim())));
+  const under = huvud ? rader[rader.indexOf(huvud) + 1] : null;
+  if (!huvud || !under) throw new Error('hittar inte landsblocken i offertens huvud');
+  const block = {};
+  for (let i = 0; i < huvud.length; i++) {
+    const kod = LANDNAMN[(huvud[i] || '').trim().toUpperCase()];
+    if (!kod || block[kod] !== undefined) continue;
+    // Qty-kolumnen är den första "Qty" i underhuvudet på eller efter landrubriken
+    const qty = under.findIndex((c, j) => j >= i && /^qty$/i.test((c || '').trim()));
+    if (qty !== -1) block[kod] = qty;
+  }
+  return block;
+}
 
 /** Minimal CSV-läsare som klarar citerade fält med komma och radbrytningar. */
 export function csvTillRader(text) {
@@ -44,6 +62,7 @@ const tal = (v) => {
 
 export function lasOffert(text) {
   const rader = csvTillRader(text);
+  const LAND = hittaLandsblock(rader);
   const produkter = [];
   for (let i = 0; i < rader.length; i++) {
     const r = rader[i];
@@ -52,9 +71,11 @@ export function lasOffert(text) {
 
     const q1 = r, q2 = rader[i + 1] || [], q3 = rader[i + 2] || [];
     const land = {};
-    for (const [kod, start] of Object.entries(LAND)) {
-      land[kod] = { kostnad: tal(q1[start + 1]), frakt: tal(q1[start + 2]), total: tal(q1[start + 3]),
-                    leverans: (q1[start + 4] || '').trim() || null, metod: (q1[start + 5] || '').trim() || null };
+    for (const [kod, qty] of Object.entries(LAND)) {
+      land[kod] = { kostnad: tal(q1[qty + 1]), frakt: tal(q1[qty + 2]), total: tal(q1[qty + 3]),
+                    leverans: (q1[qty + 4] || '').trim() || null, metod: (q1[qty + 5] || '').trim() || null,
+                    // "1(2pcs)" i Qty-rutan betyder att offerten avser ett flerpack
+                    qtyText: (q1[qty] || '').trim() || null };
     }
     land.SE = { kostnad: tal(q1[KOL.seKostnad]), frakt: tal(q1[KOL.seFrakt]), total: tal(q1[KOL.seTotal]),
                 leverans: null, metod: null };
@@ -67,6 +88,7 @@ export function lasOffert(text) {
       variant: (q1[KOL.variant] || '').trim() || null,
       butikslank: (q1[KOL.butikslank] || '').trim() || null,
       land, harQuote,
+      flerpack: (() => { const m = /\((\d+)\s*(?:pcs|st|pack)\)/i.exec(Object.values(land).map((l) => l.qtyText || '').join(' ')); return m ? Number(m[1]) : null; })(),
       // qty 2/3 sparas bara för spårbarhet — används ALDRIG som styckpris
       qty2SeTotal: tal(q2[KOL.seTotal]), qty3SeTotal: tal(q3[KOL.seTotal]),
     });
@@ -107,6 +129,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     console.log(`      SE ${l.SE.total ?? '—'}  NO ${l.NO.total ?? '—'}  DK ${l.DK.total ?? '—'}  FI ${l.FI.total ?? '—'}  UK ${l.UK.total ?? '—'}   (USD, qty 1)`);
     console.log(`      ${renUrl(x.temu) || 'INGEN TEMU-LÄNK'}`);
     if (x.variant) console.log(`      varianter: ${x.variant.replace(/\n/g, ' / ')}`);
+    if (x.flerpack) console.log(`      ⚠️ offerten avser ett ${x.flerpack}-PACK`);
     if (x.notering) console.log(`      notering: ${x.notering}`);
   }
   console.log('\nUTAN QUOTE (hoppas över):');
