@@ -56,7 +56,9 @@ Alla 12 renderade, inga moderationsköer.
 ("Idag 649 blir") — järnregel 2 gäller. `pipeline/no-captions.py` mätte bandet per
 video (1445–1613 beroende på klipp), suddade med remsa under bandet (blur 12) och la
 vit ruta + svart fet text mitt i. Skriptets egen kontroll: "ingen text utanför bandet"
-på alla 12. QA-bilderna lästa (CS_1 alla tre, G_1, PD_1, SP_1) — inget svenskt syns.
+på alla 12. **Alla 36 QA-bilder lästa** (6 enskilt, resterande 24 som kontaktark över
+captionbandet) — genomgående norska captions, rätt pris ("firehundre og trettini",
+"hundre og førti"), inget svenskt syns i någon ruta.
 
 **Slutkortssvep:** sista sekunden av alla 12 granskad i montage — bara norska
 captions, ingen svensk domän, inget SEK-pris. Den engelska texten på själva
