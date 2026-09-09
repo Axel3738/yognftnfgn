@@ -161,13 +161,35 @@ const STEG = [
         return { manuell: 'Inget utkasttema finns i butiken — installera ett tema först.' };
       }
       await skrivTemafiler(tema.id, SEKTIONER);
-      const befintlig = await hamtaTemafil(tema.id, 'templates/product.json');
-      if (befintlig) {
-        await skrivTemafiler(tema.id, { 'templates/product.json': byggProduktTemplate(befintlig) });
+
+      // ⚠️ produktmallen VERIFIERAS, precis som sektionerna. Den gjorde den
+      // inte förr, och skrivningen kunde försvinna tyst: på DryTrek
+      // 2026-09-09 rapporterade steget ✅ medan templates/product.json låg
+      // kvar orörd — utan opf-sektioner, med Matstrumpors FAQ och deras
+      // "30 dagars öppet köp" i trust-raden. Ett tema som just packats upp
+      // ur zip:en skriver över filen under tiden, så skrivningen görs om
+      // tills den faktiskt sitter.
+      let produktmall = null;
+      for (let forsok = 1; forsok <= 3; forsok++) {
+        const befintlig = await hamtaTemafil(tema.id, 'templates/product.json');
+        if (!befintlig) break;
+        produktmall = byggProduktTemplate(befintlig);
+        const filer = { 'templates/product.json': produktmall };
+        await skrivTemafiler(tema.id, filer);
+        const avvik = await verifieraTemafiler(tema.id, filer);
+        if (avvik.length === 0) break;
+        if (forsok === 3) throw new Error(`Produktmallen fastnade aldrig: ${avvik.join('; ')}`);
+        await new Promise((r) => setTimeout(r, 3000));
       }
+
       const avvikande = await verifieraTemafiler(tema.id, SEKTIONER);
       if (avvikande.length > 0) throw new Error(`Temafiler förvanskade: ${avvikande.join('; ')}`);
-      return { temaId: tema.id, temaNamn: tema.name, sektioner: Object.keys(SEKTIONER).length };
+      return {
+        temaId: tema.id,
+        temaNamn: tema.name,
+        sektioner: Object.keys(SEKTIONER).length,
+        produktmall: produktmall ? 'verifierad' : 'fanns inte',
+      };
     },
   },
   {

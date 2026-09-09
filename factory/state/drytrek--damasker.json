@@ -18,14 +18,6 @@
       "temaNamn": "DryTrek – CRO (utkast)",
       "sektioner": 6
     },
-    "sidor": {
-      "klar": true,
-      "antal": 4
-    },
-    "policyer": {
-      "klar": true,
-      "antal": 3
-    },
     "brand": {
       "klar": true,
       "temaId": "gid://shopify/OnlineStoreTheme/193915617546",
@@ -48,6 +40,14 @@
     "huvudmarknad": {
       "klar": true,
       "valuta": "SEK"
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
     }
   },
   "datum": "2026-09-09",
@@ -58,7 +58,7 @@
     "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
     "utfall_avlast_2026_09_09": "12 198 kr spend, 58 köp, CPA 210 kr över 18 annonser. Vinnaren Damasker_PD_1: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr — 79 % av spenden, 88 % av köpen. Näst bästa vinkel (SP) ligger på ROAS 1,42, alltså UNDER break-even 1,60."
   },
-  "uppdaterad": "2026-09-09T06:26:27.482Z",
+  "uppdaterad": "2026-09-09T06:44:56.220Z",
   "forarbete": {
     "anslutningskontroll": {
       "klar": true,
@@ -146,6 +146,6 @@
       "tracking",
       "doman"
     ],
-    "tid": "2026-09-09T06:26:27.482Z"
+    "tid": "2026-09-09T06:44:56.220Z"
   }
 }

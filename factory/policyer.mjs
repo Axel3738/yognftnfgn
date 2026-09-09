@@ -99,8 +99,18 @@ export function fraktpolicy(p) {
     return `<li>${delar.join(': ').replace(/:(?=[^:]*$)/, ',')}</li>`;
   });
 
+  // "Fri frakt" ensamt svarar inte på frågan en norsk besökare har. Står
+  // länderna i konfigen sätts de i raden.
+  const lander = lista(s.lander);
+  const till =
+    lander.length === 0
+      ? ''
+      : lander.length === 1
+        ? ` till ${lander[0]}`
+        : ` till ${lander.slice(0, -1).join(', ')} och ${lander[lander.length - 1]}`;
+
   const rader = [
-    s.kostnad === 0 ? '<li>Fri frakt</li>' : `<li>Frakt: ${kostnad ?? 'anges i kassan'}</li>`,
+    s.kostnad === 0 ? `<li>Fri frakt${till}</li>` : `<li>Frakt${till}: ${kostnad ?? 'anges i kassan'}</li>`,
     ...(gratis ? [`<li>Fri frakt vid köp över ${gratis}</li>`] : []),
     ...extra,
   ];
