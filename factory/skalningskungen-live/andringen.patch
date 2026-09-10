@@ -508,10 +508,10 @@ index cf8b74f..13b8518 100644
  ## Så räknas break-even
  
 diff --git a/agent/budgetlogg.jsonl b/agent/budgetlogg.jsonl
-index fe51f30..f44612f 100644
+index fe51f30..7bb32c7 100644
 --- a/agent/budgetlogg.jsonl
 +++ b/agent/budgetlogg.jsonl
-@@ -395,3 +395,7 @@
+@@ -395,3 +395,27 @@
  {"datum":"2026-09-10","kampanj_id":"120249850522830291","kampanj_namn":"Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18","ad_account_id":"1867947880635861","kod":"CS_BATCH_KLAR","genomford":true,"godkand_av":"auto — Axels stående beslut 2026-08-29","motivering":"Brief-runda batch #5 (/cs-runda via /rond-auto, 4-dagarsrundan, rundaAntal 6 + 3 BOF-bilder + 2 recensionsbilder = 11 briefer). Analys: 12 bedömbara annonser av kampanjens 104+, vinstbidrag +51 995 kr (upp från +42 914 kr 2026-09-06), video fortsatt ~93% av vinst/spend (bekräftat tredje gången), PD dominerar volym (+39 824 kr, 76,6% av vinsten), CS högst vinst/krona men bara i video (CS_1_H3 stagnerar, 0 nya köp på 4 dygn, kvarstår ej bevisad). NYTT FYND: benchmark PD_1_H1 visar utmattning (frequency 1,82, lägst vinst/krona av topp-5) medan PD_EXTRA (…564380291) gått om som mest lönsamma annons — batch #5 isolerar fräscha hook-iterationer på den senares struktur i stället för fler PD_1-varianter. NYTT FYND: visuell granskning av de tre statiska annonserna visar att vinnaren (PD_6_1) är enklast (en bild, minimal text) medan de två svagare har mer visuell komplexitet — SO_4_1 är dessutom felkodad (heter SO men är visuellt en collage, ingen rabatt). PRIS LÖST: 289 kr bekräftat mot Shopifys publika storefront-JSON (Shopify-MCP var oautentiserad) OCH mot två levande annonser som redan visar priset — löser BLOCKER:n från batch #3. HUVUDFYND (operativt, inte kreativt): batch #3 (2026-09-03) och batch #4 (2026-09-06) — 18 briefer — är fortfarande INTE launchade i Meta; endast 6 av 18 har nått Notion-status \"To be Reviewed\" (levererade, väntar på /notionkorning), 12 är fortfarande Draft. Ingen hypotes från de batcherna kunde stämmas av denna körning. Flaggat till Axel i backlog.md: redigerarkapacitet, inte kreativitet, är flaskhalsen — batch #5 byggdes medvetet konservativt (enbart iterationer på bevisade PD/CS-strukturer + två repliker av PD_6_1s static-formel, inga nya obevisade vinklar) eftersom kön redan är full. Modellpolicy-avvikelse (tredje gången): inget Agent/Task-verktyg med model-parameter tillgängligt i denna miljö, huvudsessionen skrev all copy själv med tre-frågorstestet kört rad för rad. Notion: 11 nya Draft-rader i hubben \"Fish rod holder\" (collection://3c3270ab-908c-8356-ad6c-87ff779e647d), verifierat med notion-fetch att full brief ligger i sidans innehåll. Drive: batchmapp Batch #5 (https://drive.google.com/drive/folders/1XPU_lz8ThC41FNloMyr-ug5ZdLqeeb8K) skapad i produktens Drive-rotmapp. products/fiskespohallaren/{dna,batch-log,backlog}.md uppdaterade."}
  {"datum":"2026-09-10","kampanj_id":"120249989799680291","kampanj_namn":"Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21","ad_account_id":"1867947880635861","kod":"CS_BATCH_KLAR","genomford":true,"godkand_av":"auto — Axels stående beslut 2026-08-29","motivering":"Batch #4 briefad (4 dagar sedan batch #3, ingen Fokus angiven). 11 briefer: 6 video + 2 static i kärnrundan + 3 BOF, 0 review (0 organiska recensioner, Judge.me omverifierat). Feedbackloop: produktionen är flaskhalsen (8 av 13 briefer från batch #2/#3 oproducerade eller under 90 kr CBO-svält-spend); CS_2 graduerade till en tredje bedömbar/lönsam annons (8 köp, CPA 461 kr) med IDENTISK copy som CS_3 men produktrender i stället för app-demo — bevisar mönster 2 (demo > render, båda lönsamma). Viktigaste fyndet: CS_3s marginal-CPA (09-06→09-10, 4 dygn, 8 köp) passerade break-even för första gången (519,93 mot 508,92 kr) — inte kill-läge men en tidig varningssignal likt SP_2s tidigare mönster; SP_2 själv stabiliserades (marginal-CPA 447,75, bättre än förra läsningens 488). Batch #4 itererar båda vinnarna (proof-radens sanningshalt, offer-synlighet, fabricerad urgency borttagen på båda CS-visualerna) i stället för att bara skala budget. dna.md + batch-log.md + backlog.md uppdaterade. Notion (11 items, Surveillance Camera creative hub) + Drive (Batch #4-mapp) levererat, verifierat med notion-fetch."}
  {"datum":"2026-09-10","kod":"CS_BATCH_KLAR","genomford":true,"kampanj_id":"120250001079150291","kampanj_namn":"IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28","ad_account_id":"1867947880635861","godkand_av":"auto — Axels stående beslut 2026-08-29","motivering":"Batch #4 (6 i rundan: PD_6_H1/H2, CS_5_H1, GT_5_H1, PD_6_1, CS_5_1) + 3 BOF (BOF_7/8/9) + 2 review (Magnus, Peter) levererade till Notion-hubben och Drive Batch #4. Toppfynd: PD_Extra blev bedömbar första gången (CPA 129 kr, bästa i kontot) med ORDAGRANT samma copy som PD_1_H1 men en mycket kortare video — batchen isolerar klipplängd (PD_6_H1) från öppningsbild (PD_6_H2) som två separata tester. Upprepat compliance-fynd: påhittad brådska finns nu bekräftad på två legacy-assets (video CS_1_H3 + statisk CS_2_1), flaggat till Axel, inte ändrat i Meta. Fjärde raden i rad med samma observandum: batch #3:s viktigaste briefer (PD_5_H1/H2) producerades aldrig alls av redigerarna — produktionsflaskhalsen är nu produktens dominerande hinder, inte vinklarna."}
@@ -519,6 +519,26 @@ index fe51f30..f44612f 100644
 +{"datum":"2026-09-10","kampanj_id":"120250001079150291","kampanj_namn":"IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28","ad_account_id":"1867947880635861","kod":"OPS_FINNS_REDAN","genomford":true,"motivering":"Produkten har redan en OPS-butik (TankGuard), byggd innan startskottet fanns. Raden finns for att tysta larmet — utan den hade den larmat en gang i onodan.","godkand_av":"auto — Axels beslut 2026-09-10, seedad vid ombyggnaden"}
 +{"datum":"2026-09-10","kampanj_id":"120250009391470291","kampanj_namn":"Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29","ad_account_id":"1867947880635861","kod":"OPS_FINNS_REDAN","genomford":true,"motivering":"Produkten har redan en OPS-butik (DryTrek). Verifierat i MagiBorsten DK 915422744950975: kampanjen DRYTREK_SE_Damasker Vandring finns. Axels besked 2026-09-10.","godkand_av":"auto — Axels besked 2026-09-10"}
 +{"datum":"2026-09-10","kampanj_id":"120250134672020291","kampanj_namn":"Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08","ad_account_id":"1867947880635861","kod":"OPS_FINNS_REDAN","genomford":true,"motivering":"Produkten har redan en OPS-butik (AdventLaneRacing). Verifierat i MagiBorsten DK 915422744950975: kampanjen ADVENTLANERACING_SE_Racingkalendern finns. Axels besked 2026-09-10.","godkand_av":"auto — Axels besked 2026-09-10"}
++{"datum":"2026-09-10","kampanj_id":"120250161984300291","kampanj_namn":"Staketstolpslagaren 2-pack | BE ROAS 1.66 | Launch 2026-09-10","ad_account_id":"1867947880635861","kod":"FOR_LITE_DATA","gammal_budget":1000,"ny_budget":null,"genomford":false,"roas_3d":null,"spend_3d":null,"kop_3d":null,"break_even":1.66,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"okänd spend och okänt antal köp på 3 dagar. Grinden går vid 300 kr och 3 köp. Rör ingenting.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120250161786230291","kampanj_namn":"Stegstödet 2-pack | BE ROAS 1.63 | Launch 2026-09-10","ad_account_id":"1867947880635861","kod":"FOR_LITE_DATA","gammal_budget":1000,"ny_budget":null,"genomford":false,"roas_3d":null,"spend_3d":null,"kop_3d":null,"break_even":1.63,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"okänd spend och okänt antal köp på 3 dagar. Grinden går vid 300 kr och 3 köp. Rör ingenting.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120250147343350291","kampanj_namn":"Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09","ad_account_id":"1867947880635861","kod":"VANTA_KADENS","gammal_budget":1800,"ny_budget":null,"genomford":false,"roas_3d":5.537526,"spend_3d":1223.29,"kop_3d":6,"break_even":1.63,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120250147309170291","kampanj_namn":"Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09","ad_account_id":"1867947880635861","kod":"VANTA_KADENS","gammal_budget":1200,"ny_budget":null,"genomford":false,"roas_3d":3.907295,"spend_3d":1211.58,"kop_3d":6,"break_even":1.62,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120250134672020291","kampanj_namn":"Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08","ad_account_id":"1867947880635861","kod":"VANTA_KADENS","gammal_budget":1200,"ny_budget":null,"genomford":false,"roas_3d":3.960381,"spend_3d":1804.17,"kop_3d":11,"break_even":1.62,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120250009391470291","kampanj_namn":"Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29","ad_account_id":"1867947880635861","kod":"LAT_VARA","gammal_budget":1200,"ny_budget":null,"genomford":false,"roas_3d":2.615579,"spend_3d":3455.87,"kop_3d":17,"break_even":1.6,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"24,3 % vinst av omsättningen (ROAS 2,62 mot break-even 1,60). Mellan 16 och 25 % rör vi ingenting. Nästa koll om 3 dagar.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120250009325850291","kampanj_namn":"Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29","ad_account_id":"1867947880635861","kod":"VANTA_KADENS","gammal_budget":500,"ny_budget":null,"genomford":false,"roas_3d":1.68536,"spend_3d":5451.24,"kop_3d":16,"break_even":1.62,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"Budgeten ändrades för 1 dag sedan. Nästa ändring tidigast efter 3 dagar.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120250001079150291","kampanj_namn":"IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28","ad_account_id":"1867947880635861","kod":"LAT_VARA","gammal_budget":2300,"ny_budget":null,"genomford":false,"roas_3d":2.389063,"spend_3d":6643.07,"kop_3d":26,"break_even":1.51,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"24,4 % vinst av omsättningen (ROAS 2,39 mot break-even 1,51). Mellan 16 och 25 % rör vi ingenting. Nästa koll om 3 dagar.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120249990507280291","kampanj_namn":"MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27","ad_account_id":"1867947880635861","kod":"VANTA_KADENS","gammal_budget":500,"ny_budget":null,"genomford":false,"roas_3d":1.818175,"spend_3d":2840.87,"kop_3d":12,"break_even":1.49,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"Budgeten ändrades för 1 dag sedan. Nästa ändring tidigast efter 3 dagar.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120249989799680291","kampanj_namn":"Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21","ad_account_id":"1867947880635861","kod":"VANTA_KADENS","gammal_budget":3300,"ny_budget":null,"genomford":false,"roas_3d":2.573754,"spend_3d":9125.79,"kop_3d":20,"break_even":1.57,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"Budgeten ändrades för 2 dagar sedan. Nästa ändring tidigast efter 3 dagar.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120249902177470291","kampanj_namn":"Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21","ad_account_id":"1867947880635861","kod":"STOR_SPEND_UTAN_KOP","gammal_budget":650,"ny_budget":null,"genomford":false,"roas_3d":0.986896,"spend_3d":1842.14,"kop_3d":2,"break_even":1.7314285714285715,"break_even_kalla":"Axels besked 2026-08-29: inköpspris höjt till 40 USD, totalt — ingen frakt eller avgift tillkommer.","hamtad":"2026-09-10T12:09:34Z","motivering":"1 842 kr på 3 dagar och bara 2 köp, utan att gå ihop. ROAS 0,99 mot break-even 1,73. Det är inte \"för lite data\" längre — något är fel (produktsidan, priset, lagret?). En människa måste titta.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120249850522830291","kampanj_namn":"Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18","ad_account_id":"1867947880635861","kod":"VANTA_KADENS","gammal_budget":1450,"ny_budget":null,"genomford":false,"roas_3d":1.63199,"spend_3d":5266.82,"kop_3d":20,"break_even":1.5,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:09:34Z","motivering":"Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 3 dagar.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120252140554000233","kampanj_namn":"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09","ad_account_id":"1050941584152547","kod":"VANTA_KADENS","gammal_budget":1200,"ny_budget":null,"genomford":false,"roas_3d":3.356678,"spend_3d":774.9,"kop_3d":5,"break_even":1.62,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:10:41Z","motivering":"Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120252102071560233","kampanj_namn":"Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06","ad_account_id":"1050941584152547","kod":"LAT_VARA","gammal_budget":1000,"ny_budget":null,"genomford":false,"roas_3d":1.736459,"spend_3d":3005.6,"kop_3d":10,"break_even":1.63,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:10:41Z","motivering":"3,8 % vinst av omsättningen (ROAS 1,74 mot break-even 1,63). Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120252047563660233","kampanj_namn":"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02","ad_account_id":"1050941584152547","kod":"LAT_VARA","gammal_budget":2550,"ny_budget":null,"genomford":false,"roas_3d":2.282094,"spend_3d":7243.8,"kop_3d":30,"break_even":1.63,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:10:41Z","motivering":"17,5 % vinst av omsättningen (ROAS 2,28 mot break-even 1,63). Mellan 16 och 25 % rör vi ingenting. Nästa koll om 3 dagar.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120251998582640233","kampanj_namn":"Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29","ad_account_id":"1050941584152547","kod":"UPPSKJUTEN_GRANS","gammal_budget":1400,"ny_budget":null,"genomford":false,"roas_3d":2.251352,"spend_3d":3887.98,"kop_3d":8,"break_even":1.4,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:10:41Z","motivering":"27,0 % vinst av omsättningen (ROAS 2,25 mot break-even 1,40). Ändra från 1 400 kr till 1 650 kr per dag. Nästa koll om 3 dagar. ⚠ Ligger 2,0 procentenheter från en zongräns — ROAS för de senaste dygnen kan fortfarande revideras uppåt. Kolla i Ads Manager innan du kör den här. (nära zongräns — omprövas nästa körning med mognare data)","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120251996323340233","kampanj_namn":"IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29","ad_account_id":"1050941584152547","kod":"LAT_VARA","gammal_budget":1000,"ny_budget":null,"genomford":false,"roas_3d":1.77704,"spend_3d":2758.07,"kop_3d":8,"break_even":1.63,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:10:41Z","motivering":"5,1 % vinst av omsättningen (ROAS 1,78 mot break-even 1,63). Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120251996272390233","kampanj_namn":"Kranbeskyttelse Frost NO | BE-ROAS 1,63 | 2026-08-29","ad_account_id":"1050941584152547","kod":"RAKNA_BACKDAGAR","gammal_budget":500,"ny_budget":null,"genomford":false,"roas_3d":0.906244,"spend_3d":4838.95,"kop_3d":17,"break_even":1.63,"break_even_kalla":"kampanjnamnet","hamtad":"2026-09-10T12:10:41Z","motivering":"-49,0 % vinst av omsättningen (ROAS 0,91 mot break-even 1,63). Men livstids-ROAS 2,32 ligger över break-even 1,63 — kampanjen har tjänat pengar totalt, så en tredagarsdipp stänger den inte i dag. Ligger redan på 500 kr. 3 back-dygn i rad — 2 kvar innan den stängs av.","godkand_av":null}
++{"datum":"2026-09-10","kampanj_id":"120250147343350291","kampanj_namn":"Taköverdraget för Husvagn 6,5 × 3 m","ad_account_id":"1867947880635861","kod":"OPS_STARTSKOTT","genomford":true,"spend_total":2009.91,"kop_total":10,"cpa":200.991,"break_even_cpa":692.6380444766872,"roas":5.617167,"vinst_procent":43.29108729645561,"kalla_url":"https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan","motivering":"Klarat testet (2 010 kr spenderat, 43,3 % vinst). Startskott postat i #ops-startskott — OPS-butiken ska byggas med /ny-ops.","godkand_av":"auto — Axels beslut 2026-09-10, tröskeln i agent/rond.mjs"}
++{"datum":"2026-09-10","kampanj_id":"120250147309170291","kampanj_namn":"Isolerade Utekattkojan","ad_account_id":"1867947880635861","kod":"OPS_STARTSKOTT","genomford":true,"spend_total":1869.23,"kop_total":7,"cpa":267.03285714285715,"break_even_cpa":487.03710726543204,"roas":2.954693,"vinst_procent":36.135241742104455,"kalla_url":"https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus","motivering":"Klarat testet (1 869 kr spenderat, 36,1 % vinst). Startskott postat i #ops-startskott — OPS-butiken ska byggas med /ny-ops.","godkand_av":"auto — Axels beslut 2026-09-10, tröskeln i agent/rond.mjs"}
 diff --git a/agent/discord.json b/agent/discord.json
 index 5cf5a48..0df1a54 100644
 --- a/agent/discord.json
@@ -546,10 +566,10 @@ index 5cf5a48..0df1a54 100644
      "kalendrar-som-ska-runna": "1540553097636614254",
 diff --git a/agent/startskott.mjs b/agent/startskott.mjs
 new file mode 100644
-index 0000000..428d980
+index 0000000..942b77c
 --- /dev/null
 +++ b/agent/startskott.mjs
-@@ -0,0 +1,339 @@
+@@ -0,0 +1,353 @@
 +#!/usr/bin/env node
 +// STARTSKOTTET — larmet som säger att en produkt klarat testet på
 +// Bäverbutiken och ska få en egen OPS-butik.
@@ -721,6 +741,17 @@ index 0000000..428d980
 + * Rubriken skickas separat — discord-post.mjs fetstilar den själv, så den
 + * ska INTE bära asterisker här.
 + *
++ * ⚠️ **Kodblocket är HELA prompten, inte bara kommandot** (Axels ändring
++ * 2026-09-10). Efter `/ny-ops <länk>` följer två rader som tvingar den som
++ * kör att kontrollera vilken butik sessionen faktiskt är kopplad till innan
++ * något byggs. `INSERT YOUR STORE LINK` är en lucka VA:n fyller i med den
++ * nya butikens adress — den ska stå kvar ordagrant i mallen.
++ *
++ * Skälet: `/ny-ops` steg 1 rapporterar "Connected: <domän> ✓", och utan
++ * kontrollen kan hela bygget hamna i fel butik. Texten är engelsk för att
++ * den klistras in i en session som körs av VA:n, som är engelsktalande —
++ * resten av meddelandet är svenskt för Axel.
++ *
 + * @returns {{rubrik: string, text: string}}
 + */
 +export function formateraStartskott(jobb) {
@@ -744,10 +775,13 @@ index 0000000..428d980
 +    '',
 +    '**Starta bygget**',
 +    'Öppna en ny chatt.',
-+    'Klistra in raden nedan.',
++    'Klistra in texten nedan.',
++    'Byt INSERT YOUR STORE LINK mot butikens adress.',
 +    '',
 +    '```',
 +    `/ny-ops ${jobb.kalla_url}`,
++    'The store must be INSERT YOUR STORE LINK. If the "Connected" line does not match',
++    'that address: stop and tell me, build nothing.',
 +    '```',
 +    '',
 +    'Sen är du klar. Jag har gjort resten.',
@@ -891,10 +925,10 @@ index 0000000..428d980
 +}
 diff --git a/agent/test/startskott.test.mjs b/agent/test/startskott.test.mjs
 new file mode 100644
-index 0000000..65b5113
+index 0000000..ecb9aca
 --- /dev/null
 +++ b/agent/test/startskott.test.mjs
-@@ -0,0 +1,279 @@
+@@ -0,0 +1,295 @@
 +// Tester för startskottet (agent/startskott.mjs).
 +// Inget nätverk, inga filskrivningar, inget klockberoende — datum skickas in.
 +// `--torr` används överallt så ingen test någonsin postar i Discord.
@@ -995,12 +1029,28 @@ index 0000000..65b5113
 +  }
 +});
 +
-+test('kommandoraden ligger i ett kodblock så den går att kopiera rent', () => {
++test('kodblocket bär HELA prompten, inte bara kommandot', () => {
 +  const rader = formateraStartskott(jobb()).text.split('\n');
 +  const i = rader.findIndex((r) => r.startsWith('/ny-ops '));
 +  assert.ok(i > 0, 'ingen /ny-ops-rad hittades');
++  // Kodblocket öppnar före kommandot...
 +  assert.equal(rader[i - 1].trim(), '```');
-+  assert.equal(rader[i + 1].trim(), '```');
++  // ...och stänger först efter butikskontrollen, inte direkt efter kommandot.
++  assert.match(rader[i + 1], /^The store must be INSERT YOUR STORE LINK\./);
++  assert.match(rader[i + 2], /stop and tell me, build nothing\.$/);
++  assert.equal(rader[i + 3].trim(), '```');
++});
++
++test('butikskontrollen står kvar ordagrant — luckan fylls av VA:n', () => {
++  const { text } = formateraStartskott(jobb());
++  assert.match(text, /INSERT YOUR STORE LINK/);
++  assert.match(text, /If the "Connected" line does not match/);
++  assert.match(text, /build nothing/);
++});
++
++test('instruktionen säger åt honom att byta ut luckan', () => {
++  const { text } = formateraStartskott(jobb());
++  assert.match(text, /Byt INSERT YOUR STORE LINK mot butikens adress\./);
 +});
 +
 +test('startskottHarGatt: tom logg betyder att det inte gått', () => {

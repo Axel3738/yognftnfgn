@@ -98,12 +98,28 @@ test('texten följer Axels svarsformat', () => {
   }
 });
 
-test('kommandoraden ligger i ett kodblock så den går att kopiera rent', () => {
+test('kodblocket bär HELA prompten, inte bara kommandot', () => {
   const rader = formateraStartskott(jobb()).text.split('\n');
   const i = rader.findIndex((r) => r.startsWith('/ny-ops '));
   assert.ok(i > 0, 'ingen /ny-ops-rad hittades');
+  // Kodblocket öppnar före kommandot...
   assert.equal(rader[i - 1].trim(), '```');
-  assert.equal(rader[i + 1].trim(), '```');
+  // ...och stänger först efter butikskontrollen, inte direkt efter kommandot.
+  assert.match(rader[i + 1], /^The store must be INSERT YOUR STORE LINK\./);
+  assert.match(rader[i + 2], /stop and tell me, build nothing\.$/);
+  assert.equal(rader[i + 3].trim(), '```');
+});
+
+test('butikskontrollen står kvar ordagrant — luckan fylls av VA:n', () => {
+  const { text } = formateraStartskott(jobb());
+  assert.match(text, /INSERT YOUR STORE LINK/);
+  assert.match(text, /If the "Connected" line does not match/);
+  assert.match(text, /build nothing/);
+});
+
+test('instruktionen säger åt honom att byta ut luckan', () => {
+  const { text } = formateraStartskott(jobb());
+  assert.match(text, /Byt INSERT YOUR STORE LINK mot butikens adress\./);
 });
 
 test('startskottHarGatt: tom logg betyder att det inte gått', () => {
