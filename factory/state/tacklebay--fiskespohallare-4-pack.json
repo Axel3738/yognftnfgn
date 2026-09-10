@@ -94,7 +94,7 @@
       "kallkampanj_status": "PAUSED — används på Axels undantag 2026-09-10 (kalla.no_pausad_kalla_ok), rörs inte",
       "kampanj": "TACKLEBAY_NO_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
       "kampanj_id": "120249038524410172",
-      "status": "PAUSED",
+      "status": "ACTIVE",
       "cbo_daily_budget": "100000",
       "geo": "NO",
       "lank": "https://tacklebay.se/nb/products/fiskespohallare-4-pack",
@@ -114,11 +114,12 @@
       "rapport": "factory/output/fiskespohallare-4-pack/rakningen.md",
       "omdubb_ko": "factory/output/fiskespohallare-4-pack/omdubb-ko-no.md",
       "trippelkoll": "2026-09-10: sida, pixel, CBO, länk /nb, geo NO, PAUSED på tre nivåer stämmer på alla 11",
-      "launch": "väntar på Axels \"Launch: TackleBay NO\""
+      "launch": "2026-09-10T19:42:38Z — Axel \"Launch: Tacklebay NO\"; /nb 200, pixel avfyrad 21:38 CEST; kampanj+5 adsets+11 annonser ACTIVE, tillbakalästa ACTIVE/ACTIVE"
     },
     "trippelkoll": "2026-09-10: sida, pixel, CBO-budget, länk och PAUSED på tre nivåer stämmer på alla 66",
     "launch": {
-      "SE": "2026-09-10T18:17:40Z — Axel \"Launch: tacklebay\"; butiken 200 utan /password, pixel avfyrad 19:40 CEST; kampanj+4 adsets+66 annonser ACTIVE, tillbakalästa ACTIVE/ACTIVE"
+      "SE": "2026-09-10T18:17:40Z — Axel \"Launch: tacklebay\"; butiken 200 utan /password, pixel avfyrad 19:40 CEST; kampanj+4 adsets+66 annonser ACTIVE, tillbakalästa ACTIVE/ACTIVE",
+      "NO": "2026-09-10T19:42:38Z — Axel \"Launch: Tacklebay NO\"; /nb 200, pixel avfyrad 21:38 CEST; kampanj+5 adsets+11 annonser ACTIVE, tillbakalästa ACTIVE/ACTIVE"
     }
   }
 }

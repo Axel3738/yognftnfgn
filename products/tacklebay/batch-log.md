@@ -84,3 +84,7 @@ läser upp rabatt, "bare i dag", lagerslut och 30 dagers åpent kjøp; GT_1
 har bara sista meningen fel. Priset i copyn är 289 kr — butikens NO-marknad
 betalar i SEK (källan sa 269 NOK). Hypotes: PD_1_H3 bär Norge som den bar
 källan. Utfall: ännu inget.
+
+**Launchad 2026-09-10 19:42 UTC** (Axel: "Launch: Tacklebay NO"). `/nb`-sidan
+svarade 200, pixeln hade avfyrat 21:38 svensk tid. Kampanj + 5 adsets + 11
+annonser satta ACTIVE och tillbakalästa ACTIVE/ACTIVE. 1 000 kr/dag CBO.

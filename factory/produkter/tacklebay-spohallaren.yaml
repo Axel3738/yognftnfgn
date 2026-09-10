@@ -223,6 +223,12 @@ meta:
       kampanj: "TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10"
       budget_per_dag_sek: 1000   # CBO, öre 100000 i kontot
       annonser: 66
+    NO:
+      datum: "2026-09-10"   # Axel "Launch: Tacklebay NO", 19:42 UTC
+      kampanj_id: "120249038524410172"
+      kampanj: "TACKLEBAY_NO_Spöhållaren | BE-ROAS 1,67 | 2026-09-10"
+      budget_per_dag_sek: 1000
+      annonser: 11
   vinklar:
     - "Transportskadan: det som går sönder händer på vägen dit"
     - "Enhandsgreppet: två klick, spöt sitter"
