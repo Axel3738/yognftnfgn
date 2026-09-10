@@ -1,0 +1,92 @@
+[
+  {
+    "variant": 1,
+    "andrat": false,
+    "orsak": "inget fel — kopierad ordagrant",
+    "message": "Floker fiskestengene seg i båten – igjen? 🎣\nDenne lille klemmen løser det på 1 sekund.\n✅ Holder sammenslåtte stenger trygt lukket\n✅ Ingen flere flokete snører\n✅ Passer alle stenger\nBestill din 4-pakning i dag og slipp krøllet for godt. 👇",
+    "headline": "Aldri mer flokete fiskestenger",
+    "description": "",
+    "trefragor": "—"
+  },
+  {
+    "variant": 2,
+    "andrat": true,
+    "orsak": "'269 kr' → '289 kr' (feil pris, norsk marked betaler i SEK); '30 dagers åpent kjøp' → '14 dagers angrerett' (TackleBay har bare lovens angrerett); 'begrenset antall på lager' (falsk knapphet) fjernet. Samme vinkel og form beholdt.",
+    "message": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 289 kr\n✅ 14 dagers angrerett\nBestill i dag. 👇",
+    "headline": "Aldri mer flokete fiskestenger",
+    "description": "4-pakning for 289 kr.",
+    "trefragor": "'289 kr' og '14 dagers angrerett': visualiserbart (konkret tall) ✅, falsifierbart (sant, matcher produktsiden og loven) ✅, ingen konkurrent kan skrive TackleBays eget pris/vilkår ✅."
+  },
+  {
+    "variant": 3,
+    "andrat": true,
+    "orsak": "'LAGERRENSING', 'Vi rydder lageret – nå kun', 'Begrenset antall på lager', 'Gjelder kun så lenge lageret rekker', 'før den er utsolgt' (falsk lagerslutt/rabatt) fjernet — TackleBay selger ikke ut noe lager. '269 kr' → '289 kr'. Samme pris/tilbuds-vinkel beholdt, 🔥-linjene ble ✅-linjer med sanne fakta.",
+    "message": "🎣 Fiskestangholder 4-pakning – 289 kr\n\nIngen rabatt, bare den ekte prisen.\n✅ Fri frakt\n✅ 14 dagers angrerett\n✅ Betal med Klarna\n\nBestill din 4-pakning i dag 👇",
+    "headline": "289 kr for fire holdere",
+    "description": "",
+    "trefragor": "'289 kr for fire holdere': visualiserbart (konkret tall) ✅, falsifierbart (sant pris) ✅, det er TackleBays faktiske pris så ingen annen kan påstå akkurat det ✅. 'Lagerrensing'/'nå kun' strøket fordi det ikke besto falsifiseringstesten (usant)."
+  },
+  {
+    "variant": 4,
+    "andrat": false,
+    "orsak": "inget fel — kopierad ordagrant",
+    "message": "Vet du fortsatt ikke hva du skal gi ham som allerede har alt? 🎁\n\nVi har løsningen. Fiskestangholder 4-pakning er en gave han faktisk kommer til å bruke – hver gang han drar ut med båten eller setter bort stengene.\n\n😍 Han skjønner med en gang at du har lyttet til hva han trenger\n😍 Enkel gave, stort inntrykk\n😍 Kommer hjem i tide til anledningen\n\nBli den som fant den perfekte gaven i år – bestill i dag 👇",
+    "headline": "Gaven han faktisk kommer til å bruke",
+    "description": "",
+    "trefragor": "—"
+  },
+  {
+    "variant": 5,
+    "andrat": true,
+    "orsak": "'269 kr' → '289 kr'; '30 dagers åpent kjøp' → '14 dagers angrerett'; 'begrenset antall på lager' fjernet. Samme feil og fiks som variant 2.",
+    "message": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 289 kr\n✅ 14 dagers angrerett\nBestill i dag. 👇",
+    "headline": "Aldri mer flokete fiskestenger",
+    "description": "",
+    "trefragor": "Samme som variant 2: '289 kr' og '14 dagers angrerett' visualiserbart ✅, falsifierbart ✅, TackleBay-spesifikt ✅."
+  },
+  {
+    "variant": 6,
+    "andrat": false,
+    "orsak": "inget fel — kopierad ordagrant",
+    "message": "Floker fiskestengene seg i båten – igjen? 🎣\nDenne lille klemmen løser det på 1 sekund.\n✅ Holder sammenslåtte stenger trygt lukket\n✅ Ingen flere flokete snører\n✅ Passer alle stenger\nBestill din 4-pakning i dag og slipp krøllet for godt. 👇",
+    "headline": "Aldri mer flokete fiskestenger",
+    "description": "Fire kraftige klemmer – orden i båten på sekunder.",
+    "trefragor": "—"
+  },
+  {
+    "variant": 7,
+    "andrat": true,
+    "orsak": "Oppdiktet kundesitat «Endelig holder stanga seg sammenslått – ikke mer krøll!» er ikke en ekte TackleBay-anmeldelse → erstattet med ordrett sitat fra Daniel; volumpåstandene 'Slik beskriver kundene våre' / 'Se hvorfor stadig flere fiskere bytter til denne løsningen' (TackleBay kan ikke påstå det) → 'Sju anmeldelser, alle fem stjerner'; '30 dagers fornøyd-kunde-garanti' → '14 dagers angrerett'.",
+    "message": "«Stabil og enkel. Jeg er fornøyd.» 🎣\n– Daniel, anmeldelse hos TackleBay\n✅ Enkel å bruke\n✅ Holder stødig, gang etter gang\n✅ 14 dagers angrerett\nSju anmeldelser, alle fem stjerner. 👇",
+    "headline": "Aldri mer flokete fiskestenger",
+    "description": "",
+    "trefragor": "«Stabil og enkel. Jeg er fornøyd.» – Daniel: visualiserbart (et konkret, navngitt sitat) ✅, falsifierbart (ekte anmeldelse, kan sjekkes) ✅, ingen konkurrent kan signere Daniels sitat ✅. 'Sju anmeldelser, alle fem stjerner' erstatter et upåvist volumpåstand med et telbart, sant tall."
+  },
+  {
+    "variant": 8,
+    "andrat": true,
+    "orsak": "'LAGERRENSING', 'Vi rydder lageret – nå kun', 'Begrenset antall på lager', 'Gjelder kun så lenge lageret rekker', 'før den er utsolgt' fjernet; '269 kr' → '289 kr'. Description 'Begrenset antall på lager.' (usant) → tom streng, ingen sann erstatning passet formatet. Samme fiks som variant 3.",
+    "message": "🎣 Fiskestangholder 4-pakning – 289 kr\n\nIngen rabatt, bare den ekte prisen.\n✅ Fri frakt\n✅ 14 dagers angrerett\n✅ Betal med Klarna\n\nBestill din 4-pakning i dag 👇",
+    "headline": "289 kr for fire holdere",
+    "description": "",
+    "trefragor": "Samme test som variant 3."
+  },
+  {
+    "variant": 9,
+    "andrat": false,
+    "orsak": "inget fel — kopierad ordagrant",
+    "message": "Vet du fortsatt ikke hva du skal gi ham som allerede har alt? 🎁\n\nVi har løsningen. Fiskestangholder 4-pakning er en gave han faktisk kommer til å bruke – hver gang han drar ut med båten eller setter bort stengene.\n\n😍 Han skjønner med en gang at du har lyttet til hva han trenger\n😍 Enkel gave, stort inntrykk\n😍 Kommer hjem i tide til anledningen\n\nBli den som fant den perfekte gaven i år – bestill i dag 👇",
+    "headline": "Gaven han faktisk kommer til å bruke",
+    "description": "Perfekt gave til ham som alltid fisker.",
+    "trefragor": "—"
+  },
+  {
+    "variant": 10,
+    "andrat": true,
+    "orsak": "Samme fiks av sitat som variant 7 (Daniel erstatter det oppdiktede sitatet, '30 dagers fornøyd-kunde-garanti' → '14 dagers angrerett'). Description 'Vurdert av fornøyde kunder – orden i båten hver gang.' (upåvist volumpåstand) → 'Sju anmeldelser, alle fem stjerner.'",
+    "message": "«Stabil og enkel. Jeg er fornøyd.» 🎣\n– Daniel, anmeldelse hos TackleBay\n✅ Enkel å bruke\n✅ Holder stødig, gang etter gang\n✅ 14 dagers angrerett\nSju anmeldelser, alle fem stjerner. 👇",
+    "headline": "Aldri mer flokete fiskestenger",
+    "description": "Sju anmeldelser, alle fem stjerner.",
+    "trefragor": "'Sju anmeldelser, alle fem stjerner': visualiserbart (konkret tall) ✅, falsifierbart (telbart, sant) ✅, ingen konkurrent kan påstå TackleBays egne sju anmeldelser ✅. Sitatet byttet som i variant 7."
+  }
+]
