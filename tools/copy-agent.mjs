@@ -39,12 +39,14 @@
 // --torr visar systemprompt, uppdragstext och schema utan att anropa API:t.
 // Testerna anropar aldrig API:t (tools/test/copy-agent.test.mjs).
 //
-// Noll beroenden. Kräver ANTHROPIC_API_KEY för skarp körning.
+// Noll beroenden. Kräver ANTHROPIC_API_KEY (eller ANTHROPIC_NYCKEL i
+// claude.ai-sessioner, se tools/lib/anthropic-nyckel.mjs) för skarp körning.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { anthropicNyckel, NYCKEL_SAKNAS } from './lib/anthropic-nyckel.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGELFIL = join(ROT, 'docs', 'copy-regler.md');
@@ -344,7 +346,7 @@ async function huvud(argv) {
   const regler = laddaRegler();
   let request;
   try {
-    request = byggRequest(modellNyckel, uppdrag, regler, { nyckel: process.env.ANTHROPIC_API_KEY ?? '' });
+    request = byggRequest(modellNyckel, uppdrag, regler, { nyckel: anthropicNyckel() });
   } catch (e) {
     console.error(e.message);
     process.exit(1);
@@ -362,8 +364,8 @@ async function huvud(argv) {
     return;
   }
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('ANTHROPIC_API_KEY saknas i miljön — kan inte anropa Messages API. Kör med --torr för att se prompten.');
+  if (!anthropicNyckel()) {
+    console.error(`${NYCKEL_SAKNAS} — kan inte anropa Messages API. Kör med --torr för att se prompten.`);
     process.exit(2);
   }
 
