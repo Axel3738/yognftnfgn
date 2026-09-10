@@ -37,8 +37,10 @@ Tested 2026-09-10.
 1. Create the store on shopify.com (free trial, the work Gmail, the
    **company** address — the address decides currency, language and country).
 2. Check currency, market, language. The factory **cannot** change them later.
-3. Create the app on dev.shopify.com, put the four keys in the session's
-   Environment, **save before the session starts**, install the app.
+3. Create the app on dev.shopify.com, give it the access scopes (the
+   checklist has the exact line to paste — without it the app may do
+   nothing), put the four keys in the session's Environment, **save before
+   the session starts**, install the app.
 
 ## Step 3 — The build starts
 

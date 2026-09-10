@@ -30,6 +30,9 @@
 //   3. Butikens NAMN ur Shopify är ett brand som redan finns i
 //      factory/butiker/ eller factory/output/ (ny-ops.md: state-filen ensam
 //      räckte inte — mätt 2026-09-09, TankGuard saknade state-fil).
+//   4. Appens SCOPES: saknas något av KRAVDA_SCOPES stoppar steg 0 med
+//      raden att klistra in på dev.shopify.com (TackleBay 2026-09-10: rätt
+//      butik, rätt nycklar, noll scopes — inget gick att skriva).
 //
 // Ingen hemlighet loggas eller returneras ur anslut(). Noll beroenden.
 
@@ -60,6 +63,74 @@ export const FORBJUDNA_DOMANER = Object.freeze([
 
 // Marginal innan en token räknas som utgången (ms).
 const UTGANGS_MARGINAL_MS = 5 * 60_000;
+
+// ---------------------------------------------------------------------------
+// Scopes appen "Fabriken" MÅSTE ha — annars kan kedjan inte skriva någonting.
+//
+// ⚠️ Mätt 2026-09-10 på TackleBay (iahe0c-b1): token-minten lyckades, men
+// appen hade NOLL scopes (`currentAppInstallation.accessScopes = []`). Inte
+// ens produkter gick att läsa, och steg 0 dog med en rå GraphQL-text om
+// `read_themes` i stället för att säga vad som saknades. Listan är härledd ur
+// vilka anrop kedjan gör (KEDJAN.md, `grep mutation factory/*.mjs`), och
+// checklistans avsnitt 3 bär samma lista som en rad att klistra in.
+// `write_x` täcker `read_x` — Shopify ger läsning på köpet.
+// ---------------------------------------------------------------------------
+export const KRAVDA_SCOPES = Object.freeze([
+  ['write_themes', 'tema-upload, brand, tema, avbrandning, logga, startsida, källskanning'],
+  ['write_products', 'produkt, metafält, kollektion, bonus'],
+  ['write_publications', 'publicera produkt + kollektion i Online Store'],
+  ['write_inventory', 'lagerpolicy (tracked false, CONTINUE)'],
+  ['read_locations', 'lagerpolicy, frakt'],
+  ['write_files', 'logga, favicon, startsidans och produktens bilder'],
+  ['write_content', 'sidor (Kontakt, Frakt & retur, Om oss)'],
+  ['write_online_store_navigation', 'huvudmeny + sidfot'],
+  ['write_legal_policies', 'policyer (retur, frakt, köpvillkor)'],
+  ['write_discounts', 'paket (rabattkoderna)'],
+  ['write_metaobject_definitions', 'paket (ms_paketniva)'],
+  ['write_metaobjects', 'paket (nivåerna A/B)'],
+  ['write_markets', 'marknad Norge'],
+  ['write_locales', 'locale nb'],
+  ['write_translations', 'oversatt (nb-texterna)'],
+  ['write_shipping', 'frakt (fraktzoner + fri frakt)'],
+]);
+
+// Raden som klistras in under "Access scopes" i appen på dev.shopify.com.
+export const SCOPE_RAD = KRAVDA_SCOPES.map(([s]) => s).join(',');
+
+// Vilka av de krävda scopen saknas i listan appen faktiskt fått?
+// → [[scope, vad det används till], …] — tom lista = allt finns.
+export function saknadeScopes(beviljade, krav = KRAVDA_SCOPES) {
+  const har = new Set((beviljade ?? []).map((s) => String(typeof s === 'string' ? s : s?.handle ?? '').trim()));
+  return krav.filter(([scope]) => {
+    if (har.has(scope)) return false;
+    // read_x täcks av write_x.
+    if (scope.startsWith('read_') && har.has(scope.replace(/^read_/, 'write_'))) return false;
+    return true;
+  });
+}
+
+// Felet som steg 0 kastar när appen saknar scopes. Börjar med "Connected"
+// för att anslutningen FUNGERADE — det är appens rättigheter som är fel,
+// och den som läser ska inte börja leta i miljön eller i Shopify-admin.
+export function forklaraSaknadeScopes({ doman, namn, appNamn, saknas, totalt = KRAVDA_SCOPES.length }) {
+  const bredd = Math.max(...saknas.map(([s]) => s.length));
+  return [
+    `STOPP — Connected: ${doman} ✓ (${namn}), men appen "${appNamn || 'Fabriken'}" har bara ${totalt - saknas.length} av ${totalt} scopes. Ingenting byggdes.`,
+    '',
+    'Saknas:',
+    ...saknas.map(([s, varfor]) => `  ${s.padEnd(bredd)}   ← ${varfor}`),
+    '',
+    'Så här ger du appen dem (4 klick, tar en minut):',
+    `  1. dev.shopify.com → Apps → "${appNamn || 'Fabriken <butikens adress-början>'}" → fliken Configuration`,
+    '  2. Under "Access scopes": klistra in raden nedan (exakt så, med kommatecken) → Save',
+    `     ${SCOPE_RAD}`,
+    '  3. Klicka Release (uppe till höger) så att den nya versionen blir aktiv',
+    '  4. Kör om kommandot. Tokenen mintas om automatiskt och får de nya scopen.',
+    '',
+    'Hjälper inte det: butikens admin → Inställningar → Appar och försäljningskanaler',
+    `→ "${appNamn || 'Fabriken'}" → avinstallera → installera om via appens Distribution-länk (checklistans avsnitt 3).`,
+  ].join('\n');
+}
 
 // ---------------------------------------------------------------------------
 // Rena hjälpfunktioner (testbara utan nätverk)
@@ -370,25 +441,45 @@ export async function mintaToken({ shop, clientId, clientSecret, butikId } = {},
 }
 
 // Läser butikens namn, domän och teman med tokenen — det som ska stå i "Connected".
+//
+// ETT anrop på den gröna vägen, med `currentAppInstallation` i samma fråga.
+// `shop` och installationen kräver inga scopes, så "Connected"-raden går
+// alltid att skriva. Saknar appen `read_themes`/`read_products` svarar
+// Shopify ACCESS_DENIED och `data: null` — då läses bara det scope-fria i
+// ett andra anrop, teman blir tomma och saknadeScopes() säger varför. Innan
+// dog hela läsningen på en rå `read_themes`-text och ingen fick veta att
+// butiken faktiskt svarade (TackleBay 2026-09-10).
+const GRUNDFALT = '{ shop { name myshopifyDomain currencyCode email primaryDomain { host } } currentAppInstallation { app { title handle } accessScopes { handle } }';
+
 export async function lasButik(shop, token, { fetchFn = fetch } = {}) {
   const doman = normaliseraDoman(shop);
-  const svar = await fetchFn(`https://${doman}/admin/api/${API_VERSION()}/graphql.json`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'X-Shopify-Access-Token': token },
-    body: JSON.stringify({
-      query:
-        '{ shop { name myshopifyDomain currencyCode email primaryDomain { host } } themes(first: 20) { nodes { id name role } } products(first: 1) { nodes { id } } }',
-    }),
-  });
-  if (svar.status === 401 || svar.status === 403) {
-    const e = new Error(`Shopify avvisade tokenen mot ${doman} (${svar.status}).`);
-    e.kod = 'TOKEN_AVVISAD';
-    throw e;
+  const fraga = async (query) => {
+    const svar = await fetchFn(`https://${doman}/admin/api/${API_VERSION()}/graphql.json`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Shopify-Access-Token': token },
+      body: JSON.stringify({ query }),
+    });
+    if (svar.status === 401 || svar.status === 403) {
+      const e = new Error(`Shopify avvisade tokenen mot ${doman} (${svar.status}).`);
+      e.kod = 'TOKEN_AVVISAD';
+      throw e;
+    }
+    if (!svar.ok) throw new Error(`Shopify svarade ${svar.status} mot ${doman}: ${(await svar.text()).slice(0, 200)}`);
+    return svar.json();
+  };
+
+  let data = await fraga(`${GRUNDFALT} themes(first: 20) { nodes { id name role } } products(first: 1) { nodes { id } } }`);
+  if (data.errors) {
+    // Mätt 2026-09-10: vid ACCESS_DENIED på themes/products nollar Shopify
+    // HELA data (fälten är non-null). Läs då bara det scope-fria — butiken
+    // svarar ju, och scope-spärren ska få säga vad som saknas.
+    const baraAtkomst = data.errors.every((e) => e?.extensions?.code === 'ACCESS_DENIED');
+    if (!baraAtkomst) throw new Error(`Shopify svarade fel: ${JSON.stringify(data.errors).slice(0, 300)}`);
+    data = await fraga(`${GRUNDFALT} }`);
+    if (data.errors) throw new Error(`Shopify svarade fel: ${JSON.stringify(data.errors).slice(0, 300)}`);
   }
-  if (!svar.ok) throw new Error(`Shopify svarade ${svar.status} mot ${doman}: ${(await svar.text()).slice(0, 200)}`);
-  const data = await svar.json();
-  if (data.errors) throw new Error(`Shopify svarade fel: ${JSON.stringify(data.errors).slice(0, 300)}`);
-  const s = data.data?.shop ?? {};
+  const d = data.data ?? {};
+  const s = d.shop ?? {};
   return {
     name: s.name ?? '',
     domain: normaliseraDoman(s.myshopifyDomain || doman),
@@ -396,8 +487,10 @@ export async function lasButik(shop, token, { fetchFn = fetch } = {}) {
     primaryDomain: s.primaryDomain?.host ?? null,
     currencyCode: s.currencyCode ?? null,
     email: s.email ?? null,
-    teman: data.data?.themes?.nodes ?? [],
-    harProdukter: (data.data?.products?.nodes ?? []).length > 0,
+    teman: d.themes?.nodes ?? [],
+    harProdukter: d.products ? (d.products.nodes ?? []).length > 0 : null,
+    scopes: (d.currentAppInstallation?.accessScopes ?? []).map((a) => a?.handle).filter(Boolean),
+    appNamn: d.currentAppInstallation?.app?.title ?? '',
   };
 }
 
@@ -410,7 +503,7 @@ export async function lasButik(shop, token, { fetchFn = fetch } = {}) {
 // Kastar med läsbart skäl vid saknade nycklar, misslyckad mint eller spärr.
 // Sätter process.env.SHOPIFY_STORE_DOMAIN + SHOPIFY_ADMIN_TOKEN och skriver
 // factory/.env (om inte torr/utanEnvFil). Returnerar aldrig tokenen.
-export async function anslut(butikId, { torr = false, utanEnvFil = false, env = process.env, envFil = ENV_FIL, fetchFn = fetch, nu = Date.now(), sparrAlternativ = {}, onskadDoman = null } = {}) {
+export async function anslut(butikId, { torr = false, utanEnvFil = false, env = process.env, envFil = ENV_FIL, fetchFn = fetch, nu = Date.now(), sparrAlternativ = {}, onskadDoman = null, kravScopes = true } = {}) {
   const id = String(butikId ?? '').trim().toLowerCase();
   if (!id) throw new Error('anslut: butiks-id saknas.');
 
@@ -505,6 +598,21 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   const efterspärr = spärrar(id, { domain: butik.domain, name: butik.name }, sparrAlternativ);
   if (!efterspärr.ok) throw new Error(`STOPP — ${efterspärr.skal}`);
 
+  // Appens rättigheter — FÖRE första skrivningen. Rätt butik med en app
+  // utan scopes är också ett stopp, men ett annat: felet ska peka på
+  // dev.shopify.com, inte på miljön (TackleBay 2026-09-10, noll scopes).
+  // En SPARAD token bär scopen från när den mintades — har appen fått fler
+  // sedan dess syns de först i en ny token. Minta om en gång innan stoppet.
+  let saknas = kravScopes ? saknadeScopes(butik.scopes) : [];
+  if (saknas.length > 0 && tokenKalla === 'sparad' && kanMinta) {
+    await minta();
+    butik = await lasButik(n.shop, token, { fetchFn });
+    saknas = saknadeScopes(butik.scopes);
+  }
+  if (saknas.length > 0) {
+    throw new Error(forklaraSaknadeScopes({ doman: butik.domain, namn: butik.name, appNamn: butik.appNamn, saknas }));
+  }
+
   // Processen: det shopify.mjs läser. Skrivs över med flit — hela poängen
   // med steg 0 är att peka fabriken på den NYA butiken.
   env.SHOPIFY_STORE_DOMAIN = butik.domain;
@@ -539,6 +647,8 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
     currencyCode: butik.currencyCode,
     email: butik.email,
     harProdukter: butik.harProdukter,
+    scopes: butik.scopes,
+    appNamn: butik.appNamn,
     tokenKalla,
     torr: false,
   };
@@ -570,7 +680,7 @@ async function huvud() {
   console.log(
     `   ${b.harProdukter ? 'har produkter' : 'inga produkter'} · teman: ${b.teman.map((t) => `${t.name} (${t.role})`).join(', ') || '—'}`
   );
-  console.log(`   token: ${b.tokenKalla === 'mintad' ? 'nymintad (24 h)' : 'sparad, fortfarande giltig'}`);
+  console.log(`   token: ${b.tokenKalla === 'mintad' ? 'nymintad (24 h)' : 'sparad, fortfarande giltig'} · app "${b.appNamn}" med ${b.scopes.length} scopes (alla ${KRAVDA_SCOPES.length} krävda finns)`);
   if (baraKolla) return;
   console.log(`✅ factory/.env skriven (SHOPIFY_STORE_DOMAIN + SHOPIFY_ADMIN_TOKEN + SHOPIFY_ADMIN_TOKEN_${envSuffix(butikId)}).`);
 }

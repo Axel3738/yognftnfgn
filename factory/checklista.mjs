@@ -43,6 +43,7 @@
 // automatiseras bort — den ska krympa, aldrig växa av slentrian.
 
 import { STJARNFARG } from './branding.mjs';
+import { KRAVDA_SCOPES, SCOPE_RAD } from './token.mjs';
 
 // Landskod → vad VA:n ser i Shopify-adminen (engelska).
 const LAND_EN = { SE: 'Sweden', NO: 'Norway', DK: 'Denmark', FI: 'Finland', DE: 'Germany', GB: 'United Kingdom' };
@@ -194,6 +195,10 @@ thrown away and run again, so they come before the build, not after it.
 
 ## 3. Shopify – connect Claude Code
 - [ ] Go to **dev.shopify.com** → log in with the work Gmail → Apps → **Create app** → name it: **Fabriken** + the store's address start (example: Fabriken y1sj1i)
+- [ ] The app → **Configuration** → under **Access scopes** paste this exact line → **Save** → **Release** (top right).
+  Without it the app is installed but allowed to do NOTHING — the build stops
+  at step 0 and prints this same line (measured 2026-09-10, TackleBay: 0 of ${KRAVDA_SCOPES.length} scopes):
+  \`${SCOPE_RAD}\`
 - [ ] The app → **Settings** → copy the **Client ID** and the **Client secret**
 - [ ] Look at the store's address. It ends in \`.myshopify.com\`. The part
   BEFORE that is the tag you use below — it is the same thing you typed when

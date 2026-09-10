@@ -98,6 +98,14 @@ Hela listan i `factory/README.md`.
    `output/` för en annan butik. Tokenen skrivs i `factory/.env` som
    `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` + `SHOPIFY_ADMIN_TOKEN_<BUTIK>`
    (+ utgångstid och domän per butik) så gamla butiker förblir nåbara.
+   **Fjärde spärren (2026-09-10): appens scopes.** `token.mjs` läser
+   `currentAppInstallation.accessScopes` i samma anrop som `shop` och jämför
+   mot `KRAVDA_SCOPES` (16 st). Saknas något stoppar steg 0 med "Connected ✓
+   … men appen har N av 16 scopes" och raden att klistra in under Access
+   scopes på dev.shopify.com. *(TackleBay 2026-09-10: rätt butik, rätt
+   nycklar, token mintad — och NOLL scopes. Inte ens produkter gick att läsa,
+   och felet var en rå `read_themes`-text. Checklistans avsnitt 3 bär nu
+   scope-raden som ett eget klick.)*
 2. ⚙️ **Hämta produktdata** från källan (Bäverbutik-sidan): `/products/<handle>.json`
    + Judge.me `reviews_for_widget` (originaldatum i `reviews[].created_at`).
    Källans Kaching-paketnivåer ligger som JSON i sidans HTML
@@ -474,6 +482,13 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   checkout-branding (Plus), Meta-sidor, CAPI-token, Discord-server,
   Judge.mes inställningar och token. `shopPolicyUpdate` kräver scopet
   `write_legal_policies` — saknas det blir policyerna manuella.
+- **Appens scopes är ett klick, inte en självklarhet.** En app skapad på
+  dev.shopify.com har inga scopes förrän någon skriver in dem under
+  Configuration → Access scopes och släpper en version. Token-minten lyckas
+  ändå, så felet syns först vid första läsningen. Listan bor på ETT ställe,
+  `KRAVDA_SCOPES` i `token.mjs`; checklistan och steg 0 läser den därifrån.
+  Ändras kedjan så att den behöver ett nytt scope: lägg till det där, aldrig
+  i en doc-fil för hand.
 - **En färsk trial-butik har `en` som primärspråk och VA:ns land/valuta**
   (DryTrek: `shopLocales` = bara `en`; TackleBay: `en`, Filippinerna, PHP,
   2026-09-09). Svensk text hamnar i `en`-slotten men kundvyn blir rätt;

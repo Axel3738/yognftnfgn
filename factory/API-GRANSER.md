@@ -36,6 +36,8 @@ Varje rad är märkt:
 | Byta PRIMÄRMARKNAD | **OBEKRÄFTAT** | `marketCreate`/`marketUpdate` finns och används redan för Norge. Om primärmarknaden går att flytta har ingen provat. |
 | Skapa butiken | **OBEKRÄFTAT** | Shopifys Partner API kan skapa development stores. Ingen i repot har provat. Skulle ta bort checklistans avsnitt 1 OCH garantera rätt land. **Den här är värd mest av alla — den fixar tre problem på en gång.** |
 | Skapa appen + client id/secret | **OBEKRÄFTAT** | Partner API har app-endpoints. Ingen har provat. Skulle ta bort avsnitt 3 (fyra klick). |
+| Läsa vilka scopes appen har | **MÄTT: GÅR** | `currentAppInstallation { accessScopes { handle } }` kräver inga scopes alls och svarade `[]` på TackleBay 2026-09-10 — appen var installerad men fick göra ingenting. Steg 0 kör kontrollen mot `KRAVDA_SCOPES` i `token.mjs`. ⚠️ Frågar man samtidigt efter `themes`/`products` utan scope nollar Shopify HELA `data` (fälten är non-null) — läs det scope-fria i ett eget anrop. |
+| Ge appen scopes | **MÄNSKLIGT** | Sätts under Configuration → Access scopes på dev.shopify.com + Release. Client-credentials-tokenen bär scopen från när den mintades: efter klicket mintas en ny (steg 0 gör det själv när en sparad token saknar scopes). OBEKRÄFTAT om Partner API kan sätta dem — ingen har provat. |
 | Koppla domän till butiken | **OBEKRÄFTAT** | Ingen har provat. |
 | Aktivera Shopify Payments | **MÄNSKLIGT** | Kräver bolagets bankuppgifter och identitetskontroll. Ska inte automatiseras. Ligger dessutom EFTER ägarbytet sedan Axels regel 2026-09-10 — det är ägarens eget konto som ska bära den. |
 | Installera Judge.me | **MÄNSKLIGT (delvis)** | Appinstallation kräver ett OAuth-samtycke. Efter installationen är API:t automatiserbart — det görs redan. |
