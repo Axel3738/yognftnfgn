@@ -132,7 +132,14 @@ bra."** Härifrån gick det inte — egress-tunneln stänger Chromiums anslutnin
 efter sex sekunder (tre försök).
 
 ⚠️ **HeimGuard har samma bugg live** (5 906 byte gammal fil på
-heimguard.se). Inte rättad: butikens nycklar saknas i den här sessionen.
+heimguard.se). Inte rättad — och `varukorgsfix.mjs` KAN inte rätta den:
+`token.mjs` har `pzjagy-mz.myshopify.com` i `FORBJUDNA_DOMANER` utan undantag
+("fabriken rör den aldrig"), så `anslut()` stoppar oavsett nycklar. Vägarna
+är (a) någon klistrar in `factory/tema/assets/ms-paket.js` i HeimGuards
+publicerade tema för hand (Online Store → Themes → Edit code →
+`assets/ms-paket.js`), eller (b) Axel lyfter spärren för just den filen.
+Kontrollen efteråt kräver inga nycklar: hämta `ms-paket.js` från
+heimguard.se:s CDN och leta `stopImmediatePropagation`. Ägarbeslut.
 
 Trippelkollen live 2026-09-10 efter fixen: `fabriksfiler i publicerat tema` ✅,
 18 gröna. Två röda som INTE hör till varukorgen och stod röda redan innan:
