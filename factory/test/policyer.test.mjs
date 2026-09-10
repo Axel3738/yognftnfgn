@@ -15,6 +15,7 @@ import {
   kontaktsida,
   oppetKop,
   saknadeUppgifter,
+  angerknappUrl,
 } from '../policyer.mjs';
 import { kontrolleraLaunch } from '../kontroll.mjs';
 import { dummy, medButiksfrakt, raprodukt } from './hjalp.mjs';
@@ -76,6 +77,40 @@ test('gratis frakt skrivs ut som fri frakt, inte som 0 kr', () => {
   const html = fraktpolicy(medFrakt({ tid: '5–8 arbetsdagar', kostnad: 0, gratis_over: 0 }));
   assert.ok(html.includes('Fri frakt'));
   assert.ok(!html.includes('0 kr'));
+});
+
+// Förenat 2026-09-09 (KEDJAN.md): TankGuard lade till länderna i fraktraden,
+// DryTrek tog bort "öppet köp" ur rubriken. Båda ska gälla.
+test('fraktpolicyn namnger länderna när de står i konfigen: "Fri frakt till Sverige och Norge"', () => {
+  const tva = fraktpolicy(medFrakt({ tid: '6–10 arbetsdagar', kostnad: 0, gratis_over: 0, lander: ['Sverige', 'Norge'] }));
+  assert.ok(tva.includes('<li>Fri frakt till Sverige och Norge</li>'), tva);
+  const tre = fraktpolicy(medFrakt({ kostnad: 0, gratis_over: 0, lander: ['Sverige', 'Norge', 'Danmark'] }));
+  assert.ok(tre.includes('Fri frakt till Sverige, Norge och Danmark'));
+  const en = fraktpolicy(medFrakt({ kostnad: 0, gratis_over: 0, lander: ['Sverige'] }));
+  assert.ok(en.includes('<li>Fri frakt till Sverige</li>'));
+  const betald = fraktpolicy(medFrakt({ kostnad: 49, gratis_over: 0, lander: ['Sverige', 'Norge'] }));
+  assert.ok(betald.includes('<li>Frakt till Sverige och Norge: 49 kr</li>'));
+  const utan = fraktpolicy(medFrakt({ kostnad: 0, gratis_over: 0 }));
+  assert.ok(utan.includes('<li>Fri frakt</li>'));
+});
+
+test('länderna i fraktpolicyn kommer ur butikens marknader via sammanvävningen', () => {
+  const p = dummy();
+  assert.deepEqual(p.shipping.lander, ['Sverige']);
+  assert.ok(fraktpolicy(p).includes('Fri frakt till Sverige'));
+});
+
+test('returpolicyns rubrik är "Ångerrätt" utan öppet köp när butiken bara ger lagens 14 dagar', () => {
+  const html = returpolicy(dummy());
+  assert.ok(html.includes('<h2>Ångerrätt</h2>'));
+  assert.ok(!html.includes('öppet köp'));
+});
+
+test('ger butiken mer än lagen nämner rubriken öppet köp', () => {
+  const p = { ...dummy(), retur: { oppet_kop_dagar: 30, angerratt_dagar: 14 } };
+  const html = returpolicy(p);
+  assert.ok(html.includes('<h2>Ångerrätt och öppet köp</h2>'));
+  assert.ok(html.includes('30 dagars öppet köp'));
 });
 
 test('köpvillkoren bär företagsnamn, orgnr och valuta', () => {
@@ -170,4 +205,46 @@ test('extra fraktsätt i kassan står också på fraktpolicyn', () => {
   assert.ok(html.includes('Express'));
   assert.ok(html.includes('99 kr'));
   assert.ok(html.includes('1–2 arbetsdagar'));
+});
+
+// -------------------------------------------------- EU:s ångerknapp
+//
+// Obligatorisk sedan 19 juni: en tydlig knapp kunden hittar, en
+// tvåstegsbekräftelse och ett automatiskt bekräftelsemejl. Shopifys
+// självbetjäningsreturer uppfyller alla tre när de är påslagna (VA:ns klick,
+// checklistan 5b). Saknas knappen kan ångerfristen förlängas från 14 dagar
+// till 12 månader och 14 dagar, och böterna når 4 % av årsomsättningen i
+// vissa medlemsstater.
+
+test('returpolicyn bär ångerknappen med en klickbar länk', () => {
+  const p = byggPolicyer(dummy()).find((x) => x.type === 'REFUND_POLICY');
+  assert.ok(p.body.includes('Ångra ditt köp'), 'rubriken saknas');
+  assert.match(p.body, /<a href="\/account">/, 'länken ska vara klickbar, inte en instruktion');
+  assert.ok(p.body.includes('Ångra köp'), 'knappens NAMN ska stå så kunden känner igen den i sidfoten');
+  assert.ok(/bekräftelsemejl/.test(p.body), 'kunden ska veta att bekräftelsen kommer');
+});
+
+test('ångerknappen anger samma antal dagar som ångerrätten', () => {
+  // Två olika tal i samma butik ger två svar på samma fråga, och det svar
+  // som gäller är kundens fördel.
+  const b = dummy();
+  b.retur = { ...(b.retur ?? {}), angerratt_dagar: 30 };
+  const p = byggPolicyer(b).find((x) => x.type === 'REFUND_POLICY');
+  const i = p.body.indexOf('Ångra ditt köp');
+  assert.ok(p.body.slice(i).includes('30 dagar'), 'knappens text ska följa butikens ångerrätt');
+});
+
+test('url:en går att styra per butik men har /account som default', () => {
+  assert.equal(angerknappUrl({}), '/account');
+  assert.equal(angerknappUrl({ butik: { angerknapp_url: 'https://shopify.com/123/account' } }), 'https://shopify.com/123/account');
+});
+
+test('ångerknappen bygger ALDRIG en egen inloggningsfri formulärsida', () => {
+  // Shopifys eget utskick påstod att kunden inte får behöva logga in. Det
+  // står ingenstans i direktivet — kravet är att ångra inte får vara
+  // krångligare än att köpa, och ett klick i sitt konto är enklare än ett
+  // köp med kort och BankID.
+  const p = byggPolicyer(dummy()).find((x) => x.type === 'REFUND_POLICY');
+  assert.ok(!/formulär|fyll i din e-post|utan att logga in/i.test(p.body),
+    'policyn ska peka på kundkontot, inte på en egen returformulärsida');
 });

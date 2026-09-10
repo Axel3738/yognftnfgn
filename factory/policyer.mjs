@@ -54,12 +54,49 @@ export function oppetKop(p) {
   return null;
 }
 
+/** URL:en till ångerknappen — kundkontosidan där kunden ångrar sitt köp.
+ *
+ *  `/account` på butikens egen domän skickar vidare till kundkontona, både
+ *  klassiska och nya. En butik som fått en annan adress ur Shopify sätter
+ *  `butik.angerknapp_url` i konfigen. */
+export function angerknappUrl(p) {
+  return p.butik?.angerknapp_url ?? p.angerknapp_url ?? '/account';
+}
+
+/** EU:s ångerknapp, obligatorisk sedan 19 juni.
+ *
+ *  Kravet: en tydlig knapp kunden hittar, en tvåstegsbekräftelse där hen
+ *  anger sitt namn och sin order, och ett automatiskt bekräftelsemejl.
+ *  Shopifys självbetjäningsreturer uppfyller alla tre — förutsatt att
+ *  kundkonton och självbetjäning är PÅSLAGNA. Det är VA:ns klick, och det
+ *  står i checklistan.
+ *
+ *  Att strunta i det kostar: rättsliga varningar, böter upp till 4 % av
+ *  årsomsättningen i vissa medlemsstater, och ångerfristen förlängs från
+ *  14 dagar till 12 månader och 14 dagar.
+ *
+ *  ⚠️ Kunden får logga in. Shopifys eget utskick påstod motsatsen, men det
+ *  står ingenstans i direktivet. Kravet är att ångra INTE får vara krångligare
+ *  än att köpa — och att klicka i sitt konto är enklare än att göra ett köp
+ *  med kort och BankID. (Agnes Hammarstrand, e-handelsjurist, gör samma
+ *  tolkning.) Bygg därför aldrig en egen inloggningsfri returformulärsida:
+ *  den blir sämre, och den behövs inte. */
+export function angerknapp(p, dagar) {
+  const url = angerknappUrl(p);
+  return `<h2>Ångra ditt köp</h2>
+<p>Du ångrar köpet själv, direkt i ditt konto. Du behöver inte mejla oss först.</p>
+<p><a href="${url}"><strong>Klicka här för att ångra ditt köp</strong></a></p>
+<p>Knappen heter <strong>Ångra köp</strong> och finns längst ner på varje sida. Du väljer order, anger orsak och skickar in. Du kan använda den i ${dagar} dagar från den dag du tog emot varan, och du får ett bekräftelsemejl direkt när vi tagit emot din ångring.</p>`;
+}
+
 export function returpolicy(p) {
   const f = foretag(p);
   const r = retur(p);
   const dagar = oppetKop(p);
   const eget = dagar && dagar > r.angerratt;
-  return `<h2>Ångerrätt och öppet köp</h2>
+  // Rubriken nämner öppet köp bara när butiken faktiskt ger mer än lagen
+  // (Axels beslut 2026-09-08: svensk lag, inga egna köplöften).
+  return `<h2>${eget ? 'Ångerrätt och öppet köp' : 'Ångerrätt'}</h2>
 <p>Du har enligt distansavtalslagen ${r.angerratt} dagars ångerrätt från den dag du tog emot varan.${
     eget ? ` Vi ger dig utöver det ${dagar} dagars öppet köp.` : ''
   }</p>
@@ -68,6 +105,8 @@ export function returpolicy(p) {
       ? 'Du ansvarar för returfrakten om inget annat avtalats.'
       : 'Vi betalar returfrakten.'
   }</p>
+
+${angerknapp(p, r.angerratt)}
 
 <h2>Så gör du en retur</h2>
 <ol>
@@ -99,8 +138,18 @@ export function fraktpolicy(p) {
     return `<li>${delar.join(': ').replace(/:(?=[^:]*$)/, ',')}</li>`;
   });
 
+  // "Fri frakt" ensamt svarar inte på frågan en norsk besökare har. Står
+  // länderna i konfigen sätts de i raden.
+  const lander = lista(s.lander);
+  const till =
+    lander.length === 0
+      ? ''
+      : lander.length === 1
+        ? ` till ${lander[0]}`
+        : ` till ${lander.slice(0, -1).join(', ')} och ${lander[lander.length - 1]}`;
+
   const rader = [
-    s.kostnad === 0 ? '<li>Fri frakt</li>' : `<li>Frakt: ${kostnad ?? 'anges i kassan'}</li>`,
+    s.kostnad === 0 ? `<li>Fri frakt${till}</li>` : `<li>Frakt${till}: ${kostnad ?? 'anges i kassan'}</li>`,
     ...(gratis ? [`<li>Fri frakt vid köp över ${gratis}</li>`] : []),
     ...extra,
   ];

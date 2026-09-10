@@ -1,0 +1,426 @@
+[
+ {
+  "namn": "Batmotor_BF_8_1",
+  "malnamn": "Batmotortrekk_NO_BF_8_1",
+  "prefix": "Batmotor",
+  "vinkel": "BF",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "fri_frakt_regel": "fri frakt i Norge over 300 kr",
+   "storlekar": "ni størrelser, fra 0–5 hk til 250–350 hk (produktsidan)",
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — påstå ALDRIG norska betyg; svenska recensioner översätts och attribueras till baverbutiken.se efter namnet",
+   "garanti": "30 dagers åpent kjøp (aldrig 'garanti')",
+   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
+   "material": "420D oxfordstoff, dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "se_copy": {
+   "message": "Passar skyddet inte din motor?\nSkicka tillbaka det inom 30 dagar.\nBetalning med Klarna.",
+   "headline": "30 dagars öppet köp",
+   "description": "Betalning med Klarna",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "30 dagars öppet köp.",
+     "Passar den inte din motor? Skicka tillbaka den inom",
+     "30 dagar."
+    ],
+    "block": [
+     [
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "Betalning med Klarna."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Båtmotorskyddet 420D"
+    ]
+   }
+  ],
+  "varning": null,
+  "anm": "Cirkelpilen till vänster är grafik. Inget pris i bilden.",
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_FM_3_1",
+  "malnamn": "Batmotortrekk_NO_FM_3_1",
+  "prefix": "Batmotor",
+  "vinkel": "FM",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "fri_frakt_regel": "fri frakt i Norge over 300 kr",
+   "storlekar": "ni størrelser, fra 0–5 hk til 250–350 hk (produktsidan)",
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — påstå ALDRIG norska betyg; svenska recensioner översätts och attribueras till baverbutiken.se efter namnet",
+   "garanti": "30 dagers åpent kjøp (aldrig 'garanti')",
+   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
+   "material": "420D oxfordstoff, dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "se_copy": {
+   "message": "Snart läggs båten upp för säsongen.\n420D Oxford-tyg skyddar motorn under tiden.\n579 kr istället för 965 kr.",
+   "headline": "579 kr istället för 965 kr",
+   "description": "30 dagars öppet köp",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Snart läggs båten upp för",
+     "säsongen.",
+     "Skydda motorn med 420D Oxford-tyg innan dess."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "band",
+    "rader": [
+     "579 kr istället för 965 kr · 30 dagars öppet köp"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Båtmotorskyddet 420D"
+    ]
+   }
+  ],
+  "varning": [
+   "Bandet: 579/965 → 529/882 kr.",
+   "Plattan halvgenomskinlig över foto — override; bandet hittas men tas med i overriden för säkerhets skull."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_RV_7_1",
+  "malnamn": "Batmotortrekk_NO_RV_7_1",
+  "prefix": "Batmotor",
+  "vinkel": "RV",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "fri_frakt_regel": "fri frakt i Norge over 300 kr",
+   "storlekar": "ni størrelser, fra 0–5 hk til 250–350 hk (produktsidan)",
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — påstå ALDRIG norska betyg; svenska recensioner översätts och attribueras till baverbutiken.se efter namnet",
+   "garanti": "30 dagers åpent kjøp (aldrig 'garanti')",
+   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
+   "material": "420D oxfordstoff, dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "se_copy": {
+   "message": "\"Gör jobbet bra och motorn hålls ren.\"\n– Daniel Lindberg\n579 kr istället för 965 kr.",
+   "headline": "\"Motorn hålls ren\" – Daniel L.",
+   "description": "579 kr istället för 965 kr",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Gör jobbet bra och motorn hålls ren.”",
+     "— Daniel Lindberg"
+    ]
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "579 kr istället för 965 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Båtmotorskyddet 420D"
+    ]
+   }
+  ],
+  "varning": [
+   "Svensk recension — attribueras '— Daniel Lindberg, baverbutiken.se'. Plattan hittas inte (vit över vitt) — override. Fototext 579/965 → 529/882."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_BF_9_1",
+  "malnamn": "Batmotortrekk_NO_BF_9_1",
+  "prefix": "Batmotor",
+  "vinkel": "BF",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "fri_frakt_regel": "fri frakt i Norge over 300 kr",
+   "storlekar": "ni størrelser, fra 0–5 hk til 250–350 hk (produktsidan)",
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — påstå ALDRIG norska betyg; svenska recensioner översätts och attribueras till baverbutiken.se efter namnet",
+   "garanti": "30 dagers åpent kjøp (aldrig 'garanti')",
+   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
+   "material": "420D oxfordstoff, dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "se_copy": {
+   "message": "Ingen presenning.\n420D Oxford-tyg i 9 storlekar, 0–5 hk till 250–350 hk.\nDras över och spänns fast – inga verktyg.",
+   "headline": "Inte en presenning. Ett format skydd.",
+   "description": "Dras över, spänns fast – inga verktyg",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Ingen presenning.",
+     "Ett skydd format efter din",
+     "motor.",
+     "420D Oxford-tyg, 9 storlekar – 0–5 hk till 250–350 hk."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ]
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "Dras över och spänns fast, inga verktyg."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Båtmotorskyddet 420D"
+    ]
+   }
+  ],
+  "varning": null,
+  "anm": "Halvgenomskinlig platta över produktbilden — override. Inget pris.",
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_RV_6_1",
+  "malnamn": "Batmotortrekk_NO_RV_6_1",
+  "prefix": "Batmotor",
+  "vinkel": "RV",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "fri_frakt_regel": "fri frakt i Norge over 300 kr",
+   "storlekar": "ni størrelser, fra 0–5 hk til 250–350 hk (produktsidan)",
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — påstå ALDRIG norska betyg; svenska recensioner översätts och attribueras till baverbutiken.se efter namnet",
+   "garanti": "30 dagers åpent kjøp (aldrig 'garanti')",
+   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
+   "material": "420D oxfordstoff, dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "se_copy": {
+   "message": "\"Skyddet passar bra och håller motorn ren.\"\n– Anders Nilsson\n579 kr istället för 965 kr.",
+   "headline": "\"Håller motorn ren\" – Anders N.",
+   "description": "579 kr istället för 965 kr",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "”Skyddet passar bra och håller motorn",
+     "ren.”",
+     "— Anders Nilsson"
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "579 kr istället för 965 kr"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Båtmotorskyddet 420D"
+    ]
+   }
+  ],
+  "varning": [
+   "Recensionen är svensk (Judge.me, Bäverbutiken) — översätts, attribueras: '— Anders Nilsson, baverbutiken.se'. Norska sidan har 1 recension (1 stjärna) — påstå aldrig norska betyg.",
+   "Stjärnorna ovanför är grafik. Fototext 579/965 → 529/882."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_BF_7_1",
+  "malnamn": "Batmotortrekk_NO_BF_7_1",
+  "prefix": "Batmotor",
+  "vinkel": "BF",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "fri_frakt_regel": "fri frakt i Norge over 300 kr",
+   "storlekar": "ni størrelser, fra 0–5 hk til 250–350 hk (produktsidan)",
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — påstå ALDRIG norska betyg; svenska recensioner översätts och attribueras till baverbutiken.se efter namnet",
+   "garanti": "30 dagers åpent kjøp (aldrig 'garanti')",
+   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
+   "material": "420D oxfordstoff, dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "se_copy": {
+   "message": "579 kr istället för 965 kr – spara 386 kr.\n420D Oxford-tyg, 9 storlekar, 0–350 hk.\nBetala med Klarna.",
+   "headline": "579 kr (ord. 965 kr) – spara 386 kr",
+   "description": "Betala med Klarna",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "579 kr (ord.",
+     "965 kr) — spara 386 kr.",
+     "420D Oxford-tyg, 9 storlekar, 0–350 hk."
+    ],
+    "block": [
+     [
+      0,
+      1
+     ]
+    ],
+    "stryk_del": {
+     "1": "965 kr"
+    }
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "Betala med Klarna."
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Båtmotorskyddet 420D"
+    ]
+   }
+  ],
+  "varning": [
+   "Svenskt pris 579/965 kr, spara 386 — NO 529/882 kr, spar 353 kr.",
+   "'9 storlekar, 0–350 hk' stämmer i Norge (produktsidan: ni størrelser fra 0–5 hk til 250–350 hk).",
+   "Klarna finns i Norge."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ },
+ {
+  "namn": "Batmotor_CS_7_1",
+  "malnamn": "Batmotortrekk_NO_CS_7_1",
+  "prefix": "Batmotor",
+  "vinkel": "CS",
+  "fakta": {
+   "produkt_no": "Båtmotortrekk 420D – Heldekkende for Påhengsmotor",
+   "pris": "529 kr",
+   "jamforpris": "882 kr",
+   "spar": "353 kr",
+   "rabatt_pct": 40,
+   "fri_frakt": true,
+   "fri_frakt_regel": "fri frakt i Norge over 300 kr",
+   "storlekar": "ni størrelser, fra 0–5 hk til 250–350 hk (produktsidan)",
+   "anmeldelser": "1 anmeldelse (1,0) på beverbutikken.no — påstå ALDRIG norska betyg; svenska recensioner översätts och attribueras till baverbutiken.se efter namnet",
+   "garanti": "30 dagers åpent kjøp (aldrig 'garanti')",
+   "betalning": "Klarna – få først, betal senere (gäller i Norge)",
+   "material": "420D oxfordstoff, dekker fra deksel til rigg, stropp med spenne, ingen verktøy",
+   "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+  },
+  "se_copy": {
+   "message": "579 kr för Båtmotorskyddet 420D.\nOrdinarie pris 965 kr – spara 386 kr.\n30 dagars öppet köp, betalning med Klarna.",
+   "headline": "579 kr för 420D-skyddet (ord. 965 kr)",
+   "description": "30 dagars öppet köp · Klarna",
+   "link": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  },
+  "bildtexter": [
+   {
+    "typ": "platta",
+    "rader": [
+     "579 kr för Båtmotorskyddet",
+     "420D (ord.",
+     "965 kr).",
+     "Spara 386 kr på 420D Oxford-skyddet."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "stryk_del": {
+     "2": "965 kr"
+    }
+   },
+   {
+    "typ": "fototext",
+    "rader": [
+     "30 dagars öppet köp · Klarna"
+    ]
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ Båtmotorskyddet 420D"
+    ]
+   }
+  ],
+  "varning": [
+   "Pris 579/965, spara 386 → 529/882, spar 353.",
+   "Plattan är halvgenomskinlig över ett foto — override."
+  ],
+  "anm": null,
+  "link_no": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+ }
+]

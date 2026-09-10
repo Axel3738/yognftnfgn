@@ -3,6 +3,13 @@
 //
 // Kräver:  SHOPIFY_STORE_DOMAIN  (ex: min-butik.myshopify.com)
 //          SHOPIFY_ADMIN_TOKEN   (Admin API access token från en custom app)
+//
+// Exportkontraktet står i factory/KEDJAN.md. Det här är EN modul för alla
+// Admin-anrop (produkt, sidor, meny, kollektion, teman, frakt, metafält) —
+// förenad 2026-09-09 ur tre grenar (TackleBay, DryTrek, TankGuard). De rena
+// hjälparna (`valjArbetstema`, `matchaProduktfiler`, `tolkaFraktprofil`,
+// `byggFraktprofilInput`, `hittaUserErrors`, `filstamUrUrl`) är exporterade
+// så logiken går att testa utan nätverk.
 
 const API_VERSION = () => process.env.SHOPIFY_API_VERSION || '2025-07';
 
@@ -18,7 +25,33 @@ export function kravEnv() {
   }
 }
 
-export async function graphql(query, variables = {}) {
+// ---- userErrors: ett ställe som kastar, så inget steg kan svälja dem ----
+//
+// Varje mutation i Admin-API:t lägger sina fel i `userErrors` på payloaden
+// (toppnivån i `data`). Hittas en icke-tom sådan kastar `graphql` — anroparen
+// behöver inte kolla själv. Fältet kan heta `field` (de flesta), `filename`
+// (themeFilesUpsert) eller bära en `code` (rabattkoder).
+export function hittaUserErrors(data) {
+  const ut = [];
+  if (!data || typeof data !== 'object') return ut;
+  for (const [operation, payload] of Object.entries(data)) {
+    const fel = payload?.userErrors;
+    if (!Array.isArray(fel) || fel.length === 0) continue;
+    for (const f of fel) {
+      const falt = Array.isArray(f.field) ? f.field.join('.') : f.field ?? f.filename ?? null;
+      ut.push({ operation, falt, kod: f.code ?? null, meddelande: f.message ?? String(f) });
+    }
+  }
+  return ut;
+}
+
+const felText = (fel) =>
+  fel.map((f) => `  • ${f.operation}${f.falt ? ` (${f.falt})` : ''}: ${f.meddelande}`).join('\n');
+
+// Kör en fråga eller mutation. Kastar på HTTP-fel, GraphQL-fel och userErrors.
+// `tillatUserErrors: true` stänger av den sista spärren — för en anropare som
+// själv vill läsa userErrors ur svaret (t.ex. en granskning som bokför dem).
+export async function graphql(query, variables = {}, { tillatUserErrors = false } = {}) {
   kravEnv();
   const url = `https://${process.env.SHOPIFY_STORE_DOMAIN}/admin/api/${API_VERSION()}/graphql.json`;
   const svar = await fetch(url, {
@@ -36,7 +69,21 @@ export async function graphql(query, variables = {}) {
   if (data.errors) {
     throw new Error(`GraphQL-fel: ${JSON.stringify(data.errors).slice(0, 500)}`);
   }
+  if (!tillatUserErrors) {
+    const fel = hittaUserErrors(data.data);
+    if (fel.length > 0) throw new Error(`Shopify avvisade anropet:\n${felText(fel)}`);
+  }
   return data.data;
+}
+
+// Ger ett fel ett svenskt sammanhang ("Kunde inte skapa sidan frakt: …") utan
+// att tappa Shopifys ursprungliga text.
+async function medKontext(text, fn) {
+  try {
+    return await fn();
+  } catch (e) {
+    throw new Error(`${text}: ${e.message}`);
+  }
 }
 
 // Connection-check: läser butikens grunddata. Går det igenom är kopplingen grön.
@@ -54,148 +101,289 @@ export async function kontrolleraAnslutning() {
   return data.shop;
 }
 
+// ---- Produkten ----
+
+// Filnamnet i en URL: 'https://cdn/x/Foto%20A.jpg?v=1' → 'Foto A.jpg'.
+export function filnamnUrUrl(url) {
+  const sista = String(url ?? '').split('?')[0].split('#')[0].split('/').pop() ?? '';
+  try {
+    return decodeURIComponent(sista);
+  } catch {
+    return sista;
+  }
+}
+
+// Filstammen — det Shopify matchar en uppladdad bild på. Shopify skriver om
+// namnet vid uppladdning (gemener, mellanslag och specialtecken blir `_`) och
+// lägger ett `_<suffix>` när namnet redan är upptaget, så jämförelsen görs
+// på normaliserad stam utan ändelse.
+export function filstamUrUrl(url) {
+  return filnamnUrUrl(url)
+    .replace(/\.[a-z0-9]+$/i, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9._-]+/g, '_');
+}
+
+function tolkaMedia(media) {
+  return (media?.nodes ?? []).map((m) => {
+    const url = m.image?.url ?? null;
+    return {
+      id: m.id,
+      filnamn: url ? filnamnUrUrl(url) : null,
+      filstam: url ? filstamUrUrl(url) : null,
+    };
+  });
+}
+
 // Läser en produkt via handle — används för att se vad som redan ligger uppe.
+// Svarar { id, status, handle, title, media:[{ id, filnamn, filstam }],
+// variants } eller null. Media-listan gör productSet idempotent (se nedan).
 export async function hamtaProduktViaHandle(handle) {
   const data = await graphql(
     `query opsFactoryProdukt($handle: String!) {
       productByIdentifier(identifier: { handle: $handle }) {
         id legacyResourceId handle title status
-        media(first: 1) { nodes { id } }
+        media(first: 50) { nodes { id ... on MediaImage { image { url } } } }
         variants(first: 50) { nodes { id title price compareAtPrice sku } }
       }
     }`,
     { handle }
   );
-  return data.productByIdentifier ?? null;
+  const p = data.productByIdentifier;
+  if (!p) return null;
+  return { ...p, media: tolkaMedia(p.media) };
 }
 
-// Skapar/uppdaterar hela produkten i ett anrop (productSet är idempotent på
-// handle vid nykörning av samma fil). Produkten skapas som DRAFT — publiceras
-// aldrig live av det här skriptet.
-export async function skapaProdukt(input) {
-  const mutation = `
-    mutation opsFactoryProduktSet($input: ProductSetInput!) {
-      productSet(input: $input, synchronous: true) {
-        product { id legacyResourceId handle title status onlineStorePreviewUrl }
-        userErrors { field message }
-      }
-    }`;
-  const data = await graphql(mutation, { input });
-  const fel = data.productSet?.userErrors ?? [];
-  if (fel.length > 0) {
-    throw new Error(
-      `Shopify avvisade produkten:\n${fel.map((f) => `  • ${f.field?.join('.') ?? '?'}: ${f.message}`).join('\n')}`
+// Byter ut nya filreferenser mot befintliga media-id:n när samma bild redan
+// ligger i galleriet (matchat på filstam, med Shopifys `_suffix` inräknat).
+// Då uppdateras alt-texten i stället för att bilden laddas upp en gång till.
+// Varje media-id används högst en gång.
+export function matchaProduktfiler(files, media) {
+  if (!Array.isArray(files)) return files;
+  const lediga = (media ?? []).filter((m) => m.filstam);
+  const anvanda = new Set();
+  return files.map((f) => {
+    if (!f || f.id || !f.originalSource) return f;
+    const stam = filstamUrUrl(f.originalSource);
+    if (!stam) return f;
+    const traff = lediga.find(
+      (m) => !anvanda.has(m.id) && (m.filstam === stam || m.filstam.startsWith(`${stam}_`))
     );
-  }
-  return data.productSet.product;
+    if (!traff) return f;
+    anvanda.add(traff.id);
+    return { id: traff.id, ...(f.alt !== undefined ? { alt: f.alt } : {}) };
+  });
 }
+
+// Skapar eller uppdaterar hela produkten i ett anrop. Idempotent på handle:
+// productSet utan id försöker SKAPA och svarar "Handle already in use" vid
+// omkörning (mätt 2026-09-08 och 2026-09-09) — därför slås produkten upp
+// först och får sitt id, och befintliga galleribilder refereras med media-id.
+//
+// Statusen bevaras vid omkörning: finns produkten behålls den status den har
+// i butiken (har Axel satt DRAFT är det ett beslut). `status` i andra
+// argumentet tvingar en status, `id` hoppar över uppslagningen på handle.
+// Svarar { id, handle, status, variantIds, … }.
+export async function skapaProdukt(input, { id = null, status = null } = {}) {
+  const befintlig = input?.handle ? await hamtaProduktViaHandle(input.handle) : null;
+  const produktId = id ?? input?.id ?? befintlig?.id ?? null;
+  const slutStatus = status ?? befintlig?.status ?? input?.status ?? null;
+
+  const sammansatt = { ...input };
+  if (produktId) sammansatt.id = produktId;
+  if (slutStatus) sammansatt.status = slutStatus;
+  if (befintlig) sammansatt.files = matchaProduktfiler(sammansatt.files, befintlig.media);
+
+  const data = await medKontext('Shopify avvisade produkten', () =>
+    graphql(
+      `mutation opsFactoryProduktSet($input: ProductSetInput!) {
+        productSet(input: $input, synchronous: true) {
+          product {
+            id legacyResourceId handle title status onlineStorePreviewUrl
+            variants(first: 50) { nodes { id } }
+          }
+          userErrors { field message }
+        }
+      }`,
+      { input: sammansatt }
+    )
+  );
+  const produkt = data.productSet?.product;
+  if (!produkt) throw new Error('Shopify svarade utan produkt på productSet.');
+  const { variants, ...rest } = produkt;
+  return { ...rest, variantIds: (variants?.nodes ?? []).map((v) => v.id) };
+}
+
+// ---- Policyer, sidor, metafält ----
 
 // Skriver en av butikens policyer (retur, frakt, köpvillkor).
 // Policyer är inte publicering — de får finnas innan LAUNCH.
 export async function skrivPolicy(type, body) {
-  const data = await graphql(
-    `mutation opsFactoryPolicy($shopPolicy: ShopPolicyInput!) {
-      shopPolicyUpdate(shopPolicy: $shopPolicy) {
-        shopPolicy { type }
-        userErrors { field message }
-      }
-    }`,
-    { shopPolicy: { type, body } }
+  const data = await medKontext(`Kunde inte skriva ${type}`, () =>
+    graphql(
+      `mutation opsFactoryPolicy($shopPolicy: ShopPolicyInput!) {
+        shopPolicyUpdate(shopPolicy: $shopPolicy) {
+          shopPolicy { type }
+          userErrors { field message }
+        }
+      }`,
+      { shopPolicy: { type, body } }
+    )
   );
-  const fel = data.shopPolicyUpdate?.userErrors ?? [];
-  if (fel.length > 0) {
-    throw new Error(`Kunde inte skriva ${type}: ${fel.map((f) => f.message).join('; ')}`);
-  }
   return data.shopPolicyUpdate.shopPolicy;
 }
 
 // Skapar eller uppdaterar en vanlig sida (returpolicy, frakt, villkor, kontakt).
+// Anropas `skrivSida(handle, { title, body })` (kontraktet) eller
+// `skrivSida(handle, title, body)` (äldre form) — båda fungerar.
 // Sidor är inte publicering av butiken — de får finnas innan LAUNCH.
-export async function skrivSida(handle, title, body) {
-  const befintlig = await graphql(
-    `query opsFactorySida($handle: String!) {
-      pageByHandle(handle: $handle) { id }
-    }`,
-    { handle }
-  );
+export async function skrivSida(handle, titleEllerSida, body) {
+  const sida =
+    titleEllerSida && typeof titleEllerSida === 'object'
+      ? { title: titleEllerSida.title ?? titleEllerSida.titel, body: titleEllerSida.body }
+      : { title: titleEllerSida, body };
 
-  if (befintlig.pageByHandle?.id) {
-    const data = await graphql(
-      `mutation opsFactorySidaUppdatera($id: ID!, $page: PageUpdateInput!) {
-        pageUpdate(id: $id, page: $page) { page { id handle } userErrors { field message } }
-      }`,
-      { id: befintlig.pageByHandle.id, page: { title, body } }
+  // `pageByHandle` togs bort ur QueryRoot i 2025-07 (mätt 2026-09-08 på
+  // TankGuard och 2026-09-09 på DryTrek/TackleBay: hela sidsteget stannade).
+  // Sidan slås upp med en sökfråga mot `pages` och matchas EXAKT på handle —
+  // sökningen kan ge prefixträffar, därför tas tio och rätt plockas ut.
+  const befintlig = await graphql(
+    `query opsFactorySida($q: String!) {
+      pages(first: 10, query: $q) { nodes { id handle } }
+    }`,
+    { q: `handle:${handle}` }
+  );
+  const traff = (befintlig.pages?.nodes ?? []).find((s) => s.handle === handle) ?? null;
+
+  if (traff?.id) {
+    const data = await medKontext(`Kunde inte uppdatera sidan ${handle}`, () =>
+      graphql(
+        `mutation opsFactorySidaUppdatera($id: ID!, $page: PageUpdateInput!) {
+          pageUpdate(id: $id, page: $page) { page { id handle } userErrors { field message } }
+        }`,
+        { id: traff.id, page: sida }
+      )
     );
-    const fel = data.pageUpdate?.userErrors ?? [];
-    if (fel.length > 0) throw new Error(`Kunde inte uppdatera sidan ${handle}: ${fel.map((f) => f.message).join('; ')}`);
     return data.pageUpdate.page;
   }
 
-  const data = await graphql(
-    `mutation opsFactorySidaSkapa($page: PageCreateInput!) {
-      pageCreate(page: $page) { page { id handle } userErrors { field message } }
-    }`,
-    { page: { title, handle, body } }
+  const data = await medKontext(`Kunde inte skapa sidan ${handle}`, () =>
+    graphql(
+      `mutation opsFactorySidaSkapa($page: PageCreateInput!) {
+        pageCreate(page: $page) { page { id handle } userErrors { field message } }
+      }`,
+      { page: { ...sida, handle } }
+    )
   );
-  const fel = data.pageCreate?.userErrors ?? [];
-  if (fel.length > 0) throw new Error(`Kunde inte skapa sidan ${handle}: ${fel.map((f) => f.message).join('; ')}`);
   return data.pageCreate.page;
 }
 
-// Skriver produktens opf-metafält. Sektionerna i temat läser dem.
-export async function skrivMetafalt(produktId, falt) {
-  if (falt.length === 0) return [];
-  const data = await graphql(
-    `mutation opsFactoryMetafalt($metafields: [MetafieldsSetInput!]!) {
-      metafieldsSet(metafields: $metafields) {
-        metafields { key }
-        userErrors { field message }
-      }
-    }`,
-    { metafields: falt.map((f) => ({ ...f, ownerId: produktId })) }
+// Skriver metafält på en ägare (produkt, variant, butik …). Sektionerna i
+// temat läser produktens opf-fält.
+export async function skrivMetafalt(agareId, falt) {
+  if (!Array.isArray(falt) || falt.length === 0) return [];
+  const data = await medKontext('Metafält avvisades', () =>
+    graphql(
+      `mutation opsFactoryMetafalt($metafields: [MetafieldsSetInput!]!) {
+        metafieldsSet(metafields: $metafields) {
+          metafields { key }
+          userErrors { field message }
+        }
+      }`,
+      { metafields: falt.map((f) => ({ ...f, ownerId: agareId })) }
+    )
   );
-  const fel = data.metafieldsSet?.userErrors ?? [];
-  if (fel.length > 0) {
-    throw new Error(`Metafält avvisades: ${fel.map((f) => f.message).join('; ')}`);
-  }
   return data.metafieldsSet.metafields;
 }
 
-// Temat som sektionerna läggs i. Live-temat rörs ALDRIG — Shopify blockerar
-// dessutom skrivningar mot MAIN. Saknas ett utkasttema returneras null.
-export async function hamtaUtkastTema() {
+// ---- Teman ----
+
+async function hamtaTeman() {
   const data = await graphql(`
-    query opsFactoryTeman { themes(first: 20) { nodes { id name role } } }`);
-  const teman = data.themes?.nodes ?? [];
+    query opsFactoryTeman { themes(first: 50) { nodes { id name role } } }`);
+  return data.themes?.nodes ?? [];
+}
+
+// Temat som sektionerna läggs i. Saknas ett utkasttema returneras null.
+// ⚠️ ANVÄND `hamtaArbetstema()` I KEDJAN, inte den här (KEDJAN.md regel 1).
+//
+// "Utkasttemat" var en säker definition så länge OPS-temat alltid låg som
+// utkast. I det ögonblick temat publiceras byter rollerna plats: OPS-temat
+// blir MAIN och Shopifys default-tema (Horizon) blir UNPUBLISHED — och då
+// pekar den här funktionen på DEFAULT-TEMAT. Mätt 2026-09-08 på TankGuard
+// och 2026-09-09 på DryTrek: startsidesteget skrev mot Horizon och
+// nb-registreringen hittade noll strängar. Behålls bara för äldre anrop.
+export async function hamtaUtkastTema() {
+  const teman = await hamtaTeman();
   return teman.find((t) => t.role === 'UNPUBLISHED') ?? null;
 }
 
-export async function skrivTemafiler(temaId, filer) {
-  const data = await graphql(
-    `mutation opsFactoryTemafiler($themeId: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) {
-      themeFilesUpsert(themeId: $themeId, files: $files) {
-        upsertedThemeFiles { filename }
-        userErrors { filename message }
-      }
-    }`,
-    {
-      themeId: temaId,
-      files: Object.entries(filer).map(([filename, value]) => ({
-        filename,
-        body: { type: 'TEXT', value },
-      })),
-    }
-  );
-  const fel = data.themeFilesUpsert?.userErrors ?? [];
-  if (fel.length > 0) {
-    throw new Error(`Temafiler avvisades: ${fel.map((f) => `${f.filename}: ${f.message}`).join('; ')}`);
+const CRO = /\bcro\b/i;
+const numeriskt = (gid) => String(gid ?? '').split('/').pop();
+
+// Ren logik bakom hamtaArbetstema: id först (fullt gid eller bara numret),
+// annars CRO-temat som är MAIN, annars CRO-temat som är UNPUBLISHED, annars null.
+export function valjArbetstema(teman, temaId = null) {
+  const lista = Array.isArray(teman) ? teman : [];
+  if (temaId) {
+    const eget = lista.find((t) => t.id === temaId || numeriskt(t.id) === numeriskt(temaId));
+    if (eget) return eget;
   }
+  const cro = lista.filter((t) => CRO.test(String(t.name ?? '')));
+  return (
+    cro.find((t) => t.role === 'MAIN') ??
+    cro.find((t) => t.role === 'UNPUBLISHED') ??
+    null
+  );
+}
+
+// Arbetstemat = det tema fabriken själv byggde. Id:t står i state
+// (`arbetstemaId`, skrivet av tema-upload) och vinner alltid. Saknas id, eller
+// finns temat inte längre, känns OPS-temat igen på "CRO" i namnet — publicerat
+// (MAIN) först, för då är det DET kunden ser. Hittas inget kastar funktionen:
+// att gissa "första UNPUBLISHED" är det som skrev mot fel tema (se ovan).
+// API:t skriver fint mot MAIN (verifierat 2026-09-08) — under trialen skyddar
+// lösenordssidan kunden.
+export async function hamtaArbetstema(temaId = null) {
+  const teman = await hamtaTeman();
+  const tema = valjArbetstema(teman, temaId);
+  if (tema) return tema;
+  const lista = teman.map((t) => `${t.name} (${t.role}, ${numeriskt(t.id)})`).join(', ') || 'inga teman';
+  throw new Error(
+    `Hittar inget arbetstema${temaId ? ` (id ${numeriskt(temaId)} finns inte)` : ''} och inget CRO-tema. ` +
+      `Teman i butiken: ${lista}. Kör tema-upload först.`
+  );
+}
+
+export async function skrivTemafiler(temaId, filer) {
+  const data = await medKontext('Temafiler avvisades', () =>
+    graphql(
+      `mutation opsFactoryTemafiler($themeId: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) {
+        themeFilesUpsert(themeId: $themeId, files: $files) {
+          upsertedThemeFiles { filename }
+          userErrors { filename message }
+        }
+      }`,
+      {
+        themeId: temaId,
+        files: Object.entries(filer).map(([filename, value]) => ({
+          filename,
+          body: { type: 'TEXT', value },
+        })),
+      }
+    )
+  );
   return data.themeFilesUpsert.upsertedThemeFiles;
 }
 
 // Läser tillbaka uppladdade temafiler och jämför storleken i byte.
 // Finns för att escaper kan förvanskas på vägen genom JSON till Shopifys API
 // (en CSS-escape blev en gång dubblerad och renderades som text på sidan).
+//
+// Svarar { ok, fel:[] } enligt kontraktet. Objektet ÄR samtidigt fel-listan
+// (en array med `ok` och `fel` som egenskaper), så äldre anrop som mäter
+// `avvikande.length` / `avvikande.join` fortsätter att stoppa på avvikelse i
+// stället för att tyst bli gröna under övergången.
 export async function verifieraTemafiler(temaId, filer) {
   const namn = Object.keys(filer);
   const data = await graphql(
@@ -205,16 +393,16 @@ export async function verifieraTemafiler(temaId, filer) {
     { id: temaId, filenames: namn }
   );
   const uppe = new Map((data.theme?.files?.nodes ?? []).map((f) => [f.filename, Number(f.size)]));
-  const avvikande = [];
+  const fel = [];
   for (const [filnamn, innehall] of Object.entries(filer)) {
     const forvantat = Buffer.byteLength(innehall, 'utf8');
     const faktiskt = uppe.get(filnamn);
-    if (faktiskt === undefined) avvikande.push(`${filnamn}: saknas i temat`);
+    if (faktiskt === undefined) fel.push(`${filnamn}: saknas i temat`);
     else if (faktiskt !== forvantat) {
-      avvikande.push(`${filnamn}: ${faktiskt} byte i temat, ${forvantat} lokalt`);
+      fel.push(`${filnamn}: ${faktiskt} byte i temat, ${forvantat} lokalt`);
     }
   }
-  return avvikande;
+  return Object.assign([...fel], { ok: fel.length === 0, fel });
 }
 
 export async function hamtaTemafil(temaId, filnamn) {
@@ -231,56 +419,231 @@ export async function hamtaTemafil(temaId, filnamn) {
   return data.theme?.files?.nodes?.[0]?.body?.content ?? null;
 }
 
-// Läser sidfotsmenyn. null om den inte finns.
+// ---- Menyer ----
+
+// Läser en meny på handle. null om den inte finns.
 export async function hamtaMeny(handle) {
-  const data = await graphql(
-    `query opsFactoryMeny($handle: String!) {
-      menus(first: 20) { nodes { id handle title items { title url } } }
-    }`,
-    { handle }
-  );
+  // Ingen variabel i frågan: menus() filtrerar inte på handle, listan gås
+  // igenom här. Admin-API 2025-07 avvisar en deklarerad men oanvänd variabel
+  // ("Variable $handle is declared but not used", mätt 2026-09-08/09) —
+  // tidigare versioner släppte igenom den.
+  const data = await graphql(`
+    query opsFactoryMeny {
+      menus(first: 50) { nodes { id handle title items { title url } } }
+    }`);
   return (data.menus?.nodes ?? []).find((m) => m.handle === handle) ?? null;
 }
 
+const MENYTITLAR = { 'main-menu': 'Main menu', footer: 'Footer menu' };
+const menytitel = (handle) =>
+  MENYTITLAR[handle] ?? String(handle).replace(/[-_]+/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
+
+// Menyrader tål både { titel, url } (fabrikens form) och { title, url }.
+export function tolkaMenyrader(rader) {
+  return (rader ?? []).map((l) => ({ titel: l.titel ?? l.title, url: l.url }));
+}
+
 // Skapar eller uppdaterar en meny så att den innehåller exakt dessa länkar.
-export async function skrivMeny(handle, title, lankar) {
-  const items = lankar.map((l) => ({ title: l.titel, type: 'HTTP', url: l.url }));
+// Anropas `skrivMeny(handle, rader)` (kontraktet, titeln härleds ur handle)
+// eller `skrivMeny(handle, title, rader)` (äldre form).
+export async function skrivMeny(handle, titleEllerRader, lankar) {
+  const rader = tolkaMenyrader(Array.isArray(titleEllerRader) ? titleEllerRader : lankar);
+  const title = Array.isArray(titleEllerRader) ? menytitel(handle) : titleEllerRader ?? menytitel(handle);
+  const items = rader.map((l) => ({ title: l.titel, type: 'HTTP', url: l.url }));
   const befintlig = await hamtaMeny(handle);
 
   if (befintlig) {
     const har = new Set(befintlig.items.map((i) => `${i.title}|${i.url}`));
-    const vill = new Set(lankar.map((l) => `${l.titel}|${l.url}`));
+    const vill = new Set(rader.map((l) => `${l.titel}|${l.url}`));
     const samma = har.size === vill.size && [...vill].every((x) => har.has(x));
     if (samma) return { ...befintlig, orord: true };
-    const data = await graphql(
-      `mutation opsFactoryMenyUppdatera($id: ID!, $title: String!, $items: [MenuItemUpdateInput!]!) {
-        menuUpdate(id: $id, title: $title, items: $items) {
+    const data = await medKontext(`Menyn ${handle}`, () =>
+      graphql(
+        `mutation opsFactoryMenyUppdatera($id: ID!, $title: String!, $items: [MenuItemUpdateInput!]!) {
+          menuUpdate(id: $id, title: $title, items: $items) {
+            menu { id handle }
+            userErrors { field message }
+          }
+        }`,
+        { id: befintlig.id, title, items }
+      )
+    );
+    return data.menuUpdate.menu;
+  }
+
+  const data = await medKontext(`Menyn ${handle}`, () =>
+    graphql(
+      `mutation opsFactoryMenySkapa($title: String!, $handle: String!, $items: [MenuItemCreateInput!]!) {
+        menuCreate(title: $title, handle: $handle, items: $items) {
           menu { id handle }
           userErrors { field message }
         }
       }`,
-      { id: befintlig.id, title, items }
-    );
-    const fel = data.menuUpdate?.userErrors ?? [];
-    if (fel.length > 0) throw new Error(`Menyn ${handle}: ${fel.map((f) => f.message).join('; ')}`);
-    return data.menuUpdate.menu;
-  }
-
-  const data = await graphql(
-    `mutation opsFactoryMenySkapa($title: String!, $handle: String!, $items: [MenuItemCreateInput!]!) {
-      menuCreate(title: $title, handle: $handle, items: $items) {
-        menu { id handle }
-        userErrors { field message }
-      }
-    }`,
-    { title, handle, items }
+      { title, handle, items }
+    )
   );
-  const fel = data.menuCreate?.userErrors ?? [];
-  if (fel.length > 0) throw new Error(`Menyn ${handle}: ${fel.map((f) => f.message).join('; ')}`);
   return data.menuCreate.menu;
 }
 
-// Läser fraktzonerna i den form frakt.mjs jämför mot.
+// ---- Kollektionen: butikens sortiment, startsidans `sortiment`-sektion ----
+//
+// En flerproduktsbutik visar en KOLLEKTION på startsidan i stället för en
+// enskild produkt (factory/FLERPRODUKT.md). Kollektionen är manuell — inga
+// regler — så ordningen är den fabriken sätter, inte Shopifys gissning.
+
+export async function hamtaKollektion(handle) {
+  const data = await graphql(
+    `query opsFactoryKollektion($q: String!) {
+      collections(first: 10, query: $q) { nodes { id handle title } }
+    }`,
+    { q: `handle:${handle}` }
+  );
+  return (data.collections?.nodes ?? []).find((k) => k.handle === handle) ?? null;
+}
+
+// Anropas `skrivKollektion({ handle, titel, produktIds, beskrivning })`
+// (kontraktet) eller `skrivKollektion(handle, titel, produktIds, beskrivning)`.
+export async function skrivKollektion(handleEllerInput, titel, produktIds, beskrivning = '') {
+  const k =
+    handleEllerInput && typeof handleEllerInput === 'object'
+      ? {
+          handle: handleEllerInput.handle,
+          titel: handleEllerInput.titel ?? handleEllerInput.title,
+          produktIds: handleEllerInput.produktIds ?? handleEllerInput.products ?? [],
+          beskrivning: handleEllerInput.beskrivning ?? handleEllerInput.descriptionHtml ?? '',
+        }
+      : { handle: handleEllerInput, titel, produktIds: produktIds ?? [], beskrivning };
+  const befintlig = await hamtaKollektion(k.handle);
+  const input = {
+    handle: k.handle,
+    title: k.titel,
+    descriptionHtml: k.beskrivning,
+    products: k.produktIds,
+    sortOrder: 'MANUAL',
+  };
+
+  if (befintlig) {
+    // MÄTT 2026-09-10 (TackleBay, andra bygget): `products` får INTE skickas
+    // i collectionUpdate — "products cannot be specified during update"
+    // (BAD_REQUEST). Titel/beskrivning uppdateras här; produkterna läggs
+    // till med collectionAddProducts, bara de som saknas (idempotent).
+    const { products: _bort, ...utanProdukter } = input;
+    const data = await medKontext(`Kollektionen ${k.handle}`, () =>
+      graphql(
+        `mutation opsFactoryKollektionUppdatera($input: CollectionInput!) {
+          collectionUpdate(input: $input) {
+            collection { id handle title products(first: 100) { nodes { id } } }
+            userErrors { field message }
+          }
+        }`,
+        { input: { ...utanProdukter, id: befintlig.id } }
+      )
+    );
+    const kollektion = data.collectionUpdate.collection;
+    const finns = new Set((kollektion.products?.nodes ?? []).map((p) => p.id));
+    const saknas = k.produktIds.filter((id) => !finns.has(id));
+    if (saknas.length > 0) {
+      await medKontext(`Kollektionen ${k.handle}: lägga till produkter`, () =>
+        graphql(
+          `mutation opsFactoryKollektionProdukter($id: ID!, $productIds: [ID!]!) {
+            collectionAddProducts(id: $id, productIds: $productIds) {
+              collection { id }
+              userErrors { field message }
+            }
+          }`,
+          { id: kollektion.id, productIds: saknas }
+        )
+      );
+    }
+    const { products: _p, ...rent } = kollektion;
+    return { ...rent, skapad: false, tillagda: saknas.length };
+  }
+
+  const data = await medKontext(`Kollektionen ${k.handle}`, () =>
+    graphql(
+      `mutation opsFactoryKollektionSkapa($input: CollectionInput!) {
+        collectionCreate(input: $input) {
+          collection { id handle title }
+          userErrors { field message }
+        }
+      }`,
+      { input }
+    )
+  );
+  return { ...data.collectionCreate.collection, skapad: true };
+}
+
+// ---- Publicering i Online Store ----
+
+async function hamtaOnlineStoreKanal() {
+  const pub = await graphql(`
+    query opsFactoryKanaler { publications(first: 20) { nodes { id name } } }`);
+  return (pub.publications?.nodes ?? []).find((k) => /online store/i.test(k.name)) ?? null;
+}
+
+// Publicerar vad som helst publicerbart (produkt, kollektion) i Online Store.
+// Utan det syns kollektionen inte i kundvyn ens när den finns. Kastar aldrig —
+// saknas kanalen eller scopet rapporteras det som { publicerad:false, notis }.
+export async function publiceraIButiken(id) {
+  try {
+    const kanal = await hamtaOnlineStoreKanal();
+    if (!kanal) return { publicerad: false, notis: 'Online Store-kanalen hittades inte.' };
+    await graphql(
+      `mutation opsFactoryPublicera($id: ID!, $input: [PublicationInput!]!) {
+        publishablePublish(id: $id, input: $input) { userErrors { field message } }
+      }`,
+      { id, input: [{ publicationId: kanal.id }] }
+    );
+    return { publicerad: true, kanal: kanal.name };
+  } catch (e) {
+    return { publicerad: false, notis: e.message };
+  }
+}
+
+// ---- Frakt ----
+
+// Ren logik bakom hamtaFraktzoner: gör om en deliveryProfile-nod till den
+// form frakt.mjs jämför mot.
+//
+// ⚠️ En färsk butik kan ha villkorade fraktrader ("fri frakt över X").
+// Shopify returnerar dem som EXTRA metodrader vars id är basmetodens id med
+// "?source=RateRangeCondition&source_id=…" på slutet — samma metod, en gång
+// per villkor. De kan varken uppdateras eller raderas själva ("could not be
+// found", mätt 2026-09-08), och basmetoden går inte att UPPDATERA via
+// deliveryProfileUpdate ("cannot be updated because it uses new
+// configurations that are only available through Shopify's updated APIs",
+// mätt 2026-09-08 på TankGuard och 2026-09-09 på DryTrek). Därför: släpp de
+// syntetiska raderna och märk basmetoden `villkorad`, så frakt.mjs river
+// och bygger om den i stället för att uppdatera.
+export function tolkaFraktprofil(profil) {
+  if (!profil) return null;
+  const grupp = profil.profileLocationGroups?.[0];
+  const basId = (id) => String(id).split('?')[0];
+  const arVillkorsrad = (m) => String(m.id).includes('?source=');
+  return {
+    profilId: profil.id,
+    gruppId: grupp?.locationGroup?.id,
+    zoner: (grupp?.locationGroupZones?.nodes ?? []).map((z) => {
+      const rader = z.methodDefinitions?.nodes ?? [];
+      const villkorade = new Set(rader.filter(arVillkorsrad).map((m) => basId(m.id)));
+      return {
+        zonId: z.zone.id,
+        zon: z.zone.name,
+        metoder: rader
+          .filter((m) => !arVillkorsrad(m))
+          .map((m) => ({
+            id: m.id,
+            namn: m.name,
+            pris: Number(m.rateProvider?.price?.amount ?? 0),
+            rateId: m.rateProvider?.id ?? null,
+            villkorad: villkorade.has(basId(m.id)),
+          })),
+      };
+    }),
+  };
+}
+
+// Läser fraktzonerna i den form frakt.mjs jämför mot. null utan fraktprofil.
 export async function hamtaFraktzoner() {
   const data = await graphql(`
     query opsFactoryFrakt {
@@ -304,84 +667,98 @@ export async function hamtaFraktzoner() {
         }
       }
     }`);
-  const profil = data.deliveryProfiles?.nodes?.[0];
-  if (!profil) return null;
-  const grupp = profil.profileLocationGroups?.[0];
-  return {
-    profilId: profil.id,
-    gruppId: grupp?.locationGroup?.id,
-    zoner: (grupp?.locationGroupZones?.nodes ?? []).map((z) => ({
-      zonId: z.zone.id,
-      zon: z.zone.name,
-      metoder: (z.methodDefinitions?.nodes ?? []).map((m) => ({
-        id: m.id,
-        namn: m.name,
-        pris: Number(m.rateProvider?.price?.amount ?? 0),
-        rateId: m.rateProvider?.id ?? null,
-      })),
-    })),
-  };
+  return tolkaFraktprofil(data.deliveryProfiles?.nodes?.[0] ?? null);
 }
 
-// Utför skillnaden som frakt.mjs räknat fram. Rör bara det som avviker.
-export async function tillampaFraktatgarder(fraktlage, atgarder) {
-  if (atgarder.orort) return { andrade: 0 };
-  const zonId = new Map(fraktlage.zoner.map((z) => [z.zon, z.zonId]));
+// Ren logik bakom tillampaFraktatgarder: åtgärderna ur frakt.mjs →
+// DeliveryProfileInput. Villkorade metoder står i attTaBort + attSkapa
+// (rivs och byggs om i samma anrop); bara zoner med något att göra tas med.
+export function byggFraktprofilInput(fraktlage, atgarder) {
+  const zonId = new Map((fraktlage?.zoner ?? []).map((z) => [z.zon, z.zonId]));
+  const pris = (metod) => ({
+    price: { amount: Number(metod.pris).toFixed(1), currencyCode: metod.valuta },
+  });
 
   const perZon = new Map();
   const zonPost = (zon) => {
     if (!perZon.has(zon)) perZon.set(zon, { id: zonId.get(zon), skapa: [], uppdatera: [] });
     return perZon.get(zon);
   };
-  for (const u of atgarder.attUppdatera) {
+  for (const u of atgarder.attUppdatera ?? []) {
     zonPost(u.zon).uppdatera.push({
       id: u.id,
       name: u.metod.namn,
       active: true,
-      rateDefinition: {
-        ...(u.rateId ? { id: u.rateId } : {}),
-        price: { amount: u.metod.pris.toFixed(1), currencyCode: u.metod.valuta },
-      },
+      rateDefinition: { ...(u.rateId ? { id: u.rateId } : {}), ...pris(u.metod) },
     });
   }
-  for (const s of atgarder.attSkapa) {
-    zonPost(s.zon).skapa.push({
-      name: s.metod.namn,
-      active: true,
-      rateDefinition: { price: { amount: s.metod.pris.toFixed(1), currencyCode: s.metod.valuta } },
-    });
+  for (const s of atgarder.attSkapa ?? []) {
+    zonPost(s.zon).skapa.push({ name: s.metod.namn, active: true, rateDefinition: pris(s.metod) });
   }
 
-  const profile = {
-    methodDefinitionsToDelete: atgarder.attTaBort.map((x) => x.id),
+  // Nya zoner (frakt.mjs attSkapaZoner): land per kod, '*' = resten av
+  // världen. includeAllProvinces så länder med regioner (IT, ES …) inte
+  // hamnar halva utanför zonen.
+  const land = (kod) => (kod === '*' ? { restOfWorld: true } : { code: kod, includeAllProvinces: true });
+  const zonesToCreate = (atgarder.attSkapaZoner ?? []).map((z) => ({
+    name: z.zon,
+    countries: (z.lander ?? []).map(land),
+    methodDefinitionsToCreate: (z.metoder ?? []).map((m) => ({ name: m.namn, active: true, rateDefinition: pris(m) })),
+  }));
+  const zonesToDelete = (atgarder.attTaBortZoner ?? []).map((z) => z.id).filter(Boolean);
+
+  const zonesToUpdate = [...perZon.values()]
+    .filter((z) => z.id && (z.uppdatera.length > 0 || z.skapa.length > 0))
+    .map((z) => ({
+      id: z.id,
+      ...(z.uppdatera.length > 0 ? { methodDefinitionsToUpdate: z.uppdatera } : {}),
+      ...(z.skapa.length > 0 ? { methodDefinitionsToCreate: z.skapa } : {}),
+    }));
+
+  // zonesToDelete ligger på PROFILEN, inte i location-gruppen (mätt
+  // 2026-09-10: "Field is not defined on DeliveryProfileLocationGroupInput").
+  return {
+    methodDefinitionsToDelete: (atgarder.attTaBort ?? []).map((x) => x.id),
+    ...(zonesToDelete.length > 0 ? { zonesToDelete } : {}),
     locationGroupsToUpdate: [
       {
         id: fraktlage.gruppId,
-        zonesToUpdate: [...perZon.values()]
-          .filter((z) => z.id)
-          .map((z) => ({
-            id: z.id,
-            ...(z.uppdatera.length > 0 ? { methodDefinitionsToUpdate: z.uppdatera } : {}),
-            ...(z.skapa.length > 0 ? { methodDefinitionsToCreate: z.skapa } : {}),
-          })),
+        zonesToUpdate,
+        ...(zonesToCreate.length > 0 ? { zonesToCreate } : {}),
       },
     ],
   };
+}
 
-  const data = await graphql(
-    `mutation opsFactoryFraktUppdatera($id: ID!, $profile: DeliveryProfileInput!) {
-      deliveryProfileUpdate(id: $id, profile: $profile) {
-        profile { id }
-        userErrors { field message }
-      }
-    }`,
-    { id: fraktlage.profilId, profile }
+// Utför skillnaden som frakt.mjs räknat fram. Rör bara det som avviker.
+// Anropas `tillampaFraktatgarder(atgarder)` (kontraktet — läget läses då
+// här) eller `tillampaFraktatgarder(fraktlage, atgarder)` (äldre form).
+export async function tillampaFraktatgarder(fraktlageEllerAtgarder, kanskeAtgarder) {
+  const atgarder = kanskeAtgarder ?? fraktlageEllerAtgarder;
+  if (!atgarder || atgarder.orort) return { andrade: 0 };
+  const fraktlage = kanskeAtgarder ? fraktlageEllerAtgarder : await hamtaFraktzoner();
+  if (!fraktlage) throw new Error('Ingen fraktprofil hittades i butiken.');
+
+  const profile = byggFraktprofilInput(fraktlage, atgarder);
+  await medKontext('Frakten', () =>
+    graphql(
+      `mutation opsFactoryFraktUppdatera($id: ID!, $profile: DeliveryProfileInput!) {
+        deliveryProfileUpdate(id: $id, profile: $profile) {
+          profile { id }
+          userErrors { field message }
+        }
+      }`,
+      { id: fraktlage.profilId, profile }
+    )
   );
-  const fel = data.deliveryProfileUpdate?.userErrors ?? [];
-  if (fel.length > 0) throw new Error(`Frakten: ${fel.map((f) => f.message).join('; ')}`);
   return {
     andrade:
-      atgarder.attUppdatera.length + atgarder.attSkapa.length + atgarder.attTaBort.length,
+      (atgarder.attUppdatera?.length ?? 0) +
+      (atgarder.attSkapa?.length ?? 0) +
+      (atgarder.attTaBort?.length ?? 0) +
+      (atgarder.attSkapaZoner?.length ?? 0),
+    skapadeZoner: (atgarder.attSkapaZoner ?? []).map((z) => z.zon),
+    borttagnaZoner: (atgarder.attTaBortZoner ?? []).map((z) => z.zon),
   };
 }
 
@@ -390,43 +767,17 @@ export async function tillampaFraktatgarder(fraktlage, atgarder) {
 // Sätter produkten ACTIVE och publicerar den i Online Store-kanalen.
 // Saknas scopet read_publications rapporteras det i stället för att krascha.
 export async function publiceraProdukt(produktId) {
-  const uppdatering = await graphql(
-    `mutation opsFactoryAktivera($input: ProductInput!) {
-      productUpdate(input: $input) {
-        product { id status }
-        userErrors { field message }
-      }
-    }`,
-    { input: { id: produktId, status: 'ACTIVE' } }
+  await medKontext('Kunde inte aktivera produkten', () =>
+    graphql(
+      `mutation opsFactoryAktivera($input: ProductInput!) {
+        productUpdate(input: $input) {
+          product { id status }
+          userErrors { field message }
+        }
+      }`,
+      { input: { id: produktId, status: 'ACTIVE' } }
+    )
   );
-  const fel = uppdatering.productUpdate?.userErrors ?? [];
-  if (fel.length > 0) {
-    throw new Error(`Kunde inte aktivera produkten: ${fel.map((f) => f.message).join('; ')}`);
-  }
-
-  let kanal = null;
-  try {
-    const pub = await graphql(`
-      query opsFactoryKanaler { publications(first: 20) { nodes { id name } } }`);
-    kanal = (pub.publications?.nodes ?? []).find((k) => /online store/i.test(k.name)) ?? null;
-  } catch (e) {
-    return { status: 'ACTIVE', publicerad: false, notis: `Kanalen kunde inte läsas: ${e.message}` };
-  }
-  if (!kanal) {
-    return { status: 'ACTIVE', publicerad: false, notis: 'Online Store-kanalen hittades inte.' };
-  }
-
-  const publicering = await graphql(
-    `mutation opsFactoryPublicera($id: ID!, $input: [PublicationInput!]!) {
-      publishablePublish(id: $id, input: $input) {
-        userErrors { field message }
-      }
-    }`,
-    { id: produktId, input: [{ publicationId: kanal.id }] }
-  );
-  const pubFel = publicering.publishablePublish?.userErrors ?? [];
-  if (pubFel.length > 0) {
-    return { status: 'ACTIVE', publicerad: false, notis: pubFel.map((f) => f.message).join('; ') };
-  }
-  return { status: 'ACTIVE', publicerad: true, kanal: kanal.name };
+  const pub = await publiceraIButiken(produktId);
+  return { status: 'ACTIVE', ...pub };
 }

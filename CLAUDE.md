@@ -14,57 +14,23 @@ vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
 ---
 
-## Så här ska du svara Axel (gäller VARJE svar, inga undantag)
+## Så här ska du svara Axel
 
-Axel har grov dyslexi. Långa svar gör att han inte kan jobba.
-Det här står över allt annat i den här filen — även kommandonas leveransformat
-när svaret går till Axel i chatten. Filer, briefer och Notion-innehåll behåller
-sitt eget format.
+Axel har grov dyslexi. Skriv kort och konkret — inga bibelsvar.
 
-Prompten nedan är Axels egen, ordagrant. Följ den.
+**Det enda formatkravet: gör HANS uppgifter omöjliga att missa.**
+Ska han göra något, sätt det sist under en egen rubrik, numrerat, en mening
+per rad, med exakt var han ska klicka och vad knappen heter. Ska han inte
+göra något, skriv det rakt ut.
 
-> Så här ska du svara mig
-> Jag har grov dyslexi. Långa svar gör att jag inte kan jobba. Följ reglerna nedan i varje svar. Inga undantag.
->
-> **FORMAT**
->
-> 1. Börja med en rad: hur många saker JAG ska göra. Exempel: "Du ska göra 2 saker."
-> 2. Ska jag inte göra något, skriv: "Du behöver inte göra något."
-> 3. Numrera varje sak. Ge den en fet rubrik på max 4 ord.
-> 4. Under rubriken: en mening per rad. Varje mening = ett klick eller ett handgrepp.
-> 5. Sätt en avdelare mellan varje sak.
-> 6. Avsluta med raden: "Sen är du klar. Jag har gjort resten."
->
-> **MENINGARNA**
->
-> * Max 10 ord per mening.
-> * En mening per rad. Aldrig stycken.
-> * Aldrig mer än 3 saker åt gången. Har du fler, ge mig de 3 första.
-> * Skriv exakt var jag ska klicka och vad knappen heter.
-> * Fetstil bara på namn jag ska leta efter.
-> * Hela svaret ska rymmas på en mobilskärm.
->
-> **DETTA SKRIVER DU ALDRIG**
->
-> * Vad du gjorde, hur du gjorde det eller varför.
-> * Teknisk bakgrund, historik, filnamn, kommandon, kod, testresultat.
-> * Rättelser av vad jag trodde. Skriv bara vad som gäller nu.
-> * Villkor som "om det står X, gör Y". Välj åt mig i stället.
-> * Orden "men", "dock", "notera att", "en detalj", "kort läge".
-> * Varningar, risker eller saker jag kan kolla själv.
->
-> **OM NÅGOT GICK FEL**
->
-> * En mening om vad som är fel.
-> * En mening om vad jag ska göra.
-> * Inget mer.
->
-> **OM DU BEHÖVER VETA NÅGOT AV MIG**
->
-> * Ställ en fråga. Bara en.
-> * Ge mig 2 eller 3 svarsalternativ att välja mellan.
->
-> Svara alltid på svenska.
+I övrigt: skriv som situationen kräver. Fattar du ett beslut åt honom, säg
+vilket. Är något osäkert, säg det i stället för att gissa. En fråga i taget,
+med svarsalternativ.
+
+⚠️ **Språket följer läsaren, inte den här filen** (Axels beslut 2026-09-09):
+Axel svaras på svenska, **VA:n och redigerarna på engelska**. Ett kommando
+som säger "svara henne på engelska" gäller — den här filen ska aldrig
+överskugga det. Filer, briefer och Notion-innehåll behåller sitt eget format.
 
 ---
 
@@ -160,8 +126,8 @@ inte röras utan att Axel ber om det.
     argument. Kommandona är filer — de fungerar även när klienten inte
     registrerat dem.
 14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
-    Svarsprompten högst upp i den här filen gäller alltid — även när ett kommando
-    ber om ett längre leveransformat i chatten.
+    Ett kommando som ber om ett längre leveransformat i chatten gäller — men
+    Axels egna uppgifter står alltid sist, numrerade och omöjliga att missa.
 
 ---
 
@@ -178,6 +144,8 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   `factory/VA-CHECKLIST.md` (Axels mall), ifylld per butik i
   `output/<id>/CHECKLISTA.md`. Frasen **"Store ready: \<namn\>"** från
   VA:n utlöser slutsteget (recensioner, pixel, Discord-kanaler).
+- **`factory/SA-FUNKAR-DET.md`** är kartan: hela flödet på en sida, enkelt,
+  vem som gör vad. Läs den innan `PROCESS.md`.
 - **`factory/PROCESS.md`** är rutinen: hela steg-för-steg-flödet, med ⚙️
   (fabriken gör) och 🖐 (Axels klick). Lyckas ett nytt steg: uppdatera den
   filen i samma session. Det är inte valfritt — det är hela poängen.
@@ -219,13 +187,13 @@ Järnreglerna (kostar pengar eller förtroende att bryta):
 1. **Rendera ALDRIG före proofread** — rendering drar HeyGen-credits, proofread är gratis.
 2. **Skanna ALLTID källvideon efter inbränd svensk text före leverans** — HeyGen
    översätter bara ljudet.
-3. **Lyssna på varje renderad video innan den levereras — en keff röst går aldrig ut.**
-   (Axels besked 2026-09-08.) Rösten går INTE att välja: `/v2/video_translate` klonar
-   källans röst och har ingen röstparameter, så en dålig röst kan bara fångas genom
-   att någon lyssnar. Hook, mitt och slut på varje fil. Låter det fel: skapa en NY
-   proofread-session och rendera om — sessionen går inte att köra om. Håller rösten
-   inte andra gången: lämna videon som väntande med orsak, leverera den aldrig ändå.
-   Checklistan står i `.claude/skills/translate/SKILL.md`.
+3. **Kör ALLTID `python3 pipeline/rostkoll.py` på varje renderad video före leverans**
+   (Axels beslut 2026-09-08: ingen video går ut med keff röst). Gratis, bara ffmpeg.
+   Fångar tyst spår, längddrift, avhugget slut och tappat tal. En video med ❌
+   levereras inte — rendera om den eller stryk den. Grönt betyder "inga mätbara fel",
+   inte "godkänd": lyssna själv på den video som ska bära mest spend.
+   Är källan nästan bara musik ska den inte översättas alls — HeyGen har ingen röst
+   att klona och hittar på en.
 4. Captions är opt-in; max 2 rader. Komprimera aldrig hårdare än 30 MiB-gränsen kräver.
 
 Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
@@ -256,6 +224,8 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
+| `/skalningskungen <butik>` | **Var tredje dag per OPS-butik:** analys → nästa batch. 7 videor/dag, halva nya koncept |
+| `/rutin <kommando> <tid>` | Sätt upp en schemalagd rutin som faktiskt kör (fast session, rätt cron, inga dubbletter) |
 
 ### Nattrutinerna
 
@@ -669,6 +639,13 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 
 ## Saker som är lätta att göra fel
 
+- **Allt som postas i Discord är på engelska** (Axels order 2026-09-05) — teamet
+  i servern är engelsktalande. Rapporten till Axel i chatten är svensk; Discord-
+  versionen av samma rapport är engelsk, med produkt-, kanal- och kampanjnamn i
+  sin vanliga stavning. Postarna (`tools/notify-discord.mjs`,
+  `pipeline/discord-brief.mjs`) stoppar svensk text med exit 3, eller översätter
+  den automatiskt när `ANTHROPIC_API_KEY` finns i environmentet. Stoppas ett
+  skick: skriv om på engelska och skicka igen — hoppa aldrig över rapporten.
 - **PAUSED i annonskontot är ett beslut, aldrig ett fel att "rätta".** En
   kampanj/adset/annons som är pausad och har spenderat > 0 kr har stängts av
   med flit (av Axel, skalningsronden eller åtgärdstrappan) — den får ALDRIG
@@ -822,60 +799,17 @@ De går **inte** att slå ihop rakt av. Ska något återupplivas: hämta det til
 **egen mapp** — annars försvinner redigerarpanelen och nästa `/dashboard` skriver
 över det du hämtade.
 
----
+### Självtestet — ett kommando som mäter i stället för att bedöma
 
-## Så här ska du svara Axel (svarsformat — gäller varje svar)
+```bash
+npm run sjalvtest          # allt som går att mäta utan nycklar och utan webbläsare
+npm run sjalvtest -- --snabb   # utan dry-run mot butikerna
+```
 
-Axel har grov dyslexi. Långa svar gör att han inte kan jobba.
-Följ reglerna nedan i varje svar. Inga undantag.
+Kör tester, syntax, importer, en dry-run per butik och de tre spärrarna
+(räkningen, villkorsdomen, kadensen). **En kontroll som inte kan köras
+rapporteras som HOPPAD med orsak — aldrig som grön.** Exit 1 vid rött.
 
-**DEL 1: VAD SOM HÄNT**
-Börja alltid med rubriken **Läget.**
-Skriv 1 till 3 rader under den.
-Rad 1: vad du gjorde eller kom fram till.
-Rad 2: vad det betyder för honom.
-Rad 3: bara om något inte fungerade.
-Max 10 ord per rad. En mening per rad.
-Har du gjort tio saker, skriv den ena som betyder något.
-
-**DEL 2: VAD HAN SKA GÖRA**
-Skriv sen en rad: hur många saker HAN ska göra.
-Exempel: "Du ska göra 2 saker."
-Ska han inte göra något, skriv: "Du behöver inte göra något."
-Numrera varje sak. Fet rubrik på max 4 ord.
-Under rubriken: en mening per rad.
-Varje mening = ett klick eller ett handgrepp.
-Sätt en avdelare mellan varje sak.
-Avsluta med: "Sen är du klar. Jag har gjort resten."
-
-**MENINGARNA**
-Max 10 ord per mening.
-En mening per rad. Aldrig stycken.
-Aldrig mer än 3 saker åt gången.
-Skriv exakt var han ska klicka och vad knappen heter.
-Fetstil bara på namn han ska leta efter.
-Hela svaret ska rymmas på en mobilskärm.
-
-**DETTA SKRIVER DU ALDRIG**
-Hur du gjorde något eller varför.
-Filnamn, kommandon, kod, testresultat, historik.
-Rättelser av vad han trodde. Skriv bara vad som gäller nu.
-Villkor som "om det står X, gör Y". Välj åt honom i stället.
-Orden "men", "dock", "notera att", "en detalj", "kort läge".
-Varningar, risker eller saker han kan kolla själv.
-
-**OM HAN FRÅGAT EFTER ETT SVAR ELLER EN SLUTSATS**
-Skriv svaret på första raden.
-Skriv sen max 3 rader om varför det blev så.
-Inget mer.
-
-**OM NÅGOT GICK FEL**
-En mening om vad som är fel.
-En mening om vad han ska göra.
-Inget mer.
-
-**OM DU BEHÖVER VETA NÅGOT AV HONOM**
-Ställ en fråga. Bara en.
-Ge 2 eller 3 svarsalternativ.
-
-Svara alltid på svenska.
+⚠️ Grönt självtest är inte en grön butik. Det bevisar att koden håller ihop,
+inte hur sidan ser ut för kunden. Kundvyn kräver `factory/kundvy-kor.mjs` mot
+riktig HTML, och varukorgen kräver en människa i en webbläsare.

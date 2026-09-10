@@ -78,14 +78,26 @@ async function uploadImage(file) {
   return Object.values(json.images)[0].hash;
 }
 
+// Ett adset bär antingen FLERA annonser (a.ads[]) eller en enda i gamla formen
+// (a.adName/a.img/a.copy). Samma uppackning används av förkontrollen, torrkörningen
+// och skapandet — härleds den på tre ställen glöms ett av dem bort.
+// (Det hände 2026-09-08: bara skapandet uppdaterades och förkontrollen kraschade på
+//  `path.join(imgdir, undefined)` innan en enda bild hunnit laddas upp.)
+const annonserI = (a) => a.ads ?? [{ adName: a.adName, img: a.img, copy: a.copy }];
+
 for (const a of cfg.adsets) {
-  const img = path.join(opt.imgdir, a.img);
-  if (!existsSync(img)) { console.error(`✗ bildfil saknas: ${img}`); process.exit(1); }
+  for (const ann of annonserI(a)) {
+    if (!ann.img) { console.error(`✗ ${a.name}: annonsen "${ann.adName ?? '(namnlös)'}" saknar img`); process.exit(1); }
+    const img = path.join(opt.imgdir, ann.img);
+    if (!existsSync(img)) { console.error(`✗ bildfil saknas: ${img}`); process.exit(1); }
+  }
 }
 
 console.log(`\n=== ${cfg.campaignName} → ${cfg.act} (${DRY ? 'DRY RUN' : 'SKARPT'}) ===`);
 if (DRY) {
-  for (const a of cfg.adsets) console.log(`  [dry] skulle skapa adset "${a.name}" + annons "${a.adName}" (${a.img})`);
+  for (const a of cfg.adsets)
+    for (const ann of annonserI(a))
+      console.log(`  [dry] skulle skapa adset "${a.name}" + annons "${ann.adName}" (${ann.img})`);
   console.log('\nDry run — inget skapat i kontot.');
   process.exit(0);
 }
@@ -127,21 +139,23 @@ for (const a of cfg.adsets) {
   }
 
   const priorAds = new Set(((await api(`${adsetId}/ads`, { params: { fields: 'name', limit: '100' } })).data || []).map(x => x.name));
-  if (priorAds.has(a.adName)) { console.log(`  · annons finns redan: ${a.adName}`); continue; }
-  const hash = await uploadImage(path.join(opt.imgdir, a.img));
-  const creative = await api(`${cfg.act}/adcreatives`, { method: 'POST', form: {
-    name: a.adName,
-    object_story_spec: JSON.stringify({ page_id: cfg.page, link_data: {
-      image_hash: hash, link: cfg.link, message: a.copy.message,
-      name: a.copy.headline, description: a.copy.description,
-      call_to_action: { type: 'SHOP_NOW', value: { link: cfg.link } },
-    } }),
-    degrees_of_freedom_spec: NO_ENHANCEMENTS,
-  } });
-  await api(`${cfg.act}/ads`, { method: 'POST', form: {
-    name: a.adName, adset_id: adsetId,
-    creative: JSON.stringify({ creative_id: creative.id }), status: cfg.adStatus,
-  } });
-  console.log(`  ✓ annons (${cfg.adStatus}): ${a.adName}`);
+  for (const ann of annonserI(a)) {
+    if (priorAds.has(ann.adName)) { console.log(`  · annons finns redan: ${ann.adName}`); continue; }
+    const hash = await uploadImage(path.join(opt.imgdir, ann.img));
+    const creative = await api(`${cfg.act}/adcreatives`, { method: 'POST', form: {
+      name: ann.adName,
+      object_story_spec: JSON.stringify({ page_id: cfg.page, link_data: {
+        image_hash: hash, link: cfg.link, message: ann.copy.message,
+        name: ann.copy.headline, description: ann.copy.description,
+        call_to_action: { type: 'SHOP_NOW', value: { link: cfg.link } },
+      } }),
+      degrees_of_freedom_spec: NO_ENHANCEMENTS,
+    } });
+    await api(`${cfg.act}/ads`, { method: 'POST', form: {
+      name: ann.adName, adset_id: adsetId,
+      creative: JSON.stringify({ creative_id: creative.id }), status: cfg.adStatus,
+    } });
+    console.log(`  ✓ annons (${cfg.adStatus}): ${ann.adName}`);
+  }
 }
 console.log('\nKLART. Verifiera i Ads Manager att kampanj/adsets/annonser har avsedd status.');

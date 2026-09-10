@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 import { sökBrand, normalisera, avstånd } from '../brandord.mjs';
 import {
   copyFält, länkAv, mediaAv, klassa, transkriptFör, läsTranskript, replikerMedBrand,
-  attGöra, sökVillkor, vägSamman, källaViaTitel,
+  attGöra, sökVillkor, vägSamman, källaViaTitel, villkorstexter,
 } from '../brand-detektor.mjs';
 import { lasYaml } from '../yaml.mjs';
 
@@ -187,6 +187,48 @@ test('attGöra märker ut olästa ytor så de inte försvinner tyst', () => {
   assert.deepEqual(attGöra({ copy: ytaRen, tal: ytaTräff, inbränd: ytaOkänd, bild: ytaEj }),
     ['tal', 'inbränd text (oläst)']);
   assert.deepEqual(attGöra({ copy: ytaRen, tal: ytaRen, inbränd: ytaRen, bild: ytaEj }), []);
+});
+
+// -------------------------------------------------- sjätte ytan: villkoren
+//
+// Bakläxan 2026-09-09 (HeimGuard): brand-detektorn letade bara efter
+// brandNAMNET och friade 38 av 40 svenska annonser. Fem bar Bäverbutikens
+// "fri frakt över 300 kr" — två av dem bevisade vinnare. Domen sa `ren`,
+// annonserna laddades upp, och OPS-butiken lovade en fraktgräns den inte har.
+
+const alltRent = { copy: ytaRen, tal: ytaRen, inbränd: ytaRen, bild: ytaEj };
+
+test('en annons med villkorsfel blir ALDRIG ren', () => {
+  const fel = [{ regel: 'fraktgräns', yta: 'copy', rad: 'Fri frakt över 300 kr', fel: 'lovar fraktgräns "Fri frakt över 300 kr" — butiken har fri frakt UTAN gräns' }];
+  assert.equal(klassa({ ...alltRent, villkorsfel: fel }), 'bara-copy');
+  // Utan villkorsfel är exakt samma annons ren — det är villkoren som fäller den.
+  assert.equal(klassa({ ...alltRent, villkorsfel: [] }), 'ren');
+});
+
+test('ytan där villkorsfelet står bestämmer vad det kostar att rätta', () => {
+  const påTal = [{ regel: 'fraktgräns', yta: 'tal', rad: 'fri frakt över trehundra kronor', fel: '…' }];
+  const påInbränd = [{ regel: 'öppet köp', yta: 'inbränd', rad: '30 dagars öppet köp', fel: '…' }];
+  // Talet kräver HeyGen-krediter, precis som ett uttalat brandnamn.
+  assert.equal(klassa({ ...alltRent, villkorsfel: påTal }), 'kräver-omdubb');
+  // Inbränd text kräver ett nytt slutkort.
+  assert.equal(klassa({ ...alltRent, villkorsfel: påInbränd }), 'kräver-slutkortsbygge');
+});
+
+test('villkorsfelet står i attGöra med sin egen förklaring', () => {
+  const ytor = { ...alltRent, villkorsfel: [{ regel: 'fraktgräns', yta: 'copy', rad: '…', fel: 'lovar fraktgräns "Fri frakt över 300 kr" — butiken har fri frakt UTAN gräns' }] };
+  assert.deepEqual(attGöra(ytor), ['fraktgräns i copy: lovar fraktgräns "Fri frakt över 300 kr" — butiken har fri frakt UTAN gräns']);
+});
+
+test('villkorstexter märker varje text med ytan den står på', () => {
+  const annons = { name: 'X_PD_1_H1', creative: { body: 'Fri frakt över 300 kr', title: 'Rubrik' } };
+  const ocrPost = { filer: [{ texter: [{ text: '30 dagars öppet köp' }] }] };
+  const texter = villkorstexter(annons, ocrPost, ['fri frakt över trehundra kronor']);
+  const ytor = texter.map((t) => t.yta);
+  assert.ok(ytor.includes('copy'), 'copyfälten ska med');
+  assert.ok(ytor.includes('inbränd'), 'OCR-texten ska med');
+  assert.ok(ytor.includes('tal'), 'transkriptet ska med');
+  // Utan OCR och utan transkript finns bara copy — och det ska sägas, inte gissas.
+  assert.deepEqual(villkorstexter(annons, null, []).map((t) => t.yta), ['copy', 'copy']);
 });
 
 // ---------------------------------------------- källbutikens villkor (yta 5)

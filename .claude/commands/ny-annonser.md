@@ -26,14 +26,29 @@ Fas 2 i OPS Factory. `/ny-ops` bygger butiken; det här kommandot ger den
 annonser. Processen och alla fallgropar står i **`factory/FAS2.md`** — det
 dokumentet är facit, det här kommandot är körordningen.
 
-**Vad kommandot gör, i en mening:** läser Bäverbutikens AKTIVA kampanjer för
-källprodukten — både den svenska och den norska — går igenom varje annons,
-byter brandnamn och pris där de förekommer, och bygger TVÅ nya kampanjer i
-OPS-kontot: en svensk och en norsk, med samma bevisade creatives fast
-ommärkta för OPS-butiken.
+**Vad kommandot gör, i en mening:** kopierar HELA Bäverbutikens aktiva
+kampanj för källprodukten — varenda annons, både den svenska och den norska —
+till TVÅ nya kampanjer i OPS-kontot, och rör bara de annonser där något är
+FEL för den nya butiken.
+
+**Axels regel 2026-09-10 — kopiera allt, rör bara det som är fel:**
+- **Alla annonser i kampanjen följer med.** Inte de bästa, inte ett urval:
+  hela kampanjen. En annons som saknas i räkningen är ett fel, inte ett val.
+- **Lyssna och läs varje annons** (tal, inbränd text, copy, bild). Bara om
+  något inte stämmer för OPS-butiken — brandnamnet "Bäverbutiken", fel pris,
+  fel villkor (fraktgräns, öppet köp, recensionsantal) — ändras annonsen,
+  och då **bara den ytan som är fel**.
+- **Nämner annonsen varken Bäverbutiken eller ett felaktigt pris kopieras
+  den som den är.** Ingen ny voiceover, ingen ny video, ingen ny copy.
+  Länken byts alltid (den pekar på källbutiken) — det är inte "att ändra
+  annonsen", det är att peka om den.
+- En video med EN felaktig replik får EN replik omdubbad — inte ett nytt
+  manus. Ett nytt manus skrivs bara när hela talet är falskt för butiken
+  (uppläst rabatt som inte finns, kundvittnesmål utan kunder).
 
 Den som kör är oftast **VA:n (engelsktalande)** — svara henne på engelska,
-korta rader; svara Axel på svenska enligt CLAUDE.md. Hon gör allt i den här
+korta rader. Axel svaras på svenska. Språket följer LÄSAREN — hennes språk
+vinner över allt annat i CLAUDE.md. Hon gör allt i den här
 fasen: kör kommandot, granskar, och sätter kampanjen ACTIVE när den är grön.
 
 **Kräver:** `META_ACCESS_TOKEN` i miljön, butikens Meta-sida och pixel ifyllda
@@ -120,9 +135,21 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    annonser bär produktens prefix — inte bara den som `kalla.kampanj_id`
    pekar på. En produkt kan ha både en test-ABO och en skalnings-CBO.
 
-3. **Brand-detektorn** (FAS2 uppdrag A). Klassa varje annons över FEM ytor:
-   copy, tal, inbränd text/slutkort, recensionsattribution — **och priset**.
+3. **Brand-detektorn** (FAS2 uppdrag A):
+   `node factory/brand-detektor.mjs --produkt <id> --hamta`
+   Klassar varje annons över SEX ytor: copy, tal, inbränd text/slutkort,
+   recensionsattribution, priset — och källbutikens ERBJUDANDEVILLKOR.
    Dom per annons: `ren` / `bara-copy` / `kräver-omdubb` / `kräver-slutkortsbygge`.
+
+   Sjätte ytan är kod sedan 2026-09-09: `villkorsskanning.skannaVillkor`
+   jämför källannonsens löften mot butikens EGNA villkor ur
+   `factory/butiker/<id>.yaml` (`frakt`, `retur`, `leveranstid`), och en
+   annons med villkorsfel kan aldrig få domen `ren`. Ytan där felet står
+   avgör priset: tal → omdubb, inbränd → slutkort, copy → gratis.
+   Regel: säger detektorn "ingen butikskonfig hittad" körs jämförelsen INTE
+   — stoppa och peka den på butiken i stället för att lita på domarna.
+   *(Utan den här spärren friades 38 av 40 svenska HeimGuard-annonser; fem bar
+   "fri frakt över 300 kr", två av dem bevisade vinnare.)*
 
    **Priset är lika viktigt som brandnamnet.** Jämför källannonsens pris mot
    OPS-butikens `ekonomi.pris` i produktfilen. Skiljer de sig måste priset
@@ -139,7 +166,12 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    `Bawebutiken` och `Spavebutiken`.
    Visa tabellen i chatten innan något ändras.
 
-4. **Fixa bilderna** (FAS2 uppdrag C, gratis). `pipeline/oversatt-bild.py`
+4. **Fixa bilderna** (FAS2 uppdrag C, gratis).
+   ⚠️ **Utesluten är inte klar.** En annons som bär källans pris eller villkor
+   ska FIXAS, inte slängas — det är bevisade vinnare. Bild = gratis med
+   verktygen nedan. Video = arbete, men den ska stå i en namngiven kö med
+   vad som krävs, aldrig försvinna ur räkningen. (HeimGuard 2026-09-09:
+   20 av 40 norska källor uteslöts i första bygget — hälften av materialet.) `pipeline/oversatt-bild.py`
    byter text i sin egen ruta utan krediter; `bildannonser/kie.mjs` är
    reservvägen när texten sitter direkt på fotot. Text läggs ALLTID med
    `bildannonser/text.py` — kie.ai klarar inte svensk text.
@@ -186,6 +218,25 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    `pipeline/no-video-launch.mjs` + `no-image-launch.mjs` med en vågkonfig per
    marknad. Allt Graph-anrop går genom `tools/meta-lib.mjs` — skriv aldrig egna
    anrop, spärrarna där är dyrköpta.
+
+   ⛔ **STRUKTUREN ÄR LÅST. Hitta ALDRIG på en egen** (Axels beslut
+   2026-09-10, den enda regeln som gäller över allt annat i det här steget).
+   Varje OPS-kampanj ser EXAKT likadan ut, och det är den struktur
+   `no-video-launch.mjs` bygger:
+   - **EN kampanj per marknad**, `OUTCOME_SALES`, **CBO** (budgeten på
+     kampanjen, `LOWEST_COST_WITHOUT_CAP`), ~1 000 kr/dag.
+   - **Ett NYTT adset per koncept** — samma koncept som källkampanjens adsets
+     (PD / SP / GT / CS …), **ingen egen budget på adsetet**,
+     `OFFSITE_CONVERSIONS` → `PURCHASE` mot butikens pixel, geo = marknaden.
+   - **Annonserna inne i sitt koncepts adset**, namn enligt
+     `docs/naming-convention.md`.
+   Det som är FÖRBJUDET: ABO, en budget per adset, ett adset per annons,
+   ett enda adset för allt, egna koncept som inte finns i källan, en
+   "testkampanj" bredvid, att lägga annonser i en kampanj som redan finns
+   i kontot, eller någon annan idé om struktur — hur bra den än låter.
+   Finns kampanjen redan (samma namn) fylls DEN, exakt så här, aldrig en ny
+   bredvid. Hela strukturen skrivs i vågkonfigen FÖRE körning och visas i
+   chatten som en tabell: kampanj → adsets → antal annonser per adset.
    - Kampanjnamnen prefixas ALLTID med brandet OCH marknaden:
      `TANKGUARD_SE_…` och `TANKGUARD_NO_…`. Alla OPS-butiker delar ett konto,
      och utan marknaden i namnet går datan inte att skära per land.
@@ -198,37 +249,34 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
      En SE-fallback i den norska kampanjen visar annonserna i fel land.
    - EU-konton kan kräva `dsa_beneficiary`/`dsa_payor` — kolla innan.
 
-9. **RÄKNINGEN — kommandots viktigaste spärr.** (Axels bakläxa 2026-09-09:
-   TankGuard fick 10 annonser av 33 möjliga och rapporterades som klart.)
-
-   Innan något rapporteras: ställ upp räkningen och visa den i chatten.
+9. **RÄKNINGEN — kommandots viktigaste spärr.** Den är kod sedan 2026-09-09
+   och avgörs av en exitkod, inte av en bedömning:
 
    ```
-   Källannonser:        34
-     rena               20  → ska bli 20 annonser
-     kräver-omdubb      11  → ska bli 11 annonser
-     slutkortsbygge      2  → ska bli 2 annonser
-     okänd               1  → ska INTE laddas upp
-   Uppladdade i kontot: __  ← läst ur Meta, inte ur minnet
+   node factory/rakning.mjs <butik-id>          # exit 0 = KLART, exit 1 = DELVIS KLART
+   node factory/rakning.mjs <butik-id> --torr   # utan att läsa kontot
    ```
 
-   **Ställ upp räkningen en gång per marknad** — en tabell för SE, en för NO.
-   En marknad som saknar tabell är en marknad du inte gjort.
+   Den läser källdomarna ur `brand-detektor.json` + `kallannonser.json`,
+   läser de faktiskt uppladdade annonserna ur `act_<id>/ads`, och skriver
+   `factory/output/<id>/rakningen.md` med en tabell PER MARKNAD.
+   Visa tabellen i chatten. **Ordet "klart" får bara skrivas när exitkoden
+   är 0.** *(Axels bakläxa: TankGuard fick 10 annonser av 33 och
+   rapporterades som klart.)*
 
-   **Varje rad som inte stämmer ska namnges.** Vilka annonser saknas, och
-   varför saknas var och en. "Resten misslyckades" är inte ett svar —
-   skriv ut namnen.
+   Vad spärren räknar som fel, och som ingen bedömning får runda:
+   - En marknad vars källor inte lästs står som **MARKNADEN INTE LÄST** —
+     aldrig som en nolla. Den norska halvan kan alltså inte glömmas bort.
+   - En annons utan dom är **odömd**, varken ren eller okänd, och räknas som
+     saknad. Domar slås upp på exakt namn — en norsk annons ärver aldrig sin
+     svenska systers dom.
+   - `okänd` och `odömd` laddas aldrig upp och räknas aldrig som förväntade,
+     men redovisas. En ACTIVE annons uppe med sådan dom blockerar "klart".
+   - Media i kontot är INTE en annons — räkningen läser `ads`, aldrig
+     `advideos`/`adimages`.
 
-   ⚠️ **Media i kontot är INTE en annons.** En uppladdad video eller bild
-   ligger i biblioteket tills en creative byggs på den. Räkna annonser med
-   `act_<id>/ads`, aldrig `advideos`/`adimages`.
-
-   ⚠️ **En `okänd` dom laddas aldrig upp.** Den betyder att en yta inte gick
-   att läsa — stäng den först (lyssna, fråga redigeraren), döm sen.
-
-   Är summan lägre än källan: **säg "delvis klart" och lista vad som fattas.**
-   Ordet "klart" får bara skrivas när varje källannons antingen ligger uppe
-   eller står namngiven med sin orsak.
+   Varje saknad rad kommer namngiven med orsak. Saknas orsaken skriver
+   rapporten "orsak saknas — måste namnges"; fyll i den, ta inte bort raden.
 
    ⚠️ **Läs om källkontona precis före räkningen.** Källkampanjen växer medan
    bygget pågår — TankGuard hade 34 annonser när brand-detektorn kördes och 40
@@ -254,12 +302,33 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    status på alla tre nivåer. Stämmer något inte: rätta och läs tillbaka igen.
    Delvis klart heter delvis klart.
 
-11. **Lämna över till VA:n.** Skriv i chatten, på engelska:
-    - vad som byggdes (kampanj, antal adsets, antal annonser)
+11. **Lämna över till den som klickar.** Skriv i chatten (svenska till Axel,
+    engelska till en engelsktalande anställd):
+    - vad som byggdes (kampanj, antal adsets, antal annonser — och att
+      räkningen säger KLART, annars "delvis klart" med de saknade namngivna)
+    - vad som kopierades orört och vad som ändrades, yta för yta
     - vad som INTE gjordes och varför (t.ex. videor som väntar på krediter)
-    - hennes granskningslista: öppna Ads Manager, kolla att länken går till
+    - granskningslistan: öppna Ads Manager, kolla att länken går till
       butikens produktsida, att pixeln är butikens egen, att budgeten stämmer
-    - **hon sätter kampanjen ACTIVE när granskningen är grön.**
+    - **Kampanjerna står PAUSED tills Axel skriver "Launch: <namn>".**
+      Ingen annan sätter dem ACTIVE.
+
+11b. **"Launch: <namn>"** (Axels beslut 2026-09-10 — sista steget i hela
+    OPS-flödet, `factory/SA-FUNKAR-DET.md` steg 9). När Axel skriver det i
+    den här sessionen:
+    - Kontrollera FÖRST att butiken är live: hämta `https://<domän>/` med
+      `curl` — svarar den med `/password` är butiken inte öppnad än (plan +
+      lösenordet bort, checklistans avsnitt 13–15). Då: säg det, launcha inte.
+    - Kontrollera att pixeln avfyrat minst en gång (`last_fired_time` på
+      pixeln) — annars säg "WeTracked är inte kopplat" och launcha inte.
+    - Sätt kampanj, adsets och annonser ACTIVE via `tools/meta-lib.mjs` —
+      **enbart de kampanjer den här körningen byggde** (`<BRAND>_SE_…` och
+      `<BRAND>_NO_…`), namngivna i rapporten, aldrig ett svep över kontot.
+    - Läs tillbaka statusen på alla tre nivåer och visa den.
+    - Saknar den norska kampanjen NOK-paketnivåer i butiken: launcha bara
+      den svenska och säg det.
+    - Skriv startdatum + budget i `factory/produkter/<id>.yaml` (`meta.launch`)
+      och i `products/<butik>/batch-log.md`. Committa och pusha.
 
 12. **Dokumentera.** `factory/state/<butik>--<produkt>.json`, ärvd historik in i
     `products/<butik>/batch-log.md` (de brand-swappade annonserna bär med sig
@@ -276,6 +345,15 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Brand-detektorns tabell visad: varje källannons klassad över fem ytor
       (copy, tal, inbränd text, recensioner, PRIS)
 - [ ] Priset bytt överallt det förekommer — SEK i den svenska, NOK i den norska
+- [ ] Källbutikens VILLKOR borta: fraktgräns, öppet köp, leveranstid, garanti
+      — i copy, i bild och i talet. Butikens egna står i butiksfilen.
+- [ ] Uteslutna annonser namngivna med vad som krävs — aldrig bara borttagna
+- [ ] **HELA kampanjen kopierad** — varje källannons finns i målkontot eller
+      står namngiven i räkningen med orsak
+- [ ] Rena annonser kopierade ORÖRDA (bara länken bytt) — ingen ny
+      voiceover/video/copy utan ett namngivet fel
+- [ ] Vid "Launch: <namn>": butiken live (ingen `/password`), pixeln har
+      avfyrat, statusen ACTIVE tillbakaläst på tre nivåer — annars orört
 - [ ] Bilderna brand-swappade med QA före/efter
 - [ ] Videorna omdubbade — eller listade som väntande med orsak
 - [ ] All copy pekar på butikens EGEN produktsida, ingen gissad länk
@@ -283,6 +361,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] BÅDA källkontona lästa: MagiBorsten (SE) OCH Magiborsten NO
 - [ ] Alla kampanjer per konto genomsökta, inte bara `kalla.kampanj_id`
 - [ ] TVÅ kampanjer byggda: `<BRAND>_SE_…` och `<BRAND>_NO_…`
+- [ ] **Strukturen är den låsta: CBO-kampanj → ett nytt adset per
+      källkoncept utan egen budget → annonserna i sitt adset.** Ingen egen
+      struktur, ingen ABO, inget adset per annons
 - [ ] Svensk copy på svenska mot `/`, norsk copy på bokmål mot `/nb`
 - [ ] Allt skapat PAUSED, status explicit på alla tre nivåer
 - [ ] Källkontona omlästa PRECIS före räkningen — inte den gamla listan
@@ -291,8 +372,10 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Varje cue mätt mot sin källcue (`srt-fixa.mjs`, tak 1,15×)
 - [ ] Tempospridningen mätt i varje FÄRDIG fil (`rostkoll.py`, tak 2,2×)
 - [ ] HeyGen kört i `quality`-läget, inte default `fast`
-- [ ] **Räkningen visad:** källannonser per dom vs. uppladdade annonser i kontot
-- [ ] Varje saknad annons NAMNGIVEN med orsak — annars står det "delvis klart"
+- [ ] **`node factory/rakning.mjs <butik-id>` körd och tabellen visad — exit 0,
+      annars står det "delvis klart"**
+- [ ] Varje saknad annons NAMNGIVEN med orsak (rapporten skriver ut vilka)
+- [ ] Ingen marknad står som "MARKNADEN INTE LÄST"
 - [ ] Tillbakaläst ur Meta: sida, pixel, budget, länk och status stämmer
 - [ ] VA:n har sin granskningslista och vet att hon sätter ACTIVE
 - [ ] state + FAS2.md uppdaterade, pushat

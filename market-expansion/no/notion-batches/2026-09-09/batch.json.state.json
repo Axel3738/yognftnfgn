@@ -1,0 +1,50 @@
+{
+ "ibc-tanktrekk_PD_4_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/114a22e2b1754383957b55f5e6883494/original.mp4",
+  "proofreadId": "a7c38f5b133044d7984c19b469e821ff-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9f594d5941034189aebbf1613f55d1bf-nb",
+  "downloaded": true
+ },
+ "ibc-tanktrekk_PD_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/48fd03c6825c40d09b924dbb6317cba1/original.mp4",
+  "proofreadId": "5a11c20b5bd543b4b6cba71c7cc4f363-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "020e8a3b4bd64afdb83182f477696822-nb",
+  "downloaded": true
+ },
+ "ibc-tanktrekk_PD_4_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/47200e6498c84805b7d8765e5b82ef35/original.mp4",
+  "proofreadId": "3877762c8101474693d5cea5c7ae257e-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "6357f3bbd69c4d0b93a525941cb54b4f-nb",
+  "downloaded": true
+ },
+ "ibc-tanktrekk_SP_3_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/f50a2b956bf64347be13bfb4711ff173/original.mp4",
+  "proofreadId": "f926168cf3c44fe1b2d6adb6e26f4292-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "d9b91af50dde4a5091c8cddf59b89f7a-nb",
+  "downloaded": true
+ },
+ "ibc-tanktrekk_CS_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/3712afcd5ba041d19e5f7300f7131520/original.mp4",
+  "proofreadId": "31fb7413ee3e4e118cc7bcc8edd096b6-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "8f447de0b4ef41a394a5c9e58402fc9a-nb",
+  "downloaded": true
+ },
+ "ibc-tanktrekk_GT_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/dab8d785282d46019a2eae4509564b8c/original.mp4",
+  "proofreadId": "abedcd09e70342078ee7e2177efc1610-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "607349b1ad604e53be26c8032400e9fe-nb",
+  "downloaded": true
+ }
+}

@@ -200,3 +200,55 @@ Skriv sedan här i filen, under en ny rubrik **"Ändrat i session <datum>"**:
 vad som gjordes, vad som återstår, och vad nästa session behöver veta.
 
 Det är så nästa session slipper börja om.
+
+---
+
+## 10. OPS Factory (`factory/`) — läget 2026-09-09
+
+Axels tredje verksamhet: one-product-stores byggda ur Bäverbutikens vinnare
+(CLAUDE.md-avsnittet "OPS Factory"). Läsordning: `factory/KEDJAN.md`
+(kontraktet) → `factory/PROCESS.md` (rutinen) → `.claude/commands/ny-ops.md`
+(körordningen) → `factory/README.md` (modulerna).
+
+**Koden ligger nu på EN gren.** Fram till 2026-09-09 byggde tre sessioner
+varsin komplett fabrik på varsin gren, och `main` fick bara dokumentationen.
+Grenarna slogs ihop till `claude/inspiring-babbage-5m3g0g` och dubbletterna
+förenades till en modul per funktion enligt `KEDJAN.md`:
+
+| Gren | Vad den bar |
+|---|---|
+| `claude/baverbutiken-product-links-iqneba` | TackleBay 2026-09-09: produktloopen, tema-upload, startsida, paket, marknad, logga |
+| `claude/damasker-vandring-product-t9orw7` | DryTrek 2026-09-09: kundvy-kor, lagerpolicy, avbranda, filer, identitet, trippelkoll |
+| `claude/ny-ops-ibc-tank-cover-jjwesr` | TankGuard 2026-09-08: token, tema-mall, marknader, kolla, bonus, bildtext, Judge.me app-CSV |
+| `claude/ny-ops-ibc-tank-cover-stoo16` | TankGuard-avläsning 2026-09-09: översättningsgranskaren, SEK-butiksfilen |
+| `claude/cart-drawer-redirect-fix-bbmiri` | Varukorgsfixen i `assets/ms-paket.js` |
+
+**Inte intagen:** `claude/ny-ops-ibc-tank-cover-51zqlx` (äldre än allt annat,
+förarbete som jjwesr gjorde om; enda unika är Word-export av checklistan som
+kräver npm `docx`).
+
+Efter mergen till `main` är `main` enda källan — rutinerna klonar `main`.
+Testerna: `node --test factory/test/*.test.mjs`.
+
+## 11. ⚠️ Nattrutinerna syns inte på kontot (mätt 2026-09-09)
+
+CLAUDE.md beskriver sex schemalagda rutiner (`/translate-no` 04:15,
+`/no-recensioner` 05:30, `/bildannonser` 20:00, `/notionkorning` 13:20,
+`/oversatt` 15:00, `/commission` 06:00). Två mätningar från en molnsession
+2026-09-09 säger att de inte finns på det konto sessionen kör under:
+
+- `list_triggers` (även med `include_completed`) returnerar **noll Routines**.
+- `get_session session_012EUCCZUPS5hCn5zMp9Fq7R` — den fasta session CLAUDE.md
+  pekar ut för Leveransrundan — svarar **not found**. Kontot har tre sessioner
+  totalt, alla interaktiva.
+
+**Vad det INTE betyder:** att rutinerna bevisligen är raderade. De kan ligga på
+ett annat Claude-konto än det sessionen kör under. Vad mätningen säger är att
+INGEN rutin är synlig härifrån, och att den fasta sessionen som pekas ut i
+dokumentationen inte längre svarar.
+
+**Avgörs så här:** öppna Routines-vyn på claude.ai. Står de sex rutinerna där
+är allt bra och den här noteringen ska bort. Är listan tom har den dagliga
+automationen (bildannonser, leveransrundan, commission, översättningskön,
+NO-videobatchen, norska recensioner) stått stilla — och ingen rapport hade
+sagt det, för en rutin som inte finns skickar ingenting.

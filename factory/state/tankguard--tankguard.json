@@ -1,8 +1,85 @@
 {
  "butik": "tankguard",
  "produkt": "tankguard",
- "kommando": "/ny-annonser tankguard",
+ "handle": "tankoverdraget",
+ "sammanslagen": "2026-09-09: tankguard--tankoverdraget.json (/ny-ops 2026-09-08, butiksbygget) + tankguard--tankguard.json (/ny-annonser 2026-09-09, annonsfasen). Produktfilen ar produkter/tankguard.yaml (id tankguard, handle tankoverdraget). Butiksnivasteg (brand, tema, sidor, policyer, meny, startsida, frakt, huvudmarknad) ligger kvar har tills ops.mjs delar state per niva (KEDJAN.md: <butik>--_butik.json).",
+ "kommando": [
+  "/ny-ops tankguard",
+  "/ny-annonser tankguard"
+ ],
  "steg": {
+  "produkt": {
+   "klar": true,
+   "id": "gid://shopify/Product/15989715108184",
+   "handle": "tankoverdraget",
+   "status": "ACTIVE"
+  },
+  "metafalt": {
+   "klar": true,
+   "antal": 12
+  },
+  "brand": {
+   "klar": true,
+   "temaId": "gid://shopify/OnlineStoreTheme/198130270552",
+   "filer": [
+    "assets/opf-brand.css",
+    "snippets/ms-head.liquid",
+    "config/settings_data.json"
+   ]
+  },
+  "tema": {
+   "klar": true,
+   "temaId": "gid://shopify/OnlineStoreTheme/198130270552",
+   "temaNamn": "TankGuard – CRO v1 (utkast)",
+   "sektioner": 6
+  },
+  "sidor": {
+   "klar": true,
+   "antal": 4
+  },
+  "policyer": {
+   "klar": true,
+   "antal": 3
+  },
+  "meny": {
+   "klar": true,
+   "huvudmeny": "main-menu",
+   "handle": "footer",
+   "orord": false
+  },
+  "startsida": {
+   "klar": true,
+   "temaId": "gid://shopify/OnlineStoreTheme/198130270552",
+   "filer": [
+    "templates/index.json",
+    "sections/header-group.json",
+    "sections/footer-group.json",
+    "templates/product.json",
+    "config/settings_data.json",
+    "snippets/opf-korg-upsell.liquid",
+    "sections/cart-drawer.liquid",
+    "snippets/opf-tillagg.liquid",
+    "snippets/ms-head.liquid",
+    "snippets/ms-paket.liquid"
+   ],
+   "abTest": "paket"
+  },
+  "frakt": {
+   "klar": true,
+   "andrade": 5,
+   "orort": false
+  },
+  "huvudmarknad": {
+   "klar": true,
+   "valuta": "SEK"
+  },
+  "recensioner": {
+   "klar": true,
+   "rapport": {
+    "judgeme-import.csv": "klart: 10 ok, 0 fel · Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg.",
+    "judgeme-import-nb.csv": "klart: 6 ok, 0 fel · Verifiera i Judge.me-adminen att recensionerna ligger på rätt produkt innan nästa steg."
+   }
+  },
   "konto_verifierat": {
    "klar": true,
    "mal_ad_account_id": "915422744950975",
@@ -364,15 +441,24 @@
    "lardom": "\"tal (oläst)\" är inte samma sak som \"tal som inte gick att läsa\". Brand-detektorn skriver okänd så fort ett transkript saknas, och den domen blockerade annonsen i ett dygn. Kolla först om det finns något att transkribera — proofreadCreate svarar på fem minuter och drar noll krediter."
   }
  },
- "uppdaterad": "2026-09-09",
+ "qa": {
+  "gron": false,
+  "kritiska": [
+   "tracking"
+  ],
+  "tid": "2026-09-08T08:23:06.166Z"
+ },
+ "uppdaterad": "2026-09-10",
  "oppna_beslut": [
   "Momsen i TankGuards pris. Break-even 1,46 utan moms, 2,07 med. 42 % isär — ingen annons får dömas innan frågan är avgjord.",
   "NOK-nivåer saknas. Hela den norska uppsättningen är prisfri tills de finns; priset står bara på /nb-sidan.",
-  "Jämförpriset 1 376 / 2 064 kr på butikssidan används inte i någon annons — de är paketsummor, inte enstyckspris."
+  "Jämförpriset: annonsens jämförtal (978/1 467 kr) matchar inte produktsidans överstrukna (1 376/2 064 kr). Sidans tal är paketsummor och används i ingen annons. Ska annonsen följa sidan eller sidan följa annonsen?",
+  "Utlöser offer.bonus_produkt faktiskt Kranskydd Frost i korgen? Fyra annonser lovar den."
  ],
  "tidigare_blockerare_lost": {
   "butiksfil": "Delvis lost 2026-09-08: Axel lamnade pris (489 kr) och produktlank direkt i chatten. factory/butiker/tankguard.yaml saknas fortfarande — frakt, returer, betalsatt och NOK-nivaer ar darfor okanda och pastas aldrig i copyn.",
-  "sidroll": "Last 2026-09-09: Axel gav full tillgang till TankGuard-sidan. Alla tio annonserna gick igenom direkt. Rotorsaken var att sidan lag i businessens client_pages men saknades helt i me/accounts — HeimGuard ligger i owned_pages och fungerade darfor."
+  "sidroll": "Last 2026-09-09: Axel gav full tillgang till TankGuard-sidan. Alla tio annonserna gick igenom direkt. Rotorsaken var att sidan lag i businessens client_pages men saknades helt i me/accounts — HeimGuard ligger i owned_pages och fungerade darfor.",
+  "annonsfasen": "Löst 2026-09-09: alla 13 svenska videor omdubbade (quality-läge) och live; PD_4_H1/H2 fick dom och byggdes; butiksfilen finns; NO live prisfri. Ingångspriset avgjort av Axel 2026-09-08: 489 kr först."
  },
  "blockerare": {}
 }

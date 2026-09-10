@@ -16,6 +16,10 @@ brand:
     - stelnacke.se
 
 ekonomi:
+  # ⚠️ Fixturen bär MED FLIT inget `moms_antagen`. Den finns för att bevisa
+  # att koden klarar ett OBESLUTAT läge: två linjer, ingen ensam dom, och
+  # butikens moms_i_pris (true här) som ALDRIG smyger in som antagande.
+  # Riktiga produkter har fältet satt — se factory/produkt-mall.yaml.
   inkopskostnad: 87           # 4,9 EUR produkt + 2,3 EUR frakt + tull, per styck
   pris: 399
   jamforpris: 599             # valutan kommer ur butikskonfigen

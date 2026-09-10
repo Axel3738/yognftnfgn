@@ -19,6 +19,9 @@
     { "id": "3d0270ab-908c-81ca-bd04-c2acadd0b2e9", "namn": "Gravstenspenna creative hub", "verksamhet": "Bäverbutiken", "marknad": "SE" },
     { "id": "3d0270ab-908c-8149-b39f-dd9e0ef8133f", "namn": "Smiley face trash can stickers creative hub", "verksamhet": "Bäverbutiken", "marknad": "SE" },
 
+    { "id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7", "namn": "Damasker vandring", "verksamhet": "Bäverbutiken", "marknad": "SE" },
+    { "id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1", "namn": "Fish rod holder", "verksamhet": "Bäverbutiken", "marknad": "SE" },
+
     { "id": "3be270ab-908c-80f9-8dc3-c652ca05cf87", "namn": "Creative Greatgrill MEXICO", "verksamhet": "Grillkliniken", "marknad": "MX" },
     { "id": "3cd270ab-908c-818f-9059-f333f67559a4", "namn": "Fish rod holder NO creative hub", "verksamhet": "Bäverbutiken", "marknad": "NO" }
   ]

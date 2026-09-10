@@ -1,0 +1,278 @@
+# DAMASKER (benskydd för vandring) — DryTreks huvudprodukt.
+# Byggd 2026-09-09 ur Bäverbutikens vinnare. Allt nedan är HÄMTAT, inte gissat:
+#   produktdata + priser  → baverbutiken.se/products/<handle>.json  (2026-09-09)
+#   paketnivåer           → källsidans Kaching-widget (dealBars i sidans HTML)
+#   utfall + break-even   → MagiBorsten 1867947880635861, kampanj 120250009391470291
+#
+# ⚠️ TVÅ FÄLT ÄR INTE IFYLLDA OCH SKA INTE GISSAS:
+#   media.gif_problem / media.media_losning — källan har inga gifar, bara
+#     stillbilder. Launch-QA stoppar utan dem. De är ett redigerarjobb.
+#   offer.bonus_produkt.handle — bonusprodukten är vald men inte sourcad än.
+
+produkt:
+  namn: "Damasker Vandring – Håller Snö, Väta & Grus Ute"
+  id: damasker
+
+brand:
+  namn: "DryTrek"
+  domanideer:
+    # Kollade med RDAP 2026-09-09 (whois saknas i containern), plus DNS-uppslag.
+    - "drytrek.se"      # LEDIG — vald huvuddomän
+    - "drytrek.no"      # LEDIG — reserverad för NO-marknaden
+    - "drystride.se"    # LEDIG — reserv
+    - "dryhike.se"      # LEDIG — reserv
+
+ekonomi:
+  # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
+  # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset — dra
+  # aldrig av 25 % en gång till, då ser lönsamma annonser ut att gå med
+  # förlust. Fältet styr break-even och därmed varje kill-beslut.
+  moms_antagen: false
+  # Inköpet är INTE gissat: det är räknat baklänges ur källkampanjens egen
+  # break-even, som Axel satte i kampanjnamnet
+  # ("Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29"):
+  #   täckningsbidrag = 389 / 1,60 = 243,13 kr  →  inköp = 389 − 243 = 146 kr.
+  # Bäverbutiken säljer UTAN moms (Axels besked 2026-08-29), så marginalen
+  # räknas rakt på priset — dra inte av 25 % en gång till.
+  # ⚠️ Talet är en HÄRLEDNING ur ett verkligt break-even, inte en rad ur
+  # COGS-dokumentet. Stäm av mot COGS-arket innan budgetbeslut.
+  inkopskostnad: 146
+  # Samma pris som källan. Priset ändras INTE i OPS-butiken: /ny-annonser
+  # brand-swappar källans creatives, och ett annat pris gör varje inbränd
+  # prisrad i annonserna fel.
+  pris: 389
+  jamforpris: 649
+  # Vid 389 kr och 146 kr inköp: täckningsbidrag 243 kr,
+  # break-even-ROAS 1,60, break-even-CPA 243 kr.
+
+varianter:
+  # 18 färger på källan, en storlek (justerbar). Signalfärgerna först —
+  # "syns i terrängen" är en av produktens fyra sälj-punkter.
+  - namn: "Neongrön"
+    sku: "TEMU-601101617191068-NG"
+  - namn: "Orange"
+    sku: "TEMU-601101617191068-OR"
+  - namn: "Gul"
+    sku: "TEMU-601101617191068-GU"
+  - namn: "Svart"
+    sku: "TEMU-601101617191068-SV"
+  - namn: "Grå"
+    sku: "TEMU-601101617191068-GR"
+  - namn: "Marinblå"
+    sku: "TEMU-601101617191068-MB"
+  - namn: "Blå"
+    sku: "TEMU-601101617191068-BL"
+  - namn: "Ljusblå"
+    sku: "TEMU-601101617191068-LB"
+  - namn: "Röd"
+    sku: "TEMU-601101617191068-RD"
+  - namn: "Lila"
+    sku: "TEMU-601101617191068-LI"
+  - namn: "Rosa"
+    sku: "TEMU-601101617191068-RA"
+  - namn: "Brun"
+    sku: "TEMU-601101617191068-BR"
+  - namn: "Vit"
+    sku: "TEMU-601101617191068-VI"
+  - namn: "Olivgrön"
+    sku: "TEMU-601101617191068-OL"
+  - namn: "Kamouflage Grön"
+    sku: "TEMU-601101617191068-KG"
+  - namn: "Kamouflage Svart"
+    sku: "TEMU-601101617191068-KS"
+  - namn: "Blå/Neongrön"
+    sku: "TEMU-601101617191068-BN"
+  - namn: "Cerise/Neongrön"
+    sku: "TEMU-601101617191068-CN"
+
+media:
+  bilder:
+    # Bild 3–5 har INBRÄND SVENSK TEXT (mått, spänne, kardborre). De ska
+    # språkversioneras för /nb enligt fas 4 — kie rensar text, sharp lägger
+    # norsk vektortext, alt-texten märks [SV]/[NO].
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-08.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-09.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-benskydd-sv.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-spanne-benskydd-sv.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-karborre-benskydd-sv.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-SV.png"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-OL.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-KG.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-MB.png"
+  videor:
+    - ""
+  # ⚠️ TOMMA MED FLIT. Källan har noll gifar. Launch-QA stoppar utan dem —
+  # det är rätt: en produktsida utan rörlig demo av problemet och lösningen
+  # konverterar sämre. Beställs av redigerarna, fylls i sen.
+  gif_problem: ""
+  media_losning: ""
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-08.jpg"
+
+beskrivning:
+  problem_rubrik: "Blöta strumpor avgör turen före trötta ben"
+  problem_text: "Snö nerifrån, blöt sly och grus som letar sig ner i kängan. Det är sällan vädret som avbryter turen — det är det som tar sig in nedtill. Två timmar in börjar strumpan suga, och resten av dagen går åt till att tänka på fötterna."
+  losning_rubrik: "Damasker som stänger till mellan känga och knä"
+  losning_text: "Kroka fast i snörningen, dra remmen under foten och slut kardborren runt benet. 44 centimeter skydd i tätvävd polyester håller snö, väta och grus ute hela vägen upp. En storlek som justeras efter benet — de sitter kvar i steget, inte bara när du står still."
+
+vinkel:
+  # HUVUDVINKELN ÄR INTE GISSAD. Källkampanjen 120250009391470291 har
+  # spenderat 12 198 kr på 18 annonser (avläst 2026-09-09). Vinnaren är
+  # Damasker_PD_1 — produktdemo: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr,
+  # mot break-even-ROAS 1,60. Den ensam står för 79 % av spenden och 88 % av
+  # köpen. Näst bästa vinkel (SP, social proof) ligger på ROAS 1,42 — UNDER
+  # break-even. Demon är butikens vinkel.
+  huvudvinkel: "Produktdemo av påtagningen: krok i snörningen → rem under foten → kardborre runt benet, med vatten och grus som studsar av (källa: Damasker_PD_1, ROAS 2,83 på 9 638 kr i MagiBorsten)"
+  underrubrik: "44 cm skydd mellan känga och knä — snön, vätan och gruset stannar utanför"
+
+malgrupp:
+  beskrivning: "Vandrare, jägare, hundägare och skogsfolk 30–65 i Sverige och Norge. Praktiska köpare som redan äger kängorna och vet exakt hur en blöt strumpa känns vid kilometer fyra. De pratar om turen, terrängen och vädret — inte om plagg. Köper det som funkar och som håller en säsong till, inte det som är snyggast."
+
+problem:
+  - "Snö och väta tar sig in i kängan uppifrån och blöter ner strumpan"
+  - "Grus och barr letar sig ner i skon och skaver resten av turen"
+  - "Blöt sly och högt gräs gör byxbenet genomvått på tjugo minuter"
+  - "Billiga benskydd glider ner eller lossnar efter några kilometer"
+  - "Svårt att synas i terrängen under jakt och i skymning"
+
+benefits:
+  - "Strumporna håller sig torra hela turen — inga blöta fötter vid kilometer fyra"
+  - "Inget grus i kängan, alltså inga stopp för att skaka ur skon"
+  - "Byxbenet håller sig torrt genom blöt sly och högt gräs"
+  - "Sitter kvar i steget tack vare krok, rem och kardborre — inte bara när du står still"
+  - "Syns i terrängen i neongrön, orange eller gul när ljuset går ner"
+  - "Passar de flesta vuxna direkt — en storlek som justeras efter benet"
+
+features:
+  - "44 cm höjd — täcker hela vägen från känga till under knät"
+  - "43 cm omkrets, justerbar — en storlek som passar de flesta vuxna"
+  - "100 % polyester, tätvävd"
+  - "Krok som fäster i kängans snörning"
+  - "Justerbar rem under foten som håller damasken på plats"
+  - "Kardborrestängning längs hela utsidan — går på och av med kängan på"
+  - "18 färger, inklusive signalfärgerna neongrön, orange och gul"
+
+offer:
+  beskrivning: "389 kr per par (ord. 649 kr). Fri frakt till Sverige och Norge, 14 dagars ångerrätt."
+  bundle: "Paketnivåer 1/2/3 par — mittennivån förvald enligt fabriksregeln"
+  # PAKET A — källans egna Kaching-nivåer, ordagrant. Läst 2026-09-09 ur
+  # baverbutiken.se produktsidas kaching-bundles-deal-block-settings:
+  # 1 st 0 %, 2 st 15 % (förvald, badge 'Mest populär'), 3 st 20 %.
+  # Styckpriset 389 kr ger 389 / 661,30 / 933,60 kr. Rabattkoderna drar exakt
+  # mellanskillnaden (factory/paket.mjs räknar i öre), så kortet och kassan
+  # aldrig kan säga olika saker.
+  #
+  # variant är TOM med flit: alla kunder ser den bevisade stegen, inget A/B.
+  # PAKET B (Q4-ramverket: gratis bonusprodukt i stället för djupare rabatt)
+  # är planerat i factory/output/damasker/PAKETNIVAER.md men INTE byggt —
+  # bonusprodukten (reflexband) är vald men inte sourcad, och en gratisnivå
+  # utan en produkt att ge bort går inte att bygga ärligt.
+  #
+  # handle står uttryckligen: nivåerna skrevs live i DryTrek 2026-09-09 med
+  # de här handles (paket_a klar i state) — utan raden skulle fabrikens
+  # standardhandle (damasker-x-N) ge dubbla kort på produktsidan.
+  # Mittennivån är förvald enligt fabriksregeln ⌈n/2⌉ = 2. Källan hade redan
+  # st2b förvald, så regeln och källan säger samma sak.
+  paket:
+    test: ""
+    nivaer:
+      - antal: 1
+        handle: "damasker-a1"
+        rubrik: "1 par"
+        underrubrik: "Standardpris"
+      - antal: 2
+        handle: "damasker-a2"
+        rubrik: "2 par"
+        underrubrik: "330,65 kr per par"
+        bricka: "Mest populär"
+        pris: 661.30
+        kod: "DAMASKER2PACK"
+        forvald: true
+      - antal: 3
+        handle: "damasker-a3"
+        rubrik: "3 par"
+        underrubrik: "311,20 kr per par"
+        pris: 933.60
+        kod: "DAMASKER3PACK"
+  # Q4-RAMVERKET (standard för varje OPS). Vald bonus: reflexband.
+  # Varför just det: produktens fjärde sälj-punkt är redan "syns i terrängen",
+  # så bonusen förstärker ett löfte sidan redan gör i stället för att införa
+  # ett nytt. Låg COGS, väger ingenting, samfraktas i samma påse.
+  # ⚠️ handle är TOM — produkten är vald, inte sourcad. Fyll i när den ligger
+  # i butiken; utan handle kan byggKorgUpsell inte rita korg-upsellen.
+  bonus_produkt:
+    titel: "Reflexband för ben & arm – 2-pack"
+    handle: ""
+    pris: 149
+    i_paket: "Gratis i nivå 2 och 3, med antalet följande paketantalet (2 par ⇒ 2 st, 3 par ⇒ 3 st). Nivå 1 får den som betald kryssruta till fullpris 149 kr — aldrig rabatterad, annars blir 'värde 298 kr' på paketen en lögn."
+
+reviews:
+# ⚠️ TOM MED FLIT. Källprodukten har NOLL recensioner (avläst 2026-09-09:
+# Judge.me svarar number_of_reviews 0, och källsidans Loox-metafält är null).
+# Det finns alltså inget att importera i slutsteget. Recensioner måste komma
+# någon annanstans ifrån innan butiken tar trafik — hitta aldrig på dem.
+
+faq:
+  - fraga: "Passar de min kängstorlek?"
+    svar: "Ja. Damaskerna har en storlek med 43 cm omkrets och justeras med kardborre och remmen under foten, så de sitter på allt från lätta vandringskängor till grövre jaktkängor."
+  - fraga: "Går de att ta på med kängorna på?"
+    svar: "Ja. Kardborren löper längs hela utsidan, så du sveper dem runt benet utan att ta av skon."
+  - fraga: "Håller de för snö och inte bara regn?"
+    svar: "Ja. De är 44 cm höga och sluter tätt runt kängan, så snö som yr upp nerifrån stannar utanför."
+  - fraga: "Glider de inte ner när jag går?"
+    svar: "Nej. Kroken fäster i kängans snörning och remmen går under foten — det är de två sakerna som håller dem på plats i steget."
+  - fraga: "Kan jag tvätta dem?"
+    svar: "Skölj av lera och grus i kallt vatten och låt dem lufttorka. Materialet är 100 % polyester."
+  - fraga: "Levererar ni till Norge?"
+    svar: "Ja. Fri frakt till både Sverige och Norge."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  # Härledd ur källans SKU (TEMU-601101617191068-<färg>), inte ur inköpsarket.
+  # Länken svarar 200 (kollad 2026-09-09) men själva artikeln är inte
+  # ögonkontrollerad — stäm av mot Axels inköpsark innan en order läggs.
+  url: "https://www.temu.com/goods.html?goods_id=601101617191068"
+  anteckning: "Temu, artikel-id 601101617191068 ur källans SKU. 18 färgvarianter, en storlek. Ledtid och MOQ står inte i repot."
+
+# KÄLLKOPPLINGEN — läses av factory/brand-detektor.mjs.
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16454828720477"
+  produkt_handle: "damasker-vandring-haller-sno-vata-grus-ute"
+  produkt_url: "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute"
+  # KÄLLAN = MagiBorsten (Bäverbutiken SE). MÅLET står i meta.ad_account_id
+  # längst ned = MagiBorsten DK (OPS Factory). Namnen är nästan lika, kontona
+  # är olika verksamheter — kontrollera alltid på id, aldrig på kontonamnet.
+  annonskonto: "1867947880635861"
+  annonsprefix: "Damasker"
+  kampanj_id: "120250009391470291"
+  kampanj: "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29"
+  srt_slug:
+    - "damask"
+    - "damasker"
+
+kallor:
+  drive_mapp: ""
+
+meta:
+  # ALLA OPS-butiker (SE och NO) kör på det gemensamma annonskontot
+  # "MagiBorsten DK" 915422744950975 (Axels beslut 2026-09-07). Kampanjnamnen
+  # prefixas med brandet (DRYTREK_…) så datan går att skära per butik.
+  # ⚠️ Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken SE) ovan.
+  ad_account_id: "915422744950975"
+  page_id: ""                 # kan inte skapas via API — väntar på Meta-sidan
+  pixel_id: "945311424682796"                # skapas när sidan finns
+  # creative_prefix är per PRODUKT, aldrig per brand (regeln i PROCESS.md):
+  # brandet bor i kampanjnamnet, prefixet i produkten. Samma prefix som källan
+  # så prefixkartan, översättningskön och commission-kopplingen håller ihop.
+  creative_prefix: "Damasker"
+  testbudget_per_dag: 1000
+  vinklar:
+    - "PD — produktdemo av påtagningen (krok, rem, kardborre) med väta och grus som studsar av. BEVISAD: ROAS 2,83 på 9 638 kr."
+    - "PD — 'testet': vatten hälls över kängan, strumpan dras av torr efteråt"
+    - "FO — före/efter på samma tur: blöt strumpa utan, torr strumpa med"
+    - "G — grus-vinkeln: skaka ur kängan vid varje paus, mot noll stopp"

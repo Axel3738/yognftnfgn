@@ -1,0 +1,124 @@
+{
+  "input": {
+    "title": "Adventskalender Fiskedrag – 24 Drag",
+    "handle": "adventskalender-fiskedrag",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>24 luckor. 24 drag. Slut på presentgissandet.</p>",
+    "vendor": "TackleBay",
+    "seo": {
+      "title": "Adventskalender Fiskedrag – 24 Drag – TackleBay",
+      "description": "Något att öppna varje dag, inte bara den 24:e.. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "469.00",
+        "compareAtPrice": "619.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender.jpg",
+        "contentType": "IMAGE",
+        "alt": "Adventskalender Fiskedrag – 24 Drag"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender-2.jpg",
+        "contentType": "IMAGE",
+        "alt": "Adventskalender Fiskedrag – 24 Drag"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-ai.png",
+        "contentType": "IMAGE",
+        "alt": "Adventskalender Fiskedrag – 24 Drag"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Vad ger man den som redan har allt i fiskelådan?"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Han har wobblers i tre storlekar, skeddrag han aldrig använder och en låda som inte går att stänga. En ny rulle är för dyrt att chansa på, och ett presentkort säger ”jag visste inte”. Så det blir strumpor. Igen."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Ett drag om dagen fram till jul"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Bakom varje lucka sitter ett drag — en wobbler ena dagen, ett skeddrag nästa, en mjukbeteräka den tredje. Tjugofyra morgnar med något att vända på i handen och fundera över var det ska provas. Vid julafton är det en ny låda, byggd en lucka i taget."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender-2.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Något att öppna varje dag, inte bara den 24:e.\",\"Ingen behöver gissa storlek eller märke — dragen passar alla spön.\",\"Lådan är fylld till våren med drag som ska ut och provas.\",\"Presentproblemet är löst med ett köp.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"24 luckor med ett fiskedrag bakom varje\",\"Blandat innehåll: wobblers, skeddrag och mjukbeten\",\"Färdig att ge bort som den är\",\"För den som fiskar sött- eller saltvatten\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-ai.png"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vad ligger bakom luckorna?\",\"svar\":\"Ett fiskedrag per lucka — wobblers, skeddrag och mjukbeten om vartannat. Inte 24 av samma sort.\"},{\"fraga\":\"Hinner den fram före advent?\",\"svar\":\"Leveranstiden är 5–10 arbetsdagar. Beställ i god tid före den 1 december.\"},{\"fraga\":\"Passar dragen alla spön?\",\"svar\":\"Ja. Dragen är vanliga storlekar som fungerar med normala spinn- och haspelset.\"},{\"fraga\":\"Kan jag ge bort den som den är?\",\"svar\":\"Ja. Kalendern är färdig att ge bort direkt ur paketet.\"}]"
+    }
+  ]
+}

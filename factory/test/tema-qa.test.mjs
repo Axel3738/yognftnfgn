@@ -99,11 +99,14 @@ test('minimala produktens förhandsvisning saknar de tomma sektionerna och passe
   assert.ok(!html.includes('källa:')); // interna källhänvisningen läcker inte
 });
 
-test('problem-sektionen i temat läser beskrivningens metafält och villkorar gif:en', () => {
+test('problem-sektionen i temat läser beskrivningens metafält och villkorar demot', () => {
   const liquid = SEKTIONER['sections/opf-problem.liquid'];
   assert.ok(liquid.includes('product.metafields.opf.problem_rubrik'));
   assert.ok(liquid.includes('product.metafields.opf.gif_problem'));
-  assert.ok(liquid.includes('{%- if gif != blank -%}'));
+  // Villkoret läser fältet direkt sedan 2026-09-09 — renderingen väljer video
+  // eller bild på filändelsen, så mellanvariabeln `gif` föll bort. Kravet är
+  // detsamma: tomt fält ger ingen tagg, aldrig en tom src.
+  assert.ok(liquid.includes('{%- if product.metafields.opf.gif_problem.value != blank -%}'));
 });
 
 test('garanti-sektionen i temat läser garantierna och renderar aldrig utan data', () => {

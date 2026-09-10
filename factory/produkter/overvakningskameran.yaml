@@ -23,6 +23,21 @@ ekonomi:
   inkopskostnad: 261
   pris: 799
   jamforpris: 1000
+  valuta: SEK
+  # Ekonomiblocket (FAS2 Uppdrag E) — ifyllt 2026-09-08 av /ny-annonser.
+  # Priset läst ur heimguard.se/products/overvakningskameran.json samma dag.
+  # MOMSEN ÄR AVGJORD 2026-09-09 (Axels besked): räknas UTAN moms, samma
+  # regel som Bäverbutiken och Grillkliniken. Marginalen räknas rakt på
+  # priset: 799 − 261 = 538 kr.
+  # Talen stod tidigare räknade MED moms (TB 378, BE-ROAS 2,11) medan grenarna
+  # skrev fyra olika svar. Skillnaden avgör varje kill-beslut, så den fick
+  # aldrig gissas — nu är den beslutad och står här.
+  # ⚠️ Bäverbutikens 1,57 på samma produkt är räknat på EN ANNAN verksamhet
+  # och får aldrig kopieras hit.
+  tackningsbidrag_sek: 538
+  break_even_roas: 1.49
+  break_even_cpa_sek: 538
+  moms_antagen: false
 
 varianter:
   - namn: "Svart"
@@ -196,6 +211,14 @@ kalla:
   srt_slug:
     - "overvakningskamera"
     - "overvakingskamera"
+  # Norska källkampanjen, läst 2026-09-08 av /ny-annonser. Ligger i ett ANNAT
+  # konto än den svenska. 40 ACTIVE-annonser, 11 151 kr spend, 20 köp.
+  # ⚠️ Priserna där är 899 / 1 169 NOK — de får inte in i en HeimGuard-annons
+  # så länge butikens /nb tar betalt i SEK (799 kr).
+  no_annonskonto: "1050941584152547"   # Magiborsten NO (kontovaluta SEK)
+  no_kampanj_id: "120251998582640233"
+  no_kampanj: "Overvåkingskamera NO | BE-ROAS 1,40 | 2026-08-29"
+  no_annonsprefix: "Overvåkingskamera_NO"
 
 kallor:
   # Produktens Drive-mapp (annonser + recensions-CSV). Axel klistrar in länken —
@@ -213,8 +236,15 @@ meta:
   # (429285600005902 var första planen — ersatt av det gemensamma kontot.)
   ad_account_id: "915422744950975"
   # Sida + pixel kan inte skapas via API — Axel skapar i Business Manager.
-  page_id: ""
-  pixel_id: ""
+  # IFYLLDA 2026-09-08 av /ny-annonser, verifierade mot Meta:
+  #   sida  1262406533629248 "HeimGuard" — ligger i BM MagiBorsten
+  #         (1164852855167090) som owned_page, inte client_page.
+  #   pixel 1125401473242596 "HeimGuard" — finns i act_915422744950975 och
+  #         avfyrade senast 2026-09-09T00:02 (butiken skickar events).
+  # ⚠️ Samma konto bär Bäverbutikens pixel 1554276343018184 och TankGuards
+  # 2196132151319625. Kontrollera alltid på id, aldrig på namn.
+  page_id: "1262406533629248"
+  pixel_id: "1125401473242596"
   creative_prefix: "HeimGuard"
   testbudget_per_dag: 1000
   # Axels prioritering 2026-09-07: trygghetskänslan och äldre-målgruppen är

@@ -1,0 +1,200 @@
+# Butikskonfig för AdventLane — NISCHBUTIK för adventskalendrar (butiks-id
+# `kalender`, Axels beslut i /ny-ops-prompten 2026-09-10). Första produkten är
+# racingbilskalendern; fler kalendrar läggs till som fler produktfiler i samma
+# körning. Brandet bär nischen, aldrig produkten. `creative_prefix` står PER
+# PRODUKT i produktfilerna (factory/FLERPRODUKT.md fynd 1).
+#
+# Underlaget för alla val: factory/output/kalender/BRAND.md.
+# Bolaget är samma AB som driver Matstrumpor.se, HeimGuard, TankGuard, DryTrek
+# och TackleBay. Adress från allabolag.se via Axels länk 2026-09-07.
+
+butik:
+  id: kalender
+  brand: "AdventLane"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@adventlane.se"
+  land: SE
+  huvudmarknad: Sverige
+  # SE + NO är standard i varje OPS (Axel 2026-09-08). SEK tills NOK slås på i
+  # admin (VA:ns klick) — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  valuta: SEK
+  moms_i_pris: true
+  # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika
+  # på norska filtreras bort av sig själva (kundvy.mjs).
+  markorer_sv:
+    - "Köp nu"
+    - "Fri frakt"
+    - "Vanliga frågor"
+    - "Lägg i varukorgen"
+    - "Se kalendrarna"
+    - "luckor"
+    - "lucka"
+    - "bilar"
+    - "ångerrätt"
+    - "Handla tryggt"
+    - "arbetsdagar"
+  # Nischbutik: startsidan visar KOLLEKTIONEN (även med en produkt i dag —
+  # nästa kalender ska bara vara en produktfil till, inte en ombyggd startsida).
+  kollektion:
+    handle: kalendrarna
+    titel: "Kalendrarna"
+    beskrivning: "<p>Adventskalendrar där innehållet finns kvar efter att luckan stängts igen.</p>"
+    alltid: true              # nischbutik: kollektionen byggs redan med första produkten
+
+frakt:
+  fri_globalt: true
+  # Samma Temu-led som källans övriga produkter (TackleBay/DryTrek: 5–10).
+  leveranstid: "5–10 arbetsdagar"
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  # Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08).
+  # ⚠️ Källsidan lovar "30 dagars öppet köp" — det följer INTE med hit.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när VA:n installerat Judge.me. Tokenen är PER BUTIK och läggs i
+  # env, aldrig i filen. Utan token laddar VA:n upp app-CSV:n själv.
+  shop_domain: "ikf0tu-5e.myshopify.com"
+  token_env: "JUDGEME_KALENDER_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — byggd från noll för AdventLane (strukturen återanvänds mellan
+# butiker, brandingen aldrig).
+#
+# Analys bakom valen (hela resonemanget i output/kalender/BRAND.md):
+#   Vem köper:      en vuxen (förälder, mor-/farförälder, 28–65) till ett barn
+#                   3–10 år. Alla tio källrecensioner är skrivna av den vuxne
+#                   om barnet. Nästa kalender kan rikta sig till någon annan —
+#                   brandet får därför inte låsas vid barn eller bilar.
+#   Problemet:      chokladkalendern — öppnas på trettio sekunder, uppäten
+#                   före frukost, och den 25:e finns inget kvar. Tre av tio
+#                   recensioner säger självmant "ett alternativ till godis".
+#   Emotionen:      att vara den som hittade något bättre, och att december
+#                   får en morgonrutin som lämnar något efter sig.
+#   Förväntat brand: en varm, ordnad julbutik — inte tomtar och glitter, inte
+#                   leksakskedja. Nordisk vinter: mörk kväll, varmt ljus.
+#   Känsla:         varm, lekfull, trygg, lugn.
+#
+# Paletten är decembernatt + stearinljus. Midnattsblått bär allvaret (header,
+# sidfot, loggan), en varm papperston bär ytorna, och EN lingonröd är den enda
+# färg som får ropa — festlig utan att vara rea-röd. Ingen andra lekfull färg,
+# inget rött-grönt kitsch. Grangrön bock i trust-raderna.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Adventskalendrar som håller hela december — något att öppna varje morgon och ha kvar när julen är över"
+  tonalitet: "Varm, konkret och lugn. Korta meningar om vad som händer vid köksbordet den 1 december, inte om hur fin produkten är. Inga utropstecken, ingen hype, inga adjektiv utan något att peka på."
+  kansla: "varm, lekfull, trygg, lugn"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F7F2EA"            # varm papperston — stearinljus, aldrig kall grå
+    yta_djup: "#EDE4D6"
+    mork: "#152444"           # decembernatt, midnattsblå — header, sidfot, logga
+    text: "#181F2E"
+    text_pa_mork: "#F7F2EA"
+    linje: "#E1D9CB"
+    linje_stark: "#C4B9A6"
+    accent: "#A8283A"         # lingon — CTA, den enda färgen som ropar
+    accent_text: "#FFFFFF"
+    god: "#2F6B4F"            # grangrön bock
+    varning: "#8A5A00"
+  typografi:
+    rubriker: "poppins_n7"    # Poppins Bold — rund, varm, tål versaler i loggan
+    brodtext: "dm_sans_n4"    # DM Sans — hög läsbarhet i FAQ och villkor
+  form:
+    knapp_radius: 12          # rundare än utrustningsbutikerna — familj, inte verkstad
+    kort_radius: 16
+    input_radius: 10
+    badge_radius: 8
+  stil:
+    ikoner: "Linjeikoner, 1.8 i stroke, rundade ändar. Lucka, stjärna, paket, kalenderblad — aldrig emojis i gränssnittet."
+    bilder: "Riktiga foton av kalendern och innehållet i hemmiljö — köksbord, golv, morgonljus. Julstämning genom ljus och trä, aldrig rött-grönt kitsch eller stockfamiljer som ler mot kameran. AI-illustrationer märks alltid ut."
+    rubrikstil: "En kort scen ur december med eyebrow i versaler. Rubriken säger vad som finns kvar efteråt, inte vad kartongen innehåller."
+    cta: "Solid lingonröd knapp med vit text. Lugna verb — Lägg i varukorgen, Se kalendrarna. Aldrig SISTA CHANSEN, ingen nedräkningstimer."
+    trust: "Diskreta rader med grangrön bock på varm papperston — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt, max 62 tecken per rad, generösa sektionsavstånd. Sidan ska kännas som en lugn decembermorgon."
+    logo: "Rund emblem, variant A (VALD av Axel 2026-09-10): midnattsblå cirkel, en öppnad kalenderlucka med lingonröd flik ovanför ordmärket ADVENTLANE i versaler, ADVENT CALENDARS spärrat under. Fungerar i en färg."
+    favicon: "Samma midnattsblå cirkel med bara den öppnade luckan."
+  # Loggan och faviconen genererade 2026-09-10 med
+  # node factory/logga-generera.mjs … --tagline "ADVENT CALENDARS" --motiv lucka
+  logga: "output/kalender/kalender-logga-a.png"
+  favicon: "output/kalender/kalender-favicon.png"
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json.
+# Copyn (svenska) skrevs 2026-09-10 av en subagent (sonnet) ur briefen i
+# BRAND.md + docs/copy-regler.md; strukturen och bildvalen är huvudsessionens.
+# Norskan skrivs som egen text i output/kalender/oversattning-nb.json — aldrig här.
+#
+# BILDER: bara riktiga källbilder. Hero = kartongen med de 24 bilarna
+# (leverantörsfoto). Trygghetsbilden är julmiljöbilden, som är en
+# AI-illustration — den märks i sektionen, aldrig som ett foto.
+# ---------------------------------------------------------------------------
+startsida:
+  usp:
+    - "truck:Fri frakt – Sverige & Norge"
+    - "shield:14 dagars ångerrätt"
+    - "star:Betala med Klarna"
+  hero:
+    rubrik: "Öppnas på morgonen. Kvar på kvällen."
+    text: "En adventskalender är 24 morgnar, inte 24 sekunder. Öppna en lucka i taget och se vad som blir kvar till jul."
+    knapp: "Se kalendrarna"
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image10.png"
+  marquee:
+    - "Fri frakt i Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Klarna, kort och Apple Pay"
+    - "Skickas från Sverige"
+  sortiment_rubrik: "Adventskalendrar just nu"
+  berattelse:
+    rubrik: "Varför AdventLane finns"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
+    text:
+      - "Vi på AdventLane letade efter en adventskalender som räckte längre än en förmiddag. De flesta tog slut innan skolskjutsen kom."
+      - "Nu väljer vi bara kalendrar där varje lucka gömmer något som finns kvar dagen efter, inte bara något som smakar gott i tre sekunder."
+  statement:
+    rubrik: "Kvar den 24 december, inte bara den första december."
+    knapp: "Se kalendrarna"
+  trygghet:
+    rubrik: "Frakt och ångerrätt"
+    text:
+      - "Fri frakt till Sverige och Norge på alla beställningar. Inga dolda avgifter i kassan."
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Betala med Klarna, kort, Apple Pay eller Google Pay."
+    # AI-illustration (julmiljön) — märkt i alt-texten på produktbilden.
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-jul.jpg"
+  faq_rubrik: "Vanliga frågor"
+  faq:
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "Räkna med 5 till 10 arbetsdagar. Beställ i god tid före första december om kalendern ska ligga under granen i tid."
+    - fraga: "Vad gäller för ångerrätt?"
+      svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@adventlane.se så hjälper vi dig."
+    - fraga: "Skickar ni till Norge?"
+      svar: "Ja, fri frakt till både Sverige och Norge."
+    - fraga: "Vilka betalningssätt finns?"
+      svar: "Klarna, kort, Apple Pay och Google Pay."
+  garanti:
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Du har 14 dagars ångerrätt enligt svensk lag, från dagen du tar emot paketet. Ändrar du dig mejlar du hello@adventlane.se, så löser vi resten."

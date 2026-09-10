@@ -171,14 +171,17 @@ första raden nedan — inget mer. En notis på fem meningar är ett fel, inte e
 rapport. Samma sak i chatten: aldrig ett inledande stycke före "Läget."
 
 **FÖRSTA RADEN är hela rapporten för mobilen.** Max 12 ord, börjar med ✅ eller
-⚠️, säger vad som hände och om något väntar på Axel. Exempel:
+⚠️, säger vad som hände och om något väntar på Axel. Chattrapporten till Axel
+är på svenska; **Discord-versionen är på engelska** (Axels order 2026-09-05,
+teamet läser kanalen — postaren stoppar eller översätter svensk text).
+Exempel, chatt / Discord:
 
-- `✅ 2 launchade, 7 rullar, inget väntar på dig`
-- `✅ Inget nytt i kön, allt rullar`
-- `⚠️ 1 sak väntar: quote för Bordtennisnätet`
-- `⚠️ Badshorts CS_2 visar 299 kr, butiken 399 kr`
+- `✅ 2 launchade, 7 rullar, inget väntar på dig` / `✅ 2 launched, 7 running, nothing waiting on you`
+- `✅ Inget nytt i kön, allt rullar` / `✅ Nothing new in the queue, all running`
+- `⚠️ 1 sak väntar: quote för Bordtennisnätet` / `⚠️ 1 thing waiting: quote for Bordtennisnätet`
+- `⚠️ Badshorts CS_2 visar 299 kr, butiken 399 kr` / `⚠️ Badshorts CS_2 shows 299 SEK, store 399 SEK`
 
-Sedan max 5 korta rader på vanlig svenska: vad som launchades/aktiverades/
+Sedan max 5 korta rader på vanligt språk (svenska i chatten, engelska i Discord): vad som launchades/aktiverades/
 kompletterades (produktnamn + budget, INGA id:n), vad som hoppades över och
 varför, i en mening var. Inga tabeller, inga rubriker, inga tekniska termer.
 **En annons med mycket lägre pris än butiken (launch.md fas 1) står ALLTID
@@ -190,7 +193,7 @@ Kampanj-id:n och tekniska detaljer läggs allra sist under en enda rad
 "Detaljer:" — den delen är för felsökning, inte för Axel.
 
 Inget nytt och inget att åtgärda = HELA rapporten är en rad:
-`✅ Inget nytt i kön, allt rullar`.
+`✅ Inget nytt i kön, allt rullar` (Discord: `✅ Nothing new in the queue, all running`).
 
 **Briefen skickas ALLTID till Discord-kanalen `#new-products-coing-out`
 efter varje körning** (Axels beslut 2026-08-30). Discord-versionen är den

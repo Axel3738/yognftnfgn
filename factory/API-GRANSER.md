@@ -1,0 +1,96 @@
+# Vad som går att automatisera — och vad ingen har provat
+
+Axel 2026-09-09: *"Min förra session hade massa limiting beliefs och sade att
+allt detta aldrig skulle gå att automatisera."*
+
+Han har rätt att vara misstänksam. Repot bär minst ett fall där ett
+"API-spärrat" påstående var falskt: temapublicering stod som omöjlig i flera
+filer tills någon faktiskt provade 2026-09-09 och den fungerade.
+
+**Regeln den här filen finns för:** skriv aldrig "API:t kan inte" utan att ha
+provat. Skriv "OBEKRÄFTAT — ingen har provat" i stället. Det är ärligt, och
+det är en uppgift någon kan ta.
+
+Varje rad är märkt:
+
+| Märkning | Betyder |
+|---|---|
+| **MÄTT** | Någon körde anropet och fick svaret. Datum och felkod står. |
+| **OBEKRÄFTAT** | Påståendet är ärvt. Ingen i repots historik har provat. |
+| **MÄNSKLIGT** | Kräver pengar, identitet eller ett samtycke. Ska inte automatiseras. |
+
+---
+
+## Shopify
+
+| Steg | Läge | Vad som faktiskt vet |
+|---|---|---|
+| Publicera tema | **MÄTT: GÅR — men koden gör det inte** | `themePublish` gav `role: MAIN`, noll userErrors (DryTrek 2026-09-09). Stod som "API-spärrat" i tre filer innan någon provade. ⚠️ **Anropet finns inte i fabriken:** ingen `publiceraTema` i `shopify.mjs`, och `ops.mjs:1450` märker fortfarande steget som ett mänskligt klick. Det är alltså inte en API-gräns längre utan ett kodhål — och det största, eftersom det är det enda MÄTT-GÅR-steget som ligger kvar på checklistan (avsnitt 5). |
+| Byta BUTIKSNAMN | **MÄTT: GÅR INTE** | `shopUpdate` finns inte i Admin API, REST svarar **406** (avläst i `PROCESS.md` "Kan INTE sättas via API"). Därför står "My Store 4/5" kvar tills en människa byter det. Klicket ligger i checklistans avsnitt 5, direkt efter bygget, för att butiksnamnet är det som order­mejlen, kassan, recensionsutskicken och Meta-sidan döps efter. **Vägen runt: sätt namnet vid skapandet** (checklistans avsnitt 1) när brandet redan är bestämt — då finns klicket aldrig. |
+| Ladda upp VIDEO (mp4-demo) till Files | **MÄTT: GÅR — när planen är vald** (trial: GÅR INTE) | `fileCreate` med `contentType: VIDEO` svarar `The file is not supported on trial accounts. Select a plan to upload this file.` (AdventLane/kalender 2026-09-10). Två fynd på vägen: staged `VIDEO`-resourceUrl saknar ändelse, så `filename` avvisas i `fileCreate` ("extension must match original source") — sätts med `fileUpdate` efteråt. Koden finns (`filer.mjs → laddaUppVideo`, CLI tar `.mp4`). **OBEKRÄFTAT efter plan** — kör `node factory/filer.mjs <mp4>` när ägaren valt plan (checklistans avsnitt 13) och byt `media.gif_problem` till den transkodade URL:en (`--igen metafalt`). Tills dess bär källans GIF demot. **Mätt igen 2026-09-10 på TackleBay (iahe0c-b1, plan vald, tacklebay.se kopplad): `node factory/filer.mjs <mp4>` gick rakt igenom, Shopify transkodade till 720p och URL:en skrevs i `media.gif_problem`.** |
+| Ladda upp tema | **MÄTT: GÅR** | `stagedUploadsCreate` med `resource: FILE` (INTE `THEME` — den finns inte i 2025-07) + `themeCreate`. |
+| Uppdatera kollektion MED produkter | **MÄTT: GÅR INTE** | `collectionUpdate` med `products` i input svarar `products cannot be specified during update` (BAD_REQUEST, TackleBay 2026-09-10). `skrivKollektion` uppdaterar titel/beskrivning och lägger till saknade produkter med `collectionAddProducts`. |
+| Läsa sida på handle | **MÄTT: GÅR INTE** | `pageByHandle` togs bort i 2025-07. Använd `pages(query: "handle:…")`. |
+| Uppdatera villkorad fraktmetod | **MÄTT: GÅR INTE** | `deliveryProfileUpdate` avvisar dem. Riv och bygg ny i stället. |
+| Skapa FRAKTZONER (Sverige, EU, Internationell) | **MÄTT: GÅR** | `deliveryProfileUpdate` med `locationGroupsToUpdate[].zonesToCreate` (länder per `code`, `restOfWorld: true` för resten) och `zonesToDelete` på PROFILNIVÅ (inte i gruppen — "Field is not defined on DeliveryProfileLocationGroupInput"). TackleBay 2026-09-10: trialens Domestic=PH + International revs, tre zoner med fri frakt i SEK lästes tillbaka. Stod som "för hand" i `ops.mjs` — ingen hade provat. Ett land får bara ligga i EN zon, därför rivs främmande zoner först. |
+| Byta butikens VALUTA | **OBEKRÄFTAT** | Ingen har provat ett anrop. Men frågan är fel ställd: valutan sätts av **butiksadressens land vid skapandet**. Skapas butiken med bolagets svenska adress blir den SEK från början, och problemet finns inte. Det är därför checklistans avsnitt 1 numera kräver adressen. |
+| Byta PRIMÄRSPRÅK | **OBEKRÄFTAT** | `shopLocaleEnable`/`shopLocaleUpdate` hanterar extra språk — om primärspråket går att byta har ingen provat. Samma sak här: rätt adress vid skapandet ger rätt språk. ⚠️ `PROCESS.md` listar primärspråk, valuta, primärmarknad och shop-mejl som "kan INTE sättas via API", men citerar bara ett anrop och en felkod för **butiksnamnet** (REST 406). Resten av den raden är alltså ärvd, inte mätt — därför står de kvar som OBEKRÄFTAT här. |
+| Byta PRIMÄRMARKNAD | **OBEKRÄFTAT** | `marketCreate`/`marketUpdate` finns och används redan för Norge. Om primärmarknaden går att flytta har ingen provat. |
+| Skapa butiken | **OBEKRÄFTAT** | Shopifys Partner API kan skapa development stores. Ingen i repot har provat. Skulle ta bort checklistans avsnitt 1 OCH garantera rätt land. **Den här är värd mest av alla — den fixar tre problem på en gång.** |
+| Skapa appen + client id/secret | **OBEKRÄFTAT** | Partner API har app-endpoints. Ingen har provat. Skulle ta bort avsnitt 3 (fyra klick). |
+| Läsa vilka scopes appen har | **MÄTT: GÅR** | `currentAppInstallation { accessScopes { handle } }` kräver inga scopes alls och svarade `[]` på TackleBay 2026-09-10 — appen var installerad men fick göra ingenting. Steg 0 kör kontrollen mot `KRAVDA_SCOPES` i `token.mjs`. ⚠️ Frågar man samtidigt efter `themes`/`products` utan scope nollar Shopify HELA `data` (fälten är non-null) — läs det scope-fria i ett eget anrop. |
+| Ge appen scopes | **MÄNSKLIGT** | Sätts under Configuration → Access scopes på dev.shopify.com + Release. Client-credentials-tokenen bär scopen från när den mintades: efter klicket mintas en ny (steg 0 gör det själv när en sparad token saknar scopes). OBEKRÄFTAT om Partner API kan sätta dem — ingen har provat. |
+| Koppla domän till butiken | **OBEKRÄFTAT** | Ingen har provat. |
+| Aktivera Shopify Payments | **MÄNSKLIGT** | Kräver bolagets bankuppgifter och identitetskontroll. Ska inte automatiseras. Ligger dessutom EFTER ägarbytet sedan Axels regel 2026-09-10 — det är ägarens eget konto som ska bära den. |
+| Installera Judge.me | **MÄNSKLIGT (delvis)** | Appinstallation kräver ett OAuth-samtycke. Efter installationen är API:t automatiserbart — det görs redan. |
+| Ägarbyte | **MÄNSKLIGT** | Överlåter ett konto med pengar i. Ska klickas av en människa. Checklistans avsnitt 13 — allt före det görs på free trial, allt efter kräver ägarens plan. |
+| Ta bort butikslösenordet (butiken live) | **MÄNSKLIGT** | Går inte förrän en plan är vald (`kundvy-kor.mjs`), och planen väljs av ägaren. Checklistans avsnitt 15, sista steget. |
+
+## Meta
+
+| Steg | Läge | Vad som faktiskt vet |
+|---|---|---|
+| Skapa pixel | **MÄTT: GÅR** | `act_<id>/adspixels`. ⚠️ Ett annonskonto tar bara EN pixel — fel #6200 på butik nr 3. Reserv: skapa på företaget och dela till kontot. |
+| Tilldela CAPI-användare | **MÄTT: GÅR** | `assigned_users` på pixeln. |
+| Skapa CAPI-token | **MÄTT: GÅR INTE** | Kräver `appsecret_proof`. Görs i Events Manager. |
+| Skapa en SIDA | **OBEKRÄFTAT** | Står som omöjligt i PROCESS.md utan att någon citerat ett anrop eller en felkod. Metas API har sidendpoints med behörighetskrav. Ingen har provat. |
+
+## Discord
+
+| Steg | Läge | Vad som faktiskt vet |
+|---|---|---|
+| Skapa server | **MÄTT: GÅR INTE** | `POST /guilds` → felkod 20001 (2026-09-08). Boten får inte. |
+| Skapa kanaler | **MÄTT: GÅR** | Med `--guild <id>` efter att en människa godkänt boten. |
+
+## Loopia
+
+| Steg | Läge | Vad som faktiskt vet |
+|---|---|---|
+| Köpa domän | **OBEKRÄFTAT** | Loopia har ett XML-RPC-API. Ingen har provat. |
+| Sätta e-postvidarebefordran | **OBEKRÄFTAT** | Samma API. Ingen har provat. |
+
+---
+
+## Vad som är värt att prova härnäst, i ordning
+
+0. **Koppla in `themePublish` i `--launch`.** Ingen forskning kvar — anropet är
+   redan mätt. Det är ren kod, och det tar bort det första klicket efter bygget
+   (checklistans avsnitt 5). Måste läsas tillbaka (`role: MAIN`) i samma
+   körning, annars är det ett tyst grönt.
+1. **Skapa butiken via Partner API.** Tar bort avsnitt 1 och 3 (sex klick),
+   gör valuta-, språk- och marknadsfrågan omöjlig att göra fel — och tar bort
+   butiksnamnsklicket, som är MÄTT omöjligt att fixa i efterhand. Störst effekt
+   per timme.
+2. **Loopia-API:t.** Tar bort halva avsnitt 6 (fyra klick).
+3. **Meta-sidan.** Tar bort två klick och en väntan mitt i flödet.
+4. **Kundkonton + självbetjäningsreturer + returregler** (avsnitt 8, fyra
+   switchar). Ingen har provat och ingen har ens letat efter en mutation.
+
+Kvar som människans, oavsett hur mycket som automatiseras: pengarna (plan,
+kort, Shopify Payments, Klarna), identiteten (KYC), samtycket (appinstallation,
+Discord-boten) och ägarbytet. Det är ungefär tio klick av femtio, och de ska
+vara en människas.
+
+**Innan du lägger till en rad här: prova.** En rad med MÄTT är värd något. En
+rad med OBEKRÄFTAT är en uppgift. Ett påstående utan märkning är en limiting
+belief, och det var precis det som gjorde att ingen provade på ett halvår.

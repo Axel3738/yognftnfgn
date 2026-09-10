@@ -1,0 +1,68 @@
+{
+  "butik": "tacklebay",
+  "produkt": "adventskalender-fiskedrag",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/9414189285612",
+      "handle": "adventskalender-fiskedrag",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 11
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "Default Title"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": true,
+      "produkt_id": "9414189252844",
+      "variant_id": "48336544268524",
+      "handle": "fiskespohallare-4-pack",
+      "ny": false,
+      "ateranvand": true,
+      "skrivet": true
+    },
+    "paket": {
+      "klar": true,
+      "nivaer": [
+        "adventskalender-fiskedrag-a-1",
+        "adventskalender-fiskedrag-a-2",
+        "adventskalender-fiskedrag-a-3",
+        "adventskalender-fiskedrag-b-1",
+        "adventskalender-fiskedrag-b-2",
+        "adventskalender-fiskedrag-b-3"
+      ],
+      "koder": [
+        "TACKLEBAYKAL2A",
+        "TACKLEBAYKAL3A",
+        "TACKLEBAYKAL2B",
+        "TACKLEBAYKAL3B"
+      ],
+      "frammande": [],
+      "test": "paket"
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
+    },
+    "launch": {
+      "klar": true,
+      "status": "ACTIVE",
+      "publicerad": true
+    }
+  },
+  "uppdaterad": "2026-09-10T15:24:11.669Z",
+  "qa": {
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-10T15:24:11.669Z"
+  }
+}

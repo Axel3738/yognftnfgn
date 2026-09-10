@@ -11,6 +11,11 @@
 produkt:
   namn: ""                    # KRITISKT — produktnamnet som kunden ser
   id: ""                      # KRITISKT — kort-id: små bokstäver, siffror, bindestreck (ex: nackmagneten)
+  # Butikens produkt-handle (/products/<handle>) när det SKILJER sig från id.
+  # Tomt = id. Behövs bara när butiken redan byggts under ett annat namn
+  # (TankGuard: id tankguard, handle tankoverdraget). Alla uppslag mot Shopify
+  # går på handlet; id:t är filens och statens namn.
+  handle: ""
 
 brand:
   namn: ""                    # tomt = butikens brand används
@@ -22,6 +27,16 @@ ekonomi:
   pris: 0                     # KRITISKT — försäljningspris (måste vara högre än inköp)
   jamforpris: 0               # jämförpris/överstruket pris (måste vara högre än pris)
   # Valutan kommer ur butikskonfigen. Marginalen räknas rakt på priset.
+  #
+  # MOMSEN: false = räkna UTAN moms. Axels besked 2026-09-09 gäller varje
+  # OPS-butik, samma regel som Bäverbutiken och Grillkliniken — marginalen
+  # räknas rakt på priset, dra aldrig av 25 % en gång till. Fältet styr
+  # break-even och därmed varje kill-beslut, så det får aldrig gissas: utan
+  # det räknar skalningsronden två linjer och dömer ingen annons däremellan.
+  # ⚠️ Läs ALDRIG butikens `moms_i_pris` här — det styr prisVISNINGEN i
+  # butiken, är true i varje OPS-butiksfil, och att låta det avgöra
+  # break-even vore precis det tysta valet regeln finns för.
+  moms_antagen: false
 
 varianter:                    # tom lista = one-product utan varianter
   # - namn: "Svart"
@@ -29,16 +44,26 @@ varianter:                    # tom lista = one-product utan varianter
 
 media:
   bilder:                     # KRITISKT — minst en bild eller video totalt (produktgalleriet)
-    - ""                      # URL eller sökväg
+    - ""                      # URL (alt = produktnamnet) …
+    # - url: ""               # … eller url + alt. Alt som börjar med [SV]/[NO]
+    #   alt: "[NO] …"         #   visas bara för det språket (temats gallerifilter).
   videor:
     - ""
   # Beskrivningsblockens media (URL:er). Aldrig placeholderbilder eller stock.
-  gif_problem: ""             # block 2 — gif direkt efter problemet. KRITISK: launch-QA stoppar utan.
-  media_losning: ""           # block 4 — gif eller bild som demonstrerar lösningen. KRITISK.
-  bild_lifestyle: ""          # block 6 — stark produkt/lifestylebild. Valfri: sektionen döljs utan.
+  #
+  # ⚠️ DEMOT SKA VARA EN MP4 SOM LOOPAR (Axels beslut 2026-09-09) — inte en
+  # GIF och inte en WebP. Samma sekvens som GIF är ofta 10–20× större och
+  # begränsad till 256 färger; MP4:an är mindre, skarpare och avkodas av
+  # mobilens hårdvara. Temat väljer på FILÄNDELSEN: .mp4/.webm/.mov blir en
+  # ljudlös video som startar själv och rullar om, allt annat blir en bild.
+  # Fältnamnen står kvar som de är — de ligger live i två butiker, och ett
+  # nyckelbyte hade tömt deras beskrivningar utan felmeddelande.
+  gif_problem: ""             # block 2 — demot direkt efter problemet (helst .mp4). KRITISK: launch-QA stoppar utan.
+  media_losning: ""           # block 4 — demot som visar lösningen (helst .mp4). KRITISK.
+  bild_lifestyle: ""          # block 6 — stark produkt/lifestylebild eller .mp4. Valfri: sektionen döljs utan.
 
 # Produktsidans beskrivning följer ALLTID samma sju block i samma ordning:
-# 1 problem/emotion → 2 gif → 3 lösningen → 4 gif/bild → 5 funktioner →
+# 1 problem/emotion → 2 demo → 3 lösningen → 4 demo → 5 funktioner →
 # 6 bild → 7 garanti. Texterna för block 1 och 3 skrivs här.
 beskrivning:
   problem_rubrik: ""          # block 1 — kort stark rubrik som träffar känslan
@@ -49,6 +74,7 @@ beskrivning:
 vinkel:
   huvudvinkel: ""             # KRITISKT — INTERNT. Vinkeln + dess källa (playbook/winning line/swipe). Syns aldrig för kund.
   underrubrik: ""             # Det kunden läser under rubriken. Lämnas tom → källparentesen strippas ur huvudvinkeln.
+  usp: ""                     # Kort produkt-USP (~25 tecken) — fjärde punkten i USP-raden + annonsraden.
 
 malgrupp:
   beskrivning: ""             # KRITISKT — vem köper, med vilket språk i huvudet
@@ -72,21 +98,60 @@ offer:
   #      kassapriset stämmer på öret (ärlighetsspärren).
   #  (b) betald upsell i varukorgslådan (tema.mjs → byggKorgUpsell).
   # Bevisat på HeimGuard: varningsskyltar 149 kr till övervakningskameran.
+  # Maskinläsbar form av bundle-raden — factory/paket.mjs bygger ms_paketniva-
+  # metaobjekten + rabattkoderna härifrån (bevisat på TankGuard 2026-09-08).
+  # "pris" = paketets kassapris i kronor, "kod" = rabattkoden som ger exakt det
+  # priset (belopp = antal × pris + gratis × bonuspris − paketpris, min antal
+  # varor = antal + gratis). Nivå utan pris/kod = ordinarie. Förvald = mitten.
+  paket:
+    test: "paket"             # A/B-test-id (tomt = inget test, bara variant "")
+    nivaer:
+      # - variant: a          # a | b | tom
+      #   antal: 2
+      #   rubrik: "2 st"
+      #   underrubrik: ""
+      #   pris: 0
+      #   kod: "PAKET2"
+      #   bricka: "Spara 15 %"
+      #   gratis_antal: 1
+      #   gratis_text: ""
+      #   forvald: true
   bonus_produkt:
     titel: ""                 # t.ex. "Varningsskyltar Kameraövervakning – 5-pack"
     handle: ""                # produktens handle i butiken
+    produkt_id: ""            # skrivs av factory/bonus.mjs
+    variant_id: ""            # skrivs av factory/bonus.mjs
     pris: 0                   # priset som betald upsell i korgen
     i_paket: ""               # vilka paketnivåer som får den gratis, i ord
+    # Antalsregeln (Axel 2026-09-08): gratis_antal = paketantalet (2-pack ⇒ 2).
+    # Nivå 1 får en betald kryssruta för bonusen till FULLPRIS — aldrig
+    # rabatterad, den håller "värde X kr" ärligt (tema.mjs → byggTillagg).
+    tillagg_kryssruta: true
+    kortnamn: ""              # namnet i kryssrutan: "Lägg till <kortnamn>"
+    sku: ""
+    bilder:                   # riktiga bilder (URL:er), aldrig stock
+      - ""
+    problem_rubrik: ""        # bonusens egen beskrivning (samma sju block)
+    problem_text: ""
+    losning_rubrik: ""
+    losning_text: ""
+    features:
+      - ""
 
 reviews:                      # riktiga recensioner (namn, betyg 1–5, text).
   # Visas ALDRIG av en egen tema-sektion — de importeras till Judge.me
-  # (fabriken skriver output/<id>/judgeme-import.csv, importera med
-  # tools/judgeme-import.mjs). Widgeten renderar dem på sidan.
+  # (fabriken skriver output/<id>/judgeme-app-import.csv, VA:n laddar upp
+  # den i appen: Settings → Import reviews → Import from apps → Judge.me
+  # format). Aldrig via API:t — det tappar datumen (mätt 2026-09-08).
   # - namn: ""
   #   betyg: 5
   #   text: ""
   #   titel: ""               # valfri
-  #   datum: ""               # valfri, YYYY-MM-DD — hitta aldrig på ett
+  #   datum: ""               # YYYY-MM-DD — källans originaldatum
+  #                           # (reviews_for_widget → reviews[].created_at).
+  #                           # Saknas det: VARNING i valideringen, inte stopp
+  #                           # (KEDJAN.md: datumkravet är opt-in, --krav-datum
+  #                           # i tools/judgeme-import.mjs). Hitta ALDRIG på ett.
 
 faq:
   # - fraga: ""
@@ -149,3 +214,14 @@ meta:
   testbudget_per_dag: 1000
   vinklar:                    # vinklar för första testbatchen
     - ""
+
+# ---------------------------------------------------------------------------
+# QA-UNDANTAG — bara ägarens beslut, aldrig fabrikens. Kontroller som listas
+# här stoppar inte --launch; de står kvar i rapporten som manuella med
+# motiveringen. Utan motivering gäller undantaget inte.
+# Kontrollnamn: beskrivning (gif_problem/media_losning), reviews, tracking …
+# (TackleBay 2026-09-10: "kalendern har inga annonser än — skippa den.")
+# ---------------------------------------------------------------------------
+# qa:
+#   undantag: []
+#   undantag_motivering: ""

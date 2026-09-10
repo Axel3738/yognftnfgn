@@ -33,6 +33,11 @@ Skriv i Axels läsformat: en mening per rad, max 10 ord, inga filnamn, ingen tek
 - **Modellpolicyn:** all norsk text (bildrader, copy) skrivs av en sonnet-subagent med
   `docs/copy-regler.md` + lokaliseringschecklistan; huvudsessionen verifierar claims.
 - **Rendera aldrig video före proofread. Skanna alltid källvideon efter inbränd text.**
+- **Kör röstkollen på varje renderad video innan den laddas upp** (Axels beslut
+  2026-09-08): `python3 pipeline/rostkoll.py --mapp <rendermapp> --kallmapp <källmapp>
+  --srtmapp <srt-fixed>`. Gratis. En video med ❌ laddas INTE upp — den rapporteras
+  i Discord-briefen som hoppad, med skälet. Tyst spår, längddrift, avhugget slut
+  och tappat tal är alla ❌.
 - **Allt föds PAUSED; aktivering rör bara annonsen + adset körningen själv skapade.**
   NO: ACTIVE (Axels beslut 2026-08-29) — bara när kampanjen är ACTIVE.
 - **Aldrig `git add -A`** i batchmappen (`se/`, `no/`, `qa/`, mp4 är gitignorerade).
@@ -213,6 +218,7 @@ DSA-fält och kanaler ur blocket.
 - [ ] Texter av sonnet-subagent, `andringar` granskade
 - [ ] Bild: formmätning, norsk text i samma ruta, QA-bild läst per bild
 - [ ] Video: kvotkalkyl, proofread före render, captions bara över inbränd text, QA + slutkort
+- [ ] Röstkollen körd på varje renderad video, resultatet redovisat; inga ❌ uppladdade
 - [ ] Upp i rätt kampanj/adset/konto med rätt namn, OPT_OUT + inline_comment, status enligt marknad, tillbakaläst
 - [ ] Notion: kommentar + `Translated url` + **`Approved`** + **norska filen inlagd överst på sidan**; hoppade rader kommenterade
 - [ ] Discord-brief i Axels läsformat, med ping; problem i problemkanalen

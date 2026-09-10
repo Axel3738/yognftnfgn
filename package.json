@@ -10,9 +10,10 @@
     "dash": "node dashboard/build.mjs",
     "status": "node dashboard/cli.mjs status",
     "review": "node dashboard/cli.mjs review-queue",
-    "test": "node --test dashboard/test/*.test.mjs bildannonser/test/*.test.mjs commission/test/*.test.mjs factory/test/*.test.mjs",
+    "test": "node --test dashboard/test/*.test.mjs bildannonser/test/*.test.mjs commission/test/*.test.mjs factory/test/*.test.mjs tools/test/*.test.mjs",
     "bilder": "node bildannonser/run.mjs",
-    "commission": "node commission/run.mjs"
+    "commission": "node commission/run.mjs",
+    "sjalvtest": "node factory/sjalvtest.mjs"
   },
   "engines": {
     "node": ">=20"

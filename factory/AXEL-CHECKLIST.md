@@ -1,39 +1,44 @@
-# Axels checklista — innan VA:n får sin lista
+# The owner's checklist — one-time setup, then one job per store
 
-Engångsgrejer. Gjorda en gång = aldrig igen.
-Sen är ditt enda jobb per butik: välj produkt — och ta ägarskapet i överlämningen.
+One-time things. Done once = never again.
+After that the only job per store is: pick the product — and take ownership
+at the hand-over. Instruction books are in English (Axel's rule 2026-09-10).
 
-## 1. Bjud in henne
-- [ ] Ge henne inloggen till Claude-kontot (Axels beslut 2026-09-07 — hon
-      delar kontot i stället för egen plats; invändningen att kontot når
-      Meta och allt annat är framförd och överkörd)
-- [ ] Loopia → spara företagskortet → ge henne inloggningen
+## 1. Invite the employee
+- [ ] Give them the login to the Claude account (Axel's decision 2026-09-07 —
+      a shared account instead of a seat of their own; the objection that the
+      account reaches Meta and everything else was raised and overruled)
+- [ ] Loopia → save the company card → give them the login
 
-## 1b. Molnsessionens nycklar (en gång)
-- [x] **KIE_API_KEY**, **DISCORD_BOT_TOKEN** och **META_ACCESS_TOKEN**
-      ligger i molnsessionens miljövariabler (Axels besked 2026-09-08)
-      (Shopify-nycklarna är VA:ns — hon lägger in dem per butik,
-      hennes checklistas steg 2)
+## 1b. The cloud session's keys (once)
+- [x] **KIE_API_KEY**, **DISCORD_BOT_TOKEN** and **META_ACCESS_TOKEN** are in
+      the cloud session's environment variables (Axel's word 2026-09-08)
+      (the Shopify keys are the clicker's — added per store, checklist
+      section 3)
 
-## 2. Meta klart
-- [ ] Business Manager → **Betalningar** → lägg in företagskortet
-- [ ] Bjud in henne med **Fullständig åtkomst** (Allt PÅ) — Axels beslut
-      2026-09-07: hon får se betalningar; då skapar hon sidor själv i BM
-      och Axels godkännande-klick per butik försvinner
-- [x] Annonskontot är valt: **MagiBorsten DK** 915422744950975 — alla
-      OPS-butiker, svenska och norska, kör på det (ditt beslut 2026-09-07)
-- [ ] META_ACCESS_TOKEN hämtas av VA:N, inte Axel (Axels besked
-      2026-09-07: "jag vill inte trycka") — hon har Fullständig åtkomst
-      i BM och gör Systemanvändare → Generera token → ads_management +
-      business_management → klistrar in i Claude. Claude guidar henne.
+## 2. Meta ready
+- [ ] Business Manager → **Payments** → add the company card
+- [ ] Invite the employee with **Full access** (everything ON) — Axel's
+      decision 2026-09-07: they may see payments; then they create pages in
+      BM themselves and Axel's approval click per store disappears
+- [x] The ad account is chosen: **MagiBorsten DK** 915422744950975 — every
+      OPS store, Swedish and Norwegian, runs on it (your decision 2026-09-07)
+- [ ] META_ACCESS_TOKEN is fetched by the EMPLOYEE, not Axel (Axel's word
+      2026-09-07: "I don't want to press buttons") — with Full access in BM:
+      System user → Generate token → ads_management + business_management →
+      paste into Claude. Claude guides them.
 
-## 3. Per ny butik (ditt enda återkommande jobb)
-- [ ] Säg vilken produkt: klistra produktlänken i Claude med **/ny-ops**
-      (VA:n skapar butiken själv på free trial från jobb-Gmailen —
-      personal-inbjudan går inte på trial och behövs inte)
-- [ ] Ge henne bolags- och bankuppgifterna för Shopify Payments
-- [ ] Vid överlämningen: logga in med jobb-Gmailen, välj plan, lägg in
-      kortet och ta över ägarskapet (VA-checklistans steg 9)
+## 3. Per new store (your only recurring job)
+- [ ] Say which product: paste the product link into Claude with **/ny-ops**
+      (the clicker creates the store on a free trial from the work Gmail —
+      staff invites do not work on a trial and are not needed)
+- [ ] Give the company and bank details for Shopify Payments
+- [ ] At the hand-over: log in with the work Gmail, pick the plan, add the
+      card and take ownership (checklist section 13)
+- [ ] After the hand-over: Shopify Payments + Klarna, remove the store
+      password, test the checkout on a phone (sections 14–15)
+- [ ] When the store is live and the ads are built: write **"Launch: <store
+      name>"** in the ads session. That is what switches the ads on.
 
-Sen tar hon och fabriken allt annat.
-Hennes lista: `factory/VA-CHECKLIST.md`.
+The clicker and the factory do everything else.
+Their list: `factory/VA-CHECKLIST.md`. The map: `factory/SA-FUNKAR-DET.md`.

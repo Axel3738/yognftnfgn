@@ -1,0 +1,67 @@
+// Tester för logga.mjs (settings-logiken) och logga-generera.mjs (SVG-källorna,
+// utan sharp). Ingen nätverkstrafik. Kör: node --test factory/test/*.test.mjs
+
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { lasSettings, sattLoggaISettings, serialiseraSettings, STANDARDBREDD } from '../logga.mjs';
+import { byggLoggaSvg, typsnittUrHandle, orddelar, VARIANTER } from '../logga-generera.mjs';
+import { rabutik } from './hjalp.mjs';
+
+const LOGO = 'shopify://shop_images/testbutiken-logga.png';
+const FAV = 'shopify://shop_images/testbutiken-favicon.png';
+
+test('lasSettings skalar av Shopifys /* kommentar */ överst', () => {
+  const s = lasSettings('/*\n * Kommentar\n */\n{"current":{"logo":"x"},"presets":{}}');
+  assert.equal(s.current.logo, 'x');
+  assert.throws(() => lasSettings(null), /settings_data\.json/);
+});
+
+test('sattLoggaISettings sätter logo, favicon och bredd — resten orört', () => {
+  const in_ = { current: { logo: 'shopify://shop_images/bas-temats.png', brand_description: 'kvar', logo_width: 90 }, presets: { a: 1 } };
+  const ut = sattLoggaISettings(in_, { logo: LOGO, favicon: FAV, bredd: 160 });
+  assert.equal(ut.current.logo, LOGO);
+  assert.equal(ut.current.favicon, FAV);
+  assert.equal(ut.current.logo_width, 160);
+  assert.equal(ut.current.brand_description, 'kvar');
+  assert.deepEqual(ut.presets, { a: 1 });
+  // indata muteras inte
+  assert.equal(in_.current.logo, 'shopify://shop_images/bas-temats.png');
+});
+
+test('bredd: angiven vinner, annars temats, annars standard', () => {
+  assert.equal(sattLoggaISettings({ current: { logo_width: 120 } }, { logo: LOGO }).current.logo_width, 120);
+  assert.equal(sattLoggaISettings({ current: {} }, { logo: LOGO }).current.logo_width, STANDARDBREDD);
+  assert.equal(sattLoggaISettings({}, { logo: LOGO, bredd: '200' }).current.logo_width, 200);
+  assert.equal(sattLoggaISettings({ current: { logo_width: 0 } }, { logo: LOGO }).current.logo_width, STANDARDBREDD);
+});
+
+test('utan favicon lämnas fältet orört; utan logga kastas', () => {
+  const ut = sattLoggaISettings({ current: { favicon: 'gammal' } }, { logo: LOGO });
+  assert.equal(ut.current.favicon, 'gammal');
+  assert.throws(() => sattLoggaISettings({ current: {} }, { logo: null }), /Ingen logga/);
+});
+
+test('serialiseraSettings ger giltig JSON med radslut', () => {
+  const text = serialiseraSettings({ current: { logo: LOGO } });
+  assert.ok(text.endsWith('\n'));
+  assert.equal(JSON.parse(text).current.logo, LOGO);
+});
+
+test('byggLoggaSvg ger tre varianter + favicon utan sharp, med brandnamnet i', () => {
+  const jobb = byggLoggaSvg(rabutik());
+  assert.deepEqual(jobb.map((j) => j.namn), ['logga-a', 'logga-b', 'logga-c', 'favicon']);
+  assert.deepEqual(jobb.map((j) => j.px), [1024, 1024, 1024, 256]);
+  for (const j of jobb) assert.ok(j.svg.startsWith('<svg'), j.namn);
+  const brand = rabutik().butik.brand.toUpperCase();
+  assert.ok(jobb[0].svg.includes(brand));
+  assert.equal(byggLoggaSvg(rabutik(), { variant: 'b' }).length, 2);
+  assert.equal(Object.keys(VARIANTER).join(''), 'abc');
+});
+
+test('typsnittUrHandle och orddelar', () => {
+  assert.deepEqual(typsnittUrHandle('archivo_n7'), { familj: 'Archivo', vikt: 700 });
+  assert.deepEqual(typsnittUrHandle('ibm_plex_sans_n6'), { familj: 'Ibm Plex Sans', vikt: 600 });
+  assert.deepEqual(typsnittUrHandle(''), { familj: 'DejaVu Sans', vikt: 700 });
+  assert.deepEqual(orddelar('TankGuard'), ['TANK', 'GUARD']);
+  assert.deepEqual(orddelar('Hemvakten'), ['HEMVAKTEN']);
+});

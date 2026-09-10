@@ -3,6 +3,23 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-10 — 0 nya, alla 27 produkter klara
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY: samma 26 mappar som igår,
+inga nya produkter. Butiksfeeden växte 175 → 181, men de sex nya har ingen
+mapp i MAKE TO NORWAY ännu. Alla 27 handles i `sources.json` verifierade mot
+butiken, alla har synliga recensioner. Bygget gav samma 228 rader som igår.
+
+Gravsteinspenn (8 "TEST"-rader) och Medisinboks (7 rader märkta "EJ
+KUNDRECENSION") är oförändrade — fortsatt överhoppade. Damasker/gamasjer
+har fortfarande inga betyg i källarket, men produkten är klar i Judge.me
+sedan 2026-08-30.
+
+**Datumen är fortfarande inte rättade.** 22 produkter bär importdagens datum
+(se 2026-09-09 nedan). CSV-importen i Judge.me-appen är inte gjord ännu.
+De 5 produkter som har äkta, spridda datum är Kranskydd, Cykelshorts,
+Jättefotboll och de två som importerades via appen i augusti.
+
 ## Läget 2026-09-09 — 10 nya, och en bakläxa: DATUMEN TAR INTE
 
 Rutinkörning 05:35 svensk tid. En ny mapp: **Adventskalender Racingbilar**,

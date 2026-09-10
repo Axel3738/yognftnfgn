@@ -195,3 +195,47 @@ loggas den dessutom som vanligt i `ad-tracker.md` (den är ett eget test).
 | NO-batch 2026-09-07, rutinen `/translate-no`: 0 produkter körda | — | — (0 credits) | — | — | — | 19 av 20 LAUNCHED-produkter täckta (NO-mapp eller kampanj). Enda kandidat Bordtennisnät Infällbart överhoppad femte natten i rad (samma COGS-lucka i batch-sheet #1–#5.1). Problemmeddelande skickat till #problems-no. Kvot oförändrad 18 679. |
 | Notion-kön 2026-09-07 (rutin 15:00): Overvåkingskamera AU_2_H1, SP_11_H1 (CS_6_H1 proofread men render nekad) | NO / norsk bokmål | 2 renderade (13,5 + 18,2 s), 78 → 13 krediter | sonnet-SRT, verify-srt grön, timecodes identiska; pris i ord (åtte hundre og nittini / elleve hundre og sekstini), åpent kjøp, 355 grader | `no-captions-precis.py`: pill 924–1048, x min/max (medianen läckte svensk text på breda rader) | 2026-09-07, båda ACTIVE i Overvåkingskamera NO (120252115735090233, 120252115739210233) | 9 videor kvar i kön — HeyGen-krediter slut. |
 | Notion-kön 2026-09-08 (rutin 15:00, efter HeyGen-nyckelbyte): Overvåkingskamera SP_8/SP_9/SP_12/SP_13/CS_6, Båtmotortrekk UG_1/UG_2/SP_1_H5/SP_1_H6/CS_5 | NO / norsk bokmål | 10 renderade (3,1 min), ny nyckel subscriptions@stonebite.org, 18 315 → 16 951 krediter | sonnet-SRT, verify-srt grön, timecodes identiska; priser i ord, åpent kjøp, recensioner attribuerade till baverbutiken.se | kamera: `no-captions-precis.py`; båtmotor: `lager.py` + `no-precis.py` (checklistor, 882/529-prisgrafik, 40 % RABATT, "8 anmeldelser · baverbutiken.se", "420D Oxford-stoff", norska slutkort) | 2026-09-08, alla 10 ACTIVE i Magiborsten NO | no-precis: `-loop 1` på PNG-lager + cue-förlängning bara till luckans mitt. Damasker ×2 väntar (Gamasjer NO avstängd). |
+| NO-batch 2026-09-10, rutinen `/translate-no`: 0 nya videor (LAUNCHED kraftigt nedstädat — bara 2 produktmappar kvar, båda redan täckta) | no / Norwegian Bokmål (Norway) | — (0 credits, ingen video renderad) | — | — (inga nya videor) | Komplettering, ingen ny launch | 2026-09-10 | LAUNCHED gick från 20 produktmappar (2026-09-07) till 2 (Adventskalender Racingbilar, Pälsborste till Dyson-dammsugare) — troligen manuell städning av Axel. Båda redan behandlade (NO-mapp + kampanj). Upptäckte att **Pelsbørste NO (2026-09-04) saknade Fas 3.2:s bildannonser** — 12 video men 0 bild i både Drive och Meta, känd lucka från 09-04-loggraden ovan. Kompletterade: Kie-rensning (G behövde 2 pass) + sonnet-copy + PIL-komposition (★-glyf saknas i Liberation Sans, ritad som polygon i st.f. text — samma lösning som ✓-tecknet) → 3 nya bildannonser (G/PD/SP, CS saknar källbild) uppladdade till Drive + skapade ACTIVE via `no-image-ads.mjs`. Kampanjen har nu 15/15 ACTIVE-annonser, API-verifierat. Lokal `main` hade divergerat kraftigt från origin (161 vs 174 commits) — synkad mot origin/main innan körning, innehållet redan där (origin strikt före). Kvot oförändrad 11 909. |
+
+## Röstkollen — obligatorisk före leverans (Axels beslut 2026-09-08)
+
+"Se till att det inte är någon keff röst från och med nu."
+
+Proofread läser **texten**. Ingenting i flödet läste tidigare **ljudet**, så en
+misslyckad röstklon kunde gå hela vägen ut i kontot. Det gör den inte längre.
+
+```bash
+python3 pipeline/rostkoll.py --mapp final/ --kallmapp original/ --srtmapp srt-fixed/
+python3 pipeline/rostkoll.py --kalla original.mp4 --ny oversatt.mp4 --srt oversatt.srt
+```
+
+Gratis — bara ffmpeg lokalt, inga krediter. Fyra fel ger ❌:
+
+| Fel | Mäts ur | Varför det låter fel |
+|---|---|---|
+| Tyst spår (medelvolym < −45 dB) | ljudet | klonen misslyckades helt |
+| Längddrift > 15 % mot källan | ljudet | HeyGen sträcker ljudet för läppsynk; rösten blir släpig eller hetsig |
+| Sista repliken slutar < 0,15 s före filmens slut | SRT | rösten hinner inte tala klart |
+| Översättningen tappade > 40 % av källans taltid | SRT | meningar har fallit bort |
+
+**En video med ❌ levereras inte.** Rendera om den i HeyGens UI eller stryk den ur
+batchen. Ladda aldrig upp den ändå.
+
+⚠️ **Varför talets tider kommer ur SRT:en och inte ur ljudet.** Första versionen
+mätte "hur stor del av filmen som är tal" med `silencedetect` och dömde **varenda**
+video som avhuggen — nästan varje annons har en musikbädd som ligger på hela filmen,
+så spåret tystnar aldrig. ffmpeg hör inte skillnad på tal och musik. En kontroll som
+alltid är röd är precis lika värdelös som en som aldrig är det, och den togs bort
+samma dag den skrevs. Talets tider läses därför ur SRT:en, som HeyGen ändå lämnar ut.
+
+⚠️ **Grönt betyder "inga mätbara fel", inte "godkänd".** Lyssna själv på minst den
+video som ska bära mest spend, och skriv i leveransen att du gjort det.
+
+⚠️ **Är källan nästan bara musik ska videon inte översättas alls.** HeyGen har ingen
+röst att klona och hittar på en. Det var därför `PD_EXTRA` hoppades över i
+motorhöljesbatchen. Röstkollen flaggar det när källvideon anges med `--kalla`.
+
+Tester: `python3 pipeline/test/test_rostkoll.py` — bygger medvetet trasiga videor ur
+en riktig annons och kontrollerar att var och en fångas, **och** att en frisk video
+blir grön.
+| Notion-kön 2026-09-09 (rutin 15:00): IBC-tanktrekk PD_4_H1/PD_4_H2/PD_4_H3/SP_3_H1/CS_4_H1/GT_4_H1 | NO / norsk bokmål | 6 renderade + 1 omrendering (PD_4_H3), 15 600 → 11 896 krediter (inkl. 6 proofreads) | sonnet-SRT, verify-srt grön, timecodes identiska; 439/586 kr i ord, 147 kr mindre, 210D oxfordstoff, 10 anmeldelser 4,7 hos baverbutiken.se | `no-captions-precis.py`: pill x min/max per video; toppiller (439 kr, spar 147 kr / 439 kr i dag), orange kursiv rubrik "210D Oxfordstoff" över tanken (PD_4) och på vitt kort (GT_4), norska slutkort (samma rutor som 2026-09-05-video2) | 2026-09-10, alla 6 ACTIVE i IBC-tanktrekk NO (PD_4_H2 120252161409620233, PD_4_H1 120252161410990233, PD_4_H3 120252161413240233, SP_3_H1 120252161414070233, CS_4_H1 120252161417370233, GT_4_H1 120252161418690233) | **Första körningen med `rostkoll.py`:** PD_4_H3 ❌ (sista cue 9,80 s i 9,81 s film — HeyGen-renderingen är 0,15 s kortare än källan, så en cue som slutar vid källans sista tiondel faller alltid). Ljudet självt var avklingat (−51 dB vid 9,78 s). Åtgärd: kortare slutreplik + omrender + `tpad`/`apad` 0,3 s → 10,12 s, grön. Creative bytt på befintlig annons (spec läst ur gamla creativen, ny video_id, samma copy). `ffprobe` saknas i containern (imageio-ffmpeg har bara ffmpeg) — shim i /usr/local/bin/ffprobe, dör med containern. |

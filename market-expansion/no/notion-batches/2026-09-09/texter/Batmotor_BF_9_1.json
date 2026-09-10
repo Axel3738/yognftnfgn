@@ -1,0 +1,64 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   400
+  ],
+  "fet": true,
+  "storlek": 72,
+  "rader": 3,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.72,
+  "text": "Ingen presenning. Et trekk formet etter motoren din."
+ },
+ {
+  "box": [
+   33,
+   440,
+   1047,
+   505
+  ],
+  "fet": false,
+  "storlek": 40,
+  "rader": 1,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "420D Oxford-stoff, 9 størrelser – 0–5 hk til 250–350 hk."
+ },
+ {
+  "box": [
+   235,
+   1082,
+   845,
+   1136
+  ],
+  "fet": true,
+  "storlek": 30,
+  "rader": 1,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyll": "mork",
+  "radie": 27,
+  "text": "Trekkes over og strammes, ingen verktøy."
+ },
+ {
+  "form": 1,
+  "text": "Bestill Båtmotortrekket 420D",
+  "rad": 0,
+  "se": "Beställ Båtmotorskyddet 420D",
+  "vanster": false
+ }
+]

@@ -1,0 +1,75 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "snabblankar": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Snabblänkar",
+            "menu": "main-menu"
+          }
+        },
+        "information": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Information",
+            "menu": "footer"
+          }
+        },
+        "foretaget": {
+          "type": "text",
+          "settings": {
+            "heading": "Företaget",
+            "subtext": "<p>Matstrumpor.se drivs av<br/>STONEBITE ECOM AB<br/>Org.nr 559576-2401</p><p>kundsupport@matstrumpor.se</p><p><a href=\"/pages/om-oss\">Läs mer om oss</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand",
+        "snabblankar",
+        "information",
+        "foretaget"
+      ],
+      "settings": {
+        "color_scheme": "scheme-6",
+        "newsletter_enable": true,
+        "newsletter_heading": "Missa inga nyheter",
+        "enable_follow_on_shop": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "ms_cookies": {
+      "type": "ms-cookies",
+      "settings": {
+        "visible": true
+      }
+    },
+    "ms_skrapkort": {
+      "type": "ms-skrapkort",
+      "settings": {
+        "visible": true
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "ms_cookies",
+    "ms_skrapkort"
+  ]
+}

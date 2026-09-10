@@ -1,0 +1,121 @@
+{
+ "Batmotor_BF_8_1": {
+  "malnamn": "Batmotortrekk_NO_BF_8_1",
+  "karta": [
+   0,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_BF_8_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_BF_8_1.jpg.qa.png"
+ },
+ "Batmotor_FM_3_1": {
+  "malnamn": "Batmotortrekk_NO_FM_3_1",
+  "karta": [
+   null,
+   null,
+   4
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_FM_3_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_FM_3_1.jpg.qa.png"
+ },
+ "Batmotor_RV_7_1": {
+  "malnamn": "Batmotortrekk_NO_RV_7_1",
+  "karta": [
+   null,
+   null,
+   1
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_RV_7_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_RV_7_1.jpg.qa.png"
+ },
+ "Batmotor_BF_9_1": {
+  "malnamn": "Batmotortrekk_NO_BF_9_1",
+  "karta": [
+   null,
+   null,
+   1
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_BF_9_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_BF_9_1.jpg.qa.png"
+ },
+ "Batmotor_RV_6_1": {
+  "malnamn": "Batmotortrekk_NO_RV_6_1",
+  "karta": [
+   0,
+   null,
+   1
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_RV_6_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_RV_6_1.jpg.qa.png"
+ },
+ "Batmotor_BF_7_1": {
+  "malnamn": "Batmotortrekk_NO_BF_7_1",
+  "karta": [
+   null,
+   null,
+   1
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_BF_7_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_BF_7_1.jpg.qa.png"
+ },
+ "Batmotor_CS_7_1": {
+  "malnamn": "Batmotortrekk_NO_CS_7_1",
+  "karta": [
+   null,
+   null,
+   3
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_CS_7_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-09/no/Batmotortrekk_NO_CS_7_1.jpg.qa.png"
+ },
+ "IBC_PD_4_H2": {
+  "malnamn": "IBC-tanktrekk_NO_PD_4_H2",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/IBC-tanktrekk_NO_PD_4_H2.mp4",
+  "skal": null,
+  "qa": "QA-kontaktark lästa 2026-09-10 (no-captions-precis, pill min/max; toppiller, orange rubrik, slutkort kontrollerade)"
+ },
+ "IBC_PD_4_H1": {
+  "malnamn": "IBC-tanktrekk_NO_PD_4_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/IBC-tanktrekk_NO_PD_4_H1.mp4",
+  "skal": null,
+  "qa": "QA-kontaktark lästa 2026-09-10 (no-captions-precis, pill min/max; toppiller, orange rubrik, slutkort kontrollerade)"
+ },
+ "IBC_PD_4_H3": {
+  "malnamn": "IBC-tanktrekk_NO_PD_4_H3",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/IBC-tanktrekk_NO_PD_4_H3.mp4",
+  "skal": null,
+  "qa": "QA-kontaktark lästa 2026-09-10 (no-captions-precis, pill min/max; toppiller, orange rubrik, slutkort kontrollerade)"
+ },
+ "IBC_SP_3_H1": {
+  "malnamn": "IBC-tanktrekk_NO_SP_3_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/IBC-tanktrekk_NO_SP_3_H1.mp4",
+  "skal": null,
+  "qa": "QA-kontaktark lästa 2026-09-10 (no-captions-precis, pill min/max; toppiller, orange rubrik, slutkort kontrollerade)"
+ },
+ "IBC_CS_4_H1": {
+  "malnamn": "IBC-tanktrekk_NO_CS_4_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/IBC-tanktrekk_NO_CS_4_H1.mp4",
+  "skal": null,
+  "qa": "QA-kontaktark lästa 2026-09-10 (no-captions-precis, pill min/max; toppiller, orange rubrik, slutkort kontrollerade)"
+ },
+ "IBC_GT_4_H1": {
+  "malnamn": "IBC-tanktrekk_NO_GT_4_H1",
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-09/no/IBC-tanktrekk_NO_GT_4_H1.mp4",
+  "skal": null,
+  "qa": "QA-kontaktark lästa 2026-09-10 (no-captions-precis, pill min/max; toppiller, orange rubrik, slutkort kontrollerade)"
+ }
+}

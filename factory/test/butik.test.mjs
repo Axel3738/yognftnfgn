@@ -1,16 +1,30 @@
-// Tester för butikskonfigen och fraktupplägget. Ingen nätverkstrafik.
+// Tester för butikskonfigen (validering + sammanvävning). Ingen nätverkstrafik.
 // Kör: node --test factory/test/*.test.mjs
+// Fraktplanens tester bor i frakt.test.mjs sedan 2026-09-09.
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { valideraButik, sammanfoga } from '../butik.mjs';
-import { byggFraktplan, byggFraktatgarder, fraktraderForKund, FRI_FRAKT } from '../frakt.mjs';
+import { valideraButik, sammanfoga, kontrolleraMarknader, kontrolleraStartsida, arNischbutik } from '../butik.mjs';
 import { rabutik, raprodukt, dummy, medButiksfrakt } from './hjalp.mjs';
-
-const namn = (r) => r.fel;
 
 test('testbutiken validerar utan kritiska fel', () => {
   assert.deepEqual(valideraButik(rabutik()).fel, []);
+});
+
+test('arNischbutik: två produkter, eller kollektion.alltid, ger nischläge — annars enprodukt', () => {
+  const b = rabutik();
+  assert.equal(arNischbutik(b, [dummy()]), false);
+  assert.equal(arNischbutik(b, [dummy(), dummy()]), true);
+  assert.equal(arNischbutik(b, 2), true);
+  const nisch = { ...b, butik: { ...b.butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: true } } };
+  assert.equal(arNischbutik(nisch, [dummy()]), true);
+  assert.equal(arNischbutik(nisch.butik, 1), true, 'tar även bara butik:-blocket');
+  const av = { ...b, butik: { ...b.butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: false } } };
+  assert.equal(arNischbutik(av, [dummy()]), false);
+  // alltid som text är ett konfigfel, inte en tyst tolkning.
+  const fel = { ...b, butik: { ...b.butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: 'ja' } } };
+  assert.ok(valideraButik(fel).fel.some((f) => f.includes('kollektion.alltid')));
+  assert.deepEqual(valideraButik(nisch).fel, []);
 });
 
 test('saknade bolagsuppgifter stoppar butikskonfigen', () => {
@@ -49,6 +63,88 @@ test('betald frakt utan pris stoppar konfigen', () => {
   assert.ok(valideraButik(b).fel.some((f) => f.includes('standardpris')));
 });
 
+// --- Fälten resten av kedjan läser (KEDJAN.md regel 7) ---
+
+test('moms_i_pris måste vara true/false; saknas den blir det en varning', () => {
+  const b = rabutik();
+  b.butik.moms_i_pris = 'ja';
+  assert.ok(valideraButik(b).fel.some((f) => f.includes('moms_i_pris')));
+  delete b.butik.moms_i_pris;
+  const r = valideraButik(b);
+  assert.ok(!r.fel.some((f) => f.includes('moms_i_pris')));
+  assert.ok(r.varningar.some((v) => v.includes('moms_i_pris')));
+});
+
+test('markorer_sv: lista med ord accepteras, fel form stoppar, saknad varnar', () => {
+  const b = rabutik();
+  b.butik.markorer_sv = ['Köp nu', 'Fri frakt'];
+  let r = valideraButik(b);
+  assert.ok(!r.fel.some((f) => f.includes('markorer_sv')));
+  assert.ok(!r.varningar.some((v) => v.includes('markorer_sv')));
+  b.butik.markorer_sv = 'Köp nu';
+  assert.ok(valideraButik(b).fel.some((f) => f.includes('markorer_sv')));
+  delete b.butik.markorer_sv;
+  r = valideraButik(b);
+  assert.ok(r.varningar.some((v) => v.includes('markorer_sv')));
+});
+
+test('marknader: NO/nb/SEK går igenom, fel landkod och okänd valuta stoppar', () => {
+  assert.deepEqual(kontrolleraMarknader([{ land: 'NO', locale: 'nb', valuta: 'SEK' }]).fel, []);
+  const r = kontrolleraMarknader([{ land: 'Norge', locale: 'nb', valuta: 'BTC' }]);
+  assert.ok(r.fel.some((f) => f.includes('tvåbokstavskod')));
+  assert.ok(r.fel.some((f) => f.includes('okänd')));
+  assert.ok(kontrolleraMarknader('NO').fel.length === 1);
+});
+
+test('marknader som saknas är en varning (steget marknad stoppar), inte ett fel', () => {
+  const r = kontrolleraMarknader(undefined);
+  assert.deepEqual(r.fel, []);
+  assert.ok(r.varningar.some((v) => v.includes('marknader')));
+  const b = rabutik();
+  b.butik.marknader = [{ land: 'NO', locale: 'nb', valuta: 'SEK' }];
+  assert.ok(!valideraButik(b).varningar.some((v) => v.includes('marknader')));
+});
+
+test('kollektion: handle och titel krävs när blocket finns', () => {
+  const b = rabutik();
+  b.butik.kollektion = { handle: 'sortimentet', titel: 'Sortimentet', beskrivning: '' };
+  assert.ok(!valideraButik(b).fel.some((f) => f.includes('kollektion')));
+  b.butik.kollektion = { handle: 'Sortimentet!' };
+  const { fel } = valideraButik(b);
+  assert.ok(fel.some((f) => f.includes('kollektion.handle')));
+  assert.ok(fel.some((f) => f.includes('kollektion.titel')));
+});
+
+test('startsida: formen kontrolleras — max 3 gallerikolumner, faq med fraga, listor är listor', () => {
+  const ok = kontrolleraStartsida({
+    usp: ['truck:Fri frakt'],
+    hero: { rubrik: '', text: '', knapp: '', bild: '' },
+    berattelse: { rubrik: '', text: ['Ett stycke.'] },
+    galleri: { rubrik: 'G', kolumner: [{ titel: 'a', bild: '' }, { titel: 'b', bild: '' }] },
+    faq: [{ fraga: 'Passar den?', svar: 'Ja.' }],
+  });
+  assert.deepEqual(ok.fel, []);
+  const dalig = kontrolleraStartsida({
+    usp: 'truck:Fri frakt',
+    galleri: { kolumner: [{}, {}, {}, {}] },
+    faq: [{ svar: 'utan fråga' }],
+    berattelse: { text: { nej: true } },
+  });
+  assert.ok(dalig.fel.some((f) => f.includes('startsida.usp')));
+  assert.ok(dalig.fel.some((f) => f.includes('max 3')));
+  assert.ok(dalig.fel.some((f) => f.includes('faq[0]')));
+  assert.ok(dalig.fel.some((f) => f.includes('berattelse.text')));
+});
+
+test('startsida som saknas är en varning; blocket accepteras på toppnivå i butiksfilen', () => {
+  const b = rabutik();
+  assert.ok(valideraButik(b).varningar.some((v) => v.includes('startsida')));
+  b.startsida = { hero: { rubrik: 'Hej' } };
+  const r = valideraButik(b);
+  assert.deepEqual(r.fel, []);
+  assert.ok(!r.varningar.some((v) => v.includes('startsida')));
+});
+
 // --- Sammanvävningen ---
 
 test('produkten ärver bolagsuppgifter, valuta och frakt från butiken', () => {
@@ -58,6 +154,22 @@ test('produkten ärver bolagsuppgifter, valuta och frakt från butiken', () => {
   assert.equal(p.ekonomi.valuta, 'SEK');
   assert.equal(p.shipping.kostnad, 0);
   assert.equal(p.shipping.alternativ[0].namn, 'Express inom Sverige');
+});
+
+test('moms_i_pris följer med i ekonomin — bara som flagga, aldrig som ett nytt break-even', () => {
+  const p = dummy();
+  assert.equal(p.ekonomi.moms_i_pris, true);
+  const b = rabutik();
+  delete b.butik.moms_i_pris;
+  assert.equal(sammanfoga(b, raprodukt()).ekonomi.moms_i_pris, undefined);
+});
+
+test('fraktländerna kommer ur huvudmarknad + marknader, i klartext och utan dubbletter', () => {
+  const b = rabutik();
+  b.butik.marknader = [{ land: 'NO', locale: 'nb', valuta: 'SEK' }, { land: 'SE', locale: 'sv' }];
+  const p = sammanfoga(b, raprodukt());
+  assert.deepEqual(p.shipping.lander, ['Sverige', 'Norge']);
+  assert.deepEqual(dummy().shipping.lander, ['Sverige']);
 });
 
 test('produktfilen bär ingen butiksdata längre', () => {
@@ -82,83 +194,4 @@ test('produktens leveranstid vinner över butikens standard', () => {
 test('utan express i butiken får produkten inga extra fraktsätt', () => {
   const p = medButiksfrakt({ fri_globalt: true, leveranstid: '5 dagar' });
   assert.deepEqual(p.shipping.alternativ, []);
-});
-
-// --- Fraktplanen ---
-
-test('fri frakt globalt ger fri frakt i alla tre zoner', () => {
-  const plan = byggFraktplan(rabutik());
-  assert.equal(plan.length, 3);
-  assert.equal(plan[0].zon, 'Sverige');
-  assert.equal(plan[0].huvudmarknad, true);
-  for (const zon of plan) assert.equal(zon.metoder[0].namn, FRI_FRAKT);
-});
-
-test('express läggs bara på huvudmarknaden', () => {
-  const plan = byggFraktplan(rabutik());
-  assert.equal(plan[0].metoder.length, 2);
-  assert.equal(plan[0].metoder[1].pris, 99);
-  for (const zon of plan.slice(1)) assert.equal(zon.metoder.length, 1);
-});
-
-test('huvudmarknaden följer konfigen, inte en hårdkodad lista', () => {
-  const b = rabutik();
-  b.butik.huvudmarknad = 'Norge';
-  b.butik.valuta = 'NOK';
-  const plan = byggFraktplan(b);
-  assert.equal(plan[0].zon, 'Norge');
-  assert.equal(plan[0].metoder[0].valuta, 'NOK');
-});
-
-test('betald frakt ger standardpris och fri frakt-gräns', () => {
-  const b = { ...rabutik(), frakt: { fri_globalt: false, standardpris: 49, fri_over: 599 } };
-  const plan = byggFraktplan(b);
-  assert.equal(plan[0].metoder[0].namn, 'Standardfrakt');
-  assert.equal(plan[0].metoder[0].pris, 49);
-  assert.deepEqual(plan[0].metoder[0].villkor, { friOver: 599 });
-});
-
-// --- Skillnaden mot butiken som den ser ut nu ---
-
-const NULAGE = [
-  { zon: 'Sverige', metoder: [{ id: 's1', namn: 'Fri frakt', pris: 0 }, { id: 's2', namn: 'Express inom Sverige', pris: 99 }] },
-  { zon: 'EU (Europeiska Unionen)', metoder: [{ id: 'e1', namn: 'Fri frakt', pris: 0 }] },
-  { zon: 'Internationell', metoder: [{ id: 'i1', namn: 'Fri frakt', pris: 0 }] },
-];
-
-test('en butik som redan matchar planen lämnas orörd', () => {
-  const r = byggFraktatgarder(NULAGE, byggFraktplan(rabutik()));
-  assert.equal(r.orort, true);
-});
-
-test('fel pris i en zon ger en uppdatering, inte en nyskapad metod', () => {
-  const nulage = structuredClone(NULAGE);
-  nulage[1].metoder[0].pris = 299;
-  const r = byggFraktatgarder(nulage, byggFraktplan(rabutik()));
-  assert.equal(r.attUppdatera.length, 1);
-  assert.equal(r.attUppdatera[0].id, 'e1');
-  assert.equal(r.attUppdatera[0].metod.pris, 0);
-  assert.equal(r.attSkapa.length, 0);
-});
-
-test('metod som inte finns i planen tas bort', () => {
-  const nulage = structuredClone(NULAGE);
-  nulage[0].metoder.push({ id: 's3', namn: 'Standardfrakt', pris: 39 });
-  const r = byggFraktatgarder(nulage, byggFraktplan(rabutik()));
-  assert.equal(r.attTaBort.length, 1);
-  assert.equal(r.attTaBort[0].namn, 'Standardfrakt');
-});
-
-test('zon som saknas i butiken rapporteras i stället för att gissas', () => {
-  const r = byggFraktatgarder([NULAGE[0]], byggFraktplan(rabutik()));
-  assert.deepEqual(r.saknadeZoner, ['EU (Europeiska Unionen)', 'Internationell']);
-});
-
-test('kundraderna säger samma sak som zonerna', () => {
-  const rader = fraktraderForKund(rabutik(), '5–8 arbetsdagar');
-  assert.deepEqual(rader, [
-    'Leveranstid: 5–8 arbetsdagar',
-    'Fri frakt till alla länder',
-    'Express inom Sverige: 99 kr, 1–2 arbetsdagar',
-  ]);
 });

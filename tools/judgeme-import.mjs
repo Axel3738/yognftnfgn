@@ -22,6 +22,24 @@
 // (t.ex. 4snrw0-mg.myshopify.com). Judge.me-tokens är PER BUTIK — den svenska
 // tokenen fungerar inte mot den norska butiken. Peka på en annan butiks token
 // med --token-env och dess domän med --shop-domain.
+//
+// Fler flaggor (alla valfria — rutinerna /no-recensioner och /launch kör
+// utan dem, oförändrat):
+//   --mejlsuffix <domän>   syntetisk, per fil unik adress på rader utan
+//                          reviewer_email (Judge.me kräver en adress numera)
+//   --krav-datum           STOPPA om någon rad saknar review_date. Opt-in,
+//                          aldrig default — utan flaggan varnar verktyget
+//                          bara. (KEDJAN.md: jjwesr:s hårda stopp skulle ha
+//                          knäckt nattrutinen.)
+//   --utan-datum           accepteras för bakåtkompatibilitet, gör inget
+//                          utöver default (varning)
+//   --anda                 importera trots att produkten redan har recensioner
+//
+// ⚠️ Judge.mes v1-API skriver ALDRIG in created_at (mätt 2026-09-08 på
+// TankGuard och 2026-09-09 på beverbutikken.no): recensionerna får
+// importögonblicket som datum. Behöver kunden se originaldatumen är enda
+// vägen appens egen CSV-import (factory/judgeme.mjs → byggJudgeMeAppCsv).
+// Efterkontrollen längst ner läser tillbaka och säger ifrån när det hänt.
 
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
@@ -64,6 +82,11 @@ const dry = args.includes('--dry');
 
 const handle = flagga('--product-handle');
 const storeUrl = (flagga('--store-url') || '').replace(/\/$/, '');
+// Judge.me:s API kräver en mejladress per recension numera. Riktiga adresser
+// hittas ALDRIG på — med --mejlsuffix <domän>.invalid får raden en omisskännligt
+// syntetisk adress (<filstam>-N@<suffix>) när CSV:n saknar en.
+const mejlsuffix = flagga('--mejlsuffix');
+const kravDatum = args.includes('--krav-datum');
 const TOKEN = process.env[flagga('--token-env') || 'JUDGEME_API_TOKEN'];
 const SHOP = flagga('--shop-domain') || process.env.JUDGEME_SHOP_DOMAIN;
 
@@ -146,13 +169,15 @@ if (judgemeId) {
   let antal;
   if (revSvar.ok) {
     antal = (revSvar.kropp.reviews ?? []).filter((r) => r.published && !r.hidden).length;
-  } else if (/too big/i.test(String(revSvar.kropp?.error ?? ''))) {
+  } else if (revSvar.status === 422 || /too big/i.test(String(revSvar.kropp?.error ?? ''))) {
     // Judge.me avvisar sina EGNA nyare produkt-id:n som "too big" (422) —
     // gränsen ligger under 10 siffror, så varje produkt som skapas numera
     // träffar den. Utan reservvägen skulle spärren avbryta varje ny produkt
-    // och rutinen stanna. Uppmätt 2026-09-09 på Adventskalender Racerbiler
-    // (Judge.me-id 2150178134): products/-1 svarar 200, /reviews svarar 422.
-    console.log(`Judge.me avvisar produkt-id ${judgemeId} som "för stort" — räknar via butikssvep i stället.`);
+    // och rutinen stanna. Uppmätt 2026-09-06 på HeimGuard, 2026-09-08 på
+    // TankGuard och 2026-09-09 på Adventskalender Racerbiler (Judge.me-id
+    // 2150178134): products/-1 svarar 200, /reviews svarar 422. Reservvägen
+    // läser butiken sidvis och filtrerar på product_external_id (Shopify-id).
+    console.log(`Judge.me avvisar produkt-id ${judgemeId} (${revSvar.status}) — räknar via butikssvep i stället.`);
     antal = await raknaViaSvep(productId);
   } else {
     console.error(`Kunde inte läsa befintliga recensioner (${revSvar.status}).`);
@@ -171,22 +196,33 @@ console.log(`${rader.length} recensioner i ${csvFil} → produkt ${productId} i 
 // Datumvakten (Axels bakläxa 2026-09-08, TankGuard): utan review_date får
 // varje recension importögonblicket som datum — "för 12 minuter sedan" på
 // allihop skriker fejk. Originaldatumen finns i källan; saknas de är det
-// ett skrapfel som ska lagas, inte importeras runt. --utan-datum är en
-// medveten override, aldrig en utväg.
+// ett skrapfel som ska lagas. Default är en VARNING så rutinerna
+// (/no-recensioner, /launch) aldrig stannar på den — med --krav-datum blir
+// det ett stopp (opt-in, KEDJAN.md). --utan-datum accepteras fortfarande men
+// betyder bara "default".
 const utanDatum = rader.filter((r) => !String(r.review_date ?? '').trim());
-if (utanDatum.length > 0 && !args.includes('--utan-datum')) {
-  console.error(`${utanDatum.length} av ${rader.length} rader saknar review_date — stoppar.`);
-  console.error('Hämta originaldatumen från källan (reviews_for_widget har dem).');
-  console.error('Måste de importeras utan datum: kör om med --utan-datum.');
-  process.exit(1);
+if (utanDatum.length > 0) {
+  if (kravDatum) {
+    console.error(`${utanDatum.length} av ${rader.length} rader saknar review_date — stoppar (--krav-datum).`);
+    console.error('Hämta originaldatumen från källan (reviews_for_widget har dem).');
+    process.exit(1);
+  }
+  console.error(`⚠️ ${utanDatum.length} av ${rader.length} rader saknar review_date — de får importögonblicket som datum.`);
+  console.error('   Vill du stoppa på det i stället: kör om med --krav-datum.');
 }
 
+// Adressen måste vara unik per FIL: Judge.me knyter namnet till mejlen, så
+// samma recension-N@… i två CSV:er (sv + no) gav de norska raderna svenska
+// namn (mätt på TankGuard 2026-09-08). Filnamnets stam ingår därför.
+const filstam = csvFil.replace(/\\/g, '/').split('/').pop().replace(/\.csv$/i, '').replace(/[^a-z0-9-]/gi, '');
+const syntetiskMejl = (i) => (mejlsuffix ? `${filstam}-${i + 1}@${mejlsuffix.replace(/^@/, '')}` : '');
+
 let ok = 0, fel = 0;
-for (const r of rader) {
+for (const [i, r] of rader.entries()) {
   const payload = {
     api_token: TOKEN, shop_domain: SHOP, platform: 'shopify',
     id: Number(productId),
-    name: r.reviewer_name, email: r.reviewer_email,
+    name: r.reviewer_name, email: r.reviewer_email || syntetiskMejl(i),
     rating: Number(r.rating), title: r.title, body: r.body,
     ...(r.review_date ? { created_at: r.review_date } : {}),
   };
