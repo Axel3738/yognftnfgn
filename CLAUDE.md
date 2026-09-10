@@ -242,7 +242,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 15:00 | `0 13 * * *` | Översättning till Norge (bild + video ur Notion-kön `SE-ACTIVE to be translated`) | `/oversatt NO` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
-| 00:01 | `1 22 * * *` (CEST) / `1 23 * * *` (CET) — ligger dagen före i UTC, det är rätt | Nattvakten, **en rutin per OPS-butik** — byggs av `/notionscalercs setup <butik>` (ingen byggd än, mätt 2026-09-10) | `/notionscalercs <butik>` |
+| 00:01 | `1 22 * * *` (CEST) / `1 23 * * *` (CET) — ligger dagen före i UTC, det är rätt | Nattvakten, **en rutin per OPS-butik** — byggs av `/notionscalercs setup <butik>`. Byggda: **HeimGuard** (`hemvakten`, trigger `trig_01WbWzzvL1bvEzdSYDVDjyPt`, fast session `session_01Q98FdP2QSw7gkoASbqAAbx`, taggar `routine:notionscalercs` + `butik:hemvakten`, byggd 2026-09-10 — ⚠️ rutinens miljö saknar `ANTHROPIC_API_KEY`, så copy-fallbacken `tools/copy-agent.mjs` och Discord-autoöversättningen fungerar inte förrän den är satt) | `/notionscalercs hemvakten` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
 kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag). Siffrorna räknas ändå
