@@ -239,6 +239,15 @@ Nivå `butik` körs en gång, nivå `produkt` en gång per produktfil. State per
 VA:n ska publicera. `--store-ready`: kör slutsteget (recensioner via API,
 pixel + CAPI, Discord) — det som `Store ready: <namn>` utlöser.
 
+`--nytt-tema`: `tema-upload` packar upp `ops-tema.zip` som ett NYTT utkast och
+låser dess id i state, i stället för att återanvända det som redan står där.
+Flaggan finns för OMBYGGEN: en butik byggd före 2026-09-09 kör ett tema ur den
+ostädade zip:en och bär källbutikens sektionsgrupper. `--igen tema-upload` gör
+samma sak med temat, men hoppar samtidigt över alla andra gröna steg — vid ett
+ombygge ska brand, tema, av-brandning och startsidan skrivas in i det NYA temat,
+och då är `--nytt-tema` (utan `--igen`, utan `--resume`) den enda kombinationen
+som gör hela jobbet i en körning. Gamla teman raderas aldrig av kedjan.
+
 ---
 
 ## Vad som INTE togs in (och varför)

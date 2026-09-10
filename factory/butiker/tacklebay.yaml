@@ -22,6 +22,29 @@ butik:
       valuta: SEK
   valuta: SEK
   moms_i_pris: true
+  # Svenska markörord som INTE får synas på /nb. Utan listan är kundvyns
+  # markörskanning manuell — alltså inte grön (KEDJAN regel 7).
+  #
+  # URVALSREGELN (mätt 2026-09-10): varje ord här MÅSTE finnas som värde i
+  # output/tacklebay/oversattning-sv.json. Ett markörord som inte står i
+  # underlaget kan aldrig bli översatt av marknad.oversattAllt, så det blir
+  # en permanent röd punkt som inte går att åtgärda — och då börjar någon
+  # plocka bort ord ur listan för att få grönt, vilket gör hela skanningen
+  # meningslös. "Lägg i varukorgen" är just ett sådant ord: det är temats
+  # egen knapptext, inte en resurs som registreras, och står därför INTE här.
+  # Orden nedan täcker startsidan, menyn, paketkorten och policysidorna —
+  # en träff på /nb är alltid en riktig läcka.
+  markorer_sv:
+    - "Se sortimentet"
+    - "Vanliga frågor"
+    - "Handla tryggt hos oss"
+    - "Fri frakt i Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Frakt & retur"
+    - "Ångra köp"
+    - "Köpvillkor"
+    - "Mest populär"
+    - "Bäst pris"
   # Flerproduktsbutik: startsidan visar KOLLEKTIONEN, inte en enskild produkt.
   kollektion:
     handle: sortimentet
@@ -82,6 +105,15 @@ policy:
 # rea-röd, inget neon: en fiskebutik säljs av trovärdighet, inte av brus.
 # ---------------------------------------------------------------------------
 branding:
+  # Loggsteget (kedjans steg 5) kördes ALDRIG i bygget 2026-09-09 — därför står
+  # headern med butiksnamnet som ren text. Orsaken var inte brandingen utan att
+  # de här två raderna saknades: logga.mjs letar `branding.logga` eller
+  # output/<butik>/logga.png, och varianterna heter logga-a/b/c (2026-09-10).
+  # Variant A är den som `stil.logo` nedan beskriver ord för ord: cirkel,
+  # mässingskrok över ordmärket, tunn linje, FISHING GEAR under.
+  logga: "factory/output/tacklebay/logga-a-sigill.png"
+  favicon: "factory/output/tacklebay/favicon-tacklebay.png"
+  logga_bredd: 150
   positionering: "Fiskebutiken för den som redan har spöna — ordning i utrustningen, och presenter som faktiskt kommer i vattnet"
   tonalitet: "Rak och torr. Korta meningar, konkreta substantiv. Inga utropstecken, ingen hype — fiskare känner igen säljsnack direkt."
   kansla: "robust, nordisk, saklig, varm"

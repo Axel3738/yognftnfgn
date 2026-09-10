@@ -63,12 +63,12 @@
     }
   },
   "uppdaterad": "2026-09-09T12:04:35.953Z",
-  "notis": "TackleBay byggd 2026-09-09 i iahe0c-b1.myshopify.com (My Store 5). Två jämlika produkter via den nya produktloopen i ops.mjs. Tema \"TackleBay v1\" (UNPUBLISHED) — publiceringen är VA:ns klick. Källskanningen ren. Marknad Norge + locale nb publicerad, nb-översättningar registrerade för produkter, metafält, startsida och menylänkar.",
+  "notis": "TackleBay byggd 2026-09-09 i iahe0c-b1.myshopify.com (My Store 5). Två jämlika produkter via den nya produktloopen i ops.mjs. Tema \"TackleBay v1\" (UNPUBLISHED) — publiceringen är VA:ns klick. Källskanningen ren. Marknad Norge + locale nb publicerad, nb-översättningar registrerade för produkter, metafält, startsida och menylänkar. ⚠️ 2026-09-10: OMBYGGET FÖRBEREDDES men KUNDE INTE KÖRAS — sessionens miljö pekade på TankGuard (SHOPIFY_SHOP=y1sj1i-3d), och TackleBays egen app-nyckel fanns inte i miljön (token-mint mot iahe0c-b1 gav 400 app_not_installed). Ingen skrivning gjordes mot butiken. Konfigen, koden och den norska översättningen är förberedda; kedjan ska köras om med --nytt-tema när nycklarna är på plats. Det gamla temat 165394579692 är byggt ur den OSTÄDADE zip:en och ska ERSÄTTAS, inte patchas.",
   "blockerat_av_manniska": [
-    "Butikens VALUTA är PHP, ska vara SEK. Klick i Inställningar → Allmänt. De åtta rabattkoderna är skrivna som PHP-belopp och MÅSTE skrivas om efter valutabytet: node factory/paket.mjs factory/butiker/tacklebay.yaml <båda produktfilerna>",
-    "Butikens PRIMÄRSPRÅK är engelska, ska vara svenska. API:t kan inte byta det.",
-    "Primärmarknaden är Filippinerna. Sverige måste bli hemmamarknad innan fraktzonerna går att sätta.",
-    "Fraktzonerna saknas (Sverige, EU, Internationell) — följer av marknadsbytet.",
+    "SESSIONENS MILJÖ pekar på fel butik: SHOPIFY_SHOP=y1sj1i-3d.myshopify.com (TankGuard). För TackleBay krävs SHOPIFY_SHOP + SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET ur TackleBays EGEN app (custom distribution låser en app till en butik), plus SHOPIFY_STOREFRONT_PASSWORD. Mätt 2026-09-10 — utan dem stoppar steg 0 och inget kan byggas.",
+    "Butikens VALUTA/SPRÅK/HEMMAMARKNAD: Axel uppger 2026-09-10 att SEK, Sverige och svenska är satta i admin. INTE verifierat av fabriken (ingen API-åtkomst i den sessionen) — paketsteget läser shop.currencyCode självt och vägrar om det inte stämmer, så kontrollen görs av kedjan vid nästa körning.",
+    "De åtta rabattkoderna är skrivna som PHP-belopp och MÅSTE skrivas om efter valutabytet. Sker automatiskt i kedjans paket-steg (koderna uppdateras, dubbleras aldrig).",
+    "Fraktzonerna (Sverige, EU (Europeiska Unionen), Internationell) är ALDRIG satta — steget kördes aldrig. De kräver att Sverige är hemmamarknad först. Kedjans frakt-steg sätter dem.",
     "Domänen tacklebay.se är INTE whois-kontrollerad. .se saknar RDAP och port 43 är stängd i containern. Kontrolleras vid köp.",
     "Judge.me inte installerat — ingen token, inga recensioner importerade.",
     "Temat \"TackleBay v1\" måste publiceras för hand (API-spärrat).",
@@ -79,8 +79,9 @@
     "Adventskalendern har NOLL recensioner i källan. Inga hittas på.",
     "Ingen gratis bonusprodukt finns — Q4-ramverkets korg-upsell pekar på butikens andra produkt, men gratisdelen kräver en billig komplementprodukt som Axel väljer.",
     "Inköpskostnaderna är GISSNINGAR (40 % av priset). Break-even 1,67 för båda är därför ett räknat antagande, inte en mätning.",
-    "Varukorgen är INTE testad i kundens vy — butiken är lösenordsskyddad och lösenordet går inte att läsa via API:t.",
-    "Policysidorna är inte översatta till norska."
+    "Varukorgen är INTE testad i kundens vy — kräver en människa i en webbläsare (tom korg, lägg i varan, räkna varorna i vagnen).",
+    "LOGGAN sattes aldrig i butiken — steget logga kördes inte, därför står headern med butiksnamnet som text. Rättat i konfigen 2026-09-10 (branding.logga → logga-a-sigill.png, branding.favicon → favicon-tacklebay.png); steget blir grönt vid nästa körning. Varianterna A/B/C ligger i factory/output/tacklebay/ — Axel kan byta med en rad i yaml:en + --igen logga.",
+    "AV-BRANDNINGEN kördes aldrig och det gamla temat är byggt ur den OSTÄDADE bas-zip:en — källbutikens popup, cookieruta och bilder ligger kvar. Åtgärdas av --nytt-tema (nytt tema ur den rensade zip:en) + avbrandning-steget, inte av en patch."
   ],
   "rattelser": [
     {

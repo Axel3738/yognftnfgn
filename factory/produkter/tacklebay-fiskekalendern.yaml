@@ -79,6 +79,10 @@ offer:
   bundle: "2-pack — 15 % rabatt. 3-pack — 20 % rabatt. En till fiskaren, en till svågern."
   # Q4-ramverket: betald korg-upsell är butikens andra produkt.
   # ⚠️ Gratis bonusprodukt saknas — se spöhållarens fil, Axel väljer den.
+  #
+  # ⛔ FYLL ALDRIG I `bilder:` HÄR — `handle` pekar på butikens andra
+  # huvudprodukt och bonus.mjs skulle skriva över spöhållaren via productSet
+  # (samma spärr och samma skäl som i tacklebay-spohallaren.yaml, 2026-09-10).
   bonus_produkt:
     titel: "Fiskespöhållare 4-Pack"
     handle: "fiskespohallare-4-pack"

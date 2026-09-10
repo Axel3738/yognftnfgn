@@ -117,12 +117,20 @@ hoppa över steg 2–4 och kör kedjan.
 2. **VA:ns klick först.** Valuta, hemmamarknad och språk kan inget API ändra.
    Är de fel skrivs rabattkoderna i fel valuta igen — paketsteget vägrar, och
    det är meningen.
-3. **Nytt tema, alltid.** `--igen tema-upload` laddar upp det RENSADE temat som
-   ett nytt utkast och låser dess id i state. Patcha aldrig det gamla: det bär
-   källbutikens sektionsgrupper, och en patch lämnar det som inte skrivs över.
+3. **Nytt tema, alltid — flaggan heter `--nytt-tema`.** Den laddar upp det
+   RENSADE temat som ett nytt utkast och låser dess id i state. Patcha aldrig
+   det gamla: det bär källbutikens sektionsgrupper, och en patch lämnar det som
+   inte skrivs över. Det gamla temat lämnas orört i butiken (ingen kod raderar
+   teman) — VA:n publicerar det NYA.
+   ⚠️ Använd INTE `--igen tema-upload` vid ett ombygge. Den ger visserligen ett
+   nytt tema, men `--igen` hoppar samtidigt över alla ANDRA gröna steg — och då
+   blir brand, tema, av-brandning och startsidan kvar i det gamla temat medan
+   det nya står tomt. *(Fram till 2026-09-10 gjorde `--igen tema-upload` inte ens
+   det: steget återanvände alltid det låsta id:t, så den här punkten var omöjlig
+   att utföra. Mätt på TackleBay — `redanUppe: true`, zip:en laddades aldrig upp.)*
 4. **Kör hela kedjan**, inte `--resume`: gröna steg i state är gröna enligt den
    GAMLA koden.
-   `node factory/ops.mjs factory/butiker/<b>.yaml factory/produkter/<p>.yaml … `
+   `node factory/ops.mjs factory/butiker/<b>.yaml factory/produkter/<p>.yaml … --nytt-tema`
 5. **QA mot riktig HTML** med butikens storefront-lösenord i
    `SHOPIFY_STOREFRONT_PASSWORD`. Utan det är kundvyn röd, aldrig grön.
 6. **Säg vad som ändrades mot förra bygget** i slutrapporten, inte bara vad som

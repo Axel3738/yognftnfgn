@@ -306,15 +306,34 @@ export const STEG = [
     stoppar: true,
     torrt(ctx) {
       const id = lasArbetstemaId(ctx.butiksstate);
+      const tvingaNytt = ctx.nyttTema === true || ctx.igen?.has('tema-upload') === true;
+      if (tvingaNytt) {
+        return [
+          `${ctx.nyttTema ? '--nytt-tema' : '--igen tema-upload'}: ops-tema.zip packas upp som ett NYTT UNPUBLISHED tema "${standardTemanamn(ctx.butik.butik.brand)}"`,
+          id
+            ? `det låsta arbetstemat ${id} lämnas orört i butiken och ERSÄTTS som arbetstema — brand, tema, av-brandning och startsida skrivs in i det nya`
+            : 'arbetstemaId låses i state efter uppackning',
+        ];
+      }
       return [
         `ops-tema.zip laddas upp som UNPUBLISHED med namnet "${standardTemanamn(ctx.butik.butik.brand)}" (återanvänds om namnet redan finns)`,
-        id ? `state har redan arbetstemaId ${id} — det verifieras och behålls` : 'arbetstemaId låses i state efter uppackning',
+        id ? `state har redan arbetstemaId ${id} — det verifieras och behålls (kör --igen tema-upload för ett nytt tema)` : 'arbetstemaId låses i state efter uppackning',
       ];
     },
     async kor(ctx) {
       // Redan låst tema i state: verifiera att det finns och behåll det —
       // annars laddar en omkörning upp ett andra tema bredvid det första.
-      const befintligt = lasArbetstemaId(ctx.butiksstate);
+      //
+      // UNDANTAGET är `--igen tema-upload`, som betyder "ge mig ett NYTT
+      // tema" (ny-ops.md, "Bygga om en butik som redan finns" punkt 3): en
+      // butik byggd före 2026-09-09 kör ett tema som packades upp ur den
+      // OSTÄDADE zip:en och bär källbutikens sektionsgrupper — popupen,
+      // cookierutan och bilderna. Att patcha det lämnar kvar allt som inte
+      // skrivs över. Fram till 2026-09-10 återanvände steget det låsta id:t
+      // även med --igen, så kommandofilens punkt 3 var omöjlig att utföra
+      // (mätt på TackleBay: `redanUppe: true`, zip:en laddades aldrig upp).
+      const tvingaNytt = ctx.nyttTema === true || ctx.igen?.has('tema-upload') === true;
+      const befintligt = tvingaNytt ? null : lasArbetstemaId(ctx.butiksstate);
       if (befintligt) {
         try {
           const t = await hamtaArbetstema(befintligt);
@@ -326,7 +345,12 @@ export const STEG = [
           // temat är borta ur butiken — ladda upp på nytt nedan
         }
       }
-      const tema = await laddaUppTema(standardTemanamn(ctx.butik.butik.brand), { logg: (rad) => console.log(`   ${rad}`) });
+      const tema = await laddaUppTema(standardTemanamn(ctx.butik.butik.brand), {
+        // Med --igen tema-upload ska ett NYTT tema packas upp ur zip:en, även
+        // om ett tema med samma namn redan står i butiken.
+        aterAnvand: !tvingaNytt,
+        logg: (rad) => console.log(`   ${rad}`),
+      });
       sattArbetstemaId(ctx.butiksstate, { id: tema.id, namn: tema.name });
       return { arbetstemaId: tema.id, temaId: tema.id, temaNamn: tema.name, role: tema.role, redanUppe: tema.redanUppe };
     },
@@ -1237,9 +1261,14 @@ export function skaKoras(stegId, { resume, igen, klart }) {
   return true;
 }
 
-async function huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, igen = new Set(), storeReady = false }) {
+async function huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, igen = new Set(), storeReady = false, nyttTema = false }) {
   const { butik, produkter, varningar, launchInput } = lasKonfig(butiksfil, produktfiler);
   const ctx = byggButiksKontext(butik, produkter);
+  // Stegen får veta vilka som begärdes uttryckligen med --igen. Bara
+  // tema-upload läser den i dag: "kör om" och "ge mig ett nytt tema" är
+  // samma sak för det steget, och skillnaden går inte att se på state.
+  ctx.igen = igen;
+  ctx.nyttTema = nyttTema;
   const lage = dryRun ? 'DRY-RUN' : launch ? 'LAUNCH' : igen.size > 0 ? `IGEN ${[...igen].join(',')}` : resume ? 'RESUME' : 'BUILD';
   const rubrik = produkter.map((x) => x.p.produkt.namn).join(' + ');
   console.log(`\nOPS Factory · ${rubrik} · butik ${butik.butik.brand} · ${lage}\n`);
@@ -1456,6 +1485,11 @@ export function tolkaArgv(argv) {
     resume: flaggor.has('--resume'),
     launch: flaggor.has('--launch'),
     storeReady: flaggor.has('--store-ready'),
+    // "Ge mig ett NYTT tema ur zip:en" utan att röra vilka steg som körs.
+    // --igen tema-upload gör samma sak, men hoppar samtidigt över alla ANDRA
+    // gröna steg — och just vid ett ombygge ska brand, tema, av-brandning och
+    // startsidan köras om, in i det nya temat. De två behövs alltså båda.
+    nyttTema: flaggor.has('--nytt-tema'),
     igen,
     positioner,
   };
@@ -1463,7 +1497,7 @@ export function tolkaArgv(argv) {
 
 async function huvud() {
   const argv = process.argv.slice(2);
-  const { dryRun, resume, launch, storeReady, igen, positioner } = tolkaArgv(argv);
+  const { dryRun, resume, launch, storeReady, igen, positioner, nyttTema } = tolkaArgv(argv);
 
   laddaEnv();
 
@@ -1475,7 +1509,7 @@ async function huvud() {
     if (produktfiler.length === 0) {
       stopp('produktfil saknas', ['Användning: node factory/ops.mjs BUILD <produktfil.yaml> [fler …]']);
     }
-    return huvudflode({ butiksfil, produktfiler, dryRun, resume, igen, storeReady, launch: launch || forsta === 'LAUNCH' });
+    return huvudflode({ butiksfil, produktfiler, dryRun, resume, igen, storeReady, nyttTema, launch: launch || forsta === 'LAUNCH' });
   }
 
   // Nya formen: <butik.yaml> <produkt.yaml> [<produkt2.yaml> …]
@@ -1492,7 +1526,7 @@ async function huvud() {
   if (butiksfiler.length > 1) {
     stopp('flera butiksfiler angavs', ['En körning bygger EN butik. Ange bara en fil ur butiker/.']);
   }
-  return huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, igen, storeReady });
+  return huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, igen, storeReady, nyttTema });
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

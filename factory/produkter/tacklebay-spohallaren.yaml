@@ -65,6 +65,13 @@ beskrivning:
   losning_text: "Klämman går runt spöt och låser i två steg: första sektionen först, sedan andra låset. Insidan är en hög-elastisk svamp som håller hårt utan att skava lacken. Spökroppen sitter still hela vägen, och du lossar den med en hand när du är framme."
 
 vinkel:
+  # `usp` är avsiktligt tom och validera.mjs varnar för det. Varningen är
+  # INERT för TackleBay (mätt 2026-09-10): vinkel.usp läses bara av
+  # tema.uspPunkter, som i sin tur bara nås via tema.annonsrader — och
+  # annonsrader tar butikens egna rader när `startsida.usp` är ifylld, vilket
+  # den är (tre rader i butiker/tacklebay.yaml). Att skriva en USP här ändrar
+  # alltså ingenting i kundvyn. Lämna den tom tills annonsraden ska skilja
+  # sig per produkt.
   huvudvinkel: "Transportskadan, inte förvaringen — spöt tar stryk på vägen till vattnet, inte vid vattnet. Källa: leverantörens egna produktbilder ('förhindrar kollision eller trassel av spökroppen under transport') plus 7 Judge.me-recensioner som alla nämner stabilitet. Vinkeln bytt 2026-09-09 sedan bilderna visat att källans förvaringstext är fel."
   underrubrik: "Håller ihop spöt hela vägen till vattnet."
 
@@ -95,6 +102,16 @@ offer:
   # Q4-ramverket: den betalda korg-upsellen är butikens ANDRA produkt.
   # ⚠️ Den GRATIS bonusprodukten saknas — butiken har ingen billig
   # komplementprodukt än, och en sådan hittas inte på. Axel väljer den.
+  #
+  # ⛔ FYLL ALDRIG I `bilder:` HÄR med nuvarande handle (mätt 2026-09-10).
+  # `handle` pekar korsvis på butikens ANDRA huvudprodukt, och bonus.mjs
+  # kör productSet mot den befintliga produktens id med bonusens titel,
+  # beskrivning, SEO och EN variant — adventskalendern skulle skrivas över
+  # och försvinna som egen produkt. Det enda som stoppar det i dag är att
+  # `bilder` är tom (bonus.mjs kastar och steget bokförs som manuellt).
+  # En riktig bonusprodukt måste ha ett EGET handle som inte finns i butiken.
+  # Korsförsäljningen mellan de två produkterna sköts av korg-upsellen
+  # (tema.byggKorgUpsell), inte av det här blocket.
   bonus_produkt:
     titel: "Adventskalender Fiskedrag – 24 Drag"
     handle: "adventskalender-fiskedrag"

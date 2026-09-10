@@ -140,6 +140,48 @@ test('kravArbetstemaId kastar utan tema i state och läser även äldre former',
   assert.equal(lasArbetstemaId({ steg: { tema: { temaId: 'gid://shopify/OnlineStoreTheme/3' } } }), 'gid://shopify/OnlineStoreTheme/3');
 });
 
+test('tema-upload: --igen tema-upload ger ett NYTT tema, en vanlig omkörning behåller det låsta', () => {
+  // Regressionstest för ny-ops.md "Bygga om en butik som redan finns" punkt 3.
+  // Fram till 2026-09-10 återanvände steget alltid det låsta arbetstemat, så
+  // "Nytt tema, alltid" gick inte att utföra: en butik byggd på den ostädade
+  // zip:en behöll källbutikens sektionsgrupper (popup, cookieruta, bilder).
+  const steg = STEG.find((s) => s.id === 'tema-upload');
+  const medTema = () => {
+    const ctx = kontext();
+    sattArbetstemaId(ctx.butiksstate, { id: 'gid://shopify/OnlineStoreTheme/165394579692', namn: 'TackleBay v1' });
+    return ctx;
+  };
+
+  const utanIgen = steg.torrt(medTema()).join(' | ');
+  assert.match(utanIgen, /verifieras och behålls/, 'utan --igen behålls det låsta temat');
+
+  const ctxIgen = medTema();
+  ctxIgen.igen = new Set(['tema-upload']);
+  const medIgen = steg.torrt(ctxIgen).join(' | ');
+  assert.match(medIgen, /NYTT UNPUBLISHED tema/, '--igen tema-upload lovar ett nytt tema');
+  assert.doesNotMatch(medIgen, /verifieras och behålls/);
+
+  // Ett annat steg i --igen får inte råka tvinga fram ett nytt tema.
+  const ctxAnnat = medTema();
+  ctxAnnat.igen = new Set(['paket', 'frakt']);
+  assert.match(steg.torrt(ctxAnnat).join(' | '), /verifieras och behålls/);
+
+  // --nytt-tema ger samma nya tema UTAN att hoppa över de andra gröna
+  // stegen. Det är den kombination ett ombygge behöver: brand, tema,
+  // av-brandning och startsidan ska skrivas in i det NYA temat.
+  const ctxNytt = medTema();
+  ctxNytt.nyttTema = true;
+  assert.match(steg.torrt(ctxNytt).join(' | '), /NYTT UNPUBLISHED tema/);
+});
+
+test('--nytt-tema tolkas som egen flagga och rör inte --igen/--resume', () => {
+  assert.equal(tolkaArgv(['--nytt-tema']).nyttTema, true);
+  assert.equal(tolkaArgv(['--nytt-tema']).resume, false);
+  assert.equal(tolkaArgv(['--nytt-tema']).igen.size, 0, '--nytt-tema hoppar inga gröna steg');
+  assert.equal(tolkaArgv(['--dry-run']).nyttTema, false);
+  assert.deepEqual(tolkaArgv(['b.yaml', 'p.yaml', '--nytt-tema']).positioner, ['b.yaml', 'p.yaml']);
+});
+
 test('skaKoras: --resume hoppar gröna, --igen kör om och hoppar övriga gröna, utan flaggor körs allt', () => {
   const inget = new Set();
   assert.equal(skaKoras('paket', { resume: false, igen: inget, klart: true }), true);

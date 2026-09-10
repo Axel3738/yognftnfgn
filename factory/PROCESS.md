@@ -68,7 +68,9 @@ färskt — QA får aldrig bli "grön i state" (det var DryTrek-felet 2026-09-09
 
 **Flaggorna:** `--dry-run` beskriver varje steg utan nätverk (kör ändå
 anslutningens spärrar torrt) · `--resume` hoppar över gröna steg · `--igen
-<steg>` kör om exakt det steget och hoppar över övriga gröna · `--launch`
+<steg>` kör om exakt det steget och hoppar över övriga gröna · `--nytt-tema`
+tvingar `tema-upload` att packa upp zip:en som ett NYTT tema utan att röra
+vilka steg som körs (ombyggen — se regeln nedan) · `--launch`
 sätter produkterna ACTIVE + publicerade, vägrar om NÅGON produkt eller butiken
 är röd i QA, och skriver ut vilket tema VA:n ska publicera · `--store-ready`
 kör slutsteget (`store-ready.mjs`).
@@ -284,6 +286,19 @@ en människa i en webbläsare".
 Varje regel en gång, med datum. Koden bär dem; det här är varför.
 
 **Tema och state**
+- **Ett låst tema-id går inte att byta med `--igen` — ett ombygge behöver
+  `--nytt-tema`** (TackleBay 2026-09-10). `tema-upload` returnerade alltid det
+  id som stod i state, även när steget begärdes uttryckligen, och satte
+  `redanUppe: true` utan att röra zip:en. Kommandofilens punkt "Nytt tema,
+  alltid: `--igen tema-upload`" var därför omöjlig att utföra: den som följde
+  den trodde sig ha byggt om butiken på det rensade temat men hade bara lagt
+  opf-sektioner ovanpå källbutikens gamla sektionsgrupper — alltså kvar med
+  popupen, cookierutan och bilderna som ombygget skulle bli av med.
+  Nu tvingar både `--nytt-tema` och `--igen tema-upload` fram en ny uppackning.
+  **Vid ombygge: `--nytt-tema`, aldrig `--igen tema-upload`** — `--igen` hoppar
+  över alla andra gröna steg, och då skrivs brandingen och startsidan aldrig in
+  i det nya temat. Det gamla temat blir kvar i butiken; ingen kod raderar teman,
+  så räkna dem i admin då och då.
 - **Ett tema-id, låst i state** (TankGuard 2026-09-08: VA:n publicerade
   utkastet mitt i bygget, Horizon blev det opublicerade temat och ett steg
   patchade fel tema). `tema-upload` skriver `arbetstemaId`; varje temasteg
@@ -348,6 +363,24 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
 - **Svenska markörord på översatta sidor kommer ur `butik.markorer_sv`**, inte
   ur koden (KEDJAN regel 7). Saknas listan är skanningen manuell — den är
   inte grön.
+- **Ett markörord som inte står i `oversattning-sv.json` blir en permanent röd
+  punkt** (TackleBay 2026-09-10). `filtreraMarkorer` tar bara bort ord som står
+  IDENTISKT i sv- och locale-filen; ett ord som inte finns i underlaget alls
+  kan aldrig registreras av `marknad.oversattAllt` och kommer därför att synas
+  på /nb för alltid. "Lägg i varukorgen" är just ett sådant: det är temats egen
+  knapptext, inte en resurs. Följden av att sätta ett omöjligt markörord är
+  värre än att sakna det — någon plockar bort ord ur listan för att få grönt,
+  och då mäter skanningen ingenting. **Kontrollera varje ord mot
+  `output/<butik>/oversattning-sv.json` innan det läggs i listan.**
+- **Bonusprodukten får ALDRIG peka på en produkt som redan finns i butiken.**
+  `bonus.mjs` kör `productSet` mot den befintliga produktens id med bonusens
+  titel, beskrivning, SEO och EN variant — en flerproduktsbutik som sätter
+  `offer.bonus_produkt.handle` till sin andra huvudprodukt skriver alltså över
+  den. På TackleBay pekar de två produktfilerna korsvis på varandra, och det
+  enda som stoppar det är att `bilder` är tom (steget bokförs som manuellt).
+  Korsförsäljningen mellan två jämlika produkter är korg-upsellens jobb
+  (`tema.byggKorgUpsell`), aldrig `offer.bonus_produkt`. En riktig bonusprodukt
+  har ett EGET handle. *(Mätt 2026-09-10 — inte utlöst, spärren höll.)*
 - **Storefronten stryper täta anrop** (429 efter ~10 sidor/minut) —
   `kundvy-kor` pausar och väntar i stället för att rapportera rött. `429` på
   `/cart/add.js` från molnet är Cloudflares bot-utmaning, inte strypning —
