@@ -197,8 +197,37 @@ som genereras per bygge).
   dokumentet är VA:ns.
 - Säg ALDRIG "klart" utan tre kontroller mot kundens riktiga vy
   (markörskanning + regressionstest + visuell mobilkontroll).
-- Publicerat tema är API-låst — bygg alltid nästa version som ny klon,
-  Axel publicerar. Räkna med det i stegordningen.
+- **Publicerat tema går att skriva i — men bara med en custom app-token.**
+  Mätt 2026-09-10 på HeimGuard: `themeFilesUpsert` mot det PUBLICERADE temat
+  (`role: MAIN`) gick igenom med noll `userErrors`, filen lästes tillbaka
+  identisk, och butiken serverade den nya på direkten. Ingen klon, ingen
+  publicering, inget Judge.me-tapp.
+  ⚠️ **Shopify-MCP:n kan det INTE** — den blockerar temaskrivningar mot
+  live/MAIN och temapublicering med flit. Går du via connectorn måste du
+  fortfarande bygga en klon som Axel publicerar. Välj vägen efter vad du har.
+  Tidigare stod här "publicerat tema är API-låst" rakt av. Det stämde för
+  MCP-vägen, inte för token-vägen.
+- **`SHOPIFY_TOKEN_*` (`atkn_…`) ger 401 mot Admin API** — det är en
+  CLI-token, inte en Admin-token. Mint en färsk `shpat_` per körning ur
+  butikens custom app i stället:
+  ```
+  POST https://<shop>/admin/oauth/access_token
+  {"client_id":…,"client_secret":…,"grant_type":"client_credentials"}
+  ```
+  Nycklarna heter `SHOPIFY_SHOP_<suffix>` / `SHOPIFY_CLIENT_ID_<suffix>` /
+  `SHOPIFY_CLIENT_SECRET_<suffix>`. HeimGuard = `pzjagy_mz`,
+  **TankGuard = de OSUFFIXADE** (`SHOPIFY_SHOP` = y1sj1i-3d). Samma recept
+  som `tools/shopify-fix-compareat.mjs` och `docs/temu-launch-flow.md`.
+- **Säkerhetskopiera temafilen före varje skrivning mot live**, och jämför
+  den mot den version fabriken tror att butiken kör. Skiljer de sig har
+  någon handredigerat i butiken, och då skriver du över deras arbete.
+- **Testa aldrig kundflödet i hög takt mot en live-butik.** Cloudflare
+  svarar 429 "Verifying your connection" efter ett tiotal snabba
+  varukorgsanrop, och då ser en fungerande kassa trasig ut: `/discount/`
+  faller, koden fäster inte, och reservvägen skickar kunden till /cart.
+  *(2026-09-10: ett "misslyckat" TankGuard-test på /nb var enbart det här.)*
+  Vila några minuter mellan körningarna och läs alltid HTTP-statusen innan
+  du dömer ut butiken.
 - **Appinbäddningar bor i settings_data.json och dör i varje klon.**
   Judge.me aktiveras som app embed (`current.blocks` → judgeme_core) — den
   raden finns bara i temat den aktiverades i. Varje ny klon utan raden =
@@ -206,8 +235,15 @@ som genereras per bygge).
   gånger). Regel: läs `current.blocks` ur LIVE-temats settings_data och
   kopiera in i varje ny klons settings_data INNAN den lämnas för publicering.
 - API:t kan inte (custom app-token; Shopify-MCP:n är FÖRBJUDEN i /ny-ops):
-  skapa/publicera teman mot live, shop-mejl, checkout-branding
+  publicera teman mot live, shop-mejl, checkout-branding
   (Plus), shopPolicyUpdate (scope), Meta-sidor, byta primärspråk.
+  *(Att SKRIVA filer i ett publicerat tema går däremot — se ovan.)*
+- **Paketkodernas minimiantal räknar med bonusprodukten.** TankGuards
+  `PAKET2` kräver `min 4 st` fast paketet heter 2-pack: kunden får 2 tankskydd
+  + 2 kranskydd på köpet, alltså fyra rader i vagnen. HeimGuards `PAKET2`
+  kräver `min 2 st` (bonusen är 1 skyltpaket, och kravet räknar bara kameror).
+  Mätt 2026-09-10. Ändra aldrig ett minimiantal utan att räkna bonusraderna
+  först — sätts det för högt faller rabatten tyst och kunden betalar fullpris.
 
 ## ✅ LÖST 2026-09-09 — varukorgen redirectade i stället för att poppa upp
 
@@ -274,6 +310,17 @@ dem byte för byte så zip:en inte kan halka efter.
 | tankguard.se/nb | redirect · 4+4 st · 2 175 kr | ✅ lådan glider in · 2 st · 799 kr |
 
 1-pack (utan rabattkod) testades separat på båda butikerna: lådan glider in.
+
+### Utrullat till live 2026-09-10
+
+| Butik | Tema | Väg | Läge |
+|---|---|---|---|
+| HeimGuard `pzjagy-mz` | `204086116700` HeimGuard – CRO v10 (MAIN) | `themeFilesUpsert` direkt mot publicerat tema | ✅ testad SE + /nb + 1-pack |
+| TankGuard `y1sj1i-3d` | `198130270552` TankGuard – CRO v1 (MAIN) | Axel klistrade in filen i temaeditorn | ✅ testad SE + /nb |
+
+Butikerna körde originalfilen byte för byte före bytet (jämförd mot
+`ops-tema.zip` som den såg ut i commit `9ad60df`), så ingen handredigering
+skrevs över. Säkerhetskopiorna togs före skrivningen.
 
 ### `cart_type: 'drawer'` sätts ändå
 
