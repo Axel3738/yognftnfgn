@@ -547,7 +547,9 @@ nyare version finns: bygg om från dagens `fynd.json`, skriv aldrig över med g�
 `produktjakt/` finns bara där. Undantaget från nattrutinsregeln ovan är möjligt just för att rutinen
 är bunden till en **fast session** — dess prompt börjar därför alltid med `git fetch` + `git checkout -B`
 mot grenen, eftersom en omstartad container klonar `main` och då saknar hela mappen. Trigger
-`trig_01AnGMfca7s1thCUqNbMSRoR`, fast session `session_016jBJVGuyny8S3j2XPSM26Z`. Når koden `main`:
+`trig_01ER8txR7LN7QegEuARvzue6` (gjord om 2026-09-10 — `update_trigger` kan inte byta prompt på en
+rutin bunden till en annan session, så det är delete + create; kolla `list_triggers` först),
+fast session `session_016jBJVGuyny8S3j2XPSM26Z`. Når koden `main`:
 byt tillbaka checkouten och pushen till `main` i kommandofilen och stryk den här raden.
 
 ### `commission/` — redigerarnas commission
