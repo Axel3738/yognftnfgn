@@ -50,3 +50,17 @@ hämtning eller `WebFetch` får ut specifikationer eller säljtext (mätt 2026-0
 till ~1 hämtning/timme. Mekanismen måste därför bedömas på det vi faktiskt får:
 **produktbilderna** (de visar konstruktionen), titeln och `sald`-talet ur sökträffen.
 Bygg inte en bedömning som förutsätter beskrivningstext vi inte kan hämta.
+
+## Axels svar 2026-09-10: "sett innan" är hans första filter
+
+> "Jag går väldigt mycket på utefter om man sett produkten innan eller inte."
+> "De där ramperna till husbil har varenda campare sedan innan, jag har jobbat på camping."
+
+Två olika saker, och båda är kill:
+1. **Ägaren har redan en.** Uppkörningsramper är standardutrustning i varje husvagn — man
+   köper dem med vagnen. Rätt datum, rätt objekt, rätt pris, och ändå noll. Det är K0/K4.
+2. **Axel har sett den förut.** Har han sett varan i flödet eller på en hylla är den inte
+   ny i svenskt flöde, och kategorinyhet är det som bär (vinnar-DNA punkt G).
+
+Axels branschkunskap (campingen) är en källa rutinen inte har. När han säger "alla har
+den" är det facit — skriv ner det på objektraden i `objekt.json` så det aldrig söks igen.

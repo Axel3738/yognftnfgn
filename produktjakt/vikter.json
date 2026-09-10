@@ -1,10 +1,10 @@
 {
- "datum": "2026-09-09",
- "antal_svar": 9,
+ "datum": "2026-09-10",
+ "antal_svar": 10,
  "per_dom": {
   "ja": 3,
   "kanske": 4,
-  "nej": 2
+  "nej": 3
  },
  "antal_utfall": 0,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -25,8 +25,8 @@
    "husvagn och husbil": {
     "ja": 1,
     "kanske": 0,
-    "nej": 0,
-    "score": 0.667
+    "nej": 1,
+    "score": 0.5
    },
    "ved och eldning": {
     "ja": 0,
@@ -86,6 +86,16 @@
    "nej": 1
   },
   "Tråkig": {
+   "ja": 0,
+   "kanske": 0,
+   "nej": 1
+  },
+  "Har redan": {
+   "ja": 0,
+   "kanske": 0,
+   "nej": 1
+  },
+  "Nöjd med det han har": {
    "ja": 0,
    "kanske": 0,
    "nej": 1
