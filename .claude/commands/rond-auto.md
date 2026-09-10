@@ -289,6 +289,28 @@ Listan är sorterad med störst spend först.
 
 För varje rad i listan, i ordning:
 
+0. **Har produkten redan en OPS-butik?** Läs kampanjerna i OPS-kontot
+   **MagiBorsten DK `915422744950975`** en gång per körning
+   (`ads_get_ad_entities`, `level: "campaign"`, `date_preset: "maximum"`).
+   OPS-kampanjerna heter `<BRAND>_SE_<produkt>` och `<BRAND>_NO_<produkt>`.
+   Kända brands 2026-09-10: **HEIMGUARD** (Övervakningskameran),
+   **TANKGUARD** (IBC-Tanköverdraget), **DRYTREK** (Damasker Vandring),
+   **ADVENTLANERACING** (Adventskalendern Racingbilar).
+
+   Ser du en OPS-kampanj för produkten: posta **inget** larm. Skriv i stället
+   en `OPS_FINNS_REDAN`-rad i budgetloggen med brandet och OPS-kampanjens namn
+   som motivering, och nämn det på en rad i leveransen. Då tystnar produkten
+   för gott och nästa körning behöver inte läsa om det.
+
+   ⚠️ **Är du osäker på om en kampanj hör till produkten: larma, tysta inte.**
+   Ett larm för mycket kostar Axel tio sekunder. Ett larm som uteblir kostar en
+   butik som aldrig byggs, och ingen märker det.
+
+   ⚠️ **Kontot är INTE bara OPS.** Bäverbutikens gamla danska kampanjer ligger
+   där också (`Motorhöljet DK`, `Strandtofflorna DK`, `Fiskespöhållaren DK` …).
+   De saknar `<BRAND>_SE_`/`<BRAND>_NO_`-formen och är **inga** OPS-butiker.
+   Läs formen på namnet, aldrig bara produktnamnet.
+
 1. **Läs kampanjens status.** Hämta den med `ads_get_ad_entities` direkt före
    larmet. Är `effective_status` något annat än `ACTIVE`: hoppa över, och
    skriv en rad i leveransen om varför. **Att ronden själv pausade kampanjen
@@ -410,6 +432,8 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
 - [ ] Listan hämtad ur `startskottsbehov` — inte ur `annonsbehov`
+- [ ] OPS-kontot `915422744950975` avläst; produkter som redan har en butik
+      tystade med `OPS_FINNS_REDAN` i stället för att larmas
 - [ ] Varje rad i listan har fått ett startskott i `#ops-startskott` — eller
       exakt redovisat varför inte (kampanjen inte ACTIVE, källänk saknas)
 - [ ] Varje startskott loggat som `OPS_STARTSKOTT` och pushat
