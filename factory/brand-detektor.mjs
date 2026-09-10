@@ -403,7 +403,10 @@ async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK, tidigare = {}
     const nyckel = nycklar.get(a.id);
     const post = { typ: m.typ, filer: [] };
     const gammal = tidigare[nyckel];
-    if (gammal && !gammal.fel && gammal.ocr_ok && (gammal.filer ?? []).length > 0 && gammal.filer.every((f) => existsSync(f.fil))) {
+    // Den sparade OCR:en bär bara filNAMN (inte sökvägar) och inget ocr_ok —
+    // en felfri post med lästa frames är värdet vi vill ha; filerna behövs
+    // bara för att OCR:a om, och det gör vi inte.
+    if (gammal && !gammal.fel && (gammal.filer ?? []).length > 0 && gammal.filer.some((f) => Array.isArray(f.texter))) {
       ut[nyckel] = gammal;
       console.log(`  = ${nyckel} (${gammal.typ}) — återanvänd OCR, ${gammal.filer.length} fil(er)`);
       continue;
