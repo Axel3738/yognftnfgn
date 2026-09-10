@@ -1,0 +1,1396 @@
+{
+ "produkt": "adventskalender-racingbilar",
+ "datum": "2026-09-10",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16516660691293",
+  "produkt_handle": "adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+  "produkt_url": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": "Adventskalender",
+  "kampanj_id": "120250134672020291",
+  "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+  "no_kampanjmonster": "Adventskalender NO",
+  "srt_slug": [
+   "adventskalender"
+  ],
+  "copybyten": [
+   {
+    "fran": "✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka",
+    "till": "✅ 14 dagars ångerrätt"
+   },
+   {
+    "fran": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+    "till": "14 dagars ångerrätt enligt svensk lag."
+   },
+   {
+    "fran": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"",
+    "till": "⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\""
+   },
+   {
+    "fran": "– Verifierad kund, 34 år",
+    "till": "– Johan, en av 10 recensioner med fem stjärnor"
+   },
+   {
+    "fran": "Han sprang ut ur sängen varje morgon",
+    "till": "Sonen längtar till varje dag"
+   },
+   {
+    "fran": "✅ 30 dagers åpent kjøp",
+    "till": "✅ 14 dagers angrerett"
+   },
+   {
+    "fran": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
+    "till": "Sjokoladen tom dag 2 – denne varer til jul"
+   },
+   {
+    "fran": "24 biler i en gaveeske, klar til jul – 439 kr",
+    "till": "24 biler i en gaveeske, klar til jul"
+   },
+   {
+    "fran": "24 ekte biler bak lukene – kun 439 kr",
+    "till": "24 ekte biler bak lukene"
+   }
+  ],
+  "marknad": "SE",
+  "kontonamn": "MagiBorsten, Bäverbutiken SE"
+ },
+ "kallor": {
+  "SE": {
+   "annonskonto": "1867947880635861",
+   "kontonamn": "MagiBorsten, Bäverbutiken SE",
+   "datum": "2026-09-10",
+   "annonser": 16
+  }
+ },
+ "annonser": [
+  {
+   "annons": "Adventskalender_CS_1_H1",
+   "id": "120250134675690291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | CS | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_CS_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 52
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbil",
+      "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "649 kr → 499 kr – bara idag",
+      "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lagret är begränsat och priset gäller inte länge.",
+      "fel": "lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Beställ innan den är slut.",
+      "fel": "lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     }
+    ]
+   },
+   "dom": "ren",
+   "attgöra": [
+    "anm. brådska i copy: lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i tal: lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i tal: lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "649 kr",
+      "499 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbil",
+     "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "649 kr → 499 kr – bara idag",
+     "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lagret är begränsat och priset gäller inte länge.",
+     "fel": "lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Beställ innan den är slut.",
+     "fel": "lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    }
+   ],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_CS_2_1",
+   "id": "120250134675940291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | CS | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbil",
+      "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "649 kr → 499 kr – bara idag",
+      "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     }
+    ]
+   },
+   "dom": "ren",
+   "attgöra": [
+    "anm. brådska i copy: lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "649 kr",
+      "499 kr",
+      "649kr",
+      "499kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbil",
+     "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "649 kr → 499 kr – bara idag",
+     "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    }
+   ],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_CS_2_H1",
+   "id": "120250134677420291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | CS | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_CS_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 46
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbil",
+      "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "649 kr → 499 kr – bara idag",
+      "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sista chansen innan",
+      "fel": "lovar brådska/lager \"sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Sista chansen innan",
+      "fel": "lovar brådska/lager \"Sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "lagret tar slut.",
+      "fel": "lovar brådska/lager \"lagret tar slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "lagret tar slut.",
+      "fel": "lovar brådska/lager \"lagret tar slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Sista chansen innan lagret tar slut.",
+      "fel": "lovar brådska/lager \"Sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lagret är begränsat och priset gäller inte länge.",
+      "fel": "lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Beställ innan den är slut",
+      "fel": "lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     }
+    ]
+   },
+   "dom": "ren",
+   "attgöra": [
+    "anm. brådska i copy: lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i inbränd: lovar brådska/lager \"sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i inbränd: lovar brådska/lager \"Sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i inbränd: lovar brådska/lager \"lagret tar slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i tal: lovar brådska/lager \"Sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i tal: lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i tal: lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "649 kr",
+      "499 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbil",
+     "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "649 kr → 499 kr – bara idag",
+     "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sista chansen innan",
+     "fel": "lovar brådska/lager \"sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Sista chansen innan",
+     "fel": "lovar brådska/lager \"Sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "lagret tar slut.",
+     "fel": "lovar brådska/lager \"lagret tar slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "lagret tar slut.",
+     "fel": "lovar brådska/lager \"lagret tar slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Sista chansen innan lagret tar slut.",
+     "fel": "lovar brådska/lager \"Sista chansen\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lagret är begränsat och priset gäller inte länge.",
+     "fel": "lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Beställ innan den är slut",
+     "fel": "lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    }
+   ],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_CS_3_H1",
+   "id": "120250134679560291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | CS | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_CS_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 55
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbil",
+      "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "649 kr → 499 kr – bara idag",
+      "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Bara i dag, spara hundrafemtio kronor på julens roligaste kalender.",
+      "fel": "lovar brådska/lager \"Bara i dag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lagret är begränsat och priset gäller inte länge.",
+      "fel": "lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Beställ innan den är slut.",
+      "fel": "lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+      "anmarkning": true
+     }
+    ]
+   },
+   "dom": "ren",
+   "attgöra": [
+    "anm. brådska i copy: lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i tal: lovar brådska/lager \"Bara i dag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i tal: lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
+    "anm. brådska i tal: lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "649 kr",
+      "499 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbil",
+     "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "649 kr → 499 kr – bara idag",
+     "fel": "lovar brådska/lager \"bara idag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Bara i dag, spara hundrafemtio kronor på julens roligaste kalender.",
+     "fel": "lovar brådska/lager \"Bara i dag\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lagret är begränsat och priset gäller inte länge.",
+     "fel": "lovar brådska/lager \"Lagret är begränsat\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Beställ innan den är slut.",
+     "fel": "lovar brådska/lager \"innan den är slut\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
+     "anmarkning": true
+    }
+   ],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_GT_1_H1",
+   "id": "120250134681590291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | GT | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_GT_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 77
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_GT_2_1",
+   "id": "120250134684090291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | GT | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_GT_2_H1",
+   "id": "120250134686490291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | GT | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_GT_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 73
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_GT_3_H1",
+   "id": "120250134688540291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | GT | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_GT_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 76
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_PD_1_H1",
+   "id": "120250134691340291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_PD_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 85
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "24 dagar, 24 bilar,"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_PD_2_1",
+   "id": "120250134691780291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_PD_2_H1",
+   "id": "120250134694770291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_PD_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 92
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "24 dagar, 24 bilar,"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_PD_3_H1",
+   "id": "120250134697380291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_PD_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 83
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "24 dagar, 24 bilar,"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_SP_1_H1",
+   "id": "120250134699510291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | SP | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_SP_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 69
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "recension",
+      "yta": "copy",
+      "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+      "fel": "citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "recension i copy: citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp – nöjd eller p"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "Verifierad kund"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "recension",
+     "yta": "copy",
+     "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+     "fel": "citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_SP_2_1",
+   "id": "120250134700150291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | SP | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "recension",
+      "yta": "copy",
+      "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+      "fel": "citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "recension",
+      "yta": "bild",
+      "rad": "★★★★★",
+      "fel": "citat attribuerat \"★★★★★\" som inte finns bland butikens 10 recensioner — påhittad kund"
+     },
+     {
+      "regel": "recension",
+      "yta": "bild",
+      "rad": "morgon for att ppna enlucka!\"-Verifierad kund,34 ar",
+      "fel": "citat attribuerat \"Verifierad kund\" som inte finns bland butikens 10 recensioner — påhittad kund"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "recension i copy: citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund",
+    "recension i bild: citat attribuerat \"★★★★★\" som inte finns bland butikens 10 recensioner — påhittad kund",
+    "recension i bild: citat attribuerat \"Verifierad kund\" som inte finns bland butikens 10 recensioner — påhittad kund"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp – nöjd eller p"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "Verifierad kund"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "recension",
+     "yta": "copy",
+     "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+     "fel": "citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "recension",
+     "yta": "bild",
+     "rad": "★★★★★",
+     "fel": "citat attribuerat \"★★★★★\" som inte finns bland butikens 10 recensioner — påhittad kund"
+    },
+    {
+     "regel": "recension",
+     "yta": "bild",
+     "rad": "morgon for att ppna enlucka!\"-Verifierad kund,34 ar",
+     "fel": "citat attribuerat \"Verifierad kund\" som inte finns bland butikens 10 recensioner — påhittad kund"
+    }
+   ],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_SP_2_H1",
+   "id": "120250134703270291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | SP | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_SP_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 70
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "recension",
+      "yta": "copy",
+      "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+      "fel": "citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "recension i copy: citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp – nöjd eller p"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "Verifierad kund"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "recension",
+     "yta": "copy",
+     "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+     "fel": "citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [],
+   "marknad": "SE"
+  },
+  {
+   "annons": "Adventskalender_SP_3_H1",
+   "id": "120250134705900291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Adventskalender Racingbilar | SP | 2026-09-08",
+   "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_SP_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 72
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "recension",
+      "yta": "copy",
+      "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+      "fel": "citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "recension i copy: citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp – nöjd eller p"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "Verifierad kund"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "recension",
+     "yta": "copy",
+     "rad": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga ra",
+     "fel": "citat attribuerat \"⭐⭐⭐⭐⭐\" som inte finns bland butikens 10 recensioner — påhittad kund"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [],
+   "marknad": "SE"
+  }
+ ]
+}

@@ -205,6 +205,19 @@ test('en annons med villkorsfel blir ALDRIG ren', () => {
   assert.equal(klassa({ ...alltRent, villkorsfel: [] }), 'ren');
 });
 
+test('en anmärkning (brådska) fäller aldrig domen — Axels regel 2026-09-10', () => {
+  // AdventLane 2026-09-10: tre CS-videor säger "Lagret är begränsat och priset
+  // gäller inte länge" i talet. Brådska står inte i Axels lista (Bäverbutiken,
+  // fel pris, fel villkor) — annonsen kopieras orörd, men fyndet ska synas.
+  const anm = [{ regel: 'brådska', yta: 'tal', rad: 'Lagret är begränsat', fel: 'lovar brådska', anmarkning: true }];
+  assert.equal(klassa({ ...alltRent, villkorsfel: anm }), 'ren');
+  assert.deepEqual(attGöra({ ...alltRent, villkorsfel: anm }),
+    ['anm. brådska i tal: lovar brådska (kopieras orörd — Axels regel 2026-09-10)']);
+  // Ett riktigt fel bredvid anmärkningen fäller fortfarande.
+  const fel = [...anm, { regel: 'öppet köp', yta: 'copy', rad: '30 dagars öppet köp', fel: 'säger 30 dagar — butiken har 14' }];
+  assert.equal(klassa({ ...alltRent, villkorsfel: fel }), 'bara-copy');
+});
+
 test('ytan där villkorsfelet står bestämmer vad det kostar att rätta', () => {
   const påTal = [{ regel: 'fraktgräns', yta: 'tal', rad: 'fri frakt över trehundra kronor', fel: '…' }];
   const påInbränd = [{ regel: 'öppet köp', yta: 'inbränd', rad: '30 dagars öppet köp', fel: '…' }];

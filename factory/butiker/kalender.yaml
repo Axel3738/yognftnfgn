@@ -15,6 +15,10 @@ butik:
   orgnr: "559576-2401"
   adress: "Sjöhed 160, 442 74 Harestad"
   supportmail: "hello@adventlane.se"
+  # Domänen kunden landar på — annonslänkarna byggs på den (factory/vagkonfig.mjs).
+  # ⚠️ Inte kopplad än (2026-09-10): butiken svarar bara på ikf0tu-5e.myshopify.com.
+  # Måste vara kopplad före "Launch: adventlane" (/ny-annonser steg 11b).
+  doman: "adventlane.se"
   land: SE
   huvudmarknad: Sverige
   # SE + NO är standard i varje OPS (Axel 2026-09-08). SEK tills NOK slås på i

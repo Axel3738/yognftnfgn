@@ -205,6 +205,36 @@ kalla:
   # som market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_<rest>.orig.srt
   srt_slug:
     - "adventskalender"
+  # Radbyten i copyn för /ny-annonser (factory/vagkonfig.mjs). Axels regel
+  # 2026-09-10: källans copy kopieras ORDAGRANT; bara rader som brand-detektorn
+  # dömt som fel (öppet köp, påhittad kund, NOK-pris) byts, radvis, med raden
+  # här. En rad som inte står här och ändå är fel gör att annonsen VÄNTAR —
+  # den skrivs aldrig om fritt. Fälten: message-rad, headline eller description.
+  copybyten:
+    # SE — "30 dagars öppet köp" är källans villkor, butiken har 14 dagars ångerrätt.
+    - fran: "✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka"
+      till: "✅ 14 dagars ångerrätt"
+    - fran: "30 dagars öppet köp – nöjd eller pengarna tillbaka."
+      till: "14 dagars ångerrätt enligt svensk lag."
+    # SE — påhittat citat (finns inte bland butikens 10 recensioner) → Johans riktiga.
+    # (Enkla citattecken runt raden: yaml.mjs klarar inte \" inuti dubbla.)
+    - fran: '⭐⭐⭐⭐⭐ "Han sprang ut ur sängen varje morgon för att öppna en lucka!"'
+      till: '⭐⭐⭐⭐⭐ "Sonen längtar till varje dag."'
+    - fran: "– Verifierad kund, 34 år"
+      till: "– Johan, en av 10 recensioner med fem stjärnor"
+    - fran: "Han sprang ut ur sängen varje morgon"
+      till: "Sonen längtar till varje dag"
+    # NO — samma villkor på norska.
+    - fran: "✅ 30 dagers åpent kjøp"
+      till: "✅ 14 dagers angrerett"
+    # NO — NOK-priset (439 kr) finns inte i butiken (NO-marknaden säljer i SEK
+    # tills NOK-nivåer sätts). Priset tas bort ur beskrivningen, resten står.
+    - fran: "Sjokoladen tom dag 2 – denne varer til jul, 439 kr"
+      till: "Sjokoladen tom dag 2 – denne varer til jul"
+    - fran: "24 biler i en gaveeske, klar til jul – 439 kr"
+      till: "24 biler i en gaveeske, klar til jul"
+    - fran: "24 ekte biler bak lukene – kun 439 kr"
+      till: "24 ekte biler bak lukene"
 kallor:
   drive_mapp: ""
 

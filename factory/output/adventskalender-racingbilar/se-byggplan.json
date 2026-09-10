@@ -1,0 +1,193 @@
+{
+  "produkt": "adventskalender-racingbilar",
+  "marknad": "SE",
+  "datum": "2026-09-10",
+  "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+  "link": "https://adventlane.se/products/adventskalender-racingbilar",
+  "budget_kr_per_dag": 1000,
+  "byggs": [
+    {
+      "namn": "AdventLaneRacing_PD_2_1",
+      "kalla": "Adventskalender_PD_2_1",
+      "typ": "bild",
+      "koncept": "PD",
+      "dom": "ren",
+      "spend": 1136,
+      "kop": 7,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_GT_1_H1",
+      "kalla": "Adventskalender_GT_1_H1",
+      "typ": "video",
+      "koncept": "GT",
+      "dom": "ren",
+      "spend": 478,
+      "kop": 2,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_H1",
+      "kalla": "Adventskalender_PD_2_H1",
+      "typ": "video",
+      "koncept": "PD",
+      "dom": "ren",
+      "spend": 476,
+      "kop": 3,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_GT_2_1",
+      "kalla": "Adventskalender_GT_2_1",
+      "typ": "bild",
+      "koncept": "GT",
+      "dom": "ren",
+      "spend": 57,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_CS_2_1",
+      "kalla": "Adventskalender_CS_2_1",
+      "typ": "bild",
+      "koncept": "CS",
+      "dom": "ren",
+      "spend": 48,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_GT_2_H1",
+      "kalla": "Adventskalender_GT_2_H1",
+      "typ": "video",
+      "koncept": "GT",
+      "dom": "ren",
+      "spend": 39,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_PD_1_H1",
+      "kalla": "Adventskalender_PD_1_H1",
+      "typ": "video",
+      "koncept": "PD",
+      "dom": "ren",
+      "spend": 28,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_SP_2_1",
+      "kalla": "Adventskalender_SP_2_1",
+      "typ": "bild",
+      "koncept": "SP",
+      "dom": "bara-copy",
+      "spend": 25,
+      "kop": 0,
+      "andringar": [
+        "bild: omskriven (bildfix) — recension",
+        "copy: message: \"✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\" → \"✅ 14 dagars ångerrätt\"",
+        "copy: description: \"30 dagars öppet köp – nöjd eller pengarna tillbaka.\" → \"14 dagars ångerrätt enligt svensk lag.\"",
+        "copy: message: \"⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\" → \"⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\"",
+        "copy: message: \"– Verifierad kund, 34 år\" → \"– Johan, en av 10 recensioner med fem stjärnor\"",
+        "copy: headline: \"Han sprang ut ur sängen varje morgon\" → \"Sonen längtar till varje dag\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_PD_3_H1",
+      "kalla": "Adventskalender_PD_3_H1",
+      "typ": "video",
+      "koncept": "PD",
+      "dom": "ren",
+      "spend": 20,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_GT_3_H1",
+      "kalla": "Adventskalender_GT_3_H1",
+      "typ": "video",
+      "koncept": "GT",
+      "dom": "ren",
+      "spend": 17,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_CS_3_H1",
+      "kalla": "Adventskalender_CS_3_H1",
+      "typ": "video",
+      "koncept": "CS",
+      "dom": "ren",
+      "spend": 7,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_SP_1_H1",
+      "kalla": "Adventskalender_SP_1_H1",
+      "typ": "video",
+      "koncept": "SP",
+      "dom": "bara-copy",
+      "spend": 5,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\" → \"✅ 14 dagars ångerrätt\"",
+        "copy: message: \"⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\" → \"⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\"",
+        "copy: message: \"– Verifierad kund, 34 år\" → \"– Johan, en av 10 recensioner med fem stjärnor\"",
+        "copy: headline: \"Han sprang ut ur sängen varje morgon\" → \"Sonen längtar till varje dag\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_CS_1_H1",
+      "kalla": "Adventskalender_CS_1_H1",
+      "typ": "video",
+      "koncept": "CS",
+      "dom": "ren",
+      "spend": 5,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_CS_2_H1",
+      "kalla": "Adventskalender_CS_2_H1",
+      "typ": "video",
+      "koncept": "CS",
+      "dom": "ren",
+      "spend": 4,
+      "kop": 0,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_SP_3_H1",
+      "kalla": "Adventskalender_SP_3_H1",
+      "typ": "video",
+      "koncept": "SP",
+      "dom": "bara-copy",
+      "spend": 2,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\" → \"✅ 14 dagars ångerrätt\"",
+        "copy: message: \"⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\" → \"⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\"",
+        "copy: message: \"– Verifierad kund, 34 år\" → \"– Johan, en av 10 recensioner med fem stjärnor\"",
+        "copy: headline: \"Han sprang ut ur sängen varje morgon\" → \"Sonen längtar till varje dag\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_SP_2_H1",
+      "kalla": "Adventskalender_SP_2_H1",
+      "typ": "video",
+      "koncept": "SP",
+      "dom": "bara-copy",
+      "spend": 1,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\" → \"✅ 14 dagars ångerrätt\"",
+        "copy: message: \"⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\" → \"⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\"",
+        "copy: message: \"– Verifierad kund, 34 år\" → \"– Johan, en av 10 recensioner med fem stjärnor\"",
+        "copy: headline: \"Han sprang ut ur sängen varje morgon\" → \"Sonen längtar till varje dag\""
+      ]
+    }
+  ],
+  "vantar": []
+}

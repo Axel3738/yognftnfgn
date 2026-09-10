@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { skannaVillkor } from '../villkorsskanning.mjs';
+import { skannaVillkor, baraFel } from '../villkorsskanning.mjs';
 
 // HeimGuards riktiga villkor, ur factory/butiker/hemvakten.yaml.
 const BUTIK = {
@@ -71,9 +71,59 @@ test('brådska och lagerpåståenden fångas på alla ytor — en OPS-butik lova
     assert.equal(f.length, 1, `${yta}: ${text}`);
     assert.equal(f[0].regel, 'brådska');
     assert.equal(f[0].yta, yta);
+    // …men som ANMÄRKNING. Axels regel 2026-09-10: bara Bäverbutiken, fel pris
+    // och fel villkor ändrar en annons — brådska kopieras orörd, och ett öga
+    // ska se den utan att domen tvingar fram omdubb. baraFel() sorterar bort den.
+    assert.equal(f[0].anmarkning, true);
+    assert.deepEqual(baraFel(f), []);
   }
   // Priset i sig är inget brådskepåstående.
   assert.deepEqual(skannaVillkor([{ yta: 'copy', text: '649 kr → 499 kr, spara 150 kr' }], BUTIK), []);
+});
+
+test('priset jämförs mot butikens egen prislista — NOK-tal i norska källannonser är fel pris', () => {
+  const B = { ...BUTIK, priser: [499, 649] };
+  const pris = (texter, butik = B) => skannaVillkor(texter, butik).filter((f) => f.regel === 'pris');
+  // Rätt priser: inget fynd, oavsett form (mellanslag, pil, OCR utan mellanslag).
+  assert.deepEqual(pris([{ yta: 'copy', text: '649 kr → 499 kr' }]), []);
+  assert.deepEqual(pris([{ yta: 'inbränd', text: '649kr→499kr' }]), []);
+  // Norska källans NOK-tal: båda talen är fel, var för sig, på rätt yta.
+  const f = pris([{ yta: 'tal', text: 'Fra 579 kr ned til 439 kr.' }]);
+  assert.equal(f.length, 2);
+  assert.equal(f[0].yta, 'tal');
+  assert.match(f[0].fel, /579 kr — butiken tar 499 \/ 649 kr/);
+  assert.match(f[1].fel, /439 kr/);
+  assert.equal(pris([{ yta: 'inbränd', text: '579kr→439kr' }]).length, 2);
+  // Belopp som inte är priser jämförs inte: fraktgräns, spara, rabatt.
+  assert.deepEqual(pris([{ yta: 'copy', text: 'Fri frakt över 300 kr' }]), []);
+  assert.deepEqual(pris([{ yta: 'copy', text: 'spara 150 kr i dag' }]), []);
+  assert.deepEqual(pris([{ yta: 'copy', text: 'Spar 140 kr' }]), []);
+  // Ett belopp under halva lägsta priset är aldrig ett pris — OCR:en ser bara
+  // "150 kronor på julens" när "spara" står i föregående caption-frame.
+  assert.deepEqual(pris([{ yta: 'inbränd', text: '150 kronor pa julens' }]), []);
+  // …men 300 kr utan "över" framför är nära nog att vara ett fel pris.
+  assert.equal(pris([{ yta: 'inbränd', text: 'Nu 300 kr' }]).length, 1);
+  // Utan prislista görs ingen jämförelse alls — hellre tyst än påhittad.
+  assert.deepEqual(pris([{ yta: 'copy', text: 'kun 439 kr' }], BUTIK), []);
+});
+
+test('ett citat märkt "Verifierad kund" måste finnas bland butikens egna recensioner', () => {
+  const B = { ...BUTIK, recensioner: ['Superkul. En enkel och rolig adventskalender. Sonen längtar till varje dag.'] };
+  const rec = (texter, butik = B) => skannaVillkor(texter, butik).filter((f) => f.regel === 'recension');
+  // Påhittat citat (AdventLane SP_2_1, 2026-09-10): fel, på rätt yta.
+  const f = rec([{ yta: 'bild', text: '"Han sprang ut ur sängen varje morgon för att öppna en lucka!" – Verifierad kund, 34 år' }]);
+  assert.equal(f.length, 1);
+  assert.equal(f[0].yta, 'bild');
+  assert.match(f[0].fel, /påhittad kund/);
+  // Norska formen.
+  assert.equal(rec([{ yta: 'bild', text: 'han hoppet ut av sengen – Verifisert kunde, 34 år' }]).length, 1);
+  // Ett riktigt citat ur butikens recensioner: inget fel, även med OCR-brus.
+  assert.deepEqual(rec([{ yta: 'bild', text: '"Sonen langtar till varje dag" - Verifierad kund' }]), []);
+  // Stjärnraden i copyn är också ett citat — attributionen står på raden under.
+  assert.equal(rec([{ yta: 'copy', text: '⭐⭐⭐⭐⭐ "Han sprang ut ur sängen varje morgon för att öppna en lucka!"' }]).length, 1);
+  assert.deepEqual(rec([{ yta: 'copy', text: '⭐⭐⭐⭐⭐ "Sonen längtar till varje dag."' }]), []);
+  // Utan recensionslista görs ingen jämförelse.
+  assert.deepEqual(rec([{ yta: 'copy', text: '– Verifierad kund, 34 år' }], BUTIK), []);
 });
 
 test('tomma texter ger inga fynd', () => {

@@ -40,7 +40,8 @@ import { fileURLToPath } from 'node:url';
 
 import { lasYaml } from './yaml.mjs';
 import { sökBrand } from './brandord.mjs';
-import { skannaVillkor } from './villkorsskanning.mjs';
+import { skannaVillkor, baraFel } from './villkorsskanning.mjs';
+import { KONTON } from './kallannonser.mjs';
 import { säkerställProxy, api, alla } from '../tools/meta-lib.mjs';
 
 const ROT = resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -123,13 +124,49 @@ export function läsButik(produktId) {
   return konfig && typeof konfig === 'object' ? konfig : null;
 }
 
+/** Alla priser butiken faktiskt tar för produkten: pris, jämförpris och
+ *  paketnivåernas priser, lästa rekursivt ur produktfilen. 0 räknas inte
+ *  (gratis bonusprodukt). Listan är villkorsskanningens facit för "fel pris":
+ *  ett tal med "kr" efter sig som inte står här är källbutikens pris, inte
+ *  vårt — norska källannonser bär NOK-tal (579 → 439) som en SEK-butik
+ *  aldrig tar. */
+export function prislista(produkt) {
+  const ut = new Set();
+  const gå = (o) => {
+    if (!o || typeof o !== 'object') return;
+    for (const [k, v] of Object.entries(o)) {
+      if (/^(pris|jamforpris|jämförpris|pris_sek)$/i.test(k) && Number(v) > 0) ut.add(Number(v));
+      else if (v && typeof v === 'object') gå(v);
+    }
+  };
+  gå(produkt);
+  return [...ut].sort((a, b) => a - b);
+}
+
+/** Recensionstexterna butiken faktiskt har (kalla-recensioner.json, skriven av
+ *  /ny-ops). Tom lista = ingen jämförelse, aldrig ett friande. */
+export function läsRecensioner(utMapp) {
+  const fil = join(utMapp, 'kalla-recensioner.json');
+  if (!existsSync(fil)) return [];
+  try {
+    const r = JSON.parse(readFileSync(fil, 'utf8'));
+    const lista = Array.isArray(r) ? r : (r.recensioner || r.reviews || Object.values(r)[0] || []);
+    return lista.map((x) => [x.titel, x.text].filter(Boolean).join('. ')).filter((t) => t.length > 0);
+  } catch { return []; }
+}
+
 /** Texterna som villkorsskanningen jämför, märkta med den yta de står på —
  *  ytan avgör vad det kostar att rätta felet (tal = omdubb, inbränd =
  *  slutkort, copy = gratis). */
 export function villkorstexter(annons, ocrPost, transkript) {
   const ut = copyFält(annons).map((f) => ({ yta: 'copy', text: f.text }));
+  // En bildannons text är yta 4 (bild), en videos är yta 3 (inbränd). Ytan
+  // avgör domen: fel i bilden = nytt bildbygge (bara-copy-nivå), fel inbränt i
+  // videon = slutkort. Före 2026-09-10 fick bilder ytan "inbränd" och SP_2_1
+  // dömdes "kräver-slutkortsbygge" — en bild har inget slutkort.
+  const yta = ocrPost?.typ === 'bild' ? 'bild' : 'inbränd';
   for (const f of ocrPost?.filer || []) {
-    for (const t of f.texter || []) ut.push({ yta: 'inbränd', text: t.text });
+    for (const t of f.texter || []) ut.push({ yta, text: t.text });
   }
   for (const rad of transkript || []) ut.push({ yta: 'tal', text: rad });
   return ut;
@@ -378,9 +415,13 @@ async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK) {
         // Tätheten står i mappnamnet. Annars ligger en gammal gles körnings
         // frames kvar bredvid en ny tät och ingen ser vilken som lästes.
         const frames = join(mediaMapp, `${a.name}_frames_${String(tathet).replace('.', 'p')}`);
-        const r = kör('python3', [join(ROT, 'tools', 'qa-frames.py'), fil, '--ut', frames,
-          '--tathet', String(tathet), '--max-frames', String(MAX_FRAMES)], false);
-        if (r.status !== 0) throw new Error('qa-frames.py misslyckades');
+        // Frames som redan dragits med samma täthet dras inte om (index.txt
+        // finns) — en omkörning ska kosta sekunder, inte minuter.
+        if (!existsSync(join(frames, 'index.txt'))) {
+          const r = kör('python3', [join(ROT, 'tools', 'qa-frames.py'), fil, '--ut', frames,
+            '--tathet', String(tathet), '--max-frames', String(MAX_FRAMES)], false);
+          if (r.status !== 0) throw new Error('qa-frames.py misslyckades');
+        }
         post.filer = läsFrameIndex(frames);
       } else {
         const url = m.bild_url || await bildUrlViaHash(kalla.annonskonto, m.image_hash);
@@ -572,10 +613,13 @@ export function sökVillkor(texter) {
  *  vinnare. Felet upptäcktes först när annonserna låg uppe i kontot.) */
 export function klassa({ copy, tal, inbränd, bild, villkorsfel = [] }) {
   const okänd = [tal, inbränd, bild].some((y) => y?.tillämplig && y.träff == null && !y.dom?.startsWith('ej'));
-  const villkorPa = (yta) => villkorsfel.some((f) => f.yta === yta);
+  // Anmärkningar (brådska) räknas aldrig som fel: Axels regel 2026-09-10 —
+  // bara Bäverbutiken, fel pris och fel villkor ändrar en annons.
+  const fel = baraFel(villkorsfel);
+  const villkorPa = (yta) => fel.some((f) => f.yta === yta);
   if (tal?.träff || villkorPa('tal')) return DOMAR.omdubb;
   if (inbränd?.träff || villkorPa('inbränd')) return DOMAR.slutkort;
-  if (copy?.träff || bild?.träff || villkorsfel.length > 0) return DOMAR.baraCopy;
+  if (copy?.träff || bild?.träff || fel.length > 0) return DOMAR.baraCopy;
   if (okänd) return DOMAR.okänd;
   return DOMAR.ren;
 }
@@ -610,8 +654,13 @@ export function attGöra(ytor) {
   }
   // Villkorsfelen skrivs ut med sin egen text ("lovar fraktgräns … — butiken
   // har fri frakt UTAN gräns"), för de syns inte i någon av de fyra ytorna.
-  for (const f of ytor.villkorsfel || []) ut.push(`${f.regel} i ${f.yta}: ${f.fel}`);
-  return ut;
+  for (const f of baraFel(ytor.villkorsfel)) ut.push(`${f.regel} i ${f.yta}: ${f.fel}`);
+  // Anmärkningarna står med så ett öga ser dem — men de är inget att åtgärda.
+  for (const f of (ytor.villkorsfel || []).filter((x) => x.anmarkning)) {
+    ut.push(`anm. ${f.regel} i ${f.yta}: ${f.fel} (kopieras orörd — Axels regel 2026-09-10)`);
+  }
+  // Samma replik står i flera frames och rader — en gång räcker i listan.
+  return [...new Set(ut)];
 }
 
 function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, datum, syn, tathet }) {
@@ -623,7 +672,8 @@ function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, d
   rad.push(`Körd ${datum} av \`factory/brand-detektor.mjs\` (Uppdrag A i \`factory/FAS2.md\`).`);
   rad.push('Läser bara. Inga krediter, ingen HeyGen, ingen kie.ai, inget skrivet i något annonskonto.');
   rad.push('');
-  rad.push(`**Källa:** ${kalla.produkt_url || kalla.produkt_handle} · annonsprefix \`${kalla.annonsprefix}_\` · konto \`${kalla.annonskonto}\` (MagiBorsten, Bäverbutiken SE).`);
+  rad.push(`**Marknad:** ${kalla.marknad || 'SE'}${kalla.marknad === 'NO' ? ' — den norska kampanjen, läst ur det norska källkontot (aldrig ärvd från SE)' : ''}.`);
+  rad.push(`**Källa:** ${kalla.produkt_url || kalla.produkt_handle} · annonsprefix \`${kalla.annonsprefix}_\` · konto \`${kalla.annonskonto}\` (${kalla.kontonamn || 'MagiBorsten, Bäverbutiken SE'}).`);
   rad.push(`**Mål:** konto \`${produkt?.meta?.ad_account_id || '—'}\` (MagiBorsten DK, OPS Factory). Kontrollerat på id, aldrig på namn.`);
   rad.push('');
   rad.push(`## Läget: ${rader.length} källannonser`);
@@ -716,30 +766,58 @@ function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, d
 async function main() {
   const produktId = flagga('produkt');
   if (!produktId) dö('Ange --produkt <id>, t.ex. --produkt tankguard.');
-  const { produkt, kalla, butik } = läsKälla(produktId);
+  // Marknaden: SE (default) läser MagiBorsten, NO läser Magiborsten NO. Den
+  // norska halvan är en EGEN läsning ur ett EGET konto — den ärver aldrig
+  // svenska domar (rakning.mjs: "oläst är aldrig ren"; 2026-09-09 såg 13
+  // norska videor rena ut för att ingen hade läst dem).
+  const marknad = String(flagga('marknad', 'SE')).toUpperCase();
+  if (!KONTON[marknad]) dö(`Okänd marknad "${marknad}" — ange --marknad ${Object.keys(KONTON).join('|')}.`);
+  const läst = läsKälla(produktId);
+  const { produkt, butik } = läst;
+  const kalla = {
+    ...läst.kalla,
+    marknad,
+    annonskonto: marknad === 'SE' ? läst.kalla.annonskonto : String(KONTON[marknad].id),
+    kontonamn: marknad === 'SE' ? 'MagiBorsten, Bäverbutiken SE' : `${KONTON[marknad].namn}, Bäverbutiken ${marknad}`,
+  };
   const extraOrd = kalla.extra_brandord || [];
   if (!butik) {
     console.log('  ⚠️ ingen butikskonfig hittad — villkorsjämförelsen (sjätte ytan) körs INTE.');
     console.log('     Annonserna kan alltså bära källbutikens fraktgräns utan att någon dom fångar det.');
   }
+  // Prislistan ur produktfilen är facit för "fel pris" (villkorsskanningens
+  // pris-regel). Utan lista görs ingen prisjämförelse — och det sägs.
+  const priser = prislista(produkt);
   const utMapp = join(ROT, 'factory', 'output', produktId);
-  const ocrFil = join(utMapp, 'brand-ocr.json');
+  // Butikens recensioner (importerade ur källan, factory/output/<id>/kalla-
+  // recensioner.json) är facit för "Verifierad kund"-citat i materialet.
+  const recensioner = läsRecensioner(utMapp);
+  const butikMedPris = butik ? { ...butik, priser, recensioner } : null;
+  if (butik && priser.length === 0) console.log('  ⚠️ produktfilen saknar pris — prisjämförelsen körs INTE.');
+  if (butik && recensioner.length === 0) console.log('  ⚠️ ingen kalla-recensioner.json — citat märkta "Verifierad kund" jämförs INTE.');
+  const suffix = marknad === 'SE' ? '' : `-${marknad.toLowerCase()}`;
+  const ocrFil = join(utMapp, `brand-ocr${suffix}.json`);
 
-  console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId}`);
-  console.log(`  källkonto ${kalla.annonskonto} · prefix ${kalla.annonsprefix}_`);
+  console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId} · marknad ${marknad}`);
+  console.log(`  källkonto ${kalla.annonskonto} (${kalla.kontonamn}) · prefix ${kalla.annonsprefix}_${priser.length ? ` · priser ${priser.join('/')} kr` : ''}`);
 
+  // Norska kampanjen väljs på `kalla.no_kampanjmonster` när den finns (samma
+  // regel som kallannonser.mjs) — prefixet ensamt kan träffa en annan
+  // produkts norska annonser i samma konto.
+  const kampanjMönster = marknad === 'NO' && kalla.no_kampanjmonster ? String(kalla.no_kampanjmonster) : null;
   const annonser = (await alla(`act_${kalla.annonskonto}/ads`, {
     fields: 'id,name,status,effective_status,adset{name},campaign{id,name},creative{id,name,title,body,link_url,object_story_spec,asset_feed_spec,video_id,image_hash,image_url,thumbnail_url,object_type}',
     filtering: [{ field: 'ad.name', operator: 'CONTAIN', value: `${kalla.annonsprefix}_` }],
   })).filter((a) => a.name.startsWith(`${kalla.annonsprefix}_`))
+    .filter((a) => !kampanjMönster || String(a.campaign?.name || '').includes(kampanjMönster))
     .sort((a, b) => a.name.localeCompare(b.name, 'sv'));
 
-  if (annonser.length === 0) dö(`Inga annonser med prefixet "${kalla.annonsprefix}_" i konto ${kalla.annonskonto}.`);
+  if (annonser.length === 0) dö(`Inga annonser med prefixet "${kalla.annonsprefix}_" i konto ${kalla.annonskonto}${kampanjMönster ? ` (kampanj "${kampanjMönster}")` : ''}.`);
   console.log(`  ${annonser.length} källannonser`);
 
   let tathet = Number(flagga('tathet', TATHET_SEK));
   let ocr = {};
-  let ocrKälla = `factory/output/${produktId}/brand-ocr.json`;
+  let ocrKälla = `factory/output/${produktId}/brand-ocr${suffix}.json`;
   if (finns('hamta')) {
     console.log(`  hämtar media, drar frames var ${tathet} s och OCR:ar (0 krediter):`);
     ocr = await hämtaOchLäs(annonser, kalla, tathet);
@@ -786,8 +864,8 @@ async function main() {
     // samma transkript som yta 2 redan hittat — gratis, inga krediter.
     const talfil = transkriptFör(a.name, kalla, index);
     const talrader = talfil ? readFileSync(talfil.fil, 'utf8').split('\n') : [];
-    ytor.villkorsfel = butik
-      ? skannaVillkor(villkorstexter(a, ocr[a.name], talrader), butik)
+    ytor.villkorsfel = butikMedPris
+      ? skannaVillkor(villkorstexter(a, ocr[a.name], talrader), butikMedPris)
       : [];
     const dom = klassa(ytor);
     const allText = [
@@ -808,8 +886,20 @@ async function main() {
 
   if (finns('torr')) { console.log('\n' + md); return; }
   mkdirSync(utMapp, { recursive: true });
-  writeFileSync(join(utMapp, 'brand-detektor.md'), md);
-  writeFileSync(join(utMapp, 'brand-detektor.json'), JSON.stringify({ produkt: produktId, datum, kalla, annonser: rader }, null, 1));
+  writeFileSync(join(utMapp, `brand-detektor${suffix}.md`), md);
+  // EN json för båda marknaderna (rakning.mjs läser den). Den här körningens
+  // marknad byts ut, den andra marknadens rader ligger kvar orörda — annars
+  // raderar en SE-omkörning de norska domarna, och NO blir "odömd" igen.
+  const jsonFil = join(utMapp, 'brand-detektor.json');
+  const gammal = existsSync(jsonFil) ? JSON.parse(readFileSync(jsonFil, 'utf8')) : {};
+  const andra = (gammal.annonser || []).filter((r) => String(r.marknad || 'SE').toUpperCase() !== marknad);
+  const kallor = { ...(gammal.kallor || {}), [marknad]: { annonskonto: kalla.annonskonto, kontonamn: kalla.kontonamn, datum, annonser: rader.length } };
+  writeFileSync(jsonFil, JSON.stringify({
+    produkt: produktId, datum,
+    kalla: marknad === 'SE' ? kalla : (gammal.kalla || kalla),
+    kallor,
+    annonser: [...andra, ...rader.map((r) => ({ ...r, marknad }))],
+  }, null, 1));
   if (finns('hamta')) {
     // Bara texten sparas, aldrig filerna: media är artefakter som dör med
     // containern, OCR-fynden är facit som måste gå att läsa om utan nedladdning.
@@ -819,7 +909,7 @@ async function main() {
     }]));
     writeFileSync(ocrFil, JSON.stringify({ produkt: produktId, datum, tathet, annonser: lätt }, null, 1));
   }
-  console.log(`\n✓ factory/output/${produktId}/brand-detektor.md`);
+  console.log(`\n✓ factory/output/${produktId}/brand-detektor${suffix}.md (+ brand-detektor.json, marknad ${marknad})`);
   for (const d of Object.values(DOMAR)) {
     const n = rader.filter((r) => r.dom === d).length;
     if (n) console.log(`   ${d}: ${n}`);

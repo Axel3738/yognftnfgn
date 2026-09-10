@@ -11,3 +11,4 @@ Varianterna: **a** = ordmärket på mörk platta med motivet ovanför ·
 
 | Datum | Butik | Vald | Motiv | Kommentar |
 |---|---|---|---|---|
+| 2026-09-10 | kalender | a | lucka | Den vänstra loggan (Axel 2026-09-10) |

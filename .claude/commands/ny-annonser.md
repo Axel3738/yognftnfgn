@@ -135,11 +135,24 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    annonser bär produktens prefix — inte bara den som `kalla.kampanj_id`
    pekar på. En produkt kan ha både en test-ABO och en skalnings-CBO.
 
-3. **Brand-detektorn** (FAS2 uppdrag A):
-   `node factory/brand-detektor.mjs --produkt <id> --hamta`
+3. **Brand-detektorn** (FAS2 uppdrag A) — EN körning PER MARKNAD:
+   ```
+   node factory/brand-detektor.mjs --produkt <id> --hamta                # SE (MagiBorsten)
+   node factory/brand-detektor.mjs --produkt <id> --hamta --marknad NO   # NO (Magiborsten NO)
+   ```
+   Båda skriver till samma `brand-detektor.json` (raderna bär `marknad`), den
+   norska rapporten heter `brand-detektor-no.md`. Den norska halvan är en EGEN
+   läsning ur det norska kontot — den ärver aldrig svenska domar. Norska
+   transkript läggs som `market-expansion/**/srt-orig/<slug>_NO_<rest>.orig.srt`
+   (HeyGen proofread, 0 krediter, `--lang="Norwegian Bokmål (Norway)"`).
    Klassar varje annons över SEX ytor: copy, tal, inbränd text/slutkort,
    recensionsattribution, priset — och källbutikens ERBJUDANDEVILLKOR.
    Dom per annons: `ren` / `bara-copy` / `kräver-omdubb` / `kräver-slutkortsbygge`.
+   Sedan 2026-09-10 jämförs också **priset** (varje "NNN kr" mot produktfilens
+   pris/jämförpris — NOK-tal i norska annonser är fel pris i en SEK-butik) och
+   **recensionscitat** ("Verifierad kund"/stjärnrad mot butikens egna
+   `kalla-recensioner.json`). **Brådska** ("bara idag", "begränsat lager") är
+   en ANMÄRKNING, aldrig ett fel — den står inte i Axels lista och kopieras orörd.
 
    Sjätte ytan är kod sedan 2026-09-09: `villkorsskanning.skannaVillkor`
    jämför källannonsens löften mot butikens EGNA villkor ur
@@ -183,22 +196,40 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Inbränd text byts med `pipeline/no-precis.py`, aldrig med en ny caption-motor.
    ⚠️ Rendera aldrig före proofread (rendering drar krediter, proofread är gratis).
 
-6. **Skriv om copyn — per marknad.** Varje `link` pekas om till OPS-butikens
+6. **Copyn — per marknad, ORDAGRANT.** Varje `link` pekas om till OPS-butikens
    produktsida: svenska annonser till `/products/<handle>`, norska till
-   `/nb/products/<handle>`. **Gissa aldrig länken** — ta den ur produktfilen
-   och avbryt hellre. Brandnamn OCH pris byts i texten. Copyn skrivs av en
-   subagent med `model: "sonnet"` som får `docs/copy-regler.md` —
-   huvudsessionen skriver aldrig slutgiltig copy. Norsk copy skrivs på
-   bokmål, aldrig översatt rakt av från svenskan.
+   `/nb/products/<handle>`. **Gissa aldrig länken** — den byggs ur
+   `butik.doman` i butiksfilen + handlen i state-filen (`factory/vagkonfig.mjs`);
+   saknas domänen avbryter skriptet. Copyn är källans ordagrant (Axels regel
+   2026-09-10). Bara rader detektorn dömt som fel byts, radvis, mot raden i
+   produktfilens `kalla.copybyten` (`fran` → `till`, hela raden exakt lika).
+   Behövs en ny ersättningsrad skrivs DEN av en subagent med `model: "sonnet"`
+   + `docs/copy-regler.md` — aldrig en ny copy. En felrad som saknar byte gör
+   att annonsen VÄNTAR; ingen rad skrivs om fritt. Norska byten på bokmål.
 
 7. **Ladda upp media i målkontot.** `image_hash` och `video_id` är PER KONTO —
    Bäverbutikens creatives går inte att referera. Ladda ner filen, brand-swappa,
    och ladda upp på nytt till `act_915422744950975` (`advideos`/`adimages`).
 
 8. **Bygg TVÅ kampanjer — en svensk och en norsk.**
-   `pipeline/no-video-launch.mjs` + `no-image-launch.mjs` med en vågkonfig per
-   marknad. Allt Graph-anrop går genom `tools/meta-lib.mjs` — skriv aldrig egna
-   anrop, spärrarna där är dyrköpta.
+   Vågkonfigen skrivs av kod, aldrig för hand:
+   ```
+   node factory/vagkonfig.mjs <produkt-id> --marknad SE   # → pipeline/waves/se-<prefix>-{video,image}.config.mjs + se-byggplan.json
+   node factory/vagkonfig.mjs <produkt-id> --marknad NO
+   ```
+   Den läser domarna, gör radbytena, lägger omskrivna bilder ur
+   `factory/output/<produkt>/bildfix/<målnamn>.jpg` där bilden bär fel, och
+   skriver varje annons som inte kan byggas i `<m>-byggplan.json` → `vantar`
+   med orsak (fel i tal/inbränd, NOK-pris utan NOK-nivåer, oläst yta, saknad
+   bild). Skriptet skriver ut nästa kommando. Kör alltid `--dry` först:
+   `pipeline/no-video-launch.mjs` + `no-image-launch.mjs` med vågkonfigen —
+   **video FÖRST, sedan bild, aldrig parallellt** (båda skapar kampanjen på
+   namn; parallellt blir det två). Allt Graph-anrop går genom
+   `tools/meta-lib.mjs` — skriv aldrig egna anrop, spärrarna där är dyrköpta.
+   ⚠️ Annonssteget kräver att systemanvändaren har rollen **Annonsör** på
+   butikens sida — utan den svarar `adcreatives` "(#200) Application does not
+   have permission" och skripten stannar efter kampanj + adsets + media. Kör
+   om samma kommando när rollen är given; allt som redan finns återanvänds.
    - Kampanjnamnen prefixas ALLTID med brandet OCH marknaden:
      `TANKGUARD_SE_…` och `TANKGUARD_NO_…`. Alla OPS-butiker delar ett konto,
      och utan marknaden i namnet går datan inte att skära per land.

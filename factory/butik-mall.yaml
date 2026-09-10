@@ -15,6 +15,7 @@ butik:
   orgnr: ""                   # KRITISKT
   adress: ""                  # KRITISKT — postadress i köpvillkoren
   supportmail: ""             # KRITISKT — alltid hello@<domän> (Axel 2026-09-08), aldrig hej@
+  doman: ""                   # KRITISKT för annonserna — domänen kunden landar på (annonslänkarna byggs på den i factory/vagkonfig.mjs); måste vara kopplad före "Launch"
   land: SE                    # KRITISKT — tvåbokstavskod där bolaget sitter
   huvudmarknad: Sverige       # KRITISKT — zonen som är hemmamarknad
   # STANDARD i varje OPS (Axel 2026-09-08): marknad Norge (locale nb) från
