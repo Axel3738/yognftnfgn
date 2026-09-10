@@ -102,6 +102,18 @@ export function losNycklar(butikId, env = process.env) {
   return { shop, clientId, clientSecret, sparadToken, sparadUtgar, sparadDoman };
 }
 
+/**
+ * Butikens storefront-lösenord. Per butik först, sen det allmänna.
+ *
+ * ⚠️ Läses på fem ställen (kundvy-kor, ops, trippelkoll) och saknade
+ * per-butik-uppslaget till 2026-09-10. Axel kör flera butiker i parallella
+ * sessioner ur SAMMA Environment — utan suffixet hämtar kundvyn grannens
+ * lösenord, och QA blir röd på en butik som är hel.
+ */
+export function storefrontLosenord(butikId, env = process.env) {
+  return perButik(env, 'SHOPIFY_STOREFRONT_PASSWORD', butikId) || env.SHOPIFY_STOREFRONT_PASSWORD || '';
+}
+
 // Är den sparade tokenen fortfarande brukbar för domänen? Kräver ett
 // utgångsdatum — utan det vet vi inget och mintar om.
 export function tokenGiltig({ sparadToken, sparadUtgar, sparadDoman, shop }, nu = Date.now()) {
@@ -436,6 +448,13 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   // med steg 0 är att peka fabriken på den NYA butiken.
   env.SHOPIFY_STORE_DOMAIN = butik.domain;
   env.SHOPIFY_ADMIN_TOKEN = token;
+
+  // Samma sak för storefront-lösenordet. Fem ställen (kundvy-kor, ops,
+  // trippelkoll) läser det utan suffix, och att lyfta upp butikens egen rad
+  // hit är enda sättet att slippa ändra alla fem. Utan detta hämtar kundvyn
+  // grannbutikens lösenord när flera butiker delar Environment.
+  const losen = storefrontLosenord(id, env);
+  if (losen) env.SHOPIFY_STOREFRONT_PASSWORD = losen;
 
   if (!utanEnvFil) {
     const suffix = envSuffix(id);

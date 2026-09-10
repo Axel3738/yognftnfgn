@@ -41,6 +41,23 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    `factory/butiker/` eller `factory/output/` = miljön står kvar på förra
    butiken, stoppa. Saknas nycklarna: be VA:n göra steg 2, klistra aldrig
    nycklar i chatten.
+
+   ⚠️ **Står ett "Butiks-id:" i prompten är DET id:t du ansluter med** —
+   `--butik <det id:t>`, aldrig ett du hittar på. Nycklarna läses då som
+   `SHOPIFY_SHOP_<ID>` / `SHOPIFY_CLIENT_ID_<ID>` / `SHOPIFY_CLIENT_SECRET_<ID>`
+   / `SHOPIFY_STOREFRONT_PASSWORD_<ID>` (id:t i VERSALER, bindestreck blir
+   understreck). Samma id används sen till `factory/butiker/<id>.yaml`, så
+   butiken heter samma sak hela vägen.
+
+   ⚠️ **Står inget butiks-id läses de fyra UTAN suffix** — och de betyder
+   "butiken jag bygger just nu". Alla sessioner på kontot delar samma
+   Environment, så två parallella bygg slåss då om samma fyra rader.
+   *(Mätt 2026-09-10: fyra dagars stopp. Miljön hade sju `SHOPIFY_SHOP*`,
+   den utan suffix stod på TankGuard, och tre sessioner i rad byggde mot fel
+   butik. Axels beslut samma dag: nya butiker körs med butiks-id.)*
+   Får du fel butik: läs miljöfällorna i felet (`MILJOFALLOR` i `token.mjs`)
+   innan du ber någon röra Shopify — orsaken är oftast att sessionen startade
+   före sparandet, eller att kontot har två environments med samma namn.
 2. **Hämta produktdata** ur källänken: `/products/<handle>.json`, Judge.me
    `reviews_for_widget` (originaldatum), Kaching-nivåerna ur sidans JSON-script
    → `output/<id>/kalla-kaching-paket.json`. Öppna produktbilderna och läs den

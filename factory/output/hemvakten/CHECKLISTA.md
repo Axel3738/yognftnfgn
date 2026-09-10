@@ -27,11 +27,16 @@ Get this right and section 5 is three checks instead of seven clicks.
 ## 2. Shopify – connect Claude Code
 - [ ] Go to **dev.shopify.com** → log in with the work Gmail → Apps → **Create app** → name it: **Fabriken** + the store's address start (example: Fabriken y1sj1i)
 - [ ] The app → **Settings** → copy the **Client ID** and the **Client secret**
-- [ ] Open the Claude session's **Environment** → set these 4 (overwrite the old values):
-  `SHOPIFY_SHOP` = the store's .myshopify.com address
-  `SHOPIFY_CLIENT_ID` = the Client ID
-  `SHOPIFY_CLIENT_SECRET` = the Client secret
-  `SHOPIFY_STOREFRONT_PASSWORD` = Online Store → Preferences → **Password** (the store password – Claude needs it to check the pages like a customer sees them)
+- [ ] This store's ID is **hemvakten**. You need it twice: in the variable names below, and in the build command.
+- [ ] Open the Claude session's **Environment** → ADD these 4. Do NOT touch the ones without an ID at the end — those belong to other stores:
+  `SHOPIFY_SHOP_HEMVAKTEN` = the store's .myshopify.com address
+  `SHOPIFY_CLIENT_ID_HEMVAKTEN` = the Client ID
+  `SHOPIFY_CLIENT_SECRET_HEMVAKTEN` = the Client secret
+  `SHOPIFY_STOREFRONT_PASSWORD_HEMVAKTEN` = Online Store → Preferences → **Password** (the store password – Claude needs it to check the pages like a customer sees them)
+  Every session on the account shares ONE Environment. Without the ID two builds
+  fight over the same four rows and one writes to the wrong store.
+- [ ] **Save the Environment BEFORE you start the session.** A session reads the
+  Environment when it starts — saving into a running session changes nothing there.
 - [ ] Back in the app → **Distribution** → Custom distribution → enter the store's .myshopify.com address → **Generate link** → open it → **Install app**
   Note: keys go ONLY in the Environment – never in chat or email.
   If a Client secret ever ends up in a chat: the app → Settings → Client secret
@@ -39,7 +44,15 @@ Get this right and section 5 is three checks instead of seven clicks.
   running on the token it already has, so this never blocks anything.
 
 ## 3. Start the build
-- [ ] Write **/ny-ops** + the product link in Claude Code
+- [ ] Write **/ny-ops** + the product link in Claude Code, with the store ID under it:
+  ```
+  /ny-ops <the product link>
+  Butiks-id: hemvakten
+  The store must be <the .myshopify.com address>. If the "Connected" line does
+  not match that address: stop and tell me, build nothing.
+  ```
+  Without the `Butiks-id:` line Claude reads the variables WITHOUT an ID, and
+  those may belong to another store.
 - [ ] Claude checks the connection, names the store and builds everything
 - [ ] Claude tells you the STORE NAME and DOMAIN for the next steps
 

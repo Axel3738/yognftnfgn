@@ -56,11 +56,15 @@ VIDEO:
 
 * Go to dev.shopify.com → log in with the work Gmail → Apps → Create app → name it: Fabriken + the store's address start (example: Fabriken y1sj1i)
 * The app → Settings → copy the Client ID and the Client secret
-* Open the Claude session's Environment → set these 4 (overwrite the old values):
-  SHOPIFY_SHOP = the store's .myshopify.com address
-  SHOPIFY_CLIENT_ID = the Client ID
-  SHOPIFY_CLIENT_SECRET = the Client secret
-  SHOPIFY_STOREFRONT_PASSWORD = Online Store → Preferences → Password (the store password – Claude needs it to check the pages like a customer sees them; added 2026-09-08)
+* Pick a SHORT ID for this store, lowercase, no spaces (example: `kalender`). Write it down – you use it twice.
+* Open the Claude session's Environment → ADD these 4, with the ID in CAPITALS at the end (do NOT touch the ones without an ID – those belong to other stores):
+  SHOPIFY_SHOP_<ID> = the store's .myshopify.com address
+  SHOPIFY_CLIENT_ID_<ID> = the Client ID
+  SHOPIFY_CLIENT_SECRET_<ID> = the Client secret
+  SHOPIFY_STOREFRONT_PASSWORD_<ID> = Online Store → Preferences → Password (the store password – Claude needs it to check the pages like a customer sees them)
+  Example for the ID `kalender`: SHOPIFY_SHOP_KALENDER, SHOPIFY_CLIENT_ID_KALENDER, and so on.
+  Why the ID: every session on the account shares one Environment. Without it, two builds fight over the same four rows and one of them writes to the wrong store. (Measured 2026-09-10: four days lost to exactly this.)
+* Save the Environment BEFORE you start the session. A session reads the Environment when it starts – saving into a session that is already running changes nothing there.
 * Back in the app → Distribution → Custom distribution → enter the store's .myshopify.com address → Generate link → open it → Install app
   Note: keys go ONLY in the Environment – never in chat or email.
   If a Client secret ever ends up in a chat: the app → Settings → Client secret → generate a new one → put the new value in the Environment. The build keeps running on the token it already has, so this never blocks anything.
@@ -68,7 +72,11 @@ VIDEO:
 ## 3. Start the build
 VIDEO:
 
-* Write /ny-ops + the product link in Claude Code
+* Write /ny-ops + the product link in Claude Code, and add the line `Butiks-id: <your ID>` under it
+  Example:
+  /ny-ops https://baverbutiken.se/products/...
+  Butiks-id: kalender
+  The store must be xxxxxx.myshopify.com. If the "Connected" line does not match that address: stop and tell me, build nothing.
 * Claude checks the connection, names the store and builds everything
 * Claude tells you the STORE NAME and DOMAIN for the next steps
 

@@ -19,6 +19,7 @@ import {
   skrivEnv,
   anslut,
   tolkaMintfel,
+  storefrontLosenord,
 } from '../token.mjs';
 
 // --- hjälp -----------------------------------------------------------------
@@ -437,4 +438,19 @@ test('en grön anslutning bär inga felsökningsrader', () => {
   assert.equal(r.ok, true);
   assert.equal(r.skal, '');
   t.stada();
+});
+
+// -------------------------------------------------- storefront-lösenordet
+//
+// Axel kör flera butiker i parallella sessioner ur SAMMA Environment
+// (2026-09-10). Utan per-butik-uppslaget hämtar kundvyn grannens lösenord.
+
+test('storefrontLosenord: butikens egen rad vinner över den allmänna', () => {
+  const env = {
+    SHOPIFY_STOREFRONT_PASSWORD: 'tankguards',
+    SHOPIFY_STOREFRONT_PASSWORD_KALENDER: 'kalenderns',
+  };
+  assert.equal(storefrontLosenord('kalender', env), 'kalenderns');
+  assert.equal(storefrontLosenord('tankguard', env), 'tankguards', 'utan egen rad gäller den allmänna');
+  assert.equal(storefrontLosenord('kalender', {}), '');
 });
