@@ -63,9 +63,16 @@
       "campaign_id": "120250134672020291",
       "produkt": "Adventskalendern Racingbilar",
       "lage": "test",
-      "lage_motivering": "startad 2026-09-08, saknades i kartan — tillagd av /rond-auto",
+      "lage_motivering": "1 991,70 kr spend (livstid, avläst 2026-09-10, maximum), 11 köp, ROAS 3,587 mot BE 1,62 — ~36% vinstmarginal enligt /rond-auto 2026-09-10. Passerat 1 500 kr-testtröskeln och fått sin första riktiga batch via /forsta-batch. Bara 1 av 16 launchade annonser bedömbar än (kampanjen ~2 dygn gammal) — se dna.md.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+      "notion_hub_datakalla": "collection://c19270ab-908c-834c-bf90-874ce69e0381",
+      "notion_hub_namn": "Racing Car Advent Calendar creative hub",
+      "drive_produktmapp_id": "1OHOLPsPIHqnY7-4n5tR3MUGeRAn2LJvE",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp \" Adventskalender Racingbilar\" (ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
+      "drive_senaste_batchmapp_id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "minne": "products/adventskalender-racingbilar/"
     },
     {
       "campaign_id": "120252123868510233",
