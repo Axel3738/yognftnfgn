@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { serUtSomSvenska, granskaSprak, stoppText } from '../lib/engelska.mjs';
+import { anthropicNyckel } from '../lib/anthropic-nyckel.mjs';
 
 test('svenska rutinrapporter fångas', () => {
   assert.equal(serUtSomSvenska('✅ NO-recensioner: 0 nya (7 produkter, alla redan klara)'), true);
@@ -37,17 +38,27 @@ test('granskaSprak: engelska passerar orörd utan nätverk', async () => {
 });
 
 test('granskaSprak: svenska utan nyckel stoppas med orsak', async () => {
-  const sparad = process.env.ANTHROPIC_API_KEY;
+  const sparad = { a: process.env.ANTHROPIC_API_KEY, b: process.env.ANTHROPIC_NYCKEL };
   delete process.env.ANTHROPIC_API_KEY;
+  delete process.env.ANTHROPIC_NYCKEL;
   try {
     const r = await granskaSprak('✅ Inga nya produkter i natt.');
     assert.equal(r.stoppad, true);
     assert.equal(r.svenska, true);
     assert.match(r.orsak, /ANTHROPIC_API_KEY/);
+    assert.match(r.orsak, /ANTHROPIC_NYCKEL/);
     assert.match(stoppText(r.orsak), /engelska/);
   } finally {
-    if (sparad !== undefined) process.env.ANTHROPIC_API_KEY = sparad;
+    if (sparad.a !== undefined) process.env.ANTHROPIC_API_KEY = sparad.a;
+    if (sparad.b !== undefined) process.env.ANTHROPIC_NYCKEL = sparad.b;
   }
+});
+
+test('anthropicNyckel: läser båda namnen, ANTHROPIC_API_KEY först', () => {
+  assert.equal(anthropicNyckel({}), '');
+  assert.equal(anthropicNyckel({ ANTHROPIC_NYCKEL: 'b' }), 'b');
+  assert.equal(anthropicNyckel({ ANTHROPIC_API_KEY: 'a', ANTHROPIC_NYCKEL: 'b' }), 'a');
+  assert.equal(anthropicNyckel({ ANTHROPIC_API_KEY: '  ', ANTHROPIC_NYCKEL: ' b ' }), 'b');
 });
 
 test('granskaSprak: DISCORD_TILLAT_SVENSKA=1 släpper igenom', async () => {

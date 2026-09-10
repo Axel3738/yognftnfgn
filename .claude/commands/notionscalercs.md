@@ -11,7 +11,7 @@ Butiken är nyckeln i OPS-registret: `hemvakten`, `tankguard`, `drytrek`,
 ```
 
 CONNECTORS: inga. Rutinen går via env-nycklar (`META_ACCESS_TOKEN`,
-`NOTION_TOKEN`, `DISCORD_BOT_TOKEN`, `ANTHROPIC_API_KEY`) och REST — aldrig
+`NOTION_TOKEN`, `DISCORD_BOT_TOKEN`, `ANTHROPIC_NYCKEL` — inte `ANTHROPIC_API_KEY`, det namnet göms av Claude Code för skripten) och REST — aldrig
 via Notion-MCP:n. Det är hela poängen: **noll godkännandeklick** (Axels krav
 2026-09-10: "jag måste gå in och godkänna 24/7 varje grej den vill göra i
 notion" — det ska bort). Använd ALDRIG `mcp__Notion__*` i det här kommandot,

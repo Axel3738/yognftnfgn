@@ -646,8 +646,15 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   versionen av samma rapport är engelsk, med produkt-, kanal- och kampanjnamn i
   sin vanliga stavning. Postarna (`tools/notify-discord.mjs`,
   `pipeline/discord-brief.mjs`) stoppar svensk text med exit 3, eller översätter
-  den automatiskt när `ANTHROPIC_API_KEY` finns i environmentet. Stoppas ett
+  den automatiskt när `ANTHROPIC_NYCKEL` finns i environmentet. Stoppas ett
   skick: skriv om på engelska och skicka igen — hoppa aldrig över rapporten.
+  ⚠️ **Nyckeln heter `ANTHROPIC_NYCKEL` på claude.ai, inte `ANTHROPIC_API_KEY`.**
+  Claude Code gömmer exakt namnet `ANTHROPIC_API_KEY` för allt som körs via
+  Bash (mätt 2026-09-10: variabeln stod i Claude-processen men saknades i
+  skalet, medan `NOTION_TOKEN`, `META_ACCESS_TOKEN` m.fl. släpptes igenom).
+  Skripten läser båda namnen via `tools/lib/anthropic-nyckel.mjs`. Säger ett
+  skript att nyckeln saknas fast Axel lagt in den: kolla att den heter
+  `ANTHROPIC_NYCKEL` i Environments.
 - **PAUSED i annonskontot är ett beslut, aldrig ett fel att "rätta".** En
   kampanj/adset/annons som är pausad och har spenderat > 0 kr har stängts av
   med flit (av Axel, skalningsronden eller åtgärdstrappan) — den får ALDRIG
