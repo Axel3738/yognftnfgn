@@ -1,0 +1,5364 @@
+{
+ "produkt": "fiskespohallare-4-pack",
+ "datum": "2026-09-10",
+ "marknad": "NO",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16268173214045",
+  "produkt_handle": "fiskespohallare-4-pack-kraftig-forvaring",
+  "produkt_url": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+  "annonskonto": "1050941584152547",
+  "annonsprefix": [
+   "NO",
+   "Fiskespöhållare"
+  ],
+  "kampanj_id": "120251856983860233",
+  "kampanj": "Fiskespöhållaren NO",
+  "no_kampanj_id": "120251856983860233",
+  "no_kampanjmonster": "Fiskespöhållaren NO",
+  "no_annonsprefix": [
+   "NO",
+   "Fiskespöhållare"
+  ],
+  "no_pausad_kalla_ok": "Axel 2026-09-10: Fixa norge också — pausad NO-källa används ändå",
+  "no_srt_slug": [
+   "fiskespohallare-no"
+  ],
+  "srt_slug": [
+   "fiskespohallare-no"
+  ],
+  "marknad": "NO",
+  "arbetsmapp": "Rodholder-NO",
+  "pausad_kalla_ok": "Axel 2026-09-10: Fixa norge också — pausad NO-källa används ändå",
+  "prefixen": [
+   "NO",
+   "Fiskespöhållare"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Fiskespöhållare_CS_2_1_NO",
+   "id": "120251856999610233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - CS",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Begrenset antall på lager.",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "inbränd",
+      "rad": "40%",
+      "fel": "lovar rabatt \"40%\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "KUNI DAG",
+      "fel": "falsk brådska \"KUNI DAG\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Fa igjen pa lager - bestill for det er tomt",
+      "fel": "falsk brådska \"Fa igjen pa lager\" — butiken säljer inte ut något lager"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager",
+    "rabatt-ord i copy: lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "rabatt i inbränd: lovar rabatt \"40%\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"KUNI DAG\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Fa igjen pa lager\" — butiken säljer inte ut något lager"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "269 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Begrenset antall på lager.",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "inbränd",
+     "rad": "40%",
+     "fel": "lovar rabatt \"40%\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "KUNI DAG",
+     "fel": "falsk brådska \"KUNI DAG\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Fa igjen pa lager - bestill for det er tomt",
+     "fel": "falsk brådska \"Fa igjen pa lager\" — butiken säljer inte ut något lager"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_GT_2_1_NO",
+   "id": "120251857003450233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - GT",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_PD_2_1_NO",
+   "id": "120251856987020233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - PD",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_SO_2_1_NO",
+   "id": "120251856991070233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - SO",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "4-pakning for 269 kr.",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "269 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "4-pakning for 269 kr.",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_SP_2_1_NO",
+   "id": "120251856995250233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - SP",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "«Endelig holder stanga seg sammenslått – ikke mer krøll!» 🎣\nSlik beskriver kundene våre fiskestangholderen.\n✅ Enkel å b",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers fornoyd-",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "«Endelig holder stanga seg sammenslått – ikke mer krøll!» 🎣\nSlik beskriver kundene våre fiskestangholderen.\n✅ Enkel å b",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers fornoyd-",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_CS_1_H1",
+   "id": "120251856996690233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - CS",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_cs_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 94
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Lagerrensing – nå 269 kr",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Lagerrensing – nå 269 kr",
+      "fel": "falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Begrenset antall på lager.",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "I dag, og bare i dag, far du",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "I dag, og bare i dag, far du",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "I dag, og bare i dag, far du",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "I dag, og bare i dag, far du",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "deg din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "I dag, og bare i dag, får du fiske stangholderen til reduceret pris.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Akkurat nå til kraftig reduceret pris, men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lage det og begrense det og tømmes raskt.",
+      "fel": "falsk brådska \"tømmes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Slå til nå. Klikk på lenken og sikre deg din før tilbudet forsvinner.",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager",
+    "rabatt-ord i copy: lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "brådska i tal: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"tømmes raskt\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "269 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Lagerrensing – nå 269 kr",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Lagerrensing – nå 269 kr",
+     "fel": "falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Begrenset antall på lager.",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "I dag, og bare i dag, far du",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "I dag, og bare i dag, far du",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "I dag, og bare i dag, far du",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "I dag, og bare i dag, far du",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "deg din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "I dag, og bare i dag, får du fiske stangholderen til reduceret pris.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Akkurat nå til kraftig reduceret pris, men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lage det og begrense det og tømmes raskt.",
+     "fel": "falsk brådska \"tømmes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Slå til nå. Klikk på lenken og sikre deg din før tilbudet forsvinner.",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_CS_1_H2",
+   "id": "120251856997400233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - CS",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_cs_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 89
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Lagerrensing – nå 269 kr",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Lagerrensing – nå 269 kr",
+      "fel": "falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Begrenset antall på lager.",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, er det tomt",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, er det tomt",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, er det tomt",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, er det tomt",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na,",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na,",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na,",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na.",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na,",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na.",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na,",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na,",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre dinfor tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre din for tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre dinfor tilbudet forsvinner.",
+      "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Men bare i dag! Hold stengene dine trygge organiserer. Enkel å monterer på vegg eller i båten.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lageret er begrenset og tømmes raskt. Når det er tomt, er det tomt.",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Fri fornakt. 30 dagers åpent kjøp.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager",
+    "rabatt-ord i copy: lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "brådska i tal: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "269 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Lagerrensing – nå 269 kr",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Lagerrensing – nå 269 kr",
+     "fel": "falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Begrenset antall på lager.",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, er det tomt",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, er det tomt",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, er det tomt",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, er det tomt",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na,",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na,",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na,",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na.",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na,",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na.",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na,",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na,",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre dinfor tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre din for tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre dinfor tilbudet forsvinner.",
+     "fel": "falsk brådska \"tilbudet forsvinner\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Men bare i dag! Hold stengene dine trygge organiserer. Enkel å monterer på vegg eller i båten.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lageret er begrenset og tømmes raskt. Når det er tomt, er det tomt.",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Fri fornakt. 30 dagers åpent kjøp.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_CS_1_H3",
+   "id": "120251856998450233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - CS",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_cs_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 88
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "copy",
+      "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+      "fel": "lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Lagerrensing – nå 269 kr",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Lagerrensing – nå 269 kr",
+      "fel": "falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Begrenset antall på lager.",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Siste sjanse til",
+      "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "denne prisen for det",
+      "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Siste sjanse til",
+      "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "denne prisen for det",
+      "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Siste sjanse til",
+      "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "denne prisen for det",
+      "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Siste sjanse til",
+      "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "denne prisen for det",
+      "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Siste sjanse til",
+      "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "denne prisen for det",
+      "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "Akkurat na til sterkt redusert pris,",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lageret er begrenset",
+      "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "og tommes raskt.",
+      "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Nar det er tomt, sa er det tomt.",
+      "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Benytt sjansen na",
+      "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre deg din for",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre deg din for",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre deg din for",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre deg din for",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre deg din for",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre deg din for",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre deg din for",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "sikre deg din for",
+      "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagers apent kjop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Siste chance til denne prisen, før det er tomt.",
+      "fel": "falsk brådska \"før det er tomt\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "tal",
+      "rad": "Siste chance til denne prisen, før det er tomt.",
+      "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Akkurat nåltid sterkere du ser plis med bare i dag.",
+      "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Når det er tomt, så er det tomt.",
+      "fel": "falsk brådska \"Når det er tomt\" — butiken säljer inte ut något lager"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager",
+    "rabatt-ord i copy: lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager",
+    "rabatt-ord i inbränd: lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager",
+    "rabatt-ord i inbränd: lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager",
+    "rabatt-ord i inbränd: lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager",
+    "rabatt-ord i inbränd: lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager",
+    "rabatt-ord i inbränd: lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "brådska i tal: falsk brådska \"før det er tomt\" — butiken säljer inte ut något lager",
+    "rabatt-ord i tal: lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i tal: falsk brådska \"bare i dag\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"Når det er tomt\" — butiken säljer inte ut något lager"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "269 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "falsk brådska \"LAGERRENSING\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "copy",
+     "rad": "⏰ LAGERRENSING – Fiskestangholder 4-pakning\n\nVi rydder lageret – nå kun 269 kr.\n🔥 Begrenset antall på lager\n🔥 Gjelder ",
+     "fel": "lovar rabatt \"nå kun 2\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Lagerrensing – nå 269 kr",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Lagerrensing – nå 269 kr",
+     "fel": "falsk brådska \"Lagerrensing\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Begrenset antall på lager.",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Siste sjanse til",
+     "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "denne prisen for det",
+     "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Siste sjanse til",
+     "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "denne prisen for det",
+     "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Siste sjanse til",
+     "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "denne prisen for det",
+     "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Siste sjanse til",
+     "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "denne prisen for det",
+     "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Siste sjanse til",
+     "fel": "falsk brådska \"Siste sjanse\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "denne prisen for det",
+     "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "Akkurat na til sterkt redusert pris,",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lageret er begrenset",
+     "fel": "falsk brådska \"Lageret er begrenset\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "og tommes raskt.",
+     "fel": "falsk brådska \"tommes raskt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Nar det er tomt, sa er det tomt.",
+     "fel": "falsk brådska \"Nar det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Benytt sjansen na",
+     "fel": "falsk brådska \"Benytt sjansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre deg din for",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre deg din for",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre deg din for",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre deg din for",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre deg din for",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre deg din for",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre deg din for",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "sikre deg din for",
+     "fel": "falsk brådska \"sikre deg din\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagers apent kjop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Siste chance til denne prisen, før det er tomt.",
+     "fel": "falsk brådska \"før det er tomt\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "tal",
+     "rad": "Siste chance til denne prisen, før det er tomt.",
+     "fel": "lovar rabatt \"denne prisen\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Akkurat nåltid sterkere du ser plis med bare i dag.",
+     "fel": "falsk brådska \"bare i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Når det er tomt, så er det tomt.",
+     "fel": "falsk brådska \"Når det er tomt\" — butiken säljer inte ut något lager"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_GT_1_H1",
+   "id": "120251857001480233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - GT",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_gt_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 122
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Bestill i dag, den kommer hjem i tide med fri frakt og 30 dagers åpentkjøp, hvis noe skulle skjære seg.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "fri frakt og tretti dagers apent"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Bestill i dag, den kommer hjem i tide med fri frakt og 30 dagers åpentkjøp, hvis noe skulle skjære seg.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_GT_1_H2",
+   "id": "120251857002410233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - GT",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_gt_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 121
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "fri frakt og tretti dagers apent"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "NO_GT_1_H3",
+   "id": "120251857003040233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - GT",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_gt_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 116
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Bestill i dag, så kommer han hjem i 10 med 3 frakt og 30 dagars åpen kjøp, hvis noe skulle skjære seg.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "fri frakt og tretti dagers"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Bestill i dag, så kommer han hjem i 10 med 3 frakt og 30 dagars åpen kjøp, hvis noe skulle skjære seg.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_PD_1_H1",
+   "id": "120251856985800233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - PD",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_pd_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 125
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "NO_PD_1_H2",
+   "id": "120251856986190233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - PD",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_pd_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 126
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "NO_PD_1_H3",
+   "id": "120251856986540233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - PD",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_pd_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 125
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "NO_SO_1_H1",
+   "id": "120251856988400233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - SO",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_so_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 102
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "4-pakning for 269 kr.",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "tal",
+      "rad": "Fiskestangholder, fireuppakning, akkurat nå til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "30 dagers åpent kjøp hvis du ikke er helt fornøyd.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "rabatt-ord i tal: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "269 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt ved storre bestillinger, og"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "4-pakning for 269 kr.",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "tal",
+     "rad": "Fiskestangholder, fireuppakning, akkurat nå til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "30 dagers åpent kjøp hvis du ikke er helt fornøyd.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_SO_1_H2",
+   "id": "120251856989300233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - SO",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_so_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 102
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "4-pakning for 269 kr.",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "tal",
+      "rad": "Fri frakt ved større bestillinger, og med klarena får du varend først og betaler sejnere.",
+      "fel": "lovar fraktgräns \"Fri frakt ved større bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "30 dagers åpent kjøp hvis du ikke er helt fornøyd.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "fraktgräns i tal: lovar fraktgräns \"Fri frakt ved større bestillinger\" — butiken har fri frakt UTAN gräns",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "269 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt ved storre bestillinger, og"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "4-pakning for 269 kr.",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "tal",
+     "rad": "Fri frakt ved større bestillinger, og med klarena får du varend først og betaler sejnere.",
+     "fel": "lovar fraktgräns \"Fri frakt ved større bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "30 dagers åpent kjøp hvis du ikke er helt fornøyd.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_SO_1_H3",
+   "id": "120251856990820233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - SO",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_so_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 101
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+      "fel": "falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "4-pakning for 269 kr.",
+      "fel": "säger 269 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "akkurat na til kraftig redusert pris.",
+      "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "inbränd",
+      "rad": "Fri frakt ved storre bestillinger, og",
+      "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Begrenset antall pa",
+      "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "tal",
+      "rad": "Fri frakt ved større bestillinger, og med klarerna får du varen først og betaler senere.",
+      "fel": "lovar fraktgräns \"Fri frakt ved større bestillinger\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "30 dagers åpen kjøp hvis du ikke er helt fornøyd.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "brådska i copy: falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager",
+    "pris i copy: säger 269 kr — butikens pris är 289 kr",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "fraktgräns i inbränd: lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager",
+    "fraktgräns i tal: lovar fraktgräns \"Fri frakt ved større bestillinger\" — butiken har fri frakt UTAN gräns",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "269 kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt ved storre bestillinger, og"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Floker stengene dine seg i båten? 🎣\nFiskestangholderen holder dem lukket og sikre.\n✅ 4-pakning for 269 kr\n✅ 30 dagers å",
+     "fel": "falsk brådska \"begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "4-pakning for 269 kr.",
+     "fel": "säger 269 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "akkurat na til kraftig redusert pris.",
+     "fel": "lovar rabatt \"redusert pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "inbränd",
+     "rad": "Fri frakt ved storre bestillinger, og",
+     "fel": "lovar fraktgräns \"Fri frakt ved storre bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Begrenset antall pa",
+     "fel": "falsk brådska \"Begrenset antall\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "tal",
+     "rad": "Fri frakt ved større bestillinger, og med klarerna får du varen først og betaler senere.",
+     "fel": "lovar fraktgräns \"Fri frakt ved større bestillinger\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "30 dagers åpen kjøp hvis du ikke er helt fornøyd.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_SP_1_H1",
+   "id": "120251856992830233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - SP",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_sp_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 103
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "«Endelig holder stanga seg sammenslått – ikke mer krøll!» 🎣\nSlik beskriver kundene våre fiskestangholderen.\n✅ Enkel å b",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "«Endelig holder stanga seg sammenslått – ikke mer krøll!» 🎣\nSlik beskriver kundene våre fiskestangholderen.\n✅ Enkel å b",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_SP_1_H2",
+   "id": "120251856993610233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - SP",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_sp_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 104
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "«Endelig holder stanga seg sammenslått – ikke mer krøll!» 🎣\nSlik beskriver kundene våre fiskestangholderen.\n✅ Enkel å b",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "«Endelig holder stanga seg sammenslått – ikke mer krøll!» 🎣\nSlik beskriver kundene våre fiskestangholderen.\n✅ Enkel å b",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "NO_SP_1_H3",
+   "id": "120251856994660233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Fiskespöhållare NO - SP",
+   "kampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/fiskestangholder-4-pakning-kraftig-oppbevaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare-no_sp_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 100
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "«Endelig holder stanga seg sammenslått – ikke mer krøll!» 🎣\nSlik beskriver kundene våre fiskestangholderen.\n✅ Enkel å b",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "«Endelig holder stanga seg sammenslått – ikke mer krøll!» 🎣\nSlik beskriver kundene våre fiskestangholderen.\n✅ Enkel å b",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  }
+ ]
+}

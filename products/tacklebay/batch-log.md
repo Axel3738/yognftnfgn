@@ -69,3 +69,18 @@ Hypotes: samma DNA som källan ger samma ordning — PD först, CS när manuset
 adsets PD/CS/GT/SP + 66 annonser satta ACTIVE och tillbakalästa ACTIVE/ACTIVE.
 Budget 1 000 kr/dag CBO. Första avläsning tidigast när 300 kr spend eller
 3 köp finns per annons — aldrig tidigare.
+
+## Batch #1 NO — TackleBay NO, byggd 2026-09-10 (PAUSED tills "Launch: TackleBay NO")
+
+Källa: de 20 ACTIVE-annonserna i `Fiskespöhållaren NO | BE-ROAS 1,36 |
+2026-08-20` (Magiborsten NO, 12 981 NOK, 84 köp — PD_1_H3 ensam 9 590 NOK /
+65 köp, CPA 148 NOK). Källkampanjen är PAUSED och används på Axels undantag
+("Fixa norge också"); den rörs inte. Kampanj `TACKLEBAY_NO_Spöhållaren |
+BE-ROAS 1,67 | 2026-09-10` i MagiBorsten DK, CBO 1 000 kr/dag, geo NO, länk
+`/nb`, adsets PD/CS/SO/SP/GT. 11 av 20 uppe (6 video: PD_1 ×3 + SP_1 ×3; 5
+bild, varav CS_2 byggd om via kie.ai + text och SP_2 omritad med Daniels
+riktiga recension). 9 videor väntar på omdubb (`omdubb-ko-no.md`): CS_1/SO_1
+läser upp rabatt, "bare i dag", lagerslut och 30 dagers åpent kjøp; GT_1
+har bara sista meningen fel. Priset i copyn är 289 kr — butikens NO-marknad
+betalar i SEK (källan sa 269 NOK). Hypotes: PD_1_H3 bär Norge som den bar
+källan. Utfall: ännu inget.

@@ -74,55 +74,42 @@ Uppladdade i kontot:  66  ← läst ur Meta, inte ur minnet
 
 ```
 Källannonser:       20
-  rena               0  → ska bli 0 annonser
-  bara-copy          0  → ska bli 0 annonser
-  kräver-omdubb      0  → ska bli 0 annonser
-  slutkortsbygge     0  → ska bli 0 annonser
+  rena               6  → ska bli 6 annonser
+  bara-copy          4  → ska bli 4 annonser
+  kräver-omdubb      8  → ska bli 8 annonser
+  slutkortsbygge     2  → ska bli 2 annonser
   okänd              0  → ska INTE laddas upp
   odömd              0  → ska INTE laddas upp
-  uteslutna         20  → var och en NAMNGIVEN med vad som krävs
-Uppladdade i kontot:   0  ← läst ur Meta, inte ur minnet
+  uteslutna          0  → var och en NAMNGIVEN med vad som krävs
+Uppladdade i kontot:  11  ← läst ur Meta, inte ur minnet
 ```
 
 | Dom | Källa | Ska bli | Uppe | Saknas |
 |---|--:|--:|--:|--:|
-| `ren` | 0 | 0 | 0 | 0 |
-| `bara-copy` | 0 | 0 | 0 | 0 |
-| `kräver-omdubb` | 0 | 0 | 0 | 0 |
-| `kräver-slutkortsbygge` | 0 | 0 | 0 | 0 |
+| `ren` | 6 | 6 | 5 | 1 |
+| `bara-copy` | 4 | 4 | 4 | 0 |
+| `kräver-omdubb` | 8 | 8 | 0 | 8 |
+| `kräver-slutkortsbygge` | 2 | 2 | 2 | 0 |
 | `okänd` | 0 | 0 | 0 | 0 |
 | `odömd` | 0 | 0 | 0 | 0 |
-| **Summa** | **0** | **0** | **0** | **0** |
+| **Summa** | **20** | **20** | **11** | **9** |
 
-### Uteslutna källannonser — 20 st
+### Saknas i kontot — 9 st, var och en namngiven
 
-| Annons | Dom | Varför |
+| Annons | Dom | Orsak |
 |---|---|---|
-| `NO_PD_1_H3` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_PD_1_H2` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `Fiskespöhållare_SO_2_1_NO` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_CS_1_H3` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_PD_1_H1` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_GT_1_H2` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_CS_1_H2` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_CS_1_H1` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_SO_1_H2` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `Fiskespöhållare_PD_2_1_NO` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `Fiskespöhållare_CS_2_1_NO` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_SP_1_H2` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_SO_1_H3` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_GT_1_H3` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_SO_1_H1` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `Fiskespöhållare_GT_2_1_NO` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_SP_1_H3` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_SP_1_H1` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `NO_GT_1_H1` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-| `Fiskespöhållare_SP_2_1_NO` | odömd | källan är ACTIVE — pausade källannonser återupplivas inte (steg 2) |
-
-⚠️ noll förväntade annonser för NO — varje källannons är okänd, odömd eller pausad.
+| `NO_CS_1_H3` | kräver-omdubb | dom kräver-omdubb — pris i copy: säger 269 kr — butikens pris är 289 kr; brådska i copy: falsk brådska "LAGERRENSING" — butiken säljer inte ut något lager; raba |
+| `NO_GT_1_H2` | ren | dom kräver-omdubb — ögat: talet lovar '30 dagers åpent kjøp' (fiskespohallare-no_gt_1_h2.orig.srt: 'tøftidagers åpn 20, hvis noe skulle skjære seg') — butiken h |
+| `NO_CS_1_H2` | kräver-omdubb | dom kräver-omdubb — pris i copy: säger 269 kr — butikens pris är 289 kr; brådska i copy: falsk brådska "LAGERRENSING" — butiken säljer inte ut något lager; raba |
+| `NO_CS_1_H1` | kräver-omdubb | dom kräver-omdubb — pris i copy: säger 269 kr — butikens pris är 289 kr; brådska i copy: falsk brådska "LAGERRENSING" — butiken säljer inte ut något lager; raba |
+| `NO_SO_1_H2` | kräver-omdubb | dom kräver-omdubb — öppet köp i copy: säger 30 dagar — butiken har 14; pris i copy: säger 269 kr — butikens pris är 289 kr; brådska i copy: falsk brådska "begre |
+| `NO_SO_1_H3` | kräver-omdubb | dom kräver-omdubb — öppet köp i copy: säger 30 dagar — butiken har 14; pris i copy: säger 269 kr — butikens pris är 289 kr; brådska i copy: falsk brådska "begre |
+| `NO_GT_1_H3` | kräver-omdubb | dom kräver-omdubb — öppet köp i tal: säger 30 dagar — butiken har 14 |
+| `NO_SO_1_H1` | kräver-omdubb | dom kräver-omdubb — öppet köp i copy: säger 30 dagar — butiken har 14; pris i copy: säger 269 kr — butikens pris är 289 kr; brådska i copy: falsk brådska "begre |
+| `NO_GT_1_H1` | kräver-omdubb | dom kräver-omdubb — öppet köp i tal: säger 30 dagar — butiken har 14 |
 
 ---
 
 **DELVIS KLART**
 - SE: 19 saknas: Fiskespöhållare_CS_1_H1, Fiskespöhållare_CS_1_H3, Fiskespöhållare_CS_1_H3, Rodholder_SO_3_H1, Fiskespöhållare_CS_1_H2, Rodholder_PD_29_H2, Fiskespöhållare_SO_1_H3, Fiskespöhållare_GT_1_H2, Rodholder_PD_10_1, Fiskespöhållare_GT_1_H3, Rodholder_PD_30_H1, Rodholder_PD_27_H2, Rodholder_PD_27_H1, Fiskespöhållare_GT_1_H1, Fiskespöhållare_GT_1_H3, Fiskespöhållare_SO_1_H1, Rodholder_PD_28_H2, Rodholder_PD_30_H2, Rodholder_PD_28_H1.
-- NO: noll förväntade annonser — ingenting är bevisat byggt.
+- NO: 9 saknas: NO_CS_1_H3, NO_GT_1_H2, NO_CS_1_H2, NO_CS_1_H1, NO_SO_1_H2, NO_SO_1_H3, NO_GT_1_H3, NO_SO_1_H1, NO_GT_1_H1.

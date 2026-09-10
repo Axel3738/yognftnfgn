@@ -91,7 +91,30 @@
     "NO": {
       "kallkampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
       "kallkampanj_id": "120251856983860233",
-      "status": "källan PAUSED sedan augusti — inga kandidater, ingen norsk kampanj byggd; butiken saknar dessutom NOK-paketnivåer"
+      "kallkampanj_status": "PAUSED — används på Axels undantag 2026-09-10 (kalla.no_pausad_kalla_ok), rörs inte",
+      "kampanj": "TACKLEBAY_NO_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+      "kampanj_id": "120249038524410172",
+      "status": "PAUSED",
+      "cbo_daily_budget": "100000",
+      "geo": "NO",
+      "lank": "https://tacklebay.se/nb/products/fiskespohallare-4-pack",
+      "adsets": {
+        "PD": "120249038524720172",
+        "SP": "120249038526840172",
+        "GT": "120249038727950172",
+        "CS": null,
+        "SO": null
+      },
+      "annonser_uppe": 11,
+      "video": 6,
+      "bild": 5,
+      "kallannonser_active": 20,
+      "valuta": "butikens NO-marknad betalar SEK, /nb visar 289,00 kr — copyn säger 289 kr (källan 269 NOK)",
+      "rakning": "DELVIS KLART — 9 saknas (alla kräver-omdubb: CS_1 ×3, SO_1 ×3, GT_1 ×3)",
+      "rapport": "factory/output/fiskespohallare-4-pack/rakningen.md",
+      "omdubb_ko": "factory/output/fiskespohallare-4-pack/omdubb-ko-no.md",
+      "trippelkoll": "2026-09-10: sida, pixel, CBO, länk /nb, geo NO, PAUSED på tre nivåer stämmer på alla 11",
+      "launch": "väntar på Axels \"Launch: TackleBay NO\""
     },
     "trippelkoll": "2026-09-10: sida, pixel, CBO-budget, länk och PAUSED på tre nivåer stämmer på alla 66",
     "launch": {

@@ -495,7 +495,8 @@ gör det sannolikt att den inbrända undertexten gör det också; sannolikt är 
 
 **89 aktiva källannonser** i `Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18`
 (64 video, 25 bild, 47 469 kr, 257 köp, 16 adsets). Norska källkampanjen
-`Fiskespöhållaren NO` är PAUSED sedan augusti — inga kandidater, marknaden läst.
+`Fiskespöhållaren NO` är PAUSED sedan augusti — först "inga kandidater",
+sedan samma dag använd på Axels undantag (punkt 9 nedan).
 Rapport: `factory/output/fiskespohallare-4-pack/brand-detektor.md`, kön:
 `omdubb-ko.md`, planen: `vagplan.json`.
 
@@ -533,6 +534,41 @@ Sju saker den körningen lärde:
    bokstäver). Orsakerna för saknade annonser läses ur `vagplan.json`.
    Utfall TackleBay: 66 uppe av 85 förväntade, 19 namngivna i omdubb-kön —
    DELVIS KLART, exit 1, och det är sant.
+
+**Den norska halvan, samma dag (Axel: "Fixa norge också"):**
+
+9. **En PAUSED källkampanj kan bli källa — bara på ägarens skrivna ord.**
+   `kalla.no_pausad_kalla_ok: "<vem, datum, varför>"` i produktfilen. Då
+   sätter `kallannonser.mjs` `med: true` + `undantag` på raden, detektorn
+   skriver ut undantaget överst och räkningen räknar dem (`arAktiv`: ett
+   explicit `med: true` vinner). Utan raden stoppar `brand-detektor.mjs
+   --marknad NO`. Källkampanjen rörs aldrig — den förblir PAUSED i källkontot.
+10. **Detektorn per marknad:** `--marknad NO` byter källkonto/kampanj/prefix/
+    slug till `no_*`-fälten, skriver `brand-detektor-no.*`/`brand-ocr-no.json`
+    och laddar ner till `<prefix>-NO/media`. Transkript under EGET slug
+    (`no_srt_slug`) — `NO_PD_1_H3` och `Fiskespöhållare_PD_1_H3` har samma
+    rest och skulle annars dela fil. `rakning.mjs` läser båda detektorfilerna
+    och båda vågplanerna (`vagplan-no.json`).
+11. **Norsk villkorstext ser annorlunda ut:** "dagers" (inte dagars), "Tretti
+    dagers åpent kjøp" utskrivet i captions, "Fri frakt ved større
+    bestillinger" utan tal, "kraftig redusert pris", "bare i dag", "lageret
+    tømmes raskt", OCR utan ø ("apent kjop"). Alla in i
+    `villkorsskanning.mjs` (talord → siffror före reglerna). ⚠️ Whisper
+    hörde `GT_1_H2`:s "tretti dagers" som "tøftidagers åpn 20" — den domen
+    sattes för hand i `manuella-domar-no.json` (bara för att FÄLLA, aldrig
+    fria). Läs alltid transkripten med ögat.
+12. **NOK finns inte i butiken** — `marknader[NO].valuta: SEK`, `/nb` visar
+    289,00 kr. Norsk copy säger därför 289 kr (källan sa 269 kr NOK). Slås NOK
+    på i Shopify ska copyn och omdubb-kön räknas om.
+13. **Text direkt på fotot:** `kie.mjs` (nano-banana-edit, 1 job) rensade
+    `CS_2_1_NO`, texten lades tillbaka med PIL (vit fet rubrik med skugga +
+    orange knapp). `vantaPaJobb` returnerar `{ urler }`, inte `resultJson`.
+    Proxyn tappade 4 av 15 videonedladdningar ("fetch failed") — `--hamta`
+    igen återanvänder OCR:en och hämtar bara de som saknas; tre försök räckte.
+14. **`bara-copy` på en BILD är körbar** — bilden är OCR-läst ren, bara Meta-
+    texten bar felet, och den byts ändå. `SO_2_1_NO` (595 NOK, 6 köp, bästa
+    norska bilden) hade annars stått utanför.
+    Utfall NO: 11 uppe av 20 förväntade (6 video, 5 bild), 9 i `omdubb-ko-no.md`.
 
 ## Uppdrag C — Bildannonserna (gratis, ingen väntan)
 

@@ -1,0 +1,4 @@
+{
+  "_om": "Ögongranskning av talet (yta 2) i de norska källvideorna, 2026-09-10. Whisper hörde talorden fel (\"tøftidagers åpn 20\" = \"tretti dagers åpent kjøp\") så villkorsregeln inte fyrade — domen sätts här för hand, med belägget. Läses av bygg-vagkonfig.mjs --marknad NO och skriver ÖVER detektorns dom för just de här annonserna. Aldrig för att fria en annons, bara för att fälla.",
+  "NO_GT_1_H2": { "dom": "kräver-omdubb", "orsak": "talet lovar '30 dagers åpent kjøp' (fiskespohallare-no_gt_1_h2.orig.srt: 'tøftidagers åpn 20, hvis noe skulle skjære seg') — butiken har 14 dagers angrerett" }
+}

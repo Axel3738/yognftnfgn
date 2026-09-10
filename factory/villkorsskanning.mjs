@@ -54,6 +54,8 @@ export function byggRegler(butik, { produkt = null } = {}) {
       // Även den talade formen: "fri frakt över trehundra kronor", och
       // Whisper-formen "Frifrakt om det handlar för över 300 kronor".
       re2: /(fri|gratis)\s*frakt[^.]{0,40}?(över|over)\s*(\d[\d\s]*\s*(kr|kronor)|tre\s*hundra|trehundra)/i,
+      // Norsk form utan tal: "Fri frakt ved større bestillinger" (NO_SO_1_H2).
+      re3: /(fri|gratis)\s*frakt\s+(ved|vid|på|pa)\s+st[øo]rre\s+(bestillinger|ordre|beställningar)/i,
       fel: () => friUtanGrans,
       text: (m) => `lovar fraktgräns "${m}" — butiken har fri frakt UTAN gräns`,
     },
@@ -63,7 +65,7 @@ export function byggRegler(butik, { produkt = null } = {}) {
       // stå ett par ord bort ("30 dagars nöjd-kund-garanti", "30 dagar köp ett köp").
       // Norska: "30 dagers åpent kjøp", "30 dagers fornøyd-kunde-garanti"
       // (TackleBay NO 2026-09-10 — `dagar?s?` missade "dagers").
-      re: /(\d+)\s*dag(?:ar|er)?s?\s*(?:[a-zåäöø-]+[\s-]+){0,3}?(öppet\s*köp|åpent\s*kjøp|n[öo]jd|forn[øo]yd|garanti|pengarna tillbaka|pengene tilbake|köp\s*ett\s*köp|uppe\s*köp|upp\s*ett\s*köp|köper\s*köp|köp\b|kjøp\b)/i,
+      re: /(\d+)\s*dag(?:ar|er)?s?\s*(?:[a-zåäöø-]+[\s-]+){0,3}?(öppet\s*köp|[åa]pent\s*kj[øo]p|n[öo]jd|forn[øo]yd|garanti|pengarna tillbaka|pengene tilbake|köp\s*ett\s*köp|uppe\s*köp|upp\s*ett\s*köp|köper\s*köp|köp\b|kj[øo]p\b)/i,
       fel: (m, n) => oppetKop != null && Number(n) !== Number(oppetKop),
       text: (m, n) => `säger ${n} dagar — butiken har ${oppetKop}`,
       taSiffra: true,
@@ -88,7 +90,9 @@ export function byggRegler(butik, { produkt = null } = {}) {
     },
     {
       id: 'rabatt',
-      re: /(\d{1,2})\s*%\s*(rabatt|billigare|avdrag)|rabatt[^.]{0,20}?(\d{1,2})\s*%/i,
+      // OCR delar ofta "40%" och "RABATT" i två texter (Fiskespöhållare_CS_2_1_NO
+      // 2026-09-10) — ett ensamt procenttal på en bild är därför också ett fynd.
+      re: /(\d{1,2})\s*%\s*(rabatt|billigare|avdrag|avslag)|rabatt[^.]{0,20}?(\d{1,2})\s*%|^\s*-?\d{1,2}\s*%\s*$/i,
       fel: () => pris != null && !jamfor,
       text: (m) => `lovar rabatt "${m}" — produkten har inget jämförpris, alltså ingen rabatt`,
     },
@@ -99,14 +103,14 @@ export function byggRegler(butik, { produkt = null } = {}) {
       // Norska formerna (TackleBay NO 2026-09-10): "LAGERRENSING", "Vi rydder
       // lageret", "Begrenset antall på lager", "så lenge lageret rekker",
       // "før den er utsolgt", "Ikke vent".
-      re: /(säljer ut lagret|lagret (rensas|krymper|är begränsat)|så långt lagret räcker|få kvar i lager|begränsat antal|bara i ?dag|idag endast|sista chansen|innan (det|den) är slut|när det är slut är det slut|lagerrensing|rydder lageret|begrenset antall|så lenge lageret rekker|før (den|det) er utsolgt|ikke vent|kun i ?dag|siste sjanse)/i,
+      re: /(säljer ut lagret|lagret (rensas|krymper|är begränsat)|så långt lagret räcker|få kvar i lager|begränsat antal|bara i ?dag|idag endast|sista chansen|innan (det|den) är slut|när det är slut är det slut|lagerrensing|rydder lageret|begrenset antall|så lenge lageret rekker|før (den|det) er utsolgt|ikke vent|kun ?i ?dag|siste sjanse|f[åa] igjen p[åa] lager|f[øo]r det er tomt|bare i ?dag|lageret er begrenset|t[øo]mmes raskt|n[åa]r det er tomt|tilbudet forsvinner|siste sjanse|benytt sjansen|sikre deg din)/i,
       fel: () => true,
       text: (m) => `falsk brådska "${m}" — butiken säljer inte ut något lager`,
     },
     {
       id: 'rabatt-ord',
       // "kraftigt rabatterat pris", "rabatterat pris" utan procenttal.
-      re: /rabatterat pris|till rabatterat|rea-?pris|nedsatt pris|nå kun \d|nedsatt til|tilbudspris/i,
+      re: /rabatterat pris|till rabatterat|rea-?pris|nedsatt pris|nå kun \d|nedsatt til|tilbudspris|redusert pris|denne prisen/i,
       fel: () => pris != null && !jamfor,
       text: (m) => `lovar rabatt "${m}" — produkten har inget jämförpris, alltså ingen rabatt`,
     },
@@ -125,9 +129,15 @@ export function skannaVillkor(texter, butik, alternativ = {}) {
   const regler = byggRegler(butik, alternativ);
   const fynd = [];
   for (const t of texter) {
-    const rad = String(t.text || '');
+    // Talord → siffror. HeyGen/Whisper och inbrända captions skriver ut talen
+    // ("Tretti dagers åpent kjøp", "trettio dagars", "fjorton dagars") och en
+    // regel som kräver \d+ missar dem alla (NO_CS_1_H1, 2026-09-10).
+    const rad = String(t.text || '')
+      .replace(/\btretti(o)?\b/gi, '30')
+      .replace(/\bfjort(on|en)\b/gi, '14')
+      .replace(/\btre ?hundr[ae]\b/gi, '300');
     for (const r of regler) {
-      for (const re of [r.re, r.re2].filter(Boolean)) {
+      for (const re of [r.re, r.re2, r.re3].filter(Boolean)) {
         const m = rad.match(re);
         if (!m) continue;
         let trasig, beskrivning;

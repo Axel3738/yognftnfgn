@@ -62,6 +62,10 @@ const nyCopy = existsSync(nyFil) ? JSON.parse(readFileSync(nyFil, 'utf8')) : [];
 
 const domAv = new Map();
 for (const a of det.annonser ?? []) domAv.set(String(a.id ?? a.annons), a);
+// Manuella domar (ögat): manuella-domar-<m>.json — bara för att FÄLLA en annons
+// detektorn friat (whisper hörde talorden fel på NO_GT_1_H2). Aldrig för att fria.
+const manFil = join(HAR, `manuella-domar${svans}.json`);
+const manuella = existsSync(manFil) ? JSON.parse(readFileSync(manFil, 'utf8')) : {};
 const copyAv = new Map(nyCopy.map((c) => [Number(c.variant), c]));
 const variantAv = new Map();
 for (const v of varianter) for (const namn of v.annonser) variantAv.set(namn, v.variant);
@@ -87,7 +91,9 @@ const sedda = new Map();
 const plan = [];
 for (const a of kallor) {
   const k = koncept(a.adset.namn);
-  const d = domAv.get(String(a.id)) ?? domAv.get(a.namn);
+  let d = domAv.get(String(a.id)) ?? domAv.get(a.namn);
+  const man = manuella[a.namn];
+  if (man && man.dom && !['ren', 'bara-copy'].includes(man.dom)) d = { ...(d ?? {}), dom: man.dom, attgöra: [`ögat: ${man.orsak}`] };
   const dom = d?.dom ?? 'odömd';
   const v = variantAv.get(a.namn);
   const copyNy = v != null ? copyAv.get(v) : null;
@@ -107,7 +113,10 @@ for (const a of kallor) {
   if (!k) rad.orsak = `okänt koncept i adsetnamnet "${a.adset.namn}"`;
   else if (!copyNy) rad.orsak = `copy saknas för variant ${v}`;
   else if (a.typ === 'bild') {
-    if (bildFixad || dom === 'ren') {
+    // `bara-copy` på en bild = bara Meta-texten bär felet, själva bilden är
+    // OCR-läst ren — och copyn byts ändå (Fiskespöhållare_SO_2_1_NO, 595 NOK,
+    // 6 köp, bästa norska bilden, 2026-09-10).
+    if (bildFixad || dom === 'ren' || dom === 'bara-copy') {
       mkdirSync(BILD, { recursive: true });
       if (!bildFixad) copyFileSync(join(MEDIA, `${ocrNyckel}.jpg`), join(BILD, `${ocrNyckel}.jpg`));
       rad.fil = `${ocrNyckel}.jpg`;
