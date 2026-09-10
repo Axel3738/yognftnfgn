@@ -155,7 +155,14 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    i temats **Appyta** (ms-app-slot), aldrig egen styling (minnesregeln).
    Kopiera `current.blocks` (app-embeds) från live-temat in i klonen.
 6. **Paketen + Q4-ramverket:** ms_paketniva-metaobjekt (translatable PÅ),
-   riktiga rabattkoder som ger exakt paketpriserna, A = källans Kaching-nivåer,
+   riktiga rabattkoder som ger exakt paketpriserna. **Nivåerna är alltid
+   1 / 2 / 4** (Axels beslut 2026-09-10) — källans 3-pack byts mot 4-pack
+   med källans procent för toppnivån. **Har produkten varianter får varje
+   nivå en rullgardin per enhet med variantbild** (Kaching-stilen; skicka
+   `enhet: 'par'` e.d. i produktmallens render-anrop) och temats
+   pill-väljare göms — det sitter i temat, inget att bygga per butik.
+   Efter `paket.mjs`: läs tillbaka ALLA rabattkoder (kod, procent, min
+   antal) — kodsökningen är luddig. A = källans Kaching-nivåer,
    B = testoffer. **Mitten alltid förvald** (⌈n/2⌉), aldrig första.
    Bonusprodukt: gratis i paketen + betald korg-upsell
    (`tema.mjs → byggKorgUpsell`, `offer.bonus_produkt`).

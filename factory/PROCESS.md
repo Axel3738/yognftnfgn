@@ -66,6 +66,21 @@ som genereras per bygge).
    orderattribut "AB paket" mäter). **Förvald nivå är ALLTID mitten**
    (position ⌈n/2⌉), aldrig första — Axels beslut 2026-09-07, gäller varje
    OPS och båda A/B-varianterna.
+   **Nivåerna är 1 / 2 / 4, inte 1 / 2 / 3** (Axels beslut 2026-09-10, gäller
+   alla framtida OPS): största nivån är alltid 4-pack, med källans procent
+   för toppnivån. **Produkter med varianter får en rullgardin PER ENHET i
+   paketet** (1 par = 1 ruta, 2 = 2, 4 = 4) med variantbilden som miniatyr,
+   som Kaching — temats pill-väljare göms. Kunden kan blanda färger; köpet
+   lägger en rad per vald variant och rabattkoderna räknar antal per
+   produkt, så koden gäller oavsett mix. Koden bor i
+   `snippets/ms-paket.liquid` + `assets/ms-paket.js/.css` (i
+   `factory/tema/ops-tema.zip`); produktmallen skickar `enhet: 'par'` (ordet
+   i rutans etikett). `underrubrik` lämnas TOM på nivåer > 1 — styckpriset
+   räknas i temat och följer valutan.
+   ⚠️ `paket.mjs` letar befintlig kod med `query: "code:X"`, som är LUDDIG:
+   mätt 2026-09-10 svarade den DAMASKER2PACK på sökningen efter
+   DAMASKER4PACK och 2-packets kod skrevs över. Träffen räknas nu bara vid
+   exakt kodmatch — kontrollera alltid alla koder efter en körning.
 8. ⚙️ Bonus-ramverket (Q4-videon, standard för VARJE OPS): en billig
    komplementprodukt (t.ex. varningsskyltar till kameran) som (a) GRATIS
    bonus i paketnivåerna — "köp mer, få mer" i stället för djupare rabatt —

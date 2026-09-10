@@ -172,7 +172,14 @@ export async function skrivRabattkod({ kod, titel, procent, minAntal, produktId 
     }`,
     { fraga: `code:${kod}` }
   );
-  const befintlig = finns.codeDiscountNodes?.nodes?.[0] ?? null;
+  // ⚠️ `query: "code:X"` är en LUDDIG sökning. Mätt 2026-09-10 på DryTrek:
+  // sökningen efter DAMASKER4PACK svarade med DAMASKER2PACK, och koden för
+  // 2-packet skrevs över till 20 % / min 4 — det förvalda paketet stod utan
+  // rabatt i kassan medan kortet lovade 661,30. Träffen räknas därför bara
+  // om koden är EXAKT densamma; annars skapas en ny.
+  const befintlig = (finns.codeDiscountNodes?.nodes ?? []).find((n) =>
+    (n.codeDiscount?.codes?.nodes ?? []).some((c) => c.code === kod)
+  ) ?? null;
 
   const basic = {
     title: titel,
