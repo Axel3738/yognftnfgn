@@ -199,6 +199,25 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    `pipeline/no-video-launch.mjs` + `no-image-launch.mjs` med en vågkonfig per
    marknad. Allt Graph-anrop går genom `tools/meta-lib.mjs` — skriv aldrig egna
    anrop, spärrarna där är dyrköpta.
+
+   ⛔ **STRUKTUREN ÄR LÅST. Hitta ALDRIG på en egen** (Axels beslut
+   2026-09-10, den enda regeln som gäller över allt annat i det här steget).
+   Varje OPS-kampanj ser EXAKT likadan ut, och det är den struktur
+   `no-video-launch.mjs` bygger:
+   - **EN kampanj per marknad**, `OUTCOME_SALES`, **CBO** (budgeten på
+     kampanjen, `LOWEST_COST_WITHOUT_CAP`), ~1 000 kr/dag.
+   - **Ett NYTT adset per koncept** — samma koncept som källkampanjens adsets
+     (PD / SP / GT / CS …), **ingen egen budget på adsetet**,
+     `OFFSITE_CONVERSIONS` → `PURCHASE` mot butikens pixel, geo = marknaden.
+   - **Annonserna inne i sitt koncepts adset**, namn enligt
+     `docs/naming-convention.md`.
+   Det som är FÖRBJUDET: ABO, en budget per adset, ett adset per annons,
+   ett enda adset för allt, egna koncept som inte finns i källan, en
+   "testkampanj" bredvid, att lägga annonser i en kampanj som redan finns
+   i kontot, eller någon annan idé om struktur — hur bra den än låter.
+   Finns kampanjen redan (samma namn) fylls DEN, exakt så här, aldrig en ny
+   bredvid. Hela strukturen skrivs i vågkonfigen FÖRE körning och visas i
+   chatten som en tabell: kampanj → adsets → antal annonser per adset.
    - Kampanjnamnen prefixas ALLTID med brandet OCH marknaden:
      `TANKGUARD_SE_…` och `TANKGUARD_NO_…`. Alla OPS-butiker delar ett konto,
      och utan marknaden i namnet går datan inte att skära per land.
@@ -304,6 +323,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] BÅDA källkontona lästa: MagiBorsten (SE) OCH Magiborsten NO
 - [ ] Alla kampanjer per konto genomsökta, inte bara `kalla.kampanj_id`
 - [ ] TVÅ kampanjer byggda: `<BRAND>_SE_…` och `<BRAND>_NO_…`
+- [ ] **Strukturen är den låsta: CBO-kampanj → ett nytt adset per
+      källkoncept utan egen budget → annonserna i sitt adset.** Ingen egen
+      struktur, ingen ABO, inget adset per annons
 - [ ] Svensk copy på svenska mot `/`, norsk copy på bokmål mot `/nb`
 - [ ] Allt skapat PAUSED, status explicit på alla tre nivåer
 - [ ] **`node factory/rakning.mjs <butik-id>` körd och tabellen visad — exit 0,
