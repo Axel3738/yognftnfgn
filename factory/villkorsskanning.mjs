@@ -61,14 +61,16 @@ export function byggRegler(butik, { produkt = null } = {}) {
       id: 'öppet köp',
       // OCR tappar prickarna ("30 dagars nojd-kund-garanti") och ordet kan
       // stå ett par ord bort ("30 dagars nöjd-kund-garanti", "30 dagar köp ett köp").
-      re: /(\d+)\s*dagar?s?\s*(?:[a-zåäöø-]+[\s-]+){0,3}?(öppet\s*köp|åpent\s*kjøp|n[öo]jd|forn[øo]yd|garanti|pengarna tillbaka|köp\s*ett\s*köp|uppe\s*köp|upp\s*ett\s*köp|köper\s*köp|köp\b)/i,
+      // Norska: "30 dagers åpent kjøp", "30 dagers fornøyd-kunde-garanti"
+      // (TackleBay NO 2026-09-10 — `dagar?s?` missade "dagers").
+      re: /(\d+)\s*dag(?:ar|er)?s?\s*(?:[a-zåäöø-]+[\s-]+){0,3}?(öppet\s*köp|åpent\s*kjøp|n[öo]jd|forn[øo]yd|garanti|pengarna tillbaka|pengene tilbake|köp\s*ett\s*köp|uppe\s*köp|upp\s*ett\s*köp|köper\s*köp|köp\b|kjøp\b)/i,
       fel: (m, n) => oppetKop != null && Number(n) !== Number(oppetKop),
       text: (m, n) => `säger ${n} dagar — butiken har ${oppetKop}`,
       taSiffra: true,
     },
     {
       id: 'ångerrätt',
-      re: /(\d+)\s*dagars?\s*ånger/i,
+      re: /(\d+)\s*dag(?:ar|er)s?\s*(ånger|angrer)/i,
       fel: (m, n) => angerratt != null && Number(n) !== Number(angerratt),
       text: (m, n) => `säger ${n} dagars ångerrätt — butiken har ${angerratt}`,
       taSiffra: true,
@@ -79,7 +81,7 @@ export function byggRegler(butik, { produkt = null } = {}) {
       // har sin egen regel) och inte "300 kr" i "handla för 300 kr".
       // Talet får inte börja mitt i en siffra ("149" är inte "49"), och 300 är
       // fraktgränsens tal, aldrig ett pris — den har sin egen regel.
-      re: /(?<![\d,.])(\d{2,4}(?:[,.]\d{2})?)\s*(kr|kronor)\b/i,
+      re: /(?<![\d,.])(\d{2,4}(?:[,.]\d{2})?)\s*(kr|kronor|kroner)\b/i,
       fel: (m, n) => pris != null && talAv(n) !== 300 && !tillatna.has(talAv(n)),
       text: (m, n) => `säger ${n} kr — butikens pris är ${pris} kr${jamfor ? ` (jämförpris ${jamfor})` : ''}`,
       taSiffra: true,
@@ -94,14 +96,17 @@ export function byggRegler(butik, { produkt = null } = {}) {
       id: 'brådska',
       // Falsk knapphet/brådska: lagerslut, "bara idag", "sista chansen". En ny
       // OPS-butik säljer inte ut något lager och har ingen deadline.
-      re: /(säljer ut lagret|lagret (rensas|krymper|är begränsat)|så långt lagret räcker|få kvar i lager|begränsat antal|bara i ?dag|idag endast|sista chansen|innan (det|den) är slut|när det är slut är det slut)/i,
+      // Norska formerna (TackleBay NO 2026-09-10): "LAGERRENSING", "Vi rydder
+      // lageret", "Begrenset antall på lager", "så lenge lageret rekker",
+      // "før den er utsolgt", "Ikke vent".
+      re: /(säljer ut lagret|lagret (rensas|krymper|är begränsat)|så långt lagret räcker|få kvar i lager|begränsat antal|bara i ?dag|idag endast|sista chansen|innan (det|den) är slut|när det är slut är det slut|lagerrensing|rydder lageret|begrenset antall|så lenge lageret rekker|før (den|det) er utsolgt|ikke vent|kun i ?dag|siste sjanse)/i,
       fel: () => true,
       text: (m) => `falsk brådska "${m}" — butiken säljer inte ut något lager`,
     },
     {
       id: 'rabatt-ord',
       // "kraftigt rabatterat pris", "rabatterat pris" utan procenttal.
-      re: /rabatterat pris|till rabatterat|rea-?pris|nedsatt pris/i,
+      re: /rabatterat pris|till rabatterat|rea-?pris|nedsatt pris|nå kun \d|nedsatt til|tilbudspris/i,
       fel: () => pris != null && !jamfor,
       text: (m) => `lovar rabatt "${m}" — produkten har inget jämförpris, alltså ingen rabatt`,
     },

@@ -178,12 +178,20 @@ kalla:
   kampanj: "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18"
   # NO: "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20" är PAUSED sedan
   # augusti (20 annonser, alla ACTIVE inuti, kampanjen avstängd). PAUSED är ett
-  # beslut — inga kandidater. Läses ändå, så räkningen ser att marknaden är läst.
+  # beslut — normalt inga kandidater. ⚠️ Ägarens skrivna undantag nedan
+  # (Axel 2026-09-10, "Fixa norge också") gör de 20 ACTIVE-annonserna i den
+  # pausade kampanjen till källor ÄNDÅ. Utan den raden räknas ingen av dem.
+  # Källkampanjen själv rörs aldrig — den förblir PAUSED i Magiborsten NO.
   no_kampanj_id: "120251856983860233"
   no_kampanjmonster: "Fiskespöhållaren NO"
   no_annonsprefix:
     - "NO"
     - "Fiskespöhållare"
+  no_pausad_kalla_ok: "Axel 2026-09-10: Fixa norge också — pausad NO-källa används ändå"
+  # Norska transkript: eget slug så de aldrig krockar med de svenska
+  # (NO_PD_1_H3 och Fiskespöhållare_PD_1_H3 har samma rest "PD_1_H3").
+  no_srt_slug:
+    - "fiskespohallare-no"
   # Talet: inga HeyGen-transkript finns för produkten i repot (mätt
   # 2026-09-10). Transkriberas lokalt med faster-whisper till
   # market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/

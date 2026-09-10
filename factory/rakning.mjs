@@ -159,6 +159,11 @@ export function normaliseraUppladdad(rad) {
  *  en annons ur räkningen. */
 export function arAktiv(rad) {
   if (rad.med === false) return false;
+  // kallannonser.json:s `med: true` är ett FATTAT beslut — även när kampanjen
+  // är PAUSED, för då bär raden ägarens skrivna undantag (`undantag`, ur
+  // kalla.no_pausad_kalla_ok; TackleBay NO 2026-09-10). Utan med-fältet gäller
+  // kampanjstatusen som förut.
+  if (rad.med === true) return true;
   if (rad.kampanjStatus != null && rad.kampanjStatus !== 'ACTIVE') return false;
   if (rad.status == null) return true;
   if (rad.status !== 'ACTIVE') return false;
@@ -634,11 +639,20 @@ async function kör() {
   }
 
   const utMapp = join(ROT, 'output', butikId);
-  const brandDetektor = läsJson(join(utMapp, 'brand-detektor.json'));
+  // Detektorn skriver EN fil per läst källkonto: brand-detektor.json (SE) och
+  // brand-detektor-no.json (NO, `--marknad NO`). Domarna slås ihop på exakt
+  // namn — NO-namnen (NO_…, …_NO) är egna, så inget ärvs över marknadsgränsen.
+  const detektorSe = läsJson(join(utMapp, 'brand-detektor.json'));
+  const detektorNo = läsJson(join(utMapp, 'brand-detektor-no.json'));
+  const brandDetektor = detektorSe || detektorNo
+    ? { ...(detektorSe ?? detektorNo), annonser: [...(detektorSe?.annonser ?? []), ...(detektorNo?.annonser ?? [])] }
+    : null;
   const kallannonser = läsJson(join(utMapp, 'kallannonser.json'));
-  // Orsakerna kommer ur vågplanen (bygg-vagkonfig.mjs → vagplan.json): varje
-  // källannons som INTE lades i konfigen står där med sitt skäl, på id.
-  const vagplan = läsJson(join(utMapp, 'vagplan.json'));
+  // Orsakerna kommer ur vågplanen (bygg-vagkonfig.mjs → vagplan.json, och
+  // vagplan-no.json för den norska): varje källannons som INTE lades i
+  // konfigen står där med sitt skäl, på id.
+  const planer = [läsJson(join(utMapp, 'vagplan.json')), läsJson(join(utMapp, 'vagplan-no.json'))].filter((v) => v?.plan);
+  const vagplan = planer.length ? { plan: planer.flatMap((v) => v.plan) } : null;
   if (vagplan?.plan && kallannonser && typeof kallannonser === 'object') {
     const orsakAv = new Map(vagplan.plan.filter((r) => r.orsak).map((r) => [String(r.id), r.orsak]));
     for (const block of Object.values(kallannonser)) {

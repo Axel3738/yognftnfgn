@@ -403,6 +403,9 @@ test('arAktiv: PAUSED kampanj eller med:false stryker annonsen ur räkningen', (
   assert.equal(arAktiv(normaliseraKalla({ namn: 'NO_PD_1_H1', status: 'ACTIVE', adset: { status: 'ACTIVE' }, kampanj: { status: 'PAUSED' } })), false);
   assert.equal(arAktiv(normaliseraKalla({ namn: 'NO_PD_1_H1', status: 'ACTIVE', med: false })), false);
   assert.equal(arAktiv(normaliseraKalla({ namn: 'X_PD_1_H1', status: 'ACTIVE', adset: { status: 'ACTIVE' }, kampanj: { status: 'ACTIVE' }, med: true })), true);
+  // Ägarens skrivna undantag (kalla.no_pausad_kalla_ok, TackleBay NO 2026-09-10):
+  // kallannonser.mjs sätter då med:true trots PAUSED kampanj — och det beslutet vinner.
+  assert.equal(arAktiv(normaliseraKalla({ namn: 'NO_PD_1_H3', status: 'ACTIVE', adset: { status: 'ACTIVE' }, kampanj: { status: 'PAUSED' }, med: true, undantag: 'Axel 2026-09-10' })), true);
 });
 
 test('byggRakning: en PAUSED tvilling med samma namn stjäl inte den aktivas uppladdning', () => {

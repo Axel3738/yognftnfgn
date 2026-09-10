@@ -121,6 +121,18 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    svenska kampanjen, NO-annonser den norska. Blanda dem aldrig.
    ⚠️ Ta bara ACTIVE-annonser ur aktiva adsets. En PAUSED annons är ett
    beslut — den har dömts ut och ska inte återupplivas i en ny butik.
+   **Enda undantaget är ägarens, skrivet i produktfilen:**
+   `kalla.no_pausad_kalla_ok: "<vem, datum, varför>"` gör ACTIVE-annonserna
+   i en PAUSED norsk källkampanj till källor ändå (TackleBay 2026-09-10,
+   Axel: "Fixa norge också"). `kallannonser.mjs` märker då varje rad med
+   `undantag`, brand-detektorn skriver ut det överst, räkningen räknar dem
+   som förväntade. Utan raden stoppar `brand-detektor.mjs --marknad NO`.
+   Källkampanjen själv rörs ALDRIG — den förblir PAUSED i källkontot.
+   Verktygen för den norska halvan: `node factory/brand-detektor.mjs
+   --produkt <id> --marknad NO --hamta` (egna filer `brand-detektor-no.*`,
+   `brand-ocr-no.json`, media i `.scratch/brand-detektor/<prefix>-NO/`),
+   transkript under `kalla.no_srt_slug` (eget slug — NO_PD_1_H3 och
+   Fiskespöhållare_PD_1_H3 har samma rest och får aldrig dela slug).
    ⚠️ **DEN NORSKA HALVAN ÄR INTE VALFRI** (Axels bakläxa 2026-09-09:
    varken HeimGuard eller TankGuard fick någon norsk kampanj — det norska
    kontot lästes aldrig). Kommandot är inte klart förrän BÅDA kontona är
@@ -159,8 +171,14 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    alltid hämtas från produktsidan vid varje körning.
    ⚠️ Norska annonser: källan (Magiborsten NO) har redan NOK-priser — jämför
    mot OPS-butikens NOK-paketnivåer, inte mot SEK-priset. Ett SEK-tal i en
-   norsk annons räknar fel. Har butiken inga NOK-nivåer satta än: stoppa den
-   norska halvan och säg det, bygg den svenska klart.
+   norsk annons räknar fel. Har butiken inga NOK-nivåer satta än: läs
+   `butiker/<id>.yaml` `marknader[NO].valuta`. Står det SEK (standard i
+   varje OPS tills Axel slår på NOK i admin, beslut 2026-09-08) betalar
+   norrmännen i SEK och `/nb` visar SEK-priset — då är det talet som gäller
+   i norsk copy, exakt som kunden ser det (TackleBay 2026-09-10: källan sa
+   269 kr NOK, /nb visar 289,00 kr, copyn säger 289 kr). Bygg kampanjen
+   PAUSED och säg rakt ut i rapporten att butiken tar SEK av norrmän.
+   Saknas både NOK-nivåer OCH en SEK-marknad: stoppa den norska halvan.
    Talet läses GRATIS ur `market-expansion/no/video-batches/*/srt-orig/*.orig.srt`
    om produkten varit genom NO-flödet. ⚠️ HeyGen hör fel — sök även
    `Bawebutiken` och `Spavebutiken`.

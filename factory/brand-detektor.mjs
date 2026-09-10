@@ -90,7 +90,11 @@ const dö = (m) => { console.error(`✗ ${m}`); process.exit(1); };
 
 // ------------------------------------------------------------------ produktfil
 
-export function läsKälla(produktId) {
+// Det norska källkontot. Samma id som i kallannonser.mjs KONTON.NO — kontrolleras
+// på id, aldrig på namn.
+const NO_KALLKONTO = '1050941584152547';
+
+export function läsKälla(produktId, marknad = 'SE') {
   const fil = hittaProduktfil(produktId);
   if (!fil) dö(`Ingen produktfil med produkt.id "${produktId}" i factory/produkter/`);
   const p = lasYaml(readFileSync(fil, 'utf8'));
@@ -99,6 +103,26 @@ export function läsKälla(produktId) {
     dö(`factory/produkter/${produktId}.yaml saknar kalla.annonsprefix — utan den vet ingen körning vilka annonser som hör till butiken (FAS2, Uppdrag A).`);
   }
   if (!k.annonskonto) dö(`${produktId}.yaml saknar kalla.annonskonto (källkontots id).`);
+  k.marknad = 'SE';
+  // `--marknad NO`: samma detektor mot det norska källkontot. Fälten byts
+  // till produktfilens no_*-varianter, arbetsmappen och utfilerna får egen
+  // svans (-no) så inget skriver över den svenska körningen. Transkripten
+  // slås upp på no_srt_slug (default: <slug>-no) — NO_PD_1_H3 och
+  // Fiskespöhållare_PD_1_H3 har samma rest, så de får aldrig dela slug.
+  if (String(marknad).toUpperCase() === 'NO') {
+    if (!k.no_kampanj_id && !k.no_annonsprefix) {
+      dö(`${produktId}.yaml saknar kalla.no_kampanj_id och kalla.no_annonsprefix — den norska källan går inte att läsa.`);
+    }
+    const seSlug = (Array.isArray(k.srt_slug) ? k.srt_slug : [k.srt_slug]).filter(Boolean);
+    k.arbetsmapp = `${prefixLista(k.annonsprefix)[0]}-NO`;
+    k.marknad = 'NO';
+    k.annonskonto = String(k.no_annonskonto ?? NO_KALLKONTO);
+    k.kampanj_id = k.no_kampanj_id ?? null;
+    k.kampanj = k.no_kampanjmonster ?? null;
+    k.annonsprefix = k.no_annonsprefix ?? k.annonsprefix;
+    k.srt_slug = k.no_srt_slug ?? seSlug.map((s) => `${s}-no`);
+    k.pausad_kalla_ok = k.no_pausad_kalla_ok ? String(k.no_pausad_kalla_ok) : null;
+  }
   // Prefixen kan vara flera i SAMMA kampanj (TackleBay 2026-09-10: Rodholder_
   // och Fiskespöhållare_). `prefixen` är listan; `annonsprefix` lämnas som
   // det står i filen för rapporttexterna.
@@ -389,7 +413,7 @@ export function ocrNycklar(annonser) {
  *  vars filer finns kvar OCR:as inte om (64 videor × 90 frames tog 2,5 h). */
 async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK, tidigare = {}) {
   const nycklar = ocrNycklar(annonser);
-  const mediaMapp = join(ARBETSYTA, prefixLista(kalla.prefixen ?? kalla.annonsprefix)[0], 'media');
+  const mediaMapp = join(ARBETSYTA, kalla.arbetsmapp ?? prefixLista(kalla.prefixen ?? kalla.annonsprefix)[0], 'media');
   mkdirSync(mediaMapp, { recursive: true });
   const ut = {};
 
@@ -676,7 +700,8 @@ function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, d
   rad.push(`Körd ${datum} av \`factory/brand-detektor.mjs\` (Uppdrag A i \`factory/FAS2.md\`).`);
   rad.push('Läser bara. Inga krediter, ingen HeyGen, ingen kie.ai, inget skrivet i något annonskonto.');
   rad.push('');
-  rad.push(`**Källa:** ${kalla.produkt_url || kalla.produkt_handle} · annonsprefix \`${prefixLista(kalla.prefixen ?? kalla.annonsprefix).map((x) => `${x}_`).join('\`, \`')}\` · konto \`${kalla.annonskonto}\` (MagiBorsten, Bäverbutiken SE).`);
+  rad.push(`**Källa:** ${kalla.produkt_url || kalla.produkt_handle} · annonsprefix \`${prefixLista(kalla.prefixen ?? kalla.annonsprefix).map((x) => `${x}_`).join('\`, \`')}\` · konto \`${kalla.annonskonto}\` (${kalla.marknad === 'NO' ? 'Magiborsten NO, Beverbutikken NO' : 'MagiBorsten, Bäverbutiken SE'}).`);
+  if (kalla.pausad_kalla_ok) rad.push(`⚠️ **Källkampanjen är PAUSED.** Annonserna räknas ändå på ägarens skrivna undantag: "${kalla.pausad_kalla_ok}". Källkampanjen rörs inte.`);
   rad.push(`**Mål:** konto \`${produkt?.meta?.ad_account_id || '—'}\` (MagiBorsten DK, OPS Factory). Kontrollerat på id, aldrig på namn.`);
   rad.push('');
   rad.push(`## Läget: ${rader.length} källannonser`);
@@ -769,16 +794,20 @@ function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, d
 async function main() {
   const produktId = flagga('produkt');
   if (!produktId) dö('Ange --produkt <id>, t.ex. --produkt tankguard.');
-  const { produkt, kalla, butik } = läsKälla(produktId);
+  const marknad = String(flagga('marknad', 'SE')).toUpperCase();
+  if (!['SE', 'NO'].includes(marknad)) dö(`--marknad ${marknad}: bara SE eller NO.`);
+  const { produkt, kalla, butik } = läsKälla(produktId, marknad);
   const extraOrd = kalla.extra_brandord || [];
   if (!butik) {
     console.log('  ⚠️ ingen butikskonfig hittad — villkorsjämförelsen (sjätte ytan) körs INTE.');
     console.log('     Annonserna kan alltså bära källbutikens fraktgräns utan att någon dom fångar det.');
   }
   const utMapp = join(ROT, 'factory', 'output', produktId);
-  const ocrFil = join(utMapp, 'brand-ocr.json');
+  // Egna utfiler per marknad — den norska körningen får aldrig skriva över den svenska.
+  const svans = marknad === 'NO' ? '-no' : '';
+  const ocrFil = join(utMapp, `brand-ocr${svans}.json`);
 
-  console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId}`);
+  console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId}${marknad === 'NO' ? ' · MARKNAD NO' : ''}`);
   const prefixen = kalla.prefixen ?? prefixLista(kalla.annonsprefix);
   console.log(`  källkonto ${kalla.annonskonto} · prefix ${prefixen.map((x) => `${x}_`).join(', ')}${kalla.kampanj_id ? ` · kampanj ${kalla.kampanj_id}` : ''}`);
 
@@ -808,11 +837,20 @@ async function main() {
   annonser.sort((a, b) => a.name.localeCompare(b.name, 'sv'));
 
   if (annonser.length === 0) dö(`Inga annonser med prefixen "${prefixen.join('_", "')}_" i konto ${kalla.annonskonto}.`);
+  // En PAUSED källkampanj är ett beslut. Utan ägarens skrivna undantag i
+  // produktfilen (kalla.no_pausad_kalla_ok) stoppar körningen här — annars
+  // döms 20 utdömda annonser "rena" och hamnar i en ny butik.
+  const pausade = annonser.filter((a) => a.campaign?.status && a.campaign.status !== 'ACTIVE');
+  if (pausade.length) {
+    const namn = [...new Set(pausade.map((a) => `${a.campaign.name} (${a.campaign.status})`))].join(', ');
+    if (!kalla.pausad_kalla_ok) dö(`${pausade.length} av ${annonser.length} källannonser ligger i en avstängd kampanj — ${namn}. PAUSED är ett beslut. Ska de ändå användas: skriv ägarens undantag i produktfilen (kalla.no_pausad_kalla_ok).`);
+    console.log(`  ⚠️ ${pausade.length} källannonser ligger i en PAUSED kampanj (${namn}) — läses på ägarens undantag: "${kalla.pausad_kalla_ok}"`);
+  }
   console.log(`  ${annonser.length} källannonser`);
 
   let tathet = Number(flagga('tathet', TATHET_SEK));
   let ocr = {};
-  let ocrKälla = `factory/output/${produktId}/brand-ocr.json`;
+  let ocrKälla = `factory/output/${produktId}/brand-ocr${svans}.json`;
   if (finns('hamta')) {
     console.log(`  hämtar media, drar frames var ${tathet} s och OCR:ar (0 krediter):`);
     const tidigare = existsSync(ocrFil) ? (JSON.parse(readFileSync(ocrFil, 'utf8')).annonser || {}) : {};
@@ -884,8 +922,8 @@ async function main() {
 
   if (finns('torr')) { console.log('\n' + md); return; }
   mkdirSync(utMapp, { recursive: true });
-  writeFileSync(join(utMapp, 'brand-detektor.md'), md);
-  writeFileSync(join(utMapp, 'brand-detektor.json'), JSON.stringify({ produkt: produktId, datum, kalla, annonser: rader }, null, 1));
+  writeFileSync(join(utMapp, `brand-detektor${svans}.md`), md);
+  writeFileSync(join(utMapp, `brand-detektor${svans}.json`), JSON.stringify({ produkt: produktId, datum, marknad, kalla, annonser: rader }, null, 1));
   if (finns('hamta')) {
     // Bara texten sparas, aldrig filerna: media är artefakter som dör med
     // containern, OCR-fynden är facit som måste gå att läsa om utan nedladdning.
@@ -895,7 +933,7 @@ async function main() {
     }]));
     writeFileSync(ocrFil, JSON.stringify({ produkt: produktId, datum, tathet, annonser: lätt }, null, 1));
   }
-  console.log(`\n✓ factory/output/${produktId}/brand-detektor.md`);
+  console.log(`\n✓ factory/output/${produktId}/brand-detektor${svans}.md`);
   for (const d of Object.values(DOMAR)) {
     const n = rader.filter((r) => r.dom === d).length;
     if (n) console.log(`   ${d}: ${n}`);

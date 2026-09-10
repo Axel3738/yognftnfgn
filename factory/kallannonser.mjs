@@ -72,7 +72,11 @@ async function allaSidor(sokvag, params = {}, limit = 100) {
 //     annonserna heter Rodholder_… — ett namnmönster på prefixet gav 0
 //     annonser på TackleBay 2026-09-10. Prefixet sitter på ANNONSEN.
 //  3. kampanjMonster — namnmönstret, som förut.
-export async function lasKonto(kontoId, kampanjMonster, { kampanjId = null, prefix = [] } = {}) {
+// `pausadKampanjOk` är ÄGARENS skrivna undantag (produktfilens
+// kalla.no_pausad_kalla_ok): en PAUSED källkampanj vars ACTIVE-annonser ändå
+// ska räknas som källor. Motiveringen följer med på varje rad som `undantag`
+// så JSON:en förklarar sig själv. Utan den gäller regeln: PAUSED är ett beslut.
+export async function lasKonto(kontoId, kampanjMonster, { kampanjId = null, prefix = [], pausadKampanjOk = null } = {}) {
   const allaKampanjer = await allaSidor(`/act_${kontoId}/campaigns`, { fields: 'id,name,status,objective' });
   let kampanjer = kampanjId ? allaKampanjer.filter((c) => String(c.id) === String(kampanjId)) : [];
   if (kampanjer.length === 0 && prefix.length > 0) {
@@ -173,11 +177,13 @@ export async function lasKonto(kontoId, kampanjMonster, { kampanjId = null, pref
           cta: cta.type ?? null,
         },
         utfall: utfall.get(a.id),
-        // ACTIVE-annons i ett ACTIVE adset i en ACTIVE kampanj.
+        // ACTIVE-annons i ett ACTIVE adset i en ACTIVE kampanj — eller i en
+        // PAUSED kampanj när ägaren skrivit undantaget (TackleBay NO 2026-09-10).
         med:
           a.status === 'ACTIVE' &&
           a.adset?.status === 'ACTIVE' &&
-          a.campaign?.status === 'ACTIVE',
+          (a.campaign?.status === 'ACTIVE' || (Boolean(pausadKampanjOk) && a.campaign?.status === 'PAUSED')),
+        ...(pausadKampanjOk && a.campaign?.status === 'PAUSED' ? { undantag: String(pausadKampanjOk) } : {}),
       };
     })
     .sort((x, y) => y.utfall.spend - x.utfall.spend);
@@ -213,12 +219,18 @@ if (process.argv[1] && process.argv[1].endsWith('kallannonser.mjs')) {
   console.log(`Källprefix SE: ${PREFIX.SE.join('_, ')}_ · NO: ${PREFIX.NO.join('_, ')}_ · Mål: ${MALKONTO.namn} ${MALKONTO.id}`);
   console.log(`Kampanj-id: SE ${KAMPANJ_ID.SE ?? '—'} · NO ${KAMPANJ_ID.NO ?? '—'} · namnmönster: SE ${MONSTER.SE?.source ?? '—'} · NO ${MONSTER.NO?.source ?? '—'}\n`);
 
+  // Ägarens undantag för en pausad källkampanj, per marknad. Bara NO har ett
+  // fält i dag (kalla.no_pausad_kalla_ok). Ett tomt fält = regeln gäller.
+  const UNDANTAG = { SE: null, NO: p.kalla?.no_pausad_kalla_ok ? String(p.kalla.no_pausad_kalla_ok) : null };
+
   const resultat = {};
   for (const [marknad, konto] of Object.entries(KONTON)) {
-    const rader = await lasKonto(konto.id, MONSTER[marknad], { kampanjId: KAMPANJ_ID[marknad], prefix: PREFIX[marknad] });
-    resultat[marknad] = { konto, annonser: rader };
+    const rader = await lasKonto(konto.id, MONSTER[marknad], { kampanjId: KAMPANJ_ID[marknad], prefix: PREFIX[marknad], pausadKampanjOk: UNDANTAG[marknad] });
+    resultat[marknad] = { konto, annonser: rader, ...(UNDANTAG[marknad] ? { undantag: UNDANTAG[marknad] } : {}) };
     const med = rader.filter((r) => r.med);
     console.log(`${marknad} — ${konto.namn} (${konto.id}): ${rader.length} annonser, ${med.length} ACTIVE`);
+    const medUndantag = rader.filter((r) => r.med && r.undantag);
+    if (medUndantag.length) console.log(`   ⚠️ ${medUndantag.length} av dem ligger i en PAUSED kampanj och räknas bara på ägarens undantag: "${UNDANTAG[marknad]}"`);
     for (const r of visaAlla ? rader : med) {
       console.log(
         `   ${r.med ? '✅' : '⏸ '} ${String(Math.round(r.utfall.spend)).padStart(6)} ${konto.valuta} | ` +
