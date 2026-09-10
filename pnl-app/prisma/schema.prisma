@@ -81,6 +81,10 @@ model ShopSettings {
   /// Butikens tidszon. Cachad för att slippa ett GraphQL-anrop per sidladdning
   /// — den ändras i praktiken aldrig, men avgör vad "idag" betyder.
   timezone        String?
+  /// Butikens namn som handlaren själv skrivit det ("Bäverbutikken"), läst ur
+  /// shop { name }. Cachat: myshopify-handtaget ("1acuam-s5") säger ingenting
+  /// för en människa, och gruppsummans tabell blev oläslig av tio sådana.
+  shopName        String?
   /// UI-språk: "en" eller "sv". Engelska är standard för nya installationer
   /// (App Store-krav i praktiken); befintliga butiker migrerades till "sv".
   language        String   @default("en")

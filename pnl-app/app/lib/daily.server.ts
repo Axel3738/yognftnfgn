@@ -169,6 +169,34 @@ export function adminFromToken(shop: string, accessToken: string) {
    självomladdningen polla efter första försöket medan exporten fortfarande
    kör, och skärmen fastnar på gamla siffror. */
 const pagaende = new Set<string>();
+/**
+ * Butikernas riktiga namn, cachade i ShopSettings.shopName.
+ *
+ * Myshopify-handtaget ("1acuam-s5") säger ingenting för en människa, och en
+ * gruppsumma med tio sådana rader går inte att läsa. Namnet hämtas en gång
+ * per butik med butikens egen sparade nyckel och ändras i praktiken aldrig.
+ * Misslyckas det får raden falla tillbaka på handtaget — namnet är kosmetik,
+ * det får aldrig stoppa en summa.
+ */
+export async function fyllButiksnamn(shops: string[]): Promise<void> {
+  await Promise.all(
+    shops.map(async (shop) => {
+      try {
+        const token = await giltigToken(shop);
+        if (!token) return;
+        const res = await adminFromToken(shop, token).graphql(`#graphql\n { shop { name } }`);
+        const body: any = await res.json();
+        const namn = body?.data?.shop?.name;
+        if (typeof namn === "string" && namn.trim()) {
+          await prisma.shopSettings.updateMany({ where: { shop }, data: { shopName: namn.trim() } });
+        }
+      } catch (e) {
+        console.error(`Kunde inte läsa butiksnamnet för ${shop}:`, (e as Error).message);
+      }
+    }),
+  );
+}
+
 export const bakgrundPagar = (shop: string): boolean => pagaende.has(shop);
 export function markeraPagaende<T>(shop: string, p: Promise<T>): Promise<T> {
   pagaende.add(shop);

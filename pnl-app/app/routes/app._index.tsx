@@ -1245,7 +1245,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                           columnContentTypes={["text", "text", "numeric", "numeric", "numeric"]}
                           headings={[T.dashboard.thStore, T.dashboard.thCurrency, T.dashboard.thSales, T.dashboard.thAds, T.dashboard.thNetProfit]}
                           rows={group.rows.map((r) => [
-                            r.shop.replace(/\.myshopify\.com$/, ""),
+                            r.name || r.shop.replace(/\.myshopify\.com$/, ""),
                             r.currency,
                             money(r.totalSales),
                             money(r.spend),
@@ -1265,7 +1265,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         <Banner tone="warning" title={T.group.notesTitle}>
                           {group.notes.map((n) => (
                             <p key={n.shop}>
-                              {n.shop.replace(/\.myshopify\.com$/, "")}: {n.text}
+                              {n.name || n.shop.replace(/\.myshopify\.com$/, "")}: {n.text}
                             </p>
                           ))}
                         </Banner>
@@ -1275,7 +1275,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         <Banner tone="warning" title={T.dashboard.missingStores(group.missing.length)}>
                           {group.missing.map((m) => (
                             <p key={m.shop}>
-                              {m.shop.replace(/\.myshopify\.com$/, "")}: {m.reason}
+                              {m.name || m.shop.replace(/\.myshopify\.com$/, "")}: {m.reason}
                             </p>
                           ))}
                         </Banner>

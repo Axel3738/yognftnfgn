@@ -29,6 +29,7 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
+import { fyllButiksnamn } from "../lib/daily.server";
 import { asLang, t } from "../lib/texts";
 
 const KOD_MINUTER = 30;
@@ -42,12 +43,22 @@ export async function loader({ request }: LoaderFunctionArgs) {
     update: {},
   });
 
-  const gruppen = mig.groupId
+  let gruppen = mig.groupId
     ? await prisma.shopSettings.findMany({
         where: { groupId: mig.groupId },
         orderBy: { shop: "asc" },
       })
     : [mig];
+
+  /* Butikernas riktiga namn, en gång per butik. Handtaget står kvar som
+     underrubrik — det är det man matar in när butiker kopplas ihop. */
+  const utanNamn = gruppen.filter((g) => !g.shopName).map((g) => g.shop);
+  if (utanNamn.length) {
+    await fyllButiksnamn(utanNamn);
+    gruppen = mig.groupId
+      ? await prisma.shopSettings.findMany({ where: { groupId: mig.groupId }, orderBy: { shop: "asc" } })
+      : await prisma.shopSettings.findMany({ where: { shop: mig.shop } });
+  }
 
   // Koden visas hela giltighetstiden, även efter första inlösningen — den
   // återanvänds tills den går ut, så "använd" betyder inte "förbrukad".
@@ -61,6 +72,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     shop: session.shop,
     butiker: gruppen.map((g) => ({
       shop: g.shop,
+      name: g.shopName,
       currency: g.currency,
       jag: g.shop === session.shop,
     })),
@@ -169,7 +181,7 @@ export default function Butiker() {
               columnContentTypes={["text", "text", "text"]}
               headings={[T.stores.thStore, T.stores.thCurrency, ""]}
               rows={butiker.map((b) => [
-                namn(b.shop),
+                b.name || namn(b.shop),
                 b.currency,
                 b.jag ? <Badge key={b.shop} tone="info">{T.stores.thisOne}</Badge> : "",
               ])}

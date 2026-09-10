@@ -19,7 +19,7 @@
 import prisma from "../db.server";
 import { compute, type SalesDay, type SpendDay } from "./pnl.server";
 import { dailyRates, latestRateDay, rateOn, type DailyRates } from "./fx.server";
-import { readDaily, refreshShopDaily, shiftIso } from "./daily.server";
+import { fyllButiksnamn, readDaily, refreshShopDaily, shiftIso } from "./daily.server";
 import { getSpend, kampanjFilter } from "./meta.server";
 import { dayInTz } from "./shopify-data.server";
 import { decrypt } from "./crypto.server";
@@ -41,13 +41,13 @@ export interface GroupResult {
   currency: string;
   totals: GroupTotals;
   /** En rad per butik, för tabellen under hjulet. */
-  rows: { shop: string; currency: string; totalSales: number; netProfit: number; spend: number }[];
+  rows: { shop: string; name: string | null; currency: string; totalSales: number; netProfit: number; spend: number }[];
   /** Butiker vars siffror inte gick att räkna in, med skäl. */
-  missing: { shop: string; reason: string }[];
+  missing: { shop: string; name: string | null; reason: string }[];
   /** Saker ägaren behöver göra i en ANNAN butik — t.ex. logga in igen på
    *  Facebook där, innan dess annonskostnad försvinner ur summan. Bara den
    *  butik man står i visar annars sin egen varning. */
-  notes: { shop: string; text: string }[];
+  notes: { shop: string; name: string | null; text: string }[];
   /**
    * Senaste ECB-dag vars kurs användes (den äldsta bland butikerna, så att
    * datumet aldrig lovar mer än vad summan håller). Null när ingen butik
@@ -334,6 +334,34 @@ export async function summeraGrupp(
   const T = t(lang);
   const medlemmar = await prisma.shopSettings.findMany({ where: { groupId }, orderBy: { shop: "asc" } });
 
+  /* Butiksnamnen först: handtaget "1acuam-s5" säger ingenting för en
+     människa. Ett litet anrop per butik, en enda gång — sedan ligger namnet
+     i databasen. Går det inte visas handtaget som förut. */
+  const utanNamn = medlemmar.filter((m) => !m.shopName).map((m) => m.shop);
+  if (utanNamn.length) {
+    await fyllButiksnamn(utanNamn);
+    const nya = await prisma.shopSettings.findMany({
+      where: { shop: { in: utanNamn } },
+      select: { shop: true, shopName: true },
+    });
+    const hamtade = new Map(nya.map((n) => [n.shop, n.shopName]));
+    for (const m of medlemmar) if (!m.shopName) m.shopName = hamtade.get(m.shop) ?? null;
+  }
+  /* Kloner av samma butik heter ofta samma sak på fem marknader. Ett namn som
+     förekommer flera gånger får därför handtaget efter sig — annars går två
+     rader inte att skilja åt, och det var precis det som gjorde tabellen
+     oläslig från början. */
+  const antalPerNamn = new Map<string, number>();
+  for (const m of medlemmar) {
+    if (m.shopName) antalPerNamn.set(m.shopName, (antalPerNamn.get(m.shopName) ?? 0) + 1);
+  }
+  const namnFor = (shop: string) => {
+    const namn = medlemmar.find((m) => m.shop === shop)?.shopName;
+    if (!namn) return null;
+    const handtag = shop.replace(/\.myshopify\.com$/, "");
+    return (antalPerNamn.get(namn) ?? 0) > 1 ? `${namn} (${handtag})` : namn;
+  };
+
   /* Sekventiellt blev fem butiker fem väntetider i rad — parallellt är
      summan klar när den långsammaste butiken är det. */
   const utfall = (
@@ -355,10 +383,10 @@ export async function summeraGrupp(
 
   for (const u of utfall) {
     if (!u.ok) {
-      missing.push({ shop: u.shop, reason: u.reason });
+      missing.push({ shop: u.shop, name: namnFor(u.shop), reason: u.reason });
       continue;
     }
-    if (u.note) notes.push({ shop: u.shop, text: u.note });
+    if (u.note) notes.push({ shop: u.shop, name: namnFor(u.shop), text: u.note });
     /* Redan omräknat per dag till betraktarens valuta i summeraButik. */
     const tt = u.totals;
     totals.totalSales += tt.totalSales;
@@ -373,6 +401,7 @@ export async function summeraGrupp(
 
     rows.push({
       shop: u.shop,
+      name: namnFor(u.shop),
       currency: u.currency,
       totalSales: tt.totalSales,
       netProfit: tt.netProfit,

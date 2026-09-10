@@ -579,6 +579,22 @@ annonskostnad.
   stonepnl-test, ladda om panelen och jämför annonskostnaden mot Ads Manager
   med samma kampanjurval.
 
+**Butikernas riktiga namn i gruppsumman (build butiksnamn-v82)** — Axels ord
+2026-09-10 om tabellen med tio rader: "det här blir extremt rörigt, kan vi
+köra butikens faktiska namn i stället för myshopify-länken?"
+- `ShopSettings.shopName` cachar `shop { name }`. Hämtas av
+  `fyllButiksnamn()` i `daily.server.ts` med butikens EGEN sparade nyckel —
+  ett litet anrop per butik, en enda gång, och namnet ändras i praktiken
+  aldrig. Misslyckas det visas handtaget som förut: namnet är kosmetik och
+  får aldrig stoppa en summa.
+- Fylls i två lägen: gruppsumman (`group.server.ts`, före summeringen) och
+  Butiker-sidan. Gruppsummans rader, "inte med i summan"-listan och
+  noteringarna bär `name`.
+- **Kloner heter ofta samma sak på fem marknader.** Ett namn som förekommer
+  mer än en gång i gruppen får handtaget efter sig ("Bäverbutiken (4snrw0-mg)")
+  — annars byttes ett oläsligt handtag mot två identiska rader.
+- Migration `20260910180000_butiksnamn`.
+
 **Chattbubblan "Fråga StonePNL" (build chat-v73)** — Axels ord: "en AI-
 chattbubbla som svarar på simpla frågor, med vår API. Typ 'hur importerar
 jag COGS om jag har 20+ produkter' → 'du har förmodligen ett sheet, skicka
