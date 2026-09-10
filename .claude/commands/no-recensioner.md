@@ -105,7 +105,7 @@ Rad 1 = resultatet. Rad 2–3 = bara det Axel måste göra något åt.
 
 **På engelska.** Allt i Discord är på engelska (Axels order 2026-09-05) —
 teamet läser kanalen. Postaren stoppar svensk text (exit 3) eller översätter
-den om `ANTHROPIC_API_KEY` finns; skriv engelska från början så slipper du
+den om `ANTHROPIC_NYCKEL` finns (`ANTHROPIC_API_KEY` göms av Claude Code för skripten); skriv engelska från början så slipper du
 omtaget. Produkt- och kanalnamn behåller sin stavning.
 
 ```
