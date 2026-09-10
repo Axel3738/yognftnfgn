@@ -14,6 +14,15 @@ test('fraktgränsen fångas i copy — butiken har fri frakt utan gräns', () =>
   assert.equal(f[0].regel, 'fraktgräns');
 });
 
+test('öppet köp fångas på norska — "30 dagers åpent kjøp" mot en butik med 14', () => {
+  const B14 = { ...BUTIK, retur: { oppet_kop_dagar: 14, angerratt_dagar: 14 } };
+  const f = skannaVillkor([{ yta: 'copy', text: '✅ 30 dagers åpent kjøp' }], B14);
+  assert.equal(f.length, 1);
+  assert.equal(f[0].regel, 'öppet köp');
+  assert.equal(skannaVillkor([{ yta: 'bild', text: 'Garanti: 30 dagers apent kjop – fornoyd eller pengene tilbake' }], B14).filter((x) => x.regel === 'öppet köp').length, 1);
+  assert.deepEqual(skannaVillkor([{ yta: 'copy', text: '✅ 14 dagers angrerett' }], B14), []);
+});
+
 test('fraktgränsen fångas på norska', () => {
   const f = skannaVillkor([{ yta: 'inbränd', text: 'Gratis frakt over 300 kr' }], BUTIK);
   assert.equal(f.length, 1);

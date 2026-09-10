@@ -1,0 +1,221 @@
+{
+  "produkt": "adventskalender-racingbilar",
+  "marknad": "NO",
+  "datum": "2026-09-10",
+  "kampanj": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+  "link": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "budget_kr_per_dag": 1000,
+  "byggs": [
+    {
+      "namn": "AdventLaneRacing_NO_SP_3",
+      "kalla": "Adventskalender_NO_SP_3",
+      "typ": "video",
+      "koncept": "SP",
+      "dom": "bara-copy",
+      "spend": 546,
+      "kop": 2,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"Sjokoladen tom dag 2 – denne varer til jul, 439 kr\" → \"Sjokoladen tom dag 2 – denne varer til jul\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_SP_2_1",
+      "kalla": "Adventskalender_NO_SP_2_1",
+      "typ": "bild",
+      "koncept": "SP",
+      "dom": "bara-copy",
+      "spend": 322,
+      "kop": 3,
+      "andringar": [
+        "bild: omskriven (bildfix) — recension, öppet köp",
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"Sjokoladen tom dag 2 – denne varer til jul, 439 kr\" → \"Sjokoladen tom dag 2 – denne varer til jul\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_G_2_1",
+      "kalla": "Adventskalender_NO_G_2_1",
+      "typ": "bild",
+      "koncept": "G",
+      "dom": "bara-copy",
+      "spend": 159,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"24 biler i en gaveeske, klar til jul – 439 kr\" → \"24 biler i en gaveeske, klar til jul\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_SP_1",
+      "kalla": "Adventskalender_NO_SP_1",
+      "typ": "video",
+      "koncept": "SP",
+      "dom": "bara-copy",
+      "spend": 122,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"Sjokoladen tom dag 2 – denne varer til jul, 439 kr\" → \"Sjokoladen tom dag 2 – denne varer til jul\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_PD_2_1",
+      "kalla": "Adventskalender_NO_PD_2_1",
+      "typ": "bild",
+      "koncept": "PD",
+      "dom": "bara-copy",
+      "spend": 57,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"24 ekte biler bak lukene – kun 439 kr\" → \"24 ekte biler bak lukene\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_G_3",
+      "kalla": "Adventskalender_NO_G_3",
+      "typ": "video",
+      "koncept": "G",
+      "dom": "bara-copy",
+      "spend": 45,
+      "kop": 1,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"24 biler i en gaveeske, klar til jul – 439 kr\" → \"24 biler i en gaveeske, klar til jul\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_G_1",
+      "kalla": "Adventskalender_NO_G_1",
+      "typ": "video",
+      "koncept": "G",
+      "dom": "bara-copy",
+      "spend": 40,
+      "kop": 1,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"24 biler i en gaveeske, klar til jul – 439 kr\" → \"24 biler i en gaveeske, klar til jul\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_G_2",
+      "kalla": "Adventskalender_NO_G_2",
+      "typ": "video",
+      "koncept": "G",
+      "dom": "bara-copy",
+      "spend": 8,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"24 biler i en gaveeske, klar til jul – 439 kr\" → \"24 biler i en gaveeske, klar til jul\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_PD_1",
+      "kalla": "Adventskalender_NO_PD_1",
+      "typ": "video",
+      "koncept": "PD",
+      "dom": "bara-copy",
+      "spend": 8,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"24 ekte biler bak lukene – kun 439 kr\" → \"24 ekte biler bak lukene\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_PD_2",
+      "kalla": "Adventskalender_NO_PD_2",
+      "typ": "video",
+      "koncept": "PD",
+      "dom": "bara-copy",
+      "spend": 7,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"24 ekte biler bak lukene – kun 439 kr\" → \"24 ekte biler bak lukene\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_SP_2",
+      "kalla": "Adventskalender_NO_SP_2",
+      "typ": "video",
+      "koncept": "SP",
+      "dom": "bara-copy",
+      "spend": 5,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"Sjokoladen tom dag 2 – denne varer til jul, 439 kr\" → \"Sjokoladen tom dag 2 – denne varer til jul\""
+      ]
+    },
+    {
+      "namn": "AdventLaneRacing_NO_PD_3",
+      "kalla": "Adventskalender_NO_PD_3",
+      "typ": "video",
+      "koncept": "PD",
+      "dom": "bara-copy",
+      "spend": 2,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\"",
+        "copy: description: \"24 ekte biler bak lukene – kun 439 kr\" → \"24 ekte biler bak lukene\""
+      ]
+    }
+  ],
+  "vantar": [
+    {
+      "namn": "AdventLaneRacing_NO_CS_2_1",
+      "kalla": "Adventskalender_NO_CS_2_1",
+      "typ": "bild",
+      "koncept": "CS",
+      "dom": "bara-copy",
+      "spend": 12,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\""
+      ],
+      "orsak": "bilden bär fel (pris) — ingen omskriven bild i bildfix/ · copy har kvar fel efter radbyten: pris \"🎄 579 kr ned til 439 kr – 24 % rabatt\"; pris \"579 kr → 439 kr i dag\"; pris \"439 kr i dag, før 579 kr – 24 % rabatt\" (NOK-nivåer saknas i butiken) — lägg raden i kalla.copybyten eller vänta"
+    },
+    {
+      "namn": "AdventLaneRacing_NO_CS_1",
+      "kalla": "Adventskalender_NO_CS_1",
+      "typ": "video",
+      "koncept": "CS",
+      "dom": "kräver-omdubb",
+      "spend": 9,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\""
+      ],
+      "orsak": "fel i talet: pris: säger 579 kr (\"femhundre og syttini\") — butiken tar 499 / 649 kr; pris: säger 439 kr (\"firehundre og trettini\") — butiken tar 499 / 649 kr; pris: säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr (NOK-nivåer saknas i butiken — priset kan inte sättas än) — repliken omdubbas · fel inbränt i videon: pris: säger 439 kr — butiken tar 499 / 649 kr; pris: säger 579 kr — butiken tar 499 / 649 kr (NOK-nivåer saknas i butiken — priset kan inte sättas än) — texten byts i bild · copy har kvar fel efter radbyten: pris \"🎄 579 kr ned til 439 kr – 24 % rabatt\"; pris \"579 kr → 439 kr i dag\"; pris \"439 kr i dag, før 579 kr – 24 % rabatt\" (NOK-nivåer saknas i butiken) — lägg raden i kalla.copybyten eller vänta"
+    },
+    {
+      "namn": "AdventLaneRacing_NO_CS_3",
+      "kalla": "Adventskalender_NO_CS_3",
+      "typ": "video",
+      "koncept": "CS",
+      "dom": "kräver-slutkortsbygge",
+      "spend": 3,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\""
+      ],
+      "orsak": "fel inbränt i videon: pris: säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr (NOK-nivåer saknas i butiken — priset kan inte sättas än) — texten byts i bild · copy har kvar fel efter radbyten: pris \"🎄 579 kr ned til 439 kr – 24 % rabatt\"; pris \"579 kr → 439 kr i dag\"; pris \"439 kr i dag, før 579 kr – 24 % rabatt\" (NOK-nivåer saknas i butiken) — lägg raden i kalla.copybyten eller vänta"
+    },
+    {
+      "namn": "AdventLaneRacing_NO_CS_2",
+      "kalla": "Adventskalender_NO_CS_2",
+      "typ": "video",
+      "koncept": "CS",
+      "dom": "kräver-slutkortsbygge",
+      "spend": 1,
+      "kop": 0,
+      "andringar": [
+        "copy: message: \"✅ 30 dagers åpent kjøp\" → \"✅ 14 dagers angrerett\""
+      ],
+      "orsak": "fel inbränt i videon: pris: säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr (NOK-nivåer saknas i butiken — priset kan inte sättas än) — texten byts i bild · copy har kvar fel efter radbyten: pris \"🎄 579 kr ned til 439 kr – 24 % rabatt\"; pris \"579 kr → 439 kr i dag\"; pris \"439 kr i dag, før 579 kr – 24 % rabatt\" (NOK-nivåer saknas i butiken) — lägg raden i kalla.copybyten eller vänta"
+    }
+  ]
+}

@@ -20,38 +20,6 @@ export default {
   videoDir: "../.scratch/brand-detektor/Adventskalender/media",
   adsets: [
     {
-      name: "ADVENTLANERACING_SE_Racingkalendern - GT",
-      ads: [
-        {
-          "name": "AdventLaneRacing_GT_1_H1",
-          "file": "Adventskalender_GT_1_H1.mp4",
-          "copy": {
-            "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
-            "headline": "24 bilar bakom 24 luckor i jul",
-            "description": ""
-          }
-        },
-        {
-          "name": "AdventLaneRacing_GT_2_H1",
-          "file": "Adventskalender_GT_2_H1.mp4",
-          "copy": {
-            "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
-            "headline": "24 bilar bakom 24 luckor i jul",
-            "description": ""
-          }
-        },
-        {
-          "name": "AdventLaneRacing_GT_3_H1",
-          "file": "Adventskalender_GT_3_H1.mp4",
-          "copy": {
-            "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
-            "headline": "24 bilar bakom 24 luckor i jul",
-            "description": ""
-          }
-        }
-      ],
-    },
-    {
       name: "ADVENTLANERACING_SE_Racingkalendern - PD",
       ads: [
         {
@@ -60,7 +28,7 @@ export default {
           "copy": {
             "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
             "headline": "Choklad: 10 sek. Bilarna: hela december.",
-            "description": ""
+            "description": "Leksaksbilar som finns kvar efter jul."
           }
         },
         {
@@ -69,7 +37,7 @@ export default {
           "copy": {
             "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
             "headline": "Choklad: 10 sek. Bilarna: hela december.",
-            "description": ""
+            "description": "Leksaksbilar som finns kvar efter jul."
           }
         },
         {
@@ -78,7 +46,39 @@ export default {
           "copy": {
             "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
             "headline": "Choklad: 10 sek. Bilarna: hela december.",
-            "description": ""
+            "description": "Leksaksbilar som finns kvar efter jul."
+          }
+        }
+      ],
+    },
+    {
+      name: "ADVENTLANERACING_SE_Racingkalendern - GT",
+      ads: [
+        {
+          "name": "AdventLaneRacing_GT_1_H1",
+          "file": "Adventskalender_GT_1_H1.mp4",
+          "copy": {
+            "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+            "headline": "24 bilar bakom 24 luckor i jul",
+            "description": "En ny bil att öppna varje dag i december."
+          }
+        },
+        {
+          "name": "AdventLaneRacing_GT_2_H1",
+          "file": "Adventskalender_GT_2_H1.mp4",
+          "copy": {
+            "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+            "headline": "24 bilar bakom 24 luckor i jul",
+            "description": "En ny bil att öppna varje dag i december."
+          }
+        },
+        {
+          "name": "AdventLaneRacing_GT_3_H1",
+          "file": "Adventskalender_GT_3_H1.mp4",
+          "copy": {
+            "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+            "headline": "24 bilar bakom 24 luckor i jul",
+            "description": "En ny bil att öppna varje dag i december."
           }
         }
       ],
@@ -92,7 +92,7 @@ export default {
           "copy": {
             "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
             "headline": "649 kr → 499 kr – bara idag",
-            "description": ""
+            "description": "23% rabatt på julens mest väntade kalender."
           }
         },
         {
@@ -101,7 +101,7 @@ export default {
           "copy": {
             "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
             "headline": "649 kr → 499 kr – bara idag",
-            "description": ""
+            "description": "23% rabatt på julens mest väntade kalender."
           }
         },
         {
@@ -110,7 +110,7 @@ export default {
           "copy": {
             "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
             "headline": "649 kr → 499 kr – bara idag",
-            "description": ""
+            "description": "23% rabatt på julens mest väntade kalender."
           }
         }
       ],
@@ -124,7 +124,7 @@ export default {
           "copy": {
             "message": "⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\n– Johan, en av 10 recensioner med fem stjärnor\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 14 dagars ångerrätt\nBeställ nu. 🎁",
             "headline": "Sonen längtar till varje dag",
-            "description": ""
+            "description": "14 dagars ångerrätt enligt svensk lag."
           }
         },
         {
@@ -133,7 +133,7 @@ export default {
           "copy": {
             "message": "⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\n– Johan, en av 10 recensioner med fem stjärnor\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 14 dagars ångerrätt\nBeställ nu. 🎁",
             "headline": "Sonen längtar till varje dag",
-            "description": ""
+            "description": "14 dagars ångerrätt enligt svensk lag."
           }
         },
         {
@@ -142,7 +142,7 @@ export default {
           "copy": {
             "message": "⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\n– Johan, en av 10 recensioner med fem stjärnor\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 14 dagars ångerrätt\nBeställ nu. 🎁",
             "headline": "Sonen längtar till varje dag",
-            "description": ""
+            "description": "14 dagars ångerrätt enligt svensk lag."
           }
         }
       ],

@@ -12,18 +12,8 @@
       "typ": "bild",
       "koncept": "PD",
       "dom": "ren",
-      "spend": 1136,
+      "spend": 1170,
       "kop": 7,
-      "andringar": []
-    },
-    {
-      "namn": "AdventLaneRacing_GT_1_H1",
-      "kalla": "Adventskalender_GT_1_H1",
-      "typ": "video",
-      "koncept": "GT",
-      "dom": "ren",
-      "spend": 478,
-      "kop": 2,
       "andringar": []
     },
     {
@@ -32,8 +22,18 @@
       "typ": "video",
       "koncept": "PD",
       "dom": "ren",
-      "spend": 476,
-      "kop": 3,
+      "spend": 507,
+      "kop": 4,
+      "andringar": []
+    },
+    {
+      "namn": "AdventLaneRacing_GT_1_H1",
+      "kalla": "Adventskalender_GT_1_H1",
+      "typ": "video",
+      "koncept": "GT",
+      "dom": "ren",
+      "spend": 493,
+      "kop": 2,
       "andringar": []
     },
     {
@@ -82,7 +82,7 @@
       "typ": "bild",
       "koncept": "SP",
       "dom": "bara-copy",
-      "spend": 25,
+      "spend": 28,
       "kop": 0,
       "andringar": [
         "bild: omskriven (bildfix) — recension",
@@ -133,6 +133,7 @@
       "kop": 0,
       "andringar": [
         "copy: message: \"✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\" → \"✅ 14 dagars ångerrätt\"",
+        "copy: description: \"30 dagars öppet köp – nöjd eller pengarna tillbaka.\" → \"14 dagars ångerrätt enligt svensk lag.\"",
         "copy: message: \"⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\" → \"⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\"",
         "copy: message: \"– Verifierad kund, 34 år\" → \"– Johan, en av 10 recensioner med fem stjärnor\"",
         "copy: headline: \"Han sprang ut ur sängen varje morgon\" → \"Sonen längtar till varje dag\""
@@ -168,6 +169,7 @@
       "kop": 0,
       "andringar": [
         "copy: message: \"✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\" → \"✅ 14 dagars ångerrätt\"",
+        "copy: description: \"30 dagars öppet köp – nöjd eller pengarna tillbaka.\" → \"14 dagars ångerrätt enligt svensk lag.\"",
         "copy: message: \"⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\" → \"⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\"",
         "copy: message: \"– Verifierad kund, 34 år\" → \"– Johan, en av 10 recensioner med fem stjärnor\"",
         "copy: headline: \"Han sprang ut ur sängen varje morgon\" → \"Sonen längtar till varje dag\""
@@ -183,6 +185,7 @@
       "kop": 0,
       "andringar": [
         "copy: message: \"✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\" → \"✅ 14 dagars ångerrätt\"",
+        "copy: description: \"30 dagars öppet köp – nöjd eller pengarna tillbaka.\" → \"14 dagars ångerrätt enligt svensk lag.\"",
         "copy: message: \"⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\" → \"⭐⭐⭐⭐⭐ \"Sonen längtar till varje dag.\"\"",
         "copy: message: \"– Verifierad kund, 34 år\" → \"– Johan, en av 10 recensioner med fem stjärnor\"",
         "copy: headline: \"Han sprang ut ur sängen varje morgon\" → \"Sonen längtar till varje dag\""

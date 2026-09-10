@@ -127,7 +127,10 @@ export async function lasKonto(kontoId, kampanjMonster) {
         copy: {
           message: lank.message ?? null,
           headline: lank.name ?? lank.title ?? null,
-          description: lank.description ?? null,
+          // Videoannonser bär beskrivningen som `link_description` i video_data
+          // (mätt 2026-09-10: "24 biler i en gaveeske, klar til jul – 439 kr" på
+          // alla 12 norska videor stod som null här medan detektorn såg den).
+          description: lank.description ?? lank.link_description ?? null,
           link: lank.link ?? a.creative?.link_url ?? null,
           cta: cta.type ?? null,
         },

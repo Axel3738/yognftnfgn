@@ -79,7 +79,10 @@ export function byggRegler(butik) {
     },
     {
       id: 'öppet köp',
-      re: /(\d+)\s*dagar?s?\s*(öppet\s*köp|åpent\s*kjøp|nöjd|fornøyd|garanti|pengarna tillbaka)/i,
+      // "30 dagars öppet köp" OCH "30 dagers åpent kjøp" — det norska "dagers"
+      // täcktes inte av `dagar?s?` (mätt 2026-09-10: 16 norska annonser friade).
+      // OCR tappar prickar och ringar ("apent kjop", "fornoyd") — de formerna räknas också.
+      re: /(\d+)\s*dag(?:ar|er)?s?\s*([öo]ppet\s*k[öo]p|[åa]pent\s*kj[øo]p|n[öo]jd|forn[øo]yd|garanti|pengarna tillbaka|pengene tilbake)/i,
       fel: (m, n) => oppetKop != null && Number(n) !== Number(oppetKop),
       text: (m, n) => `säger ${n} dagar — butiken har ${oppetKop}`,
       taSiffra: true,
