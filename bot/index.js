@@ -108,6 +108,10 @@ function skaSvara(message) {
   if (message.webhookId) return false;       // rutinernas rapporter — annars loop
   if (!message.content?.trim()) return false; // bara bilder/filer
 
+  // Kanal- och användarlistorna gäller hemma-assistenten. I en "Fråga
+  // Claude"-server ska boten se ALLA meddelanden, annars missar den frågorna.
+  if (arFragaKlarServer(message.guild?.id)) return true;
+
   const kanal = message.channel?.name?.toLowerCase();
   if (TILLÅTNA_KANALER.length && !TILLÅTNA_KANALER.includes(kanal)) return false;
   if (TILLÅTNA_ANVÄNDARE.length && !TILLÅTNA_ANVÄNDARE.includes(message.author.id)) return false;
@@ -223,6 +227,24 @@ client.on(Events.MessageCreate, (message) => {
   const text = utanTilltal(message.content, jagId);
   const kommando = /^!(ping|glöm|glom|bygg)\b/i.test(text);
 
+  // "Fråga Claude"-servrarna FÖRE taggspärren: där ska boten skriva så fort
+  // den ser en fråga, utan att någon taggar den. Den läser allt, säger bara
+  // en sak, och bara på frågor. Inga kommandon utom !ping. Frågor utan
+  // frågetecken avgörs av en liten klassning — i kön, så svaren kommer i
+  // ordning.
+  if (arFragaKlarServer(message.guild?.id)) {
+    if (/^!ping\b/i.test(text)) {
+      message.reply(`Awake. Model: ${MODELL}. Up for ${Math.round(process.uptime() / 60)} min.`).catch(() => {});
+      return;
+    }
+    kö = kö.then(async () => {
+      if (!(await arFragaAnalys(message.content, arFragaEnligtClaude))) return;
+      await message.reply({ content: fragaKlarSvar(), allowedMentions: { parse: [], repliedUser: true } })
+        .catch(() => {});
+    }).catch((fel) => console.error('[fråga-claude]', fel));
+    return;
+  }
+
   // Bara den som vänder sig till boten får svar. Ett ! -kommando är alltid
   // avsiktligt och går igenom utan tagg.
   if (!SVARA_ALLA && !kommando) {
@@ -246,19 +268,6 @@ client.on(Events.MessageCreate, (message) => {
     message.reply(`Awake. Model: ${MODELL}. Up for ${Math.round(process.uptime() / 60)} min.`).catch(() => {});
     return;
   }
-  // "Fråga Claude"-servrarna: boten läser allt men säger bara en sak, och
-  // bara på frågor. Inga kommandon utom !ping, ingen tagg-koll. Frågor utan
-  // frågetecken avgörs av en liten klassning — i kön, så svaren kommer i
-  // ordning.
-  if (arFragaKlarServer(message.guild?.id)) {
-    kö = kö.then(async () => {
-      if (!(await arFragaAnalys(message.content, arFragaEnligtClaude))) return;
-      await message.reply({ content: fragaKlarSvar(), allowedMentions: { parse: [], repliedUser: true } })
-        .catch(() => {});
-    }).catch((fel) => console.error('[fråga-claude]', fel));
-    return;
-  }
-
   if (/^!glöm\b/i.test(text) || /^!glom\b/i.test(text)) {
     nollstallHistorik(message.channelId);
     message.reply('Forgot the conversation in this channel. Starting over.').catch(() => {});
