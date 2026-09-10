@@ -108,7 +108,12 @@ som genereras per bygge).
     molnsessionens miljö och installerar via distributionslänken
     (checklistans steg 2) → Admin-token hämtas och
     `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` skrivs i
-    `factory/.env`. Rutinen startas med `/ny-ops`; frasen
+    `factory/.env`. ⚠️ **Tokenen från `client_credentials` lever 24 timmar.**
+    Mätt 2026-09-10 på DryTrek: dagen efter bygget svarade allt 401 "Invalid
+    API key or access token". Det är inte butiken som ändrats — hämta bara
+    en ny med samma client id/secret (`POST /admin/oauth/access_token`,
+    `grant_type: client_credentials`) och skriv om `.env`. Kontrollera
+    alltid `shop.name` efteråt. Rutinen startas med `/ny-ops`; frasen
     "Store ready: <namn>" utlöser slutsteget (se kommandot).
 
 ## Fas 3 — Recensioner
