@@ -1,0 +1,201 @@
+# Creative DNA — TackleBay, Fiskespöhållare 4-Pack
+
+Skapad 2026-09-11 av `/notionscalercs setup tacklebay/fiskespohallare-4-pack`
+(körning nr 1 — setup, ingen briefrond).
+Nyckel `tacklebay/fiskespohallare-4-pack`, brand **TackleBay**, tacklebay.se.
+
+⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken.**
+TackleBays egen kampanj startade 2026-09-10 och hade vid avläsningen 2026-09-11
+**177 kr, 0 köp, 0 av 23 annonser över grinden** (≥ 300 kr OCH ≥ 3 köp). Första
+briefronden blir en **KALLSTART**: ingen feedback-loop, ingen dom över en enda
+TackleBay-annons.
+
+Källa för allt ärvt: Meta Graph 2026-09-11, `date_preset: maximum`, konto
+MagiBorsten `1867947880635861` (Bäverbutiken — **LÄSES bara**), prefix
+`Rodholder`, kampanj `Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18`.
+Rådata: `factory/skalning.mjs tacklebay/fiskespohallare-4-pack --dagar 90 --arv --marknad SE --json`.
+
+---
+
+## Produkten och kunden
+
+Klämma som låser runt ett ihopfällt spö i två steg (första sektionen, sedan
+andra låset), hög-elastisk svamp inuti, fyra i ett set, 289 kr. Håller
+spökroppen och linan stilla **under transport** — bil, båt, stuga.
+
+**Kunden:** sport- och fritidsfiskare 30–65 som kör till vattnet med spön i
+bilen eller båten. Säger "spö" och "drag", vet vad en ny topp kostar.
+
+**Grundkonflikten:** det som går sönder händer på vägen dit, inte vid vattnet.
+
+⚠️ **Källans produkttext är fel och får inte ärvas** (`factory/produkter/
+tacklebay-spohallaren.yaml`, rättad 2026-09-09 mot leverantörens bilder):
+Bäverbutiken skriver "monteras på vägg eller i båten". Produkten är en
+transportklämma — ingen skruv, ingen vägg. Ärvda briefer säger ändå "Båt, bil,
+garage, vägg" (`Rodholder_PD_40_H1`, 2026-09-10). **TackleBay-copy nämner
+aldrig väggmontering.**
+
+---
+
+## Vad som är bevisat (ÄRVT — 73 annonser, 20 149 kr, 85 köp, ROAS 1,84)
+
+Signifikansgrinden (≥ 300 kr OCH ≥ 3 köp) passeras av **fem** annonser. De
+övriga 68 är oprövade, inte dåliga.
+
+### De fem bedömbara, dömda mot TackleBays linjer (BE-CPA 173 kr · BE-ROAS 1,67)
+
+| Ärvd annons | Format | Spend | Köp | CPA | ROAS | Vinstbidrag `(173 − CPA) × köp` | Mot BE-ROAS 1,67 | Hook 3 s | Hold | CTR |
+|---|---|--:|--:|--:|--:|--:|---|--:|--:|--:|
+| `Rodholder_PD_15_H1` | video | 9 268 kr | 39 | 238 kr | 1,94 | −2 521 kr | ✅ över | **52,0 %** | 16,4 % | 2,63 % |
+| `Rodholder_PD_6_1` | **bild** | 2 801 kr | 20 | **140 kr** | **3,02** | **+659 kr** | ✅ över | — | — | 1,53 % |
+| `Rodholder_PD_16_H1` | video | 2 651 kr | 10 | 265 kr | 1,52 | −921 kr | ❌ under | 30,6 % | 23,3 % | 2,12 % |
+| `Rodholder_PD_11_H2` | video | 1 922 kr | 6 | 320 kr | 1,49 | −884 kr | ❌ under | 33,4 % | 15,5 % | 2,23 % |
+| `Rodholder_SO_4_1` | bild | 808 kr | 3 | 269 kr | 1,44 | −289 kr (prel., 3 köp) | ❌ under | — | — | 2,88 % |
+
+⚠️ **De två linjerna säger olika saker om top spendern, och det är en rotorsak,
+inte ett avrundningsfel.** `PD_15_H1` är lönsam på ROAS (1,94 > 1,67) men går
+med förlust på CPA (238 > 173). Skillnaden är **AOV:n**: källans verkliga
+snittorder är **437 kr**, inte 289 kr — kunderna köper 2- och 3-pack. CPA-linjen
+antar en enhet per order och dömer därför för hårt. **Döm aldrig spöhållaren på
+CPA ensam.** Vinstbidraget ovan är räknat på 289 kr och underskattar allt med
+bundles i. Se "Ekonomin" nedan — Axel måste bekräfta både COGS och vilken AOV
+linjen ska räknas på.
+
+### Mönster 1 — PD (produktdemo) är hela kontot. **Bevisad.**
+
+| Vinkel | Annonser | Spend | Köp | CPA |
+|---|--:|--:|--:|--:|
+| PD — demo | 49 | 18 001 kr | 77 | 234 kr |
+| SO — social proof | 2 | 1 143 kr | 5 | 229 kr |
+| CS — erbjudande | 1 | 647 kr | 2 | 323 kr |
+| PROD — produktbild | 10 | 194 kr | 1 | — |
+| REA — rea | 10 | 142 kr | 0 | — |
+| GT — garanti/trygghet | 1 | 23 kr | 0 | — |
+
+PD står för 89 % av spenden och 91 % av köpen. Alla fem bedömbara utom `SO_4_1`
+är demo. **Top spendern `PD_15_H1` är benchmark, inte en kandidat att döma
+småannonser mot** (ANALYSMETOD steg 5).
+
+### Mönster 2 — Demon som stillbild konverterar. **Bevisad (en annons, 20 köp).**
+
+`PD_6_1`:s egen hypotes (brief 2026-08-21): *"demo-vinkeln äger 87 % av
+vinstbidraget men har bara körts som video — konverterar den som statisk?"*
+**Svar: ja.** ROAS 3,02 på 2 801 kr, CPA 140 kr — bäst i hela kontot på båda
+linjerna. Formatlinjen totalt: video 48 annonser / 15 204 kr / 58 köp (CPA
+262 kr) mot bild 25 / 4 945 kr / 27 köp (CPA 183 kr). ⚠️ Bildsnittet bärs av
+`PD_6_1` ensam — det är ett bevis för DEN bilden, inte för bild i allmänhet.
+
+Bildens text (facit, ordagrant): **"Ett klick. Spöet stängt."** /
+"Hårdplast och skumgummi håller spöet säkert stängt." / "4-pack 289 kr – beställ
+idag". Macro på klämman stängd runt ett ihopfällt spö, brygga/båtkant, produkten
+störst i bild, ingen rabatt.
+
+### Mönster 3 — Skaka-testet stoppar scrollen bäst. **Bevisad som hook, inte som hold.**
+
+`PD_15_H1` = "Skaka-testet" (brief batch #3 DEMO GRIND): spöt klämt, vänds
+upp och ner, skakas — inget öppnar sig. Ingen text, ingen VO, produkten i bild
+från sekund 0, 8–15 s. **Hook rate 52,0 %** — högst av allt med volym (nästa:
+33,4 %). Men **hold 16,4 %** är lägst av de bedömbara videorna (`PD_16_H1`:
+23,3 %). Filmen vinner de första tre sekunderna och tappar sedan. Det är
+diagnosen av VAR den tappar — inte ett skäl att döda den.
+
+### Mönster 4 — Winning line (primary text, bevisad — bar 85 köp)
+
+Samma brödtext ligger under alla PD-vinnarna, ordagrant:
+
+> Trassliga fiskespön i båten – igen? 🎣
+> Den här lilla klämman löser det på 1 sekund.
+> ✅ Håller ihopfällda spön säkert stängda
+> ✅ Inga fler trassliga linor
+> ✅ Passar alla spön
+> Beställ ditt 4-pack idag och slipp trasslet för gott. 👇
+
+Rubrik: **"Aldrig mer trassliga fiskespön"**. CTA SHOP NOW. Ingen rabatt,
+ingen brådska, ingen social proof. Raden klarar tre-frågorstestet (visualisera:
+ja · falsifiera: ja · ingen annan kan säga det: klämman är produktens särdrag).
+
+### Otestat (ingen dom)
+
+SO (2 annonser), CS (1), GT (1), REA (10 med 142 kr totalt), PROD (10 med
+194 kr). REA- och PROD-serierna (`_V01`–`_V10`) är produktbilder utan vinkel och
+har aldrig fått pengar — de är inte förlorare, de är oprövade.
+
+---
+
+## Vad TackleBay ändrade, och varför det gör datan icke-jämförbar
+
+1. **Vinkeln bytte riktning.** Källan säljer "förvaring/ordning" och nämner
+   väggmontering. TackleBay säljer **transportskadan** (leverantörens egna
+   bilder: "förhindrar kollision eller trassel av spökroppen under transport").
+   Winning line ovan är förenlig med det — "trassliga spön i båten" är transport.
+   Men "vägg"/"garage"/"montera" stryks ur allt som ärvs.
+2. **Social proof är tunnare.** Källan har 7 Judge.me-recensioner (alla 5 ★,
+   korta: "stabil", "sparar plats", "spöna sitter bra"). TackleBay startar med
+   samma sju. Inga "tusentals nöjda" — det finns inte.
+3. **Priset är identiskt: 289 kr, inget jämförpris.** Källans briefer förbjuder
+   149 kr / 148,75 kr / procentrabatter — regeln gäller här också.
+4. **Bundles finns i båda butikerna** (2-pack −15 %, 3-pack −20 %). Det är
+   därför AOV:n är 437 kr och inte 289.
+5. **Länken** pekar på tacklebay.se/products/fiskespohallare-4-pack, aldrig
+   bäverbutiken.se.
+6. **Tonläget** (butikskonfigen): rak och torr, inga utropstecken, ingen hype.
+   Emojis i winning line (🎣 ✅ 👇) är källans — pröva raden både med och utan
+   innan de stryks; de har spenderat pengar bra.
+
+---
+
+## Ekonomin — ⚠️ TVÅ TAL ÄR GISSNINGAR
+
+Pris 289 kr · inköp **116 kr (GISSNING: 40 % av priset, mitten i Bäverbutikens
+fyra skalningsprodukter)** · TB 173 kr · **BE-ROAS 1,67 · BE-CPA 173 kr ·
+target-ROAS 2,87 · target-CPA 101 kr**, räknat UTAN moms (Axels besked
+2026-09-09). Facit: `factory/produkter/tacklebay-spohallaren.yaml`
+(`moms_antagen: false`), och det är den linjen `factory/budgetrond.mjs` dömer mot.
+
+Kampanjnamnet i kontot säger `BE-ROAS 1,67` — samma tal, men det är en etikett.
+Bäverbutikens `BE ROAS 1.50` är en annan verksamhet och kopieras aldrig hit.
+
+**Öppet för Axel:** (1) den riktiga inköpskostnaden; (2) om break-even-CPA ska
+räknas på 289 kr eller på verklig AOV (källan: 437 kr). Tills dess: kill-beslut
+kräver att BÅDA linjerna säger förlust — en annons som klarar BE-ROAS men inte
+BE-CPA är inte dömd.
+
+---
+
+## Rotorsaker och fallgropar för nästa körning
+
+- **Kampanjnamnet bär brandet, annonserna bär produkten.** Kampanjen heter
+  `TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10`, annonserna
+  `TackleBayRod_…`. Kampanjfiltret i `budgetrond.mjs` läste bara kampanjnamnet
+  och fann 0 av 16 kampanjer (mätt 2026-09-11 i setup) — lagat samma dag:
+  kampanjen hittas nu via annonserna (`valjKampanjer`). Grannprodukten
+  (`TackleBayKalender_`) släpps aldrig in via brandet.
+- **Hubben `Fish rod holder` är delad historia.** 80 rader per 2026-09-11,
+  varav Bäverbutikens redigerare fortfarande levererar dit (`Rodholder_PD_40_H1`
+  i `To be Reviewed` 2026-09-10 med bäverbutiken.se som landningssida). Hubben
+  är inskriven på TackleBay i OPS-registret, så Bäverbutikens rutiner hoppar
+  över den. **Upptagna AD-ID:n (båda namnrymderna):** PD ≤ 41, SO ≤ 7, SP ≤ 9,
+  CS ≤ 6, GT ≤ 4, JF ≤ 3, KL 1, TR 1, GA 1 (hubben) + OPS-kontots
+  `TackleBayRod_` PD 1/2/3/6/7/15/23, SP 1, CS 3, GT 2/3, PROD V01–V10, REA
+  V02/V08. Nya TackleBay-namn numreras ovanför hubbens högsta per vinkel.
+- **Källans tre största videor ligger INTE i TackleBays kampanj.** `PD_15_H1`
+  (39 köp), `PD_16_H1` (10) och `PD_11_H2` (6) saknas; `PD_15_H2` finns.
+  Skälet är inte loggat (`hypotes: ej loggad`) — troligen brand-detektorn
+  (inbränd text/tal), men det är en gissning. Står i backloggen som arbete.
+- **Kontot bär flera verksamheter.** `915422744950975` innehåller HeimGuard,
+  TankGuard, DryTrek, AdventLane, TackleBay och Bäverbutikens danska kampanjer.
+  Varje uppslag filtreras på `TackleBayRod` — annars döms en annan produkt.
+- **Ingen commission utgår på den här butiken i dag** (kontot står i
+  `UTLANDSKA_KONTON`, FAS2 uppdrag D). Känt, inte ett fel att rätta här.
+- **Norska kampanjen** `TACKLEBAY_NO_Spöhållaren` (9 annonser) döms separat
+  med `--marknad NO` — aldrig i samma tabell som SE.
+
+---
+
+## TackleBays egen kampanj — läget 2026-09-11 (data, ingen dom)
+
+`TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10`, 4 adsets (PD, SP, CS,
+GT), 23 annonser ACTIVE, 500 kr/dag. **177 kr, 0 köp.** Största: `PD_1_H1`
+86 kr (hook 30,6 %, hold 15,6 %). `SP_1_H3` 11 kr med hook 43,1 % / hold 46,4 %
+— brus på 11 kr, men det är första raden att titta på när det finns pengar.
+Bedömbara: 0. Ingen ranking.
