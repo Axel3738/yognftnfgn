@@ -93,6 +93,18 @@ omskrivet (Johans recension på bokmål, `bildfix/AdventLaneRacing_NO_SP_2_1.jpg
 
 Läge 15:50: **16 av 16 uppe, PAUSED**, 4 adsets SP/G/PD/CS. Räkningen KLART,
 exit 0. Tillbakaläst: PAUSED på alla nivåer, sida och länk (`/nb/…`) rätt.
-⚠️ Kampanjen får inte launchas förrän NOK är påslaget i butiken och
-NOK-nivåerna satta (checklistan avsnitt 5) — annars säger annonsen 439 kr
-och sidan 499 kr (SEK).
+
+## Launch 2026-09-10 17:24 — båda kampanjerna ACTIVE
+
+Axel: "Launch Adventlane" (16:5x). Kontroller före (steg 11b), alla mätta:
+- Butiken live: adventlane.se svarar 200 utan `/password`, produkt-JSON
+  `available: true`, pris 49900 öre. Domänen kopplad, butiken döpt AdventLane.
+- Pixeln 1013287061762227 avfyrad 17:10 (WeTracked ligger i temat).
+- NOK: Axel slog på NOK på Norge-marknaden; fabriken satte katalog + prislista
+  med fast 439 kr (jämför 579) via API, tillbakaläst `contextualPricing NO`.
+Verkställt 17:24: SE `120249031845500172` och NO `120249031977180172` —
+kampanj ACTIVE, 4 adsets ACTIVE, 16 annonser ACTIVE vardera, 1000 kr/dag
+CBO per kampanj. Metas annonsgranskning pågår därefter (effective_status).
+
+Nästa avläsning: `/skalningskungen kalender` var tredje dag. Break-even-CPA
+SE 308 kr (499 − 191). NO räknas i NOK (439 − inköp i NOK), aldrig ihop med SE.

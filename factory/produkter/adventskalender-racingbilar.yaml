@@ -273,6 +273,18 @@ meta:
   # adsetuppslaget och commission-kopplingen med Bäverbutikens annonser.
   creative_prefix: "AdventLaneRacing"
   testbudget_per_dag: 1000
+  # "Launch: adventlane" — Axel 2026-09-10 16:5x, verkställd 17:24 svensk tid.
+  # Villkor kontrollerade före: butiken live på adventlane.se (ingen
+  # /password, produkten available), pixeln avfyrad 17:10, NOK 439 satt i
+  # butiken. Tillbakaläst på tre nivåer: 2 × (kampanj ACTIVE, 4 adsets
+  # ACTIVE, 16 annonser ACTIVE).
+  launch:
+    datum: "2026-09-10"
+    budget_kr_per_dag: 1000
+    kampanjer:
+      SE: "120249031845500172"
+      NO: "120249031977180172"
+    annonser: 32
   vinklar:
     - "Chokladen är slut till frukost. Bilarna står kvar till jul."
     - "En ny bil bakom varje lucka, olika varje gång"

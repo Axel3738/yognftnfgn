@@ -523,7 +523,11 @@ klara regeln utan handpåläggning:
   filerna (kalender → adventskalender-racingbilar) och skriver byggplanens
   orsak på varje saknad annons i stället för "orsak saknas".
 - **Utfall 15:50:** sidrollen given 14:20 → 32 av 32 annonser uppe i två
-  kampanjer, PAUSED, `rakning.mjs kalender` **KLART exit 0**. Axels NOK-beslut
+  kampanjer, PAUSED, `rakning.mjs kalender` **KLART exit 0**. **17:24: Launch.**
+  Axel skrev "Launch Adventlane"; steg 11b mätt (live utan `/password`,
+  pixel avfyrad 17:10 via WeTracked, NOK 439 satt via API) → båda
+  kampanjerna ACTIVE på tre nivåer. Första OPS-butiken som gick hela vägen
+  `/ny-ops` → `/ny-annonser` → Launch på en dag. Axels NOK-beslut
   (439/579, samma som källan) gjorde de 4 norska CS-annonserna byggbara orörda
   — `priser_marknad.NO` i produktfilen, `prislista(produkt, marknad)`.
   ⚠️ **Meta-anropsgränsen (fel 17)** slog till efter ~40 skrivanrop på
