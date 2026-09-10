@@ -306,6 +306,7 @@ const en = {
     },
     bundle: {
       badge: "Pack price",
+      noRate: "The pack prices cannot be converted without a rate, so this row cannot be added — pick a currency that has a rate.",
       single: (amount: string) => `1 pc ${amount}`,
       line: (units: number, total: string, per: string) => `${units} pcs ${total} in total (${per} each)`,
       explain:
@@ -1000,6 +1001,7 @@ const sv: Texts = {
     },
     bundle: {
       badge: "Packpris",
+      noRate: "Packpriserna går inte att räkna om utan kurs, så raden går inte att lägga in — välj en valuta som har kurs.",
       single: (amount: string) => `1 st ${amount}`,
       line: (units: number, total: string, per: string) => `${units} st ${total} totalt (${per}/st)`,
       explain:

@@ -646,6 +646,17 @@ och 2 st kostar 15 — inte 20".
   med en rad som förklarar att packpriset är TOTALT för antalet i samma
   orderrad. Skiljer sig stegen mellan varianterna hänvisas till produktsidan
   i stället för att visa ett tal som bara gäller en variant.
+- **Granskningen (build offert-valuta-v81) rättade fem saker till:** en
+  valutasymbol ("$", "¥", "RMB") tvättades bort till tom sträng och kortet
+  påstod att ingen valuta syntes — nu översätts symbolen till en kod; en ny
+  avläsning återanvände förra offertens rader (belopp och produktval låg
+  kvar) — svaret bär nu ett `readId` som monterar om raderna; "Lägg in"
+  låste sig för alltid efter första klicket även om valutan ändrats — den
+  jämför nu mot vad som faktiskt sparades; en rad med packpriser som inte
+  gick att räkna om (ingen kurs) kunde sparas ändå och lämnade gamla
+  CostTier-rader kvar bredvid ett nytt styckpris — knappen låses nu med
+  skälet utskrivet; och ett svar utan valutalista eller antal (halv deploy)
+  kunde rendera ordet "undefined" för handlaren.
 
 **Hero-kortet i panelen (build hero-v68)** — Axels ord: "dashboarden borde se
 lite mer levande ut, man vill ha en dopaminkick." Överst i panelen: den stora

@@ -38,6 +38,29 @@ import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild
 import { rate as fxRate } from "../lib/fx.server";
 import { asLang, localeOf, t } from "../lib/texts";
 
+/**
+ * Valutan AI:n rapporterar → en ISO-kod appen kan hämta kurs för.
+ *
+ * Modellen skriver det som STÅR i offerten: "$", "US$", "¥", "RMB", "kr".
+ * Utan den här översättningen tvättades symbolen bort till tom sträng och
+ * kortet påstod att ingen valuta syntes — fast den stod där. En kod som inte
+ * går att känna igen släpps hellre igenom som tom (då förvaljs USD) än gissas.
+ */
+function tolkaValuta(ra: string, butikensValuta: string): string {
+  const v = ra.trim().toUpperCase();
+  if (!v) return "";
+  const symboler: Record<string, string> = {
+    "$": "USD", "US$": "USD", "USD$": "USD", "¥": "CNY", "RMB": "CNY", "CN¥": "CNY",
+    "€": "EUR", "£": "GBP", "KR": butikensValuta, "SEK KR": "SEK",
+  };
+  if (symboler[v]) return symboler[v];
+  const kod = v.replace(/[^A-Z]/g, "");
+  if (/^[A-Z]{3}$/.test(kod)) return kod;
+  /* "10.17 USD/pc" och liknande: plocka en trebokstavskod ur texten. */
+  const träff = v.match(/\b(USD|EUR|CNY|GBP|SEK|NOK|DKK|PLN|HKD|JPY)\b/);
+  return träff ? träff[1] : "";
+}
+
 /** Axels Loom: "Example: how to import from Juicy". Embed-adressen, inte delningslänken. */
 const LOOM_JUICY = "https://www.loom.com/embed/7d1e94bea6fa491ba4f1f50d9cc799f6?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true";
 
@@ -191,8 +214,7 @@ export async function action({ request }: ActionFunctionArgs) {
          gör varje inköpspris tiofalt fel. Ser AI:n ingen valuta får handlaren
          välja i en lista — därför skickas kurserna för alla valbara valutor
          med, så bytet räknas om direkt utan en ny AI-läsning. */
-      const upptackt = (svar.items.find((i) => i.currency)?.currency ?? "")
-        .toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3);
+      const upptackt = tolkaValuta(svar.items.find((i) => i.currency)?.currency ?? "", butikensValuta);
       const valutor = [...new Set([upptackt, "USD", "CNY", "EUR", "GBP", butikensValuta].filter(Boolean))];
       const kurser: Record<string, number | null> = {};
       await Promise.all(
@@ -211,7 +233,17 @@ export async function action({ request }: ActionFunctionArgs) {
       return json({
         ok: true,
         message: items.length ? T.costs.quote.found(items.length) : T.costs.quote.empty,
-        quote: { items, notes: svar.notes, detected: upptackt, valutor, kurser, shopCurrency: butikensValuta },
+        quote: {
+          items,
+          notes: svar.notes,
+          detected: upptackt,
+          valutor,
+          kurser,
+          shopCurrency: butikensValuta,
+          /* Byts vid varje avläsning: raderna monteras om, annars ligger
+             förra offertens belopp och produktval kvar i fälten. */
+          readId: Date.now(),
+        },
       });
     } catch (e) {
       console.error("AI-offertläsning misslyckades:", e);
@@ -288,6 +320,7 @@ export default function Costs() {
           valutor: string[];
           kurser: Record<string, number | null>;
           shopCurrency: string;
+          readId: number;
         };
       }
     | undefined;
@@ -552,7 +585,7 @@ export default function Costs() {
                       <BlockStack gap="200">
                         {quoteData.quote.items.map((it, i) => (
                           <OffertRad
-                            key={`${i}-${it.label}`}
+                            key={`${quoteData?.quote?.readId ?? 0}-${i}`}
                             it={it}
                             rows={rows}
                             T={T}
@@ -857,7 +890,15 @@ function OffertRad({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [kurs, valuta]);
   const stegButik = kurs == null ? [] : steg.map((s) => ({ units: s.units, total: rund(s.total * kurs) }));
-  const sparad = fetcher.data?.ok === true;
+  /* Packpriser utan kurs går inte att räkna om. Att spara ändå hade skrivit
+     ett nytt styckpris medan de gamla packpriserna låg kvar — en variant
+     vars 2-pack kostar mindre än 1 st. Knappen låses i stället. */
+  const stegUtanKurs = steg.length > 0 && kurs == null;
+  /* Vad som senast sparades. Utan den låste knappen sig för alltid efter
+     första klicket, även när valutan eller beloppet ändrats efteråt. */
+  const [sparatVal, setSparatVal] = useState("");
+  const signatur = `${productGid}|${variantGid}|${kostnad}|${valuta}`;
+  const sparad = fetcher.data?.ok === true && sparatVal === signatur && fetcher.state === "idle";
 
   /* Priserna som de STÅR i offerten: 1 st, sedan varje packpris med sitt
      styckpris inom parentes. Poängen är att 2 st för 15 ska läsas som 15
@@ -871,7 +912,8 @@ function OffertRad({
 
   const mal = variantGid ? grupp.filter((r) => r.variantGid === variantGid) : grupp;
   const laggIn = () => {
-    if (!mal.length || !kostnad.trim()) return;
+    if (!mal.length || !kostnad.trim() || stegUtanKurs) return;
+    setSparatVal(signatur);
     fetcher.submit(
       {
         intent: "quote-apply",
@@ -894,7 +936,10 @@ function OffertRad({
         </InlineStack>
         <Text as="p" tone="subdued" variant="bodySm">{prisrader}</Text>
         {kurs == null ? (
-          <Text as="p" tone="critical" variant="bodySm">{T.costs.quote.noRate(valuta)}</Text>
+          <Text as="p" tone="critical" variant="bodySm">
+            {T.costs.quote.noRate(valuta)}
+            {stegUtanKurs ? ` ${T.costs.bundle.noRate}` : ""}
+          </Text>
         ) : kurs !== 1 ? (
           <Text as="p" tone="subdued" variant="bodySm">
             {T.costs.quote.converted(valuta, currency, kurs)}
@@ -925,7 +970,7 @@ function OffertRad({
           <div style={{ width: 140 }}>
             <TextField label={T.costs.thCost} value={kostnad} onChange={setKostnad} autoComplete="off" suffix={currency} />
           </div>
-          <Button variant="primary" disabled={!mal.length || !kostnad.trim() || sparad} loading={fetcher.state !== "idle"} onClick={laggIn}>
+          <Button variant="primary" disabled={!mal.length || !kostnad.trim() || sparad || stegUtanKurs} loading={fetcher.state !== "idle"} onClick={laggIn}>
             {sparad ? T.costs.quote.applied : T.costs.quote.apply}
           </Button>
           {fetcher.data && !fetcher.data.ok ? <Badge tone="critical">{fetcher.data.message}</Badge> : null}
