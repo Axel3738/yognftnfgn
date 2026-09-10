@@ -1449,180 +1449,6 @@
       "anmarkning": true
      },
      {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "579 kr → 439 kr i dag",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "579 kr → 439 kr i dag",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "I dag blir579 til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Idagblir579til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Idagblir579til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Idagblir579til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Idagblir579til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Idagblir579til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "I dag blir579 til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Idagblir579til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Idagblir579til439kroner.",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "579kroner?Nei.Idag439.",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "tal",
-      "rad": "I dag blir femhundre og syttini til firehundre og trettini kroner.",
-      "fel": "säger 579 kr (\"femhundre og syttini\") — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "tal",
-      "rad": "I dag blir femhundre og syttini til firehundre og trettini kroner.",
-      "fel": "säger 439 kr (\"firehundre og trettini\") — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "tal",
-      "rad": "Femhundre og syttini kroner? Nei, i dag firehundre og trettini. Nittifire biler.",
-      "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "tal",
-      "rad": "Femhundre og syttini kroner? Nei, i dag firehundre og trettini. Nittifire biler.",
-      "fel": "säger 439 kr (\"firehundre og trettini\") — butiken tar 499 / 649 kr"
-     },
-     {
       "regel": "brådska",
       "yta": "tal",
       "rad": "Tjuefire luker. En hel garasje til julaften. Lageret er begrenset, og prisen gjelder ikke lenge.",
@@ -1631,16 +1457,9 @@
      }
     ]
    },
-   "dom": "kräver-omdubb",
+   "dom": "bara-copy",
    "attgöra": [
     "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 579 kr — butiken tar 499 / 649 kr",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr",
-    "pris i inbränd: säger 439 kr — butiken tar 499 / 649 kr",
-    "pris i inbränd: säger 579 kr — butiken tar 499 / 649 kr",
-    "pris i tal: säger 579 kr (\"femhundre og syttini\") — butiken tar 499 / 649 kr",
-    "pris i tal: säger 439 kr (\"firehundre og trettini\") — butiken tar 499 / 649 kr",
-    "pris i tal: säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr",
     "anm. brådska i copy: lovar brådska/lager \"Begrenset lager\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
     "anm. brådska i tal: lovar brådska/lager \"prisen gjelder ikke lenge\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)"
    ],
@@ -1672,180 +1491,6 @@
      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
      "fel": "lovar brådska/lager \"Begrenset lager\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
      "anmarkning": true
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "579 kr → 439 kr i dag",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "579 kr → 439 kr i dag",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "I dag blir579 til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Idagblir579til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Idagblir579til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Idagblir579til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Idagblir579til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Idagblir579til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "I dag blir579 til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Idagblir579til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Idagblir579til439kroner.",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "579kroner?Nei.Idag439.",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "tal",
-     "rad": "I dag blir femhundre og syttini til firehundre og trettini kroner.",
-     "fel": "säger 579 kr (\"femhundre og syttini\") — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "tal",
-     "rad": "I dag blir femhundre og syttini til firehundre og trettini kroner.",
-     "fel": "säger 439 kr (\"firehundre og trettini\") — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "tal",
-     "rad": "Femhundre og syttini kroner? Nei, i dag firehundre og trettini. Nittifire biler.",
-     "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "tal",
-     "rad": "Femhundre og syttini kroner? Nei, i dag firehundre og trettini. Nittifire biler.",
-     "fel": "säger 439 kr (\"firehundre og trettini\") — butiken tar 499 / 649 kr"
     },
     {
      "regel": "brådska",
@@ -1909,42 +1554,6 @@
       "anmarkning": true
      },
      {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "579 kr → 439 kr i dag",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "579 kr → 439 kr i dag",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
       "regel": "brådska",
       "yta": "inbränd",
       "rad": "Siste sjanse forlageret er tomt.",
@@ -1971,12 +1580,6 @@
       "rad": "Siste sjanse forlageret er tomt.",
       "fel": "lovar brådska/lager \"Siste sjanse\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
       "anmarkning": true
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Femhundre og syttini kroner.",
-      "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
      },
      {
       "regel": "brådska",
@@ -2029,12 +1632,9 @@
      }
     ]
    },
-   "dom": "kräver-slutkortsbygge",
+   "dom": "bara-copy",
    "attgöra": [
     "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 579 kr — butiken tar 499 / 649 kr",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr",
-    "pris i inbränd: säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr",
     "anm. brådska i copy: lovar brådska/lager \"Begrenset lager\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
     "anm. brådska i inbränd: lovar brådska/lager \"Siste sjanse\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
     "anm. brådska i inbränd: lovar brådska/lager \"for den er utsolgt\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
@@ -2072,42 +1672,6 @@
      "anmarkning": true
     },
     {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "579 kr → 439 kr i dag",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "579 kr → 439 kr i dag",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
      "regel": "brådska",
      "yta": "inbränd",
      "rad": "Siste sjanse forlageret er tomt.",
@@ -2134,12 +1698,6 @@
      "rad": "Siste sjanse forlageret er tomt.",
      "fel": "lovar brådska/lager \"Siste sjanse\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
      "anmarkning": true
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Femhundre og syttini kroner.",
-     "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
     },
     {
      "regel": "brådska",
@@ -2238,64 +1796,12 @@
       "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
       "fel": "lovar brådska/lager \"Begrenset lager\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
       "anmarkning": true
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "579 kr → 439 kr i dag",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "579 kr → 439 kr i dag",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "bild",
-      "rad": "579kr",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "bild",
-      "rad": "439kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
     "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 579 kr — butiken tar 499 / 649 kr",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr",
-    "pris i bild: säger 579 kr — butiken tar 499 / 649 kr",
-    "pris i bild: säger 439 kr — butiken tar 499 / 649 kr",
     "anm. brådska i copy: lovar brådska/lager \"Begrenset lager\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)"
    ],
    "villkor": [
@@ -2329,54 +1835,6 @@
      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
      "fel": "lovar brådska/lager \"Begrenset lager\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
      "anmarkning": true
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "579 kr → 439 kr i dag",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "579 kr → 439 kr i dag",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "bild",
-     "rad": "579kr",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "bild",
-     "rad": "439kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -2433,60 +1891,6 @@
       "anmarkning": true
      },
      {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "579 kr → 439 kr i dag",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "579 kr → 439 kr i dag",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-      "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Femhundre og syttini kroner?Nei.",
-      "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Femhundre og syttini kroner?Nei.",
-      "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
-     },
-     {
-      "regel": "pris",
-      "yta": "inbränd",
-      "rad": "Femhundre og syttini kroner?Nei.",
-      "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
-     },
-     {
       "regel": "brådska",
       "yta": "inbränd",
       "rad": "Bestill for den er utsolgt",
@@ -2530,12 +1934,9 @@
      }
     ]
    },
-   "dom": "kräver-slutkortsbygge",
+   "dom": "bara-copy",
    "attgöra": [
     "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 579 kr — butiken tar 499 / 649 kr",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr",
-    "pris i inbränd: säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr",
     "anm. brådska i copy: lovar brådska/lager \"Begrenset lager\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
     "anm. brådska i inbränd: lovar brådska/lager \"for den er utsolgt\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
     "anm. brådska i tal: lovar brådska/lager \"prisen gjelder ikke lenge\" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10)",
@@ -2569,60 +1970,6 @@
      "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
      "fel": "lovar brådska/lager \"Begrenset lager\" — butiken lovar aldrig tidsbegränsning eller lagerbrist",
      "anmarkning": true
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen ",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "579 kr → 439 kr i dag",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "579 kr → 439 kr i dag",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "439 kr i dag, før 579 kr – 24 % rabatt",
-     "fel": "säger 579 kr — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Femhundre og syttini kroner?Nei.",
-     "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Femhundre og syttini kroner?Nei.",
-     "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
-    },
-    {
-     "regel": "pris",
-     "yta": "inbränd",
-     "rad": "Femhundre og syttini kroner?Nei.",
-     "fel": "säger 579 kr (\"Femhundre og syttini\") — butiken tar 499 / 649 kr"
     },
     {
      "regel": "brådska",
@@ -2712,19 +2059,12 @@
       "yta": "copy",
       "rad": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 E",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "24 biler i en gaveeske, klar til jul – 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -2740,12 +2080,6 @@
      "yta": "copy",
      "rad": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 E",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "24 biler i en gaveeske, klar til jul – 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -2793,19 +2127,12 @@
       "yta": "copy",
       "rad": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 E",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "24 biler i en gaveeske, klar til jul – 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -2821,12 +2148,6 @@
      "yta": "copy",
      "rad": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 E",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "24 biler i en gaveeske, klar til jul – 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -2869,19 +2190,12 @@
       "yta": "copy",
       "rad": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 E",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "24 biler i en gaveeske, klar til jul – 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -2897,12 +2211,6 @@
      "yta": "copy",
      "rad": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 E",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "24 biler i en gaveeske, klar til jul – 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -2950,19 +2258,12 @@
       "yta": "copy",
       "rad": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 E",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "24 biler i en gaveeske, klar til jul – 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -2978,12 +2279,6 @@
      "yta": "copy",
      "rad": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 E",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "24 biler i en gaveeske, klar til jul – 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -3031,19 +2326,12 @@
       "yta": "copy",
       "rad": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkken",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "24 ekte biler bak lukene – kun 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -3059,12 +2347,6 @@
      "yta": "copy",
      "rad": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkken",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "24 ekte biler bak lukene – kun 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -3112,19 +2394,12 @@
       "yta": "copy",
       "rad": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkken",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "24 ekte biler bak lukene – kun 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -3140,12 +2415,6 @@
      "yta": "copy",
      "rad": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkken",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "24 ekte biler bak lukene – kun 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -3188,19 +2457,12 @@
       "yta": "copy",
       "rad": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkken",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "24 ekte biler bak lukene – kun 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -3216,12 +2478,6 @@
      "yta": "copy",
      "rad": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkken",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "24 ekte biler bak lukene – kun 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -3269,19 +2525,12 @@
       "yta": "copy",
       "rad": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkken",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "24 ekte biler bak lukene – kun 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -3297,12 +2546,6 @@
      "yta": "copy",
      "rad": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkken",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "24 ekte biler bak lukene – kun 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -3350,19 +2593,12 @@
       "yta": "copy",
       "rad": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre ve",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -3378,12 +2614,6 @@
      "yta": "copy",
      "rad": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre ve",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -3431,19 +2661,12 @@
       "yta": "copy",
       "rad": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre ve",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -3459,12 +2682,6 @@
      "yta": "copy",
      "rad": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre ve",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],
@@ -3509,12 +2726,6 @@
       "fel": "säger 30 dagar — butiken har 14"
      },
      {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
-     },
-     {
       "regel": "recension",
       "yta": "bild",
       "rad": "★★★★★",
@@ -3537,7 +2748,6 @@
    "dom": "bara-copy",
    "attgöra": [
     "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr",
     "recension i bild: citat attribuerat \"★★★★★\" som inte finns bland butikens 10 recensioner — påhittad kund",
     "recension i bild: citat attribuerat \"Verifisert kunde\" som inte finns bland butikens 10 recensioner — påhittad kund",
     "öppet köp i bild: säger 30 dagar — butiken har 14"
@@ -3556,12 +2766,6 @@
      "yta": "copy",
      "rad": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre ve",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     },
     {
      "regel": "recension",
@@ -3627,19 +2831,12 @@
       "yta": "copy",
       "rad": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre ve",
       "fel": "säger 30 dagar — butiken har 14"
-     },
-     {
-      "regel": "pris",
-      "yta": "copy",
-      "rad": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
-      "fel": "säger 439 kr — butiken tar 499 / 649 kr"
      }
     ]
    },
    "dom": "bara-copy",
    "attgöra": [
-    "öppet köp i copy: säger 30 dagar — butiken har 14",
-    "pris i copy: säger 439 kr — butiken tar 499 / 649 kr"
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
    ],
    "villkor": [
     {
@@ -3655,12 +2852,6 @@
      "yta": "copy",
      "rad": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre ve",
      "fel": "säger 30 dagar — butiken har 14"
-    },
-    {
-     "regel": "pris",
-     "yta": "copy",
-     "rad": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
-     "fel": "säger 439 kr — butiken tar 499 / 649 kr"
     }
    ],
    "belägg": [],

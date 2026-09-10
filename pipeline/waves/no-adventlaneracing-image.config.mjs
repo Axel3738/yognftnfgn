@@ -27,7 +27,7 @@ export default {
           "copy": {
             "message": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre velger biler fordi barna faktisk leker med dem\n🌅 Ny bil bak luken hver morgen i desember\n✅ 14 dagers angrerett\n👉 Bestill julekalenderen med biler",
             "headline": "24 biler varer til jul, ikke bare dag 2",
-            "description": "Sjokoladen tom dag 2 – denne varer til jul"
+            "description": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr"
           }
         }
       ],
@@ -41,7 +41,7 @@ export default {
           "copy": {
             "message": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 Et nytt smil, hver dag frem til julaften\n✅ 14 dagers angrerett\n👉 Bestill julegaven i dag",
             "headline": "Julegaven med 24 biler i en eske",
-            "description": "24 biler i en gaveeske, klar til jul"
+            "description": "24 biler i en gaveeske, klar til jul – 439 kr"
           }
         }
       ],
@@ -55,7 +55,21 @@ export default {
           "copy": {
             "message": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkkenbordet\n🚙 Dag 24: den stiller seg ved siden av de 23 andre\n✅ 14 dagers angrerett\n👉 Se alle 24 bilene her",
             "headline": "24 ekte biler, ikke sjokolade",
-            "description": "24 ekte biler bak lukene"
+            "description": "24 ekte biler bak lukene – kun 439 kr"
+          }
+        }
+      ],
+    },
+    {
+      name: "ADVENTLANERACING_NO_Racingkalendern - CS",
+      ads: [
+        {
+          "adName": "AdventLaneRacing_NO_CS_2_1",
+          "img": "AdventLaneRacing_NO_CS_2_1.jpg",
+          "copy": {
+            "message": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen gjelder ikke lenge\n✅ 14 dagers angrerett\n👉 Bestill før den er utsolgt",
+            "headline": "579 kr → 439 kr i dag",
+            "description": "439 kr i dag, før 579 kr – 24 % rabatt"
           }
         }
       ],

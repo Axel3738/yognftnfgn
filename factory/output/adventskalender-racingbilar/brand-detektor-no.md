@@ -12,9 +12,9 @@ Läser bara. Inga krediter, ingen HeyGen, ingen kie.ai, inget skrivet i något a
 | Dom | Antal | Vad det kostar |
 |---|---|---|
 | `ren` | 0 | inget brandarbete — ⚠️ men läs länken och villkoren nedan innan något laddas upp |
-| `bara-copy` | 13 | gratis — skriv om texten / kör `pipeline/oversatt-bild.py` |
-| `kräver-slutkortsbygge` | 2 | arbetstid — `pipeline/no-precis.py` byter texten i sin egen ruta |
-| `kräver-omdubb` | 1 | HeyGen-krediter — blockerat tills plånboken fylls på |
+| `bara-copy` | 16 | gratis — skriv om texten / kör `pipeline/oversatt-bild.py` |
+| `kräver-slutkortsbygge` | 0 | arbetstid — `pipeline/no-precis.py` byter texten i sin egen ruta |
+| `kräver-omdubb` | 0 | HeyGen-krediter — blockerat tills plånboken fylls på |
 | `okänd` | 0 | en yta gick inte att läsa — står aldrig som "ren" |
 
 ⚠️ **Länken gäller alla 16:** varje annons pekar på källbutiken och måste peka på OPS-butiken.
@@ -26,22 +26,22 @@ Bytet ingår i kampanjbygget (Uppdrag B) och håller sig därför utanför klass
 
 | Annons | Typ | 1 copy | 2 tal | 3 inbränd text | 4 bildattribution | Dom | Måste åtgärdas |
 |---|---|---|---|---|---|---|---|
-| `Adventskalender_NO_CS_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **kräver-omdubb** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 579 kr — butiken tar 499 / 649 kr + pris i copy: säger 439 kr — butiken tar 499 / 649 kr + pris i inbränd: säger 439 kr — butiken tar 499 / 649 kr + pris i inbränd: säger 579 kr — butiken tar 499 / 649 kr + pris i tal: säger 579 kr ("femhundre og syttini") — butiken tar 499 / 649 kr + pris i tal: säger 439 kr ("firehundre og trettini") — butiken tar 499 / 649 kr + pris i tal: säger 579 kr ("Femhundre og syttini") — butiken tar 499 / 649 kr + anm. brådska i copy: lovar brådska/lager "Begrenset lager" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "prisen gjelder ikke lenge" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) |
-| `Adventskalender_NO_CS_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **kräver-slutkortsbygge** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 579 kr — butiken tar 499 / 649 kr + pris i copy: säger 439 kr — butiken tar 499 / 649 kr + pris i inbränd: säger 579 kr ("Femhundre og syttini") — butiken tar 499 / 649 kr + anm. brådska i copy: lovar brådska/lager "Begrenset lager" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i inbränd: lovar brådska/lager "Siste sjanse" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i inbränd: lovar brådska/lager "for den er utsolgt" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "Siste sjanse" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "prisen gjelder ikke lenge" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "før den er utsolgt" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) |
-| `Adventskalender_NO_CS_2_1` | bild | ✅ ren | – | – | ✅ ren | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 579 kr — butiken tar 499 / 649 kr + pris i copy: säger 439 kr — butiken tar 499 / 649 kr + pris i bild: säger 579 kr — butiken tar 499 / 649 kr + pris i bild: säger 439 kr — butiken tar 499 / 649 kr + anm. brådska i copy: lovar brådska/lager "Begrenset lager" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) |
-| `Adventskalender_NO_CS_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **kräver-slutkortsbygge** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 579 kr — butiken tar 499 / 649 kr + pris i copy: säger 439 kr — butiken tar 499 / 649 kr + pris i inbränd: säger 579 kr ("Femhundre og syttini") — butiken tar 499 / 649 kr + anm. brådska i copy: lovar brådska/lager "Begrenset lager" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i inbränd: lovar brådska/lager "for den er utsolgt" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "prisen gjelder ikke lenge" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "før den er utsolgt" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) |
-| `Adventskalender_NO_G_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_G_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_G_2_1` | bild | ✅ ren | – | – | ✅ ren | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_G_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_PD_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_PD_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_PD_2_1` | bild | ✅ ren | – | – | ✅ ren | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_PD_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_SP_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_SP_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
-| `Adventskalender_NO_SP_2_1` | bild | ✅ ren | – | – | ✅ ren | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr + recension i bild: citat attribuerat "★★★★★" som inte finns bland butikens 10 recensioner — påhittad kund + recension i bild: citat attribuerat "Verifisert kunde" som inte finns bland butikens 10 recensioner — påhittad kund + öppet köp i bild: säger 30 dagar — butiken har 14 |
-| `Adventskalender_NO_SP_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + pris i copy: säger 439 kr — butiken tar 499 / 649 kr |
+| `Adventskalender_NO_CS_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + anm. brådska i copy: lovar brådska/lager "Begrenset lager" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "prisen gjelder ikke lenge" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) |
+| `Adventskalender_NO_CS_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + anm. brådska i copy: lovar brådska/lager "Begrenset lager" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i inbränd: lovar brådska/lager "Siste sjanse" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i inbränd: lovar brådska/lager "for den er utsolgt" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "Siste sjanse" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "prisen gjelder ikke lenge" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "før den er utsolgt" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) |
+| `Adventskalender_NO_CS_2_1` | bild | ✅ ren | – | – | ✅ ren | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + anm. brådska i copy: lovar brådska/lager "Begrenset lager" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) |
+| `Adventskalender_NO_CS_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + anm. brådska i copy: lovar brådska/lager "Begrenset lager" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i inbränd: lovar brådska/lager "for den er utsolgt" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "prisen gjelder ikke lenge" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) + anm. brådska i tal: lovar brådska/lager "før den er utsolgt" — butiken lovar aldrig tidsbegränsning eller lagerbrist (kopieras orörd — Axels regel 2026-09-10) |
+| `Adventskalender_NO_G_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_G_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_G_2_1` | bild | ✅ ren | – | – | ✅ ren | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_G_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_PD_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_PD_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_PD_2_1` | bild | ✅ ren | – | – | ✅ ren | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_PD_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_SP_1` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_SP_2` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_SP_2_1` | bild | ✅ ren | – | – | ✅ ren | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 + recension i bild: citat attribuerat "★★★★★" som inte finns bland butikens 10 recensioner — påhittad kund + recension i bild: citat attribuerat "Verifisert kunde" som inte finns bland butikens 10 recensioner — påhittad kund + öppet köp i bild: säger 30 dagar — butiken har 14 |
+| `Adventskalender_NO_SP_3` | video | ✅ ren | ✅ ren | ✅ ren | – | **bara-copy** | öppet köp i copy: säger 30 dagar — butiken har 14 |
 
 ## Hur säkra siffrorna är
 
@@ -65,10 +65,10 @@ egna villkor måste de bytas innan annonsen körs, precis som brandnamnet.
 
 | Annons | Dom | Villkor som står i materialet |
 |---|---|---|
-| `Adventskalender_NO_CS_1` | kräver-omdubb | pris: 579 kr, 439 kr · rabatt: 24 % |
-| `Adventskalender_NO_CS_2` | kräver-slutkortsbygge | pris: 579 kr, 439 kr · rabatt: 24 % |
+| `Adventskalender_NO_CS_1` | bara-copy | pris: 579 kr, 439 kr · rabatt: 24 % |
+| `Adventskalender_NO_CS_2` | bara-copy | pris: 579 kr, 439 kr · rabatt: 24 % |
 | `Adventskalender_NO_CS_2_1` | bara-copy | pris: 579 kr, 439 kr, 579kr, 439kr · rabatt: 24 %, 24% |
-| `Adventskalender_NO_CS_3` | kräver-slutkortsbygge | pris: 579 kr, 439 kr · rabatt: 24 % |
+| `Adventskalender_NO_CS_3` | bara-copy | pris: 579 kr, 439 kr · rabatt: 24 % |
 | `Adventskalender_NO_G_1` | bara-copy | pris: 439 kr |
 | `Adventskalender_NO_G_2` | bara-copy | pris: 439 kr |
 | `Adventskalender_NO_G_2_1` | bara-copy | pris: 439 kr |
