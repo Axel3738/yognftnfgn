@@ -34,17 +34,34 @@ export async function importCostCsv(
        där titeln inte hjälper — men det är kostnaden som ska skrivas.
        Tre kolumner är det handskrivna formatet: sista kolumnen är kostnaden. */
     const fyra = parts.length >= 4;
-    /* Flerpack: "88.34|134.22|180.19" = totalkostnad för 1, 2 och 3 st i
-       samma orderrad. Första talet är styckpriset som skrivs till Shopify;
-       resten sparas som steg i appen. */
-    const steg = (fyra ? parts[2] : parts[parts.length - 1] ?? "")
-      .split("|")
-      .map((x) => parseFloat(x.trim().replace(",", ".")));
+    /* Flerpack i kostnadskolumnen. Två former, båda giltiga:
+         "88.34|2:134.22|3:180.19"  — antalet står utskrivet (det mallen
+                                       exporterar sedan 2026-09-10)
+         "88.34|134.22|180.19"      — positionell: 1, 2, 3 st (äldre filer)
+       Antalet MÅSTE kunna skrivas ut: en offert staffar ofta 1/50/100, och
+       den positionella formen läste tillbaka 50-packet som ett tvåpack —
+       en order med 2 st fick då 50-packets pris. */
+    const tal = (x: string) => parseFloat(String(x ?? "").trim().replace(",", "."));
+    const celler = (fyra ? parts[2] : parts[parts.length - 1] ?? "").split("|").map((x) => x.trim());
+    const steg = celler.slice(1).map((cell, i) => {
+      const bit = cell.split(":");
+      return bit.length > 1
+        ? { units: Math.round(tal(bit[0])), totalCost: tal(bit[1]) }
+        : { units: i + 2, totalCost: tal(cell) };
+    });
+    /* CostTier har unique(shop, variantGid, units) — samma antal två gånger
+       i en fil hade spräckt skrivningen efter att de gamla stegen raderats. */
+    const perAntal = new Map<number, number>();
+    for (const t of steg) {
+      if (Number.isFinite(t.units) && t.units >= 2 && Number.isFinite(t.totalCost)) {
+        perAntal.set(t.units, t.totalCost);
+      }
+    }
     return {
       product: parts[0] ?? "",
       variant: fyra ? parts[1] : parts.length >= 3 ? parts.slice(1, -1).join(" ").trim() : "",
-      cost: steg[0],
-      tiers: steg.slice(1).map((totalCost, i) => ({ units: i + 2, totalCost })).filter((t) => Number.isFinite(t.totalCost)),
+      cost: tal(celler[0] ?? ""),
+      tiers: [...perAntal.entries()].sort((a, b) => a[0] - b[0]).map(([units, totalCost]) => ({ units, totalCost })),
     };
   };
   const applied: string[] = [];

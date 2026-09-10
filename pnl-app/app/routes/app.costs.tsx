@@ -95,7 +95,15 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const rows = [...costs.all].map((v) => ({
     ...v,
     tiers: stegByVariant.get(v.variantGid) ?? [],
-    costCell: v.unitCost == null ? "" : [v.unitCost.toFixed(2), ...(tiersByVariant.get(v.variantGid) ?? [])].join("|"),
+    /* Antalet MÅSTE med: ett 50-pack som exporteras som bara ett tal lästes
+       tillbaka som ett tvåpack, och en order med 2 st fick 50-packets pris. */
+    costCell:
+      v.unitCost == null
+        ? ""
+        : [
+            v.unitCost.toFixed(2),
+            ...(stegByVariant.get(v.variantGid) ?? []).map((s) => `${s.units}:${s.totalCost.toFixed(2)}`),
+          ].join("|"),
   })).sort((a, b) => {
     // Saknade kostnader först — det är dem man är här för att fixa.
     if ((a.unitCost == null) !== (b.unitCost == null)) return a.unitCost == null ? -1 : 1;
@@ -165,6 +173,13 @@ export async function action({ request }: ActionFunctionArgs) {
       .map((par) => par.split(":").map((x) => parseFloat(x.trim())))
       .filter(([u, tot]) => Number.isFinite(u) && u >= 2 && Number.isFinite(tot) && tot > 0)
       .map(([units, totalCost]) => ({ units: Math.round(units), totalCost }));
+    /* CostTier har unique(shop, variantGid, units). Kommer samma antal två
+       gånger (AI:n läste tvåpacket en gång per färg) sprack createMany EFTER
+       att deleteMany redan tömt variantens steg — kostnaden var skriven och
+       packpriserna borta. Sista värdet vinner. */
+    const stegPerAntal = new Map<number, number>();
+    for (const s of tiers) stegPerAntal.set(s.units, s.totalCost);
+    const rena = [...stegPerAntal.entries()].sort((a, b) => a[0] - b[0]).map(([units, totalCost]) => ({ units, totalCost }));
     if (!Number.isFinite(cost) || cost < 0 || !inv.length) {
       return json({ ok: false, message: "invalid" }, { status: 400 });
     }
@@ -173,12 +188,21 @@ export async function action({ request }: ActionFunctionArgs) {
       const r = await setUnitCost(admin, gid, cost);
       if (!r.ok) fel.push(r.error ?? gid);
     }
-    if (tiers.length && variants.length) {
+    if (rena.length && variants.length) {
       for (const variantGid of variants) {
-        await prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid } });
-        await prisma.costTier.createMany({
-          data: tiers.map((s) => ({ shop: session.shop, variantGid, units: s.units, totalCost: s.totalCost })),
-        });
+        try {
+          /* Radera och skriv i SAMMA transaktion: ett fel mitt emellan hade
+             lämnat varianten helt utan packpriser. */
+          await prisma.$transaction([
+            prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid } }),
+            prisma.costTier.createMany({
+              data: rena.map((s) => ({ shop: session.shop, variantGid, units: s.units, totalCost: s.totalCost })),
+            }),
+          ]);
+        } catch (e) {
+          console.error(`Packpriser för ${variantGid} kunde inte sparas:`, e);
+          fel.push((e as Error).message);
+        }
       }
     }
     invalidateVariantCosts(session.shop);
@@ -214,22 +238,29 @@ export async function action({ request }: ActionFunctionArgs) {
          gör varje inköpspris tiofalt fel. Ser AI:n ingen valuta får handlaren
          välja i en lista — därför skickas kurserna för alla valbara valutor
          med, så bytet räknas om direkt utan en ny AI-läsning. */
-      const upptackt = tolkaValuta(svar.items.find((i) => i.currency)?.currency ?? "", butikensValuta);
-      const valutor = [...new Set([upptackt, "USD", "CNY", "EUR", "GBP", butikensValuta].filter(Boolean))];
+      const raValuta = (svar.items.find((i) => i.currency)?.currency ?? "").trim();
+      const upptackt = tolkaValuta(raValuta, butikensValuta);
+      /* Valutan behålls PER RAD. Två skärmbilder i samma läsning kan vara i
+         olika valutor (varan i USD, frakten i CNY) — att köra hela offerten
+         på den första radens valuta gav sjufalt fel pris på resten. */
+      const items = svar.items.map((it) => ({
+        label: it.label,
+        unitCost: it.unit_cost,
+        tiers: it.tiers,
+        moq: it.moq,
+        currency: tolkaValuta(it.currency ?? "", butikensValuta),
+        suggestedProduct: it.suggested_product,
+        suggestedVariant: it.suggested_variant,
+      }));
+      const valutor = [
+        ...new Set([upptackt, ...items.map((i) => i.currency), "USD", "CNY", "EUR", "GBP", butikensValuta].filter(Boolean)),
+      ];
       const kurser: Record<string, number | null> = {};
       await Promise.all(
         valutor.map(async (c) => {
           kurser[c] = c === butikensValuta ? 1 : ((await fxRate(c, butikensValuta)) ?? null);
         }),
       );
-      const items = svar.items.map((it) => ({
-        label: it.label,
-        unitCost: it.unit_cost,
-        tiers: it.tiers,
-        moq: it.moq,
-        suggestedProduct: it.suggested_product,
-        suggestedVariant: it.suggested_variant,
-      }));
       return json({
         ok: true,
         message: items.length ? T.costs.quote.found(items.length) : T.costs.quote.empty,
@@ -237,6 +268,9 @@ export async function action({ request }: ActionFunctionArgs) {
           items,
           notes: svar.notes,
           detected: upptackt,
+          /* Vad AI:n faktiskt skrev. Gick den inte att tolka ska kortet säga
+             "Offerten visar '元' — välj valuta", inte "ingen valuta syntes". */
+          detectedRaw: raValuta.slice(0, 12),
           valutor,
           kurser,
           shopCurrency: butikensValuta,
@@ -317,6 +351,7 @@ export default function Costs() {
           notes: string;
           /** Valutan AI:n faktiskt SÅG i offerten. Tom = ingen syntes. */
           detected: string;
+          detectedRaw: string;
           valutor: string[];
           kurser: Record<string, number | null>;
           shopCurrency: string;
@@ -338,7 +373,7 @@ export default function Costs() {
   const offertValutor = quoteData?.quote?.valutor?.length
     ? quoteData.quote.valutor
     : ["USD", "EUR", "CNY", "GBP", currency];
-  const offertKurs = quoteData?.quote?.kurser?.[offertValuta] ?? null;
+
   const [visaImport, setVisaImport] = useState(false);
   const [visaVideo, setVisaVideo] = useState(false);
   /* Bilder → base64 i webbläsaren. Delas av AI-kortet och offertkortet. */
@@ -577,7 +612,9 @@ export default function Costs() {
                           helpText={
                             quoteData.quote.detected
                               ? T.costs.quote.detected(quoteData.quote.detected)
-                              : T.costs.quote.notDetected
+                              : quoteData.quote.detectedRaw
+                                ? T.costs.quote.detectedUnknown(quoteData.quote.detectedRaw)
+                                : T.costs.quote.notDetected
                           }
                         />
                       </div>
@@ -592,7 +629,7 @@ export default function Costs() {
                             nf={nf}
                             currency={currency}
                             valuta={offertValuta}
-                            kurs={offertKurs}
+                            kurser={quoteData?.quote?.kurser ?? {}}
                           />
                         ))}
                       </BlockStack>
@@ -832,6 +869,8 @@ type OffertItem = {
   /** Packpriser i offertens valuta: totalpris för `units` stycken. */
   tiers: { units: number; total: number }[];
   moq: number;
+  /** Radens EGEN valuta om AI:n såg en. Tom = använd kortets val. */
+  currency: string;
   suggestedProduct: string;
   suggestedVariant: string;
 };
@@ -847,7 +886,7 @@ type OffertItem = {
  * 2 st för 15 är 15 totalt och inte 2 × 10.
  */
 function OffertRad({
-  it, rows, T, nf, currency, valuta, kurs,
+  it, rows, T, nf, currency, valuta, kurser,
 }: {
   it: OffertItem;
   rows: Rad[];
@@ -855,7 +894,7 @@ function OffertRad({
   nf: Intl.NumberFormat;
   currency: string;
   valuta: string;
-  kurs: number | null;
+  kurser: Record<string, number | null>;
 }) {
   const fetcher = useFetcher<typeof action>();
   const produkter = (() => {
@@ -868,6 +907,12 @@ function OffertRad({
   const grupp = produkter.find((g) => g[0].productGid === productGid) ?? [];
   const forslagVariant = grupp.find((r) => r.variantTitle.trim().toLowerCase() === it.suggestedVariant.trim().toLowerCase());
   const [variantGid, setVariantGid] = useState(forslagVariant?.variantGid ?? "");
+  /* Radens egen valuta går före kortets val: två skärmbilder i en läsning
+     kan vara i olika valutor, och att räkna rad fyra med rad ettas kurs gav
+     sjufalt fel inköpspris utan att något sades. */
+  const radValuta = it.currency || valuta;
+  const kurs = kurser[radValuta] ?? null;
+  const egenValuta = Boolean(it.currency) && it.currency !== valuta;
   const rund = (n: number) => Math.round(n * 100) / 100;
   const iButik = (n: number) => (kurs == null ? null : rund(n * kurs));
   /* Packpriserna normaliseras: ett steg utan antal (gammalt svarsformat) är
@@ -888,7 +933,7 @@ function OffertRad({
     const v = kurs == null ? null : rund(it.unitCost * kurs);
     setKostnad(v == null ? "" : String(v));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [kurs, valuta]);
+  }, [kurs, radValuta]);
   const stegButik = kurs == null ? [] : steg.map((s) => ({ units: s.units, total: rund(s.total * kurs) }));
   /* Packpriser utan kurs går inte att räkna om. Att spara ändå hade skrivit
      ett nytt styckpris medan de gamla packpriserna låg kvar — en variant
@@ -897,16 +942,16 @@ function OffertRad({
   /* Vad som senast sparades. Utan den låste knappen sig för alltid efter
      första klicket, även när valutan eller beloppet ändrats efteråt. */
   const [sparatVal, setSparatVal] = useState("");
-  const signatur = `${productGid}|${variantGid}|${kostnad}|${valuta}`;
+  const signatur = `${productGid}|${variantGid}|${kostnad}|${radValuta}`;
   const sparad = fetcher.data?.ok === true && sparatVal === signatur && fetcher.state === "idle";
 
   /* Priserna som de STÅR i offerten: 1 st, sedan varje packpris med sitt
      styckpris inom parentes. Poängen är att 2 st för 15 ska läsas som 15
      totalt, inte som 2 × styckpriset. */
   const prisrader = [
-    T.costs.bundle.single(`${nf.format(it.unitCost)} ${valuta}`),
+    T.costs.bundle.single(`${nf.format(it.unitCost)} ${radValuta}`),
     ...steg.map((s) =>
-      T.costs.bundle.line(s.units, `${nf.format(s.total)} ${valuta}`, `${nf.format(s.total / s.units)} ${valuta}`),
+      T.costs.bundle.line(s.units, `${nf.format(s.total)} ${radValuta}`, `${nf.format(s.total / s.units)} ${radValuta}`),
     ),
   ].join(" · ");
 
@@ -935,14 +980,17 @@ function OffertRad({
           {steg.length ? <Badge tone="info">{T.costs.bundle.badge}</Badge> : null}
         </InlineStack>
         <Text as="p" tone="subdued" variant="bodySm">{prisrader}</Text>
+        {egenValuta ? (
+          <Text as="p" variant="bodySm" tone="caution">{T.costs.quote.rowCurrency(radValuta)}</Text>
+        ) : null}
         {kurs == null ? (
           <Text as="p" tone="critical" variant="bodySm">
-            {T.costs.quote.noRate(valuta)}
+            {T.costs.quote.noRate(radValuta)}
             {stegUtanKurs ? ` ${T.costs.bundle.noRate}` : ""}
           </Text>
         ) : kurs !== 1 ? (
           <Text as="p" tone="subdued" variant="bodySm">
-            {T.costs.quote.converted(valuta, currency, kurs)}
+            {T.costs.quote.converted(radValuta, currency, kurs)}
             {stegButik.length
               ? ` · ${[T.costs.bundle.single(`${nf.format(rund(it.unitCost * kurs))} ${currency}`), ...stegButik.map((s) => T.costs.bundle.line(s.units, `${nf.format(s.total)} ${currency}`, `${nf.format(s.total / s.units)} ${currency}`))].join(" · ")}`
               : ""}
@@ -1014,7 +1062,10 @@ function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<ty
      2 × 10. Skiljer sig stegen mellan varianterna hänvisas till produkten. */
   const medSteg = grupp.filter((r) => r.tiers.length);
   const stegNyckel = (r: Rad) => r.tiers.map((s) => `${s.units}:${s.totalCost}`).join("|");
-  const sammaSteg = medSteg.length === grupp.length && new Set(grupp.map(stegNyckel)).size === 1;
+  const sammaSteg =
+    medSteg.length === grupp.length &&
+    new Set(grupp.map(stegNyckel)).size === 1 &&
+    new Set(grupp.map((r) => r.unitCost)).size === 1;
   const stegRad =
     medSteg.length === 0
       ? ""

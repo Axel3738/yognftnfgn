@@ -673,6 +673,26 @@ och 2 st kostar 15 — inte 20".
   CostTier-rader kvar bredvid ett nytt styckpris — knappen låses nu med
   skälet utskrivet; och ett svar utan valutalista eller antal (halv deploy)
   kunde rendera ordet "undefined" för handlaren.
+- **Andra granskningsronden (build offert-granskad-v83)** — fyra fel till,
+  alla bekräftade av tre oberoende granskare:
+  1. **CSV-mallen tappade antalet.** Kostnadscellen exporterade bara
+     totalpriserna, och importen läste dem positionellt som 2, 3, 4 st. Ett
+     50-pack som gick ut och in genom mallen blev ett tvåpack — en order med
+     2 st fick 50-packets kostnad. Mallen skriver nu `88.34|2:134.22|50:2900`
+     och `parseLine` tolkar `antal:total` (positionellt kvar som fallback
+     för äldre filer). Mall-texten (tpl6) uppdaterad i båda ordböckerna.
+  2. **En valuta för hela offerten.** `detected` togs från första raden som
+     hade en, och radens egen valuta kastades. Två skärmbilder i samma
+     läsning (varan i USD, frakten i CNY) räknade rad fyra med rad ettas
+     kurs. Nu bär varje rad sin egen valuta, kortets rullista är bara
+     fallback, och en avvikande rad märks ut.
+  3. **Två steg med samma antal.** `CostTier` har unique(shop, variant,
+     units); dubbletter från AI:n sprack `createMany` EFTER att `deleteMany`
+     tömt variantens steg. Nu dedupliceras antalen och radera+skriv ligger i
+     samma transaktion, med felet fångat.
+  4. **Oläsbar valutaangivelse påstods vara ingen.** Kunde `tolkaValuta` inte
+     tolka strängen sa kortet "ingen valuta syntes". Råsträngen följer nu med
+     och texten blir "Offerten visar '元' — välj valuta".
 
 **Hero-kortet i panelen (build hero-v68)** — Axels ord: "dashboarden borde se
 lite mer levande ut, man vill ha en dopaminkick." Överst i panelen: den stora
