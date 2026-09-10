@@ -157,6 +157,20 @@ test('spärrar: förbjudna domäner stoppar (HeimGuard + Bäverbutiken)', () => 
   t.stada();
 });
 
+test('spärrar: tillatForbjuden släpper BARA spärr 1 (Axels undantag 2026-09-10 för varukorgsfixen)', () => {
+  const t = tempMappar();
+  // HeimGuard med sitt eget id: förbjuden utan flaggan, öppen med.
+  assert.equal(spärrar('hemvakten', 'pzjagy-mz.myshopify.com', t.alt).ok, false);
+  assert.equal(spärrar('hemvakten', 'pzjagy-mz.myshopify.com', { ...t.alt, tillatForbjuden: true }).ok, true);
+  // Spärr 2 gäller fortfarande: state för en ANNAN butik på samma domän stoppar även med flaggan.
+  t.butik('gammal', 'Gammal', 'pzjagy-mz.myshopify.com');
+  t.state('gammal', 'produkt');
+  const r = spärrar('hemvakten', 'pzjagy-mz.myshopify.com', { ...t.alt, tillatForbjuden: true });
+  assert.equal(r.ok, false);
+  assert.match(r.skal, /annan butik/);
+  t.stada();
+});
+
 test('spärrar: tom domän eller tomt id stoppar', () => {
   const t = tempMappar();
   assert.equal(spärrar('nybutik', '', t.alt).ok, false);

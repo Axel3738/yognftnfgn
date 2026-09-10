@@ -48,7 +48,12 @@ async function main() {
   const torr = process.argv.includes('--torr');
   if (!butik) throw new Error('Ange butiks-id: node factory/varukorgsfix.mjs <butik-id>');
 
-  const b = await anslut(butik, { utanEnvFil: true });
+  // `tillatForbjuden`: Axels beslut 2026-09-10 — HeimGuard står i
+  // FORBJUDNA_DOMANER för att ingen ska bygga en ny butik ovanpå den, men den
+  // spärren höll också den här fixen borta medan butiken stod live med
+  // dubbelköpet. Undantaget gäller enbart spärr 1 och enbart här: skriptet
+  // skriver TEMAFILER till det publicerade temat och inget annat.
+  const b = await anslut(butik, { utanEnvFil: true, sparrAlternativ: { tillatForbjuden: true } });
   const d = await graphql(`{ themes(first: 20) { nodes { id name role } } }`);
   const live = valjLiveTema(d.themes.nodes);
   console.log(`${b.name} (${b.domain}) · publicerat tema: "${live.name}"`);

@@ -291,7 +291,15 @@ export const MILJOFALLOR = [
 
 // Spärrarna. `shop` är en domän-sträng eller { domain, name }.
 // → { ok, skal } där skal är en läsbar mening när ok = false.
-export function spärrar(butikId, shop, { stateMapp = STATE_MAPP, butikerMapp = BUTIKER_MAPP, outputMapp = OUTPUT_MAPP } = {}) {
+//
+// `tillatForbjuden`: hoppar över spärr 1 (förbjudna domäner) — INGET annat.
+// Axels beslut 2026-09-10 ("gör ett undantag och fixa den med"): spärren
+// finns för att ingen ska BYGGA en ny butik ovanpå HeimGuard, men den
+// stoppade också fabrikens egen varukorgsfix från att nå HeimGuards
+// publicerade tema, som stod live med dubbelköpet. Undantaget används bara
+// av `factory/varukorgsfix.mjs`, som skriver TEMAFILER och inget annat.
+// Spärr 2 (främmande state) och 3 (brandnamn) gäller fortfarande.
+export function spärrar(butikId, shop, { stateMapp = STATE_MAPP, butikerMapp = BUTIKER_MAPP, outputMapp = OUTPUT_MAPP, tillatForbjuden = false } = {}) {
   const id = String(butikId ?? '').trim().toLowerCase();
   const doman = normaliseraDoman(typeof shop === 'string' ? shop : shop?.domain ?? shop?.myshopifyDomain);
   const namn = typeof shop === 'object' && shop ? String(shop.name ?? '').trim() : '';
@@ -300,7 +308,7 @@ export function spärrar(butikId, shop, { stateMapp = STATE_MAPP, butikerMapp = 
   if (!doman) return { ok: false, skal: `Ingen butiksdomän — sätt SHOPIFY_SHOP (VA:ns steg 2).\n\n${MILJOFALLOR}` };
 
   // 1. Förbjudna domäner.
-  if (FORBJUDNA_DOMANER.includes(doman)) {
+  if (FORBJUDNA_DOMANER.includes(doman) && !tillatForbjuden) {
     return {
       ok: false,
       skal: `${doman} är en förbjuden butik (HeimGuard live eller Bäverbutiken) — fabriken rör den aldrig. Be VA:n skriva över SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET för den nya butiken.`,

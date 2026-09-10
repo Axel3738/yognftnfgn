@@ -333,9 +333,14 @@ ansluter, väljer det ENDA publicerade temat, skriver fabrikens fil, läser
 tillbaka byte för byte och stannar om något avviker. TankGuard rättad
 2026-09-10 (16 516 byte, identisk, CDN:en serverar ny `?v=` med
 `stopImmediatePropagation` och varorna före koden) — och Axel bekräftade i sin
-egen webbläsare samma kväll: *"Nu funkar det bra."* **HeimGuard är INTE rättad**
-— dess nycklar finns inte i den sessionens Environment (`anslut('hemvakten')`
-stoppade på spärren). Kör skriptet från en session som har dem.
+egen webbläsare samma kväll: *"Nu funkar det bra."* **HeimGuard är INTE rättad.**
+Två hinder: (1) `pzjagy-mz` står i `FORBJUDNA_DOMANER` — Axel gav undantag
+2026-09-10, kodat som `tillatForbjuden` i `spärrar()`, som bara
+`varukorgsfix.mjs` skickar och som bara släpper spärr 1; (2) HeimGuards
+app-nycklar finns inte i den sessionens Environment, och Shopify-MCP:n vägrar
+skriva temafiler till ett publicerat tema. Tills nycklarna finns är vägen att
+VA:n klistrar in `factory/tema/assets/ms-paket.js` i temats kodredigerare —
+kontrollen görs sedan via CDN:en utan nycklar.
 
 **Vakten som gör att det inte händer igen:** trippelkollen har raden
 `fabriksfiler i publicerat tema` — den läser `TEMAFILER` ur det publicerade

@@ -132,14 +132,16 @@ bra."** Härifrån gick det inte — egress-tunneln stänger Chromiums anslutnin
 efter sex sekunder (tre försök).
 
 ⚠️ **HeimGuard har samma bugg live** (5 906 byte gammal fil på
-heimguard.se). Inte rättad — och `varukorgsfix.mjs` KAN inte rätta den:
-`token.mjs` har `pzjagy-mz.myshopify.com` i `FORBJUDNA_DOMANER` utan undantag
-("fabriken rör den aldrig"), så `anslut()` stoppar oavsett nycklar. Vägarna
-är (a) någon klistrar in `factory/tema/assets/ms-paket.js` i HeimGuards
-publicerade tema för hand (Online Store → Themes → Edit code →
-`assets/ms-paket.js`), eller (b) Axel lyfter spärren för just den filen.
-Kontrollen efteråt kräver inga nycklar: hämta `ms-paket.js` från
-heimguard.se:s CDN och leta `stopImmediatePropagation`. Ägarbeslut.
+heimguard.se). **Axels beslut 2026-09-10: "gör ett undantag och fixa den
+med."** Undantaget är kodat: `spärrar()` tar `tillatForbjuden`, och
+`varukorgsfix.mjs` skickar det — spärr 1 släpper, spärr 2 och 3 gäller. Men
+sessionen saknar HeimGuards nycklar (ingen env-variabel pekar på `pzjagy-mz`),
+och Shopify-MCP:n blockerar `themeFilesUpsert` mot ett publicerat tema. Två
+vägar kvar, båda utan kod: (a) VA:n klistrar in filen i temats kodredigerare
+(instruktion + fil skickade i chatten 2026-09-10), eller (b) HeimGuards fyra
+app-rader läggs i Environment och `node factory/varukorgsfix.mjs hemvakten`
+körs i en NY session. Kontrollen efteråt kräver inga nycklar: hämta
+`ms-paket.js` från heimguard.se:s CDN och leta `stopImmediatePropagation`.
 
 Trippelkollen live 2026-09-10 efter fixen: `fabriksfiler i publicerat tema` ✅,
 18 gröna. Två röda som INTE hör till varukorgen och stod röda redan innan:
