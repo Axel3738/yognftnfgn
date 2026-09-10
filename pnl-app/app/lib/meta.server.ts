@@ -22,6 +22,52 @@ export type SpendErrorCode = "no-connection" | "expired" | "retrying" | "fetch-f
 export interface MetaConfig {
   adAccountId: string;
   accessToken: string;
+  /**
+   * Kampanjfilter: "all" (allt i kontot), "include" (bara de listade
+   * kampanjerna) eller "exclude" (allt utom dem). Null/okänt = "all".
+   * Finns för att flera butiker kan dela ETT annonskonto — utan filtret
+   * räknar varje butik in de andras annonskostnad.
+   */
+  campaignMode?: string | null;
+  /** Kampanj-ID:n, kommaseparerade. Tomt = inget filter, oavsett läge. */
+  campaignIds?: string | null;
+}
+
+/** ShopSettings-fälten som styr filtret, i den form MetaConfig vill ha dem. */
+export function kampanjFilter(s: {
+  campaignMode?: string | null;
+  campaignIds?: string | null;
+}): Pick<MetaConfig, "campaignMode" | "campaignIds"> {
+  return { campaignMode: s.campaignMode ?? null, campaignIds: s.campaignIds ?? null };
+}
+
+/** ID:n som filtret faktiskt gäller. Tom lista = inget filter. */
+function kampanjIds(cfg: MetaConfig): string[] {
+  if (cfg.campaignMode !== "include" && cfg.campaignMode !== "exclude") return [];
+  return (cfg.campaignIds ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+}
+
+/**
+ * Predikat för vilka kampanjer som räknas. Null = alla (inget filter).
+ *
+ * Meta filtrerar redan serversidan (parametern nedan), men svaret kontrolleras
+ * ändå rad för rad: skulle Meta ignorera filtret vill vi hellre räkna rätt än
+ * att tyst servera hela kontots kostnad som butikens.
+ */
+function kampanjPredikat(cfg: MetaConfig): ((id: string) => boolean) | null {
+  const ids = kampanjIds(cfg);
+  if (!ids.length) return null;
+  const set = new Set(ids);
+  return cfg.campaignMode === "include" ? (id) => set.has(id) : (id) => !set.has(id);
+}
+
+/** Metas `filtering`-parameter för kampanjfiltret. Null = ingen parameter. */
+function filterParam(cfg: MetaConfig): string | null {
+  const ids = kampanjIds(cfg);
+  if (!ids.length) return null;
+  return JSON.stringify([
+    { field: "campaign.id", operator: cfg.campaignMode === "include" ? "IN" : "NOT_IN", value: ids },
+  ]);
 }
 
 interface Insight {
@@ -31,6 +77,8 @@ interface Insight {
   clicks?: string;
   /** Meta redovisar alltid i ANNONSKONTOTS valuta, inte butikens. */
   account_currency?: string;
+  /** Bara vid kampanjfilter (level=campaign) — annars kontonivå utan id. */
+  campaign_id?: string;
 }
 
 export class MetaError extends Error {
@@ -43,27 +91,122 @@ export class MetaError extends Error {
   }
 }
 
+const kontoNamn = (id: string) => (id.startsWith("act_") ? id : `act_${id}`);
+
+/**
+ * Ett Graph-anrop med paginering. Token går i Authorization-headern, aldrig i
+ * adressen — en loggad URL eller ett felmeddelande ska inte kunna läcka den.
+ * Metas `paging.next` bär då ingen token, så headern skickas med varje sida.
+ */
+async function graphSidor(
+  url: URL,
+  token: string,
+  maxSidor: number,
+  timeoutMs: number,
+): Promise<any[]> {
+  const ut: any[] = [];
+  let next: string | null = null;
+  for (let sida = 0; sida < maxSidor; sida++) {
+    const res = await fetch(next ?? url, {
+      headers: { Authorization: `Bearer ${token}` },
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+    const body: any = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      const err = body?.error ?? {};
+      // 190 = token utgången/återkallad. Allt annat är oftast rate limit eller fel konto.
+      throw new MetaError(err.message ?? `Meta responded ${res.status}`, err.code, err.code === 190);
+    }
+    ut.push(...(body?.data ?? []));
+    next = body?.paging?.next ?? null;
+    if (!next) break;
+  }
+  return ut;
+}
+
 async function fetchInsights(cfg: MetaConfig, since: string, until: string): Promise<Insight[]> {
-  const account = cfg.adAccountId.startsWith("act_") ? cfg.adAccountId : `act_${cfg.adAccountId}`;
-  const url = new URL(`${GRAPH}/${account}/insights`);
-  url.searchParams.set("fields", "spend,impressions,clicks,account_currency");
+  const filtering = filterParam(cfg);
+  const url = new URL(`${GRAPH}/${kontoNamn(cfg.adAccountId)}/insights`);
+  /* Utan filter: kontonivå, en rad per dag — oförändrat sedan v1 och det
+     billigaste Meta kan svara. Med filter: kampanjnivå, för då måste svaret
+     gå att kontrollera rad för rad (och summeras per dag här nere). */
+  url.searchParams.set(
+    "fields",
+    filtering ? "campaign_id,spend,impressions,clicks,account_currency" : "spend,impressions,clicks,account_currency",
+  );
   url.searchParams.set("time_range", JSON.stringify({ since, until }));
   url.searchParams.set("time_increment", "1");
-  url.searchParams.set("level", "account");
+  url.searchParams.set("level", filtering ? "campaign" : "account");
+  if (filtering) url.searchParams.set("filtering", filtering);
   url.searchParams.set("limit", "500");
-  url.searchParams.set("access_token", cfg.accessToken);
 
   /* Timeout: det här anropet awaitas numera även i gruppsummeringen — utan
-     gräns blir ett hängt Meta-svar en panel som aldrig laddar. */
-  const res = await fetch(url, { signal: AbortSignal.timeout(15_000) });
-  const body = await res.json();
+     gräns blir ett hängt Meta-svar en panel som aldrig laddar. Sidorna:
+     kampanjnivå ger dagar × kampanjer rader, så 500 räcker inte alltid. */
+  return graphSidor(url, cfg.accessToken, filtering ? 20 : 3, 15_000) as Promise<Insight[]>;
+}
 
-  if (!res.ok) {
-    const err = body?.error ?? {};
-    // 190 = token utgången/återkallad. Allt annat är oftast rate limit eller fel konto.
-    throw new MetaError(err.message ?? `Meta responded ${res.status}`, err.code, err.code === 190);
+/** En kampanj i annonskontot, som kryssrutorna i Inställningar visar den. */
+export interface MetaKampanj {
+  id: string;
+  name: string;
+  /** Metas effective_status: ACTIVE, PAUSED, ARCHIVED … */
+  status: string;
+  /** Spend senaste 30 dagarna i ANNONSKONTOTS valuta (inte butikens). */
+  spend30: number;
+}
+
+/**
+ * Kampanjerna i kontot med spend senaste 30 dagarna — underlaget för att
+ * kryssa i vilka som ska räknas. Namnen och spenden hämtas parallellt:
+ * insights listar bara kampanjer som levererat, och en kampanj som ska
+ * exkluderas kan mycket väl ha legat still den senaste månaden.
+ */
+export async function listaKampanjer(cfg: MetaConfig): Promise<MetaKampanj[]> {
+  const konto = kontoNamn(cfg.adAccountId);
+
+  const namnUrl = new URL(`${GRAPH}/${konto}/campaigns`);
+  namnUrl.searchParams.set("fields", "id,name,effective_status");
+  namnUrl.searchParams.set("limit", "200");
+
+  const spendUrl = new URL(`${GRAPH}/${konto}/insights`);
+  spendUrl.searchParams.set("fields", "campaign_id,campaign_name,spend");
+  spendUrl.searchParams.set("level", "campaign");
+  spendUrl.searchParams.set("date_preset", "last_30d");
+  spendUrl.searchParams.set("limit", "500");
+
+  const [namnRader, spendRader] = await Promise.all([
+    graphSidor(namnUrl, cfg.accessToken, 5, 10_000),
+    graphSidor(spendUrl, cfg.accessToken, 5, 12_000),
+  ]);
+
+  const spend = new Map<string, number>();
+  const spendNamn = new Map<string, string>();
+  for (const r of spendRader) {
+    if (!r?.campaign_id) continue;
+    spend.set(String(r.campaign_id), Number(r.spend ?? 0) || 0);
+    if (r.campaign_name) spendNamn.set(String(r.campaign_id), String(r.campaign_name));
   }
-  return body?.data ?? [];
+
+  const ut = new Map<string, MetaKampanj>();
+  for (const r of namnRader) {
+    if (!r?.id) continue;
+    const id = String(r.id);
+    ut.set(id, {
+      id,
+      name: String(r.name ?? spendNamn.get(id) ?? id),
+      status: String(r.effective_status ?? ""),
+      spend30: spend.get(id) ?? 0,
+    });
+  }
+  /* En kampanj som spenderat men inte kom med i /campaigns (arkiverad, eller
+     bortom sidgränsen) får ändå synas — annars går den inte att kryssa bort. */
+  for (const [id, belopp] of spend) {
+    if (ut.has(id)) continue;
+    ut.set(id, { id, name: spendNamn.get(id) ?? id, status: "", spend30: belopp });
+  }
+
+  return [...ut.values()].sort((a, b) => b.spend30 - a.spend30 || a.name.localeCompare(b.name));
 }
 
 /**
@@ -389,18 +532,35 @@ async function refreshSpend(
     : new Map<string, number>();
   const fxOk = !needsFx || rates.size > 0;
 
-  const rapporterade = new Set<string>();
+  /* Med kampanjfilter kommer svaret på kampanjnivå: flera rader per dag som
+     ska summeras. Utan filter är det redan en rad per dag och går genom exakt
+     samma väg. Kontrollen av campaign_id är avsiktligt hård — ett svar utan
+     id betyder att filtret inte tillämpades, och då är hela kontots kostnad
+     på väg in i butikens vinst. Hellre ett fel i panelen än en tyst lögn. */
+  const tillat = kampanjPredikat(cfg);
+  const perDag = new Map<string, { raw: number; impressions: number; clicks: number }>();
   for (const r of rows) {
-    const day = r.date_start;
-    rapporterade.add(day);
-    const raw = Number(r.spend ?? 0);
+    if (tillat) {
+      if (!r.campaign_id) {
+        throw new MetaError("Meta returned ad spend without campaign id — the campaign filter could not be applied.");
+      }
+      if (!tillat(String(r.campaign_id))) continue;
+    }
+    const dag = perDag.get(r.date_start) ?? { raw: 0, impressions: 0, clicks: 0 };
+    dag.raw += Number(r.spend ?? 0) || 0;
+    dag.impressions += parseInt(r.impressions ?? "0", 10) || 0;
+    dag.clicks += parseInt(r.clicks ?? "0", 10) || 0;
+    perDag.set(r.date_start, dag);
+  }
+
+  for (const [day, v] of perDag) {
     const rate = needsFx ? rateFor(rates, day) : undefined;
     const rec = {
-      spend: rate ? raw * rate : raw,
-      spendRaw: needsFx ? raw : null,
+      spend: rate ? v.raw * rate : v.raw,
+      spendRaw: needsFx ? v.raw : null,
       fxRate: rate ?? null,
-      impressions: parseInt(r.impressions ?? "0", 10) || 0,
-      clicks: parseInt(r.clicks ?? "0", 10) || 0,
+      impressions: v.impressions,
+      clicks: v.clicks,
     };
     await prisma.dailySpend.upsert({
       where: { shop_day: { shop, day: new Date(day) } },
@@ -410,7 +570,7 @@ async function refreshSpend(
   }
   const nollrad = { spend: 0, spendRaw: null, fxRate: null, impressions: 0, clicks: 0 };
   for (const day of stale) {
-    if (rapporterade.has(day)) continue;
+    if (perDag.has(day)) continue;
     await prisma.dailySpend.upsert({
       where: { shop_day: { shop, day: new Date(day) } },
       create: { shop, day: new Date(day), ...nollrad },

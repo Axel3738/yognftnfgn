@@ -37,7 +37,7 @@ import {
   refreshShopDaily,
   shiftIso,
 } from "../lib/daily.server";
-import { getSpend } from "../lib/meta.server";
+import { getSpend, kampanjFilter } from "../lib/meta.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
@@ -180,7 +180,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   const spend = await getSpend(
     shop,
     settings.metaAdAccountId && settings.metaAccessToken
-      ? { adAccountId: settings.metaAdAccountId, accessToken: decrypt(settings.metaAccessToken)! }
+      ? {
+          adAccountId: settings.metaAdAccountId,
+          accessToken: decrypt(settings.metaAccessToken)!,
+          ...kampanjFilter(settings),
+        }
       : null,
     from,
     to,
@@ -270,7 +274,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     const prevSpend = await getSpend(
       shop,
       metaConfigured
-        ? { adAccountId: settings.metaAdAccountId!, accessToken: decrypt(settings.metaAccessToken)! }
+        ? {
+            adAccountId: settings.metaAdAccountId!,
+            accessToken: decrypt(settings.metaAccessToken)!,
+            ...kampanjFilter(settings),
+          }
         : null,
       prevFrom, prevTo, today, settings.currency, settings.spendCurrency,
       { tokenExpired },

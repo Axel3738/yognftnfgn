@@ -480,4 +480,8 @@ export const META_TOMT = {
   metaUserId: null,
   metaAppId: null,
   spendCurrency: null,
+  /* Kampanjfiltret pekar på kampanjer i det konto som just kopplades bort —
+     det får inte ligga kvar och tysta annonskostnaden i nästa konto. */
+  campaignMode: "all",
+  campaignIds: null,
 } as const;

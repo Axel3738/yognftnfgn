@@ -48,7 +48,9 @@ FLERPACK / BUNDLES (kostnad per antal): Shopify har bara ETT styckpris. Appen ha
 
 HISTORIK: ändrar man kostnaden på produktsidan med ett "från och med"-datum räknas äldre perioder på den gamla kostnaden. Snabbfältet och AI-läsningen skriver utan datum (gäller framåt och för perioder som hämtas om).
 
-ANNONSKOSTNAD: Inställningar → "Logga in med Facebook" → välj annonskonto. Utan koppling är annonskostnaden 0 och panelen är gulmarkerad "Annonskostnad saknas".
+ANNONSKOSTNAD: Inställningar → "Logga in med Facebook" → välj annonskonto. Utan koppling är annonskostnaden 0 och panelen är gulmarkerad "Annonskostnad saknas". Det finns en exempelvideo vid knappen.
+
+FLERA BUTIKER I SAMMA ANNONSKONTO: Inställningar → Meta-kortet → "Vilka kampanjer ska räknas?" → "Välj kampanjer". Där väljer man antingen "Alla kampanjer i kontot" (standard), "Bara kampanjerna jag väljer" eller "Alla utom kampanjerna jag väljer", kryssar i kampanjerna (varje rad visar kostnaden senaste 30 dagarna i annonskontots valuta) och klickar "Spara valet". Annonskostnaden räknas då om från grunden; siffrorna kan ta en stund att fyllas på igen. Byter man annonskonto nollställs valet.
 
 JUICY → STONEPNL: Har Juicy skrivit kostnaderna i Shopifys fält finns de redan här utan klick (kortet "Kommer du från Juicy?" visar täckningen). Annars: skärmbild av Juicys kostnadstabell → AI-kortet.
 

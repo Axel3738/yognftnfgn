@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "pris-5usd-v77", db });
+  return json({ ok: true, build: "kampanjfilter-v78", db });
 }

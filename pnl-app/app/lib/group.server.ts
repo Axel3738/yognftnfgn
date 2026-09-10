@@ -20,7 +20,7 @@ import prisma from "../db.server";
 import { compute, type SalesDay, type SpendDay } from "./pnl.server";
 import { dailyRates, latestRateDay, rateOn, type DailyRates } from "./fx.server";
 import { readDaily, refreshShopDaily, shiftIso } from "./daily.server";
-import { getSpend } from "./meta.server";
+import { getSpend, kampanjFilter } from "./meta.server";
 import { dayInTz } from "./shopify-data.server";
 import { decrypt } from "./crypto.server";
 import { dagarKvar, VARNA_DAGAR } from "./meta-login";
@@ -231,7 +231,7 @@ async function summeraButik(
   const metaToken = m.metaAccessToken ? decrypt(m.metaAccessToken) : null;
   const metaCfg =
     m.metaAdAccountId && metaToken
-      ? { adAccountId: m.metaAdAccountId, accessToken: metaToken }
+      ? { adAccountId: m.metaAdAccountId, accessToken: metaToken, ...kampanjFilter(m) }
       : null;
 
   /* Token sparad men inget annonskonto valt (flera konton i listan, eller

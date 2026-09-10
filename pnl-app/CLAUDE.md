@@ -529,6 +529,52 @@ valuta räknas inte om utan rapporteras i `notes`.
   på de fem egna butikernas tjänster (de har redan COGS sedan 2026-09-05).
   Flerpack följer med: AI:n skriver `tiers` → CSV `a|b|c` → `CostTier`.
 
+**Kampanjfilter för annonskostnaden (build kampanjfilter-v78)** — Axels ord
+2026-09-10: "man ska kunna välja om man vill ignorera vissa kampanjers spend i
+ett ad account, eller exkludera vissa. Först flippar man en switch: vill du
+exkludera eller inkludera?" Bakgrunden är OPS-butikerna: alla ligger i ETT
+annonskonto (MagiBorsten DK), så varje butiks panel räknade in de andras
+annonskostnad.
+- **Datamodellen:** `ShopSettings.campaignMode` ("all" | "include" |
+  "exclude", NOT NULL DEFAULT 'all') + `campaignIds` (kommaseparerade
+  kampanj-ID:n, null = inget filter). Ingen ny tabell — därför inget nytt att
+  komma ihåg i `shop/redact`. Migration `20260910120000_kampanjfilter`.
+  **Standard är oförändrat beteende:** ingen befintlig butik ser sin
+  annonskostnad ändras av deployen.
+- **Hämtningen** (`meta.server.ts`): utan filter är anropet exakt som förut
+  (`level=account`, en rad per dag). Med filter blir det `level=campaign` +
+  Metas `filtering`-parameter (`campaign.id` IN/NOT_IN) och `refreshSpend`
+  summerar per dag. Svaret kontrolleras ändå **rad för rad** mot samma
+  ID-lista: en rad utan `campaign_id` kastar ett fel i stället för att tyst
+  skriva hela kontots kostnad som butikens. Kampanjnivå ger dagar × kampanjer
+  rader, så anropet paginerar (20 sidor × 500). Token går numera i
+  Authorization-headern, inte i adressen.
+- **Filtret följer med i ALLA tre anropsställen** — panelen, jämförelse-
+  perioden och gruppsumman (`...kampanjFilter(settings)`). Missar man ett
+  skriver två vägar olika värden i samma `DailySpend`-rad, och siffran hoppar
+  beroende på vilken sida som laddades sist.
+- **Cachen:** `DailySpend` har ingen kampanjdimension, så raderna är räknade
+  på det filter som gällde när de skrevs. Därför raderas butikens rader när
+  filtret ändras (samma regel som vid kontobyte) och hämtas om per fönster.
+  `app.ltv.tsx` och `app.chat.tsx` läser `DailySpend` direkt förbi `getSpend`
+  — de blir automatiskt rätt, men visar tunn spend tills panelen öppnats en
+  gång efter en filterändring.
+- **Kontobyte och bortkoppling nollställer filtret** (`META_TOMT`, intent
+  `meta-account`, Spara): ID:n från ett annat konto matchar ingenting och
+  hade tystat hela annonskostnaden.
+- **UI:t** ligger i Meta-kortet i Inställningar: en sammanfattningsrad,
+  "Välj kampanjer" som fäller ut en `ChoiceList` (alla / bara valda / alla
+  utom valda) och kryssrutor per kampanj med spend senaste 30 dagarna.
+  Listan hämtas **på klick** (`intent=meta-campaigns`), inte i loadern — två
+  Graph-anrop ska inte ligga på varje sidladdning för alla som aldrig rör
+  filtret. Spenden skrivs ut med **annonskontots** valuta, aldrig butikens.
+  "Bara valda" utan kryss sparas som "all" (en tyst nolla vore värsta
+  lögnen), och knappen är låst med "Välj minst en kampanj".
+- ⚠ Oprövat skarpt (proxyn når inte Meta härifrån): typecheck, build och de
+  11 testerna gröna. Första skarpa körningen: kryssa ett filter i
+  stonepnl-test, ladda om panelen och jämför annonskostnaden mot Ads Manager
+  med samma kampanjurval.
+
 **Chattbubblan "Fråga StonePNL" (build chat-v73)** — Axels ord: "en AI-
 chattbubbla som svarar på simpla frågor, med vår API. Typ 'hur importerar
 jag COGS om jag har 20+ produkter' → 'du har förmodligen ett sheet, skicka

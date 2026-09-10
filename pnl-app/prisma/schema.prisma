@@ -69,6 +69,14 @@ model ShopSettings {
   /// Meta-appen som utfärdade token. Tokenvakten förnyar bara med samma
   /// app — sex tjänster med handskrivna variabler kan glida isär.
   metaAppId       String?
+  /// Kampanjfilter för annonskostnaden: "all" (hela kontot), "include" (bara
+  /// kampanjerna i campaignIds) eller "exclude" (alla utom dem). Finns för att
+  /// flera butiker kan dela ETT annonskonto — utan filtret räknar varje butik
+  /// in de andras kostnad. "all" är standard: befintliga butiker ändras inte.
+  campaignMode    String   @default("all")
+  /// Kampanj-ID:n som filtret gäller, kommaseparerade. Null/tomt = inget
+  /// filter, oavsett läge.
+  campaignIds     String?
   currency        String   @default("SEK")
   /// Butikens tidszon. Cachad för att slippa ett GraphQL-anrop per sidladdning
   /// — den ändras i praktiken aldrig, men avgör vad "idag" betyder.
