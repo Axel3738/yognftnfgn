@@ -18,7 +18,16 @@
 //   SHOPIFY_SHOP[_<BUTIK>]            butikens myshopify-domän
 //   SHOPIFY_CLIENT_ID[_<BUTIK>]       appen "Fabriken" → Settings → Client ID
 //   SHOPIFY_CLIENT_SECRET[_<BUTIK>]   appen "Fabriken" → Settings → Client secret
+//   SHOPIFY_STOREFRONT_PASSWORD[_<BUTIK>]  storefront-lösenordet (kundvyn, steg 18)
 // Tokenen mintas med client credentials grant och gäller 24 h.
+//
+// ⚠️ De allmänna variablerna skrivs över vid VARJE nytt bygge (VA:ns steg 2).
+// Mätt 2026-09-10 på TackleBay: miljön stod kvar på TankGuard (SHOPIFY_SHOP
+// = y1sj1i-3d, app-nycklarna gav `app_not_installed` mot iahe0c-b1, inget
+// storefront-lösenord). En ombyggnad av en äldre butik börjar därför med att
+// hennes nycklar läggs tillbaka — helst som _<BUTIK>-varianter, som nästa
+// bygge inte skriver över. Per-butik-lösenordet lyfts in i
+// SHOPIFY_STOREFRONT_PASSWORD av anslut(), så kundvy-kor läser rätt butik.
 //
 // ⚠️ SPÄRRARNA (spärrar): fel butik stoppar FÖRE första skrivningen.
 //   1. Förbjudna domäner: HeimGuard (live) och Bäverbutiken med marknader.
@@ -99,7 +108,10 @@ export function losNycklar(butikId, env = process.env) {
   const sparadToken = perButik(env, 'SHOPIFY_ADMIN_TOKEN', butikId) || '';
   const sparadUtgar = perButik(env, 'SHOPIFY_ADMIN_TOKEN_UTGAR', butikId) || '';
   const sparadDoman = normaliseraDoman(perButik(env, 'SHOPIFY_STORE_DOMAIN', butikId) || '');
-  return { shop, clientId, clientSecret, sparadToken, sparadUtgar, sparadDoman };
+  // Storefront-lösenordet: bara per-butik-varianten löses här. Den allmänna
+  // läses av kundvy-kor själv — och kan vara förra butikens.
+  const storefrontLosenord = perButik(env, 'SHOPIFY_STOREFRONT_PASSWORD', butikId) || '';
+  return { shop, clientId, clientSecret, sparadToken, sparadUtgar, sparadDoman, storefrontLosenord };
 }
 
 // Är den sparade tokenen fortfarande brukbar för domänen? Kräver ett
@@ -332,6 +344,12 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   // Spärr på domänen FÖRE första nätverksanropet.
   const forspärr = spärrar(id, n.shop, sparrAlternativ);
   if (!forspärr.ok) throw new Error(`STOPP — ${forspärr.skal}`);
+
+  // Butikens eget storefront-lösenord vinner över det allmänna (som kan vara
+  // kvar från förra bygget) — kundvy-kor.mjs läser bara den allmänna nyckeln.
+  // Sätts även torrt, så dry-run säger sanningen om kundvyn. Skrivs aldrig
+  // till factory/.env och loggas aldrig.
+  if (n.storefrontLosenord) env.SHOPIFY_STOREFRONT_PASSWORD = n.storefrontLosenord;
 
   if (torr) {
     return { domain: n.shop, name: null, teman: [], primaryDomain: null, currencyCode: null, email: null, harProdukter: null, tokenKalla: 'ingen', torr: true };

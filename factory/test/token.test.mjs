@@ -362,6 +362,39 @@ test('anslut --torr: bara spärrarna, inget nätverk, inget skrivet', async () =
   t.stada();
 });
 
+test('anslut: butikens eget storefront-lösenord vinner över det allmänna, även torrt — och skrivs aldrig till .env', async () => {
+  const t = tempMappar();
+  const envFil = join(t.rot, '.env');
+  const { fetchFn } = fejkShopify();
+  const env = {
+    SHOPIFY_SHOP: 'ny1234-ab.myshopify.com',
+    SHOPIFY_CLIENT_ID: 'cid',
+    SHOPIFY_CLIENT_SECRET: 'csec',
+    SHOPIFY_STOREFRONT_PASSWORD: 'forra-butikens',
+    SHOPIFY_STOREFRONT_PASSWORD_NYBUTIK: 'nybutikens',
+  };
+  await anslut('nybutik', { torr: true, env, envFil, fetchFn, sparrAlternativ: t.alt });
+  assert.equal(env.SHOPIFY_STOREFRONT_PASSWORD, 'nybutikens', 'torr: per-butik-lösenordet lyfts in');
+
+  env.SHOPIFY_STOREFRONT_PASSWORD = 'forra-butikens';
+  await anslut('nybutik', { env, envFil, fetchFn, sparrAlternativ: t.alt });
+  assert.equal(env.SHOPIFY_STOREFRONT_PASSWORD, 'nybutikens', 'skarpt: per-butik-lösenordet lyfts in');
+  assert.ok(!Object.values(lasEnvFil(envFil)).includes('nybutikens'), 'lösenordet skrivs aldrig till .env');
+  t.stada();
+});
+
+test('anslut: utan per-butik-lösenord rörs det allmänna inte', async () => {
+  const t = tempMappar();
+  const { fetchFn } = fejkShopify();
+  const env = { SHOPIFY_SHOP: 'ny1234-ab.myshopify.com', SHOPIFY_STOREFRONT_PASSWORD: 'allmant' };
+  await anslut('nybutik', { torr: true, env, envFil: join(t.rot, '.env'), fetchFn, sparrAlternativ: t.alt });
+  assert.equal(env.SHOPIFY_STOREFRONT_PASSWORD, 'allmant');
+  const env2 = { SHOPIFY_SHOP: 'ny1234-ab.myshopify.com' };
+  await anslut('nybutik', { torr: true, env: env2, envFil: join(t.rot, '.env'), fetchFn, sparrAlternativ: t.alt });
+  assert.equal(env2.SHOPIFY_STOREFRONT_PASSWORD, undefined);
+  t.stada();
+});
+
 test('anslut: nycklar i .env-filen används när miljön saknar dem', async () => {
   const t = tempMappar();
   const envFil = join(t.rot, '.env');

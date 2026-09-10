@@ -110,10 +110,29 @@ källan 2026-09-09 (`factory/rensa-kalla.mjs`), så en butik byggd före det kö
 fortfarande källbutikens popup, cookieruta och bilder. Konfigen finns redan —
 hoppa över steg 2–4 och kör kedjan.
 
+0. **Miljön först — den pekar nästan alltid på FÖRRA butiken.** Miljöns
+   `SHOPIFY_SHOP`/`CLIENT_ID`/`CLIENT_SECRET`/`STOREFRONT_PASSWORD` skrivs
+   över vid varje nytt bygge (VA:ns steg 2), och en app är installerad på EN
+   butik. Kör `node factory/token.mjs --butik <id> --torr` innan något annat:
+   svarar spärren "har redan state för en annan butik" är det miljön som är
+   fel, inte butiken. *(Mätt 2026-09-10 på TackleBay: `SHOPIFY_SHOP` stod på
+   TankGuard, app-nycklarna gav `app_not_installed` mot iahe0c-b1 och
+   storefront-lösenordet saknades — noll skrivningar möjliga.)* Åtgärden är
+   VA:ns: butikens egna nycklar tillbaka i Environment, helst som
+   `SHOPIFY_SHOP_<BUTIK>`, `SHOPIFY_CLIENT_ID_<BUTIK>`,
+   `SHOPIFY_CLIENT_SECRET_<BUTIK>` och `SHOPIFY_STOREFRONT_PASSWORD_<BUTIK>`
+   (butiks-id i versaler) — de vinner över de allmänna och skrivs aldrig
+   över av nästa bygge. Miljön läses när sessionen startar: ny session
+   efteråt, inte samma.
 1. **Vad som är fel, ur butikens egen state-fil.** `factory/state/<butik>--*.json`
    bär `blockerat_av_manniska` och `ofullstandigt`, och steglistan visar vad som
    ALDRIG kördes. Regel: leta efter det som saknas i steglistan, inte efter fel
-   i yaml:en. En butik som ser obrandad ut saknar oftast `logga`-steget.
+   i yaml:en. En butik som ser obrandad ut saknar oftast `logga`-steget — och
+   steget blir manuellt tills `branding.logga` (+ `branding.favicon`) i
+   butiksfilen pekar på den valda varianten i `output/<butik>/`. Genererade
+   loggor räcker inte: kedjan letar bara efter `branding.logga` eller
+   `output/<butik>/logga.png` *(TackleBay 2026-09-09: tre varianter klara,
+   ingen rad i yaml:en, headern visade text)*.
 2. **VA:ns klick först.** Valuta, hemmamarknad och språk kan inget API ändra.
    Är de fel skrivs rabattkoderna i fel valuta igen — paketsteget vägrar, och
    det är meningen.

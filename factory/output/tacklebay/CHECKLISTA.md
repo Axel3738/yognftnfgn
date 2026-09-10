@@ -9,8 +9,8 @@ This store has several products – it is still ONE store, ONE domain, ONE check
 * STORE EMAIL: **hello@tacklebay.se**
 * FORWARD TO: **subscriptions@stonebite.org**
 * OWNER (hand over to): **axelodhner.business@gmail.com**
-* PRODUCT: **Adventskalender Fiskedrag – 24 Drag** (adventskalender-fiskedrag)
 * PRODUCT: **Fiskespöhållare 4-Pack** (fiskespohallare-4-pack)
+* PRODUCT: **Adventskalender Fiskedrag – 24 Drag** (adventskalender-fiskedrag)
 
 ## 1. Shopify – create the store
 **The address you type here decides the currency, the language and the home
@@ -93,8 +93,8 @@ some member states.
 - [ ] Apps → search "Judge.me" → Install (free plan)
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Adventskalender Fiskedrag – 24 Drag** → Import
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Fiskespöhållare 4-Pack** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Adventskalender Fiskedrag – 24 Drag** → Import
 - [ ] Open the product page → check the reviews show their original dates (never "just now")
 
 ## 8. Meta

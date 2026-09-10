@@ -82,6 +82,13 @@ policy:
 # rea-röd, inget neon: en fiskebutik säljs av trovärdighet, inte av brus.
 # ---------------------------------------------------------------------------
 branding:
+  # Loggan som kedjans steg 5 (logga.mjs) laddar upp. Variant A "sigill" är
+  # den valda (output/tacklebay/BRAND.md). Steget kördes aldrig i bygget
+  # 2026-09-09 eftersom den här raden saknades: loggaKallor letar efter
+  # branding.logga eller output/<butik>/logga.png, och ingen av dem fanns —
+  # därför visade headern butiksnamnet som text. Sökvägen är relativ factory/.
+  logga: "output/tacklebay/logga-a-sigill.png"
+  favicon: "output/tacklebay/favicon-tacklebay.png"
   positionering: "Fiskebutiken för den som redan har spöna — ordning i utrustningen, och presenter som faktiskt kommer i vattnet"
   tonalitet: "Rak och torr. Korta meningar, konkreta substantiv. Inga utropstecken, ingen hype — fiskare känner igen säljsnack direkt."
   kansla: "robust, nordisk, saklig, varm"

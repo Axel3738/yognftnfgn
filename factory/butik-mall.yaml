@@ -90,6 +90,12 @@ policy:
 # Temats STRUKTUR återanvänds mellan butiker — brandingen ALDRIG.
 # Saknas blocket används neutrala, avsiktligt trista tokens.
 branding:
+  # Loggan som kedjans steg 5 (logga.mjs) laddar upp: lokal fil (relativ
+  # factory/ eller repo-roten) eller URL. Tom = steget letar efter
+  # output/<butik>/logga.png och blir annars MANUELLT — headern visar då
+  # butiksnamnet som text (TackleBay 2026-09-09). Fyll i när Axel valt variant.
+  logga: ""                   # ex output/<butik>/logga-a-sigill.png
+  favicon: ""                 # ex output/<butik>/favicon-<butik>.png (tom = loggan)
   positionering: ""           # en mening: vad brandet är för vem
   tonalitet: ""               # hur texten låter
   kansla: ""                  # 3–4 ord: trygg, premium, teknisk …

@@ -268,6 +268,23 @@ en människa i en webbläsare".
   **Diagnosen görs i state-filen, inte i yaml:en:** jämför steglistan mot
   kedjans, och leta efter det som SAKNAS. Att skriva om ett branding-block som
   redan är rätt löser ingenting, och kostar en runda.
+  Uppföljning 2026-09-10: `logga`-steget saknades för att `branding.logga`
+  aldrig sattes — `loggaKallor` letar bara efter den raden eller
+  `output/<butik>/logga.png`, och de tre genererade varianterna hette något
+  annat. Raden är nu satt (variant A, sigill) och mallen dokumenterar nyckeln.
+- **Miljön står kvar på förra butiken — kolla den innan en ombyggnad.** Mätt
+  2026-09-10 på TackleBay: `SHOPIFY_SHOP` pekade på TankGuard (`y1sj1i-3d`),
+  de allmänna app-nycklarna svarade `400 app_not_installed` mot `iahe0c-b1`
+  och `SHOPIFY_STOREFRONT_PASSWORD` fanns inte i containern — trots att
+  uppdraget sa att det var satt. Spärr 2 i `token.mjs` stoppade före första
+  skrivningen, precis som den ska. De allmänna variablerna skrivs över per
+  bygge (VA:ns steg 2), så en äldre butik nås bara om hennes nycklar läggs
+  tillbaka: helst `SHOPIFY_SHOP_<BUTIK>`, `SHOPIFY_CLIENT_ID_<BUTIK>`,
+  `SHOPIFY_CLIENT_SECRET_<BUTIK>`, `SHOPIFY_STOREFRONT_PASSWORD_<BUTIK>` —
+  per-butik vinner i `losNycklar`, och `anslut()` lyfter in butikens
+  storefront-lösenord i `SHOPIFY_STOREFRONT_PASSWORD` så kundvyn läser rätt
+  butik. Miljön läses vid sessionsstart: nya nycklar kräver en ny session.
+  Diagnosen tar tio sekunder: `node factory/token.mjs --butik <id> --torr`.
 - **Demot i beskrivningen är en loopad MP4, aldrig en GIF eller WebP**
   (Axels beslut 2026-09-09). Samma sekvens som GIF är ofta 10–20× större och
   begränsad till 256 färger. Temat väljer på filändelsen: `.mp4`, `.webm` och
