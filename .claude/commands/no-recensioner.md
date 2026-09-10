@@ -103,14 +103,19 @@ DISCORD_CHANNEL_ID=1544586846787477504 node tools/notify-discord.mjs "<rapporten
 
 Rad 1 = resultatet. Rad 2–3 = bara det Axel måste göra något åt.
 
+**På engelska.** Allt i Discord är på engelska (Axels order 2026-09-05) —
+teamet läser kanalen. Postaren stoppar svensk text (exit 3) eller översätter
+den om `ANTHROPIC_API_KEY` finns; skriv engelska från början så slipper du
+omtaget. Produkt- och kanalnamn behåller sin stavning.
+
 ```
-✅ NO-recensioner: 0 nya (7 produkter, alla redan klara)
+✅ NO reviews: 0 new (7 products, all already done)
 ```
 ```
-✅ NO-recensioner: 10 nya på IBC-tanktrekk, 6 överhoppade
+✅ NO reviews: 10 new on IBC-tanktrekk, 6 skipped
 ```
 ```
-⚠️ NO-recensioner: 0 nya — Judge.me-token avvisad
+⚠️ NO reviews: 0 new — Judge.me token rejected
 ```
 
 Förbjudet i rapporten: förklaringar av vad du gjorde, vilka filer du läste,

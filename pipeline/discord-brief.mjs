@@ -21,12 +21,17 @@
 //      sitter fast i SIN kanal, så meddelandet hamnar där webhooken pekar, inte
 //      i den valda kanalen. Det varnas högt på stderr när det händer.
 //
+// Språk (Axels order 2026-09-05): allt i Discord är på engelska. Svensk text
+// översätts via ANTHROPIC_API_KEY, annars stoppas skicket med exit 3.
+// DISCORD_TILLAT_SVENSKA=1 stänger av spärren.
+//
 // Max 2000 tecken per meddelande — längre text delas på radgränser.
 
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { granskaSprak, stoppText } from '../tools/lib/engelska.mjs';
 
 if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
   const r = spawnSync(process.execPath, process.argv.slice(1), {
@@ -61,6 +66,19 @@ if (!text) {
   text = Buffer.concat(chunks).toString('utf8').trim();
 }
 if (!text) { console.error('Ingen text att skicka.'); process.exit(2); }
+
+// Allt i Discord är på engelska (Axels order 2026-09-05). Svensk text
+// översätts, eller stoppas om det inte går — se tools/lib/engelska.mjs.
+// I torrläge visas bara vad som skulle hänt.
+{
+  const språk = await granskaSprak(text);
+  if (språk.stoppad) {
+    if (flaggor.torr) console.error(`[torr] SKULLE STOPPAS — ${stoppText(språk.orsak).split('\n')[0]}`);
+    else { console.error(stoppText(språk.orsak)); process.exit(3); }
+  }
+  if (språk.oversatt) console.error('Texten var på svenska — översatt till engelska före skick.');
+  text = språk.text;
+}
 
 // ---- kanal ------------------------------------------------------------------
 const vald = flaggor.problem ? KONFIG.kanaler.problem : KONFIG.kanaler.brief;

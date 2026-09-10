@@ -156,8 +156,9 @@ async function allaSidor(databaseId) {
 /** Rader i status KLAR_STATUS. Axels beslut 2026-09-02: allt i "To be Reviewed"
  *  under teamspacet raknas — Typ-faltet ar inte ett krav. Varje rad bar
  *  `leverans`: 'notion-fil' (bilaga i Filer och media — bildannonserna),
+ *  'sid-media' (filen indragen i sidan som ett Notion-hostat mediablock),
  *  'drive-lank' (Drive-mapp i sidans kropp — redigerarnas videor) eller 'saknas'
- *  (varken eller: raden rapporteras som "vantar pa fil", laddas inte upp). */
+ *  (inget av det: raden rapporteras som "vantar pa fil", laddas inte upp). */
 export async function klaraRader(hub, val = {}) {
   // val.statusar: lista (gemener) i stället for KLAR_STATUS — /oversatt laser
   // "se-active to be translated". val.typ: regex som Typ MASTE matcha (inkludering,
@@ -189,10 +190,18 @@ export async function klaraRader(hub, val = {}) {
     // Sidan bar ocksa brief-mappen ("Brief in Drive", "Drive folder") — den ar inte
     // leveransen. Alla lankar foljer med, sista forst; leveranskon.mjs listar
     // mapparna och tar den forsta som innehaller media.
-    const drive = filer.length ? [] : await driveLankarIKropp(s.id);
+    // Tredje vagen: filen ar indragen direkt i sidan och blir ett Notion-hostat
+    // mediablock. Matt 2026-09-10 pa Damasker- och Batmotor-hubbarna: fyra av sex
+    // rader i kon lag sa, och kon rapporterade dem som "vantar pa fil" — samma tysta
+    // miss som 2026-09-05, ny plats. Mediablocket gar fore Drive-lanken: sidan bar
+    // nastan alltid brief-mappen som lank, och den ar inte leveransen.
+    const media = filer.length ? [] : await mediaBlockIKropp(s.id);
+    const drive = filer.length || media.length ? [] : await driveLankarIKropp(s.id);
     // Varken fil eller lank = raden ar inte klar. Den ska anda SYNAS ("vantar pa
     // fil"), aldrig forsvinna — en tyst miss ar varre an en rapporterad.
-    const leverans = filer.length ? 'notion-fil' : (drive.length ? 'drive-lank' : 'saknas');
+    const leverans = filer.length ? 'notion-fil'
+      : media.length ? 'sid-media'
+      : drive.length ? 'drive-lank' : 'saknas';
 
     // "Landing page" star pa raden och ar produktsidans URL. Utan den skulle
     // annonsen peka pa butikens startsida — det syns aldrig som ett fel, bara
@@ -202,7 +211,7 @@ export async function klaraRader(hub, val = {}) {
       .map(([, v]) => värde(v).match(/https?:\/\/[^\s)\]]+/)?.[0])
       .find(Boolean) ?? null;
 
-    ut.push({ id: s.id, namn, status, typ, filer, drive, leverans, url: s.url, landning,
+    ut.push({ id: s.id, namn, status, typ, filer, media, drive, leverans, url: s.url, landning,
               skapad: s.created_time, redigerad: s.last_edited_time, hub: hub.titel });
   }
   return ut;
@@ -246,6 +255,41 @@ export async function driveLankarIKropp(pageId) {
   };
   await läs(pageId, 0);
   return ut.reverse();          // sista lanken pa sidan ar oftast leveransen
+}
+
+/** Notion-hostade mediablock i sidans kropp (video/image/file/pdf), i lasordning.
+ *  Detta ar en TREDJE leveransvag vid sidan av "Filer och media" och Drive-lanken:
+ *  redigeraren drar in mp4:an direkt i sidan, sa den blir ett video-block med en
+ *  signerad Notion-URL. Matt 2026-09-10: fyra av sex rader i kon lag sa, och kon
+ *  rapporterade dem som "vantar pa fil".
+ *  Returnerar { typ, url, namn } — URL:en ar SIGNERAD och kortlivad, hamta direkt. */
+export async function mediaBlockIKropp(pageId) {
+  const ut = [];
+  const läs = async (blockId, djup) => {
+    let cursor;
+    do {
+      let r;
+      try {
+        r = await notion(`blocks/${blockId.replace(/-/g, '')}/children?page_size=100${cursor ? `&start_cursor=${cursor}` : ''}`);
+      } catch { return; }
+      for (const b of r.results ?? []) {
+        if (['video', 'image', 'file', 'pdf'].includes(b.type)) {
+          const url = b[b.type]?.file?.url;          // bara Notion-hostat; external ar en lank, inte en fil
+          if (url) {
+            ut.push({
+              typ: b.type,
+              url,
+              namn: b[b.type]?.name ?? decodeURIComponent(new URL(url).pathname.split('/').pop() ?? ''),
+            });
+          }
+        }
+        if (b.has_children && djup < 1) await läs(b.id, djup + 1);
+      }
+      cursor = r.has_more ? r.next_cursor : null;
+    } while (cursor);
+  };
+  await läs(pageId, 0);
+  return ut;
 }
 
 /** Notions fil-URL ar signerad och kortlivad — den maste hamtas NU, aldrig cachas
