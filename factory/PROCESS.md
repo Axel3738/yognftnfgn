@@ -57,7 +57,7 @@ node factory/ops.mjs factory/butiker/<butik>.yaml factory/produkter/<p1>.yaml [<
 | 10 | `paket` | produkt | `paket.mjs` (valutaspärr mot `shop.currencyCode`) | manuell "byt valuta i admin, kör `--igen paket`" |
 | 11 | `kollektion` | butik | `shopify.skrivKollektion` (bara flerprodukt) | stoppar |
 | 12 | `startsida` | butik | `startsida.mjs` + `filer.mjs` (hero/trygghet/galleri upp i Files först) + sidfotens bolagsblock | stoppar |
-| 13 | `sidor`, `policyer`, `meny`, `frakt`, `huvudmarknad` | butik | `policyer.mjs` (inkl. EU:s ångerknapp i returpolicyn), `shopify.skrivPolicy`, `meny.mjs` (Hem / [kollektion] / produkter / Frakt & retur / Kontakt) + sidfotsraden **Ångra köp** → `angerknappUrl()`, `frakt.mjs`, valutakontroll | stoppar (policyer utan scope `write_legal_policies` → manuell) |
+| 13 | `sidor`, `policyer`, `meny`, `frakt`, `huvudmarknad` | butik | `policyer.mjs` (inkl. EU:s ångerknapp i returpolicyn), `shopify.skrivPolicy`, `meny.mjs` (Hem / [kollektion] / produkter / Frakt & retur / Kontakt) + sidfotsraden **Ångra köp** → `angerknappUrl()`, `frakt.mjs` (saknade zoner SKAPAS med länder, trialens zoner rivs — 2026-09-10), valutakontroll | stoppar (policyer utan scope `write_legal_policies` → manuell) |
 | 14 | `kallskanning` | butik | `kallskanning-kor.mjs` + `kallskanning.mjs` på ALLA temafiler | stoppar — en träff = spärr |
 | 15 | `recensioner` | produkt | `judgeme.mjs`: app-CSV med originaldatum alltid; API-import via `tools/judgeme-import.mjs` bara om butikens token finns i env | manuell (VA:n laddar upp filen i appen) |
 | 16 | `marknad` | butik | `marknad.mjs`: marknad + locale + webPresence per rad i `butik.marknader` | stoppar (tom `butik.marknader` = stopp) |
@@ -482,6 +482,32 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   checkout-branding (Plus), Meta-sidor, CAPI-token, Discord-server,
   Judge.mes inställningar och token. `shopPolicyUpdate` kräver scopet
   `write_legal_policies` — saknas det blir policyerna manuella.
+- **Kollektion + produkter uppdateras i två anrop** (mätt 2026-09-10):
+  `collectionUpdate` avvisar `products` ("products cannot be specified
+  during update"). `skrivKollektion` uppdaterar titel/beskrivning och lägger
+  till saknade produkter med `collectionAddProducts`.
+- **Tillbakaläsningen av en temafil kan komma före Shopifys egen skrivning**
+  (TackleBay 2026-09-10: `brand_description` lästes som "" och stod i butiken
+  tio sekunder senare). `skrivOchVerifiera` läser upp till tre gånger med
+  paus — verifieringen är kvar, den dömer bara inte på första läsningen.
+- **Paketblocken och paketnivåerna delar testnamn.** Standardstegen i
+  `paket.mjs` ligger under `STANDARD_PAKETTEST = "paket"` (a/b) och mallen
+  bygger A/B-blocken under samma namn — med '' renderar `ms-paket.liquid`
+  noll nivåer. Flerproduktsbutik får blocken i den delade `product.json`
+  när alla produkter delar test (ms-paket filtrerar på `product.id` själv);
+  fullpris-kryssrutan är produktbunden och byggs bara i enproduktsläget.
+- **Gamla paketnivåer dör inte av sig själva.** Byter handle-schemat
+  (TackleBay: `tacklebayrod-*` → `fiskespohallare-4-pack-*`) ligger de
+  gamla kvar och kunden ser sex nivåer. `paket.mjs --stada` river nivåer
+  som pekar på produkten men inte står i planen; trippelkollen larmar med
+  "2 förvalda".
+- **Kundvyns gratis-rad och fullpris-kryssruta är villkorade** på
+  produktfilen: gratis-raden bara när en nivå har `gratis_antal > 0`,
+  kryssrutan bara vid `tillagg_kryssruta: true`. En betald korg-upsell
+  (bonus_produkt = butikens andra produkt) ger inte rött.
+- **Hero- och trygghetsbilder: bara källbilder UTAN inbränd svensk text.**
+  Fyra av fem spöhållarbilder bar svenska rubriker — de läcker på /nb.
+  Tomma bildfält = Shopifys placeholder-SVG = rött i kundvyn.
 - **Appens scopes är ett klick, inte en självklarhet.** En app skapad på
   dev.shopify.com har inga scopes förrän någon skriver in dem under
   Configuration → Access scopes och släpper en version. Token-minten lyckas

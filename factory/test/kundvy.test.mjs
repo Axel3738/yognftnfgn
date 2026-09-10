@@ -19,7 +19,11 @@ import {
 import { Kakburk, byggBas, sidvag, previewTemaId } from '../kundvy-kor.mjs';
 
 const BUTIK = { butik: { brand: 'DryTrek', markorer_sv: ['Köp nu', 'Vanliga frågor', 'Kontakt', 'Lägg i varukorgen'] } };
-const PRODUKT = { produkt: { namn: 'Damasker Vandring', id: 'damasker' }, ekonomi: { pris: 389 }, offer: { bonus_produkt: { handle: 'bonusen' } } };
+const PRODUKT = {
+  produkt: { namn: 'Damasker Vandring', id: 'damasker' },
+  ekonomi: { pris: 389 },
+  offer: { bonus_produkt: { handle: 'bonusen', tillagg_kryssruta: true }, paket: { nivaer: [{ antal: 2, gratis_antal: 2 }] } },
+};
 
 const FARDIG = `
   <img class="header__heading-logo" src="https://cdn.shopify.com/s/files/1/logo.png">
@@ -168,9 +172,15 @@ test('strukturkoll utan bonusprodukt kräver varken kryssruta eller gratis-rad',
   const utanTillagg = PRODUKTSIDA.replace('opf-tillagg-mall', '').replace('opf-tillagg__kryss', '').replace('ms-paket__gava', 'ms-paket__x');
   const r = strukturkoll(utanTillagg, { produkt: { produkt: { id: 'damasker' } }, butik: BUTIK });
   assert.equal(r.ok, true, r.fel.join(' | '));
-  // Med bonusprodukt krävs gratis-raden fortfarande.
+  // Med gratis bonus i nivåerna + kryssruta begärd krävs båda.
   const med = strukturkoll(utanTillagg, { produkt: PRODUKT, butik: BUTIK });
   assert.ok(med.fel.includes('gratis-raden i paketen'));
+  assert.ok(med.fel.includes('fullpris-kryssrutan (opf-tillagg)'));
+  // Betald korg-upsell (handle satt, ingen gratis i nivåerna, ingen kryssruta)
+  // = varken gratis-rad eller kryssruta krävs (TackleBay 2026-09-10).
+  const upsell = { produkt: { id: 'damasker' }, offer: { bonus_produkt: { handle: 'andra-produkten', pris: 469, i_paket: '' } } };
+  const r2 = strukturkoll(utanTillagg, { produkt: upsell, butik: BUTIK });
+  assert.equal(r2.ok, true, r2.fel.join(' | '));
 });
 
 test('produktkoll kräver namn och pris i synlig text', () => {

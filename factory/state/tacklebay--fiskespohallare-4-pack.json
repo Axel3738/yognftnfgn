@@ -12,17 +12,57 @@
     "metafalt": {
       "klar": true,
       "antal": 11
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "Default Title"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": false,
+      "manuell": "Bonusprodukten kunde inte skapas: offer.bonus_produkt.bilder är tom — bonusen behöver minst en bild (visas i paketraden och korgen). — rätta offer.bonus_produkt och kör --igen bonus."
+    },
+    "paket": {
+      "klar": true,
+      "nivaer": [
+        "fiskespohallare-4-pack-a-1",
+        "fiskespohallare-4-pack-a-2",
+        "fiskespohallare-4-pack-a-3",
+        "fiskespohallare-4-pack-b-1",
+        "fiskespohallare-4-pack-b-2",
+        "fiskespohallare-4-pack-b-3"
+      ],
+      "koder": [
+        "TACKLEBAYROD2A",
+        "TACKLEBAYROD3A",
+        "TACKLEBAYROD2B",
+        "TACKLEBAYROD3B"
+      ],
+      "frammande": [
+        "tacklebayrod-a-1",
+        "tacklebayrod-a-2",
+        "tacklebayrod-a-3",
+        "tacklebayrod-b-1",
+        "tacklebayrod-b-2",
+        "tacklebayrod-b-3"
+      ],
+      "test": "paket"
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Ingen Judge.me-token (env JUDGEME_TACKLEBAY_TOKEN) — VA:n importerar output/fiskespohallare-4-pack/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
     }
   },
-  "uppdaterad": "2026-09-09T12:04:36.132Z",
+  "uppdaterad": "2026-09-10T13:31:01.732Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "tracking",
-      "doman",
-      "checkout"
+      "tracking"
     ],
-    "tid": "2026-09-09T12:04:36.132Z"
+    "tid": "2026-09-10T13:31:01.731Z"
   }
 }

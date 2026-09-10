@@ -92,7 +92,7 @@ The theme comes FIRST. Everything you check in sections 6–12 is checked
 against what the customer actually sees, and until the theme is published the
 customer sees the old one. Publishing works on the free trial – the store stays
 behind its password either way (measured: DryTrek 2026-09-09).
-- [ ] Online Store → Themes → **TackleBay v1** → **Publish**
+- [ ] Online Store → Themes → **TackleBay – CRO v1** → **Publish**
 - [ ] Settings → General → Store name → **TackleBay** → Save
       This is what the order emails, the checkout, the review requests and the
       Meta page are all named after – so it happens before any of them.

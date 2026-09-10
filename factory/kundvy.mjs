@@ -178,6 +178,14 @@ export function strukturkoll(html, { produkt, butik } = {}) {
   const h = String(html);
   const produktHandle = produkt?.produkt?.handle ?? produkt?.produkt?.id ?? '';
   const bonusHandle = produkt?.offer?.bonus_produkt?.handle ?? null;
+  // Gratis-raden renderas bara när en nivå faktiskt GER bonusen gratis
+  // (gratis_antal > 0 i offer.paket.nivaer). Standardstegen har ingen gratis,
+  // och en betald korg-upsell (TackleBay 2026-09-10: bonus_produkt = butikens
+  // andra produkt, i_paket tomt) ska inte ge rött på en sida som är rätt.
+  const nivaer = Array.isArray(produkt?.offer?.paket?.nivaer) ? produkt.offer.paket.nivaer : [];
+  const gratisIPaketen = Boolean(bonusHandle) && nivaer.some((n) => Number(n?.gratis_antal) > 0);
+  // Fullpris-kryssrutan byggs bara när produktfilen ber om den.
+  const kryssruta = Boolean(bonusHandle) && produkt?.offer?.bonus_produkt?.tillagg_kryssruta === true;
   const har = (s) => h.includes(s);
   const punkter = [];
   const punkt = (namn, ok) => punkter.push({ namn, ok: Boolean(ok) });
@@ -187,14 +195,14 @@ export function strukturkoll(html, { produkt, butik } = {}) {
   punkt('A/B-block (data-ms-ab)', har('data-ms-ab="paket:a"') && har('data-ms-ab="paket:b"'));
   // Gratis-raden finns bara när en bonusprodukt ligger i paketen — utan
   // bonus är den saknade raden rätt, inte rött (AdventLane 2026-09-10).
-  if (bonusHandle) punkt('gratis-raden i paketen', har('ms-paket__gava'));
+  if (gratisIPaketen) punkt('gratis-raden i paketen', har('ms-paket__gava'));
   punkt('Judge.me-widget i Appyta', har('jdgm-widget') || har('judgeme'));
   punkt('sticky köpknapp', har('ms-sticky'));
   punkt('varumärke-strippen (opf-svensk)', har('opf-svensk'));
   punkt('opf-brand.css laddad', har('opf-brand.css'));
   punkt('gallerifilter i head', har('[alt^=') || har('opf-gallerifilter'));
   // Korg-upsellen renderas bara med varor i korgen — den kollas i köptestet.
-  if (bonusHandle) punkt('fullpris-kryssrutan (opf-tillagg)', har('opf-tillagg-mall') && har('opf-tillagg__kryss'));
+  if (kryssruta) punkt('fullpris-kryssrutan (opf-tillagg)', har('opf-tillagg-mall') && har('opf-tillagg__kryss'));
   punkt('inga egna köplöften (öppet köp)', !KOPLOFTEN.test(synligText(h)));
   if (produktHandle) punkt('produktlänken', har(`/products/${produktHandle}`));
   if (butik?.butik?.brand) punkt('brandnamnet på sidan', harText(h, butik.butik.brand));
