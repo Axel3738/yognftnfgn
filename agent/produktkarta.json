@@ -9,8 +9,24 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-08",
+  "uppdaterad": "2026-09-10",
   "kampanjer": [
+    {
+      "campaign_id": "120250161984300291",
+      "produkt": "Staketstolpslagaren 2-pack",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-10, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250161786230291",
+      "produkt": "Stegstödet 2-pack",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-10, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
     {
       "campaign_id": "120250134859280291",
       "produkt": "Pälsborsten till Dyson-dammsugare",
