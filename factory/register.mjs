@@ -407,6 +407,10 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       lage: d?.lage ?? post.lage,
       redigerare: d?.redigerare ?? null,
       redigerare_discord_id: d?.redigerare_discord_id ?? null,
+      // Copy-modellen: 'ab' = varannan brief Fable, varannan Sonnet (Axels
+      // A/B-test 2026-09-10). Nattvakten skriver in vinnaren själv när
+      // båda modellerna har tillräckligt med bedömbara annonser.
+      copy_modell: COPY_MODELLER.includes(d?.copy_modell) ? d.copy_modell : 'ab',
       notion: d?.notion ?? post.notion ?? null,
       kordag_offset: offset,
       senaste_korning: d?.senaste_korning ?? '',
@@ -602,6 +606,24 @@ export function redigerareFor(post) {
 
 // ------------------------------------------------------------- skrivningar
 
+/** Driftraden för en post som ännu saknas i register.json — samma fält som
+ *  skriv-in ger, så en rad skapad av `notion`/`redigerare`/`kord` aldrig blir
+ *  en halv rad (testet "register.json bär briefdagarna" vaktar formen). */
+function nyDriftrad(post) {
+  return {
+    lage: post.lage,
+    redigerare: null,
+    redigerare_discord_id: null,
+    notion: post.notion ?? { name: '', database_id: '', foralder_page_id: '', url: '' },
+    kordag_offset: post.kordag_offset,
+    senaste_korning: '',
+    senaste_brief: '',
+    cycle_start: '',
+    launches: [],
+    anteckning: `Upptäckt automatiskt ur ${post.kopplingskalla === 'state' ? 'state-filen' : post.kopplingskalla}.`,
+  };
+}
+
 function skrivDrift(drift) {
   writeFileSync(REGISTERFIL, `${JSON.stringify(drift, null, 2)}\n`);
 }
@@ -638,7 +660,7 @@ export function loggaKorning(nyckel, datum) {
   const post = hittaPost(nyckel);
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
-  const rad = drift.poster[post.nyckel] ?? { kordag_offset: post.kordag_offset, launches: [] };
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
   rad.senaste_korning = datum;
   rad.lage = rad.lage ?? post.lage;
   drift.poster[post.nyckel] = rad;
@@ -652,7 +674,7 @@ export function loggaBrief(nyckel, datum) {
   const post = hittaPost(nyckel);
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
-  const rad = drift.poster[post.nyckel] ?? { kordag_offset: post.kordag_offset, launches: [] };
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
   rad.senaste_brief = datum;
   rad.lage = rad.lage ?? post.lage;
   drift.poster[post.nyckel] = rad;
@@ -670,7 +692,7 @@ export function sattNotion(nyckel, idEllerUrl, namn = '') {
   const post = hittaPost(nyckel);
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
-  const rad = drift.poster[post.nyckel] ?? { kordag_offset: post.kordag_offset, launches: [] };
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
   const gammal = rad.notion && typeof rad.notion === 'object' ? rad.notion : {};
   rad.notion = {
     name: finns(namn) ? namn.trim() : (gammal.name ?? ''),
@@ -685,13 +707,31 @@ export function sattNotion(nyckel, idEllerUrl, namn = '') {
   return { ...post, notion: rad.notion };
 }
 
+export const COPY_MODELLER = Object.freeze(['ab', 'fable', 'sonnet']);
+
+/** Sätter copy-modellen för butiken: 'ab' (testet pågår), 'fable' eller 'sonnet' (vinnaren). */
+export function sattCopyModell(nyckel, modell, motivering = '') {
+  const m = normalisera(modell);
+  if (!COPY_MODELLER.includes(m)) throw new Error(`Okänd copy-modell "${modell}" — tillåtna: ${COPY_MODELLER.join(', ')}.`);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  rad.copy_modell = m;
+  if (finns(motivering)) rad.copy_modell_motivering = motivering.trim();
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, copy_modell: m };
+}
+
 /** Tilldelar redigerare (namn + valfritt Discord-id). Tomt namn nekas — hitta aldrig på en person. */
 export function sattRedigerare(nyckel, namn, discordId = null) {
   if (!finns(namn)) throw new Error('Ange redigerarens namn.');
   const post = hittaPost(nyckel);
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
-  const rad = drift.poster[post.nyckel] ?? { kordag_offset: post.kordag_offset, launches: [] };
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
   rad.redigerare = namn.trim();
   rad.redigerare_discord_id = finns(discordId) ? String(discordId).trim() : (rad.redigerare_discord_id ?? null);
   rad.lage = rad.lage ?? post.lage;
@@ -707,7 +747,7 @@ export function loggaLaunch(nyckel, antal, datum) {
   const post = hittaPost(nyckel);
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
-  const rad = drift.poster[post.nyckel] ?? { kordag_offset: post.kordag_offset, launches: [] };
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
   rad.launches = Array.isArray(rad.launches) ? rad.launches : [];
   rad.launches.push({ date: datum, count: antal });
   // Första loggningen startar cykeln — annars räknas kvoten från ett tomt fält.
@@ -781,6 +821,11 @@ function huvud() {
   if (arg[0] === 'redigerare') {
     const post = sattRedigerare(arg[1], arg[2], arg[3] ?? null);
     console.log(`Redigerare på ${post.namn}: ${post.redigerare}${post.redigerare_discord_id ? ` (Discord ${post.redigerare_discord_id})` : ''}`);
+    return;
+  }
+  if (arg[0] === 'copy-modell') {
+    const post = sattCopyModell(arg[1], arg[2], arg.slice(3).join(' '));
+    console.log(`Copy-modell på ${post.namn}: ${post.copy_modell}`);
     return;
   }
 

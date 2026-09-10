@@ -262,7 +262,7 @@ async function huvud() {
   const fil = join(mapp, `budgetrond-${idag}${marknad === STANDARDMARKNAD ? '' : `-${marknad}`}.json`);
   const dump = {
     butik: post.nyckel, idag, torr, konto: kontoId, max, marknad, prefix: butik.prefix,
-    ekonomi: { antagande: ekonomi.antagande, breakEvenRoas: ekonomi.breakEvenRoas, breakEvenCpa: ekonomi.breakEvenCpa },
+    ekonomi: { antagande: ekonomi.antagande, breakEvenRoas: ekonomi.breakEvenRoas, breakEvenCpa: ekonomi.breakEvenCpa, targetCpa: ekonomi.targetCpa ?? null },
     underlag: { kampanjer: u.kampanjer, adsets: u.adsets, insikter: u.insikter, dygn: u.dygn, annonser: u.annonser, annonser7d: u.annonser7d, slangda: u.slangda },
     beslut: { kampanjrader: beslut.kampanjrader, annonsrader: beslut.annonsrader },
     plan: beslut.plan,

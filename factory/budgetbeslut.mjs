@@ -21,14 +21,17 @@
 //     budgetändringar och ingen kampanjpaus — bara annonskills.
 //  2. Budgetenhet: kampanjen om den har daily_budget > 0 (CBO), annars varje
 //     ACTIVE adset med daily_budget (ABO).
-//  3. DÖDA kampanj: ≥ 5 förlustdygn i rad (dagsrader, ROAS < break-even-ROAS
-//     med spend > 0; ett dygn utan spend bryter serien) ⇒ PAUSA kampanjen.
-//     Prövas före budgetreglerna — en döende kampanj får ingen ny budget.
+//  3. FÖRLUSTSERIE: ≥ 5 förlustdygn i rad (dagsrader, ROAS < break-even-ROAS
+//     med spend > 0; ett dygn utan spend bryter serien) ⇒ SÄNK −30 %, utan
+//     hänsyn till grinden eller kadensen. ALDRIG en kampanjpaus — Axels
+//     besked 2026-09-10: "jag vill inte pausa hela kampanjer på bara 5
+//     dagar, då måste ni ha skalat ner den". Står enheten på golvet: ingen
+//     åtgärd, förlusten döms på annonsnivå (regel 13).
 //  4. NOLL KÖP: 7d spend ≥ 3 × break-even-CPA och 0 köp ⇒ −30 %
-//     (NOLL_KOP_SANK). Står redan en genomförd NOLL_KOP_SANK i loggen inom 7
-//     dygn för samma enhet ⇒ PAUSA. Står enheten redan på golvet finns inget
-//     att sänka — då pausas den direkt (annars bränner den 500 kr/dag för
-//     evigt utan att någon regel någonsin slår till).
+//     (NOLL_KOP_SANK), varje gång det upprepas. Den ENDA kampanjpausen i
+//     motorn: enheten står redan på golvet 500 kr och har ändå 0 köp på 7
+//     dygn med spend ≥ 3 × break-even-CPA — då finns inget mer att sänka, och
+//     500 kr/dag utan ett enda köp i en vecka är ett beslut, inte en trend.
 //  5. Signifikansgrind för budgetbeslut: 3d spend ≥ 300 kr OCH 3d köp ≥ 3,
 //     annars "för tidigt" (ANALYSMETOD steg 2).
 //  6. vinst % = (1/breakEvenRoas − 1/roas) × 100 (samma formel som
@@ -45,9 +48,15 @@
 //     enhet. Kan steget inte tas (taket/golvet nått) blir det ingen åtgärd.
 // 13. Annonskill (ad-nivå, ur skalning.mjs klassificering 14d): klass
 //     `forlorare` (CPA > break-even efter ≥ 500 kr och ≥ 3 köp) OCH 7d-CPA
-//     också över break-even (trenden håller) ⇒ PAUSA annonsen. Dödvikt: 0 köp
-//     och 14d spend ≥ 3 × break-even-CPA ⇒ PAUSA annonsen. Aldrig annonsen
-//     som bär > 30 % av butikens positiva vinstbidrag (benchmarken).
+//     också över break-even (trenden håller) ⇒ PAUSA annonsen.
+//     NY ANNONS-REGELN (Axels ord 2026-09-10: "ny annons har spenderat 3
+//     gånger target-CPA eller mer och inte går med vinst — då pausas den"):
+//     annons med FÄRRE än 3 köp, 14d spend ≥ 3 × TARGET-CPA och inte lönsam
+//     (0 köp, eller CPA över break-even) ⇒ PAUSA annonsen. Det är ett
+//     ägarbeslut som medvetet går under ANALYSMETOD:s 3-köpsgrind — en ny
+//     annons som bränt tre target-köp utan att tjäna pengar får inte mer.
+//     Saknas target-CPA används break-even-CPA. Aldrig annonsen som bär
+//     > 30 % av butikens positiva vinstbidrag (benchmarken).
 // 14. Max 3 genomförda ändringar per butik och rond; resten listas som
 //     "väntar på Axel". Prioritet: PAUSA > SÄNK > RAKET > SNABB > SKALA.
 //
@@ -213,16 +222,21 @@ export function beslutaKampanj({ kampanj, adsets = [], d3 = {}, d7 = {}, dygn = 
     }));
   }
 
-  // 3. DÖDA: fem förlustdygn i rad.
-  if (forlustdygn >= FORLUSTDYGN_FOR_PAUS) {
-    return [rad(kampanjEnhet, kampanj, {
-      atgard: 'PAUSA', gammalt: 'ACTIVE', nytt: 'PAUSED',
-      motivering: `${forlustdygn} förlustdygn i rad (ROAS under break-even ${roasTxt(be)} med spend varje dygn) — gränsen är ${FORLUSTDYGN_FOR_PAUS}. ${bas}`,
-    })];
-  }
-
   if (!enheter.length) {
     return [rad(kampanjEnhet, kampanj, { sparr: 'Ingen budgetenhet: varken kampanjen (CBO) eller något ACTIVE adset har daily_budget. Lifetime-budget rörs inte.', motivering: bas })];
+  }
+
+  // 3. FÖRLUSTSERIE: fem förlustdygn i rad ⇒ sänk, aldrig pausa (Axel 2026-09-10).
+  if (forlustdygn >= FORLUSTDYGN_FOR_PAUS) {
+    return enheter.map((e) => {
+      if (!arAktiv(e)) return rad(e, kampanj, { sparr: `Adsetet är ${e.status}/${e.effective_status} — rörs inte.`, motivering: bas });
+      const grund = `${forlustdygn} förlustdygn i rad (ROAS under break-even ${roasTxt(be)} med spend varje dygn) — gränsen är ${FORLUSTDYGN_FOR_PAUS}.`;
+      const ny = nyBudget(e.budget, SANK_FAKTOR);
+      if (ny === null) {
+        return rad(e, kampanj, { sparr: `${grund} Står redan på golvet ${kr(GOLV_SEK)} — kampanjen pausas inte (Axel 2026-09-10), förlusten döms på annonsnivå.`, motivering: bas });
+      }
+      return rad(e, kampanj, { atgard: 'SANK', nytt: ny, motivering: `${grund} Sänks −30 % ${kr(e.budget)} → ${kr(ny)} utan hänsyn till kadensen. Ingen kampanjpaus. ${bas}` });
+    });
   }
 
   // 4. NOLL KÖP på 7 dygn trots spend ≥ 3 × break-even-CPA.
@@ -230,16 +244,13 @@ export function beslutaKampanj({ kampanj, adsets = [], d3 = {}, d7 = {}, dygn = 
   if (nollKop) {
     return enheter.map((e) => {
       if (!arAktiv(e)) return rad(e, kampanj, { sparr: `Adsetet är ${e.status}/${e.effective_status} — rörs inte.`, motivering: bas });
-      const andraGangen = harRad(logg, e.entitet_id, 'NOLL_KOP_SANK', NOLL_KOP_FONSTER_DAGAR, idag);
+      const tidigare = harRad(logg, e.entitet_id, 'NOLL_KOP_SANK', NOLL_KOP_FONSTER_DAGAR, idag);
       const grund = `0 köp på 7 dygn trots ${kr(nr(d7.spend))} spend (≥ ${NOLL_KOP_MULTIPEL} × break-even-CPA ${kr(beCpa)}).`;
-      if (andraGangen) {
-        return rad(e, kampanj, { atgard: 'PAUSA', gammalt: 'ACTIVE', nytt: 'PAUSED', motivering: `${grund} Redan sänkt för noll köp inom ${NOLL_KOP_FONSTER_DAGAR} dygn (budgetloggen) — andra gången pausas. ${bas}` });
-      }
       const ny = nyBudget(e.budget, SANK_FAKTOR);
       if (ny === null) {
-        return rad(e, kampanj, { atgard: 'PAUSA', gammalt: 'ACTIVE', nytt: 'PAUSED', motivering: `${grund} Står redan på golvet ${kr(GOLV_SEK)} — inget att sänka, pausas. ${bas}` });
+        return rad(e, kampanj, { atgard: 'PAUSA', gammalt: 'ACTIVE', nytt: 'PAUSED', motivering: `${grund} Står redan på golvet ${kr(GOLV_SEK)} — inget mer att sänka, och en vecka på golvet utan ett enda köp pausas (enda kampanjpausen i motorn). ${bas}` });
       }
-      return rad(e, kampanj, { atgard: 'NOLL_KOP_SANK', nytt: ny, motivering: `${grund} Sänks −30 % till ${kr(ny)}; står den kvar på noll köp nästa gång pausas den. ${bas}` });
+      return rad(e, kampanj, { atgard: 'NOLL_KOP_SANK', nytt: ny, motivering: `${grund} Sänks −30 % ${kr(e.budget)} → ${kr(ny)}${tidigare ? ` — igen (sänkt för noll köp inom ${NOLL_KOP_FONSTER_DAGAR} dygn enligt budgetloggen)` : ''}. Pausas först när golvet ${kr(GOLV_SEK)} är nått utan köp. ${bas}` });
     });
   }
 
@@ -294,7 +305,7 @@ export function beslutaKampanj({ kampanj, adsets = [], d3 = {}, d7 = {}, dygn = 
     // 11. SÄNK
     if (!kadensOk) return rad(e, kampanj, { sparr: `Under ${ZON_SANK_UNDER} % vinst, men kadensspärren: ${kadensTxt} (krav ≥ ${KADENS_DAGAR}).`, motivering: grund });
     const ny = nyBudget(e.budget, SANK_FAKTOR);
-    if (ny === null) return rad(e, kampanj, { sparr: `Under ${ZON_SANK_UNDER} % vinst, men står redan på golvet ${kr(GOLV_SEK)}. ${forlustdygn} förlustdygn i rad — pausas vid ${FORLUSTDYGN_FOR_PAUS}.`, motivering: grund });
+    if (ny === null) return rad(e, kampanj, { sparr: `Under ${ZON_SANK_UNDER} % vinst, men står redan på golvet ${kr(GOLV_SEK)}. ${forlustdygn} förlustdygn i rad — kampanjen pausas inte, förlusten döms på annonsnivå.`, motivering: grund });
     return rad(e, kampanj, { atgard: 'SANK', nytt: ny, motivering: `Vinst 3d under ${ZON_SANK_UNDER} % — −30 % ${kr(e.budget)} → ${kr(ny)}. ${kadensTxt}. ${grund}` });
   });
 }
@@ -309,6 +320,9 @@ export function beslutaKampanj({ kampanj, adsets = [], d3 = {}, d7 = {}, dygn = 
  */
 export function beslutaAnnonser({ annonser = [], annonser7d = {}, ekonomi = {} }) {
   const beCpa = ekonomi?.breakEvenCpa;
+  // Ny annons-regeln mäts mot TARGET-CPA (Axel 2026-09-10); saknas den mot break-even.
+  const malCpa = Number.isFinite(ekonomi?.targetCpa) && ekonomi.targetCpa > 0 ? ekonomi.targetCpa : beCpa;
+  const malNamn = malCpa === ekonomi?.targetCpa ? 'target-CPA' : 'break-even-CPA (target saknas)';
   const ut = [];
   const grund = (a) => `14d: ${kr(a.amount_spent)}, ${a.kop} köp, CPA ${a.cpa ? kr(a.cpa) : '—'} · klass ${a.dom?.klass ?? '—'}.`;
   const bas = (a) => ({ entitet_id: String(a.ad_id), entitet_typ: 'ad', namn: a.namn, kampanj_namn: a.kampanj ?? null, atgard: null, gammalt: a.effective_status ?? null, nytt: null, motivering: grund(a), sparr: null });
@@ -330,9 +344,14 @@ export function beslutaAnnonser({ annonser = [], annonser7d = {}, ekonomi = {} }
       ut.push({ ...r, sparr: `Benchmarken: bär ${pct(andel * 100)} av butikens positiva vinstbidrag — döms aldrig mot småannonser.` });
       continue;
     }
-    // Dödvikt: aldrig ett köp, men spend som räcker till tre break-even-köp.
-    if (nr(a.kop) === 0 && nr(a.amount_spent) >= DODVIKT_MULTIPEL * beCpa) {
-      ut.push({ ...r, atgard: 'PAUSA', gammalt: 'ACTIVE', nytt: 'PAUSED', motivering: `Dödvikt: 0 köp på 14 dygn trots ${kr(a.amount_spent)} (≥ ${DODVIKT_MULTIPEL} × break-even-CPA ${kr(beCpa)}). ${grund(a)}` });
+    // Ny annons-regeln (under 3 köp — annars gäller förlorare + trend nedan):
+    // tre target-köp i spend utan att gå med vinst ⇒ pausa. "Inte lönsam" =
+    // 0 köp, eller CPA över break-even (Axel 2026-09-10).
+    const nyAnnons = nr(a.kop) < GRIND_KOP;
+    const olonsam = nr(a.kop) === 0 || (Number.isFinite(nr(a.cpa)) && nr(a.cpa) > beCpa);
+    if (nyAnnons && olonsam && nr(a.amount_spent) >= DODVIKT_MULTIPEL * malCpa) {
+      const varfor = nr(a.kop) === 0 ? '0 köp' : `${a.kop} köp till CPA ${kr(a.cpa)} över break-even ${kr(beCpa)}`;
+      ut.push({ ...r, atgard: 'PAUSA', gammalt: 'ACTIVE', nytt: 'PAUSED', motivering: `Dödvikt: ${varfor} på 14 dygn trots ${kr(a.amount_spent)} spend (≥ ${DODVIKT_MULTIPEL} × ${malNamn} ${kr(malCpa)}). ${grund(a)}` });
       continue;
     }
     if (a.dom?.klass === 'forlorare') {

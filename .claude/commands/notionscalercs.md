@@ -45,9 +45,11 @@ Bäverbutikens larm och har sin egen rutin.
    `(break-even-CPA − CPA) × köp`, aldrig ROAS eller CPA ensamt. Kill mot
    break-even, aldrig mot target. Top spendern är benchmark.
 4. **Hitta aldrig på data.** Saknas något: skriv det, leverera resten.
-5. **Discord är på engelska**, i butikens egen server, kanal `#ops-rapport`.
-   Axel pingas BARA under `🔴 ACTION NEEDED`. Redigeraren pingas när hon har
-   nya briefer — då pingas Axel också. Inget att göra = ingen ping.
+5. **Discord är på engelska**, i butikens egen server (den heter brandet,
+   eller `<Brand> — OPS`). Nattens budgetrapport går till `#ads`, briefdagens
+   rapport till `#ads-to-do` där redigeraren tittar. Axel pingas BARA under
+   `🔴 ACTION NEEDED`. Redigeraren pingas när hon har nya briefer — då pingas
+   Axel också. Inget att göra = ingen ping.
 6. **Kör klart utan att invänta godkännande mellan stegen.** Fråga bara när
    ett beslut kräver ägaren (pris, ny target). Rapportera i två listor:
    "Gjort av mig" / "Väntar på en människa", Axels uppgifter sist, numrerade.
@@ -141,11 +143,15 @@ förklara dem:
 - **Snabb** vinst ≥ 25 % och ROAS ≥ 3 → +20 % varje natt.
 - **Skala** vinst ≥ 25 % båda fönstren → +20 %, minst 3 dygn mellan ändringar.
 - **Sänk** vinst < 16 % → −30 %, golv 500 kr, minst 3 dygn mellan ändringar.
-- **Döda kampanj** 5 förlustdygn i rad → pausas. **Noll köp** efter
-  3 × break-even-CPA i spend → −30 %, andra gången pausas.
-- **Döda annons** förlorare (CPA över break-even efter ≥ 500 kr och ≥ 3 köp,
-  trenden håller i 7 dagar) eller dödvikt (0 köp på 3 × break-even-CPA) →
-  pausas. Aldrig annonsen som bär > 30 % av vinstbidraget.
+- **Förlustserie** 5 förlustdygn i rad → −30 % direkt, utan kadens. En
+  kampanj pausas ALDRIG för det (Axel 2026-09-10). **Noll köp** efter
+  3 × break-even-CPA i spend → −30 % varje gång; enda kampanjpausen är när
+  den redan står på golvet 500 kr och ändå har 0 köp på en vecka.
+- **Döda annons** — två vägar: förlorare (CPA över break-even efter ≥ 500 kr
+  och ≥ 3 köp, trenden håller i 7 dagar), eller **ny annons-regeln** (Axel
+  2026-09-10): spenderat ≥ 3 × target-CPA och går inte med vinst (0 köp,
+  eller CPA över break-even) → pausas. Aldrig annonsen som bär > 30 % av
+  vinstbidraget.
 - Ändring nr 4 och uppåt görs inte — de står under `🔴 ACTION NEEDED`.
 Fel från Meta (token, rate limit) står i rapporten, aldrig tyst.
 
@@ -193,10 +199,19 @@ Namn enligt `docs/naming-convention.md` med butikens prefix; lediga AD-ID:n
 läses ur OPS-kontot (analys-JSON:en) OCH ur hubbens befintliga radnamn.
 
 ### Steg 6 — Copy: A/B Fable mot Sonnet (Axels beslut 2026-09-10)
-Copyn skrivs av en subagent, aldrig av huvudsessionen. Varannan brief får
+Copyn skrivs av en subagent, aldrig av huvudsessionen. Läs `copy_modell` i
+registret (`node factory/register.mjs <nyckel>`): `ab` = varannan brief får
 `copy_model: fable`, varannan `copy_model: sonnet` — taggen står i
-`VARIABELTAGGAR:` så nästa feedback-loop kan gruppera vinstbidrag per
-copy-modell. Vägen: Agent-verktyget med `model: "fable"` resp. `"sonnet"`
+`VARIABELTAGGAR:` så feedback-loopen kan gruppera vinstbidrag per copy-modell.
+**Testet avgörs automatiskt:** i steg 4, när BÅDA modellerna har ≥ 5
+bedömbara annonser (≥ 300 kr och ≥ 3 köp vardera), jämförs vinstbidrag per
+spenderad krona per modell. Vinner en modell med ≥ 20 % marginal skrivs den
+in: `node factory/register.mjs copy-modell <nyckel> fable|sonnet "<siffrorna>"`,
+testet är slut och alla briefer får vinnaren. Rapporten säger det under
+"Done automatically" och i dna.md. Är skillnaden under 20 % fortsätter A/B:t
+och rapporten visar ställningen (annonser, vinstbidrag/kr per modell) varje
+briefdag, så Axel ser hur det går utan att fråga. Väntat avgörande: ~2 veckor.
+Vägen: Agent-verktyget med `model: "fable"` resp. `"sonnet"`
 när det finns; saknas Agent-verktyget i rutinen: `node tools/copy-agent.mjs
 --modell fable|sonnet --uppdrag <fil> --ut <fil>` (samma prompt, samma
 regler). Subagenten får DNA-utdrag + hypotes + hook + format + copy-reglerna

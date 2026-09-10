@@ -51,8 +51,12 @@ import { granskaSprak, serUtSomSvenska, stoppText } from './lib/engelska.mjs';
 
 /** Discords tak för ett meddelande. */
 export const MAXLANGD = 2000;
-/** Kanalen rapporten går till om jobbet inte säger annat. */
-export const STANDARDKANAL = 'ops-rapport';
+/** Kanalen rapporten går till om jobbet inte säger annat. Butiksservrarna
+ *  har redan kanalerna (Axels bild 2026-09-10): nattens budgetrapport går
+ *  till #ads, briefdagens rapport till #ads-to-do där redigeraren tittar. */
+export const STANDARDKANAL = 'ads';
+export const KANAL_PER_LAGE = Object.freeze({ budget: 'ads', brief: 'ads-to-do' });
+export const kanalFor = (jobb) => String(jobb?.kanal || KANAL_PER_LAGE[jobb?.lage] || STANDARDKANAL).replace(/^#/, '');
 /** Tak per lista i mallen — fler rader gör den oläslig, inte tydligare. */
 export const TAK = { siffror: 4, gjort: 8, briefer: 10 };
 
@@ -238,7 +242,7 @@ export async function skickaRapport(jobb, { axelId = null } = {}) {
     fel.text = text;
     throw fel;
   }
-  const kanal = await hittaEllerSkapaKanal(server.id, String(jobb.kanal || STANDARDKANAL).replace(/^#/, ''));
+  const kanal = await hittaEllerSkapaKanal(server.id, kanalFor(jobb));
   const svar = await skickaMeddelande(kanal.id, sprak.text);
   return { id: svar.id, server, kanal, pingId, text: sprak.text, oversatt: sprak.oversatt };
 }

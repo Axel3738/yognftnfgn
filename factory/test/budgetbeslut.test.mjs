@@ -121,26 +121,32 @@ test('SÄNK: vinst 3d < 16 % ⇒ −30 %, aldrig under golvet, spärrad av kaden
   assert.match(kadens.sparr, /kadensspärren/);
 });
 
-test('DÖDA: fem förlustdygn i rad ⇒ PAUSA kampanjen, före allt annat', () => {
-  const [r] = dom({ d3: ins(1.2), d7: ins(1.2), dygn: dygnMed([2, 1, 1.1, 0.9, 1, 1.3]) });
-  assert.equal(r.atgard, 'PAUSA');
+test('FÖRLUSTSERIE: fem förlustdygn i rad ⇒ SÄNK −30 % utan kadens, aldrig kampanjpaus (Axel 2026-09-10)', () => {
+  const [r] = dom({ d3: ins(1.2), d7: ins(1.2), dygn: dygnMed([2, 1, 1.1, 0.9, 1, 1.3]), logg: [loggrad({ atgard: 'SANK', nytt: 1000, datum: '2026-09-09' })] });
+  assert.equal(r.atgard, 'SANK');
   assert.equal(r.entitet_typ, 'campaign');
-  assert.equal(r.nytt, 'PAUSED');
+  assert.equal(r.nytt, 700);
   assert.match(r.motivering, /5 förlustdygn/);
+  assert.match(r.motivering, /Ingen kampanjpaus/);
   assert.equal(FORLUSTDYGN_FOR_PAUS, 5);
-  // Fyra räcker inte.
+  // På golvet: ingen paus, ingen åtgärd — döms på annonsnivå.
+  const [golv] = dom({ d3: ins(1.2), d7: ins(1.2), dygn: dygnMed([2, 1, 1.1, 0.9, 1, 1.3]), kampanj: kampanj({ daily_budget: '50000' }) });
+  assert.equal(golv.atgard, null);
+  assert.match(golv.sparr, /pausas inte/);
+  // Fyra räcker inte till förlustserien — men vinst 3d < 16 % sänker ändå (kadens ok).
   const [fyra] = dom({ d3: ins(1.2), d7: ins(1.2), dygn: dygnMed([2, 1, 1, 1, 1]) });
   assert.equal(fyra.atgard, 'SANK');
+  assert.doesNotMatch(fyra.motivering, /förlustdygn/);
 });
 
-test('NOLL KÖP: första gången −30 %, andra gången inom 7 dygn ⇒ PAUSA, på golvet ⇒ PAUSA', () => {
+test('NOLL KÖP: −30 % varje gång; PAUSA bara när enheten redan står på golvet utan köp', () => {
   const noll = { d3: ins(0, { spend: 600, kop: 0 }), d7: ins(0, { spend: 1100, kop: 0 }), dygn: dygnMed([0, 0, 0]) };
   const [forsta] = dom(noll);
   assert.equal(forsta.atgard, 'NOLL_KOP_SANK');
   assert.equal(forsta.nytt, 700);
   const [andra] = dom({ ...noll, logg: [loggrad({ atgard: 'NOLL_KOP_SANK', nytt: 700, datum: '2026-09-06' })] });
-  assert.equal(andra.atgard, 'PAUSA');
-  assert.match(andra.motivering, /andra gången/);
+  assert.equal(andra.atgard, 'NOLL_KOP_SANK'); // andra gången sänks igen — ingen kampanjpaus
+  assert.match(andra.motivering, /igen/);
   const [gammalRad] = dom({ ...noll, logg: [loggrad({ atgard: 'NOLL_KOP_SANK', nytt: 700, datum: '2026-09-01' })] });
   assert.equal(gammalRad.atgard, 'NOLL_KOP_SANK'); // 9 dygn — utanför fönstret
   const [golv] = dom({ ...noll, kampanj: kampanj({ daily_budget: '50000' }) });
@@ -206,12 +212,26 @@ test('annonskill: förlorare på 14d OCH 7d-CPA över break-even ⇒ PAUSA; vän
   assert.equal(nollKop7.atgard, 'PAUSA');
 });
 
-test('dödvikt: 0 köp och 14d spend ≥ 3 × break-even-CPA ⇒ PAUSA; under det ⇒ inget', () => {
+test('ny annons-regeln: 14d spend ≥ 3 × target-CPA och inte lönsam ⇒ PAUSA; lönsam eller under spenden ⇒ inget', () => {
+  // Utan target-CPA mäts mot break-even (334 kr ⇒ 1 002 kr).
   const [dod] = beslutaAnnonser({ annonser: [annons({ kop: 0, cpa: null, amount_spent: 1010, dom: { klass: 'for_tidigt', vinst_generos: null } })], ekonomi });
   assert.equal(dod.atgard, 'PAUSA');
-  assert.match(dod.motivering, /Dödvikt/);
+  assert.match(dod.motivering, /Dödvikt: 0 köp/);
+  assert.match(dod.motivering, /target saknas/);
   const [lever] = beslutaAnnonser({ annonser: [annons({ kop: 0, cpa: null, amount_spent: 900, dom: { klass: 'for_tidigt', vinst_generos: null } })], ekonomi });
   assert.equal(lever.atgard, null);
+  // Med target-CPA 200 kr går gränsen vid 600 kr (Axel 2026-09-10: "3 gånger target cpa").
+  const medTarget = { ...ekonomi, targetCpa: 200 };
+  const [tidig] = beslutaAnnonser({ annonser: [annons({ kop: 0, cpa: null, amount_spent: 650, dom: { klass: 'for_tidigt', vinst_generos: null } })], ekonomi: medTarget });
+  assert.equal(tidig.atgard, 'PAUSA');
+  assert.match(tidig.motivering, /target-CPA 200 kr/);
+  // Två köp till CPA över break-even är "inte lönsam" — pausas trots att grinden (3 köp) inte nåtts.
+  const [tvaKop] = beslutaAnnonser({ annonser: [annons({ kop: 2, cpa: 400, amount_spent: 800, dom: { klass: 'for_tidigt', vinst_generos: null } })], ekonomi: medTarget });
+  assert.equal(tvaKop.atgard, 'PAUSA');
+  assert.match(tvaKop.motivering, /2 köp till CPA 400 kr över break-even/);
+  // Två köp UNDER break-even är lönsamma — rörs inte, hur mycket den än spenderat.
+  const [lonsam] = beslutaAnnonser({ annonser: [annons({ kop: 2, cpa: 300, amount_spent: 800, dom: { klass: 'for_tidigt', vinst_generos: null } })], ekonomi: medTarget });
+  assert.equal(lonsam.atgard, null);
 });
 
 test('benchmarkskydd: annonsen med > 30 % av det positiva vinstbidraget döms aldrig; pausade annonser rörs inte', () => {
@@ -253,7 +273,7 @@ test('max 3 ändringar per rond i prioritetsordning PAUSA > SÄNK > RAKET > SNAB
   assert.equal(igen.genomfor[0].atgard, 'PAUSA');
 });
 
-test('besluta: hela butiken — annonser i en kampanj som pausas följer med i stället för egen kill', () => {
+test('besluta: hela butiken — förlustserien sänker kampanjen, annonserna döms var för sig, max 3 med prioritet', () => {
   const ut = besluta({
     kampanjer: [kampanj(), kampanj({ id: 'k2', name: 'TANKGUARD_SALES_2', daily_budget: '80000' })],
     insikter: { k1: { d3: ins(1.2), d7: ins(1.2) }, k2: { d3: ins(3), d7: ins(3) } },
@@ -262,9 +282,23 @@ test('besluta: hela butiken — annonser i en kampanj som pausas följer med i s
     annonser7d: { ad1: { amount_spent: 500, kop: 1 }, ad2: { amount_spent: 500, kop: 1 } },
     ekonomi, logg: [], idag, butik: 'tankguard/tankguard',
   });
-  assert.deepEqual(ut.kampanjrader.map((r) => r.atgard), ['PAUSA', 'SNABB']);
-  assert.deepEqual(ut.annonsrader.map((r) => r.atgard), [null, 'PAUSA']);
+  // Sex förlustdygn ⇒ SÄNK, aldrig kampanjpaus (Axel 2026-09-10).
+  assert.deepEqual(ut.kampanjrader.map((r) => r.atgard), ['SANK', 'SNABB']);
+  assert.deepEqual(ut.annonsrader.map((r) => r.atgard), ['PAUSA', 'PAUSA']);
+  assert.deepEqual(ut.plan.genomfor.map((r) => `${r.atgard}:${r.entitet_typ}`), ['PAUSA:ad', 'PAUSA:ad', 'SANK:campaign']);
+  assert.deepEqual(ut.plan.vantar.map((r) => r.atgard), ['SNABB']);
+});
+
+test('besluta: annonser i en kampanj som pausas (golvet utan köp) följer med i stället för egen kill', () => {
+  const ut = besluta({
+    kampanjer: [kampanj({ daily_budget: '50000' })],
+    insikter: { k1: { d3: ins(0, { spend: 600, kop: 0 }), d7: ins(0, { spend: 1100, kop: 0 }) } },
+    dygn: { k1: dygnMed([0, 0, 0]) },
+    annonser: [annons({ kampanj: 'TANKGUARD_SALES_2026-09-08', kop: 0, cpa: null, amount_spent: 1100, dom: { klass: 'for_tidigt', vinst_generos: null } })],
+    annonser7d: { ad1: { amount_spent: 1100, kop: 0 } },
+    ekonomi, logg: [], idag, butik: 'tankguard/tankguard',
+  });
+  assert.deepEqual(ut.kampanjrader.map((r) => r.atgard), ['PAUSA']);
+  assert.deepEqual(ut.annonsrader.map((r) => r.atgard), [null]);
   assert.match(ut.annonsrader[0].sparr, /följer med/);
-  assert.deepEqual(ut.plan.genomfor.map((r) => `${r.atgard}:${r.entitet_typ}`), ['PAUSA:campaign', 'PAUSA:ad', 'SNABB:campaign']);
-  assert.equal(ut.plan.vantar.length, 0);
 });
