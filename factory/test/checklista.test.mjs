@@ -17,15 +17,55 @@ const pos = (md, s) => {
   return i;
 };
 
-test('valutan, huvudmarknaden och språket kommer FÖRE butiksnamnet i sektion 5', () => {
+test('valutan, huvudmarknaden och språket kommer FÖRE bygget — inte efter', () => {
+  // Axels omordning 2026-09-10. De tre är de enda på listan Claude inte kan
+  // ändra (shopUpdate finns inte, REST ger 406), OCH de avgör vad bygget
+  // skriver: priser, paket, rabattkoder och kassan lagras i butikens valuta.
+  // Låg kontrollen efter bygget (gamla sektion 5) fick allt byggas om —
+  // TackleBay 2026-09-09, åtta rabattkoder i PHP.
   const md = byggChecklista(butik(), [raprodukt()]);
   const valuta = pos(md, '**Store currency** says **SEK**');
   const marknad = pos(md, '**Sweden** is the primary market');
   const sprak = pos(md, '**Swedish** is the default');
+  const bygget = pos(md, '## 4. Start the build');
   const namn = pos(md, 'Store name → **Nackmagneten**');
-  assert.ok(valuta < marknad && marknad < sprak && sprak < namn, 'ordningen: valuta → marknad → språk → namn');
-  assert.ok(pos(md, '## 5. Shopify – basics') < valuta, 'valutasteget ligger i sektion 5');
-  assert.ok(pos(md, 'currency and language are set') < namn, 'VA:n säger till innan hon döper butiken');
+  assert.ok(valuta < marknad && marknad < sprak, 'ordningen: valuta → marknad → språk');
+  assert.ok(sprak < bygget, 'de tre kontrolleras före bygget');
+  assert.ok(bygget < namn, 'butiksnamnet sätts efter bygget — brandet finns inte innan');
+  assert.ok(pos(md, 'currency and language are set') < bygget, 'räddningsfrasen står i samma avsnitt');
+});
+
+test('ordningen är ett kontrakt: temat först efter bygget, testet sist', () => {
+  // Varje position har ett skäl (kommentaren högst upp i checklista.mjs).
+  // Glider någon tillbaka ska det synas här, inte i en butik.
+  const md = byggChecklista(butik(), [raprodukt()]);
+  const rubriker = [...md.matchAll(/^## (\d+)\. (.+)$/gm)].map((m) => `${m[1]}. ${m[2]}`);
+  assert.deepEqual(rubriker, [
+    '1. Shopify – create the store',
+    '2. Shopify – currency, market, language (do this BEFORE the build)',
+    '3. Shopify – connect Claude Code',
+    '4. Start the build',
+    '5. Right after the build – the theme and the name',
+    '6. Shopify Payments + Klarna',
+    '7. Domain',
+    '8. The EU withdrawal button (required by law)',
+    '9. Judge.me',
+    '10. Meta',
+    '11. Discord',
+    '12. Tell Claude the store is ready',
+    '13. Test the store in a real browser (this is the receipt for 5–12)',
+    '14. Hand over',
+    '15. Ads (a NEW session)',
+  ]);
+  // Temat publiceras före allt som kontrolleras mot kundens vy.
+  const tema = pos(md, '→ **Publish**');
+  assert.ok(tema < pos(md, '## 6.'), 'temat publiceras direkt efter bygget');
+  // Payments före testet: utan betalsätt går varukorgen inte att testa.
+  assert.ok(pos(md, 'Activate **Shopify Payments**') < pos(md, '## 13.'));
+  // Loopia före Shopifys domänkoppling — går inte att koppla en oköpt domän.
+  assert.ok(pos(md, 'Buy **nackmagneten.se**') < pos(md, 'Connect existing domain'));
+  // Testet är sista kontrollen före överlämningen.
+  assert.ok(pos(md, '## 13.') < pos(md, '## 14. Hand over'));
 });
 
 test('registreringen kräver BOLAGETS adress — den avgör valutan', () => {
@@ -39,9 +79,12 @@ test('registreringen kräver BOLAGETS adress — den avgör valutan', () => {
   assert.ok(pos(md, '## 1. Shopify – create the store') < adress);
   assert.ok(adress < pos(md, '## 2.'), 'adressen hör till steg 1, inte senare');
   assert.ok(md.includes('decides the currency'), 'varför adressen spelar roll ska stå där');
-  // Kontrollen i steg 1 ska nämna både valutan och landet.
-  const kontroll = md.slice(pos(md, '## 1.'), pos(md, '## 2.'));
-  assert.ok(kontroll.includes('**SEK**') && kontroll.includes('**Sweden**'));
+  // Steg 1 ska nämna landet i adressraden; kontrollen av utfallet (valuta,
+  // marknad, språk) ligger i steg 2 — före bygget, inte efter.
+  const steg1 = md.slice(pos(md, '## 1.'), pos(md, '## 2.'));
+  assert.ok(steg1.includes('**Sweden**'), 'adressens land står i steg 1');
+  const steg2 = md.slice(pos(md, '## 2.'), pos(md, '## 3.'));
+  assert.ok(steg2.includes('**SEK**') && steg2.includes('**Sweden**') && steg2.includes('**Swedish**'));
 });
 
 test('EN fil på butiksnivå listar alla produkter och en recensionsrad per produkt', () => {

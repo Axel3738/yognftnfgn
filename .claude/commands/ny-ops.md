@@ -14,7 +14,7 @@ sätt `butik.kollektion.alltid: true` i butiksfilen — då byggs kollektionen,
 kollektionsraden och kollektionsstartsidan redan nu, och nästa produkt är bara
 en produktfil till. Brandtexterna får aldrig låsa brandet vid första produkten.
 
-Kommandot körs EFTER att VA:n gjort checklistans steg 1–2 (butik på free
+Kommandot körs EFTER att checklistans avsnitt 1–3 är gjorda (butik på free
 trial, appen kopplad via `SHOPIFY_SHOP` + `SHOPIFY_CLIENT_ID` +
 `SHOPIFY_CLIENT_SECRET` + `SHOPIFY_STOREFRONT_PASSWORD` i miljön). Det bygger
 sen FÄRDIGT hela butiken utan att vänta — bara hennes klick återstår.
@@ -89,7 +89,7 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    `output/<butik>/oversattning-sv.json` → `oversattning-nb.json` med samma
    nycklar (+ `docs/copy-regler.md`). Sen `--igen oversatt`. Regel: koden
    översätter aldrig själv; läckor i rapporten = steget förblir 🖐.
-7. **VA:ns valuta- och språkklick** (checklistans steg 5): när hon skriver
+7. **Valuta- och språkklicket** (checklistans avsnitt 2): när någon skriver
    "currency and language are set", kör `--igen paket,huvudmarknad`.
    Regel: rabattkoder lagras i butikens valuta — paketsteget vägrar tills
    valutan stämmer.

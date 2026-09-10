@@ -33,7 +33,7 @@ Sen är ditt enda jobb per butik: välj produkt — och ta ägarskapet i överl�
       personal-inbjudan går inte på trial och behövs inte)
 - [ ] Ge henne bolags- och bankuppgifterna för Shopify Payments
 - [ ] Vid överlämningen: logga in med jobb-Gmailen, välj plan, lägg in
-      kortet och ta över ägarskapet (VA-checklistans steg 9)
+      kortet och ta över ägarskapet (checklistans avsnitt 14)
 
 Sen tar hon och fabriken allt annat.
 Hennes lista: `factory/VA-CHECKLIST.md`.

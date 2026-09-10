@@ -16,7 +16,7 @@
 // till factory/.env tillsammans med SHOPIFY_ADMIN_TOKEN_<BUTIK>, så varje
 // butiks token finns kvar när nästa bygge skriver över de allmänna raderna.
 //
-// Nycklarna (VA:n lägger in dem, checklistans steg 2). Per-butik-varianten
+// Nycklarna (läggs in för hand, checklistans avsnitt 3). Per-butik-varianten
 // med butiks-id i VERSALER vinner över den allmänna:
 //   SHOPIFY_SHOP[_<BUTIK>]            butikens myshopify-domän
 //   SHOPIFY_CLIENT_ID[_<BUTIK>]       appen "Fabriken" → Settings → Client ID
@@ -331,7 +331,7 @@ export function tolkaMintfel({ status, kropp, doman, butikId }) {
     `   Den per-butik-variabeln vinner alltid över den allmänna.`,
     `2. Appen är faktiskt avinstallerad i ${doman}. Kolla i Shopify-admin:`,
     `   Inställningar → Appar och försäljningskanaler. Står "Fabriken" inte där`,
-    `   är det först då den ska installeras om (checklistans steg 2).`,
+    `   är det först då den ska installeras om (checklistans avsnitt 3).`,
     '',
     'Be aldrig någon installera om appen innan punkt 1 är kontrollerad.',
   ].join('\n');
@@ -344,7 +344,7 @@ export async function mintaToken({ shop, clientId, clientSecret, butikId } = {},
   const saknas = [!doman && 'SHOPIFY_SHOP', !id && 'SHOPIFY_CLIENT_ID', !hemlighet && 'SHOPIFY_CLIENT_SECRET'].filter(Boolean);
   if (saknas.length > 0) {
     throw new Error(
-      `Saknar ${saknas.join(', ')} i miljön — VA:n lägger in dem i sessionens Environment (checklistans steg 2). Klistra aldrig nycklar i chatten.`
+      `Saknar ${saknas.join(', ')} i miljön — de läggs in i sessionens Environment för hand (checklistans avsnitt 3). Klistra aldrig nycklar i chatten.`
     );
   }
   const svar = await fetchFn(`https://${doman}/admin/oauth/access_token`, {
@@ -452,7 +452,7 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   }
 
   if (!n.shop) {
-    throw new Error(`Saknar SHOPIFY_SHOP i miljön — VA:n lägger in den (checklistans steg 2).\n\n${MILJOFALLOR}`);
+    throw new Error(`Saknar SHOPIFY_SHOP i miljön — den läggs in för hand (checklistans avsnitt 3).\n\n${MILJOFALLOR}`);
   }
 
   // Spärr på domänen FÖRE första nätverksanropet.
@@ -471,7 +471,7 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   const minta = async () => {
     if (!kanMinta) {
       throw new Error(
-        `Saknar SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (eller _${envSuffix(id)}-varianten) i miljön — VA:n lägger in dem (checklistans steg 2). Klistra aldrig nycklar i chatten.\n\n${MILJOFALLOR}`
+        `Saknar SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (eller _${envSuffix(id)}-varianten) i miljön — de läggs in för hand (checklistans avsnitt 3). Klistra aldrig nycklar i chatten.\n\n${MILJOFALLOR}`
       );
     }
     const m = await mintaToken({ shop: n.shop, clientId: n.clientId, clientSecret: n.clientSecret, butikId: id }, { fetchFn });

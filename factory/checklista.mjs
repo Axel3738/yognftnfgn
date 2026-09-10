@@ -1,14 +1,27 @@
-// VA:ns checklista — de manuella klicken som varje ny OPS-butik kräver.
+// Den manuella checklistan — klicken som varje ny OPS-butik kräver.
 //
 // Mallen är Axels egen (2026-09-07, omgjord 2026-09-08 i tre beslut:
 // butiken + appen + kopplingen FÖRST, sen bygger /ny-ops allt; en app per
 // butik eftersom custom distribution låses till EN butik utanför Plus;
-// nycklarna läggs i miljön av VA:n, aldrig i chatten). På ENGELSKA — den
-// som klickar är VA:n i Manila, inte Axel. Master-mallen med tomma fält
-// ligger i factory/VA-CHECKLIST.md; den här modulen fyller i butikens
+// nycklarna läggs i miljön av den som klickar, aldrig i chatten). På
+// ENGELSKA — rollen är anställningsbar och nästa person läser engelska
+// (Axel läser samma lista på svenska i chatten). Master-mallen med tomma
+// fält ligger i factory/VA-CHECKLIST.md; den här modulen fyller i butikens
 // värden och skriver output/<butik>/CHECKLISTA.md efter varje bygge.
-// ⚠️ VA:ns master är Google-dokumentet (länk i VA-CHECKLIST.md) — varje
-// ändring här ska föras in i dokumentet i samma session.
+// ⚠️ Masterkopian för den som klickar är Google-dokumentet (länk i
+// VA-CHECKLIST.md) — varje ändring här ska föras in i dokumentet i samma
+// session.
+//
+// ORDNINGEN ÄR ETT KONTRAKT (Axels omordning 2026-09-10). Varje avsnitt
+// ligger där det ligger av ett skäl, och skälet står i filen:
+//   1–3  före bygget: allt som inte går att ändra efteråt
+//   4    bygget
+//   5    temat publiceras FÖRST efter bygget — annars kontrolleras 6–13
+//        mot en butik kunden inte ser
+//   6    Shopify Payments tidigt — verifieringen kan ta dagar och den
+//        blockerar varukorgstestet i 13
+//   13   testet SIST — det är kvittot på 5–12, inte ett av stegen
+// Byter någon ordning ska skälet bytas med den. Testerna pinnar ordningen.
 //
 // EN fil per BUTIK (KEDJAN.md): en flerproduktsbutik (TackleBay 2026-09-09)
 // är fortfarande en Shopify-butik, en domän, en Judge.me-app, en pixel.
@@ -123,12 +136,15 @@ export function byggChecklista(butik, produkter, val = {}) {
     ? `- [ ] WeTracked → paste the **pixel ID**: **${v.pixelId}**`
     : '- [ ] WeTracked → paste the **pixel ID** Claude gives you';
   const temarad = v.temaNamn
-    ? `- [ ] When Claude says the theme is ready: Online Store → Themes → **${v.temaNamn}** → **Publish**`
-    : '- [ ] When Claude says the theme is ready: Online Store → Themes → the theme Claude names → **Publish**';
+    ? `- [ ] Online Store → Themes → **${v.temaNamn}** → **Publish**`
+    : '- [ ] Online Store → Themes → the theme Claude names → **Publish**';
 
   return `# Store Launch Checklist — ${v.brand} (manual steps)
 
 Do the steps in order, top to bottom. Tick each one.
+**The order is not a suggestion** – every section sits where it sits because
+the ones above it have to be true first. Sections 1–3 cannot be undone later,
+and section 13 is the check that the rest actually worked.
 Everything not on this list is done by Claude Code.
 ${fler ? 'This store has several products – it is still ONE store, ONE domain, ONE checklist.\n' : ''}
 * STORE NAME: **${v.brand}**
@@ -142,17 +158,34 @@ ${produktrader.join('\n')}
 **The address you type here decides the currency, the language and the home
 market.** Shopify takes them from the store address, not from your account.
 Type the COMPANY address below – never your own, wherever you are sitting.
-Get this right and section 5 is three checks instead of seven clicks.
 - [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
 - [ ] When it asks where the business is located, enter:
-      **${v.bolagsnamn}**, ${v.adress}, ${v.huvudland}
+      **${v.bolagsnamn}**, ${v.adress}, **${v.huvudland}**
+      The country is the field that decides the currency – never your own.
+- [ ] If Shopify asks for a store name, type **${v.brand}** – that removes a
+      click in section 5. If it names the store itself ("My Store 4"), leave it.
 - [ ] Stay on the free trial – never pick a plan, never enter any card
   Note: staff invites need a paid plan – the owner is added at hand over.
-- [ ] Settings → General → check it says **${v.valuta}** and **${v.huvudland}**.
-      If it does not, the address went in wrong – fix it before you continue.
-      Everything built on the wrong currency has to be built again.
 
-## 2. Shopify – connect Claude Code
+## 2. Shopify – currency, market, language (do this BEFORE the build)
+These three are the only things on this list that **Claude cannot change** —
+\`shopUpdate\` does not exist and REST answers 406 (measured). They also decide
+what the build writes: prices, packages, discount codes and the checkout are
+all stored in the store's currency. Get them wrong and the build has to be
+thrown away and run again, so they come before the build, not after it.
+- [ ] Settings → General → **Store currency** says **${v.valuta}**
+- [ ] Settings → Markets → **${v.huvudland}** is the primary market
+- [ ] Settings → Languages → **${v.sprak}** is the default
+      A brand new trial store often has **English** here. Swedish text still
+      lands correctly and the customer view is right – do not publish an empty
+      language, just check the default.
+- [ ] Any of the three wrong? The address went in wrong in section 1. Fix it
+      here, then write these exact words to Claude Code:
+      **currency and language are set**
+      The discount codes are stored in the store's currency and have to be
+      written again, and that sentence is what starts it.
+
+## 3. Shopify – connect Claude Code
 - [ ] Go to **dev.shopify.com** → log in with the work Gmail → Apps → **Create app** → name it: **Fabriken** + the store's address start (example: Fabriken y1sj1i)
 - [ ] The app → **Settings** → copy the **Client ID** and the **Client secret**
 - [ ] Look at the store's address. It ends in \`.myshopify.com\`. The part
@@ -177,7 +210,7 @@ Get this right and section 5 is three checks instead of seven clicks.
   → generate a new one → put the new value in the Environment. The build keeps
   running on the token it already has, so this never blocks anything.
 
-## 3. Start the build
+## 4. Start the build
 - [ ] Write **/ny-ops** + the product link in Claude Code, with the store address under it:
   \`\`\`
   /ny-ops <the product link>
@@ -189,29 +222,33 @@ Get this right and section 5 is three checks instead of seven clicks.
 - [ ] Claude checks the connection, names the store and builds everything
 - [ ] Claude tells you the STORE NAME and DOMAIN for the next steps
 
-## 4. Domain (Loopia)
+## 5. Right after the build – the theme and the name
+The theme comes FIRST. Everything you check in sections 6–13 is checked
+against what the customer actually sees, and until the theme is published the
+customer sees the old one.
+${temarad}
+- [ ] Settings → General → Store name → **${v.brand}** → Save
+      This is what the order emails, the checkout, the review requests and the
+      Meta page are all named after – so it happens before any of them.
+${marknadsrader.length > 0 ? `${marknadsrader.join('\n')}\n` : ''}
+## 6. Shopify Payments + Klarna
+Early on purpose: the verification can take days, and nothing in the cart can
+be tested until a payment provider is live.
+- [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you
+- [ ] Same page → **Klarna** → tick → Save
+- [ ] Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
+
+## 7. Domain
+Loopia first – Shopify cannot connect a domain that is not bought, and the
+sender-email verification link is only readable once the forwarding works.
 - [ ] Log in to Loopia
 - [ ] Buy **${v.doman}** – registrant must be the company, not you
 - [ ] Domain → Email → Forwarding → create **${v.mail}** → forward to **${v.inkorg}**
 - [ ] Send a test email to **${v.mail}** – confirm it arrives
+- [ ] Shopify → Settings → Domains → Connect existing domain → **${v.doman}** → follow the DNS steps → **Set as primary**
+- [ ] Shopify → Settings → Notifications → Sender email → **${v.mail}** → Save → click the verification link in the inbox
 
-## 5. Shopify – basics
-The first three should ALREADY be right if you typed the company address in
-section 1. Check them – do not skip them. Claude cannot change any of the
-three, and the prices, the checkout and the discount codes are wrong until
-they are correct.
-- [ ] Settings → General → **Store currency** says **${v.valuta}**
-      Wrong? Change it here, then write those exact words to Claude Code:
-      **currency and language are set**
-      The discount codes are stored in the store's currency and have to be
-      written again, and that sentence is what starts it.
-- [ ] Settings → Markets → **${v.huvudland}** is the primary market
-- [ ] Settings → Languages → **${v.sprak}** is the default
-- [ ] Settings → General → Store name → **${v.brand}** → Save
-- [ ] Settings → Domains → Connect existing domain → **${v.doman}** → follow the DNS steps → Set as primary
-- [ ] Settings → Notifications → Sender email → **${v.mail}** → Save → click the verification link in the inbox
-
-## 5b. Shopify – the EU withdrawal button (required by law)
+## 8. The EU withdrawal button (required by law)
 Since 19 June every EU store must have a clear "cancel my order" button the
 customer can find, a two-step confirmation, and an automatic confirmation
 email. Shopify's self-serve returns do all three — but only once you switch
@@ -225,34 +262,40 @@ some member states.
 - [ ] Settings → Policies → **Return rules** → return window **${v.angerratt} days**
       from delivery, and say who pays the return shipping
 - [ ] Same page → **Cancellation window** → until the order is fulfilled
-- [ ] Open the store and check: **Ångra köp** is in the footer, and it opens
-      the account page. If it opens nothing, the account setting above is off.
 
-## 6. Shopify – payments
-- [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you
-- [ ] Same page → **Klarna** → tick → Save
-- [ ] Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
-
-## 7. Judge.me
+## 9. Judge.me
 - [ ] Apps → search "Judge.me" → Install (free plan)
 - [ ] Judge.me → Settings → Language → **${v.sprak}**
 - [ ] Judge.me → Settings → Review Widget → star color: **${v.stjarna}**
 ${recensionsrader.join('\n')}
-- [ ] Open the product page → check the reviews show their original dates (never "just now")
+  The upload is yours and stays yours: Judge.me's API overwrites every review
+  date with the moment of import (measured 2026-09-08), the app's own file
+  keeps the original dates.
 
-## 8. Meta
+## 10. Meta
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **${v.brand}**
 - [ ] Copy the **Page ID** → give to Claude Code
 - [ ] The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
 
-## 9. Discord
+## 11. Discord
 - [ ] Discord → + → Create server: **${v.brand}**
 - [ ] Open the invite link Claude Code gives you → **Authorize** the bot
 
-## 10. Hand over
-- [ ] Tell Claude Code: **"Store ready: ${v.brand}"** – it creates the pixel, builds Discord channels and imports reviews
-${temarad}
-${marknadsrader.length > 0 ? `${marknadsrader.join('\n')}\n` : ''}- [ ] Install the **WeTracked** app from the Shopify App Store
+## 12. Tell Claude the store is ready
+- [ ] Write to Claude Code: **"Store ready: ${v.brand}"** – it creates the pixel and builds the Discord channels
+
+## 13. Test the store in a real browser (this is the receipt for 5–12)
+Do it on a phone, on **${v.doman}**, as a customer – not in the admin preview.
+Nothing above counts as done until this passes.
+- [ ] The product page opens and the reviews show their original dates (never "just now")
+- [ ] Add to cart → the cart upsell shows → go to checkout
+- [ ] The checkout shows **${v.valuta}** and **Klarna**
+- [ ] **Ångra köp** is in the footer and it opens the account page
+      (opens nothing = customer accounts in section 8 is still off)
+- [ ] Tell Claude what you saw – a screenshot of anything that looks wrong
+
+## 14. Hand over
+- [ ] Install the **WeTracked** app from the Shopify App Store
 ${pixelrad}
 - [ ] Events Manager → Data sources → **${v.brand}** → Settings → Conversions API → **Generate access token** → copy it
 - [ ] WeTracked → paste the **Conversions API token** (never send it in chat or email)
@@ -260,7 +303,7 @@ ${pixelrad}
 - [ ] Then: Settings → Users → click the store owner's name → **Transfer store ownership** → **${v.agare}** → enter your password → confirm
 - [ ] Owner changes the Loopia password afterwards
 
-## 11. Ads (a NEW session)
+## 15. Ads (a NEW session)
 - [ ] Open a NEW Claude session — not the one you built the store in
 - [ ] Write: **/ny-annonser ${v.id}** + the Bäverbutiken product link
 - [ ] The link is needed once per store — after that just **/ny-annonser ${v.id}**
