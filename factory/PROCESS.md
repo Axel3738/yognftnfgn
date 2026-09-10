@@ -263,6 +263,12 @@ Mätningar från samma bygge:
   Matchningen sker på VÄRDE, så källtexten i underlaget måste vara exakt
   temats — därför står de engelska orden i `oversattning-sv.json` under
   `tema.default.*`. Ren Liquid (`{{ product.vendor }}`) räknas inte som läcka.
+  Och den sista: trust- och leveransraden i produktmallen är `custom_liquid`
+  som `tema.byggProduktTemplate` locale-branchar ur `nb['liquid.trust.<i>']`
+  och `liquid.delivery.*` — underlaget skrev aldrig de nycklarna, så "Fri
+  frakt" och "ångerrätt" stod kvar på /nb fast registreringen var grön.
+  Nu skrivs de; **tema-steget måste köras om (`--igen tema`) när nb-filen
+  kommit**, för produktmallen byggs i steg 3, långt före översättningen.
 - **Loggans tillbakaläsning behöver några sekunder.** `settings_data.json`
   läst direkt efter skrivningen svarade `logo: ""` — värdet satt kvar strax
   efter. `logga.mjs` läser om upp till sex gånger med 2,5 s paus.

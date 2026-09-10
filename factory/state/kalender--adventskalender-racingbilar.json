@@ -49,17 +49,13 @@
       "manuell": "Ingen Judge.me-token (env JUDGEME_KALENDER_TOKEN) — VA:n importerar output/adventskalender-racingbilar/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
     }
   },
-  "uppdaterad": "2026-09-10T07:47:06.083Z",
+  "uppdaterad": "2026-09-10T08:01:28.241Z",
   "qa": {
     "gron": false,
     "kritiska": [
-      "bilder",
       "tracking",
-      "doman",
-      "villkor",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "doman"
     ],
-    "tid": "2026-09-10T07:47:06.082Z"
+    "tid": "2026-09-10T08:01:28.241Z"
   }
 }

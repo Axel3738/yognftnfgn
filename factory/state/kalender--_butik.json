@@ -51,8 +51,7 @@
         "sections/opf-faq.liquid",
         "assets/ms-paket.js",
         "sections/header-group.json",
-        "snippets/ms-head.liquid",
-        "snippets/ms-paket.liquid"
+        "snippets/ms-head.liquid"
       ],
       "produktmall": "verifierad",
       "upsell": null
@@ -173,21 +172,37 @@
       ]
     },
     "oversatt": {
-      "klar": false,
-      "manuell": "nb: översätt med subagent (sonnet) — output/kalender/oversattning-sv.json (102 nycklar) → oversattning-nb.json med samma nycklar, kör sen --igen oversatt",
-      "underlag": 102,
-      "utfall": {}
+      "klar": true,
+      "underlag": 120,
+      "utfall": {
+        "nb": {
+          "registrerade": 0,
+          "saknade": 0,
+          "perTyp": {
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 0,
+            "sida": 0,
+            "menylänk": 0,
+            "paket": 0,
+            "policy": 0,
+            "kollektion": 0,
+            "temamall": 0,
+            "sektionsgrupp": 0
+          },
+          "granskning": "4221/4228"
+        }
+      }
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/204938314071",
   "arbetstemaNamn": "AdventLane – CRO v1",
-  "uppdaterad": "2026-09-10T07:46:59.710Z",
+  "uppdaterad": "2026-09-10T08:01:21.866Z",
   "qa": {
     "gron": false,
     "kritiska": [
-      "kundvy-startsida",
-      "markörer /nb"
+      "kundvy-startsida"
     ],
-    "tid": "2026-09-10T07:46:59.710Z"
+    "tid": "2026-09-10T08:01:21.866Z"
   }
 }
