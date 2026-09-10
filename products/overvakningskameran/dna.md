@@ -4,34 +4,51 @@
 **LP:** https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning
 **Konto:** MagiBorsten `1867947880635861` (SEK) · Kampanj `Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21` (`120249989799680291`) · Sida `678639638662543`
 **Break-even-ROAS (kill):** 1,57 → **break-even-CPA ≈ 509 kr** · **Target-CPA:** ej satt (rond-produkt utanför `products/products.json` — fråga Axel innan en target sätts)
-**Senast uppdaterad:** 2026-09-06, tredje körningen (`/cs` via `/rond-auto` → batch #3 briefad,
-rond-flagga "mata vinnaren — skalats 4 gånger på en vecka")
+**Senast uppdaterad:** 2026-09-10, fjärde körningen (`/cs` via `/rond-auto` → batch #4 briefad,
+rond-flagga "4 dagar sedan batch #3", ingen "Fokus:" angiven)
 
 ---
 
 ## ⚠️ Läs detta först
 
-1. **Två bevisade annonser nu (avläst 2026-09-06, livstid):**
-   `Overvakningskamera_SP_2` (n=29 köp, CPA 387 kr, 74 % av spenden) och
-   `Overvakningskamera_CS_3` (n=8 köp, CPA 252 kr — **överlevde sin andra
-   avläsning enligt ANALYSMETOD steg 2c**: 09-03 hade den 3 köp/339 kr, 09-06
-   8 köp/2 014 kr, marginal-CPA 335 kr på 5 inkrementella köp över 3 dygn).
-   Allt annat i kontot (30 annonser) är "för tidigt".
-2. **Vinnaren mjuknar i skalning.** `SP_2` livstids-ROAS 3,33 (09-03) → 2,99
-   (09-06); marginal-CPA mellan avläsningarna **488 kr** (3 905 kr / 8 köp,
-   3 dygn isär — grinden i steg 2b uppfylld) mot break-even 509 kr; last_3d
-   CPA 528 kr. Frequency är fortfarande låg (1,69 livstid, 1,24 senaste 3 d)
-   och CPM steg 135 → 161 kr — det är regression vid skalning (steg 5), inte
-   utmattning. **Slutsats: fler budgethöjningar på samma creative ger allt
-   mindre; batch #3 matar vinnaren med nya iterationer i stället.**
-3. **Meta flyttar spend till `CS_3`:** 13 % av livstidsspenden men 24 % av de
-   senaste 3 dygnen. Algoritmens dom pekar mot demo-beviset (appens
-   AI-detektering) + synligt pris.
-4. **Ett faktafel sitter kvar i `SP_2`:s live-copy** ("Tusentals nöjda hushåll" —
-   kampanjen har 40 köp totalt). ADCOPY_SP-dokumentet i Drive har platshållaren
-   "Över [X] nöjda hushåll" — någon fyllde i "Tusentals" vid uppladdningen. Skriv
-   aldrig in raden i nya briefer. `CS_3`:s live-copy har påhittad brist-urgency
-   ("Bara idag", "Begränsat lager", "snart slut") — samma regel.
+1. **Tre bedömbara annonser nu (avläst 2026-09-10, livstid):**
+   `Overvakningskamera_SP_2` (n=35 köp, CPA 397,59 kr, 51,8 % av spenden),
+   `Overvakningskamera_CS_3` (n=16 köp, CPA 385,84 kr, 23,0 %) och **nyligen
+   tillkommen** `Overvakningskamera_CS_2` (n=8 köp, CPA 461,33 kr, 13,7 % —
+   passerade signifikansgrinden för första gången denna körning, redan över
+   3-4-köpsgränsen i steg 2c så preliminärt men inte skört). Kampanjen totalt:
+   26 885 kr spend, 69 köp, CPA 389,64 kr, ROAS 3,02. Övriga 40 annonser
+   (inkl. batch #3:s 9 nya) är "för tidigt" — ingen har nått 300 kr spend
+   OCH 3 köp samtidigt.
+2. **⚠️ NYTT FYND — `CS_3`:s marginal-CPA har passerat break-even för första
+   gången.** Delta 09-06→09-10 (4 dygn, grinden i steg 2b uppfylld: ≥3 dygn,
+   ≥5 inkrementella köp): +4 159,47 kr / +8 köp = **519,93 kr marginal-CPA**,
+   mot break-even 508,92 kr. Livstids-CPA är fortfarande sund (385,84 kr) så
+   det är INTE ett kill-läge (kräver ≥500 kr spend och en ihållande trend på
+   livstidsnivå) — men det är samma mönster som `SP_2` visade två körningar
+   före den blev "mata vinnaren, inte skala budget". Batch #4 itererar på
+   `CS_3` i stället för att bara pumpa mer spend.
+3. **`SP_2` har stabiliserats något, inte fortsatt mjuknat.** Marginal-CPA
+   09-06→09-10: **447,75 kr** (2 686,51 kr / 6 köp) — bättre än förra
+   avläsningens 488 kr, fortfarande under break-even. Livstids-CPA steg dock
+   svagt 387 → 397,59 kr, och last_3d-fönstret (endast 3 köp, under grinden i
+   2b — redovisas som riktningssignal, inte en giltig marginal-CPA) visar
+   588,32 kr / ROAS 0,98. Blandad bild: fortsätt iterera (inte skala budget),
+   men läget är INTE lika akut som föregående körnings mönster antydde.
+4. **`CS_2` delar `CS_3`s exakta copy men annan visuell — ett rent A/B med
+   copy hållen konstant.** `CS_2` (produktrender, ingen app-UI) och `CS_3`
+   (riktig app-inspelning) har ordagrant samma creative-text (samma
+   ADCOPY_CS-dokument, "Bara idag: 799 kr istället för 1000 kr…"). `CS_3`
+   (demo-visual) CPA 385,84 kr slår `CS_2` (render-visual) CPA 461,33 kr —
+   båda lönsamma, båda ≥3 köp. Se mönster 2 nedan: nu **bevisad**, inte
+   längre hypotes.
+5. **Två faktafel sitter kvar i live-copy, tredje gången flaggat, rörs inte**
+   (regel: aktiva annonser med spend ändras aldrig). `SP_2`: "Tusentals nöjda
+   hushåll" (kampanjen har 69 köp totalt, inte tusentals). `CS_3` OCH `CS_2`
+   (samma dokument): påhittad brist-urgency ("Bara idag", "Begränsat lager",
+   "snart slut"). Batch #4 testar båda felen direkt: `SP_15_H1` byter ut
+   proof-raden mot en verifierbar siffra, `CS_8_H1`/`CS_9_H1` tar bort all
+   påhittad urgency på vardera visual.
 5. **Recensionerna är importerade, inte organiska — verifierat mot Judge.me
    REST-API 2026-09-06:** alla 10 kamerarecensioner har `source: wizard`,
    `verified: not-yet` och samma tidsstämpel `2026-08-24T22:00:00Z`. Noll
@@ -53,38 +70,58 @@ rond-flagga "mata vinnaren — skalats 4 gånger på en vecka")
 
 ## Winning DNA
 
-### Bevisad — `SP_2` (n=29 köp, avläst 2026-09-06)
+### Bevisad — `SP_2` (n=35 köp, avläst 2026-09-10)
 - **Hook:** citat i jag-form ("Jag sover bättre nu.") — känsloeffekt, inte
   produktegenskap. Öppningsbild: extrem närbild på kameraenheten på stolpen,
   trädgård i bokeh (märket UOMI syns på enheten).
 - **Struktur:** citat → "Det är vad våra kunder säger" → 4 konkreta
-  funktionsbullets utan adjektiv → garanti → mjuk CTA.
+  funktionsbullets utan adjektiv → garanti → mjuk CTA. Priset syns ALDRIG i
+  denna creative — bara i endcard.
 - **Fakta som används:** två linser/355°, AI skiljer människa från djur, direkt
   mobilnotis, 30 dagars nöjd-kund-garanti.
-- **Kedjan:** hook rate 95 %, hold 16 %, CTR 3,81 %, CVR 0,9 % av klick, CPM
-  135 kr. Den får många klick men konverterar en liten andel — läckan sitter i
+- **Kedjan:** hook rate 95 %, hold 16 %, CTR 3,77 %, CVR ≈0,9 % av klick, CPM
+  141,63 kr. Den får många klick men konverterar en liten andel — läckan sitter i
   konverteringen, inte i hooken.
-- **Vinstbidrag livstid:** (509 − 387) × 29 = **3 532 kr** (63 % av bedömbar vinst).
+- **Vinstbidrag livstid:** (508,92 − 397,59) × 35 = **3 896 kr** (62,4 % av bedömbar vinst).
+- **Marginal-CPA 09-06→09-10 (4 dygn, 6 inkrementella köp):** 447,75 kr —
+  under break-even och något BÄTTRE än förra avläsningens 488 kr. Fortfarande
+  softening jämfört med den ursprungliga ~350 kr-nivån, men inte i fritt fall.
 
-### Bevisad — `CS_3` (n=8 köp, överlevde andra avläsningen 2026-09-06)
+### Bevisad — `CS_3` (n=16 köp, avläst 2026-09-10)
 - **Visuellt:** rå skärminspelning av appen, nattläge (svartvit IR-bild),
   dubbelvy (två flöden samtidigt), röda rutor låser på tre personer — hunden
   i bild får ingen ruta. Inga captions.
 - **Copy:** hårt pris ("799 kr istället för 1000 kr", 20 %) + Klarna + fri
-  frakt, tyvärr blandat med påhittad urgency (se punkt 4).
-- **Kedjan:** hook rate 91 %, hold 11 %, CTR 2,51 %, **CVR 2,9 % av klick**
-  (3× `SP_2`), CPM 184 kr. Färre klick, men de som klickar köper.
-- **Vinstbidrag livstid:** (509 − 252) × 8 = **2 058 kr** (37 %).
+  frakt, tyvärr blandat med påhittad urgency (se punkt 5).
+- **Kedjan:** hook rate 93 %, hold 10 %, CTR 2,14 %, CVR ≈1,9 % av klick
+  (fallande från 2,9 % vid n=8), CPM 155,65 kr.
+- **Vinstbidrag livstid:** (508,92 − 385,84) × 16 = **1 969 kr** (31,5 %).
+- **⚠️ Marginal-CPA 09-06→09-10 (4 dygn, 8 inkrementella köp): 519,93 kr —
+  har passerat break-even för första gången.** Bevaka nästa avläsning innan
+  någon slutsats skrivs in som bevisad; hittills bara ETT observerat tillfälle
+  över gränsen (steg 2b/2c-logik: kräver upprepning för att bli en trend).
 
-## Variabelmönster (ANALYSMETOD 6b, körning 3)
+### Preliminär — `CS_2` (n=8 köp, ny denna körning, 2026-09-10)
+- **Visuellt:** cinematisk produktrender i närbild (UOMI-märket synligt),
+  INGEN app-UI, INGEN skärminspelning — motsatsen till `CS_3`:s visual.
+- **Copy:** ORDAGRANT samma som `CS_3` (samma ADCOPY_CS-dokument i Drive) —
+  "Bara idag: 799 kr istället för 1000 kr…", samma påhittade urgency.
+- **Kedjan:** hook rate 92 %, hold 15 %, CTR 2,32 %, CVR ≈1,3 % av klick, CPM
+  141,91 kr.
+- **Vinstbidrag livstid:** (508,92 − 461,33) × 8 = **381 kr** (6,1 %).
+- Ingen marginal-CPA ännu (första avläsningen över grinden). last_3d CPA
+  461,08 kr — matchar livstid, inget tecken på volatilitet.
 
-| # | Mönster | Status | Instruktion i batch #3 |
+## Variabelmönster (ANALYSMETOD 6b, körning 4)
+
+| # | Mönster | Status | Instruktion i batch #4 |
 |---|---|---|---|
-| 1 | `SP_2`:s citat→bullets→garanti-struktur är lönsam men mättas i skalning (marginal-CPA 488 kr) | **Bevisad** (n=29, två avläsningar) | Behåll mittendelen, variera EN yttre variabel per iteration, ship snabbt (`SP_11`–`SP_13`) |
-| 2 | Bevis visat från riktig app (röda rutor på människor, inte på hunden) + synligt pris ger 3× högre CVR per klick | **Bevisad** (n=8, överlevde 2c) | Lägg appbilden INUTI vinnarens struktur (`SP_12_H1`); använd riktig app-frame som hero i statics (`SP_14_1`, `CS_7_1`, `BOF_6_1`) |
-| 3 | Produktrender-statics får klick (CTR 3,1–3,8 %) men noll köp: `LI_1_1` 226 kr, `CS_4_1` 224 kr, `CO_2_1` 149 kr, `CS_2_1` 152 kr — 0 köp på 4 500 visningar tillsammans | **Hypotes** (alla under 300 kr var, ingen dom) | Testa hero-bilden isolerat: samma budskap, riktig app-frame i stället för render |
-| 4 | Hook rate 91–98 % oavsett koncept — hooken är inte spaken; hold (11–16 %) och CVR är | **Bevisad** (tredje avläsningen i rad) | Iterera på sekund 3–12 och på avslutet, inte på första rutan (`SP_13_H1` kortar hela manuset, `CS_6_H1` lägger captions på mitten) |
-| 5 | Nya creatives i delad CBO bredvid dominant vinnare svälter | **Bevisad** (tredje gången) | Förvänta 0–30 kr/dygn per ny annons; ingen dom före 300 kr / 3 köp |
+| 1 | `SP_2`:s citat→bullets→garanti-struktur är lönsam men mättas i skalning (marginal-CPA 448–488 kr, stabiliserad snarare än förvärrad denna körning) | **Bevisad** (n=35, tre avläsningar) | Behåll mittendelen; isolera proof-radens sanningshalt (`SP_15_H1`) och offer-synlighet (`SP_16_H1`) som nästa två variabler |
+| 2 | Samma copy (ordagrant) på två olika visuals: app-demo (`CS_3`, CPA 386 kr, n=16) slår produktrender (`CS_2`, CPA 461 kr, n=8) — men BÅDA är lönsamma | **Bevisad** (≥2 annonser, ≥3 köp vardera — rent A/B med copy hållen konstant) | Demo-visual är starkare, men render fungerar också: bygg vidare på båda (`CS_8_H1` demo, `CS_9_H1` render), inte bara på demon |
+| 3 | Produktrender-statics får klick (CTR 3,1–3,8 %) men noll köp hittills: `LI_1_1` 320,50 kr/0, `CS_4_1` 477,91 kr/1, `CS_2_1` 472,25 kr/1 — inget bedömbart än | **Hypotes** (ingen når 3 köp) | Fortsätt testa app-frame som statisk hero — första riktiga försöket är `CS_10_1` denna körning (`SP_14_1`/`CS_7_1` från batch #3 väntar fortfarande på produktion) |
+| 4 | Hook rate 91–98 % oavsett koncept — hooken är inte spaken; hold (10–16 %) och CVR är | **Bevisad** (fjärde avläsningen i rad) | Fortsätt iterera på mitten/avslutet, inte på första rutan |
+| 5 | Nya creatives i delad CBO bredvid dominanta vinnare svälter | **Bevisad** (fjärde gången) | Förvänta 0–90 kr/dygn per ny annons de första dagarna; ingen dom före 300 kr / 3 köp |
+| 6 | Fabricerad urgency-copy ("Bara idag", "Begränsat lager – snart slut") ligger i BÅDA `CS`-vinnarnas live-copy — okänt om den hjälper eller om annonserna konverterar TROTS den | **Hypotes, ny denna körning** | `CS_8_H1`/`CS_9_H1` testar samma struktur minus den fabricerade delen — första gången detta isoleras rent |
 
 ## Viktig nyans: hooken är INTE det som särskiljer vinnaren
 
@@ -95,42 +132,58 @@ hooken".
 ## Losing DNA
 
 Inget bevisat kill än — inget har nått ≥500 kr spend under break-even.
-`CS_2` är närmast: 303 kr, 0 köp (video, samma "clearance"-copy som `CS_3` men
-annan visuell). Passerar den 500 kr utan köp är den första kill-kandidaten.
+`CS_2` graduerade till Winning DNA denna körning (8 köp). Nya närmaste
+bevaknings-kandidat: `LI_1_1` (320,50 kr, 0 köp). Passerar den 500 kr utan
+köp är den första kill-kandidaten.
 
 ## Behåll alltid
 
-- Citat-hooken och de fyra funktionsbulletsen (bevisade n=29)
-- Riktig app-inspelning som bevis (bevisad n=8) — aldrig mockup eller genererad UI
+- Citat-hooken och de fyra funktionsbulletsen (bevisade n=35)
+- Riktig app-inspelning som bevis (bevisad n=16) — aldrig mockup eller genererad UI
+- Produktrender som visual (bevisad n=8, `CS_2`) — svagare än app-demo men
+  fortsatt lönsam, inte att skrota
 - 30 dagars-garantin synlig i varje annons; sidans egen formulering:
   "Gillar du den inte får du pengarna tillbaka"
-- Verkligt pris 799 kr / jämförpris 1 000 kr — verifierat mot LP 2026-09-06.
-  Ändras priset ska ALLA pågående annonser med gammalt pris flaggas.
+- Verkligt pris 799 kr / jämförpris 1 000 kr — omverifierat mot LP 2026-09-10
+  (Shopify storefront JSON, oförändrat sedan 08-05). Ändras priset ska ALLA
+  pågående annonser med gammalt pris flaggas.
 
 ## Testa kontrollerat
 
-- **Batch #3 (denna körning):** hook-rad = fakta i stället för känsla
-  (`SP_11_H1`), bevis visat i stället för berättat (`SP_12_H1`), 12 s-klipp
-  (`SP_13_H1`), captions på `CS_3`:s råfilm (`CS_6_H1`), app-frame som hero
-  i statics (`SP_14_1`, `CS_7_1`), BOF-serie 4–6.
-- **Batch #2 (fortfarande Draft hos redigerarna):** hook-visual (`SP_8_H1`),
-  CTA/offer-rad (`SP_9_H1`), on-camera-talare (`SP_10_H1`), installatör (`AU_2_H1`).
-- **Batch #1-videor (launchade 09-05, 2–11 kr var):** natt, UGC, kollektiv
-  proof, risk, jämförelse, auktoritet — otestade tills de får budget.
+- **Batch #4 (denna körning):** proof-radens sanningshalt (`SP_15_H1`),
+  offer-synlighet på `SP_2`:s struktur (`SP_16_H1`), fabricerad urgency
+  borttagen på demo-visual (`CS_8_H1`) och render-visual (`CS_9_H1`), nytt
+  koncept borta-hemifrån (`RI_3_H1`), jämförelseformat på bevisad demo-footage
+  (`CO_4_H1`), listicle med enbart verifierade specs (`LI_2_1`), första
+  app-frame-statican (`CS_10_1`), BOF-serie 7–9 (wifi, väder, notis).
+- **Batch #3 (fortfarande Draft/oproducerad, 2 statics + 3 BOF):** app-frame
+  som hero i statics (`SP_14_1`, `CS_7_1`), BOF-serie 4–6.
+- **Batch #2 (fortfarande Draft, 1 video):** `SP_10_H1` (on-camera-talare) —
+  enda kvarvarande oproducerade från batch #2.
+- **Batch #1/#2/#3-videor med liten spend (2–90 kr):** natt, UGC, kollektiv
+  proof, risk, jämförelse, auktoritet, hook-visual, CTA-rad — otestade tills
+  de får riktig budget.
 
 ## Undvik
 
-- Ogrundade volympåståenden ("tusentals kunder") — 40 köp totalt
-- Påhittad brist-urgency ("snart slut", "bara idag", "begränsat lager")
+- Ogrundade volympåståenden ("tusentals kunder") — 69 köp totalt, inte tusentals
+- Påhittad brist-urgency ("snart slut", "bara idag", "begränsat lager") — sitter
+  fortfarande kvar i BÅDA `CS`-vinnarnas live-copy, se punkt 5. Batch #4 testar
+  om den går att ta bort utan att tappa CVR.
 - Fabricerad brottsstatistik i risk-vinkeln
-- Påhittade installationsspecifikationer (kabel, ström, IP-klass) — inget verifierat
-- Recensionstext från sidan som "kundröst" — importerad, se punkt 5
+- Påhittade installationsspecifikationer (kabel, ström, IP-klass) — inget
+  verifierat; LP säger bara "Tål utomhusbruk året om", ingen IP-siffra
+- Recensionstext från sidan som "kundröst" — importerad, se punkt 5. Verifierat
+  igen 2026-09-10 via Judge.me REST: samtliga 10 recensioner fortfarande
+  `source: wizard`, `verified: not-yet`, identisk tidsstämpel 2026-08-24.
 - Genererade natt-/app-bilder — vi har riktig inspelning, använd den
 
 ## Obevisat
 
-Allt utom SP- och CS-mekanismerna. Mönster 3 (render vs app-frame) är
-hypotes tills två statics med app-frame nått 3 köp var.
+Mönster 3 (render vs app-frame i STATICS specifikt) — fortsatt hypotes, ingen
+static med app-frame-hero har körts än (`CS_10_1` denna körning är första
+försöket). Mönster 6 (fabricerad urgency hjälper/skadar) — helt otestat innan
+`CS_8_H1`/`CS_9_H1`.
 
 ## Konkurrentsignaler (Meta Ad Library, "övervakningskamera", SE, 2026-09-06 — 32 aktiva)
 
@@ -148,14 +201,22 @@ hypotes tills två statics med app-frame nått 3 köp var.
 
 ## Öppna luckor
 
-- **Shopify MCP kräver auth i sessionen** (2026-09-06) — priset verifierades
-  via landningssidan direkt (WebFetch) i stället. Fortfarande ingen
+- **Shopify MCP kräver auth i den här sessionen igen** (2026-09-10, samma som
+  09-06) — priset verifierades via Shopify storefrontens publika JSON-endpoint
+  i stället (`xn--bverbutiken-l8a.se/products/….json`). Fortfarande ingen
   korsvalidering av köp mot Shopify.
 - Ingen `target_cpa_sek` satt — fråga Axel om produkten ska in i
-  `products/products.json` när/om den går mot drift (40 köp nu, gränsen är 30
+  `products/products.json` när/om den går mot drift (69 köp nu, gränsen är 30
   köp + livstids-ROAS över break-even → **produkten uppfyller driftregeln**,
   kartan säger fortfarande `test`; ändras av `/rond-auto`, inte av `/cs`).
-- Batch #2:s 4 videor ligger som `Draft` i Notion sedan 09-03 — ingen
-  redigerare har tagit dem. Produktionsflaskhals, inte CS-fråga.
-- Review-bilder: 0 organiska recensioner (Judge.me verifierat) — kan byggas
-  först när en riktig kund skrivit.
+- Batch #2:s `SP_10_H1` ligger fortfarande som `Draft` i Notion sedan 09-03 —
+  ingen redigerare har tagit den. Batch #3:s 2 statics + 3 BOF (`SP_14_1`,
+  `CS_7_1`, `BOF_4_1`–`BOF_6_1`) är också fortfarande oproducerade.
+  Produktionsflaskhals, inte en CS-fråga.
+- Review-bilder: 0 organiska recensioner (Judge.me omverifierat 2026-09-10,
+  700 recensioner över hela butiken genomsökta) — kan byggas först när en
+  riktig kund skrivit.
+- `CS_3`:s marginal-CPA passerade break-even för första gången denna körning
+  (519,93 kr). Nästa `/cs`-körning måste läsa av om det upprepas — om ja är
+  det en trend (samma mönster som `SP_2` visade två körningar tidigare), om
+  nej var det brus på en 4-dygnsperiod.
