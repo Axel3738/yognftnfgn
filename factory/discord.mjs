@@ -9,7 +9,7 @@
 // skapa servrar: POST /guilds svarar 400 kod 20001 "Bots cannot use this
 // endpoint" (mätt på TankGuard 2026-09-08, boten satt i 3 servrar — gränsen
 // "färre än 10" gäller alltså inte längre). Servern skapas därför alltid av
-// VA:n (checklistans steg 9) som auktoriserar boten via länken skriptet
+// en människa (checklistans avsnitt 9) som auktoriserar boten via länken skriptet
 // skriver ut utan --guild; sen bygger boten kanalerna med --guild <id>.
 //
 // Redigerarlistan bor i factory/redigerare/standby.md (byggs av
@@ -85,6 +85,39 @@ async function discord(sokvag, { metod = 'GET', kropp = null } = {}) {
   const data = await svar.json().catch(() => ({}));
   if (!svar.ok) throw new Error(`Discord ${metod} ${sokvag} → ${svar.status}: ${JSON.stringify(data).slice(0, 200)}`);
   return data;
+}
+
+// Ett meddelande i en kanal boten redan ser. Används av startskottet
+// (factory/startskott.mjs --discord) — larmet "KLAR FÖR OPS" till Axel.
+// Returnerar Discords meddelandeobjekt (id + channel_id) som tillbakaläsning.
+export async function skickaMeddelande(kanalId, innehall) {
+  if (!kanalId) throw new Error('skickaMeddelande kräver ett kanal-id.');
+  return discord(`/channels/${kanalId}/messages`, { metod: 'POST', kropp: { content: innehall } });
+}
+
+/** Servrarna boten sitter i: [{ id, name }]. */
+export async function hamtaGuilds() {
+  const lista = await discord('/users/@me/guilds');
+  return (Array.isArray(lista) ? lista : []).map((g) => ({ id: g.id, name: g.name }));
+}
+
+/** En server med ägare: { id, name, owner_id }. Ägaren är den larmet pingar. */
+export async function hamtaGuild(guildId) {
+  const g = await discord(`/guilds/${guildId}`);
+  return { id: g.id, name: g.name, owner_id: g.owner_id };
+}
+
+/**
+ * Textkanalen `namn` i servern — hittas om den finns, skapas annars.
+ * Axels besked 2026-09-10: "vi har ju boten för det" — ingen människa ska
+ * behöva skapa kanalen eller kopiera ett kanal-id. Returnerar { id, name, skapad }.
+ */
+export async function hittaEllerSkapaKanal(guildId, namn) {
+  const kanaler = await discord(`/guilds/${guildId}/channels`);
+  const befintlig = (Array.isArray(kanaler) ? kanaler : []).find((k) => k.type === 0 && k.name === namn);
+  if (befintlig) return { id: befintlig.id, name: befintlig.name, skapad: false };
+  const ny = await discord(`/guilds/${guildId}/channels`, { metod: 'POST', kropp: { name: namn, type: 0 } });
+  return { id: ny.id, name: ny.name, skapad: true };
 }
 
 // Bygger kanalstrukturen i servern guildId. Utan guildId försöks POST /guilds
@@ -164,7 +197,7 @@ async function huvud() {
     const app = await discord('/oauth2/applications/@me');
     // Manage Channels + Manage Roles + Manage Guild (ikon) + Create Invite.
     const lank = `https://discord.com/oauth2/authorize?client_id=${app.id}&scope=bot&permissions=268435505`;
-    console.log(`\n🖐 Boten kan inte skapa servrar. VA:n: skapa servern "${plan.servernamn}" i Discord, öppna länken och välj servern:`);
+    console.log(`\n🖐 Boten kan inte skapa servrar (checklistans avsnitt 9). Skapa servern "${plan.servernamn}" i Discord, öppna länken och välj servern:`);
     console.log(`   ${lank}`);
     console.log('   Sen: node factory/discord.mjs <butik.yaml> --guild <server-id> [--ikon <logga.png>]');
     process.exit(1);

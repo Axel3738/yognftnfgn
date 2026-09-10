@@ -114,7 +114,7 @@ function huvud() {
   console.log(kvar.length > 0 ? kvar.map((r) => `  ⬜ ${r}`).join('\n') : '  (inget)');
   console.log(
     '\n⚠️ Knappen i policyn räcker inte i sig. Shopifys självbetjäningsreturer\n' +
-      '   måste slås på per butik — VA:ns checklista, avsnitt 5b.\n'
+      '   måste slås på per butik — checklistan, avsnitt 8.\n'
   );
 
   process.exit(kvar.length > 0 ? 1 : 0);

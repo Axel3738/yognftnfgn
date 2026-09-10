@@ -144,6 +144,21 @@ function stopp(rubrik, rader) {
 // Tema-id:t ur butiksstaten. Saknas det har tema-upload inte körts — då
 // kastar vi hellre än gissar (regel 1). `hamtaArbetstema(id)` verifierar
 // sedan att temat finns i butiken.
+/**
+ * Butiksadressen ur konfigen — den anslutningen ska landa på.
+ *
+ * `butik.myshopify` är det uttryckliga fältet; `judgeme.shop_domain` är
+ * reserven, eftersom butikerna som byggdes före 2026-09-10 bara har den.
+ * Saknas båda blir det null och anslutningen faller tillbaka på butiks-id:t
+ * som förut — ingen gammal butik går sönder av det här.
+ */
+export function onskadDomanUr(butik) {
+  const b = butik?.butik ?? {};
+  const kandidat = b.myshopify ?? b.myshopify_doman ?? butik?.judgeme?.shop_domain ?? null;
+  const t = String(kandidat ?? '').trim();
+  return t === '' ? null : t;
+}
+
 export function kravArbetstemaId(ctx) {
   const id = lasArbetstemaId(ctx.butiksstate);
   if (!id) throw new Error('Inget arbetstema i state — kör steget tema-upload först (--igen tema-upload).');
@@ -290,7 +305,7 @@ export const STEG = [
       return rader;
     },
     async kor(ctx) {
-      const r = await anslut(ctx.butik.butik.id, { torr: false });
+      const r = await anslut(ctx.butik.butik.id, { torr: false, onskadDoman: onskadDomanUr(ctx.butik) });
       console.log(`Connected: ${r.domain} ✓ (${r.name}, token ${r.tokenKalla})`);
       // Hela shop-objektet (policyer, SSL) läses med samma token — QA och
       // paket-steget behöver mer än anslutningens tre fält.
@@ -1282,7 +1297,7 @@ async function huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, ige
   if (dryRun) {
     // Spärrarna körs utan nätverk — så dry-run säger om miljön pekar rätt.
     try {
-      const r = await anslut(butik.butik.id, { torr: true });
+      const r = await anslut(butik.butik.id, { torr: true, onskadDoman: onskadDomanUr(butik) });
       ctx.torrAnslutning = { ok: true, domain: r.domain };
     } catch (e) {
       ctx.torrAnslutning = { ok: false, skal: e.message };

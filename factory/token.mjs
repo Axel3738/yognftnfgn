@@ -3,6 +3,9 @@
 // "Connected: <domän> ✓" innan något annat läses eller skrivs.
 //
 //   node factory/token.mjs --butik <id>            # anslut + skriv factory/.env
+//   node factory/token.mjs --butik <id> --doman <butik>.myshopify.com
+//                                                  # adressen ur prompten är facit:
+//                                                  # suffixet slås upp ur den
 //   node factory/token.mjs --butik <id> --kolla    # bara kontrollera, skriv ingenting
 //   node factory/token.mjs --butik <id> --torr     # inga nätverksanrop: bara spärrarna
 //
@@ -13,7 +16,7 @@
 // till factory/.env tillsammans med SHOPIFY_ADMIN_TOKEN_<BUTIK>, så varje
 // butiks token finns kvar när nästa bygge skriver över de allmänna raderna.
 //
-// Nycklarna (VA:n lägger in dem, checklistans steg 2). Per-butik-varianten
+// Nycklarna (läggs in för hand, checklistans avsnitt 3). Per-butik-varianten
 // med butiks-id i VERSALER vinner över den allmänna:
 //   SHOPIFY_SHOP[_<BUTIK>]            butikens myshopify-domän
 //   SHOPIFY_CLIENT_ID[_<BUTIK>]       appen "Fabriken" → Settings → Client ID
@@ -90,6 +93,31 @@ const arCliToken = (t) => /^atkn_/i.test(String(t ?? ''));
 // Per-butik-variabeln vinner, sen den allmänna. SHOPIFY_SHOP (miljön, satt av
 // VA:n för det NYA bygget) vinner över SHOPIFY_STORE_DOMAIN (factory/.env,
 // kan vara kvar från förra bygget).
+/**
+ * Vilket suffix bär nycklarna för DEN HÄR domänen?
+ *
+ * ⚠️ Axels beslut 2026-09-10: ingen ska behöva veta vad ett "butiks-id" är.
+ * VA:n sätter fyra variabler med vilket suffix som helst (enklast: butikens
+ * adress-början, som hon ändå skriver när hon döper appen) och skriver
+ * butiksadressen i prompten. Koden letar upp suffixet ur adressen.
+ *
+ * Alternativet — att hon hittar på ett id som matchar det koden gissar —
+ * kostade fyra dagar. Ett namn som två personer måste gissa lika är inte
+ * ett gränssnitt.
+ *
+ * Returnerar suffixet ('IKF0TU_5E') eller null när ingen variabel bär domänen.
+ */
+export function suffixForDoman(doman, env = process.env) {
+  const sokt = normaliseraDoman(doman);
+  if (!sokt) return null;
+  for (const [nyckel, varde] of Object.entries(env)) {
+    const m = /^SHOPIFY_SHOP_(.+)$/.exec(nyckel);
+    if (!m) continue;
+    if (normaliseraDoman(varde) === sokt) return m[1];
+  }
+  return null;
+}
+
 export function losNycklar(butikId, env = process.env) {
   const shop = normaliseraDoman(
     perButik(env, 'SHOPIFY_SHOP', butikId) || env.SHOPIFY_SHOP || env.SHOPIFY_STORE_DOMAIN || ''
@@ -303,7 +331,7 @@ export function tolkaMintfel({ status, kropp, doman, butikId }) {
     `   Den per-butik-variabeln vinner alltid över den allmänna.`,
     `2. Appen är faktiskt avinstallerad i ${doman}. Kolla i Shopify-admin:`,
     `   Inställningar → Appar och försäljningskanaler. Står "Fabriken" inte där`,
-    `   är det först då den ska installeras om (checklistans steg 2).`,
+    `   är det först då den ska installeras om (checklistans avsnitt 3).`,
     '',
     'Be aldrig någon installera om appen innan punkt 1 är kontrollerad.',
   ].join('\n');
@@ -316,7 +344,7 @@ export async function mintaToken({ shop, clientId, clientSecret, butikId } = {},
   const saknas = [!doman && 'SHOPIFY_SHOP', !id && 'SHOPIFY_CLIENT_ID', !hemlighet && 'SHOPIFY_CLIENT_SECRET'].filter(Boolean);
   if (saknas.length > 0) {
     throw new Error(
-      `Saknar ${saknas.join(', ')} i miljön — VA:n lägger in dem i sessionens Environment (checklistans steg 2). Klistra aldrig nycklar i chatten.`
+      `Saknar ${saknas.join(', ')} i miljön — de läggs in i sessionens Environment för hand (checklistans avsnitt 3). Klistra aldrig nycklar i chatten.`
     );
   }
   const svar = await fetchFn(`https://${doman}/admin/oauth/access_token`, {
@@ -382,16 +410,49 @@ export async function lasButik(shop, token, { fetchFn = fetch } = {}) {
 // Kastar med läsbart skäl vid saknade nycklar, misslyckad mint eller spärr.
 // Sätter process.env.SHOPIFY_STORE_DOMAIN + SHOPIFY_ADMIN_TOKEN och skriver
 // factory/.env (om inte torr/utanEnvFil). Returnerar aldrig tokenen.
-export async function anslut(butikId, { torr = false, utanEnvFil = false, env = process.env, envFil = ENV_FIL, fetchFn = fetch, nu = Date.now(), sparrAlternativ = {} } = {}) {
+export async function anslut(butikId, { torr = false, utanEnvFil = false, env = process.env, envFil = ENV_FIL, fetchFn = fetch, nu = Date.now(), sparrAlternativ = {}, onskadDoman = null } = {}) {
   const id = String(butikId ?? '').trim().toLowerCase();
   if (!id) throw new Error('anslut: butiks-id saknas.');
 
   // Miljön först, sen factory/.env (laddaEnv sätter aldrig över miljön).
   if (env === process.env) laddaEnv(envFil);
-  const n = losNycklar(id, env === process.env ? process.env : { ...lasEnvFil(envFil), ...env });
+  const miljo = env === process.env ? process.env : { ...lasEnvFil(envFil), ...env };
+
+  // Säger prompten vilken butik som ska byggas, är DEN adressen facit — inte
+  // butiks-id:t. Suffixet slås upp ur adressen, så VA:n aldrig behöver veta
+  // vad koden kallar butiken. (Axels beslut 2026-09-10.)
+  const onskad = normaliseraDoman(onskadDoman);
+  const uppslag = onskad ? suffixForDoman(onskad, miljo) : null;
+  const n = uppslag
+    ? losNycklar(uppslag, miljo)
+    : losNycklar(id, miljo);
+
+  if (onskad && normaliseraDoman(n.shop) !== onskad) {
+    const funna = Object.keys(miljo)
+      .filter((k) => /^SHOPIFY_SHOP(_|$)/.test(k))
+      .map((k) => `  ${k} = ${normaliseraDoman(miljo[k])}`)
+      .sort();
+    throw new Error(
+      [
+        `STOPP — ${onskad} finns inte i miljön. Ingenting byggdes.`,
+        '',
+        'Det här står i miljön i dag:',
+        funna.length > 0 ? funna.join('\n') : '  (inga SHOPIFY_SHOP-variabler alls)',
+        '',
+        `Lägg in butikens fyra rader. Suffixet får heta vad som helst — ta`,
+        `adressens början, den du redan skrev när du döpte appen:`,
+        `  SHOPIFY_SHOP_${envSuffix(onskad.replace(/\.myshopify\.com$/, ''))} = ${onskad}`,
+        `  SHOPIFY_CLIENT_ID_${envSuffix(onskad.replace(/\.myshopify\.com$/, ''))} = ...`,
+        `  SHOPIFY_CLIENT_SECRET_${envSuffix(onskad.replace(/\.myshopify\.com$/, ''))} = ...`,
+        `  SHOPIFY_STOREFRONT_PASSWORD_${envSuffix(onskad.replace(/\.myshopify\.com$/, ''))} = ...`,
+        '',
+        MILJOFALLOR,
+      ].join('\n')
+    );
+  }
 
   if (!n.shop) {
-    throw new Error('Saknar SHOPIFY_SHOP i miljön — VA:n lägger in den (checklistans steg 2).');
+    throw new Error(`Saknar SHOPIFY_SHOP i miljön — den läggs in för hand (checklistans avsnitt 3).\n\n${MILJOFALLOR}`);
   }
 
   // Spärr på domänen FÖRE första nätverksanropet.
@@ -410,7 +471,7 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   const minta = async () => {
     if (!kanMinta) {
       throw new Error(
-        `Saknar SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (eller _${envSuffix(id)}-varianten) i miljön — VA:n lägger in dem (checklistans steg 2). Klistra aldrig nycklar i chatten.\n\n${MILJOFALLOR}`
+        `Saknar SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (eller _${envSuffix(id)}-varianten) i miljön — de läggs in för hand (checklistans avsnitt 3). Klistra aldrig nycklar i chatten.\n\n${MILJOFALLOR}`
       );
     }
     const m = await mintaToken({ shop: n.shop, clientId: n.clientId, clientSecret: n.clientSecret, butikId: id }, { fetchFn });
@@ -492,10 +553,14 @@ async function huvud() {
   const baraKolla = arg.includes('--kolla');
   const torr = arg.includes('--torr') || arg.includes('--dry');
   const butikId = arg.includes('--butik') ? arg[arg.indexOf('--butik') + 1] : null;
+  // --doman: butiksadressen ur prompten. Den är facit över butiks-id:t —
+  // suffixet slås upp ur adressen, så ingen behöver veta vad koden kallar
+  // butiken (Axels beslut 2026-09-10).
+  const onskadDoman = arg.includes('--doman') ? arg[arg.indexOf('--doman') + 1] : null;
   if (!butikId) {
-    throw new Error('Ange butik: node factory/token.mjs --butik <id> [--kolla] [--torr]');
+    throw new Error('Ange butik: node factory/token.mjs --butik <id> [--doman <butik.myshopify.com>] [--kolla] [--torr]');
   }
-  const b = await anslut(butikId, { torr, utanEnvFil: baraKolla });
+  const b = await anslut(butikId, { torr, utanEnvFil: baraKolla, onskadDoman });
   if (b.torr) {
     console.log(`Torr: spärrarna släpper ${b.domain} för butiken "${butikId}" (inget mintat, inget skrivet).`);
     return;

@@ -9,7 +9,7 @@
 //   1. Butiken är öppen → hämta direkt.
 //   2. Butiken är lösenordsskyddad (trial — kan inte tas bort förrän plan är
 //      vald) → lösenordet ur --losenord eller env SHOPIFY_STOREFRONT_PASSWORD
-//      (VA:n lägger det i miljön, checklistans steg 2) postas till /password
+//      (läggs i miljön för hand, checklistans avsnitt 3) postas till /password
 //      med en kakburk, och sidan hämtas sen som en kund.
 //   3. `--fil` läser en sparad HTML-fil (den en människa laddat ner).
 //

@@ -25,20 +25,22 @@ Varje rad är märkt:
 
 | Steg | Läge | Vad som faktiskt vet |
 |---|---|---|
-| Publicera tema | **MÄTT: GÅR** | `themePublish` gav `role: MAIN`, noll userErrors (DryTrek 2026-09-09). Stod som "API-spärrat" i tre filer innan någon provade. |
-| Ladda upp VIDEO (mp4-demo) till Files | **MÄTT: GÅR INTE på trial** | `fileCreate` med `contentType: VIDEO` svarar `The file is not supported on trial accounts. Select a plan to upload this file.` (AdventLane/kalender 2026-09-10). Två fynd på vägen: staged `VIDEO`-resourceUrl saknar ändelse, så `filename` avvisas i `fileCreate` ("extension must match original source") — sätts med `fileUpdate` efteråt. Koden finns (`filer.mjs → laddaUppVideo`, CLI tar `.mp4`). **OBEKRÄFTAT efter plan** — kör `node factory/filer.mjs <mp4>` när ägaren valt plan (checklistans steg 10) och byt `media.gif_problem` till den transkodade URL:en (`--igen metafalt`). Tills dess bär källans GIF demot. |
+| Publicera tema | **MÄTT: GÅR — men koden gör det inte** | `themePublish` gav `role: MAIN`, noll userErrors (DryTrek 2026-09-09). Stod som "API-spärrat" i tre filer innan någon provade. ⚠️ **Anropet finns inte i fabriken:** ingen `publiceraTema` i `shopify.mjs`, och `ops.mjs:1450` märker fortfarande steget som ett mänskligt klick. Det är alltså inte en API-gräns längre utan ett kodhål — och det största, eftersom det är det enda MÄTT-GÅR-steget som ligger kvar på checklistan (avsnitt 5). |
+| Byta BUTIKSNAMN | **MÄTT: GÅR INTE** | `shopUpdate` finns inte i Admin API, REST svarar **406** (avläst i `PROCESS.md` "Kan INTE sättas via API"). Därför står "My Store 4/5" kvar tills en människa byter det. Klicket ligger i checklistans avsnitt 5, direkt efter bygget, för att butiksnamnet är det som order­mejlen, kassan, recensionsutskicken och Meta-sidan döps efter. **Vägen runt: sätt namnet vid skapandet** (checklistans avsnitt 1) när brandet redan är bestämt — då finns klicket aldrig. |
+| Ladda upp VIDEO (mp4-demo) till Files | **MÄTT: GÅR INTE på trial** | `fileCreate` med `contentType: VIDEO` svarar `The file is not supported on trial accounts. Select a plan to upload this file.` (AdventLane/kalender 2026-09-10). Två fynd på vägen: staged `VIDEO`-resourceUrl saknar ändelse, så `filename` avvisas i `fileCreate` ("extension must match original source") — sätts med `fileUpdate` efteråt. Koden finns (`filer.mjs → laddaUppVideo`, CLI tar `.mp4`). **OBEKRÄFTAT efter plan** — kör `node factory/filer.mjs <mp4>` när ägaren valt plan (checklistans avsnitt 13) och byt `media.gif_problem` till den transkodade URL:en (`--igen metafalt`). Tills dess bär källans GIF demot. |
 | Ladda upp tema | **MÄTT: GÅR** | `stagedUploadsCreate` med `resource: FILE` (INTE `THEME` — den finns inte i 2025-07) + `themeCreate`. |
 | Läsa sida på handle | **MÄTT: GÅR INTE** | `pageByHandle` togs bort i 2025-07. Använd `pages(query: "handle:…")`. |
 | Uppdatera villkorad fraktmetod | **MÄTT: GÅR INTE** | `deliveryProfileUpdate` avvisar dem. Riv och bygg ny i stället. |
-| Byta butikens VALUTA | **OBEKRÄFTAT** | Ingen har provat ett anrop. Men frågan är fel ställd: valutan sätts av **butiksadressens land vid skapandet**. Skapas butiken med bolagets svenska adress blir den SEK från början, och problemet finns inte. Det är därför checklistans steg 1 numera kräver adressen. |
-| Byta PRIMÄRSPRÅK | **OBEKRÄFTAT** | `shopLocaleEnable`/`shopLocaleUpdate` hanterar extra språk — om primärspråket går att byta har ingen provat. Samma sak här: rätt adress vid skapandet ger rätt språk. |
+| Byta butikens VALUTA | **OBEKRÄFTAT** | Ingen har provat ett anrop. Men frågan är fel ställd: valutan sätts av **butiksadressens land vid skapandet**. Skapas butiken med bolagets svenska adress blir den SEK från början, och problemet finns inte. Det är därför checklistans avsnitt 1 numera kräver adressen. |
+| Byta PRIMÄRSPRÅK | **OBEKRÄFTAT** | `shopLocaleEnable`/`shopLocaleUpdate` hanterar extra språk — om primärspråket går att byta har ingen provat. Samma sak här: rätt adress vid skapandet ger rätt språk. ⚠️ `PROCESS.md` listar primärspråk, valuta, primärmarknad och shop-mejl som "kan INTE sättas via API", men citerar bara ett anrop och en felkod för **butiksnamnet** (REST 406). Resten av den raden är alltså ärvd, inte mätt — därför står de kvar som OBEKRÄFTAT här. |
 | Byta PRIMÄRMARKNAD | **OBEKRÄFTAT** | `marketCreate`/`marketUpdate` finns och används redan för Norge. Om primärmarknaden går att flytta har ingen provat. |
 | Skapa butiken | **OBEKRÄFTAT** | Shopifys Partner API kan skapa development stores. Ingen i repot har provat. Skulle ta bort checklistans avsnitt 1 OCH garantera rätt land. **Den här är värd mest av alla — den fixar tre problem på en gång.** |
-| Skapa appen + client id/secret | **OBEKRÄFTAT** | Partner API har app-endpoints. Ingen har provat. Skulle ta bort avsnitt 2 (fyra klick). |
+| Skapa appen + client id/secret | **OBEKRÄFTAT** | Partner API har app-endpoints. Ingen har provat. Skulle ta bort avsnitt 3 (fyra klick). |
 | Koppla domän till butiken | **OBEKRÄFTAT** | Ingen har provat. |
-| Aktivera Shopify Payments | **MÄNSKLIGT** | Kräver bolagets bankuppgifter och identitetskontroll. Ska inte automatiseras. |
+| Aktivera Shopify Payments | **MÄNSKLIGT** | Kräver bolagets bankuppgifter och identitetskontroll. Ska inte automatiseras. Ligger dessutom EFTER ägarbytet sedan Axels regel 2026-09-10 — det är ägarens eget konto som ska bära den. |
 | Installera Judge.me | **MÄNSKLIGT (delvis)** | Appinstallation kräver ett OAuth-samtycke. Efter installationen är API:t automatiserbart — det görs redan. |
-| Ägarbyte | **MÄNSKLIGT** | Överlåter ett konto med pengar i. Ska klickas av en människa. |
+| Ägarbyte | **MÄNSKLIGT** | Överlåter ett konto med pengar i. Ska klickas av en människa. Checklistans avsnitt 13 — allt före det görs på free trial, allt efter kräver ägarens plan. |
+| Ta bort butikslösenordet (butiken live) | **MÄNSKLIGT** | Går inte förrän en plan är vald (`kundvy-kor.mjs`), och planen väljs av ägaren. Checklistans avsnitt 15, sista steget. |
 
 ## Meta
 
@@ -67,11 +69,18 @@ Varje rad är märkt:
 
 ## Vad som är värt att prova härnäst, i ordning
 
-1. **Skapa butiken via Partner API.** Tar bort avsnitt 1 och 2 (sex klick) och
-   gör valuta-, språk- och marknadsfrågan omöjlig att göra fel. Störst effekt
+0. **Koppla in `themePublish` i `--launch`.** Ingen forskning kvar — anropet är
+   redan mätt. Det är ren kod, och det tar bort det första klicket efter bygget
+   (checklistans avsnitt 5). Måste läsas tillbaka (`role: MAIN`) i samma
+   körning, annars är det ett tyst grönt.
+1. **Skapa butiken via Partner API.** Tar bort avsnitt 1 och 3 (sex klick),
+   gör valuta-, språk- och marknadsfrågan omöjlig att göra fel — och tar bort
+   butiksnamnsklicket, som är MÄTT omöjligt att fixa i efterhand. Störst effekt
    per timme.
-2. **Loopia-API:t.** Tar bort avsnitt 4 (fyra klick).
+2. **Loopia-API:t.** Tar bort halva avsnitt 6 (fyra klick).
 3. **Meta-sidan.** Tar bort två klick och en väntan mitt i flödet.
+4. **Kundkonton + självbetjäningsreturer + returregler** (avsnitt 8, fyra
+   switchar). Ingen har provat och ingen har ens letat efter en mutation.
 
 Kvar som människans, oavsett hur mycket som automatiseras: pengarna (plan,
 kort, Shopify Payments, Klarna), identiteten (KYC), samtycket (appinstallation,

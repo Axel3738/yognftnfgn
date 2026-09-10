@@ -6,19 +6,22 @@ VA:n har **3 dagar per grupp** att launcha alla gruppens butiker; varje
 produkt (eller nischgrupp av produkter) = en egen butik = en `/ny-ops`-körning
 + en checklista.
 
-**Ordningen** (Axels beslut 2026-09-08): VA:n gör butik + app + koppling
-FÖRST (checklistans steg 1–2), sen startar `/ny-ops` och bygger FÄRDIGT hela
-butiken. Domänen köps när Claude levererat namnet.
+**Ordningen** (Axels beslut 2026-09-08, omordnad 2026-09-10): butik + app +
+koppling FÖRST (checklistans avsnitt 1–3), sen startar `/ny-ops` och bygger
+FÄRDIGT hela butiken. Domänen köps när Claude levererat namnet (avsnitt 6).
+Skälet till varje position står i `VA-CHECKLIST.md` — ändra inte ordningen
+utan att flytta skälet med den.
 
 **Dokumenten hänger ihop så här:**
 
 | Dokument | Roll |
 |---|---|
+| `factory/SA-FUNKAR-DET.md` | Kartan: hela flödet enkelt förklarat, vem som gör vad. Läs den först. |
 | `factory/KEDJAN.md` | Kontraktet: modulägare, exporter, körordning. Koden följer den. |
 | `factory/PROCESS.md` (detta) | Rutinen i prosa: faserna, besluten, reglerna som bevisats. |
 | `.claude/commands/ny-ops.md` | Körordningen för den som kör (VA:n). |
 | `factory/README.md` | Modulerna och hur de körs. |
-| `factory/VA-CHECKLIST.md` → `output/<butik>/CHECKLISTA.md` | VA:ns klick, ifyllda per butik. |
+| `factory/VA-CHECKLIST.md` → `output/<butik>/CHECKLISTA.md` | De manuella klicken, ifyllda per butik. Ordningen är ett kontrakt. |
 | `factory/FAS2.md` + `/ny-annonser` | Annonsfasen efter bygget. |
 
 ⚙️ = fabriken/Claude gör det · 🖐 = en människas klick (VA:n eller Axel).
@@ -141,10 +144,19 @@ Hela listan i `factory/README.md`.
    ingen plan, inget kort; staff-inbjudningar kräver betald plan). Claude
    kopplas via butikens EGEN app (custom distribution låses till EN butik
    utanför Plus, mätt 2026-09-08); nycklarna läggs i miljön, aldrig i chatten.
-   Valuta, primärmarknad och primärspråk är hennes klick (steg 5) — ingen av
-   de tre går via API — och de ska göras innan paketen och kassan stämmer.
-   Sen: butiksnamn, domän, avsändarmejl, Shopify Payments + Klarna, kassalogga
-   (steg 5–6). Ägaren tar över butiken vid överlämningen (steg 10).
+   Valuta, primärmarknad och primärspråk är ett mänskligt klick (avsnitt 2) — ingen
+   av de tre går via API — och de kontrolleras FÖRE bygget, inte efter: bygget
+   skriver priser, paket och rabattkoder i butikens valuta.
+   Efter bygget, i den ordningen: tema publicerat + butiksnamn (avsnitt 5),
+   domän + avsändarmejl (6), recensioner (7), ångerknappen (8), Meta (9),
+   Meta-sidan OCH Discord-servern (9, ett besök — båda skapas av en
+   människa och färdigställs av fabriken), "Store ready" (10), spårningen
+   (11), testet bakom butikslösenordet (12). Allt det görs på free trial.
+   **Ägarbytet är avsnitt 13 och delar listan i två** (Axels regel
+   2026-09-10): Shopify Payments + Klarna (14) är ägarens bank och identitet,
+   och butikslösenordet går inte att ta bort förrän ägaren valt plan (15).
+   Därför testas kassan först i 15 — testet i 12 påstår aldrig att den är
+   kontrollerad.
 
 ## Fas 3 — Recensioner (kedjans steg 15)
 
@@ -167,8 +179,8 @@ Hela listan i `factory/README.md`.
 12. ⚙️ **SE huvudspråk + marknad Norge locale nb är STANDARD i varje OPS**
     (Axel 2026-09-08). `butik.marknader` i butiksfilen styr; `marknad.mjs`
     skapar marknad + locale (publicerad) + nb som alternateLocale på
-    huvuddomänens webPresence. Lokal valuta (NOK) slås på i admin — VA:ns
-    klick (steg 10).
+    huvuddomänens webPresence. Lokal valuta (NOK) slås på i admin — ett
+    mänskligt klick (checklistans avsnitt 5).
 13. ⚙️ Översättningen: `oversattning.mjs` skriver `output/<butik>/oversattning-sv.json`
     (alla kundsynliga strängar, nycklade på produkthandle), en **subagent
     (sonnet)** översätter till `oversattning-<locale>.json` med samma nycklar,
@@ -364,8 +376,12 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   userErrors, DryTrek 2026-09-09) och Admin-API:t skriver mot MAIN-temat med
   butikens egen app (TankGuard 2026-09-08). Regeln "publicerat tema är
   API-låst" gällde MCP-kopplingen. Kedjan publicerar ändå inte temat själv —
-  `--launch` skriver ut temanamnet och VA:n klickar Publish (checklistans
-  steg 10), så temat inte byter roll mitt i en körning.
+  `--launch` skriver ut temanamnet och en människa klickar Publish
+  (checklistans avsnitt 5 — första klicket efter bygget, så allt som
+  kontrolleras senare kontrolleras mot kundens riktiga vy).
+  ⚠️ Det är ett KODHÅL, inte en API-gräns: `shopify.mjs` saknar
+  `publiceraTema` och `ops.mjs:1450` märker steget som manuellt. Kopplas
+  anropet in försvinner klicket (`API-GRANSER.md` punkt 0).
 - **En skrivning utan tillbakaläsning är inte gjord** (DryTrek 2026-09-09:
   temasteget rapporterade ✅ medan `templates/product.json` låg orörd — ett
   nyuppackat tema skriver över filen). Liquid/JS/CSS verifieras byte för
@@ -513,7 +529,7 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   knapp kunden hittar, tvåstegsbekräftelse och automatiskt bekräftelsemejl.
   Fabriken skriver knappen i returpolicyn (`policyer.angerknapp`) och lägger
   raden **Ångra köp** i sidfotsmenyn; Shopifys självbetjäningsreturer gör
-  själva jobbet och slås på av VA:n i checklistans **5b**. Bygg ALDRIG en egen
+  själva jobbet och slås på för hand i checklistans **avsnitt 8**. Bygg ALDRIG en egen
   inloggningsfri returformulärsida — Shopifys eget utskick påstod att kunden
   inte får behöva logga in, men direktivet kräver bara att det inte är
   krångligare än att köpa. Utan knappen kan ångerfristen förlängas från 14
@@ -528,8 +544,10 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   inte finns — `standby.md` utan `redo`-rad = "ingen redigerare i standby än".
 - **Anslutningskontrollen dömer på butikens NAMN, inte på state-filen**
   (2026-09-09: miljön stod kvar på TankGuard, som saknade state-fil).
-- **VA:ns master är Google-dokumentet** (länk i `VA-CHECKLIST.md`) — varje
-  ändring i mallen förs in där i samma session (2026-09-08).
+- **Masterkopian för den som klickar är Google-dokumentet** (länk i
+  `VA-CHECKLIST.md`) — varje ändring i mallen förs in där i samma session
+  (2026-09-08). Filnamnet säger VA men rollen är Axels eller nästa anställds
+  sedan 2026-09-10.
 - **Copy skrivs av en subagent** (CLAUDE.md regel 6) — kedjan skriver
   underlag och läser översättningen, koden översätter aldrig själv.
 - **Shopify-MCP:n är förbjuden i `/ny-ops`** (incident 2026-09-07: MCP:n stod

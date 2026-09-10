@@ -1,198 +1,148 @@
-# /skalningskungen – Skalningsronden för EN butik, var tredje dag
+# /skalningskungen – Budgetronden + OPS-larmet, var tredje dag
 
 Argument: `$ARGUMENTS` — butikens nyckel ur registret (`butik/produkt`, eller
-bara produkt-id om det är entydigt) + ev. egna idéer efter nyckeln.
-Exempel: `/skalningskungen tankguard` · `/skalningskungen tacklebay/fiskespohallare-4-pack`
-· `/skalningskungen hemvakten testa en vinkel mot villaägare`
+bara produkt-id om det är entydigt). Utan argument: alla produkter som har
+kördag i dag. Exempel: `/skalningskungen` · `/skalningskungen tankguard`
+· `/skalningskungen motorholjet`
 
-En rond, en butik. Kör aldrig flera butiker i samma körning — en rond skriver i
-butikens minne och i butikens Notion-hub, och en blandad körning gör båda
-oläsbara.
+**Uppdraget smalnade 2026-09-10 (Axels beslut).** Skalningskungen gör EXAKT
+två saker, och ingenting annat:
 
-Kravspec: `factory/SKALNINGSKUNGEN.md` (vad) · `factory/TRAPPAN.md` (när) ·
-`docs/os/ANALYSMETOD.md` (hur data läses — obligatorisk, kortas aldrig ner).
+1. **Döda, skala eller ändra budget** på annonserna vi kör — Bäverbutiken
+   (MagiBorsten `1867947880635861`) och OPS-butikerna (MagiBorsten DK
+   `915422744950975`).
+2. **Larma när en produkt ska bli OPS** — ett produkttest som går väldigt
+   bra, eller en produkt som inte fått egen butik än och går bra. Larmet
+   är ETT Discord-meddelande med ping till Axel. Inte en Notion-sida, inte
+   en brief, inte en butik.
 
-**Regel: ronden rör ALDRIG en status i annonskontot.** PAUSED med spend är ett
-beslut, aldrig ett fel att rätta. `factory/skalning.mjs` gör inga skrivande
-Graph-anrop, och den här rutinen lägger inte till några.
+**Det den INTE gör längre:** creative strategy, teardown, hypoteser,
+kadens, briefer, Notion-items. Vill Axel ha nya annonser till en butik
+säger han det själv (`/cs`-familjen). Ronden bygger aldrig "ett helt nytt
+skit" — den dömer siffror och skickar ett larm.
 
-Gör i ordning, utan att invänta godkännande mellan stegen:
+Kravspec: `factory/SKALNINGSKUNGEN.md` · `docs/os/ANALYSMETOD.md` (hur data
+läses — obligatorisk, kortas aldrig ner) · `factory/TRAPPAN.md` (när en
+produkt hör hemma var).
 
-1. **Slå upp butiken och kolla att det är kördag.**
-   `node factory/register.mjs <nyckel> --idag <YYYY-MM-DD>`
-   Registret upptäcks ur `factory/butiker/*.yaml` + `factory/produkter/*.yaml`
-   + `factory/state/` + `products/products.json` — det finns ingen handskriven
-   lista, och en ny OPS-butik dyker upp av sig själv när den byggts.
-   Står posten som "Ny i registret": kör `node factory/register.mjs skriv-in`
-   först, annars får butiken en ny kördag varje gång.
-   Regel: är det inte kördag och kommandot kördes av rutinen — rapportera
-   "inte kördag, nästa <datum>" och sluta. Kör Axel det för hand gäller hans
-   ord, kör ändå.
-
-2. **Läs butikens minne innan något bedöms.**
-   `factory/minne/<butik>/dna.md`, `batch-log.md`, `backlog.md` om de finns.
-   Saknas mappen är butiken inte briefad ännu — leta i `git log --all` innan du
-   drar slutsatsen (axelbältets minne låg på en gren i veckor medan CLAUDE.md
-   sa att produkten var obriefad). Är den ärvd från Bäverbutiken står det
-   överst i filen varifrån och vilket datum.
-
-3. **Kör avläsningen.**
-   `node factory/skalning.mjs <nyckel> --dagar 14`
-   Den läser butikens annonser ur kontot, filtrerar på produktens prefix,
-   kör ANALYSMETOD steg 0–7 och klassificerar varje bedömbar annons.
-   Regel: filtret är spärren, inte en bekvämlighet — kontot delas av alla
-   OPS-butiker och Bäverbutikens DK-kampanjer. Visa alltid raden om vad som
-   slängdes; en tom lista betyder felstavat prefix, inte noll annonser.
-   Regel: momsbeslutet är öppet (`factory/BESLUT-VANTAR.md` punkt 1), så
-   break-even visas alltid på båda linjerna. En annons som ligger mellan dem
-   får domen `beror_pa_moms` — ingen kill, inget skalningsbeslut på den.
-
-4. **Läge TEST (Bäverbutiken) slutar här.**
-   Rapportera tröskelläget. Passerades den: klistra in startskottet ordagrant
-   som skriptet skrev det, och skriv en rad i produktens `batch-log.md`.
-   Regel: **inga briefer i läge TEST.** Det är hela poängen med att
-   Bäverbutiken är testbädd (`factory/TRAPPAN.md`). Gå inte vidare till steg 5.
-
-5. **Creative-teardown (ANALYSMETOD steg 6b — tyngst vägande).**
-   Skriptet klarar steg 0–7 utan 6b; det här steget är ditt.
-   Ladda ner och granska varje bedömbar **bildannons** visuellt. Läs varje
-   bedömbar **videos** manus ur vår egen brief (butikens minne eller
-   Notion-itemet) — transkribera aldrig på gissning. Tagga variablerna
-   (vinkel, hook-typ, format, proof, offer, visuell stil, textmängd, talare),
-   gruppera vinstbidraget per variabelvärde, peka ut minst 3 mönster märkta
-   bevisad/hypotes, och översätt vart och ett till en instruktion i nästa brief.
-   Regel: en analys som stannar vid tabeller är bokföring, inte creative
-   strategy. Saknas manusen: lista vilka videor det gäller i EN samlad fråga.
-
-6. **Stäm av mot förra rondens hypoteser** och uppdatera `dna.md` (Winning /
-   Losing DNA, data skilt från hypotes) och `batch-log.md` (utfall per annons).
-   Regel: domar på 3–4 köp är preliminära och skrivs inte in i DNA förrän de
-   överlevt en rond till.
-
-7. **Bygg rondens produktionsplan.**
-   `node factory/kadens.mjs` — eller mata in klassificeringen och backloggen i
-   `byggKadens({ antalPerDag, dagar, vinnare, koncept, redigerare })`.
-   Axels takt: **7 videor per dag per butik = 21 per rond**, hälften nya
-   koncept och hälften varianter. Udda antal går till varianthalvan.
-   Regel: en variant utan namngiven förälder och namngiven variabel ÄR inget
-   variant — den räknas som ett nytt koncept. Ett nytt koncept utan källa
-   (playbook-vinnare, winning line eller swipe) märks `GISSNING` i leveransen.
-   Regel: nämn aldrig en redigerare som inte står i registret. Står ingen där
-   skriver du "ingen redigerare tilldelad" — `factory/redigerare/standby.md`
-   har noll rader.
-
-8. **Skriv brieferna.**
-   Ett item per creative, enligt leveransformatet i
-   `.claude/commands/forsta-batch.md`. Varje brief taggar sina variabler i en
-   rad högst upp, annars kan nästa rond inte gruppera vinstbidrag per variabel
-   och lärandet dör. Annonsnamnen följer `docs/naming-convention.md` —
-   `kadens.mjs` ger namnet för varje variant; läs av upptagna namn i kontot
-   innan du numrerar.
-   Regel: **brieferna är på engelska** (redigerarna är engelsktalande), och
-   svenska manusrader ligger i en tabell `Swedish (use this) | English meaning`.
-
-9. **Modellpolicyn (obligatorisk).**
-   All slutgiltig ad copy, alla svenska manusrader och alla voiceovers skrivs
-   av en subagent via Agent-verktyget med `model: "sonnet"` (eller `"haiku"`
-   för bulkvarianter av samma line). Subagenten får produktens DNA, hypotesen,
-   hooken, formatkraven **och `docs/copy-regler.md`** — och skriver bara text.
-   Strategi, analys, klassificering och briefstruktur görs av huvudsessionen.
-   Regel: aldrig tvärtom. Varje levererad rad redovisas mot tre-frågorstestet
-   (visualisera / falsifiera / ingen annan kan säga det) med ✅/❌ per cell.
-   En rad med ❌ går inte ut.
-
-10. **Lägg batchen i butikens egen Notion-hub** enligt
-    `docs/os/NOTION-FORMAT.md`: ett item per annons, namn = annonsnamnet,
-    status `Draft`, briefen inklistrad i itemet.
-    Regel: hubben ligger i butikens eget teamspace och klonas ur
-    `Creative hub MALL` — aldrig byggd från noll, då blir statusarna svenska.
-    Saknas hub-id i registret: rapportera det som en väntande uppgift, skriv
-    inte briefer till Bäverbutikens hub.
-
-11. **Logga och pusha.**
-    `node factory/register.mjs log <nyckel> <antal>` (launchade creatives) och
-    stäm av kördagen. Committa `factory/minne/<butik>/`,
-    `factory/produkter/register.json` och eventuella yaml-ändringar, och pusha.
-    Regel: minnet ligger i repot, aldrig i chatten. En rutin som inte pushar
-    har inte lärt sig något.
-
-12. **Rapportera i två listor:** "Gjort av mig" / "Väntar på en människa".
-    Ett steg där någon ska klicka står aldrig i den första. Axels egna
-    uppgifter sist, numrerade, en mening per rad.
+⚠️ **Rutinen på claude.ai heter "Skalnings kungen"** och kör dagligen 07:30
+svensk tid. Den här filen är dess prompt. Uppdateras filen på `main`
+uppdateras rutinen — den klonar `main` varje körning.
 
 ---
 
-## Så får en ny butik sin egen rutin
+Gör i ordning, utan att invänta godkännande mellan stegen:
 
-Varje OPS-butik har en egen schemalagd körning. Två saker gör att det fungerar:
+1. **Kördag och konto.** `node factory/register.mjs <nyckel> --idag <YYYY-MM-DD>`
+   (utan nyckel: `node factory/register.mjs --idag <datum>` listar dagens).
+   Registret upptäcks ur `factory/butiker/*.yaml`, `factory/produkter/*.yaml`,
+   `factory/state/` och `products/products.json` — ingen handskriven lista.
+   Regel: läge TEST = Bäverbutikens konto, läge SKALA = OPS-kontot.
+   Kontrollera `ad_account_id`, aldrig kontonamnet — fyra konton heter
+   nästan samma sak, och fel konto kostar riktiga pengar.
 
-**1. Rutinen MÅSTE bindas till en fast session.**
-En rutin som startar en ny session varje gång har inget repo som källa, får
-aldrig något credential av proxyn, och kan därför inte pusha — allt den lärde
-sig dör med containern. Det är mätt fyra gånger i repot (CLAUDE.md).
+2. **Avläsningen.** `node factory/skalning.mjs <nyckel> --dagar 14`
+   Filtrerar på produktens prefix, kör ANALYSMETOD steg 0–7, klassificerar
+   varje bedömbar annons. Visa alltid raden om vad som slängdes — en tom
+   lista betyder felstavat prefix, inte noll annonser. Break-even visas på
+   båda momslinjerna tills `ekonomi.moms_antagen` säger vilken som gäller;
+   en annons mellan linjerna får `beror_pa_moms` och rörs inte.
+   Regel: **ingen dom under 300 kr spend eller 3 köp.** Top spendern är
+   benchmark, inte en kandidat att döma mot småannonser. Ranking på
+   vinstbidrag `(break-even-CPA − CPA) × köp`, aldrig på ROAS eller CPA ensamt.
+
+3. **Budgetbesluten — en tabell FÖRE någon skrivning.**
+   En rad per kampanj/adset: nuvarande dagsbudget, föreslagen, varför.
+   Spärrarna, som ingen bedömning får runda:
+   - **Kadensspärren:** rör aldrig något som ändrats de senaste 3 dygnen.
+     Loggen är `factory/budgetlogg.jsonl` (en rad per ändring med
+     `datum`, `ad_account_id`, `kampanj_id`, `ny_budget`, `motivering`,
+     `genomford`). Saknas loggen: läs `updated_time` ur kontot.
+   - **Skala:** max **+20 %** per rond, och bara när annonsen ligger över
+     break-even med ≥ 3 köp de senaste 7 dagarna.
+   - **Sänk:** max **−30 %** per rond när CPA ligger över break-even men
+     under 1,5 × break-even.
+   - **Döda:** bara mot **break-even** (`break_even_cpa_sek` /
+     `break_even_roas`), aldrig mot target-nivån, och aldrig en annons som
+     står för > 30 % av produktens vinstbidrag — den är benchmarken.
+   - **PAUSED med spend är ett beslut.** Aktivera ALDRIG något som är
+     pausat, oavsett hur namnet ser ut (incident 2026-08-29/30).
+   - **Test-ABO:n rörs inte** (regel 11): nya tester har lika budget per
+     annons tills testet är läst; budgetändringar gäller skalningens CBO.
+   - **Fler än 3 ändringar i ett konto i samma rond:** lista dem och
+     invänta Axels ok. Under det: kör.
+
+4. **Skriv budgeten — och läs tillbaka.**
+   All Graph-skrivning går genom `tools/meta-lib.mjs` (saknas en
+   budgetfunktion där: lägg till EN, `uppdateraBudget`, med tillbakaläsning
+   — bygg aldrig egna anrop utanför lagret). Efter varje ändring: läs
+   `daily_budget` igen och visa gammalt → nytt. Meta tvångspausar ibland
+   vid budgetändring — sätt då ACTIVE igen **enbart på exakt det du själv
+   nyss ändrade**, verifierat med tillbakaläsning.
+   Skriv loggraden i `factory/budgetlogg.jsonl` för varje ändring, även
+   misslyckade (`genomford: false` + felet).
+
+5. **OPS-larmet.** Passerar en produkt i läge TEST tröskeln (`troskelkoll`,
+   `1 500 kr spend OCH ≥ 20 % vinst` — nivån är ett öppet ägarbeslut,
+   överstyrs per butik i `register.json`), eller går en produkt utan egen
+   butik tydligt bra: bygg jobbfilen ur avläsningen och kör
+   ```
+   node factory/startskott.mjs --jobb <fil.json> --discord
+   ```
+   Det postar **"KLAR FÖR OPS: <produkt>"** + siffrorna + `/ny-ops <länk>`
+   i kanalen `#ops-startskott` på Discord-servern Bäverbutiken och pingar
+   serverns ägare. Boten hittar servern, skapar kanalen om den saknas och
+   hittar ägaren själv — ingen människa skapar något (Axel 2026-09-10).
+   Regel: larmet är idempotent — en gång per kampanj (`startskottHarGatt`),
+   inte varje rond. Faller Discord-steget (token saknas, boten inte i
+   servern): larmet står ändå i rapporten, med felet — aldrig tyst.
+   Skriv en rad i produktens `batch-log.md`. Sen är produkten Axels: ronden
+   bygger aldrig butiken.
+
+6. **Logga och pusha.** `factory/budgetlogg.jsonl`,
+   `factory/produkter/register.json`, `batch-log.md`. Committa och pusha.
+   Regel: en rutin som inte pushar har inte lärt sig något.
+
+7. **Rapportera i två listor:** "Gjort av mig" (varje budgetändring, gammalt
+   → nytt, tillbakaläst) / "Väntar på en människa" (larm, ändringar över
+   spärren). Axels uppgifter sist, numrerade, en mening per rad. Har inget
+   ändrats: säg det i en rad — inget larm är också ett resultat.
+
+---
+
+## Prompten till rutinen (klistra in i Routines-vyn om den saknas)
 
 ```
-create_session   source_url = repot, outcome_branch = main,
-                 title = "Skalningskungen <butik>", tags = ["routine:skalningskungen-<butik>"]
-create_trigger   persistent_session_id = <sessionens id>,
-                 cron_expression = <daglig cron, se nedan>,
-                 prompt = "/skalningskungen <nyckel>"
+/skalningskungen
 ```
-Kör `list_triggers` FÖRST — en dubblett skapades av misstag 2026-09-08 och
-fick raderas.
 
-**2. Cron är daglig; skriptet avgör om det är butikens dag.**
-"Var tredje dag" går inte att uttrycka i cron över månadsskiften — samma
-problem som `/commission` löste med daglig cron plus en kalenderspärr i
-skriptet. Här sitter spärren i `arKordag()` i `factory/register.mjs`, och
-steg 1 ovan är den.
+Det räcker — kommandofilen är prompten. Rutinen ska vara bunden till en
+**fast session** med repot som källa och `main` som utgren (`create_session`
+med `source_url` + `outcome_branch`, sen `create_trigger` med
+`persistent_session_id`), annars kan den inte pusha loggen. Kör
+`list_triggers` FÖRST — en dubblett skapades 2026-09-08 och fick raderas.
+Cron står i UTC: 07:30 CEST = `30 5 * * *`, 07:30 CET = `30 6 * * *`.
 
-**Så sprids butikerna över dygnen:** varje butik får ett `kordag_offset`
-(0, 1 eller 2) och kör när `(dagnummer sedan 1970-01-01) % 3 === offset`.
-Offseten tilldelas automatiskt som den **minst använda** — butik 1 får 0,
-butik 2 får 1, butik 3 får 2, butik 4 börjar om på 0. Skälet till just den
-regeln: alternativen var slump (kan lägga tre butiker på samma dag) eller
-index i en sorterad lista (flyttar befintliga butiker när en ny tillkommer och
-kan få dem att hoppa över en rond). Den minst använda offseten är både jämn
-och stabil — en butik som fått sin dag behåller den för alltid.
-
-Två undantag gör att ingen butik kan svälta: en butik som **aldrig körts** kör
-direkt, och en butik som inte körts på **tre dygn** kör ändå (ikappkörning).
-
-**Cron-tiden:** lägg butikerna på olika klockslag också, så två rutiner inte
-läser samma konto samtidigt. Cron står i UTC och följer inte sommartid — räkna
-alltid om från önskad svensk tid till UTC (CEST = UTC+2, CET = UTC+1).
-
-**Connectors:** rutiner ärver inte sessionens MCP-connectors. Behöver rutinen
-Notion måste connectorn kopplas på själva rutinen i Routines-vyn — annars går
-den via `NOTION_TOKEN` och `tools/notion-klara.mjs`. Meta läses med
-`META_ACCESS_TOKEN`, som `factory/skalning.mjs` redan gör.
+Miljön rutinen behöver: `META_ACCESS_TOKEN` och `DISCORD_BOT_TOKEN`.
+Valfri överstyrning: `DISCORD_STARTSKOTT_SERVER` (annan server),
+`DISCORD_STARTSKOTT_KANAL` (annat kanalnamn), `DISCORD_AXEL_ID` (pinga
+någon annan än serverägaren).
 
 ---
 
 ## DEFINITION OF DONE
 
-- [ ] Butiken uppslagen ur registret, kördagen kontrollerad och redovisad
-- [ ] Rätt konto verifierat: läge SKALA = `915422744950975`, läge TEST = `1867947880635861`
-- [ ] Prefixfiltret visat, med antalet bortfiltrerade rader och deras kampanjer
-- [ ] **ANALYSMETOD.md:s snabbchecklista avbockad punkt för punkt i svaret**
-- [ ] Break-even visad på BÅDA momslinjerna, antagandet utskrivet
-- [ ] Vinstbidragstabellen visad — ranking på vinst, aldrig på ROAS eller CPA
-- [ ] Signifikansgrinden: "för tidigt"-högen utpekad och utanför rankingen
-- [ ] Top spendern behandlad som benchmark, inte som kandidat
-- [ ] **Creative-teardown gjort**: bilder visuellt granskade, videomanus lästa,
-      variabeltabell visad, ≥3 mönster märkta bevisad/hypotes och översatta
-      till briefinstruktioner
-- [ ] Läge TEST: tröskelläget rapporterat, startskott bara om tröskeln passerats,
-      **noll briefer**
-- [ ] Läge SKALA: kadensen visad (7/dag × 3 dagar), halvorna motiverade
-- [ ] Varje variant pekar på namngiven förälder + namngiven variabel
-- [ ] Varje nytt koncept pekar på en källa — annars märkt GISSNING
-- [ ] Redigeraren namngiven ur registret, eller "ingen redigerare tilldelad"
-- [ ] Copy/manus skrivna av sonnet/haiku-subagent, tre-frågorstestet redovisat
-- [ ] Briefer på engelska, svenska manusrader i `Swedish (use this) | English meaning`
-- [ ] Namngivningen följer `docs/naming-convention.md`, upptagna namn avlästa
-- [ ] Batchen i butikens EGEN Notion-hub, status `Draft`
-- [ ] Ingen status i annonskontot ändrad — noll skrivande Graph-anrop
-- [ ] `dna.md` + `batch-log.md` + `register.json` uppdaterade i repot och pushade
+- [ ] Kördagen kontrollerad; rätt konto verifierat på `ad_account_id`
+- [ ] Prefixfiltret visat, med antalet bortfiltrerade rader
+- [ ] **ANALYSMETOD.md:s snabbchecklista avbockad punkt för punkt**
+- [ ] Break-even på båda momslinjerna, antagandet utskrivet
+- [ ] Vinstbidragstabellen visad — ranking på vinst, aldrig ROAS/CPA ensamt
+- [ ] Signifikansgrinden: "för tidigt"-högen utanför rankingen
+- [ ] Budgettabellen visad FÖRE skrivning; varje ändring inom spärrarna
+- [ ] Varje ändring tillbakaläst: gammalt → nytt; loggrad skriven
+- [ ] Inget PAUSED aktiverat; test-ABO orört
+- [ ] OPS-larm skickat till Discord om tröskeln passerats — annars
+      "tröskeln inte passerad" med siffror; aldrig två larm för samma kampanj
+- [ ] **Noll briefer, noll Notion-items, noll creative strategy**
+- [ ] `budgetlogg.jsonl` + `register.json` + `batch-log.md` pushade
 - [ ] Slutrapport i två listor; Axels uppgifter sist, numrerade

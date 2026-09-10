@@ -14,15 +14,17 @@ sätt `butik.kollektion.alltid: true` i butiksfilen — då byggs kollektionen,
 kollektionsraden och kollektionsstartsidan redan nu, och nästa produkt är bara
 en produktfil till. Brandtexterna får aldrig låsa brandet vid första produkten.
 
-Kommandot körs EFTER att VA:n gjort checklistans steg 1–2 (butik på free
+Kommandot körs EFTER att checklistans avsnitt 1–3 är gjorda (butik på free
 trial, appen kopplad via `SHOPIFY_SHOP` + `SHOPIFY_CLIENT_ID` +
 `SHOPIFY_CLIENT_SECRET` + `SHOPIFY_STOREFRONT_PASSWORD` i miljön). Det bygger
-sen FÄRDIGT hela butiken utan att vänta — bara hennes klick återstår.
+sen FÄRDIGT hela butiken utan att vänta — bara de manuella klicken återstår.
 
-Den som kör är oftast **VA:n (engelsktalande)** — svara henne på engelska,
-korta rader. Axel svaras på svenska. Språket följer LÄSAREN. Facit: `factory/PROCESS.md`
-(rutinen, reglerna) och `factory/KEDJAN.md` (koden). VA:ns klick:
-`factory/VA-CHECKLIST.md`, ifylld till `factory/output/<butik>/CHECKLISTA.md`.
+Den som kör är **Axel själv sedan 2026-09-10** (VA:n slutade) — svara honom
+på **svenska**, korta rader. Anställs någon engelsktalande igen svaras hen på
+engelska. Språket följer LÄSAREN. Facit: `factory/PROCESS.md` (rutinen,
+reglerna) och `factory/KEDJAN.md` (koden). De manuella klicken:
+`factory/VA-CHECKLIST.md`, ifylld till `factory/output/<butik>/CHECKLISTA.md`
+(filnamnet ligger kvar, rollen är Axels eller nästa anställds).
 
 **Regel: Shopify-MCP:n är FÖRBJUDEN i hela rutinen** — aldrig `get-shop-info`,
 `switch-shop` eller något `mcp__*`-Shopify-verktyg. All åtkomst via token i
@@ -42,25 +44,26 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    "Connected: <domän> ✓" i chatten. Inget annat läses först.
    Regel: butikens NAMN ur Shopify är facit — ett brand som redan finns i
    `factory/butiker/` eller `factory/output/` = miljön står kvar på förra
-   butiken, stoppa. Saknas nycklarna: be VA:n göra steg 2, klistra aldrig
-   nycklar i chatten.
+   butiken, stoppa. Saknas nycklarna: be den som kör göra checklistans
+   avsnitt 3, klistra aldrig nycklar i chatten.
 
-   ⚠️ **Står ett "Butiks-id:" i prompten är DET id:t du ansluter med** —
-   `--butik <det id:t>`, aldrig ett du hittar på. Nycklarna läses då som
-   `SHOPIFY_SHOP_<ID>` / `SHOPIFY_CLIENT_ID_<ID>` / `SHOPIFY_CLIENT_SECRET_<ID>`
-   / `SHOPIFY_STOREFRONT_PASSWORD_<ID>` (id:t i VERSALER, bindestreck blir
-   understreck). Samma id används sen till `factory/butiker/<id>.yaml`, så
-   butiken heter samma sak hela vägen.
+   ⚠️ **Står en butiksadress i prompten är DEN facit** — inte butiks-id:t.
+   Skicka den som `--doman <adressen>` (eller `onskadDoman` till `anslut`).
+   Koden letar då upp vilket miljösuffix som bär adressen och använder det,
+   så den som kör aldrig behöver veta vad fabriken kallar butiken. Skriv in adressen
+   som `judgeme.shop_domain` i butiksfilen — då hittar varje omkörning rätt
+   av sig själv.
 
-   ⚠️ **Står inget butiks-id läses de fyra UTAN suffix** — och de betyder
+   ⚠️ **Utan adress läses de fyra variablerna UTAN suffix**, och de betyder
    "butiken jag bygger just nu". Alla sessioner på kontot delar samma
    Environment, så två parallella bygg slåss då om samma fyra rader.
    *(Mätt 2026-09-10: fyra dagars stopp. Miljön hade sju `SHOPIFY_SHOP*`,
    den utan suffix stod på TankGuard, och tre sessioner i rad byggde mot fel
-   butik. Axels beslut samma dag: nya butiker körs med butiks-id.)*
-   Får du fel butik: läs miljöfällorna i felet (`MILJOFALLOR` i `token.mjs`)
-   innan du ber någon röra Shopify — orsaken är oftast att sessionen startade
-   före sparandet, eller att kontot har två environments med samma namn.
+   butik. Axels beslut samma dag: adressen är gränssnittet, inte ett id
+   som två personer måste gissa lika.)*
+   Får du fel butik: felet listar redan vilka `SHOPIFY_SHOP*` som finns,
+   ger de fyra raderna att klistra in, och bär miljöfällorna (`MILJOFALLOR`
+   i `token.mjs`). Läs det innan du ber någon röra Shopify.
 2. **Hämta produktdata** ur källänken: `/products/<handle>.json`, Judge.me
    `reviews_for_widget` (originaldatum), Kaching-nivåerna ur sidans JSON-script
    → `output/<id>/kalla-kaching-paket.json`. Öppna produktbilderna och läs den
@@ -71,8 +74,21 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    byggt från noll per butik. Namnregeln: helst helt engelskt namn, läsbart
    för svenskar/norrmän, aldrig å/ä/ö; domänen kollas med RDAP först. Tre
    loggvarianter (`node factory/logga-generera.mjs <butik.yaml>`) VISAS i
-   chatten, Axel väljer. VA:n: skriv STORE NAME + DOMAIN direkt i chatten
-   (hon fortsätter med steg 4–5 medan bygget går).
+   chatten, och **den som kör väljer** (Axel eller den anställde — Axels
+   beslut 2026-09-10). Skriv STORE NAME + DOMAIN direkt i chatten — den som
+   klickar fortsätter med checklistans avsnitt 6 medan bygget går.
+
+   **Loggfeedback-loopen (Axels beslut 2026-09-10):**
+   - FÖRE genereringen: `node factory/logga-feedback.mjs --sammanfatta`.
+     Den variant som vinner oftast är utgångsläget; en variant som aldrig
+     valts byts mot något nytt (annat motiv, annan komposition) — visa
+     aldrig samma tre gissningar en gång till. Läs kommentarerna.
+   - EFTER valet: `node factory/logga-feedback.mjs <butik-id> <a|b|c>
+     --motiv <motiv> --kommentar "<vad personen sa om varför>"`. Ingen
+     kommentar = tom kommentar, men raden skrivs alltid. Filen
+     `factory/LOGGA-FEEDBACK.md` committas med bygget.
+   Regel: ett val som inte loggas gör nästa butiks loggor lika dåliga som
+   den här butikens — loopen är hela poängen.
 4. **Konfig:** `factory/butiker/<id>.yaml` + `factory/produkter/<id>.yaml` ur
    mallarna (en produktfil per länk), sen
    `node factory/ops.mjs factory/butiker/<id>.yaml factory/produkter/<p>.yaml … --dry-run`.
@@ -88,7 +104,7 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    `output/<butik>/oversattning-sv.json` → `oversattning-nb.json` med samma
    nycklar (+ `docs/copy-regler.md`). Sen `--igen oversatt`. Regel: koden
    översätter aldrig själv; läckor i rapporten = steget förblir 🖐.
-7. **VA:ns valuta- och språkklick** (checklistans steg 5): när hon skriver
+7. **Valuta- och språkklicket** (checklistans avsnitt 2): när någon skriver
    "currency and language are set", kör `--igen paket,huvudmarknad`.
    Regel: rabattkoder lagras i butikens valuta — paketsteget vägrar tills
    valutan stämmer.
@@ -99,24 +115,48 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Regel: utan HTML är kundvyn röd, aldrig grön. Varukorgen (tom korg → lådan
    glider in → räkna varorna) och mobilvyn är en människa i webbläsare —
    skriv "inte testad", aldrig "testad".
-9. **Checklistan** (steg 19): `output/<butik>/CHECKLISTA.md` skrivs av
-   motorn (EN fil per butik) — arkivkopia. Värdena till VA:n skrivs rakt i
-   chatten: STORE NAME, DOMAIN, STORE EMAIL (hello@domänen) + "continue at
-   step 4". Skicka aldrig filen till Axel. Ändrades mallen
-   (`VA-CHECKLIST.md`/`checklista.mjs`): för in det i VA:ns Google-dokument.
+9. **Checklistan OCH leveransen i chatten** (steg 19):
+    `output/<butik>/CHECKLISTA.md` skrivs av motorn (EN fil per butik) —
+    arkivkopian. Sen levereras TRE saker i chatten, och ingen av dem är
+    valfri. Den som klickar sitter i en webbläsare eller i en telefon och kan
+    inte öppna en repo-sökväg: **en sökväg i en rapport är ingen leverans.**
+    a. **Värdena:** STORE NAME, DOMAIN, STORE EMAIL (hello@domänen) och vilket
+       avsnitt i checklistan hen fortsätter på.
+    b. **Judge.me-filen, per produkt** — bifoga
+       `output/<produkt-id>/judgeme-app-import.csv` med filverktyget (en
+       bilaga per produkt, aldrig bara sökvägen). Filen bär redan
+       **originalspråket OCH varje marknads översatta recensioner i EN fil**
+       med originaldatum — `byggJudgeMeAppCsv` slår ihop dem, så det finns
+       ingen separat norsk fil att leta efter. (`judgeme-import*.csv` utan
+       `-app-` är API-formatet; det får aldrig laddas upp i appen, API:t
+       skriver över datumen.) Saknar en recension datum stoppar bygget här —
+       hämta datumet ur källan, hitta aldrig på det.
+       *(Axels bakläxa 2026-09-10: filerna låg färdiga i
+       `output/adventskalender-racingbilar/` hela tiden. Han fick dem aldrig,
+       för rapporten skrev en sökväg. Därför är bilagan ett DoD-krav nu.)*
+    c. **Discord-auktoriseringslänken** —
+       `node factory/discord.mjs factory/butiker/<butik>.yaml` UTAN `--guild`
+       skriver ut länken och avslutar med exitkod 1; det är meningen, inte ett
+       fel. Klistra in länken i rapporten. Då är hela Discord-jobbet: skapa
+       servern, klicka länken. Kräver `DISCORD_BOT_TOKEN` — saknas den, säg
+       det rakt ut och gissa ALDRIG en länk.
+    Ändrades mallen (`VA-CHECKLIST.md`/`checklista.mjs`): för in det i
+    Google-dokumentet i samma session.
 10. **Launch:** `node factory/ops.mjs … --launch` — produkterna ACTIVE +
     publicerade, vägrar om butiken eller NÅGON produkt är röd. Motorn skriver
-    ut temanamnet (`<Brand> – CRO v1`); VA:n publicerar det (checklistans
-    steg 10). Regel: fabriken rör aldrig annonskontot vid launch.
-11. **"Store ready: <namn>"** från VA:n → `node factory/store-ready.mjs
-    <butik-id> [--guild <discord-server-id>]`: recensionerna (API om butikens
-    Judge.me-token finns i env, annars laddar hon upp
-    `output/<produkt>/judgeme-app-import.csv` i appen — originaldatumen följer
-    bara med appens import), pixeln i **MagiBorsten DK `915422744950975`**
-    (samma konto för varje OPS-butik, kampanjnamn prefixas med brandet) och
-    Discord-kanalerna. Ge henne pixel-ID:t för WeTracked. Regel: WeTracked,
-    CAPI-tokenen och Meta-sidan är alltid hennes; efter importen verifieras
-    datumen i kundvyn (aldrig "nyss").
+    ut temanamnet (`<Brand> – CRO v1`); en människa publicerar det
+    (checklistans avsnitt 5). Regel: fabriken rör aldrig annonskontot vid
+    launch.
+11. **"Store ready: <namn>"** → `node factory/store-ready.mjs <butik-id>
+    [--guild <discord-server-id>]`: recensionerna (API om butikens
+    Judge.me-token finns i env — annars är app-filen från steg 9b vägen,
+    originaldatumen följer bara med appens import), pixeln i **MagiBorsten DK
+    `915422744950975`** (samma konto för varje OPS-butik, kampanjnamn prefixas
+    med brandet) och Discord-kanalerna. Ge pixel-ID:t för WeTracked.
+    Meta-sidan och Discord-servern är ETT mänskligt steg (checklistans avsnitt
+    9): båda skapas för hand, båda färdigställs härifrån. Regel: WeTracked och
+    CAPI-tokenen är alltid människans; efter importen verifieras datumen i
+    kundvyn (aldrig "nyss").
 12. **Slutrapport + dokumentera** (steg 20): TVÅ listor ur state — "Gjort av
     mig" / "Väntar på en människa"; ett klick står aldrig i den första. Nämn
     aldrig en person som inte finns (tom standby-lista = "ingen redigerare i
@@ -134,7 +174,7 @@ hoppa över steg 2–4 och kör kedjan.
    bär `blockerat_av_manniska` och `ofullstandigt`, och steglistan visar vad som
    ALDRIG kördes. Regel: leta efter det som saknas i steglistan, inte efter fel
    i yaml:en. En butik som ser obrandad ut saknar oftast `logga`-steget.
-2. **VA:ns klick först.** Valuta, hemmamarknad och språk kan inget API ändra.
+2. **Människans klick först.** Valuta, hemmamarknad och språk kan inget API ändra.
    Är de fel skrivs rabattkoderna i fel valuta igen — paketsteget vägrar, och
    det är meningen.
 3. **Nytt tema, alltid.** `--igen tema-upload` laddar upp det RENSADE temat som
@@ -151,6 +191,7 @@ hoppa över steg 2–4 och kör kedjan.
 ## DEFINITION OF DONE
 - [ ] Steg 0: "Connected: <domän> ✓" före första skrivningen, butiksnamnet matchar den nya butiken
 - [ ] Brand-config byggd från produkt + målgrupp, inte återanvänd; namnregeln följd, domän kollad
+- [ ] Loggfeedback läst före genereringen och valet loggat efter (`factory/LOGGA-FEEDBACK.md`)
 - [ ] Steg 1–4: tema uppladdat med id i state, brandat, av-brandat
 - [ ] Steg 14: källskanningen REN — ingen Matstrumpor-text i något temaläge
 - [ ] Steg 6–8: produkt ACTIVE, alla opf-sektioner, varje variant CONTINUE + tracked false
@@ -159,7 +200,9 @@ hoppa över steg 2–4 och kör kedjan.
 - [ ] Steg 16–17: marknad Norge + locale nb publicerad, allt registrerat, inga läckor på /nb
 - [ ] Steg 18 **KUNDVYN GRÖN på riktig HTML**: brandet (inte "My Store"), loggan, egen hero, egen meny, produkt med bild och köpknapp
 - [ ] Varukorgen testad av en människa med TOM korg: lådan glider in, varorna i vagnen räknade — annars "inte testad"
-- [ ] Steg 19: CHECKLISTA.md skriven, värdena till VA:n i chatten
-- [ ] Steg 15/store-ready: app-CSV med originaldatum överlämnad; efter importen datumen verifierade i kundvyn
+- [ ] Steg 19: CHECKLISTA.md skriven, värdena i chatten
+- [ ] **Judge.me-filen BIFOGAD i chatten, en per produkt** — sökväg räknas inte, och app-filen (inte API-formatet) är den som bär originaldatumen
+- [ ] **Discord-auktoriseringslänken i rapporten** — eller "DISCORD_BOT_TOKEN saknas", aldrig tyst
+- [ ] Steg 15/store-ready: app-CSV med originaldatum ÖVERLÄMNAD SOM BILAGA; efter importen datumen verifierade i kundvyn
 - [ ] Steg 20: slutrapport med två listor — delvis klart heter delvis klart
 - [ ] state + PROCESS.md uppdaterade, pushat

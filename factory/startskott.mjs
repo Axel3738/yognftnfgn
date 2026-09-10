@@ -17,7 +17,17 @@
 //
 // Noll beroenden. Inget nätverk, inga skrivningar.
 //
-//   node factory/startskott.mjs --jobb <fil.json> [--torr]
+//   node factory/startskott.mjs --jobb <fil.json> [--torr] [--discord]
+//
+// --discord (Axels beslut 2026-09-10): boten sköter allt själv. Den letar
+// upp servern (STARTSKOTT_SERVER, default "Bäverbutiken" — det är där
+// produkterna testas), hittar eller SKAPAR kanalen (STARTSKOTT_KANAL,
+// default "ops-startskott") och pingar serverns ÄGARE. Ingen människa
+// skapar någon kanal och ingen kopierar något id ("vi har ju boten för det").
+// Överstyrning i miljön: DISCORD_STARTSKOTT_SERVER (namn eller id),
+// DISCORD_STARTSKOTT_KANAL (kanalnamn), DISCORD_AXEL_ID (ping i stället för
+// ägaren). Det är HELA larmet — inga Notion-sidor, inga briefer. Kräver
+// DISCORD_BOT_TOKEN; saknas den skrivs texten bara i chatten, aldrig tyst.
 //
 // ⚠️ Meddelandet är på SVENSKA. Det går till Axel eller VA:n, inte till
 // redigerarna. Vilken kanal det ska landa i är ett öppet ägarbeslut
@@ -26,6 +36,41 @@
 
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
+
+/** Discords tak för ett meddelande. */
+export const DISCORD_MAXLANGD = 2000;
+/** Servern larmet går till om inget annat sägs — där Bäverbutikens produkter testas. */
+export const STARTSKOTT_SERVER = 'Bäverbutiken';
+/** Kanalen boten skapar om den saknas. */
+export const STARTSKOTT_KANAL = 'ops-startskott';
+
+/**
+ * Väljer servern ur botens lista. `onskad` är ett namn eller ett id; utan
+ * önskemål gäller STARTSKOTT_SERVER. Ingen träff = null — aldrig "första
+ * bästa", boten sitter i sex servrar (mätt 2026-09-10) och fel server är
+ * fel människa.
+ */
+export function valjServer(guilds, onskad = STARTSKOTT_SERVER) {
+  const lista = Array.isArray(guilds) ? guilds : [];
+  const o = String(onskad ?? '').trim().toLowerCase();
+  if (!o) return null;
+  return lista.find((g) => g.id === o) ?? lista.find((g) => String(g.name).toLowerCase() === o) ?? null;
+}
+
+/**
+ * Texten som postas i Discord: pingen först (så Axel får en notis), sen
+ * startskottet ordagrant. Saknas ping-id:t går texten ändå — men med en rad
+ * som säger det, så tystnaden inte döljs. Kapas aldrig tyst.
+ */
+export function byggDiscordText(text, { pingId = null } = {}) {
+  const huvud = pingId ? `<@${pingId}>\n` : '⚠️ DISCORD_AXEL_ID saknas — ingen ping.\n';
+  let ut = huvud + String(text ?? '');
+  if (ut.length > DISCORD_MAXLANGD) {
+    const svans = '\n… [kapad]';
+    ut = ut.slice(0, DISCORD_MAXLANGD - svans.length) + svans;
+  }
+  return ut;
+}
 
 /** Koden startskottet skriver i loggen. Idempotensen hänger på den. */
 export const STARTSKOTT_KOD = 'OPS_STARTSKOTT';
@@ -181,7 +226,7 @@ export function byggLoggrad(jobb, { datum, adAccountId = '1867947880635861' } = 
 
 // ------------------------------------------------------------------- CLI
 
-function huvud(argv) {
+async function huvud(argv) {
   const i = argv.indexOf('--jobb');
   if (i === -1 || !argv[i + 1]) {
     console.error('Användning: node factory/startskott.mjs --jobb <fil.json> [--torr]');
@@ -209,9 +254,40 @@ function huvud(argv) {
   } else {
     console.log(JSON.stringify(byggLoggrad(jobb, { datum: jobb.datum })));
   }
-  if (argv.includes('--torr')) console.log('\n[--torr] Ingenting skickades och ingenting skrevs.');
+  if (argv.includes('--torr')) {
+    console.log('\n[--torr] Ingenting skickades och ingenting skrevs.');
+    return;
+  }
+  if (argv.includes('--discord')) {
+    const svar = await skickaStartskott(text);
+    console.log(`\n✅ Discord: postat i #${svar.kanal.name} på ${svar.server.name}`
+      + `${svar.kanal.skapad ? ' (kanalen skapades nu)' : ''}, ping till ${svar.pingId} (meddelande ${svar.id})`);
+  }
+}
+
+/**
+ * Hela Discord-steget: server → kanal (skapas vid behov) → ping → post.
+ * Kastar med klartext om boten inte sitter i servern — larmet får aldrig
+ * försvinna tyst, så CLI:t skriver texten i chatten FÖRE det här anropet.
+ */
+export async function skickaStartskott(text) {
+  if (!process.env.DISCORD_BOT_TOKEN) {
+    throw new Error('DISCORD_BOT_TOKEN saknas i miljön — larmet står bara i chatten.');
+  }
+  const { hamtaGuilds, hamtaGuild, hittaEllerSkapaKanal, skickaMeddelande } = await import('./discord.mjs');
+  const onskad = process.env.DISCORD_STARTSKOTT_SERVER || STARTSKOTT_SERVER;
+  const guilds = await hamtaGuilds();
+  const vald = valjServer(guilds, onskad);
+  if (!vald) {
+    throw new Error(`Boten sitter inte i servern "${onskad}". Den sitter i: ${guilds.map((g) => g.name).join(', ') || 'ingen'}.`);
+  }
+  const server = await hamtaGuild(vald.id);
+  const kanal = await hittaEllerSkapaKanal(server.id, process.env.DISCORD_STARTSKOTT_KANAL || STARTSKOTT_KANAL);
+  const pingId = process.env.DISCORD_AXEL_ID || server.owner_id;
+  const svar = await skickaMeddelande(kanal.id, byggDiscordText(text, { pingId }));
+  return { id: svar.id, server, kanal, pingId };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  huvud(process.argv.slice(2));
+  huvud(process.argv.slice(2)).catch((e) => { console.error(`\n❌ ${e.message}\n`); process.exit(1); });
 }
