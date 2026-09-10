@@ -151,6 +151,22 @@ Get this right and section 5 is three checks instead of seven clicks.
 
 ## 2. Shopify – connect Claude Code
 - [ ] Go to **dev.shopify.com** → log in with the work Gmail → Apps → **Create app** → name it: **Fabriken** + the store's address start (example: Fabriken y1sj1i)
+- [ ] The app → **Configuration** → **Admin API access scopes** → tick ALL of these, then **Save**:
+  \`\`\`
+  write_products              write_themes                write_files
+  write_content               write_online_store_pages    write_online_store_navigation
+  write_metaobject_definitions write_metaobjects          write_discounts
+  write_markets               write_locales               write_translations
+  write_publications          write_shipping              write_inventory
+  write_legal_policies        read_themes                 read_files
+  read_locales                read_markets                read_publications
+  read_discounts
+  \`\`\`
+  A new app starts with **ZERO** scopes and the build dies on the first step with
+  "Access denied … required access: \`read_themes\` access scope" (TackleBay 2026-09-10).
+  Scopes only take effect on install – set them BEFORE the install link below.
+  Changed them on an app that is already installed? Open the install link again
+  and approve the new permissions, otherwise the old scope set stays.
 - [ ] The app → **Settings** → copy the **Client ID** and the **Client secret**
 - [ ] Open the Claude session's **Environment** → set these 4 (overwrite the old values):
   \`SHOPIFY_SHOP\` = the store's .myshopify.com address

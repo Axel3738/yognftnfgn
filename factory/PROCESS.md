@@ -392,6 +392,16 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   tillbaka det faktiska namnet; steg 12 laddar upp innan mallen skrivs.
 - **Ny temaklon tappar temats translationsRegister-rader** — registrera om
   för mallar OCH sektionsgrupper (nycklar/digests är stabila mellan kloner).
+- **En ny app har NOLL scopes, och det syns först vid första anropet**
+  (TackleBay 2026-09-10). Appen installerades, tokenen mintades felfritt — och
+  steg 1 dog på `Access denied for themes field. Required access:
+  \`read_themes\` access scope`. `GET /admin/oauth/access_scopes.json`
+  svarade med en tom lista. Checklistans steg 2 sa inget om scopes alls, så
+  varje ny butik gick i samma fälla. Listan står nu i `VA-CHECKLIST.md` och i
+  `checklista.mjs`; sätt den FÖRE installationen, och installera om appen om
+  scopes ändras efteråt (ändrade scopes börjar gälla först vid install).
+  Snabbaste sättet att få reda på vad som saknas: kör en läsfråga per resurs
+  och läs `extensions.requiredAccess` i felet — Shopify namnger scopet självt.
 - **Kan INTE sättas via API** (klick i checklistan): butiksnamn (`shopUpdate`
   finns inte, REST ger 406), primärspråk, valuta, primärmarknad, shop-mejl,
   checkout-branding (Plus), Meta-sidor, CAPI-token, Discord-server,
