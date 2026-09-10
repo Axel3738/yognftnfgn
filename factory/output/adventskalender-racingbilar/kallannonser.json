@@ -1,0 +1,1332 @@
+{
+  "SE": {
+    "konto": {
+      "id": "1867947880635861",
+      "namn": "MagiBorsten",
+      "valuta": "SEK"
+    },
+    "annonser": [
+      {
+        "id": "120250134691780291",
+        "namn": "Adventskalender_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673260291",
+          "namn": "Adventskalender Racingbilar | PD | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2085394082184728",
+          "image_hash": "c381591228560d9a5d200dd5ddbcdae9",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799783727_2056109568435969_8270303884916637822_n.png?stp=dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=ff4730&_nc_ohc=O-QxKq5bOkkQ7kNvwH5A3P1&_nc_oc=AdpCPsKMu_EGo7rqt3R7HOQWmc4gyfSWIXSrL2jUEsHrEEWt4GHstU6OcQdEnI6cOc8&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQKBpEPFy0jMbYR31XeTH9u-UggIiLU3md0zF0ygwHGw9u6lOQvAIeQkY4RyoXipNCwUZ_TZL_gb8g&oh=00_AQLyfBrqebHVGA4Xdo2iXLflvl3HujsUbDlWbcPFCM4hiQ&oe=6AA86A03",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/9083393649168326082?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJEsCEdS06tmxHG6-sxIAskq5mljMpOl-aE-mGxSjjvjq6ZdPyazpDsW3uRbWUxW3tDRsFTbm8eBp8FyicDLUA63qBzmoGj4Y0FypDG0ZMxT51rrP0ZDJaSOnwe1qqBqceZF4jawBikKB7p2YZOaRSj&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIHKiYP-nMFH-Dyy_owCKRZPvL2aNaK-fn-72vd86oXi-pBHUjB1AifGEbcDxl8oSsOusx94avH1Q&oh=06_Q3_DAYSJoCJeQSQ8OfMPE17WRVfgHjmylwcXhxEwfAsheI06&oe=6AA454E0",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+          "headline": "Choklad: 10 sek. Bilarna: hela december.",
+          "description": "Leksaksbilar som finns kvar efter jul.",
+          "link": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1136.48,
+          "kop": 7,
+          "roas": 4.22348
+        },
+        "med": true
+      },
+      {
+        "id": "120250134681590291",
+        "namn": "Adventskalender_GT_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672900291",
+          "namn": "Adventskalender Racingbilar | GT | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1058810370251909",
+          "image_hash": "783f26f431ae0a0a0a1f0ac72415aaaf",
+          "image_url": null,
+          "video_id": "1620032299670978",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800345703_1620032339670974_5478480874984590650_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=6ILDm_5lrVMQ7kNvwHGxn1f&_nc_oc=AdoiAY55zziqwZZ_bI0SbmA3qyfapS7KKq89KEEYYIxQkF4lK5U30s_7b1c-UIz__W8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQIbr6Gi48l7bUsehiJRjO78Z5SgmGjTFK-4AWJmJ5FBGXfzbCTlgbqPomg4ouP6Jwa18l9Mw9MikA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL_ytyf0dKudZVO1ZVvwcOLYYOFxUzQxSSPhfGARRGJ7g&oe=6AA84B6C",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+          "headline": "24 bilar bakom 24 luckor i jul",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 478,
+          "kop": 2,
+          "roas": 2.818619
+        },
+        "med": true
+      },
+      {
+        "id": "120250134694770291",
+        "namn": "Adventskalender_PD_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673260291",
+          "namn": "Adventskalender Racingbilar | PD | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2142863469647432",
+          "image_hash": "fed9dcb0f6f297c21d23af914bd39171",
+          "image_url": null,
+          "video_id": "1569867135152952",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800345844_1569867171819615_437028493369573607_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=TZn7slHl-vAQ7kNvwEXEWEL&_nc_oc=AdrNnH-rL5L74a_fjfw06Wp_vsz-pb10gQPYnu9xast1qmP2TB3DjKrwYpybeb_dboc&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQIMh7F3GsX-nArPwgJyLGqZi43rQEvUHntSi4S2rLi9eztdI8warhv4G4x2jWE44h4tveuEmEBlgw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJ1oz5qk5NLB6C23HkiPJGYMbZTVEyHrKJgkGsD5SYJDA&oe=6AA85CE1",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+          "headline": "Choklad: 10 sek. Bilarna: hela december.",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 475.65,
+          "kop": 3,
+          "roas": 3.881636
+        },
+        "med": true
+      },
+      {
+        "id": "120250134684090291",
+        "namn": "Adventskalender_GT_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672900291",
+          "namn": "Adventskalender Racingbilar | GT | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1077439491596712",
+          "image_hash": "8f3b4970756776e3ca168f900318b973",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/798743909_2056108058436120_2077492574503967210_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=1eE4t8cwK28Q7kNvwGmY5YH&_nc_oc=AdplXJ0TqvF_szBt5dDdOKC5Adp69gMIEdohw-mQakg3FlspWRL1a2OqdOwn1LZiWfQ&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQIDCQrcbCM4HjpPG91ipVYPbaGGGZsMWBQKvyOYF4DvlV8tCYkE2W83WW01D9YuiEwc2mAJNBE4BQ&oh=00_AQIovDMTT0aYIgBC3GmVDevRt-kU3yMYjNXaFmEZWXwxzA&oe=6AA8633F",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/7608214229531850152?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLG0ra8A6c-sW8dLpMN0DM8Q-SENrCTqkA0VWZvZWXEQLo6ICglgUTOEEJHBt1jiVni5S2o9BxJbmbjW1QCaT33NERq72_IFzZSEWoBgNCb6u0LR87Llqb0eVOCo83sGz1oodP6db9I81uV6Sb3LY_c&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIr4GjhykpdmcZqQeE0kMyz5vpxvL5JOUGT4i6Y7z1MGXzMrp9uNIFZERjXCWVjsllfhKKmm06qQw&oh=06_Q3_DAc-MZy4LIPXF9MhD-V3dmkEi7uEf0GuMfgs3m4HYAhaO&oe=6AA446DC",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+          "headline": "24 bilar bakom 24 luckor i jul",
+          "description": "En ny bil att öppna varje dag i december.",
+          "link": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 56.7,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134675940291",
+        "namn": "Adventskalender_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672410291",
+          "namn": "Adventskalender Racingbilar | CS | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1540569504508614",
+          "image_hash": "4440f5c7e281fad9e97582d93839755d",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/800796905_2056107061769553_1929047022319908800_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=_ry2SJXiqxQQ7kNvwHtGdiR&_nc_oc=AdokQaVDWQhI-KEhZ-JpSJipK7Vq3trEs8NbICa11vttBSlnsxy4NvAsD5B9YWbKelQ&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQIQ7MTj_ZGVr0fA658w2-GSVEST7L40Japm2WZ5fUPW3qdh5UJMYmHHssmekSIzhBWEkz5Sx49ftQ&oh=00_AQI-RUKGPRDZY9XjldDxJ8eFLV_y_brYTAaA_PQUi1eOfg&oe=6AA860B6",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/14601037219911744796?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJX1zXBc-RkRzYlx-WbFTjyCuBTy0bPIhvR6iy4TK0cC7tNHwmt3z203piLdv8_ghBTgRem2VjR-g8rizdkmWiehr5JoR4t7HuWcvu_FwXJL-h4BxtWPqUMZ-m2CpeeiMTdhKSnsWKCooviftr4U6RI&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIcO-TDX-deVJr3uch_X7shkwkLklNP5P7nXiwNwLS6MosY5jc3ku-uEyc4lVcAqTPF5-UG2nmm-w&oh=06_Q3_DAWKr165_VP24V3wvKjODPCgef9fVjlE9stKytlwQ-flA&oe=6AA46986",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
+          "headline": "649 kr → 499 kr – bara idag",
+          "description": "23% rabatt på julens mest väntade kalender.",
+          "link": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 47.67,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134686490291",
+        "namn": "Adventskalender_GT_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672900291",
+          "namn": "Adventskalender Racingbilar | GT | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4440451862869692",
+          "image_hash": "93eca0dfb7843dcd36944ac325962f07",
+          "image_url": null,
+          "video_id": "1062391959875351",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800879828_1062391973208683_8762261301836636888_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=JTmR8D67frgQ7kNvwGeVJH4&_nc_oc=Adqv1zIbMO48XoLeXAKs9Nd-2OP6SMGIGlr50lUQI08gLuwtUJ-Yk8Wj2_AkTRXI8yU&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQIErkovO1QrA-WPImfgrkpCRTQHxN488efXXYSh9dg8cF73UhEscKeXyPP9mJAX_DdHtl0gkMg8bw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIQYkYJxpiJUIrTL5TPOu468oOeYcoCNskT2lIpOPcQ6w&oe=6AA844E7",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+          "headline": "24 bilar bakom 24 luckor i jul",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 38.71,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134691340291",
+        "namn": "Adventskalender_PD_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673260291",
+          "namn": "Adventskalender Racingbilar | PD | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1428649399122288",
+          "image_hash": "93cebe9a97d94b92c6f6c8447999dc3f",
+          "image_url": null,
+          "video_id": "1701758914218400",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800345715_1701758937551731_4865713617251295503_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=K9x292QMxK4Q7kNvwE_oxR5&_nc_oc=AdpggCH5kP5toQ4RinNq6BA4yQYjZFhSV1pS82m-5FdzR9__PtljBA1zLIqUwZPV1nE&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQK1edDQwIyo1rf9nNaGHN4Khd9g7Qqvbp6iL24UsJXvQqlUUU6pBl9f0Zyt9VFYnMC5_dRm34Drgw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLzCDK3SnADhdT_lh-CiQtJdfvzP3aCwRiSqsW2krSKdA&oe=6AA85F0C",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+          "headline": "Choklad: 10 sek. Bilarna: hela december.",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 27.91,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134700150291",
+        "namn": "Adventskalender_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673620291",
+          "namn": "Adventskalender Racingbilar | SP | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "3497887970394063",
+          "image_hash": "84933e4a8fe737882d85f7f274b0762f",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799561510_2056110688435857_8473682476641654349_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=XN4LTrkc7woQ7kNvwEavgmP&_nc_oc=AdpRs9DZoSAUFP5RVdwHUqz2PB-tZN4mk3kbHeCmc4bWwi5HoTTd7ar8w6uosoTUWaA&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQLNYeH_215IkMHA7gD4vi-gxv5YUjg9wXeR0Z7a8B38F-eUiuAtfv5bBrKvgV_0QqeQwMRYONh0BQ&oh=00_AQKBvCzWIdrUW5X9qYZduGmXSPTVW2yYdFXG0XHBOguESQ&oe=6AA83E47",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/7934430537513114693?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJvt2k-PYHxImWp8GgL87R7XU9ZIa8fJ3ONLleWZ7V2-dBQdrzKx7OxTEB8c5XnmNfO6lNOXnISEGYkDZJczBCe4Va-rGuWXttPUBHkaywg6ULFjq0rJ8wC44NpEysB_2M8MG6d3LLTXqDE2x9GRSZB&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLXiVyh2uqnisQQHcATJLzxoJIOBPkZ9EmpEXEA1xjSiW9FUsDSgr0zoD-ZbXV4HWjPQPC0rlQLEg&oh=06_Q3_DAQlLHnfKyhnT8Gth3OAK1vQ-s7Hwt5JrKFDjvhbsM_hT&oe=6AA44A5F",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\nBeställ nu. 🎁",
+          "headline": "Han sprang ut ur sängen varje morgon",
+          "description": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+          "link": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 24.55,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134697380291",
+        "namn": "Adventskalender_PD_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673260291",
+          "namn": "Adventskalender Racingbilar | PD | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1093644369877611",
+          "image_hash": "6ed7cba2351229fa1e2722456f88c559",
+          "image_url": null,
+          "video_id": "1759953785204515",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800436605_1759953821871178_882389780447228021_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=oPSEIB5rToMQ7kNvwGTNtT5&_nc_oc=AdpiIdXTr-c48bbxUTXMDsjwCso8RutfWcfX9nXadclZP430t8DAKeXbA3CcRNpJKJ0&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQK3LhqUcXGePPSBlPR5rNgcKGlTxDGkQsHGehzcLh7sWXuUmkM89c48DhW2a21NbiBDcHBPUmFG1w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIIGFDy2hmXMgyasdxRRd9xoJA7xO_QoKFG7DiGoAdqXw&oe=6AA87026",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+          "headline": "Choklad: 10 sek. Bilarna: hela december.",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 19.81,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134688540291",
+        "namn": "Adventskalender_GT_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672900291",
+          "namn": "Adventskalender Racingbilar | GT | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1411625901068449",
+          "image_hash": "d5378b68a732c5425efb5df81360863a",
+          "image_url": null,
+          "video_id": "2480452352477664",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800780579_2480452382477661_6060767956782599849_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=FchjAuPyVk0Q7kNvwEQ-JaW&_nc_oc=AdrEZbWAkcD-PGVGIVmwyYOEmwzbFQeYA1V_BHLIcotUTv83J_XXi6rOsTkf-eezuGM&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQLSbrSOmwrZtwfCym-SQRJUW4hz8gwtqjOLMLbcZpJjwlNF1SlnwPkG08NDPMMf3va_hTDsqzRjFA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIFP87QRGV4Zq0AzfQFeD8Axo3PvnP4tsFE-doslcwYiQ&oe=6AA84FF9",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+          "headline": "24 bilar bakom 24 luckor i jul",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 17.28,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134679560291",
+        "namn": "Adventskalender_CS_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672410291",
+          "namn": "Adventskalender Racingbilar | CS | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1078777521849865",
+          "image_hash": "b6f20262e093a1bc65f7bf25a9102c34",
+          "image_url": null,
+          "video_id": "4509326576062434",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800879841_4509326606062431_9124450430651347137_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=ChaP0YhbJwYQ7kNvwECIsf_&_nc_oc=Adq7KkLM8lHIeKW091Yd8iby39JLviABrAQuJ3VTlK1mWDrakBW5Xbpo3JZmEpCHs_s&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQKFx9C66Ar9IhKpaVw9fHelUxXjRw7YT6kWQfZKOADhaj99Veq55QKedWloG8865QbkGn0hr9Fueg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQI0sF4VO-e8onT-vxZAvu40TJmECnRwwWFrMM8bZBPWQA&oe=6AA86845",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
+          "headline": "649 kr → 499 kr – bara idag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.85,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134699510291",
+        "namn": "Adventskalender_SP_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673620291",
+          "namn": "Adventskalender Racingbilar | SP | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1105572158535458",
+          "image_hash": "1660d178dfc569c9cc0813a88c4b5d35",
+          "image_url": null,
+          "video_id": "1619050763219624",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800482261_1619050783219622_4410023328132645343_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=KFLipsu8Z-YQ7kNvwFgvps3&_nc_oc=Ado4Nys5dck6ORCIgrfbzhsLMkou0SS6h692LA2jBLPNbiE8ON--R8nFp1aWs6SK9gk&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQL3zY7TKfFg033ghhEyPe5XNVzi9jtA_mmGfg2m8Jtf-ct4g4MluGJQExQL_lQe7mClBsbJuJtsYg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJscqj2iF6ZhNZ6ZZoxyE1IUxk1CKvAHJ7rOkdwBOF_yg&oe=6AA86233",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\nBeställ nu. 🎁",
+          "headline": "Han sprang ut ur sängen varje morgon",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 5.4,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134675690291",
+        "namn": "Adventskalender_CS_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672410291",
+          "namn": "Adventskalender Racingbilar | CS | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1068739502738662",
+          "image_hash": "85b73b8d6d40b96cb7f3ca97f96b551b",
+          "image_url": null,
+          "video_id": "1779847626501068",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800345635_1779847646501066_6613326185918130913_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=Vz5HCr8zpNMQ7kNvwGGkx7j&_nc_oc=AdoKZzNi8PlHuxtLOSjjrMMRI3JNkGAephUf4o_lE9-QPwSiQuqNzEGVYBYIpV5v2PE&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQKgaoDbehhPyhn5rEaWBvdI6bRu1i2q5muoi7Fex9nYPC8EUqtxC8HfyiNapcPjIIUqg04NTUwKRw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIGKgU15A8JBrawA-grHV2ZtivUWnxHABSpoAuKW7yVpQ&oe=6AA84F4D",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
+          "headline": "649 kr → 499 kr – bara idag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 4.6,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134677420291",
+        "namn": "Adventskalender_CS_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672410291",
+          "namn": "Adventskalender Racingbilar | CS | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2266996490733492",
+          "image_hash": "88af40a2e0bc645d2d101409893009ff",
+          "image_url": null,
+          "video_id": "1872350667077211",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800165164_1872350687077209_886390159017709995_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=25RGnxKjTVAQ7kNvwFgXDZx&_nc_oc=AdoOgyy1t0_3T8T8mc4tKX9dRy3UiXSCGTWFwfYT08ZMNQRnEhdTzYw3ZVS3_zzyTNQ&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQIlBDW9p9KJWqPTdy30YvW5EvLTwfB57FCN8l1HA2Grwl7lx9r9hGrAYYE8DZCBT9NZP4dBhYGbsw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKJ93_ZHP7WQxBX0YJxVUZkrrQxLNZVZOA-PicVAzUAvA&oe=6AA85602",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
+          "headline": "649 kr → 499 kr – bara idag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.71,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134705900291",
+        "namn": "Adventskalender_SP_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673620291",
+          "namn": "Adventskalender Racingbilar | SP | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1867542654623337",
+          "image_hash": "45eb10f1e4e650ec81bc6d819d796d62",
+          "image_url": null,
+          "video_id": "1392308022362010",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/799947376_1392308055695340_4890411785407116838_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=v218ULVhe-MQ7kNvwGJ4E6_&_nc_oc=AdqIC8yN5o1ShLVTgjirKeF_9tiSWQe2RQ6LXbIReBouadqBcU8pkwhoZx6Mi91ggk4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQJH8-rWspaswVVZ1jfI_xd4lNaJpZSCE650H_eLahHRVGpjsNdVM05Hj5yCNUpwZAz9e_lHVl6trw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIXNqi-1ADJg8f0ocDqgliqzTd6YjsHgTNukpzubJZSzA&oe=6AA84C1F",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\nBeställ nu. 🎁",
+          "headline": "Han sprang ut ur sängen varje morgon",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1.72,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134703270291",
+        "namn": "Adventskalender_SP_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673620291",
+          "namn": "Adventskalender Racingbilar | SP | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4591944631051188",
+          "image_hash": "989e7316e576ff3bfd82ff39aff372a1",
+          "image_url": null,
+          "video_id": "990883130675701",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800603536_990883157342365_8760681209069473213_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=A_PrW4Jc2SgQ7kNvwGqnWBG&_nc_oc=AdqdNbk-yGsVZ19wxlRAyy5d-BDLNKlMzXcukawtJuqlGYNKAeG7LeX4Pdzg3iDLBfU&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=vPRaGh5lnHbjW5xN5p6m7g&_nc_tpa=Q5bMBQLiOcPY3bXnPIz4DOzW4MpnhhmJGs_M1C8PRB9TlnN94QYNzhs0t8BT0AuQ4iOijG8GPdzbqZZSog&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQI6gS2u8O4-Qdk01Etw-k0tyiu6CmVIED3xCqnaQucqnw&oe=6AA84EEA",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\nBeställ nu. 🎁",
+          "headline": "Han sprang ut ur sängen varje morgon",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1.26,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  },
+  "NO": {
+    "konto": {
+      "id": "1050941584152547",
+      "namn": "Magiborsten NO",
+      "valuta": "NOK"
+    },
+    "annonser": [
+      {
+        "id": "120252140688280233",
+        "namn": "Adventskalender_NO_SP_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140614220233",
+          "namn": "Adventskalender NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2111177486459013",
+          "image_hash": "b6aa548906eba08c00758184d8a35979",
+          "image_url": null,
+          "video_id": "1615181036562389",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800714992_1615181066562386_1117853230822769918_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=po1CH4FsXeIQ7kNvwHhc1tw&_nc_oc=Ado64ZQJvWv0XfS3h45R3dRooRB5MIoiC6W7Hrz4HZ72cFUTgXXvd1KDBrfu6BaBLKI&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQI20We4qNHijlox4cGIi73oTgTeRP7j5IC3P60Ke4IMnNDrjHiox_ju9D9cCNtrjLnLik86PNodgw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKk_VHKTmjdVv9n0wZb6Fsu2rRL5BQsQgxA53Ms3mdB3g&oe=6AA84810",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre velger biler fordi barna faktisk leker med dem\n🌅 Ny bil bak luken hver morgen i desember\n✅ 30 dagers åpent kjøp\n👉 Bestill julekalenderen med biler",
+          "headline": "24 biler varer til jul, ikke bare dag 2",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 486.9,
+          "kop": 2,
+          "roas": 2.530479
+        },
+        "med": true
+      },
+      {
+        "id": "120252140834810233",
+        "namn": "Adventskalender_NO_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140614220233",
+          "namn": "Adventskalender NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "853260894448558",
+          "image_hash": "04eb4648108cbcb9755831f0a1c5d7c0",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/799783783_2056980141682245_7161063853702795405_n.png?stp=dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=ff4730&_nc_ohc=abImHA2_DicQ7kNvwGW9pc3&_nc_oc=AdpJNs7FGuEweGKZRjGLrwSEIxAsXvhuHV5Lrijldva_2Za-mYAGQzphi1vxkzsoVdk&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQLvWyDzsS8OU60DOnywTa-2YYLxw_qpISlQuUFjcXRG11f7VY_TUTs0XZ0xxuBJN8qaL8jGAjfHbQ&oh=00_AQIUTA45TINF7qaYgCOfFVTh2FToVtXDxZEttyzqrYS9Ig&oe=6AA859F9",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/13393007694980548675?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKbzkndCuYY_o35aLJ7kRlGQbM1aePXBKlYx6zvWFq1MEjSB1hN7WXLi2451bns2WT2yrSiwEUZQ8h_HQplhD7hoo4Tavk3O4_QvKsS6FurKYk9Ni546vzb7Tf5os8KkJ06VK4sWIvJPEVbOBVWrCO-&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQI5FnL1ckzwDuL6djGuxQrLa1rNbMeWsevrCG_z2NAKPBG0ZWXxBc5_VIgOgy7Jp_pq-uIOOMZp0g&oh=06_Q3_DAW45kFUgzrdlZaUv2HhxVFx7npP70tKWQGtKGbDR1xYS&oe=6AA46C6A",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre velger biler fordi barna faktisk leker med dem\n🌅 Ny bil bak luken hver morgen i desember\n✅ 30 dagers åpent kjøp\n👉 Bestill julekalenderen med biler",
+          "headline": "24 biler varer til jul, ikke bare dag 2",
+          "description": "Sjokoladen tom dag 2 – denne varer til jul, 439 kr",
+          "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 314.94,
+          "kop": 3,
+          "roas": 4.35121
+        },
+        "med": true
+      },
+      {
+        "id": "120252140776270233",
+        "namn": "Adventskalender_NO_G_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140556680233",
+          "namn": "Adventskalender NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1612056627224331",
+          "image_hash": "bde843072851138e6c8d579ebdeb76d4",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/801284558_2056974151682844_2814888028093786826_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=6jd72eq8M84Q7kNvwGFfMfs&_nc_oc=Adr-ILkCvCW0TdKC8leujHuACrQ0qSC53N4HVW9ELPsUFECsc7YAP8rfw-k2bybDK8Y&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQJCaWSWR1b4a1caGFiA8C7dvhpXBIhFSw_1tmMSM7EhmbVa5kAWimFht1KgLg6OH3YvQXlaqkF7EQ&oh=00_AQI_W1Ba7vz3pUenDbdXvw-iU6fVGQpMA9ZEAJiTvXsRrg&oe=6AA84F9A",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/16587678897660094198?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIEua6iLiBvk6xThYfgaGp2G0qer-E9yTvpS3d0yeDPXY9eemiadLOOzd0Kkym4Sf22AIdDuN1GMu7Yv7ExXyWYNIU0ogjz_WDxZWHH1zpJ-7CEM_1hBiR2jJ6ow8vrGcl-0eoK5JXSozv3EPrw1FdA&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJ1HGs0qW7SOfjIGPcbUCQDqJBR7ePQ71obxgVwO6Z90SfcVM0p16ihmSrYjz6D_SAyRFRO7IVCGg&oh=06_Q3_DAb-po3XRxS9KtDtOeOdiKD2Qb6zwcandlZWqaEAcn-C6&oe=6AA457E8",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 Et nytt smil, hver dag frem til julaften\n✅ 30 dagers åpent kjøp\n👉 Bestill julegaven i dag",
+          "headline": "Julegaven med 24 biler i en eske",
+          "description": "24 biler i en gaveeske, klar til jul – 439 kr",
+          "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 156.21,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140684490233",
+        "namn": "Adventskalender_NO_SP_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140614220233",
+          "namn": "Adventskalender NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1089087393576768",
+          "image_hash": "897e4a4e02e4ea07ed39d7a5cf41320c",
+          "image_url": null,
+          "video_id": "1639947991034258",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800715005_1639948017700922_1505808527426366586_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=D_AqzZqmHjEQ7kNvwEROCv8&_nc_oc=Adq0JoUYGYSGqY_Ejq-mruAzg3zQLTE8TTPG2QUy2DxP6Rm09d0p2mllpM3LrpR-VDE&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQKrVtAgMMv7whrPJlCzFjoQpu35R9YLmxhUpgf4lw4z97yxkJjHAs41KnHnhQEj5XTLUXa5DYpvcg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQInYtjyA_wlTXn0C7Ih_mOOhm3PIN-f66EKOJhrgdLfvA&oe=6AA8394D",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre velger biler fordi barna faktisk leker med dem\n🌅 Ny bil bak luken hver morgen i desember\n✅ 30 dagers åpent kjøp\n👉 Bestill julekalenderen med biler",
+          "headline": "24 biler varer til jul, ikke bare dag 2",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 103.09,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140807610233",
+        "namn": "Adventskalender_NO_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140558330233",
+          "namn": "Adventskalender NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "822985674210028",
+          "image_hash": "37f838dfc619a532e30f1602832142df",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799869929_2056977205015872_9075608881562922303_n.png?stp=dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=ff4730&_nc_ohc=Y-Kxrt2NyoUQ7kNvwH2fcAe&_nc_oc=Adp1ISbFhcUpbZPoQECnLvLq4jd0gCNh8x_lNyY_GdgIYzfKyBh0U32zOB5KA19aXwU&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQIytTps1whiB-_F-2SQJCRt1RuuorpbgageutOJbgU3pgsvhrkBfQ6k_bsEiOZfMFrIYx34gA5gdA&oh=00_AQIPFTWEKIH0doBmEf88I_NBGGy_k58wEWuqcW9bxgAmWg&oe=6AA86606",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/8466247141091694692?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJOCrXZhZ6_KnnaBJY_30Z2vuYnaqJEPnVLh6U8ejNIM6RIZThTTNSmyo5CkM2VfiQCGtKaBOPsLi9ZxqiGBnf-sM6Il21ZrLJUIWTbx-S0x2oHfwzOiSL9HEKXt-fe1KxZ9YpFO2cmoQkb1NLH_4Cr&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJRniEUH1EOSapM8-b246gUJTqL2DuzK6FV43LNlG4dDpVK0z8n3-uImVdsa7sd6JCVezBRcRLHhw&oh=06_Q3_DAV3XexI3QKfQroH16m2Y-rF1koPcvEajszYkvHV5_PmQ&oe=6AA46FBA",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkkenbordet\n🚙 Dag 24: den stiller seg ved siden av de 23 andre\n✅ 30 dagers åpent kjøp\n👉 Se alle 24 bilene her",
+          "headline": "24 ekte biler, ikke sjokolade",
+          "description": "24 ekte biler bak lukene – kun 439 kr",
+          "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 55.94,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140558110233",
+        "namn": "Adventskalender_NO_G_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140556680233",
+          "namn": "Adventskalender NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1557363115413618",
+          "image_hash": "803a4110d875de3f15c5f62533f0ee32",
+          "image_url": null,
+          "video_id": "1753543125571040",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801882222_1753543142237705_4700024007313405104_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=vOMH1UllSbkQ7kNvwGSAimv&_nc_oc=AdoBZG_NXVZAJlQS8InZZcmDCO27RpbfKGgSEtp98v6XXjjlLrUQ_FwyenHSpPKirxc&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQJAOlHDfJTJdsCo6oR42xe1uIVJ2FPKysF7m8_IUAvjFyUJ-TvJIG017HGzy_269Ve34J7A3Tha3g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIm4BrXyYmF1r8gXytBEPfyf0UBImDjqq7mSzFlxTw9xg&oe=6AA85C35",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 Et nytt smil, hver dag frem til julaften\n✅ 30 dagers åpent kjøp\n👉 Bestill julegaven i dag",
+          "headline": "Julegaven med 24 biler i en eske",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 44.79,
+          "kop": 1,
+          "roas": 10.188212
+        },
+        "med": true
+      },
+      {
+        "id": "120252140557440233",
+        "namn": "Adventskalender_NO_G_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140556680233",
+          "namn": "Adventskalender NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1835653637594089",
+          "image_hash": "9e453d6ca96dc0e01f3e8b30728bb8c0",
+          "image_url": null,
+          "video_id": "1071327928587579",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/801044559_1071327941920911_2865436131026289201_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=0ZmdC92YvHQQ7kNvwEvzJKx&_nc_oc=Adr6qiboaZJ6GxH25OajN9G9m_Wgxj1u5WYmr-cgDYaXeXvHlKvA5d3xU2O3eoVOp6E&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQI1PmL2hYtpLlWRR2nLE5E87d0TFO6NwXN0qswbHmJPZb5-ALc_CdbwnEFVwjcCezwvscGCRsGiuA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJd3SzaBctjDlLoNuSbklyBc1qrRn0uiY8zArodgaW0OQ&oe=6AA86B3D",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 Et nytt smil, hver dag frem til julaften\n✅ 30 dagers åpent kjøp\n👉 Bestill julegaven i dag",
+          "headline": "Julegaven med 24 biler i en eske",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 38,
+          "kop": 1,
+          "roas": 12.045
+        },
+        "med": true
+      },
+      {
+        "id": "120252140732840233",
+        "namn": "Adventskalender_NO_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140554170233",
+          "namn": "Adventskalender NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1091327943299317",
+          "image_hash": "033d48beff25b5af7593dd94b856c1e3",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/800715651_2056969848349941_1209737737858159240_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=esZ_1-69VzkQ7kNvwFMg8cF&_nc_oc=AdpWmFv69NNB5XSIqoJ1zb4BS4b6DuafaDUMcE9HuJ9LaROHqEgdvnlXOrdOVKyiel8&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQKDI1fyam9hFVxyUqKhLyzCHUrtj1Bxd3JRa6SE97cu6CGQ-Ah8atFpv4lTRuY_jimeP82ZWgaF_w&oh=00_AQJyO-8pAbZ6-R_YZAwY54Uj7WJzs-b5MSAzrv-AvI8Ufg&oe=6AA85D0F",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/3252298023706677817?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIWspe3YKiByiFqXm2_mkRwl7_cYePUGSXd3h0C-dv87XyzE_eNHJHzki4boeAS22VP-MYBqefWyxMJoIT1kz-Ei0THMSgrzQaby9udMfRLWriNX4tNADdUMRV4BAZ70B8amGgxOnHR4iZeTxmQnGbR&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIw3FcLpR0oh6avLqC0n0dzsyzJ3RR_lLQA4mENscp9pw15k5jL8cUnTKWuGNoioFnluS5fSmzRsg&oh=06_Q3_DAWXOP7vXCDJfusOt4yLJ5547S-5_fcCg99zJWYxzPot2&oe=6AA45E43",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen gjelder ikke lenge\n✅ 30 dagers åpent kjøp\n👉 Bestill før den er utsolgt",
+          "headline": "579 kr → 439 kr i dag",
+          "description": "439 kr i dag, før 579 kr – 24 % rabatt",
+          "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 11.93,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140555650233",
+        "namn": "Adventskalender_NO_CS_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140554170233",
+          "namn": "Adventskalender NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1600642498257920",
+          "image_hash": "fe41637d0dd53ccafc1be934767c4883",
+          "image_url": null,
+          "video_id": "1516148176907774",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/801164201_1516148213574437_3953873799036128862_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=C4bwrewtkBMQ7kNvwFuwcDk&_nc_oc=AdoMYxxnxb9b8SEBpXq0jKmRLMEIbyHaYTorPGw9YM8UPxhY81c64rfyGxJ0-Hep_yg&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQLpJmd1b0AUCaqBOR10uuCovrQKew5JHN5K6d2JpvhkNNvXKka9FzsULE2k660V0d09h9aDG7EQog&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKdTPmT8wPKaIC9AxIFYpVdeSHpLHhuFj9bP2OKCBHqeg&oe=6AA85C0F",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen gjelder ikke lenge\n✅ 30 dagers åpent kjøp\n👉 Bestill før den er utsolgt",
+          "headline": "579 kr → 439 kr i dag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 9.26,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140557940233",
+        "namn": "Adventskalender_NO_G_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140556680233",
+          "namn": "Adventskalender NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2027644184554000",
+          "image_hash": "10c39eb6d76f562c5713102588d325d7",
+          "image_url": null,
+          "video_id": "1103177738955773",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/801429398_1103177772289103_6388699746558068460_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=c0KezAIZEbMQ7kNvwG5G2n-&_nc_oc=AdokU7tl1nc4dmtKiacZG3IcWHj_pU2nx4C87GEvtrPsB2Aq-VXF5s4E4KBbNVw3Ni0&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQKZ3NgQM3nfZMQ3Vr_O6-TlwfwCauyjqAW32PWl57rAwAukGDLZ0M1RoD5ExTwLxNMMP8WeOuhC5A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJXiSaF9KaMKUM9N9gNY4VObh9eQWXwp2hnOEQVgrOxdw&oe=6AA86FD4",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🎁 24 racerbiler i en fin gaveeske\n🎄 Klar til å legges rett under treet\n🌅 Ny bil bak luken hver morgen i desember\n😊 Et nytt smil, hver dag frem til julaften\n✅ 30 dagers åpent kjøp\n👉 Bestill julegaven i dag",
+          "headline": "Julegaven med 24 biler i en eske",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 8.15,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140612600233",
+        "namn": "Adventskalender_NO_PD_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140558330233",
+          "namn": "Adventskalender NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1042152135299584",
+          "image_hash": "e48b42a9a124f3ed8acc0c47eb35ee31",
+          "image_url": null,
+          "video_id": "1421013983466479",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801326220_1421014006799810_1503416099602238511_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=a9KnSlIYNfsQ7kNvwEhC1ff&_nc_oc=AdqLrWVZsxKOT7B3MNHcZNKIaI_hSOXbRU7g1RlugdirXgdPCTNXz_tPbd_l6TCuo6w&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQLIyvr1c3iUdeepfxI2qqT_-SGp05CalHQsGo7rKo86pVPUvEzN7Yix88No3PZguaBwAz6PprzjCw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL7JoCDr5K9SeLi7udj6L2Jyo2lHO1twVlsTesl9UxkRA&oe=6AA85B01",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkkenbordet\n🚙 Dag 24: den stiller seg ved siden av de 23 andre\n✅ 30 dagers åpent kjøp\n👉 Se alle 24 bilene her",
+          "headline": "24 ekte biler, ikke sjokolade",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 7.86,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140613320233",
+        "namn": "Adventskalender_NO_PD_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140558330233",
+          "namn": "Adventskalender NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1731946044686602",
+          "image_hash": "d26c4c94059f9c9fa277f97da55ce853",
+          "image_url": null,
+          "video_id": "1069928502430929",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801056019_1069928522430927_5652621856206459800_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=cP-qAwiPvucQ7kNvwGJnk5I&_nc_oc=Adr6NyXkNC8526u72PVLy28qypPLDxrNhhtQFQREx-w2ObIADKsteHCJZVESco_SodE&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQKr1Q3xg-FyzB-x4oC56XB2m3a8DoUnGoG3pzFze8JP7coBEfoUT8viczMfKc76_XhsRhD7kpsIpg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLpUgYNLK-_M6ifV1P8vELFWc8bUalI-ipocE_jmKBnUQ&oe=6AA86D97",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkkenbordet\n🚙 Dag 24: den stiller seg ved siden av de 23 andre\n✅ 30 dagers åpent kjøp\n👉 Se alle 24 bilene her",
+          "headline": "24 ekte biler, ikke sjokolade",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 7.32,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140686450233",
+        "namn": "Adventskalender_NO_SP_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140614220233",
+          "namn": "Adventskalender NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1723437025603203",
+          "image_hash": "aff067f4bf03dc3b5cca3485c3a9cdaa",
+          "image_url": null,
+          "video_id": "2437252636797974",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801439115_2437252660131305_4247895925868436218_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=3afS3LOP1s8Q7kNvwHFaQZJ&_nc_oc=AdqOp8L_XV7WcL0AHyEOsHZ5agyY25H1zK8xEZQv9ORnGya8uPOMDPj3PavzR06LInw&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQLcMQIqduIJuXqrx0ctJr9r_IXRRAH9-E7vHfUvsJ0x1__6PzuRTqTWUD7tHb0OX33lC9mlLBUBGQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIi0wk2BI8GE2qreFF5Hkd05btDrJfk2DxaCvxyEfh7xw&oe=6AA84783",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🍫 Sjokoladekalenderen er ofte tom 2. desember\n🚗 Denne varer helt frem til julaften – 24 biler, 24 luker\n🧒 Foreldre velger biler fordi barna faktisk leker med dem\n🌅 Ny bil bak luken hver morgen i desember\n✅ 30 dagers åpent kjøp\n👉 Bestill julekalenderen med biler",
+          "headline": "24 biler varer til jul, ikke bare dag 2",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 5.14,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140556440233",
+        "namn": "Adventskalender_NO_CS_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140554170233",
+          "namn": "Adventskalender NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1715235862883299",
+          "image_hash": "ca5f7f84962187aa94ff7b9186334fb9",
+          "image_url": null,
+          "video_id": "1829145861600756",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/801963082_1829145888267420_3620150864493575348_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=qZNblYyoLYMQ7kNvwGMCM1o&_nc_oc=AdoJUzyvps1uNTGwevT_CJVwgtbhCmgiOLnxXxRyI_izvrPnKscwQPHY9RuNudWK5uc&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQLFq_CrKGE945sCYw1KrAKlQMz-OjLy80hPJNjFnrdBEjZYj-V0GGTXiLVsy3yfdEKR3GX5T6RAog&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQI-WS2wZiIhjqO0wqD1eOYWxye8c-5OFTF-our-aLxNdg&oe=6AA8444A",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen gjelder ikke lenge\n✅ 30 dagers åpent kjøp\n👉 Bestill før den er utsolgt",
+          "headline": "579 kr → 439 kr i dag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.19,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140613450233",
+        "namn": "Adventskalender_NO_PD_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140558330233",
+          "namn": "Adventskalender NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "3100436163491813",
+          "image_hash": "49a89d55051a0242a8e73e3df4760567",
+          "image_url": null,
+          "video_id": "1418299290436690",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801882239_1418299320436687_9100647435990862242_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=phT-NZWGooYQ7kNvwHvfwSe&_nc_oc=Adp0bzNmgIYgMcj7aqCB3vlduwhErOIVQ8MT8V5UcJ9FS9xESfQ4SmoS_AjuKTFN_uM&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQJrBymmccBv7yDnJMHQXHFSRwvUYnuF5cnt4G7oXxE3s_BIv93p1Vc3stbsF8Bysl1V9OKbbaXcMA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKVCUKcvDlG8yAxrC6Q2Xv4Uc4adhErYf8WIviBmNGoFA&oe=6AA83B17",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🚗 24 ekte racerbiler, én bak hver luke\n🍫 Ingen sjokolade som er borte på ti sekunder\n🎉 Dag 1: bilen kjører på kjøkkenbordet\n🚙 Dag 24: den stiller seg ved siden av de 23 andre\n✅ 30 dagers åpent kjøp\n👉 Se alle 24 bilene her",
+          "headline": "24 ekte biler, ikke sjokolade",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 2.34,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252140556150233",
+        "namn": "Adventskalender_NO_CS_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252140554170233",
+          "namn": "Adventskalender NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252140554000233",
+          "namn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4537799899833988",
+          "image_hash": "be9b4efbb74953c1aa88f46cf9c664ac",
+          "image_url": null,
+          "video_id": "976331871533300",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/801326222_976331924866628_4930585135110011067_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=m9jMSC_TGBsQ7kNvwGTkZpj&_nc_oc=AdoKDJ7lNRO9x_EEaj6FLvA27S_DMtAClKFCZsECw5XIJdWL9OkgjePk7yoy59GGQ08&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=QLoNey_QUjF7cT6xXiaRrA&_nc_tpa=Q5bMBQJ2SHm4fxd1FNQW4X8FvX-OabCNOw14Nwf6iOBcycGVr7DZ4sYPVw-gTL2Pgv3B-BQOM9SrudUCWg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLgpvbot2Mw2DpwEukXOs7AGo_nJT7aOm9EmVyluq74hQ&oe=6AA86AC5",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🎄 579 kr ned til 439 kr – 24 % rabatt\n🚗 24 biler bak 24 luker, én ny hver morgen i desember\n⏰ Begrenset lager, prisen gjelder ikke lenge\n✅ 30 dagers åpent kjøp\n👉 Bestill før den er utsolgt",
+          "headline": "579 kr → 439 kr i dag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1.09,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  }
+}

@@ -157,10 +157,16 @@ if (process.argv[1] && process.argv[1].endsWith('kallannonser.mjs')) {
   }
 
   // Kampanjmönstret per marknad. SE slås upp på det kända kampanj-id:t när
-  // produktfilen bär ett; annars på prefixet. NO har egna produktnamn.
+  // produktfilen bär ett; annars på prefixet. NO: `kalla.no_kampanjmonster`
+  // när produkten heter något annat på norska (DryTrek: Damasker → Gamasjer),
+  // annars SAMMA prefix — husets NO-kampanjer heter "<Prefix> NO | …".
+  // ⚠️ Standardvärdet var 'gamasj|damask' (DryTreks ord) fram till 2026-09-10:
+  // AdventLane läste då DryTreks pausade norska kampanj som sin egen och
+  // rapporterade "16 annonser, 0 ACTIVE" medan "Adventskalender NO" låg
+  // ACTIVE med 16. Ett butiksord är aldrig en standard (KEDJAN.md regel 7).
   const MONSTER = {
     SE: new RegExp(p.kalla?.kampanj ? p.kalla.kampanj.split('|')[0].trim() : prefix, 'i'),
-    NO: new RegExp((p.kalla?.no_kampanjmonster ?? 'gamasj|damask'), 'i'),
+    NO: new RegExp(p.kalla?.no_kampanjmonster ?? prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'),
   };
 
   console.log(`Källprefix SE: ${prefix}_ · Mål: ${MALKONTO.namn} ${MALKONTO.id}`);

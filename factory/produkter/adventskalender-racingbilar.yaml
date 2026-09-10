@@ -196,7 +196,15 @@ kalla:
   annonsprefix: "Adventskalender"
   kampanj_id: "120250134672020291"
   kampanj: "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08"
+  # Norska källkampanjen i Magiborsten NO 1050941584152547 (läst 2026-09-10):
+  # "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09", 16 annonser ACTIVE,
+  # namn Adventskalender_NO_<vinkel>_<n>[_1]. Kampanj-id 120252140554000233.
+  no_kampanjmonster: "Adventskalender NO"
+  # Transkripten fanns inte i repot (NO-rutinen 2026-09-09 kunde inte pusha).
+  # Hämtade 2026-09-10 med HeyGen-proofread (sv→sv, 0 krediter) och sparade
+  # som market-expansion/no/video-batches/2026-09-10/srt-orig/adventskalender_<rest>.orig.srt
   srt_slug:
+    - "adventskalender"
 kallor:
   drive_mapp: ""
 
