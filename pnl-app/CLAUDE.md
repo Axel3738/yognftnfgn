@@ -547,8 +547,12 @@ annonskostnad.
   summerar per dag. Svaret kontrolleras ändå **rad för rad** mot samma
   ID-lista: en rad utan `campaign_id` kastar ett fel i stället för att tyst
   skriva hela kontots kostnad som butikens. Kampanjnivå ger dagar × kampanjer
-  rader, så anropet paginerar (20 sidor × 500). Token går numera i
-  Authorization-headern, inte i adressen.
+  rader, så spannet delas i månadsbitar och varje bit paginerar (40 sidor ×
+  500). **Nås sidtaket kastas ett fel** i stället för att returnera halva
+  svaret — en tyst trunkering hade skrivit för låg annonskostnad och för hög
+  vinst utan att någon såg det. Token går numera i Authorization-headern,
+  inte i adressen. Kampanjer som sparats i filtret men försvunnit ur listan
+  (arkiverade) visas ändå med sitt ID, annars går valet inte att ångra.
 - **Filtret följer med i ALLA tre anropsställen** — panelen, jämförelse-
   perioden och gruppsumman (`...kampanjFilter(settings)`). Missar man ett
   skriver två vägar olika värden i samma `DailySpend`-rad, och siffran hoppar

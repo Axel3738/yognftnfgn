@@ -97,6 +97,11 @@ const kontoNamn = (id: string) => (id.startsWith("act_") ? id : `act_${id}`);
  * Ett Graph-anrop med paginering. Token går i Authorization-headern, aldrig i
  * adressen — en loggad URL eller ett felmeddelande ska inte kunna läcka den.
  * Metas `paging.next` bär då ingen token, så headern skickas med varje sida.
+ *
+ * Nås sidtaket med fler sidor kvar KASTAS ett fel. Att returnera det halva
+ * svaret vore att skriva en för låg annonskostnad — och därmed en för hög
+ * vinst — utan att någon ser det. En tyst trunkering är det farligaste den
+ * här filen kan göra; ett fel syns åtminstone som en banner i panelen.
  */
 async function graphSidor(
   url: URL,
@@ -119,13 +124,18 @@ async function graphSidor(
     }
     ut.push(...(body?.data ?? []));
     next = body?.paging?.next ?? null;
-    if (!next) break;
+    if (!next) return ut;
   }
-  return ut;
+  throw new MetaError(`Meta returned more than ${maxSidor} pages — the answer would have been incomplete.`);
 }
 
-async function fetchInsights(cfg: MetaConfig, since: string, until: string): Promise<Insight[]> {
-  const filtering = filterParam(cfg);
+/** Ett spann på insights-endpointen. Filtret gör svaret kampanjuppdelat. */
+async function hamtaInsightSpann(
+  cfg: MetaConfig,
+  since: string,
+  until: string,
+  filtering: string | null,
+): Promise<Insight[]> {
   const url = new URL(`${GRAPH}/${kontoNamn(cfg.adAccountId)}/insights`);
   /* Utan filter: kontonivå, en rad per dag — oförändrat sedan v1 och det
      billigaste Meta kan svara. Med filter: kampanjnivå, för då måste svaret
@@ -141,9 +151,30 @@ async function fetchInsights(cfg: MetaConfig, since: string, until: string): Pro
   url.searchParams.set("limit", "500");
 
   /* Timeout: det här anropet awaitas numera även i gruppsummeringen — utan
-     gräns blir ett hängt Meta-svar en panel som aldrig laddar. Sidorna:
-     kampanjnivå ger dagar × kampanjer rader, så 500 räcker inte alltid. */
-  return graphSidor(url, cfg.accessToken, filtering ? 20 : 3, 15_000) as Promise<Insight[]>;
+     gräns blir ett hängt Meta-svar en panel som aldrig laddar. */
+  return graphSidor(url, cfg.accessToken, filtering ? 40 : 3, 15_000) as Promise<Insight[]>;
+}
+
+/** Månadsbitar när filtret är på — annars spränger radantalet sidtaket. */
+const SPANN_DAGAR = 31;
+
+async function fetchInsights(cfg: MetaConfig, since: string, until: string): Promise<Insight[]> {
+  const filtering = filterParam(cfg);
+  if (!filtering) return hamtaInsightSpann(cfg, since, until, null);
+
+  /* Kampanjnivå ger dagar × kampanjer rader: 90 dagar och 200 kampanjer är
+     18 000 rader, långt bortom vad ett anrop orkar paginera. Spannet delas
+     därför i månadsbitar. Bitarna hämtas i tur och ordning — parallellt hade
+     bara gjort det lättare att slå i Metas rate limit. */
+  const ut: Insight[] = [];
+  let start = since;
+  while (start <= until) {
+    const kant = shiftIso(start, SPANN_DAGAR - 1);
+    const slut = kant < until ? kant : until;
+    ut.push(...(await hamtaInsightSpann(cfg, start, slut, filtering)));
+    start = shiftIso(slut, 1);
+  }
+  return ut;
 }
 
 /** En kampanj i annonskontot, som kryssrutorna i Inställningar visar den. */
@@ -176,8 +207,8 @@ export async function listaKampanjer(cfg: MetaConfig): Promise<MetaKampanj[]> {
   spendUrl.searchParams.set("limit", "500");
 
   const [namnRader, spendRader] = await Promise.all([
-    graphSidor(namnUrl, cfg.accessToken, 5, 10_000),
-    graphSidor(spendUrl, cfg.accessToken, 5, 12_000),
+    graphSidor(namnUrl, cfg.accessToken, 10, 10_000),
+    graphSidor(spendUrl, cfg.accessToken, 10, 12_000),
   ]);
 
   const spend = new Map<string, number>();
@@ -279,6 +310,11 @@ async function fetchAccountCurrency(cfg: MetaConfig): Promise<string | undefined
  * Kastar aldrig — ett fel returneras istället som `error` så att panelen kan
  * visa försäljningen ändå och flagga att TB är ofullständigt. Att tyst visa
  * noll annonskostnad vore värre än att visa ingenting.
+ *
+ * ⚠ NY ANROPARE: skicka ALLTID med `...kampanjFilter(settings)` i cfg.
+ * `DailySpend` har ingen kampanjdimension — en anropare som glömmer filtret
+ * skriver ofiltrerad spend över de filtrerade raderna i den delade tabellen,
+ * och siffran hoppar beroende på vilken sida som laddades sist.
  */
 export async function getSpend(
   shop: string,

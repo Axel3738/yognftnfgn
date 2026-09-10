@@ -281,6 +281,16 @@ export default function Settings() {
   const kampanjer = kampanjSvar?.kampanjer ?? [];
   const kampanjLaddar = kampanjFetcher.state !== "idle";
   const kampanjFel = !kampanjLaddar && Boolean(kampanjSvar) && !kampanjSvar?.ok;
+  /* En sparad kampanj som inte längre finns i listan (arkiverad, borttagen)
+     visas ändå — annars går valet inte att ångra utan att byta läge. */
+  const kampanjRader: Kampanj[] = kampanjSvar?.ok
+    ? [
+        ...kampanjer,
+        ...valdaKampanjer
+          .filter((id) => !kampanjer.some((k) => k.id === id))
+          .map((id) => ({ id, name: id, status: "", spend30: 0 })),
+      ]
+    : kampanjer;
   /* Spenden är i ANNONSKONTOTS valuta, aldrig butikens — den måste skrivas ut
      med sin valuta, annars läser man 5 000 som kronor när det är dollar. */
   const spendValuta =
@@ -731,17 +741,17 @@ export default function Settings() {
                       ) : null}
                       {kampanjLage === "all" ? null : kampanjLaddar ? (
                         <Text as="p" tone="subdued">{T.settings.campaigns.loading}</Text>
-                      ) : kampanjer.length ? (
+                      ) : kampanjRader.length ? (
                         <BlockStack gap="150">
                           <InlineStack gap="300">
-                            <Button variant="plain" onClick={() => setValdaKampanjer(kampanjer.map((k) => k.id))}>
+                            <Button variant="plain" onClick={() => setValdaKampanjer(kampanjRader.map((k) => k.id))}>
                               {T.settings.campaigns.selectAll}
                             </Button>
                             <Button variant="plain" onClick={() => setValdaKampanjer([])}>
                               {T.settings.campaigns.selectNone}
                             </Button>
                           </InlineStack>
-                          {kampanjer.map((k) => (
+                          {kampanjRader.map((k) => (
                             <Checkbox
                               key={k.id}
                               label={k.name}
