@@ -137,3 +137,36 @@ test('theme är alltid en manuell punkt', () => {
   const r = kontrolleraLaunch(launchklarProdukt(), { shop: SHOP, produkt: PRODUKT, policyer: POLICYER });
   assert.ok(r.manuella.some((m) => m.namn === 'theme'));
 });
+
+// Ägarens undantag (TackleBay 2026-09-10): "kalendern har inga annonser än,
+// skippa den" — recensioner och gif får inte stoppa launchen, men syns.
+test('qa.undantag med motivering gör punkten manuell i stället för kritisk', () => {
+  const p = launchklarProdukt();
+  p.reviews = [];
+  p.media.gif_problem = '';
+  p.qa = { undantag: ['reviews', 'beskrivning'], undantag_motivering: 'Axel 2026-09-10: inga annonser för kalendern än' };
+  const r = kontrolleraLaunch(p, { shop: SHOP, produkt: PRODUKT, policyer: POLICYER });
+  assert.equal(r.gron, true, namn(r).join(','));
+  const rev = r.punkter.find((x) => x.namn === 'reviews');
+  assert.equal(rev.utfall, 'manuell');
+  assert.ok(rev.detalj.startsWith('UNDANTAG (Axel 2026-09-10'));
+  assert.ok(r.manuella.some((x) => x.namn === 'beskrivning' && x.undantag === true));
+});
+
+test('qa.undantag utan motivering gäller inte — och ger en egen kritisk punkt', () => {
+  const p = launchklarProdukt();
+  p.reviews = [];
+  p.qa = { undantag: ['reviews'] };
+  const r = kontrolleraLaunch(p, { shop: SHOP, produkt: PRODUKT, policyer: POLICYER });
+  assert.ok(namn(r).includes('reviews'));
+  assert.ok(namn(r).includes('qa-undantag'));
+});
+
+test('qa.undantag rör bara de namngivna kontrollerna', () => {
+  const p = launchklarProdukt();
+  p.reviews = [];
+  p.meta.pixel_id = '';
+  p.qa = { undantag: ['reviews'], undantag_motivering: 'test' };
+  const r = kontrolleraLaunch(p, { shop: SHOP, produkt: PRODUKT, policyer: POLICYER });
+  assert.deepEqual(namn(r), ['tracking']);
+});

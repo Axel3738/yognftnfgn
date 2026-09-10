@@ -193,6 +193,13 @@ test('byggUnderlagObjekt: flerproduktsbutik får kollektion, en menyrad per prod
   assert.ok(ut['metafalt.andra-prylen.opf.problem_rubrik']);
 });
 
+test('byggUnderlagObjekt bär positioneringen som tema.settings.brand_description (läckte på /nb, TackleBay 2026-09-10)', () => {
+  const butik = rabutik();
+  butik.branding = { ...(butik.branding ?? {}), positionering: 'Fiskebutiken för den som redan har spöna' };
+  const ut = byggUnderlagObjekt(byggMinimalKontext(butik, [raprodukt()]));
+  assert.equal(ut['tema.settings.brand_description'], '<p>Fiskebutiken för den som redan har spöna</p>');
+});
+
 test('byggUnderlagObjekt kastar utan butik.id; underlagsfil pekar på output/<butik>/', () => {
   assert.throws(() => byggUnderlagObjekt({ butik: {} }), /butik\.id/);
   assert.match(underlagsfil('tacklebay', 'nb'), /output[\\/]tacklebay[\\/]oversattning-nb\.json$/);

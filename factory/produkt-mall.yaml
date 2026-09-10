@@ -214,3 +214,14 @@ meta:
   testbudget_per_dag: 1000
   vinklar:                    # vinklar för första testbatchen
     - ""
+
+# ---------------------------------------------------------------------------
+# QA-UNDANTAG — bara ägarens beslut, aldrig fabrikens. Kontroller som listas
+# här stoppar inte --launch; de står kvar i rapporten som manuella med
+# motiveringen. Utan motivering gäller undantaget inte.
+# Kontrollnamn: beskrivning (gif_problem/media_losning), reviews, tracking …
+# (TackleBay 2026-09-10: "kalendern har inga annonser än — skippa den.")
+# ---------------------------------------------------------------------------
+# qa:
+#   undantag: []
+#   undantag_motivering: ""

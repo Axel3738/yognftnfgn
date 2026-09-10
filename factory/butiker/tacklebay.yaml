@@ -130,6 +130,10 @@ startsida:
     rubrik: "Allt på sin plats"
     text: "Utrustning för den som redan fiskar — och presenter till den som redan har allt i lådan."
     knapp: "Se sortimentet"
+    # BILDER (2026-09-10): bara riktiga källbilder, och bara sådana UTAN
+    # inbränd svensk text — fyra av fem spöhållarbilder bär svenska rubriker
+    # och skulle läcka på /nb. Kartongen är leverantörens foto, ingen text.
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender.jpg"
   marquee:
     - "Fri frakt i Sverige och Norge"
     - "14 dagars ångerrätt"
@@ -152,6 +156,8 @@ startsida:
     text:
       - "Fri frakt till hela Sverige och Norge, och 14 dagars ångerrätt enligt svensk lag."
       - "Betala som du vill — Klarna, kort, Apple Pay eller Google Pay."
+    # Spöhållarnas produktkollage: leverantörsfoto, ingen inbränd text.
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d426b7a-cfe0-49df-8b44-03c3aabbc326.jpg"
   faq_rubrik: "Vanliga frågor"
   faq:
     - fraga: "Hur snabbt kommer paketet?"

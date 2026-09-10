@@ -57,7 +57,7 @@ node factory/ops.mjs factory/butiker/<butik>.yaml factory/produkter/<p1>.yaml [<
 | 10 | `paket` | produkt | `paket.mjs` (valutaspärr mot `shop.currencyCode`) | manuell "byt valuta i admin, kör `--igen paket`" |
 | 11 | `kollektion` | butik | `shopify.skrivKollektion` (bara flerprodukt) | stoppar |
 | 12 | `startsida` | butik | `startsida.mjs` + `filer.mjs` (hero/trygghet/galleri upp i Files först) + sidfotens bolagsblock | stoppar |
-| 13 | `sidor`, `policyer`, `meny`, `frakt`, `huvudmarknad` | butik | `policyer.mjs` (inkl. EU:s ångerknapp i returpolicyn), `shopify.skrivPolicy`, `meny.mjs` (Hem / [kollektion] / produkter / Frakt & retur / Kontakt) + sidfotsraden **Ångra köp** → `angerknappUrl()`, `frakt.mjs`, valutakontroll | stoppar (policyer utan scope `write_legal_policies` → manuell) |
+| 13 | `sidor`, `policyer`, `meny`, `frakt`, `huvudmarknad` | butik | `policyer.mjs` (inkl. EU:s ångerknapp i returpolicyn), `shopify.skrivPolicy`, `meny.mjs` (Hem / [kollektion] / produkter / Frakt & retur / Kontakt) + sidfotsraden **Ångra köp** → `angerknappUrl()`, `frakt.mjs` (saknade zoner SKAPAS med länder, trialens zoner rivs — 2026-09-10), valutakontroll | stoppar (policyer utan scope `write_legal_policies` → manuell) |
 | 14 | `kallskanning` | butik | `kallskanning-kor.mjs` + `kallskanning.mjs` på ALLA temafiler | stoppar — en träff = spärr |
 | 15 | `recensioner` | produkt | `judgeme.mjs`: app-CSV med originaldatum alltid; API-import via `tools/judgeme-import.mjs` bara om butikens token finns i env | manuell (VA:n laddar upp filen i appen) |
 | 16 | `marknad` | butik | `marknad.mjs`: marknad + locale + webPresence per rad i `butik.marknader` | stoppar (tom `butik.marknader` = stopp) |
@@ -98,6 +98,14 @@ Hela listan i `factory/README.md`.
    `output/` för en annan butik. Tokenen skrivs i `factory/.env` som
    `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` + `SHOPIFY_ADMIN_TOKEN_<BUTIK>`
    (+ utgångstid och domän per butik) så gamla butiker förblir nåbara.
+   **Fjärde spärren (2026-09-10): appens scopes.** `token.mjs` läser
+   `currentAppInstallation.accessScopes` i samma anrop som `shop` och jämför
+   mot `KRAVDA_SCOPES` (16 st). Saknas något stoppar steg 0 med "Connected ✓
+   … men appen har N av 16 scopes" och raden att klistra in under Access
+   scopes på dev.shopify.com. *(TackleBay 2026-09-10: rätt butik, rätt
+   nycklar, token mintad — och NOLL scopes. Inte ens produkter gick att läsa,
+   och felet var en rå `read_themes`-text. Checklistans avsnitt 3 bär nu
+   scope-raden som ett eget klick.)*
 2. ⚙️ **Hämta produktdata** från källan (Bäverbutik-sidan): `/products/<handle>.json`
    + Judge.me `reviews_for_widget` (originaldatum i `reviews[].created_at`).
    Källans Kaching-paketnivåer ligger som JSON i sidans HTML
@@ -474,6 +482,58 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   checkout-branding (Plus), Meta-sidor, CAPI-token, Discord-server,
   Judge.mes inställningar och token. `shopPolicyUpdate` kräver scopet
   `write_legal_policies` — saknas det blir policyerna manuella.
+- **Kollektion + produkter uppdateras i två anrop** (mätt 2026-09-10):
+  `collectionUpdate` avvisar `products` ("products cannot be specified
+  during update"). `skrivKollektion` uppdaterar titel/beskrivning och lägger
+  till saknade produkter med `collectionAddProducts`.
+- **Tillbakaläsningen av en temafil kan komma före Shopifys egen skrivning**
+  (TackleBay 2026-09-10: `brand_description` lästes som "" och stod i butiken
+  tio sekunder senare). `skrivOchVerifiera` läser upp till tre gånger med
+  paus — verifieringen är kvar, den dömer bara inte på första läsningen.
+- **Paketblocken och paketnivåerna delar testnamn.** Standardstegen i
+  `paket.mjs` ligger under `STANDARD_PAKETTEST = "paket"` (a/b) och mallen
+  bygger A/B-blocken under samma namn — med '' renderar `ms-paket.liquid`
+  noll nivåer. Flerproduktsbutik får blocken i den delade `product.json`
+  när alla produkter delar test (ms-paket filtrerar på `product.id` själv);
+  fullpris-kryssrutan är produktbunden och byggs bara i enproduktsläget.
+- **Gamla paketnivåer dör inte av sig själva.** Byter handle-schemat
+  (TackleBay: `tacklebayrod-*` → `fiskespohallare-4-pack-*`) ligger de
+  gamla kvar och kunden ser sex nivåer. `paket.mjs --stada` river nivåer
+  som pekar på produkten men inte står i planen; trippelkollen larmar med
+  "2 förvalda".
+- **Ägarens QA-undantag bor i produktfilen** (`qa.undantag` + obligatorisk
+  `qa.undantag_motivering`, TackleBay 2026-09-10: "kalendern har inga
+  annonser än — skippa den", "/gif_problem" = launch utan gif). Punkten
+  blir manuell med motiveringen i rapporten, aldrig borttagen. Utan
+  motivering gäller undantaget inte. Fabriken skriver aldrig in ett själv.
+- **Översättningsunderlaget måste bygga settings MED butiken** —
+  `rensaSettings({ current: {} }, { butik })`. Utan butiken blev
+  `brand_description` tom i underlaget medan temat bar positioneringen, och
+  launch-körningens läcksökning hittade "temainställning
+  general.brand_description" på /nb (TackleBay 2026-09-10).
+- **Bonussteget återanvänder en befintlig produkt.** Är `offer.bonus_produkt.handle`
+  en produkt som redan finns i butiken och `bilder` är tom (betald
+  korg-upsell = butikens andra produkt, TackleBay 2026-09-10, Axels beslut
+  "ingen gratis bonus") skapas ingenting — id:n hämtas och skrivs tillbaka.
+  Bara en bonus MED egna bilder byggs som ny produkt.
+- **Recensionsdatum går inte att verifiera ur HTML** — Judge.me-widgeten
+  renderas i webbläsaren, och `reviews_for_widget` svarade tomt för
+  iahe0c-b1 (2026-09-10) trots att importen var gjord. Datumkollen efter
+  app-importen är alltså ett öga på produktsidan, inte en kodkontroll.
+- **Kundvyns gratis-rad och fullpris-kryssruta är villkorade** på
+  produktfilen: gratis-raden bara när en nivå har `gratis_antal > 0`,
+  kryssrutan bara vid `tillagg_kryssruta: true`. En betald korg-upsell
+  (bonus_produkt = butikens andra produkt) ger inte rött.
+- **Hero- och trygghetsbilder: bara källbilder UTAN inbränd svensk text.**
+  Fyra av fem spöhållarbilder bar svenska rubriker — de läcker på /nb.
+  Tomma bildfält = Shopifys placeholder-SVG = rött i kundvyn.
+- **Appens scopes är ett klick, inte en självklarhet.** En app skapad på
+  dev.shopify.com har inga scopes förrän någon skriver in dem under
+  Configuration → Access scopes och släpper en version. Token-minten lyckas
+  ändå, så felet syns först vid första läsningen. Listan bor på ETT ställe,
+  `KRAVDA_SCOPES` i `token.mjs`; checklistan och steg 0 läser den därifrån.
+  Ändras kedjan så att den behöver ett nytt scope: lägg till det där, aldrig
+  i en doc-fil för hand.
 - **En färsk trial-butik har `en` som primärspråk och VA:ns land/valuta**
   (DryTrek: `shopLocales` = bara `en`; TackleBay: `en`, Filippinerna, PHP,
   2026-09-09). Svensk text hamnar i `en`-slotten men kundvyn blir rätt;

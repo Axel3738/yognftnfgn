@@ -274,21 +274,37 @@ test('skrivMeny(handle, rader) skapar med härledd titel; oförändrad meny rör
   assert.equal(skickat.length, 3, 'ingen mutation när menyn redan stämmer');
 });
 
-test('skrivKollektion tar ett input-objekt och uppdaterar befintlig kollektion med id', async () => {
+test('skrivKollektion: befintlig kollektion uppdateras UTAN products, saknade produkter läggs till separat', async () => {
+  // Mätt 2026-09-10: collectionUpdate avvisar `products` ("products cannot be
+  // specified during update"). Testet låste tidigare det felaktiga anropet.
   fejkaShopify([
     { data: { collections: { nodes: [{ id: 'gid://c/1', handle: 'sortiment', title: 'Gammal' }] } } },
-    { data: { collectionUpdate: { collection: { id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet' }, userErrors: [] } } },
+    { data: { collectionUpdate: { collection: { id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet', products: { nodes: [{ id: 'gid://p/1' }] } }, userErrors: [] } } },
+    { data: { collectionAddProducts: { collection: { id: 'gid://c/1' }, userErrors: [] } } },
   ]);
-  const ut = await skrivKollektion({ handle: 'sortiment', titel: 'Sortimentet', produktIds: ['gid://p/1'] });
+  const ut = await skrivKollektion({ handle: 'sortiment', titel: 'Sortimentet', produktIds: ['gid://p/1', 'gid://p/2'] });
   assert.equal(ut.skapad, false);
+  assert.equal(ut.tillagda, 1);
+  assert.equal(ut.products, undefined);
   assert.deepEqual(skickat[1].variables.input, {
     handle: 'sortiment',
     title: 'Sortimentet',
     descriptionHtml: '',
-    products: ['gid://p/1'],
     sortOrder: 'MANUAL',
     id: 'gid://c/1',
   });
+  assert.match(skickat[2].query, /collectionAddProducts/);
+  assert.deepEqual(skickat[2].variables, { id: 'gid://c/1', productIds: ['gid://p/2'] });
+});
+
+test('skrivKollektion: alla produkter redan i kollektionen → ingen collectionAddProducts', async () => {
+  fejkaShopify([
+    { data: { collections: { nodes: [{ id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet' }] } } },
+    { data: { collectionUpdate: { collection: { id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet', products: { nodes: [{ id: 'gid://p/1' }] } }, userErrors: [] } } },
+  ]);
+  const ut = await skrivKollektion({ handle: 'sortiment', titel: 'Sortimentet', produktIds: ['gid://p/1'] });
+  assert.equal(ut.tillagda, 0);
+  assert.equal(skickat.length, 2);
 });
 
 test('publiceraIButiken kastar aldrig — fel blir { publicerad:false, notis }', async () => {
@@ -375,6 +391,27 @@ test('byggFraktprofilInput river villkorade, skapar och uppdaterar — bara zone
   ]);
 });
 
+test('byggFraktprofilInput skapar saknade zoner med länder och river främmande', () => {
+  const lage = tolkaFraktprofil(PROFIL);
+  const profile = byggFraktprofilInput(lage, {
+    attSkapaZoner: [
+      { zon: 'EU (Europeiska Unionen)', lander: ['DK', 'DE'], metoder: [{ namn: 'Fri frakt', pris: 0, valuta: 'SEK' }] },
+      { zon: 'Internationell', lander: ['*'], metoder: [{ namn: 'Fri frakt', pris: 0, valuta: 'SEK' }] },
+    ],
+    attTaBortZoner: [{ zon: 'International', id: 'gid://z/int' }],
+  });
+  const grupp = profile.locationGroupsToUpdate[0];
+  assert.deepEqual(grupp.zonesToUpdate, []);
+  assert.deepEqual(profile.zonesToDelete, ['gid://z/int'], 'zonesToDelete ligger på profilen (mätt 2026-09-10)');
+  assert.equal(grupp.zonesToDelete, undefined);
+  assert.equal(grupp.zonesToCreate.length, 2);
+  assert.deepEqual(grupp.zonesToCreate[0].countries, [{ code: 'DK', includeAllProvinces: true }, { code: 'DE', includeAllProvinces: true }]);
+  assert.deepEqual(grupp.zonesToCreate[1].countries, [{ restOfWorld: true }]);
+  assert.deepEqual(grupp.zonesToCreate[0].methodDefinitionsToCreate, [
+    { name: 'Fri frakt', active: true, rateDefinition: { price: { amount: '0.0', currencyCode: 'SEK' } } },
+  ]);
+});
+
 test('tillampaFraktatgarder(atgarder) läser läget själv; orört gör inget anrop', async () => {
   fejkaShopify([]);
   assert.deepEqual(await tillampaFraktatgarder({ orort: true, attSkapa: [], attUppdatera: [], attTaBort: [] }), { andrade: 0 });
@@ -390,7 +427,7 @@ test('tillampaFraktatgarder(atgarder) läser läget själv; orört gör inget an
     attSkapa: [{ zon: 'Sverige', metod: { namn: 'Fri frakt', pris: 0, valuta: 'SEK' } }],
     attUppdatera: [],
   });
-  assert.deepEqual(ut, { andrade: 2 });
+  assert.deepEqual(ut, { andrade: 2, skapadeZoner: [], borttagnaZoner: [] });
   assert.equal(skickat[1].variables.id, 'gid://dp/1');
   assert.deepEqual(skickat[1].variables.profile.methodDefinitionsToDelete, ['gid://md/1']);
 });

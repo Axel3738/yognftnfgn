@@ -21,6 +21,10 @@ import {
   tolkaMintfel,
   storefrontLosenord,
   suffixForDoman,
+  KRAVDA_SCOPES,
+  SCOPE_RAD,
+  saknadeScopes,
+  forklaraSaknadeScopes,
 } from '../token.mjs';
 
 // --- hjälp -----------------------------------------------------------------
@@ -43,7 +47,7 @@ function tempMappar() {
 }
 
 // Fejkad Shopify: svarar på token-mint och på graphql-frågan.
-function fejkShopify({ namn = 'My Store', doman = 'ny1234-ab.myshopify.com', avvisa = () => false } = {}) {
+function fejkShopify({ namn = 'My Store', doman = 'ny1234-ab.myshopify.com', avvisa = () => false, scopes = KRAVDA_SCOPES.map(([s]) => s), appNamn = 'Fabriken ny1234' } = {}) {
   const anrop = [];
   const fetchFn = async (url, init) => {
     anrop.push({ url, init });
@@ -54,17 +58,26 @@ function fejkShopify({ namn = 'My Store', doman = 'ny1234-ab.myshopify.com', avv
     }
     const token = init.headers['X-Shopify-Access-Token'];
     if (avvisa(token)) return { ok: false, status: 401, json: async () => ({}), text: async () => 'Unauthorized' };
+    // Som Shopify på riktigt (mätt 2026-09-10): frågar man efter themes utan
+    // read_themes blir HELA data null och errors bär ACCESS_DENIED.
+    const fragarTeman = String(init.body).includes('themes(');
+    const nekad = fragarTeman && !scopes.includes('write_themes');
     return {
       ok: true,
       status: 200,
       text: async () => '',
-      json: async () => ({
-        data: {
-          shop: { name: namn, myshopifyDomain: doman, currencyCode: 'SEK', email: 'x@y.se', primaryDomain: { host: 'ny.se' } },
-          themes: { nodes: [{ id: 'gid://shopify/OnlineStoreTheme/1', name: 'Dawn', role: 'MAIN' }] },
-          products: { nodes: [] },
-        },
-      }),
+      json: async () =>
+        nekad
+          ? { data: null, errors: [{ message: 'Access denied for themes field. Required access: `read_themes` access scope.', extensions: { code: 'ACCESS_DENIED' }, path: ['themes'] }] }
+          : {
+              data: {
+                shop: { name: namn, myshopifyDomain: doman, currencyCode: 'SEK', email: 'x@y.se', primaryDomain: { host: 'ny.se' } },
+                currentAppInstallation: { app: { title: appNamn, handle: 'fabriken' }, accessScopes: scopes.map((handle) => ({ handle })) },
+                ...(fragarTeman
+                  ? { themes: { nodes: [{ id: 'gid://shopify/OnlineStoreTheme/1', name: 'Dawn', role: 'MAIN' }] }, products: { nodes: [] } }
+                  : {}),
+              },
+            },
     };
   };
   return { fetchFn, anrop };
@@ -519,5 +532,107 @@ test('utan onskadDoman fungerar allt som förut — gamla butiker går inte sön
   const env = { SHOPIFY_SHOP: 'ikf0tu-5e.myshopify.com', SHOPIFY_CLIENT_ID: 'x', SHOPIFY_CLIENT_SECRET: 'y' };
   const b = await anslut('kalender', { env, utanEnvFil: true, fetchFn, sparrAlternativ: t.alt });
   assert.equal(b.domain, 'ikf0tu-5e.myshopify.com');
+  t.stada();
+});
+
+// -------------------------------------------------- appens scopes
+//
+// TackleBay 2026-09-10: rätt butik, rätt nycklar, token mintad — och appen
+// hade noll scopes. Steg 0 dog på en rå `read_themes`-text. Nu ska felet
+// säga "Connected ✓" OCH exakt vad som ska klistras in på dev.shopify.com.
+
+test('saknadeScopes: write_x täcker read_x, tom lista = allt saknas', () => {
+  assert.equal(saknadeScopes(KRAVDA_SCOPES.map(([s]) => s)).length, 0);
+  assert.equal(saknadeScopes([]).length, KRAVDA_SCOPES.length);
+  assert.equal(saknadeScopes(null).length, KRAVDA_SCOPES.length);
+  // read_locations täcks av write_locations
+  const utanRead = KRAVDA_SCOPES.map(([s]) => (s === 'read_locations' ? 'write_locations' : s));
+  assert.equal(saknadeScopes(utanRead).length, 0);
+  // objektformen ur GraphQL ({ handle }) fungerar också
+  assert.equal(saknadeScopes(KRAVDA_SCOPES.map(([handle]) => ({ handle }))).length, 0);
+  const saknas = saknadeScopes(KRAVDA_SCOPES.map(([s]) => s).filter((s) => s !== 'write_themes'));
+  assert.deepEqual(saknas.map(([s]) => s), ['write_themes']);
+});
+
+test('SCOPE_RAD är en kommaseparerad rad utan mellanslag — den ska gå att klistra rakt in', () => {
+  assert.equal(SCOPE_RAD.split(',').length, KRAVDA_SCOPES.length);
+  assert.ok(!/\s/.test(SCOPE_RAD));
+  assert.ok(SCOPE_RAD.includes('write_themes') && SCOPE_RAD.includes('write_legal_policies'));
+});
+
+test('forklaraSaknadeScopes: börjar med Connected ✓, listar scopen och raden att klistra in', () => {
+  const text = forklaraSaknadeScopes({ doman: 'iahe0c-b1.myshopify.com', namn: 'TackleBay', appNamn: 'Fabriken iahe0c', saknas: saknadeScopes([]) });
+  assert.ok(text.startsWith('STOPP — Connected: iahe0c-b1.myshopify.com ✓ (TackleBay)'));
+  assert.match(text, /"Fabriken iahe0c" har bara 0 av \d+ scopes/);
+  assert.ok(text.includes(SCOPE_RAD));
+  assert.ok(text.includes('dev.shopify.com'));
+  assert.ok(text.includes('write_themes'));
+  assert.ok(text.includes('Release'));
+});
+
+test('anslut: app utan scopes stoppar EFTER Connected, före skrivning, med raden att klistra in', async () => {
+  const t = tempMappar();
+  const envFil = join(t.rot, '.env');
+  const { fetchFn } = fejkShopify({ namn: 'TackleBay', doman: 'iahe0c-b1.myshopify.com', scopes: [], appNamn: 'Fabriken iahe0c' });
+  const env = { SHOPIFY_SHOP: 'iahe0c-b1.myshopify.com', SHOPIFY_CLIENT_ID: 'cid', SHOPIFY_CLIENT_SECRET: 'csec' };
+  await assert.rejects(
+    () => anslut('tacklebay', { env, envFil, fetchFn, sparrAlternativ: t.alt }),
+    (e) => e.message.startsWith('STOPP — Connected: iahe0c-b1.myshopify.com ✓ (TackleBay)') && e.message.includes(SCOPE_RAD) && e.message.includes('Fabriken iahe0c')
+  );
+  assert.equal(env.SHOPIFY_ADMIN_TOKEN, undefined, 'ingen token i processen');
+  assert.equal(Object.keys(lasEnvFil(envFil)).length, 0, 'ingen .env skriven');
+  t.stada();
+});
+
+test('anslut: app med alla scopes går igenom och rapporterar dem', async () => {
+  const t = tempMappar();
+  const envFil = join(t.rot, '.env');
+  const { fetchFn } = fejkShopify({ namn: 'My Store 3', appNamn: 'Fabriken ny1234' });
+  const env = { SHOPIFY_SHOP: 'ny1234-ab.myshopify.com', SHOPIFY_CLIENT_ID: 'cid', SHOPIFY_CLIENT_SECRET: 'csec' };
+  const b = await anslut('nybutik', { env, envFil, fetchFn, sparrAlternativ: t.alt });
+  assert.equal(b.appNamn, 'Fabriken ny1234');
+  assert.equal(b.scopes.length, KRAVDA_SCOPES.length);
+  assert.equal(b.teman.length, 1);
+  t.stada();
+});
+
+test('anslut: sparad token utan scopes → minta om EN gång innan stoppet (appen kan ha fått scopen efteråt)', async () => {
+  const t = tempMappar();
+  const envFil = join(t.rot, '.env');
+  // Första läsningen (sparad token) svarar noll scopes, den nymintade svarar alla.
+  let lasningar = 0;
+  const alla = KRAVDA_SCOPES.map(([s]) => s);
+  const fetchFn = async (url, init) => {
+    if (url.endsWith('/admin/oauth/access_token')) {
+      return { ok: true, status: 200, json: async () => ({ access_token: 'shpat_ny_1', expires_in: 86399 }), text: async () => '' };
+    }
+    lasningar += 1;
+    const scopes = init.headers['X-Shopify-Access-Token'] === 'shpat_gammal' ? [] : alla;
+    return fejkShopify({ scopes }).fetchFn(url, init);
+  };
+  const env = {
+    SHOPIFY_SHOP: 'ny1234-ab.myshopify.com',
+    SHOPIFY_CLIENT_ID: 'cid',
+    SHOPIFY_CLIENT_SECRET: 'csec',
+    SHOPIFY_ADMIN_TOKEN_NYBUTIK: 'shpat_gammal',
+    SHOPIFY_ADMIN_TOKEN_UTGAR_NYBUTIK: new Date(Date.now() + 3_600_000).toISOString(),
+    SHOPIFY_STORE_DOMAIN_NYBUTIK: 'ny1234-ab.myshopify.com',
+  };
+  const b = await anslut('nybutik', { env, envFil, fetchFn, sparrAlternativ: t.alt });
+  assert.equal(b.tokenKalla, 'mintad');
+  assert.equal(lasningar, 3, 'två läsningar med den gamla (full + scope-fri), en med den nya');
+  assert.equal(env.SHOPIFY_ADMIN_TOKEN, 'shpat_ny_1');
+  t.stada();
+});
+
+test('anslut: kravScopes=false hoppar över scope-spärren (bara för verktyg som enbart läser shop)', async () => {
+  const t = tempMappar();
+  const envFil = join(t.rot, '.env');
+  const { fetchFn } = fejkShopify({ scopes: [] });
+  const env = { SHOPIFY_SHOP: 'ny1234-ab.myshopify.com', SHOPIFY_CLIENT_ID: 'cid', SHOPIFY_CLIENT_SECRET: 'csec' };
+  const b = await anslut('nybutik', { env, envFil, fetchFn, sparrAlternativ: t.alt, kravScopes: false });
+  assert.equal(b.name, 'My Store');
+  assert.deepEqual(b.teman, []);
+  assert.equal(b.harProdukter, null);
   t.stada();
 });

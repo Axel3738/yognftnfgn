@@ -45,7 +45,10 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Regel: butikens NAMN ur Shopify är facit — ett brand som redan finns i
    `factory/butiker/` eller `factory/output/` = miljön står kvar på förra
    butiken, stoppa. Saknas nycklarna: be den som kör göra checklistans
-   avsnitt 3, klistra aldrig nycklar i chatten.
+   avsnitt 3, klistra aldrig nycklar i chatten. Säger steg 0 "Connected ✓ …
+   men appen har N av 16 scopes": butiken är rätt, appen får inget göra —
+   ge den som kör raden steg 0 skriver ut (Configuration → Access scopes →
+   Release) och bygg ingenting förrän den är inne. *(TackleBay 2026-09-10.)*
 
    ⚠️ **Står en butiksadress i prompten är DEN facit** — inte butiks-id:t.
    Skicka den som `--doman <adressen>` (eller `onskadDoman` till `anslut`).

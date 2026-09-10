@@ -75,9 +75,33 @@ test('metod som inte finns i planen tas bort', () => {
   assert.equal(r.attTaBort[0].namn, 'Standardfrakt');
 });
 
-test('zon som saknas i butiken rapporteras i stället för att gissas', () => {
+test('zon som saknas i butiken planeras för skapande med sina länder', () => {
   const r = byggFraktatgarder([NULAGE[0]], byggFraktplan(rabutik()));
   assert.deepEqual(r.saknadeZoner, ['EU (Europeiska Unionen)', 'Internationell']);
+  assert.equal(r.orort, false);
+  assert.deepEqual(r.attSkapaZoner.map((z) => z.zon), ['EU (Europeiska Unionen)', 'Internationell']);
+  const eu = r.attSkapaZoner[0];
+  assert.ok(eu.lander.includes('DK') && eu.lander.includes('DE'), 'EU-zonen bär EU-länderna');
+  assert.ok(!eu.lander.includes('SE'), 'hemlandet ligger inte i EU-zonen — ett land får bara ligga i EN zon');
+  assert.deepEqual(r.attSkapaZoner[1].lander, ['*'], 'Internationell = resten av världen');
+  assert.deepEqual(eu.metoder.map((m) => m.namn), ['Fri frakt']);
+  assert.deepEqual(r.attTaBortZoner, [], 'inga främmande zoner att riva');
+});
+
+test('trialens egna zoner (Domestic PH, International) rivs BARA när planens zoner ska skapas', () => {
+  // TackleBay 2026-09-10: butiken skapades i Filippinerna och bar
+  // Domestic=PH + International med SE/NO inuti. Länderna måste frigöras.
+  const trial = [
+    { zon: 'Domestic', zonId: 'gid://z/ph', metoder: [{ id: 'gid://m/1', namn: 'Standard', pris: 165 }] },
+    { zon: 'International', zonId: 'gid://z/int', metoder: [{ id: 'gid://m/2', namn: 'International', pris: 1200 }] },
+  ];
+  const r = byggFraktatgarder(trial, byggFraktplan(rabutik()));
+  assert.deepEqual(r.attSkapaZoner.map((z) => z.zon), ['Sverige', 'EU (Europeiska Unionen)', 'Internationell']);
+  assert.deepEqual(r.attSkapaZoner[0].lander, ['SE']);
+  assert.deepEqual(r.attTaBortZoner, [{ zon: 'Domestic', id: 'gid://z/ph' }, { zon: 'International', id: 'gid://z/int' }]);
+  // En butik som redan stämmer rör inga zoner.
+  const ratt = byggFraktatgarder(NULAGE, byggFraktplan(rabutik()));
+  assert.deepEqual(ratt.attTaBortZoner, []);
 });
 
 // Villkorade metoder ("fri frakt över X") kan inte uppdateras via

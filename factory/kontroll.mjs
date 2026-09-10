@@ -189,6 +189,24 @@ export function kontrolleraLaunch(p, { shop = null, produkt = null, policyer = n
     manuell('checkout-betalning', 'Gör ett testköp och bekräfta att betalleverantören är aktiv.');
   }
 
+  // Undantag (ägarens beslut, TackleBay 2026-09-10): `qa.undantag` i
+  // produktfilen listar kontroller som INTE får stoppa launchen, med en
+  // obligatorisk motivering. Punkten försvinner inte — den blir manuell
+  // och bär motiveringen, så rapporten säger vad som saknas och varför det
+  // ändå gick. Bara ägaren skriver in ett undantag; utan motivering gäller det inte.
+  const undantag = new Set(lista(p.qa?.undantag).map((x) => String(x).trim()));
+  const motivering = String(p.qa?.undantag_motivering ?? '').trim() || null;
+  if (undantag.size > 0 && !motivering) {
+    kritisk('qa-undantag', 'qa.undantag utan qa.undantag_motivering — ett undantag utan skäl gäller inte.');
+  }
+  for (const punkt of punkter) {
+    if (punkt.utfall === 'kritisk' && motivering && undantag.has(punkt.namn)) {
+      punkt.utfall = 'manuell';
+      punkt.detalj = `UNDANTAG (${motivering}): ${punkt.detalj}`;
+      punkt.undantag = true;
+    }
+  }
+
   const kritiska = punkter.filter((x) => x.utfall === 'kritisk');
   return { punkter, kritiska, manuella: punkter.filter((x) => x.utfall === 'manuell'), gron: kritiska.length === 0 };
 }

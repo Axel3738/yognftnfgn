@@ -11,18 +11,58 @@
     },
     "metafalt": {
       "klar": true,
-      "antal": 11
+      "antal": 12
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "Default Title"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": true,
+      "produkt_id": "9414189285612",
+      "variant_id": "48336544301292",
+      "handle": "adventskalender-fiskedrag",
+      "ny": false,
+      "ateranvand": true,
+      "skrivet": true
+    },
+    "paket": {
+      "klar": true,
+      "nivaer": [
+        "fiskespohallare-4-pack-a-1",
+        "fiskespohallare-4-pack-a-2",
+        "fiskespohallare-4-pack-a-3",
+        "fiskespohallare-4-pack-b-1",
+        "fiskespohallare-4-pack-b-2",
+        "fiskespohallare-4-pack-b-3"
+      ],
+      "koder": [
+        "TACKLEBAYROD2A",
+        "TACKLEBAYROD3A",
+        "TACKLEBAYROD2B",
+        "TACKLEBAYROD3B"
+      ],
+      "frammande": [],
+      "test": "paket"
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Ingen Judge.me-token (env JUDGEME_TACKLEBAY_TOKEN) — VA:n importerar output/fiskespohallare-4-pack/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    },
+    "launch": {
+      "klar": true,
+      "status": "ACTIVE",
+      "publicerad": true
     }
   },
-  "uppdaterad": "2026-09-09T12:04:36.132Z",
+  "uppdaterad": "2026-09-10T15:24:05.212Z",
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "beskrivning",
-      "tracking",
-      "doman",
-      "checkout"
-    ],
-    "tid": "2026-09-09T12:04:36.132Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-10T15:24:05.212Z"
   }
 }

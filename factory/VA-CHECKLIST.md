@@ -99,6 +99,8 @@ not after it.
 VIDEO:
 
 * Go to dev.shopify.com → log in with the work Gmail → Apps → Create app → name it: Fabriken + the store's address start (example: Fabriken y1sj1i)
+* The app → Configuration → under "Access scopes" paste this exact line → Save → Release (top right). Without it the app is installed but allowed to do NOTHING — the build stops at step 0 and prints this same line (measured 2026-09-10, TackleBay: 0 of 16 scopes):
+  write_themes,write_products,write_publications,write_inventory,read_locations,write_files,write_content,write_online_store_navigation,write_legal_policies,write_discounts,write_metaobject_definitions,write_metaobjects,write_markets,write_locales,write_translations,write_shipping
 * The app → Settings → copy the Client ID and the Client secret
 * Look at the store's address. It ends in `.myshopify.com`. The part BEFORE that is your TAG – the same thing you typed when you named the app. Write it in CAPITALS and turn `-` into `_`.
   Address `ikf0tu-5e.myshopify.com` → TAG `IKF0TU_5E`

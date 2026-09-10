@@ -82,6 +82,8 @@ offer:
   bonus_produkt:
     titel: "Fiskespöhållare 4-Pack"
     handle: "fiskespohallare-4-pack"
+    produkt_id: "9414189252844"
+    variant_id: "48336544268524"
     pris: 289
     i_paket: ""
 
@@ -121,8 +123,8 @@ kallor:
 
 meta:
   ad_account_id: "915422744950975"
-  page_id: ""
-  pixel_id: ""
+  page_id: "1283919631474370"   # TackleBays Meta-sida, Axel 2026-09-10
+  pixel_id: "1079980541064515"
   # Eget prefix — delas ALDRIG med spöhållaren. De två produkterna har olika
   # break-even och olika säsong; delat prefix gör spenden omöjlig att skära.
   creative_prefix: "TackleBayKalender"
@@ -131,3 +133,12 @@ meta:
     - "Presentproblemet: den som redan har allt i lådan"
     - "24 morgnar, inte en"
     - "Alternativet är strumpor. Igen."
+
+# Axels beslut 2026-09-10 (chatten): "kalendern har vi inte ens några
+# annonser för — skippa den." Produkten ligger kvar i butiken och
+# sortimentet, men gif och recensioner stoppar inte launchen.
+qa:
+  undantag:
+    - beskrivning
+    - reviews
+  undantag_motivering: "Axel 2026-09-10: inga annonser för kalendern än — launch utan gif och recensioner (källan har noll)"
