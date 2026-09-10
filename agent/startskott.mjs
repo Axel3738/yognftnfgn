@@ -169,6 +169,17 @@ export function saknadeFalt(jobb) {
  * Rubriken skickas separat — discord-post.mjs fetstilar den själv, så den
  * ska INTE bära asterisker här.
  *
+ * ⚠️ **Kodblocket är HELA prompten, inte bara kommandot** (Axels ändring
+ * 2026-09-10). Efter `/ny-ops <länk>` följer två rader som tvingar den som
+ * kör att kontrollera vilken butik sessionen faktiskt är kopplad till innan
+ * något byggs. `INSERT YOUR STORE LINK` är en lucka VA:n fyller i med den
+ * nya butikens adress — den ska stå kvar ordagrant i mallen.
+ *
+ * Skälet: `/ny-ops` steg 1 rapporterar "Connected: <domän> ✓", och utan
+ * kontrollen kan hela bygget hamna i fel butik. Texten är engelsk för att
+ * den klistras in i en session som körs av VA:n, som är engelsktalande —
+ * resten av meddelandet är svenskt för Axel.
+ *
  * @returns {{rubrik: string, text: string}}
  */
 export function formateraStartskott(jobb) {
@@ -192,10 +203,13 @@ export function formateraStartskott(jobb) {
     '',
     '**Starta bygget**',
     'Öppna en ny chatt.',
-    'Klistra in raden nedan.',
+    'Klistra in texten nedan.',
+    'Byt INSERT YOUR STORE LINK mot butikens adress.',
     '',
     '```',
     `/ny-ops ${jobb.kalla_url}`,
+    'The store must be INSERT YOUR STORE LINK. If the "Connected" line does not match',
+    'that address: stop and tell me, build nothing.',
     '```',
     '',
     'Sen är du klar. Jag har gjort resten.',
