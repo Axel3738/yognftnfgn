@@ -218,6 +218,15 @@ som genereras per bygge).
   `SHOPIFY_CLIENT_SECRET_<suffix>`. HeimGuard = `pzjagy_mz`,
   **TankGuard = de OSUFFIXADE** (`SHOPIFY_SHOP` = y1sj1i-3d). Samma recept
   som `tools/shopify-fix-compareat.mjs` och `docs/temu-launch-flow.md`.
+- **Ersätt ALDRIG en `locales/*.json` — slå ihop i den.** Bastemat har 382
+  strängar per språk. Skriver du en egen fil med bara de texter du ville ändra
+  försvinner de andra 347, och kunden ser `Translation missing: sv.…` rakt i
+  sidan. *(Mätt 2026-09-10: HeimGuards `sv.json` och `nb.json` var stumpar på
+  35 strängar, 2,3 kB mot bastemats 20 kB, och 42 texter saknades på
+  startsidan och i varukorgslådan — på en butik som stod live och spenderade.
+  TankGuard hade 382 och noll fel.)* Rätt väg: läs bastemats fil, lägg
+  butikens egna texter ovanpå, skriv tillbaka hela. Kontrollen är gratis —
+  `curl <butik> | grep "Translation missing"` ska ge noll.
 - **Säkerhetskopiera temafilen före varje skrivning mot live**, och jämför
   den mot den version fabriken tror att butiken kör. Skiljer de sig har
   någon handredigerat i butiken, och då skriver du över deras arbete.
@@ -321,6 +330,13 @@ dem byte för byte så zip:en inte kan halka efter.
 Butikerna körde originalfilen byte för byte före bytet (jämförd mot
 `ops-tema.zip` som den såg ut i commit `9ad60df`), så ingen handredigering
 skrevs över. Säkerhetskopiorna togs före skrivningen.
+
+Samtidigt rättat på HeimGuard (samma väg, publicerat tema):
+- `locales/sv.json` + `nb.json` slagna ihop med bastemats fulla filer:
+  35 → 382 strängar per språk, butikens egna 19 svenska och 16 norska
+  formuleringar behållna ovanpå. 42 `Translation missing` → 0.
+- Lagerpolicy `CONTINUE` på alla varianter i BÅDA butikerna (7 st, varav de
+  två bonusprodukterna stod på `DENY`). `tracked` var redan `false` överallt.
 
 ### `cart_type: 'drawer'` sätts ändå
 
