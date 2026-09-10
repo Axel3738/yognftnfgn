@@ -141,6 +141,31 @@ export async function laggTillAlternateLocale(locale) {
 
 const LANDNAMN = { NO: 'Norge', DK: 'Danmark', FI: 'Finland', SE: 'Sverige', GB: 'Storbritannien' };
 
+// Webbnärvaron måste KOPPLAS till marknaden, annars är /nb bara ett språk på
+// Sveriges domän: norsk text, svenska priser, kassa i SEK (mätt 2026-09-10
+// på DryTrek efter en dag med live norska annonser). Med närvaron kopplad
+// väljer Shopify NOK på norsk IP; huvudmarknaden förblir default för andra.
+export async function kopplaPresence(marketId) {
+  const lage = await lasLage();
+  const ids = (lage.webPresences?.nodes ?? []).map((w) => w.id);
+  if (ids.length === 0) return { manuell: 'Ingen webPresence att koppla ännu.' };
+  const d = await graphql(
+    `mutation opsFactoryMarknadPresence($id: ID!, $input: MarketUpdateInput!) {
+      marketUpdate(id: $id, input: $input) {
+        market { id webPresences(first: 10) { nodes { id domain { host } } } }
+        userErrors { field message }
+      }
+    }`,
+    { id: marketId, input: { webPresencesToAdd: ids } }
+  );
+  const fel = d.marketUpdate?.userErrors ?? [];
+  // "already" = redan kopplad — det är rätt läge, inte ett fel.
+  if (fel.length > 0 && !fel.every((f) => /already/i.test(f.message))) {
+    throw new Error(`Koppla webPresence: ${fel.map((f) => f.message).join('; ')}`);
+  }
+  return { hosts: (d.marketUpdate?.market?.webPresences?.nodes ?? []).map((w) => w.domain?.host ?? w.id) };
+}
+
 if (process.argv[1] && process.argv[1].endsWith('marknad.mjs')) {
   laddaEnv();
   const fil = process.argv[2];
@@ -163,6 +188,9 @@ if (process.argv[1] && process.argv[1].endsWith('marknad.mjs')) {
     const wp = await laggTillAlternateLocale(m.locale);
     if (wp.manuell) console.log(`   🖐 ${wp.manuell}`);
     else console.log(`   ✅ ${m.locale} som alternateLocale på ${wp.presences.length} webPresence(r)`);
+    const kp = await kopplaPresence(mk.id);
+    if (kp.manuell) console.log(`   🖐 ${kp.manuell}`);
+    else console.log(`   ✅ marknaden kopplad till webbnärvaron: ${kp.hosts.join(', ')}`);
   }
 
   const efter = await lasLage();

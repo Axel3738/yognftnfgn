@@ -104,8 +104,15 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
   // Norska annonser ska landa på den NORSKA sidan. Utan /nb får kunden svensk
   // text efter ett norskt löfte, och Shopify byter inte språk åt en besökare
   // som redan fått en svensk URL.
+  //
+  // ⚠️ `?country=NO` är INTE valfritt. /nb är bara ett SPRÅK på huvuddomänen,
+  // vars marknad är Sverige — utan parametern får norrmannen norsk text men
+  // SVENSKA priser (389 kr i stället för 381 NOK) och en kassa i SEK, medan
+  // annonsen lovade 381 kr. Mätt 2026-09-10: 16 norska annonser hade rullat
+  // en dag på /nb utan country. Shopify honorerar country= server-side och
+  // sätter kakan, så priset är rätt redan i första renderingen.
   const lank = marknad === 'NO'
-    ? `https://${doman}/nb/products/${produktId}`
+    ? `https://${doman}/nb/products/${produktId}?country=NO`
     : `https://${doman}/products/${produktId}`;
 
   const mediaFil = join(ROT, 'output', produktId, `media-i-malkontot${suffix}.json`);

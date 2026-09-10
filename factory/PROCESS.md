@@ -160,6 +160,17 @@ som genereras per bygge).
     `marketCreate` ger status DRAFT och marknaden måste aktiveras separat,
     `webPresences` måste läsas på ROTNIVÅ (fältet under `markets` svarar
     tomt även när butiken har en), och `webPresenceUpdate` tar `id` + `input`.
+    ⚠️ **/nb är ett SPRÅK, inte en marknad** (mätt 2026-09-10 på DryTrek,
+    efter en dag med 16 norska annonser live): huvuddomänens webPresence hör
+    till Sverige, så `drytrek.se/nb/…` gav norsk text men SVENSKA priser
+    (389 kr) och kassa i SEK — annonsen lovade 381 kr. Två saker krävs, båda:
+    (1) koppla webbnärvaron till marknaden Norge —
+    `marketUpdate(webPresencesToAdd: [<alla webPresence-id>])` — så
+    Shopify väljer NOK på norsk IP; huvudmarknaden Sverige förblir default
+    för alla andra (verifierat: `/products/<handle>` utan land = SEK).
+    (2) alla norska annonslänkar bär `?country=NO` (`kampanj.mjs` gör det
+    sedan 2026-09-10) — Shopify honorerar parametern server-side, så
+    första renderingen är rätt oavsett IP.
 13b. ⚙️ Översättningarna: `node factory/oversatt.mjs <butik-id>
     <produkt-handle> --locale nb`, texterna i
     `factory/startsidor/<butik-id>.json` under språkets nyckel. Kör med
