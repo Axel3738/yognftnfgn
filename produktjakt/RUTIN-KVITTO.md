@@ -6,7 +6,8 @@ offertark, publicerad sida, Discord.
 
 | Datum | Kandidater | Levererade | Strukna | Sida publicerad | Discord |
 |---|---|---|---|---|---|
-| 2026-09-09 | 82 | 3 | 79 | ja | ja |
+| 2026-09-09 | 82 | 9 | 73 | ja | ja |
+| 2026-09-10 | 18 | 3 | 15 | ja | ja |
 
 Anmärkning 2026-09-09: 18 kandidater kördes genom mekanismgrinden i två omgångar,
 noll passerade. De två levererade är Axels egna val.

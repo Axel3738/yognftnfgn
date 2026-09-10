@@ -1,0 +1,170 @@
+{
+ "datum": "2026-09-10",
+ "manad": 9,
+ "usd_sek": 9.5687,
+ "kurskalla": "ECB 2026-09-10",
+ "sokord": [
+  {
+   "ord": "deer drag harness hunting",
+   "grupp": "vilthantering",
+   "taggar": {}
+  },
+  {
+   "ord": "screw cone log splitter drill",
+   "grupp": "ved och eldning",
+   "taggar": {}
+  },
+  {
+   "ord": "solar trickle charger 12v battery maintainer",
+   "grupp": "husvagn och husbil",
+   "taggar": {}
+  },
+  {
+   "ord": "boat dehumidifier winter storage",
+   "grupp": "båt och trailer",
+   "taggar": {}
+  },
+  {
+   "ord": "meat hanging gambrel hoist",
+   "grupp": "vilthantering",
+   "taggar": {}
+  },
+  {
+   "ord": "solar house number sign illuminated",
+   "grupp": "belysning och mörker",
+   "taggar": {}
+  },
+  {
+   "ord": "bore sighter laser",
+   "grupp": "jakt",
+   "taggar": {}
+  },
+  {
+   "ord": "pool cover reel strap set",
+   "grupp": "pool och spabad",
+   "taggar": {}
+  },
+  {
+   "ord": "gsm temperature alarm sms alert",
+   "grupp": "tomt hus och tak",
+   "taggar": {}
+  },
+  {
+   "ord": "livestock water trough de-icer",
+   "grupp": "lantbruk och djur",
+   "taggar": {}
+  },
+  {
+   "ord": "levelling ramp caravan heavy duty",
+   "grupp": "husvagn och husbil",
+   "taggar": {}
+  },
+  {
+   "ord": "well pump frost protection cover",
+   "grupp": "höst på tomten",
+   "taggar": {}
+  },
+  {
+   "ord": "ash vacuum fireplace",
+   "grupp": "ved och eldning",
+   "taggar": {}
+  },
+  {
+   "ord": "firewood carrier bag heavy duty",
+   "grupp": "ved och eldning",
+   "taggar": {}
+  },
+  {
+   "ord": "trailer stabilizer jack support leg",
+   "grupp": "båt och trailer",
+   "taggar": {}
+  },
+  {
+   "ord": "trailer light tester 13 pin",
+   "grupp": "båt och trailer",
+   "taggar": {}
+  }
+ ],
+ "hoppade": {
+  "stoppord": 24,
+  "pris saknas": 0,
+  "ekonomi": 80,
+  "dubblett": 1,
+  "axel_nej": 0
+ },
+ "antal_kandidater": 18,
+ "produkter": [
+  {
+   "product_id": "1005010788535191",
+   "titel": "2PCS Automotive Leveling Ramps RV Leveling Ramps Car Wheel Chocks Sturdy Three Step Tire Support for Trailers campers RV SUV",
+   "url": "https://www.aliexpress.com/item/1005010788535191.html",
+   "pris": 22.17,
+   "valuta": "USD",
+   "pris_text": "US $22.17",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S81ca1b5c4bfb404c9a9478bb65b4aa7en.jpg",
+   "sald": "",
+   "sokord": "levelling ramp caravan heavy duty",
+   "grupp": "husvagn och husbil",
+   "taggar": {},
+   "sok_url": "https://www.aliexpress.com/w/wholesale-levelling-ramp-caravan-heavy-duty.html",
+   "ekonomi": {
+    "landad": 318,
+    "forslag_pris": 799,
+    "multipel": 2.51,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.667,
+   "rank": 1.674
+  },
+  {
+   "product_id": "1005011707131795",
+   "titel": "LEAORLD 12V 10W MPPT Solar Battery Charger Maintainer, Solar Panel Trickle Charging Kit For 12V Battery For Car Boat Marine RV",
+   "url": "https://www.aliexpress.com/item/1005011707131795.html",
+   "pris": 25.56,
+   "valuta": "USD",
+   "pris_text": "US $25.56",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sbf7d8a030fee4a34b489f30b34986ef6b.jpg",
+   "sald": "",
+   "sokord": "solar trickle charger 12v battery maintainer",
+   "grupp": "husvagn och husbil",
+   "taggar": {},
+   "sok_url": "https://www.aliexpress.com/w/wholesale-solar-trickle-charger-12v-battery-maintainer.html",
+   "ekonomi": {
+    "landad": 367,
+    "forslag_pris": 899,
+    "multipel": 2.45,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.667,
+   "rank": 1.634
+  },
+  {
+   "product_id": "1005012116406743",
+   "titel": "Deer Hanger Pulley Lift System Rated 700 Lbs Gambrel for Skinning with Wear-Resistant Tangle-Free Rope Deer Hunting Accessories",
+   "url": "https://www.aliexpress.com/item/1005012116406743.html",
+   "pris": 16.89,
+   "valuta": "USD",
+   "pris_text": "US $16.89",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S285a95bb17834cdc964b778e4ab9a080L.jpg",
+   "sald": "",
+   "sokord": "meat hanging gambrel hoist",
+   "grupp": "vilthantering",
+   "taggar": {},
+   "sok_url": "https://www.aliexpress.com/w/wholesale-meat-hanging-gambrel-hoist.html",
+   "ekonomi": {
+    "landad": 242,
+    "forslag_pris": 599,
+    "multipel": 2.47,
+    "dom": "PASS",
+    "orsak": ""
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.5,
+   "rank": 1.235
+  }
+ ]
+}
