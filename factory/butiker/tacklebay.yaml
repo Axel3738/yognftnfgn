@@ -22,6 +22,25 @@ butik:
       valuta: SEK
   valuta: SEK
   moms_i_pris: true
+  # TackleBays EGNA svenska ord som aldrig får stå kvar på /nb (KEDJAN regel 7 —
+  # ingen lista finns i koden). Varje rad är hämtad ur butikens egen kundtext:
+  # startsidan, USP-raden, paketväljaren eller temats köpsträngar. Ord som är
+  # lika på norska ("Sortimentet", "Se sortimentet", "Klarna") står inte här —
+  # de filtreras ändå bort av filtreraMarkorer, men listan ska gå att lita på.
+  # Utan listan hoppas skanningen över och rapporteras som MANUELL, aldrig grön.
+  markorer_sv:
+    - "Fri frakt"              # no: Gratis frakt
+    - "ångerrätt"              # no: angrerett
+    - "arbetsdagar"            # no: virkedager
+    - "Vanliga frågor"         # no: Vanlige spørsmål
+    - "Lägg i varukorgen"      # no: Legg i handlekurven
+    - "Allt på sin plats"      # no: Alt på sin plass — hero-rubriken
+    - "Handla tryggt hos oss"  # no: Handle trygt hos oss
+    - "Skickas från Sverige"   # no: Sendes fra Sverige
+    - "Mest populär"           # no: Mest populær — paketbrickan
+    - "Bäst pris"              # no: Beste pris — paketbrickan
+    - "Välj paket"             # no: Velg pakke — temats eget ord i ms-paket
+    - "Gratis på köpet"        # no: Gratis på kjøpet — temats eget ord
   # Flerproduktsbutik: startsidan visar KOLLEKTIONEN, inte en enskild produkt.
   kollektion:
     handle: sortimentet

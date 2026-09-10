@@ -303,7 +303,17 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   `settings_schema.json` skrivs FÖRE `settings_data`, annars stryks
   `ms_ab_tests`.
 - **Skriv aldrig egna nycklar i `factory/state/`** — en handskriven `brand`-
-  nyckel lästes av `--resume` som "steget är klart" (2026-09-09).
+  nyckel lästes av `--resume` som "steget är klart" (2026-09-09). Koden läser
+  bara `steg` och `arbetstemaId`; `notis`, `blockerat_av_manniska`,
+  `ofullstandigt` och `rattelser` är de fält en människa får skriva i. Behöver
+  du dokumentera mer hör det hemma i `output/<butik>/`, inte i state.
+- **En notis i state är inte en mätning** (TackleBay 2026-09-10). Butikens
+  notis sa "Marknad Norge + locale nb publicerad, nb-översättningar
+  registrerade". `/nb` svarade **404** i kundvyn, och `marknad` stod inte ens
+  i steglistan — notisen var skriven av grenkod som beskrev vad den TÄNKTE
+  göra. **Diagnosen görs i steglistan, aldrig i notisen:** ett steg som inte
+  står där kördes inte, hur självsäkert prosan än låter. Skriver du en notis
+  ska den bära vad som mättes, var och när.
 - **Appinbäddningar bor i `settings_data.json` och dör i varje klon** (Judge.me
   fick aktiveras om två gånger v7→v9). `rensaSettings` sätter app-embeds =
   enbart Judge.me i varje bygge.
@@ -419,6 +429,27 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   hämtas ur Shopify Files — `output/` dör med containern.
 
 **Miljön och verktygen**
+- **`app_not_installed` är en avinstallerad app, inte en trasig butik**
+  (TackleBay 2026-09-10). `token.mjs` svarade `400 Oauth error
+  app_not_installed` mot en butik som var fullt vid liv — domän live, tema
+  publicerat, valuta rätt. Fabriken kan då inte skriva ett enda fält, och
+  ingen omkörning i världen hjälper: VA:n installerar om appen. Kolla
+  samtidigt att miljöns ALLMÄNNA `SHOPIFY_SHOP` inte står kvar på en annan
+  butik — här pekade den på TankGuard.
+- **Butiken går att MÄTA utan Admin-API:t** (samma dag). Är temat publicerat
+  (role MAIN) behövs ingen `preview_theme_id`, och då räcker
+  storefront-lösenordet: `kundvy-kor.mjs` exporterar `loggaInLosenord` och
+  `hamtaSida`, och `kundvy.mjs` är ren logik. `ctx = { shop: null, bas:
+  'https://<domän>' }` ger riktig HTML för `/`, `/products/…` och `/<locale>/`
+  utan en enda token. Samma väg avslöjade att `/nb` gav 404. Är appen borta
+  är alltså diagnosen ändå gjord — bara skrivningarna väntar.
+  ⚠️ Storefronten stryper efter ~10 sidor/minut och svarar då **429 även på
+  `/password`-inloggningen**. Vänta, kör inte om direkt.
+- **`byggUnderlag` är ren logik och kräver inget nät** — men den måste matas
+  med `sammanfoga(butik, produkt)`, inte med produktfilen rå. Utan
+  sammanslagningen saknas företagsuppgifterna och texterna kommer ut med
+  `[FYLL I]` i köpvillkoren och kontaktsidan (mätt 2026-09-10: såg ut som ett
+  fel i butiken, var ett fel i anropet).
 - **Playwright når inte ut på nätet i molnsessionen** (`ERR_CONNECTION_RESET`
   genom proxyn, 2026-09-09) — läs HTML med `curl`, plocka JSON ur den. Lokala
   `file://`-sidor fungerar (loggvarianterna).
