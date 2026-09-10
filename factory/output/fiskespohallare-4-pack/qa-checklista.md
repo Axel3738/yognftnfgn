@@ -30,5 +30,4 @@
 - [ ] fiskespohallare-4-pack: ekonomi.jamforpris är inte satt
 - [ ] adventskalender-fiskedrag: offer.bonus_produkt.bilder är tom — bonusen kan inte skapas som produkt (steget bonus blir manuellt)
 - [ ] adventskalender-fiskedrag: vinkel.usp är inte satt (fjärde USP-punkten och annonsraden får ingen produkt-USP)
-- [ ] adventskalender-fiskedrag: media.gif_problem saknas (kritisk media — krävs före launch)
 - [ ] adventskalender-fiskedrag: reviews: färre än 3 recensioner (importeras till Judge.me)

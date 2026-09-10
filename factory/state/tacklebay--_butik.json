@@ -174,7 +174,7 @@
           "perTyp": {
             "variant": 0,
             "produkt": 0,
-            "metafält": 0,
+            "metafält": 1,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
@@ -182,7 +182,7 @@
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
-            "temainställning": 1
+            "temainställning": 0
           },
           "granskning": "4348/4363"
         }
@@ -215,7 +215,7 @@
       "manuell": "VA:n publicerar temat \"TackleBay – CRO v1\": Online Store → Themes → TackleBay – CRO v1 → Publish."
     }
   },
-  "uppdaterad": "2026-09-10T15:23:59.400Z",
+  "uppdaterad": "2026-09-10T15:49:37.368Z",
   "notis": "TackleBay byggd 2026-09-09 i iahe0c-b1.myshopify.com (My Store 5). Två jämlika produkter via den nya produktloopen i ops.mjs. Tema \"TackleBay v1\" (UNPUBLISHED) — publiceringen är VA:ns klick. Källskanningen ren. Marknad Norge + locale nb publicerad, nb-översättningar registrerade för produkter, metafält, startsida och menylänkar. | 2026-09-10: temalåset släppt — gid://shopify/OnlineStoreTheme/165394579692 (\"TackleBay v1\") är publicerat som MAIN sedan 09-09 och bär källbutikens sektionsgrupper; ombyggnaden laddar upp det rensade temat som nytt utkast.",
   "blockerat_av_manniska": [
     "Butikens VALUTA är PHP, ska vara SEK. Klick i Inställningar → Allmänt. De åtta rabattkoderna är skrivna som PHP-belopp och MÅSTE skrivas om efter valutabytet: node factory/paket.mjs factory/butiker/tacklebay.yaml <båda produktfilerna>",
@@ -248,6 +248,6 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-10T15:23:59.400Z"
+    "tid": "2026-09-10T15:49:37.368Z"
   }
 }

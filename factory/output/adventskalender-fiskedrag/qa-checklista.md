@@ -3,10 +3,10 @@
 - [x] ✅ produkt: Adventskalender Fiskedrag – 24 Drag (adventskalender-fiskedrag), status ACTIVE
 - [x] ✅ priser: 469 SEK på alla varianter, jämförpris 619
 - [x] ✅ varianter: 1 st
-- [x] ✅ bilder: 3 st, 3 media i butiken
+- [x] ✅ bilder: 6 st, 6 media i butiken
 - [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
-- [ ] 🖐 beskrivning: UNDANTAG (Axel 2026-09-10: inga annonser för kalendern än — launch utan gif och recensioner (källan har noll)): Saknas: media.gif_problem
-- [ ] 🖐 reviews: UNDANTAG (Axel 2026-09-10: inga annonser för kalendern än — launch utan gif och recensioner (källan har noll)): Bara 0 recensioner — minst 3 krävs för launch.
+- [x] ✅ beskrivning: problem, lösning och kritisk media (gif + demo) finns
+- [ ] 🖐 reviews: UNDANTAG (Axel 2026-09-10: inga annonser för kalendern än — launch utan recensioner (källan har noll)): Bara 0 recensioner — minst 3 krävs för launch.
 - [x] ✅ frakt: 5–10 arbetsdagar
 - [ ] 🖐 frakt-zoner: Kontrollera fraktzon och pris i Shopify → Frakt och leverans.
 - [x] ✅ guarantee: 14 dagars ångerrätt
@@ -29,5 +29,4 @@
 - [ ] fiskespohallare-4-pack: ekonomi.jamforpris är inte satt
 - [ ] adventskalender-fiskedrag: offer.bonus_produkt.bilder är tom — bonusen kan inte skapas som produkt (steget bonus blir manuellt)
 - [ ] adventskalender-fiskedrag: vinkel.usp är inte satt (fjärde USP-punkten och annonsraden får ingen produkt-USP)
-- [ ] adventskalender-fiskedrag: media.gif_problem saknas (kritisk media — krävs före launch)
 - [ ] adventskalender-fiskedrag: reviews: färre än 3 recensioner (importeras till Judge.me)

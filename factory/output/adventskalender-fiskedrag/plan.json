@@ -37,19 +37,34 @@
     ],
     "files": [
       {
-        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender.jpg",
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-hero.jpg",
         "contentType": "IMAGE",
         "alt": "Adventskalender Fiskedrag – 24 Drag"
       },
       {
-        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender-2.jpg",
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-present.jpg",
+        "contentType": "IMAGE",
+        "alt": "AI-illustration: adventskalendern räcks över vid köksbordet på julafton"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-alla.jpg",
         "contentType": "IMAGE",
         "alt": "Adventskalender Fiskedrag – 24 Drag"
       },
       {
-        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-ai.png",
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-sorter.jpg",
         "contentType": "IMAGE",
         "alt": "Adventskalender Fiskedrag – 24 Drag"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-brygga.jpg",
+        "contentType": "IMAGE",
+        "alt": "AI-illustration: kalendern på bryggan med sex av dragen framför"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-present.gif",
+        "contentType": "IMAGE",
+        "alt": "AI-illustration: kalendern räcks över vid köksbordet"
       }
     ]
   },
@@ -68,6 +83,12 @@
     },
     {
       "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/videos/c/vp/59fae7f771124eafb275358ac174ebf2/59fae7f771124eafb275358ac174ebf2.SD-480p-0.9Mbps-94037765.mp4"
+    },
+    {
+      "namespace": "opf",
       "key": "losning_rubrik",
       "type": "single_line_text_field",
       "value": "Ett drag om dagen fram till jul"
@@ -82,7 +103,7 @@
       "namespace": "opf",
       "key": "media_losning",
       "type": "url",
-      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender-2.jpg"
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-alla.jpg"
     },
     {
       "namespace": "opf",
@@ -94,13 +115,13 @@
       "namespace": "opf",
       "key": "features",
       "type": "list.single_line_text_field",
-      "value": "[\"24 luckor med ett fiskedrag bakom varje\",\"Blandat innehåll: wobblers, skeddrag och mjukbeten\",\"Färdig att ge bort som den är\",\"För den som fiskar sött- eller saltvatten\"]"
+      "value": "[\"Något att öppna varje morgon i december – 24 luckor med ett drag bakom varje\",\"Fyra sorters drag, inte 24 av samma – 8 skeddrag, 7 wobblers, 6 mjukbeten och 3 vibrationsdrag\",\"Går att knyta på och fiska med direkt – krokar och sprängringar sitter redan på\",\"Lådan är påfylld till premiären i vår – dragen ska ut och provas, inte ligga kvar i en skål\",\"Du behöver inte kunna märken eller storlekar – hela poängen är att han får prova något han inte valt själv\"]"
     },
     {
       "namespace": "opf",
       "key": "bild_lifestyle",
       "type": "url",
-      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-ai.png"
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-sorter.jpg"
     },
     {
       "namespace": "opf",

@@ -511,6 +511,17 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   `brand_description` tom i underlaget medan temat bar positioneringen, och
   launch-körningens läcksökning hittade "temainställning
   general.brand_description" på /nb (TackleBay 2026-09-10).
+- **Byter källtexten, byt nb-raden i samma vända.** Översättningskartan
+  parar på NYCKEL (sv-nyckel → nb-nyckel), så när källans features byttes
+  (kalendern 2026-09-10) registrerades den GAMLA norska listan mot den nya
+  svenska — steget rapporterade grönt, kunden såg fel innehåll på /nb.
+  Ingen kod kan se att en nb-rad är gammal. Regel: varje ändring av en
+  sv-text i produkt- eller butiksfilen följs av en subagent som skriver om
+  samma nyckel i `oversattning-nb.json`, sen `--igen oversatt`.
+- **Källans GIF blir mp4 via imageio-ffmpeg** när `ffmpeg` saknas i
+  containern: `python3 -m pip install imageio-ffmpeg` ger en statisk binär
+  (`imageio_ffmpeg.get_ffmpeg_exe()`). Kalenderns 2,9 MB GIF blev 296 kB
+  mp4, uppladdad som Video via `filer.mjs` (2026-09-10).
 - **Bonussteget återanvänder en befintlig produkt.** Är `offer.bonus_produkt.handle`
   en produkt som redan finns i butiken och `bilder` är tom (betald
   korg-upsell = butikens andra produkt, TackleBay 2026-09-10, Axels beslut

@@ -32,16 +32,27 @@ ekonomi:
 
 varianter:
 media:
+  # Källan bytte ALLA bilder 2026-09-10 17:44 (Axel: "ta alla in på vår sida").
+  # Samma ordning som källgalleriet. present/brygga/gif är AI-illustrationer
+  # (källsidan skriver det själv) — märkta i alt-texten, aldrig som foton.
   bilder:
-    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender.jpg"
-    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender-2.jpg"
-    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-ai.png"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-hero.jpg"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-present.jpg"
+      alt: "AI-illustration: adventskalendern räcks över vid köksbordet på julafton"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-alla.jpg"
+    - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-sorter.jpg"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-brygga.jpg"
+      alt: "AI-illustration: kalendern på bryggan med sex av dragen framför"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-present.gif"
+      alt: "AI-illustration: kalendern räcks över vid köksbordet"
   videor:
-  gif_problem: ""
-  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-fiskekalender-2.jpg"
-  # ⚠️ Lifestylebilden är en AI-genererad illustration. Källsidan märker ut
-  # det, och det ska stå kvar i kundvyn — annars är bilden ett påstående.
-  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-ai.png"
+  # Källans GIF (fiskekalender-present.gif, 480 px) konverterad till loopad
+  # mp4 med ffmpeg och uppladdad som Video i Files (Axels regel: mp4, inte
+  # gif). Kvaliteten är begränsad av källans GIF.
+  gif_problem: "https://cdn.shopify.com/videos/c/vp/59fae7f771124eafb275358ac174ebf2/59fae7f771124eafb275358ac174ebf2.SD-480p-0.9Mbps-94037765.mp4"
+  # Källans beskrivning 2026-09-10: gif → "Alla 24 dragen" → "Fyra sorter".
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-alla.jpg"
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-sorter.jpg"
 
 beskrivning:
   problem_rubrik: "Vad ger man den som redan har allt i fiskelådan?"
@@ -68,11 +79,14 @@ benefits:
   - "Lådan är fylld till våren med drag som ska ut och provas."
   - "Presentproblemet är löst med ett köp."
 
+# Funktionerna ordagrant ur källans beskrivning 2026-09-10 (antalen per sort
+# står på bilden "Fyra sorter i lådan" — bilderna är facit).
 features:
-  - "24 luckor med ett fiskedrag bakom varje"
-  - "Blandat innehåll: wobblers, skeddrag och mjukbeten"
-  - "Färdig att ge bort som den är"
-  - "För den som fiskar sött- eller saltvatten"
+  - "Något att öppna varje morgon i december – 24 luckor med ett drag bakom varje"
+  - "Fyra sorters drag, inte 24 av samma – 8 skeddrag, 7 wobblers, 6 mjukbeten och 3 vibrationsdrag"
+  - "Går att knyta på och fiska med direkt – krokar och sprängringar sitter redan på"
+  - "Lådan är påfylld till premiären i vår – dragen ska ut och provas, inte ligga kvar i en skål"
+  - "Du behöver inte kunna märken eller storlekar – hela poängen är att han får prova något han inte valt själv"
 
 offer:
   beskrivning: "24 drag bakom 24 luckor, 469 kr i stället för 619 kr. Fri frakt i Sverige och Norge, 14 dagars ångerrätt."
@@ -138,7 +152,7 @@ meta:
 # annonser för — skippa den." Produkten ligger kvar i butiken och
 # sortimentet, men gif och recensioner stoppar inte launchen.
 qa:
+  # beskrivning-undantaget borttaget 2026-09-10 kväll: källan fick gif + bilder.
   undantag:
-    - beskrivning
     - reviews
-  undantag_motivering: "Axel 2026-09-10: inga annonser för kalendern än — launch utan gif och recensioner (källan har noll)"
+  undantag_motivering: "Axel 2026-09-10: inga annonser för kalendern än — launch utan recensioner (källan har noll)"
