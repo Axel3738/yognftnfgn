@@ -63,3 +63,21 @@ export const SVAR = [
 export function fragaKlarSvar(slump = Math.random) {
   return SVAR[Math.floor(slump() * SVAR.length) % SVAR.length];
 }
+
+// Den som taggar boten i en sådan server får ett konstigt svar och en pik.
+// Taggen vinner över frågan: taggar du och frågar får du det här, inte
+// "Fråga Claude".
+export const TAGG_SVAR = [
+  'Du taggade mig. Grattis. Jag har aldrig fångat en fisk, jag är en bäver.',
+  'Tagga mig igen så byter jag ut all din lina mot spaghetti.',
+  'Ja? Jag var mitt i ett viktigt gnag. Fråga Claude, den har inga tänder.',
+  'Taggar du en bäver? Modigt. Bävrar taggar tillbaka. Det slutar aldrig bra.',
+  'Jag hörde dig. Jag valde att bygga en damm i stället.',
+  'Folk taggar mig för att slippa tänka själva. Fråga Claude, dummer.',
+  'Meddelandet togs emot av en bäver. Bävern har inga händer. Fråga Claude.',
+  'Vad vill du? Jag har 40 000 kubikmeter kvist att sortera, din dumbom.',
+];
+
+export function taggSvar(slump = Math.random) {
+  return TAGG_SVAR[Math.floor(slump() * TAGG_SVAR.length) % TAGG_SVAR.length];
+}

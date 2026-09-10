@@ -29,7 +29,9 @@ import {
 import { dela } from './dela.js';
 import { ärTilltalad, utanTilltal } from './tilltal.js';
 import { arOppen, oppnaServrar } from './sluten.js';
-import { arFragaKlarServer, arFragaAnalys, fragaKlarSvar, fragaKlarServrar } from './fragaklar.js';
+import {
+  arFragaKlarServer, arFragaAnalys, fragaKlarSvar, taggSvar, fragaKlarServrar,
+} from './fragaklar.js';
 import { fraga, nollstallHistorik, arFragaEnligtClaude, MODELL } from './claude.js';
 import {
   planera, validera, beskriv, utfor, lasLaget, skyddadeKanaler,
@@ -235,6 +237,18 @@ client.on(Events.MessageCreate, (message) => {
   if (arFragaKlarServer(message.guild?.id)) {
     if (/^!ping\b/i.test(text)) {
       message.reply(`Awake. Model: ${MODELL}. Up for ${Math.round(process.uptime() / 60)} min.`).catch(() => {});
+      return;
+    }
+    // Taggar någon boten här får de ett konstigt svar och en pik — aldrig
+    // ett riktigt svar. Taggen vinner över frågan.
+    const taggad = ärTilltalad({
+      innehåll: message.content,
+      botId: jagId,
+      nämnda: [...message.mentions.users.keys()],
+      svarPåBot: message.mentions.repliedUser?.id === jagId,
+    });
+    if (taggad) {
+      message.reply({ content: taggSvar(), allowedMentions: { parse: [], repliedUser: true } }).catch(() => {});
       return;
     }
     kö = kö.then(async () => {

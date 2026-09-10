@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   arFraga, arFragaAnalys, vardAttKlassa, fragaKlarSvar, SVAR, arFragaKlarServer, fragaKlarServrar,
+  taggSvar, TAGG_SVAR,
 } from '../fragaklar.js';
 
 test('frågetecken räknas alltid som fråga', () => {
@@ -46,6 +47,13 @@ test('svaret börjar alltid med Fråga Claude', () => {
   for (const s of SVAR) assert.match(s, /^Fråga Claude/);
   assert.equal(fragaKlarSvar(() => 0), SVAR[0]);
   assert.equal(fragaKlarSvar(() => 0.999), SVAR[SVAR.length - 1]);
+});
+
+test('taggsvaren är konstiga, korta och pikar den som taggar', () => {
+  assert.ok(TAGG_SVAR.length >= 5);
+  for (const s of TAGG_SVAR) assert.ok(s.length <= 120, s);
+  assert.equal(taggSvar(() => 0), TAGG_SVAR[0]);
+  assert.equal(taggSvar(() => 0.999), TAGG_SVAR[TAGG_SVAR.length - 1]);
 });
 
 test('bara de utpekade servrarna, default Snart nappar de', () => {
