@@ -181,6 +181,24 @@
           "granskning": "4213/4225"
         }
       }
+    },
+    "store-ready": {
+      "klar": false,
+      "manuell": "recensioner takskyddet: ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — ladda upp output/takskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · WeTracked: klistra in pixel-id 28589207184025756 (VA:ns klick) · Meta-sidan skapar VA:n i Business Manager (API:t kan inte) · Discord: boten kan inte skapa servrar — VA:n skapar \"CaraShell — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/carashell.yaml skriver ut länken) och kör sen node factory/store-ready.mjs carashell --guild <server-id>",
+      "pixelId": "28589207184025756",
+      "discordGuild": null,
+      "recensioner": [
+        {
+          "produkt": "takskyddet",
+          "viaApi": false
+        }
+      ],
+      "vantar": [
+        "recensioner takskyddet: ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — ladda upp output/takskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
+        "WeTracked: klistra in pixel-id 28589207184025756 (VA:ns klick)",
+        "Meta-sidan skapar VA:n i Business Manager (API:t kan inte)",
+        "Discord: boten kan inte skapa servrar — VA:n skapar \"CaraShell — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/carashell.yaml skriver ut länken) och kör sen node factory/store-ready.mjs carashell --guild <server-id>"
+      ]
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/205487636812",
@@ -192,5 +210,5 @@
     ],
     "tid": "2026-09-10T22:29:29.989Z"
   },
-  "uppdaterad": "2026-09-10T22:29:29.989Z"
+  "uppdaterad": "2026-09-10T22:59:18.938Z"
 }
