@@ -9,7 +9,10 @@ Exempel: `/ny-ops https://bäverbutiken.se/products/lastnat`
 Produktloopen är byggd: lista bara fler produktfiler i samma körning. Brandet
 bär nischen, startsidan blir kollektionen, huvudmenyn får en rad per produkt,
 varje produkt får eget `creative_prefix` (motorn stoppar om två delar) och egen
-break-even.
+break-even. **Säger prompten "nischbutik" med EN länk** (AdventLane 2026-09-10):
+sätt `butik.kollektion.alltid: true` i butiksfilen — då byggs kollektionen,
+kollektionsraden och kollektionsstartsidan redan nu, och nästa produkt är bara
+en produktfil till. Brandtexterna får aldrig låsa brandet vid första produkten.
 
 Kommandot körs EFTER att VA:n gjort checklistans steg 1–2 (butik på free
 trial, appen kopplad via `SHOPIFY_SHOP` + `SHOPIFY_CLIENT_ID` +
