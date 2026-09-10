@@ -76,7 +76,7 @@ import {
   tillampaFraktatgarder,
 } from './shopify.mjs';
 import { anslut } from './token.mjs';
-import { laddaUppTema, standardTemanamn } from './tema-upload.mjs';
+import { laddaUppTema, standardTemanamn, nastaTemanamn, hamtaTemanamn } from './tema-upload.mjs';
 import { laddaUppBild } from './filer.mjs';
 import { laddaUppLogga } from './logga.mjs';
 import { byggStartsida, byggFooterGroup, startsideRader, bilderAttLaddaUpp } from './startsida.mjs';
@@ -306,12 +306,29 @@ export const STEG = [
     stoppar: true,
     torrt(ctx) {
       const id = lasArbetstemaId(ctx.butiksstate);
+      if (ctx.nyttTema) {
+        return [
+          '--nytt-tema: ops-tema.zip laddas upp som ETT NYTT utkast, namnet blir nästa lediga "<Brand> – CRO v<N>"',
+          id ? `state:s arbetstemaId ${id} ÖVERGES — det gamla temat patchas aldrig vid ombyggnad` : 'arbetstemaId låses i state efter uppackning',
+        ];
+      }
       return [
         `ops-tema.zip laddas upp som UNPUBLISHED med namnet "${standardTemanamn(ctx.butik.butik.brand)}" (återanvänds om namnet redan finns)`,
         id ? `state har redan arbetstemaId ${id} — det verifieras och behålls` : 'arbetstemaId låses i state efter uppackning',
       ];
     },
     async kor(ctx) {
+      // OMBYGGNAD (--nytt-tema): state:s tema är byggt av en ÄLDRE bas-zip och
+      // bär källbutikens sektionsgrupper. En patch lämnar kvar det som inte
+      // skrivs över, så ombyggnaden tar alltid ett nytt utkast med nästa lediga
+      // versionsnamn (ny-ops.md, "Bygga om en butik" punkt 3).
+      if (ctx.nyttTema) {
+        const namn = nastaTemanamn(ctx.butik.butik.brand, await hamtaTemanamn());
+        const gammalt = lasArbetstemaId(ctx.butiksstate);
+        const tema = await laddaUppTema(namn, { aterAnvand: false, logg: (rad) => console.log(`   ${rad}`) });
+        sattArbetstemaId(ctx.butiksstate, { id: tema.id, namn: tema.name });
+        return { arbetstemaId: tema.id, temaId: tema.id, temaNamn: tema.name, role: tema.role, redanUppe: false, nyttTema: true, ersatte: gammalt ?? null };
+      }
       // Redan låst tema i state: verifiera att det finns och behåll det —
       // annars laddar en omkörning upp ett andra tema bredvid det första.
       const befintligt = lasArbetstemaId(ctx.butiksstate);
@@ -1237,9 +1254,10 @@ export function skaKoras(stegId, { resume, igen, klart }) {
   return true;
 }
 
-async function huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, igen = new Set(), storeReady = false }) {
+async function huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, igen = new Set(), storeReady = false, nyttTema = false }) {
   const { butik, produkter, varningar, launchInput } = lasKonfig(butiksfil, produktfiler);
   const ctx = byggButiksKontext(butik, produkter);
+  ctx.nyttTema = nyttTema;
   const lage = dryRun ? 'DRY-RUN' : launch ? 'LAUNCH' : igen.size > 0 ? `IGEN ${[...igen].join(',')}` : resume ? 'RESUME' : 'BUILD';
   const rubrik = produkter.map((x) => x.p.produkt.namn).join(' + ');
   console.log(`\nOPS Factory · ${rubrik} · butik ${butik.butik.brand} · ${lage}\n`);
@@ -1456,6 +1474,9 @@ export function tolkaArgv(argv) {
     resume: flaggor.has('--resume'),
     launch: flaggor.has('--launch'),
     storeReady: flaggor.has('--store-ready'),
+    // Ombyggnad: ta ett NYTT temautkast i stället för att patcha det som
+    // ligger låst i state (ny-ops.md, "Bygga om en butik" punkt 3).
+    nyttTema: flaggor.has('--nytt-tema'),
     igen,
     positioner,
   };
@@ -1463,7 +1484,7 @@ export function tolkaArgv(argv) {
 
 async function huvud() {
   const argv = process.argv.slice(2);
-  const { dryRun, resume, launch, storeReady, igen, positioner } = tolkaArgv(argv);
+  const { dryRun, resume, launch, storeReady, nyttTema, igen, positioner } = tolkaArgv(argv);
 
   laddaEnv();
 
@@ -1475,7 +1496,7 @@ async function huvud() {
     if (produktfiler.length === 0) {
       stopp('produktfil saknas', ['Användning: node factory/ops.mjs BUILD <produktfil.yaml> [fler …]']);
     }
-    return huvudflode({ butiksfil, produktfiler, dryRun, resume, igen, storeReady, launch: launch || forsta === 'LAUNCH' });
+    return huvudflode({ butiksfil, produktfiler, dryRun, resume, igen, storeReady, nyttTema, launch: launch || forsta === 'LAUNCH' });
   }
 
   // Nya formen: <butik.yaml> <produkt.yaml> [<produkt2.yaml> …]
@@ -1486,13 +1507,13 @@ async function huvud() {
   const butiksfil = butiksfiler[0] ?? produktfiler.shift();
 
   if (!butiksfil || produktfiler.length === 0) {
-    console.error('Användning: node factory/ops.mjs <butik.yaml> <produkt.yaml> [fler produktfiler …] [--dry-run] [--resume] [--igen <steg>] [--launch] [--store-ready]');
+    console.error('Användning: node factory/ops.mjs <butik.yaml> <produkt.yaml> [fler produktfiler …] [--dry-run] [--resume] [--igen <steg>] [--launch] [--store-ready] [--nytt-tema]');
     process.exit(1);
   }
   if (butiksfiler.length > 1) {
     stopp('flera butiksfiler angavs', ['En körning bygger EN butik. Ange bara en fil ur butiker/.']);
   }
-  return huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, igen, storeReady });
+  return huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, igen, storeReady, nyttTema });
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

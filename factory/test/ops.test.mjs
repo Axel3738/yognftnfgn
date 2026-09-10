@@ -160,6 +160,11 @@ test('tolkaIgen/tolkaArgv: --igen <steg>, --igen=a,b, positioner utan flaggvärd
   assert.deepEqual([...a.igen], ['startsida']);
   assert.equal(tolkaArgv(['--store-ready']).storeReady, true);
   assert.equal(tolkaArgv(['--launch']).launch, true);
+  // --nytt-tema är ombyggnadens flagga och måste vara FALSK som standard:
+  // ett vanligt bygge ska aldrig lämna ett extra temautkast efter sig.
+  assert.equal(tolkaArgv(['--nytt-tema']).nyttTema, true);
+  assert.equal(tolkaArgv(['--resume']).nyttTema, false);
+  assert.equal(a.nyttTema, false);
 });
 
 test('byggSlutrapport: två listor ur state — manuellt står ALDRIG under "gjort"', () => {

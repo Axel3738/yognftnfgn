@@ -50,6 +50,29 @@ export function standardTemanamn(brand) {
 }
 export const harCroINamnet = (namn) => CRO.test(String(namn ?? ''));
 
+// Nästa lediga versionsnamn för butiken: `<Brand> – CRO v<N+1>` där N är
+// högsta versionen som redan finns i butiken. Används vid OMBYGGNAD
+// (`--nytt-tema`): ett tema byggt av en äldre bas-zip får aldrig patchas —
+// det bär källbutikens sektionsgrupper, och en patch lämnar kvar det som
+// inte skrivs över (ny-ops.md, "Bygga om en butik" punkt 3).
+// Ren funktion: `befintliga` är temanamnen ur butiken.
+export function nastaTemanamn(brand, befintliga = []) {
+  const b = String(brand ?? '').trim() || 'OPS';
+  const prefix = `${b} – CRO v`;
+  const versioner = (Array.isArray(befintliga) ? befintliga : [])
+    .map((n) => String(n ?? '').trim())
+    .filter((n) => n.startsWith(prefix))
+    .map((n) => Number.parseInt(n.slice(prefix.length), 10))
+    .filter((n) => Number.isInteger(n) && n > 0);
+  return `${prefix}${versioner.length > 0 ? Math.max(...versioner) + 1 : 1}`;
+}
+
+// Temanamnen i butiken (till nastaTemanamn).
+export async function hamtaTemanamn({ graphql = shopifyGraphql } = {}) {
+  const data = await graphql(`query opsFactoryTemanamn { themes(first: 50) { nodes { id name role } } }`);
+  return (data.themes?.nodes ?? []).map((t) => String(t.name ?? '').trim()).filter(Boolean);
+}
+
 const sov = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ---------------------------------------------------------------------------

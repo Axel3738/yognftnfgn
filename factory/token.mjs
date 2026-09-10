@@ -102,6 +102,14 @@ export function losNycklar(butikId, env = process.env) {
   return { shop, clientId, clientSecret, sparadToken, sparadUtgar, sparadDoman };
 }
 
+// Storefront-lösenordet (kundvyns enda väg in i en lösenordsskyddad butik).
+// Samma ordning som nycklarna ovan: butikens egen variabel vinner över den
+// allmänna. Skäl: den allmänna skrivs över av VARJE nytt bygge, så utan
+// per-butik-varianten är kundvyn röd på varje ombyggnad av en äldre butik.
+export function losStorefrontLosenord(butikId, env = process.env) {
+  return perButik(env, 'SHOPIFY_STOREFRONT_PASSWORD', butikId) || env.SHOPIFY_STOREFRONT_PASSWORD || '';
+}
+
 // Är den sparade tokenen fortfarande brukbar för domänen? Kräver ett
 // utgångsdatum — utan det vet vi inget och mintar om.
 export function tokenGiltig({ sparadToken, sparadUtgar, sparadDoman, shop }, nu = Date.now()) {
@@ -328,6 +336,12 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   if (!n.shop) {
     throw new Error('Saknar SHOPIFY_SHOP i miljön — VA:n lägger in den (checklistans steg 2).');
   }
+
+  // Butikens egen storefront-nyckel lyfts upp till den allmänna, så varje
+  // senare läsare (ops.mjs, kundvy-kor.mjs) hittar rätt lösenord utan att
+  // känna till butiks-id:t. Faller tillbaka på den allmänna — aldrig tom.
+  const storefront = losStorefrontLosenord(id, env === process.env ? process.env : { ...lasEnvFil(envFil), ...env });
+  if (storefront) env.SHOPIFY_STOREFRONT_PASSWORD = storefront;
 
   // Spärr på domänen FÖRE första nätverksanropet.
   const forspärr = spärrar(id, n.shop, sparrAlternativ);

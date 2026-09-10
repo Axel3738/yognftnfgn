@@ -32,6 +32,7 @@ import { pathToFileURL, fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
+import { losStorefrontLosenord } from './token.mjs';
 import { graphql, kontrolleraAnslutning, hamtaArbetstema } from './shopify.mjs';
 import { lasState } from './state.mjs';
 import { byggPaketplan } from './paket.mjs';
@@ -296,7 +297,7 @@ async function huvud() {
   const state = lasState(butik.butik.id, '_butik');
   const arbetstemaId = state.arbetstemaId ?? state.steg?.['tema-upload']?.arbetstemaId ?? state.steg?.['tema-upload']?.temaId ?? null;
   const tema = flagga('--tema') ? { id: flagga('--tema'), role: 'UNPUBLISHED' } : await hamtaArbetstema(arbetstemaId);
-  const losenord = flagga('--losenord') ?? process.env.SHOPIFY_STOREFRONT_PASSWORD ?? null;
+  const losenord = flagga('--losenord') ?? (losStorefrontLosenord(butik.butik.id) || null);
   console.log(`Bas ${byggBas(shop, ctx.bas)} · tema ${tema.name ?? tema.id} (${tema.role})${previewTemaId(tema) ? ' via preview_theme_id' : ' = LIVE'}`);
 
   // Markörerna: butikens egna ord, minus de som är lika på målspråket.

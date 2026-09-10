@@ -61,7 +61,13 @@ VIDEO:
   SHOPIFY_CLIENT_ID = the Client ID
   SHOPIFY_CLIENT_SECRET = the Client secret
   SHOPIFY_STOREFRONT_PASSWORD = Online Store → Preferences → Password (the store password – Claude needs it to check the pages like a customer sees them; added 2026-09-08)
+* Now add the SAME four values a SECOND time, under this store's own names (added 2026-09-10). Replace STORE with the store id Claude gives you, in capitals – for the store "tacklebay" that is SHOPIFY_SHOP_TACKLEBAY, and so on. Nothing ever overwrites these, so the store can still be rebuilt after the next store is built. Skip this and the store is locked out later:
+  SHOPIFY_SHOP_STORE = the same .myshopify.com address
+  SHOPIFY_CLIENT_ID_STORE = the same Client ID
+  SHOPIFY_CLIENT_SECRET_STORE = the same Client secret
+  SHOPIFY_STOREFRONT_PASSWORD_STORE = the same store password
 * Back in the app → Distribution → Custom distribution → enter the store's .myshopify.com address → Generate link → open it → Install app
+  Keep the app installed after launch – uninstalling it locks Claude out of the store.
   Note: keys go ONLY in the Environment – never in chat or email.
   If a Client secret ever ends up in a chat: the app → Settings → Client secret → generate a new one → put the new value in the Environment. The build keeps running on the token it already has, so this never blocks anything.
 

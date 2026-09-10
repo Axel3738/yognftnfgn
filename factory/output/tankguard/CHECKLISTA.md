@@ -32,7 +32,15 @@ Get this right and section 5 is three checks instead of seven clicks.
   `SHOPIFY_CLIENT_ID` = the Client ID
   `SHOPIFY_CLIENT_SECRET` = the Client secret
   `SHOPIFY_STOREFRONT_PASSWORD` = Online Store → Preferences → **Password** (the store password – Claude needs it to check the pages like a customer sees them)
+- [ ] Now add the SAME four values a SECOND time, under this store's own names.
+      Nothing ever overwrites these, so this store can still be rebuilt after
+      the next store is built. Skip this and the store is locked out later.
+  `SHOPIFY_SHOP_TANKGUARD` = the same .myshopify.com address
+  `SHOPIFY_CLIENT_ID_TANKGUARD` = the same Client ID
+  `SHOPIFY_CLIENT_SECRET_TANKGUARD` = the same Client secret
+  `SHOPIFY_STOREFRONT_PASSWORD_TANKGUARD` = the same store password
 - [ ] Back in the app → **Distribution** → Custom distribution → enter the store's .myshopify.com address → **Generate link** → open it → **Install app**
+  Keep the app installed after launch – uninstalling it locks Claude out of the store.
   Note: keys go ONLY in the Environment – never in chat or email.
   If a Client secret ever ends up in a chat: the app → Settings → Client secret
   → generate a new one → put the new value in the Environment. The build keeps

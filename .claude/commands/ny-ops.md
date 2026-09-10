@@ -117,12 +117,18 @@ hoppa över steg 2–4 och kör kedjan.
 2. **VA:ns klick först.** Valuta, hemmamarknad och språk kan inget API ändra.
    Är de fel skrivs rabattkoderna i fel valuta igen — paketsteget vägrar, och
    det är meningen.
-3. **Nytt tema, alltid.** `--igen tema-upload` laddar upp det RENSADE temat som
-   ett nytt utkast och låser dess id i state. Patcha aldrig det gamla: det bär
-   källbutikens sektionsgrupper, och en patch lämnar det som inte skrivs över.
+3. **Nytt tema, alltid — flaggan är `--nytt-tema`.** Den laddar upp det RENSADE
+   temat som ett nytt utkast, döper det till nästa lediga `<Brand> – CRO v<N>`
+   och låser det id:t i state. Patcha aldrig det gamla: det bär källbutikens
+   sektionsgrupper, och en patch lämnar det som inte skrivs över.
+   ⚠️ `--igen tema-upload` gör INTE detta (mätt 2026-09-10): steget kör visserligen,
+   men hittar `arbetstemaId` i state, verifierar att temat finns och behåller det —
+   `redanUppe: true`, ingen uppladdning. Utan `--nytt-tema` patchas alltså det gamla
+   temat, tyst. Flaggan är envägs och lämnar ett utkast efter sig; kör den en gång
+   per ombyggnad, inte i varje omkörning.
 4. **Kör hela kedjan**, inte `--resume`: gröna steg i state är gröna enligt den
    GAMLA koden.
-   `node factory/ops.mjs factory/butiker/<b>.yaml factory/produkter/<p>.yaml … `
+   `node factory/ops.mjs factory/butiker/<b>.yaml factory/produkter/<p>.yaml … --nytt-tema`
 5. **QA mot riktig HTML** med butikens storefront-lösenord i
    `SHOPIFY_STOREFRONT_PASSWORD`. Utan det är kundvyn röd, aldrig grön.
 6. **Säg vad som ändrades mot förra bygget** i slutrapporten, inte bara vad som

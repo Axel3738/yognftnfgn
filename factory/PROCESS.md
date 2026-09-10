@@ -95,6 +95,12 @@ Hela listan i `factory/README.md`.
    `output/` för en annan butik. Tokenen skrivs i `factory/.env` som
    `SHOPIFY_STORE_DOMAIN` + `SHOPIFY_ADMIN_TOKEN` + `SHOPIFY_ADMIN_TOKEN_<BUTIK>`
    (+ utgångstid och domän per butik) så gamla butiker förblir nåbara.
+   ⚠️ `factory/.env` dör med containern. Det som gör en butik nåbar NÄSTA
+   session är därför butikens EGNA variabler i environmentet:
+   `SHOPIFY_SHOP_<BUTIK>`, `SHOPIFY_CLIENT_ID_<BUTIK>`,
+   `SHOPIFY_CLIENT_SECRET_<BUTIK>`, `SHOPIFY_STOREFRONT_PASSWORD_<BUTIK>`.
+   De vinner över de allmänna (`losNycklar`, `losStorefrontLosenord`) och
+   står i VA-checklistans steg 2 sedan 2026-09-10.
 2. ⚙️ **Hämta produktdata** från källan (Bäverbutik-sidan): `/products/<handle>.json`
    + Judge.me `reviews_for_widget` (originaldatum i `reviews[].created_at`).
    Källans Kaching-paketnivåer ligger som JSON i sidans HTML
@@ -257,6 +263,18 @@ en människa i en webbläsare".
 ---
 
 ## Regler som bevisats den hårda vägen
+- **En butik går bara att bygga om så länge dess EGNA env-nycklar finns kvar.**
+  Mätt 2026-09-10 på `/ny-ops rebuild tacklebay`: steg 0 stoppade före första
+  skrivningen, först på spärren (miljöns `SHOPIFY_SHOP` stod kvar på TankGuards
+  `y1sj1i-3d`, som har state för en annan butik) och sedan — med TackleBays
+  egen domän inmatad — på Shopifys `400 Oauth error app_not_installed`. Skälet
+  var inte butiken: VA-checklistan sa "overwrite the old values", så varje nytt
+  bygge raderade förra butikens åtkomst. **Diagnosen skiljer två fall åt:**
+  spärren betyder "fel butik i miljön", `app_not_installed` betyder "rätt
+  butik, ingen app". Checklistans steg 2 sätter sedan 2026-09-10 samma fyra
+  värden EN GÅNG TILL med butikens suffix; de skrivs aldrig över.
+  Appen ska dessutom förbli installerad efter launch — avinstallation låser ute
+  fabriken lika effektivt som en överskriven nyckel.
 - **"Butiken ser obrandad ut" är nästan aldrig brandingen — det är ett steg som
   inte kördes.** Mätt 2026-09-09 när Axel jämförde sina tre OPS-butiker och
   gillade DryTrek mest: TackleBays `branding:`-block är lika genomarbetat som
@@ -289,6 +307,13 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   patchade fel tema). `tema-upload` skriver `arbetstemaId`; varje temasteg
   går via `hamtaArbetstema(id)` — aldrig "första UNPUBLISHED", aldrig
   `hamtaUtkastTema()`. Utan id i state kastar kedjan.
+- **En ombyggnad kräver `--nytt-tema` — `--igen tema-upload` räcker inte.**
+  Mätt 2026-09-10: steget kör, men hittar `arbetstemaId` i state, verifierar att
+  temat finns och returnerar `redanUppe: true` utan att ladda upp något. Ett
+  tema byggt av en äldre bas-zip patchas då tyst, med källbutikens
+  sektionsgrupper kvar — precis det ombyggnadsrutinen förbjuder. `--nytt-tema`
+  överger id:t i state och tar nästa lediga `<Brand> – CRO v<N>`. Flaggan är
+  envägs: en körning = ett nytt utkast, så kör den en gång per ombyggnad.
 - **Temat GÅR att publicera via API** (`themePublish` → `role: MAIN`, noll
   userErrors, DryTrek 2026-09-09) och Admin-API:t skriver mot MAIN-temat med
   butikens egen app (TankGuard 2026-09-08). Regeln "publicerat tema är

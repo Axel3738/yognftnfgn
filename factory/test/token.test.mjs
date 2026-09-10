@@ -13,6 +13,7 @@ import {
   normaliseraDoman,
   envSuffix,
   losNycklar,
+  losStorefrontLosenord,
   tokenGiltig,
   spärrar,
   sparrar,
@@ -113,6 +114,17 @@ test('losNycklar: per-butik vinner, SHOPIFY_SHOP vinner över SHOPIFY_STORE_DOMA
   const n2 = losNycklar('annan', { SHOPIFY_STORE_DOMAIN: 'https://gammal.myshopify.com/' });
   assert.equal(n2.shop, 'gammal.myshopify.com');
   assert.equal(n2.sparadToken, '');
+});
+
+test('losStorefrontLosenord: butikens egen nyckel vinner över den allmänna', () => {
+  // Den allmänna skrivs över av varje nytt bygge (VA-checklistan steg 2), så
+  // utan per-butik-varianten är kundvyn röd på varje ombyggnad av en äldre
+  // butik. Mätt 2026-09-10 på TackleBay.
+  const env = { SHOPIFY_STOREFRONT_PASSWORD: 'allman', SHOPIFY_STOREFRONT_PASSWORD_TACKLEBAY: 'egen' };
+  assert.equal(losStorefrontLosenord('tacklebay', env), 'egen');
+  assert.equal(losStorefrontLosenord('drytrek', env), 'allman');
+  assert.equal(losStorefrontLosenord('drytrek', {}), '');
+  assert.equal(losStorefrontLosenord('', { SHOPIFY_STOREFRONT_PASSWORD: 'allman' }), 'allman');
 });
 
 test('tokenGiltig: kräver utgångsdatum, rätt domän och ingen CLI-token', () => {

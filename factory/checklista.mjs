@@ -66,8 +66,13 @@ export function checklistaVarden(butik, produkter = [], { pixelId = null, temaNa
       return { kod, land: LAND_EN[kod] ?? kod, valuta: LOKAL_VALUTA[kod] ?? text(m.valuta) ?? 'the local currency', locale: text(m.locale) };
     })
     .filter(Boolean);
+  const id = text(b.id) ?? 'STORE-ID';
   return {
-    id: text(b.id) ?? 'STORE-ID',
+    id,
+    // Suffixet till butikens EGNA env-variabler (token.losStorefrontLosenord
+    // och losNycklar läser `<NAMN>_<SUFFIX>` före den allmänna). Samma regel
+    // som envSuffix i token.mjs: versaler, allt annat blir understreck.
+    envsuffix: id.toUpperCase().replace(/[^A-Z0-9]+/g, '_'),
     brand,
     doman,
     mail,
@@ -157,7 +162,15 @@ Get this right and section 5 is three checks instead of seven clicks.
   \`SHOPIFY_CLIENT_ID\` = the Client ID
   \`SHOPIFY_CLIENT_SECRET\` = the Client secret
   \`SHOPIFY_STOREFRONT_PASSWORD\` = Online Store → Preferences → **Password** (the store password – Claude needs it to check the pages like a customer sees them)
+- [ ] Now add the SAME four values a SECOND time, under this store's own names.
+      Nothing ever overwrites these, so this store can still be rebuilt after
+      the next store is built. Skip this and the store is locked out later.
+  \`SHOPIFY_SHOP_${v.envsuffix}\` = the same .myshopify.com address
+  \`SHOPIFY_CLIENT_ID_${v.envsuffix}\` = the same Client ID
+  \`SHOPIFY_CLIENT_SECRET_${v.envsuffix}\` = the same Client secret
+  \`SHOPIFY_STOREFRONT_PASSWORD_${v.envsuffix}\` = the same store password
 - [ ] Back in the app → **Distribution** → Custom distribution → enter the store's .myshopify.com address → **Generate link** → open it → **Install app**
+  Keep the app installed after launch – uninstalling it locks Claude out of the store.
   Note: keys go ONLY in the Environment – never in chat or email.
   If a Client secret ever ends up in a chat: the app → Settings → Client secret
   → generate a new one → put the new value in the Environment. The build keeps

@@ -10,6 +10,7 @@ import {
   TEMA_ZIP,
   TEMA_FILNAMN,
   standardTemanamn,
+  nastaTemanamn,
   harCroINamnet,
   bedomUppackning,
   byggUppladdningsform,
@@ -64,6 +65,20 @@ const ingenVantan = async () => {};
 test('TEMA_ZIP pekar på factory/tema/ops-tema.zip', () => {
   assert.ok(TEMA_ZIP.endsWith(join('factory', 'tema', 'ops-tema.zip')));
   assert.equal(TEMA_FILNAMN, 'ops-tema.zip');
+});
+
+test('nastaTemanamn: ombyggnaden får nästa lediga version, aldrig det gamla temat', () => {
+  // Ombyggnad (ny-ops.md punkt 3): temat från förra bygget är byggt av en
+  // äldre bas-zip och får aldrig patchas. TackleBays gamla tema heter
+  // "TackleBay v1" — utan CRO i namnet — och räknas därför inte som en version.
+  assert.equal(nastaTemanamn('TackleBay', ['Dawn', 'TackleBay v1']), 'TackleBay – CRO v1');
+  assert.equal(nastaTemanamn('TackleBay', ['TackleBay – CRO v1']), 'TackleBay – CRO v2');
+  assert.equal(nastaTemanamn('TackleBay', ['TackleBay – CRO v1', 'TackleBay – CRO v3']), 'TackleBay – CRO v4');
+  assert.equal(nastaTemanamn('TackleBay', []), 'TackleBay – CRO v1');
+  assert.equal(nastaTemanamn('', ['OPS – CRO v2']), 'OPS – CRO v3');
+  // Ett annat brands teman påverkar aldrig numreringen.
+  assert.equal(nastaTemanamn('DryTrek', ['TackleBay – CRO v7']), 'DryTrek – CRO v1');
+  assert.ok(harCroINamnet(nastaTemanamn('DryTrek', [])));
 });
 
 test('standardTemanamn bär ordet CRO så hamtaArbetstema känner igen temat', () => {

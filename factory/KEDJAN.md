@@ -20,6 +20,11 @@ Bygg aldrig en parallell modul för något som står här — utöka den som fin
    state. Varje steg som rör temat använder `hamtaArbetstema(temaId)` ur
    `shopify.mjs`. Aldrig "första UNPUBLISHED". Efter varje skrivning läses
    filen tillbaka ur samma tema (`verifieraTemafiler`).
+   **Undantaget är ombyggnad:** `--nytt-tema` överger id:t i state och laddar
+   upp ett nytt utkast (`nastaTemanamn` → nästa lediga `<Brand> – CRO v<N>`),
+   för att ett tema från en äldre bas-zip bär källbutikens sektionsgrupper.
+   Det är den ENDA vägen till ett nytt tema — `--igen tema-upload` behåller
+   det gamla (mätt 2026-09-10).
 2. **Idempotent.** Varje steg tål att köras två gånger. Produkten slås upp på
    handle och uppdateras med id + befintlig status. Metaobjekt upsertas på
    handle. Rabattkoder uppdateras, aldrig dubbleras.

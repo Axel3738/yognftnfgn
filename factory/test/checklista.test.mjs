@@ -57,10 +57,23 @@ test('EN fil på butiksnivå listar alla produkter och en recensionsrad per prod
 test('storefront-lösenordet är den fjärde env-variabeln och ägare/inkorg är två adresser', () => {
   const md = byggChecklista(butik(), [raprodukt()]);
   assert.ok(md.includes('set these 4'));
-  const rad = md.split('\n').filter((r) => r.includes('SHOPIFY_'));
+  const rad = md.split('\n').filter((r) => /`SHOPIFY_/.test(r));
+  // Fyra allmänna nycklar, sen SAMMA fyra med butikens eget suffix. De
+  // per-butik-satta skrivs aldrig över av nästa bygge — utan dem går en
+  // äldre butik inte att bygga om (mätt 2026-09-10 på TackleBay: miljön
+  // stod kvar på TankGuard och steg 0 stoppade med app_not_installed).
   assert.deepEqual(
-    rad.map((r) => r.match(/`(SHOPIFY_[A-Z_]+)`/)[1]),
-    ['SHOPIFY_SHOP', 'SHOPIFY_CLIENT_ID', 'SHOPIFY_CLIENT_SECRET', 'SHOPIFY_STOREFRONT_PASSWORD']
+    rad.map((r) => r.match(/`(SHOPIFY_[A-Z_0-9]+)`/)[1]),
+    [
+      'SHOPIFY_SHOP',
+      'SHOPIFY_CLIENT_ID',
+      'SHOPIFY_CLIENT_SECRET',
+      'SHOPIFY_STOREFRONT_PASSWORD',
+      'SHOPIFY_SHOP_TESTBUTIKEN',
+      'SHOPIFY_CLIENT_ID_TESTBUTIKEN',
+      'SHOPIFY_CLIENT_SECRET_TESTBUTIKEN',
+      'SHOPIFY_STOREFRONT_PASSWORD_TESTBUTIKEN',
+    ]
   );
   const v = checklistaVarden(butik(), [raprodukt()]);
   assert.notEqual(v.inkorg, v.agare, 'vidarebefordran och ägarbyte går till olika adresser');
