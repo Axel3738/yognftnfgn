@@ -91,8 +91,7 @@ behind its password either way (measured: DryTrek 2026-09-09).
       This is what the order emails, the checkout, the review requests and the
       Meta page are all named after – so it happens before any of them.
 - [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
-- [ ] Same screen → **Products and pricing** → set fixed prices for the calendar: **1 stk 439,00 kr** (compare-at 579,00), **2 stk 746,30 kr** (1 158,00), **3 stk 1 053,60 kr** (1 737,00) → Save
-      Decided by Axel 2026-09-10 (same as Bäverbutiken NO). The Norwegian ads say 579 → 439 kr — until these prices are live the NO campaign must stay PAUSED.
+- [x] ~~Same screen → Products and pricing → set fixed prices~~ **Done by Claude via API 2026-09-10** (catalog "Norge (NOK)", price list NOK, fixed 439,00 / compare-at 579,00; the 2- and 3-pack tiers 746,30 / 1 053,60 are computed by the theme). Read back: Norway shows 439,00 NOK.
 
 ## 6. Domain
 Loopia first – Shopify cannot connect a domain that is not bought, and the

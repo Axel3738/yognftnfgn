@@ -46,6 +46,11 @@ priser_marknad:
     valuta: NOK
     pris: 439
     jamforpris: 579
+    # Satt i butiken 2026-09-10 via API (API-GRANSER.md "Fasta NOK-priser"):
+    katalog_id: "gid://shopify/MarketCatalog/195321463127"
+    prislista_id: "gid://shopify/PriceList/31613288791"
+    publikation_id: "gid://shopify/Publication/334345666903"
+    tillbakalast: "contextualPricing NO = 439,00 / 579,00 NOK, 2026-09-10 16:20"
     paket:
       - antal: 2
         pris: 746.30
