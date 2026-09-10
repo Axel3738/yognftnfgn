@@ -1,0 +1,14 @@
+# Env-koll A
+Miljö: env_01PBy3BU66p5AEJYSfm8EbjP
+Container startad: Thu Sep 10 21:33:35 UTC 2026
+
+| Nyckel | Läge | Längd |
+|---|---|---|
+| META_ACCESS_TOKEN | SATT | 205 |
+| NOTION_TOKEN | SATT | 50 |
+| DISCORD_BOT_TOKEN | SATT | 72 |
+| ANTHROPIC_API_KEY | SAKNAS | 0 |
+| KIE_API_KEY | SATT | 32 |
+| HEYGEN_API_KEY | SATT | 54 |
+| JUDGEME_API_TOKEN | SATT | 27 |
+| DISCORD_WEBHOOK_URL | SAKNAS | 0 |
