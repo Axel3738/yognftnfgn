@@ -451,7 +451,7 @@
    },
    "atgard": "node factory/varukorgsfix.mjs tankguard — fabrikens fil skriven till det publicerade temat, tillbakaläst 16 516 byte identisk",
    "cdn_efter": "?v=…1789064434 — 6 315 byte minifierad, stopImmediatePropagation finns, cart/add.js före discount/ i kop()",
-   "webblasartest": "INTE gjort härifrån: egress-tunneln stänger Chromiums anslutning efter 6 s (ws_closed 1006), tre försök. Axel klickar själv: tom korg → Köp → lådan ska glida in, 2 st i vagnen.",
+   "webblasartest": "Gjort av Axel i egen webbläsare 2026-09-10 efter fixen: \"Nu funkar det bra.\" (Härifrån gick det inte: egress-tunneln stänger Chromiums anslutning efter 6 s.)",
    "heimguard": "SAMMA bugg live (5 906 byte gammal fil). INTE rättad — hemvaktens nycklar finns inte i den här sessionens Environment.",
    "vakt": "trippelkoll.mjs: raden \"fabriksfiler i publicerat tema\" läser filen ur live-temat och blir röd med kommandot om den avviker"
   }

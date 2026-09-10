@@ -332,7 +332,8 @@ en vy som inte var den publicerade.
 ansluter, väljer det ENDA publicerade temat, skriver fabrikens fil, läser
 tillbaka byte för byte och stannar om något avviker. TankGuard rättad
 2026-09-10 (16 516 byte, identisk, CDN:en serverar ny `?v=` med
-`stopImmediatePropagation` och varorna före koden). **HeimGuard är INTE rättad**
+`stopImmediatePropagation` och varorna före koden) — och Axel bekräftade i sin
+egen webbläsare samma kväll: *"Nu funkar det bra."* **HeimGuard är INTE rättad**
 — dess nycklar finns inte i den sessionens Environment (`anslut('hemvakten')`
 stoppade på spärren). Kör skriptet från en session som har dem.
 

@@ -127,9 +127,9 @@ arbetstemat, inte till temat kunden ser.
 Verktyg: `node factory/varukorgsfix.mjs tankguard`. Vakt: trippelkollens rad
 `fabriksfiler i publicerat tema`.
 
-⚠️ **Inte testat i webbläsare härifrån** — egress-tunneln stänger Chromiums
-anslutning efter sex sekunder (tre försök). Axel gör klicket: tom korg → Köp →
-lådan glider in, 2 st i vagnen.
+**Testat av Axel i egen webbläsare 2026-09-10 efter fixen: "Nu funkar det
+bra."** Härifrån gick det inte — egress-tunneln stänger Chromiums anslutning
+efter sex sekunder (tre försök).
 
 ⚠️ **HeimGuard har samma bugg live** (5 906 byte gammal fil på
 heimguard.se). Inte rättad: butikens nycklar saknas i den här sessionen.
