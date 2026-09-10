@@ -17,6 +17,10 @@ import {
   hittaTemaViaNamn,
   vantaPaUppackning,
   laddaUppTema,
+  saknadeFiler,
+  zipFilnamn,
+  hamtaTemafilnamn,
+  kompletteraTema,
 } from '../tema-upload.mjs';
 
 // --- hjälp -----------------------------------------------------------------
@@ -228,6 +232,61 @@ test('laddaUppTema kastar tydligt: tomt namn, saknad zip, userErrors, nekad POST
   } finally {
     stada();
   }
+});
+
+test('saknadeFiler: zip-filer som inte finns i temat, i zip:ens ordning', () => {
+  assert.deepEqual(saknadeFiler(['a.liquid', 'b.json', 'c.svg'], ['b.json']), ['a.liquid', 'c.svg']);
+  assert.deepEqual(saknadeFiler(['a.liquid'], ['a.liquid']), []);
+  assert.deepEqual(saknadeFiler([], []), []);
+});
+
+test('zipFilnamn läser den riktiga zip:en utan katalogposter', () => {
+  const namn = zipFilnamn(TEMA_ZIP);
+  assert.ok(namn.length > 300, `${namn.length} filer`);
+  assert.ok(namn.includes('sections/ms-usp-bar.liquid'));
+  assert.ok(namn.every((n) => !n.endsWith('/')));
+});
+
+test('hamtaTemafilnamn paginerar', async () => {
+  const { g } = fejkGraphql({
+    opsFactoryTemaFilnamn: (v, n) =>
+      n === 1
+        ? { theme: { files: { nodes: [{ filename: 'a' }], pageInfo: { hasNextPage: true, endCursor: 'x' } } } }
+        : { theme: { files: { nodes: [{ filename: 'b' }], pageInfo: { hasNextPage: false, endCursor: null } } } },
+  });
+  assert.deepEqual(await hamtaTemafilnamn(GID, { graphql: g }), ['a', 'b']);
+});
+
+test('kompletteraTema: skriver in tappade filer en och en, och kastar med Shopifys orsak när något saknas ändå', async () => {
+  // AdventLane 2026-09-10: sex filer med blank schema-default lämnades utanför
+  // temat utan ett ord från Shopify. Fejkat tema som saknar två av zip:ens
+  // filer; första upserten lyckas, andra avvisas.
+  const alla = zipFilnamn(TEMA_ZIP);
+  const tappade = ['sections/ms-usp-bar.liquid', 'sections/ms-marquee.liquid'];
+  let temat = alla.filter((n) => !tappade.includes(n));
+  const upserts = [];
+  const { g } = fejkGraphql({
+    opsFactoryTemaFilnamn: () => ({ theme: { files: { nodes: temat.map((filename) => ({ filename })), pageInfo: { hasNextPage: false } } } }),
+    opsFactoryTemafilKomplettera: (v) => {
+      const f = v.files[0];
+      upserts.push(f.filename);
+      assert.equal(f.body.type, 'TEXT');
+      if (f.filename === 'sections/ms-marquee.liquid') return { themeFilesUpsert: { upsertedThemeFiles: [], userErrors: [{ filename: f.filename, message: 'Invalid schema: default can\'t be blank' }] } };
+      temat = [...temat, f.filename];
+      return { themeFilesUpsert: { upsertedThemeFiles: [{ filename: f.filename }], userErrors: [] } };
+    },
+  });
+  await assert.rejects(() => kompletteraTema(GID, { graphql: g }), /ms-marquee\.liquid.*default can't be blank/s);
+  // Skrivs i zip:ens ordning — jämför som mängd.
+  assert.deepEqual([...upserts].sort(), [...tappade].sort());
+
+  // Allt på plats: ingen upsert, bara tillbakaläsningen.
+  temat = alla;
+  const rader = [];
+  const r = await kompletteraTema(GID, { graphql: g, logg: (x) => rader.push(x) });
+  assert.equal(r.kompletterade.length, 0);
+  assert.equal(r.antal, alla.length);
+  assert.ok(rader.some((x) => /alla \d+ filer finns/.test(x)));
 });
 
 test('laddaUppTema varnar via logg när namnet saknar CRO', async () => {

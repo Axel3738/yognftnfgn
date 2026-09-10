@@ -29,6 +29,10 @@
 //
 // Flerproduktsbutik: startsidan visar KOLLEKTIONEN (sektionen `sortiment`),
 // inte en enskild produkt. Enproduktsbutik får i stället `featured-product`.
+// En NISCHBUTIK (butik.kollektion.alltid, AdventLane 2026-09-10) räknas som
+// flerprodukt redan med sin första produkt — avgörs av butik.arNischbutik.
+
+import { arNischbutik } from './butik.mjs';
 
 const text = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
 const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
@@ -116,7 +120,7 @@ function byggSektioner(butik, produkter, alt) {
   const s = butik?.startsida ?? {};
   const d = defaults(butik);
   const brand = text(butik?.butik?.brand) ?? 'Butiken';
-  const flera = produkter.length > 1;
+  const flera = arNischbutik(butik, produkter);
   const malLank = flera ? `shopify://collections/${alt.kollektion}` : `shopify://products/${produkter[0]?.produkt?.id ?? ''}`;
   const farger = butik?.branding?.farger ?? {};
   const ordning = [];
@@ -490,8 +494,8 @@ export function startsideRader(butik, produkter, alternativ = {}) {
   const vantar = [bilder.hero && 'hero', bilder.trygghet && 'trygghet', ...bilder.galleri.map((x, i) => x && `galleri ${i + 1}`)].filter(Boolean);
   return [
     `hero: "${text(s.hero?.rubrik) ?? '(butikens namn)'}"${bildHandle(alt.hero, s.hero?.bild) ? ' med bild' : ' (temats platshållare tills bilden är uppladdad)'}`,
-    p.length > 1
-      ? `sortiment: kollektionen ${alt.kollektion} med ${p.length} produkter`
+    arNischbutik(butik, p)
+      ? `sortiment: kollektionen ${alt.kollektion} med ${p.length} produkt${p.length === 1 ? ' (nischbutik)' : 'er'}`
       : `produkt: ${p[0]?.produkt?.id ?? '(ingen produkt)'}`,
     `${lista(s.faq).length} frågor, ${p.flatMap((x) => lista(x?.reviews)).length} riktiga omdömen, ${lista(s.galleri?.kolumner).length} galleribilder`,
     ...(vantar.length > 0 ? [`bilder som ops.mjs laddar upp via filer.mjs först: ${vantar.join(', ')}`] : []),

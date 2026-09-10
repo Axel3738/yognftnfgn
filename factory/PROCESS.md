@@ -222,6 +222,62 @@ punkt 1–4 är avbockade.
 
 ---
 
+## Nischbutik som startar med EN produkt (AdventLane 2026-09-10)
+
+Axels beslut i prompten: "Nischbutik, inte one-product. Fler produkter i
+samma nisch läggs in senare, så brandnamnet ska bära nischen." Kedjan avgjorde
+förut flerprodukt på ANTALET produktfiler — en nischbutik med sin första
+produkt hade byggts som enproduktsbutik (produkten direkt på startsidan,
+ingen kollektion, ingen kollektionsrad i menyn) och byggts om när produkt
+nr 2 kom. Nu: **`butik.kollektion.alltid: true`** i butiksfilen gör butiken
+till nischbutik redan med en produkt (`butik.arNischbutik`): kollektionen
+skapas och publiceras, startsidan visar kollektionen, huvudmenyn får
+Hem / Kalendrarna / Racingkalendern / Frakt & retur / Kontakt, och
+översättningsunderlaget bär kollektionen. Nästa kalender = en produktfil till
+i samma körning, inget annat. Utan `alltid` gäller antalet som förr.
+
+Produkttexterna får handla om produkten; **brandtexterna får aldrig låsa
+brandet vid den första produkten** (AdventLanes startsida talar om
+december-morgnar, inte om bilar).
+
+Mätningar från samma bygge:
+- **Shopify tappar avvisade filer TYST vid temauppackningen.** Första
+  bygget ur den rensade zip:en (rensad 2026-09-09, aldrig använd skarpt förrän
+  nu): `rensa-kalla.mjs` hade tömt löftena ur sex sektioners schema-defaults
+  (`"default": ""`), Shopify avvisar det ("setting with id="items" default
+  can't be blank") och lämnade filerna utanför temat — `processing: false`,
+  ingen userError. Bygget stoppade elva steg senare i `startsida`: "Section
+  type 'ms-usp-bar' does not refer to an existing section file". Två lagningar:
+  `rensaBlankaDefaults` i rensa-kalla (textfält utan default i stället för
+  blank; select med "" som alternativ rörs inte — fem sådana filer togs emot)
+  och **`tema-upload` läser tillbaka uppackningen** (`kompletteraTema`: zip:ens
+  filnamn mot temats, tappade filer skrivs in en och en så Shopify säger
+  orsaken, kvarstående saknad = stopp). Körs på ett låst tema också, så
+  `--igen tema-upload` lagar ett tema med hål. Ett test vaktar zip:en.
+- **Loggans tillbakaläsning behöver några sekunder.** `settings_data.json`
+  läst direkt efter skrivningen svarade `logo: ""` — värdet satt kvar strax
+  efter. `logga.mjs` läser om upp till sex gånger med 2,5 s paus.
+- **Video till Files går inte på trial.** `fileCreate` med `contentType:
+  VIDEO` → "The file is not supported on trial accounts. Select a plan to
+  upload this file." Koden finns (`filer.mjs laddaUppVideo`, `.mp4` i CLI:t)
+  och två fällor är lösta (staged VIDEO-URL saknar ändelse ⇒ `filename`
+  sätts efteråt med `fileUpdate`). Tills ägaren valt plan bär källans GIF
+  demot; sen `node factory/filer.mjs <mp4>` + `--igen metafalt`. GIF → MP4
+  görs med `imageio-ffmpeg` (pip) när `ffmpeg` saknas i containern.
+- **Loggmotivet är per brand.** `logga-generera.mjs --motiv lucka` ritar en
+  öppnad kalenderlucka; `droppe` (TankGuard) är standard, `ingen` finns.
+  Typsnittet måste finnas i systemet — Poppins Bold fanns inte på jsDelivrs
+  spegel (79 byte "not found") men på `raw.githubusercontent.com/google/fonts`.
+- **Källans Judge.me-datum kan vara importtid.** Alla tio recensioner bar
+  `created_at` inom tolv sekunder 2026-09-08 — Bäverbutiken API-importerade
+  dem. Det ÄR källans originaldatum enligt regeln, men inga kunddatum finns;
+  skriv det i produktfilen i stället för att hitta på spridning.
+- **Inköpskostnaden går att härleda ur källkampanjens namn** när den bär
+  "BE ROAS x.xx" (`docs/temu-launch-flow.md`: pris / (pris − inköp)). 1,62 på
+  499 kr ⇒ 191 kr. Märks HÄRLEDD tills Axel bekräftat kvittot.
+
+---
+
 ## Varukorgen — löst 2026-09-09
 
 **Symptom** (Axel, HeimGuard + TankGuard, båda live): första gången kunden

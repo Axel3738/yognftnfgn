@@ -4,11 +4,27 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { valideraButik, sammanfoga, kontrolleraMarknader, kontrolleraStartsida } from '../butik.mjs';
+import { valideraButik, sammanfoga, kontrolleraMarknader, kontrolleraStartsida, arNischbutik } from '../butik.mjs';
 import { rabutik, raprodukt, dummy, medButiksfrakt } from './hjalp.mjs';
 
 test('testbutiken validerar utan kritiska fel', () => {
   assert.deepEqual(valideraButik(rabutik()).fel, []);
+});
+
+test('arNischbutik: två produkter, eller kollektion.alltid, ger nischläge — annars enprodukt', () => {
+  const b = rabutik();
+  assert.equal(arNischbutik(b, [dummy()]), false);
+  assert.equal(arNischbutik(b, [dummy(), dummy()]), true);
+  assert.equal(arNischbutik(b, 2), true);
+  const nisch = { ...b, butik: { ...b.butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: true } } };
+  assert.equal(arNischbutik(nisch, [dummy()]), true);
+  assert.equal(arNischbutik(nisch.butik, 1), true, 'tar även bara butik:-blocket');
+  const av = { ...b, butik: { ...b.butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: false } } };
+  assert.equal(arNischbutik(av, [dummy()]), false);
+  // alltid som text är ett konfigfel, inte en tyst tolkning.
+  const fel = { ...b, butik: { ...b.butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: 'ja' } } };
+  assert.ok(valideraButik(fel).fel.some((f) => f.includes('kollektion.alltid')));
+  assert.deepEqual(valideraButik(nisch).fel, []);
 });
 
 test('saknade bolagsuppgifter stoppar butikskonfigen', () => {

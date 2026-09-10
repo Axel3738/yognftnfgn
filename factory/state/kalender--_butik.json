@@ -1,0 +1,193 @@
+{
+  "butik": "kalender",
+  "produkt": "_butik",
+  "steg": {
+    "anslutning": {
+      "klar": true,
+      "domain": "ikf0tu-5e.myshopify.com",
+      "name": "My Store 5",
+      "primaryDomain": "ikf0tu-5e.myshopify.com",
+      "currencyCode": "SEK"
+    },
+    "tema-upload": {
+      "klar": true,
+      "arbetstemaId": "gid://shopify/OnlineStoreTheme/204938314071",
+      "temaId": "gid://shopify/OnlineStoreTheme/204938314071",
+      "temaNamn": "AdventLane – CRO v1",
+      "role": "UNPUBLISHED",
+      "redanUppe": true,
+      "filer": 396,
+      "kompletterade": [
+        "sections/ms-review-slider.liquid",
+        "sections/ms-reviews.liquid",
+        "sections/ms-guarantee-section.liquid",
+        "sections/ms-marquee.liquid",
+        "sections/ms-usp-bar.liquid",
+        "templates/index.json",
+        "blocks/ms-guarantee.liquid"
+      ]
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/204938314071",
+      "filer": [
+        "assets/opf-brand.css",
+        "snippets/ms-head.liquid",
+        "config/settings_schema.json",
+        "config/settings_data.json"
+      ]
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/204938314071",
+      "temaNamn": "AdventLane – CRO v1",
+      "sektioner": 6,
+      "filer": [
+        "sections/opf-problem.liquid",
+        "sections/opf-losning.liquid",
+        "sections/opf-funktioner.liquid",
+        "sections/opf-lifestyle.liquid",
+        "sections/opf-garanti.liquid",
+        "sections/opf-faq.liquid",
+        "assets/ms-paket.js",
+        "sections/header-group.json",
+        "snippets/ms-head.liquid",
+        "snippets/ms-paket.liquid"
+      ],
+      "produktmall": "verifierad",
+      "upsell": null
+    },
+    "avbrandning": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/204938314071",
+      "fore": 0,
+      "borttagnaSektioner": [],
+      "omskrivnaFiler": [
+        "config/settings_data.json",
+        "sections/footer-group.json",
+        "sections/header-group.json"
+      ],
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "logga": {
+      "klar": true,
+      "logo": "shopify://shop_images/kalender-logga-a.png",
+      "favicon": "shopify://shop_images/kalender-favicon.png",
+      "bredd": 140,
+      "temaId": "gid://shopify/OnlineStoreTheme/204938314071"
+    },
+    "kollektion": {
+      "klar": true,
+      "handle": "kalendrarna",
+      "produkter": 1,
+      "publicerad": true
+    },
+    "startsida": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/204938314071",
+      "filer": [
+        "templates/index.json",
+        "sections/footer-group.json"
+      ],
+      "sektioner": [
+        "hero",
+        "ms_usp",
+        "ms_marquee",
+        "sortiment",
+        "berattelse",
+        "statement",
+        "omdomen",
+        "trygghet",
+        "ms_faq",
+        "ms_guarantee"
+      ],
+      "bilder": {
+        "hero": "shopify://shop_images/image10.png",
+        "trygghet": "shopify://shop_images/racing-jul.jpg",
+        "galleri": []
+      },
+      "produkter": [
+        "adventskalender-racingbilar: ACTIVE"
+      ]
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "meny": {
+      "klar": true,
+      "huvudmeny": {
+        "handle": "main-menu",
+        "orord": false,
+        "rader": 5
+      },
+      "sidfot": {
+        "handle": "footer",
+        "orord": false,
+        "rader": 5
+      }
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 5,
+      "orort": false
+    },
+    "huvudmarknad": {
+      "klar": true,
+      "valuta": "SEK"
+    },
+    "kallskanning": {
+      "klar": true,
+      "skannade": 315,
+      "rent": true,
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "marknad": {
+      "klar": true,
+      "marknader": [
+        {
+          "land": "NO",
+          "locale": "nb",
+          "marknad": "Norge",
+          "status": "ACTIVE",
+          "localeSkapad": true
+        }
+      ]
+    },
+    "oversatt": {
+      "klar": false,
+      "manuell": "nb: översätt med subagent (sonnet) — output/kalender/oversattning-sv.json (102 nycklar) → oversattning-nb.json med samma nycklar, kör sen --igen oversatt",
+      "underlag": 102,
+      "utfall": {}
+    }
+  },
+  "arbetstemaId": "gid://shopify/OnlineStoreTheme/204938314071",
+  "arbetstemaNamn": "AdventLane – CRO v1",
+  "uppdaterad": "2026-09-10T07:46:59.710Z",
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "kundvy-startsida",
+      "markörer /nb"
+    ],
+    "tid": "2026-09-10T07:46:59.710Z"
+  }
+}

@@ -44,7 +44,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
-import { sammanfoga } from './butik.mjs';
+import { sammanfoga, arNischbutik } from './butik.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer, kontaktsida } from './policyer.mjs';
 import { kundUnderrubrik } from './sida.mjs';
@@ -174,7 +174,7 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
 
   // Kollektionen (flerprodukt), sidor, menyer — ur samma kontext som ops.mjs.
   const kollektion = ctx.kollektion ?? (butik.butik?.kollektion ? { handle: butik.butik.kollektion.handle, titel: butik.butik.kollektion.titel, beskrivning: butik.butik.kollektion.beskrivning } : null);
-  if (ps.length > 1 && kollektion?.handle) {
+  if (arNischbutik(butik, ps) && kollektion?.handle) {
     ut[`kollektion.${kollektion.handle}.title`] = kollektion.titel ?? 'Sortimentet';
     if (text(kollektion.beskrivning)) ut[`kollektion.${kollektion.handle}.body_html`] = kollektion.beskrivning;
   }
@@ -186,7 +186,7 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   ut['sida.contact.title'] = 'Kontakt';
   if (ps[0]) ut['sida.contact.body'] = kontaktsida(ctx.p ?? ps[0]);
   const huvudmeny = ctx.huvudmenylankar ?? [
-    ...(ps.length > 1 && kollektion ? [{ titel: kollektion.titel ?? 'Sortimentet' }] : []),
+    ...(arNischbutik(butik, ps) && kollektion ? [{ titel: kollektion.titel ?? 'Sortimentet' }] : []),
     ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn })),
     { titel: 'Kontakt' },
   ];
@@ -254,7 +254,7 @@ export function byggMinimalKontext(butik, rader) {
     policyer,
     kollektion,
     huvudmenylankar: [
-      ...(ps.length > 1 ? [{ titel: kollektion.titel, url: `/collections/${kollektionHandle}` }] : []),
+      ...(arNischbutik(butik, ps) ? [{ titel: kollektion.titel, url: `/collections/${kollektionHandle}` }] : []),
       ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn, url: `/products/${p.produkt.id}` })),
       { titel: 'Kontakt', url: '/pages/contact' },
     ],

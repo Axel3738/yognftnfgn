@@ -108,10 +108,20 @@ tema-upload.mjs
 
 filer.mjs
   laddaUppFiler([{ url|sokvag, alt? }]) → [{ namn, handle:'shopify://shop_images/<lagrat namn.ext>', url, id }]
+                                            (.mp4/.webm/.mov i listan går via laddaUppVideo)
   laddaUppBild(sokvagEllerUrl, { alt? }) → samma objekt
+  laddaUppVideo(sokvagEllerUrl, { alt? }) → { namn, handle:null, url, id, kallor }   url = transkodad mp4 (sources[])
+                                            ⚠️ MÄTT 2026-09-10: Shopify tar inga videor på TRIAL (API-GRANSER.md)
   hittaBild(filnamn) → objekt|null          idempotens på filnamnsstam
-  stagedUpload(sokvag, mime) → resourceUrl
+  hittaVideo(filnamn) → objekt|null
+  stagedUpload(sokvag, mime) → resourceUrl  resurs ur mime: IMAGE / VIDEO / FILE (stagedResurs)
   filnamnUrUrl(url) → 'namn.ext'
+
+butik.mjs
+  valideraButik(b) → { fel, varningar }, sammanfoga(butik, produkt)
+  arNischbutik(butik, produkter) → bool     två+ produktfiler ELLER butik.kollektion.alltid: true —
+                                            styr kollektion-steget, startsidan, huvudmenyn och
+                                            översättningsunderlaget (AdventLane 2026-09-10)
 
 logga.mjs
   laddaUppLogga(temaId, { logga, favicon?, bredd? }) → { logo, favicon }   skriver settings_data.json + läser tillbaka
@@ -224,7 +234,7 @@ Nivå `butik` körs en gång, nivå `produkt` en gång per produktfil. State per
 | 8 | `lagerpolicy` | produkt | lagerpolicy.mjs (tillbakaläsning) | ja |
 | 9 | `bonus` | produkt | bonus.mjs (bara om offer.bonus_produkt.handle) | nej → manuell "välj bonusprodukt" |
 | 10 | `paket` | produkt | paket.mjs (valutaspärr) | nej → manuell "byt valuta i admin, kör --igen paket" |
-| 11 | `kollektion` | butik | shopify.skrivKollektion (bara flerprodukt) | ja |
+| 11 | `kollektion` | butik | shopify.skrivKollektion (flerprodukt, eller nischbutik med `kollektion.alltid`) | ja |
 | 12 | `startsida` | butik | startsida.mjs (+ hero via filer.mjs) | ja |
 | 13 | `sidor`, `policyer`, `meny`, `frakt`, `huvudmarknad` | butik | som i dag (meny = huvudmeny Hem/<produkter>/Frakt & retur/Kontakt + sidfot) | ja |
 | 14 | `kallskanning` | butik | kallskanning-kor + kallskanning på ALLA filer — spärr | ja |

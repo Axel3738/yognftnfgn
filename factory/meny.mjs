@@ -7,12 +7,14 @@
 // footer-menyn, så `main-menu` var kvar på Dawns Home / Catalog / Contact.
 // "Catalog" går till /collections/all, som är TOM i en enproduktsbutik.
 //
-// Raderna: Hem / [kollektionen, bara flerprodukt] / en rad per produkt /
-// Frakt & retur / Kontakt. Aldrig /collections/all. Sidhandles kommer ur
-// policyer.mjs (fraktpolicyn) och kollektionen ur butik.yaml — inget
-// butiksspecifikt här (KEDJAN.md regel 7).
+// Raderna: Hem / [kollektionen, flerprodukt eller nischbutik] / en rad per
+// produkt / Frakt & retur / Kontakt. Aldrig /collections/all. Sidhandles
+// kommer ur policyer.mjs (fraktpolicyn) och kollektionen ur butik.yaml —
+// inget butiksspecifikt här (KEDJAN.md regel 7). Nischbutik = butik.mjs
+// arNischbutik (kollektion.alltid), AdventLane 2026-09-10.
 
 import { byggPolicyer } from './policyer.mjs';
+import { arNischbutik } from './butik.mjs';
 
 // Kortnamnet före tankstrecket: "Damasker – håller benen torra" → "Damasker".
 // Bindestreck INNE i ord lämnas ("DryTrek-damasker" är ett namn).
@@ -47,7 +49,7 @@ export function huvudmenyRader(butik, produkter, { kontaktUrl = '/pages/contact'
   const b = butik?.butik ?? butik ?? {};
 
   const kollektion = [];
-  if (lista.length > 1) {
+  if (arNischbutik(b, lista)) {
     const handle = String(b.kollektion?.handle ?? 'sortimentet').trim();
     if (handle === 'all') throw new Error('Huvudmenyn får aldrig peka på /collections/all.');
     kollektion.push({ titel: String(b.kollektion?.titel ?? 'Sortimentet'), url: `/collections/${handle}` });

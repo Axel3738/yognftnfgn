@@ -1,0 +1,89 @@
+{
+  "kalla": "judge.me reviews_for_widget, shop 4snrw0-mg.myshopify.com, product_id 16516660691293",
+  "last": "2026-09-10",
+  "antal": 10,
+  "snitt": "5.00",
+  "notis": "Alla created_at ligger inom 12 sekunder 2026-09-08 04:34-04:35 UTC = API-import i källan, inte kunddatum.",
+  "reviews": [
+    {
+      "namn": "Peter",
+      "betyg": 5,
+      "titel": "Bra adventskalender",
+      "text": "Bra adventskalender. Rolig idé med en bil bakom varje lucka. Väldigt uppskattad här hemma.",
+      "created_at": "2026-09-08T04:35:05.797Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Sofia",
+      "betyg": 5,
+      "titel": "Supernöjd",
+      "text": "Supernöjd. Barnen älskar att öppna luckorna. Bilarna blev snabbt favoriter.",
+      "created_at": "2026-09-08T04:35:04.553Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Daniel",
+      "betyg": 5,
+      "titel": "Praktisk och kul",
+      "text": "Praktisk och kul. En rolig julkalender som gav mycket glädje varje morgon.",
+      "created_at": "2026-09-08T04:35:03.273Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Maria",
+      "betyg": 5,
+      "titel": "Jättebra",
+      "text": "Jättebra. Fina små bilar och enkel kalender. Barnen tycker den är rolig.",
+      "created_at": "2026-09-08T04:35:01.971Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Erik",
+      "betyg": 5,
+      "titel": "Rekommenderas",
+      "text": "Rekommenderas. Min dotter gillar den mycket. Hon tycker det är spännande att öppna varje lucka.",
+      "created_at": "2026-09-08T04:35:00.602Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Sara",
+      "betyg": 5,
+      "titel": "Bra köp",
+      "text": "Bra köp. Rolig kalender och ett bra alternativ till godis.",
+      "created_at": "2026-09-08T04:34:59.380Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Linda",
+      "betyg": 5,
+      "titel": "Nöjd!",
+      "text": "Nöjd!. Kalendern var uppskattad här hemma. Bilarna är små och söta.",
+      "created_at": "2026-09-08T04:34:57.905Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Emma",
+      "betyg": 5,
+      "titel": "Väldigt fin",
+      "text": "Väldigt fin. Kul med en ny bil varje dag. Perfekt för barn som gillar bilar.",
+      "created_at": "2026-09-08T04:34:56.372Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Johan",
+      "betyg": 5,
+      "titel": "Superkul",
+      "text": "Superkul. En enkel och rolig adventskalender. Sonen längtar till varje dag.",
+      "created_at": "2026-09-08T04:34:55.040Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Anna",
+      "betyg": 5,
+      "titel": "Bra julklapp",
+      "text": "Bra julklapp. Min son blev jätteglad. Bilarna är roliga och fina.",
+      "created_at": "2026-09-08T04:34:53.797Z",
+      "verified_buyer": false
+    }
+  ]
+}

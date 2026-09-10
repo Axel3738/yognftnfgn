@@ -1,0 +1,218 @@
+# AdventLane — produkt 1: Adventskalender Racingbilar, 24 bilar bakom 24 luckor.
+# Källa: baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor
+# Specs, pris och recensioner lästa ur källan 2026-09-10. Bilderna är facit
+# (leverantörens): 24 numrerade luckor i blandad ordning, en egen liten bil
+# bakom varje, CE + CPC på kartongen, varning om små delar under 3 år.
+# Okänt och därför aldrig påstått: storlek i cm, material, pull-back.
+#
+# ⚠️ SÄSONG: kalendern säljer fram till 24 december och är död därefter.
+# Nästa kalender i butiken blir en egen produktfil med eget creative_prefix.
+#
+# Copyn (svenska) skrevs 2026-09-10 av en subagent (sonnet) ur BRAND.md +
+# docs/copy-regler.md; vinkel, målgrupp och struktur är huvudsessionens.
+
+produkt:
+  namn: "Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor"
+  id: "adventskalender-racingbilar"
+  menynamn: "Racingkalendern"
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+    - "adventlane.no"
+
+ekonomi:
+  # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
+  # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset.
+  moms_antagen: false
+  # ⚠️ HÄRLEDD, inte kvitterad: källkampanjens namn bär "BE ROAS 1.62" och
+  # docs/temu-launch-flow.md säger BE-ROAS = pris / (pris − inköp) ⇒
+  # 499 − 499/1,62 = 191 kr. Bättre än TackleBays 40 %-gissning, men Axel
+  # bekräftar mot Temu-kvittot innan talet får döma annonser.
+  inkopskostnad: 191
+  pris: 499
+  jamforpris: 649
+
+varianter:
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image10.png"
+      alt: "Blå presentkartong med adventskalender, tjugofyra numrerade luckor och en röd racerbil på locket"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-oppen.jpg"
+      alt: "Adventskalendern öppnad med flera leksaksbilar synliga i sina luckor, racingdekor och startnummer"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-jul.jpg"
+      alt: "AI-illustration av en julmiljö med adventskalendern framme vid granen"
+  videor:
+  # ⚠️ Demot ska vara en MP4 (Axel 2026-09-09). MP4:an är gjord
+  # (output/kalender/BRAND.md) men Shopify Files tar inga videor på trial
+  # (mätt 2026-09-10, API-GRANSER.md). Källans GIF bär demot tills ägaren
+  # valt plan — då: node factory/filer.mjs <mp4> och --igen metafalt.
+  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-racingkalender-4.gif"
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-oppen.jpg"
+  # Lifestylebilden är en AI-genererad illustration (förvrängd text på
+  # kartongen) — alt-texten säger det, och det ska stå kvar i kundvyn.
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-jul.jpg"
+
+beskrivning:
+  problem_rubrik: "Slut innan frukost"
+  problem_text: "Du öppnar luckan klockan sju. Vid halv åtta är chokladen borta, och det enda som finns kvar är ett tomt omslag i soporna."
+  losning_rubrik: "Kvar till julafton"
+  losning_text: "Varje morgon öppnas en ny lucka och en bil till kommer fram, i sin egen färg och design. Den 24 december står tjugofyra bilar framme, inte bara ett tomt omslag."
+
+vinkel:
+  huvudvinkel: "Chokladkalender-konflikten — det som öppnas är uppätet före frukost, det här står kvar den 24:e. Källa: källkampanjen 'Adventskalendern Racingbilar' i MagiBorsten (16 annonser, 11 köp på 2 145 kr de första två dygnen, 2026-09-08–10) och 3 av 10 källrecensioner som självmant säger 'ett alternativ till godis'."
+  underrubrik: "Öppnas en gång. Finns kvar sen."
+  usp: "24 bilar, alla olika"
+
+malgrupp:
+  beskrivning: "En vuxen som köper adventskalender till ett barn 3–10 år — förälder eller mor-/farförälder, 28–65. Har haft chokladkalendrar och tröttnat på att inget finns kvar. Säger 'lucka', 'julkalender' och 'alternativ till godis', vill vara den som hittade något bättre."
+
+problem:
+  - "Chokladen tar slut innan skolan börjar"
+  - "Bara ett tomt omslag kvar i papperskorgen"
+  - "Nästa morgon börjar om från noll"
+  - "Inget att visa upp till julafton"
+
+benefits:
+  - "Något att se fram emot varje morgon i december"
+  - "Tjugofyra bilar kvar den 24 december, inget att slänga"
+  - "En julklapp som är klar direkt ur kartongen"
+  - "Bilarna följer med in i leken när kalendern är slut"
+
+features:
+  - "24 numrerade luckor i blandad ordning på lådans framsida"
+  - "En bil bakom varje lucka, alla olika i färg och design"
+  - "Racingdekor med startnummer som 67, 33 och 07, rutmönster och flammor"
+  - "Hjulen rullar"
+  - "Lådan är CE- och CPC-märkt. Innehåller små delar, inte lämplig för barn under 3 år"
+
+offer:
+  beskrivning: "499 kr i stället för 649 kr. Fri frakt inom Sverige och Norge. 14 dagars ångerrätt enligt svensk lag. Leverans på 5 till 10 arbetsdagar, beställ i god tid före första december."
+  bundle: "2-pack — 15 % rabatt (förvald, 'Mest populär'). 3-pack — 20 % rabatt. Exakt källans Kaching-nivåer (output/adventskalender-racingbilar/kalla-kaching-paket.json) = fabrikens standard-A."
+  # A = källans Kaching-nivåer (identiska med paket.mjs NIVAER.a), B = ett
+  # steg djupare rabatt. Inga egna nivåer behövs — mitten förvald.
+  paket:
+    test: "paket"
+  # Q4-ramverket: gratis bonus i paketen + betald korg-upsell.
+  # ⚠️ Ingen billig komplementprodukt finns i källan och ingen hittas på —
+  # Axel väljer den (t.ex. en andra kalender när den finns). Tills dess är
+  # bonus-steget manuellt och paketen körs utan gratisdel.
+  bonus_produkt:
+    titel: ""
+    handle: ""
+    produkt_id: ""
+    variant_id: ""
+    pris: 0
+    i_paket: ""
+    tillagg_kryssruta: true
+    kortnamn: ""
+    sku: ""
+    bilder:
+      - ""
+
+reviews:
+  # 10 riktiga recensioner ur källproduktens Judge.me 2026-09-10 (snitt 5,00).
+  # Namn och texter är källans egna. ⚠️ DATUMEN: alla tio har created_at
+  # 2026-09-08 (04:34–04:35 UTC) — källan API-importerade dem samma minut,
+  # så det är källans originaldatum, inte kunddatum. Inget hittas på.
+  - namn: "Peter"
+    betyg: 5
+    titel: "Bra adventskalender"
+    text: "Bra adventskalender. Rolig idé med en bil bakom varje lucka. Väldigt uppskattad här hemma."
+    datum: "2026-09-08"
+  - namn: "Sofia"
+    betyg: 5
+    titel: "Supernöjd"
+    text: "Supernöjd. Barnen älskar att öppna luckorna. Bilarna blev snabbt favoriter."
+    datum: "2026-09-08"
+  - namn: "Daniel"
+    betyg: 5
+    titel: "Praktisk och kul"
+    text: "Praktisk och kul. En rolig julkalender som gav mycket glädje varje morgon."
+    datum: "2026-09-08"
+  - namn: "Maria"
+    betyg: 5
+    titel: "Jättebra"
+    text: "Jättebra. Fina små bilar och enkel kalender. Barnen tycker den är rolig."
+    datum: "2026-09-08"
+  - namn: "Erik"
+    betyg: 5
+    titel: "Rekommenderas"
+    text: "Rekommenderas. Min dotter gillar den mycket. Hon tycker det är spännande att öppna varje lucka."
+    datum: "2026-09-08"
+  - namn: "Sara"
+    betyg: 5
+    titel: "Bra köp"
+    text: "Bra köp. Rolig kalender och ett bra alternativ till godis."
+    datum: "2026-09-08"
+  - namn: "Linda"
+    betyg: 5
+    titel: "Nöjd!"
+    text: "Nöjd!. Kalendern var uppskattad här hemma. Bilarna är små och söta."
+    datum: "2026-09-08"
+  - namn: "Emma"
+    betyg: 5
+    titel: "Väldigt fin"
+    text: "Väldigt fin. Kul med en ny bil varje dag. Perfekt för barn som gillar bilar."
+    datum: "2026-09-08"
+  - namn: "Johan"
+    betyg: 5
+    titel: "Superkul"
+    text: "Superkul. En enkel och rolig adventskalender. Sonen längtar till varje dag."
+    datum: "2026-09-08"
+  - namn: "Anna"
+    betyg: 5
+    titel: "Bra julklapp"
+    text: "Bra julklapp. Min son blev jätteglad. Bilarna är roliga och fina."
+    datum: "2026-09-08"
+
+faq:
+  - fraga: "Vad finns bakom luckorna?"
+    svar: "En egen liten bil bakom varje lucka. Alla bilar ser olika ut, med racingdekor och startnummer som 67, 33 och 07."
+  - fraga: "Hinner den fram till första december om jag beställer nu?"
+    svar: "Leveranstiden är normalt 5 till 10 arbetsdagar. Beställ i god tid så kalendern hinner fram innan december börjar."
+  - fraga: "Vilken ålder passar kalendern?"
+    svar: "Kalendern innehåller små delar och är inte lämplig för barn under 3 år. Lådan är CE- och CPC-märkt."
+  - fraga: "Kan jag ge bort den som den är?"
+    svar: "Ja. Den levereras i en tryckt presentkartong, klar att lägga under granen."
+  - fraga: "Vad gäller om jag ångrar mitt köp?"
+    svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@adventlane.se om du vill ångra."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+leverantor:
+  url: "https://www.temu.com/goods.html?goods_id=601099694788256"
+  anteckning: "Ur källans SKU TEMU-601099694788256. ⚠️ Temu-sidan svarar 'This item was discontinued' (mätt 2026-09-10) — Axel eller VA:n måste hitta en ny leverantörslänk före inköp. Ledtid och MOQ ej verifierade."
+
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16516660691293"
+  produkt_handle: "adventskalender-racingbilar-24-bilar-bakom-24-luckor"
+  produkt_url: "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor"
+  annonskonto: "1867947880635861"
+  # Läst ur kontot 2026-09-10: 16 annonser ACTIVE, alla "Adventskalender_<vinkel>_<n>_<hook>".
+  annonsprefix: "Adventskalender"
+  kampanj_id: "120250134672020291"
+  kampanj: "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08"
+  srt_slug:
+kallor:
+  drive_mapp: ""
+
+meta:
+  # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
+  # 1867947880635861 (Bäverbutiken, källan).
+  ad_account_id: "915422744950975"
+  page_id: ""
+  pixel_id: ""
+  # Prefixet är PER PRODUKT, aldrig per brand (Axels regel i prompten +
+  # FLERPRODUKT.md fynd 1). Brandet ligger med för att källan redan använder
+  # "Adventskalender_" — annars kolliderar prefixkartan, översättningskön,
+  # adsetuppslaget och commission-kopplingen med Bäverbutikens annonser.
+  creative_prefix: "AdventLaneRacing"
+  testbudget_per_dag: 1000
+  vinklar:
+    - "Chokladen är slut till frukost. Bilarna står kvar till jul."
+    - "En ny bil bakom varje lucka, olika varje gång"
+    - "En färdig julklapp rakt ur kartongen"

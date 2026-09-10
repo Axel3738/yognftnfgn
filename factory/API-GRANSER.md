@@ -26,6 +26,7 @@ Varje rad är märkt:
 | Steg | Läge | Vad som faktiskt vet |
 |---|---|---|
 | Publicera tema | **MÄTT: GÅR** | `themePublish` gav `role: MAIN`, noll userErrors (DryTrek 2026-09-09). Stod som "API-spärrat" i tre filer innan någon provade. |
+| Ladda upp VIDEO (mp4-demo) till Files | **MÄTT: GÅR INTE på trial** | `fileCreate` med `contentType: VIDEO` svarar `The file is not supported on trial accounts. Select a plan to upload this file.` (AdventLane/kalender 2026-09-10). Två fynd på vägen: staged `VIDEO`-resourceUrl saknar ändelse, så `filename` avvisas i `fileCreate` ("extension must match original source") — sätts med `fileUpdate` efteråt. Koden finns (`filer.mjs → laddaUppVideo`, CLI tar `.mp4`). **OBEKRÄFTAT efter plan** — kör `node factory/filer.mjs <mp4>` när ägaren valt plan (checklistans steg 10) och byt `media.gif_problem` till den transkodade URL:en (`--igen metafalt`). Tills dess bär källans GIF demot. |
 | Ladda upp tema | **MÄTT: GÅR** | `stagedUploadsCreate` med `resource: FILE` (INTE `THEME` — den finns inte i 2025-07) + `themeCreate`. |
 | Läsa sida på handle | **MÄTT: GÅR INTE** | `pageByHandle` togs bort i 2025-07. Använd `pages(query: "handle:…")`. |
 | Uppdatera villkorad fraktmetod | **MÄTT: GÅR INTE** | `deliveryProfileUpdate` avvisar dem. Riv och bygg ny i stället. |

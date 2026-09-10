@@ -185,7 +185,9 @@ export function strukturkoll(html, { produkt, butik } = {}) {
   punkt('opf-sektionerna renderas', ['opf-problem', 'opf-losning', 'opf-funktioner', 'opf-garanti', 'opf-faq'].every(har));
   punkt('paketväljaren (ms-paket) finns', har('ms-paket__opt'));
   punkt('A/B-block (data-ms-ab)', har('data-ms-ab="paket:a"') && har('data-ms-ab="paket:b"'));
-  punkt('gratis-raden i paketen', har('ms-paket__gava'));
+  // Gratis-raden finns bara när en bonusprodukt ligger i paketen — utan
+  // bonus är den saknade raden rätt, inte rött (AdventLane 2026-09-10).
+  if (bonusHandle) punkt('gratis-raden i paketen', har('ms-paket__gava'));
   punkt('Judge.me-widget i Appyta', har('jdgm-widget') || har('judgeme'));
   punkt('sticky köpknapp', har('ms-sticky'));
   punkt('varumärke-strippen (opf-svensk)', har('opf-svensk'));

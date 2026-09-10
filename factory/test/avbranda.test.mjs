@@ -11,6 +11,7 @@ import { tmpdir } from 'node:os';
 import { join, relative } from 'node:path';
 import { byggRegler, stadaSettings, byggFooterblock, tillampa, avbrandaFiler } from '../avbranda.mjs';
 import { skannaTema, rapport, KALLORD } from '../kallskanning.mjs';
+import { rensaBlankaDefaults } from '../rensa-kalla.mjs';
 import { byggProduktTemplate, byggHeaderGroup } from '../tema.mjs';
 import { rabutik } from './hjalp.mjs';
 
@@ -168,6 +169,25 @@ test('BAS-TEMAT ÄR RENT VID KÄLLAN — inget att av-branda', () => {
   assert.ok(Object.keys(filer).length > 250, 'zip:en ska packas upp helt');
   const r = skannaTema(filer);
   assert.equal(r.traffar.length, 0, rapport(r));
+});
+
+test('bas-temat har ingen blank schema-default — Shopify tappar filen tyst vid uppackningen', () => {
+  // AdventLane 2026-09-10: rensa-kalla.mjs tömde löftena ur sex sektioners
+  // defaults, Shopify avvisade schemat ("default can't be blank") och lämnade
+  // filerna utanför temat utan ett ord. Startsidan stoppade i steg 12.
+  // Samma regel som rensa-kalla.mjs: textfält får ingen blank default. En
+  // select med "" som alternativ (ab_variant = alla) tog Shopify emot.
+  const filer = helaZipen();
+  const trasiga = [];
+  for (const [namn, innehall] of Object.entries(filer)) {
+    if (!namn.endsWith('.liquid')) continue;
+    if (rensaBlankaDefaults(innehall).antal > 0) trasiga.push(namn);
+  }
+  assert.deepEqual(trasiga, [], `blank "default" i textfält i schema: ${trasiga.join(', ')}`);
+  // Och alla sektionstyper startsidan använder ska finnas som filer i zip:en.
+  for (const typ of ['ms-usp-bar', 'ms-marquee', 'ms-review-slider', 'ms-guarantee-section', 'ms-faq-section', 'image-banner', 'featured-collection', 'featured-product', 'image-with-text', 'multicolumn']) {
+    assert.ok(`sections/${typ}.liquid` in filer, `sections/${typ}.liquid saknas i zip:en`);
+  }
 });
 
 test('bas-temat renderar varken popupen, cookierutan eller nyhetsbrevet', () => {

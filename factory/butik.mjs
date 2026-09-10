@@ -20,6 +20,20 @@ const tal = (v) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
 const objekt = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const satt = (v) => v !== undefined && v !== null && v !== '';
 
+// NISCHBUTIK (AdventLane 2026-09-10, Axels beslut i /ny-ops-prompten): en
+// butik som ska rymma fler produkter senare byggs som flerproduktsbutik
+// redan med sin första produkt — kollektionen skapas, startsidan visar
+// kollektionen och huvudmenyn får kollektionsraden. Annars byggs butiken om
+// när produkt nr 2 kommer. Signalen är `butik.kollektion.alltid: true`;
+// utan den avgör antalet produktfiler som förr (två eller fler = kollektion).
+// `butik` får vara hela konfigen eller bara butik:-blocket; `produkter` en
+// lista eller ett antal.
+export function arNischbutik(butik, produkter) {
+  const bu = butik?.butik ?? butik ?? {};
+  const antal = Array.isArray(produkter) ? produkter.filter(Boolean).length : Number(produkter) || 0;
+  return antal > 1 || bu?.kollektion?.alltid === true;
+}
+
 // butik.marknader — raderna marknad.mjs bygger marknad + locale + webPresence
 // av, och som butik.mjs/policyer.mjs skriver fraktländerna ur. Tom lista är
 // en varning (marknad.mjs stoppar först i steg 16), fel form är ett fel.
@@ -136,6 +150,9 @@ export function valideraButik(b) {
         fel.push(`butik.kollektion.handle "${bu.kollektion.handle}" får bara ha små bokstäver, siffror och bindestreck`);
       }
       if (!text(bu.kollektion.titel)) fel.push('butik.kollektion.titel saknas');
+      if (satt(bu.kollektion.alltid) && typeof bu.kollektion.alltid !== 'boolean') {
+        fel.push('butik.kollektion.alltid är true/false (true = nischbutik: kollektionen byggs även med en produkt)');
+      }
     }
   }
   // startsida ligger på toppnivå i mallen; en fil som lagt den under butik:
