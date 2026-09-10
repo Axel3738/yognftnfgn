@@ -46,7 +46,7 @@ Frågor att ställa **efter** varje moment (inte under):
 
 ## Sista tio minuterna
 
-1. "Skulle du betala 9,99 dollar i månaden för det här? Varför/varför inte?"
+1. "Skulle du betala 5 dollar i månaden för det här? Varför/varför inte?"
 2. "Vilken EN sak skulle få dig att öppna appen varje morgon?"
 3. "Får jag citera dig i App Store-listningen?" (skriv ner exakt ordval)
 4. Be om en recension **bara om hen själv säger att appen är bra** — och

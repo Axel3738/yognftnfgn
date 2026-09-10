@@ -8,7 +8,7 @@ installationer, och custom-skalen (PNL2/PNL3) kan avinstalleras.
 
 | | |
 |---|---|
-| Pris | **$9.99/månad** (~100 SEK), 7 dagars gratis provperiod |
+| Pris | **$5/månad** (~50 SEK), 14 dagars gratis provperiod (sänkt från $9.99 2026-09-10) |
 | Debitering | Shopify Billing API — kod klar, aktiveras med `BILLING_ENABLED=1` |
 | Egna butiker | Debiteras aldrig — domäner i `BILLING_EXEMPT_SHOPS` |
 

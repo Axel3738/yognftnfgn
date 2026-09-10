@@ -620,6 +620,24 @@ Vägen: Distribution → Redigera (English) → Pricing details → Manage.
    butik öppnar sidan, och skriv in utfallet här.
 4. När Shopify mejlar att Read all orders är godkänt: prompt 4b.
 
+### Basic sänkt till 5 USD/mån (2026-09-10)
+Axels beslut. Priset lever i Dev Dashboard (managed pricing) — koden sätter
+det inte. Klickprompten ligger i `docs/cowork-prompts.md` avsnitt 7; utfallet
+(gick priset att ändra i befintlig plan, eller skapades en ny? vad hände med
+befintliga prenumeranter?) ska skrivas in här när Cowork kört.
+Koden uppdaterad samma dag på de ställen som VISAR priset för handlaren:
+`ai-chat.server.ts` (chattens PLANER-rad), `kostnadsforslag.ts`
+(förslaget "StonePNL Basic" i fasta kostnader, 9.99 → 5, namnet rättat från
+"Standard" till dashboardens "Basic"), `shopify.server.ts` (billing-blocket
+5 USD / 14 dagars prov — dött under managed pricing, lever bara om någon
+sätter BILLING_ENABLED=1 på en custom-distribution). Docs: `app-store.md`,
+`foretag-admin.md`, `tillvaxt-juicy.md`, `testprotokoll-van.md`.
+⚠ **Öppen fråga:** privatplanen `friends-50` ligger på 4,99 USD och blir
+meningslös när publika priset är 5 USD — vänrabatten måste antingen sänkas
+(t.ex. 2,49) eller tas bort. Axel avgör.
+⚠ Plannamnen i `texts.ts` säger fortfarande "Standard" i LTV-kortet medan
+dashboarden säger "Basic" — rätta när planstrukturen är låst.
+
 ### De egna butikerna låstes ute av read_customers (2026-09-08, build scope-fix-v76)
 Axel: "appen funkar bara inte efter cowork gjorde massa skit". Orsak: SCOPES
 med `read_customers` sattes på ALLA sex Railway-tjänsterna (steg 1 i listan

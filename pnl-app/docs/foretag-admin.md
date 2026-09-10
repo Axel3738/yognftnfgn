@@ -167,7 +167,7 @@ Hej [namn],
 
 **1. Ny verksamhet**
 
-Stonebite har sedan 2026-09-05 en app i Shopify App Store som heter StonePNL. Den säljs som prenumeration till andra Shopify-butiker: 9,99 USD per 30 dagar. En dyrare nivå på 14,99 USD är på väg.
+Stonebite har sedan 2026-09-05 en app i Shopify App Store som heter StonePNL. Den säljs som prenumeration till andra Shopify-butiker: 5 USD per 30 dagar (sänkt från 9,99 den 2026-09-10). En dyrare nivå, Pro, ligger på 14,99 USD.
 
 Jag vill lägga till SNI-kod **58.290 Utgivning av annan programvara** som bikod. E-handeln förblir huvudkod. Jag gör anmälan själv på verksamt.se om ni inte säger annat.
 

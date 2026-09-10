@@ -52,7 +52,7 @@ ANNONSKOSTNAD: Inställningar → "Logga in med Facebook" → välj annonskonto.
 
 JUICY → STONEPNL: Har Juicy skrivit kostnaderna i Shopifys fält finns de redan här utan klick (kortet "Kommer du från Juicy?" visar täckningen). Annars: skärmbild av Juicys kostnadstabell → AI-kortet.
 
-PLANER: basic (10 USD/mån, 14 dagars prov) och Pro (14,99 USD/mån) som lägger till Kundvärde (LTV). Byts via Inställningar → "Ändra plan" (Shopifys sida). Uppsägning: avinstallera appen i Shopify, då slutar debiteringen.
+PLANER: basic (5 USD/mån, 14 dagars prov) och Pro (14,99 USD/mån) som lägger till Kundvärde (LTV). Byts via Inställningar → "Ändra plan" (Shopifys sida). Uppsägning: avinstallera appen i Shopify, då slutar debiteringen.
 
 INTEGRITET: kund-ID lagras bara som hash; inga namn, mejl eller adresser. Avinstallation raderar butikens data.
 `.trim();

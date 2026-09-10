@@ -183,3 +183,42 @@ Rapportera alla fynd i samma fil, sorterade: det som ger fel siffra först, seda
 kostar tid, sedan det som är förvirrande. Ändra ingen kod i den här sessionen — bara
 rapporten. Svara Axel enligt svarsformatet i CLAUDE.md.
 ```
+
+## 7. Sänk basic-planen till 5 USD/mån
+
+Priset ligger i Dev Dashboard (managed pricing), inte i koden. Koden är redan
+uppdaterad på alla ställen som visar priset för handlaren (2026-09-10).
+
+```
+Du styr min webbläsare. Jag är inloggad på partners.shopify.com
+(kan omdirigera till dev.shopify.com — fortsätt där).
+Uppgift: sänk priset på den publika planen "basic" i min app StonePNL
+från 10 USD till 5 USD per månad.
+
+1. Öppna Apps → StonePNL → Distribution → Manage listing → Pricing.
+   Syns inte Pricing: Published languages → Edit (English) → Pricing content → Manage.
+2. Leta upp den publika planen med handle "basic" (10 USD/månad, 14 dagars prov).
+3. Försök redigera planen: sätt Monthly charge / Price = 5.00 USD.
+   Behåll 14 dagars prov och alla feature-rader oförändrade.
+4. Går priset INTE att ändra på en befintlig plan (fältet är låst eller Shopify
+   säger att planen har prenumeranter):
+   a. Skapa i stället en NY publik plan: pris 5.00 USD per månad, 14 dagars prov,
+      samma feature-rader som basic, display name "Basic".
+   b. Dölj/pensionera den gamla basic-planen på det sätt Shopify erbjuder
+      (t.ex. "Hide from new merchants", "Archive" eller ta bort den från
+      listningen) så att nya handlare bara ser 5-dollarsplanen.
+   c. Ta INTE bort den gamla planen om Shopify varnar att befintliga
+      prenumeranter påverkas — fråga mig först.
+5. Rör INTE planerna "pro" (14,99 USD), "shopify-test" (0 USD) eller
+   "friends-50" (4,99 USD).
+6. Om Shopify kräver att listningen skickas in på nytt: klicka Submit/Skicka.
+7. Ta en skärmbild av prissidan när alla planer syns, och berätta för mig:
+   - gick priset att ändra i befintlig plan, eller skapades en ny plan?
+   - står det något om befintliga prenumeranter (behåller de gamla priset)?
+   - hur många aktiva prenumeranter appen har, om siffran syns någonstans.
+Fråga mig om ett fält saknas eller ser annorlunda ut — gissa inte.
+```
+
+**Efter att Cowork är klar:** skriv in utfallet i `CLAUDE.md` (avsnittet om
+planerna) — särskilt om priset gick att ändra i befintlig plan eller om en ny
+plan skapades, och vad som hände med befintliga prenumeranter.

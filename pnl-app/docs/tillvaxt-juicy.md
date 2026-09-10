@@ -27,7 +27,7 @@ StonePNL, och det är inte värt tio installationer.
    Manuellt i början = vi lär oss Juicys exportformat gratis (scenario B byggs
    sedan på riktiga filer, `juicy-import.md` avsnitt 6).
 3. **Sidan visar Juicy-jämförelsen i appen**: i Kostnader-kortet läge B, en rad
-   "Juicy costs 29–49 USD/mo — StonePNL 9.99." Sakligt, med källa.
+   "Juicy costs 29–49 USD/mo — StonePNL 5." Sakligt, med källa.
 4. **Multi-butik gratis**: Juicy tar per butik. Vår grupp-vy (fem butiker, fem
    valutor, en summa) är argumentet för alla med NO/DK/FI-kloner. Skriv det överst.
 

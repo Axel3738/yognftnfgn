@@ -61,13 +61,16 @@ const shopify = shopifyApp({
   authPathPrefix: "/auth",
   sessionStorage: new PrismaSessionStorage(prisma),
   distribution: AppDistribution.SingleMerchant,
+  /* Priset sätts i Dev Dashboard (managed pricing), inte här — Billing API
+     är förbjudet för StonePNL. Blocket är kvar bara som fallback för en
+     eventuell custom-distribution med BILLING_ENABLED=1, och måste då hållas
+     i fas med planen i dashboarden. Basic sänktes 10 → 5 USD 2026-09-10. */
   billing: {
     [STANDARD_PLAN]: {
       lineItems: [
-        // ~100 SEK — App Store debiterar i USD.
-        { amount: 9.99, currencyCode: "USD", interval: BillingInterval.Every30Days },
+        { amount: 5, currencyCode: "USD", interval: BillingInterval.Every30Days },
       ],
-      trialDays: 1,
+      trialDays: 14,
     },
   },
   /* Shopify nekar nya appar eviga offline-nycklar, men biblioteket begär

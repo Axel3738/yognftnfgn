@@ -36,7 +36,7 @@ export const FORSLAG: Kostnadsforslag[] = [
   { id: "shopify-grow", en: "Shopify (Grow) plan", sv: "Shopify (Grow)-plan", kategori: "shopify", belopp: 105, valuta: "USD", verifierad: false, shopifyPlan: ["Shopify", "Grow"], nyckelord: ["shopify"] },
   { id: "shopify-advanced", en: "Shopify Advanced plan", sv: "Shopify Advanced-plan", kategori: "shopify", belopp: 399, valuta: "USD", verifierad: false, shopifyPlan: ["Advanced", "Advanced Shopify"], nyckelord: ["shopify"] },
   { id: "shopify-plus", en: "Shopify Plus (from)", sv: "Shopify Plus (från)", kategori: "shopify", belopp: 2300, valuta: "USD", verifierad: false, shopifyPlan: ["Shopify Plus", "Plus"], nyckelord: ["shopify plus", "plus"] },
-  { id: "stonepnl-standard", en: "StonePNL Standard", sv: "StonePNL Standard", kategori: "shopify", belopp: 9.99, valuta: "USD", verifierad: true, nyckelord: ["stonepnl", "pnl"] },
+  { id: "stonepnl-standard", en: "StonePNL Basic", sv: "StonePNL Basic", kategori: "shopify", belopp: 5, valuta: "USD", verifierad: true, nyckelord: ["stonepnl", "pnl"] },
   { id: "stonepnl-pro", en: "StonePNL Pro", sv: "StonePNL Pro", kategori: "shopify", belopp: 14.99, valuta: "USD", verifierad: true, nyckelord: ["stonepnl", "pnl"] },
   // AI
   { id: "claude-pro", en: "Claude Pro", sv: "Claude Pro", kategori: "ai", belopp: 20, valuta: "USD", verifierad: false, nyckelord: ["claude", "anthropic"] },
