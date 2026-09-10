@@ -439,6 +439,21 @@
    "kallans_utfall": "IBC_PD_Extra: 423 kr spend, 4 köp, ROAS 4,62, CPA 106 kr — den tjänade pengar utan röst",
    "atgard": "ACTIVE 2026-09-09 (120249008687250172, adset TANKGUARD_Tanköverdraget SE - PD)",
    "lardom": "\"tal (oläst)\" är inte samma sak som \"tal som inte gick att läsa\". Brand-detektorn skriver okänd så fort ett transkript saknas, och den domen blockerade annonsen i ett dygn. Kolla först om det finns något att transkribera — proofreadCreate svarar på fem minuter och drar noll krediter."
+  },
+  "14_varukorgsfix": {
+   "status": "KLAR",
+   "datum": "2026-09-10",
+   "rapport": "Axel: \"checkout-glitchen eller varukorgs-glitchen är fortfarande där på TankGuard.\"",
+   "matt": {
+    "cdn_fore": "tankguard.se/cdn/shop/t/2/assets/ms-paket.js ?v=…1788846832 — 5 905 byte minifierad, koden före varorna, submit-lyssnare utan stopImmediatePropagation",
+    "temafil_fore": "13 952 byte, äldre fabriksversion vars rubrik säger \"koden läggs på FÖRE varorna\"",
+    "orsak": "tema-steget skriver TEMAFILER till arbetstemat; det publicerade temat \"TankGuard – CRO v1\" (198130270552) fick aldrig fixen från 2026-09-09"
+   },
+   "atgard": "node factory/varukorgsfix.mjs tankguard — fabrikens fil skriven till det publicerade temat, tillbakaläst 16 516 byte identisk",
+   "cdn_efter": "?v=…1789064434 — 6 315 byte minifierad, stopImmediatePropagation finns, cart/add.js före discount/ i kop()",
+   "webblasartest": "INTE gjort härifrån: egress-tunneln stänger Chromiums anslutning efter 6 s (ws_closed 1006), tre försök. Axel klickar själv: tom korg → Köp → lådan ska glida in, 2 st i vagnen.",
+   "heimguard": "SAMMA bugg live (5 906 byte gammal fil). INTE rättad — hemvaktens nycklar finns inte i den här sessionens Environment.",
+   "vakt": "trippelkoll.mjs: raden \"fabriksfiler i publicerat tema\" läser filen ur live-temat och blir röd med kommandot om den avviker"
   }
  },
  "qa": {

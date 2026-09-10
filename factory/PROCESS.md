@@ -313,7 +313,34 @@ Mätningar från samma bygge:
 
 ---
 
-## Varukorgen — löst 2026-09-09
+## Varukorgen — löst 2026-09-09, men INTE i de publicerade temana förrän 2026-09-10
+
+⚠️ **Dagen efter "löst" stod båda butikerna live med den gamla filen.** Axel
+2026-09-10: *"checkout-glitchen eller varukorgs-glitchen är fortfarande där på
+TankGuard."* Mätt via CDN:en samma kväll: tankguard.se serverade 5 905 byte
+minifierad `ms-paket.js` med koden-före-varorna och dubbelköpet kvar, och
+heimguard.se 5 906 byte av samma sort. Temafilen i TankGuards publicerade tema
+var 13 952 byte — en äldre fabriksversion vars egen rubrik säger *"koden läggs
+på FÖRE varorna"*.
+
+**Varför:** tema-steget skriver `TEMAFILER` till **arbetstemat**
+(`arbetstema(ctx)`), och det publicerade temat är ett annat. Fixen nådde alltså
+aldrig det kunden ser. "Verifierat i riktig webbläsare" i stycket nedan gällde
+en vy som inte var den publicerade.
+
+**Vägen från repot till kunden är `factory/varukorgsfix.mjs <butik-id>`:** den
+ansluter, väljer det ENDA publicerade temat, skriver fabrikens fil, läser
+tillbaka byte för byte och stannar om något avviker. TankGuard rättad
+2026-09-10 (16 516 byte, identisk, CDN:en serverar ny `?v=` med
+`stopImmediatePropagation` och varorna före koden). **HeimGuard är INTE rättad**
+— dess nycklar finns inte i den sessionens Environment (`anslut('hemvakten')`
+stoppade på spärren). Kör skriptet från en session som har dem.
+
+**Vakten som gör att det inte händer igen:** trippelkollen har raden
+`fabriksfiler i publicerat tema` — den läser `TEMAFILER` ur det publicerade
+temat och blir röd med kommandot ovan i detaljen så fort filen skiljer sig.
+Ett tema som publiceras utan fabrikens fil syns nu, i stället för att spendera
+annonspengar på en trasig korg.
 
 **Symptom** (Axel, HeimGuard + TankGuard, båda live): första gången kunden
 lägger i varukorgen skickas hen till `/cart` i stället för att lådan glider

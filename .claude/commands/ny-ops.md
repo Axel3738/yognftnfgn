@@ -203,6 +203,7 @@ hoppa över steg 2–4 och kör kedjan.
 - [ ] Steg 16–17: marknad Norge + locale nb publicerad, allt registrerat, inga läckor på /nb
 - [ ] Steg 18 **KUNDVYN GRÖN på riktig HTML**: brandet (inte "My Store"), loggan, egen hero, egen meny, produkt med bild och köpknapp
 - [ ] Varukorgen testad av en människa med TOM korg: lådan glider in, varorna i vagnen räknade — annars "inte testad"
+- [ ] Trippelkollens rad `fabriksfiler i publicerat tema` GRÖN på det tema kunden ser — röd rättas med `node factory/varukorgsfix.mjs <butik-id>`, aldrig i temats kodredigerare
 - [ ] Steg 19: CHECKLISTA.md skriven, värdena i chatten
 - [ ] **Judge.me-filen BIFOGAD i chatten, en per produkt** — sökväg räknas inte, och app-filen (inte API-formatet) är den som bär originaldatumen
 - [ ] **Discord-auktoriseringslänken i rapporten** — eller "DISCORD_BOT_TOKEN saknas", aldrig tyst

@@ -112,3 +112,30 @@ drar noll krediter (järnregel 1).
 | `factory/rostkoll.py` | Mäter tempospridningen mellan cues i en färdig fil. |
 | `factory/rostsvep.sh` | Kör röstkollen på en hel uppsättning. |
 | `factory/mediagrind.py` | Läser den FÄRDIGA filen och letar källbutikens påståenden. |
+
+## Varukorgen — rättad i det publicerade temat 2026-09-10
+
+Axel: *"checkout-glitchen eller varukorgs-glitchen är fortfarande där på
+TankGuard."* Han hade rätt. Fixen från 2026-09-09 hade skrivits till
+arbetstemat, inte till temat kunden ser.
+
+| | Före | Efter |
+|---|---|---|
+| Fil i publicerat tema | 13 952 byte, äldre fabriksversion ("koden läggs på FÖRE varorna") | 16 516 byte, identisk med `factory/tema/assets/ms-paket.js` |
+| Det kunden laddar (CDN) | 5 905 byte, `?v=…1788846832`, ingen `stopImmediatePropagation` | 6 315 byte, `?v=…1789064434`, en submit, varorna före koden |
+
+Verktyg: `node factory/varukorgsfix.mjs tankguard`. Vakt: trippelkollens rad
+`fabriksfiler i publicerat tema`.
+
+⚠️ **Inte testat i webbläsare härifrån** — egress-tunneln stänger Chromiums
+anslutning efter sex sekunder (tre försök). Axel gör klicket: tom korg → Köp →
+lådan glider in, 2 st i vagnen.
+
+⚠️ **HeimGuard har samma bugg live** (5 906 byte gammal fil på
+heimguard.se). Inte rättad: butikens nycklar saknas i den här sessionen.
+
+Trippelkollen live 2026-09-10 efter fixen: `fabriksfiler i publicerat tema` ✅,
+18 gröna. Två röda som INTE hör till varukorgen och stod röda redan innan:
+`lagerpolicy` (1 variant på DENY — `factory/lagerpolicy.mjs` rättar) och
+`paketnivåer` (butiken byggdes utanför repot, paketen ligger i temat och inte i
+metaobjekt — raden vet inte om det). Orörda.

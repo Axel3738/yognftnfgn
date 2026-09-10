@@ -6,6 +6,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { rabutik, dummy } from './hjalp.mjs';
 import { byggKrav, bedomLage, sidhandlesUr, huvudlocale } from '../trippelkoll.mjs';
+import { TEMAFILER } from '../tema.mjs';
 
 // Butiken som i butik-mall.yaml: SE + NO från start.
 const butik = () => {
@@ -44,6 +45,8 @@ function gronLage(krav, { temaRole = 'MAIN' } = {}) {
     shop: { name: 'Nackmagneten', myshopifyDomain: 'x.myshopify.com', currencyCode: 'SEK', primaryDomain: { host: 'nackmagneten.se' } },
     onlineStore: { passwordProtection: { enabled: false } },
     themes: [{ id: TEMA_ID, name: 'Nackmagneten v1 CRO', role: temaRole }, { id: 'gid://shopify/OnlineStoreTheme/2', name: 'Dawn', role: temaRole === 'MAIN' ? 'UNPUBLISHED' : 'MAIN' }],
+    // Det publicerade temat bär fabrikens filer — så som varukorgsfix.mjs lämnar det.
+    livetemaFiler: { ...TEMAFILER },
     shopLocales: [{ locale: 'sv', primary: true, published: true }, { locale: 'nb', primary: false, published: true }],
     markets: [{ id: 'mk1', name: 'Norge', handle: 'no', status: 'ACTIVE', conditions: { regionsCondition: { regions: { nodes: [{ code: 'NO' }] } } } }],
     webPresences: [{ id: 'wp1', defaultLocale: { locale: 'sv' }, alternateLocales: [{ locale: 'nb' }] }],
@@ -84,9 +87,24 @@ test('en butik som stämmer med yaml ger noll fel och bara mobilvyn manuell', ()
   const lage = bedomLage(gronLage(krav), krav);
   assert.deepEqual(lage.fel, []);
   assert.deepEqual(namn(lage.manuella), ['mobilvyn']);
-  for (const n of ['produkt', 'priser', 'lagerpolicy', 'metafält', 'paketnivåer', 'förvald nivå', 'rabattkoder', 'OPS-temat', 'publicerat tema', 'locale nb', 'marknad NO', 'nb på domänen', 'sidor', 'huvudmeny']) {
+  for (const n of ['produkt', 'priser', 'lagerpolicy', 'metafält', 'paketnivåer', 'förvald nivå', 'rabattkoder', 'OPS-temat', 'publicerat tema', 'fabriksfiler i publicerat tema', 'locale nb', 'marknad NO', 'nb på domänen', 'sidor', 'huvudmeny']) {
     assert.ok(namn(lage.grona).includes(n), `${n} ska vara grön`);
   }
+});
+
+test('gammal ms-paket.js i det publicerade temat är ett FEL med kommandot i detaljen — även när arbetstemat är rätt', () => {
+  const krav = byggKrav(butik(), [dummy()], { arbetstemaId: TEMA_ID });
+  const gammal = TEMAFILER['assets/ms-paket.js'].replace('stopImmediatePropagation', 'stopPropagation');
+  const lage = bedomLage({ ...gronLage(krav), livetemaFiler: { 'assets/ms-paket.js': gammal } }, krav);
+  const rad = lage.fel.find((r) => r.namn === 'fabriksfiler i publicerat tema');
+  assert.ok(rad, 'raden ska vara röd');
+  assert.ok(/varukorgsfix\.mjs/.test(rad.detalj), rad.detalj);
+  assert.ok(/byte/.test(rad.detalj), rad.detalj);
+  assert.ok(namn(lage.grona).includes('publicerat tema'), 'temaraden i sig är fortfarande grön');
+
+  const saknas = bedomLage({ ...gronLage(krav), livetemaFiler: {} }, krav);
+  const rad2 = saknas.fel.find((r) => r.namn === 'fabriksfiler i publicerat tema');
+  assert.ok(rad2 && /saknas i live-temat/.test(rad2.detalj), rad2?.detalj);
 });
 
 test('opublicerat OPS-tema är manuellt, utan påståendet att API:t är spärrat', () => {

@@ -30,6 +30,7 @@ import { byggPaketplan, METAOBJEKT_TYP } from './paket.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer } from './policyer.mjs';
 import { huvudmenyRader } from './meny.mjs';
+import { TEMAFILER } from './tema.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const IKON = { ok: '✅', fel: '❌', manuell: '🖐', varning: '⚠️ ' };
@@ -210,6 +211,22 @@ export function bedomLage(d, krav) {
       tema.role === 'MAIN' ? tema.name : `kunden ser "${live?.name ?? '?'}" — OPS-temat publiceras vid --launch (themePublish via API)`);
   }
 
+  // ---- fabriksägda filer i det PUBLICERADE temat. Tema-steget skriver till
+  // arbetstemat; det kunden laddar är live-temat. 2026-09-10 stod TankGuard
+  // och HeimGuard live med den gamla ms-paket.js (koden före varorna,
+  // dubbelköp) dagen efter att buggen rapporterats löst. Raden läser filen
+  // ur live-temat och jämför byte för byte — grön betyder att kunden kör
+  // fabrikens kod, inte att en fil med rätt namn finns.
+  const liveFiler = d.livetemaFiler ?? {};
+  for (const [fil, fabrik] of Object.entries(TEMAFILER)) {
+    const inne = liveFiler[fil];
+    const identisk = inne === fabrik;
+    lagg(identisk ? 'ok' : 'fel', `fabriksfiler i publicerat tema`,
+      identisk
+        ? `${fil} är fabrikens (${Buffer.byteLength(fabrik, 'utf8')} byte)`
+        : `${fil} ${inne == null ? 'saknas i live-temat' : `är ${Buffer.byteLength(inne, 'utf8')} byte, fabrikens ${Buffer.byteLength(fabrik, 'utf8')}`} — kör node factory/varukorgsfix.mjs <butik-id>`);
+  }
+
   // ---- marknader och språk (krav: butik.marknader)
   const locales = d.shopLocales ?? [];
   const primar = locales.find((l) => l.primary);
@@ -294,10 +311,26 @@ export async function hamtaLage(handles) {
     );
     produkter[h] = q.productByIdentifier ?? null;
   }
+  // Fabriksägda filer ur det publicerade temat — innehållet, inte bara
+  // storleken, så bedömningen kan jämföra byte för byte.
+  const livetemaFiler = {};
+  const live = (d.themes?.nodes ?? []).find((t) => t.role === 'MAIN');
+  if (live) {
+    const f = await graphql(
+      `query opsFactoryTrippelLivefiler($id: ID!, $filenames: [String!]) {
+        theme(id: $id) { files(first: 20, filenames: $filenames) {
+          nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } }
+        } }
+      }`,
+      { id: live.id, filenames: Object.keys(TEMAFILER) }
+    );
+    for (const n of f.theme?.files?.nodes ?? []) livetemaFiler[n.filename] = n.body?.content ?? null;
+  }
   return {
     shop: d.shop,
     onlineStore: d.onlineStore,
     themes: d.themes?.nodes ?? [],
+    livetemaFiler,
     shopLocales: d.shopLocales ?? [],
     markets: d.markets?.nodes ?? [],
     webPresences: d.webPresences?.nodes ?? [],
