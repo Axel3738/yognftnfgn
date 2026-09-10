@@ -1,11 +1,15 @@
 # Creative DNA — HeimGuard (övervakningskameran)
 
-Skapad 2026-09-08 av `/ny-annonser`. Första körningen i ordningen.
+Skapad 2026-09-08 av `/ny-annonser` (körning nr 1).
+**Senast uppdaterad 2026-09-11 av `/notionscalercs hemvakten` — körning nr 2, första briefdagen.**
 Butiks-id `hemvakten`, brand **HeimGuard**, heimguard.se.
 
-⚠️ **All prestandadata i den här filen är ÄRVD från Bäverbutiken**, inte mätt på
-HeimGuard. HeimGuards egen kampanj är byggd men har spenderat 0 kr. Första
-riktiga avläsningen kan göras när kampanjen körts och passerat signifikansgrinden.
+⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken.**
+HeimGuards egen kampanj har körts 2026-09-08 → 2026-09-10 (3 dygn): **4 207 kr,
+5 köp, ROAS 1,65** mot break-even 1,49. **0 av 38 annonser har passerat
+signifikansgrinden** (≥ 300 kr OCH ≥ 3 köp) — körning nr 2 är en **KALLSTART**:
+ingen feedback-loop, ingen dom över en enda HeimGuard-annons. Se avsnittet
+"Körning nr 2" längst ned.
 
 ---
 
@@ -67,15 +71,15 @@ För tunt för en dom, men det är den första frågan att ställa när data fin
 
 ---
 
-## Ekonomin — och det enda talet som inte är fastställt
+## Ekonomin — AVGJORD 2026-09-09 (Axels besked)
 
-Pris 799 kr · inköp 261 kr · **TB 378 kr · BE-ROAS 2,11 · BE-CPA 378 kr**,
-räknat med moms i priset (`moms_i_pris: true` i butikskonfigen, och
-produktsidan säger "Inklusive moms").
+Pris 799 kr · inköp 261 kr · **TB 538 kr · BE-ROAS 1,49 · BE-CPA 538 kr ·
+target-ROAS 2,36 / target-CPA 338 kr**, räknat **UTAN moms** — samma regel som
+Bäverbutiken och Grillkliniken (`ekonomi.moms_antagen: false` i
+`factory/produkter/overvakningskameran.yaml`). Den linjen gäller för kill-beslut.
 
-⚠️ **Räknas priset utan moms blir BE-ROAS 1,49 i stället.** Skillnaden avgör
-varje kill-beslut. Bäverbutiken säljer utan moms — dess 1,57 får aldrig kopieras
-hit. Fråga Axel vilken som gäller innan första skalningsronden.
+⚠️ Kampanjnamnet i kontot säger fortfarande "BE-ROAS 2,11" (det gamla
+med-moms-talet). Namnet är en etikett, inte facit — skripten läser produktfilen.
 
 ---
 
@@ -89,3 +93,73 @@ hit. Fråga Axel vilken som gäller innan första skalningsronden.
   Uppdrag D i `factory/FAS2.md`, inte som ett fel att rätta här.
 - **Norska halvan är inte byggd.** Butiken tar betalt i SEK på /nb medan
   Bäverbutikens norska annonser är prissatta i NOK. Se batch-loggen.
+
+---
+
+## Körning nr 2 — 2026-09-11, första briefdagen (`/notionscalercs`)
+
+### Vad HeimGuards egen kampanj visar (data, 2026-09-08 → 2026-09-10)
+
+Kampanj `HEIMGUARD_SE_Övervakningskameran`, konto `915422744950975`, 38 annonser
+i 9 adsets (CBO, 1 000 kr/dag, sänkt till 700 kr av budgetronden 2026-09-11).
+
+| | Spend | Köp | ROAS | Mot BE 1,49 |
+|---|---:|---:|---:|---|
+| Hela kampanjen, 3 dygn | 4 207 kr | 5 | 1,65 | över break-even, under target 2,36 |
+
+**Bedömbara annonser: 0.** Ingen annons har ≥ 300 kr OCH ≥ 3 köp. Ingen dom,
+ingen ranking. Det som ändå går att se — märkt **hypotes**, aldrig dom:
+
+- **`LI_1_1` (bild, listan) tog 49 % av spenden (2 045 kr) med 0 köp** och
+  adsetet pausades 2026-09-10 19:04 (inte av rutinen — ett beslut, rörs aldrig).
+  CTR 2,3 % men CVR 0. Hypotes: listicle-bilden köper klick som inte konverterar.
+  Under grinden på köp, men 2 045 kr utan köp är 3,8 × break-even-CPA.
+- **`PD_2` (video, nattljudet) har kampanjens bästa hook rate bland annonser med
+  > 100 kr: 43,1 %** (ärvda SP_2: 34,0 %), 749 kr, 2 köp, CVR 1,5 %. Hypotes:
+  problemöppningen "Ett ljud på tomten klockan tre" stoppar scrollen bäst.
+- **`SP_2`, den ärvda toppannonsen, har bara fått 34 kr på HeimGuard.** CBO:n
+  har inte gett den chansen än. Hypotes 1 från batch #1 (håller SP med tio
+  riktiga recensioner?) är alltså **obesvarad**, inte falsifierad.
+- Spendfördelning per vinkel på HeimGuard: LI 2 045 · PD 847 · CS 636 · SP 229 ·
+  BOF 162 · AU 149 · CO 102 · RI 27 · G 10 kr. Jämför källan: SP 15 662 · CS 12 556.
+  Metas fördelning på HeimGuard är ännu inte en dom över något.
+
+### Ärvd variabeltabell (ÄRVD — Bäverbutiken, hela livstiden, dömd mot HeimGuards BE-CPA 538 kr)
+
+| Variabelvärde | Annonser | Spend | Köp | Vinstbidrag | Slutsats |
+|---|---:|---:|---:|---:|---|
+| Vinkel SP (social proof) | 13 | 15 662 kr | 40 | 5 055 kr | **bevisad** (SP_2 ensam: 14 851 kr, 37 köp) |
+| Vinkel CS (erbjudande, pris i sek 0–3) | 7 | 12 556 kr | 29 | 2 710 kr | **bevisad** (CS_3 16 köp + CS_2 10 köp) |
+| Format video (de tre bedömbara är alla video) | 3 | 26 129 kr | 63 | 7 765 kr | bevisad |
+| Format bild av vinnarvinkel (SP_2_1, CS_2_1, CS_4_1) | 3 | 1 131 kr | 2 | — | **hypotes**: replikerar inte |
+| Övriga vinklar (PD, LI, CO, BOF, AU, G, RI) | 19 | 1 250 kr | 3 | — | otestade, ingen dom |
+
+### Tre mönster → instruktion i batch #2
+
+1. **Bevisad (ärvd):** social proof i video bär allt (65 % av källans vinstbidrag).
+   → Batch #2 kör SP_2:s film med två nya hooks (`SP_17_H1`/`H2`) och en
+   bildversion (`SP_18_1`) — tre varianter, EN variabel var.
+2. **Bevisad (ärvd):** pris i första 3 sekunderna konverterar (CS_3 ROAS 3,02).
+   **Rotorsak upptäckt 2026-09-11:** CS_2/CS_3:s VOICEOVER säger "sista chansen",
+   "priset går upp snart", "fri frakt över trehundra kronor" — falskt på HeimGuard
+   (stående pris, fri frakt utan gräns). Brand-detektorn kollade bara brandnamnet
+   i talet, inte påståendena. → `CS_11_H1`: samma film, ny VO utan brådska.
+3. **Hypotes (ärvd + OPS):** bildversioner av vinnarna replikerar inte (295 kr/1 köp,
+   388 kr/0), och HeimGuards `LI_1_1` bränner 2 045 kr utan köp. → Max 1 av 7 i
+   batch #2 är bild, och den bär recensionsbeviset i stället för en funktionslista.
+4. **Hypotes (OPS):** problemöppningen (`PD_2`, hook 43 %) stoppar bäst. → `SP_17_H2`
+   öppnar SP-filmen med nattljudet; `TR_1_H1` bygger hela konceptet på det.
+
+### Copy-modell A/B (Axels beslut 2026-09-10)
+
+Registret säger `copy_modell: ab`. Batch #2: 4 briefer `copy_model: fable`
+(SP_17_H1, SP_18_1, TR_1_H1, FD_1_H1), 3 `copy_model: sonnet` (SP_17_H2,
+CS_11_H1, SR_1_H1). Ställning: **0 bedömbara annonser per modell** — avgörs
+när båda har ≥ 5 bedömbara.
+
+### Rotorsaker att bära vidare
+
+- **Talet i de ärvda CS-videorna motsäger butiken** (se mönster 2). Innan fler
+  ärvda videor skalas: läs SRT:n mot butikens villkor, inte bara mot brandnamnet.
+- **`Fri frakt över 300 kr` och `bara idag` finns kvar i VO trots att copyn rättades.**
+  Copy och tal måste rättas som par.
