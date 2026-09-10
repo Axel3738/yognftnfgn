@@ -113,7 +113,14 @@ export function läsButik(produktId) {
   if (!butiksId) return null;
   const fil = join(ROT, 'factory', 'butiker', `${butiksId}.yaml`);
   if (!existsSync(fil)) return null;
-  return lasYaml(readFileSync(fil, 'utf8'))?.butik || null;
+  // HELA konfigen, inte bara butik:-blocket. villkorsskanning.byggRegler läser
+  // `frakt.fri_globalt`, `retur.oppet_kop_dagar`, `retur.angerratt_dagar` och
+  // `frakt.leveranstid` — alla på toppnivå i butiksfilen. Med bara butik:-
+  // blocket blev varje tröskel null och INGEN villkorsjämförelse slog till:
+  // AdventLane 2026-09-10 fick villkorsfel [] på "30 dagars öppet köp" mot
+  // 14 dagars ångerrätt, och SP_2_1 dömdes `ren`.
+  const konfig = lasYaml(readFileSync(fil, 'utf8'));
+  return konfig && typeof konfig === 'object' ? konfig : null;
 }
 
 /** Texterna som villkorsskanningen jämför, märkta med den yta de står på —

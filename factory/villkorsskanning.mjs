@@ -59,6 +59,18 @@ export function byggRegler(butik) {
       text: (m, a, b) => `säger ${a}–${b} dagar — butiken har ${levMin}–${levMax}`,
       taPar: true,
     },
+    {
+      // Brådska och lagerpåståenden är KÄLLBUTIKENS kampanjvillkor ("bara idag",
+      // "sista chansen", "begränsat lager – slut innan jul", "priset gäller inte
+      // länge"). En OPS-butik lovar aldrig tidsbegränsning (Axels regel
+      // 2026-09-08: aldrig egna köplöften; butiksfilens cta-stil: "Aldrig
+      // SISTA CHANSEN"). AdventLane 2026-09-10: hela CS-konceptet bar det i
+      // tal, inbränd text OCH copy utan att någon regel fångade det.
+      id: 'brådska',
+      re: /(bara\s+i\s*dag|endast\s+i\s*dag|kun\s+i\s*dag|sista\s+chansen|siste\s+sjanse|begr[äa]nsat\s+lager|begrenset\s+lager|lagret\s+(är|er)\s+begr[äa]nsat|lagret\s+(krymper|tar\s+slut)|slut\s+innan\s+jul|innan\s+(den|det)\s+(tar\s+slut|är\s+slut)|priset\s+g[äa]ller\s+inte\s+l[äa]nge|prisen\s+gjelder\s+ikke\s+lenge|f[øo]r\s+den\s+er\s+utsolgt)/i,
+      fel: () => true,
+      text: (m) => `lovar brådska/lager "${m}" — butiken lovar aldrig tidsbegränsning eller lagerbrist`,
+    },
   ];
 }
 

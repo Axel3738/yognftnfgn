@@ -55,6 +55,27 @@ test('en butik som HAR fraktgräns får inget larm för den', () => {
   assert.deepEqual(skannaVillkor([{ yta: 'copy', text: 'Fri frakt över 300 kr' }], medGrans), []);
 });
 
+test('brådska och lagerpåståenden fångas på alla ytor — en OPS-butik lovar aldrig tidsbegränsning', () => {
+  // AdventLane 2026-09-10: hela CS-konceptet bar det i tal ("Lagret är
+  // begränsat och priset gäller inte länge"), inbränt ("BEGRÄNSAT LAGER –
+  // SLUT INNAN JUL") och copy ("23% rabatt – bara idag") utan att någon regel slog till.
+  for (const [yta, text] of [
+    ['copy', '23% rabatt – bara idag 🎄'],
+    ['inbränd', 'BEGRÄNSAT LAGER – SLUT INNAN JUL'],
+    ['inbränd', 'KÖP INNAN DEN TAR SLUT'],
+    ['tal', 'Lagret är begränsat och priset gäller inte länge.'],
+    ['tal', 'Sista chansen innan lagret tar slut.'],
+    ['copy', 'Bestill før den er utsolgt'],
+  ]) {
+    const f = skannaVillkor([{ yta, text }], BUTIK);
+    assert.equal(f.length, 1, `${yta}: ${text}`);
+    assert.equal(f[0].regel, 'brådska');
+    assert.equal(f[0].yta, yta);
+  }
+  // Priset i sig är inget brådskepåstående.
+  assert.deepEqual(skannaVillkor([{ yta: 'copy', text: '649 kr → 499 kr, spara 150 kr' }], BUTIK), []);
+});
+
 test('tomma texter ger inga fynd', () => {
   assert.deepEqual(skannaVillkor([], BUTIK), []);
   assert.deepEqual(skannaVillkor([{ yta: 'copy', text: '' }], BUTIK), []);
