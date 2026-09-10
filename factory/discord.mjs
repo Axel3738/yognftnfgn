@@ -9,7 +9,7 @@
 // skapa servrar: POST /guilds svarar 400 kod 20001 "Bots cannot use this
 // endpoint" (mätt på TankGuard 2026-09-08, boten satt i 3 servrar — gränsen
 // "färre än 10" gäller alltså inte längre). Servern skapas därför alltid av
-// en människa (checklistans avsnitt 10) som auktoriserar boten via länken skriptet
+// en människa (checklistans avsnitt 9) som auktoriserar boten via länken skriptet
 // skriver ut utan --guild; sen bygger boten kanalerna med --guild <id>.
 //
 // Redigerarlistan bor i factory/redigerare/standby.md (byggs av
@@ -164,7 +164,7 @@ async function huvud() {
     const app = await discord('/oauth2/applications/@me');
     // Manage Channels + Manage Roles + Manage Guild (ikon) + Create Invite.
     const lank = `https://discord.com/oauth2/authorize?client_id=${app.id}&scope=bot&permissions=268435505`;
-    console.log(`\n🖐 Boten kan inte skapa servrar. VA:n: skapa servern "${plan.servernamn}" i Discord, öppna länken och välj servern:`);
+    console.log(`\n🖐 Boten kan inte skapa servrar (checklistans avsnitt 9). Skapa servern "${plan.servernamn}" i Discord, öppna länken och välj servern:`);
     console.log(`   ${lank}`);
     console.log('   Sen: node factory/discord.mjs <butik.yaml> --guild <server-id> [--ikon <logga.png>]');
     process.exit(1);

@@ -49,16 +49,16 @@ test('ordningen är ett kontrakt: temat först, ägarbytet före Payments, kassa
     '6. Domain',
     '7. Judge.me',
     '8. The EU withdrawal button (required by law)',
-    '9. Meta',
-    '10. Discord',
-    '11. Tell Claude the store is ready',
-    '12. Tracking – WeTracked + the CAPI token',
-    '13. Test the store behind the password (the receipt for 5–12)',
-    '14. Hand over – plan, card, ownership',
-    '15. Shopify Payments + Klarna (after the hand-over)',
-    '16. Go live and test the checkout',
-    '17. Ads (a NEW session)',
+    '9. The Meta page and the Discord server (create both, Claude finishes both)',
+    '10. Tell Claude the store is ready',
+    '11. Tracking – WeTracked + the CAPI token',
+    '12. Test the store behind the password (the receipt for 5–11)',
+    '13. Hand over – plan, card, ownership',
+    '14. Shopify Payments + Klarna (after the hand-over)',
+    '15. Go live and test the checkout',
+    '16. Ads (a NEW session)',
   ]);
+
   // Temat publiceras före allt som kontrolleras mot kundens vy.
   assert.ok(pos(md, '→ **Publish**') < pos(md, '## 6.'), 'temat publiceras direkt efter bygget');
   // Loopia före Shopifys domänkoppling — går inte att koppla en oköpt domän.
@@ -68,11 +68,15 @@ test('ordningen är ett kontrakt: temat först, ägarbytet före Payments, kassa
   assert.ok(agarbyte < pos(md, 'Activate **Shopify Payments**'), 'Payments EFTER ägarbytet — det är ägarens bank och identitet');
   assert.ok(agarbyte < pos(md, 'remove the **storefront password**'), 'butiken går live först när ägaren valt plan');
   // Kassan går inte att testa före Payments; testet av allt annat gör det.
-  assert.ok(pos(md, '## 13.') < agarbyte, 'allt utom kassan testas före ägarbytet');
-  assert.ok(pos(md, 'The checkout shows **SEK** and **Klarna**') > pos(md, '## 16.'), 'kassatestet ligger sist');
+  assert.ok(pos(md, '## 12.') < agarbyte, 'allt utom kassan testas före ägarbytet');
+  assert.ok(pos(md, 'The checkout shows **SEK** and **Klarna**') > pos(md, '## 15.'), 'kassatestet ligger sist');
   // Ingen kassa-rad i test-avsnittet före ägarbytet.
-  const test13 = md.slice(pos(md, '## 13.'), pos(md, '## 14.'));
-  assert.ok(!test13.includes('checkout shows'), 'test 13 påstår aldrig att kassan är kontrollerad');
+  const kundvytestet = md.slice(pos(md, '## 12.'), pos(md, '## 13.'));
+  assert.ok(!kundvytestet.includes('checkout shows'), 'testet påstår aldrig att kassan är kontrollerad');
+  // Meta-sidan och Discord-servern är ETT avsnitt (Axel 2026-09-10).
+  const sidanOchServern = md.slice(pos(md, '## 9.'), pos(md, '## 10.'));
+  assert.ok(sidanOchServern.includes('Create a new Page') && sidanOchServern.includes('Create server'), 'sidan och servern i samma avsnitt');
+  assert.ok(md.includes('authorize link** Claude gave you'), 'auktoriseringslänken kommer ur bygget, inte ur en väntan');
 });
 
 test('registreringen kräver BOLAGETS adress — den avgör valutan', () => {

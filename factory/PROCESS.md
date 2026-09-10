@@ -148,12 +148,13 @@ Hela listan i `factory/README.md`.
    skriver priser, paket och rabattkoder i butikens valuta.
    Efter bygget, i den ordningen: tema publicerat + butiksnamn (avsnitt 5),
    domän + avsändarmejl (6), recensioner (7), ångerknappen (8), Meta (9),
-   Discord (10), "Store ready" (11), spårningen (12), testet bakom
-   butikslösenordet (13). Allt det görs på free trial.
-   **Ägarbytet är avsnitt 14 och delar listan i två** (Axels regel
-   2026-09-10): Shopify Payments + Klarna (15) är ägarens bank och identitet,
-   och butikslösenordet går inte att ta bort förrän ägaren valt plan (16).
-   Därför testas kassan först i 16 — testet i 13 påstår aldrig att den är
+   Meta-sidan OCH Discord-servern (9, ett besök — båda skapas av en
+   människa och färdigställs av fabriken), "Store ready" (10), spårningen
+   (11), testet bakom butikslösenordet (12). Allt det görs på free trial.
+   **Ägarbytet är avsnitt 13 och delar listan i två** (Axels regel
+   2026-09-10): Shopify Payments + Klarna (14) är ägarens bank och identitet,
+   och butikslösenordet går inte att ta bort förrän ägaren valt plan (15).
+   Därför testas kassan först i 15 — testet i 12 påstår aldrig att den är
    kontrollerad.
 
 ## Fas 3 — Recensioner (kedjans steg 15)
