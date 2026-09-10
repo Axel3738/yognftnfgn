@@ -1,5 +1,5 @@
 diff --git a/.claude/commands/rond-auto.md b/.claude/commands/rond-auto.md
-index 441e8d0..0f62a02 100644
+index 441e8d0..212f817 100644
 --- a/.claude/commands/rond-auto.md
 +++ b/.claude/commands/rond-auto.md
 @@ -22,12 +22,14 @@
@@ -35,57 +35,18 @@ index 441e8d0..0f62a02 100644
  `ads_activate_entity` — `ads_update_entity` med `{"status":"ACTIVE"}` svarar
  `status_forced_to_paused: true` och ändrar ingenting.
  
-@@ -232,206 +235,105 @@ budgetloggen som historik och ska läsas, inte återanvändas.
+@@ -232,206 +235,107 @@ budgetloggen som historik och ska läsas, inte återanvändas.
  - Aldrig starta något som är pausat. Ronden stänger av; den startar aldrig på.
  - Aldrig röra priser, texter, creatives, målgrupper eller andra konton.
  
 -## 4b. Annonsbatcherna (Axels beslut 2026-08-29: rutinen kör dem själv, var tredje dag)
-+## 4b. Startskottet (Axels beslut 2026-09-10 — ersätter hela annonshalvan)
- 
+-
 -Det här är rutinens andra jobb, lika viktigt som budgetarna: **varje produkt
 -med en batch ska få sin nya brief-runda var tredje dag.** `annonsbehov` i
 -utfallet listar allt som är förfallet, färdigsorterat (första batchen först,
 -sen rundorna med äldst batch först).
-+**Ronden gör inga briefer längre.** Fram till 2026-09-10 byggde den en hel
-+creative-batch och en ny Notion-hub varje gång en produkt passerade testet,
-+och en brief-runda var tredje dag därefter. Allt det är borttaget.
-+
-+I stället gör den **en enda sak**: postar ett startskott i Discord-kanalen
-+`#ops-startskott` när en produkt klarat testet. Meddelandet säger att
-+produkten ska få en egen OPS-butik, och bär det färdiga `/ny-ops`-kommandot.
-+
-+> **Axels ord 2026-09-10:** *"Istället för att göra nya briefs och såna grejer
-+> ska vi inte göra det alls. Vi skickar bara ett Discord-meddelande. Det är
-+> det enda som den behöver göra istället för att göra en massa creative
-+> strategy och göra nya Notion-grejsmojser och sånt."*
-+
-+**Vad rutinen därför ALDRIG gör längre:**
-+- Skriver briefer. Varken förstabatcher eller 3-dagarsrundor.
-+- Skapar Notion-hubbar. Duplicerar aldrig `Creative hub MALL`.
-+- Skapar Notion-items, Drive-mappar eller minnesfiler i `products/<id>/`.
-+- Kör `/forsta-batch` eller `/cs`.
-+- Loggar `FORSTA_BATCH_KLAR` eller `CS_BATCH_KLAR`.
-+
-+Kvällens bildannons-rutin (`/bildannonser`, 20:00) och leveransrundan
-+(`/notionkorning`, 13:20) är egna rutiner och berörs inte. De rullar vidare.
-+
-+### Så här körs det
-+
-+`annonsbehov` i `agent/rond.mjs` räknas som förut — matematiken är orörd.
-+Skillnaden är vad du gör med den:
-+
-+| Behov | Vad ronden gör nu |
-+|---|---|
-+| `forsta_batch` | **Startskott** — posta larmet, logga `OPS_STARTSKOTT` |
-+| `brief_runda` | **Ingenting.** Nämn den inte ens i rapporten. |
-+| `ersatt` | **Ingenting.** |
-+| `mata_vinnare` | **Ingenting.** |
-+
-+`forsta_batch` betyder att produkten passerat **1 500 kr total spend OCH
-+minst 20 % vinst** (`FORSTA_BATCH_SPEND_SEK` / `FORSTA_BATCH_VINST_PROCENT`
-+i `agent/rond.mjs`). Rör aldrig de talen — de är Axels och de är testade.
- 
- ⚠️ **BARA SVERIGE.** `annonsbehov` är tomt för NO-körningen och ska så vara.
+-
+-⚠️ **BARA SVERIGE.** `annonsbehov` är tomt för NO-körningen och ska så vara.
 -De norska annonserna är de svenska annonserna översatta i ett eget flöde
 -(`/translate-no`) — Norge behöver aldrig egna briefer, egen Notion-hub eller
 -eget produktminne. I NO-kontot gör ronden **bara** budget upp och ner.
@@ -262,29 +223,73 @@ index 441e8d0..0f62a02 100644
 -   ```sql
 -   SELECT "Namn", "Typ", "Status", "Prioritet" FROM "collection://…"
 -   WHERE "Typ" IN ('Video - Pending Approval','Image - Pending Approval')
-+En norsk kampanj utlöser aldrig ett startskott — norska annonser är svenska
++## 4b. Startskottet (Axels beslut 2026-09-10 — ersätter hela annonshalvan)
++
++**Ronden gör inga briefer längre.** Fram till 2026-09-10 byggde den en hel
++creative-batch och en ny Notion-hub varje gång en produkt passerade testet,
++och en brief-runda var tredje dag därefter. Allt det är borttaget.
++
++I stället gör den **en enda sak**: postar ett startskott i Discord-kanalen
++`#ops-startskott` när en produkt klarat testet. Meddelandet säger att
++produkten ska få en egen OPS-butik, och bär det färdiga `/ny-ops`-kommandot.
++
++> **Axels ord 2026-09-10:** *"Istället för att göra nya briefs och såna grejer
++> ska vi inte göra det alls. Vi skickar bara ett Discord-meddelande. Det är
++> det enda som den behöver göra istället för att göra en massa creative
++> strategy och göra nya Notion-grejsmojser och sånt."*
++
++**Vad rutinen därför ALDRIG gör längre:**
++- Skriver briefer. Varken förstabatcher eller 3-dagarsrundor.
++- Skapar Notion-hubbar. Duplicerar aldrig `Creative hub MALL`.
++- Skapar Notion-items, Drive-mappar eller minnesfiler i `products/<id>/`.
++- Kör `/forsta-batch` eller `/cs`.
++- Loggar `FORSTA_BATCH_KLAR` eller `CS_BATCH_KLAR`.
++
++Kvällens bildannons-rutin (`/bildannonser`, 20:00) och leveransrundan
++(`/notionkorning`, 13:20) är egna rutiner och berörs inte. De rullar vidare.
++
++### Så här körs det
++
++Listan kommer från **`startskottsbehov(rader, { logg, marknad })`** i
++`agent/startskott.mjs`. Den läser tröskeln direkt ur `agent/rond.mjs`:
++**1 500 kr total spend OCH minst 20 % vinst** (`FORSTA_BATCH_SPEND_SEK` /
++`FORSTA_BATCH_VINST_PROCENT`). Rör aldrig de talen — de är Axels och testade.
++
++⚠️ **Använd INTE `annonsbehov` till det här.** `forsta_batch` ges bara till
++produkter som ALDRIG haft en batch; den som redan fått en hamnar för alltid i
++`brief_runda`. Byggde man larmet på `forsta_batch` skulle det bara utlösas för
++splitternya produkter, medan de bevisade produkter som redan fick briefer
++under det gamla systemet aldrig larmades alls. *(Mätt 2026-09-10: 45
++SE-kampanjer i loggen, 14 med batch — bland dem Fiskespöhållaren,
++Båtmotorskyddet 420D och MC-Kapellet.)*
++
++`annonsbehov` räknas fortfarande — matematiken är orörd så den går att slå på
++igen — men ronden gör **ingenting** med `brief_runda`, `ersatt` eller
++`mata_vinnare`. Nämn dem inte ens i rapporten.
++
++⚠️ **BARA SVERIGE.** `startskottsbehov` returnerar tomt för NO och ska så
++göra. En norsk kampanj utlöser aldrig en ny butik — norska annonser är svenska
 +annonser översatta i ett eget flöde.
 +
-+För varje `forsta_batch`-behov, i ordning:
++`startskottsbehov` filtrerar redan bort fryst, avstängt, trappan och allt som
++redan larmats (`OPS_STARTSKOTT`) eller redan har en butik (`OPS_FINNS_REDAN`).
++Listan är sorterad med störst spend först.
 +
-+1. **Har startskottet redan gått?** `startskottHarGatt(logg, kampanj_id)` i
-+   `agent/startskott.mjs` läser budgetloggen. Är den `true`: hoppa över
-+   produkten helt och nämn den inte. Ett larm som kommer varje morgon slutar
-+   folk läsa.
++För varje rad i listan, i ordning:
 +
-+2. **Läs kampanjens status.** Hämta den med `ads_get_ad_entities` direkt före
++1. **Läs kampanjens status.** Hämta den med `ads_get_ad_entities` direkt före
 +   larmet. Är `effective_status` något annat än `ACTIVE`: hoppa över, och
 +   skriv en rad i leveransen om varför. **Att ronden själv pausade kampanjen
 +   samma morgon är inget undantag** — en produkt som just stängdes av ska
 +   inte få en egen butik byggd.
 +
-+3. **Hitta källänken.** Startskottet är värdelöst utan den — VA:n ska kunna
++2. **Hitta källänken.** Startskottet är värdelöst utan den — VA:n ska kunna
 +   klistra in `/ny-ops <länk>` utan att leta. Ta produktsidans URL på
 +   bäverbutiken.se. Hittar du den inte: posta larmet ändå, men skriv
 +   `KÄLLÄNK SAKNAS` i produktfältet och säg det i leveransen. **Gissa aldrig
 +   en URL.**
 +
-+4. **Posta larmet.**
++3. **Posta larmet.**
 +
 +   ```bash
 +   node agent/startskott.mjs --jobb <fil.json>
@@ -314,7 +319,7 @@ index 441e8d0..0f62a02 100644
 +
 +   Kör `--torr` först om du vill se meddelandet utan att posta.
 +
-+5. **Logga.** Skriv raden från `byggLoggrad` i `agent/budgetlogg.jsonl`
++4. **Logga.** Skriv raden från `byggLoggrad` i `agent/budgetlogg.jsonl`
 +   (kod `OPS_STARTSKOTT`, `genomford: true`), committa och pusha **direkt**.
 +   Nekas pushen: larma i svaret. Utan raden går larmet ut igen imorgon.
 +
@@ -337,7 +342,7 @@ index 441e8d0..0f62a02 100644
  
  ## 5. Logga
  
-@@ -453,9 +355,9 @@ publicera ingen artefakt — se blocket högst upp i filen.
+@@ -453,9 +357,9 @@ publicera ingen artefakt — se blocket högst upp i filen.
  därmed inte sparades. Försök inte rädda dem någon annan väg.
  
  Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
@@ -350,7 +355,7 @@ index 441e8d0..0f62a02 100644
  
  **Skicka samma korta rapport till Discord** (Axels order 2026-08-30) —
  **på ENGELSKA.** Allt som postas som Bävern läses av det engelsktalande
-@@ -468,14 +370,18 @@ node agent/discord-post.mjs --kanal ronden "Daily round <datum>" "<rapporten i M
+@@ -468,14 +372,18 @@ node agent/discord-post.mjs --kanal ronden "Daily round <datum>" "<rapporten i M
  ```
  
  ⚠️ **ALLT som postas i Discord skrivs på ENGELSKA** — rubrik och brödtext, i
@@ -375,7 +380,7 @@ index 441e8d0..0f62a02 100644
  Skriptet sköter kanalval, delning över 2 000-teckengränsen, rate limits och
  **pingarna** (Axel 2026-09-02: varje post pingar personerna i `pinga` i
  `agent/discord.json` — i dag confident_otter_25993 och ecom_chadking). Skriv
-@@ -486,11 +392,12 @@ det på en rad i svaret. Varje rutin har sin egen kanal
+@@ -486,11 +394,12 @@ det på en rad i svaret. Varje rutin har sin egen kanal
  standardkanalen i stället för att tystna.
  
  Posta dessutom, i **egna** poster:
@@ -390,7 +395,7 @@ index 441e8d0..0f62a02 100644
  Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
  
  ## DEFINITION OF DONE
-@@ -500,14 +407,13 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
+@@ -500,14 +409,13 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
  - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
  - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
  - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
@@ -399,9 +404,9 @@ index 441e8d0..0f62a02 100644
 -- [ ] Inga briefer, hubbar eller minnesfiler skapade för NO — Norge är bara budget
 -- [ ] Ingen dom om privat/delad hubb fälld på `ancestor-path` (trasig signal, se 4b) — misstanke går till Axel som en fråga, inte som ett påstående
 -- [ ] Ett skapat Notion-item öppnat och kontrollerat: hela briefen står i sidan, ingen `.md`-länk
-+- [ ] Varje `forsta_batch`-behov har fått ett startskott i `#ops-startskott` —
-+      eller exakt redovisat varför inte (redan larmat, kampanjen inte ACTIVE,
-+      källänk saknas)
++- [ ] Listan hämtad ur `startskottsbehov` — inte ur `annonsbehov`
++- [ ] Varje rad i listan har fått ett startskott i `#ops-startskott` — eller
++      exakt redovisat varför inte (kampanjen inte ACTIVE, källänk saknas)
 +- [ ] Varje startskott loggat som `OPS_STARTSKOTT` och pushat
 +- [ ] **Inga briefer, inga Notion-hubbar, inga Notion-items, inga minnesfiler
 +      skapade** — varken för SE eller NO. Ronden gör inte det längre.
@@ -413,10 +418,10 @@ index 441e8d0..0f62a02 100644
 -- [ ] Nya och nyss arkiverade hubbar redovisade i leveransen
  - [ ] Kort svar till Axel enligt svarsformatet i CLAUDE.md regel 14
 diff --git a/agent/README.md b/agent/README.md
-index cf8b74f..d9ffa52 100644
+index cf8b74f..13b8518 100644
 --- a/agent/README.md
 +++ b/agent/README.md
-@@ -89,28 +89,32 @@ dem oförändrade — inte att bedöma dem.
+@@ -89,28 +89,42 @@ dem oförändrade — inte att bedöma dem.
    `/rond` finns kvar som manuellt läge. Dashboarden för människor:
    `agent/dashboard.mjs` → https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81
  
@@ -451,14 +456,25 @@ index cf8b74f..d9ffa52 100644
    ronden själv skrev "tunn marginal, se över priset".)*
 -- **Material pausat av trappan/avstängning senaste veckan** → ersätt (`/cs`).
 -- **2+ höjningar på en vecka** → mata vinnaren (`/cs`).
+-
+-En klar batch loggas som `FORSTA_BATCH_KLAR`/`CS_BATCH_KLAR` och tystar
+-produktens behov i sju dagar. Brieferna landar i produktens Notion-hub —
+-samma kö som redigerarna redan jobbar ur.
 +- **Bara Sverige.** En norsk kampanj utlöser aldrig ett startskott.
 +- `brief_runda`, `ersatt` och `mata_vinnare` räknas fortfarande av
 +  `annonsbehov` — men ronden gör ingenting med dem. Matematiken är kvar orörd
 +  så den går att slå på igen; utfallet är borttaget.
- 
--En klar batch loggas som `FORSTA_BATCH_KLAR`/`CS_BATCH_KLAR` och tystar
--produktens behov i sju dagar. Brieferna landar i produktens Notion-hub —
--samma kö som redigerarna redan jobbar ur.
++
++⚠️ **Listan kommer ur `startskottsbehov`, inte ur `annonsbehov`.**
++`forsta_batch` ges bara till produkter som ALDRIG haft en batch. Byggde man
++larmet på den skulle bara splitternya produkter larmas, medan de bevisade
++produkter som redan fick briefer under det gamla systemet aldrig larmades.
++*(Mätt 2026-09-10: 45 SE-kampanjer i loggen, 14 med batch.)*
++
++Två koder tystar en produkt för gott: `OPS_STARTSKOTT` (larmet har gått) och
++`OPS_FINNS_REDAN` (butiken fanns redan — seedad 2026-09-10 för
++Övervakningskameran/HeimGuard och IBC-Tanköverdraget/TankGuard).
++
 +Ett skickat startskott loggas som `OPS_STARTSKOTT` och tystar produkten för
 +gott — larmet går en gång, aldrig igen.
 +
@@ -467,6 +483,16 @@ index cf8b74f..d9ffa52 100644
  
  ## Så räknas break-even
  
+diff --git a/agent/budgetlogg.jsonl b/agent/budgetlogg.jsonl
+index fe51f30..cd40fe4 100644
+--- a/agent/budgetlogg.jsonl
++++ b/agent/budgetlogg.jsonl
+@@ -395,3 +395,5 @@
+ {"datum":"2026-09-10","kampanj_id":"120249850522830291","kampanj_namn":"Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18","ad_account_id":"1867947880635861","kod":"CS_BATCH_KLAR","genomford":true,"godkand_av":"auto — Axels stående beslut 2026-08-29","motivering":"Brief-runda batch #5 (/cs-runda via /rond-auto, 4-dagarsrundan, rundaAntal 6 + 3 BOF-bilder + 2 recensionsbilder = 11 briefer). Analys: 12 bedömbara annonser av kampanjens 104+, vinstbidrag +51 995 kr (upp från +42 914 kr 2026-09-06), video fortsatt ~93% av vinst/spend (bekräftat tredje gången), PD dominerar volym (+39 824 kr, 76,6% av vinsten), CS högst vinst/krona men bara i video (CS_1_H3 stagnerar, 0 nya köp på 4 dygn, kvarstår ej bevisad). NYTT FYND: benchmark PD_1_H1 visar utmattning (frequency 1,82, lägst vinst/krona av topp-5) medan PD_EXTRA (…564380291) gått om som mest lönsamma annons — batch #5 isolerar fräscha hook-iterationer på den senares struktur i stället för fler PD_1-varianter. NYTT FYND: visuell granskning av de tre statiska annonserna visar att vinnaren (PD_6_1) är enklast (en bild, minimal text) medan de två svagare har mer visuell komplexitet — SO_4_1 är dessutom felkodad (heter SO men är visuellt en collage, ingen rabatt). PRIS LÖST: 289 kr bekräftat mot Shopifys publika storefront-JSON (Shopify-MCP var oautentiserad) OCH mot två levande annonser som redan visar priset — löser BLOCKER:n från batch #3. HUVUDFYND (operativt, inte kreativt): batch #3 (2026-09-03) och batch #4 (2026-09-06) — 18 briefer — är fortfarande INTE launchade i Meta; endast 6 av 18 har nått Notion-status \"To be Reviewed\" (levererade, väntar på /notionkorning), 12 är fortfarande Draft. Ingen hypotes från de batcherna kunde stämmas av denna körning. Flaggat till Axel i backlog.md: redigerarkapacitet, inte kreativitet, är flaskhalsen — batch #5 byggdes medvetet konservativt (enbart iterationer på bevisade PD/CS-strukturer + två repliker av PD_6_1s static-formel, inga nya obevisade vinklar) eftersom kön redan är full. Modellpolicy-avvikelse (tredje gången): inget Agent/Task-verktyg med model-parameter tillgängligt i denna miljö, huvudsessionen skrev all copy själv med tre-frågorstestet kört rad för rad. Notion: 11 nya Draft-rader i hubben \"Fish rod holder\" (collection://3c3270ab-908c-8356-ad6c-87ff779e647d), verifierat med notion-fetch att full brief ligger i sidans innehåll. Drive: batchmapp Batch #5 (https://drive.google.com/drive/folders/1XPU_lz8ThC41FNloMyr-ug5ZdLqeeb8K) skapad i produktens Drive-rotmapp. products/fiskespohallaren/{dna,batch-log,backlog}.md uppdaterade."}
+ {"datum":"2026-09-10","kampanj_id":"120249989799680291","kampanj_namn":"Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21","ad_account_id":"1867947880635861","kod":"CS_BATCH_KLAR","genomford":true,"godkand_av":"auto — Axels stående beslut 2026-08-29","motivering":"Batch #4 briefad (4 dagar sedan batch #3, ingen Fokus angiven). 11 briefer: 6 video + 2 static i kärnrundan + 3 BOF, 0 review (0 organiska recensioner, Judge.me omverifierat). Feedbackloop: produktionen är flaskhalsen (8 av 13 briefer från batch #2/#3 oproducerade eller under 90 kr CBO-svält-spend); CS_2 graduerade till en tredje bedömbar/lönsam annons (8 köp, CPA 461 kr) med IDENTISK copy som CS_3 men produktrender i stället för app-demo — bevisar mönster 2 (demo > render, båda lönsamma). Viktigaste fyndet: CS_3s marginal-CPA (09-06→09-10, 4 dygn, 8 köp) passerade break-even för första gången (519,93 mot 508,92 kr) — inte kill-läge men en tidig varningssignal likt SP_2s tidigare mönster; SP_2 själv stabiliserades (marginal-CPA 447,75, bättre än förra läsningens 488). Batch #4 itererar båda vinnarna (proof-radens sanningshalt, offer-synlighet, fabricerad urgency borttagen på båda CS-visualerna) i stället för att bara skala budget. dna.md + batch-log.md + backlog.md uppdaterade. Notion (11 items, Surveillance Camera creative hub) + Drive (Batch #4-mapp) levererat, verifierat med notion-fetch."}
+ {"datum":"2026-09-10","kod":"CS_BATCH_KLAR","genomford":true,"kampanj_id":"120250001079150291","kampanj_namn":"IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28","ad_account_id":"1867947880635861","godkand_av":"auto — Axels stående beslut 2026-08-29","motivering":"Batch #4 (6 i rundan: PD_6_H1/H2, CS_5_H1, GT_5_H1, PD_6_1, CS_5_1) + 3 BOF (BOF_7/8/9) + 2 review (Magnus, Peter) levererade till Notion-hubben och Drive Batch #4. Toppfynd: PD_Extra blev bedömbar första gången (CPA 129 kr, bästa i kontot) med ORDAGRANT samma copy som PD_1_H1 men en mycket kortare video — batchen isolerar klipplängd (PD_6_H1) från öppningsbild (PD_6_H2) som två separata tester. Upprepat compliance-fynd: påhittad brådska finns nu bekräftad på två legacy-assets (video CS_1_H3 + statisk CS_2_1), flaggat till Axel, inte ändrat i Meta. Fjärde raden i rad med samma observandum: batch #3:s viktigaste briefer (PD_5_H1/H2) producerades aldrig alls av redigerarna — produktionsflaskhalsen är nu produktens dominerande hinder, inte vinklarna."}
++{"datum":"2026-09-10","kampanj_id":"120249989799680291","kampanj_namn":"Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21","ad_account_id":"1867947880635861","kod":"OPS_FINNS_REDAN","genomford":true,"motivering":"Produkten har redan en OPS-butik (HeimGuard (heimguard.se)), byggd innan startskottet fanns. Raden finns for att tysta larmet — utan den hade den larmat en gang i onodan.","godkand_av":"auto — Axels beslut 2026-09-10, seedad vid ombyggnaden"}
++{"datum":"2026-09-10","kampanj_id":"120250001079150291","kampanj_namn":"IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28","ad_account_id":"1867947880635861","kod":"OPS_FINNS_REDAN","genomford":true,"motivering":"Produkten har redan en OPS-butik (TankGuard), byggd innan startskottet fanns. Raden finns for att tysta larmet — utan den hade den larmat en gang i onodan.","godkand_av":"auto — Axels beslut 2026-09-10, seedad vid ombyggnaden"}
 diff --git a/agent/discord.json b/agent/discord.json
 index 5cf5a48..0df1a54 100644
 --- a/agent/discord.json
@@ -494,10 +520,10 @@ index 5cf5a48..0df1a54 100644
      "kalendrar-som-ska-runna": "1540553097636614254",
 diff --git a/agent/startskott.mjs b/agent/startskott.mjs
 new file mode 100644
-index 0000000..0ac5469
+index 0000000..428d980
 --- /dev/null
 +++ b/agent/startskott.mjs
-@@ -0,0 +1,273 @@
+@@ -0,0 +1,339 @@
 +#!/usr/bin/env node
 +// STARTSKOTTET — larmet som säger att en produkt klarat testet på
 +// Bäverbutiken och ska få en egen OPS-butik.
@@ -524,9 +550,23 @@ index 0000000..0ac5469
 +import { readFileSync } from 'node:fs';
 +import { pathToFileURL } from 'node:url';
 +import { skicka } from './discord-post.mjs';
++import {
++  arAvstangd,
++  FORSTA_BATCH_SPEND_SEK,
++  FORSTA_BATCH_VINST_PROCENT,
++} from './rond.mjs';
 +
 +/** Koden startskottet skriver i budgetloggen. Idempotensen hänger på den. */
 +export const STARTSKOTT_KOD = 'OPS_STARTSKOTT';
++
++/**
++ * Produkten har redan en OPS-butik — larma aldrig för den.
++ *
++ * Behövs för produkter som fick sin butik innan startskottet fanns
++ * (Övervakningskameran → HeimGuard, IBC-Tanköverdraget → TankGuard). Utan
++ * raden hade de larmat en gång i onödan, för de ligger stadigt över tröskeln.
++ */
++export const FINNS_REDAN_KOD = 'OPS_FINNS_REDAN';
 +
 +/**
 + * Kanalen. Axel skapade den 2026-09-10 för just det här larmet
@@ -568,7 +608,59 @@ index 0000000..0ac5469
 +  return logg.some((rad) => rad
 +    && rad.kampanj_id === kampanjId
 +    && rad.genomford === true
-+    && rad.kod === STARTSKOTT_KOD);
++    && (rad.kod === STARTSKOTT_KOD || rad.kod === FINNS_REDAN_KOD));
++}
++
++/**
++ * Vilka produkter ska få ett startskott i dag?
++ *
++ * ⚠️ **Läser tröskeln DIREKT, inte via `annonsbehov`.** Det är hela poängen.
++ * `annonsbehov` ger `forsta_batch` bara till produkter som ALDRIG haft en
++ * batch — den som redan fått en hamnar för alltid i `brief_runda` i stället.
++ * Byggde man larmet på `forsta_batch` skulle det därför bara utlösas för
++ * splitternya produkter, medan de 14 bevisade produkter som redan fått
++ * briefer under det gamla systemet aldrig fick något larm alls.
++ * *(Mätt i budgetloggen 2026-09-10: 45 SE-kampanjer, 14 med batch — bland dem
++ * Fiskespöhållaren, Båtmotorskyddet 420D och MC-Kapellet.)*
++ *
++ * Villkoret är Axels och är oförändrat: passerad total spend OCH vinstkravet.
++ * Talen importeras ur `rond.mjs` — de får aldrig skrivas av här.
++ *
++ * @param {Array} rader utfallet ur `bedomKampanj` (id, namn, spendTotal, dom)
++ * @returns {Array<{kampanj_id: string, namn: string, spendTotal: number, vinstProcent: number}>}
++ */
++export function startskottsbehov(rader, { logg = [], marknad = 'SE' } = {}) {
++  // Bara Sverige. Norska annonser är svenska annonser översatta i ett eget
++  // flöde — en norsk kampanj ska aldrig utlösa en ny butik.
++  if (marknad !== 'SE') return [];
++  if (!Array.isArray(rader)) return [];
++
++  const behov = [];
++  for (const r of rader) {
++    if (!r || !r.id) continue;
++    // Fryst = datan går inte att lita på. Avstängd eller på väg till trappan =
++    // produkten är på väg ut, inte in i en egen butik.
++    const kod = r.dom?.kod;
++    if (kod === 'FRYST' || kod === 'STANG_AV' || kod === 'ATGARDSTRAPPAN') continue;
++    // ...och aldrig en kampanj ronden redan HAR stängt av, oavsett dagens dom.
++    if (arAvstangd(logg, r.id)) continue;
++    // Larmet går en gång per produkt. Aldrig igen.
++    if (startskottHarGatt(logg, r.id)) continue;
++
++    const vinst = r.dom?.vinstProcent;
++    if (!Number.isFinite(r.spendTotal) || r.spendTotal < FORSTA_BATCH_SPEND_SEK) continue;
++    if (!Number.isFinite(vinst) || vinst < FORSTA_BATCH_VINST_PROCENT) continue;
++
++    behov.push({
++      kampanj_id: r.id,
++      namn: r.namn,
++      spendTotal: r.spendTotal,
++      vinstProcent: vinst,
++    });
++  }
++  // Störst spend först — den mest bevisade produkten är den som är mest värd
++  // en egen butik.
++  return behov.sort((a, b) => b.spendTotal - a.spendTotal);
 +}
 +
 +/** Svenskt heltal med tusenmellanslag. */
@@ -773,10 +865,10 @@ index 0000000..0ac5469
 +}
 diff --git a/agent/test/startskott.test.mjs b/agent/test/startskott.test.mjs
 new file mode 100644
-index 0000000..589a3fe
+index 0000000..65b5113
 --- /dev/null
 +++ b/agent/test/startskott.test.mjs
-@@ -0,0 +1,176 @@
+@@ -0,0 +1,279 @@
 +// Tester för startskottet (agent/startskott.mjs).
 +// Inget nätverk, inga filskrivningar, inget klockberoende — datum skickas in.
 +// `--torr` används överallt så ingen test någonsin postar i Discord.
@@ -785,15 +877,26 @@ index 0000000..589a3fe
 +import assert from 'node:assert/strict';
 +import {
 +  STARTSKOTT_KOD,
++  FINNS_REDAN_KOD,
 +  KANAL,
 +  KRAVDA_FALT,
 +  PROVLARM,
 +  startskottHarGatt,
++  startskottsbehov,
 +  saknadeFalt,
 +  formateraStartskott,
 +  byggLoggrad,
 +  skickaStartskott,
 +} from '../startskott.mjs';
++
++/** En rad som den ser ut ur `bedomKampanj` i rond.mjs. */
++const rad = (o = {}) => ({
++  id: 'K1',
++  namn: 'Testprodukten | BE ROAS 1.60 | Launch 2026-08-01',
++  spendTotal: 5000,
++  dom: { kod: 'LAT_VARA', vinstProcent: 25 },
++  ...o,
++});
 +
 +/** Ett komplett jobb. Talen är påhittade EXEMPEL — de finns bara i testet. */
 +const jobb = () => ({
@@ -952,4 +1055,96 @@ index 0000000..589a3fe
 +
 +test('kanalen är ops-startskott', () => {
 +  assert.equal(KANAL, 'ops-startskott');
++});
++
++// --- startskottsbehov: vilka som ska larmas -------------------------------
++
++test('startskottsbehov: en produkt över tröskeln larmas', () => {
++  assert.deepEqual(
++    startskottsbehov([rad()], { logg: [] }).map((b) => b.kampanj_id),
++    ['K1'],
++  );
++});
++
++test('startskottsbehov: DEN VIKTIGA — en produkt med gammal batch larmas ändå', () => {
++  // Det här är buggen som fanns i första versionen: `annonsbehov` ger
++  // forsta_batch bara till produkter UTAN batch, så 14 bevisade produkter
++  // hade aldrig fått ett larm. Tröskeln läses därför direkt.
++  const logg = [{ kampanj_id: 'K1', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-20' },
++    { kampanj_id: 'K1', kod: 'CS_BATCH_KLAR', genomford: true, datum: '2026-09-01' }];
++  assert.equal(startskottsbehov([rad()], { logg }).length, 1);
++});
++
++test('startskottsbehov: under spendtröskeln larmas inte', () => {
++  assert.deepEqual(startskottsbehov([rad({ spendTotal: 1499 })], { logg: [] }), []);
++});
++
++test('startskottsbehov: exakt på spendtröskeln larmas', () => {
++  assert.equal(startskottsbehov([rad({ spendTotal: 1500 })], { logg: [] }).length, 1);
++});
++
++test('startskottsbehov: under vinstkravet larmas inte', () => {
++  const r = rad({ dom: { kod: 'LAT_VARA', vinstProcent: 19.9 } });
++  assert.deepEqual(startskottsbehov([r], { logg: [] }), []);
++});
++
++test('startskottsbehov: exakt på vinstkravet larmas', () => {
++  const r = rad({ dom: { kod: 'LAT_VARA', vinstProcent: 20 } });
++  assert.equal(startskottsbehov([r], { logg: [] }).length, 1);
++});
++
++test('startskottsbehov: okänd vinst larmas aldrig', () => {
++  const r = rad({ dom: { kod: 'FOR_LITE_DATA', vinstProcent: null } });
++  assert.deepEqual(startskottsbehov([r], { logg: [] }), []);
++});
++
++test('startskottsbehov: redan larmad tystas', () => {
++  const logg = [{ kampanj_id: 'K1', kod: STARTSKOTT_KOD, genomford: true }];
++  assert.deepEqual(startskottsbehov([rad()], { logg }), []);
++});
++
++test('startskottsbehov: produkt som redan har en OPS-butik tystas', () => {
++  const logg = [{ kampanj_id: 'K1', kod: FINNS_REDAN_KOD, genomford: true }];
++  assert.deepEqual(startskottsbehov([rad()], { logg }), []);
++});
++
++test('startskottsbehov: fryst, avstängd och trappan larmas aldrig', () => {
++  for (const kod of ['FRYST', 'STANG_AV', 'ATGARDSTRAPPAN']) {
++    const r = rad({ dom: { kod, vinstProcent: 40 } });
++    assert.deepEqual(startskottsbehov([r], { logg: [] }), [], `${kod} skulle inte larma`);
++  }
++});
++
++test('startskottsbehov: en kampanj som ronden stängt av tidigare larmas inte', () => {
++  const logg = [{ kampanj_id: 'K1', kod: 'STANG_AV', genomford: true, datum: '2026-09-01' }];
++  assert.deepEqual(startskottsbehov([rad()], { logg }), []);
++});
++
++test('startskottsbehov: återaktiverad kampanj larmas igen', () => {
++  const logg = [
++    { kampanj_id: 'K1', kod: 'STANG_AV', genomford: true, datum: '2026-09-01' },
++    { kampanj_id: 'K1', kod: 'ATERAKTIVERA', genomford: true, datum: '2026-09-02' },
++  ];
++  assert.equal(startskottsbehov([rad()], { logg }).length, 1);
++});
++
++test('startskottsbehov: Norge larmas aldrig', () => {
++  assert.deepEqual(startskottsbehov([rad()], { logg: [], marknad: 'NO' }), []);
++});
++
++test('startskottsbehov: störst spend först', () => {
++  const rader = [
++    rad({ id: 'liten', spendTotal: 2000 }),
++    rad({ id: 'stor', spendTotal: 90000 }),
++    rad({ id: 'mellan', spendTotal: 40000 }),
++  ];
++  assert.deepEqual(
++    startskottsbehov(rader, { logg: [] }).map((b) => b.kampanj_id),
++    ['stor', 'mellan', 'liten'],
++  );
++});
++
++test('startskottsbehov: tål skräp i indatan', () => {
++  assert.deepEqual(startskottsbehov(null, { logg: [] }), []);
++  assert.deepEqual(startskottsbehov([null, {}, rad({ id: null })], { logg: [] }), []);
 +});

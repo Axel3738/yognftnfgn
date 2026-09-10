@@ -1,4 +1,13 @@
-# Skalningskungen — ombyggnaden av annonshalvan (färdig, väntar på att läggas live)
+# Skalningskungen — ombyggnaden av annonshalvan
+
+✅ **LIVE sedan 2026-09-10.** Pushad till `claude/daily-agent-discussion-uos5df`
+(commit `9a0303f` + `a1c83dd`). Nästa körning 07:30 plockar upp den själv.
+Filerna här är en kopia så arbetet överlever att containern försvinner.
+
+**Läget vid avläsningen 2026-09-10:** fyra produkter ligger över tröskeln och
+får ett startskott i morgon — Damasker Vandring, Adventskalendern Racingbilar,
+Taköverdraget för Husvagn och Isolerade Utekattkojan.
+
 
 **Axels beslut 2026-09-10.** Ronden ska sluta göra briefer. I stället postar
 den ett startskott i Discord-kanalen `#ops-startskott` när en produkt klarat
@@ -11,15 +20,16 @@ testet på Bäverbutiken.
 
 ---
 
-## Varför ändringen ligger här och inte på sin plats
+## Varför en kopia ligger här
 
 Rutinen "Skalnings kungen" kör från grenen
 **`claude/daily-agent-discussion-uos5df`**, inte från `main`. Hela
-`agent/`-mappen och `rond-auto.md` finns bara där. Den här sessionen får inte
-pusha till den grenen utan att Axel säger till.
+`agent/`-mappen och `rond-auto.md` finns bara där. En session som bara läser
+`main` ser därför ingenting av det här — och har två gånger dragit slutsatsen
+att rutinen inte finns.
 
-Ändringen är därför **byggd och testad mot den grenen** och sparad här som en
-patch, så den överlever att containern försvinner.
+Kopian och patchen ligger kvar som facit och som räddning om grenen skulle
+tappas bort.
 
 ## Vad som ändras
 
@@ -53,25 +63,28 @@ Oförändrad, och den fanns redan: **1 500 kr total spend OCH minst 20 % vinst**
 (`FORSTA_BATCH_SPEND_SEK` och `FORSTA_BATCH_VINST_PROCENT` i `agent/rond.mjs`).
 Bara utfallet är nytt.
 
+## Buggen som fångades innan den hann göra skada
+
+Första versionen byggde larmet på `annonsbehov`s `forsta_batch`. Det ger bara
+utslag för produkter som **aldrig** haft en batch — den som redan fått en
+hamnar för alltid i `brief_runda`. Larmet hade därför bara utlösts för
+splitternya produkter, medan de bevisade produkterna aldrig larmats alls.
+
+Mätt i budgetloggen 2026-09-10: **45 SE-kampanjer, 14 med batch** — bland dem
+Fiskespöhållaren, Båtmotorskyddet 420D och MC-Kapellet.
+
+Fixen är `startskottsbehov()` i `agent/startskott.mjs`, som läser tröskeln
+direkt ur `rond.mjs`. `annonsbehov` är fortfarande helt orörd.
+
 ## Testat
 
-- 152 tester gröna på grenen (23 av dem nya).
+- 167 tester gröna på grenen (38 av dem nya).
 - Provlarmet postat skarpt i `#ops-startskott` 2026-09-10 och tillbakaläst ur
   kanalen. Det pingade båda mottagarna.
+- Beslutsmotorn körd read-only mot färsk Meta-data samma dag: fyra produkter
+  ligger över tröskeln.
 
-## Så läggs den live
-
-```bash
-git checkout claude/daily-agent-discussion-uos5df
-git apply factory/skalningskungen-live/andringen.patch
-npm test
-git add -A && git commit && git push origin claude/daily-agent-discussion-uos5df
-```
-
-Nästa körning 07:30 plockar upp den automatiskt — rutinen checkar ut grenen
-själv vid varje start.
-
-## Två saker som är lätta att göra fel efteråt
+## Tre saker som är lätta att göra fel efteråt
 
 ⚠️ **Loggraden får aldrig bära `ny_budget`.** `dagarSedanAndring` i
 `agent/logg.mjs` räknar varje genomförd rad med det fältet som en
@@ -81,3 +94,6 @@ rört budgeten. `byggLoggrad` utelämnar fältet med flit.
 ⚠️ **`#ops-startskott` är den enda kanalen som skrivs på svenska.** Alla andra
 rutinposter är engelska för att redigerarna läser samma kanaler. Den här läses
 av Axel och VA:n, och mallen är Axels egen. Översätt den aldrig.
+
+⚠️ **Bygg aldrig larmet på `annonsbehov`.** Se avsnittet om buggen ovan.
+Listan ska komma ur `startskottsbehov`, som mäter mot tröskeln direkt.

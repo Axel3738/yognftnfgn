@@ -24,9 +24,23 @@
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { skicka } from './discord-post.mjs';
+import {
+  arAvstangd,
+  FORSTA_BATCH_SPEND_SEK,
+  FORSTA_BATCH_VINST_PROCENT,
+} from './rond.mjs';
 
 /** Koden startskottet skriver i budgetloggen. Idempotensen hänger på den. */
 export const STARTSKOTT_KOD = 'OPS_STARTSKOTT';
+
+/**
+ * Produkten har redan en OPS-butik — larma aldrig för den.
+ *
+ * Behövs för produkter som fick sin butik innan startskottet fanns
+ * (Övervakningskameran → HeimGuard, IBC-Tanköverdraget → TankGuard). Utan
+ * raden hade de larmat en gång i onödan, för de ligger stadigt över tröskeln.
+ */
+export const FINNS_REDAN_KOD = 'OPS_FINNS_REDAN';
 
 /**
  * Kanalen. Axel skapade den 2026-09-10 för just det här larmet
@@ -68,7 +82,59 @@ export function startskottHarGatt(logg, kampanjId) {
   return logg.some((rad) => rad
     && rad.kampanj_id === kampanjId
     && rad.genomford === true
-    && rad.kod === STARTSKOTT_KOD);
+    && (rad.kod === STARTSKOTT_KOD || rad.kod === FINNS_REDAN_KOD));
+}
+
+/**
+ * Vilka produkter ska få ett startskott i dag?
+ *
+ * ⚠️ **Läser tröskeln DIREKT, inte via `annonsbehov`.** Det är hela poängen.
+ * `annonsbehov` ger `forsta_batch` bara till produkter som ALDRIG haft en
+ * batch — den som redan fått en hamnar för alltid i `brief_runda` i stället.
+ * Byggde man larmet på `forsta_batch` skulle det därför bara utlösas för
+ * splitternya produkter, medan de 14 bevisade produkter som redan fått
+ * briefer under det gamla systemet aldrig fick något larm alls.
+ * *(Mätt i budgetloggen 2026-09-10: 45 SE-kampanjer, 14 med batch — bland dem
+ * Fiskespöhållaren, Båtmotorskyddet 420D och MC-Kapellet.)*
+ *
+ * Villkoret är Axels och är oförändrat: passerad total spend OCH vinstkravet.
+ * Talen importeras ur `rond.mjs` — de får aldrig skrivas av här.
+ *
+ * @param {Array} rader utfallet ur `bedomKampanj` (id, namn, spendTotal, dom)
+ * @returns {Array<{kampanj_id: string, namn: string, spendTotal: number, vinstProcent: number}>}
+ */
+export function startskottsbehov(rader, { logg = [], marknad = 'SE' } = {}) {
+  // Bara Sverige. Norska annonser är svenska annonser översatta i ett eget
+  // flöde — en norsk kampanj ska aldrig utlösa en ny butik.
+  if (marknad !== 'SE') return [];
+  if (!Array.isArray(rader)) return [];
+
+  const behov = [];
+  for (const r of rader) {
+    if (!r || !r.id) continue;
+    // Fryst = datan går inte att lita på. Avstängd eller på väg till trappan =
+    // produkten är på väg ut, inte in i en egen butik.
+    const kod = r.dom?.kod;
+    if (kod === 'FRYST' || kod === 'STANG_AV' || kod === 'ATGARDSTRAPPAN') continue;
+    // ...och aldrig en kampanj ronden redan HAR stängt av, oavsett dagens dom.
+    if (arAvstangd(logg, r.id)) continue;
+    // Larmet går en gång per produkt. Aldrig igen.
+    if (startskottHarGatt(logg, r.id)) continue;
+
+    const vinst = r.dom?.vinstProcent;
+    if (!Number.isFinite(r.spendTotal) || r.spendTotal < FORSTA_BATCH_SPEND_SEK) continue;
+    if (!Number.isFinite(vinst) || vinst < FORSTA_BATCH_VINST_PROCENT) continue;
+
+    behov.push({
+      kampanj_id: r.id,
+      namn: r.namn,
+      spendTotal: r.spendTotal,
+      vinstProcent: vinst,
+    });
+  }
+  // Störst spend först — den mest bevisade produkten är den som är mest värd
+  // en egen butik.
+  return behov.sort((a, b) => b.spendTotal - a.spendTotal);
 }
 
 /** Svenskt heltal med tusenmellanslag. */
