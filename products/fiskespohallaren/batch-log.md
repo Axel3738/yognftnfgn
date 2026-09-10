@@ -165,6 +165,97 @@ om Agent-verktyget finns tillgängligt då, och använd det om så — annars ä
 detta en känd begränsning i den schemalagda `/rond-auto`-miljön, inte ett
 medvetet vals bort av regeln.
 
+**Utfall (avläst 2026-09-10, körning nr 3):** FORTFARANDE inte launchade i
+Meta (kontrollerat: inget av de 9 namnen finns i kampanjen, `date_preset:
+maximum`). Läget i Notion-hubben (kontrollerat rad för rad, 2026-09-10):
+
+| Annons | Status |
+|---|---|
+| `Rodholder_PD_31_H1` (batch #3) | To be Reviewed — levererad, väntar på `/notionkorning` |
+| `Rodholder_CS_4_H1` (batch #3) | To be Reviewed — levererad, väntar på `/notionkorning` |
+| `Rodholder_GT_4_H1` (batch #3) | To be Reviewed — levererad, väntar på `/notionkorning` |
+| `Rodholder_PD_32_1` (batch #3) | Draft — ej påbörjad |
+| `Rodholder_SO_5_1` (batch #3) | Draft — ej påbörjad. Prisblockeringen är löst (289 kr bekräftat, se dna.md) men raden är inte uppdaterad |
+| `Rodholder_GA_1_1` (batch #3) | Draft — ej påbörjad |
+| `Rodholder_JF_1_1` (batch #3) | Draft — ej påbörjad |
+| `Rodholder_SP_3_1` (batch #3) | Draft — ej påbörjad |
+| `Rodholder_SP_4_1` (batch #3) | Draft — ej påbörjad |
+| `Rodholder_SP_5_H1` (batch #4) | To be Reviewed — levererad, väntar på `/notionkorning` |
+| `Rodholder_PD_34_H1` (batch #4) | To be Reviewed — levererad, väntar på `/notionkorning` |
+| `Rodholder_CS_5_H1` (batch #4) | To be Reviewed — levererad, väntar på `/notionkorning` |
+| `Rodholder_PD_35_1` (batch #4) | Draft — ej påbörjad |
+| `Rodholder_SO_6_1` (batch #4) | Draft — ej påbörjad |
+| `Rodholder_JF_2_1` (batch #4) | Draft — ej påbörjad |
+| `Rodholder_TR_1_1` (batch #4) | Draft — ej påbörjad |
+| `Rodholder_SP_6_1` (batch #4) | Draft — ej påbörjad |
+| `Rodholder_SP_7_1` (batch #4) | Draft — ej påbörjad |
+
+**Ingen av batch #3:s eller batch #4:s hypoteser kan alltså stämmas av än.**
+6 av 18 briefer är levererade av redigerarna och väntar på
+`/notionkorning`-uppladdning; 12 av 18 är inte påbörjade. Det här är inte ett
+kreativt fynd utan ett kapacitets-/leveransfynd — se `backlog.md`.
+
+---
+
+## Batch #5 — 2026-09-10 (denna körning, `/rond-auto` → `/cs`, 4-dagarsrundan,
+`rundaAntal: 6` + 3 BOF + 2 recensioner = 11 briefer totalt)
+
+**Strategi:** medvetet konservativ, byggd nästan uteslutande på bevisade
+PD/CS-strukturer plus två direkta repliker av den bevisade static-formeln
+(`PD_6_1`). Ingen ny, obevisad vinkel (GT/SP/JF/TR/SO) läggs till — 18
+briefer väntar redan i kön (se ovan), och att lägga till fler obevisade
+vinklar innan de befintliga ens granskats hjälper varken datan eller
+redigerarnas arbetsbelastning. De tre BOF-bilderna är nya ANGLES
+(Klarna/värde-stack/hållbarhet) men på redan bevisat, prisoberoende
+underlag — inte nya kreativa hypoteser om vad som säljer.
+
+| Annons | Format | Koncept | Hypotes | Isolerad variabel |
+|---|---|---|---|---|
+| `Rodholder_PD_36_H1` | Video | PD (demo) | `PD_1_H1` (benchmark) visar utmattningstecken (frequency 1,82, högst i gruppen, lägst vinst/krona av topp-5-video) medan `PD_EXTRA` (…564380291) är kampanjens mest lönsamma annons — en helt ny öppningsrad på den senares struktur testar om fräschhet återställer prestandan utan att röra resten av manuset | Ny hook/öppningsrad, allt annat i den bevisade PD-strukturen oförändrat |
+| `Rodholder_PD_37_H1` | Video | PD (demo) | Ingen levande video säger priset högt/i bild — bara vår bäst presterande static (`PD_6_1`) gör det. Nu när 289 kr är bekräftat: testa samma explicithet i video | Pris (289 kr) nämnt explicit vid ca 8 s, inte bara implicit på slutkortet |
+| `Rodholder_CS_6_H1` | Video | CS (brådska) | CS-mönstret är bevisat i video (`CS_1_H1`, +9 784 kr) men alltid text-only urgency hittills. Testar TALAD urgency (voiceover). Undviker medvetet den äldre "40 % rabatt"-framingen — inget jämförpris finns i Shopify | Leveranskanal för urgency: röst (VO), inte bara text/caption |
+| `Rodholder_PD_40_H1` | Video | PD (demo) | Alla nuvarande topp-videor visar produkten inom ~3 s. Testar en LÄNGRE pain-first cold open (produkt visas först vid sek 6–10) — en sekvenserings-variabel ingen tidigare batch isolerat | Pacing: fördröjd produktreveal, samma budskap |
+| `Rodholder_PD_38_1` | Static | PD (demo, format-transfer) | Andra oberoende repliken av `PD_6_1`s vinnarformel (enkel bild, minimal text, pris synligt) i NY miljö (bagageutrymme) — flyttar hypotesen från n=1 mot bevisad om den också vinner | Miljö/kontext (bagageutrymme), samma minimalistiska formel |
+| `Rodholder_PD_41_1` | Static | PD (demo, format-transfer) | Tredje oberoende repliken av samma formel, NY miljö (garage/vägghängning) | Miljö/kontext (garage), samma minimalistiska formel |
+| `Rodholder_KL_1_1` | Static, BOF | Klarna | Klarna är ett bekräftat äkta, prisoberoende erbjudande som aldrig fått en egen dedikerad creative — bara nämnts i löptext i andra annonser | — |
+| `Rodholder_SO_7_1` | Static, BOF | Värde-stack | Ingen befintlig creative visar hela erbjudandepaketet (pris + garanti + frakt + Klarna) samlat. Går att bygga nu utan BLOCKER eftersom priset är bekräftat | — |
+| `Rodholder_JF_3_1` | Static, BOF | Invändning: hållbarhet | JF har hittills täckt kompatibilitet (`JF_1_1`) och DIY-jämförelse (`JF_2_1`) — hållbarhet/kvalitet ("håller den ihop i vågor och gupp?") är en tredje, otestad invändning | — |
+| `Rodholder_SP_8_1` | Static, review | Recension (Fredrik) | Riktig recension, ordagrant citat — tredje paret recensenter (Anders/Peter användes batch #3, Johan/Mikael batch #4) | — |
+| `Rodholder_SP_9_1` | Static, review | Recension (Lars) | Riktig recension, ordagrant citat | — |
+
+**Prisstatus:** LÖST denna körning — 289 kr bekräftat mot Shopifys publika
+JSON (`compare_at_price` tomt, inget jämförpris möjligt) OCH mot två levande
+annonser som redan visar priset. Alla nya annonser i batch #5 skriver ut
+289 kr rakt av, ingen döljer det längre, ingen fabricerar en rabatt.
+
+Notion: alla 11 laddade som `Draft` i hubben "Fish rod holder"
+(`collection://3c3270ab-908c-8356-ad6c-87ff779e647d`), Typ "Video - Pending
+Approval" resp. "Image - Pending Approval". Verifierat genom att läsa
+tillbaka `Rodholder_PD_36_H1` med `notion-fetch` — hela briefen (hook,
+tre-frågorstabell, script/shot-list, rules) står i sidans innehåll.
+
+Drive: batchmapp `Batch #5` skapad i produktens Drive-rotmapp
+(`10WK2ZKvDzCTMNf7RC6N2KkRs2UqqAhMv` — samma mapp som Batch #4 ligger i;
+`agent/produktkarta.json`s `drive_senaste_batchmapp_id` pekade dit),
+id `1XPU_lz8ThC41FNloMyr-ug5ZdLqeeb8K`, länkad i varje brief.
+
+⚠️ **Drive-mapp-inkonsekvens upptäckt, inte löst:** batch #3:s brief
+(`batch-log.md` ovan) anger produktmappen som `14-_uqZQnj4j_R-PqdUwZzZc2DPAenkhy`
+("..._pausad"), medan batch #1, #4 och nu #5 alla ligger under
+`10WK2ZKvDzCTMNf7RC6N2KkRs2UqqAhMv` (samma mapp som recensions-kalkylbladet
+faktiskt ligger i, verifierat 2026-09-10). Troligen skrev batch #3-sessionen
+fel produktmapps-ID. Rättas inte retroaktivt av den här körningen — nämns så
+en framtida session inte blir förvirrad av att två ID:n cirkulerar.
+
+⚠️ **Modellpolicy-avvikelse (tredje gången i rad):** inget Agent/Task-verktyg
+med `model`-parameter hittades i den här sessionens verktygslåda (sökt via
+ToolSearch på "agent subagent task spawn sonnet haiku model" — inga träffar
+utöver `TaskStop`/generella verktyg utan modellparameter). All svensk copy i
+denna batch skrevs därför av huvudsessionen själv, med tre-frågorstestet
+kört rad för rad som substitut (redovisat i varje brief). Samma begränsning
+som batch #4 (2026-09-06) och konsekvent nog för att vara en miljöbegränsning
+i den schemalagda `/rond-auto`-miljön snarare än ett enskilt undantag.
+
 **Utfall:** ej avläst ännu (annonserna är briefer, inte launchade — nästa
-`/cs`-körning läser av dessa OCH batch #3 när redigerarna levererat och de
-gått live).
+`/cs`-körning läser av dessa OCH de fortfarande olästa batch #3/#4 när
+redigerarna levererat och de gått live).
