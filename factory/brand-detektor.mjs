@@ -130,7 +130,7 @@ export function läsButik(produktId) {
  *  ett tal med "kr" efter sig som inte står här är källbutikens pris, inte
  *  vårt — norska källannonser bär NOK-tal (579 → 439) som en SEK-butik
  *  aldrig tar. */
-export function prislista(produkt) {
+export function prislista(produkt, marknad = 'SE') {
   const ut = new Set();
   const gå = (o) => {
     if (!o || typeof o !== 'object') return;
@@ -139,7 +139,13 @@ export function prislista(produkt) {
       else if (v && typeof v === 'object') gå(v);
     }
   };
-  gå(produkt);
+  // En marknad med EGEN prislista (produktfilens `priser_marknad.NO`, NOK) läses
+  // ensam — SEK-priserna gäller inte där, och NOK-talen får aldrig fria en
+  // svensk annons. Saknas blocket gäller grundpriserna för marknaden.
+  const m = String(marknad || 'SE').toUpperCase();
+  const egen = produkt?.priser_marknad?.[m];
+  if (egen && typeof egen === 'object') gå(egen);
+  else gå({ ...(produkt || {}), priser_marknad: undefined });
   return [...ut].sort((a, b) => a - b);
 }
 
@@ -787,7 +793,7 @@ async function main() {
   }
   // Prislistan ur produktfilen är facit för "fel pris" (villkorsskanningens
   // pris-regel). Utan lista görs ingen prisjämförelse — och det sägs.
-  const priser = prislista(produkt);
+  const priser = prislista(produkt, marknad);
   const utMapp = join(ROT, 'factory', 'output', produktId);
   // Butikens recensioner (importerade ur källan, factory/output/<id>/kalla-
   // recensioner.json) är facit för "Verifierad kund"-citat i materialet.

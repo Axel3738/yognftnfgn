@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 import { sökBrand, normalisera, avstånd } from '../brandord.mjs';
 import {
   copyFält, länkAv, mediaAv, klassa, transkriptFör, läsTranskript, replikerMedBrand,
-  attGöra, sökVillkor, vägSamman, källaViaTitel, villkorstexter,
+  attGöra, sökVillkor, vägSamman, källaViaTitel, villkorstexter, prislista,
 } from '../brand-detektor.mjs';
 import { lasYaml } from '../yaml.mjs';
 
@@ -332,4 +332,22 @@ test('varje produktfil med kalla-block pekar på rätt källkonto', () => {
     assert.equal(p.kalla.annonskonto, '1867947880635861', id);
     assert.ok(p.kalla.annonsprefix, `${id} saknar annonsprefix`);
   }
+});
+
+// -------------------------------------------------- prislistan per marknad
+
+test('prislista: SEK för SE, marknadens egen lista (NOK) ensam för NO', () => {
+  // AdventLane 2026-09-10: Axel gav de norska priserna (439/579 NOK, samma som
+  // källan). De får fria norska annonser — aldrig svenska, och SEK-priserna
+  // får inte fria en norsk annons som säger 499.
+  const p = {
+    ekonomi: { pris: 499, jamforpris: 649, inkopskostnad: 191 },
+    offer: { bonus_produkt: { pris: 0 } },
+    priser_marknad: { NO: { valuta: 'NOK', pris: 439, jamforpris: 579, paket: [{ antal: 2, pris: 746.3 }] } },
+  };
+  assert.deepEqual(prislista(p, 'SE'), [499, 649]);
+  assert.deepEqual(prislista(p), [499, 649]);
+  assert.deepEqual(prislista(p, 'NO'), [439, 579, 746.3]);
+  // Utan eget block: grundpriserna gäller även för NO.
+  assert.deepEqual(prislista({ ekonomi: { pris: 499, jamforpris: 649 } }, 'NO'), [499, 649]);
 });

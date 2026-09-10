@@ -158,7 +158,7 @@ async function kör() {
   const domar = new Map((det.annonser || []).filter((r) => String(r.marknad || 'SE').toUpperCase() === marknad).map((r) => [r.annons, r]));
   if (domar.size === 0) dö(`brand-detektor.json har inga ${marknad}-rader — kör brand-detektor.mjs --marknad ${marknad} (oläst är aldrig ren).`);
 
-  const butikMedFacit = { ...butik, priser: prislista(p), recensioner: läsRecensioner(utMapp) };
+  const butikMedFacit = { ...butik, priser: prislista(p, marknad), recensioner: läsRecensioner(utMapp) };
   const prefixKalla = String(p.kalla.annonsprefix);
   const prefixMal = String(p.meta.creative_prefix);
   const brandkod = prefixMal.toUpperCase();

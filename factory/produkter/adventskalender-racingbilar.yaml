@@ -34,6 +34,26 @@ ekonomi:
   pris: 499
   jamforpris: 649
 
+# Priser per marknad. Axels besked 2026-09-10 (skärmdump ur källans norska
+# marknad): "14 Dagers Angrerett & Norsk Kundeservice", gratis frakt i Norge.
+# Samma NOK-priser som Bäverbutiken NO — annonsernas 579 → 439 kr är alltså
+# RÄTT pris för Norge. Sätts i butiken när NOK är påslaget (CHECKLISTA
+# avsnitt 5: Settings → Markets → Norway → NOK); tills dess visar /nb SEK och
+# den norska kampanjen får inte launchas (/ny-annonser steg 11b).
+# Detektorns prisregel läser den här listan för NO i stället för SEK-priserna.
+priser_marknad:
+  NO:
+    valuta: NOK
+    pris: 439
+    jamforpris: 579
+    paket:
+      - antal: 2
+        pris: 746.30
+        jamforpris: 1158
+      - antal: 3
+        pris: 1053.60
+        jamforpris: 1737
+
 varianter:
 media:
   bilder:
@@ -227,14 +247,8 @@ kalla:
     # NO — samma villkor på norska.
     - fran: "✅ 30 dagers åpent kjøp"
       till: "✅ 14 dagers angrerett"
-    # NO — NOK-priset (439 kr) finns inte i butiken (NO-marknaden säljer i SEK
-    # tills NOK-nivåer sätts). Priset tas bort ur beskrivningen, resten står.
-    - fran: "Sjokoladen tom dag 2 – denne varer til jul, 439 kr"
-      till: "Sjokoladen tom dag 2 – denne varer til jul"
-    - fran: "24 biler i en gaveeske, klar til jul – 439 kr"
-      till: "24 biler i en gaveeske, klar til jul"
-    - fran: "24 ekte biler bak lukene – kun 439 kr"
-      till: "24 ekte biler bak lukene"
+    # NO — priset 439 kr (NOK) står kvar ordagrant: det ÄR butikens norska pris
+    # (Axel 2026-09-10, `priser_marknad.NO`). Inga prisbyten i norsk copy.
 kallor:
   drive_mapp: ""
 
