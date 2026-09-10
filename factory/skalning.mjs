@@ -2,11 +2,27 @@
 // Graph-anrop och rör ALDRIG en status. PAUSED i kontot är ett beslut.
 //
 //   node factory/skalning.mjs <butik|produkt> [--dagar 14] [--sedan 2026-09-01] [--json]
+//                             [--marknad SE|NO|ALLA] [--arv] [--arv-dagar 90] [--spara]
 //   node factory/skalning.mjs tankguard --dagar 30
+//   node factory/skalning.mjs hemvakten --dagar 14 --arv --marknad SE --spara
 //
 // Kräver env META_ACCESS_TOKEN. Noll npm-beroenden (går via tools/meta-lib.mjs).
 // Ursprung: factory/skalning.mjs på grenen claude/skalningskungen-butik-setup-divhii.
 // Tillagt här 2026-09-09: de två lägena, klassificeringen och tvålinjeslogiken.
+// Tillagt 2026-09-10 (Axels besked samma dag: "döm på helheten"):
+//   • hook/hold räknas på 3-SEKUNDERSVISNINGAR och THRUPLAY. Det gamla måttet
+//     (video_play_actions / impressions) är AUTOPLAY och låg på 89–96 % för
+//     samtliga videor (products/motorholjet/dna.md) — det skiljer inget åt.
+//     Det gamla finns kvar som `hook_autoplay`/`hold_p50` för jämförelse.
+//   • CPC och länkklick hämtas.
+//   • --marknad: TANKGUARD_SE_… och TANKGUARD_NO_… rankades ihop mot svenskt
+//     pris (skarp körning 2026-09-10). Rader utan marknadskod räknas som SE.
+//   • --arv: ÄRVD HISTORIK. OPS-kampanjerna är nya och nästan tomma, men
+//     samma produkt har ofta månader av data på Bäverbutiken ("vi kan i
+//     början köra från bäverbutikens annonser … all data ligger kvar").
+//     Bäverbutiken LÄSES bara — arv-vägen kan inte skriva (se hamtaArv).
+//   • --spara: snapshot till factory/output/<butik>/insights-<datum>.json så
+//     nästa rond kan jämföra mot en ≥3 dygn äldre bild (ANALYSMETOD 2b).
 //
 // ⚠️ TVÅ LÄGEN, SAMMA ROND (kravspec: factory/SKALNINGSKUNGEN.md)
 //   TEST  (Bäverbutiken)  — BARA tröskelkoll. Passeras tröskeln skjuts
@@ -33,9 +49,16 @@
 // `spend`, `actions[omni_purchase]`, `cost_per_action_type[omni_purchase]`,
 // `purchase_roas[]`, `action_values[omni_purchase]`. Samma tal, olika namn.
 
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+// ⚠️ Bara LÄSANDE funktioner importeras ur meta-lib (alla/api är GET utan form).
+// Inga skapande, aktiverande eller uppladdande funktioner får in här — ett test vaktar det.
 import { alla, api, säkerställProxy } from '../tools/meta-lib.mjs';
-import { laddaButik, sakerstallKonto, tillhorButiken, TROSKEL, redigerareFor, arKordag } from './register.mjs';
+import {
+  laddaButik, sakerstallKonto, tillhorButiken, TROSKEL, redigerareFor, arKordag,
+  BAVERBUTIKEN_ANNONSKONTO,
+} from './register.mjs';
 import { linjetext } from './ekonomi.mjs';
 import { formateraStartskott } from './startskott.mjs';
 
@@ -72,9 +95,23 @@ export function normalisera(rad, status = {}) {
   const roas = plockaAction(rad.purchase_roas, 'omni_purchase', 'purchase');
   const cpaFalt = plockaAction(rad.cost_per_action_type, 'omni_purchase', 'purchase');
   const visningar = nr(rad.impressions);
+  const klick = nr(rad.clicks);
+
+  // Videomåtten. ⚠️ Två familjer som lätt blandas ihop:
+  //   video_play_actions           = AUTOPLAY-starter (89–96 % av visningarna,
+  //                                  skiljer inget åt — behålls bara för jämförelse)
+  //   actions[video_view]          = 3-SEKUNDERSVISNINGAR (Graph: "video_view =
+  //                                  3-second video views") — det är HOOKEN
+  //   video_thruplay_watched_actions = thruplay (15 s eller hela videon) — HOLD
+  // Bildannonser saknar alla dessa och får null, aldrig 0 %.
   const spelningar = plockaAction(rad.video_play_actions, 'video_view');
   const halva = plockaAction(rad.video_p50_watched_actions, 'video_view');
-  const klick = nr(rad.clicks);
+  const treSek = plockaAction(rad.actions, 'video_view');
+  const thruplay = plockaAction(rad.video_thruplay_watched_actions, 'video_view');
+  const p25 = plockaAction(rad.video_p25_watched_actions, 'video_view');
+  const p75 = plockaAction(rad.video_p75_watched_actions, 'video_view');
+  const p100 = plockaAction(rad.video_p100_watched_actions, 'video_view');
+  const harVideo = treSek > 0;
 
   return {
     ad_id: rad.ad_id,
@@ -96,8 +133,21 @@ export function normalisera(rad, status = {}) {
     cpm: nr(rad.cpm),
     frequency: nr(rad.frequency),
     klick,
-    hook_rate: visningar > 0 ? spelningar / visningar : null,
-    hold: spelningar > 0 ? halva / spelningar : null,
+    // Metas eget CPC (kostnad per klick, alla klick). null när fältet saknas.
+    cpc: rad.cpc === undefined || rad.cpc === null ? null : nr(rad.cpc),
+    lankklick: nr(rad.inline_link_clicks),
+    tre_sek: treSek,
+    thruplay,
+    p25,
+    p75,
+    p100,
+    // HOOK = 3-sekundersvisningar / visningar. HOLD = thruplay / 3-sekundersvisningar.
+    hook_rate: harVideo && visningar > 0 ? treSek / visningar : null,
+    hold: harVideo ? thruplay / treSek : null,
+    // De gamla måtten, BARA för jämförelse. Autoplay-hooken duger inte som
+    // urvalskriterium (dna.md-mätningen ovan).
+    hook_autoplay: visningar > 0 && spelningar > 0 ? spelningar / visningar : null,
+    hold_p50: spelningar > 0 ? halva / spelningar : null,
     cvr: klick > 0 ? kop / klick : null,
   };
 }
@@ -266,12 +316,75 @@ export function troskelkoll({ spend, kop, roas, breakEvenRoas }, troskel = TROSK
 // Metas giltiga last_Nd-presets. Allt annat räknas om till ett time_range.
 const PRESETS = [3, 7, 14, 28, 30, 90];
 
-const INSIGHTS_FALT = [
+export const INSIGHTS_FALT = [
   'ad_id', 'ad_name', 'adset_name', 'campaign_name',
-  'spend', 'impressions', 'clicks', 'ctr', 'cpm', 'frequency',
+  'spend', 'impressions', 'clicks', 'ctr', 'cpm', 'cpc', 'frequency', 'inline_link_clicks',
   'actions', 'action_values', 'purchase_roas', 'cost_per_action_type',
-  'video_play_actions', 'video_p50_watched_actions',
+  'video_play_actions', 'video_thruplay_watched_actions',
+  'video_p25_watched_actions', 'video_p50_watched_actions',
+  'video_p75_watched_actions', 'video_p100_watched_actions',
 ].join(',');
+
+// Marknadskoderna som kan stå i ett kampanj- eller annonsnamn (`_NO_`, `…_NO`).
+// ⚠️ Listan är sluten med flit: ett generellt `_XX_`-mönster hade läst vinkel-
+// koderna (`_TR_`, `_PD_`, `_SP_`) som länder.
+export const MARKNADSKODER = ['SE', 'NO', 'DK', 'FI', 'UK', 'DE'];
+export const STANDARDMARKNAD = 'SE';
+
+/** Marknadskoderna ett namn bär, t.ex. "TANKGUARD_NO_SALES" → ["NO"]. Skiftlägesokänsligt. */
+export function marknadskoderI(namn) {
+  const n = String(namn ?? '').toUpperCase();
+  return MARKNADSKODER.filter((k) => n.includes(`_${k}_`) || n.endsWith(`_${k}`));
+}
+
+/**
+ * Filtrerar rader på marknad. Ren funktion — testas utan nät.
+ * En rad tillhör marknad X om kampanj- ELLER annonsnamnet bär koden X.
+ * Rader UTAN marknadskod räknas som SE (namnkonventionen skrev ingen kod
+ * innan Norge fanns). `ALLA` behåller allt.
+ * Tar både råa Graph-rader (campaign_name/ad_name) och normaliserade (kampanj/namn).
+ */
+export function filtreraPaMarknad(rader, marknad = STANDARDMARKNAD) {
+  const vald = String(marknad ?? STANDARDMARKNAD).toUpperCase();
+  const bortfiltrerade = {};
+  if (vald === 'ALLA') return { behall: [...rader], bortfiltrerade, marknad: vald, antalBort: 0 };
+  if (!MARKNADSKODER.includes(vald)) {
+    throw new Error(`Okänd marknad "${marknad}". Giltiga: ${MARKNADSKODER.join(', ')} eller ALLA.`);
+  }
+  const behall = [];
+  for (const rad of rader) {
+    const koder = new Set([
+      ...marknadskoderI(rad.campaign_name ?? rad.kampanj),
+      ...marknadskoderI(rad.ad_name ?? rad.namn),
+    ]);
+    if (koder.size === 0) koder.add(STANDARDMARKNAD);
+    if (koder.has(vald)) {
+      behall.push(rad);
+    } else {
+      const nyckel = [...koder].sort().join('+');
+      bortfiltrerade[nyckel] = (bortfiltrerade[nyckel] ?? 0) + 1;
+    }
+  }
+  const antalBort = Object.values(bortfiltrerade).reduce((s, n) => s + n, 0);
+  return { behall, bortfiltrerade, marknad: vald, antalBort };
+}
+
+/**
+ * Periodparametrarna till insights. Ren funktion.
+ *   sedan   → time_range från datumet till i dag
+ *   dagar   → last_Nd om Meta har presetet, annars explicit intervall
+ *   livstid → date_preset maximum (hela livstiden — arv-vägen)
+ */
+export function periodParams({ dagar = 14, sedan = null, livstid = false, idag = new Date() } = {}) {
+  const till = idag.toISOString().slice(0, 10);
+  if (livstid) return { params: { date_preset: 'maximum' }, period: 'maximum (hela livstiden)' };
+  if (sedan) return { params: { time_range: { since: sedan, until: till } }, period: `${sedan} → ${till}` };
+  if (PRESETS.includes(dagar)) return { params: { date_preset: `last_${dagar}d` }, period: `last_${dagar}d` };
+  // Meta har bara vissa date_presets — ett påhittat (`last_60d`) ger ett
+  // fältfel, inte ett tomt svar. Räkna om till ett explicit datumintervall.
+  const fran = new Date(idag.getTime() - dagar * 86400000).toISOString().slice(0, 10);
+  return { params: { time_range: { since: fran, until: till } }, period: `${fran} → ${till}` };
+}
 
 /** Filtrerar hämtade rader på butikens prefix. Ren funktion — testas utan nät. */
 export function filtreraPaPrefix(rader, prefix, tillhor) {
@@ -301,30 +414,14 @@ export function filtreraPaPrefix(rader, prefix, tillhor) {
 }
 
 /** Hämtar butikens annonser ur kontot och filtrerar bort andras. */
-export async function hamtaButikensAnnonser(butik, { dagar = 14, sedan = null } = {}) {
+export async function hamtaButikensAnnonser(butik, { dagar = 14, sedan = null, marknad = STANDARDMARKNAD } = {}) {
   const konto = sakerstallKonto(butik.post);
   if (!butik.prefix) {
     throw new Error(`${butik.post.nyckel}: ${butik.prefixfel} — utan prefix läses hela kontot, och det är en annan verksamhets data.`);
   }
 
-  const params = { level: 'ad', fields: INSIGHTS_FALT, sort: 'spend_descending' };
-  let period;
-  if (sedan) {
-    period = { since: sedan, until: new Date().toISOString().slice(0, 10) };
-    params.time_range = period;
-  } else if (PRESETS.includes(dagar)) {
-    params.date_preset = `last_${dagar}d`;
-    period = `last_${dagar}d`;
-  } else {
-    // Meta har bara vissa date_presets — ett påhittat (`last_60d`) ger ett
-    // fältfel, inte ett tomt svar. Räkna om till ett explicit datumintervall.
-    const till = new Date();
-    const fran = new Date(till.getTime() - dagar * 86400000);
-    period = { since: fran.toISOString().slice(0, 10), until: till.toISOString().slice(0, 10) };
-    params.time_range = period;
-  }
-
-  const rader = await alla(`act_${konto}/insights`, params);
+  const { params: periodP, period } = periodParams({ dagar, sedan });
+  const rader = await alla(`act_${konto}/insights`, { level: 'ad', fields: INSIGHTS_FALT, sort: 'spend_descending', ...periodP });
 
   // Statusen finns inte på insights-edgen. Den hämtas separat, för att
   // "PAUSED med spend är ett BESLUT" ska gå att se i rapporten.
@@ -338,13 +435,140 @@ export async function hamtaButikensAnnonser(butik, { dagar = 14, sedan = null } 
   }
 
   const f = filtreraPaPrefix(rader, butik.prefix, tillhorButiken);
+  const m = filtreraPaMarknad(f.behall, marknad);
   return {
     ...f,
-    rader: f.behall.map((r) => normalisera(r, status)).sort((a, b) => b.amount_spent - a.amount_spent),
+    rader: m.behall.map((r) => normalisera(r, status)).sort((a, b) => b.amount_spent - a.amount_spent),
     totalt: rader.length,
     prefix: butik.prefix,
-    period: typeof period === 'string' ? period : `${period.since} → ${period.until}`,
+    period,
+    marknad: { vald: m.marknad, bortfiltrerade: m.bortfiltrerade, antalBort: m.antalBort },
   };
+}
+
+// ------------------------------------------------------------ ärvd historik
+//
+// ⚠️ BÄVERBUTIKEN LÄSES BARA. Den här vägen går INTE via sakerstallKonto (som
+// med rätta kastar när en OPS-post pekar på Bäverbutikens konto) utan hårdkodar
+// läs-endast-kontot och anropar aldrig något annat än `insights` (GET).
+// Ingen statusläsning, ingen skrivning, inget form-anrop — ett test vaktar det.
+export const ARV_KONTO = BAVERBUTIKEN_ANNONSKONTO;
+export const ARV_TEXT = 'ÄRVD HISTORIK — Bäverbutikens annonser för samma produkt, dömda mot OPS-butikens linjer; '
+  + 'priset kan skilja. Vägledande, ingen budget rörs här. Bäverbutiken LÄSES bara.';
+
+/** Källprefixet ur produktfilens `kalla:`-block, eller null med ett skäl. Ren funktion. */
+export function arvPrefix(butik) {
+  const kalla = butik?.produkt?.kalla ?? null;
+  const prefix = typeof kalla?.annonsprefix === 'string' ? kalla.annonsprefix.trim() : '';
+  if (!prefix) {
+    return { prefix: null, skal: `${butik?.post?.produktfil ?? 'produktfilen'} saknar kalla.annonsprefix — ingen ärvd historik kan läsas.` };
+  }
+  return { prefix, skal: null, kampanjId: kalla.kampanj_id ?? null, kampanj: kalla.kampanj ?? null };
+}
+
+/** Den rena delen av arv-filtret: Bäverbutikens rader → bara produktens, på marknaden. */
+export function filtreraArv(rader, annonsprefix, marknad = STANDARDMARKNAD) {
+  const f = filtreraPaPrefix(rader, [annonsprefix.trim().toLowerCase()], tillhorButiken);
+  const m = filtreraPaMarknad(f.behall, marknad);
+  return {
+    ...f,
+    behall: m.behall,
+    marknad: { vald: m.marknad, bortfiltrerade: m.bortfiltrerade, antalBort: m.antalBort },
+  };
+}
+
+/**
+ * Läser Bäverbutikens insights för samma produkt. LÄSNING ENBART.
+ * dagar = null ⇒ hela livstiden (date_preset maximum) — det är poängen med
+ * arvet: OPS-kampanjen är ny, källan har månader av data.
+ */
+export async function hamtaArv(butik, { dagar = null, marknad = STANDARDMARKNAD } = {}) {
+  const k = arvPrefix(butik);
+  if (!k.prefix) return { hoppad: true, skal: k.skal, prefix: null, rader: [] };
+
+  const { params: periodP, period } = periodParams({ dagar: dagar ?? 14, livstid: dagar === null });
+  // Enda anropet i arv-vägen: GET act_<Bäverbutiken>/insights. Inget annat.
+  const ra = await alla(`act_${ARV_KONTO}/insights`, { level: 'ad', fields: INSIGHTS_FALT, sort: 'spend_descending', ...periodP });
+
+  const f = filtreraArv(ra, k.prefix, marknad);
+  return {
+    hoppad: false,
+    skal: null,
+    konto: ARV_KONTO,
+    lasesBara: true,
+    prefix: k.prefix,
+    kallaKampanj: k.kampanj,
+    kallaKampanjId: k.kampanjId,
+    period,
+    totalt: ra.length,
+    slangda: f.slangda,
+    behallnaKampanjer: f.behallnaKampanjer,
+    marknad: f.marknad,
+    rader: f.behall.map((r) => ({ ...normalisera(r), arv: true })).sort((a, b) => b.amount_spent - a.amount_spent),
+  };
+}
+
+/**
+ * Arv-rapporten: samma klassificering och rangordning som OPS-raderna, mot
+ * OPS-butikens linjer, men märkt arv och utan budgetförslag. Ren funktion.
+ */
+export function byggArvRapport(butik, arv) {
+  if (!arv || arv.hoppad) return { hoppad: true, skal: arv?.skal ?? 'ingen arv-hämtning', prefix: null, rader: [], bedombara: [], vinnare: [], forlorare: [], totalSpend: 0, totalKop: 0 };
+  const r = byggRapport(butik, { ...arv, prefix: [arv.prefix] });
+  return {
+    hoppad: false,
+    text: ARV_TEXT,
+    konto: arv.konto,
+    lasesBara: true,
+    prefix: arv.prefix,
+    kallaKampanj: arv.kallaKampanj ?? null,
+    period: arv.period,
+    marknad: arv.marknad ?? null,
+    totalt: arv.totalt ?? arv.rader.length,
+    rader: r.rader.map((x) => ({ ...x, arv: true })),
+    bedombara: r.bedombara.map((x) => ({ ...x, arv: true })),
+    forTidigt: r.forTidigt.length,
+    vinnare: r.vinnare.map((x) => ({ ...x, arv: true })),
+    forlorare: r.forlorare.map((x) => ({ ...x, arv: true })),
+    bevaka: r.bevaka.length,
+    totalSpend: r.totalSpend,
+    totalKop: r.totalKop,
+    samladRoas: r.samladRoas,
+    totalVinstGeneros: r.totalVinstGeneros,
+    verkligAov: r.verkligAov,
+  };
+}
+
+// ------------------------------------------------------------- snapshot
+
+const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+/**
+ * Skriver rondens normaliserade rader (OPS + arv) till
+ * factory/output/<butik>/insights-<datum>.json så nästa rond kan jämföra
+ * mot en bild ≥3 dygn äldre (ANALYSMETOD 2b).
+ * ⚠️ factory/output/ är SPÅRAD i git (CHECKLISTA.md, plan.json per butik) och
+ * snapshoten ska committas och pushas av rutinen — nästa rond körs i en ny
+ * container och har inget annat minne. Därför hålls filen liten: bara
+ * normaliserade rader + period, aldrig råa Graph-svar.
+ */
+export function sparaSnapshot(butik, { hamtning, arv = null, datum = new Date().toISOString().slice(0, 10), rot = ROT } = {}) {
+  const katalog = join(rot, 'factory', 'output', butik.post.butik);
+  mkdirSync(katalog, { recursive: true });
+  const fil = join(katalog, `insights-${datum}.json`);
+  const data = {
+    butik: butik.post.nyckel,
+    datum,
+    period: hamtning.period,
+    marknad: hamtning.marknad ?? null,
+    konto: butik.post.ad_account_id,
+    rader: hamtning.rader,
+    arv: arv && !arv.hoppad
+      ? { konto: arv.konto, lasesBara: true, prefix: arv.prefix, period: arv.period, rader: arv.rader }
+      : { hoppad: true, skal: arv?.skal ?? 'arv inte begärt' },
+  };
+  writeFileSync(fil, `${JSON.stringify(data, null, 2)}\n`);
+  return fil;
 }
 
 // ------------------------------------------------------------------ rapport
@@ -441,6 +665,58 @@ export function testrapport(rapport, { kallaUrl = null, kampanjId = null } = {})
   return { troskel, koll, startskott, saknas };
 }
 
+const procentAvKlick = (v) => (v === null || v === undefined ? '—' : `${Number(v).toFixed(2)} %`);
+
+/** Steg 6-tabellen. Hook/hold på 3-sekundersvisningar och thruplay — bild får "—". */
+function skrivDiagnostabell(rader) {
+  console.log('| Annons | Hook 3s | Hold (thruplay/3s) | CTR | CPC | CVR (köp/klick) | CPM | Frekvens |');
+  console.log('|---|---|---|---|---|---|---|---|');
+  for (const a of rader) {
+    console.log(
+      `| ${a.namn} | ${pct(a.hook_rate)} | ${pct(a.hold)} | ${procentAvKlick(a.ctr)} | ${kr(a.cpc)} | ${pct(a.cvr)} | ${kr(a.cpm)} | ${Number(a.frequency ?? 0).toFixed(2)} |`
+    );
+  }
+  console.log('Hook/hold räknas på 3-sekundersvisningar och thruplay — bildannonser har dem inte (—).');
+  console.log('Det gamla autoplay-måttet (video_play_actions/impressions) ligger kvar i JSON som hook_autoplay/hold_p50 för jämförelse, aldrig som urvalskriterium.');
+}
+
+/** Arv-avsnittet: Bäverbutikens historik för samma produkt, dömd mot OPS-linjerna. */
+function skrivArv(arv, linjer) {
+  console.log('\n--- ÄRVD HISTORIK (--arv) ---\n');
+  if (arv.hoppad) {
+    console.log(`  Hoppas över: ${arv.skal}`);
+    return;
+  }
+  console.log(`  ${ARV_TEXT}`);
+  console.log(`  Källa: konto ${arv.konto} (Bäverbutiken LÄSES bara) · prefix "${arv.prefix}" · period ${arv.period}`);
+  if (arv.kallaKampanj) console.log(`  Källkampanj enligt produktfilen: ${arv.kallaKampanj}`);
+  const bort = Object.entries(arv.marknad?.bortfiltrerade ?? {}).map(([k, n]) => `${k}: ${n}`).join(' · ');
+  console.log(
+    `  ${arv.rader.length} av ${arv.totalt} annonser i kontot bär prefixet`
+    + `${arv.marknad ? ` (marknad ${arv.marknad.vald}, ${arv.marknad.antalBort} bortfiltrerade${bort ? `: ${bort}` : ''})` : ''}.`
+  );
+  if (!arv.rader.length) {
+    console.log('  Inga ärvda rader — kontrollera kalla.annonsprefix mot annonsnamnen i Bäverbutikens konto.');
+    return;
+  }
+  console.log(`  Totalt: ${kr(arv.totalSpend)} spend · ${arv.totalKop} köp · samlad ROAS ${arv.samladRoas.toFixed(2)}`
+    + (arv.verkligAov ? ` · verklig AOV ${kr(arv.verkligAov)}` : ''));
+  console.log(`  Bedömbara: ${arv.bedombara.length} · för tidigt: ${arv.forTidigt} · vinnare ${arv.vinnare.length} · förlorare ${arv.forlorare.length} · bevaka ${arv.bevaka}`);
+  if (!arv.bedombara.length) return;
+
+  const tvaLinjer = Boolean(linjer?.obeslutat);
+  console.log(`\n  Rangordning på vinstbidrag mot OPS-linjen${tvaLinjer ? ' (utan moms)' : ''} — topp 10:\n`);
+  console.log('| Ärvd annons | Spend | Köp | CPA | ROAS | Vinstbidrag | Klass | Hook 3s | Hold | CTR | CPC |');
+  console.log('|---|---|---|---|---|---|---|---|---|---|---|');
+  for (const a of arv.bedombara.slice(0, 10)) {
+    console.log(
+      `| ${a.namn} | ${kr(a.amount_spent)} | ${a.kop} | ${kr(a.cpa)} | ${a.purchase_roas.toFixed(2)} | ${kr(a.dom.vinst_generos)} | `
+      + `${a.dom.klass}${a.dom.preliminar ? ' (prel.)' : ''} | ${pct(a.hook_rate)} | ${pct(a.hold)} | ${procentAvKlick(a.ctr)} | ${kr(a.cpc)} |`
+    );
+  }
+  console.log('\n  Läs arvet som RIKTNING (vilka vinklar/hooks som bar) — inte som dom över OPS-kampanjen. Ingen budget rörs här.');
+}
+
 export function skrivRapport(r, { idag = new Date().toISOString().slice(0, 10) } = {}) {
   const { post, ekonomi, hamtning } = r;
   const kord = arKordag(post, idag);
@@ -454,6 +730,13 @@ export function skrivRapport(r, { idag = new Date().toISOString().slice(0, 10) }
     `Butiksfiltret: ${hamtning.rader.length} av ${hamtning.totalt} annonser i kontot är butikens. `
     + `${hamtning.slangda} rader tillhör andra verksamheter och är BORTFILTRERADE.`
   );
+  if (hamtning.marknad) {
+    const bort = Object.entries(hamtning.marknad.bortfiltrerade ?? {}).map(([k, n]) => `${k}: ${n}`).join(' · ');
+    console.log(
+      `Marknadsfilter: ${hamtning.marknad.vald} — ${hamtning.marknad.antalBort} rader på annan marknad BORTFILTRERADE`
+      + `${bort ? ` (${bort})` : ''}. Rader utan marknadskod räknas som SE.`
+    );
+  }
   if (hamtning.behallnaKampanjer.length) console.log(`  Butikens kampanjer:       ${hamtning.behallnaKampanjer.join(' · ')}`);
   if (hamtning.slangdaKampanjer.length) console.log(`  Bortfiltrerade kampanjer: ${hamtning.slangdaKampanjer.join(' · ')}`);
   if (hamtning.baraAnnonsnamn.length) {
@@ -472,6 +755,7 @@ export function skrivRapport(r, { idag = new Date().toISOString().slice(0, 10) }
       + '   inte samma sak som att annonserna gick dåligt. Kontrollera att kampanjen är byggd\n'
       + '   och att namnet börjar med butikens prefix.\n'
     );
+    if (r.arv && post.lage !== 'test') skrivArv(r.arv, r.linjer);
     return;
   }
 
@@ -524,6 +808,7 @@ export function skrivRapport(r, { idag = new Date().toISOString().slice(0, 10) }
 
   if (!r.bedombara.length) {
     console.log('\n  Ingen annons har passerat grinden än. Ingen rangordning görs — det vore brus.\n');
+    if (r.arv) skrivArv(r.arv, r.linjer);
     return;
   }
 
@@ -563,13 +848,9 @@ export function skrivRapport(r, { idag = new Date().toISOString().slice(0, 10) }
   );
 
   console.log('\n--- Steg 6: metrik-diagnos (pekare, aldrig slutsats) ---\n');
-  console.log('| Annons | Hook rate | Hold | CTR | CVR (köp/klick) | CPM | Frekvens |');
-  console.log('|---|---|---|---|---|---|---|');
-  for (const a of r.bedombara) {
-    console.log(
-      `| ${a.namn} | ${pct(a.hook_rate)} | ${pct(a.hold)} | ${a.ctr.toFixed(2)} % | ${pct(a.cvr)} | ${kr(a.cpm)} | ${a.frequency.toFixed(2)} |`
-    );
-  }
+  skrivDiagnostabell(r.bedombara);
+
+  if (r.arv) skrivArv(r.arv, r.linjer);
 
   console.log(
     '\n⚠️ Steg 6b (creative-teardown) går INTE att göra i ett skript — bilder ska granskas\n'
@@ -585,13 +866,15 @@ async function huvud() {
   const arg = process.argv.slice(2);
   const nyckel = arg.find((a) => !a.startsWith('--'));
   if (!nyckel) {
-    console.error('Användning: node factory/skalning.mjs <butik|produkt> [--dagar 14] [--sedan YYYY-MM-DD] [--json]');
+    console.error('Användning: node factory/skalning.mjs <butik|produkt> [--dagar 14] [--sedan YYYY-MM-DD] [--marknad SE|NO|ALLA] [--arv] [--arv-dagar N] [--spara] [--json]');
     process.exit(1);
   }
   const flagga = (namn, standard) => {
     const i = arg.indexOf(`--${namn}`);
     return i >= 0 && arg[i + 1] ? arg[i + 1] : standard;
   };
+  const marknad = String(flagga('marknad', STANDARDMARKNAD)).toUpperCase();
+  const idag = flagga('idag', new Date().toISOString().slice(0, 10));
 
   const butik = laddaButik(nyckel);
   // Kontospärren FÖRST — inget Graph-anrop får gå mot ett okontrollerat konto.
@@ -624,14 +907,32 @@ async function huvud() {
   const hamtning = await hamtaButikensAnnonser(butik, {
     dagar: Number(flagga('dagar', 14)),
     sedan: flagga('sedan', null),
+    marknad,
   });
   const rapport = byggRapport(butik, hamtning);
+
+  // Ärvd historik: bara för OPS-butiker (läge skala). En testprodukt ÄR
+  // Bäverbutiken — den har inget att ärva av sig själv.
+  let arvHamtning = null;
+  if (arg.includes('--arv') && butik.post.lage !== 'test') {
+    const arvDagar = flagga('arv-dagar', null);
+    arvHamtning = await hamtaArv(butik, { dagar: arvDagar === null ? null : Number(arvDagar), marknad });
+    rapport.arv = byggArvRapport(butik, arvHamtning);
+  } else if (arg.includes('--arv')) {
+    rapport.arv = byggArvRapport(butik, { hoppad: true, skal: `${butik.post.nyckel} är i läge TEST — den är Bäverbutiken och har inget att ärva.` });
+  }
+
+  if (arg.includes('--spara')) {
+    const fil = sparaSnapshot(butik, { hamtning, arv: arvHamtning, datum: idag });
+    rapport.snapshot = fil;
+    if (!arg.includes('--json')) console.log(`\nSnapshot sparad: ${fil}`);
+  }
 
   if (arg.includes('--json')) {
     console.log(JSON.stringify(rapport, null, 2));
     return;
   }
-  skrivRapport(rapport, { idag: flagga('idag', new Date().toISOString().slice(0, 10)) });
+  skrivRapport(rapport, { idag });
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
