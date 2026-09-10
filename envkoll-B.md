@@ -1,0 +1,14 @@
+# Env-koll B
+Miljö: env_01FhBQMkVFeo4ZZ2hB4T9a9k
+Container startad: Thu Sep 10 21:33:30 UTC 2026
+
+| Nyckel | Läge | Längd |
+|---|---|---|
+| META_ACCESS_TOKEN | SAKNAS | 0 |
+| NOTION_TOKEN | SAKNAS | 0 |
+| DISCORD_BOT_TOKEN | SAKNAS | 0 |
+| ANTHROPIC_API_KEY | SAKNAS | 0 |
+| KIE_API_KEY | SAKNAS | 0 |
+| HEYGEN_API_KEY | SAKNAS | 0 |
+| JUDGEME_API_TOKEN | SAKNAS | 0 |
+| DISCORD_WEBHOOK_URL | SAKNAS | 0 |
