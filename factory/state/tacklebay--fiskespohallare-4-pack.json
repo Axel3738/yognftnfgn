@@ -72,12 +72,12 @@
     "SE": {
       "kampanj": "TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
       "kampanj_id": "120249037503480172",
-      "status": "PAUSED",
+      "status": "ACTIVE",
       "cbo_daily_budget": "100000",
       "adsets": {
         "PD": "120249037504230172",
-        "CS": null,
-        "GT": null,
+        "CS": "120249037540290172",
+        "GT": "120249037645710172",
         "SP": "120249037879100172"
       },
       "annonser_uppe": 66,
@@ -94,6 +94,8 @@
       "status": "källan PAUSED sedan augusti — inga kandidater, ingen norsk kampanj byggd; butiken saknar dessutom NOK-paketnivåer"
     },
     "trippelkoll": "2026-09-10: sida, pixel, CBO-budget, länk och PAUSED på tre nivåer stämmer på alla 66",
-    "launch": "väntar på Axels \"Launch: TackleBay\""
+    "launch": {
+      "SE": "2026-09-10T18:17:40Z — Axel \"Launch: tacklebay\"; butiken 200 utan /password, pixel avfyrad 19:40 CEST; kampanj+4 adsets+66 annonser ACTIVE, tillbakalästa ACTIVE/ACTIVE"
+    }
   }
 }

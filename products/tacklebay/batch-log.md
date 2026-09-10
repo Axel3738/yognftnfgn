@@ -63,3 +63,9 @@ kopierade (41 video + 25 bild); copyn orörd i 10 av 16 varianter, i 6 bara
 felet bytt (fraktgräns, 30-dagarsgaranti, rabatt, brådska, påhittat citat).
 Hypotes: samma DNA som källan ger samma ordning — PD först, CS när manuset
 är omdubbat. Utfall: ännu inget.
+
+**Launchad 2026-09-10 18:17 UTC** (Axel: "Launch: tacklebay"). Butiken svarade
+200 utan lösenordssida, pixeln hade avfyrat 19:40 svensk tid. Kampanj +
+adsets PD/CS/GT/SP + 66 annonser satta ACTIVE och tillbakalästa ACTIVE/ACTIVE.
+Budget 1 000 kr/dag CBO. Första avläsning tidigast när 300 kr spend eller
+3 köp finns per annons — aldrig tidigare.

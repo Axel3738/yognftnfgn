@@ -206,6 +206,15 @@ meta:
   # kollidera i prefixkartan, översättningskön, adsetuppslaget och commission.
   creative_prefix: "TackleBayRod"
   testbudget_per_dag: 500
+  # Launch — Axel skrev "Launch: tacklebay" 2026-09-10. Kampanjen, fyra adsets
+  # och 66 annonser sattes ACTIVE 18:17 UTC och lästes tillbaka ACTIVE/ACTIVE.
+  launch:
+    SE:
+      datum: "2026-09-10"
+      kampanj_id: "120249037503480172"
+      kampanj: "TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10"
+      budget_per_dag_sek: 1000   # CBO, öre 100000 i kontot
+      annonser: 66
   vinklar:
     - "Transportskadan: det som går sönder händer på vägen dit"
     - "Enhandsgreppet: två klick, spöt sitter"
