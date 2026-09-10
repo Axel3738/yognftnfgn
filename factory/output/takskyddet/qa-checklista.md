@@ -18,8 +18,8 @@
 - [x] ✅ checkout: valuta SEK
 - [ ] 🖐 checkout-betalning: Gör ett testköp och bekräfta att betalleverantören är aktiv.
 - [x] ✅ kundvy-produktsida: 11 strukturpunkter gröna
-- [ ] ❌ kundvy-produkttext: "1129" syns inte i huvudspråkets vy
-- [ ] ❌ markörer /nb: svenska ord kvar: Köp nu, Fri frakt, ångerrätt, arbetsdagar, taket, husvagnen, husbilen, överdraget, vintern, takluckor, fukt
+- [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
+- [x] ✅ markörer /nb: 0 svenska markörer av 12
 
 ## Varningar
 

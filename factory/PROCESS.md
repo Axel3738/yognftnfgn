@@ -198,7 +198,17 @@ Hela listan i `factory/README.md`.
     Matchningen görs på svenskt VÄRDE, så en ändrad källtext blir en läcka i
     rapporten i stället för fel text på /nb. `custom_liquid` är inte
     översättningsbart — trust- och leveransraden locale-branchas i Liquid
-    (`tema.byggProduktTemplate`, nb ur samma fil).
+    (`tema.byggProduktTemplate`, nb ur samma fil). **Därför körs `--igen
+    tema,oversatt` när nb-filen finns** — på första bygget skrivs mallen i
+    steg 3 utan nb-fil, och trust-raden stod kvar på svenska på /nb
+    (CaraShell 2026-09-10).
+    ⚠️ **Temainställningen `brand_description` går inte att översätta på en
+    trial-butik** (MÄTT CaraShell 2026-09-10: `translatableResources` gav 0
+    resurser för `ONLINE_STORE_THEME_SETTINGS_CATEGORY` och 0 rader för
+    `OnlineStoreThemeSettingsDataSections/<tema>`; TackleBay 2026-09-08 såg
+    typen — den butiken hade plan). Sidfotens brandtext skrivs därför som ett
+    **text-block** i `footer-group.json` (`startsida.byggFooterGroup`), som
+    registreras i sektionsgruppen som vilken text som helst.
 14. ⚙️ Bilder per marknad: alt-texten märks `[SV]`/`[NO]` (omärkt = alla),
     båda språkens bilder läggs som media, ms-head döljer fel språk per locale.
 15. ⚙️ Norge ska SYNAS i kundvyn (Axel 2026-09-08): "Fri frakt – Sverige &
@@ -566,6 +576,25 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   hämtas ur Shopify Files — `output/` dör med containern.
 
 **Miljön och verktygen**
+- **Storefront-lösenordet slås upp på ADRESSENS miljösuffix, inte på
+  butiks-id:t** (CaraShell 2026-09-10: nycklarna låg under `_yitrbk_m3`,
+  id:t var `carashell`, och kundvyn blev röd med "Lösenordet avvisades" fast
+  rätt lösenord stod i miljön). `anslut()` lyfter `SHOPIFY_STOREFRONT_PASSWORD_<suffix>`
+  till `SHOPIFY_STOREFRONT_PASSWORD` i processen — samma suffix som gav
+  Shopify-nycklarna.
+- **Priskontrollen i kundvyn tål tusentalsavstånd.** Shopify renderar
+  "1 129,00 kr"; `produktkoll` letade efter "1129" och var röd på varje pris
+  ≥ 1 000 kr — det syntes först på CaraShell (2026-09-10), alla tidigare
+  OPS-produkter kostade under 1 000 kr.
+- **RDAP för .se och .no går inte att nå härifrån** (2026-09-10: `rdap.org`
+  svarade 404 även på tankguard.se och google.se, `rdap.norid.no` 404 på
+  tankguard.no). Domänkollen för .se/.no är DNS (`getent hosts`) — tomt svar
+  är "troligen ledig", aldrig "ledig". `.com` fungerar i RDAP (200/404).
+- **Loggan: Axel har valt variant c två gånger av två** (TackleBay, CaraShell
+  2026-09-10) — det rena ordmärket/monogrammet utan symbol. Takmotivet (nytt
+  för CaraShell, `--motiv tak`) föll: "de andra två passade inte produkten".
+  Nästa butik: gör c till utgångsläge och pröva något NYTT i a/b, inte ett
+  nytt motiv i samma komposition.
 - **Playwright når inte ut på nätet i molnsessionen** (`ERR_CONNECTION_RESET`
   genom proxyn, 2026-09-09) — läs HTML med `curl`, plocka JSON ur den. Lokala
   `file://`-sidor fungerar (loggvarianterna).

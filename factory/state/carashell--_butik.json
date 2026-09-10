@@ -15,7 +15,7 @@
       "temaId": "gid://shopify/OnlineStoreTheme/205487636812",
       "temaNamn": "CaraShell – CRO v1",
       "role": "UNPUBLISHED",
-      "redanUppe": false,
+      "redanUppe": true,
       "filer": 396,
       "kompletterade": []
     },
@@ -24,8 +24,6 @@
       "temaId": "gid://shopify/OnlineStoreTheme/205487636812",
       "filer": [
         "assets/opf-brand.css",
-        "snippets/ms-head.liquid",
-        "config/settings_schema.json",
         "config/settings_data.json"
       ]
     },
@@ -43,8 +41,7 @@
         "sections/opf-faq.liquid",
         "assets/ms-paket.js",
         "sections/header-group.json",
-        "snippets/ms-head.liquid",
-        "snippets/ms-paket.liquid"
+        "snippets/ms-head.liquid"
       ],
       "produktmall": "verifierad",
       "upsell": null
@@ -57,8 +54,7 @@
       "omskrivnaFiler": [
         "config/settings_data.json",
         "sections/footer-group.json",
-        "sections/header-group.json",
-        "snippets/ms-bundle-picker.liquid"
+        "sections/header-group.json"
       ],
       "lasta": [
         "templates/index.json",
@@ -120,21 +116,19 @@
       "klar": true,
       "huvudmeny": {
         "handle": "main-menu",
-        "orord": false,
+        "orord": true,
         "rader": 4
       },
       "sidfot": {
         "handle": "footer",
-        "orord": false,
+        "orord": true,
         "rader": 5
       }
     },
     "frakt": {
       "klar": true,
-      "andrade": 5,
-      "orort": false,
-      "skapadeZoner": [],
-      "borttagnaZoner": []
+      "andrade": 0,
+      "orort": true
     },
     "huvudmarknad": {
       "klar": true,
@@ -161,15 +155,32 @@
           "locale": "nb",
           "marknad": "Norge",
           "status": "ACTIVE",
-          "localeSkapad": true
+          "localeSkapad": false
         }
       ]
     },
     "oversatt": {
-      "klar": false,
-      "manuell": "nb: översätt med subagent (sonnet) — output/carashell/oversattning-sv.json (106 nycklar) → oversattning-nb.json med samma nycklar, kör sen --igen oversatt",
+      "klar": true,
       "underlag": 106,
-      "utfall": {}
+      "utfall": {
+        "nb": {
+          "registrerade": 1,
+          "saknade": 0,
+          "perTyp": {
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 0,
+            "sida": 0,
+            "menylänk": 0,
+            "paket": 0,
+            "policy": 0,
+            "kollektion": 0,
+            "temamall": 0,
+            "sektionsgrupp": 1
+          },
+          "granskning": "4213/4225"
+        }
+      }
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/205487636812",
@@ -177,10 +188,9 @@
   "qa": {
     "gron": false,
     "kritiska": [
-      "kundvy-startsida",
-      "markörer /nb"
+      "kundvy-startsida"
     ],
-    "tid": "2026-09-10T22:11:13.235Z"
+    "tid": "2026-09-10T22:29:29.989Z"
   },
-  "uppdaterad": "2026-09-10T22:11:13.235Z"
+  "uppdaterad": "2026-09-10T22:29:29.989Z"
 }

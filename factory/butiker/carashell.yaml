@@ -44,13 +44,13 @@ butik:
     - "ångerrätt"
     - "Handla tryggt"
     - "arbetsdagar"
-    - "taket"
     - "husvagnen"
     - "husbilen"
     - "överdraget"
     - "vintern"
     - "takluckor"
-    - "fukt"
+    # "taket" och "fukt" stavas lika på norska — som markörer ger de bara
+    # falska larm (mätt 2026-09-10 på /nb: "Beskytt taket", "fukttesten").
 
 frakt:
   fri_globalt: true

@@ -105,8 +105,18 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    UNPUBLISHED"; varje skrivning läses tillbaka av motorn.
 6. **Översättningen** (steg 17): en subagent med `model: "sonnet"` översätter
    `output/<butik>/oversattning-sv.json` → `oversattning-nb.json` med samma
-   nycklar (+ `docs/copy-regler.md`). Sen `--igen oversatt`. Regel: koden
+   nycklar (+ `docs/copy-regler.md`). Sen `--igen tema,oversatt,recensioner` —
+   **tema först**, och **recensioner sist**: app-CSV:n får sina norska rader ur
+   nb-filen, så en CSV byggd före översättningen bär bara svenskan (CaraShell
+   2026-09-10: 11 rader före, 17 efter). Produktmallens trust-rad är
+   `custom_liquid` och locale-branchas ur
+   `oversattning-nb.json` när mallen SKRIVS; på första bygget fanns ingen
+   nb-fil vid steg 3, så utan omkörning står "Fri frakt – Sverige & Norge" och
+   "14 dagars ångerrätt" kvar på /nb *(CaraShell 2026-09-10)*. Regel: koden
    översätter aldrig själv; läckor i rapporten = steget förblir 🖐.
+   Markörlistan (`markorer_sv`) får inte bära ord som stavas lika på norska
+   ("taket", "fukt") — de kan aldrig skilja svenska från norska och ger bara
+   falska larm.
 7. **Valuta- och språkklicket** (checklistans avsnitt 2): när någon skriver
    "currency and language are set", kör `--igen paket,huvudmarknad`.
    Regel: rabattkoder lagras i butikens valuta — paketsteget vägrar tills

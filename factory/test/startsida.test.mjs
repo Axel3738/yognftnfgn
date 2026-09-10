@@ -185,8 +185,13 @@ test('footer-group rör bara bolagsblocket', () => {
     f.blocks.foretaget.settings.subtext,
     '<p>TestBay drivs av<br/>TEST AB<br/>Org.nr 556000-0001</p><p>hello@testbay.se</p>'
   );
+  // brand_information → text-block med positioneringen (översättbart i
+  // sektionsgruppen; temainställningen brand_description gick inte att
+  // översätta — CaraShell 2026-09-10).
+  assert.equal(f.blocks.brand.type, 'text');
+  assert.equal(f.blocks.brand.settings.heading, '');
+  assert.match(f.blocks.brand.settings.subtext, /^<p>.+<\/p>$/);
   // Allt annat oförändrat: övriga block, block_order, sektionens settings, andra sektioner, order.
-  assert.deepEqual(f.blocks.brand, { type: 'brand_information', settings: { heading: 'Om oss' } });
   assert.deepEqual(f.blocks.snabblankar.settings, { heading: 'Snabblänkar', menu: 'footer' });
   assert.deepEqual(f.block_order, ['brand', 'snabblankar', 'foretaget']);
   assert.deepEqual(f.settings, { color_scheme: 'scheme-3' });
