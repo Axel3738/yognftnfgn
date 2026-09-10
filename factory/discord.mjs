@@ -95,6 +95,31 @@ export async function skickaMeddelande(kanalId, innehall) {
   return discord(`/channels/${kanalId}/messages`, { metod: 'POST', kropp: { content: innehall } });
 }
 
+/** Servrarna boten sitter i: [{ id, name }]. */
+export async function hamtaGuilds() {
+  const lista = await discord('/users/@me/guilds');
+  return (Array.isArray(lista) ? lista : []).map((g) => ({ id: g.id, name: g.name }));
+}
+
+/** En server med ägare: { id, name, owner_id }. Ägaren är den larmet pingar. */
+export async function hamtaGuild(guildId) {
+  const g = await discord(`/guilds/${guildId}`);
+  return { id: g.id, name: g.name, owner_id: g.owner_id };
+}
+
+/**
+ * Textkanalen `namn` i servern — hittas om den finns, skapas annars.
+ * Axels besked 2026-09-10: "vi har ju boten för det" — ingen människa ska
+ * behöva skapa kanalen eller kopiera ett kanal-id. Returnerar { id, name, skapad }.
+ */
+export async function hittaEllerSkapaKanal(guildId, namn) {
+  const kanaler = await discord(`/guilds/${guildId}/channels`);
+  const befintlig = (Array.isArray(kanaler) ? kanaler : []).find((k) => k.type === 0 && k.name === namn);
+  if (befintlig) return { id: befintlig.id, name: befintlig.name, skapad: false };
+  const ny = await discord(`/guilds/${guildId}/channels`, { metod: 'POST', kropp: { name: namn, type: 0 } });
+  return { id: ny.id, name: ny.name, skapad: true };
+}
+
 // Bygger kanalstrukturen i servern guildId. Utan guildId försöks POST /guilds
 // — det svarar 20001 för botar (mätt 2026-09-08), så huvud() släpper aldrig
 // hit utan --guild; försöket ligger kvar bara för att ge Discords eget

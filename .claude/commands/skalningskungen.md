@@ -90,10 +90,12 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    node factory/startskott.mjs --jobb <fil.json> --discord
    ```
    Det postar **"KLAR FÖR OPS: <produkt>"** + siffrorna + `/ny-ops <länk>`
-   i kanalen `DISCORD_STARTSKOTT_KANAL` och pingar `DISCORD_AXEL_ID`.
+   i kanalen `#ops-startskott` på Discord-servern Bäverbutiken och pingar
+   serverns ägare. Boten hittar servern, skapar kanalen om den saknas och
+   hittar ägaren själv — ingen människa skapar något (Axel 2026-09-10).
    Regel: larmet är idempotent — en gång per kampanj (`startskottHarGatt`),
-   inte varje rond. Saknas kanal-id:t i miljön: klistra in larmet i
-   rapporten och skriv "Discord: väntar på kanal-id" — aldrig tyst.
+   inte varje rond. Faller Discord-steget (token saknas, boten inte i
+   servern): larmet står ändå i rapporten, med felet — aldrig tyst.
    Skriv en rad i produktens `batch-log.md`. Sen är produkten Axels: ronden
    bygger aldrig butiken.
 
@@ -121,9 +123,10 @@ med `source_url` + `outcome_branch`, sen `create_trigger` med
 `list_triggers` FÖRST — en dubblett skapades 2026-09-08 och fick raderas.
 Cron står i UTC: 07:30 CEST = `30 5 * * *`, 07:30 CET = `30 6 * * *`.
 
-Miljön rutinen behöver: `META_ACCESS_TOKEN`, `DISCORD_BOT_TOKEN`,
-`DISCORD_STARTSKOTT_KANAL` (kanal-id), `DISCORD_AXEL_ID` (Axels
-Discord-användar-id).
+Miljön rutinen behöver: `META_ACCESS_TOKEN` och `DISCORD_BOT_TOKEN`.
+Valfri överstyrning: `DISCORD_STARTSKOTT_SERVER` (annan server),
+`DISCORD_STARTSKOTT_KANAL` (annat kanalnamn), `DISCORD_AXEL_ID` (pinga
+någon annan än serverägaren).
 
 ---
 

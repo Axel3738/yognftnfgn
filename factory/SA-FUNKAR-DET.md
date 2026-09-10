@@ -26,9 +26,8 @@ kommandot att klistra in. Inga briefer, inga Notion-sidor, ingen butik.
 Prompten: `.claude/commands/skalningskungen.md`. Larmet:
 `node factory/startskott.mjs --jobb <fil> --discord`.
 
-🖐 Engångsjobb för Axel: skapa Discord-kanalen, lägg kanal-id:t som
-`DISCORD_STARTSKOTT_KANAL` och sitt eget användar-id som `DISCORD_AXEL_ID`
-i miljön. Utan dem skrivs larmet bara i chatten.
+⚙️ Boten sköter Discord själv: hittar servern Bäverbutiken, skapar kanalen
+`#ops-startskott` om den saknas och pingar serverägaren. Testat 2026-09-10.
 
 ## Steg 2 — Klickaren gör en tom butik (3 klick före bygget)
 
@@ -120,7 +119,7 @@ dag.
 | Meta-sidan, Discord-servern | Nej — men fabriken gör allt INUTI dem |
 | WeTracked + CAPI-token | Nej — tokenen får aldrig passera chatten |
 | Plan, kort, ägarbyte, Payments | Nej — pengar och identitet, alltid ägarens |
-| Startskottet i Discord | Ja — byggt 2026-09-10, väntar på kanal-id i miljön |
+| Startskottet i Discord | Ja — byggt och testat 2026-09-10, boten skapar kanalen själv |
 | "Launch: <namn>" | Ja — står i `/ny-annonser` steg 11b sedan 2026-09-10 |
 
 ## Tre saker som är lätta att blanda ihop
