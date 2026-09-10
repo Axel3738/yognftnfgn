@@ -523,18 +523,40 @@ export async function skrivKollektion(handleEllerInput, titel, produktIds, beskr
   };
 
   if (befintlig) {
+    // MÄTT 2026-09-10 (TackleBay, andra bygget): `products` får INTE skickas
+    // i collectionUpdate — "products cannot be specified during update"
+    // (BAD_REQUEST). Titel/beskrivning uppdateras här; produkterna läggs
+    // till med collectionAddProducts, bara de som saknas (idempotent).
+    const { products: _bort, ...utanProdukter } = input;
     const data = await medKontext(`Kollektionen ${k.handle}`, () =>
       graphql(
         `mutation opsFactoryKollektionUppdatera($input: CollectionInput!) {
           collectionUpdate(input: $input) {
-            collection { id handle title }
+            collection { id handle title products(first: 100) { nodes { id } } }
             userErrors { field message }
           }
         }`,
-        { input: { ...input, id: befintlig.id } }
+        { input: { ...utanProdukter, id: befintlig.id } }
       )
     );
-    return { ...data.collectionUpdate.collection, skapad: false };
+    const kollektion = data.collectionUpdate.collection;
+    const finns = new Set((kollektion.products?.nodes ?? []).map((p) => p.id));
+    const saknas = k.produktIds.filter((id) => !finns.has(id));
+    if (saknas.length > 0) {
+      await medKontext(`Kollektionen ${k.handle}: lägga till produkter`, () =>
+        graphql(
+          `mutation opsFactoryKollektionProdukter($id: ID!, $productIds: [ID!]!) {
+            collectionAddProducts(id: $id, productIds: $productIds) {
+              collection { id }
+              userErrors { field message }
+            }
+          }`,
+          { id: kollektion.id, productIds: saknas }
+        )
+      );
+    }
+    const { products: _p, ...rent } = kollektion;
+    return { ...rent, skapad: false, tillagda: saknas.length };
   }
 
   const data = await medKontext(`Kollektionen ${k.handle}`, () =>

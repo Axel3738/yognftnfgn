@@ -274,21 +274,37 @@ test('skrivMeny(handle, rader) skapar med härledd titel; oförändrad meny rör
   assert.equal(skickat.length, 3, 'ingen mutation när menyn redan stämmer');
 });
 
-test('skrivKollektion tar ett input-objekt och uppdaterar befintlig kollektion med id', async () => {
+test('skrivKollektion: befintlig kollektion uppdateras UTAN products, saknade produkter läggs till separat', async () => {
+  // Mätt 2026-09-10: collectionUpdate avvisar `products` ("products cannot be
+  // specified during update"). Testet låste tidigare det felaktiga anropet.
   fejkaShopify([
     { data: { collections: { nodes: [{ id: 'gid://c/1', handle: 'sortiment', title: 'Gammal' }] } } },
-    { data: { collectionUpdate: { collection: { id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet' }, userErrors: [] } } },
+    { data: { collectionUpdate: { collection: { id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet', products: { nodes: [{ id: 'gid://p/1' }] } }, userErrors: [] } } },
+    { data: { collectionAddProducts: { collection: { id: 'gid://c/1' }, userErrors: [] } } },
   ]);
-  const ut = await skrivKollektion({ handle: 'sortiment', titel: 'Sortimentet', produktIds: ['gid://p/1'] });
+  const ut = await skrivKollektion({ handle: 'sortiment', titel: 'Sortimentet', produktIds: ['gid://p/1', 'gid://p/2'] });
   assert.equal(ut.skapad, false);
+  assert.equal(ut.tillagda, 1);
+  assert.equal(ut.products, undefined);
   assert.deepEqual(skickat[1].variables.input, {
     handle: 'sortiment',
     title: 'Sortimentet',
     descriptionHtml: '',
-    products: ['gid://p/1'],
     sortOrder: 'MANUAL',
     id: 'gid://c/1',
   });
+  assert.match(skickat[2].query, /collectionAddProducts/);
+  assert.deepEqual(skickat[2].variables, { id: 'gid://c/1', productIds: ['gid://p/2'] });
+});
+
+test('skrivKollektion: alla produkter redan i kollektionen → ingen collectionAddProducts', async () => {
+  fejkaShopify([
+    { data: { collections: { nodes: [{ id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet' }] } } },
+    { data: { collectionUpdate: { collection: { id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet', products: { nodes: [{ id: 'gid://p/1' }] } }, userErrors: [] } } },
+  ]);
+  const ut = await skrivKollektion({ handle: 'sortiment', titel: 'Sortimentet', produktIds: ['gid://p/1'] });
+  assert.equal(ut.tillagda, 0);
+  assert.equal(skickat.length, 2);
 });
 
 test('publiceraIButiken kastar aldrig — fel blir { publicerad:false, notis }', async () => {
