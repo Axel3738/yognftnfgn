@@ -188,6 +188,27 @@ async function affarskontext() {
   }
 }
 
+/**
+ * Är meddelandet en fråga? Ja/nej från Haiku, utan affärskontext och utan
+ * verktyg — det enda modellen ser är raden. Kastar vid fel; anroparen tolkar
+ * det som "nej".
+ */
+export async function arFragaEnligtClaude(text) {
+  const svar = await claude.messages.create({
+    model: 'claude-haiku-4-5',
+    max_tokens: 5,
+    system:
+      'You classify one Discord chat message from a Swedish fishing/friends server. '
+      + 'Answer with exactly one word: YES if the message asks something of the '
+      + 'others (a question, a request for tips, information, help or opinions, '
+      + 'even without a question mark), otherwise NO. Statements, jokes, plans, '
+      + 'greetings and reactions are NO.',
+    messages: [{ role: 'user', content: String(text).slice(0, 500) }],
+  });
+  const ut = svar.content.filter((b) => b.type === 'text').map((b) => b.text).join('').trim().toUpperCase();
+  return ut.startsWith('YES');
+}
+
 function hamtaHistorik(kanalId) {
   const post = historik.get(kanalId);
   if (!post || Date.now() - post.rörd > HISTORIK_TTL_MS) {

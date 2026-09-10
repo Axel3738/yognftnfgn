@@ -12,8 +12,10 @@
 //                       och i DM är boten SLUTEN: ingen affärskontext, inga
 //                       filverktyg, inga siffror. Se sluten.js.
 //   DISCORD_FRAGA_KLAR_SERVRAR guild-id (kommaseparerade) där boten BARA svarar
-//                       "Fråga klar." på frågor och inget annat — aldrig Claude,
-//                       aldrig tagg. Default: Snart nappar de. Se fragaklar.js.
+//                       "Fråga Claude." på frågor och inget annat — aldrig på
+//                       tagg, aldrig på själva frågan. Frågor utan frågetecken
+//                       avgörs av en ja/nej-klassning utan affärskontext.
+//                       Default: Snart nappar de. Se fragaklar.js.
 //   DISCORD_SVARA_ALLA  sätt till 1 för att svara på ALLT i kanalen, som förr.
 //                       Default: boten svarar bara när den taggas, får ett svar
 //                       på sitt eget inlägg, eller får ett DM. !-kommandon
@@ -27,8 +29,8 @@ import {
 import { dela } from './dela.js';
 import { ärTilltalad, utanTilltal } from './tilltal.js';
 import { arOppen, oppnaServrar } from './sluten.js';
-import { arFragaKlarServer, arFraga, fragaKlarSvar, fragaKlarServrar } from './fragaklar.js';
-import { fraga, nollstallHistorik, MODELL } from './claude.js';
+import { arFragaKlarServer, arFragaAnalys, fragaKlarSvar, fragaKlarServrar } from './fragaklar.js';
+import { fraga, nollstallHistorik, arFragaEnligtClaude, MODELL } from './claude.js';
 import {
   planera, validera, beskriv, utfor, lasLaget, skyddadeKanaler,
 } from './server.js';
@@ -244,13 +246,16 @@ client.on(Events.MessageCreate, (message) => {
     message.reply(`Awake. Model: ${MODELL}. Up for ${Math.round(process.uptime() / 60)} min.`).catch(() => {});
     return;
   }
-  // "Fråga klar"-servrarna: boten läser allt men säger bara en sak, och bara
-  // på frågor. Ingen Claude, inga kommandon utom !ping, ingen tagg-koll.
+  // "Fråga Claude"-servrarna: boten läser allt men säger bara en sak, och
+  // bara på frågor. Inga kommandon utom !ping, ingen tagg-koll. Frågor utan
+  // frågetecken avgörs av en liten klassning — i kön, så svaren kommer i
+  // ordning.
   if (arFragaKlarServer(message.guild?.id)) {
-    if (arFraga(message.content)) {
-      message.reply({ content: fragaKlarSvar(), allowedMentions: { parse: [], repliedUser: true } })
+    kö = kö.then(async () => {
+      if (!(await arFragaAnalys(message.content, arFragaEnligtClaude))) return;
+      await message.reply({ content: fragaKlarSvar(), allowedMentions: { parse: [], repliedUser: true } })
         .catch(() => {});
-    }
+    }).catch((fel) => console.error('[fråga-claude]', fel));
     return;
   }
 
@@ -316,7 +321,7 @@ client.once(Events.ClientReady, (c) => {
   console.log(`Användare: ${TILLÅTNA_ANVÄNDARE.length ? TILLÅTNA_ANVÄNDARE.join(', ') : 'alla'}`);
   console.log(`Svarar: ${SVARA_ALLA ? 'på allt i kanalen' : 'bara när den taggas, får svar eller DM'}`);
   console.log(`Öppna servrar (verksamhetens data): ${oppnaServrar().join(', ')} — alla andra + DM är slutna`);
-  console.log(`"Fråga klar"-servrar: ${fragaKlarServrar().join(', ')}`);
+  console.log(`"Fråga Claude"-servrar: ${fragaKlarServrar().join(', ')}`);
 });
 
 // discord.js sköter reconnect, heartbeat och rate limits själv. Vi loggar bara

@@ -1,8 +1,12 @@
-// "Fråga klar"-läget: i vissa servrar gör boten EN sak. Den läser allt, och
-// när någon ställer en fråga svarar den bara "Fråga klar." med en pik om att
-// ställa hela frågan direkt i stället för att fråga hela servern om lov.
-// Den svarar aldrig på själva frågan, aldrig på tagg, och anropar aldrig
-// Claude — noll kostnad, noll risk att något internt läcker.
+// "Fråga Claude"-läget: i vissa servrar gör boten EN sak. Den läser allt, och
+// när någon ställer en fråga svarar den bara "Fråga Claude." med en pik om att
+// fråga Claude i stället för att fråga hela servern hela tiden.
+// Den svarar aldrig på själva frågan och aldrig på tagg.
+//
+// Frågor känns igen i två steg: först gratis (frågetecken eller frågeord),
+// sedan — för allt annat — en liten ja/nej-klassning med Claude, för många
+// glömmer frågetecknet. Klassningen får ingen affärskontext och inga
+// verktyg, så inget internt kan läcka den vägen.
 //
 // Servrar: env DISCORD_FRAGA_KLAR_SERVRAR (kommaseparerade guild-id).
 // Default: Snart nappar de.
@@ -22,7 +26,7 @@ export function arFragaKlarServer(guildId, lista = fragaKlarServrar()) {
 // Frågeord som inleder en svensk eller engelsk fråga utan frågetecken.
 const FRAGEORD = /^(vem|vad|var|vart|när|hur|varför|vilken|vilket|vilka|kan|får|finns|är|ska|har|vet|någon som|nån som|who|what|where|when|how|why|which|can|could|does|do|is|are|anyone)\b/i;
 
-/** Är det här en fråga? Frågetecken räcker; annars ett frågeord först. */
+/** Säker fråga utan att fråga någon: frågetecken, eller frågeord först. */
 export function arFraga(text) {
   const t = String(text ?? '').trim();
   if (!t) return false;
@@ -30,12 +34,29 @@ export function arFraga(text) {
   return FRAGEORD.test(t) && t.split(/\s+/).length >= 3;
 }
 
+/** Värt att låta Claude avgöra? Inte tomt, inte en länk, minst tre ord. */
+export function vardAttKlassa(text) {
+  const t = String(text ?? '').trim();
+  if (!t || /^https?:\/\/\S+$/.test(t)) return false;
+  return t.split(/\s+/).length >= 3;
+}
+
+/**
+ * Fråga eller inte. Gratisvägen först; annars klassaren (Claude), som får
+ * skickas in av anroparen så det här går att testa utan nätverk.
+ */
+export async function arFragaAnalys(text, klassa) {
+  if (arFraga(text)) return true;
+  if (!klassa || !vardAttKlassa(text)) return false;
+  try { return Boolean(await klassa(text)); } catch { return false; }
+}
+
 export const SVAR = [
-  'Fråga klar. Ställ hela frågan direkt, dummer — ingen svarar på "får jag fråga en sak".',
-  'Fråga klar, din dumbom. Fråga inte om du får fråga. Fråga.',
-  'Fråga klar. Du har frågat halva servern nu. Skriv hela frågan så slipper vi gissa.',
-  'Fråga klar. Ställer du hela frågan på en gång kanske någon orkar svara, dummer.',
-  'Fråga klar. Sluta fråga alla hela tiden — skriv vad du undrar, så får du svar.',
+  'Fråga Claude. Den svarar snabbare än hela servern, dummer.',
+  'Fråga Claude, din dumbom. Sluta fråga alla här hela tiden.',
+  'Fråga Claude. Skriv hela frågan där så får du svar direkt.',
+  'Fråga Claude. Ingen här orkar, dummer.',
+  'Fråga Claude. Det är därför den finns.',
 ];
 
 /** Ett av svaren. Slumpen gör att det inte ser ut som en autosvarare. */

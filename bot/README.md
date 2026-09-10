@@ -148,13 +148,15 @@ boten sluten:
 Ska en server till få se verksamhetens data: lägg dess id i
 `DISCORD_OPPNA_SERVRAR` (Bäverbutiken måste då också stå med).
 
-## "Fråga klar"-servern
+## "Fråga Claude"-servern
 
 I **Snart nappar de** gör boten en enda sak. Den läser allt, svarar aldrig på
-tagg, och när någon ställer en fråga svarar den bara *"Fråga klar."* med en pik
-om att ställa hela frågan direkt i stället för att fråga hela servern om lov.
-Den svarar aldrig på själva frågan. Claude anropas inte alls där — det kostar
-ingenting och inget internt kan komma ut. Fler servrar i samma läge:
+tagg, och när någon ställer en fråga svarar den bara *"Fråga Claude."* med en
+pik om att fråga Claude i stället för hela servern. Den svarar aldrig på själva
+frågan. Frågetecken eller frågeord räcker för att den ska reagera; för allt
+annat avgör en liten ja/nej-klassning om raden är en fråga (folk glömmer
+frågetecken). Klassningen ser bara raden — ingen affärskontext, inga verktyg,
+så inget internt kan komma ut. Fler servrar i samma läge:
 `DISCORD_FRAGA_KLAR_SERVRAR`.
 
 ## Frivilliga inställningar
@@ -167,7 +169,7 @@ Läggs in som Variables i Railway om du vill begränsa boten.
 | `DISCORD_AGARE` | ditt Discord user-id — då är det bara du som kan prata med den |
 | `DISCORD_SVARA_ALLA` | `1` — boten svarar på allt i kanalen, som den gjorde förr. Tom = bara när den taggas |
 | `DISCORD_OPPNA_SERVRAR` | Guild-id, kommaseparerade, där verksamhetens data får användas. Tom = bara Bäverbutiken. Alla andra servrar och DM är slutna |
-| `DISCORD_FRAGA_KLAR_SERVRAR` | Guild-id där boten bara svarar "Fråga klar." på frågor. Tom = Snart nappar de |
+| `DISCORD_FRAGA_KLAR_SERVRAR` | Guild-id där boten bara svarar "Fråga Claude." på frågor. Tom = Snart nappar de |
 | `GITHUB_GREN` | vilken gren den läser. Default är arbetsgrenen |
 
 ---
