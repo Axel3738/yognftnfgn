@@ -89,28 +89,32 @@ dem oförändrade — inte att bedöma dem.
   `/rond` finns kvar som manuellt läge. Dashboarden för människor:
   `agent/dashboard.mjs` → https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81
 
-## Annons-triggern
+## Startskottet (ersatte annons-triggern 2026-09-10)
 
-Ronden flaggar produkter som behöver nya annonser (`/rond-auto` steg 4b).
-**Bara Sverige** — Norge kör översatta svenska annonser och får aldrig egna
-briefer (Axel 2026-09-01). Alla förstabatcher och alla förfallna brief-rundor
-körs samma morgon, utan tak — Axel har fler redigerare än briefer
-(2026-09-02). Rundan är dubbla veckokvoten, minst fyra, mest video.
+⚠️ **Ronden gör inga briefer längre.** Axels beslut 2026-09-10: i stället för
+att bygga en creative-batch och en ny Notion-hub när en produkt klarar testet,
+postar ronden **ett Discord-meddelande** i `#ops-startskott` som säger att
+produkten ska få en egen OPS-butik. Ingen creative strategy, inga nya
+Notion-databaser, inga brief-rundor.
 
-- **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst — utan en
-  riktig batch** → första batchen (`/forsta-batch`). Det är övergången
-  test → skalning; en förlorare vid tröskeln går åtgärdstrappan i stället.
-  **Under 20 % vinst chillar produkten** och prövas om nästa dygn — ingen
-  batch byggs. Okänd vinst räknas aldrig som godkänd. Axels besked 2026-08-31.
+- **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst** → startskott
+  (`agent/startskott.mjs`, loggas som `OPS_STARTSKOTT`). Det är övergången
+  test → egen butik; en förlorare vid tröskeln går åtgärdstrappan i stället.
+  **Under 20 % vinst chillar produkten** och prövas om nästa dygn. Okänd vinst
+  räknas aldrig som godkänd. Axels besked 2026-08-31.
   *(Kravet hette bara "över break-even" fram till dess. Det var för trubbigt:
   Plyschtofflorna låg 2,4 % över och fick 12 briefer byggda samma morgon som
   ronden själv skrev "tunn marginal, se över priset".)*
-- **Material pausat av trappan/avstängning senaste veckan** → ersätt (`/cs`).
-- **2+ höjningar på en vecka** → mata vinnaren (`/cs`).
+- **Bara Sverige.** En norsk kampanj utlöser aldrig ett startskott.
+- `brief_runda`, `ersatt` och `mata_vinnare` räknas fortfarande av
+  `annonsbehov` — men ronden gör ingenting med dem. Matematiken är kvar orörd
+  så den går att slå på igen; utfallet är borttaget.
 
-En klar batch loggas som `FORSTA_BATCH_KLAR`/`CS_BATCH_KLAR` och tystar
-produktens behov i sju dagar. Brieferna landar i produktens Notion-hub —
-samma kö som redigerarna redan jobbar ur.
+Ett skickat startskott loggas som `OPS_STARTSKOTT` och tystar produkten för
+gott — larmet går en gång, aldrig igen.
+
+Bildannonserna (`/bildannonser`, 20:00) och leveransrundan
+(`/notionkorning`, 13:20) är egna rutiner och berörs inte.
 
 ## Så räknas break-even
 

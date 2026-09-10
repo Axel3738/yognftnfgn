@@ -22,12 +22,14 @@
 Automatläget av `/rond`. **Axels stående beslut 2026-08-29:** ronden får skala
 upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
 
-**Tolkningsregel (Axel 2026-08-30):** när körordern (trigger-prompten) säger
-"utför bara det som står i plan.atgarder" syftar det på BUDGETÄNDRINGARNA i
-Meta. Annonsbehoven i steg 4b är fortfarande obligatoriska — alla
-förstabatcher och alla förfallna brief-rundor, utan tak (se 4b). En körning
-som lämnar förfallna behov utan åtgärd och utan redovisning är INTE klar. (Körningen 2026-08-30 hoppade över hela kön på den
-meningen — det var fel tolkning.)
+**Tolkningsregel (Axel 2026-08-30, omskriven 2026-09-10):** när körordern
+(trigger-prompten) säger "utför bara det som står i plan.atgarder" syftar det
+på BUDGETÄNDRINGARNA i Meta. **Startskotten i steg 4b är fortfarande
+obligatoriska** — varje `forsta_batch`-behov ska ge ett larm, utan tak. En
+körning som lämnar ett passerat test utan larm och utan redovisning är INTE
+klar. *(Körningen 2026-08-30 hoppade över hela kön på den meningen — det var
+fel tolkning. Regeln gällde då brief-rundorna; de finns inte längre, men
+samma tolkning gäller startskotten.)*
 
 Ronden KÖRS varje dag, men varje produkts BUDGET ändras högst var tredje dag —
 utom snabbspåret: en produkt i skalningszonen med ROAS ≥ 3 får höjas 20 %
@@ -160,8 +162,9 @@ För varje åtgärd i `plan.atgarder`:
 
 **Startas en kampanj om igen** — av Axel, eller för att en avstängning visade
 sig vara fel — ska det loggas med kod `ATERAKTIVERA`, `genomford: true`. Utan
-den raden tror ronden att kampanjen fortfarande är död och ger den aldrig mer
-briefer (`arAvstangd` i `agent/rond.mjs` läser exakt de två koderna). Använd
+den raden tror ronden att kampanjen fortfarande är död och skjuter aldrig ett
+startskott för den, hur bra den än går
+(`arAvstangd` i `agent/rond.mjs` läser exakt de två koderna). Använd
 `ads_activate_entity` — `ads_update_entity` med `{"status":"ACTIVE"}` svarar
 `status_forced_to_paused: true` och ändrar ingenting.
 
@@ -232,206 +235,105 @@ budgetloggen som historik och ska läsas, inte återanvändas.
 - Aldrig starta något som är pausat. Ronden stänger av; den startar aldrig på.
 - Aldrig röra priser, texter, creatives, målgrupper eller andra konton.
 
-## 4b. Annonsbatcherna (Axels beslut 2026-08-29: rutinen kör dem själv, var tredje dag)
+## 4b. Startskottet (Axels beslut 2026-09-10 — ersätter hela annonshalvan)
 
-Det här är rutinens andra jobb, lika viktigt som budgetarna: **varje produkt
-med en batch ska få sin nya brief-runda var tredje dag.** `annonsbehov` i
-utfallet listar allt som är förfallet, färdigsorterat (första batchen först,
-sen rundorna med äldst batch först).
+**Ronden gör inga briefer längre.** Fram till 2026-09-10 byggde den en hel
+creative-batch och en ny Notion-hub varje gång en produkt passerade testet,
+och en brief-runda var tredje dag därefter. Allt det är borttaget.
+
+I stället gör den **en enda sak**: postar ett startskott i Discord-kanalen
+`#ops-startskott` när en produkt klarat testet. Meddelandet säger att
+produkten ska få en egen OPS-butik, och bär det färdiga `/ny-ops`-kommandot.
+
+> **Axels ord 2026-09-10:** *"Istället för att göra nya briefs och såna grejer
+> ska vi inte göra det alls. Vi skickar bara ett Discord-meddelande. Det är
+> det enda som den behöver göra istället för att göra en massa creative
+> strategy och göra nya Notion-grejsmojser och sånt."*
+
+**Vad rutinen därför ALDRIG gör längre:**
+- Skriver briefer. Varken förstabatcher eller 3-dagarsrundor.
+- Skapar Notion-hubbar. Duplicerar aldrig `Creative hub MALL`.
+- Skapar Notion-items, Drive-mappar eller minnesfiler i `products/<id>/`.
+- Kör `/forsta-batch` eller `/cs`.
+- Loggar `FORSTA_BATCH_KLAR` eller `CS_BATCH_KLAR`.
+
+Kvällens bildannons-rutin (`/bildannonser`, 20:00) och leveransrundan
+(`/notionkorning`, 13:20) är egna rutiner och berörs inte. De rullar vidare.
+
+### Så här körs det
+
+`annonsbehov` i `agent/rond.mjs` räknas som förut — matematiken är orörd.
+Skillnaden är vad du gör med den:
+
+| Behov | Vad ronden gör nu |
+|---|---|
+| `forsta_batch` | **Startskott** — posta larmet, logga `OPS_STARTSKOTT` |
+| `brief_runda` | **Ingenting.** Nämn den inte ens i rapporten. |
+| `ersatt` | **Ingenting.** |
+| `mata_vinnare` | **Ingenting.** |
+
+`forsta_batch` betyder att produkten passerat **1 500 kr total spend OCH
+minst 20 % vinst** (`FORSTA_BATCH_SPEND_SEK` / `FORSTA_BATCH_VINST_PROCENT`
+i `agent/rond.mjs`). Rör aldrig de talen — de är Axels och de är testade.
 
 ⚠️ **BARA SVERIGE.** `annonsbehov` är tomt för NO-körningen och ska så vara.
-De norska annonserna är de svenska annonserna översatta i ett eget flöde
-(`/translate-no`) — Norge behöver aldrig egna briefer, egen Notion-hub eller
-eget produktminne. I NO-kontot gör ronden **bara** budget upp och ner.
-*(Axels besked 2026-09-01. Innan spärren byggde rutinen två norska hubbar och
-lät dem äta tre av sex briefplatser på tre morgnar.)*
+En norsk kampanj utlöser aldrig ett startskott — norska annonser är svenska
+annonser översatta i ett eget flöde.
 
-**Så många körs per morgon (Axels beslut 2026-09-01):**
+För varje `forsta_batch`-behov, i ordning:
 
-1. **Alla `forsta_batch` — inget tak.** Kör dem först och kör dem alla. En
-   produkt får en förstabatch exakt en gång, så kön tar slut av sig själv.
-   Det är här pengarna finns: en produkt som passerat 1 500 kr på ≥20 % vinst
-   står och väntar på material den redan förtjänat.
-2. **Sedan alla `brief_runda` — inget tak heller**, äldst först. Axels
-   besked 2026-09-02: "jag tar hellre några briefs för mycket, jag har ett
-   överflöd av redigerare." Hinner körningen inte hela kön: det som inte
-   fick sin `*_KLAR`-rad flaggas igen imorgon (det är så kön är byggd) —
-   lista i svaret exakt vilka som blev kvar.
+1. **Har startskottet redan gått?** `startskottHarGatt(logg, kampanj_id)` i
+   `agent/startskott.mjs` läser budgetloggen. Är den `true`: hoppa över
+   produkten helt och nämn den inte. Ett larm som kommer varje morgon slutar
+   folk läsa.
 
-*(Taket hette tidigare två poster totalt, sedan två rundor. Bägge var
-räknade för sex produkter; kontot hade 17 aktiva kampanjer den 1 september
-och Soptunneklistermärkena stod 12 dagar utan runda.)*
+2. **Läs kampanjens status.** Hämta den med `ads_get_ad_entities` direkt före
+   larmet. Är `effective_status` något annat än `ACTIVE`: hoppa över, och
+   skriv en rad i leveransen om varför. **Att ronden själv pausade kampanjen
+   samma morgon är inget undantag** — en produkt som just stängdes av ska
+   inte få en egen butik byggd.
 
-🛑 **STOPP — LÄS KAMPANJENS STATUS INNAN DU SKRIVER EN ENDA BRIEF.** Hämta
-kampanjen med `ads_get_ad_entities` (`effective_status`) direkt före batchen.
-Är den något annat än `ACTIVE`: hoppa över produkten, skapa INGEN Notion-hub,
-skriv INGA briefer, logga INGEN `*_KLAR`-rad, och skriv en rad i leveransen om
-att den hoppades över för att den är pausad.
+3. **Hitta källänken.** Startskottet är värdelöst utan den — VA:n ska kunna
+   klistra in `/ny-ops <länk>` utan att leta. Ta produktsidans URL på
+   bäverbutiken.se. Hittar du den inte: posta larmet ändå, men skriv
+   `KÄLLÄNK SAKNAS` i produktfältet och säg det i leveransen. **Gissa aldrig
+   en URL.**
 
-**Att ronden själv pausade kampanjen samma morgon är inget undantag — det är
-det vanligaste fallet.** En kampanj du stängde av i steg 3 får inte briefer i
-steg 4b. Aldrig. Att bygga material till en kampanj som inte kör är slöseri med
-redigerarnas tid, och det ser i Notion ut som arbete som betyder något.
+4. **Posta larmet.**
 
-`annonsbehov` filtrerar numera bort tre saker: domarna `STANG_AV` och
-`ATGARDSTRAPPAN`, och varje kampanj vars senaste genomförda livscykelrad i
-budgetloggen är `STANG_AV` (`arAvstangd` i `agent/rond.mjs`). Dyker en pausad
-produkt ändå upp i behovslistan är loggen fel — fixa loggen, bygg inte batchen.
-
-*(Två larm från Axel. 2026-09-02: Kranskydd Frost 420D var pausad och fick ändå
-9 briefer. 2026-09-04: Medicinasken i Fickformat, Kasta & Fånga-settet och
-Bordtennisnätet stängdes av på morgonen och fick 47 briefer och tre nya
-Notion-hubbar av samma körning — via `ersatt`-behov som avstängningen själv
-utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
-`TRAPPA_FORLANGNING`, alltså när enskilda annonser pausats men kampanjen kör.)*
-
-**Batchens innehåll (Axel 2026-09-02):**
-- **Fler videor.** Redigerarna är många — minst två tredjedelar av varje
-  batch är video. Förstabatch: sex nya videokoncept + variationer på
-  vinnarna + sex statiska. Brief-runda: `rundaAntal` annonser (dubbla
-  veckokvoten, minst fyra), varav högst två statiska.
-- **Statiska på samma nivå som förut** — plus två extra serier som Axel
-  bestämde 2026-09-02 ("bilder är billiga, gör extra bara för att"):
-  - **+3 BOF-bilder per batch** (bottom of funnel — till den som redan sett
-    produkten): pris/erbjudande, garanti/fri frakt, jämförelse eller
-    invändning. Samma mall, samma tre-frågorstest.
-  - **+2 review-bilder per batch** byggda på **riktiga recensioner** ur
-    produktsidan eller Judge.me — citatet ordagrant, aldrig omskrivet, aldrig
-    påhittat. Finns inga recensioner: inga review-bilder, och skriv det i
-    leveransen. *(Sömnadskitet 2026-09-02: en review-bild gick ut med
-    nonsenstext som "citat". Det får aldrig hända igen.)*
-  Serierna räknas utöver `rundaAntal`/förstabatchens antal.
-- **Briefens format är mallen i `forsta-batch.md` (LEVERANSFORMAT).** Enkel,
-  kort, samma struktur varje gång. Tre-frågorstabellen är obligatorisk på
-  varje svensk rad — en rad med ett ❌ går inte ut.
-
-- Behov `forsta_batch` → produkten har passerat 1 500 kr OCH ligger på minst
-  **20 % vinst**. Under det flaggas ingenting: produkten chillar och prövas om
-  nästa dygn. Bygg ALDRIG en batch för en produkt som inte står i listan.
-  Följ `.claude/commands/forsta-batch.md` i sin helhet
-  (analys → briefer → Drive → Notion). Strategin görs FÖRST, sedan läggs
-  annonserna i produktens Notion-hub — det är där Jasper och redigerarna ser
-  dem, via det vanliga veckoflödet. **Rutinen skriver briefer — den gör aldrig
-  själva annonserna. Redigerarna gör annonserna.**
-  ⚠️ Drive: batchmappen läggs i produktens BEFINTLIGA mapp (Joshs) — ALDRIG
-  ny mapp i `BÄVER/Products`, det är lanseringskön. Exakt regel i
-  forsta-batch.md punkt 5.
-- Behov `brief_runda` (och `ersatt`/`mata_vinnare` på en produkt som redan har
-  minne i `products/<id>/`) → följ `.claude/commands/cs.md`. Står det ett
-  "Fokus:" i orsaken styr det rundans inriktning.
-  **Saknar produkten minnesfiler** (ingen `products/<id>/dna.md`, inte heller i
-  `git log --all` — händer när batchen är historisk, gjord före systemet) →
-  kör `.claude/commands/forsta-batch.md`-flödet i stället, det bygger minnet
-  från noll. Logga ändå `CS_BATCH_KLAR` (produkten HAR redan haft en batch).
-  ⚠️ Den här specialregeln är INGEN väg runt statusspärren ovan. Saknade
-  minnesfiler på en pausad kampanj betyder att produkten är död utan minne —
-  inte att den ska få en förstabatch. Kolla status först, alltid.
-- **Rundans storlek = `rundaAntal`** i behovsraden — dubbla veckokvoten,
-  aldrig under fyra (`rundkvot` i `agent/rond.mjs`). Axel 2026-09-02: "jag tar
-  hellre några briefs för mycket, jag har ett överflöd av redigerare." För
-  `forsta_batch` gäller i stället hela veckokvoten (`veckokvot` i utfallet).
-- **Ny produkt utan Notion-hub:** bygg ALDRIG en hub från grunden och klona
-  ALDRIG schemat via create-database — då blir statusarna svenska
-  (Inte påbörjad/Pågår/Klar) och hubben hamnar utanför teamspacen. Fel båda
-  gångerna det testades 2026-08-29. Gör i stället:
-  1. Duplicera den TOMMA mallen **"Creative hub MALL"**
-     (id `3cc270ab-908c-8005-a50e-db6b1b179794`, Axels mall i
-     Bäverbutiken-teamspacen) med notion-duplicate-page. Dubbletten ärver
-     engelska statusar (Draft, In progress, In progress 2, Approved …), alla
-     vyer OCH teamspace-platsen. Verifierat 2026-08-30.
-  2. Dupliceringen är asynkron — vänta och hämta om tills databasen finns,
-     döp sedan om via notion-update-data-source till
-     "<Produktnamn på engelska> creative hub".
-  3. **Åtkomsten ärvs från MALLEN — den går inte att sätta via API:t.**
-     En dubblett hamnar där originalet ligger. Ligger `Creative hub MALL`
-     privat blir VARJE ny hub privat, och redigerarna ser ingenting.
-     Notion-MCP:n har inget verktyg för att dela en sida eller sätta
-     behörigheter — det finns bara i Notions gränssnitt.
-     ⚠️ **`<ancestor-path>` går INTE att använda för att avgöra det här**
-     (Axels rättelse 2026-09-05). Ett tomt `<ancestor-path>` vid notion-fetch
-     betyder INTE att hubben är privat — testat mot en hubb redigerarna
-     garanterat redan jobbar i (rader i "Translation in review") och den gav
-     samma tomma fält. Verktyget fyller uppenbarligen aldrig i fältet för
-     databaser i det här workspacet, oavsett delning. Ett falskt larm gick ut
-     till Discord 2026-09-05 på grund av detta.
-     Misstänker du att en ny hubb ändå ligger privat (redigerarna säger de
-     inte ser den, eller `Creative hub MALL` själv har flyttats/ändrats
-     nyligen): fråga Axel rakt av i stället för att lita på ett Notion-fält.
-     Skapa items som vanligt — arbetet ska aldrig hållas tillbaka på en
-     ogrundad misstanke.
-     *(Axels larm 2026-09-02 om privata hubbar var på riktigt då — problemet
-     kan fortfarande finnas. Det är bara den här diagnosmetoden som är värdelös.)*
-  4. Skapa items med notion-create-pages: Status "Draft",
-     Typ **"Video - Pending Approval"** för video och
-     **"Image - Pending Approval"** för bildannonser (Axels nya typ i mallen).
-  Går mallen inte att hitta: skapa INGEN hub — lista i svaret exakt vilka
-  items som skulle skapats och säg det till Axel.
-  **HELA BRIEFEN SKA LIGGA I NOTION-ITEMET** (Axels besked 2026-09-02). Sidans
-  innehåll ÄR briefen: hypotes, hook-tabell, shot list med svenska rader i
-  `Swedish (use this) | English meaning`, creator/editing direction, CTA, KPI,
-  globala regler — allt. Drive-länken till batchmappen är ett komplement som
-  läggs överst, aldrig ersättningen. **Skriv ALDRIG "se brief.md i Drive" eller
-  en länk till en .md-fil** — redigerarna kan inte öppna dem, och en Notion-sida
-  med bara en länk är en tom brief. *(Hände 2026-08-31: alla 12 kamera-items
-  innehöll tre rader och länken `http://brief.md`. Redigerarna stod stilla en
-  hel dag och Axel fick "I can't access the links" i Slack.)*
-  Innan `*_KLAR` loggas: öppna ETT av de skapade itemen med notion-fetch och
-  kontrollera att shot list/design brief faktiskt står där. Saknas den är
-  batchen inte klar.
-  **ALLT som skrivs i Notion är på ENGELSKA** — itemnamn, statusar, innehåll,
-  kommentarer. Redigerarna läser inte svenska.
-  Anteckna hubbens id + Drive-mappens id i `agent/produktkarta.json`.
-- När batchen är klar OCH uppladdad till Notion: skriv en loggrad med kod
-  `FORSTA_BATCH_KLAR` (respektive `CS_BATCH_KLAR`), `genomford: true` —
-  det är den raden som startar om 3-dagarsklockan.
-- **Minnesfilerna** (`products/<id>/dna.md`, `batch-log.md`, `backlog.md`):
-  skriv dem i arbetskopian som vanligt och **committa + pusha dem** i samma
-  push som loggraden. En batch vars minnesfiler inte är pushade är INTE klar.
-- Hinner en batch inte bli klar (avbrott, fel): logga ingenting med *_KLAR —
-  då flaggas behovet igen imorgon och batchen görs om hel.
-
-## 4c. Notion-svepet — vilka hubbar finns, och vad ska produceras
-
-Körs **varje morgon**, före leveransen. Utan det här upptäcker varken du eller
-Discord-boten att en ny produkt fått en creative hub, och arbetet blir osynligt.
-
-0. **Sug forst Product test center SE BAVER**
-   (`collection://d80270ab-908c-839b-9dcc-8721c5f29570`). Det ar dar NYA
-   produkter bor, och sjalva produktsidan bar arbetet: voiceover-manus per
-   koncept, hooks och Drive-lankar. Hamta allt med Status `Ads review`,
-   `Ready to launch`, `In progress` och `Testing`. **Hoppa aldrig over det har
-   steget** — en tidigare korning sa "det finns inget arbete" nar 18 produkter
-   lag i Testing, for att den bara tittat i creative hubs.
-
-1. `notion-search` på `creative hub`, `page_size: 25`, `max_highlight_length: 0`.
-   ⚠️ Sok ocksa pa produktnamnen ur produktkartan. Hubben for fiskespohallaren
-   heter bara "Fish rod holder" — en sokning pa "creative hub" missar den helt.
-   Svaret innehåller `is_archived` per träff — **använd det fältet**, gissa
-   aldrig utifrån namnet. Axel arkiverar allt som inte körs längre.
-2. För varje hub som **inte** är arkiverad: `notion-fetch` på dess id och läs ut
-   `collection://…`-URL:en ur `<data-source url="…">`.
-   Hubbar som redan står i `agent/notion-uppgifter.json` har sin collection
-   sparad — hoppa över hämtningen för dem.
-3. Fråga varje collection:
-   ```sql
-   SELECT "Namn", "Typ", "Status", "Prioritet" FROM "collection://…"
-   WHERE "Typ" IN ('Video - Pending Approval','Image - Pending Approval')
+   ```bash
+   node agent/startskott.mjs --jobb <fil.json>
    ```
-   **Filtrera på inkludering, aldrig på uteslutning.** Guideline, SOP, Feedback
-   och `Winning Creative` är dokumentation och räknas aldrig som annonser —
-   filtrerar du bort dem i stället smyger nya stödsidor in i mätningen.
-4. Skriv om `agent/notion-uppgifter.json`: levande hubbar med collection-id,
-   arkiverade hubbar, och alla rader med Status `Draft`. Sätt `uppdaterad` till
-   dagens datum. **Committa och pusha filen.**
-5. Rapportera i leveransen:
-   - **Nya hubbar sedan igår** (fanns inte i filen innan) — det är signalen att
-     en produkt börjat rulla.
-   - Hubbar som blivit arkiverade sedan igår.
-   - Antal drafts per produkt, uppdelat på video och bild.
 
-Hittar du en hub som saknar produkt i `agent/produktkarta.json`, eller en
-kampanj i produktkartan som saknar hub: säg det. Det är oftast en glömd
-uppsättning, inte ett fel i datan.
+   Jobbfilen skrivs av dig ur rondens egna siffror och måste bära:
+   `produkt`, `kampanj_id`, `kalla_url`, `spend_total`, `kop`, `cpa`,
+   `break_even_cpa`, `roas`, `vinst_procent` — plus `datum`.
+   **Skriptet vägrar om ett tal saknas.** Det är med flit: hellre inget larm
+   än ett larm med ett påhittat tal. Hitta aldrig på ett värde för att komma
+   förbi spärren; skriv i stället i leveransen vilket tal som fattades.
+
+   Kör `--torr` först om du vill se meddelandet utan att posta.
+
+5. **Logga.** Skriv raden från `byggLoggrad` i `agent/budgetlogg.jsonl`
+   (kod `OPS_STARTSKOTT`, `genomford: true`), committa och pusha **direkt**.
+   Nekas pushen: larma i svaret. Utan raden går larmet ut igen imorgon.
+
+   ⚠️ Loggraden får aldrig bära `ny_budget`. `dagarSedanAndring` i
+   `agent/logg.mjs` räknar varje genomförd rad med det fältet som en
+   budgetändring, och då fryses kampanjen i tre dygn utan att någon rört
+   budgeten. `byggLoggrad` utelämnar fältet — lägg inte till det.
+
+### Provlarmet
+
+Hela kedjan går att testa utan att vänta på en riktig produkt:
+
+```bash
+node agent/startskott.mjs --test --torr   # visa provlarmet, posta inget
+node agent/startskott.mjs --test          # posta provlarmet skarpt
+```
+
+Provlarmets tal är påhittade och produktnamnet säger att det är ett test.
+Kopiera dem aldrig in i en riktig körning.
 
 ## 5. Logga
 
@@ -453,9 +355,9 @@ publicera ingen artefakt — se blocket högst upp i filen.
 därmed inte sparades. Försök inte rädda dem någon annan väg.
 
 Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
-sköts upp och varför, om något larmade — och vilka brief-rundor/batcher som
-kördes (produkt + antal briefer + Notion-länk) respektive ligger kvar i kön
-till imorgon. Inga bibelsvar.
+sköts upp och varför, om något larmade — och **vilka startskott som gick ut**
+(produkt + siffrorna). Gick inget startskott: skriv ingenting om det.
+Inga bibelsvar.
 
 **Skicka samma korta rapport till Discord** (Axels order 2026-08-30) —
 **på ENGELSKA.** Allt som postas som Bävern läses av det engelsktalande
@@ -468,13 +370,17 @@ node agent/discord-post.mjs --kanal ronden "Daily round <datum>" "<rapporten i M
 ```
 
 ⚠️ **ALLT som postas i Discord skrivs på ENGELSKA** — rubrik och brödtext, i
-alla tre kanalerna (`ronden`, `uppgifter`, `larm`). Redigerarna läser samma
-kanaler som Axel och förstår inte svenska. Produktnamnen behålls som de heter i
-Meta (t.ex. "Båtmotorskyddet 420D"), resten översätts: SKALA → "Scaled up",
-SANK → "Scaled down", STÄNG AV → "Paused", uppskjuten → "Deferred",
-brief-runda → "brief round", förstabatch → "first batch". Svaret till Axel i
-chatten är fortfarande på svenska. *(Axels order 2026-09-02 — samma dag
+kanalerna `ronden` och `larm`. Redigerarna läser samma kanaler som Axel och
+förstår inte svenska. Produktnamnen behålls som de heter i Meta (t.ex.
+"Båtmotorskyddet 420D"), resten översätts: SKALA → "Scaled up", SANK →
+"Scaled down", STÄNG AV → "Paused", uppskjuten → "Deferred". Svaret till Axel
+i chatten är fortfarande på svenska. *(Axels order 2026-09-02 — samma dag
 postades rapporten på svenska och redigerarna kunde inte läsa den.)*
+
+⚠️ **Ett enda undantag: `#ops-startskott` skrivs på SVENSKA.** Den kanalen
+läses av Axel och VA:n, inte av redigerarna, och Axel skrev mallen själv på
+svenska 2026-09-10. Texten byggs av `agent/startskott.mjs` — skriv den aldrig
+för hand och översätt den aldrig.
 
 Skriptet sköter kanalval, delning över 2 000-teckengränsen, rate limits och
 **pingarna** (Axel 2026-09-02: varje post pingar personerna i `pinga` i
@@ -486,10 +392,11 @@ det på en rad i svaret. Varje rutin har sin egen kanal
 standardkanalen i stället för att tystna.
 
 Posta dessutom, i **egna** poster:
-- `--kanal uppgifter` varje gång nya uppgifter går ut till redigerarna
-  (brief-runda eller förstabatch klar): produkt, antal briefer, Notion-länk.
 - `--kanal larm` när något kräver Axel: `STOR_SPEND_UTAN_KOP`, `plan.sparrad`,
   misslyckad verifiering efter en Meta-skrivning.
+
+Startskotten postas **inte** härifrån — `agent/startskott.mjs` gör det själv
+i steg 4b, i sin egen kanal och på svenska.
 
 Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 
@@ -500,14 +407,13 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
-- [ ] Alla `forsta_batch` körda (inget tak) + högst två `brief_runda`, med
-      *_KLAR-loggrad och minnesfiler pushade — eller exakt redovisat varför inte
-- [ ] Inga briefer, hubbar eller minnesfiler skapade för NO — Norge är bara budget
-- [ ] Ingen dom om privat/delad hubb fälld på `ancestor-path` (trasig signal, se 4b) — misstanke går till Axel som en fråga, inte som ett påstående
-- [ ] Ett skapat Notion-item öppnat och kontrollerat: hela briefen står i sidan, ingen `.md`-länk
+- [ ] Varje `forsta_batch`-behov har fått ett startskott i `#ops-startskott` —
+      eller exakt redovisat varför inte (redan larmat, kampanjen inte ACTIVE,
+      källänk saknas)
+- [ ] Varje startskott loggat som `OPS_STARTSKOTT` och pushat
+- [ ] **Inga briefer, inga Notion-hubbar, inga Notion-items, inga minnesfiler
+      skapade** — varken för SE eller NO. Ronden gör inte det längre.
+- [ ] Inga startskott för NO — Norge är bara budget
 - [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
 - [ ] Ingen artefakt publicerad och `agent/dashboard.mjs` inte körd
-- [ ] Notion-svepet kört: hubbar avlästa med `is_archived`, drafts hämtade,
-      `agent/notion-uppgifter.json` omskriven med dagens datum och pushad
-- [ ] Nya och nyss arkiverade hubbar redovisade i leveransen
 - [ ] Kort svar till Axel enligt svarsformatet i CLAUDE.md regel 14

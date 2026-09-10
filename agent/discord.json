@@ -22,7 +22,11 @@
     "launcher": "new-products-coing-out",
     "translation": "translation-till-norge-av-nya-produkter",
     "larm": "general",
-    "chatt": "general"
+    "chatt": "general",
+    "startskott": "ops-startskott"
+  },
+  "sprak_undantag": {
+    "ops-startskott": "SVENSKA. Enda undantaget fran engelska-regeln ovan. Kanalen lases av Axel och VA:n, inte av redigerarna, och Axel skrev mallen sjalv pa svenska i sitt eget svarsformat 2026-09-10. Oversatt den aldrig 'for konsekvensens skull'. Texten byggs av agent/startskott.mjs."
   },
   "kanal_id": {
     "scaling": "1543546164199161887",
@@ -30,6 +34,7 @@
     "new-products-coing-out": "1543546469884362833",
     "translation-till-norge-av-nya-produkter": "1543546518785495151",
     "general": "1540322131148013580",
+    "ops-startskott": "1547549671239720990",
     "read-me": "1543641075657220126",
     "kalendrar": "1540553128179531786",
     "kalendrar-som-ska-runna": "1540553097636614254",
