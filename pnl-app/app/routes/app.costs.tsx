@@ -299,6 +299,12 @@ export default function Costs() {
   useEffect(() => {
     if (quoteData?.quote) setOffertValuta(quoteData.quote.detected || "USD");
   }, [quoteData]);
+  /* Under en deploy kan en öppen sida ha gammal JS och prata med en ny
+     server (eller tvärtom). Listan och kurserna får därför aldrig antas
+     finnas — ett tomt fält är begripligt, ordet "undefined" är det inte. */
+  const offertValutor = quoteData?.quote?.valutor?.length
+    ? quoteData.quote.valutor
+    : ["USD", "EUR", "CNY", "GBP", currency];
   const offertKurs = quoteData?.quote?.kurser?.[offertValuta] ?? null;
   const [visaImport, setVisaImport] = useState(false);
   const [visaVideo, setVisaVideo] = useState(false);
@@ -532,7 +538,7 @@ export default function Costs() {
                       <div style={{ maxWidth: 260 }}>
                         <Select
                           label={T.costs.quote.currencyLabel}
-                          options={quoteData.quote.valutor.map((c) => ({ label: c, value: c }))}
+                          options={offertValutor.map((c) => ({ label: c, value: c }))}
                           value={offertValuta}
                           onChange={setOffertValuta}
                           helpText={
@@ -831,6 +837,14 @@ function OffertRad({
   const [variantGid, setVariantGid] = useState(forslagVariant?.variantGid ?? "");
   const rund = (n: number) => Math.round(n * 100) / 100;
   const iButik = (n: number) => (kurs == null ? null : rund(n * kurs));
+  /* Packpriserna normaliseras: ett steg utan antal (gammalt svarsformat) är
+     inte tolkningsbart och släpps hellre än att gissa ett antal. */
+  const steg = ((it.tiers ?? []) as unknown[])
+    .map((s) => {
+      const o = s as { units?: unknown; total?: unknown };
+      return { units: Math.round(Number(o?.units) || 0), total: Number(o?.total) || 0 };
+    })
+    .filter((s) => s.units >= 2 && s.total > 0);
   const [kostnad, setKostnad] = useState(() => {
     const v = iButik(it.unitCost);
     return v == null ? "" : String(v);
@@ -842,7 +856,7 @@ function OffertRad({
     setKostnad(v == null ? "" : String(v));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [kurs, valuta]);
-  const stegButik = kurs == null ? [] : it.tiers.map((s) => ({ units: s.units, total: rund(s.total * kurs) }));
+  const stegButik = kurs == null ? [] : steg.map((s) => ({ units: s.units, total: rund(s.total * kurs) }));
   const sparad = fetcher.data?.ok === true;
 
   /* Priserna som de STÅR i offerten: 1 st, sedan varje packpris med sitt
@@ -850,7 +864,7 @@ function OffertRad({
      totalt, inte som 2 × styckpriset. */
   const prisrader = [
     T.costs.bundle.single(`${nf.format(it.unitCost)} ${valuta}`),
-    ...it.tiers.map((s) =>
+    ...steg.map((s) =>
       T.costs.bundle.line(s.units, `${nf.format(s.total)} ${valuta}`, `${nf.format(s.total / s.units)} ${valuta}`),
     ),
   ].join(" · ");
@@ -876,7 +890,7 @@ function OffertRad({
         <InlineStack gap="200" blockAlign="center" wrap>
           <Text as="span" fontWeight="semibold">{it.label}</Text>
           {it.moq ? <Badge>{T.costs.quote.moq(it.moq)}</Badge> : null}
-          {it.tiers.length ? <Badge tone="info">{T.costs.bundle.badge}</Badge> : null}
+          {steg.length ? <Badge tone="info">{T.costs.bundle.badge}</Badge> : null}
         </InlineStack>
         <Text as="p" tone="subdued" variant="bodySm">{prisrader}</Text>
         {kurs == null ? (
