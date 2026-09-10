@@ -84,21 +84,15 @@ thrown away and run again, so they come before the build, not after it.
 ## 5. Right after the build – the theme and the name
 The theme comes FIRST. Everything you check in sections 6–13 is checked
 against what the customer actually sees, and until the theme is published the
-customer sees the old one.
+customer sees the old one. Publishing works on the free trial – the store stays
+behind its password either way (measured: DryTrek 2026-09-09).
 - [ ] Online Store → Themes → **AdventLane – CRO v1** → **Publish**
 - [ ] Settings → General → Store name → **AdventLane** → Save
       This is what the order emails, the checkout, the review requests and the
       Meta page are all named after – so it happens before any of them.
 - [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
 
-## 6. Shopify Payments + Klarna
-Early on purpose: the verification can take days, and nothing in the cart can
-be tested until a payment provider is live.
-- [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you
-- [ ] Same page → **Klarna** → tick → Save
-- [ ] Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
-
-## 7. Domain
+## 6. Domain
 Loopia first – Shopify cannot connect a domain that is not bought, and the
 sender-email verification link is only readable once the forwarding works.
 - [ ] Log in to Loopia
@@ -107,6 +101,17 @@ sender-email verification link is only readable once the forwarding works.
 - [ ] Send a test email to **hello@adventlane.se** – confirm it arrives
 - [ ] Shopify → Settings → Domains → Connect existing domain → **adventlane.se** → follow the DNS steps → **Set as primary**
 - [ ] Shopify → Settings → Notifications → Sender email → **hello@adventlane.se** → Save → click the verification link in the inbox
+  If Shopify refuses the domain on the free trial: do this section after
+  section 14 instead, and tell Claude – the order in this file gets corrected.
+
+## 7. Judge.me
+- [ ] Apps → search "Judge.me" → Install (free plan)
+- [ ] Judge.me → Settings → Language → **Swedish**
+- [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor** → Import
+  The upload is yours and stays yours: Judge.me's API overwrites every review
+  date with the moment of import (measured 2026-09-08), the app's own file
+  keeps the original dates.
 
 ## 8. The EU withdrawal button (required by law)
 Since 19 June every EU store must have a clear "cancel my order" button the
@@ -123,47 +128,63 @@ some member states.
       from delivery, and say who pays the return shipping
 - [ ] Same page → **Cancellation window** → until the order is fulfilled
 
-## 9. Judge.me
-- [ ] Apps → search "Judge.me" → Install (free plan)
-- [ ] Judge.me → Settings → Language → **Swedish**
-- [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor** → Import
-  The upload is yours and stays yours: Judge.me's API overwrites every review
-  date with the moment of import (measured 2026-09-08), the app's own file
-  keeps the original dates.
-
-## 10. Meta
+## 9. Meta
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **AdventLane**
 - [ ] Copy the **Page ID** → give to Claude Code
 - [ ] The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
 
-## 11. Discord
+## 10. Discord
 - [ ] Discord → + → Create server: **AdventLane**
 - [ ] Open the invite link Claude Code gives you → **Authorize** the bot
 
-## 12. Tell Claude the store is ready
+## 11. Tell Claude the store is ready
 - [ ] Write to Claude Code: **"Store ready: AdventLane"** – it creates the pixel and builds the Discord channels
 
-## 13. Test the store in a real browser (this is the receipt for 5–12)
-Do it on a phone, on **adventlane.se**, as a customer – not in the admin preview.
-Nothing above counts as done until this passes.
-- [ ] The product page opens and the reviews show their original dates (never "just now")
-- [ ] Add to cart → the cart upsell shows → go to checkout
-- [ ] The checkout shows **SEK** and **Klarna**
-- [ ] **Ångra köp** is in the footer and it opens the account page
-      (opens nothing = customer accounts in section 8 is still off)
-- [ ] Tell Claude what you saw – a screenshot of anything that looks wrong
-
-## 14. Hand over
+## 12. Tracking – WeTracked + the CAPI token
+Before the store is live, not after: a live store without tracking spends ad
+money it cannot measure.
 - [ ] Install the **WeTracked** app from the Shopify App Store
 - [ ] WeTracked → paste the **pixel ID** Claude gives you
 - [ ] Events Manager → Data sources → **AdventLane** → Settings → Conversions API → **Generate access token** → copy it
 - [ ] WeTracked → paste the **Conversions API token** (never send it in chat or email)
+
+## 13. Test the store behind the password (the receipt for 5–12)
+Do it on a phone, as a customer – not in the admin preview. Use the store
+password to get in; the store is not public yet, and the checkout cannot be
+tested until section 15. Nothing above counts as done until this passes.
+- [ ] The product page opens and the reviews show their original dates (never "just now")
+- [ ] Add to cart → the cart upsell shows → the cart adds up
+- [ ] The prices show in **SEK**
+- [ ] **Ångra köp** is in the footer and it opens the account page
+      (opens nothing = customer accounts in section 8 is still off)
+- [ ] The whole page works on a phone – no sideways scrolling, nothing cut off
+- [ ] Tell Claude what you saw – a screenshot of anything that looks wrong
+
+## 14. Hand over – plan, card, ownership
+Everything above is done on the free trial and costs nothing. From here the
+store belongs to the owner, and the last two sections are only possible once
+it does (Axel's rule 2026-09-10: Shopify Payments and going live happen on the
+owner's own account, never on the work account).
 - [ ] The owner logs in with the work Gmail, picks the plan and adds his card
 - [ ] Then: Settings → Users → click the store owner's name → **Transfer store ownership** → **axelodhner.business@gmail.com** → enter your password → confirm
 - [ ] Owner changes the Loopia password afterwards
 
-## 15. Ads (a NEW session)
+## 15. Shopify Payments + Klarna (after the hand-over)
+The bank details and the identity check are the owner's, so this cannot be
+done before section 14 – and until it is done, no checkout can be tested.
+- [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you
+- [ ] Same page → **Klarna** → tick → Save
+- [ ] Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
+
+## 16. Go live and test the checkout
+The storefront password cannot be removed until a plan is picked, so this is
+the last thing that happens – and the checkout test can only happen here.
+- [ ] Online Store → Preferences → remove the **storefront password**
+- [ ] Open **adventlane.se** on a phone as a customer: add to cart → checkout
+- [ ] The checkout shows **SEK** and **Klarna**
+- [ ] Tell Claude what you saw
+
+## 17. Ads (a NEW session)
 - [ ] Open a NEW Claude session — not the one you built the store in
 - [ ] Write: **/ny-annonser kalender** + the Bäverbutiken product link
 - [ ] The link is needed once per store — after that just **/ny-annonser kalender**

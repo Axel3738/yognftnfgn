@@ -33,10 +33,12 @@ eller nästa anställd. Filnamnet ligger kvar för att ett tjugotal rader i
 | Position | Skäl |
 |---|---|
 | 1–3 före bygget | Inget av det går att ändra efteråt. Valuta, språk och primärmarknad sätts av butiksadressen vid skapandet, och bygget skriver priser, paket och rabattkoder i butikens valuta. Fel här = bygg om allt. |
-| 5 temat först efter bygget | Allt du kontrollerar i 6–13 kontrolleras mot kundens riktiga vy. Opublicerat tema = du kontrollerar en butik ingen ser. |
-| 6 Payments tidigt | Verifieringen kan ta dagar, och varukorgen går inte att testa utan ett betalsätt. Starta den och gå vidare. |
-| 7 Loopia före Shopify | Går inte att koppla en domän som inte är köpt, och verifieringslänken för avsändarmejlen går bara att läsa när vidarebefordran fungerar. |
-| 13 testet sist | Det är kvittot på 5–12, inte ett steg bland dem. |
+| 5 temat först efter bygget | Allt du kontrollerar i 6–13 kontrolleras mot kundens riktiga vy. Opublicerat tema = du kontrollerar en butik ingen ser. Publicering fungerar på free trial (mätt: DryTrek 2026-09-09) — butiken står bakom sitt lösenord ändå. |
+| 6 Loopia före Shopify | Går inte att koppla en domän som inte är köpt, och verifieringslänken för avsändarmejlen går bara att läsa när vidarebefordran fungerar. |
+| 6–12 före ägarbytet | Allt det här görs på free trial och kostar ingenting. |
+| 13 testet före ägarbytet | Kvittot på 5–12, bakom butikslösenordet. Kassan kan inte testas här — se 15. |
+| 14 ägarbytet | Plan, kort och överlåtelse. Härifrån är butiken ägarens. |
+| 15–16 efter ägarbytet | **Axels regel 2026-09-10.** Shopify Payments är ägarens bank och identitet, och butikslösenordet går inte att ta bort förrän en plan är vald. Alltså kan kassan inte testas förrän här — det är därför testet är delat i två. |
 
 ## How this job works
 
@@ -129,24 +131,15 @@ VIDEO:
 
 The theme comes FIRST. Everything you check in sections 6–13 is checked
 against what the customer actually sees, and until the theme is published the
-customer sees the old one.
+customer sees the old one. Publishing works on the free trial – the store
+stays behind its password either way (measured: DryTrek 2026-09-09).
 
 * Online Store → Themes → the theme Claude names → Publish
 * Settings → General → Store name → STORE NAME → Save
   This is what the order emails, the checkout, the review requests and the Meta page are all named after – so it happens before any of them.
 * When Claude says an extra market is ready (e.g. Norway): Settings → Markets → that market → activate its currency (e.g. NOK) → Save
 
-## 6. Shopify Payments + Klarna
-VIDEO:
-
-Early on purpose: the verification can take days, and nothing in the cart can
-be tested until a payment provider is live.
-
-* Settings → Payments → Activate Shopify Payments → fill in the company + bank details Claude gives you
-* Same page → Klarna → tick → Save
-* Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
-
-## 7. Domain
+## 6. Domain
 VIDEO:
 
 Loopia first – Shopify cannot connect a domain that is not bought, and the
@@ -158,6 +151,16 @@ sender-email verification link is only readable once the forwarding works.
 * Send a test email to STORE EMAIL – confirm it arrives
 * Shopify → Settings → Domains → Connect existing domain → DOMAIN → follow the DNS steps → Set as primary
 * Shopify → Settings → Notifications → Sender email → STORE EMAIL → Save → click the verification link in the inbox
+* If Shopify refuses the domain on the free trial: do this section after section 14 instead, and tell Claude – the order in this file gets corrected.
+
+## 7. Judge.me
+VIDEO:
+
+* Apps → search "Judge.me" → Install (free plan)
+* Judge.me → Settings → Language → the home language (e.g. Swedish)
+* Judge.me → Settings → Review Widget → star color: 00B77F
+* Judge.me → Settings → Import reviews → Import from apps → Judge.me format → upload the reviews file Claude gives you → Import (one file per product – repeat for each product in the store)
+  The upload is yours and stays yours: Judge.me's API overwrites every review date with the moment of import (measured 2026-09-08), the app's own file keeps the original dates.
 
 ## 8. The EU withdrawal button (required by law)
 VIDEO:
@@ -176,57 +179,83 @@ some member states.
 * Settings → Policies → Return rules → return window = the store's withdrawal days (14 unless the filled-in copy says otherwise), from delivery, and say who pays the return shipping
 * Same page → Cancellation window → until the order is fulfilled
 
-## 9. Judge.me
-VIDEO:
-
-* Apps → search "Judge.me" → Install (free plan)
-* Judge.me → Settings → Language → the home language (e.g. Swedish)
-* Judge.me → Settings → Review Widget → star color: 00B77F
-* Judge.me → Settings → Import reviews → Import from apps → Judge.me format → upload the reviews file Claude gives you → Import (one file per product – repeat for each product in the store)
-  The upload is yours and stays yours: Judge.me's API overwrites every review date with the moment of import (measured 2026-09-08), the app's own file keeps the original dates.
-
-## 10. Meta
+## 9. Meta
 VIDEO:
 
 * business.facebook.com → Settings → Pages → Add → Create a new Page: STORE NAME
 * Copy the Page ID → give to Claude Code
 * The ad account is always the same for every OPS store: MagiBorsten DK (915422744950975) – never pick another one, never add any card
 
-## 11. Discord
+## 10. Discord
 VIDEO:
 
 * Discord → + → Create server: STORE NAME
 * Open the invite link Claude Code gives you → Authorize the bot
 
-## 12. Tell Claude the store is ready
+## 11. Tell Claude the store is ready
 VIDEO:
 
 * Write to Claude Code: "Store ready: STORE NAME" – it creates the pixel and builds the Discord channels
 
-## 13. Test the store in a real browser (this is the receipt for 5–12)
+## 12. Tracking – WeTracked + the CAPI token
 VIDEO:
 
-Do it on a phone, on the real domain, as a customer – not in the admin
-preview. Nothing above counts as done until this passes.
-
-* The product page opens and the reviews show their original dates (never "just now")
-* Add to cart → the cart upsell shows → go to checkout
-* The checkout shows the store's currency and Klarna
-* "Ångra köp" is in the footer and it opens the account page (opens nothing = customer accounts in section 8 is still off)
-* Tell Claude what you saw – a screenshot of anything that looks wrong
-
-## 14. Hand over
-VIDEO:
+Before the store is live, not after: a live store without tracking spends ad
+money it cannot measure.
 
 * Install the WeTracked app from the Shopify App Store
 * WeTracked → paste the pixel ID Claude gives you
 * Events Manager → Data sources → STORE NAME → Settings → Conversions API → Generate access token → copy it
 * WeTracked → paste the Conversions API token (never send it in chat or email)
+
+## 13. Test the store behind the password (the receipt for 5–12)
+VIDEO:
+
+Do it on a phone, as a customer – not in the admin preview. Use the store
+password to get in; the store is not public yet, and the checkout cannot be
+tested until section 15. Nothing above counts as done until this passes.
+
+* The product page opens and the reviews show their original dates (never "just now")
+* Add to cart → the cart upsell shows → the cart adds up
+* The prices show in the store's currency
+* "Ångra köp" is in the footer and it opens the account page (opens nothing = customer accounts in section 8 is still off)
+* The whole page works on a phone – no sideways scrolling, nothing cut off
+* Tell Claude what you saw – a screenshot of anything that looks wrong
+
+## 14. Hand over – plan, card, ownership
+VIDEO:
+
+Everything above is done on the free trial and costs nothing. From here the
+store belongs to the owner, and the last two sections are only possible once
+it does (Axel's rule 2026-09-10: Shopify Payments and going live happen on
+the owner's own account, never on the work account).
+
 * The owner logs in with the work Gmail, picks the plan and adds his card
 * Then: Settings → Users → click the store owner's name → Transfer store ownership → OWNER → enter your password → confirm
 * Owner changes the Loopia password afterwards
 
-## 15. Ads (a NEW session)
+## 15. Shopify Payments + Klarna (after the hand-over)
+VIDEO:
+
+The bank details and the identity check are the owner's, so this cannot be
+done before section 14 – and until it is done, no checkout can be tested.
+
+* Settings → Payments → Activate Shopify Payments → fill in the company + bank details Claude gives you
+* Same page → Klarna → tick → Save
+* Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
+
+## 16. Go live and test the checkout
+VIDEO:
+
+The storefront password cannot be removed until a plan is picked, so this is
+the last thing that happens – and the checkout test can only happen here.
+
+* Online Store → Preferences → remove the storefront password
+* Open the real domain on a phone as a customer: add to cart → checkout
+* The checkout shows the store's currency and Klarna
+* Tell Claude what you saw
+
+## 17. Ads (a NEW session)
 
 * Open a NEW Claude session — not the one you built the store in
 * Write: /ny-annonser STORE-ID + the Bäverbutiken product link

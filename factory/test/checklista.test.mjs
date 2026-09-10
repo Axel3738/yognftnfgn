@@ -35,7 +35,7 @@ test('valutan, huvudmarknaden och språket kommer FÖRE bygget — inte efter', 
   assert.ok(pos(md, 'currency and language are set') < bygget, 'räddningsfrasen står i samma avsnitt');
 });
 
-test('ordningen är ett kontrakt: temat först efter bygget, testet sist', () => {
+test('ordningen är ett kontrakt: temat först, ägarbytet före Payments, kassan sist', () => {
   // Varje position har ett skäl (kommentaren högst upp i checklista.mjs).
   // Glider någon tillbaka ska det synas här, inte i en butik.
   const md = byggChecklista(butik(), [raprodukt()]);
@@ -46,43 +46,48 @@ test('ordningen är ett kontrakt: temat först efter bygget, testet sist', () =>
     '3. Shopify – connect Claude Code',
     '4. Start the build',
     '5. Right after the build – the theme and the name',
-    '6. Shopify Payments + Klarna',
-    '7. Domain',
+    '6. Domain',
+    '7. Judge.me',
     '8. The EU withdrawal button (required by law)',
-    '9. Judge.me',
-    '10. Meta',
-    '11. Discord',
-    '12. Tell Claude the store is ready',
-    '13. Test the store in a real browser (this is the receipt for 5–12)',
-    '14. Hand over',
-    '15. Ads (a NEW session)',
+    '9. Meta',
+    '10. Discord',
+    '11. Tell Claude the store is ready',
+    '12. Tracking – WeTracked + the CAPI token',
+    '13. Test the store behind the password (the receipt for 5–12)',
+    '14. Hand over – plan, card, ownership',
+    '15. Shopify Payments + Klarna (after the hand-over)',
+    '16. Go live and test the checkout',
+    '17. Ads (a NEW session)',
   ]);
   // Temat publiceras före allt som kontrolleras mot kundens vy.
-  const tema = pos(md, '→ **Publish**');
-  assert.ok(tema < pos(md, '## 6.'), 'temat publiceras direkt efter bygget');
-  // Payments före testet: utan betalsätt går varukorgen inte att testa.
-  assert.ok(pos(md, 'Activate **Shopify Payments**') < pos(md, '## 13.'));
+  assert.ok(pos(md, '→ **Publish**') < pos(md, '## 6.'), 'temat publiceras direkt efter bygget');
   // Loopia före Shopifys domänkoppling — går inte att koppla en oköpt domän.
   assert.ok(pos(md, 'Buy **nackmagneten.se**') < pos(md, 'Connect existing domain'));
-  // Testet är sista kontrollen före överlämningen.
-  assert.ok(pos(md, '## 13.') < pos(md, '## 14. Hand over'));
+  // Axels regel 2026-09-10: Payments och butiken-live kräver ägarbytet.
+  const agarbyte = pos(md, '**Transfer store ownership**');
+  assert.ok(agarbyte < pos(md, 'Activate **Shopify Payments**'), 'Payments EFTER ägarbytet — det är ägarens bank och identitet');
+  assert.ok(agarbyte < pos(md, 'remove the **storefront password**'), 'butiken går live först när ägaren valt plan');
+  // Kassan går inte att testa före Payments; testet av allt annat gör det.
+  assert.ok(pos(md, '## 13.') < agarbyte, 'allt utom kassan testas före ägarbytet');
+  assert.ok(pos(md, 'The checkout shows **SEK** and **Klarna**') > pos(md, '## 16.'), 'kassatestet ligger sist');
+  // Ingen kassa-rad i test-avsnittet före ägarbytet.
+  const test13 = md.slice(pos(md, '## 13.'), pos(md, '## 14.'));
+  assert.ok(!test13.includes('checkout shows'), 'test 13 påstår aldrig att kassan är kontrollerad');
 });
 
 test('registreringen kräver BOLAGETS adress — den avgör valutan', () => {
-  // TackleBay 2026-09-09: VA:n sitter i Filippinerna och skrev sin egen
-  // adress, så butiken föddes i PHP med engelska och Filippinerna som
-  // hemmamarknad. Åtta rabattkoder skrevs i fel valuta innan någon märkte
-  // det. Adressen står nu i steg 1, och steg 5 är en kontroll av utfallet.
+  // TackleBay 2026-09-09: den som registrerade satt i Filippinerna och skrev
+  // sin egen adress, så butiken föddes i PHP med engelska och Filippinerna
+  // som hemmamarknad. Åtta rabattkoder skrevs i fel valuta innan någon
+  // märkte det. Adressen står i avsnitt 1, kontrollen av utfallet i avsnitt 2.
   const md = byggChecklista(butik(), [raprodukt()]);
   const adress = pos(md, 'Exempelbolaget AB');
   assert.ok(adress > 0, 'bolagsnamnet ska stå i registreringssteget');
   assert.ok(pos(md, '## 1. Shopify – create the store') < adress);
-  assert.ok(adress < pos(md, '## 2.'), 'adressen hör till steg 1, inte senare');
+  assert.ok(adress < pos(md, '## 2.'), 'adressen hör till avsnitt 1, inte senare');
   assert.ok(md.includes('decides the currency'), 'varför adressen spelar roll ska stå där');
-  // Steg 1 ska nämna landet i adressraden; kontrollen av utfallet (valuta,
-  // marknad, språk) ligger i steg 2 — före bygget, inte efter.
   const steg1 = md.slice(pos(md, '## 1.'), pos(md, '## 2.'));
-  assert.ok(steg1.includes('**Sweden**'), 'adressens land står i steg 1');
+  assert.ok(steg1.includes('**Sweden**'), 'adressens land står i avsnitt 1');
   const steg2 = md.slice(pos(md, '## 2.'), pos(md, '## 3.'));
   assert.ok(steg2.includes('**SEK**') && steg2.includes('**Sweden**') && steg2.includes('**Swedish**'));
 });

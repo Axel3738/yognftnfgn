@@ -9,7 +9,7 @@
 // skapa servrar: POST /guilds svarar 400 kod 20001 "Bots cannot use this
 // endpoint" (mätt på TankGuard 2026-09-08, boten satt i 3 servrar — gränsen
 // "färre än 10" gäller alltså inte längre). Servern skapas därför alltid av
-// en människa (checklistans avsnitt 11) som auktoriserar boten via länken skriptet
+// en människa (checklistans avsnitt 10) som auktoriserar boten via länken skriptet
 // skriver ut utan --guild; sen bygger boten kanalerna med --guild <id>.
 //
 // Redigerarlistan bor i factory/redigerare/standby.md (byggs av

@@ -94,7 +94,7 @@ plockar samtidigt nästa lediga redigerare ur standby-listan.
 - Redigerarplockningen: första raden med status `redo` i
   `factory/redigerare/standby.md` märks `tilldelad <butik> <datum>`.
 - ⚠️ En bot kan bara SKAPA servrar så länge den sitter i < 10 (Discords
-  gräns). Därefter: servern skapas för hand (checklistans avsnitt 11), boten
+  gräns). Därefter: servern skapas för hand (checklistans avsnitt 10), boten
   bygger kanalerna med `--guild`.
 
 ```bash

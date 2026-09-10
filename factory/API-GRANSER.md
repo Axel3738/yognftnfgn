@@ -37,9 +37,10 @@ Varje rad är märkt:
 | Skapa butiken | **OBEKRÄFTAT** | Shopifys Partner API kan skapa development stores. Ingen i repot har provat. Skulle ta bort checklistans avsnitt 1 OCH garantera rätt land. **Den här är värd mest av alla — den fixar tre problem på en gång.** |
 | Skapa appen + client id/secret | **OBEKRÄFTAT** | Partner API har app-endpoints. Ingen har provat. Skulle ta bort avsnitt 3 (fyra klick). |
 | Koppla domän till butiken | **OBEKRÄFTAT** | Ingen har provat. |
-| Aktivera Shopify Payments | **MÄNSKLIGT** | Kräver bolagets bankuppgifter och identitetskontroll. Ska inte automatiseras. |
+| Aktivera Shopify Payments | **MÄNSKLIGT** | Kräver bolagets bankuppgifter och identitetskontroll. Ska inte automatiseras. Ligger dessutom EFTER ägarbytet sedan Axels regel 2026-09-10 — det är ägarens eget konto som ska bära den. |
 | Installera Judge.me | **MÄNSKLIGT (delvis)** | Appinstallation kräver ett OAuth-samtycke. Efter installationen är API:t automatiserbart — det görs redan. |
-| Ägarbyte | **MÄNSKLIGT** | Överlåter ett konto med pengar i. Ska klickas av en människa. |
+| Ägarbyte | **MÄNSKLIGT** | Överlåter ett konto med pengar i. Ska klickas av en människa. Checklistans avsnitt 14 — allt före det görs på free trial, allt efter kräver ägarens plan. |
+| Ta bort butikslösenordet (butiken live) | **MÄNSKLIGT** | Går inte förrän en plan är vald (`kundvy-kor.mjs`), och planen väljs av ägaren. Checklistans avsnitt 16, sista steget. |
 
 ## Meta
 
@@ -76,7 +77,7 @@ Varje rad är märkt:
    gör valuta-, språk- och marknadsfrågan omöjlig att göra fel — och tar bort
    butiksnamnsklicket, som är MÄTT omöjligt att fixa i efterhand. Störst effekt
    per timme.
-2. **Loopia-API:t.** Tar bort halva avsnitt 7 (fyra klick).
+2. **Loopia-API:t.** Tar bort halva avsnitt 6 (fyra klick).
 3. **Meta-sidan.** Tar bort två klick och en väntan mitt i flödet.
 4. **Kundkonton + självbetjäningsreturer + returregler** (avsnitt 8, fyra
    switchar). Ingen har provat och ingen har ens letat efter en mutation.

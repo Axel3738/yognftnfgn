@@ -8,7 +8,7 @@ produkt (eller nischgrupp av produkter) = en egen butik = en `/ny-ops`-körning
 
 **Ordningen** (Axels beslut 2026-09-08, omordnad 2026-09-10): butik + app +
 koppling FÖRST (checklistans avsnitt 1–3), sen startar `/ny-ops` och bygger
-FÄRDIGT hela butiken. Domänen köps när Claude levererat namnet (avsnitt 7).
+FÄRDIGT hela butiken. Domänen köps när Claude levererat namnet (avsnitt 6).
 Skälet till varje position står i `VA-CHECKLIST.md` — ändra inte ordningen
 utan att flytta skälet med den.
 
@@ -143,12 +143,18 @@ Hela listan i `factory/README.md`.
    ingen plan, inget kort; staff-inbjudningar kräver betald plan). Claude
    kopplas via butikens EGEN app (custom distribution låses till EN butik
    utanför Plus, mätt 2026-09-08); nycklarna läggs i miljön, aldrig i chatten.
-   Valuta, primärmarknad och primärspråk är hennes klick (avsnitt 2) — ingen
+   Valuta, primärmarknad och primärspråk är ett mänskligt klick (avsnitt 2) — ingen
    av de tre går via API — och de kontrolleras FÖRE bygget, inte efter: bygget
    skriver priser, paket och rabattkoder i butikens valuta.
    Efter bygget, i den ordningen: tema publicerat + butiksnamn (avsnitt 5),
-   Shopify Payments + Klarna + kassalogga (6), domän + avsändarmejl (7).
-   Ägaren tar över butiken vid överlämningen (avsnitt 14).
+   domän + avsändarmejl (6), recensioner (7), ångerknappen (8), Meta (9),
+   Discord (10), "Store ready" (11), spårningen (12), testet bakom
+   butikslösenordet (13). Allt det görs på free trial.
+   **Ägarbytet är avsnitt 14 och delar listan i två** (Axels regel
+   2026-09-10): Shopify Payments + Klarna (15) är ägarens bank och identitet,
+   och butikslösenordet går inte att ta bort förrän ägaren valt plan (16).
+   Därför testas kassan först i 16 — testet i 13 påstår aldrig att den är
+   kontrollerad.
 
 ## Fas 3 — Recensioner (kedjans steg 15)
 
