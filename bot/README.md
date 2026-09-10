@@ -153,7 +153,8 @@ Ska en server till få se verksamhetens data: lägg dess id i
 I **Snart nappar de** gör boten en enda sak. Den läser allt, svarar aldrig på
 tagg, och när någon ställer en fråga svarar den bara *"Fråga Claude."* med en
 pik om att fråga Claude i stället för hela servern. Den svarar aldrig på själva
-frågan. Frågetecken eller frågeord räcker för att den ska reagera; för allt
+frågan. Taggar någon boten där får de ett konstigt svar och en pik för att
+de taggade — aldrig ett riktigt svar. Frågetecken eller frågeord räcker för att den ska reagera; för allt
 annat avgör en liten ja/nej-klassning om raden är en fråga (folk glömmer
 frågetecken). Klassningen ser bara raden — ingen affärskontext, inga verktyg,
 så inget internt kan komma ut. Fler servrar i samma läge:
