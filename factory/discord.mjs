@@ -87,6 +87,14 @@ async function discord(sokvag, { metod = 'GET', kropp = null } = {}) {
   return data;
 }
 
+// Ett meddelande i en kanal boten redan ser. Används av startskottet
+// (factory/startskott.mjs --discord) — larmet "KLAR FÖR OPS" till Axel.
+// Returnerar Discords meddelandeobjekt (id + channel_id) som tillbakaläsning.
+export async function skickaMeddelande(kanalId, innehall) {
+  if (!kanalId) throw new Error('skickaMeddelande kräver ett kanal-id.');
+  return discord(`/channels/${kanalId}/messages`, { metod: 'POST', kropp: { content: innehall } });
+}
+
 // Bygger kanalstrukturen i servern guildId. Utan guildId försöks POST /guilds
 // — det svarar 20001 för botar (mätt 2026-09-08), så huvud() släpper aldrig
 // hit utan --guild; försöket ligger kvar bara för att ge Discords eget

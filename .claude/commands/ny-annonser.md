@@ -26,11 +26,25 @@ Fas 2 i OPS Factory. `/ny-ops` bygger butiken; det här kommandot ger den
 annonser. Processen och alla fallgropar står i **`factory/FAS2.md`** — det
 dokumentet är facit, det här kommandot är körordningen.
 
-**Vad kommandot gör, i en mening:** läser Bäverbutikens AKTIVA kampanjer för
-källprodukten — både den svenska och den norska — går igenom varje annons,
-byter brandnamn och pris där de förekommer, och bygger TVÅ nya kampanjer i
-OPS-kontot: en svensk och en norsk, med samma bevisade creatives fast
-ommärkta för OPS-butiken.
+**Vad kommandot gör, i en mening:** kopierar HELA Bäverbutikens aktiva
+kampanj för källprodukten — varenda annons, både den svenska och den norska —
+till TVÅ nya kampanjer i OPS-kontot, och rör bara de annonser där något är
+FEL för den nya butiken.
+
+**Axels regel 2026-09-10 — kopiera allt, rör bara det som är fel:**
+- **Alla annonser i kampanjen följer med.** Inte de bästa, inte ett urval:
+  hela kampanjen. En annons som saknas i räkningen är ett fel, inte ett val.
+- **Lyssna och läs varje annons** (tal, inbränd text, copy, bild). Bara om
+  något inte stämmer för OPS-butiken — brandnamnet "Bäverbutiken", fel pris,
+  fel villkor (fraktgräns, öppet köp, recensionsantal) — ändras annonsen,
+  och då **bara den ytan som är fel**.
+- **Nämner annonsen varken Bäverbutiken eller ett felaktigt pris kopieras
+  den som den är.** Ingen ny voiceover, ingen ny video, ingen ny copy.
+  Länken byts alltid (den pekar på källbutiken) — det är inte "att ändra
+  annonsen", det är att peka om den.
+- En video med EN felaktig replik får EN replik omdubbad — inte ett nytt
+  manus. Ett nytt manus skrivs bara när hela talet är falskt för butiken
+  (uppläst rabatt som inte finns, kundvittnesmål utan kunder).
 
 Den som kör är oftast **VA:n (engelsktalande)** — svara henne på engelska,
 korta rader. Axel svaras på svenska. Språket följer LÄSAREN — hennes språk
@@ -231,12 +245,33 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    status på alla tre nivåer. Stämmer något inte: rätta och läs tillbaka igen.
    Delvis klart heter delvis klart.
 
-11. **Lämna över till VA:n.** Skriv i chatten, på engelska:
-    - vad som byggdes (kampanj, antal adsets, antal annonser)
+11. **Lämna över till den som klickar.** Skriv i chatten (svenska till Axel,
+    engelska till en engelsktalande anställd):
+    - vad som byggdes (kampanj, antal adsets, antal annonser — och att
+      räkningen säger KLART, annars "delvis klart" med de saknade namngivna)
+    - vad som kopierades orört och vad som ändrades, yta för yta
     - vad som INTE gjordes och varför (t.ex. videor som väntar på krediter)
-    - hennes granskningslista: öppna Ads Manager, kolla att länken går till
+    - granskningslistan: öppna Ads Manager, kolla att länken går till
       butikens produktsida, att pixeln är butikens egen, att budgeten stämmer
-    - **hon sätter kampanjen ACTIVE när granskningen är grön.**
+    - **Kampanjerna står PAUSED tills Axel skriver "Launch: <namn>".**
+      Ingen annan sätter dem ACTIVE.
+
+11b. **"Launch: <namn>"** (Axels beslut 2026-09-10 — sista steget i hela
+    OPS-flödet, `factory/SA-FUNKAR-DET.md` steg 9). När Axel skriver det i
+    den här sessionen:
+    - Kontrollera FÖRST att butiken är live: hämta `https://<domän>/` med
+      `curl` — svarar den med `/password` är butiken inte öppnad än (plan +
+      lösenordet bort, checklistans avsnitt 13–15). Då: säg det, launcha inte.
+    - Kontrollera att pixeln avfyrat minst en gång (`last_fired_time` på
+      pixeln) — annars säg "WeTracked är inte kopplat" och launcha inte.
+    - Sätt kampanj, adsets och annonser ACTIVE via `tools/meta-lib.mjs` —
+      **enbart de kampanjer den här körningen byggde** (`<BRAND>_SE_…` och
+      `<BRAND>_NO_…`), namngivna i rapporten, aldrig ett svep över kontot.
+    - Läs tillbaka statusen på alla tre nivåer och visa den.
+    - Saknar den norska kampanjen NOK-paketnivåer i butiken: launcha bara
+      den svenska och säg det.
+    - Skriv startdatum + budget i `factory/produkter/<id>.yaml` (`meta.launch`)
+      och i `products/<butik>/batch-log.md`. Committa och pusha.
 
 12. **Dokumentera.** `factory/state/<butik>--<produkt>.json`, ärvd historik in i
     `products/<butik>/batch-log.md` (de brand-swappade annonserna bär med sig
@@ -256,6 +291,12 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Källbutikens VILLKOR borta: fraktgräns, öppet köp, leveranstid, garanti
       — i copy, i bild och i talet. Butikens egna står i butiksfilen.
 - [ ] Uteslutna annonser namngivna med vad som krävs — aldrig bara borttagna
+- [ ] **HELA kampanjen kopierad** — varje källannons finns i målkontot eller
+      står namngiven i räkningen med orsak
+- [ ] Rena annonser kopierade ORÖRDA (bara länken bytt) — ingen ny
+      voiceover/video/copy utan ett namngivet fel
+- [ ] Vid "Launch: <namn>": butiken live (ingen `/password`), pixeln har
+      avfyrat, statusen ACTIVE tillbakaläst på tre nivåer — annars orört
 - [ ] Bilderna brand-swappade med QA före/efter
 - [ ] Videorna omdubbade — eller listade som väntande med orsak
 - [ ] All copy pekar på butikens EGEN produktsida, ingen gissad länk

@@ -194,6 +194,7 @@ the last thing that happens – and the checkout test can only happen here.
 - [ ] Open a NEW Claude session — not the one you built the store in
 - [ ] Write: **/ny-annonser kalender** + the Bäverbutiken product link
 - [ ] The link is needed once per store — after that just **/ny-annonser kalender**
-- [ ] Claude rebuilds the proven ads for this brand and builds the campaigns in MagiBorsten DK — everything PAUSED
+- [ ] Claude copies the WHOLE Bäverbutiken campaign for this brand — every ad, Swedish + Norwegian — into two campaigns in MagiBorsten DK, fixing only the ads that say the wrong brand or price. Everything PAUSED
 - [ ] Check what Claude asks you to check in Ads Manager
-- [ ] When it all looks right: set the campaigns ACTIVE
+- [ ] Tell the owner the campaigns are ready. **Do not set anything ACTIVE.**
+- [ ] The owner writes **"Launch: AdventLane"** in that session – Claude checks the store is live and the pixel fires, then sets the campaigns ACTIVE

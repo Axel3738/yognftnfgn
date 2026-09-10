@@ -17,7 +17,13 @@
 //
 // Noll beroenden. Inget nätverk, inga skrivningar.
 //
-//   node factory/startskott.mjs --jobb <fil.json> [--torr]
+//   node factory/startskott.mjs --jobb <fil.json> [--torr] [--discord]
+//
+// --discord (Axels beslut 2026-09-10): postar meddelandet i kanalen
+// DISCORD_STARTSKOTT_KANAL (kanal-id i miljön) och pingar DISCORD_AXEL_ID.
+// Det är HELA larmet — inga Notion-sidor, inga briefer. Kräver
+// DISCORD_BOT_TOKEN; saknas kanalen skrivs texten bara i chatten och
+// rapporten säger att Discord-steget väntar på ett kanal-id.
 //
 // ⚠️ Meddelandet är på SVENSKA. Det går till Axel eller VA:n, inte till
 // redigerarna. Vilken kanal det ska landa i är ett öppet ägarbeslut
@@ -26,6 +32,24 @@
 
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
+
+/** Discords tak för ett meddelande. */
+export const DISCORD_MAXLANGD = 2000;
+
+/**
+ * Texten som postas i Discord: pingen först (så Axel får en notis), sen
+ * startskottet ordagrant. Saknas ping-id:t går texten ändå — men med en rad
+ * som säger det, så tystnaden inte döljs. Kapas aldrig tyst.
+ */
+export function byggDiscordText(text, { pingId = null } = {}) {
+  const huvud = pingId ? `<@${pingId}>\n` : '⚠️ DISCORD_AXEL_ID saknas — ingen ping.\n';
+  let ut = huvud + String(text ?? '');
+  if (ut.length > DISCORD_MAXLANGD) {
+    const svans = '\n… [kapad]';
+    ut = ut.slice(0, DISCORD_MAXLANGD - svans.length) + svans;
+  }
+  return ut;
+}
 
 /** Koden startskottet skriver i loggen. Idempotensen hänger på den. */
 export const STARTSKOTT_KOD = 'OPS_STARTSKOTT';
@@ -181,7 +205,7 @@ export function byggLoggrad(jobb, { datum, adAccountId = '1867947880635861' } = 
 
 // ------------------------------------------------------------------- CLI
 
-function huvud(argv) {
+async function huvud(argv) {
   const i = argv.indexOf('--jobb');
   if (i === -1 || !argv[i + 1]) {
     console.error('Användning: node factory/startskott.mjs --jobb <fil.json> [--torr]');
@@ -209,9 +233,24 @@ function huvud(argv) {
   } else {
     console.log(JSON.stringify(byggLoggrad(jobb, { datum: jobb.datum })));
   }
-  if (argv.includes('--torr')) console.log('\n[--torr] Ingenting skickades och ingenting skrevs.');
+  if (argv.includes('--torr')) {
+    console.log('\n[--torr] Ingenting skickades och ingenting skrevs.');
+    return;
+  }
+  if (argv.includes('--discord')) {
+    const kanal = process.env.DISCORD_STARTSKOTT_KANAL;
+    if (!kanal) {
+      console.log('\n⚠️ Discord: DISCORD_STARTSKOTT_KANAL saknas i miljön — larmet står bara här i chatten.');
+      console.log('   Skapa kanalen, kopiera kanal-id:t (Discord → högerklick på kanalen → Copy Channel ID) och lägg det i miljön.');
+      process.exitCode = 2;
+      return;
+    }
+    const { skickaMeddelande } = await import('./discord.mjs');
+    const svar = await skickaMeddelande(kanal, byggDiscordText(text, { pingId: process.env.DISCORD_AXEL_ID ?? null }));
+    console.log(`\n✅ Discord: postat i kanal ${svar.channel_id} (meddelande ${svar.id})`);
+  }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  huvud(process.argv.slice(2));
+  huvud(process.argv.slice(2)).catch((e) => { console.error(`\n❌ ${e.message}\n`); process.exit(1); });
 }

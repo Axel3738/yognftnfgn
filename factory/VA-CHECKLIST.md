@@ -268,10 +268,13 @@ the last thing that happens – and the checkout test can only happen here.
 * Write: /ny-annonser STORE-ID + the Bäverbutiken product link
   (example: /ny-annonser tankguard https://bäverbutiken.se/products/...)
 * The link is needed once per store — after that just /ny-annonser STORE-ID
-* Claude rebuilds the proven ads for this brand and builds two campaigns
-  (Swedish + Norwegian) in MagiBorsten DK — everything PAUSED
+* Claude copies the WHOLE Bäverbutiken campaign for this brand — every ad,
+  Swedish + Norwegian — into two campaigns in MagiBorsten DK, fixing only the
+  ads that say the wrong brand or price. Everything PAUSED
 * Check what Claude asks you to check in Ads Manager
-* When it all looks right: set the campaigns ACTIVE
+* Tell the owner the campaigns are ready. **Do not set anything ACTIVE.**
+* The owner writes "Launch: STORE NAME" in that session – Claude checks the
+  store is live and the pixel fires, then sets the campaigns ACTIVE
 
 ---
 

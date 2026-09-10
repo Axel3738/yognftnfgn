@@ -1,8 +1,19 @@
 # Skalningskungen — kravspec och byggstatus
 
-**Vad det är:** ronden som var tredje dag läser annonsdatan för EN butik,
-bestämmer vad som ska göras härnäst, och skriver nya briefer i butikens egen
-Notion-hub.
+⚠️ **Uppdraget smalnade 2026-09-10 (Axels beslut).** Skalningskungen gör
+två saker: **(1) döda / skala / ändra budget** på Bäverbutikens och
+OPS-butikernas annonser, **(2) larma i Discord** (ping till Axel) när en
+produkt ska bli OPS — ett test som går väldigt bra, eller en produkt utan
+egen butik som går bra. **Inga briefer, ingen creative strategy, inga
+Notion-items.** Allt nedan om kadens, teardown och briefer (läge SKALA:s
+creative-loop, `kadens.mjs`) ligger kvar som byggd kod men körs INTE av
+ronden — nya annonser beställs av Axel själv. Prompten är
+`.claude/commands/skalningskungen.md`; larmet är `factory/startskott.mjs
+--discord`.
+
+**Vad det var (till 2026-09-10):** ronden som var tredje dag läste
+annonsdatan för EN butik, bestämde vad som skulle göras härnäst, och skrev
+nya briefer i butikens egen Notion-hub.
 
 Kommandot heter **`/skalningskungen <butik-id>`**
 (`.claude/commands/skalningskungen.md`). Läs `factory/TRAPPAN.md` för NÄR

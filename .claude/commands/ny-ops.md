@@ -74,8 +74,21 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    byggt från noll per butik. Namnregeln: helst helt engelskt namn, läsbart
    för svenskar/norrmän, aldrig å/ä/ö; domänen kollas med RDAP först. Tre
    loggvarianter (`node factory/logga-generera.mjs <butik.yaml>`) VISAS i
-   chatten, Axel väljer. Skriv STORE NAME + DOMAIN direkt i chatten — den som
+   chatten, och **den som kör väljer** (Axel eller den anställde — Axels
+   beslut 2026-09-10). Skriv STORE NAME + DOMAIN direkt i chatten — den som
    klickar fortsätter med checklistans avsnitt 6 medan bygget går.
+
+   **Loggfeedback-loopen (Axels beslut 2026-09-10):**
+   - FÖRE genereringen: `node factory/logga-feedback.mjs --sammanfatta`.
+     Den variant som vinner oftast är utgångsläget; en variant som aldrig
+     valts byts mot något nytt (annat motiv, annan komposition) — visa
+     aldrig samma tre gissningar en gång till. Läs kommentarerna.
+   - EFTER valet: `node factory/logga-feedback.mjs <butik-id> <a|b|c>
+     --motiv <motiv> --kommentar "<vad personen sa om varför>"`. Ingen
+     kommentar = tom kommentar, men raden skrivs alltid. Filen
+     `factory/LOGGA-FEEDBACK.md` committas med bygget.
+   Regel: ett val som inte loggas gör nästa butiks loggor lika dåliga som
+   den här butikens — loopen är hela poängen.
 4. **Konfig:** `factory/butiker/<id>.yaml` + `factory/produkter/<id>.yaml` ur
    mallarna (en produktfil per länk), sen
    `node factory/ops.mjs factory/butiker/<id>.yaml factory/produkter/<p>.yaml … --dry-run`.
@@ -178,6 +191,7 @@ hoppa över steg 2–4 och kör kedjan.
 ## DEFINITION OF DONE
 - [ ] Steg 0: "Connected: <domän> ✓" före första skrivningen, butiksnamnet matchar den nya butiken
 - [ ] Brand-config byggd från produkt + målgrupp, inte återanvänd; namnregeln följd, domän kollad
+- [ ] Loggfeedback läst före genereringen och valet loggat efter (`factory/LOGGA-FEEDBACK.md`)
 - [ ] Steg 1–4: tema uppladdat med id i state, brandat, av-brandat
 - [ ] Steg 14: källskanningen REN — ingen Matstrumpor-text i något temaläge
 - [ ] Steg 6–8: produkt ACTIVE, alla opf-sektioner, varje variant CONTINUE + tracked false
