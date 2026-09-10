@@ -144,3 +144,16 @@ test('den engelska mallen passerar språkspärren, svensk text i jobbet fångas'
   }), { axelId: AXEL });
   assert.equal(serUtSomSvenska(svenska), true, 'svenska rader i jobbet ska stoppas');
 });
+
+test('valjButiksServer: exakt namn först, annars enda servern som börjar med brandet', async () => {
+  const { valjButiksServer } = await import('../discord-rapport.mjs');
+  const guilds = [
+    { id: '1', name: 'Bäverbutiken' }, { id: '2', name: 'HeimGuard' },
+    { id: '3', name: 'DryTrek — OPS' }, { id: '4', name: 'TackleBay — OPS' },
+  ];
+  assert.equal(valjButiksServer(guilds, 'HeimGuard').id, '2');
+  assert.equal(valjButiksServer(guilds, 'drytrek').id, '3');
+  assert.equal(valjButiksServer(guilds, '4').id, '4');
+  assert.equal(valjButiksServer(guilds, 'Grillkliniken'), null);
+  assert.equal(valjButiksServer([...guilds, { id: '5', name: 'DryTrek — test' }], 'DryTrek'), null, 'två träffar ⇒ null');
+});

@@ -201,17 +201,32 @@ export function renderaRapport(jobb, { axelId = null } = {}) {
  * Server → kanal (skapas vid behov) → post. Kastar med klartext om boten
  * inte sitter i servern; CLI:t har då redan skrivit rapporten i stdout.
  */
+/**
+ * Servern för en butik. Exakt namn eller id först; annars den ENDA servern
+ * vars namn börjar med brandnamnet — butiksservrarna heter "DryTrek — OPS"
+ * och "TackleBay — OPS" (mätt 2026-09-10), inte bara brandet. Två träffar
+ * ⇒ null, för fel server är fel människa.
+ */
+export function valjButiksServer(guilds, onskad) {
+  const lista = Array.isArray(guilds) ? guilds : [];
+  const o = String(onskad ?? '').trim().toLowerCase();
+  if (!o) return null;
+  const exakt = lista.find((g) => g.id === o) ?? lista.find((g) => String(g.name).toLowerCase() === o);
+  if (exakt) return exakt;
+  const borjar = lista.filter((g) => String(g.name).toLowerCase().startsWith(o));
+  return borjar.length === 1 ? borjar[0] : null;
+}
+
 export async function skickaRapport(jobb, { axelId = null } = {}) {
   if (!process.env.DISCORD_BOT_TOKEN) {
     throw new Error('DISCORD_BOT_TOKEN saknas i miljön — rapporten står bara i chatten.');
   }
   const { hamtaGuilds, hamtaGuild, hittaEllerSkapaKanal, skickaMeddelande } = await import('../factory/discord.mjs');
-  const { valjServer } = await import('../factory/startskott.mjs');
   const onskad = String(jobb.server || jobb.brand).trim();
   const guilds = await hamtaGuilds();
-  const vald = valjServer(guilds, onskad);
+  const vald = valjButiksServer(guilds, onskad);
   if (!vald) {
-    throw new Error(`Boten sitter inte i servern "${onskad}". Den sitter i: ${guilds.map((g) => g.name).join(', ') || 'ingen'}.`);
+    throw new Error(`Boten sitter inte i servern "${onskad}" (eller flera servrar börjar så). Den sitter i: ${guilds.map((g) => g.name).join(', ') || 'ingen'}.`);
   }
   const server = await hamtaGuild(vald.id);
   const pingId = axelId || process.env.DISCORD_AXEL_ID || server.owner_id;
