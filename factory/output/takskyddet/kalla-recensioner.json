@@ -1,0 +1,89 @@
+{
+  "kalla": "judge.me reviews_for_widget, shop 4snrw0-mg.myshopify.com, product_id 16516659937629",
+  "last": "2026-09-10",
+  "antal": 10,
+  "snitt": "5.00",
+  "notis": "Alla created_at ligger inom 12 sekunder 2026-09-08 22:48 UTC = API-import i källan, inte kunddatum. Alla titlar tomma i källan.",
+  "reviews": [
+    {
+      "namn": "Karin",
+      "betyg": 5,
+      "titel": "",
+      "text": "Bra skydd för taket och lätt att använda.",
+      "created_at": "2026-09-08T22:48:45.774Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Erik",
+      "betyg": 5,
+      "titel": "",
+      "text": "Jag är nöjd med överdraget. Rekommenderas.",
+      "created_at": "2026-09-08T22:48:44.476Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Linda",
+      "betyg": 5,
+      "titel": "",
+      "text": "Enkel lösning och bra passform.",
+      "created_at": "2026-09-08T22:48:43.228Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Anders",
+      "betyg": 5,
+      "titel": "",
+      "text": "Skyddar husvagnen bra mot regn och smuts.",
+      "created_at": "2026-09-08T22:48:41.972Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Sofia",
+      "betyg": 5,
+      "titel": "",
+      "text": "Bra kvalitet och lätt att använda.",
+      "created_at": "2026-09-08T22:48:40.654Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Emma",
+      "betyg": 5,
+      "titel": "",
+      "text": "Praktiskt överdrag som gör jobbet.",
+      "created_at": "2026-09-08T22:48:39.403Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Johan",
+      "betyg": 5,
+      "titel": "",
+      "text": "Mycket nöjd. Bra skydd när husvagnen står ute.",
+      "created_at": "2026-09-08T22:48:38.113Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Maria",
+      "betyg": 5,
+      "titel": "",
+      "text": "Enkel att sätta på och känns bra.",
+      "created_at": "2026-09-08T22:48:36.828Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Lars",
+      "betyg": 5,
+      "titel": "",
+      "text": "Passar bra och skyddar taket mot väder.",
+      "created_at": "2026-09-08T22:48:35.577Z",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Anna",
+      "betyg": 5,
+      "titel": "",
+      "text": "Bra skydd för husvagnen. Enkel att använda.",
+      "created_at": "2026-09-08T22:48:34.274Z",
+      "verified_buyer": false
+    }
+  ]
+}
