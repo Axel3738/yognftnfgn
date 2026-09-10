@@ -632,9 +632,11 @@ Koden uppdaterad samma dag på de ställen som VISAR priset för handlaren:
 5 USD / 14 dagars prov — dött under managed pricing, lever bara om någon
 sätter BILLING_ENABLED=1 på en custom-distribution). Docs: `app-store.md`,
 `foretag-admin.md`, `tillvaxt-juicy.md`, `testprotokoll-van.md`.
-⚠ **Öppen fråga:** privatplanen `friends-50` ligger på 4,99 USD och blir
-meningslös när publika priset är 5 USD — vänrabatten måste antingen sänkas
-(t.ex. 2,49) eller tas bort. Axel avgör.
+Privatplanen `friends-50` låg på 4,99 USD och blev meningslös när publika
+priset blev 5 — **sänks till 2,49 USD** (halva priset, som plannamnet
+"Friends 50%" redan lovar). Axel skickar butiksadresserna (`x.myshopify.com`)
+för de vänner som ska få planen; de skrivs in under *Stores with plan access*
+i Dev Dashboard — en privat plan kräver minst en butik där.
 ⚠ Plannamnen i `texts.ts` säger fortfarande "Standard" i LTV-kortet medan
 dashboarden säger "Basic" — rätta när planstrukturen är låst.
 
