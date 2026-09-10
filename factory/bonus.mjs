@@ -19,6 +19,7 @@ import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
 import { eskapa } from './sida.mjs';
 import { skapaProdukt, publiceraProdukt, hamtaProduktViaHandle, kontrolleraAnslutning } from './shopify.mjs';
+import { hittaProduktfil } from './produktfil.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
@@ -115,20 +116,7 @@ export function skrivIdnIText(yamlText, produktId, variantId) {
 // Produktfilen för ett produkt-id: ctx kan peka ut den; annars letas den upp i
 // factory/produkter/ på produkt.id (filnamnet är inte alltid id:t —
 // tacklebay-spohallaren.yaml bär id fiskespohallare-4-pack).
-export function hittaProduktfil(produktId, { mapp = join(FACTORY_ROT, 'produkter') } = {}) {
-  if (!text(produktId) || !existsSync(mapp)) return null;
-  const direkt = join(mapp, `${produktId}.yaml`);
-  const kandidater = [direkt, ...readdirSync(mapp).filter((f) => f.endsWith('.yaml')).map((f) => join(mapp, f))];
-  for (const fil of kandidater) {
-    if (!existsSync(fil)) continue;
-    try {
-      if (lasYaml(readFileSync(fil, 'utf8'))?.produkt?.id === produktId) return fil;
-    } catch {
-      // en trasig fil i mappen ska inte stoppa uppslaget
-    }
-  }
-  return null;
-}
+export { hittaProduktfil } from './produktfil.mjs';
 
 // Hela steget: bonusen i butiken, ACTIVE + Online Store, id:n tillbaka i
 // produktfilen och i minnet (produkt.offer.bonus_produkt). ctx = { produktfil? }.

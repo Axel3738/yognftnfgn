@@ -20,6 +20,7 @@ import { readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
+import { lasProduktfil } from './produktfil.mjs';
 import { laddaEnv } from './env.mjs';
 import { MALKONTO } from './kallannonser.mjs';
 
@@ -77,7 +78,7 @@ if (process.argv[1] && process.argv[1].endsWith('media-upload.mjs')) {
   const torr = arg.includes('--torr');
   if (!produktId) throw new Error('Ange produkt-id.');
 
-  const p = lasYaml(readFileSync(join(ROT, 'produkter', `${produktId}.yaml`), 'utf8'));
+  const { p } = lasProduktfil(produktId);
   if (String(p.meta?.ad_account_id) !== MALKONTO.id) {
     throw new Error(`meta.ad_account_id är ${p.meta?.ad_account_id}, ska vara ${MALKONTO.id}. Stoppar.`);
   }

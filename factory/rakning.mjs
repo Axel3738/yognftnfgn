@@ -28,6 +28,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
+import { hittaProduktfil } from './produktfil.mjs';
 import { laddaEnv } from './env.mjs';
 import { KONTON, MALKONTO } from './kallannonser.mjs';
 
@@ -599,8 +600,8 @@ async function kör() {
     process.exit(1);
   }
 
-  const produktfil = join(ROT, 'produkter', `${butikId}.yaml`);
-  if (!existsSync(produktfil)) {
+  const produktfil = hittaProduktfil(butikId);
+  if (!produktfil) {
     console.error(`✗ Hittar inte factory/produkter/${butikId}.yaml — stoppar. Leta aldrig upp butiken på gissning.`);
     process.exit(1);
   }

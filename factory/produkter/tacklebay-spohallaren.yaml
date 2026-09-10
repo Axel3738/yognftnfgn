@@ -168,10 +168,28 @@ kalla:
   produkt_handle: "fiskespohallare-4-pack-kraftig-forvaring"
   produkt_url: "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring"
   annonskonto: "1867947880635861"
-  annonsprefix: "Rodholder"
-  kampanj_id: ""
-  kampanj: ""
+  # Mätt 2026-09-10: SE-kampanjen bär TVÅ prefix (Rodholder_ 2026-08-18 → och
+  # Fiskespöhållare_ från de första batcherna) + ett fåtal ZZ_. Alla ACTIVE
+  # annonser i kampanjen räknas — kampanjen är produktens, inte prefixet.
+  annonsprefix:
+    - "Rodholder"
+    - "Fiskespöhållare"
+  kampanj_id: "120249850522830291"
+  kampanj: "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18"
+  # NO: "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20" är PAUSED sedan
+  # augusti (20 annonser, alla ACTIVE inuti, kampanjen avstängd). PAUSED är ett
+  # beslut — inga kandidater. Läses ändå, så räkningen ser att marknaden är läst.
+  no_kampanj_id: "120251856983860233"
+  no_kampanjmonster: "Fiskespöhållaren NO"
+  no_annonsprefix:
+    - "NO"
+    - "Fiskespöhållare"
+  # Talet: inga HeyGen-transkript finns för produkten i repot (mätt
+  # 2026-09-10). Transkriberas lokalt med faster-whisper till
+  # market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/
+  # (factory/output/fiskespohallare-4-pack/transkribera.py).
   srt_slug:
+    - "fiskespohallare"
 kallor:
   drive_mapp: ""
 

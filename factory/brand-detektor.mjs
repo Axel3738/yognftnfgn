@@ -39,6 +39,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 import { lasYaml } from './yaml.mjs';
+import { hittaProduktfil } from './produktfil.mjs';
 import { sökBrand } from './brandord.mjs';
 import { skannaVillkor } from './villkorsskanning.mjs';
 import { säkerställProxy, api, alla } from '../tools/meta-lib.mjs';
@@ -90,15 +91,29 @@ const dö = (m) => { console.error(`✗ ${m}`); process.exit(1); };
 // ------------------------------------------------------------------ produktfil
 
 export function läsKälla(produktId) {
-  const fil = join(ROT, 'factory', 'produkter', `${produktId}.yaml`);
-  if (!existsSync(fil)) dö(`Ingen produktfil: factory/produkter/${produktId}.yaml`);
+  const fil = hittaProduktfil(produktId);
+  if (!fil) dö(`Ingen produktfil med produkt.id "${produktId}" i factory/produkter/`);
   const p = lasYaml(readFileSync(fil, 'utf8'));
   const k = p.kalla;
   if (!k || !k.annonsprefix) {
     dö(`factory/produkter/${produktId}.yaml saknar kalla.annonsprefix — utan den vet ingen körning vilka annonser som hör till butiken (FAS2, Uppdrag A).`);
   }
   if (!k.annonskonto) dö(`${produktId}.yaml saknar kalla.annonskonto (källkontots id).`);
+  // Prefixen kan vara flera i SAMMA kampanj (TackleBay 2026-09-10: Rodholder_
+  // och Fiskespöhållare_). `prefixen` är listan; `annonsprefix` lämnas som
+  // det står i filen för rapporttexterna.
+  k.prefixen = prefixLista(k.annonsprefix);
   return { produkt: p, kalla: k, butik: läsButik(produktId) };
+}
+
+export function prefixLista(v) {
+  return (Array.isArray(v) ? v : [v]).map((x) => String(x ?? '').trim()).filter(Boolean);
+}
+
+/** Det prefix annonsnamnet faktiskt bär, ur listan — längsta träff först. */
+export function prefixAv(annonsnamn, prefixen) {
+  const lista = prefixLista(prefixen).sort((a, b) => b.length - a.length);
+  return lista.find((pre) => String(annonsnamn).startsWith(`${pre}_`)) ?? lista[0] ?? '';
 }
 
 /** Butikskonfigen bakom produkten — behövs för villkorsjämförelsen (sjätte
@@ -158,7 +173,7 @@ export function länkAv(annons) {
   const c = annons.creative || {};
   const s = c.object_story_spec || {};
   const d = s.video_data || s.link_data || {};
-  return d.link || d.call_to_action?.value?.link || c.link_url || null;
+  return d.link || d.call_to_action?.value?.link || c.asset_feed_spec?.link_urls?.[0]?.website_url || c.link_url || null;
 }
 
 function ytaCopy(annons, extraOrd) {
@@ -202,7 +217,7 @@ export function läsTranskript(rot = SRT_ROT) {
 
 /** Annonsnamn → transkriptnyckel: IBC_PD_1_H1 + slug "ibc" → ibc_pd_1_h1. */
 export function transkriptFör(annonsnamn, kalla, index) {
-  const rest = annonsnamn.slice(String(kalla.annonsprefix).length).replace(/^_/, '');
+  const rest = annonsnamn.slice(prefixAv(annonsnamn, kalla.prefixen ?? kalla.annonsprefix).length).replace(/^_/, '');
   for (const slug of slugLista(kalla)) {
     const nyckel = `${slug}_${rest}`.toLowerCase();
     if (index.has(nyckel)) return { nyckel, fil: index.get(nyckel) };
@@ -259,8 +274,14 @@ export function mediaAv(annons) {
   // tillbaka "ren" — och det är precis den sortens tysta friande som gör att
   // Bäverbutikens namn åker med ut. Saknas en riktig bild-URL hämtas den ur
   // kontots adimages på hashen; går inte det heller blir ytan "okänd".
+  // Dynamiska creatives (asset_feed_spec): bilderna ligger som hashar i
+  // images[], videon i videos[]. 23 av 89 TackleBay-källor (2026-09-10) —
+  // utan det här kom de tillbaka "okänd" fast bilden gick att hämta på hashen.
+  const afs = c.asset_feed_spec || {};
+  const afsVideo = afs.videos?.[0]?.video_id || null;
+  if (afsVideo) return { typ: 'video', video_id: afsVideo, video_id_alt: null, bild_url: c.thumbnail_url || null };
   const bildUrl = l.picture || l.image_url || c.image_url || null;
-  return { typ: 'bild', bild_url: bildUrl, image_hash: l.image_hash || c.image_hash || null };
+  return { typ: 'bild', bild_url: bildUrl, image_hash: l.image_hash || c.image_hash || afs.images?.[0]?.hash || null };
 }
 
 /** Full bild-URL ur kontots adimages, på hash. Reserven när creativen bara bär
@@ -287,7 +308,9 @@ async function videokällor(kontoId, prefix, saknadeIdn = []) {
     index.set(String(v.id), v.source);
     if (v.title) index.set(`titel:${normaliseraTitel(v.title)}`, v.source);
   };
-  for (const v of await alla(`act_${kontoId}/advideos`, { fields: 'id,title,source', title: prefix }, 25)) lägg(v);
+  for (const pre of prefixLista(prefix)) {
+    for (const v of await alla(`act_${kontoId}/advideos`, { fields: 'id,title,source', title: pre }, 25)) lägg(v);
+  }
 
   // ⚠️ Titelfiltret räcker inte. Mätt 2026-09-08 på Overvakningskamera: 13 av 25
   // videor bar prefixet i sin titel — den första launchbatchens filer (SP_1/2/3,
@@ -313,7 +336,7 @@ const normaliseraTitel = (t) => String(t).replace(/\.(mp4|mov|m4v|webm)$/i, '').
 export function källaViaTitel(index, annonsnamn, prefix) {
   const direkt = index.get(`titel:${normaliseraTitel(annonsnamn)}`);
   if (direkt) return direkt;
-  const svans = annonsnamn.slice(String(prefix).length).replace(/^_/, '').toLowerCase();
+  const svans = annonsnamn.slice(prefixAv(annonsnamn, prefix).length).replace(/^_/, '').toLowerCase();
   if (!svans) return null;
   for (const [nyckel, url] of index) {
     if (!nyckel.startsWith('titel:')) continue;
@@ -336,15 +359,33 @@ function kör(kommando, argv, tyst = true) {
   return r;
 }
 
+/** OCR-nyckel per annons: namnet — utom för TVILLINGAR (samma namn, olika
+ *  id, olika video) där den andra får `namn__id`. Utan det skrev tvillingen
+ *  över den förstas fil och ärvde dess OCR (TackleBay 2026-09-10: PD_EXTRA,
+ *  CS_1_H3, GT_1_H3 fanns två gånger var i källkampanjen). */
+export function ocrNycklar(annonser) {
+  const sedda = new Set();
+  const ut = new Map();
+  for (const a of annonser) {
+    const nyckel = sedda.has(a.name) ? `${a.name}__${a.id}` : a.name;
+    sedda.add(a.name);
+    ut.set(a.id, nyckel);
+  }
+  return ut;
+}
+
 /** Hämtar media, drar frames ur videon och OCR:ar allt. Returnerar
- *  { <annonsnamn>: { typ, filer: [{ fil, sekund, texter: [...] }] } } */
-async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK) {
-  const mediaMapp = join(ARBETSYTA, kalla.annonsprefix, 'media');
+ *  { <nyckel>: { typ, filer: [{ fil, sekund, texter: [...] }] } }
+ *  `tidigare` är förra körningens OCR — en annons som lästes felfritt då och
+ *  vars filer finns kvar OCR:as inte om (64 videor × 90 frames tog 2,5 h). */
+async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK, tidigare = {}) {
+  const nycklar = ocrNycklar(annonser);
+  const mediaMapp = join(ARBETSYTA, prefixLista(kalla.prefixen ?? kalla.annonsprefix)[0], 'media');
   mkdirSync(mediaMapp, { recursive: true });
   const ut = {};
 
   const behöverVideo = annonser.some((a) => mediaAv(a).typ === 'video');
-  const källor = behöverVideo ? await videokällor(kalla.annonskonto, kalla.annonsprefix) : new Map();
+  const källor = behöverVideo ? await videokällor(kalla.annonskonto, kalla.prefixen ?? kalla.annonsprefix) : new Map();
   if (behöverVideo) {
     const antal = [...källor.keys()].filter((k) => !k.startsWith('titel:')).length;
     console.log(`  ${antal} videokällor lästa ur kontot`);
@@ -352,25 +393,32 @@ async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK) {
     // sökningen noll träffar och VARENDA video blir "okänd" — det ska synas som
     // ett larm här, inte som 14 identiska felrader längre ned.
     if (antal === 0) {
-      console.log(`  ⚠️ advideos?title=${kalla.annonsprefix} gav noll träffar. Videofilernas titlar i kontot bär`);
+      console.log(`  ⚠️ advideos?title=${prefixLista(kalla.prefixen ?? kalla.annonsprefix).join('|')} gav noll träffar. Videofilernas titlar i kontot bär`);
       console.log('     troligen ett annat prefix än annonsnamnen — yta 3 blir "okänd" för alla videor.');
     }
   }
 
   for (const a of annonser) {
     const m = mediaAv(a);
+    const nyckel = nycklar.get(a.id);
     const post = { typ: m.typ, filer: [] };
+    const gammal = tidigare[nyckel];
+    if (gammal && !gammal.fel && gammal.ocr_ok && (gammal.filer ?? []).length > 0 && gammal.filer.every((f) => existsSync(f.fil))) {
+      ut[nyckel] = gammal;
+      console.log(`  = ${nyckel} (${gammal.typ}) — återanvänd OCR, ${gammal.filer.length} fil(er)`);
+      continue;
+    }
     try {
       if (m.typ === 'video') {
         const source = källor.get(String(m.video_id))
           || (m.video_id_alt && källor.get(String(m.video_id_alt)))
-          || källaViaTitel(källor, a.name, kalla.annonsprefix);
+          || källaViaTitel(källor, a.name, kalla.prefixen ?? kalla.annonsprefix);
         if (!source) throw new Error(`ingen source i kontots advideos för video ${m.video_id}`);
-        const fil = join(mediaMapp, `${a.name}.mp4`);
+        const fil = join(mediaMapp, `${nyckel}.mp4`);
         await laddaNer(source, fil);
         // Tätheten står i mappnamnet. Annars ligger en gammal gles körnings
         // frames kvar bredvid en ny tät och ingen ser vilken som lästes.
-        const frames = join(mediaMapp, `${a.name}_frames_${String(tathet).replace('.', 'p')}`);
+        const frames = join(mediaMapp, `${nyckel}_frames_${String(tathet).replace('.', 'p')}`);
         const r = kör('python3', [join(ROT, 'tools', 'qa-frames.py'), fil, '--ut', frames,
           '--tathet', String(tathet), '--max-frames', String(MAX_FRAMES)], false);
         if (r.status !== 0) throw new Error('qa-frames.py misslyckades');
@@ -378,7 +426,7 @@ async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK) {
       } else {
         const url = m.bild_url || await bildUrlViaHash(kalla.annonskonto, m.image_hash);
         if (!url) throw new Error('creativen bär varken bild-URL eller läsbar hash');
-        const fil = join(mediaMapp, `${a.name}.jpg`);
+        const fil = join(mediaMapp, `${nyckel}.jpg`);
         await laddaNer(url, fil);
         post.filer = [{ fil, sekund: null }];
       }
@@ -388,8 +436,8 @@ async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK) {
     } catch (e) {
       post.fel = String(e.message || e);
     }
-    ut[a.name] = post;
-    console.log(`  ${post.fel ? '✗' : '·'} ${a.name} (${post.typ})${post.fel ? ` — ${post.fel}` : ` ${post.filer.length} fil(er)`}`);
+    ut[nyckel] = post;
+    console.log(`  ${post.fel ? '✗' : '·'} ${nyckel} (${post.typ})${post.fel ? ` — ${post.fel}` : ` ${post.filer.length} fil(er)`}`);
   }
   return ut;
 }
@@ -616,7 +664,7 @@ function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, d
   rad.push(`Körd ${datum} av \`factory/brand-detektor.mjs\` (Uppdrag A i \`factory/FAS2.md\`).`);
   rad.push('Läser bara. Inga krediter, ingen HeyGen, ingen kie.ai, inget skrivet i något annonskonto.');
   rad.push('');
-  rad.push(`**Källa:** ${kalla.produkt_url || kalla.produkt_handle} · annonsprefix \`${kalla.annonsprefix}_\` · konto \`${kalla.annonskonto}\` (MagiBorsten, Bäverbutiken SE).`);
+  rad.push(`**Källa:** ${kalla.produkt_url || kalla.produkt_handle} · annonsprefix \`${prefixLista(kalla.prefixen ?? kalla.annonsprefix).map((x) => `${x}_`).join('\`, \`')}\` · konto \`${kalla.annonskonto}\` (MagiBorsten, Bäverbutiken SE).`);
   rad.push(`**Mål:** konto \`${produkt?.meta?.ad_account_id || '—'}\` (MagiBorsten DK, OPS Factory). Kontrollerat på id, aldrig på namn.`);
   rad.push('');
   rad.push(`## Läget: ${rader.length} källannonser`);
@@ -719,15 +767,35 @@ async function main() {
   const ocrFil = join(utMapp, 'brand-ocr.json');
 
   console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId}`);
-  console.log(`  källkonto ${kalla.annonskonto} · prefix ${kalla.annonsprefix}_`);
+  const prefixen = kalla.prefixen ?? prefixLista(kalla.annonsprefix);
+  console.log(`  källkonto ${kalla.annonskonto} · prefix ${prefixen.map((x) => `${x}_`).join(', ')}${kalla.kampanj_id ? ` · kampanj ${kalla.kampanj_id}` : ''}`);
 
-  const annonser = (await alla(`act_${kalla.annonskonto}/ads`, {
-    fields: 'id,name,status,effective_status,adset{name},campaign{id,name},creative{id,name,title,body,link_url,object_story_spec,asset_feed_spec,video_id,image_hash,image_url,thumbnail_url,object_type}',
-    filtering: [{ field: 'ad.name', operator: 'CONTAIN', value: `${kalla.annonsprefix}_` }],
-  })).filter((a) => a.name.startsWith(`${kalla.annonsprefix}_`))
-    .sort((a, b) => a.name.localeCompare(b.name, 'sv'));
+  // Källan är KAMPANJEN när produktfilen bär kalla.kampanj_id — alla dess
+  // ACTIVE-annonser i ACTIVE-adsets, oavsett prefix (en kampanj kan bära
+  // flera, TackleBay 2026-09-10). Utan kampanj-id: prefixfiltret över kontot.
+  // Utan creative.title/body/link_url: med dem svarade Meta fel 1 genom
+  // agentproxyn (mätt 2026-09-10, 104 annonser) — copyn läses ändå ur
+  // object_story_spec/asset_feed_spec. 15 per sida, aldrig 100.
+  const FALT = 'id,name,status,effective_status,adset{name,status},campaign{id,name,status},creative{id,name,object_story_spec,asset_feed_spec,video_id,image_hash,image_url,thumbnail_url,object_type}';
+  let annonser = [];
+  if (kalla.kampanj_id) {
+    // Små sidor: 100 annonser × creative{asset_feed_spec…} ger Meta-fel 1
+    // ("Please reduce the amount of data", mätt 2026-09-10 på 104 annonser).
+    annonser = (await alla(`${kalla.kampanj_id}/ads`, { fields: FALT }, 15))
+      .filter((a) => a.status === 'ACTIVE' && a.adset?.status === 'ACTIVE');
+  } else {
+    const sedda = new Set();
+    for (const pre of prefixen) {
+      const rader = (await alla(`act_${kalla.annonskonto}/ads`, {
+        fields: FALT,
+        filtering: [{ field: 'ad.name', operator: 'CONTAIN', value: `${pre}_` }],
+      })).filter((a) => a.name.startsWith(`${pre}_`));
+      for (const a of rader) if (!sedda.has(a.id)) { sedda.add(a.id); annonser.push(a); }
+    }
+  }
+  annonser.sort((a, b) => a.name.localeCompare(b.name, 'sv'));
 
-  if (annonser.length === 0) dö(`Inga annonser med prefixet "${kalla.annonsprefix}_" i konto ${kalla.annonskonto}.`);
+  if (annonser.length === 0) dö(`Inga annonser med prefixen "${prefixen.join('_", "')}_" i konto ${kalla.annonskonto}.`);
   console.log(`  ${annonser.length} källannonser`);
 
   let tathet = Number(flagga('tathet', TATHET_SEK));
@@ -735,7 +803,8 @@ async function main() {
   let ocrKälla = `factory/output/${produktId}/brand-ocr.json`;
   if (finns('hamta')) {
     console.log(`  hämtar media, drar frames var ${tathet} s och OCR:ar (0 krediter):`);
-    ocr = await hämtaOchLäs(annonser, kalla, tathet);
+    const tidigare = existsSync(ocrFil) ? (JSON.parse(readFileSync(ocrFil, 'utf8')).annonser || {}) : {};
+    ocr = await hämtaOchLäs(annonser, kalla, tathet, tidigare);
     ocrKälla = `${ocrKälla} (läst ${new Date().toISOString().slice(0, 10)})`;
   } else if (existsSync(ocrFil)) {
     const sparad = JSON.parse(readFileSync(ocrFil, 'utf8'));
@@ -755,18 +824,20 @@ async function main() {
   const syn = läsSyn(utMapp);
   if (syn) console.log(`  ögongranskning från ${syn.datum} inläst (${Object.keys(syn.annonser || {}).length} annonser)`);
   const rader = [];
+  const nycklar = ocrNycklar(annonser);
   for (const a of annonser) {
     const m = mediaAv(a);
+    const ocrPost = ocr[nycklar.get(a.id)];
     const ytor = {
       copy: ytaCopy(a, extraOrd),
       tal: ytaTal(a, kalla, index, extraOrd, m.typ === 'video'),
-      inbränd: ytaInbränd(a, ocr[a.name], extraOrd),
-      bild: ytaBildattribution(a, ocr[a.name], extraOrd),
+      inbränd: ytaInbränd(a, ocrPost, extraOrd),
+      bild: ytaBildattribution(a, ocrPost, extraOrd),
     };
     // Utan hämtad OCR vet vi ingenting om ytorna 3 och 4 — då är de okända,
     // aldrig rena. Att kalla en oläst yta "ren" är exakt det misstag som
     // skickar en Bäverbutiks-logga ut i OPS-butikens annonser.
-    if (!ocr[a.name]) {
+    if (!ocrPost) {
       const nyckel = m.typ === 'video' ? 'inbränd' : 'bild';
       ytor[nyckel] = { yta: nyckel, tillämplig: true, träff: null, fynd: [], dom: 'okänd (media inte hämtad)' };
     }
