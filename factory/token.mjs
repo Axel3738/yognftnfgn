@@ -156,6 +156,28 @@ function statefiler(stateMapp) {
 
 const slug = (s) => String(s ?? '').toLowerCase().replace(/[^a-z0-9]+/g, '');
 
+/**
+ * Varför miljön kan säga fel butik trots att nycklarna ÄR insatta.
+ *
+ * ⚠️ Båda fällorna är mätta 2026-09-10, samma kväll, på samma bygge:
+ *
+ * 1. Miljön kopieras in när sessionen STARTAR. Sparar man en variabel i en
+ *    session som redan kör syns den aldrig där.
+ * 2. Kontot kan ha FLERA environments med samma namn ("Default" två gånger,
+ *    env_011kzcu4… och env_01K4stX3…). Menyn skiljer dem inte åt, så man
+ *    redigerar den ena medan sessionen läser den andra. Axel hann köra tre
+ *    sessioner och skrika innan någon tittade efter.
+ *
+ * Raderna hänger på varje "fel butik"-fel, för den som läser felet är den
+ * som ska lösa det — och utan dem letar hen i Shopify i stället för i menyn.
+ */
+export const MILJOFALLOR = [
+  'Står nyckeln redan i Environment? Två saker gör att den ändå inte syns här:',
+  '  a) Miljön läses när sessionen STARTAR. Sparade du efter start: öppna en NY session.',
+  '  b) Kontot kan ha flera environments med SAMMA namn ("Default" två gånger).',
+  '     Du redigerar den ena, sessionen läser den andra. Lägg nycklarna i BÅDA.',
+].join('\n');
+
 // Spärrarna. `shop` är en domän-sträng eller { domain, name }.
 // → { ok, skal } där skal är en läsbar mening när ok = false.
 export function spärrar(butikId, shop, { stateMapp = STATE_MAPP, butikerMapp = BUTIKER_MAPP, outputMapp = OUTPUT_MAPP } = {}) {
@@ -164,7 +186,7 @@ export function spärrar(butikId, shop, { stateMapp = STATE_MAPP, butikerMapp = 
   const namn = typeof shop === 'object' && shop ? String(shop.name ?? '').trim() : '';
 
   if (!id) return { ok: false, skal: 'Inget butiks-id — spärrarna kan inte veta vilken butik som byggs.' };
-  if (!doman) return { ok: false, skal: 'Ingen butiksdomän — sätt SHOPIFY_SHOP (VA:ns steg 2).' };
+  if (!doman) return { ok: false, skal: `Ingen butiksdomän — sätt SHOPIFY_SHOP (VA:ns steg 2).\n\n${MILJOFALLOR}` };
 
   // 1. Förbjudna domäner.
   if (FORBJUDNA_DOMANER.includes(doman)) {
@@ -183,7 +205,7 @@ export function spärrar(butikId, shop, { stateMapp = STATE_MAPP, butikerMapp = 
   if (frammande.length > 0) {
     return {
       ok: false,
-      skal: `${doman} har redan state för en annan butik (${frammande.map((s) => s.fil).join(', ')}). Miljön pekar på ett tidigare bygge — nya butiker byggs aldrig ovanpå en gammal. Be VA:n skriva över SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET.`,
+      skal: `${doman} har redan state för en annan butik (${frammande.map((s) => s.fil).join(', ')}). Miljön pekar på ett tidigare bygge — nya butiker byggs aldrig ovanpå en gammal. Be VA:n skriva över SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET.\n\n${MILJOFALLOR}`,
     };
   }
 
@@ -376,7 +398,7 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   const minta = async () => {
     if (!kanMinta) {
       throw new Error(
-        `Saknar SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (eller _${envSuffix(id)}-varianten) i miljön — VA:n lägger in dem (checklistans steg 2). Klistra aldrig nycklar i chatten.`
+        `Saknar SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (eller _${envSuffix(id)}-varianten) i miljön — VA:n lägger in dem (checklistans steg 2). Klistra aldrig nycklar i chatten.\n\n${MILJOFALLOR}`
       );
     }
     const m = await mintaToken({ shop: n.shop, clientId: n.clientId, clientSecret: n.clientSecret, butikId: id }, { fetchFn });

@@ -405,3 +405,36 @@ test('andra mintfel förklaras inte bort — råsvaret står kvar', () => {
   assert.ok(text.includes('invalid_client'));
   assert.ok(!text.includes('ANNAN butik'));
 });
+
+// -------------------------------------------------- miljöfällorna
+//
+// 2026-09-10: nycklarna STOD i Environment, och tre sessioner i rad läste
+// ändå den gamla butiken. Två orsaker, båda osynliga i menyn: miljön läses
+// vid sessionsstart, och kontot hade två environments med samma namn.
+
+test('varje "fel butik"-fel bär båda miljöfällorna', () => {
+  const t = tempMappar();
+  t.butik('tankguard', 'TankGuard', 'y1sj1i-3d.myshopify.com');
+  t.state('tankguard', 'tankoverdraget');
+  const r = spärrar('nybutik', 'y1sj1i-3d.myshopify.com', t.alt);
+  assert.equal(r.ok, false);
+  assert.ok(r.skal.includes('NY session'), 'ska tipsa om att miljön läses vid start');
+  assert.ok(r.skal.includes('SAMMA namn'), 'ska tipsa om dubbla environments');
+  t.stada();
+});
+
+test('utan butiksdomän står fällorna också med', () => {
+  const t = tempMappar();
+  const r = spärrar('nybutik', '', t.alt);
+  assert.equal(r.ok, false);
+  assert.ok(r.skal.includes('BÅDA'));
+  t.stada();
+});
+
+test('en grön anslutning bär inga felsökningsrader', () => {
+  const t = tempMappar();
+  const r = spärrar('nybutik', 'ikf0tu-5e.myshopify.com', t.alt);
+  assert.equal(r.ok, true);
+  assert.equal(r.skal, '');
+  t.stada();
+});
