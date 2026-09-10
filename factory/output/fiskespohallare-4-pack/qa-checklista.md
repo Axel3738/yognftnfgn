@@ -5,7 +5,7 @@
 - [x] ✅ varianter: 1 st
 - [x] ✅ bilder: 5 st, 5 media i butiken
 - [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
-- [ ] 🖐 beskrivning: UNDANTAG (Axel 2026-09-10: launch utan gif_problem, gif levereras av redigeraren efteråt): Saknas: media.gif_problem
+- [x] ✅ beskrivning: problem, lösning och kritisk media (gif + demo) finns
 - [x] ✅ reviews: 7 st i Judge.me-underlaget
 - [ ] 🖐 judgeme: Importera underlaget och verifiera att widgeten visar recensionerna.
 - [x] ✅ frakt: 5–10 arbetsdagar
@@ -28,7 +28,6 @@
 - [ ] fiskespohallare-4-pack: offer.bonus_produkt.bilder är tom — bonusen kan inte skapas som produkt (steget bonus blir manuellt)
 - [ ] fiskespohallare-4-pack: vinkel.usp är inte satt (fjärde USP-punkten och annonsraden får ingen produkt-USP)
 - [ ] fiskespohallare-4-pack: ekonomi.jamforpris är inte satt
-- [ ] fiskespohallare-4-pack: media.gif_problem saknas (kritisk media — krävs före launch)
 - [ ] adventskalender-fiskedrag: offer.bonus_produkt.bilder är tom — bonusen kan inte skapas som produkt (steget bonus blir manuellt)
 - [ ] adventskalender-fiskedrag: vinkel.usp är inte satt (fjärde USP-punkten och annonsraden får ingen produkt-USP)
 - [ ] adventskalender-fiskedrag: media.gif_problem saknas (kritisk media — krävs före launch)

@@ -77,6 +77,12 @@
     },
     {
       "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/videos/c/vp/c91b8fc0d3d2487dae50f80972d8eea1/c91b8fc0d3d2487dae50f80972d8eea1.HD-720p-1.6Mbps-94035615.mp4"
+    },
+    {
+      "namespace": "opf",
       "key": "losning_rubrik",
       "type": "single_line_text_field",
       "value": "En hand, två klick, spöt sitter"

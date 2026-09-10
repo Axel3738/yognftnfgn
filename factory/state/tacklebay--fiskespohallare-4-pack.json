@@ -11,7 +11,7 @@
     },
     "metafalt": {
       "klar": true,
-      "antal": 11
+      "antal": 12
     },
     "lagerpolicy": {
       "klar": true,
@@ -59,10 +59,10 @@
       "publicerad": true
     }
   },
-  "uppdaterad": "2026-09-10T15:15:29.136Z",
+  "uppdaterad": "2026-09-10T15:24:05.212Z",
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-10T15:15:29.136Z"
+    "tid": "2026-09-10T15:24:05.212Z"
   }
 }

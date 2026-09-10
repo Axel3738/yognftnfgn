@@ -53,7 +53,10 @@ media:
     - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053401_5af027d7-9c68-4e4a-8281-6267b400664e.png"
   videor:
   # Gif:arna är redigerarjobb — källan har inga. Sektionerna döljer sig utan.
-  gif_problem: ""
+  # Axels egen mp4 2026-09-10 (klämmorna i användning), uppladdad som Video i
+  # Files via factory/filer.mjs — Shopify transkodade till 720p. MP4 i stället
+  # för GIF för kvaliteten (Axels beslut 2026-09-09).
+  gif_problem: "https://cdn.shopify.com/videos/c/vp/c91b8fc0d3d2487dae50f80972d8eea1/c91b8fc0d3d2487dae50f80972d8eea1.HD-720p-1.6Mbps-94035615.mp4"
   # Bilden som visar låssekvensen i tre steg — den bevisar lösningen.
   media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053344_a0863231-8cf7-430b-8f54-381e52beff10.png"
   bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260817_053401_5af027d7-9c68-4e4a-8281-6267b400664e.png"
@@ -190,9 +193,5 @@ meta:
     - "Enhandsgreppet: två klick, spöt sitter"
     - "Svampen: håller hårt utan att skava lacken"
 
-# Axels beslut 2026-09-10 (chatten): "/gif_problem" = launcha utan gif.
-# Redigeraren levererar gif senare; då tas undantaget bort.
-qa:
-  undantag:
-    - beskrivning
-  undantag_motivering: "Axel 2026-09-10: launch utan gif_problem, gif levereras av redigeraren efteråt"
+# Undantaget "launch utan gif" togs bort 2026-09-10 samma dag — Axel
+# levererade sin egen mp4 (media.gif_problem ovan).
