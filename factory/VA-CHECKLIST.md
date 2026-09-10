@@ -1,44 +1,44 @@
 # Store Launch Checklist (manual steps)
 
-Axel's master template, 2026-09-07. Omgjord 2026-09-08 i tre beslut:
-(1) butiken + appen + kopplingen FÖRST, sen bygger `/ny-ops` allt;
-(2) EN app per butik — custom distribution låses till en enda butik
-utanför Shopify Plus (mätt 2026-09-08, shopify.dev);
-(3) nycklarna läggs i molnsessionens miljö av den som klickar, aldrig i
-chatten.
-**Omordnad 2026-09-10 (Axel):** stegen låg i den ordning de skrevs, inte i
-den ordning de måste göras. Skälet till varje position står nu i filen.
+Axel's master template, 2026-09-07. Reworked 2026-09-08 in three decisions:
+(1) the store + the app + the connection FIRST, then `/ny-ops` builds everything;
+(2) ONE app per store — custom distribution locks to a single store outside
+Shopify Plus (measured 2026-09-08, shopify.dev);
+(3) the keys go into the cloud session's Environment, added by the person who
+clicks, never into the chat.
+**Reordered 2026-09-10 (Axel):** the steps were in the order they were
+written, not the order they must be done. The reason for every position is
+now in this file. Instruction books are in English (Axel's rule 2026-09-10).
 `factory/checklista.mjs` generates a filled-in copy per store as
-`output/<id>/CHECKLISTA.md` — EN fil per butik även när butiken har flera
-produkter (TackleBay 2026-09-09); produkterna listas i filen. Everything
-not on this list is done by Claude Code (routine: `/ny-ops`, process:
-`factory/PROCESS.md`). Valuta, land, språk och marknader i den ifyllda
-kopian kommer ur `butiker/<id>.yaml` — mallen nedan visar SEK/Sweden/
-Swedish/Norway som exempel, inte som regel.
+`output/<id>/CHECKLISTA.md` — ONE file per store even when the store has
+several products (TackleBay 2026-09-09); the products are listed in the file.
+Everything not on this list is done by Claude Code (routine: `/ny-ops`,
+process: `factory/PROCESS.md`). Currency, country, language and markets in
+the filled-in copy come from `butiker/<id>.yaml` — the template below shows
+SEK/Sweden/Swedish/Norway as an example, not as a rule.
 
-⚠️ **Masterkopian för den som klickar är Google-dokumentet** (Axels regel
-2026-09-08):
+⚠️ **The master copy for the person who clicks is the Google document**
+(Axel's rule 2026-09-08):
 https://docs.google.com/document/d/1gOfJGdyip0u6MqMuQxMLkXq39H-M4EvY/edit
-Varje ändring i den här filen eller `checklista.mjs` ska föras in i
-dokumentet I SAMMA SESSION — annars jobbar den som klickar efter gamla
-instruktioner.
+Every change to this file or to `checklista.mjs` must be copied into that
+document IN THE SAME SESSION — otherwise the clicker works from old instructions.
 
-⚠️ **Rollen, inte personen.** Filen hette VA-checklistan när en VA gjorde
-klicken. Hon är borta sedan 2026-09-10; listan är densamma och görs av Axel
-eller nästa anställd. Filnamnet ligger kvar för att ett tjugotal rader i
-`PROCESS.md`, `KEDJAN.md` och `CLAUDE.md` pekar hit.
+⚠️ **The role, not the person.** The file was called the VA checklist when a
+VA did the clicks. She left 2026-09-10; the list is the same and is done by
+Axel or the next employee. The filename stays because some twenty lines in
+`PROCESS.md`, `KEDJAN.md` and `CLAUDE.md` point here.
 
-## Varför ordningen ser ut som den gör
+## Why the order looks the way it does
 
-| Position | Skäl |
+| Position | Reason |
 |---|---|
-| 1–3 före bygget | Inget av det går att ändra efteråt. Valuta, språk och primärmarknad sätts av butiksadressen vid skapandet, och bygget skriver priser, paket och rabattkoder i butikens valuta. Fel här = bygg om allt. |
-| 5 temat först efter bygget | Allt du kontrollerar i 6–12 kontrolleras mot kundens riktiga vy. Opublicerat tema = du kontrollerar en butik ingen ser. Publicering fungerar på free trial (mätt: DryTrek 2026-09-09) — butiken står bakom sitt lösenord ändå. |
-| 6 Loopia före Shopify | Går inte att koppla en domän som inte är köpt, och verifieringslänken för avsändarmejlen går bara att läsa när vidarebefordran fungerar. |
-| 6–11 före ägarbytet | Allt det här görs på free trial och kostar ingenting. Avsnitt 9 slår ihop Meta-sidan och Discord-servern: båda skapas av en människa och färdigställs av fabriken, så det är ett besök i stället för två (Axel 2026-09-10). |
-| 12 testet före ägarbytet | Kvittot på 5–11, bakom butikslösenordet. Kassan kan inte testas här — se 14. |
-| 13 ägarbytet | Plan, kort och överlåtelse. Härifrån är butiken ägarens. |
-| 14–15 efter ägarbytet | **Axels regel 2026-09-10.** Shopify Payments är ägarens bank och identitet, och butikslösenordet går inte att ta bort förrän en plan är vald. Alltså kan kassan inte testas förrän här — det är därför testet är delat i två. |
+| 1–3 before the build | None of it can be changed afterwards. Currency, language and primary market are set by the store address at creation, and the build writes prices, bundles and discount codes in the store's currency. Wrong here = rebuild everything. |
+| 5 the theme first after the build | Everything you check in 6–12 is checked against the customer's real view. Unpublished theme = you are checking a store nobody sees. Publishing works on the free trial (measured: DryTrek 2026-09-09) — the store stays behind its password anyway. |
+| 6 Loopia before Shopify | You cannot connect a domain that is not bought, and the sender-email verification link can only be read once the forwarding works. |
+| 6–11 before the hand-over | All of this is done on the free trial and costs nothing. Section 9 merges the Meta page and the Discord server: both are created by a human and finished by the factory, so it is one trip instead of two (Axel 2026-09-10). |
+| 12 the test before the hand-over | The receipt for 5–11, behind the store password. The checkout cannot be tested here — see 14. |
+| 13 the hand-over | Plan, card and transfer. From here the store is the owner's. |
+| 14–15 after the hand-over | **Axel's rule 2026-09-10.** Shopify Payments is the owner's bank and identity, and the store password cannot be removed until a plan is picked. So the checkout cannot be tested until here — that is why the test is split in two. |
 
 ## How this job works
 
