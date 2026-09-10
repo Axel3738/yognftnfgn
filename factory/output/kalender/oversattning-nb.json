@@ -114,5 +114,10 @@
   "tema.default.collections": "Kolleksjoner",
   "tema.default.opening_soon": "Åpner snart",
   "tema.default.password_text": "<p>Vær først til å få vite når vi åpner.</p>",
-  "tema.default.home_page": "Forsiden"
+  "tema.default.home_page": "Forsiden",
+  "liquid.trust.0": "Gratis frakt – Sverige & Norge",
+  "liquid.trust.1": "14 dagers angrerett",
+  "liquid.trust.2": "Trygg betaling",
+  "liquid.delivery.text": "Beregnet levering",
+  "liquid.delivery.dagar": "5–10 virkedager"
 }

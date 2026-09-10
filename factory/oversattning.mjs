@@ -224,6 +224,15 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   // list-collections, password) + Shopifys inbyggda kollektion "Home page".
   // Matchningen sker på VÄRDE, så källtexten här måste vara exakt den som
   // står i temat — därför engelska (AdventLane 2026-09-10, 14 läckor på /nb).
+  // Produktmallens trust- och leveransrad är custom_liquid och locale-branchas
+  // av tema.byggProduktTemplate ur nb['liquid.trust.<i>'] / 'liquid.delivery.*'
+  // — inte via translationsRegister. Utan de här nycklarna står "Fri frakt"
+  // och "ångerrätt" kvar på /nb (AdventLane 2026-09-10).
+  const trust = forsok('tema.trustPunkter', () => krav(tema, 'tema', 'trustPunkter')(butik)) ?? [];
+  trust.forEach((rad, i) => { ut[`liquid.trust.${i}`] = String(rad).split(':').slice(1).join(':'); });
+  const dagar = forsok('tema.leveransdagar', () => krav(tema, 'tema', 'leveransdagar')(ps[0]?.leveranstid ?? butik?.frakt?.leveranstid));
+  ut['liquid.delivery.text'] = 'Beräknad leverans';
+  if (dagar?.min && dagar?.max) ut['liquid.delivery.dagar'] = `${dagar.min}–${dagar.max} arbetsdagar`;
   ut['tema.sticky'] = 'Köp nu';
   ut['tema.default.share'] = 'Share';
   ut['tema.default.collections'] = 'Collections';
