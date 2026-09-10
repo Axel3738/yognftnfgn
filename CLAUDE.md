@@ -244,7 +244,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
-| `/produktjakt` | **Rutin 06:30 varje dag:** nya produkter ur AliExpress → ekonomigallring → offertark → sida Axel laddar ner från |
+| `/produktjakt` | **Rutin 06:30 varje dag:** `produktjakt/MASTERPROMPT.md` (kalender → objekt som far illa → ankare → AliExpress) → poängkort K0–K12 → offertark → sida med Ja/Kanske/Nej → Axels svar räknas till vikter inför nästa körning |
 
 ### Nattrutinerna
 
@@ -498,25 +498,50 @@ namn (`..._4_1` är bild, `..._4_H1` är video) och görs av redigerarna.
 
 ### `produktjakt/` — automatisk produkthittare (AKTIV)
 Motorn bakom `/produktjakt`. Fristående; **kräver `openpyxl`** (`pip install openpyxl`), inget annat.
+**`produktjakt/MASTERPROMPT.md` är ordern** (DOA v3.1: Deadline · Objekt · Ankare · Upplevt värde,
+byggd 2026-09-09 ur Axels tre senaste vinnare — taköverdrag husvagn 1 129 kr, utekattkoja 789 kr,
+adventskalender racingbilar 499 kr; backtest i `produktjakt/vinnare/`). Kommandofilen är körordningen.
 
 ```bash
 cd produktjakt
-python3 hitta.py --antal 12 --sokord 14        # sök AliExpress, gallra, skriv korningar/<datum>/fynd.json
+python3 feedback.py samla                      # Axels Ja/Kanske/Nej från sidan (Artifact read_db → feedback/db) → vikter.json + LARDOMAR.md
+python3 feedback.py svar <datum> <product_id> nej "Verktyg / pryl"   # svar givet i chatten
+python3 hitta.py --kalla objekt --antal 12 --sokord 14   # objekt.json × månad → AliExpress → gallring → korningar/<datum>/fynd.json
 python3 offert.py --fynd korningar/<datum>/fynd.json   # bygg leverantörens offertark (xlsx)
-python3 sida.py  --fynd korningar/<datum>/fynd.json    # bygg sidan Axel laddar ner från
+python3 sida.py  --fynd korningar/<datum>/fynd.json    # bygg sidan Axel laddar ner från och svarar på
 ```
+
+⚠️ **Sök från objektet som far illa, aldrig från sökord.** `sokord.json` (objekt × tillbehör) gav
+2026-09-09 nio verktyg/prylar av nio — Axel: "goyslop". `objekt.json` (objekt × deadline-månader ×
+skyddsform × fackhandelsankare × engelska fraser) är standardkällan; `hitta.py` taggar varje fynd med
+objekt/arketyp/form så Axels svar räknas på **variabler, aldrig på nisch** (`SIGNALER.md`: att en vara
+gått bra säger inget om nischen).
+
+⚠️ **Ankaret mäts FÖRE sökningen och skrivs som `ankare_sek` i `objekt.json`.** Med ankare sätter
+`hitta.py` priset 0,7 × märket och tak = pris ÷ 2,4; utan ankare gäller landad × 2,4 och taket 420 kr —
+som hade fällt taköverdraget (1 129 kr).
+
+⚠️ **Feedbackloopen är hela poängen.** Sidan har Ja/Kanske/Nej + orsaksetiketter per produkt, sparade
+i artefaktens db (samlingen `feedback`); `feedback.py` räknar `vikter.json` (score per dimension,
+stopp vid ≥ 3 nej utan ja, lyft vid ≥ 3 ja — aldrig på grupp/nisch) och skriver `LARDOMAR.md`, som
+rutinen läser INNAN den söker. Metas facit (`utfall.json`: launchad = 2 ja, ≥ BE = 3 ja, < BE = 3 nej)
+väger tyngre än klick. Axels egen variabel **upplevt värde** (2026-09-09: "högt upplevt värde gör
+stooor skillnad") är K8 i poängkortet.
 
 ⚠️ **Källan är AliExpress, inte Temu.** Temu stryper containerns IP till ~1 hämtning per timme (mätt
 hela 2026-09-08: fyra lyckade av tjugo försök). Samma leverantörsvaror finns på AliExpress, som
 svarar utan strypning och vars länkar går att öppna. `docs/temu-jakt-v2/REGEL.md` avsnitt 8.
 
-⚠️ **`sedda.json` måste committas** efter varje körning — annars föreslås samma varor i morgon.
+⚠️ **`sedda.json`, `anvanda-sokord.json`, `feedback/feedback.json`, `vikter.json` och `objekt.json`
+måste committas** efter varje körning — annars föreslås samma varor i morgon och svaren glöms.
 
 ⚠️ **Prisfälten i arket lämnas alltid tomma.** Arket är en förfrågan till leverantören, inte ett
 facit. Vår egen räkning står som anteckning i kolumn E.
 
-⚠️ **Sidan publiceras mot samma artefakt-URL varje dag** (`url`-parametern) — annars tappar Axel
-bort vilken länk som gäller. URL:en står i `.claude/commands/produktjakt.md`.
+⚠️ **Sidan publiceras mot samma artefakt-URL varje dag** (`url`-parametern) med
+`capabilities: {downloads: true, db: {}}` — annars tappar Axel bort vilken länk som gäller, och utan
+`db` försvinner knapparna. URL:en står i `.claude/commands/produktjakt.md`. Säger publiceringen att en
+nyare version finns: bygg om från dagens `fynd.json`, skriv aldrig över med gårdagens.
 
 ⚠️ **Rutinen kör från grenen `claude/fortsatta-pa-denna-c28bmv`, inte från `main`** (per 2026-09-09).
 `produktjakt/` finns bara där. Undantaget från nattrutinsregeln ovan är möjligt just för att rutinen

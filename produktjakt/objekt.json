@@ -1,0 +1,1470 @@
+{
+ "_om": "Objektuniversumet — MASTERPROMPT.md steg 2. En rad per objekt som far illa hos 55+-hushållet i småhus: när (manader = deadline-/skadefönstret), vilken skyddsform, var fackhandelns ankare står, och de engelska sökfraserna hitta.py drar när --kalla objekt körs. arketyp A1–A6 och form följer med som taggar in i Axels svar (feedback.py räknar vikter på dem, aldrig på objekt/nisch). ankare_sek fylls i av rutinen i steg 4 INNAN hitta.py körs — då sätts priset från ankaret och taket 420 kr gäller inte. Rader läggs till/parkeras av rutinen; verktygsord (brush, pump, tool, light, alarm …) får aldrig stå i en sökfras.",
+ "_kalla": "docs-workflow 2026-09-09 (modell DOA v3.1), 58 rader ur de sex linsanalyserna; ankare märkta 'ej mätt' är just det",
+ "objekt": [
+  {
+   "objekt": "Husvagn — taket",
+   "agare": "Husvagnsägare 55+; 283 840 husvagnar, 116 344 avställda står ute (Trafikanalys 2024 via FAKTA §1)",
+   "manader": [
+    2,
+    3,
+    4,
+    9,
+    10,
+    11,
+    12
+   ],
+   "hot": "Löv, barr, stående vatten vid takluckor, tätmassa mjuknar 9–11; snölast 12–2; alger/svarta ränder 3–4. Deadline: uppställning 9–10 [F].",
+   "arketyp": "A1",
+   "form": "överdrag",
+   "skyddsformer": [
+    "taköverdrag formsytt 450–800 cm (BEVISAD V1 1 129 kr — dubblett; sök storlekssyskon)",
+    "hel-överdrag andningsbart",
+    "takluckehuv (v24: Temu-mått 14×14 tum fällde — svenska Heki 40×40 cm)"
+   ],
+   "ankare_kallor": [
+    "getcamping.se (EuroTrail 1 599–2 395, Brunner 2 999) [F]",
+    "campingvaruhuset.se (Campmaster) [F]",
+    "camping4u.se (Brunner Takskydd 1 790, Hindermann 2 295) [F]",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "caravan roof cover waterproof breathable 6m",
+    "caravan roof protector cover 5m 7m",
+    "motorhome roof cover uv winter"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Husvagn — fronten",
+   "agare": "Husvagnsägare 55+ (samma ägare som V1 — A5 säsongsväxling)",
+   "manader": [
+    3,
+    4,
+    9,
+    10,
+    11
+   ],
+   "hot": "Stenskott vid flytt, UV, is och regn på frontfönster 9–11 och 3–4. Deadline: uppställning 9–10 [F], första resa påsk 4 [K].",
+   "arketyp": "A1",
+   "form": "skydd",
+   "skyddsformer": [
+    "frontskydd/towing cover (Hindermann 1 145–2 195 [F]; noll Temu-träffar 09-04 — koncept utan listning, sök AliExpress)",
+    "frontfönsterhuv"
+   ],
+   "ankare_kallor": [
+    "getcamping.se (Hindermann Wintertime 1 145, Supra 2 195) [F]",
+    "campingvaruhuset.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "caravan front towing cover",
+    "caravan front protector cover universal",
+    "caravan window cover front"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Husvagn/husbil — hjulen och däcken",
+   "agare": "Husvagns-/husbilsägare 55+",
+   "manader": [
+    4,
+    9,
+    10
+   ],
+   "hot": "UV-sprickor och plattställning under vinterståndet 9–4. Deadline: uppställning 9–10 [F].",
+   "arketyp": "A1",
+   "form": "skydd",
+   "skyddsformer": [
+    "hjulskydd 4-pack (VARNING: Biltema 'Däckskydd 4 st' i minst fyra SKU:er — STATUS 09-09; kräver ankare ≥ 1,3×)",
+    "däckavlastningsramp (tyre saver)"
+   ],
+   "ankare_kallor": [
+    "getcamping.se",
+    "campingvaruhuset.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "caravan wheel cover set 4",
+    "tyre saver ramp caravan winter",
+    "rv tire cover heavy duty"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Husbil — hytt och vindruta",
+   "agare": "Husbilsägare 55+ (94 000–300 000 husbilar, siffra osäker enligt FAKTA §1)",
+   "manader": [
+    3,
+    9,
+    10
+   ],
+   "hot": "Kondens, frost på insidan, UV på instrumentbräda 9–3. Deadline: uppställning 9–10 [F].",
+   "arketyp": "A1",
+   "form": "skydd",
+   "skyddsformer": [
+    "termoskydd/vindrutekåpa utvändig (DUBBLETT: Termoskydd Husbil 559 kr launchad 2026-09-09 — utfall ej läst)",
+    "invändig isolermatta (nästa fas)",
+    "hyttkapell (Ducato)"
+   ],
+   "ankare_kallor": [
+    "getcamping.se (Hindermann Thermo)",
+    "campingvaruhuset.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "motorhome thermal windscreen cover external",
+    "motorhome cab insulation mat interior",
+    "motorhome cab cover insulated ducato"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Husvagn — gasolflaskan och dragkulan",
+   "agare": "Husvagnsägare 55+",
+   "manader": [
+    4,
+    9,
+    10
+   ],
+   "hot": "Rost på kula/koppling, UV på gasolflaska 9–4. Deadline: uppställning 9–10 [F].",
+   "arketyp": "A1",
+   "form": "skydd",
+   "skyddsformer": [
+    "gasolflaskeskydd 11 kg (finns i sokord.json, ej dragen)",
+    "kopplingshuv/dragkulehuv (VARNING: kedjan har billiga kulskydd — kräver ankare)"
+   ],
+   "ankare_kallor": [
+    "getcamping.se",
+    "campingvaruhuset.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "gas bottle cover caravan waterproof 11kg",
+    "caravan hitch coupling cover waterproof"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Husvagn/husbil — ventiler och genomföringar (möss)",
+   "agare": "Husvagnsägare 55+ på landsbygd",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "hot": "Möss söker värme i uppställd vagn 9–11. Deadline: uppställning 9–10 [F].",
+   "arketyp": "A1",
+   "form": "nät",
+   "skyddsformer": [
+    "gnagarnät i husvagnsmått (koncept utan listning 09-04; hyllgolv finns som meterrulle — kräver formsydd variant)",
+    "ventilhuv"
+   ],
+   "ankare_kallor": [
+    "getcamping.se",
+    "campingvaruhuset.se",
+    "granngarden.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "caravan mouse guard vent mesh",
+    "motorhome rodent protection cover"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Släpkärra",
+   "agare": "Villaägare/lantbrukare 55+; står ute året runt",
+   "manader": [
+    3,
+    9,
+    10,
+    11,
+    12
+   ],
+   "hot": "Löv och vatten i flaket 9–11; is och rost 12–3. Deadline: första frost 10–11 [K].",
+   "arketyp": "A1",
+   "form": "kapell",
+   "skyddsformer": [
+    "flakkapell formsytt",
+    "kärrhuv med dragsko (sökt 09-04 i fas 2 utan listning i slutlistan; Biltema har enkla kapell — kräver ankare)"
+   ],
+   "ankare_kallor": [
+    "släpvagnshandel (Fogelsta/Brenderup-återförsäljare) — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "utility trailer cover waterproof fitted heavy duty",
+    "cargo trailer tarp cover 2.5m",
+    "trailer cover waterproof oxford utility"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Båt på trailer/bockar",
+   "agare": "Båtägare 55+; upptagning på tomt eller klubb",
+   "manader": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    11
+   ],
+   "hot": "Upptagning 9–10 [F]; snö/is 11–3; pollen 4–5. Deadline: upptagning 9–10.",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "formsydd båthuv 600D (Båtskydd 420D 1 049 kr finns i KATALOG — dubblettkoll)",
+    "vinterkapell andningsbart (stöttan är tillbehöret = slop)"
+   ],
+   "ankare_kallor": [
+    "watski.se",
+    "hjertmans.se",
+    "erlandsonsbrygga.se",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "boat cover trailerable 600D waterproof",
+    "boat winter storage cover breathable"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Utombordare — kåpan, hela motorn, nästa fas",
+   "agare": "Båtägare 55+; motor 20–100 tkr",
+   "manader": [
+    1,
+    4,
+    5,
+    9,
+    10
+   ],
+   "hot": "Sol, salt, fågelspillning 5–9 (motorhölje #1 175 304 kr); upptagning 9–10 (båtmotorskydd #9 46 262 kr). BÅDA BEVISADE — dubblett. Deadline: sjösättning 4–5 [K], upptagning 9–10 [F].",
+   "arketyp": "A1",
+   "form": "hölje",
+   "skyddsformer": [
+    "kåphölje 420D (BEVISAD, dubblett)",
+    "heltäckande motorskydd (BEVISAD, dubblett)",
+    "nästa fas: propeller-/riggskydd vid vinterförvaring, motorlås (601100060543863 var slutsåld 09-08)"
+   ],
+   "ankare_kallor": [
+    "watski.se",
+    "hjertmans.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "outboard propeller cover bag storage",
+    "outboard lower unit cover",
+    "outboard motor full cover 600D 5hp"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Båtens sitsar och dynor",
+   "agare": "Båtägare 55+",
+   "manader": [
+    5,
+    9,
+    10
+   ],
+   "hot": "Regn, fågel, UV på dynorna 5–10; vinterförvaring 9–10. Båtsitsöverdrag 210D 269 kr finns i KATALOG (ej topplista) — dubblettkoll.",
+   "arketyp": "A2",
+   "form": "överdrag",
+   "skyddsformer": [
+    "sitsöverdrag (dubblett)",
+    "dynväska/dynbox vattentät"
+   ],
+   "ankare_kallor": [
+    "watski.se",
+    "hjertmans.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "boat seat cover set waterproof pedestal",
+    "boat cushion storage bag waterproof"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "MC avställd",
+   "agare": "MC-ägare 45–70 (MC-kapell 349 kr #11 27 815 kr BEVISAD; launch 20 aug, ROAS 2,20 mot BE 1,49)",
+   "manader": [
+    3,
+    9,
+    10
+   ],
+   "hot": "Kondens, damm, fågel under avställning 9–3. Deadline: avställning 9–10 [F].",
+   "arketyp": "A1",
+   "form": "kapell",
+   "skyddsformer": [
+    "kapell (BEVISAD, dubblett)",
+    "sadelöverdrag regn (MC Sätesöverdrag Camo 289 kr i KATALOG — dubblett)",
+    "nästa fas: hjulskydd vinterförvaring, batteri-/laddskydd vårstart 3 (verktyg — varning)"
+   ],
+   "ankare_kallor": [
+    "mc-handel (Oxford Products-återförsäljare) — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "motorcycle cover indoor breathable dust",
+    "motorcycle wheel cover winter storage",
+    "motorcycle half cover seat tank"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Moped/skoter (klass II)",
+   "agare": "Hushåll 55+ med barnbarn/fritidshus; VARNING: scooterpendlaren är inte avataren (husvagn-mc.md)",
+   "manader": [
+    3,
+    10
+   ],
+   "hot": "Regn, frost ute hela vintern 10–3. Deadline: avställning 10 [K].",
+   "arketyp": "A1",
+   "form": "kapell",
+   "skyddsformer": [
+    "mopedkapell (koncept utan listning 09-04 — sök AliExpress)"
+   ],
+   "ankare_kallor": [
+    "mc-/mopedfackhandel — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "scooter cover waterproof outdoor 50cc",
+    "moped cover winter outdoor uv"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Fyrhjuling/ATV",
+   "agare": "Gård/fritidshus 55+, jakt och ved",
+   "manader": [
+    3,
+    9,
+    10,
+    11,
+    12
+   ],
+   "hot": "Regn 9–11 (jakt, vedkörning), snö 12–3. Deadline: älgjakt 9–10 [K], första snö 11 [K].",
+   "arketyp": "A1",
+   "form": "kapell",
+   "skyddsformer": [
+    "ATV-kapell",
+    "sadelöverdrag (fackhandeln har det, Temu hade bara bilsäten 09-04 — koncept utan listning)"
+   ],
+   "ankare_kallor": [
+    "skogma.se",
+    "jaktia.se",
+    "ATV-återförsäljare (CFMoto/Polaris) — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "atv cover waterproof heavy duty 600D",
+    "atv seat cover waterproof universal"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Snöskoter på släpet",
+   "agare": "Norrländska hushåll 55+",
+   "manader": [
+    10,
+    11,
+    12
+   ],
+   "hot": "Regn/UV på sadel och kåpa i väntan på snö 10–12. Deadline: första snö 11–12 [K].",
+   "arketyp": "A1",
+   "form": "kapell",
+   "skyddsformer": [
+    "skoterkapell trailerbart",
+    "sadelskydd"
+   ],
+   "ankare_kallor": [
+    "skogma.se",
+    "skoterhandel — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "snowmobile cover waterproof trailerable",
+    "snowmobile seat cover"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Veteranbil/andrabil på uppfarten",
+   "agare": "Villaägare 55+ med två bilar",
+   "manader": [
+    3,
+    10
+   ],
+   "hot": "Frost på rutan, fågel, sol 10–3. Deadline: första frost [K]. VARNING: kedjan har vindruteskydd och bilkapell — kräver ankare.",
+   "arketyp": "A1",
+   "form": "garage",
+   "skyddsformer": [
+    "halvgarage/kapell",
+    "vindruteskydd magnet helt (kedjevara)"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se",
+    "bilvårdsfackhandel (Mekonomen) — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "car half cover winter waterproof",
+    "car windscreen frost cover magnetic full"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Takbox/takräcke",
+   "agare": "Villahushåll med skidor (55+ med barnbarn)",
+   "manader": [
+    3,
+    4,
+    10,
+    11
+   ],
+   "hot": "Is, smuts, UV på boxen som sitter kvar 11–3; förvaring i garaget 4–10.",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "takboxhuv",
+    "förvaringshuv för takbox"
+   ],
+   "ankare_kallor": [
+    "Thule-återförsäljare — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "roof box cover storage bag",
+    "roof box protective cover waterproof"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Elcykel under skärmtak",
+   "agare": "55+-par med elcyklar i småhus",
+   "manader": [
+    3,
+    9,
+    11
+   ],
+   "hot": "Regn på sadel, display, batteri 9–11; frost 11–3. Deadline: höstregn [K].",
+   "arketyp": "A1",
+   "form": "kapell",
+   "skyddsformer": [
+    "cykelkapell",
+    "sadelhuv + displayhuv",
+    "batteritermoskydd"
+   ],
+   "ankare_kallor": [
+    "cykelfackhandel (Ecoride/Crescent-återförsäljare) — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "ebike cover waterproof outdoor heavy duty",
+    "ebike display cover waterproof",
+    "ebike battery cover neoprene thermal"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Åkgräsklippare — sitsen (A2 Slitytan)",
+   "agare": "Villaägare 55+ med stor tomt; maskin 35–100 tkr (Sätesöverdrag 649 kr #3 126 166 kr BEVISAD — dubblett)",
+   "manader": [
+    4,
+    5,
+    6,
+    10
+   ],
+   "hot": "Dagg varje morgon, sol varje eftermiddag 4–10 — sitsen spricker; ytan exponerad även när maskinen står i förråd. Deadline: klippsäsongens start 4–5 [F: launch juni] eller pågående skada med ≥ 6 v kvar.",
+   "arketyp": "A2",
+   "form": "överdrag",
+   "skyddsformer": [
+    "sätesöverdrag (BEVISAD, dubblett)",
+    "nästa fas: ryggstöds-/high-back-variant, rattöverdrag, armstöd, uppsamlarsäck"
+   ],
+   "ankare_kallor": [
+    "husqvarna.se",
+    "stiga.se",
+    "pricerunner.se (nytt säte 949–3 229 kr [F])"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "lawn tractor seat cover high back armrest",
+    "riding mower steering wheel cover",
+    "lawn tractor grass catcher bag"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Robotgräsklippare + laddstation",
+   "agare": "Villaägare 55+ (roboten står på gräsmattan 3–11)",
+   "manader": [
+    4,
+    10,
+    11
+   ],
+   "hot": "Regn, löv i dockan, UV på skalet 4–11; vinterförvaring 10–11. Deadline: dockas in 10–11 [K], säsongsstart 4 [K].",
+   "arketyp": "A1",
+   "form": "garage",
+   "skyddsformer": [
+    "robotgarage/huv (finns i sokord.json 'robot mower garage cover', ej dragen 09-09)",
+    "laddstationstak"
+   ],
+   "ankare_kallor": [
+    "husqvarna.se (Automower house)",
+    "Gardena-återförsäljare — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "robot mower garage cover canopy",
+    "robotic lawnmower house roof shelter"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Snöslunga",
+   "agare": "Villaägare 55+ i snöområde",
+   "manader": [
+    3,
+    11
+   ],
+   "hot": "Snö/kondens under skärmtak 11–3. Deadline: första snö 11 [K].",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "snöslungehuv"
+   ],
+   "ankare_kallor": [
+    "husqvarna.se",
+    "stiga.se — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "snow blower cover waterproof heavy duty",
+    "two stage snow thrower cover universal"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Elverk/kompressor ute",
+   "agare": "Fritidshus/gård 55+",
+   "manader": [
+    3,
+    9,
+    11,
+    12
+   ],
+   "hot": "Regn 9–11, snö 12–3.",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "generatorhuv",
+    "driftstält för elverk"
+   ],
+   "ankare_kallor": [
+    "maskinfackhandel — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "generator cover waterproof outdoor",
+    "generator running cover tent heavy duty"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Vedstapeln",
+   "agare": "Villa/gård 55+ med vedeldning",
+   "manader": [
+    3,
+    9,
+    10
+   ],
+   "hot": "Regn och snö uppifrån 9–3; eldningssäsong 9–10. Deadline: vedsäsong [K].",
+   "arketyp": "A1",
+   "form": "överdrag",
+   "skyddsformer": [
+    "vedstapelöverdrag med öppna sidor (fas1-analys vedstallsoverdrag.md 09-04 finns)",
+    "vedställ med tak"
+   ],
+   "ankare_kallor": [
+    "granngarden.se",
+    "klyvaved.se",
+    "pricerunner.se (Woodstock/Gardenlux vedställ)"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "firewood log rack cover only 8ft",
+    "firewood stack cover 2m waterproof top only"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "IBC-tank — vinterfasen",
+   "agare": "Villaägare 55+ med regnvattentank (IBC-överdrag 489 kr #7 64 660 kr BEVISAD i alg-fasen 6–8 — dubblett)",
+   "manader": [
+    7,
+    10,
+    11
+   ],
+   "hot": "Frost spräcker kran/ventil 10–11; tömning 10. Deadline: första frost 10–11 [K]. A5-växling av #7.",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "frosthuv för kran",
+    "isolerjacka för tank"
+   ],
+   "ankare_kallor": [
+    "tankcenter.se [F: 119 kr under oss]",
+    "magasin10 [F: 336 kr]",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "ibc tank insulation cover winter",
+    "ibc tank frost protection jacket",
+    "ibc tap frost cover insulated"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Regntunna vid stupröret",
+   "agare": "Villaägare 55+",
+   "manader": [
+    4,
+    6,
+    10,
+    11
+   ],
+   "hot": "Frost spräcker tunnan 10–11 (töms i september). VARNING: uppsamlare/diverter är vårprodukt 4–6 — STATUS 09-09. Deadline: första frost [K].",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "tunnhuv/isolerhuv",
+    "vinterlock med frostskydd"
+   ],
+   "ankare_kallor": [
+    "plantagen.se",
+    "granngarden.se — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "rain barrel winter cover insulated",
+    "water butt cover frost jacket"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Spabadet — locket",
+   "agare": "Villaägare 55+ med spabad på altanen",
+   "manader": [
+    3,
+    9,
+    11
+   ],
+   "hot": "Snö, UV, sprickor i locket 9–3. Deadline: första snö 11 [K].",
+   "arketyp": "A1",
+   "form": "skydd",
+   "skyddsformer": [
+    "lockskydd/cover cap (fas1-analys lockskydd-spabad.md 09-04 finns; sokord finns)"
+   ],
+   "ankare_kallor": [
+    "spabadsfackhandel (Poolvaruhuset) — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "hot tub cover cap protector",
+    "spa cover cap 220cm waterproof 600D"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Utemöbler på altanen",
+   "agare": "Villaägare 55+",
+   "manader": [
+    1,
+    3,
+    9,
+    11
+   ],
+   "hot": "Regn, alger, mögel 9–11. Deadline: höstregn [K]. VARNING: kedjan har formsydda överdrag (DNA E=0) — bara via märkesankare ≥ 1,3×.",
+   "arketyp": "A1",
+   "form": "överdrag",
+   "skyddsformer": [
+    "formsytt möbelöverdrag",
+    "dynbox"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se (Brafab/Hillerstorp-överdrag)",
+    "bauhaus.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "patio sofa cover fitted 600D",
+    "garden furniture cover set waterproof"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Gasolgrill",
+   "agare": "Villaägare 55+",
+   "manader": [
+    1,
+    3,
+    9
+   ],
+   "hot": "Regn, snö, frost 9–3. VARNING: grillöverdrag hos kedjan — bara med Weber/Napoleon-ankare ≥ 1,3×.",
+   "arketyp": "A1",
+   "form": "överdrag",
+   "skyddsformer": [
+    "grillöverdrag 600D"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se (Weber, Napoleon)",
+    "bauhaus.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "gas grill cover 600D waterproof",
+    "bbq cover waterproof 150cm heavy duty"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Terrassvärmare",
+   "agare": "Villaägare 55+",
+   "manader": [
+    1,
+    3,
+    9,
+    11
+   ],
+   "hot": "Regn 9–11. VARNING: Sunwind 431 kr = 1,03× och Bauhaus Hortus 139–279 under (v24 STATUS 09-08) — inget ankare i dag; söks bara om ett märke ≥ 1,3× hittas.",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "terrassvärmarhuv med blixtlås"
+   ],
+   "ankare_kallor": [
+    "Sunwind-återförsäljare [F]",
+    "bauhaus.se [F]"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "patio heater cover waterproof zipper"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Pizzaugn/utekök",
+   "agare": "Villaägare 55+",
+   "manader": [
+    3,
+    9,
+    10,
+    11
+   ],
+   "hot": "Regn, frost i sten 9–3. Deadline: första frost 10–11 [K].",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "ugnshuv",
+    "uteköksöverdrag"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se (Ooni/Gozney-överdrag)",
+    "grillfackhandel — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "pizza oven cover waterproof outdoor",
+    "outdoor kitchen cover heavy duty"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Studsmattan",
+   "agare": "Mor-/farföräldrar och föräldrar i småhus",
+   "manader": [
+    3,
+    10,
+    11
+   ],
+   "hot": "Snö på duken, UV 10–3. Deadline: första snö 11 [K].",
+   "arketyp": "A1",
+   "form": "överdrag",
+   "skyddsformer": [
+    "studsmatteöverdrag vinter"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se (Berg/Etan-överdrag)",
+    "lekia.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "trampoline cover winter waterproof round 366",
+    "trampoline weather cover"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Hammock och dynor",
+   "agare": "Villaägare 55+",
+   "manader": [
+    9,
+    11
+   ],
+   "hot": "Regn 9–11. Deadline: höstregn [K].",
+   "arketyp": "A2",
+   "form": "box",
+   "skyddsformer": [
+    "dynbox/dynväska",
+    "hammocköverdrag"
+   ],
+   "ankare_kallor": [
+    "möbelfackhandel — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "outdoor cushion storage bag waterproof",
+    "hammock stand cover waterproof"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Eldstad/eldkorg",
+   "agare": "Villaägare 55+",
+   "manader": [
+    1,
+    2,
+    3,
+    9
+   ],
+   "hot": "Regn, rost 9–3. VARNING: Biltema har dragsko-huven billigare (STATUS 09-09 omgång 2) — bara med Solo Stove-ankare ≥ 1,3×.",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "huv rund/fyrkantig 600D"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se (Solo Stove-överdrag)"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "fire pit cover round waterproof 600D",
+    "fire pit cover square heavy duty"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+   "agare": "Kvinna/man 55+ med altan",
+   "manader": [
+    3,
+    10
+   ],
+   "hot": "Första frost 10; övervintring 10–3. Deadline: första frostnatt [K].",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "fleecehuv med dragsko",
+    "växthuv med blixtlås/vinterkupa"
+   ],
+   "ankare_kallor": [
+    "plantagen.se",
+    "blomsterlandet.se",
+    "granngarden.se — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "plant frost protection cover fleece drawstring",
+    "frost cover bag for potted plants zipper",
+    "citrus tree winter jacket"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Rosor, rhododendron, buxbom i rabatten",
+   "agare": "Trädgårdsägare 55+",
+   "manader": [
+    2,
+    3,
+    11
+   ],
+   "hot": "Frost 11–3, vårsol/torka 2–3. Deadline: vintertäckning 11 [K].",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "vintertäckningshuv",
+    "vindskydd/skuggväv"
+   ],
+   "ankare_kallor": [
+    "plantagen.se",
+    "blomsterlandet.se — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "shrub frost cover winter",
+    "rhododendron winter protection cover"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Unga fruktträd",
+   "agare": "Trädgårdsägare 55+ på landet",
+   "manader": [
+    3,
+    11
+   ],
+   "hot": "Hare och rådjur gnager stammen 11–3. VARNING: kedjan har stamskydd — kräver ankare.",
+   "arketyp": "A1",
+   "form": "skydd",
+   "skyddsformer": [
+    "stamskydd spiral/nät"
+   ],
+   "ankare_kallor": [
+    "granngarden.se",
+    "plantskolor — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "tree trunk protector spiral deer guard",
+    "fruit tree trunk guard mesh"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Trädgårdsdammen (koi/guldfisk)",
+   "agare": "Villaägare 55+ med damm",
+   "manader": [
+    3,
+    5,
+    9,
+    10,
+    11,
+    12
+   ],
+   "hot": "Löv 9–11; is 12–3; häger 3–5. Deadline: lövfall 10 [K], isläggning 11–12 [K].",
+   "arketyp": "A1",
+   "form": "nät",
+   "skyddsformer": [
+    "dammnät (finns i sokord.json)",
+    "isfrihållare flytande",
+    "hägerskydd"
+   ],
+   "ankare_kallor": [
+    "dammfackhandel (Oase-återförsäljare) — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "pond cover netting leaves protection",
+    "pond de-icer floating winter",
+    "heron deterrent pond guard"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Fågelbord/fågelmatare",
+   "agare": "Hushåll 55+ i småhus, båda könen",
+   "manader": [
+    3,
+    10,
+    11
+   ],
+   "hot": "Regn i fröet, skator, ekorrar 11–3. Deadline: vintermatning börjar 10 [K]. VARNING: regnkupa bedömd 'ingen mekanism', kedjan har matare (STATUS 09-09) — bara med ankare.",
+   "arketyp": "A3",
+   "form": "huv",
+   "skyddsformer": [
+    "matarhuv/regnkupa",
+    "ekorrsäker matare (sokord finns)"
+   ],
+   "ankare_kallor": [
+    "granngarden.se",
+    "naturbutik (Naturbokhandeln/Vivara) — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "bird feeder weather guard dome",
+    "squirrel proof bird feeder metal"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Postlådan vid vägen",
+   "agare": "Hushåll på landet 55+",
+   "manader": [
+    3,
+    11
+   ],
+   "hot": "Snöplog, fukt 11–3. Deadline: första snö [K].",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "postlådehuv"
+   ],
+   "ankare_kallor": [
+    "ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "mailbox cover waterproof winter"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Luftvärmepumpens utedel",
+   "agare": "Villaägare 55+ (mycket stor bas — källa ska hämtas)",
+   "manader": [
+    1,
+    2,
+    3,
+    11
+   ],
+   "hot": "Snö, is, droppande takvatten 11–3. Deadline: första snö 11 [K]. Fackhandel 1 000–2 500 kr, kedjan har billiga — ankaret måste mätas.",
+   "arketyp": "A1",
+   "form": "tak",
+   "skyddsformer": [
+    "snötak/regnskydd",
+    "vinterhuv"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se (Panasonic/Mitsubishi-tak)",
+    "vvs-fackhandel — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "air conditioner outdoor unit roof cover"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Laddbox/utomhusuttag",
+   "agare": "Villaägare 55+ med elbil",
+   "manader": [
+    3,
+    9
+   ],
+   "hot": "Regn, snö 9–3.",
+   "arketyp": "A1",
+   "form": "huv",
+   "skyddsformer": [
+    "laddboxhuv",
+    "uttagslåda låsbar (finns i sokord.json)"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se (Easee/Zaptec-tillbehör)",
+    "kjell.com"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "ev charger cover outdoor waterproof",
+    "outdoor waterproof electrical box lockable"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Hängrännor",
+   "agare": "Villaägare 55+",
+   "manader": [
+    10,
+    11
+   ],
+   "hot": "Löv 10–11. Deadline: lövfällning [K]. VARNING: rännskopa/stegstabilisator = verktyg, strukna 09-09; kedjan har lövnät — bara med ankare.",
+   "arketyp": "A1",
+   "form": "nät",
+   "skyddsformer": [
+    "lövnät/rännskydd"
+   ],
+   "ankare_kallor": [
+    "bauhaus.se",
+    "takfackhandel — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "gutter guard mesh leaf protection 6m"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Källarfönster/ljusgårdar",
+   "agare": "Villaägare 55+ med källare",
+   "manader": [
+    9,
+    11
+   ],
+   "hot": "Löv och vatten i ljusgården 9–11. Deadline: lövfall/höstregn [K].",
+   "arketyp": "A1",
+   "form": "lock",
+   "skyddsformer": [
+    "ljusgårdslock polykarbonat"
+   ],
+   "ankare_kallor": [
+    "ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "window well cover clear polycarbonate"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Utekatten",
+   "agare": "Kvinna/man 55–74 på landsbygd; ~538 000 utekatter (FAKTA §1). V2 koja 789 kr BEVISAD — dubblett.",
+   "manader": [
+    9,
+    11
+   ],
+   "hot": "Kyla, höstregn 9–11; fönstret stänger sista november [F]. Deadline: första frost. Nästa fas: värme och vatten.",
+   "arketyp": "A3",
+   "form": "koja",
+   "skyddsformer": [
+    "isolerad koja (BEVISAD, dubblett)",
+    "värmedyna ute",
+    "uppvärmd vattenskål",
+    "vindskydd/veranda på altanen"
+   ],
+   "ankare_kallor": [
+    "zoo.se",
+    "arkenzoo.se",
+    "granngarden.se",
+    "pricerunner.se (Kerbl 1 017, Pawhut 1 045, VEVOR 1 048, Supercat 1 799, Northix 1 919) [F]"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "outdoor cat heated pad waterproof",
+    "heated pet water bowl outdoor",
+    "cat shelter porch windproof insulated"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Gårdshunden/hundgården",
+   "agare": "Gård/villa 55+ med utehund",
+   "manader": [
+    3,
+    10,
+    11
+   ],
+   "hot": "Kyla, vind, regn 10–3. Deadline: första frost 10–11 [K].",
+   "arketyp": "A3",
+   "form": "koja",
+   "skyddsformer": [
+    "isolerad hundkoja",
+    "hundgårdstak/vindskydd (finns i sokord.json)",
+    "isolerad dörrflik",
+    "värmedyna"
+   ],
+   "ankare_kallor": [
+    "granngarden.se",
+    "zoo.se",
+    "hooks.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "insulated dog house outdoor winter large",
+    "dog kennel run roof cover waterproof",
+    "dog house door flap insulated"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Hönsen — rastgård och vatten",
+   "agare": "Hobbyhönsägare 55+ på landet, båda könen (Jordbruksverket — antal ska hämtas med källa)",
+   "manader": [
+    3,
+    9,
+    11
+   ],
+   "hot": "Regn i rastgården 9–11; frost i vattnet 11–3; räv/hök året runt. Deadline: första frost [K].",
+   "arketyp": "A3",
+   "form": "tak",
+   "skyddsformer": [
+    "rastgårdstak (finns i sokord.json)",
+    "isfri vattenskål/vattenautomat",
+    "isolerhuv till hönshus"
+   ],
+   "ankare_kallor": [
+    "granngarden.se",
+    "hooks.se",
+    "hönsfackhandel (Omlet) — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "chicken coop run cover waterproof 3x6",
+    "heated chicken waterer winter",
+    "chicken coop insulation cover winter"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Hästen i hagen",
+   "agare": "Hästägare 45–70, ofta kvinna",
+   "manader": [
+    3,
+    10
+   ],
+   "hot": "Regn, vind, frost i hinken 10–3. Deadline: första frost [K]. VARNING: täcke = storlekstabell (DNA L) — bara former utan storlek.",
+   "arketyp": "A3",
+   "form": "huv",
+   "skyddsformer": [
+    "isolerad hinkhuv (finns i sokord.json)",
+    "vindskydd/hagtak (form, ej storlek)"
+   ],
+   "ankare_kallor": [
+    "hooks.se",
+    "granngarden.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "insulated horse water bucket cover",
+    "horse bucket holder fence insulated",
+    "horse trough de-icer winter"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Kanin/marsvin i bur ute",
+   "agare": "Mor-/farföräldrar och barnfamiljer i småhus",
+   "manader": [
+    3,
+    10
+   ],
+   "hot": "Kyla 10–3. Deadline: första frost [K].",
+   "arketyp": "A3",
+   "form": "huv",
+   "skyddsformer": [
+    "burhuv/isolerhuv",
+    "vinterskydd för bur"
+   ],
+   "ankare_kallor": [
+    "zoo.se",
+    "arkenzoo.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "rabbit hutch cover insulated winter",
+    "hutch thermal cover waterproof"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Bikuporna",
+   "agare": "Hobbybiodlare 55+",
+   "manader": [
+    3,
+    10,
+    11
+   ],
+   "hot": "Kyla, hackspett 11–3. Deadline: invintring 10–11 [K].",
+   "arketyp": "A3",
+   "form": "överdrag",
+   "skyddsformer": [
+    "kupöverdrag/isolering",
+    "hackspettsnät"
+   ],
+   "ankare_kallor": [
+    "biredskapsfabriken.se — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "beehive winter wrap insulation",
+    "beehive cover waterproof winter"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Igelkotten i trädgården",
+   "agare": "Trädgårdsägare 55+ (välkommen gäst)",
+   "manader": [
+    9,
+    10
+   ],
+   "hot": "Bo saknas inför vintersömn 9–10. Deadline: första frost [K].",
+   "arketyp": "A3",
+   "form": "hus",
+   "skyddsformer": [
+    "igelkottshus"
+   ],
+   "ankare_kallor": [
+    "naturbutik (Vivara/Naturbokhandeln) — ej mätt",
+    "granngarden.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "hedgehog house outdoor wooden",
+    "hedgehog shelter hibernation"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Vildfåglarna — övernattning",
+   "agare": "Trädgårdsägare 55+",
+   "manader": [
+    3,
+    10
+   ],
+   "hot": "Kyla 10–3. Deadline: vintermatning börjar 10 [K].",
+   "arketyp": "A3",
+   "form": "holk",
+   "skyddsformer": [
+    "vinterholk/övernattningsholk"
+   ],
+   "ankare_kallor": [
+    "naturbutik — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "bird roosting box winter"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Barnbarnet — adventskalendern",
+   "agare": "Mor-/farförälder eller förälder 35–65, kvinnor lika mycket som män (FAKTA §4.6). V3 racingbilar 499 kr BEVISAD — dubblett i temat.",
+   "manader": [
+    1,
+    8,
+    9,
+    11,
+    12
+   ],
+   "hot": "Chokladkalendern sviker ('slut den andra december'). Deadline: 1 december [F] — säljfönster 9–11 (V3 launch 8 sept = 12 v). Nästa: nya teman, samma form.",
+   "arketyp": "A4",
+   "form": "kalenderlåda",
+   "skyddsformer": [
+    "kalenderlåda 24 saker (BEVISAD form; racingbilar = dubblett)",
+    "24-dagars countdown-box per hobby (dinosaurier, byggklossar, RC)"
+   ],
+   "ankare_kallor": [
+    "lekia.se (Hot Wheels/LEGO 349–599) [F]",
+    "pricerunner.se 'adventskalender <tema>'"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "advent calendar 24 pcs dinosaur toys",
+    "advent calendar building blocks 24 days",
+    "advent calendar rc car 24"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Mannen själv / partnern — hobbykalendern (fars dag, jul)",
+   "agare": "Fru/barn köper till mannen med båt/jakt/verktyg; eller han själv. Adventskalender Fiskedrag 469 kr ligger i butiken utan kampanj (FAKTA §1) — testa den före ny sökning.",
+   "manader": [
+    1,
+    3,
+    11,
+    12
+   ],
+   "hot": "1 december, jul 11–12 [F/K], fars dag andra söndagen i nov [K]. Bara med hårt datum ≤ 12 v (gåva 0/3 i augusti [F]).",
+   "arketyp": "A4",
+   "form": "kalenderlåda",
+   "skyddsformer": [
+    "kalenderlåda 24 saker (fiskedrag, bits, drag)",
+    "set med N synliga delar knutna till objektet"
+   ],
+   "ankare_kallor": [
+    "fiskefackhandel (Fladen-kalender 329 [F])",
+    "jakthandel — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "advent calendar fishing lures 24",
+    "advent calendar tools 24 pcs men",
+    "advent calendar drill bits countdown"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+   "agare": "Mor-/farföräldrar 55+ i småhus",
+   "manader": [
+    9,
+    11
+   ],
+   "hot": "Regn på cykeln som står ute 9–11 (svag deadline — bara som A5 efter V3).",
+   "arketyp": "A1",
+   "form": "kapell",
+   "skyddsformer": [
+    "liten cykelkapell"
+   ],
+   "ankare_kallor": [
+    "cykelfackhandel — ej mätt",
+    "pricerunner.se"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "kids bike cover waterproof outdoor",
+    "scooter cover kids waterproof"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Trimmern/röjsågen — kroppen (A6)",
+   "agare": "Villaägare 55+; 0,9–1,5 M trimmrar (DNA §2.5, uppskattning). Axelbälte 599 kr #6 BEVISAD — dubblett; Dubbel axelrem 579 och Trimmersele 299 finns i KATALOG.",
+   "manader": [
+    5,
+    10
+   ],
+   "hot": "Ont i axlar 5–10 (pågående smärta, K1 = 10); säsongsslut 10. Nästa: benskydd mot trimmerstänk (Damasker 389 #10 finns).",
+   "arketyp": "A6",
+   "form": "sele",
+   "skyddsformer": [
+    "sele (BEVISAD, dubblett)",
+    "benskydd/chaps mot stänk"
+   ],
+   "ankare_kallor": [
+    "husqvarna.se (819 kr) [F]",
+    "stihl-återförsäljare — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "trimmer shin guards debris"
+   ],
+   "vikt": 3
+  },
+  {
+   "objekt": "Altanen/trädäcket — foten (A6)",
+   "agare": "2,14 M småhus + 634 k fritidshus (DNA §2.4). Strandtofflor 349 kr #4 BEVISAD — dubblett.",
+   "manader": [
+    3,
+    5,
+    9,
+    11
+   ],
+   "hot": "Halka, alger 5–9; snö/is på trappan 11–3. Vinterfasen: halkskydd (Anti-Slip Tejp 272 finns i KATALOG). VARNING: ispiggar över skon = storleksrisk (DNA L).",
+   "arketyp": "A6",
+   "form": "piggar",
+   "skyddsformer": [
+    "halkfri sko (BEVISAD, dubblett)",
+    "vinter: ispiggar över skon (universalstorlek med resår)"
+   ],
+   "ankare_kallor": [
+    "pricerunner.se (Crocs 289–600) [F]",
+    "skofackhandel — ej mätt"
+   ],
+   "ankare_sek": null,
+   "sokfraser_en": [
+    "ice cleats over shoe elastic universal",
+    "snow grips for shoes"
+   ],
+   "vikt": 3
+  }
+ ]
+}
