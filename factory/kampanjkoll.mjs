@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // kampanjkoll.mjs — trippelkollen för en OPS-kampanj (steg 10 i /ny-annonser).
 //
-//   node factory/kampanjkoll.mjs pipeline/waves/se-<butik>-video.config.mjs [--vantat 38]
+//   node factory/kampanjkoll.mjs pipeline/waves/se-<butik>-video.config.mjs [pipeline/waves/se-<butik>-image.config.mjs …]
+//   (alla vågkonfigar som bygger i SAMMA kampanj — annars räknas antalet annonser fel; mätt 2026-09-10: bara videokonfigen gav "12 annonser (är: 16)")
 //
 // Läser TILLBAKA hela strukturen ur Meta och jämför mot vågkonfigen: konto,
 // sida, pixel, budget, länk, geo och status på alla tre nivåer. Läser bara.
