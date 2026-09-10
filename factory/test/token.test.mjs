@@ -20,6 +20,7 @@ import {
   anslut,
   tolkaMintfel,
   storefrontLosenord,
+  suffixForDoman,
 } from '../token.mjs';
 
 // --- hjälp -----------------------------------------------------------------
@@ -453,4 +454,70 @@ test('storefrontLosenord: butikens egen rad vinner över den allmänna', () => {
   assert.equal(storefrontLosenord('kalender', env), 'kalenderns');
   assert.equal(storefrontLosenord('tankguard', env), 'tankguards', 'utan egen rad gäller den allmänna');
   assert.equal(storefrontLosenord('kalender', {}), '');
+});
+
+// -------------------------------------------------- adressen är facit
+//
+// Axels beslut 2026-09-10: ingen ska behöva veta vad ett "butiks-id" är.
+// VA:n sätter fyra rader med vilket suffix som helst och skriver
+// butiksadressen i prompten; koden letar upp suffixet ur adressen.
+
+test('suffixForDoman hittar butikens suffix ur adressen', () => {
+  const env = {
+    SHOPIFY_SHOP: 'y1sj1i-3d.myshopify.com',
+    SHOPIFY_SHOP_TANKGUARD: 'y1sj1i-3d.myshopify.com',
+    SHOPIFY_SHOP_IKF0TU_5E: 'https://IKF0TU-5E.myshopify.com/',
+  };
+  assert.equal(suffixForDoman('ikf0tu-5e.myshopify.com', env), 'IKF0TU_5E');
+  assert.equal(suffixForDoman('y1sj1i-3d.myshopify.com', env), 'TANKGUARD');
+  assert.equal(suffixForDoman('finns-inte.myshopify.com', env), null);
+  assert.equal(suffixForDoman('', env), null);
+});
+
+test('anslut med onskadDoman läser rätt butik oavsett butiks-id', async () => {
+  const t = tempMappar();
+  const { fetchFn } = fejkShopify({ namn: 'Kalendern', doman: 'ikf0tu-5e.myshopify.com' });
+  const env = {
+    // De utan suffix står på TankGuard — precis som i verkligheten.
+    SHOPIFY_SHOP: 'y1sj1i-3d.myshopify.com',
+    SHOPIFY_CLIENT_ID: 'tankguard-id',
+    SHOPIFY_CLIENT_SECRET: 'tankguard-hemlis',
+    SHOPIFY_SHOP_IKF0TU_5E: 'ikf0tu-5e.myshopify.com',
+    SHOPIFY_CLIENT_ID_IKF0TU_5E: 'kalender-id',
+    SHOPIFY_CLIENT_SECRET_IKF0TU_5E: 'kalender-hemlis',
+  };
+  const b = await anslut('nagot-annat-id', {
+    env,
+    utanEnvFil: true,
+    fetchFn,
+    sparrAlternativ: t.alt,
+    onskadDoman: 'ikf0tu-5e.myshopify.com',
+  });
+  assert.equal(b.domain, 'ikf0tu-5e.myshopify.com', 'adressen vinner över butiks-id:t');
+  t.stada();
+});
+
+test('saknas adressen i miljön listas vad som FINNS, med färdiga rader att klistra', async () => {
+  const t = tempMappar();
+  const env = { SHOPIFY_SHOP: 'y1sj1i-3d.myshopify.com', SHOPIFY_SHOP_TANKGUARD: 'y1sj1i-3d.myshopify.com' };
+  await assert.rejects(
+    () => anslut('kalender', { env, utanEnvFil: true, sparrAlternativ: t.alt, onskadDoman: 'ikf0tu-5e.myshopify.com' }),
+    (e) => {
+      assert.ok(e.message.includes('finns inte i miljön'));
+      assert.ok(e.message.includes('SHOPIFY_SHOP_TANKGUARD = y1sj1i-3d.myshopify.com'), 'ska visa vad som FINNS');
+      assert.ok(e.message.includes('SHOPIFY_SHOP_IKF0TU_5E = ikf0tu-5e.myshopify.com'), 'ska ge raden att klistra in');
+      assert.ok(e.message.includes('NY session'), 'miljöfällorna ska hänga med');
+      return true;
+    }
+  );
+  t.stada();
+});
+
+test('utan onskadDoman fungerar allt som förut — gamla butiker går inte sönder', async () => {
+  const t = tempMappar();
+  const { fetchFn } = fejkShopify({ namn: 'Kalendern', doman: 'ikf0tu-5e.myshopify.com' });
+  const env = { SHOPIFY_SHOP: 'ikf0tu-5e.myshopify.com', SHOPIFY_CLIENT_ID: 'x', SHOPIFY_CLIENT_SECRET: 'y' };
+  const b = await anslut('kalender', { env, utanEnvFil: true, fetchFn, sparrAlternativ: t.alt });
+  assert.equal(b.domain, 'ikf0tu-5e.myshopify.com');
+  t.stada();
 });

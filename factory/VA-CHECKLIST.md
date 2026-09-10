@@ -56,14 +56,16 @@ VIDEO:
 
 * Go to dev.shopify.com → log in with the work Gmail → Apps → Create app → name it: Fabriken + the store's address start (example: Fabriken y1sj1i)
 * The app → Settings → copy the Client ID and the Client secret
-* Pick a SHORT ID for this store, lowercase, no spaces (example: `kalender`). Write it down – you use it twice.
-* Open the Claude session's Environment → ADD these 4, with the ID in CAPITALS at the end (do NOT touch the ones without an ID – those belong to other stores):
-  SHOPIFY_SHOP_<ID> = the store's .myshopify.com address
-  SHOPIFY_CLIENT_ID_<ID> = the Client ID
-  SHOPIFY_CLIENT_SECRET_<ID> = the Client secret
-  SHOPIFY_STOREFRONT_PASSWORD_<ID> = Online Store → Preferences → Password (the store password – Claude needs it to check the pages like a customer sees them)
-  Example for the ID `kalender`: SHOPIFY_SHOP_KALENDER, SHOPIFY_CLIENT_ID_KALENDER, and so on.
-  Why the ID: every session on the account shares one Environment. Without it, two builds fight over the same four rows and one of them writes to the wrong store. (Measured 2026-09-10: four days lost to exactly this.)
+* Look at the store's address. It ends in `.myshopify.com`. The part BEFORE that is your TAG – the same thing you typed when you named the app. Write it in CAPITALS and turn `-` into `_`.
+  Address `ikf0tu-5e.myshopify.com` → TAG `IKF0TU_5E`
+* Open the Claude session's Environment → ADD these 4. Do NOT touch the ones without a tag at the end – those belong to other stores. Name, then `=`, then the value:
+  SHOPIFY_SHOP_IKF0TU_5E = ikf0tu-5e.myshopify.com
+  SHOPIFY_CLIENT_ID_IKF0TU_5E = the Client ID
+  SHOPIFY_CLIENT_SECRET_IKF0TU_5E = the Client secret
+  SHOPIFY_STOREFRONT_PASSWORD_IKF0TU_5E = Online Store → Preferences → Password (the store password – Claude needs it to check the pages like a customer sees them)
+  (Replace IKF0TU_5E with your own tag.)
+  Why the tag: every session on the account shares one Environment. Without it, two builds fight over the same four rows and one of them writes to the wrong store. (Measured 2026-09-10: four days lost to exactly this.)
+  You do not have to remember the tag. You write the store ADDRESS in the command, and Claude finds these four rows from it.
 * Save the Environment BEFORE you start the session. A session reads the Environment when it starts – saving into a session that is already running changes nothing there.
 * Back in the app → Distribution → Custom distribution → enter the store's .myshopify.com address → Generate link → open it → Install app
   Note: keys go ONLY in the Environment – never in chat or email.
@@ -72,11 +74,11 @@ VIDEO:
 ## 3. Start the build
 VIDEO:
 
-* Write /ny-ops + the product link in Claude Code, and add the line `Butiks-id: <your ID>` under it
+* Write /ny-ops + the product link in Claude Code, and add the store address under it
   Example:
   /ny-ops https://baverbutiken.se/products/...
-  Butiks-id: kalender
-  The store must be xxxxxx.myshopify.com. If the "Connected" line does not match that address: stop and tell me, build nothing.
+  The store must be ikf0tu-5e.myshopify.com. If the "Connected" line does not match that address: stop and tell me, build nothing.
+  That address is how Claude finds the right keys. Leave it out and it may build in another store.
 * Claude checks the connection, names the store and builds everything
 * Claude tells you the STORE NAME and DOMAIN for the next steps
 

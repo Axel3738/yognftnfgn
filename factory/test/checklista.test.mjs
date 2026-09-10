@@ -54,23 +54,19 @@ test('EN fil på butiksnivå listar alla produkter och en recensionsrad per prod
   assert.equal((md.match(/# Store Launch Checklist/g) ?? []).length, 1, 'en rubrik = en fil');
 });
 
-test('de fyra env-variablerna bär butikens id, och ägare/inkorg är två adresser', () => {
-  // Axels beslut 2026-09-10: varje butik får sitt eget suffix. Alla sessioner
-  // på kontot delar EN Environment, så utan id slåss två parallella bygg om
-  // samma fyra rader och det ena skriver i fel butik. (Fyra dagars stopp.)
+test('de fyra env-variablerna bär en tagg, och ägare/inkorg är två adresser', () => {
+  // Axels beslut 2026-09-10: varje butik får sina egna fyra rader, märkta med
+  // en tagg. Alla sessioner på kontot delar EN Environment — utan tagg slåss
+  // två parallella bygg om samma fyra rader och det ena skriver i fel butik.
+  // VA:n behöver inte minnas taggen: hon skriver butikens ADRESS i
+  // byggkommandot, och koden slår upp raderna ur den. (Fyra dagars stopp.)
   const md = byggChecklista(butik(), [raprodukt()]);
-  const v0 = checklistaVarden(butik(), [raprodukt()]);
-  const rad = md.split('\n').filter((r) => /`SHOPIFY_[A-Z0-9_]+`/.test(r));
+  const rad = md.split('\n').filter((r) => /`SHOPIFY_[A-Z0-9_]+(<TAG>)?`/.test(r));
   assert.deepEqual(
-    rad.map((r) => r.match(/`(SHOPIFY_[A-Z0-9_]+)`/)[1]),
-    [
-      `SHOPIFY_SHOP_${v0.idStort}`,
-      `SHOPIFY_CLIENT_ID_${v0.idStort}`,
-      `SHOPIFY_CLIENT_SECRET_${v0.idStort}`,
-      `SHOPIFY_STOREFRONT_PASSWORD_${v0.idStort}`,
-    ]
+    rad.map((r) => r.match(/`(SHOPIFY_[A-Z0-9_<>]+)`/)[1]),
+    ['SHOPIFY_SHOP_<TAG>', 'SHOPIFY_CLIENT_ID_<TAG>', 'SHOPIFY_CLIENT_SECRET_<TAG>', 'SHOPIFY_STOREFRONT_PASSWORD_<TAG>']
   );
-  assert.ok(md.includes(`Butiks-id: ${v0.id}`), 'byggkommandot ska bära id:t');
+  assert.ok(md.includes('you write the store ADDRESS in the'), 'adressen är gränssnittet, inte taggen');
   assert.ok(md.includes('Save the Environment BEFORE you start the session'));
   const v = checklistaVarden(butik(), [raprodukt()]);
   assert.notEqual(v.inkorg, v.agare, 'vidarebefordran och ägarbyte går till olika adresser');
