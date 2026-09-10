@@ -17,6 +17,7 @@
 // Kräver env NOTION_TOKEN (integration inbjuden till hubbarna).
 
 import { readFileSync as fsReadFileSync } from 'node:fs';
+import { opsHubbar, utanOpsHubbar } from './lib/ops-hubbar.mjs';
 
 const API = 'https://api.notion.com/v1';
 const ROT = new URL('..', import.meta.url).pathname;
@@ -26,8 +27,17 @@ const ROT = new URL('..', import.meta.url).pathname;
  *  inte fraga pa teamspace, sa har tas varje databas integrationen ser — bara
  *  mallen ("MALL") raknas bort. Teamspace-gransen halls av tva saker: integrationen
  *  ar bara inbjuden i Baverbutiken, och en rad vars prefix inte finns i MagiBorsten
- *  laddas aldrig upp (leveranskon.mjs). */
+ *  laddas aldrig upp (leveranskon.mjs).
+ *  ⚠️ Sedan 2026-09-10 ser integrationen OCKSA OPS-butikernas hubbar (egna
+ *  teamspaces, samma integration). De undantas PER ID ur factory/produkter/
+ *  register.json — se filtreraOpsHubbar() nedan. Aldrig pa titel. */
 export const ÄR_HUB = (titel) => !/\bMALL\b/i.test(titel || '');
+
+/** Tar bort OPS-butikernas hubbar (id ur register.json) ur en hubblista.
+ *  Ren funktion — kartan kan skickas in i tester. Loggar alltid en rad. */
+export function filtreraOpsHubbar(hubbar, karta = opsHubbar(ROT), { logg = console.error } = {}) {
+  return utanOpsHubbar(hubbar, karta, { logg });
+}
 
 /** Statusen som betyder "klar, vantar pa upplaggning". Axels beslut 2026-09-02:
  *  ENBART "To be Reviewed" — bade video och bild. Allt som star dar har aldrig
@@ -136,7 +146,9 @@ export async function hittaHubbar() {
     const nyckel = String(h.id).replace(/-/g, '');
     if (!på.has(nyckel)) på.set(nyckel, h);
   }
-  return [...på.values()];
+  // OPS-butikernas hubbar ses av samma integration men hor till ett annat konto
+  // (915422744950975) och en egen rutin. Bort per id, med loggrad — varje gang.
+  return filtreraOpsHubbar([...på.values()]);
 }
 
 async function allaSidor(databaseId) {

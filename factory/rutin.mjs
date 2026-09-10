@@ -6,7 +6,13 @@
 //
 //   node factory/rutin.mjs --tid 13:20 --kommando "/notionkorning"
 //   node factory/rutin.mjs --tid 07:00 --kommando "/skalningskungen tankguard" --butik tankguard
-//   node factory/rutin.mjs --lista            visar husets sex nattrutiner + skalningsronderna
+//   node factory/rutin.mjs --tid 00:01 --kommando "/notionscalercs tankguard" --butik tankguard
+//   node factory/rutin.mjs --lista            visar husets sex nattrutiner + skalningsronderna + nattvakterna
+//
+// Nattvakten (/notionscalercs <butik>, Axels beslut 2026-09-10) går VARJE natt
+// 00:01 svensk tid. Det är 22:01 UTC dagen före på sommaren — cronen ligger
+// alltså på "fel" dag i UTC, och det är rätt. Vilka nätter som blir
+// briefnätter (ons + sön) avgör skriptet (factory/register.mjs), inte cron.
 //
 // Varför filen finns: tre saker har gått fel varje gång en rutin byggts för
 // hand, och alla tre är räknefel eller glömska — inte omdöme.
@@ -26,6 +32,18 @@ import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
+// Kommandofilerna. Testerna pekar om katalogen till en fixtur, så ett
+// kommando som skrivs parallellt av en annan session aldrig är testets facit.
+export const KOMMANDOKATALOG = join(ROT, '.claude', 'commands');
+// Markören i en kommandofil som säger att rutinen INTE ska ha några
+// connectors: allt går via env-nycklar (NOTION_TOKEN, META_ACCESS_TOKEN,
+// DISCORD_WEBHOOK_URL) och REST. Det är hela poängen med nattvakten — inga
+// godkännandeklick — så att kommandofilen nämner Notion räcker inte som skäl
+// att koppla Notion-connectorn.
+export const INGA_CONNECTORS = 'CONNECTORS: inga';
+
+const escapeRegex = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const kommandonamn = (kommando) => String(kommando || '').trim().split(/\s+/)[0].replace(/^\//, '');
 
 // ------------------------------------------------------------------ tid → cron
 
@@ -88,15 +106,15 @@ export function tillCron(svenskTid, { dagar = '*', datum = new Date() } = {}) {
 
 /** Vad som måste stämma innan en rutin skapas. Varje punkt har gått fel
  *  minst en gång. Returnerar { ok, hinder[], varningar[] }. */
-export function granska({ kommando, butik = null, gren = null, rutiner = [] }) {
+export function granska({ kommando, butik = null, gren = null, rutiner = [], katalog = KOMMANDOKATALOG }) {
   const hinder = [];
   const varningar = [];
 
   // 1. Kommandofilen måste finnas — och den måste finnas på main.
-  const namn = String(kommando || '').trim().split(/\s+/)[0].replace(/^\//, '');
+  const namn = kommandonamn(kommando);
   if (!namn) hinder.push('Inget kommando angivet.');
   else {
-    const fil = join(ROT, '.claude', 'commands', `${namn}.md`);
+    const fil = join(katalog, `${namn}.md`);
     if (!existsSync(fil)) {
       hinder.push(`.claude/commands/${namn}.md finns inte i trädet — rutinen skulle klona main och inte hitta något att köra.`);
     }
@@ -113,7 +131,16 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [] }) {
 
   // 3. Dubbletter. Två rutiner med samma jobb kör båda, och den ena upptäcks
   //    först när något gjorts två gånger. (Hände 2026-09-08.)
-  const likadana = rutiner.filter((r) => String(r.prompt || r.name || '').includes(namn));
+  //    Kommandonamnet matchas med ORDGRÄNS: "/cs" är inte "/notionscalercs",
+  //    och är en butik angiven räknas bara rutiner som också nämner butiken —
+  //    butik A:s nattvakt är ingen dubblett av butik B:s.
+  const ordgrans = namn ? new RegExp(`(^|\\s|/)${escapeRegex(namn)}(\\s|$)`) : null;
+  const butiksgrans = butik ? new RegExp(`(^|[\\s:/])${escapeRegex(butik)}(\\s|$)`, 'i') : null;
+  const likadana = rutiner.filter((r) => {
+    const text = `${r.prompt || ''} ${r.name || ''}`;
+    if (!ordgrans || !ordgrans.test(text)) return false;
+    return butiksgrans ? butiksgrans.test(text) : true;
+  });
   if (likadana.length) {
     hinder.push(
       `Det finns redan ${likadana.length} rutin${likadana.length > 1 ? 'er' : ''} som kör "${namn}": ` +
@@ -124,14 +151,18 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [] }) {
 
   // 4. Connectors ärvs inte. Det är ingen blockad, men det är det som gör att
   //    en rutin kan starta, se glad ut och ändå inte kunna läsa Notion.
-  const behover = connectorsFor(namn);
-  if (behover.length) {
-    varningar.push(
-      `Rutinen behöver ${behover.join(', ')}. Connectors ärvs INTE från sessionen — ` +
-      'koppla dem på själva rutinen i Routines-vyn, annars står den helt utan mcp-verktyg.'
-    );
+  if (harIngaConnectors(namn, katalog)) {
+    varningar.push('Rutinen behöver INGA connectors — Notion/Meta/Discord går via env-nycklar (NOTION_TOKEN, META_ACCESS_TOKEN, DISCORD_WEBHOOK_URL). Koppla ingen connector: det är så den slipper godkännandeklick.');
+  } else {
+    const behover = connectorsFor(namn, { katalog });
+    if (behover.length) {
+      varningar.push(
+        `Rutinen behöver ${behover.join(', ')}. Connectors ärvs INTE från sessionen — ` +
+        'koppla dem på själva rutinen i Routines-vyn, annars står den helt utan mcp-verktyg.'
+      );
+    }
   }
-  const nycklar = nycklarFor(namn);
+  const nycklar = nycklarFor(namn, { katalog });
   const saknade = nycklar.filter((n) => !process.env[n]);
   if (saknade.length) {
     varningar.push(`Env-nycklar som saknas här: ${saknade.join(', ')}. Rutinens container behöver dem, inte den här sessionen.`);
@@ -140,11 +171,23 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [] }) {
   return { ok: hinder.length === 0, hinder, varningar };
 }
 
-/** Vilka connectors ett kommando faktiskt behöver, läst ur kommandofilen. */
-export function connectorsFor(namn) {
-  const fil = join(ROT, '.claude', 'commands', `${namn}.md`);
-  if (!existsSync(fil)) return [];
-  const text = readFileSync(fil, 'utf8');
+/** Kommandofilens text, eller '' om den inte finns. */
+function kommandotext(namn, katalog = KOMMANDOKATALOG) {
+  const fil = join(katalog, `${namn}.md`);
+  return existsSync(fil) ? readFileSync(fil, 'utf8') : '';
+}
+
+/** true om kommandofilen uttryckligen säger `CONNECTORS: inga`. */
+export function harIngaConnectors(namn, katalog = KOMMANDOKATALOG) {
+  return kommandotext(namn, katalog).includes(INGA_CONNECTORS);
+}
+
+/** Vilka connectors ett kommando faktiskt behöver, läst ur kommandofilen.
+ *  Undantaget: står `CONNECTORS: inga` i filen är svaret [] oavsett vad
+ *  texten i övrigt nämner — rutinen går via env-nycklar och REST. */
+export function connectorsFor(namn, { katalog = KOMMANDOKATALOG } = {}) {
+  const text = kommandotext(namn, katalog);
+  if (!text || text.includes(INGA_CONNECTORS)) return [];
   const ut = [];
   if (/notion/i.test(text)) ut.push('Notion');
   if (/\bdrive\b|google.?drive/i.test(text)) ut.push('Google Drive');
@@ -155,10 +198,9 @@ export function connectorsFor(namn) {
 
 /** Env-nycklar kommandot nämner. Rutinen kör i en egen container — den ärver
  *  inte den här sessionens miljö heller. */
-export function nycklarFor(namn) {
-  const fil = join(ROT, '.claude', 'commands', `${namn}.md`);
-  if (!existsSync(fil)) return [];
-  const text = readFileSync(fil, 'utf8');
+export function nycklarFor(namn, { katalog = KOMMANDOKATALOG } = {}) {
+  const text = kommandotext(namn, katalog);
+  if (!text) return [];
   return [...new Set([...text.matchAll(/\b([A-Z][A-Z0-9_]{5,})\b/g)].map((m) => m[1]))]
     .filter((n) => /TOKEN|KEY|SECRET|WEBHOOK|PASSWORD/.test(n));
 }
@@ -167,19 +209,24 @@ export function nycklarFor(namn) {
 
 /** Hela underlaget för en rutin: cron, namn, taggar och de MCP-anrop
  *  sessionen ska göra. Ingenting skapas här. */
-export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner = [], datum = new Date() }) {
+export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner = [], datum = new Date(), katalog = KOMMANDOKATALOG }) {
   const tider = tillCron(tid, { datum });
-  const kontroll = granska({ kommando, butik, gren, rutiner });
-  const namn = String(kommando).trim().split(/\s+/)[0].replace(/^\//, '');
-  const etikett = butik ? `${namn} — ${butik}` : namn;
+  const kontroll = granska({ kommando, butik, gren, rutiner, katalog });
+  const namn = kommandonamn(kommando);
+  // Nattvakten heter det den är, per butik — så listan i Routines-vyn går att
+  // läsa utan att veta vad "notionscalercs" betyder.
+  const nattvakt = namn === 'notionscalercs' && butik;
+  const etikett = nattvakt ? `Nattvakten: ${butik}` : butik ? `${namn} — ${butik}` : namn;
+  const sessionstitel = nattvakt ? `Rutin: Nattvakten ${butik}` : `Rutin: ${etikett}`;
+  const taggar = [`routine:${namn}`, butik ? `butik:${butik}` : null].filter(Boolean);
 
   return {
     ...tider,
     kommando,
     butik,
     rutinnamn: etikett,
-    sessionstitel: `Rutin: ${etikett}`,
-    taggar: [`routine:${namn}`, butik ? `butik:${butik}` : null].filter(Boolean),
+    sessionstitel,
+    taggar,
     kontroll,
     // Ordningen är inte utbytbar: sessionen måste finnas innan triggern kan
     // bindas till den, och utan bindningen kan rutinen inte pusha.
@@ -188,10 +235,10 @@ export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner 
         verktyg: 'create_session',
         varfor: 'En rutin utan fast session får inget credential och kan aldrig pusha — allt den lär sig dör med containern.',
         argument: {
-          title: `Rutin: ${etikett}`,
+          title: sessionstitel,
           source_url: 'https://github.com/Axel3738/yognftnfgn',
           outcome_branch: 'main',
-          tags: [`routine:${namn}`, butik ? `butik:${butik}` : null].filter(Boolean),
+          tags: taggar,
         },
       },
       {
@@ -232,10 +279,12 @@ function lista() {
     ? readdirSync(join(ROT, 'factory', 'butiker')).filter((f) => f.endsWith('.yaml') && f !== 'testbutiken.yaml')
     : [];
   for (const b of butiker) kanda.push(['07:00', `/skalningskungen ${b.replace('.yaml', '')}`, 'Skalningsronden (var tredje dag, skriptet avgör)']);
+  for (const b of butiker) kanda.push(['00:01', `/notionscalercs ${b.replace('.yaml', '')}`, 'Nattvakten (varje natt; briefer ons+sön, skriptet avgör)']);
 
   for (const [tid, kmd, vad] of kanda) {
     const t = tillCron(tid);
-    console.log(`  ${tid}  ${t.cron.padEnd(16)} ${kmd.padEnd(32)} ${vad}`);
+    const skifte = t.dagskifte ? `  (dagen ${t.dagskifte < 0 ? 'före' : 'efter'} i UTC — rätt)` : '';
+    console.log(`  ${tid}  ${t.cron.padEnd(16)} ${kmd.padEnd(32)} ${vad}${skifte}`);
   }
   console.log('\n⚠️ Cronen ovan gäller ' + tillCron('12:00').galler + '.');
   console.log('   Vid omställningen ändras varje rad — se --tid för den enskilda.\n');
@@ -260,7 +309,7 @@ if (process.argv[1] && process.argv[1].endsWith('rutin.mjs')) {
 
     console.log(`\nRutin: ${f.rutinnamn}`);
     console.log(`  ${f.svenskTid} svensk tid  →  cron "${f.cron}"  (${f.galler})`);
-    if (f.dagskifte) console.log(`  ⚠️ Omräkningen korsar midnatt — körningen hamnar ${f.dagskifte > 0 ? 'dagen efter' : 'dagen före'} i UTC.`);
+    if (f.dagskifte) console.log(`  ⚠️ Omräkningen korsar midnatt: cronen ligger dagen ${f.dagskifte > 0 ? 'efter' : 'före'} i UTC — det är rätt, rör den inte.`);
     if (f.maste_andras_vid_omstallning) console.log(`  ⚠️ ${f.omstallning}`);
 
     if (f.kontroll.hinder.length) {

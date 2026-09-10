@@ -12,7 +12,9 @@ import {
   paraIhop, byggRegister, nastaOffset, dagnummer, arKordag,
   tillhorButiken, prefixFor, prefixEllerSkal, sakerstallKonto, sakerstallOpsKonto,
   hittaPost, laddaButik, lasRegister, upptackOps, upptackTest, redigerareFor,
+  svenskDatum, veckodag, arBriefdag, normaliseraNotionId, lasDrift,
   OPS_ANNONSKONTO, BAVERBUTIKEN_ANNONSKONTO, CYKEL_DAGAR, TROSKEL,
+  BRIEFDAGAR_STANDARD, BRIEF_IKAPP_DAGAR,
 } from '../register.mjs';
 
 const post = (extra = {}) => ({
@@ -166,6 +168,122 @@ test('nästa kördag pekar alltid framåt, aldrig på i dag', () => {
   assert.equal(k.nastaKordag, '2026-09-12');
   const nasta = arKordag({ kordag_offset: (offset + 1) % CYKEL_DAGAR, senaste_korning: '2026-09-09' }, '2026-09-09');
   assert.equal(nasta.nastaKordag, '2026-09-10');
+});
+
+// ------------------------------------------------------------- briefdagarna
+
+test('svenskDatum räknar i Europe/Stockholm — 22:30 UTC i juli är redan nästa dag', () => {
+  // Nattrutinen går 00:01 svensk tid = 22:01 UTC dagen före på sommaren.
+  // toISOString() hade sagt lördag när det var söndag.
+  assert.equal(svenskDatum(new Date('2026-07-04T22:30:00Z')), '2026-07-05');
+  assert.equal(svenskDatum(new Date('2026-07-04T21:30:00Z')), '2026-07-04', 'strax före svensk midnatt');
+  // Vintertid: UTC+1, så 23:30 UTC är nästa dag men 22:30 UTC är inte det.
+  assert.equal(svenskDatum(new Date('2026-12-31T23:30:00Z')), '2027-01-01');
+  assert.equal(svenskDatum(new Date('2026-12-31T22:30:00Z')), '2026-12-31');
+  assert.match(svenskDatum(), /^\d{4}-\d{2}-\d{2}$/);
+});
+
+test('veckodag är ren och UTC-baserad: 2026-09-13 är söndag, 09-16 onsdag', () => {
+  assert.equal(veckodag('2026-09-13'), 0);
+  assert.equal(veckodag('2026-09-14'), 1);
+  assert.equal(veckodag('2026-09-16'), 3);
+  assert.equal(veckodag('2026-09-19'), 6);
+  assert.throws(() => veckodag('söndag'), /Ogiltigt datum/);
+});
+
+test('standardbriefdagarna är söndag och onsdag', () => {
+  assert.deepEqual([...BRIEFDAGAR_STANDARD], [0, 3]);
+  assert.equal(BRIEF_IKAPP_DAGAR, 5);
+});
+
+test('briefdag väg 1: aldrig körd brief → första briefronden i dag, oavsett veckodag', () => {
+  const b = arBriefdag({ senaste_brief: '' }, '2026-09-14'); // måndag
+  assert.equal(b.briefdag, true);
+  assert.match(b.skal, /första briefronden/);
+  assert.equal(b.dagarSedan, null);
+  assert.equal(b.nastaBriefdag, '2026-09-16', 'nästa är onsdagen');
+});
+
+test('briefdag väg 2: söndag och onsdag är briefdagar, måndag är det inte', () => {
+  const p = { senaste_brief: '2026-09-13' };
+  const son = arBriefdag(p, '2026-09-13');
+  assert.equal(son.briefdag, true);
+  assert.match(son.skal, /söndag är briefdag/);
+  assert.equal(son.nastaBriefdag, '2026-09-16');
+
+  const man = arBriefdag(p, '2026-09-14');
+  assert.equal(man.briefdag, false);
+  assert.match(man.skal, /måndag är ingen briefdag/);
+  assert.equal(man.dagarSedan, 1);
+  assert.equal(man.nastaBriefdag, '2026-09-16');
+
+  const ons = arBriefdag(p, '2026-09-16');
+  assert.equal(ons.briefdag, true);
+  assert.equal(ons.nastaBriefdag, '2026-09-20', 'nästa pekar alltid framåt, aldrig på i dag');
+});
+
+test('briefdag väg 3: fem dygn utan brief kör ändå — ikappkörning', () => {
+  // Söndag 09-13 missades; fredag 09-18 är ingen briefdag men fem dygn har gått.
+  const b = arBriefdag({ senaste_brief: '2026-09-13' }, '2026-09-18');
+  assert.equal(b.briefdag, true);
+  assert.match(b.skal, /ikappkörning/);
+  assert.equal(b.dagarSedan, 5);
+  // Fyra dygn räcker inte — ons→sön är fyra dygn och helt normalt.
+  assert.equal(arBriefdag({ senaste_brief: '2026-09-16' }, '2026-09-19').briefdag, false);
+});
+
+test('briefdagarna går att överstyra per post och per argument — skräp faller tillbaka på standard', () => {
+  const p = { senaste_brief: '2026-09-13', briefdagar: [1] }; // bara måndag
+  assert.equal(arBriefdag(p, '2026-09-14').briefdag, true);
+  assert.equal(arBriefdag(p, '2026-09-16').briefdag, false, 'onsdag är inte briefdag när posten säger måndag');
+  assert.equal(arBriefdag(p, '2026-09-16', [3]).briefdag, true, 'argumentet vinner över posten');
+  assert.deepEqual(arBriefdag({ senaste_brief: '2026-09-13', briefdagar: ['x', 9] }, '2026-09-14').briefdagar, [0, 3]);
+});
+
+test('byggRegister väver in briefdagar: post > toppnivå > standard, och senaste_brief', () => {
+  const upptackta = ['a/1', 'b/1', 'c/1'].map((nyckel) => ({ nyckel, lage: 'skala', byggd: true }));
+  const r = byggRegister({
+    upptackta,
+    drift: {
+      briefdagar: [2, 5],
+      poster: {
+        'a/1': { briefdagar: [1], senaste_brief: '2026-09-13' },
+        'b/1': { senaste_brief: '' },
+      },
+    },
+  });
+  const hitta = (n) => r.produkter.find((p) => p.nyckel === n);
+  assert.deepEqual(hitta('a/1').briefdagar, [1], 'posten överstyr');
+  assert.equal(hitta('a/1').senaste_brief, '2026-09-13');
+  assert.deepEqual(hitta('b/1').briefdagar, [2, 5], 'toppnivån i register.json');
+  assert.deepEqual(hitta('c/1').briefdagar, [2, 5], 'ny post utan driftrad ärver toppnivån, inte standarden');
+  assert.equal(hitta('c/1').senaste_brief, '');
+  assert.equal(hitta('c/1').redigerare_discord_id, null);
+  // Utan toppnivå alls: standarden.
+  assert.deepEqual(byggRegister({ upptackta: [upptackta[0]] }).produkter[0].briefdagar, [0, 3]);
+});
+
+test('register.json bär briefdagarna på toppnivå med sin förklaring', () => {
+  const drift = lasDrift();
+  assert.deepEqual(drift.briefdagar, [0, 3]);
+  assert.match(drift.kommentar_briefdagar, /2026-09-10/);
+  assert.match(drift.kommentar_briefdagar, /aldrig i cron/i);
+  for (const [nyckel, p] of Object.entries(drift.poster)) {
+    assert.ok('senaste_brief' in p, `${nyckel} saknar senaste_brief`);
+    assert.ok('redigerare_discord_id' in p, `${nyckel} saknar redigerare_discord_id`);
+    assert.ok('foralder_page_id' in (p.notion ?? {}), `${nyckel}: notion saknar foralder_page_id`);
+  }
+});
+
+test('Notion-id normaliseras till uuid med bindestreck — ur rått hex, uuid och båda url-formerna', () => {
+  const vantat = '3cd270ab-908c-81bd-aab8-f19ec3e2d260';
+  assert.equal(normaliseraNotionId('3cd270ab908c81bdaab8f19ec3e2d260'), vantat);
+  assert.equal(normaliseraNotionId('3CD270AB908C81BDAAB8F19EC3E2D260'), vantat, 'skiftläget spelar ingen roll');
+  assert.equal(normaliseraNotionId(vantat), vantat, 'redan rätt form lämnas som den är');
+  assert.equal(normaliseraNotionId('https://app.notion.com/p/3cd270ab908c81bdaab8f19ec3e2d260'), vantat);
+  assert.equal(normaliseraNotionId('https://www.notion.so/stonebite/TankGuard-creative-hub-3cd270ab908c81bdaab8f19ec3e2d260?v=abcdef1234567890abcdef1234567890'), vantat, 'id:t efter titeln, inte vyn efter ?v=');
+  assert.throws(() => normaliseraNotionId('https://www.notion.so/stonebite'), /Hittar inget Notion-id/);
+  assert.throws(() => normaliseraNotionId(''), /Hittar inget Notion-id/);
 });
 
 // ------------------------------------------------------------- kontospärren

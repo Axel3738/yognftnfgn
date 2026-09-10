@@ -157,6 +157,8 @@ förstahandsvägen: **alla databaser under teamspacet Bäverbutiken**
 och fil i `Filer och media`. Inget krav på Typ, inget krav på hubbnamn. Skriv i
 rapporten vilken väg du gick och vilka databaser som lästes.
 
+⚠️ Hoppa över hubbar vars id står i `factory/produkter/register.json` (OPS-butikernas hubbar — egen rutin, eget konto). Lista: `node tools/lib/ops-hubbar.mjs`. REST-vägen gör det själv och skriver "OPS-hubbar undantagna: N" — ta med raden i rapporten.
+
 **Hämta hem bilagan** innan QA och uppladdning:
 ```bash
 node tools/notion-fil.mjs <page-id> --ut <mapp>

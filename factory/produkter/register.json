@@ -2,6 +2,11 @@
   "kommentar": "DRIFTLÄGET för skalningsronden (/skalningskungen). Den här filen är INTE listan över butiker — listan finns inte. factory/register.mjs UPPTÄCKER butikerna varje körning ur factory/butiker/*.yaml + factory/produkter/*.yaml + factory/state/ (och Bäverbutikens produkter ur products/products.json). En ny OPS-butik dyker upp i registret i samma sekund som ops.mjs skrivit sin första state-fil. Bygger man en handskriven lista missas nya butiker TYST — samma fälla som CLAUDE.md beskriver för rutiner som hårdkodar produkter.",
   "arbetsdelning": "Här: läge, redigerare, Notion-hub, kördagsoffset, senaste körning, cykelstart, launches. ALDRIG ekonomi. Produktens pris, inköp, break-even och target bor i factory/produkter/<id>.yaml och läses därifrån av factory/ekonomi.mjs. Ett break-even-tal på två ställen hinner bli olika, och då dömer nästa rond mot fel linje. Ett test i factory/test/register.test.mjs vaktar regeln.",
   "kordagar": "Varje butik kör var tredje dag. kordag_offset (0, 1 eller 2) säger vilken av de tre dagarna: kördag när (dagnummer sedan 1970-01-01) % 3 === offset. Offseten tilldelas automatiskt som den minst använda, så butikerna sprids jämnt över dygnen och inte alla kör samma dag. En butik som aldrig körts kör direkt, och en butik som inte körts på tre dygn kör ändå (ikappkörning) — ingen butik kan svälta.",
+  "briefdagar": [
+    0,
+    3
+  ],
+  "kommentar_briefdagar": "BRIEFDAGARNA för nattrutinen /notionscalercs (Axels beslut 2026-09-10). Rutinen körs VARJE natt 00:01 svensk tid — budgetdelen alltid, briefdelen bara på de här veckodagarna så Axel vet \"söndag = ny brief-dag\". Talen är JS-veckodag i SVENSK tid: 0 = söndag, 1 = måndag, 2 = tisdag, 3 = onsdag, 4 = torsdag, 5 = fredag, 6 = lördag. En post kan överstyra med ett eget briefdagar-fält. Vill man byta dagar ändras de HÄR — aldrig i cron, som ska fortsätta gå varje natt (kördagen avgörs av skriptet, factory/register.mjs arBriefdag). En butik som aldrig briefats körs direkt, och ≥ 5 dygn utan brief kör ändå (ikappkörning). senaste_brief stämplas med `node factory/register.mjs brief-kord <butik>`.",
   "lage": "test = produkten testas på Bäverbutiken, ronden gör BARA tröskelkoll och skjuter startskottet. skala = OPS-butik, full creative-loop. avslutad = posten bevakas inte längre (t.ex. en testprodukt som fått egen butik).",
   "ops_annonskonto": "915422744950975",
   "ops_annonskonto_namn": "MagiBorsten DK",
@@ -11,12 +16,16 @@
     "baverbutiken/ai-glasogon": {
       "lage": "test",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
         "name": "",
-        "database_id": ""
+        "database_id": "",
+        "foralder_page_id": "",
+        "url": ""
       },
       "kordag_offset": 0,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur products.json."
@@ -24,14 +33,17 @@
     "baverbutiken/axelbaltet": {
       "lage": "test",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
         "name": "Trimmer belt creative hub",
         "database_id": "3aa270ab-908c-808b-9d87-d1f1a0d70cbc",
-        "collection_id": "2f1270ab-908c-820a-9a08-07b73d53710b",
-        "url": "https://app.notion.com/p/3aa270ab908c808b9d87d1f1a0d70cbc"
+        "foralder_page_id": "",
+        "url": "https://app.notion.com/p/3aa270ab908c808b9d87d1f1a0d70cbc",
+        "collection_id": "2f1270ab-908c-820a-9a08-07b73d53710b"
       },
       "kordag_offset": 1,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur products.json."
@@ -39,14 +51,17 @@
     "baverbutiken/motorholjet": {
       "lage": "test",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
         "name": "Boat cover 420D creative hub",
         "database_id": "3b0270ab-908c-80a7-8793-fa11d8c0f6e4",
-        "collection_id": "785270ab-908c-82e5-ac71-07d7b7ef3770",
-        "url": "https://app.notion.com/p/3b0270ab908c80a78793fa11d8c0f6e4"
+        "foralder_page_id": "",
+        "url": "https://app.notion.com/p/3b0270ab908c80a78793fa11d8c0f6e4",
+        "collection_id": "785270ab-908c-82e5-ac71-07d7b7ef3770"
       },
       "kordag_offset": 2,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur products.json."
@@ -54,14 +69,17 @@
     "baverbutiken/satesoverdragaren": {
       "lage": "test",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
         "name": "Mower seat creative hub",
         "database_id": "3aa270ab-908c-80c0-88aa-cb4935db8f33",
-        "collection_id": "6c9270ab-908c-8362-aa2a-87c073045ebf",
-        "url": "https://app.notion.com/p/3aa270ab908c80c088aacb4935db8f33"
+        "foralder_page_id": "",
+        "url": "https://app.notion.com/p/3aa270ab908c80c088aacb4935db8f33",
+        "collection_id": "6c9270ab-908c-8362-aa2a-87c073045ebf"
       },
       "kordag_offset": 0,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur products.json."
@@ -69,14 +87,17 @@
     "baverbutiken/strandtofflorna": {
       "lage": "test",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
         "name": "Beach crocs creative hub",
         "database_id": "3aa270ab-908c-802b-a7a4-eb74d08d7eb7",
-        "collection_id": "50c270ab-908c-8266-aa1f-872b99fe61e0",
-        "url": "https://app.notion.com/p/3aa270ab908c802ba7a4eb74d08d7eb7"
+        "foralder_page_id": "",
+        "url": "https://app.notion.com/p/3aa270ab908c802ba7a4eb74d08d7eb7",
+        "collection_id": "50c270ab-908c-8266-aa1f-872b99fe61e0"
       },
       "kordag_offset": 1,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur products.json."
@@ -84,12 +105,16 @@
     "baverbutiken/vaggfastet": {
       "lage": "test",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
         "name": "",
-        "database_id": ""
+        "database_id": "",
+        "foralder_page_id": "",
+        "url": ""
       },
       "kordag_offset": 2,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur products.json."
@@ -97,12 +122,16 @@
     "drytrek/damasker": {
       "lage": "skala",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
-        "name": "",
-        "database_id": ""
+        "name": "Damasker vandring",
+        "database_id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7",
+        "foralder_page_id": "",
+        "url": ""
       },
       "kordag_offset": 0,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -110,12 +139,16 @@
     "hemvakten/overvakningskameran": {
       "lage": "skala",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
-        "name": "",
-        "database_id": ""
+        "name": "Surveillance Camera creative hub",
+        "database_id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
+        "foralder_page_id": "",
+        "url": ""
       },
       "kordag_offset": 1,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -123,12 +156,16 @@
     "tacklebay/adventskalender-fiskedrag": {
       "lage": "skala",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
         "name": "",
-        "database_id": ""
+        "database_id": "",
+        "foralder_page_id": "",
+        "url": ""
       },
       "kordag_offset": 2,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -136,12 +173,16 @@
     "tacklebay/fiskespohallare-4-pack": {
       "lage": "skala",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
-        "name": "",
-        "database_id": ""
+        "name": "Fish rod holder",
+        "database_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+        "foralder_page_id": "",
+        "url": ""
       },
       "kordag_offset": 0,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -149,15 +190,32 @@
     "tankguard/tankguard": {
       "lage": "skala",
       "redigerare": null,
+      "redigerare_discord_id": null,
       "notion": {
-        "name": "",
-        "database_id": ""
+        "name": "IBC Tank Cover creative hub",
+        "database_id": "3ce270ab-908c-8161-bed2-e22f132a6aba",
+        "foralder_page_id": "",
+        "url": ""
       },
       "kordag_offset": 1,
       "senaste_korning": "",
+      "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen."
+    },
+    "kalender/adventskalender-racingbilar": {
+      "kordag_offset": 2,
+      "launches": [],
+      "notion": {
+        "name": "Racing Car Advent Calendar creative hub",
+        "database_id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+        "foralder_page_id": "",
+        "url": ""
+      },
+      "lage": "skala",
+      "senaste_brief": "",
+      "redigerare_discord_id": null
     }
   }
 }

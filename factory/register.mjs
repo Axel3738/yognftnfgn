@@ -6,6 +6,17 @@
 //   node factory/register.mjs --idag 2026-09-12      → vilka butiker som är kördag
 //   node factory/register.mjs skriv-in               → persistera nya poster i register.json
 //   node factory/register.mjs log <butik> <antal> [YYYY-MM-DD]   → logga launchade creatives
+//   node factory/register.mjs kord <butik> [YYYY-MM-DD]          → stämpla senaste_korning (budgetronden)
+//   node factory/register.mjs brief-kord <butik> [YYYY-MM-DD]    → stämpla senaste_brief (briefronden)
+//   node factory/register.mjs notion <butik> <database_id|url> [namn…]  → koppla Notion-hubben
+//   node factory/register.mjs redigerare <butik> <namn> [discord-id]    → tilldela redigerare
+//
+// Två kalendrar per post (Axels beslut 2026-09-10):
+//   KÖRDAG   — budgetronden (/skalningskungen), var tredje dag via kordag_offset.
+//   BRIEFDAG — briefronden i nattrutinen /notionscalercs, som körs VARJE natt
+//              00:01 svensk tid men bara skriver briefer på fasta veckodagar
+//              (onsdag + söndag) så Axel vet "söndag = ny brief-dag". Kördagen
+//              avgörs av skriptet, aldrig av cron.
 //
 // ⚠️ REGISTRET ÄR INTE EN HANDSKRIVEN LISTA.
 // Identiteten UPPTÄCKS varje körning ur filerna som redan finns:
@@ -41,6 +52,31 @@ export const OPS_ANNONSKONTO = '915422744950975';
 export const BAVERBUTIKEN_ANNONSKONTO = '1867947880635861';
 
 export const CYKEL_DAGAR = 3;
+
+// Briefdagarna som JS-veckodag: 0 = söndag, 3 = onsdag. Axels beslut
+// 2026-09-10: fasta veckodagar i stället för "var tredje dag", så det går att
+// veta utan att räkna. Standarden kan överstyras i register.json (toppnivå
+// `briefdagar`, eller per post) — ALDRIG i cron, som går varje natt.
+export const BRIEFDAGAR_STANDARD = Object.freeze([0, 3]);
+// Ikappkörningen: ≥ 5 dygn utan brief kör ändå. Två briefdagar ligger som
+// mest fyra dygn isär (ons→sön), så fem betyder att en dag faktiskt missats.
+export const BRIEF_IKAPP_DAGAR = 5;
+const VECKODAGSNAMN = ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'];
+
+/**
+ * Dagens datum i SVENSK tid som YYYY-MM-DD. Containern går i UTC, och
+ * nattrutinen startar 00:01 svensk tid — det är 22:01 UTC DAGEN FÖRE på
+ * sommaren (23:01 på vintern). `new Date().toISOString()` hade alltså gett
+ * gårdagens datum, och en söndagsbrief hade blivit en lördagsbrief.
+ * Intl sköter sommartiden; ingen egen omställningslogik här.
+ */
+export function svenskDatum(nu = new Date()) {
+  const delar = new Intl.DateTimeFormat('sv-SE', {
+    timeZone: 'Europe/Stockholm', year: 'numeric', month: '2-digit', day: '2-digit',
+  }).formatToParts(nu);
+  const del = (typ) => delar.find((d) => d.type === typ)?.value;
+  return `${del('year')}-${del('month')}-${del('day')}`;
+}
 
 // Tröskeln för startskottet. ⚠️ Talen är INTE påhittade här: de är avlästa ur
 // den körande Skalningskungen-rutinen (agent/rond.mjs på grenen
@@ -242,6 +278,67 @@ export function dagnummer(datum) {
 
 const tillDatum = (n) => new Date(n * 86400000).toISOString().slice(0, 10);
 
+/** Veckodag 0–6 (0 = söndag) för ett YYYY-MM-DD. REN: räknar i UTC på datumet, läser ingen klocka. */
+export function veckodag(datum) {
+  return new Date(dagnummer(datum) * 86400000).getUTCDay();
+}
+
+/** Giltiga briefdagar ur en lista, eller standarden om listan är skräp/tom. */
+function briefdagarUr(lista) {
+  const ok = Array.isArray(lista) ? lista.filter((d) => Number.isInteger(d) && d >= 0 && d <= 6) : [];
+  return ok.length ? [...new Set(ok)].sort() : [...BRIEFDAGAR_STANDARD];
+}
+
+/**
+ * Är dagens datum briefdag för posten? REN funktion.
+ *
+ * Tre vägar in, i den ordningen:
+ *   1. Briefronden har aldrig körts (`senaste_brief` tomt) → JA, första briefronden.
+ *   2. Veckodagen är en av briefdagarna (standard onsdag + söndag) → JA.
+ *   3. Det har gått ≥ BRIEF_IKAPP_DAGAR dygn sedan senaste briefen → JA, ikappkörning.
+ *   Annars NEJ, med nästa briefdag utskriven så rapporten kan säga när.
+ *
+ * `briefdagar` tas ur argumentet, annars ur posten, annars standarden.
+ */
+export function arBriefdag(post, idag, briefdagar = post?.briefdagar) {
+  const dag = dagnummer(idag);
+  const dagar = briefdagarUr(briefdagar);
+  const vd = veckodag(idag);
+  const senaste = finns(post?.senaste_brief) ? dagnummer(post.senaste_brief) : null;
+  const dagarSedan = senaste === null ? null : dag - senaste;
+
+  // Nästa briefdag pekar alltid framåt — aldrig på i dag.
+  let nasta = dag + 1;
+  while (!dagar.includes((vd + (nasta - dag)) % 7)) nasta += 1;
+  const nastaBriefdag = tillDatum(nasta);
+  const namn = dagar.map((d) => VECKODAGSNAMN[d]).join(' + ');
+
+  if (senaste === null) {
+    return { briefdag: true, skal: 'aldrig körd brief — första briefronden körs i dag', dagarSedan: null, briefdagar: dagar, nastaBriefdag };
+  }
+  if (dagar.includes(vd)) {
+    return { briefdag: true, skal: `${VECKODAGSNAMN[vd]} är briefdag (${namn})`, dagarSedan, briefdagar: dagar, nastaBriefdag };
+  }
+  if (dagarSedan >= BRIEF_IKAPP_DAGAR) {
+    return { briefdag: true, skal: `${dagarSedan} dygn sedan senaste briefen — ikappkörning`, dagarSedan, briefdagar: dagar, nastaBriefdag };
+  }
+  return { briefdag: false, skal: `${VECKODAGSNAMN[vd]} är ingen briefdag (${namn}), ${dagarSedan} dygn sedan senaste briefen`, dagarSedan, briefdagar: dagar, nastaBriefdag };
+}
+
+/**
+ * Notion-id → uuid-form med bindestreck. Tar rått 32-hex, uuid med
+ * bindestreck, eller en URL (app.notion.com/p/<32hex>, notion.so/Titel-<32hex>,
+ * med eller utan ?v=…). Tar den SISTA träffen i strängen, för i notion.so-
+ * länkar står id:t efter titeln. Kastar hellre än gissar.
+ */
+export function normaliseraNotionId(text) {
+  const s = String(text ?? '').trim().split(/[?#]/)[0];
+  const traffar = [...s.matchAll(/([0-9a-f]{8})-?([0-9a-f]{4})-?([0-9a-f]{4})-?([0-9a-f]{4})-?([0-9a-f]{12})/gi)];
+  if (!traffar.length) throw new Error(`Hittar inget Notion-id (32 hex) i "${text}".`);
+  const m = traffar.at(-1);
+  return [m[1], m[2], m[3], m[4], m[5]].join('-').toLowerCase();
+}
+
 /**
  * Är dagens datum kördag för posten? REN funktion.
  *
@@ -309,9 +406,18 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       // och ska sluta bevakas), men aldrig identiteten.
       lage: d?.lage ?? post.lage,
       redigerare: d?.redigerare ?? null,
+      redigerare_discord_id: d?.redigerare_discord_id ?? null,
+      // Copy-modellen: 'ab' = varannan brief Fable, varannan Sonnet (Axels
+      // A/B-test 2026-09-10). Nattvakten skriver in vinnaren själv när
+      // båda modellerna har tillräckligt med bedömbara annonser.
+      copy_modell: COPY_MODELLER.includes(d?.copy_modell) ? d.copy_modell : 'ab',
       notion: d?.notion ?? post.notion ?? null,
       kordag_offset: offset,
       senaste_korning: d?.senaste_korning ?? '',
+      // Briefdagarna: posten får överstyra, annars toppnivån i register.json,
+      // annars standarden (ons + sön). Ändras alltid HÄR — aldrig i cron.
+      briefdagar: briefdagarUr(d?.briefdagar ?? drift.briefdagar),
+      senaste_brief: d?.senaste_brief ?? '',
       cycle_start: d?.cycle_start ?? '',
       launches: Array.isArray(d?.launches) ? d.launches : [],
       troskel: { ...TROSKEL, ...(d?.troskel ?? {}) },
@@ -500,6 +606,24 @@ export function redigerareFor(post) {
 
 // ------------------------------------------------------------- skrivningar
 
+/** Driftraden för en post som ännu saknas i register.json — samma fält som
+ *  skriv-in ger, så en rad skapad av `notion`/`redigerare`/`kord` aldrig blir
+ *  en halv rad (testet "register.json bär briefdagarna" vaktar formen). */
+function nyDriftrad(post) {
+  return {
+    lage: post.lage,
+    redigerare: null,
+    redigerare_discord_id: null,
+    notion: post.notion ?? { name: '', database_id: '', foralder_page_id: '', url: '' },
+    kordag_offset: post.kordag_offset,
+    senaste_korning: '',
+    senaste_brief: '',
+    cycle_start: '',
+    launches: [],
+    anteckning: `Upptäckt automatiskt ur ${post.kopplingskalla === 'state' ? 'state-filen' : post.kopplingskalla}.`,
+  };
+}
+
 function skrivDrift(drift) {
   writeFileSync(REGISTERFIL, `${JSON.stringify(drift, null, 2)}\n`);
 }
@@ -515,9 +639,11 @@ export function skrivInNya(rot = ROT) {
     drift.poster[p.nyckel] = {
       lage: p.lage,
       redigerare: null,
-      notion: p.notion ?? { name: '', database_id: '' },
+      redigerare_discord_id: null,
+      notion: p.notion ?? { name: '', database_id: '', foralder_page_id: '', url: '' },
       kordag_offset: p.kordag_offset,
       senaste_korning: '',
+      senaste_brief: '',
       cycle_start: '',
       launches: [],
       anteckning: `Upptäckt automatiskt ur ${p.kopplingskalla === 'state' ? 'state-filen' : p.kopplingskalla}.`,
@@ -534,12 +660,84 @@ export function loggaKorning(nyckel, datum) {
   const post = hittaPost(nyckel);
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
-  const rad = drift.poster[post.nyckel] ?? { kordag_offset: post.kordag_offset, launches: [] };
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
   rad.senaste_korning = datum;
   rad.lage = rad.lage ?? post.lage;
   drift.poster[post.nyckel] = rad;
   skrivDrift(drift);
   return { ...post, senaste_korning: datum };
+}
+
+/** Stämplar en genomförd briefrond. Utan den blir varje natt "första briefronden". */
+export function loggaBrief(nyckel, datum) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(datum ?? ''))) throw new Error(`Ogiltigt datum: ${datum} (använd YYYY-MM-DD)`);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  rad.senaste_brief = datum;
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, senaste_brief: datum };
+}
+
+/**
+ * Kopplar postens Notion-hub. Id:t normaliseras till uuid-form; var det en
+ * URL sparas den också. Namnet byts bara om ett nytt anges — övriga fält
+ * (foralder_page_id, collection_id …) lämnas orörda.
+ */
+export function sattNotion(nyckel, idEllerUrl, namn = '') {
+  const database_id = normaliseraNotionId(idEllerUrl);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  const gammal = rad.notion && typeof rad.notion === 'object' ? rad.notion : {};
+  rad.notion = {
+    name: finns(namn) ? namn.trim() : (gammal.name ?? ''),
+    database_id,
+    foralder_page_id: gammal.foralder_page_id ?? '',
+    url: /^https?:\/\//i.test(String(idEllerUrl)) ? String(idEllerUrl).trim() : (gammal.url ?? ''),
+    ...Object.fromEntries(Object.entries(gammal).filter(([k]) => !['name', 'database_id', 'foralder_page_id', 'url'].includes(k))),
+  };
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, notion: rad.notion };
+}
+
+export const COPY_MODELLER = Object.freeze(['ab', 'fable', 'sonnet']);
+
+/** Sätter copy-modellen för butiken: 'ab' (testet pågår), 'fable' eller 'sonnet' (vinnaren). */
+export function sattCopyModell(nyckel, modell, motivering = '') {
+  const m = normalisera(modell);
+  if (!COPY_MODELLER.includes(m)) throw new Error(`Okänd copy-modell "${modell}" — tillåtna: ${COPY_MODELLER.join(', ')}.`);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  rad.copy_modell = m;
+  if (finns(motivering)) rad.copy_modell_motivering = motivering.trim();
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, copy_modell: m };
+}
+
+/** Tilldelar redigerare (namn + valfritt Discord-id). Tomt namn nekas — hitta aldrig på en person. */
+export function sattRedigerare(nyckel, namn, discordId = null) {
+  if (!finns(namn)) throw new Error('Ange redigerarens namn.');
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  rad.redigerare = namn.trim();
+  rad.redigerare_discord_id = finns(discordId) ? String(discordId).trim() : (rad.redigerare_discord_id ?? null);
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, redigerare: rad.redigerare, redigerare_discord_id: rad.redigerare_discord_id };
 }
 
 /** Loggar launchade creatives (motsvarigheten till pipeline/quota.mjs log). */
@@ -549,7 +747,7 @@ export function loggaLaunch(nyckel, antal, datum) {
   const post = hittaPost(nyckel);
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
-  const rad = drift.poster[post.nyckel] ?? { kordag_offset: post.kordag_offset, launches: [] };
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
   rad.launches = Array.isArray(rad.launches) ? rad.launches : [];
   rad.launches.push({ date: datum, count: antal });
   // Första loggningen startar cykeln — annars räknas kvoten från ett tomt fält.
@@ -570,6 +768,10 @@ function skrivPost(post, idag) {
   console.log(`  Redigerare:   ${redigerareFor(post) ?? 'ingen redigerare tilldelad'}`);
   console.log(`  Dagsbudget:   ${post.daily_budget_sek ? `${post.daily_budget_sek} kr` : 'oklart — saknas i konfigen'}`);
   console.log(`  Kördag ${idag}: ${kord.kordag ? '✅ JA' : '⏭️  nej'} — ${kord.skal}. Nästa: ${kord.nastaKordag}`);
+  const brief = arBriefdag(post, idag);
+  console.log(`  Briefdag ${idag}: ${brief.briefdag ? '✅ JA' : '⏭️  NEJ'} — ${brief.skal}. Nästa briefdag: ${brief.nastaBriefdag}`);
+  const hub = post.notion ?? {};
+  console.log(`  Notion-hub:   ${finns(hub.database_id) ? `${hub.name || '(namnlös)'} (${hub.database_id})` : 'saknas — koppla med `node factory/register.mjs notion <butik> <url>`'}`);
   if (post.ny_i_registret) console.log('  ⚠️ Ny i registret — kör `node factory/register.mjs skriv-in` för att låsa kördagen.');
   if (post.lage !== 'test') {
     const { ekonomi } = laddaButik(post.nyckel, { produkter: [post] });
@@ -586,7 +788,9 @@ function huvud() {
     const i = arg.indexOf(`--${namn}`);
     return i >= 0 && arg[i + 1] ? arg[i + 1] : standard;
   };
-  const idag = flagga('idag', new Date().toISOString().slice(0, 10));
+  // Standard = SVENSK dag, inte UTC. Nattrutinen går 00:01 svensk tid, vilket
+  // är 22:01 UTC dagen före på sommaren — toISOString() hade sagt fel veckodag.
+  const idag = flagga('idag', svenskDatum());
 
   if (arg[0] === 'skriv-in') {
     const tillagda = skrivInNya();
@@ -596,6 +800,32 @@ function huvud() {
   if (arg[0] === 'log') {
     const post = loggaLaunch(arg[1], Number(arg[2]), arg[3] ?? idag);
     console.log(`Loggat: ${arg[2]} creatives på ${post.namn} (${post.launches.at(-1).date})`);
+    return;
+  }
+  if (arg[0] === 'kord') {
+    const post = loggaKorning(arg[1], arg[2] ?? idag);
+    console.log(`Stämplat: budgetronden på ${post.namn} körd ${post.senaste_korning}`);
+    return;
+  }
+  if (arg[0] === 'brief-kord') {
+    const post = loggaBrief(arg[1], arg[2] ?? idag);
+    console.log(`Stämplat: briefronden på ${post.namn} körd ${post.senaste_brief}`);
+    return;
+  }
+  if (arg[0] === 'notion') {
+    if (!arg[2]) throw new Error('Ange database_id eller Notion-url: notion <butik> <id|url> [namn…]');
+    const post = sattNotion(arg[1], arg[2], arg.slice(3).join(' '));
+    console.log(`Notion-hub på ${post.namn}: ${post.notion.name || '(namnlös)'} (${post.notion.database_id})`);
+    return;
+  }
+  if (arg[0] === 'redigerare') {
+    const post = sattRedigerare(arg[1], arg[2], arg[3] ?? null);
+    console.log(`Redigerare på ${post.namn}: ${post.redigerare}${post.redigerare_discord_id ? ` (Discord ${post.redigerare_discord_id})` : ''}`);
+    return;
+  }
+  if (arg[0] === 'copy-modell') {
+    const post = sattCopyModell(arg[1], arg[2], arg.slice(3).join(' '));
+    console.log(`Copy-modell på ${post.namn}: ${post.copy_modell}`);
     return;
   }
 
@@ -609,6 +839,10 @@ function huvud() {
   console.log(`\nOPS-REGISTRET ${idag} — ${register.produkter.length} poster (upptäckta ur yaml + state + products.json)\n`);
   const kordag = register.produkter.filter((p) => arKordag(p, idag).kordag);
   console.log(`Kördag i dag: ${kordag.length ? kordag.map((p) => p.nyckel).join(', ') : 'ingen'}`);
+  // Briefronden är OPS-butikernas (läge skala) — TRAPPAN.md: all creative
+  // strategy sker på OPS-butiken, Bäverbutiken är testbädd.
+  const briefdag = register.produkter.filter((p) => p.lage === 'skala' && arBriefdag(p, idag).briefdag);
+  console.log(`Briefdag i dag (${VECKODAGSNAMN[veckodag(idag)]}, läge skala): ${briefdag.length ? briefdag.map((p) => p.nyckel).join(', ') : 'ingen'}`);
   for (const p of register.produkter) skrivPost(p, idag);
   console.log('');
 }

@@ -10,10 +10,17 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync, mkdtempSync, existsSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import * as skalning from '../skalning.mjs';
 import {
   normalisera, trasigaRader, arBedombar, vinstbidrag, plockaAction,
   domlinjer, klassificera, vinstProcent, troskelkoll, filtreraPaPrefix,
   byggRapport, testrapport,
+  filtreraPaMarknad, marknadskoderI, periodParams, INSIGHTS_FALT,
+  arvPrefix, filtreraArv, byggArvRapport, sparaSnapshot, ARV_KONTO, ARV_TEXT,
   GRIND_SPEND_SEK, GRIND_KOP, KILL_SPEND_SEK, PRELIMINAR_KOP,
 } from '../skalning.mjs';
 import {
@@ -48,9 +55,127 @@ test('normalisera plockar rätt fält ur Graphs actions-listor', () => {
   assert.equal(r.cpa, 200);
   assert.equal(r.purchase_roas, 4);
   assert.equal(r.intakt, 4000);      // spend × ROAS
-  assert.equal(r.hook_rate, 0.5);    // 25000 / 50000
-  assert.equal(r.hold, 0.4);         // 10000 / 25000
+  // 2026-09-10: autoplay-måttet flyttade till hook_autoplay/hold_p50. Basfixturen
+  // saknar 3-sekundersvisningar, så den NYA hooken är null — inte 0,5.
+  assert.equal(r.hook_autoplay, 0.5); // 25000 / 50000 (autoplay)
+  assert.equal(r.hold_p50, 0.4);      // 10000 / 25000
+  assert.equal(r.hook_rate, null);
+  assert.equal(r.hold, null);
   assert.equal(r.cvr, 0.01);         // 5 / 500
+});
+
+// ------------------------------------------------- helhetsmåtten (2026-09-10)
+
+test('hook räknas på 3-sekundersvisningar och skiljer sig från autoplay-måttet', () => {
+  // dna.md rad 190–192: video_play_actions/impressions låg på 89–96 % för
+  // ALLA videor. En hook som är 90 % överallt är inget urvalskriterium.
+  const r = rad({
+    impressions: '50000',
+    cpc: '2.5',
+    inline_link_clicks: '300',
+    video_play_actions: [{ action_type: 'video_view', value: '46000' }],   // autoplay 92 %
+    actions: [
+      { action_type: 'omni_purchase', value: '5' },
+      { action_type: 'video_view', value: '12500' },                        // 3 s = 25 %
+    ],
+    video_thruplay_watched_actions: [{ action_type: 'video_view', value: '5000' }],
+    video_p25_watched_actions: [{ action_type: 'video_view', value: '9000' }],
+    video_p50_watched_actions: [{ action_type: 'video_view', value: '6000' }],
+    video_p75_watched_actions: [{ action_type: 'video_view', value: '3000' }],
+    video_p100_watched_actions: [{ action_type: 'video_view', value: '1500' }],
+  });
+  assert.equal(r.hook_rate, 0.25, '12500 / 50000');
+  assert.equal(r.hook_autoplay, 0.92, 'autoplay ligger kvar för jämförelse');
+  assert.notEqual(r.hook_rate, r.hook_autoplay);
+  assert.equal(r.hold, 0.4, 'thruplay 5000 / 3 s 12500');
+  assert.equal(r.hold_p50, 6000 / 46000);
+  assert.equal(r.cpc, 2.5);
+  assert.equal(r.lankklick, 300);
+  assert.equal(r.tre_sek, 12500);
+  assert.equal(r.thruplay, 5000);
+  assert.deepEqual([r.p25, r.p75, r.p100], [9000, 3000, 1500]);
+  // Köpen läses fortfarande ur samma actions-lista.
+  assert.equal(r.kop, 5);
+});
+
+test('en bildannons utan videofält får null på hook/hold — aldrig 0 %', () => {
+  const r = normalisera({
+    ad_id: '2', ad_name: 'HEIMGUARD_bild_1', campaign_name: 'HEIMGUARD_SALES',
+    spend: '500', impressions: '20000', clicks: '200', ctr: '1', cpm: '25', frequency: '1.1',
+    actions: [{ action_type: 'omni_purchase', value: '2' }],
+  });
+  assert.equal(r.hook_rate, null);
+  assert.equal(r.hold, null);
+  assert.equal(r.hook_autoplay, null);
+  assert.equal(r.hold_p50, null);
+  assert.equal(r.cpc, null, 'saknat cpc-fält är null, inte 0');
+  assert.equal(r.lankklick, 0);
+  assert.equal(r.tre_sek, 0);
+  assert.equal(r.kop, 2);
+});
+
+test('insights-fältlistan bär de nya måtten', () => {
+  for (const f of ['cpc', 'inline_link_clicks', 'video_thruplay_watched_actions',
+    'video_p25_watched_actions', 'video_p75_watched_actions', 'video_p100_watched_actions', 'actions']) {
+    assert.ok(INSIGHTS_FALT.split(',').includes(f), `${f} saknas i INSIGHTS_FALT`);
+  }
+});
+
+// ------------------------------------------------------------ marknadsfiltret
+
+const marknadsrader = [
+  { ad_name: 'TANKGUARD_SE_PD_1_H1', campaign_name: 'TANKGUARD_SE_SALES' },
+  { ad_name: 'TANKGUARD_NO_PD_1_H1', campaign_name: 'TANKGUARD_NO_SALES' },
+  { ad_name: 'TANKGUARD_PD_2_H1', campaign_name: 'TANKGUARD_SALES' },          // ingen kod ⇒ SE
+  { ad_name: 'Tankguard_pd_3_h1', campaign_name: 'tankguard_sales_no' },       // koden sist, gemener
+  { ad_name: 'TANKGUARD_TR_1_H1', campaign_name: 'TANKGUARD_SALES' },          // TR = vinkel, INTE Turkiet
+  { ad_name: 'TANKGUARD_DK_1_H1', campaign_name: 'TANKGUARD_SALES' },
+];
+
+test('marknadskoderI läser bara kända koder, aldrig vinkelkoder', () => {
+  assert.deepEqual(marknadskoderI('TANKGUARD_NO_SALES'), ['NO']);
+  assert.deepEqual(marknadskoderI('tankguard_sales_no'), ['NO']);
+  assert.deepEqual(marknadskoderI('TANKGUARD_TR_1_H1'), []);
+  assert.deepEqual(marknadskoderI('TANKGUARD_SALES'), []);
+  assert.deepEqual(marknadskoderI(null), []);
+});
+
+test('marknadsfiltret: SE är standard och rader utan kod räknas som SE', () => {
+  const f = filtreraPaMarknad(marknadsrader);
+  assert.equal(f.marknad, 'SE');
+  assert.deepEqual(f.behall.map((r) => r.ad_name), ['TANKGUARD_SE_PD_1_H1', 'TANKGUARD_PD_2_H1', 'TANKGUARD_TR_1_H1']);
+  assert.equal(f.antalBort, 3);
+  assert.deepEqual(f.bortfiltrerade, { NO: 2, DK: 1 });
+});
+
+test('marknadsfiltret: NO tar bara NO-raderna, oavsett skiftläge och kodens plats', () => {
+  const f = filtreraPaMarknad(marknadsrader, 'no');
+  assert.equal(f.marknad, 'NO');
+  assert.deepEqual(f.behall.map((r) => r.ad_name), ['TANKGUARD_NO_PD_1_H1', 'Tankguard_pd_3_h1']);
+  assert.deepEqual(f.bortfiltrerade, { SE: 3, DK: 1 });
+});
+
+test('marknadsfiltret: ALLA behåller allt, okänd marknad kastar', () => {
+  const f = filtreraPaMarknad(marknadsrader, 'ALLA');
+  assert.equal(f.behall.length, marknadsrader.length);
+  assert.equal(f.antalBort, 0);
+  assert.throws(() => filtreraPaMarknad(marknadsrader, 'XX'), /Okänd marknad/);
+});
+
+test('marknadsfiltret fungerar även på normaliserade rader (kampanj/namn)', () => {
+  const f = filtreraPaMarknad([
+    { namn: 'HEIMGUARD_NO_1', kampanj: 'HEIMGUARD_NO_SALES' },
+    { namn: 'HEIMGUARD_1', kampanj: 'HEIMGUARD_SALES' },
+  ], 'SE');
+  assert.deepEqual(f.behall.map((r) => r.namn), ['HEIMGUARD_1']);
+});
+
+test('periodParams: livstid ger date_preset maximum, påhittade dagar blir ett intervall', () => {
+  const idag = new Date('2026-09-10T12:00:00Z');
+  assert.deepEqual(periodParams({ livstid: true }).params, { date_preset: 'maximum' });
+  assert.deepEqual(periodParams({ dagar: 14, idag }).params, { date_preset: 'last_14d' });
+  assert.deepEqual(periodParams({ dagar: 60, idag }).params, { time_range: { since: '2026-07-12', until: '2026-09-10' } });
+  assert.deepEqual(periodParams({ sedan: '2026-09-01', idag }).params, { time_range: { since: '2026-09-01', until: '2026-09-10' } });
 });
 
 test('plockaAction faller tillbaka på purchase när omni_purchase saknas', () => {
@@ -419,4 +544,125 @@ test('loggraden bär ALDRIG ny_budget — den skulle frysa kampanjen i tre dygn'
   assert.equal(rad.datum, '2026-09-09');
   assert.throws(() => byggLoggrad({}, { datum: '2026-09-09' }), /saknade fält/);
   assert.throws(() => byggLoggrad({ produkt: 'X' }, {}), /kräver ett datum/);
+});
+
+// ------------------------------------------------------------ ärvd historik
+
+const opsButik = () => ({
+  ...butik('skala', utanMoms),
+  post: { ...butik('skala', utanMoms).post, butik: 'hemvakten' },
+  produkt: { kalla: { annonsprefix: 'Overvakningskamera', kampanj_id: '120249989799680291', kampanj: 'Övervakningskameran | BE ROAS 1.57' } },
+});
+
+const baverRader = [
+  { ad_id: 'b1', ad_name: 'Overvakningskamera_PD_1_H1', campaign_name: 'Övervakningskameran | BE ROAS 1.57', spend: '6000', impressions: '100000', clicks: '900',
+    actions: [{ action_type: 'omni_purchase', value: '20' }, { action_type: 'video_view', value: '20000' }],
+    purchase_roas: [{ action_type: 'omni_purchase', value: '2.6' }], cost_per_action_type: [{ action_type: 'omni_purchase', value: '300' }],
+    video_thruplay_watched_actions: [{ action_type: 'video_view', value: '8000' }] },
+  { ad_id: 'b2', ad_name: 'Overvakningskamera_TR_2_H1', campaign_name: 'Övervakningskameran | BE ROAS 1.57', spend: '2400', impressions: '40000', clicks: '300',
+    actions: [{ action_type: 'omni_purchase', value: '4' }],
+    purchase_roas: [{ action_type: 'omni_purchase', value: '1.3' }], cost_per_action_type: [{ action_type: 'omni_purchase', value: '600' }] },
+  { ad_id: 'b3', ad_name: 'Overvakningskamera_NO_1_H1', campaign_name: 'Overvåkingskamera NO', spend: '900', actions: [{ action_type: 'omni_purchase', value: '3' }],
+    purchase_roas: [{ action_type: 'omni_purchase', value: '2' }], cost_per_action_type: [{ action_type: 'omni_purchase', value: '300' }] },
+  { ad_id: 'b4', ad_name: 'Overvakningskameran_extra', campaign_name: 'Något annat', spend: '100' },    // "…kameran" ≠ prefixet + ordgräns
+  { ad_id: 'b5', ad_name: 'Enginecover_PD_1_H3', campaign_name: 'Motorhöljet', spend: '12000' },
+];
+
+test('arvPrefix läser kalla.annonsprefix och säger ifrån när det saknas', () => {
+  const k = arvPrefix(opsButik());
+  assert.equal(k.prefix, 'Overvakningskamera');
+  assert.equal(k.kampanjId, '120249989799680291');
+  const utan = arvPrefix({ ...opsButik(), produkt: { kalla: {} } });
+  assert.equal(utan.prefix, null);
+  assert.match(utan.skal, /saknar kalla\.annonsprefix/);
+  assert.equal(arvPrefix({ post: {} }).prefix, null, 'ingen produktfil alls ⇒ inget prefix, inget fel');
+});
+
+test('filtreraArv behåller bara produktens rader på vald marknad', () => {
+  const f = filtreraArv(baverRader, 'Overvakningskamera');
+  assert.deepEqual(f.behall.map((r) => r.ad_id), ['b1', 'b2'], 'NO-raden och Motorhöljet ska bort');
+  assert.equal(f.marknad.vald, 'SE');
+  assert.deepEqual(f.marknad.bortfiltrerade, { NO: 1 });
+  assert.equal(f.slangda, 2, 'Overvakningskameran_extra och Enginecover slängs av prefixfiltret');
+  const no = filtreraArv(baverRader, 'Overvakningskamera', 'NO');
+  assert.deepEqual(no.behall.map((r) => r.ad_id), ['b3']);
+});
+
+test('arv-rapporten dömer mot OPS-linjerna, märker varje rad arv och rangordnar på vinstbidrag', () => {
+  const b = opsButik();
+  const f = filtreraArv(baverRader, 'Overvakningskamera');
+  const arv = {
+    hoppad: false, konto: ARV_KONTO, prefix: 'Overvakningskamera', period: 'maximum (hela livstiden)',
+    totalt: baverRader.length, marknad: f.marknad, slangda: f.slangda, behallnaKampanjer: [],
+    rader: f.behall.map((r) => ({ ...normalisera(r), arv: true })),
+  };
+  const r = byggArvRapport(b, arv);
+  assert.equal(r.hoppad, false);
+  assert.equal(r.lasesBara, true);
+  assert.equal(r.konto, '1867947880635861');
+  assert.equal(r.text, ARV_TEXT);
+  assert.match(r.text, /Bäverbutiken LÄSES bara/);
+  assert.ok(r.rader.every((x) => x.arv === true));
+  assert.ok(r.bedombara.every((x) => x.arv === true));
+  // Bäverbutikens linje (BE-ROAS 1,57, CPA ~?) används INTE — OPS-linjen 538 kr gör det.
+  assert.deepEqual(r.bedombara.map((x) => x.namn), ['Overvakningskamera_PD_1_H1', 'Overvakningskamera_TR_2_H1']);
+  assert.equal(r.bedombara[0].dom.vinst_generos, (538 - 300) * 20);
+  assert.equal(r.vinnare.length, 1);
+  assert.equal(r.forlorare.length, 1, 'CPA 600 > 538 efter 2400 kr');
+  assert.equal(r.totalSpend, 8400);
+  assert.equal(r.totalKop, 24);
+});
+
+test('arv-rapporten hoppar över utan fel när prefixet saknas', () => {
+  const r = byggArvRapport(opsButik(), { hoppad: true, skal: 'saknar kalla.annonsprefix', rader: [] });
+  assert.equal(r.hoppad, true);
+  assert.match(r.skal, /annonsprefix/);
+  assert.deepEqual(r.bedombara, []);
+  assert.equal(byggArvRapport(opsButik(), null).hoppad, true);
+});
+
+test('arv-vägen kan inte skriva: inga skrivande Meta-funktioner importeras eller exporteras', () => {
+  const kalla = readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'skalning.mjs'), 'utf8');
+  // Bara läsande importer ur meta-lib.
+  const imp = kalla.match(/import \{([^}]*)\} from '\.\.\/tools\/meta-lib\.mjs'/);
+  assert.ok(imp, 'meta-lib-importen ska finnas');
+  const namn = imp[1].split(',').map((s) => s.trim()).filter(Boolean).sort();
+  assert.deepEqual(namn, ['alla', 'api', 'säkerställProxy']);
+  // Inget POST och inget form-anrop någonstans i filen.
+  assert.doesNotMatch(kalla, /method:\s*['"]POST['"]/);
+  assert.doesNotMatch(kalla, /\bform:/);
+  assert.doesNotMatch(kalla, /skapaAnnons|aktivera\(|laddaUppVideo|laddaUppBild|hittaEllerSkapaAdset/);
+  // Arv-vägen går inte via sakerstallKonto och läser bara insights.
+  const arvKod = skalning.hamtaArv.toString();
+  assert.doesNotMatch(arvKod, /sakerstallKonto/);
+  assert.match(arvKod, /ARV_KONTO\}\/insights/);
+  assert.equal((arvKod.match(/await /g) ?? []).length, 1, 'exakt ett nätanrop i arv-vägen');
+  // Exporterna: ingen som heter något med skriv/aktivera/skapa utom rapportutskriften och snapshoten.
+  const exporter = Object.keys(skalning).filter((k) => /skriv|aktivera|skapa|uppdatera|ladda/i.test(k)).sort();
+  assert.deepEqual(exporter, ['skrivRapport']);
+  assert.equal(ARV_KONTO, '1867947880635861');
+});
+
+// ------------------------------------------------------------------ snapshot
+
+test('sparaSnapshot skriver normaliserade rader + period till factory/output/<butik>/insights-<datum>.json', () => {
+  const rot = mkdtempSync(join(tmpdir(), 'skalning-'));
+  const b = opsButik();
+  const h = hamtning([rad({ ad_name: 'HEIMGUARD_1' })]);
+  h.marknad = { vald: 'SE', bortfiltrerade: {}, antalBort: 0 };
+  const arv = { hoppad: false, konto: ARV_KONTO, prefix: 'Overvakningskamera', period: 'maximum (hela livstiden)', rader: [{ ...rad({ ad_name: 'Overvakningskamera_PD_1_H1' }), arv: true }] };
+  const fil = sparaSnapshot(b, { hamtning: h, arv, datum: '2026-09-10', rot });
+  assert.equal(fil, join(rot, 'factory', 'output', 'hemvakten', 'insights-2026-09-10.json'));
+  assert.ok(existsSync(fil));
+  const data = JSON.parse(readFileSync(fil, 'utf8'));
+  assert.equal(data.butik, 'hemvakten/overvakningskameran');
+  assert.equal(data.period, 'last_14d');
+  assert.equal(data.rader.length, 1);
+  assert.equal(data.rader[0].namn, 'HEIMGUARD_1');
+  assert.equal(data.arv.lasesBara, true);
+  assert.equal(data.arv.rader[0].arv, true);
+  assert.equal(data.arv.konto, '1867947880635861');
+  // Utan arv: hoppad, aldrig ett fel.
+  const utan = JSON.parse(readFileSync(sparaSnapshot(b, { hamtning: h, datum: '2026-09-11', rot }), 'utf8'));
+  assert.equal(utan.arv.hoppad, true);
 });

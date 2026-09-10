@@ -264,6 +264,44 @@ export async function skapaAnnons({ act, adsetId, namn, spec, enhancements, dsa 
   return { creativeId: creative.id, annonsId: annons.id };
 }
 
+// ------------------------------------------------------- budget och status
+// Tillagt 2026-09-10 för nattvakten (factory/budgetrond.mjs). Tre funktioner,
+// ingen av dem aktiverar något: budget läses, budget skrivs, status sätts till
+// PAUSED. Varje skrivning läses tillbaka så rapporten kan visa gammalt → nytt
+// ur kontot, inte ur vad vi trodde vi skickade. Aktivering finns bara i
+// aktivera() ovan och gäller enbart det körningen själv skapat eller Metas
+// tvångspaus på exakt det körningen själv nyss ändrade.
+
+const BUDGETFÄLT = 'id,name,status,effective_status,daily_budget,lifetime_budget,updated_time';
+
+/** Läser budget och status för en kampanj, ett adset eller en annons.
+ *  daily_budget/lifetime_budget kommer i minsta valutaenhet (öre för SEK). */
+export async function lasBudget(id) {
+  return api(String(id), { params: { fields: BUDGETFÄLT } });
+}
+
+/** Sätter dagsbudgeten i KRONOR (skickas som öre = sek × 100) och läser
+ *  tillbaka. torr=true läser bara. Returnerar { fore, efter } — efter är null
+ *  i torrläge. Rör aldrig statusen. */
+export async function uppdateraBudget(id, sek, { torr = false } = {}) {
+  if (!Number.isFinite(sek) || sek <= 0) throw new Error(`uppdateraBudget: ogiltigt belopp ${sek} kr.`);
+  const fore = await lasBudget(id);
+  if (torr) return { fore, efter: null, torr: true };
+  await api(String(id), { form: { daily_budget: String(Math.round(sek * 100)) } });
+  const efter = await lasBudget(id);
+  return { fore, efter, torr: false };
+}
+
+/** Pausar en kampanj, ett adset eller en annons och läser tillbaka statusen.
+ *  torr=true läser bara. Det finns ingen motsvarande "slå på" här — med flit. */
+export async function pausa(id, { torr = false } = {}) {
+  const fore = await lasBudget(id);
+  if (torr) return { fore, efter: null, torr: true };
+  await api(String(id), { form: { status: 'PAUSED' } });
+  const efter = await lasBudget(id);
+  return { fore, efter, torr: false };
+}
+
 /** Slår på annonsen och — bara om körningen själv skapade det — adsetet.
  *  Befintliga adsets och kampanjer rörs aldrig. Läser tillbaka statusen. */
 export async function aktivera({ annonsId, adset, skapad }) {
