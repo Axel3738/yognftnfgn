@@ -61,9 +61,15 @@ Vad som följer med (16 av 16, `se-byggplan.json`):
   headline likaså. SP_2_1 fick bildens band omskrivet på samma sätt
   (`output/…/bildfix/AdventLaneRacing_SP_2_1.jpg`). Talet i SP-videorna orört.
 
-Läge 2026-09-10 11:20: 12 videor uppladdade, kampanj + adsets GT/PD skapade.
-**Noll annonser** — `adcreatives` svarar (#200), Axels användare saknar roll
-på sidan (`me/accounts` listar den inte). Räkningen: se `rakningen.md`.
+Läge 2026-09-10 11:20: 12 videor uppladdade, kampanj + adsets GT/PD skapade,
+noll annonser — `adcreatives` svarade (#200), Axels användare saknade roll på
+sidan. **Axel gav rollen 14:20, och 14:45 låg alla 16 annonser uppe, PAUSED**
+(4 adsets PD/GT/CS/SP). Räkningen `rakning.mjs kalender`: **KLART, exit 0**,
+16 av 16. Tillbakaläst (`kampanjkoll.mjs --vantat 16`): PAUSED på alla
+nivåer, sida 1304279782771044, länken rätt, 1000 kr/dag.
+Meta slog i annonskontots anropsgräns (fel 17, "User request limit reached")
+efter ~40 uppladdningar — skripten väntar och försöker om själva; hela bygget
+tog 2,5 timme av den anledningen.
 
 ## Batch #1 NO — AdventLane NO (byggd 2026-09-10, PAUSED)
 
@@ -72,15 +78,21 @@ Kampanj `ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10`
 `https://adventlane.se/nb/products/adventskalender-racingbilar`.
 
 Norska halvan läst ur Magiborsten NO (`brand-detektor-no.md`, 12 transkript
-via HeyGen proofread + OCR på 700 frames). 16 av 16 dömda, `no-byggplan.json`:
-- **12 byggs:** SP_1/2/3, G_1/2/3, PD_1/2/3 (video), SP_2_1, G_2_1, PD_2_1
-  (bild). Två radbyten var: "30 dagers åpent kjøp" → "14 dagers angrerett",
-  och NOK-priset "439 kr" struket ur beskrivningen (butiken säljer i SEK på
-  /nb tills NOK-nivåer sätts). SP_2_1 fick bildens band omskrivet (Johans
-  recension på bokmål, `bildfix/AdventLaneRacing_NO_SP_2_1.jpg`).
-- **4 väntar (hela CS-konceptet):** 579 → 439 NOK i tal, inbränd text, bild
-  och copy. Kan inte rättas förrän Axel satt NOK-priset i butiken — då är
-  det EN replik + ett slutkort + en bild, inte nya annonser.
+via HeyGen proofread + OCR på 700 frames). 16 av 16 dömda.
 
-Läge 11:35: 9 videor uppladdade, kampanj + adset SP skapade. Noll annonser
-— samma sidrollsstopp som SE.
+**Axels prisbeslut 14:30 (skärmdump ur källans NO-marknad):** 439 kr, jämför
+579, paket 746,30 / 1 053,60 NOK — samma som Bäverbutiken NO. Står i
+produktfilen (`priser_marknad.NO`). Det gjorde annonsernas "579 → 439 kr"
+till RÄTT pris: de 4 CS-annonserna som väntat på NOK-nivå byggs orörda, och
+de 9 videoannonser som redan skapats med "439 kr" struket ur beskrivningen
+raderades (PAUSED, 0 spend, egna) och byggdes om med copyn ordagrant.
+
+`no-byggplan.json`: **16 av 16 byggs, 0 väntar.** Enda ändringen i copyn:
+"30 dagers åpent kjøp" → "14 dagers angrerett". SP_2_1 fick bildens band
+omskrivet (Johans recension på bokmål, `bildfix/AdventLaneRacing_NO_SP_2_1.jpg`).
+
+Läge 15:50: **16 av 16 uppe, PAUSED**, 4 adsets SP/G/PD/CS. Räkningen KLART,
+exit 0. Tillbakaläst: PAUSED på alla nivåer, sida och länk (`/nb/…`) rätt.
+⚠️ Kampanjen får inte launchas förrän NOK är påslaget i butiken och
+NOK-nivåerna satta (checklistan avsnitt 5) — annars säger annonsen 439 kr
+och sidan 499 kr (SEK).

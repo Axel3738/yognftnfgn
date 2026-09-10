@@ -37,6 +37,8 @@ Varje rad är märkt:
 | Skapa butiken | **OBEKRÄFTAT** | Shopifys Partner API kan skapa development stores. Ingen i repot har provat. Skulle ta bort checklistans avsnitt 1 OCH garantera rätt land. **Den här är värd mest av alla — den fixar tre problem på en gång.** |
 | Skapa appen + client id/secret | **OBEKRÄFTAT** | Partner API har app-endpoints. Ingen har provat. Skulle ta bort avsnitt 3 (fyra klick). |
 | Koppla domän till butiken | **OBEKRÄFTAT** | Ingen har provat. |
+| Slå på NOK på Norge-marknaden | **OBEKRÄFTAT** | `marknad.mjs` säger "API-spärrat i unified markets" utan att citera anrop eller felkod — ärvt. Kräver troligen Shopify Payments (multi-currency), som ligger efter ägarbytet. Klick i checklistans avsnitt 5. |
+| Fasta NOK-priser per marknad (paketnivåer) | **OBEKRÄFTAT** | `priceListFixedPricesAdd` mot marknadens prislista finns i Admin API. Ingen har provat. AdventLane 2026-09-10: 439 / 746,30 / 1 053,60 NOK står i `priser_marknad.NO` i produktfilen och sätts som klick tills någon provat. |
 | Aktivera Shopify Payments | **MÄNSKLIGT** | Kräver bolagets bankuppgifter och identitetskontroll. Ska inte automatiseras. Ligger dessutom EFTER ägarbytet sedan Axels regel 2026-09-10 — det är ägarens eget konto som ska bära den. |
 | Installera Judge.me | **MÄNSKLIGT (delvis)** | Appinstallation kräver ett OAuth-samtycke. Efter installationen är API:t automatiserbart — det görs redan. |
 | Ägarbyte | **MÄNSKLIGT** | Överlåter ett konto med pengar i. Ska klickas av en människa. Checklistans avsnitt 13 — allt före det görs på free trial, allt efter kräver ägarens plan. |

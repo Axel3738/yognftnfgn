@@ -522,6 +522,14 @@ klara regeln utan handpåläggning:
 - **`rakning.mjs <butik-id>`** slår upp nischbutikens produkter ur state-
   filerna (kalender → adventskalender-racingbilar) och skriver byggplanens
   orsak på varje saknad annons i stället för "orsak saknas".
+- **Utfall 15:50:** sidrollen given 14:20 → 32 av 32 annonser uppe i två
+  kampanjer, PAUSED, `rakning.mjs kalender` **KLART exit 0**. Axels NOK-beslut
+  (439/579, samma som källan) gjorde de 4 norska CS-annonserna byggbara orörda
+  — `priser_marknad.NO` i produktfilen, `prislista(produkt, marknad)`.
+  ⚠️ **Meta-anropsgränsen (fel 17)** slog till efter ~40 skrivanrop på
+  kontot: varje launch-skript väntade upp till 8 × 90 s per anrop och en
+  läsning kunde ta 20 minuter. Bygg aldrig två marknader parallellt, och
+  räkna med 1–2 timmar för 32 annonser. Skripten klarar det själva.
 - **Sidrollen igen, mätt 11:19:** tokenens användare är Axel själv, sidan
   `1304279782771044` är `owned_page` men `me/accounts` (42 sidor) listar den
   inte → `adcreatives` svarar (#200). `assigned_users` via API avvisar
