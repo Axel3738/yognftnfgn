@@ -227,8 +227,18 @@ async function skrivOchVerifiera(temaId, filer, alternativ = {}) {
   delete ovriga['config/settings_schema.json'];
   if (schema) await skrivTemafiler(temaId, { 'config/settings_schema.json': schema });
   if (Object.keys(ovriga).length > 0) await skrivTemafiler(temaId, ovriga);
-  const fel = await verifieraSkrivning(temaId, ovriga, alternativ);
-  if (fel.length > 0) throw new Error(`Skrivningen tog inte: ${fel.join('; ')}`);
+  // Tillbakaläsningen kan komma FÖRE Shopifys egen uppdatering av filen:
+  // TackleBay 2026-09-10 läste brand_description som "" direkt efter
+  // skrivningen, medan butiken tio sekunder senare bar hela texten. Därför
+  // upp till tre läsningar med paus emellan — bara ett kvarstående fel är
+  // ett fel. (Verifieringen är regel 1 i KEDJAN.md och tas aldrig bort.)
+  let fel = [];
+  for (let forsok = 1; forsok <= 3; forsok += 1) {
+    fel = await verifieraSkrivning(temaId, ovriga, alternativ);
+    if (fel.length === 0) return;
+    if (forsok < 3) await new Promise((r) => setTimeout(r, 3000 * forsok));
+  }
+  throw new Error(`Skrivningen tog inte (tre läsningar): ${fel.join('; ')}`);
 }
 
 // Loggan att ladda upp: branding.logga (fil eller URL) eller
