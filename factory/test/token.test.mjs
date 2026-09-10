@@ -18,6 +18,7 @@ import {
   sparrar,
   skrivEnv,
   anslut,
+  tolkaMintfel,
 } from '../token.mjs';
 
 // --- hjälp -----------------------------------------------------------------
@@ -374,4 +375,33 @@ test('anslut: nycklar i .env-filen används när miljön saknar dem', async () =
   assert.equal(skrivet.SHOPIFY_CLIENT_SECRET, 'csec', 'befintlig rad rörs inte');
   assert.match(skrivet.SHOPIFY_ADMIN_TOKEN_NYBUTIK, /^shpat_ny_/);
   t.stada();
+});
+
+// -------------------------------------------------- app_not_installed
+//
+// TackleBay 2026-09-10: en session läste Shopifys `app_not_installed` som
+// "appen är avinstallerad" och bad VA:n installera om en app som redan satt.
+// Det verkliga felet var att miljön blandade två butiker: SHOPIFY_SHOP pekade
+// på TackleBay medan SHOPIFY_CLIENT_ID (utan suffix) stod kvar på TankGuard.
+
+test('app_not_installed förklarar blandade nycklar FÖRST, avinstallation sen', () => {
+  const text = tolkaMintfel({
+    status: 400,
+    kropp: '{"error":"invalid_request","error_description":"Oauth error app_not_installed"}',
+    doman: 'iahe0c-b1.myshopify.com',
+    butikId: 'tacklebay',
+  });
+  assert.ok(text.includes('SHOPIFY_CLIENT_ID_TACKLEBAY'), 'ska namnge butikens egen variabel');
+  const pktBlandat = text.indexOf('ANNAN butik');
+  const pktAvinst = text.indexOf('faktiskt avinstallerad');
+  assert.ok(pktBlandat > -1 && pktAvinst > -1);
+  assert.ok(pktBlandat < pktAvinst, 'den vanligaste orsaken ska stå först');
+  assert.ok(text.includes('Be aldrig någon installera om appen innan punkt 1'));
+});
+
+test('andra mintfel förklaras inte bort — råsvaret står kvar', () => {
+  const text = tolkaMintfel({ status: 401, kropp: 'invalid_client', doman: 'x.myshopify.com', butikId: 'x' });
+  assert.ok(text.includes('401'));
+  assert.ok(text.includes('invalid_client'));
+  assert.ok(!text.includes('ANNAN butik'));
 });

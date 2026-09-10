@@ -244,7 +244,38 @@ export function skrivEnv(varden, ...rest) {
 // Nätverk (Shopify)
 // ---------------------------------------------------------------------------
 
-export async function mintaToken({ shop, clientId, clientSecret } = {}, { fetchFn = fetch } = {}) {
+/**
+ * Vad ett misslyckat token-mint BETYDER, i klartext.
+ *
+ * ⚠️ `app_not_installed` betyder nästan aldrig att appen är avinstallerad.
+ * Det betyder att client_id inte hör till den domän vi mintar mot — och det
+ * händer när miljön blandar två butiker: `SHOPIFY_SHOP` pekar på den nya
+ * butiken medan `SHOPIFY_CLIENT_ID` (utan suffix) står kvar på den förra.
+ * Shopify svarar likadant i båda fallen, så felmeddelandet måste säga det.
+ * (TackleBay 2026-09-10: en hel session drog slutsatsen "appen är
+ * avinstallerad" och bad VA:n installera om en app som redan satt.)
+ */
+export function tolkaMintfel({ status, kropp, doman, butikId }) {
+  const rad = `Token-mint mot ${doman} misslyckades: ${status} ${String(kropp ?? '').slice(0, 200)}`;
+  if (!/app_not_installed/i.test(String(kropp ?? ''))) return rad;
+  const s = butikId ? `_${envSuffix(butikId)}` : '_<BUTIK>';
+  return [
+    rad,
+    '',
+    'Det betyder EN av två saker — kontrollera i den ordningen:',
+    `1. Nycklarna hör till en ANNAN butik. Titta i miljön: pekar SHOPIFY_CLIENT_ID`,
+    `   (utan suffix) på en tidigare butik? Sätt då butikens egna i stället:`,
+    `   SHOPIFY_SHOP${s}, SHOPIFY_CLIENT_ID${s}, SHOPIFY_CLIENT_SECRET${s}.`,
+    `   Den per-butik-variabeln vinner alltid över den allmänna.`,
+    `2. Appen är faktiskt avinstallerad i ${doman}. Kolla i Shopify-admin:`,
+    `   Inställningar → Appar och försäljningskanaler. Står "Fabriken" inte där`,
+    `   är det först då den ska installeras om (checklistans steg 2).`,
+    '',
+    'Be aldrig någon installera om appen innan punkt 1 är kontrollerad.',
+  ].join('\n');
+}
+
+export async function mintaToken({ shop, clientId, clientSecret, butikId } = {}, { fetchFn = fetch } = {}) {
   const doman = normaliseraDoman(shop ?? process.env.SHOPIFY_SHOP);
   const id = clientId ?? process.env.SHOPIFY_CLIENT_ID;
   const hemlighet = clientSecret ?? process.env.SHOPIFY_CLIENT_SECRET;
@@ -260,7 +291,7 @@ export async function mintaToken({ shop, clientId, clientSecret } = {}, { fetchF
     body: JSON.stringify({ client_id: id, client_secret: hemlighet, grant_type: 'client_credentials' }),
   });
   if (!svar.ok) {
-    throw new Error(`Token-mint mot ${doman} misslyckades: ${svar.status} ${(await svar.text()).slice(0, 200)}`);
+    throw new Error(tolkaMintfel({ status: svar.status, kropp: await svar.text(), doman, butikId }));
   }
   const data = await svar.json();
   if (!data.access_token) throw new Error(`Token-mint mot ${doman} gav ingen access_token.`);
@@ -348,7 +379,7 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
         `Saknar SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (eller _${envSuffix(id)}-varianten) i miljön — VA:n lägger in dem (checklistans steg 2). Klistra aldrig nycklar i chatten.`
       );
     }
-    const m = await mintaToken({ shop: n.shop, clientId: n.clientId, clientSecret: n.clientSecret }, { fetchFn });
+    const m = await mintaToken({ shop: n.shop, clientId: n.clientId, clientSecret: n.clientSecret, butikId: id }, { fetchFn });
     token = m.token;
     expiresAt = m.expiresAt;
     tokenKalla = 'mintad';
