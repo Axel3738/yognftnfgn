@@ -256,7 +256,8 @@
       "byggda": 16,
       "ej_byggda": [],
       "copy": "factory/annonscopy/damasker-no.json (bokmål, jury-workflow 30 agenter), 381/635 NOK",
-      "creatives": "Bäverbutikens egna Gamasjer_NO_* — redan dubbade, ingen HeyGen"
+      "creatives": "Bäverbutikens egna Gamasjer_NO_* — redan dubbade, ingen HeyGen",
+      "lank": "https://drytrek.se/nb/products/damasker?country=NO (bytt 2026-09-10 på alla 16 — utan country gav /nb svenska priser och SEK-kassa; annonserna ligger i Metas omgranskning efter creative-bytet, kampanjen ACTIVE)"
     }
   },
   "norge": {
@@ -293,5 +294,9 @@
     "invite": "https://discord.gg/gP47F2vfCB",
     "kanaler": 6,
     "notis": "Serverikon gick inte (403, boten saknar Manage Server) — bjud in boten med permissions=268438577 nästa gång så följer ikonen med. Ingen redigerare i standby-listan."
+  },
+  "marknad_norge": {
+    "webPresence": "kopplad till marknaden Norge 2026-09-10 (drytrek.se + myshopify) via marketUpdate.webPresencesToAdd — NOK på norsk IP, SEK förblir default för övriga (verifierat)",
+    "token": "client_credentials-token förnyad 2026-09-10 (24 h livslängd)"
   }
 }
