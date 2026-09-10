@@ -491,6 +491,41 @@ gör det sannolikt att den inbrända undertexten gör det också; sannolikt är 
 
 ---
 
+### ✅ KÖRD 2026-09-10 — TackleBay (spöhållaren, butik nr 4)
+
+**89 aktiva källannonser** i `Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18`
+(64 video, 25 bild, 47 469 kr, 257 köp, 16 adsets). Norska källkampanjen
+`Fiskespöhållaren NO` är PAUSED sedan augusti — inga kandidater, marknaden läst.
+Rapport: `factory/output/fiskespohallare-4-pack/brand-detektor.md`, kön:
+`omdubb-ko.md`, planen: `vagplan.json`.
+
+Sju saker den körningen lärde:
+
+1. ⚠️ **Villkorsskanningen var död sedan den byggdes.** `läsButik` returnerade
+   `butik:`-blocket, inte hela filen, så `frakt`/`retur` var undefined och varje
+   regel friade. 40 annonser med "30 dagars nöjd-kund-garanti" dömdes `ren`.
+   Rättad 2026-09-10; testet `villkorsskanning.test.mjs` täcker nu pris, rabatt,
+   brådska och de talade formerna ("30 dagar köper köp", "uppe köp").
+2. **Inga transkript i repot = transkribera lokalt.** `faster-whisper` (small,
+   int8) tog 60 videor på ~15 min, 0 kr, skrivet som `.orig.srt` under
+   `market-expansion/se/…` så detektorn läser dem via `kalla.srt_slug`.
+   ⚠️ Whisper hör fel på SIFFROR ("229/420/489 kronor" = 289 kr i bild) —
+   prisfynd i talet bekräftas mot OCR:en innan en omdubb beställs.
+3. **En kampanj kan bära FLERA prefix** (`Rodholder_` + `Fiskespöhållare_`) och
+   kampanjnamnet är svenskt medan annonserna heter engelskt. Kampanjen slås
+   upp på `kalla.kampanj_id`, aldrig på ett namnmönster; `annonsprefix` är en lista.
+4. **Dynamiska creatives** (`asset_feed_spec`, 23 av 89) bär copy och bilder
+   utanför `object_story_spec` — kom tillbaka tomma tills `kallannonser.mjs`
+   och `mediaAv` läste dem.
+5. **Tvillingnamn** (`PD_EXTRA` ×2, olika video): OCR-nyckel och fil heter
+   `namn__id` för den andra, och den får ett eget transkript.
+6. **Meta fel 1 / "reduce the amount of data"** kommer av `creative{title,body,
+   link_url,asset_feed_spec…}` × 100 per sida genom proxyn. 15 per sida, utan
+   title/body/link_url. **Utan proxyn (`NODE_USE_ENV_PROXY=1`) slår launcherna i
+   rate limit 17 efter ~20 anrop** — kör dem alltid via proxyn.
+7. `oversatt-bild.py` tar en hel knapp som en textrad när knappen är en pill
+   (h ≈ 83) — bandet blev rätt, pillen ritades om för hand (PIL). Kolla QA-bilden.
+
 ## Uppdrag C — Bildannonserna (gratis, ingen väntan)
 
 **Vad:** brand-swappa Bäverbutikens bildannonser till OPS-brandet, svenska och norska.

@@ -64,10 +64,180 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "fraktgräns",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST – CS_1_H1 2026-08-18-e5537c543f209bf28a90db6dc31ff3b1",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST – CS_1_H1 2026-08-18-e5537c543f209bf28a90db6dc31ff3b1",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "rabatterat pris.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "rabatterat pris.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "rabatterat pris.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "rabatterat pris.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "rabatterat pris.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "rabatterat pris,",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "rabatterat pris,",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "inbränd",
+      "rad": "rabatterat pris,",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bara idag",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "I dag och bara i dag får du fiskespelhållaren till rabatterat pris.",
+      "fel": "falsk brådska \"bara i dag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "tal",
+      "rad": "I dag och bara i dag får du fiskespelhållaren till rabatterat pris.",
+      "fel": "lovar rabatt \"till rabatterat\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "tal",
+      "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lagret är begränsat och går snabbt.",
+      "fel": "falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "När det är slut är det slut.",
+      "fel": "falsk brådska \"När det är slut är det slut\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "30 dagars uppe köp.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "fraktgräns i copy: lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt-ord i inbränd: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "rabatt-ord i inbränd: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i inbränd: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"bara i dag\" — butiken säljer inte ut något lager",
+    "rabatt-ord i tal: lovar rabatt \"till rabatterat\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i tal: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "rabatt-ord i tal: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i tal: falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"När det är slut är det slut\" — butiken säljer inte ut något lager",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -95,7 +265,152 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "fraktgräns",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST – CS_1_H1 2026-08-18-e5537c543f209bf28a90db6dc31ff3b1",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST – CS_1_H1 2026-08-18-e5537c543f209bf28a90db6dc31ff3b1",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "rabatterat pris.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "rabatterat pris.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "rabatterat pris.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "rabatterat pris.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "rabatterat pris.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "rabatterat pris,",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "rabatterat pris,",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "inbränd",
+     "rad": "rabatterat pris,",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bara idag",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "I dag och bara i dag får du fiskespelhållaren till rabatterat pris.",
+     "fel": "falsk brådska \"bara i dag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "tal",
+     "rad": "I dag och bara i dag får du fiskespelhållaren till rabatterat pris.",
+     "fel": "lovar rabatt \"till rabatterat\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "tal",
+     "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lagret är begränsat och går snabbt.",
+     "fel": "falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "När det är slut är det slut.",
+     "fel": "falsk brådska \"När det är slut är det slut\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "30 dagars uppe köp.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -134,10 +449,124 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "fraktgräns",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST – CS_1_H2 2026-08-18-29684cbbfdd49d86ce17bc81e4058d7a",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST – CS_1_H2 2026-08-18-29684cbbfdd49d86ce17bc81e4058d7a",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Lagret rensas.",
+      "fel": "falsk brådska \"Lagret rensas\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lagret rensas, fiskespö håller en fyrapack, säljer slut snabbt.",
+      "fel": "falsk brådska \"Lagret rensas\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "tal",
+      "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lagret är begränsat och går snabbt.",
+      "fel": "falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "När det är slut är det slut.",
+      "fel": "falsk brådska \"När det är slut är det slut\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Fri frakt, 30 dagars upp ett köp.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "fraktgräns i copy: lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Lagret rensas\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"Lagret rensas\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "rabatt-ord i tal: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i tal: falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"När det är slut är det slut\" — butiken säljer inte ut något lager",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -166,7 +595,104 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "fraktgräns",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST – CS_1_H2 2026-08-18-29684cbbfdd49d86ce17bc81e4058d7a",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST – CS_1_H2 2026-08-18-29684cbbfdd49d86ce17bc81e4058d7a",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Lagret rensas.",
+     "fel": "falsk brådska \"Lagret rensas\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lagret rensas, fiskespö håller en fyrapack, säljer slut snabbt.",
+     "fel": "falsk brådska \"Lagret rensas\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "tal",
+     "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lagret är begränsat och går snabbt.",
+     "fel": "falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "När det är slut är det slut.",
+     "fel": "falsk brådska \"När det är slut är det slut\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Fri frakt, 30 dagars upp ett köp.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -205,10 +731,124 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "fraktgräns",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST – CS_1_H3 2026-08-18-c6cdca69bb991f5b7872ab7261d1db7e",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST – CS_1_H3 2026-08-18-c6cdca69bb991f5b7872ab7261d1db7e",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Sista chansen",
+      "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Sista chansen",
+      "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Sista chansen till det här priset innan det är slut.",
+      "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "tal",
+      "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lagret är begränsat och går snabbt. När det är slut är det slut.",
+      "fel": "falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Fri frakt. 30 dagars uppe köp. Inget att förlora.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "fraktgräns i copy: lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "rabatt-ord i tal: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i tal: falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -236,7 +876,104 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "fraktgräns",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST – CS_1_H3 2026-08-18-c6cdca69bb991f5b7872ab7261d1db7e",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST – CS_1_H3 2026-08-18-c6cdca69bb991f5b7872ab7261d1db7e",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Sista chansen",
+     "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Sista chansen",
+     "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Sista chansen till det här priset innan det är slut.",
+     "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "tal",
+     "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lagret är begränsat och går snabbt. När det är slut är det slut.",
+     "fel": "falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Fri frakt. 30 dagars uppe köp. Inget att förlora.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -257,7 +994,7 @@
     "tal": {
      "yta": "tal",
      "tillämplig": true,
-     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_cs_1_h3.orig.srt",
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_cs_1_h3__120249850617200291.orig.srt",
      "träff": false,
      "fynd": [],
      "repliker": []
@@ -275,10 +1012,124 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "fraktgräns",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST – CS_1_H3 2026-08-18-a3bb3fda6cadb89e602a8919947056b2",
+      "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "40% RABATT – IDAG ENDAST – CS_1_H3 2026-08-18-a3bb3fda6cadb89e602a8919947056b2",
+      "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Sista chansen",
+      "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Sista chansen",
+      "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Sista chansen till det här priset innan det är slut.",
+      "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+      "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "rabatt-ord",
+      "yta": "tal",
+      "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+      "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Lagret är begränsat och går snabbt. När det är slut är det slut.",
+      "fel": "falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Fri frakt. 30 dagars uppe köp. Inget att förlora.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "fraktgräns i copy: lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "rabatt i copy: lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i copy: falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager",
+    "brådska i tal: falsk brådska \"bara idag\" — butiken säljer inte ut något lager",
+    "rabatt-ord i tal: lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt",
+    "brådska i tal: falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -306,7 +1157,104 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "fraktgräns",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "lovar fraktgräns \"Fri frakt på alla ordrar över 300kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST – 40% RABATT på Fiskespöhållare 4-Pack\n\nVi rensar lagret och priset är nere i botten – men bara idag.\n\n🔥 ",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST – CS_1_H3 2026-08-18-a3bb3fda6cadb89e602a8919947056b2",
+     "fel": "lovar rabatt \"40% RABATT\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "40% RABATT – IDAG ENDAST – CS_1_H3 2026-08-18-a3bb3fda6cadb89e602a8919947056b2",
+     "fel": "falsk brådska \"IDAG ENDAST\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Sista chansen",
+     "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Sista chansen",
+     "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Sista chansen till det här priset innan det är slut.",
+     "fel": "falsk brådska \"Sista chansen\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+     "fel": "falsk brådska \"bara idag\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "rabatt-ord",
+     "yta": "tal",
+     "rad": "Just nu till kraftigt rabatterat pris, men bara idag.",
+     "fel": "lovar rabatt \"rabatterat pris\" — produkten har inget jämförpris, alltså ingen rabatt"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Lagret är begränsat och går snabbt. När det är slut är det slut.",
+     "fel": "falsk brådska \"Lagret är begränsat\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Fri frakt. 30 dagars uppe köp. Inget att förlora.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -345,10 +1293,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Med fri frakt och 30 dagar köper köp.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "frakt",
@@ -363,7 +1320,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Med fri frakt och 30 dagar köper köp.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -402,10 +1366,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Beställ idag. Kommer hem i tid med fri frakt och 30 dagar köp ett köp om måg att skulle krångla.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "frakt",
@@ -420,7 +1393,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Beställ idag. Kommer hem i tid med fri frakt och 30 dagar köp ett köp om måg att skulle krångla.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -459,10 +1439,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Beställ idag. Kommer hem i tid med fri frakt och 30 dagar köp ett köp om mågot skulle krångla.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "frakt",
@@ -477,7 +1466,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Beställ idag. Kommer hem i tid med fri frakt och 30 dagar köp ett köp om mågot skulle krångla.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -498,7 +1494,7 @@
     "tal": {
      "yta": "tal",
      "tillämplig": true,
-     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_gt_1_h3.orig.srt",
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_gt_1_h3__120249856846230291.orig.srt",
      "träff": false,
      "fynd": [],
      "repliker": []
@@ -516,10 +1512,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Beställ idag. Kommer hem i tid med fri frakt och 30 dagar köp ett köp om mågot skulle krångla.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "frakt",
@@ -534,7 +1539,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Beställ idag. Kommer hem i tid med fri frakt och 30 dagar köp ett köp om mågot skulle krångla.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -809,7 +1821,7 @@
     "tal": {
      "yta": "tal",
      "tillämplig": true,
-     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_extra.orig.srt",
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_extra__120249857099190291.orig.srt",
      "träff": false,
      "fynd": [],
      "repliker": []
@@ -871,10 +1883,131 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "fraktgräns",
+      "yta": "copy",
+      "rad": "Trasslar dina spön ihop sig i båten? 🎣\nFiskespöhållaren håller dem stängda och säkra.\n✅ 4-pack för 289 kr\n✅ Fri frakt ö",
+      "fel": "lovar fraktgräns \"Fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Trasslar dina spön ihop sig i båten? 🎣\nFiskespöhållaren håller dem stängda och säkra.\n✅ 4-pack för 289 kr\n✅ Fri frakt ö",
+      "fel": "falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "copy",
+      "rad": "4-pack för 289 kr – fri frakt över 300 kr.",
+      "fel": "lovar fraktgräns \"fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor for",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor for",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor for",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor for",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "149 kronor för ordning i båten resten av säsongen.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "Fiskespröhållare, 4-pack, just nu för 149 kronor, kraftig konstruktion som håller dina spön säkert på plats.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "tal",
+      "rad": "Fri frakt om det handlar för över 300 kronor, och med klarna får du vara en först och betala sen.",
+      "fel": "lovar fraktgräns \"Fri frakt om det handlar för över 300 kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "30 dagars nöjdkundgaranti om du inte är helt nöjd, begränsat antal i lager just nu.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "30 dagars nöjdkundgaranti om du inte är helt nöjd, begränsat antal i lager just nu.",
+      "fel": "falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "fraktgräns i copy: lovar fraktgräns \"Fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns",
+    "brådska i copy: falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager",
+    "fraktgräns i copy: lovar fraktgräns \"fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i tal: säger 149 kr — butikens pris är 289 kr",
+    "pris i tal: säger 149 kr — butikens pris är 289 kr",
+    "fraktgräns i tal: lovar fraktgräns \"Fri frakt om det handlar för över 300 kr\" — butiken har fri frakt UTAN gräns",
+    "öppet köp i tal: säger 30 dagar — butiken har 14",
+    "brådska i tal: falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -905,7 +2038,110 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "fraktgräns",
+     "yta": "copy",
+     "rad": "Trasslar dina spön ihop sig i båten? 🎣\nFiskespöhållaren håller dem stängda och säkra.\n✅ 4-pack för 289 kr\n✅ Fri frakt ö",
+     "fel": "lovar fraktgräns \"Fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Trasslar dina spön ihop sig i båten? 🎣\nFiskespöhållaren håller dem stängda och säkra.\n✅ 4-pack för 289 kr\n✅ Fri frakt ö",
+     "fel": "falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "copy",
+     "rad": "4-pack för 289 kr – fri frakt över 300 kr.",
+     "fel": "lovar fraktgräns \"fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor for",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor for",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor for",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor for",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "149 kronor för ordning i båten resten av säsongen.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "Fiskespröhållare, 4-pack, just nu för 149 kronor, kraftig konstruktion som håller dina spön säkert på plats.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "tal",
+     "rad": "Fri frakt om det handlar för över 300 kronor, och med klarna får du vara en först och betala sen.",
+     "fel": "lovar fraktgräns \"Fri frakt om det handlar för över 300 kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "30 dagars nöjdkundgaranti om du inte är helt nöjd, begränsat antal i lager just nu.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "30 dagars nöjdkundgaranti om du inte är helt nöjd, begränsat antal i lager just nu.",
+     "fel": "falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -944,10 +2180,103 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "fraktgräns",
+      "yta": "copy",
+      "rad": "Trasslar dina spön ihop sig i båten? 🎣\nFiskespöhållaren håller dem stängda och säkra.\n✅ 4-pack för 289 kr\n✅ Fri frakt ö",
+      "fel": "lovar fraktgräns \"Fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Trasslar dina spön ihop sig i båten? 🎣\nFiskespöhållaren håller dem stängda och säkra.\n✅ 4-pack för 289 kr\n✅ Fri frakt ö",
+      "fel": "falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "copy",
+      "rad": "4-pack för 289 kr – fri frakt över 300 kr.",
+      "fel": "lovar fraktgräns \"fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "149 kronor.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "Fiskespöhållare, fyra pack, just nu för 149 kronor, kraftig konstruktion som håller dina spön säkert på plats.",
+      "fel": "säger 149 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "fraktgräns",
+      "yta": "tal",
+      "rad": "Frifrakt om det handlar för över 300 kronor och med klarna får du vara en först och betala sen.",
+      "fel": "lovar fraktgräns \"Frifrakt om det handlar för över 300 kr\" — butiken har fri frakt UTAN gräns"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "30 dagars nöjdkundgaranti om du inte är helt nöjd.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "tal",
+      "rad": "Begränsat antal i lager just nu.",
+      "fel": "falsk brådska \"Begränsat antal\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "fraktgräns i copy: lovar fraktgräns \"Fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns",
+    "brådska i copy: falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager",
+    "fraktgräns i copy: lovar fraktgräns \"fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 149 kr — butikens pris är 289 kr",
+    "pris i tal: säger 149 kr — butikens pris är 289 kr",
+    "fraktgräns i tal: lovar fraktgräns \"Frifrakt om det handlar för över 300 kr\" — butiken har fri frakt UTAN gräns",
+    "öppet köp i tal: säger 30 dagar — butiken har 14",
+    "brådska i tal: falsk brådska \"Begränsat antal\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -978,7 +2307,86 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "fraktgräns",
+     "yta": "copy",
+     "rad": "Trasslar dina spön ihop sig i båten? 🎣\nFiskespöhållaren håller dem stängda och säkra.\n✅ 4-pack för 289 kr\n✅ Fri frakt ö",
+     "fel": "lovar fraktgräns \"Fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Trasslar dina spön ihop sig i båten? 🎣\nFiskespöhållaren håller dem stängda och säkra.\n✅ 4-pack för 289 kr\n✅ Fri frakt ö",
+     "fel": "falsk brådska \"begränsat antal\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "copy",
+     "rad": "4-pack för 289 kr – fri frakt över 300 kr.",
+     "fel": "lovar fraktgräns \"fri frakt över 300 kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "149 kronor.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "Fiskespöhållare, fyra pack, just nu för 149 kronor, kraftig konstruktion som håller dina spön säkert på plats.",
+     "fel": "säger 149 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "fraktgräns",
+     "yta": "tal",
+     "rad": "Frifrakt om det handlar för över 300 kronor och med klarna får du vara en först och betala sen.",
+     "fel": "lovar fraktgräns \"Frifrakt om det handlar för över 300 kr\" — butiken har fri frakt UTAN gräns"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "30 dagars nöjdkundgaranti om du inte är helt nöjd.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "tal",
+     "rad": "Begränsat antal i lager just nu.",
+     "fel": "falsk brådska \"Begränsat antal\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -1017,10 +2425,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Äntligen håller sig spöet ihopfällt – ingen mer trassel!\" 🎣\nSå här beskriver våra kunder Fiskespöhållaren.\n✅ Enkel att",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -1029,7 +2446,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Äntligen håller sig spöet ihopfällt – ingen mer trassel!\" 🎣\nSå här beskriver våra kunder Fiskespöhållaren.\n✅ Enkel att",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -1068,10 +2492,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Äntligen håller sig spöet ihopfällt – ingen mer trassel!\" 🎣\nSå här beskriver våra kunder Fiskespöhållaren.\n✅ Enkel att",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -1080,7 +2513,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Äntligen håller sig spöet ihopfällt – ingen mer trassel!\" 🎣\nSå här beskriver våra kunder Fiskespöhållaren.\n✅ Enkel att",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -1119,10 +2559,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Äntligen håller sig spöet ihopfällt – ingen mer trassel!\" 🎣\nSå här beskriver våra kunder Fiskespöhållaren.\n✅ Enkel att",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -1131,7 +2580,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Äntligen håller sig spöet ihopfällt – ingen mer trassel!\" 🎣\nSå här beskriver våra kunder Fiskespöhållaren.\n✅ Enkel att",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -1165,10 +2621,26 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Inget rabattpris — bara det verkliga priset. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Klarna finns\n✅ 3",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "289 kr -Klarna och 30 dagars garanti.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -1191,7 +2663,20 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Inget rabattpris — bara det verkliga priset. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Klarna finns\n✅ 3",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "289 kr -Klarna och 30 dagars garanti.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -1281,10 +2766,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "Passar alla spön. Beställ dit fyra pack för 200 och 200 kronor.",
+      "fel": "säger 200 kr — butikens pris är 289 kr"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i tal: säger 200 kr — butikens pris är 289 kr"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -1294,7 +2788,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "Passar alla spön. Beställ dit fyra pack för 200 och 200 kronor.",
+     "fel": "säger 200 kr — butikens pris är 289 kr"
+    }
+   ],
    "belägg": []
   },
   {
@@ -2503,12 +4004,80 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "280 kronor for",
+      "fel": "säger 280 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "280 kronor for",
+      "fel": "säger 280 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "280 kronor for",
+      "fel": "säger 280 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "280 kronor for",
+      "fel": "säger 280 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "280 kronor for",
+      "fel": "säger 280 kr — butikens pris är 289 kr"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i inbränd: säger 280 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 280 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 280 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 280 kr — butikens pris är 289 kr",
+    "pris i inbränd: säger 280 kr — butikens pris är 289 kr"
+   ],
    "villkor": [],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "280 kronor for",
+     "fel": "säger 280 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "280 kronor for",
+     "fel": "säger 280 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "280 kronor for",
+     "fel": "säger 280 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "280 kronor for",
+     "fel": "säger 280 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "280 kronor for",
+     "fel": "säger 280 kr — butikens pris är 289 kr"
+    }
+   ],
    "belägg": []
   },
   {
@@ -2547,10 +4116,26 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "229 kronor för fyra klämmer, 30 dagars nöjd kundgarantin.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "229 kronor för fyra klämmer, 30 dagars nöjd kundgarantin.",
+      "fel": "säger 229 kr — butikens pris är 289 kr"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14",
+    "pris i tal: säger 229 kr — butikens pris är 289 kr"
+   ],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -2559,7 +4144,20 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "229 kronor för fyra klämmer, 30 dagars nöjd kundgarantin.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "229 kronor för fyra klämmer, 30 dagars nöjd kundgarantin.",
+     "fel": "säger 229 kr — butikens pris är 289 kr"
+    }
+   ],
    "belägg": []
   },
   {
@@ -2598,10 +4196,61 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars nojd",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars nojd",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars nojd",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars nojd",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars nojd",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "420 kronor för fyra klämmer, 30 dagars nöjd kundgaranti om den inte passar.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "420 kronor för fyra klämmer, 30 dagars nöjd kundgaranti om den inte passar.",
+      "fel": "säger 420 kr — butikens pris är 289 kr"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14",
+    "pris i tal: säger 420 kr — butikens pris är 289 kr"
+   ],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -2610,7 +4259,50 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars nojd",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars nojd",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars nojd",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars nojd",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars nojd",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "420 kronor för fyra klämmer, 30 dagars nöjd kundgaranti om den inte passar.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "420 kronor för fyra klämmer, 30 dagars nöjd kundgaranti om den inte passar.",
+     "fel": "säger 420 kr — butikens pris är 289 kr"
+    }
+   ],
    "belägg": []
   },
   {
@@ -2649,12 +4341,41 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "229 kronor för fyra klämmer. 30 dagars nöjdkund garanti.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "229 kronor för fyra klämmer. 30 dagars nöjdkund garanti.",
+      "fel": "säger 229 kr — butikens pris är 289 kr"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14",
+    "pris i tal: säger 229 kr — butikens pris är 289 kr"
+   ],
    "villkor": [],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "229 kronor för fyra klämmer. 30 dagars nöjdkund garanti.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "229 kronor för fyra klämmer. 30 dagars nöjdkund garanti.",
+     "fel": "säger 229 kr — butikens pris är 289 kr"
+    }
+   ],
    "belägg": []
   },
   {
@@ -2737,10 +4458,19 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "200 och 29 kronor för fyra klämmor, rätt i dagars nöjdkundgarantik.",
+      "fel": "säger 29 kr — butikens pris är 289 kr"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i tal: säger 29 kr — butikens pris är 289 kr"
+   ],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -2749,7 +4479,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "200 och 29 kronor för fyra klämmor, rätt i dagars nöjdkundgarantik.",
+     "fel": "säger 29 kr — butikens pris är 289 kr"
+    }
+   ],
    "belägg": []
   },
   {
@@ -2968,10 +4705,26 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "489 kronor för fyra klämmer.",
+      "fel": "säger 489 kr — butikens pris är 289 kr"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "30 dagars nöjdkundgarantin.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i tal: säger 489 kr — butikens pris är 289 kr",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -2980,7 +4733,20 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "489 kronor för fyra klämmer.",
+     "fel": "säger 489 kr — butikens pris är 289 kr"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "30 dagars nöjdkundgarantin.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3019,10 +4785,26 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "229 kronor för fyra klemmer, 30 dagars nöjd kundgaranti.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "229 kronor för fyra klemmer, 30 dagars nöjd kundgaranti.",
+      "fel": "säger 229 kr — butikens pris är 289 kr"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14",
+    "pris i tal: säger 229 kr — butikens pris är 289 kr"
+   ],
    "villkor": [
     {
      "namn": "öppet köp",
@@ -3031,7 +4813,20 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "229 kronor för fyra klemmer, 30 dagars nöjd kundgaranti.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "229 kronor för fyra klemmer, 30 dagars nöjd kundgaranti.",
+     "fel": "säger 229 kr — butikens pris är 289 kr"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3157,20 +4952,23 @@
     "bild": {
      "yta": "bild",
      "tillämplig": true,
-     "dom": "okänd (fetch failed)",
+     "träff": false,
      "fynd": []
     },
     "villkorsfel": []
    },
-   "dom": "okänd",
-   "attgöra": [
-    "bildtext (oläst)"
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
    ],
-   "villkor": [],
    "villkorsfel": [],
-   "belägg": [
-    "yta 4 · okänd (fetch failed)"
-   ]
+   "belägg": []
   },
   {
    "annons": "Rodholder_PD_7_1",
@@ -3399,20 +5197,45 @@
     "bild": {
      "yta": "bild",
      "tillämplig": true,
-     "dom": "okänd (fetch failed)",
+     "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "okänd",
+   "dom": "kräver-slutkortsbygge",
    "attgöra": [
-    "bildtext (oläst)"
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
    ],
-   "villkor": [],
-   "villkorsfel": [],
-   "belägg": [
-    "yta 4 · okänd (fetch failed)"
-   ]
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
   },
   {
    "annons": "Rodholder_PROD_V02",
@@ -3445,10 +5268,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3463,7 +5295,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3497,10 +5336,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3515,7 +5363,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3549,10 +5404,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3567,7 +5431,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3601,10 +5472,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3619,7 +5499,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3653,10 +5540,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3671,7 +5567,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3705,10 +5608,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3723,7 +5635,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3757,10 +5676,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3775,7 +5703,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3809,10 +5744,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3827,7 +5771,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3861,10 +5812,19 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3879,7 +5839,14 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "4-pack 289 kr - 30 dagars nojd-kund-garanti",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3913,10 +5880,33 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3938,7 +5928,26 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -3972,10 +5981,40 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Vi säljer ut lagret",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -3997,7 +6036,32 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Vi säljer ut lagret",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4031,10 +6095,33 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4056,7 +6143,26 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4090,10 +6196,33 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4115,7 +6244,26 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4149,10 +6297,33 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4174,7 +6345,26 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4208,10 +6398,33 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4233,7 +6446,26 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4267,10 +6499,33 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4292,7 +6547,26 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4326,10 +6600,40 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "inbränd",
+      "rad": "Vi säljer ut lagret",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager",
+    "brådska i inbränd: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4351,7 +6655,32 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "inbränd",
+     "rad": "Vi säljer ut lagret",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4385,10 +6714,33 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4410,7 +6762,26 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4444,10 +6815,33 @@
      "träff": false,
      "fynd": []
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+      "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+     },
+     {
+      "regel": "brådska",
+      "yta": "copy",
+      "rad": "4-pack 289 kr – så långt lagret räcker",
+      "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "brådska i copy: falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager",
+    "brådska i copy: falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4469,7 +6863,26 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "Vi säljer ut lagret av fiskespöhållare. 🎣\n289 kr för ett 4-pack, det blir 72,25 kr per hållare.\n✅ Håller ihopfällda spö",
+     "fel": "falsk brådska \"säljer ut lagret\" — butiken säljer inte ut något lager"
+    },
+    {
+     "regel": "brådska",
+     "yta": "copy",
+     "rad": "4-pack 289 kr – så långt lagret räcker",
+     "fel": "falsk brådska \"så långt lagret räcker\" — butiken säljer inte ut något lager"
+    }
+   ],
    "belägg": []
   },
   {
@@ -4508,10 +6921,26 @@
      "tillämplig": false,
      "dom": "ej tillämplig (video)"
     },
-    "villkorsfel": []
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "Inget rabattpris här – bara det verkliga priset. 🎣\n289 kr för ett 4-pack, 72,25 kr per hållare.\n✅ Klarna finns\n✅ 30 dag",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Klarna finns 30 dagars nöjdkundgaranti.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
    },
-   "dom": "ren",
-   "attgöra": [],
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
    "villkor": [
     {
      "namn": "pris",
@@ -4534,7 +6963,20 @@
      ]
     }
    ],
-   "villkorsfel": [],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "Inget rabattpris här – bara det verkliga priset. 🎣\n289 kr för ett 4-pack, 72,25 kr per hållare.\n✅ Klarna finns\n✅ 30 dag",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Klarna finns 30 dagars nöjdkundgaranti.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
    "belägg": []
   }
  ]
