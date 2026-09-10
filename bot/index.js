@@ -7,6 +7,13 @@
 // Env som är valfri:
 //   DISCORD_KANALER     kommaseparerade kanalnamn boten lyssnar i (default: alla den ser)
 //   DISCORD_AGARE       kommaseparerade user-id som får prata med boten (default: alla)
+//   DISCORD_OPPNA_SERVRAR kommaseparerade guild-id där verksamhetens data får
+//                       användas (default: bara Bäverbutiken). Överallt annars
+//                       och i DM är boten SLUTEN: ingen affärskontext, inga
+//                       filverktyg, inga siffror. Se sluten.js.
+//   DISCORD_FRAGA_KLAR_SERVRAR guild-id (kommaseparerade) där boten BARA svarar
+//                       "Fråga klar." på frågor och inget annat — aldrig Claude,
+//                       aldrig tagg. Default: Snart nappar de. Se fragaklar.js.
 //   DISCORD_SVARA_ALLA  sätt till 1 för att svara på ALLT i kanalen, som förr.
 //                       Default: boten svarar bara när den taggas, får ett svar
 //                       på sitt eget inlägg, eller får ett DM. !-kommandon
@@ -19,6 +26,8 @@ import {
 } from 'discord.js';
 import { dela } from './dela.js';
 import { ärTilltalad, utanTilltal } from './tilltal.js';
+import { arOppen, oppnaServrar } from './sluten.js';
+import { arFragaKlarServer, arFraga, fragaKlarSvar, fragaKlarServrar } from './fragaklar.js';
 import { fraga, nollstallHistorik, MODELL } from './claude.js';
 import {
   planera, validera, beskriv, utfor, lasLaget, skyddadeKanaler,
@@ -235,6 +244,16 @@ client.on(Events.MessageCreate, (message) => {
     message.reply(`Awake. Model: ${MODELL}. Up for ${Math.round(process.uptime() / 60)} min.`).catch(() => {});
     return;
   }
+  // "Fråga klar"-servrarna: boten läser allt men säger bara en sak, och bara
+  // på frågor. Ingen Claude, inga kommandon utom !ping, ingen tagg-koll.
+  if (arFragaKlarServer(message.guild?.id)) {
+    if (arFraga(message.content)) {
+      message.reply({ content: fragaKlarSvar(), allowedMentions: { parse: [], repliedUser: true } })
+        .catch(() => {});
+    }
+    return;
+  }
+
   if (/^!glöm\b/i.test(text) || /^!glom\b/i.test(text)) {
     nollstallHistorik(message.channelId);
     message.reply('Forgot the conversation in this channel. Starting over.').catch(() => {});
@@ -271,10 +290,15 @@ client.on(Events.MessageCreate, (message) => {
     try {
       await message.channel.sendTyping().catch(() => {});
       puls = setInterval(() => message.channel.sendTyping().catch(() => {}), 8000);
+      // Verksamhetens data bara hemma. I andra servrar och i DM är boten
+      // sluten — den får inte ens kontexten, så den kan inte läcka den.
+      const sluten = !arOppen({ guildId: message.guild?.id });
+      if (sluten) console.log(`[sluten] ${message.guild?.name ?? 'DM'} / #${message.channel?.name ?? '-'}`);
       const svarstext = await fraga({
         text,
         kanalId: message.channelId,
         anvandare: message.author.username,
+        sluten,
       });
       await svara(message, svarstext);
     } catch (fel) {
@@ -291,6 +315,8 @@ client.once(Events.ClientReady, (c) => {
   console.log(`Kanaler: ${TILLÅTNA_KANALER.length ? TILLÅTNA_KANALER.join(', ') : 'alla boten ser'}`);
   console.log(`Användare: ${TILLÅTNA_ANVÄNDARE.length ? TILLÅTNA_ANVÄNDARE.join(', ') : 'alla'}`);
   console.log(`Svarar: ${SVARA_ALLA ? 'på allt i kanalen' : 'bara när den taggas, får svar eller DM'}`);
+  console.log(`Öppna servrar (verksamhetens data): ${oppnaServrar().join(', ')} — alla andra + DM är slutna`);
+  console.log(`"Fråga klar"-servrar: ${fragaKlarServrar().join(', ')}`);
 });
 
 // discord.js sköter reconnect, heartbeat och rate limits själv. Vi loggar bara

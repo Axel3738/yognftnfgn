@@ -131,6 +131,32 @@ ovanför den i rollistan.
 
 ---
 
+## Andra servrar och DM: boten är sluten
+
+Boten sitter i flera servrar och kan bjudas in till fler. **Verksamhetens
+siffror, produkter, kampanjer, team och filer får bara nämnas i
+Bäverbutiken-servern.** I varje annan server, och i privata meddelanden, kör
+boten sluten:
+
+- Den får inte affärskontexten i prompten och har inget filverktyg — den
+  *kan* inte läsa något internt, oavsett vad någon skriver till den.
+- Frågar någon om verksamheten svarar den kort att det är internt och att man
+  får fråga Axel direkt. Den bekräftar aldrig att en uppgift stämmer.
+- Den fungerar fortfarande som vanlig assistent: allmänna frågor, text, idéer.
+- `!bygg` fungerar som förr — det handlar om den servern, inte om verksamheten.
+
+Ska en server till få se verksamhetens data: lägg dess id i
+`DISCORD_OPPNA_SERVRAR` (Bäverbutiken måste då också stå med).
+
+## "Fråga klar"-servern
+
+I **Snart nappar de** gör boten en enda sak. Den läser allt, svarar aldrig på
+tagg, och när någon ställer en fråga svarar den bara *"Fråga klar."* med en pik
+om att ställa hela frågan direkt i stället för att fråga hela servern om lov.
+Den svarar aldrig på själva frågan. Claude anropas inte alls där — det kostar
+ingenting och inget internt kan komma ut. Fler servrar i samma läge:
+`DISCORD_FRAGA_KLAR_SERVRAR`.
+
 ## Frivilliga inställningar
 
 Läggs in som Variables i Railway om du vill begränsa boten.
@@ -140,6 +166,8 @@ Läggs in som Variables i Railway om du vill begränsa boten.
 | `DISCORD_KANALER` | `skalning,allmänt` — boten svarar bara i de kanalerna. Tom = alla den ser |
 | `DISCORD_AGARE` | ditt Discord user-id — då är det bara du som kan prata med den |
 | `DISCORD_SVARA_ALLA` | `1` — boten svarar på allt i kanalen, som den gjorde förr. Tom = bara när den taggas |
+| `DISCORD_OPPNA_SERVRAR` | Guild-id, kommaseparerade, där verksamhetens data får användas. Tom = bara Bäverbutiken. Alla andra servrar och DM är slutna |
+| `DISCORD_FRAGA_KLAR_SERVRAR` | Guild-id där boten bara svarar "Fråga klar." på frågor. Tom = Snart nappar de |
 | `GITHUB_GREN` | vilken gren den läser. Default är arbetsgrenen |
 
 ---
