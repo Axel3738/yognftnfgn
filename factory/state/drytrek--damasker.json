@@ -55,14 +55,14 @@
     }
   },
   "datum": "2026-09-09",
-  "lage": "BUTIKEN LIVE PÅ SV+NO · recensioner inne · SE+NO-kampanjer aktiveras 2026-09-09 på Axels order · pixel-id ej inklistrat i WeTracked",
+  "lage": "LIVE SV+NO · SE+NO som CBO 1000 kr/dag var, aktiverade 2026-09-10 på Axels order · pixel avfyrar · recensioner inne · Discord klar",
   "kallkoppling": {
     "annonskonto": "1867947880635861",
     "kampanj_id": "120250009391470291",
     "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
     "utfall_avlast_2026_09_09": "12 198 kr spend, 58 köp, CPA 210 kr över 18 annonser. Vinnaren Damasker_PD_1: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr — 79 % av spenden, 88 % av köpen. Näst bästa vinkel (SP) ligger på ROAS 1,42, alltså UNDER break-even 1,60."
   },
-  "uppdaterad": "2026-09-09",
+  "uppdaterad": "2026-09-10",
   "forarbete": {
     "anslutningskontroll": {
       "klar": true,
@@ -238,7 +238,7 @@
     "SE": {
       "kampanj_id": "120249020401880172",
       "kampanj": "DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
-      "struktur": "ABO, 4 adsets (PD/SP/CS/G) à 250 kr/dag, is_adset_budget_sharing_enabled=false, 16 annonser, allt PAUSED",
+      "struktur": "CBO 1000 kr/dag på kampanjen (Axels beslut 2026-09-10 — han pausade ABO-varianten själv och bad om CBO), 4 adsets PD/SP/CS/G utan egen budget, 16 annonser. Konverterad in-place med PATCH daily_budget=100000 — Meta tillät bytet ABO→CBO utan ombyggnad.",
       "kallannonser": 18,
       "byggda": 16,
       "ej_byggda": [
@@ -251,7 +251,7 @@
       "kampanj_id": "120249020611450172",
       "kampanj": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
       "status": "PAUSED",
-      "struktur": "ABO, 4 adsets (PD/SP/CS/G) à 250 kr/dag, geo NO, länk /nb/products/damasker, 16 annonser, allt PAUSED",
+      "struktur": "CBO 1000 kr/dag på kampanjen (Axels beslut 2026-09-10 — han pausade ABO-varianten själv och bad om CBO), 4 adsets PD/SP/CS/G utan egen budget, 16 annonser. Konverterad in-place med PATCH daily_budget=100000 — Meta tillät bytet ABO→CBO utan ombyggnad.",
       "kallannonser": 16,
       "byggda": 16,
       "ej_byggda": [],
