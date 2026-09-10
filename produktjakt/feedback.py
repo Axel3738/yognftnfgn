@@ -36,11 +36,14 @@ LARDOMAR = os.path.join(HERE, "LARDOMAR.md")
 DOM = ("ja", "kanske", "nej")
 # Samma etiketter som i sida-mall.html (ORSAKER_NEJ / ORSAKER_JA). Ändra på båda ställena.
 ORSAKER = ["Verktyg / pryl", "Kedjan har den", "Fel kund", "Syns inget i bild", "Har redan", "Fel säsong",
-           "För dyr", "Lågt upplevt värde", "Tråkig",                       # nej
+           "För dyr", "Lågt upplevt värde", "Inget far illa", "Nöjd med det han har", "Fel datum, rätt vara", "Tråkig",  # nej
            "Osäker på priset", "Tveksam bild", "Kan bli bra",               # kanske
            "Skyddar något", "Deadline nu", "Bra ankare", "Snygg bild", "Känns rätt"]  # ja
 STOPP_NEJ = 3
 LYFT_JA = 3
+UTFALL = os.path.join(HERE, "utfall.json")
+# Systemsignaler ur kontot väger tyngre än ett klick (MASTERPROMPT 8.3): launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej
+VIKT_UTFALL = {"launchad": ("ja", 2), ">=BE": ("ja", 3), "<BE": ("nej", 3), "svalt": (None, 0)}
 
 
 def las():
@@ -108,23 +111,34 @@ def vikter():
     d = las()
     dims, orsak_r = {}, {}
     tot = {k: 0 for k in DOM}
+    def rakna(varden, dom, vikt=1):
+        for dim, v in varden.items():
+            for val in (v if isinstance(v, list) else [v]):
+                if not val:
+                    continue
+                r = dims.setdefault(dim, {}).setdefault(str(val), {"ja": 0, "kanske": 0, "nej": 0})
+                r[dom] += vikt
+
     for s in d["svar"].values():
         dom = s.get("dom")
         if dom not in DOM:
             continue
         tot[dom] += 1
         varden = {"grupp": s.get("grupp") or ""}
-        for k, v in (s.get("taggar") or {}).items():
-            varden[k] = v
-        for dim, v in varden.items():
-            for val in (v if isinstance(v, list) else [v]):
-                if not val:
-                    continue
-                r = dims.setdefault(dim, {}).setdefault(str(val), {"ja": 0, "kanske": 0, "nej": 0})
-                r[dom] += 1
+        varden.update(s.get("taggar") or {})
+        rakna(varden, dom)
         for o in s.get("orsaker") or []:
             r = orsak_r.setdefault(o, {"ja": 0, "kanske": 0, "nej": 0})
             r[dom] += 1
+    # Metas facit: launchade produkter och deras utfall, skrivna av rutinen i utfall.json med produktens taggar
+    n_utfall = 0
+    if os.path.exists(UTFALL):
+        for kamp, u in (json.load(open(UTFALL, encoding="utf-8")).get("utfall") or {}).items():
+            dom, vikt = VIKT_UTFALL.get(u.get("utfall"), (None, 0))
+            if not dom or not u.get("taggar"):
+                continue
+            rakna(u["taggar"], dom, vikt)
+            n_utfall += 1
     stopp, lyft = [], []
     for dim, rader in dims.items():
         for val, r in rader.items():
@@ -136,7 +150,8 @@ def vikter():
             if r["ja"] >= LYFT_JA and dim != "grupp":
                 lyft.append(f"{dim}:{val}")
     ut = {"datum": datetime.date.today().isoformat(), "antal_svar": sum(tot.values()), "per_dom": tot,
-          "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar",
+          "antal_utfall": n_utfall,
+          "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
           "dimensioner": dims, "orsaker": orsak_r, "stopp": sorted(stopp), "lyft": sorted(lyft)}
     json.dump(ut, open(VIKTER, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     skriv_lardomar(ut)

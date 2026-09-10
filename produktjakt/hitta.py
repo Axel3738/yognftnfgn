@@ -114,14 +114,16 @@ def bygg_pool(katalog, objektkat, manad, undvik, vikter, kalla="bada"):
         for ob in objektkat.get("objekt", []):
             if manad not in ob.get("manader", []):
                 continue
-            taggar = {"objekt": ob["objekt"], "arketyp": ob.get("arketyp", "")}
+            taggar = {"objekt": ob["objekt"], "arketyp": ob.get("arketyp", ""), "form": ob.get("form", "")}
             if f"grupp:{ob['objekt']}" in stopp or any(f"{d}:{v}" in stopp for d, v in taggar.items() if v):
                 continue
-            pool += [(f, ob["objekt"], taggar) for f in ob.get("sokfraser_en", []) if f not in undvik] * ob.get("vikt", 3)
+            if ob.get("parkerad_till_vecka"):
+                continue
+            pool += [(f, ob["objekt"], taggar, ob.get("ankare_sek")) for f in ob.get("sokfraser_en", []) if f not in undvik] * ob.get("vikt", 3)
     if kalla in ("bada", "sokord") and katalog:
         for g in katalog["grupper"]:
             if manad in g["manader"] and f"grupp:{g['grupp']}" not in stopp:
-                pool += [(o, g["grupp"], {}) for o in g["ord"] if o not in undvik] * g.get("vikt", 1)
+                pool += [(o, g["grupp"], {}, None) for o in g["ord"] if o not in undvik] * g.get("vikt", 1)
     return pool
 
 
@@ -134,36 +136,67 @@ def dagens_ord(katalog, manad, antal, frö, undvik=(), vikter=None, objektkat=No
         return []
     rnd = random.Random(frö)
     vald, sedda = [], set()
-    for o, g, taggar in rnd.sample(pool, k=min(len(pool), antal * 4)):
+    for o, g, taggar, ankare in rnd.sample(pool, k=min(len(pool), antal * 4)):
         if o in sedda:
             continue
         sedda.add(o)
-        vald.append((o, g, taggar))
+        vald.append((o, g, taggar, ankare))
         if len(vald) >= antal:
             break
     return vald
 
 
-def stoppad(titel):
+VITLISTA = ("shoe", "sneaker", "sandal", "slipper", "boot", "glove", "hat ", "cap ")   # A6 kroppsskydd, bara med --vitlista
+ANKARE_KVOT = 0.7           # tänkt pris = 0,7 × fackhandelns märke (MASTERPROMPT steg 5: 0,4–0,85×)
+
+
+def stoppad(titel, manad=None, vitlista=False):
+    """Negativa rymden. Två smala undantag ur MASTERPROMPT.md avsnitt 6:
+    A4 datumlådan — toy/kids/children släpps igenom för 'advent calendar'/'24' i månad 9–11;
+    A6 kroppsskyddet — sko/handske/mössa släpps igenom bara när körningen uttryckligen ber om det."""
     t = titel.lower()
-    return next((w.strip() for w in STOPPORD if w in t), None)
+    kalender = manad in (9, 10, 11) and ("advent calendar" in t or " 24 " in f" {t} ")
+    for w in STOPPORD:
+        if w not in t:
+            continue
+        if kalender and w in ("toy", "kids", "children", "puzzle", "game set"):
+            continue
+        if vitlista and w in VITLISTA:
+            continue
+        return w.strip()
+    return None
 
 
-def ekonomi(pris_usd, k):
-    """Returnerar (landad_sek, forslag_pris_sek, multipel) eller None när priset saknas."""
+def pris_pa_9(x):
+    """Priser sätts i praktiken på 9: 299, 399, 499 …"""
+    return int(round((x + 1) / 100) * 100 - 1) if x > 150 else int(round(x))
+
+
+def ekonomi(pris_usd, k, ankare_sek=None):
+    """Landad kostnad, tänkt pris och uppslag — eller None när priset saknas.
+
+    Två vägar (MASTERPROMPT steg 5):
+      • med mätt ankare: tänkt pris = 0,7 × märket, max landad = pris ÷ 2,4 — taket 420 gäller inte
+        (taköverdraget 1 129 kr hade fällts av taket; det är därför ankaret ska mätas FÖRE sökningen)
+      • utan ankare: tänkt pris = landad × 2,4 (minst 300), landad ≤ 420 kr"""
     if not pris_usd:
         return None
     landad = pris_usd * k * FRAKT_PASLAG
-    if landad > TAK_LANDAD_SEK:
-        return {"landad": round(landad), "dom": "FAIL", "orsak": f"landad {round(landad)} kr över taket {TAK_LANDAD_SEK}"}
-    forslag = max(GOLV_SEK, round(landad * KRAV_MULTIPEL / 10) * 10)
-    # priser sätts i praktiken på 9: 299, 399, 499 …
-    forslag = int(round((forslag + 1) / 100) * 100 - 1) if forslag > 150 else forslag
+    if ankare_sek:
+        forslag = pris_pa_9(ankare_sek * ANKARE_KVOT)
+        tak = forslag / KRAV_MULTIPEL
+        if landad > tak:
+            return {"landad": round(landad), "forslag_pris": forslag, "dom": "FAIL",
+                    "orsak": f"landad {round(landad)} kr över {round(tak)} kr (pris {forslag} ÷ {KRAV_MULTIPEL})", "ankare_sek": ankare_sek}
+    else:
+        if landad > TAK_LANDAD_SEK:
+            return {"landad": round(landad), "dom": "FAIL", "orsak": f"landad {round(landad)} kr över taket {TAK_LANDAD_SEK} (inget ankare mätt)"}
+        forslag = pris_pa_9(max(GOLV_SEK, round(landad * KRAV_MULTIPEL / 10) * 10))
     mult = forslag / landad if landad else 0
     dom = "PASS" if (mult >= KRAV_MULTIPEL and forslag >= GOLV_SEK) else "FAIL"
     orsak = "" if dom == "PASS" else f"uppslag {mult:.1f}× under {KRAV_MULTIPEL}×"
     return {"landad": round(landad), "forslag_pris": forslag, "multipel": round(mult, 2),
-            "dom": dom, "orsak": orsak}
+            "be_cpa": round(forslag - landad), "dom": dom, "orsak": orsak, "ankare_sek": ankare_sek}
 
 
 def main():
@@ -174,8 +207,9 @@ def main():
     ap.add_argument("--datum", default=datetime.date.today().isoformat())
     ap.add_argument("--ut")
     ap.add_argument("--fro", type=int, help="slumpfrö (samma frö = samma sökord, för omkörning)")
-    ap.add_argument("--kalla", choices=("bada", "objekt", "sokord"), default="bada",
-                    help="objekt.json (masterprompten), sokord.json (gamla katalogen) eller båda")
+    ap.add_argument("--kalla", choices=("bada", "objekt", "sokord"), default="objekt",
+                    help="objekt.json (masterprompten, standard), sokord.json (gamla katalogen — ger kedjevaror) eller båda")
+    ap.add_argument("--vitlista", action="store_true", help="släpp sko/handske/mössa igenom STOPPORD (A6 kroppsskydd)")
     a = ap.parse_args()
 
     katalog = json.load(open(os.path.join(HERE, "sokord.json"), encoding="utf-8"))
@@ -192,13 +226,16 @@ def main():
     undvik = {o for o, d in logg.items() if d >= grans}
     vikter = las_vikter()
     ord_lista = dagens_ord(katalog, a.manad, a.sokord, fro, undvik, vikter, objektkat, a.kalla)
-    n_obj = sum(1 for _, _, t in ord_lista if t)
-    print(f"månad {a.manad} · {len(ord_lista)} sökord ({n_obj} ur objekt.json) · USD/SEK {k} ({kurskalla}) · "
+    n_obj = sum(1 for _, _, t, _ in ord_lista if t)
+    n_ank = sum(1 for _, _, _, an in ord_lista if an)
+    print(f"månad {a.manad} · {len(ord_lista)} sökord ({n_obj} ur objekt.json, {n_ank} med mätt ankare) · USD/SEK {k} ({kurskalla}) · "
           f"{len(sedda)} sedda sedan tidigare · {vikter.get('antal_svar', 0)} svar från Axel, "
           f"{len(vikter.get('stopp', []))} stopp, {len(vikter.get('lyft', []))} lyft")
+    if n_obj and not n_ank:
+        print("  obs: inget ankare_sek i objekt.json — priset räknas som landad × 2,4 och taket 420 kr gäller (MASTERPROMPT steg 4–5 ogjorda)")
 
     fynd, hoppade = [], {"stoppord": 0, "pris saknas": 0, "ekonomi": 0, "dubblett": 0, "axel_nej": 0}
-    for i, (o, grupp, taggar) in enumerate(ord_lista, 1):
+    for i, (o, grupp, taggar, ankare) in enumerate(ord_lista, 1):
         try:
             traffar, sok_url = ali.sok(o, antal=8)
         except Exception as e:
@@ -209,14 +246,14 @@ def main():
             if t["product_id"] in sedda:
                 hoppade["dubblett"] += 1
                 continue
-            s = stoppad(t["titel"])
+            s = stoppad(t["titel"], a.manad, a.vitlista)
             if s:
                 hoppade["stoppord"] += 1
                 continue
             if not t.get("pris"):
                 hoppade["pris saknas"] += 1
                 continue
-            ek = ekonomi(t["pris"], k)
+            ek = ekonomi(t["pris"], k, ankare)
             if not ek or ek["dom"] != "PASS":
                 hoppade["ekonomi"] += 1
                 continue
@@ -239,11 +276,11 @@ def main():
     ut = a.ut or os.path.join(HERE, "korningar", a.datum, "fynd.json")
     os.makedirs(os.path.dirname(ut), exist_ok=True)
     json.dump({"datum": a.datum, "manad": a.manad, "usd_sek": k, "kurskalla": kurskalla,
-               "sokord": [{"ord": o, "grupp": g, "taggar": t} for o, g, t in ord_lista],
+               "sokord": [{"ord": o, "grupp": g, "taggar": t, "ankare_sek": an} for o, g, t, an in ord_lista],
                "hoppade": hoppade, "antal_kandidater": len(fynd), "produkter": valda},
               open(ut, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump({"product_id": sorted(sedda)}, open(sedda_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    logg.update({o: a.datum for o, _, _ in ord_lista})
+    logg.update({o: a.datum for o, _, _, _ in ord_lista})
     json.dump(logg, open(logg_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)
 
     print(f"\n{len(fynd)} kandidater klarade ekonomin, {len(valda)} valda → {ut}")

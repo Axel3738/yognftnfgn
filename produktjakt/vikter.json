@@ -6,7 +6,8 @@
   "kanske": 4,
   "nej": 2
  },
- "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar",
+ "antal_utfall": 0,
+ "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
  "dimensioner": {
   "grupp": {
    "vedsäsongens verktyg": {

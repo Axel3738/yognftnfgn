@@ -1,162 +1,184 @@
-# /produktjakt — hitta nya produkter och lägg dem i ett offertark
+# /produktjakt — hitta nya produkter, lägg dem i offertarket, lär av Axels svar
 
 **Rutin, körs varje morgon 06:30 svensk tid** (cron `30 4 * * *` UTC), bunden till den fasta sessionen
-`session_016jBJVGuyny8S3j2XPSM26Z` (tagg `routine:produktjakt`, trigger `trig_01AnGMfca7s1thCUqNbMSRoR`)
-som har repot som källa — annars kan rutinen inte pusha. Uppdraget: hitta nya varor som passar Bäverbutiken,
-räkna ekonomin, skriva dem i leverantörens offertark och lägga arket där Axel kan hämta det.
-Axel ska bara trycka på en knapp och skicka filen vidare.
+`session_016jBJVGuyny8S3j2XPSM26Z` (tagg `routine:produktjakt`) som har repot som källa — annars kan
+rutinen inte pusha. Uppdraget: hitta varor som liknar kontots vinnare (**inte** kedjevaror), räkna
+ekonomin, lägga dem i leverantörens offertark på sidan Axel öppnar, och **bli bättre av varje svar han ger**.
+Axel gör två saker: laddar ner arket, och trycker Ja/Kanske/Nej på varje produkt.
 
-Argument (valfritt): `--antal <N>` (hur många produkter, standard 12) · `--manad <M>` (kör en annan
-månads sökord, för att planera framåt) · `--fro <N>` (samma frö ger samma sökord — för omkörning).
+**`produktjakt/MASTERPROMPT.md` är ordern.** Den här filen är körordningen — vad som görs i vilken
+ordning, med vilka skript. Säger de olika gäller MASTERPROMPT.md; skriv då om den här filen.
 
-## Vad rutinen gör
+Argument (valfritt): `--antal <N>` (produkter, standard 12) · `--manad <M>` (annan månads fönster, för
+planering) · `--fro <N>` (samma frö = samma sökord) · `--vitlista` (A6 kroppsskydd, bara när A1–A5 är uttömda).
 
-### 1. Hitta produkterna
+⚠️ **Rutinen kör från grenen `claude/fortsatta-pa-denna-c28bmv`, inte från `main`.** `produktjakt/`
+finns bara där. Börja därför varje körning med fetch + checkout mot grenen — containern kan ha startats om
+och klonat `main`. Når koden `main`: byt tillbaka checkouten och pushen till `main` och stryk den här raden.
+
+## Körordningen
+
+### 0. Minnet och feedbacken — FÖRE varje sökning (MASTERPROMPT avsnitt 8)
 
 ```bash
-cd /home/user/yognftnfgn/produktjakt
-python3 hitta.py --antal 12 --sokord 14
+cd /home/user/yognftnfgn && git fetch origin claude/fortsatta-pa-denna-c28bmv \
+  && git checkout -B claude/fortsatta-pa-denna-c28bmv origin/claude/fortsatta-pa-denna-c28bmv
+python3 -c "import openpyxl" || pip install openpyxl
+cd produktjakt
 ```
 
-Skriptet drar dagens sökord ur `sokord.json` (bara grupper vars `manader` innehåller körningsmånaden),
-söker AliExpress, och gallrar på det som går att räkna: negativa rymden (`STOPPORD`), ekonomin
-(landad ≈ inköp × 1,5, svenskt pris ≥ 2,4 × landad och ≥ 300 kr, landad ≤ 420 kr) och dubbletter mot
-`sedda.json`. Utdata: `korningar/<datum>/fynd.json`.
+1. **Axels svar från sidan.** `Artifact read_db` med `url` = sidans URL nedan, `db_op: list`,
+   `collection: feedback`, `out_dir: /home/user/yognftnfgn/produktjakt/feedback/db`. Sedan
+   `python3 feedback.py samla` — läser dokumenten, skriver `feedback/feedback.json`, räknar `vikter.json`
+   och auto-delen i `LARDOMAR.md`. Svar Axel gett i chatten: `python3 feedback.py svar <datum> <product_id> nej "Verktyg / pryl"`.
+2. **Kontots facit.** Läs kampanjnamnen i MagiBorsten `1867947880635861` (`META_ACCESS_TOKEN`,
+   `act_1867947880635861/campaigns?fields=name,created_time,insights{spend,actions,purchase_roas}`).
+   En kampanj med en levererad produkts prefix inom 14 dagar = `launchad`; var tredje dag, för kampanjer
+   med ≥ 2 000 kr spend: `>=BE` / `<BE` (BE ur kampanjnamnet) / `svalt`. Skriv `utfall.json`
+   (`{"utfall": {"<kampanjnamn>": {datum, spend, kop, roas, be, utfall, taggar}}}`) med produktens taggar ur
+   dess `fynd.json`, och kör `python3 feedback.py vikter` igen. Metas facit väger tyngre än klick.
+3. **Läs** `LARDOMAR.md` (hela), `SIGNALER.md`, `vikter.json` (`stopp`/`lyft`), `MEKANISM.md`, gårdagens
+   `korningar/<datum>/STATUS.md` och `fynd.json`, `vinnare/FAKTA-*.md`. Allt under `stopp` söks inte.
+   Rör aldrig `poang_max` i MASTERPROMPT på grund av klick (8.5).
 
-**Varför AliExpress och inte Temu:** Temu stryper containerns IP till ungefär en hämtning i timmen
-(mätt hela 2026-09-08). Samma leverantörsvaror finns på AliExpress, som svarar utan strypning och
-vars länkar går att öppna. Se `docs/temu-jakt-v2/REGEL.md` avsnitt 8.
+### 1. Masterpromptens steg 1–6: kalender → objekt → ankare → sökfras
 
-### 2. Läs igenom fynden innan de går vidare
+Följ MASTERPROMPT.md avsnitt 4 bokstavligt, steg 1–6, **innan** något skript körs:
 
-Skriptet kan bara räkna. Du ska läsa. Gå igenom `fynd.json` och **stryk** varje rad som faller på:
+- **Kalendern** (steg 1): dagens datum, varje hårt datum 2–12 veckor fram med veckotal. Säsongen bedöms
+  mot **halvan av månaden**, inte månadsnumret *(Axels påpekande 2026-09-09)*: avställning och skydd säljs
+  nu, utrustning för nästa säsong hör hemma i april–juni. Datum > 12 v → `backlog.json` med körningsvecka.
+- **Objekten** (steg 2): filtrera `objekt.json` på `manader` som täcker fönstret. Nya objekt som kalendern
+  ger men filen saknar: lägg till raden (schema i MASTERPROMPT 8.4). Verktygsrader finns inte och söks inte.
+- **Dubblett på SAK** (steg 3): `KATALOG.md` **och** live `bäverbutiken.se/products.json`, kontots
+  kampanjnamn 7 dagar, `vinnare/FAKTA-*.md`, gårdagens `fynd.json`. Samma vara har flera `product_id`
+  — `sedda.json` räcker inte. *(Incident 2026-09-09: fyra av åtta stod på gårdagens ark.)* Träff →
+  "finns redan: …" eller "syskon till vinnare: …" i STATUS, aldrig tyst; ägaren går till A5.
+- **Ankaret** (steg 4): fackhandelns dyraste märke i samma form (namn, pris, URL, i sortiment) → kedjornas
+  och **svensk näthandels** golv (Biltema, Jula, Clas Ohlson, Rusta, Bauhaus, Fyndiq, CDON, Amazon.se,
+  vidaXL, branschbutiker — vedklyvkonen föll på Jämtfire 169 kr, inte på en kedja) → annonsörer via
+  proxyn i REGEL G2 (Ad Library bara om den svarar). **Skriv `ankare_sek` på raden i `objekt.json`** —
+  utan det räknar `hitta.py` priset som landad × 2,4 med tak 420 kr, och då fälls ett taköverdrag.
+- **Prisbandet** (steg 5) och **sökfraserna** (steg 6): formordet måste stå i frasen, verktygsord får inte.
+  Karantän 14 dagar per fras (`anvanda-sokord.json`, `KARANTAN_DAGAR`).
 
-- **Fel kund.** Bäverbutikens köpare är man 45–70 med villa, båt, jakt, ved, fordon. Ligger produkten
-  utanför `docs/temu-jakt-v2/jakt/v23/KATALOG.md` sex kollektioner: stryk den.
-- **Redan i butiken.** Finns produkten eller en nära variant i KATALOG.md: stryk.
-- **Negativa rymden** (`docs/temu-vinnar-dna.md` avsnitt 6): personlig passform, kit, förbrukning,
-  N-i-1, lek, allt som förvaras inomhus, montering som kräver inlärning.
-- **Kranskyddsfällan:** skadan inträffar nov–feb men produkten säljs nu. Flytta den till rätt månad
-  i `sokord.json` i stället för att sälja den för tidigt.
-- **Fel halva av månaden.** Bedöm säsongen mot dagens datum, inte mot månadsnumret — en månad rymmer
-  två olika lägen. *(Axels påpekande 2026-09-09.)* Mitten av september i Sverige: eldningssäsongen
-  börjar, älgjakten är igång i norr, båtarna tas upp, mörkret märks. Fråga alltid åt vilket håll varan
-  pekar: **avställning och skydd säljs nu, utrustning som ska användas nästa säsong hör hemma i
-  april–juni.** Ett båtkapell och en motorspolare är rätt i dag; ett navigationsljus är det inte.
-- **Dubblett i sak** — två rader som är samma produkt från olika säljare. Behåll den med bäst uppslag.
-- **Stod den på förra körningens ark?** Öppna föregående `korningar/<datum>/STATUS.md` och jämför på
-  **produkt, inte på id**. `sedda.json` stoppar bara exakt samma `product_id`, och samma vara säljs av
-  många säljare med olika id — så en husbilskåpa kan komma tillbaka dag efter dag utan att skriptet
-  märker det. *(Incident 2026-09-09: fyra av åtta levererade varor stod redan på gårdagens ark, och
-  Axel såg det direkt. Gårdagens jakt låg dessutom i `docs/temu-jakt-v2/jakt/v24/` och hade aldrig
-  matats in i `sedda.json`.)* Hittar du en upprepning: stryk den och lägg gårdagens id i `sedda.json`.
+### 2. Sök
 
-### 2b. Wow- och mekanismgrinden — den avgör vad som LAUNCHAS
+```bash
+python3 hitta.py --kalla objekt --antal 12 --sokord 14        # --vitlista bara för A6
+```
 
-⚠️ **Grinden stryker inget från offertarket.** *(Axels beslut 2026-09-09.)* Arket är en
-förfrågan till leverantören, inte ett launchbeslut — att fråga om pris kostar ingenting,
-och leverantörens riktiga pris är data vi annars aldrig får. Lägg alla kandidater som
-klarat läsningen i steg 2 på arket, och skriv domen i `STATUS.md` i stället. Domen är
-till för den som sedan väljer ur offerten.
+`objekt.json` är standardkällan; `sokord.json` (185 ord, 20 grupper) är den gamla katalogen som gav
+kedjevaror — dras bara med `--kalla sokord`/`bada`. Skriptet gallrar STOPPORD (med undantagen A4/A6),
+ekonomin (ankare eller landad × 2,4), `sedda.json`, Axels `stopp`, och förrankar på uppslag × vikt.
+Utdata `korningar/<datum>/fynd.json` med `taggar` (objekt, arketyp, form) per produkt.
+Ladda ner varje `bild` till `korningar/<datum>/bilder/` — det är den enda bilden AliExpress ger
+(produktsidorna svarar tomt, SIGNALER.md). Blockerad bild = "ej sedd", aldrig gissad.
 
-Ekonomin säger bara att marginalen finns. **Mekanismen avgör om varan är värd att testa.**
-*(Axels besked 2026-09-09: leta gemensamma variabler i mekanik och funktion, inte i nisch.
-Att en vara sålt bra betyder inte att dess nisch är öppen.)*
+### 3. Poängsätt varje kandidat — K0–K12 på bilden (MASTERPROMPT avsnitt 5)
 
-Kör varje kvarvarande kandidat genom `produktjakt/MEKANISM.md` — åtta viktade ja/nej-frågor
-framtagna ur kontots egna vinnare, max 21 poäng. Bedömningen görs **mot produktbilden**:
-hämta bilden och titta på den. AliExpress produktsidor svarar med tomt skal i containern
-(mätt 2026-09-09, gäller `ali.py`, egen hämtning och `WebFetch`), så titeln räcker inte.
+Kill-reglerna i ordningen K0 → K1 → K2 → K3 → K4 → K5 → K6 → K7 → K8 → K10 → K11 → K12; första kill
+avslutar raden med kriteriet som orsak i `STATUS.md`. Överlevarna får poäng 0–100 och
+`rank_slutlig = poäng × Π score` (vikterna ur `vikter.json`). `MEKANISM.md` (åtta variabler, wow-testet:
+händer något synligt inom tre sekunder?) är stödet för K5 och K10 — leverantörens film söks på
+TikTok/YouTube bara när K5 = 5.
 
-- 15–21 poäng: offerera.
-- 11–14: bara om både ägarfrågan och hyllfrånvaron är ja.
-- 0–10: hoppa.
-- Priset utanför 300–1 000 kr diskvalificerar ensamt.
+Skriv i `fynd.json` per produkt: `per_kriterium` K0–K12, alla åtta taggar (objekt, arketyp, form,
+deadline_typ, deadline_klass, ankare_klass, ankare_kalla, prisband), `rank_slutlig`, ägarfrågan ≤ 7 ord
+och efter-bilden ≤ 8 ord. Sortera på `rank_slutlig`.
 
-Sök också varan hos Biltema, Jula, Clas Ohlson och Rusta. Säljer de samma form i samma
-prisläge utan att vi har ett synligt märkesankare är det en kedjevara, oavsett poäng.
+**Arket är en förfrågan, inte ett launchbeslut** *(Axels beslut 2026-09-09 kväll)*: allt som överlever
+kill-reglerna går på arket, i rankordning. ≥ 75 med K1/K2/K6 ≥ 10 = launch-kandidat (max 5, hellre 2);
+55–74 = offertrad; < 55 = svag offertrad, sist och märkt. Domen står i `STATUS.md` så den som väljer ur
+offerten vet. Fyll aldrig ut: 4 bra slår 12 svaga.
 
-Skriv en rad per struken produkt i körningens `STATUS.md` med orsaken. Det är kvittot.
-
-### 3. Bygg offertarket
+### 4. Bygg offertarket
 
 ```bash
 python3 offert.py --fynd korningar/<datum>/fynd.json
 ```
 
-Arket är Axels egen mall (`mall/offertmall.xlsx`). Ett block om fyra rader per produkt: bild, namn,
-länk, marknad SWEDEN och kvantitetstrappan 100/200/300. **Prisfälten lämnas tomma** — arket är en
-förfrågan, det är leverantören som fyller i dem.
+Axels mall (`mall/offertmall.xlsx`): ett block om fyra rader per produkt — bild, namn, länk, SWEDEN,
+kvantitetstrappan 100/200/300. **Prisfälten lämnas tomma** — leverantören fyller i dem.
 
-### 4. Bygg och publicera sidan
+### 5. Bygg och publicera sidan
 
 ```bash
 python3 sida.py --fynd korningar/<datum>/fynd.json
 ```
 
-Publicera `korningar/<datum>/sida.html` som artefakt med `capabilities: {downloads: true}` och
+Publicera `korningar/<datum>/sida.html` som artefakt med `capabilities: {downloads: true, db: {}}` mot
 **samma URL varje dag** (`url`-parametern — utan den blir det en ny länk och Axel tappar bort sig):
 
     https://claude.ai/code/artifact/1512b4cb-e82d-45fb-845d-dc4029616b17
 
-Sidan bär arket inbakat och lämnar det till Axel via `downloads`-capability. En vanlig `<a download>`
-är död i artefaktens sandlåda — därför just den vägen.
+Sidan bär arket inbakat (`downloads`) och Axels knappar Ja/Kanske/Nej + orsaker (`db`, samlingen
+`feedback`). Säger publiceringen att en nyare version finns: läs den, bygg om från dagens `fynd.json` och
+publicera igen — skriv aldrig över med gårdagens sida.
 
-### 5. Spara och rapportera
+### 6. Spara och rapportera
 
-Lägg först en rad i `produktjakt/RUTIN-KVITTO.md` — datum, kandidater, levererade,
-strukna, sida publicerad, Discord. Kvittot är det en utomstående session läser för att
-se att körningen gick hela vägen; utan raden ser en lyckad körning ut som en utebliven.
+1. `korningar/<datum>/STATUS.md`: kvar (med poäng och dom) och strukna (med kriterium), dagens datum,
+   parkerade objekt med körningsvecka, Meta-utfall.
+2. Raden i `LARDOMAR.md` under **Egna anteckningar**, exakt enligt MASTERPROMPT 8.6.
+3. Raden i `RUTIN-KVITTO.md` — datum, kandidater, levererade, strukna, sida publicerad, Discord.
+4. Commit och push till grenen: `sedda.json`, `anvanda-sokord.json`, `objekt.json`, `backlog.json`,
+   `feedback/feedback.json`, `vikter.json`, `utfall.json`, `LARDOMAR.md` och körningen måste med.
 
 ```bash
-git add produktjakt && git commit -m "produktjakt <datum>: N produkter" \
+cd /home/user/yognftnfgn && git add produktjakt && git commit -m "produktjakt <datum>: N produkter" \
   && git push -u origin claude/fortsatta-pa-denna-c28bmv
 ```
 
-`sedda.json` måste med i commiten — annars föreslår rutinen samma varor i morgon.
-
-⚠️ **Rutinen kör från grenen `claude/fortsatta-pa-denna-c28bmv`, inte från `main`.**
-`produktjakt/` finns bara där. Rutinens prompt börjar därför alltid med
-`git fetch` + `git checkout -B` mot den grenen — containern kan ha startats om och
-klonat `main`, och då saknas allt. Når koden `main` någon gång: byt tillbaka både
-checkouten och pushen ovan till `main` och ta bort de här raderna.
-
-Skicka morgonrapporten till Discord (`DISCORD_WEBHOOK_URL`) med antal produkter och länken till sidan.
-
-## Bevisad i skarp körning
-
-Första riktiga rutinkörningen: **2026-09-09**. Två sökomgångar → 22 kandidater klarade ekonomin →
-9 kvar efter läsningen, 13 strukna med orsak. Arket byggt, sidan publicerad mot rätt URL, `sedda.json`
-(25 id:n) och en säsongsrättning i `sokord.json` pushade. Kedjan checkout → hitta → läs → offert →
-sida → push fungerar hela vägen. Bygg inte om något av det utan att först läsa den körningens
-`STATUS.md`.
+5. Morgonrapport till Discord (`DISCORD_WEBHOOK_URL`): antal produkter, launch-kandidater, länken.
 
 ## Definition of done
 
-- [ ] `korningar/<datum>/fynd.json` finns och har minst en produkt
-- [ ] Varje struken produkt står i `STATUS.md` med orsak
-- [ ] `Leverantorsoffert-<datum>.xlsx` byggd, prisfälten tomma, en rad per produkt
-- [ ] Sidan publicerad mot **samma URL** som föregående dag
-- [ ] Nedladdningsknappen testad (öppna sidan, tryck, filen kommer)
-- [ ] `sedda.json` uppdaterad och pushad till arbetsgrenen
-- [ ] Raden i `RUTIN-KVITTO.md` skriven och med i commiten
+- [ ] Steg 0 kört: Axels svar inlästa, `vikter.json` omräknad, `LARDOMAR.md` läst FÖRE sökningen
+- [ ] Kalender + ankare skrivna i `objekt.json` (`ankare_sek`) innan `hitta.py` kördes
+- [ ] `korningar/<datum>/fynd.json` finns; varje produkt har `per_kriterium`, åtta taggar, `rank_slutlig`, hook
+- [ ] Varje struken produkt står i `STATUS.md` med kriterium; dubblettkoll gjord på SAK
+- [ ] Inget verktyg/pryl levererat; ingen produkt utan datum eller pågående skada
+- [ ] `Leverantorsoffert-<datum>.xlsx` byggd, prisfälten tomma
+- [ ] Sidan publicerad mot **samma URL** med `downloads` + `db`; knapparna finns; nedladdningen testad
+- [ ] Raden i `LARDOMAR.md` och `RUTIN-KVITTO.md` skriven; allt committat och pushat till grenen
 - [ ] Discord-rapport skickad
+- [ ] De tio kontrollfrågorna i MASTERPROMPT avsnitt 9 besvarade — nej på 1–3 betyder laga metoden först
 
 ## Svaret till Axel
 
 Dyslexiformatet i `CLAUDE.md`: **Läget** med max tre rader, sen hur många saker han ska göra.
-Normalfallet är en enda sak — öppna sidan och ladda ner arket. Skriv aldrig ut sökord, filnamn
-eller kommandon till honom.
+Normalfallet är en enda sak — öppna sidan, ladda ner arket och trycka Ja/Kanske/Nej. Skriv aldrig ut
+sökord, filnamn, kommandon eller poäng till honom.
+
+## Bevisat i skarp körning
+
+**2026-09-09**, första dagen: kedjan checkout → sök → läs → offert → sida → push fungerade hela vägen
+(3 sökomgångar, 82 kandidater, 9 på arket). Samma kväll: alla nio var verktyg/prylar — Axel kallade det
+"slop" — och den nya sökregeln (MASTERPROMPT.md, DOA v3.1) byggdes ur hans tre senaste vinnare
+(taköverdrag husvagn 1 129 kr, utekattkoja 789 kr, adventskalender racingbilar 499 kr). Backtest på 40
+produkter: de tre vinnarna 90–96 poäng, 0 av 20 förlorare/slop släppta igenom
+(`vinnare/BACKTEST-2026-09-09.md`). Axels första nio svar på sidan lästes in samma kväll.
 
 ## Filerna
 
 | Vad | Var |
 |---|---|
-| Sökordskatalogen (objekt per säsong) | `produktjakt/sokord.json` |
+| **Ordern: uppdrag, köpare, arketyper, sökalgoritm, poängkort, negativ rymd, feedbackloop** | `produktjakt/MASTERPROMPT.md` |
+| Objektuniversumet — objekt × månader × skyddsform × ankare × sökfraser | `produktjakt/objekt.json` |
+| Faktapaketet om vinnarna och backtesten | `produktjakt/vinnare/` |
+| Axels signaler (vad han sagt, och vad det inte betyder) | `produktjakt/SIGNALER.md` |
+| Urvalsmallen — åtta variabler, wow-testet | `produktjakt/MEKANISM.md` |
+| Lärdomar ur svaren (auto + egna rader) | `produktjakt/LARDOMAR.md` |
+| Feedback: samla / svar / vikter | `produktjakt/feedback.py` → `feedback/feedback.json`, `vikter.json` |
+| Metas facit per launchad produkt | `produktjakt/utfall.json` |
 | AliExpress-klienten (sök + produktsida) | `produktjakt/ali.py` |
 | Hittaren med gallringen | `produktjakt/hitta.py` |
+| Gamla sökordskatalogen (reserv, ger kedjevaror) | `produktjakt/sokord.json` |
 | Offertarket | `produktjakt/offert.py`, mall i `produktjakt/mall/offertmall.xlsx` |
-| Sidan Axel hämtar från | `produktjakt/sida.py`, `produktjakt/sida-mall.html` |
-| Redan föreslagna produkter | `produktjakt/sedda.json` |
+| Sidan Axel hämtar från och svarar på | `produktjakt/sida.py`, `produktjakt/sida-mall.html` |
+| Redan föreslagna id:n · sökordskarantän | `produktjakt/sedda.json`, `produktjakt/anvanda-sokord.json` |
 | Körningarna | `produktjakt/korningar/<datum>/` |
-| Gate-ordningen och LIVE-regeln | `docs/temu-jakt-v2/REGEL.md` |
+| Kvittot per körning | `produktjakt/RUTIN-KVITTO.md` |
+| Gate-ordningen och LIVE-regeln (Temu-tiden, bakgrund) | `docs/temu-jakt-v2/REGEL.md` |
+| Vinnar-DNA:t (bakgrund; MASTERPROMPT är dess uppdatering) | `docs/temu-vinnar-dna.md` |
