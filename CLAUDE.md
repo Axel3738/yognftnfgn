@@ -144,6 +144,8 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   `factory/VA-CHECKLIST.md` (Axels mall), ifylld per butik i
   `output/<id>/CHECKLISTA.md`. Frasen **"Store ready: \<namn\>"** från
   VA:n utlöser slutsteget (recensioner, pixel, Discord-kanaler).
+- **`factory/SA-FUNKAR-DET.md`** är kartan: hela flödet på en sida, enkelt,
+  vem som gör vad. Läs den innan `PROCESS.md`.
 - **`factory/PROCESS.md`** är rutinen: hela steg-för-steg-flödet, med ⚙️
   (fabriken gör) och 🖐 (Axels klick). Lyckas ett nytt steg: uppdatera den
   filen i samma session. Det är inte valfritt — det är hela poängen.

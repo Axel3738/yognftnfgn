@@ -16,6 +16,7 @@ utan att flytta skälet med den.
 
 | Dokument | Roll |
 |---|---|
+| `factory/SA-FUNKAR-DET.md` | Kartan: hela flödet enkelt förklarat, vem som gör vad. Läs den först. |
 | `factory/KEDJAN.md` | Kontraktet: modulägare, exporter, körordning. Koden följer den. |
 | `factory/PROCESS.md` (detta) | Rutinen i prosa: faserna, besluten, reglerna som bevisats. |
 | `.claude/commands/ny-ops.md` | Körordningen för den som kör (VA:n). |
