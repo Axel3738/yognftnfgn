@@ -47,15 +47,17 @@
     "recensioner": {
       "klar": false,
       "manuell": "Ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — VA:n importerar output/takskyddet/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    },
+    "launch": {
+      "klar": true,
+      "status": "ACTIVE",
+      "publicerad": true
     }
   },
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "tracking",
-      "doman"
-    ],
-    "tid": "2026-09-10T22:29:37.207Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-10T23:07:38.577Z"
   },
-  "uppdaterad": "2026-09-10T22:29:37.207Z"
+  "uppdaterad": "2026-09-10T23:07:39.433Z"
 }

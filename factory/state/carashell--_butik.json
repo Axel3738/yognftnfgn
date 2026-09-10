@@ -5,8 +5,8 @@
     "anslutning": {
       "klar": true,
       "domain": "yitrbk-m3.myshopify.com",
-      "name": "My Store 4",
-      "primaryDomain": "yitrbk-m3.myshopify.com",
+      "name": "Carashell",
+      "primaryDomain": "carashell.se",
       "currencyCode": "SEK"
     },
     "tema-upload": {
@@ -14,7 +14,7 @@
       "arbetstemaId": "gid://shopify/OnlineStoreTheme/205487636812",
       "temaId": "gid://shopify/OnlineStoreTheme/205487636812",
       "temaNamn": "CaraShell – CRO v1",
-      "role": "UNPUBLISHED",
+      "role": "MAIN",
       "redanUppe": true,
       "filer": 396,
       "kompletterade": []
@@ -176,17 +176,17 @@
             "policy": 0,
             "kollektion": 0,
             "temamall": 0,
-            "sektionsgrupp": 1
+            "sektionsgrupp": 0,
+            "temainställning": 1
           },
-          "granskning": "4213/4225"
+          "granskning": "4317/4339"
         }
       }
     },
     "store-ready": {
-      "klar": false,
-      "manuell": "recensioner takskyddet: ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — ladda upp output/takskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · WeTracked: klistra in pixel-id 28589207184025756 (VA:ns klick) · Meta-sidan skapar VA:n i Business Manager (API:t kan inte) · Discord: boten kan inte skapa servrar — VA:n skapar \"CaraShell — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/carashell.yaml skriver ut länken) och kör sen node factory/store-ready.mjs carashell --guild <server-id>",
+      "klar": true,
       "pixelId": "28589207184025756",
-      "discordGuild": null,
+      "discordGuild": "1547740959335522304",
       "recensioner": [
         {
           "produkt": "takskyddet",
@@ -197,18 +197,20 @@
         "recensioner takskyddet: ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — ladda upp output/takskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
         "WeTracked: klistra in pixel-id 28589207184025756 (VA:ns klick)",
         "Meta-sidan skapar VA:n i Business Manager (API:t kan inte)",
-        "Discord: boten kan inte skapa servrar — VA:n skapar \"CaraShell — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/carashell.yaml skriver ut länken) och kör sen node factory/store-ready.mjs carashell --guild <server-id>"
+        "Discord: ingen redigerare i standby-listan än — plockas för hand"
       ]
+    },
+    "tema-publicering": {
+      "klar": false,
+      "manuell": "VA:n publicerar temat \"CaraShell – CRO v1\": Online Store → Themes → CaraShell – CRO v1 → Publish."
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/205487636812",
   "arbetstemaNamn": "CaraShell – CRO v1",
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "kundvy-startsida"
-    ],
-    "tid": "2026-09-10T22:29:29.989Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-10T23:07:32.611Z"
   },
-  "uppdaterad": "2026-09-10T22:59:18.938Z"
+  "uppdaterad": "2026-09-10T23:07:39.433Z"
 }
