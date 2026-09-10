@@ -1,0 +1,4541 @@
+{
+ "produkt": "fiskespohallare-4-pack",
+ "datum": "2026-09-10",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16268173214045",
+  "produkt_handle": "fiskespohallare-4-pack-kraftig-forvaring",
+  "produkt_url": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": [
+   "Rodholder",
+   "Fiskespöhållare"
+  ],
+  "kampanj_id": "120249850522830291",
+  "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+  "no_kampanj_id": "120251856983860233",
+  "no_kampanjmonster": "Fiskespöhållaren NO",
+  "no_annonsprefix": [
+   "NO",
+   "Fiskespöhållare"
+  ],
+  "srt_slug": [
+   "fiskespohallare"
+  ],
+  "prefixen": [
+   "Rodholder",
+   "Fiskespöhållare"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Fiskespöhållare_CS_1_H1",
+   "id": "120249850603660291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_cs_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 94
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "300kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt på alla ordrar över 300kr",
+      "Fri frakt"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_CS_1_H2",
+   "id": "120249850606390291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_cs_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 89
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "300kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt på alla ordrar över 300kr",
+      "Fri frakt"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet",
+      "30 dagars ppet"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_CS_1_H3",
+   "id": "120249856845560291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_cs_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 88
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "300kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt på alla ordrar över 300kr",
+      "Fri frakt"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_CS_1_H3",
+   "id": "120249850617200291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_cs_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 88
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "300kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt på alla ordrar över 300kr",
+      "Fri frakt"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_GT_1_H1",
+   "id": "120249850626110291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare GT",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_gt_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 122
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "fri frakt"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_GT_1_H2",
+   "id": "120249850629010291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare GT",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_gt_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 120
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "fri frakt"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_GT_1_H3",
+   "id": "120249850631260291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare GT",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_gt_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 117
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "fri frakt"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_GT_1_H3",
+   "id": "120249856846230291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare GT",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_gt_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 117
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "fri frakt"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_GT_2_1",
+   "id": "120249850632830291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare GT",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_PD_1_H1",
+   "id": "120249850557140291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 125
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_PD_1_H2",
+   "id": "120249850559630291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 126
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_PD_1_H3",
+   "id": "120249850562570291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 125
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_PD_2_1",
+   "id": "120249850565700291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_PD_EXTRA",
+   "id": "120249850564380291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_extra.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 100
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_PD_EXTRA",
+   "id": "120249857099190291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_extra.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 100
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_SO_1_H1",
+   "id": "120249856848490291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare SO",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_so_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 102
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "300 kr",
+      "289kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr",
+      "fri frakt över 300 kr",
+      "Fri frakt om"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_SO_1_H3",
+   "id": "120249856849960291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare SO",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_so_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 101
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "300 kr",
+      "289kr"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt över 300 kr",
+      "fri frakt över 300 kr",
+      "Fri frakt om"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_SP_1_H1",
+   "id": "120249850574370291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare SP",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_sp_1_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 103
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_SP_1_H2",
+   "id": "120249850575750291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare SP",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_sp_1_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 104
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Fiskespöhållare_SP_1_H3",
+   "id": "120249856844620291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare SP",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_sp_1_h3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 100
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_CS_3_1",
+   "id": "120249936641360291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 2",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti",
+      "30 dagars garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_GT_3_H1",
+   "id": "120249942033570291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare GT Batch 2",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_gt_3_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 49
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_10_1",
+   "id": "120249912527340291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 2",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_10_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 49
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "289 KR"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_11_H1",
+   "id": "120249936273710291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 3",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_11_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 49
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_12_H1",
+   "id": "120249936274240291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 3",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_12_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 44
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_12_H2_H1",
+   "id": "120249960326520291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_12_h2_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": null,
+     "fynd": [],
+     "frames": 38,
+     "dom": "okänd (OCR gav noll text på samtliga 38 frames — oskiljbart från en misslyckad läsning)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 3 · okänd (OCR gav noll text på samtliga 38 frames — oskiljbart från en misslyckad läsning)"
+   ]
+  },
+  {
+   "annons": "Rodholder_PD_12_H2_H2",
+   "id": "120249960327080291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_12_h2_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": null,
+     "fynd": [],
+     "frames": 38,
+     "dom": "okänd (OCR gav noll text på samtliga 38 frames — oskiljbart från en misslyckad läsning)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 3 · okänd (OCR gav noll text på samtliga 38 frames — oskiljbart från en misslyckad läsning)"
+   ]
+  },
+  {
+   "annons": "Rodholder_PD_13_H1",
+   "id": "120249936274460291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 3",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_13_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 40
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_13_H2_H1",
+   "id": "120249960327610291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_13_h2_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 34
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_13_H2_H2",
+   "id": "120249960328300291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_13_h2_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 34
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_15_H2",
+   "id": "120249942031600291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 5",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_15_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 34
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_16_H1",
+   "id": "120249912527550291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 2",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_16_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 39
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_16_H2",
+   "id": "120249942031880291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 5",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_16_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 37
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_17_H1",
+   "id": "120249912528610291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 2",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_17_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 45
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_17_H2",
+   "id": "120250005887230291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_17_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 45
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_18_H1",
+   "id": "120249942032210291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 5",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_18_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 52
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_18_H2",
+   "id": "120249942032470291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 5",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_18_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 54
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_19_H1",
+   "id": "120250005890300291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_19_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 43
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_19_H2",
+   "id": "120250005892680291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_19_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 46
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_21_H1",
+   "id": "120249960329280291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_21_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": null,
+     "fynd": [],
+     "frames": 36,
+     "dom": "okänd (OCR gav noll text på samtliga 36 frames — oskiljbart från en misslyckad läsning)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 3 · okänd (OCR gav noll text på samtliga 36 frames — oskiljbart från en misslyckad läsning)"
+   ]
+  },
+  {
+   "annons": "Rodholder_PD_21_H2",
+   "id": "120249960331080291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_21_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 37
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_22_H1",
+   "id": "120250005895650291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_22_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 44
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_22_H2",
+   "id": "120250005898420291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_22_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 49
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_23_H1",
+   "id": "120249960333600291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_23_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 41
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_23_H2",
+   "id": "120249960334990291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_23_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 44
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_25_H1",
+   "id": "120250005901530291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_25_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 45
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_25_H2",
+   "id": "120250005904840291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_25_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 47
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_26_H1",
+   "id": "120250005909190291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_26_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 21
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_26_H2",
+   "id": "120250005912410291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_26_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 21
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_27_H1",
+   "id": "120250005915410291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_27_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 48
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_27_H2",
+   "id": "120250005918300291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_27_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 39
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_28_H1",
+   "id": "120250005920980291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_28_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 50
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_28_H2",
+   "id": "120250005923960291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_28_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 48
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_29_H1",
+   "id": "120250005925570291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_29_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 38
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_29_H2",
+   "id": "120250005927580291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_29_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 43
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_3_H1",
+   "id": "120249936271890291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 3",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_3_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 44
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_3_H2",
+   "id": "120249936272090291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 3",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_3_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 44
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_3_H2_H1",
+   "id": "120249942030100291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 5",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_3_h2_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": null,
+     "fynd": [],
+     "frames": 34,
+     "dom": "okänd (OCR gav noll text på samtliga 34 frames — oskiljbart från en misslyckad läsning)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 3 · okänd (OCR gav noll text på samtliga 34 frames — oskiljbart från en misslyckad läsning)"
+   ]
+  },
+  {
+   "annons": "Rodholder_PD_3_H2_H2",
+   "id": "120249942030440291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 5",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_3_h2_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 34
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_30_H1",
+   "id": "120250005929810291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_30_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 48
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_30_H2",
+   "id": "120250005932940291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 8",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_30_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 40
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_4_H1",
+   "id": "120249942030850291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 5",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_4_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 42
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_5_H1",
+   "id": "120249960325690291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 6",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_5_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 48
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_6_1",
+   "id": "120249936610640291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 4",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "dom": "okänd (fetch failed)",
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "bildtext (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 4 · okänd (fetch failed)"
+   ]
+  },
+  {
+   "annons": "Rodholder_PD_7_1",
+   "id": "120249936623170291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 4",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_8_H1",
+   "id": "120249936272230291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 3",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_8_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 66
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_8_H2_H1",
+   "id": "120249936272690291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 3",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_8_h2_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 118
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PD_8_H2_H2",
+   "id": "120249936273210291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 3",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_pd_8_h2_h2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 120
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V01",
+   "id": "120249961388710291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "dom": "okänd (fetch failed)",
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "bildtext (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 4 · okänd (fetch failed)"
+   ]
+  },
+  {
+   "annons": "Rodholder_PROD_V02",
+   "id": "120249961389890291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V03",
+   "id": "120249961391380291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V04",
+   "id": "120249961391960291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V05",
+   "id": "120249961393120291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V06",
+   "id": "120249961393650291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V07",
+   "id": "120249961394510291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V08",
+   "id": "120249961395110291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V09",
+   "id": "120249961395580291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_PROD_V10",
+   "id": "120249961396130291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare PD Batch 7 - PROD-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nojd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V01",
+   "id": "120249961397580291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V02",
+   "id": "120249961398680291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V03",
+   "id": "120249961399640291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V04",
+   "id": "120249961400520291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V05",
+   "id": "120249961401190291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V06",
+   "id": "120249961402120291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V07",
+   "id": "120249961403180291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V08",
+   "id": "120249961404400291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V09",
+   "id": "120249961405410291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_REA_V10",
+   "id": "120249961406590291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare CS Batch 3 - REA-bilder",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Rodholder_SO_3_H1",
+   "id": "120249936275270291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Fiskespöhållare SO Batch 2",
+   "kampanj": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/se/video-batches/2026-09-10-fiskespohallare/srt-orig/fiskespohallare_so_3_h1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 62
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "289 kr",
+      "25 kr",
+      "300 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars nöjd-kund-garanti"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  }
+ ]
+}

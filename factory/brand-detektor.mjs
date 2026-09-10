@@ -128,7 +128,11 @@ export function läsButik(produktId) {
   if (!butiksId) return null;
   const fil = join(ROT, 'factory', 'butiker', `${butiksId}.yaml`);
   if (!existsSync(fil)) return null;
-  return lasYaml(readFileSync(fil, 'utf8'))?.butik || null;
+  // HELA butiksfilen — villkoren (frakt, retur) ligger på toppnivån, inte
+  // under `butik:`. Med bara `butik:` fick reglerna undefined och friade
+  // "30 dagars garanti" på 40 TackleBay-annonser (mätt 2026-09-10).
+  const konfig = lasYaml(readFileSync(fil, 'utf8'));
+  return konfig?.butik ? konfig : null;
 }
 
 /** Texterna som villkorsskanningen jämför, märkta med den yta de står på —
@@ -216,9 +220,14 @@ export function läsTranskript(rot = SRT_ROT) {
 }
 
 /** Annonsnamn → transkriptnyckel: IBC_PD_1_H1 + slug "ibc" → ibc_pd_1_h1. */
-export function transkriptFör(annonsnamn, kalla, index) {
+export function transkriptFör(annonsnamn, kalla, index, annonsId = null) {
   const rest = annonsnamn.slice(prefixAv(annonsnamn, kalla.prefixen ?? kalla.annonsprefix).length).replace(/^_/, '');
   for (const slug of slugLista(kalla)) {
+    // Tvillingens eget transkript först (`…__<id>`, transkribera.py), sen namnets.
+    if (annonsId) {
+      const egen = `${slug}_${rest}__${annonsId}`.toLowerCase();
+      if (index.has(egen)) return { nyckel: egen, fil: index.get(egen) };
+    }
     const nyckel = `${slug}_${rest}`.toLowerCase();
     if (index.has(nyckel)) return { nyckel, fil: index.get(nyckel) };
   }
@@ -227,7 +236,7 @@ export function transkriptFör(annonsnamn, kalla, index) {
 
 function ytaTal(annons, kalla, index, extraOrd, ärVideo) {
   if (!ärVideo) return { yta: 'tal', tillämplig: false, dom: 'ej tillämplig (bildannons)' };
-  const träff = transkriptFör(annons.name, kalla, index);
+  const träff = transkriptFör(annons.name, kalla, index, annons.id);
   if (!träff) {
     return { yta: 'tal', tillämplig: true, transkript: null, träff: null, fynd: [], dom: 'okänd (inget transkript i repot)' };
   }
@@ -851,15 +860,15 @@ async function main() {
     }
     // Sjätte ytan: källbutikens villkor mot OPS-butikens egna. Talet läses ur
     // samma transkript som yta 2 redan hittat — gratis, inga krediter.
-    const talfil = transkriptFör(a.name, kalla, index);
+    const talfil = transkriptFör(a.name, kalla, index, a.id);
     const talrader = talfil ? readFileSync(talfil.fil, 'utf8').split('\n') : [];
     ytor.villkorsfel = butik
-      ? skannaVillkor(villkorstexter(a, ocr[a.name], talrader), butik)
+      ? skannaVillkor(villkorstexter(a, ocrPost, talrader), butik, { produkt })
       : [];
     const dom = klassa(ytor);
     const allText = [
       ...copyFält(a).map((f) => f.text),
-      ...(ocr[a.name]?.filer || []).flatMap((f) => (f.texter || []).map((t) => t.text)),
+      ...(ocrPost?.filer || []).flatMap((f) => (f.texter || []).map((t) => t.text)),
     ];
     rader.push({
       annons: a.name, id: a.id, typ: m.typ, status: a.effective_status,

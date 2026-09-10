@@ -15,13 +15,18 @@
 //
 // Bara `ren` och `bara-copy` läggs i konfigen. Allt annat står NAMNGIVET i
 // vagplan.json med orsak — räkningen (rakning.mjs) läser den listan.
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, copyFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname, resolve } from 'node:path';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = resolve(HAR, '..', '..', '..');
 const MEDIA = join(ROT, '.scratch', 'brand-detektor', 'Rodholder', 'media');
+// Bildannonserna: de brand-/villkorsfixade filerna (pipeline/oversatt-bild.py,
+// QA-bild bredvid varje) ligger här; en fixad fil gör annonsen körbar oavsett
+// vad källbilden dömdes till. Rena källbilder kopieras hit av generatorn så
+// bildlaunchern får EN imgdir.
+const BILD = join(ROT, '.scratch', 'tacklebay', 'se', 'bild');
 
 const KAMPANJ = 'TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10';
 const BRANDPREFIX = 'TackleBayRod';
@@ -36,7 +41,7 @@ const varianter = JSON.parse(readFileSync(join(HAR, 'se-copy-kallor.json'), 'utf
 const nyCopy = existsSync(join(HAR, 'se-copy-ny.json')) ? JSON.parse(readFileSync(join(HAR, 'se-copy-ny.json'), 'utf8')) : [];
 
 const domAv = new Map();
-for (const a of det.annonser ?? []) domAv.set(a.annons, a);
+for (const a of det.annonser ?? []) domAv.set(String(a.id ?? a.annons), a);
 const copyAv = new Map(nyCopy.map((c) => [Number(c.variant), c]));
 const variantAv = new Map();
 for (const v of varianter) for (const namn of v.annonser) variantAv.set(namn, v.variant);
@@ -50,7 +55,7 @@ const sedda = new Map();
 const plan = [];
 for (const a of se) {
   const k = koncept(a.adset.namn);
-  const d = domAv.get(a.namn);
+  const d = domAv.get(String(a.id)) ?? domAv.get(a.namn);
   const dom = d?.dom ?? 'odömd';
   const v = variantAv.get(a.namn);
   const copyNy = v != null ? copyAv.get(v) : null;
@@ -62,13 +67,25 @@ for (const a of se) {
     kalla: a.namn, id: a.id, typ: a.typ, koncept: k, spend: Math.round(a.utfall.spend), kop: a.utfall.kop,
     dom, malnamn, fil, variant: v, med: false, orsak: null,
   };
+  // Tvillingar (samma namn, olika video) har sedan körning 2 egna filer och
+  // egna transkript (`namn__id`), så de döms var för sig.
+  const ocrNyckel = n === 1 ? a.namn : `${a.namn}__${a.id}`;
+  const bildFixad = a.typ === 'bild' && existsSync(join(BILD, `${ocrNyckel}.jpg`));
+  if (a.typ === 'video') rad.fil = `${ocrNyckel}.mp4`;
   if (!k) rad.orsak = `okänt koncept i adsetnamnet "${a.adset.namn}"`;
-  else if (n > 1) rad.orsak = 'dubblettnamn i källan — OCR läste tvillingens fil; ögonkoll krävs innan uppladdning';
-  else if (dom === 'ren' || dom === 'bara-copy') {
-    if (!copyNy) rad.orsak = `copy saknas för variant ${v}`;
-    else if (!existsSync(join(MEDIA, fil))) rad.orsak = `mediafilen saknas: ${fil}`;
+  else if (!copyNy) rad.orsak = `copy saknas för variant ${v}`;
+  else if (a.typ === 'bild') {
+    if (bildFixad || dom === 'ren') {
+      mkdirSync(BILD, { recursive: true });
+      if (!bildFixad) copyFileSync(join(MEDIA, `${ocrNyckel}.jpg`), join(BILD, `${ocrNyckel}.jpg`));
+      rad.fil = `${ocrNyckel}.jpg`;
+      rad.med = true;
+      rad.fixad = bildFixad;
+    } else rad.orsak = `dom ${dom} — bilden inte fixad (${(d?.attgöra || []).join('; ').slice(0, 100)})`;
+  } else if (dom === 'ren' || dom === 'bara-copy') {
+    if (!existsSync(join(MEDIA, rad.fil))) rad.orsak = `mediafilen saknas: ${rad.fil}`;
     else rad.med = true;
-  } else rad.orsak = `dom ${dom}` + (d?.masteAtgardas ? ` — ${JSON.stringify(d.masteAtgardas).slice(0, 120)}` : '');
+  } else rad.orsak = `dom ${dom} — ${(d?.attgöra || []).join('; ').slice(0, 140)}`;
   plan.push(rad);
 }
 

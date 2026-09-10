@@ -1,0 +1,126 @@
+// se-tacklebay-video.config.mjs — TackleBay SE, byggd av /ny-annonser 2026-09-10.
+//
+// Källa: Bäverbutikens ACTIVE-annonser i "Fiskespöhållaren | BE ROAS 1.50 |
+// Launch 2026-08-18" (MagiBorsten 1867947880635861, 89 aktiva). Samma bevisade
+// creatives, ompekade till TackleBay: egen sida, egen pixel, egen produktsida.
+// ⚠️ MÅLET är MagiBorsten DK 915422744950975 — OPS Factorys gemensamma konto (SEK).
+// Priset 289 kr är IDENTISKT i källan och hos TackleBay — inga pristal ändrade.
+// Det som ändrats i copyn: fraktgränsen "över 300 kr" (TackleBay: fri frakt),
+// "30 dagars nöjd-kund-garanti" (TackleBay: 14 dagars ångerrätt enligt lag),
+// "40 % RABATT IDAG ENDAST" (finns inte), brådska och påhittade citat →
+// butikens sju riktiga femstjärniga recensioner. Copy av subagent (sonnet).
+// BE-ROAS 1,67 = 289 / (289 − 116) — utan moms (Axels besked 2026-09-09).
+// Genererad av factory/output/fiskespohallare-4-pack/bygg-vagkonfig.mjs.
+// Allt föds PAUSED — Axel skriver "Launch: TackleBay".
+export default {
+  act: 'act_915422744950975',
+  page: '1283919631474370',   // TackleBay (me/accounts: ADVERTISE, mätt 2026-09-10)
+  pixel: '1079980541064515', // TackleBay-pixeln, avfyrad 2026-09-10 18:07
+  country: 'SE',
+  campaignName: "TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+  link: 'https://tacklebay.se/products/fiskespohallare-4-pack',
+  dailyBudget: '100000', // öre SEK = 1000 kr/dag, CBO
+  campaignStatus: 'PAUSED',
+  adsetStatus: 'PAUSED',
+  adStatus: 'PAUSED',
+  videoDir: '../.scratch/brand-detektor/Rodholder/media',
+  adsets: [
+    {
+      name: "TACKLEBAY_SE_Spöhållaren - PD",
+      ads: [
+        { name: "TackleBayRod_PD_1_H1", file: "Fiskespöhållare_PD_1_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_EXTRA", file: "Fiskespöhållare_PD_EXTRA.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_B_PD_EXTRA", file: "Fiskespöhållare_PD_EXTRA__120249857099190291.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_16_H1", file: "Rodholder_PD_16_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_1_H2", file: "Fiskespöhållare_PD_1_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_23_H1", file: "Rodholder_PD_23_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_16_H2", file: "Rodholder_PD_16_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_3_H2", file: "Rodholder_PD_3_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_13_H2_H2", file: "Rodholder_PD_13_H2_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_17_H1", file: "Rodholder_PD_17_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_1_H3", file: "Fiskespöhållare_PD_1_H3.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_12_H1", file: "Rodholder_PD_12_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_3_H2_H2", file: "Rodholder_PD_3_H2_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_8_H2_H2", file: "Rodholder_PD_8_H2_H2.mp4",
+          copy: {"message":"Det här väntar i botten av lådan om spöna inte hålls stängda. 🎣\nKlämman stänger varje spö för sig – ingen härva, inga trassliga linor.\n✅ Håller ihopfällda spön säkert stängda\n✅ Fyra hållare, en plats var\nBeställ ditt 4-pack för 289 kr och slipp trasselbollen. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_13_H2_H1", file: "Rodholder_PD_13_H2_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_3_H1", file: "Rodholder_PD_3_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_4_H1", file: "Rodholder_PD_4_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_21_H2", file: "Rodholder_PD_21_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_15_H2", file: "Rodholder_PD_15_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_22_H1", file: "Rodholder_PD_22_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_11_H1", file: "Rodholder_PD_11_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_17_H2", file: "Rodholder_PD_17_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_5_H1", file: "Rodholder_PD_5_H1.mp4",
+          copy: {"message":"Det hugger – och tre spön ligger i trassel på däck. 🎣\nKlämman håller de andra spöna stängda medan du landar fisken.\n✅ Håller ihopfällda spön säkert stängda\n✅ Passar alla spön\nBeställ ditt 4-pack för 289 kr och var redo nästa gång det hugger. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_8_H1", file: "Rodholder_PD_8_H1.mp4",
+          copy: {"message":"Det här väntar i botten av lådan om spöna inte hålls stängda. 🎣\nKlämman stänger varje spö för sig – ingen härva, inga trassliga linor.\n✅ Håller ihopfällda spön säkert stängda\n✅ Fyra hållare, en plats var\nBeställ ditt 4-pack för 289 kr och slipp trasselbollen. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_22_H2", file: "Rodholder_PD_22_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_19_H2", file: "Rodholder_PD_19_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_8_H2_H1", file: "Rodholder_PD_8_H2_H1.mp4",
+          copy: {"message":"Det här väntar i botten av lådan om spöna inte hålls stängda. 🎣\nKlämman stänger varje spö för sig – ingen härva, inga trassliga linor.\n✅ Håller ihopfällda spön säkert stängda\n✅ Fyra hållare, en plats var\nBeställ ditt 4-pack för 289 kr och slipp trasselbollen. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_13_H1", file: "Rodholder_PD_13_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_19_H1", file: "Rodholder_PD_19_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_23_H2", file: "Rodholder_PD_23_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_18_H2", file: "Rodholder_PD_18_H2.mp4",
+          copy: {"message":"Hårsnodden runt spöet – strular igen? 🎣\nDen här klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler hårsnoddar som fastnar i linan\nBeställ ditt 4-pack för 289 kr och slipp snodden för gott. 👇","headline":"Slipp hårsnoddarna","description":""} },
+        { name: "TackleBayRod_PD_29_H1", file: "Rodholder_PD_29_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_25_H1", file: "Rodholder_PD_25_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_18_H1", file: "Rodholder_PD_18_H1.mp4",
+          copy: {"message":"Hårsnodden runt spöet – strular igen? 🎣\nDen här klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler hårsnoddar som fastnar i linan\nBeställ ditt 4-pack för 289 kr och slipp snodden för gott. 👇","headline":"Slipp hårsnoddarna","description":""} },
+        { name: "TackleBayRod_PD_26_H2", file: "Rodholder_PD_26_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_26_H1", file: "Rodholder_PD_26_H1.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_PD_25_H2", file: "Rodholder_PD_25_H2.mp4",
+          copy: {"message":"Trassliga fiskespön i båten – igen? 🎣\nDen här lilla klämman löser det på 1 sekund.\n✅ Håller ihopfällda spön säkert stängda\n✅ Inga fler trassliga linor\n✅ Passar alla spön\nBeställ ditt 4-pack idag och slipp trasslet för gott. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+      ],
+    },
+    {
+      name: "TACKLEBAY_SE_Spöhållaren - GT",
+      ads: [
+        { name: "TackleBayRod_GT_3_H1", file: "Rodholder_GT_3_H1.mp4",
+          copy: {"message":"Han har tre spön och ingen ordning på dem. 🎣\nFyra klämmor håller varje spö stängt och på sin plats – i bilen, båten eller förrådet.\n✅ Håller ihopfällda spön säkert stängda\n✅ Passar alla spön\n289 kr för ett 4-pack. Beställ till nästa fisketur. 👇","headline":"Presenten han faktiskt kommer använda","description":""} },
+      ],
+    },
+    {
+      name: "TACKLEBAY_SE_Spöhållaren - SP",
+      ads: [
+        { name: "TackleBayRod_SP_1_H3", file: "Fiskespöhållare_SP_1_H3.mp4",
+          copy: {"message":"\"Stabil och enkel. Jag är nöjd.\" 🎣\n– Daniel, recension hos TackleBay\n✅ Enkel att använda\n✅ Håller stadigt, gång på gång\n✅ 14 dagars ångerrätt\nSju recensioner, alla fem stjärnor. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_SP_1_H1", file: "Fiskespöhållare_SP_1_H1.mp4",
+          copy: {"message":"\"Stabil och enkel. Jag är nöjd.\" 🎣\n– Daniel, recension hos TackleBay\n✅ Enkel att använda\n✅ Håller stadigt, gång på gång\n✅ 14 dagars ångerrätt\nSju recensioner, alla fem stjärnor. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+        { name: "TackleBayRod_SP_1_H2", file: "Fiskespöhållare_SP_1_H2.mp4",
+          copy: {"message":"\"Stabil och enkel. Jag är nöjd.\" 🎣\n– Daniel, recension hos TackleBay\n✅ Enkel att använda\n✅ Håller stadigt, gång på gång\n✅ 14 dagars ångerrätt\nSju recensioner, alla fem stjärnor. 👇","headline":"Aldrig mer trassliga fiskespön","description":""} },
+      ],
+    },
+  ],
+};
