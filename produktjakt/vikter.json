@@ -1,8 +1,8 @@
 {
  "datum": "2026-09-10",
- "antal_svar": 10,
+ "antal_svar": 12,
  "per_dom": {
-  "ja": 3,
+  "ja": 5,
   "kanske": 4,
   "nej": 3
  },
@@ -23,10 +23,10 @@
     "score": 0.667
    },
    "husvagn och husbil": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 1,
-    "score": 0.5
+    "score": 0.6
    },
    "ved och eldning": {
     "ja": 0,
@@ -51,6 +51,12 @@
     "kanske": 1,
     "nej": 0,
     "score": 0.5
+   },
+   "vilthantering": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    }
   }
  },
@@ -61,7 +67,7 @@
    "nej": 0
   },
   "Känns rätt": {
-   "ja": 3,
+   "ja": 4,
    "kanske": 0,
    "nej": 0
   },
