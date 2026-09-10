@@ -1,8 +1,8 @@
 # /produktjakt — hitta nya produkter, lägg dem i offertarket, lär av Axels svar
 
 **Rutin, körs varje morgon 06:30 svensk tid** (cron `30 4 * * *` UTC), bunden till den fasta sessionen
-`session_016jBJVGuyny8S3j2XPSM26Z` (tagg `routine:produktjakt`) som har repot som källa — annars kan
-rutinen inte pusha. Uppdraget: hitta varor som liknar kontots vinnare (**inte** kedjevaror), räkna
+`session_016jBJVGuyny8S3j2XPSM26Z` (tagg `routine:produktjakt`, trigger `trig_01ER8txR7LN7QegEuARvzue6`)
+som har repot som källa — annars kan rutinen inte pusha. Uppdraget: hitta varor som liknar kontots vinnare (**inte** kedjevaror), räkna
 ekonomin, lägga dem i leverantörens offertark på sidan Axel öppnar, och **bli bättre av varje svar han ger**.
 Axel gör två saker: laddar ner arket, och trycker Ja/Kanske/Nej på varje produkt.
 
