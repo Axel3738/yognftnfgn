@@ -1,0 +1,955 @@
+diff --git a/.claude/commands/rond-auto.md b/.claude/commands/rond-auto.md
+index 441e8d0..0f62a02 100644
+--- a/.claude/commands/rond-auto.md
++++ b/.claude/commands/rond-auto.md
+@@ -22,12 +22,14 @@
+ Automatläget av `/rond`. **Axels stående beslut 2026-08-29:** ronden får skala
+ upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
+ 
+-**Tolkningsregel (Axel 2026-08-30):** när körordern (trigger-prompten) säger
+-"utför bara det som står i plan.atgarder" syftar det på BUDGETÄNDRINGARNA i
+-Meta. Annonsbehoven i steg 4b är fortfarande obligatoriska — alla
+-förstabatcher och alla förfallna brief-rundor, utan tak (se 4b). En körning
+-som lämnar förfallna behov utan åtgärd och utan redovisning är INTE klar. (Körningen 2026-08-30 hoppade över hela kön på den
+-meningen — det var fel tolkning.)
++**Tolkningsregel (Axel 2026-08-30, omskriven 2026-09-10):** när körordern
++(trigger-prompten) säger "utför bara det som står i plan.atgarder" syftar det
++på BUDGETÄNDRINGARNA i Meta. **Startskotten i steg 4b är fortfarande
++obligatoriska** — varje `forsta_batch`-behov ska ge ett larm, utan tak. En
++körning som lämnar ett passerat test utan larm och utan redovisning är INTE
++klar. *(Körningen 2026-08-30 hoppade över hela kön på den meningen — det var
++fel tolkning. Regeln gällde då brief-rundorna; de finns inte längre, men
++samma tolkning gäller startskotten.)*
+ 
+ Ronden KÖRS varje dag, men varje produkts BUDGET ändras högst var tredje dag —
+ utom snabbspåret: en produkt i skalningszonen med ROAS ≥ 3 får höjas 20 %
+@@ -160,8 +162,9 @@ För varje åtgärd i `plan.atgarder`:
+ 
+ **Startas en kampanj om igen** — av Axel, eller för att en avstängning visade
+ sig vara fel — ska det loggas med kod `ATERAKTIVERA`, `genomford: true`. Utan
+-den raden tror ronden att kampanjen fortfarande är död och ger den aldrig mer
+-briefer (`arAvstangd` i `agent/rond.mjs` läser exakt de två koderna). Använd
++den raden tror ronden att kampanjen fortfarande är död och skjuter aldrig ett
++startskott för den, hur bra den än går
++(`arAvstangd` i `agent/rond.mjs` läser exakt de två koderna). Använd
+ `ads_activate_entity` — `ads_update_entity` med `{"status":"ACTIVE"}` svarar
+ `status_forced_to_paused: true` och ändrar ingenting.
+ 
+@@ -232,206 +235,105 @@ budgetloggen som historik och ska läsas, inte återanvändas.
+ - Aldrig starta något som är pausat. Ronden stänger av; den startar aldrig på.
+ - Aldrig röra priser, texter, creatives, målgrupper eller andra konton.
+ 
+-## 4b. Annonsbatcherna (Axels beslut 2026-08-29: rutinen kör dem själv, var tredje dag)
++## 4b. Startskottet (Axels beslut 2026-09-10 — ersätter hela annonshalvan)
+ 
+-Det här är rutinens andra jobb, lika viktigt som budgetarna: **varje produkt
+-med en batch ska få sin nya brief-runda var tredje dag.** `annonsbehov` i
+-utfallet listar allt som är förfallet, färdigsorterat (första batchen först,
+-sen rundorna med äldst batch först).
++**Ronden gör inga briefer längre.** Fram till 2026-09-10 byggde den en hel
++creative-batch och en ny Notion-hub varje gång en produkt passerade testet,
++och en brief-runda var tredje dag därefter. Allt det är borttaget.
++
++I stället gör den **en enda sak**: postar ett startskott i Discord-kanalen
++`#ops-startskott` när en produkt klarat testet. Meddelandet säger att
++produkten ska få en egen OPS-butik, och bär det färdiga `/ny-ops`-kommandot.
++
++> **Axels ord 2026-09-10:** *"Istället för att göra nya briefs och såna grejer
++> ska vi inte göra det alls. Vi skickar bara ett Discord-meddelande. Det är
++> det enda som den behöver göra istället för att göra en massa creative
++> strategy och göra nya Notion-grejsmojser och sånt."*
++
++**Vad rutinen därför ALDRIG gör längre:**
++- Skriver briefer. Varken förstabatcher eller 3-dagarsrundor.
++- Skapar Notion-hubbar. Duplicerar aldrig `Creative hub MALL`.
++- Skapar Notion-items, Drive-mappar eller minnesfiler i `products/<id>/`.
++- Kör `/forsta-batch` eller `/cs`.
++- Loggar `FORSTA_BATCH_KLAR` eller `CS_BATCH_KLAR`.
++
++Kvällens bildannons-rutin (`/bildannonser`, 20:00) och leveransrundan
++(`/notionkorning`, 13:20) är egna rutiner och berörs inte. De rullar vidare.
++
++### Så här körs det
++
++`annonsbehov` i `agent/rond.mjs` räknas som förut — matematiken är orörd.
++Skillnaden är vad du gör med den:
++
++| Behov | Vad ronden gör nu |
++|---|---|
++| `forsta_batch` | **Startskott** — posta larmet, logga `OPS_STARTSKOTT` |
++| `brief_runda` | **Ingenting.** Nämn den inte ens i rapporten. |
++| `ersatt` | **Ingenting.** |
++| `mata_vinnare` | **Ingenting.** |
++
++`forsta_batch` betyder att produkten passerat **1 500 kr total spend OCH
++minst 20 % vinst** (`FORSTA_BATCH_SPEND_SEK` / `FORSTA_BATCH_VINST_PROCENT`
++i `agent/rond.mjs`). Rör aldrig de talen — de är Axels och de är testade.
+ 
+ ⚠️ **BARA SVERIGE.** `annonsbehov` är tomt för NO-körningen och ska så vara.
+-De norska annonserna är de svenska annonserna översatta i ett eget flöde
+-(`/translate-no`) — Norge behöver aldrig egna briefer, egen Notion-hub eller
+-eget produktminne. I NO-kontot gör ronden **bara** budget upp och ner.
+-*(Axels besked 2026-09-01. Innan spärren byggde rutinen två norska hubbar och
+-lät dem äta tre av sex briefplatser på tre morgnar.)*
+-
+-**Så många körs per morgon (Axels beslut 2026-09-01):**
+-
+-1. **Alla `forsta_batch` — inget tak.** Kör dem först och kör dem alla. En
+-   produkt får en förstabatch exakt en gång, så kön tar slut av sig själv.
+-   Det är här pengarna finns: en produkt som passerat 1 500 kr på ≥20 % vinst
+-   står och väntar på material den redan förtjänat.
+-2. **Sedan alla `brief_runda` — inget tak heller**, äldst först. Axels
+-   besked 2026-09-02: "jag tar hellre några briefs för mycket, jag har ett
+-   överflöd av redigerare." Hinner körningen inte hela kön: det som inte
+-   fick sin `*_KLAR`-rad flaggas igen imorgon (det är så kön är byggd) —
+-   lista i svaret exakt vilka som blev kvar.
+-
+-*(Taket hette tidigare två poster totalt, sedan två rundor. Bägge var
+-räknade för sex produkter; kontot hade 17 aktiva kampanjer den 1 september
+-och Soptunneklistermärkena stod 12 dagar utan runda.)*
+-
+-🛑 **STOPP — LÄS KAMPANJENS STATUS INNAN DU SKRIVER EN ENDA BRIEF.** Hämta
+-kampanjen med `ads_get_ad_entities` (`effective_status`) direkt före batchen.
+-Är den något annat än `ACTIVE`: hoppa över produkten, skapa INGEN Notion-hub,
+-skriv INGA briefer, logga INGEN `*_KLAR`-rad, och skriv en rad i leveransen om
+-att den hoppades över för att den är pausad.
+-
+-**Att ronden själv pausade kampanjen samma morgon är inget undantag — det är
+-det vanligaste fallet.** En kampanj du stängde av i steg 3 får inte briefer i
+-steg 4b. Aldrig. Att bygga material till en kampanj som inte kör är slöseri med
+-redigerarnas tid, och det ser i Notion ut som arbete som betyder något.
+-
+-`annonsbehov` filtrerar numera bort tre saker: domarna `STANG_AV` och
+-`ATGARDSTRAPPAN`, och varje kampanj vars senaste genomförda livscykelrad i
+-budgetloggen är `STANG_AV` (`arAvstangd` i `agent/rond.mjs`). Dyker en pausad
+-produkt ändå upp i behovslistan är loggen fel — fixa loggen, bygg inte batchen.
+-
+-*(Två larm från Axel. 2026-09-02: Kranskydd Frost 420D var pausad och fick ändå
+-9 briefer. 2026-09-04: Medicinasken i Fickformat, Kasta & Fånga-settet och
+-Bordtennisnätet stängdes av på morgonen och fick 47 briefer och tre nya
+-Notion-hubbar av samma körning — via `ersatt`-behov som avstängningen själv
+-utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
+-`TRAPPA_FORLANGNING`, alltså när enskilda annonser pausats men kampanjen kör.)*
+-
+-**Batchens innehåll (Axel 2026-09-02):**
+-- **Fler videor.** Redigerarna är många — minst två tredjedelar av varje
+-  batch är video. Förstabatch: sex nya videokoncept + variationer på
+-  vinnarna + sex statiska. Brief-runda: `rundaAntal` annonser (dubbla
+-  veckokvoten, minst fyra), varav högst två statiska.
+-- **Statiska på samma nivå som förut** — plus två extra serier som Axel
+-  bestämde 2026-09-02 ("bilder är billiga, gör extra bara för att"):
+-  - **+3 BOF-bilder per batch** (bottom of funnel — till den som redan sett
+-    produkten): pris/erbjudande, garanti/fri frakt, jämförelse eller
+-    invändning. Samma mall, samma tre-frågorstest.
+-  - **+2 review-bilder per batch** byggda på **riktiga recensioner** ur
+-    produktsidan eller Judge.me — citatet ordagrant, aldrig omskrivet, aldrig
+-    påhittat. Finns inga recensioner: inga review-bilder, och skriv det i
+-    leveransen. *(Sömnadskitet 2026-09-02: en review-bild gick ut med
+-    nonsenstext som "citat". Det får aldrig hända igen.)*
+-  Serierna räknas utöver `rundaAntal`/förstabatchens antal.
+-- **Briefens format är mallen i `forsta-batch.md` (LEVERANSFORMAT).** Enkel,
+-  kort, samma struktur varje gång. Tre-frågorstabellen är obligatorisk på
+-  varje svensk rad — en rad med ett ❌ går inte ut.
+-
+-- Behov `forsta_batch` → produkten har passerat 1 500 kr OCH ligger på minst
+-  **20 % vinst**. Under det flaggas ingenting: produkten chillar och prövas om
+-  nästa dygn. Bygg ALDRIG en batch för en produkt som inte står i listan.
+-  Följ `.claude/commands/forsta-batch.md` i sin helhet
+-  (analys → briefer → Drive → Notion). Strategin görs FÖRST, sedan läggs
+-  annonserna i produktens Notion-hub — det är där Jasper och redigerarna ser
+-  dem, via det vanliga veckoflödet. **Rutinen skriver briefer — den gör aldrig
+-  själva annonserna. Redigerarna gör annonserna.**
+-  ⚠️ Drive: batchmappen läggs i produktens BEFINTLIGA mapp (Joshs) — ALDRIG
+-  ny mapp i `BÄVER/Products`, det är lanseringskön. Exakt regel i
+-  forsta-batch.md punkt 5.
+-- Behov `brief_runda` (och `ersatt`/`mata_vinnare` på en produkt som redan har
+-  minne i `products/<id>/`) → följ `.claude/commands/cs.md`. Står det ett
+-  "Fokus:" i orsaken styr det rundans inriktning.
+-  **Saknar produkten minnesfiler** (ingen `products/<id>/dna.md`, inte heller i
+-  `git log --all` — händer när batchen är historisk, gjord före systemet) →
+-  kör `.claude/commands/forsta-batch.md`-flödet i stället, det bygger minnet
+-  från noll. Logga ändå `CS_BATCH_KLAR` (produkten HAR redan haft en batch).
+-  ⚠️ Den här specialregeln är INGEN väg runt statusspärren ovan. Saknade
+-  minnesfiler på en pausad kampanj betyder att produkten är död utan minne —
+-  inte att den ska få en förstabatch. Kolla status först, alltid.
+-- **Rundans storlek = `rundaAntal`** i behovsraden — dubbla veckokvoten,
+-  aldrig under fyra (`rundkvot` i `agent/rond.mjs`). Axel 2026-09-02: "jag tar
+-  hellre några briefs för mycket, jag har ett överflöd av redigerare." För
+-  `forsta_batch` gäller i stället hela veckokvoten (`veckokvot` i utfallet).
+-- **Ny produkt utan Notion-hub:** bygg ALDRIG en hub från grunden och klona
+-  ALDRIG schemat via create-database — då blir statusarna svenska
+-  (Inte påbörjad/Pågår/Klar) och hubben hamnar utanför teamspacen. Fel båda
+-  gångerna det testades 2026-08-29. Gör i stället:
+-  1. Duplicera den TOMMA mallen **"Creative hub MALL"**
+-     (id `3cc270ab-908c-8005-a50e-db6b1b179794`, Axels mall i
+-     Bäverbutiken-teamspacen) med notion-duplicate-page. Dubbletten ärver
+-     engelska statusar (Draft, In progress, In progress 2, Approved …), alla
+-     vyer OCH teamspace-platsen. Verifierat 2026-08-30.
+-  2. Dupliceringen är asynkron — vänta och hämta om tills databasen finns,
+-     döp sedan om via notion-update-data-source till
+-     "<Produktnamn på engelska> creative hub".
+-  3. **Åtkomsten ärvs från MALLEN — den går inte att sätta via API:t.**
+-     En dubblett hamnar där originalet ligger. Ligger `Creative hub MALL`
+-     privat blir VARJE ny hub privat, och redigerarna ser ingenting.
+-     Notion-MCP:n har inget verktyg för att dela en sida eller sätta
+-     behörigheter — det finns bara i Notions gränssnitt.
+-     ⚠️ **`<ancestor-path>` går INTE att använda för att avgöra det här**
+-     (Axels rättelse 2026-09-05). Ett tomt `<ancestor-path>` vid notion-fetch
+-     betyder INTE att hubben är privat — testat mot en hubb redigerarna
+-     garanterat redan jobbar i (rader i "Translation in review") och den gav
+-     samma tomma fält. Verktyget fyller uppenbarligen aldrig i fältet för
+-     databaser i det här workspacet, oavsett delning. Ett falskt larm gick ut
+-     till Discord 2026-09-05 på grund av detta.
+-     Misstänker du att en ny hubb ändå ligger privat (redigerarna säger de
+-     inte ser den, eller `Creative hub MALL` själv har flyttats/ändrats
+-     nyligen): fråga Axel rakt av i stället för att lita på ett Notion-fält.
+-     Skapa items som vanligt — arbetet ska aldrig hållas tillbaka på en
+-     ogrundad misstanke.
+-     *(Axels larm 2026-09-02 om privata hubbar var på riktigt då — problemet
+-     kan fortfarande finnas. Det är bara den här diagnosmetoden som är värdelös.)*
+-  4. Skapa items med notion-create-pages: Status "Draft",
+-     Typ **"Video - Pending Approval"** för video och
+-     **"Image - Pending Approval"** för bildannonser (Axels nya typ i mallen).
+-  Går mallen inte att hitta: skapa INGEN hub — lista i svaret exakt vilka
+-  items som skulle skapats och säg det till Axel.
+-  **HELA BRIEFEN SKA LIGGA I NOTION-ITEMET** (Axels besked 2026-09-02). Sidans
+-  innehåll ÄR briefen: hypotes, hook-tabell, shot list med svenska rader i
+-  `Swedish (use this) | English meaning`, creator/editing direction, CTA, KPI,
+-  globala regler — allt. Drive-länken till batchmappen är ett komplement som
+-  läggs överst, aldrig ersättningen. **Skriv ALDRIG "se brief.md i Drive" eller
+-  en länk till en .md-fil** — redigerarna kan inte öppna dem, och en Notion-sida
+-  med bara en länk är en tom brief. *(Hände 2026-08-31: alla 12 kamera-items
+-  innehöll tre rader och länken `http://brief.md`. Redigerarna stod stilla en
+-  hel dag och Axel fick "I can't access the links" i Slack.)*
+-  Innan `*_KLAR` loggas: öppna ETT av de skapade itemen med notion-fetch och
+-  kontrollera att shot list/design brief faktiskt står där. Saknas den är
+-  batchen inte klar.
+-  **ALLT som skrivs i Notion är på ENGELSKA** — itemnamn, statusar, innehåll,
+-  kommentarer. Redigerarna läser inte svenska.
+-  Anteckna hubbens id + Drive-mappens id i `agent/produktkarta.json`.
+-- När batchen är klar OCH uppladdad till Notion: skriv en loggrad med kod
+-  `FORSTA_BATCH_KLAR` (respektive `CS_BATCH_KLAR`), `genomford: true` —
+-  det är den raden som startar om 3-dagarsklockan.
+-- **Minnesfilerna** (`products/<id>/dna.md`, `batch-log.md`, `backlog.md`):
+-  skriv dem i arbetskopian som vanligt och **committa + pusha dem** i samma
+-  push som loggraden. En batch vars minnesfiler inte är pushade är INTE klar.
+-- Hinner en batch inte bli klar (avbrott, fel): logga ingenting med *_KLAR —
+-  då flaggas behovet igen imorgon och batchen görs om hel.
+-
+-## 4c. Notion-svepet — vilka hubbar finns, och vad ska produceras
+-
+-Körs **varje morgon**, före leveransen. Utan det här upptäcker varken du eller
+-Discord-boten att en ny produkt fått en creative hub, och arbetet blir osynligt.
+-
+-0. **Sug forst Product test center SE BAVER**
+-   (`collection://d80270ab-908c-839b-9dcc-8721c5f29570`). Det ar dar NYA
+-   produkter bor, och sjalva produktsidan bar arbetet: voiceover-manus per
+-   koncept, hooks och Drive-lankar. Hamta allt med Status `Ads review`,
+-   `Ready to launch`, `In progress` och `Testing`. **Hoppa aldrig over det har
+-   steget** — en tidigare korning sa "det finns inget arbete" nar 18 produkter
+-   lag i Testing, for att den bara tittat i creative hubs.
+-
+-1. `notion-search` på `creative hub`, `page_size: 25`, `max_highlight_length: 0`.
+-   ⚠️ Sok ocksa pa produktnamnen ur produktkartan. Hubben for fiskespohallaren
+-   heter bara "Fish rod holder" — en sokning pa "creative hub" missar den helt.
+-   Svaret innehåller `is_archived` per träff — **använd det fältet**, gissa
+-   aldrig utifrån namnet. Axel arkiverar allt som inte körs längre.
+-2. För varje hub som **inte** är arkiverad: `notion-fetch` på dess id och läs ut
+-   `collection://…`-URL:en ur `<data-source url="…">`.
+-   Hubbar som redan står i `agent/notion-uppgifter.json` har sin collection
+-   sparad — hoppa över hämtningen för dem.
+-3. Fråga varje collection:
+-   ```sql
+-   SELECT "Namn", "Typ", "Status", "Prioritet" FROM "collection://…"
+-   WHERE "Typ" IN ('Video - Pending Approval','Image - Pending Approval')
++En norsk kampanj utlöser aldrig ett startskott — norska annonser är svenska
++annonser översatta i ett eget flöde.
++
++För varje `forsta_batch`-behov, i ordning:
++
++1. **Har startskottet redan gått?** `startskottHarGatt(logg, kampanj_id)` i
++   `agent/startskott.mjs` läser budgetloggen. Är den `true`: hoppa över
++   produkten helt och nämn den inte. Ett larm som kommer varje morgon slutar
++   folk läsa.
++
++2. **Läs kampanjens status.** Hämta den med `ads_get_ad_entities` direkt före
++   larmet. Är `effective_status` något annat än `ACTIVE`: hoppa över, och
++   skriv en rad i leveransen om varför. **Att ronden själv pausade kampanjen
++   samma morgon är inget undantag** — en produkt som just stängdes av ska
++   inte få en egen butik byggd.
++
++3. **Hitta källänken.** Startskottet är värdelöst utan den — VA:n ska kunna
++   klistra in `/ny-ops <länk>` utan att leta. Ta produktsidans URL på
++   bäverbutiken.se. Hittar du den inte: posta larmet ändå, men skriv
++   `KÄLLÄNK SAKNAS` i produktfältet och säg det i leveransen. **Gissa aldrig
++   en URL.**
++
++4. **Posta larmet.**
++
++   ```bash
++   node agent/startskott.mjs --jobb <fil.json>
+    ```
+-   **Filtrera på inkludering, aldrig på uteslutning.** Guideline, SOP, Feedback
+-   och `Winning Creative` är dokumentation och räknas aldrig som annonser —
+-   filtrerar du bort dem i stället smyger nya stödsidor in i mätningen.
+-4. Skriv om `agent/notion-uppgifter.json`: levande hubbar med collection-id,
+-   arkiverade hubbar, och alla rader med Status `Draft`. Sätt `uppdaterad` till
+-   dagens datum. **Committa och pusha filen.**
+-5. Rapportera i leveransen:
+-   - **Nya hubbar sedan igår** (fanns inte i filen innan) — det är signalen att
+-     en produkt börjat rulla.
+-   - Hubbar som blivit arkiverade sedan igår.
+-   - Antal drafts per produkt, uppdelat på video och bild.
+-
+-Hittar du en hub som saknar produkt i `agent/produktkarta.json`, eller en
+-kampanj i produktkartan som saknar hub: säg det. Det är oftast en glömd
+-uppsättning, inte ett fel i datan.
++
++   Jobbfilen skrivs av dig ur rondens egna siffror och måste bära:
++   `produkt`, `kampanj_id`, `kalla_url`, `spend_total`, `kop`, `cpa`,
++   `break_even_cpa`, `roas`, `vinst_procent` — plus `datum`.
++   **Skriptet vägrar om ett tal saknas.** Det är med flit: hellre inget larm
++   än ett larm med ett påhittat tal. Hitta aldrig på ett värde för att komma
++   förbi spärren; skriv i stället i leveransen vilket tal som fattades.
++
++   Kör `--torr` först om du vill se meddelandet utan att posta.
++
++5. **Logga.** Skriv raden från `byggLoggrad` i `agent/budgetlogg.jsonl`
++   (kod `OPS_STARTSKOTT`, `genomford: true`), committa och pusha **direkt**.
++   Nekas pushen: larma i svaret. Utan raden går larmet ut igen imorgon.
++
++   ⚠️ Loggraden får aldrig bära `ny_budget`. `dagarSedanAndring` i
++   `agent/logg.mjs` räknar varje genomförd rad med det fältet som en
++   budgetändring, och då fryses kampanjen i tre dygn utan att någon rört
++   budgeten. `byggLoggrad` utelämnar fältet — lägg inte till det.
++
++### Provlarmet
++
++Hela kedjan går att testa utan att vänta på en riktig produkt:
++
++```bash
++node agent/startskott.mjs --test --torr   # visa provlarmet, posta inget
++node agent/startskott.mjs --test          # posta provlarmet skarpt
++```
++
++Provlarmets tal är påhittade och produktnamnet säger att det är ett test.
++Kopiera dem aldrig in i en riktig körning.
+ 
+ ## 5. Logga
+ 
+@@ -453,9 +355,9 @@ publicera ingen artefakt — se blocket högst upp i filen.
+ därmed inte sparades. Försök inte rädda dem någon annan väg.
+ 
+ Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
+-sköts upp och varför, om något larmade — och vilka brief-rundor/batcher som
+-kördes (produkt + antal briefer + Notion-länk) respektive ligger kvar i kön
+-till imorgon. Inga bibelsvar.
++sköts upp och varför, om något larmade — och **vilka startskott som gick ut**
++(produkt + siffrorna). Gick inget startskott: skriv ingenting om det.
++Inga bibelsvar.
+ 
+ **Skicka samma korta rapport till Discord** (Axels order 2026-08-30) —
+ **på ENGELSKA.** Allt som postas som Bävern läses av det engelsktalande
+@@ -468,14 +370,18 @@ node agent/discord-post.mjs --kanal ronden "Daily round <datum>" "<rapporten i M
+ ```
+ 
+ ⚠️ **ALLT som postas i Discord skrivs på ENGELSKA** — rubrik och brödtext, i
+-alla tre kanalerna (`ronden`, `uppgifter`, `larm`). Redigerarna läser samma
+-kanaler som Axel och förstår inte svenska. Produktnamnen behålls som de heter i
+-Meta (t.ex. "Båtmotorskyddet 420D"), resten översätts: SKALA → "Scaled up",
+-SANK → "Scaled down", STÄNG AV → "Paused", uppskjuten → "Deferred",
+-brief-runda → "brief round", förstabatch → "first batch". Svaret till Axel i
+-chatten är fortfarande på svenska. *(Axels order 2026-09-02 — samma dag
++kanalerna `ronden` och `larm`. Redigerarna läser samma kanaler som Axel och
++förstår inte svenska. Produktnamnen behålls som de heter i Meta (t.ex.
++"Båtmotorskyddet 420D"), resten översätts: SKALA → "Scaled up", SANK →
++"Scaled down", STÄNG AV → "Paused", uppskjuten → "Deferred". Svaret till Axel
++i chatten är fortfarande på svenska. *(Axels order 2026-09-02 — samma dag
+ postades rapporten på svenska och redigerarna kunde inte läsa den.)*
+ 
++⚠️ **Ett enda undantag: `#ops-startskott` skrivs på SVENSKA.** Den kanalen
++läses av Axel och VA:n, inte av redigerarna, och Axel skrev mallen själv på
++svenska 2026-09-10. Texten byggs av `agent/startskott.mjs` — skriv den aldrig
++för hand och översätt den aldrig.
++
+ Skriptet sköter kanalval, delning över 2 000-teckengränsen, rate limits och
+ **pingarna** (Axel 2026-09-02: varje post pingar personerna i `pinga` i
+ `agent/discord.json` — i dag confident_otter_25993 och ecom_chadking). Skriv
+@@ -486,11 +392,12 @@ det på en rad i svaret. Varje rutin har sin egen kanal
+ standardkanalen i stället för att tystna.
+ 
+ Posta dessutom, i **egna** poster:
+-- `--kanal uppgifter` varje gång nya uppgifter går ut till redigerarna
+-  (brief-runda eller förstabatch klar): produkt, antal briefer, Notion-länk.
+ - `--kanal larm` när något kräver Axel: `STOR_SPEND_UTAN_KOP`, `plan.sparrad`,
+   misslyckad verifiering efter en Meta-skrivning.
+ 
++Startskotten postas **inte** härifrån — `agent/startskott.mjs` gör det själv
++i steg 4b, i sin egen kanal och på svenska.
++
+ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
+ 
+ ## DEFINITION OF DONE
+@@ -500,14 +407,13 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
+ - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
+ - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
+ - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
+-- [ ] Alla `forsta_batch` körda (inget tak) + högst två `brief_runda`, med
+-      *_KLAR-loggrad och minnesfiler pushade — eller exakt redovisat varför inte
+-- [ ] Inga briefer, hubbar eller minnesfiler skapade för NO — Norge är bara budget
+-- [ ] Ingen dom om privat/delad hubb fälld på `ancestor-path` (trasig signal, se 4b) — misstanke går till Axel som en fråga, inte som ett påstående
+-- [ ] Ett skapat Notion-item öppnat och kontrollerat: hela briefen står i sidan, ingen `.md`-länk
++- [ ] Varje `forsta_batch`-behov har fått ett startskott i `#ops-startskott` —
++      eller exakt redovisat varför inte (redan larmat, kampanjen inte ACTIVE,
++      källänk saknas)
++- [ ] Varje startskott loggat som `OPS_STARTSKOTT` och pushat
++- [ ] **Inga briefer, inga Notion-hubbar, inga Notion-items, inga minnesfiler
++      skapade** — varken för SE eller NO. Ronden gör inte det längre.
++- [ ] Inga startskott för NO — Norge är bara budget
+ - [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
+ - [ ] Ingen artefakt publicerad och `agent/dashboard.mjs` inte körd
+-- [ ] Notion-svepet kört: hubbar avlästa med `is_archived`, drafts hämtade,
+-      `agent/notion-uppgifter.json` omskriven med dagens datum och pushad
+-- [ ] Nya och nyss arkiverade hubbar redovisade i leveransen
+ - [ ] Kort svar till Axel enligt svarsformatet i CLAUDE.md regel 14
+diff --git a/agent/README.md b/agent/README.md
+index cf8b74f..d9ffa52 100644
+--- a/agent/README.md
++++ b/agent/README.md
+@@ -89,28 +89,32 @@ dem oförändrade — inte att bedöma dem.
+   `/rond` finns kvar som manuellt läge. Dashboarden för människor:
+   `agent/dashboard.mjs` → https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81
+ 
+-## Annons-triggern
+-
+-Ronden flaggar produkter som behöver nya annonser (`/rond-auto` steg 4b).
+-**Bara Sverige** — Norge kör översatta svenska annonser och får aldrig egna
+-briefer (Axel 2026-09-01). Alla förstabatcher och alla förfallna brief-rundor
+-körs samma morgon, utan tak — Axel har fler redigerare än briefer
+-(2026-09-02). Rundan är dubbla veckokvoten, minst fyra, mest video.
+-
+-- **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst — utan en
+-  riktig batch** → första batchen (`/forsta-batch`). Det är övergången
+-  test → skalning; en förlorare vid tröskeln går åtgärdstrappan i stället.
+-  **Under 20 % vinst chillar produkten** och prövas om nästa dygn — ingen
+-  batch byggs. Okänd vinst räknas aldrig som godkänd. Axels besked 2026-08-31.
++## Startskottet (ersatte annons-triggern 2026-09-10)
++
++⚠️ **Ronden gör inga briefer längre.** Axels beslut 2026-09-10: i stället för
++att bygga en creative-batch och en ny Notion-hub när en produkt klarar testet,
++postar ronden **ett Discord-meddelande** i `#ops-startskott` som säger att
++produkten ska få en egen OPS-butik. Ingen creative strategy, inga nya
++Notion-databaser, inga brief-rundor.
++
++- **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst** → startskott
++  (`agent/startskott.mjs`, loggas som `OPS_STARTSKOTT`). Det är övergången
++  test → egen butik; en förlorare vid tröskeln går åtgärdstrappan i stället.
++  **Under 20 % vinst chillar produkten** och prövas om nästa dygn. Okänd vinst
++  räknas aldrig som godkänd. Axels besked 2026-08-31.
+   *(Kravet hette bara "över break-even" fram till dess. Det var för trubbigt:
+   Plyschtofflorna låg 2,4 % över och fick 12 briefer byggda samma morgon som
+   ronden själv skrev "tunn marginal, se över priset".)*
+-- **Material pausat av trappan/avstängning senaste veckan** → ersätt (`/cs`).
+-- **2+ höjningar på en vecka** → mata vinnaren (`/cs`).
++- **Bara Sverige.** En norsk kampanj utlöser aldrig ett startskott.
++- `brief_runda`, `ersatt` och `mata_vinnare` räknas fortfarande av
++  `annonsbehov` — men ronden gör ingenting med dem. Matematiken är kvar orörd
++  så den går att slå på igen; utfallet är borttaget.
+ 
+-En klar batch loggas som `FORSTA_BATCH_KLAR`/`CS_BATCH_KLAR` och tystar
+-produktens behov i sju dagar. Brieferna landar i produktens Notion-hub —
+-samma kö som redigerarna redan jobbar ur.
++Ett skickat startskott loggas som `OPS_STARTSKOTT` och tystar produkten för
++gott — larmet går en gång, aldrig igen.
++
++Bildannonserna (`/bildannonser`, 20:00) och leveransrundan
++(`/notionkorning`, 13:20) är egna rutiner och berörs inte.
+ 
+ ## Så räknas break-even
+ 
+diff --git a/agent/discord.json b/agent/discord.json
+index 5cf5a48..0df1a54 100644
+--- a/agent/discord.json
++++ b/agent/discord.json
+@@ -22,7 +22,11 @@
+     "launcher": "new-products-coing-out",
+     "translation": "translation-till-norge-av-nya-produkter",
+     "larm": "general",
+-    "chatt": "general"
++    "chatt": "general",
++    "startskott": "ops-startskott"
++  },
++  "sprak_undantag": {
++    "ops-startskott": "SVENSKA. Enda undantaget fran engelska-regeln ovan. Kanalen lases av Axel och VA:n, inte av redigerarna, och Axel skrev mallen sjalv pa svenska i sitt eget svarsformat 2026-09-10. Oversatt den aldrig 'for konsekvensens skull'. Texten byggs av agent/startskott.mjs."
+   },
+   "kanal_id": {
+     "scaling": "1543546164199161887",
+@@ -30,6 +34,7 @@
+     "new-products-coing-out": "1543546469884362833",
+     "translation-till-norge-av-nya-produkter": "1543546518785495151",
+     "general": "1540322131148013580",
++    "ops-startskott": "1547549671239720990",
+     "read-me": "1543641075657220126",
+     "kalendrar": "1540553128179531786",
+     "kalendrar-som-ska-runna": "1540553097636614254",
+diff --git a/agent/startskott.mjs b/agent/startskott.mjs
+new file mode 100644
+index 0000000..0ac5469
+--- /dev/null
++++ b/agent/startskott.mjs
+@@ -0,0 +1,273 @@
++#!/usr/bin/env node
++// STARTSKOTTET — larmet som säger att en produkt klarat testet på
++// Bäverbutiken och ska få en egen OPS-butik.
++//
++// **Axels beslut 2026-09-10.** Ronden slutar göra briefer. Tidigare byggde
++// den en hel creative-batch och en ny Notion-hub varje gång en produkt
++// passerade testet. Nu gör den EN sak i stället: postar det här meddelandet
++// i Discord-kanalen #ops-startskott. Ingen creative strategy, inga nya
++// Notion-databaser, inga brief-rundor. Budgethalvan av ronden är oförändrad.
++//
++// Skriptet RÄKNAR ALDRIG. Det formaterar tal som `agent/rond.mjs` redan
++// räknat ut, och vägrar om ett tal saknas. Skälet står i agent/README.md:
++// ligger räkningen i kod blir svaret detsamma varje gång och går att testa.
++// Tröskeln är FORSTA_BATCH_SPEND_SEK (1 500 kr) och
++// FORSTA_BATCH_VINST_PROCENT (20 %) i agent/rond.mjs — rör dem inte här.
++//
++//   node agent/startskott.mjs --jobb <fil.json> --torr   # visa, skicka inget
++//   node agent/startskott.mjs --jobb <fil.json>          # posta i Discord
++//   node agent/startskott.mjs --test --torr              # provlarmet, torrt
++//   node agent/startskott.mjs --test                     # provlarmet, skarpt
++//
++// Noll beroenden. Node ≥ 20.
++
++import { readFileSync } from 'node:fs';
++import { pathToFileURL } from 'node:url';
++import { skicka } from './discord-post.mjs';
++
++/** Koden startskottet skriver i budgetloggen. Idempotensen hänger på den. */
++export const STARTSKOTT_KOD = 'OPS_STARTSKOTT';
++
++/**
++ * Kanalen. Axel skapade den 2026-09-10 för just det här larmet
++ * (id 1547549671239720990 i servern Bäverbutiken).
++ *
++ * ⚠️ Det här är den ENDA kanal som skrivs på SVENSKA. Alla andra rutinposter
++ * är engelska för att redigerarna läser samma kanaler (agent/discord.json,
++ * Axels order 2026-09-02). #ops-startskott läses av Axel och VA:n, och Axel
++ * skrev mallen på svenska i sitt eget svarsformat 2026-09-10. Översätt den
++ * inte "för konsekvensens skull" — formatet är hans.
++ */
++export const KANAL = 'ops-startskott';
++
++/**
++ * Fälten som MÅSTE finnas. Saknas ett enda vägrar skriptet — hellre inget
++ * larm än ett larm med ett påhittat tal i.
++ */
++export const KRAVDA_FALT = [
++  'produkt',        // produktnamnet som det heter i Meta
++  'kampanj_id',     // kampanjens id i MagiBorsten
++  'kalla_url',      // produktsidan på Bäverbutiken — argumentet till /ny-ops
++  'spend_total',    // total spend i kronor
++  'kop',            // antal köp
++  'cpa',            // kostnad per köp i kronor
++  'break_even_cpa', // break-even-CPA i kronor
++  'roas',           // ROAS
++  'vinst_procent',  // vinst i procent av omsättningen (agent/besked.mjs)
++];
++
++/**
++ * Har startskottet redan gått för den här kampanjen?
++ *
++ * Samma mönster som `arAvstangd` i agent/rond.mjs: bara genomförda rader.
++ * Utan kollen postas larmet varje morgon så länge produkten ligger kvar över
++ * tröskeln — och ett larm som kommer varje dag slutar folk läsa.
++ */
++export function startskottHarGatt(logg, kampanjId) {
++  if (!Array.isArray(logg)) return false;
++  return logg.some((rad) => rad
++    && rad.kampanj_id === kampanjId
++    && rad.genomford === true
++    && rad.kod === STARTSKOTT_KOD);
++}
++
++/** Svenskt heltal med tusenmellanslag. */
++function heltal(n) {
++  return Math.round(Number(n)).toLocaleString('sv-SE');
++}
++
++/** Svenskt decimaltal med komma. */
++function decimal(n, decimaler = 2) {
++  return Number(n).toFixed(decimaler).replace('.', ',');
++}
++
++/**
++ * Kontrollerar jobbet. Tom lista = kör.
++ * Tom sträng, null och NaN räknas som saknat; 0 gör det INTE — noll köp är
++ * ett tal, om än ett dåligt.
++ */
++export function saknadeFalt(jobb) {
++  if (!jobb || typeof jobb !== 'object') return [...KRAVDA_FALT];
++  return KRAVDA_FALT.filter((f) => {
++    const v = jobb[f];
++    if (v === undefined || v === null || v === '') return true;
++    if (typeof v === 'number' && !Number.isFinite(v)) return true;
++    return false;
++  });
++}
++
++/**
++ * Meddelandet, i Axels mall (hans egen text 2026-09-10) och hans svarsformat:
++ * en mening per rad, max tio ord, numrerade saker han ska göra.
++ *
++ * Rubriken skickas separat — discord-post.mjs fetstilar den själv, så den
++ * ska INTE bära asterisker här.
++ *
++ * @returns {{rubrik: string, text: string}}
++ */
++export function formateraStartskott(jobb) {
++  const saknade = saknadeFalt(jobb);
++  if (saknade.length > 0) {
++    throw new Error(`Startskottet vägrar: saknade fält — ${saknade.join(', ')}`);
++  }
++
++  const text = [
++    'Produkten har klarat testet på Bäverbutiken.',
++    'Nu ska den få en egen butik.',
++    '',
++    'Siffrorna bakom:',
++    `- Spend: ${heltal(jobb.spend_total)} kr`,
++    `- Köp: ${heltal(jobb.kop)}`,
++    `- CPA: ${heltal(jobb.cpa)} kr (break-even ${heltal(jobb.break_even_cpa)} kr)`,
++    `- ROAS: ${decimal(jobb.roas)}`,
++    `- Vinst: ${decimal(jobb.vinst_procent, 1)} % av omsättningen`,
++    '',
++    'Du ska göra 1 sak.',
++    '',
++    '**Starta bygget**',
++    'Öppna en ny chatt.',
++    'Klistra in raden nedan.',
++    '',
++    '```',
++    `/ny-ops ${jobb.kalla_url}`,
++    '```',
++    '',
++    'Sen är du klar. Jag har gjort resten.',
++  ].join('\n');
++
++  return { rubrik: `KLAR FÖR OPS: ${jobb.produkt}`, text };
++}
++
++/**
++ * Loggraden. Samma fältform som agent/budgetlogg.jsonl, så den kan skrivas
++ * med `skrivRad` i agent/logg.mjs utan översättning.
++ *
++ * `datum` skickas in — skriptet läser aldrig klockan själv, så testerna kan
++ * köras på ett fast datum och två körningar samma dygn ger identisk rad.
++ *
++ * ⚠️ RADEN FÅR ALDRIG BÄRA `ny_budget`. Kontrollerat mot agent/logg.mjs
++ * 2026-09-09: `dagarSedanAndring` räknar bara rader med `genomford: true` OCH
++ * ett ändligt `ny_budget`. Läggs fältet till blir startskottet en
++ * budgetändring i kadensspärrens ögon, och kampanjen fryses i tre dygn utan
++ * att någon rört budgeten.
++ *
++ * Övriga läsare är kontrollerade och säkra som koden ser ut i dag:
++ *   arAvstangd (rond.mjs)   — läser bara STANG_AV och ATERAKTIVERA
++ *   annonsbehov KLAR-listan — bara FORSTA_BATCH_KLAR och CS_BATCH_KLAR
++ *   senasteRadMedKod        — tar en uttrycklig kodlista
++ * `OPS_STARTSKOTT` krockar inte med någon av de 20 koder som fanns i
++ * budgetloggen 2026-09-09 (374 rader).
++ */
++export function byggLoggrad(jobb, { datum, adAccountId = '1867947880635861' } = {}) {
++  if (!datum) throw new Error('byggLoggrad kräver ett datum (YYYY-MM-DD).');
++  const saknade = saknadeFalt(jobb);
++  if (saknade.length > 0) {
++    throw new Error(`byggLoggrad vägrar: saknade fält — ${saknade.join(', ')}`);
++  }
++  return {
++    datum,
++    kampanj_id: jobb.kampanj_id,
++    kampanj_namn: jobb.produkt,
++    ad_account_id: adAccountId,
++    kod: STARTSKOTT_KOD,
++    genomford: true,
++    spend_total: jobb.spend_total,
++    kop_total: jobb.kop,
++    cpa: jobb.cpa,
++    break_even_cpa: jobb.break_even_cpa,
++    roas: jobb.roas,
++    vinst_procent: jobb.vinst_procent,
++    kalla_url: jobb.kalla_url,
++    motivering: `Klarat testet (${heltal(jobb.spend_total)} kr spenderat, `
++      + `${decimal(jobb.vinst_procent, 1)} % vinst). Startskott postat i `
++      + `#${KANAL} — OPS-butiken ska byggas med /ny-ops.`,
++    godkand_av: 'auto — Axels beslut 2026-09-10, tröskeln i agent/rond.mjs',
++  };
++}
++
++/**
++ * Postar larmet. Använder husets postare (agent/discord-post.mjs) — skriv
++ * aldrig egen curl-kod mot Discord.
++ *
++ * @returns {Promise<{skickat: boolean, kanal: string, rubrik: string, text: string}>}
++ */
++export async function skickaStartskott(jobb, { torr = false, kanal = KANAL } = {}) {
++  const { rubrik, text } = formateraStartskott(jobb);
++  if (torr) return { skickat: false, kanal, rubrik, text };
++  await skicka({ rubrik, text, kanal });
++  return { skickat: true, kanal, rubrik, text };
++}
++
++/**
++ * Provlarmet. Axels egen testtext 2026-09-10 — den finns för att kunna
++ * kontrollera hela kedjan (token, kanal, format) utan att vänta på att en
++ * riktig produkt passerar tröskeln.
++ *
++ * ⚠️ Talen här är PÅHITTADE och märkta som test i produktnamnet. De får
++ * aldrig kopieras in i en riktig körning.
++ */
++export const PROVLARM = Object.freeze({
++  produkt: 'TEST av larmet — inte en riktig produkt',
++  kampanj_id: 'TEST-INGEN-KAMPANJ',
++  kalla_url: 'https://bäverbutiken.se/products/test',
++  spend_total: 1500,
++  kop: 10,
++  cpa: 150,
++  break_even_cpa: 300,
++  roas: 3.2,
++  vinst_procent: 25,
++});
++
++// --------------------------------------------------------------------------
++// CLI
++// --------------------------------------------------------------------------
++
++async function huvud(argv) {
++  const torr = argv.includes('--torr');
++  let jobb;
++
++  if (argv.includes('--test')) {
++    jobb = { ...PROVLARM };
++  } else {
++    const i = argv.indexOf('--jobb');
++    if (i === -1 || !argv[i + 1]) {
++      console.error('Användning: node agent/startskott.mjs --jobb <fil.json> [--torr]');
++      console.error('            node agent/startskott.mjs --test [--torr]');
++      console.error(`Jobbfilen måste innehålla: ${KRAVDA_FALT.join(', ')}`);
++      process.exit(2);
++    }
++    try {
++      jobb = JSON.parse(readFileSync(argv[i + 1], 'utf8'));
++    } catch (e) {
++      console.error(`Kunde inte läsa jobbfilen: ${e.message}`);
++      process.exit(1);
++    }
++  }
++
++  let utfall;
++  try {
++    utfall = await skickaStartskott(jobb, { torr });
++  } catch (e) {
++    console.error(e.message);
++    process.exit(1);
++  }
++
++  console.log(`**${utfall.rubrik}**`);
++  console.log(utfall.text);
++  console.log('');
++  if (utfall.skickat) console.log(`✅ Postat i #${utfall.kanal}.`);
++  else console.log(`[--torr] Ingenting postades i #${utfall.kanal}.`);
++
++  if (jobb.datum) {
++    console.log('');
++    console.log('--- loggrad till agent/budgetlogg.jsonl ---');
++    console.log(JSON.stringify(byggLoggrad(jobb, { datum: jobb.datum })));
++  }
++}
++
++if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
++  huvud(process.argv.slice(2)).catch((fel) => {
++    console.error(`Startskottet misslyckades: ${fel.message}`);
++    process.exit(1);
++  });
++}
+diff --git a/agent/test/startskott.test.mjs b/agent/test/startskott.test.mjs
+new file mode 100644
+index 0000000..589a3fe
+--- /dev/null
++++ b/agent/test/startskott.test.mjs
+@@ -0,0 +1,176 @@
++// Tester för startskottet (agent/startskott.mjs).
++// Inget nätverk, inga filskrivningar, inget klockberoende — datum skickas in.
++// `--torr` används överallt så ingen test någonsin postar i Discord.
++
++import { test } from 'node:test';
++import assert from 'node:assert/strict';
++import {
++  STARTSKOTT_KOD,
++  KANAL,
++  KRAVDA_FALT,
++  PROVLARM,
++  startskottHarGatt,
++  saknadeFalt,
++  formateraStartskott,
++  byggLoggrad,
++  skickaStartskott,
++} from '../startskott.mjs';
++
++/** Ett komplett jobb. Talen är påhittade EXEMPEL — de finns bara i testet. */
++const jobb = () => ({
++  produkt: 'Bänkhyllan med Utdragbar Korg',
++  kampanj_id: '120250134706080291',
++  kalla_url: 'https://baverbutiken.se/products/bankhyllan-med-utdragbar-korg',
++  spend_total: 4231.5,
++  kop: 27,
++  cpa: 156.7,
++  break_even_cpa: 210,
++  roas: 2.41,
++  vinst_procent: 24.3,
++});
++
++test('saknadeFalt: ett komplett jobb saknar ingenting', () => {
++  assert.deepEqual(saknadeFalt(jobb()), []);
++});
++
++test('saknadeFalt: noll är ett tal, inte ett saknat fält', () => {
++  assert.deepEqual(saknadeFalt({ ...jobb(), kop: 0 }), []);
++});
++
++test('saknadeFalt: null, tom sträng och NaN räknas som saknade', () => {
++  const j = { ...jobb(), cpa: null, produkt: '', roas: Number.NaN };
++  assert.deepEqual(saknadeFalt(j).sort(), ['cpa', 'produkt', 'roas']);
++});
++
++test('saknadeFalt: utan jobb saknas allt', () => {
++  assert.deepEqual(saknadeFalt(undefined), KRAVDA_FALT);
++  assert.deepEqual(saknadeFalt(null), KRAVDA_FALT);
++});
++
++test('formateraStartskott vägrar när ett tal saknas', () => {
++  const j = jobb();
++  delete j.vinst_procent;
++  assert.throws(() => formateraStartskott(j), /saknade fält.*vinst_procent/);
++});
++
++test('rubriken bär produktnamnet och INGA asterisker — discord-post fetstilar själv', () => {
++  const { rubrik } = formateraStartskott(jobb());
++  assert.equal(rubrik, 'KLAR FÖR OPS: Bänkhyllan med Utdragbar Korg');
++  assert.ok(!rubrik.includes('*'), 'rubriken skulle bli **dubbelfetad** i Discord');
++});
++
++test('texten visar alla fem beslutstalen', () => {
++  const { text } = formateraStartskott(jobb());
++  // ⚠️ toLocaleString('sv-SE') separerar tusental med HÅRT mellanslag (U+00A0).
++  // Ett testregex med vanligt blanksteg faller på en sträng som ser identisk
++  // ut i terminalen. \s täcker båda.
++  assert.match(text, /Spend: 4\s232 kr/);
++  assert.match(text, /Köp: 27/);
++  assert.match(text, /CPA: 157 kr \(break-even 210 kr\)/);
++  assert.match(text, /ROAS: 2,41/);            // komma, inte punkt
++  assert.match(text, /Vinst: 24,3 % av omsättningen/);
++});
++
++test('texten följer Axels svarsformat', () => {
++  const { text } = formateraStartskott(jobb());
++  assert.match(text, /Du ska göra 1 sak\./);
++  assert.match(text, /Sen är du klar\. Jag har gjort resten\./);
++
++  // En mening per rad. Kodblocket räknas inte — /ny-ops-raden klistras in,
++  // den läses inte.
++  const instruktion = text.split('Du ska göra 1 sak.')[1];
++  let iKodblock = false;
++  for (const rad of instruktion.split('\n')) {
++    if (rad.trim() === '```') { iKodblock = !iKodblock; continue; }
++    if (iKodblock) continue;
++    assert.ok(rad.length <= 60, `för lång rad i instruktionen: ${rad}`);
++  }
++});
++
++test('kommandoraden ligger i ett kodblock så den går att kopiera rent', () => {
++  const rader = formateraStartskott(jobb()).text.split('\n');
++  const i = rader.findIndex((r) => r.startsWith('/ny-ops '));
++  assert.ok(i > 0, 'ingen /ny-ops-rad hittades');
++  assert.equal(rader[i - 1].trim(), '```');
++  assert.equal(rader[i + 1].trim(), '```');
++});
++
++test('startskottHarGatt: tom logg betyder att det inte gått', () => {
++  assert.equal(startskottHarGatt([], '120250134706080291'), false);
++  assert.equal(startskottHarGatt(undefined, '120250134706080291'), false);
++});
++
++test('startskottHarGatt: en genomförd rad räknas', () => {
++  const logg = [{ kampanj_id: '120250134706080291', kod: STARTSKOTT_KOD, genomford: true }];
++  assert.equal(startskottHarGatt(logg, '120250134706080291'), true);
++});
++
++test('startskottHarGatt: en ogenomförd rad räknas INTE — annars tystas ett larm som aldrig gick ut', () => {
++  const logg = [{ kampanj_id: '120250134706080291', kod: STARTSKOTT_KOD, genomford: false }];
++  assert.equal(startskottHarGatt(logg, '120250134706080291'), false);
++});
++
++test('startskottHarGatt: en annan kampanjs rad smittar inte', () => {
++  const logg = [{ kampanj_id: 'ANNAN', kod: STARTSKOTT_KOD, genomford: true }];
++  assert.equal(startskottHarGatt(logg, '120250134706080291'), false);
++});
++
++test('startskottHarGatt: en annan kod räknas inte', () => {
++  const logg = [{ kampanj_id: '120250134706080291', kod: 'SKALA', genomford: true }];
++  assert.equal(startskottHarGatt(logg, '120250134706080291'), false);
++});
++
++test('byggLoggrad kräver ett datum — skriptet läser aldrig klockan själv', () => {
++  assert.throws(() => byggLoggrad(jobb()), /kräver ett datum/);
++});
++
++test('byggLoggrad ger en rad som startskottHarGatt känner igen', () => {
++  const rad = byggLoggrad(jobb(), { datum: '2026-09-10' });
++  assert.equal(rad.kod, STARTSKOTT_KOD);
++  assert.equal(rad.genomford, true);
++  assert.equal(rad.ad_account_id, '1867947880635861');
++  assert.equal(startskottHarGatt([rad], jobb().kampanj_id), true);
++});
++
++test('byggLoggrad bär ALDRIG ny_budget — annars fryser kadensspärren kampanjen', () => {
++  const rad = byggLoggrad(jobb(), { datum: '2026-09-10' });
++  assert.ok(!('ny_budget' in rad), 'ny_budget gör startskottet till en budgetändring');
++});
++
++test('byggLoggrad är idempotent: samma jobb och datum ger identisk rad', () => {
++  assert.deepEqual(
++    byggLoggrad(jobb(), { datum: '2026-09-10' }),
++    byggLoggrad(jobb(), { datum: '2026-09-10' }),
++  );
++});
++
++test('byggLoggrad bär källänken vidare så nästa session slipper leta', () => {
++  assert.equal(byggLoggrad(jobb(), { datum: '2026-09-10' }).kalla_url, jobb().kalla_url);
++});
++
++test('byggLoggrad vägrar på ofullständigt jobb', () => {
++  const j = jobb();
++  delete j.kalla_url;
++  assert.throws(() => byggLoggrad(j, { datum: '2026-09-10' }), /saknade fält.*kalla_url/);
++});
++
++test('skickaStartskott --torr rör aldrig nätverket', async () => {
++  const utfall = await skickaStartskott(jobb(), { torr: true });
++  assert.equal(utfall.skickat, false);
++  assert.equal(utfall.kanal, KANAL);
++  assert.match(utfall.rubrik, /^KLAR FÖR OPS: /);
++});
++
++test('provlarmet är komplett och märkt som test', async () => {
++  assert.deepEqual(saknadeFalt(PROVLARM), []);
++  assert.match(PROVLARM.produkt, /TEST/);
++  const utfall = await skickaStartskott(PROVLARM, { torr: true });
++  assert.equal(utfall.skickat, false);
++  assert.match(utfall.text, /Spend: 1\s500 kr/);
++  assert.match(utfall.text, /ROAS: 3,20/);
++  assert.match(utfall.text, /Vinst: 25,0 % av omsättningen/);
++});
++
++test('kanalen är ops-startskott', () => {
++  assert.equal(KANAL, 'ops-startskott');
++});
