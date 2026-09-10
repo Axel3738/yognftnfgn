@@ -599,6 +599,7 @@ export const STEG = [
     torrt(ctx, pk) {
       const b = pk.p.offer?.bonus_produkt ?? {};
       if (!text(b.handle)) return ['🖐 offer.bonus_produkt.handle är tom — bonusprodukten väljs av Axel'];
+      if (lista(b.bilder).length === 0) return [`${b.titel ?? b.handle} (handle ${b.handle}) är en befintlig produkt i butiken — betald korg-upsell, ingen ny bonus skapas; produkt_id + variant_id hämtas och skrivs tillbaka i ${basename(pk.fil)}`];
       return [`${b.titel ?? b.handle} (handle ${b.handle}) som egen ACTIVE-produkt, ${b.pris ?? '?'} ${pk.p.ekonomi.valuta}; produkt_id + variant_id skrivs tillbaka i ${basename(pk.fil)}`];
     },
     async kor(ctx, pk) {
@@ -606,7 +607,7 @@ export const STEG = [
       if (!text(b.handle)) return { manuell: 'Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus.' };
       try {
         const r = await sakerstallBonus({ ...ctx, produktfil: pk.fil }, pk.p, { torr: false });
-        return { produkt_id: r.produkt_id, variant_id: r.variant_id, handle: r.handle, ny: r.ny, skrivet: r.skrivet };
+        return { produkt_id: r.produkt_id, variant_id: r.variant_id, handle: r.handle, ny: r.ny, ateranvand: r.ateranvand === true, skrivet: r.skrivet };
       } catch (e) {
         // Bonus stoppar aldrig bygget (KEDJAN steg 9) — men felet ska synas.
         return { manuell: `Bonusprodukten kunde inte skapas: ${e.message} — rätta offer.bonus_produkt och kör --igen bonus.` };

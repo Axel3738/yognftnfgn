@@ -98,6 +98,8 @@ offer:
   bonus_produkt:
     titel: "Adventskalender Fiskedrag – 24 Drag"
     handle: "adventskalender-fiskedrag"
+    produkt_id: "9414189285612"
+    variant_id: "48336544301292"
     pris: 469
     i_paket: ""
 
@@ -174,8 +176,8 @@ meta:
   # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
   # 1867947880635861 (Bäverbutiken).
   ad_account_id: "915422744950975"
-  page_id: ""
-  pixel_id: ""
+  page_id: "1283919631474370"   # TackleBays Meta-sida, Axel 2026-09-10
+  pixel_id: "1079980541064515"
   # ⚠️ Prefixet är PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1) —
   # det är det enda fyra system använder för att skilja produkter åt.
   # Brandet ligger med i prefixet här för att Bäverbutiken redan använder

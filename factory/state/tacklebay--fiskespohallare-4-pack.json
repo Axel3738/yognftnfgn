@@ -22,8 +22,13 @@
       "redanRatt": true
     },
     "bonus": {
-      "klar": false,
-      "manuell": "Bonusprodukten kunde inte skapas: offer.bonus_produkt.bilder är tom — bonusen behöver minst en bild (visas i paketraden och korgen). — rätta offer.bonus_produkt och kör --igen bonus."
+      "klar": true,
+      "produkt_id": "9414189285612",
+      "variant_id": "48336544301292",
+      "handle": "adventskalender-fiskedrag",
+      "ny": false,
+      "ateranvand": true,
+      "skrivet": true
     },
     "paket": {
       "klar": true,
@@ -56,13 +61,12 @@
       "manuell": "Ingen Judge.me-token (env JUDGEME_TACKLEBAY_TOKEN) — VA:n importerar output/fiskespohallare-4-pack/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
     }
   },
-  "uppdaterad": "2026-09-10T13:31:01.732Z",
+  "uppdaterad": "2026-09-10T14:03:06.155Z",
   "qa": {
     "gron": false,
     "kritiska": [
-      "beskrivning",
-      "tracking"
+      "beskrivning"
     ],
-    "tid": "2026-09-10T13:31:01.731Z"
+    "tid": "2026-09-10T14:03:06.155Z"
   }
 }

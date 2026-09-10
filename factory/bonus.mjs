@@ -133,6 +133,40 @@ export function hittaProduktfil(produktId, { mapp = join(FACTORY_ROT, 'produkter
 // Hela steget: bonusen i butiken, ACTIVE + Online Store, id:n tillbaka i
 // produktfilen och i minnet (produkt.offer.bonus_produkt). ctx = { produktfil? }.
 export async function sakerstallBonus(ctx, produkt, { torr = false } = {}) {
+  const b = produkt.offer?.bonus_produkt ?? {};
+  // Betald korg-upsell som REDAN är en riktig produkt i butiken (TackleBay
+  // 2026-09-10: bonus_produkt = butikens andra produkt, inga egna bilder,
+  // Axels beslut "ingen gratis bonus"). Då skapas ingenting — id:n hämtas ur
+  // butiken och skrivs tillbaka, så korg-upsellen får rätt variant.
+  if (text(b.handle) && lista(b.bilder).length === 0) {
+    if (torr) return { produkt_id: null, variant_id: null, input: null, skrivet: false, ny: null, ateranvand: true };
+    const befintlig = await hamtaProduktViaHandle(b.handle);
+    if (befintlig) {
+      const variantGid = befintlig.variants?.nodes?.[0]?.id ?? '';
+      const ut = {
+        produkt_id: num(befintlig.id),
+        variant_id: num(variantGid),
+        gid: befintlig.id,
+        variant_gid: variantGid,
+        handle: b.handle,
+        titel: befintlig.title ?? b.titel,
+        ny: false,
+        ateranvand: true,
+        publicerad: null,
+        skrivet: false,
+        produktfil: null,
+      };
+      b.produkt_id = ut.produkt_id;
+      b.variant_id = ut.variant_id;
+      const fil = text(ctx?.produktfil) ?? text(ctx?.produktfiler?.[produkt.produkt?.id]) ?? hittaProduktfil(produkt.produkt?.id);
+      if (fil && existsSync(fil)) {
+        ut.produktfil = fil;
+        ut.skrivet = skrivTillbakaIdn(fil, ut.produkt_id, ut.variant_id);
+      }
+      return ut;
+    }
+  }
+
   const input = byggBonusInput(produkt);
   if (torr) return { produkt_id: null, variant_id: null, input, skrivet: false, ny: null };
 

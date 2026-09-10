@@ -22,8 +22,13 @@
       "redanRatt": true
     },
     "bonus": {
-      "klar": false,
-      "manuell": "Bonusprodukten kunde inte skapas: offer.bonus_produkt.bilder är tom — bonusen behöver minst en bild (visas i paketraden och korgen). — rätta offer.bonus_produkt och kör --igen bonus."
+      "klar": true,
+      "produkt_id": "9414189252844",
+      "variant_id": "48336544268524",
+      "handle": "fiskespohallare-4-pack",
+      "ny": false,
+      "ateranvand": true,
+      "skrivet": true
     },
     "paket": {
       "klar": true,
@@ -56,14 +61,13 @@
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-10T13:31:08.037Z",
+  "uppdaterad": "2026-09-10T14:03:12.388Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "tracking"
+      "reviews"
     ],
-    "tid": "2026-09-10T13:31:08.036Z"
+    "tid": "2026-09-10T14:03:12.388Z"
   }
 }

@@ -157,7 +157,7 @@ it. That is why they are one section – one trip, not two (Axel 2026-09-10).
 Before the store is live, not after: a live store without tracking spends ad
 money it cannot measure.
 - [ ] Install the **WeTracked** app from the Shopify App Store
-- [ ] WeTracked → paste the **pixel ID** Claude gives you
+- [ ] WeTracked → paste the **pixel ID**: **1079980541064515**
 - [ ] Events Manager → Data sources → **TackleBay** → Settings → Conversions API → **Generate access token** → copy it
 - [ ] WeTracked → paste the **Conversions API token** (never send it in chat or email)
 

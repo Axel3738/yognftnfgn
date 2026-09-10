@@ -501,6 +501,15 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   gamla kvar och kunden ser sex nivåer. `paket.mjs --stada` river nivåer
   som pekar på produkten men inte står i planen; trippelkollen larmar med
   "2 förvalda".
+- **Bonussteget återanvänder en befintlig produkt.** Är `offer.bonus_produkt.handle`
+  en produkt som redan finns i butiken och `bilder` är tom (betald
+  korg-upsell = butikens andra produkt, TackleBay 2026-09-10, Axels beslut
+  "ingen gratis bonus") skapas ingenting — id:n hämtas och skrivs tillbaka.
+  Bara en bonus MED egna bilder byggs som ny produkt.
+- **Recensionsdatum går inte att verifiera ur HTML** — Judge.me-widgeten
+  renderas i webbläsaren, och `reviews_for_widget` svarade tomt för
+  iahe0c-b1 (2026-09-10) trots att importen var gjord. Datumkollen efter
+  app-importen är alltså ett öga på produktsidan, inte en kodkontroll.
 - **Kundvyns gratis-rad och fullpris-kryssruta är villkorade** på
   produktfilen: gratis-raden bara när en nivå har `gratis_antal > 0`,
   kryssrutan bara vid `tillagg_kryssruta: true`. En betald korg-upsell
