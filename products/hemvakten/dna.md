@@ -74,12 +74,17 @@ För tunt för en dom, men det är den första frågan att ställa när data fin
 ## Ekonomin — AVGJORD 2026-09-09 (Axels besked)
 
 Pris 799 kr · inköp 261 kr · **TB 538 kr · BE-ROAS 1,49 · BE-CPA 538 kr ·
-target-ROAS 2,36 / target-CPA 338 kr**, räknat **UTAN moms** — samma regel som
-Bäverbutiken och Grillkliniken (`ekonomi.moms_antagen: false` i
-`factory/produkter/overvakningskameran.yaml`). Den linjen gäller för kill-beslut.
+target-ROAS 2,36 · target-CPA 338 kr**, räknat UTAN moms — samma regel som
+Bäverbutiken och Grillkliniken. Facit: `factory/produkter/overvakningskameran.yaml`
+(`moms_antagen: false`), och det är den linjen `factory/budgetrond.mjs` dömer mot.
 
-⚠️ Kampanjnamnet i kontot säger fortfarande "BE-ROAS 2,11" (det gamla
-med-moms-talet). Namnet är en etikett, inte facit — skripten läser produktfilen.
+⚠️ Kampanjnamnet i kontot säger fortfarande `BE-ROAS 2,11` (räknat MED moms,
+före beslutet). Namnet är en etikett, inte facit — döm aldrig mot det.
+Bäverbutikens 1,57 på samma produkt är en annan verksamhet och får aldrig
+kopieras hit.
+
+*(Uppdaterat 2026-09-10 av `/notionscalercs setup` — tidigare stod här
+"TB 378 · BE-ROAS 2,11" som en öppen fråga till Axel.)*
 
 ---
 
