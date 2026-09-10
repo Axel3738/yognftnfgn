@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { skannaVillkor, baraFel } from '../villkorsskanning.mjs';
+import { skannaVillkor, baraFel, talord, tiotalOchEntal } from '../villkorsskanning.mjs';
 
 // HeimGuards riktiga villkor, ur factory/butiker/hemvakten.yaml.
 const BUTIK = {
@@ -105,6 +105,27 @@ test('priset jämförs mot butikens egen prislista — NOK-tal i norska källann
   assert.equal(pris([{ yta: 'inbränd', text: 'Nu 300 kr' }]).length, 1);
   // Utan prislista görs ingen jämförelse alls — hellre tyst än påhittad.
   assert.deepEqual(pris([{ yta: 'copy', text: 'kun 439 kr' }], BUTIK), []);
+});
+
+test('utskrivna priser i talet läses på svenska och bokmål', () => {
+  assert.deepEqual(talord('femhundre og syttini til firehundre og trettini kroner').map((t) => t.tal), [579, 439]);
+  assert.deepEqual(talord('sexhundrafyrtionio kronor blir fyrahundranittionio').map((t) => t.tal), [649, 499]);
+  assert.deepEqual(talord('spara hundrafemtio kronor').map((t) => t.tal), [150]);
+  assert.deepEqual(talord('hundratals bilar').map((t) => t.tal), []);
+  assert.equal(tiotalOchEntal('nitton'), 19);
+  assert.equal(tiotalOchEntal('syttini'), 79);
+  const B = { ...BUTIK, priser: [499, 649] };
+  const pris = (t) => skannaVillkor([{ yta: 'tal', text: t }], B).filter((f) => f.regel === 'pris');
+  // NO CS_1 (2026-09-10): två NOK-priser i en mening, båda fel.
+  const f = pris('I dag blir femhundre og syttini til firehundre og trettini kroner.');
+  assert.equal(f.length, 2);
+  assert.match(f[0].fel, /579 kr/);
+  assert.match(f[1].fel, /439 kr/);
+  // Rätt pris utskrivet: inget fel. Belopp under halva priset: inget fel.
+  assert.deepEqual(pris('sexhundrafyrtionio kronor blir fyrahundranittionio kronor'), []);
+  assert.deepEqual(pris('Bara i dag, spara hundrafemtio kronor'), []);
+  // Fraktgränsen i talad form är fraktgränsens sak, inte prisregelns.
+  assert.deepEqual(pris('fri frakt över trehundra kronor'), []);
 });
 
 test('ett citat märkt "Verifierad kund" måste finnas bland butikens egna recensioner', () => {

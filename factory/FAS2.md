@@ -489,6 +489,36 @@ molncontainern, så de gick inte att OCR:a här. `❔ oläst` är aldrig `ren` �
 dem innan något norskt laddas upp. Att den norska SRT:en säger `Beverbutikken`
 gör det sannolikt att den inbrända undertexten gör det också; sannolikt är inte mätt.
 
+### ✅ 2026-09-10 — AdventLane (butik nr 5): hela kampanjen, per marknad, som kod
+
+Axels regel samma dag (`/ny-annonser`): **varje** källannons följer med, bara
+det som är fel ändras (Bäverbutiken, fel pris, fel villkor), och bara den
+ytan. Ingen ny voiceover, ingen ny copy, allt PAUSED. Det som byggdes för att
+klara regeln utan handpåläggning:
+
+- **`factory/vagkonfig.mjs <produkt> --marknad SE|NO`** — vågkonfigen som kod.
+  Copyn är källans ordagrant; radbyten ur produktfilens `kalla.copybyten`;
+  omskriven bild bara ur `output/<produkt>/bildfix/` när bilden bär fel; allt
+  som inte kan byggas hamnar i `<m>-byggplan.json → vantar` med orsak.
+  AdventLane SE: 16 av 16 byggs, 0 väntar — 12 orörda, 4 SP-annonser med tre
+  radbyten (öppet köp, påhittat citat, attribution).
+- **`brand-detektor.mjs --marknad NO`** — den norska halvan läses ur sitt eget
+  konto, in i samma `brand-detektor.json` (raderna bär `marknad`). Frames som
+  redan dragits dras inte om. Rakningen ser därmed norska domar, inte "odömd".
+- **Tre nya villkorsregler:** `pris` (varje "NNN kr" mot produktfilens
+  pris/jämförpris — NOK-talen 579/439 i de norska annonserna är fel pris i en
+  SEK-butik; belopp under halva priset är "spara", inte pris), `recension`
+  ("Verifierad kund"/stjärnrad mot `kalla-recensioner.json` — SP-citatet "Han
+  sprang ut ur sängen" fanns inte bland butikens tio) och `brådska` nedgraderad
+  till ANMÄRKNING (kopieras orörd, syns i rapporten). Bildannonsens text är yta
+  4 (bild), inte 3 — SP_2_1 hade fått "kräver-slutkortsbygge" för en bild.
+- **Sidrollen igen, mätt 11:19:** tokenens användare är Axel själv, sidan
+  `1304279782771044` är `owned_page` men `me/accounts` (42 sidor) listar den
+  inte → `adcreatives` svarar (#200). `assigned_users` via API avvisar
+  användar-id:t ("omfattas inte av företaget"). Klicket är detsamma som för
+  TankGuard: Business → Sidor → AdventLane → Lägg till personer → Hantera sida.
+  Kampanj `120249031845500172` + 12 videor står PAUSED och väntar på det.
+
 ---
 
 ## Uppdrag C — Bildannonserna (gratis, ingen väntan)

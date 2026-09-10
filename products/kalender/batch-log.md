@@ -41,7 +41,30 @@ Magiborsten NO `1050941584152547`, NOK), 16 annonser ACTIVE, 1 200 NOK/dag.
 Toppar: `SP_3` video 487 NOK / 2 köp (ROAS 2,53), `SP_2_1` bild 315 NOK / 3 köp
 (ROAS 4,35), `G_2_1` bild 156 NOK / 0. Valutor summeras aldrig med SE.
 
-## Batch #1 — AdventLane SE (byggs 2026-09-10 av `/ny-annonser`)
+## Batch #1 — AdventLane SE (byggd 2026-09-10 av `/ny-annonser`, PAUSED)
 
-Se `factory/output/adventskalender-racingbilar/rakningen.md` för vad som
-faktiskt kom upp. Fylls i när kampanjen står i MagiBorsten DK.
+Axels regel 2026-09-10: HELA källkampanjen kopieras, bara felaktiga ytor
+ändras, allt PAUSED tills han skriver "Launch: adventlane" med butiken live.
+
+Kampanj `ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10`
+(`120249031845500172`, MagiBorsten DK `915422744950975`, SEK, 1000 kr/dag CBO,
+PAUSED). Länk `https://adventlane.se/products/adventskalender-racingbilar`
+(domänen inte kopplad än). Sida `1304279782771044`, pixel `1013287061762227`.
+
+Vad som följer med (16 av 16, `se-byggplan.json`):
+- **12 orörda** (bara länken bytt): PD_1/2/3_H1, GT_1/2/3_H1, CS_1/2/3_H1,
+  PD_2_1, GT_2_1, CS_2_1. Priset 649→499 är identiskt. CS-brådskan ("bara
+  idag", "begränsat lager") står kvar — den är en anmärkning, inte ett fel.
+- **4 ändrade (SP):** copyraderna "30 dagars öppet köp" → "14 dagars
+  ångerrätt", det påhittade citatet + "Verifierad kund, 34 år" → Johans
+  riktiga recension ("Sonen längtar till varje dag", en av 10 femstjärniga),
+  headline likaså. SP_2_1 fick bildens band omskrivet på samma sätt
+  (`output/…/bildfix/AdventLaneRacing_SP_2_1.jpg`). Talet i SP-videorna orört.
+
+Läge 2026-09-10 11:20: 12 videor uppladdade, kampanj + adsets GT/PD skapade.
+**Noll annonser** — `adcreatives` svarar (#200), Axels användare saknar roll
+på sidan (`me/accounts` listar den inte). Räkningen: se `rakningen.md`.
+
+## Batch #1 NO — AdventLane NO (byggs 2026-09-10, PAUSED)
+
+Fylls i när den norska halvan är läst och byggd (`no-byggplan.json`).

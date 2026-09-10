@@ -16,6 +16,45 @@
 //
 // Läser bara. Kostar ingenting.
 
+// ---------------------------------------------------------------- talord
+//
+// Transkript stavar ut priset: "femhundre og syttini til firehundre og trettini
+// kroner" (NO CS_1, 2026-09-10), "sexhundrafyrtionio kronor" (SE). En prisregel
+// som bara läser siffror friar hela talet. Därför läses talorden på svenska
+// och bokmål: <ental>hundra/hundre + valfritt (och|og) + tiotal+ental.
+const ENTAL = { ett: 1, en: 1, två: 2, tva: 2, to: 2, tre: 3, fyra: 4, fire: 4, fem: 5, sex: 6, seks: 6, sju: 7, syv: 7, åtta: 8, atta: 8, åtte: 8, atte: 8, nio: 9, ni: 9 };
+const TONTAL = { tio: 10, ti: 10, elva: 11, elleve: 11, tolv: 12, tretton: 13, tretten: 13, fjorton: 14, fjorten: 14, femton: 15, femten: 15, sexton: 16, seksten: 16, sjutton: 17, sytten: 17, arton: 18, atten: 18, nitton: 19, nitten: 19 };
+const TIOTAL = { tjugo: 20, tjue: 20, trettio: 30, tretti: 30, fyrtio: 40, førti: 40, forti: 40, femtio: 50, femti: 50, sextio: 60, seksti: 60, sjuttio: 70, sytti: 70, åttio: 80, attio: 80, åtti: 80, atti: 80, nittio: 90, nitti: 90 };
+
+/** "fyrtionio" → 49, "syttini" → 79, "nitton" → 19, "" → 0, okänt → null. */
+export function tiotalOchEntal(ord) {
+  const o = String(ord || '').toLowerCase().trim();
+  if (!o) return 0;
+  if (TONTAL[o] != null) return TONTAL[o];
+  if (ENTAL[o] != null) return ENTAL[o];
+  for (const [t, v] of Object.entries(TIOTAL).sort((a, b) => b[0].length - a[0].length)) {
+    if (o === t) return v;
+    if (o.startsWith(t)) { const rest = ENTAL[o.slice(t.length)]; if (rest != null) return v + rest; }
+  }
+  return null;
+}
+
+/** Alla utskrivna hundratal i en textrad: [{ ord, tal }]. "hundratals" o.d.
+ *  som inte går att läsa som ett tal hoppas över. */
+export function talord(text) {
+  const ut = [];
+  const re = /([a-zåäöø]*)hundr(?:a|e|ede)([a-zåäöø]*)(?:\s+(?:og|och)\s+([a-zåäöø]+))?/gi;
+  for (const m of String(text || '').toLowerCase().matchAll(re)) {
+    const h = m[1] ? ENTAL[m[1]] : 1;
+    if (h == null) continue;
+    const svans = m[2] || m[3] || '';
+    const r = tiotalOchEntal(svans);
+    if (r == null) continue;
+    ut.push({ ord: m[0].trim(), tal: h * 100 + r });
+  }
+  return ut;
+}
+
 /** Regler som jämför en textrad mot butikens egna villkor.
  *  Varje regel: hittar den ett påstående, och stämmer påståendet? */
 export function byggRegler(butik) {
@@ -131,6 +170,21 @@ export function byggRegler(butik) {
       },
       text: (m, n) => `säger ${String(n).trim()} kr — butiken tar ${(butik?.priser || []).join(' / ')} kr`,
       taSiffra: true,
+    },
+    {
+      // Samma prisregel för UTSKRIVNA tal i talet: "femhundre og syttini".
+      id: 'pris',
+      // Samma undantag som för siffror: "fri frakt över trehundra kronor" är en
+      // fraktgräns (egen regel), "spara hundrafemtio" ett belopp.
+      re: /(?<!(?:över|over|spara|spar|sparer|rabatt|minus)\s{0,2})\b[a-zåäöø]*hundr(?:a|e|ede)[a-zåäöø]*(?:\s+(?:og|och)\s+[a-zåäöø]+)?/gi,
+      alla: true,
+      fel: (m) => {
+        if (!Array.isArray(butik?.priser) || butik.priser.length === 0) return false;
+        const [t] = talord(m);
+        if (!t) return false;
+        return !butik.priser.includes(t.tal) && t.tal >= Math.min(...butik.priser) / 2;
+      },
+      text: (m) => `säger ${talord(m)[0]?.tal} kr ("${m.trim()}") — butiken tar ${(butik?.priser || []).join(' / ')} kr`,
     },
   ];
 }
