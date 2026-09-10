@@ -38,15 +38,25 @@ Beslut 2026-08-30, uppdaterade 2026-09-02:
    gäller **både video och bild**, ingen särskild Typ, inget särskilt hubbnamn.
    Nya databaser i teamspacet kommer med av sig själva.
 
-   **Själva filen ligger på ett av två ställen — läs BÅDA:**
+   **Själva filen ligger på ett av TRE ställen — läs ALLA TRE:**
    - **Bild:** bilaga i radens `Filer och media` (`/bildannonser` lägger den där 20:00).
-   - **Video:** en **Drive-mapp länkad sist i sidans kropp** — redigerarna skriver
-     `Link for approval: <Drive-länk>` eller `Finished Ad — <Drive-länk>`. De
-     bifogar **aldrig** i `Filer och media`. Sidan bär också brief-mappen
-     (`Brief in Drive`, `Drive folder`) — den är inte leveransen. Rätt mapp är
-     den som innehåller en videofil.
-   - **Varken eller** = raden är inte klar. Den ska **synas i rapporten** som
+   - **Indragen i sidan:** redigeraren drar mp4:an rakt in i sidkroppen, så den blir
+     ett **Notion-hostat mediablock** (`video`/`image`/`file` med en signerad
+     `file.url`). Den syns varken i `Filer och media` eller som Drive-länk.
+     Mediablocket går **före** Drive-länken: sidan bär nästan alltid brief-mappen
+     som länk, och den är inte leveransen.
+   - **Video i Drive:** en **Drive-mapp länkad sist i sidans kropp** — redigerarna
+     skriver `Link for approval: <Drive-länk>` eller `Finished Ad — <Drive-länk>`.
+     Sidan bär också brief-mappen (`Brief in Drive`, `Drive folder`) — den är inte
+     leveransen. Rätt mapp är den som innehåller en videofil.
+   - **Inget av det** = raden är inte klar. Den ska **synas i rapporten** som
      "väntar på fil" och gå till `#problem-and-revisions-ads` — aldrig försvinna.
+
+   ⚠️ *Incident 2026-09-10: fyra av sex rader i kön (Damasker- och Batmotor-hubbarna)
+   hade videon som mediablock i sidkroppen. Kön kände bara till `Filer och media`
+   och Drive-länken, så alla fyra rapporterades som "väntar på fil" och hade
+   hoppats över tyst — samma miss som 2026-09-05, ny plats. `notion-kalla.mjs`
+   har sedan dess `mediaBlockIKropp()` och leveranstypen `sid-media`.*
 
    ⚠️ *Incident 2026-09-05: rutinen krävde fil i `Filer och media` och hoppade
    över 16 färdiga videor i `To be Reviewed` — tyst, medan den rapporterade
