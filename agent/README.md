@@ -110,6 +110,16 @@ Notion-databaser, inga brief-rundor.
   `annonsbehov` — men ronden gör ingenting med dem. Matematiken är kvar orörd
   så den går att slå på igen; utfallet är borttaget.
 
+⚠️ **Listan kommer ur `startskottsbehov`, inte ur `annonsbehov`.**
+`forsta_batch` ges bara till produkter som ALDRIG haft en batch. Byggde man
+larmet på den skulle bara splitternya produkter larmas, medan de bevisade
+produkter som redan fick briefer under det gamla systemet aldrig larmades.
+*(Mätt 2026-09-10: 45 SE-kampanjer i loggen, 14 med batch.)*
+
+Två koder tystar en produkt för gott: `OPS_STARTSKOTT` (larmet har gått) och
+`OPS_FINNS_REDAN` (butiken fanns redan — seedad 2026-09-10 för
+Övervakningskameran/HeimGuard och IBC-Tanköverdraget/TankGuard).
+
 Ett skickat startskott loggas som `OPS_STARTSKOTT` och tystar produkten för
 gott — larmet går en gång, aldrig igen.
 

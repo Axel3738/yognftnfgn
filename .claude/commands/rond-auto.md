@@ -262,44 +262,46 @@ Kvällens bildannons-rutin (`/bildannonser`, 20:00) och leveransrundan
 
 ### Så här körs det
 
-`annonsbehov` i `agent/rond.mjs` räknas som förut — matematiken är orörd.
-Skillnaden är vad du gör med den:
+Listan kommer från **`startskottsbehov(rader, { logg, marknad })`** i
+`agent/startskott.mjs`. Den läser tröskeln direkt ur `agent/rond.mjs`:
+**1 500 kr total spend OCH minst 20 % vinst** (`FORSTA_BATCH_SPEND_SEK` /
+`FORSTA_BATCH_VINST_PROCENT`). Rör aldrig de talen — de är Axels och testade.
 
-| Behov | Vad ronden gör nu |
-|---|---|
-| `forsta_batch` | **Startskott** — posta larmet, logga `OPS_STARTSKOTT` |
-| `brief_runda` | **Ingenting.** Nämn den inte ens i rapporten. |
-| `ersatt` | **Ingenting.** |
-| `mata_vinnare` | **Ingenting.** |
+⚠️ **Använd INTE `annonsbehov` till det här.** `forsta_batch` ges bara till
+produkter som ALDRIG haft en batch; den som redan fått en hamnar för alltid i
+`brief_runda`. Byggde man larmet på `forsta_batch` skulle det bara utlösas för
+splitternya produkter, medan de bevisade produkter som redan fick briefer
+under det gamla systemet aldrig larmades alls. *(Mätt 2026-09-10: 45
+SE-kampanjer i loggen, 14 med batch — bland dem Fiskespöhållaren,
+Båtmotorskyddet 420D och MC-Kapellet.)*
 
-`forsta_batch` betyder att produkten passerat **1 500 kr total spend OCH
-minst 20 % vinst** (`FORSTA_BATCH_SPEND_SEK` / `FORSTA_BATCH_VINST_PROCENT`
-i `agent/rond.mjs`). Rör aldrig de talen — de är Axels och de är testade.
+`annonsbehov` räknas fortfarande — matematiken är orörd så den går att slå på
+igen — men ronden gör **ingenting** med `brief_runda`, `ersatt` eller
+`mata_vinnare`. Nämn dem inte ens i rapporten.
 
-⚠️ **BARA SVERIGE.** `annonsbehov` är tomt för NO-körningen och ska så vara.
-En norsk kampanj utlöser aldrig ett startskott — norska annonser är svenska
+⚠️ **BARA SVERIGE.** `startskottsbehov` returnerar tomt för NO och ska så
+göra. En norsk kampanj utlöser aldrig en ny butik — norska annonser är svenska
 annonser översatta i ett eget flöde.
 
-För varje `forsta_batch`-behov, i ordning:
+`startskottsbehov` filtrerar redan bort fryst, avstängt, trappan och allt som
+redan larmats (`OPS_STARTSKOTT`) eller redan har en butik (`OPS_FINNS_REDAN`).
+Listan är sorterad med störst spend först.
 
-1. **Har startskottet redan gått?** `startskottHarGatt(logg, kampanj_id)` i
-   `agent/startskott.mjs` läser budgetloggen. Är den `true`: hoppa över
-   produkten helt och nämn den inte. Ett larm som kommer varje morgon slutar
-   folk läsa.
+För varje rad i listan, i ordning:
 
-2. **Läs kampanjens status.** Hämta den med `ads_get_ad_entities` direkt före
+1. **Läs kampanjens status.** Hämta den med `ads_get_ad_entities` direkt före
    larmet. Är `effective_status` något annat än `ACTIVE`: hoppa över, och
    skriv en rad i leveransen om varför. **Att ronden själv pausade kampanjen
    samma morgon är inget undantag** — en produkt som just stängdes av ska
    inte få en egen butik byggd.
 
-3. **Hitta källänken.** Startskottet är värdelöst utan den — VA:n ska kunna
+2. **Hitta källänken.** Startskottet är värdelöst utan den — VA:n ska kunna
    klistra in `/ny-ops <länk>` utan att leta. Ta produktsidans URL på
    bäverbutiken.se. Hittar du den inte: posta larmet ändå, men skriv
    `KÄLLÄNK SAKNAS` i produktfältet och säg det i leveransen. **Gissa aldrig
    en URL.**
 
-4. **Posta larmet.**
+3. **Posta larmet.**
 
    ```bash
    node agent/startskott.mjs --jobb <fil.json>
@@ -314,7 +316,7 @@ För varje `forsta_batch`-behov, i ordning:
 
    Kör `--torr` först om du vill se meddelandet utan att posta.
 
-5. **Logga.** Skriv raden från `byggLoggrad` i `agent/budgetlogg.jsonl`
+4. **Logga.** Skriv raden från `byggLoggrad` i `agent/budgetlogg.jsonl`
    (kod `OPS_STARTSKOTT`, `genomford: true`), committa och pusha **direkt**.
    Nekas pushen: larma i svaret. Utan raden går larmet ut igen imorgon.
 
@@ -407,9 +409,9 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
-- [ ] Varje `forsta_batch`-behov har fått ett startskott i `#ops-startskott` —
-      eller exakt redovisat varför inte (redan larmat, kampanjen inte ACTIVE,
-      källänk saknas)
+- [ ] Listan hämtad ur `startskottsbehov` — inte ur `annonsbehov`
+- [ ] Varje rad i listan har fått ett startskott i `#ops-startskott` — eller
+      exakt redovisat varför inte (kampanjen inte ACTIVE, källänk saknas)
 - [ ] Varje startskott loggat som `OPS_STARTSKOTT` och pushat
 - [ ] **Inga briefer, inga Notion-hubbar, inga Notion-items, inga minnesfiler
       skapade** — varken för SE eller NO. Ronden gör inte det längre.
