@@ -866,7 +866,8 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_4_H2",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "439.00",
@@ -929,7 +930,8 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_4_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "439.00",
@@ -992,7 +994,8 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_4_H3",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "439.00",
@@ -1055,7 +1058,8 @@
         "adsetNamn": "IBC-tanktrekk NO - SP",
         "annonsNamn": "IBC-tanktrekk_NO_SP_3_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "439.00",
@@ -1118,7 +1122,8 @@
         "adsetNamn": "IBC-tanktrekk NO - CS",
         "annonsNamn": "IBC-tanktrekk_NO_CS_4_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "439.00",
@@ -1181,7 +1186,8 @@
         "adsetNamn": "IBC-tanktrekk NO - GT",
         "annonsNamn": "IBC-tanktrekk_NO_GT_4_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "439.00",
