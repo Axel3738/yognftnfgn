@@ -193,11 +193,29 @@
           "granskning": "4221/4228"
         }
       }
+    },
+    "store-ready": {
+      "klar": false,
+      "manuell": "recensioner adventskalender-racingbilar: ingen Judge.me-token (env JUDGEME_KALENDER_TOKEN) — ladda upp output/adventskalender-racingbilar/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · WeTracked: klistra in pixel-id 1013287061762227 (VA:ns klick) · Meta-sidan skapar VA:n i Business Manager (API:t kan inte) · Discord: boten kan inte skapa servrar — VA:n skapar \"AdventLane — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/kalender.yaml skriver ut länken) och kör sen node factory/store-ready.mjs kalender --guild <server-id>",
+      "pixelId": "1013287061762227",
+      "discordGuild": null,
+      "recensioner": [
+        {
+          "produkt": "adventskalender-racingbilar",
+          "viaApi": false
+        }
+      ],
+      "vantar": [
+        "recensioner adventskalender-racingbilar: ingen Judge.me-token (env JUDGEME_KALENDER_TOKEN) — ladda upp output/adventskalender-racingbilar/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
+        "WeTracked: klistra in pixel-id 1013287061762227 (VA:ns klick)",
+        "Meta-sidan skapar VA:n i Business Manager (API:t kan inte)",
+        "Discord: boten kan inte skapa servrar — VA:n skapar \"AdventLane — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/kalender.yaml skriver ut länken) och kör sen node factory/store-ready.mjs kalender --guild <server-id>"
+      ]
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/204938314071",
   "arbetstemaNamn": "AdventLane – CRO v1",
-  "uppdaterad": "2026-09-10T08:01:21.866Z",
+  "uppdaterad": "2026-09-10T10:00:35.152Z",
   "qa": {
     "gron": false,
     "kritiska": [

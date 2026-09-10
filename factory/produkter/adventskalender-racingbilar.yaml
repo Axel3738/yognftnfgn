@@ -204,8 +204,12 @@ meta:
   # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
   # 1867947880635861 (Bäverbutiken, källan).
   ad_account_id: "915422744950975"
-  page_id: ""
-  pixel_id: ""
+  # Sidan "AdventLane" skapad av Axel 2026-09-10, verifierad i företagets
+  # owned_pages (1164852855167090). ⚠️ me/accounts listar den INTE med
+  # rutinernas token — ge systemanvändaren sidan i Business Manager före
+  # /ny-annonser (FAS2.md).
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
   # Prefixet är PER PRODUKT, aldrig per brand (Axels regel i prompten +
   # FLERPRODUKT.md fynd 1). Brandet ligger med för att källan redan använder
   # "Adventskalender_" — annars kolliderar prefixkartan, översättningskön,
