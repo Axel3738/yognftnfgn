@@ -254,6 +254,15 @@ Mätningar från samma bygge:
   filnamn mot temats, tappade filer skrivs in en och en så Shopify säger
   orsaken, kvarstående saknad = stopp). Körs på ett låst tema också, så
   `--igen tema-upload` lagar ett tema med hål. Ett test vaktar zip:en.
+- **Fjorton läckor på /nb som underlaget inte bar.** Recensentnamnen i
+  startsidans omdömesslider (identiska på norska, men "samma ord" räknas
+  bara om nyckeln finns), sidfotens rubrik "Företaget" (ärvd ur zip:en, inte
+  skriven), sticky-knappens "Köp nu" (product.json ur zip:en) och temats
+  ENGELSKA defaults på mallar butiken inte skriver om (Share, Collections,
+  Opening soon, password-texten) + Shopifys inbyggda kollektion "Home page".
+  Matchningen sker på VÄRDE, så källtexten i underlaget måste vara exakt
+  temats — därför står de engelska orden i `oversattning-sv.json` under
+  `tema.default.*`. Ren Liquid (`{{ product.vendor }}`) räknas inte som läcka.
 - **Loggans tillbakaläsning behöver några sekunder.** `settings_data.json`
   läst direkt efter skrivningen svarade `logo: ""` — värdet satt kvar strax
   efter. `logga.mjs` läser om upp till sex gånger med 2,5 s paus.

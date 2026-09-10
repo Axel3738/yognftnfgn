@@ -137,6 +137,9 @@ const TEKNISKT = /^(shopify:\/\/|https?:\/\/|\/|[a-z0-9_-]+$|[A-Z0-9_]+$|#[0-9a-
 export function arLacka(l, samma = new Set()) {
   if (TEKNISKT.test(l.value)) return false;
   if (samma.has(l.value)) return false;
+  // Ren Liquid ("{{ product.vendor }}") är ingen text — kunden ser värdet,
+  // inte uttrycket (AdventLane 2026-09-10).
+  if (/^\{\{[^}]*\}\}$/.test(String(l.value).trim())) return false;
   if (/^(handle|product_type|meta_description|ab_variant|rabattkod)$/.test(l.key)) return false;
   if (l.typ === 'policy' && l.value.includes('{{')) return false;
   if (l.typ === 'menylänk' && /^(Orders|Profile)$/.test(l.value)) return false;

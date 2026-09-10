@@ -1,15 +1,5 @@
 {
-  "_om": [
-    "AdventLane på norsk (bokmål). Bygget 2026-09-10 ut av factory/output/kalender/oversattning-sv.json (102 nycklar) enligt oversattning.mjs-formatet.",
-    "Avvik och varför:",
-    "1. Lagreferens: 'enligt svensk lag' er byttet til 'etter angrerettloven' (returpolicy, kopvillkor, trygghet, ms_guarantee, faq). 14 dager er uendret — samme rett, riktig lovland. 'konsumentköplagen' (reklamation) er byttet til norske 'forbrukerkjøpsloven', og 'distansavtalslagen' (kopvillkor) er også byttet til 'angrerettloven'. 'Allmänna reklamationsnämnden' er byttet til det norske organet 'Forbrukerklageutvalget'.",
-    "2. Sidetitler/menyer: 'Returpolicy' -> 'Angrerett og retur', 'Fraktpolicy' -> 'Frakt og levering', 'Köpvillkor' -> 'Kjøpsvilkår' (norsk fastfrase, ikke ordrett). Brukt likt i sida.*.title og meny.footer for at lenkene stemmer.",
-    "3. Priser: ingen tal er endret. 'kr' står som i kilden — valuta (SEK/NOK) nevnes ikke i markedsføringstekst, kun i kopvillkor sitt juridiske avsnitt om prisvaluta (der SEK er faktisk sant i dag).",
-    "4. Startnummer (67, 33, 07), lenker, e-post (hello@adventlane.se) og brandnavnet AdventLane er uendret.",
-    "5. Ingen nye løfter er lagt til (ingen 'åpent kjøp'-formulering). FAQ 'Sender dere til Norge?' er oversatt ordrett fra kilden, ikke omformulert.",
-    "6. Ikonnavn i ms_usp (truck/shield/star) er uendret, kun tekst før ':' er oversatt.",
-    "7. Anmeldelser (recension.* og omdomen.blocks.r1-r6) er oversatt naturlig, ikke ord-for-ord — samme innhold som kilden, ingen nye påstander."
-  ],
+  "_om": "Kompletterat 2026-09-10 av huvudsessionen: recensentnamn (identiska), sidfotens rubrik, sticky-knappen och temats engelska defaults (Share/Collections/Opening soon/password/Home page) — läckor som underlaget saknade.",
   "produkt.adventskalender-racingbilar.title": "Adventskalender Racerbiler – 24 Biler Bak 24 Luker",
   "produkt.adventskalender-racingbilar.body_html": "<p>Åpnes én gang. Ligger der etterpå.</p>",
   "produkt.adventskalender-racingbilar.meta_title": "Adventskalender Racerbiler – 24 Biler Bak 24 Luker – AdventLane",
@@ -111,5 +101,18 @@
   "tema.footer.snabblankar": "Snarveier",
   "tema.footer.information": "Informasjon",
   "tema.footer.nyhetsbrev": "Ikke gå glipp av nyheter",
-  "tema.share": "Del"
+  "tema.share": "Del",
+  "recension.adventskalender-racingbilar.0.namn": "Peter",
+  "recension.adventskalender-racingbilar.1.namn": "Sofia",
+  "recension.adventskalender-racingbilar.2.namn": "Daniel",
+  "recension.adventskalender-racingbilar.3.namn": "Maria",
+  "recension.adventskalender-racingbilar.4.namn": "Erik",
+  "recension.adventskalender-racingbilar.5.namn": "Sara",
+  "footer.sections.footer.blocks.foretaget.settings.heading": "Selskapet",
+  "tema.sticky": "Kjøp nå",
+  "tema.default.share": "Del",
+  "tema.default.collections": "Kolleksjoner",
+  "tema.default.opening_soon": "Åpner snart",
+  "tema.default.password_text": "<p>Vær først til å få vite når vi åpner.</p>",
+  "tema.default.home_page": "Forsiden"
 }

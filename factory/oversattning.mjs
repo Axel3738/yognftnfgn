@@ -169,6 +169,11 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
     lista(p.reviews).slice(0, 6).forEach((r, i) => {
       if (text(r.titel)) ut[`recension.${h}.${i}.titel`] = r.titel;
       if (text(r.text)) ut[`recension.${h}.${i}.text`] = r.text;
+      // Namnet står i startsidans omdömesslider (index.json omdomen.rN.name)
+      // och är översättningsbart i Shopifys ögon. Samma namn på båda språken
+      // = "samma ord", ingen läcka — men bara om nyckeln finns i underlaget
+      // (AdventLane 2026-09-10: sex namn rapporterades som läckor på /nb).
+      if (text(r.namn)) ut[`recension.${h}.${i}.namn`] = r.namn;
     });
   }
 
@@ -201,6 +206,8 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   if (index) Object.assign(ut, malltexter('index', index));
   const header = forsok('tema.byggHeaderGroup', () => krav(tema, 'tema', 'byggHeaderGroup')(butik));
   if (header) Object.assign(ut, malltexter('header', header));
+  // Rubriken "Företaget" sätts av byggFooterGroup — den ska med i underlaget,
+  // annars läcker den på /nb (AdventLane 2026-09-10).
   const tomFooter = { sections: { footer: { type: 'footer', blocks: { foretaget: { type: 'text', settings: {} } }, settings: {} } }, order: ['footer'] };
   const footer = forsok('startsida.byggFooterGroup', () => krav(startsida, 'startsida', 'byggFooterGroup')(JSON.stringify(tomFooter), butik));
   if (footer) Object.assign(ut, malltexter('footer', footer));
@@ -212,6 +219,17 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   ut['tema.footer.information'] = 'Information';
   ut['tema.footer.nyhetsbrev'] = 'Missa inga nyheter';
   ut['tema.share'] = 'Dela';
+  // Produktmallens sticky köpknapp (product.json ms_sticky.label ur bas-zip:en)
+  // och temats ENGELSKA defaults på mallar butiken inte skriver om (article,
+  // list-collections, password) + Shopifys inbyggda kollektion "Home page".
+  // Matchningen sker på VÄRDE, så källtexten här måste vara exakt den som
+  // står i temat — därför engelska (AdventLane 2026-09-10, 14 läckor på /nb).
+  ut['tema.sticky'] = 'Köp nu';
+  ut['tema.default.share'] = 'Share';
+  ut['tema.default.collections'] = 'Collections';
+  ut['tema.default.opening_soon'] = 'Opening soon';
+  ut['tema.default.password_text'] = '<p>Be the first to know when we launch.</p>';
+  ut['tema.default.home_page'] = 'Home page';
 
   if (varningar.length > 0) ut._varningar = varningar;
   return ut;

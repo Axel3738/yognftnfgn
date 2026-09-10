@@ -472,6 +472,9 @@ export function byggFooterGroup(befintlig, butik) {
   if (foretaget) {
     foretaget.settings = {
       ...foretaget.settings,
+      // Rubriken skrivs uttryckligen — bas-zip:ens värde är samma ord, men
+      // ett ärvt värde är inget översättningsunderlag (AdventLane 2026-09-10).
+      heading: 'Företaget',
       subtext: [
         `<p>${text(b.brand) ?? ''} drivs av<br/>${text(b.bolagsnamn) ?? ''}<br/>Org.nr ${text(b.orgnr) ?? ''}</p>`,
         `<p>${text(b.supportmail) ?? ''}</p>`,
