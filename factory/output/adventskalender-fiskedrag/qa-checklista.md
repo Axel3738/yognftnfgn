@@ -5,8 +5,8 @@
 - [x] ✅ varianter: 1 st
 - [x] ✅ bilder: 3 st, 3 media i butiken
 - [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
-- [ ] ❌ beskrivning: Saknas: media.gif_problem
-- [ ] ❌ reviews: Bara 0 recensioner — minst 3 krävs för launch.
+- [ ] 🖐 beskrivning: UNDANTAG (Axel 2026-09-10: inga annonser för kalendern än — launch utan gif och recensioner (källan har noll)): Saknas: media.gif_problem
+- [ ] 🖐 reviews: UNDANTAG (Axel 2026-09-10: inga annonser för kalendern än — launch utan gif och recensioner (källan har noll)): Bara 0 recensioner — minst 3 krävs för launch.
 - [x] ✅ frakt: 5–10 arbetsdagar
 - [ ] 🖐 frakt-zoner: Kontrollera fraktzon och pris i Shopify → Frakt och leverans.
 - [x] ✅ guarantee: 14 dagars ångerrätt

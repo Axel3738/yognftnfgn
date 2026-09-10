@@ -10,8 +10,10 @@
     "  - Paket-metaobjektens rubriker (1 st / 2 st / 3 st) — siffror och \"st\", läsbart i båda språken.",
     "  - Recensionerna på startsidan — riktiga svenska omdömen med riktiga namn. En översatt recension är en påhittad recension. Norska omdömen kommer via Judge.me-importen (PROCESS.md fas 3).",
     "  - Produktbildernas metafält (media_losning, bild_lifestyle) — fil-URL:er, inte text. Språkversionerade bilder är ett eget steg (PROCESS.md fas 4 steg 15).",
-    "Kompletterad 2026-09-10: 88 saknade nycklar översatta (sidor, meny, paket, bonus, recensioner, kollektion)."
+    "Kompletterad 2026-09-10: 88 saknade nycklar översatta (sidor, meny, paket, bonus, recensioner, kollektion).",
+    "Kompletterad 2026-09-10 (2): tema.settings.brand_description."
   ],
+  "tema.settings.brand_description": "<p>Fiskebutikken for deg som allerede har stenger — orden i utstyret, og gaver som faktisk havner i vannet</p>",
   "produkt.fiskespohallare-4-pack.title": "Fiskestangholder 4-pakning",
   "produkt.fiskespohallare-4-pack.body_html": "<p>Holder stanga samlet hele veien til vannet.</p>",
   "produkt.fiskespohallare-4-pack.meta_title": "Fiskestangholder 4-pakning – TackleBay",

@@ -5,7 +5,7 @@
 - [x] ✅ varianter: 1 st
 - [x] ✅ bilder: 5 st, 5 media i butiken
 - [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
-- [ ] ❌ beskrivning: Saknas: media.gif_problem
+- [ ] 🖐 beskrivning: UNDANTAG (Axel 2026-09-10: launch utan gif_problem, gif levereras av redigeraren efteråt): Saknas: media.gif_problem
 - [x] ✅ reviews: 7 st i Judge.me-underlaget
 - [ ] 🖐 judgeme: Importera underlaget och verifiera att widgeten visar recensionerna.
 - [x] ✅ frakt: 5–10 arbetsdagar

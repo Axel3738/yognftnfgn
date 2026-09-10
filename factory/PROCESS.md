@@ -501,6 +501,16 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   gamla kvar och kunden ser sex nivåer. `paket.mjs --stada` river nivåer
   som pekar på produkten men inte står i planen; trippelkollen larmar med
   "2 förvalda".
+- **Ägarens QA-undantag bor i produktfilen** (`qa.undantag` + obligatorisk
+  `qa.undantag_motivering`, TackleBay 2026-09-10: "kalendern har inga
+  annonser än — skippa den", "/gif_problem" = launch utan gif). Punkten
+  blir manuell med motiveringen i rapporten, aldrig borttagen. Utan
+  motivering gäller undantaget inte. Fabriken skriver aldrig in ett själv.
+- **Översättningsunderlaget måste bygga settings MED butiken** —
+  `rensaSettings({ current: {} }, { butik })`. Utan butiken blev
+  `brand_description` tom i underlaget medan temat bar positioneringen, och
+  launch-körningens läcksökning hittade "temainställning
+  general.brand_description" på /nb (TackleBay 2026-09-10).
 - **Bonussteget återanvänder en befintlig produkt.** Är `offer.bonus_produkt.handle`
   en produkt som redan finns i butiken och `bilder` är tom (betald
   korg-upsell = butikens andra produkt, TackleBay 2026-09-10, Axels beslut

@@ -46,27 +46,23 @@
         "TACKLEBAYROD2B",
         "TACKLEBAYROD3B"
       ],
-      "frammande": [
-        "tacklebayrod-a-1",
-        "tacklebayrod-a-2",
-        "tacklebayrod-a-3",
-        "tacklebayrod-b-1",
-        "tacklebayrod-b-2",
-        "tacklebayrod-b-3"
-      ],
+      "frammande": [],
       "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Ingen Judge.me-token (env JUDGEME_TACKLEBAY_TOKEN) — VA:n importerar output/fiskespohallare-4-pack/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    },
+    "launch": {
+      "klar": true,
+      "status": "ACTIVE",
+      "publicerad": true
     }
   },
-  "uppdaterad": "2026-09-10T14:03:06.155Z",
+  "uppdaterad": "2026-09-10T15:15:29.136Z",
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "beskrivning"
-    ],
-    "tid": "2026-09-10T14:03:06.155Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-10T15:15:29.136Z"
   }
 }

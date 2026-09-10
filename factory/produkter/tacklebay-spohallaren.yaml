@@ -189,3 +189,10 @@ meta:
     - "Transportskadan: det som går sönder händer på vägen dit"
     - "Enhandsgreppet: två klick, spöt sitter"
     - "Svampen: håller hårt utan att skava lacken"
+
+# Axels beslut 2026-09-10 (chatten): "/gif_problem" = launcha utan gif.
+# Redigeraren levererar gif senare; då tas undantaget bort.
+qa:
+  undantag:
+    - beskrivning
+  undantag_motivering: "Axel 2026-09-10: launch utan gif_problem, gif levereras av redigeraren efteråt"

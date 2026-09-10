@@ -211,7 +211,10 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   const tomFooter = { sections: { footer: { type: 'footer', blocks: { foretaget: { type: 'text', settings: {} } }, settings: {} } }, order: ['footer'] };
   const footer = forsok('startsida.byggFooterGroup', () => krav(startsida, 'startsida', 'byggFooterGroup')(JSON.stringify(tomFooter), butik));
   if (footer) Object.assign(ut, malltexter('footer', footer));
-  const settings = forsok('tema.rensaSettings', () => krav(tema, 'tema', 'rensaSettings')({ current: {} }, {}));
+  // Med butiken — annars blir brand_description tom och positioneringen
+  // läcker på /nb som "temainställning general.brand_description"
+  // (TackleBay 2026-09-10, hittad först av launch-körningens läcksökning).
+  const settings = forsok('tema.rensaSettings', () => krav(tema, 'tema', 'rensaSettings')({ current: {} }, { butik }));
   if (text(settings?.current?.brand_description)) ut['tema.settings.brand_description'] = settings.current.brand_description;
   // Temats fasta strängar som inte kommer ur konfigen (sidfotens rubriker,
   // Dela-knappen) — kunden ser dem, så de ska med.
