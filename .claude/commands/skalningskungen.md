@@ -21,6 +21,15 @@ kadens, briefer, Notion-items. Vill Axel ha nya annonser till en butik
 säger han det själv (`/cs`-familjen). Ronden bygger aldrig "ett helt nytt
 skit" — den dömer siffror och skickar ett larm.
 
+**Läget `larm` — bara larmet, inga budgetar** (Axels beslut 2026-09-10: den
+gamla budgetrutinen "Skalnings kungen" på hans andra konto litar han på och
+den rörs inte; larmet körs separat). `/skalningskungen larm` gör steg 1, 2
+och 5 — läser kontot, dömer tröskeln, skickar larmet — och **hoppar över
+steg 3–4 helt**. I det läget görs NOLL skrivande Graph-anrop: ingen budget,
+ingen status, ingenting. Rutinen "Skalningskungen larm" (fast session,
+07:45 svensk tid) kör exakt så. Rapporten säger "läge larm — inga budgetar
+rörda" på första raden.
+
 Kravspec: `factory/SKALNINGSKUNGEN.md` · `docs/os/ANALYSMETOD.md` (hur data
 läses — obligatorisk, kortas aldrig ner) · `factory/TRAPPAN.md` (när en
 produkt hör hemma var).
@@ -51,7 +60,7 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    benchmark, inte en kandidat att döma mot småannonser. Ranking på
    vinstbidrag `(break-even-CPA − CPA) × köp`, aldrig på ROAS eller CPA ensamt.
 
-3. **Budgetbesluten — en tabell FÖRE någon skrivning.**
+3. **Budgetbesluten — en tabell FÖRE någon skrivning.** *(Hoppas över i läge `larm`.)*
    En rad per kampanj/adset: nuvarande dagsbudget, föreslagen, varför.
    Spärrarna, som ingen bedömning får runda:
    - **Kadensspärren:** rör aldrig något som ändrats de senaste 3 dygnen.
@@ -72,7 +81,7 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    - **Fler än 3 ändringar i ett konto i samma rond:** lista dem och
      invänta Axels ok. Under det: kör.
 
-4. **Skriv budgeten — och läs tillbaka.**
+4. **Skriv budgeten — och läs tillbaka.** *(Hoppas över i läge `larm`.)*
    All Graph-skrivning går genom `tools/meta-lib.mjs` (saknas en
    budgetfunktion där: lägg till EN, `uppdateraBudget`, med tillbakaläsning
    — bygg aldrig egna anrop utanför lagret). Efter varje ändring: läs
@@ -113,10 +122,12 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 ## Prompten till rutinen (klistra in i Routines-vyn om den saknas)
 
 ```
-/skalningskungen
+/skalningskungen larm
 ```
 
-Det räcker — kommandofilen är prompten. Rutinen ska vara bunden till en
+Det räcker — kommandofilen är prompten. Utan `larm` gör ronden budgetarna
+också; det läget är INTE schemalagt någonstans (Axels beslut 2026-09-10 —
+den gamla budgetrutinen på hans andra konto gäller tills han säger annat). Rutinen ska vara bunden till en
 **fast session** med repot som källa och `main` som utgren (`create_session`
 med `source_url` + `outcome_branch`, sen `create_trigger` med
 `persistent_session_id`), annars kan den inte pusha loggen. Kör
