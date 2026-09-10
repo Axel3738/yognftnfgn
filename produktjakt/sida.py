@@ -66,12 +66,15 @@ def main():
     kort = []
     for p in d["produkter"]:
         e = p["ekonomi"]
-        kort.append({"product_id": str(p["product_id"]), "namn": kort_namn(p["titel"]), "hela_namn": p["titel"],
+        # svenskt namn när körningen satt ett (DOA-raderna), annars leverantörens titel nedkortad
+        kort.append({"product_id": str(p["product_id"]), "namn": p.get("namn_sv") or kort_namn(p["titel"]), "hela_namn": p["titel"],
                      "url": p["url"], "grupp": p.get("grupp", ""),
                      # taggarna följer med in i feedback-dokumentet så vikterna kan räknas utan fynd.json
                      "taggar": p.get("taggar", {}),
                      "inkop": p.get("pris_text"), "landad": e["landad"], "pris": e["forslag_pris"],
                      "multipel": e["multipel"], "sald": p.get("sald", ""),
+                     # poängkortet (MASTERPROMPT §5): summa + launch-kandidat / offertrad / svag offertrad
+                     "poang": p.get("poang"), "status": p.get("status", ""),
                      "bild": bild_data_uri(p.get("bild"), os.path.join(katalog, "bilder"), p["product_id"])})
 
     xlsx_b64 = base64.b64encode(open(xlsx, "rb").read()).decode("ascii")

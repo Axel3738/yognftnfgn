@@ -57,13 +57,14 @@
     "getcamping.se (Hindermann Wintertime 1 145, Supra 2 195) [F]",
     "campingvaruhuset.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 1145,
    "sokfraser_en": [
     "caravan front towing cover",
     "caravan front protector cover universal",
     "caravan window cover front"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "Hindermann Wintertime 100 € ≈ 1 145 kr getcamping.eu; Universal 2 114 kr campingvaruhuset.se; Kampa 1 999 (utgått); golv GoCamp 1 814 — mätt 2026-09-10"
   },
   {
    "objekt": "Husvagn/husbil — hjulen och däcken",
@@ -112,13 +113,14 @@
     "getcamping.se (Hindermann Thermo)",
     "campingvaruhuset.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 793,
    "sokfraser_en": [
     "motorhome thermal windscreen cover external",
     "motorhome cab insulation mat interior",
     "motorhome cab cover insulated ducato"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "WeCamp isolermatta Fiat Ducato utvändig 793 kr campingvaruhuset.se (golv/märke); ProPlus 1 061; Milenco universal 1 260; Hindermann termomatta Ducato 1 700 campingshopen.se — mätt 2026-09-10; AliExpress 36 USD landar 522 → K7-kill"
   },
   {
    "objekt": "Husvagn — gasolflaskan och dragkulan",
@@ -139,12 +141,13 @@
     "getcamping.se",
     "campingvaruhuset.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 399,
    "sokfraser_en": [
     "gas bottle cover caravan waterproof 11kg",
     "caravan hitch coupling cover waterproof"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "Landmann överdrag gasolflaska PC5/PC10/P11 600D 399 kr grilltorget.se — mätt 2026-09-10; landad 275 ger K7-kill, formen är död vid AliExpress-pris > 8 USD"
   },
   {
    "objekt": "Husvagn/husbil — ventiler och genomföringar (möss)",
@@ -226,12 +229,13 @@
     "erlandsonsbrygga.se",
     "pricerunner.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 1215,
    "sokfraser_en": [
     "boat cover trailerable 600D waterproof",
     "boat winter storage cover breathable"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "Watski Proflex formsydd båtpresenning 1 089 (ord 1 215) kr; PriceRunner båtkapell 799–3 231 — mätt 2026-09-10; AliExpress 39 USD landar 561 → K7-kill (kräver ≤ 25 USD)"
   },
   {
    "objekt": "Utombordare — kåpan, hela motorn, nästa fas",
@@ -468,13 +472,14 @@
     "cykelfackhandel (Ecoride/Crescent-återförsäljare) — ej mätt",
     "pricerunner.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 299,
    "sokfraser_en": [
     "ebike cover waterproof outdoor heavy duty",
     "ebike display cover waterproof",
     "ebike battery cover neoprene thermal"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "Fahrer neopren batteriskydd 299–349 kr (CDON, wheelyshop.se) — mätt 2026-09-10; AliExpress 13 USD landar 187 → K7-kill"
   },
   {
    "objekt": "Åkgräsklippare — sitsen (A2 Slitytan)",
@@ -581,7 +586,8 @@
     "generator cover waterproof outdoor",
     "generator running cover tent heavy duty"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "Biltema Skyddsöverdrag för elverk 2000031725 finns (pris ej läst, 403) — K4-kill: kedjan har formen. Mätt 2026-09-10"
   },
   {
    "objekt": "Vedstapeln",
@@ -608,7 +614,8 @@
     "firewood log rack cover only 8ft",
     "firewood stack cover 2m waterproof top only"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "CDON '8,5 ft vedställ utomhus med lock 600D' 1 449 kr och '12,7 ft' 1 666 kr (ställ + överdrag); separat överdrag ej hittat i svensk butik — mätt 2026-09-10. ankare_sek lämnas tom: ankaret är inte samma form."
   },
   {
    "objekt": "IBC-tank — vinterfasen",
@@ -683,12 +690,13 @@
     "spabadsfackhandel (Poolvaruhuset) — ej mätt",
     "pricerunner.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 995,
    "sokfraser_en": [
     "hot tub cover cap protector",
     "spa cover cap 220cm waterproof 600D"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "Spabadsbutiken Skyddsöverdrag till Runt Spalock 210 cm 995 kr; Cover Cap deLuxe Round 1 295; Kuben 1 290; golv Hemson Oxford Spa Cover Cap 499 (fyrkantig) — mätt 2026-09-10"
   },
   {
    "objekt": "Utemöbler på altanen",
@@ -761,11 +769,12 @@
     "Sunwind-återförsäljare [F]",
     "bauhaus.se [F]"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 225,
    "sokfraser_en": [
     "patio heater cover waterproof zipper"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "Bauhaus skydd till Heat1 terrassvärmare 225 kr — mätt 2026-09-10; kedjan har formen → K6-kill vid 599"
   },
   {
    "objekt": "Pizzaugn/utekök",
@@ -1143,13 +1152,14 @@
     "granngarden.se",
     "pricerunner.se (Kerbl 1 017, Pawhut 1 045, VEVOR 1 048, Supercat 1 799, Northix 1 919) [F]"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 745,
    "sokfraser_en": [
     "outdoor cat heated pad waterproof",
     "heated pet water bowl outdoor",
     "cat shelter porch windproof insulated"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_matt": "uppvärmd vattenskål: P-Lindberg frostfritt vattenkar 3 L 745 kr (plast, 30 W); Sulavesi betong 1 690 kr arkenzoo.se; golv Fyndiq 3,2 L 434–500 kr — mätt 2026-09-10; AliExpress-skålen 27 USD landar 395 → K7-kill"
   },
   {
    "objekt": "Gårdshunden/hundgården",

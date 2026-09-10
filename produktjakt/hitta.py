@@ -172,7 +172,7 @@ def pris_pa_9(x):
     return int(round((x + 1) / 100) * 100 - 1) if x > 150 else int(round(x))
 
 
-def ekonomi(pris_usd, k, ankare_sek=None):
+def ekonomi(pris_usd, k, ankare_sek=None, tak=TAK_LANDAD_SEK):
     """Landad kostnad, tänkt pris och uppslag — eller None när priset saknas.
 
     Två vägar (MASTERPROMPT steg 5):
@@ -189,8 +189,8 @@ def ekonomi(pris_usd, k, ankare_sek=None):
             return {"landad": round(landad), "forslag_pris": forslag, "dom": "FAIL",
                     "orsak": f"landad {round(landad)} kr över {round(tak)} kr (pris {forslag} ÷ {KRAV_MULTIPEL})", "ankare_sek": ankare_sek}
     else:
-        if landad > TAK_LANDAD_SEK:
-            return {"landad": round(landad), "dom": "FAIL", "orsak": f"landad {round(landad)} kr över taket {TAK_LANDAD_SEK} (inget ankare mätt)"}
+        if landad > tak:
+            return {"landad": round(landad), "dom": "FAIL", "orsak": f"landad {round(landad)} kr över taket {tak} (inget ankare mätt)"}
         forslag = pris_pa_9(max(GOLV_SEK, round(landad * KRAV_MULTIPEL / 10) * 10))
     mult = forslag / landad if landad else 0
     dom = "PASS" if (mult >= KRAV_MULTIPEL and forslag >= GOLV_SEK) else "FAIL"
@@ -210,6 +210,8 @@ def main():
     ap.add_argument("--kalla", choices=("bada", "objekt", "sokord"), default="objekt",
                     help="objekt.json (masterprompten, standard), sokord.json (gamla katalogen — ger kedjevaror) eller båda")
     ap.add_argument("--vitlista", action="store_true", help="släpp sko/handske/mössa igenom STOPPORD (A6 kroppsskydd)")
+    ap.add_argument("--tak", type=int, default=TAK_LANDAD_SEK,
+                    help="tak för landad kostnad när raden saknar ankare (standard 420; höj när ankaret mäts efteråt)")
     a = ap.parse_args()
 
     katalog = json.load(open(os.path.join(HERE, "sokord.json"), encoding="utf-8"))
@@ -253,7 +255,7 @@ def main():
             if not t.get("pris"):
                 hoppade["pris saknas"] += 1
                 continue
-            ek = ekonomi(t["pris"], k, ankare)
+            ek = ekonomi(t["pris"], k, ankare, a.tak)
             if not ek or ek["dom"] != "PASS":
                 hoppade["ekonomi"] += 1
                 continue

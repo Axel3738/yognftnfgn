@@ -1,0 +1,63 @@
+{
+  "_kommentar": "Metas facit (MASTERPROMPT 8.1.3–8.1.4). Kampanj i MagiBorsten act_1867947880635861 med produktens prefix inom 14 dagar = launchad (2 ja). >=BE / <BE skrivs först vid ≥ 2 000 kr spend och två snapshots ≥ 3 dygn isär. Läst 2026-09-10 via META_ACCESS_TOKEN (fält name,created_time,status).",
+  "last": "2026-09-10",
+  "utfall": {
+    "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09": {
+      "datum": "2026-09-09",
+      "spend": null,
+      "kop": null,
+      "roas": null,
+      "be": 1.63,
+      "utfall": "launchad",
+      "kalla": "act_1867947880635861/campaigns created_time 2026-09-09, status ACTIVE",
+      "taggar": {
+        "objekt": "Husvagn — taket",
+        "arketyp": "A1",
+        "form": "överdrag",
+        "deadline_typ": "uppställning",
+        "deadline_klass": "2–6 v",
+        "ankare_klass": "1,3–1,6×",
+        "ankare_kalla": "eurotrail/getcamping.se",
+        "prisband": "≥ 1 000"
+      }
+    },
+    "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09": {
+      "datum": "2026-09-09",
+      "spend": null,
+      "kop": null,
+      "roas": null,
+      "be": 1.62,
+      "utfall": "launchad",
+      "kalla": "act_1867947880635861/campaigns created_time 2026-09-09, status ACTIVE",
+      "taggar": {
+        "objekt": "Utekatten",
+        "arketyp": "A3",
+        "form": "koja",
+        "deadline_typ": "första frost",
+        "deadline_klass": "6–12 v",
+        "ankare_klass": "1,2–1,3×",
+        "ankare_kalla": "pricerunner.se (Kerbl/Northix)",
+        "prisband": "500–999"
+      }
+    },
+    "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08": {
+      "datum": "2026-09-08",
+      "spend": null,
+      "kop": null,
+      "roas": null,
+      "be": 1.62,
+      "utfall": "launchad",
+      "kalla": "act_1867947880635861/campaigns created_time 2026-09-08, status ACTIVE",
+      "taggar": {
+        "objekt": "Barnbarnet — adventskalendern",
+        "arketyp": "A4",
+        "form": "kalender",
+        "deadline_typ": "1 december",
+        "deadline_klass": "6–12 v",
+        "ankare_klass": "1,2–1,3×",
+        "ankare_kalla": "lego.com/kedjan",
+        "prisband": "300–499"
+      }
+    }
+  }
+}

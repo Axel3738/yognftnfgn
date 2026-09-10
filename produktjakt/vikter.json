@@ -6,7 +6,7 @@
   "kanske": 4,
   "nej": 3
  },
- "antal_utfall": 0,
+ "antal_utfall": 3,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
  "dimensioner": {
   "grupp": {
@@ -58,6 +58,154 @@
     "nej": 0,
     "score": 0.667
    }
+  },
+  "objekt": {
+   "Husvagn — taket": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "Utekatten": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "Barnbarnet — adventskalendern": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "arketyp": {
+   "A1": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "A3": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "A4": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "form": {
+   "överdrag": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "koja": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "kalender": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "deadline_typ": {
+   "uppställning": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "första frost": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "1 december": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "deadline_klass": {
+   "2–6 v": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "6–12 v": {
+    "ja": 4,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.833
+   }
+  },
+  "ankare_klass": {
+   "1,3–1,6×": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "1,2–1,3×": {
+    "ja": 4,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.833
+   }
+  },
+  "ankare_kalla": {
+   "eurotrail/getcamping.se": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "pricerunner.se (Kerbl/Northix)": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "lego.com/kedjan": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "prisband": {
+   "≥ 1 000": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "500–999": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "300–499": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
   }
  },
  "orsaker": {
@@ -108,5 +256,8 @@
   }
  },
  "stopp": [],
- "lyft": []
+ "lyft": [
+  "ankare_klass:1,2–1,3×",
+  "deadline_klass:6–12 v"
+ ]
 }

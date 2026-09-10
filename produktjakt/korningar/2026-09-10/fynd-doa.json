@@ -1,0 +1,2178 @@
+{
+ "datum": "2026-09-10",
+ "manad": 9,
+ "usd_sek": 9.5687,
+ "kurskalla": "kurs.json 2026-09-10",
+ "sokord": [
+  {
+   "ord": "window well cover clear polycarbonate",
+   "grupp": "Källarfönster/ljusgårdar",
+   "taggar": {
+    "objekt": "Källarfönster/ljusgårdar",
+    "arketyp": "A1",
+    "form": "lock"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "ev charger cover outdoor waterproof",
+   "grupp": "Laddbox/utomhusuttag",
+   "taggar": {
+    "objekt": "Laddbox/utomhusuttag",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "hot tub cover cap protector",
+   "grupp": "Spabadet — locket",
+   "taggar": {
+    "objekt": "Spabadet — locket",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "kids bike cover waterproof outdoor",
+   "grupp": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+   "taggar": {
+    "objekt": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "heated pet water bowl outdoor",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "tyre saver ramp caravan winter",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "ice cleats over shoe elastic universal",
+   "grupp": "Altanen/trädäcket — foten (A6)",
+   "taggar": {
+    "objekt": "Altanen/trädäcket — foten (A6)",
+    "arketyp": "A6",
+    "form": "piggar"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "boat seat cover set waterproof pedestal",
+   "grupp": "Båtens sitsar och dynor",
+   "taggar": {
+    "objekt": "Båtens sitsar och dynor",
+    "arketyp": "A2",
+    "form": "överdrag"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "motorhome cab insulation mat interior",
+   "grupp": "Husbil — hytt och vindruta",
+   "taggar": {
+    "objekt": "Husbil — hytt och vindruta",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "chicken coop run cover waterproof 3x6",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "spa cover cap 220cm waterproof 600D",
+   "grupp": "Spabadet — locket",
+   "taggar": {
+    "objekt": "Spabadet — locket",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "gas bottle cover caravan waterproof 11kg",
+   "grupp": "Husvagn — gasolflaskan och dragkulan",
+   "taggar": {
+    "objekt": "Husvagn — gasolflaskan och dragkulan",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "hammock stand cover waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "trailer cover waterproof oxford utility",
+   "grupp": "Släpkärra",
+   "taggar": {
+    "objekt": "Släpkärra",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "utility trailer cover waterproof fitted heavy duty",
+   "grupp": "Släpkärra",
+   "taggar": {
+    "objekt": "Släpkärra",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "outdoor cushion storage bag waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "cat shelter porch windproof insulated",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "caravan front towing cover",
+   "grupp": "Husvagn — fronten",
+   "taggar": {
+    "objekt": "Husvagn — fronten",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "heated chicken waterer winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "patio sofa cover fitted 600D",
+   "grupp": "Utemöbler på altanen",
+   "taggar": {
+    "objekt": "Utemöbler på altanen",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "atv cover waterproof heavy duty 600D",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "caravan wheel cover set 4",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "motorcycle half cover seat tank",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "caravan front protector cover universal",
+   "grupp": "Husvagn — fronten",
+   "taggar": {
+    "objekt": "Husvagn — fronten",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "ebike display cover waterproof",
+   "grupp": "Elcykel under skärmtak",
+   "taggar": {
+    "objekt": "Elcykel under skärmtak",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "boat winter storage cover breathable",
+   "grupp": "Båt på trailer/bockar",
+   "taggar": {
+    "objekt": "Båt på trailer/bockar",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "motorhome roof cover uv winter",
+   "grupp": "Husvagn — taket",
+   "taggar": {
+    "objekt": "Husvagn — taket",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "fire pit cover round waterproof 600D",
+   "grupp": "Eldstad/eldkorg",
+   "taggar": {
+    "objekt": "Eldstad/eldkorg",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "generator cover waterproof outdoor",
+   "grupp": "Elverk/kompressor ute",
+   "taggar": {
+    "objekt": "Elverk/kompressor ute",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "chicken coop insulation cover winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "motorhome cab cover insulated ducato",
+   "grupp": "Husbil — hytt och vindruta",
+   "taggar": {
+    "objekt": "Husbil — hytt och vindruta",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "caravan roof cover waterproof breathable 6m",
+   "grupp": "Husvagn — taket",
+   "taggar": {
+    "objekt": "Husvagn — taket",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "hedgehog house outdoor wooden",
+   "grupp": "Igelkotten i trädgården",
+   "taggar": {
+    "objekt": "Igelkotten i trädgården",
+    "arketyp": "A3",
+    "form": "hus"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "heron deterrent pond guard",
+   "grupp": "Trädgårdsdammen (koi/guldfisk)",
+   "taggar": {
+    "objekt": "Trädgårdsdammen (koi/guldfisk)",
+    "arketyp": "A1",
+    "form": "nät"
+   },
+   "ankare_sek": null
+  }
+ ],
+ "hoppade": {
+  "stoppord": 29,
+  "pris saknas": 0,
+  "ekonomi": 178,
+  "dubblett": 6,
+  "axel_nej": 0
+ },
+ "antal_kandidater": 75,
+ "produkter": [
+  {
+   "product_id": "1005009353851718",
+   "titel": "Round Bathtub Cover Outdoor Anti-Uv Spa Hot Tub Dust Cover Foldable Sunscreen Dustproof Waterproof Covers Swimming Pool Cover",
+   "url": "https://www.aliexpress.com/item/1005009353851718.html",
+   "pris": 12.95,
+   "valuta": "USD",
+   "pris_text": "US $12.95",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S2b98ac777d4a4ae5b0a681efb7e7081fT.jpg",
+   "sald": "",
+   "sokord": "spa cover cap 220cm waterproof 600D",
+   "grupp": "Spabadet — locket",
+   "taggar": {
+    "objekt": "Spabadet — locket",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-spa-cover-cap-220cm-waterproof-600d.html",
+   "ekonomi": {
+    "landad": 186,
+    "forslag_pris": 499,
+    "multipel": 2.68,
+    "be_cpa": 313,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.168
+  },
+  {
+   "product_id": "1005007783568545",
+   "titel": "Outdoor Patio Cushion Storage Bags Waterproof Extra Large Patio Furniture Cover Cushion Storage Bag with Handle and Zipper Home",
+   "url": "https://www.aliexpress.com/item/1005007783568545.html",
+   "pris": 13.03,
+   "valuta": "USD",
+   "pris_text": "US $13.03",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S226954ae6e004e2f92dc7c5edc221b3aQ.jpg",
+   "sald": "",
+   "sokord": "outdoor cushion storage bag waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cushion-storage-bag-waterproof.html",
+   "ekonomi": {
+    "landad": 187,
+    "forslag_pris": 499,
+    "multipel": 2.67,
+    "be_cpa": 312,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.167
+  },
+  {
+   "product_id": "1005012302589881",
+   "titel": "4pcs Universal Wheel Tire Covers Waterproof Oxford UV Sun Protectors Wheel Tire Covers for Camper Car Truck 27-32 inch",
+   "url": "https://www.aliexpress.com/item/1005012302589881.html",
+   "pris": 13.19,
+   "valuta": "USD",
+   "pris_text": "US $13.19",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S8ddeca0f9e22473984303a52bc574fccf.jpg",
+   "sald": "",
+   "sokord": "caravan wheel cover set 4",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-wheel-cover-set-4.html",
+   "ekonomi": {
+    "landad": 189,
+    "forslag_pris": 499,
+    "multipel": 2.64,
+    "be_cpa": 310,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.165
+  },
+  {
+   "product_id": "1005012868110885",
+   "titel": "Clear PVC Window Thermal Insulation Film, Windproof Warm Keeping Film, Winter Energy Saving Heat Retention Window Cover For Home",
+   "url": "https://www.aliexpress.com/item/1005012868110885.html",
+   "pris": 10.55,
+   "valuta": "USD",
+   "pris_text": "US $10.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S36bd4b51221b4e2ea95e4456bfcdd8deq.jpg",
+   "sald": "",
+   "sokord": "window well cover clear polycarbonate",
+   "grupp": "Källarfönster/ljusgårdar",
+   "taggar": {
+    "objekt": "Källarfönster/ljusgårdar",
+    "arketyp": "A1",
+    "form": "lock"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-window-well-cover-clear-polycarbonate.html",
+   "ekonomi": {
+    "landad": 151,
+    "forslag_pris": 399,
+    "multipel": 2.63,
+    "be_cpa": 248,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.164
+  },
+  {
+   "product_id": "1005010122922250",
+   "titel": "Anti Wear Waterproof Anti-UV Generator Cover 3 Size Outdoor Generator protective cover 210D Oxford Cloth",
+   "url": "https://www.aliexpress.com/item/1005010122922250.html",
+   "pris": 15.85,
+   "valuta": "USD",
+   "pris_text": "US $15.85",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S2245777461484a2f9b8ba563fd06814fw.jpg",
+   "sald": "",
+   "sokord": "generator cover waterproof outdoor",
+   "grupp": "Elverk/kompressor ute",
+   "taggar": {
+    "objekt": "Elverk/kompressor ute",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-generator-cover-waterproof-outdoor.html",
+   "ekonomi": {
+    "landad": 227,
+    "forslag_pris": 599,
+    "multipel": 2.63,
+    "be_cpa": 372,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.164
+  },
+  {
+   "product_id": "1005013084893677",
+   "titel": "Electric Car Charger Rain Cover Waterproof Outdoor Charging Station Protector Universal Fit for Wall Mount Ev Charger Dustproof",
+   "url": "https://www.aliexpress.com/item/1005013084893677.html",
+   "pris": 10.65,
+   "valuta": "USD",
+   "pris_text": "US $10.65",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1be0e8bdc8104dce8ed9bd4cd10b638dF.jpg",
+   "sald": "",
+   "sokord": "ev charger cover outdoor waterproof",
+   "grupp": "Laddbox/utomhusuttag",
+   "taggar": {
+    "objekt": "Laddbox/utomhusuttag",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-ev-charger-cover-outdoor-waterproof.html",
+   "ekonomi": {
+    "landad": 153,
+    "forslag_pris": 399,
+    "multipel": 2.61,
+    "be_cpa": 246,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.163
+  },
+  {
+   "product_id": "1005012847791765",
+   "titel": "Caravan Front Protection Cover 200x160CM Black Weatherproof Towing Shield Bug Proof Keder Piping Hook Fastening",
+   "url": "https://www.aliexpress.com/item/1005012847791765.html",
+   "pris": 15.99,
+   "valuta": "USD",
+   "pris_text": "US $15.99",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S57c5c37f62304c378df2840912d4c4dbZ.png",
+   "sald": "",
+   "sokord": "caravan front protector cover universal",
+   "grupp": "Husvagn — fronten",
+   "taggar": {
+    "objekt": "Husvagn — fronten",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-front-protector-cover-universal.html",
+   "ekonomi": {
+    "landad": 230,
+    "forslag_pris": 599,
+    "multipel": 2.61,
+    "be_cpa": 369,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.163
+  },
+  {
+   "product_id": "1005010536684274",
+   "titel": "Update For Polaris Sportsman Rancher Foreman Scrambler Kodiak Scrambler ATV Seat Covers W/ 2 Pocket Waterproof-Resistant Cover",
+   "url": "https://www.aliexpress.com/item/1005010536684274.html",
+   "pris": 15.96,
+   "valuta": "USD",
+   "pris_text": "US $15.96",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S3b6ca23041984106849773f14f9573e42.jpg",
+   "sald": "",
+   "sokord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-atv-seat-cover-waterproof-universal.html",
+   "ekonomi": {
+    "landad": 229,
+    "forslag_pris": 599,
+    "multipel": 2.61,
+    "be_cpa": 370,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.163
+  },
+  {
+   "product_id": "1005012072925924",
+   "titel": "ATV Seat Cover Anti-Slip Waterproof PVC Protection For Yamaha Raptor700 Motorcycle Parts Accessories Durable",
+   "url": "https://www.aliexpress.com/item/1005012072925924.html",
+   "pris": 18.77,
+   "valuta": "USD",
+   "pris_text": "US $18.77",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sdd616fc291304f97b4ab4500a6507269R.jpg",
+   "sald": "",
+   "sokord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-atv-seat-cover-waterproof-universal.html",
+   "ekonomi": {
+    "landad": 269,
+    "forslag_pris": 699,
+    "multipel": 2.59,
+    "be_cpa": 430,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.162
+  },
+  {
+   "product_id": "1005012984597960",
+   "titel": "Non-Slip 24 Spikes Ice Cleats TPE Material Multi-Size Anti-Slip Crampons Black Hiking Cleats Ice Fishing",
+   "url": "https://www.aliexpress.com/item/1005012984597960.html",
+   "pris": 10.82,
+   "valuta": "USD",
+   "pris_text": "US $10.82",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S0a71c9d988304a8eaea087c73471feefb.jpg",
+   "sald": "",
+   "sokord": "ice cleats over shoe elastic universal",
+   "grupp": "Altanen/trädäcket — foten (A6)",
+   "taggar": {
+    "objekt": "Altanen/trädäcket — foten (A6)",
+    "arketyp": "A6",
+    "form": "piggar"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-ice-cleats-over-shoe-elastic-universal.html",
+   "ekonomi": {
+    "landad": 155,
+    "forslag_pris": 399,
+    "multipel": 2.57,
+    "be_cpa": 244,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.161
+  },
+  {
+   "product_id": "1005005165846344",
+   "titel": "Waterproof 2/3 Seater Swing Cover for Chair Bench Replacement Garden Outdoor All-Purpose Covers Hammock Dust Covers",
+   "url": "https://www.aliexpress.com/item/1005005165846344.html",
+   "pris": 16.21,
+   "valuta": "USD",
+   "pris_text": "US $16.21",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Se2c5c59a2c45465b919d503c78999d9ck.jpg",
+   "sald": "",
+   "sokord": "hammock stand cover waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-hammock-stand-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 233,
+    "forslag_pris": 599,
+    "multipel": 2.57,
+    "be_cpa": 366,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.161
+  },
+  {
+   "product_id": "1005008144793103",
+   "titel": "Heavy Duty Waterproof Dustproof Winch Cover Atv Winch Covers Towing Hauling Accessories Boat Trailer Exterior Parts",
+   "url": "https://www.aliexpress.com/item/1005008144793103.html",
+   "pris": 10.82,
+   "valuta": "USD",
+   "pris_text": "US $10.82",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc67326a5793c4aa28dde6b93c75f1431B.jpg",
+   "sald": "",
+   "sokord": "utility trailer cover waterproof fitted heavy duty",
+   "grupp": "Släpkärra",
+   "taggar": {
+    "objekt": "Släpkärra",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-utility-trailer-cover-waterproof-fitted-heavy-duty.html",
+   "ekonomi": {
+    "landad": 155,
+    "forslag_pris": 399,
+    "multipel": 2.57,
+    "be_cpa": 244,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.161
+  },
+  {
+   "product_id": "1005007964938898",
+   "titel": "Furniture Cushion Storage Bag Waterproof 210D Oxford Cloth Outdoor Garden Christmas Tree Organizer Protective Cover Dustproof",
+   "url": "https://www.aliexpress.com/item/1005007964938898.html",
+   "pris": 16.21,
+   "valuta": "USD",
+   "pris_text": "US $16.21",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S89c49f409b4e49209be63127b892fa69x.jpg",
+   "sald": "",
+   "sokord": "outdoor cushion storage bag waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cushion-storage-bag-waterproof.html",
+   "ekonomi": {
+    "landad": 233,
+    "forslag_pris": 599,
+    "multipel": 2.57,
+    "be_cpa": 366,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.161
+  },
+  {
+   "product_id": "1005010594177734",
+   "titel": "Garden Furniture Cushion Storage Bag Waterproof Anti-UV Rectangle Sports Equipment Bag Protective Cover Xmas Tree Storage Bag",
+   "url": "https://www.aliexpress.com/item/1005010594177734.html",
+   "pris": 18.92,
+   "valuta": "USD",
+   "pris_text": "US $18.92",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc16f5562f6ac4b90924504f3714cd98eR.jpg",
+   "sald": "",
+   "sokord": "outdoor cushion storage bag waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cushion-storage-bag-waterproof.html",
+   "ekonomi": {
+    "landad": 272,
+    "forslag_pris": 699,
+    "multipel": 2.57,
+    "be_cpa": 427,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.161
+  },
+  {
+   "product_id": "1005012656202158",
+   "titel": "Clear Waterproof PE Tarp Reinforced Binding Anti-freeze Wind Dust Protection Cover For Chicken Run Garden Terrace Sun Room",
+   "url": "https://www.aliexpress.com/item/1005012656202158.html",
+   "pris": 13.49,
+   "valuta": "USD",
+   "pris_text": "US $13.49",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc4108b7db45647a4ad6522f39ac1cee2S.jpg",
+   "sald": "",
+   "sokord": "chicken coop insulation cover winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-insulation-cover-winter.html",
+   "ekonomi": {
+    "landad": 194,
+    "forslag_pris": 499,
+    "multipel": 2.58,
+    "be_cpa": 305,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.161
+  },
+  {
+   "product_id": "1005005932851254",
+   "titel": "4 Packs Adjustable 19\"-36\" Silver Wheel Tire Covers for Sedan RV Camper Van SUV Wheel Oxford Waterproof UV Sun Protectors",
+   "url": "https://www.aliexpress.com/item/1005005932851254.html",
+   "pris": 21.75,
+   "valuta": "USD",
+   "pris_text": "US $21.75",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sa06d59fb661f445885c5eec5583517deO.jpg",
+   "sald": "",
+   "sokord": "caravan wheel cover set 4",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-wheel-cover-set-4.html",
+   "ekonomi": {
+    "landad": 312,
+    "forslag_pris": 799,
+    "multipel": 2.56,
+    "be_cpa": 487,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.16
+  },
+  {
+   "product_id": "1005011566423244",
+   "titel": "【ZYAA-1】1Pcs RV Sunroof Sunshades Curtain Foldable RV Vents Skylight Insulator Cover Waterproof UV Protection",
+   "url": "https://www.aliexpress.com/item/1005011566423244.html",
+   "pris": 10.85,
+   "valuta": "USD",
+   "pris_text": "US $10.85",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S284ee1b0b8c44b798a37b17c788d2fb1x.jpg",
+   "sald": "",
+   "sokord": "motorhome roof cover uv winter",
+   "grupp": "Husvagn — taket",
+   "taggar": {
+    "objekt": "Husvagn — taket",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorhome-roof-cover-uv-winter.html",
+   "ekonomi": {
+    "landad": 156,
+    "forslag_pris": 399,
+    "multipel": 2.56,
+    "be_cpa": 243,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.16
+  },
+  {
+   "product_id": "1005013114299092",
+   "titel": "Hanging Heated Pet Water Bowl Gray Industrial Design Anti-spill Drinking Dispenser for Dog Cat Bird Rabbit Cage",
+   "url": "https://www.aliexpress.com/item/1005013114299092.html",
+   "pris": 24.63,
+   "valuta": "USD",
+   "pris_text": "US $24.63",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sdb41dbb8a3ed4fd596e9e6924e932feaW.jpg",
+   "sald": "",
+   "sokord": "heated pet water bowl outdoor",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heated-pet-water-bowl-outdoor.html",
+   "ekonomi": {
+    "landad": 354,
+    "forslag_pris": 899,
+    "multipel": 2.54,
+    "be_cpa": 545,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.159
+  },
+  {
+   "product_id": "1005012237574673",
+   "titel": "Black Propane Cylinder Cover 600D Oxford Fabric Waterproof for 5kg and 11kg Gas Tanks with Air Vents and Drawstring Base",
+   "url": "https://www.aliexpress.com/item/1005012237574673.html",
+   "pris": 19.19,
+   "valuta": "USD",
+   "pris_text": "US $19.19",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sf37d97bb587343ce952a5df3f741cba6l.jpeg",
+   "sald": "",
+   "sokord": "gas bottle cover caravan waterproof 11kg",
+   "grupp": "Husvagn — gasolflaskan och dragkulan",
+   "taggar": {
+    "objekt": "Husvagn — gasolflaskan och dragkulan",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-gas-bottle-cover-caravan-waterproof-11kg.html",
+   "ekonomi": {
+    "landad": 275,
+    "forslag_pris": 699,
+    "multipel": 2.54,
+    "be_cpa": 424,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.159
+  },
+  {
+   "product_id": "1005009064595213",
+   "titel": "Cushion Storage Bag with Handles Large Capacity Furniture Protective Cover Outdoor Garden Waterproof Dustproof Organizer",
+   "url": "https://www.aliexpress.com/item/1005009064595213.html",
+   "pris": 21.87,
+   "valuta": "USD",
+   "pris_text": "US $21.87",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sa994d98e8e79400aa5d61377d935e56bk.jpg",
+   "sald": "",
+   "sokord": "outdoor cushion storage bag waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cushion-storage-bag-waterproof.html",
+   "ekonomi": {
+    "landad": 314,
+    "forslag_pris": 799,
+    "multipel": 2.55,
+    "be_cpa": 485,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.159
+  },
+  {
+   "product_id": "1005012988175743",
+   "titel": "Cushion Storage Bag Large Capacity Furniture Protective Cover Outdoor Garden Waterproof Dustproof Christmas Tree Organizer New",
+   "url": "https://www.aliexpress.com/item/1005012988175743.html",
+   "pris": 16.39,
+   "valuta": "USD",
+   "pris_text": "US $16.39",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S73b099330ac942ac8553cf50a62ec845N.jpg",
+   "sald": "",
+   "sokord": "outdoor cushion storage bag waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cushion-storage-bag-waterproof.html",
+   "ekonomi": {
+    "landad": 235,
+    "forslag_pris": 599,
+    "multipel": 2.55,
+    "be_cpa": 364,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.159
+  },
+  {
+   "product_id": "1005007364154658",
+   "titel": "Universal Waterproof Oxford Towing Caravan Hitch Cover RV Motorhome Trailer Tow Ball Coupling Lock Cover Dustproof Protector",
+   "url": "https://www.aliexpress.com/item/1005007364154658.html",
+   "pris": 16.39,
+   "valuta": "USD",
+   "pris_text": "US $16.39",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S78b7523c43e94209acc67ab507a360c86.jpeg",
+   "sald": "",
+   "sokord": "caravan front towing cover",
+   "grupp": "Husvagn — fronten",
+   "taggar": {
+    "objekt": "Husvagn — fronten",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-front-towing-cover.html",
+   "ekonomi": {
+    "landad": 235,
+    "forslag_pris": 599,
+    "multipel": 2.55,
+    "be_cpa": 364,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.159
+  },
+  {
+   "product_id": "1005004187110917",
+   "titel": "Motorcycle Seat Cover Waterproof PU Leather Anti Slipr Protector 70*100cm Wear-Resistant for ATV Scooter Electric Car Universal",
+   "url": "https://www.aliexpress.com/item/1005004187110917.html",
+   "pris": 21.9,
+   "valuta": "USD",
+   "pris_text": "US $21.90",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S28e852fa01344e1993f22fc8792b43ac1.jpg",
+   "sald": "",
+   "sokord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-atv-seat-cover-waterproof-universal.html",
+   "ekonomi": {
+    "landad": 314,
+    "forslag_pris": 799,
+    "multipel": 2.54,
+    "be_cpa": 485,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.159
+  },
+  {
+   "product_id": "1005012733775353",
+   "titel": "600D Oxford Fabric Round Fire Pit Cover with Drawstring & Double Handles Waterproof Outdoor Grill Protector",
+   "url": "https://www.aliexpress.com/item/1005012733775353.html",
+   "pris": 21.89,
+   "valuta": "USD",
+   "pris_text": "US $21.89",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S732c9433eff64d988e03699d9adbab587.jpg",
+   "sald": "",
+   "sokord": "fire pit cover round waterproof 600D",
+   "grupp": "Eldstad/eldkorg",
+   "taggar": {
+    "objekt": "Eldstad/eldkorg",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fire-pit-cover-round-waterproof-600d.html",
+   "ekonomi": {
+    "landad": 314,
+    "forslag_pris": 799,
+    "multipel": 2.54,
+    "be_cpa": 485,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.159
+  },
+  {
+   "product_id": "1005012358897278",
+   "titel": "210D Rectangle Solar Pool Covers Frame Swimming Pool Cover Oxford Pool Cover Durable Heavy-Duty Winter Dust for All Above Ground",
+   "url": "https://www.aliexpress.com/item/1005012358897278.html",
+   "pris": 16.55,
+   "valuta": "USD",
+   "pris_text": "US $16.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Se9cd000423b7470cbdda1de3205133f9S.jpg",
+   "sald": "",
+   "sokord": "hot tub cover cap protector",
+   "grupp": "Spabadet — locket",
+   "taggar": {
+    "objekt": "Spabadet — locket",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-hot-tub-cover-cap-protector.html",
+   "ekonomi": {
+    "landad": 238,
+    "forslag_pris": 599,
+    "multipel": 2.52,
+    "be_cpa": 361,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.158
+  },
+  {
+   "product_id": "1005012951725496",
+   "titel": "Dog Heated Water Bowl for Outdoor No Freeze Water Bowl Pet Water Heater with Chew Resistant Cord, 2.2L",
+   "url": "https://www.aliexpress.com/item/1005012951725496.html",
+   "pris": 27.49,
+   "valuta": "USD",
+   "pris_text": "US $27.49",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S01ca0c2e84b24bcf94e1a600e98aa788R.jpg",
+   "sald": "",
+   "sokord": "heated pet water bowl outdoor",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heated-pet-water-bowl-outdoor.html",
+   "ekonomi": {
+    "landad": 395,
+    "forslag_pris": 999,
+    "multipel": 2.53,
+    "be_cpa": 604,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.158
+  },
+  {
+   "product_id": "1005012337953676",
+   "titel": "Waterproof Outdoor Foldable Boat for Seat Cover Chair Sleeve Protective Cover Commonly Used Chari Protector",
+   "url": "https://www.aliexpress.com/item/1005012337953676.html",
+   "pris": 10.99,
+   "valuta": "USD",
+   "pris_text": "US $10.99",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd59eff80610c460e8df7cd0f7528aaeb6.jpg",
+   "sald": "",
+   "sokord": "boat seat cover set waterproof pedestal",
+   "grupp": "Båtens sitsar och dynor",
+   "taggar": {
+    "objekt": "Båtens sitsar och dynor",
+    "arketyp": "A2",
+    "form": "överdrag"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-boat-seat-cover-set-waterproof-pedestal.html",
+   "ekonomi": {
+    "landad": 158,
+    "forslag_pris": 399,
+    "multipel": 2.53,
+    "be_cpa": 241,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.158
+  },
+  {
+   "product_id": "2044269669",
+   "titel": "2PCS Tire Warmer Fasten Heating Windstop Motorcycle Tyre Cover Polar Fleece Windbreak 12/17 Inch Black",
+   "url": "https://www.aliexpress.com/item/2044269669.html",
+   "pris": 27.49,
+   "valuta": "USD",
+   "pris_text": "US $27.49",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/HTB1VZRiLXXXXXasXVXXq6xXFXXXO.jpg",
+   "sald": "",
+   "sokord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorcycle-wheel-cover-winter-storage.html",
+   "ekonomi": {
+    "landad": 395,
+    "forslag_pris": 999,
+    "multipel": 2.53,
+    "be_cpa": 604,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.158
+  },
+  {
+   "product_id": "1005010491987428",
+   "titel": "1pc Caravan Gas Propane Bottle Cover Insulated Thermal Cover For 11KG & 13KG Bottle For Camper Winter Outdoor Camping Barbecue",
+   "url": "https://www.aliexpress.com/item/1005010491987428.html",
+   "pris": 19.29,
+   "valuta": "USD",
+   "pris_text": "US $19.29",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S9c9bd551451043faa980faf0c4bf70b1Q.jpg",
+   "sald": "",
+   "sokord": "gas bottle cover caravan waterproof 11kg",
+   "grupp": "Husvagn — gasolflaskan och dragkulan",
+   "taggar": {
+    "objekt": "Husvagn — gasolflaskan och dragkulan",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-gas-bottle-cover-caravan-waterproof-11kg.html",
+   "ekonomi": {
+    "landad": 277,
+    "forslag_pris": 699,
+    "multipel": 2.52,
+    "be_cpa": 422,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.158
+  },
+  {
+   "product_id": "1005012967661773",
+   "titel": "Outdoor Cat Tent Insulated Waterproof Shelter with Arched Doorway and Soft Bed for Porch Garden Use",
+   "url": "https://www.aliexpress.com/item/1005012967661773.html",
+   "pris": 24.79,
+   "valuta": "USD",
+   "pris_text": "US $24.79",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S141209e71f1f42319227f4478bb84f45m.jpg",
+   "sald": "",
+   "sokord": "cat shelter porch windproof insulated",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-cat-shelter-porch-windproof-insulated.html",
+   "ekonomi": {
+    "landad": 356,
+    "forslag_pris": 899,
+    "multipel": 2.53,
+    "be_cpa": 543,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.158
+  },
+  {
+   "product_id": "1005012891325536",
+   "titel": "1set 200x160CM Caravan Front Towing Cover Black Weatherproof Fastening With Keder Piping & Hooks Bug Protection Cover",
+   "url": "https://www.aliexpress.com/item/1005012891325536.html",
+   "pris": 30.39,
+   "valuta": "USD",
+   "pris_text": "US $30.39",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S0774ac5050314f1ea0f18465e679987b8.jpg",
+   "sald": "",
+   "sokord": "caravan front towing cover",
+   "grupp": "Husvagn — fronten",
+   "taggar": {
+    "objekt": "Husvagn — fronten",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-front-towing-cover.html",
+   "ekonomi": {
+    "landad": 436,
+    "forslag_pris": 1099,
+    "multipel": 2.52,
+    "be_cpa": 663,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.158
+  },
+  {
+   "product_id": "1005012822004375",
+   "titel": "2-4pcs Car Tires Storage Bag Wheel Tire Covers Case Vehicle Wheel Protector For Caravans Truck Car Camper Trailer Wheel Cover",
+   "url": "https://www.aliexpress.com/item/1005012822004375.html",
+   "pris": 11.03,
+   "valuta": "USD",
+   "pris_text": "US $11.03",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sabd383a473754df89edd8b111a0d34a4U.jpg",
+   "sald": "",
+   "sokord": "caravan wheel cover set 4",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-wheel-cover-set-4.html",
+   "ekonomi": {
+    "landad": 158,
+    "forslag_pris": 399,
+    "multipel": 2.52,
+    "be_cpa": 241,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.158
+  },
+  {
+   "product_id": "1005011775309152",
+   "titel": "A95G Wheels Tire Saver Ramps,Tire Anti-Slip Saver Ramps Slip Load Bearing Capacity Tool for Heavy Duty Truck SUV,A",
+   "url": "https://www.aliexpress.com/item/1005011775309152.html",
+   "pris": 19.4,
+   "valuta": "USD",
+   "pris_text": "US $19.40",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Scb9693fc0eeb4cdb82f2e10de6d5a202J.jpg",
+   "sald": "",
+   "sokord": "tyre saver ramp caravan winter",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-tyre-saver-ramp-caravan-winter.html",
+   "ekonomi": {
+    "landad": 278,
+    "forslag_pris": 699,
+    "multipel": 2.51,
+    "be_cpa": 421,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.157
+  },
+  {
+   "product_id": "1005013112016795",
+   "titel": "Fire Pit Cover Round Waterproof 600D Oxford Fabric for Outdoor Ground Fire Pits Elastic Hem Windproof Protection Black 32 Inch",
+   "url": "https://www.aliexpress.com/item/1005013112016795.html",
+   "pris": 30.49,
+   "valuta": "USD",
+   "pris_text": "US $30.49",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S49d4cb2efda848f490ab619f20954ea7c.jpg",
+   "sald": "",
+   "sokord": "fire pit cover round waterproof 600D",
+   "grupp": "Eldstad/eldkorg",
+   "taggar": {
+    "objekt": "Eldstad/eldkorg",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fire-pit-cover-round-waterproof-600d.html",
+   "ekonomi": {
+    "landad": 438,
+    "forslag_pris": 1099,
+    "multipel": 2.51,
+    "be_cpa": 661,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.157
+  },
+  {
+   "product_id": "1005013100714313",
+   "titel": "EV Charging Port Cover Magnetic Waterproof Dustproof Car Charger Port Rain Cover for Road Trip Outing Traveling Camping Outdoor",
+   "url": "https://www.aliexpress.com/item/1005013100714313.html",
+   "pris": 19.59,
+   "valuta": "USD",
+   "pris_text": "US $19.59",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sa0c6e38d087e4975a0b3119896595828Z.jpg",
+   "sald": "",
+   "sokord": "ev charger cover outdoor waterproof",
+   "grupp": "Laddbox/utomhusuttag",
+   "taggar": {
+    "objekt": "Laddbox/utomhusuttag",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-ev-charger-cover-outdoor-waterproof.html",
+   "ekonomi": {
+    "landad": 281,
+    "forslag_pris": 699,
+    "multipel": 2.49,
+    "be_cpa": 418,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.156
+  },
+  {
+   "product_id": "1005009338199607",
+   "titel": "Bike Cover Waterproof Raincover Bicycle Gear Motorcycle Bike Outdoor Sunscreen Cover MTB Bicycle Case Cover Bike Accessories",
+   "url": "https://www.aliexpress.com/item/1005009338199607.html",
+   "pris": 13.95,
+   "valuta": "USD",
+   "pris_text": "US $13.95",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1dbfc97adc974362a405e0f8ee46731ag.jpg",
+   "sald": "",
+   "sokord": "kids bike cover waterproof outdoor",
+   "grupp": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+   "taggar": {
+    "objekt": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-kids-bike-cover-waterproof-outdoor.html",
+   "ekonomi": {
+    "landad": 200,
+    "forslag_pris": 499,
+    "multipel": 2.49,
+    "be_cpa": 299,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.156
+  },
+  {
+   "product_id": "1005013100680321",
+   "titel": "350Ml Thermostatic Pet Water Bowl Heated Ceramic Bowl for Cats and Dogs Constant Temperature Safe Material Indoor Outdoor",
+   "url": "https://www.aliexpress.com/item/1005013100680321.html",
+   "pris": 27.89,
+   "valuta": "USD",
+   "pris_text": "US $27.89",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1276708cbd8e439b9b28540ee97c78ff3.jpg",
+   "sald": "",
+   "sokord": "heated pet water bowl outdoor",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heated-pet-water-bowl-outdoor.html",
+   "ekonomi": {
+    "landad": 400,
+    "forslag_pris": 999,
+    "multipel": 2.5,
+    "be_cpa": 599,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.156
+  },
+  {
+   "product_id": "1005001290728453",
+   "titel": "X Autohaux 210T Half Motorcycle Cover Travel Waterproof Outdoor Dustproof Rain Dust Anti UV Motor Scooter Protector Cover M L XL",
+   "url": "https://www.aliexpress.com/item/1005001290728453.html",
+   "pris": 25.01,
+   "valuta": "USD",
+   "pris_text": "US $25.01",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S84fbf23d938749fcb85817608862a0c29.jpg",
+   "sald": "",
+   "sokord": "motorcycle half cover seat tank",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorcycle-half-cover-seat-tank.html",
+   "ekonomi": {
+    "landad": 359,
+    "forslag_pris": 899,
+    "multipel": 2.5,
+    "be_cpa": 540,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.156
+  },
+  {
+   "product_id": "1005007416915118",
+   "titel": "Boat Cover Yacht Outdoor Protection Waterproof Boat Cover Oxford Fabric Anti-smashing Tear Proof Silver Reflective 300D 11-22FT",
+   "url": "https://www.aliexpress.com/item/1005007416915118.html",
+   "pris": 39.11,
+   "valuta": "USD",
+   "pris_text": "US $39.11",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S09ba1734455e4ba9b246febb9ca41981c.jpg",
+   "sald": "",
+   "sokord": "boat winter storage cover breathable",
+   "grupp": "Båt på trailer/bockar",
+   "taggar": {
+    "objekt": "Båt på trailer/bockar",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-boat-winter-storage-cover-breathable.html",
+   "ekonomi": {
+    "landad": 561,
+    "forslag_pris": 1399,
+    "multipel": 2.49,
+    "be_cpa": 838,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.156
+  },
+  {
+   "product_id": "1005008455560813",
+   "titel": "Universal Trailer Car Cover Auto Roof Tent Sunshade Waterproof Windproof Dustproof Outdoor Protector Travel Camping Canopy",
+   "url": "https://www.aliexpress.com/item/1005008455560813.html",
+   "pris": 42.02,
+   "valuta": "USD",
+   "pris_text": "US $42.02",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/H0ed6c677e32e4af182885f6886b295e13.jpg",
+   "sald": "",
+   "sokord": "motorhome roof cover uv winter",
+   "grupp": "Husvagn — taket",
+   "taggar": {
+    "objekt": "Husvagn — taket",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorhome-roof-cover-uv-winter.html",
+   "ekonomi": {
+    "landad": 603,
+    "forslag_pris": 1499,
+    "multipel": 2.49,
+    "be_cpa": 896,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.156
+  },
+  {
+   "product_id": "1005013072388281",
+   "titel": "Heavy Duty Black Round Fire Pit Cover 600D Oxford Waterproof Weatherproof Protector Outdoor Gas Lid Gas Fire Pit Cover",
+   "url": "https://www.aliexpress.com/item/1005013072388281.html",
+   "pris": 30.59,
+   "valuta": "USD",
+   "pris_text": "US $30.59",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Scb2b606647134fca8604a539ca25e149V.jpg",
+   "sald": "",
+   "sokord": "fire pit cover round waterproof 600D",
+   "grupp": "Eldstad/eldkorg",
+   "taggar": {
+    "objekt": "Eldstad/eldkorg",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fire-pit-cover-round-waterproof-600d.html",
+   "ekonomi": {
+    "landad": 439,
+    "forslag_pris": 1099,
+    "multipel": 2.5,
+    "be_cpa": 660,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.156
+  },
+  {
+   "product_id": "1005013126120424",
+   "titel": "2PCS Black Outdoor Furniture Cover, 190T Fabric Garden Protective Shelter Shell, Waterproof Anti-UV Tear-Resistant Cover For Backyard Garden Furniture Against Sun Rain Snow And Outdoor Dust Pollution, Durable Weather Protection",
+   "url": "https://www.aliexpress.com/item/1005013126120424.html",
+   "pris": 22.24,
+   "valuta": "USD",
+   "pris_text": "US $22.24",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd81237b04681462eb094ac65865a245fI.jpg",
+   "sald": "",
+   "sokord": "generator cover waterproof outdoor",
+   "grupp": "Elverk/kompressor ute",
+   "taggar": {
+    "objekt": "Elverk/kompressor ute",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-generator-cover-waterproof-outdoor.html",
+   "ekonomi": {
+    "landad": 319,
+    "forslag_pris": 799,
+    "multipel": 2.5,
+    "be_cpa": 480,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.156
+  },
+  {
+   "product_id": "1005007389353017",
+   "titel": "2Pc Tyre Ramp Saver Car Tire Protector Ramp Trailer Parts Wheel Protection Device Tire Anti Slip Curved Ramp Caravan Tyre Savers",
+   "url": "https://www.aliexpress.com/item/1005007389353017.html",
+   "pris": 42.09,
+   "valuta": "USD",
+   "pris_text": "US $42.09",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S0b72734bb208400d8393f428e5acd6adu.jpg",
+   "sald": "",
+   "sokord": "tyre saver ramp caravan winter",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-tyre-saver-ramp-caravan-winter.html",
+   "ekonomi": {
+    "landad": 604,
+    "forslag_pris": 1499,
+    "multipel": 2.48,
+    "be_cpa": 895,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.155
+  },
+  {
+   "product_id": "1005009508853713",
+   "titel": "2pcs Car Tire Wheel Ramps  Proof Heavy Duty Simple Using Tire Saver Ramps Powerful Load Bearing Capacity for RV Car Accessories",
+   "url": "https://www.aliexpress.com/item/1005009508853713.html",
+   "pris": 28.09,
+   "valuta": "USD",
+   "pris_text": "US $28.09",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sed8b8e621948479e94594f6ff920dcaeQ.jpg",
+   "sald": "",
+   "sokord": "tyre saver ramp caravan winter",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-tyre-saver-ramp-caravan-winter.html",
+   "ekonomi": {
+    "landad": 403,
+    "forslag_pris": 999,
+    "multipel": 2.48,
+    "be_cpa": 596,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.155
+  },
+  {
+   "product_id": "1005008541714371",
+   "titel": "17inch Wheel Cover Tyre Vehicle Case Windstop Polar Fleece Windbreak Front Rear 1Pair",
+   "url": "https://www.aliexpress.com/item/1005008541714371.html",
+   "pris": 28.07,
+   "valuta": "USD",
+   "pris_text": "US $28.07",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Hda3bd4d2c7d445fbbf5fe5c6a63fdfa3n.jpg",
+   "sald": "",
+   "sokord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorcycle-wheel-cover-winter-storage.html",
+   "ekonomi": {
+    "landad": 403,
+    "forslag_pris": 999,
+    "multipel": 2.48,
+    "be_cpa": 596,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.155
+  },
+  {
+   "product_id": "1005012139961410",
+   "titel": "Garden Hammock Cover Oxford Cloth Hammock and Stand Waterproof Protective Cover for Relaxation Lounging Backyard",
+   "url": "https://www.aliexpress.com/item/1005012139961410.html",
+   "pris": 39.29,
+   "valuta": "USD",
+   "pris_text": "US $39.29",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S8c938e4547db4a63a5aed3c9429e08a7o.jpg",
+   "sald": "",
+   "sokord": "hammock stand cover waterproof",
+   "grupp": "Hammock och dynor",
+   "taggar": {
+    "objekt": "Hammock och dynor",
+    "arketyp": "A2",
+    "form": "box"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-hammock-stand-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 564,
+    "forslag_pris": 1399,
+    "multipel": 2.48,
+    "be_cpa": 835,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.155
+  },
+  {
+   "product_id": "1005012887596981",
+   "titel": "Universal Car Car Leather Cover, Waterproof fake Leather Protector Pad, Soft Anti-brief Vehicle Cover for Car, sums and Trucks, Durable indoor Protection Accessory for Daily Driving",
+   "url": "https://www.aliexpress.com/item/1005012887596981.html",
+   "pris": 16.8,
+   "valuta": "USD",
+   "pris_text": "US $16.80",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/A06bf1db79e704ff1ac9ef8f726560f11S.png",
+   "sald": "",
+   "sokord": "utility trailer cover waterproof fitted heavy duty",
+   "grupp": "Släpkärra",
+   "taggar": {
+    "objekt": "Släpkärra",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-utility-trailer-cover-waterproof-fitted-heavy-duty.html",
+   "ekonomi": {
+    "landad": 241,
+    "forslag_pris": 599,
+    "multipel": 2.48,
+    "be_cpa": 358,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.155
+  },
+  {
+   "product_id": "1005007959509974",
+   "titel": "Waterproof Caravan Front Towing Cover Chip Protector With Led Guards Lights, Front Towing Cover Car-Covers",
+   "url": "https://www.aliexpress.com/item/1005007959509974.html",
+   "pris": 16.85,
+   "valuta": "USD",
+   "pris_text": "US $16.85",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S814f18780c5d401c87dc08fd8a5ff416L.jpg",
+   "sald": "",
+   "sokord": "caravan front towing cover",
+   "grupp": "Husvagn — fronten",
+   "taggar": {
+    "objekt": "Husvagn — fronten",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-front-towing-cover.html",
+   "ekonomi": {
+    "landad": 242,
+    "forslag_pris": 599,
+    "multipel": 2.48,
+    "be_cpa": 357,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.155
+  },
+  {
+   "product_id": "1005012612966749",
+   "titel": "1/4pcs Universal Wheel Tire Covers Oxford Waterproof UV Sun Protectors Wheel Tire Covers for Camper Car Truck 29-32inch",
+   "url": "https://www.aliexpress.com/item/1005012612966749.html",
+   "pris": 14.04,
+   "valuta": "USD",
+   "pris_text": "US $14.04",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sad5c4be6fb1540b5b68e4298e0a465b9f.jpg",
+   "sald": "",
+   "sokord": "caravan wheel cover set 4",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-caravan-wheel-cover-set-4.html",
+   "ekonomi": {
+    "landad": 202,
+    "forslag_pris": 499,
+    "multipel": 2.48,
+    "be_cpa": 297,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.155
+  },
+  {
+   "product_id": "1005007169289439",
+   "titel": "2pcs Car Tire Wheel Ramps  Proof Heavy Duty Simple Using Tire Saver Ramps Powerful Load Bearing Capacity for RV Car Accessories",
+   "url": "https://www.aliexpress.com/item/1005007169289439.html",
+   "pris": 33.89,
+   "valuta": "USD",
+   "pris_text": "US $33.89",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S710ee1166f5e460db5fe700844e08051O.jpg",
+   "sald": "",
+   "sokord": "tyre saver ramp caravan winter",
+   "grupp": "Husvagn/husbil — hjulen och däcken",
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-tyre-saver-ramp-caravan-winter.html",
+   "ekonomi": {
+    "landad": 486,
+    "forslag_pris": 1199,
+    "multipel": 2.46,
+    "be_cpa": 713,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.154
+  },
+  {
+   "product_id": "1005012021617606",
+   "titel": "Moto Accessories Cushion PVC Seat Cover For Honda CR CRF CRM SL 125 150 230 250 450 480 500 50 80 85 1000 Non-Slip Waterproof",
+   "url": "https://www.aliexpress.com/item/1005012021617606.html",
+   "pris": 14.15,
+   "valuta": "USD",
+   "pris_text": "US $14.15",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc5d70fea707543e58c6bc760e8accce1W.jpg",
+   "sald": "",
+   "sokord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-atv-seat-cover-waterproof-universal.html",
+   "ekonomi": {
+    "landad": 203,
+    "forslag_pris": 499,
+    "multipel": 2.46,
+    "be_cpa": 296,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.154
+  },
+  {
+   "product_id": "1005013111403205",
+   "titel": "Round Fire Pit Cover 600D Oxford Fabric Waterproof Windproof for Gas Propane Fire Pits Outdoor Patio Protection",
+   "url": "https://www.aliexpress.com/item/1005013111403205.html",
+   "pris": 28.29,
+   "valuta": "USD",
+   "pris_text": "US $28.29",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S7f9d3e231cde45259432bd073770e987J.jpg",
+   "sald": "",
+   "sokord": "fire pit cover round waterproof 600D",
+   "grupp": "Eldstad/eldkorg",
+   "taggar": {
+    "objekt": "Eldstad/eldkorg",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fire-pit-cover-round-waterproof-600d.html",
+   "ekonomi": {
+    "landad": 406,
+    "forslag_pris": 999,
+    "multipel": 2.46,
+    "be_cpa": 593,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.154
+  },
+  {
+   "product_id": "1005012064466677",
+   "titel": "RV Insulated Thermal Screen Cover for Rear Barn Door Or Tailgate Compatible for Fiat Ducato Peugeot Boxer Citroen Relay 2006+ R",
+   "url": "https://www.aliexpress.com/item/1005012064466677.html",
+   "pris": 45.19,
+   "valuta": "USD",
+   "pris_text": "US $45.19",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd8e130745e684d49a9fd0be1d9a8c9d7x.jpg",
+   "sald": "",
+   "sokord": "motorhome cab cover insulated ducato",
+   "grupp": "Husbil — hytt och vindruta",
+   "taggar": {
+    "objekt": "Husbil — hytt och vindruta",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorhome-cab-cover-insulated-ducato.html",
+   "ekonomi": {
+    "landad": 649,
+    "forslag_pris": 1599,
+    "multipel": 2.47,
+    "be_cpa": 950,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.154
+  },
+  {
+   "product_id": "1005008756213668",
+   "titel": "CHCH 20 Pond Protectors Floating Guard Against Heron & Pests Plastic Net Heron & Cats Deterrent",
+   "url": "https://www.aliexpress.com/item/1005008756213668.html",
+   "pris": 22.55,
+   "valuta": "USD",
+   "pris_text": "US $22.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S92b6f73e583e46c98c70db3b2390f884g.jpg",
+   "sald": "",
+   "sokord": "heron deterrent pond guard",
+   "grupp": "Trädgårdsdammen (koi/guldfisk)",
+   "taggar": {
+    "objekt": "Trädgårdsdammen (koi/guldfisk)",
+    "arketyp": "A1",
+    "form": "nät"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heron-deterrent-pond-guard.html",
+   "ekonomi": {
+    "landad": 324,
+    "forslag_pris": 799,
+    "multipel": 2.47,
+    "be_cpa": 475,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.154
+  },
+  {
+   "product_id": "1005011835421309",
+   "titel": "Universal RV Awning Cover Waterproof Sun Shade 600D UV Protection Sun Blocker for Motorhome Camping Trailer Camper Van  Shelter",
+   "url": "https://www.aliexpress.com/item/1005011835421309.html",
+   "pris": 14.18,
+   "valuta": "USD",
+   "pris_text": "US $14.18",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S2c91c68f7fb24a4086ef7cd3b7f3c3c43.jpg",
+   "sald": "",
+   "sokord": "motorhome roof cover uv winter",
+   "grupp": "Husvagn — taket",
+   "taggar": {
+    "objekt": "Husvagn — taket",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorhome-roof-cover-uv-winter.html",
+   "ekonomi": {
+    "landad": 204,
+    "forslag_pris": 499,
+    "multipel": 2.45,
+    "be_cpa": 295,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.153
+  },
+  {
+   "product_id": "1005003438235400",
+   "titel": "Boat Seat Cover Outdoor Foldable Ship Fishing Waterproof Dust Helmsman Captain Chair UV Resistant Yacht Furniture Protection",
+   "url": "https://www.aliexpress.com/item/1005003438235400.html",
+   "pris": 14.33,
+   "valuta": "USD",
+   "pris_text": "US $14.33",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/H5f6f1f302304437b98d372a96884b492m.jpg",
+   "sald": "",
+   "sokord": "boat seat cover set waterproof pedestal",
+   "grupp": "Båtens sitsar och dynor",
+   "taggar": {
+    "objekt": "Båtens sitsar och dynor",
+    "arketyp": "A2",
+    "form": "överdrag"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-boat-seat-cover-set-waterproof-pedestal.html",
+   "ekonomi": {
+    "landad": 206,
+    "forslag_pris": 499,
+    "multipel": 2.43,
+    "be_cpa": 293,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.152
+  },
+  {
+   "product_id": "1005012848820848",
+   "titel": "Waterproof Outdoor Foldable Boat For Seat Cover Chair Sleeve Protective Cover Commonly Used Chair Protector【SMQ】",
+   "url": "https://www.aliexpress.com/item/1005012848820848.html",
+   "pris": 14.25,
+   "valuta": "USD",
+   "pris_text": "US $14.25",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S28a3c622d6714366afa58c8532857ef1g.jpg",
+   "sald": "",
+   "sokord": "boat seat cover set waterproof pedestal",
+   "grupp": "Båtens sitsar och dynor",
+   "taggar": {
+    "objekt": "Båtens sitsar och dynor",
+    "arketyp": "A2",
+    "form": "överdrag"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-boat-seat-cover-set-waterproof-pedestal.html",
+   "ekonomi": {
+    "landad": 205,
+    "forslag_pris": 499,
+    "multipel": 2.44,
+    "be_cpa": 294,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.152
+  },
+  {
+   "product_id": "1005013072506788",
+   "titel": "210D Heavy Duty Motorcycle Cover All Season Waterproof Sunproof Dustproof Scooter Cover Protective Motorbike Cover",
+   "url": "https://www.aliexpress.com/item/1005013072506788.html",
+   "pris": 17.15,
+   "valuta": "USD",
+   "pris_text": "US $17.15",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S95904653ef5d4f84b00edf2bf139574aL.jpg",
+   "sald": "",
+   "sokord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorcycle-wheel-cover-winter-storage.html",
+   "ekonomi": {
+    "landad": 246,
+    "forslag_pris": 599,
+    "multipel": 2.43,
+    "be_cpa": 353,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.152
+  },
+  {
+   "product_id": "1005001869538617",
+   "titel": "17inch Universal Tire Tyre Warmers Windstop Motorcycle Tire Cover Polar Fleece Windbreak Front & Rear thicken",
+   "url": "https://www.aliexpress.com/item/1005001869538617.html",
+   "pris": 37.12,
+   "valuta": "USD",
+   "pris_text": "US $37.12",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S3109b9e531fe470aa32f8a007dffe740j.jpg",
+   "sald": "",
+   "sokord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorcycle-wheel-cover-winter-storage.html",
+   "ekonomi": {
+    "landad": 533,
+    "forslag_pris": 1299,
+    "multipel": 2.44,
+    "be_cpa": 766,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.152
+  },
+  {
+   "product_id": "1005012957167720",
+   "titel": "800 MT (All Versions) Chain Anti-Splash Protective For CFMOTO 800MT Chain Guard Motorcycle Rear Wheel Cleaning Decorative Kit",
+   "url": "https://www.aliexpress.com/item/1005012957167720.html",
+   "pris": 34.19,
+   "valuta": "USD",
+   "pris_text": "US $34.19",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S2256cfc4028e4b45a88a610fe962e01eA.jpg",
+   "sald": "",
+   "sokord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorcycle-wheel-cover-winter-storage.html",
+   "ekonomi": {
+    "landad": 491,
+    "forslag_pris": 1199,
+    "multipel": 2.44,
+    "be_cpa": 708,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.5687,
+   "vikt": 0.0625,
+   "rank": 0.152
+  }
+ ]
+}
