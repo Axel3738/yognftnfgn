@@ -161,6 +161,7 @@ med av sig själva:
   slutavräkning** — fyra redigerare hade blivit utan betalt.
   `commission/run.mjs` avbryter numera om en hubb ur `products.json` saknas, och
   om körningen hittar noll godkända rader. Gå aldrig runt de spärrarna.
+- ⚠️ Hoppa över hubbar vars id står i `factory/produkter/register.json` (OPS-butikernas hubbar — egen rutin, eget konto). Lista: `node tools/lib/ops-hubbar.mjs`. `run.mjs` filtrerar jobbfilen på samma id:n och loggar "OPS-hubbar undantagna: N".
 - Hämta varje hubbs `collection://`-URL med `fetch` på databas-id:t.
 
 Per hubb, en fråga:

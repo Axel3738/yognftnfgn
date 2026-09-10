@@ -743,6 +743,17 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   slås upp mot kampanjen som redan har annonser med samma prefix
   (`Rodholder_` → Fiskespöhållaren). `creative_prefix` i `products.json` är bara
   en override för de fyra skalningsprodukterna. Bygg aldrig tillbaka en fast lista.
+- **OPS-butikernas hubbar ses av samma integration men är inte Bäverbutikens**
+  (2026-09-10). HeimGuard, TankGuard, DryTrek, AdventLane, TackleBay har egna
+  teamspaces, men integrationen "Bäverbutiken RUTINER" är inbjuden dit också, så
+  "alla databaser integrationen ser" fångar dem. Alla Bäverbutiks-läsare
+  (`tools/notion-kalla.mjs` → leveranskön, översättningskön, `notion-klara`;
+  `commission/notion.mjs` + `run.mjs`) undantar dem **per id** ur
+  `factory/produkter/register.json` via `tools/lib/ops-hubbar.mjs` och loggar
+  "OPS-hubbar undantagna: N" varje körning. Aldrig på titel. **En ny OPS-hub
+  måste skrivas in i registret** (`node factory/register.mjs notion <nyckel>
+  <id>`), annars sugs den in i Leveransrundan och laddas upp i fel konto.
+  Lista: `node tools/lib/ops-hubbar.mjs`.
 - **Notion-anropen stryps till ~3/s.** Ett par hundra sidor tar några minuter.
   Det är normalt, inte en hängning.
 - **Språk:** allt i repot skrivs på svenska — kod, kommentarer, commit-meddelanden.

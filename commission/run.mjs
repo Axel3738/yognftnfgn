@@ -19,6 +19,7 @@ import { dirname, resolve } from 'node:path';
 import { berakna, arSvensk, SATS, arKordag, period, UTLANDSKA_KONTON } from './berakning.mjs';
 import { hamtaAllSpend } from './meta.mjs';
 import * as Notion from './notion.mjs';
+import { opsHubbar, utanOpsHubbar } from '../tools/lib/ops-hubbar.mjs';
 import { byggHubbregister, kopplaAnnons } from './koppling.mjs';
 import { uppdateraLeaderboard, skrivTerminal as skrivLeaderboard } from './leaderboard.mjs';
 
@@ -208,7 +209,9 @@ async function main() {
   const jobbfil = flagga('jobb');
   if (jobbfil) {
     const jobb = Notion.lasJobbfil(jobbfil);
-    hubbar = jobb.hubbar;
+    // MCP-sessionen som skrev jobbfilen kan ha fått med OPS-butikernas hubbar
+    // (samma integration, egna teamspaces). Bort per id, med loggrad.
+    hubbar = utanOpsHubbar(jobb.hubbar, opsHubbar());
     teamspaceVerifierad = Boolean(jobb.teamspace);
   } else if (Notion.harToken()) {
     const svar = await Notion.hamtaAllaHubbar();
@@ -224,7 +227,9 @@ async function main() {
   // skalningsprodukternas hubbar är arkiverade i Notion och föll bort ur
   // sökningen — och rapporterade 0 kr som augustis slutavräkning. En
   // utbetalning på noll ska aldrig kunna komma ur en ofullständig läsning.
-  const kanda = [...Notion.hubbarUrFil(), ...Notion.hubbarUrProdukter()];
+  // Facit utan OPS-hubbarna (tyst — loggraden kom redan vid uppräkningen),
+  // annars kräver nödbromsen hubbar som filtret just tog bort med flit.
+  const kanda = utanOpsHubbar([...Notion.hubbarUrFil(), ...Notion.hubbarUrProdukter()], opsHubbar(), { logg: null });
   const lasta = new Set(hubbar.map((h) => String(h.id).replace(/-/g, '')));
   const saknade = kanda.filter((k) => !lasta.has(String(k.id).replace(/-/g, '')));
   if (saknade.length) {

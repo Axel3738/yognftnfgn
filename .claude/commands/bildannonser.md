@@ -93,6 +93,7 @@ Hubbarna hittas dynamiskt, så nya produkter kommer med av sig själva:
   anledningen och rapporterade 0 kr som månadens slutavräkning.)*
 - Hittar körningen färre hubbar än `products.json` känner till: avbryt och skriv
   vilka som saknas. Kör aldrig vidare på en ofullständig hubblista.
+- ⚠️ Hoppa över hubbar vars id står i `factory/produkter/register.json` (OPS-butikernas hubbar — egen rutin, eget konto). Lista: `node tools/lib/ops-hubbar.mjs`.
 - Hämta varje hubbs `collection://`-URL med `fetch` på databas-id:t.
 
 **Teamspacet ÄR skyddet mot att blanda verksamheterna.** Grillkliniken,

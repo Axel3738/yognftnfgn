@@ -12,6 +12,7 @@
 
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { opsHubbar, utanOpsHubbar } from '../tools/lib/ops-hubbar.mjs';
 
 const API = 'https://api.notion.com/v1';
 const ROT = resolve(new URL('..', import.meta.url).pathname);
@@ -113,8 +114,15 @@ export function hubbarUrProdukter() {
  * Sökningen finns för att nya produkter ska komma med av sig själva;
  * products.json finns för att de gamla aldrig ska kunna falla bort.
  * Mallen räknas aldrig som en produkt.
+ *
+ * OPS-butikernas hubbar (egna teamspaces, samma integration sedan 2026-09-10)
+ * tas bort PER ID ur factory/produkter/register.json — de hör till kontot
+ * 915422744950975 och ger ingen commission här. `opt.opsKarta` kan skickas in
+ * i tester; default läses registret från disk.
  */
 export async function hittaHubbar(opt = {}) {
+  const { opsKarta = opsHubbar(ROT), ...rest } = opt;
+  opt = rest;
   let sokta = [];
   try {
     const r = await notion('search', {
@@ -134,7 +142,7 @@ export async function hittaHubbar(opt = {}) {
     const nyckel = String(h.id).replace(/-/g, '');
     if (!pa.has(nyckel)) pa.set(nyckel, h);
   }
-  return [...pa.values()];
+  return utanOpsHubbar([...pa.values()], opsKarta);
 }
 
 /** Rader ur en hubb. 404 = integrationen är inte inbjuden (••• → Connections). */

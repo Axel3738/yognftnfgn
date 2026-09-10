@@ -75,6 +75,7 @@ gör ALLTID två sökningar — `notion-search` på titeln "creative hub" **och*
 fritextsökning på "SE-ACTIVE to be translated" i teamspacet — och läs alla distinkta
 `path`-värden som hubbar. Slå sedan SQL mot varje hubbs data source. En hubb som
 bara syns i fritextsökningen hämtas med `notion-fetch` för sitt `collection://`-id.
+⚠️ Hoppa över hubbar vars id står i `factory/produkter/register.json` (OPS-butikernas hubbar — egen rutin, eget konto). Lista: `node tools/lib/ops-hubbar.mjs`. Kö-verktyget gör det själv på REST-vägen ("OPS-hubbar undantagna: N").
 **Saknar ett prefix koppling:** problemmeddelande "⚠️ <prefix> saknar norsk
 kampanj/koppling. Lägg till raden i produktlistan." — hoppa, kör resten.
 
