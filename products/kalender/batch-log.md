@@ -65,6 +65,22 @@ Läge 2026-09-10 11:20: 12 videor uppladdade, kampanj + adsets GT/PD skapade.
 **Noll annonser** — `adcreatives` svarar (#200), Axels användare saknar roll
 på sidan (`me/accounts` listar den inte). Räkningen: se `rakningen.md`.
 
-## Batch #1 NO — AdventLane NO (byggs 2026-09-10, PAUSED)
+## Batch #1 NO — AdventLane NO (byggd 2026-09-10, PAUSED)
 
-Fylls i när den norska halvan är läst och byggd (`no-byggplan.json`).
+Kampanj `ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10`
+(`120249031977180172`, samma konto, 1000 kr/dag CBO, PAUSED, geo NO). Länk
+`https://adventlane.se/nb/products/adventskalender-racingbilar`.
+
+Norska halvan läst ur Magiborsten NO (`brand-detektor-no.md`, 12 transkript
+via HeyGen proofread + OCR på 700 frames). 16 av 16 dömda, `no-byggplan.json`:
+- **12 byggs:** SP_1/2/3, G_1/2/3, PD_1/2/3 (video), SP_2_1, G_2_1, PD_2_1
+  (bild). Två radbyten var: "30 dagers åpent kjøp" → "14 dagers angrerett",
+  och NOK-priset "439 kr" struket ur beskrivningen (butiken säljer i SEK på
+  /nb tills NOK-nivåer sätts). SP_2_1 fick bildens band omskrivet (Johans
+  recension på bokmål, `bildfix/AdventLaneRacing_NO_SP_2_1.jpg`).
+- **4 väntar (hela CS-konceptet):** 579 → 439 NOK i tal, inbränd text, bild
+  och copy. Kan inte rättas förrän Axel satt NOK-priset i butiken — då är
+  det EN replik + ett slutkort + en bild, inte nya annonser.
+
+Läge 11:35: 9 videor uppladdade, kampanj + adset SP skapade. Noll annonser
+— samma sidrollsstopp som SE.

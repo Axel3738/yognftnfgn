@@ -395,3 +395,25 @@ test('LADDAS_UPP innehåller aldrig okänd eller odömd', () => {
   assert.equal(LADDAS_UPP.includes(DOMAR.OKAND), false);
   assert.equal(LADDAS_UPP.includes(DOMAR.ODOMD), false);
 });
+
+// -------------------------------------------------- butiks-id → produkt-id
+
+import { produkterForButik } from '../rakning.mjs';
+import { mkdtempSync, mkdirSync as mkd, writeFileSync as wf } from 'node:fs';
+import { join as j } from 'node:path';
+import { tmpdir } from 'node:os';
+
+test('produkterForButik: one-product-store heter som sin produkt, nischbutik slås upp ur state', () => {
+  // AdventLane 2026-09-10: `rakning.mjs kalender` stoppade på "Hittar inte
+  // factory/produkter/kalender.yaml" — nischbutikens produkt heter något annat.
+  const rot = mkdtempSync(j(tmpdir(), 'rakning-'));
+  mkd(j(rot, 'produkter')); mkd(j(rot, 'state'));
+  wf(j(rot, 'produkter', 'tankguard.yaml'), 'produkt:\n  id: tankguard\n');
+  wf(j(rot, 'produkter', 'adventskalender-racingbilar.yaml'), 'produkt:\n  id: adventskalender-racingbilar\n');
+  wf(j(rot, 'state', 'kalender--_butik.json'), '{}');
+  wf(j(rot, 'state', 'kalender--adventskalender-racingbilar.json'), '{}');
+  wf(j(rot, 'state', 'kalender--okand-produkt.json'), '{}'); // ingen produktfil → räknas inte
+  assert.deepEqual(produkterForButik('tankguard', rot), ['tankguard']);
+  assert.deepEqual(produkterForButik('kalender', rot), ['adventskalender-racingbilar']);
+  assert.deepEqual(produkterForButik('finnsinte', rot), []);
+});

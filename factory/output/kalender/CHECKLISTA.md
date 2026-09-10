@@ -139,6 +139,8 @@ it. That is why they are one section – one trip, not two (Axel 2026-09-10).
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **AdventLane**
 - [ ] Copy the **Page ID** → give to Claude Code
       The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
+- [ ] Same screen → the new page **AdventLane** → **Add people** → pick **Axel Odhner** → tick **Manage Page** (full control) → **Assign**
+      ⚠️ Without this Claude cannot create a single ad — Meta answers "(#200) … role Advertiser or higher" (measured 2026-09-10, AdventLane page 1304279782771044). The page being owned by the business is NOT enough; the person behind the token needs a role on the page.
 - [ ] Discord → + → Create server: **AdventLane — OPS**
 - [ ] Open the **authorize link** Claude gave you when the build finished → pick that server → Authorize
       No link in the chat? Ask Claude for it – it is one command, not a wait.

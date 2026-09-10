@@ -512,6 +512,16 @@ klara regeln utan handpåläggning:
   sprang ut ur sängen" fanns inte bland butikens tio) och `brådska` nedgraderad
   till ANMÄRKNING (kopieras orörd, syns i rapporten). Bildannonsens text är yta
   4 (bild), inte 3 — SP_2_1 hade fått "kräver-slutkortsbygge" för en bild.
+- **NO-halvan, mätt 11:30:** 16 av 16 dömda. 12 byggs med två radbyten var
+  ("30 dagers åpent kjøp" → "14 dagers angrerett", NOK-priset struket ur
+  beskrivningen), 4 CS-annonser väntar på NOK-nivåer (579 → 439 NOK i tal,
+  inbränd text, bild och copy). Prisregeln läser även utskrivna tal
+  ("femhundre og syttini"). `kallannonser.mjs` missade videoannonsernas
+  `link_description` — alla 24 videor hade beskrivning som ingen såg.
+  Kampanj `120249031977180172` PAUSED med 9 videor.
+- **`rakning.mjs <butik-id>`** slår upp nischbutikens produkter ur state-
+  filerna (kalender → adventskalender-racingbilar) och skriver byggplanens
+  orsak på varje saknad annons i stället för "orsak saknas".
 - **Sidrollen igen, mätt 11:19:** tokenens användare är Axel själv, sidan
   `1304279782771044` är `owned_page` men `me/accounts` (42 sidor) listar den
   inte → `adcreatives` svarar (#200). `assigned_users` via API avvisar

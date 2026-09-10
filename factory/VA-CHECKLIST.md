@@ -195,6 +195,8 @@ it. That is why they are one section – one trip, not two (Axel 2026-09-10).
 * business.facebook.com → Settings → Pages → Add → Create a new Page: STORE NAME
 * Copy the Page ID → give to Claude Code
   The ad account is always the same for every OPS store: MagiBorsten DK (915422744950975) – never pick another one, never add any card
+* Same screen → the new page → Add people → pick the OWNER (the person whose Meta token Claude runs on) → tick Manage Page → Assign
+  ⚠️ Without this Claude cannot create a single ad — Meta answers "(#200) … role Advertiser or higher" (TankGuard 2026-09-08, AdventLane 2026-09-10). Owned by the business is not enough; the PERSON needs a role on the page.
 * Discord → + → Create server: STORE NAME — OPS
 * Open the authorize link Claude gave you when the build finished → pick that server → Authorize
   No link in the chat? Ask Claude for it – it is one command, not a wait.

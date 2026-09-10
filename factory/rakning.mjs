@@ -24,7 +24,7 @@
 // filtreraUppladdade) rör aldrig nätet. Allt Graph-anrop går genom
 // tools/meta-lib.mjs — aldrig egna fetch-anrop mot graph.facebook.com.
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
@@ -599,6 +599,38 @@ async function kör() {
     process.exit(1);
   }
 
+  // Butiks-id → produkt-id(n). En one-product-store heter samma sak som sin
+  // produkt; en nischbutik (kalender → adventskalender-racingbilar) slås upp
+  // ur state-filerna kedjan skriver. Räkningen görs per produkt, exitkoden
+  // är grön bara när VARJE produkt är klar.
+  const produktIdn = produkterForButik(butikId);
+  if (produktIdn.length === 0) {
+    console.error(`✗ Hittar varken factory/produkter/${butikId}.yaml eller någon factory/state/${butikId}--<produkt>.json — stoppar. Leta aldrig upp butiken på gissning.`);
+    process.exit(1);
+  }
+  if (produktIdn.length > 1 || produktIdn[0] !== butikId) console.log(`Butik ${butikId} → produkt(er): ${produktIdn.join(', ')}\n`);
+  const alla = [];
+  for (const produktId of produktIdn) alla.push(...(await raknaProdukt(produktId, { torr, valdMarknad })));
+  // Exit 1 så en körning inte kan sluta grönt av misstag. Torrkörningen har
+  // inte läst kontot och är därför per definition inte klar.
+  process.exit(alla.length && alla.every((r) => r.klart) ? 0 : 1);
+}
+
+/** Produkterna en butik bär: produktfilen med samma namn, annars state-filerna
+ *  `<butik>--<produkt>.json` (aldrig `--_butik.json`, den är butikens egen). */
+export function produkterForButik(butikId, rot = ROT) {
+  if (existsSync(join(rot, 'produkter', `${butikId}.yaml`))) return [butikId];
+  const stateMapp = join(rot, 'state');
+  if (!existsSync(stateMapp)) return [];
+  return readdirSync(stateMapp)
+    .filter((f) => f.startsWith(`${butikId}--`) && f.endsWith('.json') && !f.endsWith('--_butik.json'))
+    .map((f) => f.slice(butikId.length + 2, -5))
+    .filter((id) => existsSync(join(rot, 'produkter', `${id}.yaml`)))
+    .sort();
+}
+
+/** Räkningen för EN produkt, båda marknaderna. Returnerar räkningarna. */
+async function raknaProdukt(butikId, { torr, valdMarknad }) {
   const produktfil = join(ROT, 'produkter', `${butikId}.yaml`);
   if (!existsSync(produktfil)) {
     console.error(`✗ Hittar inte factory/produkter/${butikId}.yaml — stoppar. Leta aldrig upp butiken på gissning.`);
@@ -631,6 +663,18 @@ async function kör() {
     kallkonto: p.kalla?.annonskonto ?? brandDetektor?.kalla?.annonskonto,
   });
   const marknader = valdMarknad ? [valdMarknad] : Object.keys(KONTON);
+
+  // Byggplanen (factory/vagkonfig.mjs) bär orsaken för varje annons som
+  // VÄNTAR — den ska stå i räkningen, inte "orsak saknas". En annons som står
+  // i planen men inte i kontot stoppade i annonssteget (sidrollen 2026-09-10).
+  for (const m of marknader) {
+    const plan = läsJson(join(utMapp, `${m.toLowerCase()}-byggplan.json`));
+    if (!plan) continue;
+    const orsak = new Map();
+    for (const v of plan.vantar || []) orsak.set(String(v.kalla).toLowerCase(), `väntar: ${v.orsak}`);
+    for (const b of plan.byggs || []) orsak.set(String(b.kalla).toLowerCase(), `står i ${m.toLowerCase()}-byggplan.json som ${b.namn} men inte i kontot — annonssteget stoppade (kör launch-skriptet om; sidrollen?)`);
+    for (const rad of perMarknad[m] ?? []) if (!rad.orsak && orsak.has(rad.annons.toLowerCase())) rad.orsak = orsak.get(rad.annons.toLowerCase());
+  }
 
   console.log(`Räkningen — ${butikId} · brandprefix ${brandprefix}_ · målkonto ${konto} (${MALKONTO.namn})`);
   console.log(`Marknader: ${marknader.join(', ')}${torr ? ' · TORRKÖRNING (kontot läses inte)' : ''}\n`);
@@ -677,10 +721,7 @@ async function kör() {
   } else {
     console.log('(torrkörning — ingen fil skriven, och en torrkörning är aldrig KLART)');
   }
-
-  // Exit 1 så en körning inte kan sluta grönt av misstag. Torrkörningen har
-  // inte läst kontot och är därför per definition inte klar.
-  process.exit(rakningar.length && rakningar.every((r) => r.klart) ? 0 : 1);
+  return rakningar;
 }
 
 if (process.argv[1] && process.argv[1].endsWith('rakning.mjs')) {
