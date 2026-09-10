@@ -621,6 +621,32 @@ okänd valuta) visas en röd rad och fältet fylls för hand. Offerter mappas
 aldrig automatiskt — leverantörens namn ("Item 3 – engine cover 200D")
 liknar inte butikens titlar, och ett fel här är ett fel i varje vinstsiffra.
 
+**Offertens valuta och synliga packpriser (build offert-valuta-v79)** — Axel
+2026-09-10: "av någon anledning tror den alltid att priset är i SEK, men
+offerter från leverantörerna kommer oftast i USD" + "vi behöver se tydligare
+hur kostnader för bundles fungerar, att den faktiskt vet att 1 st kostar 10
+och 2 st kostar 15 — inte 20".
+- **Valutan gissas aldrig till butikens.** Förut föll `quote-read` tillbaka på
+  `settings.currency` när AI:n inte såg någon valuta — en dollaroffert lästes
+  som kronor och varje inköpspris blev tiofalt fel. Nu räknar servern INTE om
+  något: den returnerar råpriserna i offertens valuta plus en **kurstabell**
+  (USD, CNY, EUR, GBP, den upptäckta valutan, butikens) mot butikens valuta.
+  Kortet har en **rullista "Valuta i offerten"**, förvald till den AI:n såg
+  och annars **USD** — aldrig SEK. Omräkningen sker i klienten, så ett
+  valutabyte räknar om alla rader direkt utan en ny (betald) AI-läsning.
+  Hjälptexten säger antingen "Offerten visar USD" eller "Ingen valuta syntes".
+- **Packpriser bär sitt antal.** AI:n returnerar `{units, total}`-par i
+  stället för en positionslista. En offert staffar ofta 1/50/100, och den
+  gamla listan hade lagt 50-packets pris på `units: 2`. `quote-apply` tar
+  emot `"antal:totalpris"` och skriver `CostTier` med det angivna antalet.
+  ⚠ CSV-importen (`a|b|c`) är fortfarande positionell 2, 3, 4 — det formatet
+  är dokumenterat utåt och rörs inte.
+- **Flerpacket syns nu i listan**: både offertraderna och snabbfältet på
+  Kostnader skriver ut "1 st 10,00 USD · 2 st 15,00 USD totalt (7,50/st)",
+  med en rad som förklarar att packpriset är TOTALT för antalet i samma
+  orderrad. Skiljer sig stegen mellan varianterna hänvisas till produktsidan
+  i stället för att visa ett tal som bara gäller en variant.
+
 **Hero-kortet i panelen (build hero-v68)** — Axels ord: "dashboarden borde se
 lite mer levande ut, man vill ha en dopaminkick." Överst i panelen: den stora
 nettovinsten räknas upp (`AnimatedNumber`, respekterar

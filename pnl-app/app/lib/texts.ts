@@ -286,6 +286,9 @@ const en = {
       dropHint: "Photo, screenshot or PDF page as image",
       pasteLabel: "…or paste the quote as text",
       run: "Read the quote",
+      currencyLabel: "Currency in the quote",
+      detected: (c: string) => `The quote shows ${c}. Change it if that is wrong.`,
+      notDetected: "No currency was visible in the quote. Supplier quotes are usually USD — check before you add.",
       reading: "Reading…",
       empty: "No prices found in the quote.",
       found: (n: number) => `${n} rows found. Pick a product for each and click Add.`,
@@ -300,6 +303,14 @@ const en = {
       moq: (n: number) => `MOQ ${n}`,
       tiers: (n: number) => `${n} pack prices`,
       failed: (err: string) => `Could not read: ${err}`,
+    },
+    bundle: {
+      badge: "Pack price",
+      single: (amount: string) => `1 pc ${amount}`,
+      line: (units: number, total: string, per: string) => `${units} pcs ${total} in total (${per} each)`,
+      explain:
+        "A pack price is the TOTAL for that many units in one order line — 2 pcs for 15 means 15, not 2 × the unit price. The dashboard counts order lines that way.",
+      perVariant: (n: number) => `${n} variant${n === 1 ? "" : "s"} have their own pack prices — open the product to see them.`,
     },
     estimate: {
       title: "Let the app estimate until you have filled them in",
@@ -969,6 +980,9 @@ const sv: Texts = {
       dropHint: "Foto, skärmbild eller PDF-sida som bild",
       pasteLabel: "…eller klistra in offerten som text",
       run: "Läs av offerten",
+      currencyLabel: "Valuta i offerten",
+      detected: (c: string) => `Offerten visar ${c}. Ändra om det är fel.`,
+      notDetected: "Ingen valuta syntes i offerten. Leverantörsofferter är oftast USD — kontrollera innan du lägger in.",
       reading: "Läser av…",
       empty: "Inga priser hittades i offerten.",
       found: (n: number) => `${n} rader hittade. Välj produkt för varje rad och klicka Lägg in.`,
@@ -983,6 +997,14 @@ const sv: Texts = {
       moq: (n: number) => `MOQ ${n}`,
       tiers: (n: number) => `${n} packpriser`,
       failed: (err: string) => `Kunde inte läsa av: ${err}`,
+    },
+    bundle: {
+      badge: "Packpris",
+      single: (amount: string) => `1 st ${amount}`,
+      line: (units: number, total: string, per: string) => `${units} st ${total} totalt (${per}/st)`,
+      explain:
+        "Ett packpris är TOTALT för så många stycken i samma orderrad — 2 st för 15 betyder 15, inte 2 × styckpriset. Panelen räknar orderraderna så.",
+      perVariant: (n: number) => `${n} variant${n === 1 ? "" : "er"} har egna packpriser — öppna produkten för att se dem.`,
     },
     estimate: {
       title: "Låt appen uppskatta tills du fyllt i",

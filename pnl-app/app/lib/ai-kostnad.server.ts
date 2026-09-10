@@ -98,8 +98,13 @@ export async function lasKostnaderMedAi(input: {
 const OffertRad = z.object({
   label: z.string().describe("Radens namn i offerten, som det står"),
   unit_cost: z.number().describe("Pris för 1 st i offertens valuta (vara, plus frakt om den är per styck)"),
-  tiers: z.array(z.number()).describe("Totalpris för 2, 3, … st om offerten prissätter flerpack, annars tom lista"),
-  currency: z.string().describe("Valutakod (USD, CNY, EUR, SEK …) som offerten anger, eller tom sträng om ingen syns"),
+  tiers: z
+    .array(z.object({ units: z.number().describe("Antal stycken i packet"), total: z.number().describe("TOTALpriset för hela packet") }))
+    .describe(
+      "Ett objekt per packstorlek offerten prissätter, med antalet det gäller — t.ex. {units:2,total:15} eller {units:50,total:320}. " +
+        "Antalet skrivs som det står; hoppa aldrig över det och anta aldrig 2, 3, 4 i rad. Tom lista om offerten bara har ett styckpris.",
+    ),
+  currency: z.string().describe("Valutakoden som SYNS i källan ($, USD, ¥, CNY, RMB, €, kr …). Tom sträng om ingen valuta syns någonstans — gissa aldrig."),
   moq: z.number().describe("Minsta beställning (MOQ) om det står, annars 0"),
   suggested_product: z.string().describe("Exakt produkttitel ur butikens lista om raden uppenbart är den produkten, annars tom sträng"),
   suggested_variant: z.string().describe("Exakt varianttitel ur listan om raden gäller en viss variant, annars tom sträng"),
@@ -132,7 +137,11 @@ export async function lasOffertMedAi(input: {
         (input.text.trim() ? `Inklistrad text från offerten:\n${input.text.trim()}\n\n` : "") +
         "Läs av leverantörsofferten i bilden/texten. En rad per artikel som prissätts. " +
         "unit_cost är priset för 1 st i offertens valuta; står bara ett totalpris för en kvantitet, dela med antalet och skriv det i notes. " +
-        "Prissätter offerten flerpack (2-pack, 3-pack …) som säljs som EN orderrad: lägg totalpriset per pack i tiers i ordning. " +
+        "Prissätter offerten flerpack (2-pack, 10-pack, 50-pack …) som säljs som EN orderrad: lägg antalet OCH totalpriset i tiers, i stigande antal. " +
+        "Exempel: står det '1 pcs 10.00, 2 pcs 15.00' är unit_cost 10 och tiers [{units:2,total:15}] — alltså 15 för två stycken, inte 20. " +
+        "Är staffningen 1/50/100 blir tiers [{units:50,…},{units:100,…}]; skriv aldrig om antalen till 2 och 3. " +
+        "VALUTAN: leta efter symbol, kod eller ord i hela källan (rubrik, kolumnhuvud, fotnot). Ser du ingen valuta alls: lämna currency tom. " +
+        "Skriv aldrig en valuta du inte sett — handlaren får välja den själv, och en gissning här blir fel inköpspris på varje produkt. " +
         "Är frakten angiven per styck: räkna in den i unit_cost och nämn det i notes; är den en klumpsumma: räkna INTE in den, nämn den i notes. " +
         "Räkna aldrig om valutor. Föreslå produkt/variant ur listan bara när det är uppenbart — stavningen måste vara identisk med listan; annars tom sträng.",
     },

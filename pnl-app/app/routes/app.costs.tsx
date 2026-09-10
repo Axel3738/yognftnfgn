@@ -10,7 +10,7 @@
  * Varianttitel tom = gäller alla varianter i produkten.
  */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useFetcher, useLoaderData } from "@remix-run/react";
@@ -61,8 +61,17 @@ export async function loader({ request }: LoaderFunctionArgs) {
     list.push(Number(t.totalCost).toFixed(2));
     tiersByVariant.set(t.variantGid, list);
   }
+  /* Stegen med sitt antal, för att kunna VISA "2 st 134,22 totalt (67,11/st)"
+     i listan. Utan antalet går det inte att skriva ut vad appen faktiskt vet. */
+  const stegByVariant = new Map<string, { units: number; totalCost: number }[]>();
+  for (const t of tierRows) {
+    const list = stegByVariant.get(t.variantGid) ?? [];
+    list.push({ units: t.units, totalCost: Number(t.totalCost) });
+    stegByVariant.set(t.variantGid, list);
+  }
   const rows = [...costs.all].map((v) => ({
     ...v,
+    tiers: stegByVariant.get(v.variantGid) ?? [],
     costCell: v.unitCost == null ? "" : [v.unitCost.toFixed(2), ...(tiersByVariant.get(v.variantGid) ?? [])].join("|"),
   })).sort((a, b) => {
     // Saknade kostnader först — det är dem man är här för att fixa.
@@ -125,10 +134,14 @@ export async function action({ request }: ActionFunctionArgs) {
     const cost = parseFloat(String(form.get("cost") ?? "").replace(/\s/g, "").replace(",", "."));
     const inv = String(form.get("inv") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     const variants = String(form.get("variants") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+    /* Packpriser som "antal:totalpris" — aldrig en positionslista. En offert
+       staffar ofta 1/50/100, och att anta 2, 3, 4 i rad hade lagt 50-packets
+       pris på ett tvåpack. */
     const tiers = String(form.get("tiers") ?? "")
       .split(",")
-      .map((s) => parseFloat(s.trim()))
-      .filter((n) => Number.isFinite(n) && n > 0);
+      .map((par) => par.split(":").map((x) => parseFloat(x.trim())))
+      .filter(([u, tot]) => Number.isFinite(u) && u >= 2 && Number.isFinite(tot) && tot > 0)
+      .map(([units, totalCost]) => ({ units: Math.round(units), totalCost }));
     if (!Number.isFinite(cost) || cost < 0 || !inv.length) {
       return json({ ok: false, message: "invalid" }, { status: 400 });
     }
@@ -141,7 +154,7 @@ export async function action({ request }: ActionFunctionArgs) {
       for (const variantGid of variants) {
         await prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid } });
         await prisma.costTier.createMany({
-          data: tiers.map((totalCost, i) => ({ shop: session.shop, variantGid, units: i + 2, totalCost })),
+          data: tiers.map((s) => ({ shop: session.shop, variantGid, units: s.units, totalCost: s.totalCost })),
         });
       }
     }
@@ -173,25 +186,33 @@ export async function action({ request }: ActionFunctionArgs) {
         produkter: katalog.all.map((v) => ({ productTitle: v.productTitle, variantTitle: v.variantTitle })),
       });
       const butikensValuta = (settings?.currency ?? "SEK").toUpperCase();
-      const items = [];
-      for (const it of svar.items) {
-        const cur = (it.currency || butikensValuta).toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3) || butikensValuta;
-        const kurs = cur === butikensValuta ? 1 : await fxRate(cur, butikensValuta);
-        const om = (n: number) => (kurs == null ? null : Math.round(n * kurs * 100) / 100);
-        items.push({
-          label: it.label,
-          unitCost: it.unit_cost,
-          tiers: it.tiers,
-          currency: cur,
-          moq: it.moq,
-          rate: kurs ?? null,
-          costShop: om(it.unit_cost),
-          tiersShop: it.tiers.map(om).filter((n): n is number => n != null),
-          suggestedProduct: it.suggested_product,
-          suggestedVariant: it.suggested_variant,
-        });
-      }
-      return json({ ok: true, message: items.length ? T.costs.quote.found(items.length) : T.costs.quote.empty, quote: { items, notes: svar.notes } });
+      /* Valutan gissas ALDRIG till butikens. En leverantörsoffert är nästan
+         alltid i USD eller CNY, och en offert i dollar som lästes som kronor
+         gör varje inköpspris tiofalt fel. Ser AI:n ingen valuta får handlaren
+         välja i en lista — därför skickas kurserna för alla valbara valutor
+         med, så bytet räknas om direkt utan en ny AI-läsning. */
+      const upptackt = (svar.items.find((i) => i.currency)?.currency ?? "")
+        .toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3);
+      const valutor = [...new Set([upptackt, "USD", "CNY", "EUR", "GBP", butikensValuta].filter(Boolean))];
+      const kurser: Record<string, number | null> = {};
+      await Promise.all(
+        valutor.map(async (c) => {
+          kurser[c] = c === butikensValuta ? 1 : ((await fxRate(c, butikensValuta)) ?? null);
+        }),
+      );
+      const items = svar.items.map((it) => ({
+        label: it.label,
+        unitCost: it.unit_cost,
+        tiers: it.tiers,
+        moq: it.moq,
+        suggestedProduct: it.suggested_product,
+        suggestedVariant: it.suggested_variant,
+      }));
+      return json({
+        ok: true,
+        message: items.length ? T.costs.quote.found(items.length) : T.costs.quote.empty,
+        quote: { items, notes: svar.notes, detected: upptackt, valutor, kurser, shopCurrency: butikensValuta },
+      });
     } catch (e) {
       console.error("AI-offertläsning misslyckades:", e);
       return json({ ok: false, message: T.costs.quote.failed((e as Error).message) }, { status: 500 });
@@ -255,7 +276,30 @@ export default function Costs() {
   const quoteFetcher = useFetcher<typeof action>();
   const [quoteBilder, setQuoteBilder] = useState<{ name: string; mediaType: string; base64: string }[]>([]);
   const [quoteText, setQuoteText] = useState("");
-  const quoteData = quoteFetcher.data as { ok: boolean; message: string; quote?: { items: OffertItem[]; notes: string } } | undefined;
+  const quoteData = quoteFetcher.data as unknown as
+    | {
+        ok: boolean;
+        message: string;
+        quote?: {
+          items: OffertItem[];
+          notes: string;
+          /** Valutan AI:n faktiskt SÅG i offerten. Tom = ingen syntes. */
+          detected: string;
+          valutor: string[];
+          kurser: Record<string, number | null>;
+          shopCurrency: string;
+        };
+      }
+    | undefined;
+  /* Valutan i offerten väljs här, inte på servern: leverantörsofferter är
+     nästan alltid i USD, och att falla tillbaka på butikens valuta gjorde
+     varje inköpspris tiofalt fel. Syns ingen valuta i offerten är USD
+     förvalt — aldrig SEK. */
+  const [offertValuta, setOffertValuta] = useState("USD");
+  useEffect(() => {
+    if (quoteData?.quote) setOffertValuta(quoteData.quote.detected || "USD");
+  }, [quoteData]);
+  const offertKurs = quoteData?.quote?.kurser?.[offertValuta] ?? null;
   const [visaImport, setVisaImport] = useState(false);
   const [visaVideo, setVisaVideo] = useState(false);
   /* Bilder → base64 i webbläsaren. Delas av AI-kortet och offertkortet. */
@@ -484,10 +528,35 @@ export default function Costs() {
                     </Banner>
                   ) : null}
                   {quoteData?.quote?.items.length ? (
-                    <BlockStack gap="200">
-                      {quoteData.quote.items.map((it, i) => (
-                        <OffertRad key={`${i}-${it.label}`} it={it} rows={rows} T={T} nf={nf} currency={currency} />
-                      ))}
+                    <BlockStack gap="300">
+                      <div style={{ maxWidth: 260 }}>
+                        <Select
+                          label={T.costs.quote.currencyLabel}
+                          options={quoteData.quote.valutor.map((c) => ({ label: c, value: c }))}
+                          value={offertValuta}
+                          onChange={setOffertValuta}
+                          helpText={
+                            quoteData.quote.detected
+                              ? T.costs.quote.detected(quoteData.quote.detected)
+                              : T.costs.quote.notDetected
+                          }
+                        />
+                      </div>
+                      <Text as="p" tone="subdued" variant="bodySm">{T.costs.bundle.explain}</Text>
+                      <BlockStack gap="200">
+                        {quoteData.quote.items.map((it, i) => (
+                          <OffertRad
+                            key={`${i}-${it.label}`}
+                            it={it}
+                            rows={rows}
+                            T={T}
+                            nf={nf}
+                            currency={currency}
+                            valuta={offertValuta}
+                            kurs={offertKurs}
+                          />
+                        ))}
+                      </BlockStack>
                     </BlockStack>
                   ) : null}
                 </BlockStack>
@@ -688,27 +757,67 @@ export default function Costs() {
   );
 }
 
-type Rad = { productGid: string; variantGid: string; inventoryItemGid: string; productTitle: string; variantTitle: string; price: number; unitCost: number | null };
+type Rad = {
+  productGid: string;
+  variantGid: string;
+  inventoryItemGid: string;
+  productTitle: string;
+  variantTitle: string;
+  price: number;
+  unitCost: number | null;
+  /** Packpriser: totalkostnad för `units` stycken i samma orderrad. */
+  tiers: { units: number; totalCost: number }[];
+};
+
+/** "1 st 88,34 kr · 2 st 134,22 kr totalt (67,11/st)" — vad appen räknar med. */
+function stegText(
+  unitCost: number | null,
+  tiers: { units: number; totalCost: number }[],
+  T: ReturnType<typeof t>,
+  nf: Intl.NumberFormat,
+  currency: string,
+): string {
+  if (!tiers.length) return "";
+  return [
+    ...(unitCost != null ? [T.costs.bundle.single(`${nf.format(unitCost)} ${currency}`)] : []),
+    ...tiers.map((s) =>
+      T.costs.bundle.line(s.units, `${nf.format(s.totalCost)} ${currency}`, `${nf.format(s.totalCost / s.units)} ${currency}`),
+    ),
+  ].join(" · ");
+}
 
 type OffertItem = {
   label: string;
+  /** Pris för 1 st i OFFERTENS valuta — aldrig omräknat på servern. */
   unitCost: number;
-  tiers: number[];
-  currency: string;
+  /** Packpriser i offertens valuta: totalpris för `units` stycken. */
+  tiers: { units: number; total: number }[];
   moq: number;
-  rate: number | null;
-  costShop: number | null;
-  tiersShop: number[];
   suggestedProduct: string;
   suggestedVariant: string;
 };
 
 /**
- * En rad ur offerten: pris (omräknat), produktval, variantval, "Lägg in".
- * AI:ns förslag är bara förvalt — handlaren bestämmer. Utan kurs är fältet
- * redigerbart så att kostnaden går att skriva för hand i butikens valuta.
+ * En rad ur offerten: priserna, produktval, variantval, "Lägg in".
+ *
+ * Omräkningen sker HÄR, med kursen för den valuta handlaren valt i kortet —
+ * inte på servern. Då kan valutan bytas i en rullista och alla rader räknas
+ * om direkt, utan att offerten måste läsas av AI:n en gång till.
+ *
+ * Flerpacken skrivs ut med både totalpris och styckpris, så det syns att
+ * 2 st för 15 är 15 totalt och inte 2 × 10.
  */
-function OffertRad({ it, rows, T, nf, currency }: { it: OffertItem; rows: Rad[]; T: ReturnType<typeof t>; nf: Intl.NumberFormat; currency: string }) {
+function OffertRad({
+  it, rows, T, nf, currency, valuta, kurs,
+}: {
+  it: OffertItem;
+  rows: Rad[];
+  T: ReturnType<typeof t>;
+  nf: Intl.NumberFormat;
+  currency: string;
+  valuta: string;
+  kurs: number | null;
+}) {
   const fetcher = useFetcher<typeof action>();
   const produkter = (() => {
     const m = new Map<string, Rad[]>();
@@ -720,8 +829,31 @@ function OffertRad({ it, rows, T, nf, currency }: { it: OffertItem; rows: Rad[];
   const grupp = produkter.find((g) => g[0].productGid === productGid) ?? [];
   const forslagVariant = grupp.find((r) => r.variantTitle.trim().toLowerCase() === it.suggestedVariant.trim().toLowerCase());
   const [variantGid, setVariantGid] = useState(forslagVariant?.variantGid ?? "");
-  const [kostnad, setKostnad] = useState(it.costShop != null ? String(it.costShop) : "");
+  const rund = (n: number) => Math.round(n * 100) / 100;
+  const iButik = (n: number) => (kurs == null ? null : rund(n * kurs));
+  const [kostnad, setKostnad] = useState(() => {
+    const v = iButik(it.unitCost);
+    return v == null ? "" : String(v);
+  });
+  /* Byter handlaren valuta i kortet ska beloppet följa med direkt. Ett
+     handskrivet belopp skrivs över — det var skrivet i den gamla valutan. */
+  useEffect(() => {
+    const v = kurs == null ? null : rund(it.unitCost * kurs);
+    setKostnad(v == null ? "" : String(v));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [kurs, valuta]);
+  const stegButik = kurs == null ? [] : it.tiers.map((s) => ({ units: s.units, total: rund(s.total * kurs) }));
   const sparad = fetcher.data?.ok === true;
+
+  /* Priserna som de STÅR i offerten: 1 st, sedan varje packpris med sitt
+     styckpris inom parentes. Poängen är att 2 st för 15 ska läsas som 15
+     totalt, inte som 2 × styckpriset. */
+  const prisrader = [
+    T.costs.bundle.single(`${nf.format(it.unitCost)} ${valuta}`),
+    ...it.tiers.map((s) =>
+      T.costs.bundle.line(s.units, `${nf.format(s.total)} ${valuta}`, `${nf.format(s.total / s.units)} ${valuta}`),
+    ),
+  ].join(" · ");
 
   const mal = variantGid ? grupp.filter((r) => r.variantGid === variantGid) : grupp;
   const laggIn = () => {
@@ -732,7 +864,7 @@ function OffertRad({ it, rows, T, nf, currency }: { it: OffertItem; rows: Rad[];
         cost: kostnad,
         inv: mal.map((r) => r.inventoryItemGid).join(","),
         variants: mal.map((r) => r.variantGid).join(","),
-        tiers: it.tiersShop.join(","),
+        tiers: stegButik.map((s) => `${s.units}:${s.total}`).join(","),
       },
       { method: "POST" },
     );
@@ -743,15 +875,19 @@ function OffertRad({ it, rows, T, nf, currency }: { it: OffertItem; rows: Rad[];
       <BlockStack gap="150">
         <InlineStack gap="200" blockAlign="center" wrap>
           <Text as="span" fontWeight="semibold">{it.label}</Text>
-          <Text as="span" tone="subdued" variant="bodySm">
-            {`${nf.format(it.unitCost)} ${it.currency}`}
-            {it.rate != null && it.rate !== 1 ? ` · ${T.costs.quote.converted(it.currency, currency, it.rate)}` : ""}
-          </Text>
           {it.moq ? <Badge>{T.costs.quote.moq(it.moq)}</Badge> : null}
-          {it.tiers.length ? <Badge tone="info">{T.costs.quote.tiers(it.tiers.length)}</Badge> : null}
+          {it.tiers.length ? <Badge tone="info">{T.costs.bundle.badge}</Badge> : null}
         </InlineStack>
-        {it.rate == null && it.currency !== currency ? (
-          <Text as="p" tone="critical" variant="bodySm">{T.costs.quote.noRate(it.currency)}</Text>
+        <Text as="p" tone="subdued" variant="bodySm">{prisrader}</Text>
+        {kurs == null ? (
+          <Text as="p" tone="critical" variant="bodySm">{T.costs.quote.noRate(valuta)}</Text>
+        ) : kurs !== 1 ? (
+          <Text as="p" tone="subdued" variant="bodySm">
+            {T.costs.quote.converted(valuta, currency, kurs)}
+            {stegButik.length
+              ? ` · ${[T.costs.bundle.single(`${nf.format(rund(it.unitCost * kurs))} ${currency}`), ...stegButik.map((s) => T.costs.bundle.line(s.units, `${nf.format(s.total)} ${currency}`, `${nf.format(s.total / s.units)} ${currency}`))].join(" · ")}`
+              : ""}
+          </Text>
         ) : null}
         <InlineStack gap="200" blockAlign="end" wrap>
           <div style={{ flex: 2, minWidth: 220 }}>
@@ -814,6 +950,19 @@ function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<ty
     ? `${nf.format(Math.min(...grupp.map((r) => r.price)))}–${nf.format(Math.max(...grupp.map((r) => r.price)))}`
     : nf.format(p.price);
 
+  /* Packpriserna skrivs ut, annars är de osynliga tills man öppnar produkten
+     — och då går det inte att se att appen VET att 2 st kostar 15 och inte
+     2 × 10. Skiljer sig stegen mellan varianterna hänvisas till produkten. */
+  const medSteg = grupp.filter((r) => r.tiers.length);
+  const stegNyckel = (r: Rad) => r.tiers.map((s) => `${s.units}:${s.totalCost}`).join("|");
+  const sammaSteg = medSteg.length === grupp.length && new Set(grupp.map(stegNyckel)).size === 1;
+  const stegRad =
+    medSteg.length === 0
+      ? ""
+      : sammaSteg
+        ? stegText(p.unitCost, medSteg[0].tiers, T, nf, currency)
+        : T.costs.bundle.perVariant(medSteg.length);
+
   return (
     <div style={{ borderBottom: "1px solid #e3e3e3", paddingBottom: 8 }}>
       <InlineStack gap="300" blockAlign="center" wrap>
@@ -842,6 +991,12 @@ function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<ty
         ) : null}
         <Link to={`/app/costs/${p.productGid.split("/").pop()}`}><Text as="span" variant="bodySm">→</Text></Link>
       </InlineStack>
+      {stegRad ? (
+        <div style={{ paddingTop: 2 }}>
+          <Badge tone="info">{T.costs.bundle.badge}</Badge>{" "}
+          <Text as="span" tone="subdued" variant="bodySm">{stegRad}</Text>
+        </div>
+      ) : null}
       {open ? (
         <div style={{ paddingLeft: 16, paddingTop: 6 }}>
           <BlockStack gap="100">
@@ -860,16 +1015,20 @@ function Variantrad({ r, T, currency, nf }: { r: Rad; T: ReturnType<typeof t>; c
     if (!v.trim() || String(r.unitCost ?? "") === v) return;
     fetcher.submit({ intent: "set-cost", cost: v, targets: r.inventoryItemGid }, { method: "POST" });
   };
+  const steg = stegText(r.unitCost, r.tiers, T, nf, currency);
   return (
-    <InlineStack gap="300" blockAlign="center" wrap>
-      <div style={{ flex: 1, minWidth: 160 }}>
-        <Text as="span" variant="bodySm">{r.variantTitle === "Default Title" ? "—" : r.variantTitle}</Text>
-        <Text as="span" variant="bodySm" tone="subdued">{`  · ${nf.format(r.price)} ${currency}`}</Text>
-      </div>
-      <div style={{ width: 150 }} onKeyDown={(e) => { if (e.key === "Enter") spara(); }}>
-        <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={T.costs.quick.placeholder} suffix={currency} />
-      </div>
-      {r.unitCost == null && !v ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : fetcher.state !== "idle" ? <Badge tone="success">{T.costs.quick.saving}</Badge> : null}
-    </InlineStack>
+    <BlockStack gap="100">
+      <InlineStack gap="300" blockAlign="center" wrap>
+        <div style={{ flex: 1, minWidth: 160 }}>
+          <Text as="span" variant="bodySm">{r.variantTitle === "Default Title" ? "—" : r.variantTitle}</Text>
+          <Text as="span" variant="bodySm" tone="subdued">{`  · ${nf.format(r.price)} ${currency}`}</Text>
+        </div>
+        <div style={{ width: 150 }} onKeyDown={(e) => { if (e.key === "Enter") spara(); }}>
+          <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={T.costs.quick.placeholder} suffix={currency} />
+        </div>
+        {r.unitCost == null && !v ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : fetcher.state !== "idle" ? <Badge tone="success">{T.costs.quick.saving}</Badge> : null}
+      </InlineStack>
+      {steg ? <Text as="p" tone="subdued" variant="bodySm">{steg}</Text> : null}
+    </BlockStack>
   );
 }
