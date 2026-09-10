@@ -110,3 +110,31 @@ tändvedsklyvens bild, som rensades från kinesisk text med
 - Utekattkoja: färgerna grå / gräsgrön / svart — **ingen kamouflage** (CWD-notering)
 - Solpanel: CWD säger att bildens modell inte finns, men en grön version gör det.
   Inga watt-/spänningssiffror finns belagda → **inga specsiffror i copyn**.
+
+## 2026-09-10 — fiskekalendern och utekattkojan ombyggda
+
+Axel: *"denna kan vi göra sjukt mycket bättre, kanske någon bild eller gif på
+när någon tar emot den också"* (fiskekalendern) och *"detsamma gäller på
+utekattkojan … originalprodukten har sånna stödben, det har inte den andra"*.
+
+- **Fiskekalendern:** `fiskekalender-bilder.mjs` klipper ut alla 24 dragen ur
+  offertens image10 (vattenstämpeln ligger på bakgrunden och följer med bort),
+  bygger huvudbild med 24-badge, "alla 24 dragen" och sorteringsöversikt per
+  språk. Riktig GIF av presentögonblicket (Higgsfield-video → ffmpeg).
+  Copy i `fiskekalender-copy.mjs`, uppladdning `fiskekalender-bygg-om.mjs`.
+- **Utekattkojan:** sidan visade tre AI-hus UTAN ben — Temu-huvudbilden
+  (`img.kwcdn.com/product/open/8e96865a…-goods.jpeg`, den CWD offererade)
+  visar kojan på svart stativ med fyra ben + lös liggmatta. Nytt galleri:
+  riktig huvudbild (uppskalad 2×), tre AI-scener med huset som referens,
+  infografik + färgprover per språk (`kattkoja-bilder.mjs`), regn-GIF.
+  Copy i `kattkoja-copy.mjs` (ersätter kattkoja-blocket i `texter6*.mjs`,
+  som fortfarande bär de gamla formuleringarna), uppladdning
+  `kattkoja-bygg-om.mjs`.
+- ⚠️ Temu-delningslänken `/ie/outdoor-cat-house-5030003647894-s.html` visar
+  numera en HELT ANNAN produkt (vitt plasthus med grönt tak) — hämta aldrig
+  bilder eller video därifrån igen utan att titta först.
+- ⚠️ Gräsgrön och svart koja saknar riktig bild — färgbilden visar bara
+  färgprover och säger att bilderna visar den grå. Be CWD om foton.
+- Kvar med samma brist (AI-bilder utan riktig produktbild och/eller utan
+  AI-raden): racingkalendern, taköverdraget, staketbygeln. Se svepet i
+  chatten 2026-09-10.
