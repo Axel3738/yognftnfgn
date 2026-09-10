@@ -27,6 +27,10 @@
 //   2. Webhook — env DISCORD_WEBHOOK_URL (eller en DISCORD-variabel som är en
 //      webhook-URL). Används bara om ingen bot-token finns.
 //
+// Språk (Axels order 2026-09-05): allt i Discord är på engelska. Svensk text
+// översätts via ANTHROPIC_API_KEY, annars stoppas skicket med exit 3 och en
+// uppmaning att skriva om. DISCORD_TILLAT_SVENSKA=1 stänger av spärren.
+//
 // Kanal (Axels beslut 2026-08-30): briefen går till #new-products-coing-out
 // (stavningen med "coing" är kanalens faktiska namn). Boten slår upp kanal-id:t
 // på namnet i servern (guild 1540322130388983921, läst ur webhooken — inte en
@@ -34,6 +38,7 @@
 // Hittas inte kanalen används "mamma jobb" = 1543546469884362833 som reserv.
 
 import { spawnSync } from 'node:child_process';
+import { granskaSprak, stoppText } from './lib/engelska.mjs';
 if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
   const r = spawnSync(process.execPath, process.argv.slice(1), {
     stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' },
@@ -135,6 +140,15 @@ if (!text) {
   text = Buffer.concat(chunks).toString('utf8').trim();
 }
 if (!text) { console.error('Inget meddelande. Ge texten som argument eller på stdin.'); process.exit(2); }
+
+// Allt i Discord är på engelska (Axels order 2026-09-05). Svensk text
+// översätts, eller stoppas om det inte går — se tools/lib/engelska.mjs.
+{
+  const språk = await granskaSprak(text);
+  if (språk.stoppad) { console.error(stoppText(språk.orsak)); process.exit(3); }
+  if (språk.oversatt) console.error('Texten var på svenska — översatt till engelska före skick.');
+  text = språk.text;
+}
 const bot = auth.typ === 'bot' ? auth.token : null;
 const pingar = [];
 if (ping) pingar.push(await pingRad(bot, REDIGERARE));
