@@ -395,3 +395,29 @@ test('LADDAS_UPP innehåller aldrig okänd eller odömd', () => {
   assert.equal(LADDAS_UPP.includes(DOMAR.OKAND), false);
   assert.equal(LADDAS_UPP.includes(DOMAR.ODOMD), false);
 });
+
+// TackleBay 2026-09-10: den norska källkampanjen var PAUSED med 20 ACTIVE
+// annonser inuti — de räknades som förväntade och saknade. Kampanjens status
+// och kallannonser.json:s `med`-beslut måste väga.
+test('arAktiv: PAUSED kampanj eller med:false stryker annonsen ur räkningen', () => {
+  assert.equal(arAktiv(normaliseraKalla({ namn: 'NO_PD_1_H1', status: 'ACTIVE', adset: { status: 'ACTIVE' }, kampanj: { status: 'PAUSED' } })), false);
+  assert.equal(arAktiv(normaliseraKalla({ namn: 'NO_PD_1_H1', status: 'ACTIVE', med: false })), false);
+  assert.equal(arAktiv(normaliseraKalla({ namn: 'X_PD_1_H1', status: 'ACTIVE', adset: { status: 'ACTIVE' }, kampanj: { status: 'ACTIVE' }, med: true })), true);
+});
+
+test('byggRakning: en PAUSED tvilling med samma namn stjäl inte den aktivas uppladdning', () => {
+  const kallor = [
+    { namn: 'Fiskespöhållare_PD_EXTRA', status: 'PAUSED', adset: { status: 'ACTIVE' }, kampanj: { status: 'ACTIVE' }, med: false, dom: 'ren' },
+    { namn: 'Fiskespöhållare_PD_EXTRA', status: 'ACTIVE', adset: { status: 'ACTIVE' }, kampanj: { status: 'ACTIVE' }, med: true, dom: 'ren' },
+  ];
+  const uppladdade = [{ name: 'TackleBayRod_PD_EXTRA', status: 'PAUSED', campaign: { name: 'TACKLEBAY_SE_X' } }];
+  const r = byggRakning({ kallor, uppladdade, marknad: 'SE' });
+  assert.equal(r.saknade.length, 0, JSON.stringify(r.saknade));
+  assert.equal(r.uteslutna.length, 1);
+});
+
+test('parkoppla: svansen måste börja på vinkelkoden — H2_H1 räcker inte', () => {
+  assert.equal(parkoppla('Rodholder_PD_3_H2_H1', 'TackleBayRod_PD_8_H2_H1'), false);
+  assert.equal(parkoppla('Rodholder_PD_8_H2_H1', 'TackleBayRod_PD_8_H2_H1'), true);
+  assert.equal(parkoppla('Fiskespöhållare_PD_EXTRA', 'TackleBayRod_B_PD_EXTRA'), true);
+});

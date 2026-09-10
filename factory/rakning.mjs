@@ -91,8 +91,12 @@ export function parkoppla(kallnamn, uppladdatnamn) {
   let k = 0;
   while (k < a.length && k < b.length && a[a.length - 1 - k] === b[b.length - 1 - k]) k++;
   if (k < 2) return false;
+  // Svansen måste börja på VINKELKODEN (PD, BOF, RV …) — bara bokstäver.
+  // Hooken (H1/H2) har bokstav OCH siffra: med "innehåller en bokstav" parade
+  // `Rodholder_PD_3_H2_H1` ihop med `TackleBayRod_PD_8_H2_H1` på svansen
+  // `h2_h1` (TackleBay 2026-09-10) och den riktiga PD_8 stod som saknad.
   const första = a[a.length - k];
-  return /[a-zåäöéèü]/.test(första);
+  return /^[a-zåäöéèü]{2,4}$/.test(första);
 }
 
 const MARKNADSKODER = new Set(['se', 'no', 'dk', 'fi', 'uk', 'de', 'nl', 'nb']);
@@ -126,7 +130,13 @@ export function normaliseraKalla(rad) {
     dom,
     marknad: rad.marknad ? String(rad.marknad).toUpperCase() : null,
     status: rad.status ? String(rad.status).toUpperCase() : null,
-    adsetStatus: rad.adsetStatus ? String(rad.adsetStatus).toUpperCase() : null,
+    adsetStatus: rad.adsetStatus ? String(rad.adsetStatus).toUpperCase() : (rad.adset?.status ? String(rad.adset.status).toUpperCase() : null),
+    // kallannonser.json bär kampanjens status och det färdiga `med`-beslutet
+    // (ACTIVE annons i ACTIVE adset i ACTIVE kampanj). En PAUSED KAMPANJ
+    // (Fiskespöhållaren NO, 2026-09-10) gjorde annars 20 annonser förväntade.
+    kampanjStatus: rad.kampanjStatus ? String(rad.kampanjStatus).toUpperCase() : (rad.kampanj?.status ? String(rad.kampanj.status).toUpperCase() : null),
+    med: typeof rad.med === 'boolean' ? rad.med : null,
+    id: rad.id != null ? String(rad.id) : null,
     typ: rad.typ ?? null,
     orsak: rad.orsak ?? null,
   };
@@ -148,6 +158,8 @@ export function normaliseraUppladdad(rad) {
  *  Saknas statusen antas annonsen med: en oläst status får aldrig tyst stryka
  *  en annons ur räkningen. */
 export function arAktiv(rad) {
+  if (rad.med === false) return false;
+  if (rad.kampanjStatus != null && rad.kampanjStatus !== 'ACTIVE') return false;
   if (rad.status == null) return true;
   if (rad.status !== 'ACTIVE') return false;
   return rad.adsetStatus == null || rad.adsetStatus === 'ACTIVE';
@@ -207,7 +219,11 @@ export function byggRakning({ kallor, uppladdade, marknad }) {
     return i === -1 ? null : otagna.splice(i, 1)[0];
   };
 
-  for (const rad of rader) {
+  // AKTIVA källor paras först. En pausad tvilling med samma namn (PD_EXTRA
+  // ×3 hos Bäverbutiken 2026-09-10: två ACTIVE, en PAUSED) tog annars den
+  // uppladdade annonsen och den aktiva stod som "saknas".
+  const ordnade = [...rader].sort((a, b) => (arAktiv(b) ? 1 : 0) - (arAktiv(a) ? 1 : 0));
+  for (const rad of ordnade) {
     const dom = DOMORDNING.includes(rad.dom) ? rad.dom : DOMAR.OKAND;
     if (dom !== rad.dom) {
       anmarkningar.push(`okänd domtext "${rad.dom}" på ${rad.annons} — räknas som okänd, aldrig som ren.`);
@@ -620,6 +636,15 @@ async function kör() {
   const utMapp = join(ROT, 'output', butikId);
   const brandDetektor = läsJson(join(utMapp, 'brand-detektor.json'));
   const kallannonser = läsJson(join(utMapp, 'kallannonser.json'));
+  // Orsakerna kommer ur vågplanen (bygg-vagkonfig.mjs → vagplan.json): varje
+  // källannons som INTE lades i konfigen står där med sitt skäl, på id.
+  const vagplan = läsJson(join(utMapp, 'vagplan.json'));
+  if (vagplan?.plan && kallannonser && typeof kallannonser === 'object') {
+    const orsakAv = new Map(vagplan.plan.filter((r) => r.orsak).map((r) => [String(r.id), r.orsak]));
+    for (const block of Object.values(kallannonser)) {
+      for (const r of block?.annonser ?? []) if (orsakAv.has(String(r.id))) r.orsak = orsakAv.get(String(r.id));
+    }
+  }
   if (!brandDetektor && !kallannonser) {
     console.error(`✗ Varken brand-detektor.json eller kallannonser.json finns i factory/output/${butikId}/.`);
     console.error('  Kör factory/kallannonser.mjs och factory/brand-detektor.mjs först — räkningen gissar aldrig.');

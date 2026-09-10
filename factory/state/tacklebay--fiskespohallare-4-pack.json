@@ -59,10 +59,41 @@
       "publicerad": true
     }
   },
-  "uppdaterad": "2026-09-10T15:49:43.773Z",
+  "uppdaterad": "2026-09-10T18:05:57.004735Z",
   "qa": {
     "gron": true,
     "kritiska": [],
     "tid": "2026-09-10T15:49:43.773Z"
+  },
+  "annonser": {
+    "datum": "2026-09-10",
+    "kommando": "/ny-annonser tacklebay",
+    "malkonto": "915422744950975",
+    "SE": {
+      "kampanj": "TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+      "kampanj_id": "120249037503480172",
+      "status": "PAUSED",
+      "cbo_daily_budget": "100000",
+      "adsets": {
+        "PD": "120249037504230172",
+        "CS": null,
+        "GT": null,
+        "SP": "120249037879100172"
+      },
+      "annonser_uppe": 66,
+      "video": 41,
+      "bild": 25,
+      "kallannonser_active": 89,
+      "rakning": "DELVIS KLART — 19 saknas (18 kräver-omdubb, 1 slutkortsbygge), 4 okänd ej uppladdade",
+      "rapport": "factory/output/fiskespohallare-4-pack/rakningen.md",
+      "omdubb_ko": "factory/output/fiskespohallare-4-pack/omdubb-ko.md"
+    },
+    "NO": {
+      "kallkampanj": "Fiskespöhållaren NO | BE-ROAS 1,36 | 2026-08-20",
+      "kallkampanj_id": "120251856983860233",
+      "status": "källan PAUSED sedan augusti — inga kandidater, ingen norsk kampanj byggd; butiken saknar dessutom NOK-paketnivåer"
+    },
+    "trippelkoll": "2026-09-10: sida, pixel, CBO-budget, länk och PAUSED på tre nivåer stämmer på alla 66",
+    "launch": "väntar på Axels \"Launch: TackleBay\""
   }
 }

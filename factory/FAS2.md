@@ -525,6 +525,14 @@ Sju saker den körningen lärde:
    rate limit 17 efter ~20 anrop** — kör dem alltid via proxyn.
 7. `oversatt-bild.py` tar en hel knapp som en textrad när knappen är en pill
    (h ≈ 83) — bandet blev rätt, pillen ritades om för hand (PIL). Kolla QA-bilden.
+8. **Räkningen parade fel på tre sätt** (alla rättade + testade i
+   `rakning.test.mjs`): en PAUSED kampanj med ACTIVE annonser inuti räknades
+   som förväntad (nu väger `kampanj.status` och `med`); en pausad tvilling
+   med samma namn tog den aktivas uppladdning (aktiva paras först); och
+   svansmatchningen godtog `H2_H1` som start (nu krävs vinkelkoden, bara
+   bokstäver). Orsakerna för saknade annonser läses ur `vagplan.json`.
+   Utfall TackleBay: 66 uppe av 85 förväntade, 19 namngivna i omdubb-kön —
+   DELVIS KLART, exit 1, och det är sant.
 
 ## Uppdrag C — Bildannonserna (gratis, ingen väntan)
 
