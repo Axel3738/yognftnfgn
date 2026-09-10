@@ -867,7 +867,12 @@
         "annonsNamn": "IBC-tanktrekk_NO_PD_4_H2",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
         "prefix": "IBC-tanktrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252161409620233",
+        "creativeId": "1481176390697971",
+        "adsetId": "120251996667400233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "439.00",
