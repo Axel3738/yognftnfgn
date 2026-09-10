@@ -106,5 +106,14 @@ Verkställt 17:24: SE `120249031845500172` och NO `120249031977180172` —
 kampanj ACTIVE, 4 adsets ACTIVE, 16 annonser ACTIVE vardera, 1000 kr/dag
 CBO per kampanj. Metas annonsgranskning pågår därefter (effective_status).
 
+⚠️ **17:28–17:34: NO pausad och återaktiverad.** Trippelkollen av `/nb`-sidan
+via curl visade 499,00 kr (SEK) — den norska marknaden har ingen egen
+webbnärvaro (domän/undermapp), så Shopify väljer marknad på besökarens LAND,
+inte på språket i URL:en. Från containern (utomlands) blir det Sverige/SEK;
+med `?country=NO` svarar samma sida **439,00 kr** och paketen 878/1 317 före
+temats 15/20 %. En norsk besökare från en NO-riktad annons hamnar i Norge-
+marknaden och ser NOK. Kontrollera alltid `/nb/…?country=NO` — aldrig bara
+`/nb/…` — när NOK ska verifieras från containern.
+
 Nästa avläsning: `/skalningskungen kalender` var tredje dag. Break-even-CPA
 SE 308 kr (499 − 191). NO räknas i NOK (439 − inköp i NOK), aldrig ihop med SE.
