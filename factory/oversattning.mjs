@@ -44,7 +44,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
-import { sammanfoga } from './butik.mjs';
+import { sammanfoga, arNischbutik } from './butik.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer, kontaktsida } from './policyer.mjs';
 import { kundUnderrubrik } from './sida.mjs';
@@ -169,12 +169,17 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
     lista(p.reviews).slice(0, 6).forEach((r, i) => {
       if (text(r.titel)) ut[`recension.${h}.${i}.titel`] = r.titel;
       if (text(r.text)) ut[`recension.${h}.${i}.text`] = r.text;
+      // Namnet står i startsidans omdömesslider (index.json omdomen.rN.name)
+      // och är översättningsbart i Shopifys ögon. Samma namn på båda språken
+      // = "samma ord", ingen läcka — men bara om nyckeln finns i underlaget
+      // (AdventLane 2026-09-10: sex namn rapporterades som läckor på /nb).
+      if (text(r.namn)) ut[`recension.${h}.${i}.namn`] = r.namn;
     });
   }
 
   // Kollektionen (flerprodukt), sidor, menyer — ur samma kontext som ops.mjs.
   const kollektion = ctx.kollektion ?? (butik.butik?.kollektion ? { handle: butik.butik.kollektion.handle, titel: butik.butik.kollektion.titel, beskrivning: butik.butik.kollektion.beskrivning } : null);
-  if (ps.length > 1 && kollektion?.handle) {
+  if (arNischbutik(butik, ps) && kollektion?.handle) {
     ut[`kollektion.${kollektion.handle}.title`] = kollektion.titel ?? 'Sortimentet';
     if (text(kollektion.beskrivning)) ut[`kollektion.${kollektion.handle}.body_html`] = kollektion.beskrivning;
   }
@@ -186,7 +191,7 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   ut['sida.contact.title'] = 'Kontakt';
   if (ps[0]) ut['sida.contact.body'] = kontaktsida(ctx.p ?? ps[0]);
   const huvudmeny = ctx.huvudmenylankar ?? [
-    ...(ps.length > 1 && kollektion ? [{ titel: kollektion.titel ?? 'Sortimentet' }] : []),
+    ...(arNischbutik(butik, ps) && kollektion ? [{ titel: kollektion.titel ?? 'Sortimentet' }] : []),
     ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn })),
     { titel: 'Kontakt' },
   ];
@@ -201,6 +206,8 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   if (index) Object.assign(ut, malltexter('index', index));
   const header = forsok('tema.byggHeaderGroup', () => krav(tema, 'tema', 'byggHeaderGroup')(butik));
   if (header) Object.assign(ut, malltexter('header', header));
+  // Rubriken "Företaget" sätts av byggFooterGroup — den ska med i underlaget,
+  // annars läcker den på /nb (AdventLane 2026-09-10).
   const tomFooter = { sections: { footer: { type: 'footer', blocks: { foretaget: { type: 'text', settings: {} } }, settings: {} } }, order: ['footer'] };
   const footer = forsok('startsida.byggFooterGroup', () => krav(startsida, 'startsida', 'byggFooterGroup')(JSON.stringify(tomFooter), butik));
   if (footer) Object.assign(ut, malltexter('footer', footer));
@@ -212,6 +219,26 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   ut['tema.footer.information'] = 'Information';
   ut['tema.footer.nyhetsbrev'] = 'Missa inga nyheter';
   ut['tema.share'] = 'Dela';
+  // Produktmallens sticky köpknapp (product.json ms_sticky.label ur bas-zip:en)
+  // och temats ENGELSKA defaults på mallar butiken inte skriver om (article,
+  // list-collections, password) + Shopifys inbyggda kollektion "Home page".
+  // Matchningen sker på VÄRDE, så källtexten här måste vara exakt den som
+  // står i temat — därför engelska (AdventLane 2026-09-10, 14 läckor på /nb).
+  // Produktmallens trust- och leveransrad är custom_liquid och locale-branchas
+  // av tema.byggProduktTemplate ur nb['liquid.trust.<i>'] / 'liquid.delivery.*'
+  // — inte via translationsRegister. Utan de här nycklarna står "Fri frakt"
+  // och "ångerrätt" kvar på /nb (AdventLane 2026-09-10).
+  const trust = forsok('tema.trustPunkter', () => krav(tema, 'tema', 'trustPunkter')(butik)) ?? [];
+  trust.forEach((rad, i) => { ut[`liquid.trust.${i}`] = String(rad).split(':').slice(1).join(':'); });
+  const dagar = forsok('tema.leveransdagar', () => krav(tema, 'tema', 'leveransdagar')(ps[0]?.leveranstid ?? butik?.frakt?.leveranstid));
+  ut['liquid.delivery.text'] = 'Beräknad leverans';
+  if (dagar?.min && dagar?.max) ut['liquid.delivery.dagar'] = `${dagar.min}–${dagar.max} arbetsdagar`;
+  ut['tema.sticky'] = 'Köp nu';
+  ut['tema.default.share'] = 'Share';
+  ut['tema.default.collections'] = 'Collections';
+  ut['tema.default.opening_soon'] = 'Opening soon';
+  ut['tema.default.password_text'] = '<p>Be the first to know when we launch.</p>';
+  ut['tema.default.home_page'] = 'Home page';
 
   if (varningar.length > 0) ut._varningar = varningar;
   return ut;
@@ -254,7 +281,7 @@ export function byggMinimalKontext(butik, rader) {
     policyer,
     kollektion,
     huvudmenylankar: [
-      ...(ps.length > 1 ? [{ titel: kollektion.titel, url: `/collections/${kollektionHandle}` }] : []),
+      ...(arNischbutik(butik, ps) ? [{ titel: kollektion.titel, url: `/collections/${kollektionHandle}` }] : []),
       ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn, url: `/products/${p.produkt.id}` })),
       { titel: 'Kontakt', url: '/pages/contact' },
     ],

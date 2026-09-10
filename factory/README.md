@@ -83,11 +83,12 @@ Kedjans moduler (ägartabellen i KEDJAN.md) — en modul per funktion:
 | `ops.mjs` | Stegmotorn — hela kedjan, `STEG` = KEDJAN.md | se ovan |
 | `state.mjs` | State per nivå, `arbetstemaId`, slutrapportens två listor | — |
 | `token.mjs` | Steg 0: token ur butikens app, tre spärrar, `.env` | `node factory/token.mjs --butik <id> [--kolla] [--torr]` |
-| `tema-upload.mjs` | Steg 1: `tema/ops-tema.zip` → UNPUBLISHED-tema, idempotent på namn | `node factory/tema-upload.mjs factory/butiker/<butik>.yaml [--torr]` |
+| `tema-upload.mjs` | Steg 1: `tema/ops-tema.zip` → UNPUBLISHED-tema, idempotent på namn. **Läser tillbaka uppackningen** (`kompletteraTema`): zip:ens filer mot temats, tappade filer skrivs in en och en, kvarstående saknad = stopp med Shopifys orsak (Shopify tappar avvisade filer tyst — mätt 2026-09-10) | `node factory/tema-upload.mjs factory/butiker/<butik>.yaml [--torr]` |
+| `rensa-kalla.mjs` | Rensar Matstrumpor ur bas-zip:en vid källan (popup, cookieruta, kunder, löften). `rensaBlankaDefaults`: ett borttaget löfte får aldrig lämna `"default": ""` i ett textfält — Shopify avvisar schemat | `node factory/rensa-kalla.mjs [--torr]` |
 | `shopify.mjs` | Admin GraphQL-klienten: produkt, sidor, meny, kollektion, teman, frakt, metafält | — |
-| `filer.mjs` | Bilder → `shopify://shop_images/<lagrat namn.ext>`, idempotent på filnamn | `node factory/filer.mjs <url-eller-fil> …` |
+| `filer.mjs` | Bilder → `shopify://shop_images/<lagrat namn.ext>`, idempotent på filnamn. Video (`.mp4`) → transkodad CDN-URL (`laddaUppVideo`) — ⚠️ går inte på trial (API-GRANSER.md) | `node factory/filer.mjs <url-eller-fil> …` |
 | `logga.mjs` | Steg 5: logga + favicon in i temat, tillbakaläst på värde | `node factory/logga.mjs <logga.png> [--favicon <fil>] [--bredd 140] [--tema <id>]` |
-| `logga-generera.mjs` | Tre runda loggvarianter (valfritt verktyg, **sharp**, säger ifrån utan) | `node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>]` |
+| `logga-generera.mjs` | Tre runda loggvarianter (valfritt verktyg, **sharp**, säger ifrån utan). Motiv ovanför ordmärket: `droppe` (standard), `lucka` (kalenderlucka, AdventLane) eller `ingen` | `node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--tagline "…"] [--motiv droppe\|lucka\|ingen]` |
 | `bildtext.mjs` | Vektortext på bild, [SV]/[NO] (valfritt verktyg, **sharp**) | `node factory/bildtext.mjs <in> <ut> --spec <json>` |
 | `branding.mjs` | Steg 2: brand-CSS, settings-patch (`cart_type: drawer`), `STJARNFARG` | — |
 | `tema.mjs` | Steg 3: opf-sektioner, `TEMAFILER`, produktmall (A/B-block, tilläggs-kryssruta), header-group, `rensaSettings`, gallerifilter, `patchaMsPaket`, korg-upsell | — |

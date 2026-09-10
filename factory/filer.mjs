@@ -7,11 +7,21 @@
 //
 //   laddaUppFiler([{ url|sokvag, alt? } | 'url'])  → [{ namn, handle, url, id }]
 //   laddaUppBild(sokvagEllerUrl, { alt?, filnamn? }) → { namn, handle, url, id }
+//   laddaUppVideo(sokvagEllerUrl, { alt?, filnamn? }) → { namn, handle:null, url, id, kallor }
 //   hittaBild(filnamn)                              → samma objekt | null
+//   hittaVideo(filnamn)                             → samma objekt | null
 //   stagedUpload(sokvag, mime | { resource, mimeType, filnamn }) → resourceUrl
 //   filnamnUrUrl(url)                               → 'namn.ext'
 //
 //   node factory/filer.mjs <url-eller-fil> [<url-eller-fil> ...]
+//
+// VIDEO (AdventLane 2026-09-10): demot i beskrivningen ska vara en loopad MP4
+// (Axels beslut 2026-09-09), och källbutiken har oftast bara en GIF. En lokal
+// MP4 (ffmpeg ur GIF:en) laddas upp som Video via stagedUploadsCreate
+// (resource VIDEO) + fileCreate (contentType VIDEO), och Shopify transkodar
+// den — `sources[]` bär de färdiga mp4-URL:erna (cdn.shopify.com/videos/…).
+// Den URL:en är det som skrivs i media.gif_problem/media_losning (url-metafält).
+// En video har ingen shopify://shop_images-handle — `handle` är null.
 //
 // Två källor förenade (KEDJAN.md): DryTreks version (URL → Files, UUID-suffix
 // och filändelse i handeln) och TankGuards (staged upload för LOKALA filer,
@@ -38,6 +48,9 @@ const MIME = {
   webp: 'image/webp',
   svg: 'image/svg+xml',
   zip: 'application/zip',
+  mp4: 'video/mp4',
+  webm: 'video/webm',
+  mov: 'video/quicktime',
 };
 
 export function mimeFor(namn) {
@@ -46,6 +59,16 @@ export function mimeFor(namn) {
 }
 
 export const arUrl = (s) => /^https?:\/\//i.test(String(s ?? ''));
+export const arVideo = (namn) => mimeFor(filnamnUrUrl(namn)).startsWith('video/');
+
+// Shopifys resurstyp för en staged upload ur mime-typen: bilder IMAGE, video
+// VIDEO (transkoderas, får sources[]), allt annat FILE (tema-zip m.m.).
+export function stagedResurs(mimeType) {
+  const m = String(mimeType ?? '');
+  if (m.startsWith('image/')) return 'IMAGE';
+  if (m.startsWith('video/')) return 'VIDEO';
+  return 'FILE';
+}
 
 // Filnamnet ur en URL eller en lokal sökväg: query och fragment bort, sista
 // segmentet, URL-kodning upplöst. 'https://cdn/x/benskydd-08.jpg?v=1' → 'benskydd-08.jpg'.
@@ -154,7 +177,7 @@ export async function stagedUpload(sokvag, alternativ = {}) {
   const opt = typeof alternativ === 'string' ? { mimeType: alternativ } : alternativ ?? {};
   const filnamn = opt.filnamn ?? basename(sokvag);
   const mimeType = opt.mimeType ?? mimeFor(filnamn);
-  const resource = opt.resource ?? (mimeType.startsWith('image/') ? 'IMAGE' : 'FILE');
+  const resource = opt.resource ?? stagedResurs(mimeType);
   if (!existsSync(sokvag)) throw new Error(`Filen saknas: ${sokvag}`);
   const storlek = statSync(sokvag).size;
 
@@ -231,6 +254,111 @@ export async function laddaUppBild(sokvagEllerUrl, { alt = '', filnamn = null, a
   return vantaPaReady(id, namn);
 }
 
+// Videons färdiga mp4-källa: den bredaste transkodade mp4:an, annars originalet.
+// Ren logik (testbar utan nät).
+export function valjVideokalla(nod) {
+  const kallor = Array.isArray(nod?.sources) ? nod.sources : [];
+  const mp4 = kallor
+    .filter((s) => /mp4/i.test(String(s?.mimeType ?? s?.format ?? '')) && s?.url)
+    .sort((a, b) => (Number(b.width) || 0) - (Number(a.width) || 0));
+  return mp4[0]?.url ?? nod?.originalSource?.url ?? null;
+}
+
+function videoobjekt(nod, filnamn) {
+  const url = valjVideokalla(nod);
+  return { namn: nod?.filename ?? filnamn ?? null, handle: null, url, id: nod?.id ?? null, kallor: nod?.sources ?? [] };
+}
+
+// Väntar tills Shopify transkodat videon. Tar längre tid än en bild —
+// READY kommer först när sources[] finns.
+async function vantaPaVideoReady(id, filnamn, { forsok = 60, paus = 3000 } = {}) {
+  for (let i = 0; i < forsok; i += 1) {
+    const q = await graphql(
+      `query opsFactoryVideoStatus($id: ID!) {
+        node(id: $id) {
+          ... on Video { id fileStatus filename originalSource { url mimeType } sources { url mimeType format width height } }
+        }
+      }`,
+      { id }
+    );
+    const nod = q.node;
+    if (nod?.fileStatus === 'READY') {
+      const o = videoobjekt(nod, filnamn);
+      if (o.url) return o;
+    }
+    if (nod?.fileStatus === 'FAILED') throw new Error(`Shopify kunde inte behandla videon ${filnamn}.`);
+    await sov(paus);
+  }
+  throw new Error(`Videon ${filnamn} blev aldrig READY.`);
+}
+
+// En redan uppladdad video på filnamnsstam (samma idempotens som hittaBild).
+export async function hittaVideo(filnamn) {
+  const sokt = filnamnUrUrl(filnamn);
+  const data = await graphql(
+    `query opsFactoryHittaVideo($q: String!) {
+      files(first: 50, query: $q) {
+        nodes { id fileStatus ... on Video { filename originalSource { url mimeType } sources { url mimeType format width height } } }
+      }
+    }`,
+    { q: stam(sokt) }
+  );
+  const noder = (data.files?.nodes ?? [])
+    .filter((n) => n?.fileStatus === 'READY' && (n.sources || n.originalSource))
+    .map((n) => videoobjekt(n, n.filename))
+    .filter((o) => o.url && o.namn);
+  const traff = matchaLagratNamn(noder.map((o) => o.namn), sokt);
+  return traff ? noder.find((o) => o.namn === traff) : null;
+}
+
+// EN video in i Files — URL eller lokal fil. Idempotent på filnamnsstam.
+export async function laddaUppVideo(sokvagEllerUrl, { alt = '', filnamn = null, aterandvand = true } = {}) {
+  const kalla = String(sokvagEllerUrl ?? '');
+  if (!kalla) throw new Error('laddaUppVideo: ingen källa angiven.');
+  const namn = filnamn ?? filnamnUrUrl(kalla);
+
+  if (aterandvand) {
+    const redan = await hittaVideo(namn);
+    if (redan) return redan;
+  }
+
+  const originalSource = arUrl(kalla) ? kalla : await stagedUpload(kalla, { filnamn: namn, resource: 'VIDEO' });
+  // MÄTT 2026-09-10 (AdventLane): en staged VIDEO-resourceUrl saknar filändelse,
+  // och fileCreate avvisar då `filename` ("Provided filename extension must
+  // match original source"). Filnamnet sätts därför efteråt med fileUpdate.
+  const data = await graphql(
+    `mutation opsFactoryVideoSkapa($files: [FileCreateInput!]!) {
+      fileCreate(files: $files) {
+        files { id fileStatus }
+        userErrors { field message }
+      }
+    }`,
+    { files: [{ originalSource, contentType: 'VIDEO', alt: alt || namn, ...(arUrl(kalla) ? { filename: namn } : {}) }] }
+  );
+  const fel = data.fileCreate?.userErrors ?? [];
+  if (fel.length > 0) throw new Error(`fileCreate ${namn}: ${fel.map((f) => f.message).join('; ')}`);
+  const id = data.fileCreate?.files?.[0]?.id;
+  if (!id) throw new Error(`fileCreate ${namn}: inget fil-id i svaret.`);
+  const klar = await vantaPaVideoReady(id, namn);
+  if (!arUrl(kalla)) {
+    // Namnet i Files ska vara vårt (idempotensen slår upp på stammen). Går
+    // det inte är det en skönhetsfläck, inte ett fel — URL:en gäller ändå.
+    try {
+      const u = await graphql(
+        `mutation opsFactoryVideoNamn($files: [FileUpdateInput!]!) {
+          fileUpdate(files: $files) { files { id ... on Video { filename } } userErrors { field message } }
+        }`,
+        { files: [{ id, filename: namn }] }
+      );
+      const nyttNamn = u.fileUpdate?.files?.[0]?.filename;
+      if (nyttNamn && (u.fileUpdate?.userErrors ?? []).length === 0) klar.namn = nyttNamn;
+    } catch {
+      // behåll Shopifys namn
+    }
+  }
+  return klar;
+}
+
 // Tolkar en post i laddaUppFiler-listan: 'url', { url, alt } eller { sokvag, alt }.
 export function tolkaFilpost(post) {
   if (typeof post === 'string') return { kalla: post, alt: '', filnamn: null };
@@ -245,7 +373,8 @@ export async function laddaUppFiler(lista, { alt = {} } = {}) {
   for (const post of lista ?? []) {
     const { kalla, alt: postAlt, filnamn } = tolkaFilpost(post);
     const namn = filnamn ?? filnamnUrUrl(kalla);
-    ut.push(await laddaUppBild(kalla, { alt: postAlt || alt[namn] || '', filnamn }));
+    const upp = arVideo(namn) ? laddaUppVideo : laddaUppBild;
+    ut.push(await upp(kalla, { alt: postAlt || alt[namn] || '', filnamn }));
   }
   return ut;
 }
@@ -262,6 +391,8 @@ if (process.argv[1] && process.argv[1].endsWith('filer.mjs')) {
   if (kallor.length === 0) throw new Error('Ange en eller flera bild-URL:er eller filer.');
   const lista = await laddaUppFiler(kallor);
   lista.forEach((o, i) => {
-    console.log(`${o?.handle ? '✅' : '❌'} ${filnamnUrUrl(kallor[i])} → ${o?.handle ?? 'kom inte upp'}`);
+    // Bilder svarar med sin shop_images-handle, videor med den transkodade URL:en.
+    const mal = o?.handle ?? o?.url ?? null;
+    console.log(`${mal ? '✅' : '❌'} ${filnamnUrUrl(kallor[i])} → ${mal ?? 'kom inte upp'}`);
   });
 }

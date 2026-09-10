@@ -1,0 +1,130 @@
+{
+  "input": {
+    "title": "Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor",
+    "handle": "adventskalender-racingbilar",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Öppnas en gång. Finns kvar sen.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor – AdventLane",
+      "description": "Något att se fram emot varje morgon i december. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "499.00",
+        "compareAtPrice": "649.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image10.png",
+        "contentType": "IMAGE",
+        "alt": "Blå presentkartong med adventskalender, tjugofyra numrerade luckor och en röd racerbil på locket"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-oppen.jpg",
+        "contentType": "IMAGE",
+        "alt": "Adventskalendern öppnad med flera leksaksbilar synliga i sina luckor, racingdekor och startnummer"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-jul.jpg",
+        "contentType": "IMAGE",
+        "alt": "AI-illustration av en julmiljö med adventskalendern framme vid granen"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Slut innan frukost"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Du öppnar luckan klockan sju. Vid halv åtta är chokladen borta, och det enda som finns kvar är ett tomt omslag i soporna."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-racingkalender-4.gif"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Kvar till julafton"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Varje morgon öppnas en ny lucka och en bil till kommer fram, i sin egen färg och design. Den 24 december står tjugofyra bilar framme, inte bara ett tomt omslag."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-oppen.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Något att se fram emot varje morgon i december\",\"Tjugofyra bilar kvar den 24 december, inget att slänga\",\"En julklapp som är klar direkt ur kartongen\",\"Bilarna följer med in i leken när kalendern är slut\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"24 numrerade luckor i blandad ordning på lådans framsida\",\"En bil bakom varje lucka, alla olika i färg och design\",\"Racingdekor med startnummer som 67, 33 och 07, rutmönster och flammor\",\"Hjulen rullar\",\"Lådan är CE- och CPC-märkt. Innehåller små delar, inte lämplig för barn under 3 år\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-jul.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vad finns bakom luckorna?\",\"svar\":\"En egen liten bil bakom varje lucka. Alla bilar ser olika ut, med racingdekor och startnummer som 67, 33 och 07.\"},{\"fraga\":\"Hinner den fram till första december om jag beställer nu?\",\"svar\":\"Leveranstiden är normalt 5 till 10 arbetsdagar. Beställ i god tid så kalendern hinner fram innan december börjar.\"},{\"fraga\":\"Vilken ålder passar kalendern?\",\"svar\":\"Kalendern innehåller små delar och är inte lämplig för barn under 3 år. Lådan är CE- och CPC-märkt.\"},{\"fraga\":\"Kan jag ge bort den som den är?\",\"svar\":\"Ja. Den levereras i en tryckt presentkartong, klar att lägga under granen.\"},{\"fraga\":\"Vad gäller om jag ångrar mitt köp?\",\"svar\":\"Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@adventlane.se om du vill ångra.\"}]"
+    }
+  ]
+}

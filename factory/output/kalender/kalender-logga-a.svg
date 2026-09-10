@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512" cy="512" r="512" fill="#152444"/>
+  <circle cx="512" cy="512" r="452" fill="none" stroke="#F7F2EA" stroke-opacity="0.35" stroke-width="6"/>
+  <rect x="466" y="326" width="92" height="92" rx="9.2" fill="none" stroke="#F7F2EA" stroke-width="6.4"/><rect x="481.6" y="341.6" width="60.7" height="60.7" rx="3.7" fill="#F7F2EA" fill-opacity="0.22"/><path d="M481.6 341.6 L520.5 327.1 L520.5 387.8 L481.6 402.4 Z" fill="#A8283A"/>
+  <text x="512" y="548" text-anchor="middle" dominant-baseline="central" font-family="Poppins, DejaVu Sans, sans-serif" font-weight="700"
+        font-size="108" letter-spacing="11" fill="#F7F2EA">ADVENTLANE</text>
+  <text x="512" y="660" text-anchor="middle" dominant-baseline="central" font-family="Poppins, DejaVu Sans, sans-serif" font-weight="700"
+        font-size="30" letter-spacing="9" fill="#F7F2EA" fill-opacity="0.7">ADVENT CALENDARS</text>
+</svg>

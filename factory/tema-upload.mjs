@@ -26,6 +26,7 @@
 // utan att också ta bort begarUppladdning/laddaUpp nedan.
 
 import { readFileSync, existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname } from 'node:path';
 import { graphql as shopifyGraphql, kontrolleraAnslutning } from './shopify.mjs';
@@ -262,6 +263,99 @@ export async function laddaUppTema(
 }
 
 // ---------------------------------------------------------------------------
+// Tillbakaläsning efter uppackningen (MÄTT 2026-09-10, AdventLane)
+//
+// Shopify packar upp zip:en utan att säga vilka filer den AVVISADE: sex
+// sektionsfiler med blank schema-default lämnades utanför temat, `processing`
+// blev false, "första filen finns" var sant — och bygget stoppade elva steg
+// senare på "Section type 'ms-usp-bar' does not refer to an existing section
+// file". En skrivning utan tillbakaläsning är inte gjord (PROCESS.md): efter
+// uppackningen jämförs zip:ens filer mot temats, saknade filer skrivs in en
+// och en (då svarar Shopify med felet i klartext), och saknas något ändå
+// kastar steget med filnamn + orsak.
+// ---------------------------------------------------------------------------
+
+const BINAR = /\.(png|jpe?g|gif|webp|svg|woff2?|eot|ttf|otf|mp4|ico|pdf)$/i;
+
+// Zip:ens filnamn (utan katalogposter). `unzip -Z1` finns i containern —
+// rensa-kalla.mjs packar med samma verktyg.
+export function zipFilnamn(zipSokvag = TEMA_ZIP) {
+  const ut = execFileSync('unzip', ['-Z1', zipSokvag], { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
+  return ut.split('\n').map((r) => r.trim()).filter((r) => r && !r.endsWith('/'));
+}
+
+export function zipFil(namn, zipSokvag = TEMA_ZIP) {
+  return execFileSync('unzip', ['-p', zipSokvag, namn], { maxBuffer: 16 * 1024 * 1024 });
+}
+
+// Ren logik: vilka av zip:ens filer saknas i temat.
+export function saknadeFiler(zipNamn, temaNamn) {
+  const finns = new Set(temaNamn);
+  return (zipNamn ?? []).filter((n) => !finns.has(n));
+}
+
+// Alla filnamn i temat, paginerat (bara namn — kallskanning-kor hämtar kroppar).
+export async function hamtaTemafilnamn(temaId, { graphql = shopifyGraphql } = {}) {
+  const namn = [];
+  let cursor = null;
+  for (;;) {
+    const data = await graphql(
+      `query opsFactoryTemaFilnamn($id: ID!, $cursor: String) {
+        theme(id: $id) { files(first: 250, after: $cursor) { nodes { filename } pageInfo { hasNextPage endCursor } } }
+      }`,
+      { id: temaId, cursor }
+    );
+    const sida = data.theme?.files;
+    for (const n of sida?.nodes ?? []) if (n?.filename) namn.push(n.filename);
+    if (!sida?.pageInfo?.hasNextPage) break;
+    cursor = sida.pageInfo.endCursor;
+  }
+  return namn;
+}
+
+// Kompletterar temat med de zip-filer uppackningen tappade. Svarar med
+// { antal, kompletterade:[], fel:[] } och KASTAR om något fortfarande saknas
+// — då står Shopifys egen orsak per fil i felet.
+export async function kompletteraTema(temaId, { zipSokvag = TEMA_ZIP, graphql = shopifyGraphql, logg = () => {} } = {}) {
+  const zipNamn = zipFilnamn(zipSokvag);
+  const saknas = saknadeFiler(zipNamn, await hamtaTemafilnamn(temaId, { graphql }));
+  if (saknas.length === 0) {
+    logg(`Uppackningen tillbakaläst: alla ${zipNamn.length} filer finns i temat.`);
+    return { antal: zipNamn.length, kompletterade: [], fel: [] };
+  }
+  logg(`⚠️ Uppackningen tappade ${saknas.length} filer — skriver in dem en och en: ${saknas.join(', ')}`);
+  const kompletterade = [];
+  const fel = [];
+  for (const namn of saknas) {
+    const kropp = zipFil(namn, zipSokvag);
+    const body = BINAR.test(namn) ? { type: 'BASE64', value: kropp.toString('base64') } : { type: 'TEXT', value: kropp.toString('utf8') };
+    try {
+      const data = await graphql(
+        `mutation opsFactoryTemafilKomplettera($themeId: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) {
+          themeFilesUpsert(themeId: $themeId, files: $files) { upsertedThemeFiles { filename } userErrors { filename message } }
+        }`,
+        { themeId: temaId, files: [{ filename: namn, body }] }
+      );
+      const ue = data.themeFilesUpsert?.userErrors ?? [];
+      if (ue.length > 0) fel.push(`${namn}: ${ue.map((u) => u.message).join('; ')}`);
+      else kompletterade.push(namn);
+    } catch (e) {
+      fel.push(`${namn}: ${e.message}`);
+    }
+  }
+  const kvar = saknadeFiler(zipNamn, await hamtaTemafilnamn(temaId, { graphql }));
+  if (kvar.length > 0) {
+    throw new Error(
+      `Temat saknar ${kvar.length} av zip:ens filer efter komplettering: ${kvar.join(', ')}.` +
+        (fel.length > 0 ? `\nShopify sa: ${fel.join(' · ')}` : '') +
+        '\nRätta filen i factory/tema/ops-tema.zip (node factory/rensa-kalla.mjs) och kör --igen tema-upload.'
+    );
+  }
+  logg(`Kompletterade ${kompletterade.length} filer — temat har nu alla ${zipNamn.length}.`);
+  return { antal: zipNamn.length, kompletterade, fel };
+}
+
+// ---------------------------------------------------------------------------
 // CLI
 // ---------------------------------------------------------------------------
 
@@ -285,6 +379,7 @@ async function huvud() {
   }
 
   const tema = await laddaUppTema(namn, { zipSokvag, logg: (rad) => console.log(`   ${rad}`) });
+  await kompletteraTema(tema.id, { zipSokvag, logg: (rad) => console.log(`   ${rad}`) });
   console.log(
     `✅ ${tema.redanUppe ? 'Tema återanvänt' : 'Tema uppladdat'}: ${tema.name} (${tema.role}, ${tema.id}) — ` +
       `uppackat efter ${tema.kontroller} kontroller.`

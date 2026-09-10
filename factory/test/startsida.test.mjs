@@ -65,6 +65,16 @@ test('flerproduktsbutik får kollektionen på startsidan, enproduktsbutik en pro
   assert.equal(ensam.sections.hero.blocks.b.settings.button_link_1, 'shopify://products/a');
 });
 
+test('nischbutik (kollektion.alltid) visar kollektionen redan med EN produkt', () => {
+  const bas = butikBas();
+  const butik = { ...bas, butik: { ...bas.butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: true } } };
+  const nisch = bygg(butik, [produkt('a')], { kollektion: 'kalendrarna' });
+  assert.ok(nisch.order.includes('sortiment'));
+  assert.ok(!nisch.order.includes('produkt'));
+  assert.equal(nisch.sections.sortiment.settings.collection, 'kalendrarna');
+  assert.equal(nisch.sections.hero.blocks.b.settings.button_link_1, 'shopify://collections/kalendrarna');
+});
+
 test('omdömessektionen döljer sig när riktiga recensioner saknas', () => {
   const butik = butikBas();
   const utan = [produkt('a')];

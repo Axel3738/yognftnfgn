@@ -61,12 +61,16 @@ export function kontrolleraLaunch(p, { shop = null, produkt = null, policyer = n
 
   // 4. Bilder
   const bilder = lista(p.media?.bilder);
+  // Butikens media kommer i två former: rå { nodes } från API:t, eller
+  // shopify.hamtaProduktViaHandle:s tolkade lista. Den senare gav "ingen
+  // media uppladdad" på en produkt med tre bilder (AdventLane 2026-09-10).
+  const antalMedia = Array.isArray(produkt?.media) ? produkt.media.length : (produkt?.media?.nodes?.length ?? 0);
   if (bilder.length === 0) {
     kritisk('bilder', 'Inga bilder i produktfilen.');
-  } else if (produkt && (produkt.media?.nodes?.length ?? 0) === 0) {
+  } else if (produkt && antalMedia === 0) {
     kritisk('bilder', 'Produkten i butiken har ingen media uppladdad.');
   } else {
-    ok('bilder', `${bilder.length} st`);
+    ok('bilder', `${bilder.length} st${produkt ? `, ${antalMedia} media i butiken` : ''}`);
   }
 
   // 5. Copy

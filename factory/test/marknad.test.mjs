@@ -160,6 +160,16 @@ test('byggUnderlagObjekt: testbutiken ger stabila nycklar för produkt, metafäl
   assert.ok(Object.keys(ut).some((k) => k.startsWith('index.sections.')));
   assert.ok(Object.keys(ut).some((k) => k.startsWith('paket.')));
   assert.equal(ut['tema.share'], 'Dela');
+  // Sticky-knappen, sidfotens rubrik och temats engelska defaults ska med —
+  // matchningen sker på värde, så källtexten är exakt temats (AdventLane 2026-09-10).
+  assert.equal(ut['tema.sticky'], 'Köp nu');
+  // Trust-raden (custom_liquid) locale-branchas ur nb['liquid.trust.<i>'].
+  assert.ok(/^Fri frakt/.test(ut['liquid.trust.0']), ut['liquid.trust.0']);
+  assert.ok(/ångerrätt$/.test(ut['liquid.trust.1']), ut['liquid.trust.1']);
+  assert.equal(ut['liquid.delivery.text'], 'Beräknad leverans');
+  assert.equal(ut['tema.default.share'], 'Share');
+  assert.equal(ut['tema.default.home_page'], 'Home page');
+  assert.equal(ut['footer.sections.footer.blocks.foretaget.settings.heading'], 'Företaget');
   // enproduktsbutik: ingen kollektion
   assert.equal(Object.keys(ut).some((k) => k.startsWith('kollektion.')), false);
   // allt är strängar utom anteckningarna

@@ -257,7 +257,39 @@ export function neutraliseraText(text) {
     ut = taBortLoften(ut);
     traffade.push(`löften: ${bar.join(', ')}`);
   }
+  // Ett borttaget löfte får ALDRIG lämna en blank schema-default efter sig.
+  const { text: utanBlanka, antal } = rensaBlankaDefaults(ut);
+  if (antal) { ut = utanBlanka; traffade.push(`blanka schema-defaults borttagna ×${antal}`); }
   return { text: ut, traffade };
+}
+
+/** Tar bort `"default": ""` ur `{% schema %}`-block.
+ *
+ *  MÄTT 2026-09-10 (AdventLane, första bygget ur den rensade zip:en): när
+ *  löftet i en defaultsträng togs bort blev värdet tomt — och Shopify avvisar
+ *  ett schema med blank default ("Invalid schema: setting with id="items"
+ *  default can't be blank"). Vid uppackningen av zip:en säger Shopify ingenting:
+ *  filen lämnas bara utanför temat. Sex sektionsfiler (ms-usp-bar, ms-marquee,
+ *  ms-review-slider, ms-reviews, ms-guarantee-section, blocks/ms-guarantee)
+ *  saknades i butiken, och startsidan stoppade på "Section type does not
+ *  refer to an existing section file". Utan default väljer Shopify tomt själv —
+ *  det är samma sak för kunden, men schemat är giltigt. */
+export function rensaBlankaDefaults(text) {
+  let antal = 0;
+  const ut = String(text).replace(/({%-?\s*schema\s*-?%})([\s\S]*?)({%-?\s*endschema\s*-?%})/g, (hel, start, json, slut) => {
+    // Bara PLATTA inställningsobjekt ({ "type": "text", … } utan inre klamrar).
+    // En select med options är inte platt och rörs inte — där är "" ett giltigt
+    // alternativ (ab_variant "Visas för variant" = alla), och Shopify tog emot
+    // fem sådana filer (mätt 2026-09-10). Det är textfälten som avvisas.
+    const rensat = json.replace(/\{[^{}]*\}/g, (obj) => {
+      if (/"type":\s*"(select|radio|checkbox|range|number)"/.test(obj)) return obj;
+      return obj
+        .replace(/,\s*"default":\s*""(?=\s*[,}])/g, () => { antal += 1; return ''; })
+        .replace(/"default":\s*"",\s*/g, () => { antal += 1; return ''; });
+    });
+    return `${start}${rensat}${slut}`;
+  });
+  return { text: ut, antal };
 }
 
 // ------------------------------------------------------------------ körning

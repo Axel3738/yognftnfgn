@@ -48,10 +48,14 @@ butik:
   # visar KOLLEKTIONEN, inte en enskild produkt, och menyn får en rad till den.
   # Enproduktsbutik: lämna blocket borta — startsidan visar produkten direkt.
   # (factory/FLERPRODUKT.md, TackleBay 2026-09-09.)
+  # NISCHBUTIK som startar med EN produkt (AdventLane 2026-09-10): sätt
+  # alltid: true — då byggs kollektionen, kollektionsraden och kollektions-
+  # startsidan redan nu, och nästa produkt är bara en produktfil till.
   kollektion:
     handle: sortimentet       # /collections/<handle>
     titel: "Sortimentet"      # rubrik på startsidan och i menyn
     beskrivning: ""           # HTML, ex "<p>Utrustning för den som fiskar.</p>"
+    alltid: false             # true = nischbutik, kollektionen även med en produkt
 
 frakt:
   fri_globalt: true           # fri frakt till alla länder (default)

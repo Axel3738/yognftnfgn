@@ -60,6 +60,16 @@ test('flerprodukt utan kollektionsblock faller tillbaka på sortimentet, "all" s
   assert.throws(() => huvudmenyRader(butik, [p, p2]), /collections\/all/);
 });
 
+test('nischbutik (kollektion.alltid) får kollektionsraden redan med EN produkt', () => {
+  const butik = { ...rabutik(), butik: { ...rabutik().butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: true } } };
+  const rader = huvudmenyRader(butik, dummy());
+  assert.equal(rader[1].url, '/collections/kalendrarna');
+  assert.equal(rader[1].titel, 'Kalendrarna');
+  // alltid: false (eller utsatt) med en produkt = enproduktsbutik som förr.
+  const utan = { ...rabutik(), butik: { ...rabutik().butik, kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: false } } };
+  assert.ok(!huvudmenyRader(utan, dummy()).some((r) => r.url.startsWith('/collections/')));
+});
+
 test('dubbla produkter ger fel, tom lista ger fel', () => {
   const p = dummy();
   assert.throws(() => huvudmenyRader(rabutik(), [p, p]), /dubbla adresser/);

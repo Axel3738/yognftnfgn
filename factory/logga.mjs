@@ -74,11 +74,20 @@ export async function laddaUppLogga(temaId, { logga, favicon = null, bredd = nul
   const nya = sattLoggaISettings(settings, { logo: l.handle, favicon: f.handle, bredd });
   await skrivTemafiler(tema.id, { [fil]: serialiseraSettings(nya) });
 
-  // Tillbakaläsning på värde, inte byte (se filhuvudet).
-  const efter = lasSettings(await hamtaTemafil(tema.id, fil));
-  const fel = [];
-  if (efter.current?.logo !== l.handle) fel.push(`logo: temat säger ${JSON.stringify(efter.current?.logo)}`);
-  if (efter.current?.favicon !== f.handle) fel.push(`favicon: temat säger ${JSON.stringify(efter.current?.favicon)}`);
+  // Tillbakaläsning på värde, inte byte (se filhuvudet). Shopify tar emot
+  // settings_data.json och skriver om den i bakgrunden — en läsning direkt
+  // efter svarade `logo: ""`, `favicon: undefined` medan värdena satt kvar
+  // några sekunder senare (AdventLane 2026-09-10). Därför flera försök.
+  let efter = null;
+  let fel = [];
+  for (let forsok = 1; forsok <= 6; forsok += 1) {
+    efter = lasSettings(await hamtaTemafil(tema.id, fil));
+    fel = [];
+    if (efter.current?.logo !== l.handle) fel.push(`logo: temat säger ${JSON.stringify(efter.current?.logo)}`);
+    if (efter.current?.favicon !== f.handle) fel.push(`favicon: temat säger ${JSON.stringify(efter.current?.favicon)}`);
+    if (fel.length === 0) break;
+    if (forsok < 6) await new Promise((r) => setTimeout(r, 2500));
+  }
   if (fel.length > 0) throw new Error(`Loggan fastnade inte i "${tema.name}": ${fel.join('; ')}`);
 
   return { logo: l.handle, favicon: f.handle, bredd: efter.current.logo_width, temaId: tema.id, temaNamn: tema.name };

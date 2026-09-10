@@ -162,10 +162,15 @@ test('strukturkoll fångar saknad paketväljare, köplöften och fel produktlän
   assert.ok(r.fel.includes('produktlänken'));
 });
 
-test('strukturkoll utan bonusprodukt kräver ingen kryssruta', () => {
-  const utanTillagg = PRODUKTSIDA.replace('opf-tillagg-mall', '').replace('opf-tillagg__kryss', '');
+test('strukturkoll utan bonusprodukt kräver varken kryssruta eller gratis-rad', () => {
+  // Gratis-raden (ms-paket__gava) finns bara när en bonus ligger i paketen —
+  // utan bonusprodukt är den saknade raden rätt (AdventLane 2026-09-10).
+  const utanTillagg = PRODUKTSIDA.replace('opf-tillagg-mall', '').replace('opf-tillagg__kryss', '').replace('ms-paket__gava', 'ms-paket__x');
   const r = strukturkoll(utanTillagg, { produkt: { produkt: { id: 'damasker' } }, butik: BUTIK });
-  assert.equal(r.ok, true);
+  assert.equal(r.ok, true, r.fel.join(' | '));
+  // Med bonusprodukt krävs gratis-raden fortfarande.
+  const med = strukturkoll(utanTillagg, { produkt: PRODUKT, butik: BUTIK });
+  assert.ok(med.fel.includes('gratis-raden i paketen'));
 });
 
 test('produktkoll kräver namn och pris i synlig text', () => {

@@ -9,7 +9,7 @@
 // SVG-funktionerna (loggaSvgA/B/C, faviconSvg) är ren logik och går att
 // köra utan sharp.
 //
-//   node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"]
+//   node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|ingen]
 //
 // Utan --variant skrivs alla tre: <id>-logga-a.png, -b.png, -c.png (1024²)
 // + <id>-favicon.png (256²) + SVG-källorna. Färgerna kommer ur butikens EGEN
@@ -56,6 +56,34 @@ export function typsnittUrHandle(handle) {
 const DROPPE = (cx, cy, r, fill) =>
   `<path d="M${cx} ${cy - r * 1.35} C${cx + r * 0.9} ${cy - r * 0.25} ${cx + r} ${cy + r * 0.15} ${cx + r} ${cy + r * 0.35} A${r} ${r} 0 1 1 ${cx - r} ${cy + r * 0.35} C${cx - r} ${cy + r * 0.15} ${cx - r * 0.9} ${cy - r * 0.25} ${cx} ${cy - r * 1.35} Z" fill="${fill}"/>`;
 
+// En öppnad kalenderlucka: fyrkantig ram, tonad öppning och en flik som
+// svängts ut åt höger (AdventLane 2026-09-10 — droppen är TankGuards motiv,
+// en kalenderbutik behöver sitt eget). `ram` = ramens färg, `flik` = flikens.
+const LUCKA = (cx, cy, r, ram, flik) => {
+  const x = cx - r;
+  const y = cy - r;
+  const s = r * 2;
+  const fx = x + r * 0.34;
+  const fy = y + r * 0.34;
+  const iw = r * 1.32;
+  const n = (v) => Math.round(v * 10) / 10;
+  return (
+    `<rect x="${n(x)}" y="${n(y)}" width="${n(s)}" height="${n(s)}" rx="${n(r * 0.2)}" fill="none" stroke="${ram}" stroke-width="${n(r * 0.14)}"/>` +
+    `<rect x="${n(fx)}" y="${n(fy)}" width="${n(iw)}" height="${n(iw)}" rx="${n(r * 0.08)}" fill="${ram}" fill-opacity="0.22"/>` +
+    `<path d="M${n(fx)} ${n(fy)} L${n(fx + iw * 0.64)} ${n(fy - iw * 0.24)} L${n(fx + iw * 0.64)} ${n(fy + iw * 0.76)} L${n(fx)} ${n(fy + iw)} Z" fill="${flik}"/>`
+  );
+};
+
+// Motivet ovanför ordmärket. droppe = standard (bakåtkompatibelt), lucka =
+// kalenderlucka, ingen = bara ordmärket. Väljs med --motiv eller
+// byggLoggaSvg(..., { motiv }).
+export const MOTIV = {
+  droppe: (cx, cy, r, { fill }) => DROPPE(cx, cy, r, fill),
+  lucka: (cx, cy, r, { ram, flik }) => LUCKA(cx, cy, r, ram, flik),
+  ingen: () => '',
+};
+const motivFn = (t) => t?.motiv ?? MOTIV.droppe;
+
 function font(t) {
   const f = typsnittUrHandle(t.typografi?.rubriker);
   return `font-family="${f.familj}, DejaVu Sans, sans-serif" font-weight="${f.vikt}"`;
@@ -73,7 +101,7 @@ export function loggaSvgA(brand, t) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <circle cx="512" cy="512" r="512" fill="${f.mork}"/>
   <circle cx="512" cy="512" r="452" fill="none" stroke="${f.text_pa_mork}" stroke-opacity="0.35" stroke-width="6"/>
-  ${DROPPE(512, 372, 46, f.text_pa_mork)}
+  ${motivFn(t)(512, 372, 46, { fill: f.text_pa_mork, ram: f.text_pa_mork, flik: f.accent })}
   <text x="512" y="548" text-anchor="middle" dominant-baseline="central" ${font(t)}
         font-size="${size}" letter-spacing="${Math.round(size * 0.1)}" fill="${f.text_pa_mork}">${eskapa(ord)}</text>
   <text x="512" y="660" text-anchor="middle" dominant-baseline="central" ${font(t)}
@@ -101,7 +129,7 @@ export function loggaSvgB(brand, t) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <circle cx="512" cy="512" r="512" fill="${f.yta}"/>
   <circle cx="512" cy="512" r="470" fill="none" stroke="${f.mork}" stroke-width="34"/>
-  ${DROPPE(512, startY - size * 0.62 - 60, 30, f.accent)}
+  ${motivFn(t)(512, startY - size * 0.62 - 60, 30, { fill: f.accent, ram: f.mork, flik: f.accent })}
   ${rader}
   <line x1="392" y1="${sistaY + 34}" x2="632" y2="${sistaY + 34}" stroke="${f.accent}" stroke-width="8" stroke-linecap="round"/>
 </svg>
@@ -129,10 +157,15 @@ export function loggaSvgC(brand, t) {
 export function faviconSvg(brand, t) {
   const f = t.farger;
   const initial = String(brand).trim().charAt(0).toUpperCase();
+  // Med ett eget motiv (lucka) bär faviconen motivet ensamt — annars initialen.
+  const inre =
+    t.motivNamn && t.motivNamn !== 'droppe' && t.motivNamn !== 'ingen'
+      ? motivFn(t)(128, 128, 78, { fill: f.text_pa_mork, ram: f.text_pa_mork, flik: f.accent })
+      : `<text x="128" y="134" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="170" fill="${f.text_pa_mork}">${eskapa(initial)}</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
   <circle cx="128" cy="128" r="128" fill="${f.mork}"/>
-  <text x="128" y="134" text-anchor="middle" dominant-baseline="central" ${font(t)}
-        font-size="170" fill="${f.text_pa_mork}">${eskapa(initial)}</text>
+  ${inre}
 </svg>
 `;
 }
@@ -141,10 +174,11 @@ export const VARIANTER = { a: loggaSvgA, b: loggaSvgB, c: loggaSvgC };
 
 // Ren logik utan sharp: SVG-källorna för varianterna + faviconen.
 // → [{ namn: 'logga-a' | … | 'favicon', svg, px }]
-export function byggLoggaSvg(butik, { variant = null, tagline = '' } = {}) {
+export function byggLoggaSvg(butik, { variant = null, tagline = '', motiv = 'droppe' } = {}) {
   const brand = butik?.butik?.brand;
   if (!brand) throw new Error('Butiksfilen saknar butik.brand.');
-  const t = { ...hamtaTokens(butik.branding), tagline };
+  if (!MOTIV[motiv]) throw new Error(`Okänt motiv "${motiv}" — välj ${Object.keys(MOTIV).join(', ')}.`);
+  const t = { ...hamtaTokens(butik.branding), tagline, motiv: MOTIV[motiv], motivNamn: motiv };
   return [
     ...Object.entries(VARIANTER)
       .filter(([v]) => !variant || v === variant)
@@ -153,11 +187,11 @@ export function byggLoggaSvg(butik, { variant = null, tagline = '' } = {}) {
   ];
 }
 
-export async function byggLogga(butiksfil, utMapp, { variant = null, tagline = '' } = {}) {
+export async function byggLogga(butiksfil, utMapp, { variant = null, tagline = '', motiv = 'droppe' } = {}) {
   const butik = lasYaml(readFileSync(butiksfil, 'utf8'));
   const id = butik?.butik?.id;
   if (!id || !butik?.butik?.brand) throw new Error('Butiksfilen saknar butik.id/butik.brand.');
-  const jobb = byggLoggaSvg(butik, { variant, tagline }).map((j) => [j.namn, j.svg, j.px]);
+  const jobb = byggLoggaSvg(butik, { variant, tagline, motiv }).map((j) => [j.namn, j.svg, j.px]);
   mkdirSync(utMapp, { recursive: true });
 
   const sharp = sharpModul();
@@ -178,11 +212,12 @@ async function huvud() {
   const ut = arg.includes('--ut') ? arg[arg.indexOf('--ut') + 1] : join(FACTORY_ROT, 'output', 'loggor');
   const variant = arg.includes('--variant') ? arg[arg.indexOf('--variant') + 1] : null;
   const tagline = arg.includes('--tagline') ? arg[arg.indexOf('--tagline') + 1] : '';
+  const motiv = arg.includes('--motiv') ? arg[arg.indexOf('--motiv') + 1] : 'droppe';
   if (!butiksfil) {
-    console.error('Användning: node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"]');
+    console.error('Användning: node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|ingen]');
     process.exit(1);
   }
-  const filer = await byggLogga(butiksfil, ut, { variant, tagline });
+  const filer = await byggLogga(butiksfil, ut, { variant, tagline, motiv });
   for (const [namn, fil] of Object.entries(filer)) console.log(`✅ ${namn}: ${fil}`);
 }
 

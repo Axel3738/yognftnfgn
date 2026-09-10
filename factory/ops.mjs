@@ -37,7 +37,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname, basename } from 'node:path';
 import { lasYaml } from './yaml.mjs';
-import { valideraButik, sammanfoga } from './butik.mjs';
+import { valideraButik, sammanfoga, arNischbutik } from './butik.mjs';
 import { lasLaunchInput, tillampaLaunchInput } from './launch-input.mjs';
 import { validera } from './validera.mjs';
 import { byggPlan, produktHandle } from './build-store.mjs';
@@ -76,7 +76,7 @@ import {
   tillampaFraktatgarder,
 } from './shopify.mjs';
 import { anslut } from './token.mjs';
-import { laddaUppTema, standardTemanamn } from './tema-upload.mjs';
+import { laddaUppTema, standardTemanamn, kompletteraTema } from './tema-upload.mjs';
 import { laddaUppBild } from './filer.mjs';
 import { laddaUppLogga } from './logga.mjs';
 import { byggStartsida, byggFooterGroup, startsideRader, bilderAttLaddaUpp } from './startsida.mjs';
@@ -329,21 +329,29 @@ export const STEG = [
     async kor(ctx) {
       // Redan låst tema i state: verifiera att det finns och behåll det —
       // annars laddar en omkörning upp ett andra tema bredvid det första.
+      const logg = (rad) => console.log(`   ${rad}`);
+      // Tillbakaläsning av uppackningen (tema-upload.mjs kompletteraTema):
+      // Shopify tappar avvisade filer TYST. Körs på ett låst tema också —
+      // så --igen tema-upload lagar ett tema som packades upp med hål.
       const befintligt = lasArbetstemaId(ctx.butiksstate);
       if (befintligt) {
         try {
           const t = await hamtaArbetstema(befintligt);
           if (t.id === befintligt || String(t.id).endsWith(`/${String(befintligt).split('/').pop()}`)) {
             sattArbetstemaId(ctx.butiksstate, { id: t.id, namn: t.name });
-            return { arbetstemaId: t.id, temaId: t.id, temaNamn: t.name, role: t.role, redanUppe: true };
+            const k = await kompletteraTema(t.id, { logg });
+            return { arbetstemaId: t.id, temaId: t.id, temaNamn: t.name, role: t.role, redanUppe: true, filer: k.antal, kompletterade: k.kompletterade };
           }
-        } catch {
-          // temat är borta ur butiken — ladda upp på nytt nedan
+        } catch (e) {
+          // Temat är borta ur butiken → ladda upp på nytt nedan. Ett
+          // kompletteringsfel är däremot ett riktigt fel och ska synas.
+          if (/saknar .* av zip:ens filer/.test(e.message)) throw e;
         }
       }
-      const tema = await laddaUppTema(standardTemanamn(ctx.butik.butik.brand), { logg: (rad) => console.log(`   ${rad}`) });
+      const tema = await laddaUppTema(standardTemanamn(ctx.butik.butik.brand), { logg });
       sattArbetstemaId(ctx.butiksstate, { id: tema.id, namn: tema.name });
-      return { arbetstemaId: tema.id, temaId: tema.id, temaNamn: tema.name, role: tema.role, redanUppe: tema.redanUppe };
+      const k = await kompletteraTema(tema.id, { logg });
+      return { arbetstemaId: tema.id, temaId: tema.id, temaNamn: tema.name, role: tema.role, redanUppe: tema.redanUppe, filer: k.antal, kompletterade: k.kompletterade };
     },
   },
   {
@@ -622,16 +630,18 @@ export const STEG = [
   },
   {
     id: 'kollektion',
-    namn: 'Sortimentskollektionen (bara flerprodukt)',
+    namn: 'Sortimentskollektionen (flerprodukt eller nischbutik)',
     niva: 'butik',
     modul: 'shopify.mjs (skrivKollektion)',
     stoppar: true,
+    // Nischbutik (butik.kollektion.alltid) bygger kollektionen redan med en
+    // produkt — nästa produkt ska bara vara en produktfil till (butik.mjs).
     torrt: (ctx) =>
-      ctx.produkter.length > 1
-        ? [`${ctx.kollektion.handle} — "${ctx.kollektion.titel}"`, ...ctx.produkter.map((pk) => `  ${pk.p.produkt.namn}`), 'publiceras i Online Store']
+      arNischbutik(ctx.butik, ctx.produkter)
+        ? [`${ctx.kollektion.handle} — "${ctx.kollektion.titel}"${ctx.produkter.length === 1 ? ' (nischbutik: kollektionen byggs redan med en produkt)' : ''}`, ...ctx.produkter.map((pk) => `  ${pk.p.produkt.namn}`), 'publiceras i Online Store']
         : ['enproduktsbutik — ingen kollektion, startsidan visar produkten direkt'],
     async kor(ctx) {
-      if (ctx.produkter.length <= 1) return { hoppadOver: 'enproduktsbutik' };
+      if (!arNischbutik(ctx.butik, ctx.produkter)) return { hoppadOver: 'enproduktsbutik' };
       const ids = [];
       for (const pk of ctx.produkter) ids.push((await produktIButiken(pk)).id);
       const kollektion = await skrivKollektion({ handle: ctx.kollektion.handle, titel: ctx.kollektion.titel, produktIds: ids, beskrivning: ctx.kollektion.beskrivning });
@@ -1380,6 +1390,11 @@ async function huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, ige
   // Steg 18: QA körs alltid färskt — aldrig ur state — butiken en gång och
   // varje produkt för sig (FLERPRODUKT.md punkt 4: annars kan produkt 2 vara
   // trasig medan QA är grön).
+  // QA:n ska läsa butiken som den ÄR NU — ctx.shop hämtades i steg 0, före
+  // policyer och menyer skrevs. Med den gamla ögonblicksbilden rapporterade
+  // kontrollen "villkor saknas" i samma körning som policysteget var grönt
+  // (AdventLane 2026-09-10).
+  ctx.shop = await kontrolleraAnslutning();
   const butiksQa = await korButiksQa(ctx);
   console.log('\nQA — butiken (kundvy + trippelkoll):');
   for (const punkt of butiksQa.punkter) console.log(`${IKON[punkt.utfall]} ${punkt.namn}: ${punkt.detalj}`);
