@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
   <circle cx="128" cy="128" r="128" fill="#22282E"/>
-  <path d="M-20.2 128 Q128 42.2 276.2 128" fill="none" stroke="#1F6F8E" stroke-width="32.8" stroke-linecap="round"/><path d="M-0.7 163.1 Q128 80.8 256.7 163.1" fill="none" stroke="#F1F2EF" stroke-width="9.4" stroke-linecap="round"/><path d="M-16.3 135.8 L-16.3 209.9" stroke="#F1F2EF" stroke-width="9.4" stroke-linecap="round"/><path d="M272.3 135.8 L272.3 209.9" stroke="#F1F2EF" stroke-width="9.4" stroke-linecap="round"/>
+  <text x="128" y="134" text-anchor="middle" dominant-baseline="central" font-family="Barlow, DejaVu Sans, sans-serif" font-weight="700"
+        font-size="170" fill="#F1F2EF">C</text>
 </svg>

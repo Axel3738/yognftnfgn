@@ -1,0 +1,186 @@
+{
+  "butik": "carashell",
+  "produkt": "_butik",
+  "steg": {
+    "anslutning": {
+      "klar": true,
+      "domain": "yitrbk-m3.myshopify.com",
+      "name": "My Store 4",
+      "primaryDomain": "yitrbk-m3.myshopify.com",
+      "currencyCode": "SEK"
+    },
+    "tema-upload": {
+      "klar": true,
+      "arbetstemaId": "gid://shopify/OnlineStoreTheme/205487636812",
+      "temaId": "gid://shopify/OnlineStoreTheme/205487636812",
+      "temaNamn": "CaraShell – CRO v1",
+      "role": "UNPUBLISHED",
+      "redanUppe": false,
+      "filer": 396,
+      "kompletterade": []
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/205487636812",
+      "filer": [
+        "assets/opf-brand.css",
+        "snippets/ms-head.liquid",
+        "config/settings_schema.json",
+        "config/settings_data.json"
+      ]
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/205487636812",
+      "temaNamn": "CaraShell – CRO v1",
+      "sektioner": 6,
+      "filer": [
+        "sections/opf-problem.liquid",
+        "sections/opf-losning.liquid",
+        "sections/opf-funktioner.liquid",
+        "sections/opf-lifestyle.liquid",
+        "sections/opf-garanti.liquid",
+        "sections/opf-faq.liquid",
+        "assets/ms-paket.js",
+        "sections/header-group.json",
+        "snippets/ms-head.liquid",
+        "snippets/ms-paket.liquid"
+      ],
+      "produktmall": "verifierad",
+      "upsell": null
+    },
+    "avbrandning": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/205487636812",
+      "fore": 0,
+      "borttagnaSektioner": [],
+      "omskrivnaFiler": [
+        "config/settings_data.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "snippets/ms-bundle-picker.liquid"
+      ],
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "logga": {
+      "klar": true,
+      "logo": "shopify://shop_images/carashell-logga-c.png",
+      "favicon": "shopify://shop_images/carashell-favicon.png",
+      "bredd": 140,
+      "temaId": "gid://shopify/OnlineStoreTheme/205487636812"
+    },
+    "kollektion": {
+      "klar": true,
+      "hoppadOver": "enproduktsbutik"
+    },
+    "startsida": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/205487636812",
+      "filer": [
+        "templates/index.json",
+        "sections/footer-group.json"
+      ],
+      "sektioner": [
+        "hero",
+        "ms_usp",
+        "ms_marquee",
+        "produkt",
+        "berattelse",
+        "statement",
+        "omdomen",
+        "trygghet",
+        "ms_faq",
+        "ms_guarantee"
+      ],
+      "bilder": {
+        "hero": "shopify://shop_images/image4.png",
+        "trygghet": "shopify://shop_images/tak-hopvikt.jpg",
+        "galleri": []
+      },
+      "produkter": [
+        "takskyddet: ACTIVE"
+      ]
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "meny": {
+      "klar": true,
+      "huvudmeny": {
+        "handle": "main-menu",
+        "orord": false,
+        "rader": 4
+      },
+      "sidfot": {
+        "handle": "footer",
+        "orord": false,
+        "rader": 5
+      }
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 5,
+      "orort": false,
+      "skapadeZoner": [],
+      "borttagnaZoner": []
+    },
+    "huvudmarknad": {
+      "klar": true,
+      "valuta": "SEK"
+    },
+    "kallskanning": {
+      "klar": true,
+      "skannade": 315,
+      "rent": true,
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "marknad": {
+      "klar": true,
+      "marknader": [
+        {
+          "land": "NO",
+          "locale": "nb",
+          "marknad": "Norge",
+          "status": "ACTIVE",
+          "localeSkapad": true
+        }
+      ]
+    },
+    "oversatt": {
+      "klar": false,
+      "manuell": "nb: översätt med subagent (sonnet) — output/carashell/oversattning-sv.json (106 nycklar) → oversattning-nb.json med samma nycklar, kör sen --igen oversatt",
+      "underlag": 106,
+      "utfall": {}
+    }
+  },
+  "arbetstemaId": "gid://shopify/OnlineStoreTheme/205487636812",
+  "arbetstemaNamn": "CaraShell – CRO v1",
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "kundvy-startsida",
+      "markörer /nb"
+    ],
+    "tid": "2026-09-10T22:11:13.235Z"
+  },
+  "uppdaterad": "2026-09-10T22:11:13.235Z"
+}

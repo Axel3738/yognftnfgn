@@ -1,0 +1,63 @@
+{
+  "butik": "carashell",
+  "produkt": "takskyddet",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/16084174242124",
+      "handle": "takskyddet",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 12
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "Default Title"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": false,
+      "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
+    },
+    "paket": {
+      "klar": true,
+      "nivaer": [
+        "takskyddet-a-1",
+        "takskyddet-a-2",
+        "takskyddet-a-3",
+        "takskyddet-b-1",
+        "takskyddet-b-2",
+        "takskyddet-b-3"
+      ],
+      "koder": [
+        "CARASHELLROO2A",
+        "CARASHELLROO3A",
+        "CARASHELLROO2B",
+        "CARASHELLROO3B"
+      ],
+      "frammande": [],
+      "test": "paket"
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — VA:n importerar output/takskyddet/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    }
+  },
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "tracking",
+      "doman",
+      "kundvy-produkttext",
+      "markörer /nb"
+    ],
+    "tid": "2026-09-10T22:11:19.590Z"
+  },
+  "uppdaterad": "2026-09-10T22:11:19.590Z"
+}

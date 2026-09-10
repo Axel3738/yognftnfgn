@@ -92,9 +92,11 @@ Tre varianter i `output/carashell/loggor-jamforelse.png`:
 a emblem (grafit, motiv + CARASHELL + tagline) · b sigill (ljus, CARA/SHELL i två
 rader) · c monogram (CS).
 
-**Provisoriskt satt: a** — bygget körde utan Axel i chatten. Valet är hans:
-`node factory/logga-feedback.mjs carashell <a|b|c> --motiv tak --kommentar "…"`
-och byt `branding.logga`/`favicon` + `--igen logga` om han väljer en annan.
+**Axel valde c** (2026-09-10, under bygget): "den mest neutrala — de andra två
+passade inte produkten". Loggat med `logga-feedback.mjs carashell c --motiv tak`.
+Lärdom för nästa butik: takmotivet (a/b) föll — Axel har nu valt c två gånger
+av två, båda gångerna det rena ordmärket utan symbol. Faviconen genererades om
+med `--motiv ingen` så den bär initialen C, inte taket.
 
 ## Bonusprodukt (Q4-ramverket)
 

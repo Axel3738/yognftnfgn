@@ -12,3 +12,4 @@ Varianterna: **a** = ordmärket på mörk platta med motivet ovanför ·
 | Datum | Butik | Vald | Motiv | Kommentar |
 |---|---|---|---|---|
 | 2026-09-10 | tacklebay | c | horisont | Axel: "Jag gillar att det var liv i den" — vågorna och tvåradiga ordmärket ger rörelse; A (sigill) och B (kroken ensam) upplevdes stilla. |
+| 2026-09-10 | carashell | c | tak | Axel: C var den mest neutrala — de andra två (a emblem, b sigill med takmotivet) kändes inte passa produkten. |

@@ -1,0 +1,217 @@
+# CaraShell — produkt 1: Taköverdrag Husvagn & Husbil 6,5 × 3 m.
+# Källa: baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan
+# Specs, pris och recensioner lästa ur källan 2026-09-10. Bilderna är facit
+# (leverantörens): helintegrerad husbil med svart överdrag över taket, kanten
+# hänger 30–40 cm ner över sidorna, elastiska spännband med plastkrokar som
+# hakar under karossens kant. Källtexten säger "husvagn", bilderna visar en
+# husbil — produkten passar båda och copyn säger båda.
+# Okänt och därför aldrig påstått: förvaringspåse (nämns i källtexten, syns
+# inte), dragsko (syns inte), vikt, exakta vagnlängder.
+#
+# Copyn (svenska) skrevs 2026-09-10 av en subagent (sonnet) ur BRAND.md +
+# docs/copy-regler.md, tre-frågorstestet ✅ på alla rubrikrader; vinkel,
+# målgrupp och struktur är huvudsessionens. Underlaget: output/carashell/BRAND.md.
+
+produkt:
+  namn: "Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+  id: "takskyddet"
+  menynamn: "Taköverdraget"
+
+brand:
+  namn: "CaraShell"
+  domanideer:
+    - "carashell.se"
+    - "carashell.no"
+
+ekonomi:
+  # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
+  # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset.
+  moms_antagen: false
+  # ⚠️ HÄRLEDD, inte kvitterad: källkampanjens namn bär "BE ROAS 1.63" och
+  # docs/temu-launch-flow.md säger BE-ROAS = pris / (pris − inköp) ⇒
+  # 1129 − 1129/1,63 = 436 kr. Axel bekräftar mot Temu-kvittot innan talet
+  # får döma annonser.
+  inkopskostnad: 436
+  pris: 1129
+  jamforpris: 1469
+  # Ur källkampanjens namn (MagiBorsten 120250147343350291, 2026-09-10).
+  break_even_roas: 1.63
+
+varianter:
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
+      alt: "Husbil sedd snett framifrån med CaraShell taköverdrag på taket"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"
+      alt: "CaraShell taköverdrag spänt över husbilens tak, sett framifrån"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg"
+      alt: "CaraShell taköverdrag hopvikt med spännband och tygdetalj synlig"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
+      alt: "Elastiska spännband med plastkrokar som håller fast taköverdraget"
+  videor:
+  # ⚠️ Demot ska vara en MP4 (Axel 2026-09-09), men Shopify Files tar inga
+  # videor på trial (API-GRANSER.md, mätt 2026-09-10). Källans GIF (över-
+  # toningar mellan produktbilderna, ingen inbränd text) bär demot tills
+  # ägaren valt plan — då: node factory/filer.mjs <mp4> och --igen metafalt.
+  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-takoverdrag-4.gif"
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
+
+beskrivning:
+  problem_rubrik: "Regnet står kvar vid takluckan"
+  problem_text: "Husvagnen eller husbilen står ute över vintern. Regnvatten samlas kring takluckor och skarvar, och ingen går upp och kollar förrän våren – då avgör fukttestet om tätningarna höll."
+  losning_rubrik: "CaraShell täcker bara taket"
+  losning_text: "CaraShell täcker takytan, med kanten hängande 30–40 cm ner över sidorna, så regnvatten inte blir stående vid takluckorna. Elastiska spännband med plastkrokar hakar under karossens kant och sitter kvar i blåst. En person sätter på det själv."
+
+vinkel:
+  huvudvinkel: "Taket är ytan du aldrig ser — och den som kostar mest att laga. Konflikt typ A mot helöverdraget (tungt, två personer, skaver mot lacken) och före/efter (vattenpöl vid takluckan hela vintern mot torrt tak). Källa: källkampanjen 'Taköverdraget för Husvagn 6,5 × 3 m' i MagiBorsten (16 annonser, 15 köp på 2 563 kr, ROAS 6,61 de första två dygnen 2026-09-09–10; vinnaren Takoverdrag_PD_2_H1 är problem-driven) och källsidans egen rubrik 'Taket är det du aldrig ser'."
+  underrubrik: "Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
+  usp: "Bara taket. En person."
+
+malgrupp:
+  beskrivning: "Husvagns- eller husbilsägare 45–70 som ställer upp fordonet utomhus över vintern – på tomten, uppställningsplatsen eller campingens vinterplats. Fordonet är värt 200 000–1 000 000 kr. Säger 'fukttest', 'takluckor' och 'ställa upp', fruktar fuktskadan och vet att helöverdraget är tungt och kräver två personer."
+
+problem:
+  - "Regnvatten som blir stående vid takluckan"
+  - "Skarvar och tätmassa som blöts hela vintern"
+  - "Fukttestet vid vårservicen"
+  - "Helöverdrag som kräver två personer"
+
+benefits:
+  - "Torrt tak fram till våren"
+  - "Lugn inför fukttestet"
+  - "Sätts på utan att be om hjälp"
+  - "Lacken slipper skava mot ett tungt helöverdrag"
+
+features:
+  - "Mått 6,5 × 3 m, täcker hela takytan"
+  - "Svart väv, 210D"
+  - "Elastiska spännband med plastkrokar som hakar under karossens kant"
+  - "Sätts på av en person"
+  - "Kanten hänger ner ca 30–40 cm över sidorna"
+
+offer:
+  beskrivning: "1 129 kr (jämförpris 1 469 kr), fri frakt till Sverige och Norge, 14 dagars ångerrätt enligt svensk lag och leverans på 5–10 arbetsdagar."
+  bundle: "2 st – 15 % rabatt (förvald, 'Mest populär'). 3 st – 20 % rabatt. Exakt källans Kaching-nivåer (output/takskyddet/kalla-kaching-paket.json) = fabrikens standard-A."
+  # A = källans Kaching-nivåer (identiska med paket.mjs NIVAER.a), B = ett
+  # steg djupare rabatt. Inga egna nivåer behövs — mitten förvald.
+  paket:
+    test: "paket"
+  # Q4-ramverket: gratis bonus i paketen + betald korg-upsell.
+  # ⚠️ Ingen komplementprodukt hittas på. Kandidat i källbutiken: "Termoskydd
+  # Husbil 211 × 171 cm" 559 kr (BRAND.md) — en hel andra produkt, Axels
+  # beslut. Tills dess är bonus-steget manuellt och paketen körs utan gratisdel.
+  bonus_produkt:
+    titel: ""
+    handle: ""
+    produkt_id: ""
+    variant_id: ""
+    pris: 0
+    i_paket: ""
+    tillagg_kryssruta: true
+    kortnamn: ""
+    sku: ""
+    bilder:
+      - ""
+
+reviews:
+  # 10 riktiga recensioner ur källproduktens Judge.me 2026-09-10 (snitt 5,00).
+  # Namn och texter är källans egna; alla titlar är tomma i källan. ⚠️ DATUMEN:
+  # alla tio har created_at 2026-09-08 (22:48 UTC, inom 12 sekunder) — källan
+  # API-importerade dem samma minut, så det är källans originaldatum, inte
+  # kunddatum. Inget hittas på.
+  - namn: "Karin"
+    betyg: 5
+    text: "Bra skydd för taket och lätt att använda."
+    datum: "2026-09-08"
+  - namn: "Erik"
+    betyg: 5
+    text: "Jag är nöjd med överdraget. Rekommenderas."
+    datum: "2026-09-08"
+  - namn: "Linda"
+    betyg: 5
+    text: "Enkel lösning och bra passform."
+    datum: "2026-09-08"
+  - namn: "Anders"
+    betyg: 5
+    text: "Skyddar husvagnen bra mot regn och smuts."
+    datum: "2026-09-08"
+  - namn: "Sofia"
+    betyg: 5
+    text: "Bra kvalitet och lätt att använda."
+    datum: "2026-09-08"
+  - namn: "Emma"
+    betyg: 5
+    text: "Praktiskt överdrag som gör jobbet."
+    datum: "2026-09-08"
+  - namn: "Johan"
+    betyg: 5
+    text: "Mycket nöjd. Bra skydd när husvagnen står ute."
+    datum: "2026-09-08"
+  - namn: "Maria"
+    betyg: 5
+    text: "Enkel att sätta på och känns bra."
+    datum: "2026-09-08"
+  - namn: "Lars"
+    betyg: 5
+    text: "Passar bra och skyddar taket mot väder."
+    datum: "2026-09-08"
+  - namn: "Anna"
+    betyg: 5
+    text: "Bra skydd för husvagnen. Enkel att använda."
+    datum: "2026-09-08"
+
+faq:
+  - fraga: "Passar det min husvagn eller husbil?"
+    svar: "Måtten är 6,5 × 3 m och täcker hela takytan med marginal – mät takytan på ditt fordon och jämför. Passar både husvagn och husbil."
+  - fraga: "Hur fäster jag överdraget?"
+    svar: "Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna."
+  - fraga: "Sitter det kvar i blåst?"
+    svar: "Ja, de elastiska spännbanden håller det på plats i blåst."
+  - fraga: "Hur många behövs för att lägga på det?"
+    svar: "En person räcker, eftersom överdraget bara täcker taket."
+  - fraga: "Vad gäller om jag ångrar mig?"
+    svar: "14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+leverantor:
+  # ⚠️ Leverantörslänken går INTE att härleda: källans SKU TEMU-5050206311352
+  # har 13 siffror, ett Temu goods_id har 15. Länken nedan är KÄLLPRODUKTEN,
+  # inte leverantören — Axel eller nästa anställd hittar Temu-länken före
+  # inköp (BRAND.md). Ledtid och MOQ ej verifierade.
+  url: "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+  anteckning: "PLATSHÅLLARE = källprodukten. Riktig leverantörslänk saknas (SKU TEMU-5050206311352 går inte att slå upp). Måste hittas innan inköp."
+
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16516659937629"
+  produkt_handle: "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+  produkt_url: "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+  annonskonto: "1867947880635861"
+  # Läst ur kontot 2026-09-10: 16 annonser ACTIVE i fyra adsets (SP, PD, GT,
+  # CS), alla "Takoverdrag_<vinkel>_<n>_<hook>".
+  annonsprefix: "Takoverdrag"
+  kampanj_id: "120250147343350291"
+  kampanj: "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+  srt_slug:
+kallor:
+  drive_mapp: ""
+
+meta:
+  # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
+  # 1867947880635861 (Bäverbutiken, källan).
+  ad_account_id: "915422744950975"
+  page_id: ""
+  pixel_id: ""
+  # Prefixet är PER PRODUKT, aldrig per brand. Brandet ligger med för att
+  # källan redan använder "Takoverdrag_" — annars kolliderar prefixkartan,
+  # översättningskön, adsetuppslaget och commission-kopplingen med
+  # Bäverbutikens annonser.
+  creative_prefix: "CaraShellRoof"
+  testbudget_per_dag: 1000
+  vinklar:
+    - "Vattnet som står kvar vid takluckan hela vintern – och vad det gör med tätningarna till våren."
+    - "Helöverdraget kräver två personer och skaver mot lacken – CaraShell täcker bara taket, en person räcker."
+    - "Från vattenpöl kring takluckan i januari till torrt tak i april."

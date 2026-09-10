@@ -214,9 +214,14 @@ export function strukturkoll(html, { produkt, butik } = {}) {
 // Huvudspråkets vy: produktnamn och pris ska SYNAS som text på sidan.
 export function produktkoll(html, produkt) {
   const t = synligText(html);
-  const forvantat = [produkt?.produkt?.namn, produkt?.ekonomi?.pris]
-    .map((x) => (x === undefined || x === null ? '' : String(x)))
-    .filter(Boolean);
-  const fel = forvantat.filter((x) => !t.includes(x)).map((x) => `"${x}" syns inte i huvudspråkets vy`);
+  // Priset renderas med tusentalsavstånd ("1 129,00 kr", CaraShell
+  // 2026-09-10 — första OPS-produkten över 1 000 kr) — jämför utan mellanslag
+  // och tusentalspunkter, annars är varje pris ≥ 1 000 kr rött fast det syns.
+  const tUtanAvstand = t.replace(/[\s  .]/g, '');
+  const namn = produkt?.produkt?.namn ? String(produkt.produkt.namn) : '';
+  const pris = produkt?.ekonomi?.pris === undefined || produkt?.ekonomi?.pris === null ? '' : String(produkt.ekonomi.pris);
+  const fel = [];
+  if (namn && !t.includes(namn)) fel.push(`"${namn}" syns inte i huvudspråkets vy`);
+  if (pris && !t.includes(pris) && !tUtanAvstand.includes(pris)) fel.push(`"${pris}" syns inte i huvudspråkets vy`);
   return { ok: fel.length === 0, fel };
 }

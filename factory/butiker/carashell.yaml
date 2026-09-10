@@ -144,13 +144,12 @@ branding:
     cta: "Solid regnblå knapp med vit text. Lugna verb — Lägg i varukorgen, Köp nu. Aldrig SISTA CHANSEN, ingen nedräkningstimer."
     trust: "Diskreta rader med grön bock på grus-ton — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
     spacing: "Luftigt, max 62 tecken per rad, generösa sektionsavstånd. Sidan ska kännas som en välordnad uppställningsplats."
-    logo: "Rund emblem: grafitgrå cirkel, en flack taklinje under en regnblå båge (överdraget) med två spännband som hänger ner, ovanför ordmärket CARASHELL i versaler och CARAVAN PROTECTION spärrat under. Fungerar i en färg."
-    favicon: "Samma grafitgrå cirkel med bara taket under bågen."
-  # Loggan och faviconen genereras med
-  # node factory/logga-generera.mjs factory/butiker/carashell.yaml --ut factory/output/carashell --tagline "CARAVAN PROTECTION" --motiv tak
-  # PROVISORISKT variant a (bygget kördes utan Axel i chatten 2026-09-10) —
-  # valet är hans: logga-feedback.mjs + byt sökvägen + `--igen logga`.
-  logga: "output/carashell/carashell-logga-a.png"
+    logo: "Rund monogram, variant C (VALD av Axel 2026-09-10 — 'den mest neutrala, de andra två passade inte produkten'): grafitgrå cirkel, stort CS i ljus grus, tunn linje, ordmärket CARASHELL spärrat under. Ingen symbol. Fungerar i en färg."
+    favicon: "Samma grafitgrå cirkel med ett ljust C."
+  # Loggan och faviconen genererade 2026-09-10 med
+  # node factory/logga-generera.mjs factory/butiker/carashell.yaml --ut factory/output/carashell --variant c --motiv ingen
+  # (takmotivet föll med Axels val — faviconen bär initialen i stället).
+  logga: "output/carashell/carashell-logga-c.png"
   favicon: "output/carashell/carashell-favicon.png"
 
 # ---------------------------------------------------------------------------
@@ -169,33 +168,42 @@ startsida:
     - "shield:14 dagars ångerrätt"
     - "star:Betala med Klarna"
   hero:
-    rubrik: ""
-    text: ""
-    knapp: ""
+    rubrik: "Skydda taket. Inte hela vagnen."
+    text: "Ett taköverdrag som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern. Sätts på av en person med spännband som hakar under karossens kant."
+    knapp: "Se taköverdraget"
     bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
   marquee:
     - "Fri frakt i Sverige och Norge"
     - "14 dagars ångerrätt"
     - "Klarna, kort och Apple Pay"
     - "Skickas från Sverige"
-  produkt_etikett: ""
+  produkt_etikett: "Taköverdrag 6,5 × 3 m"
   berattelse:
-    rubrik: ""
+    rubrik: "Varför bara taket räcker"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
     text:
-      - ""
+      - "Ett helöverdrag ska täcka hela husvagnen eller husbilen. I praktiken blir det tungt, kräver två personer och skaver mot lacken när det blåser."
+      - "CaraShell täcker bara taket – ytan där regnvatten blir stående kring takluckor och skarvar över vintern. En person sätter på det själv."
   statement:
-    rubrik: ""
-    knapp: ""
+    rubrik: "Taket du aldrig kollar är taket som kostar mest att laga."
+    knapp: "Skydda taket"
   trygghet:
-    rubrik: ""
+    rubrik: "Frakt och ångerrätt"
     text:
-      - ""
+      - "Fri frakt till Sverige och Norge. Leverans på 5–10 arbetsdagar."
+      - "14 dagars ångerrätt enligt svensk lag. Fungerar det inte för dig, mejla hello@carashell.se."
     bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg"
   faq_rubrik: "Vanliga frågor"
   faq:
-    - fraga: ""
-      svar: ""
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "5–10 arbetsdagar från beställning."
+    - fraga: "Kan jag ångra köpet?"
+      svar: "Ja, 14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se så hjälper vi dig."
+    - fraga: "Levererar ni till Norge?"
+      svar: "Ja, fri frakt till både Sverige och Norge."
+    - fraga: "Vilka betalsätt går att använda?"
+      svar: "Klarna, kort, Apple Pay och Google Pay."
   garanti:
     rubrik: "14 dagars ångerrätt"
     text:
-      - ""
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Passar överdraget inte som väntat, mejla hello@carashell.se så löser vi det."
