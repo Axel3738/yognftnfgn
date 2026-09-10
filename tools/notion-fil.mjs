@@ -20,7 +20,7 @@
 import { mkdirSync, existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { hämtaFil, driveLankarIKropp } from './notion-kalla.mjs';
+import { hämtaFil, driveLankarIKropp, mediaBlockIKropp } from './notion-kalla.mjs';
 
 const ROT = new URL('..', import.meta.url).pathname;
 
@@ -60,8 +60,27 @@ const filer = Object.values(sida.properties ?? {})
 // ("Link for approval: …"). Sidan bar aven brief-mappen, sa lankarna provas sista
 // forst och den forsta med media vinner. Hamtas via Drives publika export-URL.
 if (!filer.length) {
+  // Tredje vagen forst: redigeraren har dragit in filen direkt i sidan, sa den ar
+  // ett Notion-hostat mediablock. Den ar en riktig fil — Drive-lanken pa samma sida
+  // pekar oftast bara pa brief-mappen, sa mediablocket vinner.
+  const media = await mediaBlockIKropp(pageId);
+  if (media.length) {
+    let k = 0;
+    for (const m of media) {
+      const bas = media.length > 1 ? `${titel}_${++k}` : titel;
+      const ändelse = extname(m.namn) || (m.typ === 'image' ? '.jpg' : '.mp4');
+      const mål = join(ut, `${bas.replace(/[^\w åäöÅÄÖ.-]/g, '_')}${ändelse}`);
+      try {
+        await hämtaFil(m.url, mål);
+        console.log(mål);
+      } catch (e) {
+        dö(`${titel}: ${e.message}`);
+      }
+    }
+    process.exit(0);
+  }
   const lankar = await driveLankarIKropp(pageId);
-  if (!lankar.length) dö(`Raden "${titel}" har varken fil i "Filer och media" eller Drive-länk i sidan — inget att hämta. Fråga redigeraren.`);
+  if (!lankar.length) dö(`Raden "${titel}" har varken fil i "Filer och media", mediablock i sidan eller Drive-länk i sidan — inget att hämta. Fråga redigeraren.`);
   let hittade = [];
   for (const k of lankar) {
     if (k.typ === 'fil') { hittade = [{ id: k.id, titel: `${titel}.mp4` }]; break; }

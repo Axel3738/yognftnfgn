@@ -181,7 +181,7 @@ try {
       produktId: p?.id ?? pfx, kampanj,
       kalla: p ? 'products.json' : (karta[pfx] ? 'kontot' : (al ? 'prefix-alias.json' : null)),
       kalla2: 'notion', notionUrl: r.url, notionFiler: r.filer, skapad: r.skapad,
-      leverans: r.leverans, drive: r.drive ?? [],
+      leverans: r.leverans, drive: r.drive ?? [], notionMedia: r.media ?? [],
     });
   }
 } catch (e) {
@@ -233,6 +233,10 @@ for (const l of leveranser) {
     filer = driveLs(l.mapp).filter(f => f.typ === 'fil');
   } else if (l.leverans === 'notion-fil') {
     filer = l.notionFiler.map(f => ({ typ: 'notion', id: l.mapp, titel: f.namn || `${l.namn}.jpg` }));
+  } else if (l.leverans === 'sid-media') {
+    // Filen ar indragen i sidan. notion-fil.mjs hamtar den — URL:en ar signerad
+    // och kortlivad, sa den skickas aldrig vidare harifran.
+    filer = l.notionMedia.map(m => ({ typ: 'notion', id: l.mapp, titel: m.namn || `${l.namn}.mp4` }));
   } else if (l.leverans === 'drive-lank') {
     ({ mapp: driveMapp, filer } = driveLeverans(l));
   } else {
@@ -316,7 +320,7 @@ for (const [pid, rader] of Object.entries(perProdukt)) {
     const media = r.filer.filter(f => f.typ === 'notion' || ÄR_MEDIA(f.titel));
     console.log(`  • ${r.namn}  (${r.kalla2 === 'notion' ? 'Notion: ' + r.vecka : r.vecka})`);
     if (!media.length) {
-      if (r.leverans === 'saknas') console.log(`      ⚠ VÄNTAR PÅ FIL — varken bilaga i "Filer och media" eller Drive-länk i sidan. Fråga redigeraren.`);
+      if (r.leverans === 'saknas') console.log(`      ⚠ VÄNTAR PÅ FIL — varken bilaga i "Filer och media", mediablock i sidan eller Drive-länk i sidan. Fråga redigeraren.`);
       else if (r.leverans === 'drive-lank') console.log(`      ⚠ Drive-länk i sidan men ingen video i mappen (${r.drive.map(k => k.id).join(', ')}) — inte klar. Fråga redigeraren.`);
       else console.log(`      ⚠ ingen media i mappen — inte klar`);
       continue;
