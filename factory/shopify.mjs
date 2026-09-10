@@ -696,18 +696,35 @@ export function byggFraktprofilInput(fraktlage, atgarder) {
     zonPost(s.zon).skapa.push({ name: s.metod.namn, active: true, rateDefinition: pris(s.metod) });
   }
 
+  // Nya zoner (frakt.mjs attSkapaZoner): land per kod, '*' = resten av
+  // världen. includeAllProvinces så länder med regioner (IT, ES …) inte
+  // hamnar halva utanför zonen.
+  const land = (kod) => (kod === '*' ? { restOfWorld: true } : { code: kod, includeAllProvinces: true });
+  const zonesToCreate = (atgarder.attSkapaZoner ?? []).map((z) => ({
+    name: z.zon,
+    countries: (z.lander ?? []).map(land),
+    methodDefinitionsToCreate: (z.metoder ?? []).map((m) => ({ name: m.namn, active: true, rateDefinition: pris(m) })),
+  }));
+  const zonesToDelete = (atgarder.attTaBortZoner ?? []).map((z) => z.id).filter(Boolean);
+
+  const zonesToUpdate = [...perZon.values()]
+    .filter((z) => z.id && (z.uppdatera.length > 0 || z.skapa.length > 0))
+    .map((z) => ({
+      id: z.id,
+      ...(z.uppdatera.length > 0 ? { methodDefinitionsToUpdate: z.uppdatera } : {}),
+      ...(z.skapa.length > 0 ? { methodDefinitionsToCreate: z.skapa } : {}),
+    }));
+
+  // zonesToDelete ligger på PROFILEN, inte i location-gruppen (mätt
+  // 2026-09-10: "Field is not defined on DeliveryProfileLocationGroupInput").
   return {
     methodDefinitionsToDelete: (atgarder.attTaBort ?? []).map((x) => x.id),
+    ...(zonesToDelete.length > 0 ? { zonesToDelete } : {}),
     locationGroupsToUpdate: [
       {
         id: fraktlage.gruppId,
-        zonesToUpdate: [...perZon.values()]
-          .filter((z) => z.id && (z.uppdatera.length > 0 || z.skapa.length > 0))
-          .map((z) => ({
-            id: z.id,
-            ...(z.uppdatera.length > 0 ? { methodDefinitionsToUpdate: z.uppdatera } : {}),
-            ...(z.skapa.length > 0 ? { methodDefinitionsToCreate: z.skapa } : {}),
-          })),
+        zonesToUpdate,
+        ...(zonesToCreate.length > 0 ? { zonesToCreate } : {}),
       },
     ],
   };
@@ -738,7 +755,10 @@ export async function tillampaFraktatgarder(fraktlageEllerAtgarder, kanskeAtgard
     andrade:
       (atgarder.attUppdatera?.length ?? 0) +
       (atgarder.attSkapa?.length ?? 0) +
-      (atgarder.attTaBort?.length ?? 0),
+      (atgarder.attTaBort?.length ?? 0) +
+      (atgarder.attSkapaZoner?.length ?? 0),
+    skapadeZoner: (atgarder.attSkapaZoner ?? []).map((z) => z.zon),
+    borttagnaZoner: (atgarder.attTaBortZoner ?? []).map((z) => z.zon),
   };
 }
 

@@ -25,6 +25,9 @@ import {
   leveransdagar,
   fraktRad,
   paketBlock,
+  paketTest,
+  gemensamtPaketTest,
+  STANDARD_PAKETTEST,
   harTillagg,
   tillaggTexter,
   JUDGEME_EMBED,
@@ -383,11 +386,37 @@ test('med offer.paket.test byggs A/B-paketblocken på ms_pakets plats, plus full
   assert.deepEqual(igen.sections.main.block_order, bo);
 });
 
-test('utan test och utan bonus: ett enkelt ms_paket-block, ingen kryssruta', () => {
+test('utan eget test: standardstegen är a/b under "paket" — mallen bygger A/B-blocken med SAMMA namn', () => {
+  // Till 2026-09-10 använde mallen '' medan paket.mjs skrev nivåer under
+  // "paket" — ms-paket.liquid renderade då noll nivåer (TackleBay).
   const blk = paketBlock('', 'product', { tillagg: false });
-  assert.deepEqual(Object.keys(blk), ['ms_paket']);
+  assert.deepEqual(Object.keys(blk), ['ms_paket'], 'tomt test ger fortfarande ett enkelt block när det begärs uttryckligen');
+  assert.equal(paketTest({ offer: {}, varianter: [] }), STANDARD_PAKETTEST);
+  assert.equal(paketTest({ offer: { paket: { nivaer: [{ antal: 1 }] } } }), '', 'egna nivåer utan test = inget A/B');
+  assert.equal(paketTest({ offer: { paket: { test: 'buybox' } } }), 'buybox');
   const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt: { offer: {}, varianter: [] } }));
-  assert.ok(ut.sections.main.block_order.includes('ms_paket') && !ut.sections.main.block_order.includes('opf_tillagg'));
+  const bo = ut.sections.main.block_order;
+  assert.ok(bo.includes('ms_paket_a') && bo.includes('ms_paket_b') && !bo.includes('ms_paket') && !bo.includes('opf_tillagg'));
+  assert.ok(ut.sections.main.blocks.ms_paket_b.settings.custom_liquid.includes("test: 'paket', variant: 'b'"));
+});
+
+test('flerprodukt: gemensamt test ger A/B-blocken i den delade mallen, olika test ger inga', () => {
+  const p1 = { offer: {}, varianter: [] };
+  const p2 = { offer: { bonus_produkt: { handle: 'x', tillagg_kryssruta: true, kortnamn: 'x' } }, varianter: [] };
+  assert.equal(gemensamtPaketTest([p1, p2]), 'paket');
+  assert.equal(gemensamtPaketTest([p1, { offer: { paket: { test: 'annat' } } }]), null);
+  assert.equal(gemensamtPaketTest([]), null);
+  const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkter: [p1, p2], butik: butikMedNorge() }));
+  const bo = ut.sections.main.block_order;
+  assert.ok(bo.includes('ms_paket_a') && bo.includes('ms_paket_b'), 'paketblocken finns i flerproduktsmallen');
+  assert.ok(!bo.includes('opf_tillagg'), 'fullpris-kryssrutan är produktbunden och byggs inte i en delad mall');
+  assert.ok(ut.sections.main.blocks.ms_paket_a.settings.custom_liquid.includes('product: product'), 'Liquid filtrerar på product.id själv');
+  // Olika test: inga block, och den gamla ms_paket lämnas kvar som temat hade den.
+  const utan = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkter: [p1, { offer: { paket: { test: 'annat' } } }], butik: butikMedNorge() }));
+  assert.ok(!utan.sections.main.block_order.includes('ms_paket_a'));
+  // Idempotent.
+  const igen = JSON.parse(byggProduktTemplate(JSON.stringify(ut), { produkter: [p1, p2], butik: butikMedNorge() }));
+  assert.deepEqual(igen.sections.main.block_order, bo);
 });
 
 test('trygghetsraden och leveransdagarna kommer ur butiks-/produktfilen, med norsk gren', () => {

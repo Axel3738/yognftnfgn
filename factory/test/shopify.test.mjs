@@ -391,6 +391,27 @@ test('byggFraktprofilInput river villkorade, skapar och uppdaterar — bara zone
   ]);
 });
 
+test('byggFraktprofilInput skapar saknade zoner med länder och river främmande', () => {
+  const lage = tolkaFraktprofil(PROFIL);
+  const profile = byggFraktprofilInput(lage, {
+    attSkapaZoner: [
+      { zon: 'EU (Europeiska Unionen)', lander: ['DK', 'DE'], metoder: [{ namn: 'Fri frakt', pris: 0, valuta: 'SEK' }] },
+      { zon: 'Internationell', lander: ['*'], metoder: [{ namn: 'Fri frakt', pris: 0, valuta: 'SEK' }] },
+    ],
+    attTaBortZoner: [{ zon: 'International', id: 'gid://z/int' }],
+  });
+  const grupp = profile.locationGroupsToUpdate[0];
+  assert.deepEqual(grupp.zonesToUpdate, []);
+  assert.deepEqual(profile.zonesToDelete, ['gid://z/int'], 'zonesToDelete ligger på profilen (mätt 2026-09-10)');
+  assert.equal(grupp.zonesToDelete, undefined);
+  assert.equal(grupp.zonesToCreate.length, 2);
+  assert.deepEqual(grupp.zonesToCreate[0].countries, [{ code: 'DK', includeAllProvinces: true }, { code: 'DE', includeAllProvinces: true }]);
+  assert.deepEqual(grupp.zonesToCreate[1].countries, [{ restOfWorld: true }]);
+  assert.deepEqual(grupp.zonesToCreate[0].methodDefinitionsToCreate, [
+    { name: 'Fri frakt', active: true, rateDefinition: { price: { amount: '0.0', currencyCode: 'SEK' } } },
+  ]);
+});
+
 test('tillampaFraktatgarder(atgarder) läser läget själv; orört gör inget anrop', async () => {
   fejkaShopify([]);
   assert.deepEqual(await tillampaFraktatgarder({ orort: true, attSkapa: [], attUppdatera: [], attTaBort: [] }), { andrade: 0 });
@@ -406,7 +427,7 @@ test('tillampaFraktatgarder(atgarder) läser läget själv; orört gör inget an
     attSkapa: [{ zon: 'Sverige', metod: { namn: 'Fri frakt', pris: 0, valuta: 'SEK' } }],
     attUppdatera: [],
   });
-  assert.deepEqual(ut, { andrade: 2 });
+  assert.deepEqual(ut, { andrade: 2, skapadeZoner: [], borttagnaZoner: [] });
   assert.equal(skickat[1].variables.id, 'gid://dp/1');
   assert.deepEqual(skickat[1].variables.profile.methodDefinitionsToDelete, ['gid://md/1']);
 });

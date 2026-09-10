@@ -524,6 +524,26 @@ export function paketBlock(test, produktUttryck = 'product', { tillagg = false }
   };
 }
 
+// A/B-testets namn för paketblocken. Standardstegen i paket.mjs är alltid
+// två varianter (a/b) under testet "paket" — mallen MÅSTE använda samma
+// namn, annars renderar ms-paket.liquid noll nivåer (variant '' matchar
+// varken a eller b). Till 2026-09-10 använde mallen '' som standard och
+// paket.mjs 'paket' — TackleBays produktsida stod utan paketväljare.
+export const STANDARD_PAKETTEST = 'paket';
+export function paketTest(produkt) {
+  const paket = produkt?.offer?.paket ?? {};
+  if (lista(paket.nivaer).length > 0) return text(paket.test) ?? '';
+  return text(paket.test) ?? STANDARD_PAKETTEST;
+}
+
+// Flerproduktsbutik: EN product.json för alla produkter, så blocken kan bara
+// byggas när alla produkter delar test. Annars null (steget säger ifrån).
+export function gemensamtPaketTest(produkter) {
+  const tester = new Set(lista(produkter).map(paketTest));
+  if (tester.size !== 1) return null;
+  return [...tester][0];
+}
+
 export function harTillagg(p) {
   return p?.offer?.bonus_produkt?.tillagg_kryssruta === true && !!text(p?.offer?.bonus_produkt?.handle);
 }
@@ -548,13 +568,16 @@ const PAKETBLOCK_IDN = ['ms_paket', 'ms_paket_a', 'ms_paket_b', 'opf_tillagg'];
 // Köprutans block ur produkt- och butiksfilen: paketblocken (A/B + fullpris-
 // kryssruta när offer säger det), trygghetsraden, leveransdagarna och
 // varianterna. Rör bara main-sektionen. Idempotent.
-function patchaKoprutan(main, { produkt, butik, nb }) {
+function patchaKoprutan(main, { produkt, produkter = [], butik, nb }) {
   const blocks = { ...main.blocks };
   let order = [...(main.block_order ?? [])];
 
-  if (produkt) {
-    const test = text(produkt.offer?.paket?.test) ?? '';
-    const nya = paketBlock(test, 'product', { tillagg: harTillagg(produkt) });
+  // Enproduktsbutik: produktens test. Flerprodukt: det gemensamma testet
+  // (ms-paket.liquid filtrerar nivåerna på product.id själv). Kryssrutan
+  // för fullpris är produktbunden och byggs bara i enproduktsläget.
+  const test = produkt ? paketTest(produkt) : gemensamtPaketTest(produkter);
+  if (produkt || test !== null) {
+    const nya = paketBlock(test, 'product', { tillagg: produkt ? harTillagg(produkt) : false });
     // Första paketblockets plats — räknad FÖRE filtreringen, så det måste
     // vara det lägsta indexet (annars glider blocken vid varje nytt varv).
     const platser = PAKETBLOCK_IDN.map((id) => order.indexOf(id)).filter((i) => i >= 0);
@@ -606,7 +629,7 @@ function patchaKoprutan(main, { produkt, butik, nb }) {
 // blocken + fullpris-kryssrutan när offer säger det, trygghetsraden,
 // leveransdagarna, och Judge.me-widgeten flyttar in i temats Appyta
 // (ms-app-slot — Axels ursprungsmönster, widgeten stylas aldrig av temat).
-export function byggProduktTemplate(befintlig, { produkt = null, butik = null, nb = {} } = {}) {
+export function byggProduktTemplate(befintlig, { produkt = null, produkter = [], butik = null, nb = {} } = {}) {
   const mall = lasTemaJson(befintlig);
   const sektioner = { ...mall.sections };
 
@@ -644,7 +667,7 @@ export function byggProduktTemplate(befintlig, { produkt = null, butik = null, n
 
   // Köprutan ur konfigen (paket A/B, kryssruta, trust, leverans, varianter).
   if ((produkt || butik) && sektioner.main?.blocks) {
-    sektioner.main = patchaKoprutan(sektioner.main, { produkt, butik, nb });
+    sektioner.main = patchaKoprutan(sektioner.main, { produkt, produkter, butik, nb });
   }
 
   // Judge.me i Appyta (Axels ursprungsmönster) — widgeten stylas aldrig av

@@ -121,6 +121,7 @@ import {
   harTillagg,
   tillaggTexter,
   lasTemaJson,
+  gemensamtPaketTest,
 } from './tema.mjs';
 import { qaSektionsfiler, qaRenderadSida } from './tema-qa.mjs';
 
@@ -426,7 +427,11 @@ export const STEG = [
       return [
         `${Object.keys(SEKTIONER).length} opf-sektioner + ${Object.keys(TEMAFILER).length} fabriksägda filer (${Object.keys(TEMAFILER).join(', ')}) in i arbetstemat`,
         'templates/product.json: opf-sektioner efter main, Judge.me i Appyta' +
-          (ctx.produkter.length === 1 ? `, A/B-paketblock${harTillagg(ctx.p) ? ' + fullpris-kryssruta' : ''}, trust- och leveransrad` : ' (flerprodukt: trust/leverans ur butiken, paketblock per produkt görs inte i EN mall)'),
+          (ctx.produkter.length === 1
+            ? `, A/B-paketblock${harTillagg(ctx.p) ? ' + fullpris-kryssruta' : ''}, trust- och leveransrad`
+            : gemensamtPaketTest(ctx.produkter.map((pk) => pk.p)) !== null
+              ? ` (flerprodukt: gemensamma A/B-paketblock under testet "${gemensamtPaketTest(ctx.produkter.map((pk) => pk.p))}", trust/leverans ur butiken, ingen fullpris-kryssruta)`
+              : ' (flerprodukt: produkterna har OLIKA paket-test — inga paketblock i den delade mallen, sätt samma offer.paket.test)'),
         'sections/header-group.json: annonsrad + huvudmeny, väljare på när marknader finns',
         `snippets/ms-head.liquid: gallerifilter [SV]/[NO]${bonus.length > 0 ? ', omhämtning av korgen för upsellen' : ''}`,
         bonus.length > 0 ? `korg-upsell för ${bonus[0]}` : 'ingen bonusprodukt — ingen korg-upsell',
@@ -478,7 +483,7 @@ export const STEG = [
       for (let forsok = 1; forsok <= 3; forsok++) {
         const befintlig = await las('templates/product.json');
         if (!befintlig) break;
-        const mall = { 'templates/product.json': byggProduktTemplate(befintlig, { produkt, butik: ctx.butik, nb }) };
+        const mall = { 'templates/product.json': byggProduktTemplate(befintlig, { produkt, produkter: ctx.produkter.map((pk) => pk.p), butik: ctx.butik, nb }) };
         await skrivTemafiler(tema.id, mall);
         const fel = await verifieraSkrivning(tema.id, mall);
         if (fel.length === 0) {
@@ -778,11 +783,17 @@ export const STEG = [
       const lage = await hamtaFraktzoner();
       if (!lage) return { manuell: 'Ingen fraktprofil hittades i butiken.' };
       const atgarder = byggFraktatgarder(lage.zoner, byggFraktplan(ctx.butik));
-      if (atgarder.saknadeZoner.length > 0) {
-        return { manuell: `Zoner saknas i butiken och måste läggas till för hand: ${atgarder.saknadeZoner.join(', ')}.` };
-      }
+      // Saknade zoner SKAPAS (zonesToCreate) och trialens egna zoner rivs så
+      // länderna blir lediga. Stod som "för hand" till 2026-09-10 — ingen
+      // hade provat. Skrivningen läses tillbaka nedan.
       const resultat = await tillampaFraktatgarder(lage, atgarder);
-      return { andrade: resultat.andrade, orort: atgarder.orort };
+      if (atgarder.attSkapaZoner.length > 0) {
+        const efter = await hamtaFraktzoner();
+        const namn = new Set((efter?.zoner ?? []).map((z) => z.zon));
+        const kvarSaknas = atgarder.attSkapaZoner.map((z) => z.zon).filter((z) => !namn.has(z));
+        if (kvarSaknas.length > 0) throw new Error(`Zonerna skrevs men lästes inte tillbaka: ${kvarSaknas.join(', ')}.`);
+      }
+      return { andrade: resultat.andrade, orort: atgarder.orort, skapadeZoner: resultat.skapadeZoner, borttagnaZoner: resultat.borttagnaZoner };
     },
   },
   {

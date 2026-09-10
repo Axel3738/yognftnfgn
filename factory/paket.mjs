@@ -35,6 +35,7 @@ import { basename, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
 import { graphql, hamtaProduktViaHandle, kontrolleraAnslutning } from './shopify.mjs';
+import { STANDARD_PAKETTEST } from './tema.mjs';
 
 export const METAOBJEKT_TYP = 'ms_paketniva';
 // Äldre namn på samma konstant (TackleBay-grenen) — behålls så inget bryts.
@@ -110,7 +111,7 @@ export function lasNivaer(produkt) {
   for (const [v, nivaer] of Object.entries(NIVAER)) perVariant.set(v, nivaer.map((n) => ({ ...n, variant: v })));
   // Standardstegen är två varianter — då finns ett A/B-test, "paket" om inget
   // annat står i filen (samma id som temats ms-ab mäter på).
-  return { test: text(paket.test) ?? 'paket', perVariant, kalla: 'standard' };
+  return { test: text(paket.test) ?? STANDARD_PAKETTEST, perVariant, kalla: 'standard' };
 }
 
 // Ren logik: nivåerna → poster (metaobjekt) + koder (rabattkoder), med all
