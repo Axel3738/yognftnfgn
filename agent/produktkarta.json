@@ -9,8 +9,40 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-10",
+  "uppdaterad": "2026-09-11",
   "kampanjer": [
+    {
+      "campaign_id": "120250175763810291",
+      "produkt": "Termoskyddet för Husbil 211 × 171 cm",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-11, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250175680140291",
+      "produkt": "Solcellslarmet 2-pack",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-11, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252183519570233",
+      "produkt": "Takovertrekk Campingvogn NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-11, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252183459760233",
+      "produkt": "Isolert Utekattehus NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-11, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
     {
       "campaign_id": "120250161984300291",
       "produkt": "Staketstolpslagaren 2-pack",
