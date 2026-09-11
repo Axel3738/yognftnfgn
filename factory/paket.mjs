@@ -413,6 +413,57 @@ export async function sakerstallRabattkod(k, produktGid, { valuta = null, bonusG
   return { kod: k.kod, id: m.discountCodeBasicCreate.codeDiscountNode.id, skapad: true, belopp: k.belopp, valuta };
 }
 
+/**
+ * Skriver produktens nivålista som metafältet opf.paket_nivaer
+ * (list.metaobject_reference). Definitionen skapas bara om den saknas —
+ * en andra metafieldDefinitionCreate svarar "Key is in use", inte TAKEN, så
+ * den ska aldrig ens skickas.
+ *
+ * Metafältet är det snippeten läser i första hand — se kommentaren där om
+ * 50-taket på shop.metaobjects.
+ */
+export async function skrivNivalista(produktGid, nivaIdn, definitionsId) {
+  const ids = (nivaIdn ?? []).filter(Boolean);
+  if (ids.length === 0) return { skrivet: 0 };
+  const q = await graphql(
+    `query opsFactoryNivalistaDef {
+      metafieldDefinitions(ownerType: PRODUCT, namespace: "opf", key: "paket_nivaer", first: 1) { nodes { id } }
+    }`,
+    {}
+  );
+  if ((q.metafieldDefinitions?.nodes ?? []).length === 0) {
+    const def = await graphql(
+      `mutation opsFactoryNivalistaDefSkapa($d: MetafieldDefinitionInput!) {
+        metafieldDefinitionCreate(definition: $d) { createdDefinition { id } userErrors { code field message } }
+      }`,
+      {
+        d: {
+          name: 'Paketnivåer',
+          namespace: 'opf',
+          key: 'paket_nivaer',
+          type: 'list.metaobject_reference',
+          ownerType: 'PRODUCT',
+          validations: definitionsId ? [{ name: 'metaobject_definition_id', value: definitionsId }] : [],
+        },
+      }
+    );
+    const fel = (def.metafieldDefinitionCreate?.userErrors ?? []).filter((e) => e.code !== 'TAKEN');
+    if (fel.length > 0) throw new Error(`Metafältsdefinitionen opf.paket_nivaer: ${fel.map((e) => e.message).join('; ')}`);
+  }
+
+  const s = await graphql(
+    `mutation opsFactoryNivalista($mf: [MetafieldsSetInput!]!) {
+      metafieldsSet(metafields: $mf) { metafields { id } userErrors { field message } }
+    }`,
+    { mf: [{ ownerId: produktGid, namespace: 'opf', key: 'paket_nivaer', type: 'list.metaobject_reference', value: JSON.stringify(ids) }] }
+  );
+  const skrivfel = s.metafieldsSet?.userErrors ?? [];
+  if (skrivfel.length > 0) {
+    throw new Error(`Metafältet opf.paket_nivaer: ${skrivfel.map((f) => `${f.field?.join?.('.') ?? ''} ${f.message}`.trim()).join('; ')}`);
+  }
+  return { skrivet: ids.length };
+}
+
 // Nivåer i butiken som pekar på produkten men inte finns i planen — t.ex.
 // poster med ett äldre handle-mönster. Snippeten visar ALLA nivåer som
 // pekar på produkten, så en kvarglömd post blir ett extra kort på sidan.
@@ -512,6 +563,14 @@ export async function byggPaket(ctx, produkt, { torr = false, tvinga = false, st
     koder.push(r);
     rapport.push(`kod ${k.kod}: −${k.belopp.toFixed(2)} ${plan.valuta}, min ${k.minstAntal} varor (${r.skapad ? 'skapad' : 'uppdaterad'})`);
   }
+
+  // Produktens egna nivåer som metafält. ⚠️ Utan det här läser snippeten
+  // `shop.metaobjects.ms_paketniva.values`, som ger HÖGST 50 poster: med sex
+  // nivåer per produkt tar köprutan slut vid den nionde produkten, tyst.
+  // (Mätt 2026-09-11 på AdventLane: 72 nivåer, 50 renderade, tre produktsidor
+  // helt utan paketväljare.) Listan skrivs i planens ordning.
+  await skrivNivalista(produktGid, nivaer.map((n) => n.id), definition.id);
+  rapport.push(`metafältet opf.paket_nivaer: ${nivaer.length} nivåer`);
 
   let frammande = await hittaFrammandeNivaer(produktGid, plan.poster.map((p) => p.handle));
   if (frammande.length > 0 && stada) {

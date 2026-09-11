@@ -26,23 +26,37 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten smycken finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "smycken-a-1",
+        "smycken-a-2",
+        "smycken-a-3",
+        "smycken-b-1",
+        "smycken-b-2",
+        "smycken-b-3"
+      ],
+      "koder": [
+        "ADVENTLANESM2A",
+        "ADVENTLANESM3A",
+        "ADVENTLANESM2B",
+        "ADVENTLANESM3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:38:15.476Z",
+  "uppdaterad": "2026-09-11T07:19:02.367Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
       "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "kundvy-produktsida"
     ],
-    "tid": "2026-09-11T06:38:15.475Z"
+    "tid": "2026-09-11T07:19:02.367Z"
   }
 }

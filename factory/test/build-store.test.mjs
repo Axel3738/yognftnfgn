@@ -7,7 +7,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from '../yaml.mjs';
-import { byggPlan, produktHandle, bildPost } from '../build-store.mjs';
+import { byggPlan, produktHandle, bildPost, fogaMeningar, seoTitel } from '../build-store.mjs';
 import { byggSidaHtml, byggForhandsvisning, byggSektioner, formatPris, kundUnderrubrik } from '../sida.mjs';
 import { dummy, medButiksfrakt, raprodukt, rabutik } from './hjalp.mjs';
 
@@ -197,4 +197,24 @@ test('utan underrubrik strippas källparentesen ur huvudvinkeln', () => {
     'Problem-demo: stel nacke efter 8 timmar vid skärmen — lindring på 10 minuter'
   );
   assert.ok(!byggSidaHtml(data).includes('källa:'));
+});
+
+test('fogaMeningar dubblerar aldrig skiljetecken', () => {
+  // "…fram till julafton.. 14 dagars ångerrätt" stod i Google-utdraget på
+  // åtta av AdventLanes tolv produkter (2026-09-11).
+  assert.equal(fogaMeningar(['Något att se fram emot.', '14 dagars ångerrätt']), 'Något att se fram emot. 14 dagars ångerrätt');
+  assert.equal(fogaMeningar(['Något att se fram emot', '14 dagars ångerrätt']), 'Något att se fram emot. 14 dagars ångerrätt');
+  assert.equal(fogaMeningar(['Varför vänta?', 'Fri frakt']), 'Varför vänta? Fri frakt');
+  assert.equal(fogaMeningar([null, '', 'Ensam rad']), 'Ensam rad');
+  assert.equal(fogaMeningar([]), '');
+});
+
+test('seoTitel stryker brandet hellre än kapar det mitt i ordet', () => {
+  // "Smycken Adventskalender – 24 Halsband, Örhängen och Ringar – AdventLa…"
+  // blev exakt 70 tecken och såg ut som ett fel (2026-09-11).
+  assert.equal(seoTitel('Golfkalendern', 'AdventLane'), 'Golfkalendern – AdventLane');
+  const langt = 'Smycken Adventskalender – 24 Halsband, Örhängen och Ringar';
+  assert.equal(seoTitel(langt, 'AdventLane'), langt, 'brandet stryks, namnet står helt');
+  assert.equal(seoTitel('x'.repeat(80), 'AdventLane').length, 70);
+  assert.equal(seoTitel('Utan brand', ''), 'Utan brand');
 });

@@ -26,23 +26,36 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten ol-whisky-2d finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "ol-whisky-2d-a-1",
+        "ol-whisky-2d-a-2",
+        "ol-whisky-2d-a-3",
+        "ol-whisky-2d-b-1",
+        "ol-whisky-2d-b-2",
+        "ol-whisky-2d-b-3"
+      ],
+      "koder": [
+        "ADVENTLANEOL2A",
+        "ADVENTLANEOL3A",
+        "ADVENTLANEOL2B",
+        "ADVENTLANEOL3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:38:33.404Z",
+  "uppdaterad": "2026-09-11T07:15:25.974Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "reviews"
     ],
-    "tid": "2026-09-11T06:38:33.404Z"
+    "tid": "2026-09-11T07:15:25.974Z"
   }
 }

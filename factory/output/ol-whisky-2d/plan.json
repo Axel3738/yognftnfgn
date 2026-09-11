@@ -7,7 +7,7 @@
     "vendor": "AdventLane",
     "seo": {
       "title": "Öl-adventskalender – 24 Ölflaskor som Julgranspynt – AdventLane",
-      "description": "Ett nytt granhänge varje dag i december i stället för att pynta allt på en gång.. 14 dagars ångerrätt"
+      "description": "Ett nytt granhänge varje dag i december i stället för att pynta allt på en gång. 14 dagars ångerrätt"
     },
     "productOptions": [
       {
@@ -78,7 +78,7 @@
       "namespace": "opf",
       "key": "features",
       "type": "list.single_line_text_field",
-      "value": "[\"24 miniatyrflaskor i ölflaskform (12 i rutnätet + 12 i nedre raden enligt leverantörens bild)\",\"Minst fem flaskfärger: brun/amber, grön, gul, ljusblå och klar/vit\",\"Guldfärgad kapsyl med metallögla för upphängning på varje flaska\",\"Flaskorna är tredimensionella (leverantörens egen beteckning: \\\\\",\"Flaskorna är omärkta – ingen etikett eller logotyp\",\"Kartongask 27,94 x 17,78 x 4,98 cm, tryckt \\\\\",\"Innehåller ingen alkohol eller dryck\"]"
+      "value": "[\"24 miniatyrflaskor i ölflaskform (12 i rutnätet + 12 i nedre raden enligt leverantörens bild)\",\"Minst fem flaskfärger: brun/amber, grön, gul, ljusblå och klar/vit\",\"Guldfärgad kapsyl med metallögla för upphängning på varje flaska\",\"Flaskorna är tredimensionella (leverantörens egen beteckning: \\\"Stereoscopic\\\"), inte platta figurer\",\"Flaskorna är omärkta – ingen etikett eller logotyp\",\"Kartongask 27,94 x 17,78 x 4,98 cm, tryckt \\\"BEER ADVENT CALENDAR 2025\\\" i guld med en ölsejdel som motiv\",\"Innehåller ingen alkohol eller dryck\"]"
     },
     {
       "namespace": "opf",

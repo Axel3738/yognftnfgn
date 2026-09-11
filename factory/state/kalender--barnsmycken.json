@@ -26,23 +26,36 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten barnsmycken finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "barnsmycken-a-1",
+        "barnsmycken-a-2",
+        "barnsmycken-a-3",
+        "barnsmycken-b-1",
+        "barnsmycken-b-2",
+        "barnsmycken-b-3"
+      ],
+      "koder": [
+        "ADVENTLANEBA2A",
+        "ADVENTLANEBA3A",
+        "ADVENTLANEBA2B",
+        "ADVENTLANEBA3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:38:21.408Z",
+  "uppdaterad": "2026-09-11T07:15:13.439Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "reviews"
     ],
-    "tid": "2026-09-11T06:38:21.408Z"
+    "tid": "2026-09-11T07:15:13.439Z"
   }
 }

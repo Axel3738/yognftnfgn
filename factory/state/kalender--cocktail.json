@@ -26,23 +26,36 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten cocktail finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "cocktail-a-1",
+        "cocktail-a-2",
+        "cocktail-a-3",
+        "cocktail-b-1",
+        "cocktail-b-2",
+        "cocktail-b-3"
+      ],
+      "koder": [
+        "ADVENTLANECO2A",
+        "ADVENTLANECO3A",
+        "ADVENTLANECO2B",
+        "ADVENTLANECO3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:38:09.321Z",
+  "uppdaterad": "2026-09-11T07:15:00.700Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "reviews"
     ],
-    "tid": "2026-09-11T06:38:09.321Z"
+    "tid": "2026-09-11T07:15:00.700Z"
   }
 }

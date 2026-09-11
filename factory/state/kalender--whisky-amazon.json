@@ -26,23 +26,37 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten whisky-amazon finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "whisky-amazon-a-1",
+        "whisky-amazon-a-2",
+        "whisky-amazon-a-3",
+        "whisky-amazon-b-1",
+        "whisky-amazon-b-2",
+        "whisky-amazon-b-3"
+      ],
+      "koder": [
+        "ADVENTLANEWH2A",
+        "ADVENTLANEWH3A",
+        "ADVENTLANEWH2B",
+        "ADVENTLANEWH3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:37:56.917Z",
+  "uppdaterad": "2026-09-11T07:14:48.331Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
       "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "kundvy-produktsida"
     ],
-    "tid": "2026-09-11T06:37:56.917Z"
+    "tid": "2026-09-11T07:14:48.331Z"
   }
 }

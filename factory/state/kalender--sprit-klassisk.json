@@ -26,23 +26,37 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten sprit-klassisk finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "sprit-klassisk-a-1",
+        "sprit-klassisk-a-2",
+        "sprit-klassisk-a-3",
+        "sprit-klassisk-b-1",
+        "sprit-klassisk-b-2",
+        "sprit-klassisk-b-3"
+      ],
+      "koder": [
+        "ADVENTLANESP2A",
+        "ADVENTLANESP3A",
+        "ADVENTLANESP2B",
+        "ADVENTLANESP3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:38:39.346Z",
+  "uppdaterad": "2026-09-11T07:15:32.313Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
       "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "kundvy-produktsida"
     ],
-    "tid": "2026-09-11T06:38:39.346Z"
+    "tid": "2026-09-11T07:15:32.313Z"
   }
 }

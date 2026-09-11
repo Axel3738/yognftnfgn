@@ -26,23 +26,36 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten pussel finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "pussel-a-1",
+        "pussel-a-2",
+        "pussel-a-3",
+        "pussel-b-1",
+        "pussel-b-2",
+        "pussel-b-3"
+      ],
+      "koder": [
+        "ADVENTLANEPU2A",
+        "ADVENTLANEPU3A",
+        "ADVENTLANEPU2B",
+        "ADVENTLANEPU3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:37:50.822Z",
+  "uppdaterad": "2026-09-11T07:14:42.006Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "reviews"
     ],
-    "tid": "2026-09-11T06:37:50.822Z"
+    "tid": "2026-09-11T07:14:42.006Z"
   }
 }

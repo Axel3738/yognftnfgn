@@ -56,3 +56,33 @@ test('listobjekt med url + alt läses som objekt bredvid rena strängar', () => 
 
 // Startsidans tester (stycken utan [object Object], kollektion vs produkt,
 // omdömen) bor i factory/test/startsida.test.mjs sedan 2026-09-09.
+
+test('citattecken inne i en sträng klipper inte texten', () => {
+  // Regression 2026-09-11 (AdventLane): naiv indexOf efter slutcitatet gjorde
+  //   - "Locktexten på lådan är på engelska: \"Merry Christmas\""
+  // till `Locktexten på lådan är på engelska: \` — en halv mening med ett löst
+  // bakstreck, live i butikens specifikationslista på tre produkter.
+  const d = lasYaml(
+    [
+      'a: "Locktexten: \\"Merry Christmas\\" slut"',
+      'features:',
+      '  - "Flaskorna är 3D (leverantörens ord: \\"Stereoscopic\\"), inte platta"',
+      '  - "Kartongask 27,94 cm, tryckt \\"BEER 2025\\" i guld"',
+      'b: "citat \\"mitt i\\""  # kommentar efteråt',
+      'c: "bakstreck \\\\ och radbrytning \\ntvå"',
+    ].join('\n')
+  );
+  assert.equal(d.a, 'Locktexten: "Merry Christmas" slut');
+  assert.deepEqual(d.features, [
+    'Flaskorna är 3D (leverantörens ord: "Stereoscopic"), inte platta',
+    'Kartongask 27,94 cm, tryckt "BEER 2025" i guld',
+  ]);
+  assert.equal(d.b, 'citat "mitt i"');
+  assert.equal(d.c, 'bakstreck \\ och radbrytning \ntvå');
+});
+
+test('apostrofsträngar: dubblad apostrof är ett tecken, bakstreck är text', () => {
+  const d = lasYaml(["a: 'det är O''Brien'", "b: 'sökväg C:\\temp'"].join('\n'));
+  assert.equal(d.a, "det är O'Brien");
+  assert.equal(d.b, 'sökväg C:\\temp');
+});

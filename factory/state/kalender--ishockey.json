@@ -26,23 +26,36 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten ishockey finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "ishockey-a-1",
+        "ishockey-a-2",
+        "ishockey-a-3",
+        "ishockey-b-1",
+        "ishockey-b-2",
+        "ishockey-b-3"
+      ],
+      "koder": [
+        "ADVENTLANEHO2A",
+        "ADVENTLANEHO3A",
+        "ADVENTLANEHO2B",
+        "ADVENTLANEHO3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:38:27.384Z",
+  "uppdaterad": "2026-09-11T07:15:19.651Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "reviews"
     ],
-    "tid": "2026-09-11T06:38:27.384Z"
+    "tid": "2026-09-11T07:15:19.651Z"
   }
 }

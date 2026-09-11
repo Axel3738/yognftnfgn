@@ -13,17 +13,17 @@ This store has several products – it is still ONE store, ONE domain, ONE check
 * FORWARD TO: **subscriptions@stonebite.org**
 * OWNER (hand over to): **axelodhner.business@gmail.com**
 * PRODUCT: **Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor** (adventskalender-racingbilar)
-* PRODUCT: **Dinosaurie Adventskalender – 24 Dinosaurier** (dinosaurie)
-* PRODUCT: **Gör Din Egen Adventskalender – 24 tomma askar att fylla** (gor-din-egen)
-* PRODUCT: **Pussel Adventskalender – 24 Dagar med Pusselbitar** (pussel)
-* PRODUCT: **Whisky Adventskalender – 24 miniatyrflaskor** (whisky-amazon)
-* PRODUCT: **Golf Adventskalender – 24 golftillbehör** (golf)
-* PRODUCT: **Cocktail Adventskalender – 24 Cocktailflaskor i Akryl** (cocktail)
-* PRODUCT: **Smycken Adventskalender – 24 Halsband, Örhängen och Ringar** (smycken)
 * PRODUCT: **Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband** (barnsmycken)
+* PRODUCT: **Cocktail Adventskalender – 24 Cocktailflaskor i Akryl** (cocktail)
+* PRODUCT: **Dinosaurie Adventskalender – 24 Dinosaurier** (dinosaurie)
+* PRODUCT: **Golf Adventskalender – 24 golftillbehör** (golf)
+* PRODUCT: **Gör Din Egen Adventskalender – 24 tomma askar att fylla** (gor-din-egen)
 * PRODUCT: **Ishockey Adventskalender – 24 Luckor med Hockeyprylar** (ishockey)
 * PRODUCT: **Öl-adventskalender – 24 Ölflaskor som Julgranspynt** (ol-whisky-2d)
+* PRODUCT: **Pussel Adventskalender – 24 Dagar med Pusselbitar** (pussel)
+* PRODUCT: **Smycken Adventskalender – 24 Halsband, Örhängen och Ringar** (smycken)
 * PRODUCT: **Sprit Adventskalender – 24 dekorflaskor** (sprit-klassisk)
+* PRODUCT: **Whisky Adventskalender – 24 miniatyrflaskor** (whisky-amazon)
 
 ## 1. Shopify – create the store
 **The address you type here decides the currency, the language and the home
@@ -126,17 +126,17 @@ review with a local name and the original date).
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor** → Import
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Dinosaurie Adventskalender – 24 Dinosaurier** → Import
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Gör Din Egen Adventskalender – 24 tomma askar att fylla** → Import
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Pussel Adventskalender – 24 Dagar med Pusselbitar** → Import
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Whisky Adventskalender – 24 miniatyrflaskor** → Import
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Golf Adventskalender – 24 golftillbehör** → Import
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Cocktail Adventskalender – 24 Cocktailflaskor i Akryl** → Import
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Smycken Adventskalender – 24 Halsband, Örhängen och Ringar** → Import
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Cocktail Adventskalender – 24 Cocktailflaskor i Akryl** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Dinosaurie Adventskalender – 24 Dinosaurier** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Golf Adventskalender – 24 golftillbehör** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Gör Din Egen Adventskalender – 24 tomma askar att fylla** → Import
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Ishockey Adventskalender – 24 Luckor med Hockeyprylar** → Import
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Öl-adventskalender – 24 Ölflaskor som Julgranspynt** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Pussel Adventskalender – 24 Dagar med Pusselbitar** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Smycken Adventskalender – 24 Halsband, Örhängen och Ringar** → Import
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Sprit Adventskalender – 24 dekorflaskor** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Whisky Adventskalender – 24 miniatyrflaskor** → Import
   The upload is yours and stays yours: Judge.me's API overwrites every review
   date with the moment of import (measured 2026-09-08), the app's own file
   keeps the original dates. No file in the chat = say so, do not import

@@ -162,3 +162,29 @@ test('flera produkter prefixas med handle', () => {
   assert.deepEqual(lage.fel, []);
   assert.ok(namn(lage.grona).includes('andra: produkt'));
 });
+
+test('huvudmenyn kräver bara rad för produkter som ska stå där', () => {
+  // Axels regel 2026-09-11 när AdventLane gick till tolv kalendrar: alla ska
+  // finnas i kollektionen, bara ett urval i menyn. Utan filtret stod
+  // trippelkollen röd på elva produkter som är precis rätt.
+  const d = {
+    menus: [{ handle: 'main-menu', items: [{ url: '/collections/kalendrarna' }, { url: '/products/racing' }] }],
+  };
+  const krav = {
+    produkter: [
+      { handle: 'racing', iMeny: true },
+      { handle: 'dino', iMeny: false },
+      { handle: 'golf', iMeny: false },
+    ],
+    sidhandles: [],
+    marknader: [],
+  };
+  const rad = bedomLage(d, krav).rader.find((r) => r.namn === 'huvudmeny');
+  assert.equal(rad.utfall, 'ok');
+  assert.match(rad.detalj, /2 produkter står utanför menyn med flit/);
+
+  const saknas = bedomLage(d, { ...krav, produkter: [{ handle: 'racing', iMeny: true }, { handle: 'dino', iMeny: true }] })
+    .rader.find((r) => r.namn === 'huvudmeny');
+  assert.equal(saknas.utfall, 'fel');
+  assert.match(saknas.detalj, /saknar rad för: dino/);
+});

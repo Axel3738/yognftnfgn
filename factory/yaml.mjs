@@ -45,10 +45,31 @@ const LISTOBJEKT = /^("[^"]*"|'[^']*'|[^:]+):(\s|$)/;
 // renderades sedan som "[object Object]" på startsidan.
 // (Hittat 2026-09-09 på TackleBays startsida.) Kolon i löptext är vanligt —
 // buggen träffar benefits, problem och features precis lika lätt.
+// Var den citerade strängen tar slut, eller -1. Inne i "…" är \" ett citattecken
+// i texten och inte slutet, och inne i '…' betyder '' ett apostroftecken.
+//
+// ⚠️ Naiv indexOf här kostade riktig butikstext: raden
+//   - "Locktexten på lådan är på engelska: \"Merry Christmas\""
+// klipptes vid det första \" och blev `Locktexten på lådan är på engelska: \`
+// — en halv mening med ett löst bakstreck, uppe i butiken som en punkt i
+// produktens specifikation. (Mätt 2026-09-11 på tre av AdventLanes kalendrar;
+// upptäckt av översättaren, inte av oss.)
+export function slutCitat(text, start = 0) {
+  const q = text[start];
+  if (q !== '"' && q !== "'") return -1;
+  for (let i = start + 1; i < text.length; i++) {
+    if (q === '"' && text[i] === '\\') { i++; continue; }
+    if (text[i] !== q) continue;
+    if (q === "'" && text[i + 1] === "'") { i++; continue; }
+    return i;
+  }
+  return -1;
+}
+
 function arHelCiteradStrang(text) {
   const q = text[0];
   if (q !== '"' && q !== "'") return false;
-  return text.length >= 2 && text[text.length - 1] === q && text.indexOf(q, 1) === text.length - 1;
+  return text.length >= 2 && slutCitat(text) === text.length - 1;
 }
 
 function lasObjekt(rader, pos, indent) {
@@ -103,7 +124,7 @@ function lasLista(rader, pos, indent) {
 function taBortKommentar(text) {
   if (text.startsWith('#')) return '';
   if (text.startsWith('"') || text.startsWith("'")) {
-    const slut = text.indexOf(text[0], 1);
+    const slut = slutCitat(text);
     if (slut !== -1) return text.slice(0, slut + 1);
     return text;
   }
@@ -126,13 +147,13 @@ function skalar(text) {
   return text;
 }
 
+// Tar bort citattecknen OCH läser escaperna innanför dem: \" blir ett
+// citattecken i texten, \\ ett bakstreck, och '' inne i en apostrofsträng en
+// apostrof. Okända escaper behåller tecknet efter bakstrecket, som i YAML.
 function avcitera(text) {
-  if (
-    text.length >= 2 &&
-    (text[0] === '"' || text[0] === "'") &&
-    text[text.length - 1] === text[0]
-  ) {
-    return text.slice(1, -1);
-  }
-  return text;
+  const q = text[0];
+  if (text.length < 2 || (q !== '"' && q !== "'") || text[text.length - 1] !== q) return text;
+  const inre = text.slice(1, -1);
+  if (q === "'") return inre.replace(/''/g, "'");
+  return inre.replace(/\\(.)/g, (_, c) => (c === 'n' ? '\n' : c === 't' ? '\t' : c === 'r' ? '\r' : c));
 }

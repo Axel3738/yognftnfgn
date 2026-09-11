@@ -375,3 +375,18 @@ test('sakerstallBonus torr: validerar och rör varken nät eller fil', async () 
   assert.equal(r.input.handle, 'kranskydd');
   await assert.rejects(() => sakerstallBonus({}, { offer: {} }, { torr: true }), /saknar titel/);
 });
+
+test('temats ms-paket läser produktens egna nivåer före butikens alla', async () => {
+  // shop.metaobjects.<typ>.values ger HÖGST 50 poster. Med sex nivåer per
+  // produkt tar köprutan slut vid den nionde produkten — tyst, och med
+  // trippelkollen grön eftersom nivåerna FINNS i butiken. Mätt 2026-09-11 på
+  // AdventLane: 72 nivåer, 50 renderade, tre produktsidor utan paketväljare.
+  const { TEMAFILER } = await import('../tema.mjs');
+  const snippet = TEMAFILER['snippets/ms-paket.liquid'];
+  assert.ok(snippet, 'snippeten måste ligga i TEMAFILER, annars vinner bas-zipens version');
+  const metafalt = snippet.indexOf('assign alla = p.metafields.opf.paket_nivaer.value');
+  const globalt = snippet.indexOf('assign alla = shop.metaobjects.ms_paketniva.values');
+  assert.ok(metafalt > -1, 'metafältet läses');
+  assert.ok(globalt > -1, 'den globala listan finns kvar som reserv');
+  assert.ok(metafalt < globalt, 'metafältet ska läsas FÖRE reserven');
+});

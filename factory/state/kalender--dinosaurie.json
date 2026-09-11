@@ -26,23 +26,36 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten dinosaurie finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "dinosaurie-a-1",
+        "dinosaurie-a-2",
+        "dinosaurie-a-3",
+        "dinosaurie-b-1",
+        "dinosaurie-b-2",
+        "dinosaurie-b-3"
+      ],
+      "koder": [
+        "ADVENTLANEDI2A",
+        "ADVENTLANEDI3A",
+        "ADVENTLANEDI2B",
+        "ADVENTLANEDI3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:37:38.706Z",
+  "uppdaterad": "2026-09-11T07:17:58.657Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "reviews"
     ],
-    "tid": "2026-09-11T06:37:38.706Z"
+    "tid": "2026-09-11T07:17:58.657Z"
   }
 }

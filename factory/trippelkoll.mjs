@@ -29,7 +29,7 @@ import { sammanfoga } from './butik.mjs';
 import { byggPaketplan, METAOBJEKT_TYP } from './paket.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer } from './policyer.mjs';
-import { huvudmenyRader } from './meny.mjs';
+import { huvudmenyRader, menyprodukter } from './meny.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const IKON = { ok: '✅', fel: '❌', manuell: '🖐', varning: '⚠️ ' };
@@ -70,6 +70,11 @@ export function byggKrav(butik, produkter, ctx = {}) {
   const marknader = (butik?.butik?.marknader ?? [])
     .map((m) => ({ land: String(m.land ?? '').toUpperCase(), locale: String(m.locale ?? '').trim(), valuta: m.valuta ?? null }))
     .filter((m) => m.land && m.locale);
+  // Vilka produkter som FÅR en menyrad avgörs av meny.mjs, inte av att de
+  // finns. Axels regel 2026-09-11 när AdventLane gick till tolv kalendrar:
+  // alla ska ligga i kollektionen, bara ett urval i menyn. Utan den här
+  // filtreringen stod trippelkollen röd på elva produkter som är rätt.
+  const iMeny = new Set(menyprodukter(ps).map((p) => p.produkt?.handle ?? p.produkt?.id));
   const perProdukt = ps.map((p) => {
     const handle = p.produkt?.handle ?? p.produkt?.id;
     let plan = null;
@@ -79,6 +84,7 @@ export function byggKrav(butik, produkter, ctx = {}) {
     try { metafalt = byggMetafalt(p).filter((m) => m.value !== null && m.value !== undefined && m.value !== '').map((m) => m.key); } catch { metafalt = []; }
     return {
       handle,
+      iMeny: iMeny.has(handle),
       pris: Number(p.ekonomi?.pris),
       jamforpris: p.ekonomi?.jamforpris ?? null,
       antalBilder: Array.isArray(p.media?.bilder) ? p.media.bilder.filter(Boolean).length : 0,
@@ -237,12 +243,15 @@ export function bedomLage(d, krav) {
   const utan = krav.sidhandles.filter((h) => !finns.has(h));
   lagg(utan.length === 0 ? 'ok' : 'fel', 'sidor', utan.length === 0 ? `${krav.sidhandles.length} sidor: ${krav.sidhandles.join(', ')}` : `saknas: ${utan.join(', ')}`);
 
-  // ---- menyn: varje produkt ska ha sin rad i huvudmenyn
+  // ---- menyn: varje produkt SOM SKA STÅ I MENYN ska ha sin rad där
   const huvudmeny = (d.menus ?? []).find((m) => m.handle === 'main-menu');
   if (huvudmeny) {
     const urls = (huvudmeny.items ?? []).map((i) => String(i.url ?? ''));
-    const utanRad = krav.produkter.filter((k) => !urls.some((u) => u.includes(`/products/${k.handle}`)));
-    lagg(utanRad.length === 0 ? 'ok' : 'fel', 'huvudmeny', utanRad.length === 0 ? `${urls.length} rader` : `saknar rad för: ${utanRad.map((k) => k.handle).join(', ')}`);
+    const vantade = krav.produkter.filter((k) => k.iMeny !== false);
+    const utanRad = vantade.filter((k) => !urls.some((u) => u.includes(`/products/${k.handle}`)));
+    const utanfor = krav.produkter.length - vantade.length;
+    const anm = utanfor > 0 ? ` (${utanfor} produkter står utanför menyn med flit, i_meny: false)` : '';
+    lagg(utanRad.length === 0 ? 'ok' : 'fel', 'huvudmeny', utanRad.length === 0 ? `${urls.length} rader${anm}` : `saknar rad för: ${utanRad.map((k) => k.handle).join(', ')}`);
   }
 
   // ---- det som kräver en människa

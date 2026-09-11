@@ -26,23 +26,36 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten gor-din-egen finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "gor-din-egen-a-1",
+        "gor-din-egen-a-2",
+        "gor-din-egen-a-3",
+        "gor-din-egen-b-1",
+        "gor-din-egen-b-2",
+        "gor-din-egen-b-3"
+      ],
+      "koder": [
+        "ADVENTLANEEG2A",
+        "ADVENTLANEEG3A",
+        "ADVENTLANEEG2B",
+        "ADVENTLANEEG3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:37:44.819Z",
+  "uppdaterad": "2026-09-11T07:14:35.857Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "reviews"
     ],
-    "tid": "2026-09-11T06:37:44.819Z"
+    "tid": "2026-09-11T07:14:35.857Z"
   }
 }

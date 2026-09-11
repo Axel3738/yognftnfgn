@@ -69,7 +69,7 @@ function krav(modul, namn, fn) {
 // Plockar ut varje textinställning ur en JSON-mall (index/header/footer) —
 // nycklarna speglar filens struktur: sections.<id>.blocks.<bid>.settings.<key>
 // / sections.<id>.settings.<key>. Layoutord, länkar och filer hoppas över.
-const HOPPA = new Set([
+export const HOPPA = new Set([
   'custom_liquid', 'image', 'product', 'collection', 'menu', 'link', 'button_link', 'button_link_1', 'button_link_2',
   'icon', 'color_scheme', 'section_color_scheme', 'background', 'text_color', 'image_height', 'image_behavior',
   'desktop_content_position', 'desktop_content_alignment', 'mobile_content_alignment', 'content_alignment',
@@ -83,6 +83,16 @@ const HOPPA = new Set([
   'taggar', 'visa_om',
 ]);
 const TEKNISKT_VARDE = /^(shopify:\/\/|https?:\/\/|\{\{|#[0-9a-fA-F]{3,8}$|[a-z0-9_-]+$)/;
+
+/**
+ * Är nyckeln en maskinnyckel (layout, länk, gåvoguidens taggar) snarare än
+ * text kunden läser? Shopify-nycklar bär hela sökvägen och en digest —
+ * `section.index.json.gavoguide.f1.taggar:1raythze8ee67` — så bara sista
+ * ledet räknas. Används både när underlaget byggs och när läckor letas: det
+ * underlaget medvetet hoppar över kan aldrig vara en läcka.
+ */
+export const arMaskinnyckel = (nyckel) =>
+  HOPPA.has(String(nyckel ?? '').split(':')[0].split('.').pop());
 export function malltexter(prefix, mallJson) {
   const mall = typeof mallJson === 'string' ? lasTemaJson(mallJson) : mallJson;
   const ut = {};
@@ -216,7 +226,11 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   const tomFooter = { sections: { footer: { type: 'footer', blocks: { foretaget: { type: 'text', settings: {} } }, settings: {} } }, order: ['footer'] };
   const footer = forsok('startsida.byggFooterGroup', () => krav(startsida, 'startsida', 'byggFooterGroup')(JSON.stringify(tomFooter), butik));
   if (footer) Object.assign(ut, malltexter('footer', footer));
-  const settings = forsok('tema.rensaSettings', () => krav(tema, 'tema', 'rensaSettings')({ current: {} }, {}));
+  // ⚠️ Butiken MÅSTE med: utan den skriver rensaSettings en tom
+  // brand_description, nyckeln uteblir ur underlaget, och temats riktiga
+  // brandtext rapporteras som en oöversatt läcka vid varje körning utan att
+  // gå att åtgärda (mätt 2026-09-11 på adventlane).
+  const settings = forsok('tema.rensaSettings', () => krav(tema, 'tema', 'rensaSettings')({ current: {} }, { butik }));
   if (text(settings?.current?.brand_description)) ut['tema.settings.brand_description'] = settings.current.brand_description;
   // Temats fasta strängar som inte kommer ur konfigen (sidfotens rubriker,
   // Dela-knappen) — kunden ser dem, så de ska med.

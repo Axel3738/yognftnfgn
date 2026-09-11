@@ -425,6 +425,15 @@ const MS_PAKET_JS = readFileSync(
   'utf8'
 );
 
+// Samma sak för snippeten som RITAR nivåerna. Bas-zip:en bär en version som
+// läser hela butikens metaobjekt (`shop.metaobjects…values`, tak 50 poster) —
+// den räcker till åtta produkter och lämnar resten med tom köpruta utan ett
+// ord. Fabrikens version läser produktens eget metafält först.
+const MS_PAKET_LIQUID = readFileSync(
+  new URL('./tema/snippets/ms-paket.liquid', import.meta.url),
+  'utf8'
+);
+
 // Gåvoguiden — startsidans frågeflöde (Axels beslut 2026-09-11, byggd för
 // AdventLane och därmed standard i varje nischbutik).
 //
@@ -750,6 +759,7 @@ const GAVOGUIDE = `{%- liquid
 // klonen råkade ha med sig. Bas-zip:en är en startpunkt, inte facit.
 export const TEMAFILER = {
   'assets/ms-paket.js': MS_PAKET_JS,
+  'snippets/ms-paket.liquid': MS_PAKET_LIQUID,
   'assets/ms-gavoguide.js': MS_GAVOGUIDE_JS,
   'sections/ms-gavoguide.liquid': medBasCss(GAVOGUIDE),
 };

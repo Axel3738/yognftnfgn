@@ -187,7 +187,28 @@
     },
     "oversatt": {
       "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten dinosaurie finns inte — kör ops.mjs först."
+      "manuell": "nb: 12 svenska texter saknar översättning (läckor på /nb): temamall section.index.json.omdomen.r1.title:7anrxan9i207, temamall section.index.json.omdomen.r1.body:1nofedgu9bmyf, temamall section.index.json.omdomen.r2.title:154mnqparpr5w, temamall section.index.json.omdomen.r2.body:1g7jywu13cwj8, temamall section.index.json.omdomen.r3.title:1dfmune8pgv6t, temamall section.index.json.omdomen.r3.body:385z2v1d7h2lx, temamall section.index.json.omdomen.r4.title:oz0lro9zahoi, temamall section.index.json.omdomen.r4.body:1785cyzjagh82 … — komplettera oversattning-nb.json och kör --igen oversatt",
+      "underlag": 126,
+      "utfall": {
+        "nb": {
+          "registrerade": 2,
+          "saknade": 12,
+          "perTyp": {
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 2,
+            "sida": 0,
+            "menylänk": 0,
+            "paket": 0,
+            "policy": 0,
+            "kollektion": 0,
+            "temamall": 0,
+            "sektionsgrupp": 0,
+            "temainställning": 0
+          },
+          "granskning": "4542/4577"
+        }
+      }
     },
     "store-ready": {
       "klar": true,
@@ -209,45 +230,10 @@
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/204938314071",
   "arbetstemaNamn": "AdventLane – CRO v1",
-  "uppdaterad": "2026-09-11T06:37:25.142Z",
+  "uppdaterad": "2026-09-11T07:18:56.120Z",
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "trippelkoll dinosaurie-adventskalender-24-dinosaurier: paketnivåer",
-      "trippelkoll dinosaurie-adventskalender-24-dinosaurier: förvald nivå",
-      "trippelkoll dinosaurie-adventskalender-24-dinosaurier: rabattkoder",
-      "trippelkoll gor-din-egen-adventskalender-24-askar: paketnivåer",
-      "trippelkoll gor-din-egen-adventskalender-24-askar: förvald nivå",
-      "trippelkoll gor-din-egen-adventskalender-24-askar: rabattkoder",
-      "trippelkoll pussel-adventskalender-24-dagar-med-pusselbitar: paketnivåer",
-      "trippelkoll pussel-adventskalender-24-dagar-med-pusselbitar: förvald nivå",
-      "trippelkoll pussel-adventskalender-24-dagar-med-pusselbitar: rabattkoder",
-      "trippelkoll whisky-adventskalender-24-miniatyrflaskor: paketnivåer",
-      "trippelkoll whisky-adventskalender-24-miniatyrflaskor: förvald nivå",
-      "trippelkoll whisky-adventskalender-24-miniatyrflaskor: rabattkoder",
-      "trippelkoll golf-adventskalender-24-golftillbehor: paketnivåer",
-      "trippelkoll golf-adventskalender-24-golftillbehor: förvald nivå",
-      "trippelkoll golf-adventskalender-24-golftillbehor: rabattkoder",
-      "trippelkoll cocktail-adventskalender: paketnivåer",
-      "trippelkoll cocktail-adventskalender: förvald nivå",
-      "trippelkoll cocktail-adventskalender: rabattkoder",
-      "trippelkoll smycken-adventskalender-24-halsband-orhangen-ringar: paketnivåer",
-      "trippelkoll smycken-adventskalender-24-halsband-orhangen-ringar: förvald nivå",
-      "trippelkoll smycken-adventskalender-24-halsband-orhangen-ringar: rabattkoder",
-      "trippelkoll barnens-smyckeskalender-24-parlor: paketnivåer",
-      "trippelkoll barnens-smyckeskalender-24-parlor: förvald nivå",
-      "trippelkoll barnens-smyckeskalender-24-parlor: rabattkoder",
-      "trippelkoll ishockey-adventskalender-24-luckor: paketnivåer",
-      "trippelkoll ishockey-adventskalender-24-luckor: förvald nivå",
-      "trippelkoll ishockey-adventskalender-24-luckor: rabattkoder",
-      "trippelkoll ol-adventskalender-24-olflaskor-julgranspynt: paketnivåer",
-      "trippelkoll ol-adventskalender-24-olflaskor-julgranspynt: förvald nivå",
-      "trippelkoll ol-adventskalender-24-olflaskor-julgranspynt: rabattkoder",
-      "trippelkoll sprit-adventskalender-24-dekorflaskor: paketnivåer",
-      "trippelkoll sprit-adventskalender-24-dekorflaskor: förvald nivå",
-      "trippelkoll sprit-adventskalender-24-dekorflaskor: rabattkoder",
-      "trippelkoll huvudmeny"
-    ],
-    "tid": "2026-09-11T06:37:25.142Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-11T07:18:56.120Z"
   }
 }

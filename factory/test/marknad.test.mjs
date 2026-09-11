@@ -5,7 +5,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { norm, byggKarta, paraResurs, temaResursIds, typUrResursId, arLacka, landsnamn, resursHandles } from '../marknad.mjs';
-import { malltexter, produktTexter, byggUnderlagObjekt, byggMinimalKontext, underlagsfil } from '../oversattning.mjs';
+import { malltexter, produktTexter, byggUnderlagObjekt, byggMinimalKontext, underlagsfil, arMaskinnyckel } from '../oversattning.mjs';
 import { granskaNoder, filtreraPaTema, arMaskinvarde, arAppcache, digestFor } from '../oversattning-granska.mjs';
 import { rabutik, raprodukt } from './hjalp.mjs';
 
@@ -266,4 +266,16 @@ test('arMaskinvarde och arAppcache', () => {
   assert.equal(arAppcache('gid://shopify/Metafield/1'), true);
   assert.equal(arAppcache('gid://shopify/Metafield/1', 'opf'), false);
   assert.equal(arAppcache('gid://shopify/Product/1'), false);
+});
+
+test('arLacka: gåvoguidens maskinnycklar är aldrig läckor', () => {
+  // Taggarna och grenvillkoren FÅR inte översättas — en översatt tagg matchar
+  // ingen produkt. Rapporterades ändå som tio oöversatta texter varje körning
+  // (2026-09-11), och en larmlista man lär sig ignorera är ingen larmlista.
+  const nyckel = 'section.index.json.gavoguide.f1.taggar:1raythze8ee67';
+  assert.equal(arMaskinnyckel(nyckel), true);
+  assert.equal(arMaskinnyckel('section.index.json.gavoguide.f2.visa_om:3o9dfbada3une'), true);
+  assert.equal(arMaskinnyckel('section.index.json.gavoguide.f1.svar:abc'), false, 'svaren kunden läser översätts');
+  assert.equal(arLacka({ typ: 'temamall', key: nyckel, value: 'mottagare:barn\nalder:3-5' }), false);
+  assert.equal(arLacka({ typ: 'temamall', key: 'section.index.json.gavoguide.f1.svar:abc', value: 'Ett barn' }), true);
 });

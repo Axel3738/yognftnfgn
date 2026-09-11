@@ -39,7 +39,7 @@ import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
 import { graphql, hamtaProduktViaHandle, hamtaArbetstema, kontrolleraAnslutning } from './shopify.mjs';
 import { lasState } from './state.mjs';
-import { lasOversattning, lasUnderlag, byggMinimalKontext } from './oversattning.mjs';
+import { lasOversattning, lasUnderlag, byggMinimalKontext, arMaskinnyckel } from './oversattning.mjs';
 import { produktHandle } from './build-store.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
@@ -142,6 +142,11 @@ export function arLacka(l, samma = new Set()) {
   // inte uttrycket (AdventLane 2026-09-10).
   if (/^\{\{[^}]*\}\}$/.test(String(l.value).trim())) return false;
   if (/^(handle|product_type|meta_description|ab_variant|rabattkod)$/.test(l.key)) return false;
+  // Maskinnycklar (gåvoguidens taggar och grenvillkor, layoutord): översätts
+  // aldrig, så de är inga läckor. Utan det här rapporterade varje körning tio
+  // "oöversatta texter" som inte får översättas — och en larmlista man lärt
+  // sig ignorera är ingen larmlista.
+  if (arMaskinnyckel(l.key)) return false;
   if (l.typ === 'policy' && l.value.includes('{{')) return false;
   if (l.typ === 'menylänk' && /^(Orders|Profile)$/.test(l.value)) return false;
   if (l.typ === 'variant' && l.value === 'Default Title') return false;
@@ -401,7 +406,7 @@ export async function samlaResurser(ctx, temaId) {
   }
 
   const typer = [['PAGE', 'sida'], ['LINK', 'menylänk'], ['METAOBJECT', 'paket'], ['SHOP_POLICY', 'policy']];
-  if (produkter.length > 1 || ctx?.kollektion?.handle) typer.push(['COLLECTION', 'kollektion']);
+  if (handles.length > 1 || ctx?.kollektion?.handle) typer.push(['COLLECTION', 'kollektion']);
   for (const [typ, namn] of typer) {
     for (const r of await translatableTyp(typ)) {
       if (typ === 'METAOBJECT' && !r.resourceId.includes('Metaobject/')) continue;

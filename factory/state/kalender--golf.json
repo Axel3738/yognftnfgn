@@ -26,23 +26,36 @@
       "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
     },
     "paket": {
-      "klar": false,
-      "manuell": "Steget gick inte att göra: Produkten golf finns inte i butiken — kör produkt-steget först."
+      "klar": true,
+      "nivaer": [
+        "golf-a-1",
+        "golf-a-2",
+        "golf-a-3",
+        "golf-b-1",
+        "golf-b-2",
+        "golf-b-3"
+      ],
+      "koder": [
+        "ADVENTLANEGO2A",
+        "ADVENTLANEGO3A",
+        "ADVENTLANEGO2B",
+        "ADVENTLANEGO3B"
+      ],
+      "frammande": [],
+      "test": "paket"
     },
     "recensioner": {
       "klar": false,
       "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
     }
   },
-  "uppdaterad": "2026-09-11T06:38:03.071Z",
+  "uppdaterad": "2026-09-11T07:14:54.487Z",
   "qa": {
     "gron": false,
     "kritiska": [
       "beskrivning",
-      "reviews",
-      "kundvy-produktsida",
-      "markörer /nb"
+      "reviews"
     ],
-    "tid": "2026-09-11T06:38:03.071Z"
+    "tid": "2026-09-11T07:14:54.487Z"
   }
 }

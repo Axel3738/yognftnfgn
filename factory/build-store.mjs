@@ -22,6 +22,29 @@ const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 const kortText = (text, max) =>
   String(text ?? '').length <= max ? String(text ?? '') : `${String(text).slice(0, max - 1).trimEnd()}…`;
 
+/** Fogar ihop meningar med ". " utan att dubblera skiljetecken. */
+export const fogaMeningar = (delar) =>
+  (delar ?? [])
+    .map((x) => String(x ?? '').trim())
+    .filter(Boolean)
+    .map((x, i, a) => (i === a.length - 1 || /[.!?:…]$/.test(x) ? x : `${x}.`))
+    .join(' ');
+
+/**
+ * SEO-titeln: produktnamn + brand, men brandet stryks hellre än kapas.
+ *
+ * `kortText` klipper mitt i ordet, och en titel som slutar "– AdventLa…" ser
+ * ut som ett fel i butiken snarare än som en förkortning (mätt 2026-09-11 på
+ * smyckeskalendern, 70 tecken jämnt). Ryms inte brandet får namnet stå ensamt.
+ */
+export function seoTitel(namn, brand, max = 70) {
+  const n = String(namn ?? '').trim();
+  const b = String(brand ?? '').trim();
+  const hel = b ? `${n} – ${b}` : n;
+  if (hel.length <= max) return hel;
+  return kortText(n, max);
+}
+
 // Produktens handle i butiken: `produkt.handle` när det står i filen, annars
 // `produkt.id`. De två skiljer sig när butiken byggdes under ett annat namn
 // än filens id (TankGuard: id `tankguard`, handle `tankoverdraget`, produkt
@@ -60,10 +83,10 @@ export function byggPlan(p, butik = null) {
   const videor = lista(p.media?.videor).filter((v) => typeof v === 'string' && v.trim() !== '');
   const vendor = p.brand?.namn ?? butik?.butik?.brand ?? '';
 
-  const seoBeskrivning = kortText(
-    [p.benefits?.[0], p.garantier?.[0]].filter(Boolean).join('. '),
-    160
-  );
+  // Meningsskiljetecknet läggs bara till om raden inte redan har ett — annars
+  // står det ".." mitt i Google-träffen ("…fram till julafton.. 14 dagars
+  // ångerrätt", mätt 2026-09-11 på åtta av AdventLanes tolv produkter).
+  const seoBeskrivning = kortText(fogaMeningar([p.benefits?.[0], p.garantier?.[0]]), 160);
 
   const input = {
     title: p.produkt.namn,
@@ -75,7 +98,7 @@ export function byggPlan(p, butik = null) {
     descriptionHtml: byggKortBeskrivning(p),
     vendor,
     seo: {
-      title: kortText(`${p.produkt.namn} – ${vendor}`, 70),
+      title: seoTitel(p.produkt.namn, vendor, 70),
       description: seoBeskrivning,
     },
     productOptions: [

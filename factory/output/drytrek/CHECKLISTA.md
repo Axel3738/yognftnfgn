@@ -1,6 +1,9 @@
 # Store Launch Checklist — DryTrek (manual steps)
 
 Do the steps in order, top to bottom. Tick each one.
+**The order is not a suggestion** – every section sits where it sits because
+the ones above it have to be true first. Sections 1–3 cannot be undone later,
+and section 12 is the check that the rest actually worked.
 Everything not on this list is done by Claude Code.
 
 * STORE NAME: **DryTrek**
@@ -14,17 +17,34 @@ Everything not on this list is done by Claude Code.
 **The address you type here decides the currency, the language and the home
 market.** Shopify takes them from the store address, not from your account.
 Type the COMPANY address below – never your own, wherever you are sitting.
-Get this right and section 5 is three checks instead of seven clicks.
 - [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
 - [ ] When it asks where the business is located, enter:
-      **STONEBITE ECOM AB**, Sjöhed 160, 442 74 Harestad, Sweden
+      **STONEBITE ECOM AB**, Sjöhed 160, 442 74 Harestad, **Sweden**
+      The country is the field that decides the currency – never your own.
+- [ ] If Shopify asks for a store name, type **DryTrek** – that removes a
+      click in section 5. If it names the store itself ("My Store 4"), leave it.
 - [ ] Stay on the free trial – never pick a plan, never enter any card
   Note: staff invites need a paid plan – the owner is added at hand over.
-- [ ] Settings → General → check it says **SEK** and **Sweden**.
-      If it does not, the address went in wrong – fix it before you continue.
-      Everything built on the wrong currency has to be built again.
 
-## 2. Shopify – connect Claude Code
+## 2. Shopify – currency, market, language (do this BEFORE the build)
+These three are the only things on this list that **Claude cannot change** —
+`shopUpdate` does not exist and REST answers 406 (measured). They also decide
+what the build writes: prices, packages, discount codes and the checkout are
+all stored in the store's currency. Get them wrong and the build has to be
+thrown away and run again, so they come before the build, not after it.
+- [ ] Settings → General → **Store currency** says **SEK**
+- [ ] Settings → Markets → **Sweden** is the primary market
+- [ ] Settings → Languages → **Swedish** is the default
+      A brand new trial store often has **English** here. Swedish text still
+      lands correctly and the customer view is right – do not publish an empty
+      language, just check the default.
+- [ ] Any of the three wrong? The address went in wrong in section 1. Fix it
+      here, then write these exact words to Claude Code:
+      **currency and language are set**
+      The discount codes are stored in the store's currency and have to be
+      written again, and that sentence is what starts it.
+
+## 3. Shopify – connect Claude Code
 - [ ] Go to **dev.shopify.com** → log in with the work Gmail → Apps → **Create app** → name it: **Fabriken** + the store's address start (example: Fabriken y1sj1i)
 - [ ] The app → **Settings** → copy the **Client ID** and the **Client secret**
 - [ ] Look at the store's address. It ends in `.myshopify.com`. The part
@@ -49,7 +69,7 @@ Get this right and section 5 is three checks instead of seven clicks.
   → generate a new one → put the new value in the Environment. The build keeps
   running on the token it already has, so this never blocks anything.
 
-## 3. Start the build
+## 4. Start the build
 - [ ] Write **/ny-ops** + the product link in Claude Code, with the store address under it:
   ```
   /ny-ops <the product link>
@@ -61,29 +81,45 @@ Get this right and section 5 is three checks instead of seven clicks.
 - [ ] Claude checks the connection, names the store and builds everything
 - [ ] Claude tells you the STORE NAME and DOMAIN for the next steps
 
-## 4. Domain (Loopia)
+## 5. Right after the build – the theme and the name
+The theme comes FIRST. Everything you check in sections 6–12 is checked
+against what the customer actually sees, and until the theme is published the
+customer sees the old one. Publishing works on the free trial – the store stays
+behind its password either way (measured: DryTrek 2026-09-09).
+- [ ] Online Store → Themes → **DryTrek – CRO v1** → **Publish**
+- [ ] Settings → General → Store name → **DryTrek** → Save
+      This is what the order emails, the checkout, the review requests and the
+      Meta page are all named after – so it happens before any of them.
+- [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
+      Then write **NOK is on** to Claude — the fixed NOK prices per product are set from there by API (measured on AdventLane 2026-09-10: catalog + price list + fixed prices, read back as contextual pricing). Until they are set, ads for Norway promise a price the store does not show.
+
+## 6. Domain
+Loopia first – Shopify cannot connect a domain that is not bought, and the
+sender-email verification link is only readable once the forwarding works.
 - [ ] Log in to Loopia
 - [ ] Buy **drytrek.se** – registrant must be the company, not you
 - [ ] Domain → Email → Forwarding → create **hello@drytrek.se** → forward to **subscriptions@stonebite.org**
 - [ ] Send a test email to **hello@drytrek.se** – confirm it arrives
+- [ ] Shopify → Settings → Domains → Connect existing domain → **drytrek.se** → follow the DNS steps → **Set as primary**
+- [ ] Shopify → Settings → Notifications → Sender email → **hello@drytrek.se** → Save → click the verification link in the inbox
+  If Shopify refuses the domain on the free trial: do this section after
+  section 13 instead, and tell Claude – the order in this file gets corrected.
 
-## 5. Shopify – basics
-The first three should ALREADY be right if you typed the company address in
-section 1. Check them – do not skip them. Claude cannot change any of the
-three, and the prices, the checkout and the discount codes are wrong until
-they are correct.
-- [ ] Settings → General → **Store currency** says **SEK**
-      Wrong? Change it here, then write those exact words to Claude Code:
-      **currency and language are set**
-      The discount codes are stored in the store's currency and have to be
-      written again, and that sentence is what starts it.
-- [ ] Settings → Markets → **Sweden** is the primary market
-- [ ] Settings → Languages → **Swedish** is the default
-- [ ] Settings → General → Store name → **DryTrek** → Save
-- [ ] Settings → Domains → Connect existing domain → **drytrek.se** → follow the DNS steps → Set as primary
-- [ ] Settings → Notifications → Sender email → **hello@drytrek.se** → Save → click the verification link in the inbox
+## 7. Judge.me
+Claude attaches the reviews file in the chat when the build finishes – you do
+not have to look for it anywhere. **One file per product, and it already holds
+every language** (Swedish plus the markets in section 5, each as its own
+review with a local name and the original date).
+- [ ] Apps → search "Judge.me" → Install (free plan)
+- [ ] Judge.me → Settings → Language → **Swedish**
+- [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Damasker Vandring – Håller Snö, Väta & Grus Ute** → Import
+  The upload is yours and stays yours: Judge.me's API overwrites every review
+  date with the moment of import (measured 2026-09-08), the app's own file
+  keeps the original dates. No file in the chat = say so, do not import
+  anything by hand.
 
-## 5b. Shopify – the EU withdrawal button (required by law)
+## 8. The EU withdrawal button (required by law)
 Since 19 June every EU store must have a clear "cancel my order" button the
 customer can find, a two-step confirmation, and an automatic confirmation
 email. Shopify's self-serve returns do all three — but only once you switch
@@ -97,46 +133,71 @@ some member states.
 - [ ] Settings → Policies → **Return rules** → return window **14 days**
       from delivery, and say who pays the return shipping
 - [ ] Same page → **Cancellation window** → until the order is fulfilled
-- [ ] Open the store and check: **Ångra köp** is in the footer, and it opens
-      the account page. If it opens nothing, the account setting above is off.
 
-## 6. Shopify – payments
-- [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you
-- [ ] Same page → **Klarna** → tick → Save
-- [ ] Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
-
-## 7. Judge.me
-- [ ] Apps → search "Judge.me" → Install (free plan)
-- [ ] Judge.me → Settings → Language → **Swedish**
-- [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Damasker Vandring – Håller Snö, Väta & Grus Ute** → Import
-- [ ] Open the product page → check the reviews show their original dates (never "just now")
-
-## 8. Meta
+## 9. The Meta page and the Discord server (create both, Claude finishes both)
+Both work the same way: you create the thing, Claude does everything inside
+it. That is why they are one section – one trip, not two (Axel 2026-09-10).
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **DryTrek**
 - [ ] Copy the **Page ID** → give to Claude Code
-- [ ] The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
+      The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
+- [ ] Same screen → the new page **DryTrek** → **Add people** → pick the OWNER (the person whose Meta token Claude runs on) → tick **Manage Page** → **Assign**
+      ⚠️ Without this Claude cannot create a single ad — Meta answers "(#200) … role Advertiser or higher" (measured on TankGuard 2026-09-08 and AdventLane 2026-09-10, both of which stalled here for hours). The page being owned by the business is NOT enough; the PERSON needs a role on the page.
+- [ ] Discord → + → Create server: **DryTrek — OPS**
+- [ ] Open the **authorize link** Claude gave you when the build finished → pick that server → Authorize
+      No link in the chat? Ask Claude for it – it is one command, not a wait.
 
-## 9. Discord
-- [ ] Discord → + → Create server: **DryTrek**
-- [ ] Open the invite link Claude Code gives you → **Authorize** the bot
+## 10. Tell Claude the store is ready
+- [ ] Write to Claude Code: **"Store ready: DryTrek"** – it creates the pixel and builds the Discord channels
 
-## 10. Hand over
-- [ ] Tell Claude Code: **"Store ready: DryTrek"** – it creates the pixel, builds Discord channels and imports reviews
-- [ ] When Claude says the theme is ready: Online Store → Themes → **DryTrek – CRO v1** → **Publish**
-- [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
+## 11. Tracking – WeTracked + the CAPI token
+Before the store is live, not after: a live store without tracking spends ad
+money it cannot measure.
 - [ ] Install the **WeTracked** app from the Shopify App Store
 - [ ] WeTracked → paste the **pixel ID**: **945311424682796**
 - [ ] Events Manager → Data sources → **DryTrek** → Settings → Conversions API → **Generate access token** → copy it
 - [ ] WeTracked → paste the **Conversions API token** (never send it in chat or email)
+
+## 12. Test the store behind the password (the receipt for 5–11)
+Do it on a phone, as a customer – not in the admin preview. Use the store
+password to get in; the store is not public yet, and the checkout cannot be
+tested until section 14. Nothing above counts as done until this passes.
+- [ ] The product page opens and the reviews show their original dates (never "just now")
+- [ ] Add to cart → the cart upsell shows → the cart adds up
+- [ ] The prices show in **SEK**
+- [ ] **Ångra köp** is in the footer and it opens the account page
+      (opens nothing = customer accounts in section 8 is still off)
+- [ ] The whole page works on a phone – no sideways scrolling, nothing cut off
+- [ ] Tell Claude what you saw – a screenshot of anything that looks wrong
+
+## 13. Hand over – plan, card, ownership
+Everything above is done on the free trial and costs nothing. From here the
+store belongs to the owner, and the last two sections are only possible once
+it does (Axel's rule 2026-09-10: Shopify Payments and going live happen on the
+owner's own account, never on the work account).
 - [ ] The owner logs in with the work Gmail, picks the plan and adds his card
 - [ ] Then: Settings → Users → click the store owner's name → **Transfer store ownership** → **axelodhner.business@gmail.com** → enter your password → confirm
 - [ ] Owner changes the Loopia password afterwards
 
-## 11. Ads (a NEW session)
+## 14. Shopify Payments + Klarna (after the hand-over)
+The bank details and the identity check are the owner's, so this cannot be
+done before section 13 – and until it is done, no checkout can be tested.
+- [ ] Settings → Payments → Activate **Shopify Payments** → fill in the company + bank details Claude gives you
+- [ ] Same page → **Klarna** → tick → Save
+- [ ] Settings → Checkout → Customize → Logo → upload the logo Claude gives you → Save
+
+## 15. Go live and test the checkout
+The storefront password cannot be removed until a plan is picked, so this is
+the last thing that happens – and the checkout test can only happen here.
+- [ ] Online Store → Preferences → remove the **storefront password**
+- [ ] Open **drytrek.se** on a phone as a customer: add to cart → checkout
+- [ ] The checkout shows **SEK** and **Klarna**
+- [ ] Tell Claude what you saw
+
+## 16. Ads (a NEW session)
 - [ ] Open a NEW Claude session — not the one you built the store in
 - [ ] Write: **/ny-annonser drytrek** + the Bäverbutiken product link
 - [ ] The link is needed once per store — after that just **/ny-annonser drytrek**
-- [ ] Claude rebuilds the proven ads for this brand and builds the campaigns in MagiBorsten DK — everything PAUSED
+- [ ] Claude copies the WHOLE Bäverbutiken campaign for this brand — every ad, Swedish + Norwegian — into two campaigns in MagiBorsten DK, fixing only the ads that say the wrong brand or price. Everything PAUSED
 - [ ] Check what Claude asks you to check in Ads Manager
-- [ ] When it all looks right: set the campaigns ACTIVE
+- [ ] Tell the owner the campaigns are ready. **Do not set anything ACTIVE.**
+- [ ] The owner writes **"Launch: DryTrek"** in that session – Claude checks the store is live and the pixel fires, then sets the campaigns ACTIVE
