@@ -253,9 +253,14 @@ kalla:
   no_kampanjmonster: "Isolert Utekattehus"
   no_annonsprefix: "Utekattehus"
   no_kampanj_id: "120252183459760233"
-  # Inga transkript i market-expansion/ ännu (grep kattkoja/utekatt 2026-09-11: 0 träffar).
+  # Transkripten FANNS inte 2026-09-11 förmiddag (bara de norska i srt-fixed/).
+  # De svenska källvideorna transkriberades lokalt samma dag med faster-whisper
+  # (base, sv, 0 krediter) till srt-orig/utekattkoja_<koncept>_<n>.orig.srt, så
+  # yta 2 går att döma. ⚠️ base-modellen hör tal ostadigt: den gav 1059, 1559
+  # och 1599 som jämförpris i de tre CS-videorna. Det UPPLÄSTA priset 899 är
+  # däremot samstämmigt i alla tre och är det som domen vilar på.
   srt_slug:
-    - ""
+    - "utekattkoja"
 
 kallor:
   drive_mapp: ""

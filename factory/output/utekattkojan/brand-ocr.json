@@ -1,0 +1,9639 @@
+{
+ "produkt": "utekattkojan",
+ "datum": "2026-09-11",
+ "tathet": 0.3,
+ "annonser": {
+  "Utekattkoja_CS_1_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "makn",
+       "konfidens": 0.669
+      },
+      {
+       "text": "Bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Stort prisrass",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Stort prisrass",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "pa Utekattehuset.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "pa Utekattehuset.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.973
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.963
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.963
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.959
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.993
+      },
+      {
+       "text": "pa vart isolerade",
+       "konfidens": 0.99
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.929
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "pa vart isolerade",
+       "konfidens": 0.99
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "pa vart isolerade",
+       "konfidens": 0.993
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.993
+      },
+      {
+       "text": "pa vart isolerade",
+       "konfidens": 0.979
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.946
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.992
+      },
+      {
+       "text": "Utekattehus.",
+       "konfidens": 0.997
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "Utekattehus.",
+       "konfidens": 0.998
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "Utekattehus.",
+       "konfidens": 0.997
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.929
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Fran1059kronor",
+       "konfidens": 0.991
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Fran1059kronor",
+       "konfidens": 0.992
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.981
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Fran1059 kronor",
+       "konfidens": 0.96
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Fran1059 kronor",
+       "konfidens": 0.959
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Fran1059kronor",
+       "konfidens": 0.99
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.988
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Fran1059 kronor",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Tort, vintatt och",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Tort, vintatt och",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Tort, vintatt och",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Tort, vintatt och",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "varmt for din katt.",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "varmt for dinkatt.",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "varmt for din katt.",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Erbjudandet galler",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Erbjudandet galler",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Erbjudandet galler",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "bara idag.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Bestal nu innan",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Bestal nu innan",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.7,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.958
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_CS_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Utekattkoja_CS_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "24%",
+       "konfidens": 1
+      },
+      {
+       "text": "RABATT-IDAG",
+       "konfidens": 0.971
+      },
+      {
+       "text": "Endastfakvari lager",
+       "konfidens": 0.968
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_CS_2_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "809 kronor istallet",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "809 kronor istallet",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "809 kronor istallet",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "for1059 men bara",
+       "konfidens": 0.939
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "for1059 men bara",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "for1059 men bara",
+       "konfidens": 0.949
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "for 1059 men bara",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "idag idag sanker vi",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "idag idag sanker vi",
+       "konfidens": 0.987
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.945
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "idag idag sanker vi",
+       "konfidens": 0.985
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.929
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "idag idag sanker vi",
+       "konfidens": 0.99
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "idag idag sanker vi",
+       "konfidens": 0.969
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "priset pa vart",
+       "konfidens": 0.977
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "priset pa vart",
+       "konfidens": 0.976
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "priset pa vart",
+       "konfidens": 0.983
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "isolerade",
+       "konfidens": 0.997
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.931
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "ute-kattehus fran",
+       "konfidens": 0.977
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "ute-kattehus fran",
+       "konfidens": 0.978
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "ute-kattehus fran",
+       "konfidens": 0.981
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "ute-kattehus fran",
+       "konfidens": 0.97
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "ute-kattehus fran",
+       "konfidens": 0.986
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "1059 kronor ner till",
+       "konfidens": 0.94
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "1059 kronorner till",
+       "konfidens": 0.959
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "1059kronor ner till",
+       "konfidens": 0.944
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "1059kronorner till",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "1059kronor ner till",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "1059 kronor ner till",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "809 tort,vindtett",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "809 tort, vindtett",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "809 tort, vindtett",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "809 tort, vindtett",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "809 tort, vindtett",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "809 tort, vindtett",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "och varmt for din",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "och varmt for din",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "och varmt for din",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "och varmt for din",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "katt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Erbjudandet galler",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Erbjudandet galler",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Bestal nu innan",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Bestal nu innan",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Bestal nu innan",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.75,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.96
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_CS_3_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Nastan slutsald.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Nastan slutsald.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "sista chansen till",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Sista chansen till",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Sista chansen till",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "rabatterat pris.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "rabatterat pris.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "rabatterat pris.",
+       "konfidens": 1
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.97
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.971
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.925
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.976
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.979
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "ldag sanker vi priset",
+       "konfidens": 0.942
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "pa vart isolerade",
+       "konfidens": 0.996
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "pa vart isolerade",
+       "konfidens": 0.991
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.993
+      },
+      {
+       "text": "pa vart isolerade",
+       "konfidens": 0.992
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.993
+      },
+      {
+       "text": "ute-kattehus.",
+       "konfidens": 0.997
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.987
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "ute-kattehus.",
+       "konfidens": 0.996
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "ute-kattehus.",
+       "konfidens": 0.997
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.922
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "Fran1059kronor",
+       "konfidens": 0.991
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Fran1059kronor",
+       "konfidens": 0.991
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "Fran1059kronor",
+       "konfidens": 0.991
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "Fran1059 kronor",
+       "konfidens": 0.962
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.941
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.998
+      },
+      {
+       "text": "Fran1059 kronor",
+       "konfidens": 0.959
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Fran1059 kronor",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Fran1059 kronor",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "ner till 809.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Tort,vindtett och",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Tort,vindtett och",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Tort,vindtett och",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Tort,vindtett och",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "varmt for din katt.",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "varmt for din katt.",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "varmt for dinkatt.",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "varmt for din katt.",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Lagret krymper",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Erbjudandet galler",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Erbjudandet galler",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Bestal nu innan",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Bestal nu innan",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Bestal nu innan",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.75,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.953
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_GT_1_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Vet du nagon",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "vars katt ute i",
+       "konfidens": 0.927
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "vars katt ute i",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "alla vader?",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Din mamma pratar",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Din mamma pratar",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "alltid om katten",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "alltid om katten",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "alltid om katten",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "som bor utanfor",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "som bor utanfor",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "som bor utanfor",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "hennes hus.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "hennes hus.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "PRSdUeT",
+       "konfidens": 0.549
+      },
+      {
+       "text": "hennes hus.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Varje natt undrar",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "H",
+       "konfidens": 0.721
+      },
+      {
+       "text": "PR&&Ue",
+       "konfidens": 0.669
+      },
+      {
+       "text": "Varje natt undrar",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Varje natt undrar",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "PRO&Te",
+       "konfidens": 0.518
+      },
+      {
+       "text": "STO",
+       "konfidens": 0.794
+      },
+      {
+       "text": "Varje natt undrar",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "KeH",
+       "konfidens": 0.924
+      },
+      {
+       "text": "hon om den fryser.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "KE",
+       "konfidens": 0.692
+      },
+      {
+       "text": "hon om den fryser.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "KO",
+       "konfidens": 0.629
+      },
+      {
+       "text": "PRS&TOTS",
+       "konfidens": 0.522
+      },
+      {
+       "text": "hon om den fryser.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "KeH",
+       "konfidens": 0.939
+      },
+      {
+       "text": "sa du gav henne det",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "sa du gav henne det",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "sa du gav henne det",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "sa du gav henne det",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "har ett varmt",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "har ett varmt",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "har ett varmt",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "torrt hem at katten.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "torrt hem at katten.",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "torrt hem at katten.",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "torrt hem at katten.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "torrt hem at katten.",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "torrt hem at katten.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Hon oppnade",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Hon oppnade",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "paketet och blev",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "paketet och blev",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "paketet och blev",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "paketet och blev",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "alldeles tyst.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "alldeles tyst.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "alldeles tyst.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Sen log hon.",
+       "konfidens": 0.93
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Sen log hon.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Sen log hon.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "For nu vet hon",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "For nu vet hon",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "For nu vet hon",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "For nu vet hon",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "att katten har",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "att katten har",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "nagonstans att",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "nagonstans att",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "nagonstans att",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "sova tryggt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "sova tryggt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "sova tryggt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "sova tryggt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "Ibland ar den basta",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Ibland ar den basta",
+       "konfidens": 0.916
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "Ibland ar den basta",
+       "konfidens": 0.922
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "Ibland ar den basta",
+       "konfidens": 0.93
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "gavan den som",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "gavan den som",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "gavan den som",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "ger nagon annan",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "ger nagon annan",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "ger nagon annan",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "ger nagon annan",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24.06,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.98
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_GT_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Utekattkoja_GT_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "DENPERFEKTA PRESENTEN",
+       "konfidens": 0.97
+      },
+      {
+       "text": "TILL KATTALSKARENI DITT LIV",
+       "konfidens": 0.937
+      },
+      {
+       "text": "Se hennes ansikte lysa upp av glädje",
+       "konfidens": 0.97
+      },
+      {
+       "text": "GEBORTVARMEIVINTER",
+       "konfidens": 0.973
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_GT_2_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Den har gavan",
+       "konfidens": 0.987
+      },
+      {
+       "text": "YSASA3-T230",
+       "konfidens": 0.617
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "fick henne att",
+       "konfidens": 0.991
+      },
+      {
+       "text": "VAA3-T23",
+       "konfidens": 0.778
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "grata av gladje.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "grata av gladje.",
+       "konfidens": 0.992
+      },
+      {
+       "text": "VSSSA3-T23",
+       "konfidens": 0.571
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Din mamma pratar",
+       "konfidens": 0.953
+      },
+      {
+       "text": "H",
+       "konfidens": 0.642
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Din mamma pratar",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "alltid om katten",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "alltid om katten",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "alltid om katten",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "som bor utanfor",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "som bor utanfor",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "som bor utanfor",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "hennes hus.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "hennes hus.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "PRSSTeT",
+       "konfidens": 0.547
+      },
+      {
+       "text": "Varje natt undrar",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "PPSBTeT",
+       "konfidens": 0.524
+      },
+      {
+       "text": "Varje natt undrar",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "PR&&TeT",
+       "konfidens": 0.547
+      },
+      {
+       "text": "Varje natt undrar",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "HKeH",
+       "konfidens": 0.838
+      },
+      {
+       "text": "PR&&UeTo",
+       "konfidens": 0.589
+      },
+      {
+       "text": "Varje natt undrar",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "hon om den fryser.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "KeH",
+       "konfidens": 0.882
+      },
+      {
+       "text": "PROTeoTs",
+       "konfidens": 0.503
+      },
+      {
+       "text": "hon om den fryser.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "K",
+       "konfidens": 0.928
+      },
+      {
+       "text": "PASTeTs",
+       "konfidens": 0.57
+      },
+      {
+       "text": "hon om den fryser.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "KeH",
+       "konfidens": 0.59
+      },
+      {
+       "text": "hon om den fryser.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "K",
+       "konfidens": 0.629
+      },
+      {
+       "text": "sa du gav",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "msken",
+       "konfidens": 0.561
+      },
+      {
+       "text": "sa du gav",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "kn",
+       "konfidens": 0.842
+      },
+      {
+       "text": "henne det har.",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "henne det har.",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "henne det har.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Ettvarmttorrt",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Ettvarmttorrt",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Ett varmt torrt",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "hem at katten.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "hem at katten.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "hem at katten.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "hem at katten.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Hon oppnade",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Hon oppnade",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Hon oppnade",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "paketet och blev",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "paketet och blev",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "paketet och blev",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "alldeles tyst.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "alldeles tyst.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "alldeles tyst.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "alldeles tyst.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Sen log hon.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Sen log hon.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Sen log hon.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "For nu vet hon",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "For nu vet hon",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "For nu vet hon",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "att katten har",
+       "konfidens": 0.938
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "att katten har",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "att katten har",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "nagonstans att",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "nagonstans att",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "nagonstans att",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "sova tryggt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "sova tryggt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "sova tryggt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "sova tryggt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "Ibland ar den basta",
+       "konfidens": 0.912
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Iblandardenbasta",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "Ibland ar denbasta",
+       "konfidens": 0.925
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "Ibland ar den basta",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "gavan den som",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "gavan den som",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "gavan den som",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "ger nagon annan",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "ger nagon annan",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "ger nagon annan",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "Iugn i hjartat.",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "Iugn i hjartat.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 23.99,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "lugn i hjartat.",
+       "konfidens": 0.975
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_GT_3_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.953
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Basta julklappen till",
+       "konfidens": 0.973
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "Basta julklappen till",
+       "konfidens": 0.974
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.921
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "nagon som alskar",
+       "konfidens": 0.996
+      },
+      {
+       "text": "4K.60FPS",
+       "konfidens": 0.963
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "nagon som alskar",
+       "konfidens": 0.993
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.942
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "katter dinmamma",
+       "konfidens": 0.973
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "katter din mamma",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "katter din mamma",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "pratar alltid om",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "pratar alltid om",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "pratar alltid om",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "katten som bor",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "katten som bor",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "katten som bor",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "utanfor hennes hus",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "utanfor hennes hus",
+       "konfidens": 0.949
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "utanfor hennes hus",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "utanforhenneshus",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "HKeH",
+       "konfidens": 0.67
+      },
+      {
+       "text": "PRS&UeT",
+       "konfidens": 0.675
+      },
+      {
+       "text": "varje natt undrar",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "KeH",
+       "konfidens": 0.767
+      },
+      {
+       "text": "varje natt undrar",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "PR&&TeTO",
+       "konfidens": 0.604
+      },
+      {
+       "text": "varje natt undrar",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "KeH",
+       "konfidens": 0.716
+      },
+      {
+       "text": "varje natt undrar",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "KeHH",
+       "konfidens": 0.747
+      },
+      {
+       "text": "PAd&To",
+       "konfidens": 0.534
+      },
+      {
+       "text": "hon om den fryser sa",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "KeHH",
+       "konfidens": 0.72
+      },
+      {
+       "text": "hon om den fryser sa",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "KeH",
+       "konfidens": 0.644
+      },
+      {
+       "text": "PRS&Te",
+       "konfidens": 0.548
+      },
+      {
+       "text": "hon om den fryser sa",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "KeH",
+       "konfidens": 0.93
+      },
+      {
+       "text": "hon om den fryser sa",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "du gav henne det har",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "mdolkn",
+       "konfidens": 0.606
+      },
+      {
+       "text": "du gav henne det har",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "du gav henne det har",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "du gav henne det har",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "ettvarmttorrthem",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "ettvarmttorrthem",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "ettvarmttorrthem",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "ettvarmt torrthem",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "ettvarmttorrthem",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "at katten hon",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "at katten hon",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "at katten hon",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "at katten hon",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "oppnade paketet och",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "oppnade paketet och",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "oppnade paketet och",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "oppnade paketet och",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "blev alldeles tyst",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "blev alldeles tyst",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "blev alldeles tyst",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "blev alldeles tyst",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "sen log hon for nu",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "sen log hon for nu",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "sen log hon for nu",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "sen log hon for nu",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "sen log hon for nu",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "vethon att katten",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "vet hon attkatten",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "vet hon attkatten",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "vet hon att katten",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "har nagonstans att",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "har nagonstans att",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "har nagonstans att",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "har nagonstans att",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "sova tryggt ibland",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "sova tryggt ibland",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "sova tryggt ibland",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "sova tryggt ibland",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "sova tryggt ibland",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "ar den basta gavan",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "ar den basta gavan",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "ar den basta gavan",
+       "konfidens": 0.945
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "ar den basta gavan",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "den som ger nagon",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "den som ger nagon",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "den som ger nagon",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "annan lugn i hjartat",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "annan lugn i hjartat",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "annan lugn i hjartat",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "annan lugn i hjartat",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "annan lugn i hjartat",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24.3,
+     "texter": [
+      {
+       "text": "annan lugn i hjartat",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_079.jpg",
+     "sekund": 24.6,
+     "texter": []
+    },
+    {
+     "fil": "frame_080.jpg",
+     "sekund": 24.69,
+     "texter": []
+    }
+   ]
+  },
+  "Utekattkoja_PD_1_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Din katt fryser",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Din katt fryser",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "just nu och du",
+       "konfidens": 0.932
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "just nu och du",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "vet det inte.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.934
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.934
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.938
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Det ár kallt ute,",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Det ár kallt ute,",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Det har ar",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "ett isolerat",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "ett isolerat",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "vaggarna haller",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Vaggarna haller",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Vaggarna haller",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "varmen inne.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "varmen inne.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Din katt slipper",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Din katt slipper",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Din katt slipper",
+       "konfidens": 0.995
+      },
+      {
+       "text": "YAASA3-T230",
+       "konfidens": 0.669
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "gomma sig under",
+       "konfidens": 0.994
+      },
+      {
+       "text": "VAAAA3-T28",
+       "konfidens": 0.621
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "gomma sig under",
+       "konfidens": 0.974
+      },
+      {
+       "text": "VANNA3-",
+       "konfidens": 0.572
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.992
+      },
+      {
+       "text": "VANA3-T23",
+       "konfidens": 0.718
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.997
+      },
+      {
+       "text": "VSSAA3-T23S",
+       "konfidens": 0.627
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.975
+      },
+      {
+       "text": "V年SA3-T238",
+       "konfidens": 0.642
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.984
+      },
+      {
+       "text": "V年A3-T23",
+       "konfidens": 0.699
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "KE2L-E",
+       "konfidens": 0.762
+      },
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.91
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "9-T239",
+       "konfidens": 0.819
+      },
+      {
+       "text": "trygg platsute",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "KE2L-F",
+       "konfidens": 0.72
+      },
+      {
+       "text": "trygg plats ute",
+       "konfidens": 0.938
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "KE2L-E",
+       "konfidens": 0.726
+      },
+      {
+       "text": "trygg plats ute",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "KE21-",
+       "konfidens": 0.713
+      },
+      {
+       "text": "trygg plats ute",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "men skyddad.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "men skyddad.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "men skyddad.",
+       "konfidens": 1
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "Perfekt for",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Perfekt for",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "Perfekt for",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "balkongen,",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "balkongen,",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "garden vinter",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "garden vinter",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "garden vinter",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.25,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.997
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_PD_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Utekattkoja_PD_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "FRYSER DIN KATT UTE?",
+       "konfidens": 0.953
+      },
+      {
+       "text": "INTE LANGRE.",
+       "konfidens": 0.91
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_PD_2_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "sa har ser ett",
+       "konfidens": 0.917
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "riktigt vinterskydd",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "riktigt vinterskydd",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "for utekatter ut.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "for utekatter ut.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "for utekatter ut.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.933
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Det ár kallt ute,",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Det ár kallt ute,",
+       "konfidens": 0.935
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Det har ar",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Det har ar",
+       "konfidens": 0.926
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "ett isolerat",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "ett isolerat",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "vaggarna haller",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "vaggarna haller",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "vaggarna haller",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.949
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "varmen inne.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "varmen inne.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Din katt slipper",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Din katt slipper",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Din katt slipper",
+       "konfidens": 0.992
+      },
+      {
+       "text": "VAA5A3-T230",
+       "konfidens": 0.679
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "gomma sig under",
+       "konfidens": 0.988
+      },
+      {
+       "text": "VARAAZ-T238",
+       "konfidens": 0.71
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "gomma sig under",
+       "konfidens": 0.983
+      },
+      {
+       "text": "VANNA子-",
+       "konfidens": 0.645
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.99
+      },
+      {
+       "text": "VAAA3-T23%",
+       "konfidens": 0.676
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.996
+      },
+      {
+       "text": "VASAA3-T238",
+       "konfidens": 0.715
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.98
+      },
+      {
+       "text": "VASA3-T23",
+       "konfidens": 0.81
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.986
+      },
+      {
+       "text": "VASA3-T238",
+       "konfidens": 0.593
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "KE21-B",
+       "konfidens": 0.681
+      },
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "-T239",
+       "konfidens": 0.864
+      },
+      {
+       "text": "trygg platsute",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "-T239",
+       "konfidens": 0.923
+      },
+      {
+       "text": "trygg plats ute",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "KE21-E",
+       "konfidens": 0.611
+      },
+      {
+       "text": "trygg plats ute",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "KE2L-6",
+       "konfidens": 0.657
+      },
+      {
+       "text": "trygg plats ute",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "men skyddad.",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "men skyddad.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "men skyddad.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Perfekt for",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "Perfekt for",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "Perfekt for",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "balkongen,",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "balkongen,",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "garden vinter",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "garden vinter",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "garden vinter",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.55,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.993
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_PD_3_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Regn, blast,",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Regn, blast,",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "kyla, det har",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "\"Min kunt",
+       "konfidens": 0.749
+      },
+      {
+       "text": "kyla, det har",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "pperjag",
+       "konfidens": 0.789
+      },
+      {
+       "text": "stoppar allt.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "stoppar allt.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.938
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Det ár kallt ute,",
+       "konfidens": 0.935
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.931
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Det ar kallt ute,",
+       "konfidens": 0.92
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "blasigt, vatt, men",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "titta har inne, helt",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "torrt och skont.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Det har ar",
+       "konfidens": 0.926
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Det har ar",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "ett isolerat",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "ett isolerat",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "utekattehus.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "vaggarna haller",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "vaggarna haller",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Vaggarna haller",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "kylan ute, botten",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "och taket haller",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "varmen inne.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "varmen inne.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Din katt slipper",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Din katt slipper",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "gomma sig under",
+       "konfidens": 0.938
+      },
+      {
+       "text": "YSA3-T23",
+       "konfidens": 0.822
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "gomma sig under",
+       "konfidens": 0.974
+      },
+      {
+       "text": "KE2L-EVFSEA",
+       "konfidens": 0.556
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "gomma sig under",
+       "konfidens": 0.974
+      },
+      {
+       "text": "VARSA3-T238",
+       "konfidens": 0.68
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.991
+      },
+      {
+       "text": "SEZL-EVFFSA",
+       "konfidens": 0.683
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "bilar eller altaner.",
+       "konfidens": 0.996
+      },
+      {
+       "text": "V号SA3-T238",
+       "konfidens": 0.719
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.983
+      },
+      {
+       "text": "V年岛A3-T23",
+       "konfidens": 0.732
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.932
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "KE2L-F",
+       "konfidens": 0.782
+      },
+      {
+       "text": "Den far en egen",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "KE2L-F",
+       "konfidens": 0.753
+      },
+      {
+       "text": "trygg plats",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "KE2L-F",
+       "konfidens": 0.746
+      },
+      {
+       "text": "trygg plats",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "KE2L-B",
+       "konfidens": 0.659
+      },
+      {
+       "text": "ute,menskyddad",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "ute, men skyddad",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "ute, men skyddad",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "ute, men skyddad",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "perfekt for",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "perfekt for",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "perfekt for",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "balkongen,",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "balkongen,",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "balkongen,",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "tradgarden eller",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "garden, vinter",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "garden, vinter",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "garden, vinter",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.69,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "somsommar.",
+       "konfidens": 0.995
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_SP_1_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "PS",
+       "konfidens": 0.52
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Tusentals kattagare",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Tusentals kattagare",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "har redan skyddat",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "har redan skyddat",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "sina katter.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "sina katter.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Vi har fatt",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Vi har fatt",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Vi har fatt",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "meddelandeefter",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "meddelandeefter",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "kattagare",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "kattagare",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "hela landet.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "hela landet.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Antligen slipper",
+       "konfidens": 0.943
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Antligen slipper",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "jag oroa mig",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "jag oroa mig",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "jag oroa mig",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.981
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.973
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.93
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.968
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.943
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Det har ar inte",
+       "konfidens": 0.923
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "Det har ar inte",
+       "konfidens": 0.935
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.924
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "bara ett kattbo.",
+       "konfidens": 0.97
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "bara ett kattbo.",
+       "konfidens": 0.981
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "bara ett kattbo.",
+       "konfidens": 0.965
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "bara ett kattbo.",
+       "konfidens": 0.969
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "Det ar ett tryggt",
+       "konfidens": 0.96
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.992
+      },
+      {
+       "text": "Det ar ett tryggt",
+       "konfidens": 0.946
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "utrymme",
+       "konfidens": 0.995
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "utrymme",
+       "konfidens": 0.999
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.948
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "utrymme",
+       "konfidens": 0.998
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.953
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.998
+      },
+      {
+       "text": "som tusentals katter",
+       "konfidens": 0.963
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.998
+      },
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.977
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.998
+      },
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.983
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.93
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.998
+      },
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.975
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.987
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 20.72,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.988
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_SP_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Utekattkoja_SP_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "\"Min katt sover har varje natt nu - hon vagrar ga in!\"",
+       "konfidens": 0.967
+      },
+      {
+       "text": "-Verifieradkund,47ar",
+       "konfidens": 0.957
+      },
+      {
+       "text": "30 dagars oppet kop - helt riskfritt",
+       "konfidens": 0.962
+      },
+      {
+       "text": "HANDLANU",
+       "konfidens": 0.995
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_SP_2_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Det har ar darfor",
+       "konfidens": 0.931
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "andra kattagare",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "andra kattagare",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "alskar den.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "alskar den.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Vi har fatt",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Vi har fatt",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "meddelandeefter",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "meddelandeefter",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "kattagare",
+       "konfidens": 0.949
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "kattagare",
+       "konfidens": 0.915
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "hela landet.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "hela landet.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Antligen slipper",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Antligen slipper",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Antligen slipper",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "jag oroa mig",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "jag oroa mig",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.975
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.97
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.929
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.949
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.945
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Det har ar inte",
+       "konfidens": 0.897
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "Det har ar inte",
+       "konfidens": 0.912
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "bara ett kattbo.",
+       "konfidens": 0.988
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "bara ett kattbo.",
+       "konfidens": 0.979
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "bara ett kattbo.",
+       "konfidens": 0.986
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Det ar ett tryggt",
+       "konfidens": 0.968
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.932
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "Det ar ett tryggt",
+       "konfidens": 0.959
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "Det ar ett tryggt",
+       "konfidens": 0.946
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.986
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "utrymme",
+       "konfidens": 0.995
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.929
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "utrymme",
+       "konfidens": 0.998
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "utrymme",
+       "konfidens": 0.999
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.957
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "som tusentals katter",
+       "konfidens": 0.964
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.998
+      },
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.982
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "som tusentals katter",
+       "konfidens": 0.96
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.976
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.939
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.12,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.985
+      }
+     ]
+    }
+   ]
+  },
+  "Utekattkoja_SP_3_H1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Las vad andra",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "kattagare sager",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "kattagare sager",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "om skyddet.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Vi har fatt",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Vi har fatt",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "meddelandeefter",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "meddelandeefter",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "meddelande fran",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "kattagare",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "kattagare",
+       "konfidens": 0.916
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "hela landet.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "hela landet.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Min kattsover har",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Min katt sover har",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "varje natt nu.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Antligen slipper",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Antligen slipper",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Antligen slipper",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "jag oroa mig",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "jag oroa mig",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.974
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.932
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.972
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "nar hon ar ute.",
+       "konfidens": 0.965
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "Det har ar inte",
+       "konfidens": 0.912
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "Det har ar inte",
+       "konfidens": 0.91
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "baraettkattbok.",
+       "konfidens": 0.985
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "bara ettkattbok.",
+       "konfidens": 0.959
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "bara ett kattbok.",
+       "konfidens": 0.987
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "bara ett kattbok.",
+       "konfidens": 0.986
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.996
+      },
+      {
+       "text": "Det ar ett tryggt",
+       "konfidens": 0.982
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "Det ar ett tryggt",
+       "konfidens": 0.944
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.995
+      },
+      {
+       "text": "utrymme",
+       "konfidens": 0.999
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.924
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.994
+      },
+      {
+       "text": "utrymme",
+       "konfidens": 0.998
+      },
+      {
+       "text": "4K 60FPS",
+       "konfidens": 0.941
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "som tusentals katter",
+       "konfidens": 0.968
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "som tusentals katter",
+       "konfidens": 0.963
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.983
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.998
+      },
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.982
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.998
+      },
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.981
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "REC",
+       "konfidens": 0.997
+      },
+      {
+       "text": "som tusentalskatter",
+       "konfidens": 0.977
+      },
+      {
+       "text": "4K60FPS",
+       "konfidens": 0.982
+      },
+      {
+       "text": "HD",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "som tusentals katter",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "redan anvander.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Se sjalv varfor sa",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "manga valjer det",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.79,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "har infor vintern.",
+       "konfidens": 0.986
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

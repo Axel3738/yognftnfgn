@@ -1,0 +1,1133 @@
+{
+ "produkt": "utekattkojan",
+ "datum": "2026-09-11",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16516655382877",
+  "produkt_handle": "isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+  "produkt_url": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": "Utekattkoja",
+  "kampanj_id": "120250147309170291",
+  "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+  "no_kampanjmonster": "Isolert Utekattehus",
+  "no_annonsprefix": "Utekattehus",
+  "no_kampanj_id": "120252183459760233",
+  "srt_slug": [
+   "utekattkoja"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Utekattkoja_CS_1_H1",
+   "id": "120250147311650291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | CS | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_CS_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 50
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Fran1059kronor",
+      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Erbjudandet gäller bara idag – få kvar.",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "Bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "Erbjudandet galler",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Bara i dag, stort prisrass på utekattehuset.",
+      "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Lager krymper snabbt. Erbjudandet gäller bara i dag.",
+      "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i inbränd: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
+    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "24%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Fran1059kronor",
+     "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Erbjudandet gäller bara idag – få kvar.",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "Bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "Erbjudandet galler",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Bara i dag, stort prisrass på utekattehuset.",
+     "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Lager krymper snabbt. Erbjudandet gäller bara i dag.",
+     "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_CS_2_1",
+   "id": "120250147315840291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | CS | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Erbjudandet gäller bara idag – få kvar.",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "24%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Erbjudandet gäller bara idag – få kvar.",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_CS_2_H1",
+   "id": "120250147312300291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | CS | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_CS_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 53
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "809 kronor istallet",
+      "fel": "säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "1059 kronor ner till",
+      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Erbjudandet gäller bara idag – få kvar.",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "Erbjudandet galler",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Åttahundranio kronor istället för etttusenfemtionio. Men bara i dag.",
+      "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Från etttusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt. Lager krymper snabbt.",
+      "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Erbjudandet gäller bara i dag. Beställ nu innan det är slut.",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i inbränd: säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
+    "pris i inbränd: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
+    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "24%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "809 kronor istallet",
+     "fel": "säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "1059 kronor ner till",
+     "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Erbjudandet gäller bara idag – få kvar.",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "Erbjudandet galler",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Åttahundranio kronor istället för etttusenfemtionio. Men bara i dag.",
+     "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Från etttusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt. Lager krymper snabbt.",
+     "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Erbjudandet gäller bara i dag. Beställ nu innan det är slut.",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_CS_3_H1",
+   "id": "120250147314340291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | CS | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_CS_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 53
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Fran1059kronor",
+      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Erbjudandet gäller bara idag – få kvar.",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "Nastan slutsald.",
+      "fel": "lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "sista chansen till",
+      "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "Erbjudandet galler",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Nästan slutsåld.",
+      "fel": "lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Sista chansen till rabatterat pris.",
+      "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Lager krymper snabbt. Erbjudandet gäller bara i dag. Beställ nu innan det är slut.",
+      "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "pris i inbränd: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
+    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "24%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Fran1059kronor",
+     "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Erbjudandet gäller bara idag – få kvar.",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "Nastan slutsald.",
+     "fel": "lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "sista chansen till",
+     "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "Erbjudandet galler",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Nästan slutsåld.",
+     "fel": "lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Sista chansen till rabatterat pris.",
+     "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Lager krymper snabbt. Erbjudandet gäller bara i dag. Beställ nu innan det är slut.",
+     "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_GT_1_H1",
+   "id": "120250147317820291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | GT | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_GT_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 78
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_GT_2_1",
+   "id": "120250147323690291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | GT | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_GT_2_H1",
+   "id": "120250147319180291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | GT | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_GT_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 78
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_GT_3_H1",
+   "id": "120250147322330291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | GT | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_GT_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 80
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_PD_1_H1",
+   "id": "120250147327330291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | PD | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_PD_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 75
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_PD_2_1",
+   "id": "120250147332570291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | PD | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_PD_2_H1",
+   "id": "120250147330150291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | PD | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_PD_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 76
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_PD_3_H1",
+   "id": "120250147332310291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | PD | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_PD_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 77
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_SP_1_H1",
+   "id": "120250147337080291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | SP | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_SP_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 67
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_SP_2_1",
+   "id": "120250147343210291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | SP | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop - helt riskfritt",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop - helt riskfri"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop - helt riskfritt",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_SP_2_H1",
+   "id": "120250147340250291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | SP | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_SP_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 65
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Utekattkoja_SP_3_H1",
+   "id": "120250147343040291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Isolerad Utekattkoja | SP | 2026-09-09",
+   "kampanj": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/utekattkoja_SP_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 64
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  }
+ ]
+}
