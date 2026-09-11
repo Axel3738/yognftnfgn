@@ -23,12 +23,28 @@ eller konkurrent-signal i `docs/swipes/`. Kan den inte det är den märkt
 
 ## Koncept
 
-| Idé | Varför den kan funka | Källa |
+⚠️ **Hubben bar redan 20 rader när batch #2 briefades (läst 2026-09-12):**
+Bäverbutikens `/cs`-briefer för samma produkt följde med flytten (prefix
+`Adventskalender_`): PD_4/5/6/7, CO_1/2, BF_1/2/3, RI_1 (+RI_1_1), RV_1/2,
+TR_1/2, LI_1, UG_1, AU_1, FM_1, CS_4. Flera backlog-idéer var därmed redan
+briefade av någon annan — de markeras "täckt av hubbraden" och briefas inte igen.
+
+| Idé | Varför den kan funka | Källa | Läge |
+|---|---|---|---|
+| **Chokladkonflikten som ren stillbild, ny bild** — kartongen bredvid ett tomt chokladomslag | `PD_2_1` är produktens bevisade vinnare (1 376 kr, ROAS 3,85, 8 köp) och det är BILDEN som skalar här. | winning line: `Adventskalender_PD_2_1` | **täckt av hubbraden `Adventskalender_CO_2_1`** (split-bild: tom chokladkalender i soporna mot vår kartong). Sockerversionen briefad som `AdventLaneRacing_SO_1_1` [använd i batch #2] |
+| **PD-hooken som video med ny öppning** — slutresultatet först | `PD_2_H1` har högst CVR i källan (4,92 %) men lägre CTR än bilden. | winning line: `Adventskalender_PD_2_H1` | **täckt av hubbraden `Adventskalender_FM_1_H1`** ("Dag 1: en bil. Dag 24: ett garage", To be Reviewed). Hook-bytet med tomt omslag först briefat som `AdventLaneRacing_PD_2_H2` [använd i batch #2] |
+| **Recensionsvinkel (SP) på riktig text** | Tio riktiga femstjärniga omdömen finns. | produktfilens `reviews` + playbook social proof | **täckt av hubbraderna `RV_1_1`, `RV_2_1`, `TR_1_H1`, `TR_2_1`** (recensionskort + testimonial på verifierade citat) |
+| **Presentvinkeln med leveranstid som skäl** | Leveranstiden 5–10 arbetsdagar är ett SANT skäl. | `Adventskalender_GT_1_H1` + `docs/copy-regler.md` | **täckt av hubbraderna `RI_1_H1` (In progress) + `RI_1_1`** |
+| **Könsneutral variant av PD** — inget pronomen | Brandet får inte låsas vid pojkar. EN isolerad variabel mot originalet. | winning line `PD_2_H1` + `BRAND.md` | **[använd i batch #2]** → `AdventLaneRacing_PD_8_H1` |
+| **Erbjudandet utan brådska (CS)** | Pris i sek 0–3 bevisat på HeimGuard, inte här. | playbook — **gissning** för produkten | **täckt av hubbraderna `CS_4_1`, `BF_1_1`, `PD_6_H1`** |
+| **Morgonrutinen** — "Klockan sju, första december." | Brandets kärnscen. Tre av tio recensioner nämner morgonen. | `BRAND.md` + recensioner — **gissning** (0 kr data) | **[använd i batch #2]** → `AdventLaneRacing_MR_1_H1` |
+| **Syskonbråket → 2-pack** — två barn, en lucka | Verklig AOV 632 kr mot pris 499 kr i källan: paketen säljer. Konflikten ger paketet ett skäl utan rabattpitch. ⚠️ Paketpriserna A/B-testas live (2 st 848,30 / 798,40 kr, mätt 2026-09-12) — inget paketpris i copy. | källkontots AOV (ärvd data 2026-09-11) | **[använd i batch #2]** → `AdventLaneRacing_SY_1_H1` |
+| **Från farmor och farfar** — givaren i orden | GT-vinkeln (594 kr, 2 köp, hook 32 %) pekar på fel givare; mor-/farföräldrar köper adventskalendrar. | `Adventskalender_GT_1_H1` under grinden — **gissning** | **[använd i batch #2]** → `AdventLaneRacing_FF_1_1` |
+| **Den 25 december** — chokladkalendern i återvinningen, bilarna på golvet | Det bevisade löftet "kvar den 24:e" flyttat en dag: nyttan blir fysisk (bilarna följer med i leken). | winning line PD + Sofia: "Bilarna blev snabbt favoriter." | **[använd i batch #2]** → `AdventLaneRacing_EF_1_1` |
+
+### Väntar på nästa batch (inte briefade än)
+
+| Idé | Varför | Källa |
 |---|---|---|
-| **Chokladkonflikten som ren stillbild, ny bild** — samma copy som `PD_2_1`, ny visuell: kartongen bredvid ett tomt chokladomslag | `PD_2_1` är produktens bevisade vinnare (1 376 kr, ROAS 3,85, 8 köp) och det är BILDEN som skalar här. Isolerar variabeln visuell stil. | winning line: `Adventskalender_PD_2_1`, ärvd historik 2026-09-11 |
-| **PD-hooken som video med ny öppning** — "Den 24 december: 24 bilar på bordet. Chokladkalendern: en tom kartong sedan den 3:e." | `PD_2_H1` har högst CVR i källan (4,92 %) men lägre CTR än bilden. Hypotes: en hook som visar slutresultatet först lyfter klicket utan att tappa konverteringen. Isolerar variabeln hook. | winning line: `Adventskalender_PD_2_H1` |
-| **Recensionsvinkel (SP) på riktig text** — "Sonen längtar till varje dag" / "ett bra alternativ till godis" ordagrant ur Judge.me | Källans SP bygger på ett citat ingen sagt och 30-dagarslöfte som inte gäller. Tio riktiga femstjärniga omdömen finns. Vinkeln är oprövad (45 kr) — helt ny hypotes. | produktfilens `reviews` (10 st, 2026-09-10) + playbook social proof |
-| **Presentvinkeln med leveranstid som skäl** — "Beställ före den X så ligger den under granen" | `GT_1_H1` har källans bästa hook (32 %) men CPA 297 kr. Hypotes: den saknar ett skäl att köpa nu; leveranstiden 5–10 arbetsdagar är ett SANT skäl, till skillnad från "bara idag". | `Adventskalender_GT_1_H1` (594 kr, 2 köp) + `docs/copy-regler.md` |
-| **Könsneutral variant av PD** — "Ge henne/honom" → "Ge barnet" eller ingen pronomen | Brandet får inte låsas vid pojkar (`kalender.yaml` branding). Bevisad copy säger "honom". EN isolerad variabel mot originalet. | `factory/output/kalender/BRAND.md` — **gissning** tills den mäts |
-| **Erbjudandet utan brådska (CS)** — "499 kr. Jämförpris 649 kr. Fri frakt." | Källans CS är falsk brådska och får inte köras. Vinkeln (pris i sek 0–3) är bevisad på HeimGuard (`CS_3`, ROAS 3,02) men inte på den här produkten. | playbook (pris tidigt) — **gissning** för den här produkten |
-| **Morgonrutinen** — "Klockan sju, första december. Så här ser det ut vid vårt köksbord." | Brandets kärnscen (`BRAND.md`: köksbordet, morgonljus). Ingen källannons har den. Tre av tio recensioner nämner morgonen ("varje morgon", "längtar till varje dag"). | `BRAND.md` + recensioner — **gissning** (0 kr data) |
+| **Textfri produktbild** — öppnad kalender med bilar, ingen text i bild, PD-copyn i copy card | Variabeln textmängd är otestad; `PD_2_1`:s textmängd är inte läst ur kontot än (kräver bildnedladdning). | winning line `PD_2_1` — läs bilden först |
+| **"Alternativ till godis" som hook** — Saras recension ordagrant | Tre av tio recensioner säger det självmant. Skiljer sig från RV/TR (som citerar andra rader). | produktfilens `reviews` — kolla RV_1/RV_2:s citat först så det inte dubbleras |

@@ -168,3 +168,48 @@ NEEDED med samma blocker som 13:40: publicera sidan `1304279782771044`.
 Bifynd, fixat i `tools/meta-lib.mjs`: väntraden vid Metas rate limit gick till stdout och
 hamnade i `jobb.json` (fyra rader, filen blev ogiltig JSON). Nu stderr. Kontoläsningen tog
 ≈ 18 min p.g.a. rate limit (försök 6/8) — normalt, inte hängning.
+
+---
+
+## Batch #2 — 2026-09-12 · första briefronden (`/notionscalercs kalender/adventskalender-racingbilar`, körning nr 2) · KALLSTART
+
+**Läge vid briefning:** OPS-kampanjen SE har **0 bedömbara annonser** (≥ 300 kr OCH
+≥ 3 köp) — se "Utfall vid avläsning 2026-09-12" nedan. Ingen feedback-loop, ingen
+dom över en enda AdventLane-annons. Hela ronden är nya koncept ur ärvd DNA
+(`dna.md`, ÄRVD-tabellen) + backloggen. Kadens: **7** (ingen redigerare tilldelad).
+
+**Hubben bar redan 20 rader** (`Adventskalender_`-prefix, Bäverbutikens `/cs`-briefer
+som följde med flytten): PD_4/5/6/7, CO_1/2, BF_1/2/3, RI_1(+_1), RV_1/2, TR_1/2,
+LI_1, UG_1, AU_1, FM_1, CS_4. Batch #2 dubblerar ingen av dem — fyra backlog-idéer
+var redan täckta och briefades inte igen (se `backlog.md`).
+
+**Lediga AD-ID:n lästes ur** OPS-kontot (PD/GT/CS/SP 1–3) **och** hubben (PD t.o.m.
+7, CS 4, övriga koder 1–3). Nya koder: SO (socker), MR (morgonrutin), SY (syskon),
+FF (farmor/farfar), EF (efter jul). Prefix `AdventLaneRacing_` (produktfilen).
+
+**Copy A/B (Axels beslut 2026-09-10):** varannan brief `copy_model: fable`, varannan
+`sonnet`, i briefordning 1–7 ⇒ fable 4, sonnet 3. Väg: Agent-verktyget (fanns i
+sessionen) med `model: "fable"` resp. `"sonnet"`, `tools/copy-agent.mjs` behövdes inte.
+
+| # | Annons | Typ | Koncept / hypotes | Isolerad variabel | Källa | copy_model |
+|---|---|---|---|---|---|---|
+| 1 | `AdventLaneRacing_PD_2_H2` | video | Hook-byte på ärvda vinnaren PD_2_H1: första 3 s = tomt chokladomslag i pappersåtervinningen, resten av filmen orörd | hook | winning line `Adventskalender_PD_2_H1` (898 kr, 6 köp, ROAS 3,85) + `creative-strategy.md` §3 | fable |
+| 2 | `AdventLaneRacing_MR_1_H1` | video | Morgonrutinen: köksbordet kl 07 den 1 december, en lucka, en bil bredvid gårdagens | scen/hook-typ (rutin i stället för produkt) | `BRAND.md` kärnscen + 3/10 recensioner nämner morgonen — **gissning** | sonnet |
+| 3 | `AdventLaneRacing_SO_1_1` | bild | Sockeromramningen av chokladkonflikten: 24 morgnar utan choklad före frukost (tidsramen bytt) | hook-typ (tidsram) inom bevisad vinkel; format bild | winning line PD (2 322 kr, 14 köp) + Sara "ett bra alternativ till godis" | fable |
+| 4 | `AdventLaneRacing_SY_1_H1` | video | Syskonbråket: två barn, en lucka → 2-pack som lösning, aldrig som rabatt | vinkel (pain: turordning) + paket utan pris | källkontots verkliga AOV 632 kr > 499 kr (paketen säljer) | sonnet |
+| 5 | `AdventLaneRacing_PD_8_H1` | video | Könsneutral re-voice av PD_2_H1: samma klipp, inget "honom" | målgruppslåsning i orden | winning line `PD_2_H1` + `BRAND.md` (brandet får inte låsas vid pojkar) | fable |
+| 6 | `AdventLaneRacing_FF_1_1` | bild | Från farmor och farfar: givaren i orden, oöppnad presentkartong bredvid kaffekopp | givare (GT-vinkeln riktad om) | `Adventskalender_GT_1_H1` (594 kr, 2 köp, hook 32 %) under grinden — **gissning** | sonnet |
+| 7 | `AdventLaneRacing_EF_1_1` | bild | Den 25 december: chokladkalendern platt i återvinningen, 24 bilar på golvet i lek | hook-typ (tidsram efter jul) + split-visuell | winning line PD ("kvar den 24:e", 14 köp) + Sofia "Bilarna blev snabbt favoriter." | fable |
+
+Hypoteser i klartext:
+1. **H1 (PD_2_H2):** ett fysiskt, "äckligt" föremål i sekund 0 (tomt omslag) lyfter
+   hook rate över PD_2_H1:s 28,7 % utan att sänka CVR. Mäts mot PD_2_H1 rakt av.
+2. **H2 (MR_1_H1):** scen före produkt håller kvar längre (hold > 28 %) — gissning.
+3. **H3 (SO_1_1):** "24 morgnar" slår "10 sekunder" som siffra i en bild. Mäts mot PD_2_1.
+4. **H4 (SY_1_H1):** konflikt-motiverat paket ger högre AOV än 632 kr utan att CPA stiger.
+5. **H5 (PD_8_H1):** neutral form tappar inte CVR mot PD_2_H1 (4,92 %). Om lika: bredare.
+6. **H6 (FF_1_1):** givarvinkeln konverterar bättre än GT:s CPA 297 kr — gissning.
+7. **H7 (EF_1_1):** "efter jul" är ett starkare skäl än "den 24:e" — hypotes.
+
+Alla sju döms nästa briefdag (ons 2026-09-16 enligt kadens) enbart om de passerat
+grinden (≥ 300 kr OCH ≥ 3 köp). Kill mot BE-CPA 323 kr / BE-ROAS 1,54.

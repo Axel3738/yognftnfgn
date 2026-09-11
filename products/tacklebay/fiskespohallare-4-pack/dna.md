@@ -2,6 +2,7 @@
 
 Skapad 2026-09-11 av `/notionscalercs setup tacklebay/fiskespohallare-4-pack`
 (körning nr 1 — setup, ingen briefrond).
+**Senast uppdaterad 2026-09-12 — körning nr 2, första briefronden (KALLSTART).**
 Nyckel `tacklebay/fiskespohallare-4-pack`, brand **TackleBay**, tacklebay.se.
 
 ⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken.**
@@ -51,6 +52,13 @@ Signifikansgrinden (≥ 300 kr OCH ≥ 3 köp) passeras av **fem** annonser. De
 | `Rodholder_PD_16_H1` | video | 2 651 kr | 10 | 265 kr | 1,52 | +290 kr | ✅ strax över | 30,6 % | 23,3 % | 2,12 % |
 | `Rodholder_PD_11_H2` | video | 1 922 kr | 6 | 320 kr | 1,49 | −156 kr | = break-even | 33,4 % | 15,5 % | 2,23 % |
 | `Rodholder_SO_4_1` | bild | 808 kr | 3 | 269 kr | 1,44 | +75 kr (prel., 3 köp) | ❌ strax under | — | — | 2,88 % |
+
+*Avläst igen 2026-09-12 (`skalning.mjs --arv`, date_preset maximum) — källkampanjen
+spenderar fortfarande: `PD_6_1` 2 941 kr / 20 köp / CPA 147 kr / ROAS 2,87
+(+2 939 kr) · `PD_15_H1` oförändrad (+2 198 kr) · `PD_16_H1` 2 769 kr / 10 /
+277 kr / 1,46 (+171 kr) · `SO_4_1` oförändrad (+74 kr) · `PD_11_H2` −158 kr,
+klassad förlorare av skriptet på 6 köp — preliminärt (ANALYSMETOD 2c).
+Ordningen håller; inga trasiga rader (`spend × ROAS` mot `values`).*
 
 **Två vinnare, en på gränsen, två i brus.** `PD_6_1` bär 55 % av det ärvda
 vinstbidraget på 13 % av spenden; `PD_15_H1` är volymen. `PD_11_H2` och
@@ -204,6 +212,57 @@ break-even-CPA med ~2 kr — inte akut, men räkna om vid nästa `/cs`.
   `UTLANDSKA_KONTON`, FAS2 uppdrag D). Känt, inte ett fel att rätta här.
 - **Norska kampanjen** `TACKLEBAY_NO_Spöhållaren` (9 annonser) döms separat
   med `--marknad NO` — aldrig i samma tabell som SE.
+
+---
+
+## Körning nr 2 — 2026-09-12, första briefronden: KALLSTART
+
+**Ingen feedback-loop — ingen bedömbar annons än.** Avläst ur Meta (OPS-kontot
+`915422744950975`, prefix `TackleBayRod`, last_14d, `factory/budgetrond.mjs`
+2026-09-12): **52 annonser, 768 kr, 1 köp, 6 348 visningar.** Kampanjen har
+två dygn (180,99 kr 2026-09-10 · 586,90 kr / 1 köp 2026-09-11). Grinden
+(≥ 300 kr OCH ≥ 3 köp) passeras av 0 annonser. Vinstbidrag: 0 kr. Ranking:
+ingen. Budgetronden gjorde 0 ändringar (kampanjen 1 000 kr/dag, "för tidigt").
+
+Metrik-diagnos på de största, **som pekare, aldrig som dom** (0 köp bakom var
+och en):
+
+| Annons | Spend | Köp | Hook 3 s | Hold p50 | CTR | CPC | CPM |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| `TackleBayRod_B_PD_EXTRA` | 167 kr | 0 | 29,0 % | 16,4 % | 2,41 % | 5,37 kr | 130 kr |
+| `TackleBayRod_PD_1_H1` | 126 kr | 0 | 30,2 % | 16,1 % | 1,25 % | 11,49 kr | 143 kr |
+| `TackleBayRod_PD_1_H2` | 92 kr | 0 | 28,5 % | 17,4 % | 1,65 % | 6,55 kr | 108 kr |
+| `TackleBayRod_SP_1_H3` | 83 kr | 0 | **39,0 %** | **31,9 %** | **3,11 %** | 4,60 kr | 143 kr |
+| `TackleBayRod_PD_16_H2` | 61 kr | 0 | **49,4 %** | 17,6 % | 2,34 % | 3,61 kr | 85 kr |
+| `TackleBayRod_PD_22_H1` | 14 kr | **1** | — | — | — | — | — |
+
+Det enda köpet sitter på `PD_22_H1` för 14 kr — brus, ingen slutsats. Två
+pekare att läsa igen när det finns pengar: `SP_1_H3` (bäst hold + CTR, som
+i setup-avläsningen) och `PD_16_H2` (hook 49 % — samma familj som ärvda
+`PD_16_H1`, bäst hold av källans videor).
+
+**Hela batch #2 är därför nya koncept ur ärvd DNA + backloggen** (7 briefer,
+ingen redigerare tilldelad ⇒ 7 i stället för kadensens 21): 3 varianter av de
+två ärvda vinnarna (`PD_15_H1`, `PD_6_1`), 2 nya koncept med källa, 2 märkta
+gissning. Se batch-log.md batch #2.
+
+### Mönster → instruktion i batch #2 (ANALYSMETOD 6b, ärvda mönster)
+
+| Mönster | Status | Instruktion i briefen |
+|---|---|---|
+| 1. PD/demo bär 91 % av köpen | **bevisad** (5 bedömbara, ärvda) | 5 av 7 briefer är demo; SO och CS märkta gissning |
+| 2. Demon som stillbild konverterar | **bevisad för DEN bilden** (`PD_6_1`, 20 köp) | Två syskon isolerar var sin variabel: `PD_43_1` scen, `PD_44_1` rubrik — allt annat ordagrant |
+| 3. Skaka-testet vinner hooken, tappar holden | **bevisad som hook** (52 %), hold-diagnos hypotes | `PD_42_H1`: samma 0–3 s, mitten byts mot mekanism-macro; KPI = hold > 16,4 % |
+| 4. Winning line (85 köp) | **bevisad** | Ordagrann primary text + rubrik i alla tre varianterna; nya koncept skriver i samma register |
+
+### Copy A/B Fable mot Sonnet — ställning 2026-09-12
+Registret säger `copy_modell: ab`. Batch #2: **Fable 3** (`PD_42_H1`,
+`PD_45_H1`, `SO_8_1`) · **Sonnet 3** (`PD_44_1`, `PD_46_H1`, `CS_7_1`) ·
+**ärvd 1** (`PD_43_1` — varje rad ordagrann från vinnaren, ingen ny copy).
+Bedömbara per modell: 0 / 0. Avgörs när båda har ≥ 5 bedömbara annonser.
+Vägen: Agent-verktyget fanns i sessionen (`model: "fable"` resp. `"sonnet"`),
+med exakt samma systemprompt och uppdragstext som `tools/copy-agent.mjs --torr`
+skriver ut.
 
 ---
 

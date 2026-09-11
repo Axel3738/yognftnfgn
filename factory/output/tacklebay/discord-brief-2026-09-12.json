@@ -1,0 +1,36 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay",
+  "datum": "2026-09-12",
+  "lage": "brief",
+  "server": "TackleBay — OPS",
+  "gjort": [
+    "Budget round: 0 changes. Campaign TACKLEBAY_SE_Spöhållaren is at 1 000 kr/day with 768 kr and 1 purchase over 2 days — under the 300 kr / 3 purchases gate, no verdict",
+    "No ads paused, nothing activated",
+    "Cold start: 52 ads, 0 above the data gate — no feedback loop yet, this round is built on inherited DNA from the source store",
+    "7 new briefs written and uploaded to the Fish rod holder hub as Draft (3 variants of proven winners, 2 new concepts with a source, 2 marked as guesses)",
+    "Copy A/B Fable vs Sonnet: 3 briefs each, 1 brief keeps the proven copy verbatim. Standing: 0 / 0 judgeable ads",
+    "Price verified in the store: 289 kr (no compare-at), calendar 469 kr",
+    "dna.md, batch-log.md and backlog.md updated and pushed to main"
+  ],
+  "siffror": { "spend_7d": 768, "kop_7d": 1, "roas_7d": 0.38, "vinstbidrag_7d": 0, "briefs_nya": 7 },
+  "briefer": [
+    { "namn": "TackleBayRod_PD_42_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_42_H1-3d8270ab908c812c8d07c33bb4cf0af9" },
+    { "namn": "TackleBayRod_PD_43_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_43_1-3d8270ab908c81c7ae3cd83bd925d865" },
+    { "namn": "TackleBayRod_PD_44_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_44_1-3d8270ab908c8109a405f0429b95d16e" },
+    { "namn": "TackleBayRod_PD_45_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_45_H1-3d8270ab908c812c802ed63f766d4d9a" },
+    { "namn": "TackleBayRod_PD_46_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_46_H1-3d8270ab908c81598d95ee5839252249" },
+    { "namn": "TackleBayRod_SO_8_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_SO_8_1-3d8270ab908c812da98ac9850ef6f3e9" },
+    { "namn": "TackleBayRod_CS_7_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_CS_7_1-3d8270ab908c81609089f1ad61a3ff27" }
+  ],
+  "action_axel": [
+    "No editor is assigned to TackleBay, so the 7 briefs have nobody to make them. Assign one: node factory/register.mjs redigerare tacklebay/fiskespohallare-4-pack \"<name>\" <discord-id>",
+    "10 finished videos from the source store sit in the hub in To be Reviewed (PD_40_H1, PD_37_H1, PD_36_H1 …) with the old landing page. No routine moves them into the TackleBay campaign — say the word and a brand-swap run is built"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13",
+  "varningar": [
+    "Meta rate limit hit during the inherited-history read (5 retries, up to 300 s each) — the run finished, but a nightly run may take 15+ minutes",
+    "The register says tomorrow (Sunday) is the next brief day. With no editor assigned, that means 7 more briefs into a hub where the first 7 have no data yet"
+  ]
+}

@@ -20,7 +20,9 @@ Flerpacket är den enda sanna rabatten butiken har, och den är otestad överall
 **Vad som gör den trovärdig:** den som har en IBC-tank har ofta två. Norska
 `CS_3_1` visar att sortimentstänket redan finns i materialet.
 
-**Status:** copyn skriven i första körningen (CS-blocket). Väntar på launch.
+**Status:** `[använd i batch #1]` — `TankGuard_CS_6_H1` (2026-09-12). ⚠️ Paket-
+priserna A/B-testas på sidan (799 vs 831 kr), så briefen säger bara "köp 2, få
+2 kranskydd på köpet", aldrig ett paketpris.
 
 ---
 
@@ -39,7 +41,9 @@ resten av samma jobb.
 bevisad som egen annons, inte bara som utfyllnad. Läs den kampanjens creatives
 innan bonusen får en egen vinkel.
 
-**Status:** obriefad idé. Ingen copy skriven.
+**Status:** delvis `[använd i batch #1]` — kranskyddet bär PROOF-beatet i
+`CS_6_H1` (2026-09-12). En EGEN vinkel för bonusen väntar fortfarande på att
+någon läst Magiborsten NO:s kranskydds-creatives. Ingen egen copy skriven.
 
 ---
 
@@ -55,8 +59,10 @@ Att ärva någon annans är att hitta på data. Verktyget finns —
 `tools/judgeme-import.mjs`, samma väg som `/no-recensioner` — men det är ett
 butiksjobb, inte ett creative-jobb.
 
-**Status:** blockerad. Tio annonser (fyra RV, fyra SP, två slutkort) väntar på
-att butiken får egna recensioner.
+**Status:** **avblockerad 2026-09-12** — tankguard.se visar 16 recensioner,
+snitt 4,81 (verifierat live). `[använd i batch #1]` som `TankGuard_SP_4_H1`:
+räkningen + ett citat ordagrant med förnamn. De ärvda RV/SP-annonserna med
+"hundratals trädgårdsägare" är fortfarande förbjudna.
 
 ---
 
@@ -70,4 +76,22 @@ presenning + gummiband mot blixtlås).
 säljer på väder i stället för på alger, och den ligger på 7 kr spend — alltså
 aldrig prövad. Säsongen är rätt nu.
 
-**Status:** copyn är ren och kan köras oförändrad. Ligger i första batchen.
+**Status:** `[använd i batch #1]` som video `TankGuard_PR_1_H1` (2026-09-12),
+märkt **gissning** — ingen annons har spenderat på vinkeln. Bildversionen
+`BOF_5_1` fick 6 kr i launch #1.
+
+---
+
+## 5. GT-vinkeln — varför den stoppar men inte säljer
+
+**Källa:** launch #1 i OPS-kontot (2026-09-09 → 09-11): GT-videorna tog 77 % av
+spenden (1 561 kr) med hook rate 32–37 % och 1 köp (CPA 629 kr). Under grinden —
+hypotes, inte dom.
+
+**Idén:** presentvinkeln stoppar scrollen men landar på en sida som säljer till
+tankägaren själv. Om den ska testas igen behöver antingen hooken peka på
+köparens egen tank, eller sidan ha ett "ge bort"-block. Det senare är ett
+butiksbeslut.
+
+**Status:** väntar. Ingen brief i batch #1 — batchen testar i stället fyra
+öppningar där köparen äger tanken (PD_7, SP_4, UV_1, PR_1).

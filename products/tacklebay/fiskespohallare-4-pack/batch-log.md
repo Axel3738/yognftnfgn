@@ -69,6 +69,45 @@ Skälet står inte i repot — `hypotes: ej loggad`. Ligger i backloggen som arb
    raden att läsa.
 4. Kalendern som betald upsell i varukorgen (Q4-ramverket) — syns det i AOV?
 
+### Utfall — avläst 2026-09-12 (körning nr 2, last_14d, `factory/budgetrond.mjs` + `skalning.mjs`)
+
+**52 annonser, 768 kr, 1 köp, 6 348 visningar — 0 bedömbara. KALLSTART.**
+Två dygn i kampanjen (180,99 kr · 586,90 kr/1 köp). Budgetronden: 0 ändringar.
+
+| Hypotes | Utfall | Data |
+|---|---|---|
+| 1. `PD_6_1` som statisk håller på ny butik | **Ingen dom** — 5 kr på 14 d | för tidigt |
+| 2. Skaka-testets hook på transportvinkeln | **Ingen dom** — `PD_15_H1` ligger inte i kampanjen (`PD_15_H2` 0 kr) | för tidigt; ärvs som variant i batch #2 (`PD_42_H1`) |
+| 3. `SP_1_H3` första raden att läsa | **Pekar fortfarande** — 83 kr, hook 39,0 %, hold 31,9 %, CTR 3,11 %, 0 köp | för tidigt, ingen dom |
+| 4. Kalendern som upsell syns i AOV | **Ingen dom** — 1 köp (289 kr, ingen kalender) | för tidigt |
+
+Enda köpet: `PD_22_H1`, 14 kr — brus. `PD_16_H2` hook 49,4 % på 61 kr — pekare.
+
+---
+
+## Batch #2 — 2026-09-12 · första briefronden (`/notionscalercs`, körning nr 2)
+
+**Kallstart:** ingen feedback-loop, allt bygger på ärvd DNA + backloggen.
+7 briefer (ingen redigerare tilldelad ⇒ 7, inte kadensens 21): 3 varianter
+av ärvda vinnare, 2 nya koncept med källa, 2 gissningar. Copy A/B: Fable 3,
+Sonnet 3, ärvd 1. Upp i hubben **Fish rod holder** som `Draft` 2026-09-12
+(`factory/output/tacklebay/notion-batch-02-2026-09-12.json`).
+
+| Annons | Typ | Förälder / källa | Isolerad variabel | Hypotes | Hook | Copy | Variabeltaggar |
+|---|---|---|---|---|---|---|---|
+| `TackleBayRod_PD_42_H1` | video | variant av ärvd `PD_15_H1` (39 köp) | mitten 3–12 s: mekanism-macro i stället för mer skakande | holden lyfter över 16,4 % utan att hooken (52 %) tappar | "Skakat upp och ner. Inget öppnar sig. Varför?" | fable | vinkel=demo/mekanism · hook=visuellt test · format=video captions · proof=demo+mekanism · offer=pris slutkort · talare=ingen |
+| `TackleBayRod_PD_43_1` | bild | variant av ärvd `PD_6_1` (20 köp, ROAS 3,02) | scenen: brygga → baksäte | scenen är utbytbar, texten bär | "Ett klick. Spöet stängt." (ärvd) | ärvd | vinkel=demo · hook=påstående · format=statisk demo · proof=demo · offer=pris · textmängd=rubrik+underrubrik+pris |
+| `TackleBayRod_PD_44_1` | bild | variant av ärvd `PD_6_1` | rubriken: stängningslöfte → transportlöfte | rubriken är inte bäraren | "Håller stängt genom varje sväng." | sonnet | vinkel=demo/transport · hook=påstående · format=statisk demo · proof=demo · offer=pris |
+| `TackleBayRod_PD_45_H1` | video | nytt: winning line (85 köp) + `vinkel.huvudvinkel` | — | problem-först i bilen stoppar scrollen som produkt-först | "Trasslet började i baksätet, inte vid vattnet." | fable | vinkel=problem/lösning transport · hook=påstående · format=video captions · proof=demo · offer=pris slutkort |
+| `TackleBayRod_PD_46_H1` | video | nytt: leverantörens låssekvens + dna mönster 3 | — | enhandslåset ensamt bär en 8 s-annons | "En hand. Två klick. Låst." | sonnet | vinkel=demo/enhandslås · hook=siffra · format=video 8 s captions · proof=demo · offer=pris slutkort |
+| `TackleBayRod_SO_8_1` | bild | **gissning** — SO ej över grinden i källan; Judge.me 7 st | — | sju riktiga femstjärniga säljer en 289-kr-klämma | "Sju av sju ger fem stjärnor." | fable | vinkel=social proof · hook=siffra/recension · format=recensionskort+produkt · proof=recension verbatim · offer=pris litet |
+| `TackleBayRod_CS_7_1` | bild | **gissning** — Q4-ramverket, `offer.bonus_produkt` | — | present-kroken lyfter ordervärdet (andel order med kalender) | "Spöhållaren nu. Dragen i december." | sonnet | vinkel=erbjudande/present · hook=påstående · format=split produkt+kalender · proof=inget · offer=båda priser, ingen rabatt |
+
+Pris verifierat 2026-09-12: 289 kr (inget jämförpris), kalendern 469 kr.
+Tre-frågorstestet står per rad i varje brief (sektion 8); ❌ finns bara på
+ärvda rader som briefen kräver ordagranna (winning line) och på Mikaels
+ordagranna recension — inga nyskrivna rader med ❌.
+
 ### Utfall
 
-*Fylls i vid första briefronden. Ingen avläsning gjord ännu.*
+*Fylls i vid nästa briefrond när annonserna passerat grinden.*

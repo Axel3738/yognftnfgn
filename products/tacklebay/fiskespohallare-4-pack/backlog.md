@@ -21,9 +21,17 @@ eller konkurrent-signal i `docs/swipes/`. Kan den inte det står den som gissnin
 
 | Idé | Varför den kan funka | Källa |
 |---|---|---|
-| **Skaka-testet med TackleBays hold-fix** — samma öppning (upp och ner, skaka, 0–3 s), men sekund 3–12 visar VARFÖR den håller (svampen, tvåstegslåset i macro) i stället för mer skakande | Hooken är bevisad (52 %), holden är kontots sämsta (16,4 %). Variant med EN variabel: mittpartiet. | winning creative `Rodholder_PD_15_H1`, 9 268 kr |
-| **Statisk demo nr 2 — transportbilden** — klämman på ihopfällt spö i baksätet/båtdurken, samma textlayout som `PD_6_1` | `PD_6_1` bevisade att demon säljer som bild (ROAS 3,02). Variant: samma format, samma copy, ny scen = transport (TackleBays vinkel) i stället för brygga. | winning creative `Rodholder_PD_6_1`, 2 801 kr |
-| **"Det som går sönder händer på vägen dit"** — video: spön som slår mot varandra i kurvan, toppen mot rullhållaren, sedan klämman | TackleBays huvudvinkel (produktfilen, byggd på leverantörens bilder). Winning line "Trassliga fiskespön i båten – igen?" är samma smärta i kundens ord. | winning line (85 köp) + `vinkel.huvudvinkel` i produktfilen |
-| **Enhandsgreppet** — "en hand, två klick, spöt sitter", 8 s, ingen VO | Bild 3 i leverantörsmaterialet visar låssekvensen i tre steg; källans `PD`-DNA säger produkten i bild från sekund 0. | leverantörens produktbilder + dna.md mönster 3 |
-| **Recensionsraden som social proof** — de sju riktiga 5-stjärniga omdömena ("stabil", "spöna sitter bra") som textkort ovanpå demon | SO är otestad i källan (2 annonser, 1 143 kr, 5 köp — under grinden på båda). ⚠️ **Gissning** tills SO passerat grinden. | `SO_4_1`/`SO_3_H1` (för tidigt) + Judge.me 7 st |
-| **Kalendern som present-krok i varukorgen** — "till fiskaren som redan har allt: spöhållaren nu, kalendern i december" | Q4-ramverket: kalendern är den betalda upsellen. Säsong okt–dec. ⚠️ **Gissning** — ingen annons har testat korsförsäljningen. | `offer.bonus_produkt` i produktfilen |
+| ~~**Skaka-testet med TackleBays hold-fix**~~ **[använd i batch #2 → `TackleBayRod_PD_42_H1`]** | Hooken är bevisad (52 %), holden är kontots sämsta (16,4 %). Variant med EN variabel: mittpartiet. | winning creative `Rodholder_PD_15_H1`, 9 268 kr |
+| ~~**Statisk demo nr 2 — transportbilden**~~ **[använd i batch #2 → `TackleBayRod_PD_43_1`; syskonet `PD_44_1` isolerar rubriken i stället]** | `PD_6_1` bevisade att demon säljer som bild (ROAS 3,02). Variant: samma format, samma copy, ny scen = transport. | winning creative `Rodholder_PD_6_1`, 2 801 kr |
+| ~~**"Det som går sönder händer på vägen dit"**~~ **[använd i batch #2 → `TackleBayRod_PD_45_H1`]** | TackleBays huvudvinkel. Winning line "Trassliga fiskespön i båten – igen?" är samma smärta i kundens ord. | winning line (85 köp) + `vinkel.huvudvinkel` i produktfilen |
+| ~~**Enhandsgreppet**~~ **[använd i batch #2 → `TackleBayRod_PD_46_H1`]** | Låssekvensen i tre steg; produkten i bild från sekund 0. | leverantörens produktbilder + dna.md mönster 3 |
+| ~~**Recensionsraden som social proof**~~ **[använd i batch #2 → `TackleBayRod_SO_8_1`, märkt gissning]** | SO är otestad i källan. ⚠️ **Gissning** tills SO passerat grinden. | `SO_4_1`/`SO_3_H1` (för tidigt) + Judge.me 7 st |
+| ~~**Kalendern som present-krok**~~ **[använd i batch #2 → `TackleBayRod_CS_7_1`, märkt gissning]** | Q4-ramverket: kalendern är den betalda upsellen. ⚠️ **Gissning** — ingen annons har testat korsförsäljningen. | `offer.bonus_produkt` i produktfilen |
+
+### Nya idéer (väntar, tillkomna 2026-09-12)
+
+| Idé | Varför den kan funka | Källa |
+|---|---|---|
+| **Skaka-testet på 8 s** — bara hooken + slutkort, om `PD_42_H1`:s hold inte rör sig | Om holden inte lyfts av mekanism-mitten är hooken hela annonsen; kortare film = mindre att tappa. | dna.md mönster 3; följdtest av `PD_42_H1` |
+| **SO som video** — de sju recensionerna som captions ovanpå skaka-testet | Bara om `SO_8_1` passerar grinden. | `SO_8_1` (batch #2) |
+| **Ärvda vinnarna in i kampanjen** — `PD_15_H1`, `PD_16_H1`, `PD_11_H2` brand-swappade | Arbete, inte koncept — står under "Väntar på åtgärd". | backloggen ovan |

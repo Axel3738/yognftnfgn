@@ -295,13 +295,26 @@ export async function uppdateraBudget(id, sek, { torr = false } = {}) {
   return { fore, efter, torr: false };
 }
 
+/** Statusfälten som finns på ALLA tre nivåerna. En annons har ingen budget —
+ *  frågar man efter daily_budget på en ad svarar Meta 400 "(#100) Tried
+ *  accessing nonexisting field (daily_budget)". Mätt 2026-09-12 i nattvakten
+ *  på AdventLane: pausen av PD_1_H1 föll på tillbakaläsningen FÖRE skrivningen,
+ *  så annonsen låg kvar ACTIVE medan loggen sa "misslyckad". */
+export const STATUSFÄLT = 'id,name,status,effective_status,updated_time';
+
+/** Läser bara status (kampanj, adset eller annons). */
+export async function lasStatus(id) {
+  return api(String(id), { params: { fields: STATUSFÄLT } });
+}
+
 /** Pausar en kampanj, ett adset eller en annons och läser tillbaka statusen.
- *  torr=true läser bara. Det finns ingen motsvarande "slå på" här — med flit. */
+ *  torr=true läser bara. Det finns ingen motsvarande "slå på" här — med flit.
+ *  Läser STATUSFÄLT, aldrig budgetfälten — se lasStatus. */
 export async function pausa(id, { torr = false } = {}) {
-  const fore = await lasBudget(id);
+  const fore = await lasStatus(id);
   if (torr) return { fore, efter: null, torr: true };
   await api(String(id), { form: { status: 'PAUSED' } });
-  const efter = await lasBudget(id);
+  const efter = await lasStatus(id);
   return { fore, efter, torr: false };
 }
 

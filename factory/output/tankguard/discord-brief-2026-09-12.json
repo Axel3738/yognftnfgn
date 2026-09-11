@@ -1,0 +1,66 @@
+{
+  "brand": "TankGuard",
+  "butik": "tankguard",
+  "datum": "2026-09-12",
+  "lage": "brief",
+  "kanal": "ads-to-do",
+  "gjort": [
+    "Budget round: 0 changes — campaign is PAUSED since 2026-09-11 16:02 (a decision, never touched)",
+    "40 ads read: 2 017 SEK, 1 purchase in 3 days. 0 above the gate → cold start, no feedback loop yet",
+    "7 briefs created as Draft in the hub (6 video + 1 image), copy A/B 4 Fable / 3 Sonnet",
+    "Price 489 SEK + 16 reviews verified live; memory files pushed to main"
+  ],
+  "siffror": {
+    "spend_7d": 2017,
+    "kop_7d": 1,
+    "roas_7d": 0.24
+  },
+  "briefer": [
+    {
+      "namn": "TankGuard_PD_7_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/TankGuard_PD_7_H1-3d8270ab908c8119a5cce4ab686a9201"
+    },
+    {
+      "namn": "TankGuard_PD_7_H2",
+      "typ": "video",
+      "url": "https://app.notion.com/p/TankGuard_PD_7_H2-3d8270ab908c8166a479d81cf35827f6"
+    },
+    {
+      "namn": "TankGuard_CS_6_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/TankGuard_CS_6_H1-3d8270ab908c81528d54fdc8c983e395"
+    },
+    {
+      "namn": "TankGuard_PR_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/TankGuard_PR_1_H1-3d8270ab908c81f3831ee139c1e87630"
+    },
+    {
+      "namn": "TankGuard_SP_4_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/TankGuard_SP_4_H1-3d8270ab908c81139cd6cbc5342e7c53"
+    },
+    {
+      "namn": "TankGuard_UV_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/TankGuard_UV_1_H1-3d8270ab908c814198a0e6ee36e923f9"
+    },
+    {
+      "namn": "TankGuard_FE_1_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/TankGuard_FE_1_1-3d8270ab908c8125a6c0f28523dd4e2f"
+    }
+  ],
+  "varningar": [
+    "17 of 40 ads are flagged WITH_ISSUES by Meta — reason visible only in Ads Manager",
+    "Bundle prices are A/B-tested on the page (799 vs 831 SEK): briefs say 489 SEK + 'buy 2, get 2 tap covers free', never a bundle price",
+    "No editor assigned to TankGuard — nobody will make the 7 briefs"
+  ],
+  "action_axel": [
+    "Assign an editor to TankGuard: run `node factory/register.mjs redigerare tankguard \"<name>\" <discord-id>` — 7 briefs are waiting in the hub with nobody assigned",
+    "Open Ads Manager → account MagiBorsten DK → campaign TANKGUARD_SE_Tanköverdraget: 17 ads show WITH_ISSUES and the campaign is paused. Read the flag and decide — the routine will never reactivate it"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13"
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "namn": "TankGuard_PD_7_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/TankGuard_PD_7_H1/brief.md"
+  },
+  {
+    "namn": "TankGuard_PD_7_H2",
+    "typ": "video",
+    "brief": "video-ads-briefs/TankGuard_PD_7_H2/brief.md"
+  },
+  {
+    "namn": "TankGuard_CS_6_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/TankGuard_CS_6_H1/brief.md"
+  },
+  {
+    "namn": "TankGuard_PR_1_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/TankGuard_PR_1_H1/brief.md"
+  },
+  {
+    "namn": "TankGuard_SP_4_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/TankGuard_SP_4_H1/brief.md"
+  },
+  {
+    "namn": "TankGuard_UV_1_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/TankGuard_UV_1_H1/brief.md"
+  },
+  {
+    "namn": "TankGuard_FE_1_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/TankGuard_FE_1_1/brief.md"
+  }
+]
