@@ -63,6 +63,14 @@ ladda inte upp igen. Rader med `leverans: saknas` (ingen fil): kommentar
 - Priset: annonsens pris (inbränt eller i copyn) mot `pris_butik.pris` ur
   JSON:en. `pris_butik: null` (sidan gick inte att läsa) ⇒ ladda INTE upp
   rader med pris i annonsen; lägg dem under ACTION NEEDED med skälet.
+- **Flyttade rader** (`prefix_avviker: true`, t.ex. `Overvakningskamera_BOF_9_1`
+  i HeimGuards hub — hubbarna kom från Bäverbutiken 2026-09-10): kön har
+  redan märkt om målnamnet till butikens prefix (`HeimGuard_BOF_9_1`), och
+  det är det namnet som laddas upp. Titta extra: syns "Bäverbutiken",
+  Bäverbutikens pris eller logga i creativen laddas den INTE upp — kommentar
+  i Notion, status `Draft`, och raden under ACTION NEEDED så Axel avgör om
+  redigeraren ska göra en butiksversion. Länken är alltid `lank` (ärvd ur
+  kampanjen), aldrig radens `Landing page` som kan peka på bäverbutiken.se.
 - Fel ⇒ `node tools/notion-aterkoppling.mjs <page-id> --kommentar "<vad, på engelska>" --status Draft`.
 
 ### 3. Copy
