@@ -1,0 +1,157 @@
+# Whisky Adventskalender – 24 miniatyrflaskor
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Whisky Adventskalender – 24 miniatyrflaskor"
+  id: "whisky-amazon"
+  handle: "whisky-adventskalender-24-miniatyrflaskor"
+  menynamn: "Whiskykalendern"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 9.7 USD landat (produkt + frakt in) × 9.6414 = 94 kr.
+  inkopskostnad: 94
+  pris: 349
+  jamforpris: 469
+  # Break-even-ROAS 1,37 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-whisky-amazon-1.png?v=1789107106"
+      alt: "Whiskykalender: grön ask med whiskyglas på locket och tjugofyra dekorativa miniatyrflaskor runt om"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: ""
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "Fel sort blir stående i skåpet"
+  problem_text: "En riktig flaska kräver att du gissar rätt sort – rökig, torvig eller söt bourbon – och gissar du fel blir den stående oöppnad. Och en flaska med etikett och åldersgräns känns fel att skicka i posten till någon du inte kan legitimationskolla."
+  losning_rubrik: "Ingen sort att välja fel på"
+  losning_text: "Bakom var och en av kalenderns 24 luckor väntar en miniatyrflaska med tryckt whiskyetikett – utan innehåll, utan åldersgräns, bara dekor att hänga i granen efter december. Ingen gissning om rätt sort, för det finns ingen dryck att välja fel."
+
+vinkel:
+  huvudvinkel: "Dekorflaskor – ingen alkohol — ur verifierade fakta om varan, En adventskalenderlåda med 24 luckor där varje lucka innehåller en miniatyr-whiskyflaska i"
+  underrubrik: "24 dekorflaskor bakom luckorna – ingen alkohol, bara julkänsla att hänga i granen."
+  usp: "Dekorflaskor – ingen alkohol"
+
+malgrupp:
+  beskrivning: "Vuxna som vill ge en whiskyintresserad vuxen (man eller kvinna) en festlig, alkoholfri adventskalender – någon som uppskattar looket och nedräkningen, inte en flaska att dricka."
+
+problem:
+  - "Du vet inte om mottagaren dricker rökig, torvig eller söt whisky – fel gissning blir en flaska som aldrig öppnas."
+  - "En riktig flaska kräver åldersgräns vid köp och går inte att skicka hur som helst i posten."
+  - "De vanliga presenterna till någon whiskyintresserad (glas, kork, bok) känns redan givna."
+
+benefits:
+  - "Du slipper gissa vilken whisky mottagaren gillar – det finns ingen sort att välja fel"
+  - "Räknar ner mot jul utan att fylla på med alkohol eller godis"
+  - "Flaskorna går att spara och hänga i granen igen nästa jul"
+  - "Går att skicka och ge bort utan åldersgräns, eftersom det inte är dryck"
+  - "Färdig present direkt ur lådan – ingen inslagning behövs"
+
+features:
+  - "24 miniatyrflaskor i plast/harts, ca 5 x 2 cm, med tryckta whiskyetiketter"
+  - "Hängögla/snöre på varje flaska – häng i granen eller ställ på hylla"
+  - "Kalenderlåda 25 x 18 x 5 cm med 24 fack och grönt julmotiv"
+  - "Ingen montering – klar att ge bort direkt ur lådan"
+  - "Innehåller ingen alkohol"
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Den här matchar för att mottagaren gillar whisky, men du slapp gissa vilken sort hen dricker."
+  sma_delar: true
+  alkoholtema: true
+  taggar:
+    - "mottagare:vuxen"
+    - "intresse:whisky"
+    - "egenskap:dekor"
+
+offer:
+  beskrivning: "Whisky Adventskalender – 24 miniatyrflaskor — 349 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Innehåller kalendern alkohol?"
+    svar: "Nej. De 24 flaskorna är dekorationer i plast/harts med tryckta whiskyetiketter – inget att dricka, inget att fylla på."
+  - fraga: "Kan man öppna flaskorna?"
+    svar: "Nej, de är massiva dekorobjekt utan lock eller innehåll att komma åt."
+  - fraga: "Är flaskorna likadana i varje kalender och sitter de i nummerordning bakom luckorna?"
+    svar: "Vi har inte fått bekräftat av leverantören exakt vilka 24 flaskor som ingår eller om luckorna är numrerade – vi uppdaterar sidan så fort vi vet mer."
+  - fraga: "Hur lång är leveranstiden och vad kostar frakten?"
+    svar: "5–10 arbetsdagar. Fri frakt till Sverige och Norge."
+  - fraga: "Vad händer om jag ångrar mig?"
+    svar: "Du har 14 dagars ångerrätt från att du fått kalendern, enligt svensk distansköpslag."
+  - fraga: "Finns det en åldersgräns för att köpa eller skicka den?"
+    svar: "Nej – eftersom kalendern inte innehåller alkohol gäller ingen åldersgräns vid köp eller leverans."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.amazon.se/dp/B0FYCK8SB5"
+  anteckning: "Amazon-listning. Dekorflaskor i plast/harts, INGEN dryck (\"inga riktiga drycker\" står i listningen). ⚠️ Flasketiketterna härmar igenkännbara whiskyvarumärken — varumärkesrisk i annonsbild och på produktbild."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneWhisky"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Ingen uppgift om vilka 24 flaskor som ingår eller om urvalet är detsamma i varje låda."
+  - "Inget belägg för CE-märkning, kvävningsvarning eller åldersmärkning på förpackningen."
+  - "Vikt, exakt material (plast kontra harts) och hållbarhet är inte specificerat mer än \"slitstark\"."
+  - "Ingen uppgift om kvalitet på tryck/etiketter — Amazon-listningen har 1,0 av 5 i betyg på 2 recensioner utan läsbar text."
+  - "Ingen uppgift om huruvida luckorna är numrerade 1–24 eller går att öppna i valfri ordning."
+  - "Inget belägg för att flaskorna kan öppnas eller fyllas — de framställs som massiva dekorföremål."
+
+verifierat:
+  vad_det_ar: "En adventskalenderlåda med 24 luckor där varje lucka innehåller en miniatyr-whiskyflaska i plast/harts (ca 5 × 2 cm) — dekorföremål med snöre att hänga upp, ingen dryck och inget att fylla själv."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "vuxen 18+ (Amazon anger motstridigt \\\"Målgrupp: Vuxen\\\" och \\\"Åldersspann: Från 6 år\\\")"
+  risk: "Flaskornas etiketter på leverantörsbilden imiterar tydligt igenkännbara verkliga bourbon-/whiskyvarumärken, vilket är en varumärkesrisk i annonser och på produktbild — och kunden kan tro att det är dryck, eftersom Amazon säljer den i kategorin Livsmedel."
+  ingar:
+    - "24 miniatyrflaskor i plast/harts, ca 5 x 2 cm styck, med tryckta whiskyetiketter"
+    - "Varje flaska har hängögla/snöre — kan hängas i granen eller ställas på hylla"
+    - "Kalenderlåda 25 x 18 x 5 cm med 24 fack, grönt julmotiv, texten \"WHISKEY ADVENT CALENDAR 2025\""
+    - "Ingen montering behövs; lådan är färdig att ge bort utan extra inslagning"
+  varningar:
+    - "Amazon anger \"Åldersspann: Från 6 år\" samtidigt som \"Målgrupp: Vuxen\" — motstridiga uppgifter, inte en verifierad åldersmärkning."

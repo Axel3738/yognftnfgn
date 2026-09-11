@@ -1,0 +1,119 @@
+{
+  "input": {
+    "title": "Golf Adventskalender – 24 golftillbehör",
+    "handle": "golf-adventskalender-24-golftillbehor",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>24 numrerade luckor, färdigfyllda med golftillbehör han faktiskt tar med till banan.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Golf Adventskalender – 24 golftillbehör – AdventLane",
+      "description": "En julklapp han faktiskt använder på banan, inte nästa presenttips på en lista.. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "549.00",
+        "compareAtPrice": "719.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-golf-1.png?v=1789107111",
+        "contentType": "IMAGE",
+        "alt": "Golfkalender: grön ask med golfspelare på locket och tjugofyra numrerade luckor"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-golf-2.jpg?v=1789107114",
+        "contentType": "IMAGE",
+        "alt": "Golftillbehören som ingår: bollar, peggar, markörer, greenlagare, handduk och verktyg"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Golfbagen tömmer sig i det tysta"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Peggar knäcks, bollar försvinner i ruffen eller vattnet, borsten faller ur sidofacket — och ingen skriver upp det på en önskelista, för det känns för smått att önska sig. Så blir julklappen antingen en klubba han redan har, eller ett presentkort som hamnar i en låda till våren."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "24 luckor, redan fyllda med det han ändå tar slut på"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Den här kalendern har golftillbehör bakom varje lucka i stället för choklad: golfbollar, peggar i plast och trä, bollmarkeringar, en greenlagare med spegel, en klubbrengöringsborste och en golfhandduk, bland annat. Han öppnar en lucka om dagen fram till julafton — och det som ligger där är sånt som faktiskt hamnar i bagen, inte i en låda med julklappspapper kvar på."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-golf-2.jpg?v=1789107114"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"En julklapp han faktiskt använder på banan, inte nästa presenttips på en lista.\",\"24 dagars nedräkning till jul — inte en påse godis uppäten på tio minuter.\",\"Fyller på det han ändå köper själv, innan han hinner sakna det.\",\"Ett paket att slå in, inte 24 separata småpresenter att hålla reda på.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"24 numrerade luckor, färdigfyllda med golftillbehör — inget att fylla i själv.\",\"Innehållet är golftillbehör i plast, metall och trä: bland annat golfbollar, peggar, bollmarkeringspennor, linjemarkörer, en kepsklämma med bollmarkör, en greenlagare med spegel, en T-nyckel för skonaglar med spikes, en klubbrengöringsborste, ett spårverktyg, nyckelringar och en golfhandduk med clips.\",\"Kartong: 30 × 28 × 6 cm, ca 500 g — går att skicka direkt som present.\",\"Riktar sig till vuxna och tonåringar som spelar golf. Tillverkaren anger varken CE-märkning eller åldersgräns, så den beskrivs aldrig som barnsäker.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vad ligger bakom luckorna?\",\"svar\":\"Golftillbehör i plast, metall och trä — bland annat golfbollar, peggar, bollmarkeringspennor, linjemarkörer, en greenlagare med spegel, en klubbrengöringsborste och en golfhandduk. Exakt vad som ligger bakom varje enskild lucka anger inte tillverkaren, så vi kan inte lista det lucka för lucka.\"},{\"fraga\":\"Är kalendern färdigfylld, eller ska jag fylla den själv?\",\"svar\":\"Färdigfylld. Alla 24 luckor har innehåll redan när kalendern kommer hem till dig — inget att köpa på och fylla i själv.\"},{\"fraga\":\"Passar den för barn?\",\"svar\":\"Den är gjord för vuxna och tonåringar som spelar golf, inte för yngre barn. Innehållet har små lösa delar som peggar och markörer, och tillverkaren anger varken CE-märkning eller åldersgräns — vi beskriver den därför aldrig som barnsäker.\"},{\"fraga\":\"Hur stor är kartongen, går den att skicka direkt som present?\",\"svar\":\"30 × 28 × 6 cm och väger ca 500 g. Den går fint att posta direkt till mottagaren.\"},{\"fraga\":\"Vad händer om jag vill skicka tillbaka den?\",\"svar\":\"Du har 14 dagars ångerrätt från att du fått paketet, som på alla köp hos oss.\"},{\"fraga\":\"Hur lång är leveranstiden och kostar frakten något?\",\"svar\":\"5–10 arbetsdagar, med fri frakt inom Sverige och Norge.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:vuxen\",\"intresse:golf\",\"egenskap:varar\"],\"mening\":\"Till golfaren som redan har allt: 24 luckor med golftillbehör som ändå går åt — peggar, bollar och markeringar, en lucka om dagen fram till julafton.\",\"sma_delar\":true,\"alkoholtema\":false}"
+    }
+  ]
+}

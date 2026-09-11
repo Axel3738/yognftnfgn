@@ -40,6 +40,7 @@ import { laddaEnv } from './env.mjs';
 import { graphql, hamtaProduktViaHandle, hamtaArbetstema, kontrolleraAnslutning } from './shopify.mjs';
 import { lasState } from './state.mjs';
 import { lasOversattning, lasUnderlag, byggMinimalKontext } from './oversattning.mjs';
+import { produktHandle } from './build-store.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 
@@ -351,19 +352,33 @@ export async function registrera(resourceId, locale, rader) {
   return { antal };
 }
 
+// Produkternas (och bonusprodukternas) handles i butiken, i läsordning.
+//
+// ⚠️ BUTIKENS handle, aldrig filens id. De är samma på de flesta produkter,
+// men `produkt.handle` sätts med flit när adressen ska bära sökord — filen
+// heter `barnsmycken`, butiken `barnens-smyckeskalender-24-parlor`. Slås
+// filens id upp i stället hittas produkten inte, och eftersom en saknad
+// produkt kastar stannar HELA översättningen: mätt 2026-09-11 på adventlane,
+// där elva nya produkter låg helt osvarade på /nb av exakt den orsaken.
+export function resursHandles(ctx) {
+  const produkter = (ctx?.produkter ?? []).map((pk) => pk?.p ?? pk);
+  const handles = [];
+  for (const p of produkter) {
+    const handle = produktHandle(p);
+    if (handle && !handles.some((h) => h.handle === handle)) handles.push({ handle, typ: 'produkt' });
+    const bonus = p?.offer?.bonus_produkt?.handle;
+    if (bonus && !handles.some((h) => h.handle === bonus)) handles.push({ handle: bonus, typ: 'bonus' });
+  }
+  return handles;
+}
+
 // Alla resurser butiken bär text i: [{ id, typ, handle?, translatableContent }].
 // Produkterna kommer ur ctx.produkter (pk.p eller p), tema-filerna filtreras
 // på arbetstemat (temaId). Sidor, menylänkar, policyer, paket och
 // kollektioner listas för hela butiken — en OPS-butik har inga andra.
 export async function samlaResurser(ctx, temaId) {
   const ut = [];
-  const produkter = (ctx?.produkter ?? []).map((pk) => pk?.p ?? pk);
-  const handles = [];
-  for (const p of produkter) {
-    if (p?.produkt?.id) handles.push({ handle: p.produkt.id, typ: 'produkt' });
-    const bonus = p?.offer?.bonus_produkt?.handle;
-    if (bonus && !handles.some((h) => h.handle === bonus)) handles.push({ handle: bonus, typ: 'bonus' });
-  }
+  const handles = resursHandles(ctx);
   for (const { handle, typ } of handles) {
     const produkt = await hamtaProduktViaHandle(handle);
     if (!produkt) {

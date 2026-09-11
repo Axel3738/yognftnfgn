@@ -35,6 +35,7 @@ import { basename, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
 import { graphql, hamtaProduktViaHandle, kontrolleraAnslutning } from './shopify.mjs';
+import { produktHandle } from './build-store.mjs';
 
 export const METAOBJEKT_TYP = 'ms_paketniva';
 // Äldre namn på samma konstant (TackleBay-grenen) — behålls så inget bryts.
@@ -481,7 +482,10 @@ export async function byggPaket(ctx, produkt, { torr = false, tvinga = false, st
       (definition.andrad && !definition.skapad && definition.tillagda.length === 0 ? ', capabilities/access rättade' : '')
   );
 
-  const handle = produkt.produkt.id;
+  // Butikens handle, inte filens id — se produktHandle(). Elva av adventlanes
+  // produkter blev utan paketnivåer 2026-09-11 för att `produkt.handle` var
+  // satt och id:t slogs upp i stället.
+  const handle = produktHandle(produkt);
   const iButiken = await hamtaProduktViaHandle(handle);
   if (!iButiken) throw new Error(`Produkten ${handle} finns inte i butiken — kör produkt-steget först.`);
   const produktGid = iButiken.id;

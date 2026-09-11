@@ -274,10 +274,14 @@ test('skrivMeny(handle, rader) skapar med härledd titel; oförändrad meny rör
   assert.equal(skickat.length, 3, 'ingen mutation när menyn redan stämmer');
 });
 
-test('skrivKollektion tar ett input-objekt och uppdaterar befintlig kollektion med id', async () => {
+test('skrivKollektion uppdaterar befintlig kollektion UTAN products och lägger till medlemmarna separat', async () => {
+  // Admin API 2025-07 svarar "products cannot be specified during update".
+  // Skickas de i input stoppar hela steget med noll produkter tillagda —
+  // mätt 2026-09-11 när AdventLane skulle få sina elva nya kalendrar.
   fejkaShopify([
     { data: { collections: { nodes: [{ id: 'gid://c/1', handle: 'sortiment', title: 'Gammal' }] } } },
     { data: { collectionUpdate: { collection: { id: 'gid://c/1', handle: 'sortiment', title: 'Sortimentet' }, userErrors: [] } } },
+    { data: { collectionAddProducts: { collection: { id: 'gid://c/1' }, userErrors: [] } } },
   ]);
   const ut = await skrivKollektion({ handle: 'sortiment', titel: 'Sortimentet', produktIds: ['gid://p/1'] });
   assert.equal(ut.skapad, false);
@@ -285,10 +289,22 @@ test('skrivKollektion tar ett input-objekt och uppdaterar befintlig kollektion m
     handle: 'sortiment',
     title: 'Sortimentet',
     descriptionHtml: '',
-    products: ['gid://p/1'],
     sortOrder: 'MANUAL',
     id: 'gid://c/1',
   });
+  assert.match(skickat[2].query, /collectionAddProducts/);
+  assert.deepEqual(skickat[2].variables, { id: 'gid://c/1', productIds: ['gid://p/1'] });
+});
+
+test('skrivKollektion skapar ny kollektion MED products i samma anrop', async () => {
+  fejkaShopify([
+    { data: { collections: { nodes: [] } } },
+    { data: { collectionCreate: { collection: { id: 'gid://c/9', handle: 'sortiment', title: 'Sortimentet' }, userErrors: [] } } },
+  ]);
+  const ut = await skrivKollektion({ handle: 'sortiment', titel: 'Sortimentet', produktIds: ['gid://p/1', 'gid://p/2'] });
+  assert.equal(ut.skapad, true);
+  assert.deepEqual(skickat[1].variables.input.products, ['gid://p/1', 'gid://p/2']);
+  assert.equal(skickat.length, 2, 'ingen extra collectionAddProducts när skapandet redan bar produkterna');
 });
 
 test('publiceraIButiken kastar aldrig — fel blir { publicerad:false, notis }', async () => {

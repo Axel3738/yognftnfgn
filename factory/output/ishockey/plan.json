@@ -1,0 +1,108 @@
+{
+  "input": {
+    "title": "Ishockey Adventskalender – 24 Luckor med Hockeyprylar",
+    "handle": "ishockey-adventskalender-24-luckor",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>24 numrerade luckor på en ask med hockeytema genomgående – nedräkningen till julafton för hockeyfantasten i familjen.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Ishockey Adventskalender – 24 Luckor med Hockeyprylar – AdventLane",
+      "description": "En nedräkning till jul som faktiskt handlar om det hen är intresserad av – inte en slumpmässig chokladkalender.. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "399.00",
+        "compareAtPrice": "529.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-ishockey-1.png?v=1789107139",
+        "contentType": "IMAGE",
+        "alt": "Hockeykalender: blå ask formad som en rink med klubbor på locket och små spelarfigurer framför"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Chokladkalendern säger ingenting om hockeyintresset"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "December är fullspäckad av matcher, men julafton känns ändå långt borta. En hockeyfantast som får en vanlig chokladkalender öppnar den på tio sekunder och slänger den – ingen koppling till det hen faktiskt sitter och kollar på varje kväll."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "En kalender som är hockey rakt igenom"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Asken är hockey utan kompromiss: isarena, strålkastare och korsade klubbor tryckt över hela framsidan, med 24 numrerade luckor som räknar ner till julafton. Bakom luckorna väntar ett sortiment av hockeyprylar och samlarfigurer i olika lagfärger – ingen choklad, inget som konkurrerar med adventsljusstaken om uppmärksamheten."
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"En nedräkning till jul som faktiskt handlar om det hen är intresserad av – inte en slumpmässig chokladkalender.\",\"24 dagar utan att behöva komma på nya sätt att visa att du tänkt på hockeyintresset.\",\"Ingen onödig choklad eller godis i kalendern – bara hockeytema.\",\"En ask som står fint på hyllan eller bordet hela december.\",\"En enda variant att välja – inget krångel med färger eller modeller innan köpet.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Kartongask, 22 × 32 × 4 cm, med isarena, strålkastare och hockeyklubbor tryckta på framsidan\",\"24 numrerade, perforerade luckor – en att öppna varje dag fram till julafton\",\"Sortiment av hockeyprylar och samlarfigurer: minihockeyklubbor i plast, nyckelringar i metall/läderrem och figurer med hockeyhjälm i olika lagfärger\",\"Helt fri från alkohol och godis\",\"En variant – inget val av färg eller modell\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vad finns bakom luckorna?\",\"svar\":\"Ett sortiment av hockeyprylar och samlarfigurer – till exempel minihockeyklubbor, nyckelringar och figurer med hockeyhjälm i olika lagfärger. Vi anger inte exakt vilket föremål som ligger bakom varje enskild lucka.\"},{\"fraga\":\"Innehåller kalendern godis eller alkohol?\",\"svar\":\"Nej. Kalendern är helt fri från både godis och alkohol – innehållet är hockeytillbehör och samlarfigurer, inget att äta eller dricka.\"},{\"fraga\":\"Vilken ålder passar kalendern för?\",\"svar\":\"Det står ingen åldersgräns på förpackningen. Innehållet är småprylar och samlarfigurer, så vi rekommenderar att en vuxen håller ett öga på det om det finns småsyskon i huset.\"},{\"fraga\":\"Är figurerna licensierade lagprodukter?\",\"svar\":\"Det framgår inte av förpackningen, så vi lovar ingen officiell lag- eller ligalicens – kalendern säljs som en hockeytemad julkalender, inte som märkesvaror.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"5–10 arbetsdagar, med fri frakt både i Sverige och Norge.\"},{\"fraga\":\"Kan jag skicka tillbaka kalendern om den inte passar?\",\"svar\":\"Ja, du har 14 dagars ångerrätt från att du fått paketet.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:barn\",\"mottagare:tonaring\",\"mottagare:vuxen\",\"alder:9-12\",\"intresse:hockey\",\"egenskap:varar\",\"egenskap:dekor\"],\"mening\":\"Perfekt för den som hellre håller koll på tabellen än på julgranen – 24 luckor med hockeyprylar, inte choklad.\",\"sma_delar\":true,\"alkoholtema\":false}"
+    }
+  ]
+}

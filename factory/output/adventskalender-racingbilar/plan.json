@@ -125,6 +125,12 @@
       "key": "faq",
       "type": "json",
       "value": "[{\"fraga\":\"Vad finns bakom luckorna?\",\"svar\":\"En egen liten bil bakom varje lucka. Alla bilar ser olika ut, med racingdekor och startnummer som 67, 33 och 07.\"},{\"fraga\":\"Hinner den fram till första december om jag beställer nu?\",\"svar\":\"Leveranstiden är normalt 5 till 10 arbetsdagar. Beställ i god tid så kalendern hinner fram innan december börjar.\"},{\"fraga\":\"Vilken ålder passar kalendern?\",\"svar\":\"Kalendern innehåller små delar och är inte lämplig för barn under 3 år. Lådan är CE- och CPC-märkt.\"},{\"fraga\":\"Kan jag ge bort den som den är?\",\"svar\":\"Ja. Den levereras i en tryckt presentkartong, klar att lägga under granen.\"},{\"fraga\":\"Vad gäller om jag ångrar mitt köp?\",\"svar\":\"Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@adventlane.se om du vill ångra.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:barn\",\"alder:3-5\",\"alder:6-8\",\"alder:9-12\",\"intresse:bilar\",\"egenskap:varar\",\"egenskap:overraskning\"],\"mening\":\"Tjugofyra bilar som står kvar på hyllan den 25 december, inte ett tomt omslag.\",\"sma_delar\":true,\"alkoholtema\":false}"
     }
   ]
 }

@@ -1,0 +1,159 @@
+# Sprit Adventskalender – 24 dekorflaskor
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Sprit Adventskalender – 24 dekorflaskor"
+  id: "sprit-klassisk"
+  handle: "sprit-adventskalender-24-dekorflaskor"
+  menynamn: "Spritkalendern"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 9.76 USD landat (produkt + frakt in) × 9.6414 = 94 kr.
+  inkopskostnad: 94
+  pris: 349
+  jamforpris: 469
+  # Break-even-ROAS 1,37 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-sprit-klassisk-1.png?v=1789107146"
+      alt: "Spritkalender: röd ask med julgran av flaskor på locket och tjugofyra miniatyrflaskor runt om"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: ""
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "En flaska sprit passar inte till alla"
+  problem_text: "Du ska ge julklapp till någon som gillar sprit, bar och whiskykvällar – en kollega, en pappa, en syssling. En riktig flaska känns ofta för dyr, för stor eller olämplig att ge bort på jobbet, och du vet inte alltid om personen kör bil i jul eller har slutat dricka. Det du letar efter är något som visar att du vet vad hen gillar, utan att gåvan blir alkohol."
+  losning_rubrik: "Bar-känslan utan en droppe alkohol"
+  losning_text: "Det här är en dekorask: 24 flaskformade delar i whisky-, konjak- och vodka/ginstil, utan etiketter och utan en droppe alkohol. Locket är tryckt med en julgran av spritflaskor och behöver ingen inslagning, så den är klar att lägga i famnen direkt. Eftersom det inte finns någon alkohol i lådan går den lika bra till kollegan, bilföraren eller den som inte dricker."
+
+vinkel:
+  huvudvinkel: "Dekor – ingen alkohol — ur verifierade fakta om varan, En röd adventskalenderask, \"CLASSIC BASE LIQUOR ADVENT CALENDAR 2025\", med 24 flaskformade"
+  underrubrik: "24 dekorflaskor i bar-stil på en julgransform – ingen alkohol, ingen vätska."
+  usp: "Dekor – ingen alkohol"
+
+malgrupp:
+  beskrivning: "Vuxna som vill ge en billig, alkoholfri julklapp till någon som gillar whisky, sprit eller bar-tema – kollega, vän eller partner."
+
+problem:
+  - "En riktig flaska sprit känns för dyr, för stor eller fel att ge på jobbet."
+  - "Du vet inte om personen kör bil, är gravid eller har slutat dricka."
+  - "Att skicka alkohol med posten till någon på annan ort känns krångligt."
+  - "Choklad och strumpor säger inget om att du vet vad personen faktiskt gillar."
+
+benefits:
+  - "En bar-tema julklapp du kan ge till vem som helst, utan att ge bort alkohol"
+  - "Passar kollegan, bilföraren eller den som inte dricker – ingen känslig gåva"
+  - "24 delar räcker hela vägen fram till julafton"
+  - "Skickas som ett vanligt paket, utan alkoholregler eller åldersgräns att tänka på"
+  - "Färdig present direkt ur lådan"
+
+features:
+  - "24 flaskformade dekordelar i en röd presentask"
+  - "Motiv: whisky, konjak, vodka och gin i klassisk stil, med blanka etiketter utan varumärken"
+  - "Locket är tryckt med en julgran av spritflaskor och texten Classic Base Liquor Advent Calendar 2025"
+  - "Innehåller ingen alkohol och ingen vätska"
+  - "Redo att ge bort direkt ur lådan – ingen inslagning behövs"
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Ger du julklapp till någon som älskar whisky och bar-känsla men du vill undvika att ge bort riktig sprit – den här adventskalendern är svaret."
+  sma_delar: true
+  alkoholtema: true
+  taggar:
+    - "mottagare:vuxen"
+    - "intresse:whisky"
+    - "egenskap:dekor"
+
+offer:
+  beskrivning: "Sprit Adventskalender – 24 dekorflaskor — 349 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Innehåller adventskalendern alkohol?"
+    svar: "Nej. De 24 delarna föreställer klassiska spritflaskor (whisky, konjak, vodka och gin) som dekor – det finns ingen dryck och ingen vätska i lådan."
+  - fraga: "Vad är flaskorna gjorda av?"
+    svar: "Det anger inte leverantören, så vi vill inte gissa på material. Det vi vet är att det är 24 flaskformade delar utan etiketter eller varumärken."
+  - fraga: "Är luckorna numrerade 1–24?"
+    svar: "Bilden vi utgår från visar ett slätt lock utan synliga siffror, så vi kan inte lova numrerade luckor. Du får 24 flaskformade delar i asken, en för varje dag fram till julafton."
+  - fraga: "Kan jag ge den till någon som inte dricker, kör bil eller är gravid?"
+    svar: "Ja. Eftersom kalendern inte innehåller någon alkohol passar den till vem som helst, oavsett om personen dricker eller inte."
+  - fraga: "Hur lång är leveranstiden och kostar frakten något?"
+    svar: "Leveranstiden är 5–10 arbetsdagar, och frakten är fri både i Sverige och Norge."
+  - fraga: "Kan jag returnera kalendern om jag ångrar mig?"
+    svar: "Ja, du har 14 dagars ångerrätt från att du får paketet."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.aliexpress.com/item/1005010210428823.html"
+  anteckning: "AliExpress, samma listning som ol-whisky-2d (olika designvariant)."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneSprit"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Material på de 24 delarna (plast, akryl, trä eller papp) står ingenstans."
+  - "Om delarna är platta 2D-utskurna eller 3D-miniflaskor — listningens titel säger 2D Flat men specificerar inte per variant."
+  - "Om hängsnöre ingår — syns tydligt på öl- och cocktailversionen, inte på den här."
+  - "Om asken har numrerade luckor 1–24 — locket på bilden är helt slätt utan luckor."
+  - "Mått, vikt och storlek per del för just denna variant."
+  - "CE-märkning, åldersgräns och varningstext saknas helt i källorna."
+
+verifierat:
+  vad_det_ar: "En röd adventskalenderask, \"CLASSIC BASE LIQUOR ADVENT CALENDAR 2025\", med 24 flaskformade dekordelar som föreställer klassiska spritflaskor — ingen dryck, ingen vätska, bara dekor."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "vuxen (alkoholmotiv) — ingen åldersmärkning står på förpackningen"
+  risk: "Alkoholmotivet kan få Meta att neka annonsen under alkoholpolicyn, och copy som antyder riktig sprit blir vilseledande eftersom asken inte innehåller någon dryck."
+  ingar:
+    - "1 röd presentask med tryckt julgran byggd av spritflaskor + texten CLASSIC BASE LIQUOR ADVENT CALENDAR 2025"
+    - "24 flaskformade delar (12 visas i rutnät, 12 på rad) med motiv av whisky, konjak, vodka/gin och karaffer"
+    - "Motiven saknar varumärken — etiketterna på bilderna är blanka"
+    - "Ingen alkohol och ingen vätska ingår"
+    - "Asken på systerversionen Beer anges 27,94 × 17,78 × 4,98 cm — ej bekräftad för denna variant"
+  varningar:
+

@@ -5,8 +5,8 @@
     "anslutning": {
       "klar": true,
       "domain": "ikf0tu-5e.myshopify.com",
-      "name": "My Store 5",
-      "primaryDomain": "ikf0tu-5e.myshopify.com",
+      "name": "AdventLane",
+      "primaryDomain": "adventlane.se",
       "currencyCode": "SEK"
     },
     "tema-upload": {
@@ -50,6 +50,8 @@
         "sections/opf-garanti.liquid",
         "sections/opf-faq.liquid",
         "assets/ms-paket.js",
+        "assets/ms-gavoguide.js",
+        "sections/ms-gavoguide.liquid",
         "sections/header-group.json",
         "snippets/ms-head.liquid"
       ],
@@ -85,7 +87,7 @@
     "kollektion": {
       "klar": true,
       "handle": "kalendrarna",
-      "produkter": 1,
+      "produkter": 12,
       "publicerad": true
     },
     "startsida": {
@@ -99,6 +101,7 @@
         "hero",
         "ms_usp",
         "ms_marquee",
+        "gavoguide",
         "sortiment",
         "berattelse",
         "statement",
@@ -113,7 +116,18 @@
         "galleri": []
       },
       "produkter": [
-        "adventskalender-racingbilar: ACTIVE"
+        "adventskalender-racingbilar: ACTIVE",
+        "dinosaurie-adventskalender-24-dinosaurier: ACTIVE",
+        "gor-din-egen-adventskalender-24-askar: ACTIVE",
+        "pussel-adventskalender-24-dagar-med-pusselbitar: ACTIVE",
+        "whisky-adventskalender-24-miniatyrflaskor: ACTIVE",
+        "golf-adventskalender-24-golftillbehor: ACTIVE",
+        "cocktail-adventskalender: ACTIVE",
+        "smycken-adventskalender-24-halsband-orhangen-ringar: ACTIVE",
+        "barnens-smyckeskalender-24-parlor: ACTIVE",
+        "ishockey-adventskalender-24-luckor: ACTIVE",
+        "ol-adventskalender-24-olflaskor-julgranspynt: ACTIVE",
+        "sprit-adventskalender-24-dekorflaskor: ACTIVE"
       ]
     },
     "sidor": {
@@ -129,11 +143,11 @@
       "huvudmeny": {
         "handle": "main-menu",
         "orord": false,
-        "rader": 5
+        "rader": 4
       },
       "sidfot": {
         "handle": "footer",
-        "orord": false,
+        "orord": true,
         "rader": 5
       }
     },
@@ -172,27 +186,8 @@
       ]
     },
     "oversatt": {
-      "klar": true,
-      "underlag": 120,
-      "utfall": {
-        "nb": {
-          "registrerade": 0,
-          "saknade": 0,
-          "perTyp": {
-            "variant": 0,
-            "produkt": 0,
-            "metafält": 0,
-            "sida": 0,
-            "menylänk": 0,
-            "paket": 0,
-            "policy": 0,
-            "kollektion": 0,
-            "temamall": 0,
-            "sektionsgrupp": 0
-          },
-          "granskning": "4221/4228"
-        }
-      }
+      "klar": false,
+      "manuell": "Steget gick inte att göra: Produkten dinosaurie finns inte — kör ops.mjs först."
     },
     "store-ready": {
       "klar": true,
@@ -214,12 +209,45 @@
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/204938314071",
   "arbetstemaNamn": "AdventLane – CRO v1",
-  "uppdaterad": "2026-09-10T10:02:15.542Z",
+  "uppdaterad": "2026-09-11T06:37:25.142Z",
   "qa": {
     "gron": false,
     "kritiska": [
-      "kundvy-startsida"
+      "trippelkoll dinosaurie-adventskalender-24-dinosaurier: paketnivåer",
+      "trippelkoll dinosaurie-adventskalender-24-dinosaurier: förvald nivå",
+      "trippelkoll dinosaurie-adventskalender-24-dinosaurier: rabattkoder",
+      "trippelkoll gor-din-egen-adventskalender-24-askar: paketnivåer",
+      "trippelkoll gor-din-egen-adventskalender-24-askar: förvald nivå",
+      "trippelkoll gor-din-egen-adventskalender-24-askar: rabattkoder",
+      "trippelkoll pussel-adventskalender-24-dagar-med-pusselbitar: paketnivåer",
+      "trippelkoll pussel-adventskalender-24-dagar-med-pusselbitar: förvald nivå",
+      "trippelkoll pussel-adventskalender-24-dagar-med-pusselbitar: rabattkoder",
+      "trippelkoll whisky-adventskalender-24-miniatyrflaskor: paketnivåer",
+      "trippelkoll whisky-adventskalender-24-miniatyrflaskor: förvald nivå",
+      "trippelkoll whisky-adventskalender-24-miniatyrflaskor: rabattkoder",
+      "trippelkoll golf-adventskalender-24-golftillbehor: paketnivåer",
+      "trippelkoll golf-adventskalender-24-golftillbehor: förvald nivå",
+      "trippelkoll golf-adventskalender-24-golftillbehor: rabattkoder",
+      "trippelkoll cocktail-adventskalender: paketnivåer",
+      "trippelkoll cocktail-adventskalender: förvald nivå",
+      "trippelkoll cocktail-adventskalender: rabattkoder",
+      "trippelkoll smycken-adventskalender-24-halsband-orhangen-ringar: paketnivåer",
+      "trippelkoll smycken-adventskalender-24-halsband-orhangen-ringar: förvald nivå",
+      "trippelkoll smycken-adventskalender-24-halsband-orhangen-ringar: rabattkoder",
+      "trippelkoll barnens-smyckeskalender-24-parlor: paketnivåer",
+      "trippelkoll barnens-smyckeskalender-24-parlor: förvald nivå",
+      "trippelkoll barnens-smyckeskalender-24-parlor: rabattkoder",
+      "trippelkoll ishockey-adventskalender-24-luckor: paketnivåer",
+      "trippelkoll ishockey-adventskalender-24-luckor: förvald nivå",
+      "trippelkoll ishockey-adventskalender-24-luckor: rabattkoder",
+      "trippelkoll ol-adventskalender-24-olflaskor-julgranspynt: paketnivåer",
+      "trippelkoll ol-adventskalender-24-olflaskor-julgranspynt: förvald nivå",
+      "trippelkoll ol-adventskalender-24-olflaskor-julgranspynt: rabattkoder",
+      "trippelkoll sprit-adventskalender-24-dekorflaskor: paketnivåer",
+      "trippelkoll sprit-adventskalender-24-dekorflaskor: förvald nivå",
+      "trippelkoll sprit-adventskalender-24-dekorflaskor: rabattkoder",
+      "trippelkoll huvudmeny"
     ],
-    "tid": "2026-09-10T08:01:21.866Z"
+    "tid": "2026-09-11T06:37:25.142Z"
   }
 }

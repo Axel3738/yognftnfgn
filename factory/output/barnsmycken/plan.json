@@ -1,0 +1,108 @@
+{
+  "input": {
+    "title": "Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband",
+    "handle": "barnens-smyckeskalender-24-parlor",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>En ny pärla varje dag. Ett eget armband till julafton.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband – AdventLane",
+      "description": "En ny del att öppna och trä på varje dag i december. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "379.00",
+        "compareAtPrice": "499.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-barnsmycken-1.png?v=1789107134",
+        "contentType": "IMAGE",
+        "alt": "Barnens smyckeskalender: rosa ask med julgran på locket, armband med berlocker och hängen framför"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Prylar som inte hör ihop"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Varje lucka ger en ny liten sak. Hon tittar på den en stund, lägger den åt sidan, och nästa dag är det redan något annat. Vid jul ligger tjugofyra små saker huller om buller i en låda, och ingen av dem hör ihop med de andra."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Trärs på armbandet som redan ligger där"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Bakom varje lucka ligger en pärla, ett hänge eller en berlock med brett hål. De trärs direkt på de två armbandskedjorna som redan ligger i lådan, så delarna sätter sig fast i stället för att bli liggande för sig själva. Två hängen är klara att bära direkt: ett rosa hjärta och en enhörning med regnbågsman."
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"En ny del att öppna och trä på varje dag i december\",\"Ett eget armband som växer fram till julafton, i stället för 24 lösryckta prylar\",\"Två hängen klara att bära direkt: ett rosa hjärta och en enhörning med regnbågsman\",\"Alla delar matchar varandra i rosa, lila och silverfärgat, oavsett i vilken ordning luckorna öppnas\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Kartonglåda med 24 numrerade luckor (4 rader x 6), rosa/lila julmotiv med gran och ren\",\"Två färdiga armband i silverfärgad metall, med lobsterlås och förlängningskedja med hjärta i änden\",\"Två halsband med hänge: rosa hjärta i pärlram och en enhörning med regnbågsman\",\"Omkring 23 lösa berlocker och pärlor: snöflingor, fjärilar, blommor, stjärna, bil, pumpavagn, måne, rosett, kristallhängen\",\"Murano-liknande glitterpärlor i rosa och lila, med brett metallhål\",\"Locktexten på lådan är på engelska: \\\\\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vad finns bakom luckorna?\",\"svar\":\"En smyckesdel bakom varje lucka – pärlor, berlocker, hängen eller en del av de två färdiga armbanden i silverfärgad metall. Exakt vilken del som ligger bakom vilken lucka är inte specificerat, men allt innehåll syns i produktbilderna.\"},{\"fraga\":\"Vilket material är smyckena gjorda av?\",\"svar\":\"Delarna är silverfärgade i metall, med pärlor och glittriga stenar i rosa och lila (murano-liknande). Vi kallar dem inte äkta silver eller äkta ädelstenar – det är inte belagt att det är det materialet.\"},{\"fraga\":\"Vilken ålder passar kalendern för?\",\"svar\":\"Ingen åldersgräns anges på förpackningen eller hos leverantören. Kalendern innehåller små delar som pärlor och berlocker, så var med om barnet är litet.\"},{\"fraga\":\"Hur många delar ingår totalt?\",\"svar\":\"Lådan har 24 numrerade luckor. I den syns två färdiga armband, två halsband med hänge och omkring tjugotre lösa berlocker och pärlor – vi anger inget exakt totalantal utöver det som går att se på bilderna.\"},{\"fraga\":\"Hur lång är leveranstiden och kostar frakten något?\",\"svar\":\"Leveranstiden är 5–10 arbetsdagar. Frakten är fri i Sverige och Norge.\"},{\"fraga\":\"Vad gäller om jag vill ångra köpet?\",\"svar\":\"Du har 14 dagars ångerrätt enligt svensk lag.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:barn\",\"mottagare:tonaring\",\"alder:6-8\",\"alder:9-12\",\"intresse:smycken-barn\",\"intresse:pyssel\",\"egenskap:varar\"],\"mening\":\"Ett eget armband som växer fram lucka för lucka, klart till julafton.\",\"sma_delar\":true,\"alkoholtema\":false}"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+# Golf Adventskalender – 24 golftillbehör
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Golf Adventskalender – 24 golftillbehör"
+  id: "golf"
+  handle: "golf-adventskalender-24-golftillbehor"
+  menynamn: "Golfkalendern"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 17.19 USD landat (produkt + frakt in) × 9.6414 = 166 kr.
+  inkopskostnad: 166
+  pris: 549
+  jamforpris: 719
+  # Break-even-ROAS 1,43 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-golf-1.png?v=1789107111"
+      alt: "Golfkalender: grön ask med golfspelare på locket och tjugofyra numrerade luckor"
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-golf-2.jpg?v=1789107114"
+      alt: "Golftillbehören som ingår: bollar, peggar, markörer, greenlagare, handduk och verktyg"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-golf-2.jpg?v=1789107114"
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "Golfbagen tömmer sig i det tysta"
+  problem_text: "Peggar knäcks, bollar försvinner i ruffen eller vattnet, borsten faller ur sidofacket — och ingen skriver upp det på en önskelista, för det känns för smått att önska sig. Så blir julklappen antingen en klubba han redan har, eller ett presentkort som hamnar i en låda till våren."
+  losning_rubrik: "24 luckor, redan fyllda med det han ändå tar slut på"
+  losning_text: "Den här kalendern har golftillbehör bakom varje lucka i stället för choklad: golfbollar, peggar i plast och trä, bollmarkeringar, en greenlagare med spegel, en klubbrengöringsborste och en golfhandduk, bland annat. Han öppnar en lucka om dagen fram till julafton — och det som ligger där är sånt som faktiskt hamnar i bagen, inte i en låda med julklappspapper kvar på."
+
+vinkel:
+  huvudvinkel: "Färdigfylld, inte en tom ask — ur verifierade fakta om varan, En FÄRDIGFYLLD adventskalender i papp (30 × 28 × 6 cm, ca 500 g) med 24 numrerade luckor s"
+  underrubrik: "24 numrerade luckor, färdigfyllda med golftillbehör han faktiskt tar med till banan."
+  usp: "Färdigfylld, inte en tom ask"
+
+malgrupp:
+  beskrivning: "Vuxna och tonåringar som spelar golf. Köps oftast som julklapp till en golfspelande man, pojkvän, pappa eller kompis — eller av golfaren själv som nedräkning till jul."
+
+problem:
+  - "Peggar, bollmarkeringar och greenlagare tar slut mitt i säsongen utan att han märker det själv."
+  - "En ny klubba är för stort att önska sig. Ett presentkort känns för löst."
+  - "De små sakerna är billiga var för sig — men ingen kommer ihåg att köpa in dem i tid till jul."
+
+benefits:
+  - "En julklapp han faktiskt använder på banan, inte nästa presenttips på en lista."
+  - "24 dagars nedräkning till jul — inte en påse godis uppäten på tio minuter."
+  - "Fyller på det han ändå köper själv, innan han hinner sakna det."
+  - "Ett paket att slå in, inte 24 separata småpresenter att hålla reda på."
+
+features:
+  - "24 numrerade luckor, färdigfyllda med golftillbehör — inget att fylla i själv."
+  - "Innehållet är golftillbehör i plast, metall och trä: bland annat golfbollar, peggar, bollmarkeringspennor, linjemarkörer, en kepsklämma med bollmarkör, en greenlagare med spegel, en T-nyckel för skonaglar med spikes, en klubbrengöringsborste, ett spårverktyg, nyckelringar och en golfhandduk med clips."
+  - "Kartong: 30 × 28 × 6 cm, ca 500 g — går att skicka direkt som present."
+  - "Riktar sig till vuxna och tonåringar som spelar golf. Tillverkaren anger varken CE-märkning eller åldersgräns, så den beskrivs aldrig som barnsäker."
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Till golfaren som redan har allt: 24 luckor med golftillbehör som ändå går åt — peggar, bollar och markeringar, en lucka om dagen fram till julafton."
+  sma_delar: true
+  alkoholtema: false
+  taggar:
+    - "mottagare:vuxen"
+    - "intresse:golf"
+    - "egenskap:varar"
+
+offer:
+  beskrivning: "Golf Adventskalender – 24 golftillbehör — 549 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Vad ligger bakom luckorna?"
+    svar: "Golftillbehör i plast, metall och trä — bland annat golfbollar, peggar, bollmarkeringspennor, linjemarkörer, en greenlagare med spegel, en klubbrengöringsborste och en golfhandduk. Exakt vad som ligger bakom varje enskild lucka anger inte tillverkaren, så vi kan inte lista det lucka för lucka."
+  - fraga: "Är kalendern färdigfylld, eller ska jag fylla den själv?"
+    svar: "Färdigfylld. Alla 24 luckor har innehåll redan när kalendern kommer hem till dig — inget att köpa på och fylla i själv."
+  - fraga: "Passar den för barn?"
+    svar: "Den är gjord för vuxna och tonåringar som spelar golf, inte för yngre barn. Innehållet har små lösa delar som peggar och markörer, och tillverkaren anger varken CE-märkning eller åldersgräns — vi beskriver den därför aldrig som barnsäker."
+  - fraga: "Hur stor är kartongen, går den att skicka direkt som present?"
+    svar: "30 × 28 × 6 cm och väger ca 500 g. Den går fint att posta direkt till mottagaren."
+  - fraga: "Vad händer om jag vill skicka tillbaka den?"
+    svar: "Du har 14 dagars ångerrätt från att du fått paketet, som på alla köp hos oss."
+  - fraga: "Hur lång är leveranstiden och kostar frakten något?"
+    svar: "5–10 arbetsdagar, med fri frakt inom Sverige och Norge."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.amazon.se/dp/B0FRFP1JZ2"
+  anteckning: "Amazon-listning. Golftillbehör bakom varje lucka."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneGolf"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Exakt antal föremål och exakt fördelning per lucka — bilden visar ca 20 typer, listningen anger ingen styckräkning."
+  - "Bollarnas märke, kvalitet eller om de är övningsbollar (range) eller spelbollar."
+  - "Om samma innehåll levereras varje gång — Amazon-listningen säger \"Färg: grön\" och \"Modell: Adjustable\", vilket inte är verifierat."
+  - "CE-märkning, kvävningsvarning och åldersgräns står inte någonstans på listningen — påstå aldrig att den är barnsäker."
+  - "Materialet anges bara som \"Papper\" (kartongen). Tillbehörens material är inte specificerat."
+  - "Valutan i kostnaden 17,19 är obekräftad — räkna aldrig marginal på den som om den vore SEK."
+
+verifierat:
+  vad_det_ar: "En FÄRDIGFYLLD adventskalender i papp (30 × 28 × 6 cm, ca 500 g) med 24 numrerade luckor som innehåller golftillbehör i plast, metall och trä — inte en tom ask, inte dekoration."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "vuxen + tonåring (listningen säger \\\"män, tonåringar\\\"; ingen åldersgräns anges)"
+  risk: "Kalendern innehåller små lösa delar (peggar, spikes, markörer) utan dokumenterad CE-märkning eller kvävningsvarning — marknadsför den aldrig mot barn."
+  ingar:
+    - "Golfbollar: två vita i ett svart bollfodral med karbinhake, plus en lös vit och en gul boll (bild)"
+    - "Peggar: vita plastpeggar i två buntar + träpeggar i en svart pegghållare med karbinhake (bild)"
+    - "Två bollmarkeringspennor (blå + svart), två linjemarkörer/riktmallar (svart + blå) och en kepsklämma med bollmarkör (bild)"
+    - "Greenlagare (divot tool) med spegel, samt T-formad nyckel för skonaglar och fem lösa spikes (bild)"
+    - "Rengöringsborste för klubbor och ett spårverktyg/spikverktyg (bild)"
+    - "Två nyckelringar (miniklubba + golfboll) och en svart golfhandduk med clips (bild)"
+  varningar:
+

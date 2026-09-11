@@ -1,0 +1,108 @@
+{
+  "input": {
+    "title": "Öl-adventskalender – 24 Ölflaskor som Julgranspynt",
+    "handle": "ol-adventskalender-24-olflaskor-julgranspynt",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>24 miniatyrflaskor i ölflaskform som julgranshängen – ingen alkohol, bara dekoration.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Öl-adventskalender – 24 Ölflaskor som Julgranspynt – AdventLane",
+      "description": "Ett nytt granhänge varje dag i december i stället för att pynta allt på en gång.. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "349.00",
+        "compareAtPrice": "469.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-ol-whisky-2d-1.png?v=1789107142",
+        "contentType": "IMAGE",
+        "alt": "Ölkalender: orange ask med ölsejdel på locket och tjugofyra flaskor i olika färger runt om"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Decembers kalendrar är gjorda för barn"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Adventskalendrar i affären är choklad och tecknade figurer – fel present till en vuxen som redan har sin egen ölhylla eller bryggutrustning. December blir som alla andra månader: ingen daglig grej att se fram emot, bara en gran som hänger med samma kulor som förra året tills julafton."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "24 ölflaskor att hänga, en i taget"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "24 miniatyrflaskor i ölflaskform, var och en med guldkapsyl och egen upphängningsögla – ett nytt granhänge att ta fram varje dag i december i stället för en chokladbit. Ingen dryck och ingen alkohol i asken: flaskorna är dekoration, färdiga att hänga direkt på granen. Minst fem flaskfärger i samma ask gör att granen ser annorlunda ut för varje dag som går."
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Ett nytt granhänge varje dag i december i stället för att pynta allt på en gång.\",\"En present till någon som redan har allting – 24 småprylar i en enda ask.\",\"Inget sockerrus och inget som äts upp för snabbt: hängena sitter kvar på granen även efter jul.\",\"Asken är bara 4,98 cm tunn – går att skicka i brevlådan som present.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"24 miniatyrflaskor i ölflaskform (12 i rutnätet + 12 i nedre raden enligt leverantörens bild)\",\"Minst fem flaskfärger: brun/amber, grön, gul, ljusblå och klar/vit\",\"Guldfärgad kapsyl med metallögla för upphängning på varje flaska\",\"Flaskorna är tredimensionella (leverantörens egen beteckning: \\\\\",\"Flaskorna är omärkta – ingen etikett eller logotyp\",\"Kartongask 27,94 x 17,78 x 4,98 cm, tryckt \\\\\",\"Innehåller ingen alkohol eller dryck\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Innehåller kalendern alkohol eller riktig öl?\",\"svar\":\"Nej. De 24 flaskorna är miniatyrhängen i ölflaskform utan innehåll – ren dekoration till granen, ingen dryck och ingen alkohol i asken.\"},{\"fraga\":\"Går flaskorna att öppna och fylla själv?\",\"svar\":\"Det är inte bekräftat av leverantören. Flaskorna har kapsyl och ögla för upphängning, men räkna med dem som färdiga granhängen – inte som behållare att fylla.\"},{\"fraga\":\"Är dagarna numrerade i asken, som i en vanlig adventskalender?\",\"svar\":\"Vi kan inte se det i de bilder vi har, så vi lovar inga numrerade luckor. Du får 24 flaskhängen i en ask märkt för advent – ta fram en i taget i den takt som passar dig.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"5–10 arbetsdagar till både Sverige och Norge.\"},{\"fraga\":\"Vad händer om jag ångrar mig?\",\"svar\":\"Du har 14 dagars ångerrätt från att du tagit emot paketet, enligt svensk distansköpslag.\"},{\"fraga\":\"Tillkommer fraktkostnad?\",\"svar\":\"Nej, fri frakt till både Sverige och Norge.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:vuxen\",\"intresse:ol\",\"intresse:whisky\",\"egenskap:dekor\"],\"mening\":\"Till den som hellre pyntar granen än äter choklad i december: 24 ölflaskformade hängen, helt utan alkohol.\",\"sma_delar\":true,\"alkoholtema\":true}"
+    }
+  ]
+}

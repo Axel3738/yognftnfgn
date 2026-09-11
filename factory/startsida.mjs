@@ -162,7 +162,10 @@ function byggSektioner(butik, produkter, alt) {
   const d = defaults(butik);
   const brand = text(butik?.butik?.brand) ?? 'Butiken';
   const flera = arNischbutik(butik, produkter);
-  const malLank = flera ? `shopify://collections/${alt.kollektion}` : `shopify://products/${produkter[0]?.produkt?.id ?? ''}`;
+  // Butikens handle, inte filens id (produktHandle) — en enproduktsbutik med
+  // eget handle fick annars en hero-knapp som gick till 404.
+  const forsta = produkter[0]?.produkt ?? {};
+  const malLank = flera ? `shopify://collections/${alt.kollektion}` : `shopify://products/${text(forsta.handle) ?? forsta.id ?? ''}`;
   const farger = butik?.branding?.farger ?? {};
   const ordning = [];
   const sektioner = {};

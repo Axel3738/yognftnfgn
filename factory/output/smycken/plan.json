@@ -1,0 +1,119 @@
+{
+  "input": {
+    "title": "Smycken Adventskalender – 24 Halsband, Örhängen och Ringar",
+    "handle": "smycken-adventskalender-24-halsband-orhangen-ringar",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Färdigfylld med 24 blandade smycken i guld- och roséguldton – redo att ge bort direkt.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Smycken Adventskalender – 24 Halsband, Örhängen och Ringar – AdventLa…",
+      "description": "Ett nytt smycke att se fram emot varje dag fram till julafton.. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "449.00",
+        "compareAtPrice": "599.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-smycken-1.png?v=1789107125",
+        "contentType": "IMAGE",
+        "alt": "Smyckeskalender: brun ask med tjugofyra luckor och halsband, örhängen och ringar runt om"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-smycken-2.jpg?v=1789107130",
+        "contentType": "IMAGE",
+        "alt": "Smyckena sedda var för sig: halsband med hängen, örhängen och ringar"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Fel längd. Fel stil. Fel dag."
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Du ska ge en tjej eller kvinna smycken i julklapp, men smak är svårt att gissa – fel längd på en kedja, fel stil på ett par örhängen, och klappen hamnar i en byrålåda i stället för på henne. Ett enda utvalt smycke är ett litet lotteri."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "24 luckor, 24 chanser att träffa rätt"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Den här kalendern satsar inte på ett smycke utan tjugofyra: halsband, örhängen och ringar blandat bakom var sin lucka, i guld- och roséguldton med enstaka silverfärgade. Är inte lucka 3 hennes stil är lucka 4 en annan – och allt ligger redan i asken, klart att ge bort."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-smycken-2.jpg?v=1789107130"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Ett nytt smycke att se fram emot varje dag fram till julafton.\",\"Ingen gissning på EN modell – 24 olika att träffa rätt med.\",\"Blandat innehåll (halsband, örhängen, ringar) ökar chansen att det matchar hennes stil.\",\"Färdigfylld och klar att ge bort direkt ur kartongen – inget att komplettera.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"24 luckor, ett smycke bakom varje.\",\"Halsband, örhängen och ringar i samma ask.\",\"Berlocker med olika motiv: fjäril, fågel, snäcka, kors, lotus, bikaka, kaktus, krona, tass.\",\"Guld- och roséguldton dominerar, enstaka silverfärgade.\",\"CE- och CPC-märkt, EU-representant angiven på förpackningen.\",\"Varning på förpackningen: ej för barn under 3 år (smådelar).\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vad finns bakom luckorna?\",\"svar\":\"Ett modesmycke bakom varje lucka – halsband, örhängen och ringar blandat, i guld- och roséguldton med enstaka silverfärgade. Berlockerna har olika motiv, bland annat fjäril, fågel, snäcka, kors, lotus och krona. Exakt hur många av varje typ som ingår varierar.\"},{\"fraga\":\"Är smyckena i äkta guld eller silver?\",\"svar\":\"Det står inte angivet på förpackningen vilket material eller vilken legering smyckena är gjorda av, så vi kan inte uppge det. Har mottagaren extra känslig hud rekommenderar vi försiktighet.\"},{\"fraga\":\"Passar kalendern som julklapp till en tonåring?\",\"svar\":\"Ja, den är gjord för tonåringar och vuxna som gillar smycken. Förpackningen har en tydlig varning: ej för barn under 3 år på grund av smådelar.\"},{\"fraga\":\"Hur lång är leveranstiden och kostar frakten något?\",\"svar\":\"Leveranstid är 5–10 arbetsdagar, och frakten är fri både till Sverige och Norge.\"},{\"fraga\":\"Kan jag lämna tillbaka kalendern om jag ångrar mig?\",\"svar\":\"Ja, du har 14 dagars ångerrätt från att du tagit emot paketet.\"},{\"fraga\":\"Får jag exakt de smycken som visas på bilden?\",\"svar\":\"Bilden med alla smycken visar ett större sortiment än de 24 som ligger i just din ask – den visar stilen, inte det exakta innehållet. Vad som ligger bakom varje lucka är en överraskning.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:vuxen\",\"mottagare:tonaring\",\"intresse:smycken\",\"egenskap:varar\"],\"mening\":\"När gåvan är till en tjej eller kvinna som gillar smycken och du vill att hon ska öppna något nytt varje dag i december.\",\"sma_delar\":true,\"alkoholtema\":false}"
+    }
+  ]
+}

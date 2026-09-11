@@ -4,7 +4,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { norm, byggKarta, paraResurs, temaResursIds, typUrResursId, arLacka, landsnamn } from '../marknad.mjs';
+import { norm, byggKarta, paraResurs, temaResursIds, typUrResursId, arLacka, landsnamn, resursHandles } from '../marknad.mjs';
 import { malltexter, produktTexter, byggUnderlagObjekt, byggMinimalKontext, underlagsfil } from '../oversattning.mjs';
 import { granskaNoder, filtreraPaTema, arMaskinvarde, arAppcache, digestFor } from '../oversattning-granska.mjs';
 import { rabutik, raprodukt } from './hjalp.mjs';
@@ -106,6 +106,31 @@ test('landsnamn: kända koder på svenska, okända som versal kod', () => {
   assert.equal(landsnamn('no'), 'Norge');
   assert.equal(landsnamn('DK'), 'Danmark');
   assert.equal(landsnamn('xx'), 'XX');
+});
+
+test('resursHandles slår upp BUTIKENS handle, inte filens id', () => {
+  // Regression 2026-09-11: adventlane. Filen heter `barnsmycken`, butiken
+  // `barnens-smyckeskalender-24-parlor`. Slogs filens id upp hittades
+  // produkten inte, samlaResurser kastade, och HELA /nb blev osvarat —
+  // elva produkter, hela temat och alla menyer på en gång.
+  const ctx = {
+    produkter: [
+      { p: { produkt: { id: 'barnsmycken', handle: 'barnens-smyckeskalender-24-parlor' } } },
+      { p: { produkt: { id: 'dinosaurie' }, offer: { bonus_produkt: { handle: 'gratis-pyntpase' } } } },
+    ],
+  };
+  assert.deepEqual(resursHandles(ctx), [
+    { handle: 'barnens-smyckeskalender-24-parlor', typ: 'produkt' },
+    { handle: 'dinosaurie', typ: 'produkt' },
+    { handle: 'gratis-pyntpase', typ: 'bonus' },
+  ]);
+  // Samma bonus på två produkter läses en gång, och tom ctx kastar inte.
+  const delad = { handle: 'gratis-pyntpase' };
+  assert.equal(
+    resursHandles({ produkter: [{ p: { produkt: { id: 'a' }, offer: { bonus_produkt: delad } } }, { p: { produkt: { id: 'b' }, offer: { bonus_produkt: delad } } }] }).length,
+    3
+  );
+  assert.deepEqual(resursHandles(null), []);
 });
 
 // ---- oversattning.mjs --------------------------------------------------------

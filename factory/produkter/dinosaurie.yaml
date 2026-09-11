@@ -1,0 +1,163 @@
+# Dinosaurie Adventskalender – 24 Dinosaurier
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Dinosaurie Adventskalender – 24 Dinosaurier"
+  id: "dinosaurie"
+  handle: "dinosaurie-adventskalender-24-dinosaurier"
+  menynamn: "Dinosauriekalendern"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 11.95 USD landat (produkt + frakt in) × 9.6414 = 115 kr.
+  inkopskostnad: 115
+  pris: 399
+  jamforpris: 529
+  # Break-even-ROAS 1,40 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-dinosaurie-1.png?v=1789107082"
+      alt: "Adventskalender med dinosaurier: grön ask med 24 luckor och tjugofyra små plastdinosaurier utlagda framför"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: ""
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "Chokladkalendern är tom innan frukost"
+  problem_text: "Varje december är det samma visa: kalendern öppnas i farten, chokladen är uppäten innan skorna är på, och resten av dagen finns inget kvar att se fram emot. Ett barn som är helt inne i dinosaurier vill ha något konkret att öppna varje morgon — inte en bit choklad som försvinner på tio sekunder."
+  losning_rubrik: "Fylld med 24 dinosaurier, en per dag"
+  losning_text: "Den här kalendern kommer färdigfylld: 24 numrerade luckor, en liten dinosaurie bakom varje. Inget att handla till och inget att packa i förväg — öppna asken och första december är klar att börja. Figurerna ligger i slumpmässig ordning, så överraskningen håller i sig hela vägen till julafton."
+
+vinkel:
+  huvudvinkel: "24 dinosaurier, 24 luckor — ur verifierade fakta om varan, En färdigfylld julkalender för barn: en kartongask med 24 numrerade luckor och en liten pl"
+  underrubrik: "Färdigfylld julkalender med 24 dinosaurier — en bakom varje lucka, redo att öppnas 1 december."
+  usp: "24 dinosaurier, 24 luckor"
+
+malgrupp:
+  beskrivning: "Förälder, mor- eller farförälder, eller faster/farbror som köper till ett dinosaurietokigt barn i förskole- eller lågstadieåldern (3+)."
+
+problem:
+  - "Chokladkalendern tar slut på sekunder — sen är morgonen klar."
+  - "Inget kvar att se fram emot resten av dagen."
+  - "Barnet är inne i dinosaurier, inte choklad."
+
+benefits:
+  - "December får en fast morgonrutin ända fram till julafton."
+  - "En ny dinosaurie-figur att leka med varje dag, som lever vidare i leklådan efter jul."
+  - "Julklappen är löst och klar att ge bort direkt ur kartongen."
+  - "Överraskningen håller i sig hela månaden eftersom figurerna kommer i slumpmässig ordning."
+
+features:
+  - "Kartongask med 24 numrerade luckor, en till varje dag fram till julafton."
+  - "24 dinosaurie-figurer i plast, en bakom varje lucka."
+  - "Figurerna är slumpmässigt fördelade (blindbox)."
+  - "Jultryck på asken: T-rex med tomteluva, triceratops och flygödla."
+  - "Åldersmärkning 3+ tryckt på asken."
+  - "Enligt leverantören är figurerna självlysande i mörkret efter laddning i ljus — en uppgift från leverantören, inte verifierad av oss."
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Om barnet är helt inne i dinosaurier och vill vakna till en ny överraskning varje morgon i december är det här kalendern som svarar."
+  sma_delar: true
+  alkoholtema: false
+  taggar:
+    - "mottagare:barn"
+    - "alder:3-5"
+    - "alder:6-8"
+    - "alder:9-12"
+    - "intresse:dinosaurier"
+    - "egenskap:varar"
+    - "egenskap:overraskning"
+
+offer:
+  beskrivning: "Dinosaurie Adventskalender – 24 Dinosaurier — 399 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Hur lång är leveranstiden?"
+    svar: "5–10 arbetsdagar. Frakten är fri både till Sverige och Norge."
+  - fraga: "Kan jag skicka tillbaka kalendern om den inte passar?"
+    svar: "Ja, du har 14 dagars ångerrätt från att du fått paketet."
+  - fraga: "Vilken ålder är kalendern till för?"
+    svar: "Åldersmärkningen 3+ står tryckt på asken. Kalendern är inte avsedd för barn under 3 år."
+  - fraga: "Vet jag i förväg vilken dinosaurie som ligger bakom varje lucka?"
+    svar: "Nej, figurerna är slumpmässigt fördelade — det är själva överraskningen. Vi kan inte bekräfta om alla 24 är olika arter eller om några återkommer."
+  - fraga: "Lyser figurerna verkligen i mörkret?"
+    svar: "Leverantören uppger att de gör det efter att ha laddats i ljus. Vi har ingen egen bild som visar dem i mörker, så vi kan inte bekräfta det själva."
+  - fraga: "Hur stora är figurerna och asken?"
+    svar: "Leverantören anger inga mått eller vikt, så vi kan tyvärr inte uppge exakta cm just nu."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.temu.com/se/2026-dinosaurieleksakspartyp%C3%A5sar-24-dagars-julkalender-24-facks-nedr%C3%A4kningskalender-med-24-slumpm%C3%A4ssiga-minidinosauriefigurer-i--former-ny%C3%A5rspresenter-g-601103376780854.html"
+  anteckning: "Temu. Offerten: en enda fabrik tillverkar den, lagerläget okänt, MOQ 10. Säsongsvara — kontrollera lagret före varje ny annonsbatch."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneDino"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Figurernas storlek i cm står ingenstans — varken Temu eller bilden ger mått."
+  - "Askens mått och vikt saknas helt."
+  - "Materialet (plasttyp) är inte angivet någonstans."
+  - "Att alla 24 lyser i mörkret är leverantörens påstående; ingen mörkerbild finns."
+  - "Ingen CE-märkning och ingen varningstext går att läsa på bilden."
+  - "Om de 24 verkligen är 24 olika arter är obelagt — titeln säger både unika och slumpmässiga."
+
+verifierat:
+  vad_det_ar: "En färdigfylld julkalender för barn: en kartongask med 24 numrerade luckor och en liten plastdinosaurie bakom varje lucka — inte en tom ask att fylla själv."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "barn 3+ (3+ tryckt på asken)"
+  risk: "Leksak till barn kräver CE-märkning och varningstext för smådelar som inte går att verifiera på leverantörsbilden, och offerten säger att bara en fabrik tillverkar den med okänt lagerläge — säsongsvaran kan ta slut mitt i december."
+  ingar:
+    - "Kartongask med 24 luckor, en per dag fram till julafton"
+    - "24 minidinosauriefigurer i plast, en bakom varje lucka"
+    - "Figurerna är slumpmässiga (blindbox-upplägg enligt leverantörens titel)"
+    - "Leverantören anger att figurerna är självlysande i mörkret"
+    - "Asken har jultryck: T-rex med tomteluva, triceratops, flygödla"
+    - "Åldersmärkningen 3+ och texten DINO THEMES är tryckta på asken"
+  varningar:
+    - "Åldersmärkning 3+ står tryckt på asken (uppe till vänster) — alltså inte avsedd för barn under 3 år."

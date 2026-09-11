@@ -1,0 +1,166 @@
+# Smycken Adventskalender – 24 Smyckesdelar Bakom Luckorna
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband"
+  id: "barnsmycken"
+  # Namnet skiljer sig medvetet från vuxenkalendern "Smycken Adventskalender"
+  # — två rader som börjar likadant i katalogen är två rader kunden blandar ihop.
+  handle: "barnens-smyckeskalender-24-parlor"
+  menynamn: "Barnens smyckeskalender"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 10.99 USD landat (produkt + frakt in) × 9.6414 = 106 kr.
+  inkopskostnad: 106
+  pris: 379
+  jamforpris: 499
+  # Break-even-ROAS 1,39 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-barnsmycken-1.png?v=1789107134"
+      alt: "Barnens smyckeskalender: rosa ask med julgran på locket, armband med berlocker och hängen framför"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: ""
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "Prylar som inte hör ihop"
+  problem_text: "Varje lucka ger en ny liten sak. Hon tittar på den en stund, lägger den åt sidan, och nästa dag är det redan något annat. Vid jul ligger tjugofyra små saker huller om buller i en låda, och ingen av dem hör ihop med de andra."
+  losning_rubrik: "Trärs på armbandet som redan ligger där"
+  losning_text: "Bakom varje lucka ligger en pärla, ett hänge eller en berlock med brett hål. De trärs direkt på de två armbandskedjorna som redan ligger i lådan, så delarna sätter sig fast i stället för att bli liggande för sig själva. Två hängen är klara att bära direkt: ett rosa hjärta och en enhörning med regnbågsman."
+
+vinkel:
+  huvudvinkel: "Bygger sitt eget armband — ur verifierade fakta om varan, En fylld adventskalender i kartong med 24 numrerade luckor, där varje lucka innehåller en"
+  underrubrik: "En ny pärla varje dag. Ett eget armband till julafton."
+  usp: "Bygger sitt eget armband"
+
+malgrupp:
+  beskrivning: "Förälder, mor- eller farförälder, eller gudmor som köper julkalender till en flicka i lek- till mellanåldern som gillar smycken, enhörningar och att pyssla ihop saker själv."
+
+problem:
+  - "Nya prylar varje dag, glömda lika fort de öppnas"
+  - "Pärlor och berlocker utan något att trä dem på"
+  - "Tjugofyra lösa saker som inte hör ihop med varandra"
+  - "Inget växer fram i väntan på julafton"
+
+benefits:
+  - "En ny del att öppna och trä på varje dag i december"
+  - "Ett eget armband som växer fram till julafton, i stället för 24 lösryckta prylar"
+  - "Två hängen klara att bära direkt: ett rosa hjärta och en enhörning med regnbågsman"
+  - "Alla delar matchar varandra i rosa, lila och silverfärgat, oavsett i vilken ordning luckorna öppnas"
+
+features:
+  - "Kartonglåda med 24 numrerade luckor (4 rader x 6), rosa/lila julmotiv med gran och ren"
+  - "Två färdiga armband i silverfärgad metall, med lobsterlås och förlängningskedja med hjärta i änden"
+  - "Två halsband med hänge: rosa hjärta i pärlram och en enhörning med regnbågsman"
+  - "Omkring 23 lösa berlocker och pärlor: snöflingor, fjärilar, blommor, stjärna, bil, pumpavagn, måne, rosett, kristallhängen"
+  - "Murano-liknande glitterpärlor i rosa och lila, med brett metallhål"
+  - "Locktexten på lådan är på engelska: \"Merry Christmas And Happy New Year\""
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Ett eget armband som växer fram lucka för lucka, klart till julafton."
+  sma_delar: true
+  alkoholtema: false
+  taggar:
+    - "mottagare:barn"
+    - "mottagare:tonaring"
+    - "alder:6-8"
+    - "alder:9-12"
+    - "intresse:smycken-barn"
+    - "intresse:pyssel"
+    - "egenskap:varar"
+
+offer:
+  beskrivning: "Smycken Adventskalender – 24 Smyckesdelar Bakom Luckorna — 379 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Vad finns bakom luckorna?"
+    svar: "En smyckesdel bakom varje lucka – pärlor, berlocker, hängen eller en del av de två färdiga armbanden i silverfärgad metall. Exakt vilken del som ligger bakom vilken lucka är inte specificerat, men allt innehåll syns i produktbilderna."
+  - fraga: "Vilket material är smyckena gjorda av?"
+    svar: "Delarna är silverfärgade i metall, med pärlor och glittriga stenar i rosa och lila (murano-liknande). Vi kallar dem inte äkta silver eller äkta ädelstenar – det är inte belagt att det är det materialet."
+  - fraga: "Vilken ålder passar kalendern för?"
+    svar: "Ingen åldersgräns anges på förpackningen eller hos leverantören. Kalendern innehåller små delar som pärlor och berlocker, så var med om barnet är litet."
+  - fraga: "Hur många delar ingår totalt?"
+    svar: "Lådan har 24 numrerade luckor. I den syns två färdiga armband, två halsband med hänge och omkring tjugotre lösa berlocker och pärlor – vi anger inget exakt totalantal utöver det som går att se på bilderna."
+  - fraga: "Hur lång är leveranstiden och kostar frakten något?"
+    svar: "Leveranstiden är 5–10 arbetsdagar. Frakten är fri i Sverige och Norge."
+  - fraga: "Vad gäller om jag vill ångra köpet?"
+    svar: "Du har 14 dagars ångerrätt enligt svensk lag."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.temu.com/se/1-l%C3%A5da-24-dagars-adventskalender-presentl%C3%A5da-nedr%C3%A4kningskalender-presentl%C3%A5da-24-delars-flerartiklar-partypresentf%C3%B6rpackning-nedr%C3%A4kningskalender-adventskalender-f%C3%B6delsedagspresent-b%C3%A4stisparty-examenspresent-halloween-julklapp-g-601103342324905.html"
+  anteckning: "Temu. Offerten: en enda fabrik, lagerläget okänt."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneBarnsmycken"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Material — säg aldrig \"silver\" eller \"äkta stenar\". Delarna är silverfärgade, inget mer är belagt."
+  - "CE-märkning, nickelfrihet och åldersrekommendation: inget av det syns på bilden eller sidan."
+  - "Ingen varningstext om små delar/kvävningsrisk är belagd — påstå inte att den finns, och inte heller att den saknas på produkten."
+  - "Exakt antal delar. Titeln säger 24; bilden visar 2 armband, 2 halsband och ca 23 berlocker. Räkna inte upp ett högre antal."
+  - "Mått på lådan, armbandslängd och vikt är okända."
+  - "Om lådans luckor innehåller exakt de delar bilden visar — ingen fördelning per lucka är belagd."
+
+verifierat:
+  vad_det_ar: "En fylld adventskalender i kartong med 24 numrerade luckor, där varje lucka innehåller en smyckesdel i rosa/lila — pärlor med stort hål (Pandora-stil), hängen och armband som barnet trär ihop själv."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "okänt — ingen åldersmärkning syns på lådan eller står på leverantörssidan"
+  risk: "Leksakssmycken till barn kräver CE-märkning och varning om små delar inom EU, och ingendera är belagd på den här produkten — dessutom är fabriksläget och lagret obekräftat enligt offerten."
+  ingar:
+    - "Kartonglåda med 24 numrerade luckor (4 rader x 6), rosa/lila julmotiv med gran och ren"
+    - "Två färdiga ormkedjearmband i silverfärgad metall — lobsterlås plus förlängningskedja med hjärta i änden"
+    - "Två halsband med hänge: rosa hjärta i pärlram och en enhörning med regnbågsman"
+    - "Cirka 23 lösa berlocker och pärlor: snöflingor, fjärilar, blommor, stjärna, bil, pumpavagn, måne, rosett, kristallhängen"
+    - "Murano-liknande glitterpärlor i rosa och lila med brett metallhål"
+    - "Locktexten på lådan är engelsk: \"Merry Christmas And Happy New Year\""
+  varningar:
+

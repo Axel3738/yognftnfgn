@@ -5,6 +5,7 @@ Do the steps in order, top to bottom. Tick each one.
 the ones above it have to be true first. Sections 1–3 cannot be undone later,
 and section 12 is the check that the rest actually worked.
 Everything not on this list is done by Claude Code.
+This store has several products – it is still ONE store, ONE domain, ONE checklist.
 
 * STORE NAME: **AdventLane**
 * DOMAIN: **adventlane.se**
@@ -12,6 +13,17 @@ Everything not on this list is done by Claude Code.
 * FORWARD TO: **subscriptions@stonebite.org**
 * OWNER (hand over to): **axelodhner.business@gmail.com**
 * PRODUCT: **Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor** (adventskalender-racingbilar)
+* PRODUCT: **Dinosaurie Adventskalender – 24 Dinosaurier** (dinosaurie)
+* PRODUCT: **Gör Din Egen Adventskalender – 24 tomma askar att fylla** (gor-din-egen)
+* PRODUCT: **Pussel Adventskalender – 24 Dagar med Pusselbitar** (pussel)
+* PRODUCT: **Whisky Adventskalender – 24 miniatyrflaskor** (whisky-amazon)
+* PRODUCT: **Golf Adventskalender – 24 golftillbehör** (golf)
+* PRODUCT: **Cocktail Adventskalender – 24 Cocktailflaskor i Akryl** (cocktail)
+* PRODUCT: **Smycken Adventskalender – 24 Halsband, Örhängen och Ringar** (smycken)
+* PRODUCT: **Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband** (barnsmycken)
+* PRODUCT: **Ishockey Adventskalender – 24 Luckor med Hockeyprylar** (ishockey)
+* PRODUCT: **Öl-adventskalender – 24 Ölflaskor som Julgranspynt** (ol-whisky-2d)
+* PRODUCT: **Sprit Adventskalender – 24 dekorflaskor** (sprit-klassisk)
 
 ## 1. Shopify – create the store
 **The address you type here decides the currency, the language and the home
@@ -91,6 +103,7 @@ behind its password either way (measured: DryTrek 2026-09-09).
       This is what the order emails, the checkout, the review requests and the
       Meta page are all named after – so it happens before any of them.
 - [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
+      Then write **NOK is on** to Claude — the fixed NOK prices per product are set from there by API (measured on AdventLane 2026-09-10: catalog + price list + fixed prices, read back as contextual pricing). Until they are set, ads for Norway promise a price the store does not show.
 
 ## 6. Domain
 Loopia first – Shopify cannot connect a domain that is not bought, and the
@@ -113,6 +126,17 @@ review with a local name and the original date).
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Dinosaurie Adventskalender – 24 Dinosaurier** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Gör Din Egen Adventskalender – 24 tomma askar att fylla** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Pussel Adventskalender – 24 Dagar med Pusselbitar** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Whisky Adventskalender – 24 miniatyrflaskor** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Golf Adventskalender – 24 golftillbehör** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Cocktail Adventskalender – 24 Cocktailflaskor i Akryl** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Smycken Adventskalender – 24 Halsband, Örhängen och Ringar** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Ishockey Adventskalender – 24 Luckor med Hockeyprylar** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Öl-adventskalender – 24 Ölflaskor som Julgranspynt** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Sprit Adventskalender – 24 dekorflaskor** → Import
   The upload is yours and stays yours: Judge.me's API overwrites every review
   date with the moment of import (measured 2026-09-08), the app's own file
   keeps the original dates. No file in the chat = say so, do not import
@@ -139,6 +163,8 @@ it. That is why they are one section – one trip, not two (Axel 2026-09-10).
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **AdventLane**
 - [ ] Copy the **Page ID** → give to Claude Code
       The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
+- [ ] Same screen → the new page **AdventLane** → **Add people** → pick the OWNER (the person whose Meta token Claude runs on) → tick **Manage Page** → **Assign**
+      ⚠️ Without this Claude cannot create a single ad — Meta answers "(#200) … role Advertiser or higher" (measured on TankGuard 2026-09-08 and AdventLane 2026-09-10, both of which stalled here for hours). The page being owned by the business is NOT enough; the PERSON needs a role on the page.
 - [ ] Discord → + → Create server: **AdventLane — OPS**
 - [ ] Open the **authorize link** Claude gave you when the build finished → pick that server → Authorize
       No link in the chat? Ask Claude for it – it is one command, not a wait.

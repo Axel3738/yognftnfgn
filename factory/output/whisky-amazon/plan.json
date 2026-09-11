@@ -1,0 +1,108 @@
+{
+  "input": {
+    "title": "Whisky Adventskalender – 24 miniatyrflaskor",
+    "handle": "whisky-adventskalender-24-miniatyrflaskor",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>24 dekorflaskor bakom luckorna – ingen alkohol, bara julkänsla att hänga i granen.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Whisky Adventskalender – 24 miniatyrflaskor – AdventLane",
+      "description": "Du slipper gissa vilken whisky mottagaren gillar – det finns ingen sort att välja fel. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "349.00",
+        "compareAtPrice": "469.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-whisky-amazon-1.png?v=1789107106",
+        "contentType": "IMAGE",
+        "alt": "Whiskykalender: grön ask med whiskyglas på locket och tjugofyra dekorativa miniatyrflaskor runt om"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Fel sort blir stående i skåpet"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "En riktig flaska kräver att du gissar rätt sort – rökig, torvig eller söt bourbon – och gissar du fel blir den stående oöppnad. Och en flaska med etikett och åldersgräns känns fel att skicka i posten till någon du inte kan legitimationskolla."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Ingen sort att välja fel på"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Bakom var och en av kalenderns 24 luckor väntar en miniatyrflaska med tryckt whiskyetikett – utan innehåll, utan åldersgräns, bara dekor att hänga i granen efter december. Ingen gissning om rätt sort, för det finns ingen dryck att välja fel."
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Du slipper gissa vilken whisky mottagaren gillar – det finns ingen sort att välja fel\",\"Räknar ner mot jul utan att fylla på med alkohol eller godis\",\"Flaskorna går att spara och hänga i granen igen nästa jul\",\"Går att skicka och ge bort utan åldersgräns, eftersom det inte är dryck\",\"Färdig present direkt ur lådan – ingen inslagning behövs\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"24 miniatyrflaskor i plast/harts, ca 5 x 2 cm, med tryckta whiskyetiketter\",\"Hängögla/snöre på varje flaska – häng i granen eller ställ på hylla\",\"Kalenderlåda 25 x 18 x 5 cm med 24 fack och grönt julmotiv\",\"Ingen montering – klar att ge bort direkt ur lådan\",\"Innehåller ingen alkohol\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Innehåller kalendern alkohol?\",\"svar\":\"Nej. De 24 flaskorna är dekorationer i plast/harts med tryckta whiskyetiketter – inget att dricka, inget att fylla på.\"},{\"fraga\":\"Kan man öppna flaskorna?\",\"svar\":\"Nej, de är massiva dekorobjekt utan lock eller innehåll att komma åt.\"},{\"fraga\":\"Är flaskorna likadana i varje kalender och sitter de i nummerordning bakom luckorna?\",\"svar\":\"Vi har inte fått bekräftat av leverantören exakt vilka 24 flaskor som ingår eller om luckorna är numrerade – vi uppdaterar sidan så fort vi vet mer.\"},{\"fraga\":\"Hur lång är leveranstiden och vad kostar frakten?\",\"svar\":\"5–10 arbetsdagar. Fri frakt till Sverige och Norge.\"},{\"fraga\":\"Vad händer om jag ångrar mig?\",\"svar\":\"Du har 14 dagars ångerrätt från att du fått kalendern, enligt svensk distansköpslag.\"},{\"fraga\":\"Finns det en åldersgräns för att köpa eller skicka den?\",\"svar\":\"Nej – eftersom kalendern inte innehåller alkohol gäller ingen åldersgräns vid köp eller leverans.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:vuxen\",\"intresse:whisky\",\"egenskap:dekor\"],\"mening\":\"Den här matchar för att mottagaren gillar whisky, men du slapp gissa vilken sort hen dricker.\",\"sma_delar\":true,\"alkoholtema\":true}"
+    }
+  ]
+}

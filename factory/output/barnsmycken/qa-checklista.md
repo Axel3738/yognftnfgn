@@ -1,0 +1,53 @@
+# QA — Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband
+
+- [x] ✅ produkt: Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband (barnens-smyckeskalender-24-parlor), status ACTIVE
+- [x] ✅ priser: 379 SEK på alla varianter, jämförpris 499
+- [x] ✅ varianter: 1 st
+- [x] ✅ bilder: 1 st, 1 media i butiken
+- [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
+- [ ] ❌ beskrivning: Saknas: media.gif_problem, media.media_losning
+- [ ] ❌ reviews: Bara 0 recensioner — minst 3 krävs för launch.
+- [x] ✅ frakt: 5–10 arbetsdagar
+- [ ] 🖐 frakt-zoner: Kontrollera fraktzon och pris i Shopify → Frakt och leverans.
+- [x] ✅ guarantee: 14 dagars ångerrätt
+- [x] ✅ tracking: pixel 1013287061762227, konto 915422744950975
+- [ ] 🖐 tracking-koppling: Verifiera att pixeln tar emot events i Meta Events Manager.
+- [ ] 🖐 theme: Temat måste vara valt och sektionerna inlagda i Shopify-editorn.
+- [x] ✅ doman: adventlane.se med SSL
+- [x] ✅ villkor: 4 policyer på plats
+- [x] ✅ checkout: valuta SEK
+- [ ] 🖐 checkout-betalning: Gör ett testköp och bekräfta att betalleverantören är aktiv.
+- [ ] ❌ kundvy-produktsida: paketväljaren (ms-paket) finns
+- [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
+- [ ] ❌ markörer /nb: svenska ord kvar: Fri frakt, luckor, lucka, ångerrätt, arbetsdagar
+
+## Varningar
+
+- [ ] dinosaurie: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] dinosaurie: media.media_losning saknas (kritisk media — krävs före launch)
+- [ ] dinosaurie: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] gor-din-egen: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] gor-din-egen: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] pussel: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] pussel: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] whisky-amazon: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] whisky-amazon: media.media_losning saknas (kritisk media — krävs före launch)
+- [ ] whisky-amazon: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] golf: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] golf: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] cocktail: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] cocktail: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] smycken: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] smycken: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] barnsmycken: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] barnsmycken: media.media_losning saknas (kritisk media — krävs före launch)
+- [ ] barnsmycken: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] ishockey: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] ishockey: media.media_losning saknas (kritisk media — krävs före launch)
+- [ ] ishockey: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] ol-whisky-2d: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] ol-whisky-2d: media.media_losning saknas (kritisk media — krävs före launch)
+- [ ] ol-whisky-2d: reviews: färre än 3 recensioner (importeras till Judge.me)
+- [ ] sprit-klassisk: media.gif_problem saknas (kritisk media — krävs före launch)
+- [ ] sprit-klassisk: media.media_losning saknas (kritisk media — krävs före launch)
+- [ ] sprit-klassisk: reviews: färre än 3 recensioner (importeras till Judge.me)

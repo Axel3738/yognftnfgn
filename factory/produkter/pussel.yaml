@@ -1,0 +1,165 @@
+# Pussel Adventskalender – 24 Dagar med Pusselbitar
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Pussel Adventskalender – 24 Dagar med Pusselbitar"
+  id: "pussel"
+  handle: "pussel-adventskalender-24-dagar-med-pusselbitar"
+  menynamn: "Pusselkalendern"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 14.56 USD landat (produkt + frakt in) × 9.6414 = 140 kr.
+  inkopskostnad: 140
+  pris: 449
+  jamforpris: 599
+  # Break-even-ROAS 1,45 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-pussel-1.png?v=1789107098"
+      alt: "Pusselkalender: röd ask med tomten vid brasan på locket, numrerade luckor och lösa pusselbitar framför"
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-pussel-2.jpg?v=1789107102"
+      alt: "Det färdiga julpusslet med tomten, granen, hunden och katten vid den öppna spisen"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-pussel-2.jpg?v=1789107102"
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "En julklapp som är slut innan kaffet hunnit kallna"
+  problem_text: "Du letar efter en julklapp som håller hela december – inte bara morgonen den 1:a. En vanlig chokladkalender är uppäten innan frukost och tom den 25:e, utan något kvar att minnas den för. Du vill ge något som ger ett fast, litet ärende varje kväll och som finns kvar även efter jul."
+  losning_rubrik: "1008 bitar, 24 kvällar, en tavla kvar på väggen"
+  losning_text: "Den här kalendern är ingen ask att fylla själv – bitarna ligger redan i. 1008 pusselbitar är delade i 24 numrerade dagsportioner om 42 bitar var, en portion per kväll. Till julafton är tavlan klar: ett färdigt pussel på 70×50 cm, inte en tom förpackning att slänga."
+
+vinkel:
+  huvudvinkel: "1008 bitar, 24 dagar — ur verifierade fakta om varan, En adventskalender som är ETT pussel på 1008 bitar: 24 numrerade dagsportioner à 42 bitar"
+  underrubrik: "1008 bitar i 24 numrerade dagsportioner – 42 bitar per kväll fram till julafton."
+  usp: "1008 bitar, 24 dagar"
+
+malgrupp:
+  beskrivning: "Vuxen pusslare eller familj som vill ha en nedräkning som lämnar något kvar efter julafton – köps oftast som julklapp till någon annan."
+
+problem:
+  - "Chokladkalendern är tom redan till frukost den 25:e."
+  - "En gåva som glöms bort i januari känns som slöseri."
+  - "December utan ett gemensamt, litet ärende varje kväll."
+
+benefits:
+  - "Ett fast litet ärende varje kväll i december – lägg dagens bitar innan ni släcker lampan."
+  - "Den 24:e är kalendern inte slut, den är färdig: en tavla på 70×50 cm att sätta upp."
+  - "Litet paket, 28×26×5 cm – går att slå in och lägga under granen."
+  - "Inget att ladda, ingen app, inget att fylla på själv – allt ligger redan i asken."
+  - "Passar både den som redan pusslar och den som vill prova pussel för första gången i december."
+
+features:
+  - "1008 pusselbitar totalt, fördelade på 24 numrerade dagsportioner."
+  - "42 bitar per dagsportion (42 × 24 = 1008, står på kartongen)."
+  - "Färdigt pussel: 70 × 50 cm."
+  - "Förpackning (ask): 28 × 26 × 5 cm."
+  - "Ett sammanhängande julmotiv som byggs upp genom alla 24 dagarna."
+  - "Kräver varken batterier, app eller påfyllning."
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Det här är svaret när mottagaren gillar pussel och gåvan ska hålla längre än julafton – 1008 bitar blir en tavla på 70×50 cm när kalendern är slut."
+  sma_delar: true
+  alkoholtema: false
+  taggar:
+    - "mottagare:vuxen"
+    - "mottagare:tonaring"
+    - "mottagare:vemsomhelst"
+    - "alder:9-12"
+    - "intresse:pussel"
+    - "egenskap:varar"
+    - "egenskap:brett"
+
+offer:
+  beskrivning: "Pussel Adventskalender – 24 Dagar med Pusselbitar — 449 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Vad händer om jag ångrar mig?"
+    svar: "Du har 14 dagars ångerrätt från att du fått paketet. Hör av dig till kundtjänst så får du instruktioner för retur."
+  - fraga: "Hur lång är leveranstiden?"
+    svar: "5–10 arbetsdagar, både till Sverige och Norge."
+  - fraga: "Vad kostar frakten?"
+    svar: "Frakten är fri, till både Sverige och Norge."
+  - fraga: "Får jag en affisch eller ett facit att pussla efter?"
+    svar: "En av kalenderns förpackningsvarianter har 'poster included' tryckt på kartongen, men vi kan inte i dag garantera att affischen följer med varje exemplar. Är det avgörande för dig, hör av dig till kundtjänst innan du beställer."
+  - fraga: "Vilken ålder passar kalendern för?"
+    svar: "Det finns ingen åldersmärkning tryckt på förpackningen. Eftersom bitarna är förhållandevis små rekommenderar vi den för vuxna och äldre barn, inte för småbarn."
+  - fraga: "Är det olika bilder bakom varje dag, eller ett och samma motiv?"
+    svar: "Det är ett och samma julmotiv som växer fram bit för bit över alla 24 dagarna – inte 24 separata bilder."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.temu.com/se/julkalenderpussel-1008-bitar-nedr%C3%A4kningskalender-f%C3%B6r-2026-julpussel-med-tomten-1008-bitar-g-601099675321938.html"
+  anteckning: "Temu. 1008 bitar fördelade på 24 dagar. CE-märkning och kvävningsvarning syns inte på kartongen — kontrollera på den fysiska varan innan den marknadsförs mot barn."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLanePussel"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Materialet står ingenstans — påstå aldrig kartongtjocklek, 'premiumkartong' eller att bitarna inte lossnar."
+  - "Ingen åldersmärkning, inget CE-märke och ingen kvävningsvarning syns på någon av kartongerna."
+  - "Två olika kartonger i leverantörens bilder: 24 hårda minilådor (bild 1) mot numrerade papperspaket + nummerark (bild 2) — vilken som skickas är okänt."
+  - "'POSTER INCLUDED' står bara på den ena kartongen — lova inte affisch utan att ha sett en fysisk vara."
+  - "Motivet skiljer sig mellan de två bilderna (två olika julrumsscener) — visa aldrig ett motiv som garanti."
+  - "Vikt, ursprung, tillverkare och om ram/lim ingår går inte att belägga; Temu-sidan bär bara titeln."
+
+verifierat:
+  vad_det_ar: "En adventskalender som är ETT pussel på 1008 bitar: 24 numrerade dagsportioner à 42 bitar som tillsammans bygger ett julmotiv på 70×50 cm — inte en tom ask att fylla, bitarna ligger i."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "okänt (ingen åldersmärkning syns på kartongen)"
+  risk: "Produkten säljs mot barnfamiljer men saknar synligt CE-märke och kvävningsvarning på kartongen — små pusselbitar kräver normalt sådan märkning i EU, så den måste kontrolleras på den fysiska varan innan den marknadsförs mot barn."
+  ingar:
+    - "1008 pusselbitar fördelade på 24 numrerade dagsportioner, 42 bitar per dag (42×24=1008, står på kartongen)"
+    - "Ett enda julmotiv: tomten vid öppen spis med gran, hund, katt, tomtenissar och paket"
+    - "Färdigt pussel 70×50 cm (27,5×19,7 tum), ask 28×26×5 cm — måtten står tryckta i leverantörsbilden"
+    - "Affisch i full storlek 70×50 cm: 'POSTER INCLUDED' står på den ena av de två kartongerna"
+    - "Dagsportionerna är förpackade var för sig: 24 små numrerade lådor (bild 1) eller numrerade papperspaket med nummerark 1–24 (bild 2)"
+  varningar:
+

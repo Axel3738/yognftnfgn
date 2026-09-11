@@ -1,0 +1,163 @@
+# Ishockey Adventskalender – 24 Luckor med Hockeyprylar
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Ishockey Adventskalender – 24 Luckor med Hockeyprylar"
+  id: "ishockey"
+  handle: "ishockey-adventskalender-24-luckor"
+  menynamn: "Hockeykalendern"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 12.03 USD landat (produkt + frakt in) × 9.6414 = 116 kr.
+  inkopskostnad: 116
+  pris: 399
+  jamforpris: 529
+  # Break-even-ROAS 1,41 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-ishockey-1.png?v=1789107139"
+      alt: "Hockeykalender: blå ask formad som en rink med klubbor på locket och små spelarfigurer framför"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: ""
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "Chokladkalendern säger ingenting om hockeyintresset"
+  problem_text: "December är fullspäckad av matcher, men julafton känns ändå långt borta. En hockeyfantast som får en vanlig chokladkalender öppnar den på tio sekunder och slänger den – ingen koppling till det hen faktiskt sitter och kollar på varje kväll."
+  losning_rubrik: "En kalender som är hockey rakt igenom"
+  losning_text: "Asken är hockey utan kompromiss: isarena, strålkastare och korsade klubbor tryckt över hela framsidan, med 24 numrerade luckor som räknar ner till julafton. Bakom luckorna väntar ett sortiment av hockeyprylar och samlarfigurer i olika lagfärger – ingen choklad, inget som konkurrerar med adventsljusstaken om uppmärksamheten."
+
+vinkel:
+  huvudvinkel: "Hockeytema, inget godis — ur verifierade fakta om varan, En kartongask med ishockeytema, 22 × 32 × 4 cm, med 24 numrerade perforerade luckor (1–24)"
+  underrubrik: "24 numrerade luckor på en ask med hockeytema genomgående – nedräkningen till julafton för hockeyfantasten i familjen."
+  usp: "Hockeytema, inget godis"
+
+malgrupp:
+  beskrivning: "En hockeyfamilj eller hockeykompis som köper till en ishockeyintresserad person – barn i skolåldern, tonåring eller vuxen supporter – som nedräkning till jul."
+
+problem:
+  - "Chokladkalendrar töms på tio sekunder, sen är december tom igen."
+  - "Generiska julkalendrar med leksaker eller sötsaker säger inget om att mottagaren är hockeyfantast."
+  - "Julklappen ska helst vara klar långt före julafton, men kännas personlig ändå."
+
+benefits:
+  - "En nedräkning till jul som faktiskt handlar om det hen är intresserad av – inte en slumpmässig chokladkalender."
+  - "24 dagar utan att behöva komma på nya sätt att visa att du tänkt på hockeyintresset."
+  - "Ingen onödig choklad eller godis i kalendern – bara hockeytema."
+  - "En ask som står fint på hyllan eller bordet hela december."
+  - "En enda variant att välja – inget krångel med färger eller modeller innan köpet."
+
+features:
+  - "Kartongask, 22 × 32 × 4 cm, med isarena, strålkastare och hockeyklubbor tryckta på framsidan"
+  - "24 numrerade, perforerade luckor – en att öppna varje dag fram till julafton"
+  - "Sortiment av hockeyprylar och samlarfigurer: minihockeyklubbor i plast, nyckelringar i metall/läderrem och figurer med hockeyhjälm i olika lagfärger"
+  - "Helt fri från alkohol och godis"
+  - "En variant – inget val av färg eller modell"
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Perfekt för den som hellre håller koll på tabellen än på julgranen – 24 luckor med hockeyprylar, inte choklad."
+  sma_delar: true
+  alkoholtema: false
+  taggar:
+    - "mottagare:barn"
+    - "mottagare:tonaring"
+    - "mottagare:vuxen"
+    - "alder:9-12"
+    - "intresse:hockey"
+    - "egenskap:varar"
+    - "egenskap:dekor"
+
+offer:
+  beskrivning: "Ishockey Adventskalender – 24 Luckor med Hockeyprylar — 399 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Vad finns bakom luckorna?"
+    svar: "Ett sortiment av hockeyprylar och samlarfigurer – till exempel minihockeyklubbor, nyckelringar och figurer med hockeyhjälm i olika lagfärger. Vi anger inte exakt vilket föremål som ligger bakom varje enskild lucka."
+  - fraga: "Innehåller kalendern godis eller alkohol?"
+    svar: "Nej. Kalendern är helt fri från både godis och alkohol – innehållet är hockeytillbehör och samlarfigurer, inget att äta eller dricka."
+  - fraga: "Vilken ålder passar kalendern för?"
+    svar: "Det står ingen åldersgräns på förpackningen. Innehållet är småprylar och samlarfigurer, så vi rekommenderar att en vuxen håller ett öga på det om det finns småsyskon i huset."
+  - fraga: "Är figurerna licensierade lagprodukter?"
+    svar: "Det framgår inte av förpackningen, så vi lovar ingen officiell lag- eller ligalicens – kalendern säljs som en hockeytemad julkalender, inte som märkesvaror."
+  - fraga: "Hur lång är leveranstiden?"
+    svar: "5–10 arbetsdagar, med fri frakt både i Sverige och Norge."
+  - fraga: "Kan jag skicka tillbaka kalendern om den inte passar?"
+    svar: "Ja, du har 14 dagars ångerrätt från att du fått paketet."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.aliexpress.com/item/1005010277237949.html"
+  anteckning: "AliExpress. Sidan svarar 302 på curl — fakta vilar i hög grad på leverantörsbilden."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneHockey"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Om asken ens levereras FYLLD — ingen bild visar något föremål inuti en lucka, bara ett sortiment utlagt bredvid asken."
+  - "Exakt vilka 24 föremål som ingår, hur många av varje och hur de fördelas på luckorna."
+  - "Materialet: titeln säger \"Acrylic\", bilderna visar tryckt kartong. Motsägelsen är olöst."
+  - "Om figurerna är licensierade NHL-produkter — de bär lagmärken men inget licensmärke syns."
+  - "CE-märkning, åldersgräns och varningstext om smådelar — ingen text alls syns på asken."
+  - "Vikt, ursprungsland och leverantörens pris/valuta (AliExpress-sidan är klientrenderad, inga attribut gick att läsa)."
+
+verifierat:
+  vad_det_ar: "En kartongask med ishockeytema, 22 × 32 × 4 cm, med 24 numrerade perforerade luckor (1–24) och trycket \"ICE HOCKEY\" över en isarena — leverantörens bilder visar ett sortiment av hockeyprylar bredvid asken, men aldrig något inuti en lucka."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "okänt — ingen åldersmärkning syns på asken i någon bild"
+  risk: "Figurerna i leverantörens bild bär NHL-lagens varumärken (Blackhawks, Stars, Maple Leafs, L.A. Kings, Winnipeg Jets m.fl.) utan synlig licens — det är en varumärkesrisk vid marknadsföring och en klassisk orsak till nekade Meta-annonser och nedtagningskrav."
+  ingar:
+    - "Asken: kartong, 22 × 32 × 4 cm, 24 numrerade luckor, tryckta klubbor + puck på framsidan."
+    - "På leverantörens sortimentsbild: 2 större bobblehead-spelare på pucksockel (röd/svart tröja, grön tröja märkt \"STARS\")."
+    - "10 små samlarfigurer med hockeyhjälm i olika lagfärger (hjälmarna bär NHL-lagmärken, bl.a. Maple Leafs, L.A. Kings, Winnipeg Jets)."
+    - "Minihockeyklubbor i svart plast (flera stycken)."
+    - "Nyckelringar: en grön minihjälm plus två i metall/läderrem."
+    - "Småsaker: en ring/manschett i metall, en vikt pappersbok-dekoration, kort och ett litet häfte."
+  varningar:
+

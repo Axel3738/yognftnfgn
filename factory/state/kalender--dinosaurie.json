@@ -1,0 +1,48 @@
+{
+  "butik": "kalender",
+  "produkt": "dinosaurie",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/11174142935383",
+      "handle": "dinosaurie-adventskalender-24-dinosaurier",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 10
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "Default Title"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": false,
+      "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
+    },
+    "paket": {
+      "klar": false,
+      "manuell": "Steget gick inte att göra: Produkten dinosaurie finns inte i butiken — kör produkt-steget först."
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
+    }
+  },
+  "uppdaterad": "2026-09-11T06:37:38.706Z",
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "beskrivning",
+      "reviews",
+      "kundvy-produktsida",
+      "markörer /nb"
+    ],
+    "tid": "2026-09-11T06:37:38.706Z"
+  }
+}

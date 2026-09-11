@@ -1,0 +1,164 @@
+# Smycken Adventskalender – 24 Halsband, Örhängen och Ringar
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Smycken Adventskalender – 24 Halsband, Örhängen och Ringar"
+  id: "smycken"
+  handle: "smycken-adventskalender-24-halsband-orhangen-ringar"
+  menynamn: "Smyckeskalendern"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 13.55 USD landat (produkt + frakt in) × 9.6414 = 131 kr.
+  inkopskostnad: 131
+  pris: 449
+  jamforpris: 599
+  # Break-even-ROAS 1,41 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-smycken-1.png?v=1789107125"
+      alt: "Smyckeskalender: brun ask med tjugofyra luckor och halsband, örhängen och ringar runt om"
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-smycken-2.jpg?v=1789107130"
+      alt: "Smyckena sedda var för sig: halsband med hängen, örhängen och ringar"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-smycken-2.jpg?v=1789107130"
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "Fel längd. Fel stil. Fel dag."
+  problem_text: "Du ska ge en tjej eller kvinna smycken i julklapp, men smak är svårt att gissa – fel längd på en kedja, fel stil på ett par örhängen, och klappen hamnar i en byrålåda i stället för på henne. Ett enda utvalt smycke är ett litet lotteri."
+  losning_rubrik: "24 luckor, 24 chanser att träffa rätt"
+  losning_text: "Den här kalendern satsar inte på ett smycke utan tjugofyra: halsband, örhängen och ringar blandat bakom var sin lucka, i guld- och roséguldton med enstaka silverfärgade. Är inte lucka 3 hennes stil är lucka 4 en annan – och allt ligger redan i asken, klart att ge bort."
+
+vinkel:
+  huvudvinkel: "24 luckor, redan fyllda — ur verifierade fakta om varan, En färdigfylld adventskalender i kartong med 24 luckor, där varje lucka innehåller ett mod"
+  underrubrik: "Färdigfylld med 24 blandade smycken i guld- och roséguldton – redo att ge bort direkt."
+  usp: "24 luckor, redan fyllda"
+
+malgrupp:
+  beskrivning: "Den som ska ge en tonåring eller vuxen kvinna som gillar smycken en julklapp, och vill undvika att gissa fel på EN enda modell."
+
+problem:
+  - "Att välja ETT smycke i julklapp är att gissa på stil, längd och färg."
+  - "En felvald kedja eller ring läggs i en byrålåda och glöms bort."
+  - "Ett enda köp ger bara ett svar – träffar det inte hennes smak finns ingen reserv."
+
+benefits:
+  - "Ett nytt smycke att se fram emot varje dag fram till julafton."
+  - "Ingen gissning på EN modell – 24 olika att träffa rätt med."
+  - "Blandat innehåll (halsband, örhängen, ringar) ökar chansen att det matchar hennes stil."
+  - "Färdigfylld och klar att ge bort direkt ur kartongen – inget att komplettera."
+
+features:
+  - "24 luckor, ett smycke bakom varje."
+  - "Halsband, örhängen och ringar i samma ask."
+  - "Berlocker med olika motiv: fjäril, fågel, snäcka, kors, lotus, bikaka, kaktus, krona, tass."
+  - "Guld- och roséguldton dominerar, enstaka silverfärgade."
+  - "CE- och CPC-märkt, EU-representant angiven på förpackningen."
+  - "Varning på förpackningen: ej för barn under 3 år (smådelar)."
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "När gåvan är till en tjej eller kvinna som gillar smycken och du vill att hon ska öppna något nytt varje dag i december."
+  sma_delar: true
+  alkoholtema: false
+  taggar:
+    - "mottagare:vuxen"
+    - "mottagare:tonaring"
+    - "intresse:smycken"
+    - "egenskap:varar"
+
+offer:
+  beskrivning: "Smycken Adventskalender – 24 Halsband, Örhängen och Ringar — 449 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Vad finns bakom luckorna?"
+    svar: "Ett modesmycke bakom varje lucka – halsband, örhängen och ringar blandat, i guld- och roséguldton med enstaka silverfärgade. Berlockerna har olika motiv, bland annat fjäril, fågel, snäcka, kors, lotus och krona. Exakt hur många av varje typ som ingår varierar."
+  - fraga: "Är smyckena i äkta guld eller silver?"
+    svar: "Det står inte angivet på förpackningen vilket material eller vilken legering smyckena är gjorda av, så vi kan inte uppge det. Har mottagaren extra känslig hud rekommenderar vi försiktighet."
+  - fraga: "Passar kalendern som julklapp till en tonåring?"
+    svar: "Ja, den är gjord för tonåringar och vuxna som gillar smycken. Förpackningen har en tydlig varning: ej för barn under 3 år på grund av smådelar."
+  - fraga: "Hur lång är leveranstiden och kostar frakten något?"
+    svar: "Leveranstid är 5–10 arbetsdagar, och frakten är fri både till Sverige och Norge."
+  - fraga: "Kan jag lämna tillbaka kalendern om jag ångrar mig?"
+    svar: "Ja, du har 14 dagars ångerrätt från att du tagit emot paketet."
+  - fraga: "Får jag exakt de smycken som visas på bilden?"
+    svar: "Bilden med alla smycken visar ett större sortiment än de 24 som ligger i just din ask – den visar stilen, inte det exakta innehållet. Vad som ligger bakom varje lucka är en överraskning."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.temu.com/se/2026-kalender-24-panelers-kalender-f%C3%B6r-fest-presenter-till--och-familj-f%C3%B6delsedagspresenter-till-kvinnor--halloween--klappar-g-601102497626225.html"
+  anteckning: "Temu. 24 smycken bakom luckorna."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneSmycken"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Metall och material — inget står någonstans. Säg aldrig silver, guld, äkta, sterling, nickelfritt eller hypoallergent."
+  - "Stenarna: ingen uppgift om de är glas, zirkonia eller annat. Aldrig \"diamant\"."
+  - "Den stora solitärringen på framsidan är förpackningstryck — inte belagt att just den ringen ingår."
+  - "Exakt fördelning mellan halsband, örhängen och ringar. Innehållsbilden visar fler smycken än 24 — den är ett sortimentsurval, inte asken."
+  - "Askens mått och vikt."
+  - "Om kalendern säljs som 2026-årskalender eller adventskalender varierar mellan leverantörens titel och asken — asken säger ADVENT CALENDAR."
+
+verifierat:
+  vad_det_ar: "En färdigfylld adventskalender i kartong med 24 luckor, där varje lucka innehåller ett modesmycke — inte en tom ask och inte en 2026-årskalender, trots leverantörens titel."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "Modesmycken för tonåring/vuxen kvinna. Enda belagda åldersangivelsen är varningen på asken: ej för barn under 3 år."
+  risk: "Modesmycken i okänd legering bärs mot hud — utan uppgift om nickelavgivning är REACH bilaga XVII punkt 27 en öppen risk, och varje påstående om ädelmetall eller nickelfritt vore påhittat."
+  ingar:
+    - "24 luckor — siffran \"24\" står i hjärtat på asken och i Temu-titeln (\"24 panelers\")"
+    - "Halsband med berlocker: fjäril, fågel, snäcka, kors, lotus, bikaka, kaktus, krona, tass (leverantörens innehållsbild)"
+    - "Örhängen: droppar, blad, ringar, geometriska former"
+    - "Fingerringar: släta band, hjärtan, geometriska"
+    - "Guld- och roséguldton dominerar; enstaka silverfärgade"
+    - "Kartongask, guldglittrigt tryck, text \"ADVENT CALENDAR – Fashion Jewelry\""
+  varningar:
+    - "CHOKING HAZARD – small parts, not for children under 3 years (tryckt på asken)"
+    - "CE-märkt"
+    - "CPC-märkt"

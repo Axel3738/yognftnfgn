@@ -1,0 +1,160 @@
+# Öl-adventskalender – 24 Ölflaskor som Julgranspynt
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Öl-adventskalender – 24 Ölflaskor som Julgranspynt"
+  id: "ol-whisky-2d"
+  handle: "ol-adventskalender-24-olflaskor-julgranspynt"
+  menynamn: "Ölkalendern"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 9.06 USD landat (produkt + frakt in) × 9.6414 = 87 kr.
+  inkopskostnad: 87
+  pris: 349
+  jamforpris: 469
+  # Break-even-ROAS 1,33 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-ol-whisky-2d-1.png?v=1789107142"
+      alt: "Ölkalender: orange ask med ölsejdel på locket och tjugofyra flaskor i olika färger runt om"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: ""
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "Decembers kalendrar är gjorda för barn"
+  problem_text: "Adventskalendrar i affären är choklad och tecknade figurer – fel present till en vuxen som redan har sin egen ölhylla eller bryggutrustning. December blir som alla andra månader: ingen daglig grej att se fram emot, bara en gran som hänger med samma kulor som förra året tills julafton."
+  losning_rubrik: "24 ölflaskor att hänga, en i taget"
+  losning_text: "24 miniatyrflaskor i ölflaskform, var och en med guldkapsyl och egen upphängningsögla – ett nytt granhänge att ta fram varje dag i december i stället för en chokladbit. Ingen dryck och ingen alkohol i asken: flaskorna är dekoration, färdiga att hänga direkt på granen. Minst fem flaskfärger i samma ask gör att granen ser annorlunda ut för varje dag som går."
+
+vinkel:
+  huvudvinkel: "24 flaskor. Ingen alkohol. — ur verifierade fakta om varan, En adventsask med 24 miniatyrflaskor formade som ölflaskor — varje flaska har kapsyl och u"
+  underrubrik: "24 miniatyrflaskor i ölflaskform som julgranshängen – ingen alkohol, bara dekoration."
+  usp: "24 flaskor. Ingen alkohol."
+
+malgrupp:
+  beskrivning: "Vuxna (män och kvinnor) som köper en julklapp eller adventsöverraskning till en ölintresserad partner, vän eller familjemedlem som pyntar gran – inte till barn."
+
+problem:
+  - "De klassiska kalendrarna är choklad och barnfigurer – fel present till en vuxen ölintresserad mottagare."
+  - "Granen pyntas en gång i början av december och står sen oförändrad till julafton."
+  - "En vanlig julklapp ger en enda överraskning – inte 24 stycken utspridda över hela månaden."
+
+benefits:
+  - "Ett nytt granhänge varje dag i december i stället för att pynta allt på en gång."
+  - "En present till någon som redan har allting – 24 småprylar i en enda ask."
+  - "Inget sockerrus och inget som äts upp för snabbt: hängena sitter kvar på granen även efter jul."
+  - "Asken är bara 4,98 cm tunn – går att skicka i brevlådan som present."
+
+features:
+  - "24 miniatyrflaskor i ölflaskform (12 i rutnätet + 12 i nedre raden enligt leverantörens bild)"
+  - "Minst fem flaskfärger: brun/amber, grön, gul, ljusblå och klar/vit"
+  - "Guldfärgad kapsyl med metallögla för upphängning på varje flaska"
+  - "Flaskorna är tredimensionella (leverantörens egen beteckning: \"Stereoscopic\"), inte platta figurer"
+  - "Flaskorna är omärkta – ingen etikett eller logotyp"
+  - "Kartongask 27,94 x 17,78 x 4,98 cm, tryckt \"BEER ADVENT CALENDAR 2025\" i guld med en ölsejdel som motiv"
+  - "Innehåller ingen alkohol eller dryck"
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Till den som hellre pyntar granen än äter choklad i december: 24 ölflaskformade hängen, helt utan alkohol."
+  sma_delar: true
+  alkoholtema: true
+  taggar:
+    - "mottagare:vuxen"
+    - "intresse:ol"
+    - "intresse:whisky"
+    - "egenskap:dekor"
+
+offer:
+  beskrivning: "Öl-adventskalender – 24 Ölflaskor som Julgranspynt — 349 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Innehåller kalendern alkohol eller riktig öl?"
+    svar: "Nej. De 24 flaskorna är miniatyrhängen i ölflaskform utan innehåll – ren dekoration till granen, ingen dryck och ingen alkohol i asken."
+  - fraga: "Går flaskorna att öppna och fylla själv?"
+    svar: "Det är inte bekräftat av leverantören. Flaskorna har kapsyl och ögla för upphängning, men räkna med dem som färdiga granhängen – inte som behållare att fylla."
+  - fraga: "Är dagarna numrerade i asken, som i en vanlig adventskalender?"
+    svar: "Vi kan inte se det i de bilder vi har, så vi lovar inga numrerade luckor. Du får 24 flaskhängen i en ask märkt för advent – ta fram en i taget i den takt som passar dig."
+  - fraga: "Hur lång är leveranstiden?"
+    svar: "5–10 arbetsdagar till både Sverige och Norge."
+  - fraga: "Vad händer om jag ångrar mig?"
+    svar: "Du har 14 dagars ångerrätt från att du tagit emot paketet, enligt svensk distansköpslag."
+  - fraga: "Tillkommer fraktkostnad?"
+    svar: "Nej, fri frakt till både Sverige och Norge."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.aliexpress.com/item/1005010210428823.html"
+  anteckning: "AliExpress, samma listning som sprit-klassisk (olika designvariant). Platt ask för 24 flaskor."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneOl"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Om asken har 24 numrerade luckor — ingen bild visar insidan eller ett enda dagsnummer."
+  - "Material i flaskorna (glas eller plast) anges ingenstans."
+  - "Flaskornas höjd/storlek anges inte."
+  - "Om flaskorna går att öppna eller fylla — inget belägg."
+  - "Vikt, CE-märkning och varningstexter saknas helt i både listning och bilder."
+  - "Namnkonflikt: arbetsnamnet säger \"whisky 2D\", men den här designen är ÖL och beskrivs av leverantören som 3D (\"Stereoscopic\") — 2D-flat-varianten i samma listning är den cocktail-designen."
+
+verifierat:
+  vad_det_ar: "En adventsask med 24 miniatyrflaskor formade som ölflaskor — varje flaska har kapsyl och upphängningsögla och är alltså ett julgranshänge, inte en dryck och inte en tom ask att fylla själv."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "vuxen (öltema) — ingen åldersgräns tryckt på asken"
+  risk: "Öltemat kan få Meta att klassa annonsen som alkoholrelaterad trots att produkten inte innehåller alkohol, och asken är tryckt \"2025\" medan listningens titel säger 2026 — fel årtal syns i bild om den säljs inför jul 2026."
+  ingar:
+    - "1 kartongask, 27,94 x 17,78 x 4,98 cm, tryckt \"BEER ADVENT CALENDAR 2025\" i guld med en ölsejdel som motiv"
+    - "24 miniatyrflaskor i ölflaskform (räknade i leverantörens huvudbild: 12 i rutnätet + 12 i nedre raden)"
+    - "Varje flaska har guldfärgad kapsyl med metallögla för upphängning"
+    - "Minst fem flaskfärger syns: brun/amber, grön, gul, ljusblå och klar/vit"
+    - "Flaskorna är omärkta — ingen etikett, inget varumärke, ingen text"
+  varningar:
+

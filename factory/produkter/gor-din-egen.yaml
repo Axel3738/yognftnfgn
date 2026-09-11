@@ -1,0 +1,166 @@
+# Gör Din Egen Adventskalender – 24 tomma askar att fylla
+# =============================================================
+# AdventLane, kalender nr — lagd till 2026-09-11 ur Axels leverantörsoffert.
+#
+# Fakta om varan är VERIFIERADE av research-steget (leverantörssidan +
+# leverantörens egna listningsbilder) och copyn är faktagranskad mot dem.
+# Det som INTE gick att belägga står under "aldrig_pasta" längst ned och får
+# aldrig smyga in i en annons eller en ny produkttext.
+#
+# ⚠️ Inköpskostnaden är offertens tal omräknat från USD till SEK med ECB-kursen
+# 9.6414 (2026-09-10). Offerten anger ingen valuta — Axel bekräftar att det
+# är USD. Är det EUR blir landad kostnad ~16 % högre och break-even stramare.
+
+produkt:
+  namn: "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
+  id: "gor-din-egen"
+  handle: "gor-din-egen-adventskalender-24-askar"
+  menynamn: "Gör din egen"
+  # Tolv kalendrar ryms inte i menyn — alla ligger i kollektionen Kalendrarna.
+  i_meny: false
+
+brand:
+  namn: "AdventLane"
+  domanideer:
+    - "adventlane.se"
+
+ekonomi:
+  # 15.96 USD landat (produkt + frakt in) × 9.6414 = 154 kr.
+  inkopskostnad: 154
+  pris: 449
+  jamforpris: 599
+  # Break-even-ROAS 1,52 utan moms. Bäverbutiken och AdventLane räknar UTAN
+  # moms (Axels besked 2026-08-29 respektive 2026-09-09).
+  moms_antagen: false
+
+varianter: []
+
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-gor-din-egen-1.png?v=1789107088"
+      alt: "Tom adventskalender: tjugofyra numrerade småaskar i blått och rött staplade framför en julgran"
+    - url: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-gor-din-egen-2.jpg?v=1789107092"
+      alt: "De tjugofyra askarna sedda uppifrån, i olika storlekar med numren 1 till 24"
+  videor:
+    - ""
+  # Ingen demovideo finns för den här kalendern ännu — sektionerna för block 2
+  # och 4 döljer sig själva tills det finns riktig media. Aldrig stockbilder.
+  gif_problem: ""
+  media_losning: "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-gor-din-egen-2.jpg?v=1789107092"
+  bild_lifestyle: ""
+
+beskrivning:
+  problem_rubrik: "Färdiga kalendrar bestämmer åt dig"
+  problem_text: "Du vill ge en adventskalender som känns vald för just den personen, inte 24 saker en fabrik redan bestämt. De färdigfyllda kalendrarna har nästan alltid 24 likadana fack oavsett vad som ska ligga i dem, så en present som inte har exakt rätt storlek får helt enkelt inte plats."
+  losning_rubrik: "Tomt när den kommer, fyllt på ditt sätt"
+  losning_text: "Den här adventskalendern kommer helt tom: inget innehåll medföljer, du väljer och fyller alla 24 sakerna själv. Askarna är olika stora (minsta 3 × 4,5 × 7 cm, största 7 × 24,5 × 7 cm), så en present får plats i rätt fack i stället för att tvingas in i samma mått som allt annat. Locket fälls upp som en bok och visar alla 24 numrerade askar på en gång, så du ser vad som redan är fyllt och vad som är kvar."
+
+vinkel:
+  huvudvinkel: "24 storlekar. Du fyller. — ur verifierade fakta om varan, En TOM adventskalender: en stor presentask i hårdpapp med 24 numrerade småaskar som köpare"
+  underrubrik: "En stor ask med 24 egna askar i olika storlekar – helt tom, du bestämmer vad som kommer bakom varje lucka."
+  usp: "24 storlekar. Du fyller."
+
+malgrupp:
+  beskrivning: "Vuxen som vill göra en egen, personlig adventskalender åt en partner, ett barn eller en vän och själv väljer vad som ska ligga bakom var och en av de 24 luckorna."
+
+problem:
+  - "Färdigfyllda kalendrar har samma 24 saker för alla, oavsett vem som öppnar luckan."
+  - "24 likadana fack rymmer bara presenter av en och samma storlek."
+  - "Vill du lägga i en biljett, ett smycke eller en lapp med en hälsning finns sällan ett fack som passar."
+  - "Att köpa ihop och sätta samman 24 lösa askar på egen hand blir fort krångligare än det låter."
+
+benefits:
+  - "Du bestämmer exakt vad mottagaren får bakom varje lucka, i stället för ett fabriksval."
+  - "Olika askstorlekar gör att både en liten lapp och en klumpigare present får ett eget fack."
+  - "Locket visar alla 24 askar på en gång, så du ser i förväg vilka som saknar innehåll."
+  - "Bandhandtaget gör att hela kalendern går att bära som en väska, till exempel när den ska ges bort färdigfylld."
+
+features:
+  - "Ytterask 34 × 30,5 × 8 cm, väger 805 g, med bandhandtag i locket"
+  - "24 numrerade askar (1–24) i 24 olika storlekar, alla 7 cm djupa"
+  - "Minsta ask 3 × 4,5 × 7 cm, största 7 × 24,5 × 7 cm"
+  - "Hårdpapp klädd med bestruket papper, fyrfärgstryck"
+  - "Varje ask har eget nummer och egen jultryckt illustration (snögubbe, gran, ljusslinga, kula, strumpa)"
+  - "Levereras helt tom – inget innehåll medföljer"
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar och alkoholtema är SPÄRRAR, inte poäng: de avgör vad som ALDRIG
+# får föreslås till ett barn.
+quiz:
+  mening: "Den här passar den som hellre väljer alla 24 sakerna själv än får ett färdigt urval."
+  sma_delar: false
+  alkoholtema: false
+  taggar:
+    - "mottagare:vemsomhelst"
+    - "mottagare:barn"
+    - "mottagare:tonaring"
+    - "mottagare:vuxen"
+    - "intresse:pyssel"
+    - "egenskap:personlig"
+    - "egenskap:fyll-sjalv"
+    - "egenskap:brett"
+
+offer:
+  beskrivning: "Gör Din Egen Adventskalender – 24 tomma askar att fylla — 449 kr, fri frakt i Sverige och Norge."
+  bundle: ""
+  paket:
+    test: ""
+    nivaer: []
+
+reviews: []
+
+faq:
+  - fraga: "Följer det med något i askarna?"
+    svar: "Nej. Kalendern levereras helt tom – ytterasken och alla 24 småaskar, men inget innehåll. Du väljer och fyller själv."
+  - fraga: "Går askarna att öppna och stänga flera gånger, eller bara en gång?"
+    svar: "Vi kan inte lova att de håller för att öppnas om och om igen år efter år – leverantören anger ingenting om det. Hantera dem varsamt om du vill spara kalendern till nästa jul."
+  - fraga: "Hur stora är askarna, och vad får plats?"
+    svar: "De 24 askarna är 7 cm djupa och olika breda: minsta 3 × 4,5 × 7 cm, största 7 × 24,5 × 7 cm. Det är de mått vi har, så mät gärna det du tänker lägga i innan du väljer fack."
+  - fraga: "Är det någon åldersgräns eller varningstext på förpackningen?"
+    svar: "Vi har ingen uppgift om åldersmärkning eller varningstext på den här produkten."
+  - fraga: "Hur lång är leveranstiden och kostar frakten något?"
+    svar: "Frakten är fri i Sverige och Norge, och leveranstiden är 5–10 arbetsdagar."
+  - fraga: "Vad gäller om jag vill lämna tillbaka kalendern?"
+    svar: "Du har 14 dagars ångerrätt från att du fått paketet."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+leverantor:
+  url: "https://www.temu.com/se/nedr%C3%A4kningsl%C3%A5da-klappsl%C3%A5da-1-f%C3%A4rgglad-h%C3%A5rdl%C3%A5da-med-24-sm%C3%A5-l%C3%A5dor-en-g%C3%A5va-ger-dig-24-%C3%B6verraskningar-mysteripaket--av-f%C3%B6rem%C3%A5l-adventskalender-tom-l%C3%A5da-klappsl%C3%A5da-adventskalenderl%C3%A5dor-att--klappsl%C3%A5dor-nedr%C3%A4kningsl%C3%A5da-sn%C3%B6flingor-paket--av-f%C3%B6rem%C3%A5l--g-601103430553373.html"
+  anteckning: "Temu. Tom ask — inget innehåll följer med. Leverantörens egen titel lovar \"24 överraskningar\" och får aldrig citeras."
+
+meta:
+  ad_account_id: "915422744950975"
+  page_id: "1304279782771044"
+  pixel_id: "1013287061762227"
+  # Prefix PER PRODUKT, aldrig per brand (FLERPRODUKT.md fynd 1).
+  creative_prefix: "AdventLaneEgen"
+  testbudget_per_dag: 500
+
+# Vad researchen INTE kunde belägga. Står här för att nästa session ska se
+# det utan att gräva: ingen annons och ingen ny text får påstå något härifrån.
+aldrig_pasta:
+  - "Om askarna går att öppna och återanvända år efter år — ingen uppgift."
+  - "Hur mycket varje ask tål att bära (ingen viktangivelse per ask)."
+  - "Om ytterasken är magnetstängd — syns inte i bilderna."
+  - "Vad som faktiskt får plats; bara asktabellens mått är belagt."
+  - "Åldersmärkning, CE-märkning eller varningstext — inget syns i källorna."
+  - "Valutan på inköpspriset 15,96 är obekräftad."
+
+verifierat:
+  vad_det_ar: "En TOM adventskalender: en stor presentask i hårdpapp med 24 numrerade småaskar som köparen själv fyller — inget innehåll följer med."
+  innehaller_alkohol: "nej"
+  aldersgrupp: "okänt"
+  risk: "Leverantörens titel säger \"En gåva ger dig 24 överraskningar\" fast asken är helt tom — copy som antyder innehåll är vilseledande marknadsföring och ger returer."
+  ingar:
+    - "1 ytterask 34 × 30,5 × 8 cm, 805 g, med bandhandtag i locket"
+    - "24 numrerade småaskar (1–24) i 24 olika storlekar, alla 7 cm djupa"
+    - "Minsta asken 3 × 4,5 × 7 cm, största 7 × 24,5 × 7 cm (leverantörens måttabell)"
+    - "Hårdpapp klädd med bestruket papper, fyrfärgstryck"
+    - "Inget innehåll i askarna — köparen fyller dem själv"
+  varningar:
+

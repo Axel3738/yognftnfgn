@@ -1,0 +1,48 @@
+{
+  "butik": "kalender",
+  "produkt": "gor-din-egen",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/11174142968151",
+      "handle": "gor-din-egen-adventskalender-24-askar",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 11
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "Default Title"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": false,
+      "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
+    },
+    "paket": {
+      "klar": false,
+      "manuell": "Steget gick inte att göra: Produkten gor-din-egen finns inte i butiken — kör produkt-steget först."
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Produkten har inga recensioner i produktfilen — inget att importera (hitta aldrig på några)."
+    }
+  },
+  "uppdaterad": "2026-09-11T06:37:44.819Z",
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "beskrivning",
+      "reviews",
+      "kundvy-produktsida",
+      "markörer /nb"
+    ],
+    "tid": "2026-09-11T06:37:44.819Z"
+  }
+}

@@ -518,10 +518,14 @@ export async function skrivKollektion(handleEllerInput, titel, produktIds, beskr
     handle: k.handle,
     title: k.titel,
     descriptionHtml: k.beskrivning,
-    products: k.produktIds,
     sortOrder: 'MANUAL',
   };
 
+  // ⚠️ `products` får BARA skickas när kollektionen SKAPAS. Vid uppdatering
+  // svarar Admin API 2025-07 `products cannot be specified during update`
+  // (mätt 2026-09-11 när AdventLane skulle få sina elva nya kalendrar) —
+  // medlemskapet ändras sedan med collectionAddProducts. Skicka det i input
+  // vid uppdatering och hela steget stoppar, med noll produkter tillagda.
   if (befintlig) {
     const data = await medKontext(`Kollektionen ${k.handle}`, () =>
       graphql(
@@ -534,7 +538,9 @@ export async function skrivKollektion(handleEllerInput, titel, produktIds, beskr
         { input: { ...input, id: befintlig.id } }
       )
     );
-    return { ...data.collectionUpdate.collection, skapad: false };
+    const kollektion = data.collectionUpdate.collection;
+    await laggTillIKollektion(kollektion.id, k.produktIds, k.handle);
+    return { ...kollektion, skapad: false };
   }
 
   const data = await medKontext(`Kollektionen ${k.handle}`, () =>
@@ -545,10 +551,29 @@ export async function skrivKollektion(handleEllerInput, titel, produktIds, beskr
           userErrors { field message }
         }
       }`,
-      { input }
+      { input: { ...input, products: k.produktIds } }
     )
   );
   return { ...data.collectionCreate.collection, skapad: true };
+}
+
+/** Lägger till produkter i en BEFINTLIG kollektion. Redan medlemmar räknas
+ *  inte som fel av API:t, så anropet är idempotent. Tomt urval gör ingenting. */
+export async function laggTillIKollektion(kollektionId, produktIds, handle = '') {
+  const ids = (produktIds ?? []).filter(Boolean);
+  if (ids.length === 0) return { tillagda: 0 };
+  await medKontext(`Kollektionen ${handle || kollektionId}`, () =>
+    graphql(
+      `mutation opsFactoryKollektionLaggTill($id: ID!, $productIds: [ID!]!) {
+        collectionAddProducts(id: $id, productIds: $productIds) {
+          collection { id }
+          userErrors { field message }
+        }
+      }`,
+      { id: kollektionId, productIds: ids }
+    )
+  );
+  return { tillagda: ids.length };
 }
 
 // ---- Publicering i Online Store ----

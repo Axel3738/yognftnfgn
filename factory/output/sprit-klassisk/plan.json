@@ -1,0 +1,108 @@
+{
+  "input": {
+    "title": "Sprit Adventskalender – 24 dekorflaskor",
+    "handle": "sprit-adventskalender-24-dekorflaskor",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>24 dekorflaskor i bar-stil på en julgransform – ingen alkohol, ingen vätska.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Sprit Adventskalender – 24 dekorflaskor – AdventLane",
+      "description": "En bar-tema julklapp du kan ge till vem som helst, utan att ge bort alkohol. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "349.00",
+        "compareAtPrice": "469.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-sprit-klassisk-1.png?v=1789107146",
+        "contentType": "IMAGE",
+        "alt": "Spritkalender: röd ask med julgran av flaskor på locket och tjugofyra miniatyrflaskor runt om"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "En flaska sprit passar inte till alla"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Du ska ge julklapp till någon som gillar sprit, bar och whiskykvällar – en kollega, en pappa, en syssling. En riktig flaska känns ofta för dyr, för stor eller olämplig att ge bort på jobbet, och du vet inte alltid om personen kör bil i jul eller har slutat dricka. Det du letar efter är något som visar att du vet vad hen gillar, utan att gåvan blir alkohol."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Bar-känslan utan en droppe alkohol"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Det här är en dekorask: 24 flaskformade delar i whisky-, konjak- och vodka/ginstil, utan etiketter och utan en droppe alkohol. Locket är tryckt med en julgran av spritflaskor och behöver ingen inslagning, så den är klar att lägga i famnen direkt. Eftersom det inte finns någon alkohol i lådan går den lika bra till kollegan, bilföraren eller den som inte dricker."
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"En bar-tema julklapp du kan ge till vem som helst, utan att ge bort alkohol\",\"Passar kollegan, bilföraren eller den som inte dricker – ingen känslig gåva\",\"24 delar räcker hela vägen fram till julafton\",\"Skickas som ett vanligt paket, utan alkoholregler eller åldersgräns att tänka på\",\"Färdig present direkt ur lådan\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"24 flaskformade dekordelar i en röd presentask\",\"Motiv: whisky, konjak, vodka och gin i klassisk stil, med blanka etiketter utan varumärken\",\"Locket är tryckt med en julgran av spritflaskor och texten Classic Base Liquor Advent Calendar 2025\",\"Innehåller ingen alkohol och ingen vätska\",\"Redo att ge bort direkt ur lådan – ingen inslagning behövs\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Innehåller adventskalendern alkohol?\",\"svar\":\"Nej. De 24 delarna föreställer klassiska spritflaskor (whisky, konjak, vodka och gin) som dekor – det finns ingen dryck och ingen vätska i lådan.\"},{\"fraga\":\"Vad är flaskorna gjorda av?\",\"svar\":\"Det anger inte leverantören, så vi vill inte gissa på material. Det vi vet är att det är 24 flaskformade delar utan etiketter eller varumärken.\"},{\"fraga\":\"Är luckorna numrerade 1–24?\",\"svar\":\"Bilden vi utgår från visar ett slätt lock utan synliga siffror, så vi kan inte lova numrerade luckor. Du får 24 flaskformade delar i asken, en för varje dag fram till julafton.\"},{\"fraga\":\"Kan jag ge den till någon som inte dricker, kör bil eller är gravid?\",\"svar\":\"Ja. Eftersom kalendern inte innehåller någon alkohol passar den till vem som helst, oavsett om personen dricker eller inte.\"},{\"fraga\":\"Hur lång är leveranstiden och kostar frakten något?\",\"svar\":\"Leveranstiden är 5–10 arbetsdagar, och frakten är fri både i Sverige och Norge.\"},{\"fraga\":\"Kan jag returnera kalendern om jag ångrar mig?\",\"svar\":\"Ja, du har 14 dagars ångerrätt från att du får paketet.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:vuxen\",\"intresse:whisky\",\"egenskap:dekor\"],\"mening\":\"Ger du julklapp till någon som älskar whisky och bar-känsla men du vill undvika att ge bort riktig sprit – den här adventskalendern är svaret.\",\"sma_delar\":true,\"alkoholtema\":true}"
+    }
+  ]
+}

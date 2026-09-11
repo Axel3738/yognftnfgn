@@ -1,0 +1,119 @@
+{
+  "input": {
+    "title": "Cocktail Adventskalender – 24 Cocktailflaskor i Akryl",
+    "handle": "cocktail-adventskalender",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>24 cocktailflaskor i akryl att hänga upp – ren dekoration, inget att dricka.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Cocktail Adventskalender – 24 Cocktailflaskor i Akryl – AdventLane",
+      "description": "En ny cocktailflaska att hänga upp varje dag fram till julafton – 24 olika namn, från Martini till Negroni.. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "349.00",
+        "compareAtPrice": "469.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-cocktail-1.png?v=1789107117",
+        "contentType": "IMAGE",
+        "alt": "Cocktailkalender: mörkblå ask med cocktailglas på locket och tjugofyra små flaskor runt om"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-cocktail-2.jpg?v=1789107121",
+        "contentType": "IMAGE",
+        "alt": "De tjugofyra flaskorna uppradade, en rad ljusa och en rad mörka"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Vuxna får sällan en egen adventskalender"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Chokladkalendrar och julgranspynt med tomtar är gjorda för barn, inte för den som hellre pratar cocktails än pepparkakor. Den som vill pynta hemmabaren eller julgranen med något som matchar sitt intresse för drinkar får leta länge i vanliga julbutiker. Kvar blir samma glögg-tema som förra året."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "En cocktailkalender, inte en barnkalender"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Kalenderaskens 24 numrerade luckor hör ihop med 24 platta cocktailflaskor i akryl – Martini, Mojito, Negroni och fler namn tryckta på var och en. Alla har en liten metallögla, så de går rakt upp i granen, fönstret eller hemmabaren. Helt utan alkohol: det är ren dekoration, inget att dricka, så den funkar lika bra som kontorspynt som hemma i vardagsrummet."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-cocktail-2.jpg?v=1789107121"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"En ny cocktailflaska att hänga upp varje dag fram till julafton – 24 olika namn, från Martini till Negroni.\",\"Kalendern lever vidare efter jul: flaskorna går att ta fram och hänga upp igen nästa december.\",\"Fungerar lika bra på jobbet, i hemmabaren eller i julgranen hemma – ingen choklad att strö omkring.\",\"Helt fri från alkohol, så den går att ge bort utan att fundera på vem som får dricka vad.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Kalenderask med 24 numrerade luckor (1–24), ca 26 × 18 × 3 cm.\",\"24 platta cocktailflaskor i akryl (2D), varje med metallögla för upphängning.\",\"Tryckta cocktailnamn, bland annat Martini, Mojito, Negroni och Manhattan.\",\"Total vikt 100 g. Inget drickbart innehåll – ren dekoration.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Innehåller kalendern alkohol eller riktiga miniflaskor?\",\"svar\":\"Nej. De 24 flaskorna är dekorationer i akryl, utan öppning eller innehåll – hela kalendern väger bara 100 gram, vilket inte går ihop med fyllda flaskor. Det här är pynt, inte dryck.\"},{\"fraga\":\"Vad är flaskorna gjorda av?\",\"svar\":\"Akryl (2D-akryl enligt leverantören), platta med en liten metallögla i toppen så de går att hänga i gran, fönster eller på hylla.\"},{\"fraga\":\"Hur fungerar luckorna?\",\"svar\":\"Asken har 24 numrerade luckor (1–24), en per dag fram till julafton, kopplade till de 24 flaskorna. Vi kan inte bekräfta exakt hur öppningsmekaniken ser ut utifrån produktbladet.\"},{\"fraga\":\"Vilka cocktails är med?\",\"svar\":\"Etiketterna vi kan läsa av visar bland annat Martini, Margarita, Mojito, Old Fashioned, Cosmopolitan, Mai Tai, Espresso Martini, Gin & Tonic, Piña Colada, Rum Punch, Tom Collins, Negroni, Whiskey Sour och Manhattan. Alla 24 flaskor har ett tryckt cocktailnamn, men vi kan inte garantera exakt vilka 24 som följer med just din kalender.\"},{\"fraga\":\"Finns det en åldersgräns?\",\"svar\":\"Nej, ingen åldersmärkning står på förpackningen – kalendern är gjord för vuxna med tanke på cocktailtemat, inte för barn.\"},{\"fraga\":\"Hur lång är leveranstiden och vad gäller om jag ångrar mig?\",\"svar\":\"Leveranstiden är 5–10 arbetsdagar, med fri frakt till både Sverige och Norge. Du har 14 dagars ångerrätt från att du fått paketet.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:vuxen\",\"intresse:cocktail\",\"egenskap:dekor\"],\"mening\":\"Passar när svaret är någon som hellre hänger upp en Negroniflaska i granen än äter en chokladbit om dagen i december.\",\"sma_delar\":true,\"alkoholtema\":true}"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "input": {
+    "title": "Dinosaurie Adventskalender – 24 Dinosaurier",
+    "handle": "dinosaurie-adventskalender-24-dinosaurier",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Färdigfylld julkalender med 24 dinosaurier — en bakom varje lucka, redo att öppnas 1 december.</p>",
+    "vendor": "AdventLane",
+    "seo": {
+      "title": "Dinosaurie Adventskalender – 24 Dinosaurier – AdventLane",
+      "description": "December får en fast morgonrutin ända fram till julafton.. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "399.00",
+        "compareAtPrice": "529.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1046/8350/3959/files/adventlane-dinosaurie-1.png?v=1789107082",
+        "contentType": "IMAGE",
+        "alt": "Adventskalender med dinosaurier: grön ask med 24 luckor och tjugofyra små plastdinosaurier utlagda framför"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Chokladkalendern är tom innan frukost"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Varje december är det samma visa: kalendern öppnas i farten, chokladen är uppäten innan skorna är på, och resten av dagen finns inget kvar att se fram emot. Ett barn som är helt inne i dinosaurier vill ha något konkret att öppna varje morgon — inte en bit choklad som försvinner på tio sekunder."
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Fylld med 24 dinosaurier, en per dag"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Den här kalendern kommer färdigfylld: 24 numrerade luckor, en liten dinosaurie bakom varje. Inget att handla till och inget att packa i förväg — öppna asken och första december är klar att börja. Figurerna ligger i slumpmässig ordning, så överraskningen håller i sig hela vägen till julafton."
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"December får en fast morgonrutin ända fram till julafton.\",\"En ny dinosaurie-figur att leka med varje dag, som lever vidare i leklådan efter jul.\",\"Julklappen är löst och klar att ge bort direkt ur kartongen.\",\"Överraskningen håller i sig hela månaden eftersom figurerna kommer i slumpmässig ordning.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Kartongask med 24 numrerade luckor, en till varje dag fram till julafton.\",\"24 dinosaurie-figurer i plast, en bakom varje lucka.\",\"Figurerna är slumpmässigt fördelade (blindbox).\",\"Jultryck på asken: T-rex med tomteluva, triceratops och flygödla.\",\"Åldersmärkning 3+ tryckt på asken.\",\"Enligt leverantören är figurerna självlysande i mörkret efter laddning i ljus — en uppgift från leverantören, inte verifierad av oss.\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"5–10 arbetsdagar. Frakten är fri både till Sverige och Norge.\"},{\"fraga\":\"Kan jag skicka tillbaka kalendern om den inte passar?\",\"svar\":\"Ja, du har 14 dagars ångerrätt från att du fått paketet.\"},{\"fraga\":\"Vilken ålder är kalendern till för?\",\"svar\":\"Åldersmärkningen 3+ står tryckt på asken. Kalendern är inte avsedd för barn under 3 år.\"},{\"fraga\":\"Vet jag i förväg vilken dinosaurie som ligger bakom varje lucka?\",\"svar\":\"Nej, figurerna är slumpmässigt fördelade — det är själva överraskningen. Vi kan inte bekräfta om alla 24 är olika arter eller om några återkommer.\"},{\"fraga\":\"Lyser figurerna verkligen i mörkret?\",\"svar\":\"Leverantören uppger att de gör det efter att ha laddats i ljus. Vi har ingen egen bild som visar dem i mörker, så vi kan inte bekräfta det själva.\"},{\"fraga\":\"Hur stora är figurerna och asken?\",\"svar\":\"Leverantören anger inga mått eller vikt, så vi kan tyvärr inte uppge exakta cm just nu.\"}]"
+    },
+    {
+      "namespace": "opf",
+      "key": "quiz",
+      "type": "json",
+      "value": "{\"taggar\":[\"mottagare:barn\",\"alder:3-5\",\"alder:6-8\",\"alder:9-12\",\"intresse:dinosaurier\",\"egenskap:varar\",\"egenskap:overraskning\"],\"mening\":\"Om barnet är helt inne i dinosaurier och vill vakna till en ny överraskning varje morgon i december är det här kalendern som svarar.\",\"sma_delar\":true,\"alkoholtema\":false}"
+    }
+  ]
+}
