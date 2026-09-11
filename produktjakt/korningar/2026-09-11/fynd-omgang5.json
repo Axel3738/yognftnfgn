@@ -1,0 +1,428 @@
+{
+ "datum": "2026-09-11",
+ "manad": 9,
+ "usd_sek": 9.6414,
+ "kurskalla": "kurs.json 2026-09-11",
+ "sokord": [
+  {
+   "ord": "chicken coop run cover waterproof 3x6",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": 1488
+  },
+  {
+   "ord": "chicken coop rain cover 2x3m",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": 1488
+  },
+  {
+   "ord": "chicken coop insulation cover winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": 1488
+  },
+  {
+   "ord": "heated chicken waterer winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": 1488
+  },
+  {
+   "ord": "chicken run roof cover waterproof tarp fitted",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": 1488
+  }
+ ],
+ "hoppade": {
+  "stoppord": 0,
+  "pris saknas": 0,
+  "ekonomi": 17,
+  "dubblett": 6,
+  "axel_nej": 0
+ },
+ "antal_kandidater": 17,
+ "produkter": [
+  {
+   "product_id": "1005012281499124",
+   "titel": "Poultry Pigeon Thickened Feeder and Drinker Water Food Dispenser Automatic Chicken Birds Chick Waterer Feeding Bucket Container",
+   "url": "https://www.aliexpress.com/item/1005012281499124.html",
+   "pris": 2.82,
+   "valuta": "USD",
+   "pris_text": "US $2.82",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sa35fd962f800483b891cc85b58e664749.jpg",
+   "sald": "",
+   "sokord": "heated chicken waterer winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heated-chicken-waterer-winter.html",
+   "ekonomi": {
+    "landad": 41,
+    "forslag_pris": 999,
+    "multipel": 24.5,
+    "be_cpa": 958,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 2.298
+  },
+  {
+   "product_id": "1005002920807484",
+   "titel": "Chicken Waterer Nipple Drinkers Quail Pigeon Bird Waterer Nipples Automatic Waters Spring Type Poultry Farming Equipment Tools",
+   "url": "https://www.aliexpress.com/item/1005002920807484.html",
+   "pris": 3.88,
+   "valuta": "USD",
+   "pris_text": "US $3.88",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Ha4cf4777c9b54a3f9d9a041de06d93f8i.jpg",
+   "sald": "",
+   "sokord": "heated chicken waterer winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heated-chicken-waterer-winter.html",
+   "ekonomi": {
+    "landad": 56,
+    "forslag_pris": 999,
+    "multipel": 17.8,
+    "be_cpa": 943,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 1.67
+  },
+  {
+   "product_id": "1005010594262387",
+   "titel": "Transparent waterproof cloth windproof and snow proof canopy suitable for terraces, plants, chicken coops, gardens",
+   "url": "https://www.aliexpress.com/item/1005010594262387.html",
+   "pris": 7.41,
+   "valuta": "USD",
+   "pris_text": "US $7.41",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Se5a604cd7e914bf0b0ddeb6d138890f8Q.jpg",
+   "sald": "",
+   "sokord": "chicken coop insulation cover winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-insulation-cover-winter.html",
+   "ekonomi": {
+    "landad": 107,
+    "forslag_pris": 999,
+    "multipel": 9.32,
+    "be_cpa": 892,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.874
+  },
+  {
+   "product_id": "1005012381914473",
+   "titel": "Gardening winter windshield transparent tarp, thermal insulation shed cloth is suitable for greenhouses, chicken coops",
+   "url": "https://www.aliexpress.com/item/1005012381914473.html",
+   "pris": 7.79,
+   "valuta": "USD",
+   "pris_text": "US $7.79",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S32ada3ad8f5d4d69b0c5329db0318e6dN.jpg",
+   "sald": "",
+   "sokord": "chicken coop insulation cover winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-insulation-cover-winter.html",
+   "ekonomi": {
+    "landad": 113,
+    "forslag_pris": 999,
+    "multipel": 8.87,
+    "be_cpa": 886,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.832
+  },
+  {
+   "product_id": "1005009292572313",
+   "titel": "Chicken Poultry Feeder And Waterer Water Food Dispenser Automatic Chicken Chick Waterer Feeding Bucket Container Farm Supply",
+   "url": "https://www.aliexpress.com/item/1005009292572313.html",
+   "pris": 8.21,
+   "valuta": "USD",
+   "pris_text": "US $8.21",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd0fe3ec5efa444009e0dd9dcc3b3c33aS.jpg",
+   "sald": "",
+   "sokord": "heated chicken waterer winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heated-chicken-waterer-winter.html",
+   "ekonomi": {
+    "landad": 119,
+    "forslag_pris": 999,
+    "multipel": 8.41,
+    "be_cpa": 880,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.789
+  },
+  {
+   "product_id": "1005008281833487",
+   "titel": "Transparent Thick Waterproof Tarpaulin Rain Cover Windproof and Snowproof Suitable for Terrace Plant Chicken House Garden Porch",
+   "url": "https://www.aliexpress.com/item/1005008281833487.html",
+   "pris": 8.75,
+   "valuta": "USD",
+   "pris_text": "US $8.75",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S0ab89f59f08f4f9986e2d91caae4a471x.png",
+   "sald": "",
+   "sokord": "chicken coop rain cover 2x3m",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-rain-cover-2x3m.html",
+   "ekonomi": {
+    "landad": 127,
+    "forslag_pris": 999,
+    "multipel": 7.89,
+    "be_cpa": 872,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.74
+  },
+  {
+   "product_id": "1005012399324421",
+   "titel": "Clear Waterproof Tarp Transparent Poly Tarpaulin Anti Tear Cover with Rustproof Grommets for Patio Garden Chicken Coop",
+   "url": "https://www.aliexpress.com/item/1005012399324421.html",
+   "pris": 9.53,
+   "valuta": "USD",
+   "pris_text": "US $9.53",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sa01f78209d1e48acad77b6d924fe8b40f.jpg",
+   "sald": "",
+   "sokord": "chicken coop run cover waterproof 3x6",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-run-cover-waterproof-3x6.html",
+   "ekonomi": {
+    "landad": 138,
+    "forslag_pris": 999,
+    "multipel": 7.25,
+    "be_cpa": 861,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.68
+  },
+  {
+   "product_id": "1005012399386205",
+   "titel": "Clear Waterproof Tarp Transparent Poly Tarpaulin Anti Tear Cover with Rustproof Grommets for Patio Garden Chicken Coop",
+   "url": "https://www.aliexpress.com/item/1005012399386205.html",
+   "pris": 9.55,
+   "valuta": "USD",
+   "pris_text": "US $9.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sf2a7fd9301cb46c59ae3a4f4b2cc74bf8.jpg",
+   "sald": "",
+   "sokord": "chicken coop run cover waterproof 3x6",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-run-cover-waterproof-3x6.html",
+   "ekonomi": {
+    "landad": 138,
+    "forslag_pris": 999,
+    "multipel": 7.23,
+    "be_cpa": 861,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.678
+  },
+  {
+   "product_id": "1005012681190838",
+   "titel": "Clear Waterproof PVC Tarp Reinforced Binding Anti-freeze Wind Dust Protection Cover For Chicken Run Garden Terrace Sun Room",
+   "url": "https://www.aliexpress.com/item/1005012681190838.html",
+   "pris": 11.19,
+   "valuta": "USD",
+   "pris_text": "US $11.19",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc49fe020338345c487ec8aae1433d9157.jpg",
+   "sald": "",
+   "sokord": "chicken run roof cover waterproof tarp fitted",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-run-roof-cover-waterproof-tarp-fitted.html",
+   "ekonomi": {
+    "landad": 162,
+    "forslag_pris": 999,
+    "multipel": 6.17,
+    "be_cpa": 837,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.579
+  },
+  {
+   "product_id": "1005008543207644",
+   "titel": "Transparent Waterproof Cloth with Gasket - Perfect for Gardens, Courtyards, Chicken Coops, Porch Awnings, and Camping",
+   "url": "https://www.aliexpress.com/item/1005008543207644.html",
+   "pris": 12.52,
+   "valuta": "USD",
+   "pris_text": "US $12.52",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S35ca953af70a4156a39be54d72d8385dB.jpg",
+   "sald": "",
+   "sokord": "chicken coop run cover waterproof 3x6",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-run-cover-waterproof-3x6.html",
+   "ekonomi": {
+    "landad": 181,
+    "forslag_pris": 999,
+    "multipel": 5.52,
+    "be_cpa": 818,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.518
+  },
+  {
+   "product_id": "1005012362974649",
+   "titel": "2x3M Waterproof Clear Plastic Tarps with Grommets Heavy Duty Tarpaulin Thick Tear-resistant Against Rain Cover Cloth for Outdoor",
+   "url": "https://www.aliexpress.com/item/1005012362974649.html",
+   "pris": 17.49,
+   "valuta": "USD",
+   "pris_text": "US $17.49",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S8ff97ba6a2384ecfad1dd9a7660c6c742.jpg",
+   "sald": "",
+   "sokord": "chicken coop rain cover 2x3m",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-rain-cover-2x3m.html",
+   "ekonomi": {
+    "landad": 253,
+    "forslag_pris": 999,
+    "multipel": 3.95,
+    "be_cpa": 746,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.371
+  },
+  {
+   "product_id": "1005008329951881",
+   "titel": "Chicken Coop Tarp For Winter Chicken Coop Fence Dust Cover Multi-Purpose Chicken Coop Tarp Cover Waterproof Chicken Coop",
+   "url": "https://www.aliexpress.com/item/1005008329951881.html",
+   "pris": 18.66,
+   "valuta": "USD",
+   "pris_text": "US $18.66",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S837e7b7074fd4b70b5f34d5874f536b3D.jpg",
+   "sald": "",
+   "sokord": "chicken coop insulation cover winter",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-insulation-cover-winter.html",
+   "ekonomi": {
+    "landad": 270,
+    "forslag_pris": 999,
+    "multipel": 3.7,
+    "be_cpa": 729,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.347
+  }
+ ]
+}

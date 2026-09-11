@@ -1,0 +1,478 @@
+{
+ "datum": "2026-09-11",
+ "manad": 9,
+ "usd_sek": 9.6414,
+ "kurskalla": "kurs.json 2026-09-11",
+ "sokord": [
+  {
+   "ord": "air conditioner outdoor unit roof cover",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "ankare_sek": 2499
+  },
+  {
+   "ord": "mini split outdoor unit cover winter",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "ankare_sek": 2499
+  },
+  {
+   "ord": "insulated dog house outdoor winter large",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "heat pump cover outdoor winter snow roof waterproof",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "ankare_sek": 2499
+  },
+  {
+   "ord": "heat pump outdoor unit snow cover roof",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "ankare_sek": 2499
+  },
+  {
+   "ord": "dog house door flap insulated",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "dog kennel run roof cover waterproof",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "wooden dog kennel insulated large winter",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "dog house outdoor insulated waterproof roof",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "outdoor ac unit cover top roof shield",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "ankare_sek": 2499
+  }
+ ],
+ "hoppade": {
+  "stoppord": 4,
+  "pris saknas": 0,
+  "ekonomi": 13,
+  "dubblett": 9,
+  "axel_nej": 0
+ },
+ "antal_kandidater": 54,
+ "produkter": [
+  {
+   "product_id": "1005009515369529",
+   "titel": "Outdoor Rainproof Air Conditioning Cover Air Conditioner Waterproof Dust Cover Washing Anti-Dust Anti-Snow Cleaning Bag 100*50cm",
+   "url": "https://www.aliexpress.com/item/1005009515369529.html",
+   "pris": 3.75,
+   "valuta": "USD",
+   "pris_text": "US $3.75",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S35eeb8b29baa4f58abc4331f48842984z.jpg",
+   "sald": "",
+   "sokord": "heat pump cover outdoor winter snow roof waterproof",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heat-pump-cover-outdoor-winter-snow-roof-waterproof.html",
+   "ekonomi": {
+    "landad": 54,
+    "forslag_pris": 1799,
+    "multipel": 33.17,
+    "be_cpa": 1745,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 2499
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 3.453
+  },
+  {
+   "product_id": "1005011818569606",
+   "titel": "Air Conditioner Cover Outdoor Energy Saving Rainproof Cover Air Conditioner Washing Dust Prevent Sun Exposure AC Cleaning Bag",
+   "url": "https://www.aliexpress.com/item/1005011818569606.html",
+   "pris": 3.79,
+   "valuta": "USD",
+   "pris_text": "US $3.79",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sb1cd32250da9498e96fbd1acebc264e5r.jpg",
+   "sald": "",
+   "sokord": "outdoor ac unit cover top roof shield",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-ac-unit-cover-top-roof-shield.html",
+   "ekonomi": {
+    "landad": 55,
+    "forslag_pris": 1799,
+    "multipel": 32.82,
+    "be_cpa": 1744,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 2499
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 3.417
+  },
+  {
+   "product_id": "1005009802674164",
+   "titel": "Universal Air Conditioner Outdoor Unit Cover Bubble Composite Aluminum Foil Flame Retardant Waterproof Sun Protection Shade",
+   "url": "https://www.aliexpress.com/item/1005009802674164.html",
+   "pris": 4.29,
+   "valuta": "USD",
+   "pris_text": "US $4.29",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S3b657dd397af4e0fabf7c17e1adf97382.jpg",
+   "sald": "",
+   "sokord": "air conditioner outdoor unit roof cover",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-air-conditioner-outdoor-unit-roof-cover.html",
+   "ekonomi": {
+    "landad": 62,
+    "forslag_pris": 1799,
+    "multipel": 29.0,
+    "be_cpa": 1737,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 2499
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 3.019
+  },
+  {
+   "product_id": "1005012821770412",
+   "titel": "PVC Door Curtain Cuttable Dog Door Flap For DIY Dog House Waterproof Winter Pet Supplies Transparent Insulation Curtains",
+   "url": "https://www.aliexpress.com/item/1005012821770412.html",
+   "pris": 7.98,
+   "valuta": "USD",
+   "pris_text": "US $7.98",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S64c79cf5970f42d283f4767d7b626064C.jpg",
+   "sald": "",
+   "sokord": "dog house door flap insulated",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-house-door-flap-insulated.html",
+   "ekonomi": {
+    "landad": 115,
+    "forslag_pris": 2399,
+    "multipel": 20.79,
+    "be_cpa": 2284,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 2.923
+  },
+  {
+   "product_id": "1005012974861326",
+   "titel": "1Pc Cuttable Clear PVC Pet Door Flap Waterproof Thermal‑Insulated Replacement Dog‑House Door Curtain Dust‑Proof Easy‑Install Pet",
+   "url": "https://www.aliexpress.com/item/1005012974861326.html",
+   "pris": 8,
+   "valuta": "USD",
+   "pris_text": "US $8.00",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1d7fd171f58e4e3ea4edab547d957c55G.jpg",
+   "sald": "",
+   "sokord": "dog house door flap insulated",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-house-door-flap-insulated.html",
+   "ekonomi": {
+    "landad": 116,
+    "forslag_pris": 2399,
+    "multipel": 20.74,
+    "be_cpa": 2283,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 2.916
+  },
+  {
+   "product_id": "1005012359503682",
+   "titel": "External Air Conditioner Cover Waterproof Outdoor Dustproof Sun Shade Guard Sleeve for AC Unit Balcony Equipment Protection",
+   "url": "https://www.aliexpress.com/item/1005012359503682.html",
+   "pris": 4.49,
+   "valuta": "USD",
+   "pris_text": "US $4.49",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S59b93c23c8444a3fab60b0f1db7d4a400.jpg",
+   "sald": "",
+   "sokord": "outdoor ac unit cover top roof shield",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-ac-unit-cover-top-roof-shield.html",
+   "ekonomi": {
+    "landad": 65,
+    "forslag_pris": 1799,
+    "multipel": 27.7,
+    "be_cpa": 1734,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 2499
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 2.884
+  },
+  {
+   "product_id": "1005012514756954",
+   "titel": "Air Conditioner Cover Outdoor Energy Saving Rainproof Cover Air Conditioner Washing Dust Prevent Sun Exposure AC Cleaning Bag",
+   "url": "https://www.aliexpress.com/item/1005012514756954.html",
+   "pris": 4.52,
+   "valuta": "USD",
+   "pris_text": "US $4.52",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sf4daa225ff7e4e108e0b106ab7d457ddA.jpg",
+   "sald": "",
+   "sokord": "outdoor ac unit cover top roof shield",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-ac-unit-cover-top-roof-shield.html",
+   "ekonomi": {
+    "landad": 65,
+    "forslag_pris": 1799,
+    "multipel": 27.52,
+    "be_cpa": 1734,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 2499
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 2.865
+  },
+  {
+   "product_id": "1005012940776884",
+   "titel": "1Pc Cuttable Clear PVC Pet Door Flap Waterproof Thermal‑Insulated Replacement Dog‑House Door Curtain Dust‑Proof Easy‑Install Pet",
+   "url": "https://www.aliexpress.com/item/1005012940776884.html",
+   "pris": 8.19,
+   "valuta": "USD",
+   "pris_text": "US $8.19",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1b21ba464c2641f084c89d571d02e98bt.jpg",
+   "sald": "",
+   "sokord": "dog house door flap insulated",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-house-door-flap-insulated.html",
+   "ekonomi": {
+    "landad": 118,
+    "forslag_pris": 2399,
+    "multipel": 20.25,
+    "be_cpa": 2281,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 2.847
+  },
+  {
+   "product_id": "1005007306679268",
+   "titel": "1PC Outdoor Rainproof Air Conditioning Cover Air Conditioner Waterproof Dust Cover Washing Anti-Dust Anti-Snow Cleaning Bag",
+   "url": "https://www.aliexpress.com/item/1005007306679268.html",
+   "pris": 4.69,
+   "valuta": "USD",
+   "pris_text": "US $4.69",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sb589fdff9c584ab79cf473bc14ed93a8G.jpg",
+   "sald": "",
+   "sokord": "heat pump outdoor unit snow cover roof",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-heat-pump-outdoor-unit-snow-cover-roof.html",
+   "ekonomi": {
+    "landad": 68,
+    "forslag_pris": 1799,
+    "multipel": 26.52,
+    "be_cpa": 1731,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 2499
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 2.761
+  },
+  {
+   "product_id": "1005005928485410",
+   "titel": "46x95CM Air Conditioning Cover Outdoor Sun Rainproof Anti-Dust Anti-Snow Cleaning Cover Home Air Conditioner Keep Cleaning Tool",
+   "url": "https://www.aliexpress.com/item/1005005928485410.html",
+   "pris": 5.15,
+   "valuta": "USD",
+   "pris_text": "US $5.15",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S5bd7dbc8497a4d07bdce18aa5c8bf7faD.jpeg",
+   "sald": "",
+   "sokord": "mini split outdoor unit cover winter",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-mini-split-outdoor-unit-cover-winter.html",
+   "ekonomi": {
+    "landad": 74,
+    "forslag_pris": 1799,
+    "multipel": 24.15,
+    "be_cpa": 1725,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 2499
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 2.514
+  },
+  {
+   "product_id": "1005010649974953",
+   "titel": "PVC Door Curtain Cuttable Dog Door Flap For DIY Dog House Waterproof Winter Pet Supplies Transparent Insulation Curtains",
+   "url": "https://www.aliexpress.com/item/1005010649974953.html",
+   "pris": 9.85,
+   "valuta": "USD",
+   "pris_text": "US $9.85",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc2722d8ea7c64dd9a44d8bc39c35644dI.jpg",
+   "sald": "",
+   "sokord": "dog house door flap insulated",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-house-door-flap-insulated.html",
+   "ekonomi": {
+    "landad": 142,
+    "forslag_pris": 2399,
+    "multipel": 16.84,
+    "be_cpa": 2257,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 2.368
+  },
+  {
+   "product_id": "1005013082813437",
+   "titel": "Stainless Steel Air Conditioner Outdoor Unit Air Guide Plate Louvered Fan Cover No Drilling Required For Home Cooling System",
+   "url": "https://www.aliexpress.com/item/1005013082813437.html",
+   "pris": 5.55,
+   "valuta": "USD",
+   "pris_text": "US $5.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S57adc6ad2628497d9d4c6e253b36a3d4y.jpg",
+   "sald": "",
+   "sokord": "air conditioner outdoor unit roof cover",
+   "grupp": "Luftvärmepumpens utedel",
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "arketyp": "A1",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-air-conditioner-outdoor-unit-roof-cover.html",
+   "ekonomi": {
+    "landad": 80,
+    "forslag_pris": 1799,
+    "multipel": 22.41,
+    "be_cpa": 1719,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 2499
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 2.333
+  }
+ ]
+}

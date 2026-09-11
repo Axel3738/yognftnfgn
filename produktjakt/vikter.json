@@ -1,12 +1,12 @@
 {
- "datum": "2026-09-10",
- "antal_svar": 12,
+ "datum": "2026-09-11",
+ "antal_svar": 15,
  "per_dom": {
-  "ja": 5,
-  "kanske": 4,
+  "ja": 7,
+  "kanske": 5,
   "nej": 3
  },
- "antal_utfall": 3,
+ "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
  "dimensioner": {
   "grupp": {
@@ -57,117 +57,45 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.667
-   }
-  },
-  "objekt": {
-   "Husvagn — taket": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
    },
-   "Utekatten": {
-    "ja": 2,
-    "kanske": 0,
+   "Spabadet — locket": {
+    "ja": 0,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.75
+    "score": 0.5
    },
-   "Barnbarnet — adventskalendern": {
-    "ja": 2,
+   "Vedstapeln": {
+    "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
-   }
-  },
-  "arketyp": {
-   "A1": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
+    "score": 0.667
    },
-   "A3": {
-    "ja": 2,
+   "Husvagn — fronten": {
+    "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
-   },
-   "A4": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   }
-  },
-  "form": {
-   "överdrag": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
-   "koja": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
-   "kalender": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   }
-  },
-  "deadline_typ": {
-   "uppställning": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
-   "första frost": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
-   "1 december": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   }
-  },
-  "deadline_klass": {
-   "2–6 v": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
-   "6–12 v": {
-    "ja": 4,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.833
-   }
-  },
-  "ankare_klass": {
-   "1,3–1,6×": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
-   "1,2–1,3×": {
-    "ja": 4,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.833
+    "score": 0.667
    }
   },
   "ankare_kalla": {
+   "spabadsbutiken.se/kuben.se": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "cdon.se": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "getcamping.eu/campingvaruhuset.se": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "eurotrail/getcamping.se": {
     "ja": 2,
     "kanske": 0,
@@ -185,16 +113,274 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.75
-   }
-  },
-  "prisband": {
-   "≥ 1 000": {
+   },
+   "ej mätt": {
     "ja": 2,
     "kanske": 0,
     "nej": 0,
     "score": 0.75
    },
+   "jula": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "clas ohlson/ajax": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "hindermann/getcamping": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "ankare_klass": {
+   "≥ 1,6×": {
+    "ja": 1,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.625
+   },
+   "1,3–1,6×": {
+    "ja": 5,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.857
+   },
+   "1,2–1,3×": {
+    "ja": 4,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.833
+   },
+   "ingen aktör": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "golv utan ankare": {
+    "ja": 4,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.833
+   }
+  },
+  "arketyp": {
+   "A1": {
+    "ja": 6,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.833
+   },
+   "A3": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "A4": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "A2": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "verktyg": {
+    "ja": 4,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.833
+   }
+  },
+  "deadline_klass": {
+   "6–12 v": {
+    "ja": 7,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.85
+   },
+   "2–6 v": {
+    "ja": 7,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.889
+   },
+   "pågående": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "deadline_typ": {
+   "första snö": {
+    "ja": 1,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.625
+   },
+   "uppställning": {
+    "ja": 5,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.857
+   },
+   "första frost": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "1 december": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "tjäle": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "lövfällning": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "mörker": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "form": {
+   "skydd": {
+    "ja": 1,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.625
+   },
+   "överdrag": {
+    "ja": 5,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.857
+   },
+   "koja": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "kalender": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "ankare/lagning": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "stabilisator": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "larm": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "objekt": {
+   "Spabadet — locket": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Vedstapeln": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Husvagn — fronten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Husvagn — taket": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "Utekatten": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "Barnbarnet — adventskalendern": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "Staketet — stolpen": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "Hängrännor/tak — stegen": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "Tomten — mörkret": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   },
+   "Husbil — hytt och vindruta": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.75
+   }
+  },
+  "prisband": {
    "500–999": {
+    "ja": 12,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.9
+   },
+   "≥ 1 000": {
     "ja": 2,
     "kanske": 0,
     "nej": 0,
@@ -210,12 +396,12 @@
  },
  "orsaker": {
   "Skyddar något": {
-   "ja": 3,
+   "ja": 4,
    "kanske": 0,
    "nej": 0
   },
   "Känns rätt": {
-   "ja": 4,
+   "ja": 5,
    "kanske": 0,
    "nej": 0
   },
@@ -253,11 +439,24 @@
    "ja": 0,
    "kanske": 0,
    "nej": 1
+  },
+  "Kan bli bra": {
+   "ja": 0,
+   "kanske": 1,
+   "nej": 0
   }
  },
  "stopp": [],
  "lyft": [
   "ankare_klass:1,2–1,3×",
-  "deadline_klass:6–12 v"
+  "ankare_klass:1,3–1,6×",
+  "ankare_klass:golv utan ankare",
+  "arketyp:A1",
+  "arketyp:verktyg",
+  "deadline_klass:2–6 v",
+  "deadline_klass:6–12 v",
+  "deadline_typ:uppställning",
+  "form:överdrag",
+  "prisband:500–999"
  ]
 }

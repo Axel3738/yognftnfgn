@@ -1,0 +1,26 @@
+[
+ {
+  "objekt": "Luftvärmepumpens utedel",
+  "form": "snötak (styvt)",
+  "arketyp": "A1",
+  "deadline": "första snö v 46",
+  "korningsvecka": 39,
+  "orsak": "ankare mätt (Clas Ohlson plåt 2 499) men AliExpress ger bara tygkåpor à 4 USD — formen snötak saknas under taket; sök 'heat pump snow roof canopy bracket' med annat formord"
+ },
+ {
+  "objekt": "Gårdshunden/hundgården",
+  "form": "isolerad koja",
+  "arketyp": "A3",
+  "deadline": "första frost v 41",
+  "korningsvecka": 39,
+  "orsak": "ankare mätt (Kerbl 3 495) men ingen isolerad koja klarade ekonomin — bara dörrflikar; pröva 'dog house insulated' med --tak högre"
+ },
+ {
+  "objekt": "Utekatten",
+  "form": "värmeplatta till katthus",
+  "arketyp": "A3 (A5 efter V2)",
+  "deadline": "första frost v 41",
+  "korningsvecka": 38,
+  "orsak": "ankare Supercat 599 (18 W IPX7) men AliExpress-träffarna är inomhusdynor med barntryck (K8 0/3) — sök 'IPX7 pet heating pad outdoor 18W' / 'outdoor cat house heater'"
+ }
+]

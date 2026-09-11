@@ -1,0 +1,378 @@
+{
+ "datum": "2026-09-11",
+ "manad": 9,
+ "usd_sek": 9.6414,
+ "kurskalla": "kurs.json 2026-09-11",
+ "sokord": [
+  {
+   "ord": "generator running cover tent heavy duty",
+   "grupp": "Elverk/kompressor ute",
+   "taggar": {
+    "objekt": "Elverk/kompressor ute",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "ebike cover waterproof outdoor heavy duty",
+   "grupp": "Elcykel under skärmtak",
+   "taggar": {
+    "objekt": "Elcykel under skärmtak",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": 299
+  },
+  {
+   "ord": "snow grips for shoes",
+   "grupp": "Altanen/trädäcket — foten (A6)",
+   "taggar": {
+    "objekt": "Altanen/trädäcket — foten (A6)",
+    "arketyp": "A6",
+    "form": "piggar"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "outdoor cat heated pad waterproof",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 745
+  },
+  {
+   "ord": "advent calendar excavator construction vehicles 24",
+   "grupp": "Barnbarnet — adventskalendern",
+   "taggar": {
+    "objekt": "Barnbarnet — adventskalendern",
+    "arketyp": "A4",
+    "form": "kalenderlåda"
+   },
+   "ankare_sek": 599
+  },
+  {
+   "ord": "ebike battery cover neoprene thermal",
+   "grupp": "Elcykel under skärmtak",
+   "taggar": {
+    "objekt": "Elcykel under skärmtak",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": 299
+  },
+  {
+   "ord": "motorhome thermal windscreen cover external",
+   "grupp": "Husbil — hytt och vindruta",
+   "taggar": {
+    "objekt": "Husbil — hytt och vindruta",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": 793
+  },
+  {
+   "ord": "caravan mouse guard vent mesh",
+   "grupp": "Husvagn/husbil — ventiler och genomföringar (möss)",
+   "taggar": {
+    "objekt": "Husvagn/husbil — ventiler och genomföringar (möss)",
+    "arketyp": "A1",
+    "form": "nät"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "kids bike cover waterproof outdoor",
+   "grupp": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+   "taggar": {
+    "objekt": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "patio sofa cover fitted 600D",
+   "grupp": "Utemöbler på altanen",
+   "taggar": {
+    "objekt": "Utemöbler på altanen",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "chicken coop run cover waterproof 3x6",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "ankare_sek": 1488
+  },
+  {
+   "ord": "boat cover trailerable 600D waterproof",
+   "grupp": "Båt på trailer/bockar",
+   "taggar": {
+    "objekt": "Båt på trailer/bockar",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "ankare_sek": 1215
+  }
+ ],
+ "hoppade": {
+  "stoppord": 23,
+  "pris saknas": 0,
+  "ekonomi": 53,
+  "dubblett": 12,
+  "axel_nej": 0
+ },
+ "antal_kandidater": 8,
+ "produkter": [
+  {
+   "product_id": "1005012753159049",
+   "titel": "18W 220V Pet Dog Cat Waterproof Electric Heating Pad Body Winter Warmer Mat Bed Blanket Animals Bed Heater Accessories",
+   "url": "https://www.aliexpress.com/item/1005012753159049.html",
+   "pris": 1.39,
+   "valuta": "USD",
+   "pris_text": "US $1.39",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S7f50977d42b74b76932cfbfabda23138w.jpg",
+   "sald": "",
+   "sokord": "outdoor cat heated pad waterproof",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cat-heated-pad-waterproof.html",
+   "ekonomi": {
+    "landad": 20,
+    "forslag_pris": 499,
+    "multipel": 24.82,
+    "be_cpa": 479,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 745
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.2109,
+   "rank": 5.235
+  },
+  {
+   "product_id": "1005013062550647",
+   "titel": "USB Folding Heated Sheet Heating Winter Warm Pad Cushion Waterproof Car Seat Heating Pet Cushion Temperature Control Heating Pad",
+   "url": "https://www.aliexpress.com/item/1005013062550647.html",
+   "pris": 2.92,
+   "valuta": "USD",
+   "pris_text": "US $2.92",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd146aff6b3aa42eeac7678fb2053536aN.jpg",
+   "sald": "",
+   "sokord": "outdoor cat heated pad waterproof",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cat-heated-pad-waterproof.html",
+   "ekonomi": {
+    "landad": 42,
+    "forslag_pris": 499,
+    "multipel": 11.82,
+    "be_cpa": 457,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 745
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.2109,
+   "rank": 2.493
+  },
+  {
+   "product_id": "1005009940917035",
+   "titel": "Large Size Cat Litter Mat Waterproof Pet Toilet Cat Litter Trapping Mat Non Slip Double Layer Cats Litter Box Pad Pet Product",
+   "url": "https://www.aliexpress.com/item/1005009940917035.html",
+   "pris": 4.49,
+   "valuta": "USD",
+   "pris_text": "US $4.49",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S951ba3cb2531449485aacafeb79850dfG.jpg",
+   "sald": "",
+   "sokord": "outdoor cat heated pad waterproof",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cat-heated-pad-waterproof.html",
+   "ekonomi": {
+    "landad": 65,
+    "forslag_pris": 499,
+    "multipel": 7.68,
+    "be_cpa": 434,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 745
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.2109,
+   "rank": 1.62
+  },
+  {
+   "product_id": "1005012865037521",
+   "titel": "RV sunshade Window Cover Sunshades Windscreen for Vw T5 Transporter Internal Thermal Windscreen Side Exterior Accessories",
+   "url": "https://www.aliexpress.com/item/1005012865037521.html",
+   "pris": 5.15,
+   "valuta": "USD",
+   "pris_text": "US $5.15",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sd4b1484269d74f60bfec4ceba4e41b2bn.jpg",
+   "sald": "",
+   "sokord": "motorhome thermal windscreen cover external",
+   "grupp": "Husbil — hytt och vindruta",
+   "taggar": {
+    "objekt": "Husbil — hytt och vindruta",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorhome-thermal-windscreen-cover-external.html",
+   "ekonomi": {
+    "landad": 74,
+    "forslag_pris": 599,
+    "multipel": 8.04,
+    "be_cpa": 525,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 793
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1952,
+   "rank": 1.569
+  },
+  {
+   "product_id": "1005010787661858",
+   "titel": "Ultra-Soft Self Warming Cat Mat with Heat Retention All-Season Pet Bed Indoor/Outdoor Use Non-Slip Pet Bed Pad",
+   "url": "https://www.aliexpress.com/item/1005010787661858.html",
+   "pris": 5.33,
+   "valuta": "USD",
+   "pris_text": "US $5.33",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1ef6cedc1cce48948444e6ec07389aecP.jpg",
+   "sald": "",
+   "sokord": "outdoor cat heated pad waterproof",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cat-heated-pad-waterproof.html",
+   "ekonomi": {
+    "landad": 77,
+    "forslag_pris": 499,
+    "multipel": 6.47,
+    "be_cpa": 422,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 745
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.2109,
+   "rank": 1.365
+  },
+  {
+   "product_id": "1005012655712195",
+   "titel": "2x4m/2m Clear Waterproof Tarp Transparent Poly Tarpaulin Anti Tear Cover with Rustproof Grommets for Patio Garden Chicken Coop",
+   "url": "https://www.aliexpress.com/item/1005012655712195.html",
+   "pris": 9.66,
+   "valuta": "USD",
+   "pris_text": "US $9.66",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S180e2e10fd154f6ab8f967df6239869c2.jpg",
+   "sald": "",
+   "sokord": "chicken coop run cover waterproof 3x6",
+   "grupp": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "arketyp": "A3",
+    "form": "tak"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-chicken-coop-run-cover-waterproof-3x6.html",
+   "ekonomi": {
+    "landad": 140,
+    "forslag_pris": 999,
+    "multipel": 7.15,
+    "be_cpa": 859,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 1488
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.0938,
+   "rank": 0.671
+  },
+  {
+   "product_id": "1005009893347178",
+   "titel": "1PC For Fiat Ducato Peugeot Boxer Citroen Relay Motorhome Thermal Windscreen Screen Cover Wrap Black Out Blinds",
+   "url": "https://www.aliexpress.com/item/1005009893347178.html",
+   "pris": 14.55,
+   "valuta": "USD",
+   "pris_text": "US $14.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S3cdbffe427bb494c8773b05c3c209b505.png",
+   "sald": "",
+   "sokord": "motorhome thermal windscreen cover external",
+   "grupp": "Husbil — hytt och vindruta",
+   "taggar": {
+    "objekt": "Husbil — hytt och vindruta",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorhome-thermal-windscreen-cover-external.html",
+   "ekonomi": {
+    "landad": 210,
+    "forslag_pris": 599,
+    "multipel": 2.85,
+    "be_cpa": 389,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 793
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1952,
+   "rank": 0.556
+  },
+  {
+   "product_id": "1005013105796340",
+   "titel": "Internal Thermal Window Blind Sunshade Cover Set for VW T5 T6 Camper Van Windscreen Heat Insulation RV Exterior Spare Part",
+   "url": "https://www.aliexpress.com/item/1005013105796340.html",
+   "pris": 16.79,
+   "valuta": "USD",
+   "pris_text": "US $16.79",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sfb61fc97828649c7b35e8eb547ccd8a9s.jpg",
+   "sald": "",
+   "sokord": "motorhome thermal windscreen cover external",
+   "grupp": "Husbil — hytt och vindruta",
+   "taggar": {
+    "objekt": "Husbil — hytt och vindruta",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorhome-thermal-windscreen-cover-external.html",
+   "ekonomi": {
+    "landad": 243,
+    "forslag_pris": 599,
+    "multipel": 2.47,
+    "be_cpa": 356,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 793
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1952,
+   "rank": 0.482
+  }
+ ]
+}

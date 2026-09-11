@@ -98,6 +98,9 @@ def vikt_for(kand, vikter):
     return round(v, 4)
 
 
+OBJEKTFILTER = []  # sätts från --objekt
+
+
 def bygg_pool(katalog, objektkat, manad, undvik, vikter, kalla="bada"):
     """Sökfraserna att dra ur, viktade (en fras ligger i poolen lika många gånger som sin vikt).
 
@@ -113,6 +116,8 @@ def bygg_pool(katalog, objektkat, manad, undvik, vikter, kalla="bada"):
     if kalla in ("bada", "objekt") and objektkat:
         for ob in objektkat.get("objekt", []):
             if manad not in ob.get("manader", []):
+                continue
+            if OBJEKTFILTER and not any(f.lower() in ob["objekt"].lower() for f in OBJEKTFILTER):
                 continue
             taggar = {"objekt": ob["objekt"], "arketyp": ob.get("arketyp", ""), "form": ob.get("form", "")}
             if f"grupp:{ob['objekt']}" in stopp or any(f"{d}:{v}" in stopp for d, v in taggar.items() if v):
@@ -210,9 +215,12 @@ def main():
     ap.add_argument("--kalla", choices=("bada", "objekt", "sokord"), default="objekt",
                     help="objekt.json (masterprompten, standard), sokord.json (gamla katalogen — ger kedjevaror) eller båda")
     ap.add_argument("--vitlista", action="store_true", help="släpp sko/handske/mössa igenom STOPPORD (A6 kroppsskydd)")
+    ap.add_argument("--objekt", help="kommaseparerade delsträngar: sök BARA objektrader vars namn matchar (riktad körning, t.ex. nya ankare)")
     ap.add_argument("--tak", type=int, default=TAK_LANDAD_SEK,
                     help="tak för landad kostnad när raden saknar ankare (standard 420; höj när ankaret mäts efteråt)")
     a = ap.parse_args()
+    global OBJEKTFILTER
+    OBJEKTFILTER = [x.strip() for x in a.objekt.split(",")] if a.objekt else []
 
     katalog = json.load(open(os.path.join(HERE, "sokord.json"), encoding="utf-8"))
     objekt_p = os.path.join(HERE, "objekt.json")

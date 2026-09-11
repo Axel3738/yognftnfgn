@@ -1,0 +1,128 @@
+{
+ "datum": "2026-09-11",
+ "manad": 9,
+ "usd_sek": 9.6414,
+ "kurskalla": "kurs.json 2026-09-11",
+ "sokord": [
+  {
+   "ord": "cat house heating pad outdoor waterproof IPX7",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 745
+  },
+  {
+   "ord": "outdoor cat shelter heater pad 18W",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 745
+  }
+ ],
+ "hoppade": {
+  "stoppord": 0,
+  "pris saknas": 0,
+  "ekonomi": 13,
+  "dubblett": 0,
+  "axel_nej": 0
+ },
+ "antal_kandidater": 3,
+ "produkter": [
+  {
+   "product_id": "1005012759440424",
+   "titel": "18W 220V Pet Dog Cat Waterproof Electric Heating Pad Body Winter Warmer Mat Bed Blanket Animals Bed Heater Accessories",
+   "url": "https://www.aliexpress.com/item/1005012759440424.html",
+   "pris": 1.37,
+   "valuta": "USD",
+   "pris_text": "US $1.37",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sadccebb1f7f34f1383e0253236063e94j.jpg",
+   "sald": "",
+   "sokord": "outdoor cat shelter heater pad 18W",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cat-shelter-heater-pad-18w.html",
+   "ekonomi": {
+    "landad": 20,
+    "forslag_pris": 499,
+    "multipel": 25.19,
+    "be_cpa": 479,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 745
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.2109,
+   "rank": 5.313
+  },
+  {
+   "product_id": "1005010155238697",
+   "titel": "Self-Heating Pet Pads Blanket Puppy Pad Warm Cushion Mat for Cats Dogs Washable Pets with Thermal Cats Dogs Bed",
+   "url": "https://www.aliexpress.com/item/1005010155238697.html",
+   "pris": 4.82,
+   "valuta": "USD",
+   "pris_text": "US $4.82",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S9a724ca6a11343b29b432a1c45ef5f4dF.jpg",
+   "sald": "",
+   "sokord": "cat house heating pad outdoor waterproof IPX7",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-cat-house-heating-pad-outdoor-waterproof-ipx7.html",
+   "ekonomi": {
+    "landad": 70,
+    "forslag_pris": 499,
+    "multipel": 7.16,
+    "be_cpa": 429,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 745
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.2109,
+   "rank": 1.51
+  },
+  {
+   "product_id": "1005013030707952",
+   "titel": "Outdoor Cat Shelter Heated Cat House Waterproof Insulated with Elevated Base Feral Cats Shelter Street House In Winter Yard",
+   "url": "https://www.aliexpress.com/item/1005013030707952.html",
+   "pris": 9.09,
+   "valuta": "USD",
+   "pris_text": "US $9.09",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sdd6deaf71c264dbf8dcbab150594d256a.jpg",
+   "sald": "",
+   "sokord": "outdoor cat shelter heater pad 18W",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-outdoor-cat-shelter-heater-pad-18w.html",
+   "ekonomi": {
+    "landad": 131,
+    "forslag_pris": 499,
+    "multipel": 3.8,
+    "be_cpa": 368,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 745
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.2109,
+   "rank": 0.801
+  }
+ ]
+}

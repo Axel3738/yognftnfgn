@@ -1,0 +1,358 @@
+{
+ "datum": "2026-09-11",
+ "manad": 9,
+ "usd_sek": 9.6414,
+ "kurskalla": "kurs.json 2026-09-11",
+ "sokord": [
+  {
+   "ord": "patio sofa cover fitted 600D",
+   "grupp": "Utemöbler på altanen",
+   "taggar": {
+    "objekt": "Utemöbler på altanen",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "outdoor cat heated pad waterproof",
+   "grupp": "Utekatten",
+   "taggar": {
+    "objekt": "Utekatten",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 745
+  },
+  {
+   "ord": "scooter cover kids waterproof",
+   "grupp": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+   "taggar": {
+    "objekt": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "utility trailer cover waterproof fitted heavy duty",
+   "grupp": "Släpkärra",
+   "taggar": {
+    "objekt": "Släpkärra",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "bbq cover waterproof 150cm heavy duty",
+   "grupp": "Gasolgrill",
+   "taggar": {
+    "objekt": "Gasolgrill",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "robotic mower charging station roof shelter",
+   "grupp": "Robotgräsklippare + laddstation",
+   "taggar": {
+    "objekt": "Robotgräsklippare + laddstation",
+    "arketyp": "A1",
+    "form": "garage"
+   },
+   "ankare_sek": 2241
+  },
+  {
+   "ord": "fire pit cover round waterproof 600D",
+   "grupp": "Eldstad/eldkorg",
+   "taggar": {
+    "objekt": "Eldstad/eldkorg",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "ankare_sek": null
+  },
+  {
+   "ord": "caravan hitch coupling cover waterproof",
+   "grupp": "Husvagn — gasolflaskan och dragkulan",
+   "taggar": {
+    "objekt": "Husvagn — gasolflaskan och dragkulan",
+    "arketyp": "A1",
+    "form": "skydd"
+   },
+   "ankare_sek": 399
+  },
+  {
+   "ord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "ankare_sek": null
+  }
+ ],
+ "hoppade": {
+  "stoppord": 5,
+  "pris saknas": 0,
+  "ekonomi": 54,
+  "dubblett": 13,
+  "axel_nej": 0
+ },
+ "antal_kandidater": 8,
+ "produkter": [
+  {
+   "product_id": "1005007424862737",
+   "titel": "BBQ Cover Outdoor Dust Waterproof Weber Heavy Duty Grill Cover Rain Protective Outdoor Barbecue Cover Round",
+   "url": "https://www.aliexpress.com/item/1005007424862737.html",
+   "pris": 11.49,
+   "valuta": "USD",
+   "pris_text": "US $11.49",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sf142fc8a2d8b4a5393aec817765f41fah.jpg",
+   "sald": "",
+   "sokord": "bbq cover waterproof 150cm heavy duty",
+   "grupp": "Gasolgrill",
+   "taggar": {
+    "objekt": "Gasolgrill",
+    "arketyp": "A1",
+    "form": "överdrag"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-bbq-cover-waterproof-150cm-heavy-duty.html",
+   "ekonomi": {
+    "landad": 166,
+    "forslag_pris": 399,
+    "multipel": 2.4,
+    "be_cpa": 233,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1785,
+   "rank": 0.428
+  },
+  {
+   "product_id": "1005013124406295",
+   "titel": "Seat Cover Cushion Protector For Universal Small Off-Road Vehicle Motorcycles Electric Pit Dirt Bikes Parts Waterproof PVC",
+   "url": "https://www.aliexpress.com/item/1005013124406295.html",
+   "pris": 15.73,
+   "valuta": "USD",
+   "pris_text": "US $15.73",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S80eac463dcbc4faab44d186c2af798fbh.jpg",
+   "sald": "",
+   "sokord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-atv-seat-cover-waterproof-universal.html",
+   "ekonomi": {
+    "landad": 227,
+    "forslag_pris": 599,
+    "multipel": 2.63,
+    "be_cpa": 372,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 0.274
+  },
+  {
+   "product_id": "1005013041658088",
+   "titel": "Waterproof Tire and Wheel Storage Covers Set for Transport Auto Modern Practical Reliable Compact Sleek Design Simple Multi Purpose Everyday Auto Tire Storage Transport Protection Solution Sturdy",
+   "url": "https://www.aliexpress.com/item/1005013041658088.html",
+   "pris": 16.18,
+   "valuta": "USD",
+   "pris_text": "US $16.18",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sf05bc1cf71f34e2a9bb74da42a32bcba7.jpg",
+   "sald": "",
+   "sokord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorcycle-wheel-cover-winter-storage.html",
+   "ekonomi": {
+    "landad": 234,
+    "forslag_pris": 599,
+    "multipel": 2.56,
+    "be_cpa": 365,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 0.266
+  },
+  {
+   "product_id": "1005003506328798",
+   "titel": "12 size Heavy 600D Waterproof Patio Fire Pit Cover BBQ Grill Cover Outdoor Garden Yard Round BBQ Cover Table Covers UV Protector",
+   "url": "https://www.aliexpress.com/item/1005003506328798.html",
+   "pris": 21.55,
+   "valuta": "USD",
+   "pris_text": "US $21.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sed5d7e36fac64e7aafbc6c2b9a2fecb5n.jpg",
+   "sald": "",
+   "sokord": "fire pit cover round waterproof 600D",
+   "grupp": "Eldstad/eldkorg",
+   "taggar": {
+    "objekt": "Eldstad/eldkorg",
+    "arketyp": "A1",
+    "form": "huv"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-fire-pit-cover-round-waterproof-600d.html",
+   "ekonomi": {
+    "landad": 312,
+    "forslag_pris": 799,
+    "multipel": 2.56,
+    "be_cpa": 487,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 0.266
+  },
+  {
+   "product_id": "1005007791892144",
+   "titel": "Heavy Duty ATV Cover Waterproof Windproof 4 Wheeler Quad Bike Storage Cover Black All Weather Protection Car Quad Covers XL",
+   "url": "https://www.aliexpress.com/item/1005007791892144.html",
+   "pris": 24.42,
+   "valuta": "USD",
+   "pris_text": "US $24.42",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S95fa0946754b4458a75b0177699aee61q.png",
+   "sald": "",
+   "sokord": "motorcycle wheel cover winter storage",
+   "grupp": "MC avställd",
+   "taggar": {
+    "objekt": "MC avställd",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-motorcycle-wheel-cover-winter-storage.html",
+   "ekonomi": {
+    "landad": 353,
+    "forslag_pris": 899,
+    "multipel": 2.55,
+    "be_cpa": 546,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 0.265
+  },
+  {
+   "product_id": "1005003817001218",
+   "titel": "775MM ATV Slip-On Seat Cover For Polaris Sportsman 570 450 850 Scrambler 400 500 1000 for Arctic Cat Yamaha Grizzly 700",
+   "url": "https://www.aliexpress.com/item/1005003817001218.html",
+   "pris": 16.44,
+   "valuta": "USD",
+   "pris_text": "US $16.44",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Hf4c81b4f573b4ea4bb8abeaf04ddd258Q.jpg",
+   "sald": "",
+   "sokord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-atv-seat-cover-waterproof-universal.html",
+   "ekonomi": {
+    "landad": 238,
+    "forslag_pris": 599,
+    "multipel": 2.52,
+    "be_cpa": 361,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 0.262
+  },
+  {
+   "product_id": "4001111550221",
+   "titel": "Motorcycle Cover Outdoor Uv Protector Scooter Rain Cover Motors Rain Dust M L XL XXL XXXL For Harley Touring Sportster XL Dyna",
+   "url": "https://www.aliexpress.com/item/4001111550221.html",
+   "pris": 28.11,
+   "valuta": "USD",
+   "pris_text": "US $28.11",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sa13bc60a520b4fbba5f061096c411926F.jpg",
+   "sald": "",
+   "sokord": "scooter cover kids waterproof",
+   "grupp": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+   "taggar": {
+    "objekt": "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-scooter-cover-kids-waterproof.html",
+   "ekonomi": {
+    "landad": 407,
+    "forslag_pris": 999,
+    "multipel": 2.46,
+    "be_cpa": 592,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 0.256
+  },
+  {
+   "product_id": "1005013097555069",
+   "titel": "Universal Motorcycle DIY Seat Cover Waterproof Leather Sheet 800mm x 1000mm For Honda Yamaha BMW KTM Dirt Bike Scooter Custom",
+   "url": "https://www.aliexpress.com/item/1005013097555069.html",
+   "pris": 17.05,
+   "valuta": "USD",
+   "pris_text": "US $17.05",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S8bc43fcc03e945f7a0f072448b714b4cb.jpg",
+   "sald": "",
+   "sokord": "atv seat cover waterproof universal",
+   "grupp": "Fyrhjuling/ATV",
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "arketyp": "A1",
+    "form": "kapell"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-atv-seat-cover-waterproof-universal.html",
+   "ekonomi": {
+    "landad": 247,
+    "forslag_pris": 599,
+    "multipel": 2.43,
+    "be_cpa": 352,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": null
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1041,
+   "rank": 0.253
+  }
+ ]
+}

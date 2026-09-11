@@ -1,0 +1,248 @@
+{
+ "datum": "2026-09-11",
+ "manad": 9,
+ "usd_sek": 9.6414,
+ "kurskalla": "kurs.json 2026-09-11",
+ "sokord": [
+  {
+   "ord": "insulated dog house outdoor winter large",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "wooden dog kennel insulated large winter",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "dog house outdoor insulated waterproof roof",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "dog kennel run roof cover waterproof",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  },
+  {
+   "ord": "dog house door flap insulated",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "ankare_sek": 3495
+  }
+ ],
+ "hoppade": {
+  "stoppord": 2,
+  "pris saknas": 0,
+  "ekonomi": 12,
+  "dubblett": 20,
+  "axel_nej": 0
+ },
+ "antal_kandidater": 6,
+ "produkter": [
+  {
+   "product_id": "1005006047670105",
+   "titel": "0.32mm PE Tarpaulin Rain Cloth Outdoor Garden Plant Shed Boat Car Truck Awning Waterproof Shade Sail Pet Dog Roof Cover 2x2m 3x5",
+   "url": "https://www.aliexpress.com/item/1005006047670105.html",
+   "pris": 14.31,
+   "valuta": "USD",
+   "pris_text": "US $14.31",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sbdb063c800664bb9a6a9186cdd7e41b54.jpg",
+   "sald": "",
+   "sokord": "dog kennel run roof cover waterproof",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-kennel-run-roof-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 207,
+    "forslag_pris": 2399,
+    "multipel": 11.59,
+    "be_cpa": 2192,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 1.63
+  },
+  {
+   "product_id": "1005012641267156",
+   "titel": "Water Proof Fabric Pet Playpen Top Cover Octagon Shape 24 Inch Fit Dog Fence Canopy Black Tone Breathable Mesh Cage Sun Shield",
+   "url": "https://www.aliexpress.com/item/1005012641267156.html",
+   "pris": 16.79,
+   "valuta": "USD",
+   "pris_text": "US $16.79",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/Sc6c09a674031421096a7956e109cb82bh.jpg",
+   "sald": "",
+   "sokord": "dog kennel run roof cover waterproof",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-kennel-run-roof-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 243,
+    "forslag_pris": 2399,
+    "multipel": 9.88,
+    "be_cpa": 2156,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 1.389
+  },
+  {
+   "product_id": "1005012196020123",
+   "titel": "Universal Waterproof Insulated Cat House Foldable Enclosed Cooling Dog Cave Warm Outdoor Pet Tent for Cats Rabbits Dogs",
+   "url": "https://www.aliexpress.com/item/1005012196020123.html",
+   "pris": 17.55,
+   "valuta": "USD",
+   "pris_text": "US $17.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S7dfacf8fd4bd425281bf3e0946581605y.jpg",
+   "sald": "",
+   "sokord": "insulated dog house outdoor winter large",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-insulated-dog-house-outdoor-winter-large.html",
+   "ekonomi": {
+    "landad": 254,
+    "forslag_pris": 2399,
+    "multipel": 9.45,
+    "be_cpa": 2145,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 1.329
+  },
+  {
+   "product_id": "1005012374186804",
+   "titel": "Simple kennel universal for all seasons House type Small dog kennel Cat kennel Outdoor thickened dog cage Cat cage",
+   "url": "https://www.aliexpress.com/item/1005012374186804.html",
+   "pris": 18.55,
+   "valuta": "USD",
+   "pris_text": "US $18.55",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S2009796a7c0e40d5ac754ebd92fab8b7e.jpg",
+   "sald": "",
+   "sokord": "wooden dog kennel insulated large winter",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-wooden-dog-kennel-insulated-large-winter.html",
+   "ekonomi": {
+    "landad": 268,
+    "forslag_pris": 2399,
+    "multipel": 8.94,
+    "be_cpa": 2131,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 1.257
+  },
+  {
+   "product_id": "1005005532301612",
+   "titel": "Dog Cage Rainproof Dust Covers Outdoor Universal Dog Wire Crate Cover Waterproof Sun Protection Durable Pet Kennel Case",
+   "url": "https://www.aliexpress.com/item/1005005532301612.html",
+   "pris": 24.75,
+   "valuta": "USD",
+   "pris_text": "US $24.75",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S1ffb89c875a848e6810e9c7e33f79748z.jpg",
+   "sald": "",
+   "sokord": "dog kennel run roof cover waterproof",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-kennel-run-roof-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 358,
+    "forslag_pris": 2399,
+    "multipel": 6.7,
+    "be_cpa": 2041,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 0.942
+  },
+  {
+   "product_id": "1005010547716509",
+   "titel": "Outdoor Dog Crate Cover Rainproof Dust Windproof Pet Kennel Cover Universal Pet Breathable Kennel Cage Covering",
+   "url": "https://www.aliexpress.com/item/1005010547716509.html",
+   "pris": 30.28,
+   "valuta": "USD",
+   "pris_text": "US $30.28",
+   "bild": "https://ae-pic-a1.aliexpress-media.com/kf/S88b884dbf1e1471d841edd1c87268646e.jpg",
+   "sald": "",
+   "sokord": "dog kennel run roof cover waterproof",
+   "grupp": "Gårdshunden/hundgården",
+   "taggar": {
+    "objekt": "Gårdshunden/hundgården",
+    "arketyp": "A3",
+    "form": "koja"
+   },
+   "sok_url": "https://www.aliexpress.com/w/wholesale-dog-kennel-run-roof-cover-waterproof.html",
+   "ekonomi": {
+    "landad": 438,
+    "forslag_pris": 2399,
+    "multipel": 5.48,
+    "be_cpa": 1961,
+    "dom": "PASS",
+    "orsak": "",
+    "ankare_sek": 3495
+   },
+   "usd_sek": 9.6414,
+   "vikt": 0.1406,
+   "rank": 0.77
+  }
+ ]
+}

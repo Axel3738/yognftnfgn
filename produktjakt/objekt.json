@@ -515,6 +515,7 @@
    "agare": "Villaägare 55+ (roboten står på gräsmattan 3–11)",
    "manader": [
     4,
+    9,
     10,
     11
    ],
@@ -530,12 +531,16 @@
     "Gardena-återförsäljare — ej mätt",
     "pricerunner.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 2241,
    "sokfraser_en": [
     "robot mower garage cover canopy",
-    "robotic lawnmower house roof shelter"
+    "robotic lawnmower house roof shelter",
+    "robot lawn mower garage cover canopy",
+    "robotic mower charging station roof shelter"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_namn": "Husqvarna Automower Garage S 2 241 kr (gplshop.se), Husqvarna house 1 790–2 990",
+   "golv": "Jula/Biltema robotgarage ca 299–599 kr (ej exakt läst)"
   },
   {
    "objekt": "Snöslunga",
@@ -1041,6 +1046,8 @@
     1,
     2,
     3,
+    9,
+    10,
     11
    ],
    "hot": "Snö, is, droppande takvatten 11–3. Deadline: första snö 11 [K]. Fackhandel 1 000–2 500 kr, kedjan har billiga — ankaret måste mätas.",
@@ -1054,11 +1061,17 @@
     "pricerunner.se (Panasonic/Mitsubishi-tak)",
     "vvs-fackhandel — ej mätt"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 2499,
    "sokfraser_en": [
-    "air conditioner outdoor unit roof cover"
+    "air conditioner outdoor unit roof cover",
+    "heat pump cover outdoor winter snow roof waterproof",
+    "outdoor ac unit cover top roof shield",
+    "heat pump outdoor unit snow cover roof",
+    "mini split outdoor unit cover winter"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_namn": "Clas Ohlson värmepumpsskydd plåt med tak 2 499 kr (36-217); Grøntklima trä 6 990 (polarpumpen)",
+   "golv": "ej hittat under 2 499 i svensk handel 2026-09-11"
   },
   {
    "objekt": "Laddbox/utomhusuttag",
@@ -1156,16 +1169,21 @@
    "sokfraser_en": [
     "outdoor cat heated pad waterproof",
     "heated pet water bowl outdoor",
-    "cat shelter porch windproof insulated"
+    "cat shelter porch windproof insulated",
+    "cat house heating pad outdoor waterproof IPX7",
+    "outdoor cat shelter heater pad 18W"
    ],
    "vikt": 3,
-   "ankare_matt": "uppvärmd vattenskål: P-Lindberg frostfritt vattenkar 3 L 745 kr (plast, 30 W); Sulavesi betong 1 690 kr arkenzoo.se; golv Fyndiq 3,2 L 434–500 kr — mätt 2026-09-10; AliExpress-skålen 27 USD landar 395 → K7-kill"
+   "ankare_matt": "uppvärmd vattenskål: P-Lindberg frostfritt vattenkar 3 L 745 kr (plast, 30 W); Sulavesi betong 1 690 kr arkenzoo.se; golv Fyndiq 3,2 L 434–500 kr — mätt 2026-09-10; AliExpress-skålen 27 USD landar 395 → K7-kill",
+   "ankare_varmeplatta_sek": 599,
+   "ankare_varmeplatta": "Supercat värmeplatta till katthus 4 season 599 kr, 18 W IPX7, i lager"
   },
   {
    "objekt": "Gårdshunden/hundgården",
    "agare": "Gård/villa 55+ med utehund",
    "manader": [
     3,
+    9,
     10,
     11
    ],
@@ -1183,13 +1201,17 @@
     "zoo.se",
     "hooks.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 3495,
    "sokfraser_en": [
     "insulated dog house outdoor winter large",
     "dog kennel run roof cover waterproof",
-    "dog house door flap insulated"
+    "dog house door flap insulated",
+    "dog house outdoor insulated waterproof roof",
+    "wooden dog kennel insulated large winter"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_namn": "Kerbl isolerad hundkoja 3 495 kr (p-lindberg.se, i lager 2026-09-11)",
+   "golv": "Kellfri isolerad (bygghemma) pris ej läst"
   },
   {
    "objekt": "Hönsen — rastgård och vatten",
@@ -1212,13 +1234,17 @@
     "hooks.se",
     "hönsfackhandel (Omlet) — ej mätt"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 1488,
    "sokfraser_en": [
     "chicken coop run cover waterproof 3x6",
     "heated chicken waterer winter",
-    "chicken coop insulation cover winter"
+    "chicken coop insulation cover winter",
+    "chicken run roof cover waterproof tarp fitted",
+    "chicken coop rain cover 2x3m"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_namn": "Kellfri tak till hönsgård HHR300 1 488 kr (lantbutiken.se), PVC + 600D",
+   "golv": "Amazon.se hönsgård med tak 3x4 m (hel gård) — inget separat tak billigare hittat"
   },
   {
    "objekt": "Hästen i hagen",
@@ -1364,13 +1390,16 @@
     "lekia.se (Hot Wheels/LEGO 349–599) [F]",
     "pricerunner.se 'adventskalender <tema>'"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 599,
    "sokfraser_en": [
     "advent calendar 24 pcs dinosaur toys",
     "advent calendar building blocks 24 days",
-    "advent calendar rc car 24"
+    "advent calendar rc car 24",
+    "advent calendar dinosaur toys 24 pcs",
+    "advent calendar excavator construction vehicles 24"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_namn": "LEGO City/Friends adventskalender 2026 (lekia/spelexperten 349–599 [F])"
   },
   {
    "objekt": "Mannen själv / partnern — hobbykalendern (fars dag, jul)",
@@ -1475,6 +1504,42 @@
     "snow grips for shoes"
    ],
    "vikt": 3
+  },
+  {
+   "objekt": "Snöslungan",
+   "agare": "villa/fritidshus i snöområde",
+   "manader": [
+    9,
+    10,
+    11
+   ],
+   "deadline": "första snö v 46 [K]",
+   "deadline_typ": "första snö",
+   "fonster_veckor": "9",
+   "arketyp": "A1",
+   "form": "överdrag",
+   "yta": "hela maskinen ute under skärmtak: regn, kondens, löv sept–nov innan snön",
+   "default": "presenning eller ingenting",
+   "verb": "blåser av / rostar",
+   "skyddsformer": [
+    "huv 600D"
+   ],
+   "ankare_kallor": [
+    "husqvarna.com/se",
+    "duab.se",
+    "pricerunner.se"
+   ],
+   "sokfraser_en": [
+    "snow blower cover waterproof heavy duty 600D",
+    "two stage snow thrower cover"
+   ],
+   "vikt": 2,
+   "ankare_sek": 849,
+   "ankare_namn": "Husqvarna överdrag snöslunga (pricerunner 399–849)",
+   "ankare_url": "https://www.pricerunner.se/sp/sn%C3%B6slunga-%C3%B6verdrag.html",
+   "golv": "Stiga 450 kr (duab.se)",
+   "max_landad": null,
+   "parkerad_till_vecka": null
   }
  ]
 }
