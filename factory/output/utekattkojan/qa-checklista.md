@@ -1,6 +1,23 @@
 # QA — Isolerad Utekattkoja på Ben – Upphöjd Från Kall och Blöt Mark
 
-QA kördes inte (dry-run).
+- [x] ✅ produkt: Isolerad Utekattkoja på Ben – Upphöjd Från Kall och Blöt Mark (utekattkojan), status ACTIVE
+- [x] ✅ priser: 789 SEK på alla varianter, jämförpris 1039
+- [x] ✅ varianter: 3 st
+- [x] ✅ bilder: 6 st, 6 media i butiken
+- [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
+- [x] ✅ beskrivning: problem, lösning och kritisk media (gif + demo) finns
+- [x] ✅ reviews: 10 st i Judge.me-underlaget
+- [ ] 🖐 judgeme: Importera underlaget och verifiera att widgeten visar recensionerna.
+- [x] ✅ frakt: 5–10 arbetsdagar
+- [ ] 🖐 frakt-zoner: Kontrollera fraktzon och pris i Shopify → Frakt och leverans.
+- [x] ✅ guarantee: 14 dagars ångerrätt
+- [ ] ❌ tracking: meta.pixel_id, meta.page_id saknas.
+- [ ] 🖐 theme: Temat måste vara valt och sektionerna inlagda i Shopify-editorn.
+- [ ] ❌ doman: Primär domän är fortfarande ras1t2-2x.myshopify.com — riktig domän saknas.
+- [x] ✅ villkor: 4 policyer på plats
+- [ ] ❌ checkout: Butikens valuta är PHP, produktfilen säger SEK.
+- [ ] ❌ kundvy-produktsida: ingen HTML = inte grönt (Lösenordet avvisades (HTTP 200, location saknas).)
+- [x] ✅ markörer /nb: 0 svenska markörer av 14
 
 ## Varningar
 
