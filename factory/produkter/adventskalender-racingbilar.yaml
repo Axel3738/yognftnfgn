@@ -15,6 +15,9 @@ produkt:
   namn: "Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor"
   id: "adventskalender-racingbilar"
   menynamn: "Racingkalendern"
+  # Tolv kalendrar ryms inte i menyn (Axels regel 2026-09-11). Alla ligger i
+  # kollektionen Kalendrarna, och gåvoguiden på startsidan gör urvalet.
+  i_meny: false
 
 brand:
   namn: "AdventLane"
@@ -203,6 +206,24 @@ faq:
     svar: "Ja. Den levereras i en tryckt presentkartong, klar att lägga under granen."
   - fraga: "Vad gäller om jag ångrar mitt köp?"
     svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@adventlane.se om du vill ångra."
+
+# GÅVOGUIDEN (sections/ms-gavoguide.liquid). Taggarna matchas mot
+# svarsalternativen i butiksfilens startsida.gavoguide.
+# sma_delar är en SPÄRR, inte en poäng: kartongen bär "Choking hazard — small
+# parts, not for children under 3" (BRAND.md, läst ur bilden 2026-09-10), så
+# guiden får aldrig föreslå den när kunden svarat att barnet är under tre år.
+quiz:
+  mening: "Tjugofyra bilar som står kvar på hyllan den 25 december, inte ett tomt omslag."
+  sma_delar: true
+  alkoholtema: false
+  taggar:
+    - "mottagare:barn"
+    - "alder:3-5"
+    - "alder:6-8"
+    - "alder:9-12"
+    - "intresse:bilar"
+    - "egenskap:varar"
+    - "egenskap:overraskning"
 
 leveranstid: "5–10 arbetsdagar"
 
