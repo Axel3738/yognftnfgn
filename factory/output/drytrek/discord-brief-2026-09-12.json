@@ -1,0 +1,68 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-12",
+  "lage": "brief",
+  "siffror": {
+    "spend_7d": 1654,
+    "kop_7d": 2,
+    "roas_7d": 0.47,
+    "briefs_nya": 7
+  },
+  "gjort": [
+    "Budget round: DRYTREK_SE campaign untouched at 1 000 SEK/day (1 654 SEK, 2 purchases, ROAS 0.47 on 3 days — under the 300 SEK / 3 purchases gate, no verdict).",
+    "Paused ad DryTrek_Damasker_G_2_1 (gift angle, image): 480 SEK and 0 purchases = over 3 x target CPA. Read back ACTIVE -> PAUSED, logged. Nothing activated.",
+    "Cold start: 0 of 16 ads passed the data gate. No feedback loop yet — batch built on the inherited winner PD_1 and the product file angles.",
+    "7 new briefs in the Damasker vandring hub as Draft: 4 variants of proven ads, 3 new concepts. Copy A/B: 4 Fable, 3 Sonnet.",
+    "Fixed a bug in the pause tool (first ad pause failed with Meta 400, second run succeeded). dna.md, batch-log.md, backlog.md updated and pushed."
+  ],
+  "briefer": [
+    {
+      "namn": "DryTrek_Damasker_PD_12_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_12_H1-3d8270ab908c819b8ecdd2528c386c0c"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_H2",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_12_H2-3d8270ab908c81c68c93f7879baacfd2"
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_6_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_SP_6_H1-3d8270ab908c816db461c7d4212a0be3"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_12_1-3d8270ab908c8140bc83c26cbefe98c2"
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_SP_7_H1-3d8270ab908c81f5ab6bd862d6a6b7af"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_13_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_13_H1-3d8270ab908c81709f6fd690af702531"
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_2_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_FO_2_H1-3d8270ab908c8137bb6bd6854aa669de"
+    }
+  ],
+  "varningar": [
+    "CBO gives the gift angle (G) half the money: 823 SEK, 0 purchases across 4 ads. The proven demo PD_1 got 15 SEK in 3 days. Not a verdict yet (all under the gate) — but the ad-set split is not something the night watch changes.",
+    "Live ad PD_1 still SPEAKS \"vattentata, vindtata, i alla vader\" in the voiceover — claims the copy review removed from the text. PD_12_H1 in this batch is the honest replacement.",
+    "PD_13_H1 (the water test) and FO_2_H1 (one leg with, one without) need NEW footage — a creator or someone at DryTrek. The editor cannot build them from existing clips.",
+    "No editor assigned to DryTrek: batch capped at 7 briefs instead of 21, nobody pinged to make them. Tomorrow (Sunday) is the next brief day per the register."
+  ],
+  "action_axel": [
+    "Assign an editor to DryTrek so the 7 Draft briefs get made: node factory/register.mjs redigerare drytrek/damasker \"<name>\" <discord-id>",
+    "Decide on the gift ad set DRYTREK_SE_G (823 SEK, 0 purchases, 50 % of spend): pause it so the budget flows to PD/SP/CS, or leave it until the ads pass the gate. I never pause a spending ad set on my own."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13 (budget + briefs — Sunday)"
+}

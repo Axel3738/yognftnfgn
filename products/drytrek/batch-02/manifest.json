@@ -1,0 +1,37 @@
+[
+  {
+    "namn": "DryTrek_Damasker_PD_12_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/DryTrek_Damasker_PD_12_H1/brief.md"
+  },
+  {
+    "namn": "DryTrek_Damasker_PD_12_H2",
+    "typ": "video",
+    "brief": "video-ads-briefs/DryTrek_Damasker_PD_12_H2/brief.md"
+  },
+  {
+    "namn": "DryTrek_Damasker_SP_6_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/DryTrek_Damasker_SP_6_H1/brief.md"
+  },
+  {
+    "namn": "DryTrek_Damasker_PD_12_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/DryTrek_Damasker_PD_12_1/brief.md"
+  },
+  {
+    "namn": "DryTrek_Damasker_SP_7_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/DryTrek_Damasker_SP_7_H1/brief.md"
+  },
+  {
+    "namn": "DryTrek_Damasker_PD_13_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/DryTrek_Damasker_PD_13_H1/brief.md"
+  },
+  {
+    "namn": "DryTrek_Damasker_FO_2_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/DryTrek_Damasker_FO_2_H1/brief.md"
+  }
+]

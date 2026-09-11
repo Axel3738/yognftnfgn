@@ -1,0 +1,341 @@
+{
+  "modell_begard": "sonnet",
+  "modell_svarade": "agent-tool:sonnet",
+  "fallback_korde": false,
+  "vag": "Agent-verktyget (model: sonnet)",
+  "briefer": [
+    {
+      "namn": "DryTrek_Damasker_SP_6_H1",
+      "typ": "video",
+      "hook": "Kroken i snörningen. Klart.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Kroken i snörningen. Klart.",
+          "en": "The hook clips into the laces. Done."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–9 s",
+          "sv": "Jag var lite skeptisk ärligt talat, men jag tog på mig de här innan promenaden i morse.",
+          "en": "I was a bit skeptical honestly, but I put these on before my walk this morning."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "9–18 s",
+          "sv": "Blött, lerigt, snö överallt. Efteråt, helt torra strumpor, ingen snö i skorna, inget grus, ingenting.",
+          "en": "Wet, muddy, snow everywhere. Afterward, completely dry socks, no snow in the shoes, no grit, nothing."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "18–23 s",
+          "sv": "De satt kvar hela vägen. Inget krångel, inget som gled ner.",
+          "en": "They stayed put the whole way. No fuss, nothing that slid down."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "23–27 s",
+          "sv": "Enkel grej, men den funkar på riktigt.",
+          "en": "Simple thing, but it actually works."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Krok i snörningen, rem under foten, kardborre hela vägen upp.\nBilliga benskydd glider ner efter några kilometer – de här har tre fästen i stället för ett.\nSnö och väta stannar på utsidan – strumpan torr hela turen.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Strumporna torra hela turen.",
+        "description_sv": "Damasker med krok, rem och kardborre – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Kroken i snörningen. Klart.",
+          "visualisera": "✅ Konkret bild: en krok som fästs i skosnörningen, syns rakt av på filmen.",
+          "falsifiera": "✅ Antingen fäster kroken i snörningen i klippet eller inte – sant/falskt.",
+          "ingen_annan_kan_saga": "✅ De flesta benskydd har bara kardborre/rem, inte en krok i snörningen. Alternativ: 'En krok i snörningen.' / 'Fäst i snörningen. Klart.' / 'Kroken låser i snörningen.'"
+        },
+        {
+          "rad": "Jag var lite skeptisk ärligt talat, men jag tog på mig de här innan promenaden i morse.",
+          "visualisera": "✅ Att ta på benskydd innan en promenad går att se framför sig.",
+          "falsifiera": "✅ Sant eller falskt att hon var skeptisk och tog dem på innan promenaden.",
+          "ingen_annan_kan_saga": "❌ Generisk UGC-öppning ('var skeptisk men testade') som vilket märke som helst kan säga. Inspelat kreatörsljud från SP_2 – redigeras inte enligt briefen, undantaget är godkänt där."
+        },
+        {
+          "rad": "Blött, lerigt, snö överallt. Efteråt, helt torra strumpor, ingen snö i skorna, inget grus, ingenting.",
+          "visualisera": "✅ Blött/lerigt före, torra strumpor efter – går att se i klippet.",
+          "falsifiera": "✅ Antingen var strumporna torra, snö- och grusfria efteråt, eller inte.",
+          "ingen_annan_kan_saga": "❌ Ett generellt före/efter-påstående om torrhet som andra benskydd också kan hävda. Inspelat kreatörsljud – redigeras inte enligt briefen."
+        },
+        {
+          "rad": "De satt kvar hela vägen. Inget krångel, inget som gled ner.",
+          "visualisera": "✅ 'Satt kvar, gled inte ner' går att se på fötterna/benen i klippet.",
+          "falsifiera": "✅ Antingen satt de kvar hela vägen eller gled de ner – testbart.",
+          "ingen_annan_kan_saga": "❌ Generiskt hållbarhetspåstående, vilket fästsystem som helst kan säga samma sak. Inspelat kreatörsljud – redigeras inte enligt briefen."
+        },
+        {
+          "rad": "Enkel grej, men den funkar på riktigt.",
+          "visualisera": "❌ 'Enkel grej' och 'funkar på riktigt' går inte att se framför sig.",
+          "falsifiera": "❌ 'Funkar på riktigt' är en åsikt, inte ett sant/falskt påstående.",
+          "ingen_annan_kan_saga": "❌ Kan sägas om vilken produkt som helst. Inspelat kreatörsljud – kan inte skrivas om enligt briefen (undantaget för 'enkel' är godkänt där); ljudet är låst, ingen bättre rad går att leverera."
+        },
+        {
+          "rad": "Strumporna torra hela turen.",
+          "visualisera": "✅ Torra strumpor efter en tur går att se/känna.",
+          "falsifiera": "✅ Antingen är strumporna torra hela turen eller inte.",
+          "ingen_annan_kan_saga": "✅ Bygger på produktsidans specifika löfte för just det här fästsystemet, inte en generell vädertålighetsrad."
+        },
+        {
+          "rad": "Krok i snörningen, rem under foten, kardborre hela vägen upp.",
+          "visualisera": "✅ Tre konkreta fästpunkter, går att peka på var och en.",
+          "falsifiera": "✅ Antingen har produkten de tre fästena eller inte.",
+          "ingen_annan_kan_saga": "✅ Kombinationen krok + rem + kardborre är ovanlig, de flesta benskydd har bara ett fäste."
+        },
+        {
+          "rad": "Billiga benskydd glider ner efter några kilometer – de här har tre fästen i stället för ett.",
+          "visualisera": "✅ Glidande benskydd vs tre fästen som håller – konkret jämförelse.",
+          "falsifiera": "✅ Antingen glider produkten ner efter några kilometer eller inte.",
+          "ingen_annan_kan_saga": "✅ Kvantifierad jämförelse (tre fästen mot ett) grundad i ett namngivet kundproblem, inte en luddig fördel."
+        },
+        {
+          "rad": "Snö och väta stannar på utsidan – strumpan torr hela turen.",
+          "visualisera": "✅ Snö/väta utanpå, torr strumpa inuti – går att se.",
+          "falsifiera": "✅ Antingen stannar vätan utanpå eller tar sig in.",
+          "ingen_annan_kan_saga": "✅ Beskriver den faktiska mekanismen (stannar på utsidan) i stället för ett generellt 'håller torrt'-löfte."
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ Pris och frakt är konkreta, verifierbara fakta.",
+          "falsifiera": "✅ Exakt pris och fraktvillkor går att kontrollera mot butiken.",
+          "ingen_annan_kan_saga": "❌ Pris och fraktvillkor är inte unika för produkten – vem som helst kan sätta samma pris. Prisrad, inte ett marknadsföringspåstående; behålls ändå eftersom kunden behöver priset."
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ Färgval går att se direkt i annonsen/på sidan.",
+          "falsifiera": "✅ Exakt 18 färger är ett verifierbart antal.",
+          "ingen_annan_kan_saga": "✅ Det specifika antalet 18 knyter raden till just den här produktens sortiment."
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_H1",
+      "typ": "video",
+      "hook": "Jag testade de här på hundpromenaden i morse.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Jag testade de här på hundpromenaden i morse.",
+          "en": "I tested these on the dog walk this morning."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–8 s",
+          "sv": "Utan damask blir strumpan blöt redan på den korta rundan runt kvarteret.",
+          "en": "Without a gaiter, the sock gets wet on just the short lap around the block."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "8–14 s",
+          "sv": "Kardborren stänger med kängan kvar på foten, på trappan.",
+          "en": "The velcro closes with the boot still on, right on the doorstep."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–19 s",
+          "sv": "Efter rundan: hunden blöt om tassarna, strumpan torr.",
+          "en": "After the walk: the dog's paws are wet, the sock is dry."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "19–22 s",
+          "sv": "Damasker för hundpromenaden, 389 kr per par.",
+          "en": "Gaiters for the dog walk, 389 kr per pair."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Krok i snörningen, rem under foten, kardborre uppåt.\nGår på och av med kängan kvar på foten, inget att knyta upp.\n18 färger, bland dem neongrön, orange och gul.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Torr strumpa efter hundpromenaden.",
+        "description_sv": "Damasker för hundpromenaden – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Jag testade de här på hundpromenaden i morse.",
+          "visualisera": "✅ Går att se: någon testar benskydd på en hundpromenad.",
+          "falsifiera": "✅ Antingen testade hon dem på hundpromenaden eller inte.",
+          "ingen_annan_kan_saga": "✅ Bygger på kreatörens egen, redan spenderade rad – specifik situation (hundpromenad), inte generell vandring. Alternativ: 'Hundpromenaden i morse. Blött, kallt, som vanligt.' / 'Jag tog på de här innan hundpromenaden.' / 'Samma hundpromenad. Torra fötter den här gången.'"
+        },
+        {
+          "rad": "Utan damask blir strumpan blöt redan på den korta rundan runt kvarteret.",
+          "visualisera": "✅ Kort runda runt kvarteret, blöt strumpa – tydlig, vardaglig bild.",
+          "falsifiera": "✅ Antingen blir strumpan blöt på den korta rundan utan damask, eller inte.",
+          "ingen_annan_kan_saga": "✅ 'Korta rundan runt kvarteret' är specifikt för hundpromenad-vinkeln, skiljer sig från generella vandringspåståenden."
+        },
+        {
+          "rad": "Kardborren stänger med kängan kvar på foten, på trappan.",
+          "visualisera": "✅ Går att se kardborren stängas utan att kängan tas av, på trappan hemma.",
+          "falsifiera": "✅ Antingen går det att stänga med kängan på, eller måste den av.",
+          "ingen_annan_kan_saga": "✅ Många billigare alternativ kräver att kängan tas av; 'på trappan' knyter det till just morgonrutinen."
+        },
+        {
+          "rad": "Efter rundan: hunden blöt om tassarna, strumpan torr.",
+          "visualisera": "✅ Blöta hundtassar bredvid en torr strumpa – två konkreta, motsatta bilder i samma ruta.",
+          "falsifiera": "✅ Antingen är hundens tassar blöta och strumpan torr efter rundan, eller inte.",
+          "ingen_annan_kan_saga": "✅ Kontrasten hund/strumpa finns bara i det här hundpromenad-konceptet – en vandringsannons har ingen hund att jämföra med."
+        },
+        {
+          "rad": "Damasker för hundpromenaden, 389 kr per par.",
+          "visualisera": "✅ Produkt, användningssituation och pris – allt konkret.",
+          "falsifiera": "✅ Exakt pris och användningsområde går att verifiera.",
+          "ingen_annan_kan_saga": "✅ 'För hundpromenaden' är en ovanlig framing jämfört med standard vandringscopy."
+        },
+        {
+          "rad": "Torr strumpa efter hundpromenaden.",
+          "visualisera": "✅ Torr strumpa efter en specifik, vardaglig promenad.",
+          "falsifiera": "✅ Antingen är strumpan torr efter hundpromenaden eller inte.",
+          "ingen_annan_kan_saga": "✅ Situationsspecifik (hundpromenad, inte vandring) – ovanlig vinkel för kategorin."
+        },
+        {
+          "rad": "Krok i snörningen, rem under foten, kardborre uppåt.",
+          "visualisera": "✅ Tre konkreta fästpunkter, går att peka på var och en.",
+          "falsifiera": "✅ Antingen har produkten de tre fästena eller inte.",
+          "ingen_annan_kan_saga": "✅ Kombinationen krok + rem + kardborre är ovanlig, de flesta benskydd har bara ett fäste."
+        },
+        {
+          "rad": "Går på och av med kängan kvar på foten, inget att knyta upp.",
+          "visualisera": "✅ Går att se benskyddet öppnas/stängas utan att kängan tas av.",
+          "falsifiera": "✅ Antingen går det på/av med kängan på och inget att knyta, eller inte.",
+          "ingen_annan_kan_saga": "✅ 'Inget att knyta upp' är en specifik kontrast mot alternativ som kräver det."
+        },
+        {
+          "rad": "18 färger, bland dem neongrön, orange och gul.",
+          "visualisera": "✅ Färgerna går att se direkt.",
+          "falsifiera": "✅ Exakt 18 färger och de tre namngivna är verifierbart.",
+          "ingen_annan_kan_saga": "✅ Specifikt antal och specifika signalfärger knyter raden till just denna produkt."
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ Pris och frakt är konkreta, verifierbara fakta.",
+          "falsifiera": "✅ Exakt pris och fraktvillkor går att kontrollera mot butiken.",
+          "ingen_annan_kan_saga": "❌ Pris och fraktvillkor är inte unika för produkten – vem som helst kan sätta samma pris. Prisrad, inte ett marknadsföringspåstående; behålls ändå eftersom kunden behöver priset."
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ Färgval går att se direkt i annonsen/på sidan.",
+          "falsifiera": "✅ Exakt 18 färger är ett verifierbart antal.",
+          "ingen_annan_kan_saga": "✅ Det specifika antalet 18 knyter raden till just den här produktens sortiment."
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_2_H1",
+      "typ": "video",
+      "hook": "Samma tur. Ett ben med, ett utan.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Samma tur. Ett ben med, ett utan.",
+          "en": "Same hike. One leg with, one without."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–8 s",
+          "sv": "Benet utan damask: snön kryper redan in vid kängans kant.",
+          "en": "The leg without a gaiter: snow is already creeping in at the top of the boot."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "8–14 s",
+          "sv": "Damasken täcker gapet mellan känga och knä, hela vägen upp.",
+          "en": "The gaiter covers the gap between boot and knee, all the way up."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–19 s",
+          "sv": "Efteråt: en strumpa blöt, en strumpa torr. Samma tur.",
+          "en": "Afterward: one sock wet, one sock dry. Same hike."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "19–22 s",
+          "sv": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "en": "Gaiters, 389 kr per pair, free shipping to Sweden and Norway."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Ett ben med damask, ett utan – samma tur.\nVätan stannar på utsidan av de 44 cm höga damaskerna, i stället för att leta sig ner i kängan.\nDamasken täcker gapet mellan känga och knä.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Ett ben torrt, ett blött.",
+        "description_sv": "Damasker som håller vätan på utsidan – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Samma tur. Ett ben med, ett utan.",
+          "visualisera": "✅ Split-bild med två ben, ett med damask och ett utan, är lätt att se framför sig.",
+          "falsifiera": "✅ Antingen har ett ben damask och det andra inte, på samma tur – testbart.",
+          "ingen_annan_kan_saga": "✅ Den specifika, kontrollerade jämförelsen (samma tur, ett ben med/utan) är svår att kopiera rakt av. Alternativ: 'Ett ben skyddat. Ett ben inte.' / 'Två ben, samma tur, olika resultat.' / 'Höger ben med damask. Vänster utan.'"
+        },
+        {
+          "rad": "Benet utan damask: snön kryper redan in vid kängans kant.",
+          "visualisera": "✅ Det bara benet i samma ruta som det skyddade – snön vid kängans kant syns på just det benet.",
+          "falsifiera": "✅ Sant eller falskt att snön tar sig in på det ben som saknar damask, i bild bredvid det som har.",
+          "ingen_annan_kan_saga": "✅ Knuten till split-benet-uppställningen (ett ben med, ett utan i samma bild) – en vanlig vandringsannons utan den jämförelsen kan inte säga exakt samma sak."
+        },
+        {
+          "rad": "Damasken täcker gapet mellan känga och knä, hela vägen upp.",
+          "visualisera": "✅ Gapet mellan känga och knä, täckt hela vägen upp, är konkret.",
+          "falsifiera": "✅ Antingen täcker damasken hela gapet eller inte.",
+          "ingen_annan_kan_saga": "✅ Anatomiskt precis framing ('gapet mellan känga och knä') och 44 cm-höjden är specifik för produkten, inte generell ad-copy."
+        },
+        {
+          "rad": "Efteråt: en strumpa blöt, en strumpa torr. Samma tur.",
+          "visualisera": "✅ Två strumpor bredvid varandra, en blöt, en torr – mycket konkret bild.",
+          "falsifiera": "✅ Antingen är den ena strumpan blöt och den andra torr efter samma tur, eller inte.",
+          "ingen_annan_kan_saga": "✅ Det parade, kontrollerade beviset (samma tur, två resultat) är en distinkt bevisform, svår att sätta sin logga under utan att göra exakt samma test."
+        },
+        {
+          "rad": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ Produkt, pris och fraktvillkor är konkreta fakta.",
+          "falsifiera": "✅ Exakt pris och fraktvillkor går att verifiera.",
+          "ingen_annan_kan_saga": "❌ Pris och fraktvillkor är inte unika för produkten – vem som helst kan sätta samma pris. Prisrad, inte ett marknadsföringspåstående; behålls ändå eftersom kunden behöver priset."
+        },
+        {
+          "rad": "Ett ben torrt, ett blött.",
+          "visualisera": "✅ Ett torrt och ett blött ben/strumpa är en tydlig bild.",
+          "falsifiera": "✅ Antingen är det ena torrt och det andra blött, eller inte.",
+          "ingen_annan_kan_saga": "✅ Split-jämförelsen är specifik för det här demot, inte en generell vädertålighetsrad."
+        },
+        {
+          "rad": "Ett ben med damask, ett utan – samma tur.",
+          "visualisera": "✅ Samma bild som hooken – två ben, olika utrustning.",
+          "falsifiera": "✅ Antingen har ett ben damask och det andra inte, samma tur – testbart.",
+          "ingen_annan_kan_saga": "✅ Kontrollerad jämförelse på samma tur, svår att kopiera utan att göra samma test."
+        },
+        {
+          "rad": "Vätan stannar på utsidan av de 44 cm höga damaskerna, i stället för att leta sig ner i kängan.",
+          "visualisera": "✅ Vätan som stannar utanpå en 44 cm hög damask går att se.",
+          "falsifiera": "✅ Antingen stannar vätan utanpå de 44 cm höga damaskerna, eller tar den sig ner i kängan.",
+          "ingen_annan_kan_saga": "✅ Den specifika höjden (44 cm) knyter påståendet till just den här produktens mått."
+        },
+        {
+          "rad": "Damasken täcker gapet mellan känga och knä.",
+          "visualisera": "✅ Gapet mellan känga och knä, täckt, är konkret.",
+          "falsifiera": "✅ Antingen täcker damasken gapet eller inte.",
+          "ingen_annan_kan_saga": "✅ Anatomiskt precis framing, specifik för produktens funktion snarare än generell vädertålighet."
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ Pris och frakt är konkreta, verifierbara fakta.",
+          "falsifiera": "✅ Exakt pris och fraktvillkor går att kontrollera mot butiken.",
+          "ingen_annan_kan_saga": "❌ Pris och fraktvillkor är inte unika för produkten – vem som helst kan sätta samma pris. Prisrad, inte ett marknadsföringspåstående; behålls ändå eftersom kunden behöver priset."
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ Färgval går att se direkt i annonsen/på sidan.",
+          "falsifiera": "✅ Exakt 18 färger är ett verifierbart antal.",
+          "ingen_annan_kan_saga": "✅ Det specifika antalet 18 knyter raden till just den här produktens sortiment."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "modell_begard": "fable",
+  "modell_svarade": "agent-tool:fable",
+  "fallback_korde": false,
+  "vag": "Agent-verktyget (model: fable)",
+  "briefer": [
+    {
+      "namn": "DryTrek_Damasker_PD_12_H1",
+      "typ": "video",
+      "hook": "Blötsnön börjar ovanför kängans kant.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–4 s",
+          "sv": "Blötsnön börjar ovanför kängans kant.",
+          "en": "The wet snow starts above the edge of the boot."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "4–9 s",
+          "sv": "Snön yr in uppifrån och strumpan är blöt vid kilometer fyra.",
+          "en": "The snow swirls in from above and the sock is wet by kilometre four."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "9–19 s",
+          "sv": "Kroken fäster i snörningen, remmen går under foten, kardborren stängs hela vägen upp på utsidan.",
+          "en": "The hook clips into the lacing, the strap goes under the foot, the velcro closes all the way up the outside."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "19–24 s",
+          "sv": "44 centimeter högt, tre fästen, och den går på med kängan kvar på foten.",
+          "en": "44 centimetres high, three fasteners, and it goes on with the boot still on your foot."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "24–30 s",
+          "sv": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt – välj bland 18 färger.",
+          "en": "DryTrek Damasker, 389 kr per pair, 14-day right of withdrawal – choose from 18 colours."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Blötsnön börjar ovanför kängans kant.\n✅ Håller snön ute nerifrån - där den annars kryper in\n✅ Väta från blöt sly stannar på utsidan\n✅ Grus och barr stannar utanför kängan\n✅ Kardborre hela vägen upp - på och av med kängan kvar på\nSe alla 18 färger - 389 kr 👇",
+        "headline_sv": "Snön stannar utanför kängan",
+        "description_sv": "Damasker som håller snö, väta & grus ute."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Blötsnön börjar ovanför kängans kant.",
+          "visualisera": "✅ Kängans kant och snön ovanför den – en bild, inte ett begrepp. FAST HOOK, returnerad ordagrant. Tre alternativ till arkivet: (1) \"Snön kryper in där kängan slutar.\" (2) \"Kängan är tät. Kanten är det inte.\" (3) \"Strumpan blir blöt vid kilometer fyra.\"",
+          "falsifiera": "✅ En observation om var snön tar sig in – sann eller falsk för den som stått i blötsnö.",
+          "ingen_annan_kan_saga": "✅ DryTreks egen live-hook, formulerad ur produktsidans problem (uppifrån, över kanten) – inte en generisk 'håll fötterna torra'."
+        },
+        {
+          "rad": "Snön yr in uppifrån och strumpan är blöt vid kilometer fyra.",
+          "visualisera": "✅ Snö som yr, en blöt strumpa, en kilometermarkering.",
+          "falsifiera": "✅ Antingen är strumpan blöt vid km 4 eller inte.",
+          "ingen_annan_kan_saga": "✅ 'Kilometer fyra' är DryTreks grundkonflikt ur produktfilen – en konkurrent skriver 'håll fötterna torra'."
+        },
+        {
+          "rad": "Kroken fäster i snörningen, remmen går under foten, kardborren stängs hela vägen upp på utsidan.",
+          "visualisera": "✅ Tre handgrepp i bildens ordning: krok → rem → kardborre.",
+          "falsifiera": "✅ Varje fäste finns eller finns inte; bilden visar det.",
+          "ingen_annan_kan_saga": "✅ Just den här kombinationen (krok i snörningen + rem + kardborre längs hela utsidan) är produktfaktan för DryTrek – inte ett allmänt löfte."
+        },
+        {
+          "rad": "44 centimeter högt, tre fästen, och den går på med kängan kvar på foten.",
+          "visualisera": "✅ Ett mått, tre fästen, en känga som sitter kvar.",
+          "falsifiera": "✅ 44 cm går att mäta, tre fästen går att räkna, påtagning med kängan på syns i bild.",
+          "ingen_annan_kan_saga": "✅ Siffra + antal + påtagningssätt är DryTreks specifika produktdata, inte ett adjektiv."
+        },
+        {
+          "rad": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt – välj bland 18 färger.",
+          "visualisera": "✅ Produkt, pris, färgkarta.",
+          "falsifiera": "✅ Pris, ångerrätt och antal färger är kontrollerbara.",
+          "ingen_annan_kan_saga": "✅ Namn, exakt pris och 18 färger är butikens egna."
+        },
+        {
+          "rad": "Snön stannar utanför kängan",
+          "visualisera": "✅ Snö som stannar på utsidan av en känga. (Oförändrad live-headline – fast kontroll enligt briefen.)",
+          "falsifiera": "✅ Antingen stannar snön ute eller inte.",
+          "ingen_annan_kan_saga": "✅ Bunden till hooken 'ovanför kängans kant' – samma bild, samma brand-röst."
+        },
+        {
+          "rad": "✅ Håller snön ute nerifrån - där den annars kryper in",
+          "visualisera": "✅ Snö nerifrån som annars kryper in. (Oförändrad live-copy – fast kontroll enligt briefen, inte omskriven.)",
+          "falsifiera": "✅ Ett påstående som bilden bekräftar eller inte.",
+          "ingen_annan_kan_saga": "✅ 'Nerifrån – där den annars kryper in' är produktsidans egen observation om var snön tar sig in."
+        },
+        {
+          "rad": "✅ Väta från blöt sly stannar på utsidan",
+          "visualisera": "✅ Blöt sly mot ett byxben. (Oförändrad live-copy – fast kontroll enligt briefen.)",
+          "falsifiera": "✅ Antingen stannar vätan på utsidan eller inte.",
+          "ingen_annan_kan_saga": "❌ Ett benskyddsmärke till kan skriva raden. Får inte skrivas om – briefen låser Ads Manager-texten som kontrollvariabel. Levereras oförändrad med den anmärkningen."
+        },
+        {
+          "rad": "✅ Grus och barr stannar utanför kängan",
+          "visualisera": "✅ Grus och barr utanför kängan. (Oförändrad live-copy – fast kontroll enligt briefen.)",
+          "falsifiera": "✅ Antingen kommer grus in eller inte.",
+          "ingen_annan_kan_saga": "❌ Generiskt damasklöfte som en konkurrent kan signera. Får inte skrivas om – briefen låser Ads Manager-texten som kontrollvariabel. Levereras oförändrad med den anmärkningen."
+        },
+        {
+          "rad": "✅ Kardborre hela vägen upp - på och av med kängan kvar på",
+          "visualisera": "✅ Kardborre längs hela sidan, kängan kvar på foten. (Oförändrad live-copy.)",
+          "falsifiera": "✅ Kardborrens längd och påtagningssättet syns i bild.",
+          "ingen_annan_kan_saga": "✅ Kardborre längs hela utsidan + på/av med kängan kvar är DryTreks produktfakta."
+        },
+        {
+          "rad": "Se alla 18 färger - 389 kr 👇",
+          "visualisera": "✅ En färgkarta och ett pris. (Oförändrad live-copy.)",
+          "falsifiera": "✅ 18 färger och 389 kr går att kontrollera.",
+          "ingen_annan_kan_saga": "✅ Antal färger + exakt pris är butikens egna."
+        },
+        {
+          "rad": "Damasker som håller snö, väta & grus ute.",
+          "visualisera": "✅ Snö, väta, grus mot en damask. (Oförändrad live-description – fast kontroll.)",
+          "falsifiera": "✅ Antingen håller den ute eller inte.",
+          "ingen_annan_kan_saga": "❌ Kategoribeskrivning som varje damaskmärke kan signera. Får inte skrivas om – fast kontroll enligt briefen. Levereras oförändrad med den anmärkningen."
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_1",
+      "typ": "bild",
+      "hook": "Krok. Rem. Kardborre. Sitter kvar i steget.",
+      "manus": [],
+      "bildtext": {
+        "on_image_sv": "Krok. Rem. Kardborre. Sitter kvar i steget.",
+        "on_image_en": "Hook. Strap. Velcro. Stays put in your stride.",
+        "caption_sv": "Tre fästen på en 44 cm damask.\nGår på och av med kängan kvar på foten.",
+        "caption_en": "Three fasteners on a 44 cm gaiter.\nGoes on and off with the boot still on your foot."
+      },
+      "copy_card": {
+        "primary_text_sv": "Billiga benskydd glider ner efter några kilometer.\nDryTrek Damasker har tre fästen: krok i snörningen, rem under foten, kardborre hela vägen upp.\nGår på och av med kängan kvar på foten.\n18 färger, 389 kr per par.\nSe hela färgkartan här 👇",
+        "headline_sv": "Tre fästen som sitter kvar",
+        "description_sv": "Damasker med krok, rem och kardborre. 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Krok. Rem. Kardborre. Sitter kvar i steget.",
+          "visualisera": "✅ Tre ord, tre paneler, en fot som tar ett steg. 7 ord. Alternativ (till arkivet): (1) \"Krok. Rem. Kardborre. Kängan kvar på foten.\" (2) \"Tre fästen. Inget grus i kängan.\" (3) \"Krok i snörningen. Rem under foten. Kardborre.\" Kandidaterna att slå – \"Krok. Rem. Kardborre.\" saknar utfallet, \"Tre fästen. Snön stannar utanför.\" namnger inte fästena; den valda raden gör båda.",
+          "falsifiera": "✅ Fästena går att räkna på bilden, och 'sitter kvar i steget' faller om damasken glider ner.",
+          "ingen_annan_kan_saga": "✅ Trion krok + rem + kardborre längs hela utsidan är DryTreks fästsystem enligt produktfaktan – en konkurrent med två fästen kan inte signera den."
+        },
+        {
+          "rad": "Tre fästen på en 44 cm damask.",
+          "visualisera": "✅ Tre fästen och ett mått.",
+          "falsifiera": "✅ Antal och höjd går att mäta.",
+          "ingen_annan_kan_saga": "✅ 44 cm + tre fästen är den här produktens data."
+        },
+        {
+          "rad": "Går på och av med kängan kvar på foten.",
+          "visualisera": "✅ En känga på foten medan damasken stängs.",
+          "falsifiera": "✅ Antingen går det med kängan på eller inte.",
+          "ingen_annan_kan_saga": "✅ Följer av kardborren längs hela utsidan – produktsidans egen formulering, inte ett kategorilöfte."
+        },
+        {
+          "rad": "Billiga benskydd glider ner efter några kilometer.",
+          "visualisera": "✅ Ett benskydd som hasar ner mot kängan.",
+          "falsifiera": "✅ Antingen glider de ner eller inte – produktsidans problem 4.",
+          "ingen_annan_kan_saga": "✅ Fiende A (andra angreppssätt) ställd mot trefästes-mekanismen på nästa rad; en billig konkurrent kan inte skriva under."
+        },
+        {
+          "rad": "DryTrek Damasker har tre fästen: krok i snörningen, rem under foten, kardborre hela vägen upp.",
+          "visualisera": "✅ Tre namngivna fästen på tre ställen på kängan.",
+          "falsifiera": "✅ Varje fäste finns eller finns inte.",
+          "ingen_annan_kan_saga": "✅ Produktnamn + exakt fästsystem ur produktfaktan."
+        },
+        {
+          "rad": "18 färger, 389 kr per par.",
+          "visualisera": "✅ En färgkarta och ett pris.",
+          "falsifiera": "✅ Antal färger och pris är kontrollerbara.",
+          "ingen_annan_kan_saga": "✅ Butikens egna siffror."
+        },
+        {
+          "rad": "Se hela färgkartan här 👇",
+          "visualisera": "✅ En färgkarta att klicka till.",
+          "falsifiera": "✅ Antingen finns färgkartan bakom länken eller inte.",
+          "ingen_annan_kan_saga": "✅ Pekar på DryTreks 18 färger, inte på 'köp nu'."
+        },
+        {
+          "rad": "Tre fästen som sitter kvar",
+          "visualisera": "✅ Tre fästen, en damask som sitter. 5 ord.",
+          "falsifiera": "✅ Antal fästen går att räkna, 'sitter kvar' faller om den glider.",
+          "ingen_annan_kan_saga": "✅ 'Tre fästen' är produktens fästsystem, ställt mot problemet att billiga glider ner."
+        },
+        {
+          "rad": "Damasker med krok, rem och kardborre. 389 kr per par.",
+          "visualisera": "✅ Tre fästen och ett pris.",
+          "falsifiera": "✅ Fästena och priset går att kontrollera.",
+          "ingen_annan_kan_saga": "✅ Fästsystemet + exakt pris är DryTreks."
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_13_H1",
+      "typ": "video",
+      "hook": "En flaska vatten över kängan. Titta på strumpan.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "En flaska vatten över kängan. Titta på strumpan.",
+          "en": "A bottle of water over the boot. Watch the sock."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–6 s",
+          "sv": "Vattnet går in ovanför kängans kant, och strumpan är blöt vid kilometer fyra.",
+          "en": "The water gets in above the edge of the boot, and the sock is wet by kilometre four."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "6–12 s",
+          "sv": "Vattnet träffar kardborresömmen, kroken och remmen – och rinner av på utsidan.",
+          "en": "The water hits the velcro seam, the hook and the strap – and runs off on the outside."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "12–17 s",
+          "sv": "Flaskan är tom, strumpan är torr.",
+          "en": "The bottle is empty, the sock is dry."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "17–22 s",
+          "sv": "DryTrek Damasker i 18 färger, 389 kr per par, fri frakt och 14 dagars ångerrätt.",
+          "en": "DryTrek Damasker in 18 colours, 389 kr per pair, free shipping and 14-day right of withdrawal."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "En flaska vatten över kängan.\nVattnet träffar kardborren, kroken och remmen och rinner av på utsidan.\nStrumpan av: torr.\nFästs med krok, rem och kardborre – kängan kvar på foten.\n389 kr per par, 14 dagars ångerrätt – se testet 👇",
+        "headline_sv": "Flaskan tom. Strumpan torr.",
+        "description_sv": "Se testet: vatten över kängan, strumpan torr."
+      },
+      "tre_fragor": [
+        {
+          "rad": "En flaska vatten över kängan. Titta på strumpan.",
+          "visualisera": "✅ En flaska, en känga, en strumpa – bilden själv. 8 ord. Alternativ (till arkivet): (1) \"Vi häller en flaska vatten över kängan.\" (2) \"Titta på strumpan när flaskan är tom.\" (3) \"Vi hällde en liter vatten över kängan.\" – strukna för att (1) saknar väntan på strumpan som hypotesen bygger på och (3) anger en mängd ingen mätt. Den valda raden namnger testet och pekar på utfallet utan att lova något.",
+          "falsifiera": "✅ Beskriver vad bilden visar: en flaska hälls, en strumpa dras av. Ingen egenskap påstås.",
+          "ingen_annan_kan_saga": "✅ Testet är DryTreks egen uppställning (Axels prioritetsvinkel nr 2) – raden pekar på vår bild, inte på materialet."
+        },
+        {
+          "rad": "Vattnet går in ovanför kängans kant, och strumpan är blöt vid kilometer fyra.",
+          "visualisera": "✅ Vatten över kanten, en blöt strumpa, kilometer fyra.",
+          "falsifiera": "✅ Antingen är strumpan blöt vid km 4 eller inte.",
+          "ingen_annan_kan_saga": "✅ 'Ovanför kängans kant' + 'kilometer fyra' är DryTreks egna bilder ur hook och produktfil."
+        },
+        {
+          "rad": "Vattnet träffar kardborresömmen, kroken och remmen – och rinner av på utsidan.",
+          "visualisera": "✅ Vatten mot tre namngivna punkter, i bildens ordning.",
+          "falsifiera": "✅ Bilden visar om vattnet rinner av eller går in. Inget ord om materialet – bara vad som händer.",
+          "ingen_annan_kan_saga": "✅ Kardborresöm + krok + rem är DryTreks fästsystem; en konkurrent utan de tre punkterna kan inte säga det."
+        },
+        {
+          "rad": "Flaskan är tom, strumpan är torr.",
+          "visualisera": "✅ En tom flaska, en torr strumpa hållen upp i bild.",
+          "falsifiera": "✅ Strumpan är torr eller blöt – det syns.",
+          "ingen_annan_kan_saga": "✅ Bunden till vårt test i bild; beviset är strumpan, inte ett adjektiv."
+        },
+        {
+          "rad": "DryTrek Damasker i 18 färger, 389 kr per par, fri frakt och 14 dagars ångerrätt.",
+          "visualisera": "✅ Produkt, färgkarta, pris.",
+          "falsifiera": "✅ Färger, pris, frakt och ångerrätt är kontrollerbara.",
+          "ingen_annan_kan_saga": "✅ Namn, 18 färger och exakt pris är butikens."
+        },
+        {
+          "rad": "En flaska vatten över kängan.",
+          "visualisera": "✅ Flaskan och kängan.",
+          "falsifiera": "✅ Beskriver vad videon visar.",
+          "ingen_annan_kan_saga": "✅ Pekar på DryTreks eget test i bild."
+        },
+        {
+          "rad": "Vattnet träffar kardborren, kroken och remmen och rinner av på utsidan.",
+          "visualisera": "✅ Vatten mot tre namngivna fästen.",
+          "falsifiera": "✅ Rinner av eller går in – syns i bild.",
+          "ingen_annan_kan_saga": "✅ Trefästes-systemet är DryTreks produktfakta."
+        },
+        {
+          "rad": "Strumpan av: torr.",
+          "visualisera": "✅ En strumpa som dras av och hålls upp.",
+          "falsifiera": "✅ Torr eller blöt.",
+          "ingen_annan_kan_saga": "✅ Bunden till vårt test – bevis i bild, inte ett materialord."
+        },
+        {
+          "rad": "Fästs med krok, rem och kardborre – kängan kvar på foten.",
+          "visualisera": "✅ Tre fästen, kängan på.",
+          "falsifiera": "✅ Fästena finns eller inte; påtagning med kängan på syns.",
+          "ingen_annan_kan_saga": "✅ Fästsystem + påtagningssätt ur DryTreks produktfakta."
+        },
+        {
+          "rad": "389 kr per par, 14 dagars ångerrätt – se testet 👇",
+          "visualisera": "✅ Ett pris och en video att klicka till.",
+          "falsifiera": "✅ Pris och ångerrätt går att kontrollera.",
+          "ingen_annan_kan_saga": "✅ Exakt pris + vårt test."
+        },
+        {
+          "rad": "Flaskan tom. Strumpan torr.",
+          "visualisera": "✅ Tom flaska, torr strumpa. 4 ord.",
+          "falsifiera": "✅ Strumpan är torr eller inte.",
+          "ingen_annan_kan_saga": "✅ Före/efter ur vårt eget test."
+        },
+        {
+          "rad": "Se testet: vatten över kängan, strumpan torr.",
+          "visualisera": "✅ Vatten, känga, strumpa.",
+          "falsifiera": "✅ Beskriver vad videon visar.",
+          "ingen_annan_kan_saga": "✅ Pekar på DryTreks test, inte på en materialegenskap."
+        }
+      ]
+    }
+  ]
+}

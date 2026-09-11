@@ -1,7 +1,7 @@
 # Creative DNA — DryTrek (damasker)
 
-Skapad 2026-09-11 av `/notionscalercs setup drytrek` (körning nr 0 — setup,
-ingen brief skriven än). Butiks-id `drytrek`, produktnyckel `drytrek/damasker`,
+Skapad 2026-09-11 av `/notionscalercs setup drytrek` (körning nr 0 — setup).
+**Senast uppdaterad 2026-09-12, körning nr 1 (första briefdagen, batch #2).** Butiks-id `drytrek`, produktnyckel `drytrek/damasker`,
 brand **DryTrek**, drytrek.se (Shopify `i1da39-zd`).
 
 ⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken**
@@ -203,3 +203,60 @@ modell** — inga briefer skrivna än. Avgörs när båda har ≥ 5 bedömbara.
 4. **Hypotes (OPS):** CBO svälter PD → om PD-adsetet fortfarande ligger under
    200 kr när kampanjen passerat 3 000 kr: lyft till Axel i `🔴 ACTION NEEDED`
    (budgetronden rör inte adset-fördelning).
+
+---
+
+## Körning nr 1 — 2026-09-12, första skarpa Nattvakten + första briefdagen
+
+### Data (OPS-kampanjen, 14d = hela livstiden 2026-09-09 → 09-11)
+
+| | Spend | Köp | ROAS | Mot BE 1,60 |
+|---|---:|---:|---:|---|
+| Hela kampanjen, 3 dygn | 1 654 kr | 2 | 0,47 | under break-even — under grinden, ingen dom |
+
+**Bedömbara: 0 av 16. KALLSTART bekräftad** — ingen feedback-loop, alla
+hypoteser från batch #1 obesvarade. Fullständig annonstabell i batch-log.md.
+
+**Budgetronden gjorde:** `G_2_1` pausad (ny annons-regeln, 480 kr / 0 köp).
+Kampanjbudget orörd. Ärvd historik omläst: PD_1 11 366 kr / 58 köp / ROAS 2,70
+(vinnare, +2 728 kr), SP_2 1 360 kr / 5 köp / ROAS 1,63 (förlorare, −145 kr).
+Facit oförändrat.
+
+### Vad som syns (hypoteser, aldrig domar)
+
+- **Mönster 5 (hypotes, OPS) — CBO ger present-vinkeln hälften.** 14d: G 823 kr
+  (50 %, 0 köp) · CS 498 · SP 170 · PD 163 kr (10 %). Källans vinnare PD_1 har
+  15 kr. G-adsetet står på 3,4 × break-even-CPA utan köp. Fyra annonser under
+  grinden är ingen dom — men G är den enda vinkeln utan spend i källan (45 kr)
+  OCH utan köp här. Lyft till Axel som fråga, inte som åtgärd.
+- **Mönster 6 (hypotes, OPS) — billiga klick utan köp.** `G_2_1` (bild,
+  present) hade kampanjens lägsta CPC (3,5 kr) och högsta CTR (5,5 %) och
+  0 köp på 480 kr. Klick-metrik säger inget om köpavsikt. Instruktion: döm
+  aldrig en bild på CTR; grinden gäller.
+- **Hook rate på videor > 50 kr: 21–36 %**, PD_1 31 %, i nivå med källans
+  38 %. Hooken är inte flaskhalsen; volymen till PD är.
+
+### Copy-modell A/B (Axels beslut 2026-09-10)
+
+Batch #2: 4 briefer `copy_model: fable` (PD_12_H1, PD_12_H2 delat, PD_12_1,
+PD_13_H1), 3 `copy_model: sonnet` (SP_6_H1, SP_7_H1, FO_2_H1). Vägen:
+Agent-verktyget (fable resp. sonnet) med exakt `tools/copy-agent.mjs`:s
+systemprompt och uppdrag (`batch-02/uppdrag-*.json`). Ställning: **0
+bedömbara per modell**. Avgörs när båda har ≥ 5 bedömbara.
+
+### Rotorsak funnen i verktyget (2026-09-12)
+
+`tools/meta-lib.mjs pausa()` läste tillbaka med budgetfälten → Meta 400 på
+ett ad-id. Första OPS-annonspausen någonsin stoppades före skrivningen.
+Rättad: `lasStatus()` (bara statusfält) i `pausa()`. HeimGuard/TankGuard
+har inte haft en annonskill än, så buggen syntes först här.
+
+### Instruktion till nästa briefdag (2026-09-13 är söndag = briefdag)
+
+1. Batch #2 är 1 dag gammal — inget utfall att läsa. Bygg INTE 7 nya briefer
+   ovanpå 7 ogjorda utan redigerare; rapportera i stället att hubben har 7
+   Draft-rader och fyll bara på med det backloggen har kvar (grus, signalfärg)
+   om Axel tilldelat en redigerare. *(Detta är en tolkning av kadensregeln —
+   "hubben fylls inte med briefer ingen gör" — inte ett beslut av Axel.)*
+2. Hypotes 4 (OPS): PD-adsetet under 200 kr när kampanjen passerar 3 000 kr →
+   `🔴 ACTION NEEDED`. Kampanjen står på 1 654 kr; PD på 163 kr. Nära.

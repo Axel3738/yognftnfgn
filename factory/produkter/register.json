@@ -130,10 +130,15 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "",
-      "senaste_brief": "",
-      "cycle_start": "",
-      "launches": [],
+      "senaste_korning": "2026-09-12",
+      "senaste_brief": "2026-09-12",
+      "cycle_start": "2026-09-12",
+      "launches": [
+        {
+          "date": "2026-09-12",
+          "count": 7
+        }
+      ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
     },
     "hemvakten/overvakningskameran": {

@@ -1,0 +1,61 @@
+(node:4496) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ⏳ Meta fel 4 (försök 1/8) — väntar 30s
+
+=== SKALNINGSRONDEN — Damasker Vandring – Håller Snö, Väta & Grus Ute ===
+
+Läge SKALA · drytrek/damasker · konto 915422744950975 · period last_14d
+Kördag 2026-09-11: JA — butiken har aldrig körts — första ronden körs i dag. Nästa: 2026-09-13
+Redigerare: ingen redigerare tilldelad
+Prefixfilter: damasker_ · damasker · drytrek
+Butiksfiltret: 16 av 280 annonser i kontot är butikens. 248 rader tillhör andra verksamheter och är BORTFILTRERADE.
+Marknadsfilter: SE — 16 rader på annan marknad BORTFILTRERADE (NO: 16). Rader utan marknadskod räknas som SE.
+  Butikens kampanjer:       DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09 · DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09
+  Bortfiltrerade kampanjer: ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10 · ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10 · CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 · HEIMGUARD_NO_Overvåkingskamera | BE-ROAS 2,11 | 2026-09-09 · HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08 · TACKLEBAY_NO_Spöhållaren | BE-ROAS 1,67 | 2026-09-10 · TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10 · TANKGUARD_NO_Tanktrekket | 2026-09-09 · TANKGUARD_SE_Tanköverdraget | 2026-09-08
+
+Linjer:
+  UTAN moms:       break-even ROAS 1.6 · CPA 243 kr   ·   target ROAS 2.67 · CPA 146 kr
+  MED moms 25 %:   break-even ROAS 2.35 · CPA 165 kr   ·   target ROAS 4.45 · CPA 87 kr
+  Antagande: UTAN moms (ekonomi.moms_antagen i produktfilen) — den linjen gäller för kill-beslut.
+
+Verklig AOV: för få order för att mäta (2 av 10). Linjerna står kvar.
+
+--- Steg 2: signifikansgrinden (≥300 kr OCH ≥3 köp) ---
+  Bedömbara: 0   ·   För tidigt: 16 (ingen dom, ingen ranking)
+   ⏳ DryTrek_Damasker_G_2_1 — 480 kr, 0 köp
+   ⏳ DryTrek_Damasker_CS_2_1 — 297 kr, 1 köp
+   ⏳ DryTrek_Damasker_G_2 — 291 kr, 0 köp
+   ⏳ DryTrek_Damasker_PD_2_1 — 121 kr, 0 köp
+   ⏳ DryTrek_Damasker_CS_1 — 98 kr, 0 köp
+   ⏳ DryTrek_Damasker_SP_1 — 87 kr, 1 köp
+   ⏳ DryTrek_Damasker_CS_3 — 52 kr, 0 köp
+   ⏳ DryTrek_Damasker_CS_2 — 51 kr, 0 köp
+   ⏳ DryTrek_Damasker_SP_2 — 40 kr, 0 köp
+   ⏳ DryTrek_Damasker_G_3 — 37 kr, 0 köp
+   ⏳ DryTrek_Damasker_SP_2_1 — 35 kr, 0 köp
+   ⏳ DryTrek_Damasker_PD_2 — 18 kr, 0 köp
+   ⏳ DryTrek_Damasker_PD_1 — 15 kr, 0 köp
+   ⏳ DryTrek_Damasker_G_1 — 15 kr, 0 köp
+   ⏳ DryTrek_Damasker_SP_3 — 9 kr, 0 köp
+   ⏳ DryTrek_Damasker_PD_3 — 8 kr, 0 köp
+
+  Ingen annons har passerat grinden än. Ingen rangordning görs — det vore brus.
+
+
+--- ÄRVD HISTORIK (--arv) ---
+
+  ÄRVD HISTORIK — Bäverbutikens annonser för samma produkt, dömda mot OPS-butikens linjer; priset kan skilja. Vägledande, ingen budget rörs här. Bäverbutiken LÄSES bara.
+  Källa: konto 1867947880635861 (Bäverbutiken LÄSES bara) · prefix "Damasker" · period maximum (hela livstiden)
+  Källkampanj enligt produktfilen: Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29
+  21 av 1684 annonser i kontot bär prefixet (marknad SE, 0 bortfiltrerade).
+  Totalt: 15 643 kr spend · 67 köp · samlad ROAS 2.20 · verklig AOV 514 kr
+  Bedömbara: 2 · för tidigt: 19 · vinnare 1 · förlorare 1 · bevaka 0
+
+  Rangordning på vinstbidrag mot OPS-linjen — topp 10:
+
+| Ärvd annons | Spend | Köp | CPA | ROAS | Vinstbidrag | Klass | Hook 3s | Hold | CTR | CPC |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Damasker_PD_1 | 11 366 kr | 58 | 196 kr | 2.70 | 2 728 kr | vinnare | 38.3 % | 22.8 % | 2.44 % | 5 kr |
+| Damasker_SP_2 | 1 360 kr | 5 | 272 kr | 1.63 | −145 kr | forlorare | 31.2 % | 23.1 % | 2.10 % | 9 kr |
+
+  Läs arvet som RIKTNING (vilka vinklar/hooks som bar) — inte som dom över OPS-kampanjen. Ingen budget rörs här.
