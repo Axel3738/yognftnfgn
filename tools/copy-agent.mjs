@@ -46,7 +46,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { anthropicNyckel, NYCKEL_SAKNAS } from './lib/anthropic-nyckel.mjs';
+import { anthropicNyckel, anthropicHeaders, NYCKEL_SAKNAS, WORKSPACE_SAKNAS } from './lib/anthropic-nyckel.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGELFIL = join(ROT, 'docs', 'copy-regler.md');
@@ -233,11 +233,7 @@ export function byggUppdragstext(uppdrag) {
 export function byggRequest(modellNyckel, uppdrag, regler, { nyckel = 'ANTHROPIC_API_KEY' } = {}) {
   const modell = MODELLER[modellNyckel];
   if (!modell) throw new Error(`Okänd modell "${modellNyckel}". Välj: ${Object.keys(MODELLER).join(' | ')}.`);
-  const headers = {
-    'content-type': 'application/json',
-    'x-api-key': nyckel,
-    'anthropic-version': '2023-06-01',
-  };
+  const headers = anthropicHeaders(nyckel);
   const body = {
     model: modell,
     max_tokens: MAX_TOKENS,
@@ -315,7 +311,9 @@ export async function anropa(request) {
   const r = await fetch(request.url, { method: 'POST', headers: request.headers, body: JSON.stringify(request.body) });
   const kropp = await r.json().catch(() => ({}));
   if (!r.ok) {
-    throw new Error(`Messages API svarade ${r.status}: ${JSON.stringify(kropp).slice(0, 400)}`);
+    const feltext = JSON.stringify(kropp);
+    if (r.status === 400 && /anthropic-workspace-id/.test(feltext)) throw new Error(`Messages API svarade 400: ${WORKSPACE_SAKNAS}`);
+    throw new Error(`Messages API svarade ${r.status}: ${feltext.slice(0, 400)}`);
   }
   return kropp;
 }

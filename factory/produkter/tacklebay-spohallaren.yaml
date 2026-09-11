@@ -34,13 +34,28 @@ ekonomi:
   # aldrig av 25 % en gång till, då ser lönsamma annonser ut att gå med
   # förlust. Fältet styr break-even och därmed varje kill-beslut.
   moms_antagen: false
-  # ⚠️ GISSNING — inköpskostnaden finns INTE i källan och är räknad som 40 %
-  # av priset, vilket är mitten i Bäverbutikens fyra skalningsprodukter
-  # (break-even-ROAS 1,47–1,72 ⇒ COGS 32–42 % av priset).
-  # Axel måste bekräfta den riktiga siffran — break-even-talet nedan styr
-  # kill-beslut och får inte vila på en gissning.
-  inkopskostnad: 116
+  # INKÖP — Axels besked 2026-09-11: 62,78 kr per 4-pack (ersätter gissningen
+  # 116 kr = 40 % av priset som stod här 2026-09-09 → 2026-09-11).
+  inkopskostnad: 62.78
   pris: 289
+  # BREAK-EVEN RÄKNAS PÅ VERKLIG ORDER, INTE PÅ STYCKPRISET (Axels besked
+  # 2026-09-11: "break even räknas på produktens bundles osv").
+  # aov_sek: källans (Bäverbutiken, samma produkt, samma paketnivåer) verkliga
+  # snittorder ur Meta 2026-09-11: Σ(spend × ROAS) / köp = 437 kr på 85 köp,
+  # date_preset maximum. TackleBay hade 0 köp vid avläsningen.
+  # ⚠️ Räkna om när TackleBay själv har ≥ 20 köp — då är det butikens egen AOV
+  # som gäller, inte källans.
+  aov_sek: 437
+  # varukostnad_per_order: härledd ur PAKETNIVÅERNA, inte proportionellt.
+  # Nivåerna är 1 × 289 · 2-pack −15 % = 491,30 · 3-pack −20 % = 693,60.
+  # AOV 437 kr ger 1,73 enheter per order oavsett mix (2-packets extra enhet
+  # kostar 202,30 kr, 3-packets två extra 404,60 kr — samma per enhet), så
+  # 62,78 × 1,73 = 108,6 → 109 kr (avrundat uppåt, strängare linje).
+  varukostnad_per_order: 109
+  # ovriga_kostnader_per_order: 3 EUR per order (Axels besked 2026-09-11 —
+  # tillkommer utöver inköpet). ECB 2026-09-10: 1 EUR = 11,1995 SEK ⇒ 33,60 kr,
+  # avrundat uppåt till 34. Kursen uppdateras inte automatiskt.
+  ovriga_kostnader_per_order: 34
   jamforpris: 0
 
 varianter:

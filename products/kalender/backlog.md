@@ -12,9 +12,10 @@ eller konkurrent-signal i `docs/swipes/`. Kan den inte det är den märkt
 | Vad | Varför det ligger här | Källa |
 |---|---|---|
 | **Copyn i OPS-kampanjen läses ur kontot** | Bygget 2026-09-10 är inte loggat i repot. Innan någon ärvd annons dupliceras måste det stå svart på vitt om brådskan (CS), det påhittade citatet och "30 dagars öppet köp" (SP) och länken följde med. | `dna.md` "Vad AdventLane måste ändra", mätt 2026-09-11 |
-| **Norska CS-annonserna: fel pris + falsk brådska** | `_NO_CS_1/2/3`, `_NO_CS_2_1` säger "579 kr → 439 kr i dag", "begrenset lager". Sidan tar SEK 499 tills NOK-paketnivåer finns (butikskonfig; kundvyn lösenordsskyddad, inte läst). Beslut om paus är Axels (PAUSED med spend är ett beslut) — rutinen rör dem inte. | kontot, läst 2026-09-11; `kalender.yaml` marknader |
+| **`kalender.yaml` släpar efter kontot på norskt pris** | Norge kostar 439 kr, Sverige 499 kr (Axel 2026-09-11), men `marknader[0].valuta: SEK` och inget norskt pris står i konfigen. Valutan (NOK eller SEK) är inte bekräftad — fråga Axel innan fältet skrivs, så nästa bygge inte gissar. | Axels besked 2026-09-11; kontot `_NO_CS_*` |
+| **Brådskan i NO-CS-copyn** | "i dag", "begrenset lager", "før den er utsolgt" strider mot brandets ton (inga utropstecken, ingen nedräkning). Axel beslutade 2026-09-11 att inget pausas — ersätt med lugn variant i nästa NO-batch i stället. | kontot 2026-09-11; `kalender.yaml` branding |
 | **`kalla.no_kampanjmonster` i produktfilen** | `kallannonser.mjs` faller tillbaka på `gamasj\|damask` (DryTrek) när fältet saknas och läser fel produkts norska historik. Sätt fältet (eller gör defaulten till ett stopp) före nästa `/ny-annonser` för en kalender. | `factory/kallannonser.mjs` rad 163, mätt 2026-09-11 |
-| **Inköpspriset kvitteras** | 191 kr är härlett ur kampanjnamnet, inte ur Temu-kvittot. Temu-länken svarar "discontinued" — ny leverantör krävs före inköp. | `factory/produkter/adventskalender-racingbilar.yaml` |
+| **Ny leverantörslänk** | COGS kvitterad 2026-09-11 (142,27 kr + 3 EUR tull/order). Men Temu-länken i produktfilen svarar "discontinued" — ny leverantör krävs före inköp. | `factory/produkter/adventskalender-racingbilar.yaml` |
 | **Bonusprodukt (Q4-ramverket)** | `offer.bonus_produkt` tomt, paketen körs utan gratisdel. Ägarens val. | `factory/state/kalender--adventskalender-racingbilar.json` |
 | **Sida och pixel i produktfilen** | `meta.page_id` / `meta.pixel_id` är tomma. Läs dem ur kampanjen och skriv in, så nästa bygge inte gissar. | produktfilen, 2026-09-11 |
 

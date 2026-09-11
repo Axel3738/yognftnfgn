@@ -39,14 +39,14 @@ utropstecken, ingen hype, ingen nedräkning, aldrig "SISTA CHANSEN".**
 
 ## Ekonomin (`factory/produkter/adventskalender-racingbilar.yaml`)
 
-Pris 499 kr · inköp **191 kr (HÄRLEDD, inte kvitterad)** · TB 308 kr ·
-**BE-ROAS 1,62 · BE-CPA 308 kr · target-ROAS 2,72 · target-CPA 183 kr**,
+Pris 499 kr · **COGS 142,27 kr per styck + 3 EUR tull per order (KVITTERAT av
+Axel 2026-09-11)**, tullen = 33,60 kr med ECB-kursen 11,1995 (2026-09-10) ·
+TB 323 kr · **BE-ROAS 1,54 · BE-CPA 323 kr · target-ROAS 2,52 · target-CPA 198 kr**,
 räknat UTAN moms (`moms_antagen: false`, Axels regel 2026-09-09).
 
-⚠️ Inköpspriset är räknat bakåt ur källkampanjens namn ("BE ROAS 1.62" ⇒
-499 − 499/1,62 = 191 kr). Axel bekräftar mot Temu-kvittot innan talet får
-döma en annons hårt. Tills dess: kill-beslut mot 308 kr är rätt linje att
-använda, men skriv alltid ut att linjen är härledd.
+*(Till 2026-09-11 stod här 191 kr, räknat bakåt ur källkampanjens namn
+"BE ROAS 1.62". Kampanjnamnen i kontot bär fortfarande 1,62 — namnet är en
+etikett, inte facit. Döm mot 1,54 / 323 kr.)*
 
 ⚠️ Temu-länken i produktfilen svarar "This item was discontinued" (mätt
 2026-09-10). Inköpskanalen är alltså öppen — det är en ägarfråga, inte en
@@ -65,13 +65,13 @@ ROAS 3,21, verklig AOV 632 kr** (över 499 kr — paketen säljer).
 Rådata: `factory/output/adventskalender-racingbilar/kallannonser.json`.
 
 Signifikansgrinden (≥ 300 kr OCH ≥ 3 köp) passeras av **två** annonser.
-Vinstbidrag = (BE-CPA 308 − CPA) × köp, mot AdventLanes linje.
+Vinstbidrag = (BE-CPA 323 − CPA) × köp, mot AdventLanes linje (kvitterad 2026-09-11).
 
 | Ärvd annons | Typ | Spend | Köp | CPA | ROAS | Vinstbidrag | Hook 3 s | Hold | CTR | CPC | CVR | Dom |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| `Adventskalender_PD_2_1` | bild | 1 376 kr | 8 | 172 kr | 3,85 | **1 088 kr** | — | — | 4,49 % | 3,8 kr | 2,22 % | **vinnare, top spender = benchmark** |
-| `Adventskalender_PD_2_H1` | video | 898 kr | 6 | 150 kr | 3,85 | **950 kr** | 28,7 % | 28,1 % | 2,87 % | 7,4 kr | 4,92 % | **vinnare** |
-| `Adventskalender_GT_1_H1` | video | 594 kr | 2 | 297 kr | 2,27 | — | 32,0 % | 20,2 % | 2,33 % | 7,2 kr | 2,44 % | för tidigt (2 köp) — CPA snuddar vid BE |
+| `Adventskalender_PD_2_1` | bild | 1 376 kr | 8 | 172 kr | 3,85 | **1 208 kr** | — | — | 4,49 % | 3,8 kr | 2,22 % | **vinnare, top spender = benchmark** |
+| `Adventskalender_PD_2_H1` | video | 898 kr | 6 | 150 kr | 3,85 | **1 038 kr** | 28,7 % | 28,1 % | 2,87 % | 7,4 kr | 4,92 % | **vinnare** |
+| `Adventskalender_GT_1_H1` | video | 594 kr | 2 | 297 kr | 2,27 | — | 32,0 % | 20,2 % | 2,33 % | 7,2 kr | 2,44 % | för tidigt (2 köp) — CPA 26 kr under BE 323 |
 | 13 annonser under 60 kr | — | 279 kr | 0 | — | — | — | — | — | — | — | — | ingen data |
 
 ### Vinklarna i källan (samma copy per vinkel, olika creative)
@@ -149,12 +149,11 @@ prefix `AdventLaneRacing`). Kampanjer skapade 2026-09-10:
   "Julegaven med 24 biler i en eske", länk adventlane.se/nb/…). Annonsnamnen
   (`_NO_G_1`, `_NO_SP_1`, `_NO_PD_2`) följer källans norska namnmönster, inte
   SE-kampanjens `_H1`-form — se rotorsak 2.
-  ⚠️ **NO-erbjudandet (`_NO_CS_1/2/3`, `_NO_CS_2_1`) säger "579 kr → 439 kr i dag",
-  "Begrenset lager, prisen gjelder ikke lenge", "Bestill før den er utsolgt".**
-  Butikskonfigen säger att /nb tar betalt i **SEK** (`marknader[0].valuta: SEK`,
-  NOK inte påslaget) — då stämmer inte annonsens pris med sidan, och brådskan
-  är falsk. Kundvyn är lösenordsskyddad och kunde inte läsas 2026-09-11
-  (`SHOPIFY_STOREFRONT_PASSWORD_IKF0TU_5E` saknas i miljön). Se rotorsak 3.
+  **Priset i Norge är 439 kr, i Sverige 499 kr (Axels besked 2026-09-11)** —
+  NO-annonsernas "579 kr → 439 kr" är alltså rätt pris. ⚠️ `kalender.yaml`
+  säger fortfarande `marknader[0].valuta: SEK` — konfigen släpar efter kontot,
+  se backlog. NO-CS-copyn bär "i dag", "begrenset lager", "før den er utsolgt":
+  brådska som SE-brandet förbjuder. **Axels beslut 2026-09-11: pausas inte.**
 - Båda kampanjerna: CBO 1 000 kr/dag, skapade 2026-09-10 13:18 resp. 13:30.
 - Saknas i OPS SE mot källan: `SP_2_1` (bild). Skälet står inte i repot.
 
@@ -175,16 +174,14 @@ Bedömbara: **0**. Kallstart tills ≥ 1 annons passerar grinden.
    namnmönstret följde damaskernas. Sätt `kalla.no_kampanjmonster` i
    produktfilen innan `/ny-annonser` eller `kallannonser.mjs` körs igen för
    någon kalender — annars läses fel produkts norska historik som arv.
-3. **NO-annonserna lovar troligen ett pris sidan inte har.** `_NO_CS_*` säger
-   439 kr (mot 579 kr). Enligt `kalender.yaml` tar /nb betalt i SEK 499 tills
-   NOK-paketnivåer finns i Shopify ("NOK-paketnivåer krävs före norska
-   annonser"). Stämmer det ser kunden 439 i annonsen och 499 i kassan.
-   **Inte verifierat i kundvyn** (lösenordsskyddad, lösenordet saknas i miljön)
-   — Axel eller VA:n öppnar /nb och läser priset. Dessutom falsk brådska ("i dag",
-   "begrenset lager") som SE-brandet förbjuder. **Beslut om paus av NO-CS-adsetet
-   är Axels** — PAUSED med spend är ett beslut, rutinen rör det inte.
-   Marknadsfiltret i ronden är SE, så NO-kampanjen döms inte av nattvakten men
-   spenderar (≈ 445 kr första dygnet) och syns bara i "bortfiltrerade".
+3. **Norge har eget pris: 439 kr** (Axel 2026-09-11; Sverige 499 kr). Ett
+   setup-fynd 2026-09-11 kallade NO-annonsernas 439 kr "fel pris" utifrån
+   `kalender.yaml` (`valuta: SEK`) — det var fel; kontot och Axel är facit.
+   Läs aldrig norskt pris ur butikskonfigen, läs det ur kontot eller fråga.
+   NO-CS-copyns brådska ("i dag", "begrenset lager") strider mot brandets ton,
+   men **Axel beslutade 2026-09-11 att inget pausas.** Marknadsfiltret i ronden
+   är SE, så NO-kampanjen döms inte av nattvakten men spenderar (≈ 445 kr
+   första dygnet) och syns bara i "bortfiltrerade".
 4. **Ingen commission utgår på den här butiken i dag.** Kontot står i
    `UTLANDSKA_KONTON` i `commission/berakning.mjs` (känt, Uppdrag D i `factory/FAS2.md`).
 5. **SE-kampanjens copy är inte läst ur kontot än** (Metas rate limit 2026-09-11

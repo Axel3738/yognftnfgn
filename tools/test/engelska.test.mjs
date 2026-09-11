@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { serUtSomSvenska, granskaSprak, stoppText } from '../lib/engelska.mjs';
-import { anthropicNyckel } from '../lib/anthropic-nyckel.mjs';
+import { anthropicNyckel, anthropicHeaders } from '../lib/anthropic-nyckel.mjs';
 
 test('svenska rutinrapporter fångas', () => {
   assert.equal(serUtSomSvenska('✅ NO-recensioner: 0 nya (7 produkter, alla redan klara)'), true);
@@ -59,6 +59,16 @@ test('anthropicNyckel: läser båda namnen, ANTHROPIC_API_KEY först', () => {
   assert.equal(anthropicNyckel({ ANTHROPIC_NYCKEL: 'b' }), 'b');
   assert.equal(anthropicNyckel({ ANTHROPIC_API_KEY: 'a', ANTHROPIC_NYCKEL: 'b' }), 'a');
   assert.equal(anthropicNyckel({ ANTHROPIC_API_KEY: '  ', ANTHROPIC_NYCKEL: ' b ' }), 'b');
+});
+
+test('anthropicHeaders: workspace-headern bara när ANTHROPIC_WORKSPACE_ID är satt', () => {
+  assert.deepEqual(anthropicHeaders('sk', {}), {
+    'content-type': 'application/json',
+    'x-api-key': 'sk',
+    'anthropic-version': '2023-06-01',
+  });
+  assert.equal(anthropicHeaders('sk', { ANTHROPIC_WORKSPACE_ID: ' wrkspc_1 ' })['anthropic-workspace-id'], 'wrkspc_1');
+  assert.equal('anthropic-workspace-id' in anthropicHeaders('sk', { ANTHROPIC_WORKSPACE_ID: '  ' }), false);
 });
 
 test('granskaSprak: DISCORD_TILLAT_SVENSKA=1 släpper igenom', async () => {
