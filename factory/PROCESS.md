@@ -238,6 +238,8 @@ tolv produktrader är ingen meny, den är en andra katalog. `produkt.i_meny`
 styr: nämner NÅGON produktfil flaggan gäller bara de som står `true` — noll
 produktrader är ett giltigt val. Nämner ingen den är alla med som förr.
 Kollektionsraden avgörs alltid av HELA sortimentet, aldrig av menyurvalet.
+**Trippelkollen följer samma regel** sedan samma dag — den krävde en menyrad
+per produkt och stod röd på elva produkter som var precis rätt.
 
 ---
 
@@ -297,6 +299,14 @@ guiden. Köpknappen lägger i varukorgen med AJAX och uppdaterar Dawns
 korgbubbla, så kunden stannar kvar i guiden i stället för att kastas till
 kassan efter varje person.
 
+**Provkörd i webbläsare mot den LIVE-renderade sidan, inte mot fixturer**
+(2026-09-11, svenska och `/nb`): guidens markup klipps ut ur den riktiga
+startsidan, temats riktiga JS bäddas in, och sex scenarier klickar sig
+igenom i Chromium. Det var den provkörningen som visade att budgetfrågan som
+FILTER gav golfaren en hockeykalender — enhetstesterna var gröna hela tiden.
+Skriptet är värt att bygga om nästa gång: byggarnas tester bevisar modellen,
+webbläsaren bevisar butiken.
+
 ---
 
 ## Nischbutik som startar med EN produkt (AdventLane 2026-09-10)
@@ -309,7 +319,7 @@ ingen kollektion, ingen kollektionsrad i menyn) och byggts om när produkt
 nr 2 kom. Nu: **`butik.kollektion.alltid: true`** i butiksfilen gör butiken
 till nischbutik redan med en produkt (`butik.arNischbutik`): kollektionen
 skapas och publiceras, startsidan visar kollektionen, huvudmenyn får
-Hem / Kalendrarna / Racingkalendern / Frakt & retur / Kontakt, och
+Hem / Kalendrarna / (produktrader) / Frakt & retur / Kontakt, och
 översättningsunderlaget bär kollektionen. Nästa kalender = en produktfil till
 i samma körning, inget annat. Utan `alltid` gäller antalet som förr.
 
@@ -485,6 +495,20 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
 - **Temats egna svenska ord** i `ms-paket.liquid` ("Gratis på köpet", "Välj
   paket") och `ms-delivery-estimate` (månadsnamn via Intl sv-SE) syntes på /nb
   (TankGuard 2026-09-08) — `tema.patchaMsPaket` locale-branchar snippeten.
+
+- **`yaml.mjs` läste inte escaper i citerade strängar** (AdventLane
+  2026-09-11). `- "Locktexten är på engelska: \"Merry Christmas\""` klipptes
+  vid det första `\"` och blev `Locktexten är på engelska: \` — en halv mening
+  med ett löst bakstreck, live i specifikationslistan på tre produkter.
+  Fabriken märkte ingenting: raden var en giltig sträng, bara fel. **Det var
+  den norska översättaren som upptäckte det**, för att hon läste varje rad.
+  Lärdomen är inte bara parserfixen (`slutCitat` + `avcitera`) utan att en
+  människa som läser texten hittar det ingen mätning letade efter.
+- **SEO-fälten fogades ihop utan att läsa texten**: `benefits[0] + ". " +
+  garantier[0]` gav "…fram till julafton.. 14 dagars ångerrätt" på åtta av
+  tolv produkter, och `kortText(namn + " – " + brand, 70)` kapade brandet mitt
+  i ordet ("– AdventLa…"). Nu `fogaMeningar` respektive `seoTitel` i
+  `build-store.mjs` — brandet stryks hellre än kapas.
 
 **Grön konfiguration är inte en grön butik**
 - Fabrikens QA rapporterade "14 gröna, 0 fel" på en butik som hette **My
