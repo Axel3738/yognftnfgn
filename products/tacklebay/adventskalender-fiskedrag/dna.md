@@ -19,6 +19,10 @@ Skapad 2026-09-11 av `/notionscalercs setup tacklebay/adventskalender-fiskedrag`
   skippa den." Produkten ligger kvar i butiken och som betald upsell i
   spöhållarens varukorg (Q4-ramverket).
 
+- **Axel 2026-09-11 (efter setup-rapporten):** "Vi gör det med kalendern
+  senare, jag har inte launchat testet än." Testet på Bäverbutiken är alltså
+  inte startat — det är därför källan saknar annonsprefix.
+
 **Därför byggdes ingen nattvakt för kalendern i setup 2026-09-11.** En rutin
 utan kampanj, utan hub och utan arv hade gjort ingenting varje natt och
 producerat sju briefer ur tomma intet varje onsdag och söndag.

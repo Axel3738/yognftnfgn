@@ -42,24 +42,25 @@ aldrig väggmontering.**
 Signifikansgrinden (≥ 300 kr OCH ≥ 3 köp) passeras av **fem** annonser. De
 övriga 68 är oprövade, inte dåliga.
 
-### De fem bedömbara, dömda mot TackleBays linjer (BE-CPA 173 kr · BE-ROAS 1,67)
+### De fem bedömbara, dömda mot TackleBays linjer (BE-CPA 294 kr · BE-ROAS 1,49 — Axels tal 2026-09-11)
 
-| Ärvd annons | Format | Spend | Köp | CPA | ROAS | Vinstbidrag `(173 − CPA) × köp` | Mot BE-ROAS 1,67 | Hook 3 s | Hold | CTR |
+| Ärvd annons | Format | Spend | Köp | CPA | ROAS | Vinstbidrag `(294 − CPA) × köp` | Mot BE-ROAS 1,49 | Hook 3 s | Hold | CTR |
 |---|---|--:|--:|--:|--:|--:|---|--:|--:|--:|
-| `Rodholder_PD_15_H1` | video | 9 268 kr | 39 | 238 kr | 1,94 | −2 521 kr | ✅ över | **52,0 %** | 16,4 % | 2,63 % |
-| `Rodholder_PD_6_1` | **bild** | 2 801 kr | 20 | **140 kr** | **3,02** | **+659 kr** | ✅ över | — | — | 1,53 % |
-| `Rodholder_PD_16_H1` | video | 2 651 kr | 10 | 265 kr | 1,52 | −921 kr | ❌ under | 30,6 % | 23,3 % | 2,12 % |
-| `Rodholder_PD_11_H2` | video | 1 922 kr | 6 | 320 kr | 1,49 | −884 kr | ❌ under | 33,4 % | 15,5 % | 2,23 % |
-| `Rodholder_SO_4_1` | bild | 808 kr | 3 | 269 kr | 1,44 | −289 kr (prel., 3 köp) | ❌ under | — | — | 2,88 % |
+| `Rodholder_PD_15_H1` | video | 9 268 kr | 39 | 238 kr | 1,94 | **+2 184 kr** | ✅ över | **52,0 %** | 16,4 % | 2,63 % |
+| `Rodholder_PD_6_1` | **bild** | 2 801 kr | 20 | **140 kr** | **3,02** | **+3 080 kr** | ✅ över | — | — | 1,53 % |
+| `Rodholder_PD_16_H1` | video | 2 651 kr | 10 | 265 kr | 1,52 | +290 kr | ✅ strax över | 30,6 % | 23,3 % | 2,12 % |
+| `Rodholder_PD_11_H2` | video | 1 922 kr | 6 | 320 kr | 1,49 | −156 kr | = break-even | 33,4 % | 15,5 % | 2,23 % |
+| `Rodholder_SO_4_1` | bild | 808 kr | 3 | 269 kr | 1,44 | +75 kr (prel., 3 köp) | ❌ strax under | — | — | 2,88 % |
 
-⚠️ **De två linjerna säger olika saker om top spendern, och det är en rotorsak,
-inte ett avrundningsfel.** `PD_15_H1` är lönsam på ROAS (1,94 > 1,67) men går
-med förlust på CPA (238 > 173). Skillnaden är **AOV:n**: källans verkliga
-snittorder är **437 kr**, inte 289 kr — kunderna köper 2- och 3-pack. CPA-linjen
-antar en enhet per order och dömer därför för hårt. **Döm aldrig spöhållaren på
-CPA ensam.** Vinstbidraget ovan är räknat på 289 kr och underskattar allt med
-bundles i. Se "Ekonomin" nedan — Axel måste bekräfta både COGS och vilken AOV
-linjen ska räknas på.
+**Två vinnare, en på gränsen, två i brus.** `PD_6_1` bär 55 % av det ärvda
+vinstbidraget på 13 % av spenden; `PD_15_H1` är volymen. `PD_11_H2` och
+`SO_4_1` hamnar på var sin sida om noll beroende på linje — det är per-annons-AOV
+som skiljer (linjen räknar med 437 kr per order, en enskild annons kan sälja
+fler singlar). Ingen av dem är en förlorare på den här datan.
+
+*(Historik: setup-versionen 2026-09-11 morgon räknade mot BE-CPA 173 kr på
+styckpris 289 och gissad COGS 116 kr, vilket gjorde `PD_15_H1` till −2 521 kr.
+Axels besked samma dag rättade båda talen — se "Ekonomin".)*
 
 ### Mönster 1 — PD (produktdemo) är hela kontot. **Bevisad.**
 
@@ -144,21 +145,32 @@ har aldrig fått pengar — de är inte förlorare, de är oprövade.
 
 ---
 
-## Ekonomin — ⚠️ TVÅ TAL ÄR GISSNINGAR
+## Ekonomin — AVGJORD 2026-09-11 (Axels besked)
 
-Pris 289 kr · inköp **116 kr (GISSNING: 40 % av priset, mitten i Bäverbutikens
-fyra skalningsprodukter)** · TB 173 kr · **BE-ROAS 1,67 · BE-CPA 173 kr ·
-target-ROAS 2,87 · target-CPA 101 kr**, räknat UTAN moms (Axels besked
-2026-09-09). Facit: `factory/produkter/tacklebay-spohallaren.yaml`
-(`moms_antagen: false`), och det är den linjen `factory/budgetrond.mjs` dömer mot.
+Räknas **per order, på verklig snittorder** (Axel: "break even räknas på
+produktens bundles osv"), UTAN moms (Axel 2026-09-09):
 
-Kampanjnamnet i kontot säger `BE-ROAS 1,67` — samma tal, men det är en etikett.
-Bäverbutikens `BE ROAS 1.50` är en annan verksamhet och kopieras aldrig hit.
+| | Tal | Källa |
+|---|--:|---|
+| Styckpris | 289 kr | produktsidan |
+| Snittorder (AOV) | **437 kr** | Bäverbutikens Meta-data 2026-09-11, 85 köp — TackleBay har 0 köp än |
+| Inköp per 4-pack | **62,78 kr** | Axel 2026-09-11 |
+| Varukostnad per order | 109 kr | 1,73 enheter/order härlett ur paketnivåerna (−15 % / −20 %) |
+| Övrigt per order | 34 kr | **3 EUR per order** (Axel 2026-09-11), ECB 11,1995 |
+| **Täckningsbidrag** | **294 kr** | |
+| **BE-ROAS / BE-CPA** | **1,49 / 294 kr** | `factory/ekonomi.mjs` |
+| Target-ROAS / target-CPA | 2,37 / 185 kr | 25 % målmarginal |
 
-**Öppet för Axel:** (1) den riktiga inköpskostnaden; (2) om break-even-CPA ska
-räknas på 289 kr eller på verklig AOV (källan: 437 kr). Tills dess: kill-beslut
-kräver att BÅDA linjerna säger förlust — en annons som klarar BE-ROAS men inte
-BE-CPA är inte dömd.
+Facit: `factory/produkter/tacklebay-spohallaren.yaml` (`aov_sek`,
+`varukostnad_per_order`, `ovriga_kostnader_per_order`), och det är den linjen
+`factory/budgetrond.mjs` dömer mot från och med natten 2026-09-11.
+
+⚠️ **Kampanjnamnet i kontot säger `BE-ROAS 1,67`** — räknat på den gamla
+gissningen. Namnet är en etikett, inte facit; döm aldrig mot det.
+⚠️ **AOV:n är lånad från källan.** När TackleBay har ≥ 20 egna köp: räkna om
+`aov_sek` ur butikens egen data och uppdatera enhetstalet.
+⚠️ **Eurokursen står fast i filen** (11,20). Rör sig kursen mer än ~5 % ändras
+break-even-CPA med ~2 kr — inte akut, men räkna om vid nästa `/cs`.
 
 ---
 
@@ -174,7 +186,10 @@ BE-CPA är inte dömd.
   varav Bäverbutikens redigerare fortfarande levererar dit (`Rodholder_PD_40_H1`
   i `To be Reviewed` 2026-09-10 med bäverbutiken.se som landningssida). Hubben
   är inskriven på TackleBay i OPS-registret, så Bäverbutikens rutiner hoppar
-  över den. **Upptagna AD-ID:n (båda namnrymderna):** PD ≤ 41, SO ≤ 7, SP ≤ 9,
+  över den. **Axels beslut 2026-09-11: "TackleBay tar dom"** — allt som
+  levereras i hubben är TackleBays. Konsekvens: raderna i `To be Reviewed`
+  ska brand-swappas (länk → tacklebay.se, inget "vägg" i tal/text) och upp i
+  `TACKLEBAY_SE_Spöhållaren` — ingen rutin gör det i dag, se backloggen. **Upptagna AD-ID:n (båda namnrymderna):** PD ≤ 41, SO ≤ 7, SP ≤ 9,
   CS ≤ 6, GT ≤ 4, JF ≤ 3, KL 1, TR 1, GA 1 (hubben) + OPS-kontots
   `TackleBayRod_` PD 1/2/3/6/7/15/23, SP 1, CS 3, GT 2/3, PROD V01–V10, REA
   V02/V08. Nya TackleBay-namn numreras ovanför hubbens högsta per vinkel.
