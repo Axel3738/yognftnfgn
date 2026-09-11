@@ -75,3 +75,52 @@ test('dubbla produkter ger fel, tom lista ger fel', () => {
   assert.throws(() => huvudmenyRader(rabutik(), [p, p]), /dubbla adresser/);
   assert.throws(() => huvudmenyRader(rabutik(), []), /inga produkter/);
 });
+
+// -------------------------------------------------- menyurvalet (12 produkter)
+
+import { menyprodukter } from '../meny.mjs';
+
+test('i_meny styr menyn — utan flaggan är alla med som förr', () => {
+  // Axels regel 2026-09-11: alla ska ligga i KOLLEKTIONEN, men menyn ska
+  // inte bli en andra katalog när sortimentet växer till tolv kalendrar.
+  const utan = [{ produkt: { id: 'a', namn: 'A' } }, { produkt: { id: 'b', namn: 'B' } }];
+  assert.equal(menyprodukter(utan).length, 2, 'gammalt beteende bevaras');
+
+  const med = [
+    { produkt: { id: 'a', namn: 'A', i_meny: true } },
+    { produkt: { id: 'b', namn: 'B' } },
+    { produkt: { id: 'c', namn: 'C', i_meny: true } },
+  ];
+  assert.deepEqual(menyprodukter(med).map((p) => p.produkt.id), ['a', 'c']);
+
+  // Tolv false:ar är ett VAL (kollektionsraden räcker), inte frånvaro av val.
+  const inga = Array.from({ length: 12 }, (_, i) => ({ produkt: { id: `p${i}`, namn: `P${i}`, i_meny: false } }));
+  assert.deepEqual(menyprodukter(inga), []);
+});
+
+test('en butik kan välja bort ALLA produktrader och behålla en fungerande meny', () => {
+  const butik = { butik: { kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: true } } };
+  const produkter = Array.from({ length: 12 }, (_, i) => ({
+    produkt: { id: `p${i}`, namn: `Kalender ${i}`, i_meny: false },
+    frakt: { fri_globalt: true },
+    retur: { angerratt_dagar: 14 },
+    butik: { supportmail: 'hello@adventlane.se' },
+  }));
+  const rader = huvudmenyRader(butik, produkter);
+  assert.deepEqual(rader.map((r) => r.url), ['/', '/collections/kalendrarna', '/pages/fraktpolicy', '/pages/contact']);
+});
+
+test('kollektionsraden står kvar även när bara två av tolv är i menyn', () => {
+  const butik = { butik: { kollektion: { handle: 'kalendrarna', titel: 'Kalendrarna', alltid: true } } };
+  const produkter = Array.from({ length: 12 }, (_, i) => ({
+    produkt: { id: `p${i}`, namn: `Kalender ${i}`, i_meny: i < 2 },
+    frakt: { fri_globalt: true },
+    retur: { angerratt_dagar: 14 },
+    butik: { supportmail: 'hello@adventlane.se' },
+  }));
+  const rader = huvudmenyRader(butik, produkter);
+  const produktrader = rader.filter((r) => r.url.startsWith('/products/'));
+  assert.equal(produktrader.length, 2, 'bara de flaggade får egen rad');
+  assert.ok(rader.some((r) => r.url === '/collections/kalendrarna'), 'kollektionen måste finnas kvar');
+  assert.equal(rader.some((r) => r.url === '/collections/all'), false);
+});
