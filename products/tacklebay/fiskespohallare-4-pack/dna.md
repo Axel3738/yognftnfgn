@@ -53,6 +53,13 @@ Signifikansgrinden (≥ 300 kr OCH ≥ 3 köp) passeras av **fem** annonser. De
 | `Rodholder_PD_11_H2` | video | 1 922 kr | 6 | 320 kr | 1,49 | −156 kr | = break-even | 33,4 % | 15,5 % | 2,23 % |
 | `Rodholder_SO_4_1` | bild | 808 kr | 3 | 269 kr | 1,44 | +75 kr (prel., 3 köp) | ❌ strax under | — | — | 2,88 % |
 
+*Avläst igen 2026-09-12 (`skalning.mjs --arv`, date_preset maximum) — källkampanjen
+spenderar fortfarande: `PD_6_1` 2 941 kr / 20 köp / CPA 147 kr / ROAS 2,87
+(+2 939 kr) · `PD_15_H1` oförändrad (+2 198 kr) · `PD_16_H1` 2 769 kr / 10 /
+277 kr / 1,46 (+171 kr) · `SO_4_1` oförändrad (+74 kr) · `PD_11_H2` −158 kr,
+klassad förlorare av skriptet på 6 köp — preliminärt (ANALYSMETOD 2c).
+Ordningen håller; inga trasiga rader (`spend × ROAS` mot `values`).*
+
 **Två vinnare, en på gränsen, två i brus.** `PD_6_1` bär 55 % av det ärvda
 vinstbidraget på 13 % av spenden; `PD_15_H1` är volymen. `PD_11_H2` och
 `SO_4_1` hamnar på var sin sida om noll beroende på linje — det är per-annons-AOV
