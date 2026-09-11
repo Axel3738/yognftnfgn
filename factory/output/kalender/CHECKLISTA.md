@@ -91,7 +91,6 @@ behind its password either way (measured: DryTrek 2026-09-09).
       This is what the order emails, the checkout, the review requests and the
       Meta page are all named after – so it happens before any of them.
 - [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
-- [x] ~~Same screen → Products and pricing → set fixed prices~~ **Done by Claude via API 2026-09-10** (catalog "Norge (NOK)", price list NOK, fixed 439,00 / compare-at 579,00; the 2- and 3-pack tiers 746,30 / 1 053,60 are computed by the theme). Read back: Norway shows 439,00 NOK.
 
 ## 6. Domain
 Loopia first – Shopify cannot connect a domain that is not bought, and the
@@ -140,8 +139,6 @@ it. That is why they are one section – one trip, not two (Axel 2026-09-10).
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **AdventLane**
 - [ ] Copy the **Page ID** → give to Claude Code
       The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
-- [ ] Same screen → the new page **AdventLane** → **Add people** → pick **Axel Odhner** → tick **Manage Page** (full control) → **Assign**
-      ⚠️ Without this Claude cannot create a single ad — Meta answers "(#200) … role Advertiser or higher" (measured 2026-09-10, AdventLane page 1304279782771044). The page being owned by the business is NOT enough; the person behind the token needs a role on the page.
 - [ ] Discord → + → Create server: **AdventLane — OPS**
 - [ ] Open the **authorize link** Claude gave you when the build finished → pick that server → Authorize
       No link in the chat? Ask Claude for it – it is one command, not a wait.
@@ -153,7 +150,7 @@ it. That is why they are one section – one trip, not two (Axel 2026-09-10).
 Before the store is live, not after: a live store without tracking spends ad
 money it cannot measure.
 - [ ] Install the **WeTracked** app from the Shopify App Store
-- [ ] WeTracked → paste the **pixel ID** Claude gives you
+- [ ] WeTracked → paste the **pixel ID**: **1013287061762227**
 - [ ] Events Manager → Data sources → **AdventLane** → Settings → Conversions API → **Generate access token** → copy it
 - [ ] WeTracked → paste the **Conversions API token** (never send it in chat or email)
 

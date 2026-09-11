@@ -137,7 +137,8 @@ export function byggChecklista(butik, produkter, val = {}) {
     ? v.produkter.map((p) => `- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **${p.namn}** → Import`)
     : ['- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you → Import'];
   const marknadsrader = v.marknader.map(
-    (m) => `- [ ] When Claude says the ${m.land} market is ready: Settings → Markets → **${m.land}** → activate **${m.valuta}** → Save`
+    (m) => `- [ ] When Claude says the ${m.land} market is ready: Settings → Markets → **${m.land}** → activate **${m.valuta}** → Save
+      Then write **${m.valuta} is on** to Claude — the fixed ${m.valuta} prices per product are set from there by API (measured on AdventLane 2026-09-10: catalog + price list + fixed prices, read back as contextual pricing). Until they are set, ads for ${m.land} promise a price the store does not show.`
   );
   const pixelrad = v.pixelId
     ? `- [ ] WeTracked → paste the **pixel ID**: **${v.pixelId}**`
@@ -286,6 +287,8 @@ it. That is why they are one section – one trip, not two (Axel 2026-09-10).
 - [ ] business.facebook.com → Settings → Pages → Add → Create a new Page: **${v.brand}**
 - [ ] Copy the **Page ID** → give to Claude Code
       The ad account is always **MagiBorsten DK** (915422744950975) – same for every OPS store, never pick another one, never add any card
+- [ ] Same screen → the new page **${v.brand}** → **Add people** → pick the OWNER (the person whose Meta token Claude runs on) → tick **Manage Page** → **Assign**
+      ⚠️ Without this Claude cannot create a single ad — Meta answers "(#200) … role Advertiser or higher" (measured on TankGuard 2026-09-08 and AdventLane 2026-09-10, both of which stalled here for hours). The page being owned by the business is NOT enough; the PERSON needs a role on the page.
 - [ ] Discord → + → Create server: **${v.brand} — OPS**
 - [ ] Open the **authorize link** Claude gave you when the build finished → pick that server → Authorize
       No link in the chat? Ask Claude for it – it is one command, not a wait.

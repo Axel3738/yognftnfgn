@@ -1,5 +1,33 @@
 # Flerproduktsbutik — vad som krävs, och den fälla som inte syns
 
+> ## ⚠️ Läget 2026-09-11 — tabellen "det som måste byggas" är delvis inaktuell
+>
+> AdventLane gick den här dagen från en kalender till tolv, och då byggdes
+> fyra av de fem punkterna. Läs uppdateringen här innan du tror på tabellen:
+>
+> | # | Vad | Läge |
+> |---|---|---|
+> | 1 | `ops.mjs` tar flera produktfiler | ✅ **finns** — `for (const steg of STEG) { if (steg.niva === 'produkt') for (const pk of ctx.produkter) … }` (ops.mjs, huvudflödet). Butikssteg körs en gång, produktsteg per produkt. |
+> | 2 | Startsidesteg som skriver `templates/index.json` | ✅ **finns** — `startsida.mjs`, och `sortiment` pekar på butikens egen kollektion. Bas-zip:ens Matstrumpor-värden är borta. |
+> | 3 | `meny`-steget: en länk per produkt | ✅ **finns — men regeln är omvänd sedan 2026-09-11.** En meny med tolv produktrader är ingen meny. `produkt.i_meny` styr: nämner någon produktfil flaggan gäller bara de som står `true`, annars alla som förr. Kollektionsraden avgörs alltid av HELA sortimentet. |
+> | 4 | `kontroll.mjs` blir butikskontroll + produktkontroll | ✅ **finns** — QA körs butiken en gång och varje produkt för sig. |
+> | 5 | Korg-upsellen blir korgmedveten | ⬜ **kvar** — fortfarande en hårdkodad handle. |
+>
+> **Nytt sedan dess: gåvoguiden** (`sections/ms-gavoguide.liquid` +
+> `factory/gavoguide.mjs`). Med tolv produkter är kundens problem inte att
+> hitta butiken utan att välja i den. Guiden frågar om MOTTAGAREN och svarar
+> med en produkt ur kollektionen, matchad på produktens metafält `opf.quiz`.
+> En ny produkt med det fältet är med utan kodändring — och två av reglerna
+> är spärrar, inte poäng: alkoholtema når aldrig barn, smådelar aldrig den
+> som svarat "under tre år". De testas i `factory/test/gavoguide.test.mjs`.
+>
+> **Fällan i avsnittet "annonsdatan" nedan gäller fortfarande fullt ut.**
+> `creative_prefix` står nu per produkt i AdventLane, men den delade pixeln
+> är oförändrad: tolv kalendrar mellan 349 och 549 kr har tolv olika
+> break-even, och Metas Purchase-event bär ingen produkt. Läs köp per produkt
+> ur Shopify, aldrig ur pixeln.
+
+
 **Frågan (Axel 2026-09-09):** vissa produkter med samma målgrupp ska dela en
 OPS-butik. Första fallet: Fiskespöhållaren + Fiskekalendern.
 
