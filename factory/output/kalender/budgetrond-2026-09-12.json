@@ -65,14 +65,14 @@
     "insikter": {
       "120249031845500172": {
         "d3": {
-          "spend": 1125.8,
+          "spend": 1126.82,
           "kop": 2,
-          "roas": 0.886481
+          "roas": 0.885678
         },
         "d7": {
-          "spend": 1125.8,
+          "spend": 1126.82,
           "kop": 2,
-          "roas": 0.886481
+          "roas": 0.885678
         }
       }
     },
@@ -86,8 +86,8 @@
         },
         {
           "datum": "2026-09-11",
-          "spend": 745.18,
-          "roas": 1.339274,
+          "spend": 746.2,
+          "roas": 1.337443,
           "kop": 2
         }
       ]
@@ -99,28 +99,28 @@
         "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
         "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
         "effective_status": "ACTIVE",
-        "amount_spent": 836.67,
+        "amount_spent": 837.12,
         "kop": 2,
-        "cpa": 418.335,
-        "purchase_roas": 1.192824,
+        "cpa": 418.56,
+        "purchase_roas": 1.192183,
         "omni_purchase_values": 998,
-        "intakt": 998.00005608,
-        "impressions": 4499,
-        "ctr": 3.689709,
-        "cpm": 185.967993,
-        "frequency": 1.111139,
+        "intakt": 998.00023296,
+        "impressions": 4501,
+        "ctr": 3.688069,
+        "cpm": 185.985337,
+        "frequency": 1.111633,
         "klick": 166,
-        "cpc": 5.040181,
+        "cpc": 5.042892,
         "lankklick": 107,
         "tre_sek": 941,
         "thruplay": 221,
         "p25": 459,
         "p75": 164,
         "p100": 114,
-        "hook_rate": 0.20915759057568348,
+        "hook_rate": 0.209064652299489,
         "hold": 0.23485653560042508,
-        "hook_autoplay": 0.891531451433652,
-        "hold_p50": 0.06706556968337073,
+        "hook_autoplay": 0.8915796489668962,
+        "hold_p50": 0.06703214552703712,
         "cvr": 0.012048192771084338,
         "dom": {
           "klass": "for_tidigt",
@@ -146,7 +146,7 @@
         "impressions": 589,
         "ctr": 3.225806,
         "cpm": 151.850594,
-        "frequency": 1.061261,
+        "frequency": 1.053667,
         "klick": 19,
         "cpc": 4.707368,
         "lankklick": 14,
@@ -157,8 +157,8 @@
         "p100": 17,
         "hook_rate": 0.300509337860781,
         "hold": 0.22033898305084745,
-        "hook_autoplay": 0.9541595925297114,
-        "hold_p50": 0.12099644128113879,
+        "hook_autoplay": 0.9558573853989814,
+        "hold_p50": 0.12078152753108348,
         "cvr": 0,
         "dom": {
           "klass": "for_tidigt",
@@ -195,8 +195,8 @@
         "p100": 6,
         "hook_rate": 0.23965141612200436,
         "hold": 0.16363636363636364,
-        "hook_autoplay": 0.9477124183006536,
-        "hold_p50": 0.06666666666666667,
+        "hook_autoplay": 0.9498910675381264,
+        "hold_p50": 0.06651376146788991,
         "cvr": 0,
         "dom": {
           "klass": "for_tidigt",
@@ -555,15 +555,15 @@
         "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
         "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
         "effective_status": "ACTIVE",
-        "amount_spent": 3.79,
+        "amount_spent": 3.96,
         "kop": 0,
         "cpa": null,
         "purchase_roas": 0,
         "omni_purchase_values": 0,
         "intakt": 0,
-        "impressions": 22,
+        "impressions": 23,
         "ctr": 0,
-        "cpm": 172.272727,
+        "cpm": 172.173913,
         "frequency": 1,
         "klick": 0,
         "cpc": null,
@@ -704,12 +704,12 @@
     ],
     "annonser7d": {
       "120249032660230172": {
-        "amount_spent": 836.78,
+        "amount_spent": 837.52,
         "kop": 2,
-        "cpa": 418.39
+        "cpa": 418.76
       },
       "120249032661660172": {
-        "amount_spent": 89.44,
+        "amount_spent": 89.66,
         "kop": 0,
         "cpa": null
       },
@@ -739,7 +739,7 @@
         "cpa": null
       },
       "120249032846870172": {
-        "amount_spent": 11.71,
+        "amount_spent": 11.77,
         "kop": 0,
         "cpa": null
       },
@@ -815,8 +815,8 @@
         "atgard": null,
         "gammalt": 1000,
         "nytt": null,
-        "motivering": "3d: 1 126 kr, 2 köp, ROAS 0,89 · 7d: 1 126 kr, 2 köp, ROAS 0,89 · break-even ROAS 1,54.",
-        "sparr": "För tidigt: 1 126 kr och 2 köp på 3 dygn — grinden går vid 300 kr OCH 3 köp. Ingen dom."
+        "motivering": "3d: 1 127 kr, 2 köp, ROAS 0,89 · 7d: 1 127 kr, 2 köp, ROAS 0,89 · break-even ROAS 1,54.",
+        "sparr": "För tidigt: 1 127 kr och 2 köp på 3 dygn — grinden går vid 300 kr OCH 3 köp. Ingen dom."
       }
     ],
     "annonsrader": [
@@ -828,7 +828,7 @@
         "atgard": "PAUSA",
         "gammalt": "ACTIVE",
         "nytt": "PAUSED",
-        "motivering": "Dödvikt: 2 köp till CPA 418 kr över break-even 323 kr på 14 dygn trots 837 kr spend (≥ 3 × target-CPA 198 kr). 14d: 837 kr, 2 köp, CPA 418 kr · klass for_tidigt.",
+        "motivering": "Dödvikt: 2 köp till CPA 419 kr över break-even 323 kr på 14 dygn trots 837 kr spend (≥ 3 × target-CPA 198 kr). 14d: 837 kr, 2 köp, CPA 419 kr · klass for_tidigt.",
         "sparr": null
       },
       {
@@ -1008,7 +1008,7 @@
         "atgard": "PAUSA",
         "gammalt": "ACTIVE",
         "nytt": "PAUSED",
-        "motivering": "Dödvikt: 2 köp till CPA 418 kr över break-even 323 kr på 14 dygn trots 837 kr spend (≥ 3 × target-CPA 198 kr). 14d: 837 kr, 2 köp, CPA 418 kr · klass for_tidigt.",
+        "motivering": "Dödvikt: 2 köp till CPA 419 kr över break-even 323 kr på 14 dygn trots 837 kr spend (≥ 3 × target-CPA 198 kr). 14d: 837 kr, 2 köp, CPA 419 kr · klass for_tidigt.",
         "sparr": null
       }
     ],
@@ -1025,12 +1025,24 @@
       "atgard": "PAUSA",
       "gammalt": "ACTIVE",
       "nytt": "PAUSED",
-      "motivering": "Dödvikt: 2 köp till CPA 418 kr över break-even 323 kr på 14 dygn trots 837 kr spend (≥ 3 × target-CPA 198 kr). 14d: 837 kr, 2 köp, CPA 418 kr · klass for_tidigt.",
+      "motivering": "Dödvikt: 2 köp till CPA 419 kr över break-even 323 kr på 14 dygn trots 837 kr spend (≥ 3 × target-CPA 198 kr). 14d: 837 kr, 2 köp, CPA 419 kr · klass for_tidigt.",
       "sparr": null,
-      "genomford": false,
-      "fel": "Meta 400: (#100) Tried accessing nonexisting field (daily_budget)",
-      "fore": null,
-      "efter": null,
+      "genomford": true,
+      "fel": null,
+      "fore": {
+        "id": "120249032660230172",
+        "name": "AdventLaneRacing_PD_1_H1",
+        "status": "ACTIVE",
+        "effective_status": "ACTIVE",
+        "updated_time": "2026-09-11T15:59:06+0200"
+      },
+      "efter": {
+        "id": "120249032660230172",
+        "name": "AdventLaneRacing_PD_1_H1",
+        "status": "PAUSED",
+        "effective_status": "IN_PROCESS",
+        "updated_time": "2026-09-12T00:32:05+0200"
+      },
       "ateraktiverad": null,
       "loggrad": {
         "datum": "2026-09-12",
@@ -1042,9 +1054,9 @@
         "atgard": "PAUSA",
         "gammalt": "ACTIVE",
         "nytt": "PAUSED",
-        "motivering": "Dödvikt: 2 köp till CPA 418 kr över break-even 323 kr på 14 dygn trots 837 kr spend (≥ 3 × target-CPA 198 kr). 14d: 837 kr, 2 köp, CPA 418 kr · klass for_tidigt.",
-        "genomford": false,
-        "fel": "Meta 400: (#100) Tried accessing nonexisting field (daily_budget)"
+        "motivering": "Dödvikt: 2 köp till CPA 419 kr över break-even 323 kr på 14 dygn trots 837 kr spend (≥ 3 × target-CPA 198 kr). 14d: 837 kr, 2 köp, CPA 419 kr · klass for_tidigt.",
+        "genomford": true,
+        "fel": null
       }
     }
   ]

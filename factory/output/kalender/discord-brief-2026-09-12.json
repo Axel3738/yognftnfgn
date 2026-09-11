@@ -1,0 +1,36 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-12",
+  "lage": "brief",
+  "gjort": [
+    "Budget round: campaign ADVENTLANERACING_SE under the data gate (1 127 SEK, 2 purchases) — no budget change",
+    "Paused ad AdventLaneRacing_PD_1_H1: 837 SEK (74 % of spend), 2 purchases, CPA 419 SEK over break-even 323 SEK (new-ad rule). Read back: ACTIVE → PAUSED",
+    "Facebook page is live again: all 16 SE ads ACTIVE (Meta's page pauses from Sept 11 are gone)",
+    "Cold start: 0 ads past the gate (300 SEK and 3 purchases), so no feedback loop — batch #2 built from inherited data",
+    "7 new briefs in the Racing Car Advent Calendar creative hub as Draft (4 video, 3 image), copy A/B: 4 Fable / 3 Sonnet",
+    "Fixed a bug in the pause code (it asked Meta for a budget field on an ad); first pause attempt failed, second succeeded"
+  ],
+  "siffror": { "spend_7d": 1127, "kop_7d": 2, "roas_7d": 0.89, "vinstbidrag_7d": 0, "briefs_nya": 7 },
+  "briefer": [
+    { "namn": "AdventLaneRacing_PD_2_H2", "typ": "video", "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_H2-3d8270ab908c819a840bf60bf7c246ca" },
+    { "namn": "AdventLaneRacing_MR_1_H1", "typ": "video", "url": "https://app.notion.com/p/AdventLaneRacing_MR_1_H1-3d8270ab908c81118aa8efda76fabaed" },
+    { "namn": "AdventLaneRacing_SO_1_1", "typ": "image", "url": "https://app.notion.com/p/AdventLaneRacing_SO_1_1-3d8270ab908c81e880baec52652fd9d5" },
+    { "namn": "AdventLaneRacing_SY_1_H1", "typ": "video", "url": "https://app.notion.com/p/AdventLaneRacing_SY_1_H1-3d8270ab908c819d9f59c2c28386ee7e" },
+    { "namn": "AdventLaneRacing_PD_8_H1", "typ": "video", "url": "https://app.notion.com/p/AdventLaneRacing_PD_8_H1-3d8270ab908c81db83cbe0858c529cfc" },
+    { "namn": "AdventLaneRacing_FF_1_1", "typ": "image", "url": "https://app.notion.com/p/AdventLaneRacing_FF_1_1-3d8270ab908c8193b3f9e50cdda2deab" },
+    { "namn": "AdventLaneRacing_EF_1_1", "typ": "image", "url": "https://app.notion.com/p/AdventLaneRacing_EF_1_1-3d8270ab908c81d4b86ad0fb9f821dc0" }
+  ],
+  "varningar": [
+    "The hub already held 20 Bäverbutiken briefs for this product (Adventskalender_ prefix, 5 in progress, 4 to be reviewed, 11 image drafts) — batch #2 does not duplicate them",
+    "Next brief day is already tomorrow (Sunday) by cadence — none of tonight's 7 ads will have data, so it will be another cold start",
+    "Pack prices are A/B tested live on the product page (two 2-pack levels) — no ad may state a pack price",
+    "The inherited winners PD_2_1 / PD_2_H1 have had 9 and 4 SEK here; the CBO gave 74 % to PD_1_H1 (45 SEK, 0 purchases in the source account)"
+  ],
+  "action_axel": [
+    "No editor is assigned to AdventLane — 7 briefs are sitting in the hub with nobody to make them. Assign one (register: node factory/register.mjs redigerare kalender/adventskalender-racingbilar \"<name>\" <discord-id>) or tell me who",
+    "Decide the campaign structure: the CBO starves the proven winners (PD_2_1 / PD_2_H1 got 13 SEK total). Option A: a separate test ABO with equal budget per ad (rule 11). Option B: leave the CBO now that PD_1_H1 is paused. I will not restructure without your word"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13"
+}
