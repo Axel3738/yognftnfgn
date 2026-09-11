@@ -190,6 +190,14 @@ test('produktkoll kräver namn och pris i synlig text', () => {
   assert.ok(r.fel[0].includes('389'));
 });
 
+test('produktkoll godtar pris med tusentalsavstånd (1 129,00 kr) — CaraShell 2026-09-10', () => {
+  const p = { produkt: { namn: 'Taköverdrag' }, ekonomi: { pris: 1129 } };
+  assert.equal(produktkoll('<h1>Taköverdrag</h1><span>1 129,00 kr</span>', p).ok, true);
+  assert.equal(produktkoll('<h1>Taköverdrag</h1><span>1&nbsp;129 kr</span>', p).ok, true);
+  assert.equal(produktkoll('<h1>Taköverdrag</h1><span>1.129 kr</span>', p).ok, true);
+  assert.equal(produktkoll('<h1>Taköverdrag</h1><span>999 kr</span>', p).ok, false);
+});
+
 // ---- kundvy-kor: rena delar --------------------------------------------------------
 
 test('Kakburk behåller ALLA kakor, även _shopify_essential', () => {

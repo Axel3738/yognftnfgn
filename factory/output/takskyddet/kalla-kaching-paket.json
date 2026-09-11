@@ -1,0 +1,41 @@
+{
+  "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+  "last": "2026-09-10",
+  "blockTitle": "14 Dagars Ångerrätt & Svensk kundsupport",
+  "preselectedDealBarId": "st2b",
+  "dealBars": [
+    {
+      "id": "st1a",
+      "title": "1 st",
+      "subtitle": "Standard pris",
+      "badgeText": "",
+      "quantity": 1,
+      "discountType": "percentage",
+      "discountValue": 0,
+      "freeGifts": [],
+      "upsells": []
+    },
+    {
+      "id": "st2b",
+      "title": "2 st",
+      "subtitle": "",
+      "badgeText": "Mest populär",
+      "quantity": 2,
+      "discountType": "percentage",
+      "discountValue": 15,
+      "freeGifts": [],
+      "upsells": []
+    },
+    {
+      "id": "st3c",
+      "title": "3 st",
+      "subtitle": "",
+      "badgeText": "",
+      "quantity": 3,
+      "discountType": "percentage",
+      "discountValue": 20,
+      "freeGifts": [],
+      "upsells": []
+    }
+  ]
+}

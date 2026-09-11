@@ -1,0 +1,135 @@
+{
+  "input": {
+    "title": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "handle": "takskyddet",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern.</p>",
+    "vendor": "CaraShell",
+    "seo": {
+      "title": "Taköverdrag Husvagn & Husbil 6,5 × 3 m – CaraShell",
+      "description": "Torrt tak fram till våren. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png",
+        "contentType": "IMAGE",
+        "alt": "Husbil sedd snett framifrån med CaraShell taköverdrag på taket"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+        "contentType": "IMAGE",
+        "alt": "CaraShell taköverdrag spänt över husbilens tak, sett framifrån"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg",
+        "contentType": "IMAGE",
+        "alt": "CaraShell taköverdrag hopvikt med spännband och tygdetalj synlig"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg",
+        "contentType": "IMAGE",
+        "alt": "Elastiska spännband med plastkrokar som håller fast taköverdraget"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Regnet står kvar vid takluckan"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Husvagnen eller husbilen står ute över vintern. Regnvatten samlas kring takluckor och skarvar, och ingen går upp och kollar förrän våren – då avgör fukttestet om tätningarna höll."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-takoverdrag-4.gif"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "CaraShell täcker bara taket"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "CaraShell täcker takytan, med kanten hängande 30–40 cm ner över sidorna, så regnvatten inte blir stående vid takluckorna. Elastiska spännband med plastkrokar hakar under karossens kant och sitter kvar i blåst. En person sätter på det själv."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Torrt tak fram till våren\",\"Lugn inför fukttestet\",\"Sätts på utan att be om hjälp\",\"Lacken slipper skava mot ett tungt helöverdrag\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Mått 6,5 × 3 m, täcker hela takytan\",\"Svart väv, 210D\",\"Elastiska spännband med plastkrokar som hakar under karossens kant\",\"Sätts på av en person\",\"Kanten hänger ner ca 30–40 cm över sidorna\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Passar det min husvagn eller husbil?\",\"svar\":\"Måtten är 6,5 × 3 m och täcker hela takytan med marginal – mät takytan på ditt fordon och jämför. Passar både husvagn och husbil.\"},{\"fraga\":\"Hur fäster jag överdraget?\",\"svar\":\"Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna.\"},{\"fraga\":\"Sitter det kvar i blåst?\",\"svar\":\"Ja, de elastiska spännbanden håller det på plats i blåst.\"},{\"fraga\":\"Hur många behövs för att lägga på det?\",\"svar\":\"En person räcker, eftersom överdraget bara täcker taket.\"},{\"fraga\":\"Vad gäller om jag ångrar mig?\",\"svar\":\"14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se.\"}]"
+    }
+  ]
+}

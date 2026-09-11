@@ -481,8 +481,29 @@ export function byggFooterGroup(befintlig, butik) {
       ].join(''),
     };
   }
+  // Brandtexten i sidfoten som TEXT-block, inte som brand_information.
+  // brand_information läser temainställningen brand_description, och den
+  // går inte att översätta här: translatableResources ger 0 resurser för
+  // ONLINE_STORE_THEME_SETTINGS_CATEGORY och 0 rader för SettingsDataSections
+  // (CaraShell, trial, mätt 2026-09-10) — positioneringen låg kvar på svenska
+  // på /nb. Ett text-block ligger i sektionsgruppen och registreras som
+  // footer.sections.footer.blocks.brand.settings.subtext.
+  // Idempotent: skrivs om även när blocket redan är ett text-block från en
+  // tidigare körning (annars ligger gamla värden kvar, mätt 2026-09-10).
+  const brand = data?.sections?.footer?.blocks?.brand;
+  if (brand?.type === 'brand_information' || brand?.type === 'text') {
+    const positionering = text(butik?.branding?.positionering) ?? text(b.brand) ?? '';
+    data.sections.footer.blocks.brand = {
+      type: 'text',
+      // Ingen rubrik: brandnamnet är lika på alla språk och räknas då som en
+      // "svensk text utan översättning" i registreringen (mätt 2026-09-10).
+      settings: { heading: '', subtext: `<p>${eskapaHtml(positionering)}</p>` },
+    };
+  }
   return `${JSON.stringify(data, null, 2)}\n`;
 }
+
+const eskapaHtml = (s) => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
 // Produktmallens supportmejl — samma källtext, samma fix.
 export function bytSupportmejl(innehall, gammalt, nytt) {

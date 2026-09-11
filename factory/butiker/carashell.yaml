@@ -1,0 +1,209 @@
+# Butikskonfig för CaraShell — skydd för husvagnen och husbilen när den står
+# stilla. Första produkten är taköverdraget 6,5 × 3 m; brandet bär nischen
+# (skydd/vinterförvaring för husvagn och husbil), inte produkten, så nästa
+# produkt är bara en produktfil till.
+#
+# Byggd 2026-09-10 med /ny-ops. Butik: yitrbk-m3.myshopify.com ("My Store 4",
+# SEK, Horizon, tom). Underlaget för alla val: factory/output/carashell/BRAND.md.
+# Bolaget är samma AB som driver HeimGuard, TankGuard, DryTrek, TackleBay och
+# AdventLane (uppgifterna ur kalender.yaml).
+#
+# Namnet: "CaraCover" föll — en brittisk husvagnsöverdragstillverkare heter så
+# (caracover.com, mätt 2026-09-10). "CaraTop" föll — tysk skyddstaktillverkare
+# (klimatop.de). CaraShell: noll webbträffar, .se/.no/.com utan DNS och
+# .com ledigt i RDAP (2026-09-10). RDAP för .se/.no går inte att nå härifrån
+# (rdap.org svarar 404 även på tankguard.se) — DNS är enda kollen.
+
+butik:
+  id: carashell
+  brand: "CaraShell"
+  # Butiksadressen ur prompten är facit över id:t — anslutningen letar upp
+  # miljösuffixet som bär den (ops.mjs onskadDomanUr).
+  myshopify: "yitrbk-m3.myshopify.com"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@carashell.se"
+  land: SE
+  huvudmarknad: Sverige
+  # SE + NO är standard i varje OPS (Axel 2026-09-08). SEK tills NOK slås på i
+  # admin — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  valuta: SEK
+  moms_i_pris: true
+  # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika
+  # på norska filtreras bort av sig själva (kundvy.mjs).
+  markorer_sv:
+    - "Köp nu"
+    - "Fri frakt"
+    - "Vanliga frågor"
+    - "Lägg i varukorgen"
+    - "ångerrätt"
+    - "Handla tryggt"
+    - "arbetsdagar"
+    - "husvagnen"
+    - "husbilen"
+    - "överdraget"
+    - "vintern"
+    - "takluckor"
+    # "taket" och "fukt" stavas lika på norska — som markörer ger de bara
+    # falska larm (mätt 2026-09-10 på /nb: "Beskytt taket", "fukttesten").
+
+frakt:
+  fri_globalt: true
+  # Samma Temu-led som källans övriga produkter (TackleBay/DryTrek/AdventLane).
+  leveranstid: "5–10 arbetsdagar"
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  # Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08).
+  # ⚠️ Källsidan lovar "30 dagars öppet köp" — det följer INTE med hit.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när Judge.me installerats. Tokenen är PER BUTIK och läggs i env,
+  # aldrig i filen. Utan token laddas app-CSV:n upp för hand i appen.
+  # ⚠️ token_env måste vara butikens egen — den allmänna JUDGEME_API_TOKEN i
+  # miljön är en annan butiks.
+  shop_domain: "yitrbk-m3.myshopify.com"
+  token_env: "JUDGEME_CARASHELL_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — byggd från noll för CaraShell (strukturen återanvänds mellan
+# butiker, brandingen aldrig). Hela resonemanget i output/carashell/BRAND.md.
+#
+#   Vem köper:      husvagns- eller husbilsägare 45–70 som ställer upp vagnen
+#                   utomhus över vintern — på tomten, på uppställningsplatsen
+#                   eller på campingens vinterplats. Fordonet är värt
+#                   200 000–1 000 000 kr och är familjens sommar.
+#   Problemet:      fukt. Taket är ytan ingen ser: regn, löv och fågelträck
+#                   ligger kvar kring takluckor och skarvar hela vintern, och
+#                   fuktskadan är den reparation varje husvagnsägare fruktar
+#                   (fukttestet vid servicen). Helöverdraget är alternativet
+#                   alla känner: tungt, kräver två personer, skaver mot lacken.
+#   Emotionen:      att ha gjort det ansvarsfulla för något dyrt — lugn hela
+#                   vintern, ingen oro vid fukttestet i vår.
+#   Förväntat brand: en saklig utrustningsleverantör i husvagnsvärlden —
+#                   Isabella, Kama, Thule. Inte reaskrik, inte lifestyle.
+#   Känsla:         trygg, robust, omsorgsfull, saklig.
+#
+# Paletten är väven och vädret. Grafit (som överdraget) bär allvaret i
+# header, sidfot och logga; en ljus grå-grön grus-ton bär ytorna — uppställ-
+# ningsplatsen efter regn — och EN regnblå är den enda färgen som får ropa:
+# skydd mot väder, inte rea. Inga gröna skogsfärger (TankGuard/DryTrek), ingen
+# marinblå (HeimGuard/AdventLane), ingen mässing (TackleBay).
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Skydd för husvagnen och husbilen när den står stilla — överdrag som tar vädret så att taket, tätningarna och lacken inte behöver göra det"
+  tonalitet: "Saklig och lugn, som en erfaren granne på uppställningsplatsen. Talar om taket, vintern och fukttestet — aldrig om premium eller kvalitet. Korta meningar, inga utropstecken, inga adjektiv utan något att peka på."
+  kansla: "trygg, robust, omsorgsfull, saklig"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F1F2EF"            # ljus grus — uppställningsplatsen efter regn, aldrig kall vit-grå
+    yta_djup: "#E2E4DF"
+    mork: "#22282E"           # grafit, som väven — header, sidfot, logga
+    text: "#1B2026"
+    text_pa_mork: "#F1F2EF"
+    linje: "#D6D9D3"
+    linje_stark: "#B3B8B0"
+    accent: "#1F6F8E"         # regnblå — CTA, den enda färgen som ropar
+    accent_text: "#FFFFFF"
+    god: "#2E7D57"            # bock
+    varning: "#9A5B00"
+  typografi:
+    rubriker: "barlow_n7"     # Barlow Bold — smal, teknisk grotesk med fordonskänsla
+    brodtext: "source_sans_pro_n4"   # Source Sans — lugn och lättläst i villkor och FAQ
+  form:
+    knapp_radius: 6           # kantigare än familjebutikerna — utrustning, inte present
+    kort_radius: 10
+    input_radius: 6
+    badge_radius: 4
+  stil:
+    ikoner: "Linjeikoner, 1.8 i stroke, raka ändar. Tak, droppe, spännband, sköld — aldrig emojis i gränssnittet."
+    bilder: "Riktiga foton av överdraget på husbilen och husvagnen, gärna gråväder och vinteruppställning. Detaljer på spännband och krokar. Aldrig stockbilder av leende familjer vid stranden."
+    rubrikstil: "Rubriken säger vad kunden slipper i vår — fuktskadan, fukttestet, den stående vattenpölen kring takluckan. Eyebrow i versaler, en kort scen från uppställningsplatsen."
+    cta: "Solid regnblå knapp med vit text. Lugna verb — Lägg i varukorgen, Köp nu. Aldrig SISTA CHANSEN, ingen nedräkningstimer."
+    trust: "Diskreta rader med grön bock på grus-ton — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt, max 62 tecken per rad, generösa sektionsavstånd. Sidan ska kännas som en välordnad uppställningsplats."
+    logo: "Rund monogram, variant C (VALD av Axel 2026-09-10 — 'den mest neutrala, de andra två passade inte produkten'): grafitgrå cirkel, stort CS i ljus grus, tunn linje, ordmärket CARASHELL spärrat under. Ingen symbol. Fungerar i en färg."
+    favicon: "Samma grafitgrå cirkel med ett ljust C."
+  # Loggan och faviconen genererade 2026-09-10 med
+  # node factory/logga-generera.mjs factory/butiker/carashell.yaml --ut factory/output/carashell --variant c --motiv ingen
+  # (takmotivet föll med Axels val — faviconen bär initialen i stället).
+  logga: "output/carashell/carashell-logga-c.png"
+  favicon: "output/carashell/carashell-favicon.png"
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json.
+# Copyn (svenska) skrivs av en subagent (sonnet) ur BRAND.md + docs/copy-regler.md;
+# strukturen och bildvalen är huvudsessionens. Norskan skrivs som egen text i
+# output/carashell/oversattning-nb.json — aldrig här.
+#
+# BILDER: bara riktiga källbilder (leverantörens), ingen inbränd text på någon
+# av dem (lästa 2026-09-10). Hero = husbilen med överdraget (image4.png).
+# Trygghetsbilden = överdraget hopvikt med spännen (tak-hopvikt.jpg).
+# ---------------------------------------------------------------------------
+startsida:
+  usp:
+    - "truck:Fri frakt – Sverige & Norge"
+    - "shield:14 dagars ångerrätt"
+    - "star:Betala med Klarna"
+  hero:
+    rubrik: "Skydda taket. Inte hela vagnen."
+    text: "Ett taköverdrag som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern. Sätts på av en person med spännband som hakar under karossens kant."
+    knapp: "Se taköverdraget"
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
+  marquee:
+    - "Fri frakt i Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Klarna, kort och Apple Pay"
+    - "Skickas från Sverige"
+  produkt_etikett: "Taköverdrag 6,5 × 3 m"
+  berattelse:
+    rubrik: "Varför bara taket räcker"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
+    text:
+      - "Ett helöverdrag ska täcka hela husvagnen eller husbilen. I praktiken blir det tungt, kräver två personer och skaver mot lacken när det blåser."
+      - "CaraShell täcker bara taket – ytan där regnvatten blir stående kring takluckor och skarvar över vintern. En person sätter på det själv."
+  statement:
+    rubrik: "Taket du aldrig kollar är taket som kostar mest att laga."
+    knapp: "Skydda taket"
+  trygghet:
+    rubrik: "Frakt och ångerrätt"
+    text:
+      - "Fri frakt till Sverige och Norge. Leverans på 5–10 arbetsdagar."
+      - "14 dagars ångerrätt enligt svensk lag. Fungerar det inte för dig, mejla hello@carashell.se."
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg"
+  faq_rubrik: "Vanliga frågor"
+  faq:
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "5–10 arbetsdagar från beställning."
+    - fraga: "Kan jag ångra köpet?"
+      svar: "Ja, 14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se så hjälper vi dig."
+    - fraga: "Levererar ni till Norge?"
+      svar: "Ja, fri frakt till både Sverige och Norge."
+    - fraga: "Vilka betalsätt går att använda?"
+      svar: "Klarna, kort, Apple Pay och Google Pay."
+  garanti:
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Passar överdraget inte som väntat, mejla hello@carashell.se så löser vi det."

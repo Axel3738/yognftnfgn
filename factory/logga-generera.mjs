@@ -74,12 +74,36 @@ const LUCKA = (cx, cy, r, ram, flik) => {
   );
 };
 
+// Ett tak under skydd: husvagnens flacka taklinje som en bred båge, ovanpå
+// den överdraget som en tjockare båge i accentfärgen, och två spännband som
+// hänger ner från kanten (CaraShell 2026-09-10 — loggfeedbacken sa att a och
+// b aldrig valts med de gamla motiven, så butiken fick ett eget motiv i
+// stället för att visa samma gissningar igen). `ram` = taklinjen och banden,
+// `flik` = överdraget.
+const TAK = (cx, cy, r, ram, flik) => {
+  const n = (v) => Math.round(v * 10) / 10;
+  const w = r * 1.9;
+  const x1 = cx - w;
+  const x2 = cx + w;
+  const lyft = r * 0.55;
+  return (
+    // överdraget: tjock båge över taket
+    `<path d="M${n(x1)} ${n(cy)} Q${n(cx)} ${n(cy - lyft * 2)} ${n(x2)} ${n(cy)}" fill="none" stroke="${flik}" stroke-width="${n(r * 0.42)}" stroke-linecap="round"/>` +
+    // taklinjen: tunn linje strax under
+    `<path d="M${n(x1 + r * 0.25)} ${n(cy + r * 0.45)} Q${n(cx)} ${n(cy - lyft * 1.1)} ${n(x2 - r * 0.25)} ${n(cy + r * 0.45)}" fill="none" stroke="${ram}" stroke-width="${n(r * 0.12)}" stroke-linecap="round"/>` +
+    // två spännband som hänger ner från kanten
+    `<path d="M${n(x1 + r * 0.05)} ${n(cy + r * 0.1)} L${n(x1 + r * 0.05)} ${n(cy + r * 1.05)}" stroke="${ram}" stroke-width="${n(r * 0.12)}" stroke-linecap="round"/>` +
+    `<path d="M${n(x2 - r * 0.05)} ${n(cy + r * 0.1)} L${n(x2 - r * 0.05)} ${n(cy + r * 1.05)}" stroke="${ram}" stroke-width="${n(r * 0.12)}" stroke-linecap="round"/>`
+  );
+};
+
 // Motivet ovanför ordmärket. droppe = standard (bakåtkompatibelt), lucka =
-// kalenderlucka, ingen = bara ordmärket. Väljs med --motiv eller
-// byggLoggaSvg(..., { motiv }).
+// kalenderlucka, tak = husvagnstak under överdrag, ingen = bara ordmärket.
+// Väljs med --motiv eller byggLoggaSvg(..., { motiv }).
 export const MOTIV = {
   droppe: (cx, cy, r, { fill }) => DROPPE(cx, cy, r, fill),
   lucka: (cx, cy, r, { ram, flik }) => LUCKA(cx, cy, r, ram, flik),
+  tak: (cx, cy, r, { ram, flik }) => TAK(cx, cy, r, ram, flik),
   ingen: () => '',
 };
 const motivFn = (t) => t?.motiv ?? MOTIV.droppe;
@@ -214,7 +238,7 @@ async function huvud() {
   const tagline = arg.includes('--tagline') ? arg[arg.indexOf('--tagline') + 1] : '';
   const motiv = arg.includes('--motiv') ? arg[arg.indexOf('--motiv') + 1] : 'droppe';
   if (!butiksfil) {
-    console.error('Användning: node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|ingen]');
+    console.error('Användning: node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|tak|ingen]');
     process.exit(1);
   }
   const filer = await byggLogga(butiksfil, ut, { variant, tagline, motiv });
