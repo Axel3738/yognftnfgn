@@ -254,8 +254,11 @@ meta:
   # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
   # 1867947880635861 (Bäverbutiken, källan).
   ad_account_id: "915422744950975"
-  page_id: ""
-  pixel_id: ""
+  # Sidan "CatCabin" skapad av Axel 2026-09-11; verifierad i MagiBorsten-
+  # företagets owned_pages OCH i me/accounts (client_pages: ingen träff, det är
+  # en ägd sida).
+  page_id: "1353362171174302"
+  pixel_id: "1101742182294878"
   # Prefixet är PER PRODUKT (FLERPRODUKT.md fynd 1). Källan använder
   # "Utekattkoja_" — samma prefix här hade kolliderat i prefixkartan,
   # översättningskön, adsetuppslaget och commission-kopplingen med

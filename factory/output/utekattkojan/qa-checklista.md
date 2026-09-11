@@ -11,9 +11,10 @@
 - [x] ✅ frakt: 5–10 arbetsdagar
 - [ ] 🖐 frakt-zoner: Kontrollera fraktzon och pris i Shopify → Frakt och leverans.
 - [x] ✅ guarantee: 14 dagars ångerrätt
-- [ ] ❌ tracking: meta.pixel_id, meta.page_id saknas.
+- [x] ✅ tracking: pixel 1101742182294878, konto 915422744950975
+- [ ] 🖐 tracking-koppling: Verifiera att pixeln tar emot events i Meta Events Manager.
 - [ ] 🖐 theme: Temat måste vara valt och sektionerna inlagda i Shopify-editorn.
-- [ ] ❌ doman: Primär domän är fortfarande ras1t2-2x.myshopify.com — riktig domän saknas.
+- [x] ✅ doman: catcabin.se med SSL
 - [x] ✅ villkor: 4 policyer på plats
 - [x] ✅ checkout: valuta SEK
 - [ ] 🖐 checkout-betalning: Gör ett testköp och bekräfta att betalleverantören är aktiv.
@@ -21,7 +22,3 @@
 - [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
 - [x] ✅ markörer /nb: 0 svenska markörer av 12
 
-## Varningar
-
-- [ ] utekattkojan: meta.page_id är inte satt (krävs före launch)
-- [ ] utekattkojan: meta.pixel_id är inte satt (krävs före launch)

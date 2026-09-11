@@ -52,12 +52,9 @@
     }
   },
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "tracking",
-      "doman"
-    ],
-    "tid": "2026-09-11T03:22:40.739Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-11T13:21:30.333Z"
   },
-  "uppdaterad": "2026-09-11T03:22:40.739Z"
+  "uppdaterad": "2026-09-11T13:21:30.333Z"
 }

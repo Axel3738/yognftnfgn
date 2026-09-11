@@ -603,6 +603,17 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   renderas i webbläsaren, och `reviews_for_widget` svarade tomt för
   iahe0c-b1 (2026-09-10) trots att importen var gjord. Datumkollen efter
   app-importen är alltså ett öga på produktsidan, inte en kodkontroll.
+  *(Mätt igen 2026-09-11 på ras1t2-2x: samma anrop svarade med alla 16
+  importerade recensioner — 10 sv "Bra koja" + 6 nb "Bra kattehus", snitt
+  5,00, alla `created_at` 2026-09-07T16:00Z = 8 sep 00:00 i butikens
+  tidszon, som fortfarande är Filippinerna från trialen. Svaret beror alltså
+  på butiken/tidpunkten, inte på API:t — prova alltid, och läs datumen i
+  butikens tidszon. ⚠️ Tidszonen är ett klick: Settings → General → Time
+  zone → Stockholm, annars visas order- och recensionstider sex timmar fel.)*
+  ⚠️ Samma anrop mot KÄLLAN (4snrw0-mg) gav 2026-09-11 bara betyg + datum —
+  `body` och `reviewer` var null. Texterna och namnen står i stället
+  färdigrenderade i produktsidans HTML (`jdgm-rev-widg` → `jdgm-rev__author`,
+  `jdgm-rev__body`); `curl` sidan och läs dem därifrån.
 - **Kundvyns gratis-rad och fullpris-kryssruta är villkorade** på
   produktfilen: gratis-raden bara när en nivå har `gratis_antal > 0`,
   kryssrutan bara vid `tillagg_kryssruta: true`. En betald korg-upsell

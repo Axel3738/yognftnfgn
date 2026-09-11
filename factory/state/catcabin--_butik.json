@@ -6,7 +6,7 @@
       "klar": true,
       "domain": "ras1t2-2x.myshopify.com",
       "name": "CatCabin",
-      "primaryDomain": "ras1t2-2x.myshopify.com",
+      "primaryDomain": "catcabin.se",
       "currencyCode": "SEK"
     },
     "tema-upload": {
@@ -14,8 +14,8 @@
       "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
       "temaId": "gid://shopify/OnlineStoreTheme/193723924848",
       "temaNamn": "CatCabin – CRO v1",
-      "role": "UNPUBLISHED",
-      "redanUppe": false,
+      "role": "MAIN",
+      "redanUppe": true,
       "filer": 396,
       "kompletterade": []
     },
@@ -24,8 +24,6 @@
       "temaId": "gid://shopify/OnlineStoreTheme/193723924848",
       "filer": [
         "assets/opf-brand.css",
-        "snippets/ms-head.liquid",
-        "config/settings_schema.json",
         "config/settings_data.json"
       ]
     },
@@ -56,8 +54,7 @@
       "omskrivnaFiler": [
         "config/settings_data.json",
         "sections/footer-group.json",
-        "sections/header-group.json",
-        "snippets/ms-bundle-picker.liquid"
+        "sections/header-group.json"
       ],
       "lasta": [
         "templates/index.json",
@@ -101,7 +98,7 @@
         "ms_guarantee"
       ],
       "bilder": {
-        "hero": "shopify://shop_images/kattkoja-hero_dca50480-4427-4160-80d9-3481eb0905da.jpg",
+        "hero": "shopify://shop_images/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg",
         "trygghet": "shopify://shop_images/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg",
         "galleri": [
           "shopify://shop_images/kattkoja-regn.jpg",
@@ -125,28 +122,19 @@
       "klar": true,
       "huvudmeny": {
         "handle": "main-menu",
-        "orord": false,
+        "orord": true,
         "rader": 4
       },
       "sidfot": {
         "handle": "footer",
-        "orord": false,
+        "orord": true,
         "rader": 5
       }
     },
     "frakt": {
       "klar": true,
-      "andrade": 3,
-      "orort": false,
-      "skapadeZoner": [
-        "Sverige",
-        "EU (Europeiska Unionen)",
-        "Internationell"
-      ],
-      "borttagnaZoner": [
-        "Domestic",
-        "International"
-      ]
+      "andrade": 0,
+      "orort": true
     },
     "huvudmarknad": {
       "klar": true,
@@ -183,30 +171,52 @@
       "underlag": 125,
       "utfall": {
         "nb": {
-          "registrerade": 85,
+          "registrerade": 13,
           "saknade": 0,
           "perTyp": {
-            "variant": 1,
-            "produkt": 4,
-            "metafält": 9,
-            "sida": 7,
-            "menylänk": 6,
-            "policy": 3,
-            "kollektion": 1,
-            "temamall": 47,
-            "sektionsgrupp": 7
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 0,
+            "sida": 0,
+            "menylänk": 0,
+            "paket": 12,
+            "policy": 0,
+            "kollektion": 0,
+            "temamall": 0,
+            "sektionsgrupp": 0,
+            "temainställning": 1
           },
-          "granskning": "4207/4216"
+          "granskning": "4336/4351"
         }
       }
+    },
+    "store-ready": {
+      "klar": false,
+      "manuell": "recensioner utekattkojan: ingen Judge.me-token (env JUDGEME_CATCABIN_TOKEN) — ladda upp output/utekattkojan/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · WeTracked: klistra in pixel-id 1101742182294878 (VA:ns klick) · Meta-sidan skapar VA:n i Business Manager (API:t kan inte) · Discord: boten kan inte skapa servrar — VA:n skapar \"CatCabin — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/catcabin.yaml skriver ut länken) och kör sen node factory/store-ready.mjs catcabin --guild <server-id>",
+      "pixelId": "1101742182294878",
+      "discordGuild": null,
+      "recensioner": [
+        {
+          "produkt": "utekattkojan",
+          "viaApi": false
+        }
+      ],
+      "vantar": [
+        "recensioner utekattkojan: ingen Judge.me-token (env JUDGEME_CATCABIN_TOKEN) — ladda upp output/utekattkojan/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
+        "WeTracked: klistra in pixel-id 1101742182294878 (VA:ns klick)",
+        "Meta-sidan skapar VA:n i Business Manager (API:t kan inte)",
+        "Discord: boten kan inte skapa servrar — VA:n skapar \"CatCabin — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/catcabin.yaml skriver ut länken) och kör sen node factory/store-ready.mjs catcabin --guild <server-id>"
+      ]
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
   "arbetstemaNamn": "CatCabin – CRO v1",
   "qa": {
-    "gron": true,
-    "kritiska": [],
-    "tid": "2026-09-11T03:22:34.989Z"
+    "gron": false,
+    "kritiska": [
+      "kundvy-startsida"
+    ],
+    "tid": "2026-09-11T13:21:21.393Z"
   },
-  "uppdaterad": "2026-09-11T03:22:34.989Z"
+  "uppdaterad": "2026-09-11T13:21:21.393Z"
 }
