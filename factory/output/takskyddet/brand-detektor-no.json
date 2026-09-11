@@ -1,0 +1,968 @@
+{
+ "produkt": "takskyddet",
+ "marknad": "NO",
+ "datum": "2026-09-11",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16516659937629",
+  "produkt_handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+  "produkt_url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+  "annonskonto": "1050941584152547",
+  "annonsprefix": "Takovertrekk_NO",
+  "kampanj_id": "120252183519570233",
+  "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+  "no_kampanjmonster": "takovertrekk|campingvogn",
+  "no_annonskonto": "1050941584152547",
+  "no_annonsprefix": "Takovertrekk_NO",
+  "no_kampanj_id": "120252183519570233",
+  "no_kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+  "srt_slug": "takoverdrag"
+ },
+ "annonser": [
+  {
+   "annons": "Takovertrekk_NO_CS_1",
+   "id": "120252183544270233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - CS",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_CS_1.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 93
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapent kjophvisdu",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapentkjophvisdu",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Trettidagersapentkjophvisdu",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapentkjop hvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapent kjophvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Tretti dagers åpent kjøp hvis du angrer deg.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "1549 kr",
+      "1189 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt",
+      "Fri frakt erinkludert"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapent kjophvisdu",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapentkjophvisdu",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Trettidagersapentkjophvisdu",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapentkjop hvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapent kjophvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Tretti dagers åpent kjøp hvis du angrer deg.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_CS_2",
+   "id": "120252183544700233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - CS",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_CS_2.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 86
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Trettidagersapentkjophvisdu",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapentkjophvisdu",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapentkjop hvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapentkjop hvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapentkjophvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Lageret er begrenset og tømmes raskt når prisen er nede på dette nivået. Fri frakt er inkludert. Tretti dagers åpent kjø",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "1549 kr",
+      "1189 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt",
+      "Fri frakt er inkludert"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Trettidagersapentkjophvisdu",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapentkjophvisdu",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapentkjop hvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapentkjop hvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapentkjophvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Lageret er begrenset og tømmes raskt når prisen er nede på dette nivået. Fri frakt er inkludert. Tretti dagers åpent kjø",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_CS_3",
+   "id": "120252183544860233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - CS",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_CS_3.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 96
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapent kjophvisdu",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagers apent kjophvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagersapent kjop hvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagers apentkjop hvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "Tretti dagers apent kjop hvis du",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Fri frakt er inkludert. Tretti dagers åpent kjøp hvis du angrer deg.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "1549 kr",
+      "1189 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt",
+      "Fri frakt erinkludert"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapent kjophvisdu",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagers apent kjophvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagersapent kjop hvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagers apentkjop hvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "Tretti dagers apent kjop hvis du",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Fri frakt er inkludert. Tretti dagers åpent kjøp hvis du angrer deg.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_G_1",
+   "id": "120252183574110233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - G",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_G_1.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 97
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_G_2",
+   "id": "120252183574330233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - G",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_G_2.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 90
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_G_3",
+   "id": "120252183575110233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - G",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_G_3.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 93
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_PD_1",
+   "id": "120252183605050233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - PD",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_PD_1.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 124
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_PD_2",
+   "id": "120252183605470233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - PD",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_PD_2.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 124
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_PD_3",
+   "id": "120252183605930233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - PD",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_PD_3.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 125
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_SP_1",
+   "id": "120252183663270233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - SP",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_SP_1.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 76
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_SP_2",
+   "id": "120252183663590233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - SP",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_SP_2.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 81
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takovertrekk_NO_SP_3",
+   "id": "120252183664830233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Takovertrekk Campingvogn NO - SP",
+   "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_SP_3.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 75
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  }
+ ]
+}

@@ -1,0 +1,1214 @@
+{
+ "produkt": "takskyddet",
+ "marknad": "SE",
+ "datum": "2026-09-11",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16516659937629",
+  "produkt_handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+  "produkt_url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": "Takoverdrag",
+  "kampanj_id": "120250147343350291",
+  "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+  "no_kampanjmonster": "takovertrekk|campingvogn",
+  "no_annonskonto": "1050941584152547",
+  "no_annonsprefix": "Takovertrekk_NO",
+  "no_kampanj_id": "120252183519570233",
+  "no_kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+  "srt_slug": "takoverdrag"
+ },
+ "annonser": [
+  {
+   "annons": "Takoverdrag_CS_1_H1",
+   "id": "120250147347090291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_CS_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 92
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Trettio dagars öppet köp om du ångrar dig.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "1469 kr",
+      "1129 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt inom Sverige",
+      "Fri frakt ingar"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Trettio dagars öppet köp om du ångrar dig.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_CS_2_1",
+   "id": "120250147356750291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "logotyp_utan_text": false,
+      "notis": "Vit toppanel med '23% RABATT – IDAG', '1469 kr 1129 kr', 'Begränsat lager – slut när det är slut', '[ Köp innan det tar slut ]'. Foto på husbil med svart taköverdrag, orange grafik. Ingen bäversymbol, ingen domän, inget butiksnamn. ⚠️ Utanför brandfrågan: lagerbristpåståendet är inte sant för CaraShell och är bytt i CaraShellRoof_CS_2_1.jpg. Priset 1469→1129 är identiskt med butikens och orört."
+     },
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "1469 kr",
+      "1129 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt inom Sverige"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_CS_2_H1",
+   "id": "120250147352270291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_CS_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 85
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Lagret är begränsat och går snabbt när priset är nere här. Fri frakt ingår. Trettio dagars öppet köp om du ångrar dig. S",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "1469 kr",
+      "1129 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt inom Sverige",
+      "Fri frakt ingar"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Lagret är begränsat och går snabbt när priset är nere här. Fri frakt ingår. Trettio dagars öppet köp om du ångrar dig. S",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_CS_3_H1",
+   "id": "120250147355250291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_CS_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 94
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "Fri frakt ingår. Trettio dagars öppet köp om du ångrar dig.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "1469 kr",
+      "1129 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "23%"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt inom Sverige",
+      "Fri frakt ingar"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagar koper"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "Fri frakt ingår. Trettio dagars öppet köp om du ångrar dig.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_GT_1_H1",
+   "id": "120250147361170291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_G_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 96
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_GT_2_1",
+   "id": "120250147368320291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "logotyp_utan_text": false,
+      "notis": "'DEN PERFEKTA PRESENTEN TILL HUSVAGNS-ÄLSKAREN', underrubrik om 'tack snällt'-glad, inramad CTA '[ Ge presenten han faktiskt vill ha ]'. Julmiljö med hopvikt överdrag. Inget brandnamn, ingen symbol, inget pris, inga villkor. Helt ren — kopieras orörd."
+     },
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_GT_2_H1",
+   "id": "120250147364200291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_G_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 90
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_GT_3_H1",
+   "id": "120250147367410291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_G_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 92
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_PD_1_H1",
+   "id": "120250147375290291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_PD_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 123
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_PD_2_1",
+   "id": "120250147381880291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "logotyp_utan_text": false,
+      "notis": "'REGNET SKA INTE FÅ FÖRSTÖRA TAKET – TÄCK DET PÅ 5 MINUTER' över foto av husbil med överdraget, frostig uppställningsplats. Inget brandnamn, ingen symbol, inget pris, inga villkor. Helt ren — kopieras orörd."
+     },
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_PD_2_H1",
+   "id": "120250147378530291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_PD_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 123
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_PD_3_H1",
+   "id": "120250147380520291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_PD_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 124
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_SP_1_H1",
+   "id": "120250147383940291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_SP_1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 75
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyd",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp om du inte är"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyd",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_SP_2_1",
+   "id": "120250147392200291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "var": "ingenstans",
+      "ordagrant": "",
+      "logotyp_utan_text": false,
+      "notis": "Foto på husvagn med överdraget, beige citatruta och grön CTA-knapp. Ingen bäversymbol, ingen domän, inget butiksnamn. ⚠️ Utanför brandfrågan såg ögat TVÅ fel: bandet lovar '30 dagars öppet köp – full återbetalning' (CaraShell har 14 dagars ångerrätt) och citatet 'Satte den på taket på fem minuter, helt själv. Nu behöver jag inte oroa mig hela vintern.' – Verifierad kund, 58 år finns INTE bland butikens tio recensioner. Båda bytta i CaraShellRoof_SP_2_1.jpg."
+     },
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyd",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop - full aterbetalning",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp om du inte är",
+      "30 dagars oppet kop - full aterbet"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "Verifierad kund"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyd",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop - full aterbetalning",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_SP_2_H1",
+   "id": "120250147388460291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_SP_2.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 80
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyd",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp om du inte är"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyd",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Takoverdrag_SP_3_H1",
+   "id": "120250147391760291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_SP_3.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 74
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyd",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp om du inte är"
+     ]
+    },
+    {
+     "namn": "frakt",
+     "värden": [
+      "Fri frakt"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyd",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  }
+ ]
+}

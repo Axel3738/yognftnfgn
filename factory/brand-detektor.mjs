@@ -10,7 +10,13 @@
 //   yta 3  inbränd text + slutkort (frames)               arbetstid
 //   yta 4  attribution i bildannons ("baverbutiken.se")   gratis, oversatt-bild.py
 //
-//   node factory/brand-detektor.mjs --produkt <id> [--hamta] [--tathet 0.5] [--torr]
+//   node factory/brand-detektor.mjs --produkt <id> [--marknad SE|NO] [--hamta]
+//                                    [--tathet 0.5] [--torr]
+//
+//   --marknad SE (default) läser kalla.annonskonto/annonsprefix, NO läser
+//             kalla.no_annonskonto/no_annonsprefix och skriver -no-rapporten.
+//             ⚠️ NO-halvan är inte valfri: en norsk annons ärver ALDRIG sin
+//             svenska systers dom (FAS2, Axels bakläxa 2026-09-09).
 //
 //   --hamta   ladda ner media (video + bild), dra frames och OCR:a dem.
 //             Utan flaggan återanvänds den sparade OCR:en i
@@ -113,7 +119,16 @@ export function läsButik(produktId) {
   if (!butiksId) return null;
   const fil = join(ROT, 'factory', 'butiker', `${butiksId}.yaml`);
   if (!existsSync(fil)) return null;
-  return lasYaml(readFileSync(fil, 'utf8'))?.butik || null;
+  // ⚠️ HELA filen, inte `butik:`-blocket. Mätt 2026-09-11 på CaraShell:
+  // `frakt:` och `retur:` ligger som EGNA toppnycklar i butiksfilen, syskon till
+  // `butik:` — inte inuti den. Returnerades bara `butik`-blocket fick
+  // villkorsskanningen `frakt: undefined` och `retur: undefined`, och då kan
+  // ingen av dess fyra regler någonsin lösa ut. Sjätte ytan friade alltså allt,
+  // tyst, för varje butik — precis det som skulle förhindras. Verifierat:
+  // "30 dagars öppet köp" mot CaraShells 14 gav [] före fixen, fynd efter.
+  const hela = lasYaml(readFileSync(fil, 'utf8'));
+  if (!hela) return null;
+  return { ...hela, ...(hela.butik || {}) };
 }
 
 /** Texterna som villkorsskanningen jämför, märkta med den yta de står på —
@@ -184,31 +199,76 @@ function ytaCopy(annons, extraOrd) {
 // ------------------------------------------------------------------ yta 2: talet
 
 /** Alla svenska transkript i repot, indexerade på filnamn utan ändelse. */
-export function läsTranskript(rot = SRT_ROT) {
+export function läsTranskript(rot = SRT_ROT, marknad = 'SE') {
+  // ⚠️ ORIGINAL OCH ÖVERSÄTTNING LIGGER I SAMMA MAPP. Mätt 2026-09-11 i
+  // market-expansion/no/video-batches/2026-09-11/srt-orig/: `*.orig.srt` är det
+  // SVENSKA källjudet, `*.srt` (utan .orig) är den NORSKA dubbningen — samma
+  // filnamn i övrigt. Läser den norska körningen `.orig.srt` dömer den norska
+  // annonser på svenskt tal, vilket är precis den förväxling FAS2 varnar för
+  // (HeimGuard: fem "träffar" som alla satt i översättningarna, inte i källan).
+  // Därför väljer marknaden ändelse, och de två uppsättningarna möts aldrig.
   const index = new Map();
+  const norsk = String(marknad).toUpperCase() === 'NO';
   const gå = (mapp) => {
     let poster;
     try { poster = readdirSync(mapp, { withFileTypes: true }); } catch { return; }
     for (const p of poster) {
       const full = join(mapp, p.name);
       if (p.isDirectory()) { gå(full); continue; }
-      if (!p.name.endsWith('.orig.srt')) continue;
-      index.set(p.name.replace(/\.orig\.srt$/i, '').toLowerCase(), full);
+      const ärOriginal = p.name.endsWith('.orig.srt');
+      if (norsk ? (ärOriginal || !p.name.endsWith('.srt')) : !ärOriginal) continue;
+      index.set(p.name.replace(/\.(orig\.)?srt$/i, '').toLowerCase(), full);
     }
   };
   gå(rot);
   return index;
 }
 
-/** Annonsnamn → transkriptnyckel: IBC_PD_1_H1 + slug "ibc" → ibc_pd_1_h1. */
+/** Annonsnamn → transkriptnyckel: IBC_PD_1_H1 + slug "ibc" → ibc_pd_1_h1.
+ *
+ *  ⚠️ Exakt namnlikhet räcker inte, och när den brister blir hela talytan
+ *  "okänd" — den dyraste ytan, den som avgör om HeyGen-krediter behövs.
+ *  Mätt 2026-09-11 på Takoverdrag: annonserna heter `Takoverdrag_CS_1_H1` och
+ *  `Takoverdrag_GT_1_H1`, medan redigerarens SRT-filer heter
+ *  `takoverdrag_CS_1.orig.srt` och `takoverdrag_G_1.orig.srt`. Två skillnader:
+ *    • hooksuffixet `_H1` finns i annonsnamnet men inte i filnamnet
+ *    • vinkeln förkortas olika (`GT` i kontot, `G` i filnamnet)
+ *  Alla tolv videor föll på det, och rapporten sa "inget transkript i repot"
+ *  fast alla tolv låg i repot.
+ *
+ *  Reserven matchar därför på KÄRNAN — vinkel + nummer — med två regler som
+ *  båda måste hålla: numret är identiskt, och vinkelbokstäverna är prefix av
+ *  varandra (G ↔ GT). Aldrig lösare än så: `SP_1` får aldrig matcha `SP_2`,
+ *  och `CS` aldrig `CO`. Exakt träff vinner alltid. */
 export function transkriptFör(annonsnamn, kalla, index) {
   const rest = annonsnamn.slice(String(kalla.annonsprefix).length).replace(/^_/, '');
-  for (const slug of slugLista(kalla)) {
+  const sluggar = slugLista(kalla);
+  for (const slug of sluggar) {
     const nyckel = `${slug}_${rest}`.toLowerCase();
     if (index.has(nyckel)) return { nyckel, fil: index.get(nyckel) };
   }
+  const sökt = kärna(rest);
+  if (!sökt) return null;
+  for (const slug of sluggar) {
+    const prefix = `${String(slug).toLowerCase()}_`;
+    for (const [nyckel, fil] of index) {
+      if (!nyckel.startsWith(prefix)) continue;
+      const k = kärna(nyckel.slice(prefix.length));
+      if (k && k.nummer === sökt.nummer && prefixAvVarandra(k.vinkel, sökt.vinkel)) {
+        return { nyckel, fil, via: 'kärna' };
+      }
+    }
+  }
   return null;
 }
+
+/** "CS_1_H1" → { vinkel: 'cs', nummer: '1' }. Hooksuffixet kastas. */
+export function kärna(rest) {
+  const m = String(rest).toLowerCase().match(/^([a-zåäö]+)_(\d+)(?:_h\d+)?$/i);
+  return m ? { vinkel: m[1], nummer: m[2] } : null;
+}
+
+const prefixAvVarandra = (a, b) => a === b || a.startsWith(b) || b.startsWith(a);
 
 function ytaTal(annons, kalla, index, extraOrd, ärVideo) {
   if (!ärVideo) return { yta: 'tal', tillämplig: false, dom: 'ej tillämplig (bildannons)' };
@@ -339,12 +399,28 @@ function kör(kommando, argv, tyst = true) {
 /** Hämtar media, drar frames ur videon och OCR:ar allt. Returnerar
  *  { <annonsnamn>: { typ, filer: [{ fil, sekund, texter: [...] }] } } */
 async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK) {
+  // Mappen bär prefixet, som skiljer sig per marknad (Takoverdrag ↔
+  // Takovertrekk_NO). Annars skriver den norska körningen över den svenskas
+  // frames och båda rapporterna pekar på samma bilder.
   const mediaMapp = join(ARBETSYTA, kalla.annonsprefix, 'media');
   mkdirSync(mediaMapp, { recursive: true });
   const ut = {};
 
-  const behöverVideo = annonser.some((a) => mediaAv(a).typ === 'video');
-  const källor = behöverVideo ? await videokällor(kalla.annonskonto, kalla.annonsprefix) : new Map();
+  // ⚠️ Id:na MÅSTE skickas med. Mätt 2026-09-11 på Takoverdrag: anropet stod utan
+  // tredje argumentet, så `saknadeIdn` blev [] och reservvägen "läs hela
+  // videobiblioteket" (rad 301) kunde per konstruktion aldrig lösa ut. Alla 12
+  // videor kom tillbaka "okänd" fast varenda source låg i kontot — filerna hette
+  // bara "PD_1.mp4" utan prefix. Lärdomen från 2026-09-08 fanns alltså i koden
+  // men var kopplad till ingenting.
+  const videoIdn = annonser
+    .map((a) => mediaAv(a))
+    .filter((m) => m.typ === 'video')
+    .flatMap((m) => [m.video_id, m.video_id_alt])
+    .filter(Boolean);
+  const behöverVideo = videoIdn.length > 0;
+  const källor = behöverVideo
+    ? await videokällor(kalla.annonskonto, kalla.annonsprefix, videoIdn)
+    : new Map();
   if (behöverVideo) {
     const antal = [...källor.keys()].filter((k) => !k.startsWith('titel:')).length;
     console.log(`  ${antal} videokällor lästa ur kontot`);
@@ -467,8 +543,8 @@ function ytaInbränd(annons, ocrPost, extraOrd) {
  *  OCR kan inte se en logotyp utan text, och den missar en textrad som ligger
  *  mellan två frames. Därför är ögongranskningen ett eget lager, sparat i
  *  repot: den ska överleva sessionen och gå att köra om utan att göras om. */
-export function läsSyn(utMapp) {
-  const fil = join(utMapp, 'brand-syn.json');
+export function läsSyn(utMapp, suffix = '') {
+  const fil = join(utMapp, `brand-syn${suffix}.json`);
   if (!existsSync(fil)) return null;
   return JSON.parse(readFileSync(fil, 'utf8'));
 }
@@ -709,16 +785,32 @@ function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, d
 async function main() {
   const produktId = flagga('produkt');
   if (!produktId) dö('Ange --produkt <id>, t.ex. --produkt tankguard.');
-  const { produkt, kalla, butik } = läsKälla(produktId);
+  const { produkt, kalla: kallaSE, butik } = läsKälla(produktId);
+
+  // ⚠️ NO-HALVAN ÄR INTE VALFRI (Axels bakläxa 2026-09-09). Detektorn läste
+  // förut bara SE-kampanjen, och FAS2 noterade resultatet: på TankGuard var
+  // inbränd text och bildattribution OLÄSTA på alla 33 norska annonser, och
+  // fem norska annonser bar brandet i COPYN där noll svenska gjorde det.
+  // `--marknad NO` läser det norska källkontot med samma sex ytor och skriver
+  // en egen rapport — en norsk annons ärver aldrig sin svenska systers dom.
+  const marknad = String(flagga('marknad', 'SE')).toUpperCase();
+  if (!['SE', 'NO'].includes(marknad)) dö(`--marknad ${marknad} finns inte. Välj SE eller NO.`);
+  const kalla = marknad === 'NO'
+    ? { ...kallaSE, annonskonto: kallaSE.no_annonskonto, annonsprefix: kallaSE.no_annonsprefix, kampanj_id: kallaSE.no_kampanj_id }
+    : kallaSE;
+  if (marknad === 'NO' && (!kalla.annonskonto || !kalla.annonsprefix)) {
+    dö(`produkter/${produktId}.yaml saknar kalla.no_annonskonto/kalla.no_annonsprefix — utan dem vet ingen körning vilka norska annonser som hör till butiken. Sätt dem, gissa aldrig.`);
+  }
+  const suffix = marknad === 'NO' ? '-no' : '';
   const extraOrd = kalla.extra_brandord || [];
   if (!butik) {
     console.log('  ⚠️ ingen butikskonfig hittad — villkorsjämförelsen (sjätte ytan) körs INTE.');
     console.log('     Annonserna kan alltså bära källbutikens fraktgräns utan att någon dom fångar det.');
   }
   const utMapp = join(ROT, 'factory', 'output', produktId);
-  const ocrFil = join(utMapp, 'brand-ocr.json');
+  const ocrFil = join(utMapp, `brand-ocr${suffix}.json`);
 
-  console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId}`);
+  console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId} · marknad ${marknad}`);
   console.log(`  källkonto ${kalla.annonskonto} · prefix ${kalla.annonsprefix}_`);
 
   const annonser = (await alla(`act_${kalla.annonskonto}/ads`, {
@@ -732,7 +824,7 @@ async function main() {
 
   let tathet = Number(flagga('tathet', TATHET_SEK));
   let ocr = {};
-  let ocrKälla = `factory/output/${produktId}/brand-ocr.json`;
+  let ocrKälla = `factory/output/${produktId}/brand-ocr${suffix}.json`;
   if (finns('hamta')) {
     console.log(`  hämtar media, drar frames var ${tathet} s och OCR:ar (0 krediter):`);
     ocr = await hämtaOchLäs(annonser, kalla, tathet);
@@ -751,8 +843,8 @@ async function main() {
     console.log('  ingen sparad OCR — yta 3 och 4 blir "okänd". Kör med --hamta.');
   }
 
-  const index = läsTranskript();
-  const syn = läsSyn(utMapp);
+  const index = läsTranskript(SRT_ROT, marknad);
+  const syn = läsSyn(utMapp, suffix);
   if (syn) console.log(`  ögongranskning från ${syn.datum} inläst (${Object.keys(syn.annonser || {}).length} annonser)`);
   const rader = [];
   for (const a of annonser) {
@@ -801,8 +893,8 @@ async function main() {
 
   if (finns('torr')) { console.log('\n' + md); return; }
   mkdirSync(utMapp, { recursive: true });
-  writeFileSync(join(utMapp, 'brand-detektor.md'), md);
-  writeFileSync(join(utMapp, 'brand-detektor.json'), JSON.stringify({ produkt: produktId, datum, kalla, annonser: rader }, null, 1));
+  writeFileSync(join(utMapp, `brand-detektor${suffix}.md`), md);
+  writeFileSync(join(utMapp, `brand-detektor${suffix}.json`), JSON.stringify({ produkt: produktId, marknad, datum, kalla, annonser: rader }, null, 1));
   if (finns('hamta')) {
     // Bara texten sparas, aldrig filerna: media är artefakter som dör med
     // containern, OCR-fynden är facit som måste gå att läsa om utan nedladdning.
@@ -810,9 +902,9 @@ async function main() {
       typ: p.typ, fel: p.fel,
       filer: (p.filer || []).map((f) => ({ fil: basename(f.fil), sekund: f.sekund, texter: f.texter })),
     }]));
-    writeFileSync(ocrFil, JSON.stringify({ produkt: produktId, datum, tathet, annonser: lätt }, null, 1));
+    writeFileSync(ocrFil, JSON.stringify({ produkt: produktId, marknad, datum, tathet, annonser: lätt }, null, 1));
   }
-  console.log(`\n✓ factory/output/${produktId}/brand-detektor.md`);
+  console.log(`\n✓ factory/output/${produktId}/brand-detektor${suffix}.md`);
   for (const d of Object.values(DOMAR)) {
     const n = rader.filter((r) => r.dom === d).length;
     if (n) console.log(`   ${d}: ${n}`);

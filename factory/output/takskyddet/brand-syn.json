@@ -1,0 +1,46 @@
+{
+  "produkt": "takskyddet",
+  "marknad": "SE",
+  "datum": "2026-09-11",
+  "granskare": "molnsession /ny-annonser carashell",
+  "vad_som_granskades": "De fyra bildannonserna öppnades i full upplösning (1024×1024) och lästes av ett öga, rad för rad. Videornas frames är INTE ögongranskade — de vilar på OCR var 0,3 s, och det står som en lucka i rapporten.",
+  "anteckning": "Ögonlagret svarar bara på BRANDfrågan (namn, ordmärke, bäversymbol, domän). Källbutikens VILLKOR är en egen yta och hanteras av villkorsskanningen — se anteckningarna per annons nedan för vad ögat såg där, men domen på den ytan sätts av reglerna, inte här.",
+  "annonser": {
+    "Takoverdrag_CS_2_1": {
+      "yta4": {
+        "syns": false,
+        "var": "ingenstans",
+        "ordagrant": "",
+        "logotyp_utan_text": false,
+        "notis": "Vit toppanel med '23% RABATT – IDAG', '1469 kr 1129 kr', 'Begränsat lager – slut när det är slut', '[ Köp innan det tar slut ]'. Foto på husbil med svart taköverdrag, orange grafik. Ingen bäversymbol, ingen domän, inget butiksnamn. ⚠️ Utanför brandfrågan: lagerbristpåståendet är inte sant för CaraShell och är bytt i CaraShellRoof_CS_2_1.jpg. Priset 1469→1129 är identiskt med butikens och orört."
+      }
+    },
+    "Takoverdrag_GT_2_1": {
+      "yta4": {
+        "syns": false,
+        "var": "ingenstans",
+        "ordagrant": "",
+        "logotyp_utan_text": false,
+        "notis": "'DEN PERFEKTA PRESENTEN TILL HUSVAGNS-ÄLSKAREN', underrubrik om 'tack snällt'-glad, inramad CTA '[ Ge presenten han faktiskt vill ha ]'. Julmiljö med hopvikt överdrag. Inget brandnamn, ingen symbol, inget pris, inga villkor. Helt ren — kopieras orörd."
+      }
+    },
+    "Takoverdrag_PD_2_1": {
+      "yta4": {
+        "syns": false,
+        "var": "ingenstans",
+        "ordagrant": "",
+        "logotyp_utan_text": false,
+        "notis": "'REGNET SKA INTE FÅ FÖRSTÖRA TAKET – TÄCK DET PÅ 5 MINUTER' över foto av husbil med överdraget, frostig uppställningsplats. Inget brandnamn, ingen symbol, inget pris, inga villkor. Helt ren — kopieras orörd."
+      }
+    },
+    "Takoverdrag_SP_2_1": {
+      "yta4": {
+        "syns": false,
+        "var": "ingenstans",
+        "ordagrant": "",
+        "logotyp_utan_text": false,
+        "notis": "Foto på husvagn med överdraget, beige citatruta och grön CTA-knapp. Ingen bäversymbol, ingen domän, inget butiksnamn. ⚠️ Utanför brandfrågan såg ögat TVÅ fel: bandet lovar '30 dagars öppet köp – full återbetalning' (CaraShell har 14 dagars ångerrätt) och citatet 'Satte den på taket på fem minuter, helt själv. Nu behöver jag inte oroa mig hela vintern.' – Verifierad kund, 58 år finns INTE bland butikens tio recensioner. Båda bytta i CaraShellRoof_SP_2_1.jpg."
+      }
+    }
+  }
+}

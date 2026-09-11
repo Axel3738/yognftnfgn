@@ -195,7 +195,24 @@ kalla:
   annonsprefix: "Takoverdrag"
   kampanj_id: "120250147343350291"
   kampanj: "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
-  srt_slug:
+  # NO-halvan, bekräftad mot Magiborsten NO 1050941584152547 2026-09-11:
+  # kampanjen "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11"
+  # (120252183519570233), 12 ACTIVE annonser i fyra adsets (G, PD, SP, CS),
+  # alla "Takovertrekk_NO_<vinkel>_<n>". Produkten heter alltså INTE samma sak
+  # på norska — utan det här fältet faller kallannonser.mjs tillbaka på
+  # DryTreks mönster `gamasj|damask` och läser fel produkt.
+  no_kampanjmonster: "takovertrekk|campingvogn"
+  no_annonskonto: "1050941584152547"
+  no_annonsprefix: "Takovertrekk_NO"
+  no_kampanj_id: "120252183519570233"
+  no_kampanj: "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11"
+  # De tolv SVENSKA originaltranskripten ligger gratis i repot:
+  # market-expansion/no/video-batches/2026-09-11/srt-orig/takoverdrag_*.orig.srt
+  # (NO-batchen 2026-09-11 lade dem där). Utan fältet blir talytan "okänd" på
+  # varenda video och varenda dom blir "okänd" — mätt 2026-09-11.
+  # ⚠️ Annonsnamnen säger GT, filnamnen säger G: Takoverdrag_GT_1_H1 ↔
+  # takoverdrag_G_1.orig.srt. Kärnmatchningen i brand-detektorn klarar det.
+  srt_slug: "takoverdrag"
 kallor:
   drive_mapp: ""
 

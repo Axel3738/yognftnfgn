@@ -174,6 +174,92 @@ TankGuard Bäverbutikens fraktgräns och visar Bäverbutikens recensenter.
 en inbränd brandrad; läser någon bara domen kommer den tillbaka från HeyGen med
 Bäverbutiken kvar i bild.
 
+### ✅ KÖRD 2026-09-11 — CaraShell (taköverdraget)
+
+**16 svenska källannonser** i `Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63`
+(MagiBorsten `120250147343350291`) + **12 norska** i `Takovertrekk Campingvogn NO`
+(Magiborsten NO `120252183519570233`). Alla 28 ACTIVE i ACTIVE adsets.
+
+Den här körningen hittade **fyra fel i själva detektorkedjan**, alla av samma
+sort: en spärr som fanns i koden men inte var kopplad till något, så den friade
+allt tyst. Alla fyra är fixade och har regressionstester.
+
+1. ⚠️ **Reservvägen "läs hela videobiblioteket" var död kod.** `videokällor()`
+   tar `saknadeIdn` som tredje argument, men anropet i `hämtaOchLäs()` skickade
+   det aldrig — så listan var alltid tom och fallbacken kunde per konstruktion
+   inte lösa ut. Alla 12 videor kom tillbaka `okänd` med "ingen source i kontots
+   advideos", fast varenda source låg i kontot: filerna heter `PD_1.mp4`, utan
+   prefix, så `advideos?title=Takoverdrag` gav noll. Lärdomen från 2026-09-08
+   fanns alltså redan skriven — den var bara inte inkopplad. Efter fixen:
+   1 159 videokällor lästa, 16 av 16 annonser hämtade.
+   *(Sidofynd: `/{video_id}?fields=source` svarar numera OK med den här token.
+   Den gamla noteringen om "(#10) permission" gäller inte längre. Behåll ändå
+   advideos-vägen — den är en läsning i stället för 25.)*
+2. ⚠️ **Villkorsskanningen fick fel objekt och friade ALLT, för alla butiker.**
+   `läsButik()` returnerade `yaml.butik`, men `frakt:` och `retur:` ligger som
+   EGNA toppnycklar i `factory/butiker/<id>.yaml` — syskon till `butik:`, inte
+   inuti den. `byggRegler()` fick alltså `frakt: undefined` och
+   `retur: undefined`, och ingen av dess fyra regler kunde någonsin lösa ut.
+   Sjätte ytan — den som byggdes efter HeimGuard-bakläxan — hade aldrig
+   fungerat. Verifierat: "30 dagars öppet köp" mot CaraShells 14 gav `[]` före
+   fixen, fynd efter.
+3. ⚠️ **TALET STAVAR UT SIFFRORNA.** Transkripten säger "Trettio dagars öppet
+   köp", inte "30". Sifferregeln matchade inte, så tre videor med ett UTTALAT
+   villkorsfel friades. Talytan är den dyraste att rätta (omdubb), så missen
+   kostade mest just där. Nu finns en ordlista (svenska OCH norska: tretti,
+   fjorten, ti …) och `talAvOrd()`.
+4. ⚠️ **DIAKRITERNA ÖVERLEVER INTE OCR:EN.** OCR:en läste bildbandet ordagrant
+   som `"30 dagars oppet kop - full aterbetalning"` — utan ö och å. Regeln krävde
+   "öppet köp" och matchade ingenting, så ett INBRÄNT villkorsfel gick igenom
+   tyst medan exakt samma fel i copyn fångades. Eftersom inbränd text bara kan
+   läsas via OCR var hela den ytan blind för villkor. `brandord.mjs` har ett
+   fuzzy-pass av precis det skälet; villkorsreglerna hade inget. Vokalerna står
+   nu som teckenklasser: `[öo]ppet k[öo]p`, `[åa]pent kj[øo]p`, `[åa]nger`.
+
+**Två saker till som är nya i kedjan:**
+
+- **`--marknad NO` finns nu i brand-detektorn.** Förut läste den bara
+  SE-kampanjen, och FAS2 noterade följden: på TankGuard var inbränd text och
+  bildattribution OLÄSTA på alla 33 norska annonser. NO-körningen skriver
+  `brand-detektor-no.{md,json}` och `brand-ocr-no.json`, och `rakning.mjs`
+  läser BÅDA filerna — annars står varenda norsk annons som `odömd` och
+  räkningen kan aldrig bli grön.
+- ⚠️ **Original och översättning ligger i SAMMA mapp.** I
+  `market-expansion/no/video-batches/<datum>/srt-orig/` är `*.orig.srt` det
+  SVENSKA källjudet och `*.srt` (utan `.orig`) den NORSKA dubbningen — samma
+  filnamn i övrigt. `läsTranskript()` tar därför marknaden som argument och
+  väljer ändelse. Utan det dömer den norska körningen norska annonser på svenskt
+  tal, vilket är precis den förväxling som gav HeimGuard fem falska träffar.
+- ⚠️ **Transkriptnamnen matchar inte annonsnamnen.** Annonserna heter
+  `Takoverdrag_CS_1_H1` och `Takoverdrag_GT_1_H1`; SRT-filerna
+  `takoverdrag_CS_1` och `takoverdrag_G_1`. Två skillnader: hooksuffixet `_H1`
+  saknas i filnamnet, och vinkeln förkortas olika (`GT` i kontot, `G` i filen).
+  Exakt namnmatchning missade ALLA TOLV. `transkriptFör()` matchar nu på kärnan
+  — vinkel + nummer — med två regler som båda måste hålla: numret identiskt,
+  vinkelbokstäverna prefix av varandra. `SP_1` tar aldrig `SP_2`, `CO` aldrig `CS`.
+
+**Domarna efter alla fixar (SE, 16 annonser):** `ren` 9 · `bara-copy` 3 ·
+`kräver-omdubb` 3 · `kräver-slutkortsbygge` 1.
+
+**Tre saker om själva materialet, värda att ta med till nästa butik:**
+
+1. **Priset var identiskt — igen.** Källan säljer 1 129 kr (jämförpris 1 469 kr,
+   23 %) och CaraShell gör detsamma. Noll pristal behövde ändras i den svenska
+   halvan. HeimGuard hade samma tur. TankGuards fall (489/636 mot eget pris) är
+   undantaget, inte regeln — men kolla ALLTID, det är gratis.
+2. **Det som faktiskt var fel var villkoren och den sociala proofen**, precis
+   som på HeimGuard: "30 dagars öppet köp" (CaraShell har 14 dagars ångerrätt)
+   i copy, i tal OCH inbränt i bild, plus ett kundcitat från "Verifierad kund,
+   58 år" som inte finns bland butikens tio recensioner, plus "Begränsat lager
+   – slut när det är slut" som butiken inte kan stå bakom.
+3. ⚠️ **Produktpåståenden kan vara obelagda utan att vara villkorsfel.**
+   Källans PD-manus säger "rem och dragsko" och "medföljande förvaringspåse".
+   CaraShells produktfil säger uttryckligen att båda är OKÄNDA och aldrig får
+   påstås — de syns inte i leverantörsbilderna. Ingen regel i detektorn fångar
+   det: det är varken brand, pris eller butiksvillkor. Copyn rättades; talet
+   står kvar och är namngivet. **Läs produktfilens "okänt och därför aldrig
+   påstått"-rader för hand vid varje ny butik** — det finns ingen spärr.
+
 ### ✅ KÖRD 2026-09-08 — HeimGuard (butik nr 1)
 
 **40 källannonser i `Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21`,

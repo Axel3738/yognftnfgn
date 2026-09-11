@@ -15,8 +15,9 @@ import { fileURLToPath } from 'node:url';
 import { sökBrand, normalisera, avstånd } from '../brandord.mjs';
 import {
   copyFält, länkAv, mediaAv, klassa, transkriptFör, läsTranskript, replikerMedBrand,
-  attGöra, sökVillkor, vägSamman, källaViaTitel, villkorstexter,
+  attGöra, sökVillkor, vägSamman, källaViaTitel, villkorstexter, läsButik, kärna,
 } from '../brand-detektor.mjs';
+import { skannaVillkor } from '../villkorsskanning.mjs';
 import { lasYaml } from '../yaml.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -319,4 +320,68 @@ test('varje produktfil med kalla-block pekar på rätt källkonto', () => {
     assert.equal(p.kalla.annonskonto, '1867947880635861', id);
     assert.ok(p.kalla.annonsprefix, `${id} saknar annonsprefix`);
   }
+});
+
+// ------------------------------------------------- butikskonfigens form
+// ⚠️ Mätt 2026-09-11 på CaraShell: `frakt:` och `retur:` är EGNA toppnycklar i
+// factory/butiker/<id>.yaml, syskon till `butik:` — inte inuti den. läsButik()
+// returnerade bara `butik`-blocket, så villkorsskanningen fick frakt/retur =
+// undefined och ingen av dess regler kunde lösa ut. Sjätte ytan friade alltså
+// allt, tyst, för varje butik. Testet läser den riktiga filen: flyttas fälten
+// igen ska det här gå sönder, inte annonserna.
+test('läsButik ger villkorsskanningen frakt och retur ur den riktiga butiksfilen', () => {
+  const butik = läsButik('takskyddet');
+  assert.ok(butik, 'ingen butikskonfig hittad för takskyddet');
+  assert.equal(typeof butik.frakt, 'object', 'butik.frakt saknas — villkorsreglerna kan inte lösa ut');
+  assert.equal(typeof butik.retur, 'object', 'butik.retur saknas — villkorsreglerna kan inte lösa ut');
+  assert.equal(butik.retur.oppet_kop_dagar, 14);
+  // Fälten ur `butik:`-blocket ska fortfarande finnas kvar.
+  assert.equal(butik.id, 'carashell');
+
+  const fynd = skannaVillkor([{ yta: 'copy', text: '30 dagars öppet köp' }], butik);
+  assert.equal(fynd.length, 1, 'villkorsregeln löste inte ut mot den riktiga butiksfilen');
+});
+
+// ---------------------------------------------- transkript: kärnmatchningen
+// ⚠️ Mätt 2026-09-11 på Takoverdrag: annonserna heter Takoverdrag_CS_1_H1 och
+// Takoverdrag_GT_1_H1, SRT-filerna takoverdrag_CS_1 och takoverdrag_G_1. Exakt
+// namnmatchning missade ALLA TOLV videor och rapporten sa "inget transkript i
+// repot" fast varenda ett låg där. Talytan blev okänd på hela kampanjen.
+
+const KALLA_TAK = { annonsprefix: 'Takoverdrag', srt_slug: 'takoverdrag' };
+const INDEX_TAK = new Map([
+  ['takoverdrag_cs_1', '/x/takoverdrag_CS_1.orig.srt'],
+  ['takoverdrag_cs_2', '/x/takoverdrag_CS_2.orig.srt'],
+  ['takoverdrag_g_1', '/x/takoverdrag_G_1.orig.srt'],
+  ['takoverdrag_sp_1', '/x/takoverdrag_SP_1.orig.srt'],
+  ['takoverdrag_pd_2', '/x/takoverdrag_PD_2.orig.srt'],
+]);
+
+test('hooksuffixet _H1 hindrar inte träff', () => {
+  const t = transkriptFör('Takoverdrag_CS_1_H1', KALLA_TAK, INDEX_TAK);
+  assert.equal(t?.fil, '/x/takoverdrag_CS_1.orig.srt');
+});
+
+test('GT i kontot hittar G i filnamnet', () => {
+  const t = transkriptFör('Takoverdrag_GT_1_H1', KALLA_TAK, INDEX_TAK);
+  assert.equal(t?.fil, '/x/takoverdrag_G_1.orig.srt');
+});
+
+test('numret måste stämma exakt — SP_3 får inte ta SP_1', () => {
+  assert.equal(transkriptFör('Takoverdrag_SP_3_H1', KALLA_TAK, INDEX_TAK), null);
+});
+
+test('vinkeln får inte glida — CO tar aldrig CS', () => {
+  assert.equal(transkriptFör('Takoverdrag_CO_1_H1', KALLA_TAK, INDEX_TAK), null);
+});
+
+test('exakt träff vinner över kärnmatchningen', () => {
+  const index = new Map([['takoverdrag_cs_1_h1', '/x/exakt.srt'], ['takoverdrag_cs_1', '/x/karna.srt']]);
+  assert.equal(transkriptFör('Takoverdrag_CS_1_H1', KALLA_TAK, index).fil, '/x/exakt.srt');
+});
+
+test('kärna() kastar hooksuffixet men behåller vinkel och nummer', () => {
+  assert.deepEqual(kärna('CS_1_H1'), { vinkel: 'cs', nummer: '1' });
+  assert.deepEqual(kärna('PD_2'), { vinkel: 'pd', nummer: '2' });
+  assert.equal(kärna('Extra'), null);
 });

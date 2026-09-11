@@ -16,6 +16,27 @@
 //
 // Läser bara. Kostar ingenting.
 
+/** Siffra ur ett tal skrivet med bokstäver — eller ur en siffra, orörd.
+ *  Transkripten stavar ut talen ("trettio dagars öppet köp"), copyn använder
+ *  siffror ("30 dagars öppet köp"). Samma regel måste klara båda. */
+export function talAvOrd(x) {
+  // Svenska OCH norska former — transkripten är på båda språken.
+  const ORD = { ti: 10, tio: 10, tolv: 12, fjorton: 14, fjorten: 14, femton: 15, nitton: 19,
+    tjugo: 20, tjue: 20, trettio: 30, tretti: 30, sextio: 60, seksti: 60, nitti: 90 };
+  const n = Number(x);
+  return Number.isFinite(n) ? n : (ORD[String(x).toLowerCase()] ?? NaN);
+}
+
+// ⚠️ DIAKRITERNA ÖVERLEVER INTE OCR:EN. Mätt 2026-09-11 på Takoverdrag_SP_2_1:
+// den lokala OCR:en läste bildens band ordagrant som
+//     "30 dagars oppet kop - full aterbetalning"
+// — utan ö och å. Regeln krävde "öppet köp" och matchade därför ingenting, så
+// ett INBRÄNT villkorsfel gick igenom tyst medan samma fel i copyn (där texten
+// är exakt) fångades. Eftersom inbränd text bara kan läsas via OCR betyder det
+// att hela den ytan var blind för villkor. brandord.mjs har ett fuzzy-pass av
+// precis det här skälet; de här reglerna hade inget. Därför står vokalerna som
+// teckenklasser: [öo], [åa], [øo] — aldrig som ett enda tecken.
+
 /** Regler som jämför en textrad mot butikens egna villkor.
  *  Varje regel: hittar den ett påstående, och stämmer påståendet? */
 export function byggRegler(butik) {
@@ -40,14 +61,20 @@ export function byggRegler(butik) {
     },
     {
       id: 'öppet köp',
-      re: /(\d+)\s*dagar?s?\s*(öppet\s*köp|åpent\s*kjøp|nöjd|fornøyd|garanti|pengarna tillbaka)/i,
-      fel: (m, n) => oppetKop != null && Number(n) !== Number(oppetKop),
-      text: (m, n) => `säger ${n} dagar — butiken har ${oppetKop}`,
+      re: /(\d+)\s*dag(?:ar|er|ars|ers|s)?\s*([öo]ppet\s*k[öo]p|[åa]pent\s*kj[øo]p|n[öo]jd|forn[øo]yd|garanti|pengarna tillbaka)/i,
+      // ⚠️ TALET SKRIVS UT I BOKSTÄVER I TRANSKRIPTEN. Mätt 2026-09-11 på
+      // takoverdrag_CS_1/2/3: HeyGens SRT säger "Trettio dagars öppet köp om du
+      // ångrar dig" — sifferregeln ovan hittar ingenting, och tre videor med ett
+      // uttalat villkorsfel friades. Ytan är den dyraste (tal ⇒ omdubb), så en
+      // miss här kostar mest av alla.
+      re2: /(tio|ti|tolv|fjorton|fjorten|femton|tjugo|tjue|trettio|tretti|sextio|seksti|nitti|nitton)\s*dag(?:ar|er|ars|ers|s)?\s*([öo]ppet\s*k[öo]p|[åa]pent\s*kj[øo]p|n[öo]jd|forn[øo]yd|garanti|pengarna tillbaka)/i,
+      fel: (m, n) => oppetKop != null && talAvOrd(n) !== Number(oppetKop),
+      text: (m, n) => `säger ${talAvOrd(n)} dagar — butiken har ${oppetKop}`,
       taSiffra: true,
     },
     {
       id: 'ångerrätt',
-      re: /(\d+)\s*dagars?\s*ånger/i,
+      re: /(\d+)\s*dag(?:ar|er|ars|ers|s)?\s*[åa]nger/i,
       fel: (m, n) => angerratt != null && Number(n) !== Number(angerratt),
       text: (m, n) => `säger ${n} dagars ångerrätt — butiken har ${angerratt}`,
       taSiffra: true,

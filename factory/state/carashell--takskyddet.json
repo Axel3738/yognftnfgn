@@ -52,6 +52,55 @@
       "klar": true,
       "status": "ACTIVE",
       "publicerad": true
+    },
+    "annonser": {
+      "klar": false,
+      "korning": "/ny-annonser carashell 2026-09-11",
+      "kallor": {
+        "SE": {
+          "konto": "1867947880635861",
+          "kampanj": "120250147343350291",
+          "annonser": 16
+        },
+        "NO": {
+          "konto": "1050941584152547",
+          "kampanj": "120252183519570233",
+          "annonser": 12
+        }
+      },
+      "malkonto": "915422744950975",
+      "kampanjer": {
+        "SE": {
+          "id": "120249050544990172",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,63 | 2026-09-11",
+          "status": "PAUSED",
+          "adsets": [
+            "PD",
+            "GT",
+            "SP",
+            "CS"
+          ],
+          "annonser": 0
+        },
+        "NO": {
+          "id": "120249050596730172",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,63 | 2026-09-11",
+          "status": "PAUSED",
+          "adsets": [
+            "PD",
+            "SP",
+            "G"
+          ],
+          "annonser": 0
+        }
+      },
+      "media_uppe": {
+        "videor": 21,
+        "bilder": 4
+      },
+      "rakning": "DELVIS KLART (exit 1) — 0 av 28 annonser uppe",
+      "blockerare": "Meta-sidan 1381171778405935 går inte att annonsera med (error_subcode 1815813). Media, kampanjer och adsets ligger uppe och väntar.",
+      "manuell": "Axel ger sig själv rollen på CaraShell-sidan i Business Manager (business.facebook.com/settings/pages → CaraShell → Lägg till personer → Hantera sida). Kör sedan om de tre vågkonfigarna."
     }
   },
   "qa": {
@@ -59,5 +108,5 @@
     "kritiska": [],
     "tid": "2026-09-10T23:07:38.577Z"
   },
-  "uppdaterad": "2026-09-10T23:07:39.433Z"
+  "uppdaterad": "2026-09-11T11:11:59.087Z"
 }

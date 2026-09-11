@@ -3,6 +3,10 @@
 //
 //   node factory/rakning.mjs <butik-id> [--marknad SE|NO] [--torr]
 //
+// Orsaken till att en annons saknas fylls i i factory/output/<id>/orsaker.json
+// ({ "<annonsnamn>": "orsak" }) — den ändrar aldrig räkningen eller exitkoden,
+// bara skillnaden mellan "vi vet varför" och "ingen har tittat".
+//
 // Bakgrunden (Axels bakläxa 2026-09-09): `/ny-annonser` byggde 10 annonser av
 // 33 möjliga för TankGuard och rapporterade "klart". Kommandofilens steg 9
 // BESKREV en räkning — men ingen kod räknade, så räkningen hoppades över. Och
@@ -617,7 +621,19 @@ async function kör() {
   }
 
   const utMapp = join(ROT, 'output', butikId);
-  const brandDetektor = läsJson(join(utMapp, 'brand-detektor.json'));
+  // ⚠️ BÅDA marknadernas domar. brand-detektor.json är SE-körningen,
+  // brand-detektor-no.json den norska (`--marknad NO`). Läses bara den förra
+  // står varenda norsk annons som `odömd` — och odömd räknas som saknad, så
+  // räkningen kan aldrig bli grön hur mycket som än ligger uppe. Domarna slås
+  // upp på exakt namn, så uppsättningarna kan slås ihop utan att en norsk
+  // annons ärver sin svenska systers dom (namnen skiljer sig: Takoverdrag_PD_1_H1
+  // mot Takovertrekk_NO_PD_1).
+  const brandSE = läsJson(join(utMapp, 'brand-detektor.json'));
+  const brandNO = läsJson(join(utMapp, 'brand-detektor-no.json'));
+  const brandDetektor = (brandSE || brandNO)
+    ? { ...(brandSE ?? brandNO), annonser: [...(brandSE?.annonser ?? []), ...(brandNO?.annonser ?? [])] }
+    : null;
+  if (brandNO) console.log(`  domar inlästa: SE ${brandSE?.annonser?.length ?? 0} · NO ${brandNO.annonser?.length ?? 0}`);
   const kallannonser = läsJson(join(utMapp, 'kallannonser.json'));
   if (!brandDetektor && !kallannonser) {
     console.error(`✗ Varken brand-detektor.json eller kallannonser.json finns i factory/output/${butikId}/.`);
@@ -630,6 +646,26 @@ async function kör() {
     kallannonser,
     kallkonto: p.kalla?.annonskonto ?? brandDetektor?.kalla?.annonskonto,
   });
+
+  // ORSAKERNA. Rapporten skriver "orsak saknas — måste namnges" på varje saknad
+  // rad som ingen förklarat, och kommandot säger: fyll i den, ta aldrig bort
+  // raden. Utan en plats att fylla i den på var uppmaningen omöjlig att följa.
+  // factory/output/<id>/orsaker.json är den platsen:
+  //     { "<annonsnamn>": "varför den inte ligger uppe" }
+  // Den ÄNDRAR ingenting i räkningen — en namngiven orsak gör inte en saknad
+  // annons uppladdad, och exitkoden påverkas inte. Den gör bara skillnad på
+  // "vi vet varför" och "ingen har tittat".
+  const orsaker = läsJson(join(utMapp, 'orsaker.json')) || {};
+  if (Object.keys(orsaker).length) {
+    let n = 0;
+    for (const rader of Object.values(perMarknad)) {
+      for (const rad of rader ?? []) {
+        const namn = rad.annons ?? rad.namn;
+        if (namn && orsaker[namn] && !rad.orsak) { rad.orsak = orsaker[namn]; n++; }
+      }
+    }
+    console.log(`  orsaker inlästa: ${n} av ${Object.keys(orsaker).length} matchade en källannons`);
+  }
   const marknader = valdMarknad ? [valdMarknad] : Object.keys(KONTON);
 
   console.log(`Räkningen — ${butikId} · brandprefix ${brandprefix}_ · målkonto ${konto} (${MALKONTO.namn})`);

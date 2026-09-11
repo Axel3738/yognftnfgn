@@ -1,0 +1,1168 @@
+{
+  "SE": {
+    "konto": {
+      "id": "1867947880635861",
+      "namn": "MagiBorsten",
+      "valuta": "SEK"
+    },
+    "annonser": [
+      {
+        "id": "120250147378530291",
+        "namn": "Takoverdrag_PD_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147368540291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1972027233475931",
+          "image_hash": "a2facf442ed5cb9cece8c2c3711cbebe",
+          "image_url": null,
+          "video_id": "1377117594536603",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801326230_1377117607869935_1007887884069356890_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=t_7tLMVqKSMQ7kNvwHJCxNq&_nc_oc=Adpc33WFzyzMAyaYKwaCH_7bIbZVi88gbBFIIsmA1iUsvNk0GUTyic388kd-DAZXCf4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQLJyxaBo6B6sJv1dcJMpnKOq6SSOq4rPuuK1gBuFB1bJCz_NZXPEGH6fdwE9ltCWKfnQOSREC9Vng&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKW0KSFznVD1tvKpAfwrzCbd1fYMtAWkHiyvsIhKr0eyw&oe=6AA986DF",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Taket på husvagnen är den ytan du aldrig kollar – och den som kostar mest att laga. 🏕️\r\n✅ Skyddar mot regn, snö och UV hela vintern\r\n✅ Spänns fast med rem och dragsko – klart på minuter\r\n✅ En person klarar det helt själv\r\n✅ Ryms i egen förvaringspåse när den inte används\r\nSkydda husvagnens tak innan vintern gör det dyrt. 👇",
+          "headline": "Husvagnstaket – helt skyddat i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1799.07,
+          "kop": 6,
+          "roas": 3.765279
+        },
+        "med": true
+      },
+      {
+        "id": "120250147364200291",
+        "namn": "Takoverdrag_GT_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147357110291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1686534046810476",
+          "image_hash": "b5232f446d3bfbeaaeb2b24acf80aedd",
+          "image_url": null,
+          "video_id": "2303666127122941",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801304893_2303666147122939_5676679601077851606_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=EJtfGJO2ryQQ7kNvwGE3yjM&_nc_oc=AdpbVAakLTZZoKYYvl7LNPVoVrAI7hcYmfwqgTz5RpdFojTNn3OP9cZiBCJpxZdXZiY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQJsY21BW_y_7DGIL5kM332kZgK9LoHx_J5M9qrnieEtZ6X19ZY3aAv8vmqRkYgKkmSlQdnstr97gw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKaHiBV3MJuRUUHiY6QqK9PnKeHXwPd_UQKGtgxeGOj3w&oe=6AA9BBD2",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han pratar om husvagnen som om den vore ett husdjur. 😅 I år hittade jag äntligen något han faktiskt blir glad för.\r\n🎁 Ett taköverdrag som skyddar hans husvagn hela vintern\r\n🎁 Något han faktiskt använder – om och om igen\r\n🎁 Levereras enkelt hem, klart att slå in\r\nGe en present som visar att du fattar vad han bryr sig om. 👇",
+          "headline": "Presenten han faktiskt blir glad för",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 499.32,
+          "kop": 4,
+          "roas": 9.0443
+        },
+        "med": true
+      },
+      {
+        "id": "120250147375290291",
+        "namn": "Takoverdrag_PD_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147368540291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1085224620753859",
+          "image_hash": "9e9bac6713e60a25b2ac192d232ffa92",
+          "image_url": null,
+          "video_id": "3290430587822785",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801070498_3290430604489450_1289601282000518132_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=6fhDDolIynsQ7kNvwHB3b3k&_nc_oc=AdpiOe_YKsDgd3t3gkCaFtepzQgfk31Mjigw5XEBU2nm1yn0DVaQVmJjeFncwhxKsP8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQLAAXzJNBKrdP5H37ym6G5JuWxS2N9hZEg9mD_QQKGZgs9JV6cofIfYKDIzPXN9M14fQJFl0gjfFA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL806gIiVa2fUndfd7MDyfns2izh5JnK9vlQfqCQX0WxA&oe=6AA98992",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Taket på husvagnen är den ytan du aldrig kollar – och den som kostar mest att laga. 🏕️\r\n✅ Skyddar mot regn, snö och UV hela vintern\r\n✅ Spänns fast med rem och dragsko – klart på minuter\r\n✅ En person klarar det helt själv\r\n✅ Ryms i egen förvaringspåse när den inte används\r\nSkydda husvagnens tak innan vintern gör det dyrt. 👇",
+          "headline": "Husvagnstaket – helt skyddat i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 237.37,
+          "kop": 2,
+          "roas": 9.512575
+        },
+        "med": true
+      },
+      {
+        "id": "120250147352270291",
+        "namn": "Takoverdrag_CS_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147343780291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2057830441518324",
+          "image_hash": "5dbfc5d7c2d86a1e5bd4fee081785bed",
+          "image_url": null,
+          "video_id": "920635730670916",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801395762_920635747337581_7771864641465884115_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=XK1vjtYdyywQ7kNvwG81Gml&_nc_oc=AdpCpk_Yn2sFwqIwIlNS29anxFbRH2AbztVCwECh86a4NZl1H_IcoecnU3sgg1Evb9k&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQKK-I6-siK3j0iJRbK0XrSG4Kr2KdpXikFOFkVQJad2j8PUdP5vPquon-Vt-_2qm3kWf-84paEOpA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIkdEzYLWLN2utxpWOOjWTlWfklAsbLcxVFxtuYORqZWg&oe=6AA9BC39",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "🔥 23% RABATT PÅ HUSVAGNENS TAKÖVERDRAG – IDAG 🔥\r\n1469 kr → 1129 kr\r\nLagret är begränsat och priset gäller bara ett tag till.\r\nVintern kommer oavsett – se till att taket är skyddat innan det är för sent.\r\nSäkra ditt innan det är slut i lager. 👇",
+          "headline": "Husvagnstaket – helt skyddat i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 172.09,
+          "kop": 1,
+          "roas": 6.560521
+        },
+        "med": true
+      },
+      {
+        "id": "120250147381880291",
+        "namn": "Takoverdrag_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147368540291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1409906817950510",
+          "image_hash": "4ac20e92ce83702a12d939b7bc5c9286",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/800796763_2056751888371737_5134288987302630609_n.png?stp=dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=ff4730&_nc_ohc=jV1yj0L0a2EQ7kNvwEccYIC&_nc_oc=AdrWuOTDlUKo8-zs-f-c0L900tKOyIjuMvCrb7drvFLsdOUuOQqnaQ2E7DRHFjR2geA&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQJGw_uxcABob1GXgUl4Yinf49YcEU8e21UIxZ5yi3ziyVvsGledXYety8v2A0KJIVl1k7qE5aSohA&oh=00_AQIC29awx4skR7jfvdJaJE0syjsEHVFU3WhMOrTFYjw0mA&oe=6AA98899",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/8175783772218717381?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIQex-ZeuuXDhZD6yj7DeS2lfFCvHmOFkqeU-A4pPetrvoxewJcxxyGvLvp5bAvMaaxDMsXKZlXuzrzky3Gn7mUUXq36uLxbPaz9esR2HvoqperE5NaAG5LZ61sKubN-K_QqLuixhVq47zmVdI5E6Hr&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJB0AZDYCXVSlFHIlgSt7WbkjBUIW7OO44AbDLHHLuU43MjmwTQCzekK_IUp_Xp8pxQ_Zri9Wx1ng&oh=06_Q3_DAZxRAUf82xqoFIv1ez56DZrXhJ5jrIjNmUKOBxdG2pe0&oe=6AA5C908",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Taket på husvagnen är den ytan du aldrig kollar – och den som kostar mest att laga. 🏕️\r\n✅ Skyddar mot regn, snö och UV hela vintern\r\n✅ Spänns fast med rem och dragsko – klart på minuter\r\n✅ En person klarar det helt själv\r\n✅ Ryms i egen förvaringspåse när den inte används\r\nSkydda husvagnens tak innan vintern gör det dyrt. 👇",
+          "headline": "Husvagnstaket – helt skyddat i vinter",
+          "description": "Enkelt taköverdrag, 6,5 × 3 m. Fri frakt.",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 168.85,
+          "kop": 1,
+          "roas": 6.686408
+        },
+        "med": true
+      },
+      {
+        "id": "120250147392200291",
+        "namn": "Takoverdrag_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147382130291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1060323083638837",
+          "image_hash": "4023053664c33ab3f4f79f7d3c73b300",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799770920_2056752751704984_7842024527406388136_n.png?stp=dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=ff4730&_nc_ohc=5_nSJqG_9HAQ7kNvwH3sR-7&_nc_oc=Adpnss--9BTkFweFT2bY5RTtS8CV_pX6IgtaG9_ONfjR6xAudbcLELqC_-VE3C2vtYg&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQLR2amdttPOlvEUgg2LwTEoK8-gGb2hBz0mVisory5KiASQ3LyrMg_lNXoFJFrK2UQ42Pp8SKF-Vg&oh=00_AQL1fnzabg0uIw4bOnOceYi2o9nDuFA6CdznwiJxWC9l-w&oe=6AA99437",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/10008234231882903051?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKrSmJZpQw0VXfhRJ1H6GS6g0HOQ3jMinmnuUleLdO2nsEWVXKHwyu305DQSolzr-XwKTGPNk4-MfY-X6NKtBarOVnlBaKjctICIqvnTH5PYsV0LL1RfSD56tuU8haG6hp_ATrrsCCQAXDn6Awur1Xr&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIcbXnphT1bhTT20XAaCswBdiRKOgniAx4tSr3TKh1jJPqgQRA21ryN37aoGsyUZHPCLetHB03T5g&oh=06_Q3_DAcy93YqM1vX_eidX8bCNq8K_TWvmjrh42gqfuKuGRw3L&oe=6AA5BB01",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyddar taket mot regn, snö och smuts\r\n✅ En person sätter på det själv – ingen hjälp behövs\r\n✅ 30 dagars öppet köp om du inte är nöjd\r\nLäs varför husvagnsägare väljer det här inför varje vinter. 👇",
+          "headline": "Husvagnsägare älskar det här skyddet",
+          "description": "Betygsatt av riktiga kunder. Fri frakt.",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 156.62,
+          "kop": 1,
+          "roas": 7.20853
+        },
+        "med": true
+      },
+      {
+        "id": "120250147380520291",
+        "namn": "Takoverdrag_PD_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147368540291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1450134746956855",
+          "image_hash": "36af6292c523e3a82b72eee898471d44",
+          "image_url": null,
+          "video_id": "1048493968185083",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800993298_1048493988185081_8813790457362343052_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=Yjo4BtDuNFgQ7kNvwEOwOX7&_nc_oc=AdrSCQ_GtP2J_d2w0HXo1Yb4nsoUX0riV1a2enF51YvhEC0zEWLyFolknl6RpQfmQ6A&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQImfz01Mg-4yc30vD1MuXjT6rjZJ-1JKXECT8kYw3W4BWJuQDSRaxuvv1BngHzk5qzD-aRVyth0SQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJOsj57L6DndP1NRP7VDS23VXvx4Ig4KNl769aJYcSqMA&oe=6AA9A17C",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Taket på husvagnen är den ytan du aldrig kollar – och den som kostar mest att laga. 🏕️\r\n✅ Skyddar mot regn, snö och UV hela vintern\r\n✅ Spänns fast med rem och dragsko – klart på minuter\r\n✅ En person klarar det helt själv\r\n✅ Ryms i egen förvaringspåse när den inte används\r\nSkydda husvagnens tak innan vintern gör det dyrt. 👇",
+          "headline": "Husvagnstaket – helt skyddat i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 124.01,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147355250291",
+        "namn": "Takoverdrag_CS_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147343780291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1778011003624989",
+          "image_hash": "0939006bcdb17f999c95d4dc61090dc4",
+          "image_url": null,
+          "video_id": "1395400873648073",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800714982_1395400913648069_6465015693325694968_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=w5pRwyBRvEgQ7kNvwEZ1i4a&_nc_oc=AdrXDXC0rK7DCJGMMkF_GhCGyabAIDn8hAYTX6ZBW-Ggh3ZGy0gqeNd7G1BXBozAAW4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQJGdkYcZP3-t3_AiPTSFS8lg3fU_kIibxD-25gL0IqSGsE_Iwk7KHoOQl_EBpyB5C2dKeuH0ehiDQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJFJTANin2InpsuLUXArga1gjSs8A2mA9nmO_mRMSRxew&oe=6AA9B4EB",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "🔥 23% RABATT PÅ HUSVAGNENS TAKÖVERDRAG – IDAG 🔥\r\n1469 kr → 1129 kr\r\nLagret är begränsat och priset gäller bara ett tag till.\r\nVintern kommer oavsett – se till att taket är skyddat innan det är för sent.\r\nSäkra ditt innan det är slut i lager. 👇",
+          "headline": "Husvagnstaket – helt skyddat i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 83.53,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147356750291",
+        "namn": "Takoverdrag_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147343780291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1066435649642011",
+          "image_hash": "c0b54a47d17bef27aebeeb2127893f98",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/800583679_2056749795038613_2458549191401889521_n.png?stp=dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=ff4730&_nc_ohc=8NKOZpvfkdkQ7kNvwFbjRs_&_nc_oc=AdrRJzvwQ1Tc3jRSqXkWIoaBOMMKu__tCEr8Pg62BBl1VCyNnXCBTcBwGR5beHF9N-s&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQK0wwnPTHYtwOlPo_ds9Xh3GhxFRgrZdwUjpPaQloHulxABDEtLcgwyE0G1uwK3GYJlNJq94UlEVg&oh=00_AQLXADTeDt8ZJbZN_isgXtpbRjeLYaD8olsSI8Wy6wA3eA&oe=6AA9895F",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/12171123315255526970?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIw14F16u41KwGp1mf2mrjfKHzzmihSagsX_xSyQInE5yKcnaBZplS4lYbfbnaLdj3useIAllHbDzgYhQJSILKsWoK5A8zg3Q6JY4aWkwTkmzIqREb1uv4poiIS2-vRfCfRudbW12vFuQA5ry1gorhq&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIVytEEZkdkO7Z6kVMSv-5yWBkjvnjpR-kqOLc8Gl0kwr7XwKJY3wLWX25hU446NXZmyNWXpVEy-w&oh=06_Q3_DARGgpVNBTNtrC6FSOmrfsDmJz4lCk13cZUKVoYUgZlfY&oe=6AA59976",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "🔥 23% RABATT PÅ HUSVAGNENS TAKÖVERDRAG – IDAG 🔥\r\n1469 kr → 1129 kr\r\nLagret är begränsat och priset gäller bara ett tag till.\r\nVintern kommer oavsett – se till att taket är skyddat innan det är för sent.\r\nSäkra ditt innan det är slut i lager. 👇",
+          "headline": "Husvagnstaket – helt skyddat i vinter",
+          "description": "23% rabatt just nu. Fri frakt inom Sverige.",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 61.27,
+          "kop": 1,
+          "roas": 18.426636
+        },
+        "med": true
+      },
+      {
+        "id": "120250147347090291",
+        "namn": "Takoverdrag_CS_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147343780291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "3578786278964504",
+          "image_hash": "ab9fa7f9a5f68f5d2d80def22bf7756a",
+          "image_url": null,
+          "video_id": "1083676280977588",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800934707_1083676374310912_3842023578347203457_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=8klHfnoCt9MQ7kNvwGiudGx&_nc_oc=Adoiv--TgK3ePBvu_9Fhu0uuExQ_t1Ka_afkvD3eOcuXrWA3Y82gtGKvcQakmogEmbI&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQIM0617JdRVG4mVuTMb7fpUCASXaHjW5BpxjKeq_p4O3O8Sa9vgtFHuk1PMrUfD_TH91azO_O5Qrw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKgl3DBFED9DZnYE85ll1vkAwA_w_1DBBlaftTMTDAv8Q&oe=6AA9B194",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "🔥 23% RABATT PÅ HUSVAGNENS TAKÖVERDRAG – IDAG 🔥\r\n1469 kr → 1129 kr\r\nLagret är begränsat och priset gäller bara ett tag till.\r\nVintern kommer oavsett – se till att taket är skyddat innan det är för sent.\r\nSäkra ditt innan det är slut i lager. 👇",
+          "headline": "Husvagnstaket – helt skyddat i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 60.91,
+          "kop": 2,
+          "roas": 37.071088
+        },
+        "med": true
+      },
+      {
+        "id": "120250147388460291",
+        "namn": "Takoverdrag_SP_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147382130291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1082634401235267",
+          "image_hash": "74f579c004b47e9616867babf39874f7",
+          "image_url": null,
+          "video_id": "2120011555585312",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801257343_2120011568918644_3993462219269199233_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=OvABhgXosPAQ7kNvwG9DU9N&_nc_oc=AdrVx3vOEwMWU6nduzuaeVrFNL9vpK5-uq0lNuCWPAjX0BEvnqIxy9Lb0ob2n-K8-rI&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQKIPpq_bW48ed7smhw9vi-0Z163k-q1tCoFEGI4WzS9Bn8EPhUeNdDcz_aAkCLpGt7sEJDHDL3rfQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJjl1gp6NU2_muTK-S5CrZVLF2WF2iU1E1XtMM9oZmoXQ&oe=6AA9BD11",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyddar taket mot regn, snö och smuts\r\n✅ En person sätter på det själv – ingen hjälp behövs\r\n✅ 30 dagars öppet köp om du inte är nöjd\r\nLäs varför husvagnsägare väljer det här inför varje vinter. 👇",
+          "headline": "Husvagnsägare älskar det här skyddet",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 37.69,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147361170291",
+        "namn": "Takoverdrag_GT_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147357110291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1018998147851325",
+          "image_hash": "54a4a37663a78c5089c5664a0c4428a9",
+          "image_url": null,
+          "video_id": "2957097457981723",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800841846_2957097477981721_2225570497409292885_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=uDBZECOIwZcQ7kNvwHbpjq7&_nc_oc=AdovvuVbpFp_tdxWuXu23oX6P2mXG3WMP7Y3fjKRumpZvls-vUsT0A_-K9jRSGHfIow&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQKmd2jjKO_Q873XHdeanjs7CE77Dpf4Tzgh7efIyH__zQk_yrp8YuSBHkcdF6FXXZzufhilGQAHhw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIZFD-h3jWAnS4JQGnmisMxgRnz8G5TzjFIazWbNKdjXw&oe=6AA989B3",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han pratar om husvagnen som om den vore ett husdjur. 😅 I år hittade jag äntligen något han faktiskt blir glad för.\r\n🎁 Ett taköverdrag som skyddar hans husvagn hela vintern\r\n🎁 Något han faktiskt använder – om och om igen\r\n🎁 Levereras enkelt hem, klart att slå in\r\nGe en present som visar att du fattar vad han bryr sig om. 👇",
+          "headline": "Presenten han faktiskt blir glad för",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 31.27,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147391760291",
+        "namn": "Takoverdrag_SP_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147382130291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1427724632604540",
+          "image_hash": "86f3733bea6baa8ba29af70d557b9676",
+          "image_url": null,
+          "video_id": "937904809366527",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800993317_937904832699858_3765606972165458520_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=l0jIGx1W73kQ7kNvwFvuDYq&_nc_oc=AdrzgT3ira--USuX0M42_UuS8_3hMRefB5bismFyEUalPHlKKcC5moAPY4GKBnsdd1E&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQJujthbXrQodoFa8BkhFMFPDpCV4JnsuENyYNO9s-AXdhTQ-Rd1nqddz65dwP3zUypwV9JurZ3_uw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJ4Z7E1R9uZqf4QPwX36Et47NrW1Ijoynk3jXrZnmCyEA&oe=6AA98670",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyddar taket mot regn, snö och smuts\r\n✅ En person sätter på det själv – ingen hjälp behövs\r\n✅ 30 dagars öppet köp om du inte är nöjd\r\nLäs varför husvagnsägare väljer det här inför varje vinter. 👇",
+          "headline": "Husvagnsägare älskar det här skyddet",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 16.01,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147367410291",
+        "namn": "Takoverdrag_GT_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147357110291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1736108570946531",
+          "image_hash": "921296a0f42178bbae7264d5b8d63afe",
+          "image_url": null,
+          "video_id": "1082120037509192",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800841849_1082120057509190_4871461756473809847_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=A48SFNx2DN0Q7kNvwFeUqdb&_nc_oc=AdrMrWE1OF8f26JePoacU9-B91yfF-WxJR-5mbCCvJfHosBJKOazh_aLdPJ-D-W6PwQ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQIATmOh1LeiQTL3JAuuV21-zP-0ASEZhJJ4_ftNqzLQjOwyESNJ7_pREwbZ4XctmWylSXbujj82-w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLrBzn2xv61EP08CIv1PAUN6KbC3MUHmOKp_2KZQrc1ow&oe=6AA9A963",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han pratar om husvagnen som om den vore ett husdjur. 😅 I år hittade jag äntligen något han faktiskt blir glad för.\r\n🎁 Ett taköverdrag som skyddar hans husvagn hela vintern\r\n🎁 Något han faktiskt använder – om och om igen\r\n🎁 Levereras enkelt hem, klart att slå in\r\nGe en present som visar att du fattar vad han bryr sig om. 👇",
+          "headline": "Presenten han faktiskt blir glad för",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 10.52,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147368320291",
+        "namn": "Takoverdrag_GT_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147357110291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "3234550510062057",
+          "image_hash": "bd60a5e72ffe04bd2c883d313f2ce419",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/799818938_2056750818371844_290750209362842861_n.png?stp=dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=ff4730&_nc_ohc=H4l6poIHbOIQ7kNvwHx7CIb&_nc_oc=AdqOUI3urb7ke8PnOvXnMQS-4arWIqIwccO6Zrz8eTNwpLv_cIRZaE1aUXzhyVJ7sMA&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQIG2YEiZgHIiYzY7ZDc57NNi72ITdNa450k5A6DgYGmBXxBc1TwM9MnblgFe2ZO-pPZ7JaEX35bPw&oh=00_AQI32QxKVzHZN3EtaBttEAUVaTSCMekqSSKOrx3H4fnHuQ&oe=6AA98EEF",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/13461782668127688418?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJwbMgnNnDHthpsmffvI7CzG-VSAUYi6m1QmQLcfUnUnOHMnQGCuuzs8WshcjtL6Zwjov1E4KtpiYU7p5jDewhiFCfy1E5eIk-jZwIMDDIkv3ajefgCYHneHTNYwxTuqcTDIIE7LSFRkh8DQEp5nFUQ&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIXocDWCW-VBXLwpO38kdRQbqmsxnV4sK2xZXja_UUXgsDrkLZb6mjTkfmkM0JbC0zn3y5v3dLFVg&oh=06_Q3_DATLS4cnhwIorBJYACktEwMuV8lM3NpfN2RooPwWjBNkv&oe=6AA5B069",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han pratar om husvagnen som om den vore ett husdjur. 😅 I år hittade jag äntligen något han faktiskt blir glad för.\r\n🎁 Ett taköverdrag som skyddar hans husvagn hela vintern\r\n🎁 Något han faktiskt använder – om och om igen\r\n🎁 Levereras enkelt hem, klart att slå in\r\nGe en present som visar att du fattar vad han bryr sig om. 👇",
+          "headline": "Presenten han faktiskt blir glad för",
+          "description": "Perfekt present till husvagnsägaren. Fri frakt.",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.01,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147383940291",
+        "namn": "Takoverdrag_SP_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147382130291",
+          "namn": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147343350291",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1818097126172232",
+          "image_hash": "1b51418ca0903088949a36b2afc2644f",
+          "image_url": null,
+          "video_id": "1604762101063215",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800993231_1604762131063212_2667199921303871512_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=RjEoGOJUYpUQ7kNvwFjmU1M&_nc_oc=AdpTTU-oQFxFp0T7OCdeGWZKWftWnk3-y3d6DHQsytcwrt6RS-vYzeKJXgmSfqxw2Wo&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=UG1snyP5wyNr6FeA3UTpTA&_nc_tpa=Q5bMBQIvsd0qcVP2KO9UdC7O13D0HcCdDnhNrGBYkdGB7wubRw-c2KF67IhVYUBnLrrAYYz0i3POK9LqYg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLBnTEZxK0Q-lZH6PV6ykGyAyCV9lUhO8BkCzpyhk-LpA&oe=6AA9891F",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "\"Ångrar att jag inte köpte det här förra vintern.\" 🙌\r\nSå säger fler och fler husvagnsägare om vårt taköverdrag.\r\n✅ Skyddar taket mot regn, snö och smuts\r\n✅ En person sätter på det själv – ingen hjälp behövs\r\n✅ 30 dagars öppet köp om du inte är nöjd\r\nLäs varför husvagnsägare väljer det här inför varje vinter. 👇",
+          "headline": "Husvagnsägare älskar det här skyddet",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 2.63,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  },
+  "NO": {
+    "konto": {
+      "id": "1050941584152547",
+      "namn": "Magiborsten NO",
+      "valuta": "NOK"
+    },
+    "annonser": [
+      {
+        "id": "120252183663270233",
+        "namn": "Takovertrekk_NO_SP_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183606170233",
+          "namn": "Takovertrekk Campingvogn NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1625638345784538",
+          "image_hash": "3c92079ac30c9b49ce09e5888a5beee2",
+          "image_url": null,
+          "video_id": "1601154011468717",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/804364182_1601154038135381_4493993583157305843_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=KjvdjvSUUOAQ7kNvwF3Q4ZP&_nc_oc=Ado7ZzgDJYshYc6zbidJteIO8FvpuTSJbVmnYbMNK5W1rJCnyzTciXSPcJLm6JdOiFc&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQIrCYpBi7i-SV8zAQKufEFoeEHOTbDB7YjxRI0Anpn1h6AhenLMq0U-E2MWGIHZY7sV2SlO-oX-Bg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL11cij8wvsl15qdvYKyoqzq-ke3iywBZ5LQKxHyw3C-g&oe=6AA9A167",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n✅ Beskytter taket mot regn, snø og skitt\n✅ Én person setter det på selv – ingen hjelp nødvendig\n✅ 30 dagers åpent kjøp hvis du ikke er fornøyd\nLes hvorfor campingvogneiere velger dette før hver vinter. 👇",
+          "headline": "Campingvogneiere elsker denne beskyttelsen",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 95.8,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183605050233",
+        "namn": "Takovertrekk_NO_PD_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183575470233",
+          "namn": "Takovertrekk Campingvogn NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4443026815953090",
+          "image_hash": "57be9d8d04332471563a1fb88bbc2256",
+          "image_url": null,
+          "video_id": "1429514689273781",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/803825832_1429514752607108_5653012852476430824_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=Hf6nRU3FvvsQ7kNvwFjuLm0&_nc_oc=AdrU2G5-3tn4Ve9jNEmoa7NNkJ-tvIKkDFKUl3gwi6QuTdqOjGiMr3yT7a-0RCzFeFo&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQL8drxJLQUofxoQXvzvvDD96sLZVhGBebdvoEgiE-XvTZEfp9PPGDDMV8qGzdo_7zABIQZ5OXIBXg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIooy6YZdmuvS4FNbdTZCCUgQcjIfHY_vuK6iLEMuXKvg&oe=6AA9A3D8",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Taket på campingvogna er flaten du aldri sjekker – og den som koster mest å reparere. 🏕️\n✅ Beskytter mot regn, snø og UV hele vinteren\n✅ Spennes fast med stropp og strammer – klart på minutter\n✅ Én person klarer det helt alene\n✅ Får plass i egen oppbevaringspose når den ikke er i bruk\nBeskytt campingvogntaket før vinteren gjør det dyrt. 👇",
+          "headline": "Campingvogntaket – helt beskyttet i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 47.63,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183574330233",
+        "namn": "Takovertrekk_NO_G_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183544970233",
+          "namn": "Takovertrekk Campingvogn NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "770781836130061",
+          "image_hash": "44c9bb56ab81fa4ddb01a594b7f84f18",
+          "image_url": null,
+          "video_id": "950016468152786",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/805119910_950016491486117_650099015286109910_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=icreecX3LpsQ7kNvwHoQ4mU&_nc_oc=AdqLjszFNWYTwQp3QSrhBE7uHWeNWh1NzeNHgmEJBS_CNz4uv431po3P6xP5_rYhHNk&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQKcvtTbiq9-_e9-VOM04v-XBPajrbyM3Qr4prr10QDjcATN69g0M23GBxv5165iTzqTK9ir06TXtw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIXqWVUW8nGJkadn1VNbTZwGKuAWijeudL3IgcDp83n6Q&oe=6AA9BDB2",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Han snakker om campingvogna som om den var et kjæledyr. 😅 I år fant jeg endelig noe han faktisk blir glad for.\n🎁 Et takovertrekk som beskytter campingvogna hele vinteren\n🎁 Noe han faktisk bruker – gang på gang\n🎁 Leveres rett hjem, klart til å pakkes inn\nGi en gave som viser at du skjønner hva han bryr seg om. 👇",
+          "headline": "Gaven han faktisk blir glad for",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 27.65,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183663590233",
+        "namn": "Takovertrekk_NO_SP_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183606170233",
+          "namn": "Takovertrekk Campingvogn NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1395069625452218",
+          "image_hash": "7652de6aa4356cb1faf052ca6c8aa630",
+          "image_url": null,
+          "video_id": "1489032929912013",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/805747587_1489032956578677_7018862646998168802_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=QdgG5UKccQYQ7kNvwGTOwAH&_nc_oc=AdpobIL7iAZ19eVcXk1iKPJolOjz_iv13nsmQXZW711Pi2zmNXclCPAWdYCyOogVOhI&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQLlwEZI60hDNdxqOypjDysCoBTWNtXdE5OVuCOD3TG-wl6SPKgiEdDPbOypUCuNjh4gsRW5WyRTxA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJKVn91lUBfaT4ueJ-Ull4Gg5laBfSiQNDggcJrMBvF8g&oe=6AA99191",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n✅ Beskytter taket mot regn, snø og skitt\n✅ Én person setter det på selv – ingen hjelp nødvendig\n✅ 30 dagers åpent kjøp hvis du ikke er fornøyd\nLes hvorfor campingvogneiere velger dette før hver vinter. 👇",
+          "headline": "Campingvogneiere elsker denne beskyttelsen",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 20.12,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183605930233",
+        "namn": "Takovertrekk_NO_PD_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183575470233",
+          "namn": "Takovertrekk Campingvogn NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1048148321367823",
+          "image_hash": "b0f358928f3f0f815fc1bb5f4e3be56d",
+          "image_url": null,
+          "video_id": "28241976982095695",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/805729441_28241977358762324_4380270572701716772_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=WAig188f6j4Q7kNvwGfdzUN&_nc_oc=AdqGKo5mfdJAI9CAgLpdDmH2-mcHy63ddwtT4vMK59j_i-I8u4VXEyGyI0TaO196qmA&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQJxK64_NTVFzZTsVGbVFm4cqm0pr0NzM27p4RmNpAv0WtiFJAzJNMHurHAr97lCkhL_87Y4vkIozA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJVc9Yr4si-oAy6dsjKsm0eQ5V9zgOFnYuk0MGfHdn9bg&oe=6AA99569",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Taket på campingvogna er flaten du aldri sjekker – og den som koster mest å reparere. 🏕️\n✅ Beskytter mot regn, snø og UV hele vinteren\n✅ Spennes fast med stropp og strammer – klart på minutter\n✅ Én person klarer det helt alene\n✅ Får plass i egen oppbevaringspose når den ikke er i bruk\nBeskytt campingvogntaket før vinteren gjør det dyrt. 👇",
+          "headline": "Campingvogntaket – helt beskyttet i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 10.67,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183575110233",
+        "namn": "Takovertrekk_NO_G_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183544970233",
+          "namn": "Takovertrekk Campingvogn NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1436977288353123",
+          "image_hash": "b28fcd5a9314b07b938f1bc695a628fe",
+          "image_url": null,
+          "video_id": "941189888461134",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/803825808_941189911794465_5949367997274214905_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=2EwZ3Q40bfUQ7kNvwFjtKao&_nc_oc=AdqMYEBsN8zBto4UsiS5ViOsx-epVIDFQAqOemjtjGmIoGronVbcLdiQjnKJgp0UMOY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQJ_Zb0GsGnWCewm6N5vMp4cA1KqShmcB27Tz7wYvqGxs07IEzGVZoCaNLWR_NYgPydLpfJn2kpUBw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJHMOnslpaKjurHOBSRvJJtCgwWShEQa0ShqTFilaUx3g&oe=6AA9A4B0",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Han snakker om campingvogna som om den var et kjæledyr. 😅 I år fant jeg endelig noe han faktisk blir glad for.\n🎁 Et takovertrekk som beskytter campingvogna hele vinteren\n🎁 Noe han faktisk bruker – gang på gang\n🎁 Leveres rett hjem, klart til å pakkes inn\nGi en gave som viser at du skjønner hva han bryr seg om. 👇",
+          "headline": "Gaven han faktisk blir glad for",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.36,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183544270233",
+        "namn": "Takovertrekk_NO_CS_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183543740233",
+          "namn": "Takovertrekk Campingvogn NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "29164602949790487",
+          "image_hash": "092cdaba54def49e6455694599ea82dc",
+          "image_url": null,
+          "video_id": "1282897623883257",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/804364196_1282897653883254_7780576955114409987_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=qoAcwKk4L9YQ7kNvwE7u-md&_nc_oc=AdrAMRVIM33mdwWiEeqz6wGrIG4ZIyt52hm82KWUP9cMdHkfQNxudwge71FWgMJOzqY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQIXUSqTVW31pEUuG_1pKJMMkC9udRZ9CdFkNB8L8wJNBOE17zZYxIhkMP36tGaqFRC8bDXEyGlvPA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKCKOoLAEKWJ31FvQwiKWyqQ4jw1rkHEx91ZASThVAAGg&oe=6AA986FD",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🔥 23% RABATT PÅ TAKOVERTREKKET TIL CAMPINGVOGNEN – I DAG 🔥\n1549 kr → 1189 kr\nLageret er begrenset, og prisen gjelder bare en liten stund til.\nVinteren kommer uansett – sørg for at taket er beskyttet før det er for sent.\nSikre ditt før det blir utsolgt. 👇",
+          "headline": "Campingvogntaket – helt beskyttet i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.35,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183544860233",
+        "namn": "Takovertrekk_NO_CS_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183543740233",
+          "namn": "Takovertrekk Campingvogn NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "929092709821376",
+          "image_hash": "d1a8ec48c5955003cfe2404af8a9f610",
+          "image_url": null,
+          "video_id": "2270192180493092",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/804646291_2270192227159754_1616418028533729014_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=OalQE7msSZsQ7kNvwEqso2N&_nc_oc=Adok3Cz-EWpc638MkIzbXS4o26K0rM1PC9WnXA-Za6DZWZXUdG4c-Gl0Xj7KbqsHA44&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQL3V3MCDucljq6CE_w_xsln7CFlxNcr6LIf7zStmoakT4kov0HHrFWKeiRhWmnKbdkocVCdWxyC9A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLkNVoPsJMrPE9eV9VNWjJBOs70ERx4MV_LMEreCx4aBA&oe=6AA9AC47",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🔥 23% RABATT PÅ TAKOVERTREKKET TIL CAMPINGVOGNEN – I DAG 🔥\n1549 kr → 1189 kr\nLageret er begrenset, og prisen gjelder bare en liten stund til.\nVinteren kommer uansett – sørg for at taket er beskyttet før det er for sent.\nSikre ditt før det blir utsolgt. 👇",
+          "headline": "Campingvogntaket – helt beskyttet i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1.94,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183664830233",
+        "namn": "Takovertrekk_NO_SP_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183606170233",
+          "namn": "Takovertrekk Campingvogn NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "3589823101176239",
+          "image_hash": "6038fcb425c8ba5be7a11958fe394a7d",
+          "image_url": null,
+          "video_id": "2287581068724788",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/804230082_2287581082058120_8132464681957341850_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=Nmx40E5XODAQ7kNvwGD-LH0&_nc_oc=AdrdGHxhh2aZkYXjS0ftfbuDU2ydFHpYpum4ZafDR1MjAG82R89l2P6m6c4Xdt0Jxw4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQJDl3ep9Yl85_D0twuXMriaIcu7ZPOokk3Jfz734c_3VhqbfDU_bHeTUrC4PgYRGDYyArqUHKvS_A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKts6s5zCr8e-fCXPFlb6JfEJ48kBsxGFqx9KowyFx9mg&oe=6AA98A21",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "\"Skulle ønske jeg hadde kjøpt dette i fjor vinter.\" 🙌\nDet sier flere og flere campingvogneiere om takovertrekket vårt.\n✅ Beskytter taket mot regn, snø og skitt\n✅ Én person setter det på selv – ingen hjelp nødvendig\n✅ 30 dagers åpent kjøp hvis du ikke er fornøyd\nLes hvorfor campingvogneiere velger dette før hver vinter. 👇",
+          "headline": "Campingvogneiere elsker denne beskyttelsen",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1.55,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183544700233",
+        "namn": "Takovertrekk_NO_CS_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183543740233",
+          "namn": "Takovertrekk Campingvogn NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1359026129549033",
+          "image_hash": "6b00c73d002e892733b9988d073988c5",
+          "image_url": null,
+          "video_id": "29394582133465417",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/804445259_29394582456798718_5525673046363375943_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=E6pgNh87p2cQ7kNvwGrh_Au&_nc_oc=AdpGi-a9nZzAWPnaxMcyJbY6g6sh6GNzniFFmbJCQwg-if8Pr6gWlt8P4bhCzkExC_A&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQINRQgMremRmMAD5nLmlphcE7z-nkZvTI-8Rps3227DbBmEChU9A2ihOy50gZS_yBqJIID50OzqMQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQK40k6UiKWYLfS8elOQxdR8BEzkikk9LfMVAkBMsv0p5g&oe=6AA99EBE",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "🔥 23% RABATT PÅ TAKOVERTREKKET TIL CAMPINGVOGNEN – I DAG 🔥\n1549 kr → 1189 kr\nLageret er begrenset, og prisen gjelder bare en liten stund til.\nVinteren kommer uansett – sørg for at taket er beskyttet før det er for sent.\nSikre ditt før det blir utsolgt. 👇",
+          "headline": "Campingvogntaket – helt beskyttet i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.93,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183574110233",
+        "namn": "Takovertrekk_NO_G_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183544970233",
+          "namn": "Takovertrekk Campingvogn NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1383266757345410",
+          "image_hash": "c51de868f0a30c9fffcbfbcbbd7a56f5",
+          "image_url": null,
+          "video_id": "1096269282852898",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/804646296_1096269322852894_6093827697332973801_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=ISzBXTG1dtoQ7kNvwFhcJmz&_nc_oc=AdodhyMBdsdSihw_CkMYV0xiHlUTNcmEXZfPlXdLzMC7M-sMg7bFFeJNnOUBtYZ3naE&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQLPKIKrgxxP9qXUHrpzrqmiAmlafP2v1Rqap-v1oQSSYFur7IFl_5JvRZkF6HXZBgCVw3pQLUO1yA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQI1mTkUsgwHCaSlbJps0u46jCgVCu5ZCEIE5wrKEBn99g&oe=6AA9A5B5",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Han snakker om campingvogna som om den var et kjæledyr. 😅 I år fant jeg endelig noe han faktisk blir glad for.\n🎁 Et takovertrekk som beskytter campingvogna hele vinteren\n🎁 Noe han faktisk bruker – gang på gang\n🎁 Leveres rett hjem, klart til å pakkes inn\nGi en gave som viser at du skjønner hva han bryr seg om. 👇",
+          "headline": "Gaven han faktisk blir glad for",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.78,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183605470233",
+        "namn": "Takovertrekk_NO_PD_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183575470233",
+          "namn": "Takovertrekk Campingvogn NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183519570233",
+          "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1877819609863558",
+          "image_hash": "ce061d3594b13f8dd821b96af870ae2f",
+          "image_url": null,
+          "video_id": "2078396260218894",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/805831505_2078396320218888_736257642571703470_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=TNF69iRcmBQQ7kNvwH-IfAF&_nc_oc=AdryaOozAlbpAJ5NZsHeNUF_ZazL1ISslIiI6haDzSJwq9rxbIRGjRekpR3rRTxq0sg&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=ya03uOn2gtaTM4eDWk0D1g&_nc_tpa=Q5bMBQKgqZeKIU-j284aPVGKc1kytSy-u3c471yU83CVrlT2syrtotiZiTdKicZTUKUtiUAPuiEGJqAWHA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJjiITsWNERqRXGMjcdXdu1baAHkoouBqa_7zb3nGKQYQ&oe=6AA99987",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Taket på campingvogna er flaten du aldri sjekker – og den som koster mest å reparere. 🏕️\n✅ Beskytter mot regn, snø og UV hele vinteren\n✅ Spennes fast med stropp og strammer – klart på minutter\n✅ Én person klarer det helt alene\n✅ Får plass i egen oppbevaringspose når den ikke er i bruk\nBeskytt campingvogntaket før vinteren gjør det dyrt. 👇",
+          "headline": "Campingvogntaket – helt beskyttet i vinter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.63,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  }
+}
