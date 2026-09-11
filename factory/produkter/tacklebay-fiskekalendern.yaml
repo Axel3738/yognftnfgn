@@ -136,6 +136,8 @@ kalla:
   # adventskalender-racerbiler-24-biler-bak-24-luker) — en annan produkt.
   # Prefixet lämnas tomt med flit: ett gissat prefix skulle kopiera fel
   # produkts annonser. /ny-annonser stoppar här tills Axel pekar på källor.
+  # Axels beslut 2026-09-11 på frågan: "Pausa" — inga annonser byggs för
+  # kalendern nu. Spöhållaren bär TackleBay.
   annonsprefix: ""
   kampanj_id: ""
   kampanj: ""
