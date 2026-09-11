@@ -159,44 +159,60 @@ startsida:
     - "shield:14 dagars ångerrätt"
     - "star:Betala med Klarna"
   hero:
-    rubrik: ""
-    text: ""
-    knapp: ""
+    rubrik: "Inte under bilen. I egen koja."
+    text: "Upphöjd på fyra ben, med tak och isolerade väggar. En egen torr plats för utekatten, natt efter natt."
+    knapp: "Se kojan"
     bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
   marquee:
-    - ""
-  produkt_etikett: ""
+    - "Fri frakt till Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Klarna, kort, Apple Pay och Google Pay"
+    # Subagenten skrev "Skickas från Sverige" — struket av huvudsessionen:
+    # leveransen går på Temu-ledet (5–10 arbetsdagar), påståendet går inte
+    # att belägga. Svensk kundsupport står redan på källsidan.
+    - "Svensk kundsupport"
+  produkt_etikett: "För utekatten"
   berattelse:
-    rubrik: ""
+    rubrik: "Varför CatCabin finns"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
+    # Brandnivå: utekatten, inte just den här kojan.
     text:
-      - ""
+      - "Vi på CatCabin har sett utekatter kura på kalla trappor och smita in under bilen när regnet kommer."
+      - "Nu väljer vi produkter som ger utekatten en egen torr plats utomhus – synlig från köksfönstret, inte gömd under bilen."
   galleri:
-    rubrik: ""
+    rubrik: "Kojan i vardagen"
     kolumner:
-      - titel: ""
+      - titel: "I regnet – taket leder bort vattnet"
         bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-regn.jpg"
-      - titel: ""
+      - titel: "I snön – upphöjd från den kalla marken"
         bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sno.jpg"
-      - titel: ""
+      - titel: "Inuti – väggarna behåller värmen katten ger"
         bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
     markning: "Regn- och snöbilderna är AI-genererade illustrationer"
   statement:
-    rubrik: ""
-    knapp: ""
+    rubrik: "En egen torr plats. Inte bilen."
+    knapp: "Lägg i varukorgen"
   omdomen:
-    eyebrow: ""
-    rubrik: ""
+    eyebrow: "5,00 av 5 i betyg"
+    rubrik: "Vad kattägare säger"
   trygghet:
-    rubrik: ""
+    rubrik: "Frakt och trygghet"
     text:
-      - ""
+      - "Fri frakt till Sverige och Norge på alla beställningar. Leverans på 5 till 10 arbetsdagar."
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Betala med Klarna, kort, Apple Pay eller Google Pay."
     # AI-illustration (kvällsbilden) — källans egen märkning, står i alt-texten.
     bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg"
-  faq_rubrik: ""
+  faq_rubrik: "Vanliga frågor"
   faq:
-    - fraga: ""
-      svar: ""
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "Räkna med 5 till 10 arbetsdagar från beställning."
+    - fraga: "Vad gäller för ångerrätt?"
+      svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@catcabin.se så hjälper vi dig."
+    - fraga: "Skickar ni till Norge?"
+      svar: "Ja, fri frakt till både Sverige och Norge."
+    - fraga: "Vilka betalningssätt finns?"
+      svar: "Klarna, kort, Apple Pay och Google Pay."
   garanti:
-    rubrik: ""
+    rubrik: "14 dagars ångerrätt"
     text:
-      - ""
+      - "Du har 14 dagars ångerrätt enligt svensk lag, från dagen du tar emot paketet. Mejla hello@catcabin.se om du vill ångra."

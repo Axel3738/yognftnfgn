@@ -1,0 +1,36 @@
+{
+  "butik": "catcabin",
+  "produkt": "utekattkojan",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/15269032165744",
+      "handle": "utekattkojan",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 12
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "Grå",
+        "Gräsgrön",
+        "Svart"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": false,
+      "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
+    },
+    "paket": {
+      "klar": false,
+      "manuell": "Butikens valuta är PHP, konfigen säger SEK — byt valuta i Shopify-admin (Inställningar → Allmänt) och kör --igen paket."
+    }
+  },
+  "uppdaterad": "2026-09-11T02:33:07.036Z"
+}

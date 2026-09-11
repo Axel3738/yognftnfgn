@@ -301,6 +301,11 @@ Mätningar från samma bygge:
   görs med `imageio-ffmpeg` (pip) när `ffmpeg` saknas i containern.
 - **Loggmotivet är per brand.** `logga-generera.mjs --motiv lucka` ritar en
   öppnad kalenderlucka; `droppe` (TankGuard) är standard, `ingen` finns.
+  `--motiv koja` (CatCabin 2026-09-11) ritar en utekattkoja på ben med tänd
+  dörr i accentfärgen. Med ett eget motiv blir variant c motivet stort +
+  ordmärket litet — monogrammet i två bokstäver hade aldrig valts
+  (`LOGGA-FEEDBACK.md`: a 0, b 0, c 1 vid bygget), och feedbackloopen säger
+  att en variant som aldrig väljs ska bytas mot något nytt.
   Typsnittet måste finnas i systemet — Poppins Bold fanns inte på jsDelivrs
   spegel (79 byte "not found") men på `raw.githubusercontent.com/google/fonts`.
 - **Källans Judge.me-datum kan vara importtid.** Alla tio recensioner bar

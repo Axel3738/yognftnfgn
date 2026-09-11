@@ -82,10 +82,11 @@ media:
   bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg"
 
 beskrivning:
-  problem_rubrik: ""
-  problem_text: ""
-  losning_rubrik: ""
-  losning_text: ""
+  # problem_rubrik är ordagrant top spenderns vinkel (Utekattkoja_PD_2_H1).
+  problem_rubrik: "Katten sover under bilen igen"
+  problem_text: "Det regnar, och katten är inte i trädgården. Den ligger under bilen igen, den enda torra platsen den känner till."
+  losning_rubrik: "Tak, väggar, en flik mot vinden"
+  losning_text: "Kojan står upphöjd på fyra ben, med ett sadeltak som leder bort regnet och en flik vid dörren som håller ute draget. Väggarna är isolerade, så värmen katten själv ger stannar inne."
 
 vinkel:
   # INTERNT — syns aldrig för kund. Källa: MagiBorsten-kampanjen
@@ -95,23 +96,36 @@ vinkel:
   # den enda som får dömas (CLAUDE.md regel 3). SP_3_H1: 524 kr / 2 köp /
   # ROAS 3,01 — lovande men under domgränsen.
   huvudvinkel: "Problemet först — katten sover under bilen, under altanen eller på en kall betongtrapp; kojan är kattens egen torra plats, upphöjd från marken och i lä. Källa: Utekattkoja_PD_2_H1 i MagiBorsten (1 453 kr, 4 köp, ROAS 2,17 mot BE 1,62, 2026-09-09–11)."
-  underrubrik: ""
-  usp: ""
+  underrubrik: "Upphöjd från marken, med tak, isolerade väggar och en flik för dörren"
+  usp: "Ben, tak, isolerade väggar"
 
 malgrupp:
   beskrivning: "Kattägare med utekatt och tomt — villa, radhus eller landet — 30–65 år, i Sverige och Norge. Ser katten smita in under altanen när det regnar eller ligga hoprullad på en kall betongtrapp, och står i köksfönstret på kvällen och undrar var den tog vägen. Säger 'utekatt', 'katten', 'kojan', 'under bilen'. Sekundärt: den som matar en hemlös katt som dyker upp i trädgården. Vill kunna se från fönstret att katten ligger torrt."
 
 problem:
-  - ""
+  - "Katten smiter in under bilen när det regnar"
+  - "Kall betongtrappa i stället för en egen plats"
+  - "Inget skydd mot vinden vid dörren"
+  - "Du ser inte var katten är när kvällen blir kall"
 
 benefits:
-  - ""
+  - "Katten har en egen torr plats, inte bilen"
+  - "Du ser kojan från köksfönstret och vet att katten är i lä"
+  - "Värmen katten själv ger stannar inne i väggarna"
+  - "Ingen el, ingen sladd ut till trädgården"
+  - "Kojan fälls ihop och tar liten plats i förrådet på sommaren"
 
 features:
-  - ""
+  - "Stativ i metall med fyra ben, upphöjt från marken"
+  - "Sadeltak i Oxford-tyg, vattnet rinner av"
+  - "Flik vid ingången som bromsar draget"
+  - "Isolerade väggar, ingen el eller värmare"
+  - "Lös liggmatta som går att ta ut och skaka"
+  - "Hopfällbar för förvaring"
+  - "Tre färger: grå, gräsgrön och svart"
 
 offer:
-  beskrivning: ""
+  beskrivning: "789 kr i stället för 1 039 kr. Fri frakt till Sverige och Norge, 14 dagars ångerrätt enligt svensk lag och leverans på 5 till 10 arbetsdagar."
   bundle: "2-pack — 15 % rabatt (förvald, 'Mest populär'). 3-pack — 20 % rabatt. Exakt källans Kaching-nivåer (output/utekattkojan/kalla-kaching-paket.json) = fabrikens standard-A."
   # A = källans Kaching-nivåer (identiska med paket.mjs NIVAER.a), B = ett
   # steg djupare rabatt. Inga egna nivåer behövs — mitten förvald.
@@ -195,8 +209,17 @@ reviews:
     datum: "2026-09-08"
 
 faq:
-  - fraga: ""
-    svar: ""
+  # Ingen storleksfråga — måtten är okända och påstås inte.
+  - fraga: "Behöver kojan el?"
+    svar: "Nej. Väggarna är isolerade och behåller värmen katten själv avger."
+  - fraga: "Håller den värmen på vintern?"
+    svar: "Kojan är isolerad och upphöjd från marken, så kylan från underlaget hålls borta. Värmen kommer från katten själv, ingen el behövs."
+  - fraga: "Vad händer när det regnar?"
+    svar: "Sadeltaket skjuter ut över ingången och leder bort vattnet, och fliken vid dörren bromsar draget."
+  - fraga: "Hur förvarar jag den på sommaren?"
+    svar: "Kojan är hopfällbar och tar liten plats i förrådet till nästa säsong."
+  - fraga: "Vad gäller om jag ångrar mitt köp?"
+    svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@catcabin.se."
 
 leveranstid: "5–10 arbetsdagar"
 
@@ -242,4 +265,7 @@ meta:
   creative_prefix: "CatCabin"
   testbudget_per_dag: 1000
   vinklar:
-    - ""
+    - "PD — Katten sover under bilen igen – kojan ger den en egen torr plats (BEVISAD: Utekattkoja_PD_2_H1, 1 453 kr / 4 köp / ROAS 2,17 mot BE 1,62)"
+    - "SP — 10 av 10 recensioner, 5 stjärnor: katten har börjat sova i den varje dag (SP_3_H1: 524 kr / 2 köp / ROAS 3,01 — under domgränsen)"
+    - "PD — Upphöjd från kall mark, tak som leder bort regnet"
+    - "PD — Ingen el. Väggarna behåller värmen katten själv ger"
