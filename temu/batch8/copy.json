@@ -3,19 +3,19 @@
   "sv": {
    "titel": "Sotarset Med Böjliga Stänger – Rensar Rökkanal Och Kaminrör",
    "problemH": "Draget blir sämre för varje eldning",
-   "problemP": "Sotlagret i röret växer tyst i bakgrunden – kaminen drar sämre, lukten sitter i, och röret bakom pelletskaminen eller torktumlaren är för trångt för att du ska vilja krypa dit själv. Att boka sotare för en snabb kontroll känns onödigt, men att strunta i det känns fel.",
+   "problemP": "Sotlagret i röret växer tyst i bakgrunden – kaminen drar sämre, lukten sitter i, och det är för trångt bakom pelletskaminen eller torktumlaren för att du ska vilja krypa dit själv. Att boka sotare för en snabb kontroll känns onödigt, men att strunta i det känns fel.",
    "losningH": "Skruva ihop 3,69 meter och rensa själv",
-   "losningP": "Sotarsetet har 9 böjliga stänger på 41 cm som tillsammans ger en räckvidd på 3,69 meter, en nylonborste på 100 mm i toppen och en sexkantsadapter som håller kopplingarna stadigt ihop. De böjliga stängerna följer krökarna i röret i stället för att fastna rakt av.",
+   "losningP": "Sotarsetet har 9 böjliga stänger på 41 cm som skruvas ihop en och en till 3,69 meters räckvidd, en nylonborste på 100 mm i toppen och en sexkantsadapter. De böjliga stängerna följer krökarna i röret i stället för att ta stopp i första kröken.",
    "bullets": [
-    "<strong>Slipp boka sotare för en enkel kontroll</strong> – skruva ihop dina egna 3,69 meter och rensa själv.",
-    "<strong>Följer krökar där en rak stång fastnar</strong> – de 9 böjliga stängerna böjer med i varje vinkel.",
+    "<strong>Rensa själv mellan sotarens besök</strong> – skruva ihop dina egna 3,69 meter och dra borsten genom röret.",
+    "<strong>Följer krökar där en stel stång fastnar</strong> – de 9 böjliga stängerna böjer med i kröken i stället för att ta stopp.",
     "<strong>Når bakom kaminen eller torktumlaren</strong> – 9 stänger à 41 cm skruvas ihop till 3,69 meters räckvidd.",
-    "<strong>Nylonborsten rensar utan att repa röret</strong> – 100 mm borsthuvud i nylon.",
-    "<strong>Bygg bara den längd du behöver</strong> – sexkantsadaptern håller varje koppling stadig, ihopskruvad eller isärtagen."
+    "<strong>Sotet borstas loss, inte skrapas</strong> – borsthuvudet på 100 mm har strån av nylon.",
+    "<strong>Bygg bara den längd du behöver</strong> – stängerna skruvas ihop en och en, så du tar med så många som röret kräver."
    ],
    "alt": {
     "hero": "Sotarsetets borsthuvud och de böjliga stängerna utlagda på vit botten",
-    "detalj": "Närbild på sexkantskopplingen mellan två av stängerna",
+    "detalj": "Närbild på skruvkopplingen mellan två av stängerna",
     "fakta": "Infografik som visar 9 stänger à 41 cm, total räckvidd 3,69 meter och borsthuvudets mått 100 mm",
     "miljo": "AI-genererad bild av en person som matar in stången i kaminröret i ett vardagsrum",
     "gif": "Samma scen som miljöbilden i rörelse – stången förs in i röret"
@@ -37,19 +37,19 @@
   "no": {
    "titel": "Feiesett Med Fleksible Stenger – Renser Pipe Og Røykrør",
    "problemH": "Trekket blir dårligere for hver fyring",
-   "problemP": "Sotlaget i pipen vokser stille i bakgrunnen – ovnen trekker dårligere, lukten sitter igjen, og røret bak pelletsovnen eller tørketrommelen er for trangt til at du vil krype dit selv. Å bestille feier for en rask sjekk føles unødvendig, men å ignorere det føles feil.",
-   "losningH": "Skru sammen 3,69 meter og feier selv",
-   "losningP": "Feiesettet har 9 fleksible stenger på 41 cm som til sammen gir 3,69 meters rekkevidde, en nylonbørste på 100 mm i toppen og en sekskantadapter som holder koblingene sammen. De fleksible stengene følger svingene i røret i stedet for å sette seg fast rett fram.",
+   "problemP": "Sotlaget i pipen vokser stille i bakgrunnen – ovnen trekker dårligere, lukten sitter igjen, og det er for trangt bak pelletsovnen eller tørketrommelen til at du vil krype dit selv. Å be feieren komme for en rask sjekk føles unødvendig, men å ignorere det føles feil.",
+   "losningH": "Skru sammen 3,69 meter og fei selv",
+   "losningP": "Feiesettet har 9 fleksible stenger på 41 cm som skrus sammen én og én til 3,69 meters rekkevidde, en nylonbørste på 100 mm i toppen og en sekskantadapter. De fleksible stengene følger svingene i røret i stedet for å stoppe i første sving.",
    "bullets": [
-    "<strong>Slipp å bestille feier for en enkel sjekk</strong> – skru sammen dine egne 3,69 meter og feier selv.",
-    "<strong>Følger svinger der en stiv stang setter seg fast</strong> – de 9 fleksible stengene bøyer seg i hver vinkel.",
+    "<strong>Rens selv mellom feierens besøk</strong> – skru sammen dine egne 3,69 meter og dra børsten gjennom røret.",
+    "<strong>Følger svinger der en stiv stang setter seg fast</strong> – de 9 fleksible stengene bøyer seg med i svingen i stedet for å stoppe.",
     "<strong>Når bak ovnen eller tørketrommelen</strong> – 9 stenger à 41 cm skrus sammen til 3,69 meters rekkevidde.",
-    "<strong>Nylonbørsten renser uten å ripe røret</strong> – 100 mm børstehode i nylon.",
-    "<strong>Bygg bare lengden du trenger</strong> – sekskantadapteren holder hver kobling stødig, skrudd sammen eller fra hverandre."
+    "<strong>Soten børstes løs, ikke skrapes</strong> – børstehodet på 100 mm har bust av nylon.",
+    "<strong>Bygg bare lengden du trenger</strong> – stengene skrus sammen én og én, så du tar med så mange som røret krever."
    ],
    "alt": {
     "hero": "Feiesettets børstehode og de fleksible stengene lagt ut på hvit bunn",
-    "detalj": "Nærbilde av sekskantkoblingen mellom to av stengene",
+    "detalj": "Nærbilde av skrukoblingen mellom to av stengene",
     "fakta": "Infografikk som viser 9 stenger à 41 cm, total rekkevidde 3,69 meter og børstehodets mål 100 mm",
     "miljo": "AI-generert bilde av en person som fører stangen inn i røykrøret i en stue",
     "gif": "Samme scene som miljøbildet i bevegelse – stangen føres inn i røret"
@@ -68,7 +68,7 @@
    "optionNamn": "",
    "optionVarden": []
   },
-  "treFragor": "1. \"Slipp boka sotare för en enkel kontroll – skruva ihop dina egna 3,69 meter och rensa själv.\" — visualisera ✅ (man ser stängerna skruvas ihop och stången föras in) · falsifiera ✅ (3,69 m är mätbart sant, 9×41 cm ur fakta) · ingen annan kan säga det ✅ (siffran 3,69 m är specifik för just detta set).\n2. \"Följer krökar där en rak stång fastnar – de 9 böjliga stängerna böjer med i varje vinkel.\" — visualisera ✅ (stången böjer sig runt en krök) · falsifiera ✅ (böjliga stänger är fakta, jämförelsen mot en rak stång är en verifierbar mekanisk skillnad) · ingen annan kan säga det ✅ (kopplat till det exakta antalet 9 stänger, inte en generisk \"böjlig borste\"-rad).\n3. \"Når bakom kaminen eller torktumlaren – 9 stänger à 41 cm skruvas ihop till 3,69 meters räckvidd.\" — visualisera ✅ (ser stången nå in bakom apparaten) · falsifiera ✅ (9×41 cm = 3,69 m, siffror ur fakta) · ingen annan kan säga det ✅ (exakt räckvidd unik för produkten).\n4. \"Nylonborsten rensar utan att repa röret – 100 mm borsthuvud i nylon.\" — visualisera ✅ (borsten möter rörväggen) · falsifiera ✅ (materialet nylon och måttet 100 mm är fakta; påståendet om att inte repa är en rimlig materialgrundad slutsats, inte en åsikt) · ingen annan kan säga det ✅ (måttet 100 mm gör raden specifik för detta borsthuvud).\n5. \"Bygg bara den längd du behöver – sexkantsadaptern håller varje koppling stadig, ihopskruvad eller isärtagen.\" — visualisera ✅ (ser kopplingarna skruvas isär och ihop) · falsifiera ✅ (adaptern och den modulära uppbyggnaden är fakta) · ingen annan kan säga det ✅ (kopplat till det exakta antalet segment i just detta set, inte ett generiskt \"flexibelt\" påstående)."
+  "treFragor": "1. \"Rensa själv mellan sotarens besök – skruva ihop dina egna 3,69 meter och dra borsten genom röret.\" — visualisera ✅ (man ser stängerna skruvas ihop och stången föras in) · falsifiera ✅ (3,69 m är mätbart sant, 9×41 cm ur fakta) · ingen annan kan säga det ✅ (siffran 3,69 m är specifik för just detta set).\n2. \"Följer krökar där en stel stång fastnar – de 9 böjliga stängerna böjer med i kröken i stället för att ta stopp.\" — visualisera ✅ (stången böjer sig runt en krök) · falsifiera ✅ (böjliga stänger är fakta, jämförelsen mot en stel stång är en verifierbar mekanisk skillnad) · ingen annan kan säga det ✅ (kopplat till det exakta antalet 9 stänger, inte en generisk \"böjlig borste\"-rad).\n3. \"Når bakom kaminen eller torktumlaren – 9 stänger à 41 cm skruvas ihop till 3,69 meters räckvidd.\" — visualisera ✅ (ser stången nå in bakom apparaten) · falsifiera ✅ (9×41 cm = 3,69 m, siffror ur fakta) · ingen annan kan säga det ✅ (exakt räckvidd unik för produkten).\n4. \"Sotet borstas loss, inte skrapas – borsthuvudet på 100 mm har strån av nylon.\" — visualisera ✅ (borsten möter rörväggen) · falsifiera ✅ (materialet nylon och måttet 100 mm är fakta; \"repar inte\" struken av granskaren — ej belagt) · ingen annan kan säga det ✅ (måttet 100 mm gör raden specifik för detta borsthuvud).\n5. \"Bygg bara den längd du behöver – stängerna skruvas ihop en och en, så du tar med så många som röret kräver.\" — visualisera ✅ (ser kopplingarna skruvas isär och ihop) · falsifiera ✅ (skruvkopplingarna syns i källbilden, 9 stänger är fakta) · ingen annan kan säga det ✅ (kopplat till det exakta antalet segment i just detta set, inte ett generiskt \"flexibelt\" påstående)."
  },
  "vedborr": {
   "sv": {
@@ -76,13 +76,13 @@
    "problemH": "Yxan hänger kvar, kubbarna gör det inte",
    "problemP": "Vedboden är full av kubbar som borde vara tändved, men yxan har hängt orörd sedan i höstas. Att svinga den i kylan när ryggen redan är trött hamnar sist på listan varje kväll — så det blir papper och kartong i stället, om elden ens tar.",
    "losningH": "En kon du skruvar fast i borrmaskinen",
-   "losningP": "Välj skaft efter chucken du har — rund, SDS eller sexkant, alla 65 mm långa och 10 mm i diameter — och skruva fast konen. Den är 32 mm i diameter och 85 mm lång och skruvar sig in i kubben med borrmaskinens egen kraft, så veden spjälkas längs fibrerna utan yxa. Samma skaft går även i borrhammaren, bara utan slagfunktionen. Mellan passen ligger allt samlat i den medföljande plastasken, 100 × 35 mm. Perfekt om du inte har en vedklyv — för tändved och småved, inte som ersättning för en riktig klyv.",
+   "losningP": "Välj skaft efter chucken du har — rund, SDS eller sexkant, alla 65 mm långa och 10 mm i diameter — och skruva fast konen. Den är 32 mm i diameter och 85 mm lång och skruvar sig in i kubben med borrmaskinens egen kraft, så veden spjälkas längs fibrerna utan yxa. SDS-skaftet går även i borrhammaren – med slagfunktionen avstängd. Mellan passen ligger allt samlat i den medföljande plastasken, 100 × 35 mm. Perfekt om du inte har en vedklyv — för tändved och småved, inte som ersättning för en riktig klyv.",
    "bullets": [
-    "<strong>Ingen yxa att svinga</strong> – konen (Ø32 × 85 mm) skruvar sig in med borrmaskinens kraft och spjälkar veden längs fibrerna",
-    "<strong>Passar borrmaskinen du redan har</strong> – tre skaft ingår: rund, SDS och sexkant, alla 65 mm långa och 10 mm i diameter",
-    "<strong>Går i borrhammaren också</strong> – SDS-skaftet passar samma chuck, kör bara utan slagfunktionen",
-    "<strong>Ligger samlat mellan passen</strong> – plastask 100 × 35 mm rymmer konen och alla tre skaft",
-    "<strong>Ett köp, tre chuckar</strong> – slipper gissa vilket skaft som passar eller köpa en adapter separat"
+    "<strong>Ingen yxa att svinga</strong> – konen (Ø32 × 85 mm) skruvar sig in med borrmaskinens kraft och spjälkar veden längs fibrerna.",
+    "<strong>Passar borrmaskinen du redan har</strong> – tre skaft ingår: rund, SDS och sexkant, alla 65 mm långa och 10 mm i diameter.",
+    "<strong>Går i borrhammaren också</strong> – SDS-skaftet sitter i borrhammarens chuck, kör med slagfunktionen avstängd.",
+    "<strong>Ligger samlat mellan passen</strong> – plastask 100 × 35 mm rymmer konen och alla tre skaft.",
+    "<strong>Ett köp, tre chucktyper</strong> – du slipper gissa vilket skaft som passar och behöver ingen adapter."
    ],
    "alt": {
     "hero": "Vedklyvborr — kon och tre skaft på vit botten",
@@ -106,20 +106,20 @@
    "optionVarden": []
   },
   "no": {
-   "titel": "Vedkløyver-bor Til Drill – Kløyvekjegle Ø32 mm, 3 Feste",
+   "titel": "Vedkløyver-bor Til Drill – Kløyvekjegle Ø32 mm, 3 Fester",
    "problemH": "Øksa henger der, kubbene gjør ikke det",
-   "problemP": "Vedboden er full av kubber som burde vært opptenningsved, men øksa har hengt urørt siden i høst. Å svinge den i kulda når ryggen allerede er sliten havner sist på listen hver kveld — så det blir papir og papp i stedet, om ilden i det hele tatt tar seg.",
+   "problemP": "Vedboden er full av kubber som burde vært opptenningsved, men øksa har hengt urørt siden i høst. Å svinge den i kulda når ryggen allerede er sliten havner sist på listen hver kveld — så det blir papir og papp i stedet, om det i det hele tatt tar fyr.",
    "losningH": "En kjegle du skrur fast i drillen",
-   "losningP": "Velg feste etter chucken du har — rundt, SDS eller sekskant, alle 65 mm lange og 10 mm i diameter — og skru fast kløyvekjeglen. Den er 32 mm i diameter og 85 mm lang og skrur seg inn i kubben med drillens egen kraft, slik at veden kløyves langs fibrene uten øks. Samme feste går også i borhammeren, bare uten slagfunksjonen. Mellom øktene ligger alt samlet i den medfølgende plastesken, 100 × 35 mm. Perfekt om du ikke har en vedkløyver — til opptenningsved og småved, ikke som erstatning for en ordentlig kløyver.",
+   "losningP": "Velg feste etter chucken du har — rundt, SDS eller sekskant, alle 65 mm lange og 10 mm i diameter — og skru fast kløyvekjeglen. Den er 32 mm i diameter og 85 mm lang og skrur seg inn i kubben med drillens egen kraft, slik at veden kløyves langs fibrene uten øks. SDS-festet går også i borhammeren – med slagfunksjonen avslått. Mellom øktene ligger alt samlet i den medfølgende plastesken, 100 × 35 mm. Perfekt om du ikke har en vedkløyver — til opptenningsved og småved, ikke som erstatning for en ordentlig kløyver.",
    "bullets": [
-    "<strong>Ingen øks å svinge</strong> – kløyvekjeglen (Ø32 × 85 mm) skrur seg inn med drillens kraft og kløyver veden langs fibrene",
-    "<strong>Passer drillen du allerede har</strong> – tre feste følger med: rundt, SDS og sekskant, alle 65 mm lange og 10 mm i diameter",
-    "<strong>Går i borhammeren også</strong> – SDS-festet passer samme chuck, bare kjør uten slagfunksjonen",
-    "<strong>Ligger samlet mellom øktene</strong> – plastesken 100 × 35 mm rommer kjeglen og alle tre feste",
-    "<strong>Ett kjøp, tre chucker</strong> – slipper å gjette hvilket feste som passer eller kjøpe en adapter separat"
+    "<strong>Ingen øks å svinge</strong> – kløyvekjeglen (Ø32 × 85 mm) skrur seg inn med drillens kraft og kløyver veden langs fibrene.",
+    "<strong>Passer drillen du allerede har</strong> – tre fester følger med: rundt, SDS og sekskant, alle 65 mm lange og 10 mm i diameter.",
+    "<strong>Går i borhammeren også</strong> – SDS-festet sitter i chucken på borhammeren, kjør med slagfunksjonen avslått.",
+    "<strong>Ligger samlet mellom øktene</strong> – plastesken 100 × 35 mm rommer kjeglen og alle tre festene.",
+    "<strong>Ett kjøp, tre chucktyper</strong> – du slipper å gjette hvilket feste som passer, og trenger ingen adapter."
    ],
    "alt": {
-    "hero": "Vedkløyver-bor — kløyvekjegle og tre feste på hvit bunn",
+    "hero": "Vedkløyver-bor — kløyvekjegle og tre fester på hvit bunn",
     "detalj": "Vedkløyver-bor — de tre festene i nærbilde: rundt, SDS og sekskant",
     "fakta": "Måltegning av vedkløyver-boret: kjegle Ø32 × 85 mm, feste 65 × 10 mm",
     "miljo": "Drill med vedkløyver-boret mot en bjørkekubbe ved vedboden (AI-generert livsstilsbilde)",
@@ -133,13 +133,13 @@
     "kløyvekjegle"
    ],
    "seoTitel": "Vedkløyver-bor Til Drill – Kjegle Ø32 mm | Beverbutikken",
-   "seoText": "Vedkløyver-bor med kløyvekjegle Ø32×85 mm og tre feste (rundt, SDS, sekskant) — perfekt om du ikke har en vedkløyver. Opptenningsved uten å svinge øks.",
+   "seoText": "Vedkløyver-bor med kløyvekjegle Ø32×85 mm og tre fester (rundt, SDS, sekskant) — perfekt om du ikke har en vedkløyver. Opptenningsved uten å svinge øks.",
    "aiRad": "Livsstilsbildene er AI-genererte illustrasjoner.",
    "varning": "Roterende verktøy. Bruk aldri med slagdrill eller slagfunksjon.",
    "optionNamn": "",
    "optionVarden": []
   },
-  "treFragor": "Bullet 1 (Ingen yxa att svinga): visualiserbar ✅ konkret mekanism / falsifierbar ✅ skruvar in eller inte / ingen annan kan säga det ✅ exakta mått Ø32×85mm. | Bullet 2 (Passar borrmaskinen du redan har): visualiserbar ✅ tre fysiska skaft / falsifierbar ✅ ingår eller ej, exakta mått / ingen annan kan säga det ✅ specifik bundling. | Bullet 3 (Går i borrhammaren också): visualiserbar ✅ SDS i chuck / falsifierbar ✅ passar eller ej / ingen annan kan säga det ⚠️ generisk SDS-kompatibilitet, men kopplad till denna produkts exakta skaft. | Bullet 4 (Ligger samlat mellan passen): visualiserbar ✅ plastask 100×35mm / falsifierbar ✅ rymmer eller ej / ingen annan kan säga det ✅ exakt askmått. | Bullet 5 (Ett köp, tre chuckar): visualiserbar ⚠️ delvis abstrakt (\"slipper gissa\") men \"tre chuckar\" är konkret / falsifierbar ✅ tre skaft ingår eller ej / ingen annan kan säga det ✅ kopplat till denna sats."
+  "treFragor": "Bullet 1 (Ingen yxa att svinga): visualiserbar ✅ konkret mekanism / falsifierbar ✅ skruvar in eller inte / ingen annan kan säga det ✅ exakta mått Ø32×85mm. | Bullet 2 (Passar borrmaskinen du redan har): visualiserbar ✅ tre fysiska skaft / falsifierbar ✅ ingår eller ej, exakta mått / ingen annan kan säga det ✅ specifik bundling. | Bullet 3 (Går i borrhammaren också): visualiserbar ✅ SDS i chuck / falsifierbar ✅ passar eller ej / ingen annan kan säga det ⚠️ generisk SDS-kompatibilitet, men kopplad till denna produkts exakta skaft. | Bullet 4 (Ligger samlat mellan passen): visualiserbar ✅ plastask 100×35mm / falsifierbar ✅ rymmer eller ej / ingen annan kan säga det ✅ exakt askmått. | Bullet 5 (Ett köp, tre chucktyper): visualiserbar ⚠️ delvis abstrakt (\"slipper gissa\") men \"tre chucktyper\" är konkret / falsifierbar ✅ tre skaft ingår eller ej / ingen annan kan säga det ✅ kopplat till denna sats."
  },
  "tofflor": {
   "sv": {
@@ -150,9 +150,9 @@
    "losningP": "Den här foppatoffeln är fodrad med plysch från häl till tå, så golvets kyla stannar utanför. Hälremmen håller den på foten i trappan och i hallen i stället för att glida av, och mönstret är kamouflage – khaki eller svart, herrstorlek 40–47.",
    "bullets": [
     "<strong>Golvets kyla stannar utanför</strong> – helt fodrad med plysch, från häl till tå.",
-    "<strong>Sitter kvar ner för trappan</strong> – hälrem håller tofflan på foten i stället för att glida av i varje steg.",
+    "<strong>Sitter kvar nerför trappan</strong> – hälremmen håller tofflan på foten i stället för att glida av i varje steg.",
     "<strong>Kliv i dem på en sekund</strong> – öppen foppatoffelmodell, redo innan kaffet hunnit brygga.",
-    "<strong>Följer med ut efter veden</strong> – grov sula och hälrem håller ihop för en snabb sväng ut på altanen, utan skoombyte.",
+    "<strong>Följer med ut efter veden</strong> – grov sula och hälrem tål en snabb sväng ut på altanen, utan skobyte.",
     "<strong>Finns i din storlek</strong> – herr 40–47, kamouflage i khaki eller svart."
    ],
    "alt": {
@@ -183,14 +183,14 @@
   "no": {
    "titel": "Fôrede Innetøfler – Kamuflasje, Herrestørrelse 40–47",
    "problemH": "Gulvet er kaldt før kaffen er klar",
-   "problemP": "Gulvet i gangen er iskaldt lenge før kaffen er klar. Den korte turen til terrassedøren er nok til kalde sokker, og nedover kjellertrappen etter ved glir de gamle tøflene av allerede på første trinn – hælen er uttrampet, så du fortsetter på strømpelesten.",
+   "problemP": "Gulvet i gangen er iskaldt lenge før kaffen er klar. Den korte turen til terrassedøren er nok til kalde sokker, og nedover kjellertrappen etter ved glir de gamle tøflene av allerede på første trinn – hælen er nedtråkket, så du fortsetter på strømpelesten.",
    "losningH": "Fôret hele veien, med en hælstropp som holder den på plass",
-   "losningP": "Denne innetøffelen er fôret med plysj fra hæl til tå, så kulden fra gulvet blir utenfor. Hælstroppen holder den på foten i trappen og gangen i stedet for å gli av, og mønsteret er kamuflasje – khaki eller svart, herrestørrelse 40–47.",
+   "losningP": "Denne innetøffelen er fôret med plysj fra hæl til tå, så kulden fra gulvet holder seg utenfor. Hælstroppen holder den på foten i trappen og gangen i stedet for å gli av, og mønsteret er kamuflasje – khaki eller svart, herrestørrelse 40–47.",
    "bullets": [
-    "<strong>Kulden fra gulvet blir utenfor</strong> – fôret med plysj fra hæl til tå.",
-    "<strong>Blir sittende ned trappen</strong> – hælstropp holder tøffelen på foten i stedet for å gli av på hvert trinn.",
-    "<strong>Stikk foten i på et sekund</strong> – åpen tøffelmodell, klar før kaffen er ferdigtrukket.",
-    "<strong>Blir med ut etter veden</strong> – grov såle og hælstropp holder sammen for en rask tur ut på terrassen, uten skobytte.",
+    "<strong>Kulden fra gulvet holder seg utenfor</strong> – fôret med plysj fra hæl til tå.",
+    "<strong>Sitter på foten nedover trappen</strong> – hælstroppen holder tøffelen på plass i stedet for at den glir av på hvert trinn.",
+    "<strong>Stikk foten i på et sekund</strong> – åpen tøffelmodell, klar før kaffen er ferdig traktet.",
+    "<strong>Blir med ut etter veden</strong> – grov såle og hælstropp tåler en rask tur ut på terrassen, uten å bytte sko.",
     "<strong>Finnes i din størrelse</strong> – herrestørrelse 40–47, kamuflasje i khaki eller svart."
    ],
    "alt": {
@@ -218,21 +218,21 @@
     "Svart"
    ]
   },
-  "treFragor": "1. Golvets kyla stannar utanför – visualiserbar ✅ (kallt golv möter fodrad plysch) / falsifierbar ✅ (fodrad eller ej) / unik ✅ (konkret spec konkurrenten inte kan låna rakt av)\n2. Sitter kvar ner för trappan – visualiserbar ✅ (en toffel som glider av i trappan) / falsifierbar ✅ (hälrem finns eller ej) / unik ✅ (bunden till denna modells hälrem)\n3. Kliv i dem på en sekund – visualiserbar ✅ (kliva rakt i skon) / falsifierbar ✅ (öppen modell utan fastspänning) / unik ✅ (specifikt för foppatoffelmodellen)\n4. Följer med ut efter veden – visualiserbar ✅ (gå ut på altanen efter ved) / falsifierbar ✅ (sula + hälrem håller ihop för en kort sväng) / unik ✅ (exakt gränsdragning – kort sväng, inte utetoffel)\n5. Finns i din storlek – visualiserbar ✅ (storlekstabell 40–47) / falsifierbar ✅ (storleken finns eller ej) / unik ✅ (specifik storleksrymd + två färger)"
+  "treFragor": "1. Golvets kyla stannar utanför – visualiserbar ✅ (kallt golv möter fodrad plysch) / falsifierbar ✅ (fodrad eller ej) / unik ✅ (konkret spec konkurrenten inte kan låna rakt av)\n2. Sitter kvar nerför trappan – visualiserbar ✅ (en toffel som glider av i trappan) / falsifierbar ✅ (hälrem finns eller ej) / unik ✅ (bunden till denna modells hälrem)\n3. Kliv i dem på en sekund – visualiserbar ✅ (kliva rakt i skon) / falsifierbar ✅ (öppen modell utan fastspänning) / unik ✅ (specifikt för foppatoffelmodellen)\n4. Följer med ut efter veden – visualiserbar ✅ (gå ut på altanen efter ved) / falsifierbar ✅ (sula + hälrem håller ihop för en kort sväng) / unik ✅ (exakt gränsdragning – kort sväng, inte utetoffel)\n5. Finns i din storlek – visualiserbar ✅ (storlekstabell 40–47) / falsifierbar ✅ (storleken finns eller ej) / unik ✅ (specifik storleksrymd + två färger)"
  },
  "solcellslampa": {
   "sv": {
    "titel": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
    "problemH": "Nyckelhålet du aldrig hittar i mörkret",
    "problemP": "Du kommer hem i mörkret och famlar efter nyckelhålet med mobillampan i ena handen. En fast monterad lampa hade krävt en elektriker och nya kablar i väggen — och en sladdlampa slutar med en förlängningssladd som fryser fast i snön till våren.",
-   "losningH": "Ingen el, bara skruv",
-   "losningP": "Solcellslampan skruvas fast på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och när rörelsesensorn känner av att du närmar dig tänds de tre huvudena med sammanlagt 210 lysdioder. Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet — inte bara rakt fram.",
+   "losningH": "Ingen el, ingen elektriker",
+   "losningP": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och när rörelsesensorn känner av att du närmar dig tänds de tre huvudena med sammanlagt 210 lysdioder. Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet — inte bara rakt fram.",
    "bullets": [
     "<strong>Du slipper famla efter nyckelhålet i mörkret</strong> – rörelsesensorn tänder de tre huvudena med 210 lysdioder när du kommer gående.",
-    "<strong>Ingen elektriker, inget kabeldrag</strong> – lampan skruvas fast på väggen och laddas av det inbyggda solcellspanelet.",
+    "<strong>Ingen elektriker, inget kabeldrag</strong> – lampan monteras på väggen och laddas av den inbyggda solcellspanelen.",
     "<strong>Ljuset riktas dit du faktiskt behöver det</strong> – alla tre huvuden vrids var för sig, mot uppfarten, trappan eller garageporten.",
     "<strong>Du slipper tänka på laddning</strong> – solcellspanelen fyller på det inbyggda 1200 mAh-batteriet så länge lampan sitter i solljus.",
-    "<strong>210 lysdioder fördelade på tre huvuden</strong> – du får spritt ljus i stället för en smal ljuskägla."
+    "<strong>Brett ljus i stället för en smal kägla</strong> – 210 lysdioder fördelade på tre huvuden."
    ],
    "alt": {
     "hero": "Solcellslampa med tre huvuden och rörelsesensor på vit botten",
@@ -250,7 +250,7 @@
     "uteplats"
    ],
    "seoTitel": "Solcellslampa Med Rörelsesensor – 3 Huvuden, 210 LED",
-   "seoText": "Solcellsdriven utomhuslampa med rörelsesensor, tre vridbara huvuden och 210 lysdioder. Skruvas upp utan el – ingen elektriker behövs.",
+   "seoText": "Solcellsdriven utomhuslampa med rörelsesensor, tre vridbara huvuden och 210 lysdioder. Monteras utan el – ingen elektriker behövs.",
    "aiRad": "Livsstilsbilderna är AI-genererade illustrationer.",
    "varning": "",
    "optionNamn": "",
@@ -260,14 +260,14 @@
    "titel": "Solcellelampe Med Bevegelsessensor – Tre Hoder, 210 LED",
    "problemH": "Nøkkelhullet du aldri finner i mørket",
    "problemP": "Du kommer hjem i mørket og famler etter nøkkelhullet med mobillommelykten i den ene hånden. En fast montert lampe hadde krevd elektriker og nye kabler i veggen — og en lampe med ledning ender med en skjøteledning som fryser fast i snøen til våren.",
-   "losningH": "Ingen strøm, bare skru den opp",
-   "losningP": "Solcellelampen skrus fast på veggen uten en eneste kabel. Solcellepanelet lader det innebygde 1200 mAh-batteriet i løpet av dagen, og når bevegelsessensoren registrerer at du nærmer deg, tennes de tre hodene med til sammen 210 lysdioder. Hvert hode kan vris for seg, så du retter lyset mot oppkjørselen, trappen eller nøkkelhullet — ikke bare rett fram.",
+   "losningH": "Ingen strøm, ingen elektriker",
+   "losningP": "Solcellelampen monteres på veggen uten en eneste kabel. Solcellepanelet lader det innebygde 1200 mAh-batteriet i løpet av dagen, og når bevegelsessensoren registrerer at du nærmer deg, tennes de tre hodene med til sammen 210 lysdioder. Hvert hode kan vris for seg, så du retter lyset mot oppkjørselen, trappen eller nøkkelhullet — ikke bare rett fram.",
    "bullets": [
     "<strong>Du slipper å famle etter nøkkelhullet i mørket</strong> – bevegelsessensoren tenner de tre hodene med 210 lysdioder når du kommer gående.",
-    "<strong>Ingen elektriker, ingen kabeltrekking</strong> – lampen skrus fast på veggen og lades av det innebygde solcellepanelet.",
+    "<strong>Ingen elektriker, ingen kabeltrekking</strong> – lampen monteres på veggen og lades av det innebygde solcellepanelet.",
     "<strong>Lyset rettes dit du faktisk trenger det</strong> – alle tre hodene vris hver for seg, mot oppkjørselen, trappen eller garasjeporten.",
     "<strong>Du slipper å tenke på lading</strong> – solcellepanelet fyller på det innebygde 1200 mAh-batteriet så lenge lampen henger i sollys.",
-    "<strong>210 lysdioder fordelt på tre hoder</strong> – du får spredt lys i stedet for én smal lyskjegle."
+    "<strong>Bredt lys i stedet for én smal kjegle</strong> – 210 lysdioder fordelt på tre hoder."
    ],
    "alt": {
     "hero": "Solcellelampe med tre hoder og bevegelsessensor på hvit bunn",
@@ -285,13 +285,13 @@
     "oppkjørsel"
    ],
    "seoTitel": "Solcellelampe Med Bevegelsessensor – 3 Hoder, 210 LED",
-   "seoText": "Solcelledrevet utelampe med bevegelsessensor, tre vridbare hoder og 210 lysdioder. Skrus opp uten strøm – ingen elektriker nødvendig.",
+   "seoText": "Solcelledrevet utelampe med bevegelsessensor, tre vridbare hoder og 210 lysdioder. Monteres uten strøm – ingen elektriker nødvendig.",
    "aiRad": "Livsstilsbildene er AI-genererte illustrasjoner.",
    "varning": "",
    "optionNamn": "",
    "optionVarden": []
   },
-  "treFragor": "1. \"Du slipper famla efter nyckelhålet i mörkret\" – visualisera ✅ (nyckelhål+mörker) / falsifiera ✅ (sensor tänder de tre huvudena, mätbart) / unik ✅ (specifik mekanism ingen konkurrent kan påstå ordagrant)\n2. \"Ingen elektriker, inget kabeldrag\" – visualisera ✅ (elektriker, kabeldrag) / falsifiera ✅ (skruvas fast, solcellsladdat — sant/falskt) / unik ✅ (pekar på installationssättet, inte en generisk fördel)\n3. \"Ljuset riktas dit du faktiskt behöver det\" – visualisera ✅ (uppfarten, trappan, garageporten) / falsifiera ✅ (huvudena vrids var för sig — verifierbart) / unik ✅ (tre separat vridbara huvuden är en konkret skillnad)\n4. \"Du slipper tänka på laddning\" – visualisera ✅ (solljus, batteri) / falsifiera ✅ (solcell + 1200 mAh-batteri — mätbar mekanism) / unik ✅ (kopplar direkt till de låsta specen, ej en generisk 'bekväm'-fras)\n5. \"210 lysdioder fördelade på tre huvuden\" – visualisera ✅ (spritt ljus vs smal kägla) / falsifiera ✅ (exakt LED-antal ur fakta) / unik ✅ (siffran 210 är produktens egen, ingen konkurrent kan låna den)"
+  "treFragor": "1. \"Du slipper famla efter nyckelhålet i mörkret\" – visualisera ✅ (nyckelhål+mörker) / falsifiera ✅ (sensor tänder de tre huvudena, mätbart) / unik ✅ (specifik mekanism ingen konkurrent kan påstå ordagrant)\n2. \"Ingen elektriker, inget kabeldrag\" – visualisera ✅ (elektriker, kabeldrag) / falsifiera ✅ (monteras utan kabel, solcellsladdat — sant/falskt) / unik ✅ (pekar på installationssättet, inte en generisk fördel)\n3. \"Ljuset riktas dit du faktiskt behöver det\" – visualisera ✅ (uppfarten, trappan, garageporten) / falsifiera ✅ (huvudena vrids var för sig — verifierbart) / unik ✅ (tre separat vridbara huvuden är en konkret skillnad)\n4. \"Du slipper tänka på laddning\" – visualisera ✅ (solljus, batteri) / falsifiera ✅ (solcell + 1200 mAh-batteri — mätbar mekanism) / unik ✅ (kopplar direkt till de låsta specen, ej en generisk 'bekväm'-fras)\n5. \"Brett ljus i stället för en smal kägla – 210 lysdioder fördelade på tre huvuden\" – visualisera ✅ (spritt ljus vs smal kägla) / falsifiera ✅ (exakt LED-antal ur fakta) / unik ✅ (siffran 210 är produktens egen, ingen konkurrent kan låna den)"
  },
  "bilborste": {
   "sv": {
@@ -305,7 +305,7 @@
     "<strong>Ett svep täcker mer än en vanlig svamp</strong> – borsthuvudet är dubbelt och 25 cm brett i mikrofiber.",
     "<strong>Rätt längd för en vanlig bil</strong> – 100 cm totalt räcker runt sidor, motorhuv och bagagelucka på en personbil; inte byggd för taket på en SUV eller husbil.",
     "<strong>Armen orkar hela tvätten</strong> – borsten väger 335 gram.",
-    "<strong>Tål att stå kvar i garaget mellan tvättarna</strong> – skaft i rostfritt stål, borsthuvud i mikrofiber."
+    "<strong>Skaft i rostfritt stål</strong> – och ett dubbelt borsthuvud i grå mikrofiber."
    ],
    "alt": {
     "hero": "Biltvättborste med dubbelt mikrofiberhuvud och teleskopskaft i rostfritt stål, vit bakgrund",
@@ -338,9 +338,9 @@
    "bullets": [
     "<strong>Du slipper å stå bøyd over panseret</strong> – teleskopskaftet i rustfritt stål strekkes ut til totalt 100 cm.",
     "<strong>Et sveip dekker mer enn en vanlig svamp</strong> – børstehodet er dobbelt og 25 cm bredt i mikrofiber.",
-    "<strong>Riktig lengde for en vanlig bil</strong> – 100 cm totalt rekker rundt sider, panser og bagasjerom på en personbil; ikke laget for taket på en SUV eller bobil.",
+    "<strong>Riktig lengde for en vanlig bil</strong> – 100 cm totalt rekker rundt sider, panser og bakluke på en personbil; ikke laget for taket på en SUV eller bobil.",
     "<strong>Armen orker hele vasken</strong> – børsten veier 335 gram.",
-    "<strong>Tåler å stå i garasjen mellom vaskene</strong> – skaft i rustfritt stål, børstehode i mikrofiber."
+    "<strong>Skaft i rustfritt stål</strong> – og et dobbelt børstehode i grå mikrofiber."
    ],
    "alt": {
     "hero": "Bilvaskebørste med dobbelt mikrofiberhode og teleskopskaft i rustfritt stål, hvit bakgrunn",
@@ -364,7 +364,7 @@
    "optionNamn": "",
    "optionVarden": []
   },
-  "treFragor": "1. ✅ visualisera (ryggen rätas upp, skaftet sträcks ut) / ✅ falsifiera (100 cm mätbart) / ✅ unik (exakt mått + material, ingen generisk fras)\n2. ✅ visualisera (dubbelt huvud, 25 cm brett svep) / ✅ falsifiera (mätbart mot en enkel svamp) / ✅ unik (specifikt spec-tal ingen konkurrent kan låna rakt av)\n3. ✅ visualisera (sträcker runt sidor/motorhuv, inte taket på SUV) / ✅ falsifiera (100 cm är ett mått, går att kolla) / ✅ unik (ärlig begränsning en konkurrent knappast skriver frivilligt)\n4. ✅ visualisera (armen orkar hela bilen) / ✅ falsifiera (335 gram går att väga) / ✅ unik (exakt viktsiffra, inte \"lätt\" som adjektiv)\n5. ✅ visualisera (borsten står kvar i garaget mellan tvättarna) / ✅ falsifiera (rostfritt stål är kontrollerbart material) / ✅ unik (materialfakta + konkret plats, inte löftet \"håller för alltid\")"
+  "treFragor": "1. ✅ visualisera (ryggen rätas upp, skaftet sträcks ut) / ✅ falsifiera (100 cm mätbart) / ✅ unik (exakt mått + material, ingen generisk fras)\n2. ✅ visualisera (dubbelt huvud, 25 cm brett svep) / ✅ falsifiera (mätbart mot en enkel svamp) / ✅ unik (specifikt spec-tal ingen konkurrent kan låna rakt av)\n3. ✅ visualisera (sträcker runt sidor/motorhuv, inte taket på SUV) / ✅ falsifiera (100 cm är ett mått, går att kolla) / ✅ unik (ärlig begränsning en konkurrent knappast skriver frivilligt)\n4. ✅ visualisera (armen orkar hela bilen) / ✅ falsifiera (335 gram går att väga) / ✅ unik (exakt viktsiffra, inte \"lätt\" som adjektiv)\n5. ✅ visualisera (stålskaft, grått dubbelt borsthuvud) / ✅ falsifiera (rostfritt stål och mikrofiber är kontrollerbara material) / ⚠️ unik (ren materialfakta — hållbarhetslöftet struket av granskaren, ej belagt)"
  },
  "fonsterlarm": {
   "sv": {
@@ -377,7 +377,7 @@
     "<strong>Du hör direkt om något rör dörren</strong> – vibrationssensorn löser ut ett larm på 110 dB.",
     "<strong>Stäng av larmet utan att gå dit</strong> – den trådlösa fjärrkontrollen slår det på och av på avstånd.",
     "<strong>Passar dörren, fönstret och cykeln</strong> – samma larm monteras där du behöver det just nu.",
-    "<strong>Ett larm du flyttar efter behov</strong> – altandörren i sommar, källarfönstret i vinter, cykeln däremellan."
+    "<strong>Larmar när någon rycker eller bänder, inte först när det är öppet</strong> – vibrationssensorn känner av rörelsen i dörren, fönstret eller cykeln."
    ],
    "alt": {
     "hero": "Fönster- och dörrlarm med fjärrkontroll på vit bakgrund",
@@ -405,13 +405,13 @@
    "titel": "Dør- og Vindusalarm 110 dB – Trådløs Fjernkontroll",
    "problemH": "Døren du aldri hører",
    "problemP": "Verandadøren på baksiden, kjellervinduet som står på gløtt, sykkelen du setter utenfor oppgangen — du vet at noen kan åpne eller rykke i dem uten at du merker det før etterpå.",
-   "losningH": "En alarm som merker det du går glipp av",
-   "losningP": "Sett alarmen på døren, vinduet eller sykkelen. En vibrasjonssensor kjenner igjen når noe rører ved den, og 110 desibel høres gjennom huset. Fjernkontrollen slår alarmen på og av på avstand, så du slipper å krype bort til vinduet hver gang du kommer og går.",
+   "losningH": "En alarm som merker det du ikke får med deg",
+   "losningP": "Sett alarmen på døren, vinduet eller sykkelen. En vibrasjonssensor registrerer når noe rører ved den, og 110 desibel høres gjennom huset. Fjernkontrollen slår alarmen på og av på avstand, så du slipper å krype bort til vinduet hver gang du kommer og går.",
    "bullets": [
     "<strong>Du hører det med en gang noe rører døren</strong> – vibrasjonssensoren utløser en alarm på 110 desibel.",
     "<strong>Slå av alarmen uten å gå dit</strong> – den trådløse fjernkontrollen slår den på og av på avstand.",
-    "<strong>Passer på døren, vinduet og sykkelen</strong> – samme alarm monteres der du trenger den akkurat nå.",
-    "<strong>En alarm du flytter etter behov</strong> – verandadøren om sommeren, kjellervinduet om vinteren, sykkelen innimellom."
+    "<strong>Passer til døren, vinduet og sykkelen</strong> – samme alarm monteres der du trenger den akkurat nå.",
+    "<strong>Varsler når noen rykker eller bender, ikke først når det er åpent</strong> – vibrasjonssensoren registrerer bevegelsen i døren, vinduet eller sykkelen."
    ],
    "alt": {
     "hero": "Vindus- og døralarm med fjernkontroll på hvit bakgrunn",
@@ -435,6 +435,6 @@
    "optionNamn": "",
    "optionVarden": []
   },
-  "treFragor": "1. \"Du hör direkt om något rör dörren\" – visualisera ✅ (hör larmet när dörren rör sig) / falsifiera ✅ (110 dB, testbart) / ingen annan kan säga det ❌ (generisk vibrationslarm-funktion, konkurrenter säger samma).\n2. \"Stäng av larmet utan att gå dit\" – visualisera ✅ (stänger av på avstånd med fjärren) / falsifiera ✅ (fjärrkontroll finns eller inte) / ingen annan kan säga det ✅ (många billiga vibrationslarm saknar fjärrkontroll — differentierande).\n3. \"Passar dörren, fönstret och cykeln\" – visualisera ✅ (samma enhet på tre olika ställen) / falsifiera ✅ (monteringsbar på alla tre, testbart) / ingen annan kan säga det ❌ (multianvändning är ett vanligt kategoripåstående).\n4. \"Ett larm du flyttar efter behov\" – visualisera ✅ (flyttas mellan säsonger/platser) / falsifiera ✅ (går att montera om) / ingen annan kan säga det ✅ (säsongsvinkeln — sommarstuga/vinter/cykel — är ovanlig i kategorin)."
+  "treFragor": "1. \"Du hör direkt om något rör dörren\" – visualisera ✅ (hör larmet när dörren rör sig) / falsifiera ✅ (110 dB, testbart) / ingen annan kan säga det ❌ (generisk vibrationslarm-funktion, konkurrenter säger samma).\n2. \"Stäng av larmet utan att gå dit\" – visualisera ✅ (stänger av på avstånd med fjärren) / falsifiera ✅ (fjärrkontroll finns eller inte) / ingen annan kan säga det ✅ (många billiga vibrationslarm saknar fjärrkontroll — differentierande).\n3. \"Passar dörren, fönstret och cykeln\" – visualisera ✅ (samma enhet på tre olika ställen) / falsifiera ✅ (monteringsbar på alla tre, testbart) / ingen annan kan säga det ❌ (multianvändning är ett vanligt kategoripåstående).\n4. \"Larmar när någon rycker eller bänder, inte först när det är öppet\" – visualisera ✅ (någon rycker i cykeln, larmet går) / falsifiera ✅ (vibrationssensor löser ut på rörelse, testbart) / ingen annan kan säga det ✅ (skiljer den från magnetkontaktlarm som bara reagerar på öppning). Granskaren bytte ut \"flyttar efter behov\" — monteringssättet är inte belagt."
  }
 }

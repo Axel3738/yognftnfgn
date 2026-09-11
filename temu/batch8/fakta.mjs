@@ -63,7 +63,9 @@ export const FAKTA = {
     kategori: 'gid://shopify/TaxonomyCategory/hg-2-5',         // Home & Garden > Business & Home Security > Security Lights
     kalla: 'bilder/image2.jpg (748 px) + t-lampa.jpeg (1200 px, visar TVÅ lampor)',
     // CWD: "210 LED Solar Triple Head Light [1200mAh]"
-    latt: { lysdioder: 210, batteriMah: 1200, huvuden: 3, sensor: 'rörelsesensor', drift: 'solcell' },
+    // "vridbara" är bildverifierat: sidohuvudena sitter på ledade fästen i image2.jpg
+    // (granskarens fråga 2026-09-11) — ordet står därför här och får användas.
+    latt: { lysdioder: 210, batteriMah: 1200, huvuden: 3, huvudenVridbara: true, sensor: 'rörelsesensor', drift: 'solcell' },
     obs: '⚠️ bilder/image7.png visar 74-LED-varianten (glesare dioder) och dess MÅTT — den bilden '
        + 'och de måtten hör INTE till den offererade 210-LED-lampan och får inte användas. '
        + 'Temu-bilden visar två lampor; vi säljer EN — beskär till en enhet.',
