@@ -12,7 +12,7 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { rangordna, prisTak, poang, taggarOchVikter, UTESLUT, RESULTAT_ANTAL } from '../gavoguide.mjs';
+import { rangordna, prisTak, poang, taggarOchVikter, UTESLUT, RESULTAT_ANTAL, BUDGETPOANG } from '../gavoguide.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -78,20 +78,34 @@ test('spärrarna är hårda, inte minuspoäng — de går inte att väga upp', (
 
 // ------------------------------------------------------------- prisfiltret
 
-test('prisfiltret är MJUKT — kunden lämnas aldrig utan svar', () => {
-  const dyrt = [
-    { handle: 'golf', pris: 549, quiz: { taggar: ['mottagare:vuxen', 'intresse:golf'] } },
-    { handle: 'whisky', pris: 449, quiz: { taggar: ['mottagare:vuxen', 'intresse:whisky'] } },
-  ];
-  const r = rangordna(dyrt, svar([['mottagare:vuxen'], 3], [['pris:under-400'], 1]));
-  assert.equal(r.rankade.length, 2, 'inget låg under 400 — filtret ska släppas');
-  assert.equal(r.not, 'budget', 'och kunden ska få veta varför');
+test('budgeten får ALDRIG slå ut intresset — den svarar på fel fråga då', () => {
+  // Provkört i webbläsare 2026-09-11: med budgeten som filter fick den som
+  // svarade "golf" och "under 400 kr" hockeykalendern, för golfkalendern
+  // kostar 549 och föll bort helt. Att svara på fel fråga är värre än att
+  // visa ett för dyrt pris.
+  const r = rangordna(SORTIMENT, svar([['mottagare:vuxen'], 3], [['intresse:golf'], 4], [['pris:under-400'], 1]));
+  assert.equal(handles(r)[0], 'golf', 'intresset väger tyngre än prisspannet');
+  assert.equal(r.not, 'over-budget', 'men kunden ska få veta att den kostar mer');
+  assert.ok(r.billigast, 'och se den bäst rankade som faktiskt ryms');
+  assert.ok(r.billigast.produkt.pris <= 400);
 });
 
-test('finns något inom budgeten vinner budgeten, utan anmärkning', () => {
-  const r = rangordna(SORTIMENT, svar([['mottagare:vuxen'], 3], [['pris:under-400'], 1]));
+test('ligger träffen inom budgeten sägs ingenting om pris', () => {
+  const r = rangordna(SORTIMENT, svar([['mottagare:barn'], 3], [['intresse:dinosaurier'], 4], [['pris:under-400'], 1]));
+  assert.equal(handles(r)[0], 'dino');
   assert.equal(r.not, '');
-  assert.ok(r.rankade.every((x) => x.produkt.pris <= 400), 'bara produkter under 400 kr');
+  assert.equal(r.billigast, null);
+});
+
+test('budgetpoängen bryter lika lägen till det billigare', () => {
+  // Två produkter, lika på allt utom priset: den inom budget ska vinna.
+  const lika = [
+    { handle: 'dyr', pris: 549, quiz: { taggar: ['mottagare:vuxen', 'intresse:golf'] } },
+    { handle: 'billig', pris: 349, quiz: { taggar: ['mottagare:vuxen', 'intresse:golf'] } },
+  ];
+  const r = rangordna(lika, svar([['mottagare:vuxen'], 3], [['intresse:golf'], 4], [['pris:under-400'], 1]));
+  assert.equal(handles(r)[0], 'billig');
+  assert.equal(r.not, '');
 });
 
 test('prisTak läser spannen', () => {
@@ -183,6 +197,10 @@ test('sektionen finns i temat och läser kollektionen, inte en produktlista', as
 
 test('RESULTAT_ANTAL är en träff plus två alternativ', () => {
   assert.equal(RESULTAT_ANTAL, 3);
+});
+
+test('budgetpoängen väger lättare än intressefrågan — annars vore den ett filter igen', () => {
+  assert.ok(BUDGETPOANG < 4, `budgetpoängen ${BUDGETPOANG} får inte nå intressets vikt 4`);
 });
 
 test('varje uteslutningsregel bär en motivering', () => {

@@ -283,7 +283,7 @@ function byggSektioner(butik, produkter, alt) {
         text_tidigare: 'Dina matchningar hittills',
         text_alla: text(g.text_alla) ?? `Se alla ${(d.sortimentRubrik ?? 'produkter').toLowerCase()}`,
         text_ingen: 'Ingen matchade allt du valde.',
-        text_budget: 'Inget låg under din budget — det här passar bäst i övrigt.',
+        text_budget: 'Den här kostar mer än du valde, men matchar bäst. Närmast under din gräns:',
       },
     };
     ordning.push('gavoguide');

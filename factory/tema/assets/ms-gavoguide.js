@@ -232,8 +232,13 @@
     h += '<p class="ms-guide__pris">' + esc(basta.prisText);
     if (basta.jamforText) h += ' <s>' + esc(basta.jamforText) + '</s>';
     h += '</p>';
-    if (svar.not === 'budget') {
-      h += '<p class="ms-guide__not">' + esc(t.textBudget || 'Ingen kalender låg under din budget — det här är den som passar bäst i övrigt.') + '</p>';
+    if (svar.not === 'over-budget') {
+      var rad = esc(t.textBudget || 'Den här kostar mer än du valde.');
+      if (svar.billigast) {
+        rad += ' <a href="' + esc(svar.billigast.produkt.url) + '">' +
+          esc(svar.billigast.produkt.titel) + ' ' + esc(svar.billigast.produkt.prisText) + '</a>';
+      }
+      h += '<p class="ms-guide__not">' + rad + '</p>';
     }
     h += '<div class="ms-guide__knappar">';
     if (basta.variant) {

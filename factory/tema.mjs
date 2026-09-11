@@ -725,8 +725,8 @@ const GAVOGUIDE = `{%- liquid
     { "type": "text", "id": "text_alla", "label": "Länk till hela kollektionen", "default": "Se alla kalendrar" },
     { "type": "textarea", "id": "text_ingen", "label": "Text när inget matchar",
       "default": "Ingen kalender matchade allt du valde." },
-    { "type": "textarea", "id": "text_budget", "label": "Text när inget rymdes i budgeten",
-      "default": "Ingen kalender låg under din budget — det här är den som passar bäst i övrigt." }
+    { "type": "textarea", "id": "text_budget", "label": "Text när träffen kostar mer än kunden valde",
+      "default": "Den här kostar mer än du valde, men matchar bäst. Närmast under din gräns:" }
   ],
   "blocks": [
     { "type": "fraga", "name": "Fråga", "settings": [

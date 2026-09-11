@@ -55,6 +55,18 @@ export function prisTak(taggar) {
   return null;
 }
 
+/**
+ * Vad det är värt att ligga inom budgeten, i poäng.
+ *
+ * Lägre än intressefrågans vikt (4) med flit. Provkört i webbläsare
+ * 2026-09-11: när budgeten var ett FILTER fick den som svarade "golf" och
+ * "under 400 kr" hockeykalendern, för golfkalendern kostar 549 och föll bort
+ * helt. Att svara på fel fråga är värre än att visa ett för dyrt pris — nu
+ * vinner intresset, och guiden säger rakt ut att träffen ligger över budgeten
+ * och vilken som är närmast under.
+ */
+export const BUDGETPOANG = 3;
+
 /** Produktens poäng: summan av vikterna för de taggar den delar med svaren. */
 export function poang(taggar, vikter, q) {
   let p = 0;
@@ -84,9 +96,10 @@ export function taggarOchVikter(valda) {
  *   produkter  [{ handle, pris, quiz: { taggar[], mening, sma_delar, alkoholtema } }]
  *   valda      [{ taggar: [], vikt: n, etikett }]  — ett per besvarad fråga
  *
- * Returnerar { rankade, not, uteslutna }. `not` är 'budget' när prisfiltret
- * fick släppas — guiden skriver då ut varför, i stället för att låtsas att
- * svaret låg inom budgeten.
+ * Returnerar { rankade, not, billigast, uteslutna }. `not` är 'over-budget'
+ * när träffen kostar mer än kunden valde — guiden skriver då ut det och
+ * lyfter fram `billigast`, den bäst rankade som ryms. Att tiga om priset vore
+ * att låtsas att svaret låg inom budgeten.
  *
  * Guiden svarar ALLTID när det finns minst en produkt som klarar spärrarna.
  * Ett tomt resultat betyder att spärrarna tog allt, och det är rätt svar:
@@ -96,22 +109,25 @@ export function rangordna(produkter, valda) {
   const { taggar, vikter } = taggarOchVikter(valda);
 
   const kvar = (produkter || []).filter((p) => !UTESLUT.some((r) => r.test(taggar, p.quiz || {})));
+  const tak = prisTak(taggar);
+  const rankade = sortera(kvar, taggar, vikter, tak);
 
   let not = '';
-  const tak = prisTak(taggar);
-  if (tak !== null) {
-    const inomBudget = kvar.filter((p) => p.pris <= tak);
-    if (inomBudget.length > 0) {
-      return { rankade: sortera(kvar.filter((p) => p.pris <= tak), taggar, vikter), not, uteslutna: produkter.length - inomBudget.length };
-    }
-    if (kvar.length > 0) not = 'budget';
+  let billigast = null;
+  if (tak !== null && rankade.length > 0 && rankade[0].produkt.pris > tak) {
+    not = 'over-budget';
+    billigast = rankade.find((r) => r.produkt.pris <= tak) ?? null;
   }
 
-  return { rankade: sortera(kvar, taggar, vikter), not, uteslutna: produkter.length - kvar.length };
+  return { rankade, not, billigast, uteslutna: produkter.length - kvar.length };
 }
 
-function sortera(lista, taggar, vikter) {
+function sortera(lista, taggar, vikter, tak = null) {
   return lista
-    .map((p) => ({ produkt: p, poang: poang(taggar, vikter, p.quiz || {}) }))
+    .map((p) => {
+      const bas = poang(taggar, vikter, p.quiz || {});
+      const inom = tak !== null && p.pris <= tak;
+      return { produkt: p, poang: bas + (inom ? BUDGETPOANG : 0), inomBudget: tak === null ? null : inom };
+    })
     .sort((a, b) => (b.poang !== a.poang ? b.poang - a.poang : a.produkt.pris - b.produkt.pris));
 }
