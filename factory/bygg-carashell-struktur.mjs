@@ -30,12 +30,12 @@ const PIXEL = '28589207184025756';   // CaraShell — aldrig Bäverbutikens 1554
 const MARKNADER = [
   {
     land: 'SE',
-    kampanj: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,63 | 2026-09-11',
+    kampanj: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11',
     adsets: ['PD', 'GT', 'SP', 'CS'].map((k) => `CARASHELL_SE_Taköverdraget - ${k}`),
   },
   {
     land: 'NO',
-    kampanj: 'CARASHELL_NO_Takovertrekket | BE-ROAS 1,63 | 2026-09-11',
+    kampanj: 'CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11',
     // CS saknas med FLIT: de tre norska CS-videorna läser upp en NOK-pris som
     // butiken inte har satt. De byggs när NOK-paketnivåerna finns.
     adsets: ['PD', 'SP', 'G'].map((k) => `CARASHELL_NO_Takovertrekket - ${k}`),

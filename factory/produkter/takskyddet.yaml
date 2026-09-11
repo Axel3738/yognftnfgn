@@ -27,15 +27,27 @@ ekonomi:
   # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
   # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset.
   moms_antagen: false
-  # ⚠️ HÄRLEDD, inte kvitterad: källkampanjens namn bär "BE ROAS 1.63" och
-  # docs/temu-launch-flow.md säger BE-ROAS = pris / (pris − inköp) ⇒
-  # 1129 − 1129/1,63 = 436 kr. Axel bekräftar mot Temu-kvittot innan talet
-  # får döma annonser.
-  inkopskostnad: 436
+  # ✅ KVITTERAD AV AXEL 2026-09-11 — inte längre härledd.
+  #   varukostnad   348,73 kr
+  #   tull           2,70 EUR = 30,34 kr  (ECB-dagskurs 2026-09-11: 1 EUR =
+  #                  11,2373 SEK, hämtad från api.frankfurter.dev, samma källa
+  #                  som commission/valuta.mjs — kursen gissas aldrig)
+  #   summa         379,07 kr
+  # ⚠️ Tullen är i EUR och kursen rör sig. Talet nedan är låst till kursen ovan;
+  # räkna om det om tullbeloppet ändras, och skriv då in den nya kursen här.
+  #
+  # DET GAMLA TALET VAR 436 kr, baklängesräknat ur källkampanjens namn
+  # ("BE ROAS 1.63"). Det var 57 kr för högt och gjorde break-even hårdare än
+  # den är: BE-CPA 693 kr i stället för 750 kr. Varje kill-beslut som fattats
+  # mot 1,63 var alltså för strängt.
+  inkopskostnad: 379.07
   pris: 1129
   jamforpris: 1469
-  # Ur källkampanjens namn (MagiBorsten 120250147343350291, 2026-09-10).
-  break_even_roas: 1.63
+  # Räknat, inte avläst: 1129 / (1129 − 379,07) = 1,5055.
+  # ⚠️ Kampanjnamnen i Meta bar "BE-ROAS 1,63" fram till 2026-09-11 och är
+  # omdöpta till 1,51. Namnet är en etikett — factory/ekonomi.mjs läser ALLTID
+  # talet härifrån, aldrig ur kampanjnamnet.
+  break_even_roas: 1.51
 
 varianter:
 media:

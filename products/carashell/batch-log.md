@@ -85,7 +85,7 @@ Meta-sida `1381171778405935` går inte att annonsera med ännu.
 
 | | SE | NO |
 |---|---|---|
-| Kampanj | `CARASHELL_SE_Taköverdraget \| BE-ROAS 1,63 \| 2026-09-11` (`120249050544990172`) | `CARASHELL_NO_Takovertrekket \| BE-ROAS 1,63 \| 2026-09-11` (`120249050596730172`) |
+| Kampanj | `CARASHELL_SE_Taköverdraget \| BE-ROAS 1,51 \| 2026-09-11` (`120249050544990172`) | `CARASHELL_NO_Takovertrekket \| BE-ROAS 1,51 \| 2026-09-11` (`120249050596730172`) |
 | Adsets | PD, GT, SP, CS | PD, SP, G |
 | Media uppe | 12 videor + 4 bilder | 9 videor |
 | Annonser | 0 (sidan) | 0 (sidan) |

@@ -32,8 +32,8 @@ const ACT = 'act_915422744950975';
 // EXAKTA namn. Läggs en tredje kampanj till här utan att någon läst den är det
 // ett fel, inte en bekvämlighet.
 const KAMPANJER = [
-  'CARASHELL_SE_Taköverdraget | BE-ROAS 1,63 | 2026-09-11',
-  'CARASHELL_NO_Takovertrekket | BE-ROAS 1,63 | 2026-09-11',
+  'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11',
+  'CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11',
 ];
 
 const spendAv = async (id) => {

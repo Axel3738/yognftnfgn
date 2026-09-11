@@ -22,7 +22,7 @@ export default {
   page: '1381171778405935',   // CaraShell
   pixel: '28589207184025756', // CaraShell-pixeln
   country: 'SE',
-  campaignName: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,63 | 2026-09-11',
+  campaignName: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11',
   link: 'https://carashell.se/products/takskyddet',
   dailyBudget: '100000', // öre SEK = 1000 kr/dag, CBO
   campaignStatus: 'PAUSED',

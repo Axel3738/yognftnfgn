@@ -11,18 +11,24 @@
 // 915422744950975 (SEK). Skillnaden mot SE är geo, språk och landningssida.
 //
 // ⚠️ NIO ANNONSER, INTE TOLV. CS-konceptets tre videor (CS_1, CS_2, CS_3) är
-// HÅLLNA. De läser upp och visar en NOK-pris ("Ordinær pris 1469 kroner. I dag
-// 1129 kroner", annonstexten säger 1549 → 1189) och lovar "Tretti dagers åpent
-// kjøp". CaraShells norska marknad har ännu inga NOK-paketnivåer — butiken
-// säljer i SEK på /nb (factory/butiker/carashell.yaml: marknader[0].valuta SEK)
-// — och butiken har 14 dagars ångerrätt, inte 30. Ett NOK-tal i en norsk annons
-// räknar alltså fel mot landningssidan. De tre står namngivna i räkningen med
-// orsak; de laddas upp när Axel slagit på NOK och satt paketnivåerna.
+// HÅLLNA. De läser upp och visar "Ordinær pris 1469 kroner, i dag 1129 kroner"
+// och lovar "Tretti dagers åpent kjøp". Inget av det stämmer för CaraShell:
+//   • NOK ÄR påslaget (Axel 2026-09-11) och priset är 1 106 NOK — inte 1 129.
+//     ⚠️ Valutan följer BESÖKARENS LAND, inte locale-sökvägen: /nb utan
+//     ?country=NO svarar i SEK. Mät alltid med ?country=NO.
+//   • Jämförpriset saknades helt vid mätningen — alltså ingen rabatt att
+//     annonsera. Axels beslut 2026-09-11: norska marknaden SKA ha ett
+//     jämförpris 25 % över ordinarie pris, dvs 1 106 × 1,25 = 1 382,50 NOK.
+//     ⚠️ Det ger 20 % rabatt, inte 25 % — (1382,50−1106)/1382,50 = 20,0 %.
+//     Copyn och talet måste säga 20 %, aldrig 25 % och aldrig källans 23 %.
+//   • Butiken har 14 dagars ångerrätt, inte 30 dagars åpent kjøp.
+// De tre byggs när jämförpriset är satt i Shopify och verifierat i kundens
+// riktiga vy. Tills dess står de namngivna i räkningen med orsak.
 //
 // Copyn är skriven på BOKMÅL av en copy-subagent (sonnet) mot
 // docs/copy-regler.md — aldrig översatt rakt av från svenskan. Tre-frågorstestet
-// redovisas i factory/output/takskyddet/copy-no.md. Ingen norsk annons nämner
-// pris, eftersom butiken inte har satt något i NOK.
+// redovisas i factory/output/takskyddet/copy-no.md. Ingen av de nio annonserna
+// nämner pris — de behöver därför ingen ändring när jämförpriset sätts.
 //
 // Allt föds PAUSED.
 export default {
@@ -30,7 +36,7 @@ export default {
   page: '1381171778405935',   // CaraShell — samma sida som SE
   pixel: '28589207184025756', // CaraShell-pixeln — samma pixel som SE
   country: 'NO',
-  campaignName: 'CARASHELL_NO_Takovertrekket | BE-ROAS 1,63 | 2026-09-11',
+  campaignName: 'CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11',
   link: 'https://carashell.se/nb/products/takskyddet',
   dailyBudget: '100000', // öre SEK = 1000 kr/dag, CBO. Kontots valuta är SEK.
   campaignStatus: 'PAUSED',

@@ -13,15 +13,24 @@ källkampanj och ska bekräftas eller falsifieras av CaraShells egna siffror.
 
 | | Utan moms (husets antagande) | Med moms 25 % |
 |---|--:|--:|
-| Täckningsbidrag | 693 kr | 467 kr |
-| Break-even-ROAS | **1,63** | 2,42 |
-| Break-even-CPA | **693 kr** | 467 kr |
-| Target-ROAS | 2,75 | 4,68 |
-| Target-CPA | 411 kr | 241 kr |
+| Täckningsbidrag | **749,93 kr** | 524 kr |
+| Break-even-ROAS | **1,51** | 2,15 |
+| Break-even-CPA | **750 kr** | 524 kr |
+| Target-ROAS | **2,41** | 3,88 |
+| Target-CPA | **468 kr** | 291 kr |
 
-⚠️ **`inkopskostnad: 436 kr` är HÄRLEDD, inte kvitterad.** Talet är baklängesräknat
-ur källkampanjens namn ("BE ROAS 1.63"), inte läst på ett Temu-kvitto. Kill-beslut
-mäts mot break-even — bekräfta talet mot kvittot innan det får döma en annons.
+✅ **Inköpspriset är KVITTERAT av Axel 2026-09-11: 379,07 kr.**
+348,73 kr varukostnad + 2,70 EUR tull. Tullen räknades om på ECB-dagskursen
+2026-09-11 (1 EUR = 11,2373 SEK, `api.frankfurter.dev` — samma källa som
+`commission/valuta.mjs`, kursen gissas aldrig) = 30,34 kr.
+
+⚠️ **Det gamla talet var 436 kr och det var 57 kr FÖR HÖGT.** Det var
+baklängesräknat ur källkampanjens namn ("BE ROAS 1.63") och gjorde break-even
+hårdare än den är — BE-CPA 693 kr i stället för 750 kr. Varje dom som fattas mot
+1,63 är alltså för sträng. Kampanjerna är omdöpta till "BE-ROAS 1,51".
+
+⚠️ **Tullen är i EUR.** Rör sig kursen eller tullbeloppet ska talet räknas om,
+och den nya kursen skrivas in i produktfilen.
 
 ⚠️ Butiksfilen säger `moms_i_pris: true`, produktfilen `moms_antagen: false`.
 Det är INTE en motsägelse: `factory/ekonomi.mjs` slår fast att `moms_i_pris`

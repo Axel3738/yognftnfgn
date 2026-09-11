@@ -72,7 +72,7 @@
       "kampanjer": {
         "SE": {
           "id": "120249050544990172",
-          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,63 | 2026-09-11",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
           "status": "PAUSED",
           "adsets": [
             "PD",
@@ -84,7 +84,7 @@
         },
         "NO": {
           "id": "120249050596730172",
-          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,63 | 2026-09-11",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
           "status": "PAUSED",
           "adsets": [
             "PD",

@@ -13,39 +13,18 @@ Källannonser:       16
   okänd              0  → ska INTE laddas upp
   odömd              0  → ska INTE laddas upp
   uteslutna          0  → var och en NAMNGIVEN med vad som krävs
-Uppladdade i kontot:   0  ← läst ur Meta, inte ur minnet
+Uppladdade i kontot:  16  ← läst ur Meta, inte ur minnet
 ```
 
 | Dom | Källa | Ska bli | Uppe | Saknas |
 |---|--:|--:|--:|--:|
-| `ren` | 9 | 9 | 0 | 9 |
-| `bara-copy` | 3 | 3 | 0 | 3 |
-| `kräver-omdubb` | 3 | 3 | 0 | 3 |
-| `kräver-slutkortsbygge` | 1 | 1 | 0 | 1 |
+| `ren` | 9 | 9 | 9 | 0 |
+| `bara-copy` | 3 | 3 | 3 | 0 |
+| `kräver-omdubb` | 3 | 3 | 3 | 0 |
+| `kräver-slutkortsbygge` | 1 | 1 | 1 | 0 |
 | `okänd` | 0 | 0 | 0 | 0 |
 | `odömd` | 0 | 0 | 0 | 0 |
-| **Summa** | **16** | **16** | **0** | **16** |
-
-### Saknas i kontot — 16 st, var och en namngiven
-
-| Annons | Dom | Orsak |
-|---|---|---|
-| `Takoverdrag_PD_2_H1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_GT_2_H1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_PD_1_H1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_CS_2_H1` | kräver-omdubb | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_PD_2_1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_SP_2_1` | kräver-slutkortsbygge | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_PD_3_H1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_CS_3_H1` | kräver-omdubb | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_CS_2_1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_CS_1_H1` | kräver-omdubb | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_SP_2_H1` | bara-copy | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_GT_1_H1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_SP_3_H1` | bara-copy | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_GT_3_H1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_GT_2_1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takoverdrag_SP_1_H1` | bara-copy | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
+| **Summa** | **16** | **16** | **16** | **0** |
 
 ## NO
 
@@ -58,38 +37,29 @@ Källannonser:       12
   okänd              0  → ska INTE laddas upp
   odömd              0  → ska INTE laddas upp
   uteslutna          0  → var och en NAMNGIVEN med vad som krävs
-Uppladdade i kontot:   0  ← läst ur Meta, inte ur minnet
+Uppladdade i kontot:   9  ← läst ur Meta, inte ur minnet
 ```
 
 | Dom | Källa | Ska bli | Uppe | Saknas |
 |---|--:|--:|--:|--:|
-| `ren` | 6 | 6 | 0 | 6 |
-| `bara-copy` | 3 | 3 | 0 | 3 |
+| `ren` | 6 | 6 | 6 | 0 |
+| `bara-copy` | 3 | 3 | 3 | 0 |
 | `kräver-omdubb` | 3 | 3 | 0 | 3 |
 | `kräver-slutkortsbygge` | 0 | 0 | 0 | 0 |
 | `okänd` | 0 | 0 | 0 | 0 |
 | `odömd` | 0 | 0 | 0 | 0 |
-| **Summa** | **12** | **12** | **0** | **12** |
+| **Summa** | **12** | **12** | **9** | **3** |
 
-### Saknas i kontot — 12 st, var och en namngiven
+### Saknas i kontot — 3 st, var och en namngiven
 
 | Annons | Dom | Orsak |
 |---|---|---|
-| `Takovertrekk_NO_SP_1` | bara-copy | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takovertrekk_NO_PD_1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takovertrekk_NO_G_2` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takovertrekk_NO_SP_2` | bara-copy | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takovertrekk_NO_PD_3` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takovertrekk_NO_G_3` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takovertrekk_NO_CS_1` | kräver-omdubb | hålls tillbaka: annonsen läser upp och visar en NOK-pris (1469 → 1129 kroner) som CaraShell inte har satt — butikens norska marknad säljer i SEK. Laddas upp när NOK-paketnivåerna finns. Dessutom blockerad av sidan, se övriga rader. |
-| `Takovertrekk_NO_CS_3` | kräver-omdubb | hålls tillbaka: annonsen läser upp och visar en NOK-pris (1469 → 1129 kroner) som CaraShell inte har satt — butikens norska marknad säljer i SEK. Laddas upp när NOK-paketnivåerna finns. Dessutom blockerad av sidan, se övriga rader. |
-| `Takovertrekk_NO_SP_3` | bara-copy | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takovertrekk_NO_CS_2` | kräver-omdubb | hålls tillbaka: annonsen läser upp och visar en NOK-pris (1469 → 1129 kroner) som CaraShell inte har satt — butikens norska marknad säljer i SEK. Laddas upp när NOK-paketnivåerna finns. Dessutom blockerad av sidan, se övriga rader. |
-| `Takovertrekk_NO_G_1` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
-| `Takovertrekk_NO_PD_2` | ren | blockerad: CaraShells Meta-sida 1381171778405935 går inte att annonsera med (Graph error_subcode 1815813, "Sidan du har valt är inte tillgänglig"). Media, kampanj och adset ligger uppe och väntar — annonsen skapas av vågkonfigen så fort sidan är löst. |
+| `Takovertrekk_NO_CS_1` | kräver-omdubb | hålls tillbaka: hela konceptet bygger på en rabatt den norska marknaden inte har. Mätt 2026-09-11 i kundens vy (?country=NO): 1 106 NOK UTAN jämförpris. Videorna läser upp "Ordinær pris 1469 kroner, i dag 1129 kroner" och lovar "Tretti dagers åpent kjøp" (butiken har 14 dagars ångerrätt). Axels beslut 2026-09-11: jämförpriset ska sättas till 1 106 × 1,25 = 1 382,50 NOK, vilket ger 20 % rabatt — inte 23 % som källan säger och inte 25 %. De tre byggs när jämförpriset är satt i Shopify och verifierat i kundens riktiga vy. |
+| `Takovertrekk_NO_CS_3` | kräver-omdubb | hålls tillbaka: hela konceptet bygger på en rabatt den norska marknaden inte har. Mätt 2026-09-11 i kundens vy (?country=NO): 1 106 NOK UTAN jämförpris. Videorna läser upp "Ordinær pris 1469 kroner, i dag 1129 kroner" och lovar "Tretti dagers åpent kjøp" (butiken har 14 dagars ångerrätt). Axels beslut 2026-09-11: jämförpriset ska sättas till 1 106 × 1,25 = 1 382,50 NOK, vilket ger 20 % rabatt — inte 23 % som källan säger och inte 25 %. De tre byggs när jämförpriset är satt i Shopify och verifierat i kundens riktiga vy. |
+| `Takovertrekk_NO_CS_2` | kräver-omdubb | hålls tillbaka: hela konceptet bygger på en rabatt den norska marknaden inte har. Mätt 2026-09-11 i kundens vy (?country=NO): 1 106 NOK UTAN jämförpris. Videorna läser upp "Ordinær pris 1469 kroner, i dag 1129 kroner" och lovar "Tretti dagers åpent kjøp" (butiken har 14 dagars ångerrätt). Axels beslut 2026-09-11: jämförpriset ska sättas till 1 106 × 1,25 = 1 382,50 NOK, vilket ger 20 % rabatt — inte 23 % som källan säger och inte 25 %. De tre byggs när jämförpriset är satt i Shopify och verifierat i kundens riktiga vy. |
 
 ---
 
 **DELVIS KLART**
-- SE: 16 saknas: Takoverdrag_PD_2_H1, Takoverdrag_GT_2_H1, Takoverdrag_PD_1_H1, Takoverdrag_CS_2_H1, Takoverdrag_PD_2_1, Takoverdrag_SP_2_1, Takoverdrag_PD_3_H1, Takoverdrag_CS_3_H1, Takoverdrag_CS_2_1, Takoverdrag_CS_1_H1, Takoverdrag_SP_2_H1, Takoverdrag_GT_1_H1, Takoverdrag_SP_3_H1, Takoverdrag_GT_3_H1, Takoverdrag_GT_2_1, Takoverdrag_SP_1_H1.
-- NO: 12 saknas: Takovertrekk_NO_SP_1, Takovertrekk_NO_PD_1, Takovertrekk_NO_G_2, Takovertrekk_NO_SP_2, Takovertrekk_NO_PD_3, Takovertrekk_NO_G_3, Takovertrekk_NO_CS_1, Takovertrekk_NO_CS_3, Takovertrekk_NO_SP_3, Takovertrekk_NO_CS_2, Takovertrekk_NO_G_1, Takovertrekk_NO_PD_2.
+- SE: klart (16 av 16).
+- NO: 3 saknas: Takovertrekk_NO_CS_1, Takovertrekk_NO_CS_3, Takovertrekk_NO_CS_2.

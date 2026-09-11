@@ -30,11 +30,14 @@
 //                  bytt med pipeline/no-precis.py, OCR-verifierat efteråt.
 //   yta 4 bild   — 0 av 4 bildannonser tillskriver källbutiken. Ögongranskade.
 //
-// BE-ROAS 1,63 = 1129 / (1129 − 436), räknat UTAN moms enligt produktfilens
+// BE-ROAS 1,51 = 1129 / (1129 − 379,07), räknat UTAN moms enligt produktfilens
 // ekonomi.moms_antagen: false (factory/ekonomi.mjs; butik.moms_i_pris styr
 // prisvisningen och får aldrig avgöra en kill-linje).
-// ⚠️ inkopskostnad 436 kr är HÄRLEDD ur källkampanjens namn, inte kvitterad mot
-// Temu-kvittot. Bekräfta innan talet får döma annonser.
+// ✅ Inköpspriset är KVITTERAT av Axel 2026-09-11: 348,73 kr vara + 2,70 EUR
+// tull (30,34 kr på ECB-dagskursen 11,2373) = 379,07 kr. Kampanjen hette
+// "BE-ROAS 1,63" fram till dess — det talet var baklängesräknat ur källans
+// namn och 57 kr för strängt. Namnet är ändå bara en etikett: budgetrond.mjs
+// och skalning.mjs läser break-even ur produktfilen, aldrig ur kampanjnamnet.
 //
 // Allt föds PAUSED — VA:n granskar och Axel skriver "Launch: CaraShell".
 export default {
@@ -42,7 +45,7 @@ export default {
   page: '1381171778405935',   // CaraShell
   pixel: '28589207184025756', // CaraShell-pixeln
   country: 'SE',
-  campaignName: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,63 | 2026-09-11',
+  campaignName: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11',
   link: 'https://carashell.se/products/takskyddet',
   dailyBudget: '100000', // öre SEK = 1000 kr/dag, CBO
   campaignStatus: 'PAUSED',
