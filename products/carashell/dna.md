@@ -127,3 +127,59 @@ CaraShell. Ett prisbyte räddar dem inte — det finns ingen rabatt att peka på
 | NO CS ×3 | Norska marknaden har inget jämförpris ⇒ ingen rabatt att annonsera. Videorna säger dessutom "Tretti dagers åpent kjøp" (butiken har 14 dagars ångerrätt). | **Axels beslut:** ska den norska marknaden ha ett jämförpris? Utan det är CS-konceptet dött på NO. |
 | Kill-beslut | `inkopskostnad` 436 kr är HÄRLEDD. Axel säger att han lagt in COGS — men talet i repot är oförändrat. | Axel ger siffran han lade in, så `factory/produkter/takskyddet.yaml` och kampanjnamnens BE-ROAS kan rättas |
 | Talet i PD ×3 | säger "dragsko" och "förvaringspåse" — påståenden produktfilen förbjuder | omdubb, eller Axels besked att det får stå |
+
+---
+
+## Första dygnet live — trattens läge 2026-09-12 kl 00:35
+
+Mätt ur kontot och pixeln, inte gissat.
+
+| Steg | Antal |
+|---|--:|
+| Spend | 314,75 kr |
+| Visningar | 3 412 |
+| Klick | 208 (**CTR 6,1 %**) |
+| PageView | ~147 |
+| ViewContent | 79 |
+| **AddToCart** | **1** |
+| InitiateCheckout | 0 |
+| Purchase | 0 |
+
+**Ingen dom är fälld.** ANALYSMETOD:s signifikansgrind är 300 kr spend *eller*
+3 köp, och break-even-CPA är 750 kr — 0 köp på 314 kr är under halva
+break-even och säger ingenting ännu. Creativen fungerar: CTR 6,1 % är högt.
+
+⚠️ **Det som sticker ut är AddToCart: 1 av 79 som såg produkten.** Normalt
+ligger det på 5–10 %. Två saker är uteslutna: pixeln är inte trasig (den
+skickar PageView, ViewContent OCH AddToCart), och produktsidan är hel
+(varianten är `available`, `/cart/add`-formuläret finns, köpknappen renderas).
+
+### Hypotes som ska testas, inte tros
+
+`assets/ms-paket.js` (paketwidgeten, används av ALLA OPS-butiker) kapar
+köpknappen så här:
+
+```js
+kopplaKnapp(){ … document.addEventListener("submit", this.kop.bind(this), true) }
+kop(ev){ … ev.preventDefault(); ev.stopImmediatePropagation();
+          fetch(rutt+"cart/add.js", …) }
+```
+
+Lyssnaren sitter på `document` i **capture-fasen** (tredje argumentet `true`),
+alltså före i stort sett alla andra, och `stopImmediatePropagation()` dödar
+sedan varje annan submit-lyssnare på sidan — inklusive sådant som kan fyra av
+spårning eller annan appfunktionalitet.
+
+⚠️ **Det är en HYPOTES.** Den motsägs delvis av att en AddToCart faktiskt gick
+igenom, och Shopifys egen Web Pixel lyssnar på `cart/add.js` oberoende av
+DOM-lyssnare. Skriv aldrig upp det här som orsaken förrän någon har gjort
+köpet i en riktig webbläsare.
+
+### Varför det inte gick att avgöra härifrån
+
+Kundvyn kördes mot Chromium i containern, men agentproxyn släpper inte igenom
+webbläsartrafik (`ERR_CONNECTION_RESET` mot carashell.se, medan `curl` mot
+samma URL svarar 200). Repots självtest säger redan samma sak om det här
+steget: *"Varukorgen i kundens vy — hoppad: kräver en människa i en
+webbläsare."* Det är alltså en mänsklig kontroll, inte en lucka i den här
+körningen — men den är nu det enda som står mellan hypotes och svar.
