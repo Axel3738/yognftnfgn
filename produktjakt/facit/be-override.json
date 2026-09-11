@@ -1,0 +1,11 @@
+{
+ "_om": "Break-even-ROAS för kampanjer som saknar 'BE ROAS x.xx' i namnet. Nyckel = exakt kampanjnamn. Källor: products/products.json (Axels COGS 2026-08-05) och docs/temu-vinnar-dna/data/ground-truth.md. Saknas en kampanj här OCH i namnet OCH i historik-taggar.json dömer meta_facit.py bara ROAS < 1,49 (lägsta kända BE i kontot) som förlust.",
+ "Motorhöljet": 1.63,
+ "Motorhöljet Lagerrensingsrea": 1.63,
+ "Sätesöverdragaren": 1.47,
+ "Strandtofflorna": 1.70,
+ "Axelbältet": 1.72,
+ "AI Smarta Glasögon": 1.34,
+ "Väggfästet": 2.00,
+ "Ergonomiska Tofflorna": 1.80
+}

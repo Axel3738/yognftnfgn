@@ -282,7 +282,8 @@ def main():
 
     # uppslag × Axels vikt: en grupp han sagt nej till tre gånger är redan borta (stopp), resten sjunker/stiger
     fynd.sort(key=lambda x: -x["rank"])
-    valda = fynd[:a.antal]
+    # V3 (2026-09-11): --antal 0 = skriv ALLA som klarat ekonomin — uppslag är inte rank (STATUS 09-11 metodfynd 4)
+    valda = fynd if a.antal <= 0 else fynd[:a.antal]
     ut = a.ut or os.path.join(HERE, "korningar", a.datum, "fynd.json")
     os.makedirs(os.path.dirname(ut), exist_ok=True)
     json.dump({"datum": a.datum, "manad": a.manad, "usd_sek": k, "kurskalla": kurskalla,

@@ -24,13 +24,20 @@ KRYMP = os.path.join(os.path.dirname(HERE), "docs", "temu-jakt-v2", "jakt", "v24
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 
-def bild_data_uri(url, cachedir, pid):
-    if not url:
+def bild_data_uri(url, cachedir, pid, fil=None):
+    """fil = redan nedladdad hero (V3-discovery) — då hämtas inget."""
+    if fil and os.path.exists(os.path.join(os.path.dirname(HERE), fil) if not os.path.isabs(fil) else fil):
+        fil = fil if os.path.isabs(fil) else os.path.join(os.path.dirname(HERE), fil)
+    elif fil and os.path.exists(os.path.join(HERE, fil)):
+        fil = os.path.join(HERE, fil)
+    else:
+        fil = None
+    if not url and not fil:
         return None
-    ra = os.path.join(cachedir, f"{pid}.jpg")
+    ra = fil or os.path.join(cachedir, f"{pid}.jpg")
     liten = os.path.join(cachedir, f"{pid}-480.jpg")
     try:
-        if not os.path.exists(ra):
+        if not os.path.exists(ra) and url:
             os.makedirs(cachedir, exist_ok=True)
             req = urllib.request.Request(url, headers=UA)
             open(ra, "wb").write(urllib.request.urlopen(req, timeout=40).read())
@@ -75,7 +82,11 @@ def main():
                      "multipel": e["multipel"], "sald": p.get("sald", ""),
                      # poängkortet (MASTERPROMPT §5): summa + launch-kandidat / offertrad / svag offertrad
                      "poang": p.get("poang"), "status": p.get("status", ""),
-                     "bild": bild_data_uri(p.get("bild"), os.path.join(katalog, "bilder"), p["product_id"])})
+                     # V3 (v3_till_fynd.py): koncept-id, arketyp, slot, säsong, varför/risk/konfidens — sidan visar dem om de finns
+                     "koncept_id": p.get("koncept_id"), "arketyp": p.get("arketyp"), "slot": p.get("slot"),
+                     "sasong": p.get("sasong"), "varfor": p.get("varfor"), "huvudrisk": p.get("huvudrisk"), "konfidens": p.get("konfidens"),
+                     "hook": p.get("hook"), "asymmetrisk": p.get("asymmetrisk"),
+                     "bild": bild_data_uri(p.get("bild"), os.path.join(katalog, "bilder"), p["product_id"], p.get("bild_fil"))})
 
     xlsx_b64 = base64.b64encode(open(xlsx, "rb").read()).decode("ascii")
     mall = open(os.path.join(HERE, "sida-mall.html"), encoding="utf-8").read()

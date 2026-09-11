@@ -1,0 +1,678 @@
+{
+ "datum": "2026-09-11",
+ "hamtad": "2026-09-11T05:58:51Z",
+ "kampanjer": {
+  "120249435814310291": {
+   "namn": "Motorhöljet",
+   "spend": 72234.87,
+   "kop": 363,
+   "roas": 1.9318,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249850522830291": {
+   "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+   "spend": 70071.91,
+   "kop": 360,
+   "roas": 2.2298,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120249122415680291": {
+   "namn": "Sätesöverdragaren",
+   "spend": 60205.7,
+   "kop": 179,
+   "roas": 2.1478,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249192013870291": {
+   "namn": "Axelbältet",
+   "spend": 47090.04,
+   "kop": 152,
+   "roas": 1.905,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249220414220291": {
+   "namn": "Strandtofflorna",
+   "spend": 38785.07,
+   "kop": 180,
+   "roas": 2.1026,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249989799680291": {
+   "namn": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+   "spend": 29888.26,
+   "kop": 72,
+   "roas": 2.855,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120249902177470291": {
+   "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+   "spend": 28281.65,
+   "kop": 63,
+   "roas": 2.1704,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120250001079150291": {
+   "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+   "spend": 24160.96,
+   "kop": 104,
+   "roas": 2.7601,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120249526366330291": {
+   "namn": "Motorhöljet Lagerrensingsrea",
+   "spend": 20822.0,
+   "kop": 96,
+   "roas": 1.7084,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120250009325850291": {
+   "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "spend": 19152.51,
+   "kop": 79,
+   "roas": 2.556,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120250009391470291": {
+   "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
+   "spend": 14699.18,
+   "kop": 65,
+   "roas": 2.2689,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120249990507280291": {
+   "namn": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+   "spend": 14353.7,
+   "kop": 64,
+   "roas": 1.9306,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120249952968210291": {
+   "namn": "Soptunneklistermärkena | BE ROAS 1.67 | Launch 2026-08-21",
+   "spend": 11255.26,
+   "kop": 83,
+   "roas": 1.9784,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249990230470291": {
+   "namn": "Cykelshorts Herr | BE ROAS 1.68 | Launch 2026-08-27",
+   "spend": 8762.45,
+   "kop": 48,
+   "roas": 1.9988,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249975043720291": {
+   "namn": "Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21",
+   "spend": 8293.42,
+   "kop": 30,
+   "roas": 1.4999,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249742782850291": {
+   "namn": "Ergonomiska Tofflorna",
+   "spend": 7491.62,
+   "kop": 31,
+   "roas": 1.5876,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249800486690291": {
+   "namn": "Skoreparationslapparna",
+   "spend": 6664.21,
+   "kop": 42,
+   "roas": 1.7427,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250009539570291": {
+   "namn": "Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29",
+   "spend": 6067.79,
+   "kop": 22,
+   "roas": 1.4756,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249900796660291": {
+   "namn": "Surfplattestället | BE ROAS 1.67 | Launch 2026-08-21",
+   "spend": 5504.79,
+   "kop": 21,
+   "roas": 1.5937,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249989987370291": {
+   "namn": "Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21",
+   "spend": 5363.05,
+   "kop": 15,
+   "roas": 1.4623,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249435303040291": {
+   "namn": "AI Smarta Glasögon",
+   "spend": 4471.12,
+   "kop": 2,
+   "roas": 0.836,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249435233880291": {
+   "namn": "Cargoshortsen",
+   "spend": 4323.53,
+   "kop": 8,
+   "roas": 1.6285,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249703424590291": {
+   "namn": "Motorhöljet ABO-test 08-12",
+   "spend": 3857.43,
+   "kop": 19,
+   "roas": 1.9004,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249427546700291": {
+   "namn": "Väggfästet",
+   "spend": 3762.07,
+   "kop": 9,
+   "roas": 1.636,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250011459910291": {
+   "namn": "Bordtennisnätet Infällbart | BE ROAS 1.80 | Launch 2026-08-29",
+   "spend": 3584.49,
+   "kop": 3,
+   "roas": 0.319,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249805721700291": {
+   "namn": "Gräsklippartäcket",
+   "spend": 3536.54,
+   "kop": 11,
+   "roas": 1.2938,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250009266750291": {
+   "namn": "Badshorts med Skämttryck | BE ROAS 1.62 | Launch 2026-08-29",
+   "spend": 3532.89,
+   "kop": 10,
+   "roas": 1.2875,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250134672020291": {
+   "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+   "spend": 3308.04,
+   "kop": 16,
+   "roas": 3.0555,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120249815379020291": {
+   "namn": "Magnetfiskesatsen CBO 08-17 1,65 BE",
+   "spend": 3110.95,
+   "kop": 10,
+   "roas": 1.1014,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249426616580291": {
+   "namn": "Golfklubbsborsten",
+   "spend": 2939.57,
+   "kop": 10,
+   "roas": 1.3124,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250147309170291": {
+   "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+   "spend": 2890.13,
+   "kop": 9,
+   "roas": 2.457,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120250009747620291": {
+   "namn": "Jättefotbollen | BE ROAS 1.61 | Launch 2026-08-29",
+   "spend": 2696.64,
+   "kop": 4,
+   "roas": 0.6606,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250147343350291": {
+   "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+   "spend": 2663.32,
+   "kop": 15,
+   "roas": 6.3586,
+   "klass": "REAL_WINNER",
+   "status": "ACTIVE"
+  },
+  "120249796659780291": {
+   "namn": "Strandtofflorna brynis lagris",
+   "spend": 2591.9,
+   "kop": 7,
+   "roas": 1.1277,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249271404070291": {
+   "namn": "Ståltrådsborsthuvuden",
+   "spend": 2489.97,
+   "kop": 7,
+   "roas": 0.9566,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249426909650291": {
+   "namn": "Skotvättpåsen",
+   "spend": 2424.64,
+   "kop": 8,
+   "roas": 1.4787,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249181678980291": {
+   "namn": "Krananslutningen",
+   "spend": 2260.67,
+   "kop": 7,
+   "roas": 1.1258,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249237441980291": {
+   "namn": "Lastnätet",
+   "spend": 2248.65,
+   "kop": 6,
+   "roas": 1.1091,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249796608530291": {
+   "namn": "Sätesöverdragaren – kopia",
+   "spend": 2235.45,
+   "kop": 3,
+   "roas": 1.0452,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250038618440291": {
+   "namn": "Magnethyllan för Tvättmaskin och Kylskåp | BE ROAS 1.62 | Launch 2026-09-01",
+   "spend": 2190.07,
+   "kop": 2,
+   "roas": 0.6815,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250083675400291": {
+   "namn": "Arbetslampan för Makita-batteri | BE ROAS 1.61 | Launch 2026-09-04",
+   "spend": 2135.43,
+   "kop": 3,
+   "roas": 0.9045,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249796719570291": {
+   "namn": "Axelbältet brynis lagris",
+   "spend": 2124.24,
+   "kop": 5,
+   "roas": 1.5982,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250069623310291": {
+   "namn": "Magnetplattorna i Storformat | BE ROAS 1.63 | Launch 2026-09-03",
+   "spend": 2121.25,
+   "kop": 3,
+   "roas": 0.8181,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249426746220291": {
+   "namn": "Lättviktsryggsäcken",
+   "spend": 2111.95,
+   "kop": 1,
+   "roas": 0.3452,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250100745300291": {
+   "namn": "Glasspintsen med Lock 2-pack | BE ROAS 1.62 | Launch 2026-09-05",
+   "spend": 2108.43,
+   "kop": 3,
+   "roas": 1.3963,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250100694780291": {
+   "namn": "3D-sandbilden | BE ROAS 1.61 | Launch 2026-09-05",
+   "spend": 2100.21,
+   "kop": 3,
+   "roas": 0.8086,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250038574360291": {
+   "namn": "Luffarschacket i Trä | BE ROAS 1.59 | Launch 2026-09-01",
+   "spend": 2087.57,
+   "kop": 2,
+   "roas": 0.3585,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250038598420291": {
+   "namn": "Sömnadskitet 104 Delar | BE ROAS 1.60 | Launch 2026-09-01",
+   "spend": 2081.83,
+   "kop": 4,
+   "roas": 0.7428,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250053730340291": {
+   "namn": "Medicinasken i Fickformat | BE ROAS 1.60 | Launch 2026-09-02",
+   "spend": 2036.68,
+   "kop": 2,
+   "roas": 0.4825,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249931473380291": {
+   "namn": "Vandringskängor Herr | BE ROAS 1.60 | Launch 2026-08-21",
+   "spend": 2025.85,
+   "kop": 5,
+   "roas": 1.6117,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120250053637760291": {
+   "namn": "Kasta & Fånga-settet | BE ROAS 1.61 | Launch 2026-09-02",
+   "spend": 2013.59,
+   "kop": 1,
+   "roas": 0.5756,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249867700600291": {
+   "namn": "Golfskoväskan | BE ROAS 1.79 | Launch 2026-08-19",
+   "spend": 1932.79,
+   "kop": 4,
+   "roas": 1.0857,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249799316190291": {
+   "namn": "Uteduschen",
+   "spend": 1929.8,
+   "kop": 2,
+   "roas": 0.6001,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120250134706080291": {
+   "namn": "Bänkhyllan med Utdragbar Korg | BE ROAS 1.63 | Launch 2026-09-08",
+   "spend": 1903.49,
+   "kop": 0,
+   "roas": null,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250069711040291": {
+   "namn": "Motocentric Bakväskan 37 L | BE ROAS 1.63 | Launch 2026-09-03",
+   "spend": 1848.91,
+   "kop": 2,
+   "roas": 1.0698,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249399326270291": {
+   "namn": "Liggunderlaget",
+   "spend": 1829.39,
+   "kop": 0,
+   "roas": null,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250134812930291": {
+   "namn": "Diskstället i Två Våningar | BE ROAS 1.62 | Launch 2026-09-08",
+   "spend": 1784.55,
+   "kop": 1,
+   "roas": 0.704,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120217161873380291": {
+   "namn": "MagiBorsten - SE",
+   "spend": 1716.13,
+   "kop": 0,
+   "roas": null,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249968685220291": {
+   "namn": "Första Hjälpen-Kitet | BE ROAS 1.78 | Launch 2026-08-21",
+   "spend": 1705.01,
+   "kop": 5,
+   "roas": 1.2974,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249237587760291": {
+   "namn": "Herrshortsen",
+   "spend": 1651.05,
+   "kop": 2,
+   "roas": 0.556,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250134859280291": {
+   "namn": "Pälsborsten till Dyson-dammsugare | BE ROAS 1.61 | Launch 2026-09-08",
+   "spend": 1640.65,
+   "kop": 1,
+   "roas": 0.3285,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249435060060291": {
+   "namn": "Mattdynorna",
+   "spend": 1568.68,
+   "kop": 4,
+   "roas": 0.7599,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249892629430291": {
+   "namn": "Motorhöljet CBO 2026-08-20",
+   "spend": 1537.35,
+   "kop": 8,
+   "roas": 1.8109,
+   "klass": "REAL_WINNER",
+   "status": "PAUSED"
+  },
+  "120249978017760291": {
+   "namn": "Bollpannbandet | BE ROAS 2.03 | Launch 2026-08-21",
+   "spend": 1534.35,
+   "kop": 2,
+   "roas": 0.3469,
+   "klass": "REAL_LOSER",
+   "status": "PAUSED"
+  },
+  "120249869095920291": {
+   "namn": "Stänkskärmen | BE ROAS TBC | Launch 2026-08-19",
+   "spend": 1487.39,
+   "kop": 4,
+   "roas": 1.1043,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249178935110291": {
+   "namn": "Trädgårdssäcken",
+   "spend": 1486.94,
+   "kop": 2,
+   "roas": 1.0627,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249850431570291": {
+   "namn": "14-i-1 Verktyget | BE ROAS 1.63 | Launch 2026-08-18",
+   "spend": 1483.38,
+   "kop": 2,
+   "roas": 0.538,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250134748040291": {
+   "namn": "Veckodosetten 21 Fack | BE ROAS 1.62 | Launch 2026-09-08",
+   "spend": 1447.65,
+   "kop": 1,
+   "roas": 0.2687,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249220676500291": {
+   "namn": "Kedjeslipen",
+   "spend": 1407.09,
+   "kop": 4,
+   "roas": 0.9893,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249271557300291": {
+   "namn": "Förtöjningslinan",
+   "spend": 1367.74,
+   "kop": 2,
+   "roas": 0.9329,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249982776010291": {
+   "namn": "Dörrbottenlisten | BE ROAS TBC | Launch 2026-08-21",
+   "spend": 1210.1,
+   "kop": 1,
+   "roas": 0.4481,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249901836200291": {
+   "namn": "Mobilskalet | BE ROAS 1.79 | Launch 2026-08-21",
+   "spend": 1090.76,
+   "kop": 4,
+   "roas": 1.174,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250161984300291": {
+   "namn": "Staketstolpslagaren 2-pack | BE ROAS 1.66 | Launch 2026-09-10",
+   "spend": 1057.72,
+   "kop": 0,
+   "roas": null,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "ACTIVE"
+  },
+  "120249795543340291": {
+   "namn": "Axelbältet ugc axel",
+   "spend": 1020.86,
+   "kop": 1,
+   "roas": 0.5868,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249903073770291": {
+   "namn": "Hopfällbara Sågen | BE ROAS 1.79 | Launch 2026-08-21",
+   "spend": 1000.87,
+   "kop": 2,
+   "roas": 0.8016,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249944274690291": {
+   "namn": "Linupprullare Aluminium | BE ROAS 1.83 | Launch 2026-08-21",
+   "spend": 989.17,
+   "kop": 1,
+   "roas": 0.3013,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250161786230291": {
+   "namn": "Stegstödet 2-pack | BE ROAS 1.63 | Launch 2026-09-10",
+   "spend": 971.73,
+   "kop": 1,
+   "roas": 0.2449,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "ACTIVE"
+  },
+  "120249907932310291": {
+   "namn": "Mini Fiskespöset | BE ROAS 1.67 | Launch 2026-08-21",
+   "spend": 839.22,
+   "kop": 2,
+   "roas": 1.0224,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249711739980291": {
+   "namn": "Följ bäver",
+   "spend": 749.6,
+   "kop": 0,
+   "roas": null,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120249860739760291": {
+   "namn": "Motorhöljet ABO-test 08-19",
+   "spend": 659.13,
+   "kop": 0,
+   "roas": null,
+   "klass": "INSUFFICIENT_DATA",
+   "status": "PAUSED"
+  },
+  "120250175763810291": {
+   "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "spend": 142.45,
+   "kop": 0,
+   "roas": null,
+   "klass": "UNTESTED",
+   "status": "ACTIVE"
+  },
+  "120250175680140291": {
+   "namn": "Solcellslarmet 2-pack | BE ROAS 1.63 | Launch 2026-09-11",
+   "spend": 133.61,
+   "kop": 0,
+   "roas": null,
+   "klass": "UNTESTED",
+   "status": "ACTIVE"
+  },
+  "120249917338680291": {
+   "namn": "Sneakers Herr | BE ROAS 1.19 | Launch 2026-08-21",
+   "spend": 1.13,
+   "kop": 0,
+   "roas": null,
+   "klass": "UNTESTED",
+   "status": "PAUSED"
+  },
+  "120249996370760291": {
+   "namn": "Kamouflagetejpen | BE ROAS TBC | Launch 2026-08-28",
+   "spend": 0.0,
+   "kop": 0,
+   "roas": null,
+   "klass": "UNTESTED",
+   "status": "PAUSED"
+  }
+ }
+}

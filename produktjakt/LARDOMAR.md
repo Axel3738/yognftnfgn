@@ -3,25 +3,25 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-11. **15 svar** — ja 7, kanske 5, nej 3.
+Uppdaterad 2026-09-11. **17 svar** — ja 9, kanske 5, nej 3.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 12 ja, 1 kanske, 0 nej → score 0.9
-- deadline_klass **6–12 v**: 7 ja, 1 kanske, 0 nej → score 0.85
+- prisband **500–999**: 14 ja, 1 kanske, 0 nej → score 0.912
+- deadline_klass **6–12 v**: 8 ja, 1 kanske, 0 nej → score 0.864
+- ankare_klass **1,3–1,6×**: 7 ja, 0 kanske, 0 nej → score 0.889
+- arketyp **A1**: 7 ja, 1 kanske, 0 nej → score 0.85
 - deadline_klass **2–6 v**: 7 ja, 0 kanske, 0 nej → score 0.889
-- arketyp **A1**: 6 ja, 1 kanske, 0 nej → score 0.833
-- ankare_klass **1,3–1,6×**: 5 ja, 0 kanske, 0 nej → score 0.857
+- form **överdrag**: 6 ja, 0 kanske, 0 nej → score 0.875
 - deadline_typ **uppställning**: 5 ja, 0 kanske, 0 nej → score 0.857
-- form **överdrag**: 5 ja, 0 kanske, 0 nej → score 0.857
 - ankare_klass **1,2–1,3×**: 4 ja, 0 kanske, 0 nej → score 0.833
 - ankare_klass **golv utan ankare**: 4 ja, 0 kanske, 0 nej → score 0.833
 - arketyp **verktyg**: 4 ja, 0 kanske, 0 nej → score 0.833
+- arketyp **A3**: 3 ja, 0 kanske, 0 nej → score 0.8
+- deadline_klass **pågående**: 3 ja, 0 kanske, 0 nej → score 0.8
 - ankare_kalla **eurotrail/getcamping.se**: 2 ja, 0 kanske, 0 nej → score 0.75
 - ankare_kalla **pricerunner.se (Kerbl/Northix)**: 2 ja, 0 kanske, 0 nej → score 0.75
 - ankare_kalla **lego.com/kedjan**: 2 ja, 0 kanske, 0 nej → score 0.75
-- ankare_kalla **ej mätt**: 2 ja, 0 kanske, 0 nej → score 0.75
-- ankare_kalla **jula**: 2 ja, 0 kanske, 0 nej → score 0.75
 
 ## Det Axel säger nej till
 
@@ -52,9 +52,11 @@ Uppdaterad 2026-09-11. **15 svar** — ja 7, kanske 5, nej 3.
 - ankare_klass:1,3–1,6×
 - ankare_klass:golv utan ankare
 - arketyp:A1
+- arketyp:A3
 - arketyp:verktyg
 - deadline_klass:2–6 v
 - deadline_klass:6–12 v
+- deadline_klass:pågående
 - deadline_typ:uppställning
 - form:överdrag
 - prisband:500–999

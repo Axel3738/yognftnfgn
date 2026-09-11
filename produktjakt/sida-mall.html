@@ -56,6 +56,15 @@
   .chip { display: inline-block; background: var(--chip); border-radius: 999px; padding: 2px 9px;
           font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
   .chip.status { background: #1f6f3f; color: #fff; text-transform: none; letter-spacing: 0; }
+  /* V3-chipen: slot, timing, konfidens. Status bärs av text, aldrig färg ensam. */
+  .chip.slot-exploitation { background: #DDEDE3; color: #1f4d35; text-transform: none; letter-spacing: 0; }
+  .chip.slot-exploration { background: #E3E6F5; color: #2c3a7a; text-transform: none; letter-spacing: 0; }
+  .chip.slot-sasong { background: #F2EBD0; color: #6B5B1F; text-transform: none; letter-spacing: 0; }
+  .chip.timing { text-transform: none; letter-spacing: 0; }
+  .chip.konf { text-transform: none; letter-spacing: 0; border: 1px solid var(--line); background: transparent; }
+  .v3 { padding: 0 12px 10px; font-size: 16px; line-height: 1.4; }
+  .v3 p { margin: 4px 0; }
+  .v3 b { font-weight: 700; }
   .rad { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
   .links { padding: 0 12px 10px; }
   .links a { display: block; text-align: center; text-decoration: none; font-weight: 700; font-size: 16px;
@@ -104,6 +113,17 @@
   const ORSAKER_JA = ["Skyddar något", "Deadline nu", "Bra ankare", "Snygg bild", "Känns rätt"];
   const $ = id => document.getElementById(id);
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  // V3: slot och säsong som Axel-ord. timing ur sasong.py: NOW/EARLY/LATE/PASSERAD/EVERGREEN.
+  const slotText = s => ({exploitation: 'Bevisad struktur', exploration: 'Utforskning', sasong: 'Säsong / datum'}[s] || s);
+  const timingText = s => {
+    if (!s || !s.timing) return '';
+    const v = s.veckor_kvar != null ? Math.round(s.veckor_kvar) : null;
+    if (s.timing === 'NOW') return 'Rätt tid nu' + (v != null ? ` · ${v} v kvar` : '');
+    if (s.timing === 'EARLY') return 'Tidigt' + (v != null ? ` · ${v} v kvar` : '');
+    if (s.timing === 'LATE') return 'Sent i säsongen';
+    if (s.timing === 'EVERGREEN') return 'Året runt';
+    return esc(s.timing);
+  };
 
   $('datum').textContent = DATUM;
   $('antal').textContent = DATA.length;
@@ -120,11 +140,13 @@
         <div class="thumb">${p.bild ? `<img alt="${esc(p.namn)}" src="${p.bild}" loading="lazy">` : `<span aria-hidden="true">${esc((p.namn || '?').trim()[0])}</span>`}</div>
         <div>
           <h2>${esc(p.namn)}</h2>
-          <div class="nums"><span class="pris">${p.pris} kr</span><span class="chip">${esc(p.grupp)}</span>${p.status ? `<span class="chip status">${p.poang != null ? p.poang + '/100 · ' : ''}${esc(p.status)}</span>` : ''}</div>
+          <div class="nums"><span class="pris">${p.pris} kr</span><span class="chip">${esc(p.grupp)}</span>${p.slot ? `<span class="chip slot-${esc(p.slot)}">${slotText(p.slot)}</span>` : (p.status ? `<span class="chip status">${p.poang != null ? p.poang + '/100 · ' : ''}${esc(p.status)}</span>` : '')}</div>
+          ${p.sasong || p.konfidens ? `<div class="nums" style="margin-top:6px">${p.sasong ? `<span class="chip timing">${timingText(p.sasong)}</span>` : ''}${p.konfidens ? `<span class="chip konf">Säkerhet: ${esc(p.konfidens.toLowerCase())}</span>` : ''}${p.asymmetrisk ? `<span class="chip konf">Udda chans</span>` : ''}</div>` : ''}
           <p class="rad">Inköp ${esc(p.inkop)} · landad ${p.landad} kr · ${p.multipel}× uppslag</p>
           ${p.sald ? `<p class="rad">${esc(p.sald)}</p>` : ''}
         </div>
       </div>
+      ${p.varfor || p.huvudrisk || p.hook ? `<div class="v3">${p.hook ? `<p><b>Frågan:</b> ${esc(p.hook)}</p>` : ''}${p.varfor ? `<p><b>Kan gå för att:</b> ${esc(p.varfor)}</p>` : ''}${p.huvudrisk ? `<p><b>Största risken:</b> ${esc(p.huvudrisk)}</p>` : ''}</div>` : ''}
       <div class="links"><a href="${p.url}" target="_blank" rel="noopener">Öppna produkten ↗</a></div>
       <div class="dom" role="group" aria-label="Ditt svar">
         <button type="button" data-v="ja">Ja</button>
@@ -172,6 +194,8 @@
       await db.doc(`feedback/${docId(p)}`).set({
         datum: DATUM, product_id: String(p.product_id), namn: p.hela_namn || p.namn, url: p.url,
         grupp: p.grupp || '', taggar: p.taggar || {}, pris: p.pris, landad: p.landad,
+        // V3: konceptet svaret gäller, så feedback.py/koncept.py kan koppla det utan fynd.json
+        koncept_id: p.koncept_id || null, arketyp: p.arketyp || null, slot: p.slot || null, konfidens: p.konfidens || null,
         dom: s.dom, orsaker: s.orsaker, ts: new Date().toISOString(), kalla: 'sida',
       });
       ut.textContent = 'Sparat.';

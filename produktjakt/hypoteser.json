@@ -1,0 +1,84 @@
+{
+ "_om": "Aktiva hypoteser (det som KAN spela roll men inte är bevisat) och motbevisade antaganden. larande.py räknar bevis per hypotes ur facit/historik-taggar.json × facit/kampanjer.json och ur koncept.json, och skriver läget till LEARNING_STATE.md. Status sätts av larande.py: aktiv → stärkt (≥ 3 vinnare, ≤ 1 förlorare) / försvagad (≥ 2 förlorare, 0 vinnare) / motbevisad (manuellt, med bevis). Nya hypoteser läggs till här när en körning ser ett mönster den inte kan bevisa.",
+ "hypoteser": [
+  {
+   "id": "H01",
+   "text": "Ägd dyr sak ute + omedelbart väderhot + billigt skydd i formsydd form",
+   "villkor": {"arketyp": ["B_SKYDDA_DYRT"], "objekt_ute": true, "objekt_varde_band": ["dyr>10tkr", "medel 1–10tkr"]},
+   "test_sokning": "fler objekt än husvagn/båt: snöslunga, robotklippare, elverk, spabad, luftvärmepump — samma struktur, nytt objekt",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H02",
+   "text": "Hårt datum ingen kan flytta (1 dec, uppställning, första frost) slår 'pågående skada' — köpet görs 2–12 v före datumet",
+   "villkor": {"deadline_typ": ["1 december", "uppställning", "första frost", "första snö"]},
+   "test_sokning": "kandidater med datum i sasong.json NOW-fönster mot kandidater med 'pågående skada' — jämför utfall efter 5 launcher vardera",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H03",
+   "text": "Svikande default som ägaren redan köpt (chokladkalender, presenning, handduk) är ett starkare köpskäl än 'ingenting'",
+   "villkor": {"old_way": ["köpt produkt som fungerar", "improvisation"]},
+   "test_sokning": "sök produkter där default-lösningen är en billig köpt vara ägaren klagar på — inte bara där default = ingenting",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H04",
+   "text": "Pris över 1 000 kr fungerar när objektet är ≥ 100× priset och formen är stor i bild (V1 1 129 kr)",
+   "villkor": {"prisband": ["≥1000"]},
+   "test_sokning": "1–2 kandidater per vecka i 1 000–1 500 kr med objekt > 100 tkr (husbil, båt, MC, traktor)",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H05",
+   "text": "Gåva med hårt datum och mottagare i relation (barnbarnet, mannen med båten) fungerar i Q4 trots att 'gåva' förlorade i augusti",
+   "villkor": {"arketyp": ["G_Q4_GAVA"]},
+   "test_sokning": "kalenderlådor/hobbyset till en namngiven mottagare med 1 dec eller julafton som datum — 1–3 per batch sept–nov",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H06",
+   "text": "Look-alikes under vårt pris och 2–3 annonsörer dödar INTE när ett synligt märkesankare ≥ 1,2× finns (V2 vann med 157-kronorskopia)",
+   "villkor": {"kedjegolv_under_vart_pris": true, "markesankare_min": 1.2},
+   "test_sokning": "släpp igenom kandidater med golv under oss om ankare ≥ 1,2× finns — märk dem så utfallet går att skära",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H07",
+   "text": "Verktyg/pryl som Axel själv launchar (Stegstödet, Solcellslarmet, Sittkäppen) förlorar — K3-regeln håller även mot hans klick",
+   "villkor": {"arketyp": ["D_SNABBARE_METOD"], "form": ["verktyg", "stabilisator", "larm"]},
+   "test_sokning": "inga nya sökningar — läs bara utfallet på de launchade verktygen tills bandet är MEANINGFUL",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H08",
+   "text": "Flerköpsskäl (flera objekt, 2-pack under fri-fraktgränsen) lyfter ROAS över BE även när styck-CPA ligger på BE (spöhållaren, kameran)",
+   "villkor": {"flerkop": true},
+   "test_sokning": "1–2 kandidater per batch där ägaren har ≥ 2 av objektet (hjul, fönster, stolpar, spön, kärl)",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H09",
+   "text": "Djur ute i kylan (utekatt, gårdshund, höns, häst) är en egen vinnarstruktur: älskat objekt + väder + form, med kvinna 55+ som köpare",
+   "villkor": {"arketyp": ["E_VADER_SASONG"], "objekt_varde_band": ["oersättligt"]},
+   "test_sokning": "hönsgårdstak, isolerad hundkoja, isfri vattenskål, värmeplatta ute — 1–2 per batch tills 3 launcher finns",
+   "skapad": "2026-09-11"
+  },
+  {
+   "id": "H10",
+   "text": "'Visste inte att det fanns'-produkter (kategorinyhet i svenskt flöde) med textfri hero ger CPM under 130 och vinner utan förklaring",
+   "villkor": {"arketyp": ["H_VISUELL_NYHET"]},
+   "test_sokning": "1 exploration-kandidat per batch som inte är ett överdrag — ny form på ägt objekt (ventilnät, takluckehuv, propellerväska)",
+   "skapad": "2026-09-11"
+  }
+ ],
+ "motbevisade": [
+  {"antagande": "Pris över 1 000 kr är kill (DNA §6, TAK_LANDAD_SEK 420)", "bevis": "Taköverdraget 1 129 kr: 2 659 kr / 15 köp / ROAS 6,37 mot BE 1,63 (Meta 2026-09-11)", "datum": "2026-09-11"},
+  {"antagande": "Leksak / barn / inomhus / N-i-1 / gåva är kill (STOPPORD, DNA §6)", "bevis": "Adventskalendern racingbilar 499 kr: 3 303 kr / 16 köp / ROAS 3,07 mot BE 1,62 (Meta 2026-09-11) — hårt datum + svikande default + 24 synliga saker", "datum": "2026-09-11"},
+  {"antagande": "Ankaret måste finnas i lager på djupet ('Fåtal kvar' = refuterad)", "bevis": "v24 refuterade taköverdraget 2026-09-08 på lagerdjup hos Brunner/Hindermann; det vann dagen efter", "datum": "2026-09-11"},
+  {"antagande": "≥ 3 svenska annonsörer + look-alike under vårt pris = kill (REGEL G2/G4)", "bevis": "Utekattkojan: tre annonsörer 18–29 aug + kopior 157–504 kr; 2 884 kr / 9 köp / ROAS 2,46 (Meta 2026-09-11)", "datum": "2026-09-11"},
+  {"antagande": "Uppslaget (pris ÷ landad) är en rankingnyckel", "bevis": "09-09: alla nio sloprader låg på 2,57–2,69× och skilde ingenting (FAKTA §3); rank på uppslag lyfte flikar och 4-dollarskåpor 09-11", "datum": "2026-09-09"},
+  {"antagande": "Man 45–70 är köparen", "bevis": "Klistermärkena 58 % kvinnor 55+, utekattkojan kvinna 55–74; kön är aldrig ett filter (FAKTA §4 punkt 6)", "datum": "2026-09-09"},
+  {"antagande": "Mekanismnyhet bär", "bevis": "7 av 9 vinnare avstånd 1–2; avstånd ≥ 3 (bandslip) sänker CVR (DNA §7 J)", "datum": "2026-09-03"}
+ ]
+}

@@ -212,13 +212,24 @@ def main():
     sub.add_parser("vikter"); sub.add_parser("visa")
     a = ap.parse_args()
     if a.cmd == "samla":
-        samla(a.db); vikter()
+        samla(a.db); vikter(); _koncept()
     elif a.cmd == "svar":
-        svar(a.datum, a.product_id, a.dom, a.orsak); vikter()
+        svar(a.datum, a.product_id, a.dom, a.orsak); vikter(); _koncept()
     elif a.cmd == "vikter":
         vikter()
     else:
         visa()
+
+
+def _koncept():
+    """V3: varje svar skrivs också in på konceptet (koncept.json), så nej/ja följer SAKEN och inte bara listningen."""
+    try:
+        import sys
+        sys.path.insert(0, HERE)
+        import koncept
+        koncept.backfyll()
+    except Exception as e:
+        print(f"obs: koncept.json uppdaterades inte ({str(e)[:80]}) — kör python3 koncept.py backfyll")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 {
  "datum": "2026-09-11",
- "antal_svar": 15,
+ "antal_svar": 17,
  "per_dom": {
-  "ja": 7,
+  "ja": 9,
   "kanske": 5,
   "nej": 3
  },
@@ -75,6 +75,18 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.667
+   },
+   "Hönsen — rastgård och vatten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Snöslungan": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    }
   },
   "ankare_kalla": {
@@ -91,6 +103,18 @@
     "score": 0.667
    },
    "getcamping.eu/campingvaruhuset.se": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "kellfri/lantbutiken": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "husqvarna/pricerunner": {
     "ja": 1,
     "kanske": 0,
     "nej": 0,
@@ -147,10 +171,10 @@
     "score": 0.625
    },
    "1,3–1,6×": {
-    "ja": 5,
+    "ja": 7,
     "kanske": 0,
     "nej": 0,
-    "score": 0.857
+    "score": 0.889
    },
    "1,2–1,3×": {
     "ja": 4,
@@ -173,16 +197,16 @@
   },
   "arketyp": {
    "A1": {
-    "ja": 6,
+    "ja": 7,
     "kanske": 1,
     "nej": 0,
-    "score": 0.833
+    "score": 0.85
    },
    "A3": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.8
    },
    "A4": {
     "ja": 2,
@@ -205,10 +229,10 @@
   },
   "deadline_klass": {
    "6–12 v": {
-    "ja": 7,
+    "ja": 8,
     "kanske": 1,
     "nej": 0,
-    "score": 0.85
+    "score": 0.864
    },
    "2–6 v": {
     "ja": 7,
@@ -217,24 +241,30 @@
     "score": 0.889
    },
    "pågående": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.8
    }
   },
   "deadline_typ": {
    "första snö": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 1,
     "nej": 0,
-    "score": 0.625
+    "score": 0.7
    },
    "uppställning": {
     "ja": 5,
     "kanske": 0,
     "nej": 0,
     "score": 0.857
+   },
+   "höstregn": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    },
    "första frost": {
     "ja": 2,
@@ -275,10 +305,16 @@
     "score": 0.625
    },
    "överdrag": {
-    "ja": 5,
+    "ja": 6,
     "kanske": 0,
     "nej": 0,
-    "score": 0.857
+    "score": 0.875
+   },
+   "tak/överdrag": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    },
    "koja": {
     "ja": 2,
@@ -330,6 +366,18 @@
     "nej": 0,
     "score": 0.667
    },
+   "Hönsen — rastgård och vatten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Snöslungan": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "Husvagn — taket": {
     "ja": 2,
     "kanske": 0,
@@ -375,10 +423,10 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 12,
+    "ja": 14,
     "kanske": 1,
     "nej": 0,
-    "score": 0.9
+    "score": 0.912
    },
    "≥ 1 000": {
     "ja": 2,
@@ -452,9 +500,11 @@
   "ankare_klass:1,3–1,6×",
   "ankare_klass:golv utan ankare",
   "arketyp:A1",
+  "arketyp:A3",
   "arketyp:verktyg",
   "deadline_klass:2–6 v",
   "deadline_klass:6–12 v",
+  "deadline_klass:pågående",
   "deadline_typ:uppställning",
   "form:överdrag",
   "prisband:500–999"

@@ -263,6 +263,52 @@
    },
    "ts": "2026-09-10T15:15:38.354Z",
    "url": "https://www.aliexpress.com/item/1005012847791765.html"
+  },
+  "2026-09-11__1005008329951881": {
+   "datum": "2026-09-11",
+   "dom": "ja",
+   "grupp": "Hönsen — rastgård och vatten",
+   "kalla": "sida",
+   "landad": 270,
+   "namn": "Chicken Coop Tarp For Winter Chicken Coop Fence Dust Cover Multi-Purpose Chicken Coop Tarp Cover Waterproof Chicken Coop",
+   "orsaker": [],
+   "pris": 999,
+   "product_id": "1005008329951881",
+   "taggar": {
+    "ankare_kalla": "kellfri/lantbutiken",
+    "ankare_klass": "1,3–1,6×",
+    "arketyp": "A3",
+    "deadline_klass": "pågående",
+    "deadline_typ": "höstregn",
+    "form": "tak/överdrag",
+    "objekt": "Hönsen — rastgård och vatten",
+    "prisband": "500–999"
+   },
+   "ts": "2026-09-11T05:26:48.967Z",
+   "url": "https://www.aliexpress.com/item/1005008329951881.html"
+  },
+  "2026-09-11__1005009495979403": {
+   "datum": "2026-09-11",
+   "dom": "ja",
+   "grupp": "Snöslungan",
+   "kalla": "sida",
+   "landad": 195,
+   "namn": "Snow Blower Cover,Snowblower Covers Waterproof Outdoor,Universal Fit Single or Two Stage Snow Blower, Toro, Honda, Ryobi, Ariens",
+   "orsaker": [],
+   "pris": 599,
+   "product_id": "1005009495979403",
+   "taggar": {
+    "ankare_kalla": "husqvarna/pricerunner",
+    "ankare_klass": "1,3–1,6×",
+    "arketyp": "A1",
+    "deadline_klass": "6–12 v",
+    "deadline_typ": "första snö",
+    "form": "överdrag",
+    "objekt": "Snöslungan",
+    "prisband": "500–999"
+   },
+   "ts": "2026-09-11T05:26:44.801Z",
+   "url": "https://www.aliexpress.com/item/1005009495979403.html"
   }
  }
 }

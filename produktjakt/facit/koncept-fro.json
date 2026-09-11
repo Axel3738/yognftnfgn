@@ -1,0 +1,71 @@
+{
+ "_om": "Frön till konceptregistret: koncept som den tidigare researchen (docs/temu-jakt-v2) pekade ut eller refuterade och som Axel sedan launchade själv — de gick aldrig genom produktjakt/korningar och saknar därför fynd.json-rad. Här står VAD researchen förutsade, så att prediktion kan jämföras med Metas verklighet. Läses av koncept.py backfyll. Alla siffror ur de angivna filerna.",
+ "koncept": [
+  {
+   "fro_nyckel": "takoverdrag-husvagn",
+   "namn": "Taköverdrag husvagn 6,5 × 3 m",
+   "objekt": "Husvagn — taket",
+   "form": "överdrag",
+   "arketyp_gammal": "A1",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "taggar": {"objekt": "Husvagn — taket", "arketyp": "A1", "form": "överdrag", "deadline_typ": "uppställning", "deadline_klass": "2–6 v", "ankare_klass": "1,3–1,6×", "ankare_kalla": "eurotrail/getcamping.se", "prisband": "≥ 1 000"},
+   "datum": "2026-09-04",
+   "kalla": "docs/temu-jakt-v2/jakt/v22/fas2/husvagn-mc.md (2026-09-04) → v24/STATUS-2026-09-08.md rad 78",
+   "status": "levererad",
+   "listningar": [{"product_id": null, "url": "temu (goods-id ej fastställt i researchen — 'ingen tak-only-listning ≤ 30 USD hittad')", "forst_sedd": "2026-09-04", "verifieringar": []}],
+   "prediktion": {
+    "dom": "REFUTED",
+    "poang": null,
+    "pris": 799,
+    "varfor": "husvagnstaket som egen yta identifierades 2026-09-04 (fas2 husvagn-mc); 2026-09-08 REFUTED: 'ankare ≥ 1,6× är inte i lager på djupet' (Brunner/Hindermann 'Fåtal kvar'), ingen tak-only-listning ≤ 30 USD, heron visade amerikansk Class A-husbil",
+    "huvudrisk": "lagerdjup hos ankaret, material",
+    "utfall_prediktion_vs_verklighet": "FEL — Axel launchade 2026-09-09 för 1 129 kr (över 1 000-kronorstaket): 2 657 kr / 15 köp / ROAS 6,37 mot BE 1,63 (2026-09-11). Lagerdjupet hos ankaret spelade ingen roll; priset över 1 000 kr spelade ingen roll."
+   }
+  },
+  {
+   "fro_nyckel": "utekattkoja",
+   "namn": "Isolerad utekattkoja",
+   "objekt": "Utekatten",
+   "form": "koja",
+   "arketyp_gammal": "A3",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "taggar": {"objekt": "Utekatten", "arketyp": "A3", "form": "koja", "deadline_typ": "första frost", "deadline_klass": "6–12 v", "ankare_klass": "1,2–1,3×", "ankare_kalla": "pricerunner.se (Kerbl/Northix)", "prisband": "500–999"},
+   "datum": "2026-09-04",
+   "kalla": "docs/temu-jakt-v2/jakt/v22/fas1/utekattkoja.md (2026-09-04)",
+   "status": "levererad",
+   "listningar": [{"product_id": "601101118338671", "url": "https://www.temu.com/se/g-601101118338671.html", "pris_usd": 10.93, "forst_sedd": "2026-09-04", "verifieringar": [{"datum": "2026-09-04", "verdict": "LIVE", "kalla": "v22/fas1/utekattkoja.md: 10,93 USD, 4,9, 71–72 recensioner, 6 bilder, video 61 s"}]}],
+   "prediktion": {
+    "dom": "TEST NOW",
+    "poang": 79,
+    "pris": 599,
+    "varfor": "koncept PASS, listning PASS, vinnar-DNA-match 79; ägare 55+ (ofta kvinna), säsong ~12 v kvar, trähusankare Kerbl 1 017–Northix 1 919",
+    "huvudrisk": "look-alike-priset 157–504 kr + tre svenska annonsörer sedan 18–29 aug",
+    "utfall_prediktion_vs_verklighet": "RÄTT — launchad 2026-09-09 för 789 kr (över rekommenderade 599): 2 883 kr / 9 köp / ROAS 2,46 mot BE 1,62 (2026-09-11). Huvudrisken (look-alikes + 3 annonsörer) fällde den inte."
+   }
+  },
+  {
+   "fro_nyckel": "adventskalender-racingbilar",
+   "namn": "Adventskalender racingbilar",
+   "objekt": "Barnbarnet — adventskalendern",
+   "form": "kalenderlåda",
+   "arketyp_gammal": "A4",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "I_FLERKOP",
+   "taggar": {"objekt": "Barnbarnet — adventskalendern", "arketyp": "A4", "form": "kalender", "deadline_typ": "1 december", "deadline_klass": "6–12 v", "ankare_klass": "1,2–1,3×", "ankare_kalla": "lego.com/kedjan", "prisband": "300–499"},
+   "datum": "2026-09-07",
+   "kalla": "produktjakt/vinnare/FAKTA-2026-09-09.md §1 V3 (Axels eget val; ingen researchrad — STOPPORD toy/kids hade fällt den, DNA §6 negativ rymd leksak/inomhus/N-i-1)",
+   "status": "levererad",
+   "listningar": [{"product_id": null, "url": "Shopify: Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor (499 kr)", "forst_sedd": "2026-09-07", "verifieringar": []}],
+   "prediktion": {
+    "dom": "KILL (implicit)",
+    "poang": null,
+    "pris": 499,
+    "varfor": "modellen före 2026-09-09 hade fällt den på STOPPORD (toy/kids), 'inomhus', 'N-i-1', 'gåva 0/3 i augusti' och 'kedjan har formen 349–599'",
+    "huvudrisk": "—",
+    "utfall_prediktion_vs_verklighet": "FEL — 3 298 kr / 16 köp / ROAS 3,07 mot BE 1,62 (2026-09-11). Hårt datum (1 dec) + svikande default (chokladkalender) + 24 synliga saker slog varje regel i den negativa rymden."
+   }
+  }
+ ]
+}

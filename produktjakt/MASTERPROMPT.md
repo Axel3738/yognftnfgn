@@ -1,6 +1,17 @@
-# MASTERPROMPT /produktjakt — DOA v3.1 (Deadline · Objekt · Ankare · Upplevt värde) · gäller från 2026-09-10
+# MASTERPROMPT /produktjakt — DOA v3.1 (Deadline · Objekt · Ankare · Upplevt värde) · bakgrund sedan V3 2026-09-11
 
-Läs hela filen varje morgon före `hitta.py`. Den är en order. Källan är AliExpress (`produktjakt/ali.py`). Varje siffra nedan står i `produktjakt/vinnare/FAKTA-2026-09-09.md` [F], `docs/temu-vinnar-dna.md` [DNA], `docs/temu-vinnar-dna/analys/forlorare.md`, `docs/temu-jakt-v2/REGEL.md`, `docs/temu-jakt-v2/jakt/v23/KATALOG.md`, `produktjakt/korningar/2026-09-09/STATUS.md` eller `produktjakt/feedback/`. Saknas en siffra: skriv **"ej mätt"** — hitta aldrig på en.
+> ## ⚠️ V3 2026-09-11: den här filen är BEVIS, inte lag
+>
+> Från och med produktfabriken V3 (`V3-FLODE.md`, `.claude/commands/produktjakt.md`) är **verkliga Meta-utfall
+> sanningen** och allt nedan — K0–K12, fasta vikter, trösklarna 75/55, negativa rymden — är hypoteser som
+> mäts mot kontot varje morgon i `LEARNING_STATE.md`. Skälet står i samma fil under PREDICTION VS REALITY:
+> modellen **refuterade taköverdraget** (lagerdjup hos ankaret, 1 000-kronorstaket) och **hade killat
+> adventskalendern** (STOPPORD toy/kids, "inomhus", "N-i-1", "gåva") — båda är REAL WINNERS 2026-09-11.
+> Poängkortet skrivs fortfarande per rad (`per_kriterium`) för att kunna jämföras med utfallet, men det
+> dödar inte längre ensamt; grindarna i `rank.py` är tre (LIVE_VERIFIED · BE-CPA ≥ 190 · inte K0-dubblett).
+> Motbevisade antaganden står i `hypoteser.json` → `LEARNING_STATE.md` "DISPROVEN ASSUMPTIONS".
+
+Läs hela filen som bakgrund. Den är en order. Källan är AliExpress (`produktjakt/ali.py`). Varje siffra nedan står i `produktjakt/vinnare/FAKTA-2026-09-09.md` [F], `docs/temu-vinnar-dna.md` [DNA], `docs/temu-vinnar-dna/analys/forlorare.md`, `docs/temu-jakt-v2/REGEL.md`, `docs/temu-jakt-v2/jakt/v23/KATALOG.md`, `produktjakt/korningar/2026-09-09/STATUS.md` eller `produktjakt/feedback/`. Saknas en siffra: skriv **"ej mätt"** — hitta aldrig på en.
 
 ## 1. Uppdraget
 

@@ -244,7 +244,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/nattkorning` | Rutinen "Ad upload and structure": Drive-kön → QA → Meta |
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
-| `/produktjakt` | **Rutin 06:30 varje dag:** `produktjakt/MASTERPROMPT.md` (kalender → objekt som far illa → ankare → AliExpress) → poängkort K0–K12 → offertark → sida med Ja/Kanske/Nej → Axels svar räknas till vikter inför nästa körning |
+| `/produktjakt` | **Rutin 06:30 varje dag — produktfabriken V3:** Axels svar + Metas facit → `LEARNING_STATE.md` → säsongskarta → discovery (70 % bevisad struktur / 30 % hypotes) → LIVE-verifiering + svenskt golv → `rank.py` → batch 10–15 → offertark + sida med Ja/Kanske/Nej → konceptregistret. Verkliga Meta-utfall skriver över modellen varje morgon |
 
 ### Nattrutinerna
 
@@ -496,20 +496,32 @@ namn (`..._4_1` är bild, `..._4_H1` är video) och görs av redigerarna.
 
 ⚠️ **Importera aldrig från `pipeline/` här** — det är Grillklinikens brand kit.
 
-### `produktjakt/` — automatisk produkthittare (AKTIV)
+### `produktjakt/` — produktfabriken V3 (AKTIV, daglig, självlärande)
 Motorn bakom `/produktjakt`. Fristående; **kräver `openpyxl`** (`pip install openpyxl`), inget annat.
-**`produktjakt/MASTERPROMPT.md` är ordern** (DOA v3.1: Deadline · Objekt · Ankare · Upplevt värde,
-byggd 2026-09-09 ur Axels tre senaste vinnare — taköverdrag husvagn 1 129 kr, utekattkoja 789 kr,
-adventskalender racingbilar 499 kr; backtest i `produktjakt/vinnare/`). Kommandofilen är körordningen.
+**`produktjakt/V3-FLODE.md` är flödet, `LEARNING_STATE.md` är minnet** (byggt 2026-09-11). `MASTERPROMPT.md`
+(DOA v3.1, poängkortet K0–K12) är bakgrund och bevis — inte lag: modellen refuterade taköverdraget och
+hade killat adventskalendern, båda REAL WINNERS i Meta. Kommandofilen är körordningen.
 
 ```bash
 cd produktjakt
-python3 feedback.py samla                      # Axels Ja/Kanske/Nej från sidan (Artifact read_db → feedback/db) → vikter.json + LARDOMAR.md
-python3 feedback.py svar <datum> <product_id> nej "Verktyg / pryl"   # svar givet i chatten
-python3 hitta.py --kalla objekt --antal 12 --sokord 14   # objekt.json × månad → AliExpress → gallring → korningar/<datum>/fynd.json
-python3 offert.py --fynd korningar/<datum>/fynd.json   # bygg leverantörens offertark (xlsx)
-python3 sida.py  --fynd korningar/<datum>/fynd.json    # bygg sidan Axel laddar ner från och svarar på
+python3 feedback.py samla                      # 0A Axels Ja/Kanske/Nej (Artifact read_db → feedback/db) → vikter.json, LARDOMAR.md, koncept.json
+python3 meta_facit.py hamta && python3 meta_facit.py utfall && python3 koncept.py backfyll   # 0B alla kampanjer i MagiBorsten → facit/FACIT.md (band + klass mot egen BE-CPA), snapshot per dag
+python3 larande.py                             # 0C → LEARNING_STATE.md (vinnar-/förlorarmönster, signaler, hypoteser, prediktion vs verklighet)
+python3 sasong.py                              # 0D → korningar/<datum>/SASONG.md (fönster 2–16 v fram, NOW/EARLY/LATE)
+# 1–3 discovery-linser (subagenter, V3-AGENTPROTOKOLL.md) → korningar/<datum>/v3/kandidater-*.json
+python3 rank.py --in korningar/<datum>/v3/kandidater-*.json --ut korningar/<datum>/v3/batch.json   # 4 tre grindar + profil per slot
+python3 v3_till_fynd.py --batch korningar/<datum>/v3/batch.json   # 5 → fynd.json + koncept-id
+python3 offert.py --fynd korningar/<datum>/fynd.json   # 6 arket (prisfälten tomma)
+python3 sida.py  --fynd korningar/<datum>/fynd.json    # 6 sidan (Ja/Kanske/Nej + arketyp/timing/säkerhet/varför/risk)
 ```
+
+⚠️ **Meta-banden räknas mot produktens EGEN BE-CPA**, aldrig mot 2 000 kr: UNTESTED (< 300 kr) · TOO_EARLY ·
+EARLY_SIGNAL · MEANINGFUL (≥ 3× BE-CPA & ≥ 5 köp) · HIGH (≥ 8× & ≥ 10). UNTESTED tränas ALDRIG som förlorare.
+En dom bekräftas av två snapshots ≥ 3 dygn isär (`facit/snapshots/`). Nya kampanjer måste taggas i
+`facit/historik-taggar.json` för att räknas i signalerna — FACIT.md listar de otaggade sist.
+
+⚠️ **Ett koncept är objekt + form, inte en listning** (`koncept.json`, K0001 …). Ett nej följer sakens id och
+söks inte om förrän `aterupptas_om` ändrats. `sedda.json` är bara dubblettkoll på listnings-id.
 
 ⚠️ **Sök från objektet som far illa, aldrig från sökord.** `sokord.json` (objekt × tillbehör) gav
 2026-09-09 nio verktyg/prylar av nio — Axel: "goyslop". `objekt.json` (objekt × deadline-månader ×

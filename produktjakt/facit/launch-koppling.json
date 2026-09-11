@@ -1,0 +1,10 @@
+{
+ "_om": "Kampanjnamn-delsträng → koncept (AliExpress product_id ur fynd.json, eller fro_nyckel ur koncept-fro.json). Behövs bara när utfall.json saknar product_id för kampanjen. Läses av koncept.py backfyll.",
+ "Taköverdraget för Husvagn": "takoverdrag-husvagn",
+ "Isolerade Utekattkojan": "utekattkoja",
+ "Adventskalendern Racingbilar": "adventskalender-racingbilar",
+ "Staketstolpslagaren": "1005009145737438",
+ "Stegstödet": "1005012386302696",
+ "Solcellslarmet": "1005012241693262",
+ "Termoskyddet för Husbil": "1005011618553986"
+}

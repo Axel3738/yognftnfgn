@@ -1,0 +1,1026 @@
+{
+ "_om": "Svensk säsongskalender för /produktjakt. Ett fönster = ett datum eller en väderhändelse som tvingar 55+-hushållet att köpa skydd/värme/gåva. Rutinen räknar: veckor_till_topp = (topp − i dag) / 7; fönstret är aktivt när 2 ≤ veckor_till_topp ≤ 16 (2–12 v = K1 full poäng, 12–16 v = BOKA) eller när i dag ligger mellan start och slut (pågående skada). Koppling till objekt.json: fonster.deadline_typ == objekt.deadline_typ, eller objekt.hot innehåller deadline_typ/ett ord i deadline_alias; listan objekt[] är facit för dagens objekt.json och ska uppdateras när rader läggs till. region: 'hela landet' gäller alla; frost/snö delas i norr (Norrland) / mellan (Svealand + södra Norrlandskusten) / syd (Götaland) — vid tvekan gäller mellan, det är där flest husvagnar och småhus står. kopfonster_veckor_fore = hur många veckor före toppen köpet typiskt görs (min, max); kopfonster_kalla säger om det är mätt [F] eller uppskattning. Källor: URL = hämtad på webben 2026-09-11; [K] = allmän kalenderkunskap utan URL; [F] = belagt i repots filer; 'uppskattning' = veckospann utan källa — hitta aldrig på ett exaktare datum än det som står. Datumen är normalvärden (SMHI 1991–2020 där det anges) — verkligt år avviker med veckor; frost och snö ska läsas som spann start–slut.",
+ "_datum": "2026-09-11",
+ "_tackning": "2026-09-01 → 2027-06-30 (uppdatera hösten 2027: älgjakt, fars dag, black week, sportlov, påsk får nya datum varje år)",
+ "_deadline_typer": [
+  "1 december",
+  "allhelgona",
+  "avställning",
+  "black week",
+  "dockas in",
+  "fars dag",
+  "första frost",
+  "första snö",
+  "höstlov",
+  "höstregn",
+  "invintring",
+  "isfiske",
+  "isläggning",
+  "jul",
+  "lucia",
+  "lövfällning",
+  "mellandagsrea",
+  "midsommar",
+  "mors dag",
+  "mörker",
+  "nyår",
+  "poolstängning",
+  "påsk",
+  "sjösättning",
+  "sportlov",
+  "säsongsstart",
+  "uppställning",
+  "upptagning",
+  "vedsäsong",
+  "vintermatning",
+  "vintertäckning",
+  "älgjakt"
+ ],
+ "_kategorier": [
+  "black week",
+  "båtförvaring",
+  "djur ute",
+  "fiske",
+  "frost",
+  "garage",
+  "gåva",
+  "hobby",
+  "husvagnsförvaring",
+  "höststädning",
+  "jakt",
+  "jul",
+  "kyla",
+  "mörker",
+  "regn",
+  "snö",
+  "ved/värme",
+  "väder",
+  "vårförberedelse"
+ ],
+ "fonster": [
+  {
+   "id": "uppstallning_husvagn",
+   "namn": "Uppställning husvagn/husbil (vinterförvaring)",
+   "deadline_typ": "uppställning",
+   "kategori": "husvagnsförvaring",
+   "start": "2026-09-15",
+   "topp": "2026-10-10",
+   "slut": "2026-10-31",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "[F] V1 taköverdrag launch sept, köp 6 st inom dagar → 1–6 v",
+   "objekt": [
+    "Husvagn — taket",
+    "Husvagn — fronten",
+    "Husvagn/husbil — hjulen och däcken",
+    "Husbil — hytt och vindruta",
+    "Husvagn — gasolflaskan och dragkulan",
+    "Husvagn/husbil — ventiler och genomföringar (möss)"
+   ],
+   "kalla": "[F] MASTERPROMPT.md steg 1 (uppställning sept–okt) + https://www.husvagn.se/nyheter/basta-tipsen-vinterforvaring-husvagn/ + https://www.trygghansa.se/tips-rad/bil-och-trafik/underhall-och-skotsel/vinterforvaring-husvagn (ingen källa ger ett exakt datum — toppen 10 okt är uppskattning)"
+  },
+  {
+   "id": "batupptagning",
+   "namn": "Båtupptagning (vinteruppställning)",
+   "deadline_typ": "upptagning",
+   "kategori": "båtförvaring",
+   "start": "2026-09-19",
+   "topp": "2026-10-10",
+   "slut": "2026-10-31",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "[F] Båtmotorskydd 579 ROAS 3,50 första veckan efter 29 aug → 1–6 v",
+   "objekt": [
+    "Båt på trailer/bockar",
+    "Utombordare — kåpan, hela motorn, nästa fas",
+    "Båtens sitsar och dynor"
+   ],
+   "kalla": "https://www.nasbyviken.se/sjosattning-och-upptagning/ (upptagning fyra helger från slutet av september) + https://www.svedea.se/batforsakring/batagare/sjosattning-upptagning (klubbexempel 5 sept–12 okt, lördag 10 okt) + [F] båtmotorskydd launch 29 aug"
+  },
+  {
+   "id": "mc_avstallning",
+   "namn": "MC- och mopedavställning",
+   "deadline_typ": "avställning",
+   "kategori": "garage",
+   "start": "2026-09-15",
+   "topp": "2026-10-15",
+   "slut": "2026-11-15",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "MC avställd",
+    "Moped/skoter (klass II)"
+   ],
+   "kalla": "[F] MASTERPROMPT.md steg 1 (MC-avställning sept–okt, MC-kapell launch aug) — datumet är uppskattning, ingen extern källa"
+  },
+  {
+   "id": "algjakt_norr",
+   "namn": "Älgjaktspremiär norra Sverige",
+   "deadline_typ": "älgjakt",
+   "kategori": "jakt",
+   "start": "2026-09-01",
+   "topp": "2026-09-01",
+   "slut": "2027-01-31",
+   "region": "norr",
+   "kopfonster_veckor_fore": [
+    2,
+    8
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Fyrhjuling/ATV"
+   ],
+   "kalla": "https://svenskjakt.se/start/nyhet/algjakten-2026-jakttider-beslut-och-fallavgifter-lan-for-lan/ (1 sept 2026 i Norrbotten, Västerbotten, Jämtland, Västernorrland; delar av Dalarna/Gävleborg/Värmland; slut senast 31 jan 2027)",
+   "notis": "Premiären passerad när kalendern skrevs — jakten pågår till 31 jan, ATV/slaktplats far illa hela hösten"
+  },
+  {
+   "id": "algjakt_syd",
+   "namn": "Älgjaktspremiär södra/mellersta Sverige",
+   "deadline_typ": "älgjakt",
+   "kategori": "jakt",
+   "start": "2026-09-24",
+   "topp": "2026-10-08",
+   "slut": "2027-01-31",
+   "region": "syd",
+   "kopfonster_veckor_fore": [
+    2,
+    8
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Fyrhjuling/ATV"
+   ],
+   "kalla": "https://svenskjakt.se/start/nyhet/algjakten-2026-jakttider-beslut-och-fallavgifter-lan-for-lan/ + https://www.widforss.se/guider/algjakten2026 (8 okt 2026 i övriga landet)",
+   "notis": "region syd = alla län utanför de fyra nordligaste"
+  },
+  {
+   "id": "forsta_frost_norr",
+   "namn": "Första frostnatt Norrland",
+   "deadline_typ": "första frost",
+   "kategori": "frost",
+   "start": "2026-09-05",
+   "topp": "2026-09-18",
+   "slut": "2026-10-09",
+   "region": "norr",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Släpkärra",
+    "IBC-tank — vinterfasen",
+    "Regntunna vid stupröret",
+    "Pizzaugn/utekök",
+    "Krukväxter — citrus, oliv, fikon, pelargon",
+    "Veteranbil/andrabil på uppfarten",
+    "Utekatten",
+    "Gårdshunden/hundgården",
+    "Hönsen — rastgård och vatten",
+    "Hästen i hagen",
+    "Kanin/marsvin i bur ute",
+    "Igelkotten i trädgården"
+   ],
+   "kalla": "https://odlaatbart.se/host-10-forsta-frost/ (normaldatum per ort, 30/50/70 % sannolikhet, ur vackertvader.se/SMHI 1991–2020) + https://www.smhi.se/blogg/blogg/2024-10-15-den-forsta-hostfrosten-haller-tidtabellen (normalkartan: frost ner till nordligaste Skåne 15 okt) — Umeå 5/11/15 sept, Luleå 14/18/25 sept, Sundsvall 29 sept/3 okt/9 okt",
+   "deadline_alias": [
+    "första frostnatt",
+    "frost"
+   ]
+  },
+  {
+   "id": "forsta_frost_mellan",
+   "namn": "Första frostnatt Svealand/södra Norrlandskusten",
+   "deadline_typ": "första frost",
+   "kategori": "frost",
+   "start": "2026-09-27",
+   "topp": "2026-10-15",
+   "slut": "2026-10-29",
+   "region": "mellan",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Släpkärra",
+    "IBC-tank — vinterfasen",
+    "Regntunna vid stupröret",
+    "Pizzaugn/utekök",
+    "Krukväxter — citrus, oliv, fikon, pelargon",
+    "Veteranbil/andrabil på uppfarten",
+    "Utekatten",
+    "Gårdshunden/hundgården",
+    "Hönsen — rastgård och vatten",
+    "Hästen i hagen",
+    "Kanin/marsvin i bur ute",
+    "Igelkotten i trädgården"
+   ],
+   "kalla": "https://odlaatbart.se/host-10-forsta-frost/ (normaldatum per ort, 30/50/70 % sannolikhet, ur vackertvader.se/SMHI 1991–2020) + https://www.smhi.se/blogg/blogg/2024-10-15-den-forsta-hostfrosten-haller-tidtabellen (normalkartan: frost ner till nordligaste Skåne 15 okt) — Uppsala 27 sept/2 okt/12 okt, Stockholm 15/22/29 okt",
+   "deadline_alias": [
+    "första frostnatt",
+    "frost"
+   ]
+  },
+  {
+   "id": "forsta_frost_syd",
+   "namn": "Första frostnatt Götaland",
+   "deadline_typ": "första frost",
+   "kategori": "frost",
+   "start": "2026-10-13",
+   "topp": "2026-10-19",
+   "slut": "2026-11-01",
+   "region": "syd",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Släpkärra",
+    "IBC-tank — vinterfasen",
+    "Regntunna vid stupröret",
+    "Pizzaugn/utekök",
+    "Krukväxter — citrus, oliv, fikon, pelargon",
+    "Veteranbil/andrabil på uppfarten",
+    "Utekatten",
+    "Gårdshunden/hundgården",
+    "Hönsen — rastgård och vatten",
+    "Hästen i hagen",
+    "Kanin/marsvin i bur ute",
+    "Igelkotten i trädgården"
+   ],
+   "kalla": "https://odlaatbart.se/host-10-forsta-frost/ (normaldatum per ort, 30/50/70 % sannolikhet, ur vackertvader.se/SMHI 1991–2020) + https://www.smhi.se/blogg/blogg/2024-10-15-den-forsta-hostfrosten-haller-tidtabellen (normalkartan: frost ner till nordligaste Skåne 15 okt) — Göteborg 13/16 okt/1 nov, Malmö 14/19/30 okt; SMHI: kustområdena i Götaland först i slutet av november",
+   "deadline_alias": [
+    "första frostnatt",
+    "frost"
+   ]
+  },
+  {
+   "id": "hostregn",
+   "namn": "Höstregn (regnperioden före frosten)",
+   "deadline_typ": "höstregn",
+   "kategori": "regn",
+   "start": "2026-09-15",
+   "topp": "2026-10-10",
+   "slut": "2026-11-15",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Elcykel under skärmtak",
+    "Utemöbler på altanen",
+    "Hammock och dynor",
+    "Källarfönster/ljusgårdar",
+    "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna",
+    "Terrassvärmare",
+    "Gasolgrill",
+    "Eldstad/eldkorg"
+   ],
+   "kalla": "uppskattning — [K] sept–nov; ingen extern källa ger ett datum"
+  },
+  {
+   "id": "lovfallning",
+   "namn": "Lövfällning (löv i rännor, dammar, dockor)",
+   "deadline_typ": "lövfällning",
+   "kategori": "höststädning",
+   "start": "2026-09-25",
+   "topp": "2026-10-15",
+   "slut": "2026-11-10",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Hängrännor",
+    "Källarfönster/ljusgårdar",
+    "Trädgårdsdammen (koi/guldfisk)",
+    "Robotgräsklippare + laddstation"
+   ],
+   "kalla": "https://www.odla.nu/blogs/inspiration/loven-faller (lövfall sept–okt, ask först, sedan asp/björk/lönn) — toppdatumet är uppskattning; SMHI har inget normaldatum för lövfall",
+   "deadline_alias": [
+    "lövfall"
+   ]
+  },
+  {
+   "id": "robot_indockning",
+   "namn": "Robotgräsklipparen dockas in för vintern",
+   "deadline_typ": "dockas in",
+   "kategori": "garage",
+   "start": "2026-10-01",
+   "topp": "2026-10-25",
+   "slut": "2026-11-15",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Robotgräsklippare + laddstation"
+   ],
+   "kalla": "https://axelkarlstad.se/robotgrasklippare/nar-ar-det-dags-att-ta-in-robotgrasklippare/ (in när natttemperaturen går under 10 °C, alltid före första frost) + https://www.stihl.se/sv/radgivningsmanualer/arbetsteknik-maskinunderhall/robotgrasklippartips/vinterforvaring (sista klippning slutet av oktober/början av november) — datum härlett ur frostfönstren, uppskattning",
+   "deadline_alias": [
+    "indockning"
+   ]
+  },
+  {
+   "id": "poolstangning",
+   "namn": "Poolstängning / vintertäckning av pool",
+   "deadline_typ": "poolstängning",
+   "kategori": "väder",
+   "start": "2026-09-15",
+   "topp": "2026-09-30",
+   "slut": "2026-10-20",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [],
+   "kalla": "https://www.bygghemma.se/reportage-och-guider/vinterstangning-pool/ (under hösten, före första frostnätterna) + https://www.pooltime.se/blogs/news/nar-ska-jag-stanga-av-min-pool (när dagstemperaturen stadigt < 21 °C) — datum uppskattning; poolsäsong mitten av april–slutet av september enligt sökträffar",
+   "notis": "Inget objekt i objekt.json bär poolstängning i dag (poolens pump/värmepump står bara i 4B)"
+  },
+  {
+   "id": "vedsasong",
+   "namn": "Vedsäsong / eldningssäsongens start",
+   "deadline_typ": "vedsäsong",
+   "kategori": "ved/värme",
+   "start": "2026-09-15",
+   "topp": "2026-10-15",
+   "slut": "2026-11-30",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    2,
+    8
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Vedstapeln"
+   ],
+   "kalla": "https://vedmatch.se/guider/kopa-ved-guide/ (eldningssäsong oktober–mars, högsäsong för vedköp sept–nov) — toppdatum uppskattning",
+   "deadline_alias": [
+    "eldningssäsong"
+   ]
+  },
+  {
+   "id": "invintring_bin",
+   "namn": "Invintring av bisamhällen",
+   "deadline_typ": "invintring",
+   "kategori": "djur ute",
+   "start": "2026-09-15",
+   "topp": "2026-10-15",
+   "slut": "2026-11-15",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    2,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Bikuporna"
+   ],
+   "kalla": "uppskattning — [K] okt–nov enligt objekt.json; ingen extern källa hämtad"
+  },
+  {
+   "id": "vintermatning_faglar",
+   "namn": "Vintermatning av fåglar börjar",
+   "deadline_typ": "vintermatning",
+   "kategori": "djur ute",
+   "start": "2026-10-01",
+   "topp": "2026-10-25",
+   "slut": "2027-03-31",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Fågelbord/fågelmatare",
+    "Vildfåglarna — övernattning"
+   ],
+   "kalla": "uppskattning — [K] oktober enligt objekt.json; ingen extern källa hämtad"
+  },
+  {
+   "id": "hostlov",
+   "namn": "Höstlov v 44",
+   "deadline_typ": "höstlov",
+   "kategori": "hobby",
+   "start": "2026-10-19",
+   "topp": "2026-10-26",
+   "slut": "2026-10-30",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    3
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Barnbarnets cykel/sparkcykel hos mor-/farföräldrarna"
+   ],
+   "kalla": "[K] vecka 44 = 26–30 okt 2026 (https://www.rodadagarna.se/skollov-2027/ anger v 44 som nästan enhetligt lov)"
+  },
+  {
+   "id": "vintertid_morker",
+   "namn": "Vintertid / mörkret faller (ljus, reflex, upplyst uppfart)",
+   "deadline_typ": "mörker",
+   "kategori": "mörker",
+   "start": "2026-10-25",
+   "topp": "2026-12-21",
+   "slut": "2027-01-31",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Postlådan vid vägen"
+   ],
+   "kalla": "[K] vintertid sista söndagen i oktober = 25 okt 2026; vintersolstånd 21 dec 2026"
+  },
+  {
+   "id": "forsta_sno_norr",
+   "namn": "Första snötäcke Norrland",
+   "deadline_typ": "första snö",
+   "kategori": "snö",
+   "start": "2026-10-01",
+   "topp": "2026-10-25",
+   "slut": "2026-11-15",
+   "region": "norr",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Snöslunga",
+    "Snöslungan",
+    "Snöskoter på släpet",
+    "Spabadet — locket",
+    "Studsmattan",
+    "Luftvärmepumpens utedel",
+    "Postlådan vid vägen",
+    "Fyrhjuling/ATV",
+    "Elverk/kompressor ute",
+    "Laddbox/utomhusuttag",
+    "Takbox/takräcke"
+   ],
+   "kalla": "https://www.smhi.se/kunskapsbanken/meteorologi/sno/snotackets-utbredning-och-varaktighet (första snötäcke i nordligaste fjälldalgångar början av oktober, högfjället september) + https://www.svt.se/vader/normal-vinter (meteorologisk vinter Luleå-Bergnäset normalt 30 okt) — toppdatum uppskattning"
+  },
+  {
+   "id": "forsta_sno_mellan",
+   "namn": "Första snö Svealand",
+   "deadline_typ": "första snö",
+   "kategori": "snö",
+   "start": "2026-11-05",
+   "topp": "2026-11-20",
+   "slut": "2026-12-10",
+   "region": "mellan",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Snöslunga",
+    "Snöslungan",
+    "Snöskoter på släpet",
+    "Spabadet — locket",
+    "Studsmattan",
+    "Luftvärmepumpens utedel",
+    "Postlådan vid vägen",
+    "Fyrhjuling/ATV",
+    "Elverk/kompressor ute",
+    "Laddbox/utomhusuttag",
+    "Takbox/takräcke"
+   ],
+   "kalla": "https://www.svt.se/vader/sasongens-forsta-snofall-i-sodra-sverige (SMHI:s klimatolog: första snön i Stockholm i snitt runt 20 nov) + https://www.smhi.se/blogg/blogg/2018-01-04-mycket-sen-vinter-i-gavle-och-stockholm (meteorologisk vinter Gävle slutet av nov, Stockholm början av dec)"
+  },
+  {
+   "id": "forsta_sno_syd",
+   "namn": "Första snö Götaland",
+   "deadline_typ": "första snö",
+   "kategori": "snö",
+   "start": "2026-11-25",
+   "topp": "2026-12-15",
+   "slut": "2027-01-15",
+   "region": "syd",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Snöslunga",
+    "Snöslungan",
+    "Snöskoter på släpet",
+    "Spabadet — locket",
+    "Studsmattan",
+    "Luftvärmepumpens utedel",
+    "Postlådan vid vägen",
+    "Fyrhjuling/ATV",
+    "Elverk/kompressor ute",
+    "Laddbox/utomhusuttag",
+    "Takbox/takräcke"
+   ],
+   "kalla": "https://www.smhi.se/kunskapsbanken/meteorologi/sno/snotackets-utbredning-och-varaktighet (södra Skåne: snötäcke i genomsnitt först i mitten av december eller senare; kusten snöfattig i förvintern) — toppdatum uppskattning"
+  },
+  {
+   "id": "islaggning_damm",
+   "namn": "Isläggning i trädgårdsdamm och vattenhink",
+   "deadline_typ": "isläggning",
+   "kategori": "kyla",
+   "start": "2026-11-01",
+   "topp": "2026-11-25",
+   "slut": "2026-12-20",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Trädgårdsdammen (koi/guldfisk)",
+    "Hästen i hagen",
+    "Hönsen — rastgård och vatten"
+   ],
+   "kalla": "uppskattning — [K] nov–dec enligt objekt.json; norr tidigare (vinter Luleå 30 okt, SVT/SMHI)"
+  },
+  {
+   "id": "vintertackning_vaxter",
+   "namn": "Vintertäckning av rosor, rhododendron, krukväxter",
+   "deadline_typ": "vintertäckning",
+   "kategori": "frost",
+   "start": "2026-10-15",
+   "topp": "2026-11-10",
+   "slut": "2026-12-05",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Rosor, rhododendron, buxbom i rabatten",
+    "Unga fruktträd",
+    "Krukväxter — citrus, oliv, fikon, pelargon"
+   ],
+   "kalla": "https://weibulls.com/information/artiklar/skydda-rosorna-infor-vintern-att (täck när första riktiga köldknäppen kommit och marken frusit) + https://weibulls.com/information/artiklar/skyddstaecka-skydda (oktober i stora delar av landet, senare i söder) + https://plantagen.se/se/artiklar/tips-och-rad/tradgardsskotsel/vintertackning-av-vaxter — toppdatum uppskattning"
+  },
+  {
+   "id": "allhelgona",
+   "namn": "Allhelgona (gravljus, mörker)",
+   "deadline_typ": "allhelgona",
+   "kategori": "gåva",
+   "start": "2026-10-17",
+   "topp": "2026-10-31",
+   "slut": "2026-11-01",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    2
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [],
+   "kalla": "https://veckonr.se/2026/alla-helgons-dag (Alla helgons dag lördag 31 okt 2026, allhelgonaafton 30 okt)"
+  },
+  {
+   "id": "fars_dag",
+   "namn": "Fars dag",
+   "deadline_typ": "fars dag",
+   "kategori": "gåva",
+   "start": "2026-10-11",
+   "topp": "2026-11-08",
+   "slut": "2026-11-08",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Mannen själv / partnern — hobbykalendern (fars dag, jul)"
+   ],
+   "kalla": "https://www.kalender-365.se/helgdagar/fars-dag.html (andra söndagen i november = 8 nov 2026)"
+  },
+  {
+   "id": "utedjur_stanger",
+   "namn": "Utedjurens fönster stänger (kojor, värme, isfria skålar)",
+   "deadline_typ": "första frost",
+   "kategori": "djur ute",
+   "start": "2026-09-15",
+   "topp": "2026-11-15",
+   "slut": "2026-11-30",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    8
+   ],
+   "kopfonster_kalla": "[F] V2 launch sept, 6 köp dag 1–2",
+   "objekt": [
+    "Utekatten",
+    "Gårdshunden/hundgården",
+    "Hönsen — rastgård och vatten",
+    "Kanin/marsvin i bur ute",
+    "Igelkotten i trädgården"
+   ],
+   "kalla": "[F] MASTERPROMPT.md steg 1: utedjurens fönster stänger sista november (V2 utekattkoja)"
+  },
+  {
+   "id": "black_week",
+   "namn": "Black Week / Black Friday",
+   "deadline_typ": "black week",
+   "kategori": "black week",
+   "start": "2026-11-20",
+   "topp": "2026-11-27",
+   "slut": "2026-11-30",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    0,
+    1
+   ],
+   "kopfonster_kalla": "[K] köpet sker i veckan",
+   "objekt": [],
+   "kalla": "https://underaret.se/handel/black-friday/ (Black Friday 27 nov 2026; Black Week 20–30 nov, Cyber Monday 30 nov)"
+  },
+  {
+   "id": "advent_1_december",
+   "namn": "1 december — adventskalendern måste vara hemma",
+   "deadline_typ": "1 december",
+   "kategori": "gåva",
+   "start": "2026-09-08",
+   "topp": "2026-11-24",
+   "slut": "2026-12-01",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    12
+   ],
+   "kopfonster_kalla": "[F] V3: köp från 12 v före",
+   "objekt": [
+    "Barnbarnet — adventskalendern",
+    "Mannen själv / partnern — hobbykalendern (fars dag, jul)"
+   ],
+   "kalla": "[F] MASTERPROMPT.md (V3 launch 8 sept = 12 v före 1 dec; 11 köp) — toppen 24 nov = sista beställningsdag med leverans före 1 dec, uppskattning",
+   "deadline_alias": [
+    "1 dec",
+    "advent"
+   ]
+  },
+  {
+   "id": "lucia",
+   "namn": "Lucia",
+   "deadline_typ": "lucia",
+   "kategori": "jul",
+   "start": "2026-12-01",
+   "topp": "2026-12-13",
+   "slut": "2026-12-13",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    2
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [],
+   "kalla": "[K] 13 december varje år (https://sillysanta.se/pages/nar-ar-lucia)"
+  },
+  {
+   "id": "jul",
+   "namn": "Julafton / julklappar",
+   "deadline_typ": "jul",
+   "kategori": "gåva",
+   "start": "2026-11-23",
+   "topp": "2026-12-20",
+   "slut": "2026-12-24",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    5
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Mannen själv / partnern — hobbykalendern (fars dag, jul)"
+   ],
+   "kalla": "[K] julafton 24 dec; jullov ca 21 dec 2026–7 jan 2027 (https://www.rodadagarna.se/jullov-2026/) — toppen 20 dec = sista leveransdag före jul, uppskattning"
+  },
+  {
+   "id": "mellandagsrea",
+   "namn": "Mellandagsrea",
+   "deadline_typ": "mellandagsrea",
+   "kategori": "black week",
+   "start": "2026-12-26",
+   "topp": "2026-12-27",
+   "slut": "2027-01-06",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    0,
+    1
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [],
+   "kalla": "https://sillysanta.se/blogs/news/mellandagarna (mellandagarna 27–30 dec 2026; rean startar annandag jul och pågår in i januari)"
+  },
+  {
+   "id": "nyar",
+   "namn": "Nyår",
+   "deadline_typ": "nyår",
+   "kategori": "jul",
+   "start": "2026-12-27",
+   "topp": "2026-12-31",
+   "slut": "2027-01-01",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    0,
+    1
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [],
+   "kalla": "[K] 31 dec 2026"
+  },
+  {
+   "id": "isfiske",
+   "namn": "Isfiskesäsong (säker is)",
+   "deadline_typ": "isfiske",
+   "kategori": "fiske",
+   "start": "2026-12-15",
+   "topp": "2027-01-20",
+   "slut": "2027-03-15",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [],
+   "kalla": "https://www.naturkompaniet.se/kunskap/fiske/isfiske/ (säsongen startar mellan oktober och januari beroende på region) + https://www.ovanakersfvof.se/2023/12/11/isfiskepremiar-ostra-nyasen/ (premiär 19 jan 2026 som exempel) — toppdatum uppskattning; norr tidigare, syd senare",
+   "deadline_alias": [
+    "isläggning"
+   ],
+   "notis": "Inget objekt i objekt.json ännu — fiskedrag-kalendern (A4) och båtägarens vinterhobby hör hit"
+  },
+  {
+   "id": "snolast_vinter",
+   "namn": "Snölast och takdropp mitt i vintern",
+   "deadline_typ": "första snö",
+   "kategori": "snö",
+   "start": "2027-01-01",
+   "topp": "2027-01-20",
+   "slut": "2027-02-28",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Husvagn — taket",
+    "Luftvärmepumpens utedel",
+    "Utemöbler på altanen",
+    "Gasolgrill",
+    "Eldstad/eldkorg",
+    "Elverk/kompressor ute"
+   ],
+   "kalla": "https://www.smhi.se/klimat/klimatet-da-och-nu/manadens-vader-och-vatten-i-sverige/manadens-vader-och-vatten-i-sverige/2026-01-30-januari-2026---en-riktig-vintermanad (januari = full vintermånad i hela landet) — fönstret är uppskattning: pågående skada, inte ett datum",
+   "notis": "Pågående-skada-fönster (K1 = 10), inte hårt datum"
+  },
+  {
+   "id": "sportlov",
+   "namn": "Sportlov v 7–10",
+   "deadline_typ": "sportlov",
+   "kategori": "hobby",
+   "start": "2027-02-15",
+   "topp": "2027-02-22",
+   "slut": "2027-03-12",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    2,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Takbox/takräcke"
+   ],
+   "kalla": "https://www.rodadagarna.se/skollov-2027/ (Göteborg v 7 15–19 feb, Malmö/Uppsala/Örebro v 8 22–26 feb, Stockholm v 9 1–5 mars) + https://underaret.se/skola/sportlov/ (Norrland v 10 8–12 mars)"
+  },
+  {
+   "id": "varsol_vintertackning_bort",
+   "namn": "Vårsol — vintertäckning tas bort, krukväxter ut",
+   "deadline_typ": "säsongsstart",
+   "kategori": "vårförberedelse",
+   "start": "2027-03-01",
+   "topp": "2027-03-25",
+   "slut": "2027-04-30",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Rosor, rhododendron, buxbom i rabatten",
+    "Krukväxter — citrus, oliv, fikon, pelargon",
+    "Unga fruktträd"
+   ],
+   "kalla": "https://plantagen.se/se/artiklar/tips-och-rad/tradgardsskotsel/vintertackning-av-vaxter (vårsol jan–feb bränner vintergrönt medan marken är frusen; packa upp när ljus och värme återvänder) + https://www.smhi.se/blogg/blogg/2018-01-04-mycket-sen-vinter-i-gavle-och-stockholm (meteorologisk vår Stockholm normalt 16 mars) — toppdatum uppskattning"
+  },
+  {
+   "id": "pask",
+   "namn": "Påsk 2027 — husvagnens och fritidshusets första resa",
+   "deadline_typ": "påsk",
+   "kategori": "vårförberedelse",
+   "start": "2027-03-01",
+   "topp": "2027-03-26",
+   "slut": "2027-03-29",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    2,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Husvagn — fronten",
+    "Husbil — hytt och vindruta",
+    "Husvagn — taket"
+   ],
+   "kalla": "https://veckonr.se/2027/p%C3%A5sk (långfredag 26 mars, påskdagen 28 mars, annandag 29 mars 2027, vecka 12); påsklov v 12–13 (https://www.rodadagarna.se/skollov-2027/)",
+   "deadline_alias": [
+    "första resa påsk"
+   ]
+  },
+  {
+   "id": "regntunna_ibc_ut",
+   "namn": "Regntunna och IBC-tank ställs ut (vårregn, bevattning)",
+   "deadline_typ": "säsongsstart",
+   "kategori": "vårförberedelse",
+   "start": "2027-03-20",
+   "topp": "2027-04-15",
+   "slut": "2027-05-15",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Regntunna vid stupröret",
+    "IBC-tank — vinterfasen"
+   ],
+   "kalla": "[F] MASTERPROMPT.md steg 1 (regntunna/IBC in i april, STATUS 09-09) — toppdatum uppskattning",
+   "deadline_alias": [
+    "april",
+    "regntunna ut"
+   ]
+  },
+  {
+   "id": "camping_sasongsstart",
+   "namn": "Campingsäsongen öppnar (husvagnen ut, Valborg/1 maj)",
+   "deadline_typ": "säsongsstart",
+   "kategori": "husvagnsförvaring",
+   "start": "2027-04-01",
+   "topp": "2027-04-30",
+   "slut": "2027-05-31",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    2,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Husvagn — taket",
+    "Husvagn — fronten",
+    "Husvagn/husbil — hjulen och däcken",
+    "Husbil — hytt och vindruta",
+    "Husvagn — gasolflaskan och dragkulan",
+    "Husvagn/husbil — ventiler och genomföringar (möss)"
+   ],
+   "kalla": "[K] Valborg 30 april / 1 maj = traditionell säsongsöppning på campingar — uppskattning, ingen extern källa hämtad",
+   "deadline_alias": [
+    "säsongsöppning"
+   ]
+  },
+  {
+   "id": "sjosattning",
+   "namn": "Sjösättning",
+   "deadline_typ": "sjösättning",
+   "kategori": "båtförvaring",
+   "start": "2027-04-15",
+   "topp": "2027-05-01",
+   "slut": "2027-05-31",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    2,
+    8
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Båt på trailer/bockar",
+    "Utombordare — kåpan, hela motorn, nästa fas",
+    "Båtens sitsar och dynor"
+   ],
+   "kalla": "https://www.nasbyviken.se/sjosattning-och-upptagning/ (två helger från slutet av april till början av maj) + https://www.svedea.se/batforsakring/batagare/sjosattning-upptagning (sökträff: första lördagen i maj resp. 25 april; vinteruppställda båtar sjösatta senast 31/5)"
+  },
+  {
+   "id": "klippsasong_start",
+   "namn": "Klippsäsongen börjar (åkgräsklippare, robot, trimmer)",
+   "deadline_typ": "säsongsstart",
+   "kategori": "hobby",
+   "start": "2027-04-10",
+   "topp": "2027-05-01",
+   "slut": "2027-05-31",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Åkgräsklippare — sitsen (A2 Slitytan)",
+    "Robotgräsklippare + laddstation",
+    "Trimmern/röjsågen — kroppen (A6)"
+   ],
+   "kalla": "[F] MASTERPROMPT.md steg 1 (klippsäsong maj–okt, sätesöverdrag launch juni) — toppdatum uppskattning",
+   "deadline_alias": [
+    "klippsäsongens start",
+    "säsongsstart 4"
+   ]
+  },
+  {
+   "id": "altansasong",
+   "namn": "Altan- och uteplatssäsongen öppnar",
+   "deadline_typ": "säsongsstart",
+   "kategori": "vårförberedelse",
+   "start": "2027-04-15",
+   "topp": "2027-05-15",
+   "slut": "2027-06-15",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    6
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Utemöbler på altanen",
+    "Gasolgrill",
+    "Terrassvärmare",
+    "Eldstad/eldkorg",
+    "Hammock och dynor",
+    "Altanen/trädäcket — foten (A6)"
+   ],
+   "kalla": "uppskattning — [K] maj; ingen extern källa hämtad"
+  },
+  {
+   "id": "mors_dag",
+   "namn": "Mors dag",
+   "deadline_typ": "mors dag",
+   "kategori": "gåva",
+   "start": "2027-05-02",
+   "topp": "2027-05-30",
+   "slut": "2027-05-30",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [],
+   "kalla": "https://www.kalender-365.se/helgdagar/mors-dag.html (sista söndagen i maj = 30 maj 2027)"
+  },
+  {
+   "id": "midsommar",
+   "namn": "Midsommar",
+   "deadline_typ": "midsommar",
+   "kategori": "gåva",
+   "start": "2027-05-28",
+   "topp": "2027-06-25",
+   "slut": "2027-06-26",
+   "region": "hela landet",
+   "kopfonster_veckor_fore": [
+    1,
+    4
+   ],
+   "kopfonster_kalla": "uppskattning",
+   "objekt": [
+    "Altanen/trädäcket — foten (A6)",
+    "Utemöbler på altanen"
+   ],
+   "kalla": "https://rikspuls.se/ekonomi/midsommar-2027-datum-traditioner/ (midsommarafton 25 juni, midsommardagen 26 juni 2027)"
+  }
+ ]
+}
