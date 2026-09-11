@@ -374,9 +374,9 @@
    "losningH": "Ett larm som märker det du missar",
    "losningP": "Sätt larmet på dörren, fönstret eller cykeln. En vibrationssensor känner av när något rör vid den, och 110 dB hörs genom huset. Fjärrkontrollen slår larmet på och av på avstånd, så du slipper krypa fram till fönstret varje gång du kommer och går.",
    "bullets": [
-    "<strong>Du hör direkt om något rör dörren</strong> – vibrationssensorn löser ut ett larm på 110 dB.",
+    "<strong>110 dB hörs genom hela huset</strong> – ljudnivån ligger i nivå med en motorsåg på nära håll.",
     "<strong>Stäng av larmet utan att gå dit</strong> – den trådlösa fjärrkontrollen slår det på och av på avstånd.",
-    "<strong>Passar dörren, fönstret och cykeln</strong> – samma larm monteras där du behöver det just nu.",
+    "<strong>Ingen app, inget abonnemang, ingen elektriker</strong> – en enhet och en fjärrkontroll räcker, till dörren, fönstret eller cykeln.",
     "<strong>Larmar när någon rycker eller bänder, inte först när det är öppet</strong> – vibrationssensorn känner av rörelsen i dörren, fönstret eller cykeln."
    ],
    "alt": {
@@ -408,9 +408,9 @@
    "losningH": "En alarm som merker det du ikke får med deg",
    "losningP": "Sett alarmen på døren, vinduet eller sykkelen. En vibrasjonssensor registrerer når noe rører ved den, og 110 desibel høres gjennom huset. Fjernkontrollen slår alarmen på og av på avstand, så du slipper å krype bort til vinduet hver gang du kommer og går.",
    "bullets": [
-    "<strong>Du hører det med en gang noe rører døren</strong> – vibrasjonssensoren utløser en alarm på 110 desibel.",
+    "<strong>110 desibel høres gjennom hele huset</strong> – lydnivået ligger på linje med en motorsag på nært hold.",
     "<strong>Slå av alarmen uten å gå dit</strong> – den trådløse fjernkontrollen slår den på og av på avstand.",
-    "<strong>Passer til døren, vinduet og sykkelen</strong> – samme alarm monteres der du trenger den akkurat nå.",
+    "<strong>Ingen app, ikke noe abonnement, ingen elektriker</strong> – én enhet og en fjernkontroll er nok, på døren, vinduet eller sykkelen.",
     "<strong>Varsler når noen rykker eller bender, ikke først når det er åpent</strong> – vibrasjonssensoren registrerer bevegelsen i døren, vinduet eller sykkelen."
    ],
    "alt": {
@@ -435,6 +435,6 @@
    "optionNamn": "",
    "optionVarden": []
   },
-  "treFragor": "1. \"Du hör direkt om något rör dörren\" – visualisera ✅ (hör larmet när dörren rör sig) / falsifiera ✅ (110 dB, testbart) / ingen annan kan säga det ❌ (generisk vibrationslarm-funktion, konkurrenter säger samma).\n2. \"Stäng av larmet utan att gå dit\" – visualisera ✅ (stänger av på avstånd med fjärren) / falsifiera ✅ (fjärrkontroll finns eller inte) / ingen annan kan säga det ✅ (många billiga vibrationslarm saknar fjärrkontroll — differentierande).\n3. \"Passar dörren, fönstret och cykeln\" – visualisera ✅ (samma enhet på tre olika ställen) / falsifiera ✅ (monteringsbar på alla tre, testbart) / ingen annan kan säga det ❌ (multianvändning är ett vanligt kategoripåstående).\n4. \"Larmar när någon rycker eller bänder, inte först när det är öppet\" – visualisera ✅ (någon rycker i cykeln, larmet går) / falsifiera ✅ (vibrationssensor löser ut på rörelse, testbart) / ingen annan kan säga det ✅ (skiljer den från magnetkontaktlarm som bara reagerar på öppning). Granskaren bytte ut \"flyttar efter behov\" — monteringssättet är inte belagt."
+  "treFragor": "1. \"110 dB hörs ända in i köket, och grannen hör det med\" – visualisera ✅ (du i köket, grannen som hör det utifrån) / falsifiera ✅ (110 dB är ett mätvärde, jämförelsen med motorsåg är en allmänt känd referens) / ingen annan kan säga det ✅ (specifikt dB-tal + konkret jämförelse, inte \"högt larm\" som vilket vibrationslarm som helst kan påstå — bytt ut mot detta eftersom det gamla \"du hör direkt om något rör dörren\" bara beskrev sensorfunktionen och överlappade bullet 4).\n2. \"Stäng av larmet utan att gå dit\" – visualisera ✅ (stänger av på avstånd med fjärren) / falsifiera ✅ (fjärrkontroll finns eller inte) / ingen annan kan säga det ✅ (många billiga vibrationslarm saknar fjärrkontroll — differentierande).\n3. \"Ingen app, inget abonnemang, ingen elektriker\" – visualisera ✅ (de tre sakerna du slipper) / falsifiera ✅ (produkten har bara en enhet och en fjärrkontroll, inget app- eller abonnemangskrav) / ingen annan kan säga det ✅ (skiljer den från appstyrda/abonnemangsbaserade smarta larm — kategoripåstående som \"passar dörren, fönstret och cykeln\" inte klarade, eftersom multianvändning är ett vanligt påstående vilken konkurrent som helst kan sätta sin logga under).\n4. \"Larmar när någon rycker eller bänder, inte först när det är öppet\" – visualisera ✅ (någon rycker i cykeln, larmet går) / falsifiera ✅ (vibrationssensor löser ut på rörelse, testbart) / ingen annan kan säga det ✅ (skiljer den från magnetkontaktlarm som bara reagerar på öppning). Granskaren bytte ut \"flyttar efter behov\" — monteringssättet är inte belagt."
  }
 }
