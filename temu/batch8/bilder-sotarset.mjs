@@ -16,7 +16,7 @@
 //   node temu/batch8/bilder-sotarset.mjs --miljo <fil>   # normalisera AI-bild → 1600×1600
 //   node temu/batch8/bilder-sotarset.mjs --gif <video>   # AI-video → GIF (kräver ffmpeg-static)
 import sharp from '../node_modules/sharp/dist/index.mjs';
-import { mkdirSync, existsSync } from 'node:fs';
+import { mkdirSync, copyFileSync, statSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
 const KÄLLA = process.env.SOTARSET_KALLA || '/tmp/b8/bilder/image3.jpg';
@@ -132,13 +132,13 @@ async function gif(video, fps = 10, bredd = 480) {
   const FF = (await import('/tmp/gifjobb/node_modules/ffmpeg-static/index.js')).default;
   const pal = '/tmp/b8/work/sotarset-palett.png';
   const filter = `fps=${fps},scale=${bredd}:-1:flags=lanczos`;
-  execFileSync(FF, ['-y', '-i', video, '-vf', `${filter},palettegen=max_colors=200:stats_mode=diff`, pal]);
+  execFileSync(FF, ['-y', '-v', 'error', '-i', video, '-vf', `${filter},palettegen=max_colors=200:stats_mode=diff`, '-frames:v', '1', '-update', '1', pal]);
   const ut = `${UT.sv}/sotarset-miljo.gif`;
-  execFileSync(FF, ['-y', '-i', video, '-i', pal, '-lavfi',
+  execFileSync(FF, ['-y', '-v', 'error', '-i', video, '-i', pal, '-lavfi',
     `${filter}[x];[x][1:v]paletteuse=dither=bayer:bayer_scale=3:diff_mode=rectangle`, '-loop', '0', ut]);
   const m = await sharp(ut, { animated: true }).metadata();
-  console.log(`✔ sotarset-miljo.gif — ${m.pages} rutor`);
-  await sharp(ut, { animated: true }).toFile(`${UT.no}/sotarset-miljo.gif`);
+  console.log(`✔ sotarset-miljo.gif — ${m.pages} rutor, ${(statSync(ut).size / 1048576).toFixed(2)} MB`);
+  copyFileSync(ut, `${UT.no}/sotarset-miljo.gif`);   // identisk fil, ingen omkodning
 }
 
 /* ---------- körning ---------- */
