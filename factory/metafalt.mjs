@@ -23,6 +23,21 @@ const url = (v) => {
 // Shopifys list-typer vill ha värdet som en JSON-array i en sträng.
 const jsonLista = (arr) => JSON.stringify(arr.map(String));
 
+/** Produktens rad i gåvoguiden, eller null när produktfilen inte har någon.
+ *  Taggarna är fritt format och matchas mot svarsalternativens taggar i
+ *  sektionens block — samma sträng på båda sidor, inget register däremellan. */
+export function kvizFalt(p) {
+  const q = p?.quiz;
+  const taggar = lista(q?.taggar).map(String);
+  if (taggar.length === 0) return null;
+  return JSON.stringify({
+    taggar,
+    mening: text(q.mening) ?? '',
+    sma_delar: q.sma_delar === true,
+    alkoholtema: q.alkoholtema === true,
+  });
+}
+
 export function byggMetafalt(p, _hjalp = {}) {
   const valuta = p.ekonomi?.valuta ?? 'SEK';
   const enhet = ['SEK', 'NOK', 'DKK'].includes(valuta) ? 'kr' : valuta;
@@ -71,6 +86,16 @@ export function byggMetafalt(p, _hjalp = {}) {
         lista(p.faq).map((f) => ({ fraga: String(f.fraga ?? ''), svar: String(f.svar ?? '') }))
       ),
     ],
+    // Gåvoguiden på startsidan (sections/ms-gavoguide.liquid). Fältet är det
+    // ENDA som avgör om produkten är med i guiden — utan det syns den i
+    // butiken men aldrig som ett svar. Det är med flit: hellre utanför
+    // guiden än matchad på gissade taggar.
+    //
+    // `sma_delar` och `alkoholtema` är inte poäng utan SPÄRRAR: en kalender
+    // med smådelar får aldrig föreslås till ett barn under tre, och en
+    // alkoholtemakalender aldrig till ett barn eller en tonåring. Spärrarna
+    // ligger i guidens JS, men sanningen om produkten står här.
+    ['quiz', 'json', kvizFalt(p)],
   ];
 
   // Tomma fält skickas inte alls — annars renderar temat tomma rubriker.

@@ -172,6 +172,86 @@ startsida:
     - "Klarna, kort och Apple Pay"
     - "Skickas från Sverige"
   sortiment_rubrik: "Adventskalendrar just nu"
+  # GÅVOGUIDEN — ligger direkt ovanför katalogen (Axels beslut 2026-09-11).
+  #
+  # Kunden vet inte vilken kalender hon vill ha. Hon vet vem hon köper till.
+  # Taggarna efter | matchas mot produktens metafält opf.quiz — samma sträng
+  # på båda sidor, inget register däremellan. En tagg som ingen produkt bär
+  # ger noll poäng, aldrig ett fel; en produkt utan opf.quiz är osynlig här.
+  #
+  # `visa_om` grenar flödet: ingen kund ser alla sex frågorna. Barn får
+  # åldersfrågan och barnintressena, vuxna får vuxenintressena. Fyra till
+  # fem frågor per person.
+  #
+  # Två taggar är SPÄRRAR, inte poäng (guidens JS):
+  #   krav:utan-sma-delar → stryker allt med sma_delar: true i produktfilen
+  #   mottagare:barn / :tonaring → stryker allt med alkoholtema: true
+  # Därför får alkoholkalendrarna aldrig föreslås till ett barn, hur många
+  # intressetaggar som än råkar matcha.
+  gavoguide:
+    etikett: "Gåvoguide"
+    rubrik: "Vem ska du köpa till?"
+    intro: "Fem frågor om mottagaren, sedan säger vi vilken kalender som passar. Har du fler att köpa till gör du om den."
+    text_om: "Gör om för en annan person"
+    text_alla: "Se alla kalendrar"
+    fragor:
+      - fraga: "Vem ska du köpa till?"
+        vikt: 3
+        svar:
+          - "Ett barn|mottagare:barn"
+          - "En tonåring|mottagare:tonaring"
+          - "En vuxen|mottagare:vuxen"
+          - "Vet inte än|mottagare:vemsomhelst"
+      - fraga: "Hur gammalt är barnet?"
+        hjalptext: "Åldern avgör vad som är lämpligt, inte bara vad som är roligt."
+        vikt: 3
+        visa_om:
+          - "mottagare:barn"
+        svar:
+          - "Under 3 år|alder:under-3,krav:utan-sma-delar"
+          - "3–5 år|alder:3-5"
+          - "6–8 år|alder:6-8"
+          - "9–12 år|alder:9-12"
+      - fraga: "Vad gillar hen mest?"
+        vikt: 4
+        visa_om:
+          - "mottagare:barn"
+          - "mottagare:tonaring"
+        svar:
+          - "Dinosaurier och djur|intresse:dinosaurier"
+          - "Bilar och fart|intresse:bilar"
+          - "Smycken och glitter|intresse:smycken-barn"
+          - "Pyssel och att skapa|intresse:pyssel"
+          - "Hockey|intresse:hockey"
+          - "Pussel och spel|intresse:pussel"
+      - fraga: "Vad gillar hen mest?"
+        vikt: 4
+        visa_om:
+          - "mottagare:vuxen"
+          - "mottagare:vemsomhelst"
+        svar:
+          - "Whisky|intresse:whisky"
+          - "Öl|intresse:ol"
+          - "Cocktails och drinkar|intresse:cocktail"
+          - "Golf|intresse:golf"
+          - "Hockey|intresse:hockey"
+          - "Smycken och accessoarer|intresse:smycken"
+          - "Pussel och lugna kvällar|intresse:pussel"
+          - "Vet inte riktigt|egenskap:brett"
+      - fraga: "Vad är viktigast med kalendern?"
+        vikt: 2
+        svar:
+          - "Att det finns kvar efter jul|egenskap:varar"
+          - "Att den känns personlig|egenskap:personlig"
+          - "Att den är snygg att ställa fram|egenskap:dekor"
+          - "Att det är en överraskning varje dag|egenskap:overraskning"
+      - fraga: "Vad får den kosta?"
+        hjalptext: "Vi visar det som passar bäst, inte bara det billigaste."
+        vikt: 1
+        svar:
+          - "Under 400 kr|pris:under-400"
+          - "400–600 kr|pris:400-600"
+          - "Spelar ingen roll|pris:fritt"
   berattelse:
     rubrik: "Varför AdventLane finns"
     # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
@@ -189,15 +269,26 @@ startsida:
     # AI-illustration (julmiljön) — märkt i alt-texten på produktbilden.
     bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-jul.jpg"
   faq_rubrik: "Vanliga frågor"
+  # Utökad 2026-09-11 när sortimentet växte från en kalender till tolv.
+  # Frågorna är de en gåvoköpare faktiskt ställer, i den ordning hon ställer
+  # dem: hinner den fram, vilken ska jag välja, passar den åldern, är det
+  # riktig sprit. Varje svar bär bara villkor som står i den här filen —
+  # 5–10 arbetsdagar, fri frakt SE/NO, 14 dagars ångerrätt.
   faq:
     - fraga: "Hur lång är leveranstiden?"
       svar: "Räkna med 5 till 10 arbetsdagar. Beställ i god tid före första december om kalendern ska ligga under granen i tid."
+    - fraga: "Hinner kalendern fram till den första december?"
+      svar: "Beställer du senast i mitten av november har den 5 till 10 arbetsdagar på sig, och då gör den det. Närmare månadsskiftet blir det tajt — vi lovar inget vi inte kan hålla."
+    - fraga: "Jag vet inte vilken kalender jag ska välja."
+      svar: "Använd gåvoguiden högst upp på startsidan. Fem frågor om mottagaren, sedan får du en kalender som passar. Ska du köpa till flera gör du om den för nästa person."
     - fraga: "Vad gäller för ångerrätt?"
       svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@adventlane.se så hjälper vi dig."
     - fraga: "Skickar ni till Norge?"
       svar: "Ja, fri frakt till både Sverige och Norge."
     - fraga: "Vilka betalningssätt finns?"
       svar: "Klarna, kort, Apple Pay och Google Pay."
+    - fraga: "Kan jag köpa flera kalendrar i samma beställning?"
+      svar: "Ja. Frakten är fri oavsett hur många du lägger i varukorgen."
   garanti:
     rubrik: "14 dagars ångerrätt"
     text:

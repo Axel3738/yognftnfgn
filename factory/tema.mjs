@@ -425,10 +425,316 @@ const MS_PAKET_JS = readFileSync(
   'utf8'
 );
 
+// Gåvoguiden — startsidans frågeflöde (Axels beslut 2026-09-11, byggd för
+// AdventLane och därmed standard i varje nischbutik).
+//
+// Kunden vet sällan vilken produkt hon vill ha. Hon vet vem hon köper till.
+// Guiden ställer några frågor om MOTTAGAREN och svarar med en produkt ur
+// butikens egen kollektion.
+//
+// Datamodellen är hela poängen: produkterna kommer ur kollektionen och bär
+// sina egna taggar i metafältet `opf.quiz`. En ny produkt med det fältet är
+// med i guiden utan att en rad kod ändras — samma regel som resten av
+// fabriken (aldrig en handskriven produktlista, CLAUDE.md).
+//
+// Frågorna ligger som BLOCK, inte i koden. Två skäl: Axel kan ändra dem i
+// temaredigeraren, och Shopify översätter blockens texter som vanligt
+// JSON-mallsinnehåll — en fråga skriven här hade varit osynlig för
+// översättningssteget och stått kvar på svenska på /nb.
+// Poängmodellen har EN källa: factory/gavoguide.mjs. Den importeras av
+// testerna som modul och bakas in här i webbläsarfilen med `export` strippat.
+// Alternativet — en kopia i temat — hade varit två sanningar om när en
+// alkoholtemakalender får föreslås till ett barn, och den sortens kopia
+// glider isär tyst.
+const GAVOGUIDE_MODELL = readFileSync(new URL('./gavoguide.mjs', import.meta.url), 'utf8')
+  .replace(/^export /gm, '')
+  .replace(/^/gm, '  ')
+  .trim();
+
+const MS_GAVOGUIDE_JS = readFileSync(
+  new URL('./tema/assets/ms-gavoguide.js', import.meta.url),
+  'utf8'
+).replace('/*{{ poangmodell }}*/', GAVOGUIDE_MODELL);
+
+const GAVOGUIDE = `{%- liquid
+  assign guide_kollektion = collections[section.settings.kollektion]
+  assign antal_med_quiz = 0
+  for p in guide_kollektion.products
+    if p.metafields.opf.quiz != blank
+      assign antal_med_quiz = antal_med_quiz | plus: 1
+    endif
+  endfor
+-%}
+{%- if section.settings.visible and section.blocks.size > 0 -%}
+<div class="ms-scope ms-section ms-guide-sektion">
+  <div class="ms-wrap" style="max-width: 820px;">
+    <div class="ms-center ms-guide-huvud">
+      {%- if section.settings.etikett != blank -%}
+        <p class="ms-guide__ogonbryn">{{ section.settings.etikett }}</p>
+      {%- endif -%}
+      <h2 class="ms-h2">{{ section.settings.rubrik }}</h2>
+      {%- if section.settings.intro != blank -%}
+        <p class="ms-guide__intro">{{ section.settings.intro }}</p>
+      {%- endif -%}
+    </div>
+
+    <div
+      class="ms-guide"
+      data-ms-gavoguide
+      hidden
+      data-kollektion-url="{{ guide_kollektion.url | default: '/collections/all' }}"
+      data-text-match="{{ section.settings.text_match | escape }}"
+      data-text-ocksa="{{ section.settings.text_ocksa | escape }}"
+      data-text-kop="{{ section.settings.text_kop | escape }}"
+      data-text-las="{{ section.settings.text_las | escape }}"
+      data-text-om="{{ section.settings.text_om | escape }}"
+      data-text-lagger="{{ section.settings.text_lagger | escape }}"
+      data-text-lagd="{{ section.settings.text_lagd | escape }}"
+      data-text-ingen="{{ section.settings.text_ingen | escape }}"
+      data-text-alla="{{ section.settings.text_alla | escape }}"
+      data-text-budget="{{ section.settings.text_budget | escape }}"
+      data-text-tidigare="{{ section.settings.text_tidigare | escape }}"
+    >
+      <div class="ms-guide__progress" data-guide-progress>
+        <span class="ms-guide__raknare" data-guide-raknare></span>
+      </div>
+
+      {%- for block in section.blocks -%}
+        <fieldset
+          class="ms-guide__fraga"
+          data-guide-fraga
+          data-vikt="{{ block.settings.vikt }}"
+          data-visa-om="{{ block.settings.visa_om | escape }}"
+          hidden
+          {{ block.shopify_attributes }}
+        >
+          <legend class="ms-guide__legend">{{ block.settings.fraga }}</legend>
+          {%- if block.settings.hjalptext != blank -%}
+            <p class="ms-guide__hjalp">{{ block.settings.hjalptext }}</p>
+          {%- endif -%}
+          <div class="ms-guide__svar">
+            {%- assign rader = block.settings.svar | newline_to_br | split: '<br />' -%}
+            {%- for rad in rader -%}
+              {%- liquid
+                assign bit = rad | strip | split: '|'
+                assign etikett = bit[0] | strip
+                assign taggar = bit[1] | strip
+              -%}
+              {%- if etikett != blank -%}
+                <label class="ms-guide__alternativ">
+                  <input
+                    type="radio"
+                    name="guide-{{ block.id }}"
+                    value="{{ forloop.index }}"
+                    data-taggar="{{ taggar | escape }}"
+                    data-etikett="{{ etikett | escape }}"
+                  >
+                  <span>{{ etikett }}</span>
+                </label>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- unless forloop.first -%}
+            <button type="button" class="ms-guide__tillbaka" data-guide-tillbaka>{{ section.settings.text_tillbaka }}</button>
+          {%- endunless -%}
+        </fieldset>
+      {%- endfor -%}
+
+      <div class="ms-guide__resultat" data-guide-resultat hidden aria-live="polite"></div>
+      <p class="ms-guide__tidigare" data-guide-tidigare hidden></p>
+
+      {%- comment -%} Produktdatan. Enbart produkter med opf.quiz. {%- endcomment -%}
+      {%- for p in guide_kollektion.products -%}
+        {%- if p.metafields.opf.quiz != blank -%}
+          <div
+            hidden
+            data-guide-produkt="{{ p.metafields.opf.quiz.value | json | escape }}"
+            data-handle="{{ p.handle }}"
+            data-titel="{{ p.title | escape }}"
+            data-url="{{ p.url }}"
+            data-bild="{% if p.featured_image %}{{ p.featured_image | image_url: width: 640 }}{% endif %}"
+            data-pris="{{ p.price | divided_by: 100.0 }}"
+            data-pris-text="{{ p.price | money | strip_html | escape }}"
+            data-jamfor-text="{% if p.compare_at_price > p.price %}{{ p.compare_at_price | money | strip_html | escape }}{% endif %}"
+            data-variant="{{ p.selected_or_first_available_variant.id }}"
+          ></div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%}
+      Utan JavaScript, utan produkter med quiz-metafält, eller om skriptet
+      inte laddar: en länk till kollektionen i stället för en tom ruta.
+      Guiden tar bort den här själv när den startat.
+    {%- endcomment -%}
+    <p class="ms-guide__fallback ms-center" data-guide-fallback>
+      <a class="ms-guide__lank" href="{{ guide_kollektion.url | default: '/collections/all' }}">{{ section.settings.text_alla }}</a>
+    </p>
+  </div>
+</div>
+
+<script src="{{ 'ms-gavoguide.js' | asset_url }}" defer></script>
+
+<style>
+  {{ bas_css }}
+  .ms-guide-sektion { padding-block: 40px; }
+  .ms-guide-huvud { margin-bottom: 20px; }
+  .ms-guide__ogonbryn {
+    margin: 0 0 6px; font-size: .78rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--ms-accent, #A8283A); font-weight: 700;
+  }
+  .ms-guide__intro { margin: 8px auto 0; max-width: 46ch; color: var(--ms-ink-soft, #555); }
+  .ms-guide {
+    border: 1px solid var(--ms-line, #E1D9CB);
+    border-radius: var(--ms-radius, 16px);
+    background: var(--ms-surface, #fff);
+    padding: 22px;
+  }
+  .ms-guide__progress {
+    position: relative; height: 4px; border-radius: 99px;
+    background: var(--ms-surface-3, #EDE4D6); margin-bottom: 20px;
+  }
+  .ms-guide__progress::after {
+    content: ""; position: absolute; inset: 0 auto 0 0;
+    width: var(--ms-guide-andel, 0%); border-radius: 99px;
+    background: var(--ms-accent, #A8283A); transition: width .25s ease;
+  }
+  .ms-guide__raknare {
+    position: absolute; right: 0; top: 10px;
+    font-size: .75rem; color: var(--ms-ink-faint, #888);
+  }
+  .ms-guide__fraga { border: 0; padding: 0; margin: 0; }
+  .ms-guide__legend {
+    padding: 0; margin: 0 0 4px; font-size: 1.35rem; line-height: 1.25;
+    font-weight: 700; color: var(--ms-ink, #181F2E);
+  }
+  .ms-guide__hjalp { margin: 0 0 14px; font-size: .9rem; color: var(--ms-ink-faint, #888); }
+  .ms-guide__svar { display: grid; gap: 10px; margin-top: 14px; }
+  .ms-guide__alternativ {
+    display: flex; align-items: center; gap: 12px; cursor: pointer;
+    padding: 14px 16px; border: 1px solid var(--ms-line, #E1D9CB);
+    border-radius: var(--ms-radius-sm, 8px); background: var(--ms-surface, #fff);
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .ms-guide__alternativ:hover { border-color: var(--ms-line-strong, #C4B9A6); background: var(--ms-surface-2, #F7F2EA); }
+  .ms-guide__alternativ:has(input:checked) {
+    border-color: var(--ms-accent, #A8283A);
+    background: color-mix(in srgb, var(--ms-accent, #A8283A) 7%, #fff);
+  }
+  .ms-guide__alternativ:focus-within { box-shadow: var(--ms-ring, 0 0 0 3px rgba(168,40,58,.32)); }
+  .ms-guide__alternativ input { accent-color: var(--ms-accent, #A8283A); width: 20px; height: 20px; margin: 0; flex: none; }
+  .ms-guide__tillbaka {
+    margin-top: 16px; background: none; border: 0; padding: 4px 0; cursor: pointer;
+    font-size: .9rem; color: var(--ms-ink-faint, #888); text-decoration: underline;
+  }
+  .ms-guide__svarsrad { margin: 0 0 14px; font-size: .85rem; color: var(--ms-ink-faint, #888); }
+  .ms-guide__traff { display: flex; gap: 18px; align-items: flex-start; }
+  .ms-guide__traffbild { flex: none; width: 160px; }
+  .ms-guide__traffbild img { width: 100%; height: auto; border-radius: var(--ms-radius-sm, 8px); display: block; }
+  .ms-guide__trafftext { flex: 1 1 auto; min-width: 0; }
+  .ms-guide__etikett {
+    margin: 0 0 4px; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    font-weight: 700; color: var(--ms-accent, #A8283A);
+  }
+  .ms-guide__namn { margin: 0 0 8px; font-size: 1.25rem; line-height: 1.25; }
+  .ms-guide__namn a { color: inherit; text-decoration: none; }
+  .ms-guide__namn a:hover { text-decoration: underline; }
+  .ms-guide__mening { margin: 0 0 10px; color: var(--ms-ink-soft, #555); }
+  .ms-guide__pris { margin: 0 0 4px; font-weight: 700; font-size: 1.1rem; }
+  .ms-guide__pris s { font-weight: 400; opacity: .55; margin-left: 6px; }
+  .ms-guide__not { margin: 8px 0 0; font-size: .85rem; color: var(--ms-warn, #8A5A00); }
+  .ms-guide__knappar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 16px; }
+  .ms-guide__kop {
+    border: 0; border-radius: var(--ms-radius-sm, 8px); cursor: pointer;
+    background: var(--ms-accent, #A8283A); color: var(--ms-accent-ink, #fff);
+    font-weight: 700; font-size: 1rem; padding: 14px 22px;
+  }
+  .ms-guide__kop[disabled] { opacity: .75; cursor: default; }
+  .ms-guide__lank { color: var(--ms-ink, #181F2E); }
+  .ms-guide__ocksa {
+    margin: 24px 0 10px; font-size: .72rem; letter-spacing: .12em;
+    text-transform: uppercase; font-weight: 700; color: var(--ms-ink-faint, #888);
+  }
+  .ms-guide__alt { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .ms-guide__alt a {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+    color: inherit; padding: 8px; border-radius: var(--ms-radius-sm, 8px);
+  }
+  .ms-guide__alt a:hover { background: var(--ms-surface-2, #F7F2EA); }
+  .ms-guide__alt img { width: 48px; height: 48px; object-fit: cover; border-radius: 6px; flex: none; }
+  .ms-guide__altnamn { flex: 1 1 auto; min-width: 0; }
+  .ms-guide__altpris { flex: none; font-weight: 700; }
+  .ms-guide__om {
+    margin-top: 22px; background: none; cursor: pointer; font-size: .95rem;
+    border: 1px solid var(--ms-line-strong, #C4B9A6); border-radius: var(--ms-radius-sm, 8px);
+    padding: 12px 18px; color: var(--ms-ink, #181F2E); width: 100%;
+  }
+  .ms-guide__om:hover { background: var(--ms-surface-2, #F7F2EA); }
+  .ms-guide__tidigare { margin: 14px 0 0; font-size: .85rem; color: var(--ms-ink-faint, #888); }
+  .ms-guide__tidigaretext { font-weight: 700; }
+  .ms-guide__tom { margin: 0 0 8px; }
+  .ms-guide__fallback { margin-top: 14px; }
+  @media (max-width: 600px) {
+    .ms-guide { padding: 16px; }
+    .ms-guide__legend { font-size: 1.15rem; }
+    .ms-guide__traff { flex-direction: column; }
+    .ms-guide__traffbild { width: 100%; max-width: 220px; }
+    .ms-guide__kop { width: 100%; text-align: center; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Gåvoguide",
+  "tag": "section",
+  "max_blocks": 10,
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
+    { "type": "collection", "id": "kollektion", "label": "Kollektion guiden väljer ur",
+      "info": "Bara produkter som har metafältet opf.quiz är med." },
+    { "type": "text", "id": "etikett", "label": "Ögonbryn", "default": "Gåvoguide" },
+    { "type": "text", "id": "rubrik", "label": "Rubrik", "default": "Vem ska du köpa till?" },
+    { "type": "textarea", "id": "intro", "label": "Ingress",
+      "default": "Svara på några frågor om mottagaren, så säger vi vilken kalender som passar." },
+    { "type": "header", "content": "Knapptexter" },
+    { "type": "text", "id": "text_match", "label": "Etikett över träffen", "default": "Din match" },
+    { "type": "text", "id": "text_ocksa", "label": "Rubrik över alternativen", "default": "Passar också" },
+    { "type": "text", "id": "text_kop", "label": "Köpknapp", "default": "Lägg i varukorgen" },
+    { "type": "text", "id": "text_lagger", "label": "Köpknapp medan den laddar", "default": "Lägger i varukorgen …" },
+    { "type": "text", "id": "text_lagd", "label": "Köpknapp när varan är lagd", "default": "Lagd i varukorgen" },
+    { "type": "text", "id": "text_las", "label": "Länk till produkten", "default": "Läs mer" },
+    { "type": "text", "id": "text_om", "label": "Gör om-knapp", "default": "Gör om för en annan person" },
+    { "type": "text", "id": "text_tillbaka", "label": "Tillbaka-knapp", "default": "Tillbaka" },
+    { "type": "text", "id": "text_tidigare", "label": "Rad över tidigare matchningar", "default": "Dina matchningar hittills" },
+    { "type": "text", "id": "text_alla", "label": "Länk till hela kollektionen", "default": "Se alla kalendrar" },
+    { "type": "textarea", "id": "text_ingen", "label": "Text när inget matchar",
+      "default": "Ingen kalender matchade allt du valde." },
+    { "type": "textarea", "id": "text_budget", "label": "Text när inget rymdes i budgeten",
+      "default": "Ingen kalender låg under din budget — det här är den som passar bäst i övrigt." }
+  ],
+  "blocks": [
+    { "type": "fraga", "name": "Fråga", "settings": [
+      { "type": "text", "id": "fraga", "label": "Fråga" },
+      { "type": "text", "id": "hjalptext", "label": "Hjälptext under frågan" },
+      { "type": "textarea", "id": "svar", "label": "Svarsalternativ",
+        "info": "Ett per rad: Etikett|tagg,tagg. Taggarna matchas mot produktens metafält opf.quiz." },
+      { "type": "range", "id": "vikt", "label": "Vikt", "min": 1, "max": 5, "step": 1, "default": 2,
+        "info": "Hur tungt frågans svar väger i matchningen." },
+      { "type": "text", "id": "visa_om", "label": "Visa bara om",
+        "info": "Taggar separerade med komma. Tomt = frågan visas alltid." }
+    ] }
+  ],
+  "presets": [{ "name": "Gåvoguide", "blocks": [{ "type": "fraga" }, { "type": "fraga" }, { "type": "fraga" }] }]
+}
+{% endschema %}`;
+
 // Temats filer som fabriken äger och skriver över i varje butik, oavsett vad
 // klonen råkade ha med sig. Bas-zip:en är en startpunkt, inte facit.
 export const TEMAFILER = {
   'assets/ms-paket.js': MS_PAKET_JS,
+  'assets/ms-gavoguide.js': MS_GAVOGUIDE_JS,
+  'sections/ms-gavoguide.liquid': medBasCss(GAVOGUIDE),
 };
 
 // ---------------------------------------------------------------------------

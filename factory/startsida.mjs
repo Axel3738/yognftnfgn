@@ -93,6 +93,47 @@ function defaults(butik) {
     trygghetRubrik: 'Handla tryggt hos oss',
     trygghetText: [`${fraktLang}.`, `${angerratt} från att paketet kommer fram.`],
     faqRubrik: 'Vanliga frågor',
+    // Gåvoguidens STRUKTUR är fabrikens: vem, hur gammal, vad får den kosta.
+    // INTRESSEFRÅGAN är butikens egen och står i butiksfilen
+    // (`startsida.gavoguide.fragor`) — den handlar om sortimentet, och en
+    // generisk default hade gett kunden alternativ som ingen produkt bär.
+    // Prisspannet nedan är i butikens valuta och bör sättas per butik.
+    gavoguideEtikett: 'Gåvoguide',
+    gavoguideRubrik: 'Vem ska du köpa till?',
+    gavoguideIntro: 'Svara på några frågor om mottagaren, så säger vi vad som passar.',
+    gavoguideFragor: [
+      {
+        fraga: 'Vem ska du köpa till?',
+        vikt: 3,
+        svar: [
+          'Ett barn|mottagare:barn',
+          'En tonåring|mottagare:tonaring',
+          'En vuxen|mottagare:vuxen',
+          'Vet inte än|mottagare:vemsomhelst',
+        ],
+      },
+      {
+        fraga: 'Hur gammalt är barnet?',
+        hjalptext: 'Åldern styr vad som är lämpligt, inte bara vad som är roligt.',
+        vikt: 3,
+        visa_om: ['mottagare:barn'],
+        svar: [
+          'Under 3 år|alder:under-3,krav:utan-sma-delar',
+          '3–5 år|alder:3-5',
+          '6–8 år|alder:6-8',
+          '9–12 år|alder:9-12',
+        ],
+      },
+      {
+        fraga: 'Vad får den kosta?',
+        vikt: 1,
+        svar: [
+          'Under 400 kr|pris:under-400',
+          '400–600 kr|pris:400-600',
+          'Spelar ingen roll|pris:fritt',
+        ],
+      },
+    ],
     garantiRubrik: angerratt,
     garantiText: [
       `Ångrar du dig har du ${dagar} dagar på dig från att paketet kommer fram.${supportmail ? ` Hör av dig till ${supportmail} så löser vi det.` : ''}`,
@@ -178,6 +219,65 @@ function byggSektioner(butik, produkter, alt) {
   if (text(farger.accent_text)) marquee.settings.text_color = text(farger.accent_text);
   sektioner.ms_marquee = marquee;
   ordning.push('ms_marquee');
+
+  // Gåvoguiden, direkt ovanför katalogen (Axels beslut 2026-09-11).
+  //
+  // Bara i en nischbutik: en enproduktsbutik har inget att välja mellan, och
+  // en guide som alltid svarar samma sak är en fråga för mycket.
+  //
+  // Frågorna ligger som BLOCK — dels för att Axel ska kunna ändra dem i
+  // temaredigeraren, dels för att Shopify översätter blocktexter som vanligt
+  // JSON-mallsinnehåll. Skrivna i sektionsfilen hade de stått kvar på svenska
+  // på /nb utan att någon märkt det.
+  //
+  // Grenarna gör att INGEN kund ser alla frågorna: barn får åldersfrågan och
+  // barnintressena, vuxna får vuxenintressena. Fyra till fem frågor per person
+  // av sex möjliga. `visa_om` styr det, `vikt` hur tungt svaret väger.
+  if (flera && s.gavoguide !== false) {
+    const g = s.gavoguide ?? {};
+    const fragor = lista(g.fragor).length > 0 ? lista(g.fragor) : d.gavoguideFragor;
+    const blocks = {};
+    const blockOrdning = [];
+    fragor.forEach((f, i) => {
+      const nyckel = `f${i + 1}`;
+      blocks[nyckel] = {
+        type: 'fraga',
+        settings: {
+          fraga: text(f.fraga) ?? '',
+          hjalptext: text(f.hjalptext) ?? '',
+          svar: lista(f.svar).join('\n'),
+          vikt: tal(f.vikt) ?? 2,
+          visa_om: lista(f.visa_om).join(','),
+        },
+      };
+      blockOrdning.push(nyckel);
+    });
+    sektioner.gavoguide = {
+      type: 'ms-gavoguide',
+      blocks,
+      block_order: blockOrdning,
+      settings: {
+        visible: true,
+        kollektion: alt.kollektion,
+        etikett: text(g.etikett) ?? d.gavoguideEtikett,
+        rubrik: text(g.rubrik) ?? d.gavoguideRubrik,
+        intro: text(g.intro) ?? d.gavoguideIntro,
+        text_match: text(g.text_match) ?? 'Din match',
+        text_ocksa: text(g.text_ocksa) ?? 'Passar också',
+        text_kop: text(g.text_kop) ?? 'Lägg i varukorgen',
+        text_lagger: 'Lägger i varukorgen …',
+        text_lagd: 'Lagd i varukorgen',
+        text_las: 'Läs mer',
+        text_om: text(g.text_om) ?? 'Gör om för en annan person',
+        text_tillbaka: 'Tillbaka',
+        text_tidigare: 'Dina matchningar hittills',
+        text_alla: text(g.text_alla) ?? `Se alla ${(d.sortimentRubrik ?? 'produkter').toLowerCase()}`,
+        text_ingen: 'Ingen matchade allt du valde.',
+        text_budget: 'Inget låg under din budget — det här passar bäst i övrigt.',
+      },
+    };
+    ordning.push('gavoguide');
+  }
 
   // Sortimentet: flera produkter → kollektion. En produkt → featured-product.
   if (flera) {
