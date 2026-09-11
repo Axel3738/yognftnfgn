@@ -1,0 +1,186 @@
+{
+ "agent": "F — inga överdrag: klistermärke-struktur (H10) · kroppsligt i säsongsjobbet · Q4-gåva som inte är kalender (H05)",
+ "datum": "2026-09-11",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Snöflingor till garageporten 25-pack",
+   "objekt": "NYTT: Garageporten (stål, mot gatan)",
+   "form": "dekor",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "exploitation",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": ["objekt ute som alla har och som grannarna ser", "billig<1tkr", "form dekor", "old way ingenting", "golv under nej (ingen svensk aktör i samma form)", "textfri hero i kontext", "noll friktion — sätts upp på 2 minuter, tas ner i januari"],
+    "avvikelser": ["pris 349 i stället för <300 (landad 143 kr)", "datumstyrt (advent) i stället för året runt", "kräver stålport — magnet fäster inte på träport"]
+   },
+   "sasong": {"fonster_id": "advent_1_december", "deadline_typ": "1 december", "veckor_kvar": 10.6, "timing": "NOW", "kommentar": "adventspynt sätts upp första advent (29 nov 2026); även fönstret 'Vintertid / mörkret faller' 14,4 v"},
+   "listning": {
+    "product_id": "1005012790049322",
+    "url": "https://www.aliexpress.com/item/1005012790049322.html",
+    "pris_usd": 9.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-11T06:58:29Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-11/v3/bilder/1005012790049322.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant: 25 st magnetiska snöflingor (silverglitter, mörkblå, blå, ljusblå, regnbåge), ett pack", "video": "ej tillgänglig i containern"}
+   },
+   "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Heron: överdel = 25 snöflingor på vitt, underdel = vit sektionsgarageport med alla 25 flingor utspridda — helt textfri, objektet (porten) fyller bilden. Räcker som hero rakt av."},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "ingen hittad i samma form (magnetiska snöflingor för garageport)", "pris_sek": null, "url": "https://www.amazon.se/F%C3%A4rgglada-Reflekterande-Gl%C3%B6dlampsmagneter-Magnetkablar-Dekoration/dp/B0BGL54XHD", "exakt_samma_form": false, "kommentar": "Amazon.se har 'Jul bil/garage-magneter' i glödlampsform (annat motiv, pris ej läst — 403). Clas Ohlson 'Dekoration Snöflingor 10-pack' är hängande pynt, inte magnet. Rusta/Jula: inga träffar på magnetisk portdekor 2026-09-11."},
+    "premium_ankare": {"namn": "saknas — ingen svensk aktör säljer formen", "pris_sek": null, "url": null, "i_sortiment": false},
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["amazon.se (sökträff, produktsida 403)", "clasohlson.com (sökträff)", "rusta.com/jula.se via websök — inga träffar", "koncept.py sok garage/dekor/snöfling/magnet — 0 träffar", "katalog-live.txt — ingen portdekor"]
+   },
+   "ekonomi": {"landad_sek": [129, 157], "pris_sek": 349, "brutto_sek": [192, 220], "be_cpa_sek": [192, 220], "be_roas": 1.69, "flerkop": false, "returrisk": "låg — en variant, ingen storlek; enda returskälet är träport (magnet fäster inte)", "kommentar": "Utan ankare: landad × 2,4 = 343 → 349 kr. Under 300 kr kräver landad ≤ 100 (prompten) — här 143."},
+   "meta_tanke": {"hook": "Har ni en vit garageport?", "objekt_i_bild": "garageporten mot gatan, full av snöflingor, i skymning", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "före/efter på samma port: tom port → 25 flingor, en hand som lägger dit den sista"},
+   "varfor": "Exakt klistermärke-strukturen: objekt varje småhus har, syns för grannarna, noll friktion, textfri hero i kontext, ingen svensk aktör i formen — med ett hårt datum (första advent) som klistermärkena saknade.",
+   "huvudrisk": "Magneter kräver stålport; andelen trä-/aluminiumportar är ej mätt, och BE-CPA 192–220 är tunn vid 349 kr.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 3, "efterfragan": 2, "lucka": 2, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen port-/juldekor; soptunneklistermärkena är annat objekt)", "koncept.py sok garage/dekor/snöfling/magnet", "kandidater-A–D i dag (ingen dekor)"]},
+   "kallor": ["https://www.aliexpress.com/item/1005012790049322.html", "https://www.amazon.se/F%C3%A4rgglada-Reflekterande-Gl%C3%B6dlampsmagneter-Magnetkablar-Dekoration/dp/B0BGL54XHD", "https://www.clasohlson.com/se/Dekoration-Sn%C3%B6flingor%2C-10-pack/p/Pr442700001"]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Värmesitsen för älgpasset",
+   "objekt": "NYTT: Jägaren på passet — kroppen (kall stubbe/torn, okt–jan)",
+   "form": "dyna",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H03",
+   "vinnarlikhet": {
+    "likast": "Axelbältet",
+    "delade_variabler": ["kroppsligt i säsongsjobbet (kall rumpa på passet ↔ ont i axlarna av trimmern)", "A_AGARE_FRIKTION", "ankare 1,2–1,6× (Hylte THAW 819 / 599 = 1,37 — samma kvot som Husqvarna 819 / 599)", "prisband 500–999", "en variant, ingen storlek", "old way köpt produkt som sviker (kall skumdyna, H03)", "ägare 55+ på landet"],
+    "avvikelser": ["elektronik (USB-värme) i stället för textil", "powerbank ingår inte i listningen"]
+   },
+   "sasong": {"fonster_id": "algjakt_syd", "deadline_typ": "älgjakt", "veckor_kvar": 3.9, "timing": "NOW", "kommentar": "älgjakt syd/mellan topp 8 okt, säsong till 31 jan; norr är LATE men pågår; första frost Svealand 4,9 v förstärker"},
+   "listning": {
+    "product_id": "1005007989005160",
+    "url": "https://www.aliexpress.com/item/1005007989005160.html",
+    "pris_usd": 15.75,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-11T07:02:42Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-11/v3/bilder/1005007989005160.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "storlek 45×45 (dyna) eller 45×90 (rygg+sits), 4 färger — 45×45 är varan; USB/Type-C, 3 värmelägen, powerbank ingår ej", "video": "ej tillgänglig i containern"},
+    "alternativ_listning": {"product_id": "1005010061948703", "url": "https://www.aliexpress.com/item/1005010061948703.html", "pris_usd": 36.95, "verdict": "LIVE_VERIFIED", "verifierad_at": "2026-09-11T07:02:42Z", "hero": "korningar/2026-09-11/v3/bilder/1005010061948703.jpg", "kommentar": "Camo-dyna med bärrem och ficka: hero i kontext (jägare i jakttorn i snö) och textfri utom värmesymbol — bäst bild, men landad 534 kr gör BE-CPA ~165 vid 699. Använd dess bildspråk, sälj den billiga."}
+   },
+   "material": {"klass": 0, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Heron är en texttung packshot ('4 Heated Areas', 'No Power Bank!!!', eld i botten) — oanvändbar som annons; alternativlistningens hero (jägaren i tornet) visar hur bilden ska se ut. Egen bild krävs (dynan på stubben i frost, hand på knappen)."},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "Woodline Värmesittdyna Keflavik / Hylte Jakt & Lantman", "pris_sek": 716, "url": "https://www.hylte-lantman.com/woodline-varmesittdyna-keflavik", "exakt_samma_form": true, "kommentar": "716 kr i söksnutten, 895 kr på produktsidan 2026-09-11 (powerbank 10 000 mAh ingår). Amazon.se har 'uppvärmd sittdyna grafen uppladdningsbar' — pris ej läst (403). Jula/Biltema: bara 12 V-bilvärmedynor, inte samma form."},
+    "premium_ankare": {"namn": "THAW Uppvärmd sittdyna USB (Hylte Jakt & Lantman)", "pris_sek": 819, "url": "https://www.hylte-lantman.com/thaw-uppvarmd-sittdyna-usb", "i_sortiment": true, "kommentar": "819 kr (ord. 919), i lager webb + butik 2026-09-11, powerbank 10 000 mAh ingår"},
+    "ankare_kvot": 1.37,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["hylte-lantman.com", "widforss.se (kategorisida värmeprodukter)", "jula.se/biltema.se via websök (bara 12 V-bilvärme)", "amazon.se (sökträff, pris ej läst)"]
+   },
+   "ekonomi": {"landad_sek": [205, 251], "pris_sek": 599, "brutto_sek": [348, 394], "be_cpa_sek": [348, 394], "be_roas": 1.61, "flerkop": false, "returrisk": "medel — kunden måste ha egen powerbank; skriv det i annonsen", "kommentar": "0,73 × ankaret 819. Med bundlad powerbank (≈ +90 kr landad) 699 kr och kvot 1,17 — sämre."},
+   "meta_tanke": {"hook": "Kall stubbe på passet i oktober?", "objekt_i_bild": "dynan på en frostig stubbe/i jakttornet, jägare i orange", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "värmekamerabild av dynan på stubben, hand som trycker på knappen"},
+   "varfor": "Samma struktur som axelbältet och damaskerna: kroppen i säsongsjobbet, 271 500 jaktkort (Naturvårdsverket 2025–26), fackhandelsankare 1,37× och passet börjar om 3,9 veckor.",
+   "huvudrisk": "Leverantörens hero är oanvändbar och powerbank ingår inte — annonsen måste bygga på egen bild och säga 'kopplas till din powerbank'.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 1, "efterfragan": 3, "lucka": 1, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen sittdyna/värme)", "koncept.py sok värmesits/sittdyna/värmesul — 0 träffar", "kandidater-A–D i dag"]},
+   "kallor": ["https://www.aliexpress.com/item/1005007989005160.html", "https://www.aliexpress.com/item/1005010061948703.html", "https://www.hylte-lantman.com/thaw-uppvarmd-sittdyna-usb", "https://www.hylte-lantman.com/woodline-varmesittdyna-keflavik", "https://www.naturvardsverket.se/data-och-statistik/vilt/jaktkort-antal-i-sverige/"]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Täljsetet 30 delar i väska",
+   "objekt": "Mannen själv / partnern — hobbykalendern (fars dag, jul)",
+   "form": "låda",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": ["G_Q4_GAVA med hårt datum (fars dag 8 nov, jul)", "N synliga saker i en låda (12 knivar + handskar + träämne + strop)", "en variant", "mottagare i relation (mannen/farfar, eller farfar + barnbarn)", "svikande default = en ensam Morakniv i lådan"],
+    "avvikelser": ["ingen kalenderform (H05 testas utan luckor)", "pris 899 mot 499", "kedjan (Knivbutik/Slöjd-Detaljer) har formen — pris ÷ N delar är lägre än märket, ankare-kvoten är inte"]
+   },
+   "sasong": {"fonster_id": "fars_dag", "deadline_typ": "fars dag", "veckor_kvar": 8.3, "timing": "NOW", "kommentar": "fars dag 8 nov 2026 (8,3 v), julafton 14,3 v; täljning är vinterhobby inomhus"},
+   "listning": {
+    "product_id": "1005012818225884",
+    "url": "https://www.aliexpress.com/item/1005012818225884.html",
+    "pris_usd": 38.81,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-11T06:58:29Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-11/v3/bilder/1005012818225884.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant: 30 delar — 6 täljknivar valnötshandtag, 6 mejslar, 6 bladskydd, strop, slippasta, sandpapper, träämne, skärsäkra handskar, väska", "video": "ej tillgänglig i containern"},
+    "alternativ_listning": {"product_id": "1005006209296946", "url": "https://www.aliexpress.com/item/1005006209296946.html", "pris_usd": 20.54, "verdict": "LIVE_VERIFIED", "verifierad_at": "2026-09-11T07:01:00Z", "hero": "korningar/2026-09-11/v3/bilder/1005006209296946.jpg", "kommentar": "5 knivar + strop i rullväska: landad 267–327, pris 599 ger ankare-kvot 1,33 mot BeaverCraft Täljkit 799 — klarar 1,3×-kravet men saknar 'allt i lådan'-logiken (inga handskar, inget träämne). Hero: textfri packshot med brandlogga."}
+   },
+   "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Heron: alla 30 delar utlagda på vitt + väskan öppen — textfri men packshot. Annonsen behöver händer som täljer en sked vid köksbordet, med väskan öppen bredvid."},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "BeaverCraft Täljkit (Knivbutik.se)", "pris_sek": 799, "url": "https://www.knivbutik.se/product/beavercraft-taljkit/", "exakt_samma_form": false, "kommentar": "4 knivar + strop i trälåda, 9 i lager 2026-09-11 — märkesvara UNDER vårt pris. Amazon.se 'SAMISO 30 delar' (samma form) pris ej läst; BeaverCraft S15 599 kr slut (Knivbutik); Clas Ohlson Täljkit Limited Edition utgången."},
+    "premium_ankare": {"namn": "Slöjd-Detaljer Startset Tälja (Morakniv 120 + skedkniv 162 + 3 träämnen + bok)", "pris_sek": 969, "url": "https://www.slojd-detaljer.com/se/tra-metall/handverktyg/knivar/startset-talja?p=5739-0000", "i_sortiment": true, "kommentar": "969 kr, tillfälligt slut 2026-09-11"},
+    "ankare_kvot": 1.08,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["knivbutik.se", "slojd-detaljer.com", "rodastjarnan.com (BeaverCraft S09 €62,4 slut)", "clasohlson.com (utgången)", "amazon.se via websök (SAMISO 30 delar, pris ej läst)"]
+   },
+   "ekonomi": {"landad_sek": [505, 617], "pris_sek": 899, "brutto_sek": [282, 394], "be_cpa_sek": [282, 394], "be_roas": 2.66, "flerkop": false, "returrisk": "låg — en variant; risk är kvalitetsklagomål på stålet mot BeaverCraft", "kommentar": "Pris ÷ N: 899 / 12 knivar = 75 kr mot BeaverCraft 799 / 4 = 200 kr (prompten: 'pris ÷ N delar under defaultens styckpris'). Ankare-kvoten 1,08 klarar INTE 1,3× — alternativlistningen på 599 gör det (1,33)."},
+   "meta_tanke": {"hook": "Vad ska han få på fars dag?", "objekt_i_bild": "väskan öppen på köksbordet, en halvtäljd sked, spån", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "30 delar utlagda i ett svep, sedan händer som täljer"},
+   "varfor": "H05 utan kalender: hårt datum (fars dag 8,3 v), mottagare i relation, 30 synliga saker i en låda och fackhandelsankare 969 kr — 'allt han behöver för att börja i kväll'.",
+   "huvudrisk": "BeaverCraft (märke, trälåda) ligger på 799 kr under vårt 899 — Axel bör välja 899/30 delar eller alternativet 599/5 knivar innan launch.",
+   "konfidens": "LÅG",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 1, "lucka": 1, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen tälj/slöjd; Tändvedsklyv och Fickkedjesåg är andra saker)", "koncept.py sok tälj/slöjd — 0 träffar", "kandidater-A–D i dag (C har dinokalendern — annat objekt)"]},
+   "kallor": ["https://www.aliexpress.com/item/1005012818225884.html", "https://www.aliexpress.com/item/1005006209296946.html", "https://www.knivbutik.se/product/beavercraft-taljkit/", "https://www.slojd-detaljer.com/se/tra-metall/handverktyg/knivar/startset-talja?p=5739-0000", "https://www.knivbutik.se/product/beavercraft-starter-wood-carving-knife-set/"]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Fågelmataren med kamera (5MP, solcell)",
+   "objekt": "Fågelbord/fågelmatare",
+   "form": "elektronik",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "vinnarlikhet": {
+    "likast": "Övervakningskameran (PTZ dubbellins)",
+    "delade_variabler": ["form elektronik med kamera, solcell, app", "objekt ute", "ägare 55+ småhus (och kvinna 55+ som köpare/mottagare — klistermärkena, kattkojan)", "golv under ja + ankare ≥ 1,2× (H06: CDON 1 387 under, Bird Buddy 1 990 över)", "prisband ≥ 1000 med objekt som fyller bilden (H04-släkting)", "gåva med datum (adventskalendern: jul 14,3 v, mottagare i relation)"],
+    "avvikelser": ["montering_app = ja (förlorarsignal 1/6, men kameran vann)", "hero med inbränd text", "Birdfy/Bird Buddy annonseras redan i Sverige — nyhet ej mätt"]
+   },
+   "sasong": {"fonster_id": "vintermatning_faglar", "deadline_typ": "vintermatning", "veckor_kvar": 6.3, "timing": "NOW", "kommentar": "vintermatningen börjar 25 okt (6,3 v) och pågår till mars; julafton 14,3 v som gåvodatum"},
+   "listning": {
+    "product_id": "1005012746702398",
+    "url": "https://www.aliexpress.com/item/1005012746702398.html",
+    "pris_usd": 77.19,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-11T07:04:59Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-11/v3/bilder/1005012746702398.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant: JOOAN 5MP, solcellstak, AI-fågeligenkänning, tvåvägsljud, IP66, 2,4 GHz wifi, SD-kort ingår ej; syskonlistning 1005012747224122 ($77,59) samma sak", "video": "ej tillgänglig i containern"}
+   },
+   "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Heron: mataren på trädstam med blåmes på brickan och telefon med appbild — bra objekt i kontext men texttung ('5MP Solar Bird Camera', 'AI Bird Detection'). Leverantören är ett kameramärke (JOOAN) och har troligen rena bilder — hämta dem före launch."},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "CDON 'Smart fågelmatare med kamera'", "pris_sek": 1387, "url": "https://cdon.se/produkt/smart-fagelmatare-med-kamera-69fc23009c255acf/", "exakt_samma_form": true, "kommentar": "pris ur söksnutt 2026-09-11 — produktsidan gav 403. Fyndiq har no-name-matare med 720p/1080p (pris ej läst). Denver 719 kr (Inskal) har bara lokal LCD, inte samma form."},
+    "premium_ankare": {"namn": "Bird Buddy solcellsdriven fågelmatare med kamera (Elgiganten)", "pris_sek": 1990, "url": "https://www.elgiganten.se/product/sport-fritid/husdjursvard/bird-buddy-solcellsdriven-fagelmatare-med-kamera-bla/879446", "i_sortiment": true, "kommentar": "1 990 kr, 9 i lager 2026-09-11. Birdfy 1 950 kr (Pippifoder), CJ Wildlife/Vivara 2 499,90 kr, Birdbuddy 3 495 kr (SmartaSaker)"},
+    "ankare_kvot": 1.33,
+    "annonsorer_se": "ej mätt (Birdfy/Bird Buddy kända Meta-annonsörer i SE — inte räknat i denna körning)",
+    "kollade_kallor": ["elgiganten.se", "pippifoder.se", "vivara.se", "smartasaker.se", "inskal.se", "cdon.se (403, pris ur snutt)", "fyndiq.se (kategorisida)", "clasohlson.com via websök (bara vanliga matare)"]
+   },
+   "ekonomi": {"landad_sek": [1005, 1228], "pris_sek": 1499, "brutto_sek": [271, 494], "be_cpa_sek": [271, 494], "be_roas": 3.9, "flerkop": false, "returrisk": "medel — wifi-räckvidd till trädgården och appkoppling är de vanliga returskälen för kameror", "kommentar": "0,75 × Bird Buddy 1 990. Landad-spannet är brett (USD 77 × 14,46 ± 10 %) — BE-CPA under 300 i nedre kanten; förhandla priset i offertarket."},
+   "meta_tanke": {"hook": "Vem äter vid ert fågelbord?", "objekt_i_bild": "mataren på stammen, blåmes på brickan, telefonen som plingar i köket", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "riktig klipp från kameran: fågel landar → push-notis 'Blåmes' på skärmen"},
+   "varfor": "Q4-gåva som inte är kalender, till mottagaren som redan matar fåglar (objekt ute, 55+): elektronik med solcell och ankare 1,33× — samma variabler som övervakningskameran, med vintermatning 6,3 v och jul 14,3 v som datum.",
+   "huvudrisk": "Birdfy och Bird Buddy annonserar redan i Sverige och CDON ligger på 1 387 kr — nyheten är ej mätt och BE-CPA faller under 300 om landad hamnar i övre spannet.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 1, "efterfragan": 2, "lucka": 1, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (bara arkiverad fågeldrickare för höns; övervakningskameran är annat objekt)", "koncept.py sok fågel/bird — K0027 är ett matarskydd, inte kamera", "kandidater-A–D i dag"]},
+   "kallor": ["https://www.aliexpress.com/item/1005012746702398.html", "https://www.aliexpress.com/item/1005012747224122.html", "https://www.elgiganten.se/product/sport-fritid/husdjursvard/bird-buddy-solcellsdriven-fagelmatare-med-kamera-bla/879446", "https://pippifoder.se/produkt/fagelmatare/birdfy-fagelmatare-med-kamera-bla/", "https://www.vivara.se/fagelmatare-for-tradgarden-med-smart-ai", "https://www.smartasaker.se/sv/fagelmatare-med-kamera-birdbuddy", "https://cdon.se/produkt/smart-fagelmatare-med-kamera-69fc23009c255acf/", "https://inskal.se/products/denver-fagelmatare-med-inbyggd-kamera-och-solcellsladdning-gron"]
+  }
+ ],
+ "fallda": [
+  {"namn_sv": "Renhorn till bilen (Rudolf-kit)", "struktur": "1 synlig nyhet", "listning": "1005013083271138 ($5,89, LIVE_VERIFIED, hero sedd: hus i julbelysning + horn/nos)", "orsak": "Sett innan: Coolstuff sålde formen i åratal (nu utgången), Fyndiq/CDON/Kivero säljer den för 194 kr — golv under oss utan ankare, ingen nyhet i svenskt flöde.", "kallor": ["https://fyndiq.se/produkt/renhorn-till-bilen-rudolf-9e922987b85044e9/", "https://www.coolstuff.se/intressen/bilar/biltillbehor/rudolfkostym-till-bil-pid-4480"]},
+  {"namn_sv": "Hjälphandtag för snöskyffel/kratta", "struktur": "2 kroppsligt", "listning": "1005006430768528 ($7,05, LIVE_VERIFIED, hero sedd: texttung packshot)", "orsak": "Jula säljer exakt samma form (Hard Head extrahandtag, svensktillverkat, monteras på skaftet) — kedjegolv + 'sett innan'; Jula-priset gick inte att läsa (403) men formen räcker för kill. Hero oanvändbar.", "kallor": ["https://www.jula.se/catalog/tradgard/tradgardsredskap/tradgardsverktyg/traskaft/extrahandtag-006343/"]},
+  {"namn_sv": "Värmesulor med fjärrkontroll", "struktur": "2 kroppsligt (jakt)", "listning": "1005007987144485 ($41,79, LIVE_VERIFIED, hero sedd: packshot med storlekstext)", "orsak": "Ingen lucka: HeatX finns i varje kedja och jaktbutik (Widforss 928–1 990, Clas Ohlson 1 499) och landad 544–665 ger BE-CPA under 300 vid pris under HeatX-golvet 928. Storlek S/L klipp-till-passform är ägarkänd — inte skälet.", "kallor": ["https://www.widforss.se/c/outdoor/klader/varmeprodukter/varmesulor", "https://www.clasohlson.com/se/Varmesulor-med-batteri,-dam-och-herr,-35-46,-HeatX/p/31-6928-1"]},
+  {"namn_sv": "Flugbindningsset (Q4-gåva)", "struktur": "3 Q4-gåva", "listning": "1005005036834962 ($20,52, LIVE_VERIFIED, hero sedd: verktygslåda med brandtext)", "orsak": "AliExpress har bara verktygsset (utan bindstäd+material) — inte 'N saker i en låda'. Golv Flyangler 199 kr för samma verktygsform; ankaret fiske.se 975 kr gäller komplett kit med material, ej jämförbar form. Amazon.se/Motonet (Eumer) har formen, priser ej lästa (503).", "kallor": ["https://flyangler.se/products/flugbindningsset-nyborjare", "https://www.fiske.se/fly-dressings-nyb%C3%B6rjarsats", "https://www.motonet.se/kategorier/fiske/flugbindning/flugbindningsset?category=3c681e04-b240-11e5-8ba9-37e43c1d751c"]},
+  {"namn_sv": "Bärsele för lövblås", "struktur": "2 kroppsligt", "listning": "SOKTRAFF (1005008932760710 $3,25 är samma rem som trimmerselen; 1005006137240303 $25 är modellspecifik Echo-sele)", "orsak": "K0 på sak: universalremmen är identisk med Trimmersele 299 / Axelbälte 599 i katalogen; de riktiga blåsselarna är märkesspecifika reservdelar (Echo/Stihl BR) — ingen universal form att sälja.", "kallor": ["korningar/2026-09-11/v3/katalog-live.txt"]},
+  {"namn_sv": "Knäskydd / ispiggar / vedbärare", "struktur": "2 kroppsligt", "listning": "SOKTRAFF (knee pads $8,72–31; ice cleats $3,86–18,95; log carrier $9,98) — ej öppnade", "orsak": "Inte verifierade i denna körning: alla tre är hyllvara hos Jula/Clas/Biltema (halkskydd, knäskydd, vedbärare) och 'sett innan' enligt SIGNALER — ingen tid lagd på golvmätning. Blockerad ≠ död: kan återupptas om ett fackhandelsankare ≥ 1,6× hittas.", "kallor": []},
+  {"namn_sv": "Postlådedekor / husnummer", "struktur": "1 synlig nyhet", "listning": "SOKTRAFF — bara custom-tryck, 'no advertising'-dekaler och reflexsiffror (som är kedjevara)", "orsak": "Ingen listning i rätt form (textfritt motiv för svensk postlåda); reflexsiffror finns hos Clas Ohlson. Objektet står kvar i objekt.json med form huv — huv är utesluten i denna lins.", "kallor": []}
+ ],
+ "status": "F klar 2026-09-11 ~07:10Z: 4 kandidater LIVE_VERIFIED med hero sedd (1 struktur-1, 1 struktur-2, 2 struktur-3), 7 fällda med orsak. Inga överdrag/kapell/huvar. Golvkällor med 403/503: jula.se, amazon.se, cdon.se — priser därifrån är ur söksnuttar och märkta så."
+}
