@@ -1,0 +1,57 @@
+{
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "hub": {
+    "id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+    "titel": "Racing Car Advent Calendar creative hub"
+  },
+  "kampanj": {
+    "id": "120249031977180172",
+    "namn": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+    "bas": "ADVENTLANERACING_NO_Racingkalendern",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249033401000172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249033144980172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249033104930172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - G",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249031977810172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - SP",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 16,
+  "lank_arvd": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "pris_butik": {
+    "pris": 499,
+    "min": 499,
+    "max": 499,
+    "jamforpris": 649,
+    "valuta": "SEK",
+    "titel": "Adventskalender Racerbiler – 24 Biler Bak 24 Luker",
+    "handle": "adventskalender-racingbilar",
+    "kalla": "https://adventlane.se/nb/products/adventskalender-racingbilar.json"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [],
+  "hamtad": "2026-09-11T13:59:43.554Z"
+}

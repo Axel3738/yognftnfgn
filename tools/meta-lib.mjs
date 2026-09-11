@@ -103,7 +103,10 @@ export async function api(sökväg, { method = 'GET', params = {}, form = null }
     const rateLimited = e.code === 17 || /user request limit reached/i.test(e.message || '');
     const transient = e.is_transient || e.code === 2 || res.status >= 500;
     if ((rateLimited || transient) && försök < BACKOFF_MS.length) {
-      logg(`  ⏳ Meta ${rateLimited ? 'rate limit' : `fel ${e.code ?? res.status}`} (försök ${försök + 1}/${BACKOFF_MS.length}) — väntar ${BACKOFF_MS[försök] / 1000}s`);
+      // Väntraden går på stderr: verktyg med --json (ops-leveranskon, ops-till-meta)
+      // skriver kön på stdout, och en loggrad där gör filen oläsbar som JSON
+      // (mätt 2026-09-11 i /ops-oversatt kalender: fyra väntrader hamnade i jobb.json).
+      console.error(`  ⏳ Meta ${rateLimited ? 'rate limit' : `fel ${e.code ?? res.status}`} (försök ${försök + 1}/${BACKOFF_MS.length}) — väntar ${BACKOFF_MS[försök] / 1000}s`);
       await vänta(BACKOFF_MS[försök]);
       continue;
     }

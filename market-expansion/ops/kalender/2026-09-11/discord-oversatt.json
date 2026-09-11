@@ -1,0 +1,23 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-11",
+  "lage": "oversatt",
+  "gjort": [
+    "Translation queue read: 0 rows in SE-ACTIVE to be translated (hub Racing Car Advent Calendar creative hub)",
+    "NO campaign found and ACTIVE: ADVENTLANERACING_NO_Racingkalendern (4 adsets: CS, PD, G, SP)",
+    "Nothing translated, nothing uploaded, no HeyGen credits used, campaign untouched"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "The queue is empty because today's 13:40 delivery run uploaded 0 ads - the AdventLane Facebook page is unpublished, so the 4 finished SE videos never went live and never reached the translation queue",
+    "7 of 16 NO ads were paused by Meta this morning (page not published) - not touched by this run, Meta's pauses are not ours to undo"
+  ],
+  "action_axel": [
+    "Same blocker as this morning: publish the AdventLane Facebook page (id 1304279782771044). Facebook > the AdventLane page > Settings > Page visibility > Publish.",
+    "Once the page is live the 4 SE videos upload at the next 13:40 run and reach this translation run at 15:40 the same day - nothing else to do."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-12"
+}

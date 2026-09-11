@@ -145,3 +145,26 @@ Verifierat ur kontot samtidigt (dna.md rotorsak 5 stängd): SE-copyn per adset �
 källans ordagrant för PD och GT; **CS bär fortfarande "23% rabatt – bara idag" och
 "Begränsat lager – slut innan jul"** (falsk brådska, ej rättad); SP är rättad
 ("Sonen längtar till varje dag" – Johan, 14 dagars ångerrätt). Ingen ändring gjord.
+
+---
+
+## Översättning NO `/ops-oversatt` 2026-09-11 — 0 rader, inget att göra
+
+Kön: **0 rader** i `SE-ACTIVE to be translated` i hubben "Racing Car Advent Calendar
+creative hub" (Typ ~ pending approval). Skälet är dagens leveransrunda ovan: 0 uppladdade
+(Facebook-sidan opublicerad) ⇒ inget hamnade i översättningskön.
+
+NO-kampanjen hittad, exakt en ACTIVE: `ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 |
+2026-09-10` (`120249031977180172`), fyra adset CS / PD / G / SP, ärvd länk
+`adventlane.se/nb/products/adventskalender-racingbilar`, butikspris 499 SEK på `/nb`
+(kontots NO-annonser säger 439 kr — Axels besked, se `dna.md` rotorsak 3; **kommandots
+regel 4 "norsk copy utan pris" och Axels 439 kr-besked krockar** — avgörs när första
+raden faktiskt ska översättas). Inget översatt, inget renderat, 0 HeyGen-credits,
+kontot orört. Metas 7 NO-pauser (sidan) lämnade som de är.
+
+Discord-rapport postad i `#annons-uppladdning` (AdventLane), Axel pingad under ACTION
+NEEDED med samma blocker som 13:40: publicera sidan `1304279782771044`.
+
+Bifynd, fixat i `tools/meta-lib.mjs`: väntraden vid Metas rate limit gick till stdout och
+hamnade i `jobb.json` (fyra rader, filen blev ogiltig JSON). Nu stderr. Kontoläsningen tog
+≈ 18 min p.g.a. rate limit (försök 6/8) — normalt, inte hängning.
