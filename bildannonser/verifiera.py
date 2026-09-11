@@ -71,7 +71,12 @@ def granska_block(namn, text, brieftext, pris_verifierat=False,
     normaliserad_brief = normalisera(brieftext)
 
     for rad in [r for r in text.split("\n") if r.strip()]:
-        if normalisera(rad) not in normaliserad_brief:
+        # Listbocken är ett ritat grafiskt element (text.py rita_lista), inte
+        # copy — den ska därför inte behöva stå i briefen för att raden ska
+        # räknas som ordagrann. Själva texten efter bocken kontrolleras som allt
+        # annat.
+        jamfor = rad[1:].lstrip() if rad.startswith(("\u2705", "\u2713")) else rad
+        if normalisera(jamfor) not in normaliserad_brief:
             fel.append(f'raden finns inte ordagrant i briefen: "{rad}"')
 
         for monster, skal in FORBUD:
