@@ -17,7 +17,7 @@
 - [x] ✅ villkor: 4 policyer på plats
 - [x] ✅ checkout: valuta SEK
 - [ ] 🖐 checkout-betalning: Gör ett testköp och bekräfta att betalleverantören är aktiv.
-- [ ] ❌ kundvy-produktsida: paketväljaren (ms-paket) finns | sticky köpknapp
+- [x] ✅ kundvy-produktsida: 11 strukturpunkter gröna
 - [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
 - [x] ✅ markörer /nb: 0 svenska markörer av 12
 

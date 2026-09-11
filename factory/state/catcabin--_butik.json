@@ -149,8 +149,9 @@
       ]
     },
     "huvudmarknad": {
-      "klar": false,
-      "manuell": "Primärmarknaden: primärmarknaden är \"Norge\" (NO), inte SE. Settings → Markets → marknaden för SE → Set as primary. Kan inte sättas via API. Utan det är varje variant otillgänglig i kundvyn (paketväljaren och sticky-knappen renderas inte — mätt 2026-09-11)."
+      "klar": true,
+      "valuta": "SEK",
+      "primarmarknad": "Sweden"
     },
     "kallskanning": {
       "klar": true,
@@ -173,7 +174,7 @@
           "locale": "nb",
           "marknad": "Norge",
           "status": "ACTIVE",
-          "localeSkapad": true
+          "localeSkapad": false
         }
       ]
     },
@@ -205,7 +206,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-11T03:09:25.036Z"
+    "tid": "2026-09-11T03:22:34.989Z"
   },
-  "uppdaterad": "2026-09-11T03:09:25.036Z"
+  "uppdaterad": "2026-09-11T03:22:34.989Z"
 }

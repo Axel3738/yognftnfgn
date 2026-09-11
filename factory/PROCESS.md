@@ -381,7 +381,13 @@ igenom på första körningen. Mätningar:
   (`API-GRANSER.md`, mätt) — klicket är Settings → Markets → Sweden →
   Set as primary. Kedjans steg `huvudmarknad` kontrollerade bara valutan och
   var grönt hela tiden; nu kontrollerar det också att primärmarknadens region
-  är butikens land (`marknad.kontrolleraPrimarmarknad`).
+  är butikens land (`marknad.kontrolleraPrimarmarknad`). Efter klicket var
+  kundvyn grön igen (11 strukturpunkter) — men **Norge-marknaden var borta**
+  (bara Sweden kvar): den försvann i admin-klicket. `--igen marknad` skapade
+  om den på trettio sekunder (locale nb och alla registrerade översättningar
+  låg kvar, de sitter på localen, inte på marknaden). Regel: efter varje
+  Markets-klick av en människa, kör `--igen huvudmarknad,marknad` och läs
+  trippelkollen.
 - **Källkampanjen läses per annons innan vinkeln väljs.** 16 annonser,
   2 760 kr / 9 köp på två dygn: bara `Utekattkoja_PD_2_H1` (1 453 kr, 4 köp)
   låg över domgränsen 300 kr / 3 köp (CLAUDE.md regel 3). Problem-rubriken
