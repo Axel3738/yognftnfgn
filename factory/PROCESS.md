@@ -213,6 +213,16 @@ Hela listan i `factory/README.md`.
     båda språkens bilder läggs som media, ms-head döljer fel språk per locale.
 15. ⚙️ Norge ska SYNAS i kundvyn (Axel 2026-09-08): "Fri frakt – Sverige &
     Norge" / "Gratis frakt i hele Norge". NOK-paketnivåer innan norska annonser.
+16. ⚙️ **NOK-priset går att sätta via API när NOK är marknadens basvaluta**
+    (CaraShell 2026-09-11, `API-GRANSER.md`): prislista + marknadskatalog +
+    fasta priser (pris och jämförpris per variant). Jämförpriset är ägarens
+    beslut — CaraShell fick 1 106 / 1 382,50 NOK (25 % över priset). Fasta
+    priser följer inte kursen: ändras SEK-priset sätts NOK om för hand.
+    Kontrollen görs som norsk kund (`POST /localization` med `_method=put`),
+    inte via /nb på svensk IP — /nb byter bara språk, inte marknad. ⚠️ Kvar:
+    paketnivåerna och rabattkoderna står i SEK och visas med SEK-tal i den
+    norska vyn (mätt: 1 919,30 för 2 st bredvid 1 106 per styck) — det är
+    steget "NOK-paketnivåer" i punkt 15, fortfarande manuellt/obyggt.
 
 ## Fas 5 — Store ready (kedjans slutsteg)
 
