@@ -221,7 +221,12 @@
     },
     "kalender/adventskalender-racingbilar": {
       "kordag_offset": 2,
-      "launches": [],
+      "launches": [
+        {
+          "date": "2026-09-12",
+          "count": 7
+        }
+      ],
       "notion": {
         "name": "Racing Car Advent Calendar creative hub",
         "database_id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
@@ -229,8 +234,10 @@
         "url": ""
       },
       "lage": "skala",
-      "senaste_brief": "",
-      "redigerare_discord_id": null
+      "senaste_brief": "2026-09-12",
+      "redigerare_discord_id": null,
+      "cycle_start": "2026-09-12",
+      "senaste_korning": "2026-09-12"
     }
   }
 }
