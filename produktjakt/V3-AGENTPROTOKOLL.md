@@ -40,6 +40,13 @@ landad ≈ USD × 9,64 × 1,5 (frakt/avgifter; skriv intervall ±10 %). Pris: 0,
 ankare: landad × 2,4, minst 300. BE-CPA = pris − landad (utan moms). BE-ROAS = pris ÷ (pris − landad). Flerköp: finns fysiskt
 skäl att köpa 2+? Returrisk: måste kunden mäta?
 
+## Formtaket (Axels signal 2026-09-11: "för mycket överdrag")
+Skyddsformer (överdrag, kapell, huv, skydd, tak, lock) får vara högst 40 % av dagens batch — `rank.py` lyfter ut resten.
+Sök därför strukturer, inte former: **ordning/friktion på flera ägda saker** (spöklämman: kaos → ordning, flerköp),
+**maskinen som gör jobbet** (bandslipen: ≥ 900 kr, ankare ≥ 2,4×, synlig payoff), **kroppsligt i säsongsjobbet**
+(axelbältet, damaskerna), **synlig nyhet utan problem** (klistermärkena: noll friktion, < 300 kr, objekt alla har),
+**djur/datum** (kojan, kalendern). En lins per struktur, aldrig fem linser på skydd.
+
 ## Vad du INTE gör
 - Hittar på priser, ägarantal, ankare eller datum. Skriv "ej mätt".
 - Levererar verktyg/prylar som läggs i förrådet efter jobbet (LEARNING_STATE: form=verktyg 1 vinnare / 2 förlorare / 7 för tidigt;

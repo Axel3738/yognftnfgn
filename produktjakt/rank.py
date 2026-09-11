@@ -27,6 +27,18 @@ LARANDE = os.path.join(HERE, "larande.json")
 SLOT_MAX = {"exploitation": 8, "exploration": 4, "sasong": 3}
 SLOT_MIN = {"exploitation": 5, "exploration": 2, "sasong": 1}
 BE_CPA_GOLV = 190
+# Formtak (Axels signal 2026-09-11: "du har sneat in dig på överdrag för mycket"; uppdraget: "do not collapse into
+# finding 20 covers because two covers won"). Skyddsformerna delar EN familj och får högst FORMTAK av batchen.
+# 9 av kontots 18 REAL WINNERS är inte överdrag (spöklämma, kamera, bandslip, sele, damasker, shorts, klistermärken,
+# kalender, tofflor) — strukturen "ägt objekt ute + hyllfrånvaro + material" bär, inte formen.
+SKYDDSFORMER = {"överdrag", "kapell", "huv", "skydd", "tak", "lock", "hölje", "kåpa", "kapell/huv", "överdrag/kapell"}
+FORMTAK = 0.4
+ARKETYPTAK = 0.5   # högst hälften av batchen får ha samma primära arketyp
+
+
+def ar_skyddsform(k):
+    f = (k.get("form") or "").lower()
+    return any(s in f for s in SKYDDSFORMER)
 
 
 def las_kandidater(monster):
@@ -142,6 +154,27 @@ def main():
         if k.get("asymmetrisk") and len(batch) < a.max:
             batch.append(k)
     batch = batch[:a.max]
+
+    # Formtak + arketyptak: lyft ut de lägst rankade i den överrepresenterade gruppen och fyll på med nästa
+    # kandidat utanför gruppen (om det finns någon). Aldrig utfyllnad med rader som inte klarat grindarna.
+    import math
+    formtak_ut = []
+    def tak(grupp_fn, andel, namn):
+        nonlocal batch
+        while batch and sum(1 for k in batch if grupp_fn(k)) > math.ceil(andel * len(batch)):
+            i_grupp = sorted((k for k in batch if grupp_fn(k)), key=lambda k: k["rank_poang"])
+            bort = i_grupp[0]
+            batch.remove(bort)
+            bort["_utanfor"] = f"{namn}: {int(andel * 100)} % av batchen"
+            formtak_ut.append(bort)
+            ersattare = [k for k in rest if k not in batch and k not in formtak_ut and not grupp_fn(k)]
+            if ersattare:
+                b = max(ersattare, key=lambda k: k["rank_poang"])
+                batch.append(b)
+    tak(ar_skyddsform, FORMTAK, "formtak skyddsform")
+    for ark in {k.get("arketyp") for k in batch}:
+        tak(lambda k, _a=ark: k.get("arketyp") == _a, ARKETYPTAK, f"arketyptak {ark}")
+    batch.sort(key=lambda k: -k["rank_poang"])
     for i, k in enumerate(batch, 1):
         k["rank"] = i
         k.pop("_p", None)
@@ -149,8 +182,10 @@ def main():
           "per_slot": {s: sum(1 for k in batch if k.get("slot") == s) for s in SLOT_MAX},
           "under_minimum": {s: SLOT_MIN[s] - sum(1 for k in batch if k.get("slot") == s) for s in SLOT_MAX if sum(1 for k in batch if k.get("slot") == s) < SLOT_MIN[s]},
           "batch": batch,
+          "skyddsformer_i_batch": sum(1 for k in batch if ar_skyddsform(k)),
           "strukna": [{"namn_sv": k.get("namn_sv"), "objekt": k.get("objekt"), "orsak": k["_struken"], "kalla": k.get("_kalla")} for k in strukna],
-          "utanfor_batch": [{"namn_sv": k.get("namn_sv"), "slot": k.get("slot"), "rank_poang": k.get("rank_poang")} for k in rest if k not in batch]}
+          "utanfor_batch": [{"namn_sv": k.get("namn_sv"), "slot": k.get("slot"), "rank_poang": k.get("rank_poang"), "orsak": k.get("_utanfor") or "plats"}
+                            for k in rest + formtak_ut if k not in batch]}
     os.makedirs(os.path.dirname(a.ut), exist_ok=True)
     json.dump(ut, open(a.ut, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{len(kand)} kandidater → {len(unika)} unika → {len(godkanda)} klarade grindarna → batch {len(batch)} {ut['per_slot']}"
@@ -159,6 +194,9 @@ def main():
         print(f"  {k['rank']:2}. {k['slot'][:5]:5} {k['rank_poang']:>5} {'ASYM ' if k.get('asymmetrisk') else '     '}{k['namn_sv'][:38]:38} {k['konfidens']:5} {k['arketyp']}")
     for k in strukna:
         print(f"  ✗ {str(k.get('namn_sv'))[:40]:40} {k['_struken']}")
+    for k in formtak_ut:
+        print(f"  ↓ {str(k.get('namn_sv'))[:40]:40} {k['_utanfor']}")
+    print(f"skyddsformer i batch: {ut['skyddsformer_i_batch']} av {len(batch)} (tak {int(FORMTAK * 100)} %)")
 
 
 if __name__ == "__main__":

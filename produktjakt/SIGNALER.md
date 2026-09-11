@@ -64,3 +64,18 @@ Två olika saker, och båda är kill:
 
 Axels branschkunskap (campingen) är en källa rutinen inte har. När han säger "alla har
 den" är det facit — skriv ner det på objektraden i `objekt.json` så det aldrig söks igen.
+
+## Axels svar 2026-09-11 på V3:s första batch: "du har sneat in dig på överdrag för mycket"
+
+Batchen hade 6 av 11 i skyddsform (snöskoterkapell, släpkärrekapell, värmepumpsskydd, takluckehuv, hjulskydd,
+ATV-kapell). Två vinnare (taköverdraget, utekattkojan) hade dragit hela sökningen mot samma FORM. Det är exakt
+fällan uppdraget varnade för: *"do not collapse into finding 20 covers because two covers won — abstract upward"*.
+
+Facit stödjer Axel: 9 av kontots 18 REAL WINNERS är inte överdrag — spöklämman (#2 i vinst), kameran, bandslipen,
+axelbältet, damaskerna, cykelshortsen, klistermärkena, adventskalendern, strandtofflorna. Det som bär är
+**strukturen** (ägt objekt ute + hyllfrånvaro + leverantörsmaterial + prisutrymme), inte formen.
+
+Följd: `rank.py` har ett **formtak** (skyddsformer högst 40 % av batchen) och ett arketyptak (50 %), och
+discovery-linserna ska täcka minst tre strukturer per körning: ordning/friktion (spöklämma), maskin som gör
+jobbet (bandslip), synlig nyhet (klistermärken), djur/datum, skydd — aldrig bara skydd.
+
