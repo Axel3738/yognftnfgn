@@ -9,7 +9,7 @@ offertark, publicerad sida, Discord.
 | 2026-09-09 | 82 | 9 | 73 | ja | ja |
 | 2026-09-10 | 18 | 2 | 16 | ja | ja |
 | 2026-09-10 (manuell DOA) | 120 | 5 | 115 | ja | nej (ingen webhook i chatten) |
+| 2026-09-11 | 59 | 2 | 57 | ja | ja |
 
 Anmärkning 2026-09-09: 18 kandidater kördes genom mekanismgrinden i två omgångar,
 noll passerade. De två levererade är Axels egna val.
-| 2026-09-11 | 59 | 2 | 57 | ja | ja |
