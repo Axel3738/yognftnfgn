@@ -131,7 +131,7 @@ test('listtak utan kapning: max 8 gjort och 10 briefer, sen "+N more"', () => {
 });
 
 test('saknade fält vägras', () => {
-  assert.deepEqual(saknadeFalt({}), ['brand', 'datum', 'lage (budget | brief)']);
+  assert.deepEqual(saknadeFalt({}), ['brand', 'datum', 'lage (budget | brief | leverans | oversatt)']);
   assert.throws(() => renderaRapport({ brand: 'X', datum: '2026-09-10', lage: 'natt' }), /lage/);
 });
 
@@ -156,4 +156,17 @@ test('valjButiksServer: exakt namn först, annars enda servern som börjar med b
   assert.equal(valjButiksServer(guilds, '4').id, '4');
   assert.equal(valjButiksServer(guilds, 'Grillkliniken'), null);
   assert.equal(valjButiksServer([...guilds, { id: '5', name: 'DryTrek — test' }], 'DryTrek'), null, 'två träffar ⇒ null');
+});
+
+test('lägena leverans och oversatt: egen rubrik, kanal #annons-uppladdning', async () => {
+  const { kanalFor, KANAL_PER_LAGE } = await import('../discord-rapport.mjs');
+  assert.equal(kanalFor({ lage: 'leverans' }), 'annons-uppladdning');
+  assert.equal(kanalFor({ lage: 'oversatt' }), 'annons-uppladdning');
+  assert.equal(kanalFor({ lage: 'budget' }), 'ads');
+  assert.equal(kanalFor({ lage: 'brief', kanal: '#egen' }), 'egen');
+  assert.equal(Object.keys(KANAL_PER_LAGE).length, 4);
+  const text = renderaRapport({ brand: 'HeimGuard', butik: 'hemvakten', datum: '2026-09-11', lage: 'leverans', gjort: ['Uploaded HeimGuard_SP_4_1 live in HEIMGUARD_SE (adset SP)'], nasta_korning: '2026-09-12' }, { axelId: '1' });
+  assert.match(text, /^🚀 HEIMGUARD delivery run — 2026-09-11/);
+  const no = renderaRapport({ brand: 'HeimGuard', butik: 'hemvakten', datum: '2026-09-11', lage: 'oversatt', gjort: ['Translated 2 ads'], nasta_korning: '2026-09-12' }, { axelId: '1' });
+  assert.match(no, /Norway translation/);
 });

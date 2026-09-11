@@ -25,7 +25,10 @@ gör den dessutom creative strategy (feedback-loop per annons, gemensamma
 variabler) och lägger nya briefer i butikens creative hub.
 
 Detta är `/skalningskungen` (steg 1, 2, 4) + `/cs` (steg 2–5) + `/rutin`,
-parametriserat för OPS. Facit som gäller oförändrat: `docs/os/ANALYSMETOD.md`
+parametriserat för OPS. Nattvakten gör INTE leveransen: redigerarens
+färdiga annonser tas av `/ops-leverans` (13:40, To be Reviewed → live i
+SE-kampanjen) och `/ops-oversatt` (15:40, → live i NO-kampanjen). Setup
+bygger alla tre. Facit som gäller oförändrat: `docs/os/ANALYSMETOD.md`
 (obligatorisk, kortas aldrig), `docs/copy-regler.md`, `docs/naming-convention.md`,
 `factory/TRAPPAN.md`. Rör inte `/skalningskungen` — det kommandot är
 Bäverbutikens larm och har sin egen rutin.
@@ -98,23 +101,39 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    ```
    (Skriv en liten exempel-jobbfil själv för Discord-torrkörningen.) Något
    rött här = rutinen ska inte byggas än; fixa först.
-6. **Rutinen.** Följ `.claude/commands/rutin.md` exakt, med:
+6. **TRE rutiner per butik** (Axels beslut 2026-09-11), var och en bunden
+   till en egen fast session. Setup är **idempotent**: kör `list_triggers`
+   först och bygg BARA de som saknas för den här butiken — en butik som
+   redan har sin nattvakt får bara leveransrundan och översättningen. Det
+   är så befintliga butiker kompletteras: samma kommando igen.
+
+   | Rutin | Tid | Kommando |
+   |---|---|---|
+   | Nattvakten | 00:01 | `/notionscalercs <nyckel>` |
+   | Leveransrundan | 13:40 | `/ops-leverans <nyckel>` |
+   | Översättning NO | 15:40 | `/ops-oversatt <nyckel>` |
+
+   För var och en, i ordning, exakt enligt `.claude/commands/rutin.md`:
    ```
-   node factory/rutin.mjs --tid 00:01 --kommando "/notionscalercs <butik>" --butik <butik>
+   node factory/rutin.mjs --tid <tid> --kommando "<kommando>" --butik <butik>
    ```
    Exit 1 = bygg inte (vanligast: du står inte på `main` — merga först).
-   Sedan `list_triggers` (ingen dubblett för DENNA butik) → `create_session`
-   (title `Rutin: Nattvakten <butik>`, `source_url` repot, `outcome_branch: "main"`,
-   taggar ur utskriften) → `create_trigger` (daglig cron ur utskriften,
-   `persistent_session_id` = sessionen, `prompt` = `/notionscalercs <butik>`,
-   `initiation: human_request`) → `list_triggers` igen och visa raden.
-   Cronen ligger dagen före i UTC (00:01 CEST = `1 22 * * *`) — det är rätt.
-   Anteckna vintervärdet (`1 23 * * *`) i CLAUDE.md-tabellen.
+   Sedan `create_session` (title ur utskriften, `source_url` repot,
+   `outcome_branch: "main"`, taggar ur utskriften) → `create_trigger`
+   (daglig cron ur utskriften, `persistent_session_id` = sessionen,
+   `prompt` = kommandot, `initiation: human_request`) → `list_triggers`
+   igen och visa raden. Nattvaktens cron ligger dagen före i UTC
+   (00:01 CEST = `1 22 * * *`) — det är rätt. Anteckna vintervärdena.
+   Innan leveransrundan byggs: `node tools/ops-leveranskon.mjs <nyckel> --marknad SE`
+   ska hitta hubben och exakt en SE-kampanj. Innan översättningen byggs:
+   samma med `--marknad NO --status "SE-ACTIVE to be translated"` — saknas
+   NO-kampanjen byggs rutinen ändå (den rapporterar "no NO campaign" tills
+   `/ny-annonser` byggt den), men säg det i rapporten.
    ⚠️ Rutiner listade under Axels andra Claude-konto syns inte här — det är
-   inte en dubblett, det är ett annat konto. Bygg den här rutinen på DET HÄR
-   kontot.
-7. **Skriv upp den.** Rad i CLAUDE.md:s rutintabell (00:01, båda cron-värdena,
-   `/notionscalercs <butik>`), commit, push.
+   inte en dubblett, det är ett annat konto. Alla tre rutinerna för en butik
+   ska ligga på SAMMA konto.
+7. **Skriv upp dem.** Rader i CLAUDE.md:s rutintabell (tid, båda
+   cron-värdena, kommando, trigger-id, session-id), commit, push.
 8. **Rapport.** Gjort / väntar på människa. Axels uppgifter sist, numrerade:
    env-nycklar som saknas i rutinens miljö (steg 5 avslöjar dem), hubbar som
    inte är delade, redigerare som inte är satt.
