@@ -238,6 +238,29 @@ allt tyst. Alla fyra är fixade och har regressionstester.
   — vinkel + nummer — med två regler som båda måste hålla: numret identiskt,
   vinkelbokstäverna prefix av varandra. `SP_1` tar aldrig `SP_2`, `CO` aldrig `CS`.
 
+⚠️ **SÅ LÄSER DU EN MARKNADS PRIS — OCH SÅ GÖR DU DET INTE.** Mätt 2026-09-11
+på CaraShell, efter att ha dragit fel slutsats en gång:
+
+    ✅  curl https://<domän>/products/<handle>.js?country=NO
+        → {"variants":[{"price":110600,"compare_at_price":138250,...}]}
+    ⛔  grep i sidans HTML efter priset eller ordet "compare"
+
+Temat renderar priserna på klientsidan, så **rå-HTML:en bär dem inte alls** —
+varken priset eller jämförpriset, varken på NO eller SE. En HTML-sökning som
+inte hittar något jämförpris bevisar därför ingenting. Jag rapporterade
+"norska marknaden har inget jämförpris" på den grunden; metoden gav samma
+tomma svar på SE, som bevisligen HAR ett. `.js`-endpointen svarar per marknad
+och bär båda fälten.
+
+⚠️ **Valutan följer besökarens LAND, inte locale-sökvägen.** `/nb/...` utan
+`?country=NO` svarar i SEK. Utan parametern mäter du fel marknad och tror att
+NOK inte är påslaget.
+
+⚠️ **"25 % över priset" är inte "25 % rabatt".** CaraShells norska jämförpris
+sattes till 1 106 × 1,25 = 1 382,50 NOK. Rabatten kunden ser är
+(1382,50 − 1106)/1382,50 = **20,0 %**. Räkna alltid ut procenten ur de två
+talen innan den skrivs i copy eller tal — aldrig ur påslaget.
+
 ⚠️ **KONTOTS RATE LIMIT ÄR EN RIKTIG BLOCKERARE VID FÖRSTA LAUNCHEN.** Mätt
 2026-09-11: efter 25 medieuppladdningar + 2 kampanjer + 7 adsets + 16 annonser i
 samma timme svarade `act_915422744950975` **"User request limit reached"**

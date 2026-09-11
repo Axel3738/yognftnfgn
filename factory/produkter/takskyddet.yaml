@@ -240,6 +240,35 @@ meta:
   # Bäverbutikens annonser.
   creative_prefix: "CaraShellRoof"
   testbudget_per_dag: 1000
+  launch:
+    # Axels "Launch: CaraShell" 2026-09-11. Grindarna i /ny-annonser steg 11b
+    # kontrollerade före ACTIVE: butiken live (ingen /password), pixeln hade
+    # avfyrat 14:52, sidan gick att annonsera med (skarpt adcreatives-anrop).
+    se:
+      datum: "2026-09-11"
+      kampanj: "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11"
+      kampanj_id: "120249050544990172"
+      budget_per_dag: 1000
+      struktur: "CBO, fyra adsets (PD/GT/SP/CS), ingen egen adsetbudget"
+      annonser: 16
+      status: "ACTIVE — tillbakaläst ur Meta på alla tre nivåer"
+    no:
+      datum: ""
+      kampanj: "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11"
+      kampanj_id: "120249050596730172"
+      annonser: 9
+      status: "PAUSED — HÅLLS TILLBAKA"
+      # ⚠️ Förlanseringsgranskningen 2026-09-11 (7 linser, varje fynd angripet
+      # av 3 skeptiker) fällde ett fel på den norska LANDNINGSSIDAN, inte i
+      # annonserna: paketpriserna för 2- och 3-pack är oomräknade SEK-belopp
+      # märkta "kr" i NOK-vyn. 2-pack visar 1 919,30 (borde vara 1 880,20 vid
+      # 15 %), 3-pack 2 709,60 (borde vara 2 654,40 vid 20 %). Rotorsak:
+      # factory/paket.mjs sätter fastpriset som number_decimal, inte money, och
+      # Shopify Markets räknar bara om money-fält. Enstyckspriset 1 106 NOK är
+      # rätt. De nio annonserna nämner inget pris och är korrekta — men de
+      # pekar alla på den sidan. Launchas när paketpriserna är omräknade.
+      blockerare: "NO-landningssidans paketpriser är oomräknade SEK-belopp"
+
   vinklar:
     - "Vattnet som står kvar vid takluckan hela vintern – och vad det gör med tätningarna till våren."
     - "Helöverdraget kräver två personer och skaver mot lacken – CaraShell täcker bara taket, en person räcker."

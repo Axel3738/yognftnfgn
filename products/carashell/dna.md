@@ -95,8 +95,20 @@ upp 1 469 → 1 129 **kroner** och hålls därför tillbaka.
 
 | Marknad | Pris | Jämförpris | Rabatt |
 |---|--:|--:|---|
-| SE (`/products/takskyddet`) | 1 129 kr | 1 469 kr | **23 % — verklig** |
-| NO (`/nb/products/takskyddet?country=NO`) | 1 106 NOK | **inget** | **ingen** |
+| SE | 1 129,00 kr | 1 469,00 kr | **23,1 %** |
+| NO | 1 106,00 NOK | 1 382,50 NOK | **20,0 %** |
+
+Mätt 2026-09-11 med `curl https://carashell.se/products/takskyddet.js?country=NO`
+— den endpointen svarar per marknad och bär både `price` och `compare_at_price`.
+
+⚠️ **Sök ALDRIG priset i sidans HTML.** Temat renderar priserna på klientsidan,
+så rå-HTML:en bär varken pris eller jämförpris — på någon marknad. En tom
+HTML-sökning bevisar ingenting; den gav samma tomma svar på SE, som har ett
+jämförpris. Det misstaget gjordes en gång här.
+
+⚠️ **20 %, inte 25 %.** Axels instruktion var "jämförpris 25 % högre än
+ordinarie pris". Det ger 20 % rabatt för kunden, inte 25. Norsk copy och norskt
+tal säger därför **20 %** — aldrig 25, och aldrig källans 23.
 
 ⚠️ **Den norska marknaden har inget jämförpris.** Shopify visar 1 106 NOK rakt av,
 utan överstruket pris. Mätt på den publika sidan med `?country=NO` — utan den

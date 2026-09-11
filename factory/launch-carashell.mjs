@@ -31,10 +31,23 @@ const ACT = 'act_915422744950975';
 
 // EXAKTA namn. Läggs en tredje kampanj till här utan att någon läst den är det
 // ett fel, inte en bekvämlighet.
-const KAMPANJER = [
-  'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11',
-  'CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11',
-];
+const ALLA_KAMPANJER = {
+  SE: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11',
+  NO: 'CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11',
+};
+
+// --marknad SE launchar bara den svenska. Finns för att marknaderna kan vara
+// olika redo: 2026-09-11 var SE grön medan NO satt fast på ett fel i
+// landningssidans paketpriser (oomräknade SEK-belopp märkta "kr" i NOK-vyn).
+// Att launcha en marknad vars landningssida visar fel pris är att betala för
+// trafik till ett brutet löfte — hellre halva launchen än fel launch.
+const iM = process.argv.indexOf('--marknad');
+const valda = iM >= 0 && process.argv[iM + 1] && !process.argv[iM + 1].startsWith('--')
+  ? process.argv[iM + 1].toUpperCase().split(',')
+  : Object.keys(ALLA_KAMPANJER);
+for (const m of valda) if (!ALLA_KAMPANJER[m]) { console.error(`✗ okänd marknad "${m}" — välj SE och/eller NO.`); process.exit(1); }
+const KAMPANJER = valda.map((m) => ALLA_KAMPANJER[m]);
+logg(`Launchar marknad(er): ${valda.join(', ')}`);
 
 const spendAv = async (id) => {
   try {

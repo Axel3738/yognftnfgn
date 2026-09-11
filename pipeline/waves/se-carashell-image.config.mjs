@@ -49,7 +49,7 @@ export default {
       name: 'CARASHELL_SE_Taköverdraget - SP',
       ads: [
         { adName: 'CaraShellRoof_SP_2_1', img: 'CaraShellRoof_SP_2_1.jpg',
-          copy: { message: '"Passar bra och skyddar taket mot väder." – Lars 🙌\nEtt av 10 omdömen om vårt taköverdrag – alla fem stjärnor.\n✅ Skyddar taket mot regn, snö och smuts\n✅ En person sätter på det själv – ingen hjälp behövs\n✅ 14 dagars ångerrätt enligt svensk lag\nLäs varför husvagnsägare väljer det här inför varje vinter. 👇',
+          copy: { message: '"Passar bra och skyddar taket mot väder." – Lars 🙌\nEtt av 16 omdömen om vårt taköverdrag – alla fem stjärnor.\n✅ Skyddar taket mot regn, snö och smuts\n✅ En person sätter på det själv – ingen hjälp behövs\n✅ 14 dagars ångerrätt enligt svensk lag\nLäs varför husvagnsägare väljer det här inför varje vinter. 👇',
             headline: 'Taköverdraget kunderna ger 5 stjärnor', description: 'Betygsatt av riktiga kunder. Fri frakt.' } },
       ],
     },

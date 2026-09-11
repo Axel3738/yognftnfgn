@@ -90,3 +90,73 @@ Meta-sida `1381171778405935` går inte att annonsera med ännu.
 | Media uppe | 12 videor + 4 bilder | 9 videor |
 | Annonser | 0 (sidan) | 0 (sidan) |
 | Hålls tillbaka | — | CS ×3: NOK-pris butiken inte satt |
+
+---
+
+## LAUNCH 2026-09-11 — Sverige live, Norge hålls tillbaka
+
+Axels "Launch: CaraShell". Grindarna i `/ny-annonser` steg 11b kontrollerade
+FÖRE någon status ändrades:
+
+| Grind | Utfall |
+|---|---|
+| Butiken live (ingen `/password`) | ✅ `carashell.se` svarar 200 |
+| Pixeln har avfyrat | ✅ `28589207184025756` senast 2026-09-11 14:52 |
+| Sidan går att annonsera med | ✅ skarpt `adcreatives`-anrop gick igenom |
+
+**SE: LIVE.** `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11`
+(`120249050544990172`), CBO 1 000 kr/dag, fyra adsets, **16 av 16 annonser
+ACTIVE**, tillbakaläst ur Meta på alla tre nivåer.
+
+**NO: PAUSED.** 9 annonser färdiga men inte påslagna — se blockeraren nedan.
+
+### Förlanseringsgranskningen
+
+Sju oberoende linser läste det riktiga kontot och den riktiga butiken
+(läs-bara). Varje fynd angreps sedan av tre skeptiker med i uppdrag att
+FÖRKASTA det; bara fynd som överlevde ≥2 av 3 räknades.
+**18 fynd rapporterade · 5 stod sig · 13 förkastades.**
+
+**Åtgärdat före launch:**
+
+1. ⛔ **`SP_2_1` brännmärkte citatet "Verifierad kund" (3 av 3 skeptiker).**
+   Butiken markerar ingen recension som verifierad köpare — etiketten var ett
+   påstående butiken inte kan backa. Den var dessutom MIN egen tillsats i
+   första bildfixen, inte källans. Borttagen.
+2. ⛔ **Sju annonser sa "10 omdömen" — butiken visar 16.**
+   TRE olika linser rapporterade det; skeptikerna förkastade varje gång
+   (1 av 3). Huvudsessionen mätte själv:
+   `aggregateRating: {ratingValue: "5.00", reviewCount: 16}`. Linserna hade
+   rätt, skeptikerna fel. Rättat till 16 i SE SP ×4 och NO SP ×3, och
+   "alla fem stjärnor" står kvar — snittet är fortfarande 5,00.
+   **Lärdomen: ett fynd som flera oberoende linser hittar är värt att mäta
+   själv, även när skeptikerna röstar ner det.**
+
+De sju berörda annonserna raderades (noll spend, aldrig live) och byggdes om
+ur vågkonfigen.
+
+**Kvar, namngivet:**
+
+3. ⛔ **Den norska landningssidans paketpriser är oomräknade SEK-belopp
+   märkta "kr" i NOK-vyn (2 av 3).** 2-pack visar 1 919,30 (borde vara
+   1 880,20 vid 15 %), 3-pack 2 709,60 (borde vara 2 654,40 vid 20 %).
+   Enstyckspriset 1 106 NOK är rätt. Rotorsak i repot: `factory/paket.mjs`
+   sätter fastpriset som `number_decimal`, inte `money`, och Shopify Markets
+   räknar bara om `money`-fält — jämförpriset konverteras därför korrekt
+   medan paketpriset inte gör det. **Det här är varför NO inte launchades:**
+   de nio annonserna är korrekta och nämner inget pris, men de pekar alla på
+   den sidan.
+4. ⚠️ **"23% RABATT – IDAG" i CS-konceptet (2 av 3).** Butiken har ett
+   stående reapris utan slutdag, så "idag" blir falskt från dag två. Det är
+   ärvt från källan, står i copy, i bild OCH i talet. Lämnat orört: det är
+   ett erbjudandebeslut (ska rean ha en slutdag?), inte ett textfel.
+5. ⚠️ **TankGuards 36 annonser är blockerade av Meta** ("Sidan har inte
+   publicerats"). Utanför den här körningen, men upptäckt av kollateral-linsen
+   och värt Axels blick.
+
+### De tre norska CS-videorna
+
+Omdubbade no→no 2026-09-11 med butikens riktiga tal (1 106 NOK, 20 % rabatt,
+14 dagars angrerett, ingen lagerbrist). Renderade och hämtade.
+**Kvar innan de kan laddas upp:** padding + röstkoll + captionbyte med
+`no-precis.py` + OCR-verifiering — och NO-blockeraren ovan måste vara löst.
