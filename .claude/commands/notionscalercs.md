@@ -75,7 +75,11 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    → **Bäverbutiken RUTINER**. Skapa ALDRIG en ny hub när det finns en; finns
    det verkligen ingen: `node tools/notion-hub.mjs --foralder <sida-i-teamspacet> --butik <butik>`.
 3. **Minnet.** `products/<butik>/dna.md`, `batch-log.md`, `backlog.md` ska
-   finnas (HeimGuard och TankGuard har dem från `/ny-annonser`). Saknas de:
+   finnas (HeimGuard och TankGuard har dem från `/ny-annonser`). I en
+   flerproduktsbutik ligger minnet per produktnyckel:
+   `products/<butik>/<produkt>/` (TackleBay: `products/tacklebay/fiskespohallare-4-pack/`,
+   se `products/tacklebay/README.md`) — `<butik>` i resten av kommandot
+   betyder då den mappen. Saknas de:
    kör `node factory/skalning.mjs <nyckel> --dagar 90 --arv --marknad SE --json`
    och skriv dem ur den ärvda historiken med samma form som
    `products/hemvakten/dna.md` — varje siffra märkt **ÄRVD** + källa + datum.

@@ -317,7 +317,9 @@ export function troskelkoll({ spend, kop, roas, breakEvenRoas }, troskel = TROSK
 const PRESETS = [3, 7, 14, 28, 30, 90];
 
 export const INSIGHTS_FALT = [
-  'ad_id', 'ad_name', 'adset_name', 'campaign_name',
+  // campaign_id: budgetrond.mjs slår upp vilka kampanjer som bär produktens
+  // annonser (flerproduktsbutik, 2026-09-11) — namnet räcker inte där.
+  'ad_id', 'ad_name', 'adset_name', 'campaign_id', 'campaign_name',
   'spend', 'impressions', 'clicks', 'ctr', 'cpm', 'cpc', 'frequency', 'inline_link_clicks',
   'actions', 'action_values', 'purchase_roas', 'cost_per_action_type',
   'video_play_actions', 'video_thruplay_watched_actions',
