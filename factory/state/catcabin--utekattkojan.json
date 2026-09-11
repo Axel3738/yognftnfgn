@@ -49,12 +49,17 @@
     "recensioner": {
       "klar": false,
       "manuell": "Ingen Judge.me-token (env JUDGEME_CATCABIN_TOKEN) — VA:n importerar output/utekattkojan/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    },
+    "launch": {
+      "klar": true,
+      "status": "ACTIVE",
+      "publicerad": true
     }
   },
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-11T13:21:30.333Z"
+    "tid": "2026-09-11T13:23:13.465Z"
   },
-  "uppdaterad": "2026-09-11T13:21:30.333Z"
+  "uppdaterad": "2026-09-11T13:23:14.280Z"
 }

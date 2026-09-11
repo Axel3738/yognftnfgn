@@ -171,7 +171,7 @@
       "underlag": 125,
       "utfall": {
         "nb": {
-          "registrerade": 13,
+          "registrerade": 0,
           "saknade": 0,
           "perTyp": {
             "variant": 0,
@@ -179,12 +179,12 @@
             "metafält": 0,
             "sida": 0,
             "menylänk": 0,
-            "paket": 12,
+            "paket": 0,
             "policy": 0,
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
-            "temainställning": 1
+            "temainställning": 0
           },
           "granskning": "4336/4351"
         }
@@ -207,16 +207,18 @@
         "Meta-sidan skapar VA:n i Business Manager (API:t kan inte)",
         "Discord: boten kan inte skapa servrar — VA:n skapar \"CatCabin — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/catcabin.yaml skriver ut länken) och kör sen node factory/store-ready.mjs catcabin --guild <server-id>"
       ]
+    },
+    "tema-publicering": {
+      "klar": false,
+      "manuell": "VA:n publicerar temat \"CatCabin – CRO v1\": Online Store → Themes → CatCabin – CRO v1 → Publish."
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
   "arbetstemaNamn": "CatCabin – CRO v1",
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "kundvy-startsida"
-    ],
-    "tid": "2026-09-11T13:21:21.393Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-11T13:23:07.611Z"
   },
-  "uppdaterad": "2026-09-11T13:21:21.393Z"
+  "uppdaterad": "2026-09-11T13:23:14.280Z"
 }
