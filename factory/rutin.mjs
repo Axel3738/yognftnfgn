@@ -215,9 +215,12 @@ export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner 
   const namn = kommandonamn(kommando);
   // Nattvakten heter det den är, per butik — så listan i Routines-vyn går att
   // läsa utan att veta vad "notionscalercs" betyder.
-  const nattvakt = namn === 'notionscalercs' && butik;
-  const etikett = nattvakt ? `Nattvakten: ${butik}` : butik ? `${namn} — ${butik}` : namn;
-  const sessionstitel = nattvakt ? `Rutin: Nattvakten ${butik}` : `Rutin: ${etikett}`;
+  // Samma sak för butikens leveransrunda och NO-översättning (Axels beslut
+  // 2026-09-11: tre rutiner per OPS-butik, alla byggda av /notionscalercs setup).
+  const BUTIKSRUTINER = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': 'Översättning NO' };
+  const butiksrutin = butik ? BUTIKSRUTINER[namn] ?? null : null;
+  const etikett = butiksrutin ? `${butiksrutin}: ${butik}` : butik ? `${namn} — ${butik}` : namn;
+  const sessionstitel = butiksrutin ? `Rutin: ${butiksrutin} ${butik}` : `Rutin: ${etikett}`;
   const taggar = [`routine:${namn}`, butik ? `butik:${butik}` : null].filter(Boolean);
 
   return {
@@ -280,6 +283,10 @@ function lista() {
     : [];
   for (const b of butiker) kanda.push(['07:00', `/skalningskungen ${b.replace('.yaml', '')}`, 'Skalningsronden (var tredje dag, skriptet avgör)']);
   for (const b of butiker) kanda.push(['00:01', `/notionscalercs ${b.replace('.yaml', '')}`, 'Nattvakten (varje natt; briefer ons+sön, skriptet avgör)']);
+  // Butikens leverans och NO-översättning ligger efter Bäverbutikens (13:20 /
+  // 15:00) så inte alla containrar startar samtidigt.
+  for (const b of butiker) kanda.push(['13:40', `/ops-leverans ${b.replace('.yaml', '')}`, 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)']);
+  for (const b of butiker) kanda.push(['15:40', `/ops-oversatt ${b.replace('.yaml', '')}`, 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)']);
 
   for (const [tid, kmd, vad] of kanda) {
     const t = tillCron(tid);

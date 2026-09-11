@@ -12,3 +12,12 @@ market-expansion/no/video-batches/fran-meta/
 
 # Sessionens tillfälliga arbetsyta (nedladdad media, QA-frames) — inte källkod
 .scratch/
+
+# OPS-butikernas översättningsbatchar: bara JSON committas, media dör med containern
+market-expansion/ops/**/*.mp4
+market-expansion/ops/**/*.mov
+market-expansion/ops/**/*.jpg
+market-expansion/ops/**/*.jpeg
+market-expansion/ops/**/*.png
+market-expansion/ops/**/*.srt
+factory/output/*/leverans-*/
