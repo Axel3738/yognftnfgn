@@ -1,0 +1,37 @@
+[
+  {
+    "namn": "TackleBayRod_PD_42_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/TackleBayRod_PD_42_H1/brief.md"
+  },
+  {
+    "namn": "TackleBayRod_PD_43_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/TackleBayRod_PD_43_1/brief.md"
+  },
+  {
+    "namn": "TackleBayRod_PD_44_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/TackleBayRod_PD_44_1/brief.md"
+  },
+  {
+    "namn": "TackleBayRod_PD_45_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/TackleBayRod_PD_45_H1/brief.md"
+  },
+  {
+    "namn": "TackleBayRod_PD_46_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/TackleBayRod_PD_46_H1/brief.md"
+  },
+  {
+    "namn": "TackleBayRod_SO_8_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/TackleBayRod_SO_8_1/brief.md"
+  },
+  {
+    "namn": "TackleBayRod_CS_7_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/TackleBayRod_CS_7_1/brief.md"
+  }
+]
