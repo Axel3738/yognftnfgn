@@ -79,9 +79,82 @@
     "kollektion": {
       "klar": true,
       "hoppadOver": "enproduktsbutik"
+    },
+    "startsida": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193723924848",
+      "filer": [
+        "templates/index.json",
+        "sections/footer-group.json"
+      ],
+      "sektioner": [
+        "hero",
+        "ms_usp",
+        "ms_marquee",
+        "produkt",
+        "berattelse",
+        "galleri",
+        "galleri_markning",
+        "statement",
+        "omdomen",
+        "trygghet",
+        "ms_faq",
+        "ms_guarantee"
+      ],
+      "bilder": {
+        "hero": "shopify://shop_images/kattkoja-hero_dca50480-4427-4160-80d9-3481eb0905da.jpg",
+        "trygghet": "shopify://shop_images/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg",
+        "galleri": [
+          "shopify://shop_images/kattkoja-regn.jpg",
+          "shopify://shop_images/kattkoja-sno.jpg",
+          "shopify://shop_images/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
+        ]
+      },
+      "produkter": [
+        "utekattkojan: ACTIVE"
+      ]
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "meny": {
+      "klar": true,
+      "huvudmeny": {
+        "handle": "main-menu",
+        "orord": false,
+        "rader": 4
+      },
+      "sidfot": {
+        "handle": "footer",
+        "orord": false,
+        "rader": 5
+      }
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 3,
+      "orort": false,
+      "skapadeZoner": [
+        "Sverige",
+        "EU (Europeiska Unionen)",
+        "Internationell"
+      ],
+      "borttagnaZoner": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "huvudmarknad": {
+      "klar": false,
+      "manuell": "Butikens valuta är PHP, konfigen säger SEK — ändras i Shopify-admin."
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
   "arbetstemaNamn": "CatCabin – CRO v1",
-  "uppdaterad": "2026-09-11T02:33:07.037Z"
+  "uppdaterad": "2026-09-11T02:33:25.143Z"
 }
