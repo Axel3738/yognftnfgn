@@ -43,8 +43,7 @@
         "sections/opf-faq.liquid",
         "assets/ms-paket.js",
         "sections/header-group.json",
-        "snippets/ms-head.liquid",
-        "snippets/ms-paket.liquid"
+        "snippets/ms-head.liquid"
       ],
       "produktmall": "verifierad",
       "upsell": null
@@ -198,5 +197,5 @@
     ],
     "tid": "2026-09-11T02:33:48.756Z"
   },
-  "uppdaterad": "2026-09-11T02:33:48.756Z"
+  "uppdaterad": "2026-09-11T02:41:28.881Z"
 }
