@@ -1,0 +1,9 @@
+[
+  { "namn": "AdventLaneRacing_PD_2_H2", "typ": "video", "brief": "video-ads-briefs/AdventLaneRacing_PD_2_H2/brief.md" },
+  { "namn": "AdventLaneRacing_MR_1_H1", "typ": "video", "brief": "video-ads-briefs/AdventLaneRacing_MR_1_H1/brief.md" },
+  { "namn": "AdventLaneRacing_SO_1_1",  "typ": "bild",  "brief": "image-ads-briefs/AdventLaneRacing_SO_1_1/brief.md" },
+  { "namn": "AdventLaneRacing_SY_1_H1", "typ": "video", "brief": "video-ads-briefs/AdventLaneRacing_SY_1_H1/brief.md" },
+  { "namn": "AdventLaneRacing_PD_8_H1", "typ": "video", "brief": "video-ads-briefs/AdventLaneRacing_PD_8_H1/brief.md" },
+  { "namn": "AdventLaneRacing_FF_1_1",  "typ": "bild",  "brief": "image-ads-briefs/AdventLaneRacing_FF_1_1/brief.md" },
+  { "namn": "AdventLaneRacing_EF_1_1",  "typ": "bild",  "brief": "image-ads-briefs/AdventLaneRacing_EF_1_1/brief.md" }
+]
