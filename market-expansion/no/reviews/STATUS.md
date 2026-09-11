@@ -3,6 +3,28 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-11 — 0 nya, alla 27 produkter klara
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY: samma 26 mappar som igår,
+inga nya produkter. Alla 27 handles verifierade mot butiken (181 produkter
+i feeden), alla har synliga recensioner, spärren hoppade över allt. Bygget
+gav samma 228 rader. Gravsteinspenn och Medisinboks oförändrade — fortsatt
+överhoppade.
+
+⚠️ **Discord-rapporten skrivs numera på ENGELSKA** (Axels order 2026-09-05,
+in i kommandofilen 2026-09-11). `notify-discord.mjs` stoppar svensk text med
+exit 3, eller översätter den om `ANTHROPIC_NYCKEL` finns. Skriv engelska
+från början.
+
+**Datumen är fortfarande inte rättade:** 23 produkter / 204 recensioner bär
+importdagens datum. CSV-importen i Judge.me-appen är inte gjord.
+
+⚠️ Den svenska huvudmappen i Drive listar nu helt andra mappar än tidigare
+(2026-09-11: Utekattkoja, Taköverdrag Husvagn, Stegstöd, Staketstolpslagare
+— inga av de 27 produkterna). Produkternas `drive_sheet`-id:n i
+`sources.json` fungerar ändå. Nya produkter kan behöva letas i
+`WINNERS`/`LOSERS` eller i MAKE TO NORWAY-mappens egna undermappar.
+
 ## Läget 2026-09-10 — 0 nya, alla 27 produkter klara
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY: samma 26 mappar som igår,
