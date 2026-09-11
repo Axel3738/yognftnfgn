@@ -135,13 +135,13 @@ branding:
     cta: "Solid bärnstensgul knapp med vit text. Lugna verb — Lägg i varukorgen, Se kojan. Aldrig SISTA CHANSEN, ingen nedräkningstimer."
     trust: "Diskreta rader med mossgrön bock på varm crème — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
     spacing: "Luftigt, max 62 tecken per rad, generösa sektionsavstånd. Sidan ska kännas som en lugn höstkväll."
-    logo: "Rund emblem, kolgrå disk, kojan med tänd dörr i bärnsten ovanför ordmärket CATCABIN i versaler. Fungerar i en färg — dörren blir då bara en öppning."
+    logo: "Rund, kolgrå disk, kojan STOR med tänd dörr i bärnsten, ordmärket CATCABIN litet under (variant C, vald av Axel 2026-09-11). Fungerar i en färg — dörren blir då bara en öppning."
     favicon: "Samma kolgrå disk med bara kojan och den tända dörren."
   # Loggan och faviconen genererade 2026-09-11 med
   # node factory/logga-generera.mjs factory/butiker/catcabin.yaml --ut factory/output/catcabin --tagline "FOR OUTDOOR CATS" --motiv koja
-  # ⚠️ Variant A sitter PROVISORISKT tills Axel valt (a/b/c) — bytet är
-  # `--igen logga` + en rad i factory/LOGGA-FEEDBACK.md.
-  logga: "output/catcabin/catcabin-logga-a.png"
+  # Variant C VALD av Axel 2026-09-11 ("most neutral"), loggad i
+  # factory/LOGGA-FEEDBACK.md. A satt provisoriskt under bygget.
+  logga: "output/catcabin/catcabin-logga-c.png"
   favicon: "output/catcabin/catcabin-favicon.png"
 
 # ---------------------------------------------------------------------------

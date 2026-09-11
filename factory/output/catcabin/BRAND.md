@@ -131,10 +131,9 @@ motivet upplevdes stilla) styr valet av kompositioner:
   i två bokstäver) valdes aldrig och byts ut när brandet har ett eget motiv.
 - Favicon: kojan ensam på kolgrå disk.
 
-Axel väljer (a/b/c). Valet loggas med
-`node factory/logga-feedback.mjs catcabin <a|b|c> --motiv koja --kommentar "…"`.
-Tills han svarat sitter variant **A** provisoriskt i butiken — bytet är
-ett API-anrop (`--igen logga`).
+**VALD av Axel 2026-09-11: C** ("C logo because it's most neutral than the
+two"). Loggad i `factory/LOGGA-FEEDBACK.md` (motiv koja). Variant A satt
+provisoriskt under bygget och byttes med `--igen logga`.
 
 ## Demot (MP4-regeln)
 
