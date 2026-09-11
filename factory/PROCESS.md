@@ -232,6 +232,71 @@ commission-kopplingen) använder för att skilja produkter åt; brandet hör
 hemma i kampanjnamnet. Break-even skrivs per produkt. `factory/FLERPRODUKT.md`
 punkt 1–4 är avbockade.
 
+⚠️ **Menyregeln är omvänd sedan 2026-09-11** (AdventLane gick från en kalender
+till tolv): "en rad per produkt" håller till fyra, inte till tolv. En meny med
+tolv produktrader är ingen meny, den är en andra katalog. `produkt.i_meny`
+styr: nämner NÅGON produktfil flaggan gäller bara de som står `true` — noll
+produktrader är ett giltigt val. Nämner ingen den är alla med som förr.
+Kollektionsraden avgörs alltid av HELA sortimentet, aldrig av menyurvalet.
+
+---
+
+## Gåvoguiden — när sortimentet blir för stort för kunden (2026-09-11)
+
+Axels beställning: *"en liten quiz ovanför katalogen … vem ska jag köpa till?
+… och sen en knapp för att göra om det för en annan person."*
+
+Med tolv kalendrar är kundens problem inte att hitta butiken utan att välja i
+den. Hon vet inte vilken kalender som passar sin brorson — hon vet att han är
+sju och gillar dinosaurier. Guiden översätter det hon vet till en produkt.
+
+**Var den ligger:** `startsida.mjs` lägger sektionen `gavoguide` mellan
+marquee-raden och `sortiment`, alltså direkt ovanför katalogen. Bara i
+nischbutik — en enproduktsbutik har inget att välja mellan.
+
+**Datamodellen, och varför den ser ut så:**
+- Produkterna kommer ur KOLLEKTIONEN, aldrig ur en lista i koden. Varje
+  produkt bär sina egna taggar i metafältet `opf.quiz` (`metafalt.kvizFalt`
+  ur produktfilens `quiz:`-block). En ny produkt med fältet är med i guiden
+  utan att en rad kod ändras; en produkt utan fältet syns i butiken men är
+  osynlig för guiden — hellre utanför än matchad på gissade taggar.
+- Frågorna ligger som BLOCK i sektionen, inte i koden. Två skäl: Axel kan
+  ändra dem i temaredigeraren, och Shopify översätter blocktexter som vanligt
+  JSON-mallsinnehåll. Skrivna i sektionsfilen hade de stått kvar på svenska
+  på `/nb` utan att någon märkt det.
+- **Etikett och tagg ligger i VAR SITT fält** (`svar` respektive `taggar`,
+  rad för rad). Låg de i samma sträng skulle översättningssteget erbjuda hela
+  raden för översättning, och en översatt tagg matchar ingen produkt — guiden
+  hade svarat fel på `/nb` utan ett enda felmeddelande. `taggar` och `visa_om`
+  står därför i `oversattning.HOPPA`, och ett test läser det som faktiskt
+  skickas till översättning och fäller varje maskintagg som slinker med.
+- Strukturen (vem · ålder · budget) är fabrikens default i `startsida.mjs`.
+  INTRESSEFRÅGAN är butikens egen och står i butiksfilen — den handlar om
+  sortimentet, och en generisk default hade gett kunden alternativ som ingen
+  produkt bär.
+
+**Poängmodellen ligger i `factory/gavoguide.mjs`, inte i temat.** Samma
+källkod bakas in i `assets/ms-gavoguide.js` med `export` strippat, så det
+finns ingen kopia som kan glida isär. Skälet är att två av reglerna är
+LÖFTEN till kunden och måste gå att bevisa:
+
+| Regel | Vad den gör |
+|---|---|
+| **Spärrar går före poäng** | En alkoholtemakalender når ALDRIG ett barn eller en tonåring; smådelar når aldrig den som svarat "under tre år". Uttryckta som minuspoäng hade de kunnat vägas upp av tillräckligt många matchande intressen — och då står en whiskykalender som julklapp till en sjuåring. |
+| **Prisfiltret är mjukt** | Det släpps hellre än att lämna kunden utan svar, men säger då varför. Ett tomt resultat är ett trasigt löfte. |
+
+`factory/test/gavoguide.test.mjs` (22 tester) testar båda spärrarna i värsta
+tänkbara fall, att modellen når webbläsaren, att inga maskintaggar går ut i
+översättningen — och att varje sektion fabriken äger har balanserade
+Liquid-taggar. Den sista kom av att guiden saknade sitt yttersta `endif` och
+Shopify svarade *"'if' tag was never closed"* först vid uppladdning.
+
+**Kunden kan matcha flera personer i rad:** knappen "Gör om för en annan
+person" nollställer svaren, och tidigare träffar ligger kvar som en rad under
+guiden. Köpknappen lägger i varukorgen med AJAX och uppdaterar Dawns
+korgbubbla, så kunden stannar kvar i guiden i stället för att kastas till
+kassan efter varje person.
+
 ---
 
 ## Nischbutik som startar med EN produkt (AdventLane 2026-09-10)
