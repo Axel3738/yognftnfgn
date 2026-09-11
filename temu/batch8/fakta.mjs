@@ -40,6 +40,9 @@ export const FAKTA = {
     obs: 'Måtten står på engelska/metriskt i källbilden — ingen text behöver bort.',
     varning: 'Roterande verktyg. Använd aldrig med slagborr eller slagfunktion.',
   },
+  // Axels besked 2026-09-11: "Dom 'utetofflorna' ser ganska goa ut att ha
+  // inomhus … du får anpassa dig och följa det." Temus egen titel säger också
+  // "vinter INOMHUStofflor för hemmet". Säljs alltså som inomhustoffel.
   tofflor: {
     sku: 'TEMU-B8-TOFFLOR',
     kategori: 'gid://shopify/TaxonomyCategory/aa-8-7',         // Apparel & Accessories > Shoes > Slippers
@@ -47,9 +50,12 @@ export const FAKTA = {
     // CWD: "size:40-47" + "Khaki, black"
     latt: {
       storlekar: [40, 41, 42, 43, 44, 45, 46, 47], farger: ['Khaki', 'Svart'],
-      typ: 'foppatoffel med plyschfoder och hälrem', monster: 'kamouflage',
+      typ: 'fodrad inomhustoffel i foppatoffelmodell med plyschfoder och hälrem', monster: 'kamouflage',
     },
-    obs: 'Båda färgerna är kamouflagetryck — khaki i ljusa toner, svart i mörka.',
+    obs: 'Båda färgerna är kamouflagetryck — khaki i ljusa toner, svart i mörka. '
+       + 'Säljs som INOMHUStoffel (Axels besked 2026-09-11) — skriv aldrig copy som '
+       + 'lovar att de håller för väta, snö eller att gå ut i. Hälremmen och den '
+       + 'grova sulan får nämnas som "tål att du går ut och hämtar veden", inget mer.',
     varning: null,
   },
   solcellslampa: {
@@ -71,6 +77,8 @@ export const FAKTA = {
     latt: { totalLangdCm: 100, borsthuvudCm: 25, viktG: 335, skaft: 'rostfritt stål, teleskop', borstar: 2, farg: 'grå mikrofiber' },
     obs: 'Kinesisk text på bilden (双刷头拖把灰色 / 小号不锈钢杆 335g / 全长100CM) måste bort. '
        + 'Skaftet är 100 cm — påstå ALDRIG att den når taket på en stor bil eller husbil.',
+    baraSE: 'Axels besked 2026-09-11: CWD svarade OVERSIZE på Norge — "vi kan inte sälja den '
+       + 'i norge helt enkelt". Skapas bara i bäverbutiken.se.',
     varning: null,
   },
   fonsterlarm: {
