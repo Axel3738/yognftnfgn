@@ -15,7 +15,7 @@
 //
 // Noll beroenden: rå fetch mot Messages API, som resten av repo-roten.
 
-import { anthropicNyckel, NYCKEL_SAKNAS } from './anthropic-nyckel.mjs';
+import { anthropicNyckel, anthropicHeaders, NYCKEL_SAKNAS } from './anthropic-nyckel.mjs';
 
 const MODELL = process.env.DISCORD_OVERSATT_MODELL || 'claude-sonnet-5';
 
@@ -83,11 +83,7 @@ export async function oversattTillEngelska(text, { nyckel = anthropicNyckel() } 
   if (!nyckel) throw new Error(NYCKEL_SAKNAS);
   const svar = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: {
-      'x-api-key': nyckel,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json',
-    },
+    headers: anthropicHeaders(nyckel),
     body: JSON.stringify({
       model: MODELL,
       max_tokens: 4000,
