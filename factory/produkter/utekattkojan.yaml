@@ -243,6 +243,16 @@ kalla:
   annonsprefix: "Utekattkoja"
   kampanj_id: "120250147309170291"
   kampanj: "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09"
+  # NO-kampanjen heter något HELT annat än den svenska (produktnamnet är
+  # översatt), så mönstret måste stå här. Läst ur Magiborsten NO 2026-09-11:
+  # kampanj 120252183459760233 "Isolert Utekattehus NO | BE-ROAS 1,62 |
+  # 2026-09-11", 11 annonser ACTIVE med prefix "Utekattehus_NO_".
+  # ⚠️ Utan fältet föll kallannonser.mjs förr tillbaka på DryTreks mönster
+  # (gamasj|damask) och läste FEL produkts kampanj — 16 rader, 0 ACTIVE,
+  # och den norska halvan såg tom ut. Fallbacken är borttagen 2026-09-11.
+  no_kampanjmonster: "Isolert Utekattehus"
+  no_annonsprefix: "Utekattehus"
+  no_kampanj_id: "120252183459760233"
   # Inga transkript i market-expansion/ ännu (grep kattkoja/utekatt 2026-09-11: 0 träffar).
   srt_slug:
     - ""

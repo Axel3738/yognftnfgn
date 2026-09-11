@@ -158,16 +158,47 @@ if (process.argv[1] && process.argv[1].endsWith('kallannonser.mjs')) {
 
   // Kampanjmönstret per marknad. SE slås upp på det kända kampanj-id:t när
   // produktfilen bär ett; annars på prefixet. NO har egna produktnamn.
+  //
+  // ⚠️ NO har INGEN fallback, och ska aldrig få en igen. Fram till 2026-09-11
+  // föll fältet tillbaka på 'gamasj|damask' — DryTreks damaskkampanj. Ingen
+  // produktfil satte fältet, så VARJE körning läste DryTreks NO-kampanj som
+  // om den vore produktens egen: CatCabin fick "16 annonser, 0 ACTIVE" och
+  // den norska halvan såg tom ut, medan den riktiga kampanjen (Isolert
+  // Utekattehus NO, 11 ACTIVE) aldrig ens lästes. Ett tyst fel på en annan
+  // produkts data är värre än ett stopp — därför stoppar det här.
+  if (p.kalla?.no_kampanjmonster === undefined || p.kalla?.no_kampanjmonster === null) {
+    throw new Error(
+      `produkter/${produktId}.yaml saknar kalla.no_kampanjmonster.\n` +
+        `Den norska kampanjen heter sällan som den svenska (produktnamnet är översatt),\n` +
+        `och utan mönstret går den inte att hitta. Slå upp den i Magiborsten NO\n` +
+        `(${KONTON.NO.id}) och skriv in den del av kampanjnamnet som är unik, t.ex.\n` +
+        `  no_kampanjmonster: "Isolert Utekattehus"\n` +
+        `Finns det bevisligen ingen norsk kampanj: sätt fältet till "" och kör igen —\n` +
+        `då läses NO som en äkta nolla i stället för som en gissning.`
+    );
+  }
+  // Tom sträng = "det finns bevisligen ingen norsk kampanj". Den får ALDRIG
+  // bli new RegExp('') — det mönstret matchar varje kampanjnamn i kontot och
+  // hade dragit in hela Magiborsten NO som om allt vore produktens.
+  const ingenNo = String(p.kalla.no_kampanjmonster).trim() === '';
   const MONSTER = {
     SE: new RegExp(p.kalla?.kampanj ? p.kalla.kampanj.split('|')[0].trim() : prefix, 'i'),
-    NO: new RegExp((p.kalla?.no_kampanjmonster ?? 'gamasj|damask'), 'i'),
+    NO: ingenNo ? null : new RegExp(p.kalla.no_kampanjmonster, 'i'),
   };
 
   console.log(`Källprefix SE: ${prefix}_ · Mål: ${MALKONTO.namn} ${MALKONTO.id}`);
-  console.log(`Kampanjmönster: SE /${MONSTER.SE.source}/i · NO /${MONSTER.NO.source}/i\n`);
+  console.log(
+    `Kampanjmönster: SE /${MONSTER.SE.source}/i · ` +
+      `NO ${MONSTER.NO ? `/${MONSTER.NO.source}/i` : '— produktfilen säger att ingen norsk kampanj finns'}\n`
+  );
 
   const resultat = {};
   for (const [marknad, konto] of Object.entries(KONTON)) {
+    if (!MONSTER[marknad]) {
+      resultat[marknad] = { konto, annonser: [], ingen_kampanj: true };
+      console.log(`${marknad} — ${konto.namn} (${konto.id}): ingen källkampanj (kalla.no_kampanjmonster är tom)`);
+      continue;
+    }
     const rader = await lasKonto(konto.id, MONSTER[marknad]);
     resultat[marknad] = { konto, annonser: rader };
     const med = rader.filter((r) => r.med);
