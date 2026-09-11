@@ -48,11 +48,61 @@ function insikt(rad) {
 
 // ------------------------------------------------------------------ hämtning
 
+/**
+ * Vilka kampanjer i det delade kontot som är BUTIKENS. Ren funktion.
+ *
+ * Två vägar in, samma regel som skalning.mjs använder på annonsnivån:
+ *   1. kampanjnamnet börjar med produktens prefix (TANKGUARD_SE_…), eller
+ *   2. kampanjen bär minst en annons vars namn börjar med prefixet.
+ * Väg 2 finns för flerproduktsbutikerna: TackleBays kampanj heter
+ * `TACKLEBAY_SE_Spöhållaren` (brandet, FLERPRODUKT.md regel 1) medan
+ * annonserna heter `TackleBayRod_…` (produkten). Mätt 2026-09-11: utan väg 2
+ * fann ronden 0 av 16 kampanjer och gjorde ingenting, varje natt, tyst.
+ * Kampanjer som bara matchar via annonserna rapporteras separat så det syns.
+ *
+ * @param allaKampanjer  kampanjobjekt {id, name, …} ur kontot
+ * @param prefix         butikens prefix (register.prefixFor)
+ * @param annonsrader    insightsrader på annonsnivå som REDAN är filtrerade
+ *                       på produktens prefix (skalning.filtreraPaPrefix) —
+ *                       bara `campaign_id` läses
+ */
+export function valjKampanjer(allaKampanjer, prefix, annonsrader = []) {
+  const antalViaAnnons = new Map();
+  for (const r of annonsrader) {
+    const id = r?.campaign_id;
+    if (id === undefined || id === null || id === '') continue;
+    antalViaAnnons.set(String(id), (antalViaAnnons.get(String(id)) ?? 0) + 1);
+  }
+  const butikens = [];
+  const slangda = [];
+  const baraViaAnnons = [];
+  for (const k of allaKampanjer ?? []) {
+    const viaNamn = tillhorButiken(k?.name, prefix);
+    const n = antalViaAnnons.get(String(k?.id)) ?? 0;
+    if (viaNamn || n > 0) {
+      butikens.push(k);
+      if (!viaNamn) baraViaAnnons.push(`${k.name} (${n} annons${n === 1 ? '' : 'er'} med prefixet)`);
+    } else {
+      slangda.push(k?.name);
+    }
+  }
+  return { butikens, slangda: slangda.sort(), baraViaAnnons: baraViaAnnons.sort() };
+}
+
 async function hamtaUnderlag(butik, kontoId, marknad) {
   const prefix = butik.prefix;
+  // Ad-nivån först: 14d klassificering (ANALYSMETOD steg 2–4) + 7d för trenden.
+  // Raderna är redan prefixfiltrerade (skalning.filtreraPaPrefix) och bär
+  // campaign_id — det är så flerproduktsbutikens kampanj hittas nedan.
+  const h14 = await hamtaButikensAnnonser(butik, { dagar: 14, marknad });
+  const rapport14 = byggRapport(butik, h14);
+  const h7 = await hamtaButikensAnnonser(butik, { dagar: 7, marknad });
+  const annonser7d = Object.fromEntries(h7.rader.map((r) => [String(r.ad_id), { amount_spent: r.amount_spent, kop: r.kop, cpa: r.cpa }]));
+
   const allaKampanjer = await alla(`act_${kontoId}/campaigns`, { fields: KAMPANJFALT });
-  const butikens = allaKampanjer.filter((k) => tillhorButiken(k.name, prefix));
-  const slangda = allaKampanjer.filter((k) => !tillhorButiken(k.name, prefix)).map((k) => k.name).sort();
+  const val = valjKampanjer(allaKampanjer, prefix, [...(h14.behall ?? []), ...(h7.behall ?? [])]);
+  const butikens = val.butikens;
+  const slangda = val.slangda;
   // Marknadsfiltret: TANKGUARD_SE_… och TANKGUARD_NO_… döms mot olika priser
   // (skalning.mjs 2026-09-10). Samma filter på kampanj- och annonsnivån.
   const m = filtreraPaMarknad(butikens.map((k) => ({ ...k, campaign_name: k.name })), marknad);
@@ -83,14 +133,8 @@ async function hamtaUnderlag(butik, kontoId, marknad) {
     }
   }
 
-  // Ad-nivån: 14d klassificering (ANALYSMETOD steg 2–4) + 7d för trenden.
-  const h14 = await hamtaButikensAnnonser(butik, { dagar: 14, marknad });
-  const rapport14 = byggRapport(butik, h14);
-  const h7 = await hamtaButikensAnnonser(butik, { dagar: 7, marknad });
-  const annonser7d = Object.fromEntries(h7.rader.map((r) => [String(r.ad_id), { amount_spent: r.amount_spent, kop: r.kop, cpa: r.cpa }]));
-
   return {
-    kampanjer, slangda, annanMarknad, totaltKampanjer: allaKampanjer.length, adsets, insikter, dygn,
+    kampanjer, slangda, annanMarknad, baraViaAnnons: val.baraViaAnnons, totaltKampanjer: allaKampanjer.length, adsets, insikter, dygn,
     annonser: rapport14.rader, annonser7d,
     annonserTotalt: h14.totalt, annonserSlangda: h14.slangda, period14: h14.period,
     totalVinst: rapport14.totalVinstGeneros,
@@ -211,8 +255,9 @@ async function huvud() {
   skriv(`\nKampanjfiltret: ${u.kampanjer.length} av ${u.totaltKampanjer} kampanjer i kontot är butikens på marknad ${marknad}; ${u.slangda.length} tillhör andra butiker, ${u.annanMarknad.length} annan marknad.`);
   if (u.slangda.length) skriv(`  Andra butiker: ${u.slangda.join(' · ')}`);
   if (u.annanMarknad.length) skriv(`  Annan marknad (körs med --marknad): ${u.annanMarknad.join(' · ')}`);
+  if (u.baraViaAnnons.length) skriv(`  Via annonserna (kampanjnamnet bär inte prefixet, annonserna gör det): ${u.baraViaAnnons.join(' · ')}`);
   if (!u.kampanjer.length) {
-    skriv(`\nInga kampanjer med prefixet ${butik.prefix.join(' / ')} på marknad ${marknad} i kontot. Ingen dom, inga ändringar — kontrollera att kampanjen är byggd och namnet börjar med prefixet.`);
+    skriv(`\nInga kampanjer med prefixet ${butik.prefix.join(' / ')} på marknad ${marknad} i kontot — varken i kampanjnamnet eller på annonserna. Ingen dom, inga ändringar — kontrollera att kampanjen är byggd och att annonserna bär prefixet.`);
     if (json) console.log(JSON.stringify({ butik: post.nyckel, idag, torr, kampanjer: [], plan: { genomfor: [], vantar: [] }, resultat: [] }, null, 2));
     return;
   }

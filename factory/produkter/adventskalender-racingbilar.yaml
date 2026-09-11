@@ -26,11 +26,12 @@ ekonomi:
   # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
   # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset.
   moms_antagen: false
-  # ⚠️ HÄRLEDD, inte kvitterad: källkampanjens namn bär "BE ROAS 1.62" och
-  # docs/temu-launch-flow.md säger BE-ROAS = pris / (pris − inköp) ⇒
-  # 499 − 499/1,62 = 191 kr. Bättre än TackleBays 40 %-gissning, men Axel
-  # bekräftar mot Temu-kvittot innan talet får döma annonser.
-  inkopskostnad: 191
+  # KVITTERAT av Axel 2026-09-11: COGS 142,27 kr per styck + 3 EUR tull per
+  # ORDER. Tullen omräknad med ECB-kursen 11,1995 (2026-09-10) = 33,60 kr och
+  # ligger som övrig rörlig kostnad per order (ekonomi.mjs). Tidigare stod här
+  # 191 kr, härlett ur källkampanjens namn — det var för högt.
+  inkopskostnad: 142.27
+  ovriga_kostnader_per_order: 33.6
   pris: 499
   jamforpris: 649
 

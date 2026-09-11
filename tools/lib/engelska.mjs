@@ -83,7 +83,7 @@ export async function oversattTillEngelska(text, { nyckel = anthropicNyckel() } 
   if (!nyckel) throw new Error(NYCKEL_SAKNAS);
   const svar = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: { ...anthropicHeaders(nyckel), 'content-type': 'application/json' },
+    headers: anthropicHeaders(nyckel),
     body: JSON.stringify({
       model: MODELL,
       max_tokens: 4000,
@@ -93,9 +93,9 @@ export async function oversattTillEngelska(text, { nyckel = anthropicNyckel() } 
     }),
   });
   if (!svar.ok) {
-    const text = await svar.text();
-    if (svar.status === 400 && /anthropic-workspace-id/.test(text)) throw new Error(`Messages API svarade 400: ${WORKSPACE_SAKNAS}`);
-    throw new Error(`Messages API svarade ${svar.status}: ${text.slice(0, 200)}`);
+    const feltext = await svar.text();
+    if (svar.status === 400 && /anthropic-workspace-id/.test(feltext)) throw new Error(`Messages API svarade 400: ${WORKSPACE_SAKNAS}`);
+    throw new Error(`Messages API svarade ${svar.status}: ${feltext.slice(0, 200)}`);
   }
   const kropp = await svar.json();
   if (kropp.stop_reason === 'refusal') throw new Error('modellen avböjde översättningen');
