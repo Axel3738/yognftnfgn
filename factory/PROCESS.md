@@ -318,6 +318,52 @@ Mätningar från samma bygge:
 
 ---
 
+## Enproduktsbutik med adressen i prompten (CatCabin 2026-09-11)
+
+Första bygget där checklistans nya avsnitt 3–4 användes fullt ut: fyra rader
+med adressens suffix i miljön (`…_ras1t2_2x`) och adressen i prompten, inget
+butiks-id. Steg 0 hittade nycklarna ur adressen och svarade "Connected:
+ras1t2-2x.myshopify.com ✓" med alla 16 scopes. Bygget gick steg 1–16 rakt
+igenom på första körningen. Mätningar:
+
+- **Lösenordet slogs upp på fel nyckel.** `anslut` hittade tokenen via
+  adressens suffix men storefront-lösenordet via butiks-id:t (`catcabin`),
+  som inte fanns — så det föll tillbaka på den allmänna raden, TackleBays.
+  Kundvyn blev röd med "Lösenordet avvisades (HTTP 200, location saknas)"
+  fast rätt lösenord låg i miljön. Rättat i `token.mjs` (suffixet ur
+  adressen först) med regressionstest. Felraden var vilseledande: den
+  pekade på lösenordet, inte på uppslaget.
+- **Judge.mes `reviews_for_widget` svarar utan text och namn** (mätt
+  2026-09-11 mot Bäverbutiken): JSON-svaret bär `rating`, `title` och
+  `created_at`, men `body` och `reviewer` är `null` och nyckeln `html`
+  saknas. Texterna och namnen ligger förrenderade i produktsidans HTML under
+  `jdgm-rev-widg` (`jdgm-rev__author`, `jdgm-rev__body`,
+  `jdgm-rev__timestamp data-content`). Läs båda: JSON för datum, HTML för
+  text. Källans tio recensioner låg återigen inom elva sekunder (API-import
+  dagen efter produkten skapades) — samma regel som AdventLane.
+- **Nunito som variabel TTF räcker för sharp.** `Nunito[wght].ttf` från
+  google/fonts (raw.githubusercontent.com; `static/Nunito-Bold.ttf` finns
+  inte i repot, 14-byte "404") registreras av fontconfig med style=Bold och
+  librsvg plockar vikten 700 ur den. Poppins Bold ligger fortfarande som
+  statisk fil.
+- **Nytt loggmotiv `koja` + motiv-ledd variant c** (se "Loggmotivet är per
+  brand" nedan). Loggfeedbacken före genereringen: a 0, b 0, c 1.
+- **Första varma paletten.** De fem tidigare butikerna är mörkblå eller
+  mörkgröna; CatCabin är kolgrå + crème + bärnsten. Brandet får inte
+  se ut som sina syskon — kunden ska inte känna igen "fabriken".
+- **Subagentens marquee-rad "Skickas från Sverige" ströks av huvudsessionen.**
+  Leveransen går på Temu-ledet (5–10 arbetsdagar), och påståendet går inte
+  att belägga. AdventLanes startsida bär samma rad — den bör ses över.
+  Huvudsessionen granskar varje faktapåstående i copyn, inte bara
+  tre-frågorstestet.
+- **Källkampanjen läses per annons innan vinkeln väljs.** 16 annonser,
+  2 760 kr / 9 köp på två dygn: bara `Utekattkoja_PD_2_H1` (1 453 kr, 4 köp)
+  låg över domgränsen 300 kr / 3 köp (CLAUDE.md regel 3). Problem-rubriken
+  på produktsidan är därför ordagrant den annonsens vinkel. `creative{body}`
+  var tomt på alla 16 — vinkelkoden i namnet är det som går att läsa.
+
+---
+
 ## Varukorgen — löst 2026-09-09
 
 **Symptom** (Axel, HeimGuard + TankGuard, båda live): första gången kunden
