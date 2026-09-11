@@ -128,6 +128,14 @@ kalla:
   produkt_handle: "adventskalender-fiskedrag-24-drag-bakom-24-luckor"
   produkt_url: "https://baverbutiken.se/products/adventskalender-fiskedrag-24-drag-bakom-24-luckor"
   annonskonto: "1867947880635861"
+  # ⚠️ Mätt 2026-09-11 (/ny-annonser fiskekalendern): INGEN källannons finns
+  # för den här produkten i något av källkontona. MagiBorsten SE (84
+  # kampanjer) och Magiborsten NO (37) har vardera 16 "Adventskalender_"-
+  # annonser, men alla länkar till RACINGBILS-kalendern
+  # (adventskalender-racingbilar-24-bilar-bakom-24-luckor resp.
+  # adventskalender-racerbiler-24-biler-bak-24-luker) — en annan produkt.
+  # Prefixet lämnas tomt med flit: ett gissat prefix skulle kopiera fel
+  # produkts annonser. /ny-annonser stoppar här tills Axel pekar på källor.
   annonsprefix: ""
   kampanj_id: ""
   kampanj: ""
