@@ -1,0 +1,66 @@
+{
+  "brand": "HeimGuard",
+  "butik": "hemvakten",
+  "datum": "2026-09-11",
+  "lage": "brief",
+  "siffror": {
+    "spend_7d": 4207,
+    "kop_7d": 5,
+    "roas_7d": 1.65,
+    "briefs_nya": 7
+  },
+  "gjort": [
+    "Budget: HEIMGUARD_SE campaign 1 000 → 700 SEK/day (3-day margin 6.6 % < 16 % floor; ROAS 1.65 vs break-even 1.49). Read back, logged.",
+    "Cold start: 0 of 38 ads passed the data gate (300 SEK + 3 purchases). No verdicts, nothing paused.",
+    "7 new briefs in the Surveillance Camera hub as Draft: 4 variants of proven ads, 3 new concepts. Copy A/B: 4 Fable, 3 Sonnet.",
+    "dna.md, batch-log.md, backlog.md updated and pushed."
+  ],
+  "briefer": [
+    {
+      "namn": "HeimGuard_SP_17_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_SP_17_H1-3d7270ab908c8175b9bcf62e19b5d1b3"
+    },
+    {
+      "namn": "HeimGuard_SP_17_H2",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_SP_17_H2-3d7270ab908c81c99482f22dd36b79e3"
+    },
+    {
+      "namn": "HeimGuard_SP_18_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/HeimGuard_SP_18_1-3d7270ab908c818cb1cff809b35c852c"
+    },
+    {
+      "namn": "HeimGuard_CS_11_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_CS_11_H1-3d7270ab908c81258754fb507c6143e4"
+    },
+    {
+      "namn": "HeimGuard_TR_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_TR_1_H1-3d7270ab908c817f9f99c9ebfe850866"
+    },
+    {
+      "namn": "HeimGuard_SR_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_SR_1_H1-3d7270ab908c8164bed2cb5a5466ddb1"
+    },
+    {
+      "namn": "HeimGuard_FD_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_FD_1_H1-3d7270ab908c814b9300d71f07fe24f2"
+    }
+  ],
+  "varningar": [
+    "Live ads HeimGuard_CS_2 / CS_3 still SPEAK the old claims in the voiceover (`sista chansen`, `priset går upp snart`, `fri frakt över 300 kr`). Copy was fixed 2026-09-08, audio was not. CS_11_H1 in this batch is the replacement.",
+    "No editor assigned to HeimGuard: batch capped at 7 briefs instead of 21, nobody pinged to make them.",
+    "Campaign name still says `BE-ROAS 2,11` (old with-VAT number). Scripts judge against 1.49; the label is cosmetic."
+  ],
+  "action_axel": [
+    "Decide on HeimGuard_CS_2 and CS_3: pause them (voiceover promises `fri frakt över 300 kr` and a price rise that will not happen) or keep them until CS_11_H1 replaces them. I never pause a spending ad on my own.",
+    "Assign an editor to HeimGuard so the 7 Draft briefs get made: `node factory/register.mjs redigerare hemvakten \"<name>\" <discord-id>`."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-12 (budget) · 2026-09-13 (briefs)"
+}

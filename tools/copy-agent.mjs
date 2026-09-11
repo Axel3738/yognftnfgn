@@ -39,12 +39,14 @@
 // --torr visar systemprompt, uppdragstext och schema utan att anropa API:t.
 // Testerna anropar aldrig API:t (tools/test/copy-agent.test.mjs).
 //
-// Noll beroenden. Kräver ANTHROPIC_API_KEY för skarp körning.
+// Noll beroenden. Kräver ANTHROPIC_API_KEY (eller ANTHROPIC_NYCKEL i
+// claude.ai-sessioner, se tools/lib/anthropic-nyckel.mjs) för skarp körning.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { anthropicNyckel, anthropicHeaders, NYCKEL_SAKNAS, WORKSPACE_SAKNAS } from './lib/anthropic-nyckel.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGELFIL = join(ROT, 'docs', 'copy-regler.md');
@@ -231,11 +233,7 @@ export function byggUppdragstext(uppdrag) {
 export function byggRequest(modellNyckel, uppdrag, regler, { nyckel = 'ANTHROPIC_API_KEY' } = {}) {
   const modell = MODELLER[modellNyckel];
   if (!modell) throw new Error(`Okänd modell "${modellNyckel}". Välj: ${Object.keys(MODELLER).join(' | ')}.`);
-  const headers = {
-    'content-type': 'application/json',
-    'x-api-key': nyckel,
-    'anthropic-version': '2023-06-01',
-  };
+  const headers = anthropicHeaders(nyckel);
   const body = {
     model: modell,
     max_tokens: MAX_TOKENS,
@@ -313,7 +311,9 @@ export async function anropa(request) {
   const r = await fetch(request.url, { method: 'POST', headers: request.headers, body: JSON.stringify(request.body) });
   const kropp = await r.json().catch(() => ({}));
   if (!r.ok) {
-    throw new Error(`Messages API svarade ${r.status}: ${JSON.stringify(kropp).slice(0, 400)}`);
+    const feltext = JSON.stringify(kropp);
+    if (r.status === 400 && /anthropic-workspace-id/.test(feltext)) throw new Error(`Messages API svarade 400: ${WORKSPACE_SAKNAS}`);
+    throw new Error(`Messages API svarade ${r.status}: ${feltext.slice(0, 400)}`);
   }
   return kropp;
 }
@@ -344,7 +344,7 @@ async function huvud(argv) {
   const regler = laddaRegler();
   let request;
   try {
-    request = byggRequest(modellNyckel, uppdrag, regler, { nyckel: process.env.ANTHROPIC_API_KEY ?? '' });
+    request = byggRequest(modellNyckel, uppdrag, regler, { nyckel: anthropicNyckel() });
   } catch (e) {
     console.error(e.message);
     process.exit(1);
@@ -362,8 +362,8 @@ async function huvud(argv) {
     return;
   }
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('ANTHROPIC_API_KEY saknas i miljön — kan inte anropa Messages API. Kör med --torr för att se prompten.');
+  if (!anthropicNyckel()) {
+    console.error(`${NYCKEL_SAKNAS} — kan inte anropa Messages API. Kör med --torr för att se prompten.`);
     process.exit(2);
   }
 

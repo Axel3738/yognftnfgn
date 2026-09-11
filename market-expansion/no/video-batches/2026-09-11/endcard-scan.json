@@ -1,0 +1,109 @@
+{
+ "utekattkoja_CS_1": {
+  "dur": 16.08,
+  "hits_from": 15.28,
+  "hits_to": 15.88,
+  "n_hits": 4,
+  "n_total": 10
+ },
+ "utekattkoja_CS_2": {
+  "dur": 17.12,
+  "hits_from": 16.32,
+  "hits_to": 16.92,
+  "n_hits": 4,
+  "n_total": 10
+ },
+ "utekattkoja_CS_3": {
+  "dur": 17.12,
+  "hits_from": 16.32,
+  "hits_to": 16.92,
+  "n_hits": 4,
+  "n_total": 10
+ },
+ "utekattkoja_G_1": null,
+ "utekattkoja_G_2": null,
+ "utekattkoja_PD_1": null,
+ "utekattkoja_PD_2": null,
+ "utekattkoja_PD_3": null,
+ "utekattkoja_SP_1": {
+  "dur": 21.08,
+  "hits_from": 19.48,
+  "hits_to": 20.28,
+  "n_hits": 3,
+  "n_total": 10
+ },
+ "utekattkoja_SP_2": {
+  "dur": 20.52,
+  "hits_from": 18.52,
+  "hits_to": 18.92,
+  "n_hits": 2,
+  "n_total": 10
+ },
+ "utekattkoja_SP_3": {
+  "dur": 20.2,
+  "hits_from": 18.4,
+  "hits_to": 19.4,
+  "n_hits": 4,
+  "n_total": 10
+ },
+ "takoverdrag_CS_1": {
+  "dur": 28.64,
+  "hits_from": 26.64,
+  "hits_to": 28.44,
+  "n_hits": 10,
+  "n_total": 10
+ },
+ "takoverdrag_CS_2": {
+  "dur": 26.64,
+  "hits_from": 24.64,
+  "hits_to": 26.44,
+  "n_hits": 10,
+  "n_total": 10
+ },
+ "takoverdrag_CS_3": {
+  "dur": 29.48,
+  "hits_from": 27.48,
+  "hits_to": 29.28,
+  "n_hits": 10,
+  "n_total": 10
+ },
+ "takoverdrag_G_1": null,
+ "takoverdrag_G_2": null,
+ "takoverdrag_G_3": null,
+ "takoverdrag_PD_1": null,
+ "takoverdrag_PD_2": null,
+ "takoverdrag_PD_3": null,
+ "takoverdrag_SP_1": {
+  "dur": 23.68,
+  "hits_from": 21.68,
+  "hits_to": 23.48,
+  "n_hits": 10,
+  "n_total": 10
+ },
+ "takoverdrag_SP_2": {
+  "dur": 25.04,
+  "hits_from": 23.04,
+  "hits_to": 24.84,
+  "n_hits": 10,
+  "n_total": 10
+ },
+ "takoverdrag_SP_3": {
+  "dur": 23.24,
+  "hits_from": 21.24,
+  "hits_to": 23.04,
+  "n_hits": 10,
+  "n_total": 10
+ },
+ "stegstod_CS_1": null,
+ "stegstod_CS_2": null,
+ "stegstod_CS_3": null,
+ "stegstod_G_1": null,
+ "stegstod_G_2": null,
+ "stegstod_G_3": null,
+ "stegstod_PD_1": null,
+ "stegstod_PD_2": null,
+ "stegstod_PD_3": null,
+ "stegstod_SP_1": null,
+ "stegstod_SP_2": null,
+ "stegstod_SP_3": null
+}

@@ -1,0 +1,16 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-11",
+  "lage": "budget",
+  "gjort": [
+    "Budget round run: 0 changes (campaign under the 300 SEK / 3 purchases gate)",
+    "No ads paused, nothing activated"
+  ],
+  "siffror": { "spend_7d": 867, "kop_7d": 2, "roas_7d": 0.9, "vinstbidrag_7d": 0 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-12",
+  "varningar": ["Example report written by /notionscalercs setup — dry run only, never posted"]
+}

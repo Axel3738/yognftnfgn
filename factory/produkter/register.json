@@ -147,10 +147,15 @@
         "url": ""
       },
       "kordag_offset": 1,
-      "senaste_korning": "",
-      "senaste_brief": "",
-      "cycle_start": "",
-      "launches": [],
+      "senaste_korning": "2026-09-11",
+      "senaste_brief": "2026-09-11",
+      "cycle_start": "2026-09-11",
+      "launches": [
+        {
+          "date": "2026-09-11",
+          "count": 7
+        }
+      ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
     },
     "tacklebay/adventskalender-fiskedrag": {

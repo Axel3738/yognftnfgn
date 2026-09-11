@@ -6,13 +6,16 @@
 // Därför sitter spärren i själva postarna, inte i prompterna:
 //   1. Ser texten svensk ut?  (ordlista, konservativ — hellre missa än stoppa
 //      engelska av misstag; svenska/norska produktnamn räknas inte)
-//   2. Ja + ANTHROPIC_API_KEY finns  → översätts automatiskt.
+//   2. Ja + ANTHROPIC_API_KEY finns  → översätts automatiskt. (I claude.ai-
+//      sessioner heter den ANTHROPIC_NYCKEL — se tools/lib/anthropic-nyckel.mjs.)
 //   3. Ja + ingen nyckel              → skickas INTE. Postaren avslutar med
 //      exit 3 och säger åt anroparen att skriva om på engelska. Anroparen är
 //      en Claude-session, så den gör det.
 //   4. DISCORD_TILLAT_SVENSKA=1       → spärren av (Axels egna handposter).
 //
 // Noll beroenden: rå fetch mot Messages API, som resten av repo-roten.
+
+import { anthropicNyckel, anthropicHeaders, NYCKEL_SAKNAS, WORKSPACE_SAKNAS } from './anthropic-nyckel.mjs';
 
 const MODELL = process.env.DISCORD_OVERSATT_MODELL || 'claude-sonnet-5';
 
@@ -76,15 +79,11 @@ Rules:
  * Översätter via Messages API. Kastar vid nätverksfel, saknad nyckel eller
  * ett svar som inte går att använda — anroparen avgör vad som händer då.
  */
-export async function oversattTillEngelska(text, { nyckel = process.env.ANTHROPIC_API_KEY } = {}) {
-  if (!nyckel) throw new Error('ANTHROPIC_API_KEY saknas');
+export async function oversattTillEngelska(text, { nyckel = anthropicNyckel() } = {}) {
+  if (!nyckel) throw new Error(NYCKEL_SAKNAS);
   const svar = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: {
-      'x-api-key': nyckel,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json',
-    },
+    headers: anthropicHeaders(nyckel),
     body: JSON.stringify({
       model: MODELL,
       max_tokens: 4000,
@@ -93,7 +92,11 @@ export async function oversattTillEngelska(text, { nyckel = process.env.ANTHROPI
       messages: [{ role: 'user', content: text }],
     }),
   });
-  if (!svar.ok) throw new Error(`Messages API svarade ${svar.status}: ${(await svar.text()).slice(0, 200)}`);
+  if (!svar.ok) {
+    const feltext = await svar.text();
+    if (svar.status === 400 && /anthropic-workspace-id/.test(feltext)) throw new Error(`Messages API svarade 400: ${WORKSPACE_SAKNAS}`);
+    throw new Error(`Messages API svarade ${svar.status}: ${feltext.slice(0, 200)}`);
+  }
   const kropp = await svar.json();
   if (kropp.stop_reason === 'refusal') throw new Error('modellen avböjde översättningen');
   const ut = (kropp.content ?? []).filter((b) => b.type === 'text').map((b) => b.text).join('').trim();
@@ -122,6 +125,6 @@ export function stoppText(orsak) {
     'STOPPAT: meddelandet är på svenska, och allt i Discord ska vara på engelska.',
     `Kunde inte översätta automatiskt (${orsak}).`,
     'Skriv om meddelandet på engelska och kör igen — behåll namn, siffror och emojis.',
-    'Automatisk översättning: sätt ANTHROPIC_API_KEY i environmentet.',
+    'Automatisk översättning: sätt ANTHROPIC_NYCKEL i environmentet (ANTHROPIC_API_KEY göms av Claude Code för skripten).',
   ].join('\n');
 }

@@ -1,0 +1,1332 @@
+{
+  "SE": {
+    "konto": {
+      "id": "1867947880635861",
+      "namn": "MagiBorsten",
+      "valuta": "SEK"
+    },
+    "annonser": [
+      {
+        "id": "120250134691780291",
+        "namn": "Adventskalender_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673260291",
+          "namn": "Adventskalender Racingbilar | PD | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2085394082184728",
+          "image_hash": "c381591228560d9a5d200dd5ddbcdae9",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799783727_2056109568435969_8270303884916637822_n.png?stp=dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=ff4730&_nc_ohc=RGgju054qq4Q7kNvwEDNZ0Z&_nc_oc=AdqHpKck4GyXD8gcEQWGdXJ5rhOkrZioe8_1MGBZALmk-MfTB2CSpVhVDGy-tskkHCU&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQL0JrYJ0829IwuX2yeT-G5pniPS7JVjXchW766e5X-TpAAgbYju9ojrEqMVg4HoB-CnBh9wuQSu_g&oh=00_AQLvrcYHKVMwbs8Zgxke4XTIQRIV1alLbiO1eCY1A0otVg&oe=6AA912C3",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/9083393649168326082?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJEsCEdS06tmxHG6-sxIAskq5mljMpOl-aE-mGxSjjvjq6ZdPyazpDsW3uRbWUxW3tDRsFTbm8eBp8FyicDLUA63qBzmoGj4Y0FypDG0ZMxT51rrP0ZDJaSOnwe1qqBqceZF4jawBikKB7p2YZOaRSj&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=J9OviHrHrHR0p07obMfNhw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJSXC7ofK5dYf6fSX8caQ-d264uM81FW201do-erVQzZ6_I7Z9jm7SQnj2Doapii6R7u2c3WUuyxw&oh=06_Q3_DARkBkavRIuoTkR9HAovel2Od_165Mt2ZuyNaG12xEKtF&oe=6AA4FDA0",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+          "headline": "Choklad: 10 sek. Bilarna: hela december.",
+          "description": "Leksaksbilar som finns kvar efter jul.",
+          "link": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1376.28,
+          "kop": 8,
+          "roas": 3.850161
+        },
+        "med": true
+      },
+      {
+        "id": "120250134694770291",
+        "namn": "Adventskalender_PD_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673260291",
+          "namn": "Adventskalender Racingbilar | PD | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2142863469647432",
+          "image_hash": "fed9dcb0f6f297c21d23af914bd39171",
+          "image_url": null,
+          "video_id": "1569867135152952",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800345844_1569867171819615_437028493369573607_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=TZn7slHl-vAQ7kNvwEz7fVH&_nc_oc=AdpMa8IRBOXo6xuIiFfT9w32tEvIkQ8_lJyv0eb-qQXqT8KTCBVp30uwzzbco8hDywE&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQKfofS0hnJbjRAlDlU-pCfXLgCZB1sJ5KqIgzoP-BwuA3NuTYUBws1goz6NL8tG4_E6rshJw2wJBA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJdtvWvQhAsWUOwD38ugtY5tkHC8Y21vFWej7oHgVDJMA&oe=6AA905A1",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+          "headline": "Choklad: 10 sek. Bilarna: hela december.",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 898.38,
+          "kop": 6,
+          "roas": 3.853158
+        },
+        "med": true
+      },
+      {
+        "id": "120250134681590291",
+        "namn": "Adventskalender_GT_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672900291",
+          "namn": "Adventskalender Racingbilar | GT | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1058810370251909",
+          "image_hash": "783f26f431ae0a0a0a1f0ac72415aaaf",
+          "image_url": null,
+          "video_id": "1620032299670978",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800345703_1620032339670974_5478480874984590650_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=6ILDm_5lrVMQ7kNvwGsipqQ&_nc_oc=AdpWGZoIANXH-j90oy7RcTwlfwDE1cZV7clGyBafk8fOsNtNiaqQp3BuWhAfBtSs-Eo&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQLtUSAkG5sPPQ2PtNdfIDJ9lWqqeH6HgCp_qlw9_V-RrrEwviuevrZ8LG7Ci-muuTIlg_oiWSNyJw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKmc_pU1U_CPMDPoHgRXxhsQc5G1sofMtIVdsCRwACslw&oe=6AA8F42C",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+          "headline": "24 bilar bakom 24 luckor i jul",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 593.6,
+          "kop": 2,
+          "roas": 2.26971
+        },
+        "med": true
+      },
+      {
+        "id": "120250134684090291",
+        "namn": "Adventskalender_GT_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672900291",
+          "namn": "Adventskalender Racingbilar | GT | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1077439491596712",
+          "image_hash": "8f3b4970756776e3ca168f900318b973",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/798743909_2056108058436120_2077492574503967210_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=1eE4t8cwK28Q7kNvwE2koGu&_nc_oc=Adow7rnZbCVlphDm2KVI-HLi8ZkL76lBrlMNcaaFvohmcZwyEGxcQFqbla6gyOvAMOQ&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQIms--VD1jkBqjBgOcMAAALLZ1eW-nGteTHXX8VsnUJ8K5uAKNGRwUWHEwPHnvPMiHvoNqQu0DzNQ&oh=00_AQLjO1wP8g_QV3umddDd91PMz7_sKP9Lv5bIydy8e4J-mw&oe=6AA90BFF",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/7608214229531850152?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLG0ra8A6c-sW8dLpMN0DM8Q-SENrCTqkA0VWZvZWXEQLo6ICglgUTOEEJHBt1jiVni5S2o9BxJbmbjW1QCaT33NERq72_IFzZSEWoBgNCb6u0LR87Llqb0eVOCo83sGz1oodP6db9I81uV6Sb3LY_c&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=J9OviHrHrHR0p07obMfNhw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJmxV9Zag5dCeWzvkEQKokGVHmxBNr592AyCrBp8ro9k1QAV_AROcGtkfm0HQT0P9RQ2qxPt7i9Gg&oh=06_Q3_DAeM8J5lAaZ6eyL55XOJZfmkopxC3KTSetsiFpq21cGYc&oe=6AA527DC",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+          "headline": "24 bilar bakom 24 luckor i jul",
+          "description": "En ny bil att öppna varje dag i december.",
+          "link": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 59.16,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134675940291",
+        "namn": "Adventskalender_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672410291",
+          "namn": "Adventskalender Racingbilar | CS | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1540569504508614",
+          "image_hash": "4440f5c7e281fad9e97582d93839755d",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/800796905_2056107061769553_1929047022319908800_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=_ry2SJXiqxQQ7kNvwEicOLK&_nc_oc=AdppmC2esy_1UB4QiD7s6qaNQN4ILKed4h7dzk-v6Nf0ZHWETPcQWJu9DLRrdKaHjyo&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQIuF0GG6L1ZEM1ebPqTBWraPQeuuCG-zNExRBeH3n9NmO2iuin1Cqs-XYcpWQ8JdWmYnsA7TQQu8Q&oh=00_AQICt8skfQnudgCfW9zXEPv_nhkRp6W2u0JRdTi4EDsJWg&oe=6AA90976",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/14601037219911744796?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJX1zXBc-RkRzYlx-WbFTjyCuBTy0bPIhvR6iy4TK0cC7tNHwmt3z203piLdv8_ghBTgRem2VjR-g8rizdkmWiehr5JoR4t7HuWcvu_FwXJL-h4BxtWPqUMZ-m2CpeeiMTdhKSnsWKCooviftr4U6RI&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=J9OviHrHrHR0p07obMfNhw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLgc8-wwkH37ZG45SBcLhZUAlUvipJtdTkdhO5vCOQm2N2Jm0sfRswNljMzyhfO12cy18-CsGYNQw&oh=06_Q3_DARXrgcrTx-kkgxzY1Lc7LmMsmnpJEDO6eWTCGcaQDaah&oe=6AA51246",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
+          "headline": "649 kr → 499 kr – bara idag",
+          "description": "23% rabatt på julens mest väntade kalender.",
+          "link": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 54.16,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134686490291",
+        "namn": "Adventskalender_GT_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672900291",
+          "namn": "Adventskalender Racingbilar | GT | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4440451862869692",
+          "image_hash": "93eca0dfb7843dcd36944ac325962f07",
+          "image_url": null,
+          "video_id": "1062391959875351",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800879828_1062391973208683_8762261301836636888_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=JTmR8D67frgQ7kNvwEHnI64&_nc_oc=Adp2FLRvBY0lEgAhkGShnlt_rlqDJ1T0AD8NiQFfSxfurds6alT3h9p-C3yDfwAgCes&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQKoCXcOz2k9FGZ_W_n8nzt0TANqIYZs22hob_H9y06i3SNC_Bayle5-_404D1nOjmLWkZaVuABxiA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIFcGfweHQhDWcnAVviNd6oysD0ImqushJL9OWxVbhDJw&oe=6AA8EDA7",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+          "headline": "24 bilar bakom 24 luckor i jul",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 39.2,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134700150291",
+        "namn": "Adventskalender_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673620291",
+          "namn": "Adventskalender Racingbilar | SP | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "3497887970394063",
+          "image_hash": "84933e4a8fe737882d85f7f274b0762f",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/799561510_2056110688435857_8473682476641654349_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=XN4LTrkc7woQ7kNvwHSUXRe&_nc_oc=AdpHtYfLVugOsCYieGBF7E7egiIkn9JYl0huwG47crhF7bHtB3tfION5XrIRy39lRyU&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQK3IDgBQFTSQwUg3icTUiJc-BDYs3izya9w9QlxXEE7m78WtpVMWhRY8nXsXnM8ke4I_IuVfibQVg&oh=00_AQI_Y8WM6bPisjmn7fTphhA7a75ySgK1OuvHjuVVjfIECg&oe=6AA91F47",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/7934430537513114693?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJvt2k-PYHxImWp8GgL87R7XU9ZIa8fJ3ONLleWZ7V2-dBQdrzKx7OxTEB8c5XnmNfO6lNOXnISEGYkDZJczBCe4Va-rGuWXttPUBHkaywg6ULFjq0rJ8wC44NpEysB_2M8MG6d3LLTXqDE2x9GRSZB&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=J9OviHrHrHR0p07obMfNhw&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKTmjLikGRVhgDP-Pr2oFInnzf5s48Wuhlb7iV91rw7yFGEEFDofRjn4KYLgufGmOAPa_CPvKG45A&oh=06_Q3_DAVXZp9wR-fXegGONEA6wZZ2otj4SQfp2wk243Fn9XLG7&oe=6AA52B5F",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\nBeställ nu. 🎁",
+          "headline": "Han sprang ut ur sängen varje morgon",
+          "description": "30 dagars öppet köp – nöjd eller pengarna tillbaka.",
+          "link": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 36.44,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134691340291",
+        "namn": "Adventskalender_PD_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673260291",
+          "namn": "Adventskalender Racingbilar | PD | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1428649399122288",
+          "image_hash": "93cebe9a97d94b92c6f6c8447999dc3f",
+          "image_url": null,
+          "video_id": "1701758914218400",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800345715_1701758937551731_4865713617251295503_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=K9x292QMxK4Q7kNvwE7PEUo&_nc_oc=AdqavjTGSAfKH07nyBqWSrq564IdV0t6MELW7nJJsi1On40VCjteQr1wee0GRq-SXhE&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQKLNQ76DjpmnqBGu6ZAnbvap05DvaDn0oCKmucD7tGm5p4TWh2jrxakiaeRswDEzBr9BscqovW-Vg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLSuumn89Uw_UsBzvbIKpnMH5YkjNHOj1oPwk5XMEus0w&oe=6AA907CC",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+          "headline": "Choklad: 10 sek. Bilarna: hela december.",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 28.03,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134697380291",
+        "namn": "Adventskalender_PD_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673260291",
+          "namn": "Adventskalender Racingbilar | PD | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1093644369877611",
+          "image_hash": "6ed7cba2351229fa1e2722456f88c559",
+          "image_url": null,
+          "video_id": "1759953785204515",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800436605_1759953821871178_882389780447228021_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=0tILJiJxHBYQ7kNvwHyUG5q&_nc_oc=AdqJjii3lDlSXrwXpmGScQUMFyFacz2apUt7BNhaTqJl8sQlLHdnHm1QtzMmXnxVi0w&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQL__PqurOO5qTseL7W4I7w463Lk-LZJQVx2cd_LAwCmroGhMPYTQPjGLYxLY46SWIQdcpQH9j8BUw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIJEsenAW3Uki2oGyITJlsMgWQypPmqMKNujomjQvULnA&oe=6AA918E6",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+          "headline": "Choklad: 10 sek. Bilarna: hela december.",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 20.06,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134688540291",
+        "namn": "Adventskalender_GT_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672900291",
+          "namn": "Adventskalender Racingbilar | GT | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1411625901068449",
+          "image_hash": "d5378b68a732c5425efb5df81360863a",
+          "image_url": null,
+          "video_id": "2480452352477664",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800780579_2480452382477661_6060767956782599849_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=FchjAuPyVk0Q7kNvwHZ44Lo&_nc_oc=Adph1Gz3-4Q0Q3RGTr35BZgZhQdyv_rkcIcsaQU2ssvq4ek1sIc5nL_q5mmnI2KGRxs&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQKvSVWQPObFDzXKnSbBC83ojPfOZC7nZDbVIucpOFzsVbqVCdt4n8sjUY-JxBKQEx4A4yzZywlW5w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIuyw_qj8cVKavmaswUSmv0l13ojeo7VHYgh7u4BejuXA&oe=6AA8F8B9",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Han älskar bilar mer än något annat 🚗\nGe honom en ny bil att upptäcka varje morgon fram till jul.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En överraskning varje dag i december\n✅ Innehåller små delar – från 3 år\nSe blicken när han öppnar den – och vet att du hittade årets bästa klapp. 🎁",
+          "headline": "24 bilar bakom 24 luckor i jul",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 17.28,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134679560291",
+        "namn": "Adventskalender_CS_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672410291",
+          "namn": "Adventskalender Racingbilar | CS | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1078777521849865",
+          "image_hash": "b6f20262e093a1bc65f7bf25a9102c34",
+          "image_url": null,
+          "video_id": "4509326576062434",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800879841_4509326606062431_9124450430651347137_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=ChaP0YhbJwYQ7kNvwH_2LL0&_nc_oc=Ado8w5-r_P1pzk_SNxmwObBmaWGQnlnGyc0cbxytgndDzu2DpGFJVmuMTBQ7fC05lyw&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQILndkV0NbvxcyjIi9UwUYpSHsq9qUbZCVKUFYKamL241ddRxGSOst5oAbYsP2-ZJobZi7HEbp2Uw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQK_imNO7GoX-5Ij7CeIAeqA9BHpvb_gtbFsC2qXrjmTyQ&oe=6AA91105",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
+          "headline": "649 kr → 499 kr – bara idag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.85,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134699510291",
+        "namn": "Adventskalender_SP_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673620291",
+          "namn": "Adventskalender Racingbilar | SP | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1105572158535458",
+          "image_hash": "1660d178dfc569c9cc0813a88c4b5d35",
+          "image_url": null,
+          "video_id": "1619050763219624",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800482261_1619050783219622_4410023328132645343_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=KFLipsu8Z-YQ7kNvwEWzc-_&_nc_oc=AdpamcykYfrf6kGSt_7Hf4CznhrV0alBWKcm0ScBLggiPq_R8PjrW8i5QfjDUu84z0s&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQL3HkuwPXSL49ccY-9R29thtC61PLDESRehkwPNNvu5jOIRSB01ygY5DnoSQD6jFl1IlrpojSMHqw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKlx5Pzz4LQgsW9Pib81x9i3H37ufIxLY0op9HvAqBDJA&oe=6AA90AF3",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\nBeställ nu. 🎁",
+          "headline": "Han sprang ut ur sängen varje morgon",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 5.4,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134675690291",
+        "namn": "Adventskalender_CS_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672410291",
+          "namn": "Adventskalender Racingbilar | CS | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1068739502738662",
+          "image_hash": "85b73b8d6d40b96cb7f3ca97f96b551b",
+          "image_url": null,
+          "video_id": "1779847626501068",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800345635_1779847646501066_6613326185918130913_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=J4Q0us8RkXUQ7kNvwG5AUuK&_nc_oc=AdplgcP0YhDX_J897rAir0iIRyMrX0zs9pg7hXBjn-EQLPM-TiZ8CBq7RNFnxXUf61w&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQIY6BhbzdeBdBd8NYRpCgplhOmkVkR4nrMCkasqPqB60_4fw5XMD3XTEo4BQeddGhyaU1OuzpKbGw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIU3xczvUedx8mM2hFxGFIUp5ap7CSLdHQLJuEDx4-Fng&oe=6AA8F80D",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
+          "headline": "649 kr → 499 kr – bara idag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 4.6,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134677420291",
+        "namn": "Adventskalender_CS_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134672410291",
+          "namn": "Adventskalender Racingbilar | CS | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2266996490733492",
+          "image_hash": "88af40a2e0bc645d2d101409893009ff",
+          "image_url": null,
+          "video_id": "1872350667077211",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800165164_1872350687077209_886390159017709995_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=2_dv22U22gkQ7kNvwEltwjK&_nc_oc=Adq_3Du8qq2ktE-LvBc0a45TPXZxNHq7GV9o6UgpsPNHz5wDO3AN43DsqUWJwv2tqoM&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQIke40y99jeQoCVtl57nmQsAHFivN5_5kkkMUtPW36P7oLqWHwvqgEKh6yH08n3UnfQb-Je2m3REg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJJzqnc7MBeRRHEOfvyY7t-Fw0dTGll_xw7f6t6_LRkkg&oe=6AA8FEC2",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "23% rabatt – bara idag 🎄\n649 kr → 499 kr på årets mest efterlängtade adventskalender.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att öppna varje dag i december\n✅ Begränsat lager – slut innan jul\nKöp innan den tar slut. 🏎️",
+          "headline": "649 kr → 499 kr – bara idag",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.71,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134703270291",
+        "namn": "Adventskalender_SP_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673620291",
+          "namn": "Adventskalender Racingbilar | SP | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4591944631051188",
+          "image_hash": "989e7316e576ff3bfd82ff39aff372a1",
+          "image_url": null,
+          "video_id": "990883130675701",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800603536_990883157342365_8760681209069473213_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=A_PrW4Jc2SgQ7kNvwEPDlDf&_nc_oc=Adom-1jvBrdHIh_IQ4VTw0nc0aQ9VqLiCpcvUWvMYI897eZ5dsPraVeRmzUS6Fag1tw&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQIK1fs2w4cIRpGNEXvoD7QGxObSFaHquooe6HT2qRuhwkiXT5de6O-C_8R260X7gXrEFzUwRWvy6Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL6V8Ti4L5ilNLWgzU9vkujs88AEtE9JuZ-9DGDUqURhg&oe=6AA8F7AA",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\nBeställ nu. 🎁",
+          "headline": "Han sprang ut ur sängen varje morgon",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 2.36,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250134705900291",
+        "namn": "Adventskalender_SP_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250134673620291",
+          "namn": "Adventskalender Racingbilar | SP | 2026-09-08",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250134672020291",
+          "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1867542654623337",
+          "image_hash": "45eb10f1e4e650ec81bc6d819d796d62",
+          "image_url": null,
+          "video_id": "1392308022362010",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/799947376_1392308055695340_4890411785407116838_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=v218ULVhe-MQ7kNvwGuCFHR&_nc_oc=AdqQvT-AAtehioTkv3RAkQ4ewNcBFOxtY5BLgUWn2278dvkxDsCJD2JktZt_VbOY_ZI&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=J9OviHrHrHR0p07obMfNhw&_nc_tpa=Q5bMBQLu9pweIm8Xazc6Wql2UcbbqIVHBBO3XzDqI5xXaKa6DgLYsmA4lRKhRZbkcFEMKQjOSOsPAUX_og&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQICaE-muNrqC_imCrZdZ9QM7-jtnGICZbOK40bY_tDyYg&oe=6AA8F4DF",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⭐⭐⭐⭐⭐ \"Han sprang ut ur sängen varje morgon för att öppna en lucka!\"\n– Verifierad kund, 34 år\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En ny bil att upptäcka varje dag i december\n✅ 30 dagars öppet köp – nöjd eller pengarna tillbaka\nBeställ nu. 🎁",
+          "headline": "Han sprang ut ur sängen varje morgon",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1.72,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  },
+  "NO": {
+    "konto": {
+      "id": "1050941584152547",
+      "namn": "Magiborsten NO",
+      "valuta": "NOK"
+    },
+    "annonser": [
+      {
+        "id": "120251999875430233",
+        "namn": "Gamasjer_NO_SP_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999874820233",
+          "namn": "Gamasjer NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1071599428929568",
+          "image_hash": "2dbc02cab9496708fe2aeaad4e201860",
+          "image_url": null,
+          "video_id": "1617260650022113",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/789032594_1617260690022109_4519288942539940150_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=CFQmnubhGrsQ7kNvwFJ5Vgi&_nc_oc=AdpgE-xs49r2gmNLktw-iJ9Stueslmf4C_gyFyEvWepRcQEC32sN206sXFy8DIf11ZU&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQLh1QLtKoIk4MaNA6g5J-U-Z1ytKSmPTQvxPwJ2YB5GWU25DmNBLsg2frJyDwCmgN0E2AomKPNlhA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIYnutTIXu01orpznsP-3FqDx1SbohDe-sArVO3v2E_Qg&oe=6AA915D2",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+          "headline": "Kundene elsker tørre føtter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1940.57,
+          "kop": 5,
+          "roas": 1.158118
+        },
+        "med": false
+      },
+      {
+        "id": "120251999952550233",
+        "namn": "Gamasjer_NO_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999873570233",
+          "namn": "Gamasjer NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "27771950739167773",
+          "image_hash": "c71c1407f38ddf3afad9adf5c5b01c11",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/789844731_2048781782502081_6754406964378971600_n.png?stp=dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=ff4730&_nc_ohc=RsJjLcNyknIQ7kNvwEvIBX2&_nc_oc=Adr7n-bxoL2oAQt2oRab31lCziS6W4XQGw10bcJYklr50NdZ9K_4hKA4byoRId3RYLg&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQLw4_W5VphIRGD1HU4clZBRAtEXthgyKBkxIjpBcDwq0nodq9xGepU9gBQeoZfClo6-_Mte3d923Q&oh=00_AQKDko7Gu73tMK-BHoCQyLqH3RsjLrVY5XzT3a0NCIye5g&oe=6AA8FB6E",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/14728477825988458358?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIaj15d9fphINxnEdB8XTTr9TzjmKwFtWnApszi_LDibRboFAu2fmovaPL1u47rC7VGqw7Vs_9d3owlEwNd-nRJ0iqBoBCv4Xb0_VXQWp3ZQLEQg_w0OUzZ_3zmFVqKBW9uvQEijeIz-TRfiVigMqFZ&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKyG571NDV-JidtIlS0cPNqyZCRgzrOxF4tVTZzRYPjgdv5Vk6p0SfYTHc5eIbMRe4SvGi675SlCA&oh=06_Q3_DAQcn0UZ7dwK-D14aZ_2eHcnHCEBoDfxLc-jabhwiEkVt&oe=6AA527E3",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+          "headline": "Gå tørrskodd – uansett vær",
+          "description": "Gamasjer som holder snø, væte og grus ute.",
+          "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 135.37,
+          "kop": 1,
+          "roas": 2.341139
+        },
+        "med": false
+      },
+      {
+        "id": "120251999876910233",
+        "namn": "Gamasjer_NO_SP_3",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999874820233",
+          "namn": "Gamasjer NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1378344277130065",
+          "image_hash": "a6b886841a9dda1747e0cb0c78654a26",
+          "image_url": null,
+          "video_id": "1426539232698117",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/788230814_1426539269364780_4589549819857806185_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=goC2tuo5EloQ7kNvwHghzk4&_nc_oc=AdomyNRg5pdyuc-d5ldB8T6tKJqmRwOIFGsUX1RY3K3Db02QUUlthKYsldAlp61JDSI&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQLGJdAUoXQ3nRY28kv0RGac54D4kid_p-0N1aksYGhCaVnf2RpnBPXZkkCSumGTVY39AL0wXAt3kw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQI17xLNWeGpn5QTEOwOevvQLfDL0Jbnd5GxD2LZh51TtA&oe=6AA8F32F",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+          "headline": "Kundene elsker tørre føtter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 99.92,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999907150233",
+        "namn": "Gamasjer_NO_G_3",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999898020233",
+          "namn": "Gamasjer NO - G",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4092148134420461",
+          "image_hash": "d2e3b8ee456378d197f24afb12bd0a1e",
+          "image_url": null,
+          "video_id": "2044280472902759",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/790240039_2044280496236090_1341194314915813880_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=LC45f1Ka20IQ7kNvwFIB5Ke&_nc_oc=Adp0ltPuP-e96LEeWNs8hveuMZbb3MHESzGl_n7g49inWUCVZmZmvSa16YFwQVtl2jw&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQJTlYIhJyamaq4XPf9URb2DIskLIUp8bKqP7xWxmxjnWeImpRDBk9kicZ6ihVNtgreNMhfQyNVwOQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKrnlfng4dxCQkw9pcWmEWmM1YLnjbg2tGVW9HPAIZZhw&oe=6AA907E1",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+          "headline": "Gaven han faktisk bruker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 63.55,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999966480233",
+        "namn": "Gamasjer_NO_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999874820233",
+          "namn": "Gamasjer NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2162557501356899",
+          "image_hash": "01a0869914c4341ddf0074536b240f6a",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/789695299_2048784999168426_3600555075128528842_n.png?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=ff4730&_nc_ohc=3JETD001ApcQ7kNvwExXkSM&_nc_oc=AdrdJ0UTRsfBWcIBn8nvaEZsiodfG-MOKNIHNqWKOYVm7hCipnlk_QY8252ftpFAX2c&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQLg-tnlUuz9BpESaZ4wNkn_OeS4lujWK-q6GVLUv5t4ykdwOpl2TgqHb9xw8he9stK0fzi60Ua05w&oh=00_AQK9tUrBVreJCqR0Wfbo8Rga9yyGfJOLIGbvn0ltkK0YTw&oe=6AA8F323",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/1465310323033046443?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK0j1aU87vaenGzJaDIfQdlqab-Brb-RLYYLKxyX7KQFbNiycpgtnl7KBSfGWQvt2-b902O0sxasYW90pRHhDlnDsImRdzYfjSFOGhNKq7LYYRCdnZNfzqrW2LPdgyQRlCDRssHDfkzhcwh6Ug8wnx_&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKaRFi211U7ue-94t_LsXZmPJmYWyU3E1SNhGIJ0CNzXfZPtG-Kmt9u40-ti8n2GyDouwkEgSpB1A&oh=06_Q3_DAXJa_g8D_Btaaey6uA9pYazvPgH_VRG72NSbkTOTHrnY&oe=6AA529DA",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+          "headline": "Kundene elsker tørre føtter",
+          "description": "Bekreftede kunder – tørre sko, hver gang.",
+          "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 63.07,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999875810233",
+        "namn": "Gamasjer_NO_SP_2",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999874820233",
+          "namn": "Gamasjer NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "27765240256511929",
+          "image_hash": "b7ff4bc01adc446e925d96684cf29d1b",
+          "image_url": null,
+          "video_id": "1103333148819577",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/790547189_1103333162152909_8050181765330453485_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=f4tPnvLKEEQQ7kNvwH6MZG5&_nc_oc=AdrpxKTTZ_T_81VB2DlgG_ytqwchLEEW1N5DHV0f_hE66qda2V7NtI6Y8IbcZNcTFZc&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQJKIRWn1gDI65ZUBhYl2yU1zNDrFVYCI7xd4DkWAAJJRstCAaFk5caNyeuYG9m1A_H3JcMzOtpuuw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJFCiJi-kQkzgbbkOIMmxYyVydoii2VfAqLmshuX8EVnQ&oe=6AA914F9",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Helt tørre sokker – selv i regn og leire» 👍\n✅ Elsket av tusenvis av turgåere\n✅ Holder tett hele dagen\n✅ Enkle å ta på og av\n✅ 30 dagers åpent kjøp\nSe hvorfor kundene ikke kan slutte å snakke om dem 👉",
+          "headline": "Kundene elsker tørre føtter",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 50.78,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999874530233",
+        "namn": "Gamasjer_NO_PD_2",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999873570233",
+          "namn": "Gamasjer NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1405747121619386",
+          "image_hash": "2c6221de0fcd0035d3851a6b7d5e864c",
+          "image_url": null,
+          "video_id": "1426404916019293",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/789032593_1426404956019289_8205985449380170874_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=3V_MSDP2-ygQ7kNvwFaNN3r&_nc_oc=AdrfW_YAUy2gZBvt-bq8AlEzMvzqrEUUJVOyih3E-yeumn90cP0RymTawYp-wNamaUA&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQKA6x4RFBVmElhY3CDv73F_7UOJgoWUOrKx-pICQPsnOF32RJs2pI0xVtgnCf8uZPPtiFtYlcJ0Ew&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLWFlSftqp6TwtAIldi8foXVAEy69gGEDa7ge8-1Icjgg&oe=6AA9177A",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+          "headline": "Gå tørrskodd – uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 33.92,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999874220233",
+        "namn": "Gamasjer_NO_PD_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999873570233",
+          "namn": "Gamasjer NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1705448944084611",
+          "image_hash": "a397772f8e4614b785b9ca0c7ee6a3ad",
+          "image_url": null,
+          "video_id": "2586569628455769",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/789843947_2586569658455766_8730071220222874723_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=RASwrWN8n4wQ7kNvwF5yX6R&_nc_oc=Ado5837qaoJceIbqF92SEslj2ktBYkm3B3KZXEueaMWNMTpyUfgI9zMWe0uw05Ofi3Q&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQLGFGwYhSDmLgImAqCSbnWkkP2iuHPxNt274V6_z0goO6dsjLKJ4omTE0r1CHLWXxCa77wnRCzkHA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLc79R1U9LNPH7MkZQA23TImQHpeJ_2GmnrDLK0uXZt5g&oe=6AA90336",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+          "headline": "Gå tørrskodd – uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 26.26,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999874630233",
+        "namn": "Gamasjer_NO_PD_3",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999873570233",
+          "namn": "Gamasjer NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1041764748631902",
+          "image_hash": "e1cf521b93f9e3ba1ea159a611a1f616",
+          "image_url": null,
+          "video_id": "28193008063643557",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/790113354_28193008310310199_8646624287561548032_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=S954Yn5JJ5IQ7kNvwGyQ8Bw&_nc_oc=Adq2cwDjy5V534rhOZMS12pOYUFhHMzqeFehqmELt0MuZAPBetTQgJUdF_FEi-1459w&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQK3HjRGgIj2Cj3lw8kpfiPDhBEES8pyA-L1FBtvQUTa3BEnRPF_pvMvnkRpWQ44YEebLVvj25Basg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLOCytcQ9izTMzDb8O6c6c5MKuoZFXQjMdl9ysG4jbFdQ&oe=6AA8FAA6",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av snø, væte og grus i skoene? 🥾\n✅ Holder snøen ute – hele turen\n✅ Stopper regn og våt mark\n✅ Beskytter mot grus, leire og stein\n✅ På med dem på 10 sekunder\nKlikk og bestill dine i dag 👉",
+          "headline": "Gå tørrskodd – uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 20.04,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999897870233",
+        "namn": "Gamasjer_NO_CS_3",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999877170233",
+          "namn": "Gamasjer NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2374442649628810",
+          "image_hash": "6e20a57d0534a0daead4340e9b0cbadd",
+          "image_url": null,
+          "video_id": "1598692269063776",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/790240029_1598692285730441_5627905854750783743_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=hZvHYDHJxKoQ7kNvwE1OIK6&_nc_oc=AdrOgKdenZMoZJPOQo_xwotENLNQf6adYdE1fVaTMH1-sTSE48bRcVshH2KbLdGwcLI&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQI_TXDZYhnv1hnR7MTa3Qhi4nuA2SjG1CjSc-BsOYEvnFke_b47jOSPU7NkicsRAAuzbAYal-80LQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLnRiRscsefr1GXc8ZAXjve4uGWQEk_YzgjjiOMzjLftg&oe=6AA90E78",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+          "headline": "40 % rabatt – så lenge lageret rekker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 18.58,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999897610233",
+        "namn": "Gamasjer_NO_CS_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999877170233",
+          "namn": "Gamasjer NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1637305401294637",
+          "image_hash": "557668e78a59e2eeb32a54f8f650f140",
+          "image_url": null,
+          "video_id": "1335108258703659",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/788383804_1335108285370323_4549855738668517387_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=KwTAHontMYIQ7kNvwF3lJgY&_nc_oc=Adq97PkjFRMvT9JLNUT7N0fnSOSAQOTLUs86iS2uSoUs_ukf-QXBWbN2MIBY5UKsVHY&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQJAKxqDmvc9XB8GBaIww0pEXr2x2UtqOUH_zgIRLIPa3D31702f8lOkpP-qfGOGdiaAmcYz_D1Hkg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJPzMeKBTyJoQsLljOqGQWj_uSP9FRPkhvAbBMuSjTQBw&oe=6AA90042",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+          "headline": "40 % rabatt – så lenge lageret rekker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.08,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999897730233",
+        "namn": "Gamasjer_NO_CS_2",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999877170233",
+          "namn": "Gamasjer NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "4566722113647327",
+          "image_hash": "1665491aa03f32ee35f7eda95bea6e4a",
+          "image_url": null,
+          "video_id": "3149362785262591",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/788000495_3149362815262588_8111490263734200716_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=XX337HE79WMQ7kNvwEo-wPS&_nc_oc=AdrsGqFLU-jnuVT_6tjIfQrlE9RcO8hVShuW9Fbd-aLVvLmBDsvlZ6CgqLAxudBLqXE&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQI8mWRreK6hycpxRoEy6ccN11fJGCLTa83Wi4UIBR4n7N2tgd4xdpas_4mjunB51-5IAURDSQ-rIQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKUg7CeJHKwjbwCFvpjfYgDM-JMzUi3rVU24mRElA-Rdg&oe=6AA8FFBE",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+          "headline": "40 % rabatt – så lenge lageret rekker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 5.04,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999974710233",
+        "namn": "Gamasjer_NO_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999877170233",
+          "namn": "Gamasjer NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2038973986738585",
+          "image_hash": "546f328a1282086037a67558d5834ba0",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/789694701_2048788805834712_8837739880594314030_n.png?stp=dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=ff4730&_nc_ohc=3iCCmvCxy0MQ7kNvwEFwe3q&_nc_oc=AdqFPtCIFNlWFhuodMNDYid8CV31JY00zaKRok2es0cyoutPjwidnwms7sLN8Lj81jM&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQLBr1jgp6sXdSSkVyFMUqN-JiFD3qhdScaQWO72S_FDZcD5LpLoFdGTeYIAVz_gS7-VDT_t9hzVpA&oh=00_AQIzj_SxRLhmDR9PuphNtRvzhqmpPt3CdSdiDZLqWmH9vg&oe=6AA8FB82",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/3857415129141645066?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQL97ue-zwUotVNd3nHMIgMszS6MGnzhCplCa-rsG_so6X8Y5_Y9Iwwl7JVxZad0Twb6HJsnLCEn14RnZBQRyVpCW84F0x8icS_BzUxQydgI32gHi5aalT-aJyPupEHBOiyTR6E8PAk11gzkr5YTmrI_&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLfBPFr-5yTba_58XnCS55bfWdZ5ME2hpGVkpKYtDrljoW6KN1PZUV3dOYj_-EPgDXEpTcYrC-xjg&oh=06_Q3_DAcYIPolf7vgozN40aqCXJEruIqO7shCl8fH6XKsH5C63&oe=6AA5224C",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⚡ 40 % rabatt – så lenge lageret rekker ⚡\nPrisen gjelder ikke for alltid – snart er den borte.\n✅ Fri frakt over 300 kr\n✅ 30 dagers åpent kjøp\n✅ Lageret krymper – bare noen få igjen\nIkke gå glipp av sjansen. Bestill nå før det er utsolgt 👉",
+          "headline": "40 % rabatt – så lenge lageret rekker",
+          "description": "Salget avsluttes snart – få igjen på lager.",
+          "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1.44,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999907120233",
+        "namn": "Gamasjer_NO_G_2",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999898020233",
+          "namn": "Gamasjer NO - G",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1483459763592351",
+          "image_hash": "f6a4dd8172d76158681895bd11d04883",
+          "image_url": null,
+          "video_id": "2919351515130189",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/788383818_2919351538463520_2694159178667015353_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=WhMLkIQeAX4Q7kNvwG2hMHB&_nc_oc=AdpjlYucgv06tgo5sIJaq1scPn6hWmoqBFC3kNIZ3WGoOj--BX6nw9aDCHsSPn9ih1U&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQIt7hR1E6FfWgGiLUbOgZC7s3NmmdzjVNwk8ZSuuML2g1a7_aTYZMxjuQrV41QZwEa57fkpblR8Vw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJNfqjFu1N7DBvyX3owp-nEgWVcKz_3aBurITbQjyLkuw&oe=6AA920D8",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+          "headline": "Gaven han faktisk bruker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.69,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999989150233",
+        "namn": "Gamasjer_NO_G_2_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999898020233",
+          "namn": "Gamasjer NO - G",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2062085051094791",
+          "image_hash": "b6ef432c4ef0d629a437ec2366d4992b",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/789844758_2048791519167774_3141679726025314249_n.png?stp=dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=ff4730&_nc_ohc=Hb287G5-8uIQ7kNvwHwohdf&_nc_oc=AdpkQ4SaX8sFTX4f1xl0IzjZxuhSvtAwQc9A4lf06mnWEO8KtGHd-DgVm4ynvIhDcRE&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQIIxXzst8exopyMgLCYe9JoZfDREfMMEFooc6-7I72slA_BnJvUKAH4rYUCtpZpIlBJP0DKCB_QTw&oh=00_AQLquPsBI2u32vwcWE7kl-JTba0dJXhljTxdvVnbFoLrlg&oe=6AA91E8B",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/10628825660720941992?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKOa-puxYekOkp78xw_WAJ4PVySaIIy9eWu2mVwo1nPAQ2j4U0-7nzaChJHLbs8v6xTEO__Awho1gr24ZphAIXZVfH2F104DcPXyM-Fpyous7RI4B00cOWjREWAbY6_ybvTVoI_JaA2VZqtG19W_ysE&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJBc9UjQzeIAhECQIve-3zYFsm0QrfHUkRl9CT1P_rfNkNQNyW6lPjDbyC6QmXm8qIv4g96m52I-w&oh=06_Q3_DAUPZIFNMZdsd9X5-r9zCjfgJmGFN2m919T8qSBv9MX0Z&oe=6AA50CE7",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+          "headline": "Gaven han faktisk bruker",
+          "description": "Den perfekte gaven til ham som elsker naturen.",
+          "link": "https://beverbutikken.no/products/gamasjer-tur-holder-sno-vaete-grus-ute",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.28,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      },
+      {
+        "id": "120251999907070233",
+        "namn": "Gamasjer_NO_G_1",
+        "status": "ACTIVE",
+        "effektiv": "CAMPAIGN_PAUSED",
+        "adset": {
+          "id": "120251999898020233",
+          "namn": "Gamasjer NO - G",
+          "status": "ACTIVE",
+          "effektiv": "CAMPAIGN_PAUSED"
+        },
+        "kampanj": {
+          "id": "120251999873390233",
+          "namn": "Gamasjer NO | BE-ROAS 1,64 | 2026-08-30",
+          "status": "PAUSED",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1544428710289645",
+          "image_hash": "20b0205318a445fa731d3a3368cf1504",
+          "image_url": null,
+          "video_id": "1405617958372164",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/789488907_1405617975038829_6908869782417272192_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=OcNiwyZYJGoQ7kNvwG9FZK5&_nc_oc=Adrho8oq9w6JhP5VytA8Q1GrhOdZHM77D3ypb9aUb3Q4KkxK5gG2RpUZ9CGJqdG2n20&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=qPTI_Vka-IF1IR8r50QF7Q&_nc_tpa=Q5bMBQJ4PBYOwfPZUTKS5dsh1wahHdgxrWaxn3q8se3kfJ7oJ5-TQ37_QHQHyakSnjjdq1nJv2t8cuiKvw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKQhYM8rTlSprnai9-S3LLJg5hYmv8rU8Ec3iJ5VhpLqA&oe=6AA918D8",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Endelig fant jeg den perfekte gaven til ham 🎁\nHan som alltid er ute – tur, hund, skog, natur.\n✅ En gave han faktisk bruker\n✅ Enkel, praktisk, verdsatt\n✅ Perfekt til jul, bursdag eller bare «en tanke»\nSe ansiktet hans når han åpner pakken 👉",
+          "headline": "Gaven han faktisk bruker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.23,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": false
+      }
+    ]
+  }
+}

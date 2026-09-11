@@ -29,6 +29,8 @@ function fixturkatalog() {
   writeFileSync(join(katalog, 'med-notion.md'), '# /med-notion\nLäser Notion-hubben via mcp__Notion och Slack.\n');
   writeFileSync(join(katalog, 'notionkorning.md'), '# /notionkorning\nNotion.\n');
   writeFileSync(join(katalog, 'cs.md'), '# /cs\nCreative strategy.\n');
+  writeFileSync(join(katalog, 'ops-leverans.md'), '# /ops-leverans\nCONNECTORS: inga\nNOTION_TOKEN META_ACCESS_TOKEN.\n');
+  writeFileSync(join(katalog, 'ops-oversatt.md'), '# /ops-oversatt\nCONNECTORS: inga\nNOTION_TOKEN META_ACCESS_TOKEN HEYGEN_API_KEY.\n');
   return katalog;
 }
 
@@ -187,6 +189,21 @@ test('nattvakten får sitt eget namn, sessionstitel och taggar', () => {
   assert.equal(trigger.argument.cron_expression, '1 22 * * *');
   // Andra kommandon namnges som förut.
   assert.equal(byggForslag({ kommando: '/skalningskungen tankguard', tid: '07:00', butik: 'tankguard', gren: 'main', datum: SOMMAR, katalog }).rutinnamn, 'skalningskungen — tankguard');
+});
+
+test('leveransrundan och NO-översättningen per butik får egna namn (tre rutiner per OPS-butik, 2026-09-11)', () => {
+  const katalog = fixturkatalog();
+  const lev = byggForslag({ kommando: '/ops-leverans tankguard', tid: '13:40', butik: 'tankguard', gren: 'main', datum: SOMMAR, katalog });
+  assert.equal(lev.rutinnamn, 'Leveransrundan: tankguard');
+  assert.equal(lev.sessionstitel, 'Rutin: Leveransrundan tankguard');
+  assert.deepEqual(lev.taggar, ['routine:ops-leverans', 'butik:tankguard']);
+  assert.equal(lev.cron, '40 11 * * *');
+  const no = byggForslag({ kommando: '/ops-oversatt tankguard', tid: '15:40', butik: 'tankguard', gren: 'main', datum: SOMMAR, katalog });
+  assert.equal(no.rutinnamn, 'Översättning NO: tankguard');
+  assert.equal(no.cron, '40 13 * * *');
+  // Tre olika rutiner för samma butik är inte dubbletter av varandra.
+  const rutiner = [{ id: 'trig_1', name: 'Nattvakten: tankguard', prompt: '/notionscalercs tankguard' }];
+  assert.ok(!granska({ kommando: '/ops-leverans tankguard', butik: 'tankguard', gren: 'main', rutiner, katalog }).hinder.some((h) => /redan/.test(h)));
 });
 
 test('en butik som inte är byggd stoppar', () => {

@@ -202,7 +202,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-18 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+20 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -226,6 +226,8 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
 | `/skalningskungen <butik>` | **Bäverbutikens larm + budgetrond:** dömer siffror, skickar OPS-larmet. Inga briefer |
 | `/notionscalercs setup <butik>` / `/notionscalercs <butik>` | **Nattvakten, EN rutin per OPS-butik** (Axels beslut 2026-09-10): varje natt 00:01 döda/skala/sänk budget i OPS-kontot; ons + sön dessutom `/cs`-loopen med nya briefer i butikens creative hub via `NOTION_TOKEN` — noll godkännandeklick. `setup` körs en gång per butik och bygger rutinen |
+| `/ops-leverans <nyckel>` | **13:40 per OPS-butik:** hubbens `To be Reviewed` → priskoll → **live** i butikens SE-kampanj i OPS-kontot (ett adset per koncept) → `SE-ACTIVE to be translated`. Byggs av `/notionscalercs setup` |
+| `/ops-oversatt <nyckel>` | **15:40 per OPS-butik:** `SE-ACTIVE to be translated` → norska (bild 0 krediter, video HeyGen) → **live** i butikens NO-kampanj i samma konto → `Approved`. Byggs av `/notionscalercs setup` |
 | `/rutin <kommando> <tid>` | Sätt upp en schemalagd rutin som faktiskt kör (fast session, rätt cron, inga dubbletter) |
 
 ### Nattrutinerna
@@ -242,7 +244,9 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 15:00 | `0 13 * * *` | Översättning till Norge (bild + video ur Notion-kön `SE-ACTIVE to be translated`) | `/oversatt NO` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
-| 00:01 | `1 22 * * *` (CEST) / `1 23 * * *` (CET) — ligger dagen före i UTC, det är rätt | Nattvakten, **en rutin per OPS-butik** — byggs av `/notionscalercs setup <butik>` (ingen byggd än, mätt 2026-09-10) | `/notionscalercs <butik>` |
+| 00:01 | `1 22 * * *` (CEST) / `1 23 * * *` (CET) — ligger dagen före i UTC, det är rätt | Nattvakten, **en rutin per OPS-butik** — byggs av `/notionscalercs setup <butik>`. Byggda: **HeimGuard** (`hemvakten`, trigger `trig_01WbWzzvL1bvEzdSYDVDjyPt`, fast session `session_01Q98FdP2QSw7gkoASbqAAbx`, taggar `routine:notionscalercs` + `butik:hemvakten`, byggd 2026-09-10. Första natten 2026-09-11 körd: budgetrond + batch #2 (7 briefer), men rutinens container saknade då `ANTHROPIC_NYCKEL`. Setup-omkoll 2026-09-11: nyckeln finns i en ny container, men API:t avvisar den utan `ANTHROPIC_WORKSPACE_ID` — se DryTrek-raden nedan. `factory/rutin.mjs` räknar sedan 2026-09-11 `ANTHROPIC_NYCKEL` som funnen nyckel, så spärren inte varnar falskt om `ANTHROPIC_API_KEY`). **TankGuard** (`tankguard`, trigger `trig_012GbPeBU7bSmgb3LCk4p18r`, fast session `session_01S1Gqiqi2oJsXJNKj14rW9w`, taggar `routine:notionscalercs` + `butik:tankguard`, byggd 2026-09-10 sent på kvällen; hub "IBC Tank Cover creative hub", Discord-server "TankGuard", ingen redigerare tilldelad ⇒ 7 briefer per briefrond). **DryTrek** (`drytrek`, nyckel `drytrek/damasker`, trigger `trig_01DdJ5AhJGwRUFVKGRtxk83N`, fast session `session_019zEoFg9d5udsuVimZXXSZ1`, taggar `routine:notionscalercs` + `butik:drytrek`, byggd 2026-09-11 strax efter midnatt; hub "Damasker vandring" `3cf270ab-908c-81a0-9b0d-c486f6467ce7` — bär Bäverbutikens 33 äldre rader, se `products/drytrek/dna.md`; Discord-server "DryTrek — OPS" med `#ads` + `#ads-to-do`; ingen redigerare tilldelad ⇒ 7 briefer per briefrond. `ANTHROPIC_NYCKEL` saknades i skalet vid bygget 23:00 UTC men fanns vid omkoll 2026-09-11 efter containeromstart — miljövariabler som läggs in på claude.ai syns först i en NY container, inte i en session som redan kör. ⚠️ Testanrop 2026-09-11: nyckeln är giltig men är en ORGANISATIONSNYCKEL — API:t svarar "not scoped to a workspace" och kräver headern `anthropic-workspace-id`. Skripten skickar den när `ANTHROPIC_WORKSPACE_ID` finns i Environments (`tools/lib/anthropic-nyckel.mjs`); alternativet är en ny nyckel skapad inne i en workspace, då behövs inget id). **AdventLane** (`kalender`, nyckel `kalender/adventskalender-racingbilar` — nischbutik, fler kalendrar blir fler nycklar och fler rutiner; trigger `trig_01FGjqv82YkeU6kQ4TocBL6q`, fast session `session_01DV383fYQE49kfpfy8rnjTz`, taggar `routine:notionscalercs` + `butik:kalender`, byggd 2026-09-11 strax efter midnatt; hub "Racing Car Advent Calendar creative hub" `3d7270ab-908c-81b2-ad69-cf7404a62c4e`; Discord-server "AdventLane" (`1547541533476257803`, `#ads` + `#ads-to-do` skapas av rapporten vid behov); ingen redigerare tilldelad ⇒ 7 briefer per briefrond; säsongsprodukt, död efter 24 dec. ⚠️ `ANTHROPIC_NYCKEL` saknades i skalet även vid det här bygget. ⚠️ `factory/kallannonser.mjs` faller tillbaka på DryTreks NO-mönster `gamasj\|damask` när produktfilen saknar `kalla.no_kampanjmonster` — sätt fältet före nästa `/ny-annonser` för en kalender, se `products/kalender/dna.md` rotorsak 2). **TackleBay** (`tacklebay`, **flerproduktsbutik — rutinen går per produktnyckel:** `tacklebay/fiskespohallare-4-pack`, trigger `trig_01XzwuDVuaZ12Wx1gujr1RQE`, fast session `session_01Xfnc1ZZ3CThYh1FcrsMsTh`, taggar `routine:notionscalercs` + `butik:tacklebay`, byggd 2026-09-11 morgon; hub "Fish rod holder" `3c3270ab-908c-80f8-824d-eed3c4aa94e1` — delad historia, Bäverbutikens redigerare levererar fortfarande dit; Discord-server "TackleBay — OPS"; ingen redigerare tilldelad ⇒ 7 briefer per briefrond; minnet ligger i `products/tacklebay/fiskespohallare-4-pack/`. Kampanjen heter `TACKLEBAY_SE_…` men annonserna `TackleBayRod_…` — `budgetrond.mjs` hittar kampanjen via annonserna sedan 2026-09-11 (`valjKampanjer`). **Kalendern `tacklebay/adventskalender-fiskedrag` har INGEN rutin:** inga annonser, ingen hub, Axels beslut 2026-09-10 att skippa den — se `products/tacklebay/adventskalender-fiskedrag/dna.md`. ⚠️ `ANTHROPIC_NYCKEL` saknades i skalet även vid det här bygget) | `/notionscalercs hemvakten`, `/notionscalercs tankguard`, `/notionscalercs drytrek`, `/notionscalercs kalender/adventskalender-racingbilar`, `/notionscalercs tacklebay/fiskespohallare-4-pack` |
+| 13:40 | `40 11 * * *` (CEST) / `40 12 * * *` (CET) | Leveransrundan OPS, **en per OPS-butik** — hubbens `To be Reviewed` → live i butikens SE-kampanj i OPS-kontot → `SE-ACTIVE to be translated`. Byggs av `/notionscalercs setup <butik>` (setup är idempotent: kör den igen på en butik som redan har nattvakt, så byggs bara det som saknas). Byggda: **AdventLane** (`kalender/adventskalender-racingbilar`, trigger `trig_01DH2DMkNwb4rcD1bvogsbrt`, fast session `session_01SDv8NdkrfHiYfM5ziGXRvC`, taggar `routine:ops-leverans` + `butik:kalender`, byggd 2026-09-11 förmiddag; kön hade 4 videor i `To be Reviewed` med Bäverbutikens prefix `Adventskalender_` — rutinen märker om dem till `AdventLaneRacing_`) | `/ops-leverans <nyckel>` |
+| 15:40 | `40 13 * * *` (CEST) / `40 14 * * *` (CET) | Översättning NO OPS, **en per OPS-butik** — `SE-ACTIVE to be translated` → norska → live i butikens NO-kampanj i samma konto → `Approved`. Byggs av `/notionscalercs setup <butik>`. Byggda: **AdventLane** (`kalender/adventskalender-racingbilar`, trigger `trig_01NWtZiEYASKVebzrFSPkdB1`, fast session `session_015Xx2KWyvov4TRaJ1rbh4hF`, taggar `routine:ops-oversatt` + `butik:kalender`, byggd 2026-09-11 förmiddag; NO-kampanjen finns, kön var tom) | `/ops-oversatt <nyckel>` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är
 kördag (den 1, 4, 7 … 28, plus alltid månadens sista dag). Siffrorna räknas ändå
@@ -646,8 +650,21 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   versionen av samma rapport är engelsk, med produkt-, kanal- och kampanjnamn i
   sin vanliga stavning. Postarna (`tools/notify-discord.mjs`,
   `pipeline/discord-brief.mjs`) stoppar svensk text med exit 3, eller översätter
-  den automatiskt när `ANTHROPIC_API_KEY` finns i environmentet. Stoppas ett
+  den automatiskt när `ANTHROPIC_NYCKEL` finns i environmentet. Stoppas ett
   skick: skriv om på engelska och skicka igen — hoppa aldrig över rapporten.
+  ⚠️ **Nyckeln heter `ANTHROPIC_NYCKEL` på claude.ai, inte `ANTHROPIC_API_KEY`.**
+  Claude Code gömmer exakt namnet `ANTHROPIC_API_KEY` för allt som körs via
+  Bash (mätt 2026-09-10: variabeln stod i Claude-processen men saknades i
+  skalet, medan `NOTION_TOKEN`, `META_ACCESS_TOKEN` m.fl. släpptes igenom).
+  Skripten läser båda namnen via `tools/lib/anthropic-nyckel.mjs`. Säger ett
+  skript att nyckeln saknas fast Axel lagt in den: kolla att den heter
+  `ANTHROPIC_NYCKEL` i Environments.
+  ⚠️ **Nyckeln måste vara bunden till en workspace** (mätt 2026-09-11: nyckeln
+  Axel lade in är äkta, 108 tecken, men API:t svarar 400 "not scoped to a
+  workspace"). Två vägar, båda fungerar: skapa nyckeln inne i en workspace på
+  console.anthropic.com, eller sätt `ANTHROPIC_WORKSPACE_ID` (`wrkspc_…`) i
+  Environments — då skickar `anthropicHeaders()` headern på varje anrop.
+  Felet står i klartext i skripten (`WORKSPACE_SAKNAS`), inte som en rå 400.
 - **PAUSED i annonskontot är ett beslut, aldrig ett fel att "rätta".** En
   kampanj/adset/annons som är pausad och har spenderat > 0 kr har stängts av
   med flit (av Axel, skalningsronden eller åtgärdstrappan) — den får ALDRIG

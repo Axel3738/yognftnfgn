@@ -1,0 +1,36 @@
+paddad utekattkoja_CS_1
+paddad utekattkoja_CS_2
+paddad utekattkoja_CS_3
+paddad utekattkoja_G_1
+paddad utekattkoja_G_2
+paddad utekattkoja_PD_1
+paddad utekattkoja_PD_2
+paddad utekattkoja_PD_3
+paddad utekattkoja_SP_1
+paddad utekattkoja_SP_2
+paddad utekattkoja_SP_3
+paddad takoverdrag_CS_1
+paddad takoverdrag_CS_2
+paddad takoverdrag_CS_3
+paddad takoverdrag_G_1
+hoppar (redan grön): takoverdrag_G_2
+paddad takoverdrag_G_3
+paddad takoverdrag_PD_1
+paddad takoverdrag_PD_2
+paddad takoverdrag_PD_3
+paddad takoverdrag_SP_1
+paddad takoverdrag_SP_2
+paddad takoverdrag_SP_3
+paddad stegstod_CS_1
+paddad stegstod_CS_2
+paddad stegstod_CS_3
+paddad stegstod_G_1
+paddad stegstod_G_2
+paddad stegstod_G_3
+paddad stegstod_PD_1
+paddad stegstod_PD_2
+paddad stegstod_PD_3
+paddad stegstod_SP_1
+paddad stegstod_SP_2
+paddad stegstod_SP_3
+KLART. Misslyckade: inga
