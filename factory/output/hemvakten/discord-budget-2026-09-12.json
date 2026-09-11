@@ -1,0 +1,25 @@
+{
+  "brand": "HeimGuard",
+  "butik": "hemvakten",
+  "datum": "2026-09-12",
+  "lage": "budget",
+  "siffror": {
+    "spend_7d": 5015,
+    "kop_7d": 7,
+    "roas_7d": 1.8,
+    "vinstbidrag_7d": 933
+  },
+  "gjort": [
+    "Budget unchanged at 700 SEK/day: 3-day margin 11.7 % is still under the 16 % floor, but the cadence rule blocks a second cut within 3 days of yesterday's 1 000 → 700.",
+    "HeimGuard_PD_2 is the first ad past the data gate: 1 219 SEK, 4 purchases, CPA 305 SEK (break-even 538). Preliminary — it must survive the next reading before it counts.",
+    "Nothing paused, nothing activated. LI adset stays paused (a human decision)."
+  ],
+  "varningar": [
+    "Meta rate-limited the shared OPS account during the live round (backoff hit 3 tries). The dry read at 00:03 had full data and showed 0 changes; nothing needed writing, so the outcome is unaffected. If it repeats tomorrow, the OPS routines are colliding at 00:01.",
+    "7 Draft briefs from 2026-09-11 are waiting in the Surveillance Camera hub with no editor assigned.",
+    "HeimGuard_CS_2 / CS_3 still speak the old claims in the voiceover (`fri frakt över 300 kr`, `priset går upp snart`) — decision from yesterday still open."
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13 (brief day)"
+}
