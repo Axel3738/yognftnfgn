@@ -629,6 +629,7 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | `tools/notion-fil.mjs` | Hämtar hem en Notion-bilaga (signerad URL, kortlivad — hämta vid körning, cacha aldrig) |
 | `products/prefix-alias.json` | Annonsprefix som inte går att härleda ur kontot (Notion engelska, kontot svenska) |
 | `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
+| `tools/notion-produktrader.mjs` | En Notion-rad per produkt i en OPS-butiks *Product test center* (namn + produktlänk + Typ/Status ur databasens eget schema). Hoppar över namn som redan finns, så en andra körning inte dubblerar. `--torr` visar planen |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
 | `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |
