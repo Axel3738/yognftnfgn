@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 237,
+ "nasta": 244,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -6188,8 +6188,10 @@
    "feedback": [],
    "launch": null,
    "meta": null,
-   "status": "levererad",
-   "aterupptas_om": [],
+   "status": "kandidat",
+   "aterupptas_om": [
+    "plats i säsongsslotten — ren H05-test (tema = enda skillnaden mot K0003)"
+   ],
    "historik": [
     {
      "datum": "2026-09-10",
@@ -6198,6 +6200,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "lyft ut ur slutbatchen av säsongstaket (rank 8 mot fågelmatare 10, ATV 9, täljset 9) — levererad bara i mellanversionen av sidan (v15)"
     }
    ],
    "namn_sv": "Adventskalender Dinosaurier 24 figurer"
@@ -10195,6 +10201,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-11T06:05:05Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:05:05Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -11191,6 +11203,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-11T06:10:53Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:10:53Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -11262,6 +11280,12 @@
      "pris_usd": 35.89,
      "forst_sedd": "2026-09-11",
      "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:06:22Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-11",
        "verdict": "LIVE_VERIFIED",
@@ -11343,6 +11367,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-11T06:10:55Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:10:55Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -11414,6 +11444,12 @@
      "pris_usd": 4.75,
      "forst_sedd": "2026-09-11",
      "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:10:25Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-11",
        "verdict": "LIVE_VERIFIED",
@@ -11504,6 +11540,12 @@
      "pris_usd": 27.09,
      "forst_sedd": "2026-09-11",
      "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:05:39Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-11",
        "verdict": "LIVE_VERIFIED",
@@ -11678,6 +11720,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-11T06:06:32Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:06:32Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -11749,6 +11797,12 @@
      "pris_usd": 21.55,
      "forst_sedd": "2026-09-11",
      "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:06:08Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-11",
        "verdict": "LIVE_VERIFIED",
@@ -11908,6 +11962,580 @@
     }
    ],
    "namn_sv": "Motorlåset rostfritt utombordare"
+  },
+  "K0237": {
+   "id": "K0237",
+   "skapad": "2026-09-11",
+   "namn": "Snöflingor till garageporten 25-pack",
+   "objekt": "NYTT: Garageporten (stål, mot gatan)",
+   "form": "dekor",
+   "sak": "nytt: garageporten+dekor",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012790049322",
+     "url": "https://www.aliexpress.com/item/1005012790049322.html",
+     "bild": null,
+     "pris_usd": 9.89,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:58:29Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 14.7,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 349,
+     "landad": 143,
+     "be_cpa": 206,
+     "hook": "Har ni en vit garageport?",
+     "varfor": "Exakt klistermärke-strukturen: objekt varje småhus har, syns för grannarna, noll friktion, textfri hero i kontext, ingen svensk aktör i formen — med ett hårt datum (första advent) som klistermärkena saknade.",
+     "huvudrisk": "Magneter kräver stålport; andelen trä-/aluminiumportar är ej mätt, och BE-CPA 192–220 är tunn vid 349 kr.",
+     "hypotes_id": "H10",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Snöflingor till garageporten 25-pack"
+  },
+  "K0238": {
+   "id": "K0238",
+   "skapad": "2026-09-11",
+   "namn": "Snöskyffeln för Makita-batteri",
+   "objekt": "NYTT: Uppfarten och trappan — snöröjning för hand",
+   "form": "annat",
+   "sak": "nytt: uppfarten och trappan+annat",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008160433396",
+     "url": "https://www.aliexpress.com/item/1005008160433396.html",
+     "bild": null,
+     "pris_usd": 78.87,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T07:09:29Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 6,
+     "rank_poang": 13,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "LÅG",
+     "pris": 1799,
+     "landad": 1140,
+     "be_cpa": 658,
+     "hook": "Har du Makita-batterier och en uppfart?",
+     "varfor": "Bandslipens struktur (motor, synlig payoff, märkesankare) på ett jobb med hårt datum: första snö om 6–14 v. Kontot har redan en Makita-batteri-linje (arbetslampa 439, jetfläkt 709) — samma kund, samma hook. Ankare Stiga 3×, Makita-tillsats 2 295 utan kombimaskin.",
+     "huvudrisk": "Kedjan har elsnöskyfflar (Fornorth/Outl1 1 490 komplett med batteri) — bar maskin för 1 799 vinner bara om Makita-hooken bär; BE-ROAS 2,7 ger litet utrymme.",
+     "hypotes_id": "H12",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 4,
+      "K4": 6,
+      "K5": 8,
+      "K6": 6,
+      "K7": 5,
+      "K8": 8,
+      "K9": 4,
+      "K10": 3,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 6, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Snöskyffeln för Makita-batteri"
+  },
+  "K0239": {
+   "id": "K0239",
+   "skapad": "2026-09-11",
+   "namn": "Kajakhållaren för vägg, 2-pack",
+   "objekt": "NYTT: Kajaken/kanoten — vinterförvaring i garaget",
+   "form": "annat",
+   "sak": "nytt: kajaken/kanoten+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013089300340",
+     "url": "https://www.aliexpress.com/item/1005013089300340.html",
+     "bild": null,
+     "pris_usd": 15.95,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T07:03:37Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 7,
+     "rank_poang": 12.1,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 3,
+      "efterfragan": 0,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 499,
+     "landad": 231,
+     "be_cpa": 268,
+     "hook": "Ligger kajaken på garagegolvet i vinter?",
+     "varfor": "Samma struktur som spöklämman (dyr ägd sak som ligger i vägen, ordning i ett grepp, ett par per kajak) med hårt datum: upptagning om 4 v. Väggformen finns bara i fackhandel (295–699 kr), inte hos kedjorna.",
+     "huvudrisk": "Ägarbasen: ~40–50 000 kajakägare i Sverige (forumuppskattning, ej officiell) — långt under 100 k; CPM kan bli hög trots självselekterande bild.",
+     "hypotes_id": "H11",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 12,
+      "K3": 10,
+      "K4": 8,
+      "K5": 6,
+      "K6": 6,
+      "K7": 4,
+      "K8": 5,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 7, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Kajakhållaren för vägg, 2-pack"
+  },
+  "K0240": {
+   "id": "K0240",
+   "skapad": "2026-09-11",
+   "namn": "Värmesitsen för älgpasset",
+   "objekt": "NYTT: Jägaren på passet — kroppen (kall stubbe/torn, okt–jan)",
+   "form": "dyna",
+   "sak": "nytt: jägaren på passet+dyna",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007989005160",
+     "url": "https://www.aliexpress.com/item/1005007989005160.html",
+     "bild": null,
+     "pris_usd": 15.75,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T07:02:42Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 8,
+     "rank_poang": 12.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 3,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 228,
+     "be_cpa": 371,
+     "hook": "Kall stubbe på passet i oktober?",
+     "varfor": "Samma struktur som axelbältet och damaskerna: kroppen i säsongsjobbet, 271 500 jaktkort (Naturvårdsverket 2025–26), fackhandelsankare 1,37× och passet börjar om 3,9 veckor.",
+     "huvudrisk": "Leverantörens hero är oanvändbar och powerbank ingår inte — annonsen måste bygga på egen bild och säga 'kopplas till din powerbank'.",
+     "hypotes_id": "H03",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 8, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Värmesitsen för älgpasset"
+  },
+  "K0241": {
+   "id": "K0241",
+   "skapad": "2026-09-11",
+   "namn": "Vedställsbeslaget 2-pack (egna reglar)",
+   "objekt": "Vedstapeln",
+   "form": "annat",
+   "sak": "vedstapeln+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008516015977",
+     "url": "https://www.aliexpress.com/item/1005008516015977.html",
+     "bild": null,
+     "pris_usd": 14.73,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T07:03:16Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 10,
+     "rank_poang": 11.1,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 449,
+     "landad": 213,
+     "be_cpa": 236,
+     "hook": "Ligger veden i en hög igen?",
+     "varfor": "Spöklämmans struktur på nytt objekt: 1,7 M vedeldade eldstäder (MSB via Energimyndigheten-utdrag), veden ligger i hög eller på pallar, säsongen toppar om 4,9 v och beslagsformen finns bara hos Wovar/Amazon — inte hos Jula/Biltema. Två kit = flerköp inbyggt.",
+     "huvudrisk": "Regelmåttet: kitet är byggt för US 2x4 (38×89) — passar det inte 45×95 blir returerna och recensionerna dåliga; ekonomin är tunn (BE-CPA 215–257).",
+     "hypotes_id": "H11",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 12,
+      "K3": 10,
+      "K4": 8,
+      "K5": 6,
+      "K6": 6,
+      "K7": 5,
+      "K8": 5,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 10, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Vedställsbeslaget 2-pack (egna reglar)"
+  },
+  "K0242": {
+   "id": "K0242",
+   "skapad": "2026-09-11",
+   "namn": "Fågelmataren med kamera (5MP, solcell)",
+   "objekt": "Fågelbord/fågelmatare",
+   "form": "elektronik",
+   "sak": "fågelbord/fågelmatare+elektronik",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012746702398",
+     "url": "https://www.aliexpress.com/item/1005012746702398.html",
+     "bild": null,
+     "pris_usd": 77.19,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T07:04:59Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 12,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 1499,
+     "landad": 1116,
+     "be_cpa": 382,
+     "hook": "Vem äter vid ert fågelbord?",
+     "varfor": "Q4-gåva som inte är kalender, till mottagaren som redan matar fåglar (objekt ute, 55+): elektronik med solcell och ankare 1,33× — samma variabler som övervakningskameran, med vintermatning 6,3 v och jul 14,3 v som datum.",
+     "huvudrisk": "Birdfy och Bird Buddy annonserar redan i Sverige och CDON ligger på 1 387 kr — nyheten är ej mätt och BE-CPA faller under 300 om landad hamnar i övre spannet.",
+     "hypotes_id": "H05",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 12, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Fågelmataren med kamera (5MP, solcell)"
+  },
+  "K0243": {
+   "id": "K0243",
+   "skapad": "2026-09-11",
+   "namn": "Täljsetet 30 delar i väska",
+   "objekt": "Mannen själv / partnern — hobbykalendern (fars dag, jul)",
+   "form": "låda",
+   "sak": "mannen själv / partnern+låda",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012818225884",
+     "url": "https://www.aliexpress.com/item/1005012818225884.html",
+     "bild": null,
+     "pris_usd": 38.81,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:58:29Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 14,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 899,
+     "landad": 561,
+     "be_cpa": 338,
+     "hook": "Vad ska han få på fars dag?",
+     "varfor": "H05 utan kalender: hårt datum (fars dag 8,3 v), mottagare i relation, 30 synliga saker i en låda och fackhandelsankare 969 kr — 'allt han behöver för att börja i kväll'.",
+     "huvudrisk": "BeaverCraft (märke, trälåda) ligger på 799 kr under vårt 899 — Axel bör välja 899/30 delar eller alternativet 599/5 knivar innan launch.",
+     "hypotes_id": "H05",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 14, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Täljsetet 30 delar i väska"
   }
  }
 }
