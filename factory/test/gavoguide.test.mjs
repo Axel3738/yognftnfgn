@@ -221,3 +221,46 @@ test('etiketter och taggar ligger i var sitt fält — en översatt tagg matchar
   assert.ok(Object.values(texter).some((v) => v.includes('Vem ska du köpa till?')));
   assert.ok(Object.values(texter).some((v) => v.includes('Ett barn')));
 });
+
+// --------------------------------------------- Liquid-taggarna måste gå ihop
+
+test('varje sektion fabriken äger har balanserade Liquid-taggar', async () => {
+  // Mätt 2026-09-11: gåvoguiden saknade sitt yttersta {%- endif -%} och
+  // Shopify svarade "'if' tag was never closed" först vid uppladdning. Det
+  // felet ska fångas här, inte av butiken.
+  const { SEKTIONER, TEMAFILER } = await import('../tema.mjs');
+  const PAR = { if: 'endif', for: 'endfor', unless: 'endunless', case: 'endcase', form: 'endform', paginate: 'endpaginate' };
+  const filer = Object.entries({ ...SEKTIONER, ...TEMAFILER }).filter(([n]) => n.endsWith('.liquid'));
+  assert.ok(filer.length >= 7, `förväntade minst 7 liquid-filer, fick ${filer.length}`);
+
+  for (const [namn, innehall] of filer) {
+    // {% schema %} är JSON, inte Liquid — och {%- liquid -%}-blocken bär sina
+    // egna taggar utan procenttecken. Båda hanteras för sig.
+    const utanSchema = innehall.replace(/\{%\s*schema\s*%\}[\s\S]*?\{%\s*endschema\s*%\}/g, '');
+    const stack = [];
+    const taggar = [...utanSchema.matchAll(/\{%-?\s*(\w+)/g)].map((m) => m[1]);
+    for (const t of taggar) {
+      if (t === 'liquid') continue; // inline-blocket räknas separat nedan
+      if (PAR[t]) stack.push(t);
+      else if (Object.values(PAR).includes(t)) {
+        const oppen = stack.pop();
+        assert.equal(PAR[oppen], t, `${namn}: ${t} stänger ${oppen ?? '(ingenting)'}`);
+      }
+    }
+    assert.deepEqual(stack, [], `${namn}: ${stack.join(', ')} stängs aldrig`);
+
+    // {%- liquid … -%}: samma par, men taggarna står som rena ord på egen rad.
+    for (const block of utanSchema.matchAll(/\{%-?\s*liquid\b([\s\S]*?)-?%\}/g)) {
+      const inre = [];
+      for (const rad of block[1].split('\n')) {
+        const ord = rad.trim().split(/\s+/)[0];
+        if (PAR[ord]) inre.push(ord);
+        else if (Object.values(PAR).includes(ord)) {
+          const oppen = inre.pop();
+          assert.equal(PAR[oppen], ord, `${namn} (liquid-block): ${ord} stänger ${oppen ?? '(ingenting)'}`);
+        }
+      }
+      assert.deepEqual(inre, [], `${namn} (liquid-block): ${inre.join(', ')} stängs aldrig`);
+    }
+  }
+});

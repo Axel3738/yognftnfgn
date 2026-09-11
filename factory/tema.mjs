@@ -696,6 +696,7 @@ const GAVOGUIDE = `{%- liquid
     .ms-guide__kop { width: 100%; text-align: center; }
   }
 </style>
+{%- endif -%}
 
 {% schema %}
 {
