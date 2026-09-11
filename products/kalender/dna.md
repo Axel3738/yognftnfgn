@@ -184,9 +184,20 @@ Bedömbara: **0**. Kallstart tills ≥ 1 annons passerar grinden.
    första dygnet) och syns bara i "bortfiltrerade".
 4. **Ingen commission utgår på den här butiken i dag.** Kontot står i
    `UTLANDSKA_KONTON` i `commission/berakning.mjs` (känt, Uppdrag D i `factory/FAS2.md`).
-5. **SE-kampanjens copy är inte läst ur kontot än** (Metas rate limit 2026-09-11
-   stoppade läsningen). Punkt 1–3 under "Vad AdventLane måste ändra" är därför
-   krav, inte verifierade fakta, för SE. Första briefdagen läser copyn först.
+5. **SE-kampanjens copy läst ur kontot 2026-09-11 13:40 (`/ops-leverans`):**
+   PD och GT = källans ordagrant (inkl. "Ge honom"); **CS oförändrad med "23%
+   rabatt – bara idag" + "Begränsat lager – slut innan jul"** (punkt 1 ovan är
+   alltså INTE rättad); SP rättad (riktig recension "Sonen längtar till varje
+   dag" – Johan, 14 dagars ångerrätt — punkt 2–3 klara). Länk adventlane.se.
+7. **Facebook-sidan `1304279782771044` (AdventLane) var OPUBLICERAD 2026-09-11.**
+   Meta pausade 10/16 SE- och 7/16 NO-annonser 08:00–08:35 CEST med HARD_ERROR
+   2446095 "Sidan har inte publicerats". Sidan saknas i `me/accounts` för
+   `META_ACCESS_TOKEN` och `page_id` är tomt i produktfilen — den skapades
+   utanför repot. Tills sidan är publicerad kan INGEN annons för butiken
+   leverera, och `/ops-leverans` laddar inte upp (ärver samma sida). Metas
+   pauser är inte körningens egna: de återaktiveras av Axel eller på hans
+   order, aldrig av en rutin på eget bevåg. Spend-datan 2026-09-11 → tills
+   sidan är uppe är därför inte jämförbar (annonserna levererade inte).
 6. **Bonusprodukten i Q4-ramverket är inte vald** (`offer.bonus_produkt` tomt;
    state: `bonus.klar: false`). Paketen körs utan gratisdel — säg aldrig "bonus"
    i copy förrän Axel valt en.

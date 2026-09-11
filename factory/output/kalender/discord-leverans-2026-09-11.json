@@ -1,0 +1,30 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-11",
+  "lage": "leverans",
+  "gjort": [
+    "Queue read: 4 finished videos in To be Reviewed (PD_4_H1, PD_6_H1, AU_1_H1, FM_1_H1)",
+    "All 4 QA-checked: price 649 -> 499 SEK matches adventlane.se, product in frame before 4 s, no Baverbutiken branding",
+    "0 ads uploaded - blocked by Meta, see ACTION NEEDED",
+    "Rows stay in To be Reviewed and upload automatically at the next run once the page is published",
+    "Nothing paused, nothing activated, campaign untouched"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "PD_6_H1 captions: `649 nio` / `499 nio` and `Jock den` (should be `och den`) - video, remark only",
+    "AU_1_H1 captions: `och pappor` (should be `av papper`), `bestalld december` (should be `Bestall innan december`) - remark only",
+    "Length vs brief: PD_4_H1 9 s (brief 15-20 s), AU_1_H1 10 s (12-15 s), FM_1_H1 8 s (15-20 s)",
+    "FM_1_H1 has no price end card (brief asked for one) - no price = OK to upload",
+    "SE campaign copy for CS still carries `bara idag` and `Begransat lager` (false urgency, against brand tone) - not changed by this run"
+  ],
+  "action_axel": [
+    "The AdventLane Facebook page (id 1304279782771044) is UNPUBLISHED. Meta paused 10 of 16 SE ads and 7 of 16 NO ads this morning with 'Page not published' (hard error). The rest will follow.",
+    "Step 1: publish the page - Facebook > the AdventLane page > Settings > Page visibility (or Business Manager > Pages > AdventLane > Publish).",
+    "Step 2: after publishing, re-enable the paused ads in Ads Manager (campaigns ADVENTLANERACING_SE_Racingkalendern and ADVENTLANERACING_NO_Racingkalendern, filter Status = Paused) - or tell the night watch to do it.",
+    "The 4 new videos upload by themselves at the next delivery run (13:40) once the page is live."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-12"
+}

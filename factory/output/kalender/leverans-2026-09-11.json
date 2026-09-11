@@ -1,0 +1,346 @@
+{
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "SE",
+  "status": "To be Reviewed",
+  "hub": {
+    "id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+    "titel": "Racing Car Advent Calendar creative hub"
+  },
+  "kampanj": {
+    "id": "120249031845500172",
+    "namn": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+    "bas": "ADVENTLANERACING_SE_Racingkalendern",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249032669140172",
+        "name": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249032665200172",
+        "name": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249031847890172",
+        "name": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249031846010172",
+        "name": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 16,
+  "lank_arvd": "https://adventlane.se/products/adventskalender-racingbilar",
+  "pris_butik": {
+    "pris": 499,
+    "min": 499,
+    "max": 499,
+    "jamforpris": 649,
+    "valuta": "SEK",
+    "titel": "Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor",
+    "handle": "adventskalender-racingbilar",
+    "kalla": "https://adventlane.se/products/adventskalender-racingbilar.json"
+  },
+  "pris_skal": null,
+  "rader": [
+    {
+      "namn": "Adventskalender_PD_4_H1",
+      "mal_namn": "AdventLaneRacing_PD_4_H1",
+      "page_id": "3d7270ab-908c-8153-b82f-de424d64ff42",
+      "url": "https://app.notion.com/p/Adventskalender_PD_4_H1-3d7270ab908c8153b82fde424d64ff42",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "To be Reviewed",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1YrxOIy6vssXslWLeBvvID83gBzX8tXOu, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1YrxOIy6vssXslWLeBvvID83gBzX8tXOu",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1YrxOIy6vssXslWLeBvvID83gBzX8tXOu?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://adventlane.se/products/adventskalender-racingbilar",
+      "prefix": "Adventskalender",
+      "koncept": "PD",
+      "nummer": 4,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "adset": {
+        "id": "120249031847890172",
+        "name": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "factory/output/kalender/leverans-2026-09-11/Adventskalender_PD_4_H1/Adventskalender_PD_4_H1_1.mp4",
+      "fil_alla": [
+        "factory/output/kalender/leverans-2026-09-11/Adventskalender_PD_4_H1/Adventskalender_PD_4_H1_1.mp4",
+        "factory/output/kalender/leverans-2026-09-11/Adventskalender_PD_4_H1/Adventskalender_PD_4_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true,
+      "copy": {
+        "primar": "Chokladen är uppäten på 10 sekunder 🍫\nDen här adventskalendern håller hela december.\n✅ 24 luckor, 24 riktiga racingbilar\n✅ En bil att leka med långt efter att luckan är öppnad\n✅ Ingen choklad som smälter i väskan\nGe honom något som varar längre än ett ögonblick. 🏎️",
+        "rubrik": "Choklad: 10 sek. Bilarna: hela december.",
+        "beskrivning": "Leksaksbilar som finns kvar efter jul.",
+        "kalla": "kontots PD-copy (PD_1/2/3_H1) — briefen isolerar format, inte ord"
+      },
+      "qa": {
+        "fil_vald": "_2.mp4 (9:16; _1 är 4:5)",
+        "pris_i_annons": "649 → 499 kr",
+        "pris_ok": true,
+        "langd_s": 9.45,
+        "brief_langd": "15–20 s",
+        "anmarkningar": [
+          "9 s mot briefens 15–20 s"
+        ],
+        "dom": "ok — stoppad av opublicerad sida"
+      },
+      "utfall": "STOPPAD: Facebook-sidan 1304279782771044 opublicerad (Meta-fel 2446095 på 10/16 SE-annonser) — ingen uppladdning, status orörd, kommentar skriven"
+    },
+    {
+      "namn": "Adventskalender_PD_6_H1",
+      "mal_namn": "AdventLaneRacing_PD_6_H1",
+      "page_id": "3d7270ab-908c-81b7-9bfc-cf353ae11f0a",
+      "url": "https://app.notion.com/p/Adventskalender_PD_6_H1-3d7270ab908c81b79bfccf353ae11f0a",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "To be Reviewed",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1uk-mfgcOtIN-WRmBWSezRB42xJ4HEsAn, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1uk-mfgcOtIN-WRmBWSezRB42xJ4HEsAn",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1uk-mfgcOtIN-WRmBWSezRB42xJ4HEsAn?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://adventlane.se/products/adventskalender-racingbilar",
+      "prefix": "Adventskalender",
+      "koncept": "PD",
+      "nummer": 6,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "adset": {
+        "id": "120249031847890172",
+        "name": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "factory/output/kalender/leverans-2026-09-11/Adventskalender_PD_6_H1/Adventskalender_PD_6_H1_1.mp4",
+      "fil_alla": [
+        "factory/output/kalender/leverans-2026-09-11/Adventskalender_PD_6_H1/Adventskalender_PD_6_H1_1.mp4",
+        "factory/output/kalender/leverans-2026-09-11/Adventskalender_PD_6_H1/Adventskalender_PD_6_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true,
+      "copy": {
+        "primar": "Sänkt från 649 kr till 499 kr – och den räcker hela december.\nDu sparar 150 kr mot jämförpriset 649 kr.\n24 luckor, 24 olika racingbilar – en ny bil bakom varje lucka.\nDen sista bilen väntar bakom lucka 24, på julafton.",
+        "rubrik": "649 kr → 499 kr – hela december",
+        "beskrivning": "Spara 150 kr, hela säsongen",
+        "kalla": "subagent sonnet 2026-09-11, tre-frågorstestet grönt; rad 2 justerad av huvudsessionen (löftet \"priset ändras inte i december\" är inte Axels)"
+      },
+      "qa": {
+        "fil_vald": "_2.mp4 (9:16)",
+        "pris_i_annons": "649 → 499 kr",
+        "pris_ok": true,
+        "langd_s": 13.14,
+        "brief_langd": "10–13 s",
+        "anmarkningar": [
+          "captions \"649 nio\"/\"499 nio\" efter priset",
+          "\"Jock den\" i st.f. \"och den\""
+        ],
+        "dom": "ok med anmärkning — stoppad av opublicerad sida"
+      },
+      "utfall": "STOPPAD: Facebook-sidan 1304279782771044 opublicerad (Meta-fel 2446095 på 10/16 SE-annonser) — ingen uppladdning, status orörd, kommentar skriven"
+    },
+    {
+      "namn": "Adventskalender_AU_1_H1",
+      "mal_namn": "AdventLaneRacing_AU_1_H1",
+      "page_id": "3d7270ab-908c-81d9-b5c4-effc75f3ee33",
+      "url": "https://app.notion.com/p/Adventskalender_AU_1_H1-3d7270ab908c81d9b5c4effc75f3ee33",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "To be Reviewed",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1sqf-GTPcnO7K2A1mgzjhC6GgvpGSgQ3h, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1sqf-GTPcnO7K2A1mgzjhC6GgvpGSgQ3h",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1sqf-GTPcnO7K2A1mgzjhC6GgvpGSgQ3h?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://adventlane.se/products/adventskalender-racingbilar",
+      "prefix": "Adventskalender",
+      "koncept": "AU",
+      "nummer": 1,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_SE_Racingkalendern - AU",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "factory/output/kalender/leverans-2026-09-11/Adventskalender_AU_1_H1/Adventskalender_AU_1_H1_1.mp4",
+      "fil_alla": [
+        "factory/output/kalender/leverans-2026-09-11/Adventskalender_AU_1_H1/Adventskalender_AU_1_H1_1.mp4",
+        "factory/output/kalender/leverans-2026-09-11/Adventskalender_AU_1_H1/Adventskalender_AU_1_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true,
+      "copy": {
+        "primar": "Det här är inga leksaksbilar av papper – hjulen rullar på riktigt.\n24 bilar, alla olika: startnummer, rutmönster, flammor – ingen likadan.\nVarje bil har egna hjul som rullar – inte limmad, inte av kartong.\n649 kr → 499 kr, en ny bil bakom varje lucka fram till jul.",
+        "rubrik": "24 bilar, riktiga hjul, ingen likadan",
+        "beskrivning": "Hjulen rullar på riktigt",
+        "kalla": "subagent sonnet 2026-09-11, tre-frågorstestet grönt"
+      },
+      "qa": {
+        "fil_vald": "_2.mp4 (9:16)",
+        "pris_i_annons": "649 → 499 kr",
+        "pris_ok": true,
+        "langd_s": 10.01,
+        "brief_langd": "12–15 s",
+        "anmarkningar": [
+          "caption \"och pappor\" i st.f. \"av papper\"",
+          "\"beställd december\" i st.f. \"Beställ innan december\"",
+          "10 s mot 12–15 s"
+        ],
+        "dom": "ok med anmärkning — stoppad av opublicerad sida"
+      },
+      "utfall": "STOPPAD: Facebook-sidan 1304279782771044 opublicerad (Meta-fel 2446095 på 10/16 SE-annonser) — ingen uppladdning, status orörd, kommentar skriven"
+    },
+    {
+      "namn": "Adventskalender_FM_1_H1",
+      "mal_namn": "AdventLaneRacing_FM_1_H1",
+      "page_id": "3d7270ab-908c-81f5-85e6-c70adedc7536",
+      "url": "https://app.notion.com/p/Adventskalender_FM_1_H1-3d7270ab908c81f585e6c70adedc7536",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "To be Reviewed",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://adventlane.se/products/adventskalender-racingbilar",
+      "prefix": "Adventskalender",
+      "koncept": "FM",
+      "nummer": 1,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_SE_Racingkalendern - FM",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "factory/output/kalender/leverans-2026-09-11/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_1.mp4",
+      "fil_alla": [
+        "factory/output/kalender/leverans-2026-09-11/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_1.mp4",
+        "factory/output/kalender/leverans-2026-09-11/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true,
+      "copy": {
+        "primar": "Dag 1: en bil. Dag 24: ett helt garage på köksbordet.\nVarje morgon en ny lucka, varje morgon en ny bil att ställa bredvid de andra.\nVid julafton står 24 bilar på rad – hela decembers morgnar samlade på ett bord.\n649 kr → 499 kr, en bil bakom varje lucka i december.",
+        "rubrik": "Dag 1: en bil. Dag 24: ett garage.",
+        "beskrivning": "Ett garage på köksbordet",
+        "kalla": "subagent sonnet 2026-09-11, tre-frågorstestet grönt"
+      },
+      "qa": {
+        "fil_vald": "_2.mp4 (9:16)",
+        "pris_i_annons": "inget",
+        "pris_ok": true,
+        "langd_s": 8.15,
+        "brief_langd": "15–20 s",
+        "anmarkningar": [
+          "ingen prisskylt i slutet (briefen bad om en)",
+          "8 s mot 15–20 s"
+        ],
+        "dom": "ok — stoppad av opublicerad sida"
+      },
+      "utfall": "STOPPAD: Facebook-sidan 1304279782771044 opublicerad (Meta-fel 2446095 på 10/16 SE-annonser) — ingen uppladdning, status orörd, kommentar skriven"
+    }
+  ],
+  "varningar": [
+    "Adventskalender_PD_4_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_PD_4_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris",
+    "Adventskalender_PD_6_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_PD_6_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris",
+    "Adventskalender_AU_1_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_AU_1_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris",
+    "Adventskalender_FM_1_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_FM_1_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris"
+  ],
+  "hamtad": "2026-09-11T11:42:49.455Z",
+  "stopp": {
+    "orsak": "Facebook-sidan 1304279782771044 (AdventLane) är opublicerad. Meta pausade 10 av 16 SE-annonser och 7 av 16 NO-annonser 2026-09-11 08:00–08:35 CEST med HARD_ERROR 2446095 \"Sidan har inte publicerats\". Sidan finns inte bland de 40 sidor META_ACCESS_TOKEN når (me/accounts) och går inte att läsa.",
+    "beslut": "Ingen uppladdning: nya annonser ärver samma sida och blockeras direkt. Raderna ligger kvar i To be Reviewed och tas av nästa körning när sidan är publicerad.",
+    "uppladdade": 0
+  },
+  "se_annonser_status": {
+    "paused_with_issues": 10,
+    "active": 6,
+    "no_paused_with_issues": 7,
+    "no_active": 9
+  }
+}

@@ -112,3 +112,36 @@ NO: 16 annonser (13 med spend), ≈ 445 kr, 0 köp (`AdventLaneRacing_NO_PD_2_1`
 (Axel 2026-09-11) — `dna.md` rotorsak 3.
 
 Nästa avläsning: första briefdagen (söndag 2026-09-13 enligt registret).
+
+---
+
+## Leveransrunda `/ops-leverans` 2026-09-11 — 0 uppladdade, STOPP: Facebook-sidan opublicerad
+
+Kön: 4 videorader i `To be Reviewed` i hubben "Racing Car Advent Calendar creative hub"
+(alla flyttade från Bäverbutiken, prefix `Adventskalender_` → ommärkta `AdventLaneRacing_`):
+`PD_4_H1`, `PD_6_H1`, `AU_1_H1`, `FM_1_H1`. Två filer per rad (`_1` = 4:5, `_2` = 9:16).
+
+QA (frames lästa, `tools/qa-frames.py`): alla fyra visar 649 → 499 kr = butikens pris
+(499 kr, jämförpris 649 kr, läst live), produkt i bild före sekund 4, inget
+Bäverbutiken-brand. Anmärkningar (video ⇒ inte stopp): `PD_6_H1` captions
+"649 nio"/"499 nio" och "Jock den"; `AU_1_H1` "och pappor" (av papper), "beställd
+december"; `FM_1_H1` saknar prisskylt (inget pris = grönt); längder 8–13 s mot
+briefarnas 10–20 s.
+
+**Stopp: Facebook-sidan `1304279782771044` (AdventLane) är opublicerad.** Meta pausade
+10 av 16 SE-annonser och 7 av 16 NO-annonser 08:00–08:35 CEST med HARD_ERROR 2446095
+"Sidan har inte publicerats". Kvar ACTIVE/ACTIVE: `SP_1/2/3_H1`, `GT_2_H1`,
+`CS_1/2_H1` (SE) — samma sida, väntas följa. Nya annonser skulle ärva samma sida
+(`ops-till-meta` steg 6) och blockeras direkt. **Beslut: ingen uppladdning**, status
+orörd, kommentar på varje rad. Kön tar dem automatiskt när sidan är publicerad.
+Inget pausat, inget aktiverat (Metas pauser är inte körningens egna — regeln).
+
+Copy förberedd och sparad i `factory/output/kalender/leverans-2026-09-11.json`
+(`rader[].copy`): `PD_4_H1` återanvänder kontots PD-copy (briefen isolerar format,
+inte ord); `PD_6_H1`, `AU_1_H1`, `FM_1_H1` skrivna av subagent (sonnet) med
+tre-frågorstestet grönt. Nästa körning kan läsa dem därifrån.
+
+Verifierat ur kontot samtidigt (dna.md rotorsak 5 stängd): SE-copyn per adset är
+källans ordagrant för PD och GT; **CS bär fortfarande "23% rabatt – bara idag" och
+"Begränsat lager – slut innan jul"** (falsk brådska, ej rättad); SP är rättad
+("Sonen längtar till varje dag" – Johan, 14 dagars ångerrätt). Ingen ändring gjord.
