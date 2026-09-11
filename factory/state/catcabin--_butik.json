@@ -191,10 +191,9 @@
       }
     },
     "store-ready": {
-      "klar": false,
-      "manuell": "recensioner utekattkojan: ingen Judge.me-token (env JUDGEME_CATCABIN_TOKEN) — ladda upp output/utekattkojan/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · WeTracked: klistra in pixel-id 1101742182294878 (VA:ns klick) · Meta-sidan skapar VA:n i Business Manager (API:t kan inte) · Discord: boten kan inte skapa servrar — VA:n skapar \"CatCabin — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/catcabin.yaml skriver ut länken) och kör sen node factory/store-ready.mjs catcabin --guild <server-id>",
+      "klar": true,
       "pixelId": "1101742182294878",
-      "discordGuild": null,
+      "discordGuild": "1547844745412350012",
       "recensioner": [
         {
           "produkt": "utekattkojan",
@@ -205,7 +204,7 @@
         "recensioner utekattkojan: ingen Judge.me-token (env JUDGEME_CATCABIN_TOKEN) — ladda upp output/utekattkojan/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
         "WeTracked: klistra in pixel-id 1101742182294878 (VA:ns klick)",
         "Meta-sidan skapar VA:n i Business Manager (API:t kan inte)",
-        "Discord: boten kan inte skapa servrar — VA:n skapar \"CatCabin — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/catcabin.yaml skriver ut länken) och kör sen node factory/store-ready.mjs catcabin --guild <server-id>"
+        "Discord: ingen redigerare i standby-listan än — plockas för hand"
       ]
     },
     "tema-publicering": {
@@ -220,5 +219,5 @@
     "kritiska": [],
     "tid": "2026-09-11T13:23:07.611Z"
   },
-  "uppdaterad": "2026-09-11T13:23:14.280Z"
+  "uppdaterad": "2026-09-11T14:20:23.793Z"
 }
