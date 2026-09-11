@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 228,
+ "nasta": 237,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -6096,7 +6096,7 @@
   "K0126": {
    "id": "K0126",
    "skapad": "2026-09-10",
-   "namn": "Tornado Interceptor Vehicle Advent Calendar , Storm Chasers Car Dominator 3 Tiv2 24 Day Co",
+   "namn": "Adventskalender Dinosaurier 24 figurer",
    "objekt": "Barnbarnet — adventskalendern",
    "form": "kalenderlåda",
    "sak": "barnbarnet+kalenderlåda",
@@ -6124,20 +6124,83 @@
        "kalla": "korningar/2026-09-10/fynd-doa2.json"
       }
      ]
+    },
+    {
+     "product_id": "1005009776332625",
+     "url": "https://www.aliexpress.com/item/1005009776332625.html",
+     "bild": null,
+     "pris_usd": 18.49,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:04:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
     }
    ],
-   "leveranser": [],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 9,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 0,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 268,
+     "be_cpa": 232,
+     "hook": "Slut på choklad den 2 december?",
+     "varfor": "Strukturell kusin till racingbilarna med exakt en variabel bytt (tema): samma form, samma datum, samma mottagare, ankare 1,24× (National Geographic 495). Dinosaurier är barnens näst största tema efter fordon 4–8 år (pricerunner listar 69 modeller).",
+     "huvudrisk": "Låg bruttomarginal (BE-CPA 105–158 kr) och Schleich/Jurassic World-golv 159–441 kr i samma form; inbränd text i heron. · pris 499 ligger på NatGeo-ankaret (0,99×), inte under det",
+     "hypotes_id": "H05",
+     "per_kriterium": {
+      "K0": "ok — racingbilar och fiskedrag i katalogen, dinosaurier saknas; K0156/K0157 var 2D-akryl, aldrig levererade",
+      "K1": 8,
+      "K2": 12,
+      "K3": 10,
+      "K4": 8,
+      "K5": 6,
+      "K6": 10,
+      "K7": 5,
+      "K8": 8,
+      "K9": 5,
+      "K10": 3,
+      "K11": 2,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
    "feedback": [],
    "launch": null,
    "meta": null,
-   "status": "kandidat",
+   "status": "levererad",
    "aterupptas_om": [],
    "historik": [
     {
      "datum": "2026-09-10",
      "handelse": "skapat (produktjakt)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
     }
-   ]
+   ],
+   "namn_sv": "Adventskalender Dinosaurier 24 figurer"
   },
   "K0127": {
    "id": "K0127",
@@ -10091,7 +10154,7 @@
   "K0209": {
    "id": "K0209",
    "skapad": "2026-09-11",
-   "namn": "PVC Door Curtain Cuttable Dog Door Flap For DIY Dog House Waterproof Winter Pet Supplies T",
+   "namn": "Gårdshundens plastkoja",
    "objekt": "Gårdshunden/hundgården",
    "form": "koja",
    "sak": "gårdshunden/hundgården+koja",
@@ -10119,20 +10182,72 @@
        "kalla": "korningar/2026-09-11/fynd-omgang6.json"
       }
      ]
+    },
+    {
+     "product_id": "1005010577271235",
+     "url": "https://www.aliexpress.com/item/1005010577271235.html",
+     "bild": null,
+     "pris_usd": 32.77,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:05:05Z",
+       "kalla": "v3 discovery"
+      }
+     ]
     }
    ],
-   "leveranser": [],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 5,
+     "rank_poang": 12,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 474,
+     "be_cpa": 525,
+     "hook": "Sover hunden ute när frosten kommer?",
+     "varfor": "Samma struktur som utekattkojan (koja + första frost + 55+ på landet) på nästa djur; ankare Kerbl Pet Levin 1,9× och isolerad Kerbl 3 495 gör 999 kr att se billigt ut. Testar H09 rent — bara djuret skiljer.",
+     "huvudrisk": "32,77 USD kan vara minsta storleken och 'insulated' finns inte i produktsidans titel — fraktkostnad och verklig storlek måste bekräftas i offerten innan pris sätts.",
+     "hypotes_id": "H09",
+     "per_kriterium": {
+      "K0": "ok",
+      "ovrigt": "ej poängsatt på gamla kortet — se poang"
+     },
+     "kalla": "v3 batch"
+    }
+   ],
    "feedback": [],
    "launch": null,
    "meta": null,
-   "status": "kandidat",
+   "status": "levererad",
    "aterupptas_om": [],
    "historik": [
     {
      "datum": "2026-09-11",
      "handelse": "skapat (produktjakt)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 5, exploration, konfidens MEDEL)"
     }
-   ]
+   ],
+   "namn_sv": "Gårdshundens plastkoja"
   },
   "K0210": {
    "id": "K0210",
@@ -11050,6 +11165,749 @@
      "handelse": "launchad i kontot: Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11"
     }
    ]
+  },
+  "K0228": {
+   "id": "K0228",
+   "skapad": "2026-09-11",
+   "namn": "Snöskoterkapellet 600D",
+   "objekt": "Snöskoter på släpet",
+   "form": "överdrag",
+   "sak": "snöskoter på släpet+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007898953505",
+     "url": "https://www.aliexpress.com/item/1005007898953505.html",
+     "bild": null,
+     "pris_usd": 58.99,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:10:53Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 17.5,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 1499,
+     "landad": 853,
+     "be_cpa": 646,
+     "hook": "Står skotern på släpet i regnet?",
+     "varfor": "Samma struktur som MC-Kapellet och Taköverdraget: 80–200 tkr-objekt ute, formsytt 600D-kapell, hårt datum (första snö Norrland 6 v) och ett originalankare på 3 790 kr (2,5×). 350 000 registrerade skotrar, Biltema-golvet är tunt 300D.",
+     "huvudrisk": "Storlek/modell måste väljas (302–323 cm) och priset 1 499 ligger över alla kedjekapell — bär bara om H04 (objekt ≥ 60–130× priset, stor form i bild) håller.",
+     "hypotes_id": "H04",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Snöskoterkapellet 600D"
+  },
+  "K0229": {
+   "id": "K0229",
+   "skapad": "2026-09-11",
+   "namn": "Släpkärrekapellet 220×125",
+   "objekt": "Släpkärra",
+   "form": "överdrag",
+   "sak": "släpkärra+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012940003180",
+     "url": "https://www.aliexpress.com/item/1005012940003180.html",
+     "bild": null,
+     "pris_usd": 35.89,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:06:22Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 16.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 899,
+     "landad": 519,
+     "be_cpa": 380,
+     "hook": "Ligger löven i släpkärran igen?",
+     "varfor": "IBC-överdragets struktur: ägd sak ute året runt, presenning som svikande default, frost om 1–5 v; Fogelsta-original 2 916 kr ger 3,2× ankare. Svagare än skoter/ATV eftersom Biltema/Jula har PE-formen och ägarantal inte är mätt.",
+     "huvudrisk": "Måste-mäta-storlek (en storlek passar bara 2,0–2,15 m-flak) och kedjegolv i exakt samma form till okänt (troligen lågt) pris.",
+     "hypotes_id": "H03",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Släpkärrekapellet 220×125"
+  },
+  "K0230": {
+   "id": "K0230",
+   "skapad": "2026-09-11",
+   "namn": "Värmepumpsskyddet i aluminium",
+   "objekt": "Luftvärmepumpens utedel",
+   "form": "hus",
+   "sak": "luftvärmepumpens utedel+hus",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012880367856",
+     "url": "https://www.aliexpress.com/item/1005012880367856.html",
+     "bild": null,
+     "pris_usd": 47.29,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:10:55Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 13.8,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 1,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 1499,
+     "landad": 684,
+     "be_cpa": 815,
+     "hook": "Droppar taket på värmepumpen i vinter?",
+     "varfor": "Störst objektbas av alla dagens kandidater (över en miljon småhus) med hårt datum 6–10 v, kedjans egna varianter ligger på 1 999–2 499 kr och vår landade kostnad är 616–752 — BE-CPA 747–883. H01:s egen testsökning nämner luftvärmepump.",
+     "huvudrisk": "Frakten: en 100×50×70 cm aluminiumbox kan landa långt över 1,5×-schablonen — leverantörsoffert måste bekräfta innan pris sätts; plus måttvariation och vattenstämplad hero.",
+     "hypotes_id": "H01",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Värmepumpsskyddet i aluminium"
+  },
+  "K0231": {
+   "id": "K0231",
+   "skapad": "2026-09-11",
+   "namn": "Takluckehuven 40×40, 2-pack",
+   "objekt": "Husvagn — taket",
+   "form": "huv",
+   "sak": "husvagn+huv",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012828233566",
+     "url": "https://www.aliexpress.com/item/1005012828233566.html",
+     "bild": null,
+     "pris_usd": 4.75,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:10:25Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 4,
+     "rank_poang": 13,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 3,
+      "efterfragan": 3,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 138,
+     "be_cpa": 362,
+     "hook": "Står takluckan bar hela vintern?",
+     "varfor": "Objektet (husvagnen, 283 840 st) och datumet (uppställning 4 v) är V1:s — men formen är ny i svenskt flöde: bara Hindermann i fackhandeln (360–1 620 kr, modellspecifik), inget hos kedjorna. Testar H10 rent: kategorinyhet, textfri hero, samma ägare som vann.",
+     "huvudrisk": "Passform mot Mini Heki (den vanligaste luckan) går inte att läsa ur listningen — Hindermann säljer per modell, AliExpress säger 40×40.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 12,
+      "K3": 10,
+      "K4": 8,
+      "K5": 6,
+      "K6": 8,
+      "K7": 5,
+      "K8": 6,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Takluckehuven 40×40, 2-pack"
+  },
+  "K0232": {
+   "id": "K0232",
+   "skapad": "2026-09-11",
+   "namn": "Isfria vattenskålen 2,2 L",
+   "objekt": "Utekatten",
+   "form": "annat",
+   "sak": "utekatten+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012917988362",
+     "url": "https://www.aliexpress.com/item/1005012917988362.html",
+     "bild": null,
+     "pris_usd": 27.09,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:05:39Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 6,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 699,
+     "landad": 392,
+     "be_cpa": 307,
+     "hook": "Fryser kattens vatten på natten?",
+     "varfor": "Nästa fas efter utekattkojan (objekt.json: 'värme och vatten'), samma köpare, samma fönster, ankare Sulavesi 2,4× och Willab 745 ovanför oss. Flerköp finns på riktigt: en till hönsen, en till katten.",
+     "huvudrisk": "Form 'annat' är kontots sämsta signal (0 av 13) och landad 353–431 mot 699 ger BE-ROAS 2,3 — högre än varje vinnare i kontot.",
+     "hypotes_id": "H09",
+     "per_kriterium": {
+      "K0": "ok",
+      "ovrigt": "ej poängsatt på gamla kortet — se poang; objekt.json 09-10 satte K7-kill mot 745-ankaret, i dag räknat mot Sulavesi 1 690"
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 6, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Isfria vattenskålen 2,2 L"
+  },
+  "K0233": {
+   "id": "K0233",
+   "skapad": "2026-09-11",
+   "namn": "Viltsläden — rullbar dragmatta",
+   "objekt": "NYTT: Skjutet vilt — transporten ur skogen (rådjur, vildsvin, kalv)",
+   "form": "annat",
+   "sak": "nytt: skjutet vilt+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008510065407",
+     "url": "https://www.aliexpress.com/item/1005008510065407.html",
+     "bild": null,
+     "pris_usd": 25.29,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:04:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 7,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 649,
+     "landad": 366,
+     "be_cpa": 284,
+     "hook": "Släpar du fortfarande i benen?",
+     "varfor": "Syskon till vilthissen (Axels ja 09-10) i samma fönster: jägaren har vilthiss och dragsele men rullbar HDPE-släde är USA-standard och saknas i svensk fackhandel utom som Amazon-import — 'visste inte att det fanns' (H10) med jaktstart 3,9 v (H02, deadline 'jaktstart' otestad i kontot).",
+     "huvudrisk": "Form 'annat' (0/13 vinnare) och dött djur i heron kan stoppas av Meta; svenska Amazon-golvet är oläst och kan ligga under 400 kr.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok — inget vilttransport i katalogen; K0024/K0026 var viltsäckar, K0174 vilthiss (ja)",
+      "K1": 8,
+      "K2": 10,
+      "K3": 8,
+      "K4": 6,
+      "K5": 8,
+      "K6": 10,
+      "K7": 3,
+      "K8": 6,
+      "K9": 3,
+      "K10": 2,
+      "K11": 3,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 7, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Viltsläden — rullbar dragmatta"
+  },
+  "K0234": {
+   "id": "K0234",
+   "skapad": "2026-09-11",
+   "namn": "ATV-kapellet Heavy Duty",
+   "objekt": "Fyrhjuling/ATV",
+   "form": "överdrag",
+   "sak": "fyrhjuling/atv+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012520126605",
+     "url": "https://www.aliexpress.com/item/1005012520126605.html",
+     "bild": null,
+     "pris_usd": 30.3,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:06:32Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 8,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 899,
+     "landad": 438,
+     "be_cpa": 461,
+     "hook": "Står fyrhjulingen ute under älgjakten?",
+     "varfor": "MC-Kapellets struktur på ett dyrare objekt (60–150 tkr) med hårt datum om 4 v och 240 000 ägare; Polaris-original 3 045 kr ger 3,4× ankare trots Jula-golv 399. Dagens rutin fällde ATV på fel ägarantal.",
+     "huvudrisk": "Kedjan har exakt formen för 399–499 kr och Axel kan ha 'sett den innan' — bär bara om heron säljer 600D-känslan och storleken går att garantera.",
+     "hypotes_id": "H02",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "ATV-kapellet Heavy Duty"
+  },
+  "K0235": {
+   "id": "K0235",
+   "skapad": "2026-09-11",
+   "namn": "Hjulskydden 4-pack husvagn/släp",
+   "objekt": "Husvagn/husbil — hjulen och däcken",
+   "form": "huv",
+   "sak": "husvagn/husbil+huv",
+   "arketyp": "I_FLERKOP",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007500952009",
+     "url": "https://www.aliexpress.com/item/1005007500952009.html",
+     "bild": null,
+     "pris_usd": 21.55,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:06:08Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 10,
+     "rank_poang": 7,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 599,
+     "landad": 312,
+     "be_cpa": 288,
+     "hook": "Står husvagnen på samma fläck till april?",
+     "varfor": "Testar H08 (4 objekt per ägare → flerköp inbyggt i packen) och H06 (Biltema-golv finns men Hindermann-ankaret ger 1,6×). Objekt, ägare och datum är identiska med V1 — bara formen är ny för kontot.",
+     "huvudrisk": "Golvpriset hos Biltema är inte läst; ligger det under 200 kr för 2 st blir 599 för 4 svårsålt utan tydlig materialskillnad i bild.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 10,
+      "K3": 10,
+      "K4": 6,
+      "K5": 4,
+      "K6": 6,
+      "K7": 3,
+      "K8": 5,
+      "K9": 5,
+      "K10": 2,
+      "K11": 0,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 10, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Hjulskydden 4-pack husvagn/släp"
+  },
+  "K0236": {
+   "id": "K0236",
+   "skapad": "2026-09-11",
+   "namn": "Motorlåset rostfritt utombordare",
+   "objekt": "Utombordare — kåpan, hela motorn, nästa fas",
+   "form": "annat",
+   "sak": "utombordare+annat",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012502596910",
+     "url": "https://www.aliexpress.com/item/1005012502596910.html",
+     "bild": null,
+     "pris_usd": 22.69,
+     "forst_sedd": "2026-09-11",
+     "verifieringar": [
+      {
+       "datum": "2026-09-11",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-11T06:10:22Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-11",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 11,
+     "rank_poang": 5,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 1
+     },
+     "konfidens": "LÅG",
+     "pris": 599,
+     "landad": 328,
+     "be_cpa": 271,
+     "hook": "Sitter motorn kvar på bryggan i höst?",
+     "varfor": "objekt.json pekar ut motorlås som 'nästa fas' efter två bevisade utombordarformer; ägaren, datumet och objektvärdet är Båtmotorskyddets. Testar om ett lås (form=annat) med Watski-ankare 1,2× bär trots Biltema-golv (H06).",
+     "huvudrisk": "form=annat har 0 vinnare av 13 i kontot, och Biltema-priset är oläst — ligger det runt 300 kr är 599 utan synlig skillnad dött.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 10,
+      "K3": 6,
+      "K4": 8,
+      "K5": 4,
+      "K6": 6,
+      "K7": 3,
+      "K8": 6,
+      "K9": 3,
+      "K10": 1,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-11",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "levererad på V3-arket (rank 11, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Motorlåset rostfritt utombordare"
   }
  }
 }

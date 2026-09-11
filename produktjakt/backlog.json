@@ -5,7 +5,8 @@
   "arketyp": "A1",
   "deadline": "första snö v 46",
   "korningsvecka": 39,
-  "orsak": "ankare mätt (Clas Ohlson plåt 2 499) men AliExpress ger bara tygkåpor à 4 USD — formen snötak saknas under taket; sök 'heat pump snow roof canopy bracket' med annat formord"
+  "orsak": "ankare mätt (Clas Ohlson plåt 2 499) men AliExpress ger bara tygkåpor à 4 USD — formen snötak saknas under taket; sök 'heat pump snow roof canopy bracket' med annat formord",
+  "lost": "2026-09-11: styv aluminiumlåda hittad (47,29 USD) och levererad på V3-arket som Värmepumpsskyddet i aluminium"
  },
  {
   "objekt": "Gårdshunden/hundgården",
@@ -21,6 +22,22 @@
   "arketyp": "A3 (A5 efter V2)",
   "deadline": "första frost v 41",
   "korningsvecka": 38,
-  "orsak": "ankare Supercat 599 (18 W IPX7) men AliExpress-träffarna är inomhusdynor med barntryck (K8 0/3) — sök 'IPX7 pet heating pad outdoor 18W' / 'outdoor cat house heater'"
+  "orsak": "ankare Supercat 599 (18 W IPX7) men AliExpress-träffarna är inomhusdynor med barntryck (K8 0/3) — sök 'IPX7 pet heating pad outdoor 18W' / 'outdoor cat house heater' · 2026-09-11 lins B: fortfarande bara barntrycksdynor/reptilmattor/solcellsdyna med text — kör om v 38 med 'outdoor cat house heated pad IP67 12V'"
+ },
+ {
+  "objekt": "Robotgräsklippare + laddstation",
+  "form": "garage/tak",
+  "arketyp": "A1",
+  "deadline": "indockning v 43–46",
+  "korningsvecka": 40,
+  "orsak": "Jula Ventura-tak 499 = samma form; AliExpress-garaget landar 1 027 — bara om listning < 15 USD dyker upp"
+ },
+ {
+  "objekt": "Adventskalender — igelkott/fågel (Vivara)",
+  "form": "hus",
+  "arketyp": "A3",
+  "deadline": "första frost",
+  "korningsvecka": 38,
+  "orsak": "Igelkottshuset föll på BE-CPA 187 (< 190) mot Vivara 299,90 golv — söks om bara med listning < 20 USD"
  }
 ]

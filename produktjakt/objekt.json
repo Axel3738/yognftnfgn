@@ -20,7 +20,8 @@
    "skyddsformer": [
     "taköverdrag formsytt 450–800 cm (BEVISAD V1 1 129 kr — dubblett; sök storlekssyskon)",
     "hel-överdrag andningsbart",
-    "takluckehuv (v24: Temu-mått 14×14 tum fällde — svenska Heki 40×40 cm)"
+    "takluckehuv (v24: Temu-mått 14×14 tum fällde — svenska Heki 40×40 cm)",
+    "takluckehuv 40×40 — ankare Hindermann/MPK 360–380 kr, Mini Heki 1 620 (camping4u.se, lins D 2026-09-11); levererad som 2-pack 499 kr"
    ],
    "ankare_kallor": [
     "getcamping.se (EuroTrail 1 599–2 395, Brunner 2 999) [F]",
@@ -34,7 +35,8 @@
     "caravan roof protector cover 5m 7m",
     "motorhome roof cover uv winter"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_takluckehuv_sek": 380
   },
   {
    "objekt": "Husvagn — fronten",
@@ -197,13 +199,14 @@
     "släpvagnshandel (Fogelsta/Brenderup-återförsäljare) — ej mätt",
     "pricerunner.se"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 2916,
    "sokfraser_en": [
     "utility trailer cover waterproof fitted heavy duty",
     "cargo trailer tarp cover 2.5m",
     "trailer cover waterproof oxford utility"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_not": "Fogelsta kapellock 2 916 kr (lins A 2026-09-11); Biltema/Jula har PE-formen, pris ej läst (403)"
   },
   {
    "objekt": "Båt på trailer/bockar",
@@ -367,12 +370,13 @@
     "jaktia.se",
     "ATV-återförsäljare (CFMoto/Polaris) — ej mätt"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 3045,
    "sokfraser_en": [
     "atv cover waterproof heavy duty 600D",
     "atv seat cover waterproof universal"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_not": "Polaris originalkapell 3 045 kr (lins A 2026-09-11); golv Jula 399/499. Ägare: 240 000 terränghjulingar (snoochterrang, lins A) — K11 '< 100 000' var fel"
   },
   {
    "objekt": "Snöskoter på släpet",
@@ -393,12 +397,13 @@
     "skogma.se",
     "skoterhandel — ej mätt"
    ],
-   "ankare_sek": null,
+   "ankare_sek": 3790,
    "sokfraser_en": [
     "snowmobile cover waterproof trailerable",
     "snowmobile seat cover"
    ],
-   "vikt": 3
+   "vikt": 3,
+   "ankare_not": "Ski-Doo/Lynx originalkapell 3 790 kr (lins A 2026-09-11); golv Biltema 300D 449"
   },
   {
    "objekt": "Veteranbil/andrabil på uppfarten",
@@ -540,7 +545,8 @@
    ],
    "vikt": 3,
    "ankare_namn": "Husqvarna Automower Garage S 2 241 kr (gplshop.se), Husqvarna house 1 790–2 990",
-   "golv": "Jula/Biltema robotgarage ca 299–599 kr (ej exakt läst)"
+   "golv": "Jula/Biltema robotgarage ca 299–599 kr (ej exakt läst)",
+   "ankare_not": "Husqvarna Garage S 2 241; men Jula Ventura-tak 499 är SAMMA form och AliExpress landar 1 027 (lins A 2026-09-11) — sök inte igen utan ny listning < 15 USD"
   },
   {
    "objekt": "Snöslunga",
@@ -1071,7 +1077,8 @@
    ],
    "vikt": 3,
    "ankare_namn": "Clas Ohlson värmepumpsskydd plåt med tak 2 499 kr (36-217); Grøntklima trä 6 990 (polarpumpen)",
-   "golv": "ej hittat under 2 499 i svensk handel 2026-09-11"
+   "golv": "ej hittat under 2 499 i svensk handel 2026-09-11",
+   "ankare_not": "Clas Ohlson plåttak 2 499; styv lamellbox i aluminium hittad på AliExpress 47 USD (lins A 2026-09-11) — backlog-raden löst"
   },
   {
    "objekt": "Laddbox/utomhusuttag",

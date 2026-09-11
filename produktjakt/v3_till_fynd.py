@@ -34,16 +34,26 @@ def ta_in_koncept(k, datum):
     ix = K._index(d)
     pid = str((k.get("listning") or {}).get("product_id") or "")
     kid = ix.get(pid) if pid else None
+    syskon = None
     if not kid:
+        # samma SAK (objekt + form) = samma koncept — utom när det konceptet redan är launchat/dömt:
+        # då är dagens rad ett SYSKON (nytt tema, ny storlek, nytt objekt) som ska mätas för sig
+        # (adventskalender dinosaurier ≠ adventskalender racingbilar, fast objekt + form är lika)
         sak = K._sak(k.get("objekt"), k.get("form"), k.get("namn_sv"))
         for cid, c in d["koncept"].items():
             if c.get("sak") == sak and c["status"] not in ("dubblett",):
+                if c["status"] in ("launchad", "vinnare", "forlorare"):
+                    syskon = cid
+                    continue
                 kid = cid
                 break
     if not kid:
         c = K.skapa(d, namn=k["namn_sv"], objekt=k.get("objekt"), form=k.get("form"), arketyp=k.get("arketyp"),
                     arketyp_sekundar=k.get("arketyp_sekundar"), taggar=k.get("taggar") or {}, datum=datum, kalla="produktjakt v3")
         kid = c["id"]
+        if syskon:
+            c["syskon_till"] = syskon
+            K._handelse(c, datum, f"syskon till {syskon} (samma objekt + form, redan launchat/dömt — mäts för sig)")
     c = d["koncept"][kid]
     c["namn"] = k["namn_sv"]; c["namn_sv"] = k["namn_sv"]
     c["arketyp"] = c.get("arketyp") or k.get("arketyp"); c["arketyp_sekundar"] = c.get("arketyp_sekundar") or k.get("arketyp_sekundar")

@@ -65,7 +65,7 @@ Uppdaterad 2026-09-11. Metas facit hämtat 2026-09-11: **18 REAL WINNER · 21 RE
 |---|---:|---:|---:|---:|---|---|---|
 | arketyp = X_UTANFOR | 3 | 9 | 14 | 1 | 0/0/0 | HÖG (förlorare) | 3 av 12 dömda vann — t.ex. Strandtofflorna, Cykelshorts Herr, Vandringskängor Herr; förlorare: Ergonomiska Tofflorna, Plyschtofflorna Herr,  |
 | arketyp = A_AGARE_FRIKTION | 2 | 7 | 7 | 0 | 0/0/0 | HÖG (förlorare) | 2 av 9 dömda vann — t.ex. Fiskespöhållaren, Axelbältet; förlorare: Surfplattestället, Väggfästet, Golfklubbsborsten |
-| arketyp = B_SKYDDA_DYRT | 7 | 1 | 2 | 2 | 3/1/0 | HÖG (vinnare) | 7 av 8 dömda vann — t.ex. Motorhöljet, Övervakningskameran, IBC-Tanköverdraget; förlorare: Gräsklippartäcket |
+| arketyp = B_SKYDDA_DYRT | 7 | 1 | 2 | 2 | 4/1/0 | HÖG (vinnare) | 7 av 8 dömda vann — t.ex. Motorhöljet, Övervakningskameran, IBC-Tanköverdraget; förlorare: Gräsklippartäcket |
 | arketyp_sekundar = E_VADER_SASONG | 6 | 0 | 0 | 1 | 0/0/0 | HÖG (vinnare) | 6 av 6 dömda vann — t.ex. Motorhöljet, IBC-Tanköverdraget, Båtmotorskyddet 420D |
 | arketyp_sekundar = I_FLERKOP | 3 | 0 | 0 | 0 | 0/0/0 | MEDEL (vinnare) | 3 av 3 dömda vann — t.ex. Fiskespöhållaren, Övervakningskameran, Adventskalendern Racingbilar |
 | objekt_ute = ja | 15 | 5 | 10 | 3 | 0/0/0 | HÖG (vinnare) | 15 av 20 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Gravstenspennan, Golfklubbsborsten, Ståltrådsborsth |
@@ -73,7 +73,7 @@ Uppdaterad 2026-09-11. Metas facit hämtat 2026-09-11: **18 REAL WINNER · 21 RE
 | objekt_varde_band = inget | 3 | 11 | 16 | 2 | 0/0/0 | HÖG (förlorare) | 3 av 14 dömda vann — t.ex. Adventskalendern Racingbilar, Isolerade Utekattkojan, Vandringskängor Herr; förlorare: Ergonomiska Tofflorna, Ply |
 | objekt_varde_band = dyr>10tkr | 7 | 2 | 4 | 2 | 0/0/0 | HÖG (vinnare) | 7 av 9 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, Strandtofflorna; förlorare: Gravstenspennan, Golfklubbsborsten |
 | form = annat | 0 | 13 | 20 | 1 | 0/0/0 | HÖG (förlorare) | 0 av 13 dömda vann; förlorare: Gravstenspennan, Surfplattestället, Väggfästet |
-| form = överdrag | 7 | 1 | 0 | 1 | 1/0/0 | HÖG (vinnare) | 7 av 8 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, IBC-Tanköverdraget; förlorare: Gräsklippartäcket |
+| form = överdrag | 7 | 1 | 0 | 1 | 2/0/0 | HÖG (vinnare) | 7 av 8 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, IBC-Tanköverdraget; förlorare: Gräsklippartäcket |
 | agare_55plus_smahus = nej | 3 | 14 | 18 | 1 | 0/0/0 | HÖG (förlorare) | 3 av 17 dömda vann — t.ex. Damasker Vandring, Cykelshorts Herr, Vandringskängor Herr; förlorare: Ergonomiska Tofflorna, Surfplattestället, P |
 | latent_behov = ja | 1 | 14 | 18 | 2 | 0/0/0 | HÖG (förlorare) | 1 av 15 dömda vann — t.ex. Soptunneklistermärkena; förlorare: Gravstenspennan, Surfplattestället, Väggfästet |
 | deadline_typ = ingen | 6 | 19 | 26 | 3 | 0/0/0 | HÖG (förlorare) | 6 av 25 dömda vann — t.ex. Fiskespöhållaren, Övervakningskameran, Bälteslipmaskinen; förlorare: Ergonomiska Tofflorna, Surfplattestället, Vä |
@@ -88,13 +88,13 @@ Uppdaterad 2026-09-11. Metas facit hämtat 2026-09-11: **18 REAL WINNER · 21 RE
 | material_klass = 2 | 4 | 0 | 0 | 0 | 0/0/0 | MEDEL (vinnare) | 4 av 4 dömda vann — t.ex. Fiskespöhållaren, Sätesöverdragaren, Övervakningskameran |
 | montering_app = ja | 1 | 5 | 8 | 1 | 0/0/0 | HÖG (förlorare) | 1 av 6 dömda vann — t.ex. Övervakningskameran; förlorare: Gravstenspennan, Väggfästet, Ståltrådsborsthuvuden |
 | flerkop = ja | 4 | 0 | 4 | 1 | 0/0/0 | MEDEL (vinnare) | 4 av 4 dömda vann — t.ex. Fiskespöhållaren, Övervakningskameran, Soptunneklistermärkena |
-| prisband = 500–999 | 7 | 2 | 7 | 3 | 2/0/0 | HÖG (vinnare) | 7 av 9 dömda vann — t.ex. Sätesöverdragaren, Axelbältet, Övervakningskameran; förlorare: Lättviktsryggsäcken, Uteduschen |
+| prisband = 500–999 | 7 | 2 | 7 | 3 | 3/0/0 | HÖG (vinnare) | 7 av 9 dömda vann — t.ex. Sätesöverdragaren, Axelbältet, Övervakningskameran; förlorare: Lättviktsryggsäcken, Uteduschen |
 
 ## WEAK SIGNALS (LÅG — blandat eller för få dömda)
 
 | Signal | Vinnare | Förlorare | Otillr. | Otestat | Axel ja/kanske/nej | Konfidens | Tolkning |
 |---|---:|---:|---:|---:|---|---|---|
-| arketyp = E_VADER_SASONG | 2 | 1 | 1 | 0 | 0/0/0 | LÅG (vinnare) | 2 av 3 dömda vann — t.ex. Damasker Vandring, Kranskydd Frost 420D; förlorare: Uteduschen |
+| arketyp = E_VADER_SASONG | 2 | 1 | 1 | 0 | 1/0/0 | LÅG (vinnare) | 2 av 3 dömda vann — t.ex. Damasker Vandring, Kranskydd Frost 420D; förlorare: Uteduschen |
 | arketyp = C_LAGA_ISTALLET | 1 | 1 | 2 | 0 | 0/0/0 | LÅG (blandat) | 1 av 2 dömda vann — t.ex. Sätesöverdragaren; förlorare: Gravstenspennan |
 | arketyp = D_SNABBARE_METOD | 1 | 1 | 4 | 0 | 0/0/0 | LÅG (blandat) | 1 av 2 dömda vann — t.ex. Bälteslipmaskinen; förlorare: Ståltrådsborsthuvuden |
 | arketyp = H_VISUELL_NYHET | 1 | 0 | 0 | 0 | 0/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Soptunneklistermärkena |
@@ -118,6 +118,7 @@ Uppdaterad 2026-09-11. Metas facit hämtat 2026-09-11: **18 REAL WINNER · 21 RE
 | form = kalender | 1 | 0 | 0 | 0 | 0/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Adventskalendern Racingbilar |
 | form = koja | 1 | 0 | 0 | 0 | 0/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Isolerade Utekattkojan |
 | form = skydd | 0 | 0 | 0 | 0 | 1/1/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 1 ja, 1 kanske |
+| form = tak | 0 | 0 | 0 | 0 | 1/0/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 1 ja |
 | agare_55plus_smahus = ja | 15 | 7 | 13 | 3 | 0/0/0 | LÅG (vinnare) | 15 av 22 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Gravstenspennan, Väggfästet, Gräsklippartäcket |
 | old_way = köpt produkt som fungerar | 8 | 13 | 27 | 3 | 0/0/0 | LÅG (förlorare) | 8 av 21 dömda vann — t.ex. Strandtofflorna, Övervakningskameran, Bälteslipmaskinen; förlorare: Ergonomiska Tofflorna, Surfplattestället, Ply |
 | old_way = improvisation | 8 | 4 | 2 | 0 | 0/0/0 | LÅG (vinnare) | 8 av 12 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Väggfästet, Gräsklippartäcket, Skotvättpåsen |
@@ -126,7 +127,7 @@ Uppdaterad 2026-09-11. Metas facit hämtat 2026-09-11: **18 REAL WINNER · 21 RE
 | latent_behov = nej | 17 | 7 | 13 | 2 | 0/0/0 | LÅG (vinnare) | 17 av 24 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Ergonomiska Tofflorna, Plyschtofflorna Herr, Golfkl |
 | deadline_typ = säsongsstart | 2 | 1 | 3 | 0 | 0/0/0 | LÅG (vinnare) | 2 av 3 dömda vann — t.ex. Axelbältet, Strandtofflorna; förlorare: Plyschtofflorna Herr |
 | deadline_typ = första frost | 2 | 0 | 2 | 0 | 0/0/0 | LÅG (vinnare) | 2 av 2 dömda vann — t.ex. Kranskydd Frost 420D, Isolerade Utekattkojan |
-| deadline_typ = första snö | 1 | 0 | 0 | 0 | 0/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Damasker Vandring |
+| deadline_typ = första snö | 1 | 0 | 0 | 0 | 1/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Damasker Vandring |
 | deadline_typ = 1 december | 1 | 0 | 0 | 0 | 0/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Adventskalendern Racingbilar |
 | deadline_typ = jaktstart | 0 | 0 | 0 | 0 | 1/0/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 1 ja |
 | timing_vid_launch = rätt | 12 | 6 | 9 | 2 | 0/0/0 | LÅG (vinnare) | 12 av 18 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Ergonomiska Tofflorna, Magnetfiskesatsen, Golfklubb |
@@ -173,14 +174,14 @@ Uppdaterad 2026-09-11. Metas facit hämtat 2026-09-11: **18 REAL WINNER · 21 RE
 | Arketyp | Vinnare | Förlorare | Otillr. | Otestat | Spend | Vinstbidrag | Researchkoncept (lev./ja/kanske/nej/launch) |
 |---|---:|---:|---:|---:|---:|---:|---|
 | A_AGARE_FRIKTION | 2 | 7 | 7 | 0 | 152592 | 35755 | 0/0/0/0/0 |
-| B_SKYDDA_DYRT | 7 | 1 | 2 | 2 | 198491 | 83522 | 5/3/1/0/2 |
+| B_SKYDDA_DYRT | 7 | 1 | 2 | 2 | 198491 | 83522 | 10/4/1/0/2 |
 | C_LAGA_ISTALLET | 1 | 1 | 2 | 0 | 76231 | 26645 | 0/0/0/0/0 |
 | D_SNABBARE_METOD | 1 | 1 | 4 | 0 | 36287 | 7200 | 0/0/0/0/1 |
-| E_VADER_SASONG | 2 | 1 | 1 | 0 | 26132 | 5038 | 1/0/0/0/1 |
+| E_VADER_SASONG | 2 | 1 | 1 | 0 | 26132 | 5038 | 3/1/0/0/1 |
 | F_HOBBY_IDENTITET | 0 | 1 | 1 | 1 | 3950 | -1034 | 0/0/0/0/0 |
-| G_Q4_GAVA | 1 | 0 | 0 | 0 | 3308 | 2931 | 0/0/0/0/1 |
-| H_VISUELL_NYHET | 1 | 0 | 0 | 0 | 11255 | 2078 | 0/0/0/0/0 |
-| I_FLERKOP | 0 | 0 | 0 | 0 | 0 | 0 | 0/0/0/0/0 |
+| G_Q4_GAVA | 1 | 0 | 0 | 0 | 3308 | 2931 | 1/0/0/0/1 |
+| H_VISUELL_NYHET | 1 | 0 | 0 | 0 | 11255 | 2078 | 2/0/0/0/0 |
+| I_FLERKOP | 0 | 0 | 0 | 0 | 0 | 0 | 1/0/0/0/0 |
 | X_UTANFOR | 3 | 9 | 14 | 1 | 113630 | 1269 | 0/0/0/0/0 |
 
 ## PREDICTION VS REALITY (researchade koncept som launchats)
@@ -247,3 +248,4 @@ Ur `docs/temu-vinnar-dna.md` (400 annonser, bevisat inom vinnarna): leverantöre
 <!-- auto:end -->
 
 ## Egna anteckningar (rutinen skriver här, en rad per körning)
+- 2026-09-11 (V3 valideringskörning): svar 17 (9/5/3, +2 ja i dag: snöslungehuven, hönsgårdstaket) · Meta: facit byggt från noll — 18 REAL WINNER / 21 REAL LOSER / 33 INSUFFICIENT / 4 UNTESTED; V1–V3 REAL_WINNER prel. (bekräftas ≥ 09-14); Stegstödet + Staketstolpslagaren negativ lutning ~1 000 kr · hypoteser: 7 motbevisade skrivna (> 1 000 kr, leksak/inomhus, lagerdjup, 3 annonsörer + look-alike, uppslag som rank, man 45–70, mekanismnyhet); H01 stärkt · batch 11 (3/6/2), 12 sökta, 41 fällda · prediktion vs verklighet: modellens två största fel (taköverdraget refuterat, adventskalendern killad) är REAL WINNERS · i morgon: exploitation under minimum — sök fler B_SKYDDA_DYRT-kusiner på objekt > 10 tkr med ankare; G_Q4_GAVA prissätts mot pris ÷ N delar, inte 0,85× ankaret; Jula/Biltema/PriceRunner 403 — golv ur andra återförsäljare.

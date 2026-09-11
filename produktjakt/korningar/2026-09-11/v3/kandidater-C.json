@@ -13,8 +13,28 @@
    "arketyp_sekundar": "I_FLERKOP",
    "slot": "sasong",
    "hypotes_id": "H05",
-   "vinnarlikhet": {"likast": "Adventskalendern Racingbilar", "delade_variabler": ["form kalender", "G_Q4_GAVA", "deadline 1 december", "golv under ja", "ankare 1,2–1,6×", "flerköp ja (flera barnbarn)", "en variant", "prisband 300–499"], "avvikelser": ["tema dinosaurier i stället för bilar — enda variabeln som skiljer"]},
-   "sasong": {"fonster_id": "advent_1_december", "deadline_typ": "1 december", "veckor_kvar": 10.6, "timing": "NOW"},
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "form kalender",
+     "G_Q4_GAVA",
+     "deadline 1 december",
+     "golv under ja",
+     "ankare 1,2–1,6×",
+     "flerköp ja (flera barnbarn)",
+     "en variant",
+     "prisband 300–499"
+    ],
+    "avvikelser": [
+     "tema dinosaurier i stället för bilar — enda variabeln som skiljer"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "advent_1_december",
+    "deadline_typ": "1 december",
+    "veckor_kvar": 10.6,
+    "timing": "NOW"
+   },
    "listning": {
     "product_id": "1005009776332625",
     "url": "https://www.aliexpress.com/item/1005009776332625.html",
@@ -22,26 +42,128 @@
     "sald": "",
     "verdict": "LIVE_VERIFIED",
     "verifierad_at": "2026-09-11T06:04:00Z",
-    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-11/v3/bilder/1005009776332625.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant enligt titel/sökträff (storlek på figurer ej mätt)", "video": "ej tillgänglig i containern"},
-    "alternativ_listning": {"product_id": "1005010267698376", "url": "https://www.aliexpress.com/item/1005010267698376.html", "pris_usd": 16.65, "verdict": "LIVE_VERIFIED", "verifierad_at": "2026-09-11T06:07:15Z", "hero": "korningar/2026-09-11/v3/bilder/1005010267698376.jpg", "kommentar": "24 st Funko-liknande 3D-dinosaurier med upphängningsband, svart låda med orange T-rex — hero textfri utom 'ADVENT CALENDAR' på lådan; figurerna är hängen (julgran) snarare än lekfigurer"}
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-11/v3/bilder/1005009776332625.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titel/sökträff (storlek på figurer ej mätt)",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ_listning": {
+     "product_id": "1005010267698376",
+     "url": "https://www.aliexpress.com/item/1005010267698376.html",
+     "pris_usd": 16.65,
+     "verdict": "LIVE_VERIFIED",
+     "verifierad_at": "2026-09-11T06:07:15Z",
+     "hero": "korningar/2026-09-11/v3/bilder/1005010267698376.jpg",
+     "kommentar": "24 st Funko-liknande 3D-dinosaurier med upphängningsband, svart låda med orange T-rex — hero textfri utom 'ADVENT CALENDAR' på lådan; figurerna är hängen (julgran) snarare än lekfigurer"
+    }
    },
-   "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Heron: öppen grön låda med 24 numrerade luckor, ett dussin små färgade dinosaurier (T-rex, triceratops, stegosaurus, självlysande) liggande i luckorna och runt lådan på rött bord med minigranar — lådan OCH innehållet syns. Inbränd text 'Christmas dinosaur Poke hole gift box' uppe till vänster måste beskäras."},
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Heron: öppen grön låda med 24 numrerade luckor, ett dussin små färgade dinosaurier (T-rex, triceratops, stegosaurus, självlysande) liggande i luckorna och runt lådan på rött bord med minigranar — lådan OCH innehållet syns. Inbränd text 'Christmas dinosaur Poke hole gift box' uppe till vänster måste beskäras."
+   },
    "marknad": {
-    "lagsta_jamforbara": {"aktor": "Schleich Dinosaurier Adventskalender / Adlibris (via jultoppen.se)", "pris_sek": 159, "url": "https://jultoppen.se/julkalender/leksaker/dinosaurier/", "exakt_samma_form": true, "kommentar": "årsmodell ej läst (troligen äldre utgåva); Jurassic World 2026 429 kr Proshop, National Geographic 399 kr Proshop"},
-    "premium_ankare": {"namn": "National Geographic Adventskalender med Dinosaurier", "pris_sek": 495, "url": "https://www.coolstuff.se/search?q=dinosaurie%20adventskalender", "i_sortiment": true, "kommentar": "Coolstuff 495 kr, 4,9/5, i lager 2026-09-11"},
-    "ankare_kvot": 1.24,
+    "lagsta_jamforbara": {
+     "aktor": "Schleich Dinosaurier Adventskalender / Adlibris (via jultoppen.se)",
+     "pris_sek": 159,
+     "url": "https://jultoppen.se/julkalender/leksaker/dinosaurier/",
+     "exakt_samma_form": true,
+     "kommentar": "årsmodell ej läst (troligen äldre utgåva); Jurassic World 2026 429 kr Proshop, National Geographic 399 kr Proshop"
+    },
+    "premium_ankare": {
+     "namn": "National Geographic Adventskalender med Dinosaurier",
+     "pris_sek": 495,
+     "url": "https://www.coolstuff.se/search?q=dinosaurie%20adventskalender",
+     "i_sortiment": true,
+     "kommentar": "Coolstuff 495 kr, 4,9/5, i lager 2026-09-11"
+    },
+    "ankare_kvot": 0.99,
     "annonsorer_se": "ej mätt",
-    "kollade_kallor": ["jultoppen.se (pricerunner-fed)", "coolstuff.se", "pricerunner.se (sidan tom via proxy)", "lekia.se (ingen dinokalender i sökträff)"]
+    "kollade_kallor": [
+     "jultoppen.se (pricerunner-fed)",
+     "coolstuff.se",
+     "pricerunner.se (sidan tom via proxy)",
+     "lekia.se (ingen dinokalender i sökträff)"
+    ]
    },
-   "ekonomi": {"landad_sek": [241, 294], "pris_sek": 399, "pris_per_lucka_sek": 16.6, "brutto_sek": [105, 158], "be_cpa_sek": [105, 158], "be_roas": [2.5, 3.8], "flerkop": true, "returrisk": "låg — ingen storlek, en variant", "kommentar": "Ekonomin är den svaga axeln: racingbilarna vann på 499 kr mot LEGO 599; här taket 0,85 × 495 = 421 → 399. Alternativlistningen (16,65 USD) ger landad 217–265 och BE-CPA 134–182."},
-   "meta_tanke": {"hook": "Slut på choklad den 2 december?", "objekt_i_bild": "den öppna lådan med 24 dinosaurier framför luckorna", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "en lucka öppnas, en dinosaurie faller ut — 24 synliga saker"},
+   "ekonomi": {
+    "landad_sek": [
+     241,
+     294
+    ],
+    "pris_sek": 499,
+    "pris_per_lucka_sek": 16.6,
+    "brutto_sek": [
+     205,
+     258
+    ],
+    "be_cpa_sek": [
+     205,
+     258
+    ],
+    "be_roas": 2.16,
+    "flerkop": true,
+    "returrisk": "låg — ingen storlek, en variant",
+    "kommentar": "Ekonomin är den svaga axeln: racingbilarna vann på 499 kr mot LEGO 599; här taket 0,85 × 495 = 421 → 399. Alternativlistningen (16,65 USD) ger landad 217–265 och BE-CPA 134–182.",
+    "pris_sek_agentforslag": 399,
+    "prisnot": "Huvudsessionen 2026-09-11: 399 gav BE-CPA 105–158 (< 190). Satt 499 = samma pris som Adventskalendern Racingbilar (REAL WINNER, 3 305 kr/16 köp) mot samma kedjegolv (LEGO 599, NatGeo 495 = 0,99×). H05 testas då med en enda skillnad: temat. 20,8 kr/lucka."
+   },
+   "meta_tanke": {
+    "hook": "Slut på choklad den 2 december?",
+    "objekt_i_bild": "den öppna lådan med 24 dinosaurier framför luckorna",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "en lucka öppnas, en dinosaurie faller ut — 24 synliga saker"
+   },
    "varfor": "Strukturell kusin till racingbilarna med exakt en variabel bytt (tema): samma form, samma datum, samma mottagare, ankare 1,24× (National Geographic 495). Dinosaurier är barnens näst största tema efter fordon 4–8 år (pricerunner listar 69 modeller).",
-   "huvudrisk": "Låg bruttomarginal (BE-CPA 105–158 kr) och Schleich/Jurassic World-golv 159–441 kr i samma form; inbränd text i heron.",
+   "huvudrisk": "Låg bruttomarginal (BE-CPA 105–158 kr) och Schleich/Jurassic World-golv 159–441 kr i samma form; inbränd text i heron. · pris 499 ligger på NatGeo-ankaret (0,99×), inte under det",
    "konfidens": "MEDEL",
-   "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 1, "ekonomi": 0, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 3},
-   "per_kriterium": {"K0": "ok — racingbilar och fiskedrag i katalogen, dinosaurier saknas; K0156/K0157 var 2D-akryl, aldrig levererade", "K1": 8, "K2": 12, "K3": 10, "K4": 8, "K5": 6, "K6": 10, "K7": 5, "K8": 8, "K9": 5, "K10": 3, "K11": 2, "K12": 1},
-   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (advent/kalender/dino)", "koncept.py sok advent/kalender/dino", "kontot 7 d: ej läst (rör inte Meta)"]},
-   "kallor": ["https://jultoppen.se/julkalender/leksaker/dinosaurier/", "https://www.coolstuff.se/search?q=dinosaurie%20adventskalender", "https://www.aliexpress.com/w/wholesale-advent-calendar-dinosaur-toys-24-pcs.html"]
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 0,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok — racingbilar och fiskedrag i katalogen, dinosaurier saknas; K0156/K0157 var 2D-akryl, aldrig levererade",
+    "K1": 8,
+    "K2": 12,
+    "K3": 10,
+    "K4": 8,
+    "K5": 6,
+    "K6": 10,
+    "K7": 5,
+    "K8": 8,
+    "K9": 5,
+    "K10": 3,
+    "K11": 2,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (advent/kalender/dino)",
+     "koncept.py sok advent/kalender/dino",
+     "kontot 7 d: ej läst (rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://jultoppen.se/julkalender/leksaker/dinosaurier/",
+    "https://www.coolstuff.se/search?q=dinosaurie%20adventskalender",
+    "https://www.aliexpress.com/w/wholesale-advent-calendar-dinosaur-toys-24-pcs.html"
+   ]
   },
   {
    "koncept_id": null,
@@ -52,8 +174,26 @@
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "slot": "exploration",
    "hypotes_id": "H10",
-   "vinnarlikhet": {"likast": "Vilthissen (Axel ja 2026-09-10, K0174)", "delade_variabler": ["jägaren som ägare 55+", "jaktstart som deadline", "improvisation som old way (dra i benen / presenning)", "objekt ute"], "avvikelser": ["form 'annat' (0 av 13 dömda vann)", "ingen REAL WINNER i jakt ännu"]},
-   "sasong": {"fonster_id": "algjakt_syd", "deadline_typ": "jaktstart", "veckor_kvar": 3.9, "timing": "NOW", "kommentar": "älgjakt syd topp 8 okt, säsong till 31 jan; vildsvin jagas året runt — fönstret stänger inte efter toppen"},
+   "vinnarlikhet": {
+    "likast": "Vilthissen (Axel ja 2026-09-10, K0174)",
+    "delade_variabler": [
+     "jägaren som ägare 55+",
+     "jaktstart som deadline",
+     "improvisation som old way (dra i benen / presenning)",
+     "objekt ute"
+    ],
+    "avvikelser": [
+     "form 'annat' (0 av 13 dömda vann)",
+     "ingen REAL WINNER i jakt ännu"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "jaktstart",
+    "veckor_kvar": 3.9,
+    "timing": "NOW",
+    "kommentar": "älgjakt syd topp 8 okt, säsong till 31 jan; vildsvin jagas året runt — fönstret stänger inte efter toppen"
+   },
    "listning": {
     "product_id": "1005008510065407",
     "url": "https://www.aliexpress.com/item/1005008510065407.html",
@@ -61,34 +201,157 @@
     "sald": "",
     "verdict": "LIVE_VERIFIED",
     "verifierad_at": "2026-09-11T06:04:00Z",
-    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-11/v3/bilder/1005008510065407.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "ej mätt — mått står inte i titeln (US-standard 36×72 tum enligt z-aim Dead Sled)", "video": "ej tillgänglig i containern"}
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-11/v3/bilder/1005008510065407.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ej mätt — mått står inte i titeln (US-standard 36×72 tum enligt z-aim Dead Sled)",
+     "video": "ej tillgänglig i containern"
+    }
    },
-   "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Heron: svart HDPE-matta med öljetter längs kanterna, två rep, och en liten inklippt bild med ett rådjur surrat på mattan. Textfri. Dött djur i bild kan stoppas av Metas policy — creativen bör visa mattan dragen med last under presenning eller vildsvin i sluten säck."},
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Heron: svart HDPE-matta med öljetter längs kanterna, två rep, och en liten inklippt bild med ett rådjur surrat på mattan. Textfri. Dött djur i bild kan stoppas av Metas policy — creativen bör visa mattan dragen med last under presenning eller vildsvin i sluten säck."
+   },
    "marknad": {
-    "lagsta_jamforbara": {"aktor": "Amazon.se (Tongfeng 'Hjortsläde, Deer Sled Game Hauler' B0CRQGVBYX; Weiting 'Nyttosläde hopfällbar dragsläde' B0CRVH7Y7V)", "pris_sek": null, "url": "https://www.amazon.se/dp/B0CRQGVBYX", "exakt_samma_form": true, "kommentar": "pris ej läst — Amazon svarade 503 två gånger 2026-09-11 06:05 UTC. Sökträff nämner 'hopfällbar viltsläde 579 kr' (Dangate) men produkten syns inte på dangate.se/vilt-hantering (Beavertail släde Small 949 kr, Vilt Pulkan 1 349 kr, Hjort viltdrag 290 kr)."},
-    "premium_ankare": {"namn": "Klövviltspulkan (styv plastpulka rådjur/vildsvin)", "pris_sek": 2195, "url": "https://www.hylte-lantman.com/pulkor-vilt", "i_sortiment": true, "kommentar": "inte samma form (styv pulka). Samma funktion billigast: Hylte-Pulkan 108 579 kr (styv). Default i dag: 5etta Viltdragare Pro 189 kr / Baggen viltdragsele 349 kr (handtag+vajer, djuret släpas i marken)."},
+    "lagsta_jamforbara": {
+     "aktor": "Amazon.se (Tongfeng 'Hjortsläde, Deer Sled Game Hauler' B0CRQGVBYX; Weiting 'Nyttosläde hopfällbar dragsläde' B0CRVH7Y7V)",
+     "pris_sek": null,
+     "url": "https://www.amazon.se/dp/B0CRQGVBYX",
+     "exakt_samma_form": true,
+     "kommentar": "pris ej läst — Amazon svarade 503 två gånger 2026-09-11 06:05 UTC. Sökträff nämner 'hopfällbar viltsläde 579 kr' (Dangate) men produkten syns inte på dangate.se/vilt-hantering (Beavertail släde Small 949 kr, Vilt Pulkan 1 349 kr, Hjort viltdrag 290 kr)."
+    },
+    "premium_ankare": {
+     "namn": "Klövviltspulkan (styv plastpulka rådjur/vildsvin)",
+     "pris_sek": 2195,
+     "url": "https://www.hylte-lantman.com/pulkor-vilt",
+     "i_sortiment": true,
+     "kommentar": "inte samma form (styv pulka). Samma funktion billigast: Hylte-Pulkan 108 579 kr (styv). Default i dag: 5etta Viltdragare Pro 189 kr / Baggen viltdragsele 349 kr (handtag+vajer, djuret släpas i marken)."
+    },
     "ankare_kvot": 3.38,
     "annonsorer_se": "ej mätt",
-    "kollade_kallor": ["hylte-lantman.com", "dangate.se", "jakt.se (viltdrag med vajer utgått)", "bygghemma.se (bara Heck-Pack)", "z-aim.com (Dead Sled Premier: HDPE 36×72 tum, ej köpbar, inget pris)", "amazon.se (503)", "fruugo.se (403)"]
+    "kollade_kallor": [
+     "hylte-lantman.com",
+     "dangate.se",
+     "jakt.se (viltdrag med vajer utgått)",
+     "bygghemma.se (bara Heck-Pack)",
+     "z-aim.com (Dead Sled Premier: HDPE 36×72 tum, ej köpbar, inget pris)",
+     "amazon.se (503)",
+     "fruugo.se (403)"
+    ]
    },
-   "ekonomi": {"landad_sek": [329, 402], "pris_sek": 649, "brutto_sek": [247, 320], "be_cpa_sek": [247, 320], "be_roas": [2.0, 2.6], "flerkop": false, "returrisk": "låg — universal, ingen storlek", "kommentar": "Pris satt mellan Hylte-Pulkan 579 (styv, samma funktion) och landad × 2,4 = 878; över 649 väljer jägaren pulkan."},
-   "meta_tanke": {"hook": "Släpar du fortfarande i benen?", "objekt_i_bild": "mattan rullad ut i skogen med last, repen i handen", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "en person drar 60 kg över mossa och stock utan ansträngning; mattan rullas ihop till 10 cm och läggs i ryggsäcken"},
+   "ekonomi": {
+    "landad_sek": [
+     329,
+     402
+    ],
+    "pris_sek": 649,
+    "brutto_sek": [
+     247,
+     320
+    ],
+    "be_cpa_sek": [
+     247,
+     320
+    ],
+    "be_roas": [
+     2.0,
+     2.6
+    ],
+    "flerkop": false,
+    "returrisk": "låg — universal, ingen storlek",
+    "kommentar": "Pris satt mellan Hylte-Pulkan 579 (styv, samma funktion) och landad × 2,4 = 878; över 649 väljer jägaren pulkan."
+   },
+   "meta_tanke": {
+    "hook": "Släpar du fortfarande i benen?",
+    "objekt_i_bild": "mattan rullad ut i skogen med last, repen i handen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "en person drar 60 kg över mossa och stock utan ansträngning; mattan rullas ihop till 10 cm och läggs i ryggsäcken"
+   },
    "varfor": "Syskon till vilthissen (Axels ja 09-10) i samma fönster: jägaren har vilthiss och dragsele men rullbar HDPE-släde är USA-standard och saknas i svensk fackhandel utom som Amazon-import — 'visste inte att det fanns' (H10) med jaktstart 3,9 v (H02, deadline 'jaktstart' otestad i kontot).",
    "huvudrisk": "Form 'annat' (0/13 vinnare) och dött djur i heron kan stoppas av Meta; svenska Amazon-golvet är oläst och kan ligga under 400 kr.",
    "konfidens": "LÅG",
-   "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
-   "per_kriterium": {"K0": "ok — inget vilttransport i katalogen; K0024/K0026 var viltsäckar, K0174 vilthiss (ja)", "K1": 8, "K2": 10, "K3": 8, "K4": 6, "K5": 8, "K6": 10, "K7": 3, "K8": 6, "K9": 3, "K10": 2, "K11": 3, "K12": 1},
-   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (vilt/jakt/släde)", "koncept.py sok vilt/jakt/släde", "kontot 7 d: ej läst (rör inte Meta)"]},
-   "kallor": ["https://www.hylte-lantman.com/pulkor-vilt", "https://dangate.se/produkter/jaktutrustning/vilt-hantering/", "https://z-aim.com/en/hunting-equipment/hunting-accessories/transport-sleds/premier-dead-sled-game-drag/", "https://www.amazon.se/dp/B0CRQGVBYX", "https://www.aliexpress.com/w/wholesale-deer-drag-sled-hunting-game-sled.html"]
+   "poang": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok — inget vilttransport i katalogen; K0024/K0026 var viltsäckar, K0174 vilthiss (ja)",
+    "K1": 8,
+    "K2": 10,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 10,
+    "K7": 3,
+    "K8": 6,
+    "K9": 3,
+    "K10": 2,
+    "K11": 3,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (vilt/jakt/släde)",
+     "koncept.py sok vilt/jakt/släde",
+     "kontot 7 d: ej läst (rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.hylte-lantman.com/pulkor-vilt",
+    "https://dangate.se/produkter/jaktutrustning/vilt-hantering/",
+    "https://z-aim.com/en/hunting-equipment/hunting-accessories/transport-sleds/premier-dead-sled-game-drag/",
+    "https://www.amazon.se/dp/B0CRQGVBYX",
+    "https://www.aliexpress.com/w/wholesale-deer-drag-sled-hunting-game-sled.html"
+   ]
   }
  ],
  "foll": [
-  {"namn_sv": "Golfkalender 24 luckor (mannen, fars dag/jul)", "listning": "1005013097539386 (28,75 USD, LIVE_VERIFIED, hero sedd: grön låda + 24 delar utlagda, textfri)", "varfor_foll": "landad 374–457 kr; Fyndiq säljer exakt samma form för 423 kr (1 omdöme, 1,0) och CDON en till — inget premiumankare (ingen Titleist/Callaway-kalender hittad). Pris ÷ 24 skulle behöva 999 kr mot golv 423."},
-  {"namn_sv": "Byggkloss-adventskalender 28-i-1 (barnbarnet)", "listning": "1005007757437418 (34,09 USD, LIVE_VERIFIED, hero sedd: röd låda + 28 småbyggen)", "varfor_foll": "landad 444–542 kr mot LEGO City 60510 259–349 kr (CS Megastore/lekia) — golvet ligger under vår inköpskostnad."},
-  {"namn_sv": "Arbetsfordonskalender (grävmaskiner/traktorer)", "listning": "1005010370066584 (16,19 USD, LIVE_VERIFIED, hero sedd)", "varfor_foll": "heron visar 24 platta 2D-akrylhängen, inte leksaker — en 6-åring får 24 fotoklipp i plast. Det blir vår egen svikande default. Samma sak för alla 'tractor/construction'-kalendrar i sökträffen."},
-  {"namn_sv": "Verktygskalender / jaktkalender till mannen", "listning": "ingen — AliExpress har ingen 24-luckors bits/verktygskalender; närmast 'Survival Kit 24 day' 1005010256824978 (46,99 USD)", "varfor_foll": "Wera/Flex/KS Tools säljer verktygskalendrar 589–1 183 kr (adventskalenderguiden.se) — märkesgolv i exakt samma form; survival-kitet landar på 611–747 kr. Jaktkalender: 0 träffar."},
-  {"namn_sv": "RC-/dragbilskalender 24 bilar", "listning": "1005010127134673 (24,89 USD) / 1005012031825319 (30,49 USD) — bara sökträff", "varfor_foll": "K0-dubblett i tema med racingbilarna (i butiken); Majorette 299 / Hot Wheels 379 kr golv; landad 323–441 kr."},
-  {"namn_sv": "Highland cow-kalender 24 minifigurer", "listning": "1005013105983191 (17,95 USD) — bara sökträff, ej öppnad", "varfor_foll": "utanför linsen (ingen mottagare/objekt i relation, ingen hypotes den testar rent); noteras för H10 om en senare körning vill pröva 'kvinna 55+'-gåvan."}
+  {
+   "namn_sv": "Golfkalender 24 luckor (mannen, fars dag/jul)",
+   "listning": "1005013097539386 (28,75 USD, LIVE_VERIFIED, hero sedd: grön låda + 24 delar utlagda, textfri)",
+   "varfor_foll": "landad 374–457 kr; Fyndiq säljer exakt samma form för 423 kr (1 omdöme, 1,0) och CDON en till — inget premiumankare (ingen Titleist/Callaway-kalender hittad). Pris ÷ 24 skulle behöva 999 kr mot golv 423."
+  },
+  {
+   "namn_sv": "Byggkloss-adventskalender 28-i-1 (barnbarnet)",
+   "listning": "1005007757437418 (34,09 USD, LIVE_VERIFIED, hero sedd: röd låda + 28 småbyggen)",
+   "varfor_foll": "landad 444–542 kr mot LEGO City 60510 259–349 kr (CS Megastore/lekia) — golvet ligger under vår inköpskostnad."
+  },
+  {
+   "namn_sv": "Arbetsfordonskalender (grävmaskiner/traktorer)",
+   "listning": "1005010370066584 (16,19 USD, LIVE_VERIFIED, hero sedd)",
+   "varfor_foll": "heron visar 24 platta 2D-akrylhängen, inte leksaker — en 6-åring får 24 fotoklipp i plast. Det blir vår egen svikande default. Samma sak för alla 'tractor/construction'-kalendrar i sökträffen."
+  },
+  {
+   "namn_sv": "Verktygskalender / jaktkalender till mannen",
+   "listning": "ingen — AliExpress har ingen 24-luckors bits/verktygskalender; närmast 'Survival Kit 24 day' 1005010256824978 (46,99 USD)",
+   "varfor_foll": "Wera/Flex/KS Tools säljer verktygskalendrar 589–1 183 kr (adventskalenderguiden.se) — märkesgolv i exakt samma form; survival-kitet landar på 611–747 kr. Jaktkalender: 0 träffar."
+  },
+  {
+   "namn_sv": "RC-/dragbilskalender 24 bilar",
+   "listning": "1005010127134673 (24,89 USD) / 1005012031825319 (30,49 USD) — bara sökträff",
+   "varfor_foll": "K0-dubblett i tema med racingbilarna (i butiken); Majorette 299 / Hot Wheels 379 kr golv; landad 323–441 kr."
+  },
+  {
+   "namn_sv": "Highland cow-kalender 24 minifigurer",
+   "listning": "1005013105983191 (17,95 USD) — bara sökträff, ej öppnad",
+   "varfor_foll": "utanför linsen (ingen mottagare/objekt i relation, ingen hypotes den testar rent); noteras för H10 om en senare körning vill pröva 'kvinna 55+'-gåvan."
+  }
  ],
  "status": "2 kandidater klarade grindarna, 6 föll. Inga Meta-/Shopify-/Notion-anrop gjorda."
 }
