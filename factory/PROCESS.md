@@ -363,6 +363,25 @@ igenom på första körningen. Mätningar:
   fast sidan var korrekt. Regeln för `markorer_sv` är därför: lista bara ord
   som faktiskt SKILJER sig på norska (kommentaren i mallen "filtreras bort av
   sig själva" gäller bara hela värden som "Köp nu").
+- **Fel primärmarknad gör varje variant osäljbar — och kedjan såg det inte.**
+  Efter checklistans avsnitt 2 (valuta PHP → SEK, "Sweden is the primary
+  market") stod butiken med **Norge som primärmarknad** och den gamla
+  Filippinerna-marknaden omdöpt till "Sweden" (handle `ph`, region Sverige).
+  Kundvyn: `available: false` på alla tre varianter i VARJE marknadskontext
+  (default, SE, NO, PH), `compare_at_price: null` — så `ms-paket.liquid` och
+  `ms-sticky-atc.liquid`, som båda börjar med `{%- if p.available -%}`,
+  renderade ingenting. Symptomet såg ut som ett temafel ("paketväljaren
+  finns inte", "sticky köpknapp saknas") medan temat var helt. Uteslutet på
+  vägen: temafilerna (product.json bar blocken), `ms_ab_tests` (kvar),
+  metaobjektens access (PUBLIC_READ), lagerpolicyn (CONTINUE, untracked,
+  lagernivå på aktiv plats), publiceringen (Online Store), katalogerna (även
+  TackleBay saknar marknadskataloger och säljer) och platsens land (TackleBay
+  har också Filippinerna). Det enda som skiljde mot TackleBay var
+  primärflaggan. Primärmarknaden går INTE att sätta via API
+  (`API-GRANSER.md`, mätt) — klicket är Settings → Markets → Sweden →
+  Set as primary. Kedjans steg `huvudmarknad` kontrollerade bara valutan och
+  var grönt hela tiden; nu kontrollerar det också att primärmarknadens region
+  är butikens land (`marknad.kontrolleraPrimarmarknad`).
 - **Källkampanjen läses per annons innan vinkeln väljs.** 16 annonser,
   2 760 kr / 9 köp på två dygn: bara `Utekattkoja_PD_2_H1` (1 453 kr, 4 köp)
   låg över domgränsen 300 kr / 3 köp (CLAUDE.md regel 3). Problem-rubriken
