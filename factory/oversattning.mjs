@@ -76,6 +76,11 @@ const HOPPA = new Set([
   'content_position', 'content_layout', 'heading_size', 'text_style', 'picker_type', 'swatch_shape', 'media_size',
   'media_fit', 'media_position', 'image_zoom', 'image_ratio', 'image_shape', 'view_all_style', 'columns_mobile',
   'layout', 'height', 'desktop_layout', 'mobile_layout', 'name',
+  // Gåvoguidens kontrakt mot produkternas metafält (ms-gavoguide.liquid).
+  // `taggar` och `visa_om` är maskinnycklar, inte text: en översatt tagg
+  // matchar ingen produkt, och guiden svarar fel på /nb utan felmeddelande.
+  // Etiketterna kunden läser ligger i `svar` och översätts som vanligt.
+  'taggar', 'visa_om',
 ]);
 const TEKNISKT_VARDE = /^(shopify:\/\/|https?:\/\/|\{\{|#[0-9a-fA-F]{3,8}$|[a-z0-9_-]+$)/;
 export function malltexter(prefix, mallJson) {

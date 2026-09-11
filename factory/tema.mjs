@@ -512,13 +512,27 @@ const GAVOGUIDE = `{%- liquid
           {%- if block.settings.hjalptext != blank -%}
             <p class="ms-guide__hjalp">{{ block.settings.hjalptext }}</p>
           {%- endif -%}
+          {%- comment -%}
+            Etiketterna och taggarna ligger i VAR SITT fält, rad för rad i
+            samma ordning. Skälet är översättningen: fältet svar är text som
+            ska bli norsk, fältet taggar är kontraktet mot produktens metafält
+            och måste stå orörd. Låg de i samma sträng ("Ett barn" följt av
+            lodstreck och taggen) skulle översättningssteget erbjuda hela
+            raden för översättning, och en översatt tagg matchar ingenting —
+            guiden hade svarat fel på /nb utan ett enda felmeddelande.
+            Reserven: saknas taggfältet delas den gamla formen på lodstreck.
+          {%- endcomment -%}
           <div class="ms-guide__svar">
             {%- assign rader = block.settings.svar | newline_to_br | split: '<br />' -%}
+            {%- assign taggrader = block.settings.taggar | newline_to_br | split: '<br />' -%}
             {%- for rad in rader -%}
               {%- liquid
                 assign bit = rad | strip | split: '|'
                 assign etikett = bit[0] | strip
-                assign taggar = bit[1] | strip
+                assign taggar = taggrader[forloop.index0] | strip
+                if taggar == blank
+                  assign taggar = bit[1] | strip
+                endif
               -%}
               {%- if etikett != blank -%}
                 <label class="ms-guide__alternativ">
@@ -718,7 +732,9 @@ const GAVOGUIDE = `{%- liquid
       { "type": "text", "id": "fraga", "label": "Fråga" },
       { "type": "text", "id": "hjalptext", "label": "Hjälptext under frågan" },
       { "type": "textarea", "id": "svar", "label": "Svarsalternativ",
-        "info": "Ett per rad: Etikett|tagg,tagg. Taggarna matchas mot produktens metafält opf.quiz." },
+        "info": "Ett per rad. Bara texten kunden läser — taggarna står i fältet under." },
+      { "type": "textarea", "id": "taggar", "label": "Taggar per svar",
+        "info": "En rad per svarsalternativ, i samma ordning. Flera taggar separeras med komma. Matchas mot produktens metafält opf.quiz. Översätts ALDRIG." },
       { "type": "range", "id": "vikt", "label": "Vikt", "min": 1, "max": 5, "step": 1, "default": 2,
         "info": "Hur tungt frågans svar väger i matchningen." },
       { "type": "text", "id": "visa_om", "label": "Visa bara om",

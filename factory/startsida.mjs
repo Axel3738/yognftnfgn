@@ -238,14 +238,24 @@ function byggSektioner(butik, produkter, alt) {
     const fragor = lista(g.fragor).length > 0 ? lista(g.fragor) : d.gavoguideFragor;
     const blocks = {};
     const blockOrdning = [];
+    // Butiksfilen skriver "Etikett|taggar" på en rad för att den ska gå att
+    // läsa. I mallen delas den i TVÅ fält: `svar` är texten som ska
+    // översättas, `taggar` är kontraktet mot produktens metafält och står
+    // orörd. Skulle taggen följa med i översättningen matchade den ingenting,
+    // och guiden hade svarat fel på /nb utan att något syntes som ett fel.
     fragor.forEach((f, i) => {
       const nyckel = `f${i + 1}`;
+      const rader = lista(f.svar).map((rad) => {
+        const [etikett, taggar = ''] = String(rad).split('|');
+        return { etikett: etikett.trim(), taggar: taggar.trim() };
+      });
       blocks[nyckel] = {
         type: 'fraga',
         settings: {
           fraga: text(f.fraga) ?? '',
           hjalptext: text(f.hjalptext) ?? '',
-          svar: lista(f.svar).join('\n'),
+          svar: rader.map((r) => r.etikett).join('\n'),
+          taggar: rader.map((r) => r.taggar).join('\n'),
           vikt: tal(f.vikt) ?? 2,
           visa_om: lista(f.visa_om).join(','),
         },

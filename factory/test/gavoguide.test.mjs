@@ -190,3 +190,34 @@ test('varje uteslutningsregel bär en motivering', () => {
     assert.ok(r.id && r.varfor && typeof r.test === 'function', `regeln ${r.id} är ofullständig`);
   }
 });
+
+// ---------------------------------------- taggarna får aldrig översättas
+
+test('etiketter och taggar ligger i var sitt fält — en översatt tagg matchar ingenting', async () => {
+  const { lasYaml } = await import('../yaml.mjs');
+  const { byggStartsida } = await import('../startsida.mjs');
+  const { malltexter } = await import('../oversattning.mjs');
+  const butik = lasYaml(readFileSync(join(ROT, 'butiker/kalender.yaml'), 'utf8'));
+  const p = lasYaml(readFileSync(join(ROT, 'produkter/adventskalender-racingbilar.yaml'), 'utf8'));
+  const ra = byggStartsida(butik, [p, p], { kollektion: 'kalendrarna' });
+  const mall = JSON.parse(String(ra).replace(/^\s*\/\*[\s\S]*?\*\//, '').trim());
+
+  const g = mall.sections.gavoguide;
+  assert.ok(g, 'gåvoguiden ska ligga i startsidan');
+  assert.equal(mall.order.indexOf('gavoguide') < mall.order.indexOf('sortiment'), true, 'guiden står ovanför katalogen');
+
+  const f1 = g.blocks[g.block_order[0]].settings;
+  assert.equal(f1.svar.includes('|'), false, 'svarsfältet ska bara bära etiketter');
+  assert.equal(f1.svar.split('\n').length, f1.taggar.split('\n').length, 'en taggrad per svarsrad');
+  assert.ok(f1.taggar.includes('mottagare:barn'));
+
+  // Det som faktiskt skickas till översättning får inte innehålla en enda tagg.
+  const texter = malltexter('mall.index', mall);
+  for (const [nyckel, varde] of Object.entries(texter)) {
+    assert.equal(/mottagare:|intresse:|alder:|krav:|egenskap:|pris:/.test(varde), false,
+      `${nyckel} bär en maskintagg ut i översättningen: ${varde}`);
+  }
+  // Men etiketterna SKA med, annars står guiden på svenska för norska kunder.
+  assert.ok(Object.values(texter).some((v) => v.includes('Vem ska du köpa till?')));
+  assert.ok(Object.values(texter).some((v) => v.includes('Ett barn')));
+});
