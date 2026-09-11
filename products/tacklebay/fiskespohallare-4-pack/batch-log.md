@@ -22,15 +22,16 @@ hypoteser finns bara i hubbens briefer, inte i något repo — de två som läst
 står nedan, resten `hypotes: ej loggad`.
 
 Bara annonser över grinden (≥ 300 kr OCH ≥ 3 köp) får en dom. TackleBays
-linjer: BE-CPA 173 kr / BE-ROAS 1,67 (⚠️ COGS är en gissning, se dna.md).
+linjer (Axels tal 2026-09-11, per order på AOV 437 kr): **BE-CPA 294 kr /
+BE-ROAS 1,49** — se dna.md "Ekonomin".
 
-| Källannons | Format | Spend | Köp | CPA | ROAS | Vinstbidrag mot 173 kr | Hypotes i källans brief | Utfall |
+| Källannons | Format | Spend | Köp | CPA | ROAS | Vinstbidrag mot 294 kr | Hypotes i källans brief | Utfall |
 |---|---|--:|--:|--:|--:|--:|---|---|
-| `Rodholder_PD_15_H1` | video | 9 268 kr | 39 | 238 kr | 1,94 | −2 521 kr | "Skaka-testet: spöt upp och ner, skakas — invändningen 'håller den?' dödad utan ett ord" | **Höll som hook** (52,0 %, högst i kontot) och som volym (46 % av all spend). Hold 16,4 % lägst av de bedömbara. Lönsam på ROAS, inte på CPA — AOV-frågan. |
-| `Rodholder_PD_6_1` | bild | 2 801 kr | 20 | 140 kr | 3,02 | **+659 kr** | "Demo-vinkeln konverterar som statisk när den får budget; isolerad variabel: format" | **Höll.** Bäst på båda linjerna. |
-| `Rodholder_PD_16_H1` | video | 2 651 kr | 10 | 265 kr | 1,52 | −921 kr | ej loggad | Under BE på båda linjerna. Bäst hold av videorna (23,3 %). |
-| `Rodholder_PD_11_H2` | video | 1 922 kr | 6 | 320 kr | 1,49 | −884 kr | ej loggad | Under BE på båda linjerna. |
-| `Rodholder_SO_4_1` | bild | 808 kr | 3 | 269 kr | 1,44 | −289 kr | ej loggad | Preliminär (3 köp). Enda bedömbara som inte är demo. |
+| `Rodholder_PD_15_H1` | video | 9 268 kr | 39 | 238 kr | 1,94 | **+2 184 kr** | "Skaka-testet: spöt upp och ner, skakas — invändningen 'håller den?' dödad utan ett ord" | **Höll.** Bästa hooken i kontot (52,0 %), 46 % av all spend, lönsam på båda linjerna. Hold 16,4 % lägst av de bedömbara — det är var den tappar. |
+| `Rodholder_PD_6_1` | bild | 2 801 kr | 20 | 140 kr | 3,02 | **+3 080 kr** | "Demo-vinkeln konverterar som statisk när den får budget; isolerad variabel: format" | **Höll.** Störst vinstbidrag av allt, på 13 % av spenden. |
+| `Rodholder_PD_16_H1` | video | 2 651 kr | 10 | 265 kr | 1,52 | +290 kr | ej loggad | Strax över BE. Bäst hold av videorna (23,3 %). |
+| `Rodholder_PD_11_H2` | video | 1 922 kr | 6 | 320 kr | 1,49 | −156 kr | ej loggad | På break-even. Ingen förlorare på 6 köp. |
+| `Rodholder_SO_4_1` | bild | 808 kr | 3 | 269 kr | 1,44 | +75 kr | ej loggad | Preliminär (3 köp). Enda bedömbara som inte är demo. |
 
 Övriga 68 ligger under grinden — **ingen dom.** Bland dem: `CS_3_1` 647 kr /
 2 köp (CTR 4,01 %, högst i kontot — klickar men konverterar inte, för tidigt),

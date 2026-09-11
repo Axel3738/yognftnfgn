@@ -36,13 +36,13 @@ ROAS 3,21, AOV 632 kr. Rådata `factory/output/adventskalender-racingbilar/kalla
 ### Ärvd historik — vad källan faktiskt bevisade
 
 Grinden (≥ 300 kr OCH ≥ 3 köp) passeras av **två** annonser. Vinstbidrag mot
-AdventLanes BE-CPA 308 kr.
+AdventLanes BE-CPA 323 kr (kvitterad 2026-09-11).
 
 | Källannons | Typ | Spend | Köp | CPA | ROAS | Vinstbidrag | Vad det säger |
 |---|---|---:|---:|---:|---:|---:|---|
-| `Adventskalender_PD_2_1` | bild | 1 376 kr | 8 | 172 kr | 3,85 | 1 088 kr | **Top spender och bevisad vinnare.** 44 % av spenden, 50 % av köpen. Chokladkonflikten som stillbild. |
-| `Adventskalender_PD_2_H1` | video | 898 kr | 6 | 150 kr | 3,85 | 950 kr | **Bevisad.** Samma copy som PD_2_1, video. Lägst CPA, högst CVR (4,92 %). |
-| `Adventskalender_GT_1_H1` | video | 594 kr | 2 | 297 kr | 2,27 | — | Presentvinkeln. Under 3 köp — ingen dom. CPA 11 kr under break-even. |
+| `Adventskalender_PD_2_1` | bild | 1 376 kr | 8 | 172 kr | 3,85 | 1 208 kr | **Top spender och bevisad vinnare.** 44 % av spenden, 50 % av köpen. Chokladkonflikten som stillbild. |
+| `Adventskalender_PD_2_H1` | video | 898 kr | 6 | 150 kr | 3,85 | 1 038 kr | **Bevisad.** Samma copy som PD_2_1, video. Lägst CPA, högst CVR (4,92 %). |
+| `Adventskalender_GT_1_H1` | video | 594 kr | 2 | 297 kr | 2,27 | — | Presentvinkeln. Under 3 köp — ingen dom. CPA 26 kr under break-even 323. |
 | `Adventskalender_GT_2_1` | bild | 59 kr | 0 | — | — | — | för tidigt |
 | `Adventskalender_CS_2_1` | bild | 54 kr | 0 | — | — | — | för tidigt |
 | `Adventskalender_GT_2_H1` | video | 39 kr | 0 | — | — | — | för tidigt |
@@ -54,7 +54,7 @@ AdventLanes BE-CPA 308 kr.
 CS 70 kr (0) · SP 45 kr (0). CS och SP är i praktiken otestade.
 
 ⚠️ **Källans ROAS går att döma AdventLane på i det här fallet** — BE-ROAS är
-1,62 i båda butikerna, samma pris, samma härledda inköp. Men copyn måste
+1,62 i källan mot 1,54 hos AdventLane (kvitterad COGS 2026-09-11), samma pris. Men copyn måste
 ändras (brådska, citat, villkor — se `dna.md`), så SP- och CS-utfallen hos
 AdventLane är **nya hypoteser**, inte fortsättningar.
 
@@ -69,12 +69,13 @@ AdventLane är **nya hypoteser**, inte fortsättningar.
 | Villkor (SP) | "30 dagars öppet köp – nöjd eller pengarna tillbaka" | 14 dagars ångerrätt, inget eget löfte | ❌ ej läst |
 | Fraktvillkor | ej nämnt i copyn | fri frakt SE + NO | — |
 | Norska kampanjen | — | egna norska annonser för kalendern | ✅ copyn är kalenderns, på norska, länk adventlane.se/nb (läst 2026-09-11) |
-| Norskt pris (CS) | — | sidan tar SEK 499 tills NOK finns (butikskonfig) | ❌ **`_NO_CS_*` säger "579 kr → 439 kr i dag" + "begrenset lager"** — troligen fel pris, säkert falsk brådska (dna.md rotorsak 3; kundvyn ej läst, lösenordsskyddad) |
+| Norskt pris (CS) | — | 439 kr i Norge (Axel 2026-09-11) | ✅ `_NO_CS_*` säger "579 kr → 439 kr" — rätt pris. ⚠️ Brådskan ("i dag", "begrenset lager") strider mot brandets ton; Axels beslut 2026-09-11: pausas inte |
 
 ### Ekonomi
 
-Pris 499 kr, inköp 191 kr (härledd), utan moms. **TB 308 kr · BE-ROAS 1,62 ·
-BE-CPA 308 kr · target-CPA 183 kr.** Facit `factory/produkter/adventskalender-racingbilar.yaml`.
+Pris 499 kr, COGS 142,27 kr + 3 EUR tull per order (= 33,60 kr, ECB 2026-09-10),
+utan moms. **TB 323 kr · BE-ROAS 1,54 · BE-CPA 323 kr · target-CPA 198 kr.**
+Kvitterat av Axel 2026-09-11 (ersätter det härledda 191 kr). Facit `factory/produkter/adventskalender-racingbilar.yaml`.
 
 ### Hypoteser att pröva i första `/cs`
 
@@ -107,7 +108,7 @@ SE: **372 kr, 0 köp.** Ingen annons över grinden. Per annons (data, ingen dom)
 | 7 annonser ≤ 2 kr | 6 kr | 0 | — | — | — | — | ACTIVE (PD_3_H1, **PD_2_H1 2 kr**, CS_2_1, SP_2_H1, **PD_2_1 0 kr**, GT_2_1, CS_2_H1) |
 
 NO: 16 annonser (13 med spend), ≈ 445 kr, 0 köp (`AdventLaneRacing_NO_PD_2_1`
-373 kr, CTR 3,25 %). Copyn verifierad som kalenderns. ⚠️ CS-annonserna bär
-439 kr mot sidans SEK 499 — `dna.md` rotorsak 3.
+373 kr, CTR 3,25 %). Copyn verifierad som kalenderns; norskt pris 439 kr är rätt
+(Axel 2026-09-11) — `dna.md` rotorsak 3.
 
 Nästa avläsning: första briefdagen (söndag 2026-09-13 enligt registret).
