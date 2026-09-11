@@ -40,3 +40,11 @@ Axel: *"Dessa ska upp på bäverbutiken. Både svenska och norska."*
   batchen. AI-bilder/videor går att hämta igen via Higgsfields `show_generations`
   (CDN-URL:erna lever kvar).
 - `temu/package.json` ändras av `npm i` (sharp 0.35.3 → 0.35.4) — återställ, committa inte.
+
+## Notion (2026-09-11)
+Sju kort i **Product test center SE BÄVER** (`collection://d80270ab-908c-839b-9dcc-8721c5f29570`),
+namn `8 …`, Status `Products`, Typ `Video - Pending Approval`, Landing page + låsta
+räkneord + bildnot + pris i kroppen (engelska, till redigerarna). Hängrännerensaren
+ligger som `8 Hängrännerensare – VÄNTA: ingen produktbild, byggs inte än` utan
+Landing page och med en ON HOLD-ruta överst — byt namn och fyll Landing page när
+den går live.
