@@ -1,15 +1,17 @@
 # Creative DNA — AdventLane (Adventskalender Racingbilar)
 
 Skapad 2026-09-11 av `/notionscalercs setup kalender` (körning nr 1 — setup, ingen brief).
+**Senast uppdaterad 2026-09-12, körning nr 2 — första briefdagen (KALLSTART, batch #2).**
 Butiks-id `kalender` (nischbutik för adventskalendrar), produkt-id
 `adventskalender-racingbilar`, registernyckel `kalender/adventskalender-racingbilar`,
 brand **AdventLane**, adventlane.se (Shopify `ikf0tu-5e`).
 
 ⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken.**
-AdventLanes egna kampanjer skapades 2026-09-10 och hade vid avläsning 2026-09-11
-(≈ 1 dygn) **372 kr, 0 köp** (SE). **0 av 15 annonser har passerat
-signifikansgrinden** (≥ 300 kr OCH ≥ 3 köp). Första briefdagen blir en
-**KALLSTART**: ingen feedback-loop, ingen dom över en enda AdventLane-annons.
+AdventLanes egna kampanjer skapades 2026-09-10. Avläsning 2026-09-12 (14d, SE):
+**1 126 kr, 2 köp, ROAS 0,89, intäkt 998 kr** (2 × 499 kr — ingen paketorder än).
+**0 av 16 annonser har passerat signifikansgrinden** (≥ 300 kr OCH ≥ 3 köp).
+Första briefdagen (2026-09-12) blev därför en **KALLSTART**: ingen feedback-loop,
+ingen dom över en enda AdventLane-annons — batch #2 byggdes helt ur ärvd DNA.
 
 ⚠️ **Säsongsprodukt.** Kalendern säljer fram till 24 december och är död därefter.
 Varje dygn utan test är ett dygn mindre av säsongen — men grinden gäller ändå.
@@ -55,7 +57,7 @@ in är bortkastad spend.
 
 ---
 
-## Vad som är bevisat (ÄRVT från källan, läst 2026-09-11)
+## Vad som är bevisat (ÄRVT från källan, läst 2026-09-11, uppdaterat 2026-09-12)
 
 Källa: Bäverbutiken, konto `1867947880635861` (LÄSES bara), kampanj
 `Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08`
@@ -63,6 +65,20 @@ Källa: Bäverbutiken, konto `1867947880635861` (LÄSES bara), kampanj
 (2026-09-08 → 2026-09-11, ≈ 3 dygn). **16 annonser, 3 147 kr, 16 köp,
 ROAS 3,21, verklig AOV 632 kr** (över 499 kr — paketen säljer).
 Rådata: `factory/output/adventskalender-racingbilar/kallannonser.json`.
+
+**Uppdaterad avläsning 2026-09-12 (livstid t.o.m. ≈ 4 dygn, `--arv`):
+4 384 kr, 19 köp, ROAS 2,65, AOV 611 kr.** Regressionen ANALYSMETOD steg 5
+varnar för syns redan: PD_2_H1 CPA 150 → 191 kr (ROAS 3,85 → 2,89), PD_2_1
+CPA 172 → 192 kr (ROAS 3,85 → 3,44). Båda fortfarande klart under BE-CPA 323.
+`GT_1_H1` gled från 297 till **408 kr CPA (2 köp)** — nu ÖVER break-even,
+fortfarande under grinden. Tabellen nedan är 2026-09-11-läsningen; kolumnen
+"2026-09-12" är den nya.
+
+| Ärvd annons (2026-09-12) | Spend | Köp | CPA | ROAS | Vinstbidrag | Hook | Hold | CTR | CVR |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `Adventskalender_PD_2_H1` | 1 715 kr | 9 | 191 kr | 2,89 | **1 192 kr** | 27,5 % | 27,8 % | 2,91 % | 3,80 % |
+| `Adventskalender_PD_2_1` | 1 539 kr | 8 | 192 kr | 3,44 | **1 045 kr** | — | — | 4,37 % | 2,05 % |
+| `Adventskalender_GT_1_H1` | 816 kr | 2 | 408 kr | 1,65 | — (för tidigt) | 31,1 % | 20,9 % | 2,64 % | 1,53 % |
 
 Signifikansgrinden (≥ 300 kr OCH ≥ 3 köp) passeras av **två** annonser.
 Vinstbidrag = (BE-CPA 323 − CPA) × köp, mot AdventLanes linje (kvitterad 2026-09-11).
@@ -159,6 +175,27 @@ prefix `AdventLaneRacing`). Kampanjer skapade 2026-09-10:
 
 Bedömbara: **0**. Kallstart tills ≥ 1 annons passerar grinden.
 
+### Avläsning 2026-09-12 (körning nr 2, 14d, SE — data, ingen dom)
+
+Facebook-sidan är publicerad: **alla 16 SE-annonser ACTIVE/ACTIVE** (Metas
+pauser från 2026-09-11 är borta — inte körningens verk). Spend 3d/7d/14d
+1 126 kr, 2 köp, ROAS 0,89.
+
+| Annons | Spend | Köp | CPA | ROAS | Hook | Hold | CTR | CVR | CPM |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `AdventLaneRacing_PD_1_H1` | **837 kr (74 %)** | 2 | 419 kr | 1,19 | 20,9 % | 23,5 % | 3,69 % | 1,20 % | 186 kr |
+| `AdventLaneRacing_GT_1_H1` | 89 kr | 0 | — | — | 30,1 % | 22,0 % | 3,23 % | 0 | 152 kr |
+| `AdventLaneRacing_GT_3_H1` | 61 kr | 0 | — | — | 24,0 % | 16,4 % | 2,61 % | 0 | 132 kr |
+| 13 annonser ≤ 28 kr | 139 kr | 0 | — | — | — | — | — | — | — |
+
+**Beslut ur `factory/budgetbeslut.mjs` (ny annons-regeln, Axel 2026-09-10):**
+`PD_1_H1` pausas — 837 kr ≥ 3 × target-CPA (594 kr), CPA 419 kr över BE 323 kr.
+Rotorsak, inte dom: CBO:n gav 74 % av spenden till den annons som i källan
+fick 45 kr och 0 köp, medan källans två vinnare `PD_2_1`/`PD_2_H1` fick 9 resp.
+4 kr här. Pausen är det som ger vinnarna chansen. Första försöket 2026-09-12
+föll på en bugg i `tools/meta-lib.mjs` (`pausa()` läste `daily_budget` på en
+annons → Meta 400); rättad samma natt, se rotorsak 8.
+
 ---
 
 ## Rotorsaker och fallgropar för nästa körning
@@ -198,6 +235,29 @@ Bedömbara: **0**. Kallstart tills ≥ 1 annons passerar grinden.
    pauser är inte körningens egna: de återaktiveras av Axel eller på hans
    order, aldrig av en rutin på eget bevåg. Spend-datan 2026-09-11 → tills
    sidan är uppe är därför inte jämförbar (annonserna levererade inte).
+   **Löst 2026-09-12:** alla 16 SE-annonser ACTIVE/ACTIVE vid nattvaktens
+   läsning — sidan är publicerad (av Axel, utanför repot).
+8. **`pausa()` i `tools/meta-lib.mjs` läste budgetfält på en annons** (mätt
+   2026-09-12): tillbakaläsningen FÖRE skrivningen bad om `daily_budget`, Meta
+   svarade 400 "(#100) Tried accessing nonexisting field", och PD_1_H1 låg
+   kvar ACTIVE medan loggraden sa `genomford: false`. Rättad: `lasStatus()` med
+   `STATUSFÄLT` (utan budgetfält), test i `tools/test/meta-lib.test.mjs`.
+   Samma bugg låg latent för HeimGuard/TankGuard/DryTrek — ingen av dem hade
+   nått en annonspaus än.
+9. **Hubben bär Bäverbutikens 20 briefer för samma produkt** (`Adventskalender_`-
+   prefix, PD_4–7, CO, BF, RI, RV, TR, LI, UG, AU, FM, CS_4 — 5 In progress,
+   4 To be Reviewed, 11 Draft-bilder). De gjordes av Bäverbutikens team före
+   flytten och levereras via `/ops-leverans` i OPS-kontot. Läs hubben INNAN
+   nya koncept väljs, annars dubbleras de — batch #2 fick fyra backlog-idéer
+   strukna av det skälet. AD-ID:n måste läsas ur BÅDA prefixen.
+10. **CBO:n i SE-kampanjen belönar fel annons.** 74 % till PD_1_H1 (0 köp på
+   45 kr i källan) och 13 kr totalt till källans båda vinnare. Ett nytt test-
+   ABO med lika budget (regel 11 i CLAUDE.md) hade gett vinnarna data på ett
+   dygn. Nattvakten pausar bara; strukturen är Axels beslut — se rapporten.
+11. **Nästa briefdag är redan i morgon (sön 2026-09-13)** enligt kadensen
+   sön + ons. Ingen av batch #2:s sju annonser har data då. Briefdag utan
+   bedömbar annons = ny kallstart-rond — kvoten fylls, men lärdomen är noll
+   tills något passerar grinden. Sänk inte kadensen i koden; säg det i rapporten.
 6. **Bonusprodukten i Q4-ramverket är inte vald** (`offer.bonus_produkt` tomt;
    state: `bonus.klar: false`). Paketen körs utan gratisdel — säg aldrig "bonus"
    i copy förrän Axel valt en.
@@ -220,3 +280,21 @@ Hubb: Racing Car Advent Calendar creative hub `3d7270ab-908c-81b2-ad69-cf7404a62
 (0 briefrader vid setup — bara mallen). Redigerare: ingen tilldelad →
 briefronden begränsas till 7 per rond. Första briefdag enligt registret:
 söndag 2026-09-13 (briefdagar sön + ons).
+
+---
+
+## Körning nr 2 — 2026-09-12, första briefdagen (`/notionscalercs kalender/adventskalender-racingbilar`)
+
+- **Budgetrond:** kampanjen under grinden (1 126 kr, 2 köp) — ingen budgetändring.
+  En annonspaus beslutad (`PD_1_H1`, ny annons-regeln), första försöket föll på
+  buggen i rotorsak 8, omkört efter rättning — utfallet står i batch-log.md.
+- **Analys:** 0 bedömbara ⇒ KALLSTART. Ärvd historik uppdaterad (tabellen ovan).
+- **Batch #2:** 7 briefer (4 video, 3 bild) i hubben som Draft, alla nya koncept
+  ur ärvd DNA + backlog; 2 märkta gissning (MR_1, FF_1). Hypoteser i batch-log.md.
+- **Winning DNA (oförändrad, ärvd):** PD-vinkeln bär allt; bild och video lika på
+  ROAS, bilden skalar, videon konverterar. **Losing DNA (ny, OPS-data, 2 köp —
+  preliminär):** `PD_1_H1` — 74 % av spenden, CPA 419 kr; i källan 45 kr/0 köp.
+  Hypotes: CBO:ns fördelning, inte creativen, är förklaringen. Bekräftas när
+  PD_2_x får spend efter pausen.
+- **Nästa körning:** sön 2026-09-13 är briefdag enligt kadens — troligen ny
+  kallstart (rotorsak 11). Döm inget under grinden.

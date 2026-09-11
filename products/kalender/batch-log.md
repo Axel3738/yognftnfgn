@@ -213,3 +213,25 @@ Hypoteser i klartext:
 
 Alla sju döms nästa briefdag (ons 2026-09-16 enligt kadens) enbart om de passerat
 grinden (≥ 300 kr OCH ≥ 3 köp). Kill mot BE-CPA 323 kr / BE-ROAS 1,54.
+
+### Utfall vid avläsning 2026-09-12 (körning nr 2, 14d, SE)
+
+Facebook-sidan publicerad — alla 16 SE-annonser ACTIVE/ACTIVE. **1 126 kr, 2 köp,
+ROAS 0,89, intäkt 998 kr (2 × 499, inga paket).** 0 bedömbara ⇒ kallstart.
+
+| Annons | Spend | Köp | CPA | ROAS | Hook | Hold | CTR | CVR | Klass |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| AdventLaneRacing_PD_1_H1 | 837 kr (74 %) | 2 | 419 kr | 1,19 | 20,9 % | 23,5 % | 3,69 % | 1,20 % | för tidigt — **pausas** (ny annons-regeln: ≥ 594 kr, CPA över BE 323) |
+| AdventLaneRacing_GT_1_H1 | 89 kr | 0 | — | — | 30,1 % | 22,0 % | 3,23 % | 0 | för tidigt |
+| AdventLaneRacing_GT_3_H1 | 61 kr | 0 | — | — | 24,0 % | 16,4 % | 2,61 % | 0 | för tidigt |
+| AdventLaneRacing_GT_2_H1 | 28 kr | 0 | — | — | 32,3 % | 11,3 % | 3,66 % | 0 | för tidigt |
+| AdventLaneRacing_CS_1_H1 | 26 kr | 0 | — | — | 41,2 % | 15,0 % | 2,06 % | 0 | för tidigt |
+| 11 annonser ≤ 18 kr | 85 kr | 0 | — | — | — | — | — | — | för tidigt (PD_2_1 9 kr, PD_2_H1 4 kr) |
+
+Hypoteserna 1–4 från batch #1: **ingen kan avläsas** — grinden är inte passerad av
+någon annons. Hypotes 1 (håller PD?) har fått en varning: CBO:n valde PD_1_H1, inte
+källans PD-vinnare, och den har 2 köp till 419 kr. Data, ej dom.
+
+Ärvd historik (`--arv`, livstid): 4 384 kr, 19 köp, ROAS 2,65, AOV 611 kr.
+PD_2_H1 191 kr CPA / 9 köp / vinst 1 192 kr · PD_2_1 192 kr / 8 köp / 1 045 kr ·
+GT_1_H1 408 kr / 2 köp (nu över BE). Regression mot 2026-09-11 noterad i dna.md.

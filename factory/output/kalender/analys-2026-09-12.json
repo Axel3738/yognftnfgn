@@ -1,0 +1,6048 @@
+{
+  "post": {
+    "nyckel": "kalender/adventskalender-racingbilar",
+    "lage": "skala",
+    "id": "adventskalender-racingbilar",
+    "butik": "kalender",
+    "brand": "AdventLane",
+    "namn": "Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor",
+    "produktfil": "factory/produkter/adventskalender-racingbilar.yaml",
+    "butiksfil": "factory/butiker/kalender.yaml",
+    "ad_account_id": "915422744950975",
+    "annonsprefix": "AdventLaneRacing",
+    "kampanjprefix": "ADVENTLANERACING_",
+    "enprodukt": true,
+    "daily_budget_sek": 1000,
+    "byggd": true,
+    "kopplingskalla": "state",
+    "valuta": "SEK",
+    "redigerare": null,
+    "redigerare_discord_id": null,
+    "copy_modell": "ab",
+    "notion": {
+      "name": "Racing Car Advent Calendar creative hub",
+      "database_id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+      "foralder_page_id": "",
+      "url": ""
+    },
+    "kordag_offset": 2,
+    "senaste_korning": "",
+    "briefdagar": [
+      0,
+      3
+    ],
+    "senaste_brief": "",
+    "cycle_start": "",
+    "launches": [],
+    "troskel": {
+      "spend_sek": 1500,
+      "vinst_procent": 20,
+      "kalla": "agent/rond.mjs (grenen claude/daily-agent-discussion-uos5df), avläst 2026-09-09",
+      "beslut": "Nivån är oförändrad tills Axel svarat — TRAPPAN.md Öppna beslut punkt 1."
+    },
+    "anteckning": "",
+    "ny_i_registret": false
+  },
+  "ekonomi": {
+    "osaker": false,
+    "antagande": "utan_moms",
+    "oppetBeslut": false,
+    "beslutstext": "Momsen i break-even är ett öppet ägarbeslut (factory/BESLUT-VANTAR.md punkt 1). Båda linjerna visas. Sätt ekonomi.moms_antagen i produktfilen när Axel svarat.",
+    "utanMoms": {
+      "brutto": 499,
+      "netto": 499,
+      "momsProcent": 0,
+      "varukostnad": 142.27,
+      "tackningsbidrag": 323.13,
+      "marginalProcent": 65,
+      "breakEvenRoas": 1.54,
+      "breakEvenCpa": 323,
+      "targetRoas": 2.52,
+      "targetCpa": 198,
+      "olonsam": false
+    },
+    "medMoms": {
+      "brutto": 499,
+      "netto": 399.2,
+      "momsProcent": 25,
+      "varukostnad": 142.27,
+      "tackningsbidrag": 223.33,
+      "marginalProcent": 56,
+      "breakEvenRoas": 2.23,
+      "breakEvenCpa": 223,
+      "targetRoas": 4.04,
+      "targetCpa": 124,
+      "olonsam": false
+    },
+    "antagen": {
+      "brutto": 499,
+      "netto": 499,
+      "momsProcent": 0,
+      "varukostnad": 142.27,
+      "tackningsbidrag": 323.13,
+      "marginalProcent": 65,
+      "breakEvenRoas": 1.54,
+      "breakEvenCpa": 323,
+      "targetRoas": 2.52,
+      "targetCpa": 198,
+      "olonsam": false
+    },
+    "brutto": 499,
+    "varukostnad": 142.27,
+    "olonsam": false,
+    "breakEvenRoas": 1.54,
+    "breakEvenCpa": 323,
+    "targetRoas": 2.52,
+    "targetCpa": 198,
+    "spann": {
+      "breakEvenCpa": [
+        223,
+        323
+      ],
+      "breakEvenRoas": [
+        1.54,
+        2.23
+      ],
+      "targetCpa": [
+        124,
+        198
+      ]
+    }
+  },
+  "linjer": {
+    "strang": 323,
+    "generos": 323,
+    "target": 198,
+    "obeslutat": false
+  },
+  "hamtning": {
+    "behall": [
+      {
+        "ad_id": "120249033400640172",
+        "ad_name": "AdventLaneRacing_NO_PD_2_1",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "930.84",
+        "impressions": "5245",
+        "clicks": "151",
+        "ctr": "2.878932",
+        "cpm": "177.471878",
+        "cpc": "6.164503",
+        "frequency": "1.146198",
+        "inline_link_clicks": "80",
+        "actions": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "link_click",
+            "value": "80"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "63"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "60"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "60"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "85"
+          },
+          {
+            "action_type": "like",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "86"
+          },
+          {
+            "action_type": "purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "63"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "63"
+          },
+          {
+            "action_type": "post",
+            "value": "3"
+          },
+          {
+            "action_type": "view_content",
+            "value": "63"
+          },
+          {
+            "action_type": "onsite_conversion.post_save",
+            "value": "1"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_save",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "63"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "63"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "63"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "458.41"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "499"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "499"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "458.45"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "28897"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "499"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "28897"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "458.45"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "458.41"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "499"
+          },
+          {
+            "action_type": "purchase",
+            "value": "458.41"
+          },
+          {
+            "action_type": "view_content",
+            "value": "28897"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "0.05"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "458.45"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "28897"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "28897"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "458.41"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "458.45"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "499"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "458.41"
+          },
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "458.41"
+          }
+        ],
+        "purchase_roas": [
+          {
+            "action_type": "omni_purchase",
+            "value": "0.492469"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "930.84"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "930.84"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "930.84"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "930.84"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "14.775238"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "14.775238"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "930.84"
+          },
+          {
+            "action_type": "link_click",
+            "value": "11.6355"
+          },
+          {
+            "action_type": "like",
+            "value": "930.84"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "186.168"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "10.951059"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "930.84"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "930.84"
+          },
+          {
+            "action_type": "view_content",
+            "value": "14.775238"
+          },
+          {
+            "action_type": "purchase",
+            "value": "930.84"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "10.823721"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "14.775238"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "15.514"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "930.84"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "15.514"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "930.84"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "930.84"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "930.84"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032660230172",
+        "ad_name": "AdventLaneRacing_PD_1_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "837.12",
+        "impressions": "4501",
+        "clicks": "166",
+        "ctr": "3.688069",
+        "cpm": "185.985337",
+        "cpc": "5.042892",
+        "frequency": "1.111633",
+        "inline_link_clicks": "107",
+        "actions": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "link_click",
+            "value": "107"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "95"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "91"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "91"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1052"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1052"
+          },
+          {
+            "action_type": "purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "95"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "95"
+          },
+          {
+            "action_type": "post",
+            "value": "2"
+          },
+          {
+            "action_type": "view_content",
+            "value": "95"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "95"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "3"
+          },
+          {
+            "action_type": "video_view",
+            "value": "941"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "95"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "95"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "998"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1497"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1497"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "998"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "47518.58"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1497"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "47518.58"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "998"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "998"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1497"
+          },
+          {
+            "action_type": "purchase",
+            "value": "998"
+          },
+          {
+            "action_type": "view_content",
+            "value": "47518.58"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "0.1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "998"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "47518.58"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "47518.58"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "998"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "998"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1497"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "998"
+          },
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "998"
+          }
+        ],
+        "purchase_roas": [
+          {
+            "action_type": "omni_purchase",
+            "value": "1.192183"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "418.56"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "418.56"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "418.56"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "418.56"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "8.811789"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "8.811789"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "418.56"
+          },
+          {
+            "action_type": "video_view",
+            "value": "0.889607"
+          },
+          {
+            "action_type": "link_click",
+            "value": "7.823551"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "209.28"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.795741"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "418.56"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "418.56"
+          },
+          {
+            "action_type": "view_content",
+            "value": "8.811789"
+          },
+          {
+            "action_type": "purchase",
+            "value": "418.56"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.795741"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "8.811789"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "9.199121"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "279.04"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "9.199121"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "279.04"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "418.56"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "279.04"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "4013"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "221"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "459"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "269"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "164"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "114"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032661660172",
+        "ad_name": "AdventLaneRacing_GT_1_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "89.44",
+        "impressions": "589",
+        "clicks": "19",
+        "ctr": "3.225806",
+        "cpm": "151.850594",
+        "cpc": "4.707368",
+        "frequency": "1.053667",
+        "inline_link_clicks": "14",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "14"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "13"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "12"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "12"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "192"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "192"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "13"
+          },
+          {
+            "action_type": "video_view",
+            "value": "177"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "13"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "6387"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "6387"
+          },
+          {
+            "action_type": "view_content",
+            "value": "6387"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "6387"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "6387"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "6.88"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "6.88"
+          },
+          {
+            "action_type": "video_view",
+            "value": "0.505311"
+          },
+          {
+            "action_type": "link_click",
+            "value": "6.388571"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "89.44"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.465833"
+          },
+          {
+            "action_type": "view_content",
+            "value": "6.88"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.465833"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "6.88"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "7.453333"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "7.453333"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "563"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "39"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "120"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "68"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "25"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "17"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032663560172",
+        "ad_name": "AdventLaneRacing_GT_3_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "60.72",
+        "impressions": "459",
+        "clicks": "12",
+        "ctr": "2.614379",
+        "cpm": "132.287582",
+        "cpc": "5.06",
+        "frequency": "1.057604",
+        "inline_link_clicks": "6",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "6"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "5"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "5"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "117"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "117"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "6"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "6"
+          },
+          {
+            "action_type": "post",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "6"
+          },
+          {
+            "action_type": "video_view",
+            "value": "110"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "6"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "2994"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "2994"
+          },
+          {
+            "action_type": "view_content",
+            "value": "2994"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "2994"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "2994"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "10.12"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "10.12"
+          },
+          {
+            "action_type": "video_view",
+            "value": "0.552"
+          },
+          {
+            "action_type": "link_click",
+            "value": "10.12"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "60.72"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.518974"
+          },
+          {
+            "action_type": "view_content",
+            "value": "10.12"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.518974"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "10.12"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "12.144"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "12.144"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "436"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "18"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "51"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "29"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "14"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "6"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033237200172",
+        "ad_name": "AdventLaneRacing_NO_SP_2_1",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - SP",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "37.46",
+        "impressions": "223",
+        "clicks": "9",
+        "ctr": "4.035874",
+        "cpm": "167.982063",
+        "cpc": "4.162222",
+        "frequency": "1.02765",
+        "inline_link_clicks": "6",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "6"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "6"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "6"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "6"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "6"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "6"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "6"
+          },
+          {
+            "action_type": "view_content",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "6"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "6"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "2746.92"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "2746.92"
+          },
+          {
+            "action_type": "view_content",
+            "value": "2746.92"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "2746.92"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "2746.92"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "6.243333"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "6.243333"
+          },
+          {
+            "action_type": "link_click",
+            "value": "6.243333"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "6.243333"
+          },
+          {
+            "action_type": "view_content",
+            "value": "6.243333"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "6.243333"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "6.243333"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "6.243333"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "6.243333"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032663120172",
+        "ad_name": "AdventLaneRacing_GT_2_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "28.21",
+        "impressions": "164",
+        "clicks": "6",
+        "ctr": "3.658537",
+        "cpm": "172.012195",
+        "cpc": "4.701667",
+        "frequency": "1.025",
+        "inline_link_clicks": "3",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "3"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "57"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "57"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "53"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "2"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "998"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "998"
+          },
+          {
+            "action_type": "view_content",
+            "value": "998"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "998"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "998"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "14.105"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "14.105"
+          },
+          {
+            "action_type": "video_view",
+            "value": "0.532264"
+          },
+          {
+            "action_type": "link_click",
+            "value": "9.403333"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "28.21"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.494912"
+          },
+          {
+            "action_type": "view_content",
+            "value": "14.105"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.494912"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "14.105"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "28.21"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "28.21"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "154"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "6"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "31"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "13"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032667450172",
+        "ad_name": "AdventLaneRacing_CS_1_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "26.15",
+        "impressions": "97",
+        "clicks": "2",
+        "ctr": "2.061856",
+        "cpm": "269.587629",
+        "cpc": "13.075",
+        "frequency": "1.043011",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "40"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "40"
+          },
+          {
+            "action_type": "video_view",
+            "value": "40"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.65375"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.65375"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.65375"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "88"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "6"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "32"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "13"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "9"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033803720172",
+        "ad_name": "AdventLaneRacing_NO_CS_1",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - CS",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "23.93",
+        "impressions": "83",
+        "clicks": "2",
+        "ctr": "2.409639",
+        "cpm": "288.313253",
+        "cpc": "11.965",
+        "frequency": "1.152778",
+        "inline_link_clicks": "2",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "22"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "22"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "20"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "2"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "916.76"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "916.76"
+          },
+          {
+            "action_type": "view_content",
+            "value": "916.76"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "916.76"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "916.76"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "11.965"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "11.965"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1.1965"
+          },
+          {
+            "action_type": "link_click",
+            "value": "11.965"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1.087727"
+          },
+          {
+            "action_type": "view_content",
+            "value": "11.965"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1.087727"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "11.965"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "11.965"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "11.965"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "76"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "12"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "6"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "6"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033687430172",
+        "ad_name": "AdventLaneRacing_NO_G_3",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - G",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "21.12",
+        "impressions": "68",
+        "clicks": "1",
+        "ctr": "1.470588",
+        "cpm": "310.588235",
+        "cpc": "21.12",
+        "frequency": "1.030303",
+        "inline_link_clicks": "1",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "16"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "16"
+          },
+          {
+            "action_type": "video_view",
+            "value": "15"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "1.408"
+          },
+          {
+            "action_type": "link_click",
+            "value": "21.12"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1.32"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1.32"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "66"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "8"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033633610172",
+        "ad_name": "AdventLaneRacing_NO_SP_3",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - SP",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "20.62",
+        "impressions": "72",
+        "clicks": "2",
+        "ctr": "2.777778",
+        "cpm": "286.388889",
+        "cpc": "10.31",
+        "frequency": "1.090909",
+        "inline_link_clicks": "1",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "13"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "12"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "1"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "458.38"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "458.38"
+          },
+          {
+            "action_type": "view_content",
+            "value": "458.38"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "458.38"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "458.38"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "20.62"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "20.62"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1.718333"
+          },
+          {
+            "action_type": "link_click",
+            "value": "20.62"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1.586154"
+          },
+          {
+            "action_type": "view_content",
+            "value": "20.62"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1.586154"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "20.62"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "20.62"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "20.62"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "70"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "5"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "6"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "5"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "5"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033471650172",
+        "ad_name": "AdventLaneRacing_NO_CS_2_1",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - CS",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "19.79",
+        "impressions": "100",
+        "clicks": "1",
+        "ctr": "1",
+        "cpm": "197.9",
+        "cpc": "19.79",
+        "frequency": "1.176471",
+        "inline_link_clicks": "1",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "link_click",
+            "value": "19.79"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "19.79"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "19.79"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032666320172",
+        "ad_name": "AdventLaneRacing_CS_3_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "17.92",
+        "impressions": "96",
+        "clicks": "2",
+        "ctr": "2.083333",
+        "cpm": "186.666667",
+        "cpc": "8.96",
+        "frequency": "1.043478",
+        "inline_link_clicks": "1",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "22"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "22"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "20"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "1"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "499"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "17.92"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "17.92"
+          },
+          {
+            "action_type": "video_view",
+            "value": "0.896"
+          },
+          {
+            "action_type": "link_click",
+            "value": "17.92"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "17.92"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.814545"
+          },
+          {
+            "action_type": "view_content",
+            "value": "17.92"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.814545"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "17.92"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "17.92"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "17.92"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "91"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "9"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033951980172",
+        "ad_name": "AdventLaneRacing_NO_PD_3",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "17.88",
+        "impressions": "28",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "638.571429",
+        "frequency": "1.076923",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "9"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "9"
+          },
+          {
+            "action_type": "video_view",
+            "value": "9"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "1.986667"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1.986667"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1.986667"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "24"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "5"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032671040172",
+        "ad_name": "AdventLaneRacing_SP_1_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "17",
+        "impressions": "114",
+        "clicks": "3",
+        "ctr": "2.631579",
+        "cpm": "149.122807",
+        "cpc": "5.666667",
+        "frequency": "1.036364",
+        "inline_link_clicks": "2",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "39"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "39"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "37"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "1"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "499"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "17"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "17"
+          },
+          {
+            "action_type": "video_view",
+            "value": "0.459459"
+          },
+          {
+            "action_type": "link_click",
+            "value": "8.5"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.435897"
+          },
+          {
+            "action_type": "view_content",
+            "value": "17"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.435897"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "17"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "17"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "17"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "109"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "5"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "20"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "7"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032846870172",
+        "ad_name": "AdventLaneRacing_GT_2_1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "11.71",
+        "impressions": "81",
+        "clicks": "1",
+        "ctr": "1.234568",
+        "cpm": "144.567901",
+        "cpc": "11.71",
+        "frequency": "1.065789",
+        "inline_link_clicks": "1",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "1"
+          }
+        ],
+        "action_values": [
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "499"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "499"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "11.71"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "11.71"
+          },
+          {
+            "action_type": "link_click",
+            "value": "11.71"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "11.71"
+          },
+          {
+            "action_type": "view_content",
+            "value": "11.71"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "11.71"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "11.71"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "11.71"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "11.71"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032734600172",
+        "ad_name": "AdventLaneRacing_PD_2_1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "9.26",
+        "impressions": "74",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "125.135135",
+        "frequency": "1.088235",
+        "inline_link_clicks": "0",
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033947580172",
+        "ad_name": "AdventLaneRacing_NO_PD_1",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "9.05",
+        "impressions": "39",
+        "clicks": "1",
+        "ctr": "2.564103",
+        "cpm": "232.051282",
+        "cpc": "9.05",
+        "frequency": "1.083333",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_reaction",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "2.2625"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "9.05"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1.81"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1.81"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "37"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033332880172",
+        "ad_name": "AdventLaneRacing_NO_G_2_1",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - G",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "8.92",
+        "impressions": "36",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "247.777778",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032671840172",
+        "ad_name": "AdventLaneRacing_SP_3_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "8.43",
+        "impressions": "55",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "153.272727",
+        "frequency": "1.018519",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "10"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "10"
+          },
+          {
+            "action_type": "video_view",
+            "value": "10"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.843"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.843"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.843"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "54"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033806650172",
+        "ad_name": "AdventLaneRacing_NO_CS_2",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - CS",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "7.27",
+        "impressions": "29",
+        "clicks": "1",
+        "ctr": "3.448276",
+        "cpm": "250.689655",
+        "cpc": "7.27",
+        "frequency": "1",
+        "inline_link_clicks": "1",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "6"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "6"
+          },
+          {
+            "action_type": "video_view",
+            "value": "5"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "1.454"
+          },
+          {
+            "action_type": "link_click",
+            "value": "7.27"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1.211667"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1.211667"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "28"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033688930172",
+        "ad_name": "AdventLaneRacing_NO_G_2",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - G",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "7.16",
+        "impressions": "42",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "170.47619",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "15"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "15"
+          },
+          {
+            "action_type": "video_view",
+            "value": "15"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.477333"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.477333"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.477333"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "41"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "9"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032972080172",
+        "ad_name": "AdventLaneRacing_CS_2_1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "7.02",
+        "impressions": "41",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "171.219512",
+        "frequency": "1.051282",
+        "inline_link_clicks": "0",
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032660920172",
+        "ad_name": "AdventLaneRacing_PD_3_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "4.55",
+        "impressions": "20",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "227.5",
+        "frequency": "1.052632",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "video_view",
+            "value": "5"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.91"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.91"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.91"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "18"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033057380172",
+        "ad_name": "AdventLaneRacing_SP_2_1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "3.96",
+        "impressions": "23",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "172.173913",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033688360172",
+        "ad_name": "AdventLaneRacing_NO_G_1",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - G",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "3.58",
+        "impressions": "7",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "511.428571",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "4"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "4"
+          },
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.895"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.895"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.895"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "6"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032658850172",
+        "ad_name": "AdventLaneRacing_PD_2_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "3.55",
+        "impressions": "18",
+        "clicks": "1",
+        "ctr": "5.555556",
+        "cpm": "197.222222",
+        "cpc": "3.55",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_reaction",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.8875"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "3.55"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.71"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.71"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "16"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033949330172",
+        "ad_name": "AdventLaneRacing_NO_PD_2",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "2.58",
+        "impressions": "19",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "135.789474",
+        "frequency": "1.117647",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "3"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "3"
+          },
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.86"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.86"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.86"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "18"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032672420172",
+        "ad_name": "AdventLaneRacing_SP_2_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "0.83",
+        "impressions": "10",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "83",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "3"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "3"
+          },
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.276667"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.276667"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.276667"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "9"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033804680172",
+        "ad_name": "AdventLaneRacing_NO_CS_3",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - CS",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "0.68",
+        "impressions": "2",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "340",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249033634230172",
+        "ad_name": "AdventLaneRacing_NO_SP_1",
+        "adset_name": "ADVENTLANERACING_NO_Racingkalendern - SP",
+        "campaign_id": "120249031977180172",
+        "campaign_name": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "0.53",
+        "impressions": "4",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "132.5",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "3"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      },
+      {
+        "ad_id": "120249032668860172",
+        "ad_name": "AdventLaneRacing_CS_2_H1",
+        "adset_name": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "campaign_id": "120249031845500172",
+        "campaign_name": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "spend": "0.27",
+        "impressions": "4",
+        "clicks": "0",
+        "ctr": "0",
+        "cpm": "67.5",
+        "frequency": "1",
+        "inline_link_clicks": "0",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "cost_per_action_type": [
+          {
+            "action_type": "video_view",
+            "value": "0.135"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "0.135"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "0.135"
+          }
+        ],
+        "video_play_actions": [
+          {
+            "action_type": "video_view",
+            "value": "4"
+          }
+        ],
+        "video_thruplay_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "video_p25_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "video_p50_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "video_p75_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "video_p100_watched_actions": [
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-08-29",
+        "date_stop": "2026-09-11"
+      }
+    ],
+    "slangda": 249,
+    "slangdaKampanjer": [
+      "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+      "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "HEIMGUARD_NO_Overvåkingskamera | BE-ROAS 2,11 | 2026-09-09",
+      "HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08",
+      "TACKLEBAY_NO_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+      "TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+      "TANKGUARD_NO_Tanktrekket | 2026-09-09",
+      "TANKGUARD_SE_Tanköverdraget | 2026-09-08"
+    ],
+    "behallnaKampanjer": [
+      "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10"
+    ],
+    "baraAnnonsnamn": [],
+    "rader": [
+      {
+        "ad_id": "120249032660230172",
+        "namn": "AdventLaneRacing_PD_1_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 837.12,
+        "kop": 2,
+        "cpa": 418.56,
+        "purchase_roas": 1.192183,
+        "omni_purchase_values": 998,
+        "intakt": 998.00023296,
+        "impressions": 4501,
+        "ctr": 3.688069,
+        "cpm": 185.985337,
+        "frequency": 1.111633,
+        "klick": 166,
+        "cpc": 5.042892,
+        "lankklick": 107,
+        "tre_sek": 941,
+        "thruplay": 221,
+        "p25": 459,
+        "p75": 164,
+        "p100": 114,
+        "hook_rate": 0.209064652299489,
+        "hold": 0.23485653560042508,
+        "hook_autoplay": 0.8915796489668962,
+        "hold_p50": 0.06703214552703712,
+        "cvr": 0.012048192771084338
+      },
+      {
+        "ad_id": "120249032661660172",
+        "namn": "AdventLaneRacing_GT_1_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 89.44,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 589,
+        "ctr": 3.225806,
+        "cpm": 151.850594,
+        "frequency": 1.053667,
+        "klick": 19,
+        "cpc": 4.707368,
+        "lankklick": 14,
+        "tre_sek": 177,
+        "thruplay": 39,
+        "p25": 120,
+        "p75": 25,
+        "p100": 17,
+        "hook_rate": 0.300509337860781,
+        "hold": 0.22033898305084745,
+        "hook_autoplay": 0.9558573853989814,
+        "hold_p50": 0.12078152753108348,
+        "cvr": 0
+      },
+      {
+        "ad_id": "120249032663560172",
+        "namn": "AdventLaneRacing_GT_3_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 60.72,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 459,
+        "ctr": 2.614379,
+        "cpm": 132.287582,
+        "frequency": 1.057604,
+        "klick": 12,
+        "cpc": 5.06,
+        "lankklick": 6,
+        "tre_sek": 110,
+        "thruplay": 18,
+        "p25": 51,
+        "p75": 14,
+        "p100": 6,
+        "hook_rate": 0.23965141612200436,
+        "hold": 0.16363636363636364,
+        "hook_autoplay": 0.9498910675381264,
+        "hold_p50": 0.06651376146788991,
+        "cvr": 0
+      },
+      {
+        "ad_id": "120249032663120172",
+        "namn": "AdventLaneRacing_GT_2_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 28.21,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 164,
+        "ctr": 3.658537,
+        "cpm": 172.012195,
+        "frequency": 1.025,
+        "klick": 6,
+        "cpc": 4.701667,
+        "lankklick": 3,
+        "tre_sek": 53,
+        "thruplay": 6,
+        "p25": 31,
+        "p75": 4,
+        "p100": 1,
+        "hook_rate": 0.3231707317073171,
+        "hold": 0.11320754716981132,
+        "hook_autoplay": 0.9390243902439024,
+        "hold_p50": 0.08441558441558442,
+        "cvr": 0
+      },
+      {
+        "ad_id": "120249032667450172",
+        "namn": "AdventLaneRacing_CS_1_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 26.15,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 97,
+        "ctr": 2.061856,
+        "cpm": 269.587629,
+        "frequency": 1.043011,
+        "klick": 2,
+        "cpc": 13.075,
+        "lankklick": 0,
+        "tre_sek": 40,
+        "thruplay": 6,
+        "p25": 32,
+        "p75": 9,
+        "p100": 4,
+        "hook_rate": 0.41237113402061853,
+        "hold": 0.15,
+        "hook_autoplay": 0.9072164948453608,
+        "hold_p50": 0.14772727272727273,
+        "cvr": 0
+      },
+      {
+        "ad_id": "120249032666320172",
+        "namn": "AdventLaneRacing_CS_3_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 17.92,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 96,
+        "ctr": 2.083333,
+        "cpm": 186.666667,
+        "frequency": 1.043478,
+        "klick": 2,
+        "cpc": 8.96,
+        "lankklick": 1,
+        "tre_sek": 20,
+        "thruplay": 0,
+        "p25": 9,
+        "p75": 1,
+        "p100": 0,
+        "hook_rate": 0.20833333333333334,
+        "hold": 0,
+        "hook_autoplay": 0.9479166666666666,
+        "hold_p50": 0.01098901098901099,
+        "cvr": 0
+      },
+      {
+        "ad_id": "120249032671040172",
+        "namn": "AdventLaneRacing_SP_1_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 17,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 114,
+        "ctr": 2.631579,
+        "cpm": 149.122807,
+        "frequency": 1.036364,
+        "klick": 3,
+        "cpc": 5.666667,
+        "lankklick": 2,
+        "tre_sek": 37,
+        "thruplay": 5,
+        "p25": 20,
+        "p75": 3,
+        "p100": 1,
+        "hook_rate": 0.32456140350877194,
+        "hold": 0.13513513513513514,
+        "hook_autoplay": 0.956140350877193,
+        "hold_p50": 0.06422018348623854,
+        "cvr": 0
+      },
+      {
+        "ad_id": "120249032846870172",
+        "namn": "AdventLaneRacing_GT_2_1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 11.71,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 81,
+        "ctr": 1.234568,
+        "cpm": 144.567901,
+        "frequency": 1.065789,
+        "klick": 1,
+        "cpc": 11.71,
+        "lankklick": 1,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": 0
+      },
+      {
+        "ad_id": "120249032734600172",
+        "namn": "AdventLaneRacing_PD_2_1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 9.26,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 74,
+        "ctr": 0,
+        "cpm": 125.135135,
+        "frequency": 1.088235,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": null
+      },
+      {
+        "ad_id": "120249032671840172",
+        "namn": "AdventLaneRacing_SP_3_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 8.43,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 55,
+        "ctr": 0,
+        "cpm": 153.272727,
+        "frequency": 1.018519,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 10,
+        "thruplay": 1,
+        "p25": 3,
+        "p75": 1,
+        "p100": 1,
+        "hook_rate": 0.18181818181818182,
+        "hold": 0.1,
+        "hook_autoplay": 0.9818181818181818,
+        "hold_p50": 0.018518518518518517,
+        "cvr": null
+      },
+      {
+        "ad_id": "120249032972080172",
+        "namn": "AdventLaneRacing_CS_2_1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 7.02,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 41,
+        "ctr": 0,
+        "cpm": 171.219512,
+        "frequency": 1.051282,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": null
+      },
+      {
+        "ad_id": "120249032660920172",
+        "namn": "AdventLaneRacing_PD_3_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 4.55,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 20,
+        "ctr": 0,
+        "cpm": 227.5,
+        "frequency": 1.052632,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 5,
+        "thruplay": 2,
+        "p25": 4,
+        "p75": 1,
+        "p100": 1,
+        "hook_rate": 0.25,
+        "hold": 0.4,
+        "hook_autoplay": 0.9,
+        "hold_p50": 0.1111111111111111,
+        "cvr": null
+      },
+      {
+        "ad_id": "120249033057380172",
+        "namn": "AdventLaneRacing_SP_2_1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 3.96,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 23,
+        "ctr": 0,
+        "cpm": 172.173913,
+        "frequency": 1,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": null
+      },
+      {
+        "ad_id": "120249032658850172",
+        "namn": "AdventLaneRacing_PD_2_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 3.55,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 18,
+        "ctr": 5.555556,
+        "cpm": 197.222222,
+        "frequency": 1,
+        "klick": 1,
+        "cpc": 3.55,
+        "lankklick": 0,
+        "tre_sek": 4,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": 0.2222222222222222,
+        "hold": 0,
+        "hook_autoplay": 0.8888888888888888,
+        "hold_p50": 0,
+        "cvr": 0
+      },
+      {
+        "ad_id": "120249032672420172",
+        "namn": "AdventLaneRacing_SP_2_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 0.83,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "cpm": 83,
+        "frequency": 1,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 3,
+        "thruplay": 0,
+        "p25": 1,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": 0.3,
+        "hold": 0,
+        "hook_autoplay": 0.9,
+        "hold_p50": 0,
+        "cvr": null
+      },
+      {
+        "ad_id": "120249032668860172",
+        "namn": "AdventLaneRacing_CS_2_H1",
+        "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+        "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+        "effective_status": "ACTIVE",
+        "amount_spent": 0.27,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "cpm": 67.5,
+        "frequency": 1,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 2,
+        "thruplay": 1,
+        "p25": 2,
+        "p75": 1,
+        "p100": 1,
+        "hook_rate": 0.5,
+        "hold": 0.5,
+        "hook_autoplay": 1,
+        "hold_p50": 0.25,
+        "cvr": null
+      }
+    ],
+    "totalt": 280,
+    "prefix": [
+      "adventlaneracing_",
+      "adventlaneracing",
+      "adventlane"
+    ],
+    "period": "last_14d",
+    "marknad": {
+      "vald": "SE",
+      "bortfiltrerade": {
+        "NO": 15
+      },
+      "antalBort": 15
+    }
+  },
+  "rader": [
+    {
+      "ad_id": "120249032660230172",
+      "namn": "AdventLaneRacing_PD_1_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 837.12,
+      "kop": 2,
+      "cpa": 418.56,
+      "purchase_roas": 1.192183,
+      "omni_purchase_values": 998,
+      "intakt": 998.00023296,
+      "impressions": 4501,
+      "ctr": 3.688069,
+      "cpm": 185.985337,
+      "frequency": 1.111633,
+      "klick": 166,
+      "cpc": 5.042892,
+      "lankklick": 107,
+      "tre_sek": 941,
+      "thruplay": 221,
+      "p25": 459,
+      "p75": 164,
+      "p100": 114,
+      "hook_rate": 0.209064652299489,
+      "hold": 0.23485653560042508,
+      "hook_autoplay": 0.8915796489668962,
+      "hold_p50": 0.06703214552703712,
+      "cvr": 0.012048192771084338,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "837 kr och 2 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032661660172",
+      "namn": "AdventLaneRacing_GT_1_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 89.44,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 589,
+      "ctr": 3.225806,
+      "cpm": 151.850594,
+      "frequency": 1.053667,
+      "klick": 19,
+      "cpc": 4.707368,
+      "lankklick": 14,
+      "tre_sek": 177,
+      "thruplay": 39,
+      "p25": 120,
+      "p75": 25,
+      "p100": 17,
+      "hook_rate": 0.300509337860781,
+      "hold": 0.22033898305084745,
+      "hook_autoplay": 0.9558573853989814,
+      "hold_p50": 0.12078152753108348,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "89 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032663560172",
+      "namn": "AdventLaneRacing_GT_3_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 60.72,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 459,
+      "ctr": 2.614379,
+      "cpm": 132.287582,
+      "frequency": 1.057604,
+      "klick": 12,
+      "cpc": 5.06,
+      "lankklick": 6,
+      "tre_sek": 110,
+      "thruplay": 18,
+      "p25": 51,
+      "p75": 14,
+      "p100": 6,
+      "hook_rate": 0.23965141612200436,
+      "hold": 0.16363636363636364,
+      "hook_autoplay": 0.9498910675381264,
+      "hold_p50": 0.06651376146788991,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "61 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032663120172",
+      "namn": "AdventLaneRacing_GT_2_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 28.21,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 164,
+      "ctr": 3.658537,
+      "cpm": 172.012195,
+      "frequency": 1.025,
+      "klick": 6,
+      "cpc": 4.701667,
+      "lankklick": 3,
+      "tre_sek": 53,
+      "thruplay": 6,
+      "p25": 31,
+      "p75": 4,
+      "p100": 1,
+      "hook_rate": 0.3231707317073171,
+      "hold": 0.11320754716981132,
+      "hook_autoplay": 0.9390243902439024,
+      "hold_p50": 0.08441558441558442,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "28 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032667450172",
+      "namn": "AdventLaneRacing_CS_1_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 26.15,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 97,
+      "ctr": 2.061856,
+      "cpm": 269.587629,
+      "frequency": 1.043011,
+      "klick": 2,
+      "cpc": 13.075,
+      "lankklick": 0,
+      "tre_sek": 40,
+      "thruplay": 6,
+      "p25": 32,
+      "p75": 9,
+      "p100": 4,
+      "hook_rate": 0.41237113402061853,
+      "hold": 0.15,
+      "hook_autoplay": 0.9072164948453608,
+      "hold_p50": 0.14772727272727273,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "26 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032666320172",
+      "namn": "AdventLaneRacing_CS_3_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 17.92,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 96,
+      "ctr": 2.083333,
+      "cpm": 186.666667,
+      "frequency": 1.043478,
+      "klick": 2,
+      "cpc": 8.96,
+      "lankklick": 1,
+      "tre_sek": 20,
+      "thruplay": 0,
+      "p25": 9,
+      "p75": 1,
+      "p100": 0,
+      "hook_rate": 0.20833333333333334,
+      "hold": 0,
+      "hook_autoplay": 0.9479166666666666,
+      "hold_p50": 0.01098901098901099,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "18 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032671040172",
+      "namn": "AdventLaneRacing_SP_1_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 17,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 114,
+      "ctr": 2.631579,
+      "cpm": 149.122807,
+      "frequency": 1.036364,
+      "klick": 3,
+      "cpc": 5.666667,
+      "lankklick": 2,
+      "tre_sek": 37,
+      "thruplay": 5,
+      "p25": 20,
+      "p75": 3,
+      "p100": 1,
+      "hook_rate": 0.32456140350877194,
+      "hold": 0.13513513513513514,
+      "hook_autoplay": 0.956140350877193,
+      "hold_p50": 0.06422018348623854,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "17 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032846870172",
+      "namn": "AdventLaneRacing_GT_2_1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 11.71,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 81,
+      "ctr": 1.234568,
+      "cpm": 144.567901,
+      "frequency": 1.065789,
+      "klick": 1,
+      "cpc": 11.71,
+      "lankklick": 1,
+      "tre_sek": 0,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": null,
+      "hold": null,
+      "hook_autoplay": null,
+      "hold_p50": null,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "12 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032734600172",
+      "namn": "AdventLaneRacing_PD_2_1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 9.26,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 74,
+      "ctr": 0,
+      "cpm": 125.135135,
+      "frequency": 1.088235,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 0,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": null,
+      "hold": null,
+      "hook_autoplay": null,
+      "hold_p50": null,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "9 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032671840172",
+      "namn": "AdventLaneRacing_SP_3_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 8.43,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 55,
+      "ctr": 0,
+      "cpm": 153.272727,
+      "frequency": 1.018519,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 10,
+      "thruplay": 1,
+      "p25": 3,
+      "p75": 1,
+      "p100": 1,
+      "hook_rate": 0.18181818181818182,
+      "hold": 0.1,
+      "hook_autoplay": 0.9818181818181818,
+      "hold_p50": 0.018518518518518517,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "8 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032972080172",
+      "namn": "AdventLaneRacing_CS_2_1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 7.02,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 41,
+      "ctr": 0,
+      "cpm": 171.219512,
+      "frequency": 1.051282,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 0,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": null,
+      "hold": null,
+      "hook_autoplay": null,
+      "hold_p50": null,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "7 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032660920172",
+      "namn": "AdventLaneRacing_PD_3_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 4.55,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "cpm": 227.5,
+      "frequency": 1.052632,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 5,
+      "thruplay": 2,
+      "p25": 4,
+      "p75": 1,
+      "p100": 1,
+      "hook_rate": 0.25,
+      "hold": 0.4,
+      "hook_autoplay": 0.9,
+      "hold_p50": 0.1111111111111111,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "5 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249033057380172",
+      "namn": "AdventLaneRacing_SP_2_1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 3.96,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "cpm": 172.173913,
+      "frequency": 1,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 0,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": null,
+      "hold": null,
+      "hook_autoplay": null,
+      "hold_p50": null,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "4 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032658850172",
+      "namn": "AdventLaneRacing_PD_2_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 3.55,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 18,
+      "ctr": 5.555556,
+      "cpm": 197.222222,
+      "frequency": 1,
+      "klick": 1,
+      "cpc": 3.55,
+      "lankklick": 0,
+      "tre_sek": 4,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": 0.2222222222222222,
+      "hold": 0,
+      "hook_autoplay": 0.8888888888888888,
+      "hold_p50": 0,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "4 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032672420172",
+      "namn": "AdventLaneRacing_SP_2_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 0.83,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "cpm": 83,
+      "frequency": 1,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 3,
+      "thruplay": 0,
+      "p25": 1,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": 0.3,
+      "hold": 0,
+      "hook_autoplay": 0.9,
+      "hold_p50": 0,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "1 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032668860172",
+      "namn": "AdventLaneRacing_CS_2_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 0.27,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "cpm": 67.5,
+      "frequency": 1,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 2,
+      "thruplay": 1,
+      "p25": 2,
+      "p75": 1,
+      "p100": 1,
+      "hook_rate": 0.5,
+      "hold": 0.5,
+      "hook_autoplay": 1,
+      "hold_p50": 0.25,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "0 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    }
+  ],
+  "bedombara": [],
+  "forTidigt": [
+    {
+      "ad_id": "120249032660230172",
+      "namn": "AdventLaneRacing_PD_1_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 837.12,
+      "kop": 2,
+      "cpa": 418.56,
+      "purchase_roas": 1.192183,
+      "omni_purchase_values": 998,
+      "intakt": 998.00023296,
+      "impressions": 4501,
+      "ctr": 3.688069,
+      "cpm": 185.985337,
+      "frequency": 1.111633,
+      "klick": 166,
+      "cpc": 5.042892,
+      "lankklick": 107,
+      "tre_sek": 941,
+      "thruplay": 221,
+      "p25": 459,
+      "p75": 164,
+      "p100": 114,
+      "hook_rate": 0.209064652299489,
+      "hold": 0.23485653560042508,
+      "hook_autoplay": 0.8915796489668962,
+      "hold_p50": 0.06703214552703712,
+      "cvr": 0.012048192771084338,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "837 kr och 2 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032661660172",
+      "namn": "AdventLaneRacing_GT_1_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 89.44,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 589,
+      "ctr": 3.225806,
+      "cpm": 151.850594,
+      "frequency": 1.053667,
+      "klick": 19,
+      "cpc": 4.707368,
+      "lankklick": 14,
+      "tre_sek": 177,
+      "thruplay": 39,
+      "p25": 120,
+      "p75": 25,
+      "p100": 17,
+      "hook_rate": 0.300509337860781,
+      "hold": 0.22033898305084745,
+      "hook_autoplay": 0.9558573853989814,
+      "hold_p50": 0.12078152753108348,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "89 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032663560172",
+      "namn": "AdventLaneRacing_GT_3_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 60.72,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 459,
+      "ctr": 2.614379,
+      "cpm": 132.287582,
+      "frequency": 1.057604,
+      "klick": 12,
+      "cpc": 5.06,
+      "lankklick": 6,
+      "tre_sek": 110,
+      "thruplay": 18,
+      "p25": 51,
+      "p75": 14,
+      "p100": 6,
+      "hook_rate": 0.23965141612200436,
+      "hold": 0.16363636363636364,
+      "hook_autoplay": 0.9498910675381264,
+      "hold_p50": 0.06651376146788991,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "61 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032663120172",
+      "namn": "AdventLaneRacing_GT_2_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 28.21,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 164,
+      "ctr": 3.658537,
+      "cpm": 172.012195,
+      "frequency": 1.025,
+      "klick": 6,
+      "cpc": 4.701667,
+      "lankklick": 3,
+      "tre_sek": 53,
+      "thruplay": 6,
+      "p25": 31,
+      "p75": 4,
+      "p100": 1,
+      "hook_rate": 0.3231707317073171,
+      "hold": 0.11320754716981132,
+      "hook_autoplay": 0.9390243902439024,
+      "hold_p50": 0.08441558441558442,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "28 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032667450172",
+      "namn": "AdventLaneRacing_CS_1_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 26.15,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 97,
+      "ctr": 2.061856,
+      "cpm": 269.587629,
+      "frequency": 1.043011,
+      "klick": 2,
+      "cpc": 13.075,
+      "lankklick": 0,
+      "tre_sek": 40,
+      "thruplay": 6,
+      "p25": 32,
+      "p75": 9,
+      "p100": 4,
+      "hook_rate": 0.41237113402061853,
+      "hold": 0.15,
+      "hook_autoplay": 0.9072164948453608,
+      "hold_p50": 0.14772727272727273,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "26 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032666320172",
+      "namn": "AdventLaneRacing_CS_3_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 17.92,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 96,
+      "ctr": 2.083333,
+      "cpm": 186.666667,
+      "frequency": 1.043478,
+      "klick": 2,
+      "cpc": 8.96,
+      "lankklick": 1,
+      "tre_sek": 20,
+      "thruplay": 0,
+      "p25": 9,
+      "p75": 1,
+      "p100": 0,
+      "hook_rate": 0.20833333333333334,
+      "hold": 0,
+      "hook_autoplay": 0.9479166666666666,
+      "hold_p50": 0.01098901098901099,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "18 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032671040172",
+      "namn": "AdventLaneRacing_SP_1_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 17,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 114,
+      "ctr": 2.631579,
+      "cpm": 149.122807,
+      "frequency": 1.036364,
+      "klick": 3,
+      "cpc": 5.666667,
+      "lankklick": 2,
+      "tre_sek": 37,
+      "thruplay": 5,
+      "p25": 20,
+      "p75": 3,
+      "p100": 1,
+      "hook_rate": 0.32456140350877194,
+      "hold": 0.13513513513513514,
+      "hook_autoplay": 0.956140350877193,
+      "hold_p50": 0.06422018348623854,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "17 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032846870172",
+      "namn": "AdventLaneRacing_GT_2_1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - GT",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 11.71,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 81,
+      "ctr": 1.234568,
+      "cpm": 144.567901,
+      "frequency": 1.065789,
+      "klick": 1,
+      "cpc": 11.71,
+      "lankklick": 1,
+      "tre_sek": 0,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": null,
+      "hold": null,
+      "hook_autoplay": null,
+      "hold_p50": null,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "12 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032734600172",
+      "namn": "AdventLaneRacing_PD_2_1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 9.26,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 74,
+      "ctr": 0,
+      "cpm": 125.135135,
+      "frequency": 1.088235,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 0,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": null,
+      "hold": null,
+      "hook_autoplay": null,
+      "hold_p50": null,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "9 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032671840172",
+      "namn": "AdventLaneRacing_SP_3_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 8.43,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 55,
+      "ctr": 0,
+      "cpm": 153.272727,
+      "frequency": 1.018519,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 10,
+      "thruplay": 1,
+      "p25": 3,
+      "p75": 1,
+      "p100": 1,
+      "hook_rate": 0.18181818181818182,
+      "hold": 0.1,
+      "hook_autoplay": 0.9818181818181818,
+      "hold_p50": 0.018518518518518517,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "8 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032972080172",
+      "namn": "AdventLaneRacing_CS_2_1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 7.02,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 41,
+      "ctr": 0,
+      "cpm": 171.219512,
+      "frequency": 1.051282,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 0,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": null,
+      "hold": null,
+      "hook_autoplay": null,
+      "hold_p50": null,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "7 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032660920172",
+      "namn": "AdventLaneRacing_PD_3_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 4.55,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "cpm": 227.5,
+      "frequency": 1.052632,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 5,
+      "thruplay": 2,
+      "p25": 4,
+      "p75": 1,
+      "p100": 1,
+      "hook_rate": 0.25,
+      "hold": 0.4,
+      "hook_autoplay": 0.9,
+      "hold_p50": 0.1111111111111111,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "5 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249033057380172",
+      "namn": "AdventLaneRacing_SP_2_1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 3.96,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "cpm": 172.173913,
+      "frequency": 1,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 0,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": null,
+      "hold": null,
+      "hook_autoplay": null,
+      "hold_p50": null,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "4 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032658850172",
+      "namn": "AdventLaneRacing_PD_2_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - PD",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 3.55,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 18,
+      "ctr": 5.555556,
+      "cpm": 197.222222,
+      "frequency": 1,
+      "klick": 1,
+      "cpc": 3.55,
+      "lankklick": 0,
+      "tre_sek": 4,
+      "thruplay": 0,
+      "p25": 0,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": 0.2222222222222222,
+      "hold": 0,
+      "hook_autoplay": 0.8888888888888888,
+      "hold_p50": 0,
+      "cvr": 0,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "4 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032672420172",
+      "namn": "AdventLaneRacing_SP_2_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - SP",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 0.83,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "cpm": 83,
+      "frequency": 1,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 3,
+      "thruplay": 0,
+      "p25": 1,
+      "p75": 0,
+      "p100": 0,
+      "hook_rate": 0.3,
+      "hold": 0,
+      "hook_autoplay": 0.9,
+      "hold_p50": 0,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "1 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    },
+    {
+      "ad_id": "120249032668860172",
+      "namn": "AdventLaneRacing_CS_2_H1",
+      "adset": "ADVENTLANERACING_SE_Racingkalendern - CS",
+      "kampanj": "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "effective_status": "ACTIVE",
+      "amount_spent": 0.27,
+      "kop": 0,
+      "cpa": null,
+      "purchase_roas": 0,
+      "omni_purchase_values": 0,
+      "intakt": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "cpm": 67.5,
+      "frequency": 1,
+      "klick": 0,
+      "cpc": null,
+      "lankklick": 0,
+      "tre_sek": 2,
+      "thruplay": 1,
+      "p25": 2,
+      "p75": 1,
+      "p100": 1,
+      "hook_rate": 0.5,
+      "hold": 0.5,
+      "hook_autoplay": 1,
+      "hold_p50": 0.25,
+      "cvr": null,
+      "dom": {
+        "klass": "for_tidigt",
+        "motivering": "0 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+        "preliminar": false,
+        "skalningskandidat": false,
+        "vinst_strang": null,
+        "vinst_generos": null
+      }
+    }
+  ],
+  "vinnare": [],
+  "forlorare": [],
+  "bevaka": [],
+  "berorPaMoms": [],
+  "ordningSkiljer": false,
+  "totalSpend": 1126.14,
+  "totalKop": 2,
+  "totalIntakt": 998.00023296,
+  "samladRoas": 0.8862132887207629,
+  "totalVinstGeneros": 0,
+  "totalVinstStrang": 0,
+  "verkligAov": null,
+  "trasiga": [],
+  "arv": {
+    "hoppad": false,
+    "text": "ÄRVD HISTORIK — Bäverbutikens annonser för samma produkt, dömda mot OPS-butikens linjer; priset kan skilja. Vägledande, ingen budget rörs här. Bäverbutiken LÄSES bara.",
+    "konto": "1867947880635861",
+    "lasesBara": true,
+    "prefix": "Adventskalender",
+    "kallaKampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+    "period": "maximum (hela livstiden)",
+    "marknad": {
+      "vald": "SE",
+      "bortfiltrerade": {},
+      "antalBort": 0
+    },
+    "totalt": 1684,
+    "rader": [
+      {
+        "ad_id": "120250134694770291",
+        "namn": "Adventskalender_PD_2_H1",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 1715.12,
+        "kop": 9,
+        "cpa": 190.568889,
+        "purchase_roas": 2.89111,
+        "omni_purchase_values": 4958.6,
+        "intakt": 4958.600583199999,
+        "impressions": 8151,
+        "ctr": 2.907619,
+        "cpm": 210.418354,
+        "frequency": 1.187673,
+        "klick": 237,
+        "cpc": 7.236793,
+        "lankklick": 181,
+        "tre_sek": 2242,
+        "thruplay": 624,
+        "p25": 1038,
+        "p75": 446,
+        "p100": 326,
+        "hook_rate": 0.27505827505827507,
+        "hold": 0.2783229259589652,
+        "hook_autoplay": 0.967120598699546,
+        "hold_p50": 0.08511987821895217,
+        "cvr": 0.0379746835443038,
+        "arv": true,
+        "dom": {
+          "preliminar": false,
+          "vinst_strang": 1191.8799989999998,
+          "vinst_generos": 1191.8799989999998,
+          "skalningskandidat": true,
+          "klass": "vinnare",
+          "motivering": "CPA 191 kr under break-even på BÅDA linjerna (323–323 kr) på 9 köp. Även under target — skalningskandidat."
+        }
+      },
+      {
+        "ad_id": "120250134691780291",
+        "namn": "Adventskalender_PD_2_1",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 1539.14,
+        "kop": 8,
+        "cpa": 192.3925,
+        "purchase_roas": 3.442767,
+        "omni_purchase_values": 5298.9,
+        "intakt": 5298.90040038,
+        "impressions": 8926,
+        "ctr": 4.369258,
+        "cpm": 172.433341,
+        "frequency": 1.345493,
+        "klick": 390,
+        "cpc": 3.946513,
+        "lankklick": 256,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": 0.020512820512820513,
+        "arv": true,
+        "dom": {
+          "preliminar": false,
+          "vinst_strang": 1044.86,
+          "vinst_generos": 1044.86,
+          "skalningskandidat": true,
+          "klass": "vinnare",
+          "motivering": "CPA 192 kr under break-even på BÅDA linjerna (323–323 kr) på 8 köp. Även under target — skalningskandidat."
+        }
+      },
+      {
+        "ad_id": "120250134681590291",
+        "namn": "Adventskalender_GT_1_H1",
+        "adset": "Adventskalender Racingbilar | GT | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 816.16,
+        "kop": 2,
+        "cpa": 408.08,
+        "purchase_roas": 1.650779,
+        "omni_purchase_values": 1347.3,
+        "intakt": 1347.2997886399999,
+        "impressions": 4961,
+        "ctr": 2.640597,
+        "cpm": 164.515219,
+        "frequency": 1.182316,
+        "klick": 131,
+        "cpc": 6.230229,
+        "lankklick": 102,
+        "tre_sek": 1542,
+        "thruplay": 323,
+        "p25": 902,
+        "p75": 255,
+        "p100": 143,
+        "hook_rate": 0.3108244305583552,
+        "hold": 0.20946822308690013,
+        "hook_autoplay": 0.9580729691594436,
+        "hold_p50": 0.09362507889753839,
+        "cvr": 0.015267175572519083,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "816 kr och 2 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134684090291",
+        "namn": "Adventskalender_GT_2_1",
+        "adset": "Adventskalender Racingbilar | GT | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 60.69,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 301,
+        "ctr": 4.651163,
+        "cpm": 201.627907,
+        "frequency": 1.175781,
+        "klick": 14,
+        "cpc": 4.335,
+        "lankklick": 11,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": 0,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "61 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134675940291",
+        "namn": "Adventskalender_CS_2_1",
+        "adset": "Adventskalender Racingbilar | CS | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 58.63,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 153,
+        "ctr": 3.267974,
+        "cpm": 383.202614,
+        "frequency": 1.330435,
+        "klick": 5,
+        "cpc": 11.726,
+        "lankklick": 3,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": 0,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "59 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134691340291",
+        "namn": "Adventskalender_PD_1_H1",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 44.91,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 159,
+        "ctr": 4.402516,
+        "cpm": 282.45283,
+        "frequency": 1.223077,
+        "klick": 7,
+        "cpc": 6.415714,
+        "lankklick": 6,
+        "tre_sek": 40,
+        "thruplay": 14,
+        "p25": 21,
+        "p75": 10,
+        "p100": 8,
+        "hook_rate": 0.25157232704402516,
+        "hold": 0.35,
+        "hook_autoplay": 0.949685534591195,
+        "hold_p50": 0.11258278145695365,
+        "cvr": 0,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "45 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134700150291",
+        "namn": "Adventskalender_SP_2_1",
+        "adset": "Adventskalender Racingbilar | SP | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 43.67,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 81,
+        "ctr": 1.234568,
+        "cpm": 539.135802,
+        "frequency": 1.306452,
+        "klick": 1,
+        "cpc": 43.67,
+        "lankklick": 1,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": 0,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "44 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134686490291",
+        "namn": "Adventskalender_GT_2_H1",
+        "adset": "Adventskalender Racingbilar | GT | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 39.45,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 176,
+        "ctr": 2.272727,
+        "cpm": 224.147727,
+        "frequency": 1.135484,
+        "klick": 4,
+        "cpc": 9.8625,
+        "lankklick": 4,
+        "tre_sek": 44,
+        "thruplay": 11,
+        "p25": 23,
+        "p75": 9,
+        "p100": 5,
+        "hook_rate": 0.25,
+        "hold": 0.25,
+        "hook_autoplay": 0.9545454545454546,
+        "hold_p50": 0.08928571428571429,
+        "cvr": 0,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "39 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134697380291",
+        "namn": "Adventskalender_PD_3_H1",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 20.84,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 79,
+        "ctr": 1.265823,
+        "cpm": 263.797468,
+        "frequency": 1.161765,
+        "klick": 1,
+        "cpc": 20.84,
+        "lankklick": 1,
+        "tre_sek": 19,
+        "thruplay": 4,
+        "p25": 11,
+        "p75": 3,
+        "p100": 3,
+        "hook_rate": 0.24050632911392406,
+        "hold": 0.21052631578947367,
+        "hook_autoplay": 0.9746835443037974,
+        "hold_p50": 0.06493506493506493,
+        "cvr": 0,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "21 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134688540291",
+        "namn": "Adventskalender_GT_3_H1",
+        "adset": "Adventskalender Racingbilar | GT | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 18.56,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 86,
+        "ctr": 3.488372,
+        "cpm": 215.813953,
+        "frequency": 1.075,
+        "klick": 3,
+        "cpc": 6.186667,
+        "lankklick": 2,
+        "tre_sek": 32,
+        "thruplay": 10,
+        "p25": 22,
+        "p75": 8,
+        "p100": 8,
+        "hook_rate": 0.37209302325581395,
+        "hold": 0.3125,
+        "hook_autoplay": 0.9883720930232558,
+        "hold_p50": 0.12941176470588237,
+        "cvr": 0,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "19 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134679560291",
+        "namn": "Adventskalender_CS_3_H1",
+        "adset": "Adventskalender Racingbilar | CS | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 8.51,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 42,
+        "ctr": 0,
+        "cpm": 202.619048,
+        "frequency": 1.135135,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 6,
+        "thruplay": 2,
+        "p25": 5,
+        "p75": 3,
+        "p100": 2,
+        "hook_rate": 0.14285714285714285,
+        "hold": 0.3333333333333333,
+        "hook_autoplay": 0.9285714285714286,
+        "hold_p50": 0.1282051282051282,
+        "cvr": null,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "9 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134699510291",
+        "namn": "Adventskalender_SP_1_H1",
+        "adset": "Adventskalender Racingbilar | SP | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 5.4,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 45,
+        "ctr": 0,
+        "cpm": 120,
+        "frequency": 1.046512,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 19,
+        "thruplay": 3,
+        "p25": 13,
+        "p75": 3,
+        "p100": 1,
+        "hook_rate": 0.4222222222222222,
+        "hold": 0.15789473684210525,
+        "hook_autoplay": 0.9555555555555556,
+        "hold_p50": 0.2558139534883721,
+        "cvr": null,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "5 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134675690291",
+        "namn": "Adventskalender_CS_1_H1",
+        "adset": "Adventskalender Racingbilar | CS | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 4.6,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "cpm": 139.393939,
+        "frequency": 1.178571,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 16,
+        "thruplay": 1,
+        "p25": 14,
+        "p75": 1,
+        "p100": 1,
+        "hook_rate": 0.48484848484848486,
+        "hold": 0.0625,
+        "hook_autoplay": 0.8484848484848485,
+        "hold_p50": 0.25,
+        "cvr": null,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "5 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134677420291",
+        "namn": "Adventskalender_CS_2_H1",
+        "adset": "Adventskalender Racingbilar | CS | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 3.88,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 32,
+        "ctr": 0,
+        "cpm": 121.25,
+        "frequency": 1.032258,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 6,
+        "thruplay": 1,
+        "p25": 5,
+        "p75": 2,
+        "p100": 1,
+        "hook_rate": 0.1875,
+        "hold": 0.16666666666666666,
+        "hook_autoplay": 0.90625,
+        "hold_p50": 0.06896551724137931,
+        "cvr": null,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "4 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134703270291",
+        "namn": "Adventskalender_SP_2_H1",
+        "adset": "Adventskalender Racingbilar | SP | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 2.36,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 22,
+        "ctr": 0,
+        "cpm": 107.272727,
+        "frequency": 1.047619,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 10,
+        "thruplay": 1,
+        "p25": 7,
+        "p75": 1,
+        "p100": 1,
+        "hook_rate": 0.45454545454545453,
+        "hold": 0.1,
+        "hook_autoplay": 1,
+        "hold_p50": 0.18181818181818182,
+        "cvr": null,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "2 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      },
+      {
+        "ad_id": "120250134705900291",
+        "namn": "Adventskalender_SP_3_H1",
+        "adset": "Adventskalender Racingbilar | SP | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 1.72,
+        "kop": 0,
+        "cpa": null,
+        "purchase_roas": 0,
+        "omni_purchase_values": 0,
+        "intakt": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "cpm": 286.666667,
+        "frequency": 1,
+        "klick": 0,
+        "cpc": null,
+        "lankklick": 0,
+        "tre_sek": 1,
+        "thruplay": 0,
+        "p25": 1,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": 0.16666666666666666,
+        "hold": 0,
+        "hook_autoplay": 0.8333333333333334,
+        "hold_p50": 0,
+        "cvr": null,
+        "arv": true,
+        "dom": {
+          "klass": "for_tidigt",
+          "motivering": "2 kr och 0 köp — under grinden (300 kr OCH 3 köp). Ingen dom, ingen plats i rankingen.",
+          "preliminar": false,
+          "skalningskandidat": false,
+          "vinst_strang": null,
+          "vinst_generos": null
+        }
+      }
+    ],
+    "bedombara": [
+      {
+        "ad_id": "120250134694770291",
+        "namn": "Adventskalender_PD_2_H1",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 1715.12,
+        "kop": 9,
+        "cpa": 190.568889,
+        "purchase_roas": 2.89111,
+        "omni_purchase_values": 4958.6,
+        "intakt": 4958.600583199999,
+        "impressions": 8151,
+        "ctr": 2.907619,
+        "cpm": 210.418354,
+        "frequency": 1.187673,
+        "klick": 237,
+        "cpc": 7.236793,
+        "lankklick": 181,
+        "tre_sek": 2242,
+        "thruplay": 624,
+        "p25": 1038,
+        "p75": 446,
+        "p100": 326,
+        "hook_rate": 0.27505827505827507,
+        "hold": 0.2783229259589652,
+        "hook_autoplay": 0.967120598699546,
+        "hold_p50": 0.08511987821895217,
+        "cvr": 0.0379746835443038,
+        "arv": true,
+        "dom": {
+          "preliminar": false,
+          "vinst_strang": 1191.8799989999998,
+          "vinst_generos": 1191.8799989999998,
+          "skalningskandidat": true,
+          "klass": "vinnare",
+          "motivering": "CPA 191 kr under break-even på BÅDA linjerna (323–323 kr) på 9 köp. Även under target — skalningskandidat."
+        }
+      },
+      {
+        "ad_id": "120250134691780291",
+        "namn": "Adventskalender_PD_2_1",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 1539.14,
+        "kop": 8,
+        "cpa": 192.3925,
+        "purchase_roas": 3.442767,
+        "omni_purchase_values": 5298.9,
+        "intakt": 5298.90040038,
+        "impressions": 8926,
+        "ctr": 4.369258,
+        "cpm": 172.433341,
+        "frequency": 1.345493,
+        "klick": 390,
+        "cpc": 3.946513,
+        "lankklick": 256,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": 0.020512820512820513,
+        "arv": true,
+        "dom": {
+          "preliminar": false,
+          "vinst_strang": 1044.86,
+          "vinst_generos": 1044.86,
+          "skalningskandidat": true,
+          "klass": "vinnare",
+          "motivering": "CPA 192 kr under break-even på BÅDA linjerna (323–323 kr) på 8 köp. Även under target — skalningskandidat."
+        }
+      }
+    ],
+    "forTidigt": 14,
+    "vinnare": [
+      {
+        "ad_id": "120250134694770291",
+        "namn": "Adventskalender_PD_2_H1",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 1715.12,
+        "kop": 9,
+        "cpa": 190.568889,
+        "purchase_roas": 2.89111,
+        "omni_purchase_values": 4958.6,
+        "intakt": 4958.600583199999,
+        "impressions": 8151,
+        "ctr": 2.907619,
+        "cpm": 210.418354,
+        "frequency": 1.187673,
+        "klick": 237,
+        "cpc": 7.236793,
+        "lankklick": 181,
+        "tre_sek": 2242,
+        "thruplay": 624,
+        "p25": 1038,
+        "p75": 446,
+        "p100": 326,
+        "hook_rate": 0.27505827505827507,
+        "hold": 0.2783229259589652,
+        "hook_autoplay": 0.967120598699546,
+        "hold_p50": 0.08511987821895217,
+        "cvr": 0.0379746835443038,
+        "arv": true,
+        "dom": {
+          "preliminar": false,
+          "vinst_strang": 1191.8799989999998,
+          "vinst_generos": 1191.8799989999998,
+          "skalningskandidat": true,
+          "klass": "vinnare",
+          "motivering": "CPA 191 kr under break-even på BÅDA linjerna (323–323 kr) på 9 köp. Även under target — skalningskandidat."
+        }
+      },
+      {
+        "ad_id": "120250134691780291",
+        "namn": "Adventskalender_PD_2_1",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "effective_status": null,
+        "amount_spent": 1539.14,
+        "kop": 8,
+        "cpa": 192.3925,
+        "purchase_roas": 3.442767,
+        "omni_purchase_values": 5298.9,
+        "intakt": 5298.90040038,
+        "impressions": 8926,
+        "ctr": 4.369258,
+        "cpm": 172.433341,
+        "frequency": 1.345493,
+        "klick": 390,
+        "cpc": 3.946513,
+        "lankklick": 256,
+        "tre_sek": 0,
+        "thruplay": 0,
+        "p25": 0,
+        "p75": 0,
+        "p100": 0,
+        "hook_rate": null,
+        "hold": null,
+        "hook_autoplay": null,
+        "hold_p50": null,
+        "cvr": 0.020512820512820513,
+        "arv": true,
+        "dom": {
+          "preliminar": false,
+          "vinst_strang": 1044.86,
+          "vinst_generos": 1044.86,
+          "skalningskandidat": true,
+          "klass": "vinnare",
+          "motivering": "CPA 192 kr under break-even på BÅDA linjerna (323–323 kr) på 8 köp. Även under target — skalningskandidat."
+        }
+      }
+    ],
+    "forlorare": [],
+    "bevaka": 0,
+    "totalSpend": 4383.64,
+    "totalKop": 19,
+    "samladRoas": 2.647297855713516,
+    "totalVinstGeneros": 2236.7399989999994,
+    "verkligAov": 610.7789880115788
+  },
+  "snapshot": "/home/user/yognftnfgn/factory/output/kalender/insights-2026-09-11.json"
+}
