@@ -1,0 +1,440 @@
+{
+  "modell_begard": "claude-fable-5-1",
+  "modell_svarade": "claude-fable-5-1 (Agent tool)",
+  "fallback_korde": false,
+  "briefer": [
+    {
+      "namn": "TankGuard_PD_7_H1",
+      "typ": "video",
+      "copy_modell": "fable",
+      "hook": "Trött på grönt, algfyllt regnvatten i tanken?",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Trött på grönt, algfyllt regnvatten i tanken?",
+          "en": "Tired of green, algae-filled rainwater in the tank?"
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–9 s",
+          "sv": "Har du en IBC-tank för regnvatten? Då vet du problemet. Solen gör plasten spröd och vattnet blir grönt av alger.",
+          "en": "Do you have an IBC tank for rainwater? Then you know the problem. The sun makes the plastic brittle and the water turns green with algae."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "9–21 s",
+          "sv": "Det här är lösningen. Ett skyddsöverdrag i kraftigt 210D Oxfordtyg. Det blockerar solljus och UV-strålar helt. Installationen tar två minuter. Dra ner blixtlåset. Klart! Och du behöver inte ta av överdraget för att kolla vattnet. Det finns en öppning upptill rakt över locket.",
+          "en": "This is the solution. A protective cover in heavy 210D Oxford fabric. It blocks sunlight and UV rays completely. Installation takes two minutes. Pull down the zipper. Done! And you don't need to take the cover off to check the water. There is an opening at the top, right above the lid."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "21–25 s",
+          "sv": "Resultatet? Klart vatten, ingen algtillväxt och en tank som håller längre.",
+          "en": "The result? Clear water, no algae growth and a tank that lasts longer."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "25–30 s",
+          "sv": "Ett IBC-tanköverdrag från TankGuard. 489 kr.",
+          "en": "An IBC tank cover from TankGuard. 489 kr."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Trött på grönt, algfyllt regnvatten?\nSolen gör plasten spröd och vattnet grönt av alger.\nEtt överdrag i 210D Oxfordtyg tar solen i stället för tanken.\nBlixtlås på sidan, öppning upptill över locket – på under två minuter.\n489 kr, fri frakt inom Sverige. Beställ på tankguard.se.",
+        "headline_sv": "IBC-tanköverdrag i 210D Oxford, 489 kr",
+        "description_sv": "Blixtlås på sidan, öppning upptill. 14 dagars ångerrätt."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Trött på grönt, algfyllt regnvatten i tanken?",
+          "visualisera": "✅ Green, algae-filled water inside an IBC tank – the exact picture the customer has in the garden.",
+          "falsifiera": "✅ Your rainwater is green with algae or it is not.",
+          "ingen_annan_kan_saga": "❌ Another IBC-cover seller could sign a problem question. Kept anyway: the brief mandates building on the proven opener (16 997 kr, 77 purchases) and the isolated variable is its position at 0–3 s, not new wording. No better line found that keeps grönt + regnvatten and stays off the cause (reserved for sibling H2)."
+        },
+        {
+          "rad": "Har du en IBC-tank för regnvatten? Då vet du problemet. Solen gör plasten spröd och vattnet blir grönt av alger.",
+          "visualisera": "✅ IBC tank, brittle plastic, green water – all picturable. KEPT verbatim from PD_1.",
+          "falsifiera": "✅ Sun makes plastic brittle and water green – true or false.",
+          "ingen_annan_kan_saga": "✅ Names the cause (sun) rather than the symptom – the mechanism TankGuard sells on."
+        },
+        {
+          "rad": "Det här är lösningen. Ett skyddsöverdrag i kraftigt 210D Oxfordtyg. Det blockerar solljus och UV-strålar helt. Installationen tar två minuter. Dra ner blixtlåset. Klart! Och du behöver inte ta av överdraget för att kolla vattnet. Det finns en öppning upptill rakt över locket.",
+          "visualisera": "✅ Fabric, zipper, two minutes, top opening over the lid – every clause is a thing on screen. KEPT verbatim from PD_1.",
+          "falsifiera": "✅ 210D, two minutes, opening above the lid – all checkable.",
+          "ingen_annan_kan_saga": "✅ 210D Oxford + side zipper + top opening over the lid is this product's exact build."
+        },
+        {
+          "rad": "Resultatet? Klart vatten, ingen algtillväxt och en tank som håller längre.",
+          "visualisera": "✅ Clear water vs green water. KEPT verbatim from PD_1.",
+          "falsifiera": "✅ Water is clear or it is not; algae grow or they do not.",
+          "ingen_annan_kan_saga": "❌ Any cover seller could sign the outcome. Kept verbatim because the brief locks everything from 0:03 onward – not rewritten by design."
+        },
+        {
+          "rad": "Ett IBC-tanköverdrag från TankGuard. 489 kr.",
+          "visualisera": "✅ The product and the price on the end card. KEPT verbatim from PD_1.",
+          "falsifiera": "✅ 489 kr is the live price on tankguard.se.",
+          "ingen_annan_kan_saga": "✅ Brand + price – nobody else can sign it."
+        },
+        {
+          "rad": "IBC-tanköverdrag i 210D Oxford, 489 kr",
+          "visualisera": "✅ The cover, the fabric, the price.",
+          "falsifiera": "✅ Fabric weight and price are both checkable.",
+          "ingen_annan_kan_saga": "✅ 210D Oxford at 489 kr is this listing, not a category claim."
+        },
+        {
+          "rad": "Trött på grönt, algfyllt regnvatten?",
+          "visualisera": "✅ Green algae water in the tank.",
+          "falsifiera": "✅ Your water is green or it is not.",
+          "ingen_annan_kan_saga": "❌ A competitor could sign the question. Delivered because it is the inherited opener that carried 16 997 kr / 77 purchases – the brief keeps it as the primary-text opener; replacing it would change a second variable."
+        },
+        {
+          "rad": "Solen gör plasten spröd och vattnet grönt av alger.",
+          "visualisera": "✅ Sun, brittle plastic, green water.",
+          "falsifiera": "✅ Cause-and-effect claim, true or false.",
+          "ingen_annan_kan_saga": "✅ Points at light as the cause – the insight the customer does not have and TankGuard's mechanism."
+        },
+        {
+          "rad": "Ett överdrag i 210D Oxfordtyg tar solen i stället för tanken.",
+          "visualisera": "✅ Sun hitting green fabric instead of white plastic.",
+          "falsifiera": "✅ The fabric is 210D Oxford and it covers the tank – checkable.",
+          "ingen_annan_kan_saga": "✅ 'Takes the sun instead of the tank' is TankGuard's mechanism framing, with the product's fabric weight."
+        },
+        {
+          "rad": "Blixtlås på sidan, öppning upptill över locket – på under två minuter.",
+          "visualisera": "✅ Zipper, top opening, lid, a clock under two minutes.",
+          "falsifiera": "✅ Each feature and the time are checkable.",
+          "ingen_annan_kan_saga": "✅ Side zipper plus top opening over the lid is this product's construction."
+        },
+        {
+          "rad": "489 kr, fri frakt inom Sverige. Beställ på tankguard.se.",
+          "visualisera": "✅ Price, a parcel, the site.",
+          "falsifiera": "✅ Price and free shipping are checkable on the page.",
+          "ingen_annan_kan_saga": "✅ Price + tankguard.se – nobody else's."
+        },
+        {
+          "rad": "Blixtlås på sidan, öppning upptill. 14 dagars ångerrätt.",
+          "visualisera": "✅ Zipper, opening, 14 days.",
+          "falsifiera": "✅ All three checkable.",
+          "ingen_annan_kan_saga": "✅ The side zipper + top opening combination is this product's."
+        }
+      ]
+    },
+    {
+      "namn": "TankGuard_CS_6_H1",
+      "typ": "video",
+      "copy_modell": "fable",
+      "hook": "Två IBC-tankar? Kranskyddet till utekranen på köpet.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Två IBC-tankar? Kranskyddet till utekranen på köpet.",
+          "en": "Two IBC tanks? The tap cover for the outdoor tap comes free."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–7 s",
+          "sv": "Presenningen blåser av i första höststormen, och utekranen står bar i frosten.",
+          "en": "The tarp blows off in the first autumn storm, and the outdoor tap stands bare in the frost."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "7–14 s",
+          "sv": "Ett överdrag per tank: blixtlåset på sidan går ner utan verktyg, dragsnörena nertill håller det på plats – ingen presenning, inga gummiband.",
+          "en": "One cover per tank: the zipper on the side goes down without tools, the drawstrings at the bottom hold it in place – no tarp, no rubber bands."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–18 s",
+          "sv": "Kranskyddet Frost 420D: 420D Oxfordtyg med isolerande foder, träs över utekranen utan verktyg.",
+          "en": "The tap cover Frost 420D: 420D Oxford fabric with insulating lining, slips over the outdoor tap without tools."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "18–22 s",
+          "sv": "489 kr per överdrag. Köp 2, få 2 kranskydd Frost 420D på köpet. Fri frakt inom Sverige.",
+          "en": "489 kr per cover. Buy 2, get 2 tap covers Frost 420D free. Free shipping within Sweden."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Två IBC-tankar i trädgården?\nKöp 2, få 2 kranskydd Frost 420D på köpet.\nÖverdraget tar solen i stället för plasten – kranskyddet tar frosten i stället för utekranen.\n489 kr per överdrag, fri frakt inom Sverige.\nBeställ på tankguard.se innan frosten kommer.",
+        "headline_sv": "IBC-tanköverdrag, 489 kr per tank",
+        "description_sv": "Köp 2, få 2 kranskydd Frost 420D på köpet. Fri frakt inom Sverige."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Två IBC-tankar? Kranskyddet till utekranen på köpet.",
+          "visualisera": "✅ Two tanks, an outdoor tap, a cover on it.",
+          "falsifiera": "✅ The bundle bonus exists on tankguard.se or it does not.",
+          "ingen_annan_kan_saga": "✅ Only TankGuard bundles the Frost 420D tap cover with two tank covers."
+        },
+        {
+          "rad": "Presenningen blåser av i första höststormen, och utekranen står bar i frosten.",
+          "visualisera": "✅ A tarp flapping off, a bare tap with frost on it.",
+          "falsifiera": "✅ The tarp blows off or it does not; the tap is bare or it is not.",
+          "ingen_annan_kan_saga": "✅ Pairs the tank tarp with the outdoor tap – the exact two-object setup only this bundle answers; builds on the product page's own storm line."
+        },
+        {
+          "rad": "Ett överdrag per tank: blixtlåset på sidan går ner utan verktyg, dragsnörena nertill håller det på plats – ingen presenning, inga gummiband.",
+          "visualisera": "✅ Zipper, drawstrings, the tarp and rubber bands it replaces.",
+          "falsifiera": "✅ Side zipper, no tools, drawstrings at the bottom – all checkable on the product.",
+          "ingen_annan_kan_saga": "✅ Side zipper + bottom drawstrings vs tarp + rubber bands is this product's build and its enemy (approach A)."
+        },
+        {
+          "rad": "Kranskyddet Frost 420D: 420D Oxfordtyg med isolerande foder, träs över utekranen utan verktyg.",
+          "visualisera": "✅ A lined fabric cover slipping over a tap.",
+          "falsifiera": "✅ Fabric weight, lining, fit, no tools – checkable.",
+          "ingen_annan_kan_saga": "✅ Names TankGuard's own Frost 420D product."
+        },
+        {
+          "rad": "489 kr per överdrag. Köp 2, få 2 kranskydd Frost 420D på köpet. Fri frakt inom Sverige.",
+          "visualisera": "✅ Price, two covers, two tap covers, a parcel.",
+          "falsifiera": "✅ Every claim is on the product page.",
+          "ingen_annan_kan_saga": "✅ Price and bundle are TankGuard's."
+        },
+        {
+          "rad": "IBC-tanköverdrag, 489 kr per tank",
+          "visualisera": "✅ The cover and the price per tank.",
+          "falsifiera": "✅ 489 kr per cover is the live price.",
+          "ingen_annan_kan_saga": "✅ Product + price is this listing."
+        },
+        {
+          "rad": "Två IBC-tankar i trädgården?",
+          "visualisera": "✅ Two IBC tanks in a garden.",
+          "falsifiera": "✅ The reader has two tanks or not.",
+          "ingen_annan_kan_saga": "✅ The two-tank question is the setup for a bundle only TankGuard offers; the next line answers it."
+        },
+        {
+          "rad": "Köp 2, få 2 kranskydd Frost 420D på köpet.",
+          "visualisera": "✅ Two covers, two tap covers.",
+          "falsifiera": "✅ The offer is on the page or not.",
+          "ingen_annan_kan_saga": "✅ TankGuard's own bundle wording, verbatim."
+        },
+        {
+          "rad": "Överdraget tar solen i stället för plasten – kranskyddet tar frosten i stället för utekranen.",
+          "visualisera": "✅ Sun on fabric instead of plastic; frost on the lined cover instead of the tap.",
+          "falsifiera": "✅ Each half is a physical claim, true or false.",
+          "ingen_annan_kan_saga": "✅ Parallel two-product mechanism only this bundle has."
+        },
+        {
+          "rad": "489 kr per överdrag, fri frakt inom Sverige.",
+          "visualisera": "✅ Price and a parcel.",
+          "falsifiera": "✅ Checkable on the page.",
+          "ingen_annan_kan_saga": "✅ The price is this listing's."
+        },
+        {
+          "rad": "Beställ på tankguard.se innan frosten kommer.",
+          "visualisera": "✅ The site, frost on the ground.",
+          "falsifiera": "✅ It is September; frost is coming – checkable by the calendar.",
+          "ingen_annan_kan_saga": "✅ Names tankguard.se; urgency from the season only."
+        },
+        {
+          "rad": "Köp 2, få 2 kranskydd Frost 420D på köpet. Fri frakt inom Sverige.",
+          "visualisera": "✅ Two covers, two tap covers, a parcel.",
+          "falsifiera": "✅ On the page or not.",
+          "ingen_annan_kan_saga": "✅ TankGuard's bundle, verbatim."
+        }
+      ]
+    },
+    {
+      "namn": "TankGuard_SP_4_H1",
+      "typ": "video",
+      "copy_modell": "fable",
+      "hook": "16 recensioner på tankguard.se – här är en.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "16 recensioner på tankguard.se – här är en.",
+          "en": "16 reviews on tankguard.se – here is one."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–7 s",
+          "sv": "Solen gör regnvattnet i tanken grönt och plasten spröd, år efter år.",
+          "en": "The sun turns the rainwater in the tank green and makes the plastic brittle, year after year."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "7–14 s",
+          "sv": "Tyget i 210D Oxford tar solen i stället för plasten – och utan ljus kommer algerna aldrig igång.",
+          "en": "The 210D Oxford fabric takes the sun instead of the plastic – and without light the algae never get started."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–20 s",
+          "sv": "Anders: \"Väldigt bra överdrag. Passar min IBC-tank perfekt och är enkelt att sätta på.\"",
+          "en": "Anders: \"Very good cover. Fits my IBC tank perfectly and is easy to put on.\""
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "20–25 s",
+          "sv": "Ett IBC-tanköverdrag från TankGuard, 489 kr. Fri frakt inom Sverige, 14 dagars ångerrätt.",
+          "en": "An IBC tank cover from TankGuard, 489 kr. Free shipping within Sweden, 14 days right of withdrawal."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "16 recensioner på tankguard.se.\nAnders: \"Väldigt bra överdrag. Passar min IBC-tank perfekt och är enkelt att sätta på.\"\n210D Oxfordtyg tar solen i stället för plasten – utan ljus växer inga alger.\nBlixtlås på sidan, på med det på under två minuter.\n489 kr, fri frakt inom Sverige. Läs recensionerna på tankguard.se.",
+        "headline_sv": "16 recensioner. IBC-tanköverdrag 489 kr",
+        "description_sv": "Passar standard IBC-tank 1000 liter. 14 dagars ångerrätt."
+      },
+      "tre_fragor": [
+        {
+          "rad": "16 recensioner på tankguard.se – här är en.",
+          "visualisera": "✅ A review card on screen with a number on it.",
+          "falsifiera": "✅ The count is 16 on tankguard.se (verified 2026-09-12) or it is not.",
+          "ingen_annan_kan_saga": "✅ Only TankGuard has 16 reviews on tankguard.se."
+        },
+        {
+          "rad": "Solen gör regnvattnet i tanken grönt och plasten spröd, år efter år.",
+          "visualisera": "✅ Sun on a tank, green water, chalky plastic.",
+          "falsifiera": "✅ Cause-and-effect claim, true or false.",
+          "ingen_annan_kan_saga": "✅ Names light as the cause – TankGuard's mechanism, not a generic 'protect your tank'."
+        },
+        {
+          "rad": "Tyget i 210D Oxford tar solen i stället för plasten – och utan ljus kommer algerna aldrig igång.",
+          "visualisera": "✅ Fabric in the sun, a dark tank with no algae.",
+          "falsifiera": "✅ Fabric weight and the no-light-no-algae claim are checkable.",
+          "ingen_annan_kan_saga": "✅ 'Takes the sun instead of the plastic' + 210D is this product's mechanism wording."
+        },
+        {
+          "rad": "Anders: \"Väldigt bra överdrag. Passar min IBC-tank perfekt och är enkelt att sätta på.\"",
+          "visualisera": "✅ Anders's name on the card, a cover going onto an IBC tank.",
+          "falsifiera": "✅ The review exists verbatim on tankguard.se or it does not.",
+          "ingen_annan_kan_saga": "✅ A real review from tankguard.se – a competitor cannot sign someone else's customer."
+        },
+        {
+          "rad": "Ett IBC-tanköverdrag från TankGuard, 489 kr. Fri frakt inom Sverige, 14 dagars ångerrätt.",
+          "visualisera": "✅ Product, price, parcel, 14 days.",
+          "falsifiera": "✅ All on the page.",
+          "ingen_annan_kan_saga": "✅ Brand + price."
+        },
+        {
+          "rad": "16 recensioner. IBC-tanköverdrag 489 kr",
+          "visualisera": "✅ A count and a price.",
+          "falsifiera": "✅ Both checkable.",
+          "ingen_annan_kan_saga": "✅ 16 reviews at 489 kr is this page only."
+        },
+        {
+          "rad": "16 recensioner på tankguard.se.",
+          "visualisera": "✅ The review list on the page.",
+          "falsifiera": "✅ Checkable count.",
+          "ingen_annan_kan_saga": "✅ Names the site."
+        },
+        {
+          "rad": "210D Oxfordtyg tar solen i stället för plasten – utan ljus växer inga alger.",
+          "visualisera": "✅ Fabric in the sun, no algae in the dark.",
+          "falsifiera": "✅ Physical claim, true or false.",
+          "ingen_annan_kan_saga": "✅ TankGuard's mechanism framing with its fabric weight."
+        },
+        {
+          "rad": "Blixtlås på sidan, på med det på under två minuter.",
+          "visualisera": "✅ A zipper and a clock.",
+          "falsifiera": "✅ Under two minutes – checkable.",
+          "ingen_annan_kan_saga": "✅ Side zipper + under two minutes is this product's fit."
+        },
+        {
+          "rad": "489 kr, fri frakt inom Sverige. Läs recensionerna på tankguard.se.",
+          "visualisera": "✅ Price, parcel, the review page.",
+          "falsifiera": "✅ Checkable.",
+          "ingen_annan_kan_saga": "✅ Names tankguard.se."
+        },
+        {
+          "rad": "Passar standard IBC-tank 1000 liter. 14 dagars ångerrätt.",
+          "visualisera": "✅ A 1000-litre IBC tank.",
+          "falsifiera": "✅ Fit and withdrawal period are checkable.",
+          "ingen_annan_kan_saga": "✅ Combined with the count and price above it is this listing's promise; alone it is close to generic – kept because it is the description line, not a headline."
+        }
+      ]
+    },
+    {
+      "namn": "TankGuard_FE_1_1",
+      "typ": "bild",
+      "copy_modell": "fable",
+      "hook": "Solen gör vattnet grönt. Överdraget tar solen.",
+      "manus": [],
+      "bildtext": {
+        "on_image_sv": "Solen gör vattnet grönt. Överdraget tar solen.",
+        "on_image_en": "The sun turns the water green. The cover takes the sun.",
+        "caption_sv": "Utan ljus kommer algerna aldrig igång.\nPå med det på två minuter, 489 kr.",
+        "caption_en": "Without light the algae never get started.\nOn in two minutes, 489 kr."
+      },
+      "copy_card": {
+        "primary_text_sv": "Trött på grönt, algfyllt regnvatten?\nDet är solen som gör det – inte vattnet.\nÖverdraget i 210D Oxfordtyg tar solen i stället för tanken; utan ljus kommer algerna aldrig igång.\nBlixtlås på sidan, öppning upptill över locket, på under två minuter.\n489 kr, fri frakt inom Sverige. Beställ på tankguard.se.",
+        "headline_sv": "Utan ljus växer inga alger",
+        "description_sv": "IBC-tanköverdrag i 210D Oxford. 489 kr, fri frakt inom Sverige."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Solen gör vattnet grönt. Överdraget tar solen.",
+          "visualisera": "✅ Left: sun on green water. Right: sun on the green cover – the line labels the two halves of the photo.",
+          "falsifiera": "✅ Two physical claims, each true or false.",
+          "ingen_annan_kan_saga": "✅ 'The cover takes the sun' is TankGuard's mechanism (light is the cause, not the water) – a competitor selling 'UV protection' does not say it."
+        },
+        {
+          "rad": "Utan ljus kommer algerna aldrig igång.",
+          "visualisera": "✅ A dark tank, no green.",
+          "falsifiera": "✅ Algae need light – true or false.",
+          "ingen_annan_kan_saga": "✅ The cause insight the customer does not have; it is what the cover is built on."
+        },
+        {
+          "rad": "På med det på två minuter, 489 kr.",
+          "visualisera": "✅ A cover going on, a clock, a price.",
+          "falsifiera": "✅ Under two minutes and 489 kr are checkable.",
+          "ingen_annan_kan_saga": "✅ Time + this listing's price."
+        },
+        {
+          "rad": "Utan ljus växer inga alger",
+          "visualisera": "✅ A dark tank with clear water.",
+          "falsifiera": "✅ True or false.",
+          "ingen_annan_kan_saga": "✅ The mechanism claim in five words – the insight is TankGuard's angle."
+        },
+        {
+          "rad": "Trött på grönt, algfyllt regnvatten?",
+          "visualisera": "✅ Green algae water.",
+          "falsifiera": "✅ Your water is green or not.",
+          "ingen_annan_kan_saga": "❌ A competitor could sign the question. Delivered because it is the inherited opener with 16 997 kr / 77 purchases behind it and the image's next line supplies what no competitor says."
+        },
+        {
+          "rad": "Det är solen som gör det – inte vattnet.",
+          "visualisera": "✅ Sun on the tank.",
+          "falsifiera": "✅ Light is the cause – true or false.",
+          "ingen_annan_kan_saga": "✅ Belief-conflict line (enemy type B): the customer blames the water; TankGuard blames the light."
+        },
+        {
+          "rad": "Överdraget i 210D Oxfordtyg tar solen i stället för tanken; utan ljus kommer algerna aldrig igång.",
+          "visualisera": "✅ Fabric in the sun, a dark tank.",
+          "falsifiera": "✅ Fabric weight and the light claim are checkable.",
+          "ingen_annan_kan_saga": "✅ TankGuard's mechanism with its own fabric weight."
+        },
+        {
+          "rad": "Blixtlås på sidan, öppning upptill över locket, på under två minuter.",
+          "visualisera": "✅ Zipper, top opening, lid, a clock.",
+          "falsifiera": "✅ Each feature and the time are checkable.",
+          "ingen_annan_kan_saga": "✅ Side zipper + top opening over the lid is this product's construction."
+        },
+        {
+          "rad": "489 kr, fri frakt inom Sverige. Beställ på tankguard.se.",
+          "visualisera": "✅ Price, parcel, the site.",
+          "falsifiera": "✅ Checkable.",
+          "ingen_annan_kan_saga": "✅ Names tankguard.se."
+        },
+        {
+          "rad": "IBC-tanköverdrag i 210D Oxford. 489 kr, fri frakt inom Sverige.",
+          "visualisera": "✅ The cover, the fabric, the price.",
+          "falsifiera": "✅ Checkable.",
+          "ingen_annan_kan_saga": "✅ 210D Oxford at 489 kr is this listing."
+        }
+      ]
+    }
+  ],
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "cache_read_input_tokens": 0
+  }
+}

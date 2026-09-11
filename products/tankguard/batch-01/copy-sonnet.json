@@ -1,0 +1,312 @@
+{
+  "modell_begard": "claude-sonnet-5",
+  "modell_svarade": "claude-sonnet-5 (Agent tool)",
+  "fallback_korde": false,
+  "briefer": [
+    {
+      "namn": "TankGuard_PD_7_H2",
+      "copy_modell": "sonnet",
+      "hook": "Problemet är inte vattnet. Det är ljuset.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Problemet är inte vattnet. Det är ljuset.",
+          "en": "The problem isn't the water. It's the light."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–9 s",
+          "sv": "Har du en IBC-tank för regnvatten? Då vet du problemet. Solen gör plasten spröd och vattnet blir grönt av alger.",
+          "en": "Do you have an IBC tank for rainwater? Then you know the problem. The sun makes the plastic brittle and the water turns green with algae."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "9–21 s",
+          "sv": "Det här är lösningen. Ett skyddsöverdrag i kraftigt 210D Oxfordtyg. Det blockerar solljus och UV-strålar helt. Installationen tar två minuter. Dra ner blixtlåset. Klart! Och du behöver inte ta av överdraget för att kolla vattnet. Det finns en öppning upptill rakt över locket.",
+          "en": "This is the solution. A protective cover in heavy-duty 210D Oxford fabric. It blocks sunlight and UV rays completely. Installation takes two minutes. Pull down the zipper. Done! And you don't need to take the cover off to check the water. There's an opening at the top, right above the lid."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "21–26 s",
+          "sv": "Resultatet? Klart vatten, ingen algtillväxt och en tank som håller längre.",
+          "en": "The result? Clear water, no algae growth, and a tank that lasts longer."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "26–30 s",
+          "sv": "Ett IBC-tanköverdrag från TankGuard. 489 kr.",
+          "en": "An IBC tank cover from TankGuard. 489 kr."
+        }
+      ],
+      "copy_card": {
+        "primary_text_sv": "Solen gör vattnet grönt och plasten spröd.\nEtt överdrag i 210D Oxfordtyg blockerar UV och solljus helt.\nPå med blixtlåset – klart på två minuter.\nTankGuard IBC-tanköverdrag. 489 kr.",
+        "headline_sv": "Ljuset förstör tanken. Inte vattnet.",
+        "description_sv": "210D Oxfordtyg blockerar sol och UV på två minuter."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Problemet är inte vattnet. Det är ljuset.",
+          "visualisera": "✅ vatten och ljus är fysiska saker filmen visar direkt",
+          "falsifiera": "✅ påstår en orsak (ljus, inte vatten) som är sant eller falskt enligt produktens mekanism",
+          "ingen_annan_kan_saga": "✅ de flesta säljare i kategorin pratar om vattnet, inte ljuset – omvänd vinkel"
+        },
+        {
+          "rad": "Har du en IBC-tank för regnvatten? Då vet du problemet. Solen gör plasten spröd och vattnet blir grönt av alger.",
+          "visualisera": "✅ spröd plast och grönt vatten går att se i bild",
+          "falsifiera": "✅ faktapåstående ur produkt-DNA:t, mätbart sant/falskt",
+          "ingen_annan_kan_saga": "❌ generiskt naturfaktum, vilken tanktäckning-säljare som helst kan säga det. Behålls ändå: raden är kept verbatim per brief (inherited PD_1-manus), skrivs inte om."
+        },
+        {
+          "rad": "Det här är lösningen. Ett skyddsöverdrag i kraftigt 210D Oxfordtyg. Det blockerar solljus och UV-strålar helt. Installationen tar två minuter. Dra ner blixtlåset. Klart! Och du behöver inte ta av överdraget för att kolla vattnet. Det finns en öppning upptill rakt över locket.",
+          "visualisera": "✅ tyg, blixtlås och öppning upptill – konkreta, filmbara detaljer",
+          "falsifiera": "✅ specifika, kontrollerbara fakta (210D, två minuter, öppning upptill)",
+          "ingen_annan_kan_saga": "✅ specifik design (blixtlås + öppning över locket) skiljer sig från presenning/gummiband-lösningar"
+        },
+        {
+          "rad": "Resultatet? Klart vatten, ingen algtillväxt och en tank som håller längre.",
+          "visualisera": "✅ klart vatten går att se",
+          "falsifiera": "✅ mätbart (algtillväxt ja/nej, vattenklarhet)",
+          "ingen_annan_kan_saga": "❌ generiskt utfallspåstående, andra tanktäckningar kan hävda samma. Behålls ändå: kept verbatim per brief, skrivs inte om."
+        },
+        {
+          "rad": "Ett IBC-tanköverdrag från TankGuard. 489 kr.",
+          "visualisera": "✅ produkt och pris, konkret",
+          "falsifiera": "✅ priset är verifierbart sant eller falskt",
+          "ingen_annan_kan_saga": "✅ nämner varumärket TankGuard specifikt"
+        },
+        {
+          "rad": "Ljuset förstör tanken. Inte vattnet.",
+          "visualisera": "✅ ljus och tank, konkret",
+          "falsifiera": "✅ kausalt påstående som kan testas",
+          "ingen_annan_kan_saga": "✅ vänder på det vanliga vatten-narrativet i kategorin"
+        },
+        {
+          "rad": "Solen gör vattnet grönt och plasten spröd.",
+          "visualisera": "✅ grönt vatten och spröd plast är synliga",
+          "falsifiera": "✅ faktapåstående ur DNA:t",
+          "ingen_annan_kan_saga": "❌ generiskt orsak-verkan-faktum, vilken säljare som helst kan säga det. Ingen bättre formulering hittad som bevarar faktumet kort nog för en primary text-rad – behålls, öppnar raden som en känd, betald vinnare."
+        },
+        {
+          "rad": "Ett överdrag i 210D Oxfordtyg blockerar UV och solljus helt.",
+          "visualisera": "✅ tyg och blockering, konkret",
+          "falsifiera": "✅ specifik materialspecifikation, verifierbar",
+          "ingen_annan_kan_saga": "✅ exakt materialangivelse (210D) är produktspecifik"
+        },
+        {
+          "rad": "På med blixtlåset – klart på två minuter.",
+          "visualisera": "✅ blixtlås och handling, konkret",
+          "falsifiera": "✅ tidsangivelse verifierbar",
+          "ingen_annan_kan_saga": "✅ blixtlåsmontering skiljer produkten från presenning/gummiband"
+        },
+        {
+          "rad": "TankGuard IBC-tanköverdrag. 489 kr.",
+          "visualisera": "✅ produkt och pris",
+          "falsifiera": "✅ pris verifierbart",
+          "ingen_annan_kan_saga": "✅ varumärkesnamn gör raden unik"
+        }
+      ]
+    },
+    {
+      "namn": "TankGuard_PR_1_H1",
+      "copy_modell": "sonnet",
+      "hook": "Presenningen blåser av vid första höststormen.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Presenningen blåser av vid första höststormen.",
+          "en": "The tarp blows off in the first autumn storm."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–7 s",
+          "sv": "Presenning och gummiband håller inte i höststorm.",
+          "en": "A tarp and rubber bands don't hold up in an autumn storm."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "7–14 s",
+          "sv": "Blixtlås längs sidan och dragsnören i botten håller överdraget på plats.",
+          "en": "A zipper along the side and drawstrings at the bottom hold the cover in place."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–18 s",
+          "sv": "Kraftigt 210D Oxfordtyg, 120 × 100 × 116 cm, på plats på två minuter.",
+          "en": "Heavy-duty 210D Oxford fabric, 120 × 100 × 116 cm, on in two minutes."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "18–22 s",
+          "sv": "TankGuard IBC-tanköverdrag. 489 kr. 14 dagars ångerrätt.",
+          "en": "TankGuard IBC tank cover. 489 kr. 14-day right of withdrawal."
+        }
+      ],
+      "copy_card": {
+        "primary_text_sv": "Presenningen blåser av vid första höststormen.\nTankGuards överdrag har blixtlås längs sidan – ingen presenning, inga gummiband.\nDragsnören i botten håller det på plats i storm.\n489 kr. 14 dagars ångerrätt.",
+        "headline_sv": "Håller kvar när presenningen blåser.",
+        "description_sv": "Blixtlås och dragsnören istället för presenning och gummiband."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Presenningen blåser av vid första höststormen.",
+          "visualisera": "✅ presenning i vind, matchar filmens öppningsklipp",
+          "falsifiera": "✅ observerbar händelse, sann eller falsk",
+          "ingen_annan_kan_saga": "✅ kritiserar en annan lösning (presenning) till förmån för blixtlås – specifik konfliktvinkel"
+        },
+        {
+          "rad": "Presenning och gummiband håller inte i höststorm.",
+          "visualisera": "✅ presenning och gummiband i blåst är filmbart",
+          "falsifiera": "✅ testbart påstående",
+          "ingen_annan_kan_saga": "❌ generiskt klagomål om presenningar, vem som helst kan säga det. Behålls: namnger exakt den konkurrerande metoden (presenning + gummiband) som DNA:t pekar ut, kortare formulering hittades inte utan att tappa konkretionen."
+        },
+        {
+          "rad": "Blixtlås längs sidan och dragsnören i botten håller överdraget på plats.",
+          "visualisera": "✅ blixtlås och dragsnören, konkreta detaljer",
+          "falsifiera": "✅ verifierbar designdetalj",
+          "ingen_annan_kan_saga": "✅ exakt TankGuards konstruktion (blixtlås + dragsnören), inte presenningens"
+        },
+        {
+          "rad": "Kraftigt 210D Oxfordtyg, 120 × 100 × 116 cm, på plats på två minuter.",
+          "visualisera": "✅ mått och material, konkret",
+          "falsifiera": "✅ exakta, kontrollerbara specifikationer",
+          "ingen_annan_kan_saga": "✅ exakta mått och materialbeteckning är produktspecifika"
+        },
+        {
+          "rad": "TankGuard IBC-tanköverdrag. 489 kr. 14 dagars ångerrätt.",
+          "visualisera": "✅ produkt, pris och villkor",
+          "falsifiera": "✅ verifierbart",
+          "ingen_annan_kan_saga": "✅ varumärke + specifikt pris"
+        },
+        {
+          "rad": "Håller kvar när presenningen blåser.",
+          "visualisera": "✅ kontrast mellan att sitta kvar och blåsa bort",
+          "falsifiera": "✅ jämförande påstående, testbart",
+          "ingen_annan_kan_saga": "✅ direkt kontrast mot presenning-metoden"
+        },
+        {
+          "rad": "TankGuards överdrag har blixtlås längs sidan – ingen presenning, inga gummiband.",
+          "visualisera": "✅ blixtlås kontra presenning/gummiband",
+          "falsifiera": "✅ verifierbar konstruktionsdetalj",
+          "ingen_annan_kan_saga": "✅ namnger varumärke + specifik konstruktion, utesluter uttryckligen konkurrentmetoden"
+        },
+        {
+          "rad": "Dragsnören i botten håller det på plats i storm.",
+          "visualisera": "✅ dragsnören, konkret detalj",
+          "falsifiera": "✅ verifierbar funktion",
+          "ingen_annan_kan_saga": "✅ specifik produktdetalj kopplad till stormkontext"
+        },
+        {
+          "rad": "489 kr. 14 dagars ångerrätt.",
+          "visualisera": "✅ pris och villkor, konkret",
+          "falsifiera": "✅ verifierbart",
+          "ingen_annan_kan_saga": "✅ exakt pris och exakt ångerrättsperiod"
+        }
+      ]
+    },
+    {
+      "namn": "TankGuard_UV_1_H1",
+      "copy_modell": "sonnet",
+      "hook": "Solen gör plasten spröd, år efter år.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Solen gör plasten spröd, år efter år.",
+          "en": "The sun makes the plastic brittle, year after year."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–7 s",
+          "sv": "Det syns inte, men UV bryter ner plasten tills den spricker.",
+          "en": "You can't see it, but UV breaks down the plastic until it cracks."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "7–14 s",
+          "sv": "Tyget tar solen istället för plasten – och utan ljus startar algerna aldrig.",
+          "en": "The fabric takes the sun instead of the plastic — and without light, the algae never start."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–18 s",
+          "sv": "Kraftigt 210D Oxfordtyg som täcker hela tanken, på under två minuter.",
+          "en": "Heavy-duty 210D Oxford fabric that covers the whole tank, in under two minutes."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "18–22 s",
+          "sv": "TankGuard IBC-tanköverdrag. 489 kr. 14 dagars ångerrätt.",
+          "en": "TankGuard IBC tank cover. 489 kr. 14-day right of withdrawal."
+        }
+      ],
+      "copy_card": {
+        "primary_text_sv": "Solen gör plasten spröd, år efter år.\nTyget tar solen istället för plasten – och algerna slutar växa.\n210D Oxfordtyg, på plats på under två minuter.\n489 kr. 14 dagars ångerrätt.",
+        "headline_sv": "Tyget tar solen. Inte plasten.",
+        "description_sv": "210D Oxfordtyg blockerar UV och skyddar tanken hela vintern."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Solen gör plasten spröd, år efter år.",
+          "visualisera": "✅ blekt/sprucken plast går att visa i bild",
+          "falsifiera": "✅ matchar produktens verifierade mekanism (UV gör plasten spröd)",
+          "ingen_annan_kan_saga": "❌ allmänt fysikfaktum om UV och plast, kan sägas av vem som helst. Behålls: ovanlig vinkel i just den här kategorin, där konkurrenter nästan uteslutande pratar om algvattnet – ingen kortare, mer produktspecifik formulering hittades inom 8-ordsgränsen."
+        },
+        {
+          "rad": "Det syns inte, men UV bryter ner plasten tills den spricker.",
+          "visualisera": "✅ sprickan syns till slut, filmen visar blekt/sprucket plast",
+          "falsifiera": "✅ verifierbart påstående ur mekanismen",
+          "ingen_annan_kan_saga": "❌ generiskt UV/plast-faktum. Behålls: krävs för att sätta upp PROBLEM-beatet enligt briefen (osynligt tills det spricker), ingen produktspecifik variant finns eftersom nedbrytningen sker på plasten – inte på TankGuard-tyget."
+        },
+        {
+          "rad": "Tyget tar solen istället för plasten – och utan ljus startar algerna aldrig.",
+          "visualisera": "✅ tyg som täcker plast, sol blockeras – filmbart",
+          "falsifiera": "✅ mekanismpåstående ur DNA:t, testbart",
+          "ingen_annan_kan_saga": "✅ kombinerar två specifika effekter av just detta tyg – ovanlig, produktspecifik kombination"
+        },
+        {
+          "rad": "Kraftigt 210D Oxfordtyg som täcker hela tanken, på under två minuter.",
+          "visualisera": "✅ tyg och installation, konkret",
+          "falsifiera": "✅ exakt materialspecifikation och tid",
+          "ingen_annan_kan_saga": "✅ exakt materialbeteckning och tid är produktspecifika"
+        },
+        {
+          "rad": "TankGuard IBC-tanköverdrag. 489 kr. 14 dagars ångerrätt.",
+          "visualisera": "✅ produkt, pris, villkor",
+          "falsifiera": "✅ verifierbart",
+          "ingen_annan_kan_saga": "✅ varumärke + exakt pris"
+        },
+        {
+          "rad": "Tyget tar solen. Inte plasten.",
+          "visualisera": "✅ tyg kontra plast i solen",
+          "falsifiera": "✅ mekanismpåstående, testbart",
+          "ingen_annan_kan_saga": "✅ specifik framing av produktens dubbla funktion"
+        },
+        {
+          "rad": "Tyget tar solen istället för plasten – och algerna slutar växa.",
+          "visualisera": "✅ samma konkreta mekanism som i manus",
+          "falsifiera": "✅ testbart",
+          "ingen_annan_kan_saga": "✅ produktspecifik kombinationseffekt"
+        },
+        {
+          "rad": "210D Oxfordtyg, på plats på under två minuter.",
+          "visualisera": "✅ material och installation, konkret",
+          "falsifiera": "✅ exakt spec och tid",
+          "ingen_annan_kan_saga": "✅ exakt materialbeteckning och tid"
+        },
+        {
+          "rad": "489 kr. 14 dagars ångerrätt.",
+          "visualisera": "✅ pris och villkor",
+          "falsifiera": "✅ verifierbart",
+          "ingen_annan_kan_saga": "✅ exakt pris och exakt period"
+        }
+      ]
+    }
+  ],
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "cache_read_input_tokens": 0
+  }
+}

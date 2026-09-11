@@ -1,0 +1,63 @@
+{
+  "produkt": {
+    "namn": "TankGuard IBC-tanköverdrag 1000 L (tankguard.se)",
+    "pris_text": "489 kr (single cover, standing price — verified live on tankguard.se 2026-09-12). Bundles may ONLY be described as: \"Köp 2, få 2 kranskydd Frost 420D på köpet\" / \"Köp 3, få 3 kranskydd på köpet\" (value 199 kr each). NEVER state a bundle price in kronor (799/831/1 099/1 159 are under A/B test on the page), never a compare-at price, never a percentage.",
+    "dna_utdrag": "PRODUCT FACTS (only these): IBC tank cover for a standard 1000-litre IBC tank. Green 210D Oxford fabric (210D — never 220D). Zipper along the side: on and off without tools, no tarp, no rubber bands. Opening at the top so the lid is reachable without taking the cover off. Size 120 × 100 × 116 cm. Fits on in under two minutes. Drawstrings at the bottom hold it in place. Delivery 6–10 working days, free shipping within Sweden. 14 days right of withdrawal (never '30 dagars öppet köp'). Brand: TankGuard (capital T, capital G). Landing page https://tankguard.se/products/tankoverdraget.\n\nMECHANISM (the thing that sells): sunlight straight into the tank makes algae grow in the water, and UV makes the plastic brittle year by year. The fabric takes the sun instead of the plastic, and without light the algae never get started. Light is the cause, not the water.\n\nCUSTOMER: villa, summer-house and allotment owners 35–70 who collect rainwater in an IBC tank for the garden. They already know the water turns green; they do not know it is the light that does it. The problem in the order they feel it: 1) water turns green with algae — visible, smells, cannot water with it; 2) the scrubbing, every summer; 3) the plastic goes brittle in UV — slow, invisible, it is what kills the tank.\n\nSOCIAL PROOF WE ACTUALLY HAVE: 16 reviews on tankguard.se (verified live 2026-09-12). Verbatim reviews you may quote WITH first name only: Anders: \"Väldigt bra överdrag. Passar min IBC-tank perfekt och är enkelt att sätta på.\" · Lena: \"Köpte detta för min regnvattentank. Fungerar bra och är enkelt att öppna när jag behöver.\" · Sofia: \"Passar bra på tanken och skyddar mot solen. Precis vad jag behövde.\" · Magnus: \"Bra material och känns stabilt. Lätt att montera på tanken.\" Never invent other customers, counts or star averages.\n\nINHERITED WINNING LINES (spent money well on the source store, same product): primary-text opener \"Trött på grönt, algfyllt regnvatten?\" (16 997 kr, 77 purchases behind it). Script lines from the winning film: \"Solen gör plasten spröd och vattnet blir grönt av alger.\" · \"Ett skyddsöverdrag i kraftigt 210D Oxfordtyg. Det blockerar solljus och UV-strålar helt.\" · \"Installationen tar två minuter. Dra ner blixtlåset. Klart!\" · \"Du behöver inte ta av överdraget för att kolla vattnet. Det finns en öppning upptill rakt över locket.\" · \"Klart vatten, ingen algtillväxt och en tank som håller längre.\" Product-page problem line: \"Presenningen som skulle skydda blåser av vid första höststormen.\"\n\nSEASON: it is September. Frost and autumn storms are coming; the tank stands outside all winter. Urgency may come from the season only — never from stock, price changes or 'bara idag'.",
+    "forbjudet": [
+      "\"Bäverbutiken\" or any other store name",
+      "\"636 kr\", \"799 kr\", \"831 kr\", \"1 099 kr\", \"1 159 kr\", \"spara 18 %\", \"spara 25 %\", \"23 %\" — no bundle prices, no compare-at price, no percentages",
+      "\"fri frakt över 300 kr\", \"30 dagars öppet köp\", \"Klarna\", \"halva priset\", \"bara idag\", \"sista chansen\", \"lagret krymper\", \"priset går upp\"",
+      "\"220D\" (the fabric is 210D)",
+      "\"hundratals trädgårdsägare\", \"tusentals\", any review count other than 16, any star average",
+      "a first-person customer testimony not quoted verbatim from the four reviews given",
+      "generated people on screen — hands, the tank, the water, the cover only",
+      "exclamation marks in headlines; announcer voice"
+    ]
+  },
+  "briefer": [
+    {
+      "namn": "TankGuard_PD_7_H1",
+      "typ": "video",
+      "hypotes": "The inherited SE winner PD_1 (16 997 kr, 77 purchases on the source store, ROAS 2.92) has had 29 kr on TankGuard. Its primary-text opener \"Trött på grönt, algfyllt regnvatten?\" carried the spend — but the film itself opened with \"Har du en IBC-tank i trädgården? Titta på det här.\" Hypothesis: moving the problem line INTO the first 3 seconds of the same film raises hook rate above PD_1_H1's 20.5 % on TankGuard.",
+      "vinkel": "PD — product demo; the problem in the customer's own words, then the mechanism",
+      "hook_ide": "Green, algae-filled rainwater — the customer's own words, as a question. Build on \"Trött på grönt, algfyllt regnvatten?\" (max 8 words, may be reworked but keep grönt + regnvatten).",
+      "format": "Video ~30 s, 9:16. Same film as the inherited PD_1 (demo: cover goes on, zipper, top opening). Only the first 3 seconds change.",
+      "mal_langd_sek": 30,
+      "kept": "Everything from 0:03 onward is the inherited PD_1 script, verbatim, in this order: PROBLEM \"Har du en IBC-tank för regnvatten? Då vet du problemet. Solen gör plasten spröd och vattnet blir grönt av alger.\" · MEKANISM \"Det här är lösningen. Ett skyddsöverdrag i kraftigt 210D Oxfordtyg. Det blockerar solljus och UV-strålar helt. Installationen tar två minuter. Dra ner blixtlåset. Klart! Och du behöver inte ta av överdraget för att kolla vattnet. Det finns en öppning upptill rakt över locket.\" · PROOF \"Resultatet? Klart vatten, ingen algtillväxt och en tank som håller längre.\" · CTA \"Ett IBC-tanköverdrag från TankGuard. 489 kr.\" Reproduce these lines exactly as the manus beats PROBLEM/MEKANISM/PROOF/CTA — do not rewrite them.",
+      "changed": "Only the HOOK (0–3 s). Write the new hook line. Sibling PD_7_H2 opens with the cause (light); this one opens with the visible problem (green water)."
+    },
+    {
+      "namn": "TankGuard_CS_6_H1",
+      "typ": "video",
+      "hypotes": "The offer angle (inherited CS_1_H3) held the highest ROAS with volume on both markets (3.65 SE on 3 purchases, 2.37 NO on 20 purchases) — but its discount (23 % off one cover) does not exist on TankGuard. TankGuard's only true offer is the bundle: buy 2, get 2 Kranskydd Frost 420D free (a tap cover for the outdoor tap, value 199 kr each). Hypothesis: \"two tanks, and the outdoor tap protected for the same winter\" converts a customer with more than one tank at a higher order value than a single cover.",
+      "vinkel": "CS — offer; the bundle bonus as the reason to buy two, framed on the season (frost)",
+      "hook_ide": "Two IBC tanks? Then two covers — and the outdoor tap gets its own winter jacket for free. (max 8 words; concrete objects: tank, tap, frost)",
+      "format": "Video 20–25 s, 9:16. New film: cover on tank 1, cover on tank 2, then the tap cover going over the outdoor tap. Hands only.",
+      "mal_langd_sek": 22,
+      "kept": "Price line: 489 kr per cover. Bundle only as \"Köp 2, få 2 kranskydd Frost 420D på köpet\" — never a bundle price.",
+      "changed": "New concept. Five beats. PROOF beat: point at the tap cover itself (420D Oxford, insulating lining, fits over the tap, no tools) — not at a customer."
+    },
+    {
+      "namn": "TankGuard_SP_4_H1",
+      "typ": "video",
+      "hypotes": "Social proof is a proven angle in the playbook (customer-quote cards) and carried 65 % of the profit contribution on the sibling OPS store HeimGuard. On this product the inherited SP videos never got spend (SP_1_H3: 89 kr, 1 purchase — under the gate). TankGuard now has 16 reviews on its own page (verified 2026-09-12). Hypothesis: a real review quoted verbatim, with the review count, converts better than a feature list.",
+      "vinkel": "SP — social proof; one verbatim review + the count",
+      "hook_ide": "Open with the review count: 16 reviews on tankguard.se. Or open with Anders's verbatim line. Pick the one that passes the three questions best.",
+      "format": "Video ~25 s, 9:16. Demo footage of the cover going on; the review shown as an on-screen quote card with the first name; VO reads the review word for word.",
+      "mal_langd_sek": 25,
+      "kept": "Quotes must be verbatim from the four reviews given, with first name. Count = 16. Price 489 kr in the CTA.",
+      "changed": "New concept. PROOF beat = the review itself (verbatim). MEKANISM beat = why it works (light out, algae never start)."
+    },
+    {
+      "namn": "TankGuard_FE_1_1",
+      "typ": "bild",
+      "hypotes": "Before/after is the simplest conflict (copy rules) and the playbook says problem angles work as before/after images. The store already has its own before/after photo (bare tank vs covered tank). Image ads lost to video on the source store (20 images, 0 purchases) — this is the ONE image in the batch, testing whether a before/after with a single concrete line beats the inherited feature-list images (PD_2_1: 362 kr, 0 purchases).",
+      "vinkel": "FE — before/after: the tank bare and green vs covered",
+      "hook_ide": "Before: green water in the sun. After: the cover on. One line on the image, max 7 words.",
+      "format": "Static image 4:5 + 1:1. Left/top: bare tank (from the store's before/after photo). Right/bottom: covered tank. One on-image line. Price 489 kr small in the corner.",
+      "mal_langd_sek": 0,
+      "kept": "Price 489 kr.",
+      "changed": "New concept (image). On-image text max 7 words; caption 1–2 short lines."
+    }
+  ]
+}
