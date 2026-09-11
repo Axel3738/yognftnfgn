@@ -178,10 +178,26 @@
       ]
     },
     "oversatt": {
-      "klar": false,
-      "manuell": "nb: översätt med subagent (sonnet) — output/catcabin/oversattning-sv.json (125 nycklar) → oversattning-nb.json med samma nycklar, kör sen --igen oversatt",
+      "klar": true,
       "underlag": 125,
-      "utfall": {}
+      "utfall": {
+        "nb": {
+          "registrerade": 85,
+          "saknade": 0,
+          "perTyp": {
+            "variant": 1,
+            "produkt": 4,
+            "metafält": 9,
+            "sida": 7,
+            "menylänk": 6,
+            "policy": 3,
+            "kollektion": 1,
+            "temamall": 47,
+            "sektionsgrupp": 7
+          },
+          "granskning": "4207/4216"
+        }
+      }
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
@@ -190,12 +206,13 @@
     "gron": false,
     "kritiska": [
       "kundvy-startsida",
+      "markörer /nb",
       "trippelkoll valuta",
       "trippelkoll paketnivåer",
       "trippelkoll förvald nivå",
       "trippelkoll rabattkoder"
     ],
-    "tid": "2026-09-11T02:33:48.756Z"
+    "tid": "2026-09-11T02:42:06.184Z"
   },
-  "uppdaterad": "2026-09-11T02:41:28.881Z"
+  "uppdaterad": "2026-09-11T02:42:06.184Z"
 }
