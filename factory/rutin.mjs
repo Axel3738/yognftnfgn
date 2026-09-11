@@ -30,6 +30,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
+import { anthropicNyckel, NYCKELNAMN } from '../tools/lib/anthropic-nyckel.mjs';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 // Kommandofilerna. Testerna pekar om katalogen till en fixtur, så ett
@@ -163,7 +164,11 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [], kat
     }
   }
   const nycklar = nycklarFor(namn, { katalog });
-  const saknade = nycklar.filter((n) => !process.env[n]);
+  // ANTHROPIC_API_KEY göms av Claude Code för skripten; på claude.ai heter
+  // nyckeln ANTHROPIC_NYCKEL (tools/lib/anthropic-nyckel.mjs). Är något av
+  // namnen satt räknas nyckeln som funnen — annars varnar spärren falskt
+  // varje gång ett kommando nämner det gömda namnet (hände 2026-09-11).
+  const saknade = nycklar.filter((n) => (NYCKELNAMN.includes(n) ? !anthropicNyckel() : !process.env[n]));
   if (saknade.length) {
     varningar.push(`Env-nycklar som saknas här: ${saknade.join(', ')}. Rutinens container behöver dem, inte den här sessionen.`);
   }
