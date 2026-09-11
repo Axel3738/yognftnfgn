@@ -30,8 +30,11 @@ butik:
   # `--igen paket,huvudmarknad`.
   valuta: SEK
   moms_i_pris: true
-  # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika
-  # på norska (katten, koja) filtreras bort av sig själva (kundvy.mjs).
+  # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. ⚠️ Filtret i
+  # kundvy.mjs släpper bara ord som är ett HELT värde lika i sv och nb — ett
+  # ord inne i en mening filtreras inte (mätt 2026-09-11: "utekatt" och
+  # "under bilen" är samma på norska men flaggades ändå). Lista därför bara
+  # ord som faktiskt skiljer sig på norska.
   markorer_sv:
     - "Köp nu"
     - "Fri frakt"
@@ -40,8 +43,6 @@ butik:
     - "ångerrätt"
     - "Handla tryggt"
     - "arbetsdagar"
-    - "utekatt"
-    - "under bilen"
     - "liggmatta"
     - "isolerade"
     - "hopfällbar"

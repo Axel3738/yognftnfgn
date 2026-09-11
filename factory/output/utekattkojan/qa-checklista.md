@@ -16,8 +16,9 @@
 - [ ] ❌ doman: Primär domän är fortfarande ras1t2-2x.myshopify.com — riktig domän saknas.
 - [x] ✅ villkor: 4 policyer på plats
 - [ ] ❌ checkout: Butikens valuta är PHP, produktfilen säger SEK.
-- [ ] ❌ kundvy-produktsida: ingen HTML = inte grönt (Lösenordet avvisades (HTTP 200, location saknas).)
-- [x] ✅ markörer /nb: 0 svenska markörer av 14
+- [ ] ❌ kundvy-produktsida: paketväljaren (ms-paket) finns
+- [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
+- [x] ✅ markörer /nb: 0 svenska markörer av 12
 
 ## Varningar
 

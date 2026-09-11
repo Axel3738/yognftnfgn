@@ -356,6 +356,13 @@ igenom på första körningen. Mätningar:
   att belägga. AdventLanes startsida bär samma rad — den bör ses över.
   Huvudsessionen granskar varje faktapåstående i copyn, inte bara
   tre-frågorstestet.
+- **Markörfiltret släpper bara HELA värden.** `filtreraMarkorer` tar bort ett
+  markörord från /nb-skanningen bara om ordet är ett helt värde som är
+  identiskt i sv- och nb-filen. "utekatt" och "under bilen" är samma ord på
+  norska men står inne i meningar — de flaggades som läckor i två QA-rundor
+  fast sidan var korrekt. Regeln för `markorer_sv` är därför: lista bara ord
+  som faktiskt SKILJER sig på norska (kommentaren i mallen "filtreras bort av
+  sig själva" gäller bara hela värden som "Köp nu").
 - **Källkampanjen läses per annons innan vinkeln väljs.** 16 annonser,
   2 760 kr / 9 köp på två dygn: bara `Utekattkoja_PD_2_H1` (1 453 kr, 4 köp)
   låg över domgränsen 300 kr / 3 köp (CLAUDE.md regel 3). Problem-rubriken
