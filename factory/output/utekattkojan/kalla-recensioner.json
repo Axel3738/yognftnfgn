@@ -1,0 +1,89 @@
+{
+  "kalla": "judge.me reviews_for_widget (betyg + created_at) + jdgm-rev-widg i produktsidans HTML (namn, titel, text), shop 4snrw0-mg.myshopify.com, product_id 16516655382877",
+  "last": "2026-09-11",
+  "antal": 10,
+  "snitt": "5.00",
+  "notis": "Alla created_at ligger inom 11 sekunder 2026-09-08 22:48:20-31 UTC = API-import i källan (dagen efter produkten skapades 2026-09-07), inte kunddatum. Alla tio har titeln 'Bra koja'.",
+  "reviews": [
+    {
+      "namn": "Karin",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Enkel, praktisk och mysig för katten.",
+      "created_at": "2026-09-08 22:48:31 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Erik",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Skönt att katten har en torr plats ute.",
+      "created_at": "2026-09-08 22:48:30 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Linda",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Katten tycker mycket om den. Väldigt nöjd.",
+      "created_at": "2026-09-08 22:48:29 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Anders",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Bra kvalitet och enkel att sätta på plats.",
+      "created_at": "2026-09-08 22:48:28 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Sofia",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Mysig liten koja som känns bra att ha ute.",
+      "created_at": "2026-09-08 22:48:26 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Emma",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Katten har börjat sova i den varje dag.",
+      "created_at": "2026-09-08 22:48:25 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Johan",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Lätt att använda och lagom stor för katten.",
+      "created_at": "2026-09-08 22:48:24 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Maria",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Bra skydd mot vind och regn. Katten trivs.",
+      "created_at": "2026-09-08 22:48:23 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Lars",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "En enkel och bra koja för katten ute.",
+      "created_at": "2026-09-08 22:48:21 UTC",
+      "verified_buyer": false
+    },
+    {
+      "namn": "Anna",
+      "betyg": 5,
+      "titel": "Bra koja",
+      "text": "Katten gillar den direkt. Känns varm och mysig.",
+      "created_at": "2026-09-08 22:48:20 UTC",
+      "verified_buyer": false
+    }
+  ]
+}

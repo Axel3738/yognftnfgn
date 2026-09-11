@@ -249,3 +249,29 @@ test('arMaskinvarde och arAppcache', () => {
   assert.equal(arAppcache('gid://shopify/Metafield/1', 'opf'), false);
   assert.equal(arAppcache('gid://shopify/Product/1'), false);
 });
+
+// ---- primärmarknaden -----------------------------------------------------------
+//
+// CatCabin 2026-09-11: Norge blev primärmarknad efter checklistans avsnitt 2 och
+// varje variant blev otillgänglig i kundvyn, medan huvudmarknad-steget var grönt
+// (det kontrollerade bara valutan). Ren logik över hamtaLage().marknader.
+
+test('kontrolleraPrimarmarknad: rätt land grönt, fel land 🖐 med klicket, ingen primär 🖐', async () => {
+  const { kontrolleraPrimarmarknad } = await import('../marknad.mjs');
+  const m = (name, primary, koder) => ({ name, primary, conditions: { regionsCondition: { regions: { nodes: koder.map((code) => ({ code })) } } } });
+  const ok = kontrolleraPrimarmarknad([m('Norge', false, ['NO']), m('Sweden', true, ['SE'])], 'SE');
+  assert.equal(ok.ok, true);
+  assert.equal(ok.primar.name, 'Sweden');
+
+  const fel = kontrolleraPrimarmarknad([m('Norge', true, ['NO']), m('Sweden', false, ['SE'])], 'se');
+  assert.equal(fel.ok, false);
+  assert.match(fel.skal, /"Norge" \(NO\), inte SE/);
+  assert.match(fel.skal, /Set as primary/);
+  assert.match(fel.skal, /Kan inte sättas via API/);
+
+  const ingen = kontrolleraPrimarmarknad([m('Norge', false, ['NO'])], 'SE');
+  assert.equal(ingen.ok, false);
+  assert.match(ingen.skal, /ingen marknad är markerad som primär/);
+
+  assert.equal(kontrolleraPrimarmarknad([m('Sweden', true, ['SE'])], '').ok, false);
+});

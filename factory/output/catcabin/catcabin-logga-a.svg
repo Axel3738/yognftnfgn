@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512" cy="512" r="512" fill="#2B2724"/>
+  <circle cx="512" cy="512" r="452" fill="none" stroke="#F5F0E8" stroke-opacity="0.35" stroke-width="6"/>
+  <g class="koja"><rect x="472.9" y="355.9" width="78.2" height="59.8" fill="#F5F0E8"/><path d="M456.8 365.1 L512 316.8 L567.2 365.1 L567.2 374.3 L512 326 L456.8 374.3 Z" fill="#F5F0E8"/><path d="M497.7 415.7 L497.7 392.7 A14.3 14.3 0 0 1 526.3 392.7 L526.3 415.7 Z" fill="#D97B2A"/><rect x="477.5" y="415.7" width="6" height="14.7" rx="1.8" fill="#F5F0E8"/><rect x="540.5" y="415.7" width="6" height="14.7" rx="1.8" fill="#F5F0E8"/></g>
+  <text x="512" y="548" text-anchor="middle" dominant-baseline="central" font-family="Nunito, DejaVu Sans, sans-serif" font-weight="700"
+        font-size="136" letter-spacing="14" fill="#F5F0E8">CATCABIN</text>
+  <text x="512" y="660" text-anchor="middle" dominant-baseline="central" font-family="Nunito, DejaVu Sans, sans-serif" font-weight="700"
+        font-size="30" letter-spacing="9" fill="#F5F0E8" fill-opacity="0.7">FOR OUTDOOR CATS</text>
+</svg>

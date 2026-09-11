@@ -1,0 +1,223 @@
+{
+  "butik": "catcabin",
+  "produkt": "_butik",
+  "steg": {
+    "anslutning": {
+      "klar": true,
+      "domain": "ras1t2-2x.myshopify.com",
+      "name": "CatCabin",
+      "primaryDomain": "catcabin.se",
+      "currencyCode": "SEK"
+    },
+    "tema-upload": {
+      "klar": true,
+      "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
+      "temaId": "gid://shopify/OnlineStoreTheme/193723924848",
+      "temaNamn": "CatCabin – CRO v1",
+      "role": "MAIN",
+      "redanUppe": true,
+      "filer": 396,
+      "kompletterade": []
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193723924848",
+      "filer": [
+        "assets/opf-brand.css",
+        "config/settings_data.json"
+      ]
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193723924848",
+      "temaNamn": "CatCabin – CRO v1",
+      "sektioner": 6,
+      "filer": [
+        "sections/opf-problem.liquid",
+        "sections/opf-losning.liquid",
+        "sections/opf-funktioner.liquid",
+        "sections/opf-lifestyle.liquid",
+        "sections/opf-garanti.liquid",
+        "sections/opf-faq.liquid",
+        "assets/ms-paket.js",
+        "sections/header-group.json",
+        "snippets/ms-head.liquid"
+      ],
+      "produktmall": "verifierad",
+      "upsell": null
+    },
+    "avbrandning": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193723924848",
+      "fore": 0,
+      "borttagnaSektioner": [],
+      "omskrivnaFiler": [
+        "config/settings_data.json",
+        "sections/footer-group.json",
+        "sections/header-group.json"
+      ],
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "logga": {
+      "klar": true,
+      "logo": "shopify://shop_images/catcabin-logga-c.png",
+      "favicon": "shopify://shop_images/catcabin-favicon.png",
+      "bredd": 140,
+      "temaId": "gid://shopify/OnlineStoreTheme/193723924848"
+    },
+    "kollektion": {
+      "klar": true,
+      "hoppadOver": "enproduktsbutik"
+    },
+    "startsida": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/193723924848",
+      "filer": [
+        "templates/index.json",
+        "sections/footer-group.json"
+      ],
+      "sektioner": [
+        "hero",
+        "ms_usp",
+        "ms_marquee",
+        "produkt",
+        "berattelse",
+        "galleri",
+        "galleri_markning",
+        "statement",
+        "omdomen",
+        "trygghet",
+        "ms_faq",
+        "ms_guarantee"
+      ],
+      "bilder": {
+        "hero": "shopify://shop_images/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg",
+        "trygghet": "shopify://shop_images/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg",
+        "galleri": [
+          "shopify://shop_images/kattkoja-regn.jpg",
+          "shopify://shop_images/kattkoja-sno.jpg",
+          "shopify://shop_images/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
+        ]
+      },
+      "produkter": [
+        "utekattkojan: ACTIVE"
+      ]
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "meny": {
+      "klar": true,
+      "huvudmeny": {
+        "handle": "main-menu",
+        "orord": true,
+        "rader": 4
+      },
+      "sidfot": {
+        "handle": "footer",
+        "orord": true,
+        "rader": 5
+      }
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 0,
+      "orort": true
+    },
+    "huvudmarknad": {
+      "klar": true,
+      "valuta": "SEK",
+      "primarmarknad": "Sweden"
+    },
+    "kallskanning": {
+      "klar": true,
+      "skannade": 315,
+      "rent": true,
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "marknad": {
+      "klar": true,
+      "marknader": [
+        {
+          "land": "NO",
+          "locale": "nb",
+          "marknad": "Norge",
+          "status": "ACTIVE",
+          "localeSkapad": false
+        }
+      ]
+    },
+    "oversatt": {
+      "klar": true,
+      "underlag": 125,
+      "utfall": {
+        "nb": {
+          "registrerade": 0,
+          "saknade": 0,
+          "perTyp": {
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 0,
+            "sida": 0,
+            "menylänk": 0,
+            "paket": 0,
+            "policy": 0,
+            "kollektion": 0,
+            "temamall": 0,
+            "sektionsgrupp": 0,
+            "temainställning": 0
+          },
+          "granskning": "4336/4351"
+        }
+      }
+    },
+    "store-ready": {
+      "klar": true,
+      "pixelId": "1101742182294878",
+      "discordGuild": "1547844745412350012",
+      "recensioner": [
+        {
+          "produkt": "utekattkojan",
+          "viaApi": false
+        }
+      ],
+      "vantar": [
+        "recensioner utekattkojan: ingen Judge.me-token (env JUDGEME_CATCABIN_TOKEN) — ladda upp output/utekattkojan/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
+        "WeTracked: klistra in pixel-id 1101742182294878 (VA:ns klick)",
+        "Meta-sidan skapar VA:n i Business Manager (API:t kan inte)",
+        "Discord: ingen redigerare i standby-listan än — plockas för hand"
+      ]
+    },
+    "tema-publicering": {
+      "klar": false,
+      "manuell": "VA:n publicerar temat \"CatCabin – CRO v1\": Online Store → Themes → CatCabin – CRO v1 → Publish."
+    }
+  },
+  "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
+  "arbetstemaNamn": "CatCabin – CRO v1",
+  "qa": {
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-11T13:23:07.611Z"
+  },
+  "uppdaterad": "2026-09-11T14:20:23.793Z"
+}

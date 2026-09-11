@@ -311,6 +311,11 @@ Mätningar från samma bygge:
   görs med `imageio-ffmpeg` (pip) när `ffmpeg` saknas i containern.
 - **Loggmotivet är per brand.** `logga-generera.mjs --motiv lucka` ritar en
   öppnad kalenderlucka; `droppe` (TankGuard) är standard, `ingen` finns.
+  `--motiv koja` (CatCabin 2026-09-11) ritar en utekattkoja på ben med tänd
+  dörr i accentfärgen. Med ett eget motiv blir variant c motivet stort +
+  ordmärket litet — monogrammet i två bokstäver hade aldrig valts
+  (`LOGGA-FEEDBACK.md`: a 0, b 0, c 1 vid bygget), och feedbackloopen säger
+  att en variant som aldrig väljs ska bytas mot något nytt.
   Typsnittet måste finnas i systemet — Poppins Bold fanns inte på jsDelivrs
   spegel (79 byte "not found") men på `raw.githubusercontent.com/google/fonts`.
 - **Källans Judge.me-datum kan vara importtid.** Alla tio recensioner bar
@@ -320,6 +325,84 @@ Mätningar från samma bygge:
 - **Inköpskostnaden går att härleda ur källkampanjens namn** när den bär
   "BE ROAS x.xx" (`docs/temu-launch-flow.md`: pris / (pris − inköp)). 1,62 på
   499 kr ⇒ 191 kr. Märks HÄRLEDD tills Axel bekräftat kvittot.
+
+---
+
+## Enproduktsbutik med adressen i prompten (CatCabin 2026-09-11)
+
+Första bygget där checklistans nya avsnitt 3–4 användes fullt ut: fyra rader
+med adressens suffix i miljön (`…_ras1t2_2x`) och adressen i prompten, inget
+butiks-id. Steg 0 hittade nycklarna ur adressen och svarade "Connected:
+ras1t2-2x.myshopify.com ✓" med alla 16 scopes. Bygget gick steg 1–16 rakt
+igenom på första körningen. Mätningar:
+
+- **Lösenordet slogs upp på fel nyckel.** `anslut` hittade tokenen via
+  adressens suffix men storefront-lösenordet via butiks-id:t (`catcabin`),
+  som inte fanns — så det föll tillbaka på den allmänna raden, TackleBays.
+  Kundvyn blev röd med "Lösenordet avvisades (HTTP 200, location saknas)"
+  fast rätt lösenord låg i miljön. Rättat i `token.mjs` (suffixet ur
+  adressen först) med regressionstest. Felraden var vilseledande: den
+  pekade på lösenordet, inte på uppslaget.
+- **Judge.mes `reviews_for_widget` svarar utan text och namn** (mätt
+  2026-09-11 mot Bäverbutiken): JSON-svaret bär `rating`, `title` och
+  `created_at`, men `body` och `reviewer` är `null` och nyckeln `html`
+  saknas. Texterna och namnen ligger förrenderade i produktsidans HTML under
+  `jdgm-rev-widg` (`jdgm-rev__author`, `jdgm-rev__body`,
+  `jdgm-rev__timestamp data-content`). Läs båda: JSON för datum, HTML för
+  text. Källans tio recensioner låg återigen inom elva sekunder (API-import
+  dagen efter produkten skapades) — samma regel som AdventLane.
+- **Nunito som variabel TTF räcker för sharp.** `Nunito[wght].ttf` från
+  google/fonts (raw.githubusercontent.com; `static/Nunito-Bold.ttf` finns
+  inte i repot, 14-byte "404") registreras av fontconfig med style=Bold och
+  librsvg plockar vikten 700 ur den. Poppins Bold ligger fortfarande som
+  statisk fil.
+- **Nytt loggmotiv `koja` + motiv-ledd variant c** (se "Loggmotivet är per
+  brand" nedan). Loggfeedbacken före genereringen: a 0, b 0, c 1.
+- **Första varma paletten.** De fem tidigare butikerna är mörkblå eller
+  mörkgröna; CatCabin är kolgrå + crème + bärnsten. Brandet får inte
+  se ut som sina syskon — kunden ska inte känna igen "fabriken".
+- **Subagentens marquee-rad "Skickas från Sverige" ströks av huvudsessionen.**
+  Leveransen går på Temu-ledet (5–10 arbetsdagar), och påståendet går inte
+  att belägga. AdventLanes startsida bär samma rad — den bör ses över.
+  Huvudsessionen granskar varje faktapåstående i copyn, inte bara
+  tre-frågorstestet.
+- **Markörfiltret släpper bara HELA värden.** `filtreraMarkorer` tar bort ett
+  markörord från /nb-skanningen bara om ordet är ett helt värde som är
+  identiskt i sv- och nb-filen. "utekatt" och "under bilen" är samma ord på
+  norska men står inne i meningar — de flaggades som läckor i två QA-rundor
+  fast sidan var korrekt. Regeln för `markorer_sv` är därför: lista bara ord
+  som faktiskt SKILJER sig på norska (kommentaren i mallen "filtreras bort av
+  sig själva" gäller bara hela värden som "Köp nu").
+- **Fel primärmarknad gör varje variant osäljbar — och kedjan såg det inte.**
+  Efter checklistans avsnitt 2 (valuta PHP → SEK, "Sweden is the primary
+  market") stod butiken med **Norge som primärmarknad** och den gamla
+  Filippinerna-marknaden omdöpt till "Sweden" (handle `ph`, region Sverige).
+  Kundvyn: `available: false` på alla tre varianter i VARJE marknadskontext
+  (default, SE, NO, PH), `compare_at_price: null` — så `ms-paket.liquid` och
+  `ms-sticky-atc.liquid`, som båda börjar med `{%- if p.available -%}`,
+  renderade ingenting. Symptomet såg ut som ett temafel ("paketväljaren
+  finns inte", "sticky köpknapp saknas") medan temat var helt. Uteslutet på
+  vägen: temafilerna (product.json bar blocken), `ms_ab_tests` (kvar),
+  metaobjektens access (PUBLIC_READ), lagerpolicyn (CONTINUE, untracked,
+  lagernivå på aktiv plats), publiceringen (Online Store), katalogerna (även
+  TackleBay saknar marknadskataloger och säljer) och platsens land (TackleBay
+  har också Filippinerna). Det enda som skiljde mot TackleBay var
+  primärflaggan. Primärmarknaden går INTE att sätta via API
+  (`API-GRANSER.md`, mätt) — klicket är Settings → Markets → Sweden →
+  Set as primary. Kedjans steg `huvudmarknad` kontrollerade bara valutan och
+  var grönt hela tiden; nu kontrollerar det också att primärmarknadens region
+  är butikens land (`marknad.kontrolleraPrimarmarknad`). Efter klicket var
+  kundvyn grön igen (11 strukturpunkter) — men **Norge-marknaden var borta**
+  (bara Sweden kvar): den försvann i admin-klicket. `--igen marknad` skapade
+  om den på trettio sekunder (locale nb och alla registrerade översättningar
+  låg kvar, de sitter på localen, inte på marknaden). Regel: efter varje
+  Markets-klick av en människa, kör `--igen huvudmarknad,marknad` och läs
+  trippelkollen.
+- **Källkampanjen läses per annons innan vinkeln väljs.** 16 annonser,
+  2 760 kr / 9 köp på två dygn: bara `Utekattkoja_PD_2_H1` (1 453 kr, 4 köp)
+  låg över domgränsen 300 kr / 3 köp (CLAUDE.md regel 3). Problem-rubriken
+  på produktsidan är därför ordagrant den annonsens vinkel. `creative{body}`
+  var tomt på alla 16 — vinkelkoden i namnet är det som går att läsa.
 
 ---
 
@@ -530,6 +613,17 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   renderas i webbläsaren, och `reviews_for_widget` svarade tomt för
   iahe0c-b1 (2026-09-10) trots att importen var gjord. Datumkollen efter
   app-importen är alltså ett öga på produktsidan, inte en kodkontroll.
+  *(Mätt igen 2026-09-11 på ras1t2-2x: samma anrop svarade med alla 16
+  importerade recensioner — 10 sv "Bra koja" + 6 nb "Bra kattehus", snitt
+  5,00, alla `created_at` 2026-09-07T16:00Z = 8 sep 00:00 i butikens
+  tidszon, som fortfarande är Filippinerna från trialen. Svaret beror alltså
+  på butiken/tidpunkten, inte på API:t — prova alltid, och läs datumen i
+  butikens tidszon. ⚠️ Tidszonen är ett klick: Settings → General → Time
+  zone → Stockholm, annars visas order- och recensionstider sex timmar fel.)*
+  ⚠️ Samma anrop mot KÄLLAN (4snrw0-mg) gav 2026-09-11 bara betyg + datum —
+  `body` och `reviewer` var null. Texterna och namnen står i stället
+  färdigrenderade i produktsidans HTML (`jdgm-rev-widg` → `jdgm-rev__author`,
+  `jdgm-rev__body`); `curl` sidan och läs dem därifrån.
 - **Kundvyns gratis-rad och fullpris-kryssruta är villkorade** på
   produktfilen: gratis-raden bara när en nivå har `gratis_antal > 0`,
   kryssrutan bara vid `tillagg_kryssruta: true`. En betald korg-upsell

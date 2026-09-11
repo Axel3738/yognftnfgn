@@ -65,3 +65,16 @@ test('typsnittUrHandle och orddelar', () => {
   assert.deepEqual(orddelar('TankGuard'), ['TANK', 'GUARD']);
   assert.deepEqual(orddelar('Hemvakten'), ['HEMVAKTEN']);
 });
+
+test('motiv koja: kojan ritas i alla tre varianter + favicon, och c blir motiv-ledd i stället för monogram', () => {
+  const jobb = byggLoggaSvg(rabutik(), { motiv: 'koja' });
+  for (const j of jobb) assert.ok(j.svg.includes('class="koja"'), `${j.namn} saknar kojan`);
+  const c = jobb.find((j) => j.namn === 'logga-c').svg;
+  const brand = rabutik().butik.brand.toUpperCase();
+  assert.ok(c.includes(brand), 'c bär ordmärket');
+  assert.ok(!c.includes('font-size="400"'), 'c ska inte rita monogrammet när brandet har ett eget motiv');
+  // Standarddroppen ändrar inget: c är fortfarande monogrammet.
+  const gammalC = byggLoggaSvg(rabutik(), { variant: 'c' })[0].svg;
+  assert.ok(gammalC.includes('font-size="400"'));
+  assert.throws(() => byggLoggaSvg(rabutik(), { motiv: 'hund' }), /Okänt motiv/);
+});

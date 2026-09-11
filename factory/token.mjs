@@ -622,9 +622,14 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   // trippelkoll) läser det utan suffix, och att lyfta upp butikens egen rad
   // hit är enda sättet att slippa ändra alla fem. Utan detta hämtar kundvyn
   // grannbutikens lösenord när flera butiker delar Environment.
-  // ⚠️ Suffixet ur ADRESSEN först (CaraShell 2026-09-10: nycklarna låg under
-  // `_yitrbk_m3`, butiks-id:t var `carashell`, och kundvyn blev röd med
-  // "Lösenordet avvisades" fast rätt lösenord stod i miljön).
+  //
+  // ⚠️ Suffixet ur ADRESSEN först. Mätt på två butiker: CaraShell 2026-09-10
+  // (nycklarna låg under `_yitrbk_m3`, butiks-id:t var `carashell`) och
+  // CatCabin 2026-09-11 (`SHOPIFY_STOREFRONT_PASSWORD_RAS1T2_2X`). Checklistan
+  // låter den som klickar döpa alla fyra raderna efter adressens början, inte
+  // efter butiks-id:t. Med bara id-uppslaget föll lösenordet tillbaka på den
+  // allmänna raden — TackleBays — och kundvyn blev röd med "Lösenordet
+  // avvisades" fast rätt lösenord låg i miljön hela tiden.
   const losen = (uppslag && perButik(env, 'SHOPIFY_STOREFRONT_PASSWORD', uppslag)) || storefrontLosenord(id, env);
   if (losen) env.SHOPIFY_STOREFRONT_PASSWORD = losen;
 

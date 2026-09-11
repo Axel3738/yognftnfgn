@@ -9,7 +9,7 @@
 // SVG-funktionerna (loggaSvgA/B/C, faviconSvg) är ren logik och går att
 // köra utan sharp.
 //
-//   node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|ingen]
+//   node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|koja|ingen]
 //
 // Utan --variant skrivs alla tre: <id>-logga-a.png, -b.png, -c.png (1024²)
 // + <id>-favicon.png (256²) + SVG-källorna. Färgerna kommer ur butikens EGEN
@@ -97,15 +97,44 @@ const TAK = (cx, cy, r, ram, flik) => {
   );
 };
 
+// En utekattkoja på ben (CatCabin 2026-09-11): sadeltak som skjuter ut över
+// gaveln, kroppen under, en välvd ingång som LYSER i accentfärgen (ljuset i
+// köksfönstret på kvällsbilden — livet i loggan) och två ben, för "står på
+// ben" är produktens första egenskap. `ram` = kojans färg, `flik` = dörrens.
+const KOJA = (cx, cy, r, ram, flik) => {
+  const n = (v) => Math.round(v * 10) / 10;
+  const p = (x, y) => `${n(cx + x * r)} ${n(cy + y * r)}`;
+  // Taket som en vinkel med tjocklek: apex uppe, takfot utanför kroppen.
+  const tak = `M${p(-1.2, -0.15)} L${p(0, -1.2)} L${p(1.2, -0.15)} L${p(1.2, 0.05)} L${p(0, -1.0)} L${p(-1.2, 0.05)} Z`;
+  // Dörren: rak nederkant, välvd överkant.
+  const dorr = `M${p(-0.31, 0.95)} L${p(-0.31, 0.45)} A${n(0.31 * r)} ${n(0.31 * r)} 0 0 1 ${p(0.31, 0.45)} L${p(0.31, 0.95)} Z`;
+  return (
+    `<g class="koja">` +
+    `<rect x="${n(cx - 0.85 * r)}" y="${n(cy - 0.35 * r)}" width="${n(1.7 * r)}" height="${n(1.3 * r)}" fill="${ram}"/>` +
+    `<path d="${tak}" fill="${ram}"/>` +
+    `<path d="${dorr}" fill="${flik}"/>` +
+    `<rect x="${n(cx - 0.75 * r)}" y="${n(cy + 0.95 * r)}" width="${n(0.13 * r)}" height="${n(0.32 * r)}" rx="${n(0.04 * r)}" fill="${ram}"/>` +
+    `<rect x="${n(cx + 0.62 * r)}" y="${n(cy + 0.95 * r)}" width="${n(0.13 * r)}" height="${n(0.32 * r)}" rx="${n(0.04 * r)}" fill="${ram}"/>` +
+    `</g>`
+  );
+};
+
 // Motivet ovanför ordmärket. droppe = standard (bakåtkompatibelt), lucka =
-// kalenderlucka, tak = husvagnstak under överdrag, ingen = bara ordmärket.
-// Väljs med --motiv eller byggLoggaSvg(..., { motiv }).
+// kalenderlucka, tak = husvagnstak under överdrag, koja = utekattkoja på ben,
+// ingen = bara ordmärket. Väljs med --motiv eller byggLoggaSvg(..., { motiv }).
 export const MOTIV = {
   droppe: (cx, cy, r, { fill }) => DROPPE(cx, cy, r, fill),
   lucka: (cx, cy, r, { ram, flik }) => LUCKA(cx, cy, r, ram, flik),
   tak: (cx, cy, r, { ram, flik }) => TAK(cx, cy, r, ram, flik),
+  koja: (cx, cy, r, { ram, flik }) => KOJA(cx, cy, r, ram, flik),
   ingen: () => '',
 };
+
+// Har brandet ett EGET motiv (inte standarddroppen, inte tomt)? Då bär
+// faviconen motivet ensamt och variant c blir motivet stort med ordmärket
+// litet under — i stället för monogrammet, som aldrig valts
+// (factory/LOGGA-FEEDBACK.md, 2026-09-11).
+const egetMotiv = (t) => Boolean(t?.motivNamn) && t.motivNamn !== 'droppe' && t.motivNamn !== 'ingen';
 const motivFn = (t) => t?.motiv ?? MOTIV.droppe;
 
 function font(t) {
@@ -166,13 +195,19 @@ export function loggaSvgC(brand, t) {
   const delar = orddelar(brand);
   const monogram = delar.length >= 2 ? delar[0][0] + delar[1][0] : ord.slice(0, 2);
   const size = Math.min(110, ordStorlek(ord, 600));
+  // Eget motiv (lucka, koja …): motivet stort i stället för monogrammet.
+  const ovre = egetMotiv(t)
+    ? motivFn(t)(512, 400, 150, { fill: f.text_pa_mork, ram: f.text_pa_mork, flik: f.accent })
+    : `<text x="512" y="452" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="400" letter-spacing="-12" fill="${f.text_pa_mork}">${eskapa(monogram)}</text>`;
+  const linjeY = egetMotiv(t) ? 672 : 640;
+  const ordY = egetMotiv(t) ? 744 : 712;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <circle cx="512" cy="512" r="512" fill="${f.mork}"/>
   <circle cx="512" cy="512" r="464" fill="none" stroke="${f.text_pa_mork}" stroke-opacity="0.3" stroke-width="4"/>
-  <text x="512" y="452" text-anchor="middle" dominant-baseline="central" ${font(t)}
-        font-size="400" letter-spacing="-12" fill="${f.text_pa_mork}">${eskapa(monogram)}</text>
-  <line x1="332" y1="640" x2="692" y2="640" stroke="${f.text_pa_mork}" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round"/>
-  <text x="512" y="712" text-anchor="middle" dominant-baseline="central" ${font(t)}
+  ${ovre}
+  <line x1="332" y1="${linjeY}" x2="692" y2="${linjeY}" stroke="${f.text_pa_mork}" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round"/>
+  <text x="512" y="${ordY}" text-anchor="middle" dominant-baseline="central" ${font(t)}
         font-size="${size}" letter-spacing="${Math.round(size * 0.14)}" fill="${f.text_pa_mork}">${eskapa(ord)}</text>
 </svg>
 `;
@@ -181,9 +216,9 @@ export function loggaSvgC(brand, t) {
 export function faviconSvg(brand, t) {
   const f = t.farger;
   const initial = String(brand).trim().charAt(0).toUpperCase();
-  // Med ett eget motiv (lucka) bär faviconen motivet ensamt — annars initialen.
+  // Med ett eget motiv (lucka, koja) bär faviconen motivet ensamt — annars initialen.
   const inre =
-    t.motivNamn && t.motivNamn !== 'droppe' && t.motivNamn !== 'ingen'
+    egetMotiv(t)
       ? motivFn(t)(128, 128, 78, { fill: f.text_pa_mork, ram: f.text_pa_mork, flik: f.accent })
       : `<text x="128" y="134" text-anchor="middle" dominant-baseline="central" ${font(t)}
         font-size="170" fill="${f.text_pa_mork}">${eskapa(initial)}</text>`;
@@ -238,7 +273,7 @@ async function huvud() {
   const tagline = arg.includes('--tagline') ? arg[arg.indexOf('--tagline') + 1] : '';
   const motiv = arg.includes('--motiv') ? arg[arg.indexOf('--motiv') + 1] : 'droppe';
   if (!butiksfil) {
-    console.error('Användning: node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|tak|ingen]');
+    console.error('Användning: node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|tak|koja|ingen]');
     process.exit(1);
   }
   const filer = await byggLogga(butiksfil, ut, { variant, tagline, motiv });

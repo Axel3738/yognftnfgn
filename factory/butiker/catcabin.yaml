@@ -1,0 +1,219 @@
+# Butikskonfig för CatCabin — enproduktsbutik för utekattkojan (butiks-id
+# `catcabin`, byggd 2026-09-11 ur /ny-ops med butiksadressen ras1t2-2x i
+# prompten). Underlaget för alla val: factory/output/catcabin/BRAND.md.
+# Bolaget är samma AB som driver Matstrumpor.se, HeimGuard, TankGuard, DryTrek,
+# TackleBay och AdventLane. Adress från allabolag.se via Axels länk 2026-09-07.
+#
+# Brandet bär kategorin (utekattens egen plats), inte just den här kojan —
+# nästa produkt (värmedyna, matstation, kattlucka) blir en produktfil till.
+
+butik:
+  id: catcabin
+  brand: "CatCabin"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@catcabin.se"
+  land: SE
+  huvudmarknad: Sverige
+  # Butiksadressen ur prompten — anslutningen (steg 0) slår upp miljöns
+  # SHOPIFY_SHOP_<suffix> ur den här raden, aldrig ur butiks-id:t.
+  myshopify: "ras1t2-2x.myshopify.com"
+  # SE + NO är standard i varje OPS (Axel 2026-09-08). SEK tills NOK slås på i
+  # admin (checklistans avsnitt 5) — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  # ⚠️ Trialen skapades med PHP som valuta (steg 0, 2026-09-11). Paketsteget
+  # vägrar tills valutan är SEK i admin (checklistans avsnitt 2) — sen
+  # `--igen paket,huvudmarknad`.
+  valuta: SEK
+  moms_i_pris: true
+  # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. ⚠️ Filtret i
+  # kundvy.mjs släpper bara ord som är ett HELT värde lika i sv och nb — ett
+  # ord inne i en mening filtreras inte (mätt 2026-09-11: "utekatt" och
+  # "under bilen" är samma på norska men flaggades ändå). Lista därför bara
+  # ord som faktiskt skiljer sig på norska.
+  markorer_sv:
+    - "Köp nu"
+    - "Fri frakt"
+    - "Vanliga frågor"
+    - "Lägg i varukorgen"
+    - "ångerrätt"
+    - "Handla tryggt"
+    - "arbetsdagar"
+    - "liggmatta"
+    - "isolerade"
+    - "hopfällbar"
+    - "torr plats"
+    - "kojan"
+
+frakt:
+  fri_globalt: true
+  # Samma Temu-led som källans övriga produkter (TackleBay/DryTrek/AdventLane: 5–10).
+  leveranstid: "5–10 arbetsdagar"
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  # Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08).
+  # ⚠️ Källsidan lovar "30 dagars öppet köp" — det följer INTE med hit.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när Judge.me installerats. Tokenen är PER BUTIK och läggs i env,
+  # aldrig i filen. Utan token laddas app-CSV:n upp för hand (avsnitt 7).
+  shop_domain: "ras1t2-2x.myshopify.com"
+  token_env: "JUDGEME_CATCABIN_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — byggd från noll för CatCabin (strukturen återanvänds mellan
+# butiker, brandingen aldrig). Hela resonemanget i output/catcabin/BRAND.md.
+#
+#   Vem köper:      kattägare med utekatt och tomt — villa, radhus, landet —
+#                   30–65 år. Sekundärt den som matar en hemlös katt.
+#   Problemet:      katten sover under bilen, under altanen eller på en kall
+#                   betongtrapp när det regnar och temperaturen kryper nedåt.
+#                   Den har ingen egen plats ute.
+#   Emotionen:      oro som blir lättnad — en egen torr plats som är kattens,
+#                   synlig från köksfönstret. Alla tio recensioner är skrivna
+#                   ur ägarens perspektiv om katten.
+#   Förväntat brand: varmt och omhändertagande, men rejält — en koja som står
+#                   ute hela vintern. Inte gulligt, inte djuraffär.
+#   Känsla:         varm, trygg, rejäl, lugn.
+#
+# Paletten är kojan i skymningen: varm kolgrå bas (tyget, stativets svarta
+# metall), varm crème som yta, och EN bärnstensgul accent — ljuset i
+# köksfönstret på kvällsbilden, värmen inne i kojan. De fem tidigare butikerna
+# är alla mörkblå eller mörkgröna; det här är den första varma.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Utekattens egen plats — torr, upphöjd från marken och i lä, så du slipper undra var katten tog vägen när det regnar"
+  tonalitet: "Varm, konkret och lugn. Korta meningar om katten på trappan, regnet och kvällen — inte om hur bra produkten är. Inga utropstecken, ingen hype, inga adjektiv utan något att peka på."
+  kansla: "varm, trygg, rejäl, lugn"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F5F0E8"            # varm crème — pälsen, köket, aldrig kall grå
+    yta_djup: "#EAE2D6"
+    mork: "#2B2724"           # varm kolgrå — kojan i skymningen: header, sidfot, logga
+    text: "#221F1C"
+    text_pa_mork: "#F5F0E8"
+    linje: "#E4DDD2"
+    linje_stark: "#C9BFB1"
+    accent: "#D97B2A"         # bärnsten — ljuset i fönstret; den enda färgen som ropar
+    accent_text: "#FFFFFF"
+    god: "#3D7A55"            # mossgrön bock
+    varning: "#8A5A00"
+  typografi:
+    rubriker: "nunito_n7"     # Nunito Bold — rundade ändar, varm utan att bli barnslig
+    brodtext: "nunito_sans_n4"  # Nunito Sans — lugn brödtext i FAQ och villkor
+  form:
+    knapp_radius: 14          # mjukare än utrustningsbutikerna — ett hem, inte en verkstad
+    kort_radius: 16
+    input_radius: 10
+    badge_radius: 8
+  stil:
+    ikoner: "Linjeikoner, 1.8 i stroke, rundade ändar. Koja, tassavtryck, regndroppe, termometer — aldrig emojis i gränssnittet."
+    bilder: "Kojan i sin riktiga miljö — altanen, gräsmattan, snön, kvällen med tänt köksfönster. Nordisk trädgård, falurött och grått. AI-illustrationer märks alltid ut, precis som källan gör."
+    rubrikstil: "En scen från tomten med eyebrow i versaler. Rubriken säger var katten sover i kväll, inte vad kojan är gjord av."
+    cta: "Solid bärnstensgul knapp med vit text. Lugna verb — Lägg i varukorgen, Se kojan. Aldrig SISTA CHANSEN, ingen nedräkningstimer."
+    trust: "Diskreta rader med mossgrön bock på varm crème — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt, max 62 tecken per rad, generösa sektionsavstånd. Sidan ska kännas som en lugn höstkväll."
+    logo: "Rund, kolgrå disk, kojan STOR med tänd dörr i bärnsten, ordmärket CATCABIN litet under (variant C, vald av Axel 2026-09-11). Fungerar i en färg — dörren blir då bara en öppning."
+    favicon: "Samma kolgrå disk med bara kojan och den tända dörren."
+  # Loggan och faviconen genererade 2026-09-11 med
+  # node factory/logga-generera.mjs factory/butiker/catcabin.yaml --ut factory/output/catcabin --tagline "FOR OUTDOOR CATS" --motiv koja
+  # Variant C VALD av Axel 2026-09-11 ("most neutral"), loggad i
+  # factory/LOGGA-FEEDBACK.md. A satt provisoriskt under bygget.
+  logga: "output/catcabin/catcabin-logga-c.png"
+  favicon: "output/catcabin/catcabin-favicon.png"
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json.
+# Copyn (svenska) skrevs 2026-09-11 av en subagent (sonnet) ur briefen i
+# BRAND.md + docs/copy-regler.md; strukturen och bildvalen är huvudsessionens.
+# Norskan skrivs som egen text i output/catcabin/oversattning-nb.json — aldrig här.
+#
+# BILDER: bara riktiga källbilder utan inbränd text. Hero = leverantörens
+# genomskärning (ingen text, bara en värmepil). Regn- och snöbilderna är
+# AI-illustrationer (källans egen märkning) — märks i galleriet, aldrig som foton.
+# ---------------------------------------------------------------------------
+startsida:
+  usp:
+    - "truck:Fri frakt – Sverige & Norge"
+    - "shield:14 dagars ångerrätt"
+    - "star:Betala med Klarna"
+  hero:
+    rubrik: "Inte under bilen. I egen koja."
+    text: "Upphöjd på fyra ben, med tak och isolerade väggar. En egen torr plats för utekatten, natt efter natt."
+    knapp: "Se kojan"
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
+  marquee:
+    - "Fri frakt till Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Klarna, kort, Apple Pay och Google Pay"
+    # Subagenten skrev "Skickas från Sverige" — struket av huvudsessionen:
+    # leveransen går på Temu-ledet (5–10 arbetsdagar), påståendet går inte
+    # att belägga. Svensk kundsupport står redan på källsidan.
+    - "Svensk kundsupport"
+  produkt_etikett: "För utekatten"
+  berattelse:
+    rubrik: "Varför CatCabin finns"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
+    # Brandnivå: utekatten, inte just den här kojan.
+    text:
+      - "Vi på CatCabin har sett utekatter kura på kalla trappor och smita in under bilen när regnet kommer."
+      - "Nu väljer vi produkter som ger utekatten en egen torr plats utomhus – synlig från köksfönstret, inte gömd under bilen."
+  galleri:
+    rubrik: "Kojan i vardagen"
+    kolumner:
+      - titel: "I regnet – taket leder bort vattnet"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-regn.jpg"
+      - titel: "I snön – upphöjd från den kalla marken"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sno.jpg"
+      - titel: "Inuti – väggarna behåller värmen katten ger"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
+    markning: "Regn- och snöbilderna är AI-genererade illustrationer"
+  statement:
+    rubrik: "En egen torr plats. Inte bilen."
+    knapp: "Lägg i varukorgen"
+  omdomen:
+    eyebrow: "5,00 av 5 i betyg"
+    rubrik: "Vad kattägare säger"
+  trygghet:
+    rubrik: "Frakt och trygghet"
+    text:
+      - "Fri frakt till Sverige och Norge på alla beställningar. Leverans på 5 till 10 arbetsdagar."
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Betala med Klarna, kort, Apple Pay eller Google Pay."
+    # AI-illustration (kvällsbilden) — källans egen märkning, står i alt-texten.
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg"
+  faq_rubrik: "Vanliga frågor"
+  faq:
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "Räkna med 5 till 10 arbetsdagar från beställning."
+    - fraga: "Vad gäller för ångerrätt?"
+      svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@catcabin.se så hjälper vi dig."
+    - fraga: "Skickar ni till Norge?"
+      svar: "Ja, fri frakt till både Sverige och Norge."
+    - fraga: "Vilka betalningssätt finns?"
+      svar: "Klarna, kort, Apple Pay och Google Pay."
+  garanti:
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Du har 14 dagars ångerrätt enligt svensk lag, från dagen du tar emot paketet. Mejla hello@catcabin.se om du vill ångra."
