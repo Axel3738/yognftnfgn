@@ -152,9 +152,51 @@
     "huvudmarknad": {
       "klar": false,
       "manuell": "Butikens valuta är PHP, konfigen säger SEK — ändras i Shopify-admin."
+    },
+    "kallskanning": {
+      "klar": true,
+      "skannade": 315,
+      "rent": true,
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "marknad": {
+      "klar": true,
+      "marknader": [
+        {
+          "land": "NO",
+          "locale": "nb",
+          "marknad": "Norge",
+          "status": "ACTIVE",
+          "localeSkapad": true
+        }
+      ]
+    },
+    "oversatt": {
+      "klar": false,
+      "manuell": "nb: översätt med subagent (sonnet) — output/catcabin/oversattning-sv.json (125 nycklar) → oversattning-nb.json med samma nycklar, kör sen --igen oversatt",
+      "underlag": 125,
+      "utfall": {}
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
   "arbetstemaNamn": "CatCabin – CRO v1",
-  "uppdaterad": "2026-09-11T02:33:25.143Z"
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "kundvy-startsida",
+      "trippelkoll valuta",
+      "trippelkoll paketnivåer",
+      "trippelkoll förvald nivå",
+      "trippelkoll rabattkoder"
+    ],
+    "tid": "2026-09-11T02:33:48.756Z"
+  },
+  "uppdaterad": "2026-09-11T02:33:48.756Z"
 }

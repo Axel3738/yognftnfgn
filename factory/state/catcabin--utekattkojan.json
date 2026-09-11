@@ -30,7 +30,11 @@
     "paket": {
       "klar": false,
       "manuell": "Butikens valuta är PHP, konfigen säger SEK — byt valuta i Shopify-admin (Inställningar → Allmänt) och kör --igen paket."
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Ingen Judge.me-token (env JUDGEME_CATCABIN_TOKEN) — VA:n importerar output/utekattkojan/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
     }
   },
-  "uppdaterad": "2026-09-11T02:33:07.036Z"
+  "uppdaterad": "2026-09-11T02:33:37.191Z"
 }
