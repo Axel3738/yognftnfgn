@@ -15,8 +15,9 @@
 - [ ] 🖐 theme: Temat måste vara valt och sektionerna inlagda i Shopify-editorn.
 - [ ] ❌ doman: Primär domän är fortfarande ras1t2-2x.myshopify.com — riktig domän saknas.
 - [x] ✅ villkor: 4 policyer på plats
-- [ ] ❌ checkout: Butikens valuta är PHP, produktfilen säger SEK.
-- [ ] ❌ kundvy-produktsida: paketväljaren (ms-paket) finns
+- [x] ✅ checkout: valuta SEK
+- [ ] 🖐 checkout-betalning: Gör ett testköp och bekräfta att betalleverantören är aktiv.
+- [ ] ❌ kundvy-produktsida: paketväljaren (ms-paket) finns | sticky köpknapp
 - [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
 - [x] ✅ markörer /nb: 0 svenska markörer av 12
 

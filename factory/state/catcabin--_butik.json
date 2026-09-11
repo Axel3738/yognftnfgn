@@ -5,9 +5,9 @@
     "anslutning": {
       "klar": true,
       "domain": "ras1t2-2x.myshopify.com",
-      "name": "My Store 5",
+      "name": "CatCabin",
       "primaryDomain": "ras1t2-2x.myshopify.com",
-      "currencyCode": "PHP"
+      "currencyCode": "SEK"
     },
     "tema-upload": {
       "klar": true,
@@ -149,8 +149,8 @@
       ]
     },
     "huvudmarknad": {
-      "klar": false,
-      "manuell": "Butikens valuta är PHP, konfigen säger SEK — ändras i Shopify-admin."
+      "klar": true,
+      "valuta": "SEK"
     },
     "kallskanning": {
       "klar": true,
@@ -203,15 +203,9 @@
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/193723924848",
   "arbetstemaNamn": "CatCabin – CRO v1",
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "kundvy-startsida",
-      "trippelkoll valuta",
-      "trippelkoll paketnivåer",
-      "trippelkoll förvald nivå",
-      "trippelkoll rabattkoder"
-    ],
-    "tid": "2026-09-11T02:49:31.861Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-11T02:59:04.583Z"
   },
-  "uppdaterad": "2026-09-11T02:49:31.861Z"
+  "uppdaterad": "2026-09-11T02:59:04.584Z"
 }
