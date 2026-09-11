@@ -82,11 +82,27 @@ upp 1 469 → 1 129 **kroner** och hålls därför tillbaka.
 
 ---
 
+## Priset per marknad (mätt i kundens riktiga vy 2026-09-11)
+
+| Marknad | Pris | Jämförpris | Rabatt |
+|---|--:|--:|---|
+| SE (`/products/takskyddet`) | 1 129 kr | 1 469 kr | **23 % — verklig** |
+| NO (`/nb/products/takskyddet?country=NO`) | 1 106 NOK | **inget** | **ingen** |
+
+⚠️ **Den norska marknaden har inget jämförpris.** Shopify visar 1 106 NOK rakt av,
+utan överstruket pris. Mätt på den publika sidan med `?country=NO` — utan den
+parametern svarar sidan i SEK, eftersom valutan följer besökarens land och inte
+locale-sökvägen `/nb`. Det gör att **hela CS-konceptet inte går att köra på
+norska:** källans tre NO CS-videor bygger ord för ord på "Ordinær pris 1469
+kroner, i dag 1129 kroner" och en 23-procentig rabatt som inte finns hos
+CaraShell. Ett prisbyte räddar dem inte — det finns ingen rabatt att peka på.
+
 ## Kvarstående blockerare 2026-09-11
 
 | Blockerar | Vad | Löses av |
 |---|---|---|
-| ALLA annonser, båda marknaderna | Meta-sidan `1381171778405935` går inte att annonsera med (`error_subcode 1815813`). Sidan finns varken i businessens `owned_pages`, `client_pages` eller i `me/accounts`. Ett testanrop med HeimGuards sida går igenom — det är sidan, inte kontot. | Axel ger sig själv rollen på sidan i Business Manager |
-| NO CS ×3 | NOK-paketnivåer saknas | Axel slår på NOK i Shopify admin |
-| Kill-beslut | `inkopskostnad` 436 kr obekräftad | Axel mot Temu-kvittot |
-| Talet i PD ×3 | säger "dragsko" och "förvaringspåse" | omdubb, eller Axels besked att det får stå |
+| ~~Meta-sidan~~ | **LÖST 2026-09-11.** Axel gav sig själv rollen på `1381171778405935`; ett skarpt `adcreatives`-anrop går igenom och sidan är läsbar. | — |
+| ~~NOK~~ | **LÖST 2026-09-11.** Norska marknaden säljer i NOK (1 106). | — |
+| NO CS ×3 | Norska marknaden har inget jämförpris ⇒ ingen rabatt att annonsera. Videorna säger dessutom "Tretti dagers åpent kjøp" (butiken har 14 dagars ångerrätt). | **Axels beslut:** ska den norska marknaden ha ett jämförpris? Utan det är CS-konceptet dött på NO. |
+| Kill-beslut | `inkopskostnad` 436 kr är HÄRLEDD. Axel säger att han lagt in COGS — men talet i repot är oförändrat. | Axel ger siffran han lade in, så `factory/produkter/takskyddet.yaml` och kampanjnamnens BE-ROAS kan rättas |
+| Talet i PD ×3 | säger "dragsko" och "förvaringspåse" — påståenden produktfilen förbjuder | omdubb, eller Axels besked att det får stå |

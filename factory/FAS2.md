@@ -238,6 +238,16 @@ allt tyst. Alla fyra är fixade och har regressionstester.
   — vinkel + nummer — med två regler som båda måste hålla: numret identiskt,
   vinkelbokstäverna prefix av varandra. `SP_1` tar aldrig `SP_2`, `CO` aldrig `CS`.
 
+⚠️ **KONTOTS RATE LIMIT ÄR EN RIKTIG BLOCKERARE VID FÖRSTA LAUNCHEN.** Mätt
+2026-09-11: efter 25 medieuppladdningar + 2 kampanjer + 7 adsets + 16 annonser i
+samma timme svarade `act_915422744950975` **"User request limit reached"**
+(kod 17) på varje nytt `adsets`- och `ads`-anrop. `no-video-launch.mjs` har
+backoff för kod 17 (8 försök × 15 s ≈ 9 min) — det räckte inte. Kontots kvot är
+per KONTO och delas av alla OPS-butiker. Planera därför första launchen som
+TVÅ pass med en rejäl paus emellan, eller räkna med att sista konfigen måste
+köras om senare. Skripten är idempotenta, så en omkörning är gratis — men en
+session som ger upp vid första felet lämnar halva kampanjen tom.
+
 **Domarna efter alla fixar (SE, 16 annonser):** `ren` 9 · `bara-copy` 3 ·
 `kräver-omdubb` 3 · `kräver-slutkortsbygge` 1.
 
