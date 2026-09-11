@@ -15,7 +15,7 @@
 //
 // Noll beroenden: rå fetch mot Messages API, som resten av repo-roten.
 
-import { anthropicNyckel, NYCKEL_SAKNAS } from './anthropic-nyckel.mjs';
+import { anthropicNyckel, anthropicHeaders, NYCKEL_SAKNAS, WORKSPACE_SAKNAS } from './anthropic-nyckel.mjs';
 
 const MODELL = process.env.DISCORD_OVERSATT_MODELL || 'claude-sonnet-5';
 
@@ -83,11 +83,7 @@ export async function oversattTillEngelska(text, { nyckel = anthropicNyckel() } 
   if (!nyckel) throw new Error(NYCKEL_SAKNAS);
   const svar = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: {
-      'x-api-key': nyckel,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json',
-    },
+    headers: { ...anthropicHeaders(nyckel), 'content-type': 'application/json' },
     body: JSON.stringify({
       model: MODELL,
       max_tokens: 4000,
@@ -96,7 +92,11 @@ export async function oversattTillEngelska(text, { nyckel = anthropicNyckel() } 
       messages: [{ role: 'user', content: text }],
     }),
   });
-  if (!svar.ok) throw new Error(`Messages API svarade ${svar.status}: ${(await svar.text()).slice(0, 200)}`);
+  if (!svar.ok) {
+    const text = await svar.text();
+    if (svar.status === 400 && /anthropic-workspace-id/.test(text)) throw new Error(`Messages API svarade 400: ${WORKSPACE_SAKNAS}`);
+    throw new Error(`Messages API svarade ${svar.status}: ${text.slice(0, 200)}`);
+  }
   const kropp = await svar.json();
   if (kropp.stop_reason === 'refusal') throw new Error('modellen avböjde översättningen');
   const ut = (kropp.content ?? []).filter((b) => b.type === 'text').map((b) => b.text).join('').trim();

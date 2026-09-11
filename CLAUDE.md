@@ -655,6 +655,12 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   Skripten läser båda namnen via `tools/lib/anthropic-nyckel.mjs`. Säger ett
   skript att nyckeln saknas fast Axel lagt in den: kolla att den heter
   `ANTHROPIC_NYCKEL` i Environments.
+  ⚠️ **Nyckeln måste vara bunden till en workspace** (mätt 2026-09-11: nyckeln
+  Axel lade in är äkta, 108 tecken, men API:t svarar 400 "not scoped to a
+  workspace"). Två vägar, båda fungerar: skapa nyckeln inne i en workspace på
+  console.anthropic.com, eller sätt `ANTHROPIC_WORKSPACE_ID` (`wrkspc_…`) i
+  Environments — då skickar `anthropicHeaders()` headern på varje anrop.
+  Felet står i klartext i skripten (`WORKSPACE_SAKNAS`), inte som en rå 400.
 - **PAUSED i annonskontot är ett beslut, aldrig ett fel att "rätta".** En
   kampanj/adset/annons som är pausad och har spenderat > 0 kr har stängts av
   med flit (av Axel, skalningsronden eller åtgärdstrappan) — den får ALDRIG
