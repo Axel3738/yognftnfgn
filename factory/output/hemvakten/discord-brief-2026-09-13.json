@@ -1,21 +1,142 @@
 {
-  "brand": "HeimGuard", "butik": "hemvakten", "datum": "2026-09-13", "lage": "brief",
-  "siffror": { "spend_7d": 5610, "kop_7d": 7, "roas_7d": 1.61, "vinstbidrag_7d": 479, "briefs_nya": 21 },
+  "brand": "HeimGuard",
+  "butik": "hemvakten",
+  "datum": "2026-09-13",
+  "lage": "brief",
+  "siffror": {
+    "spend_7d": 5610,
+    "kop_7d": 7,
+    "roas_7d": 1.61,
+    "vinstbidrag_7d": 479,
+    "briefs_nya": 21
+  },
   "gjort": [
     "Budget unchanged at 700 SEK/day (margin 7 % is under the 16 % floor, cadence rule blocks a cut within 3 days).",
     "First ad past the data gate: HeimGuard_PD_2 — 1 673 SEK, 4 purchases, CPA 418 (break-even 538). Preliminary winner.",
     "21 new briefs in the hub as Draft: 10 variants of PD_2 / SP_2 / CS_3 (one variable each) + 11 new concepts. Copy A/B: 11 Fable, 10 Sonnet.",
     "dna.md, batch-log.md updated and pushed."
   ],
-  "briefer": [],
+  "briefer": [
+    {
+      "namn": "HeimGuard_PD_5_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_PD_5_H1-3d9270ab908c812f8f3ac0a8043c3bd0"
+    },
+    {
+      "namn": "HeimGuard_PD_5_H2",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_PD_5_H2-3d9270ab908c81e48de0cb80e8511d45"
+    },
+    {
+      "namn": "HeimGuard_PD_5_H3",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_PD_5_H3-3d9270ab908c81ae8c4cd355a3572978"
+    },
+    {
+      "namn": "HeimGuard_PD_5_H4",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_PD_5_H4-3d9270ab908c8170ae23e7c9e2f4dc8f"
+    },
+    {
+      "namn": "HeimGuard_PD_6_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_PD_6_H1-3d9270ab908c81029dd2d7794a6bafd7"
+    },
+    {
+      "namn": "HeimGuard_PD_6_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/HeimGuard_PD_6_1-3d9270ab908c81eda416d9d0b506b5c6"
+    },
+    {
+      "namn": "HeimGuard_PD_7_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_PD_7_H1-3d9270ab908c8111a1d1ca2deab0c1a1"
+    },
+    {
+      "namn": "HeimGuard_SP_19_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_SP_19_H1-3d9270ab908c81068bb2fb9c62d41350"
+    },
+    {
+      "namn": "HeimGuard_CS_12_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/HeimGuard_CS_12_1-3d9270ab908c8128b2bdcda971e903ba"
+    },
+    {
+      "namn": "HeimGuard_PD_8_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_PD_8_H1-3d9270ab908c81b6944fde4455a2ac25"
+    },
+    {
+      "namn": "HeimGuard_BOF_10_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_BOF_10_H1-3d9270ab908c8154b1fce5ed57675053"
+    },
+    {
+      "namn": "HeimGuard_PD_9_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_PD_9_H1-3d9270ab908c81b295e1fadc05947f61"
+    },
+    {
+      "namn": "HeimGuard_TR_2_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_TR_2_H1-3d9270ab908c81a08e2af10dd0061524"
+    },
+    {
+      "namn": "HeimGuard_CO_5_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_CO_5_H1-3d9270ab908c81e0b02ef0bde7128e90"
+    },
+    {
+      "namn": "HeimGuard_RI_4_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_RI_4_H1-3d9270ab908c815080cec10722976e9d"
+    },
+    {
+      "namn": "HeimGuard_SR_2_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/HeimGuard_SR_2_1-3d9270ab908c81268e5ecf8157f5c2c9"
+    },
+    {
+      "namn": "HeimGuard_FD_2_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_FD_2_H1-3d9270ab908c81aca750fb684405b4a1"
+    },
+    {
+      "namn": "HeimGuard_SP_20_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/HeimGuard_SP_20_H1-3d9270ab908c81909338c0826b70f50c"
+    },
+    {
+      "namn": "HeimGuard_TR_3_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/HeimGuard_TR_3_1-3d9270ab908c817fbda4d6dc40781739"
+    },
+    {
+      "namn": "HeimGuard_BOF_11_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/HeimGuard_BOF_11_1-3d9270ab908c81d0965af3d823bea299"
+    },
+    {
+      "namn": "HeimGuard_PD_10_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/HeimGuard_PD_10_1-3d9270ab908c81b9afb7e3df70f780ba"
+    }
+  ],
   "varningar": [
     "3 rows sit in `Creative strat review` (SP_17_H1, SP_17_H2, CS_11_H1) — no routine picks that status up. Move them to To be Reviewed when they are ready for the 13:40 delivery run.",
     "Batch #2 (7 briefs from 2026-09-11) is still in production, so the new 21 land on top of it. Take the PD_5 hook family first — cheapest edits, biggest lesson."
   ],
   "action_axel": [],
-  "action_redigerare": [ { "discord_id": "1411720622484095089", "namn": "Carl Vicente", "rader": [
-    "21 new briefs are in the Surveillance Camera creative hub as Draft (links above). Start with HeimGuard_PD_5_H1–H4: same film, new first 3 seconds.",
-    "SP_17_H1, SP_17_H2 and CS_11_H1 are in Creative strat review — if they are done, set them to To be Reviewed so the 13:40 run can launch them."
-  ] } ],
+  "action_redigerare": [
+    {
+      "discord_id": "1411720622484095089",
+      "namn": "Carl Vicente",
+      "rader": [
+        "21 new briefs are in the Surveillance Camera creative hub as Draft (links above). Start with HeimGuard_PD_5_H1–H4: same film, new first 3 seconds.",
+        "SP_17_H1, SP_17_H2 and CS_11_H1 are in Creative strat review — if they are done, set them to To be Reviewed so the 13:40 run can launch them."
+      ]
+    }
+  ],
   "nasta_korning": "2026-09-14 (budget) · 2026-09-16 (briefs)"
 }
