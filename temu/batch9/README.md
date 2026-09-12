@@ -58,3 +58,10 @@ annan produkt än länken).
   de gula ändskydden; inget målas över fotoyta. Vill Axel ha en hel krok krävs en ny källbild.
 - **Vedställskapellets "outlet"** i offerten tolkades först som ett kabeluttag — bilden visar en
   framflik som rullas upp. Copyn säger det som syns, inte det som gissas.
+
+## Notion (2026-09-12)
+Femton kort i **Product test center SE BÄVER** (`collection://d80270ab-908c-839b-9dcc-8721c5f29570`),
+namn `9 …` (ark A) och `10 …` (ark B), Status `Products`, Typ `Video - Pending Approval`, Landing
+page = svenska produktsidan, låsta räkneord + bildnot + pris i kroppen (engelska, till redigerarna).
+Snöflingorna heter `10 Snöflingor 25-pack`, värmeljusen `10 Värmeljus 24-pack` med noten att ingen
+fjärr finns.
