@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs><clipPath id="disk"><circle cx="512" cy="512" r="512"/></clipPath></defs>
+  <circle cx="512" cy="512" r="512" fill="#F1F4F5"/>
+  <g clip-path="url(#disk)">
+    <rect x="0" y="596" width="1024" height="428" fill="#1C2024"/>
+    <rect x="0" y="584" width="1024" height="12" fill="#C8391F"/>
+  </g>
+  <g class="egg"><path d="M317.7 406.2 L317.7 301.7 L537.5 301.7 Q655.4 312.4 671.5 368.7 Q521.4 411.6 317.7 406.2 Z" fill="#1C2024"/><path d="M671.5 368.7 Q521.4 411.6 317.7 406.2" fill="none" stroke="#C8391F" stroke-width="17.4" stroke-linecap="round"/><path d="M682.2 392.8 L706.3 416.9" stroke="#C8391F" stroke-width="10.7" stroke-linecap="round"/><path d="M623.2 430.3 L636.6 459.8" stroke="#C8391F" stroke-width="10.7" stroke-linecap="round"/></g>
+  <text x="512" y="714" text-anchor="middle" dominant-baseline="central" font-family="Archivo, DejaVu Sans, sans-serif" font-weight="700"
+        font-size="101" letter-spacing="10" fill="#F1F4F5">EDGEBENCH</text>
+</svg>

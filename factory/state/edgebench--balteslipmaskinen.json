@@ -1,0 +1,67 @@
+{
+  "butik": "edgebench",
+  "produkt": "balteslipmaskinen",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/10400050512167",
+      "handle": "balteslipmaskinen",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 11
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "Default Title"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": true,
+      "produkt_id": "10400050610471",
+      "variant_id": "52061504831783",
+      "handle": "kedjeslipen",
+      "ny": true,
+      "ateranvand": false,
+      "skrivet": true
+    },
+    "paket": {
+      "klar": true,
+      "nivaer": [
+        "balteslipmaskinen-a-1",
+        "balteslipmaskinen-a-2",
+        "balteslipmaskinen-a-3",
+        "balteslipmaskinen-b-1",
+        "balteslipmaskinen-b-2",
+        "balteslipmaskinen-b-3"
+      ],
+      "koder": [
+        "EDGEBENCH2A",
+        "EDGEBENCH3A",
+        "EDGEBENCH2B",
+        "EDGEBENCH3B"
+      ],
+      "frammande": [],
+      "test": "paket"
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Ingen Judge.me-token (env JUDGEME_EDGEBENCH_TOKEN) — VA:n importerar output/balteslipmaskinen/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    }
+  },
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "tracking",
+      "doman",
+      "markörer /nb"
+    ],
+    "tid": "2026-09-12T15:40:48.419Z"
+  },
+  "uppdaterad": "2026-09-12T15:40:48.419Z"
+}

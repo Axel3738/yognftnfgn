@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512" cy="512" r="512" fill="#1C2024"/>
+  <circle cx="512" cy="512" r="464" fill="none" stroke="#F1F4F5" stroke-opacity="0.3" stroke-width="4"/>
+  <g class="egg"><path d="M294.5 445 L294.5 328 L540.5 328 Q672.5 340 690.5 403 Q522.5 451 294.5 445 Z" fill="#F1F4F5"/><path d="M690.5 403 Q522.5 451 294.5 445" fill="none" stroke="#C8391F" stroke-width="19.5" stroke-linecap="round"/><path d="M702.5 430 L729.5 457" stroke="#C8391F" stroke-width="12" stroke-linecap="round"/><path d="M636.5 472 L651.5 505" stroke="#C8391F" stroke-width="12" stroke-linecap="round"/></g>
+  <line x1="332" y1="672" x2="692" y2="672" stroke="#F1F4F5" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round"/>
+  <text x="512" y="744" text-anchor="middle" dominant-baseline="central" font-family="Archivo, DejaVu Sans, sans-serif" font-weight="700"
+        font-size="98" letter-spacing="14" fill="#F1F4F5">EDGEBENCH</text>
+</svg>

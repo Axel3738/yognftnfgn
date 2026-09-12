@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs><clipPath id="disk"><circle cx="512" cy="512" r="512"/></clipPath></defs>
+  <circle cx="512" cy="512" r="512" fill="#1C2024"/>
+  <g clip-path="url(#disk)">
+    <g transform="rotate(-16 512 512)">
+      <rect x="-80" y="450" width="1184" height="158" fill="#C8391F"/>
+      <rect x="-80" y="440" width="1184" height="10" fill="#F1F4F5" fill-opacity="0.18"/>
+    </g>
+  </g>
+  <g class="egg"><path d="M433.7 308.2 L433.7 266.1 L522.3 266.1 Q569.8 270.4 576.3 293.1 Q515.8 310.4 433.7 308.2 Z" fill="#F1F4F5"/><path d="M576.3 293.1 Q515.8 310.4 433.7 308.2" fill="none" stroke="#C8391F" stroke-width="7" stroke-linecap="round"/><path d="M580.6 302.8 L590.3 312.5" stroke="#C8391F" stroke-width="4.3" stroke-linecap="round"/><path d="M556.8 317.9 L562.2 329.8" stroke="#C8391F" stroke-width="4.3" stroke-linecap="round"/></g>
+  <g transform="rotate(-16 512 512)">
+    <text x="512" y="529" text-anchor="middle" dominant-baseline="central" font-family="Archivo, DejaVu Sans, sans-serif" font-weight="700"
+          font-size="107" letter-spacing="9" fill="#FFFFFF">EDGEBENCH</text>
+  </g>
+  <text x="512" y="792" text-anchor="middle" dominant-baseline="central" font-family="Archivo, DejaVu Sans, sans-serif" font-weight="700"
+        font-size="30" letter-spacing="9" fill="#F1F4F5" fill-opacity="0.7">SHARP EDGES, EVERY TIME</text>
+</svg>

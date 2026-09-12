@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <circle cx="128" cy="128" r="128" fill="#1C2024"/>
+  <g class="egg"><path d="M14.9 151.4 L14.9 90.6 L142.8 90.6 Q211.5 96.8 220.8 129.6 Q133.5 154.5 14.9 151.4 Z" fill="#F1F4F5"/><path d="M220.8 129.6 Q133.5 154.5 14.9 151.4" fill="none" stroke="#C8391F" stroke-width="10.1" stroke-linecap="round"/><path d="M227.1 143.6 L241.1 157.6" stroke="#C8391F" stroke-width="6.2" stroke-linecap="round"/><path d="M192.7 165.4 L200.5 182.6" stroke="#C8391F" stroke-width="6.2" stroke-linecap="round"/></g>
+</svg>

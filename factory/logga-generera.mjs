@@ -9,7 +9,7 @@
 // SVG-funktionerna (loggaSvgA/B/C, faviconSvg) är ren logik och går att
 // köra utan sharp.
 //
-//   node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|koja|ingen]
+//   node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|tak|koja|egg|ingen]
 //
 // Utan --variant skrivs alla tre: <id>-logga-a.png, -b.png, -c.png (1024²)
 // + <id>-favicon.png (256²) + SVG-källorna. Färgerna kommer ur butikens EGEN
@@ -18,9 +18,15 @@
 // (ladda ner TTF från jsDelivrs spegel av google/fonts till ~/.fonts och kör
 // fc-cache). Rastreringen görs av sharp (librsvg) ur pipeline/node_modules.
 //
-//   a — emblem: mörk disk, tunn ring, ordmärket spärrat, droppe ovanför
-//   b — sigill: ljus disk med mörk ring, ordmärket i två rader (TANK / GUARD)
+//   a — bandet: mörk disk, brett diagonalt accentband, ordmärket PÅ bandet
+//   b — delad disk: ljus överdel med motivet stort, mörk underdel med ordmärket
 //   c — monogram: mörk disk, stor initialkombination, ordmärket litet under
+//       (med ett eget motiv: motivet stort i stället för monogrammet)
+//
+// ⚠️ a och b BYTTES 2026-09-12 (EdgeBench). De gamla kompositionerna (emblem
+// och sigill) hade valts 0 gånger av 3 i factory/LOGGA-FEEDBACK.md, och både
+// feedbackloopen och PROCESS.md säger att en variant som aldrig väljs ska
+// bytas mot något nytt — inte visas en gång till med ett nytt motiv i.
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -119,14 +125,42 @@ const KOJA = (cx, cy, r, ram, flik) => {
   );
 };
 
+// En knivklinga med EGGEN markerad (EdgeBench 2026-09-12): rak rygg, spets åt
+// höger, och underkanten — eggen — dragen som en linje i accentfärgen med två
+// gnistor vid spetsen. Motivet är produktens enda leverans: en vass egg.
+// `ram` = klingans färg, `flik` = eggens och gnistornas.
+const EGG = (cx, cy, r, ram, flik) => {
+  const n = (v) => Math.round(v * 10) / 10;
+  // Klingan sträcker sig -1.22 … +1.68 i x (gnistorna ligger utanför spetsen),
+  // så formen skiftas vänster för att bli optiskt centrerad kring cx.
+  const p = (x, y) => `${n(cx + (x - 0.23) * r)} ${n(cy + y * r)}`;
+  // Klingan: klack till vänster, rak rygg, buken som svänger upp till en
+  // spets till höger. Eggen är BUKEN — samma kurva dras sedan som en tjock
+  // linje i accentfärgen, så den lyser utan att sticka ut förbi spetsen.
+  const buk = `Q${p(0.3, 0.34)} ${p(-1.22, 0.3)}`;
+  const klinga = `M${p(-1.22, 0.3)} L${p(-1.22, -0.48)} L${p(0.42, -0.48)} Q${p(1.3, -0.4)} ${p(1.42, 0.02)} ${buk} Z`;
+  return (
+    `<g class="egg">` +
+    `<path d="${klinga}" fill="${ram}"/>` +
+    // eggen: buken dragen som en lysande linje, inom klingans egen bredd
+    `<path d="M${p(1.42, 0.02)} ${buk}" fill="none" stroke="${flik}" stroke-width="${n(r * 0.13)}" stroke-linecap="round"/>` +
+    // två gnistor som slår av från eggen vid spetsen
+    `<path d="M${p(1.5, 0.2)} L${p(1.68, 0.38)}" stroke="${flik}" stroke-width="${n(r * 0.08)}" stroke-linecap="round"/>` +
+    `<path d="M${p(1.06, 0.48)} L${p(1.16, 0.7)}" stroke="${flik}" stroke-width="${n(r * 0.08)}" stroke-linecap="round"/>` +
+    `</g>`
+  );
+};
+
 // Motivet ovanför ordmärket. droppe = standard (bakåtkompatibelt), lucka =
 // kalenderlucka, tak = husvagnstak under överdrag, koja = utekattkoja på ben,
-// ingen = bara ordmärket. Väljs med --motiv eller byggLoggaSvg(..., { motiv }).
+// egg = knivklinga med markerad egg, ingen = bara ordmärket. Väljs med
+// --motiv eller byggLoggaSvg(..., { motiv }).
 export const MOTIV = {
   droppe: (cx, cy, r, { fill }) => DROPPE(cx, cy, r, fill),
   lucka: (cx, cy, r, { ram, flik }) => LUCKA(cx, cy, r, ram, flik),
   tak: (cx, cy, r, { ram, flik }) => TAK(cx, cy, r, ram, flik),
   koja: (cx, cy, r, { ram, flik }) => KOJA(cx, cy, r, ram, flik),
+  egg: (cx, cy, r, { ram, flik }) => EGG(cx, cy, r, ram, flik),
   ingen: () => '',
 };
 
@@ -147,17 +181,36 @@ function ordStorlek(ord, maxBredd, faktor = 0.68) {
   return Math.floor(maxBredd / (ord.length * faktor));
 }
 
+// a — BANDET. Mörk disk med ett brett diagonalt accentband tvärs över, och
+// ordmärket ligger PÅ bandet och lutar med det. Motivet står ovanför.
+//
+// ⚠️ Nykomposition 2026-09-12 (EdgeBench). Den gamla a var ett centrerat
+// emblem — mörk disk, tunn ring, motivet litet ovanför ordmärket — och den
+// hade valts 0 gånger av 3 (`factory/LOGGA-FEEDBACK.md`). PROCESS.md:
+// "gör c till utgångsläge och pröva något NYTT i a/b, inte ett nytt motiv i
+// samma komposition." Axel har sagt att han gillar liv och rörelse i en
+// logga (TackleBays horisont), och ett diagonalband är det enklaste sättet
+// att få det utan att loggan slutar fungera i en färg.
 export function loggaSvgA(brand, t) {
   const f = t.farger;
   const ord = String(brand).toUpperCase();
-  const size = Math.min(140, ordStorlek(ord, 740));
+  const size = Math.min(112, ordStorlek(ord, 660));
+  const lutning = -16;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs><clipPath id="disk"><circle cx="512" cy="512" r="512"/></clipPath></defs>
   <circle cx="512" cy="512" r="512" fill="${f.mork}"/>
-  <circle cx="512" cy="512" r="452" fill="none" stroke="${f.text_pa_mork}" stroke-opacity="0.35" stroke-width="6"/>
-  ${motivFn(t)(512, 372, 46, { fill: f.text_pa_mork, ram: f.text_pa_mork, flik: f.accent })}
-  <text x="512" y="548" text-anchor="middle" dominant-baseline="central" ${font(t)}
-        font-size="${size}" letter-spacing="${Math.round(size * 0.1)}" fill="${f.text_pa_mork}">${eskapa(ord)}</text>
-  <text x="512" y="660" text-anchor="middle" dominant-baseline="central" ${font(t)}
+  <g clip-path="url(#disk)">
+    <g transform="rotate(${lutning} 512 512)">
+      <rect x="-80" y="450" width="1184" height="158" fill="${f.accent}"/>
+      <rect x="-80" y="440" width="1184" height="10" fill="${f.text_pa_mork}" fill-opacity="0.18"/>
+    </g>
+  </g>
+  ${motivFn(t)(512, 292, 54, { fill: f.text_pa_mork, ram: f.text_pa_mork, flik: f.accent })}
+  <g transform="rotate(${lutning} 512 512)">
+    <text x="512" y="529" text-anchor="middle" dominant-baseline="central" ${font(t)}
+          font-size="${size}" letter-spacing="${Math.round(size * 0.08)}" fill="${f.accent_text}">${eskapa(ord)}</text>
+  </g>
+  <text x="512" y="792" text-anchor="middle" dominant-baseline="central" ${font(t)}
         font-size="30" letter-spacing="9" fill="${f.text_pa_mork}" fill-opacity="0.7">${eskapa(t.tagline ?? '')}</text>
 </svg>
 `;
@@ -169,22 +222,28 @@ export function orddelar(brand) {
   return delar.map((d) => d.toUpperCase());
 }
 
+// b — DELAD DISK. Disken delad i två: ljus överdel med motivet stort i
+// brandets mörka färg, mörk underdel med ordmärket. Skarven är en accentlinje.
+//
+// ⚠️ Nykomposition 2026-09-12 (EdgeBench), av samma skäl som a: den gamla b
+// var ett sigill (ljus disk, tjock mörk ring, ordmärket i två rader) och hade
+// valts 0 gånger av 3. Det här är tvåfärgat i stället för inramat — och till
+// skillnad från a och c bär den brandet på mörkt mot ljust i SAMMA märke.
 export function loggaSvgB(brand, t) {
   const f = t.farger;
-  const delar = orddelar(brand);
-  const langsta = delar.reduce((a, b) => (b.length > a.length ? b : a), '');
-  const size = Math.min(190, ordStorlek(langsta, 600, 0.7));
-  const startY = delar.length === 1 ? 540 : 512 - ((delar.length - 1) * (size + 20)) / 2 + 20;
-  const rader = delar
-    .map((d, i) => `<text x="512" y="${startY + i * (size + 20)}" text-anchor="middle" dominant-baseline="central" ${font(t)} font-size="${size}" letter-spacing="${Math.round(size * 0.06)}" fill="${f.mork}">${eskapa(d)}</text>`)
-    .join('\n  ');
-  const sistaY = startY + (delar.length - 1) * (size + 20) + size * 0.62;
+  const ord = String(brand).toUpperCase();
+  const size = Math.min(104, ordStorlek(ord, 620));
+  const skarv = 596;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs><clipPath id="disk"><circle cx="512" cy="512" r="512"/></clipPath></defs>
   <circle cx="512" cy="512" r="512" fill="${f.yta}"/>
-  <circle cx="512" cy="512" r="470" fill="none" stroke="${f.mork}" stroke-width="34"/>
-  ${motivFn(t)(512, startY - size * 0.62 - 60, 30, { fill: f.accent, ram: f.mork, flik: f.accent })}
-  ${rader}
-  <line x1="392" y1="${sistaY + 34}" x2="632" y2="${sistaY + 34}" stroke="${f.accent}" stroke-width="8" stroke-linecap="round"/>
+  <g clip-path="url(#disk)">
+    <rect x="0" y="${skarv}" width="1024" height="${1024 - skarv}" fill="${f.mork}"/>
+    <rect x="0" y="${skarv - 12}" width="1024" height="12" fill="${f.accent}"/>
+  </g>
+  ${motivFn(t)(512, 366, 134, { fill: f.mork, ram: f.mork, flik: f.accent })}
+  <text x="512" y="${skarv + 118}" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="${size}" letter-spacing="${Math.round(size * 0.1)}" fill="${f.text_pa_mork}">${eskapa(ord)}</text>
 </svg>
 `;
 }
@@ -273,7 +332,7 @@ async function huvud() {
   const tagline = arg.includes('--tagline') ? arg[arg.indexOf('--tagline') + 1] : '';
   const motiv = arg.includes('--motiv') ? arg[arg.indexOf('--motiv') + 1] : 'droppe';
   if (!butiksfil) {
-    console.error('Användning: node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|tak|koja|ingen]');
+    console.error('Användning: node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--variant a|b|c] [--tagline "…"] [--motiv droppe|lucka|tak|koja|egg|ingen]');
     process.exit(1);
   }
   const filer = await byggLogga(butiksfil, ut, { variant, tagline, motiv });

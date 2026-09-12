@@ -66,6 +66,28 @@ test('typsnittUrHandle och orddelar', () => {
   assert.deepEqual(orddelar('Hemvakten'), ['HEMVAKTEN']);
 });
 
+test('a är bandet och b den delade disken — inte emblemet och sigillet', () => {
+  // ⚠️ Kompositionerna byttes 2026-09-12 (EdgeBench): de gamla a (emblem med
+  // tunn ring) och b (sigill med tjock ring, ordmärket i två rader) hade
+  // valts 0 gånger av 3 i factory/LOGGA-FEEDBACK.md. Testet finns för att
+  // ingen ska råka lägga tillbaka dem utan att läsa feedbacken.
+  const [a, b] = byggLoggaSvg(rabutik(), { motiv: 'egg' });
+  const brand = rabutik().butik.brand.toUpperCase();
+  // a: diagonalbandet i accentfärgen, ordmärket lutar med det
+  assert.ok(a.svg.includes('rotate(-16 512 512)'), 'a saknar bandets lutning');
+  assert.ok(a.svg.includes(brand), 'a bär ordmärket');
+  assert.ok(!a.svg.includes('r="452"'), 'a ska inte ha emblemets tunna ring');
+  // b: två fält med en accentskarv, ordmärket på EN rad
+  assert.ok(b.svg.includes('y="596"'), 'b saknar skarven mellan fälten');
+  assert.ok(!b.svg.includes('stroke-width="34"'), 'b ska inte ha sigillets tjocka ring');
+  assert.equal(b.svg.match(new RegExp(brand, 'g')).length, 1, 'b bär ordmärket på en rad');
+});
+
+test('motiv egg: klingan ritas i alla tre varianter + favicon', () => {
+  const jobb = byggLoggaSvg(rabutik(), { motiv: 'egg' });
+  for (const j of jobb) assert.ok(j.svg.includes('class="egg"'), `${j.namn} saknar klingan`);
+});
+
 test('motiv koja: kojan ritas i alla tre varianter + favicon, och c blir motiv-ledd i stället för monogram', () => {
   const jobb = byggLoggaSvg(rabutik(), { motiv: 'koja' });
   for (const j of jobb) assert.ok(j.svg.includes('class="koja"'), `${j.namn} saknar kojan`);

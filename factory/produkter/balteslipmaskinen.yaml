@@ -1,0 +1,350 @@
+# EdgeBench — produkt 1: Mini bälteslipmaskin 3-i-1.
+# Källa: baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare
+# Pris, paketnivåer, recensioner och annonsdata lästa ur källan 2026-09-12.
+#
+# BILDEN ÄR FACIT (factory/output/balteslipmaskinen/kalla-produkt.json + den
+# enda produktbilden): svart bottenplatta i metall med fyra gummifötter, motor
+# som driver ett slipband över två rullar med spännfjäder, slipsten på vänstra
+# axeländen, polerskiva i bomull på den högra. Medföljer enligt bilden: två
+# insexnycklar, ca 10 extra slipband, ca 10 sliprondeller, ett block grön
+# polerpasta, nätadapter med sladd och ett gult plastskydd.
+# ⇒ "3-i-1" = slipband + slipsten + polerskiva. Maskinen går på NÄTADAPTER.
+#
+# Okänt och därför aldrig påstått: mått, vikt, effekt i watt, varvtal, bandets
+# mått, vad det gula plastskyddet är för, maxstorlek på kniv, om vinkeln går
+# att ändra. Källan säger "7 hastigheter" och "15° bältesvinkel" — de två talen
+# står i källans egen beskrivning och tas med, men syns inte i bilden.
+#
+# Copyn (svenska) skrevs 2026-09-12 av en subagent (sonnet) ur
+# output/edgebench/BRAND.md + docs/copy-regler.md (underlaget och
+# tre-frågorstestet: output/edgebench/COPY-SV.md). Vinkel, målgrupp och
+# struktur är huvudsessionens, liksom rättelserna: "sliper" → "slipar", varje
+# "fast inställd 15°" struken (källan säger aldrig att vinkeln är låst), och
+# "skyddshölje" → "gult plastskydd".
+
+produkt:
+  namn: "Bälteslipmaskin Mini 3-i-1 – Slipband, Slipsten & Polerskiva"
+  id: "balteslipmaskinen"
+  menynamn: "Slipmaskinen"
+
+brand:
+  namn: "EdgeBench"
+  domanideer:
+    # DNS-uppslag 2026-09-12: ingen A-post på någon av dem = troligen lediga.
+    # (RDAP når inte .se/.no härifrån — tomt DNS-svar är aldrig ett bevis.)
+    - "edgebench.se"
+    - "edgebench.no"
+
+ekonomi:
+  # MOMSEN: räknas UTAN moms (produktmallen, Axels besked 2026-09-09 — samma
+  # regel som Bäverbutiken och Grillkliniken). Marginalen räknas rakt på
+  # priset. Öppet ägarbeslut i factory/BESLUT-VANTAR.md punkt 1.
+  moms_antagen: false
+  # ⚠️ HÄRLEDD, inte kvitterad: källkampanjen heter "Bälteslipmaskinen |
+  # BE ROAS 1.73 | Launch 2026-08-21" och docs/temu-launch-flow.md säger
+  # BE-ROAS = pris / (pris − inköp) ⇒ 909 − 909/1,73 = 384 kr.
+  # Axel bekräftar mot Temu-kvittot innan talet får döma annonser.
+  inkopskostnad: 384
+  # Samma pris som källan. Priset ändras INTE i OPS-butiken: /ny-annonser
+  # brand-swappar källans creatives, och ett annat pris gör varje inbränd
+  # prisrad i annonserna fel. (Källans NO-annonser läser upp 1 029 NOK —
+  # det talet gäller först när NOK slås på som marknadsvaluta.)
+  pris: 909
+  jamforpris: 1182
+  # Tomt tills NOK är marknadens basvaluta och prislistan är satt i Shopify.
+  marknadspriser:
+
+varianter:
+  # Källan har en enda variant (Default Title, SKU TEMU-601102681234291).
+
+media:
+  # ⚠️ Källan har EN produktbild och EN gif — gifen är bara en långsam
+  # inzoomning av samma bild, inte ett demo. Ingen av dem bär inbränd text,
+  # så ingenting läcker på /nb. Inga påhittade miljöbilder (branding.stil).
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp"
+      alt: "Mini bälteslipmaskin 3-i-1 på svart metallplatta med fyra gummifötter, slipband över två rullar, slipsten till vänster och polerskiva i bomull till höger, med insexnycklar, extra slipband, sliprondeller, polerpasta och nätadapter"
+  videor:
+  # ⚠️ Demot ska vara en MP4 som loopar (Axels beslut 2026-09-09). Källan har
+  # ingen — bara gifen ovan, och Shopify Files tar inga videor på trial
+  # (API-GRANSER.md). Gifen bär demot tills en riktig demovideo finns; då
+  # node factory/filer.mjs <fil.mp4> + --igen metafalt.
+  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.gif"
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp"
+  # Tom med flit: det finns ingen lifestylebild, och sektionen döljs hellre
+  # än fylls med något som inte är produkten.
+  bild_lifestyle: ""
+
+beskrivning:
+  # problem_rubrik bär top spenderns vinkel (Balteslipmaskin_PD_2).
+  problem_rubrik: "Vinkeln glider för varje drag"
+  problem_text: "Kniven ligger slö i lådan. Du har provat bryne, men handen tröttnar och vinkeln glider innan slipningen är klar – resultatet blir en rundad egg i stället för en vass."
+  losning_rubrik: "15° sitter i maskinen, inte i handen"
+  losning_text: "Bandet går i 15° bältesvinkel hela vägen. Du styr trycket, maskinen håller linjen, och eggen blir jämn från spets till klack."
+
+vinkel:
+  # INTERNT — syns aldrig för kund. Källa: MagiBorsten-kampanjen
+  # 120249902177470291 "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+  # avläst 2026-09-12: 35 annonser, 29 108 kr spend, 65 köp.
+  # Över domgränsen 300 kr / 3 köp (CLAUDE.md regel 3) ligger fem annonser, och
+  # rangordnat på vinstbidrag ((BE-CPA − CPA) × köp med BE-CPA = 909 − 384 =
+  # 525 kr) vinner PD stort:
+  #   Balteslipmaskin_PD_2    10 640 kr / 22 köp / CPA 484 / ROAS 2,04 ⇒ +902 kr
+  #   Balteslipmaskin_PD_3     4 458 kr / 12 köp / CPA 372 / ROAS 2,69 ⇒ +1 836 kr
+  #   Balteslipmaskin_PD_2_1   2 470 kr /  7 köp / CPA 353 / ROAS 2,95 ⇒ +1 204 kr
+  #   Balteslipmaskin_CS_2_1   4 571 kr / 10 köp / CPA 457 / ROAS 2,11 ⇒ +680 kr
+  #   Balteslipmaskin_PD_1     2 222 kr /  6 köp / CPA 370 / ROAS 2,41 ⇒ +930 kr
+  # Top spendern PD_2 är benchmark, inte en kandidat att döma mot småannonser.
+  # Fyra av fem vinnare är PD ⇒ problem-direkt är den bevisade vinkeln.
+  huvudvinkel: "Problemet först — att slipa för hand kräver samma vinkel varje drag, annars blir eggen rundad i stället för vass, så slipningen blir aldrig av. Maskinen bär vinkeln (15° bältesvinkel) i stället för handleden. Källa: Balteslipmaskin_PD_2 i MagiBorsten (10 640 kr, 22 köp, ROAS 2,04 mot BE 1,73, avläst 2026-09-12) plus PD_3, PD_2_1 och PD_1 över domgränsen."
+  underrubrik: "Slipband, slipsten och polerskiva – vinkeln sitter i maskinen, inte i handen"
+  usp: "15° bältesvinkel"
+
+malgrupp:
+  beskrivning: "Hobbyman med en bänk i garaget, källaren eller förrådet — 30–65 år, Sverige och Norge. Har knivar som ska vara vassa: kökskniv, jaktkniv, fiskekniv, täljkniv, yxa. Kanske täljer, kanske bygger, kanske fixar. Har provat att slipa för hand med bryne eller sten och tycker att resultatet blev ojämnt. Säger 'egg', 'bryne', 'slipvinkel', 'slö', 'vass', 'bänken', 'slipband' — aldrig 'verktygsmaskin' eller 'professionell'. Sekundärt: den som polerar smycken eller metalldetaljer."
+
+problem:
+  - "Kniven ligger slö i lådan för att slipningen aldrig blir av"
+  - "Handen orkar inte hålla samma vinkel hela vägen genom slipningen"
+  - "Fel vinkel gör eggen rund i stället för vass"
+  - "En slö kniv river i stället för att skära rent"
+
+benefits:
+  - "Bandet går i 15° – du slipper hålla vinkeln i handleden"
+  - "Från slö till vass utan att gissa på gradantalet"
+  - "Samma maskin slipar, polerar och formar – en apparat på bänken i stället för tre verktyg"
+  - "Jämn egg genom hela bladet, från spets till klack"
+  - "Redo direkt – band, sten, polerskiva och tillbehör ligger i lådan"
+
+features:
+  - "3-i-1: slipband, slipsten och polerskiva i bomull"
+  - "15° bältesvinkel"
+  - "7 hastigheter"
+  - "Svart bottenplatta i metall med fyra gummifötter"
+  - "Drivs via nätadapter med sladd – ingen batteriladdning"
+  - "Medföljer: två insexnycklar, cirka tio extra slipband och cirka tio sliprondeller"
+  - "Medföljer: ett block grön polerpasta, nätadapter med sladd och ett gult plastskydd"
+
+offer:
+  beskrivning: "909 kr i stället för 1 182 kr. Två stycken ger 17 % rabatt, tre stycken 21 %. Fri frakt till Sverige och Norge, 14 dagars ångerrätt enligt svensk lag och leverans på 5 till 10 arbetsdagar."
+  bundle: "2-pack – 17 % rabatt (förvald, 'Mest populär'). 3-pack – 21 % rabatt ('Bäst pris'). Exakt källans Kaching-nivåer, se output/balteslipmaskinen/kalla-kaching-paket.json."
+  # A = källans EGNA Kaching-nivåer. De skiljer sig från fabrikens standard-A
+  # (15/20 %), så nivåerna står uttryckligen här — 17 och 21 är källans tal.
+  # B = testoffret, ett steg djupare. Förvald nivå är mitten (⌈n/2⌉), vilket
+  # också är den källan har förvald (preselectedDealBarId = 2x-nivån).
+  # Hela procenttal utan gratisrad ⇒ paket.mjs skriver PROCENTkoder, så sidan
+  # och kassan visar samma tal i varje valuta (PROCESS.md fas 4 punkt 17).
+  paket:
+    test: "paket"
+    nivaer:
+      - variant: a
+        antal: 1
+        rubrik: "1 st"
+        underrubrik: "Ordinarie pris"
+      - variant: a
+        antal: 2
+        rubrik: "2 st"
+        rabatt: 0.17
+        bricka: "Mest populär"
+      - variant: a
+        antal: 3
+        rubrik: "3 st"
+        rabatt: 0.21
+        bricka: "Bäst pris"
+      - variant: b
+        antal: 1
+        rubrik: "1 st"
+        underrubrik: "Ordinarie pris"
+      - variant: b
+        antal: 2
+        rubrik: "2 st"
+        rabatt: 0.22
+        bricka: "Mest populär"
+      - variant: b
+        antal: 3
+        rubrik: "3 st"
+        rabatt: 0.26
+        bricka: "Bäst pris"
+  # Q4-ramverket (CLAUDE.md): en billig komplementprodukt i två roller.
+  # ⚠️ BARA rollen "betald upsell i varukorgen" + fullpris-kryssrutan på nivå 1
+  # är byggd. Gratis bonus i paketnivåerna är INTE lagd, och det är ett
+  # medvetet val som Axel ska få säga ja eller nej till:
+  #   • Källans Kaching-nivåer ger redan 17 och 21 % rabatt. Q4-ramverkets
+  #     poäng är att byta DJUPARE rabatt mot mer värde — här skulle gratis
+  #     bonus komma OVANPÅ rabatten, inte i stället för den.
+  #   • Antalsregeln (Axel 2026-09-08) säger gratis_antal = paketantalet, så
+  #     ett 2-pack skulle ge bort två kedjeslipar. Inköpet är okänt men ligger
+  #     på samma Temu-led ⇒ uppskattningsvis ~25–30 % av 2-packets marginal.
+  #   • En gratisrad gör dessutom rabattkoden till ett BELOPP i stället för en
+  #     procent, och då stämmer inte paketpriset i NOK när Norge får egen
+  #     valuta (PROCESS.md fas 4 punkt 17).
+  # Ändrad rabatt är ägarens beslut (CLAUDE.md regel 12) — säger Axel ja
+  # räcker det att sätta gratis_antal på nivåerna och köra `--igen paket`.
+  bonus_produkt:
+    titel: "Kedjeslip – Handdriven, Redo för Skogen & Stugan"
+    handle: "kedjeslipen"
+    produkt_id: "10400050610471"
+    variant_id: "52061504831783"
+    pris: 249
+    i_paket: "Ingen gratisnivå — säljs som betald tilläggsprodukt i varukorgen och som fullpris-kryssruta på 1 st."
+    tillagg_kryssruta: true
+    kortnamn: "kedjeslipen"
+    sku: "TEMU-601101152010798"
+    bilder:
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c037b5a5-5001-4da8-92a2-388f9cb061da.jpg"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cc233bef-1f1a-44ff-bde6-fdf304b8b202.jpg"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a450d36f-0bfe-47c9-8082-c4c54a46bcf4.jpg"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/76588bfe-aac9-44a0-b898-aa925ff84440.jpg"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8402e5b7-2dab-4605-b8ef-0dbcc9782e00.jpg"
+    # Bonusens copy skrevs 2026-09-12 av en subagent (sonnet), underlag i
+    # output/edgebench/COPY-BONUS-SV.md. ⚠️ Huvudsessionen rättade "sliper"
+    # → "slipar" — felet står så på KÄLLANS egen sida, men det är norska.
+    problem_rubrik: "Slö Kedja Sliter på Såg och Armar"
+    problem_text: "En slö sågkedja gör sågningen trög och sliter på både motorsågen och armarna. Resultatet blir oförutsägbart – du vet aldrig hur snittet blir."
+    losning_rubrik: "Vässa Kedjan för Hand, Utan El"
+    losning_text: "Kedjeslipen slipar sågkedjan snabbt och jämnt, helt utan el. Liten nog att få plats i väskan till skogen eller stugan."
+    features:
+      - "Handdriven – ingen el behövs"
+      - "Slipar sågkedjan snabbt och jämnt"
+      - "Liten och enkel att ta med ut i skogen eller till stugan"
+      - "Passar de flesta motorsågskedjor"
+      - "Gör sågningen lättare och säkrare"
+
+reviews:
+  # 10 riktiga recensioner ur källproduktens Judge.me 2026-09-12 (snitt 5,00).
+  # Namn, titlar och texter står förrenderade i produktsidans HTML
+  # (jdgm-rev-widg) — reviews_for_widget svarar med body och reviewer = null.
+  # ⚠️ DATUMEN: alla tio har created_at 2026-08-19T22:00:00Z = 2026-08-20
+  # 00:00 svensk tid. Det är källans bulkimport, inte kunddatum — men det ÄR
+  # källans originaldatum, och inget hittas på (samma sak som AdventLane och
+  # CatCabin). Rådata: output/balteslipmaskinen/kalla-recensioner.json.
+  - namn: "Mikael"
+    betyg: 5
+    titel: "Precis vad jag behövde"
+    text: "Fungerar bra och känns praktisk."
+    datum: "2026-08-20"
+  - namn: "Emma"
+    betyg: 5
+    titel: "Enkel och bra"
+    text: "Mycket enkel att använda. Jag är nöjd."
+    datum: "2026-08-20"
+  - namn: "Anders"
+    betyg: 5
+    titel: "Bra produkt"
+    text: "Gör det lättare att få knivarna vassa."
+    datum: "2026-08-20"
+  - namn: "Linda"
+    betyg: 5
+    titel: "Rekommenderas"
+    text: "Fungerar bra och är väldigt smidig."
+    datum: "2026-08-20"
+  - namn: "Sara"
+    betyg: 5
+    titel: "Smidig att använda"
+    text: "Lätt att använda och tar inte mycket plats."
+    datum: "2026-08-20"
+  - namn: "Maria"
+    betyg: 5
+    titel: "Nöjd"
+    text: "Jag är väldigt nöjd med slipmaskinen."
+    datum: "2026-08-20"
+  - namn: "Johan"
+    betyg: 5
+    titel: "Bra köp"
+    text: "En enkel maskin som fungerar som den ska."
+    datum: "2026-08-20"
+  - namn: "Lars"
+    betyg: 5
+    titel: "Mycket smidig"
+    text: "Liten och smidig. Gör jobbet snabbt."
+    datum: "2026-08-20"
+  - namn: "Erik"
+    betyg: 5
+    titel: "Fungerar fint"
+    text: "Bra för att slipa och polera hemma."
+    datum: "2026-08-20"
+  - namn: "Anna"
+    betyg: 5
+    titel: "Bra liten maskin"
+    text: "Fungerar bra och är enkel att använda."
+    datum: "2026-08-20"
+
+faq:
+  # Ingen storleks- eller viktfråga — måtten är okända och påstås inte.
+  - fraga: "Vad kan jag slipa och polera?"
+    svar: "Knivar, trä, metall och smycken. Bandet slipar, stenen tar det grova och polerskivan ger ytan tillbaka."
+  - fraga: "Behöver den batteri?"
+    svar: "Nej. Den drivs via medföljande nätadapter med sladd."
+  - fraga: "Vad ingår i paketet?"
+    svar: "Maskinen med slipband, slipsten och polerskiva, plus två insexnycklar, cirka tio extra slipband, cirka tio sliprondeller, ett block grön polerpasta, nätadapter med sladd och ett gult plastskydd."
+  - fraga: "Hur lång är leveranstiden?"
+    svar: "5 till 10 arbetsdagar till Sverige och Norge, med fri frakt."
+  - fraga: "Kan jag ångra köpet?"
+    svar: "Ja, du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@edgebench.se så hjälper vi dig."
+
+leveranstid: "5–10 arbetsdagar"
+
+# Butikens 14 dagars ångerrätt ärvs — produkten har inga egna garantier.
+garantier:
+
+leverantor:
+  # ⚠️ Härledd ur källans SKU (TEMU-601102681234291). Sidan svarar 200 men
+  # säger "discontinued / not available" (mätt 2026-09-12) — länken är alltså
+  # OVERIFIERAD. Axel måste hitta rätt leverantörslänk före inköp.
+  url: "https://www.temu.com/goods.html?goods_id=601102681234291"
+  anteckning: "Ur källans SKU TEMU-601102681234291. Temu-sidan säger 'discontinued' (mätt 2026-09-12). Ledtid och MOQ ej verifierade."
+
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16427882119517"
+  produkt_handle: "balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  produkt_url: "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare"
+  annonskonto: "1867947880635861"
+  # ⚠️ Kampanjen bär TVÅ annonsprefix (avläst 2026-09-12): "Balteslipmaskin_"
+  # (de fem annonser som ligger över domgränsen, 26 618 kr av 29 108) och
+  # "Beltgrinder_" (nyare, 1 363 kr totalt, en enda med köp). Fältet bär det
+  # som faktiskt spenderat; Beltgrinder-annonserna står här så nästa körning
+  # vet att de finns.
+  annonsprefix: "Balteslipmaskin"
+  extra_brandord:
+    - "Beltgrinder"
+  kampanj_id: "120249902177470291"
+  kampanj: "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21"
+  # NO-kampanjen heter något annat än den svenska (produktnamnet är översatt),
+  # så mönstret måste stå här — utan fältet faller kallannonser.mjs tillbaka
+  # på fel produkts mönster. Avläst i Magiborsten NO 2026-09-12: kampanjen är
+  # PAUSED, 28 annonser med prefix "Beltesliper_NO_".
+  no_kampanjmonster: "Beltesliper"
+  no_annonsprefix: "Beltesliper"
+  no_kampanj_id: "120251998498540233"
+  # Transkripten ligger under två slugar beroende på vilken batch som gjorde
+  # dem: market-expansion/no/video-batches/2026-08-29/srt-fixed/balteslip_*.srt
+  # och .../notion-batches/2026-09-05-video/srt-orig/beltesliper_*.srt.
+  srt_slug:
+    - "balteslip"
+    - "beltesliper"
+
+kallor:
+  drive_mapp: ""
+
+meta:
+  # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
+  # 1867947880635861 (Bäverbutiken, källan).
+  ad_account_id: "915422744950975"
+  page_id: ""                 # Meta-sidan skapas av en människa (avsnitt 9)
+  pixel_id: ""                # skrivs av store-ready.mjs
+  # Prefixet är PER PRODUKT. Källan använder "Balteslipmaskin_" — samma prefix
+  # här hade kolliderat i prefixkartan, översättningskön, adsetuppslaget och
+  # commission-kopplingen med Bäverbutikens annonser.
+  creative_prefix: "EdgeBench"
+  testbudget_per_dag: 1000
+  # Landningssidan annonserna pekar på. Handlen är den kedjan SJÄLV skapar
+  # produkten med (produkt.id) — verifieras i kundvyn när butikslösenordet
+  # tagits bort.
+  produkt_url: "https://edgebench.se/products/balteslipmaskinen"
+  produkt_url_no: "https://edgebench.se/nb/products/balteslipmaskinen"
+  vinklar:
+    - "PD — Vinkeln glider för varje drag; maskinen bär 15° i stället för handleden (BEVISAD: Balteslipmaskin_PD_2, 10 640 kr / 22 köp / ROAS 2,04 mot BE 1,73)"
+    - "PD — Slö kniv i lådan: slipningen blir aldrig av för att den är svår (PD_3: 4 458 kr / 12 köp / ROAS 2,69 — högst vinstbidrag i kampanjen)"
+    - "PD — Tre maskiner i en: band, sten och polerskiva på samma bänkplats"
+    - "CS — Före/efter på eggen (CS_2_1: 4 571 kr / 10 köp / ROAS 2,11)"

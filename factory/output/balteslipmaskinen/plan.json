@@ -1,0 +1,114 @@
+{
+  "input": {
+    "title": "Bälteslipmaskin Mini 3-i-1 – Slipband, Slipsten & Polerskiva",
+    "handle": "balteslipmaskinen",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Slipband, slipsten och polerskiva – vinkeln sitter i maskinen, inte i handen</p>",
+    "vendor": "EdgeBench",
+    "seo": {
+      "title": "Bälteslipmaskin Mini 3-i-1 – Slipband, Slipsten & Polerskiva – EdgeBe…",
+      "description": "Bandet går i 15° – du slipper hålla vinkeln i handleden. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "909.00",
+        "compareAtPrice": "1182.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp",
+        "contentType": "IMAGE",
+        "alt": "Mini bälteslipmaskin 3-i-1 på svart metallplatta med fyra gummifötter, slipband över två rullar, slipsten till vänster och polerskiva i bomull till höger, med insexnycklar, extra slipband, sliprondeller, polerpasta och nätadapter"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Vinkeln glider för varje drag"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Kniven ligger slö i lådan. Du har provat bryne, men handen tröttnar och vinkeln glider innan slipningen är klar – resultatet blir en rundad egg i stället för en vass."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.gif"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "15° sitter i maskinen, inte i handen"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Bandet går i 15° bältesvinkel hela vägen. Du styr trycket, maskinen håller linjen, och eggen blir jämn från spets till klack."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Bandet går i 15° – du slipper hålla vinkeln i handleden\",\"Från slö till vass utan att gissa på gradantalet\",\"Samma maskin slipar, polerar och formar – en apparat på bänken i stället för tre verktyg\",\"Jämn egg genom hela bladet, från spets till klack\",\"Redo direkt – band, sten, polerskiva och tillbehör ligger i lådan\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"3-i-1: slipband, slipsten och polerskiva i bomull\",\"15° bältesvinkel\",\"7 hastigheter\",\"Svart bottenplatta i metall med fyra gummifötter\",\"Drivs via nätadapter med sladd – ingen batteriladdning\",\"Medföljer: två insexnycklar, cirka tio extra slipband och cirka tio sliprondeller\",\"Medföljer: ett block grön polerpasta, nätadapter med sladd och ett gult plastskydd\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vad kan jag slipa och polera?\",\"svar\":\"Knivar, trä, metall och smycken. Bandet slipar, stenen tar det grova och polerskivan ger ytan tillbaka.\"},{\"fraga\":\"Behöver den batteri?\",\"svar\":\"Nej. Den drivs via medföljande nätadapter med sladd.\"},{\"fraga\":\"Vad ingår i paketet?\",\"svar\":\"Maskinen med slipband, slipsten och polerskiva, plus två insexnycklar, cirka tio extra slipband, cirka tio sliprondeller, ett block grön polerpasta, nätadapter med sladd och ett gult plastskydd.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"5 till 10 arbetsdagar till Sverige och Norge, med fri frakt.\"},{\"fraga\":\"Kan jag ångra köpet?\",\"svar\":\"Ja, du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@edgebench.se så hjälper vi dig.\"}]"
+    }
+  ]
+}

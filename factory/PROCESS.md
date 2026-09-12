@@ -348,6 +348,65 @@ Mätningar från samma bygge:
 
 ---
 
+## Tunn källa och engelska knappar (EdgeBench 2026-09-12)
+
+Butiken `aphkky-ke`, mini-bälteslipmaskinen. Steg 0 svarade "Connected ✓" med
+alla 16 scopes, och kedjan gick steg 1–16 rakt igenom på första körningen.
+Fynden:
+
+- **Primärspråket `en` gör kundens knappar ENGELSKA — och temat bär redan
+  svenskan.** Produktsidan renderade `Add to cart`, `Sold out` och lådans
+  `Check out`, medan samma temas `locales/sv.json` innehåller "Lägg i
+  varukorgen", "Slutsåld" och "Gå till kassan" (och `nb.json` de norska).
+  Ingenting är trasigt: Shopify väljer locale-filen efter butikens
+  DEFAULT-språk, och en färsk trial står på `en`. Klicket finns redan i
+  checklistans avsnitt 2 ("Settings → Languages → Swedish is the default"),
+  men det stod där som en formalitet — nu vet vi vad som faktiskt syns för
+  kunden utan det. Kundvyns strukturkoll blev grön ändå (våra EGNA strängar
+  är svenska), så **läs köpknappens text i riktig HTML efter språkklicket**
+  och säg aldrig att butiken är klar innan den står på svenska.
+  ⚠️ Blanda inte ihop det med primärMARKNADEN (CatCabin-fyndet nedan) — två
+  olika klick i två olika menyer, båda i avsnitt 2.
+- **Fonthandlet går att BEVISA, inte bara hoppas på.** `archivo_n7` +
+  `ibm_plex_sans_n4` (ny kombination, ingen syskonbutik har den) hittades
+  båda i den renderade storefront-HTML:en. Ett ogiltigt Shopify-fonthandle
+  ger ingen userError — temat faller tyst tillbaka på systemfonten. Curla
+  sidan och sök på familjenamnet i stället för att gissa.
+- **Källan kan ha EN ENDA bild.** Produktsidan hade en produktbild och en GIF
+  som bara är en långsam inzoomning av samma bild. Då **utelämnas galleriet
+  helt** (`startsida.galleri` borta) — tre kopior av samma bild är sämre än
+  ingen sektion, och en påhittad miljöbild är förbjuden. Hero och
+  trygghetsbild delar källbilden. Butiken blir tunn, och det ska stå i
+  slutrapporten som en riktig lucka, inte döljas.
+- **Källans Kaching-nivåer är inte alltid fabrikens standard-A.** Här 17 % och
+  21 % mot standardens 15/20. Skriv då nivåerna uttryckligen i produktfilen
+  med `rabatt: 0.17` — hela procenttal utan gratisrad ger PROCENTkoder
+  (`EDGEBENCH2A = −17 %`), och det är procentkoden som gör att sidan och
+  kassan visar samma tal när Norge får egen valuta.
+- **Q4-ramverkets gratisbonus lades INTE.** Källan rabatterar redan 17/21 %,
+  så en gratisrad hade kommit ovanpå rabatten i stället för i stället för
+  den — och antalsregeln (2-pack ⇒ två gratis) hade tagit ~25–30 % av
+  paketets marginal. Bonusen (kedjeslipen 249 kr) byggdes som betald
+  korg-upsell + fullpris-kryssruta, som TackleBay. **Ändrad rabatt är
+  ägarens beslut** (CLAUDE.md regel 12) — motiveringen står i produktfilen,
+  och ett ja räcker för `gratis_antal` + `--igen paket`.
+- **En produkt kan ha TVÅ annonsprefix i samma källkampanj.**
+  `Balteslipmaskin_` (26 618 kr av 29 108) och `Beltgrinder_` (1 363 kr).
+  `kalla.annonsprefix` bär det som faktiskt spenderat; det andra skrivs i
+  `kalla.extra_brandord` så nästa körning vet att det finns.
+- **Loggfeedbackens "byt ut det som aldrig väljs" gäller KOMPOSITIONEN.**
+  Sammanfattningen sa a 0, b 0, c 3, och PROCESS.md hade redan skärpt regeln
+  (2026-09-10). Därför är `loggaSvgA` och `loggaSvgB` nya: **a = bandet**
+  (diagonalt accentband tvärs över disken, ordmärket lutar med det) och
+  **b = delad disk** (ljus överdel med motivet stort, mörk underdel med
+  ordmärket). c står orörd som utgångsläge. Nytt motiv `egg` (knivklinga med
+  eggen i accentfärgen). Ett test låser att emblemet och sigillet inte
+  smyger tillbaka.
+- **Temu-länken ur SKU:n svarade 200 och sa ändå "discontinued"** — samma sak
+  som CatCabin. Länken står i produktfilen märkt OVERIFIERAD.
+
+---
+
 ## Enproduktsbutik med adressen i prompten (CatCabin 2026-09-11)
 
 Första bygget där checklistans nya avsnitt 3–4 användes fullt ut: fyra rader

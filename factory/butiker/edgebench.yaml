@@ -1,0 +1,225 @@
+# Butikskonfig för EdgeBench — enproduktsbutik för mini-bälteslipmaskinen
+# (butiks-id `edgebench`, byggd 2026-09-12 ur /ny-ops med butiksadressen
+# aphkky-ke i prompten). Underlaget för alla val: factory/output/edgebench/BRAND.md.
+# Bolaget är samma AB som driver Matstrumpor.se, HeimGuard, TankGuard, DryTrek,
+# TackleBay, AdventLane och CatCabin. Adress från allabolag.se via Axels länk
+# 2026-09-07.
+#
+# Brandet bär KATEGORIN (allt som ska ha egg på en bänk), inte just den här
+# maskinen — nästa produkt kan vara ett bryne eller ett vinkelstöd utan att
+# brandtexterna blir fel.
+
+butik:
+  id: edgebench
+  brand: "EdgeBench"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@edgebench.se"
+  land: SE
+  huvudmarknad: Sverige
+  # Butiksadressen ur prompten — anslutningen (steg 0) slår upp miljöns
+  # SHOPIFY_SHOP_<suffix> ur den här raden, aldrig ur butiks-id:t.
+  # Nycklarna ligger under suffixet `aphkky_ke` (adressens början).
+  myshopify: "aphkky-ke.myshopify.com"
+  # SE + NO är standard i varje OPS (Axel 2026-09-08). SEK tills NOK slås på i
+  # admin (checklistans avsnitt 5) — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  # Trialen skapades med SEK (läst i steg 0 2026-09-12: shop.currencyCode =
+  # SEK) — paketsteget behöver alltså inget valutabyte den här gången.
+  valuta: SEK
+  moms_i_pris: true
+  # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. ⚠️ Filtret i
+  # kundvy.mjs släpper bara ord som är ett HELT värde lika i sv och nb — ett
+  # ord inne i en mening filtreras inte. Lista därför bara ord som faktiskt
+  # SKILJER sig på norska. Uteslutna med flit: "kniv", "egg" och
+  # "hastigheter" stavas likadant på norska och kan aldrig skilja språken.
+  markorer_sv:
+    - "Köp nu"
+    - "Fri frakt"
+    - "Vanliga frågor"
+    - "Lägg i varukorgen"
+    - "ångerrätt"
+    - "arbetsdagar"
+    - "Handla tryggt"
+    - "slipband"
+    - "slipsten"
+    - "polerskiva"
+    - "bänken"
+    - "nätadapter"
+    - "vass"
+    - "slö"
+
+frakt:
+  fri_globalt: true
+  # Samma Temu-led som källans övriga produkter (TackleBay/DryTrek/AdventLane/
+  # CatCabin: 5–10 arbetsdagar).
+  leveranstid: "5–10 arbetsdagar"
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  # Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08).
+  # ⚠️ Källsidan lovar "30 dagars nöjd-kund-garanti" — det följer INTE med hit.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när Judge.me installerats. Tokenen är PER BUTIK och läggs i env,
+  # aldrig i filen. Utan token laddas app-CSV:n upp för hand (avsnitt 7).
+  shop_domain: "aphkky-ke.myshopify.com"
+  token_env: "JUDGEME_EDGEBENCH_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — byggd från noll för EdgeBench (strukturen återanvänds mellan
+# butiker, brandingen aldrig). Hela resonemanget i output/edgebench/BRAND.md.
+#
+#   Vem köper:      hobbyman med en bänk i garaget, källaren eller förrådet,
+#                   30–65 år. Knivar som ska vara vassa: kök, jakt, fiske,
+#                   täljning, yxa. Har provat att slipa för hand och tycker
+#                   att resultatet blev ojämnt.
+#   Problemet:      att slipa för hand kräver SAMMA vinkel varje drag —
+#                   annars blir eggen rundad i stället för vass. Så
+#                   slipningen blir aldrig av och kniven ligger slö i lådan.
+#   Emotionen:      irritation som blir hantverksstolthet. Vinkeln sitter i
+#                   maskinen i stället för i handleden.
+#   Förväntat brand: verkstad, inte prylbutik. Sakligt och lite kärvt, som en
+#                   bruksanvisning skriven av någon som använt maskinen.
+#   Känsla:         teknisk, rejäl, saklig, exakt.
+#
+# Paletten är den FÖRSTA kalla i OPS-familjen: gunmetall (bottenplattan och
+# motorhuset), kall stålgrå ytor — och EN accent i gnistrött, det varma stålet
+# och verkstadens egen signalfärg. De sex syskonen är mörkblå, mörkgröna eller
+# varm kolgrå med bärnsten; kunden ska inte känna igen fabriken.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Verktygen som ger eggen tillbaka — slipning där vinkeln sitter i maskinen i stället för i handleden, för dig som har en bänk och knivar som ska bita"
+  tonalitet: "Saklig, teknisk och lite kärv. Korta meningar om eggen, vinkeln och bänken — inte om hur bra maskinen är. Inga utropstecken, ingen hype, inga adjektiv utan något att peka på."
+  kansla: "teknisk, rejäl, saklig, exakt"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F1F4F5"             # kall stålgrå — verkstad, inte vardagsrum
+    yta_djup: "#E1E6E9"
+    mork: "#1C2024"            # gunmetall — bottenplattan: header, sidfot, logga
+    text: "#16191C"
+    text_pa_mork: "#F1F4F5"
+    linje: "#D5DBDE"
+    linje_stark: "#B4BEC3"
+    accent: "#C8391F"          # gnistrött — det varma stålet; enda färgen som ropar
+    accent_text: "#FFFFFF"
+    god: "#1F7A5A"             # bock
+    varning: "#8A4A10"
+  typografi:
+    rubriker: "archivo_n7"     # Archivo Bold — kompakt industriell grotesk, tål versaler
+    brodtext: "ibm_plex_sans_n4"  # IBM Plex Sans — saklig brödtext i specar och villkor
+  form:
+    knapp_radius: 6            # stramare än husdjursbutikerna — verktyg, inte hem
+    kort_radius: 8
+    input_radius: 6
+    badge_radius: 4
+  stil:
+    ikoner: "Linjeikoner, 1.8 i stroke, raka ändar. Klinga, vinkel, band, gnista — aldrig emojis i gränssnittet."
+    bilder: "Maskinen på vit botten som källan har den, och ingenting påhittat. Inga stockbilder av verkstäder, inga AI-miljöer. Saknas en bild står sektionen tom hellre än att den fylls med något som inte är produkten."
+    rubrikstil: "Versal eyebrow, kort rubrik. Rubriken säger vad som händer med eggen, inte vad maskinen är gjord av."
+    cta: "Solid gniströd knapp med vit text. Lugna verb — Lägg i varukorgen, Se maskinen. Aldrig SISTA CHANSEN, ingen nedräkningstimer."
+    trust: "Diskreta rader med grön bock på kall stålgrå — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
+    spacing: "Stramt och rakt, max 62 tecken per rad. Sidan ska kännas som en välstädad bänk."
+    logo: "Rund, gunmetallgrå disk med en knivklinga där EGGEN lyser i gnistrött. Fungerar i en färg — då blir eggen bara en linje."
+    favicon: "Samma disk med bara klingan och den lysande eggen."
+  # Loggan och faviconen genererade 2026-09-12 med
+  # node factory/logga-generera.mjs factory/butiker/edgebench.yaml --ut factory/output/edgebench --tagline "SHARP EDGES, EVERY TIME" --motiv egg
+  # ⚠️ Fylls i när den som kör valt variant (a, b eller c). Fram till dess är
+  # raden nedan provisorisk och valet loggas i factory/LOGGA-FEEDBACK.md.
+  logga: "output/edgebench/edgebench-logga-c.png"
+  favicon: "output/edgebench/edgebench-favicon.png"
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json.
+# Copyn (svenska) skrevs 2026-09-12 av en subagent (sonnet) ur BRAND.md +
+# docs/copy-regler.md; hela underlaget och tre-frågorstestet ligger i
+# output/edgebench/COPY-SV.md. Strukturen och bildvalen är huvudsessionens.
+# Norskan skrivs som egen text i output/edgebench/oversattning-nb.json.
+#
+# ⚠️ Huvudsessionens rättelser i subagentens text (2026-09-12):
+#   • "sliper" → "slipar" — subagenten skrev det norska verbet i svensk text.
+#   • Varje "fast inställd 15°" är struket. Källan säger "15° bältesvinkel",
+#     aldrig att vinkeln INTE går att ändra — det vet vi inte.
+#   • "Vassare igen" i stället för "Skarpare igen" (målgruppens eget ord).
+#   • hero-knappen "Köp EdgeBench" → "Se maskinen" (branding.stil.cta: lugna
+#     verb, och knappen leder till produktsidan — inte till kassan).
+#   • garanti.rubrik "14 dagar räcker för att ångra dig" → "14 dagars
+#     ångerrätt" (samma rubrik som i USP-raden och policyn, ett begrepp).
+#
+# ⚠️ BILDERNA: källan har EN enda produktbild (temu2-balteslip.webp) och en
+# GIF som bara är en inzoomning av samma bild. Ingen av dem bär inbränd text,
+# så ingenting läcker på /nb. Galleriet utelämnas därför helt — tre kopior av
+# samma bild är sämre än ingen sektion, och en påhittad miljöbild är förbjuden.
+# ---------------------------------------------------------------------------
+startsida:
+  usp:
+    - "truck:Fri frakt till Sverige och Norge"
+    - "shield:14 dagars ångerrätt enligt svensk lag"
+    - "star:10 recensioner, snitt 5,00 av 5"
+  hero:
+    rubrik: "Vinkeln sitter i maskinen"
+    text: "EdgeBench slipar, polerar och formar med 15° bältesvinkel – inte i handleden. Slipband, slipsten och polerskiva i en maskin på bänken."
+    knapp: "Se maskinen"
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp"
+  marquee:
+    - "Fri frakt till Sverige och Norge"
+    - "14 dagars ångerrätt enligt svensk lag"
+    - "Klarna, kort, Apple Pay och Google Pay"
+    - "10 recensioner, snitt 5,00 av 5"
+  produkt_etikett: "Slipmaskin för bänken"
+  berattelse:
+    rubrik: "En vass egg är vinkel, inte tur"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
+    # Brandnivå: eggen och bänken, inte just den här maskinen.
+    text:
+      - "En vass egg är inte tur. Den är en vinkel som hålls lika, drag efter drag, tills stålet biter igen."
+      - "Vi på EdgeBench väljer verktyg för bänken som gör den vinkeln till en inställning i stället för en känsla i handen."
+  statement:
+    rubrik: "Handleden gissar. Maskinen håller vinkeln."
+    knapp: "Se paketen"
+  omdomen:
+    eyebrow: "10 recensioner · 5,00 av 5"
+    rubrik: "Vassare igen, enligt kunderna"
+  trygghet:
+    rubrik: "5–10 dagar, 14 dagars ångerrätt"
+    text:
+      - "Fri frakt till Sverige och Norge, leverans på 5 till 10 arbetsdagar."
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Betala med Klarna, kort, Apple Pay eller Google Pay."
+    # Samma källbild som hero — den enda som finns. Ingen stockbild, ingen
+    # AI-miljö (branding.stil.bilder).
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.gif"
+  faq_rubrik: "Vanliga frågor"
+  faq:
+    - fraga: "Går den på batteri?"
+      svar: "Nej, den drivs via nätadapter med sladd."
+    - fraga: "Vad kan jag slipa?"
+      svar: "Knivar, trä, metall och smycken."
+    - fraga: "Hur snabbt kommer paketet?"
+      svar: "5 till 10 arbetsdagar, fri frakt till Sverige och Norge."
+    - fraga: "Kan jag ångra köpet?"
+      svar: "Ja, du har 14 dagars ångerrätt enligt svensk lag."
+  garanti:
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Du har 14 dagars ångerrätt enligt svensk lag, från dagen du tar emot paketet. Mejla hello@edgebench.se om du vill ångra."

@@ -1,0 +1,79 @@
+{
+  "kalla": "baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+  "last": "2026-09-12",
+  "antal": 10,
+  "snitt": "5.00",
+  "anmarkning": "Namn, titel och text ur produktsidans forrenderade jdgm-rev-widg (reviews_for_widget svarar med body/reviewer = null). Datum ur reviews_for_widget: alla tio bar created_at 2026-08-19T22:00:00Z = 2026-08-20 00:00 svensk tid, dvs kallans bulkimport, inte kunddatum.",
+  "recensioner": [
+    {
+      "namn": "Mikael",
+      "betyg": 5,
+      "titel": "Precis vad jag behövde",
+      "text": "Fungerar bra och känns praktisk.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Emma",
+      "betyg": 5,
+      "titel": "Enkel och bra",
+      "text": "Mycket enkel att använda. Jag är nöjd.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Anders",
+      "betyg": 5,
+      "titel": "Bra produkt",
+      "text": "Gör det lättare att få knivarna vassa.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Linda",
+      "betyg": 5,
+      "titel": "Rekommenderas",
+      "text": "Fungerar bra och är väldigt smidig.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Sara",
+      "betyg": 5,
+      "titel": "Smidig att använda",
+      "text": "Lätt att använda och tar inte mycket plats.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Maria",
+      "betyg": 5,
+      "titel": "Nöjd",
+      "text": "Jag är väldigt nöjd med slipmaskinen.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Johan",
+      "betyg": 5,
+      "titel": "Bra köp",
+      "text": "En enkel maskin som fungerar som den ska.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Lars",
+      "betyg": 5,
+      "titel": "Mycket smidig",
+      "text": "Liten och smidig. Gör jobbet snabbt.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Erik",
+      "betyg": 5,
+      "titel": "Fungerar fint",
+      "text": "Bra för att slipa och polera hemma.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    },
+    {
+      "namn": "Anna",
+      "betyg": 5,
+      "titel": "Bra liten maskin",
+      "text": "Fungerar bra och är enkel att använda.",
+      "created_at": "2026-08-19T22:00:00.000Z"
+    }
+  ]
+}

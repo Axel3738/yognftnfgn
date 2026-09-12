@@ -5,9 +5,14 @@ Skrivs av `node factory/logga-feedback.mjs` efter varje val (Axels beslut
 varianter genereras: den variant som vinner oftast är utgångsläget, den som
 aldrig väljs ska bytas ut mot något nytt — inte visas en gång till.
 
-Varianterna: **a** = ordmärket på mörk platta med motivet ovanför ·
-**b** = ordet delat på två rader med motivet litet ovanför ·
-**c** = ordmärket ensamt, ljust.
+Varianterna **sedan 2026-09-12** (EdgeBench): **a** = bandet — mörk disk med
+ett brett diagonalt accentband, ordmärket ligger på bandet och lutar med det ·
+**b** = delad disk — ljus överdel med motivet stort, mörk underdel med
+ordmärket · **c** = motivet stort med ordmärket litet under (oförändrad).
+
+⚠️ a och b byttes för att de valts **0 gånger av 3**. De gamla var: a =
+ordmärket på mörk platta med motivet ovanför, b = ordet delat på två rader i
+ett sigill. Raderna före 2026-09-12 nedan gäller alltså de GAMLA a och b.
 
 | Datum | Butik | Vald | Motiv | Kommentar |
 |---|---|---|---|---|
