@@ -28,7 +28,7 @@ export const RADER = [
 ];
 const KOL = { SE: 11, NO: 21 };
 const ARK = process.env.ARK || 'b';
-const csv = readFileSync(process.argv[2] || `/tmp/b9/${ARK}/offert.csv`, 'utf8');
+const csv = readFileSync(process.argv.slice(2).find((a) => !a.startsWith('--')) || `/tmp/b9/${ARK}/offert.csv`, 'utf8');
 const rows = []; { let f = '', r = [], q = false;
   for (let i = 0; i < csv.length; i++) { const c = csv[i];
     if (q) { if (c === '"' && csv[i + 1] === '"') { f += '"'; i++; } else if (c === '"') q = false; else f += c; }
