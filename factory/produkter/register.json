@@ -293,5 +293,13 @@
     "carashell": 5,
     "catcabin": 6
   },
-  "kommentar_rutinplatser": "Butikens plats i rutinschemat (factory/rutin.mjs tidFor): nattvakt 00:01 + 8 min × plats, leverans 13:40 + 5 min × plats, översättning 15:40 + 5 min × plats. Delas ut en gång av /notionscalercs setup och ändras aldrig — så ingen gammal butik flyttar när en ny tillkommer (Meta rate limit 2026-09-12 när fem startade samtidigt)."
+  "kommentar_rutinplatser": "Butikens plats i rutinschemat (factory/rutin.mjs tidFor): nattvakt 00:01 + 8 min × plats, leverans 13:40 + 5 min × plats, översättning 15:40 + 5 min × plats. Delas ut en gång av /notionscalercs setup och ändras aldrig — så ingen gammal butik flyttar när en ny tillkommer (Meta rate limit 2026-09-12 när fem startade samtidigt).",
+  "briefrond_undantag": {
+    "carashell/takskyddet": {
+      "antal": 21,
+      "satt": "2026-09-12",
+      "skal": "Axels beslut 2026-09-12 (setup-omkörning): redigerare obestämd men första briefronden ska ändå leverera 21 — han fixar redigerare asap"
+    }
+  },
+  "kommentar_briefrond_undantag": "Ägarens undantag från kadensregeln i /notionscalercs (factory/register.mjs briefantalFor): nästa briefrond skapar `antal` briefer oavsett om en redigerare är tilldelad, och kringgår Draft-spärren. Räknas av mot loggade launches (`log`) från `satt` och framåt, så summan blir rätt även om ronden hann gå en gång på gamla regeln. Sätts med `node factory/register.mjs brief-antal <nyckel> <antal> \"<skäl>\"`, tas bort med `brief-antal <nyckel> bort`. Ligger på toppnivå, nycklat per post, så rutinens stämplingar i driftraden och ett undantag på en gren kan mergas utan konflikt."
 }

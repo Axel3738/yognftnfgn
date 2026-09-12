@@ -57,7 +57,7 @@ import { dirname, join } from 'node:path';
 import { alla, api, säkerställProxy } from '../tools/meta-lib.mjs';
 import {
   laddaButik, sakerstallKonto, tillhorButiken, TROSKEL, redigerareFor, arKordag,
-  BAVERBUTIKEN_ANNONSKONTO,
+  briefantalFor, BAVERBUTIKEN_ANNONSKONTO,
 } from './register.mjs';
 import { linjetext } from './ekonomi.mjs';
 import { formateraStartskott } from './startskott.mjs';
@@ -727,6 +727,10 @@ export function skrivRapport(r, { idag = new Date().toISOString().slice(0, 10) }
   console.log(`Läge ${post.lage.toUpperCase()} · ${post.nyckel} · konto ${post.ad_account_id} · period ${hamtning.period}`);
   console.log(`Kördag ${idag}: ${kord.kordag ? 'JA' : 'NEJ'} — ${kord.skal}. Nästa: ${kord.nastaKordag}`);
   console.log(`Redigerare: ${redigerareFor(post) ?? 'ingen redigerare tilldelad'}`);
+  if (post.lage !== 'test') {
+    const b = briefantalFor(post, idag);
+    console.log(`Briefrond: ${b.antal} briefer — ${b.skal}`);
+  }
   console.log(`Prefixfilter: ${hamtning.prefix.join(' · ')}`);
   console.log(
     `Butiksfiltret: ${hamtning.rader.length} av ${hamtning.totalt} annonser i kontot är butikens. `

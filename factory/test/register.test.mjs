@@ -12,10 +12,11 @@ import {
   paraIhop, byggRegister, nastaOffset, dagnummer, arKordag,
   tillhorButiken, prefixFor, prefixEllerSkal, sakerstallKonto, sakerstallOpsKonto,
   hittaPost, laddaButik, lasRegister, upptackOps, upptackTest, redigerareFor,
-  svenskDatum, veckodag, arBriefdag, normaliseraNotionId, lasDrift,
+  svenskDatum, veckodag, arBriefdag, normaliseraNotionId, lasDrift, briefantalFor,
   OPS_ANNONSKONTO, BAVERBUTIKEN_ANNONSKONTO, CYKEL_DAGAR, TROSKEL,
-  BRIEFDAGAR_STANDARD, BRIEF_IKAPP_DAGAR,
+  BRIEFDAGAR_STANDARD, BRIEF_IKAPP_DAGAR, BRIEFER_PER_ROND, BRIEFER_UTAN_REDIGERARE,
 } from '../register.mjs';
+import { VIDEOR_PER_DAG, RONDDAGAR } from '../kadens.mjs';
 
 const post = (extra = {}) => ({
   nyckel: 'hemvakten/overvakningskameran',
@@ -463,4 +464,83 @@ test('redigerareFor hittar aldrig på en person', () => {
   assert.equal(redigerareFor({ redigerare: '   ' }), null);
   assert.equal(redigerareFor({}), null);
   assert.equal(redigerareFor({ redigerare: 'Josh' }), 'Josh');
+});
+
+// ------------------------------------------------------------ briefrondens storlek
+
+test('briefantalFor: kadensens 21 med redigerare, 7 utan — talen kommer ur kadens.mjs', () => {
+  assert.equal(BRIEFER_PER_ROND, VIDEOR_PER_DAG * RONDDAGAR);
+  assert.equal(BRIEFER_UTAN_REDIGERARE, VIDEOR_PER_DAG);
+  const med = briefantalFor({ redigerare: 'Eric J' }, '2026-09-13');
+  assert.equal(med.antal, 21);
+  assert.equal(med.kalla, 'redigerare');
+  assert.equal(med.kringgarDraftsparr, false);
+  const utan = briefantalFor({ redigerare: null }, '2026-09-13');
+  assert.equal(utan.antal, 7);
+  assert.equal(utan.kalla, 'utan-redigerare');
+  assert.equal(utan.kringgarDraftsparr, false, 'utan redigerare gäller Draft-spärren');
+  assert.match(utan.skal, /Draft/);
+});
+
+test('briefantalFor: ägarens undantag ger antalet oavsett redigerare och kringgår Draft-spärren', () => {
+  // CaraShell 2026-09-12: redigerare obestämd, men Axel vill ha 21 i första ronden ändå.
+  const u = { antal: 21, satt: '2026-09-12', skal: 'Axels beslut 2026-09-12' };
+  const b = briefantalFor({ redigerare: null, launches: [], briefrond_undantag: u }, '2026-09-13');
+  assert.equal(b.antal, 21);
+  assert.equal(b.kalla, 'undantag');
+  assert.equal(b.kringgarDraftsparr, true);
+  assert.match(b.skal, /Axels beslut 2026-09-12/);
+  assert.match(b.skal, /ingen redigerare/);
+  // Med redigerare gäller undantaget också, men texten pekar inte ut något saknat.
+  const c = briefantalFor({ redigerare: 'Jazz', launches: [], briefrond_undantag: u }, '2026-09-13');
+  assert.equal(c.antal, 21);
+  assert.doesNotMatch(c.skal, /ingen redigerare/);
+});
+
+test('briefantalFor: undantaget räknas av mot loggade launches sedan det sattes — aldrig 21 till', () => {
+  // Rutinerna klonar main. Hann ronden gå en gång på gamla regeln (7) innan
+  // undantaget nådde main ska nästa rond ge 14, så summan blir 21 — inte 28.
+  const u = { antal: 21, satt: '2026-09-12', skal: 'test' };
+  const launches = [
+    { date: '2026-09-10', count: 7 }, // före undantaget — räknas inte
+    { date: '2026-09-13', count: 7 }, // efter — räknas
+  ];
+  const b = briefantalFor({ redigerare: null, launches, briefrond_undantag: u }, '2026-09-16');
+  assert.equal(b.antal, 14);
+  assert.equal(b.levererade, 7);
+  assert.equal(b.kringgarDraftsparr, true);
+  // Uppfyllt: tillbaka till den vanliga regeln, med undantaget redovisat.
+  const klar = briefantalFor({ redigerare: null, launches: [...launches, { date: '2026-09-16', count: 14 }], briefrond_undantag: u }, '2026-09-20');
+  assert.equal(klar.antal, 7);
+  assert.equal(klar.kalla, 'utan-redigerare');
+  assert.equal(klar.kringgarDraftsparr, false);
+  assert.equal(klar.undantagUppfyllt.levererade, 21);
+  assert.match(klar.skal, /uppfyllt/);
+  // Skräp i undantaget (0, sträng, saknat antal) ⇒ den vanliga regeln, tyst.
+  assert.equal(briefantalFor({ redigerare: null, briefrond_undantag: { antal: 0 } }).antal, 7);
+  assert.equal(briefantalFor({ redigerare: 'X', briefrond_undantag: { antal: '21' } }).antal, 21);
+  assert.equal(briefantalFor({ redigerare: 'X', briefrond_undantag: { antal: '21' } }).kalla, 'redigerare');
+});
+
+test('byggRegister väver in briefrond_undantag från toppnivån, nycklat per post', () => {
+  const upptackta = ['a/1', 'b/1'].map((nyckel) => ({ nyckel, lage: 'skala', byggd: true }));
+  const r = byggRegister({
+    upptackta,
+    drift: { poster: {}, briefrond_undantag: { 'a/1': { antal: 21, satt: '2026-09-12', skal: 'x' } } },
+  });
+  const hitta = (n) => r.produkter.find((p) => p.nyckel === n);
+  assert.deepEqual(hitta('a/1').briefrond_undantag, { antal: 21, satt: '2026-09-12', skal: 'x' });
+  assert.equal(hitta('b/1').briefrond_undantag, null);
+  assert.equal(byggRegister({ upptackta: [upptackta[0]] }).produkter[0].briefrond_undantag, null);
+});
+
+test('register.json: varje briefrond_undantag har antal, datum och skäl, och pekar på en post som finns', () => {
+  const drift = lasDrift();
+  for (const [nyckel, u] of Object.entries(drift.briefrond_undantag ?? {})) {
+    assert.ok(drift.poster[nyckel], `${nyckel}: undantag utan post i registret`);
+    assert.ok(Number.isInteger(u.antal) && u.antal > 0, `${nyckel}: antal saknas`);
+    assert.match(u.satt, /^\d{4}-\d{2}-\d{2}$/, `${nyckel}: datum saknas`);
+    assert.ok(typeof u.skal === 'string' && u.skal.trim(), `${nyckel}: skäl saknas — ett undantag utan skäl går inte att förstå om två veckor`);
+  }
+  if (drift.briefrond_undantag) assert.match(drift.kommentar_briefrond_undantag ?? '', /brief-antal/);
 });

@@ -92,6 +92,15 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    Annars lämna tomt — rapporten säger då "ingen redigerare tilldelad" och
    briefronden begränsas till 7 per rond (en dags produktion) i stället för
    kadensens 21, så hubben inte fylls med briefer ingen gör.
+   **Ägarens undantag:** säger Axel uttryckligen att ronden ska leverera
+   fler trots att redigeraren inte är bestämd (CaraShell 2026-09-12: "leverera
+   21 briefer ändå den första ronden, jag fixar redigerare asap"), skriv in
+   det i registret i stället för att låtsas att en redigerare finns:
+   `node factory/register.mjs brief-antal <nyckel> 21 "Axels beslut <datum>: …"`.
+   Undantaget gäller nästa briefrond oavsett redigerare, kringgår
+   Draft-spärren i steg 5, och räknas av mot loggade launches från sitt
+   datum — så summan blir rätt även om ronden hann gå en gång på gamla
+   regeln innan undantaget nådde `main`. Tas bort med `brief-antal <nyckel> bort`.
 5. **Torrkörning av allt.** I ordning, visa utskrifterna:
    ```
    node factory/budgetrond.mjs <nyckel> --idag <datum> --torr
@@ -160,7 +169,9 @@ Börja med färsk `main`: `git fetch origin main && git checkout main && git res
 ### Steg 0 — Läget
 `node factory/register.mjs <nyckel> --idag $IDAG`. Läs av: konto, prefix,
 hubb (saknas hubben: stoppa briefdelen, gör budgetdelen, larma i rapporten),
-**Briefdag JA/NEJ**, redigerare.
+**Briefdag JA/NEJ**, redigerare, och raden **`Briefrond: N briefer — …`** —
+det är antalet steg 5 ska skapa, med skälet (kadens / utan redigerare /
+ägarens undantag). Räkna aldrig om det i huvudet.
 
 ### Steg 1 — Budgetronden (varje natt)
 ```
@@ -228,9 +239,15 @@ fortfarande i `Draft` i hubben OCH ingen redigerare är tilldelad ⇒ inga
 nya briefer den här ronden. Rapportera "waiting for editor — N briefs
 still in Draft" under ACTION NEEDED och gå till steg 8. (Mätt 2026-09-12:
 fyra butiker fick 7 briefer var på lördagen och skulle fått 7 till på
-söndagen utan att någon gjort en enda.)
-Storlek: `factory/kadens.mjs` (7/dag × 3 = 21, hälften varianter av vinnare,
-hälften nya koncept) när en redigerare är tilldelad; annars **7**. Varje
+söndagen utan att någon gjort en enda.) **Undantaget:** säger steg 0:s
+`Briefrond:`-rad "undantag … Draft-spärren kringgås" har ägaren beslutat
+att briefer ska ligga och vänta på en redigerare som kommer — skapa dem,
+och skriv i rapporten att de väntar på en redigerare.
+Storlek: talet på `Briefrond:`-raden i steg 0 (`factory/register.mjs
+briefantalFor`): `factory/kadens.mjs` (7/dag × 3 = 21, hälften varianter av
+vinnare, hälften nya koncept) när en redigerare är tilldelad; annars **7**;
+eller ägarens undantag (`brief-antal`, se setup steg 4) som räknas av mot
+det som redan loggats. Varje
 variant pekar på sin förälder och isolerar EN variabel. Varje nytt koncept
 pekar på playbook, winning line eller swipe — annars märks det `gissning`.
 Ta med alla väntande items i `backlog.md` (märk `[använd i batch #N]`).
@@ -296,7 +313,7 @@ låtsas aldrig.
 - [ ] Briefdag avläst ur registret (JA/NEJ med skäl)
 - [ ] *(briefdag)* ANALYSMETOD:s snabbchecklista avbockad; vinstbidragstabellen visad; "för tidigt" utanför rankingen; ärvd historik märkt ÄRVD
 - [ ] *(briefdag)* Feedback-loop: varje annons i förra batchen har sitt utfall i batch-log.md; ≥ 3 mönster med bevisad/hypotes; dna.md uppdaterad — eller "kallstart" utskrivet
-- [ ] *(briefdag)* Batch enligt kadens (21 med redigerare / 7 utan), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
+- [ ] *(briefdag)* Batch enligt `Briefrond:`-raden (21 med redigerare / 7 utan / ägarens undantag), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
 - [ ] *(briefdag)* Copy av subagent, varannan fable/sonnet, taggen i VARIABELTAGGAR, tre-frågorstestet redovisat, vägen (Agent/API) rapporterad
 - [ ] *(briefdag)* Rader skapade i hubben via `tools/notion-brief.mjs` — resultat med url visat
 - [ ] Discord-rapport postad på engelska i butikens server; ping bara under ACTION NEEDED

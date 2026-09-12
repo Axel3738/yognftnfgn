@@ -10,6 +10,7 @@
 //   node factory/register.mjs brief-kord <butik> [YYYY-MM-DD]    → stämpla senaste_brief (briefronden)
 //   node factory/register.mjs notion <butik> <database_id|url> [namn…]  → koppla Notion-hubben
 //   node factory/register.mjs redigerare <butik> <namn> [discord-id]    → tilldela redigerare
+//   node factory/register.mjs brief-antal <butik> <antal|bort> "<skäl>"  → ägarens undantag: nästa briefrond får <antal> oavsett redigerare
 //
 // Två kalendrar per post (Axels beslut 2026-09-10):
 //   KÖRDAG   — budgetronden (/skalningskungen), var tredje dag via kordag_offset.
@@ -40,6 +41,7 @@ import { dirname, join } from 'node:path';
 import { lasYaml } from './yaml.mjs';
 import { sammanfoga } from './butik.mjs';
 import { ekonomiForProdukt, linjetext } from './ekonomi.mjs';
+import { VIDEOR_PER_DAG, RONDDAGAR } from './kadens.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGISTERFIL = join(ROT, 'factory', 'produkter', 'register.json');
@@ -62,6 +64,14 @@ export const BRIEFDAGAR_STANDARD = Object.freeze([0, 3]);
 // mest fyra dygn isär (ons→sön), så fem betyder att en dag faktiskt missats.
 export const BRIEF_IKAPP_DAGAR = 5;
 const VECKODAGSNAMN = ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'];
+
+// Briefrondens storlek. Kadensen (factory/kadens.mjs, Axels tal 2026-09-09)
+// ger 7/dag × 3 dagar = 21 per rond när en redigerare är tilldelad. Utan
+// redigerare begränsas ronden till en dags produktion, 7, så hubben inte
+// fylls med briefer ingen gör (mätt 2026-09-12: fyra butiker fick 7 var på
+// lördagen utan att någon gjort en enda).
+export const BRIEFER_PER_ROND = VIDEOR_PER_DAG * RONDDAGAR;
+export const BRIEFER_UTAN_REDIGERARE = VIDEOR_PER_DAG;
 
 /**
  * Dagens datum i SVENSK tid som YYYY-MM-DD. Containern går i UTC, och
@@ -418,6 +428,12 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       // annars standarden (ons + sön). Ändras alltid HÄR — aldrig i cron.
       briefdagar: briefdagarUr(d?.briefdagar ?? drift.briefdagar),
       senaste_brief: d?.senaste_brief ?? '',
+      // Ägarens undantag från kadensregeln (briefantalFor). Ligger på
+      // TOPPNIVÅ i register.json, nycklat på posten — inte i driftraden —
+      // så att en rutin som pushar sin stämpling (kord, brief-kord, log) i
+      // driftraden och en gren som lägger till ett undantag går att merga
+      // utan konflikt.
+      briefrond_undantag: drift.briefrond_undantag?.[post.nyckel] ?? null,
       cycle_start: d?.cycle_start ?? '',
       launches: Array.isArray(d?.launches) ? d.launches : [],
       troskel: { ...TROSKEL, ...(d?.troskel ?? {}) },
@@ -604,6 +620,57 @@ export function redigerareFor(post) {
   return finns(post?.redigerare) ? post.redigerare : null;
 }
 
+/**
+ * Hur många briefer NÄSTA briefrond ska skapa. REN funktion.
+ *
+ * Tre vägar, i den ordningen:
+ *   1. Ett UNDANTAG i register.json (`briefrond_undantag[nyckel]`, satt av
+ *      ägaren med `node factory/register.mjs brief-antal <nyckel> <antal> <skäl>`)
+ *      som ännu inte är uppfyllt → så många som återstår av undantagets antal,
+ *      oavsett redigerare. Undantaget kringgår också Draft-spärren i
+ *      /notionscalercs steg 5 ("ingen redigerare + förra batchen i Draft ⇒
+ *      inga nya briefer") — det är hela poängen med det: ägaren har tagit
+ *      beslutet att briefer ska ligga och vänta på en redigerare som kommer.
+ *      Uppfyllt räknas ur `launches` sedan undantagets datum: ett undantag på
+ *      21 som fått 7 loggade ger 14 kvar, inte 21 till. Så blir summan rätt
+ *      även om ronden hann köra en gång på gamla regeln innan undantaget nådde
+ *      main (rutinerna klonar main). Ingenting skrivs för att "förbruka" det —
+ *      loggningen i steg 8 är förbrukningen.
+ *   2. Redigerare tilldelad → kadensens 21.
+ *   3. Ingen redigerare → 7, och Draft-spärren gäller.
+ */
+export function briefantalFor(post, idag = svenskDatum()) {
+  const u = post?.briefrond_undantag;
+  const redigerare = redigerareFor(post);
+  if (u && Number.isInteger(u.antal) && u.antal > 0) {
+    const satt = finns(u.satt) ? u.satt : null;
+    // Loggade launches från undantagets datum och framåt räknas som levererade.
+    const levererade = (Array.isArray(post?.launches) ? post.launches : [])
+      .filter((l) => !satt || String(l?.date ?? '') >= satt)
+      .reduce((s, l) => s + (Number.isFinite(l?.count) ? l.count : 0), 0);
+    const kvar = u.antal - levererade;
+    if (kvar > 0) {
+      return {
+        antal: kvar,
+        kalla: 'undantag',
+        kringgarDraftsparr: true,
+        redigerare,
+        levererade,
+        undantag: u,
+        skal: `undantag ${u.antal} briefer${satt ? ` satt ${satt}` : ''}${levererade ? `, ${levererade} redan loggade` : ''} — ${kvar} kvar`
+          + `${finns(u.skal) ? ` (${u.skal})` : ''}${redigerare ? '' : '; gäller trots att ingen redigerare är tilldelad, Draft-spärren kringgås'}`,
+      };
+    }
+    // Uppfyllt: tillbaka till den vanliga regeln, men säg att undantaget fanns.
+    const vanlig = briefantalFor({ ...post, briefrond_undantag: null }, idag);
+    return { ...vanlig, undantagUppfyllt: { ...u, levererade }, skal: `${vanlig.skal}; undantaget på ${u.antal} är uppfyllt (${levererade} loggade sedan ${satt ?? 'start'}) — ta bort det med \`brief-antal ${post?.nyckel ?? '<nyckel>'} bort\`` };
+  }
+  if (redigerare) {
+    return { antal: BRIEFER_PER_ROND, kalla: 'redigerare', kringgarDraftsparr: false, redigerare, levererade: 0, skal: `kadensen ${VIDEOR_PER_DAG}/dag × ${RONDDAGAR} dagar — redigerare ${redigerare}` };
+  }
+  return { antal: BRIEFER_UTAN_REDIGERARE, kalla: 'utan-redigerare', kringgarDraftsparr: false, redigerare: null, levererade: 0, skal: 'ingen redigerare tilldelad — en dags produktion, och inga nya briefer alls om förra batchen ligger kvar i Draft' };
+}
+
 // ------------------------------------------------------------- skrivningar
 
 /** Driftraden för en post som ännu saknas i register.json — samma fält som
@@ -725,6 +792,33 @@ export function sattCopyModell(nyckel, modell, motivering = '') {
   return { ...post, copy_modell: m };
 }
 
+/**
+ * Sätter (eller tar bort, antal 'bort') ägarens undantag för briefrondens
+ * storlek. Skälet är obligatoriskt vid sättning — ett undantag utan skäl går
+ * inte att förstå om två veckor. Datumet stämplas så briefantalFor kan räkna
+ * av loggade launches mot det.
+ */
+export function sattBriefantal(nyckel, antal, skal = '', datum = svenskDatum()) {
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.briefrond_undantag = drift.briefrond_undantag ?? {};
+  if (normalisera(antal) === 'bort') {
+    delete drift.briefrond_undantag[post.nyckel];
+    if (Object.keys(drift.briefrond_undantag).length === 0) delete drift.briefrond_undantag;
+    skrivDrift(drift);
+    return { ...post, briefrond_undantag: null };
+  }
+  const n = Number(antal);
+  if (!Number.isInteger(n) || n <= 0) throw new Error(`Ange antal briefer som ett heltal > 0, eller "bort" (fick "${antal}").`);
+  if (!finns(skal)) throw new Error('Ange ett skäl: brief-antal <nyckel> <antal> "<vem beslutade, när, varför>".');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(datum ?? ''))) throw new Error(`Ogiltigt datum: ${datum} (använd YYYY-MM-DD)`);
+  drift.briefrond_undantag[post.nyckel] = { antal: n, satt: datum, skal: skal.trim() };
+  drift.kommentar_briefrond_undantag = drift.kommentar_briefrond_undantag
+    ?? 'Ägarens undantag från kadensregeln i /notionscalercs (factory/register.mjs briefantalFor): nästa briefrond skapar `antal` briefer oavsett om en redigerare är tilldelad, och kringgår Draft-spärren. Räknas av mot loggade launches (`log`) från `satt` och framåt, så summan blir rätt även om ronden hann gå en gång på gamla regeln. Sätts med `node factory/register.mjs brief-antal <nyckel> <antal> "<skäl>"`, tas bort med `brief-antal <nyckel> bort`. Ligger på toppnivå, nycklat per post, så rutinens stämplingar i driftraden och ett undantag på en gren kan mergas utan konflikt.';
+  skrivDrift(drift);
+  return { ...post, briefrond_undantag: drift.briefrond_undantag[post.nyckel] };
+}
+
 /** Tilldelar redigerare (namn + valfritt Discord-id). Tomt namn nekas — hitta aldrig på en person. */
 export function sattRedigerare(nyckel, namn, discordId = null) {
   if (!finns(namn)) throw new Error('Ange redigerarens namn.');
@@ -766,6 +860,10 @@ function skrivPost(post, idag) {
   const { prefix, skal } = prefixEllerSkal(post);
   console.log(`  Prefixfilter: ${prefix ? prefix.join(' · ') : `❌ ${skal}`}`);
   console.log(`  Redigerare:   ${redigerareFor(post) ?? 'ingen redigerare tilldelad'}`);
+  if (post.lage !== 'test') {
+    const b = briefantalFor(post, idag);
+    console.log(`  Briefrond:    ${b.antal} briefer — ${b.skal}`);
+  }
   console.log(`  Dagsbudget:   ${post.daily_budget_sek ? `${post.daily_budget_sek} kr` : 'oklart — saknas i konfigen'}`);
   console.log(`  Kördag ${idag}: ${kord.kordag ? '✅ JA' : '⏭️  nej'} — ${kord.skal}. Nästa: ${kord.nastaKordag}`);
   const brief = arBriefdag(post, idag);
@@ -826,6 +924,15 @@ function huvud() {
   if (arg[0] === 'copy-modell') {
     const post = sattCopyModell(arg[1], arg[2], arg.slice(3).join(' '));
     console.log(`Copy-modell på ${post.namn}: ${post.copy_modell}`);
+    return;
+  }
+  if (arg[0] === 'brief-antal') {
+    if (!arg[2]) throw new Error('Ange antal eller "bort": brief-antal <nyckel> <antal|bort> "<skäl>"');
+    const post = sattBriefantal(arg[1], arg[2], arg.slice(3).join(' '), idag);
+    const b = briefantalFor(post, idag);
+    console.log(post.briefrond_undantag
+      ? `Briefrond-undantag på ${post.namn}: ${post.briefrond_undantag.antal} briefer (satt ${post.briefrond_undantag.satt}). Nästa rond: ${b.antal} — ${b.skal}`
+      : `Briefrond-undantaget på ${post.namn} borttaget. Nästa rond: ${b.antal} — ${b.skal}`);
     return;
   }
 
