@@ -461,6 +461,13 @@ gick rakt igenom på första körningen. Mätningar:
   precis som c gjorde sedan 2026-09-11. Droppen är orörd, så de fem butiker
   som redan står i produktion ritas likadant som förut — det finns
   regressionstest på just det.
+  **Utfallet: c ändå.** VA:n valde c ("more connected to the product"), så
+  ställningen är a 0, b 0, c 4 — och den fjärde gången var första gången a och
+  b faktiskt var NYA kompositioner, inte samma två gissningar. Slutsatsen är
+  alltså inte längre "byt ut a och b" utan **att c-formen är den som väljs**:
+  motivet stort, ordmärket litet under, mörk disk. Nästa butik bör utgå från
+  att c vinner och lägga arbetet på MOTIVET i stället för på fler
+  kompositionsvarianter.
 - **Nio varianter kallades "Variant".** `build-store.mjs` hårdkodade
   optionsnamnet, så väljaren sa "Variant: 0–5 hk" och kunden kunde inte veta
   vad hen valde. Nytt fält `produkt.variantnamn` i produktfilen

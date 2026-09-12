@@ -150,6 +150,10 @@ branding:
   # Motivet `motor` är nytt, och a/b är omgjorda den här körningen enligt
   # factory/LOGGA-FEEDBACK.md (a 0, b 0, c 3 — en variant som aldrig valts ska
   # bytas, inte visas igen).
+  # Variant C VALD 2026-09-12 av VA:n ("C because it's more connected to the
+  # product") och loggad i factory/LOGGA-FEEDBACK.md. C satt redan i butiken
+  # under bygget, så ingen omkörning av logga-steget behövdes. Ställningen är
+  # nu a 0, b 0, c 4 — och det gäller ÄVEN med nya a/b-kompositioner.
   logga: "output/fjordcover/fjordcover-logga-c.png"
   favicon: "output/fjordcover/fjordcover-favicon.png"
 
