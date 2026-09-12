@@ -46,8 +46,7 @@
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
         "snippets/opf-tillagg.liquid",
-        "snippets/ms-head.liquid",
-        "snippets/ms-paket.liquid"
+        "snippets/ms-head.liquid"
       ],
       "produktmall": "verifierad",
       "upsell": "kedjeslipen"
@@ -148,7 +147,7 @@
     },
     "huvudmarknad": {
       "klar": false,
-      "manuell": "Primärmarknaden: primärmarknaden är \"Philippines\" (PH), inte SE. Settings → Markets → marknaden för SE → Set as primary. Kan inte sättas via API. Utan det är varje variant otillgänglig i kundvyn (paketväljaren och sticky-knappen renderas inte — mätt 2026-09-11)."
+      "manuell": "Primärmarknaden: primärmarknaden är \"Norge\" (NO), inte SE. Settings → Markets → marknaden för SE → Set as primary. Kan inte sättas via API. Utan det är varje variant otillgänglig i kundvyn (paketväljaren och sticky-knappen renderas inte — mätt 2026-09-11)."
     },
     "kallskanning": {
       "klar": true,
@@ -176,10 +175,27 @@
       ]
     },
     "oversatt": {
-      "klar": false,
-      "manuell": "nb: översätt med subagent (sonnet) — output/edgebench/oversattning-sv.json (121 nycklar) → oversattning-nb.json med samma nycklar, kör sen --igen oversatt",
-      "underlag": 121,
-      "utfall": {}
+      "klar": true,
+      "underlag": 123,
+      "utfall": {
+        "nb": {
+          "registrerade": 89,
+          "saknade": 0,
+          "perTyp": {
+            "variant": 0,
+            "produkt": 7,
+            "metafält": 9,
+            "sida": 5,
+            "menylänk": 4,
+            "paket": 12,
+            "policy": 3,
+            "kollektion": 1,
+            "temamall": 40,
+            "sektionsgrupp": 8
+          },
+          "granskning": "4227/4240"
+        }
+      }
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/188720447783",
@@ -187,10 +203,9 @@
   "qa": {
     "gron": false,
     "kritiska": [
-      "kundvy-startsida",
-      "markörer /nb"
+      "kundvy-startsida"
     ],
-    "tid": "2026-09-12T15:40:42.123Z"
+    "tid": "2026-09-12T15:47:38.244Z"
   },
-  "uppdaterad": "2026-09-12T15:40:42.123Z"
+  "uppdaterad": "2026-09-12T15:47:38.244Z"
 }

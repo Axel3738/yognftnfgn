@@ -380,7 +380,11 @@ test('med offer.paket.test byggs A/B-paketblocken på ms_pakets plats, plus full
   assert.ok(main.blocks.ms_paket_b.settings.custom_liquid.includes("test: 'paket', variant: 'b'"));
   assert.equal(main.blocks.opf_tillagg.settings.custom_liquid, "{% render 'opf-tillagg' %}");
   assert.ok(harTillagg(produkt));
-  assert.deepEqual(tillaggTexter(produkt), { label: 'Lägg till varningsskyltar', info: 'Fullpris – gratis bara i paketen' });
+  // ⚠️ "gratis bara i paketen" bara när en nivå FAKTISKT ger den gratis —
+  // annars lovar kryssrutan något som inte finns (EdgeBench 2026-09-12).
+  assert.deepEqual(tillaggTexter(produkt), { label: 'Lägg till varningsskyltar', info: 'Fullpris' });
+  const medGratis = { ...produkt, offer: { ...produkt.offer, paket: { test: 'paket', nivaer: [{ antal: 2, gratis_antal: 2 }] } } };
+  assert.deepEqual(tillaggTexter(medGratis), { label: 'Lägg till varningsskyltar', info: 'Fullpris – gratis bara i paketen' });
   // Idempotent: andra varvet ger samma blockordning.
   const igen = JSON.parse(byggProduktTemplate(JSON.stringify(ut), { produkt, butik: butikMedNorge() }));
   assert.deepEqual(igen.sections.main.block_order, bo);

@@ -549,10 +549,22 @@ export function harTillagg(p) {
 }
 
 // Kryssrutans svenska texter — samma källa för temat och översättningsunderlaget.
+//
+// ⚠️ "gratis bara i paketen" är ett PÅSTÅENDE om erbjudandet, inte en etikett.
+// Det får bara stå när någon paketnivå faktiskt ger bonusen gratis. Mätt i
+// kundvyn 2026-09-12 (EdgeBench): butiken kör bonusen som REN betald
+// korg-upsell utan gratisnivå, och raden stod ändå kvar under kryssrutan och
+// lovade kunden något som inte fanns någonstans på sidan. TackleBay har
+// samma uppsättning (Axels beslut "ingen gratis bonus") och alltså samma
+// felaktiga rad live — den rättas nästa gång butiken byggs om.
 export function tillaggTexter(p) {
   const b = p?.offer?.bonus_produkt ?? {};
   const namn = text(b.kortnamn) ?? String(b.titel ?? '').split(/\s[–-]\s/)[0];
-  return { label: `Lägg till ${namn}`, info: 'Fullpris – gratis bara i paketen' };
+  const gratisNivaFinns = lista(p?.offer?.paket?.nivaer).some((n) => Number(n?.gratis_antal) > 0);
+  return {
+    label: `Lägg till ${namn}`,
+    info: gratisNivaFinns ? 'Fullpris – gratis bara i paketen' : 'Fullpris',
+  };
 }
 
 // custom_liquid-block kan inte översättas via translationsRegister — texten

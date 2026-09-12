@@ -236,6 +236,17 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   const dagar = forsok('tema.leveransdagar', () => krav(tema, 'tema', 'leveransdagar')(ps[0]?.leveranstid ?? butik?.frakt?.leveranstid));
   ut['liquid.delivery.text'] = 'Beräknad leverans';
   if (dagar?.min && dagar?.max) ut['liquid.delivery.dagar'] = `${dagar.min}–${dagar.max} arbetsdagar`;
+  // Fullpris-kryssrutan är också custom_liquid och locale-branchas ur
+  // nb['liquid.tillagg.label'] / '…info' — men underlaget skrev aldrig de två
+  // nycklarna, så `nb[...]` var undefined och kryssrutan stod kvar på SVENSKA
+  // på /nb i varje butik som har en (mätt 2026-09-12 på EdgeBench; TackleBay
+  // och TankGuard har samma kryssruta och därmed samma läcka).
+  const medTillagg = ps.find((p) => forsok('tema.harTillagg', () => krav(tema, 'tema', 'harTillagg')(p)));
+  if (medTillagg) {
+    const t = forsok('tema.tillaggTexter', () => krav(tema, 'tema', 'tillaggTexter')(medTillagg));
+    if (text(t?.label)) ut['liquid.tillagg.label'] = t.label;
+    if (text(t?.info)) ut['liquid.tillagg.info'] = t.info;
+  }
   ut['tema.sticky'] = 'Köp nu';
   ut['tema.default.share'] = 'Share';
   ut['tema.default.collections'] = 'Collections';

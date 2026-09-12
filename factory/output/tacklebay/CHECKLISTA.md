@@ -12,8 +12,8 @@ This store has several products – it is still ONE store, ONE domain, ONE check
 * STORE EMAIL: **hello@tacklebay.se**
 * FORWARD TO: **subscriptions@stonebite.org**
 * OWNER (hand over to): **axelodhner.business@gmail.com**
-* PRODUCT: **Fiskespöhållare 4-Pack** (fiskespohallare-4-pack)
 * PRODUCT: **Adventskalender Fiskedrag – 24 Drag** (adventskalender-fiskedrag)
+* PRODUCT: **Fiskespöhållare 4-Pack** (fiskespohallare-4-pack)
 
 ## 1. Shopify – create the store
 **The address you type here decides the currency, the language and the home
@@ -118,8 +118,8 @@ review with a local name and the original date).
 - [ ] Apps → search "Judge.me" → Install (free plan)
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Fiskespöhållare 4-Pack** → Import
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Adventskalender Fiskedrag – 24 Drag** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Fiskespöhållare 4-Pack** → Import
   The upload is yours and stays yours: Judge.me's API overwrites every review
   date with the moment of import (measured 2026-09-08), the app's own file
   keeps the original dates. No file in the chat = say so, do not import

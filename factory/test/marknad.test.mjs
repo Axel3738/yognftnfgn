@@ -167,6 +167,17 @@ test('byggUnderlagObjekt: testbutiken ger stabila nycklar för produkt, metafäl
   assert.ok(/^Fri frakt/.test(ut['liquid.trust.0']), ut['liquid.trust.0']);
   assert.ok(/ångerrätt$/.test(ut['liquid.trust.1']), ut['liquid.trust.1']);
   assert.equal(ut['liquid.delivery.text'], 'Beräknad leverans');
+  // Fullpris-kryssrutan branchas ur samma sorts nycklar. De saknades helt i
+  // underlaget till 2026-09-12 (EdgeBench), så kryssrutan stod kvar på
+  // svenska på /nb i varje butik som har en.
+  const medKryss = byggMinimalKontext(rabutik(), [
+    { ...raprodukt(), offer: { ...raprodukt().offer, bonus_produkt: { handle: 'bonusen', tillagg_kryssruta: true, kortnamn: 'skyltarna' } } },
+  ]);
+  const utKryss = byggUnderlagObjekt(medKryss);
+  assert.equal(utKryss['liquid.tillagg.label'], 'Lägg till skyltarna');
+  assert.equal(utKryss['liquid.tillagg.info'], 'Fullpris');
+  // ingen kryssruta ⇒ inga nycklar
+  assert.equal('liquid.tillagg.label' in ut, false);
   assert.equal(ut['tema.default.share'], 'Share');
   assert.equal(ut['tema.default.home_page'], 'Home page');
   assert.equal(ut['footer.sections.footer.blocks.foretaget.settings.heading'], 'Företaget');
