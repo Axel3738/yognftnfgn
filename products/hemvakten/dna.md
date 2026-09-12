@@ -1,7 +1,7 @@
 # Creative DNA — HeimGuard (övervakningskameran)
 
 Skapad 2026-09-08 av `/ny-annonser` (körning nr 1).
-**Senast uppdaterad 2026-09-11 av `/notionscalercs hemvakten` — körning nr 2, första briefdagen.**
+**Senast uppdaterad 2026-09-13 av `/notionscalercs hemvakten` — körning nr 3, andra briefdagen.** (Körning nr 2: 2026-09-11.)
 Butiks-id `hemvakten`, brand **HeimGuard**, heimguard.se.
 
 ⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken.**
@@ -168,3 +168,88 @@ när båda har ≥ 5 bedömbara.
   ärvda videor skalas: läs SRT:n mot butikens villkor, inte bara mot brandnamnet.
 - **`Fri frakt över 300 kr` och `bara idag` finns kvar i VO trots att copyn rättades.**
   Copy och tal måste rättas som par.
+
+---
+
+## Körning nr 3 — 2026-09-13, andra briefdagen (`/notionscalercs`)
+
+### Data (2026-09-08 → 2026-09-12, 5 dygn; CS_2/CS_3 pausade av Axel 2026-09-12)
+
+| | Spend | Köp | ROAS | Vinstbidrag (BE-CPA 538) |
+|---|---:|---:|---:|---:|
+| Kampanjen, 14d | 5 610 kr | 7 | 1,61 | 479 kr |
+| 7d | 5 610 kr | 7 | 1,61 | — |
+| 3d | 4 266 kr | 6 | 1,67 | — |
+
+Budget 700 kr/dag (sänkt 2026-09-11), ingen ändring i natt (kadensspärr, 2 dygn).
+
+**Första bedömbara annonsen: `HeimGuard_PD_2`** — 1 673 kr (29,8 % av spenden),
+4 köp, CPA 418 kr mot break-even 538, ROAS 2,68, vinstbidrag 479 kr = 100 % av
+kampanjens positiva vinstbidrag. **Klass: vinnare, PRELIMINÄR** (4 köp, ANALYSMETOD
+2c) — skrivs inte in i Winning DNA förrän den överlevt nästa rond.
+Top spender är fortfarande `LI_1_1` (2 055 kr, 0 köp, adset pausat 2026-09-10) — den
+är benchmark på spend, inte på vinst.
+
+### Teardown PD_2 (steg 6b — enda bedömbara)
+
+Manus (SRT): "Den här kameran vet skillnaden på en katt och en tjuv. Ett ljud på
+tomten klockan tre på natten. Är det katten, vinden eller något annat? … Två
+linser som ser allt. 355 graders täckning … AI skiljer på människor, grenar och
+katter … Mobilen larmar direkt. Ingen falsklarm … Sluta gissa vad som händer hemma. Se det."
+
+| Variabel | Värde |
+|---|---|
+| Vinkel | problem/lösning (nattljudet) |
+| Hook-typ | påstående (katt vs tjuv) |
+| Format | voiceover + demo (kameran panorerar, appvy) |
+| Proof | demo, ingen recension |
+| Offer i creativen | ingen |
+| Talare | röst utan ansikte |
+
+| Steg | Värde | Läsning |
+|---|---|---|
+| Hook 3 s | **43,1 %** | bäst i kampanjen bland annonser > 100 kr — öppningen funkar |
+| Hold | 24,7 % | tre av fyra försvinner före thruplay — filmen tappar i mitten |
+| CTR | 3,2 % | löftet ger klick |
+| CVR (köp/klick) | **1,0 %** | svagaste länken: CS_2 1,5 % (1 köp), CS_2_1 3,7 % (1 köp) — brus, men riktningen är att klicket inte stänger |
+
+**Slutsats på briefnivå (data → hypotes):** öppningen stoppar scrollen, filmen
+tappar hälften i mitten, och klicket konverterar sämst av de tre mätbara. Nästa
+batch testar exakt de tre lederna på samma film: fyra nya hooks (`PD_5_H1–H4`),
+en 15-sekunders klippning (`PD_6_H1`), och två konverteringsvariabler utan att röra
+filmen — pris-end card (`PD_8_H1`) och recensionsledd copy card (`PD_7_H1`).
+
+### Variabeltabell (OPS, bedömbara = 1 → ärvd tabell i körning nr 2 gäller fortfarande)
+
+| Variabelvärde | Annonser | Spend | Köp | Vinstbidrag | Slutsats |
+|---|---:|---:|---:|---:|---|
+| Vinkel PD, video, problemöppning | 1 (PD_2) | 1 673 kr | 4 | 479 kr | **preliminär vinnare** |
+| Statics, alla vinklar (LI, BOF, CO, CS, PD, RI, G, SP) | 15 | 2 570 kr | 2 | — | LI_1_1 bär 2 055 kr utan köp; CS_2_1 185 kr/1 köp. Hypotes: statics utan bevis/pris konverterar inte |
+| Övriga videor | 22 | 1 367 kr | 1 | — | för tidigt |
+
+### Mönster (körning nr 3)
+
+1. **Hypotes (OPS):** en konkret scen i första sekunden stoppar scrollen — PD_2 43 %,
+   SP_3 49 % (148 kr), CS_6_H1 46 % (34 kr); de två sista är brus men pekar åt samma
+   håll. → Varje video i batch #3 öppnar på ett föremål (mobilen, tomten, grenen,
+   kameran), aldrig på en tanke.
+2. **Hypotes (OPS):** klicket är den svaga länken på PD (CVR 1,0 %). → `PD_7_H1`
+   (copy card med recension) och `PD_8_H1` (pris-end card) isolerar konverteringen.
+3. **Hypotes (OPS + ärvd):** statics utan bevis eller pris konverterar inte (LI_1_1
+   2 055 kr / 0). → Batch #3:s sex statics bär antingen pris (`CS_12_1`), villkor
+   (`BOF_11_1`), recension (`SR_2_1`) eller sidans hero-rad (`PD_10_1`) — ingen lista.
+4. **Bevisad (ärvd), oförändrad:** SP och CS i video bär källans vinst. `SP_17_H1/H2`
+   och `CS_11_H1` ligger hos Carl (Creative strat review 2026-09-13).
+
+### Copy-modell A/B — ställning 2026-09-13
+
+Batch #2 (4 fable / 3 sonnet) är inte live än (hos redigeraren). Batch #3: 11 fable /
+10 sonnet. **Bedömbara per modell: 0 / 0.** Avgörs när båda har ≥ 5 bedömbara.
+
+### Rotorsaker att bära vidare (nya)
+
+- **`Creative strat review` är en status ingen rutin plockar.** Tre rader hamnade
+  där 2026-09-13 (SP_17_H1, SP_17_H2, CS_11_H1). `/ops-leverans` tar bara
+  `To be Reviewed`. Någon (Axel eller `/granska`) måste flytta dem, annars står de.
+- **Metas rate limit på det delade OPS-kontot** slog 2026-09-12 när fem nattvakter
+  startade 00:01. Rutinplatser med egen minut finns i registret sedan 2026-09-12.

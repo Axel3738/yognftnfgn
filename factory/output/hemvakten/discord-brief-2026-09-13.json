@@ -1,0 +1,21 @@
+{
+  "brand": "HeimGuard", "butik": "hemvakten", "datum": "2026-09-13", "lage": "brief",
+  "siffror": { "spend_7d": 5610, "kop_7d": 7, "roas_7d": 1.61, "vinstbidrag_7d": 479, "briefs_nya": 21 },
+  "gjort": [
+    "Budget unchanged at 700 SEK/day (margin 7 % is under the 16 % floor, cadence rule blocks a cut within 3 days).",
+    "First ad past the data gate: HeimGuard_PD_2 — 1 673 SEK, 4 purchases, CPA 418 (break-even 538). Preliminary winner.",
+    "21 new briefs in the hub as Draft: 10 variants of PD_2 / SP_2 / CS_3 (one variable each) + 11 new concepts. Copy A/B: 11 Fable, 10 Sonnet.",
+    "dna.md, batch-log.md updated and pushed."
+  ],
+  "briefer": [],
+  "varningar": [
+    "3 rows sit in `Creative strat review` (SP_17_H1, SP_17_H2, CS_11_H1) — no routine picks that status up. Move them to To be Reviewed when they are ready for the 13:40 delivery run.",
+    "Batch #2 (7 briefs from 2026-09-11) is still in production, so the new 21 land on top of it. Take the PD_5 hook family first — cheapest edits, biggest lesson."
+  ],
+  "action_axel": [],
+  "action_redigerare": [ { "discord_id": "1411720622484095089", "namn": "Carl Vicente", "rader": [
+    "21 new briefs are in the Surveillance Camera creative hub as Draft (links above). Start with HeimGuard_PD_5_H1–H4: same film, new first 3 seconds.",
+    "SP_17_H1, SP_17_H2 and CS_11_H1 are in Creative strat review — if they are done, set them to To be Reviewed so the 13:40 run can launch them."
+  ] } ],
+  "nasta_korning": "2026-09-14 (budget) · 2026-09-16 (briefs)"
+}
