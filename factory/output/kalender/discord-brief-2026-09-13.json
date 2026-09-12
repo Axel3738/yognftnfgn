@@ -1,0 +1,145 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-13",
+  "lage": "brief",
+  "gjort": [
+    "Budget round: campaign ADVENTLANERACING_SE passed the gate on campaign level (2 410 SEK, 5 purchases, ROAS 1.37 under break-even 1.54) — daily budget lowered 1 000 → 700 SEK, read back",
+    "No ad paused tonight; PD_1_H1 stays PAUSED from Sept 12 (a decision, never touched)",
+    "Still no single ad past the ad gate (300 SEK and 3 purchases) — cold start #2, batch #2 has no readable outcome yet",
+    "After the PD_1_H1 pause the CBO moved spend to the GT ad set (1 222 SEK, 3 purchases, CPA 407 SEK), not to the inherited PD winners (55 SEK together). CBO stays per Axel (option B)",
+    "Batch #3: 21 briefs in the hub as Draft (12 video, 9 image) — 11 variants of the inherited winners PD_2_H1 / PD_2_1, 10 new concepts (6 marked guess). Copy A/B: 11 Fable / 10 Sonnet",
+    "Three batch #2 videos (PD_8_H1, SY_1_H1, MR_1_H1) are already live in the campaign — made and uploaded within a day"
+  ],
+  "siffror": {
+    "spend_7d": 2410,
+    "kop_7d": 5,
+    "roas_7d": 1.37,
+    "vinstbidrag_7d": 0,
+    "briefs_nya": 21
+  },
+  "briefer": [
+    {
+      "namn": "AdventLaneRacing_PD_2_H3",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_H3-3d9270ab908c81f89a81de7b7fd8fcf9"
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_H4",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_H4-3d9270ab908c810da899edf0e12bd79a"
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_H5",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_H5-3d9270ab908c81d4924cd4138a2309c5"
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_H6",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_H6-3d9270ab908c81dd88f3f99eda944b9d"
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_H7",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_H7-3d9270ab908c81969147de1d681564ff"
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_H8",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_H8-3d9270ab908c81aa9cc3eac084845490"
+    },
+    {
+      "namn": "AdventLaneRacing_ID_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_ID_1_H1-3d9270ab908c816c8a21e40d6d92e363"
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_2",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_2-3d9270ab908c812da46cde87215ff07e"
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_3",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_3-3d9270ab908c813f9d3de151fc27c88d"
+    },
+    {
+      "namn": "AdventLaneRacing_PD_2_4",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_2_4-3d9270ab908c81f391b7cddd4652e64c"
+    },
+    {
+      "namn": "AdventLaneRacing_GT_4_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_GT_4_1-3d9270ab908c811bb062f3d4a717a966"
+    },
+    {
+      "namn": "AdventLaneRacing_SP_4_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_SP_4_1-3d9270ab908c815db469d108b956951a"
+    },
+    {
+      "namn": "AdventLaneRacing_SP_5_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_SP_5_1-3d9270ab908c81b4b179fb03b57fc152"
+    },
+    {
+      "namn": "AdventLaneRacing_SP_6_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_SP_6_H1-3d9270ab908c813d841fcce9c89e02b9"
+    },
+    {
+      "namn": "AdventLaneRacing_SO_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_SO_1_H1-3d9270ab908c813c844ed5efcd2d772d"
+    },
+    {
+      "namn": "AdventLaneRacing_PR_1_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PR_1_1-3d9270ab908c817cb777c938bbf0736c"
+    },
+    {
+      "namn": "AdventLaneRacing_KV_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_KV_1_H1-3d9270ab908c818ba710c66924ee05c3"
+    },
+    {
+      "namn": "AdventLaneRacing_MH_1_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_MH_1_1-3d9270ab908c81028914fda14b14031b"
+    },
+    {
+      "namn": "AdventLaneRacing_ST_1_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_ST_1_H1-3d9270ab908c81fb8f28c73184dda8e7"
+    },
+    {
+      "namn": "AdventLaneRacing_GT_5_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/AdventLaneRacing_GT_5_H1-3d9270ab908c8138bd32ca232243b955"
+    },
+    {
+      "namn": "AdventLaneRacing_AU_2_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/AdventLaneRacing_AU_2_1-3d9270ab908c81c28811d87d0d2115dd"
+    }
+  ],
+  "varningar": [
+    "Hub now holds 48 rows for this product (27 before tonight). At 7 per day that is a week of work — the data gate, not the hub, decides what gets judged",
+    "Inherited benchmark keeps sliding: PD_2_H1 CPA 150 → 191 → 263 SEK over three reads. Never quote 150 as the target again",
+    "Norway: 439 NOK / compare 579 NOK confirmed in Shopify, but pack prices in the Norwegian view are still SEK-based numbers (848,30 SEK for 2 next to 878 = 2 × 439) — NOK pack levels are an open step"
+  ],
+  "action_axel": [],
+  "action_redigerare": [
+    {
+      "discord_id": "740814777374343259",
+      "namn": "Jazz",
+      "rader": [
+        "21 new briefs for AdventLane are in the Racing Car Advent Calendar creative hub as Draft — start with the 6 PD_2_H3–H8 hook/format variants (they reuse the PD_2_H1 footage, fastest to make), then the 3 PD_2 image variants, then the new concepts",
+        "Deliver as usual: video = Drive link at the end of the Notion page, image = attachment in Filer och media, then set Status to To be Reviewed"
+      ]
+    }
+  ],
+  "nasta_korning": "2026-09-14"
+}

@@ -48,5 +48,7 @@ briefade av någon annan — de markeras "täckt av hubbraden" och briefas inte 
 
 | Idé | Varför | Källa |
 |---|---|---|
-| **Textfri produktbild** — öppnad kalender med bilar, ingen text i bild, PD-copyn i copy card | Variabeln textmängd är otestad; `PD_2_1`:s textmängd är inte läst ur kontot än (kräver bildnedladdning). | winning line `PD_2_1` — läs bilden först |
-| **"Alternativ till godis" som hook** — Saras recension ordagrant | Tre av tio recensioner säger det självmant. Skiljer sig från RV/TR (som citerar andra rader). | produktfilens `reviews` — kolla RV_1/RV_2:s citat först så det inte dubbleras |
+| ~~**Textfri produktbild**~~ | **[använd i batch #3]** → `AdventLaneRacing_PD_2_2` (variant av PD_2_1, variabel textmängd). | winning line `PD_2_1` |
+| ~~**"Alternativ till godis" som hook**~~ | **[använd i batch #3]** → `AdventLaneRacing_SP_4_1`. Kontrollerat 2026-09-13: hubbens RV_1_1 citerar Anna, RV_2_1/TR_1_H1/TR_2_1 citerar Johan — Sara och Erik var lediga; SP_6_H1 fick därför Daniel i stället för Johan. | produktfilens `reviews` |
+| **Övriga lediga recensioner för citat-kort** — Peter, Sofia, Maria, Linda, Emma | Johan (×3), Anna, Sara, Erik, Daniel är använda i hubben efter batch #3. Fem riktiga rader kvar. | produktfilens `reviews`, läst 2026-09-13 |
+| **Hook-swap-serien på PD_2_H1 är uttömd på idéer med källa** | H2–H8 testar tomt omslag, slutresultat, demo först, fråga, siffra+negation, ingen röst, 6 s. Nästa hook-variant ska bygga på VILKEN av dem som vann — inte på fler gissningar. | batch #2–#3 |
