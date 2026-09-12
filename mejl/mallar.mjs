@@ -65,7 +65,33 @@ const LIQUID = {
   '{{ordernummer}}': '{{ name }}',
   '{{fraktbolag}}': "{{ fulfillment.tracking_company | default: 'fraktbolaget' }}",
   '{{belopp}}': '{{ amount | money }}',
+  '{{slutdatum}}': '{{ slutdatum }}',
 };
+
+export const MANADER = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'];
+
+// Sista dag för erbjudandet: i dag + giltig_dagar, som "12 oktober". Exempel-
+// läget räknar i JavaScript; Liquid-läget räknar i Shopify vid utskick (se
+// `slutdatumLiquid`), så datumet i mejlet alltid utgår från orderdagen.
+export function exempelSlutdatum(dagar, nu = new Date()) {
+  const d = new Date(nu.getTime() + dagar * 86400 * 1000);
+  return `${d.getDate()} ${MANADER[d.getMonth()]}`;
+}
+
+// Liquid som sätter `slutdatum` = orderdag + N dagar med svensk månad.
+// 'now' | date: '%s' ger unix-sekunder som sträng; plus gör tal av den och
+// date-filtret tar tal. Månaden mappas för hand — Shopify ger engelska namn.
+export function slutdatumLiquid(dagar) {
+  const sek = dagar * 86400;
+  const fall = MANADER.map((m, i) => `{% when '${String(i + 1).padStart(2, '0')}' %}{% assign slut_man = '${m}' %}`).join('');
+  return (
+    `{% assign slut_ts = 'now' | date: '%s' | plus: ${sek} %}` +
+    `{% assign slut_dag = slut_ts | date: '%-d' %}` +
+    `{% assign slut_mm = slut_ts | date: '%m' %}` +
+    `{% case slut_mm %}${fall}{% else %}{% assign slut_man = '' %}{% endcase %}` +
+    `{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}`
+  );
+}
 
 // Ämnesraden har ingen assign-rad, så förnamnet måste falla tillbaka i Liquid.
 // "{{förnamn}}, " (med kommatecken) försvinner helt när namn saknas, så raden
@@ -85,6 +111,7 @@ export function ersatt(text, lage, tabell = LIQUID) {
       '{{ordernummer}}': EXEMPEL.ordernummer,
       '{{fraktbolag}}': EXEMPEL.fraktbolag,
       '{{belopp}}': kr(EXEMPEL.belopp),
+      '{{slutdatum}}': EXEMPEL.slutdatum ?? exempelSlutdatum(30),
     }[nyckel];
     ut = ut.split(nyckel).join(lage === 'liquid' ? liquid : exempel);
   }
@@ -114,13 +141,17 @@ function stil(k) {
   };
 }
 
+// Sidhuvudet: butikens riktiga logga när konfigen har en (vit text på
+// transparent ⇒ svart bakgrund), annars namnet i text.
 function sidhuvud(k, s) {
+  const b = k.butik;
+  const inre = b.logga_url
+    ? `<img src="${b.logga_url}" alt="${esk(b.namn)}" width="${b.logga_bredd ?? 240}" height="${b.logga_hojd ?? 80}" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 0;">`
+    : `<span style="${s.rubrik} font-size: 26px; letter-spacing: 1px; color: #ffffff;">${esk(b.namn)}</span>`;
   return `
           <tr>
-            <td align="center" bgcolor="${s.svart}" style="padding: 20px 24px;">
-              <a href="${k.butik.url}" style="text-decoration: none;">
-                <span style="${s.rubrik} font-size: 26px; letter-spacing: 1px; color: #ffffff;">${esk(k.butik.namn)}</span>
-              </a>
+            <td align="center" bgcolor="${s.svart}" style="padding: 16px 24px;">
+              <a href="${b.url}" style="text-decoration: none;">${inre}</a>
             </td>
           </tr>`;
 }
@@ -342,9 +373,9 @@ function faq(k, s, rubrik, par) {
 // Erbjudandet: svart box med koden + knappen, sedan de fyra gratisprodukterna
 // och de tre dyraste. Helt statisk HTML — Shopifys notis-Liquid når inte
 // butikens produkter, så bygg.mjs bakar in dem vid varje körning.
-export function erbjudandeBlock(k, s, copy, produkter) {
+export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid') {
   const e = k.erbjudande;
-  const u = copy.upsell;
+  const u = { ...copy.upsell, urgency: ersatt(copy.upsell.urgency, lage), finstilt: ersatt(copy.upsell.finstilt, lage) };
   const lank = `${k.butik.url}/discount/${e.kod}?redirect=%2Fcollections%2F${e.kollektion_handle}`;
   const gratis = produkter.gratis
     .map(
@@ -371,25 +402,33 @@ export function erbjudandeBlock(k, s, copy, produkter) {
                   </td>`
     )
     .join('');
+  // Blocket ligger ÖVERST i mejlet (Axels beslut 2026-09-12: "man ska bli
+  // catchad direkt"), med en röd urgency-rad som bär sista datumet.
   return `
           <!-- Erbjudandet: köp igen → välj en gratisprodukt -->
           <tr>
-            <td style="padding: 28px 32px 0;">
+            <td style="padding: 20px 32px 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${s.svart}">
                 <tr>
-                  <td align="center" style="padding: 28px 24px 24px;">
-                    <p style="${s.rubrik} font-size: 24px; line-height: 1.15; color: #ffffff; letter-spacing: 0.5px; margin: 0;">${esk(u.rubrik)}</p>
-                    <p style="${s.brod} font-size: 14px; line-height: 1.6; color: #d9d9d9; margin: 10px 0 18px;">${esk(u.text)}</p>
+                  <td align="center" style="padding: 26px 24px 8px;">
+                    ${u.forrubrik ? `<p style="${s.brod} font-size: 12px; font-weight: bold; color: ${s.rod}; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px;">${esk(u.forrubrik)}</p>` : ''}
+                    <p style="${s.rubrik} font-size: 32px; line-height: 1.1; color: #ffffff; letter-spacing: 0.5px; margin: 0;">${esk(u.rubrik)}</p>
+                    <p style="${s.brod} font-size: 15px; line-height: 1.6; color: #d9d9d9; margin: 12px 0 18px;">${esk(u.text)}</p>
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 18px;">
                       <tr>
                         <td style="border: 2px dashed #ffffff; padding: 10px 22px;">
                           <span style="${s.brod} font-size: 12px; color: #d9d9d9; letter-spacing: 1px; text-transform: uppercase;">${esk(u.kod_etikett)}</span>
-                          <span style="${s.rubrik} font-size: 22px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;">${esk(e.kod)}</span>
+                          <span style="${s.rubrik} font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;">${esk(e.kod)}</span>
                         </td>
                       </tr>
-                    </table>${knapp(s, u.knapp, lank, { liten: true })}
+                    </table>${knapp(s, u.knapp, lank)}
                   </td>
                 </tr>
+                ${u.urgency ? `<tr>
+                  <td align="center" bgcolor="${s.rod}" style="padding: 12px 24px; margin-top: 20px;">
+                    <p style="${s.brod} font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;">&#9203; ${esk(u.urgency)}</p>
+                  </td>
+                </tr>` : ''}
               </table>
             </td>
           </tr>${litenRubrik(s, u.valj_rubrik, { topp: 20 })}
@@ -409,7 +448,7 @@ export function erbjudandeBlock(k, s, copy, produkter) {
               </table>
             </td>
           </tr>${stycke(k, s, u.finstilt, { farg: s.gra, storlek: 11, topp: 4 })}
-          <tr><td style="padding: 0 0 20px;"></td></tr>`;
+          <tr><td style="padding: 0 0 12px;"></td></tr>${avdelare(s)}`;
 }
 
 function sidfot(k, s, copy) {
@@ -426,7 +465,7 @@ function sidfot(k, s, copy) {
 function dokument(k, s, lage, { titel, preheader, rader }) {
   const assign =
     lage === 'liquid'
-      ? `{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}\n`
+      ? `{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}\n${slutdatumLiquid(k.erbjudande.giltig_dagar ?? 30)}\n`
       : '';
   return `${assign}<!DOCTYPE html>
 <html lang="sv">
@@ -488,14 +527,18 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   const c = copy[id];
   const meta = MALLAR.find((m) => m.id === id);
   if (!c || !meta) throw new Error(`Okänd mall: ${id}`);
-  const erbj = meta.erbjudande ? erbjudandeBlock(k, s, copy, produkter) : '';
+  EXEMPEL.slutdatum = exempelSlutdatum(k.erbjudande.giltig_dagar ?? 30);
+  const erbj = meta.erbjudande ? erbjudandeBlock(k, s, copy, produkter, lage) : '';
   const ordUrl = lage === 'liquid' ? '{{ order_status_url }}' : SPARNING_EXEMPEL;
   const sparUrl = lage === 'liquid' ? SPARNING_LIQUID : SPARNING_EXEMPEL;
   let rader = sidhuvud(k, s) + rubrikOchIntro(k, s, c.rubrik, c.intro, lage);
 
+  // Erbjudandet ligger direkt efter hälsningen i de mallar som bär det —
+  // före orderknappen, tidslinjen och orderraderna (Axel 2026-09-12).
   switch (id) {
     case 'orderbekraftelse':
       rader +=
+        erbj +
         knappRad(s, c.knapp, ordUrl) +
         litenRubrik(s, c.steg_rubrik) +
         tidslinje(s, [c.steg1, c.steg2, c.steg3]) +
@@ -505,19 +548,17 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
         summering(s, lage) +
         leveransadress(s, lage) +
         grundarhalsning(k, s, c.grundare) +
-        faq(k, s, c.faq_rubrik, c.faq) +
-        erbj;
+        faq(k, s, c.faq_rubrik, c.faq);
       break;
     case 'fraktbekraftelse':
       rader +=
         knappRad(s, c.knapp, sparUrl) +
         sparningsInfo(s, lage) +
         stycke(k, s, c.tips, { farg: s.gra, storlek: 13, topp: 8 }) +
-        avdelare(s) +
+        erbj +
         litenRubrik(s, 'I paketet', { topp: 24 }) +
         orderRader(s, lage, 'frakt') +
-        leveransadress(s, lage) +
-        erbj;
+        leveransadress(s, lage);
       break;
     case 'fraktuppdatering':
     case 'ute_for_leverans':
@@ -526,7 +567,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
     case 'levererad':
       rader +=
         stycke(k, s, c.problem, { topp: 8 }) +
-        avdelare(s) +
+        erbj +
         litenRubrik(s, 'I paketet', { topp: 24 }) +
         orderRader(s, lage, 'frakt') +
         avdelare(s) +
@@ -535,8 +576,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
           <tr>
             <td style="padding: 4px 32px 24px;">${knapp(s, c.recension_knapp, ordUrl, { liten: true })}
             </td>
-          </tr>` +
-        erbj;
+          </tr>`;
       break;
     case 'overgiven_kassa':
       rader +=

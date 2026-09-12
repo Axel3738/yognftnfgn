@@ -8,7 +8,12 @@
     "farg_rod": "#dd1d1d",
     "farg_svart": "#000000",
     "farg_ram": "#e8e8e1",
-    "font_rubrik": "'Anton','Arial Narrow',Arial,sans-serif"
+    "font_rubrik_comment": "Mejlklienter laddar inga webbtypsnitt (mätt i Gmail 2026-09-12: Anton föll till Arial). Impact finns på Windows och Mac och ser ut som Anton — därför först.",
+    "font_rubrik": "Impact,'Anton','Arial Narrow','Arial Black',sans-serif",
+    "logga_comment": "Butikens riktiga logga (vit text + röd bäver på transparent, hämtad ur sajtens header 2026-09-12). Visas på svart bakgrund. Shopifys _600x200_crop_center klipper bort tomytan i 16:9-filen.",
+    "logga_url": "https://baverbutiken.se/cdn/shop/files/Namnlos_design_44_67839842-4d7e-4a47-bad7-edcdcd627348_600x200_crop_center.png?v=1776922108",
+    "logga_bredd": 240,
+    "logga_hojd": 80
   },
   "frakt": {
     "packas": "0–2 arbetsdagar",
@@ -22,6 +27,8 @@
     "minsta_kop_sek": 299,
     "gratis_antal": 1,
     "en_gang_per_kund": true,
+    "giltig_dagar": 30,
+    "giltig_dagar_comment": "Mejlet säger 'gäller till <orderdatum + 30 dagar>'. Shopify kan inte stänga koden per kund efter 30 dagar, så koden funkar längre än mejlet lovar — kunden förlorar aldrig på det. Hård gräns kräver ett Shopify Flow (kundtagg som tas bort efter 30 dagar + segment på taggen).",
     "kollektion_handle": "din-gratisprodukt",
     "kollektion_titel": "Din gratisprodukt",
     "gratisprodukter": [

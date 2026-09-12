@@ -1,14 +1,16 @@
 {
-  "comment": "All kundtext i mejlen. Skriven av en Sonnet-subagent 2026-09-12 enligt docs/copy-regler.md (CLAUDE.md regel 6), struktur och faktakoll av huvudsessionen. Platshållare: {{förnamn}} {{ordernummer}} {{fraktbolag}} {{belopp}} — mallmotorn byter dem mot Liquid. Ändra text här, aldrig i mallar.mjs. Första ämnesraden och första preheadern är den som används; övriga är A/B-reserver.",
+  "comment": "All kundtext i mejlen. Skriven av en Sonnet-subagent 2026-09-12 enligt docs/copy-regler.md (CLAUDE.md regel 6), struktur och faktakoll av huvudsessionen. Erbjudandeblocket omskrivet samma kväll efter Axels feedback (överst, wow, urgency). Platshållare: {{förnamn}} {{ordernummer}} {{fraktbolag}} {{belopp}} {{slutdatum}} — mallmotorn byter dem mot Liquid. Ändra text här, aldrig i mallar.mjs. Första ämnesraden och första preheadern är den som används; övriga är A/B-reserver.",
   "upsell": {
-    "rubrik": "Välj din gratisprodukt",
-    "text": "Du har handlat hos oss en gång. Nästa gång du handlar för minst 299 kr väljer du en produkt gratis: Bäverlampa Pro, Bävertratt, Kepslampa 300 lumen eller Digital däckdjupsmätare — värde upp till 199 kr. Knappen lägger på koden åt dig. Gäller en gång per kund.",
+    "forrubrik": "Din tack-gåva",
+    "rubrik": "Välj 1 av 4 — helt gratis",
+    "text": "Nästa gång du handlar för minst 299 kr väljer du en av fyra produkter gratis — värde upp till 199 kr. Knappen lägger på koden åt dig automatiskt.",
+    "urgency": "Gäller till {{slutdatum}} — vissa produkter finns bara i begränsat antal.",
     "kod_etikett": "Din kod:",
-    "knapp": "Välj min gratisprodukt",
+    "knapp": "Hämta min gratisprodukt",
     "valj_rubrik": "Fyra att välja mellan",
     "dyra_rubrik": "Passa på när du ändå får en gratis",
     "dyra_text": "Tre av butikens dyraste produkter just nu — gratisprodukten följer med även på de här.",
-    "finstilt": "Gäller vid nästa köp, minst 299 kr, en gång per kund. Går inte att kombinera med andra koder."
+    "finstilt": "Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med {{slutdatum}}. Kombineras inte med andra koder."
   },
   "orderbekraftelse": {
     "amne": ["{{förnamn}}, {{ordernummer}} är mottagen – vi packar", "Vi har din order {{ordernummer}}", "Bekräftelse: {{ordernummer}}"],

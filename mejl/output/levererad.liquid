@@ -1,4 +1,5 @@
 {% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
+{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -13,15 +14,13 @@
       <td align="center" style="padding: 24px 12px;">
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 600px; width: 100%; border: 1px solid #e8e8e1;">
           <tr>
-            <td align="center" bgcolor="#000000" style="padding: 20px 24px;">
-              <a href="https://baverbutiken.se" style="text-decoration: none;">
-                <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 26px; letter-spacing: 1px; color: #ffffff;">Bäverbutiken.se</span>
-              </a>
+            <td align="center" bgcolor="#000000" style="padding: 16px 24px;">
+              <a href="https://baverbutiken.se" style="text-decoration: none;"><img src="https://baverbutiken.se/cdn/shop/files/Namnlos_design_44_67839842-4d7e-4a47-bad7-edcdcd627348_600x200_crop_center.png?v=1776922108" alt="Bäverbutiken.se" width="240" height="80" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 0;"></a>
             </td>
           </tr>
           <tr>
             <td align="center" style="padding: 36px 32px 8px;">
-              <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 30px; line-height: 1.15; color: #000000;">Ditt paket är levererat</span>
+              <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 30px; line-height: 1.15; color: #000000;">Ditt paket är levererat</span>
             </td>
           </tr>
           <tr>
@@ -37,72 +36,35 @@
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.6; color: #000000; margin: 0;">Är något fel eller trasigt, mejla <a href="mailto:kundsupport@baverbutiken.se" style="color: #dd1d1d;">kundsupport@baverbutiken.se</a> inom 30 dagar så löser vi det.</p>
             </td>
           </tr>
-          <tr>
-            <td style="padding: 0 32px;"><div style="border-top: 1px solid #e8e8e1; font-size: 0; line-height: 0;">&nbsp;</div></td>
-          </tr>
-          <tr>
-            <td style="padding: 24px 32px 8px;">
-              <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">I paketet</span>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0 32px 8px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{% for line in fulfillment.fulfillment_line_items %}
-                <tr>
-                  <td width="72" valign="middle" style="padding: 10px 0;">
-                    {% if line.line_item.image %}<img src="{{ line.line_item | img_url: 'compact_cropped' }}" alt="" width="60" height="60" style="display: block; border: 1px solid #e8e8e1;">{% endif %}
-                  </td>
-                  <td valign="middle" style="padding: 10px 0 10px 12px;">
-                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: #000000; font-weight: bold; margin: 0;">{{ line.line_item.title }}</p>
-                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 2px 0 0;">Antal: {{ line.quantity }}</p>
-                  </td>
-                  
-                </tr>{% endfor %}
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0 32px;"><div style="border-top: 1px solid #e8e8e1; font-size: 0; line-height: 0;">&nbsp;</div></td>
-          </tr>
-          <tr>
-            <td style="padding: 20px 32px 8px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.6; color: #000000; margin: 0;">Har du två minuter? Ett omdöme hjälper nästa kund att välja rätt.</p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 4px 32px 24px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td align="center" bgcolor="#dd1d1d">
-                    <a href="{{ order_status_url }}" target="_blank" style="display: inline-block; font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 12px 32px;">Lämna ett omdöme</a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
           <!-- Erbjudandet: köp igen → välj en gratisprodukt -->
           <tr>
-            <td style="padding: 28px 32px 0;">
+            <td style="padding: 20px 32px 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
                 <tr>
-                  <td align="center" style="padding: 28px 24px 24px;">
-                    <p style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 24px; line-height: 1.15; color: #ffffff; letter-spacing: 0.5px; margin: 0;">Välj din gratisprodukt</p>
-                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.6; color: #d9d9d9; margin: 10px 0 18px;">Du har handlat hos oss en gång. Nästa gång du handlar för minst 299 kr väljer du en produkt gratis: Bäverlampa Pro, Bävertratt, Kepslampa 300 lumen eller Digital däckdjupsmätare — värde upp till 199 kr. Knappen lägger på koden åt dig. Gäller en gång per kund.</p>
+                  <td align="center" style="padding: 26px 24px 8px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; color: #dd1d1d; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px;">Din tack-gåva</p>
+                    <p style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 32px; line-height: 1.1; color: #ffffff; letter-spacing: 0.5px; margin: 0;">Välj 1 av 4 — helt gratis</p>
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #d9d9d9; margin: 12px 0 18px;">Nästa gång du handlar för minst 299 kr väljer du en av fyra produkter gratis — värde upp till 199 kr. Knappen lägger på koden åt dig automatiskt.</p>
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 18px;">
                       <tr>
                         <td style="border: 2px dashed #ffffff; padding: 10px 22px;">
                           <span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: #d9d9d9; letter-spacing: 1px; text-transform: uppercase;">Din kod:</span>
-                          <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 22px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;">TACKIGEN</span>
+                          <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;">TACKIGEN</span>
                         </td>
                       </tr>
                     </table>
               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="https://baverbutiken.se/discount/TACKIGEN?redirect=%2Fcollections%2Fdin-gratisprodukt" target="_blank" style="display: inline-block; font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 12px 32px;">Välj min gratisprodukt</a>
+                    <a href="https://baverbutiken.se/discount/TACKIGEN?redirect=%2Fcollections%2Fdin-gratisprodukt" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Hämta min gratisprodukt</a>
                   </td>
                 </tr>
               </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" bgcolor="#dd1d1d" style="padding: 12px 24px; margin-top: 20px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;">&#9203; Gäller till {{ slutdatum }} — vissa produkter finns bara i begränsat antal.</p>
                   </td>
                 </tr>
               </table>
@@ -110,7 +72,7 @@
           </tr>
           <tr>
             <td style="padding: 20px 32px 8px;">
-              <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">Fyra att välja mellan</span>
+              <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">Fyra att välja mellan</span>
             </td>
           </tr>
           <tr>
@@ -151,7 +113,7 @@
           </tr>
           <tr>
             <td style="padding: 16px 32px 8px;">
-              <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">Passa på när du ändå får en gratis</span>
+              <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">Passa på när du ändå får en gratis</span>
             </td>
           </tr>
           <tr>
@@ -167,7 +129,7 @@
                     <a href="https://baverbutiken.se/products/led-garagebelysning-14-pack-hexagonala-taklampor-6500k" style="text-decoration: none;">
                       <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1a25d723-b76a-44ee-b845-84c9cd017f50.jpg?v=1782027424" alt="" width="160" height="160" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto; max-width: 100%;">
                       <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.4; color: #000000; margin: 8px 0 0;">LED Garagebelysning 14-pack</p>
-                      <p style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 18px; color: #dd1d1d; margin: 4px 0 0;">3 349 kr</p>
+                      <p style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; color: #dd1d1d; margin: 4px 0 0;">3 349 kr</p>
                       <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: #6b6b6b; margin: 0;"><s>4 186 kr</s></p>
                     </a>
                   </td>
@@ -175,7 +137,7 @@
                     <a href="https://baverbutiken.se/products/led-ljuslist-20-4-pods-komplett-offroad-kit" style="text-decoration: none;">
                       <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8b40c5b9-09d8-4c78-980e-22029b7b07b2.jpg?v=1782036116" alt="" width="160" height="160" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto; max-width: 100%;">
                       <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.4; color: #000000; margin: 8px 0 0;">LED Ljuslist 20&quot; + 4&quot; Pods</p>
-                      <p style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 18px; color: #dd1d1d; margin: 4px 0 0;">2 379 kr</p>
+                      <p style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; color: #dd1d1d; margin: 4px 0 0;">2 379 kr</p>
                       <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: #6b6b6b; margin: 0;"><s>2 974 kr</s></p>
                     </a>
                   </td>
@@ -183,7 +145,7 @@
                     <a href="https://baverbutiken.se/products/varningsljusramp-38-barnstens-vit-for-lastbil" style="text-decoration: none;">
                       <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/125fa2b7-f544-4173-bc47-4cce5cf02298.jpg?v=1782036511" alt="" width="160" height="160" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto; max-width: 100%;">
                       <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.4; color: #000000; margin: 8px 0 0;">Varningsljusramp 38&quot;</p>
-                      <p style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 18px; color: #dd1d1d; margin: 4px 0 0;">2 299 kr</p>
+                      <p style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; color: #dd1d1d; margin: 4px 0 0;">2 299 kr</p>
                       <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: #6b6b6b; margin: 0;"><s>2 874 kr</s></p>
                     </a>
                   </td>
@@ -193,13 +155,56 @@
           </tr>
           <tr>
             <td style="padding: 4px 32px 8px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;">Gäller vid nästa köp, minst 299 kr, en gång per kund. Går inte att kombinera med andra koder.</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;">Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med {{ slutdatum }}. Kombineras inte med andra koder.</p>
             </td>
           </tr>
-          <tr><td style="padding: 0 0 20px;"></td></tr>
+          <tr><td style="padding: 0 0 12px;"></td></tr>
+          <tr>
+            <td style="padding: 0 32px;"><div style="border-top: 1px solid #e8e8e1; font-size: 0; line-height: 0;">&nbsp;</div></td>
+          </tr>
+          <tr>
+            <td style="padding: 24px 32px 8px;">
+              <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">I paketet</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0 32px 8px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{% for line in fulfillment.fulfillment_line_items %}
+                <tr>
+                  <td width="72" valign="middle" style="padding: 10px 0;">
+                    {% if line.line_item.image %}<img src="{{ line.line_item | img_url: 'compact_cropped' }}" alt="" width="60" height="60" style="display: block; border: 1px solid #e8e8e1;">{% endif %}
+                  </td>
+                  <td valign="middle" style="padding: 10px 0 10px 12px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: #000000; font-weight: bold; margin: 0;">{{ line.line_item.title }}</p>
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 2px 0 0;">Antal: {{ line.quantity }}</p>
+                  </td>
+                  
+                </tr>{% endfor %}
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0 32px;"><div style="border-top: 1px solid #e8e8e1; font-size: 0; line-height: 0;">&nbsp;</div></td>
+          </tr>
+          <tr>
+            <td style="padding: 20px 32px 8px;">
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.6; color: #000000; margin: 0;">Har du två minuter? Ett omdöme hjälper nästa kund att välja rätt.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 4px 32px 24px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" bgcolor="#dd1d1d">
+                    <a href="{{ order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 12px 32px;">Lämna ett omdöme</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
           <tr>
             <td align="center" bgcolor="#000000" style="border-top: 1px solid #2a2a2a; padding: 24px 32px;">
-              <p style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 15px; color: #ffffff; letter-spacing: 1px; margin: 0 0 8px;">Bäverbutiken.se</p>
+              <p style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 15px; color: #ffffff; letter-spacing: 1px; margin: 0 0 8px;">Bäverbutiken.se</p>
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.6; color: #d9d9d9; margin: 0;">Frågor om din order? Svara på det här mejlet eller skriv till <a href="mailto:kundsupport@baverbutiken.se" style="color: #ffffff;">kundsupport@baverbutiken.se</a>.</p>
             </td>
           </tr>

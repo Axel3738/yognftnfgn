@@ -1,4 +1,5 @@
 {% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
+{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -13,15 +14,13 @@
       <td align="center" style="padding: 24px 12px;">
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 600px; width: 100%; border: 1px solid #e8e8e1;">
           <tr>
-            <td align="center" bgcolor="#000000" style="padding: 20px 24px;">
-              <a href="https://baverbutiken.se" style="text-decoration: none;">
-                <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 26px; letter-spacing: 1px; color: #ffffff;">Bäverbutiken.se</span>
-              </a>
+            <td align="center" bgcolor="#000000" style="padding: 16px 24px;">
+              <a href="https://baverbutiken.se" style="text-decoration: none;"><img src="https://baverbutiken.se/cdn/shop/files/Namnlos_design_44_67839842-4d7e-4a47-bad7-edcdcd627348_600x200_crop_center.png?v=1776922108" alt="Bäverbutiken.se" width="240" height="80" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 0;"></a>
             </td>
           </tr>
           <tr>
             <td align="center" style="padding: 36px 32px 8px;">
-              <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 30px; line-height: 1.15; color: #000000;">Din order är avbruten</span>
+              <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 30px; line-height: 1.15; color: #000000;">Din order är avbruten</span>
             </td>
           </tr>
           <tr>
@@ -37,7 +36,7 @@
           </tr>
           <tr>
             <td style="padding: 24px 32px 8px;">
-              <span style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">Din order</span>
+              <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">Din order</span>
             </td>
           </tr>
           <tr>
@@ -59,7 +58,7 @@
           <tr><td style="padding: 0 0 24px;"></td></tr>
           <tr>
             <td align="center" bgcolor="#000000" style="border-top: 1px solid #2a2a2a; padding: 24px 32px;">
-              <p style="font-family: 'Anton','Arial Narrow',Arial,sans-serif; text-transform: uppercase; font-size: 15px; color: #ffffff; letter-spacing: 1px; margin: 0 0 8px;">Bäverbutiken.se</p>
+              <p style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 15px; color: #ffffff; letter-spacing: 1px; margin: 0 0 8px;">Bäverbutiken.se</p>
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.6; color: #d9d9d9; margin: 0;">Frågor om din order? Svara på det här mejlet eller skriv till <a href="mailto:kundsupport@baverbutiken.se" style="color: #ffffff;">kundsupport@baverbutiken.se</a>.</p>
             </td>
           </tr>

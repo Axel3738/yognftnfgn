@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
-import { byggAlla, byggMall, valjProdukter, kortnamn, ersatt, MALLAR, kr } from '../mallar.mjs';
+import { byggAlla, byggMall, valjProdukter, kortnamn, ersatt, MALLAR, kr, exempelSlutdatum, slutdatumLiquid } from '../mallar.mjs';
 import { byggSida } from '../sida.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -87,6 +87,27 @@ test('erbjudandet ligger i rätt mallar och bär kod, kollektionslänk, fyra gra
       assert.ok(m.html.includes(String(e.minsta_kop_sek)), `${meta.id}: minsta köp`);
     }
   }
+});
+
+test('erbjudandet ligger överst (före orderknappen) och bär sista datum, logga och urgency', () => {
+  const m = byggMall('orderbekraftelse', { ...indata, lage: 'liquid' });
+  assert.ok(m.html.indexOf('Erbjudandet:') < m.html.indexOf('{{ order_status_url }}'), 'erbjudandet ska komma före Följ din order');
+  assert.ok(m.html.indexOf('Erbjudandet:') < m.html.indexOf('Vad händer nu?'), 'erbjudandet ska komma före tidslinjen');
+  assert.ok(m.html.includes("{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}"), 'slutdatum räknas ur orderdagen + 30 dagar');
+  assert.ok(m.html.includes('{{ slutdatum }}'), 'urgency-raden bär slutdatum');
+  assert.ok(m.html.includes(`src="${konfig.butik.logga_url}"`), 'loggan i sidhuvudet');
+  assert.ok(m.html.includes('Impact'), 'rubriktypsnitt som finns i mejlklienter');
+  const ex = byggMall('orderbekraftelse', { ...indata, lage: 'exempel' });
+  assert.match(ex.html, /Gäller till \d{1,2} (januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)/);
+});
+
+test('exempelSlutdatum och slutdatumLiquid: 30 dagar, svensk månad, alla tolv månader i case-satsen', () => {
+  assert.equal(exempelSlutdatum(30, new Date(2026, 8, 12)), '12 oktober');
+  assert.equal(exempelSlutdatum(30, new Date(2026, 11, 15)), '14 januari');
+  const l = slutdatumLiquid(14);
+  assert.ok(l.includes('plus: 1209600'));
+  for (const m of ['januari', 'december']) assert.ok(l.includes(`'${m}'`));
+  assert.equal((l.match(/\{% when /g) ?? []).length, 12);
 });
 
 test('rabattkoden följer namnregeln: versaler, inga å/ä/ö, inga mellanslag', () => {
