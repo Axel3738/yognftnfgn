@@ -8,11 +8,16 @@
 //     (x 555–713, y 799–1011) och handskens etikett "CE / CUT LEVEL 5 / L" (x 1254–1298,
 //     y 943–1022). Inget utsnitt går in i de rutorna: järnen slutar vid x 548,
 //     handsken beskärs ovanför y 935. Väskan, stroppen, knivarna och järnen är rena.
-//     Bakgrunden är blåaktig (≈ 236,254,255) — vitbalanseras med en per-kanal
-//     linjär justering så utsnitten ligger vitt mot den vita kvadraten. Ingen retusch.
-//   Knivutsnittet: stroppen ligger dikt an under kniv 6 (strop x ≥ 567, y ≥ 570; kniv 1:s
-//     skaft slutar först y 592). Utsnittet görs därför L-format — hörnet x ≥ 567 ∧ y ≥ 566
+//     Bakgrunden är ett blåvitt ark med tydlig ljusgradient (≈ 235,254,255 upptill →
+//     ≈ 175,200,225 nertill). Varje utsnitt planpassas därför (flat-field): en plan
+//     v = a + b·x + c·y anpassas per kanal till utsnittets ramspixlar som ser ut som
+//     bakgrund (blåaktiga, ljusa), och varje pixel delas med planen så att arket blir
+//     vitt överallt. Det är en ljuskorrigering, ingen retusch — objekten rörs inte.
+//   Knivutsnittet: stroppen ligger dikt an under kniv 6 (strop x ≥ 566, y ≥ 569; kniv 1:s
+//     skaft slutar först y 592). Utsnittet görs därför L-format — hörnet x ≥ 556 ∧ y ≥ 566
 //     lämnas utanför så att alla sex knivarna är hela och stroppen inte sticker in.
+//   Handskarna tas ur image3 (ett PAR, ingen etikett) — i image21 ligger väskans orange
+//     dragkedjekant 3 px ovanför fingertopparna och etiketten på handflatan.
 //
 // ⚠️ LÅST FAKTA (temu/batch9/fakta.mjs): 30 delar totalt, 6 knivar med träskaft, 6 små
 // järn, läderstrop, slippapper, polermedel, träbit, skärskyddade handskar, väska med
@@ -35,9 +40,33 @@ const S = 1600;                                  // alla leveranser är 1600×16
 const BLÅ = '#0b2a3d', GUL = '#ffd24a', GRÅ = '#5b6b76';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
-// Fotots bakgrund (236,254,255) → vit. Per-kanal linjär förstärkning, inget annat.
-const VITBALANS = [255 / 236, 255 / 254, 1];
-const foto = () => sharp(K.foto).linear(VITBALANS, [0, 0, 0]);
+// Planpassad vitbalans (flat-field). Ramen (8 px) ger bakgrundsprover; bara pixlar som ser
+// ut som arket (B ≥ 195, blåare än röda) räknas, så skuggor och föremål stör inte planen.
+// Förstärkningen begränsas till 1,0–1,7× så att ingenting kan bli mörkare eller skena.
+async function planvit(buf) {
+  const { data, info } = await sharp(buf).raw().toBuffer({ resolveWithObject: true });
+  const { width: w, height: h, channels: c } = info, F = 8;
+  const S = [0, 1, 2].map(() => ({ n: 0, sx: 0, sy: 0, sxx: 0, syy: 0, sxy: 0, sv: 0, sxv: 0, syv: 0 }));
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    if (!(x < F || y < F || x >= w - F || y >= h - F)) continue;
+    const i = (y * w + x) * c, r = data[i], g = data[i + 1], b = data[i + 2];
+    if (!(b >= 195 && b - r >= 8 && g - r >= 4)) continue;
+    for (let k = 0; k < 3; k++) { const v = data[i + k], s = S[k]; s.n++; s.sx += x; s.sy += y; s.sxx += x * x; s.syy += y * y; s.sxy += x * y; s.sv += v; s.sxv += x * v; s.syv += y * v; }
+  }
+  const det = (m) => m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
+  const plan = S.map((s) => {   // minsta kvadrat: [n sx sy; sx sxx sxy; sy sxy syy]·[a b c] = [sv sxv syv]
+    if (s.n < 200) throw new Error('planvit: för få bakgrundsprover i ramen');
+    const M = [[s.n, s.sx, s.sy], [s.sx, s.sxx, s.sxy], [s.sy, s.sxy, s.syy]], V = [s.sv, s.sxv, s.syv], D = det(M);
+    const kol = (j) => M.map((rad, i) => rad.map((v, k) => (k === j ? V[i] : v)));
+    return { a: det(kol(0)) / D, b: det(kol(1)) / D, c: det(kol(2)) / D };
+  });
+  const ut = Buffer.alloc(w * h * 3);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const i = (y * w + x) * c, o = (y * w + x) * 3;
+    for (let k = 0; k < 3; k++) { const p = plan[k], f = Math.min(1.7, Math.max(1, 255 / (p.a + p.b * x + p.c * y))); ut[o + k] = Math.min(255, Math.round(data[i + k] * f)); }
+  }
+  return sharp(ut, { raw: { width: w, height: h, channels: 3 } }).png().toBuffer();
+}
 
 /* ---------- utsnitt: [källa, x, y, bredd, höjd] i källbildens egna pixlar ----------
    Varje ruta är visuellt kontrollerad mot originalet innan den låstes.               */
@@ -45,22 +74,24 @@ const UTSNITT = {
   knivar:  ['foto', 55, 195, 591, 405],     // 6 täljknivar (L-format, se knivar())
   jarn:    ['foto', 125, 612, 423, 390],    // 6 små järn, slutar x 548 före slippapprets text
   strop:   ['foto', 560, 560, 405, 128],    // läderstroppen, hel
-  handske: ['foto', 1082, 562, 388, 373],   // handskens fingrar + handflata, ovanför etiketten
+  handske: ['set', 4, 404, 126, 164],       // handskparet ur image3 (utan etikett): börjar y 404 under polerbitarna (slutar y 400), slutar x 130 före träbiten (börjar x 131)
   vaska:   ['foto', 640, 85, 665, 475],     // väskan med dragkedja, hel
 };
 
 async function utsnitt(namn) {
   if (namn === 'knivar') return knivar();
   const [k, left, top, width, height] = UTSNITT[namn];
-  return foto().extract({ left, top, width, height }).png().toBuffer();
+  const buf = await sharp(K[k]).flatten({ background: '#ffffff' }).extract({ left, top, width, height }).png().toBuffer();
+  return k === 'foto' ? planvit(buf) : buf;
 }
 
-// L-format utsnitt: hela knivrutan utom hörnet där stroppen börjar.
+// L-format utsnitt: hela knivrutan (planpassad) utom hörnet där stroppen börjar.
 async function knivar() {
   const [, left, top, width, height] = UTSNITT.knivar;
-  const hörnX = 567 - left, hörnY = 566 - top;                     // stroppens hörn i utsnittets koordinater
-  const övre = await foto().extract({ left, top, width, height: hörnY }).png().toBuffer();
-  const nedre = await foto().extract({ left, top: top + hörnY, width: hörnX, height: height - hörnY }).png().toBuffer();
+  const hörnX = 556 - left, hörnY = 566 - top;                     // stroppens hörn i utsnittets koordinater
+  const hel = await planvit(await sharp(K.foto).extract({ left, top, width, height }).png().toBuffer());
+  const övre = await sharp(hel).extract({ left: 0, top: 0, width, height: hörnY }).png().toBuffer();
+  const nedre = await sharp(hel).extract({ left: 0, top: hörnY, width: hörnX, height: height - hörnY }).png().toBuffer();
   return sharp({ create: { width, height, channels: 3, background: '#ffffff' } })
     .composite([{ input: övre, top: 0, left: 0 }, { input: nedre, top: hörnY, left: 0 }]).png().toBuffer();
 }

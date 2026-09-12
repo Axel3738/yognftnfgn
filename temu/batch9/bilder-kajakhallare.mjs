@@ -45,7 +45,7 @@ const UTSNITT = {
   arm:     [280, 860, 412, 385],    // de skumklädda armarna, slutar vid x 692 före vattenstämpeln
   bojen:   [150, 700, 500, 320],    // böjarna där lasten sitter
   skruvar: [835, 462, 382, 156],    // 4 skruvar + 4 pluggar (inget antal skrivs på bilden)
-  montage: [150, 392, 1080, 500],   // stolpar + skruvar + pluggar = detaljbilden (montaget)
+  montage: [150, 392, 1080, 450],   // stolpar + skruvar + pluggar = detaljbilden; slutar y 842, före skumhylsan (börjar y 847)
 };
 
 async function utsnitt(namn) {
