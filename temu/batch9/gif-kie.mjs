@@ -26,6 +26,7 @@ const RORELSE = {
   motorlas:       'The lake water ripples gently and the boat sways very slightly at the jetty; the lock stays in place.',
   varmesits:      'Light snow falls; skaters glide slowly in the blurred background; the seat pad and thermos stay still.',
   taljset:        'Very slow, gentle push-in towards the knife and the carved spoon; a few shavings settle.',
+  varmeljus:      'The LED tealights glow steadily with a very gentle flicker on the windowsill; outside the window light snow falls slowly. Quiet room ambience, no music.',
   blockljus:      'The three LED candle flames flicker gently in the dim room; nothing else moves.',
 };
 // Omkörning med annan rörelse: RORELSE_JSON='{"id":"…"}'

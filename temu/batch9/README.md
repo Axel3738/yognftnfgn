@@ -28,7 +28,7 @@ Axel: *"Men du kan inte bara använda Kie Ai api då?"* — jo): `miljo-kie.mjs`
 | motorlas | 10 | 909 | 1 079 | ✅ |
 | varmesits | 10 | 599 | 719 | ✅ |
 | taljset (30 delar) | 10 | 869 | 1 039 | ✅ |
-| varmeljus (24-pack, **utan fjärr**) | 10 | 379 | 519 | ⏸️ **DRAFT i båda butikerna** (Axel 2026-09-12: "ska bytas till en med fjärr") — CWD offererade bara 24-packet utan fjärr; ny offert behövs. Notion-kortet märkt VÄNTA |
+| varmeljus (24-pack, **utan fjärr**) | 10 | 379 | 519 | ✅ Axel ville först ha versionen med fjärr (CWD offererade bara utan) — beslut 2026-09-12: *"skit i ny offert vi kör utan fjärr"*. Låg i draft ~1 h |
 | blockljus (3-pack, med fjärr) | 10 | 479 | 619 | ✅ |
 
 **Byggs inte (rapporterat till Axel):** caravan front cover (ark A, out of stock) · deer hanger

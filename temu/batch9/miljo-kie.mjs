@@ -30,9 +30,10 @@ const SCEN = {
   motorlas:       'The stainless-steel lock from the reference mounted over the clamp screws of an outboard motor on a small aluminium boat moored at a wooden jetty, calm lake in the evening, no people.',
   varmesits:      'The grey heated seat pad from the reference lying on a wooden bench seat at an outdoor ice rink, a thermos beside it, cold winter light, no people.',
   taljset:        'The whittling set from the reference lying open on a wooden workbench by a cabin window, seen at an angle from a distance, wood shavings and a half-carved wooden spoon in the foreground, warm light, no people.',
+  varmeljus:      'A handful of the LED tealights from the reference glowing on a white windowsill in the evening, a snowy garden outside the window, warm cosy light, no remote control anywhere, no people.',
   blockljus:      'Exactly three grey glass LED pillar candles from the reference, lit, standing on a wooden coffee table in a dim cosy living room in the evening, the remote lying beside them, no people.',
 };
-const TEMP_REF = new Set(['snoflingor', 'blockljus', 'kajakhallare']);   // badge-heroer
+const TEMP_REF = new Set(['snoflingor', 'blockljus', 'kajakhallare', 'varmeljus']);   // badge-heroer
 // Omkörning med annan scen/referens: SCEN_JSON='{"id":"…"}' REF_JSON='{"id":"<url>"}' (referensen måste vara publik).
 Object.assign(SCEN, process.env.SCEN_JSON ? JSON.parse(process.env.SCEN_JSON) : {});
 const REF_OVR = process.env.REF_JSON ? JSON.parse(process.env.REF_JSON) : {};

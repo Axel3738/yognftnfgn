@@ -11,7 +11,7 @@ Axel: *"Dessa ska upp på bäverbutiken. Både svenska och norska."*
 | vedborr | 369 | 299 | ✅ |
 | tofflor (16 varianter: 2 färger × 40–47) | 489 | 429 | ✅ — **inomhustofflor**, Axels beslut |
 | solcellslampa (210 LED, EN lampa) | 589 | 559 | ✅ |
-| bilborste (100 cm) | 829 | — | ✅ bara SE — CWD: OVERSIZE till Norge |
+| bilborste (100 cm) | ~~829~~ **799** / 1 039 | — | ✅ bara SE — CWD: OVERSIZE till Norge. Axel satte 799 (2026-09-12); arket sa 499, 3×-regeln 829 |
 | fonsterlarm | 449 | 389 | ✅ |
 | hangrannerensare | (419) | (339) | ⛔ **SKIPPAD** (Axel 2026-09-12) — Notion-kortet satt till Exit |
 | båtkapellstång | — | — | ⛔ ingen quote |
