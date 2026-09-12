@@ -1,17 +1,17 @@
 {
-  "uppdaterad": "2026-09-11T04:05:23.871Z",
-  "kord": "2026-09-11T04:05:05.713Z",
+  "uppdaterad": "2026-09-12T04:03:25.585Z",
+  "kord": "2026-09-12T04:03:13.634Z",
   "manad": "2026-09",
   "period": {
     "fran": "2026-09-01",
-    "till": "2026-09-11"
+    "till": "2026-09-12"
   },
   "slutavrakning": false,
   "sats": 0.004,
   "valuta": {
     "kod": "USD",
-    "kurs": 0.10372,
-    "datum": "2026-09-10",
+    "kurs": 0.10316,
+    "datum": "2026-09-11",
     "gammal": false
   },
   "rader": [
@@ -19,27 +19,27 @@
       "plats": 1,
       "id": "josh",
       "namn": "Josh Naelga",
-      "usd": 35.4,
-      "annonser": 273,
+      "usd": 38.09,
+      "annonser": 276,
       "kampanjer": [
         {
           "namn": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-          "usd": 10.33
+          "usd": 11.63
         },
         {
           "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-          "usd": 8.26
+          "usd": 9.09
         },
         {
           "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "usd": 6.03
+          "usd": 6.53
         }
       ],
       "basta": {
         "namn": "IBC_PD_1_H1",
-        "usd": 7.07
+        "usd": 7.77
       },
-      "okning": 3.5,
+      "okning": 2.69,
       "forraPlats": 1,
       "flytt": 0
     },
@@ -47,27 +47,27 @@
       "plats": 2,
       "id": "annabelle",
       "namn": "Annabelle Gonzales",
-      "usd": 18.21,
+      "usd": 19.1,
       "annonser": 121,
       "kampanjer": [
         {
           "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
-          "usd": 5.04
+          "usd": 5.46
         },
         {
           "namn": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
-          "usd": 4.25
+          "usd": 4.42
         },
         {
           "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "usd": 3.83
+          "usd": 3.99
         }
       ],
       "basta": {
         "namn": "Damasker_PD_1",
-        "usd": 3.87
+        "usd": 4.12
       },
-      "okning": 1.16,
+      "okning": 0.89,
       "forraPlats": 2,
       "flytt": 0
     },
@@ -75,19 +75,19 @@
       "plats": 3,
       "id": "gilz",
       "namn": "Gilz Bruce Biazon",
-      "usd": 1.61,
+      "usd": 1.71,
       "annonser": 37,
       "kampanjer": [
         {
           "namn": "Mastern",
-          "usd": 1.61
+          "usd": 1.71
         }
       ],
       "basta": {
         "namn": "277 H1 08-11",
-        "usd": 1.35
+        "usd": 1.43
       },
-      "okning": -0.18,
+      "okning": 0.1,
       "forraPlats": 3,
       "flytt": 0
     },
@@ -95,12 +95,12 @@
       "plats": 4,
       "id": "carl",
       "namn": "Carl Vicente",
-      "usd": 1.49,
+      "usd": 1.59,
       "annonser": 40,
       "kampanjer": [
         {
           "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "usd": 1.42
+          "usd": 1.52
         },
         {
           "namn": "Mastern",
@@ -111,7 +111,7 @@
         "namn": "Batmotor_FM_1_H1",
         "usd": 0.33
       },
-      "okning": 0,
+      "okning": 0.1,
       "forraPlats": 4,
       "flytt": 0
     },
@@ -119,12 +119,12 @@
       "plats": 5,
       "id": "jasper",
       "namn": "Jasper Tomboc",
-      "usd": 1.21,
+      "usd": 1.26,
       "annonser": 35,
       "kampanjer": [
         {
           "namn": "Mastern",
-          "usd": 1.11
+          "usd": 1.16
         },
         {
           "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
@@ -137,16 +137,16 @@
       ],
       "basta": {
         "namn": "110 H1",
-        "usd": 0.44
+        "usd": 0.47
       },
-      "okning": -0.06,
+      "okning": 0.05,
       "forraPlats": 5,
       "flytt": 0
     }
   ],
   "totalt": {
-    "usd": 57.92,
-    "annonser": 506,
+    "usd": 61.76,
+    "annonser": 509,
     "redigerare": 5
   },
   "obetald": {
@@ -245,6 +245,16 @@
         "gilz": 1.79,
         "carl": 1.49,
         "jasper": 1.27
+      }
+    },
+    {
+      "datum": "2026-09-11",
+      "per": {
+        "josh": 35.4,
+        "annabelle": 18.21,
+        "gilz": 1.61,
+        "carl": 1.49,
+        "jasper": 1.21
       }
     }
   ]
