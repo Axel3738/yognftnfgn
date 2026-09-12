@@ -1,0 +1,66 @@
+{
+ "adventlane_AdventLaneRacing_PD_8_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/28c3b8584d3e4dfdbab50d6d565a2582/original.mp4",
+  "proofreadId": "d98bc891c066493aad407670953fac40-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "dd1a6834c9184a9083c23d1c9fe4b98d-nb",
+  "downloaded": true
+ },
+ "adventlane_AdventLaneRacing_SY_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/685d49cf8aa5479b91c56542912c7580/original.mp4",
+  "proofreadId": "8ebe77559abe4d508f4ca1de21dc8da6-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "6706503f989348be8cc9d7e31d5a785d-nb",
+  "downloaded": true
+ },
+ "adventlane_AdventLaneRacing_MR_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/8ab5cc6f5cb94843a49bfce289c967eb/original.mp4",
+  "proofreadId": "6ad5d269e65643efbf1b95e23a460b3d-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "806fe54c16d44f4989c6f0d9bf3987ef-nb",
+  "downloaded": true
+ },
+ "adventlane_AdventLaneRacing_PD_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/af987a2099104e9abba65fff5d422dfe/original.mp4",
+  "proofreadId": "ddcbc9cf79464bfeb4cf3a3fcdbc5f1b-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "6b72a6bb9ad8456d83e295e18361408d-nb",
+  "downloaded": true
+ },
+ "adventlane_AdventLaneRacing_PD_6_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/0ba8f7ca1e764c5d8a2e9250cda9904a/original.mp4",
+  "proofreadId": "88d07817700d4f6eab7fbe78603bd550-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "ad53a4cc29024f2b80a2e996ef94de7c-nb",
+  "downloaded": true
+ },
+ "adventlane_AdventLaneRacing_AU_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/4309ecfae1564b818b7839268d1d5abf/original.mp4",
+  "proofreadId": "3685db6703d34e5dbec526292931166e-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "087c9a1e35d740dbb30df4764d9349e3-nb",
+  "downloaded": true
+ },
+ "omrendering_FM_1_H1_forsta": {
+  "assetUrl": "https://resource2.heygen.ai/video/a8609d1fd040425492c19f1764900bed/original.mp4",
+  "proofreadId": "69b8f8363444406bb274eed991cdc795-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "739f5bc9f7f74cff834abf2df54330d3-nb",
+  "downloaded": true
+ },
+ "adventlane_AdventLaneRacing_FM_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/10a807f0880345fbac99f8d466665b63/original.mp4",
+  "proofreadId": "6a4a7a1e128943fea463d3a0afa408a8-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9770348e60464a228e877e64b8471f99-nb",
+  "downloaded": true
+ }
+}

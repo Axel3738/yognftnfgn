@@ -73,7 +73,8 @@ def läs_srt(path):
 
 def chunka(text, max_chars):
     """Ordvis radbrytning till bitar ≤ max_chars (meningsgräns först, som cover-srt.py)."""
-    sents = [x.strip() for x in re.findall(r'[^.!?]+[.!?]?\s*', text) if x.strip()]
+    # en punkt avslutar en mening bara före blanksteg/slut — "adventlane.se." blev "adventlane." + "se." (PD_8_H1 2026-09-12)
+    sents = [x.strip() for x in re.findall(r'.+?(?:[.!?]+(?=\s|$)|$)', text) if x.strip()]
     bitar, cur = [], ''
     for x in sents:
         if len(x) > max_chars:
@@ -131,29 +132,39 @@ def lokal_spann(z, r=1):
     return mx - mn
 
 
-def hitta_piller(g, zon, x0=120, x1=600, pad_x=6, pad_y=6, h_min=40, h_max=85):
+def hitta_piller(g, zon, x0=None, x1=None, pad_x=6, pad_y=6, h_min=40, h_max=85, skala=1.0):
     """Ordcaption-pillret i en gråframe (Carl Vicentes mall 2026-09-05: VITT piller,
     svart/grå karaoke-text, centrerat nederst). Pillret hittas som en platt vit yta:
     per rad den längsta körningen av platta ljusa pixlar (luckor ≤ 40 px = glyfer),
     100–480 px bred och centrerad inom 360±60; sammanhängande sådana rader 40–85 px höga
     är pillret (checklistrutor/telefonskärm/pratbubblor är högre). Lägsta gruppen vinner.
-    Returnerar [x0,y0,x1,y1] i bildpixlar eller None."""
+    Returnerar [x0,y0,x1,y1] i bildpixlar eller None.
+
+    Alla mått ovan är mätta på 720×1280 (Båtmotortrekk 2026-09-05). `skala` = W/720
+    räknar om dem — AdventLane-videorna 2026-09-12 är 1080×1920 med piller 105–127 px
+    höga och 150–930 px breda, och utan skalning hittades inget alls."""
+    s = float(skala)
+    if x0 is None: x0 = int(120 * s)
+    if x1 is None: x1 = int(600 * s)
+    h_min, h_max = int(h_min * s), int(h_max * s)
     z = g[zon[0]:zon[1], x0:x1].astype(np.int16)
     platt = (z > 225) & (lokal_spann(z, 1) < 30)
-    mitt = 360 - x0
+    mitt = 360 * s - x0
     rader = []
     for y in range(z.shape[0]):
         kol = np.where(platt[y])[0]
-        if len(kol) < 60: rader.append(None); continue
+        if len(kol) < 60 * s: rader.append(None); continue
         bäst = None; s0 = kol[0]; p0 = kol[0]
         for x in kol[1:]:
-            if x - p0 > 40:
+            if x - p0 > 40 * s:
                 if bäst is None or p0 - s0 > bäst[1] - bäst[0]: bäst = (s0, p0)
                 s0 = x
             p0 = x
         if bäst is None or p0 - s0 > bäst[1] - bäst[0]: bäst = (s0, p0)
         a, b = bäst
-        rader.append((a, b) if 100 <= b - a <= 560 and abs((a + b) / 2 - mitt) <= 90 else None)
+        # minsta bredd 70 (inte 100): ett piller med bara "649" är ~115 px vid 1080 — AU_1_H1 2026-09-12 missade
+        # prispillren och den svenska siffran låg kvar i tre frames
+        rader.append((a, b) if 70 * s <= b - a <= 560 * s and abs((a + b) / 2 - mitt) <= 90 * s else None)
     # gruppera på radnärhet (luckor ≤ 45 px = textraderna, som inte är platta). Bredden =
     # yttersta kanterna i gruppen: står pillret mot vit båt/snö smälter kanten ihop med
     # bakgrunden, men att vitmåla vit bakgrund syns inte — därför är "för bred" ofarligt.
@@ -161,11 +172,11 @@ def hitta_piller(g, zon, x0=120, x1=600, pad_x=6, pad_y=6, h_min=40, h_max=85):
     for y, r in enumerate(rader):
         if not r: continue
         g0 = grupper[-1] if grupper else None
-        if g0 and y - g0[1] <= 45:
+        if g0 and y - g0[1] <= 45 * s:
             grupper[-1] = (g0[0], y, min(g0[2], r[0]), max(g0[3], r[1]))
         else:
             grupper.append((y, y, r[0], r[1]))
-    grupper = [gr for gr in grupper if h_min <= gr[1] - gr[0] <= h_max and gr[3] - gr[2] <= 560]
+    grupper = [gr for gr in grupper if h_min <= gr[1] - gr[0] <= h_max and gr[3] - gr[2] <= 560 * s]
     if grupper:
         y0, y1, a, b = grupper[-1]
         return [x0 + int(a) - pad_x, zon[0] + y0 - pad_y, x0 + int(b) + pad_x, zon[0] + y1 + 1 + pad_y]
@@ -173,25 +184,25 @@ def hitta_piller(g, zon, x0=120, x1=600, pad_x=6, pad_y=6, h_min=40, h_max=85):
     # hitta i stället själva textraden (mörk text med ljus granne) och lägg pillrets marginal runt
     cand = (z < 90) & dilatera(z > 200, 2)
     rader2 = cand.sum(axis=1); ok = np.where(rader2 >= 4)[0]
-    if len(ok) < 10: return None
+    if len(ok) < 10 * s: return None
     körn = []; start = ok[0]; prev = ok[0]
     for y in ok[1:]:
-        if y - prev > 4: körn.append((start, prev)); start = y
+        if y - prev > 4 * s: körn.append((start, prev)); start = y
         prev = y
     körn.append((start, prev))
     for y0, y1 in sorted(körn, key=lambda k: -k[0]):          # nedersta först
-        if not (16 <= y1 - y0 <= 45): continue
+        if not (16 * s <= y1 - y0 <= 45 * s): continue
         kol = np.where(cand[y0:y1 + 1].sum(axis=0) >= 1)[0]
-        if len(kol) < 15: continue
+        if len(kol) < 15 * s: continue
         kl = []; s0 = kol[0]; p0 = kol[0]
         for x in kol[1:]:
-            if x - p0 > 30: kl.append((s0, p0)); s0 = x
+            if x - p0 > 30 * s: kl.append((s0, p0)); s0 = x
             p0 = x
         kl.append((s0, p0)); bx0, bx1 = max(kl, key=lambda k: k[1] - k[0])
-        if not (50 <= bx1 - bx0 <= 480) or abs(x0 + (bx0 + bx1) / 2 - 360) > 60: continue
-        runt = z[max(0, y0 - 14):y1 + 15, max(0, bx0 - 14):bx1 + 14]
+        if not (50 * s <= bx1 - bx0 <= 480 * s) or abs(x0 + (bx0 + bx1) / 2 - 360 * s) > 60 * s: continue
+        runt = z[max(0, int(y0 - 14 * s)):int(y1 + 15 * s), max(0, int(bx0 - 14 * s)):int(bx1 + 14 * s)]
         if runt.mean() < 170: continue                        # inte på ljus platta → inte ett piller
-        return [x0 + bx0 - 16, zon[0] + y0 - 18, x0 + bx1 + 16, zon[0] + y1 + 18]
+        return [int(x0 + bx0 - 16 * s), int(zon[0] + y0 - 18 * s), int(x0 + bx1 + 16 * s), int(zon[0] + y1 + 18 * s)]
     return None
 
 
@@ -204,7 +215,9 @@ def main():
     inn, ut = P(K['in']), P(K['ut'])
     W, H, fps, dur = ffinfo(ff, inn)
     C = K.get('captions') or {}
-    zon = C.get('zon', [850, 1040]); pad_x = C.get('pad_x', 14); pad_y = C.get('pad_y', 16)
+    # Måtten i hitta_piller är mätta på 720 px bredd — 1080-videor (AdventLane 2026-09-12) skalas
+    sk = W / 720
+    zon = C.get('zon', [int(850 * sk), int(1040 * sk)]); pad_x = C.get('pad_x', int(14 * sk)); pad_y = C.get('pad_y', int(16 * sk))
     av = C.get('av', [])
 
     # ---- pass 1: läs gråframes, hitta pillret per frame
@@ -217,7 +230,7 @@ def main():
         g = np.frombuffer(buf, dtype=np.uint8).reshape(H, W)
         t = len(boxar) / fps
         if K.get('srt') and not any(a <= t <= b for a, b in av):
-            boxar.append(hitta_piller(g, zon, pad_x=pad_x, pad_y=pad_y))
+            boxar.append(hitta_piller(g, zon, pad_x=pad_x, pad_y=pad_y, skala=sk))
         else:
             boxar.append(None)
     p.wait()

@@ -269,3 +269,68 @@ efter varje rad — annars försvinner de klara raderna med en hängning.
 
 Kvar i kön: 0. Batch #2:s övriga 4 briefer (`PD_7`, `GT_4`, `CS_4`, `SP_4` eller vad
 nattvakten döpte dem) väntar på leverans.
+
+---
+
+## Översättning NO `/ops-oversatt` 2026-09-12 — 6 av 7 live i NO-kampanjen
+
+Kön: 7 videorader i `SE-ACTIVE to be translated` (dagens leveransrunda). NO-kampanjen
+`ADVENTLANERACING_NO_Racingkalendern` (`120249031977180172`) ACTIVE, ärvd länk
+`adventlane.se/nb/products/adventskalender-racingbilar`, sida `1304279782771044`.
+
+**Pris i norskan: 439 kr / førpris 579 kr / spar 140 kr** — Norges prislista i Shopify
+(Axels besked 2026-09-12, `no_pris_nok` i produktfilen). Kommandots regel 4 ("norsk
+copy utan pris") fick undantaget inskrivet samma dag. "Fri frakt inom Sverige och
+Norge" → "Gratis frakt til Norge" (NO-sidan: "Gratis frakt til alle land", 14 dagers
+angrerett).
+
+Källorna: 9:16-filen (`_2`, samma som SE-annonsen), 1080×1920, 8–14 s. Kontaktark
+lästa: **bara ordcaptions inbrända** (vitt piller y 1147–1352, Carl Vicentes mall),
+inga prisplattor, inga slutkort. Priserna satt i captions ("499 unior", "649 kronor",
+"Spara 150") och i talet.
+
+Flödet: HeyGen proofread (7 sessioner) → SRT-texter av sonnet-subagent med samma
+tidkoder (STT-fel rättade: "på samma bod", "av pappen", "Var morgonen till" = "Varje
+morgon en till") → regexgrind (`bygg-srt.mjs`: inga ä/ö, inga 499/649/150, inget
+Sverige) → apply verifierad → render → `no-precis.py` (norska captions i pillrets ruta,
+per frame) → röstkoll. Copy av sonnet-subagent, tre-frågorstestet grönt på alla 7
+headlines.
+
+| SE | NO | Ad-id | Adset | Tillbakaläst 14:35 UTC |
+|---|---|---|---|---|
+| PD_8_H1 | `AdventLaneRacing_NO_PD_8_H1` | 120249068363040172 | PD | ACTIVE/ACTIVE |
+| SY_1_H1 | `AdventLaneRacing_NO_SY_1_H1` | 120249068365820172 | SY (**ny**) | ACTIVE/ACTIVE |
+| MR_1_H1 | `AdventLaneRacing_NO_MR_1_H1` | 120249068371220172 | MR (**ny**) | ACTIVE/ACTIVE |
+| PD_4_H1 | `AdventLaneRacing_NO_PD_4_H1` | 120249068376090172 | PD | ACTIVE/ACTIVE |
+| PD_6_H1 | `AdventLaneRacing_NO_PD_6_H1` | 120249068384650172 | PD | ACTIVE/ACTIVE |
+| AU_1_H1 | `AdventLaneRacing_NO_AU_1_H1` | 120249068473210172 | AU (**ny**) | ACTIVE/IN_PROCESS (Meta kodar videon) |
+| FM_1_H1 | — | — | — | **STRUKEN: röstkoll ❌ två gånger** |
+
+Alla sex → `Approved` i Notion med `Translated url`. FM_1 kvar i kön med kommentar.
+HeyGen 8 938 → 8 786 krediter (7 proofread, 8 render). AU_1 tog 509 s att ladda upp
+(proxyn), de andra 48–64 s — tidsgränsen per rad i `ladda-upp.mjs` gjorde att inget hängde.
+
+**FM_1_H1 struken.** Talet i dubben slutar 0,08 s före filmens slut (källan: 0,20 s) —
+sista ordet "kjøkkenbordet" kan vara klippt. Renderades om med kortare sista rad
+("en garasje" i stället för "en hel garasje"), fortfarande 0,08 s. HeyGen fyller cuen
+(5,66–8,13 s) oavsett textlängd. Vägen vidare: en källa med luft efter sista repliken,
+eller att någon lyssnar och laddar upp för hand.
+
+Tre verktygsfynd, alla fixade i samma körning:
+1. **`pipeline/no-precis.py` var hårdkodad för 720 px bredd** (Båtmotortrekk) — vid 1080
+   hittades inget piller. Nu skalas alla mått med `W/720`. Minsta pillerbredd sänkt
+   100 → 70 (skalat): prispillret "649" är ~115 px och missades (svensk siffra kvar i tre
+   frames i AU_1 första varvet). Meningsdelaren delade "adventlane.se." i "adventlane." +
+   "se." — punkt räknas nu bara före blanksteg.
+2. **`pipeline/rostkoll.py` rödmarkerade 6 av 7 för "avhugget slut" utifrån tidkoden** —
+   men tidkoden är källans (HeyGen kräver samma tidkoder), så den mäter hur tätt den
+   SVENSKA källan slutar. Nu mäts talbandet (300–3 400 Hz) i ljudet på både källa och
+   dubb när `--kalla` finns: ❌ bara om dubben slutar under marginalen OCH tätare än
+   källan. FM_1 föll på den riktiga mätningen; de andra sex hade lika mycket eller mer luft
+   än svenskan.
+3. **ffmpeg/ffprobe saknas i containern** och apt är blockerat — statisk build hämtad från
+   johnvansickle.com till scratchpad. `no-precis` klarar sig på imageio-ffmpeg, `rostkoll`
+   kräver ffprobe.
+
+Nästa: NO-kampanjen har nu 22 annonser i 7 adsets. Nattvakten dömer bara SE; NO-utfallet
+syns bara i "bortfiltrerade" (dna.md rotorsak 3).

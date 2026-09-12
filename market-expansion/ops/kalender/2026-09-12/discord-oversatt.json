@@ -1,0 +1,31 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-12",
+  "lage": "oversatt",
+  "gjort": [
+    "Queue: 7 videos in SE-ACTIVE to be translated (uploaded live in Sweden at 13:40 today)",
+    "6 of 7 translated to Norwegian and LIVE in ADVENTLANERACING_NO_Racingkalendern (same OPS account), read back ACTIVE/ACTIVE",
+    "AdventLaneRacing_PD_8_H1 -> AdventLaneRacing_NO_PD_8_H1, adset PD",
+    "AdventLaneRacing_SY_1_H1 -> AdventLaneRacing_NO_SY_1_H1, adset SY (new)",
+    "AdventLaneRacing_MR_1_H1 -> AdventLaneRacing_NO_MR_1_H1, adset MR (new)",
+    "AdventLaneRacing_PD_4_H1 -> AdventLaneRacing_NO_PD_4_H1, adset PD",
+    "AdventLaneRacing_PD_6_H1 -> AdventLaneRacing_NO_PD_6_H1, adset PD",
+    "AdventLaneRacing_AU_1_H1 -> AdventLaneRacing_NO_AU_1_H1, adset AU (new)",
+    "Voice: HeyGen dub with the original voice cloned, proofread before every render, Norwegian word captions burned in exactly where the Swedish ones sat",
+    "Prices in dub, captions and copy: 439 kr / before-price 579 kr (Norway price list in Shopify, Axel 2026-09-12). Free shipping to Norway kept, Sweden removed",
+    "6 rows moved to Approved in Notion with Translated url; FM_1_H1 stays in the queue with a comment",
+    "HeyGen credits: 8938 -> 8786 (152 used: 7 proofreads, 8 renders)"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "AdventLaneRacing_FM_1_H1 NOT uploaded: voice check red twice - the dubbed last line ends 0.08 s before the video ends (source 0.20 s), last word may be clipped. Rendered twice (second time with a shorter line), still red. Skipped by the rule 'a red voice check never goes live'",
+    "AU_1_H1 was still IN_PROCESS at read-back (Meta encoding the video) - ad and adset ACTIVE, will settle by itself",
+    "The Norwegian files are not attached to the Notion rows (REST file upload not built) - review them in Ads Manager via the Translated url",
+    "Nobody has listened to the dubs (voice check is ffmpeg-only). PD_8_H1 is the concept with most Swedish spend - worth a 15-second listen"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13"
+}
