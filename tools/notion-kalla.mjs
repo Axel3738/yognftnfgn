@@ -269,6 +269,61 @@ export async function driveLankarIKropp(pageId) {
   return ut.reverse();          // sista lanken pa sidan ar oftast leveransen
 }
 
+/** Sidan bar bade brief-mappen och leveransmappen. Redigerarna skriver
+ *  "Brief in Drive" / "Drive folder:" pa den forsta och "Link for approval" /
+ *  "Finished Ad" pa den andra. Brief-mappen ar ALDRIG leveransen — den provas
+ *  sist, och bara om filnamnet matchar annonsen. */
+export const ÄR_BRIEFMAPP = (kontext = '') => /\bbrief\b|drive folder/i.test(kontext);
+
+/** Matchar ett filnamn mot ett annonsnamn, okansligt for skiftlage, bindestreck,
+ *  understreck och mellanslag. "Båtmotorskydd_CS_1_H1.mp4" matchar alltsa inte
+ *  "Batmotor_GT_3_H1" — det ar hela poangen. */
+export function matcharAnnonsnamn(filnamn = '', annonsnamn = '') {
+  const nyckel = (s) => s.toLowerCase().replace(/\.[a-z0-9]+$/i, '').replace(/[^a-z0-9åäö]/gi, '');
+  const a = nyckel(annonsnamn);
+  return a.length > 0 && nyckel(filnamn).includes(a);
+}
+
+/** Valjer leveransfilerna ur Drive-lankarna pa en sida. `lista(id)` listar en mapp
+ *  och returnerar [{ typ, id, titel }]. Ordningen ar medveten:
+ *    1. lankar som INTE ar brief-mappen, med filnamn som matchar annonsen
+ *    2. lankar som inte ar brief-mappen och innehaller EN enda mediafil
+ *    3. brief-mappen, men bara filer som matchar annonsnamnet
+ *  Hittas inget: tom lista. En mapp med tolv filer som ingen heter som annonsen
+ *  ar brief-mappen, aldrig leveransen.
+ *  *(Matt 2026-09-12 pa Batmotor_GT_3_H1: leveransmappen var tom, och den gamla
+ *  "forsta mappen med media vinner"-regeln hamtade brief-mappens tolv batch-1-
+ *  videor och dopte om dem till annonsens namn.)* */
+export function valjLeveransfiler(lankar, annonsnamn, lista) {
+  const ärMedia = (t) => /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(t);
+  const mappar = [];
+  for (const k of lankar) {
+    if (k.typ === 'fil') {
+      // En direktlankad fil ar alltid leveransen — sidan lankar aldrig en enskild
+      // brief-fil, och namnet star inte i URL:en sa det gar inte att matcha.
+      return [{ id: k.id, titel: `${annonsnamn}.mp4`, direkt: true }];
+    }
+    let rader = [];
+    try { rader = lista(k.id) ?? []; } catch { continue; }
+    mappar.push({ k, filer: rader.filter(r => r.typ === 'fil' && ärMedia(r.titel)) });
+  }
+  const brief = (m) => ÄR_BRIEFMAPP(m.k.kontext);
+  for (const m of mappar) {
+    if (brief(m)) continue;
+    const matchande = m.filer.filter(f => matcharAnnonsnamn(f.titel, annonsnamn));
+    if (matchande.length) return matchande;
+  }
+  for (const m of mappar) {
+    if (brief(m)) continue;
+    if (m.filer.length === 1) return m.filer;
+  }
+  for (const m of mappar) {
+    const matchande = m.filer.filter(f => matcharAnnonsnamn(f.titel, annonsnamn));
+    if (matchande.length) return matchande;
+  }
+  return [];
+}
+
 /** Notion-hostade mediablock i sidans kropp (video/image/file/pdf), i lasordning.
  *  Detta ar en TREDJE leveransvag vid sidan av "Filer och media" och Drive-lanken:
  *  redigeraren drar in mp4:an direkt i sidan, sa den blir ett video-block med en

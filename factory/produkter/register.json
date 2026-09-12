@@ -244,5 +244,13 @@
       "cycle_start": "2026-09-12",
       "senaste_korning": "2026-09-12"
     }
-  }
+  },
+  "rutinplatser": {
+    "hemvakten": 0,
+    "tankguard": 1,
+    "drytrek": 2,
+    "kalender": 3,
+    "tacklebay": 4
+  },
+  "kommentar_rutinplatser": "Butikens plats i rutinschemat (factory/rutin.mjs tidFor): nattvakt 00:01 + 8 min × plats, leverans 13:40 + 5 min × plats, översättning 15:40 + 5 min × plats. Delas ut en gång av /notionscalercs setup och ändras aldrig — så ingen gammal butik flyttar när en ny tillkommer (Meta rate limit 2026-09-12 när fem startade samtidigt)."
 }
