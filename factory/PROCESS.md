@@ -479,6 +479,17 @@ gick rakt igenom på första körningen. Mätningar:
   har inget sådant filter, så en kolumn som pekar på den hade stått kvar på
   svenska för norska kunder. Startsidan använder därför bara de tre rena
   fotona.
+- **"Fri frakt" hör inte hemma i `markorer_sv`.** Raden står i butiksmallen
+  och kopierades in — men frasen är identisk på norska ("Fri frakt til
+  Sverige og Norge"), och eftersom den ligger inne i meningar filtreras den
+  inte bort av kundvy.mjs. Efter nb-registreringen försvann alla nio andra
+  markörer och "Fri frakt" blev ensam kvar som falskt larm. Mallens
+  exempelrader är exempel, inte en lista att kopiera: ta bort varje ord som
+  stavas lika på målspråket innan första kundvyn körs. Raden är struken ur
+  `butik-mall.yaml`. ⚠️ **CaraShell, CatCabin och AdventLane bär den
+  fortfarande** (avläst 2026-09-12) — deras kundvyar rapporterar alltså en
+  markör som inte är en läcka. Rättas i respektive butiks egen körning, inte
+  härifrån.
 - **Butiksnamnet är fortfarande människans klick.** Kundvyn är röd med
   "DEFAULT KVAR: butiksnamnet är Shopifys default" tills någon skriver
   FjordCover i Settings → General (API-GRANSER.md: MÄTT GÅR INTE). Det är

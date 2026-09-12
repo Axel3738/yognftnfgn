@@ -43,9 +43,12 @@ butik:
   # när nb också säger "Köp nu") filtreras bort — men ett ord inne i en mening
   # gör det inte (CatCabin 2026-09-11: "utekatt" flaggades fast norskan är
   # samma). Lista bara ord som faktiskt skiljer sig på målspråket.
+  # ⚠️ Raderna nedan är EXEMPEL, inte en lista att kopiera rakt av. "Fri frakt"
+  # stod här och heter likadant på norska — den blev enda kvarvarande markören
+  # på FjordCovers /nb när allt annat var korrekt översatt (2026-09-12).
+  # Gå igenom listan mot målspråket innan första kundvyn körs.
   markorer_sv:
     - "Köp nu"
-    - "Fri frakt"
     - "Vanliga frågor"
   # FLERPRODUKTSBUTIK (två eller fler produktfiler i samma körning): startsidan
   # visar KOLLEKTIONEN, inte en enskild produkt, och menyn får en rad till den.
