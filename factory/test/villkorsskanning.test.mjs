@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { skannaVillkor } from '../villkorsskanning.mjs';
+import { skannaVillkor, talordTillTal, beloppIRad } from '../villkorsskanning.mjs';
 
 // HeimGuards riktiga villkor, ur factory/butiker/hemvakten.yaml.
 const BUTIK = {
@@ -150,4 +150,55 @@ test('samma regel på OLIKA ytor är olika fel och slås inte ihop', () => {
   ], BUTIK_14);
   assert.equal(f.filter((x) => x.regel === 'öppet köp').length, 2,
     'copy är gratis att rätta, inbränd kräver slutkortsbygge — de får aldrig slås ihop');
+});
+
+// ------------------------------------------------ talade priser, CatCabin 2026-09-12
+// Transkriptet skrev talen som ORD: "Från ettusenfemtionio kronor ner till
+// åttahundranio". Siffrorna fanns ingenstans i texten, så prisregeln friade
+// TALET och domen blev kräver-slutkortsbygge i stället för kräver-omdubb.
+// Hade bara den inbrända texten rättats hade videon gått ut med fel pris uppläst.
+
+test('svenskt sammanskrivet talord läses', () => {
+  assert.equal(talordTillTal('ettusenfemtionio'), 1059);
+  assert.equal(talordTillTal('åttahundranio'), 809);
+});
+
+test('norskt isärskrivet talord med "og" läses', () => {
+  assert.equal(talordTillTal('åttehundre og ni'), 809);
+  assert.equal(talordTillTal('ettusen og femti ni'), 1059);
+});
+
+test('bindeordet får inte äta talet — "femti ni" blir 1059, inte 59', () => {
+  assert.equal(talordTillTal('ettusen og femti ni'), 1059,
+    'og måste strippas MEDAN ordgränserna finns kvar');
+});
+
+test('ett vanligt ord är inget tal', () => {
+  assert.equal(talordTillTal('utekattehus'), null);
+  assert.equal(talordTillTal(''), null);
+});
+
+test('talat pris fångas i en SRT-rad, båda talen', () => {
+  const b = beloppIRad('Från ettusenfemtionio kronor ner till åttahundranio. Torrt och varmt.');
+  assert.deepEqual(b.sort((x, y) => x - y), [809, 1059]);
+});
+
+test('talat pris fångas på norska', () => {
+  const b = beloppIRad('Fra ettusen og femti ni kroner ned til åttehundre og ni.');
+  assert.deepEqual(b.sort((x, y) => x - y), [809, 1059]);
+});
+
+test('en rad utan pris ger inga talade belopp', () => {
+  assert.deepEqual(beloppIRad('Idag sänker vi priset på vårt isolerade utekattehus.'), []);
+  assert.deepEqual(beloppIRad('Bara i dag, stort prisrass på utekattehuset.'), []);
+});
+
+test('talat fel pris fäller TALET — domen blir omdubb, inte slutkort', () => {
+  const f = skannaVillkor(
+    [{ yta: 'tal', text: 'Från ettusenfemtionio kronor ner till åttahundranio.' }],
+    BUTIK, PRODUKT
+  );
+  const pris = f.filter((x) => x.regel === 'pris');
+  assert.equal(pris.length, 2);
+  assert.ok(pris.every((x) => x.yta === 'tal'), 'ytan avgör priset att fixa');
 });

@@ -6,12 +6,12 @@
   "annonser": {
     "Utekattkoja_CS_2_1": {
       "yta4": {
-        "syns": true,
+        "syns": false,
         "var": "inbränd text, röd banderoll 45° över vänstra övre hörnet",
         "ordagrant": "24% RABATT – IDAG / Endast få kvar i lager",
         "fil": "Utekattkoja_CS_2_1.jpg",
         "logotyp_utan_text": false,
-        "notis": "Rabattsatsen 24 % stämmer faktiskt mot CatCabins egna priser (789 av 1039 = 24,06 %). Det som är falskt är IDAG och 'Endast få kvar i lager' — butiken har ingen tidsbegränsad kampanj och inget lagerlarm. OCR läste noll tecken ur banderollen."
+        "notis": "OMPRÖVAD 2026-09-12 efter Axels beslut: CatCabin kör ett tidsbegränsat erbjudande, exakt som Bäverbutiken (butik.erbjudande.tidsbegransat: true). Banderollen är därmed SANN på båda punkterna — rabattsatsen 24 % stämmer mot butikens egna priser (789 av 1039 = 24,06 %), och 'IDAG' + lagerlarmet är en kampanj butiken faktiskt kör. Inget pris står i banderollen, så den behöver ingen prisändring. Fyndet var korrekt när det gjordes 2026-09-11 (butiken hade då ingen kampanj) — ägarbeslutet ändrade förutsättningen, inte läsningen. OCR läste fortfarande noll tecken ur den: text på sned kräver ett öga."
       }
     },
     "Utekattkoja_PD_2_1": {

@@ -1,6 +1,6 @@
 {
  "produkt": "utekattkojan",
- "datum": "2026-09-11",
+ "datum": "2026-09-12",
  "kalla": {
   "butik": "baverbutiken.se",
   "produkt_id": "16516655382877",
@@ -62,52 +62,24 @@
       "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      },
      {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "copy",
-      "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
-      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "copy",
-      "rad": "Erbjudandet gäller bara idag – få kvar.",
-      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "inbränd",
-      "rad": "Bara idag.",
-      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "inbränd",
-      "rad": "Erbjudandet galler",
-      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
+      "regel": "pris",
       "yta": "tal",
-      "rad": "Bara i dag, stort prisrass på utekattehuset.",
-      "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+      "rad": "Från ettusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt.",
+      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      },
      {
-      "regel": "tidsbegränsat erbjudande",
+      "regel": "pris",
       "yta": "tal",
-      "rad": "Lager krymper snabbt. Erbjudandet gäller bara i dag.",
-      "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+      "rad": "Från ettusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt.",
+      "fel": "säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      }
     ]
    },
    "dom": "kräver-omdubb",
    "attgöra": [
     "pris i inbränd: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
-    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i inbränd: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i tal: lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i tal: lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    "pris i tal: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
+    "pris i tal: säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
    ],
    "villkor": [
     {
@@ -125,40 +97,16 @@
      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     },
     {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "copy",
-     "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
-     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "copy",
-     "rad": "Erbjudandet gäller bara idag – få kvar.",
-     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "inbränd",
-     "rad": "Bara idag.",
-     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "inbränd",
-     "rad": "Erbjudandet galler",
-     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
+     "regel": "pris",
      "yta": "tal",
-     "rad": "Bara i dag, stort prisrass på utekattehuset.",
-     "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     "rad": "Från ettusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt.",
+     "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     },
     {
-     "regel": "tidsbegränsat erbjudande",
+     "regel": "pris",
      "yta": "tal",
-     "rad": "Lager krymper snabbt. Erbjudandet gäller bara i dag.",
-     "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     "rad": "Från ettusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt.",
+     "fel": "säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     }
    ],
    "belägg": []
@@ -192,47 +140,22 @@
     "bild": {
      "yta": "bild",
      "tillämplig": true,
-     "träff": true,
-     "fynd": [
-      {
-       "sekund": null,
-       "plats": "inbränd text, röd banderoll 45° över vänstra övre hörnet",
-       "ord": "24% RABATT – IDAG / Endast få kvar i lager",
-       "form": "syn",
-       "sätt": "ögongranskad"
-      }
-     ],
-     "källa": "syn",
+     "träff": false,
+     "fynd": [],
      "syn": {
-      "syns": true,
+      "syns": false,
       "var": "inbränd text, röd banderoll 45° över vänstra övre hörnet",
       "ordagrant": "24% RABATT – IDAG / Endast få kvar i lager",
       "fil": "Utekattkoja_CS_2_1.jpg",
       "logotyp_utan_text": false,
-      "notis": "Rabattsatsen 24 % stämmer faktiskt mot CatCabins egna priser (789 av 1039 = 24,06 %). Det som är falskt är IDAG och 'Endast få kvar i lager' — butiken har ingen tidsbegränsad kampanj och inget lagerlarm. OCR läste noll tecken ur banderollen."
-     }
-    },
-    "villkorsfel": [
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "copy",
-      "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
-      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+      "notis": "OMPRÖVAD 2026-09-12 efter Axels beslut: CatCabin kör ett tidsbegränsat erbjudande, exakt som Bäverbutiken (butik.erbjudande.tidsbegransat: true). Banderollen är därmed SANN på båda punkterna — rabattsatsen 24 % stämmer mot butikens egna priser (789 av 1039 = 24,06 %), och 'IDAG' + lagerlarmet är en kampanj butiken faktiskt kör. Inget pris står i banderollen, så den behöver ingen prisändring. Fyndet var korrekt när det gjordes 2026-09-11 (butiken hade då ingen kampanj) — ägarbeslutet ändrade förutsättningen, inte läsningen. OCR läste fortfarande noll tecken ur den: text på sned kräver ett öga."
      },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "copy",
-      "rad": "Erbjudandet gäller bara idag – få kvar.",
-      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     }
-    ]
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": []
    },
-   "dom": "bara-copy",
-   "attgöra": [
-    "bildtext",
-    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-   ],
+   "dom": "ren",
+   "attgöra": [],
    "villkor": [
     {
      "namn": "rabatt",
@@ -241,24 +164,8 @@
      ]
     }
    ],
-   "villkorsfel": [
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "copy",
-     "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
-     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "copy",
-     "rad": "Erbjudandet gäller bara idag – få kvar.",
-     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    }
-   ],
-   "belägg": [
-    "yta 4 · \"undefined\" → \"24% RABATT – IDAG / Endast få kvar i lager\" (ögongranskad)",
-    "yta 4 · ögongranskat (inbränd text, röd banderoll 45° över vänstra övre hörnet): \"24% RABATT – IDAG / Endast få kvar i lager\""
-   ]
+   "villkorsfel": [],
+   "belägg": []
   },
   {
    "annons": "Utekattkoja_CS_2_H1",
@@ -310,46 +217,16 @@
       "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      },
      {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "copy",
-      "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
-      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "copy",
-      "rad": "Erbjudandet gäller bara idag – få kvar.",
-      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "inbränd",
-      "rad": "Erbjudandet galler",
-      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "inbränd",
-      "rad": "bara idag.",
-      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
+      "regel": "pris",
       "yta": "tal",
       "rad": "Åttahundranio kronor istället för etttusenfemtionio. Men bara i dag.",
-      "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+      "fel": "säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      },
      {
-      "regel": "tidsbegränsat erbjudande",
+      "regel": "pris",
       "yta": "tal",
       "rad": "Från etttusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt. Lager krymper snabbt.",
-      "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "tal",
-      "rad": "Erbjudandet gäller bara i dag. Beställ nu innan det är slut.",
-      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      }
     ]
    },
@@ -357,13 +234,8 @@
    "attgöra": [
     "pris i inbränd: säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
     "pris i inbränd: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
-    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i inbränd: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i tal: lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i tal: lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i tal: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    "pris i tal: säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
+    "pris i tal: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
    ],
    "villkor": [
     {
@@ -387,46 +259,16 @@
      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     },
     {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "copy",
-     "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
-     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "copy",
-     "rad": "Erbjudandet gäller bara idag – få kvar.",
-     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "inbränd",
-     "rad": "Erbjudandet galler",
-     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "inbränd",
-     "rad": "bara idag.",
-     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
+     "regel": "pris",
      "yta": "tal",
      "rad": "Åttahundranio kronor istället för etttusenfemtionio. Men bara i dag.",
-     "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     "fel": "säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     },
     {
-     "regel": "tidsbegränsat erbjudande",
+     "regel": "pris",
      "yta": "tal",
      "rad": "Från etttusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt. Lager krymper snabbt.",
-     "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "tal",
-     "rad": "Erbjudandet gäller bara i dag. Beställ nu innan det är slut.",
-     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     }
    ],
    "belägg": []
@@ -475,73 +317,24 @@
       "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      },
      {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "copy",
-      "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
-      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "copy",
-      "rad": "Erbjudandet gäller bara idag – få kvar.",
-      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "inbränd",
-      "rad": "Nastan slutsald.",
-      "fel": "lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "inbränd",
-      "rad": "sista chansen till",
-      "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "inbränd",
-      "rad": "Erbjudandet galler",
-      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "inbränd",
-      "rad": "bara idag.",
-      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
+      "regel": "pris",
       "yta": "tal",
-      "rad": "Nästan slutsåld.",
-      "fel": "lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+      "rad": "Från ettusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt.",
+      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      },
      {
-      "regel": "tidsbegränsat erbjudande",
+      "regel": "pris",
       "yta": "tal",
-      "rad": "Sista chansen till rabatterat pris.",
-      "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-     },
-     {
-      "regel": "tidsbegränsat erbjudande",
-      "yta": "tal",
-      "rad": "Lager krymper snabbt. Erbjudandet gäller bara i dag. Beställ nu innan det är slut.",
-      "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+      "rad": "Från ettusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt.",
+      "fel": "säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
      }
     ]
    },
    "dom": "kräver-omdubb",
    "attgöra": [
     "pris i inbränd: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
-    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i inbränd: lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i inbränd: lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i inbränd: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i tal: lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i tal: lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
-    "tidsbegränsat erbjudande i tal: lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    "pris i tal: säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)",
+    "pris i tal: säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
    ],
    "villkor": [
     {
@@ -559,58 +352,16 @@
      "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     },
     {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "copy",
-     "rad": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet g",
-     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "copy",
-     "rad": "Erbjudandet gäller bara idag – få kvar.",
-     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "inbränd",
-     "rad": "Nastan slutsald.",
-     "fel": "lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "inbränd",
-     "rad": "sista chansen till",
-     "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "inbränd",
-     "rad": "Erbjudandet galler",
-     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "inbränd",
-     "rad": "bara idag.",
-     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
+     "regel": "pris",
      "yta": "tal",
-     "rad": "Nästan slutsåld.",
-     "fel": "lovar \"nastan slutsald\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     "rad": "Från ettusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt.",
+     "fel": "säger 1059 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     },
     {
-     "regel": "tidsbegränsat erbjudande",
+     "regel": "pris",
      "yta": "tal",
-     "rad": "Sista chansen till rabatterat pris.",
-     "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
-    },
-    {
-     "regel": "tidsbegränsat erbjudande",
-     "yta": "tal",
-     "rad": "Lager krymper snabbt. Erbjudandet gäller bara i dag. Beställ nu innan det är slut.",
-     "fel": "lovar \"lager krymper\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     "rad": "Från ettusenfemtionio kronor ner till åttahundranio. Torrt, vindtätt och varmt för din katt.",
+     "fel": "säger 809 kr — butiken säljer för 789 kr (jämförpris 1039 kr)"
     }
    ],
    "belägg": []

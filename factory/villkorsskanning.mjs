@@ -31,12 +31,105 @@ export const normalisera = (s) =>
     .replace(/ /g, ' ')
     .replace(/\s+/g, ' ');
 
+/** Talord → värde. Svenska och norska bokmål, normaliserad form (å/ä/ö → a/o).
+ *
+ *  ⚠️ Varför den finns: transkript skriver ofta ut talen som ORD. CatCabins
+ *  CS-videor säger "Från ettusenfemtionio kronor ner till åttahundranio" —
+ *  siffrorna 1059 och 809 finns ingenstans i texten, så prisregeln friade
+ *  talet och domen blev "kräver-slutkortsbygge" i stället för "kräver-omdubb".
+ *  Hade bara den inbrända texten rättats hade videon gått ut med fel pris
+ *  uppläst. Norska voiceovers skriver nästan alltid så ("åttehundre og ni").
+ *
+ *  Sammansättningarna med elision ligger som egna tokens och är längre än sina
+ *  delar, så den giriga matchningen nedan tar dem först: "ettusen" är ett ord,
+ *  inte "ett" + "usen". */
+const TALORD = {
+  // multiplikatorer först i listan spelar ingen roll — matchningen är girig på längd
+  ettusen: { mult: 1000, ett: true }, etttusen: { mult: 1000, ett: true },
+  tusen: { mult: 1000 }, hundra: { mult: 100 }, hundre: { mult: 100 },
+  // ental
+  noll: 0, null: 0, en: 1, ett: 1, tva: 2, to: 2, tre: 3, fyra: 4, fire: 4,
+  fem: 5, sex: 6, seks: 6, sju: 7, syv: 7, atta: 8, atte: 8, nio: 9, ni: 9,
+  // 10–19
+  tio: 10, ti: 10, elva: 11, elleve: 11, tolv: 12, tretton: 13, tretten: 13,
+  fjorton: 14, fjorten: 14, femton: 15, femten: 15, sexton: 16, seksten: 16,
+  sjutton: 17, sytten: 17, arton: 18, atten: 18, nitton: 19, nitten: 19,
+  // tiotal
+  tjugo: 20, tjue: 20, trettio: 30, tretti: 30, fyrtio: 40, forti: 40,
+  femtio: 50, femti: 50, sextio: 60, seksti: 60, sjuttio: 70, sytti: 70,
+  attio: 80, atti: 80, nittio: 90, nitti: 90,
+};
+const TALTOKENS = Object.keys(TALORD).sort((a, b) => b.length - a.length);
+
+/** Läser ett sammanskrivet eller isärskrivet talord till ett värde.
+ *  "ettusenfemtionio" → 1059 · "attahundranio" → 809 · "atte hundre og ni" → 809
+ *  Returnerar null om strängen inte är ett rent talord. */
+export function talordTillTal(s) {
+  // ⚠️ Ordningen är inte valfri: bindeorden måste bort MEDAN ordgränserna
+  // finns kvar. Strippas mellanslagen först blir "ettusen og femti ni" till
+  // "ettusenogfemtini", \bog\b matchar aldrig, och parsern faller på "og" —
+  // svaret blev 59 i stället för 1059 (mätt 2026-09-12).
+  let rest = normalisera(s).replace(/\b(og|och)\b/g, '').replace(/[\s-]/g, '');
+  if (!rest) return null;
+  let summa = 0, aktuell = 0, sågNåt = false;
+  while (rest.length) {
+    const token = TALTOKENS.find((t) => rest.startsWith(t));
+    if (!token) return null; // något som inte är ett talord → inte ett tal
+    const v = TALORD[token];
+    sågNåt = true;
+    if (typeof v === 'number') aktuell += v;
+    else if (v.mult === 100) aktuell = (aktuell || 1) * 100;
+    else { summa += (v.ett ? 1 : aktuell || 1) * 1000; aktuell = 0; }
+    rest = rest.slice(token.length);
+  }
+  return sågNåt ? summa + aktuell : null;
+}
+
+/** Belopp skrivna som TALORD följt av valutaord: "ettusenfemtionio kronor".
+ *  Samma snäva krav som siffervägen — utan valutaord plockas ingenting. */
+export function taladeBeloppIRad(rad) {
+  const norm = normalisera(rad);
+  const ut = [];
+  // Fångar en sammanhängande svans av talord (med ev. mellanslag/och/og) före
+  // valutaordet. Ordgränsen framåt hindrar att halva meningen dras med.
+  const re = /([a-z]+(?:[\s-]*(?:och|og)?[\s-]*[a-z]+){0,5}?)\s*(kronor|kroner|kr|nok|sek)\b/gi;
+  let m;
+  const läs = (fras) => {
+    // Prova hela frasen, sedan allt kortare svansar — "priset pa vart isolerade
+    // utekattehus fran ettusenfemtionio" ska ge 1059, inte null. Längsta
+    // matchande svans vinner, annars blir "femti ni" till 59 i stället för 1059.
+    const ord = String(fras).trim().split(/\s+/).filter(Boolean);
+    for (let i = 0; i < ord.length; i++) {
+      const tal = talordTillTal(ord.slice(i).join(' '));
+      if (tal !== null && tal > 0) return tal;
+    }
+    return null;
+  };
+  while ((m = re.exec(norm)) !== null) {
+    const tal = läs(m[1]);
+    if (tal !== null) ut.push(tal);
+  }
+  // Det andra talet i en prisreplik bär sällan valutaordet: "fran
+  // ettusenfemtionio kronor ner till attahundranio". Utan den här raden fångas
+  // jämförpriset men inte priset — alltså just det tal kunden lovas. Samma
+  // regel som för siffror, och bara i rader som redan bevisat handla om pengar.
+  if (ut.length) {
+    const svans = /(?:ner|ned)\s+(?:till|til)\s+([a-z\s]+?)(?:[.,!?]|$)/gi;
+    let s;
+    while ((s = svans.exec(norm)) !== null) {
+      const tal = läs(s[1]);
+      if (tal !== null && tal >= 10 && !ut.includes(tal)) ut.push(tal);
+    }
+  }
+  return ut;
+}
+
 /** Belopp med valutaord ur en rad: "1 059 kronor" → 1059. Tal UTAN valutaord
  *  plockas aldrig — annars blir "1000 liter" i TankGuards annonser ett prisfel. */
 export function beloppIRad(rad) {
   const norm = normalisera(rad);
   const städa = (s) => Number(String(s).replace(/[\s.,]/g, ''));
-  const ut = [];
+  const ut = [...taladeBeloppIRad(rad)];
   const medValuta = /(\d[\d\s.,]*)\s*(kr|kronor|kroner|nok|sek)\b/gi;
   let m;
   while ((m = medValuta.exec(norm)) !== null) {
