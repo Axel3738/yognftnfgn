@@ -13,7 +13,7 @@ eller konkurrent-signal i `docs/swipes/`.
 | **Norska kampanjen** | Ingen `CATCABIN_NO_…` finns i kontot (avläst 2026-09-12). `/ops-oversatt` har inget mål förrän `/ny-annonser` byggt den. Butiken tar dessutom betalt i SEK på /nb — NOK-paketnivåer krävs i Shopify först. | Meta-kontot 915422744950975, avläst 2026-09-12 |
 | **CS-kön: 4 annonser som aldrig byggdes — nu upplåsta av Axels beslut** | `CS_1_H1`, `CS_2_H1`, `CS_3_H1` läser upp "från 1059 ner till 809"; butiken tar 789/1 039. `CS_2_1` har 24 % + "IDAG" + lagerlarm inbränt. **Tidsbegränsningen är numera sann** (`erbjudande.tidsbegransat: true`, Axel 2026-09-12) — det enda som faktiskt är fel är priset. De tre videorna kräver omdubb av prisraden; `CS_2_1` kräver bara att bannerns tal stämmer (24 % stämmer redan mot 789/1 039). Ta upp dem i batch #2. | `batch-log.md` batch #1, `factory/butiker/catcabin.yaml`, `factory/output/utekattkojan/brand-detektor.md` |
 | **Inköpskostnaden 302 kr är härledd, inte kvitterad** | Break-even-CPA 487 kr vilar på den. Tills Axel bekräftar mot Temu-kvittot står varje kill-beslut på ett antagande. | `factory/BESLUT-VANTAR.md` punkt 1 |
-| **Ingen redigerare tilldelad** | Briefronden går på 7 per rond i stället för 21. Sätts med `node factory/register.mjs redigerare catcabin/utekattkojan "<namn>" <discord-id>`. | `factory/produkter/register.json` |
+| **Ingen redigerare tilldelad** | Briefronden går på 7 per rond i stället för 21 — **utom första ronden (natten 12→13/9), som Axel 2026-09-12 satte till 21 via `briefantal`-överstyrningen; den förbrukas av `brief-kord`.** Redigeraren sätts med `node factory/register.mjs redigerare catcabin/utekattkojan "<namn>" <discord-id>`. | `factory/produkter/register.json` |
 
 ---
 
