@@ -48,7 +48,13 @@ Partner"-märke. Den öppnas av att appen används.
 2. Sätt `META_REVIEW_KEY` (lång slumpsträng) på Railway-tjänsten
    `pnl-app-store`. Utan den svarar `/meta/granska` **404**.
 3. Sätt `SUPPORT_EMAIL` på samma tjänst.
-4. Rökprova utan att vara inloggad:
+4. **`META_APP_ID` + `META_APP_SECRET` + `TOKEN_ENCRYPTION_KEY` måste finnas
+   på App Store-tjänsten.** Mätt 2026-09-12: de gjorde det INTE, och
+   `/meta/granska` svarade "Not configured". Utan dem finns knappen "Logga in
+   med Facebook" inte ens i App Store-versionen. Prompt 8b kopierar dem från
+   en av butikstjänsterna. `TOKEN_ENCRYPTION_KEY` måste vara exakt samma
+   sträng på alla sex — de delar databas.
+5. Rökprova utan att vara inloggad:
    - `GET /privacy` → 200, och Meta-avsnittet syns.
    - `GET /meta/deletion` → statussidan (inte 404).
    - `POST /meta/deauth` med skräp i `signed_request` → **400**, inte 500.

@@ -266,6 +266,48 @@ Jag behöver den till ansökan hos Meta. Ändra inga andra variabler.
 
 Spara nyckeln Cowork skriver ut. Den behövs i prompt 11 och 12.
 
+## 8b. META_APP_ID och META_APP_SECRET saknas på App Store-tjänsten
+
+> **Upptäckt 2026-09-12** när prompt 8 kördes: `/meta/granska` svarade
+> "Not configured". `metaLoginConfig()` returnerar null utan `META_APP_ID`,
+> `META_APP_SECRET` **och** `TOKEN_ENCRYPTION_KEY`. Variabellistan på
+> pnl-app-store visade META_REVIEW_KEY men inga META_APP_*.
+>
+> Det betyder att knappen "Logga in med Facebook" **aldrig har funnits** i
+> App Store-versionen av appen — den döljs helt utan variablerna. De fem egna
+> butikernas tjänster har dem sedan tidigare.
+>
+> ⚠ `TOKEN_ENCRYPTION_KEY` måste vara **exakt samma sträng på alla sex
+> tjänster**. De delar en databas: en annan nyckel gör sparade Meta-nycklar
+> oläsbara för de andra tjänsterna och ändrar kundhashen i LTV:n för alltid.
+
+```
+Du styr min webbläsare. Jag är inloggad på railway.app.
+Uppgift: kopiera tre miljövariabler från en tjänst till en annan i samma projekt.
+
+VIKTIGT: läs ALDRIG upp värdena i chatten och skriv dem aldrig i ett meddelande.
+Använd kopiera/klistra in. Säg bara om det gick eller inte.
+
+1. Öppna projektet och klicka på tjänsten beautiful-curiosity.
+2. Klicka Variables.
+3. Leta upp META_APP_ID. Klicka de tre prickarna på raden och välj Copy (eller visa värdet och markera det).
+4. Öppna tjänsten PNL App store → Variables → New Variable.
+   Namn: META_APP_ID. Klistra in värdet. Klicka Add.
+5. Gå tillbaka till beautiful-curiosity och gör samma sak med META_APP_SECRET.
+   Lägg in den på PNL App store som META_APP_SECRET.
+6. Kontrollera om PNL App store redan har TOKEN_ENCRYPTION_KEY.
+   - Finns den redan: rör den INTE.
+   - Saknas den: kopiera den från beautiful-curiosity på samma sätt och lägg in den.
+7. Finns META_LOGIN_CONFIG_ID på beautiful-curiosity: kopiera även den. Saknas den: hoppa över.
+8. Klicka Deploy Changes. Läs upp för mig vilka variabelnamn som står i dialogen innan du bekräftar.
+9. Vänta tills deployen är Active (ca 2 minuter).
+10. Öppna https://pnl-app-store-production.up.railway.app/meta/granska?key=NYCKELN
+    (jag ger dig NYCKELN) och berätta vad rubriken på sidan är.
+    Det ska stå "StonePNL — ad account access test" med en blå knapp "Continue with Facebook".
+
+Ändra inga andra variabler. Står det fortfarande "Not configured": säg det, gissa inte.
+```
+
 ## 9. Meta-appen: alla fält som krävs före inlämning
 
 ```
