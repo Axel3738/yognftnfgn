@@ -4,7 +4,7 @@
 okänt (troligen OnlineJobs.ph som redigerarannonsen). Codewordet i den är
 `apple`, synligt i jobbeskrivningen.
 **Ramverket:** `FILTER-RAMVERKET.md`. **Förlagan:** `jobbannons-video-editor.md`.
-**Utkastet nedan är INTE publicerat** — fem beslut väntar på Axel först.
+**Annonsen är färdigskriven** (`utskick/annons-3-kundsupport-lingon.txt`) men INTE utskickad — fyra beslut väntar på Axel först.
 
 ---
 
@@ -32,126 +32,117 @@ säljargument är "no night shift". Fönstret 10–17 svensk tid är 16–23 i M
 
 ---
 
-## Beslut som väntar på Axel innan utkastet kan gå ut
+## Beslut som väntar på Axel innan annonsen går ut
 
-1. **Lönemodell.** Behåll 20 SEK/h, eller fast belopp per klarad dag som
-   ramverket förespråkar (betalt för att tömma inkorgen, inte för att räkna
-   timmar)? Med dagens tal: 1–2 h × 7 dagar ≈ 30–60 h/mån ≈ 600–1 200 kr/mån.
-   Utkastet står med 20 SEK/h.
-2. **Timtrappan.** Vilka villkor ger fler timmar (5–8 h/dag)? Utkastet
-   föreslår "efter 2 månader utan en missad dag" — siffran är Axels.
-3. **Codeword.** Utkastet föreslår `lingon`. När annonsen går ut: skriv in det
-   i listan i `jobbannons-video-editor.md`.
-4. **Översättningsverktyget** heter inget i originalet (`----------`). Fyll i
-   på de två ställen där `[TRANSLATION TOOL]` står.
-5. **Kanal.** Samma som redigerarannonsen (OnlineJobs.ph)?
+Annonsen är färdigskriven och klistringsklar i
+`utskick/annons-3-kundsupport-lingon.txt`. Fyra saker i den är förslag,
+inte beslut:
+
+1. **Lönetrappan.** Annonsen säger 20 → 22 (1 mån) → 25 (3 mån) → 28 kr/h
+   (6 mån), automatisk. Startnivån är Axels 20 kr/h; stegen är ett förslag i
+   samma anda som redigerarannonsens trappa. ⚠️ Filtret hittar den bästa i
+   poolen — poolen bestäms av lönen. 20 kr/h ≈ 2 USD/h, samma nivå som
+   redigerarnas $520/mån (≈ 24 kr/h). Vill Axel ha "bästa VA:n någonsin"
+   är trappan viktigare än startlönen: den seriöse räknar på månad 6.
+2. **Consistency-bonus** 200 kr/mån vid noll missade dagar. Förslag.
+   Med 1–2 h/dag är månadslönen 600–1 200 kr, så 200 kr är 15–30 % — stort
+   nog att styra beteendet, litet nog att inte kosta.
+3. **Timtrappan:** 1–2 h → upp till 4 h efter 2 månader utan missad dag →
+   5–8 h "när nästa brand öppnas för dig". Förslag.
+4. **Översättningsverktyget** heter inget i originalet (`----------`).
+   Byt ut `[TRANSLATION TOOL]` på två ställen i txt-filen (steg 2 säger bara "the translation tool").
+
+Codewordet är `lingon` (skrivet i listan i `jobbannons-video-editor.md`).
+Kanal: samma som redigerarannonsen, OnlineJobs.ph, om Axel inte säger annat.
 
 ---
 
-## Utkast (engelska, byggt på ramverket) — INTE publicerat
+## Annonsen — vad som är byggt in och varför
 
-Markeringar `[BESLUT n]` pekar på listan ovan. Codewordet `lingon` står gömt
-i stycket om prioritetsordningen, inte i ansökningsinstruktionen.
+Hela texten: `utskick/annons-3-kundsupport-lingon.txt` (engelska, ren text
+för OnlineJobs). Den följer `FILTER-RAMVERKET.md` punkt för punkt, men varje
+test är vridet mot det Axel bad om 2026-09-12: **tänkande och
+självständighet**, inte bara instruktionsföljsamhet.
 
-> CUSTOMER SUPPORT ASSISTANT — SEVERAL BRANDS, 1–2 HOURS EVERY DAY, LONG-TERM SEAT
->
-> Read this entire post before applying. If you skim it, you will fail the application in the first five seconds and we will both have wasted our time. That is not a threat — it's a favor. This job is not for most people, and I'd rather you find that out now.
->
-> **WHAT THIS JOB ACTUALLY IS**
-> We are a Swedish e-commerce company running several brands. Every brand gets customer emails every day, and every one of them needs an answer the same day. Forever.
->
-> Your job: clear the support inboxes every day. Different brands, different languages, same questions:
->
-> - "Where is my delivery?"
-> - Order not received.
-> - Product not as expected.
-> - Returns and exchanges.
-> - General questions about the brand.
->
-> Most of these are not interesting. Be clear-eyed about what you'd be doing: look the order up in Shopify, find the tracking, reply in the customer's language with [TRANSLATION TOOL] [BESLUT 4], following our reply guide. Same thing, every day, done cleanly.
->
-> You work directly with our agents in China (packaging and shipping) and directly with our payment providers. You fix the problem first and come to us only with a problem AND your proposed solution. If the idea of asking us what to do for every email sounds normal to you, stop reading.
->
-> **WHAT WE ACTUALLY CARE ABOUT, IN THIS EXACT ORDER**
-> 1. You show up. Every single day, Saturday and Sunday included. Not "most days."
-> 2. The inbox is cleared inside your window, every day.
-> 3. You solve it yourself first. China agents, payment providers, tracking pages — before you ask us.
-> 4. You stay. We are building a team, not renting an assistant for two months.
-> 5. Your English and your tone are good enough — and get better.
->
-> Notice that skill is fifth on this list. That is not a mistake. We can teach you our reply guide, our brands, our tone, how our shipping works — we have a whole system for it, and the person who reads this carefully and types "lingon" as the first word of the subject line when applying is already showing me the exact trait I'm hiring for. It is not mentioned in the subject line structure below, but it is supposed to be the first word, then the structure. What we cannot teach is a person who checks the inbox at the same time every day for the next two years, weekends included.
->
-> **HOURS — READ THIS PART HONESTLY**
-> Every day, 7 days a week. About 1–2 hours per day, inside 10:00–17:00 Swedish time. If you are in the Philippines, that window is 16:00–23:00 (17:00–00:00 in winter). You pick a fixed daily slot inside it, and we lock it together before you start.
->
-> Hours grow on a schedule, not on a promise [BESLUT 2]:
->
-> | When | Hours per day |
-> |---|---|
-> | Start | 1–2 |
-> | After 2 months with zero missed days | up to 4 |
-> | After that, when we open the next brand | 5–8 |
->
-> If you cannot check in every single day, including weekends, do not apply. That is the entire job.
->
-> **PAY**
-> 20 SEK per hour [BESLUT 1]. Paid twice a month, on time, every time. We have never missed a payment and we never will.
->
-> What counts as done: every customer email that arrived before 17:00 Swedish time is answered the same day, in the customer's language, following the reply guide, with the order looked up in Shopify. Escalations to us come with your proposed solution. Not a taste judgment. If I send something back I tell you exactly why in one sentence, and it counts once you fix it.
->
-> **WHO SHOULD NOT APPLY**
-> Please save us both the time. Do not apply if:
->
-> - You cannot check the inbox every single day, Saturday and Sunday included.
-> - Your internet is unreliable and you have no backup connection.
-> - You have no plan for brownouts or power cuts.
-> - You need someone to tell you what to do for each email.
-> - You take angry customers personally, or argue with them.
-> - You want to negotiate the rate upward before you've proven a single month.
-> - You are looking for a placeholder while you search for something better.
-> - You want the "future tasks" below to be the job now. They come after months of a cleared inbox, not before.
->
-> I'm not being harsh for fun. I'd rather describe the job exactly than lose a good person who wanted a different one.
->
-> **HOW TO APPLY — THIS IS THE FIRST TEST**
-> Ninety percent of applicants will get this wrong. That's the point.
->
-> 1. Subject line, formatted EXACTLY like this:
-> `| [most customer emails you have ever answered in ONE day] | [years using Shopify admin] | [hours/day you can work] | [days/week you can work] | [your download speed from speedtest.net]`
->
-> Example: `XXXXXX | 45 | 2 | 2 | 7 | 40mbps`
->
-> The codeword is written somewhere in this post. I'm not telling you where. If you actually read the whole thing, you already have it.
->
-> Wrong format, missing codeword, missing a field — deleted unread. No exceptions, no second chances.
->
-> 2. Your message must contain these six things, in this order, and nothing else:
->
-> Line 1 — The most customer emails you have ever answered in a single day. For which store, and what kind of tickets. One or two real sentences. Generic answers are deleted.
->
-> Your setup — Computer and specs. Internet provider and speed. Backup internet. What you do when the power goes out. Be specific and boring. "I have good internet" is a failed answer.
->
-> Longevity — The longest you have ever stayed in one role or with one client. How long, and why it ended. Be honest. A short history with an honest reason beats an inflated one.
->
-> Your work — Reply to this customer, in English, exactly as you would send it, maximum 120 words: *"Hi, I ordered 12 days ago and nothing has arrived. Nobody answers. I want my money back."* No order number was given. Your reply is your portfolio.
->
-> One honest answer — What would make you quit this job? Everyone has a breaking point. Tell me yours. I trust the person who names it far more than the person who says "nothing."
->
-> Last line — The first thing you open in Shopify admin when a customer says the package hasn't arrived, and why.
->
-> Do not attach a generic CV. It will not be read.
->
-> **THE THREE STAGES**
-> Stage 1 — The application above. Takes 20 minutes if you're serious. Most people won't do it.
->
-> Stage 2 — The inbox test. Unpaid. If your application is sharp, I send you five real customer emails (names removed) in three languages, our reply guide, and access to [TRANSLATION TOOL] [BESLUT 4]. You return five replies within 24 hours. I am not grading style. I am grading: did you follow the guide exactly, did you deliver on time, and did you ask smart questions instead of guessing. This is a real preview of the daily job.
->
-> Stage 3 — Paid trial week on one brand's live inbox. Full structure, real customers, real feedback. This is where the seat is won.
->
-> **WHAT YOU GET IF YOU WIN IT**
-> One company, several brands, the same people every day. A fixed daily slot you choose. Pay on time, twice a month, without ever having to ask. Hours that grow on a schedule you can see. And once the inbox has been cleared every day for months, the next tasks are real: finding products, searching for ad videos, writing ad copy, product descriptions, talking to UGC creators. We train you for them. But that comes after, not instead.
->
-> Show me you can follow instructions. That's the whole first test.
+| Del i annonsen | Vad den testar | Nytt jämfört med redigerarannonsen |
+|---|---|---|
+| "The one thing this job is really about" + fyrradersformatet (problem / vad jag gjort / vad jag föreslår / vad jag behöver) | sätter standarden för självständighet INNAN de söker, med ett exempel | nytt. Redigerarannonsen har ingen motsvarighet, för redigeraren får en lista varje morgon. VA:n får det inte |
+| Den gömda frågan ("dansk kund, verktyget nere hela dagen — vad gör du?") mitt i texten, svaret ska stå sist | läser hela texten (som codewordet) OCH tänker själv. Två saker på en rad | nytt. Ett andra gömt test, men ett som kräver ett beslut, inte bara ett ord |
+| Codeword `lingon` gömt i prioritetsstycket | läser hela texten | samma mekanik |
+| Ämnesrad: `lingon \| flest mejl på en dag \| år i Shopify admin \| h/dag \| dagar/vecka \| hastighet` | sorterbar inkorg, radera oläst | fälten bytta till rollens |
+| Prioritetsordning med fem punkter, "decide first, ask second" som nr 3 | accepterar att självständighet står över skicklighet | en punkt till |
+| **The reply** — kund utan ordernummer som inte går att hitta på mejladressen, max 120 ord | arbetsprov: ber de om det som saknas, lovar de återbetalning, sätter de en tid | ersätter "2–3 länkar" (supportjobb har ingen portfölj) |
+| **The escalation** — död tracking, tyst agent, kund hotar med banken; skriv meddelandet till mig i fyrradersformatet, max 8 rader | självständighet: är förslaget ett beslut eller en fråga? Följde de formatet de just läst? | nytt. Det viktigaste testet i annonsen |
+| **Shopify** — första sidan du öppnar när paketet inte kommit, och vad du tittar på | bevis på händer i verktyget (motsvarar kortkommandot) | rollens variant |
+| Setup / Longevity / "What would make you quit" | ordagrant från förlagan — rolloberoende | samma |
+| Steg 2: fem riktiga mejl på tre språk, **ett saknar svar i guiden** | vad gör de när guiden tar slut: gissar, frågar smart, eller hittar det | nytt. Redigerarannonsens volymtest mäter brief-följsamhet; det här mäter omdöme |
+| "Who should NOT apply": 9 punkter, bl.a. "need someone to tell you what to do for each email" och "never used Shopify admin — not seen it, used it" | självfiltret | rollens punkter |
+| "Done": alla mejl före 17:00 besvarade samma dag, alla tvister före deadline, allt som når oss i fyrradersformatet | ingen smakbedömning | rollens definition |
+| Svag punkt sagd rakt ut: 10–17 svensk tid = 16–23 i Manila | ärlighet är en del av filtret | — |
+
+**Vad som medvetet INTE finns:** adjektivlistan ("driven, organized,
+detail-oriented"), "berätta om dig själv / dina ambitioner", och löftet om
+framtidsuppgifter utan villkor. Framtidsuppgifterna står kvar sist, men som
+"after, not instead".
+
+---
+
+## Rättningsmall — så bedöms svaren (så det blir samma dom varje gång)
+
+Läs inkorgen enligt `FILTER-RAMVERKET.md` → "Så läser du inkorgen". Sedan
+poängsätts de fyra tänk-testen. **0–2 poäng per test, max 8.** Under 5 =
+nej. 5–6 = steg 2 om inkorgen är tunn. 7–8 = steg 2 direkt.
+
+### The reply (kund utan ordernummer, max 120 ord)
+
+| Poäng | Kriterium |
+|---|---|
+| måste, annars 0 | ber om ordernummer ELLER namn + postnummer/adress. Utan det går ordern inte att hitta, och den som inte ber om det har inte förstått jobbet |
+| måste, annars 0 | lovar INTE återbetalning. "I want my money back" är inte ett ärende än, det är en känsla |
+| +1 | sätter en tid: "as soon as I have the order number I'll check the tracking and get back to you within 24 hours" |
+| +1 | tonen: ursäkt utan att krypa, ingen "please be patient", ingen mall-svada. Under 120 ord |
+
+Rött direkt: "please wait", "we will look into it" utan att be om något,
+över 120 ord, eller ett svar som lovar "full refund" i första mejlet.
+
+### The escalation (fyrradersformatet, max 8 rader)
+
+| Poäng | Kriterium |
+|---|---|
+| måste, annars 0 | fyra rader, rätt ordning, max 8 rader. Formatet stod tre stycken tidigare — den som inte följer det här följer det inte i jobbet heller |
+| måste, annars 0 | "What I propose" är ett BESLUT, inte en fråga. "Offer replacement now, refund if no scan by Friday" = 1. "What should I do?" = 0 |
+| +1 | "What I already did" innehåller något konkret som inte stod i uppgiften (kollat carrier-sidan själv, pingat agenten en andra gång, kollat om andra ordrar i samma batch rör sig) |
+| +1 | "What I need from you" är litet: ett ja/nej, en gräns i kronor — inte "tell me how to handle this" |
+
+### Last line (dansk kund, verktyget nere)
+
+| Poäng | Kriterium |
+|---|---|
+| 0 | svaret saknas (= läste inte), eller "wait until the tool is back", eller "ask you" |
+| 1 | kunden får svar samma dag på något sätt: annat översättningsverktyg, eller svar på engelska med en kort förklaring |
+| 2 | som 1, plus ett omdöme: t.ex. svarar på engelska OCH säger att en dansk version kommer i morgon, eller noterar att danskar läser engelska bra så ärendet inte behöver vänta |
+
+### Shopify (första sidan vid "paketet kom inte")
+
+| Poäng | Kriterium |
+|---|---|
+| 0 | vagt ("the orders page"), eller fel ställe (kundprofilen, produkter) |
+| 1 | ordern → fulfillment/tracking-numret |
+| 2 | som 1, plus vad de tittar på: senaste skanning och datum, om ordern är fulfilled alls, om adressen stämmer med kundens |
+
+### Steg 2, inkorgstestet — det femte mejlet
+
+Ett av de fem mejlen ska sakna svar i guiden (t.ex. en fråga om tullavgift
+till Norge, eller en kund som vill byta färg efter att paketet skickats).
+Bedöm bara det mejlet på tre utfall:
+
+- **Gissar och skickar** ett självsäkert svar som kan vara fel → nej.
+- **Frågar smart:** en fråga, med ett eget förslag på svar → ja.
+- **Hittar det själv** (t.ex. läser butikens policysida) och skriver vad de
+  hittade → ja, bäst.
+
+Resten av de fem bedöms som i annonsen: följde guiden exakt, i tid, beslut
+före fråga.
 
 ---
 

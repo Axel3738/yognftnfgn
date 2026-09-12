@@ -55,8 +55,9 @@ lönetrappan ur annonsen + 0,4 % commission på adspend (samma sats som
 2026-08-21) · `kanelbulle` (utskick 2026-09-06, `utskick/annons-1-kanelbulle.txt`)
 · `surdeg` (utskick 2026-09-06, `utskick/annons-2-surdeg.txt`) · `apple`
 (kundsupport-annonsen i `jobbannons-kundsupport.md`, synligt i texten,
-publiceringsstatus okänd 2026-09-12) · `lingon` (FÖRESLAGET för
-kundsupport-utkastet, inte utskickat). Codewordet avslöjar vilken annons en
+publiceringsstatus okänd 2026-09-12) · `lingon` (kundsupport-annonsen
+`utskick/annons-3-kundsupport-lingon.txt`, skriven 2026-09-12, inte
+utskickad än). Codewordet avslöjar vilken annons en
 ansökan kommer ifrån.
 
 ## Att göra inför nästa utskick
