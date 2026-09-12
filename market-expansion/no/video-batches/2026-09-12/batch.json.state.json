@@ -32,12 +32,14 @@
  "jetvifte_G_3": {
   "assetUrl": "https://resource2.heygen.ai/video/e549ee46da4945e5aa794b8d4a18b54c/original.mp4",
   "proofreadId": "96f8dd8c1fc34ddaadfa49c4ae36fd2c-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true
  },
  "jetvifte_PD_1": {
   "assetUrl": "https://resource2.heygen.ai/video/437b66ca163142cab0f22ec84af2e850/original.mp4",
   "proofreadId": "85a967abad00423d9958105b6ca07b16-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true
  },
  "jetvifte_PD_2": {
   "assetUrl": "https://resource2.heygen.ai/video/067c0b388c7f44c39c2909fc45495ae7/original.mp4",
