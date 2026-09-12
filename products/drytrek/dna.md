@@ -228,7 +228,7 @@ Facit oförändrat.
   (50 %, 0 köp) · CS 498 · SP 170 · PD 163 kr (10 %). Källans vinnare PD_1 har
   15 kr. G-adsetet står på 3,4 × break-even-CPA utan köp. Fyra annonser under
   grinden är ingen dom — men G är den enda vinkeln utan spend i källan (45 kr)
-  OCH utan köp här. Lyft till Axel som fråga, inte som åtgärd.
+  OCH utan köp här. Lyft till Axel som fråga, inte som åtgärd. **Svar 2026-09-12: Axel pausade adsetet `DRYTREK_SE_G`** (manuellt via chatten, tillbakaläst). Mönstret får nu sitt test: går PD upp när G är borta?
 - **Mönster 6 (hypotes, OPS) — billiga klick utan köp.** `G_2_1` (bild,
   present) hade kampanjens lägsta CPC (3,5 kr) och högsta CTR (5,5 %) och
   0 köp på 480 kr. Klick-metrik säger inget om köpavsikt. Instruktion: döm

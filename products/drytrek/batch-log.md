@@ -135,6 +135,11 @@ av pengarna och den bevisade demon en tiondel. G-adsetet ligger på 3,4 ×
 break-even-CPA utan ett enda köp — men det är fyra annonser under grinden,
 inte en dom. Adset-fördelning rör ronden inte (dna.md hypotes 4, OPS).
 
+**Axels beslut 2026-09-12 (dagtid):** adsetet `DRYTREK_SE_G` pausat manuellt
+(ACTIVE → PAUSED, tillbakaläst 13:51). G_1, G_2, G_3 och G_2_1 ligger nu utanför
+CBO:n — budgeten går till PD, SP och CS. Loggrad i `factory/budgetlogg.jsonl`.
+⚠️ PAUSED med spend = beslut: ronden får aldrig slå på dem igen.
+
 ---
 
 ## Batch #2 — 2026-09-12 · första briefronden (`/notionscalercs drytrek`, körning nr 1)
