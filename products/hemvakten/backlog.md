@@ -11,7 +11,7 @@ eller konkurrent-signal i `docs/swipes/`.
 | Vad | Varför det ligger här | Källa |
 |---|---|---|
 | **Norska kampanjen** | Butiken tar betalt i SEK på /nb, Bäverbutikens norska annonser är prissatta 899/1 169 NOK. Ett NOK-tal mot en SEK-sida är ett brutet löfte. Kräver NOK-paketnivåer i Shopify först. | mätt 2026-09-08 mot heimguard.se/nb |
-| **Talet i `CS_2`/`CS_3` (live på HeimGuard)** | VO säger "sista chansen", "priset går upp snart", "fri frakt över trehundra kronor" — falskt på HeimGuard. Copyn rättades 2026-09-08, talet inte. `CS_11_H1` i batch #2 är ersättaren; beslut om paus är Axels. | SRT-filerna, läst 2026-09-11 |
+| **Talet i `CS_2`/`CS_3` (live på HeimGuard)** | VO säger "sista chansen", "priset går upp snart", "fri frakt över trehundra kronor" — falskt på HeimGuard. Copyn rättades 2026-09-08, talet inte. `CS_11_H1` i batch #2 är ersättaren. **PAUSADE 2026-09-12 på Axels beslut** (annonsnivå, ad-id 120249005623520172 / 120249005623380172, tillbakaläst PAUSED). Får aldrig aktiveras av en rutin. | SRT-filerna, läst 2026-09-11 |
 | **`RI_1_H1` och `SP_4_H1`** | Har "baverbutiken" inbränt i bild sent i filmen. Uteslutna ur batch #1. Fixas med `pipeline/no-precis.py` (byter texten i sin egen ruta), inte med en ny caption-motor. | `factory/output/overvakningskameran/brand-detektor.md` |
 
 ---

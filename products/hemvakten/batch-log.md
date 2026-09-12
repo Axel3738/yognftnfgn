@@ -114,7 +114,7 @@ CS_2 894 kr mot HeimGuards BE-CPA 538 kr), övriga 36 för tidigt.
 "fri frakt över trehundra kronor" och "priset går upp snart" — det står i
 `market-expansion/no/video-batches/2026-08-29/srt-orig/overvakningskamera_CS_2/CS_3.orig.srt`.
 Brand-detektorn 2026-09-08 letade bara efter brandnamnet i talet. Copyn rättades,
-talet inte. Beslut om paus ligger hos Axel (PAUSED med spend är hans beslut).
+talet inte. **Axels beslut 2026-09-12: HeimGuard_CS_2 och HeimGuard_CS_3 PAUSADE** på annonsnivå (CS-adsetet och CS_1, CS_4_1, CS_5_1, CS_6_H1 kör vidare). Tillbakaläst PAUSED. Ersätts av CS_11_H1 när den är gjord.
 
 ---
 
