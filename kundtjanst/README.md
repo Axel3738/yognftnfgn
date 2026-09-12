@@ -43,6 +43,16 @@ kundtjanst/brands/*.yaml ┴─ brands.mjs ─ run.mjs ┼─ shopify.mjs       
                         kundtjanst/historik/<brand>.jsonl   ← det som gör "återkommande" mätbart
 ```
 
+**Hemsidan** (Axels beslut 2026-09-12: "en hemsida som lagrar all data"):
+`rapportsida.mjs` bakar alla rapporter i `korningar/` och alla tal i
+`historik/` till `rapport-publicerad.html` — en självbärande sida (mall:
+`rapport-sida.html`) med ett kort per brand, riskkurvan vecka för vecka,
+rankingen och varje veckas rapport på svenska (Axel) och engelska (VA:n).
+Rutinen publicerar om den varje måndag mot **samma länk** (står i
+`rapportsida.json`; utan `url` blir det en ny sida). Sidan räknar aldrig om
+något och har ingen runtime-capability, så länken funkar utan Claude-konto.
+Bygg: `node kundtjanst/rapportsida.mjs`.
+
 **Brands upptäcks, listas inte.** Varje `factory/butiker/<id>.yaml` är ett brand
 (namn, supportmail, myshopify-domän kommer därifrån). Butiker som fabriken inte
 byggt — Bäverbutiken — får en egen fil i `kundtjanst/brands/`. Samma id i båda
