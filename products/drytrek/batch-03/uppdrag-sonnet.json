@@ -1,0 +1,140 @@
+{
+  "produkt": {
+    "namn": "DryTrek Damasker (benskydd för vandring)",
+    "pris_text": "389 kr per par (ord. 649 kr). 2 par 661,30 kr (330,65 kr per par). 3 par 933,60 kr (311,20 kr per par). Fri frakt till Sverige och Norge. 14 dagars ångerrätt.",
+    "dna_utdrag": "PRODUKTFAKTA (drytrek.se/products/damasker, läst 2026-09-13):\n- Damasker = benskydd som sitter mellan känga och knä. 44 cm höga. 43 cm omkrets, justerbar — en storlek som passar de flesta vuxna.\n- 100 % polyester, tätvävd.\n- Tre fästen: (1) krok som fäster i kängans snörning, (2) justerbar rem under foten, (3) kardborre längs hela utsidan — går på och av med kängan kvar på foten.\n- 18 färger, bland dem signalfärgerna neongrön, orange och gul.\n- Tvätt: skölj av lera och grus i kallt vatten, lufttorka.\n- Leveranstid 5–10 arbetsdagar.\n\nPROBLEMEN (produktsidan):\n- Snö och väta tar sig in i kängan uppifrån och blöter ner strumpan.\n- Grus och barr letar sig ner i skon och skaver resten av turen.\n- Blöt sly och högt gräs gör byxbenet genomvått på tjugo minuter.\n- Billiga benskydd glider ner eller lossnar efter några kilometer.\n- Svårt att synas i terrängen under jakt och i skymning.\n\nLÖFTEN SOM FÅR GÖRAS (produktsidan, ordagrant eller nära):\n- Strumporna håller sig torra hela turen — inga blöta fötter vid kilometer fyra.\n- Inget grus i kängan, alltså inga stopp för att skaka ur skon.\n- Byxbenet håller sig torrt genom blöt sly och högt gräs.\n- Sitter kvar i steget tack vare krok, rem och kardborre — inte bara när du står still.\n- Syns i terrängen i neongrön, orange eller gul när ljuset går ner.\n- Snö som yr upp nerifrån stannar utanför.\n\nKUNDEN: vandrare, jägare, hundägare och skogsfolk 30–65. Äger redan kängorna. Pratar om turen, terrängen och vädret — inte om plagg. Grundkonflikten: det är aldrig vädret som vänder turen, det är blöta strumpor vid kilometer fyra.\n\nRADER SOM REDAN FINNS OCH FÅR ÅTERANVÄNDAS ORDAGRANT:\n- \"Blötsnön börjar ovanför kängans kant.\" (DryTreks nuvarande PD-hook, live)\n- \"Trött på snö, väta och grus i skorna?\" (källans originalhook, 10 671 kr bakom sig — får användas ENDAST där briefen säger det)\n- \"Jag testade de här på hundpromenaden i morse.\" (UGC-kreatörens egen rad i SP_2, förstaperson — det är kreatörens erfarenhet, inte ett kundomdöme)\n- Live PD-copy (Ads Manager): \"Blötsnön börjar ovanför kängans kant.\\n✅ Håller snön ute nerifrån - där den annars kryper in\\n✅ Väta från blöt sly stannar på utsidan\\n✅ Grus och barr stannar utanför kängan\\n✅ Kardborre hela vägen upp - på och av med kängan kvar på\\nSe alla 18 färger - 389 kr 👇\" · headline \"Snön stannar utanför kängan\" · description \"Damasker som håller snö, väta & grus ute.\"\n\nBUTIKEN HAR NOLL RECENSIONER OCH NOLL KUNDER ATT CITERA. Inget socialt bevis får skrivas.\n\nSEASON: it is 2026-09-13 — September. Trails are wet grass, mud, gravel and undergrowth; there is no snow yet. Briefs that say \"autumn\" or \"no snow words\" mean it.",
+    "forbjudet": [
+      "\"vattentät\", \"vattentäta\", \"vindtät\", \"stoppar regn\", \"regntät\" — materialet är inte belagt som vattentätt; skriv vad som händer (vätan stannar på utsidan, strumpan är torr), aldrig materialegenskapen",
+      "\"alla väder\", \"oavsett väder\", \"i alla väder\", \"hela vandringen\" som tidslöfte",
+      "påtagningstid i sekunder (\"på 10 sekunder\", \"på några sekunder\") — ingen har tidtagit det",
+      "\"lera och sten\", \"skyddar mot sten\" — produktlistan säger grus och barr",
+      "\"30 dagars öppet köp\", \"öppet köp\" — butiken ger 14 dagars ångerrätt, inget annat",
+      "brådska: \"bara idag\", \"gäller till midnatt\", \"lagret krymper\", \"snart slut\", \"sista chansen\"",
+      "socialt bevis av alla slag: \"tusentals vandrare\", \"kunderna älskar\", \"verifierade kunder\", recensioner, stjärnor, citat tillskrivna en kund",
+      "procenttal för rabatt (\"40 %\") — skriv bara pristexten",
+      "Bäverbutiken (får aldrig nämnas), Klarna, utropstecken",
+      "ordet \"skorna\" om kängor utanför den givna källhooken — målgruppen äger kängor"
+    ]
+  },
+  "briefer": [
+    {
+      "namn": "DryTrek_Damasker_SP_6_H2",
+      "typ": "video",
+      "hypotes": "Sibling of SP_6_H1 (silent demo opener on the SP_2 creator film). H1 opens on the hook clipping into the lacing. H2 opens on the strap being pulled under the sole. Isolated variable: which fastener opens the film (hook vs strap). Everything from 00:03 is the SP_2 audio untouched.",
+      "vinkel": "SP → UGC demo, silent opener.",
+      "hook_ide": "Caption max 5 words over a close-up of the strap going under the sole, e.g. \"Remmen under foten. Klart.\" No spoken line. Give 3 alternatives.",
+      "format": "Video ~27 s. 0–3 s NEW: silent close-up of the strap under the sole, caption only. Then SP_2 audio and picture untouched. Only the HOOK beat is written; return the other beats verbatim: PROBLEM \"Jag var lite skeptisk ärligt talat, men jag tog på mig de här innan promenaden i morse.\" · MEKANISM \"Blött, lerigt, snö överallt. Efteråt, helt torra strumpor, ingen snö i skorna, inget grus, ingenting.\" · PROOF \"De satt kvar hela vägen. Inget krångel, inget som gled ner.\" · CTA \"Enkel grej, men den funkar på riktigt.\" (recorded creator audio — return verbatim, never edit; \"skorna\"/\"enkel\" are allowed here because the audio exists). Copy card: return SP_6_H1's copy card UNCHANGED: primary: \"Krok i snörningen, rem under foten, kardborre hela vägen upp. / Billiga benskydd glider ner efter några kilometer – de här har tre fästen i stället för ett. / Snö och väta stannar på utsidan – strumpan torr hela turen. / 389 kr per par, fri frakt till Sverige och Norge. / Se alla 18 färger.\" · headline: \"Strumporna torra hela turen.\" · description: \"Damasker med krok, rem och kardborre – 389 kr per par.\".",
+      "mal_langd_sek": 27,
+      "kept": "SP_2 from 00:03, SP_6_H1 copy card.",
+      "changed": "The opening close-up: hook in lacing → strap under sole."
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_8_H1",
+      "typ": "video",
+      "hypotes": "SP_2 cut to 15 seconds: HOOK → MEKANISM → CTA using only the creator's recorded lines. Isolated variable vs SP_2: length (27 s → 15 s). Hypothesis: the story is carried by three lines; a shorter film lifts thruplay and completes more often in Reels.",
+      "vinkel": "SP/UGC — the creator story, short cut.",
+      "hook_ide": "No new lines. Use the recorded hook \"Jag testade de här på hundpromenaden i morse.\" Return manus as exactly three beats, verbatim: HOOK \"Jag testade de här på hundpromenaden i morse.\" · MEKANISM \"Efteråt, helt torra strumpor, ingen snö i skorna, inget grus, ingenting.\" · CTA \"Enkel grej, men den funkar på riktigt.\" Write only the copy card (3–5 lines, feature card, no social proof) and give 3 alternative primary-text first lines in the reason field.",
+      "format": "Video 15 s, re-cut of SP_2 (creator audio, phone-shot). Three beats only.",
+      "mal_langd_sek": 15,
+      "kept": "SP_2 footage and voice, no social-proof claims.",
+      "changed": "Length: 27 s → 15 s (PROBLEM and PROOF beats cut)."
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_H2",
+      "typ": "video",
+      "hypotes": "Hook swap on the dog-walk concept SP_7_H1. H1 opens mid-walk on the gaiters. H2 opens on the dog's wet paws — the pain first, the product after. Isolated variable: the hook (00:00–00:03).",
+      "vinkel": "SP/UGC situation — the morning dog walk.",
+      "hook_ide": "Open on the wet dog / wet paws, first person, e.g. \"Hunden blöt om tassarna. Jag torr om fötterna.\" Max 8 words.",
+      "format": "Video 20–25 s. HOOK-ONLY VARIANT: write ONLY a new hook line (and 3 alternatives in its reason field). Return the parent's other beats VERBATIM as given here — HOOK (0–3 s): \"Jag testade de här på hundpromenaden i morse.\" · PROBLEM (3–8 s): \"Utan damask blir strumpan blöt redan på den korta rundan runt kvarteret.\" · MEKANISM (8–14 s): \"Kardborren stänger med kängan kvar på foten, på trappan.\" · PROOF (14–19 s): \"Efter rundan: hunden blöt om tassarna, strumpan torr.\" · CTA (19–22 s): \"Damasker för hundpromenaden, 389 kr per par.\" — and return the parent's copy card UNCHANGED (primary: \"Krok i snörningen, rem under foten, kardborre uppåt. / Går på och av med kängan kvar på foten, inget att knyta upp. / 18 färger, bland dem neongrön, orange och gul. / 389 kr per par, fri frakt till Sverige och Norge. / Se alla 18 färger.\" · headline: \"Torr strumpa efter hundpromenaden.\" · description: \"Damasker för hundpromenaden – 389 kr per par.\"). The primary text's first line must be replaced by the new hook — that is the only copy-card change allowed.",
+      "mal_langd_sek": 22,
+      "kept": "SP_7_H1 from 00:03, its copy card (first line swapped to the new hook).",
+      "changed": "The hook: product first → the dog first."
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_1",
+      "typ": "bild",
+      "hypotes": "The dog-walk concept as a static: dog on the lead, gaiters on, doorstep or wet path. Isolated variable vs SP_7_H1: format (video → image).",
+      "vinkel": "SP/UGC situation — the morning dog walk, one picture.",
+      "hook_ide": "On-image text max 7 words that puts the dog and the dry sock in one line, e.g. \"Hundpromenaden. Torra strumpor efteråt.\" Give 3 alternatives.",
+      "format": "Image 4:5 + 1:1, phone-photo look: a dog on the lead, legs with gaiters, wet path or slush. One on-image line, caption 1–2 lines, no price on the image.",
+      "kept": "The situation, first-person tone, no social proof.",
+      "changed": "Format: video → static."
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_2_1",
+      "typ": "bild",
+      "hypotes": "The split-leg comparison as a static: two socks side by side, one wet, one dry, after the same walk. Isolated variable vs FO_2_H1: format (video → image).",
+      "vinkel": "FO — before/after, one frame.",
+      "hook_ide": "On-image text max 7 words that names the split, e.g. \"Samma tur. Med. Utan.\" Give 3 alternatives.",
+      "format": "Image 4:5 + 1:1, split or two socks held side by side, labels \"med\" / \"utan\" allowed as part of the ≤7 words. Caption 1–2 lines. No price on the image.",
+      "kept": "The comparison, no claims about the material.",
+      "changed": "Format: video → static split."
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_2_H2",
+      "typ": "video",
+      "hypotes": "Hook swap on FO_2_H1: the two socks first. H1 opens on both legs on the trail; H2 opens on the two socks held up side by side (the PROOF shot), then the walk. Isolated variable: the hook / proof order.",
+      "vinkel": "FO — before/after, result-first.",
+      "hook_ide": "The two socks as a flat statement, e.g. \"En blöt, en torr. Samma tur.\" Max 8 words.",
+      "format": "Video 20–25 s. HOOK-ONLY VARIANT: write ONLY a new hook line (and 3 alternatives in its reason field). Return the parent's other beats VERBATIM as given here — HOOK (0–3 s): \"Samma tur. Ett ben med, ett utan.\" · PROBLEM (3–8 s): \"Benet utan damask: snön kryper redan in vid kängans kant.\" · MEKANISM (8–14 s): \"Damasken täcker gapet mellan känga och knä, hela vägen upp.\" · PROOF (14–19 s): \"Efteråt: en strumpa blöt, en strumpa torr. Samma tur.\" · CTA (19–22 s): \"Damasker, 389 kr per par, fri frakt till Sverige och Norge.\" — and return the parent's copy card UNCHANGED (primary: \"Ett ben med damask, ett utan – samma tur. / Vätan stannar på utsidan av de 44 cm höga damaskerna, i stället för att leta sig ner i kängan. / Damasken täcker gapet mellan känga och knä. / 389 kr per par, fri frakt till Sverige och Norge. / Se alla 18 färger.\" · headline: \"Ett ben torrt, ett blött.\" · description: \"Damasker som håller vätan på utsidan – 389 kr per par.\"). The primary text's first line must be replaced by the new hook — that is the only copy-card change allowed.",
+      "mal_langd_sek": 22,
+      "kept": "FO_2_H1 from 00:03 and its copy card (first line swapped).",
+      "changed": "The hook: legs on the trail → the two socks."
+    },
+    {
+      "namn": "DryTrek_Damasker_ID_2_H1",
+      "typ": "video",
+      "hypotes": "Identity concept for hunters: sitting on a stand at dusk, neon-green/orange gaiters as the visible thing in the picture. Product benefit \"syns i terrängen i neongrön, orange eller gul när ljuset går ner\" — no ad has carried it. GISSNING (0 kr). Hypothesis: naming the buyer (\"du som sitter på pass\") lifts CTR among hunters even if hook rate is lower overall.",
+      "vinkel": "Identity — \"för dig som jagar\": visibility at dusk + dry legs in wet undergrowth.",
+      "hook_ide": "Address the hunter directly, dusk, the stand, e.g. \"Du som sitter på pass när ljuset går.\" Max 8 words.",
+      "format": "Video 20–25 s: dusk in the forest, legs in orange or neon-green gaiters walking through wet undergrowth to a stand, the colour visible against the dark. Voice without a face. Beats HOOK → PROBLEM (wet undergrowth, dark) → MEKANISM (the gaiter closes boot-to-knee; the colour is seen) → PROOF (point at the colours and the height) → CTA.",
+      "mal_langd_sek": 22,
+      "kept": "Price text, colours as on the product page (neongrön, orange, gul), no hunting-safety claims beyond \"syns\".",
+      "changed": "New concept — no parent."
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_3_H1",
+      "typ": "video",
+      "hypotes": "Before/after on the trouser leg, not the sock: \"Blöt sly och högt gräs gör byxbenet genomvått på tjugo minuter\" (product problem nr 3) vs a dry trouser leg with the gaiter. GISSNING (0 kr). Hypothesis: the wet trouser leg is the September pain (no snow yet) and reads in one picture.",
+      "vinkel": "FO — before/after, trouser leg wet vs dry through wet grass.",
+      "hook_ide": "The wet trouser leg after twenty minutes, e.g. \"Tjugo minuter i blött gräs. Titta på byxbenet.\" Max 8 words.",
+      "format": "Video 20–25 s: two walks through the same wet grass, one without gaiter (trouser leg soaked to the knee), one with (dry). Voice without a face. Beats HOOK → PROBLEM → MEKANISM (44 cm covers the trouser leg to under the knee) → PROOF (the two trouser legs) → CTA.",
+      "mal_langd_sek": 22,
+      "kept": "Price text, no material claims (\"vätan stannar på utsidan\" is allowed, \"vattentät\" is not).",
+      "changed": "New concept — no parent."
+    },
+    {
+      "namn": "DryTrek_Damasker_CI_3_H1",
+      "typ": "video",
+      "hypotes": "Curiosity/education: why the sock gets wet when it is not raining — snow and wet come in from BELOW, over the boot top, not from above. Source: the live PD copy line \"Håller snön ute nerifrån - där den annars kryper in\" (the copy behind 10 671 kr on the source store). HYPOTES. Hypothesis: explaining the mechanism of the problem makes the product self-evident.",
+      "vinkel": "Curiosity — \"det här visste du inte\": the wet comes from below.",
+      "hook_ide": "The counter-intuitive fact, e.g. \"Det regnade inte. Strumpan blev blöt ändå.\" Max 8 words.",
+      "format": "Video 20–25 s: close-up of the boot top in wet grass or slush, the gap where wet enters, then the gaiter closing it. Voice without a face. Beats HOOK → PROBLEM (where it gets in) → MEKANISM (44 cm closes the gap, strap holds it down) → PROOF (dry sock, or point at the height) → CTA.",
+      "mal_langd_sek": 22,
+      "kept": "Price text, no material claims.",
+      "changed": "New concept — no parent."
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_9_H1",
+      "typ": "video",
+      "hypotes": "UGC situation nr 2 after the dog walk: the mushroom forest in September — wet moss, undergrowth, crouching, standing up with dry legs. Target group names \"skogsfolk\". GISSNING (0 kr). Hypothesis: a second everyday situation (not a hike) confirms or kills the \"routine beats trip\" pattern from SP_7.",
+      "vinkel": "SP/UGC situation — mushroom picking, first person.",
+      "hook_ide": "Mid-forest, basket in hand, wet moss, e.g. \"Svampskogen är blöt. Strumporna är torra.\" Max 8 words.",
+      "format": "Video 20–25 s, UGC phone-shot: basket, wet moss, crouching in undergrowth, gaiters on, sock pulled off dry back at the car. Creator voice, first person, no face needed. Beats HOOK → PROBLEM (wet moss up to the knee) → MEKANISM (gaiter closes boot to knee, stays put when crouching) → PROOF (dry sock at the car) → CTA.",
+      "mal_langd_sek": 22,
+      "kept": "First-person creator voice, no customer quotes, price text.",
+      "changed": "New concept — no parent."
+    },
+    {
+      "namn": "DryTrek_Damasker_BOF_11_H1",
+      "typ": "video",
+      "hypotes": "Bottom-of-funnel objection nr 2 from the FAQ: \"Glider de inte ner när jag går?\" — answered by the hook in the lacing and the strap under the foot, and by the inherited SP_2 proof line \"De satt kvar hela vägen. Inget krångel, inget som gled ner.\" (1 360 kr). HYPOTES. Hypothesis: showing the stride with the two anchors visible answers the slide-down objection and lifts CVR.",
+      "vinkel": "BOF — objection handling: slides down?",
+      "hook_ide": "The objection as a question, e.g. \"Glider de ner när man går?\" Max 8 words.",
+      "format": "Video 12–18 s: walking shot from the side, close on the boot — the hook in the lacing and the strap under the sole visible in every step; the gaiter does not move. Voice without a face; SP_2's \"De satt kvar hela vägen …\" may be cut in as PROOF. Beats HOOK → MEKANISM (the two anchors in the stride) → PROOF → CTA.",
+      "mal_langd_sek": 15,
+      "kept": "Price text, no material claims.",
+      "changed": "New concept — no parent."
+    }
+  ]
+}

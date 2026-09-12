@@ -1,0 +1,1135 @@
+{
+  "modell_begard": "sonnet",
+  "modell_svarade": "agent-tool:sonnet",
+  "fallback_korde": false,
+  "vag": "Agent-verktyget (model: sonnet)",
+  "briefer": [
+    {
+      "namn": "DryTrek_Damasker_SP_6_H2",
+      "typ": "video",
+      "hook": "Remmen spänns under foten. Klart.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Remmen spänns under foten. Klart.",
+          "en": "The strap tightens under the sole. Done."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–8 s",
+          "sv": "Jag var lite skeptisk ärligt talat, men jag tog på mig de här innan promenaden i morse.",
+          "en": "I was a bit skeptical honestly, but I put these on before the walk this morning."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "8–17 s",
+          "sv": "Blött, lerigt, snö överallt. Efteråt, helt torra strumpor, ingen snö i skorna, inget grus, ingenting.",
+          "en": "Wet, muddy, snow everywhere. Afterwards, completely dry socks, no snow in the boots, no gravel, nothing."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "17–22 s",
+          "sv": "De satt kvar hela vägen. Inget krångel, inget som gled ner.",
+          "en": "They stayed put the whole way. No hassle, nothing that slid down."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "22–27 s",
+          "sv": "Enkel grej, men den funkar på riktigt.",
+          "en": "Simple thing, but it actually works."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Krok i snörningen, rem under foten, kardborre hela vägen upp.\nBilliga benskydd glider ner efter några kilometer – de här har tre fästen i stället för ett.\nSnö och väta stannar på utsidan – strumpan torr hela turen.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Strumporna torra hela turen.",
+        "description_sv": "Damasker med krok, rem och kardborre – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Remmen spänns under foten. Klart.",
+          "visualisera": "✅ konkret närbild på remmen som spänns under foten. Alternativ: 1) \"Remmen under foten. Redo.\" 2) \"Bara remmen kvar. Klart.\" 3) \"Remmen sist, nu sitter den.\"",
+          "falsifiera": "✅ syns i bild om remmen spänns eller inte",
+          "ingen_annan_kan_saga": "❌ en spänd rem är ett generiskt actionmoment, konkurrenter med liknande fäste kan visa samma sak"
+        },
+        {
+          "rad": "Jag var lite skeptisk ärligt talat, men jag tog på mig de här innan promenaden i morse.",
+          "visualisera": "✅ kreatörens egen morgonpromenad, en konkret handling",
+          "falsifiera": "✅ hände eller hände inte, kreatörens eget uttalande",
+          "ingen_annan_kan_saga": "❌ låst inspelad rad, ändras aldrig – återanvänds ordagrant"
+        },
+        {
+          "rad": "Blött, lerigt, snö överallt. Efteråt, helt torra strumpor, ingen snö i skorna, inget grus, ingenting.",
+          "visualisera": "✅ blött/lerigt väder och en strumpa efteråt går att se",
+          "falsifiera": "✅ mätbart: torr eller inte, snö i skon eller inte",
+          "ingen_annan_kan_saga": "❌ låst inspelad rad – \"snö\" nämns fast det är september, men raden är kreatörens egna ord och ändras inte"
+        },
+        {
+          "rad": "De satt kvar hela vägen. Inget krångel, inget som gled ner.",
+          "visualisera": "✅ \"satt kvar hela vägen\" går att se i filmen",
+          "falsifiera": "✅ sant eller falskt om den glider ner eller inte",
+          "ingen_annan_kan_saga": "❌ låst inspelad rad – generellt påstående, men kreatörens egen erfarenhet, ändras inte"
+        },
+        {
+          "rad": "Enkel grej, men den funkar på riktigt.",
+          "visualisera": "❌ \"enkel grej\" är en känsla, inget att peka på",
+          "falsifiera": "❌ \"funkar på riktigt\" är en åsikt, inte mätbart",
+          "ingen_annan_kan_saga": "❌ låst inspelad rad – kreatörens egen slutkläm, ändras inte"
+        },
+        {
+          "rad": "Krok i snörningen, rem under foten, kardborre hela vägen upp.",
+          "visualisera": "✅ tre konkreta fästen, går att peka på i produkten",
+          "falsifiera": "✅ sant/falskt: krok, rem, kardborre finns eller inte",
+          "ingen_annan_kan_saga": "✅ det exakta tre-fästes-systemet (krok+rem+kardborre) är specifikt för DryTrek"
+        },
+        {
+          "rad": "Billiga benskydd glider ner efter några kilometer – de här har tre fästen i stället för ett.",
+          "visualisera": "✅ bild av benskydd som glidit ner",
+          "falsifiera": "✅ mätbart: glider ner efter X km eller inte",
+          "ingen_annan_kan_saga": "✅ jämförelsen \"tre fästen i stället för ett\" pekar på en konkurrentsvaghet, ingen konkurrent skriver den om sig själv"
+        },
+        {
+          "rad": "Snö och väta stannar på utsidan – strumpan torr hela turen.",
+          "visualisera": "✅ snö/väta på utsidan, torr strumpa – visuellt",
+          "falsifiera": "✅ sant/falskt, går att kontrollera",
+          "ingen_annan_kan_saga": "❌ generellt löfte, en konkurrent med tätvävt tyg kan påstå samma"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ ett pris går att visa",
+          "falsifiera": "✅ priset stämmer eller inte",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad, alla konkurrenter kan skriva sitt eget pris"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ en färgpalett går att räkna",
+          "falsifiera": "✅ 18 färger stämmer eller inte",
+          "ingen_annan_kan_saga": "✅ exakt färgantal är specifikt för DryTreks sortiment"
+        },
+        {
+          "rad": "Strumporna torra hela turen.",
+          "visualisera": "✅ \"torra strumpor\" går att se efteråt",
+          "falsifiera": "✅ sant/falskt",
+          "ingen_annan_kan_saga": "❌ generellt löfte, delas av alla liknande produkter"
+        },
+        {
+          "rad": "Damasker med krok, rem och kardborre – 389 kr per par.",
+          "visualisera": "✅ krok, rem, kardborre går att peka på i produkten",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ det specifika tre-fästes-systemet"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_8_H1",
+      "typ": "video",
+      "hook": "Jag testade de här på hundpromenaden i morse.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–4 s",
+          "sv": "Jag testade de här på hundpromenaden i morse.",
+          "en": "I tried these on the dog walk this morning."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "4–11 s",
+          "sv": "Efteråt, helt torra strumpor, ingen snö i skorna, inget grus, ingenting.",
+          "en": "Afterwards, completely dry socks, no snow in the boots, no gravel, nothing."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "11–15 s",
+          "sv": "Enkel grej, men den funkar på riktigt.",
+          "en": "Simple thing, but it actually works."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Krok i snörningen, rem under foten, kardborre hela vägen upp – tre fästen i stället för ett.\nKardborren stänger tätt vid kängans kant – det är där vätan annars tar sig in.\nGrus och barr stannar utanför kängan.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Tätt vid kängans kant.",
+        "description_sv": "Damasker med krok, rem och kardborre – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Jag testade de här på hundpromenaden i morse.",
+          "visualisera": "✅ kreatörens egen morgonpromenad",
+          "falsifiera": "✅ kreatörens eget uttalande, sant eller falskt",
+          "ingen_annan_kan_saga": "❌ låst inspelad rad – återanvänds ordagrant, ändras inte"
+        },
+        {
+          "rad": "Efteråt, helt torra strumpor, ingen snö i skorna, inget grus, ingenting.",
+          "visualisera": "✅ torr strumpa, inget grus – syns i bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ låst inspelad rad, ändras inte"
+        },
+        {
+          "rad": "Enkel grej, men den funkar på riktigt.",
+          "visualisera": "❌ \"funkar på riktigt\" är en känsla",
+          "falsifiera": "❌ inte mätbart, en åsikt",
+          "ingen_annan_kan_saga": "❌ låst inspelad rad, ändras inte"
+        },
+        {
+          "rad": "Krok i snörningen, rem under foten, kardborre hela vägen upp – tre fästen i stället för ett.",
+          "visualisera": "✅ tre konkreta fästen att peka på Tre alternativa första primary-rader: 1) \"Krok, rem och kardborre – tre fästen i stället för ett.\" 2) \"Tre fästen håller damasken på plats hela turen.\" 3) \"Kardborre hela vägen upp, av och på med kängan kvar.\"",
+          "falsifiera": "✅ sant/falskt",
+          "ingen_annan_kan_saga": "✅ specifikt tre-fästes-system"
+        },
+        {
+          "rad": "Kardborren stänger tätt vid kängans kant – det är där vätan annars tar sig in.",
+          "visualisera": "✅ kardborren som stängs precis vid kängans kant, går att peka på i produkten",
+          "falsifiera": "✅ mätbart – tätt vid kanten eller inte",
+          "ingen_annan_kan_saga": "✅ pekar på en exakt plats (kängans kant) och det specifika kardborrefästet, inte ett generellt materiallöfte"
+        },
+        {
+          "rad": "Grus och barr stannar utanför kängan.",
+          "visualisera": "✅ grus/barr utanför kängan går att se",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ kombinationen grus+barr+kardborre är produktspecifik, kvoterad ur live PD-copy"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Tätt vid kängans kant.",
+          "visualisera": "✅ en exakt plats på produkten, går att peka på",
+          "falsifiera": "✅ mätbart – tätt vid kanten eller inte",
+          "ingen_annan_kan_saga": "✅ pekar på den specifika platsen där kardborren stänger, inte ett generellt löfte"
+        },
+        {
+          "rad": "Damasker med krok, rem och kardborre – 389 kr per par.",
+          "visualisera": "✅ krok/rem/kardborre går att peka på",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt fästsystem"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_H2",
+      "typ": "video",
+      "hook": "Hunden blöt om tassarna. Jag torr om fötterna.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Hunden blöt om tassarna. Jag torr om fötterna.",
+          "en": "The dog's paws wet. My feet dry."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–8 s",
+          "sv": "Utan damask blir strumpan blöt redan på den korta rundan runt kvarteret.",
+          "en": "Without a gaiter the sock gets wet already on the short walk around the block."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "8–14 s",
+          "sv": "Kardborren stänger med kängan kvar på foten, på trappan.",
+          "en": "The velcro closes with the boot still on, on the doorstep."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–19 s",
+          "sv": "Efter rundan: hunden blöt om tassarna, strumpan torr.",
+          "en": "After the walk: the dog's paws wet, the sock dry."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "19–22 s",
+          "sv": "Damasker för hundpromenaden, 389 kr per par.",
+          "en": "Gaiters for the dog walk, 389 SEK per pair."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Hunden blöt om tassarna. Jag torr om fötterna.\nGår på och av med kängan kvar på foten, inget att knyta upp.\n18 färger, bland dem neongrön, orange och gul.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Torr strumpa efter hundpromenaden.",
+        "description_sv": "Damasker för hundpromenaden – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Hunden blöt om tassarna. Jag torr om fötterna.",
+          "visualisera": "✅ blöta hundtassar mot torra fötter, en tydlig bild. Alternativ: 1) \"Hundens tassar blöta. Mina strumpor torra.\" 2) \"Tassarna blöta efter rundan. Strumpan torr.\" 3) \"Hunden blöt om tassarna. Jag torr.\"",
+          "falsifiera": "✅ sant/falskt – går att filma och kontrollera",
+          "ingen_annan_kan_saga": "❌ kontrasten hund/människa är specifik för konceptet men \"torra fötter\" ensamt kan sägas av vilken skoprodukt som helst"
+        },
+        {
+          "rad": "Utan damask blir strumpan blöt redan på den korta rundan runt kvarteret.",
+          "visualisera": "✅ blöt strumpa efter en kort runda, konkret",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ given rad ur briefen, återanvänds ordagrant"
+        },
+        {
+          "rad": "Kardborren stänger med kängan kvar på foten, på trappan.",
+          "visualisera": "✅ kardborre som stängs med kängan på, syns i bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ given rad ur briefen, ändras inte"
+        },
+        {
+          "rad": "Efter rundan: hunden blöt om tassarna, strumpan torr.",
+          "visualisera": "✅ blöta tassar + torr strumpa, tydlig kontrast att filma",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ given rad ur briefen, ändras inte"
+        },
+        {
+          "rad": "Damasker för hundpromenaden, 389 kr per par.",
+          "visualisera": "✅ produkt + pris, tydligt",
+          "falsifiera": "✅ priset stämmer eller inte",
+          "ingen_annan_kan_saga": "❌ ren pris-/produktrad, given ur briefen"
+        },
+        {
+          "rad": "Går på och av med kängan kvar på foten, inget att knyta upp.",
+          "visualisera": "✅ på/av-rörelse med kängan kvar, syns i bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ kardborre hela vägen upp utan att knyta upp är specifikt fäste"
+        },
+        {
+          "rad": "18 färger, bland dem neongrön, orange och gul.",
+          "visualisera": "✅ färgprover går att räkna och visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ exakt färgsortiment"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Torr strumpa efter hundpromenaden.",
+          "visualisera": "✅ torr strumpa efter en hundpromenad, konkret situation",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ generellt löfte, oförändrad från förälderbriefen"
+        },
+        {
+          "rad": "Damasker för hundpromenaden – 389 kr per par.",
+          "visualisera": "✅ situation + pris",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ generisk pris-/produktrad, oförändrad från förälderbriefen"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_1",
+      "typ": "bild",
+      "hook": "Våt tass. Torr strumpa.",
+      "manus": [],
+      "bildtext": {
+        "on_image_sv": "Våt tass. Torr strumpa.",
+        "on_image_en": "Wet paw. Dry sock.",
+        "caption_sv": "Krok, rem och kardborre håller damasken kvar på en kort runda.\n389 kr per par, fri frakt till Sverige och Norge.",
+        "caption_en": "Hook, strap and velcro keep the gaiter in place on a short walk.\n389 SEK per pair, free shipping to Sweden and Norway."
+      },
+      "copy_card": {
+        "primary_text_sv": "Krok i snörningen, rem under foten, kardborre hela vägen upp – tre fästen i stället för ett.\nGår på och av med kängan kvar på foten.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "På och av utan att knyta upp.",
+        "description_sv": "Damasker för hundpromenaden – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Våt tass. Torr strumpa.",
+          "visualisera": "✅ en blöt tass bredvid en torr strumpa, går att fotografera. Alternativ: 1) \"Hundpromenaden. Torra strumpor efteråt.\" 2) \"Hunden blöt om tassarna. Jag torr.\" 3) \"Kort runda, torra strumpor ändå.\"",
+          "falsifiera": "✅ sant/falskt, syns i en bild",
+          "ingen_annan_kan_saga": "❌ \"torr strumpa\" ensamt kan sägas av vilken skoprodukt som helst, men parningen med hundtassen är konceptets egen vinkel"
+        },
+        {
+          "rad": "Krok, rem och kardborre håller damasken kvar på en kort runda.",
+          "visualisera": "✅ krok/rem/kardborre på en kort runda, konkret",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt tre-fästes-system"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Krok i snörningen, rem under foten, kardborre hela vägen upp – tre fästen i stället för ett.",
+          "visualisera": "✅ tre fästen att peka på",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt fästsystem"
+        },
+        {
+          "rad": "Går på och av med kängan kvar på foten.",
+          "visualisera": "✅ på/av med kängan kvar, syns",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt fäste (kardborre) möjliggör detta"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "På och av utan att knyta upp.",
+          "visualisera": "✅ rörelsen (kardborre öppnas/stängs, kängan kvar på foten) går att fotografera",
+          "falsifiera": "✅ mätbart – går på/av utan att knyta upp eller inte",
+          "ingen_annan_kan_saga": "✅ pekar på det specifika kardborrefästet, inte ett generellt torr-strumpa-löfte"
+        },
+        {
+          "rad": "Damasker för hundpromenaden – 389 kr per par.",
+          "visualisera": "✅ situation + pris",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ generisk pris-/produktrad"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_2_1",
+      "typ": "bild",
+      "hook": "Samma tur. Med. Utan.",
+      "manus": [],
+      "bildtext": {
+        "on_image_sv": "Samma tur. Med. Utan.",
+        "on_image_en": "Same walk. With. Without.",
+        "caption_sv": "En strumpa blöt, en torr – efter samma sträcka.\n389 kr per par, fri frakt till Sverige och Norge.",
+        "caption_en": "One sock wet, one dry – after the same stretch.\n389 SEK per pair, free shipping to Sweden and Norway."
+      },
+      "copy_card": {
+        "primary_text_sv": "Ett ben med damask, ett utan – samma sträcka.\nVätan stannar på utsidan av de 44 cm höga damaskerna, i stället för att leta sig ner i kängan.\nDamasken täcker gapet mellan känga och knä.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Ett ben torrt, ett blött.",
+        "description_sv": "Damasker som håller vätan på utsidan – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Samma tur. Med. Utan.",
+          "visualisera": "✅ två ben, en märkt med en märkt utan, går att fotografera. Alternativ: 1) \"En blöt. En torr. Samma tur.\" 2) \"Med damask: torr. Utan: blöt.\" 3) \"Samma sträcka. Olika strumpor.\"",
+          "falsifiera": "✅ sant/falskt, syns i bild",
+          "ingen_annan_kan_saga": "✅ split-jämförelsen med och utan damask är specifik för hur produkten testas här"
+        },
+        {
+          "rad": "En strumpa blöt, en torr – efter samma sträcka.",
+          "visualisera": "✅ en blöt, en torr strumpa – går att fotografera",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ jämförelsen samma sträcka, olika resultat är produktspecifik"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Ett ben med damask, ett utan – samma sträcka.",
+          "visualisera": "✅ ett ben med, ett utan – tydlig bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifik split-jämförelse"
+        },
+        {
+          "rad": "Vätan stannar på utsidan av de 44 cm höga damaskerna, i stället för att leta sig ner i kängan.",
+          "visualisera": "✅ 44 cm och vätan på utsidan går att peka på",
+          "falsifiera": "✅ mätbart, en exakt höjd",
+          "ingen_annan_kan_saga": "✅ exakt höjdmått 44 cm är produktspecifikt"
+        },
+        {
+          "rad": "Damasken täcker gapet mellan känga och knä.",
+          "visualisera": "✅ gapet mellan känga och knä syns i bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt för damaskens längd/placering"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Ett ben torrt, ett blött.",
+          "visualisera": "✅ ett ben torrt, ett blött – ren bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifik split-jämförelse"
+        },
+        {
+          "rad": "Damasker som håller vätan på utsidan – 389 kr per par.",
+          "visualisera": "✅ vätan på utsidan går att peka på",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ delvis generellt löfte om materialets funktion"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_2_H2",
+      "typ": "video",
+      "hook": "En blöt, en torr. Samma tur.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "En blöt, en torr. Samma tur.",
+          "en": "One wet, one dry. Same walk."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–8 s",
+          "sv": "Benet utan damask: snön kryper redan in vid kängans kant.",
+          "en": "The leg without a gaiter: the snow already creeps in at the boot top."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "8–14 s",
+          "sv": "Damasken täcker gapet mellan känga och knä, hela vägen upp.",
+          "en": "The gaiter covers the gap between boot and knee, all the way up."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–19 s",
+          "sv": "Efteråt: en strumpa blöt, en strumpa torr. Samma tur.",
+          "en": "Afterwards: one sock wet, one sock dry. Same walk."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "19–22 s",
+          "sv": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "en": "Gaiters, 389 SEK per pair, free shipping to Sweden and Norway."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "En blöt, en torr. Samma tur.\nVätan stannar på utsidan av de 44 cm höga damaskerna, i stället för att leta sig ner i kängan.\nDamasken täcker gapet mellan känga och knä.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Ett ben torrt, ett blött.",
+        "description_sv": "Damasker som håller vätan på utsidan – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "En blöt, en torr. Samma tur.",
+          "visualisera": "✅ två strumpor sida vid sida, en blöt en torr, går att filma. Alternativ: 1) \"Två strumpor. En blöt, en torr.\" 2) \"Samma sträcka. En strumpa blöt, en torr.\" 3) \"En strumpa torr. En blöt. Samma tur.\"",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ split-testet med samma tur är en specifik jämförelse"
+        },
+        {
+          "rad": "Benet utan damask: snön kryper redan in vid kängans kant.",
+          "visualisera": "✅ snö vid kängkanten, syns i bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ given rad ur briefen, återanvänds ordagrant"
+        },
+        {
+          "rad": "Damasken täcker gapet mellan känga och knä, hela vägen upp.",
+          "visualisera": "✅ gapet mellan känga och knä täcks, syns",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ given rad ur briefen, ändras inte"
+        },
+        {
+          "rad": "Efteråt: en strumpa blöt, en strumpa torr. Samma tur.",
+          "visualisera": "✅ en blöt, en torr strumpa efteråt",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ given rad ur briefen, ändras inte"
+        },
+        {
+          "rad": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ produkt + pris + frakt, tydligt",
+          "falsifiera": "✅ priset stämmer eller inte",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad, given ur briefen"
+        },
+        {
+          "rad": "Vätan stannar på utsidan av de 44 cm höga damaskerna, i stället för att leta sig ner i kängan.",
+          "visualisera": "✅ 44 cm och vätan på utsidan",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ exakt höjdmått är produktspecifikt"
+        },
+        {
+          "rad": "Damasken täcker gapet mellan känga och knä.",
+          "visualisera": "✅ gapet mellan känga och knä syns",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt för damaskens placering"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Ett ben torrt, ett blött.",
+          "visualisera": "✅ ett ben torrt, ett blött – ren bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifik split-jämförelse, oförändrad från förälderbriefen"
+        },
+        {
+          "rad": "Damasker som håller vätan på utsidan – 389 kr per par.",
+          "visualisera": "✅ vätan på utsidan går att peka på",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ delvis generellt löfte, oförändrad från förälderbriefen"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_ID_2_H1",
+      "typ": "video",
+      "hook": "Du som sitter på pass när ljuset går.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Du som sitter på pass när ljuset går.",
+          "en": "You who sit on the stand as the light fades."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–7 s",
+          "sv": "Blöt sly på väg till passet, och snart alldeles mörkt.",
+          "en": "Wet undergrowth on the way to the stand, and soon completely dark."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "7–14 s",
+          "sv": "Damasken sluter gapet mellan känga och knä, i neongrönt, orange eller gult.",
+          "en": "The gaiter closes the gap between boot and knee, in neon green, orange or yellow."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–18 s",
+          "sv": "44 centimeter i neongrönt – synligt hela vägen upp till knät.",
+          "en": "44 centimeters in neon green – visible all the way up to the knee."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "18–22 s",
+          "sv": "Damasker i neongrönt, orange och gult, 389 kr per par.",
+          "en": "Gaiters in neon green, orange and yellow, 389 SEK per pair."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Du som sitter på pass när ljuset går.\nDamasken sluter gapet mellan känga och knä, i neongrönt, orange eller gult.\n44 centimeter, synligt hela vägen upp till knät.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Syns i mörkret, hela vägen upp.",
+        "description_sv": "Damasker i neongrönt, orange och gult – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Du som sitter på pass när ljuset går.",
+          "visualisera": "✅ jägaren på passet i skymningen, konkret bild. Alternativ: 1) \"Du som sitter kvar när ljuset försvinner.\" 2) \"Den sista timmen på passet, i mörkret.\" 3) \"Ljuset går. Du sitter kvar på passet.\"",
+          "falsifiera": "✅ mätbart – antingen sitter du kvar när ljuset går eller inte",
+          "ingen_annan_kan_saga": "✅ \"pass\" och jägarens situation riktar sig till en specifik grupp, ingen generisk vandringsannons säger det så"
+        },
+        {
+          "rad": "Blöt sly på väg till passet, och snart alldeles mörkt.",
+          "visualisera": "✅ blöt sly och mörker på väg till passet, konkret",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ \"på väg till passet\" är jägarspecifikt, ingen annan produkt talar om just den vandringen"
+        },
+        {
+          "rad": "Damasken sluter gapet mellan känga och knä, i neongrönt, orange eller gult.",
+          "visualisera": "✅ gapet stängs, färgen syns – går att filma",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ de tre specifika signalfärgerna (neongrön/orange/gul) är produktspecifika"
+        },
+        {
+          "rad": "44 centimeter i neongrönt – synligt hela vägen upp till knät.",
+          "visualisera": "✅ ett exakt mått och en färg – går att peka på",
+          "falsifiera": "✅ mätbart, en exakt siffra",
+          "ingen_annan_kan_saga": "✅ 44 cm i neongrönt är ett specifikt produktfaktum"
+        },
+        {
+          "rad": "Damasker i neongrönt, orange och gult, 389 kr per par.",
+          "visualisera": "✅ produkt + färger + pris, tydligt",
+          "falsifiera": "✅ priset stämmer eller inte",
+          "ingen_annan_kan_saga": "❌ ren pris-/produktrad"
+        },
+        {
+          "rad": "Damasken sluter gapet mellan känga och knä, i neongrönt, orange eller gult.",
+          "visualisera": "✅ gapet stängs, färgen syns",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ signalfärgerna är produktspecifika"
+        },
+        {
+          "rad": "44 centimeter, synligt hela vägen upp till knät.",
+          "visualisera": "✅ ett exakt mått",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ 44 cm är ett exakt produktmått"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Syns i mörkret, hela vägen upp.",
+          "visualisera": "✅ syns i mörkret, en visuell effekt",
+          "falsifiera": "✅ mätbart – syns eller syns inte",
+          "ingen_annan_kan_saga": "✅ kopplat till de specifika signalfärgerna och höjden"
+        },
+        {
+          "rad": "Damasker i neongrönt, orange och gult – 389 kr per par.",
+          "visualisera": "✅ tre specifika färger + pris",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ signalfärgerna är produktspecifika"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_3_H1",
+      "typ": "video",
+      "hook": "Tjugo minuter i blött gräs. Titta på byxbenet.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Tjugo minuter i blött gräs. Titta på byxbenet.",
+          "en": "Twenty minutes in wet grass. Look at the trouser leg."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–7 s",
+          "sv": "Blöt sly och högt gräs gör byxbenet genomvått på tjugo minuter.",
+          "en": "Wet undergrowth and tall grass soak the trouser leg through in twenty minutes."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "7–14 s",
+          "sv": "Damasken går 44 centimeter upp och täcker byxbenet till under knät.",
+          "en": "The gaiter runs 44 centimeters up and covers the trouser leg to below the knee."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–18 s",
+          "sv": "Efter tjugo minuter: ett byxben blött, ett torrt.",
+          "en": "After twenty minutes: one trouser leg wet, one dry."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "18–22 s",
+          "sv": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "en": "Gaiters, 389 SEK per pair, free shipping to Sweden and Norway."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Tjugo minuter i blött gräs. Titta på byxbenet.\nDamasken går 44 centimeter upp och täcker byxbenet till under knät.\nTvå byxben i samma gräs – bara ett blir blött.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Ett byxben torrt, ett blött.",
+        "description_sv": "Damasker som håller byxbenet torrt – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Tjugo minuter i blött gräs. Titta på byxbenet.",
+          "visualisera": "✅ blött byxben efter en tidsangiven promenad, går att filma. Alternativ: 1) \"Tjugo minuter blött gräs. Ett ben torrt.\" 2) \"Samma gräs. Ett byxben blött, ett torrt.\" 3) \"Tjugo minuter blött gräs, olika byxben.\"",
+          "falsifiera": "✅ mätbart – tjugo minuter, blött eller torrt",
+          "ingen_annan_kan_saga": "✅ jämförelsen mellan två byxben i samma gräs efter exakt tid är konceptets egen split"
+        },
+        {
+          "rad": "Blöt sly och högt gräs gör byxbenet genomvått på tjugo minuter.",
+          "visualisera": "✅ blöt sly och gräs, byxbenet genomvått – konkret",
+          "falsifiera": "✅ mätbart, en tidsangivelse (20 min) taget direkt ur produktfaktan",
+          "ingen_annan_kan_saga": "✅ exakt \"tjugo minuter\" är hämtat ur produktsidans egna problembeskrivning"
+        },
+        {
+          "rad": "Damasken går 44 centimeter upp och täcker byxbenet till under knät.",
+          "visualisera": "✅ 44 cm, täcker till under knät – exakt mått",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ exakt höjdmått 44 cm är produktspecifikt"
+        },
+        {
+          "rad": "Efter tjugo minuter: ett byxben blött, ett torrt.",
+          "visualisera": "✅ två byxben, en blöt en torr – tydlig bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ split-jämförelsen efter en angiven tid är konceptets egen"
+        },
+        {
+          "rad": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ produkt + pris, tydligt",
+          "falsifiera": "✅ priset stämmer eller inte",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Damasken går 44 centimeter upp och täcker byxbenet till under knät.",
+          "visualisera": "✅ 44 cm, under knät – exakt",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ exakt höjdmått"
+        },
+        {
+          "rad": "Två byxben i samma gräs – bara ett blir blött.",
+          "visualisera": "✅ två byxben sida vid sida i samma gräs, går att fotografera",
+          "falsifiera": "✅ mätbart – blött eller torrt, samma gräs",
+          "ingen_annan_kan_saga": "✅ split-jämförelsen mellan två ben i samma gräs är konceptets egen, ingen konkurrent äger den bilden"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Ett byxben torrt, ett blött.",
+          "visualisera": "✅ två byxben, ett torrt ett blött – ren bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifik split-jämförelse mellan två ben, inte ett generellt materiallöfte"
+        },
+        {
+          "rad": "Damasker som håller byxbenet torrt – 389 kr per par.",
+          "visualisera": "✅ byxbenet torrt går att se",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ generellt löfte"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_CI_3_H1",
+      "typ": "video",
+      "hook": "Det regnade inte. Strumpan blev blöt ändå.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Det regnade inte. Strumpan blev blöt ändå.",
+          "en": "It wasn't raining. The sock got wet anyway."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–7 s",
+          "sv": "Vätan kryper in vid kängans kant, inte genom sulan.",
+          "en": "The wet creeps in at the boot top, not through the sole."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "7–14 s",
+          "sv": "Damasken sluter gapet mellan känga och knä, 44 centimeter upp.",
+          "en": "The gaiter closes the gap between boot and knee, 44 centimeters up."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–18 s",
+          "sv": "Strumpan torr, damasken stängd 44 centimeter upp.",
+          "en": "Sock dry, the gaiter closed 44 centimeters up."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "18–22 s",
+          "sv": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "en": "Gaiters, 389 SEK per pair, free shipping to Sweden and Norway."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Det regnade inte. Strumpan blev blöt ändå.\nVätan kryper in vid kängans kant, inte genom sulan.\nDamasken sluter gapet mellan känga och knä, 44 centimeter upp.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Blöt utan regn. Så går det.",
+        "description_sv": "Damasker som sluter gapet vid kängans kant – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Det regnade inte. Strumpan blev blöt ändå.",
+          "visualisera": "✅ torrt väder, blöt strumpa – ett konkret, motsägelsefullt läge. Alternativ: 1) \"Ingen nederbörd. Ändå blöt strumpa.\" 2) \"Solsken hela vägen. Strumpan blev blöt.\" 3) \"Torrt i luften. Blött i kängan.\"",
+          "falsifiera": "✅ mätbart – regnade eller inte, blöt eller torr",
+          "ingen_annan_kan_saga": "✅ den motsägelsefulla iakttagelsen (inget regn, ändå blött) är en specifik vinkel, ingen generisk regnjacka-annons säger det så"
+        },
+        {
+          "rad": "Vätan kryper in vid kängans kant, inte genom sulan.",
+          "visualisera": "✅ pekar på en specifik plats (kängans kant), går att filma",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ mekanismen \"vid kängans kant, inte genom sulan\" är specifik för var vätan tar sig in"
+        },
+        {
+          "rad": "Damasken sluter gapet mellan känga och knä, 44 centimeter upp.",
+          "visualisera": "✅ gapet stängs, 44 cm upp – exakt",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ exakt höjdmått är produktspecifikt"
+        },
+        {
+          "rad": "Strumpan torr, damasken stängd 44 centimeter upp.",
+          "visualisera": "✅ torr strumpa parat med ett exakt mått, går att peka på",
+          "falsifiera": "✅ mätbart – 44 cm stängt eller inte",
+          "ingen_annan_kan_saga": "✅ det exakta höjdmåttet 44 cm som orsak till resultatet är produktspecifikt"
+        },
+        {
+          "rad": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ produkt + pris, tydligt",
+          "falsifiera": "✅ priset stämmer eller inte",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Vätan kryper in vid kängans kant, inte genom sulan.",
+          "visualisera": "✅ specifik plats för läckaget",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ mekanismbeskrivningen är specifik"
+        },
+        {
+          "rad": "Damasken sluter gapet mellan känga och knä, 44 centimeter upp.",
+          "visualisera": "✅ 44 cm, exakt mått",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ exakt höjdmått"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Blöt utan regn. Så går det.",
+          "visualisera": "✅ blött utan regn – konkret paradox",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ den motsägelsefulla vinkeln är specifik för konceptet"
+        },
+        {
+          "rad": "Damasker som sluter gapet vid kängans kant – 389 kr per par.",
+          "visualisera": "✅ gapet vid kängans kant går att peka på",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ mekanismen är specifik"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_9_H1",
+      "typ": "video",
+      "hook": "Svampskogen är blöt. Strumporna är torra.",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Svampskogen är blöt. Strumporna är torra.",
+          "en": "The mushroom forest is wet. The socks are dry."
+        },
+        {
+          "beat": "PROBLEM",
+          "sekunder": "3–7 s",
+          "sv": "Mossan går mig till knäna, blöt genom hela förmiddagen.",
+          "en": "The moss reaches my knees, wet through the whole morning."
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "7–14 s",
+          "sv": "Damasken sitter kvar när jag böjer mig ner, krok och rem håller den på plats.",
+          "en": "The gaiter stays put when I crouch down, hook and strap hold it in place."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "14–18 s",
+          "sv": "Vid bilen: korgen full, strumporna fortfarande torra.",
+          "en": "At the car: the basket full, socks still dry."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "18–22 s",
+          "sv": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "en": "Gaiters, 389 SEK per pair, free shipping to Sweden and Norway."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Svampskogen är blöt. Strumporna är torra.\nDamasken sitter kvar när jag böjer mig ner i mossan – krok och rem håller den på plats.\nKorgen full efter en förmiddag i mossan – strumporna fortfarande torra.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Torra strumpor efter svampskogen.",
+        "description_sv": "Damasker för svampplockning i blöt mossa – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Svampskogen är blöt. Strumporna är torra.",
+          "visualisera": "✅ blöt mossa, torra strumpor – konkret situation. Alternativ: 1) \"Blöt mossa hela förmiddagen. Torra strumpor ändå.\" 2) \"Svampplockning i blöt mossa. Fötterna torra.\" 3) \"Böjde mig i mossan. Strumporna hölls torra.\"",
+          "falsifiera": "✅ mätbart – blött eller torrt",
+          "ingen_annan_kan_saga": "✅ svampskogen som konkret situation, ingen annan vandringsprodukt äger den"
+        },
+        {
+          "rad": "Mossan går mig till knäna, blöt genom hela förmiddagen.",
+          "visualisera": "✅ mossa till knäna, en hel förmiddag – konkret",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ svampplockningens specifika situation (böja sig i mossa) är produktens egen vinkel här"
+        },
+        {
+          "rad": "Damasken sitter kvar när jag böjer mig ner, krok och rem håller den på plats.",
+          "visualisera": "✅ krok+rem håller kvar när man böjer sig, syns i bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt fästsystem (krok+rem) som håller vid böjning"
+        },
+        {
+          "rad": "Vid bilen: korgen full, strumporna fortfarande torra.",
+          "visualisera": "✅ full korg och torra strumpor vid bilen, konkret bild",
+          "falsifiera": "✅ mätbart – korgen full eller inte, strumporna torra eller inte",
+          "ingen_annan_kan_saga": "✅ svampplockningens egen korg som bevis är specifik för det här konceptet"
+        },
+        {
+          "rad": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ produkt + pris, tydligt",
+          "falsifiera": "✅ priset stämmer eller inte",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Damasken sitter kvar när jag böjer mig ner i mossan – krok och rem håller den på plats.",
+          "visualisera": "✅ krok+rem håller när man böjer sig, konkret rörelse",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt fästsystem"
+        },
+        {
+          "rad": "Korgen full efter en förmiddag i mossan – strumporna fortfarande torra.",
+          "visualisera": "✅ full korg efter en förmiddags plockande, torra strumpor – konkret",
+          "falsifiera": "✅ mätbart – förmiddag i mossan, torrt eller blött",
+          "ingen_annan_kan_saga": "✅ korgen och förmiddagen i mossan är specifika för svampplockningskonceptet"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Torra strumpor efter svampskogen.",
+          "visualisera": "✅ torra strumpor efter svampskogen, konkret situation",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ svampskogssituationen är specifik för denna vinkel"
+        },
+        {
+          "rad": "Damasker för svampplockning i blöt mossa – 389 kr per par.",
+          "visualisera": "✅ svampplockning i blöt mossa är en konkret bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ situationen är specifik"
+        }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_BOF_11_H1",
+      "typ": "video",
+      "hook": "Glider de ner när man går?",
+      "manus": [
+        {
+          "beat": "HOOK",
+          "sekunder": "0–3 s",
+          "sv": "Glider de ner när man går?",
+          "en": "Do they slide down when you walk?"
+        },
+        {
+          "beat": "MEKANISM",
+          "sekunder": "3–9 s",
+          "sv": "Krok i snörningen och rem under foten håller damasken kvar i varje steg.",
+          "en": "Hook in the laces and strap under the foot hold the gaiter in place with every step."
+        },
+        {
+          "beat": "PROOF",
+          "sekunder": "9–13 s",
+          "sv": "De satt kvar hela vägen. Inget krångel, inget som gled ner.",
+          "en": "They stayed put the whole way. No hassle, nothing that slid down."
+        },
+        {
+          "beat": "CTA",
+          "sekunder": "13–15 s",
+          "sv": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "en": "Gaiters, 389 SEK per pair, free shipping to Sweden and Norway."
+        }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Glider de ner när man går?\nKrok i snörningen och rem under foten håller damasken kvar i varje steg.\nTre fästen i stället för ett – krok, rem och kardborre.\n389 kr per par, fri frakt till Sverige och Norge.\nSe alla 18 färger.",
+        "headline_sv": "Glider inte ner i steget.",
+        "description_sv": "Damasker med krok, rem och kardborre – 389 kr per par."
+      },
+      "tre_fragor": [
+        {
+          "rad": "Glider de ner när man går?",
+          "visualisera": "✅ frågan går att svara på med bild av steget. Alternativ: 1) \"Glider damaskerna ner i steget?\" 2) \"Håller de kvar, eller glider de ner?\" 3) \"Glider de ner efter någon kilometer?\"",
+          "falsifiera": "✅ mätbart – glider ner eller inte",
+          "ingen_annan_kan_saga": "❌ frågan i sig är generisk (vilken produkt som helst kan ställa den), men svaret pekar på ett specifikt fästsystem"
+        },
+        {
+          "rad": "Krok i snörningen och rem under foten håller damasken kvar i varje steg.",
+          "visualisera": "✅ krok och rem synliga i varje steg, går att filma",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ det specifika tvåpunktsfästet (krok+rem) i steget är produktspecifikt"
+        },
+        {
+          "rad": "De satt kvar hela vägen. Inget krångel, inget som gled ner.",
+          "visualisera": "✅ \"satt kvar hela vägen\" går att se i filmen",
+          "falsifiera": "✅ sant/falskt",
+          "ingen_annan_kan_saga": "❌ låst inspelad rad ur SP_2, kreatörens egen erfarenhet, ändras inte"
+        },
+        {
+          "rad": "Damasker, 389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ produkt + pris, tydligt",
+          "falsifiera": "✅ priset stämmer eller inte",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Krok i snörningen och rem under foten håller damasken kvar i varje steg.",
+          "visualisera": "✅ krok+rem i varje steg, konkret rörelse",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt tvåpunktsfäste i steget"
+        },
+        {
+          "rad": "Tre fästen i stället för ett – krok, rem och kardborre.",
+          "visualisera": "✅ tre namngivna fästen att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ exakt tre-fästes-system är produktspecifikt"
+        },
+        {
+          "rad": "389 kr per par, fri frakt till Sverige och Norge.",
+          "visualisera": "✅ pris går att visa",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "❌ ren pris-/fraktrad"
+        },
+        {
+          "rad": "Se alla 18 färger.",
+          "visualisera": "✅ färgantal går att räkna",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt färgsortiment"
+        },
+        {
+          "rad": "Glider inte ner i steget.",
+          "visualisera": "✅ glider inte ner i steget – ren bild",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ kopplat till det specifika fästsystemet"
+        },
+        {
+          "rad": "Damasker med krok, rem och kardborre – 389 kr per par.",
+          "visualisera": "✅ krok/rem/kardborre går att peka på",
+          "falsifiera": "✅ mätbart",
+          "ingen_annan_kan_saga": "✅ specifikt fästsystem"
+        }
+      ]
+    }
+  ]
+}

@@ -176,4 +176,104 @@ signalfärg — batchen var full).
 VARIABELTAGGAR står överst i varje brief (`products/drytrek/batch-02/…/brief.md`).
 Notion-resultat: `products/drytrek/batch-02/notion-resultat.json` (7 skapade, 0 fel).
 
+### Utfall vid avläsning 2026-09-13 (körning nr 2, 14d) — batch #1
+
+Kampanjen 4 dagsrader: **2 778 kr, 4 köp, ROAS 0,56** mot break-even 1,60.
+Dygn: 09-09 16 kr/0 · 09-10 856 kr/2 · 09-11 787 kr/0 · 09-12 1 118 kr/2.
+Kampanjen har passerat grinden (≥ 300 kr, ≥ 3 köp) → **budget sänkt 1 000 →
+700 kr** (vinst 3d −115 %, regeln "sänk under 16 %"). **Bedömbara annonser:
+0 av 16** — ingen enskild annons har 3 köp. Hypoteserna obesvarade.
+
+**Genomfört av ronden 2026-09-13:** `CS_2_1` (bild, 550 kr, 1 köp, CPA 550)
+och `CS_1` (video, 463 kr, 1 köp, CPA 463) **PAUSADE** — ny annons-regeln
+(≥ 3 × target-CPA 146 kr utan vinst). Tillbakalästa, loggade.
+G-adsetet står PAUSED sedan Axels beslut 2026-09-12 (G_1/G_2/G_3 ADSET_PAUSED).
+
+| Annons | Typ | Spend 14d | Köp | CPA | Hook 3s | Hold | CTR | CPC | Status 09-13 |
+|---|---|---|---:|---:|---:|---:|---:|---:|---|
+| CS_2_1 | bild | 550 kr | 1 | 550 | — | — | 1,2 % | 12,0 kr | **PAUSAD (ronden)** |
+| G_2_1 | bild | 485 kr | 0 | — | — | — | 5,5 % | 3,5 kr | PAUSAD (09-12) |
+| CS_1 | video | 463 kr | 1 | 463 | 32,2 % | 19,7 % | 1,3 % | 10,1 kr | **PAUSAD (ronden)** |
+| G_2 | video | 449 kr | 0 | — | 36,6 % | 13,0 % | 1,5 % | 11,8 kr | ADSET_PAUSED (Axel) |
+| PD_2_1 | bild | 253 kr | 0 | — | — | — | 1,2 % | 8,7 kr | ACTIVE |
+| CS_3 | video | 110 kr | 0 | — | 26,0 % | 32,6 % | 1,0 % | 21,9 kr | ACTIVE |
+| SP_2_1 | bild | 92 kr | 1 | 92 | — | — | 1,3 % | 10,2 kr | ACTIVE |
+| SP_1 | video | 90 kr | 1 | 90 | 18,3 % | 19,3 % | 1,1 % | 11,2 kr | ACTIVE |
+| CS_2 | video | 86 kr | 0 | — | 27,0 % | 23,6 % | 1,0 % | 21,4 kr | ACTIVE |
+| SP_2 | video | 55 kr | 0 | — | 29,1 % | 13,3 % | 1,1 % | 18,4 kr | ACTIVE |
+| G_3 | video | 45 kr | 0 | — | 32,4 % | 12,7 % | 0,3 % | 45,0 kr | ADSET_PAUSED |
+| PD_2 | video | 29 kr | 0 | — | 25,4 % | 12,8 % | 0 % | — | ACTIVE |
+| G_1 | video | 26 kr | 0 | — | 44,9 % | 19,4 % | 1,4 % | 25,6 kr | ADSET_PAUSED |
+| PD_1 | video | 21 kr | 0 | — | 31,3 % | 17,1 % | 0,9 % | 10,5 kr | ACTIVE — **källans vinnare: 21 kr på 4 dygn** |
+| PD_3 | video | 14 kr | 0 | — | 42,9 % | 19,0 % | 0 % | — | ACTIVE |
+| SP_3 | video | 13 kr | 0 | — | 44,4 % | 17,9 % | 1,6 % | 12,7 kr | ACTIVE |
+
+Spend per vinkel 14d: CS 1 208 kr (2 köp) · G 1 005 kr (0) · PD 317 kr (0) ·
+SP 249 kr (2). CBO:n gav erbjudandet och presenten 80 % av pengarna; demon
+(källans bevis) 11 %. Kvar aktiva efter natten: PD_1/2/3, PD_2_1, SP_1/2/3,
+SP_2_1, CS_2, CS_3 — 10 annonser.
+
+### Batch #2 — status 2026-09-13 (en dag gammal)
+
+Jasper Tomboc (tilldelad 2026-09-12) **levererade 6 av 7 samma dag**:
+PD_12_H1, PD_12_H2, SP_6_H1, SP_7_H1, PD_13_H1, FO_2_H1 ligger i hubben med
+Drive-länk (`Link for approval:`) och status `Creative strat review`
+(redigerad 08:41–08:48 UTC). `PD_12_1` (bild) står kvar i `Draft`.
+**Inget av det är live** — ingen data, inget utfall. ⚠️ Tre av de sex
+(PD_13_H1, FO_2_H1, SP_7_H1) briefades som "kräver ny film" — vad Jasper
+byggde dem av är inte kontrollerat; det är leveransrundans brief-QA.
+⚠️ `/ops-leverans` plockar bara `To be Reviewed` — raderna i
+`Creative strat review` går inte upp av sig själva. DryTrek har dessutom
+ingen leveransrunda/översättning byggd än (CLAUDE.md-tabellen 2026-09-13).
+
+**Utanför batcherna:** 18 bildrader `DryTrek_Damasker_PD_14_1 … PD_14_18`
+skapade 2026-09-12 av integrationen "Bäverbutiken RUTINER" (`/ops-bild`,
+en rutin som inte finns i `.claude/commands/` på main) — 17 i
+`To be Reviewed`, PD_14_3 i `Draft` (gul renderades som neongrön). En
+färg per bild, "which colours sell". AD-ID PD_14 är därmed upptaget.
+
+---
+
+## Batch #3 — 2026-09-13 · andra briefronden (`/notionscalercs drytrek`, körning nr 2)
+
+**Fortfarande kallstart** (0 bedömbara), men nu med redigerare: **Jasper
+Tomboc** ⇒ kadensens **21** (11 varianter / 10 koncept, 4 bilder). Batch #2
+är levererad men inte live, så varianterna bygger på batch #2:s hypoteser
+(hook-tester på samma film = billigaste lärdomen) och på ärvda PD_1/SP_2.
+Copy: A/B Fable (10) mot Sonnet (11), Agent-verktyget. Hubb: Damasker
+vandring, status `Draft`. Pris hämtat från drytrek.se 2026-09-13: 389 kr
+(jämför 649 kr). Lediga AD-ID:n ur kontot + hubbens 58 rader: PD_15+,
+SP_8+, FO_3, CO_3, CI_3, ID_2, BOF_10.
+
+| # | Namn | Typ | Variant/koncept | Förälder / källa | Isolerad variabel | Hypotes (KPI) | Copy |
+|---|---|---|---|---|---|---|---|
+| 1 | `DryTrek_Damasker_PD_12_H3` | video | variant | Variant of PD_12_H1 (batch #2, delivered by Jasper 2026-09-12, not live yet). Isolated variable: the hook (00:00–00:03). Third sibling after H1 (claim | The hook: claim → number. | Hook rate vs PD_12_H1 and H2 (3-second plays / impressions), then CPA on ≥ 3 purchases each. | fable |
+| 2 | `DryTrek_Damasker_PD_12_H4` | video | variant | Variant of PD_12_H1. Isolated variable: the hook. Source of the hook idea: Axel's angle nr 4 (grus) in `factory/produkter/damasker.yaml` — ⚠️ 0 kr of  | The hook: claim → negation on the grit ritual. | Hook rate vs PD_12_H1/H2/H3, then CPA on ≥ 3 purchases. | fable |
+| 3 | `DryTrek_Damasker_PD_12_2` | bild | variant | Format sibling of PD_12_1 (batch #2, still Draft). Isolated variable: layout and text amount (three panels + 7 words → one close-up + ≤5 words). | Layout: three panels → one close-up; text 7 → ≤5 words. | CTR vs PD_12_1 and CPA under 243 kr on ≥ 3 purchases. | fable |
+| 4 | `DryTrek_Damasker_PD_12_3` | bild | variant | Format sibling of PD_12_1. Isolated variable: text amount (7 words → none). | Text amount: 7 words → none. | CTR and CPA vs PD_12_1 on ≥ 3 purchases each. | fable |
+| 5 | `DryTrek_Damasker_SP_6_H2` | video | variant | Sibling of SP_6_H1 (batch #2, delivered). Isolated variable: which fastener opens the film (hook in lacing → strap under sole). | The opening close-up: hook in lacing → strap under sole. | CPC vs SP_6_H1 with CVR held (≥ 3 % on ≥ 3 purchases). | sonnet |
+| 6 | `DryTrek_Damasker_SP_8_H1` | video | variant | Variant of SP_2 (inherited: 1 360 kr, 5 purchases, hold 23,1 %). Isolated variable: length (27 s → 15 s). | Length: 27 s → 15 s (PROBLEM and PROOF beats cut). | Thruplay rate vs SP_2 (≥ 23,1 %) and CPA on ≥ 3 purchases. | sonnet |
+| 7 | `DryTrek_Damasker_SP_7_H2` | video | variant | Variant of SP_7_H1 (batch #2, delivered). Isolated variable: the hook. | The hook: product first → the dog first. | Hook rate vs SP_7_H1, then CPA on ≥ 3 purchases. | sonnet |
+| 8 | `DryTrek_Damasker_SP_7_1` | bild | variant | Format variant of SP_7_H1. Isolated variable: format (video → image). | Format: video → static. | CTR ≥ 1,5 % and CPA under 243 kr on ≥ 3 purchases, compared to SP_7_H1. | sonnet |
+| 9 | `DryTrek_Damasker_PD_13_H2` | video | variant | Variant of PD_13_H1 (batch #2, delivered — ⚠️ briefed as needing real new footage; check the delivered file shows a real pour and a real dry sock befo | The hook: water first → dry sock first. | Hook rate vs PD_13_H1, hold ≥ 22,8 %, CPA on ≥ 3 purchases. | fable |
+| 10 | `DryTrek_Damasker_FO_2_1` | bild | variant | Format variant of FO_2_H1 (batch #2, delivered — ⚠️ briefed as needing new footage; use the real socks from that film). Isolated variable: format. | Format: video → static split. | CTR ≥ 2 % and CPA under 243 kr on ≥ 3 purchases, vs FO_2_H1. | sonnet |
+| 11 | `DryTrek_Damasker_FO_2_H2` | video | variant | Variant of FO_2_H1 (batch #2, delivered). Isolated variable: the hook / proof order. Same logic as PD_13_H2. | The hook: legs on the trail → the two socks. | Hook rate vs FO_2_H1, CTR ≥ 2,44 %, CPA on ≥ 3 purchases. | sonnet |
+| 12 | `DryTrek_Damasker_PD_15_H1` | video | koncept | New concept. Source: Axel's priority angle nr 4 in `factory/produkter/damasker.yaml` ("skaka ur kängan vid varje paus, mot noll stopp"). ⚠️ 0 kr of da | New concept — no parent. | Hook rate ≥ 31 % (PD_1 live) and CPA under 243 kr on ≥ 3 purchases. | fable |
+| 13 | `DryTrek_Damasker_ID_2_H1` | video | koncept | New concept. Source: product benefit nr 5 in `factory/produkter/damasker.yaml` ("Syns i terrängen …") and the Q4 bonus (reflexband) that builds on the | New concept — no parent. | CTR ≥ 2,44 % (identity ads trade hook rate for click intent) and CPA under 243 kr on ≥ 3 purchases. | sonnet |
+| 14 | `DryTrek_Damasker_CO_3_H1` | video | koncept | New concept. Sources: product problem nr 4 (product page) + inherited SP_2 proof line "De satt kvar hela vägen" (1 360 kr, 5 purchases). HYPOTES (a li | New concept — no parent. | Hold (thruplay) ≥ 22,8 % and CPA under 243 kr on ≥ 3 purchases. | fable |
+| 15 | `DryTrek_Damasker_FO_3_H1` | video | koncept | New concept. Source: product problem nr 3 and benefit nr 3 (`factory/produkter/damasker.yaml`). ⚠️ 0 kr of data — GISSNING. | New concept — no parent. | CTR ≥ 2,44 % and CPA under 243 kr on ≥ 3 purchases; compared with FO_2_H1 (socks). | sonnet |
+| 16 | `DryTrek_Damasker_PD_16_H1` | video | koncept | New concept. Sources: FAQ nr 2 on the product page + the live PD copy line "Kardborre hela vägen upp - på och av med kängan kvar på" (part of the copy | New concept — no parent. | Hold (thruplay) ≥ 22,8 % (people watch a real-time demo to the end or not) and CPA under 243 kr on ≥ 3 purchases. | fable |
+| 17 | `DryTrek_Damasker_CI_3_H1` | video | koncept | New concept. Source: the live PD copy line "Håller snön ute nerifrån - där den annars kryper in" — part of the copy behind the inherited winner (10 67 | New concept — no parent. | Hold (thruplay) ≥ 22,8 % and CPA under 243 kr on ≥ 3 purchases. | sonnet |
+| 18 | `DryTrek_Damasker_PD_17_H1` | video | koncept | New concept. Source: season (it is 2026-09-13) + product benefit nr 3 ("Byxbenet håller sig torrt genom blöt sly och högt gräs"). ⚠️ GISSNING — no dat | New concept — no parent. Season swap: snow → autumn wet. | Hook rate vs PD_12_H1 (snow-led) and CPA under 243 kr on ≥ 3 purchases. | fable |
+| 19 | `DryTrek_Damasker_SP_9_H1` | video | koncept | New concept. Source: target group "skogsfolk" in the product file + the situation pattern from SP_7_H1 (hypotes, not yet measured). ⚠️ GISSNING — 0 kr | New concept — no parent. | Hook rate ≥ 31,2 % (SP_2) and CPA under 243 kr on ≥ 3 purchases; read together with SP_7_H1. | sonnet |
+| 20 | `DryTrek_Damasker_BOF_10_H1` | video | koncept | New concept. Source: FAQ nr 1 on the product page ("Passar de min kängstorlek?") — an objection real enough that the page answers it. HYPOTES. | New concept — no parent. | CVR ≥ 3 % (objection ads are judged on conversion, not hook) and CPA under 243 kr on ≥ 3 purchases. | fable |
+| 21 | `DryTrek_Damasker_BOF_11_H1` | video | koncept | New concept. Sources: FAQ nr 4 on the product page + inherited SP_2 line "De satt kvar hela vägen. Inget krångel, inget som gled ner." (1 360 kr). HYP | New concept — no parent. | CVR ≥ 3 % and CPA under 243 kr on ≥ 3 purchases; read with BOF_10_H1. | sonnet |
+
+Copy-A/B: hook-only-varianter skrivs av samma modell som föräldern (fable
+för PD_12/PD_13-familjen, sonnet för SP_6/SP_7/FO_2) så manuset inte blandar
+modeller. Tre-frågorstestet står i varje brief (avsnitt 8).
+Backlog: grus och signalfärg plockade (`[använd i batch #3]`) — backloggen
+är tom på koncept.
+Notion-resultat: `products/drytrek/batch-03/notion-resultat.json`.
+
 *(Utfall skrivs vid nästa briefdag. Grinden: ≥ 300 kr OCH ≥ 3 köp per annons.)*
