@@ -8,8 +8,10 @@ Axel: *"Kan du lägga upp alla dessa produkter på sidan i sverige och sen norge
 notion. Dom som står out of stock eller nån sjuk moq eller bara inte har en quote får du strunta i
 och rapportera till mig."*
 
-**21 rader i arken, 15 byggda** (SE + NO, snöskyffeln bara SE). Ingen AI-bild och ingen GIF den här
-gången — Higgsfield-saldot var 0,61 credits. Varje produkt har hero + detalj + faktabild (SV/NO).
+**21 rader i arken, 15 byggda** (SE + NO, snöskyffeln bara SE). Varje produkt har hero + detalj +
+faktabild (SV/NO). AI-miljöbild + GIF gjordes i efterhand via **KIE** (Higgsfield var slut på credits,
+Axel: *"Men du kan inte bara använda Kie Ai api då?"* — jo): `miljo-kie.mjs` → `miljo-in.mjs se|no bild`
+→ `gif-kie.mjs` → `miljo-in.mjs se|no gif`.
 
 | id | Batch | SE | NO | Läge |
 |---|---|---|---|---|
@@ -26,7 +28,7 @@ gången — Higgsfield-saldot var 0,61 credits. Varje produkt har hero + detalj 
 | motorlas | 10 | 909 | 1 079 | ✅ |
 | varmesits | 10 | 599 | 719 | ✅ |
 | taljset (30 delar) | 10 | 869 | 1 039 | ✅ |
-| varmeljus (24-pack, **utan fjärr**) | 10 | 379 | 519 | ✅ Axels radnamn sa "med fjärrkontroll" — offerten säger "No remote control" |
+| varmeljus (24-pack, **utan fjärr**) | 10 | 379 | 519 | ⏸️ **DRAFT i båda butikerna** (Axel 2026-09-12: "ska bytas till en med fjärr") — CWD offererade bara 24-packet utan fjärr; ny offert behövs. Notion-kortet märkt VÄNTA |
 | blockljus (3-pack, med fjärr) | 10 | 479 | 619 | ✅ |
 
 **Byggs inte (rapporterat till Axel):** caravan front cover (ark A, out of stock) · deer hanger

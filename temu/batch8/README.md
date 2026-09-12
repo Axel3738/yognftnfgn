@@ -13,7 +13,7 @@ Axel: *"Dessa ska upp på bäverbutiken. Både svenska och norska."*
 | solcellslampa (210 LED, EN lampa) | 589 | 559 | ✅ |
 | bilborste (100 cm) | 829 | — | ✅ bara SE — CWD: OVERSIZE till Norge |
 | fonsterlarm | 449 | 389 | ✅ |
-| hangrannerensare | (419) | (339) | ⛔ ingen bild, AliExpress blockerat, ACME-gänga |
+| hangrannerensare | (419) | (339) | ⛔ **SKIPPAD** (Axel 2026-09-12) — Notion-kortet satt till Exit |
 | båtkapellstång | — | — | ⛔ ingen quote |
 
 ## Filerna
