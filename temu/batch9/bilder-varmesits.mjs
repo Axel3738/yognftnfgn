@@ -34,7 +34,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 /* ---------- utsnitt (fil, x, y, bredd, höjd i källbildens egna pixlar) --------
    Varje ruta är visuellt kontrollerad mot originalet innan den låstes.        */
 const UTSNITT = {
-  dyna:    [MÅTT, 88, 18, 340, 670],    // hela 45×90-dynan (kant 103–413 × 33–679) med luft; slutar ovanför "45cm"-texten (y 690) och innanför pilen (x 60)
+  dyna:    [MÅTT, 88, 18, 340, 647],    // hela 45×90-dynan (kant 103–411 × 33–650) med luft; slutar ovanför den vågräta måttpilen (y 673) och innanför den lodräta (x 61)
   mitt:    [MÅTT, 120, 220, 270, 300],  // quiltmönstret mitt på dynan, ingen text
   knapp:   [MÅTT, 96, 370, 150, 260],   // dynans nedre vänstra del: den vita USB-fliken och den svarta strömknappen
   knappar: [MARK, 383, 170, 190, 64],   // de tre knapparna (röd/blå/grön) — enda utsnittet ur marknadsbilden, fritt från text och flammor

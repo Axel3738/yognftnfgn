@@ -6,11 +6,12 @@
 //
 // Beskuret bort: den gula vattenstämpeln "Move Time Store" sitter på bordet
 // strax ovanför låsbalken (x 133–312, y 224–239). Låsbalkens överkant ligger
-// på y ≈ 246, så allt ovanför y = 243 klipps bort — därmed försvinner även
+// på y ≈ 246, så allt ovanför y = 245 klipps bort — därmed försvinner även
 // hamnen i bakgrunden. Inget målas över.
 // Bordet i fotot är ljusgrått (~225–235), inte vitt. Utsnitten tonas därför
-// mjukt ut mot den vita bakgrunden i kanterna (alfa-ramp), så ingen hård
-// grå rektangel syns.
+// mjukt ut mot den vita bakgrunden i sidorna och nederkanten (alfa-ramp), så
+// ingen hård grå rektangel syns. Överkanten tonas INTE — där ligger låsbalkens
+// blanka kant direkt i snittet och skulle annars försvinna i vitt.
 //
 // LÅSTA FAKTA (temu/batch9/fakta.mjs): rostfritt stål · 2 nycklar · flytande
 // nyckelring · låser utombordarens fästskruvar. Inga mått.
@@ -30,21 +31,25 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 /* ---------- utsnitt ur källbilden (x, y, bredd, höjd i 449×461-koordinater) --------
    Varje ruta är visuellt kontrollerad mot originalet innan den låstes.        */
 const UTSNITT = {
-  allt:     [0, 243, 449, 218],     // hela nedre delen: låsbalk + nycklar + nyckelring, precis under vattenstämpeln
-  balk:     [150, 243, 200, 66],    // låsbalkens mitt med cylindern; slutar ovanför nycklarna (y 308)
+  allt:     [0, 245, 449, 216],     // hela nedre delen: låsbalk + nycklar + nyckelring, precis under vattenstämpeln (y ≤ 239)
+  balk:     [15, 246, 210, 75],     // låsbalkens vänstra halva: borstat stål och ändstycket, inga nycklar (de börjar x 260)
   nycklar:  [248, 298, 145, 90],    // de två nycklarna (bbox 260–378 × 308–378)
   ring:     [98, 320, 195, 100],    // den gula flytande nyckelringen med kedjan (bbox 110–280 × 330–414)
-  cylinder: [170, 246, 170, 62],    // nyckelcylindern på balken, närbild
+  cylinder: [205, 248, 120, 58],    // nyckelcylindern på balken, närbild (cylindern ≈ 255–290 × 262–290)
   nedre:    [90, 292, 320, 135],    // nycklar + nyckelring tillsammans = detaljbilden
 };
 
-// Tonar ut kanterna mot vitt: alfa 0 → 1 över `f` px från varje kant.
-async function tona(buf, f) {
+// Tonar ut kanterna mot vitt: alfa 0 → 1 över angivet antal px från varje kant (0 = ingen toning).
+async function tona(buf, { top = 0, right = 0, bottom = 0, left = 0 }) {
   const { data, info } = await sharp(buf).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width: w, height: h } = info;
   for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
-    const d = Math.min(x + 1, y + 1, w - x, h - y);
-    if (d < f) data[(y * w + x) * 4 + 3] = Math.round(255 * d / f);
+    let a = 1;
+    if (left && x + 1 < left) a = Math.min(a, (x + 1) / left);
+    if (right && w - x < right) a = Math.min(a, (w - x) / right);
+    if (top && y + 1 < top) a = Math.min(a, (y + 1) / top);
+    if (bottom && h - y < bottom) a = Math.min(a, (h - y) / bottom);
+    if (a < 1) data[(y * w + x) * 4 + 3] = Math.round(255 * a);
   }
   return sharp(data, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
 }
@@ -55,18 +60,18 @@ async function utsnitt(namn) {
 }
 
 // Skalar in en bild i en ruta, tonar kanterna och returnerar buffert + verklig storlek.
-async function passa(buf, maxW, maxH, tonaPx = 0) {
+async function passa(buf, maxW, maxH, toning = null) {
   const m = await sharp(buf).metadata();
   const s = Math.min(maxW / m.width, maxH / m.height);
   const w = Math.round(m.width * s), h = Math.round(m.height * s);
   let ut = await sharp(buf).resize(w, h, { kernel: 'lanczos3' }).sharpen({ sigma: 0.8 }).png().toBuffer();
-  if (tonaPx) ut = await tona(ut, tonaPx);
+  if (toning) ut = await tona(ut, toning);
   return { buf: ut, w, h };
 }
 
 /* ---------- 1. hero — låset, nycklarna och nyckelringen på bordet ---------- */
 async function hero() {
-  const p = await passa(await utsnitt('allt'), 1520, 1520, 70);
+  const p = await passa(await utsnitt('allt'), 1520, 1520, { right: 70, bottom: 70, left: 70 });
   const jpg = await sharp({ create: { width: S, height: S, channels: 3, background: '#ffffff' } })
     .composite([{ input: p.buf, top: Math.round((S - p.h) / 2), left: Math.round((S - p.w) / 2) }])
     .jpeg({ quality: 92 }).toBuffer();
@@ -76,7 +81,7 @@ async function hero() {
 
 /* ---------- 2. detalj — de två nycklarna och den flytande nyckelringen ---------- */
 async function detalj() {
-  const p = await passa(await utsnitt('nedre'), 1400, 1440, 60);
+  const p = await passa(await utsnitt('nedre'), 1400, 1440, { top: 60, right: 60, bottom: 60, left: 60 });
   const jpg = await sharp({ create: { width: S, height: S, channels: 3, background: '#ffffff' } })
     .composite([{ input: p.buf, top: Math.round((S - p.h) / 2), left: Math.round((S - p.w) / 2) }])
     .jpeg({ quality: 92 }).toBuffer();
@@ -119,10 +124,10 @@ async function fakta(språk) {
     if (g) svg.push(`<rect x="90" y="${y}" width="${S - 180}" height="2" fill="#e4e8ea"/>`);
     svg.push(`<text x="96" y="${y + 120}" font-family="DejaVu Sans" font-weight="bold" font-size="42" fill="${BLÅ}" letter-spacing="1">${esc(r.titel)}</text>`);
     svg.push(`<text x="96" y="${y + 164}" font-family="DejaVu Sans" font-size="27" fill="${GRÅ}">${esc(r.under)}</text>`);
-    const rw = Math.max(130, r.ruta.length * 23 + 44);
+    const rw = Math.max(130, r.ruta.length * 27 + 44);          // 27 px/tecken: rutorna här är långa versalord (UTOMBORDARE, PÅHENGSMOTOR)
     svg.push(`<rect x="96" y="${y + 190}" width="${rw}" height="58" rx="10" fill="${GUL}"/>`);
     svg.push(`<text x="${96 + rw / 2}" y="${y + 232}" text-anchor="middle" font-family="DejaVu Sans" font-weight="bold" font-size="36" fill="#12212b">${esc(r.ruta)}</text>`);
-    const p = await passa(await utsnitt(r.bild), 480, radH - 56, 28);
+    const p = await passa(await utsnitt(r.bild), 480, radH - 56, { top: 24, right: 24, bottom: 24, left: 24 });
     lager.push({ input: p.buf, top: y + Math.floor((radH - p.h) / 2), left: 1510 - p.w });
   }
   lager.push({ input: Buffer.from(`<svg width="${S}" height="${S}" xmlns="http://www.w3.org/2000/svg">${svg.join('')}</svg>`), top: 0, left: 0 });

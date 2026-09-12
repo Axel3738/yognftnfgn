@@ -35,7 +35,6 @@ const UTSNITT = {
   sladd: [1180, 300, 360, 420],    // sladdslingorna med metallspiralen där de går in i skålens högra sida
   plugg: [96, 1184, 334, 334],     // den grå cirkeln med EU-stickproppen (ingen text)
   uttag: [1160, 1265, 175, 175],   // linjeikonen av ett EU-uttag (ingen text)
-  sida:  [1130, 560, 330, 420],    // skålens gröna högervägg + svart sladd, fri från etiketten
 };
 
 async function utsnitt(namn) {
@@ -80,7 +79,6 @@ const ORD = {
       { ruta: '220–230 V',  titel: 'NÄTDRIFT',    under: 'Drivs från ett vanligt vägguttag', bild: 'uttag' },
       { ruta: 'EU',         titel: 'STICKPROPP',  under: 'Kontakt av EU-typ', bild: 'plugg' },
       { ruta: 'METALL',     titel: 'SLADDSPIRAL', under: 'Sladden har en spiral av metall', bild: 'sladd' },
-      { ruta: 'GRÖN/SVART', titel: 'FÄRG',        under: 'Grön skål med svarta detaljer', bild: 'sida' },
     ],
   },
   no: {
@@ -90,14 +88,13 @@ const ORD = {
       { ruta: '220–230 V',  titel: 'NETTDRIFT',      under: 'Drives fra en vanlig stikkontakt', bild: 'uttag' },
       { ruta: 'EU',         titel: 'STØPSEL',        under: 'Støpsel av EU-type', bild: 'plugg' },
       { ruta: 'METALL',     titel: 'LEDNINGSSPIRAL', under: 'Ledningen har en spiral av metall', bild: 'sladd' },
-      { ruta: 'GRØNN/SVART', titel: 'FARGE',         under: 'Grønn skål med svarte detaljer', bild: 'sida' },
     ],
   },
 };
 
 async function fakta(språk) {
   const O = ORD[språk];
-  const bandH = 120, radH = Math.floor((S - bandH) / O.rader.length);   // 296
+  const bandH = 120, radH = Math.floor((S - bandH) / O.rader.length);   // 370
   const lager = [];
   const svg = [
     `<rect x="0" y="0" width="${S}" height="${bandH}" fill="${BLÅ}"/>`,
