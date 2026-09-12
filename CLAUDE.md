@@ -573,8 +573,9 @@ node kundtjanst/run.mjs --fixtur kundtjanst/test/fixturer/demo --torr --datum 20
 
 **Brands upptäcks, listas aldrig:** varje `factory/butiker/<id>.yaml` är ett
 brand (namn, supportmail, myshopify-domän därifrån); butiker fabriken inte byggt
-får `kundtjanst/brands/<id>.yaml` (mall `brand-mall.yaml`; Bäverbutikens fil finns
-men **saknar supportmail** — den står inte i repot, fyll i den). Hemligheterna
+får `kundtjanst/brands/<id>.yaml` (mall `brand-mall.yaml`; Bäverbutikens fil bär
+`kundsupport@baverkoppling.se`, avläst i sidfoten på baverbutiken.se 2026-09-12 —
+domänen är baverkoppling.se, inte baverbutiken.se). Hemligheterna
 heter `KUNDTJANST_MAIL_PASS_<ID>` (Loopia, krävs), `SHOPIFY_ADMIN_TOKEN_<ID>` eller
 fabrikens `SHOPIFY_CLIENT_ID_<ID>` + `SHOPIFY_CLIENT_SECRET_<ID>` (ordrar + tvister,
 valfritt), samt delade `NOTION_TOKEN`, `DISCORD_BOT_TOKEN`, `ANTHROPIC_NYCKEL`
