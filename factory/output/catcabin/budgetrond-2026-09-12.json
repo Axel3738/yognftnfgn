@@ -1,0 +1,113 @@
+{
+  "butik": "catcabin/utekattkojan",
+  "idag": "2026-09-12",
+  "torr": true,
+  "konto": "915422744950975",
+  "max": 3,
+  "marknad": "SE",
+  "prefix": [
+    "catcabin_",
+    "catcabin"
+  ],
+  "ekonomi": {
+    "antagande": "utan_moms",
+    "breakEvenRoas": 1.62,
+    "breakEvenCpa": 487,
+    "targetCpa": 290
+  },
+  "underlag": {
+    "kampanjer": [
+      {
+        "id": "120249055514200172",
+        "name": "CATCABIN_SE_Utekattkojan | BE-ROAS 1,62 | 2026-09-11",
+        "status": "ACTIVE",
+        "effective_status": "ACTIVE",
+        "daily_budget": "100000",
+        "updated_time": "2026-09-12T13:03:04+0200",
+        "campaign_name": "CATCABIN_SE_Utekattkojan | BE-ROAS 1,62 | 2026-09-11"
+      }
+    ],
+    "adsets": [
+      {
+        "id": "120249066448670172",
+        "name": "CATCABIN_SE_Utekattkojan - CS",
+        "status": "ACTIVE",
+        "effective_status": "ACTIVE",
+        "campaign_id": "120249055514200172",
+        "updated_time": "2026-09-12T13:03:07+0200"
+      },
+      {
+        "id": "120249062892670172",
+        "name": "CATCABIN_SE_Utekattkojan - SP",
+        "status": "ACTIVE",
+        "effective_status": "ACTIVE",
+        "campaign_id": "120249055514200172",
+        "updated_time": "2026-09-12T13:03:09+0200"
+      },
+      {
+        "id": "120249055577730172",
+        "name": "CATCABIN_SE_Utekattkojan - GT",
+        "status": "ACTIVE",
+        "effective_status": "ACTIVE",
+        "campaign_id": "120249055514200172",
+        "updated_time": "2026-09-12T13:03:12+0200"
+      },
+      {
+        "id": "120249055572790172",
+        "name": "CATCABIN_SE_Utekattkojan - PD",
+        "status": "ACTIVE",
+        "effective_status": "ACTIVE",
+        "campaign_id": "120249055514200172",
+        "updated_time": "2026-09-12T13:03:14+0200"
+      }
+    ],
+    "insikter": {},
+    "dygn": {},
+    "annonser": [],
+    "annonser7d": {},
+    "slangda": [
+      "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+      "Axelbältet DK",
+      "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+      "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+      "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "Fiskespöhållaren DK | BE-ROAS 1,52 | 2026-08-20",
+      "HEIMGUARD_NO_Overvåkingskamera | BE-ROAS 2,11 | 2026-09-09",
+      "HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08",
+      "Motorhöljet DK",
+      "Strandtofflorna DK",
+      "Sätesöverdraget DK",
+      "TACKLEBAY_NO_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+      "TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+      "TANKGUARD_NO_Tanktrekket | 2026-09-09",
+      "TANKGUARD_SE_Tanköverdraget | 2026-09-08",
+      "Tofflorna DK | BE-ROAS 1,64 | 2026-08-19"
+    ]
+  },
+  "beslut": {
+    "kampanjrader": [
+      {
+        "entitet_id": "120249055514200172",
+        "entitet_typ": "campaign",
+        "namn": "CATCABIN_SE_Utekattkojan | BE-ROAS 1,62 | 2026-09-11",
+        "kampanj_id": "120249055514200172",
+        "kampanj_namn": "CATCABIN_SE_Utekattkojan | BE-ROAS 1,62 | 2026-09-11",
+        "atgard": null,
+        "gammalt": 1000,
+        "nytt": null,
+        "motivering": "3d: 0 kr, 0 köp, ROAS — · 7d: 0 kr, 0 köp, ROAS — · break-even ROAS 1,62.",
+        "sparr": "För tidigt: 0 kr och 0 köp på 3 dygn — grinden går vid 300 kr OCH 3 köp. Ingen dom."
+      }
+    ],
+    "annonsrader": []
+  },
+  "plan": {
+    "genomfor": [],
+    "vantar": [],
+    "redanIdag": 0,
+    "plats": 3
+  },
+  "resultat": []
+}
