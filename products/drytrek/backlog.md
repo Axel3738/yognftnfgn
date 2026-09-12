@@ -34,3 +34,11 @@ Skapad 2026-09-11 av `/notionscalercs setup drytrek`. Uppdaterad 2026-09-12 (kö
 | **[väntar — batch #2 var full: 7 utan redigerare]** **Grus-vinkeln** — skaka ur kängan vid varje paus, mot noll stopp | Axels vinkel nr 4. Ingen annons bär den än (G-koden i kontot är *present*, inte grus). ⚠️ **gissning**. | produktfilen `meta.vinklar` |
 | **[använd i batch #2 → `SP_7_H1`, märkt hypotes — svag källa]** **Hundpromenaden** — hela konceptet byggt på `SP_2`:s rad "Jag testade de här på hundpromenaden i morse" | Den enda ärvda raden utanför PD som fått pengar (1 304 kr) och nästan bar sig (CPA 261 mot 243). Målgruppen i produktfilen nämner hundägare uttryckligen. | ärvd `SP_2` VO, `docs/winning-lines.md`-kandidat (inte inskriven än) |
 | **[väntar — batch #2 var full: 7 utan redigerare]** **Signalfärg/jakt** — "syns i skymningen" med neongrön/orange | Produktens fjärde säljpunkt och skälet till bonusprodukten (reflexband) i Q4-ramverket. Ingen annons bär den. ⚠️ **gissning**. | `factory/produkter/damasker.yaml` benefits, `offer.bonus_produkt` |
+
+---
+
+## Axels egna idéer (loggade av `/ops-bild`)
+
+| Datum | Idé | Status | Källa |
+|---|---|---|---|
+| 2026-09-12 | **En bildannons per färgvariant** — vit bakgrund, bara produkten, 18 färger = 18 bilder i ETT koncept (`PD_14_1 … _18`, ett adset). Variabeln är färgen; vinstbidrag per färg säger vilka färger som ska leda copyn framöver. | **[byggd i batch #3 samma dag]** — genererad av `factory/ops-bild.mjs` (kie.ai), ingen redigerare | Axel, chatten 2026-09-12. Produktens säljpunkt "18 färger" (`factory/produkter/damasker.yaml` benefits) — ingen annons på kontot visar mer än neongrön |

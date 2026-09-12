@@ -39,6 +39,18 @@ test('byggFilerVarde: tomt fält ger bara den nya filen', () => {
   assert.deepEqual(byggFilerVarde(undefined, 'fu_1', 'a.png').files.length, 1);
 });
 
+test('byggFilerVarde: ersatt byter ut filen med samma namn, rör inte andra', () => {
+  const befintliga = [
+    { name: 'a.png', type: 'file', file: { url: 'https://s3/a-gammal.png' } },
+    { name: 'b.png', type: 'file', file: { url: 'https://s3/b.png' } },
+  ];
+  const v = byggFilerVarde(befintliga, 'fu_2', 'a.png', { ersatt: true });
+  assert.deepEqual(v.files.map((f) => f.name), ['b.png', 'a.png']);
+  assert.equal(v.files[1].type, 'file_upload');
+  // utan ersatt: båda kvar + den nya
+  assert.equal(byggFilerVarde(befintliga, 'fu_2', 'a.png').files.length, 3);
+});
+
 test('filSitter: bara exakt namn räknas', () => {
   const props = { [STANDARD_FALT]: { type: 'files', files: [{ name: 'a.png' }, { name: 'b.png' }] } };
   assert.equal(filSitter(props, STANDARD_FALT, 'b.png'), true);

@@ -90,6 +90,10 @@ END IMAGE PROMPT
 ```
 Tomma rader mellan delarna — Notion slår ihop rader utan tom rad emellan till
 ett stycke (mätt 2026-09-12; parsern klarar det ändå, men filen blir läsbar).
+**Repots brief vinner:** motorn läser prompten ur
+`products/<butik>/batch-*/image-ads-briefs/<namn>/brief.md` när den finns,
+annars ur Notion-kroppen. Skärp prompten i filen, committa, kör
+`--igen --bara <namn>` — sidkroppen i Notion behöver inte skrivas om.
 Med referens körs `google/nano-banana-edit` (produkten ser ut som produkten),
 utan referens `google/nano-banana`. Saknas REFERENCE IMAGES tar motorn
 produktfilens första bild och säger det i planen.
@@ -116,11 +120,10 @@ bilagan i Notion är enda kopian).
 - [ ] Bakgrund/motiv som idén säger; inga människor, inga ansikten, inga påhittade loggor
 - [ ] Ingen text om briefen inte kräver det; kräver den: exakt rad, å/ä/ö, inget dubblerat
 - [ ] Inget pris, ingen rabatt, ingen falsk lagerbrist
-Underkänd: generera om **en** gång med skärpt prompt (`--igen --bara <namn>`
-efter att du ändrat prompten i raden via `tools/notion-aterkoppling.mjs`
-går inte — sidkroppen ändras inte där; skriv i stället `--underkann <namn>
---skal "…"` och lämna raden i Draft med kommentaren). Två underkända = raden
-stannar i Draft och står under ACTION NEEDED.
+Underkänd: skärp prompten i repots brief.md och generera om **en** gång
+(`--igen --bara <namn>` — den gamla filen byts ut i raden). Underkänd igen:
+`--underkann <namn> --skal "…"`, raden stannar i Draft med kommentaren och
+står under ACTION NEEDED.
 
 ### 7. Godkänn
 ```

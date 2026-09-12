@@ -8,6 +8,7 @@
 //   node tools/notion-fil-upp.mjs <page-id> --fil <sökväg>
 //   node tools/notion-fil-upp.mjs <page-id> --fil <sökväg> --status "To be Reviewed" --kommentar "…"
 //   node tools/notion-fil-upp.mjs <page-id> --fil <sökväg> --falt "Filer och media" --torr
+//   node tools/notion-fil-upp.mjs <page-id> --fil <sökväg> --ersatt      byter ut en fil med samma namn
 //   node tools/notion-fil-upp.mjs <page-id> --fil <sökväg> --json
 //
 // Ordningen är inte förhandlingsbar (samma regel som /bildannonser steg 6):
@@ -53,9 +54,11 @@ export function hittaFilfalt(properties = {}, onskat = STANDARD_FALT) {
 }
 
 /** Bygger värdet för files-fältet: befintliga filer (utan expiry_time, som
- *  Notion inte tar emot tillbaka) + den nya uppladdningen sist. */
-export function byggFilerVarde(befintliga = [], uppladdningsId, namn) {
-  const behallna = (befintliga ?? []).map((f) => {
+ *  Notion inte tar emot tillbaka) + den nya uppladdningen sist.
+ *  ersatt = true: en befintlig fil med SAMMA namn tas bort (omgenerering —
+ *  annars skulle leveransrundan ta den gamla, som ligger först). */
+export function byggFilerVarde(befintliga = [], uppladdningsId, namn, { ersatt = false } = {}) {
+  const behallna = (befintliga ?? []).filter((f) => !(ersatt && String(f.name ?? '') === String(namn))).map((f) => {
     const ut = { name: f.name, type: f.type };
     if (f.type === 'external') ut.external = { url: f.external?.url };
     else if (f.type === 'file') ut.file = { url: f.file?.url };
@@ -105,7 +108,7 @@ async function notion(token, sokvag, { method = 'GET', body = null } = {}) {
  */
 export async function laddaUppTillRad({
   token = process.env.NOTION_TOKEN, pageId, fil, falt = STANDARD_FALT, status = null, kommentar = null,
-  torr = false, logg = (m) => console.error(m),
+  ersatt = false, torr = false, logg = (m) => console.error(m),
 }) {
   if (!token) throw new Error('NOTION_TOKEN saknas i miljön.');
   if (!pageId) throw new Error('Ange <page-id>.');
@@ -126,7 +129,7 @@ export async function laddaUppTillRad({
   const befintliga = props[filfalt].files ?? [];
   logg(`Rad: ${titel}`);
   logg(`Fält: ${filfalt} (${befintliga.length} fil(er) redan) · fil: ${namn} (${mime}, ${(storlek / 1024).toFixed(0)} kB)`);
-  if (befintliga.some((f) => f.name === namn)) logg(`⚠️ En fil med namnet ${namn} sitter redan i fältet — den nya läggs till, inget skrivs över.`);
+  if (befintliga.some((f) => f.name === namn)) logg(ersatt ? `↻ En fil med namnet ${namn} sitter redan i fältet — den byts ut (--ersatt).` : `⚠️ En fil med namnet ${namn} sitter redan i fältet — den nya läggs till, inget skrivs över.`);
   if (status) logg(`Status efteråt: ${status}`);
   if (torr) { logg('--torr: inget skickat.'); return { page_id: sida.id, falt: filfalt, fil: namn, file_upload_id: null, status: null, torr: true }; }
 
@@ -144,7 +147,7 @@ export async function laddaUppTillRad({
   logg(`✓ Bytes uppe (file_upload ${upp.id}).`);
 
   // 3. Sätt fältet — befintliga filer behålls.
-  await notion(token, `pages/${id}`, { method: 'PATCH', body: { properties: { [filfalt]: byggFilerVarde(befintliga, upp.id, namn) } } });
+  await notion(token, `pages/${id}`, { method: 'PATCH', body: { properties: { [filfalt]: byggFilerVarde(befintliga, upp.id, namn, { ersatt }) } } });
 
   // 4. Läs tillbaka. Ett PATCH som svarar 200 utan att fältet ändrats har hänt förr.
   const efter = await notion(token, `pages/${id}`);
@@ -187,7 +190,7 @@ async function main() {
   try {
     const r = await laddaUppTillRad({
       pageId, fil: flagga('fil'), falt: flagga('falt', STANDARD_FALT), status: flagga('status'),
-      kommentar: flagga('kommentar'), torr: finns('torr'), logg,
+      kommentar: flagga('kommentar'), ersatt: finns('ersatt'), torr: finns('torr'), logg,
     });
     if (json) console.log(JSON.stringify(r));
   } catch (e) {

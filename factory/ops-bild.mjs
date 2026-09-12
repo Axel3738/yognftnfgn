@@ -16,6 +16,8 @@
 //       Bilden är granskad och OK → status "To be Reviewed" (13:40-rundan tar den live).
 //   node factory/ops-bild.mjs <nyckel> --underkann <namn,namn> --skal "<varför, på engelska>"
 //       Bilden är underkänd → kommentar, status Draft kvar.
+//   Prompten läses ur repots brief (products/<butik>/batch-*/image-ads-briefs/<namn>/brief.md)
+//   om den finns, annars ur Notion-kroppen. --igen byter ut radens gamla fil.
 //   node factory/ops-bild.mjs <nyckel> --namn
 //       Upptagna radnamn i hubben (+ kontots annonsnamn om en analys-JSON finns),
 //       så nästa lediga AD-ID går att läsa av innan briefer numreras.
@@ -121,7 +123,7 @@ export function byggJobb(rader, { bara = null, igen = false, fallbackReferens = 
       continue;
     }
     let block;
-    try { block = promptUrBrief(rad.brieftext); }
+    try { block = promptUrBrief(rad.lokal?.text ?? rad.brieftext); }
     catch (e) { hoppade.push({ namn, skal: e.message }); continue; }
     if (!block) { hoppade.push({ namn, skal: 'ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen' }); continue; }
     let referens_bilder = block.referenser;
@@ -130,12 +132,34 @@ export function byggJobb(rader, { bara = null, igen = false, fallbackReferens = 
     jobb.push({
       namn, typ: TILLATEN_TYP, hub: hubTitel, notion_url: rad.url ?? null, page_id: rad.id,
       prompt: block.prompt, bildformat: block.bildformat, referens_bilder, referens_kalla,
+      prompt_kalla: rad.lokal ? 'repo' : 'notion',
     });
   }
   if (urval) {
     for (const n of urval) if (!jobb.some((j) => j.namn.toLowerCase() === n) && !hoppade.some((h) => h.namn.toLowerCase() === n)) hoppade.push({ namn: n, skal: 'finns inte i kön (fel namn, fel status eller fel Typ)' });
   }
   return { jobb, hoppade };
+}
+
+/**
+ * Repots egen brief för raden, om den finns:
+ * products/<butik>/batch-*\/image-ads-briefs/<namn>/brief.md. Den vinner över
+ * Notion-kroppen — repot är källan, Notion är kopian redigerarna läser, och en
+ * skärpt prompt ska inte kräva att sidkroppen skrivs om. Saknas ⇒ null.
+ */
+export function lokalBrief(butik, namn, rot = ROT) {
+  if (!butik || !namn) return null;
+  const produktmapp = join(rot, 'products', butik);
+  if (!existsSync(produktmapp)) return null;
+  // Ingen fs.globSync — den finns först i Node 22, repot kräver bara Node 20.
+  const traffar = readdirSync(produktmapp)
+    .filter((d) => /^batch-\d+/.test(d))
+    .map((d) => join(produktmapp, d, 'image-ads-briefs', annonsdel(namn), 'brief.md'))
+    .filter((f) => existsSync(f))
+    .sort();
+  if (!traffar.length) return null;
+  const fil = traffar.at(-1);
+  return { fil, text: readFileSync(fil, 'utf8') };
 }
 
 /** Nästa lediga nummer för ett koncept ur en namnlista: PD_14 om PD_13 är högst. */
@@ -239,7 +263,7 @@ export async function laddaKo(nyckel, { logg = (...a) => console.error(...a) } =
   const { klaraRader } = await import('../tools/notion-kalla.mjs');
   const raa = await klaraRader(hub, { statusar: [KO_STATUS], typ: TYP_RE });
   const rader = [];
-  for (const r of raa) rader.push({ ...r, brieftext: (await sidText(r.id)).join('\n') });
+  for (const r of raa) rader.push({ ...r, brieftext: (await sidText(r.id)).join('\n'), lokal: lokalBrief(butik.post.butik, r.namn) });
   const fallback = butik.produkt?.media?.bilder?.find?.((b) => /^https?:\/\//.test(String(b))) ?? null;
   return { butik, hub, rader, fallbackReferens: fallback, datum: svenskDatum(), butiksmapp: join(ROT, 'factory', 'output', butik.post.butik) };
 }
@@ -295,7 +319,7 @@ async function main() {
   const { jobb, hoppade } = byggJobb(ko.rader, { bara: lista(flagga('bara')), igen: finns('igen'), fallbackReferens: ko.fallbackReferens, hubTitel: ko.hub.titel });
   logg(`Kö: ${ko.rader.length} Draft-bildrader · ${jobb.length} att generera · ${hoppade.length} hoppade`);
   for (const h of hoppade) logg(`  ⏭️  ${h.namn} — ${h.skal}`);
-  for (const j of jobb) logg(`  · ${j.namn} · ${j.bildformat} · ${j.referens_bilder.length} ref (${j.referens_kalla}) · ${j.prompt.length} tecken`);
+  for (const j of jobb) logg(`  · ${j.namn} · ${j.bildformat} · ${j.referens_bilder.length} ref (${j.referens_kalla}) · prompt ${j.prompt.length} tecken (${j.prompt_kalla})`);
 
   const torr = finns('torr');
   const planfil = join(ko.butiksmapp, `bild-${ko.datum}.json`);
@@ -320,7 +344,7 @@ async function main() {
     logg(`  ${r.status === 'ok' ? '✓' : '✗'} genererad: ${r.namn}${r.fel ? ` — ${r.fel}` : ''}`);
     if (r.status !== 'ok') return r;
     try {
-      const upp = await laddaUppTillRad({ pageId: j.page_id, fil: r.fil, logg: () => {} });
+      const upp = await laddaUppTillRad({ pageId: j.page_id, fil: r.fil, ersatt: finns('igen'), logg: () => {} });
       r.notion = { file_upload_id: upp.file_upload_id, falt: upp.falt };
       logg(`  ✓ i Notion: ${r.namn} (Draft kvar — granska bilden, sedan --godkann)`);
     } catch (e) {

@@ -1,7 +1,10 @@
 // Tester för factory/ops-bild.mjs — de rena funktionerna, inga nätanrop.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { promptUrBrief, byggJobb, nastaNummer, annonsdel, TILLATEN_TYP, STANDARD_FORMAT } from '../ops-bild.mjs';
+import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { promptUrBrief, byggJobb, nastaNummer, annonsdel, lokalBrief, TILLATEN_TYP, STANDARD_FORMAT } from '../ops-bild.mjs';
 
 const BRIEF = `# DryTrek_Damasker_PD_14_3 — Colour variant: Gul
 **VARIABELTAGGAR:** vinkel=\`PD\` · format=\`product\`
@@ -114,6 +117,22 @@ test('byggJobb: --bara filtrerar (skiftlägesokänsligt) och rapporterar okända
   assert.deepEqual(jobb.map((j) => j.namn), ['DryTrek_Damasker_PD_14_1']);
   assert.equal(hoppade.length, 1);
   assert.match(hoppade[0].skal, /finns inte i kön/);
+});
+
+test('lokalBrief: repots brief hittas per namn (senaste batchen), och vinner i byggJobb', () => {
+  const rot = mkdtempSync(join(tmpdir(), 'ops-bild-'));
+  const mapp = join(rot, 'products', 'drytrek', 'batch-03', 'image-ads-briefs', 'DryTrek_Damasker_PD_14_1');
+  mkdirSync(mapp, { recursive: true });
+  writeFileSync(join(mapp, 'brief.md'), 'x\n## IMAGE PROMPT\nrepo-prompt\nEND IMAGE PROMPT\n');
+  const l = lokalBrief('drytrek', 'DryTrek_Damasker_PD_14_1 – Neongrön', rot);
+  assert.ok(l && l.fil.endsWith('brief.md'));
+  assert.equal(lokalBrief('drytrek', 'Finns_Inte_1', rot), null);
+  assert.equal(lokalBrief('', 'x', rot), null);
+  const { jobb } = byggJobb([{ id: 'p', namn: 'DryTrek_Damasker_PD_14_1', filer: [], brieftext: 'IMAGE PROMPT\nnotion-prompt', lokal: l }]);
+  assert.equal(jobb[0].prompt, 'repo-prompt');
+  assert.equal(jobb[0].prompt_kalla, 'repo');
+  const utan = byggJobb([{ id: 'p', namn: 'DryTrek_Damasker_PD_14_1', filer: [], brieftext: 'IMAGE PROMPT\nnotion-prompt' }]);
+  assert.equal(utan.jobb[0].prompt_kalla, 'notion');
 });
 
 test('nastaNummer: högsta upptagna + 1 per koncept, oavsett variant-suffix', () => {
