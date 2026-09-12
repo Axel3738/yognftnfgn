@@ -38,8 +38,11 @@ Gör i ordning:
 
 1. **Räkna och granska först.**
    ```
-   node factory/rutin.mjs --tid <HH:MM> --kommando "<kommando>" [--butik <id>]
+   node factory/rutin.mjs --tid <HH:MM> --kommando "<kommando>" [--butik <id>] [--dagar 1]
    ```
+   `--dagar` är cronens veckodagsfält för rutiner som inte går varje dag:
+   `1` = måndagar (kundtjänstens veckorapport), `1-5` = vardagar. Utan
+   flaggan blir cronen daglig.
    Den ger cron för både sommar och vinter, säger vilken som gäller nu, och
    listar hinder och varningar. **Exit 1 = bygg inte.** Visa utskriften i
    chatten innan något skapas.

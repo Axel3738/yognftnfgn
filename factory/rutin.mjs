@@ -7,6 +7,7 @@
 //   node factory/rutin.mjs --tid 13:20 --kommando "/notionkorning"
 //   node factory/rutin.mjs --tid 07:00 --kommando "/skalningskungen tankguard" --butik tankguard
 //   node factory/rutin.mjs --tid 00:01 --kommando "/notionscalercs tankguard" --butik tankguard
+//   node factory/rutin.mjs --tid 07:00 --kommando "/kundtjanst --alla --discord" --dagar 1   (bara måndagar)
 //   node factory/rutin.mjs --lista            visar husets sex nattrutiner + skalningsronderna + nattvakterna
 //
 // Nattvakten (/notionscalercs <butik>, Axels beslut 2026-09-10) går VARJE natt
@@ -291,15 +292,20 @@ export function nycklarFor(namn, { katalog = KOMMANDOKATALOG } = {}) {
   const text = kommandotext(namn, katalog);
   if (!text) return [];
   return [...new Set([...text.matchAll(/\b([A-Z][A-Z0-9_]{5,})\b/g)].map((m) => m[1]))]
-    .filter((n) => /TOKEN|KEY|SECRET|WEBHOOK|PASSWORD/.test(n));
+    .filter((n) => /TOKEN|KEY|SECRET|WEBHOOK|PASSWORD/.test(n))
+    // `SHOPIFY_ADMIN_TOKEN_<ID>` i en kommandofil är en mall per brand, inte
+    // en variabel — namnet avgörs av brandet (kundtjanst/brands.mjs envNamn).
+    .filter((n) => !n.endsWith('_'));
 }
 
 // ------------------------------------------------------------------ förslaget
 
 /** Hela underlaget för en rutin: cron, namn, taggar och de MCP-anrop
  *  sessionen ska göra. Ingenting skapas här. */
-export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner = [], datum = new Date(), katalog = KOMMANDOKATALOG }) {
-  const tider = tillCron(tid, { datum });
+export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner = [], datum = new Date(), katalog = KOMMANDOKATALOG, dagar = '*' }) {
+  // `dagar` är cronens veckodagsfält: '*' varje dag, '1' måndagar (kundtjänstens
+  // veckorapport), '1-5' vardagar. Utan det hade en veckorutin fått daglig cron.
+  const tider = tillCron(tid, { datum, dagar });
   const kontroll = granska({ kommando, butik, gren, rutiner, katalog });
   const namn = kommandonamn(kommando);
   // Nattvakten heter det den är, per butik — så listan i Routines-vyn går att
@@ -377,8 +383,11 @@ function lista() {
   for (const b of butiker) kanda.push([tidFor('ops-leverans', b.replace('.yaml', '')), `/ops-leverans ${b.replace('.yaml', '')}`, 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)']);
   for (const b of butiker) kanda.push([tidFor('ops-oversatt', b.replace('.yaml', '')), `/ops-oversatt ${b.replace('.yaml', '')}`, 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)']);
 
-  for (const [tid, kmd, vad] of kanda) {
-    const t = tillCron(tid);
+  // Veckorutinen: bara måndagar (dagar '1'). Cronen byter halvår som de andra.
+  kanda.push(['07:00', '/kundtjanst --alla --discord', 'Kundtjänst veckorapport (MÅNDAGAR): toppärenden + chargeback-ranking, alla brands', '1']);
+
+  for (const [tid, kmd, vad, dagar = '*'] of kanda) {
+    const t = tillCron(tid, { dagar });
     const skifte = t.dagskifte ? `  (dagen ${t.dagskifte < 0 ? 'före' : 'efter'} i UTC — rätt)` : '';
     console.log(`  ${tid}  ${t.cron.padEnd(16)} ${kmd.padEnd(32)} ${vad}${skifte}`);
   }
@@ -412,10 +421,10 @@ if (process.argv[1] && process.argv[1].endsWith('rutin.mjs')) {
       gren = readFileSync(join(ROT, '.git', 'HEAD'), 'utf8').trim().replace('ref: refs/heads/', '');
     } catch { /* ingen git — spärren hoppas över, och det syns nedan */ }
 
-    const f = byggForslag({ kommando, tid, butik: flagga('butik'), gren });
+    const f = byggForslag({ kommando, tid, butik: flagga('butik'), gren, dagar: flagga('dagar') ?? '*' });
 
     console.log(`\nRutin: ${f.rutinnamn}`);
-    console.log(`  ${f.svenskTid} svensk tid  →  cron "${f.cron}"  (${f.galler})`);
+    console.log(`  ${f.svenskTid} svensk tid${f.cron.endsWith('* *') ? '' : ` (veckodagar ${f.cron.split(' ').pop()})`}  →  cron "${f.cron}"  (${f.galler})`);
     if (f.dagskifte) console.log(`  ⚠️ Omräkningen korsar midnatt: cronen ligger dagen ${f.dagskifte > 0 ? 'efter' : 'före'} i UTC — det är rätt, rör den inte.`);
     if (f.maste_andras_vid_omstallning) console.log(`  ⚠️ ${f.omstallning}`);
 

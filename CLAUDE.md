@@ -229,6 +229,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/ops-leverans <nyckel>` | **13:40 per OPS-butik:** hubbens `To be Reviewed` → priskoll → **live** i butikens SE-kampanj i OPS-kontot (ett adset per koncept) → `SE-ACTIVE to be translated`. Byggs av `/notionscalercs setup` |
 | `/ops-oversatt <nyckel>` | **15:40 per OPS-butik:** `SE-ACTIVE to be translated` → norska (bild 0 krediter, video HeyGen) → **live** i butikens NO-kampanj i samma konto → `Approved`. Byggs av `/notionscalercs setup` |
 | `/rutin <kommando> <tid>` | Sätt upp en schemalagd rutin som faktiskt kör (fast session, rätt cron, inga dubbletter) |
+| `/kundtjanst [--alla\|--brand <id>] [--discord]` | **Måndag 07:00, alla brands:** supportmejlen (Loopia/IMAP) + Shopify → återkommande toppärenden, chargeback-varningar, ranking 0–100 per brand, VA:ns lista på engelska. Läs-bara. `kundtjanst/README.md` |
 
 ### Nattrutinerna
 
@@ -244,6 +245,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | 13:20 | `20 11 * * *` | Leveransrundan | `/notionkorning` |
 | 15:00 | `0 13 * * *` | Översättning till Norge (bild + video ur Notion-kön `SE-ACTIVE to be translated`) | `/oversatt NO` |
 | 06:00 | `0 4 * * *` | Commission | `/commission` |
+| Måndag 07:00 | `0 5 * * 1` (CEST) / `0 6 * * 1` (CET) | Kundtjänst veckorapport — alla brands, ranking, Discord `#customer-service` per brand. **Inte byggd som Routine än** (2026-09-12): koden, kommandot och `node kundtjanst/setup.mjs` finns; rutinen skapas med `/rutin /kundtjanst --alla --discord 07:00` när Loopia-lösenorden ligger i Environments (`KUNDTJANST_MAIL_PASS_<ID>`). Fast session, `CONNECTORS: inga` | `/kundtjanst --alla --discord` |
 | 00:01 | `1 22 * * *` (CEST) / `1 23 * * *` (CET) — ligger dagen före i UTC, det är rätt | Nattvakten, **en rutin per OPS-butik** — byggs av `/notionscalercs setup <butik>`. Byggda: **HeimGuard** (`hemvakten`, trigger `trig_01WbWzzvL1bvEzdSYDVDjyPt`, fast session `session_01Q98FdP2QSw7gkoASbqAAbx`, taggar `routine:notionscalercs` + `butik:hemvakten`, byggd 2026-09-10. Första natten 2026-09-11 körd: budgetrond + batch #2 (7 briefer), men rutinens container saknade då `ANTHROPIC_NYCKEL`. Setup-omkoll 2026-09-11: nyckeln finns i en ny container, men API:t avvisar den utan `ANTHROPIC_WORKSPACE_ID` — se DryTrek-raden nedan. `factory/rutin.mjs` räknar sedan 2026-09-11 `ANTHROPIC_NYCKEL` som funnen nyckel, så spärren inte varnar falskt om `ANTHROPIC_API_KEY`. Redigerare **Carl Vicente** (Discord `1411720622484095089`, `carlvicente.working`) tilldelad 2026-09-12 ⇒ 21 briefer per briefrond från söndag 13/9). **TankGuard** (`tankguard`, trigger `trig_012GbPeBU7bSmgb3LCk4p18r`, fast session `session_01S1Gqiqi2oJsXJNKj14rW9w`, taggar `routine:notionscalercs` + `butik:tankguard`, byggd 2026-09-10 sent på kvällen; hub "IBC Tank Cover creative hub", Discord-server "TankGuard", ingen redigerare tilldelad ⇒ 7 briefer per briefrond). **DryTrek** (`drytrek`, nyckel `drytrek/damasker`, trigger `trig_01DdJ5AhJGwRUFVKGRtxk83N`, fast session `session_019zEoFg9d5udsuVimZXXSZ1`, taggar `routine:notionscalercs` + `butik:drytrek`, byggd 2026-09-11 strax efter midnatt; hub "Damasker vandring" `3cf270ab-908c-81a0-9b0d-c486f6467ce7` — bär Bäverbutikens 33 äldre rader, se `products/drytrek/dna.md`; Discord-server "DryTrek — OPS" med `#ads` + `#ads-to-do`; ingen redigerare tilldelad ⇒ 7 briefer per briefrond. `ANTHROPIC_NYCKEL` saknades i skalet vid bygget 23:00 UTC men fanns vid omkoll 2026-09-11 efter containeromstart — miljövariabler som läggs in på claude.ai syns först i en NY container, inte i en session som redan kör. ⚠️ Testanrop 2026-09-11: nyckeln är giltig men är en ORGANISATIONSNYCKEL — API:t svarar "not scoped to a workspace" och kräver headern `anthropic-workspace-id`. Skripten skickar den när `ANTHROPIC_WORKSPACE_ID` finns i Environments (`tools/lib/anthropic-nyckel.mjs`); alternativet är en ny nyckel skapad inne i en workspace, då behövs inget id. **Löst 2026-09-12:** Axel bytte till en workspace-nyckel, testanrop mot Messages API svarade OK utan workspace-id). **AdventLane** (`kalender`, nyckel `kalender/adventskalender-racingbilar` — nischbutik, fler kalendrar blir fler nycklar och fler rutiner; trigger `trig_01FGjqv82YkeU6kQ4TocBL6q`, fast session `session_01DV383fYQE49kfpfy8rnjTz`, taggar `routine:notionscalercs` + `butik:kalender`, byggd 2026-09-11 strax efter midnatt, **cron flyttad 2026-09-12 till plats 3 = 00:25 (`25 22 * * *` CEST / `25 23 * * *` CET)** via update_trigger; redigerare **Jazz** (jazzer1522) ⇒ 21 briefer per briefrond; hub "Racing Car Advent Calendar creative hub" `3d7270ab-908c-81b2-ad69-cf7404a62c4e`; Discord-server "AdventLane" (`1547541533476257803`, `#ads` + `#ads-to-do` skapas av rapporten vid behov); ingen redigerare tilldelad ⇒ 7 briefer per briefrond; säsongsprodukt, död efter 24 dec. ⚠️ `ANTHROPIC_NYCKEL` saknades i skalet även vid det här bygget. ⚠️ `factory/kallannonser.mjs` faller tillbaka på DryTreks NO-mönster `gamasj\|damask` när produktfilen saknar `kalla.no_kampanjmonster` — sätt fältet före nästa `/ny-annonser` för en kalender, se `products/kalender/dna.md` rotorsak 2). **TackleBay** (`tacklebay`, **flerproduktsbutik — rutinen går per produktnyckel:** `tacklebay/fiskespohallare-4-pack`, trigger `trig_01XzwuDVuaZ12Wx1gujr1RQE`, fast session `session_01Xfnc1ZZ3CThYh1FcrsMsTh`, taggar `routine:notionscalercs` + `butik:tacklebay`, byggd 2026-09-11 morgon, **cron flyttad 2026-09-12 till plats 4 = 00:33 (`33 22 * * *` CEST / `33 23 * * *` CET)** via update_trigger; hub "Fish rod holder" `3c3270ab-908c-80f8-824d-eed3c4aa94e1` — delad historia, Bäverbutikens redigerare levererar fortfarande dit; Discord-server "TackleBay — OPS"; **redigerare Eric J** (Discord `1534158659691483356`, ericj1996, tilldelad 2026-09-12 ⇒ kadensens 21 briefer per briefrond); minnet ligger i `products/tacklebay/fiskespohallare-4-pack/`. Kampanjen heter `TACKLEBAY_SE_…` men annonserna `TackleBayRod_…` — `budgetrond.mjs` hittar kampanjen via annonserna sedan 2026-09-11 (`valjKampanjer`). **Kalendern `tacklebay/adventskalender-fiskedrag` har INGEN rutin:** inga annonser, ingen hub, Axels beslut 2026-09-10 att skippa den — se `products/tacklebay/adventskalender-fiskedrag/dna.md`. ⚠️ `ANTHROPIC_NYCKEL` saknades i skalet även vid det här bygget) | `/notionscalercs hemvakten`, `/notionscalercs tankguard`, `/notionscalercs drytrek`, `/notionscalercs kalender/adventskalender-racingbilar`, `/notionscalercs tacklebay/fiskespohallare-4-pack` |
 | 13:40 | `40 11 * * *` (CEST) / `40 12 * * *` (CET) | Leveransrundan OPS, **en per OPS-butik** — hubbens `To be Reviewed` → live i butikens SE-kampanj i OPS-kontot → `SE-ACTIVE to be translated`. Byggs av `/notionscalercs setup <butik>` (setup är idempotent: kör den igen på en butik som redan har nattvakt, så byggs bara det som saknas). Byggda: **AdventLane** (`kalender/adventskalender-racingbilar`, trigger `trig_01DH2DMkNwb4rcD1bvogsbrt`, fast session `session_01SDv8NdkrfHiYfM5ziGXRvC`, taggar `routine:ops-leverans` + `butik:kalender`, byggd 2026-09-11 förmiddag, **cron flyttad 2026-09-12 till plats 3 = 13:55 (`55 11 * * *` CEST / `55 12 * * *` CET)**; kön hade 4 videor i `To be Reviewed` med Bäverbutikens prefix `Adventskalender_` — rutinen märker om dem till `AdventLaneRacing_`). **HeimGuard** (`hemvakten/overvakningskameran`, trigger `trig_01MTMMgsTxZKVxWin6C1AXNQ`, fast session `session_019B13NJBCepT1wo5sFG59F4`, taggar `routine:ops-leverans` + `butik:hemvakten`, byggd 2026-09-12, plats 0 = 13:40; kön hade 4 bildrader med Bäverbutikens prefix `Overvakningskamera_` — rutinen märker om dem till `HeimGuard_`). **TackleBay** (`tacklebay/fiskespohallare-4-pack`, trigger `trig_01M96L614a16MKXudynm8XWK`, fast session `session_01Fsn8p6U5NopbUYqpdM2vWk`, taggar `routine:ops-leverans` + `butik:tacklebay`, byggd 2026-09-12, plats 4 = **14:00** (`0 12 * * *` CEST / `0 13 * * *` CET); SE-kampanjen `TACKLEBAY_SE_Spöhållaren` ACTIVE, 4 adsets, kön var tom) | `/ops-leverans <nyckel>` |
 | 15:40 | `40 13 * * *` (CEST) / `40 14 * * *` (CET) | Översättning NO OPS, **en per OPS-butik** — `SE-ACTIVE to be translated` → norska → live i butikens NO-kampanj i samma konto → `Approved`. Byggs av `/notionscalercs setup <butik>`. Byggda: **AdventLane** (`kalender/adventskalender-racingbilar`, trigger `trig_01NWtZiEYASKVebzrFSPkdB1`, fast session `session_015Xx2KWyvov4TRaJ1rbh4hF`, taggar `routine:ops-oversatt` + `butik:kalender`, byggd 2026-09-11 förmiddag, **cron flyttad 2026-09-12 till plats 3 = 15:55 (`55 13 * * *` CEST / `55 14 * * *` CET)**; NO-kampanjen finns; kön hade 7 rader i `SE-ACTIVE to be translated` vid omkollen 2026-09-12 14:00 — nästa körning tar dem). **HeimGuard** (`hemvakten/overvakningskameran`, trigger `trig_01MU7mRV7qFULBF2tTvpRc8K`, fast session `session_017uxufZwCmfnaRP1N2tv2vn`, taggar `routine:ops-oversatt` + `butik:hemvakten`, byggd 2026-09-12, plats 0 = 15:40; NO-kampanjen `HEIMGUARD_NO_Overvåkingskamera` finns, kön var tom). **TackleBay** (`tacklebay/fiskespohallare-4-pack`, trigger `trig_01HtsPQWRnGxfxJeewbJZEZc`, fast session `session_01PMeet4fa9EG9TSeGFncudC`, taggar `routine:ops-oversatt` + `butik:tacklebay`, byggd 2026-09-12, plats 4 = **16:00** (`0 14 * * *` CEST / `0 15 * * *` CET); NO-kampanjen `TACKLEBAY_NO_Spöhållaren` ACTIVE, 5 adsets, kön var tom). Kvar på bastiderna utan egen plats: **TankGuard** (plats 1 ⇒ 00:09 / 13:45 / 15:45) och **DryTrek** (plats 2 ⇒ 00:17 / 13:50 / 15:50) — deras nattvakter står på `1 22` och de har ingen leverans/översättning än; rättas med `/notionscalercs setup tankguard` resp. `setup drytrek` | `/ops-oversatt <nyckel>` |
@@ -546,6 +548,49 @@ syns inte i en teamspace-sökning. Hubbarna måste därför alltid unionsläggas
 rader lästes. *(Incident 2026-08-31: rutinen hittade 2 hubbar av 6 och
 rapporterade 0 kr som augustis slutavräkning.)*
 
+### `kundtjanst/` — veckorapporten för kundtjänst och chargeback-risk (alla brands)
+Motorn bakom `/kundtjanst`. Fristående, **inga npm-beroenden** (egen IMAP-klient
+över `node:tls`, egen MIME-tolkning, inbyggd `fetch`). **Läs-bara** mot mejlen
+(EXAMINE + BODY.PEEK — inget markeras som läst) och Shopify (bara GET).
+
+```bash
+node kundtjanst/run.mjs --kolla                    # vilka brands, vilka nycklar saknas
+node kundtjanst/run.mjs --brand tacklebay --torr   # provkör ett brand, skriv inget
+node kundtjanst/run.mjs --alla --discord           # rutinen
+node kundtjanst/setup.mjs                          # nycklarna per brand + rutinens cron (måndag)
+node kundtjanst/setup.mjs --nytt-konto             # receptet för ett annat Claude-konto
+node kundtjanst/run.mjs --fixtur kundtjanst/test/fixturer/demo --torr --datum 2026-09-14   # demo utan nät
+```
+
+**Brands upptäcks, listas aldrig:** varje `factory/butiker/<id>.yaml` är ett
+brand (namn, supportmail, myshopify-domän därifrån); butiker fabriken inte byggt
+får `kundtjanst/brands/<id>.yaml` (mall `brand-mall.yaml`; Bäverbutikens fil finns
+men **saknar supportmail** — den står inte i repot, fyll i den). Hemligheterna
+heter `KUNDTJANST_MAIL_PASS_<ID>` (Loopia, krävs), `SHOPIFY_ADMIN_TOKEN_<ID>` eller
+fabrikens `SHOPIFY_CLIENT_ID_<ID>` + `SHOPIFY_CLIENT_SECRET_<ID>` (ordrar + tvister,
+valfritt), samt delade `NOTION_TOKEN`, `DISCORD_BOT_TOKEN`, `ANTHROPIC_NYCKEL`
+(valfria). **Samma repo körs på vilket Claude-konto som helst** — bara nycklarna
+och brandfilerna skiljer; `setup.mjs --nytt-konto` skriver ut receptet.
+
+Flödet: `imap.mjs`/`mime.mjs` → `arenden.mjs` (trådar, obesvarat, svarstid) →
+`klassificering.mjs` (regler, 14 kategorier, sv/no/da/en/fi) → `chargeback.mjs`
+(signaler med tak → 0–100, 🟢 < 25, 🟡 25–50, 🔴 > 50; tvistgrad mot Visa 0,9 % /
+Mastercard 1 %; "återkommande" = topp 3 i 3 av 4 veckor, kräver tre veckors
+historik) → `rapport.mjs` (svenska till Axel, engelska till VA:n/Discord).
+`llm.mjs` (valfri) klassar bara "övrigt"-högen och skriver en mening per
+toppärende — **reglerna dömer, modellen hjälper**, annars går trenden inte att
+läsa vecka mot vecka. `notion.mjs` mäter vilka toppärenden som saknar SOP i VA:ns
+Notion-databas (`notion.sop_database_id` i brandfilen).
+
+Skriver `kundtjanst/korningar/<brand>/<vecka>.md` (+ `.en.md`),
+`korningar/_ranking/<vecka>.md` och `historik/<brand>.jsonl` — historiken är det
+som gör "återkommande" mätbart, så den committas. Kundadresser maskeras
+(`ka***@gmail.com`) i allt som skrivs eller postas; ordernumret är nyckeln.
+Tvister som inte går att läsa rapporteras som okända, aldrig som noll. Ett brand
+utan lösenord hoppas över med variabelnamnet i rapporten; en körning där inget
+brand lästes ger exit 1. 63 tester utan nät mot fixturen
+`kundtjanst/test/fixturer/demo/`.
+
 ### `pipeline/` — bildannonser (Grillkliniken/Mastern, legacy)
 ⚠️ **Trots mappnamnet är det här inte Bäverbutiken.** `brand.mjs` sätter
 `LOGO_WORDMARK = 'GRILLKLINIKEN'` och grillfärger, och `package.json` säger
@@ -801,7 +846,8 @@ teamspaces). `products.json` känner bara fyra av hubbarna — den är inte faci
 
 **Env-nycklar rutinerna behöver:** `KIE_API_KEY` (bildannonser),
 `HEYGEN_API_KEY` (`/translate`), `META_ACCESS_TOKEN`, `DISCORD_WEBHOOK_URL`
-(nattrapporterna), `JUDGEME_API_TOKEN`, `SHOPIFY_TOKEN_*`, `NOTION_TOKEN`.
+(nattrapporterna), `JUDGEME_API_TOKEN`, `SHOPIFY_TOKEN_*`, `NOTION_TOKEN`,
+`KUNDTJANST_MAIL_PASS_<ID>` (Loopia-lösenordet per brand, `/kundtjanst`).
 
 `NOTION_TOKEN` är det som gör `/commission` helt klickfri: med den läser
 `commission/run.mjs` hubbarna via REST och rör inga `mcp__*`-verktyg, så inget

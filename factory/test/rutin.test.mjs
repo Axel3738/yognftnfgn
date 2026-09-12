@@ -267,3 +267,25 @@ test('butikernas tider: fast plats per butik ur register.json, aldrig samma star
   assert.equal(t[0].cron, '25 22 * * *');
   assert.throws(() => tidFor('cs', 'drytrek', platser), /ingen butiksrutin/);
 });
+
+test('en veckorutin får veckodagsfältet i cronen — kundtjänsten går bara måndagar', () => {
+  const f = byggForslag({ kommando: '/kundtjanst --alla --discord', tid: '07:00', gren: 'main', datum: SOMMAR, dagar: '1', katalog: fixturkatalogMedKundtjanst() });
+  assert.equal(f.cron, '0 5 * * 1');
+  assert.equal(f.cronVinter, '0 6 * * 1');
+  assert.equal(f.taggar[0], 'routine:kundtjanst');
+  assert.equal(f.steg[1].argument.cron_expression, '0 5 * * 1');
+  const daglig = byggForslag({ kommando: '/kundtjanst --alla', tid: '07:00', gren: 'main', datum: SOMMAR, katalog: fixturkatalogMedKundtjanst() });
+  assert.equal(daglig.cron, '0 5 * * *', 'utan --dagar är cronen daglig som förut');
+});
+
+test('mallnamn som SHOPIFY_ADMIN_TOKEN_<ID> i en kommandofil räknas inte som saknade nycklar', async () => {
+  const { nycklarFor } = await import('../rutin.mjs');
+  const namn = nycklarFor('kundtjanst', { katalog: fixturkatalogMedKundtjanst() });
+  assert.deepEqual(namn, ['NOTION_TOKEN', 'DISCORD_BOT_TOKEN']);
+});
+
+function fixturkatalogMedKundtjanst() {
+  const katalog = fixturkatalog();
+  writeFileSync(join(katalog, 'kundtjanst.md'), '# /kundtjanst\nCONNECTORS: inga — SHOPIFY_ADMIN_TOKEN_<ID>, NOTION_TOKEN, DISCORD_BOT_TOKEN.\n');
+  return katalog;
+}
