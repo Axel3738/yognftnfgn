@@ -219,10 +219,20 @@ Hela listan i `factory/README.md`.
     beslut — CaraShell fick 1 106 / 1 382,50 NOK (25 % över priset). Fasta
     priser följer inte kursen: ändras SEK-priset sätts NOK om för hand.
     Kontrollen görs som norsk kund (`POST /localization` med `_method=put`),
-    inte via /nb på svensk IP — /nb byter bara språk, inte marknad. ⚠️ Kvar:
-    paketnivåerna och rabattkoderna står i SEK och visas med SEK-tal i den
-    norska vyn (mätt: 1 919,30 för 2 st bredvid 1 106 per styck) — det är
-    steget "NOK-paketnivåer" i punkt 15, fortfarande manuellt/obyggt.
+    inte via /nb på svensk IP — /nb byter bara språk, inte marknad.
+17. ⚙️ **NOK-paketnivåerna är byggda (2026-09-12, Axels val "B").**
+    `ekonomi.marknadspriser` i produktfilen (valuta + pris + jämförpris) ⇒
+    `paket.mjs` räknar varje nivås pris i den valutan med samma procent och
+    skriver det i metaobjektfältet `fastpris_valutor` ("NOK:1880.20");
+    `tema.patchaMsPaketValuta` låter snippeten läsa det fältet när
+    `cart.currency` inte är butikens valuta. Rabattkoden blir en
+    **procentkod** när nivån är en hel procent utan gratisrad — ett fast
+    SEK-belopp räknas om med dagskursen i kassan och driver ifrån sidan
+    (mätt: sidan 1 919,30, kassan 1 880,63). Med procent stämmer sida och
+    kassa på öret i alla valutor: norsk kund 1 880,20 / 1 880,20, svensk
+    kund 1 919,30 / 1 919,30 (mätt 2026-09-12). Gratis bonus ⇒ beloppskod
+    som förut, och nivån visas bara i butikens valuta. Körs med
+    `--igen tema,paket` efter att prislistan (punkt 16) finns.
 
 ## Fas 5 — Store ready (kedjans slutsteg)
 

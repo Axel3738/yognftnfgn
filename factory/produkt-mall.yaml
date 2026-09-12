@@ -37,6 +37,16 @@ ekonomi:
   # butiken, är true i varje OPS-butiksfil, och att låta det avgöra
   # break-even vore precis det tysta valet regeln finns för.
   moms_antagen: false
+  # FASTA PRISER PER MARKNADSVALUTA (CaraShell 2026-09-12). Fylls i när ägaren
+  # slagit på t.ex. NOK som marknadens basvaluta och prislistan är satt i
+  # Shopify (priceListCreate + catalogCreate + fixedPricesAdd, API-GRANSER.md).
+  # paket.mjs räknar paketnivåernas tal i valutan (samma procent) → nivåns
+  # fastpris_valutor, så sidan visar NOK för norska kunder. Fasta priser
+  # följer inte kursen — ändras priset sätts de om. Tomt = bara butikens valuta.
+  marknadspriser:
+    # - valuta: NOK
+    #   pris: 0
+    #   jamforpris: 0
 
 varianter:                    # tom lista = one-product utan varianter
   # - namn: "Svart"

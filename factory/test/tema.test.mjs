@@ -608,3 +608,16 @@ test('den som stängt av rörelse får en stillbild, inte en loop', () => {
   assert.ok(OPF_MEDIA_SKRIPT.includes('prefers-reduced-motion'));
   assert.ok(OPF_MEDIA_SKRIPT.includes('opfMediaRedan'), 'skriptet ska bara köra en gång per sida');
 });
+
+test('patchaMsPaketValuta: fastpris_valutor vinner i kundens valuta, idempotent', async () => {
+  const { patchaMsPaketValuta, MS_PAKET_VALUTA_MARKE } = await import('../tema.mjs');
+  const snippet = `{%- liquid\n              assign fast = niva.fastpris.value\n              if kod != '' and fast != blank\n              endif\n-%}`;
+  const p = patchaMsPaketValuta(snippet);
+  assert.ok(p.includes(MS_PAKET_VALUTA_MARKE));
+  assert.ok(p.includes("cart.currency.iso_code != shop.currency"));
+  assert.ok(p.includes('assign fast = opf_fvd[1] | times: 1.0'));
+  // Raden som fanns ligger kvar först, patchen efter — inuti liquid-blocket.
+  assert.ok(p.indexOf('assign fast = niva.fastpris.value') < p.indexOf(MS_PAKET_VALUTA_MARKE));
+  assert.equal(patchaMsPaketValuta(p), null);
+  assert.equal(patchaMsPaketValuta('inget fastpris här'), null);
+});

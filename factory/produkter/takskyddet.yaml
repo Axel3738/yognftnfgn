@@ -36,13 +36,17 @@ ekonomi:
   jamforpris: 1469
   # Ur källkampanjens namn (MagiBorsten 120250147343350291, 2026-09-10).
   break_even_roas: 1.63
-  # NORGE (NOK) — satt 2026-09-11 via API efter att Axel slagit på NOK som
-  # marknadens basvaluta: prislista "Norge (NOK)" gid://shopify/PriceList/33455505740
-  # i marknadskatalogen "Norge", fast pris 1 106 NOK + jämförpris 1 382,50 NOK
-  # (= 25 % över priset, Axels val; alternativet 1 474,67 = 25 % rabatt).
-  # Fasta priser följer INTE valutakursen — ändras SEK-priset måste NOK sättas om.
-  no_pris_nok: 1106
-  no_jamforpris_nok: 1382.50
+  # FASTA PRISER PER MARKNADSVALUTA — satta som prislista i Shopify (Norge:
+  # gid://shopify/PriceList/33455505740 i marknadskatalogen "Norge", 2026-09-11,
+  # efter att Axel slagit på NOK som marknadens basvaluta). Jämförpriset är
+  # Axels val: 25 % över priset (alternativet 1 474,67 = 25 % rabatt).
+  # paket.mjs räknar paketnivåernas NOK-tal härifrån (samma procent) och
+  # skriver dem i nivåns fastpris_valutor, så den norska vyn visar NOK.
+  # Fasta priser följer INTE valutakursen — ändras SEK-priset sätts de om.
+  marknadspriser:
+    - valuta: NOK
+      pris: 1106
+      jamforpris: 1382.50
 
 varianter:
 media:

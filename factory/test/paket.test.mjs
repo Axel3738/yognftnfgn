@@ -9,6 +9,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { lasYaml } from '../yaml.mjs';
 import {
+  fastprisValutorText,
   METAOBJEKT_TYP, TYP, FALT, NIVAER, forvaldIndex, paketPrefix, lasNivaer,
   byggPaketplan, byggPaket, paketRader, nivaFalt, rabattkodInput,
 } from '../paket.mjs';
@@ -374,4 +375,51 @@ test('sakerstallBonus torr: validerar och rör varken nät eller fil', async () 
   assert.equal(r.produkt_id, null);
   assert.equal(r.input.handle, 'kranskydd');
   await assert.rejects(() => sakerstallBonus({}, { offer: {} }, { torr: true }), /saknar titel/);
+});
+
+// --- Paketpris per valuta + procentkoder (CaraShell 2026-09-12) --------------
+
+const utanBonus = () => ({
+  produkt: { id: 'takskyddet', namn: 'Taköverdrag' },
+  brand: { namn: 'CaraShell' },
+  ekonomi: { pris: 1129, valuta: 'SEK', marknadspriser: [{ valuta: 'NOK', pris: 1106, jamforpris: 1382.5 }] },
+  meta: { creative_prefix: 'CaraShellRoof' },
+  offer: { paket: { test: 'paket' } },
+});
+
+test('marknadspriser: hel procent utan bonus ger procentkod och NOK-tal i fastpris_valutor', () => {
+  const plan = byggPaketplan(utanBonus());
+  const a2 = plan.poster.find((x) => x.handle === 'takskyddet-a-2');
+  // 2 × 1129 × 0,85 = 1919,30 SEK på sidan i SEK; 2 × 1106 × 0,85 = 1880,20 i NOK.
+  assert.equal(a2.fastpris, 1919.3);
+  assert.deepEqual(a2.fastprisValutor, { NOK: 1880.2 });
+  const f = Object.fromEntries(nivaFalt(a2, 'gid://p/1').map((x) => [x.key, x.value]));
+  assert.equal(f.fastpris_valutor, 'NOK:1880.20');
+  const k = plan.koder.find((x) => x.kod === 'CARASHELLROO2A');
+  assert.equal(k.procent, 15);
+  assert.equal(k.belopp, 338.7);
+  const i = rabattkodInput(k, 'gid://p/1');
+  assert.deepEqual(i.customerGets.value, { percentage: 0.15 });
+  assert.ok(paketRader(plan).at(-1).includes('CARASHELLROO2A = −15 %'));
+  const b3 = plan.poster.find((x) => x.handle === 'takskyddet-b-3');
+  assert.deepEqual(b3.fastprisValutor, { NOK: 2488.5 });
+  // Nivå 1 (ordinarie): inga valutatal, ingen kod.
+  const a1 = plan.poster.find((x) => x.handle === 'takskyddet-a-1');
+  assert.deepEqual(a1.fastprisValutor, {});
+});
+
+test('marknadspriser: med gratis bonus stannar koden som belopp och valutatalen uteblir', () => {
+  const plan = byggPaketplan(medPaket({ ekonomi: { pris: 489, valuta: 'SEK', marknadspriser: [{ valuta: 'NOK', pris: 480 }] } }));
+  const k = plan.koder.find((x) => x.kod === 'PAKET2');
+  assert.equal(k.procent, null);
+  assert.equal(rabattkodInput(k, 'gid://p/1').customerGets.value.discountAmount.amount, '545.00');
+  const a2 = plan.poster.find((x) => x.handle === 'tanken-a-2');
+  assert.deepEqual(a2.fastprisValutor, {});
+  assert.equal(Object.fromEntries(nivaFalt(a2, 'gid://p/1', 'gid://p/2').map((x) => [x.key, x.value])).fastpris_valutor, '');
+});
+
+test('fastprisValutorText: format och tomt', () => {
+  assert.equal(fastprisValutorText({ NOK: 1880.2, dkk: 1300 }), 'NOK:1880.20;DKK:1300.00');
+  assert.equal(fastprisValutorText({}), '');
+  assert.equal(fastprisValutorText(undefined), '');
 });
