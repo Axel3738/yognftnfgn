@@ -55,10 +55,15 @@ export const EXEMPEL = {
 // Platshållare → Liquid eller exempelvärde
 // ---------------------------------------------------------------------------
 
+// ⚠️ Enkla citattecken i Liquid-filtren, aldrig dubbla: texten går genom
+// esk() (HTML-eskapning) på väg in i mallen, och dubbla citattecken blir
+// &quot; — vilket bryter fallbacken. Mätt 2026-09-12 vid inklistringen:
+// fyra mallar hade `default: &quot;fraktbolaget&quot;` och rättades för hand
+// i Shopify. Testet "ingen &quot; inuti Liquid-taggar" vaktar det nu.
 const LIQUID = {
   '{{förnamn}}': '{{ fornamn }}',
   '{{ordernummer}}': '{{ name }}',
-  '{{fraktbolag}}': '{{ fulfillment.tracking_company | default: "fraktbolaget" }}',
+  '{{fraktbolag}}': "{{ fulfillment.tracking_company | default: 'fraktbolaget' }}",
   '{{belopp}}': '{{ amount | money }}',
 };
 
@@ -68,7 +73,7 @@ const LIQUID = {
 const LIQUID_AMNE = {
   '{{förnamn}}, ': '{% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}',
   ...LIQUID,
-  '{{förnamn}}': '{{ customer.first_name | default: "Hej" }}',
+  '{{förnamn}}': "{{ customer.first_name | default: 'Hej' }}",
 };
 
 export function ersatt(text, lage, tabell = LIQUID) {

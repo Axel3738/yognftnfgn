@@ -28,7 +28,7 @@
             <td align="center" style="padding: 8px 32px 4px;">
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;">
                 {% if fornamn != blank %}Hej {{ fornamn }}!{% else %}Hej!{% endif %}
-                Din order {{ name }} är ute för leverans med {{ fulfillment.tracking_company | default: &quot;fraktbolaget&quot; }} och kommer fram under dagen.
+                Din order {{ name }} är ute för leverans med {{ fulfillment.tracking_company | default: 'fraktbolaget' }} och kommer fram under dagen.
               </p>
             </td>
           </tr>

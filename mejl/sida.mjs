@@ -17,11 +17,16 @@ const kr = (n) => `${Math.round(Number(n)).toLocaleString('sv-SE').replace(/ | /
 
 export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
   const e = konfig.erbjudande;
+  const lage = konfig.lage ?? {};
+  const inklistrade = lage.inklistrade ?? {};
+  const hoppade = lage.hoppade_over ?? {};
   const perId = new Map(exempel.map((m) => [m.id, m]));
 
   const mallar = liquid
     .map((m, i) => {
       const ex = perId.get(m.id);
+      const klar = inklistrade[m.id];
+      const hopp = hoppade[m.id];
       return `
     <section class="mall" id="mall-${m.id}">
       <header class="mall-huvud">
@@ -29,8 +34,9 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
         <div>
           <h3>${esk(m.shopify.split(' / ')[0])}</h3>
           <p class="dampad">Heter i Shopify: <strong>${esk(m.shopify)}</strong></p>
+          ${hopp ? `<p class="dampad">⏭ Hoppas över: ${esk(hopp)}</p>` : ''}
         </div>
-        <label class="klar"><input type="checkbox" id="klar-${m.id}" data-klar="${m.id}"> Inklistrad</label>
+        <label class="klar"><input type="checkbox" id="klar-${m.id}" data-klar="${m.id}"${klar ? ' checked' : ''}> Inklistrad${klar ? ` ${esk(klar)}` : ''}</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -147,7 +153,21 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
 
   <section class="lage" aria-label="Läget">
     <div class="lage-rad"><span class="ikon">✅</span><p>Klart via API: kollektionen <a href="${esk(konfig.butik.url)}/collections/${esk(e.kollektion_handle)}">${esk(konfig.butik.url)}/collections/${esk(e.kollektion_handle)}</a> är live med de fyra gratisprodukterna. Mallarna nedan är byggda på butikens riktiga produkter och priser.</p></div>
-    <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: rabattkoden (steg 1) och åtta inklistringar (steg 2). Shopify har inget API för det, så det är dina klick. Räkna med 20 minuter.</p></div>
+    ${
+      lage.rabattkod_skapad
+        ? `<div class="lage-rad"><span class="ikon">✅</span><p>Rabattkoden <strong>${esk(e.kod)}</strong> är skapad och aktiv (${esk(lage.rabattkod_skapad)}, ${esk(lage.rabattkod_av ?? '')}). Köpvillkoret är kollektionen <strong>${esk(e.kop_kollektion_titel)}</strong> (automatisk, pris över 0 kr) eftersom Shopify inte tillåter "Alla produkter" i Köp X få Y.</p></div>`
+        : ''
+    }
+    ${
+      Object.keys(inklistrade).length
+        ? `<div class="lage-rad"><span class="ikon">✅</span><p>${Object.keys(inklistrade).length} av ${liquid.length} mallar inklistrade och sparade under Inställningar → Notiser.${lage.testmejl_skickat ? ` Testmejl på Orderbekräftelse skickat ${esk(lage.testmejl_skickat)}.` : ''}${Object.keys(hoppade).length ? ` Hoppades över: ${Object.keys(hoppade).map((id) => esk(liquid.find((m) => m.id === id)?.shopify.split(' / ')[0] ?? id)).join(', ')} (se mallen längst ner).` : ''}</p></div>`
+        : ''
+    }
+    <div class="lage-rad att-gora"><span class="ikon">👉</span><p>${
+      lage.rabattkod_skapad && Object.keys(inklistrade).length
+        ? 'Kvar för dig: steg 4, koppla om Shopify på claude.ai. Gör gärna också det riktiga köptestet under steg 1.'
+        : 'Kvar för dig: rabattkoden (steg 1) och åtta inklistringar (steg 2). Shopify har inget API för det, så det är dina klick. Räkna med 20 minuter.'
+    }</p></div>
   </section>
 
   <section class="steg" aria-labelledby="gor">
@@ -165,7 +185,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
           <li>Klicka <strong>Spara rabatt</strong>.</li>
         </ol>
         <table class="falt">
-          <tr><th>Kunden köper</th><td><strong>Minsta inköpsbelopp</strong> ${e.minsta_kop_sek} kr · gäller <strong>Alla produkter</strong></td></tr>
+          <tr><th>Kunden köper</th><td><strong>Minsta inköpsbelopp</strong> ${e.minsta_kop_sek} kr · Valfria artiklar från <strong>Specifika kollektioner</strong> → <strong>${esk(e.kop_kollektion_titel)}</strong> (Shopify tillåter inte "Alla produkter" här; finns kollektionen inte: Produkter → Kollektioner → Skapa kollektion → Automatisk → villkor <em>Pris är större än 0</em>, döp den till ${esk(e.kop_kollektion_titel)})</td></tr>
           <tr><th>Kunden får</th><td>Antal <strong>${e.gratis_antal}</strong> · Alla produkter från <strong>Specifika kollektioner</strong> → sök fram <strong>${esk(e.kollektion_titel)}</strong></td></tr>
           <tr><th>Med rabatterat värde</th><td><strong>Gratis</strong></td></tr>
           <tr><th>Max antal användningar per order</th><td>Bocka i, skriv <strong>1</strong></td></tr>
@@ -259,7 +279,8 @@ ${mallar}
     });
     document.querySelectorAll('input[data-klar]').forEach(function (box) {
       var nyckel = 'mejl-klar-' + box.getAttribute('data-klar');
-      try { box.checked = localStorage.getItem(nyckel) === '1'; } catch (e) {}
+      // Förbockat ur konfigens lage vinner tills tittaren själv ändrat rutan.
+      try { var sparat = localStorage.getItem(nyckel); if (sparat !== null) box.checked = sparat === '1'; } catch (e) {}
       box.addEventListener('change', function () {
         try { localStorage.setItem(nyckel, box.checked ? '1' : '0'); } catch (e) {}
       });

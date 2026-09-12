@@ -84,14 +84,16 @@
 
 <main>
   <header class="topp">
-    <p class="dampad">Bäverbutiken.se · byggd 2026-09-12 15:39 UTC</p>
+    <p class="dampad">Bäverbutiken.se · byggd 2026-09-12 17:38 UTC</p>
     <h1>Bäverbutikens mejl</h1>
     <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet.</p>
   </header>
 
   <section class="lage" aria-label="Läget">
     <div class="lage-rad"><span class="ikon">✅</span><p>Klart via API: kollektionen <a href="https://baverbutiken.se/collections/din-gratisprodukt">https://baverbutiken.se/collections/din-gratisprodukt</a> är live med de fyra gratisprodukterna. Mallarna nedan är byggda på butikens riktiga produkter och priser.</p></div>
-    <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: rabattkoden (steg 1) och åtta inklistringar (steg 2). Shopify har inget API för det, så det är dina klick. Räkna med 20 minuter.</p></div>
+    <div class="lage-rad"><span class="ikon">✅</span><p>Rabattkoden <strong>TACKIGEN</strong> är skapad och aktiv (2026-09-12, Cowork (Claude i Chrome) i Axels inloggade Shopify admin). Köpvillkoret är kollektionen <strong>Alla produkter</strong> (automatisk, pris över 0 kr) eftersom Shopify inte tillåter "Alla produkter" i Köp X få Y.</p></div>
+    <div class="lage-rad"><span class="ikon">✅</span><p>7 av 8 mallar inklistrade och sparade under Inställningar → Notiser. Testmejl på Orderbekräftelse skickat 2026-09-12. Hoppades över: Övergiven kassa (se mallen längst ner).</p></div>
+    <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: steg 4, koppla om Shopify på claude.ai. Gör gärna också det riktiga köptestet under steg 1.</p></div>
   </section>
 
   <section class="steg" aria-labelledby="gor">
@@ -109,7 +111,7 @@
           <li>Klicka <strong>Spara rabatt</strong>.</li>
         </ol>
         <table class="falt">
-          <tr><th>Kunden köper</th><td><strong>Minsta inköpsbelopp</strong> 299 kr · gäller <strong>Alla produkter</strong></td></tr>
+          <tr><th>Kunden köper</th><td><strong>Minsta inköpsbelopp</strong> 299 kr · Valfria artiklar från <strong>Specifika kollektioner</strong> → <strong>Alla produkter</strong> (Shopify tillåter inte "Alla produkter" här; finns kollektionen inte: Produkter → Kollektioner → Skapa kollektion → Automatisk → villkor <em>Pris är större än 0</em>, döp den till Alla produkter)</td></tr>
           <tr><th>Kunden får</th><td>Antal <strong>1</strong> · Alla produkter från <strong>Specifika kollektioner</strong> → sök fram <strong>Din gratisprodukt</strong></td></tr>
           <tr><th>Med rabatterat värde</th><td><strong>Gratis</strong></td></tr>
           <tr><th>Max antal användningar per order</th><td>Bocka i, skriv <strong>1</strong></td></tr>
@@ -175,8 +177,9 @@
         <div>
           <h3>Orderbekräftelse</h3>
           <p class="dampad">Heter i Shopify: <strong>Orderbekräftelse / Order confirmation</strong></p>
+          
         </div>
-        <label class="klar"><input type="checkbox" id="klar-orderbekraftelse" data-klar="orderbekraftelse"> Inklistrad</label>
+        <label class="klar"><input type="checkbox" id="klar-orderbekraftelse" data-klar="orderbekraftelse" checked> Inklistrad 2026-09-12</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -780,8 +783,9 @@
         <div>
           <h3>Leveransbekräftelse</h3>
           <p class="dampad">Heter i Shopify: <strong>Leveransbekräftelse / Shipping confirmation</strong></p>
+          
         </div>
-        <label class="klar"><input type="checkbox" id="klar-fraktbekraftelse" data-klar="fraktbekraftelse"> Inklistrad</label>
+        <label class="klar"><input type="checkbox" id="klar-fraktbekraftelse" data-klar="fraktbekraftelse" checked> Inklistrad 2026-09-12</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -822,7 +826,7 @@
             <td align="center" style="padding: 8px 32px 4px;">
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;">
                 {% if fornamn != blank %}Hej {{ fornamn }}!{% else %}Hej!{% endif %}
-                Din order {{ name }} har lämnat lagret och är på väg med {{ fulfillment.tracking_company | default: &quot;fraktbolaget&quot; }}.
+                Din order {{ name }} har lämnat lagret och är på väg med {{ fulfillment.tracking_company | default: 'fraktbolaget' }}.
               </p>
             </td>
           </tr>
@@ -1249,8 +1253,9 @@
         <div>
           <h3>Leveransuppdatering</h3>
           <p class="dampad">Heter i Shopify: <strong>Leveransuppdatering / Shipping update</strong></p>
+          
         </div>
-        <label class="klar"><input type="checkbox" id="klar-fraktuppdatering" data-klar="fraktuppdatering"> Inklistrad</label>
+        <label class="klar"><input type="checkbox" id="klar-fraktuppdatering" data-klar="fraktuppdatering" checked> Inklistrad 2026-09-12</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -1291,7 +1296,7 @@
             <td align="center" style="padding: 8px 32px 4px;">
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;">
                 {% if fornamn != blank %}Hej {{ fornamn }}!{% else %}Hej!{% endif %}
-                Spårningsuppgifterna för din order {{ name }} har uppdaterats hos {{ fulfillment.tracking_company | default: &quot;fraktbolaget&quot; }}.
+                Spårningsuppgifterna för din order {{ name }} har uppdaterats hos {{ fulfillment.tracking_company | default: 'fraktbolaget' }}.
               </p>
             </td>
           </tr>
@@ -1456,8 +1461,9 @@
         <div>
           <h3>Ute för leverans</h3>
           <p class="dampad">Heter i Shopify: <strong>Ute för leverans / Out for delivery</strong></p>
+          
         </div>
-        <label class="klar"><input type="checkbox" id="klar-ute_for_leverans" data-klar="ute_for_leverans"> Inklistrad</label>
+        <label class="klar"><input type="checkbox" id="klar-ute_for_leverans" data-klar="ute_for_leverans" checked> Inklistrad 2026-09-12</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -1498,7 +1504,7 @@
             <td align="center" style="padding: 8px 32px 4px;">
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;">
                 {% if fornamn != blank %}Hej {{ fornamn }}!{% else %}Hej!{% endif %}
-                Din order {{ name }} är ute för leverans med {{ fulfillment.tracking_company | default: &quot;fraktbolaget&quot; }} och kommer fram under dagen.
+                Din order {{ name }} är ute för leverans med {{ fulfillment.tracking_company | default: 'fraktbolaget' }} och kommer fram under dagen.
               </p>
             </td>
           </tr>
@@ -1663,8 +1669,9 @@
         <div>
           <h3>Levererad</h3>
           <p class="dampad">Heter i Shopify: <strong>Levererad / Delivered</strong></p>
+          
         </div>
-        <label class="klar"><input type="checkbox" id="klar-levererad" data-klar="levererad"> Inklistrad</label>
+        <label class="klar"><input type="checkbox" id="klar-levererad" data-klar="levererad" checked> Inklistrad 2026-09-12</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -1705,7 +1712,7 @@
             <td align="center" style="padding: 8px 32px 4px;">
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;">
                 {% if fornamn != blank %}Hej {{ fornamn }}!{% else %}Hej!{% endif %}
-                Din order {{ name }} har levererats av {{ fulfillment.tracking_company | default: &quot;fraktbolaget&quot; }}.
+                Din order {{ name }} har levererats av {{ fulfillment.tracking_company | default: 'fraktbolaget' }}.
               </p>
             </td>
           </tr>
@@ -2120,6 +2127,7 @@
         <div>
           <h3>Övergiven kassa</h3>
           <p class="dampad">Heter i Shopify: <strong>Övergiven kassa / Abandoned checkout</strong></p>
+          <p class="dampad">⏭ Hoppas över: Finns inte under Inställningar → Notiser i Bäverbutiken (mätt 2026-09-12) — sköts av Shopify Email under Marknadsföring → Automatiseringar.</p>
         </div>
         <label class="klar"><input type="checkbox" id="klar-overgiven_kassa" data-klar="overgiven_kassa"> Inklistrad</label>
       </header>
@@ -2329,8 +2337,9 @@
         <div>
           <h3>Återbetalning</h3>
           <p class="dampad">Heter i Shopify: <strong>Återbetalning / Refund notification</strong></p>
+          
         </div>
-        <label class="klar"><input type="checkbox" id="klar-aterbetalning" data-klar="aterbetalning"> Inklistrad</label>
+        <label class="klar"><input type="checkbox" id="klar-aterbetalning" data-klar="aterbetalning" checked> Inklistrad 2026-09-12</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -2506,8 +2515,9 @@
         <div>
           <h3>Order annullerad</h3>
           <p class="dampad">Heter i Shopify: <strong>Order annullerad / Order cancelled</strong></p>
+          
         </div>
-        <label class="klar"><input type="checkbox" id="klar-avbruten_order" data-klar="avbruten_order"> Inklistrad</label>
+        <label class="klar"><input type="checkbox" id="klar-avbruten_order" data-klar="avbruten_order" checked> Inklistrad 2026-09-12</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -2710,7 +2720,8 @@
     });
     document.querySelectorAll('input[data-klar]').forEach(function (box) {
       var nyckel = 'mejl-klar-' + box.getAttribute('data-klar');
-      try { box.checked = localStorage.getItem(nyckel) === '1'; } catch (e) {}
+      // Förbockat ur konfigens lage vinner tills tittaren själv ändrat rutan.
+      try { var sparat = localStorage.getItem(nyckel); if (sparat !== null) box.checked = sparat === '1'; } catch (e) {}
       box.addEventListener('change', function () {
         try { localStorage.setItem(nyckel, box.checked ? '1' : '0'); } catch (e) {}
       });

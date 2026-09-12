@@ -98,7 +98,28 @@ pris eller byts en gratisprodukt: kör `/mejl` igen och klistra in på nytt.
 3. Skicka testmejl på Orderbekräftelse och kolla att koden och knappen funkar.
 4. claude.ai → Inställningar → Connectors → Shopify → Anslut igen.
 
+## Läget i Shopify (2026-09-12)
+
+Gjort av Cowork (Claude i Chrome) i Axels inloggade admin, kvällen 2026-09-12,
+bokfört i `konfig.json → lage`:
+
+- Rabattkoden **TACKIGEN** skapad och aktiv. Shopify tillåter inte "Alla
+  produkter" som köpvillkor i Köp X få Y — en automatisk kollektion **Alla
+  produkter** (pris > 0, 213 produkter) skapades och används som villkor.
+- 7 av 8 mallar inklistrade och verifierade efter omladdning. **Övergiven
+  kassa** finns inte under Notiser i butiken (Shopify Email sköter den).
+- Testmejl skickat på Orderbekräftelse.
+- Kvar: Shopify-connectorn på claude.ai, och ett riktigt köptest med koden.
+
 ## Lärdomar
+
+- **Enkla citattecken i Liquid-filter.** Texten HTML-eskapas på väg in i
+  mallen, så `default: "x"` blev `default: &quot;x&quot;` i fyra mallar och
+  fick rättas för hand vid inklistringen 2026-09-12. Nu `'x'` + ett test
+  som letar `&quot;` inuti `{{ }}`/`{% %}`.
+- **Cowork kan inte klicka inuti Artifact-sidans ram** (sandlådad iframe).
+  Bockarna "Inklistrad" sätts därför ur `konfig.json → lage.inklistrade`
+  vid bygget — den som klistrar in skriver datumet där, inte på sidan.
 
 - Den gamla orderbekräftelsen (testmejl #9999, 2026-08-25) låg bara i
   Shopify — ingen källa i repot. Den är återskapad här ur det renderade

@@ -32,6 +32,26 @@
     ],
     "dyra_antal": 3,
     "dyra_override": [],
-    "dyra_krav_lager": true
+    "dyra_krav_lager": true,
+    "kop_kollektion_handle": "alla-produkter",
+    "kop_kollektion_titel": "Alla produkter"
+  },
+  "lage": {
+    "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
+    "rabattkod_skapad": "2026-09-12",
+    "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
+    "inklistrade": {
+      "orderbekraftelse": "2026-09-12",
+      "fraktbekraftelse": "2026-09-12",
+      "fraktuppdatering": "2026-09-12",
+      "ute_for_leverans": "2026-09-12",
+      "levererad": "2026-09-12",
+      "aterbetalning": "2026-09-12",
+      "avbruten_order": "2026-09-12"
+    },
+    "hoppade_over": {
+      "overgiven_kassa": "Finns inte under Inställningar → Notiser i Bäverbutiken (mätt 2026-09-12) — sköts av Shopify Email under Marknadsföring → Automatiseringar."
+    },
+    "testmejl_skickat": "2026-09-12"
   }
 }

@@ -58,6 +58,13 @@ test('varje mall i liquid-läge: balanserade taggar, inga platshållare kvar, as
     assert.ok(!/\{\{(förnamn|ordernummer|fraktbolag|belopp)\}\}/.test(m.html), `${m.id}: platshållare kvar`);
     assert.ok(!/\{\{(förnamn|ordernummer|fraktbolag|belopp)\}\}/.test(m.amne), `${m.id}: platshållare i ämnet`);
     assert.ok(m.html.includes('kundsupport@baverbutiken.se'), `${m.id}: supportadressen`);
+    // Incident 2026-09-12: default: "fraktbolaget" blev default: &quot;fraktbolaget&quot;
+    for (const tagg of m.html.match(/\{\{[^}]*\}\}|\{%[^%]*%\}/g) ?? []) {
+      assert.ok(!tagg.includes('&quot;') && !tagg.includes('&#'), `${m.id}: HTML-eskapning inuti Liquid: ${tagg}`);
+    }
+    for (const tagg of m.amne.match(/\{\{[^}]*\}\}|\{%[^%]*%\}/g) ?? []) {
+      assert.ok(!tagg.includes('&quot;'), `${m.id}: HTML-eskapning i ämnesraden: ${tagg}`);
+    }
   }
 });
 
