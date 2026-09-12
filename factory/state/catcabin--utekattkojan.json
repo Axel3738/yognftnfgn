@@ -61,5 +61,34 @@
     "kritiska": [],
     "tid": "2026-09-11T13:23:13.465Z"
   },
-  "uppdaterad": "2026-09-11T13:23:14.280Z"
+  "uppdaterad": "2026-09-11T13:23:14.280Z",
+  "annonsfas": {
+    "kord": "2026-09-11/12",
+    "kommando": "/ny-annonser catcabin",
+    "malkonto": "915422744950975",
+    "kampanj_se": {
+      "id": "120249055514200172",
+      "namn": "CATCABIN_SE_Utekattkojan | BE-ROAS 1,62 | 2026-09-11",
+      "struktur": "CBO 1000 kr/dag, LOWEST_COST_WITHOUT_CAP, OUTCOME_SALES",
+      "status": "PAUSED",
+      "adsets": {
+        "PD": "120249055572790172",
+        "GT": "120249055577730172",
+        "SP": "120249062892670172"
+      },
+      "annonser": 12,
+      "lank": "https://catcabin.se/products/utekattkojan"
+    },
+    "kampanj_no": null,
+    "no_stoppad_for": "Butikens NO-marknad star i SEK, inte NOK. Matt mot riktiga sidan 2026-09-11: /nb svarar currency SEK. Kallans norska annonser laser upp 809 NOK. 11 kallannonser vantar i Magiborsten NO, kampanj 120252183459760233.",
+    "kon": {
+      "CS_1_H1": "krav-omdubb — talet laser upp 809 kr (butiken 789) + bara idag",
+      "CS_2_H1": "krav-omdubb — samma",
+      "CS_3_H1": "krav-omdubb — samma",
+      "CS_2_1": "bild — rod banderoll 45 grader: 24% RABATT - IDAG / Endast fa kvar i lager"
+    },
+    "kon_kraver": "Agarbeslut: ska CatCabin kora en tidsbegransad kampanj? Ja => satt butik.erbjudande.tidsbegransat + ratta priset, sedan omdubb (HeyGen 10148 krediter) + ny inbrand text.",
+    "butiken_bakom_losenord": true,
+    "far_inte_aktiveras_forran": "catcabin.se svarar utan /password OCH pixeln 1101742182294878 har avfyrat"
+  }
 }
