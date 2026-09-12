@@ -6,31 +6,30 @@ Annonser räknade ur `act_915422744950975/ads` — aldrig ur `advideos`/`adimage
 
 ```
 Källannonser:       16
-  rena              11  → ska bli 11 annonser
-  bara-copy          1  → ska bli 1 annonser
+  rena              12  → ska bli 12 annonser
+  bara-copy          0  → ska bli 0 annonser
   kräver-omdubb      3  → ska bli 3 annonser
   slutkortsbygge     1  → ska bli 1 annonser
   okänd              0  → ska INTE laddas upp
   odömd              0  → ska INTE laddas upp
   uteslutna          0  → var och en NAMNGIVEN med vad som krävs
-Uppladdade i kontot:  12  ← läst ur Meta, inte ur minnet
+Uppladdade i kontot:  13  ← läst ur Meta, inte ur minnet
 ```
 
 | Dom | Källa | Ska bli | Uppe | Saknas |
 |---|--:|--:|--:|--:|
-| `ren` | 11 | 11 | 11 | 0 |
-| `bara-copy` | 1 | 1 | 0 | 1 |
+| `ren` | 12 | 12 | 12 | 0 |
+| `bara-copy` | 0 | 0 | 0 | 0 |
 | `kräver-omdubb` | 3 | 3 | 0 | 3 |
 | `kräver-slutkortsbygge` | 1 | 1 | 1 | 0 |
 | `okänd` | 0 | 0 | 0 | 0 |
 | `odömd` | 0 | 0 | 0 | 0 |
-| **Summa** | **16** | **16** | **12** | **4** |
+| **Summa** | **16** | **16** | **13** | **3** |
 
-### Saknas i kontot — 4 st, var och en namngiven
+### Saknas i kontot — 3 st, var och en namngiven
 
 | Annons | Dom | Orsak |
 |---|---|---|
-| `Utekattkoja_CS_2_1` | bara-copy | VÄNTAR PÅ ÄGARBESLUT — bildannons med röd banderoll i 45 graders vinkel över vänstra hörnet: '24% RABATT – IDAG / Endast få kvar i lager'. OCR läste noll tecken ur den (text på sned); ögongranskningen hittade den, se brand-syn.json. Rabattsatsen 24 % stämmer faktiskt mot butikens egna priser (789 av 1039 = 24,06 %) — det är 'IDAG' och lagerlarmet som är falska. Banderollen är inbränd i fotot, så fixen är kie-reserven (bildannonser/kie.mjs) plus ny text med bildannonser/text.py, inte pipeline/oversatt-bild.py (som bara byter text i egna former). |
 | `Utekattkoja_CS_3_H1` | kräver-omdubb | VÄNTAR PÅ ÄGARBESLUT — samma som CS_1_H1, plus 'nästan slutsåld' och 'sista chansen till rabatterat pris' i både tal och inbränd text. Kräver nytt manus + omdubb + ny inbränd text. |
 | `Utekattkoja_CS_1_H1` | kräver-omdubb | VÄNTAR PÅ ÄGARBESLUT — talet läser upp 'från 1059 kronor ner till 809' (butiken säljer 789, jämförpris 1039) och lovar 'erbjudandet gäller bara idag' + 'lagret krymper'. Samma påståenden är inbrända i bilden. Kräver nytt manus + omdubb (HeyGen har 10 148 krediter) + ny inbränd text via pipeline/no-precis.py — inte en prisswap, eftersom hela vinkeln är en kampanj butiken saknar. |
 | `Utekattkoja_CS_2_H1` | kräver-omdubb | VÄNTAR PÅ ÄGARBESLUT — samma som CS_1_H1: '809 kronor istället för 1059, men bara idag' i talet och inbränt. Kräver nytt manus + omdubb + ny inbränd text. |
@@ -80,5 +79,5 @@ Uppladdade i kontot:   0  ← läst ur Meta, inte ur minnet
 ---
 
 **DELVIS KLART**
-- SE: 4 saknas: Utekattkoja_CS_2_1, Utekattkoja_CS_3_H1, Utekattkoja_CS_1_H1, Utekattkoja_CS_2_H1.
+- SE: 3 saknas: Utekattkoja_CS_3_H1, Utekattkoja_CS_1_H1, Utekattkoja_CS_2_H1.
 - NO: 11 saknas: Utekattehus_NO_PD_2, Utekattehus_NO_PD_1, Utekattehus_NO_CS_3, Utekattehus_NO_CS_1, Utekattehus_NO_PD_3, Utekattehus_NO_G_1, Utekattehus_NO_SP_1, Utekattehus_NO_SP_3, Utekattehus_NO_CS_2, Utekattehus_NO_G_2, Utekattehus_NO_SP_2.
