@@ -111,6 +111,19 @@ bokfört i `konfig.json → lage`:
 - Testmejl skickat på Orderbekräftelse.
 - Kvar: Shopify-connectorn på claude.ai, och ett riktigt köptest med koden.
 
+## Nycklarna
+
+`mejl/shopify.mjs` mintar en token via client credentials. Två appar kan
+finnas i Environments samtidigt:
+
+| Variabel | App | Behörigheter |
+|---|---|---|
+| `SHOPIFY_CLIENT_ID_SE_BAVER_SE` + `SHOPIFY_CLIENT_SECRET_SE_BAVER_SE` | Ny app, skapad av Axel 2026-09-12 | produkter, lager, publiceringar, rabatter, ordrar (läs), kunder (läs), sidor, teman, filer |
+| `SHOPIFY_CLIENT_ID_SE` + `SHOPIFY_CLIENT_SECRET_SE` | "Bäver uppladdare" (gammal) | bara produkter, lager, publiceringar |
+
+Nya namnet vinner när det finns. `SHOPIFY_SHOP_SE` är butiken för båda.
+Testa vilken som gäller: `node mejl/nyckelkoll.mjs`.
+
 ## Lärdomar
 
 - **Enkla citattecken i Liquid-filter.** Texten HTML-eskapas på väg in i

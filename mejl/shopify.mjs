@@ -26,10 +26,25 @@ export function kravProxy() {
   }
 }
 
+// Den nya appen (2026-09-12, alla scopes) ligger under `_SE_BAVER_SE`-namnen
+// — Axels namnval, så den gamla "Bäver uppladdare" kan ligga kvar orörd. Nya
+// namnet vinner när det finns, annars det gamla.
+export const NYCKELNAMN = {
+  id: ['SHOPIFY_CLIENT_ID_SE_BAVER_SE', 'SHOPIFY_CLIENT_ID_SE'],
+  secret: ['SHOPIFY_CLIENT_SECRET_SE_BAVER_SE', 'SHOPIFY_CLIENT_SECRET_SE'],
+};
+const forsta = (env, namn) => namn.map((n) => env[n]).find((v) => v && String(v).trim());
+
 export function kravEnv(env = process.env) {
-  const saknas = ['SHOPIFY_SHOP_SE', 'SHOPIFY_CLIENT_ID_SE', 'SHOPIFY_CLIENT_SECRET_SE'].filter((n) => !env[n]);
+  const id = forsta(env, NYCKELNAMN.id);
+  const secret = forsta(env, NYCKELNAMN.secret);
+  const saknas = [
+    env.SHOPIFY_SHOP_SE ? null : 'SHOPIFY_SHOP_SE',
+    id ? null : NYCKELNAMN.id.join(' eller '),
+    secret ? null : NYCKELNAMN.secret.join(' eller '),
+  ].filter(Boolean);
   if (saknas.length) throw new Error(`Saknade miljövariabler: ${saknas.join(', ')}`);
-  return { shop: env.SHOPIFY_SHOP_SE, id: env.SHOPIFY_CLIENT_ID_SE, secret: env.SHOPIFY_CLIENT_SECRET_SE };
+  return { shop: env.SHOPIFY_SHOP_SE, id, secret, nyApp: Boolean(env.SHOPIFY_CLIENT_SECRET_SE_BAVER_SE) };
 }
 
 let tokenCache = null;
