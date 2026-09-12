@@ -74,21 +74,23 @@
       "adsets": {
         "PD": "120249055572790172",
         "GT": "120249055577730172",
-        "SP": "120249062892670172"
+        "SP": "120249062892670172",
+        "CS": "120249066448670172"
       },
-      "annonser": 12,
+      "annonser": 13,
       "lank": "https://catcabin.se/products/utekattkojan"
     },
     "kampanj_no": null,
     "no_stoppad_for": "Butikens NO-marknad star i SEK, inte NOK. Matt mot riktiga sidan 2026-09-11: /nb svarar currency SEK. Kallans norska annonser laser upp 809 NOK. 11 kallannonser vantar i Magiborsten NO, kampanj 120252183459760233.",
     "kon": {
-      "CS_1_H1": "krav-omdubb — talet laser upp 809 kr (butiken 789) + bara idag",
-      "CS_2_H1": "krav-omdubb — samma",
-      "CS_3_H1": "krav-omdubb — samma",
-      "CS_2_1": "bild — rod banderoll 45 grader: 24% RABATT - IDAG / Endast fa kvar i lager"
+      "CS_1_H1": "omdubb — bara priset (809 vs 789), vinkeln ar sann sedan Axels beslut 2026-09-12",
+      "CS_2_H1": "samma",
+      "CS_3_H1": "samma"
     },
-    "kon_kraver": "Agarbeslut: ska CatCabin kora en tidsbegransad kampanj? Ja => satt butik.erbjudande.tidsbegransat + ratta priset, sedan omdubb (HeyGen 10148 krediter) + ny inbrand text.",
-    "butiken_bakom_losenord": true,
-    "far_inte_aktiveras_forran": "catcabin.se svarar utan /password OCH pixeln 1101742182294878 har avfyrat"
+    "kon_kraver": "Dubba om prisrepliken (HeyGen) + byt inbrand pristext. Alternativ utan krediter: satt butikens pris till 809/1059 som Baverbutiken.",
+    "butiken_bakom_losenord": false,
+    "far_inte_aktiveras_forran": "Pixeln 1101742182294878 har avfyrat (last_fired_time ar tomt 2026-09-12 = WeTracked inte kopplat)",
+    "butiken_oppen_verifierad": "2026-09-12 — catcabin.se svarar 200, produktsidan visar 789,00 kr",
+    "pixeln_har_avfyrat": false
   }
 }

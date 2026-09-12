@@ -286,11 +286,12 @@ meta:
   # produkten med (factory/state/catcabin--utekattkojan.json → produkt.handle
   # "utekattkojan"), inte en gissning, och följer samma mönster som TankGuard
   # (tankguard.se/products/tankoverdraget i factory/bygg-tankguard.mjs).
-  # ⚠️ INTE verifierad i kundvyn 2026-09-11: butiken ligger bakom
-  # storefront-lösenordet, och varje /products/-anrop redirectas till
-  # /password med byte-identiskt svar — en existerande och en påhittad handle
-  # går alltså inte att skilja åt utifrån. Första punkten i granskningslistan
-  # när lösenordet är borta.
+  # ✅ VERIFIERAD i kundvyn 2026-09-12, sedan Axel tagit bort storefront-
+  # lösenordet: sidan svarar 200 utan redirect, nämner produkten, och visar
+  # 789,00 kr — samma tal som annonserna bygger på.
+  # (2026-09-11 gick den inte att verifiera: bakom lösenordet redirectades varje
+  # /products/-anrop till /password med byte-identiskt svar, så en existerande
+  # och en påhittad handle såg likadana ut utifrån.)
   produkt_url: "https://catcabin.se/products/utekattkojan"
   produkt_url_no: "https://catcabin.se/nb/products/utekattkojan"
   vinklar:
