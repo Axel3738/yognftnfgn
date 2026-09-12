@@ -1,0 +1,301 @@
+# CatCabin — produkt 1: Isolerad Utekattkoja på Ben.
+# Källa: baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus
+# Specs, pris och recensioner lästa ur källan 2026-09-11. Bilderna är facit
+# (leverantörens genomskärning + Bäverbutikens infografik): stativ i metall
+# med fyra ben, sadeltak i Oxford-tyg som skjuter ut över den välvda ingången,
+# flik i öppningen, isolerade väggar, lös liggmatta, hopfällbar, tre färger.
+# Okänt och därför aldrig påstått: mått i cm, vikt, isoleringens material,
+# temperaturklass, "vattentät", maxstorlek på katt.
+#
+# Copyn (svenska) skrevs 2026-09-11 av en subagent (sonnet) ur
+# output/catcabin/BRAND.md + docs/copy-regler.md; vinkel, målgrupp och
+# struktur är huvudsessionens.
+
+produkt:
+  namn: "Isolerad Utekattkoja på Ben – Upphöjd Från Kall och Blöt Mark"
+  id: "utekattkojan"
+  menynamn: "Kattkojan"
+
+brand:
+  namn: "CatCabin"
+  domanideer:
+    # RDAP via rdap.org 2026-09-11: båda 404 = lediga, ingen A-post i DNS.
+    - "catcabin.se"
+    - "catcabin.no"
+
+ekonomi:
+  # MOMSEN: räknas UTAN moms (produktmallen, Axels besked 2026-09-09 — samma
+  # regel som Bäverbutiken och Grillkliniken). Marginalen räknas rakt på
+  # priset. ⚠️ Öppet ägarbeslut i factory/BESLUT-VANTAR.md punkt 1 —
+  # ekonomi.mjs skriver alltid ut båda linjerna (utan moms BE-ROAS 1,62,
+  # med moms 2,40).
+  moms_antagen: false
+  # ⚠️ HÄRLEDD, inte kvitterad: källkampanjens namn bär "BE ROAS 1.62" och
+  # docs/temu-launch-flow.md säger BE-ROAS = pris / (pris − inköp) ⇒
+  # 789 − 789/1,62 = 302 kr. Axel bekräftar mot Temu-kvittot innan talet får
+  # döma annonser.
+  inkopskostnad: 302
+  # Samma pris som källan. Priset ändras INTE i OPS-butiken: /ny-annonser
+  # brand-swappar källans creatives, och ett annat pris gör varje inbränd
+  # prisrad i annonserna fel.
+  pris: 789
+  jamforpris: 1039
+
+varianter:
+  # Tre färger på källan, samma SKU-stam. Bilderna visar den grå.
+  - namn: "Grå"
+    sku: "TEMU-5030003647894-GR"
+  - namn: "Gräsgrön"
+    sku: "TEMU-5030003647894-GG"
+  - namn: "Svart"
+    sku: "TEMU-5030003647894-SV"
+
+media:
+  # Galleriet i källans ordning. Infografiken och färgbilden bär SVENSK text
+  # (Bäverbutikens egna) och märks [SV] så de döljs på /nb — norska versioner
+  # görs i fas 4 (kie rensar text, bildtext.mjs lägger norsk vektortext).
+  # Regn-, kvälls- och snöbilderna är AI-illustrationer — källan skriver det
+  # själv, och alt-texten säger det.
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
+      alt: "Isolerad utekattkoja i grått Oxford-tyg med sadeltak, upphöjd på svart metallstativ med fyra ben, liggmatta i silvergrått bredvid"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-regn.jpg"
+      alt: "AI-illustration: utekattkojan i regn på en altan, taket skjuter ut över den välvda ingången"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-fakta.jpg"
+      alt: "[SV] Infografik över utekattkojans egenskaper: står på ben, sadeltak i Oxford-tyg, isolerade väggar, öppning med flik, lös liggmatta, hopfällbar"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg"
+      alt: "AI-illustration: katt som sover inne i den isolerade utekattkojan på stativet, kväll med tänt köksfönster"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sno.jpg"
+      alt: "AI-illustration: utekattkojan i snö, upphöjd på stativet ovanför den kalla marken"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-farger.jpg"
+      alt: "[SV] Kojans tre färger: grå, gräsgrön och svart – bilderna på sidan visar den grå"
+  videor:
+  # ⚠️ Demot ska vara en MP4 (Axel 2026-09-09). MP4:an är gjord
+  # (output/utekattkojan/catcabin-regn-demo.mp4, 165 kB, 5 s loop) men Shopify
+  # Files tar inga videor på trial (mätt 2026-09-10, API-GRANSER.md). Källans
+  # GIF bär demot tills ägaren valt plan — då:
+  # node factory/filer.mjs factory/output/utekattkojan/catcabin-regn-demo.mp4 + --igen metafalt.
+  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-regn.gif"
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
+  # Lifestylebilden är en AI-genererad illustration (kvällen) — alt-texten
+  # säger det, och det ska stå kvar i kundvyn.
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg"
+
+beskrivning:
+  # problem_rubrik är ordagrant top spenderns vinkel (Utekattkoja_PD_2_H1).
+  problem_rubrik: "Katten sover under bilen igen"
+  problem_text: "Det regnar, och katten är inte i trädgården. Den ligger under bilen igen, den enda torra platsen den känner till."
+  losning_rubrik: "Tak, väggar, en flik mot vinden"
+  losning_text: "Kojan står upphöjd på fyra ben, med ett sadeltak som leder bort regnet och en flik vid dörren som håller ute draget. Väggarna är isolerade, så värmen katten själv ger stannar inne."
+
+vinkel:
+  # INTERNT — syns aldrig för kund. Källa: MagiBorsten-kampanjen
+  # 120250147309170291 (16 annonser, 2 760 kr / 9 köp / ROAS 2,57 på två dygn,
+  # avläst 2026-09-11). Utekattkoja_PD_2_H1 är top spender: 1 453 kr, 4 köp,
+  # ROAS 2,17 mot BE 1,62 — den enda annonsen över 300 kr/3 köp och därmed
+  # den enda som får dömas (CLAUDE.md regel 3). SP_3_H1: 524 kr / 2 köp /
+  # ROAS 3,01 — lovande men under domgränsen.
+  huvudvinkel: "Problemet först — katten sover under bilen, under altanen eller på en kall betongtrapp; kojan är kattens egen torra plats, upphöjd från marken och i lä. Källa: Utekattkoja_PD_2_H1 i MagiBorsten (1 453 kr, 4 köp, ROAS 2,17 mot BE 1,62, 2026-09-09–11)."
+  underrubrik: "Upphöjd från marken, med tak, isolerade väggar och en flik för dörren"
+  usp: "Ben, tak, isolerade väggar"
+
+malgrupp:
+  beskrivning: "Kattägare med utekatt och tomt — villa, radhus eller landet — 30–65 år, i Sverige och Norge. Ser katten smita in under altanen när det regnar eller ligga hoprullad på en kall betongtrapp, och står i köksfönstret på kvällen och undrar var den tog vägen. Säger 'utekatt', 'katten', 'kojan', 'under bilen'. Sekundärt: den som matar en hemlös katt som dyker upp i trädgården. Vill kunna se från fönstret att katten ligger torrt."
+
+problem:
+  - "Katten smiter in under bilen när det regnar"
+  - "Kall betongtrappa i stället för en egen plats"
+  - "Inget skydd mot vinden vid dörren"
+  - "Du ser inte var katten är när kvällen blir kall"
+
+benefits:
+  - "Katten har en egen torr plats, inte bilen"
+  - "Du ser kojan från köksfönstret och vet att katten är i lä"
+  - "Värmen katten själv ger stannar inne i väggarna"
+  - "Ingen el, ingen sladd ut till trädgården"
+  - "Kojan fälls ihop och tar liten plats i förrådet på sommaren"
+
+features:
+  - "Stativ i metall med fyra ben, upphöjt från marken"
+  - "Sadeltak i Oxford-tyg, vattnet rinner av"
+  - "Flik vid ingången som bromsar draget"
+  - "Isolerade väggar, ingen el eller värmare"
+  - "Lös liggmatta som går att ta ut och skaka"
+  - "Hopfällbar för förvaring"
+  - "Tre färger: grå, gräsgrön och svart"
+
+offer:
+  beskrivning: "789 kr i stället för 1 039 kr. Fri frakt till Sverige och Norge, 14 dagars ångerrätt enligt svensk lag och leverans på 5 till 10 arbetsdagar."
+  bundle: "2-pack — 15 % rabatt (förvald, 'Mest populär'). 3-pack — 20 % rabatt. Exakt källans Kaching-nivåer (output/utekattkojan/kalla-kaching-paket.json) = fabrikens standard-A."
+  # A = källans Kaching-nivåer (identiska med paket.mjs NIVAER.a), B = ett
+  # steg djupare rabatt. Inga egna nivåer behövs — mitten förvald.
+  # ⚠️ Rabattkoderna lagras i butikens valuta — butiken står på PHP (trial),
+  # paketsteget vägrar tills valutan är SEK (checklistans avsnitt 2).
+  paket:
+    test: "paket"
+  # Q4-ramverket: gratis bonus i paketen + betald korg-upsell.
+  # ⚠️ Bäverbutiken har ingen billig kattprodukt (186 produkter, enda
+  # husdjursraderna är hundmattan 459 kr och kojan själv) och ingen hittas på —
+  # Axel väljer (en värmedyna eller en extra liggmatta vore naturligt). Tills
+  # dess är bonus-steget manuellt och paketen körs utan gratisdel.
+  bonus_produkt:
+    titel: ""
+    handle: ""
+    produkt_id: ""
+    variant_id: ""
+    pris: 0
+    i_paket: ""
+    tillagg_kryssruta: true
+    kortnamn: ""
+    sku: ""
+    bilder:
+      - ""
+
+reviews:
+  # 10 riktiga recensioner ur källproduktens Judge.me 2026-09-11 (snitt 5,00).
+  # Namn, titlar och texter är källans egna (output/utekattkojan/kalla-recensioner.json).
+  # ⚠️ DATUMEN: alla tio har created_at 2026-09-08 (22:48:20–31 UTC) — källan
+  # API-importerade dem samma minut, så det är källans originaldatum, inte
+  # kunddatum. Inget hittas på.
+  - namn: "Karin"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Enkel, praktisk och mysig för katten."
+    datum: "2026-09-08"
+  - namn: "Erik"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Skönt att katten har en torr plats ute."
+    datum: "2026-09-08"
+  - namn: "Linda"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Katten tycker mycket om den. Väldigt nöjd."
+    datum: "2026-09-08"
+  - namn: "Anders"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Bra kvalitet och enkel att sätta på plats."
+    datum: "2026-09-08"
+  - namn: "Sofia"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Mysig liten koja som känns bra att ha ute."
+    datum: "2026-09-08"
+  - namn: "Emma"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Katten har börjat sova i den varje dag."
+    datum: "2026-09-08"
+  - namn: "Johan"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Lätt att använda och lagom stor för katten."
+    datum: "2026-09-08"
+  - namn: "Maria"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Bra skydd mot vind och regn. Katten trivs."
+    datum: "2026-09-08"
+  - namn: "Lars"
+    betyg: 5
+    titel: "Bra koja"
+    text: "En enkel och bra koja för katten ute."
+    datum: "2026-09-08"
+  - namn: "Anna"
+    betyg: 5
+    titel: "Bra koja"
+    text: "Katten gillar den direkt. Känns varm och mysig."
+    datum: "2026-09-08"
+
+faq:
+  # Ingen storleksfråga — måtten är okända och påstås inte.
+  - fraga: "Behöver kojan el?"
+    svar: "Nej. Väggarna är isolerade och behåller värmen katten själv avger."
+  - fraga: "Håller den värmen på vintern?"
+    svar: "Kojan är isolerad och upphöjd från marken, så kylan från underlaget hålls borta. Värmen kommer från katten själv, ingen el behövs."
+  - fraga: "Vad händer när det regnar?"
+    svar: "Sadeltaket skjuter ut över ingången och leder bort vattnet, och fliken vid dörren bromsar draget."
+  - fraga: "Hur förvarar jag den på sommaren?"
+    svar: "Kojan är hopfällbar och tar liten plats i förrådet till nästa säsong."
+  - fraga: "Vad gäller om jag ångrar mitt köp?"
+    svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@catcabin.se."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+leverantor:
+  # ⚠️ Härledd ur källans SKU (TEMU-5030003647894-<färg>). Id:t har 13 siffror
+  # — ett annat format än de andra produkternas 15 — och goods.html med det
+  # id:t svarar 200 men sidan säger "discontinued" (mätt 2026-09-11). Länken
+  # är oförifierad: Axel måste hitta rätt leverantörslänk före inköp.
+  url: "https://www.temu.com/goods.html?goods_id=5030003647894"
+  anteckning: "Ur källans SKU TEMU-5030003647894. Temu-sidan svarar 'discontinued' (mätt 2026-09-11) — troligen fel id-format. Ledtid och MOQ ej verifierade."
+
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16516655382877"
+  produkt_handle: "isolerad-utekattkoja-torr-och-vindtat-plats-utomhus"
+  produkt_url: "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus"
+  annonskonto: "1867947880635861"
+  # Läst ur kontot 2026-09-11: 16 annonser ACTIVE, alla "Utekattkoja_<vinkel>_<n>_<hook>"
+  # (vinklar PD, SP, GT, CS).
+  annonsprefix: "Utekattkoja"
+  kampanj_id: "120250147309170291"
+  kampanj: "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09"
+  # NO-kampanjen heter något HELT annat än den svenska (produktnamnet är
+  # översatt), så mönstret måste stå här. Läst ur Magiborsten NO 2026-09-11:
+  # kampanj 120252183459760233 "Isolert Utekattehus NO | BE-ROAS 1,62 |
+  # 2026-09-11", 11 annonser ACTIVE med prefix "Utekattehus_NO_".
+  # ⚠️ Utan fältet föll kallannonser.mjs förr tillbaka på DryTreks mönster
+  # (gamasj|damask) och läste FEL produkts kampanj — 16 rader, 0 ACTIVE,
+  # och den norska halvan såg tom ut. Fallbacken är borttagen 2026-09-11.
+  no_kampanjmonster: "Isolert Utekattehus"
+  no_annonsprefix: "Utekattehus"
+  no_kampanj_id: "120252183459760233"
+  # Transkripten FANNS inte 2026-09-11 förmiddag (bara de norska i srt-fixed/).
+  # De svenska källvideorna transkriberades lokalt samma dag med faster-whisper
+  # (base, sv, 0 krediter) till srt-orig/utekattkoja_<koncept>_<n>.orig.srt, så
+  # yta 2 går att döma. ⚠️ base-modellen hör tal ostadigt: den gav 1059, 1559
+  # och 1599 som jämförpris i de tre CS-videorna. Det UPPLÄSTA priset 899 är
+  # däremot samstämmigt i alla tre och är det som domen vilar på.
+  srt_slug:
+    - "utekattkoja"
+
+kallor:
+  drive_mapp: ""
+
+meta:
+  # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
+  # 1867947880635861 (Bäverbutiken, källan).
+  ad_account_id: "915422744950975"
+  # Sidan "CatCabin" skapad av Axel 2026-09-11; verifierad i MagiBorsten-
+  # företagets owned_pages OCH i me/accounts (client_pages: ingen träff, det är
+  # en ägd sida).
+  page_id: "1353362171174302"
+  pixel_id: "1101742182294878"
+  # Prefixet är PER PRODUKT (FLERPRODUKT.md fynd 1). Källan använder
+  # "Utekattkoja_" — samma prefix här hade kolliderat i prefixkartan,
+  # översättningskön, adsetuppslaget och commission-kopplingen med
+  # Bäverbutikens annonser. Brandet duger som prefix så länge butiken säljer
+  # en produkt; läggs en andra annonserad produkt in delas prefixet upp först
+  # (samma anmärkning som TankGuard).
+  creative_prefix: "CatCabin"
+  testbudget_per_dag: 1000
+  # Landningssidan annonserna pekar på. Handlen är den kedjan SJÄLV skapade
+  # produkten med (factory/state/catcabin--utekattkojan.json → produkt.handle
+  # "utekattkojan"), inte en gissning, och följer samma mönster som TankGuard
+  # (tankguard.se/products/tankoverdraget i factory/bygg-tankguard.mjs).
+  # ✅ VERIFIERAD i kundvyn 2026-09-12, sedan Axel tagit bort storefront-
+  # lösenordet: sidan svarar 200 utan redirect, nämner produkten, och visar
+  # 789,00 kr — samma tal som annonserna bygger på.
+  # (2026-09-11 gick den inte att verifiera: bakom lösenordet redirectades varje
+  # /products/-anrop till /password med byte-identiskt svar, så en existerande
+  # och en påhittad handle såg likadana ut utifrån.)
+  produkt_url: "https://catcabin.se/products/utekattkojan"
+  produkt_url_no: "https://catcabin.se/nb/products/utekattkojan"
+  vinklar:
+    - "PD — Katten sover under bilen igen – kojan ger den en egen torr plats (BEVISAD: Utekattkoja_PD_2_H1, 1 453 kr / 4 köp / ROAS 2,17 mot BE 1,62)"
+    - "SP — 10 av 10 recensioner, 5 stjärnor: katten har börjat sova i den varje dag (SP_3_H1: 524 kr / 2 köp / ROAS 3,01 — under domgränsen)"
+    - "PD — Upphöjd från kall mark, tak som leder bort regnet"
+    - "PD — Ingen el. Väggarna behåller värmen katten själv ger"

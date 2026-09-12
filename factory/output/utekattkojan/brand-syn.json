@@ -1,0 +1,52 @@
+{
+  "produkt": "utekattkojan",
+  "datum": "2026-09-11",
+  "metod": "Ögongranskning av de fyra bildannonserna i full upplösning plus slutframen på de två top spenders (PD_2_H1 frame_076, SP_3_H1 frame_064). Gjord i samma session som OCR-passet, på exakt samma filer.",
+  "varfor": "OCR läser inte text som ligger på sned. Utekattkoja_CS_2_1 bär en röd säljbanderoll i 45 graders vinkel över vänstra hörnet — RapidOCR returnerade ingenting för den, och annonsen fick domen bara-copy när den i själva verket bär ett tidsbegränsat erbjudande INBRÄNT i bilden. Det är samma sorts tysta friande som HeimGuard-bakläxan, bara med en annan orsak: där saknades en regel, här ser maskinen inte texten alls.",
+  "annonser": {
+    "Utekattkoja_CS_2_1": {
+      "yta4": {
+        "syns": false,
+        "var": "inbränd text, röd banderoll 45° över vänstra övre hörnet",
+        "ordagrant": "24% RABATT – IDAG / Endast få kvar i lager",
+        "fil": "Utekattkoja_CS_2_1.jpg",
+        "logotyp_utan_text": false,
+        "notis": "OMPRÖVAD 2026-09-12 efter Axels beslut: CatCabin kör ett tidsbegränsat erbjudande, exakt som Bäverbutiken (butik.erbjudande.tidsbegransat: true). Banderollen är därmed SANN på båda punkterna — rabattsatsen 24 % stämmer mot butikens egna priser (789 av 1039 = 24,06 %), och 'IDAG' + lagerlarmet är en kampanj butiken faktiskt kör. Inget pris står i banderollen, så den behöver ingen prisändring. Fyndet var korrekt när det gjordes 2026-09-11 (butiken hade då ingen kampanj) — ägarbeslutet ändrade förutsättningen, inte läsningen. OCR läste fortfarande noll tecken ur den: text på sned kräver ett öga."
+      }
+    },
+    "Utekattkoja_PD_2_1": {
+      "yta4": {
+        "syns": false,
+        "notis": "Ögonläst: 'FRYSER DIN KATT UTE? INTE LÄNGRE.' Inget pris, ingen butik, inga villkor. Domen ren stämmer."
+      }
+    },
+    "Utekattkoja_GT_2_1": {
+      "yta4": {
+        "syns": false,
+        "notis": "Ögonläst: 'DEN PERFEKTA PRESENTEN TILL KATTÄLSKAREN I DITT LIV' + 'GE BORT VÄRME I VINTER'. Inget pris, ingen butik, inga villkor. Domen ren stämmer."
+      }
+    },
+    "Utekattkoja_SP_2_1": {
+      "yta4": {
+        "syns": true,
+        "var": "inbränd text, vit platta i botten, rad 3",
+        "ordagrant": "30 dagars öppet köp – helt riskfritt",
+        "fil": "Utekattkoja_SP_2_1.jpg",
+        "logotyp_utan_text": false,
+        "notis": "Fångades även av OCR + villkorsregeln (källan 30 dagar, butiken 14). Raden är utbytt mot '14 dagars ångerrätt – enligt svensk lag' i factory/output/utekattkojan/bildfix/ med QA före/efter. Citatet, attributionen och HANDLA NU-knappen är orörda."
+      }
+    },
+    "Utekattkoja_PD_2_H1": {
+      "yta3": {
+        "syns": false,
+        "notis": "Slutframen (frame_076, 22,8 s) är produktbild med caption 'som sommar.' — inget slutkort, ingen logotyp, inget pris. Domen ren stämmer för kontots top spender."
+      }
+    },
+    "Utekattkoja_SP_3_H1": {
+      "yta3": {
+        "syns": false,
+        "notis": "Slutframen (frame_064, 19,2 s) är svart med caption 'här inför vintern.' — inget slutkort, ingen logotyp, inget pris. Domen ren stämmer."
+      }
+    }
+  }
+}

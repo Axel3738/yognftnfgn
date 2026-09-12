@@ -107,17 +107,28 @@ if (process.argv[1] && process.argv[1].endsWith('media-upload.mjs')) {
   let hoppade = 0;
   for (const a of kandidater) {
     const dom = domAv.get(a.namn) ?? 'okänd';
-    if (dom !== 'ren') {
+    // En ÅTGÄRDAD fil i output/<id>/bildfix/ vinner över domen. Domen speglar
+    // KÄLLAN och ska stå kvar som historik — men steg 4 i /ny-annonser säger
+    // "utesluten är inte klar: en annons som bär källans villkor ska FIXAS,
+    // inte slängas". Fram till 2026-09-11 fanns ingen väg in för den fixade
+    // filen, så allt utom `ren` föll ur bygget hur väl det än var åtgärdat.
+    const atgardad = ['jpg', 'png', 'mp4']
+      .map((e) => join(ROT, 'output', produktId, 'bildfix', `${a.namn}.${e}`))
+      .find((f) => existsSync(f));
+    if (dom !== 'ren' && !atgardad) {
       console.log(`   ⏭  ${a.namn}: dom "${dom}" — laddas INTE upp`);
       hoppade++;
       continue;
+    }
+    if (dom !== 'ren' && atgardad) {
+      console.log(`   🛠  ${a.namn}: dom "${dom}" men åtgärdad fil finns — laddar upp den fixade`);
     }
     if (redan[a.namn]) {
       console.log(`   ♻️  ${a.namn}: redan uppe (${redan[a.namn].typ} ${redan[a.namn].id})`);
       uppe++;
       continue;
     }
-    const fil = join(mediaMapp, `${a.namn}.${a.typ === 'video' ? 'mp4' : 'jpg'}`);
+    const fil = atgardad || join(mediaMapp, `${a.namn}.${a.typ === 'video' ? 'mp4' : 'jpg'}`);
     if (!existsSync(fil)) {
       console.log(`   ❌ ${a.namn}: filen saknas lokalt (${fil}) — kör brand-detektorn med --hamta`);
       hoppade++;

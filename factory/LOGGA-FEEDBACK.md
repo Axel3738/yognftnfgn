@@ -13,3 +13,4 @@ Varianterna: **a** = ordmärket på mörk platta med motivet ovanför ·
 |---|---|---|---|---|
 | 2026-09-10 | tacklebay | c | horisont | Axel: "Jag gillar att det var liv i den" — vågorna och tvåradiga ordmärket ger rörelse; A (sigill) och B (kroken ensam) upplevdes stilla. |
 | 2026-09-10 | carashell | c | tak | Axel: C var den mest neutrala — de andra två (a emblem, b sigill med takmotivet) kändes inte passa produkten. |
+| 2026-09-11 | catcabin | c | koja | Axel: 'C because it's the most neutral of the two' — motivet stort med ordmärket litet under upplevdes neutralast; A (emblem med tagline) och B (ljust sigill, två rader) valdes bort. |

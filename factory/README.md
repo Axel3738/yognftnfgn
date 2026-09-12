@@ -88,7 +88,7 @@ Kedjans moduler (ägartabellen i KEDJAN.md) — en modul per funktion:
 | `shopify.mjs` | Admin GraphQL-klienten: produkt, sidor, meny, kollektion, teman, frakt, metafält | — |
 | `filer.mjs` | Bilder → `shopify://shop_images/<lagrat namn.ext>`, idempotent på filnamn. Video (`.mp4`) → transkodad CDN-URL (`laddaUppVideo`) — ⚠️ går inte på trial (API-GRANSER.md) | `node factory/filer.mjs <url-eller-fil> …` |
 | `logga.mjs` | Steg 5: logga + favicon in i temat, tillbakaläst på värde | `node factory/logga.mjs <logga.png> [--favicon <fil>] [--bredd 140] [--tema <id>]` |
-| `logga-generera.mjs` | Tre runda loggvarianter (valfritt verktyg, **sharp**, säger ifrån utan). Motiv ovanför ordmärket: `droppe` (standard), `lucka` (kalenderlucka, AdventLane) eller `ingen` | `node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--tagline "…"] [--motiv droppe\|lucka\|ingen]` |
+| `logga-generera.mjs` | Tre runda loggvarianter (valfritt verktyg, **sharp**, säger ifrån utan). Motiv ovanför ordmärket: `droppe` (standard), `lucka` (kalenderlucka, AdventLane), `koja` (utekattkoja på ben med tänd dörr, CatCabin) eller `ingen`. Med ett eget motiv blir variant c motivet stort + ordmärket litet (monogrammet valdes aldrig) | `node factory/logga-generera.mjs factory/butiker/<butik>.yaml [--ut <mapp>] [--tagline "…"] [--motiv droppe\|lucka\|koja\|ingen]` |
 | `bildtext.mjs` | Vektortext på bild, [SV]/[NO] (valfritt verktyg, **sharp**) | `node factory/bildtext.mjs <in> <ut> --spec <json>` |
 | `branding.mjs` | Steg 2: brand-CSS, settings-patch (`cart_type: drawer`), `STJARNFARG` | — |
 | `tema.mjs` | Steg 3: opf-sektioner, `TEMAFILER`, produktmall (A/B-block, tilläggs-kryssruta), header-group, `rensaSettings`, gallerifilter, `patchaMsPaket`, korg-upsell | — |

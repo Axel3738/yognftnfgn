@@ -39,7 +39,10 @@ butik:
   # skannar de översatta sidorna efter exakt de här orden; ingen lista finns
   # i koden ("överdrag" är TankGuards ord, inte varje butiks — KEDJAN.md
   # regel 7). Utan listan hoppas skanningen över och rapporteras som manuell,
-  # aldrig som grön. Ord som är lika på målspråket filtreras bort av sig själva.
+  # aldrig som grön. Ett ord som är ett HELT värde lika på målspråket ("Köp nu"
+  # när nb också säger "Köp nu") filtreras bort — men ett ord inne i en mening
+  # gör det inte (CatCabin 2026-09-11: "utekatt" flaggades fast norskan är
+  # samma). Lista bara ord som faktiskt skiljer sig på målspråket.
   markorer_sv:
     - "Köp nu"
     - "Fri frakt"

@@ -1,0 +1,62 @@
+{
+  "Utekattkoja_PD_2_H1": {
+    "typ": "video_id",
+    "id": "2337220423777981",
+    "namn": "CATCABIN_Utekattkoja_PD_2_H1"
+  },
+  "Utekattkoja_SP_3_H1": {
+    "typ": "video_id",
+    "id": "1097582452634709",
+    "namn": "CATCABIN_Utekattkoja_SP_3_H1"
+  },
+  "Utekattkoja_PD_2_1": {
+    "typ": "image_hash",
+    "id": "d3ecce82d37d9c962fa6dc9745ae95f0",
+    "namn": "CATCABIN_Utekattkoja_PD_2_1"
+  },
+  "Utekattkoja_GT_2_1": {
+    "typ": "image_hash",
+    "id": "03a1127ed80a523255842ae862752def",
+    "namn": "CATCABIN_Utekattkoja_GT_2_1"
+  },
+  "Utekattkoja_PD_1_H1": {
+    "typ": "video_id",
+    "id": "1092327190426857",
+    "namn": "CATCABIN_Utekattkoja_PD_1_H1"
+  },
+  "Utekattkoja_PD_3_H1": {
+    "typ": "video_id",
+    "id": "1765002691289946",
+    "namn": "CATCABIN_Utekattkoja_PD_3_H1"
+  },
+  "Utekattkoja_SP_1_H1": {
+    "typ": "video_id",
+    "id": "1057072633799044",
+    "namn": "CATCABIN_Utekattkoja_SP_1_H1"
+  },
+  "Utekattkoja_SP_2_H1": {
+    "typ": "video_id",
+    "id": "2849060678803019",
+    "namn": "CATCABIN_Utekattkoja_SP_2_H1"
+  },
+  "Utekattkoja_GT_1_H1": {
+    "typ": "video_id",
+    "id": "1779407866531919",
+    "namn": "CATCABIN_Utekattkoja_GT_1_H1"
+  },
+  "Utekattkoja_SP_2_1": {
+    "typ": "image_hash",
+    "id": "6a5669222fa763614a310e60c27a2fb2",
+    "namn": "CATCABIN_Utekattkoja_SP_2_1"
+  },
+  "Utekattkoja_GT_3_H1": {
+    "typ": "video_id",
+    "id": "1625901902575861",
+    "namn": "CATCABIN_Utekattkoja_GT_3_H1"
+  },
+  "Utekattkoja_GT_2_H1": {
+    "typ": "video_id",
+    "id": "1769068164239596",
+    "namn": "CATCABIN_Utekattkoja_GT_2_H1"
+  }
+}

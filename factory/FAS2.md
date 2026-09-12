@@ -52,6 +52,83 @@ Gör det tidigt, med EN annons, innan 23 videor laddas upp i onödan.
 
 ---
 
+## ⚠️ CatCabin 2026-09-11 — sjätte ytan hade aldrig larmat, på någon butik
+
+Fyra fel i rad gjorde att `/ny-annonser catcabin` först rapporterade **"ren: 16"**
+på 16 källannonser. Tre av dem läser upp "från 1059 kronor ner till 809" medan
+butiken säljer för 789, och en fjärde bär källans "30 dagars öppet köp" inbränt
+medan butiken ger 14. Spärren som byggdes efter HeimGuard-bakläxan friade alltså
+precis det den skrevs för att fånga. Läs det här innan du litar på en `ren`-dom.
+
+1. **`läsButik()` returnerade `?.butik`** — men `frakt:` och `retur:` ligger på
+   TOPPNIVÅ i butiksfilen, som syskon till `butik:`. Reglerna läser
+   `butik.frakt.fri_globalt` och `butik.retur.oppet_kop_dagar`; båda var alltid
+   `undefined`. Fraktgräns, öppet köp, ångerrätt och leveranstid har därför
+   **aldrig kunnat fällas, för någon butik**. Inget larm syntes heller — butiken
+   HITTADES ju. Nu returneras roten, och en butik utan `frakt`/`retur` säger det.
+2. **Ingen prisregel fanns.** Ett belopp jämfördes aldrig mot `ekonomi.pris`.
+   `prisfynd()` gör det nu — och plockar även det nakna talet i en prisreplik
+   ("ner till 809"), som är exakt det tal kunden lovas.
+3. **Inget fångade tidsbegränsade kampanjer.** "Bara i dag", "sista chansen",
+   "lagret krymper" följer med creativen till en butik utan kampanj och blir då
+   falska. `erbjudandefynd()`, tyst när `butik.erbjudande.tidsbegransat`.
+4. **Reglerna krävde perfekta tecken.** OCR läste "30 dagars oppet kop" utan ö
+   och gick förbi `öppet\s*köp`. All matchning normaliseras nu (å/ä/ö → a/a/o).
+
+**Tre saker till, som kostade tid:**
+
+* **`kallannonser.mjs` föll tillbaka på DryTreks NO-mönster** (`gamasj|damask`)
+  när `kalla.no_kampanjmonster` saknades — och INGEN produktfil satte fältet.
+  Varje körning läste alltså DryTreks kampanj som om den vore produktens. För
+  CatCabin blev det "NO: 16 annonser, 0 ACTIVE", vilket ser ut som en produkt
+  utan norsk kampanj. Den riktiga hade 11. Fallbacken är borta; tom sträng
+  betyder "ingen norsk kampanj" och får aldrig bli `new RegExp('')`.
+* **Videons `source` går att läsa direkt på video-id:t.** Koden sa att
+  `/{video_id}?fields=source` alltid svarar "(#10) Application does not have
+  permission" — sant för sin token 2026-09-03, falskt för sessionens token
+  2026-09-11. Titeluppslaget dög inte: i MagiBorsten heter filerna `PD_2.mp4`,
+  `SP_3.mp4`, utan produktprefix och DELADE mellan produkter, så titelfiltret
+  gav noll träffar och alla 16 blev "okänd". Ett id är entydigt, ett filnamn är
+  det inte. Direktanropet först, biblioteket som reserv.
+* **OCR ser inte text på sned.** `Utekattkoja_CS_2_1` bär en röd banderoll i 45°
+  med "24% RABATT – IDAG / Endast få kvar i lager". RapidOCR returnerade noll
+  tecken. Bara ögongranskningen (`brand-syn.json`) hittade den. **Titta på
+  bildannonserna med egna ögon** — OCR:en är ett komplement, inte facit.
+
+**Och en lucka i flödet:** `media-upload.mjs` laddade bara upp domen `ren`, så en
+annons som var ÅTGÄRDAD enligt steg 4 kunde ändå aldrig byggas. En fil i
+`output/<id>/bildfix/<annons>.<ext>` vinner nu över domen — domen speglar KÄLLAN
+och ska stå kvar som historik.
+
+**Fyra körningsdetaljer som kostar tid om man inte vet dem:**
+
+* **Räkningen slås upp på PRODUKT-id, inte butiks-id.** `node factory/rakning.mjs
+  utekattkojan`, inte `catcabin`. Kommandofilen säger `<butik-id>` och det stämde
+  för TankGuard, där butik och produkt heter likadant. Gör de inte det stoppar
+  räkningen med "Hittar inte factory/produkter/catcabin.yaml".
+* **Trippelkollen tar konfigarna som en LISTA.** Ge den både video- och
+  bildkonfigen — med bara den ena blir svaret "9 annonser (är: 12)", en falsk
+  avvikelse. Och flaggan skrivs `--vantat 12` med mellanslag; `--vantat=12`
+  tolkas som en configsökväg och kraschar med `ERR_MODULE_NOT_FOUND` på `/12`.
+* **En namngiven orsak hör hemma i `output/<id>/uteslutna.json`.** Skriver man
+  den i `brand-detektor.json` eller `kallannonser.json` är den borta nästa gång
+  verktygen kör, och rapporten kräver "orsak saknas — måste namnges" i evighet.
+* **Metas rate limit (fel 17) slår till mitt i bygget** när ett dussin videor
+  laddats upp. Skripten är idempotenta på namn, så kör bara om — kampanj, adsets
+  och färdiga annonser återanvänds. ⚠️ Under strypningen svarar ett listanrop
+  HTTP 400 med kod 17, INTE med en tom lista. Det är tur: `no-video-launch`
+  avgör idempotensen på `(await api(...)).data || []` och hade byggt dubbletter
+  om Meta svarat tomt. Men en egen avläsning som gör `(j.data||[]).length` visar
+  0 adsets på en kampanj som har tre — det ser ut som att ingenting byggts.
+  Läs alltid `j.error` innan du tror på en nolla.
+
+**Talet kan läsas gratis även utan `/translate`-batch.** `faster-whisper` (base
+→ small) transkriberar källvideorna lokalt, 0 krediter. ⚠️ base hörde "899" där
+small hörde "809"; 809 var rätt (matchar den norska systerannonsens 809 NOK).
+En dom som kostar HeyGen-krediter får inte vila på base-modellen.
+
+---
+
 ## Uppdrag A — Brand-detektorn: vilka annonser måste göras om?
 
 **Vad:** ett verktyg som för varje Bäverbutiks-annons till en OPS-produkt ger en dom

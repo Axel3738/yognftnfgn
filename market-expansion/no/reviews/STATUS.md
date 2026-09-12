@@ -3,6 +3,44 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-12 — 20 nya på två produkter, 29 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade tre nya mappar:
+**Isolerad Utekattkoja**, **Stegstöd 2-pack** och **Taköverdrag Husvagn**.
+Två importerades, den tredje hoppades över.
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Isolert Utekattehus | 10 | `isolert-utekattehus-torr-og-vindtett-plass-utendors` |
+| Stigestøtte 2-pk | 10 | `stigestotte-2-pk-stigen-slutter-a-skli-sidelengs` |
+
+Kartorna: +21 översättningar. Butiksfeeden 181 → 186 produkter.
+
+### ⚠️ Taköverdrag Husvagn överhoppad — titelkolumnen bär personnamn
+
+`Taköverdrag Husvagn_REVIEW` (`1qz9Nt30g-fyoxgflqXJ-Wz8Doei2hfsiRDbaDkoAi34`)
+har **förskjutna kolumner**: `title` innehåller personnamn i stället för
+rubriker, medan `reviewer_name` bär ett annat namn på samma rad.
+
+| rad | title | reviewer_name | body |
+|---|---|---|---|
+| 2 | `Lars` | `Anna` | "Bra skydd för husvagnen…" |
+| 3 | `Anna` | `Lars` | "Passar bra och skyddar taket…" |
+| 10 | `Mats` | `Erik` | "Jag är nöjd med överdraget…" |
+
+Importerad skulle produkten få tio recensioner med rubriken "Lars", "Anna",
+"Mats" … Rubriker går inte att hitta på, så arket måste rättas. Handlet finns
+(`takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten`) och
+produkten läggs i `sources.json` när kolumnerna står rätt.
+
+⚠️ **Utekattkojans och Stegstödets ark har samma rubrik på alla tio rader**
+("Bra koja" resp. "Bra produkt"). Importerat som källan säger — men i kundvyn
+står samma rubrik tio gånger på samma produkt. Värt att variera i arket.
+
+**Datumen tog inte, som väntat:** båda produkternas 20 recensioner står som
+2026-09-12. Efterkontrollen i `judgeme-import.mjs` larmade på båda. Totalt
+bär nu 25 produkter / 224 recensioner importdagens datum.
+
 ## Läget 2026-09-11 — 0 nya, alla 27 produkter klara
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY: samma 26 mappar som igår,
