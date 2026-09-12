@@ -1,9 +1,13 @@
 # Bäverbutiken — Axels huvudbutik (general store, VA:n sköter kundtjänsten).
 # Butiken är inte byggd av fabriken, så den behöver en egen brandfil.
 #
-# supportmail avläst i sidfoten på baverbutiken.se 2026-09-12 (och på
-# /pages/contact): kundsupport@baverkoppling.se — OBS domänen baverkoppling.se,
-# inte baverbutiken.se. Svar från den domänen räknas som butikens egna.
+# Brevlådan är kundsupport@baverbutiken.se på Loopia (MX mailcluster.loopia.se).
+# ⚠️ Sajtens sidfot och /pages/contact visar kundsupport@baverkoppling.se —
+# den domänen har INGEN MX-post (mätt 2026-09-12 via DNS: A-posten pekar på
+# Shopify, ingen mejlserver), så mejl dit kan inte landa i någon brevlåda och
+# webbmejlen nekar inloggning med den adressen (steg 2, HTTP 401). Första
+# lyckade läsningen 2026-09-12: INBOX 264, INBOX.Sent 9. Sidfotens adress är
+# en känd felskrivning (market-expansion/01-information-och-atkomst.md).
 # Byter Axel adress: ändra här, eller sätt KUNDTJANST_MAIL_USER_BAVERBUTIKEN.
 #
 # Shopify-domänen kommer ur tools/kaching-cli/stores.json. Ordrar och
@@ -12,7 +16,7 @@
 
 brand:
   namn: "Bäverbutiken"
-  supportmail: "kundsupport@baverkoppling.se"
+  supportmail: "kundsupport@baverbutiken.se"
   shop: "4snrw0-mg.myshopify.com"
   land: SE
   valuta: SEK
