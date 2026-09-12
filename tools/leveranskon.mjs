@@ -18,7 +18,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
-import { allaKlaraRader } from './notion-kalla.mjs';
+import { allaKlaraRader, valjLeveransfiler } from './notion-kalla.mjs';
 
 // Redigerarnas leveransrot. Innehåller "Week N"-mappar, en mapp per annons.
 const EDITED_FOLDER = '1V4V8y4QQnX0tvZ3MQUicu1Y1k-l95yFM';
@@ -211,16 +211,17 @@ function driveLsMjuk(id) {
 }
 const ÄR_MEDIA = (t) => /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(t);
 
-/** Redigerarnas videor: Drive-mappen som ar lankad sist i Notion-sidan. Sidan bar
- *  ocksa brief-mappen — darfor provas lankarna i tur och ordning (sista forst) och
- *  den forsta som INNEHALLER media ar leveransen. Filer lankade direkt tas rakt av. */
+/** Redigerarnas videor: leveransmappen som ar lankad i Notion-sidan. Sidan bar
+ *  ocksa brief-mappen, sa valet gors av valjLeveransfiler() — filnamnet maste
+ *  heta som annonsen, annars ar det inte leveransen.
+ *  *(Matt 2026-09-12 pa Batmotor_GT_3_H1: leveransmappen tom, brief-mappen full
+ *  av batch-1-videor. Den gamla regeln "forsta mappen med media vinner" gjorde
+ *  raden gron och hade laddat upp fel video under ratt namn.)* */
 function driveLeverans(l) {
-  for (const k of l.drive) {
-    if (k.typ === 'fil') return { mapp: k.id, filer: [{ typ: 'fil', id: k.id, titel: `${l.namn}.mp4`, direkt: true }] };
-    const filer = driveLsMjuk(k.id).filter(f => f.typ === 'fil' && ÄR_MEDIA(f.titel));
-    if (filer.length) return { mapp: k.id, filer };
-  }
-  return { mapp: null, filer: [] };
+  const filer = valjLeveransfiler(l.drive, l.namn, driveLsMjuk);
+  if (!filer.length) return { mapp: null, filer: [] };
+  const mapp = filer[0].direkt ? filer[0].id : (l.drive.find(k => k.typ === 'mapp')?.id ?? null);
+  return { mapp, filer: filer.map(f => ({ typ: 'fil', ...f })) };
 }
 
 // 3. Kon: levererat men inte i kontot.

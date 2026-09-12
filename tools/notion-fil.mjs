@@ -20,7 +20,7 @@
 import { mkdirSync, existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { hämtaFil, driveLankarIKropp, mediaBlockIKropp } from './notion-kalla.mjs';
+import { hämtaFil, driveLankarIKropp, mediaBlockIKropp, valjLeveransfiler } from './notion-kalla.mjs';
 
 const ROT = new URL('..', import.meta.url).pathname;
 
@@ -81,18 +81,10 @@ if (!filer.length) {
   }
   const lankar = await driveLankarIKropp(pageId);
   if (!lankar.length) dö(`Raden "${titel}" har varken fil i "Filer och media", mediablock i sidan eller Drive-länk i sidan — inget att hämta. Fråga redigeraren.`);
-  let hittade = [];
-  for (const k of lankar) {
-    if (k.typ === 'fil') { hittade = [{ id: k.id, titel: `${titel}.mp4` }]; break; }
-    let rader = [];
-    try {
-      rader = execFileSync('python3', [`${ROT}tools/drive-ls.py`, k.id], { encoding: 'utf8', timeout: 60000 })
-        .trim().split('\n').filter(Boolean).map(r => { const [typ, id, ...t] = r.split('\t'); return { typ, id, titel: t.join('\t') }; });
-    } catch { continue; }
-    hittade = rader.filter(r => r.typ === 'fil' && /\.(mp4|mov|m4v|jpg|jpeg|png)$/i.test(r.titel));
-    if (hittade.length) break;
-  }
-  if (!hittade.length) dö(`Raden "${titel}": Drive-länk finns (${lankar.map(k => k.id).join(', ')}) men ingen video i mappen — inte klar.`);
+  const lista = (id) => execFileSync('python3', [`${ROT}tools/drive-ls.py`, id], { encoding: 'utf8', timeout: 60000 })
+    .trim().split('\n').filter(Boolean).map(r => { const [typ, fid, ...t] = r.split('\t'); return { typ, id: fid, titel: t.join('\t') }; });
+  const hittade = valjLeveransfiler(lankar, titel, lista);
+  if (!hittade.length) dö(`Raden "${titel}": Drive-länk finns (${lankar.map(k => k.id).join(', ')}) men ingen fil som heter som annonsen — leveransmappen är tom. Inte klar.`);
   let m = 0;
   for (const f of hittade) {
     const bas = hittade.length > 1 ? `${titel}_${++m}` : titel;
