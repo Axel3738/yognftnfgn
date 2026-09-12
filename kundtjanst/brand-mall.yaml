@@ -1,0 +1,49 @@
+# =============================================================
+# KUNDTJÄNST — BRANDFIL (ett brand per fil)
+# =============================================================
+# Kopiera till kundtjanst/brands/<id>.yaml. <id> = kort, gemener, inga å/ä/ö.
+#
+# En OPS-butik som redan har factory/butiker/<id>.yaml BEHÖVER ingen brandfil:
+# brand, supportmail och shop läses därifrån. Lägg en fil med SAMMA id bara
+# för att lägga till något (Notion-SOP-databas, Discord-kanal, egna trösklar)
+# eller stänga av brandet (aktiv: false).
+#
+# Hemligheter ligger ALDRIG här. De heter så här i Environments på claude.ai
+# (<ID> = id i VERSALER, allt som inte är A–Z/0–9 blir _):
+#   KUNDTJANST_MAIL_PASS_<ID>       Loopia-lösenordet till brevlådan        KRÄVS
+#   KUNDTJANST_MAIL_USER_<ID>       bara om användarnamnet inte är supportmailen
+#   SHOPIFY_SHOP_<ID> + SHOPIFY_ADMIN_TOKEN_<ID>   (eller CLIENT_ID + CLIENT_SECRET)
+#   NOTION_TOKEN, DISCORD_BOT_TOKEN, ANTHROPIC_NYCKEL   delade
+
+brand:
+  namn: ""                    # KRITISKT — namnet som visas i rapporten
+  supportmail: ""             # KRITISKT — brevlådan rutinen läser (Loopia: också användarnamnet)
+  shop: ""                    # xxxx-xx.myshopify.com — tomt = inga ordrar/tvister
+  land: SE
+  valuta: SEK
+  aktiv: true                 # false = hoppas över av --alla
+
+mail:
+  host: mailcluster.loopia.se # Loopia. Annan leverantör: byt här
+  port: 993
+  inkorg: INBOX
+  # Skickat-mappen provas i ordning; `node kundtjanst/setup.mjs --mappar <id>` visar namnen
+  skickat:
+    - Sent
+    - INBOX.Sent
+    - Skickat
+
+discord:
+  server: ""                  # servern boten postar i (namn eller id). Tomt = brandets namn
+  kanal: customer-service     # kanalen — skapas av boten om den saknas
+
+notion:
+  sop_database_id: ""         # VA:ns SOP-databas → rapporten säger vilka toppärenden som saknar SOP
+  rapport_database_id: ""     # databas där veckorapporten läggs som sida (--notion)
+
+trosklar:
+  obesvarad_timmar: 48        # inkommande utan svar längre än så = larm
+  ofullbordad_dagar: 5        # betald order utan fulfillment längre än så = larm
+  tvistgrans_gul_procent: 0.5 # tvister / ordrar (30 dagar): gult härifrån
+  tvistgrans_rod_procent: 0.9 # rött härifrån (Visa 0,9 %, Mastercard 1 %)
+  ordrar_dagar: 30

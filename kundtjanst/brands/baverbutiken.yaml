@@ -1,0 +1,27 @@
+# Bäverbutiken — Axels huvudbutik (general store, VA:n sköter kundtjänsten).
+# Butiken är inte byggd av fabriken, så den behöver en egen brandfil.
+#
+# supportmail avläst i sidfoten på baverbutiken.se 2026-09-12 (och på
+# /pages/contact): kundsupport@baverkoppling.se — OBS domänen baverkoppling.se,
+# inte baverbutiken.se. Svar från den domänen räknas som butikens egna.
+# Byter Axel adress: ändra här, eller sätt KUNDTJANST_MAIL_USER_BAVERBUTIKEN.
+#
+# Shopify-domänen kommer ur tools/kaching-cli/stores.json. Ordrar och
+# tvister läses först när SHOPIFY_ADMIN_TOKEN_BAVERBUTIKEN (custom app med
+# read_orders + read_shopify_payments_disputes) eller CLIENT_ID/SECRET finns.
+
+brand:
+  namn: "Bäverbutiken"
+  supportmail: "kundsupport@baverkoppling.se"
+  shop: "4snrw0-mg.myshopify.com"
+  land: SE
+  valuta: SEK
+  aktiv: true
+
+discord:
+  server: "Bäverbutiken"
+  kanal: customer-service
+
+notion:
+  sop_database_id: ""
+  rapport_database_id: ""

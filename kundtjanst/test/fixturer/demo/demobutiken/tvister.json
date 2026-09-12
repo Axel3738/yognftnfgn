@@ -1,0 +1,3 @@
+[
+  {"id": 501, "order_id": 1, "type": "chargeback", "amount": "899.00", "currency": "SEK", "reason": "product_not_received", "network_reason_code": "13.1", "status": "needs_response", "evidence_due_by": "2026-09-20T00:00:00+02:00", "initiated_at": "2026-09-11T00:00:00+02:00"}
+]
