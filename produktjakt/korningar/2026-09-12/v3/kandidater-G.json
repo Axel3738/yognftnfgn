@@ -1,0 +1,165 @@
+{
+  "agent": "G — ordning/flerköp (H11)",
+  "datum": "2026-09-12",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Makita-hållaren 5-pack (maskinen på väggen)",
+      "objekt": "NYTT: Makita-maskinerna i garaget (3–6 st à 1–3 tkr)",
+      "form": "klämma",
+      "arketyp": "A_AGARE_FRIKTION",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploitation",
+      "hypotes_id": "H11",
+      "vinnarlikhet": {
+        "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+        "delade_variabler": ["flera ägda saker → ordning i ett grepp", "flerköp (fler maskiner = fler hållare)", "< 500 kr", "improvisation i dag (maskinerna ligger på bänken/i väskan)", "ägare 55+ i småhus med garage", "Makita-familjen säljer i kontot (arbetslampa 439, jetfläkt 709, snöskyffel ja 09-11)"],
+        "avvikelser": ["objektet står inne i garaget, inte ute", "kedjan (Bauhaus) har samma form via StealthMounts 279 kr/4-pack", "inget datum"]
+      },
+      "sasong": {"fonster_id": null, "deadline_typ": "ingen", "veckor_kvar": null, "timing": "EVERGREEN"},
+      "listning": {
+        "product_id": "1005012077981896",
+        "url": "https://www.aliexpress.com/item/1005012077981896.html",
+        "pris_usd": 9.54,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-12T11:21:40Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012077981896.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "5-pack / 10-pack (titel + hero); passar Makita 18V och Bosch 18V; 9,54 USD är lägsta variant = 5-pack", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "packshot på vitt med '5-PACK/10-PACK' inbränt; liten inset med borrmaskin som snäpps i — eget foto med 5 maskiner i rad på garageväggen behövs"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Bauhaus (StealthMounts 4-pack)", "pris_sek": 279, "url": "https://www.bauhaus.se/verktygshallare-stealthmounts-for-makita-lxt-elverktyg-18v-4", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "K-Bygg Stealthmounts maskinhållare Makita 18V 4-pack", "pris_sek": 459, "url": "https://k-bygg.se/produkt/maskinhallare-makita-18v-4-pack/0650327936911", "i_sortiment": true},
+        "ankare_kvot": 1.44,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["bauhaus.se (279 kr, 4-pack, weblager, 3 recensioner 5/5)", "k-bygg.se (459 kr, 4-pack, 'utgår snart')", "byggmax.se (sidan gick inte att läsa)", "amazon.se (pris dolt bakom varukorg)", "shop.bitmag.net (26,45 €/4-pack, EU-referens)", "verktygsvaruhuset.se (48Tools batterihållare 4 st 249 kr, slut)"]
+      },
+      "ekonomi": {"landad_sek": [124, 152], "pris_sek": 399, "brutto_sek": [247, 275], "be_cpa_sek": [247, 275], "be_roas": 1.53, "flerkop": true, "returrisk": "låg — snäppfäste i batterispåret, ingen mätning; risk bara om kunden har annat märke än Makita/Bosch 18V"},
+      "meta_tanke": {
+        "hook": "Ligger Makita-maskinerna på bänken?",
+        "objekt_i_bild": "fem Makita-maskiner hängande i rad på garageväggen, en snäpps loss med ett ryck",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "före: maskinhögen på bänken — efter: fem i rad på väggen; klicket när maskinen snäpps i"
+      },
+      "varfor": "Spöklämmans struktur på ett nytt objekt: synligt kaos (maskinhögen) → ordning i ett grepp, fysiskt skäl att köpa fler (en hållare per maskin), < 500 kr, och Makita-familjen är bevisat självselekterande i kontot. Ankaret K-Bygg 459 kr/4-pack ger 1,44× mot vårt 5-pack för 399; kombination med batteridockor 5-pack (1005009278045210, 4,86 USD) kan bli 'Makita-väggen' om Axel vill höja upplevt värde.",
+      "huvudrisk": "Bauhaus säljer samma form (StealthMounts) för 279 kr/4-pack = 70 kr/st mot våra 80 kr/st, och heron är en textig packshot — det måste bli eget foto/video med maskinerna i rad.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 1, "lucka": 1, "ekonomi": 1, "sasong": 0, "leverantor": 2, "nyhet": 1, "hypotesvarde": 3},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (Arbetslampa/Jetfläkt för Makita-batteri finns — annan sak; Väggfäste för Grästrimmer finns — annat objekt)", "koncept.py sok 'Makita' (bara Snöskyffeln K0238), 'verktygsh', 'maskinh', 'elverktyg' = 0 träffar", "kontot 7 d: ej läst (rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012077981896.html",
+        "https://www.bauhaus.se/verktygshallare-stealthmounts-for-makita-lxt-elverktyg-18v-4",
+        "https://k-bygg.se/produkt/maskinhallare-makita-18v-4-pack/0650327936911",
+        "https://shop.bitmag.net/StealthMounts-Power-Tools-Mounts-Makita-LXT",
+        "https://www.aliexpress.com/item/1005009278045210.html"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Maskinhyllan för 4 elverktyg",
+      "objekt": "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)",
+      "form": "annat",
+      "arketyp": "A_AGARE_FRIKTION",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploitation",
+      "hypotes_id": "H11",
+      "vinnarlikhet": {
+        "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+        "delade_variabler": ["flera ägda saker → ordning i ett grepp", "improvisation i dag (maskinerna i högar/väskor)", "ägare 55+ i småhus med garage", "objekt medel 1–10 tkr (summan av maskinerna)"],
+        "avvikelser": ["flerköp nej (en hylla räcker)", "objektet står inne", "form 'annat' = 0 av 13 dömda vann i kontot", "kedjan har exakt samma form (Bauhaus 339, Harald Nyborg 199)"]
+      },
+      "sasong": {"fonster_id": null, "deadline_typ": "ingen", "veckor_kvar": null, "timing": "EVERGREEN"},
+      "listning": {
+        "product_id": "1005010585659348",
+        "url": "https://www.aliexpress.com/item/1005010585659348.html",
+        "pris_usd": 17.49,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-12T11:16:17Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010585659348.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant i sökträffen (metallhylla, 4 fack + 2 plan); vikt/fraktklass ej sedd — landad kan ligga över 1,5×-schablonen", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 2, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "textfri hero: fyra gula skruvdragare hängande i rad, batterier, tänger och lådor på hyllan — läses på 1 s; maskinerna i bild är Dewalt-gula (inte märkesneutralt)"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Harald Nyborg (Mitsutomo verktygshylla, 4 fack)", "pris_sek": 199, "url": "https://www.harald-nyborg.se/verktygshylla-laddbara-verktyg", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "P.Lindberg verktygshylla 5 fack + låda (stål)", "pris_sek": 1120, "url": "https://www.p-lindberg.se/verktygshylla-9065497/", "i_sortiment": true},
+        "ankare_kvot": 1.87,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["harald-nyborg.se (199 kr, ord. 249, i lager)", "bauhaus.se ProBuilder verktygshylla vägg (339 kr, 4 elverktyg, weblager)", "p-lindberg.se (1 120 kr, 5 fack, i lager)", "hemfint.se (995 kr, hylla med skåp — annan form, ej läst i detalj)"]
+      },
+      "ekonomi": {"landad_sek": [228, 278], "pris_sek": 599, "brutto_sek": [321, 371], "be_cpa_sek": [321, 371], "be_roas": 1.73, "flerkop": false, "returrisk": "låg — universal hylla, inget att mäta; vikten kan ge fraktavvikelse"},
+      "meta_tanke": {
+        "hook": "Var la du skruvdragaren?",
+        "objekt_i_bild": "fyra maskiner som hänger i rad på hyllan, batterierna ovanpå",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "före: maskiner, batterier och laddare utspridda på bänken — efter: allt på 42 cm vägg, ett grepp per maskin"
+      },
+      "varfor": "Samma 'kaos → ordning i ett grepp' som spöklämman, märkesoberoende och med det tydligaste före/efter i hela linsen; P.Lindberg 1 120 kr ger ankare 1,87× och BE-CPA 321–371 mot 599 kr. Golvet (Harald Nyborg 199, Bauhaus 339) står under oss — H06-fallet: fungerar bara om ankaret bär.",
+      "huvudrisk": "Kedjan har exakt samma form under vårt pris och formen 'annat' har 0 vinnare av 13 i kontot — det här är ett H11-test av strukturen, inte en säker exploitation.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 0, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen maskinhylla; Magnethylla = kylskåp/tvättmaskin, förlorare)", "koncept.py sok 'verktygsh', 'maskinh', 'elverktyg' = 0 träffar", "kontot 7 d: ej läst (rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010585659348.html",
+        "https://www.harald-nyborg.se/verktygshylla-laddbara-verktyg",
+        "https://www.bauhaus.se/verktygshylla-probuilder-vagg",
+        "https://www.p-lindberg.se/verktygshylla-9065497/"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Ljusslingevindorna 10-pack",
+      "objekt": "NYTT: Julbelysningen utomhus (5–10 slingor per villa, tas fram i november)",
+      "form": "annat",
+      "arketyp": "A_AGARE_FRIKTION",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploitation",
+      "hypotes_id": "H11",
+      "vinnarlikhet": {
+        "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+        "delade_variabler": ["flera ägda saker → ordning i ett grepp", "flerköp inbyggt (10-pack, en per slinga)", "< 500 kr", "svikande default (slingorna i kartongen/påsen = härvan) — H03", "ägare 55+ i småhus", "objekt ute (utomhusslingor)"],
+        "avvikelser": ["formen finns i kedjan som enstaka stor vinda (Clas Ohlson 199,90, Jula)", "smärtan kommer vid uppackningen i nov men nyttan vid nedtagningen i jan", "lågt upplevt värde per styck"]
+      },
+      "sasong": {"fonster_id": null, "deadline_typ": "ingen", "veckor_kvar": null, "timing": "EVERGREEN"},
+      "listning": {
+        "product_id": "1005012582663728",
+        "url": "https://www.aliexpress.com/item/1005012582663728.html",
+        "pris_usd": 12.05,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-12T11:19:23Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012582663728.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "10 st per pack (titel + hero); svart plast, H-form med handtag; kapacitet per vinda ej angiven", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron visar en vinda med slingan uppvirad (kontext) men '10PCS' inbränt nere till vänster — beskärs; visuellt tunn plastpryl, upplevt värde måste byggas med härvan-före-bilden"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Clas Ohlson (Northlight kabelvinda för ljusslingor, 1 st, 100 m)", "pris_sek": 199.9, "url": "https://www.clasohlson.com/se/Kabelvinda-for-ljusslingor,-Northlight/p/36-8427", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "Clas Ohlson Northlight kabelvinda (metall/plast, stativ, 100 m)", "pris_sek": 199.9, "url": "https://www.clasohlson.com/se/Kabelvinda-for-ljusslingor,-Northlight/p/36-8427", "i_sortiment": false},
+        "ankare_kvot": 0.5,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["clasohlson.com (199,90 kr, 'finns ej i lager' 2026-09-12)", "jula.se Ekvip/Anslut sladdvinda för ljusslinga (sidan gav 403 — pris ej läst)", "rusta.com (bara slingor, ingen vinda i sökutdraget)"]
+      },
+      "ekonomi": {"landad_sek": [157, 192], "pris_sek": 399, "brutto_sek": [207, 242], "be_cpa_sek": [207, 242], "be_roas": 1.77, "flerkop": true, "returrisk": "låg — inget att mäta; risk att långa 20–30 m-slingor inte ryms på en vinda (kapacitet ej angiven)"},
+      "meta_tanke": {
+        "hook": "Hur ser julslingorna ut i kartongen?",
+        "objekt_i_bild": "härvan av ljusslingor ur kartongen — och tio uppvirade vindor i en rad",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "härvan på golvet → slingan virad på 10 sekunder, vinda efter vinda på hyllan; alla har sett sin egen härva"
+      },
+      "varfor": "H11 + H03 i samma vara: varje villa 55+ har 5–10 slingor i en härva (svikande default = kartongen), kaoset är universellt igenkänt och 10-packet ger flerköpet i sig; BE-CPA 207–242 mot 399 kr. Kedjan säljer en stor vinda för 199,90 (annan form, slut hos Clas Ohlson 09-12) — luckan är 'en per slinga', inte 'en för alla'.",
+      "huvudrisk": "Lågt upplevt värde (tunn svart plast, 40 kr/st) och tidsglappet mellan smärtan (uppackning nov) och nyttan (nedtagning jan) — samt att sasong.py inte har ett julbelysningsfönster, så raden står som EVERGREEN trots att köpet är nov–dec.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 1, "ekonomi": 1, "sasong": 0, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt ('ljus' = bara bilbelysning/ljusramper; 'vinda' = 0; Slang- & Sladdhållare 5-pack finns men är väggkrokar, annan form)", "koncept.py sok 'ljus' (bara K0056 fönsterfilm), 'vinda' = 0 träffar", "kontot 7 d: ej läst (rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012582663728.html",
+        "https://www.clasohlson.com/se/Kabelvinda-for-ljusslingor,-Northlight/p/36-8427",
+        "https://www.jula.se/catalog/hem-och-hushall/jul/julbelysning/ljusslingor-utomhus/sladdvinda-for-ljusslinga-021721/"
+      ]
+    }
+  ]
+}
