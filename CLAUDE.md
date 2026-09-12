@@ -228,6 +228,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/notionscalercs setup <butik>` / `/notionscalercs <butik>` | **Nattvakten, EN rutin per OPS-butik** (Axels beslut 2026-09-10): varje natt 00:01 döda/skala/sänk budget i OPS-kontot; ons + sön dessutom `/cs`-loopen med nya briefer i butikens creative hub via `NOTION_TOKEN` — noll godkännandeklick. `setup` körs en gång per butik och bygger rutinen |
 | `/ops-leverans <nyckel>` | **13:40 per OPS-butik:** hubbens `To be Reviewed` → priskoll → **live** i butikens SE-kampanj i OPS-kontot (ett adset per koncept) → `SE-ACTIVE to be translated`. Byggs av `/notionscalercs setup` |
 | `/ops-oversatt <nyckel>` | **15:40 per OPS-butik:** `SE-ACTIVE to be translated` → norska (bild 0 krediter, video HeyGen) → **live** i butikens NO-kampanj i samma konto → `Approved`. Byggs av `/notionscalercs setup` |
+| `/ops-bild <nyckel> [idé]` | **Bildannonser för en OPS-butik, på kommando:** idén → rader i butikens hub (Draft + IMAGE PROMPT) → kie.ai (`factory/ops-bild.mjs`) → bilden i `Filer och media` via REST (`tools/notion-fil-upp.mjs`) → tittad → `To be Reviewed` → live 13:40. Utan idé: genererar hubbens Draft-bildrader. `/bildannonser` rör aldrig OPS-hubbarna |
 | `/rutin <kommando> <tid>` | Sätt upp en schemalagd rutin som faktiskt kör (fast session, rätt cron, inga dubbletter) |
 
 ### Nattrutinerna
@@ -633,6 +634,8 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
 | `tools/notion-kalla.mjs` | Notion som leveranskälla: hittar alla creative hubs dynamiskt, plockar rader med färdig fil |
 | `tools/notion-fil.mjs` | Hämtar hem en Notion-bilaga (signerad URL, kortlivad — hämta vid körning, cacha aldrig) |
+| `tools/notion-fil-upp.mjs` | Laddar upp en LOKAL fil till en rads `Filer och media` via REST (File Upload API, max 20 MiB) — befintliga filer behålls, tillbakaläsning före statusbyte. Ingen Notion-MCP behövs |
+| `factory/ops-bild.mjs` | OPS-butikens bildmotor: Draft-bildrader med IMAGE PROMPT → kie.ai → Notion (Draft kvar), `--godkann`/`--underkann` efter granskning, `--namn` för lediga AD-ID:n |
 | `products/prefix-alias.json` | Annonsprefix som inte går att härleda ur kontot (Notion engelska, kontot svenska) |
 | `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |

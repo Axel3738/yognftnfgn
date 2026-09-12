@@ -238,6 +238,10 @@ Storlek: `factory/kadens.mjs` (7/dag × 3 = 21, hälften varianter av vinnare,
 hälften nya koncept) när en redigerare är tilldelad; annars **7**. Varje
 variant pekar på sin förälder och isolerar EN variabel. Varje nytt koncept
 pekar på playbook, winning line eller swipe — annars märks det `gissning`.
+**Minst två av raderna är bildannonser** (Axels beslut 2026-09-12: bild är
+billigt och snabbt) — de räknas inom antalet, inte ovanpå, och varje
+bildbrief slutar med ett IMAGE PROMPT-block enligt `.claude/commands/ops-bild.md`
+steg 3, så att steg 7 kan generera dem samma natt.
 Ta med alla väntande items i `backlog.md` (märk `[använd i batch #N]`).
 Namn enligt `docs/naming-convention.md` med butikens prefix; lediga AD-ID:n
 läses ur OPS-kontot (analys-JSON:en) OCH ur hubbens befintliga radnamn.
@@ -277,6 +281,12 @@ Status `Draft`, Typ `Video - Pending Approval` / `Image - Pending Approval`.
 Skriptet hoppar över namn som redan finns i hubben. Visa resultatet (namn +
 url per rad). Misslyckas uppladdningen: lista raderna som skulle skapats,
 låtsas aldrig.
+**Bildraderna genereras direkt** (`/ops-bild` steg 5–7): `node factory/ops-bild.mjs
+<nyckel> --torr`, sedan skarpt, titta på varje bild med Read-verktyget mot
+checklistan i `/ops-bild` steg 6, och `--godkann` de som håller — de går
+live 13:40 via `/ops-leverans`. Underkända stannar i Draft med `--underkann
+--skal` och står i rapporten. Saknas `KIE_API_KEY`: skriv det under
+varningar, raderna ligger kvar i Draft och `/ops-bild <nyckel>` tar dem senare.
 
 ### Steg 8 — Logga, rapportera, pusha
 - `node factory/register.mjs log <nyckel> <antal> $IDAG`,
