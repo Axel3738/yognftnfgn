@@ -140,3 +140,16 @@ Lediga AD-ID:n lästa ur OPS-kontot (HeimGuard_*) OCH hubbens 41 rader (Overvakn
 Backlog: alla fyra koncepten plockade (`[använd i batch #2]`).
 VARIABELTAGGAR står överst i varje brief (`products/hemvakten/batch-02/…/brief.md`).
 Notion-resultatet (url per rad) står i körningens rapport och i commit-meddelandet.
+
+---
+
+## Översättning NO — 2026-09-12 15:40 (`/ops-oversatt hemvakten/overvakningskameran`, körning nr 1)
+
+Kön `SE-ACTIVE to be translated`: **0 rader.** NO-kampanjen `HEIMGUARD_NO_Overvåkingskamera`
+ACTIVE, 9 adsets, 27 annonser live. Inget översatt, inget uppladdat, HeyGen 8 938 → 8 938 credits.
+Orsak: leveransrundan 13:40 för HeimGuard byggdes 2026-09-12 kl 15:04, efter sin egen körtid —
+första körning 2026-09-13. Fyra SE-bilder (BOF_7_1, BOF_8_1, BOF_9_1, LI_2_1) står kvar i
+`To be Reviewed` och når översättningen först i morgon.
+Notering: 6 rader i `Translation in review` (2026-09-06, före OPS-flödet) — SP_5_H1, SP_6_H1,
+CO_1_H1, AU_1_H1 är redan live i NO, SP_4_H1 och RI_1_H1 inte. Utanför kön, orörda.
+Batchfiler: `market-expansion/ops/hemvakten/2026-09-12/`. Discord: `#annons-uppladdning`, ingen ping.
