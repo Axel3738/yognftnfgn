@@ -84,7 +84,10 @@ export async function action({ request }: ActionFunctionArgs) {
 export async function loader({ request }: LoaderFunctionArgs) {
   const T = t("en");
   const code = new URL(request.url).searchParams.get("id") ?? "";
-  const rad = code ? await prisma.metaDeletion.findUnique({ where: { code } }) : null;
+  /* Adressen utan kod: Meta (och granskaren) öppnar den för att se att den
+     lever. Ett 404 hade sett ut som en trasig callback. */
+  if (!code) return metaLoginSida("en", { title: T.deletion.openTitle, body: T.deletion.openBody });
+  const rad = await prisma.metaDeletion.findUnique({ where: { code } });
   if (!rad) {
     return metaLoginSida("en", { title: T.deletion.unknownTitle, body: T.deletion.unknownBody, status: 404 });
   }

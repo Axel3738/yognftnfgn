@@ -816,7 +816,21 @@ det Meta kräver av OSS innan ansökan kan skickas:
 - **Kvar, och det är inte kod:** Business Verification av Business Manager
   (juridiska dokument, görs FÖRE ansökan), Meta-appen till Live, Marketing
   API-produkten tillagd, och App Review för `ads_read` i Advanced Access med
-  skärminspelning. Stegen står i `docs/meta-app-review.md`.
+  skärminspelning. **Hela ansökan, Axels klick i ordning och den färdiga
+  engelska motiveringstexten står i `docs/meta-app-review.md`** — läs den
+  filen innan något rörs i Meta-dashboarden.
+- **Två grindar, inte en:** (1) `ads_read` i Advanced Access via App Review,
+  (2) Marketing API Access Tier. Den andra öppnas AUTOMATISKT från Limited
+  till Full vid ≥ 500 anrop på 15 dagar med < 15 % fel — ingen ansökan,
+  ingen partnerstatus. Business Verification måste vara godkänd INNAN App
+  Review går att skicka in; det är den vanligaste orsaken till veckors
+  väntan. Realistiskt 2–6 veckor totalt.
+- **Miljövariabler som måste sättas före inlämning:** `META_REVIEW_KEY`
+  (annars 404 på granskarsidan och granskaren kommer ingenstans) och
+  `SUPPORT_EMAIL` (visas i integritetspolicyn).
+- ⚠ Researchen bakom filen är INTE förstahandsläst: proxyn blockerade
+  `developers.facebook.com`. Stämmer ett fältnamn inte i dashboarden —
+  lita på dashboarden och rätta dokumentet.
 
 ### Logga in med Facebook för Meta-kopplingen (2026-09-07, build meta-login-v64)
 Axels beslut 2026-08-31 (bygg efter App Store-godkännandet) — byggt två dagar

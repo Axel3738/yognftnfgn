@@ -557,6 +557,8 @@ const en = {
 
   /* Popup-fönstret för Logga in med Facebook — renderas utanför Shopify. */
   deletion: {
+    openTitle: "Data deletion — StonePNL",
+    openBody: "This page shows the status of a data deletion request. Open it through the link Facebook gave you when you asked for your data to be deleted; the link carries the code for your request.",
     unknownTitle: "Unknown request",
     unknownBody: "We have no deletion request with that code. If you asked Facebook to delete your data, open the link in that message again.",
     pendingTitle: "Deletion in progress",
@@ -1264,6 +1266,8 @@ const sv: Texts = {
 
   /* Popup-fönstret för Logga in med Facebook — renderas utanför Shopify. */
   deletion: {
+    openTitle: "Radering av data — StonePNL",
+    openBody: "Den här sidan visar statusen för en raderingsbegäran. Öppna den via länken du fick av Facebook när du begärde radering; länken bär koden för din begäran.",
     unknownTitle: "Okänd begäran",
     unknownBody: "Vi har ingen raderingsbegäran med den koden. Öppna länken i meddelandet från Facebook igen.",
     pendingTitle: "Raderingen pågår",
