@@ -1,7 +1,7 @@
 // Tester för Shopify-, Notion- och LLM-hjälparna (bara de rena delarna) och rapporten.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { normaliseraOrder, normaliseraTvist, nastaSida, kopplaOrdrar } from '../shopify.mjs';
+import { normaliseraOrder, normaliseraTvist, nastaSida, kopplaOrdrar, granskaAdminToken, ShopifyLasare } from '../shopify.mjs';
 import { sopTackning, tillBlock } from '../notion.mjs';
 import { plockaJson } from '../llm.mjs';
 import { isoVecka, renderaEngelsk, renderaSvensk, kapaForDiscord, DISCORD_MAX, renderaRanking, renderaRankingEngelsk } from '../rapport.mjs';
@@ -29,6 +29,28 @@ test('tvisten kopplas till ordern och Link-headern ger nästa sida', () => {
   assert.equal(nastaSida('<https://x.myshopify.com/admin/api/2025-07/orders.json?page_info=abc>; rel="next"'), 'https://x.myshopify.com/admin/api/2025-07/orders.json?page_info=abc');
   assert.equal(nastaSida('<https://x/prev>; rel="previous"'), null);
   assert.equal(nastaSida(null), null);
+});
+
+test('token-formen känns igen: shpat_ är rätt, API key, secret och CLI-token pekas ut', () => {
+  // Påhittade värden utan hex-svans — GitHubs push-skydd stoppar allt som ser ut som en riktig shpat_-token.
+  assert.equal(granskaAdminToken('shpat_TESTVARDE'), null);
+  assert.match(granskaAdminToken('0123456789abcdef0123456789abcdef'), /API key/);
+  assert.match(granskaAdminToken('shpss_TESTVARDE'), /API secret key/);
+  assert.match(granskaAdminToken('atkn_abc'), /CLI-/);
+  assert.match(granskaAdminToken(' shpat_abc\n'), /mellanslag eller radbrytning/);
+  assert.match(granskaAdminToken('hejsan'), /börjar inte med shpat_/);
+  assert.equal(granskaAdminToken(''), 'tom');
+});
+
+test('401 med admin-token ger ett fel som säger vad som är fel med värdet', async () => {
+  const svar401 = { ok: false, status: 401, headers: new Map(), text: async () => '{"errors":"[API] Invalid API key or access token"}' };
+  const fel = new ShopifyLasare({ shop: 'x.myshopify.com', adminToken: '0123456789abcdef0123456789abcdef', fetchFn: async () => svar401 });
+  await assert.rejects(() => fel.hamtaOrdrar(new Date()), (e) => e.status === 401 && /avvisade token \(401\)\. Värdet är en "API key"/.test(e.message) && /Admin API access token/.test(e.message));
+  const ratt = new ShopifyLasare({ shop: 'x.myshopify.com', adminToken: 'shpat_abc', fetchFn: async () => svar401 });
+  await assert.rejects(() => ratt.hamtaOrdrar(new Date()), /rätt form \(shpat_…\), så det är fel butik eller så är appen inte installerad/);
+  const tv = await ratt.hamtaTvister(new Date());
+  assert.equal(tv.tillganglig, false);
+  assert.match(tv.orsak, /avvisade token \(401\)/);
 });
 
 test('ärenden kopplas till ordrar på nummer först, sen på mejladress', () => {
