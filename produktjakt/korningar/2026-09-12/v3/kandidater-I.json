@@ -1,0 +1,196 @@
+{
+  "agent": "I — djur ute i kylan + Q4-datum (H09/H05)",
+  "datum": "2026-09-12",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Uppvärmda fågelbadet",
+      "objekt": "Fågelbord/fågelmatare",
+      "form": "annat",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "H_VISUELL_NYHET",
+      "slot": "sasong",
+      "hypotes_id": "H09",
+      "vinnarlikhet": {
+        "likast": "Isolerade Utekattkojan",
+        "delade_variabler": ["objekt_ute", "älskat djur (vildfåglarna)", "kvinna/man 55+ småhus", "väderdeadline (vintermatning/första frost)", "inte överdrag"],
+        "avvikelser": ["form elektronik/skål i stället för koja", "objektet ägs inte — det matas", "hero är AI-bild inomhus, inte i kontext"]
+      },
+      "sasong": {"fonster_id": "vintermatning_faglar", "deadline_typ": "vintermatning", "veckor_kvar": 6.1, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012607364360",
+        "url": "https://www.aliexpress.com/item/1005012607364360.html",
+        "pris_usd": 25.69,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-12T11:13:42Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012607364360.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant (skål + klämma för räcke) enligt titel; färg ej angiven i sökträffen", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 0, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en AI-genererad köksbild (blå skål på bänk med kaffekopp) — textfri men helt fel kontext; kräver egen bild/video av skålen på altanräcket med fåglar och is runtom"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Amazon.se / Feemiyo uppvärmt fågelbad 75 W däckmonterat", "pris_sek": "ej mätt (sidan gav bara header)", "url": "https://www.amazon.se/Feemiyo-d%C3%A4ckmonterat-termostatiskt-kontrollerat-utomhustr%C3%A4dg%C3%A5rd/dp/B0CGB153F2", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "ej hittat — Vivara.se säljer 12 fågelbad 139,90–349,90 kr, inget uppvärmt (läst 2026-09-12)", "pris_sek": null, "url": "https://www.vivara.se/fagelmatare/fagelbad", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["vivara.se (fågelbad-kategorin läst)", "amazon.se (Feemiyo-sidan gav ingen prisdata)", "fruugo.se (fågelbadsvärmare finns, pris ej läst — 403)", "jymden.nu (timeout)"]
+      },
+      "ekonomi": {"landad_sek": [334, 408], "pris_sek": 699, "brutto_sek": [291, 365], "be_cpa_sek": [291, 365], "be_roas": 2.13, "flerkop": false, "returrisk": "låg — ingen storlek, klämma på räcke; elsäkerhet (stickpropp/230 V) måste kollas i varianten"},
+      "meta_tanke": {"hook": "Fryser fåglarnas vatten på altanen?", "objekt_i_bild": "skålen på räcket, is runt omkring, talgoxe som dricker", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "isfritt vatten i skålen medan allt annat är fruset"},
+      "varfor": "Vinterfågelmatarna är en mycket stor grupp (minst 300 000 hushåll enligt sökutdrag) med kvinna/man 55+ i småhus, precis som kattkojans köpare — och isfritt vatten till fåglarna finns inte i svenskt flöde (Vivara har noll uppvärmda bad). Vintermatningen börjar om 6 v, samma 'djur ute i kylan'-struktur som H09.",
+      "huvudrisk": "Ankare saknas och heron är oanvändbar — priset 699 kr står på en formel, inte en uppmätt hylla; Amazon.se Feemiyo måste prisläsas innan launch.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 3, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (fågel: bara Automatisk Fågeldrickare, arkiverad, ouppvärmd)", "koncept.py sok fågelbad/bad/värme — 0 träffar på formen", "Fågelmataren med kamera (K0242, ja) är annan form"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012607364360.html",
+        "https://www.vivara.se/fagelmatare/fagelbad",
+        "https://www.amazon.se/Feemiyo-d%C3%A4ckmonterat-termostatiskt-kontrollerat-utomhustr%C3%A4dg%C3%A5rd/dp/B0CGB153F2",
+        "https://pippifoder.se/kunnskapsbanken/mata-faglar-pa-vintern/",
+        "https://grannliv.granngarden.se/vildfagel/den-stora-fagelrakningen/"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Bikupans vinterjacka",
+      "objekt": "Bikuporna",
+      "form": "överdrag",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "sasong",
+      "hypotes_id": "H09",
+      "vinnarlikhet": {
+        "likast": "Isolerade Utekattkojan",
+        "delade_variabler": ["objekt_ute", "levande/älskat objekt (bisamhället)", "hårt väderdatum (invintring)", "ägare 55+ småhus/landsbygd", "formsydd form med spännband"],
+        "avvikelser": ["liten ägargrupp (~15 000 medlemmar i Biodlarna 2019)", "skyddsform — räknas mot formtaket 40 %"]
+      },
+      "sasong": {"fonster_id": "invintring_bin", "deadline_typ": "invintring", "veckor_kvar": 4.7, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005010360604942",
+        "url": "https://www.aliexpress.com/item/1005010360604942.html",
+        "pris_usd": 27.89,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-12T11:13:42Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010360604942.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "justerbar med spännband enligt titel (10-ramars Langstroth-mått antas — svenska kupor kan avvika, ej mätt)", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 2, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "svart vadderad jacka på träkupa, textfri, ser ut som sitt pris; alternativ listning 1005010027794380 (13,83 USD, LIVE 11:18:03Z, hero kupa i snö men ikoner med text till höger — måste beskäras)"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör med isolerande kupjacka hittad i denna körning", "pris_sek": null, "url": null, "exakt_samma_form": false},
+        "premium_ankare": {"namn": "Biredskapsfabriken 'Vinterskydd' 171 kr är ett nät mot talgoxar — annan form, inte isolering (läst 2026-09-12)", "pris_sek": 171, "url": "https://www.biredskapsfabriken.se/artikel/vinterskydd", "i_sortiment": true},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["biredskapsfabriken.se (vinterskydd läst)", "lpsbiodling.se (övriga kuptillbehör läst — metalltak med EPS 500 kr, ingen jacka)", "lindhagen.se (sökutdrag — isolerade frigolitkupor, ingen jacka)"]
+      },
+      "ekonomi": {"landad_sek": [363, 444], "pris_sek": 799, "brutto_sek": [355, 436], "be_cpa_sek": [355, 436], "be_roas": 2.02, "flerkop": true, "returrisk": "medel — svenska kupmått (Svea/Norsk/Langstroth) skiljer; 'justerbar' måste bekräftas mot leverantören"},
+      "meta_tanke": {"hook": "Står kuporna oisolerade i vinter?", "objekt_i_bild": "kupan i snö med jackan på, spännbanden synliga", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "snö på taket, jackan runt kroppen, flustret fritt"},
+      "varfor": "Ett bisamhälle är levande och ersätts inte i januari — invintringen är ett hårt datum 4,7 v bort, formen finns inte hos svenska biredskapshandlare (bara nät mot talgoxar och frigolitkupor) och biodlaren har ofta 2–5 kupor (flerköp). Samma struktur som kattkojan: älskat objekt ute + datum + formsydd form.",
+      "huvudrisk": "Ägargruppen är liten (Biodlarna hade 15 281 medlemmar 2019) — Meta måste hitta dem själv, och det är en skyddsform under formtaket.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 3, "efterfragan": 0, "lucka": 3, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (bikup: 0 träffar)", "koncept.py sok bin/bikup — bara PE-presenningar för höns", "objekt.json Bikuporna: 'kupöverdrag/isolering' listad som osökt form"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010360604942.html",
+        "https://www.aliexpress.com/item/1005010027794380.html",
+        "https://www.biredskapsfabriken.se/artikel/vinterskydd",
+        "https://www.lpsbiodling.se/sv/artiklar/biodling/kupor-och-tillbehor/kupor-ovriga/index.html",
+        "https://www.natursidan.se/nyheter/allt-fler-biodlare-i-sverige/"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Highland Cow-kalendern 24 figurer",
+      "objekt": "Barnbarnet — adventskalendern",
+      "form": "kalenderlåda",
+      "arketyp": "G_Q4_GAVA",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "sasong",
+      "hypotes_id": "H05",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar",
+        "delade_variabler": ["kalenderlåda med 24 synliga saker", "hårt datum 1 december", "svikande default (chokladkalendern)", "flerköp (flera barnbarn)", "prisband 300–599", "en variant"],
+        "avvikelser": ["tema för flickan/kvinnan 55+ själv i stället för pojken", "figurer i stället för fordon", "landad ~376 kr mot racingbilarnas okända"]
+      },
+      "sasong": {"fonster_id": "advent_1_december", "deadline_typ": "1 december", "veckor_kvar": 10.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013109493697",
+        "url": "https://www.aliexpress.com/item/1005013109493697.html",
+        "pris_usd": 25.99,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-12T11:13:42Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005013109493697.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant (låda + 24 3D-figurer) enligt titel; 2D-akrylvarianter (11–15 USD) är andra listningar och lägre upplevt värde", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "packshot med lådan + alla 24 figurer utlagda (samma grepp som racingbilarna); lådan har tryckt text '2026 Highland Cow Adventure Calendar' — det är produkten, inte pålagd text; '#1'-skylt nere till vänster måste beskäras"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk återförsäljare hittad — bara Etsy/Amazon.com/eBay.de (ca 19,67 EUR ≈ 215 kr på ebay.de, sökutdrag)", "pris_sek": null, "url": "https://www.ebay.de/itm/187678162003", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "Lekia Hot Wheels/LEGO-kalendrar 349–599 kr (objekt.json, mätt tidigare) — annan tema, samma form", "pris_sek": 599, "url": "https://www.jollyroom.se/leksaker/adventskalendrar", "i_sortiment": true},
+        "ankare_kvot": 1.0,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["cdon.se/fyndiq.se/amazon.se/jollyroom.se (sökutdrag: ingen highland cow-kalender)", "ebay.de/etsy (utländska)", "jollyroom.se adventskalendrar (Playmobil djur 200–500 kr, sökutdrag)"]
+      },
+      "ekonomi": {"landad_sek": [338, 414], "pris_sek": 599, "brutto_sek": [185, 261], "be_cpa_sek": [185, 261], "be_roas": 2.69, "flerkop": true, "returrisk": "låg — ingen storlek; 599 ÷ 24 = 25 kr per lucka"},
+      "meta_tanke": {"hook": "Chokladkalender igen till barnbarnet?", "objekt_i_bild": "lådan öppnad med 24 små highland cows på rad", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "24 figurer utlagda — man ser exakt vad varje lucka ger"},
+      "varfor": "Exakt racingbilarnas struktur (24 synliga saker, 1 december, chokladkalendern sviker) men med ett tema som träffar kontots faktiska köpare — kvinnan 55+ (klistermärkena 58 %, kattkojan) — och som inte finns hos någon svensk återförsäljare. Testar H05 rent: en variabel (tema/mottagare) skiljer från vinnaren.",
+      "huvudrisk": "Landad 338–414 kr ger BE-CPA under 300 vid 599 kr — priset måste hålla utan rabatt, och 599 för figurer är 100 kr över racingbilarna.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (kalender: racingbilar + fiskedrag)", "koncept.py sok kalender — dinosaurier (ja), bilar/blocks/blombukett/drakar kandidater, ingen ko/djurfigur", "Adventskalender Dinosaurier (K0126, ja) är annat tema"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005013109493697.html",
+        "https://www.ebay.de/itm/187678162003",
+        "https://www.jollyroom.se/leksaker/adventskalendrar",
+        "https://cdon.se/kampanjer/adventskalendrar/"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Kaninburens vinterhuv",
+      "objekt": "Kanin/marsvin i bur ute",
+      "form": "huv",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "B_SKYDDA_DYRT",
+      "slot": "sasong",
+      "hypotes_id": "H09",
+      "vinnarlikhet": {
+        "likast": "Isolerade Utekattkojan",
+        "delade_variabler": ["objekt_ute", "älskat djur", "första frost som datum", "formsydd huv över dyr bur (2 199–3 049 kr)"],
+        "avvikelser": ["köparen är barnfamilj/mor-farförälder snarare än 55+ själv", "burmått måste matchas (måste mäta — förlorarsignal)", "landad 561–685 kr är tungt"]
+      },
+      "sasong": {"fonster_id": "forsta_frost_norr", "deadline_typ": "första frost", "veckor_kvar": 0.9, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005010467409513",
+        "url": "https://www.aliexpress.com/item/1005010467409513.html",
+        "pris_usd": 43.09,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-12T11:13:42Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010467409513.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "tvåvånings-bur enligt sökträffen ('Double Decker'); storlekar ej synliga i titeln — troligen flera mått (ej mätt)", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 2, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "grå huv över tvåvånings träbur, halvt uppdragen så buren syns — textfri, tydlig, men fotomontage på vit bakgrund"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Trixie Natura regnskydd (begagnat 90 kr på finn.no — ingen svensk butik med separat huv hittad i denna körning)", "pris_sek": null, "url": "https://www.finn.no/recommerce/forsale/item/420404683", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "Trixie Natura kaninbur på ben 2 199 kr (zoohemma.se) / Natura Luxury 3 049 kr (zooplus.se) — buren som huven skyddar, inte samma form", "pris_sek": 2199, "url": "https://zoohemma.se/products/trixie-utebur-natura-pa-ben-116xh92x63-cm-brun", "i_sortiment": true},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["zooplus.se isolerade utomhusburar (0 produkter)", "zoo.se/arkenzoo.se (sökutdrag: burar, inga huvar)", "petvillage.se/djurmaxi.se (sökutdrag: inga huvar)"]
+      },
+      "ekonomi": {"landad_sek": [561, 685], "pris_sek": 999, "brutto_sek": [314, 438], "be_cpa_sek": [314, 438], "be_roas": 2.66, "flerkop": false, "returrisk": "hög — kunden måste mäta buren; fel mått = retur"},
+      "meta_tanke": {"hook": "Står kaninburen ute när frosten kommer?", "objekt_i_bild": "tvåvåningsburen med huven halvt på, kanin i öppningen", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "huven dras ner över buren, frost på gräset"},
+      "varfor": "Svenska zoohandlare säljer buren (2 199–3 049 kr) men ingen separat vinterhuv i samma form hittades — 'kaninen måste in' är ett hårt datum vid första frost, och köparen är samma småhushushåll som kattkojans. Fjärde kandidat med LÅG konfidens: tung landad och måttrisk.",
+      "huvudrisk": "Måste mäta (4 av 11 dömda vann) + landad 561–685 kr gör att 999 kr krävs för ekonomin — en tyghuv för 999 kr kan falla på upplevt värde.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 0, "lucka": 1, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 1},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (kanin: bara Automatisk Fågeldrickare 'höns, kalkon & kanin', arkiverad)", "koncept.py sok kanin — 0 träffar", "objekt.json Kanin/marsvin: 'burhuv/isolerhuv' listad som osökt form"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010467409513.html",
+        "https://zoohemma.se/products/trixie-utebur-natura-pa-ben-116xh92x63-cm-brun",
+        "https://www.zooplus.se/shop/gnagare_smadjur/utomhusburar/isolerade_utomhusburar",
+        "https://www.finn.no/recommerce/forsale/item/420404683"
+      ]
+    }
+  ]
+}
