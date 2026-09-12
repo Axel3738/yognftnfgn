@@ -44,7 +44,25 @@ annan produkt än länken).
   huvudsessionens slutläsning; enhetsformat, flerpack-format och sju sakrättningar).
 - `skapa.mjs <se|no> [--skarp] [id]` — skapar produkten med 3 bilder, 7-blocksbeskrivning, cogs, publicering.
 
+## AI-material via KIE (2026-09-12, 908 credits)
+- **13 miljöbilder** (`google/nano-banana-edit`, referens = produktens egen livebild; badge-heroer
+  fick tillfällig badgefri referens som media på SE-produkten och raderades efteråt). Tre gjordes om
+  efter granskning: motorlåset syntes knappt, täljsetet fick dubbla verktyg (referensen byttes till
+  detaljbilden med en kniv), snöflingorna visade 17 st (nu fyra flingor på en dörrpanel — ingen
+  räknebar totalsumma). Värmeljusen fick ingen (produkten är i vila).
+- **13 GIF:ar** (`veo3_fast` 8 s 720p → ffmpeg 8 fps / 400 px, alla < 4 MB). Blockljusen fick ingen:
+  Veo vägrade två gånger med "unable to generate audio" — miljöbilden ligger i GIF:ens plats i stället.
+  Snöskyffelns första video byggde om maskinen (såg ut att ha batteri) — omgjord med "completely
+  motionless and unchanged"; granska ALLTID rutremsan innan GIF:en läggs in.
+- Galleriordning: hero, miljöbild, detalj, fakta, GIF. Beskrivning: problem → GIF → lösning → hero →
+  funktioner → fakta → AI-rad → (varning) → garanti.
+
 ## Lärdomar
+- **Higgsfield slut ≠ ingen AI.** KIE (`KIE_API_KEY`, `temu/ai-bild.mjs`-mönstret) hade 15 665 credits
+  och gör både bild (nano-banana-edit) och video (`/api/v1/veo/generate`, `veo3_fast`). Axel: *"Men du
+  kan inte bara använda Kie Ai api då?"* — kolla alltid båda saldona innan något rapporteras som omöjligt.
+- **10 fps/480 px ger 5–7 MB GIF ur en 8 s Veo-video** — 8 fps/400 px (CLAUDE.md-receptet) landar på
+  2,7–3,9 MB. Använd receptet från början.
 - **`=IMAGE()`-formlerna i arkets kolumn A pekar på `ae-pic-a1.aliexpress-media.com`** — den CDN:en
   går att hämta från molnet fast AliExpress-sidorna är blockerade. Fyra produkter fick sina enda
   bilder den vägen (spakapell, vedställskapell, snöslungekapell, hönsgårdsduk). Läs

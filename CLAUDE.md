@@ -444,6 +444,12 @@ illustrationer" — samma mönster som matstrumpor-soffbilden och Bäver-UGC:n).
 Produktens faktiska utseende (färg, detaljer, innehåll) ska alltid komma från
 en riktig källbild — AI får aldrig vara enda källan till hur produkten ser ut.
 AI-video → GIF görs också i molnet (Higgsfield + ffmpeg).
+**Är Higgsfield slut på credits: byt till KIE, fråga inte Axel om påfyllning.** `KIE_API_KEY`
+finns i molnmiljön; bild = `google/nano-banana-edit` (mönster i `temu/ai-bild.mjs`), video =
+`/api/v1/veo/generate` med `veo3_fast` (mönster i `temu/batch9/gif-kie.mjs`). Kolla båda
+saldona innan något rapporteras som "inga AI-bilder den här gången". *(2026-09-12: batch 9/10
+levererades utan AI-material med hänvisning till Higgsfield-saldot 0,61 — KIE hade 15 665
+credits. Axel: "Men du kan inte bara använda Kie Ai api då?")*
 
 **Beskrivningens struktur (Axels regel 2026-08-29)** — gäller varje produktsida
 som får skördebilder, i den här exakta ordningen:
