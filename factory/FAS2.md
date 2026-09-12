@@ -100,6 +100,28 @@ annons som var ÅTGÄRDAD enligt steg 4 kunde ändå aldrig byggas. En fil i
 `output/<id>/bildfix/<annons>.<ext>` vinner nu över domen — domen speglar KÄLLAN
 och ska stå kvar som historik.
 
+**Fyra körningsdetaljer som kostar tid om man inte vet dem:**
+
+* **Räkningen slås upp på PRODUKT-id, inte butiks-id.** `node factory/rakning.mjs
+  utekattkojan`, inte `catcabin`. Kommandofilen säger `<butik-id>` och det stämde
+  för TankGuard, där butik och produkt heter likadant. Gör de inte det stoppar
+  räkningen med "Hittar inte factory/produkter/catcabin.yaml".
+* **Trippelkollen tar konfigarna som en LISTA.** Ge den både video- och
+  bildkonfigen — med bara den ena blir svaret "9 annonser (är: 12)", en falsk
+  avvikelse. Och flaggan skrivs `--vantat 12` med mellanslag; `--vantat=12`
+  tolkas som en configsökväg och kraschar med `ERR_MODULE_NOT_FOUND` på `/12`.
+* **En namngiven orsak hör hemma i `output/<id>/uteslutna.json`.** Skriver man
+  den i `brand-detektor.json` eller `kallannonser.json` är den borta nästa gång
+  verktygen kör, och rapporten kräver "orsak saknas — måste namnges" i evighet.
+* **Metas rate limit (fel 17) slår till mitt i bygget** när ett dussin videor
+  laddats upp. Skripten är idempotenta på namn, så kör bara om — kampanj, adsets
+  och färdiga annonser återanvänds. ⚠️ Under strypningen svarar ett listanrop
+  HTTP 400 med kod 17, INTE med en tom lista. Det är tur: `no-video-launch`
+  avgör idempotensen på `(await api(...)).data || []` och hade byggt dubbletter
+  om Meta svarat tomt. Men en egen avläsning som gör `(j.data||[]).length` visar
+  0 adsets på en kampanj som har tre — det ser ut som att ingenting byggts.
+  Läs alltid `j.error` innan du tror på en nolla.
+
 **Talet kan läsas gratis även utan `/translate`-batch.** `faster-whisper` (base
 → small) transkriberar källvideorna lokalt, 0 krediter. ⚠️ base hörde "899" där
 small hörde "809"; 809 var rätt (matchar den norska systerannonsens 809 NOK).
