@@ -10,6 +10,8 @@
 //   node factory/register.mjs brief-kord <butik> [YYYY-MM-DD]    → stämpla senaste_brief (briefronden)
 //   node factory/register.mjs notion <butik> <database_id|url> [namn…]  → koppla Notion-hubben
 //   node factory/register.mjs redigerare <butik> <namn> [discord-id]    → tilldela redigerare
+//   node factory/register.mjs briefantal <butik> <antal|auto> [--tillsvidare] [motivering…]
+//                                                     → överstyr briefrondens storlek (engång som standard)
 //
 // Två kalendrar per post (Axels beslut 2026-09-10):
 //   KÖRDAG   — budgetronden (/skalningskungen), var tredje dag via kordag_offset.
@@ -40,6 +42,7 @@ import { dirname, join } from 'node:path';
 import { lasYaml } from './yaml.mjs';
 import { sammanfoga } from './butik.mjs';
 import { ekonomiForProdukt, linjetext } from './ekonomi.mjs';
+import { VIDEOR_PER_DAG, RONDDAGAR } from './kadens.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGISTERFIL = join(ROT, 'factory', 'produkter', 'register.json');
@@ -411,6 +414,9 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       // A/B-test 2026-09-10). Nattvakten skriver in vinnaren själv när
       // båda modellerna har tillräckligt med bedömbara annonser.
       copy_modell: COPY_MODELLER.includes(d?.copy_modell) ? d.copy_modell : 'ab',
+      // Briefrondens storlek kan överstyras av Axel (t.ex. 21 första ronden
+      // fast redigeraren inte är bestämd). Skräp räknas som ingen överstyrning.
+      briefantal_override: giltigOverride(d?.briefantal_override) ? d.briefantal_override : null,
       notion: d?.notion ?? post.notion ?? null,
       kordag_offset: offset,
       senaste_korning: d?.senaste_korning ?? '',
@@ -604,6 +610,66 @@ export function redigerareFor(post) {
   return finns(post?.redigerare) ? post.redigerare : null;
 }
 
+// ------------------------------------------------------- briefrondens storlek
+
+/** Kadensens rond: 7 videor/dag × 3 dagar = 21 (factory/kadens.mjs, Axels tal). */
+export const BRIEFANTAL_KADENS = VIDEOR_PER_DAG * RONDDAGAR;
+/** Utan redigerare: en dags produktion, så hubben inte fylls med briefer ingen gör. */
+export const BRIEFANTAL_UTAN_REDIGERARE = VIDEOR_PER_DAG;
+
+/** En överstyrning är giltig bara med ett heltal > 0 — allt annat ignoreras tyst men syns i rapporten som "ingen". */
+function giltigOverride(o) {
+  return Boolean(o) && typeof o === 'object' && Number.isInteger(o.antal) && o.antal > 0;
+}
+
+/**
+ * Hur många briefer briefronden ska lägga i hubben. REN funktion.
+ *
+ * Tre vägar in, i den ordningen:
+ *   1. En överstyrning i registret (`briefantal_override`) — ett ägarbeslut,
+ *      t.ex. Axel 2026-09-12 på CatCabin: "redigerare obestämd men leverera
+ *      21 briefer ändå den första ronden, jag fixar redigerare asap".
+ *      Engång (standard) förbrukas av `brief-kord`; tillsvidare står kvar
+ *      tills `briefantal <butik> auto`.
+ *   2. Redigerare tilldelad → kadensens 21 (7/dag × 3 dagar).
+ *   3. Ingen redigerare → 7, en dags produktion.
+ *
+ * Rutinen läser raden `Briefrond:` i registrets utskrift — aldrig ett tal ur
+ * huvudet, och aldrig "7 utan redigerare" som en evig lag.
+ */
+export function briefantal(post) {
+  const o = post?.briefantal_override;
+  if (giltigOverride(o)) {
+    return {
+      antal: o.antal,
+      kalla: 'override',
+      engang: o.engang !== false,
+      skal: `ÖVERSTYRD (${o.engang !== false ? 'engång — förbrukas av brief-kord' : 'tillsvidare — nollas med `briefantal <butik> auto`'})`
+        + `${finns(o.motivering) ? `: ${o.motivering}` : ''}${finns(o.satt) ? ` [satt ${o.satt}]` : ''}`,
+    };
+  }
+  const redigerare = redigerareFor(post);
+  if (redigerare) {
+    return { antal: BRIEFANTAL_KADENS, kalla: 'kadens', engang: false, skal: `kadensen ${VIDEOR_PER_DAG}/dag × ${RONDDAGAR} dagar — redigerare ${redigerare}` };
+  }
+  return { antal: BRIEFANTAL_UTAN_REDIGERARE, kalla: 'utan-redigerare', engang: false, skal: 'ingen redigerare tilldelad — en dags produktion, så hubben inte fylls med briefer ingen gör' };
+}
+
+/**
+ * Förbrukar en engångsöverstyrning på en driftrad. REN: muterar raden den
+ * får, läser ingen fil. Spåret sparas som `briefantal_override_forbrukad`
+ * så rapporten kan säga VARFÖR nästa rond går på standard igen.
+ * @returns {object|null} den förbrukade överstyrningen, eller null om inget hände
+ */
+export function forbrukaBriefantal(rad, datum) {
+  const o = rad?.briefantal_override;
+  if (!giltigOverride(o) || o.engang === false) return null;
+  const forbrukad = { ...o, forbrukad: datum };
+  rad.briefantal_override = null;
+  rad.briefantal_override_forbrukad = forbrukad;
+  return forbrukad;
+}
+
 // ------------------------------------------------------------- skrivningar
 
 /** Driftraden för en post som ännu saknas i register.json — samma fält som
@@ -668,7 +734,8 @@ export function loggaKorning(nyckel, datum) {
   return { ...post, senaste_korning: datum };
 }
 
-/** Stämplar en genomförd briefrond. Utan den blir varje natt "första briefronden". */
+/** Stämplar en genomförd briefrond. Utan den blir varje natt "första briefronden".
+ *  En engångsöverstyrning av briefantalet förbrukas här — den gällde just den ronden. */
 export function loggaBrief(nyckel, datum) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(datum ?? ''))) throw new Error(`Ogiltigt datum: ${datum} (använd YYYY-MM-DD)`);
   const post = hittaPost(nyckel);
@@ -677,9 +744,35 @@ export function loggaBrief(nyckel, datum) {
   const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
   rad.senaste_brief = datum;
   rad.lage = rad.lage ?? post.lage;
+  const forbrukad = forbrukaBriefantal(rad, datum);
   drift.poster[post.nyckel] = rad;
   skrivDrift(drift);
-  return { ...post, senaste_brief: datum };
+  return { ...post, senaste_brief: datum, briefantal_override: rad.briefantal_override ?? null, briefantal_forbrukad: forbrukad };
+}
+
+/**
+ * Överstyr briefrondens storlek. `antal` = heltal > 0, eller 'auto' för att
+ * ta bort överstyrningen. Engång som standard (förbrukas av `brief-kord`);
+ * `tillsvidare: true` låter den stå tills den nollas. Motiveringen sparas —
+ * ett tal utan skäl går inte att förstå om två veckor.
+ */
+export function sattBriefantal(nyckel, antal, { motivering = '', tillsvidare = false, satt = svenskDatum() } = {}) {
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  if (normalisera(antal) === 'auto') {
+    rad.briefantal_override = null;
+  } else {
+    const n = Number(antal);
+    if (!Number.isInteger(n) || n <= 0) throw new Error(`Ange antal briefer som ett heltal > 0, eller "auto" — fick "${antal}".`);
+    if (!finns(motivering)) throw new Error('Ange en motivering — en överstyrning utan skäl går inte att förstå senare.');
+    rad.briefantal_override = { antal: n, engang: !tillsvidare, motivering: motivering.trim(), satt };
+  }
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, briefantal_override: rad.briefantal_override };
 }
 
 /**
@@ -766,6 +859,10 @@ function skrivPost(post, idag) {
   const { prefix, skal } = prefixEllerSkal(post);
   console.log(`  Prefixfilter: ${prefix ? prefix.join(' · ') : `❌ ${skal}`}`);
   console.log(`  Redigerare:   ${redigerareFor(post) ?? 'ingen redigerare tilldelad'}`);
+  if (post.lage !== 'test') {
+    const b = briefantal(post);
+    console.log(`  Briefrond:    ${b.antal} briefer — ${b.skal}`);
+  }
   console.log(`  Dagsbudget:   ${post.daily_budget_sek ? `${post.daily_budget_sek} kr` : 'oklart — saknas i konfigen'}`);
   console.log(`  Kördag ${idag}: ${kord.kordag ? '✅ JA' : '⏭️  nej'} — ${kord.skal}. Nästa: ${kord.nastaKordag}`);
   const brief = arBriefdag(post, idag);
@@ -810,6 +907,19 @@ function huvud() {
   if (arg[0] === 'brief-kord') {
     const post = loggaBrief(arg[1], arg[2] ?? idag);
     console.log(`Stämplat: briefronden på ${post.namn} körd ${post.senaste_brief}`);
+    if (post.briefantal_forbrukad) {
+      const b = briefantal(post);
+      console.log(`Engångsöverstyrningen (${post.briefantal_forbrukad.antal} briefer) är förbrukad — nästa briefrond går på ${b.antal} (${b.skal}).`);
+    }
+    return;
+  }
+  if (arg[0] === 'briefantal') {
+    if (!arg[2]) throw new Error('Ange antal eller "auto": briefantal <butik> <antal|auto> [--tillsvidare] [motivering…]');
+    const tillsvidare = arg.includes('--tillsvidare');
+    const motivering = arg.slice(3).filter((a) => a !== '--tillsvidare').join(' ');
+    const post = sattBriefantal(arg[1], arg[2], { motivering, tillsvidare, satt: idag });
+    const b = briefantal(post);
+    console.log(`Briefrond på ${post.namn}: ${b.antal} briefer — ${b.skal}`);
     return;
   }
   if (arg[0] === 'notion') {

@@ -168,6 +168,11 @@ Samma sak med `PD_3_H1` (ROAS 10,16 på 78 kr). Enmetriks-domar är förbjudna.
    tills någon byter typ för hand.
 4. **Ingen redigerare tilldelad.** Briefronden begränsas därför till 7 per rond
    i stället för kadensens 21, så hubben inte fylls med briefer ingen gör.
+   **Undantag, Axels beslut 2026-09-12 (kväll):** första briefronden ska ändå
+   ge **21** — "redigerare obestämt men leverera 21 briefer ändå den första
+   ronden som kommer, jag fixar redigerare asap". Inskrivet som en
+   engångsöverstyrning i registret (`briefantal_override`, förbrukas av
+   `brief-kord`). Från rond 2 gäller 7 igen tills `redigerare` är satt.
 5. **Leverantörslänken är overifierad.** `TEMU-5030003647894` svarar
    "discontinued". Påverkar inte creative-arbetet, men inköpskostnaden vilar på
    den.
@@ -183,3 +188,24 @@ Gjort: hub skapad + registrerad, rutinplats 6 låst, nattvakten byggd,
 minnesfilerna skrivna ur ärvd historik.
 
 Nästa körning är nattvaktens egen, och den blir en **kallstart** enligt ovan.
+
+## Körning nr 2 — 2026-09-12 kväll, setup-omkoll (`/notionscalercs setup catcabin`)
+
+Idempotent omkörning från kontot `claude5@stonebite.org`. Ingen briefrond,
+inga rutiner byggda: alla tre (nattvakt 00:49, leverans 14:10, översättning
+16:10) ligger på det andra kontot och syns inte i `list_triggers` här — det
+är inte en saknad rutin. Torrkörningarna var gröna igen (budgetrond 0
+ändringar, skalning 0 egna annonser + ärvd `PD_2_H1` som enda bedömbara,
+Notion-brief mot hubben, Discord-jobbet). Hubben var tom (0 rader), så
+stoppet "väntar på redigerare" slår inte i natt.
+
+**Ny mekanism:** `briefantal 21` inskrivet (rotorsak 4 ovan). Nattvakten
+läser raden `Briefrond:` ur registret i natt och lägger 21 briefer.
+
+**Mätt om kampanjen, 21:00 UTC:** `CATCABIN_SE_Utekattkojan` hade
+**1 172 kr spend och 1 köp**, allt daterat 2026-09-12 (kontots tidszon
+Europe/Copenhagen). Budgetrondens torrkörning visade 0 kr på 3d/7d — det
+är inte ett prefixfel utan Metas fönster (`last_3d`/`last_7d`/`last_14d`
+utesluter innevarande dag). Vid 00:49 har dagen rullat över och siffrorna
+syns. Fortfarande under domgränsen (300 kr OCH 3 köp per annons) —
+kallstarten står fast.
