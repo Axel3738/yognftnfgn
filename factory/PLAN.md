@@ -65,6 +65,10 @@ Målet: aldrig vänta på en redigerare när en ny OPS-butik launchar.
    **OnlineJobs.ph** och annonsen som gav teamet ligger ordagrant i
    `factory/rekrytering/jobbannons-video-editor.md` (codeword-test,
    3-stegsfunnel, lönetrappa) — återanvänd den, byt bara codeword.
+   **Ramverket bakom annonsen, generellt för vilken roll som helst:**
+   `factory/rekrytering/FILTER-RAMVERKET.md` (2026-09-12). Första
+   tillämpningen på en annan roll: `jobbannons-kundsupport.md` (betyg +
+   utkast, fem beslut väntar på Axel).
 2. Kandidater som klarar testet läggs i en **standby-lista**.
 3. Standby-avtal: **100–200 kr/månad** i beredskapsersättning — de förbinder
    sig att vara redo att börja direkt när en butik behöver dem.

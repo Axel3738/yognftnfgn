@@ -10,6 +10,10 @@ bara codeword och siffror.
 
 ## Ramverket i korthet (det som gör att den funkar)
 
+Den generella versionen — sex filter i tidsordning, varför varje del
+fungerar, bygg-mall för en ny roll — står i `FILTER-RAMVERKET.md`
+(skriven 2026-09-12). Listan nedan är kortversionen för just den här annonsen.
+
 1. **Självfiltrering före ansökan.** Lång, brutalt ärlig text. "Who should NOT
    apply"-listan gör att fel personer sorterar bort sig själva gratis.
 2. **Codeword-testet.** Ett kodord ("semla") är gömt mitt i brödtexten och ska
@@ -49,8 +53,11 @@ lönetrappan ur annonsen + 0,4 % commission på adspend (samma sats som
 
 **Använda codewords (återanvänd aldrig):** `semla` (originalannonsen,
 2026-08-21) · `kanelbulle` (utskick 2026-09-06, `utskick/annons-1-kanelbulle.txt`)
-· `surdeg` (utskick 2026-09-06, `utskick/annons-2-surdeg.txt`). Codewordet
-avslöjar vilken annons en ansökan kommer ifrån.
+· `surdeg` (utskick 2026-09-06, `utskick/annons-2-surdeg.txt`) · `apple`
+(kundsupport-annonsen i `jobbannons-kundsupport.md`, synligt i texten,
+publiceringsstatus okänd 2026-09-12) · `lingon` (FÖRESLAGET för
+kundsupport-utkastet, inte utskickat). Codewordet avslöjar vilken annons en
+ansökan kommer ifrån.
 
 ## Att göra inför nästa utskick
 
