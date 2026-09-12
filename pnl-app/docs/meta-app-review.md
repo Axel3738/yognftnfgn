@@ -53,6 +53,17 @@ Partner"-märke. Den öppnas av att appen används.
    - `GET /meta/deletion` → statussidan (inte 404).
    - `POST /meta/deauth` med skräp i `signed_request` → **400**, inte 500.
 
+## Cowork gör klicken — prompt 8 till 13
+
+Allt som är rent klickande ligger som färdiga Cowork-prompter i
+`docs/cowork-prompts.md` (avsnittet "Meta-godkännandet"). Kör dem i ordning.
+
+Tre saker kan Cowork **inte** göra, och de är Axels:
+registreringsbevis och kontoutdrag, appikonen 1024 × 1024 px, och
+skärminspelningen + skapandet av testkontot (Facebook kräver telefon).
+
+Stegen nedan är samma sak i klartext, för den som hellre klickar själv.
+
 ## Axels steg, i ordning
 
 ### Del 1 — Verifiera företaget (börja här, det tar längst tid)

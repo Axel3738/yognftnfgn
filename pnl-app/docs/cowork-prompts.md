@@ -222,3 +222,166 @@ Fråga mig om ett fält saknas eller ser annorlunda ut — gissa inte.
 **Efter att Cowork är klar:** skriv in utfallet i `CLAUDE.md` (avsnittet om
 planerna) — särskilt om priset gick att ändra i befintlig plan eller om en ny
 plan skapades, och vad som hände med befintliga prenumeranter.
+
+---
+
+# Meta-godkännandet (ads_read) — prompt 8 till 12
+
+Bakgrunden och hela ansökan står i `docs/meta-app-review.md`. Kör prompterna
+i ordning. **8 och 9 kan köras samma minut; 10 måste vara godkänd innan 12
+går att skicka in.**
+
+Tre saker kan Cowork INTE göra, och de är Axels:
+- ladda upp registreringsbevis och kontoutdrag (dokument bara han har),
+- ladda upp appikonen 1024 × 1024 px,
+- spela in skärminspelningen och skapa testkontot (Facebook kräver telefon).
+
+## 8. Railway: nyckeln som gör granskarsidan synlig
+
+```
+Du styr min webbläsare. Jag är inloggad på railway.app.
+Uppgift: lägg till två miljövariabler på EN tjänst.
+
+1. Öppna projektet och klicka på tjänsten pnl-app-store.
+2. Klicka Variables.
+3. Klicka New Variable. Namn: META_REVIEW_KEY
+   Värde: generera själv en slumpmässig sträng på 40 tecken, bara a-z, A-Z och 0-9.
+   Klicka Add.
+4. Klicka New Variable. Namn: SUPPORT_EMAIL
+   Klicka i värdefältet och STANNA. Säg till mig: "Skriv supportadressen." Jag skriver den själv.
+   Klicka Add när jag sagt klar.
+5. Vänta tills Railway visar en ny deploy som Active (ca 2 minuter).
+6. Öppna i en ny flik:
+   https://pnl-app-store-production.up.railway.app/healthz
+   Läs upp vad som står efter "build". Det ska stå meta-granskning-v86 eller senare.
+7. Öppna i en ny flik:
+   https://pnl-app-store-production.up.railway.app/meta/granska?key=NYCKELN
+   där NYCKELN är strängen du genererade i steg 3.
+   Det ska komma upp en sida med rubriken "StonePNL — ad account access test"
+   och en blå knapp "Continue with Facebook". Kommer det upp "Not Found" är nyckeln fel inklistrad.
+
+TILL SIST, VIKTIGAST: skriv ut hela META_REVIEW_KEY-strängen till mig i chatten.
+Jag behöver den till ansökan hos Meta. Ändra inga andra variabler.
+```
+
+Spara nyckeln Cowork skriver ut. Den behövs i prompt 11 och 12.
+
+## 9. Meta-appen: alla fält som krävs före inlämning
+
+```
+Du styr min webbläsare. Jag är inloggad på developers.facebook.com.
+Uppgift: fyll i fälten som krävs för att min app ska få skickas in på granskning.
+
+1. Öppna https://developers.facebook.com/apps och klicka på appen StonePNL.
+2. Vänstermenyn: Appinställningar → Grundläggande (App Settings → Basic).
+3. Sekretesspolicyns URL (Privacy Policy URL), klistra in:
+   https://pnl-app-store-production.up.railway.app/privacy
+4. Användarvillkorens URL lämnas tom om den är tom.
+5. Kategori (Category): välj Business.
+6. Appikon: säg till mig "Ladda upp ikonen" och vänta — jag har filen.
+7. Kontakt-e-post: klicka i fältet och säg till mig, jag skriver adressen själv.
+8. Rulla ner till "Radering av användardata" (User Data Deletion).
+   Välj alternativet Callback-webbadress för dataradering (Data Deletion Callback URL).
+   Klistra in: https://pnl-app-store-production.up.railway.app/meta/deletion
+9. Klicka Spara ändringar.
+10. Vänstermenyn: Appinställningar → Avancerat (Advanced).
+    Fältet Callback-URL för avauktorisering (Deauthorize Callback URL), klistra in:
+    https://pnl-app-store-production.up.railway.app/meta/deauth
+    Klicka Spara ändringar.
+11. Vänstermenyn: Facebook-inloggning → Inställningar (Facebook Login → Settings).
+    Under "Giltiga OAuth-omdirigerings-URI:er" ska denna rad finnas:
+    https://pnl-app-store-production.up.railway.app/meta/callback
+    Saknas den: lägg till den. Ta INTE bort rader som redan står där.
+    Klicka Spara ändringar.
+12. Kontrollera att "Kräv apphemlighet" (Require App Secret) är AV. Är den PÅ: stäng av den.
+13. Ta en skärmbild av Grundläggande-sidan och en av Avancerat-sidan och visa mig.
+
+Rör inga andra fält. Heter ett fält något annat än jag skrivit: fråga mig, gissa inte.
+```
+
+## 10. Företagsverifiering (måste vara klar före prompt 12)
+
+```
+Du styr min webbläsare. Jag är inloggad på business.facebook.com.
+Uppgift: starta verifieringen av mitt företag. Jag har dokumenten och laddar upp dem själv.
+
+1. Klicka kugghjulet Inställningar nere till vänster.
+2. Klicka Företagsinfo (Business Info).
+3. Leta upp Företagsverifiering (Business Verification) och klicka Starta verifiering.
+4. Läs upp för mig vilka fält som ska fyllas i, ett i taget, och vänta på mitt svar
+   innan du skriver något. Företagsnamn och adress måste bli EXAKT som på
+   registreringsbeviset — gissa aldrig ett tecken.
+5. När du kommer till dokumentuppladdning: säg "Ladda upp registreringsbeviset" och vänta.
+   Sedan "Ladda upp kontoutdrag eller faktura" och vänta.
+6. Läs upp hela sammanfattningen för mig INNAN du klickar Skicka in.
+7. Klicka Skicka in när jag sagt ja.
+8. Ta en skärmbild av kvittot och visa mig.
+
+Om verifieringen redan är godkänd eller ligger i "Under granskning": ändra ingenting,
+säg bara vilken status som står och ta en skärmbild.
+```
+
+## 11. Testkontot till granskaren
+
+Facebook kräver telefonverifiering för ett nytt konto — det steget gör Axel
+själv. Cowork gör resten.
+
+```
+Du styr min webbläsare.
+Uppgift: ge mitt testkonto tillgång till ett annonskonto. Jag har redan skapat kontot.
+
+1. Gå till business.facebook.com och klicka kugghjulet Inställningar.
+2. Klicka Personer (People).
+3. Klicka Lägg till (Add).
+4. Säg till mig "Skriv testkontots e-post" och vänta. Jag skriver adressen.
+5. Välj rollen Anställd (Employee).
+6. Gå vidare till tillgångar, välj Annonskonton, och kryssa i ett annonskonto SOM HAR
+   ANNONSDATA i sig. Fråga mig vilket om du är osäker.
+7. Ge behörigheten "Visa prestanda" (View Performance) — inte full kontroll.
+8. Klicka Bjud in / Lägg till.
+9. Ta en skärmbild och visa mig.
+
+Skapa aldrig ett nytt Facebook-konto själv. Ge aldrig full kontroll över ett annonskonto.
+```
+
+## 12. Skicka in App Review för ads_read
+
+Kör den här SIST, när prompt 10 är godkänd och videon är inspelad.
+
+```
+Du styr min webbläsare. Jag är inloggad på developers.facebook.com.
+Uppgift: skicka in min app StonePNL på granskning för behörigheten ads_read.
+
+1. Öppna https://developers.facebook.com/apps och klicka på appen StonePNL.
+2. Vänstermenyn: App Review → Permissions and Features (Behörigheter och funktioner).
+3. Sök fram ads_read i listan.
+4. Klicka Request Advanced Access (Begär avancerad åtkomst) på raden ads_read.
+5. Säg till mig "Klistra in motiveringen" och vänta — jag har texten färdig.
+6. När du kommer till uppladdning av skärminspelning: säg "Ladda upp videon" och vänta.
+7. Under testinloggning / test credentials: säg "Skriv testkontots e-post och lösenord"
+   och vänta. Jag skriver dem.
+8. Läs upp HELA formuläret för mig innan du klickar Submit for Review.
+9. Klicka Submit for Review när jag sagt ja.
+10. Ta en skärmbild av bekräftelsen och visa mig.
+
+Begär BARA ads_read. Kryssa aldrig i ads_management eller någon annan behörighet —
+en blandad ansökan avslås i sin helhet. Fråga mig om något fält ser annorlunda ut.
+```
+
+## 13. Efter godkännandet: slå på Live
+
+```
+Du styr min webbläsare. Jag är inloggad på developers.facebook.com.
+Uppgift: sätt appen StonePNL i Live-läge.
+
+1. Öppna https://developers.facebook.com/apps och klicka på appen StonePNL.
+2. Högst upp finns ett reglage som står på Utveckling (Development).
+3. Dra det till Live.
+4. Kommer det upp en ruta som säger att något saknas: läs upp exakt vad som står
+   och STOPPA. Fyll inte i något själv.
+5. Bekräfta i rutan om den bara ber om bekräftelse.
+6. Ta en skärmbild som visar att reglaget står på Live och visa mig.
+```
+
+Efter det fungerar "Logga in med Facebook" för utomstående handlare.
+Skriv in datumet i `CLAUDE.md`.

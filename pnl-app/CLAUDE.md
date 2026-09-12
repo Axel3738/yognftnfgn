@@ -818,7 +818,9 @@ det Meta kräver av OSS innan ansökan kan skickas:
   API-produkten tillagd, och App Review för `ads_read` i Advanced Access med
   skärminspelning. **Hela ansökan, Axels klick i ordning och den färdiga
   engelska motiveringstexten står i `docs/meta-app-review.md`** — läs den
-  filen innan något rörs i Meta-dashboarden.
+  filen innan något rörs i Meta-dashboarden. **Klicken är färdiga
+  Cowork-prompter (8–13) i `docs/cowork-prompts.md`** — Axel ska inte
+  klicka själv i Meta-dashboarden, bara ladda upp dokument, ikon och video.
 - **Två grindar, inte en:** (1) `ads_read` i Advanced Access via App Review,
   (2) Marketing API Access Tier. Den andra öppnas AUTOMATISKT från Limited
   till Full vid ≥ 500 anrop på 15 dagar med < 15 % fel — ingen ansökan,
