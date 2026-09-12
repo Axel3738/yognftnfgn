@@ -15,6 +15,7 @@
     "commission": "node commission/run.mjs",
     "kundtjanst": "node kundtjanst/run.mjs",
     "kundtjanst:setup": "node kundtjanst/setup.mjs",
+    "kundtjanst:sida": "node kundtjanst/rapportsida.mjs",
     "sjalvtest": "node factory/sjalvtest.mjs"
   },
   "engines": {

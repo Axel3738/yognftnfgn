@@ -1,0 +1,312 @@
+<title>Kundtjänstläget</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap">
+
+<style>
+  /* Sidan läses av Axel (svenska) och av VA:n (den engelska fliken).
+     Brödtexten är Atkinson Hyperlegible — ritad för läsbarhet, inte för stil.
+     Statusen bärs alltid av emoji + ord + tal, aldrig av färg ensam. */
+  :root {
+    --ground: #F2F5F7;
+    --yta: #FFFFFF;
+    --yta-2: #F7F9FB;
+    --ink: #161E23;
+    --ink-svag: #5A6873;
+    --linje: #D8E0E6;
+    --linje-stark: #B9C6D0;
+    --blakk: #23508A;
+    --blakk-yta: #E4ECF7;
+    --lag: #23724A;       --lag-yta: #DFF2E6;
+    --forhojd: #9A6708;   --forhojd-yta: #FBEFD2;
+    --hog: #B23327;       --hog-yta: #FADDD9;
+    --axel-yta: #FFF6DA;
+    --skugga: 0 1px 2px rgba(22, 30, 35, 0.05), 0 10px 28px -18px rgba(22, 30, 35, 0.35);
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --brod: "Atkinson Hyperlegible", "Segoe UI", Verdana, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0E1418;
+      --yta: #161E24;
+      --yta-2: #1B252C;
+      --ink: #E6ECF0;
+      --ink-svag: #93A3AE;
+      --linje: #273239;
+      --linje-stark: #3A4852;
+      --blakk: #8DB8F0;
+      --blakk-yta: #1A2C44;
+      --lag: #6CCB93;       --lag-yta: #14301F;
+      --forhojd: #E9B549;   --forhojd-yta: #3A2C0C;
+      --hog: #F08A7E;       --hog-yta: #43201B;
+      --axel-yta: #3A2F10;
+      --skugga: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 28px -18px rgba(0, 0, 0, 0.9);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0E1418;
+    --yta: #161E24;
+    --yta-2: #1B252C;
+    --ink: #E6ECF0;
+    --ink-svag: #93A3AE;
+    --linje: #273239;
+    --linje-stark: #3A4852;
+    --blakk: #8DB8F0;
+    --blakk-yta: #1A2C44;
+    --lag: #6CCB93;       --lag-yta: #14301F;
+    --forhojd: #E9B549;   --forhojd-yta: #3A2C0C;
+    --hog: #F08A7E;       --hog-yta: #43201B;
+    --axel-yta: #3A2F10;
+    --skugga: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 28px -18px rgba(0, 0, 0, 0.9);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--brod);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sida {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 28px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  a { color: var(--blakk); }
+  :focus-visible { outline: 3px solid var(--blakk); outline-offset: 2px; }
+
+  /* ---------- Huvud ---------- */
+  .huvud { display: flex; flex-direction: column; gap: 14px; }
+  .huvud h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .huvud .under { color: var(--ink-svag); margin: 0; font-size: 15px; }
+  .veckor { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .veckor .etikett { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-svag); margin-right: 4px; }
+  .veckor button {
+    font: inherit; font-size: 15px; font-weight: 700;
+    padding: 6px 14px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--linje-stark); background: var(--yta); color: var(--ink);
+  }
+  .veckor button[aria-pressed="true"] { background: var(--blakk); border-color: var(--blakk); color: #fff; }
+  :root[data-theme="dark"] .veckor button[aria-pressed="true"] { color: #0E1418; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .veckor button[aria-pressed="true"] { color: #0E1418; } }
+
+  /* ---------- Läget: ett kort per brand ---------- */
+  h2.sektion {
+    font-family: var(--display); font-weight: 700; font-size: 22px; margin: 0 0 12px; letter-spacing: -0.005em;
+  }
+  .kort-rad { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; }
+  .kort {
+    background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga);
+    padding: 18px 18px 14px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: inherit;
+  }
+  .kort:hover { border-color: var(--linje-stark); }
+  .kort .namn { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; }
+  .kort .tal-rad { display: flex; align-items: baseline; gap: 12px; }
+  .kort .poang {
+    font-family: var(--display); font-weight: 800; font-size: 54px; line-height: 1; letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  .kort .av { color: var(--ink-svag); font-size: 14px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px;
+    font-weight: 700; font-size: 14px; white-space: nowrap;
+  }
+  .pill.lag { background: var(--lag-yta); color: var(--lag); }
+  .pill.forhojd { background: var(--forhojd-yta); color: var(--forhojd); }
+  .pill.hog { background: var(--hog-yta); color: var(--hog); }
+  .pill.okand { background: var(--yta-2); color: var(--ink-svag); }
+  .kort dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 0; font-size: 15px; }
+  .kort dt { color: var(--ink-svag); }
+  .kort dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+  .kort dd.text { font-weight: 400; text-align: right; }
+  .kort svg { width: 100%; height: 54px; display: block; }
+  .kort .kurva-text { font-size: 12px; color: var(--ink-svag); }
+  .kort .kurva-text.saknas { font-style: italic; }
+  .tomt { background: var(--yta); border: 1px dashed var(--linje-stark); border-radius: 14px; padding: 22px; color: var(--ink-svag); }
+
+  /* ---------- Rapporterna ---------- */
+  .brand { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga); overflow: hidden; }
+  .brand > .topp {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 16px 20px; border-bottom: 1px solid var(--linje); background: var(--yta-2);
+  }
+  .brand h2 { font-family: var(--display); font-weight: 700; font-size: 22px; margin: 0; }
+  .flikar { display: inline-flex; border: 1px solid var(--linje-stark); border-radius: 10px; overflow: hidden; }
+  .flikar button {
+    font: inherit; font-size: 14px; font-weight: 700; padding: 6px 12px; cursor: pointer;
+    background: var(--yta); color: var(--ink); border: 0;
+  }
+  .flikar button + button { border-left: 1px solid var(--linje-stark); }
+  .flikar button[aria-selected="true"] { background: var(--blakk-yta); color: var(--blakk); }
+  .rapport { padding: 8px 20px 22px; }
+  .rapport[hidden] { display: none; }
+
+  /* Markdown-innehållet från kundtjanst/korningar/ */
+  .md h1 { font-family: var(--display); font-size: 20px; font-weight: 700; margin: 16px 0 4px; }
+  .md h2 { font-family: var(--display); font-size: 17px; font-weight: 700; margin: 22px 0 8px; letter-spacing: 0.01em; }
+  .md p { margin: 8px 0; max-width: 68ch; }
+  .md ul, .md ol { margin: 6px 0; padding-left: 24px; max-width: 70ch; }
+  .md li { margin: 3px 0; }
+  .md li ul { margin: 2px 0; }
+  .md code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.92em; background: var(--yta-2); padding: 1px 5px; border-radius: 5px; }
+  .md .tabell { overflow-x: auto; margin: 8px 0 12px; }
+  .md table { border-collapse: collapse; font-size: 15px; min-width: 100%; }
+  .md th, .md td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--linje); vertical-align: top; }
+  .md th { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-svag); font-weight: 700; }
+  .md td { font-variant-numeric: tabular-nums; }
+  .md section[data-sektion="axel"] {
+    background: var(--axel-yta); border-radius: 12px; padding: 4px 16px 10px; margin-top: 18px;
+  }
+  .md section[data-sektion="axel"] h2::before { content: "👉 "; }
+  .md section[data-sektion="va"] ol li, .md section[data-sektion="action"] ol li { font-weight: 700; }
+  .md section[data-sektion="varning"] { border-left: 4px solid var(--hog); padding-left: 12px; }
+
+  .ranking .md .tabell { margin-top: 0; }
+  .sidfot { color: var(--ink-svag); font-size: 14px; max-width: 70ch; }
+  .sidfot p { margin: 4px 0; }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .kort .poang { font-size: 46px; }
+    .rapport, .brand > .topp { padding-inline: 14px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .kort { transition: border-color 120ms ease; }
+  }
+</style>
+
+<div class="sida">
+  <header class="huvud">
+    <h1>Kundtjänstläget</h1>
+    <p class="under" id="under"></p>
+    <div class="veckor" id="veckor" role="group" aria-label="Välj vecka"></div>
+  </header>
+
+  <section aria-labelledby="laget-rubrik">
+    <h2 class="sektion" id="laget-rubrik">Läget</h2>
+    <div class="kort-rad" id="kort"></div>
+  </section>
+
+  <section class="ranking" id="ranking" hidden>
+    <h2 class="sektion">Ranking alla brands</h2>
+    <div class="md" id="ranking-md"></div>
+  </section>
+
+  <section aria-label="Rapporter per brand" id="rapporter" style="display:flex;flex-direction:column;gap:18px"></section>
+
+  <footer class="sidfot">
+    <p>Siffrorna kommer ur måndagsrutinen <code>/kundtjanst</code> — den läser supportmejlen och Shopify, aldrig tvärtom. Sidan räknar inget om.</p>
+    <p>Risk 0–100 är summan av signaler med tak: 🟢 Låg under 25, 🟡 Förhöjd 25–50, 🔴 Hög över 50. Kundadresser är maskerade.</p>
+  </footer>
+</div>
+
+<script>
+  // Datan bakas in av kundtjanst/rapportsida.mjs — sidan är självbärande.
+  const DATA = __DATA__;
+
+  const NIVA = (p) => (p === null || p === undefined ? { id: 'okand', text: 'ingen mätning', emoji: '⚪' }
+    : p >= 50 ? { id: 'hog', text: 'Hög', emoji: '🔴' } : p >= 25 ? { id: 'forhojd', text: 'Förhöjd', emoji: '🟡' } : { id: 'lag', text: 'Låg', emoji: '🟢' });
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const el = (id) => document.getElementById(id);
+  const veckor = DATA.veckor.slice().sort().reverse();
+  let vald = veckor[0] ?? null;
+
+  function radFor(brand, vecka) { return (brand.historik || []).find((h) => h.vecka === vecka) ?? null; }
+
+  /** Riskkurvan över veckorna: en punkt per vecka, band vid 25 och 50. */
+  function kurva(brand) {
+    const rader = (brand.historik || []).slice().sort((a, b) => a.vecka.localeCompare(b.vecka));
+    if (!rader.length) return '<p class="kurva-text saknas">Ingen historik än.</p>';
+    const B = 320, H = 54, m = 6, n = rader.length;
+    const x = (i) => (n === 1 ? B / 2 : m + (i * (B - 2 * m)) / (n - 1));
+    const y = (p) => H - m - ((Math.max(0, Math.min(100, p ?? 0))) * (H - 2 * m)) / 100;
+    const band = (p) => `<line x1="0" x2="${B}" y1="${y(p)}" y2="${y(p)}" stroke="var(--linje)" stroke-dasharray="3 4" />`;
+    const punkter = rader.map((r, i) => `${x(i)},${y(r.riskPoang)}`).join(' ');
+    const sista = rader[n - 1];
+    const linje = n > 1 ? `<polyline points="${punkter}" fill="none" stroke="var(--blakk)" stroke-width="2" />` : '';
+    const prickar = rader.map((r, i) => `<circle cx="${x(i)}" cy="${y(r.riskPoang)}" r="${i === n - 1 ? 4 : 2.5}" fill="${i === n - 1 ? 'var(--' + NIVA(r.riskPoang).id + ')' : 'var(--blakk)'}" />`).join('');
+    const text = n > 1 ? `Risk vecka för vecka: ${rader.map((r) => `${r.vecka.slice(5)} = ${r.riskPoang}`).join(', ')}`
+      : `Första mätningen ${sista.vecka}. Kurvan börjar nästa vecka.`;
+    return `<svg viewBox="0 0 ${B} ${H}" role="img" aria-label="${esc(text)}">${band(25)}${band(50)}${linje}${prickar}</svg><p class="kurva-text">${esc(text)}</p>`;
+  }
+
+  function kort(brand, vecka) {
+    const r = radFor(brand, vecka);
+    const niva = NIVA(r?.riskPoang);
+    const topp = r?.topp?.[0] ? (DATA.kategorier[r.topp[0]]?.sv ?? r.topp[0]) : '—';
+    const gr = brand.trosklar?.obesvarad_timmar ?? 48;
+    return `<a class="kort" href="#brand-${esc(brand.id)}">
+      <p class="namn">${esc(brand.namn)}</p>
+      <div class="tal-rad"><span class="poang">${r ? r.riskPoang : '–'}</span><span class="av">/ 100</span>
+        <span class="pill ${niva.id}">${niva.emoji} ${esc(niva.text)}</span></div>
+      <dl>
+        <dt>Ärenden</dt><dd>${r ? r.antalArenden : '—'}</dd>
+        <dt>Obesvarade &gt; ${gr} h</dt><dd>${r ? r.larmObesvarade : '—'}</dd>
+        <dt>Tvister</dt><dd>${r ? (r.tvister === null ? 'ej läsbart' : r.tvister) : '—'}</dd>
+        <dt>Toppärende</dt><dd class="text">${esc(topp)}</dd>
+      </dl>
+      ${kurva(brand)}
+    </a>`;
+  }
+
+  function brandBlock(brand, vecka) {
+    const v = brand.veckor?.[vecka];
+    const id = esc(brand.id);
+    if (!v) return `<article class="brand" id="brand-${id}"><div class="topp"><h2>${esc(brand.namn)}</h2></div><div class="rapport"><p>Ingen rapport skriven för ${esc(vecka)}.</p></div></article>`;
+    return `<article class="brand" id="brand-${id}">
+      <div class="topp"><h2>${esc(brand.namn)}</h2>
+        <div class="flikar" role="tablist" aria-label="Språk">
+          <button role="tab" id="flik-${id}-sv" aria-selected="true" aria-controls="rap-${id}-sv" data-flik="sv" data-brand="${id}">Till Axel</button>
+          <button role="tab" id="flik-${id}-en" aria-selected="false" aria-controls="rap-${id}-en" data-flik="en" data-brand="${id}">To the VA (English)</button>
+        </div></div>
+      <div class="rapport md" id="rap-${id}-sv" role="tabpanel">${v.sv || '<p>Svensk rapport saknas.</p>'}</div>
+      <div class="rapport md" id="rap-${id}-en" role="tabpanel" hidden>${v.en || '<p>English report missing.</p>'}</div>
+    </article>`;
+  }
+
+  function rita() {
+    const dag = DATA.uppdaterad ? new Date(DATA.uppdaterad) : null;
+    el('under').textContent = vald
+      ? `Vecka ${vald} · ${DATA.brands.length} brand${DATA.brands.length === 1 ? '' : 's'} · sidan byggd ${dag ? dag.toLocaleDateString('sv-SE') : '—'}`
+      : 'Inga körningar än — första rapporten skrivs av måndagsrutinen.';
+    el('veckor').innerHTML = veckor.length
+      ? `<span class="etikett">Vecka</span>` + veckor.map((v) => `<button type="button" data-vecka="${esc(v)}" aria-pressed="${v === vald}">${esc(v.replace('-W', ' · v'))}</button>`).join('')
+      : '';
+    const sorterade = DATA.brands.slice().sort((a, b) => (radFor(b, vald)?.riskPoang ?? -1) - (radFor(a, vald)?.riskPoang ?? -1));
+    el('kort').innerHTML = sorterade.length ? sorterade.map((b) => kort(b, vald)).join('') : '<div class="tomt">Inget brand har körts än.</div>';
+    const rank = DATA.ranking?.[vald];
+    el('ranking').hidden = !rank;
+    el('ranking-md').innerHTML = rank || '';
+    el('rapporter').innerHTML = sorterade.map((b) => brandBlock(b, vald)).join('');
+  }
+
+  document.addEventListener('click', (e) => {
+    const v = e.target.closest('button[data-vecka]');
+    if (v) { vald = v.dataset.vecka; rita(); return; }
+    const f = e.target.closest('button[data-flik]');
+    if (f) {
+      const { brand, flik } = f.dataset;
+      for (const sprak of ['sv', 'en']) {
+        el(`flik-${brand}-${sprak}`).setAttribute('aria-selected', String(sprak === flik));
+        el(`rap-${brand}-${sprak}`).hidden = sprak !== flik;
+      }
+    }
+  });
+
+  rita();
+</script>

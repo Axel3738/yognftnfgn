@@ -80,14 +80,31 @@ utan den vet nästa vecka ingenting.
    Stoppas ett skick (svensk text, exit 3): skriv om på engelska — hoppa aldrig
    över rapporten. Allt i Discord är på engelska (Axels order 2026-09-05).
 
-4. **Committa och pusha till `main`**: korningar, historik och ranking.
+4. **Uppdatera hemsidan** — Axels sida med alla veckor, alla brands, båda språken:
    ```bash
-   git add kundtjanst/korningar kundtjanst/historik
+   node kundtjanst/rapportsida.mjs
+   ```
+   Den bakar rapporterna och historiken till `kundtjanst/rapport-publicerad.html`
+   och skriver ut vilken `url` som gäller. Publicera med Artifact-verktyget
+   **mot den länken**:
+   ```
+   Artifact  file_path: /home/user/yognftnfgn/kundtjanst/rapport-publicerad.html
+             url:       <länken skriptet skrev ut — står i kundtjanst/rapportsida.json>
+   ```
+   ⚠️ **`url` måste vara med.** Utan den skapas en ny sida med en ny länk, och
+   den Axel har sparad slutar uppdateras. Ingen `favicon` på en ompublicering.
+   Saknas `kundtjanst/rapportsida.json` helt (första gången, eller nytt konto):
+   publicera utan `url` med favicon `📬`, spara länken med
+   `node kundtjanst/rapportsida.mjs --url <länken>` och committa filen.
+
+5. **Committa och pusha till `main`**: korningar, historik, ranking och sidan.
+   ```bash
+   git add kundtjanst/korningar kundtjanst/historik kundtjanst/rapport-publicerad.html kundtjanst/rapportsida.json
    git commit -m "Kundtjänst <vecka>: <N> brands lästa, <M> hoppade"
    git push -u origin main
    ```
 
-5. **Svara Axel** kort, på svenska: rankingen (brand, nivå, poäng), de tre
+6. **Svara Axel** kort, på svenska: rankingen (brand, nivå, poäng), de tre
    toppärendena totalt, och sist — numrerat, omöjligt att missa — det som är HANS
    (SOP som saknas, återkommande problem som är produkt/leverans, nycklar som
    saknas för ett brand). VA:ns lista står redan i rapporten på engelska.
@@ -120,5 +137,6 @@ utan den vet nästa vecka ingenting.
 - [ ] Rankingen skriven i `kundtjanst/korningar/_ranking/<vecka>.md`
 - [ ] Historiken uppdaterad i `kundtjanst/historik/<brand>.jsonl`
 - [ ] Discord postat på engelska (om `--discord`) — eller orsaken till att det inte gick står i svaret
+- [ ] Hemsidan ombyggd (`node kundtjanst/rapportsida.mjs`) och publicerad mot SAMMA `url`
 - [ ] Committat och pushat till `main`
 - [ ] Svaret till Axel: ranking, tre toppärenden, och HANS uppgifter sist och numrerade
