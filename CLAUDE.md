@@ -229,6 +229,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/ops-leverans <nyckel>` | **13:40 per OPS-butik:** hubbens `To be Reviewed` → priskoll → **live** i butikens SE-kampanj i OPS-kontot (ett adset per koncept) → `SE-ACTIVE to be translated`. Byggs av `/notionscalercs setup` |
 | `/ops-oversatt <nyckel>` | **15:40 per OPS-butik:** `SE-ACTIVE to be translated` → norska (bild 0 krediter, video HeyGen) → **live** i butikens NO-kampanj i samma konto → `Approved`. Byggs av `/notionscalercs setup` |
 | `/rutin <kommando> <tid>` | Sätt upp en schemalagd rutin som faktiskt kör (fast session, rätt cron, inga dubbletter) |
+| `/mejl` | **Bäverbutikens kundmejl** (orderbekräftelse, leverans, återbetalning …) med erbjudandet "köp igen → välj en gratisprodukt" — bygger mallarna ur Shopify, publicerar sidan Axel klistrar från. `mejl/README.md` |
 
 ### Nattrutinerna
 
@@ -349,6 +350,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |
 | Färdiga briefer + rådata från kontot | `docs/briefs/`, `docs/source/` |
 | Grillklinikens COGS, marginaler och moms (legacy) | `docs/grillkliniken-ekonomi.md` |
+| **Kundmejlen + gratisprodukt-erbjudandet** (Shopify-notiser, kod `TACKIGEN`, kollektion `din-gratisprodukt`) | `mejl/` — `README.md`, `konfig.json`, `copy.json`. ⚠️ Shopify har inget API för notismallar: Axel klistrar in från sidan `/mejl` bygger. Rabattkoden kräver `write_discounts` som appen "Bäver uppladdare" saknar (mätt 2026-09-12) |
 
 ### Produkterna (`products/products.json`)
 

@@ -1,0 +1,37 @@
+{
+  "comment": "Bäverbutikens mejlsystem: erbjudandet 'köp igen → välj en gratisprodukt' och de produkter som visas i mejlen. Ändra här, kör sedan `npm run mejl` — aldrig i mallarna. Priser, bilder och länkar hämtas ur Shopify vid varje körning, aldrig ur den här filen.",
+  "butik": {
+    "namn": "Bäverbutiken.se",
+    "url": "https://baverbutiken.se",
+    "support": "kundsupport@baverbutiken.se",
+    "grundare": "Axel",
+    "farg_rod": "#dd1d1d",
+    "farg_svart": "#000000",
+    "farg_ram": "#e8e8e1",
+    "font_rubrik": "'Anton','Arial Narrow',Arial,sans-serif"
+  },
+  "frakt": {
+    "packas": "0–2 arbetsdagar",
+    "sverige": "1–2 arbetsdagar med PostNord från vårt svenska lager",
+    "utland": "5–10 arbetsdagar från vårt utländska lager",
+    "angerratt_dagar": 14,
+    "retur_dagar": 30
+  },
+  "erbjudande": {
+    "kod": "TACKIGEN",
+    "minsta_kop_sek": 299,
+    "gratis_antal": 1,
+    "en_gang_per_kund": true,
+    "kollektion_handle": "din-gratisprodukt",
+    "kollektion_titel": "Din gratisprodukt",
+    "gratisprodukter": [
+      "baverlampa-pro",
+      "bavertratt-tanka-utan-spill",
+      "kepslampa-300-lumen-clip-on-led-pannlampa",
+      "digital-dackdjupsmatare-lcd-display"
+    ],
+    "dyra_antal": 3,
+    "dyra_override": [],
+    "dyra_krav_lager": true
+  }
+}
