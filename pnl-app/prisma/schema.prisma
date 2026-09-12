@@ -172,6 +172,10 @@ model MetaLoginState {
   /// sha256 av nonce-cookien som sätts när fönstret öppnas. Null = fönstret
   /// har inte öppnats än; sätts exakt en gång.
   nonceHash String?
+  /// Vad inloggningen är till för. Null/"butik" = en handlare kopplar sin
+  /// butik. "granskning" = Metas granskare testar flödet på /meta/granska;
+  /// då sparas ingenting och nyckeln återkallas direkt efteråt.
+  syfte     String?
   expiresAt DateTime
   usedAt    DateTime?
   createdAt DateTime @default(now())

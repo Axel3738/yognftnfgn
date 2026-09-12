@@ -78,10 +78,10 @@ const hash = (s: string) => createHash("sha256").update(s).digest("hex");
  * Skapar engångsraden och returnerar den relativa adress fönstret ska öppna.
  * Anropas från en autentiserad action — det är där butiken bevisas.
  */
-export async function skapaInloggning(shop: string): Promise<string> {
+export async function skapaInloggning(shop: string, syfte?: string): Promise<string> {
   const state = randomBytes(24).toString("base64url");
   await prisma.metaLoginState.create({
-    data: { shop, state, expiresAt: new Date(Date.now() + STATE_MINUTER * 60 * 1000) },
+    data: { shop, state, syfte: syfte ?? null, expiresAt: new Date(Date.now() + STATE_MINUTER * 60 * 1000) },
   });
   /* Städning i förbifarten: rader äldre än en timme är döda oavsett. */
   void prisma.metaLoginState
@@ -170,7 +170,7 @@ export function dialogUrl(cfg: MetaLoginConfig, state: string): string {
 export async function forbrukaInloggning(
   state: string,
   cookieNonce: string | null,
-): Promise<{ ok: true; shop: string } | { ok: false; skal: "okand" | "fel-webblasare" }> {
+): Promise<{ ok: true; shop: string; syfte: string | null } | { ok: false; skal: "okand" | "fel-webblasare" }> {
   if (!state) return { ok: false, skal: "okand" };
   const rad = await prisma.metaLoginState.findUnique({ where: { state } });
   if (!rad || rad.usedAt || rad.expiresAt < new Date()) return { ok: false, skal: "okand" };
@@ -182,7 +182,7 @@ export async function forbrukaInloggning(
     data: { usedAt: new Date() },
   });
   if (r.count !== 1) return { ok: false, skal: "okand" };
-  return { ok: true, shop: rad.shop };
+  return { ok: true, shop: rad.shop, syfte: rad.syfte };
 }
 
 /** Cookie-headern för fönstret. Path /meta: ingen annan sida ser den. */

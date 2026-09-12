@@ -780,6 +780,44 @@ Regel: **scopes som kräver godkännande läggs aldrig på de egna butikernas
 tjänster.** Diagnostiserat med tillfällig `/debug-scope` (env-scopes mot
 Session.scope per butik), borttagen i v76.
 
+### Meta-kopplingen för ALLA handlare (2026-09-12, build meta-granskning-v85)
+Axels mål 2026-09-12: "Juicy har en jättebra Facebook-koppling där man bara
+loggar in. Sluta inte jobba förrän vi har en likadan." **Koden var redan
+byggd** (meta-login-v64 nedan) — det som saknades är att Meta-appen inte får
+låta utomstående logga in förrän den är godkänd. Det som byggts nu är exakt
+det Meta kräver av OSS innan ansökan kan skickas:
+- **`/meta/deletion`** — Data Deletion Request Callback. Obligatorisk för
+  Live-läge. Tar `signed_request`, kopplar bort butikerna som hör till
+  Facebook-användaren, raderar nyckeln OCH annonskostnaden som hämtats med
+  den, svarar `{url, confirmation_code}`. GET på samma adress är statussidan
+  Meta visar. Kvittot (`MetaDeletion`) sparar bara en **hash** av användar-
+  id:t — det ska bevisa raderingen, inte återinföra den.
+- **`/meta/deauth`** — Deauthorize Callback. Personen tog bort appen på
+  Facebook: kopplingen rensas så panelen inte visar en kopplad butik som
+  tyst slutat få annonskostnad. Annonsdatan rörs inte (det är "sluta dela",
+  inte "radera").
+- **Signaturen är hela skyddet** på båda (`meta-signed.server.ts`,
+  7 tester): HMAC-SHA256 över nyttolasten SOM TEXT, timing-säker jämförelse,
+  fel algoritm och trasiga format avvisas. Rutterna är oautentiserade med
+  flit — Facebook ringer dem.
+- **`/meta/granska`** — testsidan för Metas granskare. `ads_read` fungerar
+  bara för roll-innehavare tills appen godkänts, och godkännandet kräver att
+  en granskare kan köra flödet. En granskare har ingen Shopify-butik, så
+  sidan kör samma OAuth utanför Shopify och visar vad behörigheten ger:
+  annonskontonas namn och valuta. Finns bara när `META_REVIEW_KEY` är satt
+  och kräver nyckeln i adressen (fel nyckel = 404, ingen ingång att prova
+  sig fram till). **Skriver aldrig till en butik**, och nyckeln återkallas
+  mot Meta innan sidan svarar. `MetaLoginState.syfte = "granskning"` styr
+  grenen i `/meta/callback`.
+- **`/privacy`** har nu ett Facebook/Meta-avsnitt på engelska: exakt vad
+  `ads_read` läser (kostnad, visningar, klick per dag), vad som lagras, att
+  inget skapas eller ändras i annonskontot, och hur en person raderar det.
+  Supportadressen kommer från `SUPPORT_EMAIL` i miljön.
+- **Kvar, och det är inte kod:** Business Verification av Business Manager
+  (juridiska dokument, görs FÖRE ansökan), Meta-appen till Live, Marketing
+  API-produkten tillagd, och App Review för `ads_read` i Advanced Access med
+  skärminspelning. Stegen står i `docs/meta-app-review.md`.
+
 ### Logga in med Facebook för Meta-kopplingen (2026-09-07, build meta-login-v64)
 Axels beslut 2026-08-31 (bygg efter App Store-godkännandet) — byggt två dagar
 efter godkännandet. Handlaren klickar **Logga in med Facebook** i Inställningar,

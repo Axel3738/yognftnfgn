@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "meta-callbacks-v84", db });
+  return json({ ok: true, build: "meta-granskning-v85", db });
 }

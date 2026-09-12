@@ -12,6 +12,7 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import prisma from "../db.server";
 import {
+  aterkallaToken,
   bestamUtgang,
   bytKodMotToken,
   forbrukaInloggning,
@@ -25,6 +26,7 @@ import {
   tomNonceCookie,
 } from "../lib/meta-login.server";
 import { kontoId } from "../lib/meta-login";
+import { GRANSKNING, granskningsResultat } from "../lib/meta-granska.server";
 import { metaLoginSida, type LoginSignal } from "../lib/meta-login-sida.server";
 import { asLang, t } from "../lib/texts";
 
@@ -66,6 +68,26 @@ export async function loader({ request }: LoaderFunctionArgs) {
      konfiguration (svarstyp måste vara kod). Namnge orsaken. */
   const code = url.searchParams.get("code");
   if (!code) return fel(T.metaLogin.noCode, 400, { ok: false, reason: "meta-failed" });
+
+  /* Metas granskare, inte en handlare: visa vad ads_read ger och släng
+     nyckeln. Ingen butik rörs — raden hör inte till någon. */
+  if (utfall.syfte === GRANSKNING) {
+    try {
+      const bytt = await bytKodMotToken(cfg, code);
+      const [anvandare, konton] = await Promise.all([
+        hamtaAnvandare(bytt.token).catch(() => ({ id: null, name: null })),
+        listaAnnonskonton(bytt.token).catch(() => []),
+      ]);
+      /* Återkalla först, svara sedan: granskaren ska inte lämna en levande
+         nyckel efter sig, och sidan påstår att den är borta. */
+      await aterkallaToken(bytt.token).catch(() => false);
+      return granskningsResultat(konton, anvandare.name);
+    } catch (e) {
+      console.error("Granskningsinloggningen misslyckades:", (e as Error).message);
+      const reason = e instanceof MetaLoginError ? e.message : "network error";
+      return fel(T.metaLogin.metaFailed(reason.slice(0, 200)), 502);
+    }
+  }
 
   try {
     const bytt = await bytKodMotToken(cfg, code);
