@@ -109,7 +109,13 @@ bokfört i `konfig.json → lage`:
 - 7 av 8 mallar inklistrade och verifierade efter omladdning. **Övergiven
   kassa** finns inte under Notiser i butiken (Shopify Email sköter den).
 - Testmejl skickat på Orderbekräftelse.
-- Kvar: Shopify-connectorn på claude.ai, och ett riktigt köptest med koden.
+- Nya appen **"bäver email"** verifierad 2026-09-12 sent på kvällen med
+  `node mejl/nyckelkoll.mjs`: 16 behörigheter, rabatter/ordrar/kunder/sidor/
+  teman/filer alla ✅ (`mejl/NYCKELKOLL.md`). Rabattkoden TACKIGEN läst via
+  API:t: ACTIVE, en gång per kund, segment `number_of_orders >= 1`, köp
+  ≥ 299 kr ur "Alla produkter" → 1 ur "Din gratisprodukt" gratis, 0 användningar.
+- Kvar: ett riktigt köptest med koden. Shopify-connectorn på claude.ai är
+  numera valfri — nyckeln räcker för allt skripten behöver.
 
 ## Nycklarna
 
