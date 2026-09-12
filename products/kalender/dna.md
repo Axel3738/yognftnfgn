@@ -242,6 +242,7 @@ annons → Meta 400); rättad samma natt, se rotorsak 8.
    pauser är inte körningens egna: de återaktiveras av Axel eller på hans
    order, aldrig av en rutin på eget bevåg. Spend-datan 2026-09-11 → tills
    sidan är uppe är därför inte jämförbar (annonserna levererade inte).
+   **Löst: sidan publicerad 2026-09-12** (`is_published: true` 11:41 UTC; alla annonser ACTIVE igen).
    **Löst 2026-09-12:** alla 16 SE-annonser ACTIVE/ACTIVE vid nattvaktens
    läsning — sidan är publicerad (av Axel, utanför repot).
 8. **`pausa()` i `tools/meta-lib.mjs` läste budgetfält på en annons** (mätt

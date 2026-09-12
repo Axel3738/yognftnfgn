@@ -235,3 +235,37 @@ källans PD-vinnare, och den har 2 köp till 419 kr. Data, ej dom.
 Ärvd historik (`--arv`, livstid): 4 384 kr, 19 köp, ROAS 2,65, AOV 611 kr.
 PD_2_H1 191 kr CPA / 9 köp / vinst 1 192 kr · PD_2_1 192 kr / 8 köp / 1 045 kr ·
 GT_1_H1 408 kr / 2 köp (nu över BE). Regression mot 2026-09-11 noterad i dna.md.
+
+---
+
+## Leveransrunda `/ops-leverans` 2026-09-12 — 7 uppladdade LIVE i SE-kampanjen
+
+Sidan `1304279782771044` publicerad sedan gårdagen (`is_published: true` 2026-09-12 11:41 UTC),
+SE 15/16 ACTIVE (PD_1_H1 pausad av nattvakten 00:32), NO 16/16 ACTIVE. Blockeringen borta.
+
+Kön: 7 videorader i `To be Reviewed` — gårdagens 4 (filer byte för byte samma, QA:n från
+2026-09-11 gäller) + 3 nya ur batch #2 (levererade < 12 h efter briefen):
+`PD_8_H1`, `SY_1_H1`, `MR_1_H1`. Alla 9:16-filen (`_2`), pris 499 kr mot butiken (499,
+jämförpris 649) — inga stopp.
+
+| Annons | Ad-id | Adset | Copy | Anmärkning |
+|---|---|---|---|---|
+| `AdventLaneRacing_PD_8_H1` | 120249067119370172 | PD (fanns) | COPY CARD (fable) | "Kokladen", "499 unior", ansikten trots briefen |
+| `AdventLaneRacing_SY_1_H1` | 120249067124490172 | SY (**ny**) | COPY CARD (sonnet) | "snorrar", "Advent Lane" särskrivet, ansikte |
+| `AdventLaneRacing_MR_1_H1` | 120249067128200172 | MR (**ny**) | COPY CARD (sonnet) | "Advent Lane"/"jämför pris" särskrivna, ansikten |
+| `AdventLaneRacing_PD_4_H1` | 120249067191790172 | PD (fanns) | kontots PD-copy (formattest) | 9 s mot 15–20 |
+| `AdventLaneRacing_PD_6_H1` | 120249067199250172 | PD (fanns) | subagent sonnet 09-11 | "649 nio", "Jock den" |
+| `AdventLaneRacing_AU_1_H1` | 120249067207360172 | AU (**ny**) | subagent sonnet 09-11 | "och pappor", "beställd december" |
+| `AdventLaneRacing_FM_1_H1` | 120249067244690172 | FM (**ny**) | subagent sonnet 09-11 | ingen prisskylt, 8 s |
+
+Tillbakaläst 12:15 UTC: alla 8 adsets ACTIVE, 6 annonser ACTIVE/ACTIVE, FM_1_H1 ACTIVE/PENDING_REVIEW (Metas granskning, nyskapad).
+Nya adsets klonade från SP, aktiverade av körningen (bara de egna). Alla 7 rader →
+`SE-ACTIVE to be translated`. Registret: 7 loggade 2026-09-12.
+
+⚠️ **Två uppladdningar hängde på proxyn** (PD_4_H1 8 min utan att videon nådde Meta,
+FM_1_H1 ETIMEDOUT 300 s redan vid kontoläsningen). Båda dödades och kördes om utan
+dubbletter. Lärdom: kör `ops-till-meta` med tidsgräns per rad och skriv resultatfilen
+efter varje rad — annars försvinner de klara raderna med en hängning.
+
+Kvar i kön: 0. Batch #2:s övriga 4 briefer (`PD_7`, `GT_4`, `CS_4`, `SP_4` eller vad
+nattvakten döpte dem) väntar på leverans.
