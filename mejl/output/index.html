@@ -84,7 +84,7 @@
 
 <main>
   <header class="topp">
-    <p class="dampad">Bäverbutiken.se · byggd 2026-09-12 20:55 UTC</p>
+    <p class="dampad">Bäverbutiken.se · byggd 2026-09-12 20:59 UTC</p>
     <h1>Bäverbutikens mejl</h1>
     <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet.</p>
   </header>
@@ -92,8 +92,9 @@
   <section class="lage" aria-label="Läget">
     <div class="lage-rad"><span class="ikon">✅</span><p>Klart via API: kollektionen <a href="https://baverbutiken.se/collections/din-gratisprodukt">https://baverbutiken.se/collections/din-gratisprodukt</a> är live med de fyra gratisprodukterna. Mallarna nedan är byggda på butikens riktiga produkter och priser.</p></div>
     <div class="lage-rad"><span class="ikon">✅</span><p>Rabattkoden <strong>TACKIGEN</strong> är skapad och aktiv (2026-09-12, Cowork (Claude i Chrome) i Axels inloggade Shopify admin). Köpvillkoret är kollektionen <strong>Alla produkter</strong> (automatisk, pris över 0 kr) eftersom Shopify inte tillåter "Alla produkter" i Köp X få Y.</p></div>
-    <div class="lage-rad"><span class="ikon">✅</span><p>7 av 8 mallar inklistrade och sparade under Inställningar → Notiser. Testmejl på Orderbekräftelse skickat 2026-09-12. Hoppades över: Övergiven kassa (se mallen längst ner).</p></div>
-    <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: steg 4, koppla om Shopify på claude.ai. Gör gärna också det riktiga köptestet under steg 1.</p></div>
+    
+    <div class="lage-rad att-gora"><span class="ikon">🔁</span><p>En äldre version av mallarna (v1, utan erbjudandet överst, urgency och logga) klistrades in i 7 mallar 2026-09-12. Mallarna nedan är v2 och ska klistras in igen, över de gamla.</p></div>
+    <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: 7 inklistringar (steg 2). Shopify har inget API för det, så det är dina klick eller Coworks.</p></div>
   </section>
 
   <section class="steg" aria-labelledby="gor">
@@ -179,7 +180,7 @@
           <p class="dampad">Heter i Shopify: <strong>Orderbekräftelse / Order confirmation</strong></p>
           
         </div>
-        <label class="klar"><input type="checkbox" id="klar-orderbekraftelse" data-klar="orderbekraftelse" checked> Inklistrad 2026-09-12</label>
+        <label class="klar"><input type="checkbox" id="klar-orderbekraftelse" data-klar="orderbekraftelse"> Inklistrad</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -800,7 +801,7 @@
           <p class="dampad">Heter i Shopify: <strong>Leveransbekräftelse / Shipping confirmation</strong></p>
           
         </div>
-        <label class="klar"><input type="checkbox" id="klar-fraktbekraftelse" data-klar="fraktbekraftelse" checked> Inklistrad 2026-09-12</label>
+        <label class="klar"><input type="checkbox" id="klar-fraktbekraftelse" data-klar="fraktbekraftelse"> Inklistrad</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -1279,7 +1280,7 @@
           <p class="dampad">Heter i Shopify: <strong>Leveransuppdatering / Shipping update</strong></p>
           
         </div>
-        <label class="klar"><input type="checkbox" id="klar-fraktuppdatering" data-klar="fraktuppdatering" checked> Inklistrad 2026-09-12</label>
+        <label class="klar"><input type="checkbox" id="klar-fraktuppdatering" data-klar="fraktuppdatering"> Inklistrad</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -1484,7 +1485,7 @@
           <p class="dampad">Heter i Shopify: <strong>Ute för leverans / Out for delivery</strong></p>
           
         </div>
-        <label class="klar"><input type="checkbox" id="klar-ute_for_leverans" data-klar="ute_for_leverans" checked> Inklistrad 2026-09-12</label>
+        <label class="klar"><input type="checkbox" id="klar-ute_for_leverans" data-klar="ute_for_leverans"> Inklistrad</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -1689,7 +1690,7 @@
           <p class="dampad">Heter i Shopify: <strong>Levererad / Delivered</strong></p>
           
         </div>
-        <label class="klar"><input type="checkbox" id="klar-levererad" data-klar="levererad" checked> Inklistrad 2026-09-12</label>
+        <label class="klar"><input type="checkbox" id="klar-levererad" data-klar="levererad"> Inklistrad</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -2363,7 +2364,7 @@
           <p class="dampad">Heter i Shopify: <strong>Återbetalning / Refund notification</strong></p>
           
         </div>
-        <label class="klar"><input type="checkbox" id="klar-aterbetalning" data-klar="aterbetalning" checked> Inklistrad 2026-09-12</label>
+        <label class="klar"><input type="checkbox" id="klar-aterbetalning" data-klar="aterbetalning"> Inklistrad</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>
@@ -2538,7 +2539,7 @@
           <p class="dampad">Heter i Shopify: <strong>Order annullerad / Order cancelled</strong></p>
           
         </div>
-        <label class="klar"><input type="checkbox" id="klar-avbruten_order" data-klar="avbruten_order" checked> Inklistrad 2026-09-12</label>
+        <label class="klar"><input type="checkbox" id="klar-avbruten_order" data-klar="avbruten_order"> Inklistrad</label>
       </header>
       <div class="rad">
         <div class="etikett">Ämnesrad</div>

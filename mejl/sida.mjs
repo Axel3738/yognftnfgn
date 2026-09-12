@@ -163,10 +163,21 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
         ? `<div class="lage-rad"><span class="ikon">✅</span><p>${Object.keys(inklistrade).length} av ${liquid.length} mallar inklistrade och sparade under Inställningar → Notiser.${lage.testmejl_skickat ? ` Testmejl på Orderbekräftelse skickat ${esk(lage.testmejl_skickat)}.` : ''}${Object.keys(hoppade).length ? ` Hoppades över: ${Object.keys(hoppade).map((id) => esk(liquid.find((m) => m.id === id)?.shopify.split(' / ')[0] ?? id)).join(', ')} (se mallen längst ner).` : ''}</p></div>`
         : ''
     }
+    ${
+      lage.inklistrade_v1 && !Object.keys(inklistrade).length
+        ? `<div class="lage-rad att-gora"><span class="ikon">🔁</span><p>En äldre version av mallarna (v1, utan erbjudandet överst, urgency och logga) klistrades in i ${Object.keys(lage.inklistrade_v1).length} mallar ${esk(Object.values(lage.inklistrade_v1)[0])}. Mallarna nedan är v2 och ska klistras in igen, över de gamla.</p></div>`
+        : ''
+    }
     <div class="lage-rad att-gora"><span class="ikon">👉</span><p>${
-      lage.rabattkod_skapad && Object.keys(inklistrade).length
-        ? 'Kvar för dig: steg 4, koppla om Shopify på claude.ai. Gör gärna också det riktiga köptestet under steg 1.'
-        : 'Kvar för dig: rabattkoden (steg 1) och åtta inklistringar (steg 2). Shopify har inget API för det, så det är dina klick. Räkna med 20 minuter.'
+      [
+        lage.rabattkod_skapad ? null : 'rabattkoden (steg 1)',
+        Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length ? null : `${liquid.length - Object.keys(hoppade).length} inklistringar (steg 2)`,
+      ].filter(Boolean).length
+        ? `Kvar för dig: ${[
+            lage.rabattkod_skapad ? null : 'rabattkoden (steg 1)',
+            Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length ? null : `${liquid.length - Object.keys(hoppade).length} inklistringar (steg 2)`,
+          ].filter(Boolean).join(' och ')}. Shopify har inget API för det, så det är dina klick eller Coworks.`
+        : 'Kvar för dig: steg 4, koppla om Shopify på claude.ai. Gör gärna också det riktiga köptestet under steg 1.'
     }</p></div>
   </section>
 
