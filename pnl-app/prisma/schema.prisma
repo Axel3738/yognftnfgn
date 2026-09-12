@@ -180,6 +180,19 @@ model MetaLoginState {
   @@index([expiresAt])
 }
 
+/// Kvitto på en raderingsbegäran från Meta (Data Deletion Request Callback).
+/// Innehåller MEDVETET inget användar-id i klartext — bara en hash, så att
+/// kvittot bevisar att raderingen skett utan att återinföra det som raderades.
+model MetaDeletion {
+  /// Koden Meta får tillbaka och visar för användaren.
+  code        String    @id
+  userHash    String
+  /// Antal butiker som kopplades bort.
+  shops       Int       @default(0)
+  requestedAt DateTime  @default(now())
+  completedAt DateTime?
+}
+
 /// Datumsatt kostnadsändring. Shopifys unitCost har bara ETT värde och ingen
 /// historik — den håller alltid *nuvarande* kostnad. Vill man räkna gårdagens
 /// vinst på gårdagens kostnad behövs det här lagret ovanpå.

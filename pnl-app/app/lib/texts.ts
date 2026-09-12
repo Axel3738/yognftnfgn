@@ -556,6 +556,16 @@ const en = {
   },
 
   /* Popup-fönstret för Logga in med Facebook — renderas utanför Shopify. */
+  deletion: {
+    unknownTitle: "Unknown request",
+    unknownBody: "We have no deletion request with that code. If you asked Facebook to delete your data, open the link in that message again.",
+    pendingTitle: "Deletion in progress",
+    pendingBody: "Your request was received and is being processed. Open this page again in a few minutes.",
+    doneTitle: "Your data has been deleted",
+    doneBody: (date: string, shops: number) =>
+      `Completed ${date}. The Facebook connection was removed from ${shops} store${shops === 1 ? "" : "s"}, together with the access token and the ad spend read with it. Nothing about your Facebook account is left in StonePNL.`,
+  },
+
   metaLogin: {
     startTitle: "Log in with Facebook",
     redirecting: "Sending you to Facebook…",
@@ -1253,6 +1263,16 @@ const sv: Texts = {
   },
 
   /* Popup-fönstret för Logga in med Facebook — renderas utanför Shopify. */
+  deletion: {
+    unknownTitle: "Okänd begäran",
+    unknownBody: "Vi har ingen raderingsbegäran med den koden. Öppna länken i meddelandet från Facebook igen.",
+    pendingTitle: "Raderingen pågår",
+    pendingBody: "Din begäran togs emot och behandlas. Öppna sidan igen om några minuter.",
+    doneTitle: "Din data är raderad",
+    doneBody: (date: string, shops: number) =>
+      `Klart ${date}. Facebook-kopplingen togs bort från ${shops} butik${shops === 1 ? "" : "er"}, tillsammans med nyckeln och annonskostnaden som hämtats med den. Inget om ditt Facebook-konto finns kvar i StonePNL.`,
+  },
+
   metaLogin: {
     startTitle: "Logga in med Facebook",
     redirecting: "Skickar dig till Facebook…",
