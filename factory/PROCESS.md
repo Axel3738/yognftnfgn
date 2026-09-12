@@ -511,6 +511,25 @@ gick rakt igenom på första körningen. Mätningar:
   fjordcover.se gav HTTP 503 och därmed rött; ett direkt curl-anrop en minut
   senare gav 200 och omkörningen blev grön. En 503 på en nyss kopplad domän är
   inte ett fel i butiken — kör om innan du felsöker något.
+- **JÄMFÖRPRISET nådde aldrig storefronten — och ingen kontroll fångade det.**
+  Admin har `compareAtPrice` 965 på alla nio varianter (verifierat två gånger,
+  och en ny `productVariantsBulkUpdate` med samma tal ändrade ingenting), men
+  `https://fjordcover.se/products/batmotorskyddet.js` svarar
+  `compare_at_price: null` på alla nio, och temats prisblock renderar
+  `<s class="price-item price-item--regular"> </s>` TOMT. Kunden ser bara
+  579 kr — ingen överstruken 965:a, ingen rabatt, ingen "Rea"-bricka. Mätt med
+  cachebrytande query och färsk sidrendering 2026-09-12.
+  **Det är inte bara den här butiken:** `catcabin.se/products.json` svarar
+  också `compare_at_price: null` (filen säger 1 039), medan
+  `tankguard.se` svarar 636 — TankGuard byggdes med `bygg-tankguard.mjs`, de
+  två senaste med `ops.mjs`/`productSet`. Uteslutet under felsökningen: fel
+  produkt (samma produkt- och variant-id i admin och storefront),
+  prislistor/kataloger (butiken har inga), och en gammal skrivning (omskriven
+  och fortfarande null). **Rotorsaken är INTE fastställd** — skriv inte att
+  productSet är boven förrän någon mätt det.
+  Kontrollen som saknades är tillagd: `kundvy.produktkoll` kräver nu att
+  `ekonomi.jamforpris` SYNS i kundvyn. Trippelkollen läser admin och var grön
+  hela tiden — det är precis därför kundvyn ska läsa riktig HTML.
 - **Butiksnamnet är människans klick.** Kundvyn står röd med
   "DEFAULT KVAR: butiksnamnet är Shopifys default" tills någon skriver
   FjordCover i Settings → General (API-GRANSER.md: MÄTT GÅR INTE). Det var

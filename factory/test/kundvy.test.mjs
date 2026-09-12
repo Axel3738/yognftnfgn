@@ -190,6 +190,20 @@ test('produktkoll kräver namn och pris i synlig text', () => {
   assert.ok(r.fel[0].includes('389'));
 });
 
+test('produktkoll kräver att JÄMFÖRPRISET syns — annars ser kunden ingen rabatt', () => {
+  // FjordCover 2026-09-12: admin hade compareAtPrice 965 på alla nio varianter,
+  // men storefronten svarade null och temats <s>-tagg renderades tom. Trippel-
+  // kollen läser admin och var grön; bara kundvyn kan fånga det.
+  const p = { produkt: { namn: 'Motorskyddet' }, ekonomi: { pris: 579, jamforpris: 965 } };
+  assert.equal(produktkoll('<h1>Motorskyddet</h1><span>579,00 kr</span><s>965,00 kr</s>', p).ok, true);
+  const tom = produktkoll('<h1>Motorskyddet</h1><span>579,00 kr</span><s> </s>', p);
+  assert.equal(tom.ok, false);
+  assert.ok(tom.fel.some((f) => f.includes('965') && f.includes('rabatt')), tom.fel.join(' | '));
+  // Utan jämförpris i filen krävs ingenting.
+  const utan = { produkt: { namn: 'Motorskyddet' }, ekonomi: { pris: 579, jamforpris: 0 } };
+  assert.equal(produktkoll('<h1>Motorskyddet</h1><span>579,00 kr</span>', utan).ok, true);
+});
+
 test('produktkoll godtar pris med tusentalsavstånd (1 129,00 kr) — CaraShell 2026-09-10', () => {
   const p = { produkt: { namn: 'Taköverdrag' }, ekonomi: { pris: 1129 } };
   assert.equal(produktkoll('<h1>Taköverdrag</h1><span>1 129,00 kr</span>', p).ok, true);

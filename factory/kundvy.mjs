@@ -223,5 +223,21 @@ export function produktkoll(html, produkt) {
   const fel = [];
   if (namn && !t.includes(namn)) fel.push(`"${namn}" syns inte i huvudspråkets vy`);
   if (pris && !t.includes(pris) && !tUtanAvstand.includes(pris)) fel.push(`"${pris}" syns inte i huvudspråkets vy`);
+  // JÄMFÖRPRISET är hela rabatten kunden ska se, och annonserna läser upp det
+  // ("579 kr, ord. 965 kr"). Trippelkollen läser ADMIN och blir grön där, så
+  // utan den här raden syns det aldrig att storefronten saknar talet.
+  // ⚠️ Mätt 2026-09-12 på FjordCover: admin hade compareAtPrice 965 på alla
+  // nio varianter (även efter en ny productVariantsBulkUpdate), men
+  // /products/<handle>.js svarade null och temats <s>-tagg renderades tom —
+  // kunden såg bara 579 kr. catcabin.se har samma symptom (jämförpris 1 039 i
+  // filen, null i products.json), tankguard.se har det inte. Rotorsaken är
+  // inte fastställd.
+  const jamfor =
+    produkt?.ekonomi?.jamforpris === undefined || produkt?.ekonomi?.jamforpris === null
+      ? 0
+      : Number(produkt.ekonomi.jamforpris);
+  if (jamfor > 0 && !t.includes(String(jamfor)) && !tUtanAvstand.includes(String(jamfor))) {
+    fel.push(`jämförpriset "${jamfor}" syns inte i huvudspråkets vy — kunden ser inget överstruket pris och ingen rabatt`);
+  }
   return { ok: fel.length === 0, fel };
 }
