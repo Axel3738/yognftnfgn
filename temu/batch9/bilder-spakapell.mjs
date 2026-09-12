@@ -35,7 +35,7 @@ const UTSNITT = {
   tyg:     [230, 240, 300, 220],  // tygytan mitt på huven, ingen kant (210D-raden)
   dragsko: [212, 636, 84, 96],    // snörlås + snöre ur "adjustable"-cirkeln, helt inuti cirkeln och ovanför ordet
   kant:    [60, 395, 360, 190],   // huvens kant mot träet (svart-raden)
-  detalj:  [70, 345, 570, 250],   // kanten runt tunnan, utan bakgrundsresterna i sidorna = detaljbilden
+  detalj:  [70, 345, 555, 250],   // kanten runt tunnan, utan bakgrundsresterna i sidorna = detaljbilden
 };
 
 async function utsnitt(namn) {
