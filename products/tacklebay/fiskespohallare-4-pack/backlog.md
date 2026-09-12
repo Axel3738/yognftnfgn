@@ -32,6 +32,14 @@ eller konkurrent-signal i `docs/swipes/`. Kan den inte det står den som gissnin
 
 | Idé | Varför den kan funka | Källa |
 |---|---|---|
-| **Skaka-testet på 8 s** — bara hooken + slutkort, om `PD_42_H1`:s hold inte rör sig | Om holden inte lyfts av mekanism-mitten är hooken hela annonsen; kortare film = mindre att tappa. | dna.md mönster 3; följdtest av `PD_42_H1` |
-| **SO som video** — de sju recensionerna som captions ovanpå skaka-testet | Bara om `SO_8_1` passerar grinden. | `SO_8_1` (batch #2) |
+| ~~**Skaka-testet på 8 s**~~ **[använd i batch #3 → `TackleBayRod_PD_47_H1`]** — kadensen 21 gav plats att köra längd-isoleringen parallellt med mitten-isoleringen i stället för efter | dna.md mönster 3 | `PD_15_H1` |
+| ~~**SO som video**~~ **[använd i batch #3 → `TackleBayRod_SO_9_H1`, märkt gissning]** | Kördes parallellt med `SO_8_1` för att kadensen krävde 21. | `SO_8_1` (batch #2) |
+
+### Väntar (tillkomna 2026-09-13)
+
+| Idé | Varför den kan funka | Källa |
+|---|---|---|
+| **`PD_25_H1` som förälder** — 534 kr / 2 köp / CPA 267 kr, närmast grinden i egna kampanjen | Passerar den grinden nästa rond: hook-swap + statisk version. Innehållet okänt (uppladdad utanför nattvakten) — läs briefen i hubben först. | kontot 2026-09-13 |
+| **`SP_1_H3` som förälder** — bäst hold (27,8 %) + CTR (2,75 %) tre avläsningar i rad, 153 kr | Samma villkor: grinden först. Läs briefen. | kontot 2026-09-13 |
+| **Vinnaren av `PD_42_H1` / `PD_47_H1` / `PD_48_H1`** blir standardklippet för alla demos | Tre isoleringar av holden — bara en får vinna. | batch #2–#3 |
 | ~~**Ärvda vinnarna in i kampanjen**~~ — struken 2026-09-12, samma "nej" som brand-swappen ovan. Vinnarna lever vidare som varianter i batch #2 (`PD_42_H1`, `PD_43_1`, `PD_44_1`) i stället. | — | Axel 2026-09-12 |

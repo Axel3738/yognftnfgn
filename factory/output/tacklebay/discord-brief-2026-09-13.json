@@ -1,0 +1,53 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay",
+  "datum": "2026-09-13",
+  "lage": "brief",
+  "server": "TackleBay — OPS",
+  "gjort": [
+    "Budget round: campaign TACKLEBAY_SE_Spöhållaren lowered 1 000 → 700 kr/day (3-day ROAS 0.59 on 3 purchases, break-even 1.49). Read back and logged",
+    "No ads paused, nothing activated",
+    "Still a cold start: 65 ads, 2 170 kr, 3 purchases, 0 above the data gate — no per-ad verdicts yet. Closest: PD_25_H1 (534 kr, 2 purchases)",
+    "21 new briefs written and uploaded to the Fish rod holder hub as Draft: 7 variants of the inherited winners, 7 siblings of batch #2, 7 new concepts (5 marked hypothesis)",
+    "Copy A/B Fable vs Sonnet: 11 / 9 this round, 1 brief keeps the proven copy verbatim. Standing: 0 / 0 judgeable ads",
+    "Price verified in the store: 289 kr, no compare-at",
+    "dna.md, batch-log.md, backlog.md updated and pushed to main"
+  ],
+  "siffror": { "spend_7d": 2170, "kop_7d": 3, "roas_7d": 0.59, "vinstbidrag_7d": 0, "briefs_nya": 21 },
+  "briefer": [
+    { "namn": "TackleBayRod_PD_47_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_47_H1-3d9270ab908c8170984cc87dfa775b53" },
+    { "namn": "TackleBayRod_PD_48_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_48_H1-3d9270ab908c81f1b47bfbe15602a504" },
+    { "namn": "TackleBayRod_PD_57_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_57_H1-3d9270ab908c815eb1a1e8e368b0a2b1" },
+    { "namn": "TackleBayRod_PD_54_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_54_H1-3d9270ab908c81beb631fabaf5650a50" },
+    { "namn": "TackleBayRod_PD_55_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_55_H1-3d9270ab908c818c9979f5c9b98fe1ec" },
+    { "namn": "TackleBayRod_JF_5_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_JF_5_H1-3d9270ab908c8158b63dcd35e20aafb5" },
+    { "namn": "TackleBayRod_PD_56_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_56_H1-3d9270ab908c81008046c1324eec7b9b" },
+    { "namn": "TackleBayRod_PD_60_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_60_H1-3d9270ab908c81a59e03c8a1fa12f59f" },
+    { "namn": "TackleBayRod_PD_61_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_PD_61_H1-3d9270ab908c81ae9d15c45e8b860c0d" },
+    { "namn": "TackleBayRod_SO_9_H1", "typ": "video", "url": "https://app.notion.com/p/TackleBayRod_SO_9_H1-3d9270ab908c812180e6d7ad08920248" },
+    { "namn": "TackleBayRod_PD_49_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_49_1-3d9270ab908c81879ebfc53e42955489" },
+    { "namn": "TackleBayRod_PD_50_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_50_1-3d9270ab908c81548824c5665c826c0f" },
+    { "namn": "TackleBayRod_PD_51_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_51_1-3d9270ab908c81e38d5bd1c709280557" },
+    { "namn": "TackleBayRod_PD_58_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_58_1-3d9270ab908c814193aad0977da8b133" },
+    { "namn": "TackleBayRod_PD_52_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_52_1-3d9270ab908c8163bd5dca501c1fc345" },
+    { "namn": "TackleBayRod_PD_53_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_53_1-3d9270ab908c8185a13dc3dc8a2496a1" },
+    { "namn": "TackleBayRod_SO_10_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_SO_10_1-3d9270ab908c81b28919d5698b713442" },
+    { "namn": "TackleBayRod_CS_8_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_CS_8_1-3d9270ab908c813d908fca334eaf4f59" },
+    { "namn": "TackleBayRod_GT_5_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_GT_5_1-3d9270ab908c8151aa8cf19f60a1dbbd" },
+    { "namn": "TackleBayRod_JF_4_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_JF_4_1-3d9270ab908c817595e9d74a113dd679" },
+    { "namn": "TackleBayRod_PD_59_1", "typ": "image", "url": "https://app.notion.com/p/TackleBayRod_PD_59_1-3d9270ab908c813fb148f76e6c606e4f" }
+  ],
+  "action_axel": [],
+  "action_redigerare": [
+    { "discord_id": "1534158659691483356", "namn": "Eric J", "rader": [
+      "21 new briefs in the Fish rod holder hub (Draft) — 10 videos, 11 statics. Start with the videos: PD_47_H1, PD_48_H1, PD_57_H1, PD_54_H1, PD_55_H1. Each brief is complete inside its Notion row",
+      "Batch #2 (7 briefs from yesterday) is still open: PD_43_1, PD_44_1, SO_8_1, CS_7_1 are in Draft. Finish those first if you prefer"
+    ] }
+  ],
+  "nasta_korning": "2026-09-16",
+  "varningar": [
+    "Meta app-level rate limit hit once during the inherited-history read (retry succeeded after 4 min) — several night watches run at the same minute",
+    "13 ads appeared in the SE campaign since yesterday outside the night watch (PD_25_H1, PD_8_*, PD_16_H1 …) — source not logged; the night watch judges them like any other ad",
+    "DISCORD_AXEL_ID is not set — pings go to the server owner"
+  ]
+}
