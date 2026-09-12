@@ -14,6 +14,11 @@
 //      De målas över med exakt bakgrundsfärgen (vitt) — tillåtet enligt bildbriefen
 //      eftersom ytan runt dem är enfärgad. Polygonerna ligger ≥ 3 px från linjerna och
 //      ≥ 5 px från däcken (kontrollerat i 6× zoom efter körning).
+//   3. Golvet INUTI leverantörens måttbox är svagt grått (237–251) medan utsidan är rent
+//      vitt (255) — L-linjen låg exakt på den gränsen, så utan linjen syns ett diagonalt
+//      tonsteg. Löses med en uniform vitpunktshöjning (linear ×255/238): allt ≥ 238 blir
+//      vitt, däckens skuggor (≤ 235) behålls och tonar mjukt ut. Inget målas, hela bilden
+//      får samma kurva.
 //
 // ⚠️ Källan är bara 488 px — hero blir uppskalad ~4,8× (lanczos3 + lätt skärpa). Det
 // duger enligt briefen men är mjukt. Ingen annan bild finns i skörden.
@@ -56,6 +61,7 @@ async function ren() {
     : `<polygon points="${v.p.map(([x, y]) => `${x - RUTA.left},${y - RUTA.top}`).join(' ')}" fill="#ffffff"/>`);
   const svg = `<svg width="${RUTA.width}" height="${RUTA.height}" xmlns="http://www.w3.org/2000/svg">${former.join('')}</svg>`;
   REN = await sharp(KÄLLA).extract(RUTA).flatten({ background: '#ffffff' })
+    .linear(255 / 238, 0)                        // vitpunkt 238 → 255, se punkt 3 i huvudet
     .composite([{ input: Buffer.from(svg), top: 0, left: 0 }]).png().toBuffer();
   return REN;
 }
