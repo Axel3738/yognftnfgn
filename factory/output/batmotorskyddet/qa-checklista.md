@@ -11,16 +11,14 @@
 - [x] ✅ frakt: 5–10 arbetsdagar
 - [ ] 🖐 frakt-zoner: Kontrollera fraktzon och pris i Shopify → Frakt och leverans.
 - [x] ✅ guarantee: 14 dagars ångerrätt
-- [ ] ❌ tracking: meta.pixel_id, meta.page_id saknas.
+- [x] ✅ tracking: pixel 1774648277117873, konto 915422744950975
+- [ ] 🖐 tracking-koppling: Verifiera att pixeln tar emot events i Meta Events Manager.
 - [ ] 🖐 theme: Temat måste vara valt och sektionerna inlagda i Shopify-editorn.
-- [ ] ❌ doman: Primär domän är fortfarande j0p8qz-kp.myshopify.com — riktig domän saknas.
+- [x] ✅ doman: fjordcover.se med SSL
 - [x] ✅ villkor: 4 policyer på plats
 - [x] ✅ checkout: valuta SEK
 - [ ] 🖐 checkout-betalning: Gör ett testköp och bekräfta att betalleverantören är aktiv.
-- [ ] ❌ kundvy-produktsida: ingen HTML = inte grönt (https://j0p8qz-kp.myshopify.com/products/batmotorskyddet?preview_theme_id=145386274864: Shopify svarade med en bot-kontroll (HTTP 429). Sidan gick inte att läsa som en kund.)
-- [ ] ❌ markörer /nb: ingen HTML = inte grönt
+- [x] ✅ kundvy-produktsida: 13 strukturpunkter gröna
+- [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
+- [x] ✅ markörer /nb: 0 svenska markörer av 11
 
-## Varningar
-
-- [ ] batmotorskyddet: meta.page_id är inte satt (krävs före launch)
-- [ ] batmotorskyddet: meta.pixel_id är inte satt (krävs före launch)

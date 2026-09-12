@@ -1485,10 +1485,21 @@ async function huvudflode({ butiksfil, produktfiler, dryRun, resume, launch, ige
     console.log(`\n✅ LIVE: ${pk.p.produkt.namn} är ${resultat.status}${resultat.publicerad ? ` och publicerad i ${resultat.kanal}` : ''}.`);
     if (!resultat.publicerad) console.log(`🖐 ${resultat.notis ?? 'Publicera produkten i Online Store-kanalen för hand.'}`);
   }
+  // Temat publiceras för hand — men bara tills det ÄR publicerat. Att skriva
+  // "VA:n publicerar temat" när det redan är MAIN är samma falska rapport som
+  // Meta-sidan i store-ready.mjs (FjordCover 2026-09-12: temat publicerat och
+  // domänen kopplad, ändå stod klicket kvar i staten och i slutrapporten).
   const temaNamn = lasArbetstemaNamn(butiksstate) ?? standardTemanamn(butik.butik.brand);
-  markeraManuell(butiksstate, 'tema-publicering', `VA:n publicerar temat "${temaNamn}": Online Store → Themes → ${temaNamn} → Publish.`);
-  skrivState(butiksstate);
-  console.log(`\n🖐 Temat att publicera (VA:ns klick): "${temaNamn}"`);
+  const arbetstema = await hamtaArbetstema(butiksstate.arbetstemaId ?? butiksstate.steg?.['tema-upload']?.arbetstemaId ?? null).catch(() => null);
+  if (arbetstema?.role === 'MAIN') {
+    markeraKlart(butiksstate, 'tema-publicering', { tema: arbetstema.name ?? temaNamn, role: 'MAIN' });
+    skrivState(butiksstate);
+    console.log(`\n✅ Temat är publicerat: "${arbetstema.name ?? temaNamn}" är MAIN — det är det kunden ser.`);
+  } else {
+    markeraManuell(butiksstate, 'tema-publicering', `VA:n publicerar temat "${temaNamn}": Online Store → Themes → ${temaNamn} → Publish.`);
+    skrivState(butiksstate);
+    console.log(`\n🖐 Temat att publicera (VA:ns klick): "${temaNamn}"`);
+  }
   skrivSlutrapport();
   console.log('   • Starta annonserna — fabriken rör aldrig annonskontot.\n');
 }

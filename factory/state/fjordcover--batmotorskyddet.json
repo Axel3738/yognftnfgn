@@ -34,7 +34,7 @@
       "produkt_id": "8085255061552",
       "variant_id": "43611497562160",
       "handle": "batterifranskiljaren",
-      "ny": true,
+      "ny": false,
       "ateranvand": false,
       "skrivet": true
     },
@@ -60,17 +60,17 @@
     "recensioner": {
       "klar": false,
       "manuell": "Ingen Judge.me-token (env JUDGEME_FJORDCOVER_TOKEN) — VA:n importerar output/batmotorskyddet/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    },
+    "launch": {
+      "klar": true,
+      "status": "ACTIVE",
+      "publicerad": true
     }
   },
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "tracking",
-      "doman",
-      "kundvy-produktsida",
-      "markörer /nb"
-    ],
-    "tid": "2026-09-12T16:48:26.694Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-12T19:17:49.462Z"
   },
-  "uppdaterad": "2026-09-12T16:48:26.694Z"
+  "uppdaterad": "2026-09-12T19:17:50.223Z"
 }

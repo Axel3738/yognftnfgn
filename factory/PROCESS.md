@@ -497,10 +497,28 @@ gick rakt igenom på första körningen. Mätningar:
   fortfarande** (avläst 2026-09-12) — deras kundvyar rapporterar alltså en
   markör som inte är en läcka. Rättas i respektive butiks egen körning, inte
   härifrån.
-- **Butiksnamnet är fortfarande människans klick.** Kundvyn är röd med
+- **Två människoklick rapporterades som väntande efter att de var gjorda.**
+  VA:n bytte butiksnamn, publicerade temat, kopplade fjordcover.se och skapade
+  Meta-sidan. Kundvyn och trippelkollen såg det direkt (alla gröna), men
+  `store-ready.mjs` skrev ändå "Meta-sidan skapar VA:n" och `--launch`
+  skrev "Temat att publicera (VA:ns klick)" — båda raderna var hårdkodade,
+  inte mätta. Det är samma sorts falska rapport som regel 4 finns för, bara
+  åt andra hållet. Nu läser båda verkligheten först: sidan mot
+  `meta.page_id` i produktfilen, temat mot `hamtaArbetstema().role === 'MAIN'`.
+  Regel: en rad i "väntar på en människa" ska bevisas varje körning, precis
+  som en rad i "gjort av mig".
+- **Domänen kan svara 503 i någon minut efter kopplingen.** Första kundvyn mot
+  fjordcover.se gav HTTP 503 och därmed rött; ett direkt curl-anrop en minut
+  senare gav 200 och omkörningen blev grön. En 503 på en nyss kopplad domän är
+  inte ett fel i butiken — kör om innan du felsöker något.
+- **Butiksnamnet är människans klick.** Kundvyn står röd med
   "DEFAULT KVAR: butiksnamnet är Shopifys default" tills någon skriver
-  FjordCover i Settings → General (API-GRANSER.md: MÄTT GÅR INTE). Det är
-  den enda röda punkten i kundvyn som inte är en översättning.
+  FjordCover i Settings → General (API-GRANSER.md: MÄTT GÅR INTE). Det var
+  den enda röda punkten i kundvyn som inte var en översättning, och när VA:n
+  gjort klicket samma dag blev hela kundvyn grön: startsida, produktsida och
+  /nb, noll svenska markörer av elva, alla fyra rabattkoderna verifierade mot
+  admin. `--launch` gick igenom och produkten är ACTIVE och publicerad på
+  fjordcover.se.
 
 ---
 

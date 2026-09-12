@@ -77,7 +77,7 @@ export function skrivPixelIText(yamlText, pixelId, kontoId = OPS_ANNONSKONTO) {
 
 // Ren logik: sammanfattar de tre delarna till { gjort, vantar } — det som
 // bokförs i state och skrivs i chatten.
-export function bedomStoreReady({ recensioner = [], pixel = null, capi = null, discord = null } = {}) {
+export function bedomStoreReady({ recensioner = [], pixel = null, capi = null, discord = null, sidor = [] } = {}) {
   const gjort = [];
   const vantar = [];
   for (const r of recensioner) {
@@ -89,7 +89,19 @@ export function bedomStoreReady({ recensioner = [], pixel = null, capi = null, d
     vantar.push(`WeTracked: klistra in pixel-id ${pixel.id} (VA:ns klick)`);
     if (capi?.tilldelad) gjort.push(`CAPI-användaren "${capi.anvandare}" har pixeln`);
     else vantar.push(`CAPI: ${capi?.varfor ?? 'tilldelningen gjordes inte'} — VA:n hämtar tokenen i Events Manager → Data sources → pixeln → Settings → Conversions API → Generate access token → WeTracked`);
-    vantar.push('Meta-sidan skapar VA:n i Business Manager (API:t kan inte)');
+    // Sidan är människans jobb — men bara tills den FINNS. Står id:t i
+    // produktfilen är den skapad, och att fortsätta lista den som väntande
+    // är samma sorts falska rapport som regel 4 finns för (FjordCover
+    // 2026-09-12: sidan skapad och verifierad i businessens owned_pages,
+    // ändå stod "Meta-sidan skapar VA:n" kvar i staten).
+    const utanSida = sidor.filter((s) => !s.pageId);
+    if (sidor.length === 0 || utanSida.length > 0) {
+      vantar.push('Meta-sidan skapar VA:n i Business Manager (API:t kan inte)');
+    } else {
+      gjort.push(
+        `Meta-sidan finns: ${sidor.map((s) => `${s.pageId} (${s.produkt})`).join(', ')} — skapad för hand, id:t står i produktfilen`
+      );
+    }
   } else {
     vantar.push(`pixel: ${pixel?.manuell ?? 'inte skapad'}`);
   }
@@ -221,7 +233,13 @@ export async function storeReady(butikId, { torr = false, guildId = null } = {})
   }
   console.log(discord?.kanaler ? `✅ Discord: ${discord.kanaler.length} kanaler${discord.invite ? ` — ${discord.invite}` : ''}` : `🖐 Discord: ${discord?.manuell}`);
 
-  const bedomning = bedomStoreReady({ recensioner, pixel, capi, discord });
+  const bedomning = bedomStoreReady({
+    recensioner,
+    pixel,
+    capi,
+    discord,
+    sidor: produkter.map(({ produkt: rad }) => ({ produkt: rad?.produkt?.id, pageId: text(rad?.meta?.page_id) })),
+  });
 
   // Bokför i butiksstaten (aldrig i torrläge). Steget är "klart" bara när
   // pixeln finns och kanalerna är byggda; annars manuellt med listan.

@@ -328,10 +328,14 @@ meta:
   # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
   # 1867947880635861 (Bäverbutiken, källan).
   ad_account_id: "915422744950975"
-  # Fylls i före launch — Meta-sidan skapas för hand (checklistans avsnitt 9),
-  # pixeln av factory/store-ready.mjs.
-  page_id: ""
-  pixel_id: ""
+  # Sidan "Fjordcover" skapad av VA:n 2026-09-12 och VERIFIERAD samma dag:
+  # ligger i owned_pages hos business 1164852855167090 (MagiBorsten), samma
+  # företag som äger OPS-kontot 915422744950975 — och inte i client_pages,
+  # alltså en ägd sida. Direktuppslag på sid-id:t nekas av token-scopet
+  # (pages_read_engagement saknas), så business-edgen är beviset.
+  # ⚠️ Sidan heter "Fjordcover" med litet c — brandet skrivs "FjordCover".
+  page_id: "1368352486352053"
+  pixel_id: "1774648277117873"
   # Prefixet är PER PRODUKT (FLERPRODUKT.md fynd 1). Källan använder
   # "Batmotor_" — samma prefix här hade kolliderat i prefixkartan,
   # översättningskön, adsetuppslaget och commission-kopplingen med

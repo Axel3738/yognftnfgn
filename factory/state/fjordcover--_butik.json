@@ -5,8 +5,8 @@
     "anslutning": {
       "klar": true,
       "domain": "j0p8qz-kp.myshopify.com",
-      "name": "My Store 4",
-      "primaryDomain": "j0p8qz-kp.myshopify.com",
+      "name": "FjordCover",
+      "primaryDomain": "fjordcover.se",
       "currencyCode": "SEK"
     },
     "tema-upload": {
@@ -14,8 +14,8 @@
       "arbetstemaId": "gid://shopify/OnlineStoreTheme/145386274864",
       "temaId": "gid://shopify/OnlineStoreTheme/145386274864",
       "temaNamn": "FjordCover – CRO v1",
-      "role": "UNPUBLISHED",
-      "redanUppe": false,
+      "role": "MAIN",
+      "redanUppe": true,
       "filer": 396,
       "kompletterade": []
     },
@@ -24,8 +24,6 @@
       "temaId": "gid://shopify/OnlineStoreTheme/145386274864",
       "filer": [
         "assets/opf-brand.css",
-        "snippets/ms-head.liquid",
-        "config/settings_schema.json",
         "config/settings_data.json"
       ]
     },
@@ -59,8 +57,7 @@
       "omskrivnaFiler": [
         "config/settings_data.json",
         "sections/footer-group.json",
-        "sections/header-group.json",
-        "snippets/ms-bundle-picker.liquid"
+        "sections/header-group.json"
       ],
       "lasta": [
         "templates/index.json",
@@ -127,28 +124,19 @@
       "klar": true,
       "huvudmeny": {
         "handle": "main-menu",
-        "orord": false,
+        "orord": true,
         "rader": 4
       },
       "sidfot": {
         "handle": "footer",
-        "orord": false,
+        "orord": true,
         "rader": 5
       }
     },
     "frakt": {
       "klar": true,
-      "andrade": 3,
-      "orort": false,
-      "skapadeZoner": [
-        "Sverige",
-        "EU (Europeiska Unionen)",
-        "Internationell"
-      ],
-      "borttagnaZoner": [
-        "Domestic",
-        "International"
-      ]
+      "andrade": 0,
+      "orort": true
     },
     "huvudmarknad": {
       "klar": true,
@@ -176,7 +164,7 @@
           "locale": "nb",
           "marknad": "Norge",
           "status": "ACTIVE",
-          "localeSkapad": true
+          "localeSkapad": false
         }
       ]
     },
@@ -185,34 +173,54 @@
       "underlag": 140,
       "utfall": {
         "nb": {
-          "registrerade": 99,
+          "registrerade": 0,
           "saknade": 0,
           "perTyp": {
             "variant": 0,
-            "produkt": 7,
-            "metafält": 9,
-            "sida": 7,
-            "menylänk": 6,
-            "paket": 16,
-            "policy": 3,
+            "produkt": 0,
+            "metafält": 0,
+            "sida": 0,
+            "menylänk": 0,
+            "paket": 0,
+            "policy": 0,
             "kollektion": 0,
-            "temamall": 44,
-            "sektionsgrupp": 7
+            "temamall": 0,
+            "sektionsgrupp": 0,
+            "temainställning": 0
           },
-          "granskning": "4212/4231"
+          "granskning": "4337/4368"
         }
       }
+    },
+    "store-ready": {
+      "klar": false,
+      "manuell": "recensioner batmotorskyddet: ingen Judge.me-token (env JUDGEME_FJORDCOVER_TOKEN) — ladda upp output/batmotorskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · WeTracked: klistra in pixel-id 1774648277117873 (VA:ns klick) · Discord: boten kan inte skapa servrar — VA:n skapar \"FjordCover — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/fjordcover.yaml skriver ut länken) och kör sen node factory/store-ready.mjs fjordcover --guild <server-id>",
+      "pixelId": "1774648277117873",
+      "discordGuild": null,
+      "recensioner": [
+        {
+          "produkt": "batmotorskyddet",
+          "viaApi": false
+        }
+      ],
+      "vantar": [
+        "recensioner batmotorskyddet: ingen Judge.me-token (env JUDGEME_FJORDCOVER_TOKEN) — ladda upp output/batmotorskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
+        "WeTracked: klistra in pixel-id 1774648277117873 (VA:ns klick)",
+        "Discord: boten kan inte skapa servrar — VA:n skapar \"FjordCover — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/fjordcover.yaml skriver ut länken) och kör sen node factory/store-ready.mjs fjordcover --guild <server-id>"
+      ]
+    },
+    "tema-publicering": {
+      "klar": true,
+      "tema": "FjordCover – CRO v1",
+      "role": "MAIN"
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/145386274864",
   "arbetstemaNamn": "FjordCover – CRO v1",
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "kundvy-startsida",
-      "markörer /nb"
-    ],
-    "tid": "2026-09-12T16:48:21.120Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-12T19:17:43.366Z"
   },
-  "uppdaterad": "2026-09-12T16:48:21.120Z"
+  "uppdaterad": "2026-09-12T19:17:50.391Z"
 }

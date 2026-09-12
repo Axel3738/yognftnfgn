@@ -268,6 +268,20 @@ test('store-ready: bedömningen sätter WeTracked/CAPI/sidan under "väntar" äv
   assert.equal(utan.vantar.length, 2);
 });
 
+test('store-ready: en Meta-sida som FINNS står som gjord, inte som väntande', () => {
+  const bas = { pixel: { id: '99', namn: 'Brand', redan: true }, capi: { tilldelad: true, anvandare: 'CAPI' }, discord: { manuell: 'ingen server' } };
+  // Sidan skapad för hand och id:t inskrivet i produktfilen ⇒ inget kvar att göra.
+  const med = bedomStoreReady({ ...bas, sidor: [{ produkt: 'a', pageId: '1368352486352053' }] });
+  assert.ok(!med.vantar.some((x) => x.includes('Meta-sidan')), 'ska inte stå kvar som väntande');
+  assert.ok(med.gjort.some((x) => x.includes('Meta-sidan finns') && x.includes('1368352486352053')));
+  // Saknas id:t på någon produkt är den kvar som människans jobb.
+  const halv = bedomStoreReady({ ...bas, sidor: [{ produkt: 'a', pageId: '123' }, { produkt: 'b', pageId: null }] });
+  assert.ok(halv.vantar.some((x) => x.includes('Meta-sidan')));
+  assert.ok(!halv.gjort.some((x) => x.includes('Meta-sidan finns')));
+  // Ingen sidlista alls (äldre anrop) beter sig som förut.
+  assert.ok(bedomStoreReady(bas).vantar.some((x) => x.includes('Meta-sidan')));
+});
+
 test('store-ready: produktfilerna slås upp via statefilerna på produkt.id, inte filnamn', () => {
   const rot = mkdtempSync(join(tmpdir(), 'ops-test-'));
   const stateMapp = join(rot, 'state');
