@@ -126,11 +126,24 @@ async function listaMappar(brandId, env = process.env) {
   if (!b) { console.error(`✗ Brandet "${brandId}" finns inte.`); process.exit(1); }
   const k = korkonfig(b, env);
   if (!k.mail.konfigurerad) { console.error(`✗ Saknar ${k.mail.saknas.join(', ')} i miljön.`); process.exit(1); }
+  // Samma två vägar som run.mjs: IMAP där det går, webbmejlen annars.
   const klient = new ImapKlient({ host: k.mail.host, port: k.mail.port, user: k.mail.user, pass: k.mail.pass });
   try {
-    await klient.anslut();
-    await klient.loggaIn();
-    const mappar = await klient.lista();
+    let mappar;
+    try {
+      await klient.anslut();
+      await klient.loggaIn();
+      mappar = await klient.lista();
+    } catch (e) {
+      if (e.kod !== 'PROXY_SPARRAR_PORTEN') throw e;
+      console.log('IMAP spärrat av nätet här — läser mapparna via webbmejlen i stället.');
+      const { WebmailKlient } = await import('./webmail.mjs');
+      const w = new WebmailKlient({ url: k.mail.webmail, user: k.mail.user, pass: k.mail.pass });
+      await w.loggaIn();
+      mappar = w.mappar;
+      await w.loggaUt();
+      if (!mappar.length) console.log('⚠️ Webbmejlen gav ingen mapplista i set_env — rutinen provar Sent, INBOX.Sent, Skickat i tur och ordning.');
+    }
     console.log(`\nMappar i ${k.mail.user} (${k.mail.host}):\n`);
     for (const m of mappar) console.log(`  ${m}`);
     const sent = mappar.find((m) => /sent|skickat|sendt/i.test(m));
@@ -141,6 +154,12 @@ async function listaMappar(brandId, env = process.env) {
 }
 
 if (process.argv[1] && process.argv[1].endsWith('setup.mjs')) {
+  // Samma proxygrepp som run.mjs, så --mappar når webbmejlen genom sessionens proxy.
+  if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1' && process.argv.includes('--mappar')) {
+    const { spawnSync } = await import('node:child_process');
+    const r = spawnSync(process.execPath, process.argv.slice(1), { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' } });
+    process.exit(r.status ?? 1);
+  }
   if (process.argv.includes('--nytt-konto')) skrivNyttKonto();
   else if (process.argv.includes('--mappar')) listaMappar(process.argv[process.argv.indexOf('--mappar') + 1]).catch((e) => { console.error(`✗ ${e.message}`); process.exit(1); });
   else {

@@ -57,6 +57,7 @@ härleds ur brand-id:t (`tacklebay` → `TACKLEBAY`, `my-shop` → `MY_SHOP`):
 | `KUNDTJANST_MAIL_PASS_<ID>` | Loopia-lösenordet för supportbrevlådan | ja |
 | `KUNDTJANST_MAIL_USER_<ID>` | bara om användarnamnet inte är supportmailen | nej |
 | `KUNDTJANST_MAIL_HOST_<ID>` | bara om det inte är Loopia (`mailcluster.loopia.se`) | nej |
+| `KUNDTJANST_WEBMAIL_URL_<ID>` | bara om webbmejlen inte är `https://webmail.loopia.se/` (annan Roundcube) | nej |
 | `SHOPIFY_SHOP_<ID>` + `SHOPIFY_ADMIN_TOKEN_<ID>` | ordrar + tvister (custom app: `read_orders`, `read_shopify_payments_disputes`) | nej — utan dem är tvister "okända" |
 | `SHOPIFY_CLIENT_ID_<ID>` + `SHOPIFY_CLIENT_SECRET_<ID>` | alternativet: fabrikens app "Fabriken", token mintas per körning | nej |
 | `NOTION_TOKEN` | SOP-täckning + rapportsida | nej |
@@ -152,13 +153,19 @@ stället för att hänga.
 
 | Väg | Var | Mejlen kommer från | Krav |
 |---|---|---|---|
-| **A. `--jobb <fil.json>`** | rutinen på claude.ai | Gmail-connectorn i sessionen (Loopia vidarebefordrar `hello@<brand>` till en Gmail-inkorg) | connector kopplad på rutinen; sessionen skriver JSON, formatet står i `run.mjs` och i kommandofilen |
+| **A. Webbmejlen (HTTPS)** — `mail.via: auto` väljer den när IMAP spärras | rutinen på claude.ai | Loopias webbmejl `https://webmail.loopia.se/` (Roundcube 1.7, avläst 2026-09-12), samma inloggning som brevlådan | bara `KUNDTJANST_MAIL_PASS_<ID>`. Ingen vidarebefordran, ingen Gmail |
 | **B. IMAP direkt** | Claude Code lokalt, en cron på en dator, Railway, self-hosted environment | Loopia | `KUNDTJANST_MAIL_PASS_<ID>` och öppen port 993 |
-| **C. `--fixtur <mapp>`** | var som helst | `.eml`-filer | bara tester och demo |
+| **C. `--jobb <fil.json>`** | valfritt konto med en mejl-connector (Gmail) | JSON som sessionen skriver ur connectorn | bara om brevlådan inte är på Loopia/Roundcube |
+| **D. `--fixtur <mapp>`** | var som helst | `.eml`-filer | bara tester och demo |
 
 Shopify, Notion, Discord och modellen går över HTTPS och fungerar överallt.
-Väg A är den som gör rutinen helt klickfri på claude.ai; väg B är den enklaste
-om Axel eller VA:n ändå kör Claude Code lokalt en gång i veckan.
+Väg A är standard på claude.ai: `kundtjanst/webmail.mjs` loggar in i webbmejlen
+precis som VA:n gör i webbläsaren, listar mejlen nyast först, hämtar råkällan
+(`viewsource`) och loggar ut. Läs-bara. ⚠️ Webbmejlen är ett gränssnitt för
+människor, inte ett API: byter Loopia Roundcube-version kan ett steg sluta
+stämma. Varje steg kastar då ett fel som säger vilket steg (1–6) som inte
+kände igen svaret, så det går att rätta utan att gissa. Testerna i
+`test/webmail.test.mjs` spelar upp de svar som avlästes 2026-09-12.
 
 ## Loopia
 
