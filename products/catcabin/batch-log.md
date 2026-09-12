@@ -133,3 +133,17 @@ prisrepliken plus ny inbränd text; orsaken står i
 `factory/output/utekattkojan/uteslutna.json`.
 
 **Räkningen: 13 av 16 — DELVIS KLART**, och det är rätt utfall givet beslutet.
+
+### Pixeln verifierad 2026-09-12 14:34
+
+`last_fired_time: 2026-09-12T14:34:44+0200` — **WeTracked ÄR kopplat.**
+Den var tom vid launch eftersom butiken hade noll besökare, och avfyrade så
+snart annonserna började leverera trafik.
+
+**Lärdom för nästa OPS-butik:** en tom `last_fired_time` på en butik som just
+öppnat betyder "ingen har besökt sidan", inte "pixeln saknas". Kontrollen i
+steg 11b kan inte uppfyllas före launch på en butik utan trafik — gör den
+strax EFTER launch i stället, när de första visningarna levererats.
+
+Första avläsningen samma dag: spend 170,69 kr · 1 271 visningar · 47 klick ·
+0 köp. Under domgränsen (300 kr / 3 köp), så ingen bedömning görs ännu.

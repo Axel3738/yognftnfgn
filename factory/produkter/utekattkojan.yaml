@@ -301,10 +301,12 @@ meta:
     budget_per_dag: 1000
     annonser: 13
     marknad: SE
-    # ⚠️ Pixelns last_fired_time var TOMT vid launch. Butiken hade noll besökare
-    # (öppnad samma dag), så mätningen kunde inte skilja "okopplad" från
-    # "obesökt". Axel uppgav att WeTracked var fixat. Kolla igen när trafik kommit.
-    pixel_verifierad: false
+    # Pixeln var TOM vid launch (butiken hade noll besökare), men avfyrade
+    # 2026-09-12 14:34+0200 när annonserna börjat leverera. WeTracked ÄR kopplat.
+    # Lärdom: en tom last_fired_time på en nyöppnad butik betyder "ingen har
+    # besökt sidan", inte "pixeln saknas" — kontrollen måste göras EFTER trafik.
+    pixel_verifierad: true
+    pixel_forsta_avfyrning: "2026-09-12T14:34:44+0200"
   produkt_url_no: "https://catcabin.se/nb/products/utekattkojan"
   vinklar:
     - "PD — Katten sover under bilen igen – kojan ger den en egen torr plats (BEVISAD: Utekattkoja_PD_2_H1, 1 453 kr / 4 köp / ROAS 2,17 mot BE 1,62)"

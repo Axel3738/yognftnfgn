@@ -92,7 +92,8 @@
     "butiken_bakom_losenord": false,
     "far_inte_aktiveras_forran": "(uppfyllt — launchad 2026-09-12 pa Axels besked)",
     "butiken_oppen_verifierad": "2026-09-12 — catcabin.se svarar 200, produktsidan visar 789,00 kr",
-    "pixeln_har_avfyrat": false,
-    "launch_anteckning": "Launchad pa Axels kommando \"Launch: CATCABIN_SE_Utekattkojan\". Butiken verifierad live (200, inget /password). Pixelns last_fired_time var TOMT vid launch — butiken hade da noll besokare, sa matningen kan inte skilja okopplad fran obesokt. Axel uppgav att WeTracked var fixat. Kontrollera pixeln igen nar trafik borjat komma."
+    "pixeln_har_avfyrat": true,
+    "launch_anteckning": "Launchad pa Axels kommando. Pixelns last_fired_time var TOMT vid launch eftersom butiken hade noll besokare; den avfyrade 14:34 samma dag nar annonserna borjat leverera. WeTracked ar kopplat.",
+    "pixel_forsta_avfyrning": "2026-09-12T14:34:44+0200"
   }
 }
