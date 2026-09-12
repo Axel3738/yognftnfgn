@@ -1,0 +1,11 @@
+1
+00:00:00,099 --> 00:00:11,119
+Dette er gaven som får dem til å si endelig. Termobeskyttelse for bobil til redusert pris kun i dag. Kjølig om sommeren, varmt om vinteren, mørkt når du sover. Lagerbeholdningen minker raskt.
+
+2
+00:00:11,159 --> 00:00:12,679
+Bestill nå før det er tomt.
+
+3
+00:00:12,681 --> 00:00:15,300
+Termobeskyttelse for bobil fra Beverbutikken.
