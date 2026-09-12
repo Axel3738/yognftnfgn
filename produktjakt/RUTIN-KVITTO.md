@@ -14,3 +14,4 @@ offertark, publicerad sida, Discord.
 
 Anmärkning 2026-09-09: 18 kandidater kördes genom mekanismgrinden i två omgångar,
 noll passerade. De två levererade är Axels egna val.
+| 2026-09-12 (V3, 4 linser) | 14 sökta / ~68 prövade | 12 | 1 i grinden + ~54 i linserna | ja (v17) | ja |

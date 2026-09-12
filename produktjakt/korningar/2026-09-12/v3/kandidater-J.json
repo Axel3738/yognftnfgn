@@ -1,0 +1,199 @@
+{
+ "agent": "J — formsydd form på nya objekt + ny form (H01/H02/H04/H10)",
+ "datum": "2026-09-12",
+ "status": "4 skyddsrader (≤ 5 enligt formtaket), 0 H10-rader — inget formsytt mössnät/elverkstält/ljusgårdslock fanns som listning; se STATUS i chatten",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Båthuven 600D för trailerbåt 17–19 fot",
+   "objekt": "Båt på trailer/bockar",
+   "form": "överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H04",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": ["objekt_ute", "dyr>10tkr (trailerbåt 17–19 fot typiskt 100–400 tkr)", "överdrag formsytt", "deadline upptagning (hårt datum, 4 v)", "old way improvisation (blå PE-presenning + spännband)", "ägarkänd parameter (båtlängd i fot)", "prisband ≥1000"],
+    "avvikelser": ["landad 740–905 kr ger BE-ROAS 2,3–2,4 mot taköverdragets 1,63", "svenskt golv finns (1852 300D 1 329 kr rea) — taköverdraget hade inget golv under"]
+   },
+   "sasong": {"fonster_id": "batupptagning", "deadline_typ": "upptagning", "veckor_kvar": 4.0, "timing": "NOW"},
+   "listning": {
+    "product_id": "1005012175923346",
+    "url": "https://www.aliexpress.com/item/1005012175923346.html",
+    "pris_usd": 56.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:14:38Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012175923346.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en storlek i titeln: 17–19 ft runabout/bass boat (518–579 cm) — storlekssyskon 11–22 ft finns bara i 210D (1005006011881796, 44,09 USD, LIVE 11:14:43Z, hero sedd)", "video": "ej tillgänglig i containern"},
+    "alternativ": [
+     {"product_id": "1005006011881796", "pris_usd": 44.09, "hero": "korningar/2026-09-12/v3/bilder/1005006011881796.jpg", "kommentar": "210D, 11–22 ft i storlekar — billigare men tunnare tyg; LIVE 2026-09-12T11:14:43Z"},
+     {"product_id": "1005007416915118", "pris_usd": 39.09, "kommentar": "K0091 i registret (kandidat 09-10) — produktsidan svarade TOMT i dag 11:14:41Z, BLOCKED"}
+    ]
+   },
+   "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "svart 600D-huv över vit båt på trailer, helt textfri, vit studiobakgrund — går att använda rakt av; saknar väder/löv i bild"},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "BoatLab — 1852 båtpresenning grå 300D polyester L518–579 cm B244 cm (inkl. trailerband)", "pris_sek": 1329, "url": "https://www.boatlab.se/products/1852-batpresenning-gra-300d-polyester-l518-579cm-b-244cm", "exakt_samma_form": true, "kommentar": "rea 1 329 kr (ord 1 719 kr), 20+ i lager — läst 2026-09-12; 300D mot vår 600D"},
+    "premium_ankare": {"namn": "SeaSea Båtkapell Överdrag 488–564 cm, 300D polyester", "pris_sek": 1699, "url": "https://www.seasea.se/produkter/upplaggning/presenning", "i_sortiment": true, "kommentar": "ord 1 699 kr (medlem 1 274 kr) ur sökutdrag 2026-09-12; 580–650 cm 1 679 kr läst på produktsidan. Watski Proflex formsydd PE 240 g/m² 1 089 kr (ord 1 215) och 1852 ord 1 719 kr stödjer nivån"},
+    "ankare_kvot": 1.21,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["boatlab.se (1852 518–579: 1 329 kr)", "seasea.se (kategori + 230–300 cm-sidan: 580–650 cm 1 679 kr)", "watski.se (Proflex 1 089–1 215 kr; 1852 300D 'från 609 kr'; kapellsidan)", "hjertmans.se (presenningssidan laddade 0 produkter)", "jula.se båtkapell Kayoba (403)", "moory.se (403)"]
+   },
+   "ekonomi": {"landad_sek": [740, 905], "pris_sek": 1399, "brutto_sek": [494, 659], "be_cpa_sek": [494, 659], "be_roas": 2.4, "flerkop": false, "returrisk": "medel — ägaren måste veta båtlängd i fot (ägarkänd parameter); en storlek 17–19 ft", "kommentar": "56,89 USD × 9,64 × 1,5 = 823 kr ±10 %. 1 399 = 0,82 × SeaSea ord 1 699, 1,05 × BoatLab rea. H04-test: objektet är ≥ 100 × priset och formen fyller bilden. BE-ROAS 2,4 är rad­ens svaga punkt — 1 499 kr ger 2,2 men tappar ankaret"},
+   "meta_tanke": {"hook": "Står båten under blå presenning i vinter?", "objekt_i_bild": "trailerbåten under den svarta formsydda huven, trailern synlig", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "huven följer fören och relingen — ingen vattenpöl på däck, inga fladdrande presenningsflikar"},
+   "varfor": "Exakt taköverdragets struktur på ett nytt objekt: 864 200 fritidsbåtar (Transportstyrelsen 2020), upptagning om 4 v, blå presenning som svikande default, fackhandelsankare 1 699 kr och 600D mot kedjans 300D. Dagens renaste H04-test (> 1 000 kr när objektet är ≥ 100× priset).",
+   "huvudrisk": "BE-ROAS 2,4 (landad 823 kr) och ett rea-golv på 1 329 kr i 300D — vinner bara om 600D + formsydd passform bär prisskillnaden.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 3, "lucka": 1, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 3},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (Båtskydd 420D 1 049 kr = uppblåsbar båt, annat objekt; Marin motorhölje/Båtmotorskydd = motorn)", "koncept.py sok 'boat cover' (K0091 kandidat 09-10, aldrig levererad; K0052 kapellstötta ja)", "koncept.py sok 'båt'/'trailer' (tillbehör, ingen huv levererad)"]},
+   "kallor": ["https://www.boatlab.se/products/1852-batpresenning-gra-300d-polyester-l518-579cm-b-244cm", "https://www.seasea.se/produkter/upplaggning/presenning", "https://www.seasea.se/produkter/upplaggning/presenning/batkapell-overdrag-230-300cm-75240", "https://watski.se/Kapell-11TkW", "https://www.watski.se/Formskuren-Batpresenning-240g-m2-115eA?artnr=102643", "https://www.transportstyrelsen.se/sv/sjofart/fritidsbatar/batlivsundersokningen/"]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Kamadohuven 600D",
+   "objekt": "NYTT: Kamadogrillen (keramisk grill, Kamado Joe / Big Green Egg / Kamado Sumo)",
+   "form": "överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H01",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": ["objekt_ute", "dyr>10tkr (Kamado Joe Classic ~11 tkr, BGE Large ~20 tkr; Sumo Classic ~5 tkr)", "överdrag formsytt", "ankare 1,2–1,6× (Bauhaus/Kamado Joe 979 kr)", "old way improvisation (presenning/ingenting; keramiken står ute året om)", "ägarkänd parameter (modell/tum)"],
+    "avvikelser": ["objektet står ofta på altanen nära huset, inte 'ute på tomten'", "kedjan har generiska runda grillöverdrag (ej formsydda för kamado)"]
+   },
+   "sasong": {"fonster_id": "forsta_frost_mellan", "deadline_typ": "första frost", "veckor_kvar": 4.7, "timing": "NOW", "kommentar": "nytt objekt — sasong.py körd på närmaste objektrad 'Pizzaugn/utekök' (samma fönster i norr 0,9 v, mellan 4,7 v, syd 5,3 v); mellan vald som huvudfönster"},
+   "listning": {
+    "product_id": "1005013106730364",
+    "url": "https://www.aliexpress.com/item/1005013106730364.html",
+    "pris_usd": 21.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:20:22Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005013106730364.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "storlek står inte i titeln — heron visar en huv för 18\"-klassen (BGE Large / Classic Joe) med hjulstativ; storlekar måste läsas ur varianterna före offert", "video": "ej tillgänglig i containern"},
+    "alternativ": [
+     {"product_id": "1005012964328189", "pris_usd": 36.79, "hero": "korningar/2026-09-12/v3/bilder/1005012964328189.jpg", "kommentar": "'600D Waterproof Cover for Big Green Egg Kamado Joe' — LIVE 11:20:25Z, identisk hero (samma leverantörsbild)"}
+    ]
+   },
+   "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "textfri packshot: svart huv på hjulstativ, med grön BGE och röd kamado som små infällda bilder — huven är stor i bild men står i studio, inte på altanen"},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "dangarden.se — Kamado Sumo överdrag Classic (Midi/Maxi)", "pris_sek": 449, "url": "https://dangarden.se/products/kamado-sumo-overdrag", "exakt_samma_form": true, "kommentar": "märkesspecifikt, slut i lager — läst 2026-09-12; Bauhaus Kamado Sumo Mini 349 / Signature Midi 599 kr ur sökutdrag"},
+    "premium_ankare": {"namn": "Bauhaus — Grillöverdrag Kamado Joe Classic Joe I/II (Kamado Joe original)", "pris_sek": 979, "url": "https://www.bauhaus.se/grilloverdrag-kamado-joe-classic-joe-i-ii", "i_sortiment": true, "kommentar": "979 kr, endast webborder — läst 2026-09-12; Big Green Egg-överdrag 813–1 790 kr ur sökutdrag"},
+    "ankare_kvot": 1.51,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["bauhaus.se (Kamado Joe 979 kr)", "dangarden.se (Sumo 449 kr)", "vattenbutiken.se (Sumo Classic, pris ej visat, 0 i lager)", "sökutdrag grillkung.se / southsidebbq.se / kitchenlab.se (BGE 813–1 790)"]
+   },
+   "ekonomi": {"landad_sek": [285, 348], "pris_sek": 649, "brutto_sek": [301, 364], "be_cpa_sek": [301, 364], "be_roas": 1.95, "flerkop": false, "returrisk": "medel — kamadostorlek (14/18/24 tum) och stativtyp måste stämma", "kommentar": "21,89 USD × 9,64 × 1,5 = 317 kr ±10 %. 649 = 0,66 × Kamado Joe 979; Sumo-ägaren har ett 449-kronorsöverdrag i sitt eget märke (slut i lager)"},
+   "meta_tanke": {"hook": "Står kamadon bar när frosten kommer?", "objekt_i_bild": "keramikgrillen på altanen under huven, hjulstativet synligt", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "huvens siluett = kamadons äggform; vatten rinner av toppen i stället för ner i lock och gångjärn"},
+   "varfor": "Nytt dyrt objekt (10–20 tkr) som står ute året om, formsydd form, originaltillbehör 979 kr som ankare och första frost om 4,7 v — H01 på ett objekt som aldrig sökts (0 träffar i registret).",
+   "huvudrisk": "Ägarantal ej mätt och Kamado Sumo-ägare (billigaste segmentet) har eget överdrag för 449 kr — raden bär bara på Kamado Joe/BGE-ägare.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 1, "efterfragan": 2, "lucka": 1, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt ('grill' → bara Grillmatta och Grilllampor)", "koncept.py sok 'kamado' (0 träffar)", "koncept.py sok 'gasol' (gasolgrillöverdrag K0119–K0132 kandidater, annat objekt)"]},
+   "kallor": ["https://www.bauhaus.se/grilloverdrag-kamado-joe-classic-joe-i-ii", "https://dangarden.se/products/kamado-sumo-overdrag", "https://vattenbutiken.se/sv/kamado-sumo-classic-overdrag"]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Kajakhuven formsydd",
+   "objekt": "NYTT: Kajaken/kanoten på bockarna (samma ägare som Kajakhållaren K0239, ja)",
+   "form": "överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D",
+    "delade_variabler": ["objekt_ute (kajaken ligger på bockar/ställning på tomten)", "överdrag formsytt", "deadline upptagning (4 v)", "old way improvisation (presenning/ingenting — UV bleker plasten)", "ägarkänd parameter (kajaklängd)"],
+    "avvikelser": ["objektvärde medel 5–15 tkr (havskajak > 10 tkr, fiskekajak 4–8 tkr)", "ägaren är oftare 40–65 än 55+", "inget svenskt märkesankare mätt — bara golv"]
+   },
+   "sasong": {"fonster_id": "batupptagning", "deadline_typ": "upptagning", "veckor_kvar": 4.0, "timing": "NOW", "kommentar": "nytt objekt — sasong.py körd på 'Båt på trailer/bockar' (kajaken tas upp i samma fönster)"},
+   "listning": {
+    "product_id": "1005012470643036",
+    "url": "https://www.aliexpress.com/item/1005012470643036.html",
+    "pris_usd": 14.03,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:20:28Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012470643036.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "längder står inte i titeln — måste läsas ur varianterna före offert (svenska havskajaker 4,5–5,5 m)", "video": "ej tillgänglig i containern"},
+    "alternativ": [
+     {"product_id": "1005013082736687", "pris_usd": 35.09, "kommentar": "420D–600D med blixtlås — bara sökträff; landad 460–560 kr blir för dyrt"},
+     {"product_id": "1005012470623094", "pris_usd": 16.79, "kommentar": "produktsidan svarade tomt 11:20:31Z — BLOCKED"}
+    ]
+   },
+   "material": {"klass": 2, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "bästa heron i dagens lins: svart huv på kajak på träbockar vid bryggan, vattendroppar pärlar på tyget, båtar i bakgrunden — helt textfri, redo som stillbild"},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "Amazon.se — XINMYD kajaköverdrag 210D (4,1–4,5 m)", "pris_sek": 371, "url": "https://www.amazon.se/Kanot%C3%B6verdragskydd-kajak%C3%B6verdrag-professionellt-kajakf%C3%B6rvaring-utomhusanv%C3%A4ndning/dp/B08MZM4PGY", "exakt_samma_form": true, "kommentar": "'från 371,20 kr' ur sökutdrag 2026-09-12 — produktsidan gav 503"},
+    "premium_ankare": {"namn": "Seahawk kajaköverdrag 4 m / 5,2 m (soderkajak.se) — pris ej visat på sidan; Galaxy cover 290/400/500 cm (kajakforalle.se) — pris ej visat", "pris_sek": null, "url": "https://www.soderkajak.se/tillbehor/transport-forvaring/72-seahawk-kajakoverdrag", "i_sortiment": true, "kommentar": "ej mätt — fackhandelns pris gick inte att läsa i containern; 'kajakförvaringsöverdrag 5,6–6 m 3 690 kr' på Fyndiq är ett avvikande utdrag och räknas inte"},
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["soderkajak.se (Seahawk, pris ej läsbart)", "kajakforalle.se (Galaxy, pris ej läsbart)", "amazon.se (503 på sidan; 371 kr ur sökutdrag)", "shopit.se / fyndiq.se (bara sökutdrag)"]
+   },
+   "ekonomi": {"landad_sek": [183, 223], "pris_sek": 499, "brutto_sek": [276, 316], "be_cpa_sek": [276, 316], "be_roas": 1.69, "flerkop": false, "returrisk": "medel — kajaklängd måste väljas (ägarkänd parameter); 'fitted' utan måttuppgift i titeln", "kommentar": "14,03 USD × 9,64 × 1,5 = 203 kr ±10 %. Utan mätt ankare gäller landad × 2,4 = 487 → 499 kr"},
+   "meta_tanke": {"hook": "Ligger kajaken ute på bockarna i vinter?", "objekt_i_bild": "kajaken under huven på bockarna, regn/droppar på tyget", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "vatten pärlar på huven; sittbrunnen är torr under — mot bilden av en vattenfylld öppen kajak"},
+   "varfor": "Samma ägare som Kajakhållaren (Axel ja 09-11), samma datum som båtupptagningen, formsydd form med den bästa heron i linsen; objektet ligger synligt ute på tomten hela vintern.",
+   "huvudrisk": "Ankaret är inte mätt (bara ett golv på 371 kr) och objektvärdet ligger i det blandade bandet 1–10 tkr.",
+   "konfidens": "LÅG",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 3, "efterfragan": 2, "lucka": 0, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt ('kajak'/'kayak' → 0)", "koncept.py sok 'kajak' (K0239 Kajakhållaren, annan form) / 'kayak' (K0114 dry bag)"]},
+   "kallor": ["https://www.soderkajak.se/tillbehor/transport-forvaring/72-seahawk-kajakoverdrag", "https://kajakforalle.se/galax-tack-for-kajak", "https://www.amazon.se/Kanot%C3%B6verdragskydd-kajak%C3%B6verdrag-professionellt-kajakf%C3%B6rvaring-utomhusanv%C3%A4ndning/dp/B08MZM4PGY"]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Krukväxthuven med dragkedja, 3-pack",
+   "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+   "form": "huv",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "sasong",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Kranskydd Frost 420D",
+    "delade_variabler": ["objekt_ute", "huv", "deadline första frost (hårt datum)", "old way improvisation (fiberduk + snöre / bära in)", "flerköp inbyggt (3 krukor)"],
+    "avvikelser": ["objektvärde medel (olivträd 500–3 000 kr) — inte dyrt", "kedjan har formen med dragkedja (Bauhaus 189 kr)", "hero är packshot med inbränd text '3 Packs'"]
+   },
+   "sasong": {"fonster_id": "forsta_frost_mellan", "deadline_typ": "första frost", "veckor_kvar": 4.7, "timing": "NOW", "kommentar": "sasong.py --objekt gav forsta_frost_norr först (0,9 v, i_kopfonster false); Svealand 4,7 v och Götaland 5,3 v är köpfönstret, vintertäckning 8,4 v"},
+   "listning": {
+    "product_id": "1005010439326565",
+    "url": "https://www.aliexpress.com/item/1005010439326565.html",
+    "pris_usd": 11.48,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:17:37Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010439326565.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "3-pack beige med dragkedja + dragsko enligt titel; mått står inte i titeln — måste läsas ur varianterna före offert", "video": "ej tillgänglig i containern"},
+    "alternativ": [
+     {"product_id": "1005010512980735", "pris_usd": 13.72, "hero": "korningar/2026-09-12/v3/bilder/1005010512980735.jpg", "kommentar": "singel 'heavy duty' med dragkedja — LIVE 11:14:58Z, hero textfri i kontext (palmer) men singelpriset ger BE-CPA 130–170 mot Bauhaus 189"}
+    ]
+   },
+   "material": {"klass": 0, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "tre beige huvar på vit bakgrund med inbränd text '3 Packs' och dragkedjeinfällning — singellistningens hero (palmer i huv, textfri) är bättre som annonsbild"},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "Bauhaus — Växtöverdrag Garden Life frostskydd textil 200 × 237 cm, dragkedja + snörning", "pris_sek": 189, "url": "https://www.bauhaus.se/vaxtoverdrag-garden-life-frostskydd-textil-200x237cm-brun", "exakt_samma_form": true, "kommentar": "189 kr styck — läst 2026-09-12; 3 st = 567 kr"},
+    "premium_ankare": {"namn": "Olivträdsbutiken — Vinterskydd för olivträd, fiberduk 100 g/m² med dragkedja, S–XXL", "pris_sek": 699, "url": "https://olivtradsbutiken.se/products/vinterskydd-for-olivtrad/", "i_sortiment": true, "kommentar": "699 kr styck, alla storlekar slutsålda — läst 2026-09-12"},
+    "ankare_kvot": 1.56,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["bauhaus.se (Garden Life 189 kr)", "olivtradsbutiken.se (699 kr)", "amazon.se SCCS 2-pack 240 × 200 (503 på sidan)", "wexthuset.com kronskydd (listan laddade inte)", "hornbach.se vinterskydd (sidan laddade inte)", "plantagen.se (bara rådgivningsartikel)"]
+   },
+   "ekonomi": {"landad_sek": [149, 183], "pris_sek": 449, "brutto_sek": [266, 300], "be_cpa_sek": [266, 300], "be_roas": 1.6, "flerkop": true, "returrisk": "medel — huvstorlek mot trädets höjd; 3-pack i en storlek passar inte alla krukor", "kommentar": "11,48 USD × 9,64 × 1,5 = 166 kr ±10 % för hela 3-packet. 449 = 0,64 × Olivträdsbutikens singel och 0,79 × 3 × Bauhaus — styckpriset 150 kr ligger under kedjan"},
+   "meta_tanke": {"hook": "Ska olivträdet stå ute i frosten?", "objekt_i_bild": "tre krukträd på altanen i huvar med dragkedjan öppen på ett", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "dragkedjan öppnas utan att huven tas av — mot fiberduk som lindas och knyts om varje gång"},
+   "varfor": "Hårt datum (första frost 4,7 v), inbyggt flerköp (3 krukor) och ett fackhandelsankare på 699 kr som är slutsålt — H08 + H02 i en rad. Svagare än de tre överdragen: kedjan har formen och objektet är billigt.",
+   "huvudrisk": "Lågt upplevt värde (fiberdukspåse) och Bauhaus har samma form med dragkedja för 189 kr — bär bara som 3-pack under kedjans styckpris.",
+   "konfidens": "LÅG",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 0, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen växthuv; Trädband/Skuggnät är andra former)", "koncept.py sok 'krukväxt'/'citrus'/'ros' (0 relevanta)", "koncept.py sok 'plant' (K0196 hönstak, K0218 presenning — andra objekt)"]},
+   "kallor": ["https://www.bauhaus.se/vaxtoverdrag-garden-life-frostskydd-textil-200x237cm-brun", "https://olivtradsbutiken.se/products/vinterskydd-for-olivtrad/", "https://plantagen.se/se/artiklar/tips-och-rad/utomhus-vaxter-och-tradgard/overvintra-medelhavsvaxter-sasom-citrus-och-olivtrad"]
+  }
+ ],
+ "strukna": [
+  {"objekt": "Studsmattan", "form": "överdrag", "varfor": "kedjegolv under landad: Hemfint skyddsöverdrag 360–370 cm 395 kr, Salta väderskydd 366 cm 565 kr; AliExpress 12 ft-huvar 27,79–33,89 USD → landad 400–525 kr. K7-kill."},
+  {"objekt": "Elverk/kompressor ute", "form": "huv/tält", "varfor": "ingen riktig 'running canopy' (GenTent-form) på AliExpress — 'Generator Covers While Running' 15,55 USD (LIVE 11:14:53Z, hero sedd) är en förvaringshuv med kardborreflik; Biltema har förvaringsformen (2000031725, 403). Ingen H10-nyhet i bild."},
+  {"objekt": "Husvagn/husbil — ventiler (mössnät)", "form": "nät", "varfor": "två fraser gav bara AC-slangnät (1005013011333373, LIVE 11:15:00Z — 'Portable Air Conditioner Exhaust Hose'), US-RV furnace-galler och Truma-täcklock (1,86 USD, standardutrustning = sett innan). Inget formsytt husvagnsnät."},
+  {"objekt": "Veteranbil/andrabil — halvgarage", "form": "överdrag", "varfor": "Jula har 'Halvöverdrag för kombi' (Hamron) — kedjan har formen (K4); AliExpress-träffen 1005009332856053 var Mazda MX-5-specifik, 1005011750072274 (34,09 USD) landar 490–540 kr."},
+  {"objekt": "Pizzaugn/utekök", "form": "huv", "varfor": "Ooni-original 499–549 kr (Hornbach 539, Elgiganten 549) ger pris 469 → BE-CPA 240–280 (ekonomi 1), objekt medel; hero 1005005642262219 (LIVE 11:15:03Z) är packshot med inbränd måttext. Finns redan som K0115/K0165 (kandidat 09-10)."},
+  {"objekt": "Källarfönster/ljusgårdar", "form": "lock", "varfor": "AliExpress gav bara entrétak i polykarbonat 79–131 USD och fönsterfilm — ingen ljusgårdslock-listning."},
+  {"objekt": "Spabadet", "form": "lock/filt", "varfor": "lockskydd fick kanske (K0053); annan form (flytande värmefilt 1005012975340307, 30,49 USD) är osynlig under locket och saknar väderhot — struken utan LIVE."},
+  {"objekt": "Postlådan, hängrännor, unga fruktträd, rosor/rhododendron, laddbox, takbox", "form": "huv/nät/skydd", "varfor": "ej sökta i dag: kedjevaror under 200 kr (lövnät, stamskydd, vindruteskydd) eller latent behov (laddbox/takbox) — linsens formtak (≤ 5 rader) användes på de fyra starkaste."}
+ ]
+}

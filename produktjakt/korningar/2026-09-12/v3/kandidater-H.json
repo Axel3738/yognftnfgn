@@ -1,220 +1,477 @@
 {
-  "agent": "H — maskinen på Makita-batteriet + kroppsligt (H12)",
-  "datum": "2026-09-12",
-  "kandidater": [
-    {
-      "koncept_id": null,
-      "namn_sv": "Minikedjesågen för Makita-batteri",
-      "objekt": "NYTT: Makita 18V-batterisystemet (ägd dyr sak) — vedstapeln och grenarna",
-      "form": "verktyg",
-      "arketyp": "D_SNABBARE_METOD",
-      "arketyp_sekundar": "E_VADER_SASONG",
-      "slot": "exploration",
-      "hypotes_id": "H12",
-      "vinnarlikhet": {
-        "likast": "Bälteslipmaskinen",
-        "delade_variabler": ["form verktyg motoriserat", "ankare ≥1,6×", "synlig payoff 3 s (spån flyger)", "prisband 500–999", "golv under nej i samma form"],
-        "avvikelser": ["ägd dyr sak (batterisystemet) — bandslipen hade inget ägt objekt", "vedsäsong NOW i stället för ingen säsong"]
-      },
-      "sasong": {"fonster_id": "vedsasong", "deadline_typ": "vedsäsong", "veckor_kvar": 4.7, "timing": "NOW"},
-      "listning": {
-        "product_id": "1005010485571553",
-        "url": "https://www.aliexpress.com/item/1005010485571553.html",
-        "pris_usd": 33.59,
-        "sald": "ej mätt",
-        "verdict": "LIVE_VERIFIED",
-        "verifierad_at": "2026-09-12T11:16:00Z",
-        "kontroll": {
-          "produktsida_oppnad": true,
-          "titel_stammer": true,
-          "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010485571553.jpg",
-          "hero_sedd": true,
-          "pris_sett": true,
-          "varianter": "6 tum, bar maskin utan batteri (Makita 18V-slot i heron); alternativ listning 1005012540984431 (US $45,42, 'for Makita Battery') visar dock kit med egna 21V-batterier — variantval måste bekräftas med leverantören",
-          "video": "ej tillgänglig i containern"
-        }
-      },
-      "material": {
-        "klass": 0,
-        "hero_textfri": false,
-        "hero_i_kontext": false,
-        "samma_produkt": true,
-        "forsta_3s": "ej mätt (ingen video)",
-        "kommentar": "heron är packshot fylld med text OCH bär Makita-logga + 'LXT/XPT' (piratmärkning) — får inte användas; egen bild/video krävs, obrandad enhet måste beställas"
-      },
-      "marknad": {
-        "lagsta_jamforbara": {"aktor": "ingen svensk aktör funnen med samma form (6-tums bar maskin för Makita 18V); enda träffen var finn.no (NO, 600 kr, andrahand)", "pris_sek": null, "url": "https://www.finn.no/recommerce/forsale/item/450515898", "exakt_samma_form": false},
-        "premium_ankare": {"namn": "Makita DUC150Z grensåg 18V 15 cm (bar maskin)", "pris_sek": 2395, "url": "https://www.verktygsvaruhuset.se/product/makita-duc150z-grensag-18v-15cm", "i_sortiment": true},
-        "ankare_kvot": 2.4,
-        "annonsorer_se": "ej mätt",
-        "kollade_kallor": ["verktygsvaruhuset.se (2 395 kr, ord. 3 000, 10 i lager, 2026-09-12)", "holgers.se (2 599 kr, sökutdrag)", "pricerunner.se (403)", "fyndiq.se/amazon.se (ingen träff på formen)"]
-      },
-      "ekonomi": {"landad_sek": [437, 534], "pris_sek": 999, "brutto_sek": [465, 562], "be_cpa_sek": [465, 562], "be_roas": 1.95, "flerkop": false, "returrisk": "låg — passar alla Makita 18V LXT; ägaren vet själv om han har systemet"},
-      "meta_tanke": {
-        "hook": "Har du Makita-batterier hemma?",
-        "objekt_i_bild": "Makita-batteriet som klickas i sågen, sedan grenen som kapas",
-        "sjalvselekterande": true,
-        "forstas_3s": true,
-        "bevisas_visuellt": "batteriet i, grenen av på 3 sekunder — spån i luften"
-      },
-      "varfor": "Samma struktur som Arbetslampan/Jetfläkten/Snöskyffeln för Makita (Axel ja 09-11) men med motor och synlig payoff: Makitas egen DUC150Z kostar 2 395–3 000 kr, vår 999 (ankare 2,4×), ingen svensk kedja säljer formen, vedsäsong 4,7 v bort. Testar H12 rent: verktyg vinner när upplevt värde bärs av det ägda systemet.",
-      "huvudrisk": "Leverantören trycker Makita-logga på maskinen (piratrisk) — måste beställas obrandad; 6-tums minisågar med eget batteri finns överallt (Jula/Fyndiq) så creativen måste visa Makita-batteriet först.",
-      "konfidens": "MEDEL",
-      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 1, "lucka": 2, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 3},
-      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 8, "K4": 8, "K5": 7, "K6": 8, "K7": 4, "K8": 8, "K9": 4, "K10": 1, "K11": 1, "K12": 1},
-      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (Fickkedjesåg/Hopfällbar såg/Kedjeslip = handverktyg, annan form)", "koncept.py sok 'kedjesåg', 'chainsaw', 'Makita' (bara Snöskyffeln)", "uteslutningslistan"]},
-      "kallor": [
-        "https://www.aliexpress.com/item/1005010485571553.html",
-        "https://www.aliexpress.com/item/1005012540984431.html",
-        "https://www.verktygsvaruhuset.se/product/makita-duc150z-grensag-18v-15cm",
-        "https://www.holgers.se/products/makita-duc150z-grensag-18v"
-      ]
-    },
-    {
-      "koncept_id": null,
-      "namn_sv": "Värmesulorna för älgpasset",
-      "objekt": "NYTT: Jägaren/hundföraren på passet — fötterna (kroppen efter 4 timmar stilla)",
-      "form": "kläder",
-      "arketyp": "E_VADER_SASONG",
-      "arketyp_sekundar": "A_AGARE_FRIKTION",
-      "slot": "exploitation",
-      "hypotes_id": "H02",
-      "vinnarlikhet": {
-        "likast": "Damasker Vandring",
-        "delade_variabler": ["form kläder", "E_VADER_SASONG", "hårt datum (älgjakt/första frost)", "kroppsligt i säsongsjobbet", "prisband nära 500–999", "ägare 55+ småhus"],
-        "avvikelser": ["klipp-till-storlek (två storlekar) i stället för en variant", "elektronik i skon — batteririsk"]
-      },
-      "sasong": {"fonster_id": "algjakt_syd", "deadline_typ": "älgjakt", "veckor_kvar": 3.7, "timing": "NOW"},
-      "listning": {
-        "product_id": "1005007987144485",
-        "url": "https://www.aliexpress.com/item/1005007987144485.html",
-        "pris_usd": 41.79,
-        "sald": "ej mätt",
-        "verdict": "LIVE_VERIFIED",
-        "verifierad_at": "2026-09-12T11:14:00Z",
-        "kontroll": {
-          "produktsida_oppnad": true,
-          "titel_stammer": true,
-          "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005007987144485.jpg",
-          "hero_sedd": true,
-          "pris_sett": true,
-          "varianter": "två storlekar, klipps till: 35–40 och 41–46; inbyggt 2100 mAh-batteri, trådlös fjärrkontroll på nyckelring, USB-laddning",
-          "video": "ej tillgänglig i containern"
-        }
-      },
-      "material": {
-        "klass": 1,
-        "hero_textfri": false,
-        "hero_i_kontext": false,
-        "samma_produkt": true,
-        "forsta_3s": "ej mätt (ingen video)",
-        "kommentar": "packshot med storlekstext uppe till vänster; sulan, fjärrkontrollen och kabeln syns tydligt — egen bild i kängan på passet behövs"
-      },
-      "marknad": {
-        "lagsta_jamforbara": {"aktor": "Hylte Jakt & Lantman — Värmesulor Uppladdningsbara (fjärrkontroll, inbyggt batteri, 35–40/41–46)", "pris_sek": 995, "url": "https://www.hylte-lantman.com/varmesulor-uppladdningsbara", "exakt_samma_form": true},
-        "premium_ankare": {"namn": "ThermaCELL batteridrivna värmesulor med fjärrkontroll (Land.se-test)", "pris_sek": 1795, "url": "https://www.land.se/djur-natur/test-varmesulorna-som-haller-dig-varm-om-fotterna-pa-passet", "i_sortiment": true},
-        "ankare_kvot": 2.0,
-        "annonsorer_se": "ej mätt",
-        "kollade_kallor": ["hylte-lantman.com (995 kr, 2026-09-12)", "land.se test (Thermacell 1 795, Alpen Heat 1 995, Hotronic 1 399, Rejmo 299 utan fjärr)", "outnorth.com (Therm-ic Insole Heat 3D 599 kr — enbart sula, batteripack säljs separat)", "elgiganten.se (samma form, pris visades inte)", "jula.se (403)", "jaktbutik.nu (503)"]
-      },
-      "ekonomi": {"landad_sek": [544, 665], "pris_sek": 899, "brutto_sek": [234, 355], "be_cpa_sek": [234, 355], "be_roas": 3.05, "flerkop": false, "returrisk": "medel — klipps till storlek (kan inte ångras), batteri i sulan"},
-      "meta_tanke": {
-        "hook": "Kalla fötter på passet igen?",
-        "objekt_i_bild": "kängan på passet, fjärrkontrollen i handen, sulan lyser röd",
-        "sjalvselekterande": true,
-        "forstas_3s": true,
-        "bevisas_visuellt": "värmebild/rött sken i sulan + fjärrkontrollen trycks i fickan utan att ta av kängan"
-      },
-      "varfor": "Samma kroppsliga passtruktur som Värmesitsen för älgpasset (Axel ja 09-11) och damaskerna: hårt datum (älgjakt syd 8 okt, första frost), fackhandelsankare 1 795 kr, exakt samma form kostar 995 hos Hylte — vår 899 med BE-CPA 234–355. Sulan ger 4–9 h och styrs utan att ta av kängan, vilket är hela skillnaden mot kemiska värmare (40–49 kr).",
-      "huvudrisk": "Landad 544–665 kr ger tunt utrymme under 899, och Elgiganten/Jula säljer formen i stormarknad (pris ej läst) — klipp-till-storlek kan ge returer.",
-      "konfidens": "MEDEL",
-      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 1, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
-      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 8, "K4": 7, "K5": 6, "K6": 8, "K7": 4, "K8": 6, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
-      "k0": {"dubblett": false, "kollat": ["katalog-live.txt ('sula' = bara skor/tofflor)", "koncept.py sok 'värmesula' (0 träffar)", "uteslutningslistan (Värmesitsen är annan form)"]},
-      "kallor": [
-        "https://www.aliexpress.com/item/1005007987144485.html",
-        "https://www.hylte-lantman.com/varmesulor-uppladdningsbara",
-        "https://www.land.se/djur-natur/test-varmesulorna-som-haller-dig-varm-om-fotterna-pa-passet",
-        "https://www.outnorth.com/se/therm-ic",
-        "https://www.elgiganten.se/product/personvard-halsa-skonhet/massage-valmaende/eluppvarmda-klader/uppladdningsbara-varmesulor-med-fjarrkontroll-storlek-38-40/415933"
-      ]
-    },
-    {
-      "koncept_id": null,
-      "namn_sv": "Värmehandskarna för älgpasset",
-      "objekt": "NYTT: Jägaren/hundföraren på passet — händerna (avtryckarfingret efter 4 timmar stilla)",
-      "form": "kläder",
-      "arketyp": "E_VADER_SASONG",
-      "arketyp_sekundar": "A_AGARE_FRIKTION",
-      "slot": "exploitation",
-      "hypotes_id": "H02",
-      "vinnarlikhet": {
-        "likast": "Damasker Vandring",
-        "delade_variabler": ["form kläder", "E_VADER_SASONG", "hårt datum (älgjakt/första frost)", "kroppsligt i säsongsjobbet", "prisband 500–999"],
-        "avvikelser": ["storlek M–XL (måste mäta — förlorarsignal 4/7)", "elektronik + två batterier att ladda"]
-      },
-      "sasong": {"fonster_id": "algjakt_syd", "deadline_typ": "älgjakt", "veckor_kvar": 3.7, "timing": "NOW"},
-      "listning": {
-        "product_id": "1005013031906919",
-        "url": "https://www.aliexpress.com/item/1005013031906919.html",
-        "pris_usd": 44.49,
-        "sald": "ej mätt",
-        "verdict": "LIVE_VERIFIED",
-        "verifierad_at": "2026-09-12T11:18:07Z",
-        "kontroll": {
-          "produktsida_oppnad": true,
-          "titel_stammer": true,
-          "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005013031906919.jpg",
-          "hero_sedd": true,
-          "pris_sett": true,
-          "varianter": "storlek M–XL; 6000 mAh-batterier (två), 3 värmenivåer, touchscreen, dragkedjeficka för batteriet på handryggen",
-          "video": "ej tillgänglig i containern"
-        }
-      },
-      "material": {
-        "klass": 1,
-        "hero_textfri": false,
-        "hero_i_kontext": false,
-        "samma_produkt": true,
-        "forsta_3s": "ej mätt (ingen video)",
-        "kommentar": "packshot med rubriktext och 'KUSIRIDE'-kartong; värmezonerna ritade i rött över fingrarna — bra visuell mekanism men måste göras om som egen bild på passet"
-      },
-      "marknad": {
-        "lagsta_jamforbara": {"aktor": "Jaktia — Avignon Heat Isoglove (fingerhandske, AA-batterier)", "pris_sek": 799, "url": "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar", "exakt_samma_form": false},
-        "premium_ankare": {"namn": "HeatX Heated Hunt Gloves (Jaktia)", "pris_sek": 1995, "url": "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar", "i_sortiment": true},
-        "ankare_kvot": 2.0,
-        "annonsorer_se": "ej mätt",
-        "kollade_kallor": ["jaktia.se (14 modeller 559–2 995 kr, 2026-09-12)", "hylte-lantman.com (Woodline 1 295, Genzo 1 095, HeatX 1 000–1 699, Seeland 1 672)", "jula.se/clasohlson.se (inga träffar i sökutdrag)"]
-      },
-      "ekonomi": {"landad_sek": [579, 708], "pris_sek": 999, "brutto_sek": [291, 420], "be_cpa_sek": [291, 420], "be_roas": 2.8, "flerkop": false, "returrisk": "medel–hög — storlek M–XL, passform på handske är personlig"},
-      "meta_tanke": {
-        "hook": "Stelt avtryckarfinger på passet?",
-        "objekt_i_bild": "handsken på bössan/i hundkopplet, värmen tänds på handryggen",
-        "sjalvselekterande": true,
-        "forstas_3s": true,
-        "bevisas_visuellt": "knappen trycks, fingrarna lyser rött (värmekamera) — 3 sekunder"
-      },
-      "varfor": "Samma passtruktur som värmesulorna och Värmesitsen (Axel ja 09-11): fackhandeln tar 1 000–3 000 kr för formen, lägsta jämförbara är en AA-driven handske för 799, vår li-ion-handske 999 med ankare 2,0×. Älgjakt syd om 3,7 v.",
-      "huvudrisk": "Storlek M–XL är en 'måste mäta'-variant (4 vinnare/7 förlorare i facit) och landad 579–708 ger BE-CPA 291–420 — går bara ihop om returerna hålls nere.",
-      "konfidens": "LÅG",
-      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
-      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 11, "K3": 8, "K4": 7, "K5": 6, "K6": 8, "K7": 3, "K8": 7, "K9": 3, "K10": 2, "K11": 1, "K12": 1},
-      "k0": {"dubblett": false, "kollat": ["katalog-live.txt ('handsk' = bara Motocross Handskydd)", "koncept.py sok 'handsk' (0 träffar)", "uteslutningslistan"]},
-      "kallor": [
-        "https://www.aliexpress.com/item/1005013031906919.html",
-        "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar",
-        "https://www.hylte-lantman.com/varmehandskar-handvarmare"
-      ]
+ "agent": "H — maskinen på Makita-batteriet + kroppsligt (H12)",
+ "datum": "2026-09-12",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Minikedjesågen för Makita-batteri",
+   "objekt": "NYTT: Makita 18V-batterisystemet (ägd dyr sak) — vedstapeln och grenarna",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H12",
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen",
+    "delade_variabler": [
+     "form verktyg motoriserat",
+     "ankare ≥1,6×",
+     "synlig payoff 3 s (spån flyger)",
+     "prisband 500–999",
+     "golv under nej i samma form"
+    ],
+    "avvikelser": [
+     "ägd dyr sak (batterisystemet) — bandslipen hade inget ägt objekt",
+     "vedsäsong NOW i stället för ingen säsong"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 4.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010485571553",
+    "url": "https://www.aliexpress.com/item/1005010485571553.html",
+    "pris_usd": 33.59,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:16:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010485571553.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "6 tum, bar maskin utan batteri (Makita 18V-slot i heron); alternativ listning 1005012540984431 (US $45,42, 'for Makita Battery') visar dock kit med egna 21V-batterier — variantval måste bekräftas med leverantören",
+     "video": "ej tillgänglig i containern"
     }
-  ],
-  "strukna": [
-    {"namn": "Lövblåsen för Makita-batteri (ONEVAN 3500W/5500W turbo, US $42–64)", "varfor": "K0-dubblett: Jetfläkt för Makita-batteri 709 kr finns i katalogen (samma sak, annat namn); dessutom säljer Makita själv DUB185Z för 549–919 kr (mfive.se/k-bygg.se) — märket ligger under oss i egen form."},
-    {"namn": "Högtryckstvätten för Makita-batteri (ONEVAN 120 bar US $58,46 / Gisam 250 bar US $76,69)", "varfor": "Ankare Makita DHW180Z 1 381–1 969 kr (verktygsvaruhuset 1 795) ger bara 1,4× mot 1 299 — H12 kräver ≥ 2,4×; landad 761–930 kr. Payoffen (självsugande ur hink på båtuppläggningen, 4 v) är stark men ekonomin bär inte."},
-    {"namn": "Kaffebryggaren för Makita-batteri (US $160–172)", "varfor": "Landad ~2 300 kr — dyrare än Makitas egen DCM501Z. Död."},
-    {"namn": "Kupévärmaren/defrostern på Makita-batteri (600 W, US $20,54)", "varfor": "Landad ~300 kr, inget märkesankare finns, pryl under 900 kr — bryter H12:s golv och ser ut som sitt pris (lågt upplevt värde)."},
-    {"namn": "Värmevästen på Makita-batteri", "varfor": "Enda träffen är Makitas egen DCV202 (US $165); ingen generisk väst med Makita-adapter finns — bara USB-västar (US $20–39) som Jula/Biltema redan säljer."},
-    {"namn": "Lövskopor / leaf scoops (US $8,79 par)", "varfor": "Landad ~127 kr → max 299 kr, BE-CPA < 190 (ekonomi 0); handverktyg utan ankare."},
-    {"namn": "Vedbärare canvas (US $11–41)", "varfor": "Kedjeform (Jula/Clas — pris ej läst, 403/tomt), inget ankare, ingen mekanism; OneTigris vaxad US $41 ger landad ~600 utan skäl till 999."},
-    {"namn": "Isbroddar, knäskydd, handledsvärmare", "varfor": "Sett innan / standardutrustning (SIGNALER §sett innan) — ingen ovanlig form hittad, inte sökt vidare."}
-  ]
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är packshot fylld med text OCH bär Makita-logga + 'LXT/XPT' (piratmärkning) — får inte användas; egen bild/video krävs, obrandad enhet måste beställas"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör funnen med samma form (6-tums bar maskin för Makita 18V); enda träffen var finn.no (NO, 600 kr, andrahand)",
+     "pris_sek": null,
+     "url": "https://www.finn.no/recommerce/forsale/item/450515898",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Makita DUC150Z grensåg 18V 15 cm (bar maskin)",
+     "pris_sek": 2395,
+     "url": "https://www.verktygsvaruhuset.se/product/makita-duc150z-grensag-18v-15cm",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.4,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "verktygsvaruhuset.se (2 395 kr, ord. 3 000, 10 i lager, 2026-09-12)",
+     "holgers.se (2 599 kr, sökutdrag)",
+     "pricerunner.se (403)",
+     "fyndiq.se/amazon.se (ingen träff på formen)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     437,
+     534
+    ],
+    "pris_sek": 999,
+    "brutto_sek": [
+     465,
+     562
+    ],
+    "be_cpa_sek": [
+     465,
+     562
+    ],
+    "be_roas": 1.95,
+    "flerkop": false,
+    "returrisk": "låg — passar alla Makita 18V LXT; ägaren vet själv om han har systemet"
+   },
+   "meta_tanke": {
+    "hook": "Har du Makita-batterier hemma?",
+    "objekt_i_bild": "Makita-batteriet som klickas i sågen, sedan grenen som kapas",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "batteriet i, grenen av på 3 sekunder — spån i luften"
+   },
+   "varfor": "Samma struktur som Arbetslampan/Jetfläkten/Snöskyffeln för Makita (Axel ja 09-11) men med motor och synlig payoff: Makitas egen DUC150Z kostar 2 395–3 000 kr, vår 999 (ankare 2,4×), ingen svensk kedja säljer formen, vedsäsong 4,7 v bort. Testar H12 rent: verktyg vinner när upplevt värde bärs av det ägda systemet.",
+   "huvudrisk": "Leverantören trycker Makita-logga på maskinen (piratrisk) — måste beställas obrandad; 6-tums minisågar med eget batteri finns överallt (Jula/Fyndiq) så creativen måste visa Makita-batteriet först.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 4,
+    "K8": 8,
+    "K9": 4,
+    "K10": 1,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (Fickkedjesåg/Hopfällbar såg/Kedjeslip = handverktyg, annan form)",
+     "koncept.py sok 'kedjesåg', 'chainsaw', 'Makita' (bara Snöskyffeln)",
+     "uteslutningslistan"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010485571553.html",
+    "https://www.aliexpress.com/item/1005012540984431.html",
+    "https://www.verktygsvaruhuset.se/product/makita-duc150z-grensag-18v-15cm",
+    "https://www.holgers.se/products/makita-duc150z-grensag-18v"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Värmesulorna för älgpasset",
+   "objekt": "NYTT: Jägarens fötter på passet (kroppen efter 4 timmar stilla, okt–jan)",
+   "form": "kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Damasker Vandring",
+    "delade_variabler": [
+     "form kläder",
+     "E_VADER_SASONG",
+     "hårt datum (älgjakt/första frost)",
+     "kroppsligt i säsongsjobbet",
+     "prisband nära 500–999",
+     "ägare 55+ småhus"
+    ],
+    "avvikelser": [
+     "klipp-till-storlek (två storlekar) i stället för en variant",
+     "elektronik i skon — batteririsk"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005007987144485",
+    "url": "https://www.aliexpress.com/item/1005007987144485.html",
+    "pris_usd": 41.79,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:14:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005007987144485.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "två storlekar, klipps till: 35–40 och 41–46; inbyggt 2100 mAh-batteri, trådlös fjärrkontroll på nyckelring, USB-laddning",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot med storlekstext uppe till vänster; sulan, fjärrkontrollen och kabeln syns tydligt — egen bild i kängan på passet behövs"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Hylte Jakt & Lantman — Värmesulor Uppladdningsbara (fjärrkontroll, inbyggt batteri, 35–40/41–46)",
+     "pris_sek": 995,
+     "url": "https://www.hylte-lantman.com/varmesulor-uppladdningsbara",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "ThermaCELL batteridrivna värmesulor med fjärrkontroll (Land.se-test)",
+     "pris_sek": 1795,
+     "url": "https://www.land.se/djur-natur/test-varmesulorna-som-haller-dig-varm-om-fotterna-pa-passet",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "hylte-lantman.com (995 kr, 2026-09-12)",
+     "land.se test (Thermacell 1 795, Alpen Heat 1 995, Hotronic 1 399, Rejmo 299 utan fjärr)",
+     "outnorth.com (Therm-ic Insole Heat 3D 599 kr — enbart sula, batteripack säljs separat)",
+     "elgiganten.se (samma form, pris visades inte)",
+     "jula.se (403)",
+     "jaktbutik.nu (503)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     544,
+     665
+    ],
+    "pris_sek": 899,
+    "brutto_sek": [
+     234,
+     355
+    ],
+    "be_cpa_sek": [
+     234,
+     355
+    ],
+    "be_roas": 3.05,
+    "flerkop": false,
+    "returrisk": "medel — klipps till storlek (kan inte ångras), batteri i sulan"
+   },
+   "meta_tanke": {
+    "hook": "Kalla fötter på passet igen?",
+    "objekt_i_bild": "kängan på passet, fjärrkontrollen i handen, sulan lyser röd",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "värmebild/rött sken i sulan + fjärrkontrollen trycks i fickan utan att ta av kängan"
+   },
+   "varfor": "Samma kroppsliga passtruktur som Värmesitsen för älgpasset (Axel ja 09-11) och damaskerna: hårt datum (älgjakt syd 8 okt, första frost), fackhandelsankare 1 795 kr, exakt samma form kostar 995 hos Hylte — vår 899 med BE-CPA 234–355. Sulan ger 4–9 h och styrs utan att ta av kängan, vilket är hela skillnaden mot kemiska värmare (40–49 kr).",
+   "huvudrisk": "Landad 544–665 kr ger tunt utrymme under 899, och Elgiganten/Jula säljer formen i stormarknad (pris ej läst) — klipp-till-storlek kan ge returer.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 7,
+    "K5": 6,
+    "K6": 8,
+    "K7": 4,
+    "K8": 6,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt ('sula' = bara skor/tofflor)",
+     "koncept.py sok 'värmesula' (0 träffar)",
+     "uteslutningslistan (Värmesitsen är annan form)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007987144485.html",
+    "https://www.hylte-lantman.com/varmesulor-uppladdningsbara",
+    "https://www.land.se/djur-natur/test-varmesulorna-som-haller-dig-varm-om-fotterna-pa-passet",
+    "https://www.outnorth.com/se/therm-ic",
+    "https://www.elgiganten.se/product/personvard-halsa-skonhet/massage-valmaende/eluppvarmda-klader/uppladdningsbara-varmesulor-med-fjarrkontroll-storlek-38-40/415933"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Värmehandskarna för älgpasset",
+   "objekt": "NYTT: Jägarens händer på passet (avtryckarfingret efter 4 timmar stilla, okt–jan)",
+   "form": "kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Damasker Vandring",
+    "delade_variabler": [
+     "form kläder",
+     "E_VADER_SASONG",
+     "hårt datum (älgjakt/första frost)",
+     "kroppsligt i säsongsjobbet",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "storlek M–XL (måste mäta — förlorarsignal 4/7)",
+     "elektronik + två batterier att ladda"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005013031906919",
+    "url": "https://www.aliexpress.com/item/1005013031906919.html",
+    "pris_usd": 44.49,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:18:07Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005013031906919.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek M–XL; 6000 mAh-batterier (två), 3 värmenivåer, touchscreen, dragkedjeficka för batteriet på handryggen",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot med rubriktext och 'KUSIRIDE'-kartong; värmezonerna ritade i rött över fingrarna — bra visuell mekanism men måste göras om som egen bild på passet"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Jaktia — Avignon Heat Isoglove (fingerhandske, AA-batterier)",
+     "pris_sek": 799,
+     "url": "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "HeatX Heated Hunt Gloves (Jaktia)",
+     "pris_sek": 1995,
+     "url": "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "jaktia.se (14 modeller 559–2 995 kr, 2026-09-12)",
+     "hylte-lantman.com (Woodline 1 295, Genzo 1 095, HeatX 1 000–1 699, Seeland 1 672)",
+     "jula.se/clasohlson.se (inga träffar i sökutdrag)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     579,
+     708
+    ],
+    "pris_sek": 999,
+    "brutto_sek": [
+     291,
+     420
+    ],
+    "be_cpa_sek": [
+     291,
+     420
+    ],
+    "be_roas": 2.8,
+    "flerkop": false,
+    "returrisk": "medel–hög — storlek M–XL, passform på handske är personlig"
+   },
+   "meta_tanke": {
+    "hook": "Stelt avtryckarfinger på passet?",
+    "objekt_i_bild": "handsken på bössan/i hundkopplet, värmen tänds på handryggen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "knappen trycks, fingrarna lyser rött (värmekamera) — 3 sekunder"
+   },
+   "varfor": "Samma passtruktur som värmesulorna och Värmesitsen (Axel ja 09-11): fackhandeln tar 1 000–3 000 kr för formen, lägsta jämförbara är en AA-driven handske för 799, vår li-ion-handske 999 med ankare 2,0×. Älgjakt syd om 3,7 v.",
+   "huvudrisk": "Storlek M–XL är en 'måste mäta'-variant (4 vinnare/7 förlorare i facit) och landad 579–708 ger BE-CPA 291–420 — går bara ihop om returerna hålls nere.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 11,
+    "K3": 8,
+    "K4": 7,
+    "K5": 6,
+    "K6": 8,
+    "K7": 3,
+    "K8": 7,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt ('handsk' = bara Motocross Handskydd)",
+     "koncept.py sok 'handsk' (0 träffar)",
+     "uteslutningslistan"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013031906919.html",
+    "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar",
+    "https://www.hylte-lantman.com/varmehandskar-handvarmare"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Lövblåsen för Makita-batteri (ONEVAN 3500W/5500W turbo, US $42–64)",
+   "varfor": "K0-dubblett: Jetfläkt för Makita-batteri 709 kr finns i katalogen (samma sak, annat namn); dessutom säljer Makita själv DUB185Z för 549–919 kr (mfive.se/k-bygg.se) — märket ligger under oss i egen form."
+  },
+  {
+   "namn": "Högtryckstvätten för Makita-batteri (ONEVAN 120 bar US $58,46 / Gisam 250 bar US $76,69)",
+   "varfor": "Ankare Makita DHW180Z 1 381–1 969 kr (verktygsvaruhuset 1 795) ger bara 1,4× mot 1 299 — H12 kräver ≥ 2,4×; landad 761–930 kr. Payoffen (självsugande ur hink på båtuppläggningen, 4 v) är stark men ekonomin bär inte."
+  },
+  {
+   "namn": "Kaffebryggaren för Makita-batteri (US $160–172)",
+   "varfor": "Landad ~2 300 kr — dyrare än Makitas egen DCM501Z. Död."
+  },
+  {
+   "namn": "Kupévärmaren/defrostern på Makita-batteri (600 W, US $20,54)",
+   "varfor": "Landad ~300 kr, inget märkesankare finns, pryl under 900 kr — bryter H12:s golv och ser ut som sitt pris (lågt upplevt värde)."
+  },
+  {
+   "namn": "Värmevästen på Makita-batteri",
+   "varfor": "Enda träffen är Makitas egen DCV202 (US $165); ingen generisk väst med Makita-adapter finns — bara USB-västar (US $20–39) som Jula/Biltema redan säljer."
+  },
+  {
+   "namn": "Lövskopor / leaf scoops (US $8,79 par)",
+   "varfor": "Landad ~127 kr → max 299 kr, BE-CPA < 190 (ekonomi 0); handverktyg utan ankare."
+  },
+  {
+   "namn": "Vedbärare canvas (US $11–41)",
+   "varfor": "Kedjeform (Jula/Clas — pris ej läst, 403/tomt), inget ankare, ingen mekanism; OneTigris vaxad US $41 ger landad ~600 utan skäl till 999."
+  },
+  {
+   "namn": "Isbroddar, knäskydd, handledsvärmare",
+   "varfor": "Sett innan / standardutrustning (SIGNALER §sett innan) — ingen ovanlig form hittad, inte sökt vidare."
+  }
+ ]
 }

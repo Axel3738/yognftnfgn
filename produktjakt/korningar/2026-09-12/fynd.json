@@ -1,0 +1,1913 @@
+{
+ "datum": "2026-09-12",
+ "version": "v3",
+ "kalla": "korningar/2026-09-12/v3/batch.json",
+ "antal_kandidater": 14,
+ "per_slot": {
+  "exploitation": 8,
+  "exploration": 1,
+  "sasong": 3
+ },
+ "produkter": [
+  {
+   "product_id": "1005012175923346",
+   "titel": "Båthuven 600D för trailerbåt 17–19 fot",
+   "url": "https://www.aliexpress.com/item/1005012175923346.html",
+   "pris": 56.89,
+   "valuta": "USD",
+   "pris_text": "US $56.89",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005012175923346.jpg",
+   "sald": "",
+   "grupp": "Båt på trailer/bockar",
+   "objekt": "Båt på trailer/bockar",
+   "taggar": {
+    "objekt": "Båt på trailer/bockar",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "1,2–1,3×",
+    "ankare_kalla": "SeaSea Båtkapell Överdrag 488–564 cm, 300D polyester"
+   },
+   "ekonomi": {
+    "landad": 822,
+    "forslag_pris": 1399,
+    "multipel": 1.7,
+    "be_cpa": 576,
+    "be_roas": 2.4,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     740,
+     905
+    ]
+   },
+   "namn_sv": "Båthuven 600D för trailerbåt 17–19 fot",
+   "status": "bevisad struktur",
+   "poang": 16.6,
+   "rank_slutlig": 16.6,
+   "rank": 1,
+   "per_kriterium": null,
+   "hook": "Står båten under blå presenning i vinter?",
+   "efter_bild": "huven följer fören och relingen — ingen vattenpöl på däck, inga fladdrande presenningsflikar",
+   "huvudrisk": "BE-ROAS 2,4 (landad 823 kr) och ett rea-golv på 1 329 kr i 300D — vinner bara om 600D + formsydd passform bär prisskillnaden.",
+   "varfor": "Exakt taköverdragets struktur på ett nytt objekt: 864 200 fritidsbåtar (Transportstyrelsen 2020), upptagning om 4 v, blå presenning som svikande default, fackhandelsankare 1 699 kr och 600D mot kedjans 300D. Dagens renaste H04-test (> 1 000 kr när objektet är ≥ 100× priset).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0244",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H04",
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 4.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": [
+     "objekt_ute",
+     "dyr>10tkr (trailerbåt 17–19 fot typiskt 100–400 tkr)",
+     "överdrag formsytt",
+     "deadline upptagning (hårt datum, 4 v)",
+     "old way improvisation (blå PE-presenning + spännband)",
+     "ägarkänd parameter (båtlängd i fot)",
+     "prisband ≥1000"
+    ],
+    "avvikelser": [
+     "landad 740–905 kr ger BE-ROAS 2,3–2,4 mot taköverdragets 1,63",
+     "svenskt golv finns (1852 300D 1 329 kr rea) — taköverdraget hade inget golv under"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 3 + säsong 3 + creative 2 + lucka 1 + signalbonus +1.6 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8)] = 16.6",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "BoatLab — 1852 båtpresenning grå 300D polyester L518–579 cm B244 cm (inkl. trailerband)",
+     "pris_sek": 1329,
+     "url": "https://www.boatlab.se/products/1852-batpresenning-gra-300d-polyester-l518-579cm-b-244cm",
+     "exakt_samma_form": true,
+     "kommentar": "rea 1 329 kr (ord 1 719 kr), 20+ i lager — läst 2026-09-12; 300D mot vår 600D"
+    },
+    "premium_ankare": {
+     "namn": "SeaSea Båtkapell Överdrag 488–564 cm, 300D polyester",
+     "pris_sek": 1699,
+     "url": "https://www.seasea.se/produkter/upplaggning/presenning",
+     "i_sortiment": true,
+     "kommentar": "ord 1 699 kr (medlem 1 274 kr) ur sökutdrag 2026-09-12; 580–650 cm 1 679 kr läst på produktsidan. Watski Proflex formsydd PE 240 g/m² 1 089 kr (ord 1 215) och 1852 ord 1 719 kr stödjer nivån"
+    },
+    "ankare_kvot": 1.21,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "boatlab.se (1852 518–579: 1 329 kr)",
+     "seasea.se (kategori + 230–300 cm-sidan: 580–650 cm 1 679 kr)",
+     "watski.se (Proflex 1 089–1 215 kr; 1852 300D 'från 609 kr'; kapellsidan)",
+     "hjertmans.se (presenningssidan laddade 0 produkter)",
+     "jula.se båtkapell Kayoba (403)",
+     "moory.se (403)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "svart 600D-huv över vit båt på trailer, helt textfri, vit studiobakgrund — går att använda rakt av; saknar väder/löv i bild"
+   },
+   "meta_tanke": {
+    "hook": "Står båten under blå presenning i vinter?",
+    "objekt_i_bild": "trailerbåten under den svarta formsydda huven, trailern synlig",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "huven följer fören och relingen — ingen vattenpöl på däck, inga fladdrande presenningsflikar"
+   },
+   "listning": {
+    "product_id": "1005012175923346",
+    "url": "https://www.aliexpress.com/item/1005012175923346.html",
+    "pris_usd": 56.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:14:38Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012175923346.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en storlek i titeln: 17–19 ft runabout/bass boat (518–579 cm) — storlekssyskon 11–22 ft finns bara i 210D (1005006011881796, 44,09 USD, LIVE 11:14:43Z, hero sedd)",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ": [
+     {
+      "product_id": "1005006011881796",
+      "pris_usd": 44.09,
+      "hero": "korningar/2026-09-12/v3/bilder/1005006011881796.jpg",
+      "kommentar": "210D, 11–22 ft i storlekar — billigare men tunnare tyg; LIVE 2026-09-12T11:14:43Z"
+     },
+     {
+      "product_id": "1005007416915118",
+      "pris_usd": 39.09,
+      "kommentar": "K0091 i registret (kandidat 09-10) — produktsidan svarade TOMT i dag 11:14:41Z, BLOCKED"
+     }
+    ]
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 1,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.boatlab.se/products/1852-batpresenning-gra-300d-polyester-l518-579cm-b-244cm",
+    "https://www.seasea.se/produkter/upplaggning/presenning",
+    "https://www.seasea.se/produkter/upplaggning/presenning/batkapell-overdrag-230-300cm-75240",
+    "https://watski.se/Kapell-11TkW",
+    "https://www.watski.se/Formskuren-Batpresenning-240g-m2-115eA?artnr=102643",
+    "https://www.transportstyrelsen.se/sv/sjofart/fritidsbatar/batlivsundersokningen/"
+   ]
+  },
+  {
+   "product_id": "1005013106730364",
+   "titel": "Kamadohuven 600D",
+   "url": "https://www.aliexpress.com/item/1005013106730364.html",
+   "pris": 21.89,
+   "valuta": "USD",
+   "pris_text": "US $21.89",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005013106730364.jpg",
+   "sald": "",
+   "grupp": "NYTT: Kamadogrillen (keramisk grill, Kamado Joe / Big Green Egg / Kamado Sumo)",
+   "objekt": "NYTT: Kamadogrillen (keramisk grill, Kamado Joe / Big Green Egg / Kamado Sumo)",
+   "taggar": {
+    "objekt": "NYTT: Kamadogrillen (keramisk grill, Kamado Joe / Big Green Egg / Kamado Sumo)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Bauhaus — Grillöverdrag Kamado Joe Classic Joe I/II (Kamado Joe original)"
+   },
+   "ekonomi": {
+    "landad": 316,
+    "forslag_pris": 649,
+    "multipel": 2.05,
+    "be_cpa": 332,
+    "be_roas": 1.95,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     285,
+     348
+    ]
+   },
+   "namn_sv": "Kamadohuven 600D",
+   "status": "bevisad struktur",
+   "poang": 15.0,
+   "rank_slutlig": 15.0,
+   "rank": 2,
+   "per_kriterium": null,
+   "hook": "Står kamadon bar när frosten kommer?",
+   "efter_bild": "huvens siluett = kamadons äggform; vatten rinner av toppen i stället för ner i lock och gångjärn",
+   "huvudrisk": "Ägarantal ej mätt och Kamado Sumo-ägare (billigaste segmentet) har eget överdrag för 449 kr — raden bär bara på Kamado Joe/BGE-ägare.",
+   "varfor": "Nytt dyrt objekt (10–20 tkr) som står ute året om, formsydd form, originaltillbehör 979 kr som ankare och första frost om 4,7 v — H01 på ett objekt som aldrig sökts (0 träffar i registret).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0245",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H01",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.7,
+    "timing": "NOW",
+    "kommentar": "nytt objekt — sasong.py körd på närmaste objektrad 'Pizzaugn/utekök' (samma fönster i norr 0,9 v, mellan 4,7 v, syd 5,3 v); mellan vald som huvudfönster"
+   },
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": [
+     "objekt_ute",
+     "dyr>10tkr (Kamado Joe Classic ~11 tkr, BGE Large ~20 tkr; Sumo Classic ~5 tkr)",
+     "överdrag formsytt",
+     "ankare 1,2–1,6× (Bauhaus/Kamado Joe 979 kr)",
+     "old way improvisation (presenning/ingenting; keramiken står ute året om)",
+     "ägarkänd parameter (modell/tum)"
+    ],
+    "avvikelser": [
+     "objektet står ofta på altanen nära huset, inte 'ute på tomten'",
+     "kedjan har generiska runda grillöverdrag (ej formsydda för kamado)"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 3 + creative 1 + lucka 1 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8); prisband=500–999 8V/2F (+0.6)] = 15.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "dangarden.se — Kamado Sumo överdrag Classic (Midi/Maxi)",
+     "pris_sek": 449,
+     "url": "https://dangarden.se/products/kamado-sumo-overdrag",
+     "exakt_samma_form": true,
+     "kommentar": "märkesspecifikt, slut i lager — läst 2026-09-12; Bauhaus Kamado Sumo Mini 349 / Signature Midi 599 kr ur sökutdrag"
+    },
+    "premium_ankare": {
+     "namn": "Bauhaus — Grillöverdrag Kamado Joe Classic Joe I/II (Kamado Joe original)",
+     "pris_sek": 979,
+     "url": "https://www.bauhaus.se/grilloverdrag-kamado-joe-classic-joe-i-ii",
+     "i_sortiment": true,
+     "kommentar": "979 kr, endast webborder — läst 2026-09-12; Big Green Egg-överdrag 813–1 790 kr ur sökutdrag"
+    },
+    "ankare_kvot": 1.51,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bauhaus.se (Kamado Joe 979 kr)",
+     "dangarden.se (Sumo 449 kr)",
+     "vattenbutiken.se (Sumo Classic, pris ej visat, 0 i lager)",
+     "sökutdrag grillkung.se / southsidebbq.se / kitchenlab.se (BGE 813–1 790)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri packshot: svart huv på hjulstativ, med grön BGE och röd kamado som små infällda bilder — huven är stor i bild men står i studio, inte på altanen"
+   },
+   "meta_tanke": {
+    "hook": "Står kamadon bar när frosten kommer?",
+    "objekt_i_bild": "keramikgrillen på altanen under huven, hjulstativet synligt",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "huvens siluett = kamadons äggform; vatten rinner av toppen i stället för ner i lock och gångjärn"
+   },
+   "listning": {
+    "product_id": "1005013106730364",
+    "url": "https://www.aliexpress.com/item/1005013106730364.html",
+    "pris_usd": 21.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:20:22Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005013106730364.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek står inte i titeln — heron visar en huv för 18\"-klassen (BGE Large / Classic Joe) med hjulstativ; storlekar måste läsas ur varianterna före offert",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ": [
+     {
+      "product_id": "1005012964328189",
+      "pris_usd": 36.79,
+      "hero": "korningar/2026-09-12/v3/bilder/1005012964328189.jpg",
+      "kommentar": "'600D Waterproof Cover for Big Green Egg Kamado Joe' — LIVE 11:20:25Z, identisk hero (samma leverantörsbild)"
+     }
+    ]
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.bauhaus.se/grilloverdrag-kamado-joe-classic-joe-i-ii",
+    "https://dangarden.se/products/kamado-sumo-overdrag",
+    "https://vattenbutiken.se/sv/kamado-sumo-classic-overdrag"
+   ]
+  },
+  {
+   "product_id": "1005013031906919",
+   "titel": "Värmehandskarna för älgpasset",
+   "url": "https://www.aliexpress.com/item/1005013031906919.html",
+   "pris": 44.49,
+   "valuta": "USD",
+   "pris_text": "US $44.49",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005013031906919.jpg",
+   "sald": "ej mätt",
+   "grupp": "NYTT: Jägarens händer på passet (avtryckarfingret efter 4 timmar stilla, okt–jan)",
+   "objekt": "NYTT: Jägarens händer på passet (avtryckarfingret efter 4 timmar stilla, okt–jan)",
+   "taggar": {
+    "objekt": "NYTT: Jägarens händer på passet (avtryckarfingret efter 4 timmar stilla, okt–jan)",
+    "form": "kläder",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "HeatX Heated Hunt Gloves (Jaktia)"
+   },
+   "ekonomi": {
+    "landad": 644,
+    "forslag_pris": 999,
+    "multipel": 1.55,
+    "be_cpa": 356,
+    "be_roas": 2.8,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     579,
+     708
+    ]
+   },
+   "namn_sv": "Värmehandskarna för älgpasset",
+   "status": "bevisad struktur",
+   "poang": 13.1,
+   "rank_slutlig": 13.1,
+   "rank": 3,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 11,
+    "K3": 8,
+    "K4": 7,
+    "K5": 6,
+    "K6": 8,
+    "K7": 3,
+    "K8": 7,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Stelt avtryckarfinger på passet?",
+   "efter_bild": "knappen trycks, fingrarna lyser rött (värmekamera) — 3 sekunder",
+   "huvudrisk": "Storlek M–XL är en 'måste mäta'-variant (4 vinnare/7 förlorare i facit) och landad 579–708 ger BE-CPA 291–420 — går bara ihop om returerna hålls nere.",
+   "varfor": "Samma passtruktur som värmesulorna och Värmesitsen (Axel ja 09-11): fackhandeln tar 1 000–3 000 kr för formen, lägsta jämförbara är en AA-driven handske för 799, vår li-ion-handske 999 med ankare 2,0×. Älgjakt syd om 3,7 v.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0246",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Damasker Vandring",
+    "delade_variabler": [
+     "form kläder",
+     "E_VADER_SASONG",
+     "hårt datum (älgjakt/första frost)",
+     "kroppsligt i säsongsjobbet",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "storlek M–XL (måste mäta — förlorarsignal 4/7)",
+     "elektronik + två batterier att ladda"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 2 + säsong 3 + creative 1 + lucka 2 + signalbonus +1.1 [arketyp=E_VADER_SASONG 2V/1F (+0.3); form=kläder 4V/3F (+0.1); prisband=500–999 8V/2F (+0.6)] = 13.1",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Jaktia — Avignon Heat Isoglove (fingerhandske, AA-batterier)",
+     "pris_sek": 799,
+     "url": "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "HeatX Heated Hunt Gloves (Jaktia)",
+     "pris_sek": 1995,
+     "url": "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "jaktia.se (14 modeller 559–2 995 kr, 2026-09-12)",
+     "hylte-lantman.com (Woodline 1 295, Genzo 1 095, HeatX 1 000–1 699, Seeland 1 672)",
+     "jula.se/clasohlson.se (inga träffar i sökutdrag)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot med rubriktext och 'KUSIRIDE'-kartong; värmezonerna ritade i rött över fingrarna — bra visuell mekanism men måste göras om som egen bild på passet"
+   },
+   "meta_tanke": {
+    "hook": "Stelt avtryckarfinger på passet?",
+    "objekt_i_bild": "handsken på bössan/i hundkopplet, värmen tänds på handryggen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "knappen trycks, fingrarna lyser rött (värmekamera) — 3 sekunder"
+   },
+   "listning": {
+    "product_id": "1005013031906919",
+    "url": "https://www.aliexpress.com/item/1005013031906919.html",
+    "pris_usd": 44.49,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:18:07Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005013031906919.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek M–XL; 6000 mAh-batterier (två), 3 värmenivåer, touchscreen, dragkedjeficka för batteriet på handryggen",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013031906919.html",
+    "https://www.jaktia.se/se/jakt/jaktklader-jaktskor/handskar-vantar/varmehandskar",
+    "https://www.hylte-lantman.com/varmehandskar-handvarmare"
+   ]
+  },
+  {
+   "product_id": "1005012470643036",
+   "titel": "Kajakhuven formsydd",
+   "url": "https://www.aliexpress.com/item/1005012470643036.html",
+   "pris": 14.03,
+   "valuta": "USD",
+   "pris_text": "US $14.03",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005012470643036.jpg",
+   "sald": "",
+   "grupp": "NYTT: Kajaken/kanoten på bockarna (samma ägare som Kajakhållaren K0239, ja)",
+   "objekt": "NYTT: Kajaken/kanoten på bockarna (samma ägare som Kajakhållaren K0239, ja)",
+   "taggar": {
+    "objekt": "NYTT: Kajaken/kanoten på bockarna (samma ägare som Kajakhållaren K0239, ja)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "Seahawk kajaköverdrag 4 m / 5,2 m (soderkajak.se) — pris ej visat på sidan; Galaxy cover 290/400/500 cm (kajakforalle.se) — pris ej visat"
+   },
+   "ekonomi": {
+    "landad": 203,
+    "forslag_pris": 499,
+    "multipel": 2.46,
+    "be_cpa": 296,
+    "be_roas": 1.69,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     183,
+     223
+    ]
+   },
+   "namn_sv": "Kajakhuven formsydd",
+   "status": "bevisad struktur",
+   "poang": 12.3,
+   "rank_slutlig": 12.3,
+   "rank": 4,
+   "per_kriterium": null,
+   "hook": "Ligger kajaken ute på bockarna i vinter?",
+   "efter_bild": "vatten pärlar på huven; sittbrunnen är torr under — mot bilden av en vattenfylld öppen kajak",
+   "huvudrisk": "Ankaret är inte mätt (bara ett golv på 371 kr) och objektvärdet ligger i det blandade bandet 1–10 tkr.",
+   "varfor": "Samma ägare som Kajakhållaren (Axel ja 09-11), samma datum som båtupptagningen, formsydd form med den bästa heron i linsen; objektet ligger synligt ute på tomten hela vintern.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0247",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 4.0,
+    "timing": "NOW",
+    "kommentar": "nytt objekt — sasong.py körd på 'Båt på trailer/bockar' (kajaken tas upp i samma fönster)"
+   },
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D",
+    "delade_variabler": [
+     "objekt_ute (kajaken ligger på bockar/ställning på tomten)",
+     "överdrag formsytt",
+     "deadline upptagning (4 v)",
+     "old way improvisation (presenning/ingenting — UV bleker plasten)",
+     "ägarkänd parameter (kajaklängd)"
+    ],
+    "avvikelser": [
+     "objektvärde medel 5–15 tkr (havskajak > 10 tkr, fiskekajak 4–8 tkr)",
+     "ägaren är oftare 40–65 än 55+",
+     "inget svenskt märkesankare mätt — bara golv"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 1 + säsong 3 + creative 3 + lucka 0 + signalbonus +1.3 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8); prisband=300–499 6V/11F (-0.3)] = 12.3",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Amazon.se — XINMYD kajaköverdrag 210D (4,1–4,5 m)",
+     "pris_sek": 371,
+     "url": "https://www.amazon.se/Kanot%C3%B6verdragskydd-kajak%C3%B6verdrag-professionellt-kajakf%C3%B6rvaring-utomhusanv%C3%A4ndning/dp/B08MZM4PGY",
+     "exakt_samma_form": true,
+     "kommentar": "'från 371,20 kr' ur sökutdrag 2026-09-12 — produktsidan gav 503"
+    },
+    "premium_ankare": {
+     "namn": "Seahawk kajaköverdrag 4 m / 5,2 m (soderkajak.se) — pris ej visat på sidan; Galaxy cover 290/400/500 cm (kajakforalle.se) — pris ej visat",
+     "pris_sek": null,
+     "url": "https://www.soderkajak.se/tillbehor/transport-forvaring/72-seahawk-kajakoverdrag",
+     "i_sortiment": true,
+     "kommentar": "ej mätt — fackhandelns pris gick inte att läsa i containern; 'kajakförvaringsöverdrag 5,6–6 m 3 690 kr' på Fyndiq är ett avvikande utdrag och räknas inte"
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "soderkajak.se (Seahawk, pris ej läsbart)",
+     "kajakforalle.se (Galaxy, pris ej läsbart)",
+     "amazon.se (503 på sidan; 371 kr ur sökutdrag)",
+     "shopit.se / fyndiq.se (bara sökutdrag)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "bästa heron i dagens lins: svart huv på kajak på träbockar vid bryggan, vattendroppar pärlar på tyget, båtar i bakgrunden — helt textfri, redo som stillbild"
+   },
+   "meta_tanke": {
+    "hook": "Ligger kajaken ute på bockarna i vinter?",
+    "objekt_i_bild": "kajaken under huven på bockarna, regn/droppar på tyget",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "vatten pärlar på huven; sittbrunnen är torr under — mot bilden av en vattenfylld öppen kajak"
+   },
+   "listning": {
+    "product_id": "1005012470643036",
+    "url": "https://www.aliexpress.com/item/1005012470643036.html",
+    "pris_usd": 14.03,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:20:28Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012470643036.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "längder står inte i titeln — måste läsas ur varianterna före offert (svenska havskajaker 4,5–5,5 m)",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ": [
+     {
+      "product_id": "1005013082736687",
+      "pris_usd": 35.09,
+      "kommentar": "420D–600D med blixtlås — bara sökträff; landad 460–560 kr blir för dyrt"
+     },
+     {
+      "product_id": "1005012470623094",
+      "pris_usd": 16.79,
+      "kommentar": "produktsidan svarade tomt 11:20:31Z — BLOCKED"
+     }
+    ]
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 0,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.soderkajak.se/tillbehor/transport-forvaring/72-seahawk-kajakoverdrag",
+    "https://kajakforalle.se/galax-tack-for-kajak",
+    "https://www.amazon.se/Kanot%C3%B6verdragskydd-kajak%C3%B6verdrag-professionellt-kajakf%C3%B6rvaring-utomhusanv%C3%A4ndning/dp/B08MZM4PGY"
+   ]
+  },
+  {
+   "product_id": "1005010485571553",
+   "titel": "Minikedjesågen för Makita-batteri",
+   "url": "https://www.aliexpress.com/item/1005010485571553.html",
+   "pris": 33.59,
+   "valuta": "USD",
+   "pris_text": "US $33.59",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005010485571553.jpg",
+   "sald": "ej mätt",
+   "grupp": "NYTT: Makita 18V-batterisystemet (ägd dyr sak) — vedstapeln och grenarna",
+   "objekt": "NYTT: Makita 18V-batterisystemet (ägd dyr sak) — vedstapeln och grenarna",
+   "taggar": {
+    "objekt": "NYTT: Makita 18V-batterisystemet (ägd dyr sak) — vedstapeln och grenarna",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Makita DUC150Z grensåg 18V 15 cm (bar maskin)"
+   },
+   "ekonomi": {
+    "landad": 486,
+    "forslag_pris": 999,
+    "multipel": 2.06,
+    "be_cpa": 514,
+    "be_roas": 1.95,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     437,
+     534
+    ]
+   },
+   "namn_sv": "Minikedjesågen för Makita-batteri",
+   "status": "utforskning",
+   "poang": 12,
+   "rank_slutlig": 12,
+   "rank": 5,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 4,
+    "K8": 8,
+    "K9": 4,
+    "K10": 1,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Har du Makita-batterier hemma?",
+   "efter_bild": "batteriet i, grenen av på 3 sekunder — spån i luften",
+   "huvudrisk": "Leverantören trycker Makita-logga på maskinen (piratrisk) — måste beställas obrandad; 6-tums minisågar med eget batteri finns överallt (Jula/Fyndiq) så creativen måste visa Makita-batteriet först.",
+   "varfor": "Samma struktur som Arbetslampan/Jetfläkten/Snöskyffeln för Makita (Axel ja 09-11) men med motor och synlig payoff: Makitas egen DUC150Z kostar 2 395–3 000 kr, vår 999 (ankare 2,4×), ingen svensk kedja säljer formen, vedsäsong 4,7 v bort. Testar H12 rent: verktyg vinner när upplevt värde bärs av det ägda systemet.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0248",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H12",
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 4.7,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen",
+    "delade_variabler": [
+     "form verktyg motoriserat",
+     "ankare ≥1,6×",
+     "synlig payoff 3 s (spån flyger)",
+     "prisband 500–999",
+     "golv under nej i samma form"
+    ],
+    "avvikelser": [
+     "ägd dyr sak (batterisystemet) — bandslipen hade inget ägt objekt",
+     "vedsäsong NOW i stället för ingen säsong"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 2 + creative 1 + ekonomi 3 = 12",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör funnen med samma form (6-tums bar maskin för Makita 18V); enda träffen var finn.no (NO, 600 kr, andrahand)",
+     "pris_sek": null,
+     "url": "https://www.finn.no/recommerce/forsale/item/450515898",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Makita DUC150Z grensåg 18V 15 cm (bar maskin)",
+     "pris_sek": 2395,
+     "url": "https://www.verktygsvaruhuset.se/product/makita-duc150z-grensag-18v-15cm",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.4,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "verktygsvaruhuset.se (2 395 kr, ord. 3 000, 10 i lager, 2026-09-12)",
+     "holgers.se (2 599 kr, sökutdrag)",
+     "pricerunner.se (403)",
+     "fyndiq.se/amazon.se (ingen träff på formen)"
+    ]
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är packshot fylld med text OCH bär Makita-logga + 'LXT/XPT' (piratmärkning) — får inte användas; egen bild/video krävs, obrandad enhet måste beställas"
+   },
+   "meta_tanke": {
+    "hook": "Har du Makita-batterier hemma?",
+    "objekt_i_bild": "Makita-batteriet som klickas i sågen, sedan grenen som kapas",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "batteriet i, grenen av på 3 sekunder — spån i luften"
+   },
+   "listning": {
+    "product_id": "1005010485571553",
+    "url": "https://www.aliexpress.com/item/1005010485571553.html",
+    "pris_usd": 33.59,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:16:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010485571553.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "6 tum, bar maskin utan batteri (Makita 18V-slot i heron); alternativ listning 1005012540984431 (US $45,42, 'for Makita Battery') visar dock kit med egna 21V-batterier — variantval måste bekräftas med leverantören",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010485571553.html",
+    "https://www.aliexpress.com/item/1005012540984431.html",
+    "https://www.verktygsvaruhuset.se/product/makita-duc150z-grensag-18v-15cm",
+    "https://www.holgers.se/products/makita-duc150z-grensag-18v"
+   ]
+  },
+  {
+   "product_id": "1005007987144485",
+   "titel": "Värmesulorna för älgpasset",
+   "url": "https://www.aliexpress.com/item/1005007987144485.html",
+   "pris": 41.79,
+   "valuta": "USD",
+   "pris_text": "US $41.79",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005007987144485.jpg",
+   "sald": "ej mätt",
+   "grupp": "NYTT: Jägarens fötter på passet (kroppen efter 4 timmar stilla, okt–jan)",
+   "objekt": "NYTT: Jägarens fötter på passet (kroppen efter 4 timmar stilla, okt–jan)",
+   "taggar": {
+    "objekt": "NYTT: Jägarens fötter på passet (kroppen efter 4 timmar stilla, okt–jan)",
+    "form": "kläder",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "ThermaCELL batteridrivna värmesulor med fjärrkontroll (Land.se-test)"
+   },
+   "ekonomi": {
+    "landad": 604,
+    "forslag_pris": 899,
+    "multipel": 1.49,
+    "be_cpa": 294,
+    "be_roas": 3.05,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     544,
+     665
+    ]
+   },
+   "namn_sv": "Värmesulorna för älgpasset",
+   "status": "bevisad struktur",
+   "poang": 11.1,
+   "rank_slutlig": 11.1,
+   "rank": 6,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 7,
+    "K5": 6,
+    "K6": 8,
+    "K7": 4,
+    "K8": 6,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Kalla fötter på passet igen?",
+   "efter_bild": "värmebild/rött sken i sulan + fjärrkontrollen trycks i fickan utan att ta av kängan",
+   "huvudrisk": "Landad 544–665 kr ger tunt utrymme under 899, och Elgiganten/Jula säljer formen i stormarknad (pris ej läst) — klipp-till-storlek kan ge returer.",
+   "varfor": "Samma kroppsliga passtruktur som Värmesitsen för älgpasset (Axel ja 09-11) och damaskerna: hårt datum (älgjakt syd 8 okt, första frost), fackhandelsankare 1 795 kr, exakt samma form kostar 995 hos Hylte — vår 899 med BE-CPA 234–355. Sulan ger 4–9 h och styrs utan att ta av kängan, vilket är hela skillnaden mot kemiska värmare (40–49 kr).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0249",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Damasker Vandring",
+    "delade_variabler": [
+     "form kläder",
+     "E_VADER_SASONG",
+     "hårt datum (älgjakt/första frost)",
+     "kroppsligt i säsongsjobbet",
+     "prisband nära 500–999",
+     "ägare 55+ småhus"
+    ],
+    "avvikelser": [
+     "klipp-till-storlek (två storlekar) i stället för en variant",
+     "elektronik i skon — batteririsk"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 1 + säsong 3 + creative 1 + lucka 1 + signalbonus +1.1 [arketyp=E_VADER_SASONG 2V/1F (+0.3); form=kläder 4V/3F (+0.1); prisband=500–999 8V/2F (+0.6)] = 11.1",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Hylte Jakt & Lantman — Värmesulor Uppladdningsbara (fjärrkontroll, inbyggt batteri, 35–40/41–46)",
+     "pris_sek": 995,
+     "url": "https://www.hylte-lantman.com/varmesulor-uppladdningsbara",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "ThermaCELL batteridrivna värmesulor med fjärrkontroll (Land.se-test)",
+     "pris_sek": 1795,
+     "url": "https://www.land.se/djur-natur/test-varmesulorna-som-haller-dig-varm-om-fotterna-pa-passet",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "hylte-lantman.com (995 kr, 2026-09-12)",
+     "land.se test (Thermacell 1 795, Alpen Heat 1 995, Hotronic 1 399, Rejmo 299 utan fjärr)",
+     "outnorth.com (Therm-ic Insole Heat 3D 599 kr — enbart sula, batteripack säljs separat)",
+     "elgiganten.se (samma form, pris visades inte)",
+     "jula.se (403)",
+     "jaktbutik.nu (503)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot med storlekstext uppe till vänster; sulan, fjärrkontrollen och kabeln syns tydligt — egen bild i kängan på passet behövs"
+   },
+   "meta_tanke": {
+    "hook": "Kalla fötter på passet igen?",
+    "objekt_i_bild": "kängan på passet, fjärrkontrollen i handen, sulan lyser röd",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "värmebild/rött sken i sulan + fjärrkontrollen trycks i fickan utan att ta av kängan"
+   },
+   "listning": {
+    "product_id": "1005007987144485",
+    "url": "https://www.aliexpress.com/item/1005007987144485.html",
+    "pris_usd": 41.79,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:14:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005007987144485.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "två storlekar, klipps till: 35–40 och 41–46; inbyggt 2100 mAh-batteri, trådlös fjärrkontroll på nyckelring, USB-laddning",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007987144485.html",
+    "https://www.hylte-lantman.com/varmesulor-uppladdningsbara",
+    "https://www.land.se/djur-natur/test-varmesulorna-som-haller-dig-varm-om-fotterna-pa-passet",
+    "https://www.outnorth.com/se/therm-ic",
+    "https://www.elgiganten.se/product/personvard-halsa-skonhet/massage-valmaende/eluppvarmda-klader/uppladdningsbara-varmesulor-med-fjarrkontroll-storlek-38-40/415933"
+   ]
+  },
+  {
+   "product_id": "1005012607364360",
+   "titel": "Uppvärmda fågelbadet",
+   "url": "https://www.aliexpress.com/item/1005012607364360.html",
+   "pris": 25.69,
+   "valuta": "USD",
+   "pris_text": "US $25.69",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005012607364360.jpg",
+   "sald": "",
+   "grupp": "Fågelbord/fågelmatare",
+   "objekt": "Fågelbord/fågelmatare",
+   "taggar": {
+    "objekt": "Fågelbord/fågelmatare",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "vintermatning",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej hittat — Vivara.se säljer 12 fågelbad 139,90–349,90 kr, inget uppvärmt (läst 2026-09-12)"
+   },
+   "ekonomi": {
+    "landad": 371,
+    "forslag_pris": 699,
+    "multipel": 1.88,
+    "be_cpa": 328,
+    "be_roas": 2.13,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     334,
+     408
+    ]
+   },
+   "namn_sv": "Uppvärmda fågelbadet",
+   "status": "säsong",
+   "poang": 11,
+   "rank_slutlig": 11,
+   "rank": 7,
+   "per_kriterium": null,
+   "hook": "Fryser fåglarnas vatten på altanen?",
+   "efter_bild": "isfritt vatten i skålen medan allt annat är fruset",
+   "huvudrisk": "Ankare saknas och heron är oanvändbar — priset 699 kr står på en formel, inte en uppmätt hylla; Amazon.se Feemiyo måste prisläsas innan launch.",
+   "varfor": "Vinterfågelmatarna är en mycket stor grupp (minst 300 000 hushåll enligt sökutdrag) med kvinna/man 55+ i småhus, precis som kattkojans köpare — och isfritt vatten till fåglarna finns inte i svenskt flöde (Vivara har noll uppvärmda bad). Vintermatningen börjar om 6 v, samma 'djur ute i kylan'-struktur som H09.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0250",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H09",
+   "sasong": {
+    "fonster_id": "vintermatning_faglar",
+    "deadline_typ": "vintermatning",
+    "veckor_kvar": 6.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan",
+    "delade_variabler": [
+     "objekt_ute",
+     "älskat djur (vildfåglarna)",
+     "kvinna/man 55+ småhus",
+     "väderdeadline (vintermatning/första frost)",
+     "inte överdrag"
+    ],
+    "avvikelser": [
+     "form elektronik/skål i stället för koja",
+     "objektet ägs inte — det matas",
+     "hero är AI-bild inomhus, inte i kontext"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 3 + ekonomi 2 = 11",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Amazon.se / Feemiyo uppvärmt fågelbad 75 W däckmonterat",
+     "pris_sek": "ej mätt (sidan gav bara header)",
+     "url": "https://www.amazon.se/Feemiyo-d%C3%A4ckmonterat-termostatiskt-kontrollerat-utomhustr%C3%A4dg%C3%A5rd/dp/B0CGB153F2",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "ej hittat — Vivara.se säljer 12 fågelbad 139,90–349,90 kr, inget uppvärmt (läst 2026-09-12)",
+     "pris_sek": null,
+     "url": "https://www.vivara.se/fagelmatare/fagelbad",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "vivara.se (fågelbad-kategorin läst)",
+     "amazon.se (Feemiyo-sidan gav ingen prisdata)",
+     "fruugo.se (fågelbadsvärmare finns, pris ej läst — 403)",
+     "jymden.nu (timeout)"
+    ]
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en AI-genererad köksbild (blå skål på bänk med kaffekopp) — textfri men helt fel kontext; kräver egen bild/video av skålen på altanräcket med fåglar och is runtom"
+   },
+   "meta_tanke": {
+    "hook": "Fryser fåglarnas vatten på altanen?",
+    "objekt_i_bild": "skålen på räcket, is runt omkring, talgoxe som dricker",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "isfritt vatten i skålen medan allt annat är fruset"
+   },
+   "listning": {
+    "product_id": "1005012607364360",
+    "url": "https://www.aliexpress.com/item/1005012607364360.html",
+    "pris_usd": 25.69,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:13:42Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012607364360.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (skål + klämma för räcke) enligt titel; färg ej angiven i sökträffen",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012607364360.html",
+    "https://www.vivara.se/fagelmatare/fagelbad",
+    "https://www.amazon.se/Feemiyo-d%C3%A4ckmonterat-termostatiskt-kontrollerat-utomhustr%C3%A4dg%C3%A5rd/dp/B0CGB153F2",
+    "https://pippifoder.se/kunnskapsbanken/mata-faglar-pa-vintern/",
+    "https://grannliv.granngarden.se/vildfagel/den-stora-fagelrakningen/"
+   ]
+  },
+  {
+   "product_id": "1005010439326565",
+   "titel": "Krukväxthuven med dragkedja, 3-pack",
+   "url": "https://www.aliexpress.com/item/1005010439326565.html",
+   "pris": 11.48,
+   "valuta": "USD",
+   "pris_text": "US $11.48",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005010439326565.jpg",
+   "sald": "",
+   "grupp": "Krukväxter — citrus, oliv, fikon, pelargon",
+   "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+   "taggar": {
+    "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+    "form": "huv",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Olivträdsbutiken — Vinterskydd för olivträd, fiberduk 100 g/m² med dragkedja, S–XXL"
+   },
+   "ekonomi": {
+    "landad": 166,
+    "forslag_pris": 449,
+    "multipel": 2.7,
+    "be_cpa": 283,
+    "be_roas": 1.6,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     149,
+     183
+    ]
+   },
+   "namn_sv": "Krukväxthuven med dragkedja, 3-pack",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 8,
+   "per_kriterium": null,
+   "hook": "Ska olivträdet stå ute i frosten?",
+   "efter_bild": "dragkedjan öppnas utan att huven tas av — mot fiberduk som lindas och knyts om varje gång",
+   "huvudrisk": "Lågt upplevt värde (fiberdukspåse) och Bauhaus har samma form med dragkedja för 189 kr — bär bara som 3-pack under kedjans styckpris.",
+   "varfor": "Hårt datum (första frost 4,7 v), inbyggt flerköp (3 krukor) och ett fackhandelsankare på 699 kr som är slutsålt — H08 + H02 i en rad. Svagare än de tre överdragen: kedjan har formen och objektet är billigt.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0251",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "sasong",
+   "hypotes_id": "H08",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.7,
+    "timing": "NOW",
+    "kommentar": "sasong.py --objekt gav forsta_frost_norr först (0,9 v, i_kopfonster false); Svealand 4,7 v och Götaland 5,3 v är köpfönstret, vintertäckning 8,4 v"
+   },
+   "vinnarlikhet": {
+    "likast": "Kranskydd Frost 420D",
+    "delade_variabler": [
+     "objekt_ute",
+     "huv",
+     "deadline första frost (hårt datum)",
+     "old way improvisation (fiberduk + snöre / bära in)",
+     "flerköp inbyggt (3 krukor)"
+    ],
+    "avvikelser": [
+     "objektvärde medel (olivträd 500–3 000 kr) — inte dyrt",
+     "kedjan har formen med dragkedja (Bauhaus 189 kr)",
+     "hero är packshot med inbränd text '3 Packs'"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 1 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Bauhaus — Växtöverdrag Garden Life frostskydd textil 200 × 237 cm, dragkedja + snörning",
+     "pris_sek": 189,
+     "url": "https://www.bauhaus.se/vaxtoverdrag-garden-life-frostskydd-textil-200x237cm-brun",
+     "exakt_samma_form": true,
+     "kommentar": "189 kr styck — läst 2026-09-12; 3 st = 567 kr"
+    },
+    "premium_ankare": {
+     "namn": "Olivträdsbutiken — Vinterskydd för olivträd, fiberduk 100 g/m² med dragkedja, S–XXL",
+     "pris_sek": 699,
+     "url": "https://olivtradsbutiken.se/products/vinterskydd-for-olivtrad/",
+     "i_sortiment": true,
+     "kommentar": "699 kr styck, alla storlekar slutsålda — läst 2026-09-12"
+    },
+    "ankare_kvot": 1.56,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bauhaus.se (Garden Life 189 kr)",
+     "olivtradsbutiken.se (699 kr)",
+     "amazon.se SCCS 2-pack 240 × 200 (503 på sidan)",
+     "wexthuset.com kronskydd (listan laddade inte)",
+     "hornbach.se vinterskydd (sidan laddade inte)",
+     "plantagen.se (bara rådgivningsartikel)"
+    ]
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "tre beige huvar på vit bakgrund med inbränd text '3 Packs' och dragkedjeinfällning — singellistningens hero (palmer i huv, textfri) är bättre som annonsbild"
+   },
+   "meta_tanke": {
+    "hook": "Ska olivträdet stå ute i frosten?",
+    "objekt_i_bild": "tre krukträd på altanen i huvar med dragkedjan öppen på ett",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "dragkedjan öppnas utan att huven tas av — mot fiberduk som lindas och knyts om varje gång"
+   },
+   "listning": {
+    "product_id": "1005010439326565",
+    "url": "https://www.aliexpress.com/item/1005010439326565.html",
+    "pris_usd": 11.48,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:17:37Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010439326565.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "3-pack beige med dragkedja + dragsko enligt titel; mått står inte i titeln — måste läsas ur varianterna före offert",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ": [
+     {
+      "product_id": "1005010512980735",
+      "pris_usd": 13.72,
+      "hero": "korningar/2026-09-12/v3/bilder/1005010512980735.jpg",
+      "kommentar": "singel 'heavy duty' med dragkedja — LIVE 11:14:58Z, hero textfri i kontext (palmer) men singelpriset ger BE-CPA 130–170 mot Bauhaus 189"
+     }
+    ]
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 0,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.bauhaus.se/vaxtoverdrag-garden-life-frostskydd-textil-200x237cm-brun",
+    "https://olivtradsbutiken.se/products/vinterskydd-for-olivtrad/",
+    "https://plantagen.se/se/artiklar/tips-och-rad/utomhus-vaxter-och-tradgard/overvintra-medelhavsvaxter-sasom-citrus-och-olivtrad"
+   ]
+  },
+  {
+   "product_id": "1005010360604942",
+   "titel": "Bikupans vinterjacka",
+   "url": "https://www.aliexpress.com/item/1005010360604942.html",
+   "pris": 27.89,
+   "valuta": "USD",
+   "pris_text": "US $27.89",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005010360604942.jpg",
+   "sald": "",
+   "grupp": "Bikuporna",
+   "objekt": "Bikuporna",
+   "taggar": {
+    "objekt": "Bikuporna",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "invintring",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "Biredskapsfabriken 'Vinterskydd' 171 kr är ett nät mot talgoxar — annan form, inte isolering (läst 2026-09-12)"
+   },
+   "ekonomi": {
+    "landad": 404,
+    "forslag_pris": 799,
+    "multipel": 1.98,
+    "be_cpa": 396,
+    "be_roas": 2.02,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     363,
+     444
+    ]
+   },
+   "namn_sv": "Bikupans vinterjacka",
+   "status": "säsong",
+   "poang": 8,
+   "rank_slutlig": 8,
+   "rank": 9,
+   "per_kriterium": null,
+   "hook": "Står kuporna oisolerade i vinter?",
+   "efter_bild": "snö på taket, jackan runt kroppen, flustret fritt",
+   "huvudrisk": "Ägargruppen är liten (Biodlarna hade 15 281 medlemmar 2019) — Meta måste hitta dem själv, och det är en skyddsform under formtaket.",
+   "varfor": "Ett bisamhälle är levande och ersätts inte i januari — invintringen är ett hårt datum 4,7 v bort, formen finns inte hos svenska biredskapshandlare (bara nät mot talgoxar och frigolitkupor) och biodlaren har ofta 2–5 kupor (flerköp). Samma struktur som kattkojan: älskat objekt ute + datum + formsydd form.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0252",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "sasong",
+   "hypotes_id": "H09",
+   "sasong": {
+    "fonster_id": "invintring_bin",
+    "deadline_typ": "invintring",
+    "veckor_kvar": 4.7,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan",
+    "delade_variabler": [
+     "objekt_ute",
+     "levande/älskat objekt (bisamhället)",
+     "hårt väderdatum (invintring)",
+     "ägare 55+ småhus/landsbygd",
+     "formsydd form med spännband"
+    ],
+    "avvikelser": [
+     "liten ägargrupp (~15 000 medlemmar i Biodlarna 2019)",
+     "skyddsform — räknas mot formtaket 40 %"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 0 + ekonomi 2 = 8",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör med isolerande kupjacka hittad i denna körning",
+     "pris_sek": null,
+     "url": null,
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Biredskapsfabriken 'Vinterskydd' 171 kr är ett nät mot talgoxar — annan form, inte isolering (läst 2026-09-12)",
+     "pris_sek": 171,
+     "url": "https://www.biredskapsfabriken.se/artikel/vinterskydd",
+     "i_sortiment": true
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "biredskapsfabriken.se (vinterskydd läst)",
+     "lpsbiodling.se (övriga kuptillbehör läst — metalltak med EPS 500 kr, ingen jacka)",
+     "lindhagen.se (sökutdrag — isolerade frigolitkupor, ingen jacka)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "svart vadderad jacka på träkupa, textfri, ser ut som sitt pris; alternativ listning 1005010027794380 (13,83 USD, LIVE 11:18:03Z, hero kupa i snö men ikoner med text till höger — måste beskäras)"
+   },
+   "meta_tanke": {
+    "hook": "Står kuporna oisolerade i vinter?",
+    "objekt_i_bild": "kupan i snö med jackan på, spännbanden synliga",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "snö på taket, jackan runt kroppen, flustret fritt"
+   },
+   "listning": {
+    "product_id": "1005010360604942",
+    "url": "https://www.aliexpress.com/item/1005010360604942.html",
+    "pris_usd": 27.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:13:42Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010360604942.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "justerbar med spännband enligt titel (10-ramars Langstroth-mått antas — svenska kupor kan avvika, ej mätt)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 0,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010360604942.html",
+    "https://www.aliexpress.com/item/1005010027794380.html",
+    "https://www.biredskapsfabriken.se/artikel/vinterskydd",
+    "https://www.lpsbiodling.se/sv/artiklar/biodling/kupor-och-tillbehor/kupor-ovriga/index.html",
+    "https://www.natursidan.se/nyheter/allt-fler-biodlare-i-sverige/"
+   ]
+  },
+  {
+   "product_id": "1005010585659348",
+   "titel": "Maskinhyllan för 4 elverktyg",
+   "url": "https://www.aliexpress.com/item/1005010585659348.html",
+   "pris": 17.49,
+   "valuta": "USD",
+   "pris_text": "US $17.49",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005010585659348.jpg",
+   "sald": "",
+   "grupp": "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)",
+   "objekt": "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)",
+   "taggar": {
+    "objekt": "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "P.Lindberg verktygshylla 5 fack + låda (stål)"
+   },
+   "ekonomi": {
+    "landad": 253,
+    "forslag_pris": 599,
+    "multipel": 2.37,
+    "be_cpa": 346,
+    "be_roas": 1.73,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     228,
+     278
+    ]
+   },
+   "namn_sv": "Maskinhyllan för 4 elverktyg",
+   "status": "bevisad struktur",
+   "poang": 6.5,
+   "rank_slutlig": 6.5,
+   "rank": 10,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Var la du skruvdragaren?",
+   "efter_bild": "före: maskiner, batterier och laddare utspridda på bänken — efter: allt på 42 cm vägg, ett grepp per maskin",
+   "huvudrisk": "Kedjan har exakt samma form under vårt pris och formen 'annat' har 0 vinnare av 13 i kontot — det här är ett H11-test av strukturen, inte en säker exploitation.",
+   "varfor": "Samma 'kaos → ordning i ett grepp' som spöklämman, märkesoberoende och med det tydligaste före/efter i hela linsen; P.Lindberg 1 120 kr ger ankare 1,87× och BE-CPA 321–371 mot 599 kr. Golvet (Harald Nyborg 199, Bauhaus 339) står under oss — H06-fallet: fungerar bara om ankaret bär.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0253",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H11",
+   "sasong": {
+    "fonster_id": null,
+    "deadline_typ": "ingen",
+    "veckor_kvar": null,
+    "timing": "EVERGREEN"
+   },
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "flera ägda saker → ordning i ett grepp",
+     "improvisation i dag (maskinerna i högar/väskor)",
+     "ägare 55+ i småhus med garage",
+     "objekt medel 1–10 tkr (summan av maskinerna)"
+    ],
+    "avvikelser": [
+     "flerköp nej (en hylla räcker)",
+     "objektet står inne",
+     "form 'annat' = 0 av 13 dömda vann i kontot",
+     "kedjan har exakt samma form (Bauhaus 339, Harald Nyborg 199)"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 1×2 + ekonomi 2 + säsong 0 + creative 2 + lucka 2 + signalbonus -1.5 [arketyp=A_AGARE_FRIKTION 2V/7F (-0.6); form=annat 0V/13F (-1.0); deadline_typ=ingen 6V/19F (-0.5); prisband=500–999 8V/2F (+0.6)] = 6.5",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Harald Nyborg (Mitsutomo verktygshylla, 4 fack)",
+     "pris_sek": 199,
+     "url": "https://www.harald-nyborg.se/verktygshylla-laddbara-verktyg",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "P.Lindberg verktygshylla 5 fack + låda (stål)",
+     "pris_sek": 1120,
+     "url": "https://www.p-lindberg.se/verktygshylla-9065497/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.87,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "harald-nyborg.se (199 kr, ord. 249, i lager)",
+     "bauhaus.se ProBuilder verktygshylla vägg (339 kr, 4 elverktyg, weblager)",
+     "p-lindberg.se (1 120 kr, 5 fack, i lager)",
+     "hemfint.se (995 kr, hylla med skåp — annan form, ej läst i detalj)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri hero: fyra gula skruvdragare hängande i rad, batterier, tänger och lådor på hyllan — läses på 1 s; maskinerna i bild är Dewalt-gula (inte märkesneutralt)"
+   },
+   "meta_tanke": {
+    "hook": "Var la du skruvdragaren?",
+    "objekt_i_bild": "fyra maskiner som hänger i rad på hyllan, batterierna ovanpå",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "före: maskiner, batterier och laddare utspridda på bänken — efter: allt på 42 cm vägg, ett grepp per maskin"
+   },
+   "listning": {
+    "product_id": "1005010585659348",
+    "url": "https://www.aliexpress.com/item/1005010585659348.html",
+    "pris_usd": 17.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:16:17Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005010585659348.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant i sökträffen (metallhylla, 4 fack + 2 plan); vikt/fraktklass ej sedd — landad kan ligga över 1,5×-schablonen",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 0,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010585659348.html",
+    "https://www.harald-nyborg.se/verktygshylla-laddbara-verktyg",
+    "https://www.bauhaus.se/verktygshylla-probuilder-vagg",
+    "https://www.p-lindberg.se/verktygshylla-9065497/"
+   ]
+  },
+  {
+   "product_id": "1005012582663728",
+   "titel": "Ljusslingevindorna 10-pack",
+   "url": "https://www.aliexpress.com/item/1005012582663728.html",
+   "pris": 12.05,
+   "valuta": "USD",
+   "pris_text": "US $12.05",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005012582663728.jpg",
+   "sald": "",
+   "grupp": "NYTT: Julbelysningen utomhus (5–10 slingor per villa, tas fram i november)",
+   "objekt": "NYTT: Julbelysningen utomhus (5–10 slingor per villa, tas fram i november)",
+   "taggar": {
+    "objekt": "NYTT: Julbelysningen utomhus (5–10 slingor per villa, tas fram i november)",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Clas Ohlson Northlight kabelvinda (metall/plast, stativ, 100 m)"
+   },
+   "ekonomi": {
+    "landad": 174,
+    "forslag_pris": 399,
+    "multipel": 2.29,
+    "be_cpa": 224,
+    "be_roas": 1.77,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     157,
+     192
+    ]
+   },
+   "namn_sv": "Ljusslingevindorna 10-pack",
+   "status": "bevisad struktur",
+   "poang": 6.0,
+   "rank_slutlig": 6.0,
+   "rank": 11,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Hur ser julslingorna ut i kartongen?",
+   "efter_bild": "härvan på golvet → slingan virad på 10 sekunder, vinda efter vinda på hyllan; alla har sett sin egen härva",
+   "huvudrisk": "Lågt upplevt värde (tunn svart plast, 40 kr/st) och tidsglappet mellan smärtan (uppackning nov) och nyttan (nedtagning jan) — samt att sasong.py inte har ett julbelysningsfönster, så raden står som EVERGREEN trots att köpet är nov–dec.",
+   "varfor": "H11 + H03 i samma vara: varje villa 55+ har 5–10 slingor i en härva (svikande default = kartongen), kaoset är universellt igenkänt och 10-packet ger flerköpet i sig; BE-CPA 207–242 mot 399 kr. Kedjan säljer en stor vinda för 199,90 (annan form, slut hos Clas Ohlson 09-12) — luckan är 'en per slinga', inte 'en för alla'.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0254",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H11",
+   "sasong": {
+    "fonster_id": null,
+    "deadline_typ": "ingen",
+    "veckor_kvar": null,
+    "timing": "EVERGREEN"
+   },
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "flera ägda saker → ordning i ett grepp",
+     "flerköp inbyggt (10-pack, en per slinga)",
+     "< 500 kr",
+     "svikande default (slingorna i kartongen/påsen = härvan) — H03",
+     "ägare 55+ i småhus",
+     "objekt ute (utomhusslingor)"
+    ],
+    "avvikelser": [
+     "formen finns i kedjan som enstaka stor vinda (Clas Ohlson 199,90, Jula)",
+     "smärtan kommer vid uppackningen i nov men nyttan vid nedtagningen i jan",
+     "lågt upplevt värde per styck"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 1 + säsong 0 + creative 2 + lucka 1 + signalbonus -2.0 [arketyp=A_AGARE_FRIKTION 2V/7F (-0.6); form=annat 0V/13F (-1.0); deadline_typ=ingen 6V/19F (-0.5); prisband=300–499 6V/11F (-0.3)] = 6.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Clas Ohlson (Northlight kabelvinda för ljusslingor, 1 st, 100 m)",
+     "pris_sek": 199.9,
+     "url": "https://www.clasohlson.com/se/Kabelvinda-for-ljusslingor,-Northlight/p/36-8427",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Clas Ohlson Northlight kabelvinda (metall/plast, stativ, 100 m)",
+     "pris_sek": 199.9,
+     "url": "https://www.clasohlson.com/se/Kabelvinda-for-ljusslingor,-Northlight/p/36-8427",
+     "i_sortiment": false
+    },
+    "ankare_kvot": 0.5,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "clasohlson.com (199,90 kr, 'finns ej i lager' 2026-09-12)",
+     "jula.se Ekvip/Anslut sladdvinda för ljusslinga (sidan gav 403 — pris ej läst)",
+     "rusta.com (bara slingor, ingen vinda i sökutdraget)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar en vinda med slingan uppvirad (kontext) men '10PCS' inbränt nere till vänster — beskärs; visuellt tunn plastpryl, upplevt värde måste byggas med härvan-före-bilden"
+   },
+   "meta_tanke": {
+    "hook": "Hur ser julslingorna ut i kartongen?",
+    "objekt_i_bild": "härvan av ljusslingor ur kartongen — och tio uppvirade vindor i en rad",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "härvan på golvet → slingan virad på 10 sekunder, vinda efter vinda på hyllan; alla har sett sin egen härva"
+   },
+   "listning": {
+    "product_id": "1005012582663728",
+    "url": "https://www.aliexpress.com/item/1005012582663728.html",
+    "pris_usd": 12.05,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:19:23Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012582663728.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "10 st per pack (titel + hero); svart plast, H-form med handtag; kapacitet per vinda ej angiven",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 0,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012582663728.html",
+    "https://www.clasohlson.com/se/Kabelvinda-for-ljusslingor,-Northlight/p/36-8427",
+    "https://www.jula.se/catalog/hem-och-hushall/jul/julbelysning/ljusslingor-utomhus/sladdvinda-for-ljusslinga-021721/"
+   ]
+  },
+  {
+   "product_id": "1005012077981896",
+   "titel": "Makita-hållaren 5-pack (maskinen på väggen)",
+   "url": "https://www.aliexpress.com/item/1005012077981896.html",
+   "pris": 9.54,
+   "valuta": "USD",
+   "pris_text": "US $9.54",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-12/v3/bilder/1005012077981896.jpg",
+   "sald": "",
+   "grupp": "NYTT: Makita-maskinerna i garaget (3–6 st à 1–3 tkr)",
+   "objekt": "NYTT: Makita-maskinerna i garaget (3–6 st à 1–3 tkr)",
+   "taggar": {
+    "objekt": "NYTT: Makita-maskinerna i garaget (3–6 st à 1–3 tkr)",
+    "form": "klämma",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "K-Bygg Stealthmounts maskinhållare Makita 18V 4-pack"
+   },
+   "ekonomi": {
+    "landad": 138,
+    "forslag_pris": 399,
+    "multipel": 2.89,
+    "be_cpa": 261,
+    "be_roas": 1.53,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     124,
+     152
+    ]
+   },
+   "namn_sv": "Makita-hållaren 5-pack (maskinen på väggen)",
+   "status": "bevisad struktur",
+   "poang": 5.6,
+   "rank_slutlig": 5.6,
+   "rank": 12,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Ligger Makita-maskinerna på bänken?",
+   "efter_bild": "före: maskinhögen på bänken — efter: fem i rad på väggen; klicket när maskinen snäpps i",
+   "huvudrisk": "Bauhaus säljer samma form (StealthMounts) för 279 kr/4-pack = 70 kr/st mot våra 80 kr/st, och heron är en textig packshot — det måste bli eget foto/video med maskinerna i rad.",
+   "varfor": "Spöklämmans struktur på ett nytt objekt: synligt kaos (maskinhögen) → ordning i ett grepp, fysiskt skäl att köpa fler (en hållare per maskin), < 500 kr, och Makita-familjen är bevisat självselekterande i kontot. Ankaret K-Bygg 459 kr/4-pack ger 1,44× mot vårt 5-pack för 399; kombination med batteridockor 5-pack (1005009278045210, 4,86 USD) kan bli 'Makita-väggen' om Axel vill höja upplevt värde.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0255",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H11",
+   "sasong": {
+    "fonster_id": null,
+    "deadline_typ": "ingen",
+    "veckor_kvar": null,
+    "timing": "EVERGREEN"
+   },
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "flera ägda saker → ordning i ett grepp",
+     "flerköp (fler maskiner = fler hållare)",
+     "< 500 kr",
+     "improvisation i dag (maskinerna ligger på bänken/i väskan)",
+     "ägare 55+ i småhus med garage",
+     "Makita-familjen säljer i kontot (arbetslampa 439, jetfläkt 709, snöskyffel ja 09-11)"
+    ],
+    "avvikelser": [
+     "objektet står inne i garaget, inte ute",
+     "kedjan (Bauhaus) har samma form via StealthMounts 279 kr/4-pack",
+     "inget datum"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 1 + säsong 0 + creative 1 + lucka 1 + signalbonus -1.4 [arketyp=A_AGARE_FRIKTION 2V/7F (-0.6); deadline_typ=ingen 6V/19F (-0.5); prisband=300–499 6V/11F (-0.3)] = 5.6",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Bauhaus (StealthMounts 4-pack)",
+     "pris_sek": 279,
+     "url": "https://www.bauhaus.se/verktygshallare-stealthmounts-for-makita-lxt-elverktyg-18v-4",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "K-Bygg Stealthmounts maskinhållare Makita 18V 4-pack",
+     "pris_sek": 459,
+     "url": "https://k-bygg.se/produkt/maskinhallare-makita-18v-4-pack/0650327936911",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.44,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bauhaus.se (279 kr, 4-pack, weblager, 3 recensioner 5/5)",
+     "k-bygg.se (459 kr, 4-pack, 'utgår snart')",
+     "byggmax.se (sidan gick inte att läsa)",
+     "amazon.se (pris dolt bakom varukorg)",
+     "shop.bitmag.net (26,45 €/4-pack, EU-referens)",
+     "verktygsvaruhuset.se (48Tools batterihållare 4 st 249 kr, slut)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot på vitt med '5-PACK/10-PACK' inbränt; liten inset med borrmaskin som snäpps i — eget foto med 5 maskiner i rad på garageväggen behövs"
+   },
+   "meta_tanke": {
+    "hook": "Ligger Makita-maskinerna på bänken?",
+    "objekt_i_bild": "fem Makita-maskiner hängande i rad på garageväggen, en snäpps loss med ett ryck",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "före: maskinhögen på bänken — efter: fem i rad på väggen; klicket när maskinen snäpps i"
+   },
+   "listning": {
+    "product_id": "1005012077981896",
+    "url": "https://www.aliexpress.com/item/1005012077981896.html",
+    "pris_usd": 9.54,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-12T11:21:40Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-12/v3/bilder/1005012077981896.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "5-pack / 10-pack (titel + hero); passar Makita 18V och Bosch 18V; 9,54 USD är lägsta variant = 5-pack",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 0,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012077981896.html",
+    "https://www.bauhaus.se/verktygshallare-stealthmounts-for-makita-lxt-elverktyg-18v-4",
+    "https://k-bygg.se/produkt/maskinhallare-makita-18v-4-pack/0650327936911",
+    "https://shop.bitmag.net/StealthMounts-Power-Tools-Mounts-Makita-LXT",
+    "https://www.aliexpress.com/item/1005009278045210.html"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn_sv": "Highland Cow-kalendern 24 figurer",
+   "objekt": "Barnbarnet — adventskalendern",
+   "orsak": [
+    "BE-CPA 185 < 190"
+   ],
+   "kalla": "kandidater-I.json"
+  }
+ ],
+ "utanfor_batch": [
+  {
+   "namn_sv": "Kaninburens vinterhuv",
+   "slot": "sasong",
+   "rank_poang": 6,
+   "orsak": "plats"
+  }
+ ]
+}

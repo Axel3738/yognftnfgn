@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 244,
+ "nasta": 256,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -12902,6 +12902,1002 @@
     }
    ],
    "namn_sv": "Täljsetet 30 delar i väska"
+  },
+  "K0244": {
+   "id": "K0244",
+   "skapad": "2026-09-12",
+   "namn": "Båthuven 600D för trailerbåt 17–19 fot",
+   "objekt": "Båt på trailer/bockar",
+   "form": "överdrag",
+   "sak": "båt på trailer/bockar+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012175923346",
+     "url": "https://www.aliexpress.com/item/1005012175923346.html",
+     "bild": null,
+     "pris_usd": 56.89,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:14:38Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 16.6,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 1,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 1399,
+     "landad": 822,
+     "be_cpa": 576,
+     "hook": "Står båten under blå presenning i vinter?",
+     "varfor": "Exakt taköverdragets struktur på ett nytt objekt: 864 200 fritidsbåtar (Transportstyrelsen 2020), upptagning om 4 v, blå presenning som svikande default, fackhandelsankare 1 699 kr och 600D mot kedjans 300D. Dagens renaste H04-test (> 1 000 kr när objektet är ≥ 100× priset).",
+     "huvudrisk": "BE-ROAS 2,4 (landad 823 kr) och ett rea-golv på 1 329 kr i 300D — vinner bara om 600D + formsydd passform bär prisskillnaden.",
+     "hypotes_id": "H04",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Båthuven 600D för trailerbåt 17–19 fot"
+  },
+  "K0245": {
+   "id": "K0245",
+   "skapad": "2026-09-12",
+   "namn": "Kamadohuven 600D",
+   "objekt": "NYTT: Kamadogrillen (keramisk grill, Kamado Joe / Big Green Egg / Kamado Sumo)",
+   "form": "överdrag",
+   "sak": "nytt: kamadogrillen+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013106730364",
+     "url": "https://www.aliexpress.com/item/1005013106730364.html",
+     "bild": null,
+     "pris_usd": 21.89,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:20:22Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 15.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 649,
+     "landad": 316,
+     "be_cpa": 332,
+     "hook": "Står kamadon bar när frosten kommer?",
+     "varfor": "Nytt dyrt objekt (10–20 tkr) som står ute året om, formsydd form, originaltillbehör 979 kr som ankare och första frost om 4,7 v — H01 på ett objekt som aldrig sökts (0 träffar i registret).",
+     "huvudrisk": "Ägarantal ej mätt och Kamado Sumo-ägare (billigaste segmentet) har eget överdrag för 449 kr — raden bär bara på Kamado Joe/BGE-ägare.",
+     "hypotes_id": "H01",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Kamadohuven 600D"
+  },
+  "K0246": {
+   "id": "K0246",
+   "skapad": "2026-09-12",
+   "namn": "Värmehandskarna för älgpasset",
+   "objekt": "NYTT: Jägarens händer på passet (avtryckarfingret efter 4 timmar stilla, okt–jan)",
+   "form": "kläder",
+   "sak": "nytt: jägarens händer på passet+kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013031906919",
+     "url": "https://www.aliexpress.com/item/1005013031906919.html",
+     "bild": null,
+     "pris_usd": 44.49,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:18:07Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 13.1,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 999,
+     "landad": 644,
+     "be_cpa": 356,
+     "hook": "Stelt avtryckarfinger på passet?",
+     "varfor": "Samma passtruktur som värmesulorna och Värmesitsen (Axel ja 09-11): fackhandeln tar 1 000–3 000 kr för formen, lägsta jämförbara är en AA-driven handske för 799, vår li-ion-handske 999 med ankare 2,0×. Älgjakt syd om 3,7 v.",
+     "huvudrisk": "Storlek M–XL är en 'måste mäta'-variant (4 vinnare/7 förlorare i facit) och landad 579–708 ger BE-CPA 291–420 — går bara ihop om returerna hålls nere.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 11,
+      "K3": 8,
+      "K4": 7,
+      "K5": 6,
+      "K6": 8,
+      "K7": 3,
+      "K8": 7,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Värmehandskarna för älgpasset"
+  },
+  "K0247": {
+   "id": "K0247",
+   "skapad": "2026-09-12",
+   "namn": "Kajakhuven formsydd",
+   "objekt": "NYTT: Kajaken/kanoten på bockarna (samma ägare som Kajakhållaren K0239, ja)",
+   "form": "överdrag",
+   "sak": "nytt: kajaken/kanoten på bockarna+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012470643036",
+     "url": "https://www.aliexpress.com/item/1005012470643036.html",
+     "bild": null,
+     "pris_usd": 14.03,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:20:28Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 4,
+     "rank_poang": 12.3,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 0,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 499,
+     "landad": 203,
+     "be_cpa": 296,
+     "hook": "Ligger kajaken ute på bockarna i vinter?",
+     "varfor": "Samma ägare som Kajakhållaren (Axel ja 09-11), samma datum som båtupptagningen, formsydd form med den bästa heron i linsen; objektet ligger synligt ute på tomten hela vintern.",
+     "huvudrisk": "Ankaret är inte mätt (bara ett golv på 371 kr) och objektvärdet ligger i det blandade bandet 1–10 tkr.",
+     "hypotes_id": "H02",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 4, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Kajakhuven formsydd"
+  },
+  "K0248": {
+   "id": "K0248",
+   "skapad": "2026-09-12",
+   "namn": "Minikedjesågen för Makita-batteri",
+   "objekt": "NYTT: Makita 18V-batterisystemet (ägd dyr sak) — vedstapeln och grenarna",
+   "form": "verktyg",
+   "sak": "nytt: makita 18v-batterisystemet+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010485571553",
+     "url": "https://www.aliexpress.com/item/1005010485571553.html",
+     "bild": null,
+     "pris_usd": 33.59,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:16:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 5,
+     "rank_poang": 12,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 486,
+     "be_cpa": 514,
+     "hook": "Har du Makita-batterier hemma?",
+     "varfor": "Samma struktur som Arbetslampan/Jetfläkten/Snöskyffeln för Makita (Axel ja 09-11) men med motor och synlig payoff: Makitas egen DUC150Z kostar 2 395–3 000 kr, vår 999 (ankare 2,4×), ingen svensk kedja säljer formen, vedsäsong 4,7 v bort. Testar H12 rent: verktyg vinner när upplevt värde bärs av det ägda systemet.",
+     "huvudrisk": "Leverantören trycker Makita-logga på maskinen (piratrisk) — måste beställas obrandad; 6-tums minisågar med eget batteri finns överallt (Jula/Fyndiq) så creativen måste visa Makita-batteriet först.",
+     "hypotes_id": "H12",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 7,
+      "K6": 8,
+      "K7": 4,
+      "K8": 8,
+      "K9": 4,
+      "K10": 1,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 5, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Minikedjesågen för Makita-batteri"
+  },
+  "K0249": {
+   "id": "K0249",
+   "skapad": "2026-09-12",
+   "namn": "Värmesulorna för älgpasset",
+   "objekt": "NYTT: Jägarens fötter på passet (kroppen efter 4 timmar stilla, okt–jan)",
+   "form": "kläder",
+   "sak": "nytt: jägarens fötter på passet+kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007987144485",
+     "url": "https://www.aliexpress.com/item/1005007987144485.html",
+     "bild": null,
+     "pris_usd": 41.79,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:14:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 6,
+     "rank_poang": 11.1,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 899,
+     "landad": 604,
+     "be_cpa": 294,
+     "hook": "Kalla fötter på passet igen?",
+     "varfor": "Samma kroppsliga passtruktur som Värmesitsen för älgpasset (Axel ja 09-11) och damaskerna: hårt datum (älgjakt syd 8 okt, första frost), fackhandelsankare 1 795 kr, exakt samma form kostar 995 hos Hylte — vår 899 med BE-CPA 234–355. Sulan ger 4–9 h och styrs utan att ta av kängan, vilket är hela skillnaden mot kemiska värmare (40–49 kr).",
+     "huvudrisk": "Landad 544–665 kr ger tunt utrymme under 899, och Elgiganten/Jula säljer formen i stormarknad (pris ej läst) — klipp-till-storlek kan ge returer.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 7,
+      "K5": 6,
+      "K6": 8,
+      "K7": 4,
+      "K8": 6,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 6, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Värmesulorna för älgpasset"
+  },
+  "K0250": {
+   "id": "K0250",
+   "skapad": "2026-09-12",
+   "namn": "Uppvärmda fågelbadet",
+   "objekt": "Fågelbord/fågelmatare",
+   "form": "annat",
+   "sak": "fågelbord/fågelmatare+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012607364360",
+     "url": "https://www.aliexpress.com/item/1005012607364360.html",
+     "bild": null,
+     "pris_usd": 25.69,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:13:42Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 7,
+     "rank_poang": 11,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 371,
+     "be_cpa": 328,
+     "hook": "Fryser fåglarnas vatten på altanen?",
+     "varfor": "Vinterfågelmatarna är en mycket stor grupp (minst 300 000 hushåll enligt sökutdrag) med kvinna/man 55+ i småhus, precis som kattkojans köpare — och isfritt vatten till fåglarna finns inte i svenskt flöde (Vivara har noll uppvärmda bad). Vintermatningen börjar om 6 v, samma 'djur ute i kylan'-struktur som H09.",
+     "huvudrisk": "Ankare saknas och heron är oanvändbar — priset 699 kr står på en formel, inte en uppmätt hylla; Amazon.se Feemiyo måste prisläsas innan launch.",
+     "hypotes_id": "H09",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 7, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Uppvärmda fågelbadet"
+  },
+  "K0251": {
+   "id": "K0251",
+   "skapad": "2026-09-12",
+   "namn": "Krukväxthuven med dragkedja, 3-pack",
+   "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+   "form": "huv",
+   "sak": "krukväxter+huv",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010439326565",
+     "url": "https://www.aliexpress.com/item/1005010439326565.html",
+     "bild": null,
+     "pris_usd": 11.48,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:17:37Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 8,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 0,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 449,
+     "landad": 166,
+     "be_cpa": 283,
+     "hook": "Ska olivträdet stå ute i frosten?",
+     "varfor": "Hårt datum (första frost 4,7 v), inbyggt flerköp (3 krukor) och ett fackhandelsankare på 699 kr som är slutsålt — H08 + H02 i en rad. Svagare än de tre överdragen: kedjan har formen och objektet är billigt.",
+     "huvudrisk": "Lågt upplevt värde (fiberdukspåse) och Bauhaus har samma form med dragkedja för 189 kr — bär bara som 3-pack under kedjans styckpris.",
+     "hypotes_id": "H08",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 8, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Krukväxthuven med dragkedja, 3-pack"
+  },
+  "K0252": {
+   "id": "K0252",
+   "skapad": "2026-09-12",
+   "namn": "Bikupans vinterjacka",
+   "objekt": "Bikuporna",
+   "form": "överdrag",
+   "sak": "bikuporna+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010360604942",
+     "url": "https://www.aliexpress.com/item/1005010360604942.html",
+     "bild": null,
+     "pris_usd": 27.89,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:13:42Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 9,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 0,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 799,
+     "landad": 404,
+     "be_cpa": 396,
+     "hook": "Står kuporna oisolerade i vinter?",
+     "varfor": "Ett bisamhälle är levande och ersätts inte i januari — invintringen är ett hårt datum 4,7 v bort, formen finns inte hos svenska biredskapshandlare (bara nät mot talgoxar och frigolitkupor) och biodlaren har ofta 2–5 kupor (flerköp). Samma struktur som kattkojan: älskat objekt ute + datum + formsydd form.",
+     "huvudrisk": "Ägargruppen är liten (Biodlarna hade 15 281 medlemmar 2019) — Meta måste hitta dem själv, och det är en skyddsform under formtaket.",
+     "hypotes_id": "H09",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Bikupans vinterjacka"
+  },
+  "K0253": {
+   "id": "K0253",
+   "skapad": "2026-09-12",
+   "namn": "Maskinhyllan för 4 elverktyg",
+   "objekt": "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)",
+   "form": "annat",
+   "sak": "nytt: elverktygen i garaget+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010585659348",
+     "url": "https://www.aliexpress.com/item/1005010585659348.html",
+     "bild": null,
+     "pris_usd": 17.49,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:16:17Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 10,
+     "rank_poang": 6.5,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 0,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 599,
+     "landad": 253,
+     "be_cpa": 346,
+     "hook": "Var la du skruvdragaren?",
+     "varfor": "Samma 'kaos → ordning i ett grepp' som spöklämman, märkesoberoende och med det tydligaste före/efter i hela linsen; P.Lindberg 1 120 kr ger ankare 1,87× och BE-CPA 321–371 mot 599 kr. Golvet (Harald Nyborg 199, Bauhaus 339) står under oss — H06-fallet: fungerar bara om ankaret bär.",
+     "huvudrisk": "Kedjan har exakt samma form under vårt pris och formen 'annat' har 0 vinnare av 13 i kontot — det här är ett H11-test av strukturen, inte en säker exploitation.",
+     "hypotes_id": "H11",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 10, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Maskinhyllan för 4 elverktyg"
+  },
+  "K0254": {
+   "id": "K0254",
+   "skapad": "2026-09-12",
+   "namn": "Ljusslingevindorna 10-pack",
+   "objekt": "NYTT: Julbelysningen utomhus (5–10 slingor per villa, tas fram i november)",
+   "form": "annat",
+   "sak": "nytt: julbelysningen utomhus+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012582663728",
+     "url": "https://www.aliexpress.com/item/1005012582663728.html",
+     "bild": null,
+     "pris_usd": 12.05,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:19:23Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 11,
+     "rank_poang": 6.0,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 0,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 399,
+     "landad": 174,
+     "be_cpa": 224,
+     "hook": "Hur ser julslingorna ut i kartongen?",
+     "varfor": "H11 + H03 i samma vara: varje villa 55+ har 5–10 slingor i en härva (svikande default = kartongen), kaoset är universellt igenkänt och 10-packet ger flerköpet i sig; BE-CPA 207–242 mot 399 kr. Kedjan säljer en stor vinda för 199,90 (annan form, slut hos Clas Ohlson 09-12) — luckan är 'en per slinga', inte 'en för alla'.",
+     "huvudrisk": "Lågt upplevt värde (tunn svart plast, 40 kr/st) och tidsglappet mellan smärtan (uppackning nov) och nyttan (nedtagning jan) — samt att sasong.py inte har ett julbelysningsfönster, så raden står som EVERGREEN trots att köpet är nov–dec.",
+     "hypotes_id": "H11",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 11, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Ljusslingevindorna 10-pack"
+  },
+  "K0255": {
+   "id": "K0255",
+   "skapad": "2026-09-12",
+   "namn": "Makita-hållaren 5-pack (maskinen på väggen)",
+   "objekt": "NYTT: Makita-maskinerna i garaget (3–6 st à 1–3 tkr)",
+   "form": "klämma",
+   "sak": "nytt: makita-maskinerna i garaget+klämma",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012077981896",
+     "url": "https://www.aliexpress.com/item/1005012077981896.html",
+     "bild": null,
+     "pris_usd": 9.54,
+     "forst_sedd": "2026-09-12",
+     "verifieringar": [
+      {
+       "datum": "2026-09-12",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-12T11:21:40Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-12",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 12,
+     "rank_poang": 5.6,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 0,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 399,
+     "landad": 138,
+     "be_cpa": 261,
+     "hook": "Ligger Makita-maskinerna på bänken?",
+     "varfor": "Spöklämmans struktur på ett nytt objekt: synligt kaos (maskinhögen) → ordning i ett grepp, fysiskt skäl att köpa fler (en hållare per maskin), < 500 kr, och Makita-familjen är bevisat självselekterande i kontot. Ankaret K-Bygg 459 kr/4-pack ger 1,44× mot vårt 5-pack för 399; kombination med batteridockor 5-pack (1005009278045210, 4,86 USD) kan bli 'Makita-väggen' om Axel vill höja upplevt värde.",
+     "huvudrisk": "Bauhaus säljer samma form (StealthMounts) för 279 kr/4-pack = 70 kr/st mot våra 80 kr/st, och heron är en textig packshot — det måste bli eget foto/video med maskinerna i rad.",
+     "hypotes_id": "H11",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-12",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "levererad på V3-arket (rank 12, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Makita-hållaren 5-pack (maskinen på väggen)"
   }
  }
 }

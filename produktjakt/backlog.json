@@ -22,8 +22,8 @@
   "form": "värmeplatta till katthus",
   "arketyp": "A3 (A5 efter V2)",
   "deadline": "första frost v 41",
-  "korningsvecka": 38,
-  "orsak": "ankare Supercat 599 (18 W IPX7) men AliExpress-träffarna är inomhusdynor med barntryck (K8 0/3) — sök 'IPX7 pet heating pad outdoor 18W' / 'outdoor cat house heater' · 2026-09-11 lins B: fortfarande bara barntrycksdynor/reptilmattor/solcellsdyna med text — kör om v 38 med 'outdoor cat house heated pad IP67 12V'"
+  "korningsvecka": 41,
+  "orsak": "ankare Supercat 599 (18 W IPX7) men AliExpress-träffarna är inomhusdynor med barntryck (K8 0/3) — sök 'IPX7 pet heating pad outdoor 18W' / 'outdoor cat house heater' · 2026-09-11 lins B: fortfarande bara barntrycksdynor/reptilmattor/solcellsdyna med text — kör om v 38 med 'outdoor cat house heated pad IP67 12V' · 2026-09-12 lins I: tredje gången bara inomhusdynor/industrisilikon — sök inte igen på AliExpress; kräver annan leverantörskälla."
  },
  {
   "objekt": "Robotgräsklippare + laddstation",
@@ -40,5 +40,29 @@
   "deadline": "första frost",
   "korningsvecka": 38,
   "orsak": "Igelkottshuset föll på BE-CPA 187 (< 190) mot Vivara 299,90 golv — söks om bara med listning < 20 USD"
+ },
+ {
+  "objekt": "Barnbarnet — adventskalendern",
+  "form": "kalenderlåda (Highland Cow 3D, 24 figurer)",
+  "arketyp": "G_Q4_GAVA",
+  "deadline": "1 december (10,4 v)",
+  "korningsvecka": 38,
+  "orsak": "2026-09-12 lins I: LIVE 1005013109493697, 25,99 USD → BE-CPA 185–261, undre gränsen < 190 i rank.py-grinden. Söks om bara med listning < 20 USD eller pris 649 mot ankare."
+ },
+ {
+  "objekt": "Hästen i hagen",
+  "form": "uppvärmd vattenhink",
+  "arketyp": "E_VADER_SASONG",
+  "deadline": "isläggning (10,6 v)",
+  "korningsvecka": 38,
+  "orsak": "2026-09-12 lins I: ankare Willab 20 L 1 299 kr (Hööks/Börjes) skrivet i objekt.json, men AliExpress gav bara 930-dollarstankar och drickskålar — ingen listning."
+ },
+ {
+  "objekt": "Igelkotten i trädgården",
+  "form": "hus",
+  "arketyp": "E_VADER_SASONG",
+  "deadline": "första frost",
+  "korningsvecka": 39,
+  "orsak": "2026-09-12 lins I: 25,89 USD > 20-dollarsgränsen mot Vivara 299,90."
  }
 ]
