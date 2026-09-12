@@ -206,7 +206,8 @@
     "trailer cover waterproof oxford utility"
    ],
    "vikt": 3,
-   "ankare_not": "Fogelsta kapellock 2 916 kr (lins A 2026-09-11); Biltema/Jula har PE-formen, pris ej läst (403)"
+   "ankare_not": "Fogelsta kapellock 2 916 kr (lins A 2026-09-11); Biltema/Jula har PE-formen, pris ej läst (403)",
+   "sett_innan": "Axel 2026-09-11 nej på Släpkärrekapellet: 'nöjd med det han har' — kapellet följer med kärran (standardutrustning, samma som ramperna 09-10). Kapell/överdrag på kärra söks inte igen."
   },
   {
    "objekt": "Båt på trailer/bockar",
@@ -1078,7 +1079,8 @@
    "vikt": 3,
    "ankare_namn": "Clas Ohlson värmepumpsskydd plåt med tak 2 499 kr (36-217); Grøntklima trä 6 990 (polarpumpen)",
    "golv": "ej hittat under 2 499 i svensk handel 2026-09-11",
-   "ankare_not": "Clas Ohlson plåttak 2 499; styv lamellbox i aluminium hittad på AliExpress 47 USD (lins A 2026-09-11) — backlog-raden löst"
+   "ankare_not": "Clas Ohlson plåttak 2 499; styv lamellbox i aluminium hittad på AliExpress 47 USD (lins A 2026-09-11) — backlog-raden löst",
+   "sett_innan": "Axel 2026-09-11 nej på Värmepumpsskyddet i aluminium (1 499, skruvas fast). Styvt tak/hus med montering söks inte igen; bara mjuk huv utan montering < 700 kr."
   },
   {
    "objekt": "Laddbox/utomhusuttag",
@@ -1218,7 +1220,8 @@
    ],
    "vikt": 3,
    "ankare_namn": "Kerbl isolerad hundkoja 3 495 kr (p-lindberg.se, i lager 2026-09-11)",
-   "golv": "Kellfri isolerad (bygghemma) pris ej läst"
+   "golv": "Kellfri isolerad (bygghemma) pris ej läst",
+   "sett_innan": "Axel 2026-09-11 nej på Gårdshundens plastkoja (999) — kedjan har plastkojan. Koja söks bara som isolerad form med hyllfrånvaro."
   },
   {
    "objekt": "Hönsen — rastgård och vatten",

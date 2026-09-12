@@ -1,0 +1,201 @@
+# Bäverbutikens katalog via Shopify Admin API, hämtad 2026-09-12 — K0-dubblettkoll på SAK (objekt+form), inte på namn
+ACTIVE	Bil, Verktyg & Garage	699.00	1080p Inspektionskamera / Endoskop – IP67 för Bil, Rör & Motor
+ACTIVE	Verktyg	399.00	14-i-1 Multiverktygshammare – Camping & Nödläge
+ACTIVE	Verktyg	219.00	3D Snickarvinkel – Vinkellinjal med Ritskrapa
+ACTIVE		459.00	3D-sandbild 20 cm – Nytt Landskap Varje Gång Du Vänder Den
+ACTIVE	Bevattning	289.00	4-Vägs Krananslutning – Slangsplitter med Avstängning
+ACTIVE	Bil, Verktyg & Garage	1599.00	7-i-1 Jumpstart 5000A med Luftkompressor – 12V Batteribooster
+ACTIVE	Smarta glasögon	1869.00	AI Smarta Glasögon – 8MP Kamera & Röstassistent
+ACTIVE		469.00	Adventskalender Fiskedrag – 24 Drag Bakom 24 Luckor
+ACTIVE		499.00	Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor
+ACTIVE	Skor	349.00	Andningsbara Sneakers – Lätta Vandringsskor
+ACTIVE	Hushåll	249.00	Anti-Slip Mattdynor 24-Pack – Håller Mattan på Plats
+ACTIVE	Säkerhet	272.00	Anti-Slip Tejp 5m – Halkskydd för Trappor & Båt
+ACTIVE		439.00	Arbetslampa för Makita-batteri – 15 LED med USB-uttag
+ACTIVE	Belysning	229.00	Arbetsljusramp 120W – 7 LED Spot & Flood
+ACTIVE	Båt & Marin	169.00	Avstängningsrep för Yamaha – Säkerhetslina
+ACTIVE	Trädgård	599.00	Axelbälte för Trimmer – Justerbart Nylonbälte
+ACTIVE		399.00	Badshorts med Skämttryck – Rumpan Bak
+ACTIVE	Bil, Verktyg & Garage	469.00	Batteridriven Bränslepump – Bärbar Vätskepump med Flödeskontroll
+ACTIVE	Biltillbehör	189.00	Batterifrånskiljare – Huvudströmbrytare 12/24V
+ACTIVE	Fordon	799.00	Bensindunk 3L Låsbar – Reservtank för MC
+ACTIVE		829.00	Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud
+ACTIVE	Spel & Lek	179.00	Bollpannband – Kvällens Roligaste Duell
+ACTIVE	Träning	309.00	Bordtennisnät Infällbart – 2 Rack & 6 Bollar
+ACTIVE	Verktyg	49.00	Borrbitshållare med Spärrhake – Snabbfäste
+ACTIVE	Rengöring	289.00	Borstset 6 Delar – Mjuka Borstar för Bil, Båt & Hem
+ACTIVE	Väskor	329.00	Bröstväska för Herr – Sling Bag för Sport & Fritid
+ACTIVE	Verktyg	909.00	Bälteslipmaskin Mini 3-i-1 – Knivslip & Polerare
+ACTIVE		849.00	Bänkhylla med Utdragbar Korg – Dubbel Yta på Samma Bänk
+ACTIVE	Camping	179.00	Bärbar Tvättlina 8m – Justerbar för Camping
+ACTIVE		350.00	Bäverkoppling - Slipp jobbiga kabelskor
+ACTIVE		199.00	Bäverlampa Pro
+ACTIVE		149.00	Bävertratt - Tanka snabbt utan spill
+ACTIVE		579.00	Båtmotorskydd 420D – Heltäckande för Utombordare
+ACTIVE	Båt & Marin	269.00	Båtsitsöverdrag 210D – Vädertåligt Stolsskydd
+ACTIVE	Båt & Marin	1049.00	Båtskydd 420D – Slittåligt Skydd för Uppblåsbar Båt
+ACTIVE	Båt & Marin	629.00	Båttrailer Vinschrem – Kraftig med Krok 12000 lbs
+ACTIVE	Kläder	909.00	Cargoshorts 3-Pack – Avslappnade Herrshorts med Fickor
+ACTIVE	Cykel	259.00	Cykelshorts Herr – Vadderade med Kompression
+ACTIVE		389.00	Damasker Vandring – Håller Snö, Väta & Grus Ute
+ACTIVE	Biltillbehör	169.00	Digital Däckdjupsmätare – LCD-Display
+ACTIVE		739.00	Diskställ i Två Våningar – Hela Diskens Torkyta på 42 cm
+ACTIVE	Köksredskap	129.00	Dricköppnare med Dragflik – Skonsam för Naglarna
+ACTIVE	Trädgård & Utomhus	579.00	Dubbel Axelrem för Trimmer & Röjsåg – Kraftig Nylonsele
+ACTIVE		449.00	Dörr- och Fönsterlarm 110 dB – Trådlös Fjärrkontroll
+ACTIVE	Bygg	319.00	Dörrbottenlist – Tätar mot Ljud, Drag & Damm
+ACTIVE	Friluft	229.00	Fickkedjesåg – Bärbar Handsåg med Halkfritt Handtag
+ACTIVE	Fiske	499.00	Fiskeset med Förvaringslåda – Komplett Fiskeredskapsset
+ACTIVE	Fiske	289.00	Fiskespöhållare 4-Pack – Kraftig Förvaring
+ACTIVE	Båt & Marin	269.00	Fiskespöhållare för Båt – 2-pack i Kraftig Nylon
+ACTIVE		1659.00	Fjäderbelastat Stödhjul till Grinden – Slutar Släpa i Grus
+ACTIVE	Camping	219.00	Flamskyddad Grillmatta – Skyddar Mark & Altan
+ACTIVE		489.00	Fodrade Inomhustofflor – Kamouflage, Herr 40–47
+ACTIVE	Skor	309.00	Fritidsskor Herr – Låga & Lätta med Halkfri Sula
+ACTIVE	Verktyg	549.00	Förlängningsnyckel 2-i-1 – Spärrnyckel med Hylsor
+ACTIVE	Första hjälpen	309.00	Första Hjälpen-Kit 260 Delar – Hem, Bil & Camping
+ACTIVE	Lantbruk & Djur	169.00	Gethalsband med Kopparklocka – Justerbart för Småboskap
+ACTIVE		499.00	Glasspints med Lock 2-pack – Gör Glassen Direkt i Burken
+ACTIVE	Golf	309.00	Golfbollsplockare 80 cm – med Bärväska
+ACTIVE	Golf	280.00	Golfklubbsborste med Vattenspray – Portabel Rengöring
+ACTIVE	Golf	909.00	Golfnät 305x305 cm – Övningsnät för Trädgården
+ACTIVE	Golf	344.00	Golfskoväska – Nylon med Dragkedja
+ACTIVE		269.00	Gravstenspenna – Återställer Blekt Text på Sten
+ACTIVE	Belysning	309.00	Grilllampor LED 3-Pack – Ytmonterade 12V
+ACTIVE	Trädgård & Utomhus	189.00	Gräsklipparslipare för Borrmaskin – Dubbelsidig Slipsten
+ACTIVE	Trädgård & Utomhus	369.00	Gräsklippartäcke 600D Oxford – med Dragsko
+ACTIVE	Verktyg	249.00	Handdriven Kedjeslip – Slipverktyg för Motorsåg
+ACTIVE	Verktyg	169.00	Handhållen Sprutpistol – för Färg & Hantverk
+ACTIVE	Förvaring	179.00	Hattgalge – Smart Förvaring för 8 Kepsar
+ACTIVE	Accessoarer	159.00	Herrglasögon 2-Pack – Lätta Modebågar
+ACTIVE	Skor	229.00	Herrsandaler – Konvertibla för Sport & Strand
+ACTIVE	Kläder	459.00	Herrshorts 3-Pack – Snabbtorkande Träningsshorts
+ACTIVE	Fordon	349.00	Hjälmhållare Väggfäste – 180° Rotation i Metall
+ACTIVE	Husdjur	459.00	Hopfällbar Hundmatta – Bärbar för Bil & Camping
+ACTIVE	Camping	189.00	Hopfällbar Nödtoalett – Kompakt för Camping & Bil
+ACTIVE	Verktyg	279.00	Hopfällbar Såg – Industriell med Halkfritt Grepp
+ACTIVE	Camping	169.00	Hopfällbar Vattenbehållare 8L – med Kran
+ACTIVE	Biltillbehör	309.00	Högtryck Biltvättspistol – Justerbart Slangmunstycke
+ACTIVE	Trädgård & Utomhus	379.00	IBC-tank 4-vägs Fördelaradapter – Justerbar för Bevattning
+ACTIVE	Trädgård & Utomhus	419.00	IBC-tank Kranadapter Kit – Anslutning för Vattentank & Trädgård
+ACTIVE		489.00	IBC-tanköverdrag 1000 L – Stoppar Alger & UV
+ACTIVE		489.00	Infartslarm Trådlöst – Du Hör När Någon Svänger In
+ACTIVE		789.00	Isolerad Utekattkoja på Ben – Upphöjd Från Kall och Blöt Mark
+ACTIVE		709.00	Jetfläkt för Makita-batteri – Blås Rent utan Sladd
+ACTIVE		379.00	Jättefotboll 60 cm – Uppblåsbar för Trädgård & Pool
+ACTIVE		289.00	Kamouflagetejp 3-pack – Självhäftande Väv 5 × 450 cm
+ACTIVE		419.00	Kasta & Fånga-set – 4 Korgar och Bollar på Lina
+ACTIVE	Camping	169.00	Kepslampa 300 Lumen – Clip-On LED Pannlampa
+ACTIVE	Dekoration	199.00	Klistermärken för Soptunnan – 4-pack Tecknade Motiv
+ACTIVE	Trädgård	309.00	Kranskydd Frost 420D – Skyddar Utekranen i Vinter
+ACTIVE	Belysning	459.00	LED Arbetsbelysning 4-Pack – 3,3" Spotlight 12/24V
+ACTIVE	Belysning	1799.00	LED Arbetslampor 90W – 7–9" för Lastbil & Traktor
+ACTIVE	Camping	529.00	LED Campinglampa – Solcellsladdad & Hopfällbar
+ACTIVE	Bil, Verktyg & Garage	3349.00	LED Garagebelysning 14-pack – Hexagonala Taklampor 6500K
+ACTIVE	Belysning	2379.00	LED Ljuslist 20" + 4" Pods – Komplett Offroad-Kit
+ACTIVE	Belysning	319.00	LED Ljusramp 10/20 Tum – Combo Beam Offroad
+ACTIVE	Belysning	360.00	LED Ljusramp Spot/Flood – 12/24V Arbetsljus
+ACTIVE	Transport	399.00	Lastnät – Kraftigt Släpvagnsnät för Säker Transport
+ACTIVE	Fiske	249.00	Linupprullare Aluminium – Snabbt Linbyte på Rullen
+ACTIVE		259.00	Luffarschack i Trä – Klassikern som Ligger Framme
+ACTIVE	Väskor	729.00	Lättviktsryggsäck – Vandringsväska med Stavfäste
+ACTIVE	Fordon	369.00	MC Handvärmare – Vindtäta Greppöverdrag
+ACTIVE	Belysning	249.00	MC LED Blinkers 4-Pack – Micro Amber 12V
+ACTIVE	Belysning	799.00	MC LED-Strålkastare – Extraljus & Dimljus 12V
+ACTIVE	Fordon	289.00	MC Sätesöverdrag Camo – Ventilerande Skydd
+ACTIVE	Fordon	349.00	MC-Kapell 218×118 cm – Regn, Damm & UV
+ACTIVE	Friluft	279.00	Magnetfiskesats 320lb – Neodymmagnet med 10m Rep
+ACTIVE		439.00	Magnethylla för Tvättmaskin och Kylskåp – Förvaring Utan Borr
+ACTIVE		469.00	Magnetplattor i Storformat – Byggset i Låda med Handtag
+ACTIVE	Trädgårdsredskap	1489.00	Manuell Vedklyv – Väggmonterad Gjutjärn
+ACTIVE	Verktyg	179.00	Manuell Vätskepump – Borrdriven Sug- & Överföringspump
+ACTIVE	Båt & Marin	319.00	Marin Förtöjningslina – Elastisk & UV-Tålig
+ACTIVE	Båt & Marin	299.00	Marin Motorhölje 420D – Universellt Skydd
+ACTIVE		289.00	Medicinask i Fickformat – 7 Fack med Tätslutande Lock
+ACTIVE	Trädgård	399.00	Mesh Trädgårdsförkläde – Andningsbart med Fickor
+ACTIVE	Fiske	429.00	Mini Fiskespö Set – Teleskopiskt & Dubbelsidigt
+ACTIVE	Mobiltillbehör	219.00	Mobilskal Magnetiskt med Ställ – iPhone 12–17
+ACTIVE	Lantbruk & Djur	339.00	Momentlås för Stängsel – Lättinstallerat Grindlås för Bete & Hage
+ACTIVE		989.00	Motocentric Bakväska 37 L – Hjälmen Går i Väskan
+ACTIVE	Fordon	229.00	Motocross Handskydd – Universella i PP-Plast
+ACTIVE	Båt & Marin	329.00	Motorhölje för Utombordare – Tåligt Skydd
+ACTIVE	Detailing	199.00	Nano Coating Vax – Keramiskt Skydd för Bil & Båt
+ACTIVE	Friluft	199.00	Nödregnjacka – Lätt & Packbar Regnskydd
+ACTIVE	Verktyg	259.00	Oljefilternyckel 3-Käft – Justerbar
+ACTIVE	Bil, Verktyg & Garage	499.00	Plastsvets för Bilreparation – Stötfångare & Fordonsplast med Häftklamrar
+ACTIVE	Skor	429.00	Plyschtofflor Herr – Varma med TPR-Sula för Inne & Ute
+ACTIVE	Pool	279.00	Poolfilter Rengöringsborste – Munstycke med Tryckkontroll
+ACTIVE		539.00	Pälsborste till Dyson-dammsugare – Borsta och Sug i Samma Drag
+ACTIVE	Leksaker	799.00	Radiostyrd Bil 1:16 – Höghastighet med Metallkaross
+ACTIVE	Trädgård & Utomhus	459.00	Rengöringsborste för Gräsklippare & Uteplats – 10 tum, 3-taggad
+ACTIVE	Fordon	569.00	Sadelväskor för Fyrhjuling – Förvaring för ATV
+ACTIVE	Belysning	199.00	Sidoljus LED 4-Pack – Extraljus för Lastbil
+ACTIVE	Belysning	419.00	Sidomarkeringsljus LED 20-Pack – 12V för Bil & Lastbil
+ACTIVE		949.00	Sittkäpp Hopfällbar – Käpp och Stol i Samma Sak
+ACTIVE	Trädgård	169.00	Självhäftande Trädband – Insektsfälla för Fruktträd
+ACTIVE	Bil, Verktyg & Garage	539.00	Självupprullande Spännrem – Kraftig Lastrem med Automatisk Återdragning
+ACTIVE	Skotillbehör	249.00	Skoreparationslappar – Lagar Hälslitage & Mesh
+ACTIVE	Tvättillbehör	359.00	Skotvättpåse med Dragkedja – Blå, för Sneakers
+ACTIVE	Camping	389.00	Skruvtältpinnar – Markankare med Gänga
+ACTIVE	Trädgård	419.00	Skuggnät UV-Beständigt – Solskydd för Uteplats
+ACTIVE	Transport	219.00	Släpvagnsrem 150 Tum – Slitstark Nylonrem
+ACTIVE	Bil, Verktyg & Garage	239.00	Snabba Trådkopplingar Inline Splice – 50-pack för Alla Kretsar
+ACTIVE	Kläder	249.00	Snabbtorkande Sportshorts – Andningsbara
+ACTIVE	Skor	699.00	Sneakers Herr – Lätta med EVA-Dämpning
+ACTIVE	Camping	279.00	Solcellslampa COB – Bärbar med USB-Laddning
+ACTIVE		589.00	Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED
+ACTIVE		769.00	Solcellslarm 2-pack – Siren och Blixt vid Rörelse
+ACTIVE		1749.00	Solpanel till Åtelkamera – Slipp Batteribytet Mitt i Säsongen
+ACTIVE		459.00	Sotarset Med Böjliga Stänger – Rensar Rökkanal Och Kaminrör
+ACTIVE	Båt & Marin	359.00	Spolklämma för Båtmotor – Testvattenklämma
+ACTIVE		999.00	Staketstolpsbygel 2-pack – Räddar Två Stolpar Utan Att Gräva
+ACTIVE		1189.00	Stegstöd 2-pack – Stegen Slutar Glida i Sidled
+ACTIVE	Camping	529.00	Strandmatta med Uppblåsbart Nackstöd – Sandtät
+ACTIVE	Skor	349.00	Strandtofflor för Herr – Halkfria Trädgårdsskor
+ACTIVE	Fordon	259.00	Styrhandtag ATV – Anti-Skid i Aluminium 22mm
+ACTIVE	Fordon	819.00	Styrlås & Hjälmlås Combo – Stöldskydd i Aluminium
+ACTIVE	Lantbruk & Djur	999.00	Stängselsträckare / Trådsträckare – Kraftig för Trädgård & Hage
+ACTIVE	Lantbruk & Djur	919.00	Stängseltrådsspännare 30-pack + Spännhandtag – Komplett Set
+ACTIVE	Cykel	219.00	Stänkskärm MTB – Lätt i Kolfiberlook
+ACTIVE	Trädgård & Utomhus	349.00	Ståltrådsborsthuvuden för Trimmer – Kraftiga Ogräs- & Mossröjare
+ACTIVE	Telefontillbehör	479.00	Stöttåligt iPhone-Fodral – med Halsband & Skärmskydd
+ACTIVE	Camping	339.00	Sugkoppskrokar – Vindtäta Tältkrokar (Multipack)
+ACTIVE	Tillbehör	310.00	Surfplatteställ – Roterande & Justerbart
+ACTIVE	Trädgård & gräsklippartillbehör	649.00	Sätesöverdrag för Åkgräsklippare – Slittåligt 600D Oxford
+ACTIVE		329.00	Sömnadskit 104 Delar – Allt i Ett Fodral
+ACTIVE	Väskor	399.00	Taktisk Bröstväska – Justerbar med Flera Fack
+ACTIVE		1129.00	Taköverdrag Husvagn 6,5 × 3 m – Skyddar Den Dyraste Ytan
+ACTIVE	Bevattning	339.00	Teleskopisk Sprutpistol – för Trädgård & Biltvätt
+ACTIVE		559.00	Termoskydd Husbil 211 × 171 cm – Utvändigt och Mörkläggande
+ACTIVE	Skor	309.00	Tofflor Ergonomiska – Tjocksulade för Inne & Ute
+ACTIVE	Trädgård & Utomhus	499.00	Triangulärt Solsegel – UV-skydd för Trädgård & Uteplats
+ACTIVE	Trädgård & Utomhus	579.00	Trimmerlina 2,4 mm × 100 m – 5-sidig för Grästrimmer & Kanttrimmer
+ACTIVE	Trädgård & Utomhus	299.00	Trimmersele med Ergonomiska Axelremmar – Justerbar Bärsele
+ACTIVE	Biltillbehör	659.00	Trådlös Bildammsugare – Uppladdningsbar & Kraftfull
+ACTIVE	Bil, Verktyg & Garage	519.00	Trådlös Däckpump 150 PSI – Smart Luftkompressor med LED-display
+ACTIVE	Tvättillbehör	169.00	Tvättpåse för Skor – Skyddar Sneakers i Maskinen
+ACTIVE	Camping	159.00	Tältpinnar 8-Pack – Kraftiga Markpinnar
+ACTIVE		529.00	Tändvedsklyv i Gjutjärn – Klyv Utan Yxa i Handen
+ACTIVE	Camping	309.00	Ultralätt Hängmatta – 300 kg med Fästen
+ACTIVE	Camping & Friluft	709.00	Uppblåsbar Liggunderlag TPU – Ultralätt Sovdyna för Camping
+ACTIVE	Camping	419.00	Uppblåsbar Luftsoffa – Bärbar Loungesäck
+ACTIVE	Camping	579.00	Uteduschen – Bärbar Campingdusch med USB-laddning
+ACTIVE	Skor	699.00	Vandringskängor Herr – Grepp & Stöd på Stigen
+ACTIVE	Skor	669.00	Vandringskängor Herr – Lätta med Tjock Sula
+ACTIVE	Väskor	519.00	Vandringsryggsäck 1000D – 25–50L Slittålig
+ACTIVE	Belysning	2299.00	Varningsljusramp 38" – Bärnstens/Vit för Lastbil
+ACTIVE	Skor	559.00	Vattenskor – Snabbtorkande för Bäck & Strand
+ACTIVE		389.00	Veckodosett 21 Fack – Morgon, Middag och Kväll i Sju Dagar
+ACTIVE		369.00	Vedklyvborr Till Borrmaskin – Kon Ø32 mm, 3 Skaft
+ACTIVE	Trädgård	359.00	Väggfäste för Grästrimmer – Kraftig Verktygshållare
+ACTIVE	Bil, Verktyg & Garage	299.00	Väggmonterade Slang- & Sladdhållare – 5-pack för Garage & Trädgård
+ACTIVE	Trädgård & Utomhus	199.00	Återanvändbar Trädgårdssäck med Handtag – Kraftig för Löv & Gräs
+ACTIVE	Säkerhet	799.00	Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning
+ARCHIVED	Lantbruk & Djur	49.00	Automatisk Fågeldrickare 5-pack – Självfyllande för Höns, Kalkon & Kanin
+DRAFT		0.00	Brickor 200 - Pack
+DRAFT	Båt & Marin	129.00	Marin Polish – Tar Bort Oxidation, Kalk & Rost
+DRAFT		150.00	Presentkort
+DRAFT		150.00	Presentkort
+DRAFT		299.00	Sushi-Strumpor
+UNLISTED	Kaching Bundles Mix & Match	0.00	Blanda & Spara
+UNLISTED		35.00	Garanti för säker frakt

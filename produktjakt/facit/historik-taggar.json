@@ -2149,6 +2149,64 @@
    "prisband": "300–499",
    "kalla": "Shopify Admin API 2026-09-11 (publicerade 2026-08-29) + kampanjnamn i kontot; taggar satta ur produkttypen",
    "anteckning": "Axels egen launch utanför researchen; inomhus/hushåll — variabler satta ur produkttypen, ej mätt ankare"
+  },
+  {
+   "nyckel": "magiborsten-se-brand",
+   "namn": "MagiBorsten - SE (varumärkes-/butikskampanj, ingen produkt)",
+   "kampanj_monster": [
+    "MagiBorsten - SE"
+   ],
+   "pris_sek": null,
+   "be_roas": null,
+   "arketyp": "X_UTANFOR",
+   "arketyp_sekundar": null,
+   "objekt": null,
+   "objekt_varde_band": "inget",
+   "objekt_ute": false,
+   "form": "annat",
+   "agare_55plus_smahus": false,
+   "old_way": null,
+   "latent_behov": null,
+   "deadline_typ": "ingen",
+   "timing_vid_launch": "ingen säsong",
+   "kedjegolv_under_vart_pris": null,
+   "markesankare_kvot": null,
+   "material_klass": null,
+   "montering_app": false,
+   "variant_risk": null,
+   "flerkop": false,
+   "prisband": "okänd",
+   "kalla": "kampanjnamnet i kontot 2026-09-12 (FACIT.md: 1 716 kr / 0 köp, PAUSED)",
+   "anteckning": "Ingen produkt — butiksbred kampanj. Taggad 2026-09-12 bara så att den slutar stå som okopplad; INSUFFICIENT_DATA och räknas inte i signalerna."
+  },
+  {
+   "nyckel": "folj-baver",
+   "namn": "Följ bäver (följarkampanj, ingen produkt)",
+   "kampanj_monster": [
+    "Följ bäver"
+   ],
+   "pris_sek": null,
+   "be_roas": null,
+   "arketyp": "X_UTANFOR",
+   "arketyp_sekundar": null,
+   "objekt": null,
+   "objekt_varde_band": "inget",
+   "objekt_ute": false,
+   "form": "annat",
+   "agare_55plus_smahus": false,
+   "old_way": null,
+   "latent_behov": null,
+   "deadline_typ": "ingen",
+   "timing_vid_launch": "ingen säsong",
+   "kedjegolv_under_vart_pris": null,
+   "markesankare_kvot": null,
+   "material_klass": null,
+   "montering_app": false,
+   "variant_risk": null,
+   "flerkop": false,
+   "prisband": "okänd",
+   "kalla": "kampanjnamnet i kontot 2026-09-12 (FACIT.md: 750 kr / 0 köp, PAUSED)",
+   "anteckning": "Ingen produkt — sidföljare. Taggad 2026-09-12 så att den slutar stå som okopplad; räknas inte i signalerna."
   }
  ]
 }

@@ -1,38 +1,39 @@
 {
- "datum": "2026-09-11",
- "facit_datum": "2026-09-11",
+ "datum": "2026-09-12",
+ "facit_datum": "2026-09-12",
  "antal": {
-  "REAL_WINNER": 18,
+  "REAL_WINNER": 19,
   "REAL_LOSER": 21,
-  "INSUFFICIENT_DATA": 33,
-  "UNTESTED": 4
+  "INSUFFICIENT_DATA": 34,
+  "UNTESTED": 2
  },
  "signaler": {
   "arketyp": {
    "B_SKYDDA_DYRT": {
-    "REAL_WINNER": 7,
+    "REAL_WINNER": 8,
     "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 2,
-    "UNTESTED": 2,
-    "ja": 4,
+    "INSUFFICIENT_DATA": 3,
+    "UNTESTED": 0,
+    "ja": 7,
     "kanske": 1,
-    "nej": 0,
-    "vinst_kr": 83521.53000000001,
-    "spend": 198490.76000000004,
+    "nej": 2,
+    "vinst_kr": 103676.53000000001,
+    "spend": 216918.90000000005,
     "exempel_v": [
      "Motorhöljet",
      "Övervakningskameran",
      "IBC-Tanköverdraget",
      "Båtmotorskyddet 420D",
      "MC-Kapellet",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Gräsklippartäcket"
     ],
-    "domda": 8,
-    "vinstandel": 0.88,
+    "domda": 9,
+    "vinstandel": 0.89,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
@@ -41,11 +42,11 @@
     "REAL_LOSER": 7,
     "INSUFFICIENT_DATA": 7,
     "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
+    "ja": 2,
+    "kanske": 1,
     "nej": 0,
-    "vinst_kr": 35755.28999999999,
-    "spend": 152592.04000000007,
+    "vinst_kr": 35665.909999999996,
+    "spend": 154696.36000000004,
     "exempel_v": [
      "Fiskespöhållaren",
      "Axelbältet"
@@ -73,7 +74,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 26644.72,
-    "spend": 76230.87,
+    "spend": 77048.14,
     "exempel_v": [
      "Sätesöverdragaren"
     ],
@@ -88,13 +89,13 @@
    "X_UTANFOR": {
     "REAL_WINNER": 3,
     "REAL_LOSER": 9,
-    "INSUFFICIENT_DATA": 14,
+    "INSUFFICIENT_DATA": 16,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 1269.3299999999986,
-    "spend": 113630.12000000002,
+    "spend": 116095.85000000003,
     "exempel_v": [
      "Strandtofflorna",
      "Cykelshorts Herr",
@@ -121,11 +122,11 @@
     "REAL_LOSER": 1,
     "INSUFFICIENT_DATA": 4,
     "UNTESTED": 0,
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 7199.64,
-    "spend": 36286.740000000005,
+    "vinst_kr": 7400.32,
+    "spend": 37961.18,
     "exempel_v": [
      "Bälteslipmaskinen"
     ],
@@ -142,11 +143,11 @@
     "REAL_LOSER": 1,
     "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 5037.73,
-    "spend": 26132.499999999996,
+    "nej": 1,
+    "vinst_kr": 4885.5,
+    "spend": 27188.87,
     "exempel_v": [
      "Damasker Vandring",
      "Kranskydd Frost 420D"
@@ -164,7 +165,7 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 0,
+    "ja": 3,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 2078.32,
@@ -183,11 +184,11 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 0,
+    "ja": 3,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 2931.36,
-    "spend": 3308.04,
+    "vinst_kr": 2282.2,
+    "spend": 5189.28,
     "exempel_v": [
      "Adventskalendern Racingbilar"
     ],
@@ -215,29 +216,47 @@
     "vinstandel": 0.0,
     "konfidens": "LÅG",
     "riktning": "förlorare"
+   },
+   "I_FLERKOP": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
    }
   },
   "arketyp_sekundar": {
    "E_VADER_SASONG": {
-    "REAL_WINNER": 6,
+    "REAL_WINNER": 7,
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 1,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 59058.810000000005,
-    "spend": 162473.85000000003,
+    "vinst_kr": 81099.96999999999,
+    "spend": 174612.37000000002,
     "exempel_v": [
      "Motorhöljet",
      "IBC-Tanköverdraget",
      "Båtmotorskyddet 420D",
      "MC-Kapellet",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [],
-    "domda": 6,
+    "domda": 7,
     "vinstandel": 1.0,
     "konfidens": "HÖG",
     "riktning": "vinnare"
@@ -250,8 +269,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 61489.68,
-    "spend": 103268.20999999999,
+    "vinst_kr": 58864.979999999996,
+    "spend": 112173.51999999999,
     "exempel_v": [
      "Fiskespöhållaren",
      "Övervakningskameran",
@@ -292,7 +311,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 9974.869999999999,
-    "spend": 51111.15,
+    "spend": 52113.88,
     "exempel_v": [
      "Strandtofflorna",
      "Cykelshorts Herr"
@@ -311,8 +330,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 6145.75,
-    "spend": 14699.18,
+    "vinst_kr": 5993.52,
+    "spend": 15755.55,
     "exempel_v": [
      "Damasker Vandring"
     ],
@@ -397,15 +416,15 @@
   },
   "objekt_ute": {
    "ja": {
-    "REAL_WINNER": 15,
+    "REAL_WINNER": 16,
     "REAL_LOSER": 5,
-    "INSUFFICIENT_DATA": 10,
-    "UNTESTED": 3,
+    "INSUFFICIENT_DATA": 11,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 166759.57,
-    "spend": 494009.50999999995,
+    "vinst_kr": 186672.96,
+    "spend": 517418.33999999997,
     "exempel_v": [
      "Motorhöljet",
      "Fiskespöhållaren",
@@ -420,8 +439,9 @@
      "Soptunneklistermärkena",
      "Cykelshorts Herr",
      "Kranskydd Frost 420D",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Gravstenspennan",
@@ -430,21 +450,21 @@
      "Krananslutningen",
      "Lastnätet"
     ],
-    "domda": 20,
-    "vinstandel": 0.75,
+    "domda": 21,
+    "vinstandel": 0.76,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
    "nej": {
     "REAL_WINNER": 3,
     "REAL_LOSER": 16,
-    "INSUFFICIENT_DATA": 21,
+    "INSUFFICIENT_DATA": 23,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": -3356.0500000000006,
-    "spend": 127866.98999999999,
+    "vinst_kr": -3804.530000000002,
+    "spend": 132885.67,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Adventskalendern Racingbilar",
@@ -476,15 +496,15 @@
   },
   "objekt_varde_band": {
    "dyr>10tkr": {
-    "REAL_WINNER": 7,
+    "REAL_WINNER": 8,
     "REAL_LOSER": 2,
-    "INSUFFICIENT_DATA": 4,
-    "UNTESTED": 2,
+    "INSUFFICIENT_DATA": 5,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 96981.84999999999,
-    "spend": 284064.91,
+    "vinst_kr": 116904.05,
+    "spend": 297823.4799999999,
     "exempel_v": [
      "Motorhöljet",
      "Sätesöverdragaren",
@@ -492,14 +512,15 @@
      "Övervakningskameran",
      "Båtmotorskyddet 420D",
      "MC-Kapellet",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Gravstenspennan",
      "Golfklubbsborsten"
     ],
-    "domda": 9,
-    "vinstandel": 0.78,
+    "domda": 10,
+    "vinstandel": 0.8,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
@@ -511,8 +532,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 63567.12,
-    "spend": 197073.62000000005,
+    "vinst_kr": 62531.45,
+    "spend": 205461.64,
     "exempel_v": [
      "Fiskespöhållaren",
      "Axelbältet",
@@ -541,8 +562,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 9332.86,
-    "spend": 66265.81,
+    "vinst_kr": 9533.539999999999,
+    "spend": 66937.51999999999,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Soptunneklistermärkena",
@@ -560,13 +581,13 @@
    "inget": {
     "REAL_WINNER": 3,
     "REAL_LOSER": 11,
-    "INSUFFICIENT_DATA": 16,
+    "INSUFFICIENT_DATA": 18,
     "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": -6478.3099999999995,
-    "spend": 74472.16,
+    "vinst_kr": -6100.610000000001,
+    "spend": 80081.37000000001,
     "exempel_v": [
      "Adventskalendern Racingbilar",
      "Isolerade Utekattkojan",
@@ -593,15 +614,15 @@
   },
   "form": {
    "överdrag": {
-    "REAL_WINNER": 7,
+    "REAL_WINNER": 8,
     "REAL_LOSER": 1,
     "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 1,
-    "ja": 2,
+    "UNTESTED": 0,
+    "ja": 4,
     "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 84736.7,
-    "spend": 233854.83000000005,
+    "nej": 1,
+    "vinst_kr": 105751.0,
+    "spend": 244731.11000000004,
     "exempel_v": [
      "Motorhöljet",
      "Sätesöverdragaren",
@@ -609,13 +630,14 @@
      "Båtmotorskyddet 420D",
      "MC-Kapellet",
      "Kranskydd Frost 420D",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Gräsklippartäcket"
     ],
-    "domda": 8,
-    "vinstandel": 0.88,
+    "domda": 9,
+    "vinstandel": 0.89,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
@@ -627,8 +649,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 34095.6,
-    "spend": 70071.91,
+    "vinst_kr": 34006.22,
+    "spend": 72176.23,
     "exempel_v": [
      "Fiskespöhållaren"
     ],
@@ -665,8 +687,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 14425.939999999999,
-    "spend": 89227.72000000002,
+    "vinst_kr": 14273.71,
+    "spend": 90284.09000000001,
     "exempel_v": [
      "Strandtofflorna",
      "Damasker Vandring",
@@ -686,13 +708,13 @@
    "elektronik": {
     "REAL_WINNER": 1,
     "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 1,
-    "UNTESTED": 1,
-    "ja": 1,
+    "INSUFFICIENT_DATA": 2,
+    "UNTESTED": 0,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 23299.800000000003,
-    "spend": 36422.79,
+    "vinst_kr": 21413.64,
+    "spend": 42712.41000000001,
     "exempel_v": [
      "Övervakningskameran"
     ],
@@ -712,8 +734,8 @@
     "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 7199.64,
-    "spend": 43339.51,
+    "vinst_kr": 7400.32,
+    "spend": 45013.95,
     "exempel_v": [
      "Bälteslipmaskinen"
     ],
@@ -731,7 +753,7 @@
     "REAL_LOSER": 1,
     "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 316.5200000000002,
@@ -750,13 +772,13 @@
    "annat": {
     "REAL_WINNER": 0,
     "REAL_LOSER": 13,
-    "INSUFFICIENT_DATA": 20,
+    "INSUFFICIENT_DATA": 22,
     "UNTESTED": 1,
-    "ja": 0,
-    "kanske": 0,
+    "ja": 5,
+    "kanske": 1,
     "nej": 0,
     "vinst_kr": -9339.11,
-    "spend": 77083.39000000001,
+    "spend": 80366.39,
     "exempel_v": [],
     "exempel_f": [
      "Gravstenspennan",
@@ -786,8 +808,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 2931.36,
-    "spend": 3308.04,
+    "vinst_kr": 2282.2,
+    "spend": 5189.28,
     "exempel_v": [
      "Adventskalendern Racingbilar"
     ],
@@ -804,9 +826,9 @@
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 1493.19,
-    "spend": 2890.13,
+    "nej": 1,
+    "vinst_kr": 2520.05,
+    "spend": 4152.37,
     "exempel_v": [
      "Isolerade Utekattkojan"
     ],
@@ -833,7 +855,92 @@
     "konfidens": "LÅG",
     "riktning": "otestat"
    },
+   "kalenderlåda": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
    "tak": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "hus": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "huv": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 1,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "dyna": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "låda": {
     "REAL_WINNER": 0,
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
@@ -853,15 +960,15 @@
   },
   "agare_55plus_smahus": {
    "ja": {
-    "REAL_WINNER": 15,
+    "REAL_WINNER": 16,
     "REAL_LOSER": 7,
-    "INSUFFICIENT_DATA": 13,
-    "UNTESTED": 3,
+    "INSUFFICIENT_DATA": 14,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 168397.38,
-    "spend": 509033.15999999986,
+    "vinst_kr": 188014.52000000002,
+    "spend": 533938.5699999998,
     "exempel_v": [
      "Motorhöljet",
      "Fiskespöhållaren",
@@ -875,9 +982,10 @@
      "MC-Kapellet",
      "Soptunneklistermärkena",
      "Kranskydd Frost 420D",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Adventskalendern Racingbilar",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Gravstenspennan",
@@ -888,21 +996,21 @@
      "Krananslutningen",
      "Lastnätet"
     ],
-    "domda": 22,
-    "vinstandel": 0.68,
+    "domda": 23,
+    "vinstandel": 0.7,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "nej": {
     "REAL_WINNER": 3,
     "REAL_LOSER": 14,
-    "INSUFFICIENT_DATA": 18,
+    "INSUFFICIENT_DATA": 20,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": -4993.86,
-    "spend": 112843.34000000001,
+    "vinst_kr": -5146.089999999999,
+    "spend": 116365.44000000003,
     "exempel_v": [
      "Damasker Vandring",
      "Cykelshorts Herr",
@@ -939,8 +1047,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 116984.70000000001,
-    "spend": 349829.12999999995,
+    "vinst_kr": 134794.97999999998,
+    "spend": 361557.4199999999,
     "exempel_v": [
      "Motorhöljet",
      "Fiskespöhållaren",
@@ -965,13 +1073,13 @@
    "köpt produkt som fungerar": {
     "REAL_WINNER": 8,
     "REAL_LOSER": 13,
-    "INSUFFICIENT_DATA": 27,
-    "UNTESTED": 3,
+    "INSUFFICIENT_DATA": 28,
+    "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 47464.49,
-    "spend": 236268.43000000002,
+    "vinst_kr": 45540.69999999999,
+    "spend": 247871.34000000005,
     "exempel_v": [
      "Strandtofflorna",
      "Övervakningskameran",
@@ -1003,28 +1111,29 @@
     "riktning": "förlorare"
    },
    "ingenting": {
-    "REAL_WINNER": 2,
+    "REAL_WINNER": 3,
     "REAL_LOSER": 3,
     "INSUFFICIENT_DATA": 2,
-    "UNTESTED": 1,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": -574.2099999999998,
-    "spend": 29711.15,
+    "vinst_kr": 3004.210000000001,
+    "spend": 32341.73,
     "exempel_v": [
      "Soptunneklistermärkena",
-     "Isolerade Utekattkojan"
+     "Isolerade Utekattkojan",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Magnetfiskesatsen",
      "Kasta & Fånga-settet",
      "Bollpannbandet"
     ],
-    "domda": 5,
-    "vinstandel": 0.4,
+    "domda": 6,
+    "vinstandel": 0.5,
     "konfidens": "LÅG",
-    "riktning": "förlorare"
+    "riktning": "blandat"
    },
    "tjänst": {
     "REAL_WINNER": 0,
@@ -1048,15 +1157,15 @@
   },
   "latent_behov": {
    "nej": {
-    "REAL_WINNER": 17,
+    "REAL_WINNER": 18,
     "REAL_LOSER": 7,
     "INSUFFICIENT_DATA": 13,
-    "UNTESTED": 2,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 174314.13,
-    "spend": 528094.6499999999,
+    "vinst_kr": 193779.04,
+    "spend": 551683.8300000001,
     "exempel_v": [
      "Motorhöljet",
      "Fiskespöhållaren",
@@ -1071,10 +1180,11 @@
      "MC-Kapellet",
      "Cykelshorts Herr",
      "Kranskydd Frost 420D",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Adventskalendern Racingbilar",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Vandringskängor Herr"
+     "Vandringskängor Herr",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Ergonomiska Tofflorna",
@@ -1085,21 +1195,21 @@
      "Lastnätet",
      "Lättviktsryggsäcken"
     ],
-    "domda": 24,
-    "vinstandel": 0.71,
+    "domda": 25,
+    "vinstandel": 0.72,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "ja": {
     "REAL_WINNER": 1,
     "REAL_LOSER": 14,
-    "INSUFFICIENT_DATA": 18,
-    "UNTESTED": 2,
+    "INSUFFICIENT_DATA": 19,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": -10910.609999999999,
-    "spend": 93781.84999999999,
+    "spend": 96154.45,
     "exempel_v": [
      "Soptunneklistermärkena"
     ],
@@ -1134,8 +1244,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 61174.62,
-    "spend": 191780.68,
+    "vinst_kr": 60380.560000000005,
+    "spend": 195188.01,
     "exempel_v": [
      "Motorhöljet",
      "Sätesöverdragaren",
@@ -1152,13 +1262,13 @@
    "ingen": {
     "REAL_WINNER": 6,
     "REAL_LOSER": 19,
-    "INSUFFICIENT_DATA": 26,
-    "UNTESTED": 3,
+    "INSUFFICIENT_DATA": 29,
+    "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 56111.85000000002,
-    "spend": 261484.33000000007,
+    "vinst_kr": 54336.990000000005,
+    "spend": 273015.71,
     "exempel_v": [
      "Fiskespöhållaren",
      "Övervakningskameran",
@@ -1202,7 +1312,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 12456.13,
-    "spend": 100840.92,
+    "spend": 101843.65000000001,
     "exempel_v": [
      "Axelbältet",
      "Strandtofflorna"
@@ -1216,22 +1326,23 @@
     "riktning": "vinnare"
    },
    "uppställning": {
-    "REAL_WINNER": 3,
+    "REAL_WINNER": 4,
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 1,
-    "ja": 1,
-    "kanske": 0,
+    "UNTESTED": 0,
+    "ja": 2,
+    "kanske": 1,
     "nej": 0,
-    "vinst_kr": 23035.72,
-    "spend": 36311.979999999996,
+    "vinst_kr": 44844.08,
+    "spend": 43780.93,
     "exempel_v": [
      "Båtmotorskyddet 420D",
      "MC-Kapellet",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [],
-    "domda": 3,
+    "domda": 4,
     "vinstandel": 1.0,
     "konfidens": "MEDEL",
     "riktning": "vinnare"
@@ -1241,11 +1352,11 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 1,
+    "ja": 3,
     "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 6145.75,
-    "spend": 14699.18,
+    "nej": 1,
+    "vinst_kr": 5993.52,
+    "spend": 15755.55,
     "exempel_v": [
      "Damasker Vandring"
     ],
@@ -1260,11 +1371,11 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 2,
     "UNTESTED": 0,
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 1548.0900000000001,
-    "spend": 13451.369999999999,
+    "nej": 1,
+    "vinst_kr": 2574.9500000000003,
+    "spend": 15530.880000000001,
     "exempel_v": [
      "Kranskydd Frost 420D",
      "Isolerade Utekattkojan"
@@ -1280,11 +1391,11 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 2931.36,
-    "spend": 3308.04,
+    "vinst_kr": 2282.2,
+    "spend": 5189.28,
     "exempel_v": [
      "Adventskalendern Racingbilar"
     ],
@@ -1310,19 +1421,104 @@
     "vinstandel": null,
     "konfidens": "LÅG",
     "riktning": "otestat"
+   },
+   "älgjakt": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "upptagning": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "vedsäsong": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "vintermatning": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "fars dag": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
    }
   },
   "timing_vid_launch": {
    "rätt": {
-    "REAL_WINNER": 12,
+    "REAL_WINNER": 13,
     "REAL_LOSER": 6,
-    "INSUFFICIENT_DATA": 9,
-    "UNTESTED": 2,
+    "INSUFFICIENT_DATA": 10,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 131272.78000000003,
-    "spend": 418419.78999999986,
+    "vinst_kr": 152012.32000000004,
+    "spend": 437032.49999999994,
     "exempel_v": [
      "Motorhöljet",
      "Fiskespöhållaren",
@@ -1332,10 +1528,11 @@
      "IBC-Tanköverdraget",
      "Båtmotorskyddet 420D",
      "Cykelshorts Herr",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Adventskalendern Racingbilar",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Vandringskängor Herr"
+     "Vandringskängor Herr",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Ergonomiska Tofflorna",
@@ -1345,21 +1542,21 @@
      "Krananslutningen",
      "Lättviktsryggsäcken"
     ],
-    "domda": 18,
-    "vinstandel": 0.67,
+    "domda": 19,
+    "vinstandel": 0.68,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "ingen säsong": {
     "REAL_WINNER": 3,
     "REAL_LOSER": 9,
-    "INSUFFICIENT_DATA": 15,
+    "INSUFFICIENT_DATA": 17,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 25898.97,
-    "spend": 127984.74999999999,
+    "vinst_kr": 24213.490000000005,
+    "spend": 136041.94,
     "exempel_v": [
      "Övervakningskameran",
      "Bälteslipmaskinen",
@@ -1389,8 +1586,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 5729.19,
-    "spend": 30270.489999999998,
+    "vinst_kr": 5576.96,
+    "spend": 31326.86,
     "exempel_v": [
      "Damasker Vandring",
      "Kranskydd Frost 420D"
@@ -1411,8 +1608,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 602.4800000000002,
-    "spend": 31543.6,
+    "vinst_kr": 1165.5600000000004,
+    "spend": 32244.839999999997,
     "exempel_v": [
      "MC-Kapellet"
     ],
@@ -1451,13 +1648,13 @@
    "ja": {
     "REAL_WINNER": 8,
     "REAL_LOSER": 15,
-    "INSUFFICIENT_DATA": 19,
-    "UNTESTED": 1,
+    "INSUFFICIENT_DATA": 20,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 51809.43,
-    "spend": 335660.5899999999,
+    "vinst_kr": 49837.189999999995,
+    "spend": 345535.42,
     "exempel_v": [
      "Motorhöljet",
      "Axelbältet",
@@ -1491,15 +1688,15 @@
     "riktning": "förlorare"
    },
    "nej": {
-    "REAL_WINNER": 8,
+    "REAL_WINNER": 9,
     "REAL_LOSER": 4,
     "INSUFFICIENT_DATA": 4,
-    "UNTESTED": 1,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 105433.59000000001,
-    "spend": 244170.38000000006,
+    "vinst_kr": 127022.97000000002,
+    "spend": 259200.96000000005,
     "exempel_v": [
      "Fiskespöhållaren",
      "Sätesöverdragaren",
@@ -1507,8 +1704,9 @@
      "IBC-Tanköverdraget",
      "Båtmotorskyddet 420D",
      "Soptunneklistermärkena",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Gravstenspennan",
@@ -1516,8 +1714,8 @@
      "Kasta & Fånga-settet",
      "Bollpannbandet"
     ],
-    "domda": 12,
-    "vinstandel": 0.67,
+    "domda": 13,
+    "vinstandel": 0.69,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    }
@@ -1555,8 +1753,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 92874.14,
-    "spend": 190682.97,
+    "vinst_kr": 91099.28,
+    "spend": 198378.75,
     "exempel_v": [
      "Fiskespöhållaren",
      "Sätesöverdragaren",
@@ -1577,8 +1775,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 19289.690000000002,
-    "spend": 39449.26,
+    "vinst_kr": 18495.63,
+    "spend": 42856.590000000004,
     "exempel_v": [
      "IBC-Tanköverdraget"
     ],
@@ -1596,15 +1794,15 @@
   },
   "montering_app": {
    "nej": {
-    "REAL_WINNER": 17,
+    "REAL_WINNER": 18,
     "REAL_LOSER": 16,
-    "INSUFFICIENT_DATA": 23,
-    "UNTESTED": 3,
+    "INSUFFICIENT_DATA": 25,
+    "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 141259.90000000002,
-    "spend": 561846.5200000001,
+    "vinst_kr": 162610.97000000003,
+    "spend": 582164.4100000001,
     "exempel_v": [
      "Motorhöljet",
      "Fiskespöhållaren",
@@ -1619,10 +1817,11 @@
      "Soptunneklistermärkena",
      "Cykelshorts Herr",
      "Kranskydd Frost 420D",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Adventskalendern Racingbilar",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Vandringskängor Herr"
+     "Vandringskängor Herr",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Ergonomiska Tofflorna",
@@ -1642,21 +1841,21 @@
      "Första Hjälpen-Kitet",
      "Bollpannbandet"
     ],
-    "domda": 33,
-    "vinstandel": 0.52,
+    "domda": 34,
+    "vinstandel": 0.53,
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
    "ja": {
     "REAL_WINNER": 1,
     "REAL_LOSER": 5,
-    "INSUFFICIENT_DATA": 8,
-    "UNTESTED": 1,
+    "INSUFFICIENT_DATA": 9,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 22143.620000000003,
-    "spend": 60029.979999999996,
+    "vinst_kr": 20257.46,
+    "spend": 68139.6,
     "exempel_v": [
      "Övervakningskameran"
     ],
@@ -1675,22 +1874,23 @@
   },
   "variant_risk": {
    "ägarkänd parameter": {
-    "REAL_WINNER": 6,
+    "REAL_WINNER": 7,
     "REAL_LOSER": 6,
     "INSUFFICIENT_DATA": 7,
-    "UNTESTED": 1,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 61158.75999999999,
-    "spend": 234982.21000000005,
+    "vinst_kr": 83278.66999999998,
+    "spend": 244885.80000000002,
     "exempel_v": [
      "Motorhöljet",
      "Sätesöverdragaren",
      "Båtmotorskyddet 420D",
      "Damasker Vandring",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Gravstenspennan",
@@ -1700,21 +1900,21 @@
      "Medicinasken i Fickformat",
      "Bollpannbandet"
     ],
-    "domda": 12,
-    "vinstandel": 0.5,
+    "domda": 13,
+    "vinstandel": 0.54,
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
    "en variant": {
     "REAL_WINNER": 8,
     "REAL_LOSER": 8,
-    "INSUFFICIENT_DATA": 19,
-    "UNTESTED": 2,
+    "INSUFFICIENT_DATA": 20,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 89720.73000000001,
-    "spend": 283371.63999999996,
+    "vinst_kr": 86502.65000000002,
+    "spend": 298728.5900000001,
     "exempel_v": [
      "Fiskespöhållaren",
      "Axelbältet",
@@ -1748,8 +1948,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 12524.029999999999,
-    "spend": 103522.65,
+    "vinst_kr": 13087.109999999999,
+    "spend": 104223.89,
     "exempel_v": [
      "Strandtofflorna",
      "MC-Kapellet",
@@ -1773,15 +1973,15 @@
   },
   "flerkop": {
    "nej": {
-    "REAL_WINNER": 14,
+    "REAL_WINNER": 15,
     "REAL_LOSER": 21,
-    "INSUFFICIENT_DATA": 27,
-    "UNTESTED": 3,
+    "INSUFFICIENT_DATA": 29,
+    "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 99835.52,
-    "spend": 500564.28,
+    "vinst_kr": 121925.13,
+    "spend": 517899.33999999997,
     "exempel_v": [
      "Motorhöljet",
      "Sätesöverdragaren",
@@ -1794,9 +1994,10 @@
      "MC-Kapellet",
      "Cykelshorts Herr",
      "Kranskydd Frost 420D",
-     "Isolerade Utekattkojan",
      "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Vandringskängor Herr"
+     "Isolerade Utekattkojan",
+     "Vandringskängor Herr",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Ergonomiska Tofflorna",
@@ -1821,21 +2022,21 @@
      "Första Hjälpen-Kitet",
      "Bollpannbandet"
     ],
-    "domda": 35,
-    "vinstandel": 0.4,
+    "domda": 36,
+    "vinstandel": 0.42,
     "konfidens": "LÅG",
-    "riktning": "förlorare"
+    "riktning": "blandat"
    },
    "ja": {
     "REAL_WINNER": 4,
     "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 4,
-    "UNTESTED": 1,
+    "INSUFFICIENT_DATA": 5,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 63568.0,
-    "spend": 121312.21999999999,
+    "vinst_kr": 60943.299999999996,
+    "spend": 132404.66999999998,
     "exempel_v": [
      "Fiskespöhållaren",
      "Övervakningskameran",
@@ -1858,8 +2059,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 46062.09999999999,
-    "spend": 227357.7300000001,
+    "vinst_kr": 45972.719999999994,
+    "spend": 229462.0500000001,
     "exempel_v": [
      "Motorhöljet",
      "Fiskespöhållaren",
@@ -1882,15 +2083,15 @@
     "riktning": "förlorare"
    },
    "500–999": {
-    "REAL_WINNER": 7,
+    "REAL_WINNER": 8,
     "REAL_LOSER": 2,
-    "INSUFFICIENT_DATA": 7,
-    "UNTESTED": 3,
-    "ja": 3,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 74432.97,
-    "spend": 213040.99000000005,
+    "INSUFFICIENT_DATA": 8,
+    "UNTESTED": 1,
+    "ja": 7,
+    "kanske": 1,
+    "nej": 1,
+    "vinst_kr": 77007.37000000001,
+    "spend": 225215.64000000004,
     "exempel_v": [
      "Sätesöverdragaren",
      "Axelbältet",
@@ -1898,14 +2099,15 @@
      "Bälteslipmaskinen",
      "Båtmotorskyddet 420D",
      "Isolerade Utekattkojan",
-     "Vandringskängor Herr"
+     "Vandringskängor Herr",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [
      "Lättviktsryggsäcken",
      "Uteduschen"
     ],
-    "domda": 9,
-    "vinstandel": 0.78,
+    "domda": 10,
+    "vinstandel": 0.8,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
@@ -1914,11 +2116,11 @@
     "REAL_LOSER": 11,
     "INSUFFICIENT_DATA": 13,
     "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
+    "ja": 3,
+    "kanske": 1,
     "nej": 0,
-    "vinst_kr": 35182.100000000006,
-    "spend": 170655.3,
+    "vinst_kr": 34149.729999999996,
+    "spend": 177701.48,
     "exempel_v": [
      "Strandtofflorna",
      "IBC-Tanköverdraget",
@@ -1950,11 +2152,11 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
-    "ja": 0,
+    "ja": 3,
     "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 7726.35,
-    "spend": 7134.4400000000005,
+    "nej": 1,
+    "vinst_kr": 25738.61,
+    "spend": 11771.07,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m"
     ],
@@ -1974,14 +2176,14 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 43510.96,
-    "spend": 121537.78000000001,
+    "vinst_kr": 61900.92,
+    "spend": 129317.89,
     "exempel_v": [
      "Sätesöverdragaren",
      "Axelbältet",
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Adventskalendern Racingbilar",
-     "Isolerade Utekattkojan",
-     "Taköverdraget för Husvagn 6,5 × 3 m"
+     "Isolerade Utekattkojan"
     ],
     "exempel_f": [],
     "domda": 5,
@@ -1990,22 +2192,23 @@
     "riktning": "vinnare"
    },
    "≥1,6×": {
-    "REAL_WINNER": 3,
+    "REAL_WINNER": 4,
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 1,
+    "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 39974.51,
-    "spend": 99689.33,
+    "vinst_kr": 40840.59,
+    "spend": 106649.13,
     "exempel_v": [
      "Strandtofflorna",
      "Övervakningskameran",
-     "Bälteslipmaskinen"
+     "Bälteslipmaskinen",
+     "Termoskyddet för Husbil 211 × 171 cm"
     ],
     "exempel_f": [],
-    "domda": 3,
+    "domda": 4,
     "vinstandel": 1.0,
     "konfidens": "MEDEL",
     "riktning": "vinnare"
@@ -2023,10 +2226,11 @@
     "IBC-Tanköverdraget",
     "Båtmotorskyddet 420D",
     "MC-Kapellet",
-    "Taköverdraget för Husvagn 6,5 × 3 m"
+    "Taköverdraget för Husvagn 6,5 × 3 m",
+    "Termoskyddet för Husbil 211 × 171 cm"
    ],
    "forlorare": [],
-   "otillrackligt": 4,
+   "otillrackligt": 3,
    "status": "stärkt"
   },
   {
@@ -2037,12 +2241,13 @@
     "Damasker Vandring",
     "MC-Kapellet",
     "Kranskydd Frost 420D",
+    "Taköverdraget för Husvagn 6,5 × 3 m",
     "Adventskalendern Racingbilar",
     "Isolerade Utekattkojan",
-    "Taköverdraget för Husvagn 6,5 × 3 m"
+    "Termoskyddet för Husbil 211 × 171 cm"
    ],
    "forlorare": [],
-   "otillrackligt": 3,
+   "otillrackligt": 2,
    "status": "stärkt"
   },
   {
@@ -2062,8 +2267,8 @@
     "MC-Kapellet",
     "Cykelshorts Herr",
     "Kranskydd Frost 420D",
-    "Adventskalendern Racingbilar",
     "Taköverdraget för Husvagn 6,5 × 3 m",
+    "Adventskalendern Racingbilar",
     "Vandringskängor Herr"
    ],
    "forlorare": [
@@ -2185,9 +2390,43 @@
    "forlorare": [],
    "otillrackligt": 2,
    "status": "aktiv"
+  },
+  {
+   "id": "H11",
+   "text": "Ordning på flera ägda saker (spöklämma-strukturen): synligt kaos → ordning i ett grepp, flerköp, < 500 kr — vinner utan överdrag",
+   "vinnare": [
+    "Fiskespöhållaren"
+   ],
+   "forlorare": [],
+   "otillrackligt": 0,
+   "status": "aktiv"
+  },
+  {
+   "id": "H12",
+   "text": "Maskinen som gör jobbet (bandslip-strukturen): ≥ 900 kr, märkesankare ≥ 2,4×, gnistor/synlig payoff på 3 s — verktyg vinner när upplevt värde är högt",
+   "vinnare": [
+    "Bälteslipmaskinen"
+   ],
+   "forlorare": [],
+   "otillrackligt": 2,
+   "status": "aktiv"
   }
  ],
  "prediktion_vs_verklighet": [
+  {
+   "id": "K0001",
+   "namn": "Taköverdrag husvagn 6,5 × 3 m",
+   "arketyp": "B_SKYDDA_DYRT",
+   "prediktion": "REFUTED",
+   "poang": null,
+   "axel": "—",
+   "klass": "REAL_WINNER",
+   "band": "HIGH",
+   "spend": 7277.86,
+   "kop": 47,
+   "roas": 7.3996,
+   "kommentar": "FEL — Axel launchade 2026-09-09 för 1 129 kr (över 1 000-kronorstaket): 2 657 kr / 15 köp / ROAS 6,37 mot BE 1,63 (2026-09-11). Lagerdjupet hos ankaret spelade ingen roll; priset över 1 000 kr spelade ingen roll."
+  },
   {
    "id": "K0003",
    "namn": "Adventskalender racingbilar",
@@ -2197,9 +2436,9 @@
    "axel": "—",
    "klass": "REAL_WINNER",
    "band": "HIGH",
-   "spend": 3308.04,
-   "kop": 16,
-   "roas": 3.0555,
+   "spend": 5182.38,
+   "kop": 20,
+   "roas": 2.3356,
    "kommentar": "FEL — 3 298 kr / 16 köp / ROAS 3,07 mot BE 1,62 (2026-09-11). Hårt datum (1 dec) + svikande default (chokladkalender) + 24 synliga saker slog varje regel i den negativa rymden."
   },
   {
@@ -2210,39 +2449,11 @@
    "poang": 79,
    "axel": "—",
    "klass": "REAL_WINNER",
-   "band": "MEANINGFUL",
-   "spend": 2890.13,
-   "kop": 9,
-   "roas": 2.457,
+   "band": "HIGH",
+   "spend": 4143.84,
+   "kop": 13,
+   "roas": 2.6085,
    "kommentar": "RÄTT — launchad 2026-09-09 för 789 kr (över rekommenderade 599): 2 883 kr / 9 köp / ROAS 2,46 mot BE 1,62 (2026-09-11). Huvudrisken (look-alikes + 3 annonsörer) fällde den inte."
-  },
-  {
-   "id": "K0001",
-   "namn": "Taköverdrag husvagn 6,5 × 3 m",
-   "arketyp": "B_SKYDDA_DYRT",
-   "prediktion": "REFUTED",
-   "poang": null,
-   "axel": "—",
-   "klass": "REAL_WINNER",
-   "band": "MEANINGFUL",
-   "spend": 2663.32,
-   "kop": 15,
-   "roas": 6.3586,
-   "kommentar": "FEL — Axel launchade 2026-09-09 för 1 129 kr (över 1 000-kronorstaket): 2 657 kr / 15 köp / ROAS 6,37 mot BE 1,63 (2026-09-11). Lagerdjupet hos ankaret spelade ingen roll; priset över 1 000 kr spelade ingen roll."
-  },
-  {
-   "id": "K0046",
-   "namn": "1/2 Pack Heavy Duty Steel Fence Post Repair Kit - Anchor Brackets & Ground Spike for Fixin",
-   "arketyp": null,
-   "prediktion": "ej researchad",
-   "poang": null,
-   "axel": "—",
-   "klass": "INSUFFICIENT_DATA",
-   "band": "TOO_EARLY",
-   "spend": 1057.72,
-   "kop": 0,
-   "roas": null,
-   "kommentar": ""
   },
   {
    "id": "K0037",
@@ -2253,9 +2464,23 @@
    "axel": "—",
    "klass": "INSUFFICIENT_DATA",
    "band": "TOO_EARLY",
-   "spend": 971.73,
+   "spend": 1974.46,
+   "kop": 2,
+   "roas": 0.7227,
+   "kommentar": ""
+  },
+  {
+   "id": "K0046",
+   "namn": "1/2 Pack Heavy Duty Steel Fence Post Repair Kit - Anchor Brackets & Ground Spike for Fixin",
+   "arketyp": null,
+   "prediktion": "ej researchad",
+   "poang": null,
+   "axel": "—",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "TOO_EARLY",
+   "spend": 1874.99,
    "kop": 1,
-   "roas": 0.2449,
+   "roas": 0.9058,
    "kommentar": ""
   },
   {
@@ -2265,11 +2490,11 @@
    "prediktion": "ej researchad",
    "poang": null,
    "axel": "—",
-   "klass": "UNTESTED",
-   "band": "UNTESTED",
-   "spend": 142.45,
-   "kop": 0,
-   "roas": null,
+   "klass": "REAL_WINNER",
+   "band": "MEANINGFUL",
+   "spend": 1506.84,
+   "kop": 11,
+   "roas": 4.3404,
    "kommentar": ""
   },
   {
@@ -2279,11 +2504,11 @@
    "prediktion": "ej researchad",
    "poang": null,
    "axel": "—",
-   "klass": "UNTESTED",
-   "band": "UNTESTED",
-   "spend": 133.61,
-   "kop": 0,
-   "roas": null,
+   "klass": "INSUFFICIENT_DATA",
+   "band": "TOO_EARLY",
+   "spend": 1494.11,
+   "kop": 1,
+   "roas": 0.5147,
    "kommentar": ""
   }
  ]

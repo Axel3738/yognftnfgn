@@ -51,18 +51,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 2663.32,
-    "kop": 15,
-    "roas": 6.3586,
-    "cpa": 177.55,
+    "spend": 7277.86,
+    "kop": 47,
+    "roas": 7.3996,
+    "cpa": 154.85,
     "be": 1.63,
-    "be_cpa": 692.64,
-    "vinstbidrag": 7726.35,
-    "band": "MEANINGFUL",
+    "be_cpa": 702.95,
+    "vinstbidrag": 25760.7,
+    "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-11",
+    "last": "2026-09-12",
     "utfall": "launchad"
    },
    "status": "vinnare",
@@ -135,18 +135,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 2890.13,
-    "kop": 9,
-    "roas": 2.457,
-    "cpa": 321.13,
+    "spend": 4143.84,
+    "kop": 13,
+    "roas": 2.6085,
+    "cpa": 318.76,
     "be": 1.62,
-    "be_cpa": 487.04,
-    "vinstbidrag": 1493.19,
-    "band": "MEANINGFUL",
+    "be_cpa": 513.26,
+    "vinstbidrag": 2528.5,
+    "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-11",
+    "last": "2026-09-12",
     "utfall": "launchad"
    },
    "status": "vinnare",
@@ -212,18 +212,18 @@
     "datum": "2026-09-08"
    },
    "meta": {
-    "spend": 3308.04,
-    "kop": 16,
-    "roas": 3.0555,
-    "cpa": 206.75,
+    "spend": 5182.38,
+    "kop": 20,
+    "roas": 2.3356,
+    "cpa": 259.12,
     "be": 1.62,
-    "be_cpa": 389.96,
-    "vinstbidrag": 2931.36,
+    "be_cpa": 373.57,
+    "vinstbidrag": 2289.0,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-11",
+    "last": "2026-09-12",
     "utfall": "launchad"
    },
    "status": "vinnare",
@@ -1925,10 +1925,10 @@
     "datum": "2026-09-10"
    },
    "meta": {
-    "spend": 971.73,
-    "kop": 1,
-    "roas": 0.2449,
-    "cpa": 971.73,
+    "spend": 1974.46,
+    "kop": 2,
+    "roas": 0.7227,
+    "cpa": 987.23,
     "be": 1.63,
     "be_cpa": null,
     "vinstbidrag": null,
@@ -1936,7 +1936,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-11",
+    "last": "2026-09-12",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2325,10 +2325,10 @@
     "datum": "2026-09-10"
    },
    "meta": {
-    "spend": 1057.72,
-    "kop": 0,
-    "roas": null,
-    "cpa": null,
+    "spend": 1874.99,
+    "kop": 1,
+    "roas": 0.9058,
+    "cpa": 1874.99,
     "be": 1.66,
     "be_cpa": null,
     "vinstbidrag": null,
@@ -2336,7 +2336,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-11",
+    "last": "2026-09-12",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -6185,10 +6185,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:44:28.144Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "kandidat",
+   "status": "ja",
    "aterupptas_om": [
     "plats i säsongsslotten — ren H05-test (tema = enda skillnaden mot K0003)"
    ],
@@ -6204,6 +6212,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "lyft ut ur slutbatchen av säsongstaket (rank 8 mot fågelmatare 10, ATV 9, täljset 9) — levererad bara i mellanversionen av sidan (v15)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Adventskalender Dinosaurier 24 figurer"
@@ -10244,11 +10256,21 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:43:37.924Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
-   "aterupptas_om": [],
+   "status": "nej",
+   "aterupptas_om": [
+    "kedjan har plastkojan (Granngården/Jula); bara isolerad koja med hyllfrånvaro och ankare ≥ 1,3×"
+   ],
    "historik": [
     {
      "datum": "2026-09-11",
@@ -10257,6 +10279,14 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 5, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: nej "
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "aterupptas_om = kedjan har plastkojan (Granngården/Jula); bara isolerad koja med hyllfrånvaro och ankare ≥ 1,3×"
     }
    ],
    "namn_sv": "Gårdshundens plastkoja"
@@ -11087,18 +11117,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 133.61,
-    "kop": 0,
-    "roas": null,
-    "cpa": null,
+    "spend": 1494.11,
+    "kop": 1,
+    "roas": 0.5147,
+    "cpa": 1494.11,
     "be": 1.63,
     "be_cpa": null,
     "vinstbidrag": null,
-    "band": "UNTESTED",
-    "klass": "UNTESTED",
-    "lutning": null,
+    "band": "TOO_EARLY",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-11",
+    "last": "2026-09-12",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11151,21 +11181,21 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 142.45,
-    "kop": 0,
-    "roas": null,
-    "cpa": null,
+    "spend": 1506.84,
+    "kop": 11,
+    "roas": 4.3404,
+    "cpa": 136.99,
     "be": 1.61,
-    "be_cpa": 347.2,
-    "vinstbidrag": null,
-    "band": "UNTESTED",
-    "klass": "UNTESTED",
-    "lutning": null,
+    "be_cpa": 369.3,
+    "vinstbidrag": 2555.41,
+    "band": "MEANINGFUL",
+    "klass": "REAL_WINNER",
+    "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-11",
+    "last": "2026-09-12",
     "utfall": "launchad"
    },
-   "status": "launchad",
+   "status": "vinnare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11188,7 +11218,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Snöskoter på släpet",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "första snö",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Ski-Doo / Lynx originalkapell"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -11243,10 +11281,22 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [
+      "Känns rätt",
+      "Deadline nu",
+      "Skyddar något"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:41:52.919Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11256,6 +11306,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja ['Känns rätt', 'Deadline nu', 'Skyddar något']"
     }
    ],
    "namn_sv": "Snöskoterkapellet 600D"
@@ -11270,7 +11324,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Släpkärra",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Fogelsta kapellock FS1425 (formsydd kapellväv, original)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -11325,11 +11387,23 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "nej",
+     "orsaker": [
+      "Nöjd med det han har"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:42:15.089Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
-   "aterupptas_om": [],
+   "status": "nej",
+   "aterupptas_om": [
+    "Axel 09-11: 'nöjd med det han har' — kapell följer med kärran; söks bara om en ny form (nät/lock) dyker upp"
+   ],
    "historik": [
     {
      "datum": "2026-09-11",
@@ -11338,6 +11412,14 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: nej ['Nöjd med det han har']"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "aterupptas_om = Axel 09-11: 'nöjd med det han har' — kapell följer med kärran; söks bara om en ny form (nät/lock) dyker upp"
     }
    ],
    "namn_sv": "Släpkärrekapellet 220×125"
@@ -11352,7 +11434,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Luftvärmepumpens utedel",
+    "form": "hus",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "första snö",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Clas Ohlson Värmepumpsskydd plåt med tak 36-217, 100×80×50 cm"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -11407,11 +11497,21 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:42:39.509Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
-   "aterupptas_om": [],
+   "status": "nej",
+   "aterupptas_om": [
+    "styv låda som skruvas fast (montering) + 1 499 kr; söks om bara som mjuk snöhuv utan montering under 700 kr"
+   ],
    "historik": [
     {
      "datum": "2026-09-11",
@@ -11420,6 +11520,14 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: nej "
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "aterupptas_om = styv låda som skruvas fast (montering) + 1 499 kr; söks om bara som mjuk snöhuv utan montering under 700 kr"
     }
    ],
    "namn_sv": "Värmepumpsskyddet i aluminium"
@@ -11434,7 +11542,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Husvagn — taket",
+    "form": "huv",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "uppställning",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Hindermann Överdrag Taklucka MPK 40 x 40 (380 kr) · Mini Heki 1 620 kr · HEKI 1 630 kr — camping4u.se"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -11503,10 +11619,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:43:18.699Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11516,6 +11640,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Takluckehuven 40×40, 2-pack"
@@ -11530,7 +11658,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Utekatten",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Sulavesi uppvärmd vattenskål 2,6 L, 40 W betong (arkenzoo.se, i lager)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -11588,10 +11724,22 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [
+      "Känns rätt",
+      "Skyddar något",
+      "Deadline nu"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:44:04.152Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11601,6 +11749,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 6, exploration, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja ['Känns rätt', 'Skyddar något', 'Deadline nu']"
     }
    ],
    "namn_sv": "Isfria vattenskålen 2,2 L"
@@ -11678,10 +11830,20 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [
+      "Känns rätt"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:44:18.314Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11691,6 +11853,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 7, exploration, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja ['Känns rätt']"
     }
    ],
    "namn_sv": "Viltsläden — rullbar dragmatta"
@@ -11705,7 +11871,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Fyrhjuling/ATV",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Polaris Sportsman Canvas Kapell (original)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -11760,10 +11934,22 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [
+      "Känns rätt",
+      "Deadline nu",
+      "Skyddar något"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:44:22.572Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11773,6 +11959,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja ['Känns rätt', 'Deadline nu', 'Skyddar något']"
     }
    ],
    "namn_sv": "ATV-kapellet Heavy Duty"
@@ -11787,7 +11977,15 @@
    "arketyp": "I_FLERKOP",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Husvagn/husbil — hjulen och däcken",
+    "form": "huv",
+    "arketyp": "I_FLERKOP",
+    "deadline_typ": "uppställning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Hindermann Däckskydd 14\" 242–289 kr/st (camping4u.se) · ø66,5 cm 240 kr/st (campingshopen.se) — 4 st = 960 kr"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -11856,10 +12054,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:44:53.847Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11869,6 +12075,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 10, exploration, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Hjulskydden 4-pack husvagn/släp"
@@ -11946,10 +12156,22 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [
+      "Skyddar något",
+      "Deadline nu",
+      "Känns rätt"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-11T06:45:20.303Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11959,6 +12181,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 11, exploration, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja ['Skyddar något', 'Deadline nu', 'Känns rätt']"
     }
    ],
    "namn_sv": "Motorlåset rostfritt utombordare"
@@ -11973,7 +12199,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Garageporten (stål, mot gatan)",
+    "form": "dekor",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "1 december",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "saknas — ingen svensk aktör säljer formen"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -12022,10 +12256,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T09:12:47.142Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12035,6 +12277,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Snöflingor till garageporten 25-pack"
@@ -12049,7 +12295,15 @@
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Uppfarten och trappan — snöröjning för hand",
+    "form": "annat",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "första snö",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "STIGA ST 300e elektrisk snöskyffel 48 V, 33 cm (bygghemma.se, i lager)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -12112,10 +12366,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T09:13:20.549Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12125,6 +12387,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 6, exploration, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Snöskyffeln för Makita-batteri"
@@ -12139,7 +12405,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Kajaken/kanoten — vinterförvaring i garaget",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "upptagning",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "XXL — Riot Kayak Wall Rack-20, väggmonterad kajakhållare (1 kajak)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -12202,10 +12476,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T09:13:32.255Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12215,6 +12497,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 7, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Kajakhållaren för vägg, 2-pack"
@@ -12229,7 +12515,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Jägaren på passet — kroppen (kall stubbe/torn, okt–jan)",
+    "form": "dyna",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "THAW Uppvärmd sittdyna USB (Hylte Jakt & Lantman)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -12278,10 +12572,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T09:13:52.481Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12291,6 +12593,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 8, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Värmesitsen för älgpasset"
@@ -12305,7 +12611,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Vedstapeln",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "vedsäsong",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Färdigt vedställ utomhus i metall med regnskydd (Trademax/CDON-utdrag 1 063–1 446 kr) · Wovar 2 × 284 = 568 kr"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -12368,10 +12682,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T09:14:19.898Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12381,6 +12703,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 10, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Vedställsbeslaget 2-pack (egna reglar)"
@@ -12395,7 +12721,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Fågelbord/fågelmatare",
+    "form": "elektronik",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "vintermatning",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Bird Buddy solcellsdriven fågelmatare med kamera (Elgiganten)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -12444,10 +12778,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T09:14:32.978Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12457,6 +12799,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 12, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Fågelmataren med kamera (5MP, solcell)"
@@ -12471,7 +12817,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Mannen själv / partnern — hobbykalendern (fars dag, jul)",
+    "form": "låda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Slöjd-Detaljer Startset Tälja (Morakniv 120 + skedkniv 162 + 3 träämnen + bok)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -12520,10 +12874,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-11",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-11T09:14:37.745Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12533,6 +12895,10 @@
     {
      "datum": "2026-09-11",
      "handelse": "levererad på V3-arket (rank 14, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-11",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Täljsetet 30 delar i väska"

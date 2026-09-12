@@ -6,7 +6,7 @@
   "deadline": "första snö v 46",
   "korningsvecka": 39,
   "orsak": "ankare mätt (Clas Ohlson plåt 2 499) men AliExpress ger bara tygkåpor à 4 USD — formen snötak saknas under taket; sök 'heat pump snow roof canopy bracket' med annat formord",
-  "lost": "2026-09-11: styv aluminiumlåda hittad (47,29 USD) och levererad på V3-arket som Värmepumpsskyddet i aluminium"
+  "lost": "2026-09-11: styv aluminiumlåda hittad (47,29 USD) och levererad på V3-arket som Värmepumpsskyddet i aluminium 2026-09-12: nej från Axel (montering + 1 499 kr) — raden stängd."
  },
  {
   "objekt": "Gårdshunden/hundgården",
@@ -14,7 +14,8 @@
   "arketyp": "A3",
   "deadline": "första frost v 41",
   "korningsvecka": 39,
-  "orsak": "ankare mätt (Kerbl 3 495) men ingen isolerad koja klarade ekonomin — bara dörrflikar; pröva 'dog house insulated' med --tak högre"
+  "orsak": "ankare mätt (Kerbl 3 495) men ingen isolerad koja klarade ekonomin — bara dörrflikar; pröva 'dog house insulated' med --tak högre",
+  "lost": "2026-09-12: stängd — plastkojan levererades 09-11 och fick nej (kedjeform)."
  },
  {
   "objekt": "Utekatten",

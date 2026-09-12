@@ -1,10 +1,10 @@
 {
- "datum": "2026-09-11",
- "antal_svar": 17,
+ "datum": "2026-09-12",
+ "antal_svar": 35,
  "per_dom": {
-  "ja": 9,
-  "kanske": 5,
-  "nej": 3
+  "ja": 22,
+  "kanske": 7,
+  "nej": 6
  },
  "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -66,9 +66,9 @@
    },
    "Vedstapeln": {
     "ja": 1,
-    "kanske": 0,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.667
+    "score": 0.625
    },
    "Husvagn — fronten": {
     "ja": 1,
@@ -83,6 +83,108 @@
     "score": 0.667
    },
    "Snöslungan": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Husvagn/husbil — hjulen och däcken": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Snöskoter på släpet": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Jägaren på passet — kroppen (kall stubbe/torn, okt–jan)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Uppfarten och trappan — snöröjning för hand": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Skjutet vilt — transporten ur skogen (rådjur, vildsvin, kalv)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Barnbarnet — adventskalendern": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Gårdshunden/hundgården": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Utombordare — kåpan, hela motorn, nästa fas": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Fyrhjuling/ATV": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Fågelbord/fågelmatare": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Garageporten (stål, mot gatan)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Mannen själv / partnern — hobbykalendern (fars dag, jul)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Husvagn — taket": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Luftvärmepumpens utedel": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Utekatten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Släpkärra": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Kajaken/kanoten — vinterförvaring i garaget": {
     "ja": 1,
     "kanske": 0,
     "nej": 0,
@@ -115,6 +217,114 @@
     "score": 0.667
    },
    "husqvarna/pricerunner": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Hindermann Däckskydd 14\" 242–289 kr/st (camping4u.se) · ø66,5 cm 240 kr/st (campingshopen.se) — 4 st = 960 kr": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Ski-Doo / Lynx originalkapell": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "THAW Uppvärmd sittdyna USB (Hylte Jakt & Lantman)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "STIGA ST 300e elektrisk snöskyffel 48 V, 33 cm (bygghemma.se, i lager)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Klövviltspulkan (styv plastpulka rådjur/vildsvin)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Färdigt vedställ utomhus i metall med regnskydd (Trademax/CDON-utdrag 1 063–1 446 kr) · Wovar 2 × 284 = 568 kr": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "National Geographic Adventskalender med Dinosaurier": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Kerbl Pet Levin plastkoja 99×70×75 (zooplus.se)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "McGard lås till utombordare 709–746 kr (watski.se) · BEMA Utombordarlås UBL-1 1 361 kr (watski.se)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Polaris Sportsman Canvas Kapell (original)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Bird Buddy solcellsdriven fågelmatare med kamera (Elgiganten)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "saknas — ingen svensk aktör säljer formen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Slöjd-Detaljer Startset Tälja (Morakniv 120 + skedkniv 162 + 3 träämnen + bok)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Hindermann Överdrag Taklucka MPK 40 x 40 (380 kr) · Mini Heki 1 620 kr · HEKI 1 630 kr — camping4u.se": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Clas Ohlson Värmepumpsskydd plåt med tak 36-217, 100×80×50 cm": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Sulavesi uppvärmd vattenskål 2,6 L, 40 W betong (arkenzoo.se, i lager)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Fogelsta kapellock FS1425 (formsydd kapellväv, original)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "XXL — Riot Kayak Wall Rack-20, väggmonterad kajakhållare (1 kajak)": {
     "ja": 1,
     "kanske": 0,
     "nej": 0,
@@ -165,16 +375,28 @@
   },
   "ankare_klass": {
    "≥ 1,6×": {
-    "ja": 1,
-    "kanske": 1,
-    "nej": 0,
-    "score": 0.625
+    "ja": 6,
+    "kanske": 3,
+    "nej": 3,
+    "score": 0.607
    },
    "1,3–1,6×": {
+    "ja": 11,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.923
+   },
+   "golv utan ankare": {
     "ja": 7,
     "kanske": 0,
     "nej": 0,
     "score": 0.889
+   },
+   "ej mätt": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    },
    "1,2–1,3×": {
     "ja": 4,
@@ -187,12 +409,6 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.75
-   },
-   "golv utan ankare": {
-    "ja": 4,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.833
    }
   },
   "arketyp": {
@@ -207,6 +423,48 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.8
+   },
+   "I_FLERKOP": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "B_SKYDDA_DYRT": {
+    "ja": 3,
+    "kanske": 0,
+    "nej": 2,
+    "score": 0.571
+   },
+   "A_AGARE_FRIKTION": {
+    "ja": 2,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.7
+   },
+   "D_SNABBARE_METOD": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "H_VISUELL_NYHET": {
+    "ja": 3,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.8
+   },
+   "G_Q4_GAVA": {
+    "ja": 3,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.8
+   },
+   "E_VADER_SASONG": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.5
    },
    "A4": {
     "ja": 2,
@@ -249,16 +507,16 @@
   },
   "deadline_typ": {
    "första snö": {
-    "ja": 2,
+    "ja": 4,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.7
+    "nej": 1,
+    "score": 0.688
    },
    "uppställning": {
-    "ja": 5,
-    "kanske": 0,
+    "ja": 6,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.857
+    "score": 0.833
    },
    "höstregn": {
     "ja": 1,
@@ -266,17 +524,53 @@
     "nej": 0,
     "score": 0.667
    },
-   "första frost": {
+   "älgjakt": {
     "ja": 2,
     "kanske": 0,
     "nej": 0,
     "score": 0.75
    },
+   "jaktstart": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "vedsäsong": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
    "1 december": {
+    "ja": 4,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.833
+   },
+   "första frost": {
+    "ja": 3,
+    "kanske": 0,
+    "nej": 2,
+    "score": 0.571
+   },
+   "upptagning": {
     "ja": 2,
     "kanske": 0,
     "nej": 0,
     "score": 0.75
+   },
+   "vintermatning": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "fars dag": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    },
    "tjäle": {
     "ja": 2,
@@ -305,12 +599,36 @@
     "score": 0.625
    },
    "överdrag": {
-    "ja": 6,
+    "ja": 8,
     "kanske": 0,
-    "nej": 0,
-    "score": 0.875
+    "nej": 1,
+    "score": 0.818
    },
    "tak/överdrag": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "huv": {
+    "ja": 1,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.625
+   },
+   "dyna": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "annat": {
+    "ja": 5,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.812
+   },
+   "kalenderlåda": {
     "ja": 1,
     "kanske": 0,
     "nej": 0,
@@ -319,8 +637,32 @@
    "koja": {
     "ja": 2,
     "kanske": 0,
+    "nej": 1,
+    "score": 0.6
+   },
+   "elektronik": {
+    "ja": 1,
+    "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.667
+   },
+   "dekor": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "låda": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "hus": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
    },
    "kalender": {
     "ja": 2,
@@ -356,9 +698,9 @@
    },
    "Vedstapeln": {
     "ja": 1,
-    "kanske": 0,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.667
+    "score": 0.625
    },
    "Husvagn — fronten": {
     "ja": 1,
@@ -378,23 +720,107 @@
     "nej": 0,
     "score": 0.667
    },
-   "Husvagn — taket": {
-    "ja": 2,
-    "kanske": 0,
+   "Husvagn/husbil — hjulen och däcken": {
+    "ja": 0,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.75
+    "score": 0.5
    },
-   "Utekatten": {
-    "ja": 2,
+   "Snöskoter på släpet": {
+    "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.667
+   },
+   "NYTT: Jägaren på passet — kroppen (kall stubbe/torn, okt–jan)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Uppfarten och trappan — snöröjning för hand": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Skjutet vilt — transporten ur skogen (rådjur, vildsvin, kalv)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    },
    "Barnbarnet — adventskalendern": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.8
+   },
+   "Gårdshunden/hundgården": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Utombordare — kåpan, hela motorn, nästa fas": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Fyrhjuling/ATV": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Fågelbord/fågelmatare": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Garageporten (stål, mot gatan)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Mannen själv / partnern — hobbykalendern (fars dag, jul)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Husvagn — taket": {
+    "ja": 3,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.8
+   },
+   "Luftvärmepumpens utedel": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Utekatten": {
+    "ja": 3,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.8
+   },
+   "Släpkärra": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Kajaken/kanoten — vinterförvaring i garaget": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    },
    "Staketet — stolpen": {
     "ja": 2,
@@ -423,33 +849,33 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 14,
-    "kanske": 1,
-    "nej": 0,
-    "score": 0.912
+    "ja": 20,
+    "kanske": 2,
+    "nej": 2,
+    "score": 0.846
    },
    "≥ 1 000": {
-    "ja": 2,
+    "ja": 5,
     "kanske": 0,
-    "nej": 0,
+    "nej": 1,
     "score": 0.75
    },
    "300–499": {
-    "ja": 2,
-    "kanske": 0,
+    "ja": 6,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.75
+    "score": 0.833
    }
   }
  },
  "orsaker": {
   "Skyddar något": {
-   "ja": 4,
+   "ja": 8,
    "kanske": 0,
    "nej": 0
   },
   "Känns rätt": {
-   "ja": 5,
+   "ja": 10,
    "kanske": 0,
    "nej": 0
   },
@@ -486,11 +912,16 @@
   "Nöjd med det han har": {
    "ja": 0,
    "kanske": 0,
-   "nej": 1
+   "nej": 2
   },
   "Kan bli bra": {
    "ja": 0,
    "kanske": 1,
+   "nej": 0
+  },
+  "Deadline nu": {
+   "ja": 4,
+   "kanske": 0,
    "nej": 0
   }
  },
@@ -499,14 +930,27 @@
   "ankare_klass:1,2–1,3×",
   "ankare_klass:1,3–1,6×",
   "ankare_klass:golv utan ankare",
+  "ankare_klass:≥ 1,6×",
   "arketyp:A1",
   "arketyp:A3",
+  "arketyp:B_SKYDDA_DYRT",
+  "arketyp:G_Q4_GAVA",
+  "arketyp:H_VISUELL_NYHET",
   "arketyp:verktyg",
   "deadline_klass:2–6 v",
   "deadline_klass:6–12 v",
   "deadline_klass:pågående",
+  "deadline_typ:1 december",
+  "deadline_typ:första frost",
+  "deadline_typ:första snö",
   "deadline_typ:uppställning",
+  "form:annat",
   "form:överdrag",
-  "prisband:500–999"
+  "objekt:Barnbarnet — adventskalendern",
+  "objekt:Husvagn — taket",
+  "objekt:Utekatten",
+  "prisband:300–499",
+  "prisband:500–999",
+  "prisband:≥ 1 000"
  ]
 }

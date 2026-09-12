@@ -3,43 +3,56 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-11. **17 svar** — ja 9, kanske 5, nej 3.
+Uppdaterad 2026-09-12. **35 svar** — ja 22, kanske 7, nej 6.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 14 ja, 1 kanske, 0 nej → score 0.912
+- prisband **500–999**: 20 ja, 2 kanske, 2 nej → score 0.846
+- ankare_klass **1,3–1,6×**: 11 ja, 0 kanske, 0 nej → score 0.923
 - deadline_klass **6–12 v**: 8 ja, 1 kanske, 0 nej → score 0.864
-- ankare_klass **1,3–1,6×**: 7 ja, 0 kanske, 0 nej → score 0.889
+- form **överdrag**: 8 ja, 0 kanske, 1 nej → score 0.818
+- ankare_klass **golv utan ankare**: 7 ja, 0 kanske, 0 nej → score 0.889
 - arketyp **A1**: 7 ja, 1 kanske, 0 nej → score 0.85
 - deadline_klass **2–6 v**: 7 ja, 0 kanske, 0 nej → score 0.889
-- form **överdrag**: 6 ja, 0 kanske, 0 nej → score 0.875
-- deadline_typ **uppställning**: 5 ja, 0 kanske, 0 nej → score 0.857
+- deadline_typ **uppställning**: 6 ja, 1 kanske, 0 nej → score 0.833
+- prisband **300–499**: 6 ja, 1 kanske, 0 nej → score 0.833
+- ankare_klass **≥ 1,6×**: 6 ja, 3 kanske, 3 nej → score 0.607
+- form **annat**: 5 ja, 1 kanske, 0 nej → score 0.812
+- prisband **≥ 1 000**: 5 ja, 0 kanske, 1 nej → score 0.75
 - ankare_klass **1,2–1,3×**: 4 ja, 0 kanske, 0 nej → score 0.833
-- ankare_klass **golv utan ankare**: 4 ja, 0 kanske, 0 nej → score 0.833
 - arketyp **verktyg**: 4 ja, 0 kanske, 0 nej → score 0.833
-- arketyp **A3**: 3 ja, 0 kanske, 0 nej → score 0.8
-- deadline_klass **pågående**: 3 ja, 0 kanske, 0 nej → score 0.8
-- ankare_kalla **eurotrail/getcamping.se**: 2 ja, 0 kanske, 0 nej → score 0.75
-- ankare_kalla **pricerunner.se (Kerbl/Northix)**: 2 ja, 0 kanske, 0 nej → score 0.75
-- ankare_kalla **lego.com/kedjan**: 2 ja, 0 kanske, 0 nej → score 0.75
+- deadline_typ **1 december**: 4 ja, 0 kanske, 0 nej → score 0.833
 
 ## Det Axel säger nej till
 
+- ankare_klass **≥ 1,6×**: 3 nej, 6 ja → score 0.607
+- arketyp **B_SKYDDA_DYRT**: 2 nej, 3 ja → score 0.571
+- deadline_typ **första frost**: 2 nej, 3 ja → score 0.571
+- prisband **500–999**: 2 nej, 20 ja → score 0.846
 - grupp **belysning och mörker**: 1 nej, 0 ja → score 0.333
-- grupp **båt och trailer**: 1 nej, 1 ja → score 0.5
-- grupp **husvagn och husbil**: 1 nej, 2 ja → score 0.6
+- grupp **Gårdshunden/hundgården**: 1 nej, 0 ja → score 0.333
+- grupp **Luftvärmepumpens utedel**: 1 nej, 0 ja → score 0.333
+- grupp **Släpkärra**: 1 nej, 0 ja → score 0.333
+- ankare_kalla **Kerbl Pet Levin plastkoja 99×70×75 (zooplus.se)**: 1 nej, 0 ja → score 0.333
+- ankare_kalla **Clas Ohlson Värmepumpsskydd plåt med tak 36-217, 100×80×50 cm**: 1 nej, 0 ja → score 0.333
+- ankare_kalla **Fogelsta kapellock FS1425 (formsydd kapellväv, original)**: 1 nej, 0 ja → score 0.333
+- form **hus**: 1 nej, 0 ja → score 0.333
+- objekt **Gårdshunden/hundgården**: 1 nej, 0 ja → score 0.333
+- objekt **Luftvärmepumpens utedel**: 1 nej, 0 ja → score 0.333
+- objekt **Släpkärra**: 1 nej, 0 ja → score 0.333
 
 ## Orsakerna han anger
 
-- **Känns rätt**: 0 nej, 5 ja, 0 kanske
-- **Skyddar något**: 0 nej, 4 ja, 0 kanske
+- **Känns rätt**: 0 nej, 10 ja, 0 kanske
+- **Skyddar något**: 0 nej, 8 ja, 0 kanske
+- **Deadline nu**: 0 nej, 4 ja, 0 kanske
 - **För dyr**: 2 nej, 0 ja, 0 kanske
+- **Nöjd med det han har**: 2 nej, 0 ja, 0 kanske
 - **Bra ankare**: 0 nej, 1 ja, 0 kanske
 - **Snygg bild**: 0 nej, 1 ja, 0 kanske
 - **Kedjan har den**: 1 nej, 0 ja, 0 kanske
 - **Tråkig**: 1 nej, 0 ja, 0 kanske
 - **Har redan**: 1 nej, 0 ja, 0 kanske
-- **Nöjd med det han har**: 1 nej, 0 ja, 0 kanske
 - **Kan bli bra**: 0 nej, 0 ja, 1 kanske
 
 ## Stoppas i nästa körning (≥ 3 nej, 0 ja)
@@ -51,15 +64,28 @@ Uppdaterad 2026-09-11. **17 svar** — ja 9, kanske 5, nej 3.
 - ankare_klass:1,2–1,3×
 - ankare_klass:1,3–1,6×
 - ankare_klass:golv utan ankare
+- ankare_klass:≥ 1,6×
 - arketyp:A1
 - arketyp:A3
+- arketyp:B_SKYDDA_DYRT
+- arketyp:G_Q4_GAVA
+- arketyp:H_VISUELL_NYHET
 - arketyp:verktyg
 - deadline_klass:2–6 v
 - deadline_klass:6–12 v
 - deadline_klass:pågående
+- deadline_typ:1 december
+- deadline_typ:första frost
+- deadline_typ:första snö
 - deadline_typ:uppställning
+- form:annat
 - form:överdrag
+- objekt:Barnbarnet — adventskalendern
+- objekt:Husvagn — taket
+- objekt:Utekatten
+- prisband:300–499
 - prisband:500–999
+- prisband:≥ 1 000
 
 <!-- auto:end -->
 
