@@ -57,6 +57,12 @@ export const FALT = [
   { key: 'gratis_antal', name: 'Gratis antal', type: 'number_integer' },
   { key: 'gratis_text', name: 'Gratis-text', type: 'single_line_text_field' },
   { key: 'bogo_gratis', name: 'BOGO (antal gratis av samma vara)', type: 'number_integer' },
+  // Paketpriset i andra valutor än butikens, "NOK:1880.20;DKK:…". Snippeten
+  // läser raden för kundens valuta (cart.currency) i stället för fastpris —
+  // annars visas SEK-talet med "kr" i den norska vyn (CaraShell 2026-09-12:
+  // sidan lovade 1 919,30, kassan tog 1 880,63). Fylls ur
+  // ekonomi.marknadspriser i produktfilen; tomt = bara butikens valuta.
+  { key: 'fastpris_valutor', name: 'Paketpris per valuta (NOK:1880.20;…)', type: 'single_line_text_field' },
 ];
 
 // Standardstegen när produktfilen inte har egna nivåer (offer.paket.nivaer).
@@ -126,6 +132,12 @@ export function byggPaketplan(produkt, butik = null) {
   const valuta = text(produkt.ekonomi?.valuta) ?? text(butik?.butik?.valuta) ?? 'SEK';
   const bonus = produkt.offer?.bonus_produkt ?? {};
   const bonusOre = Number(bonus.pris) > 0 ? ore(bonus.pris) : 0;
+  // Fasta styckpriser i andra valutor (ekonomi.marknadspriser: valuta + pris),
+  // satta som prislista i Shopify. Paketpriset per valuta räknas som samma
+  // procent på det priset — så sidan i NOK visar NOK-tal.
+  const marknadspriser = lista(produkt.ekonomi?.marknadspriser)
+    .map((m) => ({ valuta: text(m?.valuta)?.toUpperCase() ?? null, prisOre: Number(m?.pris) > 0 ? ore(m.pris) : 0 }))
+    .filter((m) => m.valuta && m.valuta !== valuta && m.prisOre > 0);
   const prefix = paketPrefix(produkt);
   const brand = text(produkt.brand?.namn) ?? text(butik?.butik?.brand) ?? '';
   const { test, perVariant, kalla } = lasNivaer(produkt);
@@ -173,6 +185,20 @@ export function byggPaketplan(produkt, butik = null) {
         seddaKoder.add(kod);
       }
 
+      // Hel procent på produkten (15, 20 …) utan gratisrad ⇒ rabattkoden blir
+      // en PROCENTKOD och paketpriset kan räknas i varje valuta. Ett fast
+      // SEK-belopp räknas om med dagskursen i kassan och driver ifrån sidans
+      // NOK-tal (CaraShell 2026-09-12); en procentsats ger samma tal på sidan
+      // och i kassan i alla valutor. Med gratis bonus behövs beloppet — då
+      // står koden kvar som belopp och nivån visas bara i butikens valuta.
+      const procentHel = fastOre !== null ? Math.round(((produktOre - fastOre) / produktOre) * 100) : 0;
+      const exaktProcent =
+        rabattOre > 0 && gratisAntal === 0 && procentHel > 0 && Math.round(produktOre * (1 - procentHel / 100)) === fastOre;
+      const fastprisValutor = {};
+      if (exaktProcent) {
+        for (const m of marknadspriser) fastprisValutor[m.valuta] = kr(Math.round(antal * m.prisOre * (1 - procentHel / 100)));
+      }
+
       const handle = (text(n.handle) ?? `${id}-${variant || 'x'}-${antal}`).toLowerCase();
       const post = {
         handle,
@@ -193,12 +219,14 @@ export function byggPaketplan(produkt, butik = null) {
         // det är det talet brickan "Spara X %" ska stämma mot).
         sparProcent: rabattOre > 0 ? Math.round(((produktOre - fastOre) / produktOre) * 100) : 0,
         valuta,
+        fastprisValutor,
       };
       poster.push(post);
       if (kod && rabattOre > 0) {
         koder.push({
           kod,
           belopp: kr(rabattOre),
+          procent: exaktProcent ? procentHel : null,
           minstAntal: antal + gratisAntal,
           antal,
           gratisAntal,
@@ -236,7 +264,7 @@ export function paketRader(plan) {
   }
   rader.push(
     plan.koder.length > 0
-      ? `Rabattkoder: ${plan.koder.map((k) => `${k.kod} = −${k.belopp.toFixed(2)} ${plan.valuta} (min ${k.minstAntal} varor)`).join(', ')}`
+      ? `Rabattkoder: ${plan.koder.map((k) => `${k.kod} = ${k.procent ? `−${k.procent} %` : `−${k.belopp.toFixed(2)} ${plan.valuta}`} (min ${k.minstAntal} varor)`).join(', ')}`
       : 'Rabattkoder: inga (alla nivåer ordinarie)'
   );
   return rader;
@@ -329,7 +357,16 @@ export function nivaFalt(post, produktGid, bonusGid = null) {
     ['gratis_antal', String(post.gratisAntal ?? 0)],
     ['gratis_text', post.gratisAntal > 0 ? post.gratisText ?? '' : ''],
     ['bogo_gratis', '0'],
+    ['fastpris_valutor', fastprisValutorText(post.fastprisValutor)],
   ].map(([key, value]) => ({ key, value }));
+}
+
+// { NOK: 1880.2 } → "NOK:1880.20". Tomt objekt → "".
+export function fastprisValutorText(valutor) {
+  return Object.entries(valutor ?? {})
+    .filter(([, p]) => Number(p) > 0)
+    .map(([v, p]) => `${String(v).toUpperCase()}:${Number(p).toFixed(2)}`)
+    .join(';');
 }
 
 // En post per nivå, upsert på handle — samma handle skrivs över, aldrig dubblerad.
@@ -364,7 +401,11 @@ export function rabattkodInput(k, produktGid, { bonusGid = null } = {}) {
     startsAt: '2020-01-01T00:00:00Z',
     customerSelection: { all: true },
     customerGets: {
-      value: { discountAmount: { amount: Number(k.belopp).toFixed(2), appliesOnEachItem: false } },
+      // Procentkod när nivån är en hel procent utan gratisrad (samma tal i
+      // alla valutor); annars fast belopp i butikens valuta.
+      value: k.procent
+        ? { percentage: Number(k.procent) / 100 }
+        : { discountAmount: { amount: Number(k.belopp).toFixed(2), appliesOnEachItem: false } },
       items: { products: { productsToAdd: produkter } },
     },
     minimumRequirement: { quantity: { greaterThanOrEqualToQuantity: String(k.minstAntal) } },

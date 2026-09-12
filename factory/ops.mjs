@@ -114,6 +114,7 @@ import {
   rensaSettings,
   settingsSchemaMedAb,
   patchaMsPaket,
+  patchaMsPaketValuta,
   msHeadGallerifilter,
   GALLERIFILTER_MARKE,
   byggKorgUpsell,
@@ -471,8 +472,16 @@ export const STEG = [
       if (msHead) filer['snippets/ms-head.liquid'] = msHead;
 
       const msPaket = await las('snippets/ms-paket.liquid');
-      const patchad = msPaket ? patchaMsPaket(msPaket) : null;
-      if (patchad) filer['snippets/ms-paket.liquid'] = patchad;
+      if (msPaket) {
+        // Två oberoende, idempotenta patchar: norska ord + paketpris i
+        // kundens valuta (fastpris_valutor). Skrivs bara om något ändrades.
+        let s = msPaket;
+        for (const patch of [patchaMsPaket, patchaMsPaketValuta]) {
+          const p = patch(s);
+          if (p) s = p;
+        }
+        if (s !== msPaket) filer['snippets/ms-paket.liquid'] = s;
+      }
 
       await skrivOchVerifiera(tema.id, filer);
 

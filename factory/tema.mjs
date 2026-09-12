@@ -1111,6 +1111,34 @@ export function patchaMsPaket(snippet) {
   return s;
 }
 
+// Paketpriset i kundens valuta: snippeten läser `fastpris` rakt av, och det
+// är ett tal i BUTIKENS valuta — i den norska vyn (NOK) stod SEK-talet
+// 1 919,30 bredvid ett NOK-jämförpris (CaraShell 2026-09-12). Patchen låter
+// nivåns `fastpris_valutor` ("NOK:1880.20;DKK:…") vinna när kundens valuta
+// inte är butikens. Ligger i snippetens {%- liquid -%}-block, därav
+// tagg-syntax utan klamrar. Idempotent på markören `opf_fv_par`.
+export const MS_PAKET_VALUTA_MARKE = 'opf_fv_par';
+export function patchaMsPaketValuta(snippet) {
+  const s = String(snippet);
+  if (s.includes(MS_PAKET_VALUTA_MARKE)) return null;
+  const rad = /^([ \t]*)assign fast = niva\.fastpris\.value[ \t]*$/m;
+  const m = s.match(rad);
+  if (!m) return null;
+  const ind = m[1];
+  const extra = [
+    `${ind}if niva.fastpris_valutor.value != blank and cart.currency.iso_code != shop.currency`,
+    `${ind}  assign ${MS_PAKET_VALUTA_MARKE} = niva.fastpris_valutor.value | split: ';'`,
+    `${ind}  for opf_fv in ${MS_PAKET_VALUTA_MARKE}`,
+    `${ind}    assign opf_fvd = opf_fv | split: ':'`,
+    `${ind}    if opf_fvd[0] == cart.currency.iso_code`,
+    `${ind}      assign fast = opf_fvd[1] | times: 1.0`,
+    `${ind}    endif`,
+    `${ind}  endfor`,
+    `${ind}endif`,
+  ].join('\n');
+  return s.replace(rad, `${m[0]}\n${extra}`);
+}
+
 // Språkmärkta galleribilder: alt som börjar med [SV]/[NO]/… visas bara för
 // sitt språk (omärkt = alla). Dawns slider hoppar själv över dolda bilder.
 // `locales` är butikens Shopify-locales (sv, nb, da, fi, de, en) — märket
