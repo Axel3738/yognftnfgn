@@ -243,6 +243,40 @@
       "redigerare_discord_id": null,
       "cycle_start": "2026-09-12",
       "senaste_korning": "2026-09-12"
+    },
+    "carashell/takskyddet": {
+      "lage": "skala",
+      "redigerare": null,
+      "redigerare_discord_id": null,
+      "notion": {
+        "name": "",
+        "database_id": "",
+        "foralder_page_id": "",
+        "url": ""
+      },
+      "kordag_offset": 0,
+      "senaste_korning": "",
+      "senaste_brief": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
+    },
+    "catcabin/utekattkojan": {
+      "lage": "skala",
+      "redigerare": null,
+      "redigerare_discord_id": null,
+      "notion": {
+        "name": "",
+        "database_id": "",
+        "foralder_page_id": "",
+        "url": ""
+      },
+      "kordag_offset": 1,
+      "senaste_korning": "",
+      "senaste_brief": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
     }
   },
   "rutinplatser": {
