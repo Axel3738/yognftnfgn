@@ -45,12 +45,12 @@ annan produkt än länken).
 - `skapa.mjs <se|no> [--skarp] [id]` — skapar produkten med 3 bilder, 7-blocksbeskrivning, cogs, publicering.
 
 ## AI-material via KIE (2026-09-12, 908 credits)
-- **13 miljöbilder** (`google/nano-banana-edit`, referens = produktens egen livebild; badge-heroer
+- **14 miljöbilder** (`google/nano-banana-edit`, referens = produktens egen livebild; badge-heroer
   fick tillfällig badgefri referens som media på SE-produkten och raderades efteråt). Tre gjordes om
   efter granskning: motorlåset syntes knappt, täljsetet fick dubbla verktyg (referensen byttes till
   detaljbilden med en kniv), snöflingorna visade 17 st (nu fyra flingor på en dörrpanel — ingen
-  räknebar totalsumma). Värmeljusen fick ingen (produkten är i vila).
-- **13 GIF:ar** (`veo3_fast` 8 s 720p → ffmpeg 8 fps / 400 px, alla < 4 MB). Blockljusen fick ingen:
+  räknebar totalsumma). Värmeljusen fick sin när Axel satte tillbaka dem (sex ljus på en fönsterbräda, ingen fjärr).
+- **14 GIF:ar** (`veo3_fast` 8 s 720p → ffmpeg 8 fps / 400 px, alla < 4 MB). Blockljusen fick ingen:
   Veo vägrade två gånger med "unable to generate audio" — miljöbilden ligger i GIF:ens plats i stället.
   Snöskyffelns första video byggde om maskinen (såg ut att ha batteri) — omgjord med "completely
   motionless and unchanged"; granska ALLTID rutremsan innan GIF:en läggs in.
