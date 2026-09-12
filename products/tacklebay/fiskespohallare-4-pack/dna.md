@@ -195,9 +195,12 @@ break-even-CPA med ~2 kr — inte akut, men räkna om vid nästa `/cs`.
   i `To be Reviewed` 2026-09-10 med bäverbutiken.se som landningssida). Hubben
   är inskriven på TackleBay i OPS-registret, så Bäverbutikens rutiner hoppar
   över den. **Axels beslut 2026-09-11: "TackleBay tar dom"** — allt som
-  levereras i hubben är TackleBays. Konsekvens: raderna i `To be Reviewed`
-  ska brand-swappas (länk → tacklebay.se, inget "vägg" i tal/text) och upp i
-  `TACKLEBAY_SE_Spöhållaren` — ingen rutin gör det i dag, se backloggen. **Upptagna AD-ID:n (båda namnrymderna):** PD ≤ 41, SO ≤ 7, SP ≤ 9,
+  levereras i hubben är TackleBays. **Axels beslut 2026-09-12: "nej" till
+  en brand-swap-körning** — de 10 källvideorna i `To be Reviewed` lämnas
+  orörda och ska inte föreslås igen i rapporten. ⚠️ Följd: `/ops-leverans`
+  för TackleBay (om den byggs) måste undanta rader med bäverbutiken.se som
+  länk, annars laddas de upp med fel landningssida. **Upptagna AD-ID:n (båda namnrymderna):** PD ≤ 46, SO ≤ 8, CS ≤ 7 efter batch #2 (2026-09-12);
+  före det: PD ≤ 41, SO ≤ 7, SP ≤ 9,
   CS ≤ 6, GT ≤ 4, JF ≤ 3, KL 1, TR 1, GA 1 (hubben) + OPS-kontots
   `TackleBayRod_` PD 1/2/3/6/7/15/23, SP 1, CS 3, GT 2/3, PROD V01–V10, REA
   V02/V08. Nya TackleBay-namn numreras ovanför hubbens högsta per vinkel.
