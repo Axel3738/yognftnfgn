@@ -215,6 +215,13 @@ annons → Meta 400); rättad samma natt, se rotorsak 8.
    setup-fynd 2026-09-11 kallade NO-annonsernas 439 kr "fel pris" utifrån
    `kalender.yaml` (`valuta: SEK`) — det var fel; kontot och Axel är facit.
    Läs aldrig norskt pris ur butikskonfigen, läs det ur kontot eller fråga.
+   **Avgjort 2026-09-12 (Axel: "439 i Shopify"):** Norge-marknaden har NOK som
+   basvaluta och ett fast pris **439 NOK, jämförpris 579 NOK** i prislistan
+   "Norge NOK" — läst ur Admin-API:t och verifierat som norsk kund
+   (`Shopify.currency = NOK`, 439,00 / 579,00 kr). NO-annonsernas "579 kr → 439 kr"
+   stämmer alltså mot sidan. `kalender.yaml` säger nu `valuta: NOK`, produktfilen
+   `no_pris_nok: 439`. ⚠️ Paketnivåerna visar SEK-tal i norska vyn (848,30 kr
+   för 2 st bredvid 878 = 2 × 439) — NOK-paketnivåer är ett obyggt steg.
    NO-CS-copyns brådska ("i dag", "begrenset lager") strider mot brandets ton,
    men **Axel beslutade 2026-09-11 att inget pausas.** Marknadsfiltret i ronden
    är SE, så NO-kampanjen döms inte av nattvakten men spenderar (≈ 445 kr
@@ -254,6 +261,9 @@ annons → Meta 400); rättad samma natt, se rotorsak 8.
    45 kr i källan) och 13 kr totalt till källans båda vinnare. Ett nytt test-
    ABO med lika budget (regel 11 i CLAUDE.md) hade gett vinnarna data på ett
    dygn. Nattvakten pausar bara; strukturen är Axels beslut — se rapporten.
+   **Axels beslut 2026-09-12: B — CBO:n står kvar** nu när PD_1_H1 är pausad.
+   Inget test-ABO byggs. Nästa avläsning visar om Meta flyttar spenden till
+   PD_2_1 / PD_2_H1 utan strukturändring.
 11. **Nästa briefdag är redan i morgon (sön 2026-09-13)** enligt kadensen
    sön + ons. Ingen av batch #2:s sju annonser har data då. Briefdag utan
    bedömbar annons = ny kallstart-rond — kvoten fylls, men lärdomen är noll
