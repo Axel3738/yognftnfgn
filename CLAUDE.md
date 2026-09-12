@@ -665,6 +665,12 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   console.anthropic.com, eller sätt `ANTHROPIC_WORKSPACE_ID` (`wrkspc_…`) i
   Environments — då skickar `anthropicHeaders()` headern på varje anrop.
   Felet står i klartext i skripten (`WORKSPACE_SAKNAS`), inte som en rå 400.
+  ✅ **Löst, mätt 2026-09-12 i en ny container:** `ANTHROPIC_NYCKEL` (108
+  tecken) svarar 200 på Messages API **utan** `ANTHROPIC_WORKSPACE_ID`, och
+  `tools/lib/engelska.mjs` översatte en svensk rad till engelska skarpt.
+  Nyckeln är alltså nu skapad inne i en workspace. Säger ett skript ändå
+  `WORKSPACE_SAKNAS`: det kör i en container som startade före bytet —
+  starta en ny session, ändra inte koden.
 - **PAUSED i annonskontot är ett beslut, aldrig ett fel att "rätta".** En
   kampanj/adset/annons som är pausad och har spenderat > 0 kr har stängts av
   med flit (av Axel, skalningsronden eller åtgärdstrappan) — den får ALDRIG
