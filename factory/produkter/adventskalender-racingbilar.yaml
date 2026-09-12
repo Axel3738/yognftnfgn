@@ -34,6 +34,17 @@ ekonomi:
   ovriga_kostnader_per_order: 33.6
   pris: 499
   jamforpris: 649
+  # NORGE (Axel pekade ut källan 2026-09-12): batch-sheet #6, raden
+  # "car racing calendar", NORWAY-blocket Qty 1 Total ex. tax = 15,69 EUR.
+  # Norge ligger utanför EU ⇒ INGEN tull, inget påslag (till skillnad från
+  # SE-raden ovan som bär 3 EUR tull som övrig kostnad per order).
+  # 15,69 EUR = 176,50 kr (ECB 11,249083, 2026-09-12) ⇒ BE-ROAS 1,55 vid 499 kr.
+  # Butiken tar betalt i SEK även mot Norge tills NOK slås på i admin
+  # (factory/butiker/kalender.yaml) — slås NOK på: 15,69 EUR = 169,09 NOK
+  # (ECB 10,77704) ⇒ BE-ROAS 1,51 vid 499 NOK. Räkna alltid om kursen live.
+  no_inkopskostnad_eur: 15.69
+  no_inkopskostnad: 176.50
+  no_ovriga_kostnader_per_order: 0
 
 varianter:
 media:
