@@ -160,3 +160,35 @@ Omdubbade no→no 2026-09-11 med butikens riktiga tal (1 106 NOK, 20 % rabatt,
 14 dagars angrerett, ingen lagerbrist). Renderade och hämtade.
 **Kvar innan de kan laddas upp:** padding + röstkoll + captionbyte med
 `no-precis.py` + OCR-verifiering — och NO-blockeraren ovan måste vara löst.
+
+---
+
+## Norge live 2026-09-12 — Axels beslut trots öppen blockerare
+
+`CARASHELL_NO_Takovertrekket | BE-ROAS 1,51` (`120249050596730172`),
+CBO 1 000 kr/dag, tre adsets, **9 av 9 annonser ACTIVE**, tillbakaläst ur Meta.
+
+⚠️ **Launchad med paketprisfelet kvar.** Granskningen 2026-09-11 fällde det som
+"blockerar-launch": 2- och 3-packpriserna i NOK-vyn är oomräknade svenska
+belopp märkta "kr" (2-pack 1 919,30 i stället för 1 880,20; 3-pack 2 709,60 i
+stället för 2 654,40). Enstyckspriset 1 106 NOK är rätt, och ingen av de nio
+annonserna nämner pris.
+
+Axels besked 2026-09-12: *"Va sätt bara igång norge så får prisöversättningen
+fungera."* Beslutet är ägarens och det är loggat här, inte bortglömt.
+Blockeraren står kvar som öppen.
+
+⚠️ **Rotorsaken är INTE verifierad.** Granskaren pekade på
+`factory/paket.mjs` rad 52 — metafältet `fastpris` är `number_decimal`, inte
+`money` — och antog att Shopify Markets räknar om `money`-fält men inte
+`number_decimal`. Att Shopify auto-konverterar `money`-metafält är ett
+**obekräftat påstående**, och `paket.mjs` delas av ALLA OPS-butiker. Ändra inte
+fälttypen förrän någon bekräftat beteendet mot Shopifys dokumentation eller en
+testbutik — ett metafälts typ går dessutom inte att ändra på plats, det måste
+raderas och skapas om.
+
+### Kvar på Norge
+De tre CS-videorna är omdubbade till butikens riktiga tal och renderade, men
+captionpillret bär fortfarande källans text. Kvar: padding → röstkoll →
+`no-precis.py` → OCR-verifiering → upp i NO-kampanjens CS-adset (som ännu inte
+finns, eftersom CS hölls utanför NO-konfigen).

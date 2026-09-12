@@ -253,11 +253,17 @@ meta:
       annonser: 16
       status: "ACTIVE — tillbakaläst ur Meta på alla tre nivåer"
     no:
-      datum: ""
+      datum: "2026-09-12"
       kampanj: "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11"
       kampanj_id: "120249050596730172"
+      budget_per_dag: 1000
+      struktur: "CBO, tre adsets (PD/SP/G), ingen egen adsetbudget"
       annonser: 9
-      status: "PAUSED — HÅLLS TILLBAKA"
+      status: "ACTIVE — tillbakaläst ur Meta på alla tre nivåer"
+      # ⚠️ Launchad på Axels uttryckliga beslut 2026-09-12 ("sätt bara igång
+      # norge") TROTS att paketpriserna på den norska landningssidan fortfarande
+      # visar oomräknade svenska belopp. Beslutet är ägarens; blockeraren nedan
+      # står kvar som öppen och är inte löst av launchen.
       # ⚠️ Förlanseringsgranskningen 2026-09-11 (7 linser, varje fynd angripet
       # av 3 skeptiker) fällde ett fel på den norska LANDNINGSSIDAN, inte i
       # annonserna: paketpriserna för 2- och 3-pack är oomräknade SEK-belopp

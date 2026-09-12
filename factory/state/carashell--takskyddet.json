@@ -86,14 +86,14 @@
         "NO": {
           "id": "120249050596730172",
           "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
-          "status": "PAUSED",
+          "status": "ACTIVE",
           "adsets": [
             "PD",
             "SP",
             "G"
           ],
           "annonser": 9,
-          "launchad": null
+          "launchad": "2026-09-12"
         }
       },
       "media_uppe": {
@@ -101,8 +101,8 @@
         "bilder": 4
       },
       "rakning": "SE klart (16/16). NO 9 av 12 uppe — CS ×3 hålls tillbaka.",
-      "blockerare": "NO-landningssidans paketpriser är oomräknade SEK-belopp märkta \"kr\" i NOK-vyn (2-pack 1919,30 borde vara 1880,20; 3-pack 2709,60 borde vara 2654,40). Rotorsak: factory/paket.mjs sätter fastpriset som number_decimal, inte money — Shopify Markets räknar bara om money-fält. Enstyckspriset 1106 NOK är rätt.",
-      "manuell": "Rätta paketpriserna på norska marknaden, verifiera i kundens vy med curl https://carashell.se/products/takskyddet.js?country=NO, kör sedan: node factory/launch-carashell.mjs --marknad NO",
+      "blockerare": "ÖPPEN men överkörd av Axel 2026-09-12: NO-landningssidans paketpriser är oomräknade SEK-belopp. Rotorsaken (paket.mjs number_decimal vs money) är INTE verifierad — paket.mjs delas av alla OPS-butiker.",
+      "manuell": "Kvar på NO: de tre CS-videorna är renderade men captionpillret bär källans text. padding -> röstkoll -> no-precis.py -> OCR -> CS-adset i NO-kampanjen.",
       "granskning": {
         "datum": "2026-09-11",
         "linser": 7,
@@ -121,5 +121,5 @@
     "kritiska": [],
     "tid": "2026-09-10T23:07:38.577Z"
   },
-  "uppdaterad": "2026-09-11T16:41:39.330Z"
+  "uppdaterad": "2026-09-12T03:49:34.020Z"
 }
