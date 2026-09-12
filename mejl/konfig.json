@@ -47,8 +47,16 @@
     "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
-    "inklistrade_comment": "Tomt = v2 (erbjudandet överst, urgency, logga) är INTE inklistrad än. v1 klistrades in 2026-09-12 kväll av Cowork i sju mallar (se inklistrade_v1) — de ligger kvar i Shopify tills v2 klistras över dem.",
-    "inklistrade": {},
+    "inklistrade_comment": "v2 (erbjudandet överst, urgency, logga) inklistrad av Cowork 2026-09-12 sent på kvällen i sju mallar, verifierad efter omladdning med samma teckenlängd som artefaktens v2. v1 (se inklistrade_v1) är helt ersatt.",
+    "inklistrade": {
+      "orderbekraftelse": "2026-09-12 v2",
+      "fraktbekraftelse": "2026-09-12 v2",
+      "fraktuppdatering": "2026-09-12 v2",
+      "ute_for_leverans": "2026-09-12 v2",
+      "levererad": "2026-09-12 v2",
+      "aterbetalning": "2026-09-12 v2",
+      "avbruten_order": "2026-09-12 v2"
+    },
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",
       "fraktbekraftelse": "2026-09-12",
