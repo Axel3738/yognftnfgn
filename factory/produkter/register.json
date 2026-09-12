@@ -281,7 +281,13 @@
       "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
-      "anteckning": "Upptäckt automatiskt ur state-filen."
+      "anteckning": "Upptäckt automatiskt ur state-filen.",
+      "briefantal_override": {
+        "antal": 21,
+        "engang": true,
+        "motivering": "Axels beslut 2026-09-12: redigerare obestämd men första briefronden ska ändå ge 21 briefer — han fixar redigerare asap",
+        "satt": "2026-09-12"
+      }
     }
   },
   "rutinplatser": {

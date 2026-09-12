@@ -15,6 +15,7 @@ import {
   svenskDatum, veckodag, arBriefdag, normaliseraNotionId, lasDrift,
   OPS_ANNONSKONTO, BAVERBUTIKEN_ANNONSKONTO, CYKEL_DAGAR, TROSKEL,
   BRIEFDAGAR_STANDARD, BRIEF_IKAPP_DAGAR,
+  briefantal, forbrukaBriefantal, BRIEFANTAL_KADENS, BRIEFANTAL_UTAN_REDIGERARE,
 } from '../register.mjs';
 
 const post = (extra = {}) => ({
@@ -463,4 +464,84 @@ test('redigerareFor hittar aldrig på en person', () => {
   assert.equal(redigerareFor({ redigerare: '   ' }), null);
   assert.equal(redigerareFor({}), null);
   assert.equal(redigerareFor({ redigerare: 'Josh' }), 'Josh');
+});
+
+// ------------------------------------------------------- briefrondens storlek
+
+test('briefantal väg 3: ingen redigerare → 7, en dags produktion', () => {
+  const b = briefantal(post());
+  assert.equal(b.antal, BRIEFANTAL_UTAN_REDIGERARE);
+  assert.equal(b.antal, 7);
+  assert.equal(b.kalla, 'utan-redigerare');
+});
+
+test('briefantal väg 2: redigerare tilldelad → kadensens 21', () => {
+  const b = briefantal(post({ redigerare: 'Carl Vicente' }));
+  assert.equal(b.antal, BRIEFANTAL_KADENS);
+  assert.equal(b.antal, 21);
+  assert.equal(b.kalla, 'kadens');
+  assert.match(b.skal, /Carl Vicente/);
+});
+
+test('briefantal väg 1: Axels överstyrning vinner över "7 utan redigerare" — CatCabin 2026-09-12', () => {
+  const b = briefantal(post({ briefantal_override: { antal: 21, engang: true, motivering: 'redigerare obestämd men 21 första ronden', satt: '2026-09-12' } }));
+  assert.equal(b.antal, 21);
+  assert.equal(b.kalla, 'override');
+  assert.equal(b.engang, true);
+  assert.match(b.skal, /ÖVERSTYRD/);
+  assert.match(b.skal, /engång/);
+  assert.match(b.skal, /2026-09-12/);
+  // Tillsvidare står kvar — och säger hur den nollas.
+  const t = briefantal(post({ briefantal_override: { antal: 14, engang: false, motivering: 'x' } }));
+  assert.equal(t.engang, false);
+  assert.match(t.skal, /tillsvidare/);
+});
+
+test('en skräpöverstyrning räknas som ingen — talet hittas aldrig på', () => {
+  for (const skrap of [null, {}, { antal: 0 }, { antal: -3 }, { antal: '21' }, { antal: 2.5 }, 'tjugoett']) {
+    assert.equal(briefantal(post({ briefantal_override: skrap })).kalla, 'utan-redigerare', JSON.stringify(skrap));
+  }
+});
+
+test('forbrukaBriefantal: engång förbrukas av brief-kord med spår, tillsvidare står kvar', () => {
+  const rad = { briefantal_override: { antal: 21, engang: true, motivering: 'm', satt: '2026-09-12' } };
+  const f = forbrukaBriefantal(rad, '2026-09-13');
+  assert.equal(f.antal, 21);
+  assert.equal(f.forbrukad, '2026-09-13');
+  assert.equal(rad.briefantal_override, null);
+  assert.equal(rad.briefantal_override_forbrukad.forbrukad, '2026-09-13');
+  assert.equal(briefantal(rad).antal, 7, 'nästa rond går på standard igen');
+
+  const kvar = { briefantal_override: { antal: 14, engang: false, motivering: 'm' } };
+  assert.equal(forbrukaBriefantal(kvar, '2026-09-13'), null);
+  assert.equal(kvar.briefantal_override.antal, 14);
+  assert.equal(forbrukaBriefantal({ redigerare: 'x' }, '2026-09-13'), null, 'ingen överstyrning — inget händer');
+});
+
+test('byggRegister väver in briefantal_override ur driftraden, skräp blir null', () => {
+  const upptackta = [
+    { nyckel: 'a/1', lage: 'skala', byggd: true },
+    { nyckel: 'b/1', lage: 'skala', byggd: true },
+  ];
+  const r = byggRegister({
+    upptackta,
+    drift: { poster: {
+      'a/1': { briefantal_override: { antal: 21, engang: true, motivering: 'Axel 2026-09-12' } },
+      'b/1': { briefantal_override: { antal: 'många' } },
+    } },
+  });
+  const hitta = (n) => r.produkter.find((p) => p.nyckel === n);
+  assert.equal(briefantal(hitta('a/1')).antal, 21);
+  assert.equal(hitta('b/1').briefantal_override, null);
+  assert.equal(briefantal(hitta('b/1')).antal, 7);
+});
+
+test('register.json: CatCabins första briefrond är överstyrd till 21 (Axels beslut 2026-09-12) tills brief-kord förbrukat den', () => {
+  const drift = lasDrift();
+  const rad = drift.poster['catcabin/utekattkojan'];
+  assert.ok(rad, 'catcabin/utekattkojan saknas i register.json');
+  const o = rad.briefantal_override ?? rad.briefantal_override_forbrukad;
+  assert.ok(o, 'varken en gällande eller en förbrukad överstyrning finns — beslutet har försvunnit ur registret');
+  assert.equal(o.antal, 21);
+  assert.match(o.motivering, /2026-09-12/);
 });
