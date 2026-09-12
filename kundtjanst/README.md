@@ -137,6 +137,29 @@ historik — innan dess säger rapporten det i stället för att gissa.
 - **Allt i Discord är på engelska.** Den engelska rapporten genereras direkt;
   `tools/lib/engelska.mjs` stoppar ändå svensk text.
 
+## Nätet: var rutinen kan läsa mejlen
+
+⚠️ **Mätt 2026-09-12 i en claude.ai-container:** direkt TCP mot port 993 får
+inget svar; `CONNECT` genom sessionens proxy svarar 200 men tunneln bryts under
+TLS-handskakningen — mot `mailcluster.loopia.se`, `imap.gmail.com` **och**
+`outlook.office365.com`, medan 443 går fint (riktigt DigiCert-cert, ingen
+MITM). Docs bekräftar: "Cloud sessions in Anthropic-hosted environments run
+behind an HTTP/HTTPS network proxy … All outbound internet traffic … passes
+through this proxy" — även nivån **Full** ("Any domain") är HTTP/HTTPS. IMAP
+går alltså inte från claude.ai-rutiner, oavsett nätverksnivå. Klienten upptäcker
+det (kod `PROXY_SPARRAR_PORTEN`) och hoppar brandet med en tydlig text i
+stället för att hänga.
+
+| Väg | Var | Mejlen kommer från | Krav |
+|---|---|---|---|
+| **A. `--jobb <fil.json>`** | rutinen på claude.ai | Gmail-connectorn i sessionen (Loopia vidarebefordrar `hello@<brand>` till en Gmail-inkorg) | connector kopplad på rutinen; sessionen skriver JSON, formatet står i `run.mjs` och i kommandofilen |
+| **B. IMAP direkt** | Claude Code lokalt, en cron på en dator, Railway, self-hosted environment | Loopia | `KUNDTJANST_MAIL_PASS_<ID>` och öppen port 993 |
+| **C. `--fixtur <mapp>`** | var som helst | `.eml`-filer | bara tester och demo |
+
+Shopify, Notion, Discord och modellen går över HTTPS och fungerar överallt.
+Väg A är den som gör rutinen helt klickfri på claude.ai; väg B är den enklaste
+om Axel eller VA:n ändå kör Claude Code lokalt en gång i veckan.
+
 ## Loopia
 
 IMAP `mailcluster.loopia.se`, port 993 (SSL), användarnamn = hela mejladressen,
@@ -150,7 +173,7 @@ och svarstiderna mäts då bara på svar som råkar ligga i inkorgen —
 ## Tester
 
 ```bash
-node --test kundtjanst/test/*.test.mjs     # 63 tester, inget nät
+node --test kundtjanst/test/*.test.mjs     # 67 tester, inget nät
 npm test                                   # hela repot
 ```
 

@@ -11,8 +11,20 @@
 //   node kundtjanst/run.mjs --notion                skapa rapportsidan i brandets Notion-databas
 //   node kundtjanst/run.mjs --json                  maskinläsbart på stdout
 //   node kundtjanst/run.mjs --fixtur <mapp>         läs .eml/JSON ur en mapp i stället för nätet (tester, demo)
+//   node kundtjanst/run.mjs --jobb <fil.json>       mejlen ur en JSON-fil (sessionen byggde den med Gmail-connectorn) — se nedan
 //   node kundtjanst/run.mjs --utan-modell           ingen LLM ens om ANTHROPIC_NYCKEL finns
 //   node kundtjanst/run.mjs --kolla                 bara: vilka brands, vilka nycklar saknas (inget läses)
+//
+// ⚠️ NÄTET I CLAUDE.AI (mätt 2026-09-12): containern släpper bara HTTPS genom
+// sin proxy. IMAP 993 mot Loopia, Gmail och Office 365 bryts under
+// TLS-handskakningen — se kundtjanst/imap.mjs SPARRAD_PORT. Rutinen på
+// claude.ai läser därför mejlen på ett av två andra sätt:
+//   • --jobb <fil.json>: sessionen hämtar mejlen med Gmail-connectorn (Loopia
+//     vidarebefordrar hello@<brand> dit) och skriver JSON:
+//     { "<brandId>": { "inkorg": [ { id, threadId, from, to, subject, date, text } ], "skickat": [ … ] } }
+//     Samma form för alla brands; "skickat" = svaren från supportadressen.
+//   • kör run.mjs där nätet är öppet (Claude Code lokalt, en cron, Railway) —
+//     då går IMAP direkt.
 //
 // ⚠️ LÄS-BARA mot mejlen och Shopify. Markerar inget som läst, flyttar inget,
 // svarar på inget, ändrar ingen order. Skriver: kundtjanst/korningar/ och
@@ -28,7 +40,7 @@ import { fileURLToPath } from 'node:url';
 import { upptackBrands, korkonfig, valjBrands, brandUrEgenfil, STANDARD_TROSKLAR } from './brands.mjs';
 import { lasYaml } from '../factory/yaml.mjs';
 import { ImapKlient, hamtaMapp } from './imap.mjs';
-import { tolkaMejl } from './mime.mjs';
+import { tolkaMejl, tolkaAdress, normaliseraAmne, taBortCitat, htmlTillText } from './mime.mjs';
 import { byggArenden, sammanfattaArenden } from './arenden.mjs';
 import { ShopifyLasare, kopplaOrdrar, normaliseraOrder, normaliseraTvist } from './shopify.mjs';
 import { bedomRisk, rankaBrands, aterkommande } from './chargeback.mjs';
@@ -77,6 +89,45 @@ function lasEmlMapp(mapp) {
 
 const lasJson = (fil, standard) => (existsSync(fil) ? JSON.parse(readFileSync(fil, 'utf8')) : standard);
 
+/**
+ * En rad ur en jobbfil (Gmail-connectorn, eller vad som helst som ger
+ * from/to/subject/date/text) → samma form som mime.tolkaMejl ger. Ren.
+ * Gmail har trådid i stället för References: den läggs som en referens så
+ * arenden.mjs trådar ihop meddelandena. `html` används om `text` saknas.
+ */
+export function mejlUrJobb(rad, { uid = null, mapp = null } = {}) {
+  const r = rad ?? {};
+  const fran = tolkaAdress(r.from ?? r.fran ?? '');
+  const till = String(r.to ?? r.till ?? '').split(',').map(tolkaAdress).filter((a) => a.adress);
+  const amne = String(r.subject ?? r.amne ?? '').trim();
+  const d = r.date ?? r.datum ?? r.internalDate ?? null;
+  const datum = d ? new Date(/^\d{13}$/.test(String(d)) ? Number(d) : d) : null;
+  const helText = String(r.text ?? r.body ?? (r.html ? htmlTillText(r.html) : '') ?? r.snippet ?? '').trim();
+  const egetId = String(r.messageId ?? r.id ?? '').trim();
+  const messageId = egetId ? (egetId.match(/<[^>]+>/)?.[0] ?? `<jobb-${egetId}>`) : '';
+  const references = [...new Set([
+    ...(`${r.references ?? ''} ${r.inReplyTo ?? ''}`.match(/<[^>]+>/g) ?? []),
+    ...(r.threadId ? [`<jobb-trad-${String(r.threadId).trim()}>`] : []),
+  ])];
+  return {
+    uid, mapp, messageId, references, fran, till, amne,
+    amneNyckel: normaliseraAmne(amne),
+    datum: datum && !Number.isNaN(datum.getTime()) ? datum : null,
+    text: taBortCitat(helText),
+    helText,
+    autosvar: r.autoReply === true || /^(auto-?reply|autosvar|out of office|frånvaro|automatic reply|automatiskt svar)/i.test(amne),
+    listmejl: Boolean(r.listmejl ?? r.listUnsubscribe),
+  };
+}
+
+/** Jobbfilen → { inkorg, skickat } för ett brand. Saknas brandet: null. */
+export function jobbForBrand(jobb, brandId) {
+  const j = jobb?.[brandId];
+  if (!j) return null;
+  const mapp = (lista, namn) => (Array.isArray(lista) ? lista : []).map((r, i) => mejlUrJobb(r, { uid: i + 1, mapp: namn }));
+  return { inkorg: mapp(j.inkorg ?? j.inbox, 'jobb:inkorg'), skickat: mapp(j.skickat ?? j.sent, 'jobb:skickat') };
+}
+
 // ------------------------------------------------------------------ ett brand
 
 /**
@@ -84,7 +135,7 @@ const lasJson = (fil, standard) => (existsSync(fil) ? JSON.parse(readFileSync(fi
  * Returnerar resultatobjektet rapport.mjs läser, eller { hoppad, orsak }.
  */
 export async function korBrand(brand, {
-  nu = new Date(), dagar = 7, torr = false, utanModell = false, fixtur = null, env = process.env, logg = () => {}, historik = null,
+  nu = new Date(), dagar = 7, torr = false, utanModell = false, fixtur = null, jobb = null, env = process.env, logg = () => {}, historik = null,
 } = {}) {
   const konfig = korkonfig(brand, env);
   const vecka = isoVecka(nu);
@@ -102,6 +153,13 @@ export async function korBrand(brand, {
     inkorg = lasEmlMapp(join(fixtur, brand.id, 'inkorg'));
     skickat = lasEmlMapp(join(fixtur, brand.id, 'skickat'));
     kallor.push(`fixtur ${brand.id} (${inkorg.length} in, ${skickat.length} ut)`);
+  } else if (jobb) {
+    const j = jobbForBrand(jobb, brand.id);
+    if (!j) return { brand: konfig, vecka, hoppad: true, orsak: `jobbfilen saknar brandet "${brand.id}" — nyckeln på toppnivån ska vara brand-id:t` };
+    inkorg = j.inkorg;
+    skickat = j.skickat;
+    kallor.push(`jobbfil ${brand.id} (${inkorg.length} in, ${skickat.length} ut)`);
+    if (!skickat.length) varningar.push('Jobbfilen har inga skickade svar ("skickat" tom) — obesvarat och svarstid räknas bara på svar som ligger bland de inkommande. Hämta även from:<supportmailen> i Gmail-sökningen.');
   } else if (!konfig.mail.konfigurerad) {
     return { brand: konfig, vecka, hoppad: true, orsak: `mejlen kan inte läsas — saknar ${konfig.mail.saknas.join(', ')}` };
   } else {
@@ -116,7 +174,8 @@ export async function korBrand(brand, {
       kallor.push(`${konfig.mail.user} (${inb.mapp}: ${inb.antal}, ${ut.mapp ?? 'ingen skickat-mapp'}: ${ut.antal})`);
       if (!ut.mapp) varningar.push(`Ingen Skickat-mapp hittades (provade ${konfig.mail.skickat.join(', ')}) — svarstider och "obesvarat" räknas då bara på svar som ligger i inkorgen. Sätt mail.skickat i brandfilen; node kundtjanst/setup.mjs --mappar ${brand.id} listar namnen.`);
     } catch (e) {
-      return { brand: konfig, vecka, hoppad: true, orsak: `IMAP ${konfig.mail.host}: ${e.message}` };
+      const tips = e.kod === 'PROXY_SPARRAR_PORTEN' ? ' → kör med --jobb <fil.json> (mejlen via Gmail-connectorn) eller kör run.mjs där nätet är öppet.' : '';
+      return { brand: konfig, vecka, hoppad: true, orsak: `IMAP ${konfig.mail.host}: ${e.message}${tips}`, kod: e.kod ?? null };
     } finally {
       await klient.stang();
     }
@@ -251,6 +310,13 @@ export async function huvud(argv = process.argv.slice(2), env = process.env) {
   const finns = (n) => argv.includes(`--${n}`);
   const torr = finns('torr');
   const fixtur = flagga(argv, 'fixtur') ? resolve(flagga(argv, 'fixtur')) : null;
+  let jobb = null;
+  if (flagga(argv, 'jobb')) {
+    const fil = resolve(flagga(argv, 'jobb'));
+    if (!existsSync(fil)) { console.error(`✗ Jobbfilen ${fil} finns inte.`); process.exit(1); }
+    try { jobb = JSON.parse(readFileSync(fil, 'utf8')); } catch (e) { console.error(`✗ Jobbfilen går inte att läsa som JSON: ${e.message}`); process.exit(1); }
+    if (!jobb || typeof jobb !== 'object' || Array.isArray(jobb)) { console.error('✗ Jobbfilen ska vara ett objekt { "<brandId>": { "inkorg": [...], "skickat": [...] } }.'); process.exit(1); }
+  }
   const dagar = Number(flagga(argv, 'dagar', 7)) || 7;
   const datumArg = flagga(argv, 'datum');
   const nu = datumArg ? new Date(`${datumArg}T12:00:00Z`) : new Date();
@@ -277,13 +343,13 @@ export async function huvud(argv = process.argv.slice(2), env = process.env) {
     return { brands, kolla: true };
   }
 
-  console.error(`Kundtjänst vecka ${isoVecka(nu)} — ${brands.length} brand(s), ${dagar} dagar${torr ? ' — TORR (inget skrivs, inget postas)' : ''}${fixtur ? ` — fixtur ${fixtur}` : ''}`);
+  console.error(`Kundtjänst vecka ${isoVecka(nu)} — ${brands.length} brand(s), ${dagar} dagar${torr ? ' — TORR (inget skrivs, inget postas)' : ''}${fixtur ? ` — fixtur ${fixtur}` : ''}${jobb ? ` — jobbfil (${Object.keys(jobb).join(', ')})` : ''}`);
   const resultat = [];
   for (const b of brands) {
     console.error(`\n▶ ${b.brand} (${b.id})`);
     let r;
     try {
-      r = await korBrand(b, { nu, dagar, torr, utanModell: finns('utan-modell'), fixtur, env, logg });
+      r = await korBrand(b, { nu, dagar, torr, utanModell: finns('utan-modell'), fixtur, jobb, env, logg });
     } catch (e) {
       r = { brand: korkonfig(b, env), vecka: isoVecka(nu), hoppad: true, orsak: e.message };
     }

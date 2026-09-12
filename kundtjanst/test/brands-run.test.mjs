@@ -129,3 +129,52 @@ test('setup: status per brand och rutinförslag för måndag med sommar/vinter-c
   assert.equal(f.steg[1].argument.prompt, '/kundtjanst --alla --discord');
   assert.equal(f.steg[0].argument.outcome_branch, 'main');
 });
+
+// Jobbfilen: mejlen ur JSON (Gmail-connectorn) när IMAP inte går från claude.ai.
+import { mejlUrJobb, jobbForBrand } from '../run.mjs';
+
+test('en jobbrad blir samma form som ett tolkat mejl, med Gmails trådid som referens', () => {
+  const m = mejlUrJobb({ id: '18f3a', threadId: 't77', from: 'Anna Karlsson <Anna@Gmail.com>', to: 'hello@demobutiken.se', subject: 'Re: Var är min order #1042?', date: '2026-09-12T04:00:00Z', text: 'Fortfarande inget paket.\n\nDen 9 sep. skrev Demobutiken <hello@demobutiken.se>:\n> spårning' });
+  assert.equal(m.messageId, '<jobb-18f3a>');
+  assert.deepEqual(m.references, ['<jobb-trad-t77>']);
+  assert.equal(m.fran.adress, 'anna@gmail.com');
+  assert.equal(m.till[0].adress, 'hello@demobutiken.se');
+  assert.equal(m.amneNyckel, 'var är min order #1042?');
+  assert.equal(m.text, 'Fortfarande inget paket.');
+  assert.equal(m.datum.toISOString(), '2026-09-12T04:00:00.000Z');
+  const html = mejlUrJobb({ from: 'x@y.se', subject: 'Automatic reply: hej', html: '<p>Borta &ndash; tillbaka <b>måndag</b></p>', internalDate: '1789200000000' });
+  assert.equal(html.autosvar, true);
+  assert.equal(html.helText, 'Borta – tillbaka måndag');
+  assert.equal(html.datum.toISOString(), '2026-09-12T08:00:00.000Z', 'Gmails internalDate i millisekunder');
+  assert.equal(mejlUrJobb({}).fran.adress, '');
+});
+
+test('jobbfilen trådar på Gmails trådid och kör hela flödet', async () => {
+  const jobb = {
+    demobutiken: {
+      inkorg: [
+        { id: 'a1', threadId: 't1', from: 'Ola <ola@online.no>', to: 'hello@demobutiken.se', subject: 'Pakken har ikke kommet', date: '2026-09-08T16:40:00Z', text: 'Ordre 1038 har ikke kommet.' },
+        { id: 'a2', threadId: 't1', from: 'Ola <ola@online.no>', to: 'hello@demobutiken.se', subject: 'Re: Pakken har ikke kommet', date: '2026-09-11T08:00:00Z', text: 'Fortsatt ingenting. Andre gang jeg skriver.' },
+        { id: 'a3', threadId: 't2', from: 'Lisa <lisa@icloud.com>', to: 'hello@demobutiken.se', subject: 'Passar den?', date: '2026-09-13T10:00:00Z', text: 'Passar den till 60 cm?' },
+      ],
+      skickat: [
+        { id: 's1', threadId: 't1', from: 'Demobutiken <hello@demobutiken.se>', to: 'ola@online.no', subject: 'Re: Pakken har ikke kommet', date: '2026-09-09T07:00:00Z', text: 'Hei Ola, her er sporing.' },
+      ],
+    },
+  };
+  const brand = brandUrEgenfil(lasYaml('brand:\n  namn: "Demobutiken"\n  supportmail: "hello@demobutiken.se"\n'), 'demobutiken');
+  assert.equal(jobbForBrand(jobb, 'finnsinte'), null);
+  const r = await korBrand(brand, { nu: new Date('2026-09-14T12:00:00Z'), torr: true, utanModell: true, jobb, env: {}, historik: [] });
+  assert.equal(r.hoppad, false);
+  assert.equal(r.kallor[0], 'jobbfil demobutiken (3 in, 1 ut)');
+  assert.equal(r.sammanfattning.antalArenden, 2, 'två trådar, inte tre mejl');
+  const ola = r.arenden.find((a) => a.kund.adress === 'ola@online.no');
+  assert.equal(ola.antalInkommande, 2);
+  assert.equal(ola.antalSvar, 1);
+  assert.equal(ola.besvarad, false, 'kundens andra mejl kom efter vårt svar');
+  assert.equal(ola.larmObesvarad, true);
+  assert.equal(ola.kategori, 'ej_levererad');
+  const utanBrand = await korBrand(brandUrEgenfil(lasYaml('brand:\n  namn: "X"\n  supportmail: "hello@x.se"\n'), 'x'), { jobb, env: {}, historik: [] });
+  assert.equal(utanBrand.hoppad, true);
+  assert.match(utanBrand.orsak, /saknar brandet "x"/);
+});

@@ -78,6 +78,10 @@ export function byggArenden({ inkorg = [], skickat = [], brand, nu = new Date(),
 
     const nyckel = tradnyckel(m, motpart, kartaMessageId);
     if (m.messageId) kartaMessageId.set(m.messageId, nyckel);
+    // Även referenserna pekar på den här tråden — så ett mejl vars References
+    // nämner ett id vi aldrig såg (raderat, eller Gmails trådid via
+    // run.mjs mejlUrJobb) ändå hamnar ihop med nästa som nämner samma id.
+    for (const ref of m.references ?? []) if (!kartaMessageId.has(ref)) kartaMessageId.set(ref, nyckel);
     if (!trader.has(nyckel)) trader.set(nyckel, { nyckel, motpart, mejl: [] });
     trader.get(nyckel).mejl.push({ ...m, utgaende });
   }
