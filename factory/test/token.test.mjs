@@ -636,3 +636,39 @@ test('anslut: kravScopes=false hoppar över scope-spärren (bara för verktyg so
   assert.equal(b.harProdukter, null);
   t.stada();
 });
+
+// -------------------------------------------------- lösenordet följer adressen
+//
+// CatCabin 2026-09-11: checklistan låter den som klickar döpa ALLA fyra raderna
+// efter adressens början (…_RAS1T2_2X). Tokenen hittades via adressen, men
+// lösenordet slogs upp på butiks-id:t (catcabin) och föll tillbaka på den
+// allmänna raden — TackleBays. Kundvyn blev röd med "Lösenordet avvisades"
+// fast rätt lösenord låg i miljön hela tiden.
+
+test('anslut: storefront-lösenordet slås upp på adressens suffix, inte på butiks-id:t', async () => {
+  const t = tempMappar();
+  const { fetchFn } = fejkShopify({ namn: 'My Store 5', doman: 'ras1t2-2x.myshopify.com' });
+  const env = {
+    SHOPIFY_SHOP_ras1t2_2x: 'ras1t2-2x.myshopify.com',
+    SHOPIFY_CLIENT_ID_ras1t2_2x: 'cid',
+    SHOPIFY_CLIENT_SECRET_ras1t2_2x: 'csec',
+    SHOPIFY_STOREFRONT_PASSWORD_ras1t2_2x: 'ratt',
+    SHOPIFY_STOREFRONT_PASSWORD: 'grannens',
+  };
+  const b = await anslut('catcabin', {
+    env,
+    envFil: join(t.rot, '.env'),
+    fetchFn,
+    sparrAlternativ: t.alt,
+    utanEnvFil: true,
+    onskadDoman: 'https://ras1t2-2x.myshopify.com/',
+  });
+  assert.equal(b.domain, 'ras1t2-2x.myshopify.com');
+  assert.equal(env.SHOPIFY_STOREFRONT_PASSWORD, 'ratt', 'adressens rad vinner över den allmänna');
+
+  // Utan adress i prompten gäller id-uppslaget som förut.
+  const env2 = { SHOPIFY_SHOP: 'ny1234-ab.myshopify.com', SHOPIFY_CLIENT_ID: 'cid', SHOPIFY_CLIENT_SECRET: 'csec', SHOPIFY_STOREFRONT_PASSWORD_NYBUTIK: 'egen', SHOPIFY_STOREFRONT_PASSWORD: 'allman' };
+  await anslut('nybutik', { env: env2, envFil: join(t.rot, '.env'), fetchFn: fejkShopify().fetchFn, sparrAlternativ: t.alt, utanEnvFil: true });
+  assert.equal(env2.SHOPIFY_STOREFRONT_PASSWORD, 'egen');
+  t.stada();
+});

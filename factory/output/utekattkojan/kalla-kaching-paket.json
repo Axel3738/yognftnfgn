@@ -1,0 +1,38 @@
+{
+  "kalla": "baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus — <script class=\"kaching-bundles-deal-block-settings\"> i sidans HTML",
+  "last": "2026-09-11",
+  "preselectedDealBarId": "st2b",
+  "useProductCompareAtPrice": true,
+  "dealBars": [
+    {
+      "id": "st1a",
+      "title": "1 st",
+      "subtitle": "Standard pris",
+      "badgeText": "",
+      "quantity": 1,
+      "discountType": "percentage",
+      "discountValue": 0,
+      "freeGifts": []
+    },
+    {
+      "id": "st2b",
+      "title": "2 st",
+      "subtitle": "",
+      "badgeText": "Mest populär",
+      "quantity": 2,
+      "discountType": "percentage",
+      "discountValue": 15,
+      "freeGifts": []
+    },
+    {
+      "id": "st3c",
+      "title": "3 st",
+      "subtitle": "",
+      "badgeText": "",
+      "quantity": 3,
+      "discountType": "percentage",
+      "discountValue": 20,
+      "freeGifts": []
+    }
+  ]
+}

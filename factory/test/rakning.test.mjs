@@ -395,3 +395,30 @@ test('LADDAS_UPP innehåller aldrig okänd eller odömd', () => {
   assert.equal(LADDAS_UPP.includes(DOMAR.OKAND), false);
   assert.equal(LADDAS_UPP.includes(DOMAR.ODOMD), false);
 });
+
+// --------------------------------------------------------- uteslutna.json
+// CatCabin 2026-09-11: fyra CS-annonser hölls tillbaka på ett ägarbeslut.
+// Rapporten skrev "orsak saknas — måste namnges" trots att orsaken var känd,
+// eftersom brand-detektor.json och kallannonser.json skrivs om vid varje
+// körning av sina verktyg. Orsaken bor därför i en egen fil.
+
+test('en namngiven orsak följer med källraden in i rapporten', () => {
+  const r = byggRakning({
+    kallor: [kalla('Utekattkoja_CS_1_H1', 'kräver-omdubb', { orsak: 'VÄNTAR PÅ ÄGARBESLUT — hela vinkeln är en kampanj butiken inte kör' })],
+    uppladdade: [],
+    marknad: 'SE',
+  });
+  assert.equal(r.saknade.length, 1);
+  assert.match(r.saknade[0].orsak, /ÄGARBESLUT/);
+  assert.doesNotMatch(r.saknade[0].orsak, /orsak saknas/);
+});
+
+test('utan orsak står det fortfarande att den MÅSTE namnges', () => {
+  const r = byggRakning({
+    kallor: [kalla('Utekattkoja_CS_1_H1', 'kräver-omdubb')],
+    uppladdade: [],
+    marknad: 'SE',
+  });
+  assert.equal(r.saknade.length, 1);
+  assert.match(r.saknade[0].orsak, /orsak saknas — måste namnges/);
+});

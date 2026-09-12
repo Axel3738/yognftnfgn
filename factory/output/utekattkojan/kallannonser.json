@@ -1,0 +1,1127 @@
+{
+  "SE": {
+    "konto": {
+      "id": "1867947880635861",
+      "namn": "MagiBorsten",
+      "valuta": "SEK"
+    },
+    "annonser": [
+      {
+        "id": "120250147330150291",
+        "namn": "Utekattkoja_PD_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147324160291",
+          "namn": "Isolerad Utekattkoja | PD | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1072373358490360",
+          "image_hash": "36f96b4c65512f979cd75e5f1e946e2b",
+          "image_url": null,
+          "video_id": "1739996917237539",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800958822_1739996950570869_1687283567573419310_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=LxRfi1mZk1AQ7kNvwGKnoeJ&_nc_oc=AdpAb1oMXa2BTlsXRVe7jHlh5oC-W18ZMboEAHs2YxowPOj9czvp93ncaMAMSNOYoHg&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQJz-MkZMpCOShHFUEKTfxBijQSbZJQ9Gbb38wYpgb3FsQBVoodSL9b9ud7hgWCRaIx_4WIfwpdh3Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJsAMlrszTtcCw6TQjugjxfNqIvy9C-EmIf7bOMFMc-vg&oe=6AA9F180",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Din katt fryser ute – utan att du vet om det. 🐾\r\n✅ Håller katten torr när det regnar\r\n✅ Blockerar vind och kyla\r\n✅ Isolerad – behåller värmen inne\r\n✅ Ger katten en egen trygg plats utomhus\r\nGe din katt ett varmt och tryggt hem – även utomhus. Beställ ditt Isolerat Utekattehus idag. 👇",
+          "headline": "Ett varmt hem – även utomhus",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1798.79,
+          "kop": 5,
+          "roas": 2.500181
+        },
+        "med": true
+      },
+      {
+        "id": "120250147343040291",
+        "namn": "Utekattkoja_SP_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147332660291",
+          "namn": "Isolerad Utekattkoja | SP | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "3790637144407389",
+          "image_hash": "0fc8b5f1e3601fc30900fcbd26706a88",
+          "image_url": null,
+          "video_id": "2592333441188862",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800993318_2592333461188860_5724188730161994677_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=G_E7tc7fsZkQ7kNvwGBGBk9&_nc_oc=Adrtr2iRX2hqEQm6tkfuUSGcgagW3vAVw3Ot6L4keR0QLc1hOjSgrnwFtxng6ev1DHI&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQKGB7jwfgjVQ9ReQ4NtEhrgh-1hlguAMvpLiMps2uvLkkufpRSD0xoESLsYlEzDjBpTAJQYL1xj1g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJrWPbm3R4YpTM38-2VwpAZtQwktm0F6-XsL-eM9YJKmw&oe=6AA9FE99",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Tusentals kattägare har redan gett sina katter ett tryggare liv utomhus. 🐱\r\n✅ \"Min katt sover här varje natt nu\"\r\n✅ Isolerad mot kyla, regn och vind\r\n✅ Enkel att sätta upp – redo direkt\r\nSe varför så många kattägare väljer det här inför vintern. Beställ nu. 👇",
+          "headline": "Kattägare älskar den – se varför",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 578.31,
+          "kop": 2,
+          "roas": 2.72864
+        },
+        "med": true
+      },
+      {
+        "id": "120250147332570291",
+        "namn": "Utekattkoja_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147324160291",
+          "namn": "Isolerad Utekattkoja | PD | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1761726098251867",
+          "image_hash": "5ee95e8a9112d0a616aff051cd9ed5b9",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/800617419_2056747791705480_870352629481435311_n.png?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=ff4730&_nc_ohc=fJoCAB1oN1cQ7kNvwE6aA_l&_nc_oc=AdqSdR9GyazadBaiOd-8f0x4GCIeDinQLiRe-u8KaWfVP227rirGB1oNbQb7BUFa0yM&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQJ29H-e0iTRe3q-F9APimcdKZppZaJT40D7gPKCcnRxTje2FyWrAgTQf-ygKwXlO8xZD8TfbYRxjw&oh=00_AQKKX0GPPZYneFbO1htuMhqTpR3AhffIThX3wWXvsF9cIA&oe=6AA9D7C1",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/16946522487439715617?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKL2hucbiBwTLYnNZQEnh0XiRLcQaTMzV0mAXilYF4iUOZbawicC0MI8NrNgQnWWGEy7u-NDmmipkMFcA_7bzTldAqSCJ0nFZVk4OR0HCAI7cn0FdHpaEGe2Z06DJnL40CpE2KMDFpmpg4Ct6feAEg-&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=VBDZ63fgRMJiffa658MbwQ&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKOb_3JvThlCHbpNWIZFiFkueruwr2A3I0Q6agFiG-LZhw4LZG09RD7lDdJF8ctRQy2vJ5wiP8-JA&oh=06_Q3_DAfNhcEsd62jhH8Ju-fjTOb5jlW9nDfLU77N8aeIXzg1e&oe=6AA5E930",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Din katt fryser ute – utan att du vet om det. 🐾\r\n✅ Håller katten torr när det regnar\r\n✅ Blockerar vind och kyla\r\n✅ Isolerad – behåller värmen inne\r\n✅ Ger katten en egen trygg plats utomhus\r\nGe din katt ett varmt och tryggt hem – även utomhus. Beställ ditt Isolerat Utekattehus idag. 👇",
+          "headline": "Ett varmt hem – även utomhus",
+          "description": "Torrt, vindtätt och isolerat för din katt.",
+          "link": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 487.6,
+          "kop": 1,
+          "roas": 1.61813
+        },
+        "med": true
+      },
+      {
+        "id": "120250147315840291",
+        "namn": "Utekattkoja_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147309330291",
+          "namn": "Isolerad Utekattkoja | CS | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1835754140741940",
+          "image_hash": "e8eb72aacef46408137082de2e9fc6c3",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/800437405_2056746055038987_4068089653992244576_n.png?stp=dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=ff4730&_nc_ohc=r2zKS_1EGkEQ7kNvwFfJKkv&_nc_oc=AdrOHZ-dPYU-6GHDYFewhjF-BoX1X28Qv3GqEkMva12iUoNQJegSqrUAxrMBKNFoHjs&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQKCsC9cPacA3J0-P0oV3e_tpewhP8EKGRUVF5SzMdHWzgX-rHncH8XM_H1y5EQ9OsJYUoK93JL55A&oh=00_AQJT39stRdzLMmfDUqaaIX_Cf4-Ylm21xO-3dXpF3nZItA&oe=6AAA07DD",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/4030374992385968454?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJ8COW2GdlWaigi2waJ_HTAWIJ2nWKMQyRzOfzrD64PEskjFVvYj5RqKvtFv-D9bF8jF0HYFHxNNYo_FjKdxPcO4nxDCA55Dya4Zq5oC01NYiTC-iJMOGz98-UwMBELOp1W17yoCuelc6kN2-T6Gdm9&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=VBDZ63fgRMJiffa658MbwQ&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJllc6txHTLZVAHp9RMaU2PwmjWw0s6O2IYvvuDMJ8m0_nhKNMh-mBj39J3Gp6kETPWybfr3rCGSw&oh=06_Q3_DARZhyyOizLQ_XhvvOsWZlN5g0jheotxVul1GjHvED_K4&oe=6AA5EAD5",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet gäller bara idag. Vänta inte – när det är slut är det slut.\r\n✅ 24% rabatt – enbart idag\r\n✅ Få kvar i lager\r\n✅ Snabb leverans\r\nSäkra ditt till rabatterat pris innan det är för sent. 👇",
+          "headline": "24% RABATT – IDAG",
+          "description": "Erbjudandet gäller bara idag – få kvar.",
+          "link": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 234.27,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147323690291",
+        "namn": "Utekattkoja_GT_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147316000291",
+          "namn": "Isolerad Utekattkoja | GT | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "2503084996867668",
+          "image_hash": "048ce3923b1cfa9d68f05f20c07f6127",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/800603947_2056746935038899_6492428123194287595_n.png?stp=dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=ff4730&_nc_ohc=IY0JdKDSfogQ7kNvwGcIeHZ&_nc_oc=Adq4y_cz1tIRtr-UNFHtu1JbV2K_lajmrA0CDMbuSqIWw9HvREE8L-yEhGXf0R8Z37k&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQJHYvPsTzjK3MeVHpYWm4Vq9Lr3o-b1-Wudr4C182eGd0UoRERwCYGZBzFVOFZo-w7ZA3Cf10bNaA&oh=00_AQJLKtrkPQszqjDdzzU8sPYxUJhrCsVUlb4I31VzxNdcSg&oe=6AA9D5BE",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/8043597402107749592?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJoaLrl8nNsTGFfKKKy7TvJ1u6oiqJ4OJKr1LcdFdU2h7NUR6hH2c_inp3u-TL7gc5CimjW6IHQ1Ym6ddgdHmG714x5CQAXOx12TtFsOAamMNA31UH4tXM2YYJ_RywpPkyDVgiX9emJ8_BLHe4HFRxh&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=VBDZ63fgRMJiffa658MbwQ&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQL7l2lLgPHuWL6714W4AB-qetusLhqSKf2gKxxXIEOhZ5FQhwA1TcP9guvB-S7PUznZZ9K-_Ib8-g&oh=06_Q3_DAXmjm3BmuybOZZY_U5C18-pxpH00L7i7Ssk_AOOPHQ0J&oe=6AA6087D",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Du vet exakt vem som skulle älska den här gåvan. 🎁\r\nDin mamma pratar alltid om katten som bor utanför hennes hus. Föreställ dig hennes ansikte när hon öppnar paketet och förstår att du tänkte på det där hon oroar sig för varje kväll.\r\n✅ En gåva som visar att du verkligen lyssnar\r\n✅ Ger trygghet och värme åt någon hon bryr sig om\r\n✅ Enkel att slå in, omöjlig att glömma\r\nBli den som gav den perfekta presenten i år. Beställ idag. 👇",
+          "headline": "Presenten hon inte förväntar sig",
+          "description": "En gåva som värmer – både katten och hjärtat.",
+          "link": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 113.23,
+          "kop": 2,
+          "roas": 13.936236
+        },
+        "med": true
+      },
+      {
+        "id": "120250147327330291",
+        "namn": "Utekattkoja_PD_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147324160291",
+          "namn": "Isolerad Utekattkoja | PD | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1612437306938724",
+          "image_hash": "bf77ca59bce8a846d025838e7d9ed5ae",
+          "image_url": null,
+          "video_id": "1604767038007193",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800796301_1604767064673857_4086527144855919729_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=-YO7f7Hw4AYQ7kNvwEJdO1s&_nc_oc=AdohwCuoe2Zi1m5H6JJksxtC2-MDZ4yshCbCYajQ36LcyAi7LONVjq5Or1QOL0b4zn0&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQLAmPqIm9GPsgZWz5EwkRETSJ8M0QSifRAx2pH5s5eKqZBbEA0uEWUDrjZkr9tEQqnWzb8LqATaEQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJUcTOAWYJGxcKA68CI7mHafgioujTjIGRSW1yA5C_CKw&oe=6AA9E616",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Din katt fryser ute – utan att du vet om det. 🐾\r\n✅ Håller katten torr när det regnar\r\n✅ Blockerar vind och kyla\r\n✅ Isolerad – behåller värmen inne\r\n✅ Ger katten en egen trygg plats utomhus\r\nGe din katt ett varmt och tryggt hem – även utomhus. Beställ ditt Isolerat Utekattehus idag. 👇",
+          "headline": "Ett varmt hem – även utomhus",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 77.76,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147332310291",
+        "namn": "Utekattkoja_PD_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147324160291",
+          "namn": "Isolerad Utekattkoja | PD | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1110666214729816",
+          "image_hash": "c8e337a3a243cf5b7c9f0d240bf5b10f",
+          "image_url": null,
+          "video_id": "1029170093457463",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800993200_1029170120124127_4737055670052859170_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=nGeEAliAmRcQ7kNvwFMxNTt&_nc_oc=AdpcJZoZgc3WcsyvLzIXDgnS-wV0OV2z0zEJkFbVsbRH0l9bJr5A68rEkwfzclY-YDE&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQJ7-G94FJamoaVLDXVkWkNJqBdsiLO-SvSbTPdObl8hkDoFfs8KEfkRKi-o7Uuw97cdt4GDT4TBjw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKxe-U5PvALCWuoWuKtpHw0Uwld1AvW8cVinBD0kPbM4g&oe=6AA9FCA6",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Din katt fryser ute – utan att du vet om det. 🐾\r\n✅ Håller katten torr när det regnar\r\n✅ Blockerar vind och kyla\r\n✅ Isolerad – behåller värmen inne\r\n✅ Ger katten en egen trygg plats utomhus\r\nGe din katt ett varmt och tryggt hem – även utomhus. Beställ ditt Isolerat Utekattehus idag. 👇",
+          "headline": "Ett varmt hem – även utomhus",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 74.8,
+          "kop": 1,
+          "roas": 10.548128
+        },
+        "med": true
+      },
+      {
+        "id": "120250147314340291",
+        "namn": "Utekattkoja_CS_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147309330291",
+          "namn": "Isolerad Utekattkoja | CS | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1792637242184019",
+          "image_hash": "36f96b4c65512f979cd75e5f1e946e2b",
+          "image_url": null,
+          "video_id": "1405921118306551",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800993212_1405921134973216_3388011316080414402_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=1t3ne4VQn6MQ7kNvwEUxGCU&_nc_oc=AdpHAI47pB8OEU5LQ5-P-bhXxDKb7aH2XWx8n1sU7EZjTzl7Ui7uGJIWAH19dddTl2U&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQKHv4Fq88xTXQt1EQwDpN9mn0afWmIs5AbpwYDTx5b8QZBUOWz8_DeV0oEhIz_hvtv8UDIT4yJBdg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJEuPBL5PYCuMRg0E6qjoBY6rMuk8YmMHVpw2w7t-SFFg&oe=6AA9E0E1",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet gäller bara idag. Vänta inte – när det är slut är det slut.\r\n✅ 24% rabatt – enbart idag\r\n✅ Få kvar i lager\r\n✅ Snabb leverans\r\nSäkra ditt till rabatterat pris innan det är för sent. 👇",
+          "headline": "24% RABATT – IDAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 31.66,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147337080291",
+        "namn": "Utekattkoja_SP_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147332660291",
+          "namn": "Isolerad Utekattkoja | SP | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1424264342964112",
+          "image_hash": "8d2b0bb6ee4ba4458821bbcade815c63",
+          "image_url": null,
+          "video_id": "1038612162344693",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800993203_1038612192344690_2294194836893621446_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=xG7YfjcazzAQ7kNvwE0Zram&_nc_oc=AdpdaTvnOwO4wr--tl7FaQ1OlS8kqslCVvQZI006ceHXz9VpKdzhOzN2j9gTq4B42cY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQKjZg81kvbLxotxHkeq5i7k-C3jj3LKRgdV6nQaCm7g03qAUJEQ424BmFVVYhNvs91TadF36c7BwQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLwyVbx8FsRclLFrGRHAz1AmIWaosL4yJsk4kxJJUwP7g&oe=6AA9F5EF",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Tusentals kattägare har redan gett sina katter ett tryggare liv utomhus. 🐱\r\n✅ \"Min katt sover här varje natt nu\"\r\n✅ Isolerad mot kyla, regn och vind\r\n✅ Enkel att sätta upp – redo direkt\r\nSe varför så många kattägare väljer det här inför vintern. Beställ nu. 👇",
+          "headline": "Kattägare älskar den – se varför",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 23.6,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147311650291",
+        "namn": "Utekattkoja_CS_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147309330291",
+          "namn": "Isolerad Utekattkoja | CS | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1620727009657921",
+          "image_hash": "61886c875e642c92bb4a828bed9475e4",
+          "image_url": null,
+          "video_id": "1057473926990737",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801044560_1057473950324068_2620660000696175383_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=FWjkHF5w0e8Q7kNvwEQ50IH&_nc_oc=AdobkCzqaSj_2-nV0MolLs-nK_PpGQlpXuEe-mz-8ZlQ4kx1QBDE4T1rBF_B2ghdZWk&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQJRGQ4vrcbD9r8FSU1F8xri1IPEJybeWP-2Q20V6JwqawgjAnxJA_opjPveUlcUEl5ohQW95HwtPw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIPukNbJK6zDV5ovYkdE7QW9lHyGugRhIX7_coO9Qqkbw&oe=6AA9D604",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet gäller bara idag. Vänta inte – när det är slut är det slut.\r\n✅ 24% rabatt – enbart idag\r\n✅ Få kvar i lager\r\n✅ Snabb leverans\r\nSäkra ditt till rabatterat pris innan det är för sent. 👇",
+          "headline": "24% RABATT – IDAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 22.07,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147340250291",
+        "namn": "Utekattkoja_SP_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147332660291",
+          "namn": "Isolerad Utekattkoja | SP | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "3301162690074139",
+          "image_hash": "29e4cff702f68e35d2b99fe8e61b20db",
+          "image_url": null,
+          "video_id": "1642983604217458",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/800715006_1642983617550790_813351268746918528_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=c-f9STRJfv0Q7kNvwEzS8be&_nc_oc=AdoaevazgEW2liQV87BlI3DEdS24LLVr3OLrOrnLP0FrQMld6BATAtRpqGGxUNeBww0&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQJkf0bJ1tslVnQ81QoYePET-OhSkAXhl29yN0Aj-GoXLG1w4XZDZe-148OrCshfLSVz28q4QjsKbA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJJzC1e8XriMixohHy75gxijLZQQ-D0rBYnGhMnGzTvLA&oe=6AA9F7D9",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Tusentals kattägare har redan gett sina katter ett tryggare liv utomhus. 🐱\r\n✅ \"Min katt sover här varje natt nu\"\r\n✅ Isolerad mot kyla, regn och vind\r\n✅ Enkel att sätta upp – redo direkt\r\nSe varför så många kattägare väljer det här inför vintern. Beställ nu. 👇",
+          "headline": "Kattägare älskar den – se varför",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 14.9,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147317820291",
+        "namn": "Utekattkoja_GT_1_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147316000291",
+          "namn": "Isolerad Utekattkoja | GT | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1675787610882281",
+          "image_hash": "d1a20027098e99e2f85897298114ee59",
+          "image_url": null,
+          "video_id": "1132685295817528",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/801326228_1132685322484192_969113924725797209_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=otd-wMV0yygQ7kNvwFyw_Ln&_nc_oc=AdqOhYadQ_KzN-L4jXn-zyPs7_PbIBkYwqvthMH_qgP7MslQXc0rBUWC0cZJLD4mB0M&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQJN3HvU77bgmx8fh2xH9zkjMT6ZrAfgX4aFc1nFxYfIqHD6Ovihm8c5XcSU4J06-cGbd2ggS5_FAw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJ3fiXijmGJU3O9_CT3XdFpY1jZn7QLSs7JqRjigN0rQw&oe=6AA9EF50",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Du vet exakt vem som skulle älska den här gåvan. 🎁\r\nDin mamma pratar alltid om katten som bor utanför hennes hus. Föreställ dig hennes ansikte när hon öppnar paketet och förstår att du tänkte på det där hon oroar sig för varje kväll.\r\n✅ En gåva som visar att du verkligen lyssnar\r\n✅ Ger trygghet och värme åt någon hon bryr sig om\r\n✅ Enkel att slå in, omöjlig att glömma\r\nBli den som gav den perfekta presenten i år. Beställ idag. 👇",
+          "headline": "Presenten hon inte förväntar sig",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 14.66,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147343210291",
+        "namn": "Utekattkoja_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147332660291",
+          "namn": "Isolerad Utekattkoja | SP | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1080251737747138",
+          "image_hash": "7cfab37614b9567171f50b8f2f716a70",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/799839518_2056748828372043_7843618991640292095_n.png?stp=dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=ff4730&_nc_ohc=dNKN6EXT8sEQ7kNvwF9sY8o&_nc_oc=Adrc3av_ZpIwe7eCVGh1c9NMecGZgDesLyiLaMhPKSNZn-Hzx5kgD3jn4mYXjIr1Jl0&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQKCup5pt0fpFr44VN-I2-vn8n7e5yyNmFjRmZLdhC8-ja8sGmlIh6EvMRKZfEtXvEbqapy_PT4wqg&oh=00_AQJgDAYSM5Pf-RKa5fVmHy5lLA6L0PkfW5lcMj7jko_jyQ&oe=6AA9D3FB",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/1127338368054937958?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLrPcpTWZg-81CMXhpoRTSHs-ubJpO4oThZCrYqKypwWQEG2kUjabQ2w4_nMZf1m9C1JJsrWScv7PJ6g9dXlGVrLGpzai8InqxfW1Rq2rPNc594Muo6HFW7Q-2qEzrYsx8UiyatMGlAaKVLbz3fu0gT&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-1.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=VBDZ63fgRMJiffa658MbwQ&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJl6huwoxpNZKX8AIfTaNQBbszueTM8u2uKtGvEQJqmH8J6H48WLqKHa0XWPEuiY4vl4EIbFMLatw&oh=06_Q3_DASDsw32DJu2aUdhL7nO2nPs1lULEpLoCtx7EHvYVUz1C&oe=6AA5DD8A",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Tusentals kattägare har redan gett sina katter ett tryggare liv utomhus. 🐱\r\n✅ \"Min katt sover här varje natt nu\"\r\n✅ Isolerad mot kyla, regn och vind\r\n✅ Enkel att sätta upp – redo direkt\r\nSe varför så många kattägare väljer det här inför vintern. Beställ nu. 👇",
+          "headline": "Kattägare älskar den – se varför",
+          "description": "Betrodd av tusentals kattägare i Sverige.",
+          "link": "https://baverbutiken.se/products/isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 9.13,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147322330291",
+        "namn": "Utekattkoja_GT_3_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147316000291",
+          "namn": "Isolerad Utekattkoja | GT | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "29265816946354310",
+          "image_hash": "bd44a69096d2b06f9553fb94e0fc3afc",
+          "image_url": null,
+          "video_id": "1409405177797821",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/800796540_1409405204464485_8382138457561302359_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=Dsrkkal5370Q7kNvwG5hdWa&_nc_oc=AdpqqVpV13SuCgap4DMxl7k7U2EYBt2ISsNEAtN7wtRw4bjSOcMUbcYVACeZNzeknh8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQIUv9-V8ixUHT7sBjFm-kbch-yBBbspKvy3OLQWEH8P5VYMLK8s-wcYve1yIqKOTAw_oR4HxZcRYw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIZC_ZnyzMlRgZul3sFOGLfHrMnqcztYASIC4SttSzOlw&oe=6AAA09CE",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Du vet exakt vem som skulle älska den här gåvan. 🎁\r\nDin mamma pratar alltid om katten som bor utanför hennes hus. Föreställ dig hennes ansikte när hon öppnar paketet och förstår att du tänkte på det där hon oroar sig för varje kväll.\r\n✅ En gåva som visar att du verkligen lyssnar\r\n✅ Ger trygghet och värme åt någon hon bryr sig om\r\n✅ Enkel att slå in, omöjlig att glömma\r\nBli den som gav den perfekta presenten i år. Beställ idag. 👇",
+          "headline": "Presenten hon inte förväntar sig",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 8.83,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147312300291",
+        "namn": "Utekattkoja_CS_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147309330291",
+          "namn": "Isolerad Utekattkoja | CS | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1081443977771683",
+          "image_hash": "71713c745aa17f6a29a5a3b8f4613504",
+          "image_url": null,
+          "video_id": "1381762976834413",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/801164210_1381762993501078_3098391501166037905_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=5f60nDjMM_kQ7kNvwF-mEXp&_nc_oc=AdouRg5HIkFhNJbKRx-EdNxenjQirkxPnWz-0Qcdh5kFDITEnsyUL93QlDOOZt367rA&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQLmIdPSsmecQskMn5xJdXY5-zd29F0dmZENXpbn0kQPdHa00V-5U406sxgGQ_Ma34rNfEtPov5enA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJFUkfjngaRjkyGUELcQGEvUlAFjeusBqFjIGaJ5l8zHQ&oe=6AA9F080",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⏰ Bara idag – 24% rabatt på Isolerat Utekattehus!\r\nPriset sänkt just nu. Lagret krymper snabbt och det här erbjudandet gäller bara idag. Vänta inte – när det är slut är det slut.\r\n✅ 24% rabatt – enbart idag\r\n✅ Få kvar i lager\r\n✅ Snabb leverans\r\nSäkra ditt till rabatterat pris innan det är för sent. 👇",
+          "headline": "24% RABATT – IDAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 7.67,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250147319180291",
+        "namn": "Utekattkoja_GT_2_H1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250147316000291",
+          "namn": "Isolerad Utekattkoja | GT | 2026-09-09",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250147309170291",
+          "namn": "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "28244552611871001",
+          "image_hash": "968115ef8b288a9d7dcd85af1480ab09",
+          "image_url": null,
+          "video_id": "1086538647119844",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/801149193_1086538677119841_2582519227773803305_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=ag0mb7uLVnIQ7kNvwHoAFqJ&_nc_oc=AdqI0l42De3OCOJezmSM1p9nkNGe-8oF2uSKustfFqq8zvjUSaTdFV0jUkqryaJdR04&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=VBDZ63fgRMJiffa658MbwQ&_nc_tpa=Q5bMBQLEaQaKejRBQeSKVkzMwBbm2YODXUHgcxcpzg4H9HWVTqTVVL1Q5uqge7WxxNJK4kvpKloLlwa-DA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIb_CHR9D_-BuEViBvGZfG_ZSJT_KlNToEMa3y-wlfUQg&oe=6AAA08EF",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Du vet exakt vem som skulle älska den här gåvan. 🎁\r\nDin mamma pratar alltid om katten som bor utanför hennes hus. Föreställ dig hennes ansikte när hon öppnar paketet och förstår att du tänkte på det där hon oroar sig för varje kväll.\r\n✅ En gåva som visar att du verkligen lyssnar\r\n✅ Ger trygghet och värme åt någon hon bryr sig om\r\n✅ Enkel att slå in, omöjlig att glömma\r\nBli den som gav den perfekta presenten i år. Beställ idag. 👇",
+          "headline": "Presenten hon inte förväntar sig",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 4.37,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  },
+  "NO": {
+    "konto": {
+      "id": "1050941584152547",
+      "namn": "Magiborsten NO",
+      "valuta": "NOK"
+    },
+    "annonser": [
+      {
+        "id": "120252183466270233",
+        "namn": "Utekattehus_NO_PD_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183464300233",
+          "namn": "Isolert Utekattehus NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1100428945782956",
+          "image_hash": "cc367fa05881f5514f00496adbf4914b",
+          "image_url": null,
+          "video_id": "1618016696785265",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/804534014_1618016733451928_7486929855367827068_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=cI-mAQCupoMQ7kNvwGc6V5l&_nc_oc=AdqoEK6i40-XEKGwyVGIfOyAiaf-DeuCEno1k_-YxCy8yjFYFM3sigUKsFYOfwj6zoY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQKC2cqY7kFtOkScWAxZrYVPfyXzGJhpDRkJICUKUE7dBmFo4SOlwTT6jFbJe10a-BT9ujAXvBCXZA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKKd-m5Sycnf-P3PbSx69reZTHlYeuf1acIn1wuqakVLA&oe=6AA9F037",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Katten din fryser ute – uten at du vet det. 🐾\n✅ Holder katten tørr når det regner\n✅ Blokkerer vind og kulde\n✅ Isolert – beholder varmen inne\n✅ Gir katten sin egen trygge plass utendørs\nGi katten din et varmt og trygt hjem – også utendørs. Bestill ditt Isolerte Utekattehus i dag. 👇",
+          "headline": "Et varmt hjem – også utendørs",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 238.86,
+          "kop": 1,
+          "roas": 3.536423
+        },
+        "med": true
+      },
+      {
+        "id": "120252183465340233",
+        "namn": "Utekattehus_NO_PD_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183464300233",
+          "namn": "Isolert Utekattehus NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2200568700878108",
+          "image_hash": "aa09e3b614b7b09116f702dd4ad42f8f",
+          "image_url": null,
+          "video_id": "982535518241725",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/803825825_982535558241721_832918559016029678_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=s7xkELGMDtwQ7kNvwGYXJOQ&_nc_oc=AdpxhM2-q6H6WhfIaPtKie0gc1zMNW-LqF3waRbuDjuIFwAxlgN3kup6lne_PjGYWM0&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQK4MNVIG3jE4UxM1I8psTHKkZXNTWbvwZvm5lFK62j91EDV6MSYtwg1_GKhwGohdB3udYOObHRHXA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJie93jgsdV9aYJG1UuhJDegExwq7n5PfsjDJEms4XThQ&oe=6AA9E01F",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Katten din fryser ute – uten at du vet det. 🐾\n✅ Holder katten tørr når det regner\n✅ Blokkerer vind og kulde\n✅ Isolert – beholder varmen inne\n✅ Gir katten sin egen trygge plass utendørs\nGi katten din et varmt og trygt hjem – også utendørs. Bestill ditt Isolerte Utekattehus i dag. 👇",
+          "headline": "Et varmt hjem – også utendørs",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 148.7,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183462150233",
+        "namn": "Utekattehus_NO_CS_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183460050233",
+          "namn": "Isolert Utekattehus NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1786681146113602",
+          "image_hash": "8e73f57cef6b4a8c1611818187715b78",
+          "image_url": null,
+          "video_id": "1324221086271182",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/803151320_1324221106271180_99337541282044730_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=3wjBvoNK9RoQ7kNvwH9PQdV&_nc_oc=AdqlMvPHwpeuE4G59gcNyMhZ-c46udp0nFj-ZzIzfYno3fE0iUjdbSCuBFGbansNDBI&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQIQHwWqtjN-zLKQsDfKisb5PHkxtLhGYmJqHWQ0YbO1ieHiakH91RNm4wMgEcUowhSWUqGdhR6dnA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIhbHFtiEBuXwOmew75g1_-8spue9_8sDEDHqManMReUw&oe=6AA9E9F0",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⏰ Kun i dag – 24 % rabatt på Isolert Utekattehus!\nPrisen er satt ned akkurat nå. Lageret krymper raskt, og tilbudet gjelder bare i dag. Ikke vent – når det er tomt, er det tomt.\n✅ 24 % rabatt – kun i dag\n✅ Få igjen på lager\n✅ Rask levering\nSikre ditt til nedsatt pris før det er for sent. 👇",
+          "headline": "24 % RABATT – I DAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 67.07,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183460850233",
+        "namn": "Utekattehus_NO_CS_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183460050233",
+          "namn": "Isolert Utekattehus NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "928022239894757",
+          "image_hash": "b3d7587258e6a4081f095b2b725c5b1e",
+          "image_url": null,
+          "video_id": "1453915789971434",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/805119925_1453915809971432_7674703452662551861_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=DUGk1a5dB5kQ7kNvwECgVVR&_nc_oc=AdrljtZQx7n89Tca3oLxf4R8OXeqZgqRn5WJzK27JC5hnxNCZtbNmjjpKCDLLvVXKgk&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQIRUoWJ8EsB0r2Lo9GlbKECaE4e-JvGUqCTrc77bpHgy4U_2am9nQTTezsZDZDApysqMC75cZd3EA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKOJ-txNuv4bPKv4bmjLwfAN7mWP_OFy10bLG0R_JCCCA&oe=6AA9F055",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⏰ Kun i dag – 24 % rabatt på Isolert Utekattehus!\nPrisen er satt ned akkurat nå. Lageret krymper raskt, og tilbudet gjelder bare i dag. Ikke vent – når det er tomt, er det tomt.\n✅ 24 % rabatt – kun i dag\n✅ Få igjen på lager\n✅ Rask levering\nSikre ditt til nedsatt pris før det er for sent. 👇",
+          "headline": "24 % RABATT – I DAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 21.47,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183467230233",
+        "namn": "Utekattehus_NO_PD_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183464300233",
+          "namn": "Isolert Utekattehus NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1547970610680473",
+          "image_hash": "7dd9f76a892eb299127c47347f416ad8",
+          "image_url": null,
+          "video_id": "906334589223735",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/803825790_906334629223731_7130022555512111468_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=IQZyr8HuDVMQ7kNvwEJ3QXY&_nc_oc=Adr3qPhvHzwE59ZKCMJeQXOeXSnwSsGqYdxg08U19C0jeLbyVT3b1HrtMVO3DM893RA&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQLUMElGdie0TOFxX0uoEnZPG82pdMeHdyKN9mQYMFOF5h-maiXOFTeH-6lcSBNrmg2AkKlDJ-6fXA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIE4xzCpYbnVDp3gTnRz48DJ0UNZG23DrSfvq_QEPQ1eg&oe=6AA9ECAF",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Katten din fryser ute – uten at du vet det. 🐾\n✅ Holder katten tørr når det regner\n✅ Blokkerer vind og kulde\n✅ Isolert – beholder varmen inne\n✅ Gir katten sin egen trygge plass utendørs\nGi katten din et varmt og trygt hjem – også utendørs. Bestill ditt Isolerte Utekattehus i dag. 👇",
+          "headline": "Et varmt hjem – også utendørs",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 18.98,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183463260233",
+        "namn": "Utekattehus_NO_G_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183462390233",
+          "namn": "Isolert Utekattehus NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1873795690251342",
+          "image_hash": "c1fb045b331403bc4b8f034e93e110ee",
+          "image_url": null,
+          "video_id": "2299213120900426",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/804364161_2299213184233753_6989868494535358621_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=-kYbvT36NtcQ7kNvwFOPC54&_nc_oc=Adq4xxoOgolOugeWJpB7pzoe8sMzv0uXJlpNYv25m2WwzTZcdfs_UN3zqjhDPFmkGcY&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQLmpNNQoqb1sTw7HOi6UPkXUWSQ8b2Rn8ke0B3sJYt3jkl0mGrA2PUIRV1XohpNWpkQ4H7oQNpGmA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIBOrNww3mzPXvBmrk7zIng0iqa6sKlc51Rldya0zt0cw&oe=6AA9D58B",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Du vet nøyaktig hvem som ville elsket denne gaven. 🎁\nMoren din snakker alltid om katten som bor utenfor huset hennes. Se for deg ansiktet hennes når hun åpner pakken og skjønner at du tenkte på det hun bekymrer seg for hver kveld.\n✅ En gave som viser at du faktisk lytter\n✅ Gir trygghet og varme til noen hun bryr seg om\n✅ Enkel å pakke inn, umulig å glemme\nBli den som ga den perfekte gaven i år. Bestill i dag. 👇",
+          "headline": "Gaven hun ikke forventer",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 16.03,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183509480233",
+        "namn": "Utekattehus_NO_SP_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183467430233",
+          "namn": "Isolert Utekattehus NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1056695437407140",
+          "image_hash": "0e4aaa15581bbb84d10cd63af18540a5",
+          "image_url": null,
+          "video_id": "1567102551764199",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/803151335_1567102575097530_8766573256296238513_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=WurUYkDVv8sQ7kNvwFmg88d&_nc_oc=Adpl9VZZkqO2c0yrq_c_MmEd9WH249cKGxHZnPmCEKGGWuedEC9y7qLtOYGnOlbYJjA&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQI-n-jE4W4JBh0AShOufJVtLCmyWhUI5kQeiy_xc5az3h13iLdtME8GN9oHBQV8VyA9iJpapzvgTA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLkEBrT-T3Q1Ev6XYtVCm3vZe0TqMaUv9F8YGSvpoHaCw&oe=6AAA01AB",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Tusenvis av katteeiere har allerede gitt kattene sine et tryggere liv utendørs. 🐱\n✅ \"Katten min sover her hver eneste natt nå\"\n✅ Isolert mot kulde, regn og vind\n✅ Enkel å sette opp – klar med en gang\nSe hvorfor så mange katteeiere velger denne før vinteren. Bestill nå. 👇",
+          "headline": "Katteeiere elsker den – se hvorfor",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 9.82,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183509880233",
+        "namn": "Utekattehus_NO_SP_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183467430233",
+          "namn": "Isolert Utekattehus NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "3505794052925269",
+          "image_hash": "0c0023c2a3e3515c251c28632b31a05c",
+          "image_url": null,
+          "video_id": "1129398683086906",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/803825800_1129398696420238_4011657738265041726_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=e7YE9cR97o8Q7kNvwHW7uZY&_nc_oc=AdoueLGbJd8ggItcD7hrbNFhjs-VOb8VGUm4IiE2FNWCuk1KKnrvwRZGbMwtZz_L57k&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQKX_dv2tJZzGB8qz088SX9kY4RlAuhVE8Az7gV2CY0PdkrHWArpVY2GnMSda-Z1-LYE8Mpj6JpILA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJLpFiCmgBumYWkCu7c75H4giH1yoP3Vu-WSImy1HtX-A&oe=6AA9FFD6",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Tusenvis av katteeiere har allerede gitt kattene sine et tryggere liv utendørs. 🐱\n✅ \"Katten min sover her hver eneste natt nå\"\n✅ Isolert mot kulde, regn og vind\n✅ Enkel å sette opp – klar med en gang\nSe hvorfor så mange katteeiere velger denne før vinteren. Bestill nå. 👇",
+          "headline": "Katteeiere elsker den – se hvorfor",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 4.1,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183461400233",
+        "namn": "Utekattehus_NO_CS_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183460050233",
+          "namn": "Isolert Utekattehus NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1417576843769850",
+          "image_hash": "eaa65ac6c736d781ba0aa3e476e3e9bb",
+          "image_url": null,
+          "video_id": "2053764528566072",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/804230085_2053764551899403_3437097786750208329_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=0470opMKRm8Q7kNvwGLpgrD&_nc_oc=AdpdpR1aGv6A4qZ_RFuPa1z1IRSpKZ8McCsm979ifUchfGksJjSJpLuW9ZGMinHtPKU&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQI7UeF_UDvGb_kXKBozss4hK9BKOsr5vMzfeQ3-HOWTQOcheKc3TT6l_-hbJ0HXqnUJAS8xt10Uzg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKyeMI3jXaGqW3lVjrbCy__AN21eNpk-SwjxjEWHwfTcg&oe=6AA9FDAD",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⏰ Kun i dag – 24 % rabatt på Isolert Utekattehus!\nPrisen er satt ned akkurat nå. Lageret krymper raskt, og tilbudet gjelder bare i dag. Ikke vent – når det er tomt, er det tomt.\n✅ 24 % rabatt – kun i dag\n✅ Få igjen på lager\n✅ Rask levering\nSikre ditt til nedsatt pris før det er for sent. 👇",
+          "headline": "24 % RABATT – I DAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.16,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183463760233",
+        "namn": "Utekattehus_NO_G_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183462390233",
+          "namn": "Isolert Utekattehus NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1364156222369452",
+          "image_hash": "a9b7bb8152543ee8efc83185a422342d",
+          "image_url": null,
+          "video_id": "1100317899602093",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/803925649_1100317932935423_2752657099609195085_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=OMn8pF-kusQQ7kNvwEFnql8&_nc_oc=AdqRm-CcP_L6-0gqo6Gql3iyI8eBh-aPrPKcEwDWqwvnMfm0TOnTmgo4UeMERuS17sI&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQIsJzzH0VOgqB4vzHRyTbt4G-af4KnM6AAlV1wksPZd1wAz8mJhORlJ3VBtMcZo2hMEVa6gNyqDZA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIpwac2eQfNRJbhtgoCAqmhF1yyrLWkA7JgllaG735QfA&oe=6AA9DD63",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Du vet nøyaktig hvem som ville elsket denne gaven. 🎁\nMoren din snakker alltid om katten som bor utenfor huset hennes. Se for deg ansiktet hennes når hun åpner pakken og skjønner at du tenkte på det hun bekymrer seg for hver kveld.\n✅ En gave som viser at du faktisk lytter\n✅ Gir trygghet og varme til noen hun bryr seg om\n✅ Enkel å pakke inn, umulig å glemme\nBli den som ga den perfekte gaven i år. Bestill i dag. 👇",
+          "headline": "Gaven hun ikke forventer",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 2.51,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252183509590233",
+        "namn": "Utekattehus_NO_SP_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252183467430233",
+          "namn": "Isolert Utekattehus NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252183459760233",
+          "namn": "Isolert Utekattehus NO | BE-ROAS 1,62 | 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "936273015668100",
+          "image_hash": "9f87d8843b4c6333badb1ee50d8e107d",
+          "image_url": null,
+          "video_id": "4442268236088194",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/805119931_4442268259421525_8211491675943518369_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=SWrDMTgTQawQ7kNvwGBIMPn&_nc_oc=Adp6qwI5BzJ6GWpDXGsYOoVP65XIyeHsSy8JdkMc6b7T0mYx4qyVJ41DKbYFpAuBRZ8&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=u_F6u9PR_8ci0VqoPwmMKg&_nc_tpa=Q5bMBQLRrGgXFVEfkMqyRV4Vsr9itEUaoXZS3rWmc7QAiPMe6Sd3BAQWT5nPyQRZhnWqud0XbWomCsiOyQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQK1cFlcFwjBH-_48NEm8dESQtdKzolqox_XK96dNXYeaw&oe=6AA9E048",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Tusenvis av katteeiere har allerede gitt kattene sine et tryggere liv utendørs. 🐱\n✅ \"Katten min sover her hver eneste natt nå\"\n✅ Isolert mot kulde, regn og vind\n✅ Enkel å sette opp – klar med en gang\nSe hvorfor så mange katteeiere velger denne før vinteren. Bestill nå. 👇",
+          "headline": "Katteeiere elsker den – se hvorfor",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.69,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  }
+}

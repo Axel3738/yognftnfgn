@@ -154,7 +154,7 @@ export async function hamtaLage() {
     shopLocales { locale name primary published }
     markets(first: 50) {
       nodes {
-        id name handle status
+        id name handle status primary
         conditions { regionsCondition { regions(first: 20) { nodes { ... on MarketRegionCountry { code } } } } }
       }
     }
@@ -166,6 +166,39 @@ export async function hamtaLage() {
     locales: d.shopLocales ?? [],
     marknader: d.markets?.nodes ?? [],
     webPresences: d.webPresences?.nodes ?? [],
+  };
+}
+
+// Länderna en marknad täcker, ur hamtaLage()-formen (regions → koder).
+const marknadensLander = (m) =>
+  (m?.conditions?.regionsCondition?.regions?.nodes ?? []).map((r) => String(r?.code ?? '').toUpperCase()).filter(Boolean);
+
+/**
+ * Är butikens primärmarknad rätt land? Ren logik över hamtaLage().marknader.
+ *
+ * ⚠️ CatCabin 2026-09-11: efter checklistans avsnitt 2 stod Norge som
+ * primärmarknad (och den gamla Filippinerna-marknaden omdöpt till "Sweden").
+ * Då blev VARJE variant `available: false` i kundvyn — paketväljaren och
+ * sticky-knappen försvann — medan steget `huvudmarknad` var grönt, för det
+ * kontrollerade bara valutan. Primärmarknaden kan inte sättas via API
+ * (API-GRANSER.md), så fel svar här blir ett 🖐 med exakt klick.
+ *
+ * → { ok, primar: { name, lander } | null, skal }
+ */
+export function kontrolleraPrimarmarknad(marknader, land) {
+  const l = String(land ?? '').toUpperCase();
+  const primar = (marknader ?? []).find((m) => m?.primary === true) ?? null;
+  if (!l) return { ok: false, primar: null, skal: 'butik.land saknas — kan inte veta vilken marknad som ska vara primär.' };
+  if (!primar) return { ok: false, primar: null, skal: 'ingen marknad är markerad som primär i Shopify (markets.primary) — kontrollera Settings → Markets.' };
+  const lander = marknadensLander(primar);
+  if (lander.includes(l)) return { ok: true, primar: { name: primar.name, lander }, skal: '' };
+  return {
+    ok: false,
+    primar: { name: primar.name, lander },
+    skal:
+      `primärmarknaden är "${primar.name}" (${lander.join(', ') || 'inga länder'}), inte ${l}. ` +
+      `Settings → Markets → marknaden för ${l} → Set as primary. Kan inte sättas via API. ` +
+      'Utan det är varje variant otillgänglig i kundvyn (paketväljaren och sticky-knappen renderas inte — mätt 2026-09-11).',
   };
 }
 

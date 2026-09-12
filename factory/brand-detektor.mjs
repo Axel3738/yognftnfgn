@@ -104,7 +104,19 @@ export function läsKälla(produktId) {
 /** Butikskonfigen bakom produkten — behövs för villkorsjämförelsen (sjätte
  *  ytan). Slås upp ur state-filnamnet `<butik>--<produkt>.json`, som kedjan
  *  skriver vid varje bygge. Hittas den inte får villkorsskanningen inget att
- *  jämföra mot, och det sägs rakt ut i stället för att tyst fria annonserna. */
+ *  jämföra mot, och det sägs rakt ut i stället för att tyst fria annonserna.
+ *
+ *  ⚠️ Returnerar YAML-ROTEN, inte `butik:`-blocket. Fram till 2026-09-11 stod
+ *  det `?.butik || null` här — men `frakt:` och `retur:` ligger på toppnivå i
+ *  butiksfilen, som SYSKON till `butik:`. Villkorsreglerna läser
+ *  `butik.frakt.fri_globalt` och `butik.retur.oppet_kop_dagar`, och de var
+ *  därför alltid undefined: fraktgräns, öppet köp, ångerrätt och leveranstid
+ *  kunde aldrig fällas, för någon butik. Sjätte ytan såg ut att köra —
+ *  detektorn skrev inget larm, eftersom butiken ju HITTADES — men jämförde
+ *  ingenting. Mätt på CatCabin: `Utekattkoja_SP_2_1` bär "30 dagars öppet köp"
+ *  inbränt medan butiken ger 14, och fick ändå domen `ren`. Det är exakt det
+ *  fel som gav HeimGuard-bakläxan 2026-09-09, en spärr som skrevs för att
+ *  förhindra det, och en spärr som aldrig larmade. */
 export function läsButik(produktId) {
   const stateMapp = join(ROT, 'factory', 'state');
   const butiksId = existsSync(stateMapp)
@@ -113,7 +125,11 @@ export function läsButik(produktId) {
   if (!butiksId) return null;
   const fil = join(ROT, 'factory', 'butiker', `${butiksId}.yaml`);
   if (!existsSync(fil)) return null;
-  return lasYaml(readFileSync(fil, 'utf8'))?.butik || null;
+  const rot = lasYaml(readFileSync(fil, 'utf8'));
+  if (!rot) return null;
+  // Roten bär frakt/retur/erbjudande; butik:-blocket bär id/brand/marknader.
+  // Båda behövs, och butik:-fälten får inte skugga rotens villkor.
+  return { ...(rot.butik || {}), ...rot };
 }
 
 /** Texterna som villkorsskanningen jämför, märkta med den yta de står på —
@@ -271,11 +287,37 @@ async function bildUrlViaHash(kontoId, hash) {
   return r.data?.[0]?.url || null;
 }
 
+/** Source direkt på video-id:t — den enda vägen som är entydig.
+ *
+ *  ⚠️ Historik, läs den innan du tar bort något: fram till 2026-09-11 stod det
+ *  här att `/{video_id}?fields=source` ALLTID svarar "(#10) Application does not
+ *  have permission", och funktionen fanns därför inte. Mätt på nytt 2026-09-11
+ *  med sessionens META_ACCESS_TOKEN mot MagiBorsten: anropet svarar 200 och
+ *  lämnar ut source (video 1750336295907771, Utekattkoja_PD_2_H1). Behörigheten
+ *  sitter alltså i TOKENEN, inte i kanten — den gamla mätningen var sann för sin
+ *  token, inte för alla. Därför: försök direkt, och faller det på #10 (eller
+ *  vad som helst) används biblioteksindexet precis som förr.
+ *
+ *  Varför det spelar roll: i MagiBorsten heter videofilerna `PD_2.mp4`,
+ *  `SP_3.mp4` — utan produktprefix och DELADE mellan produkter. Titeluppslaget
+ *  kan då returnera en ANNAN produkts video utan att någon märker det, och
+ *  titelfiltret ger noll träffar (CatCabin 2026-09-11: 0 videokällor lästa,
+ *  alla 16 annonser "okänd"). Ett id är entydigt; ett filnamn är det inte. */
+async function sourceViaId(videoId) {
+  if (!videoId) return null;
+  try {
+    const r = await api(String(videoId), { params: { fields: 'source' } });
+    return r?.source || null;
+  } catch {
+    return null; // #10 eller annat — biblioteksindexet får ta över
+  }
+}
+
 /** Nedladdningslänkar till kontots videor, id → source.
  *
- *  ⚠️ Dyrköpt: `/{video_id}?fields=source` svarar "(#10) Application does not
- *  have permission" med den token rutinerna kör på — men KONTOTS advideos-kant
- *  lämnar ut samma source. Samma lärdom står i pipeline/no-drive-fran-meta.py.
+ *  Reserven när sourceViaId() inte får ut något. KONTOTS advideos-kant lämnar
+ *  ut source även när direktanropet nekas. Samma lärdom står i
+ *  pipeline/no-drive-fran-meta.py.
  *  `title`-filtret håller anropet nere till en sida i stället för hela kontots
  *  videobibliotek. Titeln är filnamnet redigeraren laddade upp och stämmer inte
  *  alltid med annonsnamnet ("IBC-tanköverdrag_PD_1_H1.mp4" ↔ IBC_PD_1_H1), så
@@ -362,10 +404,15 @@ async function hämtaOchLäs(annonser, kalla, tathet = TATHET_SEK) {
     const post = { typ: m.typ, filer: [] };
     try {
       if (m.typ === 'video') {
+        // Id före titel, alltid: id:t är entydigt, filnamnet delas mellan
+        // produkter. Direktanropet sist av id-vägarna så indexet (redan läst)
+        // används när det räcker — men före titeln, som kan peka fel.
         const source = källor.get(String(m.video_id))
           || (m.video_id_alt && källor.get(String(m.video_id_alt)))
+          || await sourceViaId(m.video_id)
+          || (m.video_id_alt && await sourceViaId(m.video_id_alt))
           || källaViaTitel(källor, a.name, kalla.annonsprefix);
-        if (!source) throw new Error(`ingen source i kontots advideos för video ${m.video_id}`);
+        if (!source) throw new Error(`ingen source för video ${m.video_id} — varken direkt på id:t eller i kontots advideos`);
         const fil = join(mediaMapp, `${a.name}.mp4`);
         await laddaNer(source, fil);
         // Tätheten står i mappnamnet. Annars ligger en gammal gles körnings
@@ -714,6 +761,12 @@ async function main() {
   if (!butik) {
     console.log('  ⚠️ ingen butikskonfig hittad — villkorsjämförelsen (sjätte ytan) körs INTE.');
     console.log('     Annonserna kan alltså bära källbutikens fraktgräns utan att någon dom fångar det.');
+  } else if (!butik.frakt && !butik.retur) {
+    // Att butiken HITTAS är inte samma sak som att den går att jämföra mot.
+    // Utan frakt/retur tiger varenda villkorsregel, och rapporten hade sett
+    // likadan ut som en ren körning (CatCabin 2026-09-11).
+    console.log(`  ⚠️ butikskonfigen hittad men saknar både frakt: och retur: — villkorsreglerna`);
+    console.log('     har inget att jämföra mot och kan bara tiga. Fyll i dem i butiksfilen.');
   }
   const utMapp = join(ROT, 'factory', 'output', produktId);
   const ocrFil = join(utMapp, 'brand-ocr.json');
@@ -779,8 +832,10 @@ async function main() {
     // samma transkript som yta 2 redan hittat — gratis, inga krediter.
     const talfil = transkriptFör(a.name, kalla, index);
     const talrader = talfil ? readFileSync(talfil.fil, 'utf8').split('\n') : [];
+    // Produkten med: utan den körs ingen prisjämförelse, och priset är det fel
+    // som kostar mest när det slinker igenom (CatCabin 2026-09-11).
     ytor.villkorsfel = butik
-      ? skannaVillkor(villkorstexter(a, ocr[a.name], talrader), butik)
+      ? skannaVillkor(villkorstexter(a, ocr[a.name], talrader), butik, produkt)
       : [];
     const dom = klassa(ytor);
     const allText = [

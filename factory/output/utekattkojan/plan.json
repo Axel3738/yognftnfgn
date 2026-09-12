@@ -1,0 +1,182 @@
+{
+  "input": {
+    "title": "Isolerad Utekattkoja på Ben – Upphöjd Från Kall och Blöt Mark",
+    "handle": "utekattkojan",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Upphöjd från marken, med tak, isolerade väggar och en flik för dörren</p>",
+    "vendor": "CatCabin",
+    "seo": {
+      "title": "Isolerad Utekattkoja på Ben – Upphöjd Från Kall och Blöt Mark – CatCa…",
+      "description": "Katten har en egen torr plats, inte bilen. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Variant",
+        "values": [
+          {
+            "name": "Grå"
+          },
+          {
+            "name": "Gräsgrön"
+          },
+          {
+            "name": "Svart"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Grå"
+          }
+        ],
+        "price": "789.00",
+        "compareAtPrice": "1039.00",
+        "sku": "TEMU-5030003647894-GR",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Gräsgrön"
+          }
+        ],
+        "price": "789.00",
+        "compareAtPrice": "1039.00",
+        "sku": "TEMU-5030003647894-GG",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "Svart"
+          }
+        ],
+        "price": "789.00",
+        "compareAtPrice": "1039.00",
+        "sku": "TEMU-5030003647894-SV",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg",
+        "contentType": "IMAGE",
+        "alt": "Isolerad utekattkoja i grått Oxford-tyg med sadeltak, upphöjd på svart metallstativ med fyra ben, liggmatta i silvergrått bredvid"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-regn.jpg",
+        "contentType": "IMAGE",
+        "alt": "AI-illustration: utekattkojan i regn på en altan, taket skjuter ut över den välvda ingången"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-fakta.jpg",
+        "contentType": "IMAGE",
+        "alt": "[SV] Infografik över utekattkojans egenskaper: står på ben, sadeltak i Oxford-tyg, isolerade väggar, öppning med flik, lös liggmatta, hopfällbar"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg",
+        "contentType": "IMAGE",
+        "alt": "AI-illustration: katt som sover inne i den isolerade utekattkojan på stativet, kväll med tänt köksfönster"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sno.jpg",
+        "contentType": "IMAGE",
+        "alt": "AI-illustration: utekattkojan i snö, upphöjd på stativet ovanför den kalla marken"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-farger.jpg",
+        "contentType": "IMAGE",
+        "alt": "[SV] Kojans tre färger: grå, gräsgrön och svart – bilderna på sidan visar den grå"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Katten sover under bilen igen"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Det regnar, och katten är inte i trädgården. Den ligger under bilen igen, den enda torra platsen den känner till."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-regn.gif"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Tak, väggar, en flik mot vinden"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Kojan står upphöjd på fyra ben, med ett sadeltak som leder bort regnet och en flik vid dörren som håller ute draget. Väggarna är isolerade, så värmen katten själv ger stannar inne."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Katten har en egen torr plats, inte bilen\",\"Du ser kojan från köksfönstret och vet att katten är i lä\",\"Värmen katten själv ger stannar inne i väggarna\",\"Ingen el, ingen sladd ut till trädgården\",\"Kojan fälls ihop och tar liten plats i förrådet på sommaren\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Stativ i metall med fyra ben, upphöjt från marken\",\"Sadeltak i Oxford-tyg, vattnet rinner av\",\"Flik vid ingången som bromsar draget\",\"Isolerade väggar, ingen el eller värmare\",\"Lös liggmatta som går att ta ut och skaka\",\"Hopfällbar för förvaring\",\"Tre färger: grå, gräsgrön och svart\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-sover_5299ce2c-96d1-4e29-bc38-dbafed3bf275.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Behöver kojan el?\",\"svar\":\"Nej. Väggarna är isolerade och behåller värmen katten själv avger.\"},{\"fraga\":\"Håller den värmen på vintern?\",\"svar\":\"Kojan är isolerad och upphöjd från marken, så kylan från underlaget hålls borta. Värmen kommer från katten själv, ingen el behövs.\"},{\"fraga\":\"Vad händer när det regnar?\",\"svar\":\"Sadeltaket skjuter ut över ingången och leder bort vattnet, och fliken vid dörren bromsar draget.\"},{\"fraga\":\"Hur förvarar jag den på sommaren?\",\"svar\":\"Kojan är hopfällbar och tar liten plats i förrådet till nästa säsong.\"},{\"fraga\":\"Vad gäller om jag ångrar mitt köp?\",\"svar\":\"Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@catcabin.se.\"}]"
+    }
+  ]
+}

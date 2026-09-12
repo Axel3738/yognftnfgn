@@ -625,9 +625,35 @@ async function kör() {
     process.exit(1);
   }
 
+  // Orsaker till att en annons medvetet INTE byggdes. Egen fil, för att
+  // brand-detektor.json och kallannonser.json skrivs om av sina verktyg vid
+  // varje körning — en orsak som skrivs där är borta nästa gång detektorn kör,
+  // och rapporten faller tillbaka på "orsak saknas — måste namnges" i all
+  // evighet. Formatet är { "<annonsnamn>": "<orsak>" }.
+  // (CatCabin 2026-09-11: fyra CS-annonser hölls tillbaka på ett ägarbeslut,
+  // och det beslutet måste överleva nästa detektorkörning.)
+  const uteslutnaOrsaker = läsJson(join(utMapp, 'uteslutna.json')) ?? {};
+  const medOrsak = (rader) =>
+    (rader ?? []).map((r) => {
+      const namn = r.annons ?? r.namn;
+      const orsak = namn ? uteslutnaOrsaker[namn] : null;
+      return orsak && !r.orsak ? { ...r, orsak } : r;
+    });
+
   const perMarknad = samlaKallor({
-    brandDetektor,
-    kallannonser,
+    brandDetektor: brandDetektor
+      ? { ...brandDetektor, annonser: medOrsak(brandDetektor.annonser) }
+      : null,
+    kallannonser: Array.isArray(kallannonser)
+      ? medOrsak(kallannonser)
+      : kallannonser && typeof kallannonser === 'object'
+        ? Object.fromEntries(
+            Object.entries(kallannonser).map(([m, block]) => [
+              m,
+              Array.isArray(block) ? medOrsak(block) : { ...block, annonser: medOrsak(block?.annonser) },
+            ])
+          )
+        : kallannonser,
     kallkonto: p.kalla?.annonskonto ?? brandDetektor?.kalla?.annonskonto,
   });
   const marknader = valdMarknad ? [valdMarknad] : Object.keys(KONTON);

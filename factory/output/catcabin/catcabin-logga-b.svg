@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512" cy="512" r="512" fill="#F5F0E8"/>
+  <circle cx="512" cy="512" r="470" fill="none" stroke="#2B2724" stroke-width="34"/>
+  <g class="koja"><rect x="486.5" y="260" width="51" height="39" fill="#2B2724"/><path d="M476 266 L512 234.5 L548 266 L548 272 L512 240.5 L476 272 Z" fill="#2B2724"/><path d="M502.7 299 L502.7 284 A9.3 9.3 0 0 1 521.3 284 L521.3 299 Z" fill="#D97B2A"/><rect x="489.5" y="299" width="3.9" height="9.6" rx="1.2" fill="#2B2724"/><rect x="530.6" y="299" width="3.9" height="9.6" rx="1.2" fill="#2B2724"/></g>
+  <text x="512" y="436.5" text-anchor="middle" dominant-baseline="central" font-family="Nunito, DejaVu Sans, sans-serif" font-weight="700" font-size="171" letter-spacing="10" fill="#2B2724">CAT</text>
+  <text x="512" y="627.5" text-anchor="middle" dominant-baseline="central" font-family="Nunito, DejaVu Sans, sans-serif" font-weight="700" font-size="171" letter-spacing="10" fill="#2B2724">CABIN</text>
+  <line x1="392" y1="767.52" x2="632" y2="767.52" stroke="#D97B2A" stroke-width="8" stroke-linecap="round"/>
+</svg>

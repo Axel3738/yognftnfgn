@@ -90,7 +90,7 @@ import { byggMetafalt } from './metafalt.mjs';
 import { sattContinue } from './lagerpolicy.mjs';
 import { sakerstallBonus } from './bonus.mjs';
 import { byggPaketplan, byggPaket, paketRader } from './paket.mjs';
-import { sakerstallMarknader, oversattAllt } from './marknad.mjs';
+import { sakerstallMarknader, oversattAllt, hamtaLage, kontrolleraPrimarmarknad } from './marknad.mjs';
 import { byggUnderlag, lasOversattning } from './oversattning.mjs';
 import { granska as granskaOversattning } from './oversattning-granska.mjs';
 import { hamtaStartsida, hamtaProduktsida } from './kundvy-kor.mjs';
@@ -812,13 +812,21 @@ export const STEG = [
     niva: 'butik',
     modul: 'shopify.mjs (kontrolleraAnslutning)',
     stoppar: true,
-    torrt: (ctx) => [`${ctx.butik.butik.huvudmarknad} med ${ctx.butik.butik.valuta} ska vara butikens hemmamarknad (verifieras, kan inte sättas via API)`],
+    torrt: (ctx) => [
+      `${ctx.butik.butik.huvudmarknad} med ${ctx.butik.butik.valuta} ska vara butikens hemmamarknad (verifieras, kan inte sättas via API)`,
+      `primärmarknaden i Shopify ska täcka ${ctx.butik.butik.land} — fel primärmarknad gör varje variant osäljbar (CatCabin 2026-09-11)`,
+    ],
     async kor(ctx) {
       const shop = ctx.shop;
       if (shop?.currencyCode !== ctx.butik.butik.valuta) {
         return { manuell: `Butikens valuta är ${shop?.currencyCode}, konfigen säger ${ctx.butik.butik.valuta} — ändras i Shopify-admin.` };
       }
-      return { valuta: shop.currencyCode };
+      // Primärmarknaden: valutan kan stämma medan primärflaggan sitter på fel
+      // marknad (Norge på CatCabin) — då är inget köpbart i kundvyn.
+      const lage = await hamtaLage();
+      const primar = kontrolleraPrimarmarknad(lage.marknader, ctx.butik.butik.land);
+      if (!primar.ok) return { manuell: `Primärmarknaden: ${primar.skal}` };
+      return { valuta: shop.currencyCode, primarmarknad: primar.primar.name };
     },
   },
   {
