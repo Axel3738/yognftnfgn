@@ -27,7 +27,7 @@
 //   3. RUTINEN KLONAR `main`. Ligger kommandofilen kvar på en gren hittar den
 //      ingenting och ger upp direkt.
 
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { anthropicNyckel, NYCKELNAMN } from '../tools/lib/anthropic-nyckel.mjs';
@@ -101,6 +101,90 @@ export function tillCron(svenskTid, { dagar = '*', datum = new Date() } = {}) {
       ? `Vid vinteromställningen (sista söndagen i oktober): ändra till "${vinter.cron}".`
       : `Vid sommaromställningen (sista söndagen i mars): ändra till "${sommar.cron}".`,
   };
+}
+
+// ------------------------------------------------------------------ butikernas tider
+
+/** Bastiderna för de tre butiksrutinerna, och hur många minuter varje butik
+ *  förskjuts. Mätt 2026-09-12: fem nattvakter som startade 00:01 samtidigt
+ *  slog i Metas rate limit på det delade OPS-kontot (försök 5 av 8, 300 s
+ *  väntan, 15+ minuters körningar). Butikerna får därför var sin minut,
+ *  efter en plats som delas ut en gång och sparas i register.json
+ *  (`rutinplatser`) — så en ny butik aldrig flyttar de gamla. */
+export const BUTIKSRUTINER = Object.freeze({
+  notionscalercs: { bas: '00:01', steg: 8, vad: 'Nattvakten (varje natt; briefer ons+sön, skriptet avgör)' },
+  'ops-leverans': { bas: '13:40', steg: 5, vad: 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)' },
+  'ops-oversatt': { bas: '15:40', steg: 5, vad: 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)' },
+});
+
+/** OPS-butikerna i bokstavsordning (testbutiken är en fixtur). */
+export function opsButiker(rot = ROT) {
+  const mapp = join(rot, 'factory', 'butiker');
+  if (!existsSync(mapp)) return [];
+  return readdirSync(mapp).filter((f) => f.endsWith('.yaml') && f !== 'testbutiken.yaml').map((f) => f.replace(/\.yaml$/, '')).sort();
+}
+
+export const REGISTERFIL = join(ROT, 'factory', 'produkter', 'register.json');
+
+/** Butikernas platser i tidsschemat, ur register.json `rutinplatser`
+ *  ({ drytrek: 0, hemvakten: 1, … }). Platsen delas ut EN gång och ligger
+ *  kvar — bokstavsordning hade flyttat alla gamla butiker så fort en ny
+ *  butik med tidigt namn tillkom (carashell, catcabin 2026-09-12), och då
+ *  hade två butiker kunnat dela minut igen. */
+export function lasPlatser(fil = REGISTERFIL) {
+  if (!existsSync(fil)) return {};
+  try { return JSON.parse(readFileSync(fil, 'utf8')).rutinplatser ?? {}; } catch { return {}; }
+}
+
+/** Platsen för en butik: den registrerade, annars första lediga heltalet. Ren. */
+export function platsFor(butik, platser = lasPlatser()) {
+  const id = String(butik ?? '').split('/')[0].trim().toLowerCase();
+  if (!id) throw new Error('Ange en butik.');
+  if (Number.isInteger(platser[id])) return { plats: platser[id], ny: false, id };
+  const upptagna = new Set(Object.values(platser).filter(Number.isInteger));
+  let plats = 0;
+  while (upptagna.has(plats)) plats += 1;
+  return { plats, ny: true, id };
+}
+
+/** Skriver in en ny plats i register.json. Rör aldrig en befintlig. */
+export function skrivInPlats(butik, fil = REGISTERFIL) {
+  const drift = existsSync(fil) ? JSON.parse(readFileSync(fil, 'utf8')) : {};
+  drift.rutinplatser = drift.rutinplatser ?? {};
+  const p = platsFor(butik, drift.rutinplatser);
+  if (p.ny) {
+    drift.rutinplatser[p.id] = p.plats;
+    drift.kommentar_rutinplatser = drift.kommentar_rutinplatser
+      ?? 'Butikens plats i rutinschemat (factory/rutin.mjs tidFor): nattvakt 00:01 + 8 min × plats, leverans 13:40 + 5 min × plats, översättning 15:40 + 5 min × plats. Delas ut en gång av /notionscalercs setup och ändras aldrig — så ingen gammal butik flyttar när en ny tillkommer (Meta rate limit 2026-09-12 när fem startade samtidigt).';
+    writeFileSync(fil, `${JSON.stringify(drift, null, 2)}\n`);
+  }
+  return p;
+}
+
+/** HH:MM + minuter. Ren. */
+export function plusMinuter(tid, minuter) {
+  const m = String(tid).match(/^(\d{1,2})[:.](\d{2})$/);
+  if (!m) throw new Error(`Tiden "${tid}" går inte att läsa — skriv den som HH:MM.`);
+  const total = (Number(m[1]) * 60 + Number(m[2]) + Number(minuter) + 1440) % 1440;
+  return `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`;
+}
+
+/** Svensk tid för en butiks rutin: bastiden + butikens plats × steget.
+ *  Butiksnyckeln får vara `butik/produkt` — platsen räknas på butiksdelen. */
+export function tidFor(kommando, butik, platser = lasPlatser()) {
+  const r = BUTIKSRUTINER[kommandonamn(kommando)];
+  if (!r) throw new Error(`"${kommando}" är ingen butiksrutin — kända: ${Object.keys(BUTIKSRUTINER).join(', ')}.`);
+  return plusMinuter(r.bas, platsFor(butik, platser).plats * r.steg);
+}
+
+/** Alla tre tiderna för en butik, med cron för båda halvåren. */
+export function tiderFor(butik, { platser = lasPlatser(), datum = new Date() } = {}) {
+  const p = platsFor(butik, platser);
+  return Object.keys(BUTIKSRUTINER).map((namn) => {
+    const tid = tidFor(namn, butik, platser);
+    const c = tillCron(tid, { datum });
+    return { kommando: `/${namn} ${butik}`, tid, cron: c.cron, cronSommar: c.cronSommar, cronVinter: c.cronVinter, vad: BUTIKSRUTINER[namn].vad, plats: p.plats, ny_plats: p.ny };
+  });
 }
 
 // ------------------------------------------------------------------ spärrarna
@@ -287,11 +371,11 @@ function lista() {
     ? readdirSync(join(ROT, 'factory', 'butiker')).filter((f) => f.endsWith('.yaml') && f !== 'testbutiken.yaml')
     : [];
   for (const b of butiker) kanda.push(['07:00', `/skalningskungen ${b.replace('.yaml', '')}`, 'Skalningsronden (var tredje dag, skriptet avgör)']);
-  for (const b of butiker) kanda.push(['00:01', `/notionscalercs ${b.replace('.yaml', '')}`, 'Nattvakten (varje natt; briefer ons+sön, skriptet avgör)']);
+  for (const b of butiker) kanda.push([tidFor('notionscalercs', b.replace('.yaml', '')), `/notionscalercs ${b.replace('.yaml', '')}`, 'Nattvakten (varje natt; briefer ons+sön, skriptet avgör)']);
   // Butikens leverans och NO-översättning ligger efter Bäverbutikens (13:20 /
   // 15:00) så inte alla containrar startar samtidigt.
-  for (const b of butiker) kanda.push(['13:40', `/ops-leverans ${b.replace('.yaml', '')}`, 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)']);
-  for (const b of butiker) kanda.push(['15:40', `/ops-oversatt ${b.replace('.yaml', '')}`, 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)']);
+  for (const b of butiker) kanda.push([tidFor('ops-leverans', b.replace('.yaml', '')), `/ops-leverans ${b.replace('.yaml', '')}`, 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)']);
+  for (const b of butiker) kanda.push([tidFor('ops-oversatt', b.replace('.yaml', '')), `/ops-oversatt ${b.replace('.yaml', '')}`, 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)']);
 
   for (const [tid, kmd, vad] of kanda) {
     const t = tillCron(tid);
@@ -305,6 +389,17 @@ function lista() {
 if (process.argv[1] && process.argv[1].endsWith('rutin.mjs')) {
   if (process.argv.includes('--lista')) {
     lista();
+  } else if (flagga('tider')) {
+    // Butikens tre rutiner med egen minut per butik. Setup läser tiderna härifrån.
+    const butik = flagga('tider');
+    if (!opsButiker().includes(String(butik).split('/')[0].toLowerCase())) { console.error(`✗ Butiken "${butik}" finns inte i factory/butiker/ (${opsButiker().join(', ')}).`); process.exit(1); }
+    const p = process.argv.includes('--skriv-in') ? skrivInPlats(butik) : platsFor(butik);
+    console.log(`\nButiksrutinerna för ${butik} — plats ${p.plats}${p.ny ? (process.argv.includes('--skriv-in') ? ' (ny, inskriven i register.json)' : ' (NY — lägg till --skriv-in för att låsa den)') : ''} (svensk tid → cron):\n`);
+    for (const t of tiderFor(butik)) {
+      console.log(`  ${t.tid}  ${t.cron.padEnd(16)} ${t.kommando.padEnd(44)} ${t.vad}`);
+      console.log(`         sommar ${t.cronSommar} · vinter ${t.cronVinter}`);
+    }
+    console.log('\nFinns rutinen redan med en annan cron: update_trigger till den ovan — bygg aldrig om.\n');
   } else {
     const tid = flagga('tid');
     const kommando = flagga('kommando');

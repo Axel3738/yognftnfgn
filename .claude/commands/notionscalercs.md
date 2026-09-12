@@ -107,15 +107,25 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    redan har sin nattvakt får bara leveransrundan och översättningen. Det
    är så befintliga butiker kompletteras: samma kommando igen.
 
-   | Rutin | Tid | Kommando |
+   | Rutin | Bastid | Kommando |
    |---|---|---|
-   | Nattvakten | 00:01 | `/notionscalercs <nyckel>` |
-   | Leveransrundan | 13:40 | `/ops-leverans <nyckel>` |
-   | Översättning NO | 15:40 | `/ops-oversatt <nyckel>` |
+   | Nattvakten | 00:01 + 8 min × butikens plats | `/notionscalercs <nyckel>` |
+   | Leveransrundan | 13:40 + 5 min × plats | `/ops-leverans <nyckel>` |
+   | Översättning NO | 15:40 + 5 min × plats | `/ops-oversatt <nyckel>` |
 
+   **Tiderna räknas av skriptet, aldrig i huvudet:**
+   ```
+   node factory/rutin.mjs --tider <butik> --skriv-in
+   ```
+   Varje butik får en egen plats (sparas i `register.json` `rutinplatser`,
+   delas ut en gång och flyttas aldrig), för fem nattvakter som startade
+   00:01 samtidigt slog i Metas rate limit på det delade kontot (mätt
+   2026-09-12). **Har butiken redan en rutin med en annan cron än
+   utskriften: `update_trigger` till den nya cronen** — bygg aldrig om.
+   Committa `register.json` när en plats skrivits in.
    För var och en, i ordning, exakt enligt `.claude/commands/rutin.md`:
    ```
-   node factory/rutin.mjs --tid <tid> --kommando "<kommando>" --butik <butik>
+   node factory/rutin.mjs --tid <tid ur --tider> --kommando "<kommando>" --butik <butik>
    ```
    Exit 1 = bygg inte (vanligast: du står inte på `main` — merga först).
    Sedan `create_session` (title ur utskriften, `source_url` repot,
@@ -213,6 +223,12 @@ För VARJE annons i förra batchen (`products/<butik>/batch-log.md`):
   rotorsaker. Data skild från hypotes.
 
 ### Steg 5 — Nästa batch
+**Först: finns det någon som gör dem?** Ligger förra batchens rader
+fortfarande i `Draft` i hubben OCH ingen redigerare är tilldelad ⇒ inga
+nya briefer den här ronden. Rapportera "waiting for editor — N briefs
+still in Draft" under ACTION NEEDED och gå till steg 8. (Mätt 2026-09-12:
+fyra butiker fick 7 briefer var på lördagen och skulle fått 7 till på
+söndagen utan att någon gjort en enda.)
 Storlek: `factory/kadens.mjs` (7/dag × 3 = 21, hälften varianter av vinnare,
 hälften nya koncept) när en redigerare är tilldelad; annars **7**. Varje
 variant pekar på sin förälder och isolerar EN variabel. Varje nytt koncept
