@@ -426,6 +426,66 @@ igenom på första körningen. Mätningar:
 
 ---
 
+## Enproduktsbutik nummer två med adressen i prompten (FjordCover 2026-09-12)
+
+Butik `j0p8qz-kp`, produkten Båtmotorskydd 420D. Adressen stod i prompten,
+inget butiks-id. Steg 0 svarade "Connected: j0p8qz-kp.myshopify.com ✓" med
+alla 16 scopes, och trialen var skapad i SEK — första bygget som slapp
+valutaklicket helt (CatCabin stod i PHP, TackleBay i PHP). Kedjans steg 1–16
+gick rakt igenom på första körningen. Mätningar:
+
+- **Lösenordsfelet fanns kvar i VERKTYGEN.** `anslut` fick suffixet ur
+  adressen 2026-09-11, men bara när adressen skickas in. `kundvy-kor.mjs`
+  anropar `kontrolleraAnslutning()` och läste `SHOPIFY_STOREFRONT_PASSWORD`
+  rakt av — den allmänna raden, som stod kvar på en annan butik. Kundvyn blev
+  röd med "Lösenordet avvisades (HTTP 200)" fast rätt lösenord låg i miljön
+  under `SHOPIFY_STOREFRONT_PASSWORD_j0p8qz_kp`. Samma rotorsak som CaraShell
+  och CatCabin, tredje gången. **Fixat på två ställen:**
+  `token.butiksfilensDoman(id)` läser `butik.myshopify` ur butiksfilen så
+  `anslut(id)` hittar rätt suffix utan att någon skickar in adressen (mjuk
+  fallback — hittas adressen inte i miljön körs id-uppslaget som förut), och
+  `token.storefrontLosenordForDoman(doman, id)` slår upp lösenordet på den
+  domän vi FAKTISKT är anslutna till. Regel: läs aldrig
+  `process.env.SHOPIFY_STOREFRONT_PASSWORD` rakt av i ett nytt verktyg —
+  raden tillhör förra bygget så fort två butiker delar Environment.
+- **librsvg ritar inte `<textPath>`.** Loggvariant b böjdes först längs
+  ringen. SVG:n är korrekt och syns i en webbläsare, men sharp (librsvg)
+  hoppar över elementet utan felmeddelande — PNG:en kom ut helt utan
+  brandnamn, både med `href` och med `xlink:href`. Böj aldrig text i
+  fabrikens loggor: felet syns inte förrän någon tittar på filen som faktiskt
+  laddas upp. b är i stället ljus disk + motivet + ordmärket på en rad.
+- **Loggfeedback-loopen stängdes.** `--sammanfatta` sa a 0, b 0, c 3, och
+  regeln är att en variant som aldrig valts ska bytas — inte visas igen.
+  Därför byter `loggaSvgA`/`loggaSvgB` komposition när brandet har ett EGET
+  motiv (a = motivet stort + ordmärket på ett accentband, b = ljus badge),
+  precis som c gjorde sedan 2026-09-11. Droppen är orörd, så de fem butiker
+  som redan står i produktion ritas likadant som förut — det finns
+  regressionstest på just det.
+- **Nio varianter kallades "Variant".** `build-store.mjs` hårdkodade
+  optionsnamnet, så väljaren sa "Variant: 0–5 hk" och kunden kunde inte veta
+  vad hen valde. Nytt fält `produkt.variantnamn` i produktfilen
+  ("Motorstorlek"); tomt = "Variant" som förut.
+- **Judge.mes `reviews_for_widget` svarade 404 för produkten** (båda
+  domänformerna, mätt 2026-09-12) — inte tomt som på 4snrw0-mg 2026-09-11,
+  utan 404. Recensionerna låg i stället server-renderade i produktsidans HTML
+  under `jdgm-ssr-reviews__list`, kompletta med `jdgm-rev__author`,
+  `jdgm-rev__title`, `jdgm-rev__body` och `<time datetime>`. Åtta stycken,
+  alla fem stjärnor, alla med datetime 2026-08-29 inom nio sekunder =
+  källans API-import. Regel: läs alltid HTML:en också, och lita inte på att
+  JSON-vägen ens svarar.
+- **Storleksguiden är en textbild och hör inte hemma på startsidan.**
+  Källans fjärde bild bär svensk inbränd text. I produktgalleriet märks den
+  `[SV]` och göms på /nb av temats gallerifilter — men startsidans galleri
+  har inget sådant filter, så en kolumn som pekar på den hade stått kvar på
+  svenska för norska kunder. Startsidan använder därför bara de tre rena
+  fotona.
+- **Butiksnamnet är fortfarande människans klick.** Kundvyn är röd med
+  "DEFAULT KVAR: butiksnamnet är Shopifys default" tills någon skriver
+  FjordCover i Settings → General (API-GRANSER.md: MÄTT GÅR INTE). Det är
+  den enda röda punkten i kundvyn som inte är en översättning.
+
+---
+
 ## Varukorgen — löst 2026-09-09
 
 **Symptom** (Axel, HeimGuard + TankGuard, båda live): första gången kunden

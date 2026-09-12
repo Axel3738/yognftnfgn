@@ -21,6 +21,13 @@
 //   a — emblem: mörk disk, tunn ring, ordmärket spärrat, droppe ovanför
 //   b — sigill: ljus disk med mörk ring, ordmärket i två rader (TANK / GUARD)
 //   c — monogram: mörk disk, stor initialkombination, ordmärket litet under
+//
+// Har brandet ett EGET motiv (lucka, tak, koja, motor …) byts alla tre mot
+// motiv-ledda kompositioner — c sedan 2026-09-11, a och b sedan 2026-09-12,
+// för LOGGA-FEEDBACK.md visade att a och b aldrig valts i tre butiker i rad:
+//   a — band: motivet stort på mörk disk, ordmärket på ett accentband nedtill
+//   b — badge: ljus disk med mörk ring, motivet i mitten, ordmärket böjt
+//   c — motivet stort, ordmärket litet under en tunn linje
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -119,14 +126,49 @@ const KOJA = (cx, cy, r, ram, flik) => {
   );
 };
 
+// En övertäckt utombordare (FjordCover 2026-09-12): produktbildens egen
+// silhuett — bred rundad kåpa upptill, insvängd midja, och foten som skjuter
+// ut framåt nedtill. Över midjan sitter spännremmen i accentfärgen med sitt
+// spänne, för remmen är det enda kunden gör: dra över, spänn fast.
+// `ram` = skyddets färg, `flik` = remmens.
+const MOTOR = (cx, cy, r, ram, flik) => {
+  const n = (v) => Math.round(v * 10) / 10;
+  const p = (x, y) => `${n(cx + x * r)} ${n(cy + y * r)}`;
+  const kropp =
+    `M${p(-0.6, -0.92)} Q${p(-0.7, -1.24)} ${p(-0.3, -1.26)} ` +
+    `L${p(0.3, -1.26)} Q${p(0.7, -1.24)} ${p(0.6, -0.92)} ` +
+    `L${p(0.4, -0.02)} L${p(0.34, 0.34)} ` +
+    `L${p(0.78, 0.62)} L${p(0.88, 0.9)} L${p(0.5, 1.04)} ` +
+    `L${p(0.02, 1.02)} Q${p(-0.2, 1.0)} ${p(-0.28, 0.78)} ` +
+    `L${p(-0.4, 0.34)} L${p(-0.44, -0.02)} Z`;
+  // TVÅ remmar, som på produktbilden: en över kåpan och en om midjan. Med
+  // bara midjeremmen läses silhuetten som en stövel (avläst i första
+  // renderingen 2026-09-12) — den övre remmen gör den till ett överdrag.
+  const rem = (y, halvbredd, spanne) =>
+    `<rect x="${n(cx - halvbredd * r)}" y="${n(cy + y * r)}" width="${n(2 * halvbredd * r)}" height="${n(0.15 * r)}" rx="${n(0.035 * r)}" fill="${flik}"/>` +
+    (spanne
+      ? `<rect x="${n(cx - 0.12 * r)}" y="${n(cy + (y - 0.07) * r)}" width="${n(0.26 * r)}" height="${n(0.29 * r)}" rx="${n(0.05 * r)}" fill="${flik}"/>` +
+        `<rect x="${n(cx - 0.05 * r)}" y="${n(cy + (y + 0.01) * r)}" width="${n(0.12 * r)}" height="${n(0.15 * r)}" rx="${n(0.03 * r)}" fill="${ram}"/>`
+      : '');
+  return (
+    `<g class="motor">` +
+    `<path d="${kropp}" fill="${ram}"/>` +
+    rem(-0.72, 0.66, false) +
+    rem(0.06, 0.56, true) +
+    `</g>`
+  );
+};
+
 // Motivet ovanför ordmärket. droppe = standard (bakåtkompatibelt), lucka =
 // kalenderlucka, tak = husvagnstak under överdrag, koja = utekattkoja på ben,
-// ingen = bara ordmärket. Väljs med --motiv eller byggLoggaSvg(..., { motiv }).
+// motor = övertäckt utombordare, ingen = bara ordmärket.
+// Väljs med --motiv eller byggLoggaSvg(..., { motiv }).
 export const MOTIV = {
   droppe: (cx, cy, r, { fill }) => DROPPE(cx, cy, r, fill),
   lucka: (cx, cy, r, { ram, flik }) => LUCKA(cx, cy, r, ram, flik),
   tak: (cx, cy, r, { ram, flik }) => TAK(cx, cy, r, ram, flik),
   koja: (cx, cy, r, { ram, flik }) => KOJA(cx, cy, r, ram, flik),
+  motor: (cx, cy, r, { ram, flik }) => MOTOR(cx, cy, r, ram, flik),
   ingen: () => '',
 };
 
@@ -147,7 +189,51 @@ function ordStorlek(ord, maxBredd, faktor = 0.68) {
   return Math.floor(maxBredd / (ord.length * faktor));
 }
 
+// Variant a med ett EGET motiv (FjordCover 2026-09-12): motivet stort på mörk
+// disk och ordmärket på ett massivt accentband tvärs över nederdelen. Den
+// gamla a:n (litet motiv + spärrat ordmärke + tagline) valdes aldrig i tre
+// butiker i rad — LOGGA-FEEDBACK.md säger att den ska bytas, inte visas igen.
+function loggaSvgABand(brand, t) {
+  const f = t.farger;
+  const ord = String(brand).toUpperCase();
+  const size = Math.min(112, ordStorlek(ord, 660));
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs><clipPath id="disk"><circle cx="512" cy="512" r="512"/></clipPath></defs>
+  <circle cx="512" cy="512" r="512" fill="${f.mork}"/>
+  ${motivFn(t)(512, 400, 190, { fill: f.text_pa_mork, ram: f.text_pa_mork, flik: f.accent })}
+  <rect x="0" y="700" width="1024" height="176" fill="${f.accent}" clip-path="url(#disk)"/>
+  <text x="512" y="792" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="${size}" letter-spacing="${Math.round(size * 0.1)}" fill="${f.accent_text ?? '#FFFFFF'}">${eskapa(ord)}</text>
+</svg>
+`;
+}
+
+// Variant b med ett eget motiv: LJUS disk med kraftig mörk ring, motivet i
+// mitten och ordmärket på EN rad under, med ett accentstreck under det.
+// Ersätter den gamla b:n — ordet delat på två rader — som heller aldrig valts.
+//
+// ⚠️ Ordmärket böjdes först längs ringen med <textPath>. librsvg (sharp)
+// ritar inte textPath alls — varken med href eller xlink:href — så PNG:en
+// kom ut utan brandnamn (mätt 2026-09-12 på FjordCover, två renderingar).
+// Böj aldrig text i de här loggorna: det syns i webbläsaren och försvinner
+// i filen som faktiskt laddas upp.
+function loggaSvgBBadge(brand, t) {
+  const f = t.farger;
+  const ord = String(brand).toUpperCase();
+  const size = Math.min(104, ordStorlek(ord, 620));
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512" cy="512" r="512" fill="${f.yta}"/>
+  <circle cx="512" cy="512" r="474" fill="none" stroke="${f.mork}" stroke-width="26"/>
+  ${motivFn(t)(512, 412, 186, { fill: f.mork, ram: f.mork, flik: f.accent })}
+  <text x="512" y="${Math.round(700 + size * 0.5)}" text-anchor="middle" dominant-baseline="central" ${font(t)}
+        font-size="${size}" letter-spacing="${Math.round(size * 0.12)}" fill="${f.mork}">${eskapa(ord)}</text>
+  <line x1="392" y1="${Math.round(700 + size * 1.2)}" x2="632" y2="${Math.round(700 + size * 1.2)}" stroke="${f.accent}" stroke-width="12" stroke-linecap="round"/>
+</svg>
+`;
+}
+
 export function loggaSvgA(brand, t) {
+  if (egetMotiv(t)) return loggaSvgABand(brand, t);
   const f = t.farger;
   const ord = String(brand).toUpperCase();
   const size = Math.min(140, ordStorlek(ord, 740));
@@ -170,6 +256,7 @@ export function orddelar(brand) {
 }
 
 export function loggaSvgB(brand, t) {
+  if (egetMotiv(t)) return loggaSvgBBadge(brand, t);
   const f = t.farger;
   const delar = orddelar(brand);
   const langsta = delar.reduce((a, b) => (b.length > a.length ? b : a), '');
@@ -200,8 +287,11 @@ export function loggaSvgC(brand, t) {
     ? motivFn(t)(512, 400, 150, { fill: f.text_pa_mork, ram: f.text_pa_mork, flik: f.accent })
     : `<text x="512" y="452" text-anchor="middle" dominant-baseline="central" ${font(t)}
         font-size="400" letter-spacing="-12" fill="${f.text_pa_mork}">${eskapa(monogram)}</text>`;
-  const linjeY = egetMotiv(t) ? 672 : 640;
-  const ordY = egetMotiv(t) ? 744 : 712;
+  // Luften mellan linjen och ordmärket skalas med grader: en smal display-
+  // grotesk (Oswald) har högre versaler för samma font-size och skar rakt
+  // igenom linjen på 672/744 (mätt 2026-09-12).
+  const linjeY = egetMotiv(t) ? 658 : 640;
+  const ordY = egetMotiv(t) ? Math.round(linjeY + 60 + size * 0.5) : 712;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <circle cx="512" cy="512" r="512" fill="${f.mork}"/>
   <circle cx="512" cy="512" r="464" fill="none" stroke="${f.text_pa_mork}" stroke-opacity="0.3" stroke-width="4"/>

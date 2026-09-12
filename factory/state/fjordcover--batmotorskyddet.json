@@ -1,0 +1,76 @@
+{
+  "butik": "fjordcover",
+  "produkt": "batmotorskyddet",
+  "steg": {
+    "produkt": {
+      "klar": true,
+      "id": "gid://shopify/Product/8085255028784",
+      "handle": "batmotorskyddet",
+      "status": "ACTIVE",
+      "publicerad": true
+    },
+    "metafalt": {
+      "klar": true,
+      "antal": 12
+    },
+    "lagerpolicy": {
+      "klar": true,
+      "andrade": [],
+      "verifierade": [
+        "0–5 hk",
+        "6–15 hk",
+        "15–20 hk",
+        "20–30 hk",
+        "30–60 hk",
+        "60–100 hk",
+        "100–150 hk",
+        "175–225 hk",
+        "250–350 hk"
+      ],
+      "redanRatt": true
+    },
+    "bonus": {
+      "klar": true,
+      "produkt_id": "8085255061552",
+      "variant_id": "43611497562160",
+      "handle": "batterifranskiljaren",
+      "ny": true,
+      "ateranvand": false,
+      "skrivet": true
+    },
+    "paket": {
+      "klar": true,
+      "nivaer": [
+        "batmotorskyddet-a-1",
+        "batmotorskyddet-a-2",
+        "batmotorskyddet-a-3",
+        "batmotorskyddet-b-1",
+        "batmotorskyddet-b-2",
+        "batmotorskyddet-b-3"
+      ],
+      "koder": [
+        "FJORD2A",
+        "FJORD3A",
+        "FJORD2B",
+        "FJORD3B"
+      ],
+      "frammande": [],
+      "test": "paket"
+    },
+    "recensioner": {
+      "klar": false,
+      "manuell": "Ingen Judge.me-token (env JUDGEME_FJORDCOVER_TOKEN) — VA:n importerar output/batmotorskyddet/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    }
+  },
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "tracking",
+      "doman",
+      "kundvy-produktsida",
+      "markörer /nb"
+    ],
+    "tid": "2026-09-12T16:48:26.694Z"
+  },
+  "uppdaterad": "2026-09-12T16:48:26.694Z"
+}

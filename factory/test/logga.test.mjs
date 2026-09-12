@@ -78,3 +78,25 @@ test('motiv koja: kojan ritas i alla tre varianter + favicon, och c blir motiv-l
   assert.ok(gammalC.includes('font-size="400"'));
   assert.throws(() => byggLoggaSvg(rabutik(), { motiv: 'hund' }), /Okänt motiv/);
 });
+
+test('motiv motor: alla tre varianter blir motiv-ledda, droppen lämnas orörd', () => {
+  const brand = rabutik().butik.brand.toUpperCase();
+  const jobb = byggLoggaSvg(rabutik(), { motiv: 'motor' });
+  for (const j of jobb) assert.ok(j.svg.includes('class="motor"'), `${j.namn} saknar motorn`);
+  const svg = Object.fromEntries(jobb.map((j) => [j.namn, j.svg]));
+  // a = band: accentbandet nedtill, inget tagline-fält kvar
+  assert.ok(svg['logga-a'].includes('<rect x="0" y="700"'), 'a saknar accentbandet');
+  assert.ok(svg['logga-a'].includes(brand), 'a bär ordmärket');
+  // b = badge: ljus disk, ordmärket i ETT stycke (inte två rader) + accentstreck.
+  // librsvg ritar inte <textPath> — den får aldrig tillbaka in i loggorna.
+  assert.ok(!svg['logga-b'].includes('textPath'), 'textPath renderas inte av sharp');
+  assert.ok(svg['logga-b'].includes(`>${brand}<`), 'b bär ordmärket i ett stycke');
+  // c = motivet stort, aldrig monogrammet
+  assert.ok(!svg['logga-c'].includes('font-size="400"'));
+
+  // Standarddroppen får INTE ändras av det här: a har kvar taglinefältet och
+  // b sina orddelar (butikerna som redan står i produktion ritas likadant).
+  const droppe = Object.fromEntries(byggLoggaSvg(rabutik()).map((j) => [j.namn, j.svg]));
+  assert.ok(!droppe['logga-a'].includes('<rect x="0" y="700"'));
+  assert.ok(!droppe['logga-b'].includes('textPath'));
+});

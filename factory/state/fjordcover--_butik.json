@@ -1,0 +1,218 @@
+{
+  "butik": "fjordcover",
+  "produkt": "_butik",
+  "steg": {
+    "anslutning": {
+      "klar": true,
+      "domain": "j0p8qz-kp.myshopify.com",
+      "name": "My Store 4",
+      "primaryDomain": "j0p8qz-kp.myshopify.com",
+      "currencyCode": "SEK"
+    },
+    "tema-upload": {
+      "klar": true,
+      "arbetstemaId": "gid://shopify/OnlineStoreTheme/145386274864",
+      "temaId": "gid://shopify/OnlineStoreTheme/145386274864",
+      "temaNamn": "FjordCover – CRO v1",
+      "role": "UNPUBLISHED",
+      "redanUppe": false,
+      "filer": 396,
+      "kompletterade": []
+    },
+    "brand": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/145386274864",
+      "filer": [
+        "assets/opf-brand.css",
+        "snippets/ms-head.liquid",
+        "config/settings_schema.json",
+        "config/settings_data.json"
+      ]
+    },
+    "tema": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/145386274864",
+      "temaNamn": "FjordCover – CRO v1",
+      "sektioner": 6,
+      "filer": [
+        "sections/opf-problem.liquid",
+        "sections/opf-losning.liquid",
+        "sections/opf-funktioner.liquid",
+        "sections/opf-lifestyle.liquid",
+        "sections/opf-garanti.liquid",
+        "sections/opf-faq.liquid",
+        "assets/ms-paket.js",
+        "sections/header-group.json",
+        "snippets/opf-korg-upsell.liquid",
+        "sections/cart-drawer.liquid",
+        "snippets/opf-tillagg.liquid",
+        "snippets/ms-head.liquid"
+      ],
+      "produktmall": "verifierad",
+      "upsell": "batterifranskiljaren"
+    },
+    "avbrandning": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/145386274864",
+      "fore": 0,
+      "borttagnaSektioner": [],
+      "omskrivnaFiler": [
+        "config/settings_data.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "snippets/ms-bundle-picker.liquid"
+      ],
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "logga": {
+      "klar": true,
+      "logo": "shopify://shop_images/fjordcover-logga-c.png",
+      "favicon": "shopify://shop_images/fjordcover-favicon.png",
+      "bredd": 140,
+      "temaId": "gid://shopify/OnlineStoreTheme/145386274864"
+    },
+    "kollektion": {
+      "klar": true,
+      "hoppadOver": "enproduktsbutik"
+    },
+    "startsida": {
+      "klar": true,
+      "temaId": "gid://shopify/OnlineStoreTheme/145386274864",
+      "filer": [
+        "templates/index.json",
+        "sections/footer-group.json"
+      ],
+      "sektioner": [
+        "hero",
+        "ms_usp",
+        "ms_marquee",
+        "produkt",
+        "berattelse",
+        "galleri",
+        "statement",
+        "omdomen",
+        "trygghet",
+        "ms_faq",
+        "ms_guarantee"
+      ],
+      "bilder": {
+        "hero": "shopify://shop_images/batmotorskydd-vinter-tackt.jpg",
+        "trygghet": "shopify://shop_images/batmotor-pa-bat.jpg",
+        "galleri": [
+          "shopify://shop_images/batmotor-pa-bat.jpg",
+          "shopify://shop_images/batmotorskydd-svart.jpg",
+          "shopify://shop_images/batmotorskydd-vinter-tackt.jpg"
+        ]
+      },
+      "produkter": [
+        "batmotorskyddet: ACTIVE"
+      ]
+    },
+    "sidor": {
+      "klar": true,
+      "antal": 4
+    },
+    "policyer": {
+      "klar": true,
+      "antal": 3
+    },
+    "meny": {
+      "klar": true,
+      "huvudmeny": {
+        "handle": "main-menu",
+        "orord": false,
+        "rader": 4
+      },
+      "sidfot": {
+        "handle": "footer",
+        "orord": false,
+        "rader": 5
+      }
+    },
+    "frakt": {
+      "klar": true,
+      "andrade": 3,
+      "orort": false,
+      "skapadeZoner": [
+        "Sverige",
+        "EU (Europeiska Unionen)",
+        "Internationell"
+      ],
+      "borttagnaZoner": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "huvudmarknad": {
+      "klar": true,
+      "valuta": "SEK",
+      "primarmarknad": "Sweden"
+    },
+    "kallskanning": {
+      "klar": true,
+      "skannade": 317,
+      "rent": true,
+      "lasta": [
+        "templates/index.json",
+        "templates/product.json",
+        "sections/footer-group.json",
+        "sections/header-group.json",
+        "config/settings_data.json"
+      ],
+      "saknade": []
+    },
+    "marknad": {
+      "klar": true,
+      "marknader": [
+        {
+          "land": "NO",
+          "locale": "nb",
+          "marknad": "Norge",
+          "status": "ACTIVE",
+          "localeSkapad": true
+        }
+      ]
+    },
+    "oversatt": {
+      "klar": true,
+      "underlag": 140,
+      "utfall": {
+        "nb": {
+          "registrerade": 99,
+          "saknade": 0,
+          "perTyp": {
+            "variant": 0,
+            "produkt": 7,
+            "metafält": 9,
+            "sida": 7,
+            "menylänk": 6,
+            "paket": 16,
+            "policy": 3,
+            "kollektion": 0,
+            "temamall": 44,
+            "sektionsgrupp": 7
+          },
+          "granskning": "4212/4231"
+        }
+      }
+    }
+  },
+  "arbetstemaId": "gid://shopify/OnlineStoreTheme/145386274864",
+  "arbetstemaNamn": "FjordCover – CRO v1",
+  "qa": {
+    "gron": false,
+    "kritiska": [
+      "kundvy-startsida",
+      "markörer /nb"
+    ],
+    "tid": "2026-09-12T16:48:21.120Z"
+  },
+  "uppdaterad": "2026-09-12T16:48:21.120Z"
+}

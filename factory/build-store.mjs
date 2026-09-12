@@ -51,7 +51,12 @@ export function bildPost(b, standardAlt) {
 // tillbaka på butikens brand när produktfilen saknar eget brandnamn.
 export function byggPlan(p, butik = null) {
   const riktigaVarianter = Array.isArray(p.varianter) && p.varianter.length > 0;
-  const optionNamn = riktigaVarianter ? 'Variant' : 'Title';
+  // Vad valet HETER för kunden. "Variant" duger för färger, men inte när
+  // varianterna är nio motorstorlekar — då står det "Variant: 0–5 hk" i
+  // väljaren och kunden vet inte vad hen väljer (FjordCover 2026-09-12).
+  // `produkt.variantnamn` i produktfilen skriver över; tomt = "Variant".
+  const egetOptionNamn = typeof p.produkt?.variantnamn === 'string' ? p.produkt.variantnamn.trim() : '';
+  const optionNamn = riktigaVarianter ? egetOptionNamn || 'Variant' : 'Title';
   const varianter = riktigaVarianter ? p.varianter : [{ namn: 'Default Title' }];
   // Listorna tål null, tom sträng och (efter yaml-fixen) `[]` — men aldrig
   // krascha på en felskriven rad: valideringen har redan sagt sitt.

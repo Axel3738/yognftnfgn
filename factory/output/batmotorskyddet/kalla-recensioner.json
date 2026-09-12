@@ -1,0 +1,71 @@
+{
+  "kalla": "baverbutiken.se produktsidans jdgm-ssr-reviews, hämtad 2026-09-12",
+  "antal": 8,
+  "snitt": 5,
+  "recensioner": [
+    {
+      "namn": "Daniel Lindberg",
+      "betyg": 5,
+      "titel": "Nöjd med skyddet",
+      "text": "Gör jobbet bra och motorn hålls ren.",
+      "datum": "2026-08-29",
+      "created_at": "2026-08-29T08:38:52Z"
+    },
+    {
+      "namn": "Fredrik Larsson",
+      "betyg": 5,
+      "titel": "Bra köp",
+      "text": "Skyddet känns hållbart och är lätt att sätta på.",
+      "datum": "2026-08-29",
+      "created_at": "2026-08-29T08:38:50Z"
+    },
+    {
+      "namn": "Thomas Eriksson",
+      "betyg": 5,
+      "titel": "Rekommenderas",
+      "text": "Bra skydd när båten står ute. Väldigt nöjd.",
+      "datum": "2026-08-29",
+      "created_at": "2026-08-29T08:38:49Z"
+    },
+    {
+      "namn": "Peter Andersson",
+      "betyg": 5,
+      "titel": "Enkelt och bra",
+      "text": "Lätt att använda och täcker motorn bra.",
+      "datum": "2026-08-29",
+      "created_at": "2026-08-29T08:38:48Z"
+    },
+    {
+      "namn": "Johan Karlsson",
+      "betyg": 5,
+      "titel": "Passar bra",
+      "text": "Bra skydd mot regn och smuts. Jag är nöjd.",
+      "datum": "2026-08-29",
+      "created_at": "2026-08-29T08:38:47Z"
+    },
+    {
+      "namn": "Mikael Svensson",
+      "betyg": 5,
+      "titel": "Bra kvalitet",
+      "text": "Känns starkt och sitter bra på motorn.",
+      "datum": "2026-08-29",
+      "created_at": "2026-08-29T08:38:45Z"
+    },
+    {
+      "namn": "Lars Johansson",
+      "betyg": 5,
+      "titel": "Mycket nöjd",
+      "text": "Enkelt att sätta på och bra material.",
+      "datum": "2026-08-29",
+      "created_at": "2026-08-29T08:38:44Z"
+    },
+    {
+      "namn": "Anders Nilsson",
+      "betyg": 5,
+      "titel": "Bra skydd",
+      "text": "Skyddet passar bra och håller motorn ren.",
+      "datum": "2026-08-29",
+      "created_at": "2026-08-29T08:38:43Z"
+    }
+  ]
+}

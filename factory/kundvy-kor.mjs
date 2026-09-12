@@ -37,6 +37,7 @@ import { lasState } from './state.mjs';
 import { byggPaketplan } from './paket.mjs';
 import { lasOversattning } from './oversattning.mjs';
 import { kodkoll } from './trippelkoll.mjs';
+import { storefrontLosenordForDoman } from './token.mjs';
 import {
   kontrolleraKundvy,
   rapport,
@@ -296,7 +297,10 @@ async function huvud() {
   const state = lasState(butik.butik.id, '_butik');
   const arbetstemaId = state.arbetstemaId ?? state.steg?.['tema-upload']?.arbetstemaId ?? state.steg?.['tema-upload']?.temaId ?? null;
   const tema = flagga('--tema') ? { id: flagga('--tema'), role: 'UNPUBLISHED' } : await hamtaArbetstema(arbetstemaId);
-  const losenord = flagga('--losenord') ?? process.env.SHOPIFY_STOREFRONT_PASSWORD ?? null;
+  // Lösenordet för DEN HÄR butiken, slaget på adressen vi faktiskt är
+  // anslutna till — aldrig den allmänna raden rakt av. Den står kvar på förra
+  // bygget när flera butiker delar Environment (FjordCover 2026-09-12).
+  const losenord = flagga('--losenord') || storefrontLosenordForDoman(shop.myshopifyDomain, butikId) || null;
   console.log(`Bas ${byggBas(shop, ctx.bas)} · tema ${tema.name ?? tema.id} (${tema.role})${previewTemaId(tema) ? ' via preview_theme_id' : ' = LIVE'}`);
 
   // Markörerna: butikens egna ord, minus de som är lika på målspråket.

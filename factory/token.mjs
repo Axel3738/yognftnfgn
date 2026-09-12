@@ -189,6 +189,25 @@ export function suffixForDoman(doman, env = process.env) {
   return null;
 }
 
+/**
+ * Butikens myshopify-adress ur dess EGEN konfigfil (`butik.myshopify`, med
+ * `judgeme.shop_domain` som reserv för butiker skrivna före fältet fanns).
+ * Tom sträng när filen saknas, inte går att läsa eller inte bär någon adress
+ * — den som anropar ska då falla tillbaka på butiks-id:t, inte stoppa.
+ */
+export function butiksfilensDoman(butikId, butikerMapp = BUTIKER_MAPP) {
+  const id = String(butikId ?? '').trim().toLowerCase();
+  if (!id) return '';
+  try {
+    const fil = join(butikerMapp, `${id}.yaml`);
+    if (!existsSync(fil)) return '';
+    const y = lasYaml(readFileSync(fil, 'utf8'));
+    return normaliseraDoman(y?.butik?.myshopify ?? y?.judgeme?.shop_domain ?? '');
+  } catch {
+    return '';
+  }
+}
+
 export function losNycklar(butikId, env = process.env) {
   const shop = normaliseraDoman(
     perButik(env, 'SHOPIFY_SHOP', butikId) || env.SHOPIFY_SHOP || env.SHOPIFY_STORE_DOMAIN || ''
@@ -211,6 +230,28 @@ export function losNycklar(butikId, env = process.env) {
  */
 export function storefrontLosenord(butikId, env = process.env) {
   return perButik(env, 'SHOPIFY_STOREFRONT_PASSWORD', butikId) || env.SHOPIFY_STOREFRONT_PASSWORD || '';
+}
+
+/**
+ * Storefront-lösenordet för den butik vi FAKTISKT är anslutna till.
+ * Adressens suffix först (det är så checklistan låter folk döpa raderna),
+ * sen butiks-id:t, sist den allmänna raden.
+ *
+ * ⚠️ Finns för att den allmänna raden tillhör NÅGON ANNAN butik. Axel kör
+ * flera butiker ur samma Environment, och `SHOPIFY_STOREFRONT_PASSWORD` utan
+ * suffix står kvar på det förra bygget. kundvy-kor.mjs läste den rakt av och
+ * svarade "Lösenordet avvisades" på en butik vars rätta lösenord låg i miljön
+ * hela tiden (FjordCover 2026-09-12; samma rotorsak som CaraShell 2026-09-10
+ * och CatCabin 2026-09-11, men i verktyget i stället för i kedjan).
+ */
+export function storefrontLosenordForDoman(doman, butikId = null, env = process.env) {
+  const suffix = suffixForDoman(doman, env);
+  return (
+    (suffix && perButik(env, 'SHOPIFY_STOREFRONT_PASSWORD', suffix)) ||
+    (butikId && perButik(env, 'SHOPIFY_STOREFRONT_PASSWORD', butikId)) ||
+    env.SHOPIFY_STOREFRONT_PASSWORD ||
+    ''
+  );
 }
 
 // Är den sparade tokenen fortfarande brukbar för domänen? Kräver ett
@@ -515,7 +556,18 @@ export async function anslut(butikId, { torr = false, utanEnvFil = false, env = 
   // butiks-id:t. Suffixet slås upp ur adressen, så VA:n aldrig behöver veta
   // vad koden kallar butiken. (Axels beslut 2026-09-10.)
   const onskad = normaliseraDoman(onskadDoman);
-  const uppslag = onskad ? suffixForDoman(onskad, miljo) : null;
+  // Utan uttrycklig adress: ta butiksfilens egen `butik.myshopify`. De
+  // fristående verktygen (kundvy-kor, trippelkoll, logga …) anropar
+  // anslut(butikId) utan adress, och då slogs storefront-lösenordet upp på
+  // butiks-id:t — som ingen döper miljövariablerna efter. FjordCover
+  // 2026-09-12: nycklarna låg under `_j0p8qz_kp`, kundvyn föll tillbaka på
+  // den allmänna raden och svarade "Lösenordet avvisades" fast rätt lösenord
+  // stod i miljön (samma fel som CaraShell och CatCabin, men i verktygen i
+  // stället för i kedjan). Fallbacken är MJUK: hittas adressen inte i miljön
+  // körs uppslaget på id:t som förut, utan att stoppa något.
+  const franFil = onskad ? '' : normaliseraDoman(butiksfilensDoman(id, sparrAlternativ.butikerMapp ?? BUTIKER_MAPP));
+  const adress = onskad || (franFil && suffixForDoman(franFil, miljo) ? franFil : '');
+  const uppslag = adress ? suffixForDoman(adress, miljo) : null;
   const n = uppslag
     ? losNycklar(uppslag, miljo)
     : losNycklar(id, miljo);

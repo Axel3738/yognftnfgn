@@ -282,6 +282,23 @@
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen."
+    },
+    "fjordcover/batmotorskyddet": {
+      "lage": "skala",
+      "redigerare": null,
+      "redigerare_discord_id": null,
+      "notion": {
+        "name": "",
+        "database_id": "",
+        "foralder_page_id": "",
+        "url": ""
+      },
+      "kordag_offset": 2,
+      "senaste_korning": "",
+      "senaste_brief": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
     }
   },
   "rutinplatser": {

@@ -1,0 +1,280 @@
+{
+  "input": {
+    "title": "Båtmotorskydd 420D – Heltäckande för Utombordare",
+    "handle": "batmotorskyddet",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Dras över kåpa och rigg, spänns fast med en rem</p>",
+    "vendor": "FjordCover",
+    "seo": {
+      "title": "Båtmotorskydd 420D – Heltäckande för Utombordare – FjordCover",
+      "description": "Motorn är täckt genom hela uppställningssäsongen. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Motorstorlek",
+        "values": [
+          {
+            "name": "0–5 hk"
+          },
+          {
+            "name": "6–15 hk"
+          },
+          {
+            "name": "15–20 hk"
+          },
+          {
+            "name": "20–30 hk"
+          },
+          {
+            "name": "30–60 hk"
+          },
+          {
+            "name": "60–100 hk"
+          },
+          {
+            "name": "100–150 hk"
+          },
+          {
+            "name": "175–225 hk"
+          },
+          {
+            "name": "250–350 hk"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "0–5 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-0-5",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "6–15 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-6-15",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "15–20 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-15-20",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "20–30 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-20-30",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "30–60 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-30-60",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "60–100 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-60-100",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "100–150 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-100-150",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "175–225 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-175-225",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Motorstorlek",
+            "name": "250–350 hk"
+          }
+        ],
+        "price": "579.00",
+        "compareAtPrice": "965.00",
+        "sku": "TEMU-605748427852371-250-350",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg",
+        "contentType": "IMAGE",
+        "alt": "Svart båtmotorskydd i 420D Oxford-tyg med två spännband, brett över kåpan och utskjutande fot över riggen"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-pa-bat.jpg",
+        "contentType": "IMAGE",
+        "alt": "Två utombordare vid uppställningsplatsen, den ena täckt av skyddet och den andra oskyddad"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg",
+        "contentType": "IMAGE",
+        "alt": "Aluminiumbåt på trailer i höstväder med motorn under skyddet"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-tabell-sv.jpg",
+        "contentType": "IMAGE",
+        "alt": "[SV] Storleksguide för utombordarskyddet med omkrets och höjd per motorstorlek, från 6–15 hk till 175–225 hk"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Den blanka motorn syns från vägen"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Båten står upplagd för säsongen, och motorn är fortfarande synlig och oskyddad. Sex månader med regn, snö och frost sätter spår."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-pa-bat.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "Täck den, spänn fast, gå därifrån"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Skyddet dras över hela motorn, från kåpan ner över riggen, och spänns fast med en rem runt midjan. Sen är det gjort för säsongen."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Motorn är täckt genom hela uppställningssäsongen\",\"Skyddet håller väder och smuts ute\",\"En täckt motor är ett tråkigare byte för en tjuv\",\"Rätt storlek till din motor, från 0–350 hk\",\"Sista jobbet innan du lämnar båten för säsongen\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"420D Oxford-tyg\",\"Täcker hela motorn, från kåpan ner över riggen\",\"Två spännband, ett över kåpan och ett runt midjan\",\"Nio storlekar, från 0–5 till 250–350 hk\",\"Storleksguide med omkrets och höjd per motor\",\"579 kr i stället för 965 kr\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Vilken storlek passar min motor?\",\"svar\":\"Mät omkretsen runt motorkåpan och höjden, och jämför med storleksguiden. Skyddet finns i nio storlekar, från 0–5 hk till 250–350 hk.\"},{\"fraga\":\"Vilket material är skyddet gjort av?\",\"svar\":\"420D Oxford-tyg.\"},{\"fraga\":\"Hur lång är leveranstiden?\",\"svar\":\"Räkna med 5 till 10 arbetsdagar från beställning.\"},{\"fraga\":\"Vad gäller om jag vill ångra köpet?\",\"svar\":\"Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@fjordcover.se.\"},{\"fraga\":\"Kan jag ha skyddet på mellan båtturer, inte bara vid uppläggning?\",\"svar\":\"Ja. Skyddet går lika bra att ha på mellan turerna för att hålla motorn ren.\"}]"
+    }
+  ]
+}

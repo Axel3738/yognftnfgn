@@ -1,0 +1,33 @@
+{
+  "kalla": "baverbutiken.se produktsidans kaching-bundles-deal-block-settings, hämtad 2026-09-12",
+  "preselected": "st2b",
+  "nivaer": [
+    {
+      "id": "st1a",
+      "rubrik": "1 st",
+      "underrubrik": "Standard pris",
+      "bricka": "",
+      "antal": 1,
+      "rabatt_typ": "percentage",
+      "rabatt": 0
+    },
+    {
+      "id": "st2b",
+      "rubrik": "2 st",
+      "underrubrik": "",
+      "bricka": "Mest populär",
+      "antal": 2,
+      "rabatt_typ": "percentage",
+      "rabatt": 15
+    },
+    {
+      "id": "st3c",
+      "rubrik": "3 st",
+      "underrubrik": "",
+      "bricka": "",
+      "antal": 3,
+      "rabatt_typ": "percentage",
+      "rabatt": 20
+    }
+  ]
+}

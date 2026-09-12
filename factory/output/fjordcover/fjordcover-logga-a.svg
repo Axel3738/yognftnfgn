@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs><clipPath id="disk"><circle cx="512" cy="512" r="512"/></clipPath></defs>
+  <circle cx="512" cy="512" r="512" fill="#1B2A33"/>
+  <g class="motor"><path d="M398 225.2 Q379 164.4 455 160.6 L569 160.6 Q645 164.4 626 225.2 L588 396.2 L576.6 464.6 L660.2 517.8 L679.2 571 L607 597.6 L515.8 593.8 Q474 590 458.8 548.2 L436 464.6 L428.4 396.2 Z" fill="#EEF3F5"/><rect x="386.6" y="263.2" width="250.8" height="28.5" rx="6.7" fill="#E0620F"/><rect x="405.6" y="411.4" width="212.8" height="28.5" rx="6.7" fill="#E0620F"/><rect x="489.2" y="398.1" width="49.4" height="55.1" rx="9.5" fill="#E0620F"/><rect x="502.5" y="413.3" width="22.8" height="28.5" rx="5.7" fill="#EEF3F5"/></g>
+  <rect x="0" y="700" width="1024" height="176" fill="#E0620F" clip-path="url(#disk)"/>
+  <text x="512" y="792" text-anchor="middle" dominant-baseline="central" font-family="Oswald, DejaVu Sans, sans-serif" font-weight="600"
+        font-size="97" letter-spacing="10" fill="#FFFFFF">FJORDCOVER</text>
+</svg>

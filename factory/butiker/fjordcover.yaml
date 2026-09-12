@@ -1,0 +1,232 @@
+# Butikskonfig för FjordCover — enproduktsbutik för Båtmotorskydd 420D
+# (butiks-id `fjordcover`, byggd 2026-09-12 ur /ny-ops med butiksadressen
+# j0p8qz-kp i prompten). Hela underlaget: factory/output/fjordcover/BRAND.md.
+# Bolaget är samma AB som driver Matstrumpor.se, HeimGuard, TankGuard,
+# DryTrek, TackleBay, AdventLane, CaraShell och CatCabin.
+#
+# Brandet bär kategorin — skydd för båten när den inte är i sjön — inte just
+# det här motorskyddet. Nästa produkt (kapell, motorlås, batterifrånskiljare)
+# blir en produktfil till.
+
+butik:
+  id: fjordcover
+  brand: "FjordCover"
+  bolagsnamn: "STONEBITE ECOM AB"
+  orgnr: "559576-2401"
+  adress: "Sjöhed 160, 442 74 Harestad"
+  supportmail: "hello@fjordcover.se"
+  land: SE
+  huvudmarknad: Sverige
+  # Butiksadressen ur prompten — anslutningen (steg 0) slår upp miljöns
+  # SHOPIFY_SHOP_<suffix> ur den här raden, aldrig ur butiks-id:t.
+  myshopify: "j0p8qz-kp.myshopify.com"
+  # SE + NO är standard i varje OPS (Axel 2026-09-08). SEK tills NOK slås på i
+  # admin (checklistans avsnitt 5) — NOK-paketnivåer krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  # ✅ Trialen skapades med SEK som valuta (steg 0, 2026-09-12) — till skillnad
+  # från CatCabin (PHP) behöver paketsteget inte vänta på ett valutabyte.
+  valuta: SEK
+  moms_i_pris: true
+  # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. ⚠️ Filtret i
+  # kundvy.mjs släpper bara ord som är ett HELT värde lika i sv och nb — ett
+  # ord inne i en mening filtreras inte. Lista därför bara ord som faktiskt
+  # skiljer sig på norska. Bortvalda av just det skälet: "motor", "trailer",
+  # "hk", "rem" (samma på norska), och "kåpa" (nb "kåpe" — men källorden
+  # varierar och en delsträng hade gett falska larm).
+  # ⚠️ "Fri frakt" STOD här och var ett falskt larm (mätt 2026-09-12 efter
+  # nb-registreringen): frasen är identisk på norska ("Fri frakt til Sverige
+  # og Norge"), men den ligger inne i meningar och filtreras därför inte bort
+  # av kundvy.mjs. Den var enda kvarvarande markören på /nb när allt annat var
+  # översatt. Mallens rad kopierades in i onödan — lista aldrig ett ord som
+  # stavas lika på målspråket.
+  markorer_sv:
+    - "Köp nu"
+    - "Vanliga frågor"
+    - "Lägg i varukorgen"
+    - "ångerrätt"
+    - "Handla tryggt"
+    - "arbetsdagar"
+    - "uppläggning"
+    - "utombordare"
+    - "skyddet"
+    - "spänn"
+    - "storleksguide"
+
+frakt:
+  fri_globalt: true
+  # Samma Temu-led som källans övriga produkter (TackleBay/DryTrek/CatCabin).
+  leveranstid: "5–10 arbetsdagar"
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  # Alltid svensk lag, aldrig egna köplöften (Axels beslut 2026-09-08).
+  # ⚠️ Källsidan lovar "30 dagars öppet köp" — det följer INTE med hit.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14
+  reklamation_ar: 3
+  returfrakt_betalas_av: kund
+  aterbetalning_dagar: 14
+
+judgeme:
+  # Fylls i när Judge.me installerats. Tokenen är PER BUTIK och läggs i env,
+  # aldrig i filen. Utan token laddas app-CSV:n upp för hand (avsnitt 7).
+  shop_domain: "j0p8qz-kp.myshopify.com"
+  token_env: "JUDGEME_FJORDCOVER_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"
+  visa_odr_lank: true
+  svarstid: "en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — byggd från noll för FjordCover (strukturen återanvänds mellan
+# butiker, brandingen aldrig). Hela resonemanget i output/fjordcover/BRAND.md.
+#
+#   Vem köper:      båtägare med utombordare i Sverige och Norge, 35–70 år.
+#                   Jolle, styrpulpetbåt eller mindre fritidsbåt som tas upp på
+#                   hösten och står på trailer eller uppställningsplats till
+#                   våren. Ofta inget garage — båten står ute, synlig från vägen.
+#   Problemet:      sex månader med regn, snö, frost och UV på en oskyddad
+#                   motor — och en blank motor på en upplagd båt är det första
+#                   en tjuv får syn på.
+#   Emotionen:      inte rädsla utan AVSLUT. Det sista man gör innan båten
+#                   lämnas för säsongen. Motorn är dyraste delen och den enda
+#                   man inte kan låsa in.
+#   Förväntat brand: sakligt, rejält, marint. Inte lyx, inte hobby — utrustning.
+#   Känsla:         saklig, rejäl, marin, lugn.
+#
+# Paletten kommer ur produktbilderna: grå oktoberhimmel, grus, björklöv,
+# aluminium, svart tyg. Skiffergrå-blå bas (vatten i november) och EN varm
+# signalorange accent — sjöräddningens färg, och samma orange som källans egen
+# storleksguide. De fem första OPS-butikerna är mörkblå/mörkgröna och CatCabin
+# är varm beige; skiffergrått med orange är nytt i familjen.
+# ---------------------------------------------------------------------------
+branding:
+  positionering: "Skyddet du drar över utombordaren innan båten lämnas för säsongen — heltäckande, i nio storlekar, från kåpa till rigg"
+  tonalitet: "Saklig, kort och säsongsbunden. Skriv om hösten, uppläggningen och motorn — inte om tygets förträfflighet. Inga utropstecken, ingen nedräkning, inga adjektiv utan något att peka på."
+  kansla: "saklig, rejäl, marin, lugn"
+  farger:
+    bakgrund: "#FFFFFF"
+    yta: "#F1F4F5"            # kall ljusgrå — dimman och aluminiumbåten
+    yta_djup: "#E3E9EB"
+    mork: "#1B2A33"           # skiffergrå-blå — vattnet i november: header, sidfot, logga
+    text: "#16222A"
+    text_pa_mork: "#EEF3F5"
+    linje: "#DCE3E6"
+    linje_stark: "#B4C0C6"
+    accent: "#E0620F"         # signalorange — sjösäkerhetens färg, källans guidefärg
+    accent_text: "#FFFFFF"
+    god: "#2E7D5B"            # bock i trust-raderna
+    varning: "#A85400"
+  typografi:
+    rubriker: "oswald_n6"     # Oswald SemiBold — smal, rak, skyltmässig som en marinabod
+    brodtext: "lato_n4"       # Lato Regular — lugn i långa spec- och villkorsstycken
+  form:
+    knapp_radius: 6           # hårdare än hembutikerna — utrustning, inte inredning
+    kort_radius: 8
+    input_radius: 6
+    badge_radius: 4
+  stil:
+    ikoner: "Linjeikoner, 2.0 i stroke, raka ändar. Båt, spännrem, regndroppe, hänglås — aldrig emojis i gränssnittet."
+    bilder: "Båten på trailern i oktoberväder — grus, björklöv, grå himmel, aluminium. Uppställningsplats och sjöbod, aldrig solnedgång och champagne."
+    rubrikstil: "En scen från uppläggningen med eyebrow i versaler. Rubriken säger vad som händer med motorn i vinter, inte vad tyget heter."
+    cta: "Solid orange knapp med vit text. Lugna verb — Lägg i varukorgen, Se storlekarna. Aldrig SISTA CHANSEN, ingen nedräkningstimer."
+    trust: "Diskreta rader med grön bock på kall ljusgrå — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt, max 62 tecken per rad, generösa sektionsavstånd. Sidan ska kännas som en stilla höstdag på uppställningsplatsen."
+    logo: "Rund, skiffergrå disk med den övertäckta utombordaren och spännremmen i orange. Fungerar i en färg — remmen blir då bara ett band."
+    favicon: "Samma skiffergrå disk med bara motorn och remmen."
+  # Loggan och faviconen genererade 2026-09-12 med
+  # node factory/logga-generera.mjs factory/butiker/fjordcover.yaml --ut factory/output/fjordcover --tagline "BOAT SEASON STORAGE" --motiv motor
+  # Motivet `motor` är nytt, och a/b är omgjorda den här körningen enligt
+  # factory/LOGGA-FEEDBACK.md (a 0, b 0, c 3 — en variant som aldrig valts ska
+  # bytas, inte visas igen).
+  logga: "output/fjordcover/fjordcover-logga-c.png"
+  favicon: "output/fjordcover/fjordcover-favicon.png"
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json.
+# Copyn (svenska) skrevs 2026-09-12 av en subagent (sonnet) ur BRAND.md +
+# docs/copy-regler.md (rådatan ligger i output/fjordcover/copy-sv.yaml);
+# strukturen, bildvalen och rättelserna nedan är huvudsessionens.
+# Norskan skrivs som egen text i output/fjordcover/oversattning-nb.json —
+# aldrig här, aldrig av koden.
+#
+# BILDER: bara källans fyra riktiga foton, alla utan inbränd text.
+# ⚠️ Storleksguiden (batmotor-tabell-sv.jpg) används MEDVETET inte här: den
+# bär svensk text och startsidans galleri har inget språkfilter, så den hade
+# stått kvar på svenska på /nb. Den ligger bara i produktgalleriet, märkt [SV].
+# ---------------------------------------------------------------------------
+startsida:
+  usp:
+    - "truck:Fri frakt – Sverige & Norge"
+    - "shield:14 dagars ångerrätt"
+    - "star:Betala med Klarna"
+  hero:
+    rubrik: "Motorn är det du inte kan låsa in"
+    text: "Dras över hela motorn, från kåpan ner över riggen. Spänns fast med en rem runt midjan."
+    knapp: "Se skyddet"
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg"
+  marquee:
+    - "Fri frakt till Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Klarna, kort, Apple Pay och Google Pay"
+    - "Nio storlekar, 0–350 hk"
+  produkt_etikett: "Inför uppläggningen"
+  berattelse:
+    rubrik: "Varför FjordCover finns"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
+    # Brandnivå: båten på hösten, inte just det här skyddet.
+    text:
+      - "Vi på FjordCover har sett för många motorer stå oskyddade på uppställningsplatsen, hela hösten och vintern."
+      - "Nu väljer vi skydd som gör uppläggningen till säsongens sista jobb – dra över, spänn fast, och lämna båten för vintern."
+  galleri:
+    rubrik: "Skyddet genom säsongen"
+    kolumner:
+      - titel: "På uppställningsplatsen"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-pa-bat.jpg"
+      # Subagenten föreslog "Mät omkretsen runt kåpan" här — bytt av
+      # huvudsessionen: den kolumnen hade krävt storleksguiden, och den bär
+      # svensk text som inte går att översätta i ett startsidegalleri.
+      - titel: "Två spännband håller skyddet på plats"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg"
+      - titel: "Genom hösten, på trailern"
+        bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg"
+  statement:
+    rubrik: "En övertäckt motor är ett tråkigare byte"
+    knapp: "Lägg i varukorgen"
+  omdomen:
+    # 8 recensioner, snitt 5,00 — källans faktiska tal, inget avrundat uppåt.
+    eyebrow: "8 recensioner, snitt 5,00 av 5"
+    rubrik: "Vad båtägare säger"
+  trygghet:
+    rubrik: "Frakt och trygghet"
+    text:
+      - "Fri frakt till Sverige och Norge på alla beställningar. Leverans på 5 till 10 arbetsdagar."
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Betala med Klarna, kort, Apple Pay eller Google Pay."
+    bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-pa-bat.jpg"
+  faq_rubrik: "Vanliga frågor"
+  faq:
+    - fraga: "Hur vet jag vilken storlek jag ska välja?"
+      svar: "Skyddet finns i nio storlekar, från 0–5 hk till 250–350 hk. Storleksguiden visar omkrets och höjd per motor – omkretsen mäts runt motorkåpan."
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "Räkna med 5 till 10 arbetsdagar från beställning."
+    - fraga: "Vad gäller för ångerrätt?"
+      svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@fjordcover.se så hjälper vi dig."
+    - fraga: "Skickar ni till Norge?"
+      svar: "Ja, fri frakt till både Sverige och Norge."
+    - fraga: "Vad skyddar det mot?"
+      svar: "Skyddet håller väder och smuts ute genom hösten och vintern på uppställningsplatsen."
+  garanti:
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Du har 14 dagars ångerrätt enligt svensk lag, från dagen du tar emot paketet. Mejla hello@fjordcover.se om du vill ångra."

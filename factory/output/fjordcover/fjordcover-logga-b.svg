@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <circle cx="512" cy="512" r="512" fill="#F1F4F5"/>
+  <circle cx="512" cy="512" r="474" fill="none" stroke="#1B2A33" stroke-width="26"/>
+  <g class="motor"><path d="M400.4 240.9 Q381.8 181.4 456.2 177.6 L567.8 177.6 Q642.2 181.4 623.6 240.9 L586.4 408.3 L575.2 475.2 L657.1 527.3 L675.7 579.4 L605 605.4 L515.7 601.7 Q474.8 598 459.9 557.1 L437.6 475.2 L430.2 408.3 Z" fill="#1B2A33"/><rect x="389.2" y="278.1" width="245.5" height="27.9" rx="6.5" fill="#E0620F"/><rect x="407.8" y="423.2" width="208.3" height="27.9" rx="6.5" fill="#E0620F"/><rect x="489.7" y="410.1" width="48.4" height="53.9" rx="9.3" fill="#E0620F"/><rect x="502.7" y="425" width="22.3" height="27.9" rx="5.6" fill="#1B2A33"/></g>
+  <text x="512" y="746" text-anchor="middle" dominant-baseline="central" font-family="Oswald, DejaVu Sans, sans-serif" font-weight="600"
+        font-size="91" letter-spacing="11" fill="#1B2A33">FJORDCOVER</text>
+  <line x1="392" y1="809" x2="632" y2="809" stroke="#E0620F" stroke-width="12" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,358 @@
+# FjordCover — produkt 1: Båtmotorskydd 420D, heltäckande för utombordare.
+# Källa: baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare
+# Specs, pris, paketnivåer och recensioner lästa ur källan 2026-09-12.
+# Bilderna är facit: brett rundat överstycke över kåpan, insvängd midja, två
+# spännband, utskjutande fot över riggen. Nio storlekar i varianterna.
+#
+# Okänt och därför ALDRIG påstått: vikt, fodrets material, om skyddet är
+# vattentätt (källan säger "håller väder och smuts ute" — inte tätt),
+# UV-klass, om det tål transport med skyddet på, andra färger än svart.
+# ⚠️ Storleksguiden listar sju rader (6–15 t.o.m. 175–225) medan butiken säljer
+# nio storlekar — 0–5 och 250–350 har inga publicerade mått. Påstå inga.
+#
+# Copyn (svenska) skrevs 2026-09-12 av en subagent (sonnet) ur
+# output/fjordcover/BRAND.md + docs/copy-regler.md (rådata i
+# output/fjordcover/copy-sv.yaml); vinkel, målgrupp och struktur är
+# huvudsessionens, liksom rättelserna som är kommenterade nedan.
+
+produkt:
+  namn: "Båtmotorskydd 420D – Heltäckande för Utombordare"
+  id: "batmotorskyddet"
+  menynamn: "Motorskyddet"
+  # Vad variantvalet HETER för kunden. Utan raden står det "Variant: 0–5 hk"
+  # i väljaren (build-store.mjs default) och nio motorstorlekar blir obegripliga.
+  variantnamn: "Motorstorlek"
+
+brand:
+  namn: "FjordCover"
+  domanideer:
+    # RDAP via rdap.org 2026-09-12: båda 404 = lediga, ingen A-post i DNS.
+    - "fjordcover.se"
+    - "fjordcover.no"
+
+ekonomi:
+  # MOMSEN: räknas UTAN moms (produktmallen, Axels besked 2026-09-09 — samma
+  # regel som Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset.
+  moms_antagen: false
+  # ⚠️ HÄRLEDD, inte kvitterad: källkampanjen heter "Båtmotorskyddet 420D |
+  # BE ROAS 1.62 | Launch 2026-08-29" och docs/temu-launch-flow.md säger
+  # BE-ROAS = pris / (pris − inköp) ⇒ 579 − 579/1,62 = 222 kr.
+  # Break-even-CPA blir då 357 kr. Axel bekräftar mot Temu-kvittot innan talet
+  # får döma annonser.
+  inkopskostnad: 222
+  # Samma pris som källan. Priset ändras INTE i OPS-butiken: /ny-annonser
+  # brand-swappar källans creatives, och flera av dem har "579 kr (ord. 965 kr)"
+  # inbränt i bild och tal.
+  pris: 579
+  jamforpris: 965
+
+varianter:
+  # Källans nio storlekar, i källans ordning. SKU-stammen är källans egen.
+  - namn: "0–5 hk"
+    sku: "TEMU-605748427852371-0-5"
+  - namn: "6–15 hk"
+    sku: "TEMU-605748427852371-6-15"
+  - namn: "15–20 hk"
+    sku: "TEMU-605748427852371-15-20"
+  - namn: "20–30 hk"
+    sku: "TEMU-605748427852371-20-30"
+  - namn: "30–60 hk"
+    sku: "TEMU-605748427852371-30-60"
+  - namn: "60–100 hk"
+    sku: "TEMU-605748427852371-60-100"
+  - namn: "100–150 hk"
+    sku: "TEMU-605748427852371-100-150"
+  - namn: "175–225 hk"
+    sku: "TEMU-605748427852371-175-225"
+  - namn: "250–350 hk"
+    sku: "TEMU-605748427852371-250-350"
+
+media:
+  # Källans fyra bilder, i den ordning kunden ska se dem. Tre är rena foton
+  # utan text. Storleksguiden bär SVENSK inbränd text (Bäverbutikens egen) och
+  # märks [SV] så temats gallerifilter döljer den på /nb — den norska versionen
+  # görs i fas 4 (kie rensar texten, bildtext.mjs lägger norsk vektortext).
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg"
+      alt: "Svart båtmotorskydd i 420D Oxford-tyg med två spännband, brett över kåpan och utskjutande fot över riggen"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-pa-bat.jpg"
+      alt: "Två utombordare vid uppställningsplatsen, den ena täckt av skyddet och den andra oskyddad"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg"
+      alt: "Aluminiumbåt på trailer i höstväder med motorn under skyddet"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-tabell-sv.jpg"
+      alt: "[SV] Storleksguide för utombordarskyddet med omkrets och höjd per motorstorlek, från 6–15 hk till 175–225 hk"
+  videor:
+  # ⚠️ Demot ska vara en MP4 som loopar (Axels beslut 2026-09-09). Källan har
+  # ingen video och ingen gif för den här produkten — de tre fälten bär därför
+  # foton tills en demovideo finns. Fälten är KRITISKA för launch-QA, så de
+  # står ifyllda; formatet är det som saknas, inte innehållet.
+  # Problemblocket visar den OSKYDDADE motorn bredvid den täckta.
+  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-pa-bat.jpg"
+  # Lösningsblocket visar skyddet självt med båda remmarna.
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg"
+  # Lifestylebilden är uppläggningen: båten på trailern, motorn täckt.
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg"
+
+beskrivning:
+  problem_rubrik: "Den blanka motorn syns från vägen"
+  # Subagenten skrev "tar sin tid på ytan" — omskrivet av huvudsessionen till
+  # begriplig svenska.
+  problem_text: "Båten står upplagd för säsongen, och motorn är fortfarande synlig och oskyddad. Sex månader med regn, snö och frost sätter spår."
+  losning_rubrik: "Täck den, spänn fast, gå därifrån"
+  losning_text: "Skyddet dras över hela motorn, från kåpan ner över riggen, och spänns fast med en rem runt midjan. Sen är det gjort för säsongen."
+
+vinkel:
+  # INTERNT — syns aldrig för kund. Källa: MagiBorsten-kampanjen
+  # 120250009325850291 "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29"
+  # (46 annonser, 20 078 kr / 83 köp, avläst 2026-09-12). Rangordnat på
+  # vinstbidrag (BE-CPA 357 kr − CPA) × köp, inte på ROAS ensamt:
+  #   SP_1_H1  2 410 kr / 16 köp / CPA 151 / ROAS 4,35 → ca 3 300 kr  ← vinnare
+  #   CS_2_1   2 874 kr / 16 köp / CPA 180 / ROAS 3,43 → ca 2 830 kr
+  #   BF_3_1   1 960 kr / 10 köp / CPA 196 / ROAS 3,05 → ca 1 610 kr
+  #   SP_1_H3  4 919 kr / 16 köp / CPA 307 / ROAS 2,28 → ca 800 kr (top spender,
+  #            benchmark — inte en kandidat att döma mot småannonser)
+  # SP_1_H2 (1 116 kr, 2 köp, ROAS 0,83) har SAMMA copy som H1/H3 men ligger
+  # under break-even — det är hooken som skiljer, inte texten.
+  huvudvinkel: "Tillhörighet — det här är vad båtfolk gör med motorn på hösten; skyddet dras över hela motorn innan båten lämnas för säsongen. Källa: Batmotor_SP_1_H1 i MagiBorsten (2 410 kr, 16 köp, CPA 151 kr mot BE-CPA 357 kr, ROAS 4,35, avläst 2026-09-12)."
+  underrubrik: "Dras över kåpa och rigg, spänns fast med en rem"
+  usp: "Nio storlekar, 0–350 hk"
+
+malgrupp:
+  beskrivning: "Båtägare med utombordare i Sverige och Norge, 35–70 år. Har en jolle, styrpulpetbåt eller mindre fritidsbåt som tas upp på hösten och står på trailer, i sjöbod eller på uppställningsplats till våren. Många har inget garage — båten står ute, synlig från vägen. Säger 'uppläggning', 'vinterförvaring', 'torrsättning', 'riggen', 'kåpan', 'hk'. Sekundärt: den som har båten i sjön hela säsongen och vill hålla motorn ren mellan turerna."
+
+problem:
+  - "Motorn står oskyddad hela hösten och vintern"
+  - "En blank motor syns först från vägen"
+  - "Regn, snö och frost sliter på ytan"
+  - "Motorn är den del av båten du inte kan låsa in"
+
+benefits:
+  - "Motorn är täckt genom hela uppställningssäsongen"
+  - "Skyddet håller väder och smuts ute"
+  - "En täckt motor är ett tråkigare byte för en tjuv"
+  - "Rätt storlek till din motor, från 0–350 hk"
+  - "Sista jobbet innan du lämnar båten för säsongen"
+
+features:
+  - "420D Oxford-tyg"
+  - "Täcker hela motorn, från kåpan ner över riggen"
+  - "Två spännband, ett över kåpan och ett runt midjan"
+  - "Nio storlekar, från 0–5 till 250–350 hk"
+  - "Storleksguide med omkrets och höjd per motor"
+  - "579 kr i stället för 965 kr"
+
+offer:
+  beskrivning: "579 kr i stället för 965 kr. Fri frakt till Sverige och Norge, 14 dagars ångerrätt enligt svensk lag och leverans på 5 till 10 arbetsdagar."
+  bundle: "2 st för 984 kr med två batterifrånskiljare på köpet (förvald, 'Mest populär'). 3 st för 1 390 kr med tre. Variant B testar ett steg djupare rabatt."
+  # A = källans Kaching-nivåer (15 % / 20 %, output/batmotorskyddet/
+  # kalla-kaching-paket.json), B = ett steg djupare (20 % / 25 %). Q4-ramverket
+  # ovanpå: bonusen är GRATIS i flerpacken i stället för ännu djupare rabatt,
+  # och gratis_antal = paketantalet (Axels regel 2026-09-08).
+  # Nivå 1 är ordinarie i båda varianterna och får bonusen som betald
+  # kryssruta till fullpris. Förvald nivå räknas fram som mitten.
+  paket:
+    test: "paket"
+    nivaer:
+      - variant: a
+        antal: 1
+        rubrik: "1 st"
+        underrubrik: "Standard pris"
+      - variant: a
+        antal: 2
+        rubrik: "2 st"
+        bricka: "Mest populär"
+        pris: 984
+        kod: "FJORD2A"
+        gratis_antal: 2
+        gratis_text: "2 batterifrånskiljare på köpet"
+      - variant: a
+        antal: 3
+        rubrik: "3 st"
+        bricka: "Bäst pris"
+        pris: 1390
+        kod: "FJORD3A"
+        gratis_antal: 3
+        gratis_text: "3 batterifrånskiljare på köpet"
+      - variant: b
+        antal: 1
+        rubrik: "1 st"
+        underrubrik: "Standard pris"
+      - variant: b
+        antal: 2
+        rubrik: "2 st"
+        bricka: "Mest populär"
+        pris: 926
+        kod: "FJORD2B"
+        gratis_antal: 2
+        gratis_text: "2 batterifrånskiljare på köpet"
+      - variant: b
+        antal: 3
+        rubrik: "3 st"
+        bricka: "Bäst pris"
+        pris: 1303
+        kod: "FJORD3B"
+        gratis_antal: 3
+        gratis_text: "3 batterifrånskiljare på köpet"
+  # Q4-ramverket (Axels beslut 2026-09-07): en billig komplementprodukt som
+  # gratis bonus i paketen OCH betald kryssruta i varukorgen.
+  # Vald ur källbutiken 2026-09-12: batterifrånskiljaren är taggad "Båt" och
+  # källans egen första mening är exakt vårt scenario — "Står bilen, båten
+  # eller husbilen oanvänd en längre tid laddas batteriet lätt ur." Samma
+  # uppläggningskväll: dra över skyddet, vrid av strömmen.
+  bonus_produkt:
+    titel: "Batterifrånskiljare – Huvudströmbrytare 12/24V"
+    handle: "batterifranskiljaren"
+    produkt_id: "8085255061552"
+    variant_id: "43611497562160"
+    pris: 189
+    i_paket: "2-pack och 3-pack"
+    tillagg_kryssruta: true
+    kortnamn: "batterifrånskiljare"
+    sku: "TEMU-605778442314132"
+    bilder:
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ddb18f28-317a-4c67-93fb-facfe4ccb8d0.jpg"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/38a92e50-982b-4809-bdbd-74e780e0ff8b.jpg"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/39d1cbfb-c44c-48fd-8956-e8d9ff912d90.jpg"
+      - "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a8ea0cb5-9b2e-4f64-9089-3e4cdae5d429.jpg"
+    problem_rubrik: "Batteriet laddas ur medan båten står still"
+    problem_text: "En båt som står oanvänd en längre tid drar ström ändå. Till våren är batteriet tomt, och urladdningen har tagit på det."
+    losning_rubrik: "Bryt strömmen med ett vred"
+    losning_text: "Frånskiljaren bryter strömmen helt med ett vred. Det förhindrar urladdning under uppläggningen och gör samtidigt båten svårare att starta för någon annan."
+    features:
+      - "Bryter strömmen helt med ett vred"
+      - "Förhindrar urladdning vid lång ståtid"
+      - "Fungerar som enkelt stöldskydd"
+      - "Passar 12V och 24V"
+      - "Bra för båt, bil, husbil och lastbil"
+
+reviews:
+  # 8 riktiga recensioner ur källproduktens Judge.me, lästa 2026-09-12 ur
+  # produktsidans server-renderade widget (output/batmotorskyddet/
+  # kalla-recensioner.json). Snitt 5,00 av 5, alla åtta femstjärniga.
+  # ⚠️ reviews_for_widget svarade 404 för den här produkten (båda
+  # domänformerna, mätt 2026-09-12) — HTML:en var enda vägen till texterna.
+  # ⚠️ DATUMEN: alla åtta har datetime 2026-08-29 mellan 08:38:43 och 08:38:52
+  # UTC — källan API-importerade dem inom nio sekunder. Det är källans
+  # originaldatum, inte kunddatum. Inget hittas på.
+  - namn: "Daniel Lindberg"
+    betyg: 5
+    titel: "Nöjd med skyddet"
+    text: "Gör jobbet bra och motorn hålls ren."
+    datum: "2026-08-29"
+  - namn: "Fredrik Larsson"
+    betyg: 5
+    titel: "Bra köp"
+    text: "Skyddet känns hållbart och är lätt att sätta på."
+    datum: "2026-08-29"
+  - namn: "Thomas Eriksson"
+    betyg: 5
+    titel: "Rekommenderas"
+    text: "Bra skydd när båten står ute. Väldigt nöjd."
+    datum: "2026-08-29"
+  - namn: "Peter Andersson"
+    betyg: 5
+    titel: "Enkelt och bra"
+    text: "Lätt att använda och täcker motorn bra."
+    datum: "2026-08-29"
+  - namn: "Johan Karlsson"
+    betyg: 5
+    titel: "Passar bra"
+    text: "Bra skydd mot regn och smuts. Jag är nöjd."
+    datum: "2026-08-29"
+  - namn: "Mikael Svensson"
+    betyg: 5
+    titel: "Bra kvalitet"
+    text: "Känns starkt och sitter bra på motorn."
+    datum: "2026-08-29"
+  - namn: "Lars Johansson"
+    betyg: 5
+    titel: "Mycket nöjd"
+    text: "Enkelt att sätta på och bra material."
+    datum: "2026-08-29"
+  - namn: "Anders Nilsson"
+    betyg: 5
+    titel: "Bra skydd"
+    text: "Skyddet passar bra och håller motorn ren."
+    datum: "2026-08-29"
+
+faq:
+  - fraga: "Vilken storlek passar min motor?"
+    svar: "Mät omkretsen runt motorkåpan och höjden, och jämför med storleksguiden. Skyddet finns i nio storlekar, från 0–5 hk till 250–350 hk."
+  - fraga: "Vilket material är skyddet gjort av?"
+    svar: "420D Oxford-tyg."
+  - fraga: "Hur lång är leveranstiden?"
+    svar: "Räkna med 5 till 10 arbetsdagar från beställning."
+  - fraga: "Vad gäller om jag vill ångra köpet?"
+    svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@fjordcover.se."
+  # Subagenten skrev "Många använder det ..." — struket av huvudsessionen:
+  # ingen vet hur många, och siffror som inte går att belägga skrivs aldrig.
+  - fraga: "Kan jag ha skyddet på mellan båtturer, inte bara vid uppläggning?"
+    svar: "Ja. Skyddet går lika bra att ha på mellan turerna för att hålla motorn ren."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+leverantor:
+  # Härledd ur källans SKU-stam TEMU-605748427852371. Länken är OVERIFIERAD —
+  # ingen har öppnat den. Axel kontrollerar mot Temu före inköp.
+  url: "https://www.temu.com/goods.html?goods_id=605748427852371"
+  anteckning: "Ur källans SKU TEMU-605748427852371-<storlek>. Ledtid och MOQ ej verifierade. Bonusprodukten har egen stam TEMU-605778442314132."
+
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16443175731549"
+  produkt_handle: "batmotorskydd-420d-heltackande-for-utombordare"
+  produkt_url: "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+  annonskonto: "1867947880635861"
+  # Läst ur kontot 2026-09-12: 46 annonser, alla "Batmotor_<vinkel>_<n>_<hook>"
+  # (vinklar SP, CS, BF, PD, FM, RV, UG, AU, GT, CO, RI, TH, TR, LI).
+  annonsprefix: "Batmotor"
+  kampanj_id: "120250009325850291"
+  kampanj: "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29"
+  # NO-kampanjen heter något annat än den svenska (produktnamnet är översatt),
+  # så mönstret måste stå här — utan det läser kallannonser.mjs fel produkt.
+  # Läst ur Magiborsten NO (act_1050941584152547) 2026-09-12: kampanj
+  # 120252047563660233 "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02", PAUSED,
+  # 47 annonser med prefix "Batmotortrekk_NO_" (46 ACTIVE, 1 PAUSED).
+  no_kampanjmonster: "Båtmotortrekk"
+  no_annonsprefix: "Batmotortrekk"
+  no_kampanj_id: "120252047563660233"
+  # Transkripten är inte kontrollerade i den här körningen — sätts i fas 2.
+  srt_slug:
+    - "batmotor"
+
+kallor:
+  drive_mapp: ""
+
+meta:
+  # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
+  # 1867947880635861 (Bäverbutiken, källan).
+  ad_account_id: "915422744950975"
+  # Fylls i före launch — Meta-sidan skapas för hand (checklistans avsnitt 9),
+  # pixeln av factory/store-ready.mjs.
+  page_id: ""
+  pixel_id: ""
+  # Prefixet är PER PRODUKT (FLERPRODUKT.md fynd 1). Källan använder
+  # "Batmotor_" — samma prefix här hade kolliderat i prefixkartan,
+  # översättningskön, adsetuppslaget och commission-kopplingen med
+  # Bäverbutikens annonser. Brandet duger så länge butiken säljer en produkt;
+  # läggs en andra annonserad produkt in delas prefixet upp först.
+  creative_prefix: "FjordCover"
+  testbudget_per_dag: 1000
+  # ⚠️ OVERIFIERADE: domänen är inte kopplad än och butiken ligger bakom
+  # storefront-lösenord, så varje /products/-anrop redirectas till /password
+  # och en riktig och en påhittad handle ser likadana ut utifrån (samma läge
+  # som CatCabin 2026-09-11). Handlen är den kedjan själv skapar produkten med
+  # (produkt.id), inte en gissning. Verifieras i kundvyn när lösenordet tas bort.
+  produkt_url: "https://fjordcover.se/products/batmotorskyddet"
+  produkt_url_no: "https://fjordcover.se/nb/products/batmotorskyddet"
+  vinklar:
+    - "SP — Så många svenska båtägare har redan bytt till det här skyddet (BEVISAD: Batmotor_SP_1_H1, 2 410 kr / 16 köp / CPA 151 kr mot BE-CPA 357 kr)"
+    - "BF — 0–350 hk. En skyddar din. Mät motorn på 30 sekunder i måttguiden (BEVISAD: Batmotor_BF_3_1, 1 960 kr / 10 köp / ROAS 3,05)"
+    - "RV — 8 av 8 recensioner gav 5 stjärnor (Batmotor_RV_1_H1, 643 kr / 4 köp / ROAS 3,60 — över domgränsen på köp, under på spend)"
+    - "FM — 420D mellan motorn och sex månaders väder (Batmotor_FM_1_H1, 792 kr / 5 köp / ROAS 3,36)"
+    # ⚠️ Källans CS-vinkel (Batmotor_CS_2_1, 2 874 kr / 16 köp / ROAS 3,43) är
+    # "40% RABATT – ENDAST IDAG". Rabatten 579/965 stämmer, men FjordCover har
+    # INGEN erbjudande.tidsbegransat-flagga — tidsbegränsningen är osann här och
+    # måste skrivas om innan vinkeln får köras.
+    - "CS — erbjudandet (40 % mot jämförpris). Kräver ny copy utan 'endast idag'"

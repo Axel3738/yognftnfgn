@@ -1,0 +1,94 @@
+# FjordCover — svensk copy till startsida och produktsida.
+# Skriven ur factory/output/fjordcover/BRAND.md + docs/copy-regler.md.
+# Bara fakta som står i BRAND.md får påstås. Inget tidsbegränsat erbjudande,
+# inga utropstecken. Vinkeln är hösten, uppläggningen och motorn.
+
+startsida:
+  hero:
+    rubrik: "Motorn är det du inte kan låsa in"
+    text: "Dras över hela motorn, från kåpan ner över riggen. Spänns fast med en rem runt midjan."
+    knapp: "Se skyddet"
+  marquee:
+    - "Fri frakt till Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Klarna, kort, Apple Pay och Google Pay"
+    - "Nio storlekar, 0–350 hk"
+  produkt_etikett: "Inför uppläggningen"
+  berattelse:
+    rubrik: "Varför FjordCover finns"
+    text:
+      - "Vi på FjordCover har sett för många motorer stå oskyddade på uppställningsplatsen, hela hösten och vintern."
+      - "Nu väljer vi skydd som gör uppläggningen till säsongens sista jobb – dra över, spänn fast, och lämna båten för vintern."
+  galleri:
+    rubrik: "Skyddet genom säsongen"
+    kolumner:
+      - titel: "På uppställningsplatsen"
+      - titel: "Mät omkretsen runt kåpan"
+      - titel: "Genom hösten, på trailern"
+  statement:
+    rubrik: "En övertäckt motor är ett tråkigare byte"
+    knapp: "Lägg i varukorgen"
+  omdomen:
+    eyebrow: "8 recensioner, snitt 5,00 av 5"
+    rubrik: "Vad båtägare säger"
+  trygghet:
+    rubrik: "Frakt och trygghet"
+    text:
+      - "Fri frakt till Sverige och Norge på alla beställningar. Leverans på 5 till 10 arbetsdagar."
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Betala med Klarna, kort, Apple Pay eller Google Pay."
+  faq_rubrik: "Vanliga frågor"
+  faq:
+    - fraga: "Hur vet jag vilken storlek jag ska välja?"
+      svar: "Skyddet finns i nio storlekar, från 0–5 hk till 250–350 hk. Storleksguiden visar omkrets och höjd per motor – omkretsen mäts runt motorkåpan."
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "Räkna med 5 till 10 arbetsdagar från beställning."
+    - fraga: "Vad gäller för ångerrätt?"
+      svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@fjordcover.se så hjälper vi dig."
+    - fraga: "Skickar ni till Norge?"
+      svar: "Ja, fri frakt till både Sverige och Norge."
+    - fraga: "Vad skyddar det mot?"
+      svar: "Skyddet håller väder och smuts ute genom hösten och vintern på uppställningsplatsen."
+  garanti:
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Du har 14 dagars ångerrätt enligt svensk lag, från dagen du tar emot paketet. Mejla hello@fjordcover.se om du vill ångra."
+produkt:
+  beskrivning:
+    problem_rubrik: "Den blanka motorn syns från vägen"
+    problem_text: "Båten står upplagd för säsongen, och motorn är fortfarande synlig och oskyddad. Sex månader med regn, snö och frost tar sin tid på ytan."
+    losning_rubrik: "Täck den, spänn fast, gå därifrån"
+    losning_text: "Skyddet dras över hela motorn, från kåpan ner över riggen, och spänns fast med en rem runt midjan. Sen är det gjort för säsongen."
+  vinkel:
+    underrubrik: "Dras över kåpa och rigg, spänns fast med en rem"
+    usp: "Nio storlekar, 0–350 hk"
+  problem:
+    - "Motorn står oskyddad hela hösten och vintern"
+    - "En blank motor syns först från vägen"
+    - "Regn, snö och frost sliter på ytan"
+    - "Motorn är den del av båten du inte kan låsa in"
+  benefits:
+    - "Motorn är täckt genom hela uppställningssäsongen"
+    - "Skyddet håller väder och smuts ute"
+    - "En täckt motor är ett tråkigare byte för en tjuv"
+    - "Rätt storlek till din motor, från 0–350 hk"
+    - "Sista jobbet innan du lämnar båten för säsongen"
+  features:
+    - "420D Oxford-tyg"
+    - "Täcker hela motorn, från kåpan ner över riggen"
+    - "Spänns fast med en rem runt midjan"
+    - "Nio storlekar, från 0–5 till 250–350 hk"
+    - "Storleksguide med omkrets och höjd per motor"
+    - "579 kr i stället för 965 kr"
+  offer:
+    beskrivning: "579 kr i stället för 965 kr. Fri frakt till Sverige och Norge, 14 dagars ångerrätt enligt svensk lag och leverans på 5 till 10 arbetsdagar."
+  faq:
+    - fraga: "Vilken storlek passar min motor?"
+      svar: "Mät omkretsen runt motorkåpan och höjden, och jämför med storleksguiden. Skyddet finns i nio storlekar, från 0–5 hk till 250–350 hk."
+    - fraga: "Vilket material är skyddet gjort av?"
+      svar: "420D Oxford-tyg."
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "Räkna med 5 till 10 arbetsdagar från beställning."
+    - fraga: "Vad gäller om jag vill ångra köpet?"
+      svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@fjordcover.se."
+    - fraga: "Kan jag använda skyddet mellan båtturer, inte bara vid uppläggning?"
+      svar: "Ja. Många använder det för att hålla motorn ren mellan turerna, inte bara vid vinterförvaringen."
