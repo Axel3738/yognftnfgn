@@ -28,6 +28,8 @@ const RORELSE = {
   taljset:        'Very slow, gentle push-in towards the knife and the carved spoon; a few shavings settle.',
   blockljus:      'The three LED candle flames flicker gently in the dim room; nothing else moves.',
 };
+// Omkörning med annan rörelse: RORELSE_JSON='{"id":"…"}'
+Object.assign(RORELSE, process.env.RORELSE_JSON ? JSON.parse(process.env.RORELSE_JSON) : {});
 const bara = process.argv.slice(2);
 const ids = Object.keys(RORELSE).filter((id) => !bara.length || bara.includes(id));
 const h = { Authorization: `Bearer ${K}`, 'Content-Type': 'application/json' };
