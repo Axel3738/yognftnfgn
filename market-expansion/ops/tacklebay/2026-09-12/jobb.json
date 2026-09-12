@@ -1,0 +1,62 @@
+{
+  "butik": "TackleBay",
+  "nyckel": "tacklebay/fiskespohallare-4-pack",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "hub": {
+    "id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+    "titel": "Fish rod holder"
+  },
+  "kampanj": {
+    "id": "120249038524410172",
+    "namn": "TACKLEBAY_NO_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+    "bas": "TACKLEBAY_NO_Spöhållaren",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249038727950172",
+        "name": "TACKLEBAY_NO_Spöhållaren - GT",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249038621270172",
+        "name": "TACKLEBAY_NO_Spöhållaren - CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249038562590172",
+        "name": "TACKLEBAY_NO_Spöhållaren - SO",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249038526840172",
+        "name": "TACKLEBAY_NO_Spöhållaren - SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249038524720172",
+        "name": "TACKLEBAY_NO_Spöhållaren - PD",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 17,
+  "lank_arvd": "https://tacklebay.se/nb/products/fiskespohallare-4-pack",
+  "pris_butik": {
+    "pris": 289,
+    "min": 289,
+    "max": 289,
+    "jamforpris": 0,
+    "valuta": "SEK",
+    "titel": "Fiskestangholder 4-pakning",
+    "handle": "fiskespohallare-4-pack",
+    "kalla": "https://tacklebay.se/nb/products/fiskespohallare-4-pack.json"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [],
+  "hamtad": "2026-09-12T14:05:23.101Z"
+}

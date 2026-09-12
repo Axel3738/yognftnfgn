@@ -111,3 +111,16 @@ ordagranna recension — inga nyskrivna rader med ❌.
 ### Utfall
 
 *Fylls i vid nästa briefrond när annonserna passerat grinden.*
+
+---
+
+## Översättning NO — 2026-09-12 16:00 (`/ops-oversatt tacklebay/fiskespohallare-4-pack`, körning nr 1)
+
+Kön `SE-ACTIVE to be translated`: **0 rader** (hubben Fish rod holder, 87 rader
+kontrollerade oavsett Typ — inte heller någon i `To be Reviewed`). NO-kampanjen
+`TACKLEBAY_NO_Spöhållaren` ACTIVE, 5 adsets, 11 annonser live. Inget översatt,
+inget uppladdat, HeyGen 8 826 → 8 826 credits.
+Orsak: batch #2 (7 briefer) lades upp som `Draft` i dag och ligger hos Eric J —
+färdiga annonser går via leveransrundan 14:00 och når översättningen 16:00 samma dag.
+Batchfiler: `market-expansion/ops/tacklebay/2026-09-12/`. Discord: `#annons-uppladdning`
+på TackleBay — OPS (meddelande 1548333932481880100), ingen ping.
