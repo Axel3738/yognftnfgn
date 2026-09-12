@@ -172,3 +172,42 @@ VARIABELTAGGAR står överst i varje brief (`products/drytrek/batch-02/…/brief
 Notion-resultat: `products/drytrek/batch-02/notion-resultat.json` (7 skapade, 0 fel).
 
 *(Utfall skrivs vid nästa briefdag. Grinden: ≥ 300 kr OCH ≥ 3 köp per annons.)*
+
+## Batch #3 — 2026-09-12 · Axels idé: en bildannons per färgvariant (`/ops-bild drytrek`, samma dag som batch #2)
+
+**Ingen redigerare, ingen väntan.** Idén kom från Axel i chatten 2026-09-12
+("bara vit bakgrund och sen produkten, en av varje färgvariant"). Byggd och
+genererad samma dag av den nya motorn `factory/ops-bild.mjs` (kie.ai
+`google/nano-banana-edit` med produktfotot `damask-se-NG-ren.jpg` som
+formreferens, bilden lagd i Notion via REST med `tools/notion-fil-upp.mjs`).
+Copy: sonnet (`products/drytrek/batch-03/copy-sonnet.json`, tre-frågorstestet
+3 × ✅ på varje rad). Pris 389 kr per par ur `factory/produkter/damasker.yaml`.
+Hubb: Damasker vandring, rader `DryTrek_Damasker_PD_14_1 … _18` — **ETT
+koncept, 18 varianter, ett adset** (leveransrundan döper adsetet på
+konceptbokstäverna `PD`). Isolerad variabel: **färgen**. Ingen text på bilden.
+
+| # | Namn | Färg | Utfall i QA | Status |
+|---|---|---|---|---|
+| 1 | `PD_14_1` | Neongrön | ✅ | To be Reviewed |
+| 2 | `PD_14_2` | Orange | ✅ efter en omgenerering (kängans tryck "CANSPORT" satt kvar första gången) | To be Reviewed |
+| 3 | `PD_14_3` | Gul | ❌ **två försök blev neonlime** = samma som neongrön. Referensfotot styr färgen. Underkänd, ligger kvar i Draft med kommentar | Draft |
+| 4–13 | `PD_14_4 … _13` | Svart, Grå, Marinblå, Blå, Ljusblå, Röd, Lila, Rosa, Brun, Vit | ✅ (grå saknar ett snörlås — godtagbart) | To be Reviewed |
+| 14 | `PD_14_14` | Olivgrön | ✅ efter en omgenerering (leverantörsetiketten "AYXSEE" följde med ur OL-fotot — togs bort som referens) | To be Reviewed |
+| 15–16 | `PD_14_15 … _16` | Kamouflage grön, kamouflage svart | ✅ | To be Reviewed |
+| 17–18 | `PD_14_17 … _18` | Blå/neongrön, cerise/neongrön | ✅ — ⚠️ **gissning på utseendet**: butiken saknar foto, prompten satte neongrön på frontremsan | To be Reviewed |
+
+**17 av 18 klara → live 13:40 2026-09-13 via `/ops-leverans drytrek`
+(SE), Norge 15:40.** Kostnad: 21 kie.ai-genereringar, noll redigerartid.
+
+Lärdomar (inskrivna i dna.md-rotorsakerna vid nästa `/cs`):
+- Källfotona bär leverantörsetiketten **AYXSEE** och kängmärket **CANSPORT** —
+  prompten måste uttryckligen radera båda, och en variant-egen referensbild
+  med etikett (OL) drar in etiketten igen. Använd det rena NG-fotot som enda
+  formreferens.
+- Bildmodellen kan inte flytta färgen långt från referensen: gul blev
+  neonlime två gånger. Nästa försök för Gul: riktigt foto av gula varianten,
+  eller textgenerering utan referens (då ser produkten inte ut som produkten).
+
+Hypotes att läsa av vid nästa briefdag: vinstbidrag per färg `(243 − CPA) × köp`
+inom adsetet `PD`; topspendern är benchmark. Grinden ≥ 300 kr OCH ≥ 3 köp per
+variant — med 17 varianter i ett adset tar det tid; döm inte färger på 50 kr.

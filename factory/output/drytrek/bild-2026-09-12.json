@@ -2,217 +2,17 @@
   "datum": "2026-09-12",
   "butik": "drytrek/damasker",
   "hub": "Damasker vandring",
-  "torr": true,
+  "torr": false,
   "jobb": [
-    {
-      "namn": "DryTrek_Damasker_PD_14_18",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_18-3d9270ab908c81249bc4c7d85a5de749",
-      "page_id": "3d9270ab-908c-8124-9bc4-c7d85a5de749",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to cerise pink upper fabric with the vertical front velcro strip in neon yellow-green (two-tone). The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_17",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_17-3d9270ab908c81af8cbbdc46bb80cf9a",
-      "page_id": "3d9270ab-908c-81af-8cbb-dc46bb80cf9a",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to royal blue upper fabric with the vertical front velcro strip in neon yellow-green (two-tone). The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_16",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_16-3d9270ab908c81298909e1382f03c0a6",
-      "page_id": "3d9270ab-908c-8129-8909-e1382f03c0a6",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to black and dark grey camouflage pattern. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_15",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_15-3d9270ab908c819baaccddfbf865c111",
-      "page_id": "3d9270ab-908c-819b-aacc-ddfbf865c111",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to green woodland camouflage pattern (green, olive, dark brown patches). The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-KG.jpg",
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
     {
       "namn": "DryTrek_Damasker_PD_14_14",
       "typ": "Image - Pending Approval",
       "hub": "Damasker vandring",
       "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_14-3d9270ab908c815cb7e4f7b2cb05041f",
       "page_id": "3d9270ab-908c-815c-b7e4-f7b2cb05041f",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to olive green. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
+      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to olive green. The lower ankle section stays black. The small rectangular tag on the front strip is a plain solid black rectangle with absolutely no text, letters or logo on it — erase any lettering. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
       "bildformat": "4:5",
       "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-OL.jpg",
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_13",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_13-3d9270ab908c81a996b7e8adfd1f6652",
-      "page_id": "3d9270ab-908c-81a9-96b7-e8adfd1f6652",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to white — upper section white, lower section stays black. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_12",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_12-3d9270ab908c81eea1bbd5f6fa50ed68",
-      "page_id": "3d9270ab-908c-81ee-a1bb-d5f6fa50ed68",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to brown. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_11",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_11-3d9270ab908c81fbb3dbf8812dc1e9a5",
-      "page_id": "3d9270ab-908c-81fb-b3db-f8812dc1e9a5",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to pink. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_10",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_10-3d9270ab908c8171bcaacffc63e63742",
-      "page_id": "3d9270ab-908c-8171-bcaa-cffc63e63742",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to purple. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_9",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_9-3d9270ab908c81f08483ed7882a1ef38",
-      "page_id": "3d9270ab-908c-81f0-8483-ed7882a1ef38",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to bright red. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_8",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_8-3d9270ab908c81f99738e91e35f48835",
-      "page_id": "3d9270ab-908c-81f9-9738-e91e35f48835",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to light sky blue. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_7",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_7-3d9270ab908c8167b938f87c5cee904f",
-      "page_id": "3d9270ab-908c-8167-b938-f87c5cee904f",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to royal blue. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_6",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_6-3d9270ab908c811f9d43c798f0320b38",
-      "page_id": "3d9270ab-908c-811f-9d43-c798f0320b38",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to dark navy blue. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-MB.png",
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_5",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_5-3d9270ab908c81a1b051ff31a7d0dbe2",
-      "page_id": "3d9270ab-908c-81a1-b051-ff31a7d0dbe2",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to medium grey. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
-    },
-    {
-      "namn": "DryTrek_Damasker_PD_14_4",
-      "typ": "Image - Pending Approval",
-      "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_4-3d9270ab908c81969c97df8015524943",
-      "page_id": "3d9270ab-908c-8196-9c97-df8015524943",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to matte black — the whole gaiter black, upper and lower section. The lower ankle section stays black (whole gaiter black). The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-SV.png",
         "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
       ],
       "referens_kalla": "brief",
@@ -224,7 +24,7 @@
       "hub": "Damasker vandring",
       "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_3-3d9270ab908c810fa3ebf64113f20b38",
       "page_id": "3d9270ab-908c-810f-a3eb-f64113f20b38",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to bright yellow. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
+      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to a pure warm sunflower yellow (like a lemon or an egg yolk) — NOT lime, NOT neon green, NOT fluorescent. The vertical front velcro strip is the same sunflower yellow as the rest of the upper, not black. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
       "bildformat": "4:5",
       "referens_bilder": [
         "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
@@ -238,102 +38,61 @@
       "hub": "Damasker vandring",
       "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_2-3d9270ab908c812782f8d6b5d40f0bb1",
       "page_id": "3d9270ab-908c-8127-82f8-d6b5d40f0bb1",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to bright hi-vis orange. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
+      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to bright hi-vis orange. The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. The word printed on the side of the boot in the reference photo must be completely erased — plain leather there. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
       "bildformat": "4:5",
       "referens_bilder": [
         "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
       ],
       "referens_kalla": "brief",
       "prompt_kalla": "repo"
-    },
+    }
+  ],
+  "hoppade": [],
+  "resultat": [
     {
-      "namn": "DryTrek_Damasker_PD_14_1",
-      "typ": "Image - Pending Approval",
+      "namn": "DryTrek_Damasker_PD_14_14",
+      "status": "ok",
       "hub": "Damasker vandring",
-      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_1-3d9270ab908c8108a583ccb58c9fb3a7",
-      "page_id": "3d9270ab-908c-8108-a583-ccb58c9fb3a7",
-      "prompt": "Professional e-commerce product photo of a pair of tall hiking gaiters (leg gaiters) worn over plain brown leather hiking boots, front three-quarter view, both legs side by side, cropped just above the top of the gaiters so no person is visible. Keep the exact shape and construction of the gaiters in the reference photo: the wide vertical velcro strip down the front, the top drawcord with its small black cord lock, the black reinforced lower section around the ankle, the black strap and buckle under the boot, and the lace hook at the front. Change the colour of the upper fabric to bright fluorescent neon yellow-green (hi-vis). The lower ankle section stays black. The small rectangular tag on the front strip is plain black with no text or letters on it. The boots are plain brown leather with completely smooth sides: remove every letter, word, printed brand name and embroidered logo from the boots so they carry no writing at all. Pure white seamless studio background, soft even studio lighting, subtle soft shadow under the boots, sharp focus, high resolution, catalogue style. No text, no watermark, no logo, no price, no people, no face.",
-      "bildformat": "4:5",
-      "referens_bilder": [
-        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/damask-se-NG-ren.jpg"
-      ],
-      "referens_kalla": "brief",
-      "prompt_kalla": "repo"
+      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_14-3d9270ab908c815cb7e4f7b2cb05041f",
+      "taskId": "0ad908655ae30c3bcdf71bbb07feb296",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/as/0ad908655ae30c3bcdf71bbb07feb296_1789224466832.png",
+      "fil": "/home/user/yognftnfgn/factory/output/drytrek/bild-2026-09-12/DryTrek_Damasker_PD_14_14.png",
+      "page_id": "3d9270ab-908c-815c-b7e4-f7b2cb05041f",
+      "notion": {
+        "file_upload_id": "3d9270ab-908c-81ad-894c-00b22b6744db",
+        "falt": "Filer och media"
+      }
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_3",
+      "status": "ok",
+      "hub": "Damasker vandring",
+      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_3-3d9270ab908c810fa3ebf64113f20b38",
+      "taskId": "9c4ce8d4e16db1238620fa142232a0f0",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/as/9c4ce8d4e16db1238620fa142232a0f0_1789224469617.png",
+      "fil": "/home/user/yognftnfgn/factory/output/drytrek/bild-2026-09-12/DryTrek_Damasker_PD_14_3.png",
+      "page_id": "3d9270ab-908c-810f-a3eb-f64113f20b38",
+      "notion": {
+        "file_upload_id": "3d9270ab-908c-8123-980e-00b203c4d8a3",
+        "falt": "Filer och media"
+      }
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_2",
+      "status": "ok",
+      "hub": "Damasker vandring",
+      "notion_url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_2-3d9270ab908c812782f8d6b5d40f0bb1",
+      "taskId": "53bc510ba14df1e6bde51fed7fd230d8",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/as/53bc510ba14df1e6bde51fed7fd230d8_1789224480944.png",
+      "fil": "/home/user/yognftnfgn/factory/output/drytrek/bild-2026-09-12/DryTrek_Damasker_PD_14_2.png",
+      "page_id": "3d9270ab-908c-8127-82f8-d6b5d40f0bb1",
+      "notion": {
+        "file_upload_id": "3d9270ab-908c-81a2-827b-00b20acfaba5",
+        "falt": "Filer och media"
+      }
     }
-  ],
-  "hoppade": [
-    {
-      "namn": "DryTrek_Damasker_PD_12_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_9_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_PD_11_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_7_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_8_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_ID_1_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_5_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_4_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_6_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_PD_7_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_CI_2_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_CS_5_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_2_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_LI_1_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_3_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_CO_2_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_BOF_1_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    },
-    {
-      "namn": "Damasker_HL_1_1",
-      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
-    }
-  ],
-  "resultat": []
+  ]
 }
