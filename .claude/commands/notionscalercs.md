@@ -161,6 +161,11 @@ Börja med färsk `main`: `git fetch origin main && git checkout main && git res
 `node factory/register.mjs <nyckel> --idag $IDAG`. Läs av: konto, prefix,
 hubb (saknas hubben: stoppa briefdelen, gör budgetdelen, larma i rapporten),
 **Briefdag JA/NEJ**, redigerare.
+**Svarar registret "Okänd butik" eller står posten i läge `avslutad`**
+(t.ex. TankGuard, avslutad 2026-09-12): butiken körs inte längre. Gör
+INGENTING i kontot, ingen Discord-post, ingen commit. Skriv en rad i
+chatten: "<butik> är avslutad i registret — pausa rutinen i Routines-vyn"
+och avsluta. Samma regel gäller `/ops-leverans` och `/ops-oversatt`.
 
 ### Steg 1 — Budgetronden (varje natt)
 ```

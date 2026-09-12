@@ -203,7 +203,7 @@
       "anteckning": "Upptäckt automatiskt ur state-filen."
     },
     "tankguard/tankguard": {
-      "lage": "skala",
+      "lage": "avslutad",
       "redigerare": null,
       "redigerare_discord_id": null,
       "notion": {
@@ -222,7 +222,7 @@
           "count": 7
         }
       ],
-      "anteckning": "Upptäckt automatiskt ur state-filen."
+      "anteckning": "AVSLUTAD 2026-09-12 (Axels besked: butiken funkade knappt, körs inte längre). Rutinerna för tankguard ska pausas i Routines-vyn; nattvakten gör ingenting på en avslutad post."
     },
     "kalender/adventskalender-racingbilar": {
       "kordag_offset": 2,
