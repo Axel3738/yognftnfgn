@@ -813,6 +813,13 @@ det Meta kräver av OSS innan ansökan kan skickas:
   `ads_read` läser (kostnad, visningar, klick per dag), vad som lagras, att
   inget skapas eller ändras i annonskontot, och hur en person raderar det.
   Supportadressen kommer från `SUPPORT_EMAIL` i miljön.
+- ⚠ **META_APP_ID och META_APP_SECRET finns inte på NÅGON Railway-tjänst**
+  (mätt 2026-09-12 via Cowork, alla sex + Shared Variables). Knappen "Logga
+  in med Facebook" har därför aldrig varit synlig i drift — `metaLoginConfig()`
+  är null utan dem och hela kortet döljs. Texten nedan om att variablerna
+  "sätts på alla sex tjänster" beskrev avsikten, inte verkligheten. Värdena
+  hämtas i Meta-appen (Appinställningar → Grundläggande) och måste in innan
+  något av Meta-arbetet går att prova skarpt.
 - **Kvar, och det är inte kod:** Business Verification av Business Manager
   (juridiska dokument, görs FÖRE ansökan), Meta-appen till Live, Marketing
   API-produkten tillagd, och App Review för `ads_read` i Advanced Access med

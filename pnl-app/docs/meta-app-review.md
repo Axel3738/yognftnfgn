@@ -48,12 +48,20 @@ Partner"-märke. Den öppnas av att appen används.
 2. Sätt `META_REVIEW_KEY` (lång slumpsträng) på Railway-tjänsten
    `pnl-app-store`. Utan den svarar `/meta/granska` **404**.
 3. Sätt `SUPPORT_EMAIL` på samma tjänst.
-4. **`META_APP_ID` + `META_APP_SECRET` + `TOKEN_ENCRYPTION_KEY` måste finnas
-   på App Store-tjänsten.** Mätt 2026-09-12: de gjorde det INTE, och
-   `/meta/granska` svarade "Not configured". Utan dem finns knappen "Logga in
-   med Facebook" inte ens i App Store-versionen. Prompt 8b kopierar dem från
-   en av butikstjänsterna. `TOKEN_ENCRYPTION_KEY` måste vara exakt samma
-   sträng på alla sex — de delar databas.
+4. **`META_APP_ID` + `META_APP_SECRET` saknas på SAMTLIGA tjänster.**
+   Mätt 2026-09-12 (Cowork gick igenom alla sex + projektets Shared
+   Variables): varje tjänst har exakt åtta variabler — ANTHROPIC_API_KEY,
+   DATABASE_URL, PORT, SCOPES, SHOPIFY_API_KEY, SHOPIFY_API_SECRET,
+   SHOPIFY_APP_URL, TOKEN_ENCRYPTION_KEY — och **ingen META_-variabel
+   någonstans**. Shared Variables är tomt.
+   **Slutsats: "Logga in med Facebook" har aldrig varit påslaget i drift, i
+   någon butik.** Knappen döljs helt när `metaLoginConfig()` är null, så
+   ingen har sett den och ingen har saknat den. All annonskostnad som funnits
+   har kommit från handinklistrade tokens.
+   Värdena finns bara i Meta-appen: developers.facebook.com → appen →
+   Appinställningar → Grundläggande → **App-ID** och **App-hemlighet**.
+   `TOKEN_ENCRYPTION_KEY` finns däremot redan på App Store-tjänsten och ska
+   inte röras — den måste vara identisk på alla sex (delad databas).
 5. Rökprova utan att vara inloggad:
    - `GET /privacy` → 200, och Meta-avsnittet syns.
    - `GET /meta/deletion` → statussidan (inte 404).
