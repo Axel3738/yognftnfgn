@@ -77,6 +77,24 @@ export function kopplaOrdrar(arenden = [], ordrar = []) {
   });
 }
 
+/**
+ * Ser värdet ut som en custom-apps "Admin API access token"? Custom-appen visar
+ * tre olika strängar (API key, API secret key, Admin API access token) och
+ * bara den sista fungerar som token — de andra två är lätta att klistra in av
+ * misstag. Returnerar null när formen stämmer, annars en förklaring.
+ * (Mätt 2026-09-12: Bäverbutikens första token gav 401 i en ny container.)
+ */
+export function granskaAdminToken(token) {
+  const t = String(token ?? '').trim();
+  if (!t) return 'tom';
+  if (t !== String(token)) return 'har mellanslag eller radbrytning runt sig — klistra in bara själva strängen';
+  if (t.startsWith('shpat_')) return null;
+  if (t.startsWith('shpss_')) return 'är en "API secret key" (shpss_…), inte "Admin API access token" (shpat_…)';
+  if (t.startsWith('atkn_') || t.startsWith('shpca_') || t.startsWith('shpua_')) return 'är en kortlivad CLI-/app-token, inte custom-appens "Admin API access token" (shpat_…)';
+  if (/^[0-9a-f]{32}$/i.test(t)) return 'är en "API key" (32 hex-tecken), inte "Admin API access token" (shpat_…)';
+  return 'börjar inte med shpat_ — inte en custom-apps "Admin API access token"';
+}
+
 export class ShopifyLasare {
   constructor({ shop, adminToken = '', clientId = '', clientSecret = '', butikId = null, fetchFn = fetch, logg = () => {} } = {}) {
     Object.assign(this, { shop, adminToken, clientId, clientSecret, butikId, fetchFn, logg });
@@ -103,7 +121,13 @@ export class ShopifyLasare {
         continue;
       }
       if (!svar.ok) {
-        const fel = new Error(`Shopify ${this.shop} svarade ${svar.status}: ${(await svar.text()).slice(0, 300)}`);
+        let text = `Shopify ${this.shop} svarade ${svar.status}: ${(await svar.text()).slice(0, 300)}`;
+        if (svar.status === 401 && this.adminToken) {
+          const form = granskaAdminToken(this.adminToken);
+          text = `Shopify ${this.shop} avvisade token (401). ${form ? `Värdet ${form}.` : 'Värdet har rätt form (shpat_…), så det är fel butik eller så är appen inte installerad.'}`
+            + ` Rätt värde: custom-appen i just ${this.shop} → API credentials → "Admin API access token".`;
+        }
+        const fel = new Error(text);
         fel.status = svar.status;
         throw fel;
       }
@@ -134,7 +158,8 @@ export class ShopifyLasare {
       const lista = (data.disputes ?? []).map((d) => normaliseraTvist(d, ordrar)).filter((d) => !d.initierad || d.initierad.getTime() >= gr);
       return { tillganglig: true, lista, orsak: null };
     } catch (e) {
-      if (e.status === 403 || e.status === 401) return { tillganglig: false, lista: [], orsak: `Shopify nekade tvisterna (${e.status}) — appen saknar scope read_shopify_payments_disputes` };
+      if (e.status === 401) return { tillganglig: false, lista: [], orsak: e.message };
+      if (e.status === 403) return { tillganglig: false, lista: [], orsak: 'Shopify nekade tvisterna (403) — appen saknar scope read_shopify_payments_disputes' };
       if (e.status === 404) return { tillganglig: false, lista: [], orsak: 'Butiken använder inte Shopify Payments — tvister syns bara hos betalleverantören (Klarna/Stripe)' };
       throw e;
     }

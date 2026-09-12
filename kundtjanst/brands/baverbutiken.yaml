@@ -27,5 +27,6 @@ discord:
   kanal: customer-service
 
 notion:
-  sop_database_id: ""
+  # VA:ns SOP-databas, länken Axel gav 2026-09-12 (app.notion.com/p/36f270ab…).
+  sop_database_id: "36f270ab-908c-803b-8949-ff2326f4f76c"
   rapport_database_id: ""

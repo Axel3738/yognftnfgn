@@ -68,7 +68,7 @@ härleds ur brand-id:t (`tacklebay` → `TACKLEBAY`, `my-shop` → `MY_SHOP`):
 | `KUNDTJANST_MAIL_USER_<ID>` | bara om användarnamnet inte är supportmailen | nej |
 | `KUNDTJANST_MAIL_HOST_<ID>` | bara om det inte är Loopia (`mailcluster.loopia.se`) | nej |
 | `KUNDTJANST_WEBMAIL_URL_<ID>` | bara om webbmejlen inte är `https://webmail.loopia.se/` (annan Roundcube) | nej |
-| `SHOPIFY_SHOP_<ID>` + `SHOPIFY_ADMIN_TOKEN_<ID>` | ordrar + tvister (custom app: `read_orders`, `read_shopify_payments_disputes`) | nej — utan dem är tvister "okända" |
+| `SHOPIFY_SHOP_<ID>` + `SHOPIFY_ADMIN_TOKEN_<ID>` | ordrar + tvister (custom app: `read_orders`, `read_shopify_payments_disputes`). Värdet är **"Admin API access token"** (`shpat_…`, visas en gång efter *Install app*) — inte API key, inte API secret key. Skriptet säger vilket av dem som klistrats in om butiken svarar 401. `SHOPIFY_SHOP_<ID>` behövs bara om brandfilen saknar `shop` | nej — utan dem är tvister "okända" |
 | `SHOPIFY_CLIENT_ID_<ID>` + `SHOPIFY_CLIENT_SECRET_<ID>` | alternativet: fabrikens app "Fabriken", token mintas per körning | nej |
 | `NOTION_TOKEN` | SOP-täckning + rapportsida | nej |
 | `DISCORD_BOT_TOKEN` (eller `DISCORD_WEBHOOK_URL[_<ID>]`) | posta rapporten | nej |
