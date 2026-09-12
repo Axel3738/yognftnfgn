@@ -455,7 +455,9 @@ export async function skapaRad(hubId, schema, rad, { torr = false, logg = consol
     const block = tillBlock(markdown);
     if (!block.length) throw new Error(`Briefen är tom: ${rad.brief}`);
     const omgångar = delaBlock(block);
-    const datum = new Date().toISOString().slice(0, 10);
+    // Svensk dag, inte UTC — 00:30 svensk tid är fortfarande gårdagen i UTC
+    // (DryTrek 2026-09-12: "Skapad" stod på fel datum).
+    const datum = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
     const { properties, fel, varningar, fält } = byggEgenskaper(schema, {
       namn: rad.namn, typ: rad.typ, status: rad.status ?? 'Draft',
       landning: rad.landning ?? landningUrBrief(markdown), datum,

@@ -244,3 +244,26 @@ test('rutinen taggas med kommando och butik så den går att hitta igen', () => 
   assert.ok(f.taggar.includes('butik:tankguard'));
   assert.equal(f.rutinnamn, 'skalningskungen — tankguard');
 });
+
+test('butikernas tider: fast plats per butik ur register.json, aldrig samma start (Meta rate limit 2026-09-12)', async () => {
+  const { tidFor, tiderFor, plusMinuter, platsFor, BUTIKSRUTINER } = await import('../rutin.mjs');
+  const platser = { hemvakten: 0, tankguard: 1, drytrek: 2, kalender: 3, tacklebay: 4 };
+  assert.equal(plusMinuter('00:01', 8), '00:09');
+  assert.equal(plusMinuter('23:58', 5), '00:03');
+  assert.equal(tidFor('notionscalercs', 'hemvakten', platser), '00:01');
+  assert.equal(tidFor('notionscalercs', 'tacklebay', platser), '00:33');
+  assert.equal(tidFor('/ops-leverans', 'tacklebay/fiskespohallare-4-pack', platser), '14:00');
+  assert.equal(tidFor('ops-oversatt', 'tankguard', platser), '15:45');
+  const alla = Object.keys(platser).map((b) => tidFor('notionscalercs', b, platser));
+  assert.equal(new Set(alla).size, alla.length, 'inga två butiker delar minut');
+  // En ny butik får första lediga platsen — de gamla flyttar aldrig.
+  const ny = platsFor('carashell', platser);
+  assert.deepEqual(ny, { plats: 5, ny: true, id: 'carashell' });
+  assert.equal(platsFor('kalender/adventskalender-racingbilar', platser).plats, 3);
+  assert.equal(platsFor('ny', { a: 0, b: 2 }).plats, 1, 'luckor fylls');
+  const t = tiderFor('kalender', { platser, datum: SOMMAR });
+  assert.equal(t.length, Object.keys(BUTIKSRUTINER).length);
+  assert.equal(t[0].tid, '00:25');
+  assert.equal(t[0].cron, '25 22 * * *');
+  assert.throws(() => tidFor('cs', 'drytrek', platser), /ingen butiksrutin/);
+});
