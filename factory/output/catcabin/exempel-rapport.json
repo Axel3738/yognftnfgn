@@ -1,0 +1,17 @@
+{
+  "brand": "CatCabin",
+  "butik": "catcabin/utekattkojan",
+  "datum": "2026-09-12",
+  "lage": "budget",
+  "server": "CatCabin — OPS",
+  "kanal": "ads",
+  "gjort": [
+    "Budget round ran: 0 changes, campaign still below the judgement gate (300 kr AND 3 purchases).",
+    "Creative hub created in Notion and linked to the store."
+  ],
+  "siffror": { "spend_7d": 833, "kop_7d": 0, "roas_7d": 0, "vinstbidrag_7d": 0, "briefs_nya": 0 },
+  "varningar": [
+    "Campaign has spent 833 kr with 0 purchases. No verdict yet, but the night watch will cut the budget by 30 % once spend passes 1 461 kr with no sales."
+  ],
+  "nasta_korning": "2026-09-13"
+}
