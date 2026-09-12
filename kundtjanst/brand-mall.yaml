@@ -26,6 +26,10 @@ brand:
 mail:
   host: mailcluster.loopia.se # Loopia. Annan leverantör: byt här
   port: 993
+  # auto = IMAP där nätet tillåter det, annars webbmejlen över HTTPS (claude.ai
+  # släpper bara HTTPS, mätt 2026-09-12). imap / webmail tvingar en väg.
+  via: auto
+  webmail: https://webmail.loopia.se/   # Roundcube — samma inloggning som brevlådan
   inkorg: INBOX
   # Skickat-mappen provas i ordning; `node kundtjanst/setup.mjs --mappar <id>` visar namnen
   skickat:

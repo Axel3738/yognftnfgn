@@ -183,6 +183,10 @@ export function korkonfig(brand, env = process.env) {
       port: Number(m.port) || LOOPIA_IMAP.port,
       user,
       pass,
+      // Vägen in: 'auto' = IMAP först, webbmejl (HTTPS) om nätet spärrar IMAP
+      // (så är det på claude.ai). 'imap' / 'webmail' tvingar en av dem.
+      via: ['imap', 'webmail', 'auto'].includes(String(m.via ?? '').toLowerCase()) ? String(m.via).toLowerCase() : 'auto',
+      webmail: (env[`KUNDTJANST_WEBMAIL_URL_${envSuffix(brand.id)}`] || m.webmail || 'https://webmail.loopia.se/').trim(),
       inkorg: m.inkorg || 'INBOX',
       // Loopia lägger skickat i "Sent"; äldre klienter i "INBOX.Sent". Listan
       // provas i ordning tills en mapp går att välja.

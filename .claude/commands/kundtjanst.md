@@ -15,44 +15,31 @@ Uppdraget i en mening: **läs supportmejlen (Loopia) och Shopify för varje bran
 säg vilka ärenden som återkommer vecka efter vecka, vilka signaler som leder till
 chargebacks, ranka brandsen på risk — och ge VA:n en numrerad lista.**
 
-CONNECTORS: inga — utom **Gmail**, se nätet nedan. Shopify läses med
-`SHOPIFY_ADMIN_TOKEN_<ID>` eller `SHOPIFY_CLIENT_ID_<ID>` + `SHOPIFY_CLIENT_SECRET_<ID>`,
-Notion med `NOTION_TOKEN`, Discord med `DISCORD_BOT_TOKEN`, modellen (valfri) med
-`ANTHROPIC_NYCKEL`. Mejlen läses med IMAP (`KUNDTJANST_MAIL_PASS_<ID>`) där nätet
-tillåter det.
+CONNECTORS: inga — mejlen läses med brevlådans lösenord (`KUNDTJANST_MAIL_PASS_<ID>`):
+IMAP där nätet tillåter det, annars Loopias webbmejl över HTTPS (se nätet nedan).
+Shopify läses med `SHOPIFY_ADMIN_TOKEN_<ID>` eller `SHOPIFY_CLIENT_ID_<ID>` +
+`SHOPIFY_CLIENT_SECRET_<ID>`, Notion med `NOTION_TOKEN`, Discord med
+`DISCORD_BOT_TOKEN`, modellen (valfri) med `ANTHROPIC_NYCKEL`. Koppla ingen
+connector på rutinen — det är så den slipper godkännandeklick.
 
-## ⚠️ Nätet: IMAP går INTE från claude.ai — mätt 2026-09-12
+## ⚠️ Nätet: IMAP går INTE från claude.ai — webbmejlen gör det
 
-Containern släpper bara HTTPS genom sin proxy. `CONNECT` till port 993 svarar
-200 men tunneln bryts under TLS-handskakningen — mot Loopia, Gmail **och**
-Office 365, så det är nätverkspolicyn, inte Loopia. Skriptet säger det själv
-(`Nätverket här släpper inte IMAP …`, kod `PROXY_SPARRAR_PORTEN`) och hoppar
-brandet. Två vägar som fungerar:
+Mätt 2026-09-12: containern släpper bara HTTPS genom sin proxy. `CONNECT` till
+port 993 svarar 200 men tunneln bryts under TLS-handskakningen — mot Loopia,
+Gmail **och** Office 365, så det är nätverkspolicyn, inte Loopia. Därför läser
+skriptet på claude.ai brevlådan genom **Loopias webbmejl**
+(`https://webmail.loopia.se/`, Roundcube) i stället — samma inloggning, port
+443, läs-bara. `mail.via: auto` i brandfilen sköter bytet själv: IMAP provas,
+och bara när svaret är `PROXY_SPARRAR_PORTEN` går den till webbmejlen. Fel
+lösenord provas aldrig två gånger. Inget vidarebefordras, ingen Gmail behövs.
 
-**A. Jobbfil via Gmail-connectorn (rutinen på claude.ai).** Förutsätter att
-Loopia vidarebefordrar `hello@<brand>` till en Gmail-inkorg och att rutinen har
-Gmail-connectorn kopplad. Sök då per brand — senaste 8 dagar, BÅDA riktningarna:
+Säger skriptet `Webbmejl … (steg N)`: Loopia har ändrat något i Roundcube.
+Steget står i felet — läs `kundtjanst/webmail.mjs`, rätta det steget, kör om.
+Rapportera det till Axel som orsak; gissa aldrig fram en rapport utan mejl.
 
-```
-to:hello@tacklebay.se newer_than:8d        → "inkorg"
-from:hello@tacklebay.se newer_than:8d      → "skickat"
-```
-
-och skriv `kundtjanst/jobb/<datum>.json` (mappen är gitignorerad):
-
-```json
-{ "tacklebay": { "inkorg": [ { "id": "18f3…", "threadId": "18f2…", "from": "Anna <a@b.se>",
-  "to": "hello@tacklebay.se", "subject": "Var är min order #1042?", "date": "2026-09-09T08:15:00Z",
-  "text": "…hela texten…" } ], "skickat": [ … ] } }
-```
-
-Hela texten, inte snippet. Kör sedan `node kundtjanst/run.mjs --jobb kundtjanst/jobb/<datum>.json --alla --discord`.
-Utan "skickat" räknas obesvarat bara på svar bland de inkommande — rapporten
-säger det.
-
-**B. Öppet nät.** `node kundtjanst/run.mjs --alla --discord` där port 993 är
-öppen (Claude Code lokalt, en cron på en dator, Railway). Då går IMAP direkt
-och ingen connector behövs.
+Reserv om brevlådan inte är på Loopia: `--jobb <fil.json>` med mejlen ur en
+mejl-connector — formatet står i `kundtjanst/run.mjs`. Öppet nät (Claude Code
+lokalt, Railway): IMAP direkt, ingen skillnad i rapporten.
 
 ## Noll godkännanden
 
@@ -80,9 +67,8 @@ utan den vet nästa vecka ingenting.
    Läs stderr-raderna: ett `⚠️ hoppad:` per brand som inte gick att läsa, med
    variabelnamnet som saknas. Det är inte ett fel att rätta i koden — det är en
    nyckel som ska in i Environments (`node kundtjanst/setup.mjs` listar dem).
-   Står det `PROXY_SPARRAR_PORTEN`: bygg jobbfilen med Gmail-connectorn (väg A
-   ovan) och kör om med `--jobb`. Finns ingen Gmail-connector på rutinen:
-   rapportera det som orsaken — gissa aldrig fram en rapport utan mejl.
+   Står det `Webbmejl … (steg N)`: se avsnittet om nätet ovan — rätta steget
+   eller rapportera det som orsaken. Gissa aldrig fram en rapport utan mejl.
 
 2. **Läs rapporten som skrevs** (stdout är den svenska; `.en.md` den engelska).
    Rapporten är facit — räkna aldrig om något i huvudet, hitta aldrig på ett tal

@@ -40,7 +40,8 @@ import { fileURLToPath } from 'node:url';
 import { upptackBrands, korkonfig, valjBrands, brandUrEgenfil, STANDARD_TROSKLAR } from './brands.mjs';
 import { lasYaml } from '../factory/yaml.mjs';
 import { ImapKlient, hamtaMapp } from './imap.mjs';
-import { tolkaMejl, tolkaAdress, normaliseraAmne, taBortCitat, htmlTillText } from './mime.mjs';
+import { WebmailKlient, hamtaMappViaWebmail } from './webmail.mjs';
+import { tolkaMejl, tolkaAdress, normaliseraAmne, taBortCitat, htmlTillText, tolkaRubriker, tolkaDatum, delaRubrikOchKropp } from './mime.mjs';
 import { byggArenden, sammanfattaArenden } from './arenden.mjs';
 import { ShopifyLasare, kopplaOrdrar, normaliseraOrder, normaliseraTvist } from './shopify.mjs';
 import { bedomRisk, rankaBrands, aterkommande } from './chargeback.mjs';
@@ -128,6 +129,55 @@ export function jobbForBrand(jobb, brandId) {
   return { inkorg: mapp(j.inkorg ?? j.inbox, 'jobb:inkorg'), skickat: mapp(j.skickat ?? j.sent, 'jobb:skickat') };
 }
 
+// ------------------------------------------------------------------ brevlådan
+
+/** Datum ur ett råmejls Date-rubrik — det webbmejlen använder för att veta när den kan sluta bläddra. */
+export function datumUrRa(ra) {
+  const { rubrikblock } = delaRubrikOchKropp(String(ra ?? '').slice(0, 20_000));
+  return tolkaDatum(tolkaRubriker(rubrikblock).get('date'));
+}
+
+async function lasViaImap(konfig, period, logg) {
+  const klient = new ImapKlient({ host: konfig.mail.host, port: konfig.mail.port, user: konfig.mail.user, pass: konfig.mail.pass, logg });
+  try {
+    await klient.anslut();
+    await klient.loggaIn();
+    const inb = await hamtaMapp(klient, konfig.mail.inkorg, period.fran);
+    const ut = await hamtaMapp(klient, konfig.mail.skickat, period.fran);
+    return {
+      ok: true,
+      inkorg: inb.mejl.map((m) => tolkaMejl(m.ra, { uid: m.uid, mapp: inb.mapp })),
+      skickat: ut.mejl.map((m) => tolkaMejl(m.ra, { uid: m.uid, mapp: ut.mapp })),
+      skickatMapp: ut.mapp,
+      kalla: `${konfig.mail.user} via IMAP (${inb.mapp}: ${inb.antal}, ${ut.mapp ?? 'ingen skickat-mapp'}: ${ut.antal})`,
+    };
+  } catch (e) {
+    return { ok: false, fel: e.message, kod: e.kod ?? null };
+  } finally {
+    await klient.stang();
+  }
+}
+
+async function lasViaWebmail(konfig, period, logg) {
+  const klient = new WebmailKlient({ url: konfig.mail.webmail, user: konfig.mail.user, pass: konfig.mail.pass, logg });
+  try {
+    await klient.loggaIn();
+    const inb = await hamtaMappViaWebmail(klient, konfig.mail.inkorg, period.fran, { datumUr: datumUrRa });
+    const ut = await hamtaMappViaWebmail(klient, konfig.mail.skickat, period.fran, { datumUr: datumUrRa });
+    return {
+      ok: true,
+      inkorg: inb.mejl.map((m) => tolkaMejl(m.ra, { uid: m.uid, mapp: inb.mapp })),
+      skickat: ut.mejl.map((m) => tolkaMejl(m.ra, { uid: m.uid, mapp: ut.mapp })),
+      skickatMapp: ut.mapp,
+      kalla: `${konfig.mail.user} via webbmejlen (${inb.mapp}: ${inb.antal}, ${ut.mapp ?? 'ingen skickat-mapp'}: ${ut.antal})`,
+    };
+  } catch (e) {
+    return { ok: false, fel: e.message, kod: e.kod ?? null };
+  } finally {
+    await klient.loggaUt();
+  }
+}
+
 // ------------------------------------------------------------------ ett brand
 
 /**
@@ -163,22 +213,26 @@ export async function korBrand(brand, {
   } else if (!konfig.mail.konfigurerad) {
     return { brand: konfig, vecka, hoppad: true, orsak: `mejlen kan inte läsas — saknar ${konfig.mail.saknas.join(', ')}` };
   } else {
-    const klient = new ImapKlient({ host: konfig.mail.host, port: konfig.mail.port, user: konfig.mail.user, pass: konfig.mail.pass, logg });
-    try {
-      await klient.anslut();
-      await klient.loggaIn();
-      const inb = await hamtaMapp(klient, konfig.mail.inkorg, period.fran);
-      inkorg = inb.mejl.map((m) => tolkaMejl(m.ra, { uid: m.uid, mapp: inb.mapp }));
-      const ut = await hamtaMapp(klient, konfig.mail.skickat, period.fran);
-      skickat = ut.mejl.map((m) => tolkaMejl(m.ra, { uid: m.uid, mapp: ut.mapp }));
-      kallor.push(`${konfig.mail.user} (${inb.mapp}: ${inb.antal}, ${ut.mapp ?? 'ingen skickat-mapp'}: ${ut.antal})`);
-      if (!ut.mapp) varningar.push(`Ingen Skickat-mapp hittades (provade ${konfig.mail.skickat.join(', ')}) — svarstider och "obesvarat" räknas då bara på svar som ligger i inkorgen. Sätt mail.skickat i brandfilen; node kundtjanst/setup.mjs --mappar ${brand.id} listar namnen.`);
-    } catch (e) {
-      const tips = e.kod === 'PROXY_SPARRAR_PORTEN' ? ' → kör med --jobb <fil.json> (mejlen via Gmail-connectorn) eller kör run.mjs där nätet är öppet.' : '';
-      return { brand: konfig, vecka, hoppad: true, orsak: `IMAP ${konfig.mail.host}: ${e.message}${tips}`, kod: e.kod ?? null };
-    } finally {
-      await klient.stang();
+    // Två vägar in i brevlådan, samma form ut: IMAP där nätet tillåter det,
+    // annars webbmejlen över HTTPS (claude.ai). 'auto' provar IMAP och byter
+    // bara när det är nätet som spärrar — fel lösenord ska inte provas två gånger.
+    const via = konfig.mail.via;
+    let last = null;
+    if (via === 'imap' || via === 'auto') {
+      const r = await lasViaImap(konfig, period, logg);
+      if (r.ok) last = r;
+      else if (via === 'imap' || r.kod !== 'PROXY_SPARRAR_PORTEN') return { brand: konfig, vecka, hoppad: true, orsak: `IMAP ${konfig.mail.host}: ${r.fel}`, kod: r.kod ?? null };
+      else logg(`IMAP spärrat av nätet — byter till webbmejlen ${konfig.mail.webmail}`);
     }
+    if (!last) {
+      const r = await lasViaWebmail(konfig, period, logg);
+      if (!r.ok) return { brand: konfig, vecka, hoppad: true, orsak: `Webbmejl ${konfig.mail.webmail}: ${r.fel}`, kod: r.kod ?? null };
+      last = r;
+    }
+    inkorg = last.inkorg;
+    skickat = last.skickat;
+    kallor.push(last.kalla);
+    if (!last.skickatMapp) varningar.push(`Ingen Skickat-mapp hittades (provade ${konfig.mail.skickat.join(', ')}) — svarstider och "obesvarat" räknas då bara på svar som ligger i inkorgen. Sätt mail.skickat i brandfilen; node kundtjanst/setup.mjs --mappar ${brand.id} listar namnen.`);
   }
   // Bara mejl i perioden (IMAP SINCE går på dag, tolkat datum är exakt).
   const iPeriod = (m) => !m.datum || m.datum.getTime() >= period.fran.getTime() - DAG;
@@ -412,5 +466,13 @@ export async function huvud(argv = process.argv.slice(2), env = process.env) {
 }
 
 if (process.argv[1] && process.argv[1].endsWith('run.mjs')) {
+  // Nodes inbyggda fetch läser inte HTTPS_PROXY av sig själv i alla versioner.
+  // Samma grepp som tools/notify-discord.mjs: starta om under flaggan, så
+  // webbmejlen, Shopify, Notion och Discord når ut genom sessionens proxy.
+  if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
+    const { spawnSync } = await import('node:child_process');
+    const r = spawnSync(process.execPath, process.argv.slice(1), { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' } });
+    process.exit(r.status ?? 1);
+  }
   huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(1); });
 }
