@@ -70,7 +70,7 @@
       "id": "120249055514200172",
       "namn": "CATCABIN_SE_Utekattkojan | BE-ROAS 1,62 | 2026-09-11",
       "struktur": "CBO 1000 kr/dag, LOWEST_COST_WITHOUT_CAP, OUTCOME_SALES",
-      "status": "PAUSED",
+      "status": "ACTIVE",
       "adsets": {
         "PD": "120249055572790172",
         "GT": "120249055577730172",
@@ -78,7 +78,8 @@
         "CS": "120249066448670172"
       },
       "annonser": 13,
-      "lank": "https://catcabin.se/products/utekattkojan"
+      "lank": "https://catcabin.se/products/utekattkojan",
+      "launchad": "2026-09-12"
     },
     "kampanj_no": null,
     "no_stoppad_for": "Butikens NO-marknad star i SEK, inte NOK. Matt mot riktiga sidan 2026-09-11: /nb svarar currency SEK. Kallans norska annonser laser upp 809 NOK. 11 kallannonser vantar i Magiborsten NO, kampanj 120252183459760233.",
@@ -89,8 +90,9 @@
     },
     "kon_kraver": "Dubba om prisrepliken (HeyGen) + byt inbrand pristext. Alternativ utan krediter: satt butikens pris till 809/1059 som Baverbutiken.",
     "butiken_bakom_losenord": false,
-    "far_inte_aktiveras_forran": "Pixeln 1101742182294878 har avfyrat (last_fired_time ar tomt 2026-09-12 = WeTracked inte kopplat)",
+    "far_inte_aktiveras_forran": "(uppfyllt — launchad 2026-09-12 pa Axels besked)",
     "butiken_oppen_verifierad": "2026-09-12 — catcabin.se svarar 200, produktsidan visar 789,00 kr",
-    "pixeln_har_avfyrat": false
+    "pixeln_har_avfyrat": false,
+    "launch_anteckning": "Launchad pa Axels kommando \"Launch: CATCABIN_SE_Utekattkojan\". Butiken verifierad live (200, inget /password). Pixelns last_fired_time var TOMT vid launch — butiken hade da noll besokare, sa matningen kan inte skilja okopplad fran obesokt. Axel uppgav att WeTracked var fixat. Kontrollera pixeln igen nar trafik borjat komma."
   }
 }

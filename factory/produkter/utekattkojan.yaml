@@ -293,6 +293,18 @@ meta:
   # /products/-anrop till /password med byte-identiskt svar, så en existerande
   # och en påhittad handle såg likadana ut utifrån.)
   produkt_url: "https://catcabin.se/products/utekattkojan"
+  # LAUNCH — Axels kommando 2026-09-12.
+  launch:
+    datum: "2026-09-12"
+    kampanj: "CATCABIN_SE_Utekattkojan | BE-ROAS 1,62 | 2026-09-11"
+    kampanj_id: "120249055514200172"
+    budget_per_dag: 1000
+    annonser: 13
+    marknad: SE
+    # ⚠️ Pixelns last_fired_time var TOMT vid launch. Butiken hade noll besökare
+    # (öppnad samma dag), så mätningen kunde inte skilja "okopplad" från
+    # "obesökt". Axel uppgav att WeTracked var fixat. Kolla igen när trafik kommit.
+    pixel_verifierad: false
   produkt_url_no: "https://catcabin.se/nb/products/utekattkojan"
   vinklar:
     - "PD — Katten sover under bilen igen – kojan ger den en egen torr plats (BEVISAD: Utekattkoja_PD_2_H1, 1 453 kr / 4 köp / ROAS 2,17 mot BE 1,62)"

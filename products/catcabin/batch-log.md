@@ -86,3 +86,50 @@ avsnitt 5) och NOK-paketnivåerna är satta — då byggs `CATCABIN_NO_…`.
    kassa. Axels beslut om det ska stå kvar.
 3. **`inkopskostnad: 302`** är härledd ur källkampanjens namn, inte kvitterad
    mot Temu. Break-even 1,62 vilar på den. Bekräfta före första budgetronden.
+
+---
+
+## LAUNCHAD 2026-09-12
+
+Axels kommando: `Launch: CATCABIN_SE_Utekattkojan`.
+
+`CATCABIN_SE_Utekattkojan | BE-ROAS 1,62 | 2026-09-11` (`120249055514200172`)
+— **ACTIVE**, CBO 1 000 kr/dag, tillbakaläst på alla tre nivåer:
+kampanj ACTIVE · 4/4 adsets ACTIVE · 13/13 annonser ACTIVE.
+Fem annonser stod `IN_PROCESS` direkt efter launch, vilket är Metas normala
+bearbetning och inte ett fel.
+
+| Adset | Annonser |
+|---|---|
+| PD | `PD_1_H1`, `PD_2_H1`, `PD_3_H1`, `PD_2_1` |
+| GT | `GT_1_H1`, `GT_2_H1`, `GT_3_H1`, `GT_2_1` |
+| SP | `SP_1_H1`, `SP_2_H1`, `SP_3_H1`, `SP_2_1` |
+| CS | `CS_2_1` |
+
+### Kontroller före launch
+
+* Butiken live: `catcabin.se` och produktsidan svarar 200, inget `/password`.
+  Produktsidan visar 789,00 kr — samma tal som annonserna bygger på.
+* ⚠️ **Pixeln `1101742182294878`: `last_fired_time` TOMT.** Butiken hade noll
+  besökare (öppnad samma dag), så mätningen kan inte skilja "okopplad" från
+  "obesökt" — en pixel utan trafik kan aldrig ha avfyrat, hur rätt kopplad den
+  än är. Försök att framkalla en avfyrning med Chromium misslyckades: agentproxyn
+  klarar inte webbläsarens tunnel (`ws_closed_mid_exchange`). Axel uppgav att
+  WeTracked var fixat, och launchade på det.
+  **Kolla pixeln igen när trafik börjat komma.** Utan den spenderas budget utan
+  attribution.
+
+### CS-videorna — Axels beslut: gör inget
+
+De tre (`CS_1_H1`, `CS_2_H1`, `CS_3_H1`) läser upp fel pris — "från
+ettusenfemtionio kronor ner till åttahundranio", alltså 1059 → 809, medan
+butiken säljer för 789 (jämförpris 1039). Axel: *"sätt priset till 809 kr i
+Norge endast eller gör inget alls och låt felet bestå"*. De tre är svenska och
+berörs inte av ett norskt pris, så utfallet blev **gör inget**.
+
+De är därmed inte uppladdade. "Låt felet bestå" gäller källmaterialet — ingen
+annons med fel prislöfte har publicerats. Vill man ha dem senare krävs omdubb av
+prisrepliken plus ny inbränd text; orsaken står i
+`factory/output/utekattkojan/uteslutna.json`.
+
+**Räkningen: 13 av 16 — DELVIS KLART**, och det är rätt utfall givet beslutet.
