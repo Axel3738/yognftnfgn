@@ -1,0 +1,35 @@
+1
+00:00:00,119 --> 00:00:01,159
+Prisen går ned.
+
+2
+00:00:01,379 --> 00:00:02,899
+Lageret er snart tomt.
+
+3
+00:00:03,099 --> 00:00:04,699
+Lageret er snart tomt.
+
+4
+00:00:04,839 --> 00:00:07,879
+Akkurat nå! Rabatt på solcellealarm to-pakning.
+
+5
+00:00:08,039 --> 00:00:12,139
+Fra 1009 kroner ned til 769 kroner.
+
+6
+00:00:12,279 --> 00:00:13,179
+Kun i dag.
+
+7
+00:00:13,279 --> 00:00:16,219
+Beskytt hus, hage eller hytte for mindre.
+
+8
+00:00:16,279 --> 00:00:17,899
+Lageret minker raskt.
+
+9
+00:00:17,979 --> 00:00:19,619
+Slå til før det er tomt

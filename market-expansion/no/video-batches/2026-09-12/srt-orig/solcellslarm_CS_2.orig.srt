@@ -1,0 +1,35 @@
+1
+00:00:00,119 --> 00:00:01,159
+Priset går ner.
+
+2
+00:00:01,379 --> 00:00:02,899
+Lagret tar snart slut.
+
+3
+00:00:03,099 --> 00:00:04,699
+Lagret tar snart slut.
+
+4
+00:00:04,839 --> 00:00:07,879
+Just nu! Rabatt på solcellslarm två pack.
+
+5
+00:00:08,039 --> 00:00:12,139
+Från 1009 kronor ner till 769 kronor.
+
+6
+00:00:12,279 --> 00:00:13,179
+Bara i dag.
+
+7
+00:00:13,279 --> 00:00:16,219
+Skydda hus, trädgård eller stuga för mindre.
+
+8
+00:00:16,279 --> 00:00:17,899
+Lagret minskar snabbt.
+
+9
+00:00:17,979 --> 00:00:19,619
+Slå till innan den är slut

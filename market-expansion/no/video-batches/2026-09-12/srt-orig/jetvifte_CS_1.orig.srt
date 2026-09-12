@@ -1,0 +1,23 @@
+1
+00:00:00,099 --> 00:00:02,339
+Idag är priset lägre än någonsin.
+
+2
+00:00:02,399 --> 00:00:05,659
+Just nu får du jetfläkten till kraftigt rabatterat pris.
+
+3
+00:00:05,719 --> 00:00:10,539
+Ordinarie pris niohundratjugotvå kronor, idag bara niohundratjugotvå kronor.
+
+4
+00:00:10,639 --> 00:00:12,739
+Det är tre procent rabatt.
+
+5
+00:00:12,859 --> 00:00:16,279
+Men lagret är begränsat och kampanjen gäller bara idag.
+
+6
+00:00:16,399 --> 00:00:21,139
+Perfekt om du redan har Makita-batterier hemma. Klicka på länken innan den är slut
