@@ -41,4 +41,4 @@ Skapad 2026-09-11 av `/notionscalercs setup drytrek`. Uppdaterad 2026-09-12 (kö
 
 | Datum | Idé | Status | Källa |
 |---|---|---|---|
-| 2026-09-12 | **En bildannons per färgvariant** — vit bakgrund, bara produkten, 18 färger = 18 bilder i ETT koncept (`PD_14_1 … _18`, ett adset). Variabeln är färgen; vinstbidrag per färg säger vilka färger som ska leda copyn framöver. | **[byggd i batch #3 samma dag]** — genererad av `factory/ops-bild.mjs` (kie.ai), ingen redigerare | Axel, chatten 2026-09-12. Produktens säljpunkt "18 färger" (`factory/produkter/damasker.yaml` benefits) — ingen annons på kontot visar mer än neongrön |
+| 2026-09-12 | **En bildannons per färgvariant** — vit bakgrund, bara produkten, 18 färger = 18 bilder i ETT koncept (`PD_14_1 … _18`, ett adset). Variabeln är färgen; vinstbidrag per färg säger vilka färger som ska leda copyn framöver. | **[byggd i batch #3b (färgvarianterna) samma dag]** — genererad av `factory/ops-bild.mjs` (kie.ai), ingen redigerare | Axel, chatten 2026-09-12. Produktens säljpunkt "18 färger" (`factory/produkter/damasker.yaml` benefits) — ingen annons på kontot visar mer än neongrön |

@@ -173,14 +173,14 @@ Notion-resultat: `products/drytrek/batch-02/notion-resultat.json` (7 skapade, 0 
 
 *(Utfall skrivs vid nästa briefdag. Grinden: ≥ 300 kr OCH ≥ 3 köp per annons.)*
 
-## Batch #3 — 2026-09-12 · Axels idé: en bildannons per färgvariant (`/ops-bild drytrek`, samma dag som batch #2)
+## Batch #3b (färgvarianterna) — 2026-09-12 · Axels idé: en bildannons per färgvariant (`/ops-bild drytrek`, samma dag som batch #2)
 
 **Ingen redigerare, ingen väntan.** Idén kom från Axel i chatten 2026-09-12
 ("bara vit bakgrund och sen produkten, en av varje färgvariant"). Byggd och
 genererad samma dag av den nya motorn `factory/ops-bild.mjs` (kie.ai
 `google/nano-banana-edit` med produktfotot `damask-se-NG-ren.jpg` som
 formreferens, bilden lagd i Notion via REST med `tools/notion-fil-upp.mjs`).
-Copy: sonnet (`products/drytrek/batch-03/copy-sonnet.json`, tre-frågorstestet
+Copy: sonnet (`products/drytrek/batch-03-farger/copy-sonnet.json`, tre-frågorstestet
 3 × ✅ på varje rad). Pris 389 kr per par ur `factory/produkter/damasker.yaml`.
 Hubb: Damasker vandring, rader `DryTrek_Damasker_PD_14_1 … _18` — **ETT
 koncept, 18 varianter, ett adset** (leveransrundan döper adsetet på
