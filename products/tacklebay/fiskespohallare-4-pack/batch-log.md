@@ -165,6 +165,15 @@ påståenden; redovisat i cellen. Fable: 0 nya rader med ❌. Kept-rader
 
 *Fylls i vid nästa briefrond när annonserna passerat grinden.*
 
+**Nattvakten 2026-09-14 (ingen briefdag, körning nr 4):** kampanjen 700 kr/dag
+oförändrad — kadensspärren (sänkt 2026-09-13, nästa ändring tidigast
+2026-09-16). 14 d: 66 annonser, 3 050 kr, 5 köp, 0 bedömbara. Dygn:
+181/0 · 602/1 · 1 392/2 · 875/2. **`PD_11_H1` (1 030 kr, 2 köp) och `PD_25_H1`
+(747 kr, 2 köp) står PAUSED sedan 2026-09-13 — pausade av någon annan än
+nattvakten, rörs aldrig.** Batch #2:s `PD_46_H1` är Approved i hubben och
+ligger nu i SE-kampanjen (första levererade från batch #2); `PD_42_H1`,
+`PD_45_H1` och batch #3:s `PD_61_H1` är `in progress`, 24 rader `Draft`.
+
 ---
 
 ## Översättning NO — 2026-09-12 16:00 (`/ops-oversatt tacklebay/fiskespohallare-4-pack`, körning nr 1)
