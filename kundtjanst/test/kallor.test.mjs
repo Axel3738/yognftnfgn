@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { normaliseraOrder, normaliseraTvist, nastaSida, kopplaOrdrar, granskaAdminToken, ShopifyLasare } from '../shopify.mjs';
-import { sopTackning, tillBlock } from '../notion.mjs';
+import { sopTackning, tillBlock, hamtaSopTitlar, typAv } from '../notion.mjs';
 import { plockaJson } from '../llm.mjs';
 import { isoVecka, renderaEngelsk, renderaSvensk, kapaForDiscord, DISCORD_MAX, renderaRanking, renderaRankingEngelsk } from '../rapport.mjs';
 import { NIVAER } from '../chargeback.mjs';
@@ -69,6 +69,18 @@ test('SOP-täckningen matchar titlar mot kategoriorden', () => {
   const t = sopTackning(['SOP – Where is my order (tracking reply)', 'SOP – Returns & refunds', 'Guideline – tone'], ['var_ar_ordern', 'retur_angerratt', 'aterbetalning', 'ej_levererad', 'spam', 'ovrigt']);
   assert.deepEqual(t.tackta.map((x) => x.id), ['var_ar_ordern', 'retur_angerratt', 'aterbetalning']);
   assert.deepEqual(t.saknas, ['ej_levererad']);
+});
+
+test('i en creative hub räknas bara Typ SOP/Guideline som SOP; en ren SOP-databas räknar alla rader', async () => {
+  const rad = (namn, typ) => ({ properties: { Namn: { type: 'title', title: [{ plain_text: namn }] }, ...(typ === undefined ? {} : { Typ: { type: 'select', select: typ === null ? null : { name: typ } } }) } });
+  const hubb = { results: [rad('Enginecover_PD_22_H1', 'Video - Pending Approval'), rad('SOP – Refunds and returns', 'SOP'), rad('Persona & Angles', 'Guideline'), rad('Utan typ', null)], has_more: false };
+  const fetchFn = async () => ({ ok: true, status: 200, json: async () => hubb });
+  assert.deepEqual(await hamtaSopTitlar('db', { fetchFn, token: 't' }), ['SOP – Refunds and returns', 'Persona & Angles']);
+  const ren = { results: [rad('Where is my order (tracking reply)'), rad('Returns & refunds')], has_more: false };
+  assert.deepEqual(await hamtaSopTitlar('db', { fetchFn: async () => ({ ok: true, status: 200, json: async () => ren }), token: 't' }), ['Where is my order (tracking reply)', 'Returns & refunds']);
+  assert.equal(typAv(rad('x')), null);
+  assert.equal(typAv(rad('x', 'SOP')), 'SOP');
+  assert.equal(typAv({ properties: { Typ: { type: 'multi_select', multi_select: [{ name: 'SOP' }, { name: 'VA' }] } } }), 'SOP / VA');
 });
 
 test('rapporttext blir Notion-block: rubriker, punkter, stycken, max 100', () => {
