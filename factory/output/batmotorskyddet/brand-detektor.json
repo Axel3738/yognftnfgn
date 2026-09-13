@@ -1,0 +1,4633 @@
+{
+ "produkt": "batmotorskyddet",
+ "marknad": "SE",
+ "datum": "2026-09-13",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16443175731549",
+  "produkt_handle": "batmotorskydd-420d-heltackande-for-utombordare",
+  "produkt_url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": "Batmotor",
+  "kampanj_id": "120250009325850291",
+  "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+  "no_kampanjmonster": "Båtmotortrekk",
+  "no_annonskonto": "1050941584152547",
+  "no_annonsprefix": "Batmotortrekk",
+  "no_kampanj_id": "120252047563660233",
+  "srt_slug": [
+   "batmotortrekk"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Batmotor_AU_1_H1",
+   "id": "120250105139440291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "AU | Notionrunda 2026-09-05",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video2/srt-orig/batmotortrekk_AU_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.8,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.24,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 48
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "570 kronor.",
+      "fel": "säger 570 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagarsoppetkop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "bara dra over och spann. skyddar mot regn, sno och uv i sex manader. 30 dagars oppet kop. 579 kronor.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "inbränd text",
+    "pris i inbränd: säger 570 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "579kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "570 kronor.",
+     "fel": "säger 570 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagarsoppetkop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "bara dra over och spann. skyddar mot regn, sno och uv i sex manader. 30 dagars oppet kop. 579 kronor.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 3 · tidigare i filmen, 10.8–12s (5 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 12.3–15.24s (11 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_BF_1_1",
+   "id": "120250064868580291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BF | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "965 kr",
+      "579 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_BF_2_1",
+   "id": "120250064958220291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BF | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "30 dagars oppet kop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagar, pengarna tillbaka",
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
+     ]
+    },
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "30 dagars oppet kop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_BF_3_1",
+   "id": "120250065298370291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BF | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_BF_7_1",
+   "id": "120250147714760291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BF | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "579 kr istället för 965 kr – spara 386 kr.\n420D Oxford-tyg, 9 storlekar, 0–350 hk.\nBetala med Klarna.",
+      "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "965 kr) - spara 386 kr.",
+      "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "386 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "579 kr istället för 965 kr – spara 386 kr.\n420D Oxford-tyg, 9 storlekar, 0–350 hk.\nBetala med Klarna.",
+     "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "965 kr) - spara 386 kr.",
+     "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_BF_8_1",
+   "id": "120250147257090291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BF | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagar",
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_BF_9_1",
+   "id": "120250147525600291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "BF | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_CO_1_1",
+   "id": "120250064854480291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "CO | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "utan skydd: regn, sno och uv rakt pa motorn. med skydd: 420d oxford-tyg och kapa ner till riggen. 579 kr, med 30 dagars ",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "579 kr. 30 dagars oppet kop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp om du ändrar d",
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "utan skydd: regn, sno och uv rakt pa motorn. med skydd: 420d oxford-tyg och kapa ner till riggen. 579 kr, med 30 dagars ",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "579 kr. 30 dagars oppet kop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_CS_2_1",
+   "id": "120250017784490291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "40% RABATT – ENDAST IDAG",
+      "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Begränsat lager. Erbjudandet gäller endast idag.",
+      "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "tidsbegränsat erbjudande i copy: lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "40% RABATT – ENDAST IDAG",
+     "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Begränsat lager. Erbjudandet gäller endast idag.",
+     "fel": "lovar \"erbjudandet galler\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_CS_3_H1",
+   "id": "120250105232890291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video-batmotor/srt-orig/batmotortrekk_CS_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 12.3,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.94,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 51
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "tal",
+      "rad": "967 kronor blev 579 kronor. Motorn den skyddar är värd desto mer. Sex månader i regn, snö och salt sliter på en obskydda",
+      "fel": "säger 967 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagarsoppetkop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "kapa till rigg. 30 dagars oppet kop. handla nu.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "inbränd text",
+    "pris i tal: säger 967 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "579KR",
+      "579kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "tal",
+     "rad": "967 kronor blev 579 kronor. Motorn den skyddar är värd desto mer. Sex månader i regn, snö och salt sliter på en obskydda",
+     "fel": "säger 967 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagarsoppetkop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "kapa till rigg. 30 dagars oppet kop. handla nu.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 3 · tidigare i filmen, 12.3–12.6s (2 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 12.9–15.94s (12 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_CS_4_1",
+   "id": "120250065038000291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "965 kr",
+      "579 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_CS_5_H1",
+   "id": "120250126099880291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/batmotortrekk_CS_5_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 12.6,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.08,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 51
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn, sol och saltvatten – hela motorn skyddad under tätt 420D-tyg. 579 kr. Ordinarie pris 965 kr, 386 kr redan avdraget",
+      "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "5kr",
+      "fel": "säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "pris i copy: säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "386 kr",
+      "579KR",
+      "579kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn, sol och saltvatten – hela motorn skyddad under tätt 420D-tyg. 579 kr. Ordinarie pris 965 kr, 386 kr redan avdraget",
+     "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "5kr",
+     "fel": "säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 3 · tidigare i filmen, 12.6s: \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 12.9–16.08s (12 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_CS_7_1",
+   "id": "120250147719310291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | CS | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "579 kr för Båtmotorskyddet 420D.\nOrdinarie pris 965 kr – spara 386 kr.\n30 dagars öppet köp, betalning med Klarna.",
+      "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Spara 386 kr pa 420D Oxford-skyddet.",
+      "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "579 kr for batmotorskyddet 420d. ordinarie pris 965 kr – spara 386 kr. 30 dagars oppet kop, betalning med klarna.",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop · klarna",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "386 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp, betalning med",
+      "30 dagars öppet köp · Klarna",
+      "30 dagars oppet kop · Klarna"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "579 kr för Båtmotorskyddet 420D.\nOrdinarie pris 965 kr – spara 386 kr.\n30 dagars öppet köp, betalning med Klarna.",
+     "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Spara 386 kr pa 420D Oxford-skyddet.",
+     "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "579 kr for batmotorskyddet 420d. ordinarie pris 965 kr – spara 386 kr. 30 dagars oppet kop, betalning med klarna.",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop · klarna",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_FM_1_H1",
+   "id": "120250105131680291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "FM | Notionrunda 2026-09-05",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video-batmotor/srt-orig/batmotortrekk_FM_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.84,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 54
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "5kr",
+      "fel": "säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "pris i inbränd: säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "579kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "5kr",
+     "fel": "säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 13.8–16.84s (12 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_FM_3_1",
+   "id": "120250147259930291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "FM | Notionrunda 2026-09-05",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "579 kr istallet for 965 kr · 30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "579 kr istallet for 965 kr · 30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_GT_1_H1",
+   "id": "120250024533740291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | GT | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source för video 27975221842162711 — varken direkt på id:t eller i kontots advideos)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)",
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · okänd (ingen source för video 27975221842162711 — varken direkt på id:t eller i kontots advideos)"
+   ]
+  },
+  {
+   "annons": "Batmotor_GT_1_H2",
+   "id": "120250024534870291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | GT | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15,
+       "plats": "tidigare i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "tidigare i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "tidigare i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "tidigare i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "tidigare i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 38.4,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 38.7,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 39,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 39.09,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 128
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 15–16.2s (5 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · sent i filmen, 38.4–39.09s (4 frames): \"babebutiken.\" (fuzzy(2))"
+   ]
+  },
+  {
+   "annons": "Batmotor_GT_1_H3",
+   "id": "120250024536580291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | GT | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.3,
+       "plats": "tidigare i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "tidigare i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "tidigare i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 38.1,
+       "plats": "sent i filmen",
+       "ord": "bavabutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 38.4,
+       "plats": "sent i filmen",
+       "ord": "bavabutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 38.7,
+       "plats": "sent i filmen",
+       "ord": "bavabutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 38.88,
+       "plats": "sent i filmen",
+       "ord": "bavabutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 127
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 15.3–15.9s (3 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · sent i filmen, 38.1–38.88s (4 frames): \"bavabutiken.\" (fuzzy(2))"
+   ]
+  },
+  {
+   "annons": "Batmotor_GT_2_1",
+   "id": "120250009360390291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | GT | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_GT_4_H1",
+   "id": "120250168704670291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | GT | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 55
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "en present han faktiskt anvander, varje gang baten laggs upp. 420d oxford-tyg, finns i 9 storlekar. 30 dagars oppet kop ",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "tal (oläst)",
+    "öppet köp i copy: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp om storleken i",
+      "30 dagars oppet",
+      "30 dagars"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "en present han faktiskt anvander, varje gang baten laggs upp. 420d oxford-tyg, finns i 9 storlekar. 30 dagars oppet kop ",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)"
+   ]
+  },
+  {
+   "annons": "Batmotor_LI_1_1",
+   "id": "120250065179450291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "LI | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "5 saker skyddet gör:\n1. Täcker hela motorn, kåpa till rigg.\n2. 420D Oxford-tyg mot regn, snö och UV.\n3. 9 storlekar, 0–5",
+      "fel": "säger 250 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "5 saker skyddet gor: 1. tacker hela motorn, kapa till rigg. 2. 420d oxford-tyg mot regn, sno och uv. 3. 9 storlekar, 0–5",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 250 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "5 saker skyddet gör:\n1. Täcker hela motorn, kåpa till rigg.\n2. 420D Oxford-tyg mot regn, snö och UV.\n3. 9 storlekar, 0–5",
+     "fel": "säger 250 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "5 saker skyddet gor: 1. tacker hela motorn, kapa till rigg. 2. 420d oxford-tyg mot regn, sno och uv. 3. 9 storlekar, 0–5",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_PD_1_H1",
+   "id": "120250024539550291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source för video 1070297909075117 — varken direkt på id:t eller i kontots advideos)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)",
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · okänd (ingen source för video 1070297909075117 — varken direkt på id:t eller i kontots advideos)"
+   ]
+  },
+  {
+   "annons": "Batmotor_PD_1_H2",
+   "id": "120250024542500291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "tidigare i filmen",
+       "ord": "Babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": false,
+     "frames": 151
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 15–16.8s (7 frames): \"Babebutiken.\" (fuzzy(2))"
+   ]
+  },
+  {
+   "annons": "Batmotor_PD_1_H3",
+   "id": "120250024545240291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source för video 1606706424394398 — varken direkt på id:t eller i kontots advideos)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)",
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · okänd (ingen source för video 1606706424394398 — varken direkt på id:t eller i kontots advideos)"
+   ]
+  },
+  {
+   "annons": "Batmotor_PD_2_1",
+   "id": "120250009360910291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_PD_3_H1",
+   "id": "120250105321700291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video-batmotor/srt-orig/batmotortrekk_PD_3_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 12.6,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.77,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 50
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn mot en obeskyddad motor.\nSen dras 420D Oxford-tyget på — utan verktyg.\n579 kr (ord. 965 kr), spara 386 kr.",
+      "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagarsoppetkop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "pris i copy: säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "386 kr",
+      "579kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn mot en obeskyddad motor.\nSen dras 420D Oxford-tyget på — utan verktyg.\n579 kr (ord. 965 kr), spara 386 kr.",
+     "fel": "säger 386 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagarsoppetkop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 3 · tidigare i filmen, 12.6s: \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 12.9–15.77s (11 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_PD_5_1",
+   "id": "120250064627690291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "De flesta kåpor stannar vid toppen av motorn.\nDen här går ner över riggen också.\n420D Oxford-tyg, 9 storlekar för allt f",
+      "fel": "säger 250 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "pris i copy: säger 250 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "De flesta kåpor stannar vid toppen av motorn.\nDen här går ner över riggen också.\n420D Oxford-tyg, 9 storlekar för allt f",
+     "fel": "säger 250 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_PD_EXTRA",
+   "id": "120250017785270291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | PD | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_RI_1_1",
+   "id": "120250064963380291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RI | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_RV_1_H1",
+   "id": "120250104984000291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video-batmotor/srt-orig/batmotortrekk_RV_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 11.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.92,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 41
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "570 kronor.",
+      "fel": "säger 570 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "5kr",
+      "fel": "säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "pris i inbränd: säger 570 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "579kr"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "8 recensioner"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "570 kronor.",
+     "fel": "säger 570 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "5kr",
+     "fel": "säger 5 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 11.1–12.92s (8 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_RV_2_1",
+   "id": "120250065304340291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se.",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "rad": "- Fredrik L., recension pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "rad": "- Fredrik L., recension pa baverbutiken.se",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "rad": "- Fredrik L., recension pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ]
+    },
+    "villkorsfel": []
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "copy",
+    "bildtext"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "8 recensioner"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se.\" (exakt)",
+    "yta 4 · \"- Fredrik L., recension pa baverbutiken.se\" → \"baverbutiken.se\" (domän)",
+    "yta 4 · \"- Fredrik L., recension pa baverbutiken.se\" → \"baverbutiken\" (exakt)",
+    "yta 4 · \"- Fredrik L., recension pa baverbutiken.se\" → \"baverbutiken.se\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_RV_3_1",
+   "id": "120250065193470291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se.",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "rad": "- Johan K., recension pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "rad": "- Johan K., recension pa baverbutiken.se",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "rad": "- Johan K., recension pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ]
+    },
+    "villkorsfel": []
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "copy",
+    "bildtext"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "8 recensioner"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se.\" (exakt)",
+    "yta 4 · \"- Johan K., recension pa baverbutiken.se\" → \"baverbutiken.se\" (domän)",
+    "yta 4 · \"- Johan K., recension pa baverbutiken.se\" → \"baverbutiken\" (exakt)",
+    "yta 4 · \"- Johan K., recension pa baverbutiken.se\" → \"baverbutiken.se\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_RV_6_1",
+   "id": "120250147712920291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_RV_7_1",
+   "id": "120250147263960291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "RV | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "965kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_SP_1_H1",
+   "id": "120250009361920291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 40.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 41.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 41.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 41.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 41.94,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 137
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 40.5–41.94s (6 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_SP_1_H2",
+   "id": "120250009362290291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source för video 2316418655827152 — varken direkt på id:t eller i kontots advideos)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)",
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · okänd (ingen source för video 2316418655827152 — varken direkt på id:t eller i kontots advideos)"
+   ]
+  },
+  {
+   "annons": "Batmotor_SP_1_H3",
+   "id": "120250009362730291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 39.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.99,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 134
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 39.6–40.99s (6 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_SP_1_H4",
+   "id": "120250105327740291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video-batmotor/srt-orig/batmotortrekk_SP_1_H4.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.2,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 10.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 10.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.17,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 42
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "65kr",
+      "fel": "säger 65 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagarsoppetkop",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "tal",
+      "rad": "579 kronor. 30 dagars oppet kop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "inbränd text",
+    "pris i inbränd: säger 65 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14",
+    "öppet köp i tal: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "579kr",
+      "65kr"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "8 recensioner"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "65kr",
+     "fel": "säger 65 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagarsoppetkop",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "tal",
+     "rad": "579 kronor. 30 dagars oppet kop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 3 · tidigare i filmen, 10.2–10.5s (2 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 10.8–13.2s (10 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_SP_1_H5",
+   "id": "120250125804850291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/batmotortrekk_SP_1_H5.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 23.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 23.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 23.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.55,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 89
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "579kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 23.1–27.55s (16 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_SP_1_H6",
+   "id": "120250126119630291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "bäverbutiken.se",
+       "form": "bäverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "Bäverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/batmotortrekk_SP_1_H6.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 23.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 28.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 28.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 28.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 29.06,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 29.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 95
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagarsoppetkop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "inbränd text",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "579kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagarsoppetkop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"bäverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"Bäverbutiken.se\" (exakt)",
+    "yta 3 · sent i filmen, 23.7–29.1s (20 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_SP_1_H8",
+   "id": "120250168880490291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "sent_i_filmen": false,
+     "frames": 51
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)"
+   ]
+  },
+  {
+   "annons": "Batmotor_SP_2_1",
+   "id": "120250009361290291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Båtmotorskydd 420D | SP | 2026-08-29",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "recensioner",
+     "värden": [
+      "Verifierad kund"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_TH_1_H1",
+   "id": "120250105225860291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "TH | Notionrunda 2026-09-05",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-05-video-batmotor/srt-orig/batmotortrekk_TH_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.2,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 10.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 10.8,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.78,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 44
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagarsoppetkop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "inbränd text",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "579kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagarsoppetkop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 3 · tidigare i filmen, 10.2–10.8s (3 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 11.1–13.8s (11 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_TR_1_1",
+   "id": "120250065032980291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "TR | Notionrunda 2026-09-02",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr"
+     ]
+    },
+    {
+     "namn": "recensioner",
+     "värden": [
+      "8 recensioner"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotor_UG_1_H1",
+   "id": "120250126154060291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "UG | Notionrunda 2026-09-07",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/batmotortrekk_UG_1_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 61
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "65kr",
+      "fel": "säger 65 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "copy",
+      "rad": "baten aker upp om nagra veckor. i ar far motorn ett riktigt skydd. 420d oxford-tyg, kapa till rigg – inte bara toppen. i",
+      "fel": "säger 30 dagar — butiken har 14"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop.",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "pris i inbränd: säger 65 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i copy: säger 30 dagar — butiken har 14",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "965 kr",
+      "579kr",
+      "65kr"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars öppet köp",
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "65kr",
+     "fel": "säger 65 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "copy",
+     "rad": "baten aker upp om nagra veckor. i ar far motorn ett riktigt skydd. 420d oxford-tyg, kapa till rigg – inte bara toppen. i",
+     "fel": "säger 30 dagar — butiken har 14"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop.",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 16.5–19.2s (10 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotor_UG_2_H1",
+   "id": "120250125793010291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "UG | Notionrunda 2026-09-07",
+   "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/notion-batches/2026-09-08/srt-orig/batmotortrekk_UG_2_H1.orig.srt",
+     "träff": false,
+     "fynd": [],
+     "repliker": []
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 17.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20.53,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 66
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "recensioner",
+     "värden": [
+      "8 recensioner"
+     ]
+    },
+    {
+     "namn": "pris",
+     "värden": [
+      "579 kr",
+      "579kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 3 · sent i filmen, 17.4–20.53s (12 frames): \"baverbutiken\" (exakt)"
+   ]
+  }
+ ]
+}

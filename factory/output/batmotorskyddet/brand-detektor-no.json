@@ -1,0 +1,5906 @@
+{
+ "produkt": "batmotorskyddet",
+ "marknad": "NO",
+ "datum": "2026-09-13",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16443175731549",
+  "produkt_handle": "batmotorskydd-420d-heltackande-for-utombordare",
+  "produkt_url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+  "annonskonto": "1050941584152547",
+  "annonsprefix": "Batmotortrekk",
+  "kampanj_id": "120250009325850291",
+  "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+  "no_kampanjmonster": "Båtmotortrekk",
+  "no_annonskonto": "1050941584152547",
+  "no_annonsprefix": "Batmotortrekk",
+  "no_kampanj_id": "120252047563660233",
+  "srt_slug": [
+   "batmotortrekk"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Batmotortrekk_NO_AU_1_H1",
+   "id": "120252096719750233",
+   "typ": "video",
+   "status": "PAUSED",
+   "adset": "Båtmotortrekk NO - AU",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.8,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.24,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 48
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn. Snø. UV.\n420D oxfordstoff tar støyten i stedet for motoren.\nDekker hele motoren, deksel til rigg. 529 kr (ord. 882",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn. Snø. UV.\n420D oxfordstoff tar støyten i stedet for motoren.\nDekker hele motoren, deksel til rigg. 529 kr (ord. 882",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Femhundreog tjuenikroner.",
+      "fel": "säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagarsoppetkop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "529kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn. Snø. UV.\n420D oxfordstoff tar støyten i stedet for motoren.\nDekker hele motoren, deksel til rigg. 529 kr (ord. 882",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn. Snø. UV.\n420D oxfordstoff tar støyten i stedet for motoren.\nDekker hele motoren, deksel til rigg. 529 kr (ord. 882",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Femhundreog tjuenikroner.",
+     "fel": "säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagarsoppetkop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 10.8–12s (5 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 12.3–15.24s (11 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_AU_1_H1",
+   "id": "120252096719600233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - AU",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.8,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.24,
+       "plats": "sent i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 48
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn. Snø. UV.\n420D Oxford-stoff tar smellen i stedet for motoren.\nDekker hele motoren, fra deksel til rigg. 529 kr (ord",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn. Snø. UV.\n420D Oxford-stoff tar smellen i stedet for motoren.\nDekker hele motoren, fra deksel til rigg. 529 kr (ord",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Femhundreog tjuenikroner.",
+      "fel": "säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30dagarsoppetkop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "529kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn. Snø. UV.\n420D Oxford-stoff tar smellen i stedet for motoren.\nDekker hele motoren, fra deksel til rigg. 529 kr (ord",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn. Snø. UV.\n420D Oxford-stoff tar smellen i stedet for motoren.\nDekker hele motoren, fra deksel til rigg. 529 kr (ord",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Femhundreog tjuenikroner.",
+     "fel": "säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30dagarsoppetkop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 10.8–12s (5 frames): \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 12.3–15.24s (11 frames): \"baverbutiken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_BF_1_1",
+   "id": "120252066503040233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - BF",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "882 kr ned til 529 kr.\n40 % rabatt, trukket fra direkte i kassen.\nIngen kode å skrive inn, ingenting å huske.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "882 kr ned til 529 kr.\n40 % rabatt, trukket fra direkte i kassen.\nIngen kode å skrive inn, ingenting å huske.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "882 kr.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "882 kr",
+      "529 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40 %"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "882 kr ned til 529 kr.\n40 % rabatt, trukket fra direkte i kassen.\nIngen kode å skrive inn, ingenting å huske.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "882 kr ned til 529 kr.\n40 % rabatt, trukket fra direkte i kassen.\nIngen kode å skrive inn, ingenting å huske.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "882 kr.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_BF_2_1",
+   "id": "120252066584250233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - BF",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Handle trygt. 529 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    },
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Handle trygt. 529 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_BF_3_1",
+   "id": "120252066964180233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - BF",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Størrelser for alt fra 5 hk jolle til 350 hk storbåt.\nMål motoren din på 30 sekunder i målguiden.\nBestill riktig med en ",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Størrelser for alt fra 5 hk jolle til 350 hk storbåt.\nMål motoren din på 30 sekunder i målguiden.\nBestill riktig med en ",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_BF_7_1",
+   "id": "120252146278300233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - BF",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "529 kr i stedet for 882 kr – spar 353 kr.\n420D Oxford-stoff, 9 størrelser, 0–350 hk.\nBetal med Klarna.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "529 kr i stedet for 882 kr – spar 353 kr.\n420D Oxford-stoff, 9 størrelser, 0–350 hk.\nBetal med Klarna.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "529 kr i stedet for 882 kr – spar 353 kr.\n420D Oxford-stoff, 9 størrelser, 0–350 hk.\nBetal med Klarna.",
+      "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr (ord. 882 kr) -",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr (ord. 882 kr) -",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "spar 353 kr.",
+      "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "353 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "529 kr i stedet for 882 kr – spar 353 kr.\n420D Oxford-stoff, 9 størrelser, 0–350 hk.\nBetal med Klarna.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "529 kr i stedet for 882 kr – spar 353 kr.\n420D Oxford-stoff, 9 størrelser, 0–350 hk.\nBetal med Klarna.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "529 kr i stedet for 882 kr – spar 353 kr.\n420D Oxford-stoff, 9 størrelser, 0–350 hk.\nBetal med Klarna.",
+     "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr (ord. 882 kr) -",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr (ord. 882 kr) -",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "spar 353 kr.",
+     "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_BF_8_1",
+   "id": "120252146109840233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - BF",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_BF_9_1",
+   "id": "120252146124190233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - BF",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_CO_1_1",
+   "id": "120252066500510233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CO",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Uten beskyttelse: regn, snø og UV rett på motoren.\nMed beskyttelse: 420D Oxford-stoff og deksel ned til riggen.\n529 kr, ",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr. 30 dagers apent kjop.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Uten beskyttelse: regn, snø og UV rett på motoren.\nMed beskyttelse: 420D Oxford-stoff og deksel ned til riggen.\n529 kr, ",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr. 30 dagers apent kjop.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_CS_1_H1",
+   "id": "120252047990120233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CS",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source för video 1602643911573453 — varken direkt på id:t eller i kontots advideos)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⚡ KUN I DAG: 40 % rabatt på Båtmotortrekk 420D ⚡\nPrisen gjelder bare et begrenset antall – og lageret minker raskt.\nInge",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Begrenset lager. Tilbudet gjelder kun i dag.",
+      "fel": "lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "tal (oläst)",
+    "inbränd text (oläst)",
+    "tidsbegränsat erbjudande i copy: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40 %"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⚡ KUN I DAG: 40 % rabatt på Båtmotortrekk 420D ⚡\nPrisen gjelder bare et begrenset antall – og lageret minker raskt.\nInge",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Begrenset lager. Tilbudet gjelder kun i dag.",
+     "fel": "lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · okänd (ingen source för video 1602643911573453 — varken direkt på id:t eller i kontots advideos)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_CS_1_H2",
+   "id": "120252047991570233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CS",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 29.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 29.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 29.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 30,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 30.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 30.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 30.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 31.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 31.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 31.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 32.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 111
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⚡ KUN I DAG: 40 % rabatt på Båtmotortrekk 420D ⚡\nPrisen gjelder bare et begrenset antall – og lageret minker raskt.\nInge",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Begrenset lager. Tilbudet gjelder kun i dag.",
+      "fel": "lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "kun i dag.",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "tidsbegränsat erbjudande i copy: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40 %"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⚡ KUN I DAG: 40 % rabatt på Båtmotortrekk 420D ⚡\nPrisen gjelder bare et begrenset antall – og lageret minker raskt.\nInge",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Begrenset lager. Tilbudet gjelder kun i dag.",
+     "fel": "lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "kun i dag.",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 29.1–32.1s (11 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_CS_1_H3",
+   "id": "120252047993210233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CS",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source för video 3477461705747875 — varken direkt på id:t eller i kontots advideos)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⚡ KUN I DAG: 40 % rabatt på Båtmotortrekk 420D ⚡\nPrisen gjelder bare et begrenset antall – og lageret minker raskt.\nInge",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Begrenset lager. Tilbudet gjelder kun i dag.",
+      "fel": "lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "tal (oläst)",
+    "inbränd text (oläst)",
+    "tidsbegränsat erbjudande i copy: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40 %"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⚡ KUN I DAG: 40 % rabatt på Båtmotortrekk 420D ⚡\nPrisen gjelder bare et begrenset antall – og lageret minker raskt.\nInge",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Begrenset lager. Tilbudet gjelder kun i dag.",
+     "fel": "lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · okänd (ingen source för video 3477461705747875 — varken direkt på id:t eller i kontots advideos)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_CS_2_1",
+   "id": "120252048155510233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CS",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⚡ KUN I DAG: 40 % rabatt på Båtmotortrekk 420D ⚡\nPrisen gjelder bare et begrenset antall – og lageret minker raskt.\nInge",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "Begrenset lager. Tilbudet gjelder kun i dag.",
+      "fel": "lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "tidsbegränsat erbjudande i copy: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40 %",
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⚡ KUN I DAG: 40 % rabatt på Båtmotortrekk 420D ⚡\nPrisen gjelder bare et begrenset antall – og lageret minker raskt.\nInge",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "Begrenset lager. Tilbudet gjelder kun i dag.",
+     "fel": "lovar \"tilbudet gjelder\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_CS_3_H1",
+   "id": "120252096675510233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CS",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 12.6,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.91,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 51
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Seks måneder i vannet — så står motoren igjen, ubeskyttet, resten av året.\n420D Oxford-stoff dekker den mot regn, snø og",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Seks måneder i vannet — så står motoren igjen, ubeskyttet, resten av året.\n420D Oxford-stoff dekker den mot regn, snø og",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "882 KR",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 KR",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "882 KR",
+      "529 KR"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Seks måneder i vannet — så står motoren igjen, ubeskyttet, resten av året.\n420D Oxford-stoff dekker den mot regn, snø og",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Seks måneder i vannet — så står motoren igjen, ubeskyttet, resten av året.\n420D Oxford-stoff dekker den mot regn, snø og",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "882 KR",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 KR",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 12.6s: \"beverbutikken\" (exakt)",
+    "yta 3 · sent i filmen, 12.9–15.91s (12 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_CS_4_1",
+   "id": "120252066650250233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CS",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "882 kr → 529 kr.\n40 % rabatt er allerede trukket fra, du trenger ingen kode.\nPrisen du ser er prisen du betaler.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "882 kr → 529 kr.\n40 % rabatt er allerede trukket fra, du trenger ingen kode.\nPrisen du ser er prisen du betaler.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "882 kr → 529 kr.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "882 kr → 529 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "882 kr",
+      "529 kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40 %"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "882 kr → 529 kr.\n40 % rabatt er allerede trukket fra, du trenger ingen kode.\nPrisen du ser er prisen du betaler.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "882 kr → 529 kr.\n40 % rabatt er allerede trukket fra, du trenger ingen kode.\nPrisen du ser er prisen du betaler.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "882 kr → 529 kr.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "882 kr → 529 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_CS_5_H1",
+   "id": "120252131433030233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CS",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 50
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn, sol og saltvann – hele motoren beskyttet under tett 420D-stoff. 529 kr. Ordinær pris 882 kr, 353 kr allerede trukk",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn, sol og saltvann – hele motoren beskyttet under tett 420D-stoff. 529 kr. Ordinær pris 882 kr, 353 kr allerede trukk",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn, sol og saltvann – hele motoren beskyttet under tett 420D-stoff. 529 kr. Ordinær pris 882 kr, 353 kr allerede trukk",
+      "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 KR",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "353 kr",
+      "529 KR",
+      "529kr"
+     ]
+    },
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%",
+      "40 %"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn, sol og saltvann – hele motoren beskyttet under tett 420D-stoff. 529 kr. Ordinær pris 882 kr, 353 kr allerede trukk",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn, sol og saltvann – hele motoren beskyttet under tett 420D-stoff. 529 kr. Ordinær pris 882 kr, 353 kr allerede trukk",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn, sol og saltvann – hele motoren beskyttet under tett 420D-stoff. 529 kr. Ordinær pris 882 kr, 353 kr allerede trukk",
+     "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 KR",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 12.9–15.9s (11 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_CS_7_1",
+   "id": "120252146283370233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - CS",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "529 kr for Båtmotortrekket 420D.\nOrdinær pris 882 kr – spar 353 kr.\n30 dagers åpent kjøp, betaling med Klarna.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "529 kr for Båtmotortrekket 420D.\nOrdinær pris 882 kr – spar 353 kr.\n30 dagers åpent kjøp, betaling med Klarna.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "529 kr for Båtmotortrekket 420D.\nOrdinær pris 882 kr – spar 353 kr.\n30 dagers åpent kjøp, betaling med Klarna.",
+      "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr for Batmotortrekket",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "420D (ord. 882 kr).",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Spar 353 kr pa 420D Oxford-trekket.",
+      "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "353 kr"
+     ]
+    },
+    {
+     "namn": "betalsätt",
+     "värden": [
+      "Klarna"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "529 kr for Båtmotortrekket 420D.\nOrdinær pris 882 kr – spar 353 kr.\n30 dagers åpent kjøp, betaling med Klarna.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "529 kr for Båtmotortrekket 420D.\nOrdinær pris 882 kr – spar 353 kr.\n30 dagers åpent kjøp, betaling med Klarna.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "529 kr for Båtmotortrekket 420D.\nOrdinær pris 882 kr – spar 353 kr.\n30 dagers åpent kjøp, betaling med Klarna.",
+     "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr for Batmotortrekket",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "420D (ord. 882 kr).",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Spar 353 kr pa 420D Oxford-trekket.",
+     "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_FM_1_H1",
+   "id": "120252096725350233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - FM",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.84,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 54
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Snart står båten på land igjen.\nSeks måneder i garasje eller på tilhenger uten 420D-trekk — motoren møter regn, snø og U",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Snart står båten på land igjen.\nSeks måneder i garasje eller på tilhenger uten 420D-trekk — motoren møter regn, snø og U",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Femhundreog tjuenikroner.",
+      "fel": "säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Femhundre og tjuenikroner.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "529kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Snart står båten på land igjen.\nSeks måneder i garasje eller på tilhenger uten 420D-trekk — motoren møter regn, snø og U",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Snart står båten på land igjen.\nSeks måneder i garasje eller på tilhenger uten 420D-trekk — motoren møter regn, snø og U",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Femhundreog tjuenikroner.",
+     "fel": "säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Femhundre og tjuenikroner.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 13.5–16.84s (13 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_FM_3_1",
+   "id": "120252146115360233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - FM",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Snart tas båten opp for sesongen.\n420D Oxford-stoff beskytter motoren i mellomtiden.\n529 kr i stedet for 882 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Snart tas båten opp for sesongen.\n420D Oxford-stoff beskytter motoren i mellomtiden.\n529 kr i stedet for 882 kr.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr i stedet for 882 kr · 30 dagers apent kjop",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr i stedet for 882 kr · 30 dagers apent kjop",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Snart tas båten opp for sesongen.\n420D Oxford-stoff beskytter motoren i mellomtiden.\n529 kr i stedet for 882 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Snart tas båten opp for sesongen.\n420D Oxford-stoff beskytter motoren i mellomtiden.\n529 kr i stedet for 882 kr.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr i stedet for 882 kr · 30 dagers apent kjop",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr i stedet for 882 kr · 30 dagers apent kjop",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_GT_1_H1",
+   "id": "120252047567920233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - GT",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.6,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39.59,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 130
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 15.6–16.8s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · sent i filmen, 38.4–39.6s (6 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_GT_1_H2",
+   "id": "120252047568380233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - GT",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39.07,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 128
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 15–16.2s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · sent i filmen, 38.1–39.07s (5 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_GT_1_H3",
+   "id": "120252047569400233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - GT",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.7,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 37.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 38.84,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 127
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 14.7–15.9s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · sent i filmen, 37.8–38.84s (5 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_GT_2_1",
+   "id": "120252048156590233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - GT",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_LI_1_1",
+   "id": "120252066675440233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - LI",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "5 ting trekket gjør:\n1. Dekker hele motoren, deksel til rigg.\n2. 420D Oxford-stoff mot regn, snø og UV.\n3. 9 størrelser,",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr. Handle na.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "5 ting trekket gjør:\n1. Dekker hele motoren, deksel til rigg.\n2. 420D Oxford-stoff mot regn, snø og UV.\n3. 9 størrelser,",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr. Handle na.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_PD_1_H1",
+   "id": "120252047564440233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - PD",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.6,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": false,
+     "frames": 152
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 15.6–16.8s (5 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_PD_1_H2",
+   "id": "120252047564850233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - PD",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source för video 1787945742209592 — varken direkt på id:t eller i kontots advideos)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)",
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · okänd (ingen source för video 1787945742209592 — varken direkt på id:t eller i kontots advideos)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_PD_1_H3",
+   "id": "120252047565130233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - PD",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": false,
+     "frames": 149
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 15–15.9s (4 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_PD_2_1",
+   "id": "120252048153730233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - PD",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_PD_3_H1",
+   "id": "120252096638550233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - PD",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.76,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 50
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn mot en ubeskyttet motor.\nSå trekkes 420D Oxford-stoffet på — uten verktøy.\n529 kr (ord. 882 kr), spar 353 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn mot en ubeskyttet motor.\nSå trekkes 420D Oxford-stoffet på — uten verktøy.\n529 kr (ord. 882 kr), spar 353 kr.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn mot en ubeskyttet motor.\nSå trekkes 420D Oxford-stoffet på — uten verktøy.\n529 kr (ord. 882 kr), spar 353 kr.",
+      "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Fem hundreog tjuenikroner.",
+      "fel": "säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "353 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn mot en ubeskyttet motor.\nSå trekkes 420D Oxford-stoffet på — uten verktøy.\n529 kr (ord. 882 kr), spar 353 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn mot en ubeskyttet motor.\nSå trekkes 420D Oxford-stoffet på — uten verktøy.\n529 kr (ord. 882 kr), spar 353 kr.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn mot en ubeskyttet motor.\nSå trekkes 420D Oxford-stoffet på — uten verktøy.\n529 kr (ord. 882 kr), spar 353 kr.",
+     "fel": "säger 353 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Fem hundreog tjuenikroner.",
+     "fel": "säger 29 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 12.9–15.76s (11 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_PD_5_1",
+   "id": "120252066496960233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - PD",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "De fleste deksler stopper ved toppen av motoren.\nDette går ned over riggen også.\n420D Oxford-stoff, 9 størrelser for alt",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr. Handle na.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "De fleste deksler stopper ved toppen av motoren.\nDette går ned over riggen også.\n420D Oxford-stoff, 9 størrelser for alt",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr. Handle na.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_RI_1_1",
+   "id": "120252066587820233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - RI",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Rust synes ikke før det er for sent.\nTrekket dekker hele motoren, deksel til rigg – ikke bare toppen.\n529 kr beskytter m",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr beskytter mot seks maneder med regn, sno og salt.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Rust synes ikke før det er for sent.\nTrekket dekker hele motoren, deksel til rigg – ikke bare toppen.\n529 kr beskytter m",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr beskytter mot seks maneder med regn, sno og salt.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_RV_1_H1",
+   "id": "120252096829680233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - RV",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 11.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.88,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 40
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Bra kjøp: Trekket føles slitesterkt og er lett å sette på.\" – Fredrik Larsson, baverbutiken.se\n\"Anbefales: Bra beskytte",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Bra kjøp: Trekket føles slitesterkt og er lett å sette på.\" – Fredrik Larsson, baverbutiken.se\n\"Anbefales: Bra beskytte",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Femhundre og tjuenikroner.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Bra kjøp: Trekket føles slitesterkt og er lett å sette på.\" – Fredrik Larsson, baverbutiken.se\n\"Anbefales: Bra beskytte",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Bra kjøp: Trekket føles slitesterkt og er lett å sette på.\" – Fredrik Larsson, baverbutiken.se\n\"Anbefales: Bra beskytte",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Femhundre og tjuenikroner.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se\" (exakt)",
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 11.1–12.88s (7 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_RV_2_1",
+   "id": "120252066975900233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - RV",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se.",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "rad": "-Fredrik L., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "rad": "-Fredrik L., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "rad": "-Fredrik L., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ]
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Trekket kjennes solid og er lett å sette på.\" – Fredrik L.\nEkte kundeomtale, baverbutiken.se.\n529 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "copy",
+    "bildtext",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Trekket kjennes solid og er lett å sette på.\" – Fredrik L.\nEkte kundeomtale, baverbutiken.se.\n529 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se.\" (exakt)",
+    "yta 4 · \"-Fredrik L., kundeomtale pa baverbutiken.se\" → \"baverbutiken.se\" (domän)",
+    "yta 4 · \"-Fredrik L., kundeomtale pa baverbutiken.se\" → \"baverbutiken\" (exakt)",
+    "yta 4 · \"-Fredrik L., kundeomtale pa baverbutiken.se\" → \"baverbutiken.se\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_RV_3_1",
+   "id": "120252066688770233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - RV",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se.",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "rad": "- Johan K., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "rad": "- Johan K., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "rad": "- Johan K., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ]
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Bra beskyttelse mot regn og smuss. Jeg er fornøyd.\" – Johan K.\nEkte kundeomtale, baverbutiken.se.\n529 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "copy",
+    "bildtext",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Bra beskyttelse mot regn og smuss. Jeg er fornøyd.\" – Johan K.\nEkte kundeomtale, baverbutiken.se.\n529 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se.\" (exakt)",
+    "yta 4 · \"- Johan K., kundeomtale pa baverbutiken.se\" → \"baverbutiken.se\" (domän)",
+    "yta 4 · \"- Johan K., kundeomtale pa baverbutiken.se\" → \"baverbutiken\" (exakt)",
+    "yta 4 · \"- Johan K., kundeomtale pa baverbutiken.se\" → \"baverbutiken.se\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_RV_6_1",
+   "id": "120252146273410233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - RV",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "rad": "— Anders Nilsson, baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "rad": "— Anders Nilsson, baverbutiken.se",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "rad": "— Anders Nilsson, baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ]
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Trekket passer bra og holder motoren ren.\"\n– Anders Nilsson, baverbutiken.se\n529 kr i stedet for 882 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Trekket passer bra og holder motoren ren.\"\n– Anders Nilsson, baverbutiken.se\n529 kr i stedet for 882 kr.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr i stedet for 882kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr i stedet for 882kr",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "bildtext",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "882kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Trekket passer bra og holder motoren ren.\"\n– Anders Nilsson, baverbutiken.se\n529 kr i stedet for 882 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Trekket passer bra og holder motoren ren.\"\n– Anders Nilsson, baverbutiken.se\n529 kr i stedet for 882 kr.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr i stedet for 882kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr i stedet for 882kr",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se\" (exakt)",
+    "yta 4 · \"— Anders Nilsson, baverbutiken.se\" → \"baverbutiken.se\" (domän)",
+    "yta 4 · \"— Anders Nilsson, baverbutiken.se\" → \"baverbutiken\" (exakt)",
+    "yta 4 · \"— Anders Nilsson, baverbutiken.se\" → \"baverbutiken.se\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_RV_7_1",
+   "id": "120252146119600233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - RV",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "rad": "—DanielLindberg,baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "rad": "—DanielLindberg,baverbutiken.se",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "rad": "—DanielLindberg,baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ]
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Gjør jobben bra og holder motoren ren.\"\n– Daniel Lindberg, baverbutiken.se\n529 kr i stedet for 882 kr.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Gjør jobben bra og holder motoren ren.\"\n– Daniel Lindberg, baverbutiken.se\n529 kr i stedet for 882 kr.",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr i stedet for 882 kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr i stedet for 882 kr",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "bildtext",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Gjør jobben bra og holder motoren ren.\"\n– Daniel Lindberg, baverbutiken.se\n529 kr i stedet for 882 kr.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Gjør jobben bra og holder motoren ren.\"\n– Daniel Lindberg, baverbutiken.se\n529 kr i stedet for 882 kr.",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr i stedet for 882 kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr i stedet for 882 kr",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se\" (exakt)",
+    "yta 4 · \"—DanielLindberg,baverbutiken.se\" → \"baverbutiken.se\" (domän)",
+    "yta 4 · \"—DanielLindberg,baverbutiken.se\" → \"baverbutiken\" (exakt)",
+    "yta 4 · \"—DanielLindberg,baverbutiken.se\" → \"baverbutiken.se\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_SP_1_H1",
+   "id": "120252047565970233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - SP",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "dom": "okänd (ingen source för video 1641323187613138 — varken direkt på id:t eller i kontots advideos)",
+     "fynd": []
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "okänd",
+   "attgöra": [
+    "tal (oläst)",
+    "inbränd text (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · okänd (ingen source för video 1641323187613138 — varken direkt på id:t eller i kontots advideos)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_SP_1_H2",
+   "id": "120252047566290233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - SP",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 39.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 39.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.44,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 132
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 39.3–40.44s (5 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_SP_1_H3",
+   "id": "120252047567040233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - SP",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 39.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 40.99,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 134
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 39.9–40.99s (5 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_SP_1_H4",
+   "id": "120252096636150233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - SP",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.2,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 10.5,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 10.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 42
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Trekket føles slitesterkt og er lett å sette på.\" – Fredrik L., kunde hos baverbutiken.se\n529 kr (ord. 882 kr).",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "\"Trekket føles slitesterkt og er lett å sette på.\" – Fredrik L., kunde hos baverbutiken.se\n529 kr (ord. 882 kr).",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Fem hundre og tjuenikroner.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "529kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Trekket føles slitesterkt og er lett å sette på.\" – Fredrik L., kunde hos baverbutiken.se\n529 kr (ord. 882 kr).",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "\"Trekket føles slitesterkt og er lett å sette på.\" – Fredrik L., kunde hos baverbutiken.se\n529 kr (ord. 882 kr).",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Fem hundre og tjuenikroner.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se\" (exakt)",
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 10.2–10.5s (2 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · sent i filmen, 10.8–13.2s (10 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_SP_1_H5",
+   "id": "120252131315330233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - SP",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 23.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 23.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 23.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 88
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Heldekkende trekk, 529 kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Heldekkende trekk, 529 kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 23.1–27.3s (15 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_SP_1_H6",
+   "id": "120252131427630233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - SP",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "beverbutikken.no",
+       "form": "beverbutikken.no",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "beverbutikken.no",
+       "form": "beverbutikkenno",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 23.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 24.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 25.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 26.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 27.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 28.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 28.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 28.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 29.03,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 94
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn, sol og salt sliter på motoren hver dag. Båtmotortrekk 420D i kraftig Oxford-stoff dekker hele motoren og strammes ",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Regn, sol og salt sliter på motoren hver dag. Båtmotortrekk 420D i kraftig Oxford-stoff dekker hele motoren og strammes ",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn, sol og salt sliter på motoren hver dag. Båtmotortrekk 420D i kraftig Oxford-stoff dekker hele motoren og strammes ",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Regn, sol og salt sliter på motoren hver dag. Båtmotortrekk 420D i kraftig Oxford-stoff dekker hele motoren og strammes ",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"beverbutikken.no\" (domän)",
+    "yta 1 · message: \"beverbutikken\" (exakt)",
+    "yta 1 · message: \"beverbutikken.no\" (exakt)",
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 23.7–29.03s (19 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_SP_2_1",
+   "id": "120252048154380233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - SP",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": []
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Batmotortrekk_NO_TH_1_H1",
+   "id": "120252096678200233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - TH",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 10.2,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 10.5,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 10.8,
+       "plats": "tidigare i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 11.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 12.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 13.75,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 43
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Ingen ser hvilken motor som står under.\n420D Oxford-stoff dekker hele motoren — merke og modell usynlig for alle som går",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Ingen ser hvilken motor som står under.\n420D Oxford-stoff dekker hele motoren — merke og modell usynlig for alle som går",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529kr",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr",
+      "529kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Ingen ser hvilken motor som står under.\n420D Oxford-stoff dekker hele motoren — merke og modell usynlig for alle som går",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Ingen ser hvilken motor som står under.\n420D Oxford-stoff dekker hele motoren — merke og modell usynlig for alle som går",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529kr",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"beverbutikken\" (exakt)",
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 10.2–10.8s (3 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · sent i filmen, 11.1–13.75s (10 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_TR_1_1",
+   "id": "120252066590290233",
+   "typ": "bild",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - TR",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se.",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "rad": "-Fredrik L., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "rad": "-Fredrik L., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "rad": "-Fredrik L., kundeomtale pa baverbutiken.se",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ]
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Ekte kundeomtale fra Bäverbutiken.\n\"Trekket kjennes solid og er lett å sette på.\" – Fredrik L., kundeomtale på baverbuti",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "529 kr. Handle na.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "bildtext",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Ekte kundeomtale fra Bäverbutiken.\n\"Trekket kjennes solid og er lett å sette på.\" – Fredrik L., kundeomtale på baverbuti",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "529 kr. Handle na.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se.\" (exakt)",
+    "yta 4 · \"-Fredrik L., kundeomtale pa baverbutiken.se\" → \"baverbutiken.se\" (domän)",
+    "yta 4 · \"-Fredrik L., kundeomtale pa baverbutiken.se\" → \"baverbutiken\" (exakt)",
+    "yta 4 · \"-Fredrik L., kundeomtale pa baverbutiken.se\" → \"baverbutiken.se\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_UG_1_H1",
+   "id": "120252131301640233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - UG",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 61
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Båten tas opp om noen uker. I år får motoren et ordentlig trekk.\nFire hundre og tjue D Oxford-stoff, fra deksel til rigg",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "Båten tas opp om noen uker. I år får motoren et ordentlig trekk.\nFire hundre og tjue D Oxford-stoff, fra deksel til rigg",
+      "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Fem hundre og tjueni kroner.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i copy: säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr",
+      "882 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Båten tas opp om noen uker. I år får motoren et ordentlig trekk.\nFire hundre og tjue D Oxford-stoff, fra deksel til rigg",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "Båten tas opp om noen uker. I år får motoren et ordentlig trekk.\nFire hundre og tjue D Oxford-stoff, fra deksel til rigg",
+     "fel": "säger 882 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Fem hundre og tjueni kroner.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 16.5–19.2s (10 frames): \"beverbutikken\" (exakt)"
+   ]
+  },
+  {
+   "annons": "Batmotortrekk_NO_UG_2_H1",
+   "id": "120252131437850233",
+   "typ": "video",
+   "status": "CAMPAIGN_PAUSED",
+   "adset": "Båtmotortrekk NO - UG",
+   "kampanj": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": true,
+     "fynd": [
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "message",
+       "ord": "baverbutiken.se.",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "headline",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "fält": "headline",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "fält": "headline",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      }
+     ],
+     "länk": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 0.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "sekund": 0.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 0.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 0.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 1,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "sekund": 1,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 1,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 1,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 1.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken.se",
+       "form": "baverbutiken.se",
+       "sätt": "domän"
+      },
+      {
+       "sekund": 1.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 1.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken.se",
+       "form": "baverbutikense",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 1.5,
+       "plats": "tidigare i filmen",
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20.1,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 65
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)"
+    },
+    "villkorsfel": [
+     {
+      "regel": "pris",
+      "yta": "copy",
+      "rad": "529 kr, ingen kode nødvendig",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     },
+     {
+      "regel": "pris",
+      "yta": "inbränd",
+      "rad": "Fem hundre og tjuenikroner.",
+      "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "copy",
+    "inbränd text",
+    "tal (oläst)",
+    "pris i copy: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)",
+    "pris i inbränd: säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+   ],
+   "villkor": [
+    {
+     "namn": "pris",
+     "värden": [
+      "529 kr"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "pris",
+     "yta": "copy",
+     "rad": "529 kr, ingen kode nødvendig",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    },
+    {
+     "regel": "pris",
+     "yta": "inbränd",
+     "rad": "Fem hundre og tjuenikroner.",
+     "fel": "säger 529 kr — butiken säljer för 579 kr (jämförpris 965 kr)"
+    }
+   ],
+   "belägg": [
+    "yta 1 · message: \"baverbutiken.se\" (domän)",
+    "yta 1 · message: \"baverbutiken\" (exakt)",
+    "yta 1 · message: \"baverbutiken.se.\" (exakt)",
+    "yta 1 · headline: \"baverbutiken.se\" (domän)",
+    "yta 1 · headline: \"baverbutiken\" (exakt)",
+    "yta 1 · headline: \"baverbutiken.se\" (exakt)",
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · tidigare i filmen, 0.5s: \"baverbutiken.se\" (domän)",
+    "yta 3 · tidigare i filmen, 0.5s: \"baverbutiken\" (exakt)",
+    "yta 3 · tidigare i filmen, 0.5s: \"baverbutiken.se\" (exakt)",
+    "yta 3 · tidigare i filmen, 0.5s: \"baverbutiken\" (exakt)",
+    "yta 3 · tidigare i filmen, 1s: \"baverbutiken.se\" (domän)",
+    "yta 3 · tidigare i filmen, 1s: \"baverbutiken\" (exakt)",
+    "yta 3 · tidigare i filmen, 1s: \"baverbutiken.se\" (exakt)",
+    "yta 3 · tidigare i filmen, 1s: \"baverbutiken\" (exakt)",
+    "yta 3 · tidigare i filmen, 1.5s: \"baverbutiken.se\" (domän)",
+    "yta 3 · tidigare i filmen, 1.5s: \"baverbutiken\" (exakt)",
+    "yta 3 · tidigare i filmen, 1.5s: \"baverbutiken.se\" (exakt)",
+    "yta 3 · tidigare i filmen, 1.5s: \"baverbutiken\" (exakt)",
+    "yta 3 · sent i filmen, 17.4–20.4s (11 frames): \"beverbutikken\" (exakt)"
+   ]
+  }
+ ]
+}
