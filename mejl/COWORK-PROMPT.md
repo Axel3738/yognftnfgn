@@ -27,22 +27,37 @@ Mallarna är stora (~80 000 tecken). Det tar några sekunder att klistra in.
 Vänta ut det. **Klistra aldrig in en halv mall** — går något fel, stoppa och
 berätta vad som hände.
 
+⚠️ **Datorn är en Mac. Använd Cmd, aldrig Ctrl.** Ctrl+A och Ctrl+C tolkas
+som Shopifys egna kortkommandon och öppnar dialoger som "Lägg till
+produktserie" och "Lägg till sida" (hände 2026-09-13). Öppnas en sådan
+dialog: stäng den utan att spara, och skapa aldrig något.
+
+⚠️ **Urklippet är inte att lita på.** Två gånger 2026-09-13 innehöll det
+något annat än det som nyss kopierades (förra mallen, och en gång ett
+telefonnummer från en annan app). **Kontrollera alltid vad du klistrat in
+INNAN du sparar**: rätt längd (se tabellens teckenantal) och rätt innehåll.
+Stämmer det inte: kopiera om, spara inte.
+
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 1. Öppna mallens kodlänk i en **ny flik**. Det är en ren textfil. Klicka i
-   texten, tryck **Ctrl+A**, sedan **Ctrl+C**.
+   texten, tryck **Cmd+A**, sedan **Cmd+C**.
 2. Gå tillbaka till Shopify-admin → **Inställningar** → **Notiser** →
    **Kundnotiser** → klicka på mallens namn.
 3. Klicka **Redigera kod** (Edit code).
-4. Fältet **E-postämne** (Email subject): markera allt, ta bort, klistra in
-   ämnesraden från tabellen. Den ska stå exakt som i tabellen, inklusive
+4. Fältet **E-postämne** (Email subject): jämför med ämnesraden i tabellen,
+   tecken för tecken. Står den redan exakt rätt: **rör den inte**. Skiljer
+   den sig: markera allt, ta bort, klistra in tabellens rad, inklusive
    `{% %}`-taggarna.
 5. Rutan **E-postbrödtext (HTML)** (Email body HTML): klicka i rutan, tryck
-   **Ctrl+A**, tryck **Delete**, tryck **Ctrl+V**.
-6. Klicka **Spara**.
-7. **Ladda om sidan** (F5), öppna Redigera kod igen och kontrollera att
-   brödtexten innehåller alla fyra textbitarna i kolumnen "Kontrollera". Gör
-   den inte det: säg till, klistra inte om i blindo.
+   **Cmd+A**, tryck **Delete**, tryck **Cmd+V**.
+6. **Innan du sparar:** kontrollera att det inklistrade är rätt mall — rätt
+   teckenantal och att de fyra textbitarna i kolumnen "Kontrollera" finns.
+   Fel innehåll: kopiera om från fliken och klistra in igen.
+7. Klicka **Spara**.
+8. **Ladda om sidan** (F5), öppna Redigera kod igen och kontrollera de fyra
+   textbitarna en gång till. Saknas någon: säg till, klistra inte om i
+   blindo.
 
 | # | Mall i Shopify | Ämnesrad | Mallens kod |
 |---|---|---|---|
@@ -57,12 +72,15 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 - `Beställ före kl`
 - `plus: 604800`
 
-Ungefärligt antal tecken efter inklistring, som extra kontroll:
-Orderbekräftelse **85 597**, Leveransbekräftelse **78 809**, Levererad
-**78 013**. Ligger du inom ett par hundra tecken är det rätt.
+Antal tecken efter inklistring, som extra kontroll: Orderbekräftelse
+**85 597**, Leveransbekräftelse **78 809**, Levererad **78 013**. Shopifys
+redigerare visar **ett tecken mindre** än källan (filens avslutande
+radbrytning följer inte med) — det är rätt. Skiljer det mer än så är det
+fel innehåll i urklippet.
 
 **När alla tre är klara:** gå in på **Orderbekräftelse** och klicka
-**Skicka testmejl** (Send test email) uppe till höger. Bara den mallen.
+**Skicka testmejl** (Send test email) uppe till höger på
+förhandsgranskningssidan. Bara den mallen.
 
 **Rapportera tillbaka:**
 

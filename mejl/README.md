@@ -174,8 +174,15 @@ bokfört i `konfig.json → lage`:
   0 användningar, en gång per kund, segment `number_of_orders >= 1`. Butiken
   har kundkonton som valfria (`NEW_CUSTOMER_ACCOUNTS`, inloggning krävs inte
   i kassan). De tre erbjudandemallarna (orderbekräftelse, frakt, levererad)
-  är ombyggda och **inte inklistrade än** — `konfig.json → lage.inklistrade_aldre`.
-  De fem andra är oförändrade i sak.
+  är ombyggda **och inklistrade av Cowork samma dag**, verifierade efter
+  omladdning: alla fyra kontrollsträngarna på plats, teckenantal 85 596 /
+  78 808 / 78 012 (ett mindre än källan — Shopifys redigerare tar inte med
+  filens avslutande radbrytning). Ämnesraderna stod redan rätt. De fem andra
+  mallarna är oförändrade i sak.
+  ⚠️ **Testmejlet på v3 är inte skickat** — Cowork tappade Chrome-kopplingen
+  precis innan klicket. Det är det enda som visar om
+  `line.product.handle` finns i notis-Liquid och vilken tidszon
+  `date: '%H:%M'` skriver klockslaget i.
 - **Spin-the-wheel** (Axels idé 2026-09-13) är utrett, inte byggt: temat är
   Impulse 5.0.0 (Online Store 2.0) så en sektion + page-template går att
   lägga till via `write_themes`; ca 7–8 h. Största haken: koden är "1 ur
@@ -206,6 +213,16 @@ Testa vilken som gäller: `node mejl/nyckelkoll.mjs`.
 - **Cowork kan inte klicka inuti Artifact-sidans ram** (sandlådad iframe).
   Bockarna "Inklistrad" sätts därför ur `konfig.json → lage.inklistrade`
   vid bygget — den som klistrar in skriver datumet där, inte på sidan.
+- **Axels dator är en Mac: Ctrl+A/C/V är Shopify-kortkommandon där.** De
+  öppnade dialogerna "Lägg till produktserie" och "Lägg till sida" mitt i
+  inklistringen 2026-09-13. Prompten säger Cmd sedan dess.
+- **Urklippet är inte att lita på vid många inklistringar i rad.** Två av
+  tre mallar fick fel innehåll i urklippet 2026-09-13 (förra mallen, och en
+  gång ett telefonnummer från en annan app). Kontrollen "rätt teckenantal
+  och rätt textbitar FÖRE sparning" fångade båda — den ska aldrig strykas
+  ur prompten.
+- **Shopifys redigerare visar ett tecken mindre än källfilen.** Filens
+  avslutande radbrytning följer inte med. Ett tecken = rätt, mer = fel.
 
 - Den gamla orderbekräftelsen (testmejl #9999, 2026-08-25) låg bara i
   Shopify — ingen källa i repot. Den är återskapad här ur det renderade

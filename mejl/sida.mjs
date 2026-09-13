@@ -180,15 +180,20 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
         : ''
     }
     <div class="lage-rad att-gora"><span class="ikon">👉</span><p>${
-      [
-        lage.rabattkod_skapad ? null : 'rabattkoden (steg 1)',
-        Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length ? null : `${liquid.length - Object.keys(hoppade).length - Object.keys(inklistrade).length} inklistringar (steg 2)`,
-      ].filter(Boolean).length
-        ? `Kvar för dig: ${[
-            lage.rabattkod_skapad ? null : 'rabattkoden (steg 1)',
-            Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length ? null : `${liquid.length - Object.keys(hoppade).length - Object.keys(inklistrade).length} inklistringar (steg 2)`,
-          ].filter(Boolean).join(' och ')} och testmejlet (steg 3). Shopify har inget API för det, så det är dina klick eller Coworks.`
-        : 'Kvar för dig: det riktiga köptestet under steg 1 — koden har 0 användningar än.'
+      (() => {
+        const kvar = [
+          lage.rabattkod_skapad ? null : 'rabattkoden (steg 1)',
+          Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length
+            ? null
+            : `${liquid.length - Object.keys(hoppade).length - Object.keys(inklistrade).length} inklistringar (steg 2)`,
+          // Testmejlet räknas som gjort först när det skickats på de mallar
+          // som ligger uppe NU — v2:s testmejl säger inget om v3.
+          lage.testmejl_aktuell_version ? null : 'testmejlet på de nya mallarna (steg 3)',
+        ].filter(Boolean);
+        return kvar.length
+          ? `Kvar för dig: ${kvar.join(' och ')}. Shopify har inget API för det, så det är dina klick eller Coworks.`
+          : 'Kvar för dig: det riktiga köptestet under steg 1 — koden har 0 användningar än.';
+      })()
     }</p></div>
   </section>
 

@@ -171,19 +171,17 @@
     "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
-    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v2 (erbjudandet överst, urgency, logga) inklistrad av Cowork 2026-09-12 sent på kvällen i sju mallar. 2026-09-13 byggdes v3 av de tre erbjudandemallarna (7 dagar från orderdagen, komplement i stället för dyraste, samma-paket-raden) — de flyttades till inklistrade_aldre tills någon klistrat om dem. De fem andra mallarna ändrades bara i den oanvända assign-raden överst och behöver inte klistras om.",
+    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v2 (erbjudandet överst, urgency, logga) inklistrad av Cowork 2026-09-12 sent på kvällen i sju mallar. v3 av de tre erbjudandemallarna (7 dagar från orderdagen, komplement i stället för dyraste, samma-paket-raden) inklistrad av Cowork 2026-09-13 och verifierad efter omladdning: alla fyra kontrollsträngarna fanns, teckenantalen 85 596 / 78 808 / 78 012 mot källans 85 597 / 78 809 / 78 013 — skillnaden är filernas avslutande radbrytning, som Shopifys redigerare inte tar med. Ämnesraderna stod redan exakt rätt och rördes inte. De fem andra mallarna ändrades bara i den oanvända assign-raden överst och behöver inte klistras om.",
     "inklistrade": {
+      "orderbekraftelse": "2026-09-13 v3",
+      "fraktbekraftelse": "2026-09-13 v3",
+      "levererad": "2026-09-13 v3",
       "fraktuppdatering": "2026-09-12 v2",
       "ute_for_leverans": "2026-09-12 v2",
       "aterbetalning": "2026-09-12 v2",
       "avbruten_order": "2026-09-12 v2"
     },
-    "inklistrade_aldre_comment": "v2 från 2026-09-12 — saknar 7-dagarsfönstret, komplementen och samma-paket-raden",
-    "inklistrade_aldre": {
-      "orderbekraftelse": "2026-09-12 v2",
-      "fraktbekraftelse": "2026-09-12 v2",
-      "levererad": "2026-09-12 v2"
-    },
+    "inklistrade_aldre": {},
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",
       "fraktbekraftelse": "2026-09-12",
@@ -196,6 +194,8 @@
     "hoppade_over": {
       "overgiven_kassa": "Finns inte under Inställningar → Notiser i Bäverbutiken (mätt 2026-09-12) — sköts av Shopify Email under Marknadsföring → Automatiseringar."
     },
-    "testmejl_skickat": "2026-09-12"
+    "testmejl_skickat": "2026-09-12",
+    "testmejl_aktuell_version": null,
+    "testmejl_aktuell_version_comment": "Sätt till datumet när testmejlet skickats på de mallar som ligger uppe NU. null ⇒ sidan säger att det återstår. Testmejlet på v3 är INTE skickat. Cowork tappade Chrome-kopplingen precis innan klicket 2026-09-13. Det är testmejlet som visar två saker som inte går att mäta någon annanstans: att line.product.handle finns i notis-Liquid (rätt komplement = ja, 'Populärast just nu' = nej) och i vilken tidszon date: '%H:%M' skriver klockslaget."
   }
 }

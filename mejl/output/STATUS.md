@@ -1,4 +1,4 @@
-# Mejlmallarna — byggda 2026-09-13 06:50 UTC
+# Mejlmallarna — byggda 2026-09-13 13:41 UTC
 
 Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratisprodukt
 
