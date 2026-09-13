@@ -261,7 +261,8 @@ export async function korBrand(brand, {
     const shopify = new ShopifyLasare({ shop: konfig.shopify.shop, adminToken: konfig.shopify.adminToken, clientId: konfig.shopify.clientId, clientSecret: konfig.shopify.clientSecret, butikId: brand.id, logg });
     try {
       ordrar = await shopify.hamtaOrdrar(ordrarSedan);
-      tvister = await shopify.hamtaTvister(period.fran, ordrar);
+      // Samma fönster som ordrarna — tvistgraden är tvister/ordrar över samma dagar.
+      tvister = await shopify.hamtaTvister(ordrarSedan, ordrar);
       kallor.push(`${konfig.shopify.shop} (${ordrar.length} ordrar${tvister.tillganglig ? `, ${tvister.lista.length} tvister` : ''})`);
       if (!tvister.tillganglig) varningar.push(tvister.orsak);
     } catch (e) {
@@ -300,7 +301,7 @@ export async function korBrand(brand, {
   const denna = {
     vecka, datum: nu.toISOString().slice(0, 10), dagar,
     antalArenden: sammanfattning.antalArenden, obesvarade: sammanfattning.obesvarade, larmObesvarade: sammanfattning.larmObesvarade,
-    medianSvarstidTimmar: sammanfattning.medianSvarstidTimmar, riskPoang: risk.poang, tvister: tvister?.tillganglig ? tvister.lista.length : null, ordrar: ordrar.length,
+    medianSvarstidTimmar: sammanfattning.medianSvarstidTimmar, riskPoang: risk.poang, tvister: tvister?.tillganglig ? (risk.underlag.chargebacks ?? tvister.lista.length) : null, forfragningar: tvister?.tillganglig ? (risk.underlag.forfragningar ?? 0) : null, tvistgrad: risk.tvistgrad, ordrar: ordrar.length,
     perKategori: Object.fromEntries(sammanfattning.topp.map((p) => [p.id, p.antal])),
     topp: sammanfattning.topp.slice(0, 3).map((p) => p.id),
   };

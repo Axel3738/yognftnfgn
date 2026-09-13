@@ -257,7 +257,8 @@
       <dl>
         <dt>Ärenden</dt><dd>${r ? r.antalArenden : '—'}</dd>
         <dt>Obesvarade &gt; ${gr} h</dt><dd>${r ? r.larmObesvarade : '—'}</dd>
-        <dt>Tvister</dt><dd>${r ? (r.tvister === null ? 'ej läsbart' : r.tvister) : '—'}</dd>
+        <dt>Chargebacks (30 d)</dt><dd>${r ? (r.tvister === null ? 'ej läsbart' : r.tvister) : '—'}</dd>
+        <dt>Tvistgrad</dt><dd>${r && r.tvistgrad !== null && r.tvistgrad !== undefined ? String(r.tvistgrad).replace('.', ',') + ' %' : '—'}</dd>
         <dt>Toppärende</dt><dd class="text">${esc(topp)}</dd>
       </dl>
       ${kurva(brand)}
