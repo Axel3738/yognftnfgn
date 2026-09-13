@@ -1,0 +1,298 @@
+# Butikskonfig för FJORDCOVER (fjordcover.se, j0p8qz-kp.myshopify.com).
+# Enproduktsbutik: skydd för utombordaren under uppläggningen, med
+# batterifrånskiljaren som gratis bonus i paketnivåerna.
+#
+# ⚠️ HUR DEN HÄR FILEN BLEV TILL — läs innan du litar på den som "beslutet".
+# Butiken byggdes 2026-09-12 UTANFÖR repot och lämnade ingen butiksfil efter
+# sig — exakt samma hål som TankGuard 2026-09-08. Den här filen är skriven
+# 2026-09-13 genom att LÄSA AV den live butiken via Admin-API:t (2025-07):
+# färgerna ur assets/opf-brand.css, typsnitt och radier ur
+# config/settings_data.json, startsidans copy ur templates/index.json,
+# bolagsuppgifterna ur köpvillkoren och kontaktsidan, frakten ur
+# fraktprofilen, marknaderna ur markets/shopLocales. Varje värde nedan är
+# märkt MÄTT (avläst i butiken) eller HÄRLETT (ur en förebild eller en
+# husregel). Inget är ett nytt förslag.
+#
+# Analystexterna (positionering, tonalitet, känsla, stil) är däremot en
+# REKONSTRUKTION i efterhand: de beskriver den branding butiken faktiskt
+# bär. Ingen vet i dag hur den ursprungliga brand-analysen var formulerad,
+# och det finns ingen output/fjordcover/BRAND.md — FjordCover fanns
+# 2026-09-13 ingenstans i repot utom som fyra rader i factory/.env.
+# Ändras något visuellt ska den här filen vara källan — då blir den beslutet.
+#
+# NAMNET (MÄTT i butiken, regeln HÄRLEDD): "FjordCover" är helt engelskt/
+# nordiskt, uttalbart för svenskar och norrmän, inga å/ä/ö — namnregeln
+# (Axel 2026-09-07) håller. .se-domänen är kopplad och primär.
+#
+# Bolaget är samma AB som driver Matstrumpor.se, HeimGuard, TankGuard,
+# DryTrek, TackleBay, AdventLane, CaraShell och CatCabin.
+#
+# ⚠️ STATUS 2026-09-13: lösenordsskyddet är PÅ (fjordcover.se → 302
+# /password) och butiken är alltså INTE live. Web pixel saknas helt
+# (webPixel → RESOURCE_NOT_FOUND) och det finns noll FjordCover-kampanjer
+# i MagiBorsten DK 915422744950975. Steg 11 i /ny-ops (store-ready) är
+# alltså inte kört.
+
+butik:
+  id: fjordcover
+  brand: "FjordCover"                        # MÄTT — shop.name
+  # MÄTT — ops.mjs:159 läser butik.myshopify först, judgeme.shop_domain som
+  # reserv. Adressen är facit över id:t: anslutningen letar upp vilket
+  # miljösuffix som bär den (här SHOPIFY_SHOP_j0p8qz_kp).
+  myshopify: "j0p8qz-kp.myshopify.com"
+  bolagsnamn: "STONEBITE ECOM AB"            # MÄTT — köpvillkor + returpolicy + kontakt
+  orgnr: "559576-2401"                       # MÄTT — samma tre sidor
+  adress: "Sjöhed 160, 442 74 Harestad"      # MÄTT — köpvillkor + shop.billingAddress
+  supportmail: "hello@fjordcover.se"         # MÄTT — shop.email/contactEmail, och hello@ enligt regeln
+  land: SE                                   # MÄTT — billingAddress.countryCodeV2
+  huvudmarknad: Sverige                      # MÄTT — marknaden "Sweden" (handle se)
+  # MÄTT — markets: Norge finns, shopLocales: nb publicerad. Valutan står
+  # SEK tills NOK slås på i admin; paketnivåernas fastpris_valutor är tomt,
+  # så NOK-paketnivåer saknas fortfarande och krävs före norska annonser.
+  marknader:
+    - land: NO
+      locale: nb
+      valuta: SEK
+  valuta: SEK                                # MÄTT — shop.currencyCode
+  moms_i_pris: true                          # MÄTT — shop.taxesIncluded = true
+  # MÄTT — varje ord nedan är jämfört mot butikens EGEN nb-översättning
+  # (translations(locale:"nb") på tema, sidor, produkter, meny, metaobjekt)
+  # och kom med bara där norskan bevisligen säger något annat.
+  markorer_sv:
+    - "Köp nu"                 # nb: Kjøp nå
+    - "Lägg i varukorgen"      # nb: Legg i handlekurven
+    - "Vanliga frågor"         # nb: Ofte stilte spørsmål
+    - "ångerrätt"              # nb: angrerett
+    - "arbetsdagar"            # nb: virkedager
+    - "leveranstid"            # nb: leveringstid
+    - "recensioner"            # nb: anmeldelser
+    - "skydd"                  # nb: trekk / beskyttelse — täcker skyddet, Motorskyddet, Båtmotorskydd
+    - "storlek"                # nb: størrelse — täcker storlekar, Storleksguiden
+    - "utombordare"            # nb: påhengsmotor
+    - "uppställningsplats"     # nb: opplagsplass
+    - "uppläggning"            # nb: opplag
+    - "spännband"              # nb: stropper
+    - "kåpa"                   # nb: deksel
+    - "båtägare"               # nb: båteiere
+    - "batterifrånskiljare"    # nb: batteribrytere
+    # ⚠️ MEDVETET UTELÄMNADE — butikens egen norska text stavar dem likadant,
+    # så de kan aldrig skilja svenska från norska och ger bara falska larm
+    # (ny-ops.md steg 6): "Fri frakt" (nb säger "Fri frakt til Sverige og
+    # Norge"), "båten", "motor", "batteri", "rem", "rigg", "omkrets", "hk",
+    # "Kontakt", "returpolicy" (nb-kontaktsidan säger själv "Se vår
+    # returpolicy"), "Bra kvalitet".
+    # ⚠️ "Fri frakt" står i carashell.yaml och catcabin.yaml. Det är ärvt ur
+    # mallens exempelrader och är fel — kopiera det inte hit.
+  # Enproduktsbutik: INGET kollektion-block. MÄTT: startsidans sektion
+  # "produkt" är featured-product med product: batmotorskyddet, inte en
+  # kollektion, och kollektionen "Home page" (frontpage) bär 1 produkt.
+  # Batterifrånskiljaren säljs inte fristående — den är gratis bonus i
+  # paketnivåerna (Q4-ramverket).
+
+frakt:
+  # MÄTT ur fraktprofilen: "Fri frakt" 0 SEK i alla tre zoner (Sverige, EU,
+  # Internationell). Norge ligger i Internationell — därför stämmer
+  # nb-USP:en "Fri frakt til Sverige og Norge".
+  fri_globalt: true
+  # MÄTT — samma tal på fyra ställen i butiken: fraktpolicyn, kontaktsidan,
+  # FAQ:n och trygghetsblocket. Samma Temu-led som de övriga OPS-butikerna.
+  leveranstid: "5–10 arbetsdagar"
+  # MÄTT som frånvaro: det finns ingen expressmetod i någon zon.
+  express:
+    aktiv: false
+    namn: "Express"
+    pris: 99
+    tid: "1–2 arbetsdagar"
+
+retur:
+  # MÄTT ur returpolicyn — och den följer redan husregeln (Axels beslut
+  # 2026-09-08): alltid svensk lag, aldrig egna köplöften. Inget "30 dagars
+  # öppet köp" finns på sidan.
+  oppet_kop_dagar: 14
+  angerratt_dagar: 14          # MÄTT — "14 dagars ångerrätt enligt distansavtalslagen"
+  reklamation_ar: 3            # MÄTT — "reklamera i upp till 3 år"
+  returfrakt_betalas_av: kund  # MÄTT — "Du ansvarar för returfrakten om inget annat avtalats"
+  aterbetalning_dagar: 14      # MÄTT — "inom 14 dagar från det att vi tagit emot returen"
+
+judgeme:
+  # MÄTT: appen "Judge.me Reviews" ÄR installerad (appInstallations) och
+  # judgeme_core ligger som app-block i settings_data.json.
+  # HÄRLETT: namnmönstret JUDGEME_<BUTIK>_TOKEN från carashell/drytrek/
+  # catcabin/tankguard. ⚠️ Tokenen finns INTE i miljön 2026-09-13 — där
+  # ligger bara JUDGEME_API_TOKEN, som är en ANNAN butiks och aldrig får
+  # användas här. Utan token laddas app-CSV:n upp för hand i appen.
+  shop_domain: "j0p8qz-kp.myshopify.com"
+  token_env: "JUDGEME_FJORDCOVER_TOKEN"
+
+garantier:
+  - "14 dagars ångerrätt"      # MÄTT — ms-guarantee-section, title
+
+policy:
+  tvistlosning: "Allmänna reklamationsnämnden"   # MÄTT — köpvillkor
+  visa_odr_lank: true                            # MÄTT — "ec.europa.eu/odr" står i köpvillkoren
+  svarstid: "en arbetsdag"                       # MÄTT — kontaktsidan: "svarar vi inom en arbetsdag"
+
+# ---------------------------------------------------------------------------
+# BRAND-CONFIG — FjordCovers identitet.
+#
+# Färger, typsnitt, radier, logga och favicon är AVLÄSTA ur butiken
+# 2026-09-13 och stämmer exakt med opf-brand.css och settings_data.json
+# (mappningen är fast i factory/branding.mjs: scheme-1 = bakgrund,
+# scheme-2 = yta, scheme-3/6 = mork, scheme-4 = text, scheme-5 = yta_djup,
+# --ms-radius = kort_radius, --ms-radius-sm = badge_radius).
+# Analysen under är REKONSTRUERAD ur det butiken bär — se filhuvudet.
+#
+#   Vem köper:      båtägare 35–70 med utombordare i Sverige och Norge, som
+#                   lägger upp båten på trailer, på uppställningsplatsen
+#                   eller vid sjöboden inför hösten. Praktiska, gör
+#                   uppläggningen själva.
+#   Problemet:      motorn är den dyraste delen och den enda man inte kan
+#                   låsa in. Den står ute från oktober till maj och tar regn,
+#                   löv, fågelträck och salt — och den syns, vilket är halva
+#                   oron. Presenningen som skulle täcka blåser av.
+#   Emotionen:      att ha gjort säsongens sista jobb ordentligt. Lugn hela
+#                   vintern, ingen obehaglig överraskning vid sjösättningen.
+#   Förväntat brand: nordisk marinutrustning — Seldén, Talamex, en välskött
+#                   båttillbehörshandel. Sakligt och rejält, aldrig
+#                   lifestyle-segling och aldrig reaskrik.
+#   Känsla:         saklig, robust, nordisk, lugn.
+#
+# Paletten är kall där de andra OPS-butikerna är varma, och det är avsiktligt:
+# blågrå ytor (#F1F4F5 / #E3E9EB) är höstvatten och aluminium, inte TankGuards
+# sand eller DryTreks kartpapper. Mörkret (#1B2A33) är skrovblå. EN färg får
+# ropa: den mättade orangen #E0620F — signalfärgen i marin säkerhetsutrustning
+# (flytväst, boj, sjömärke). Den är ljusare och hårdare än DryTreks
+# terrängorange #C25617, så butikerna går att skilja åt i annonsflödet.
+# ---------------------------------------------------------------------------
+branding:
+  # REKONSTRUERAD, men tätt på butikens egen brand_description i
+  # settings_data.json: "Skyddet du drar över utombordaren innan båten lämnas
+  # för säsongen — heltäckande, i nio storlekar, från kåpa till rigg".
+  positionering: "Skydd för utombordaren när båten ligger uppe — heltäckande från kåpa till rigg, så motorn klarar hösten och vintern på uppställningsplatsen"
+  tonalitet: "Saklig och lugn, som en erfaren granne på uppställningsplatsen. Talar om motorn, uppläggningen och vintern — aldrig om premium eller kvalitet. Korta meningar, inga utropstecken, inga adjektiv utan något att peka på."
+  kansla: "saklig, robust, nordisk, lugn"
+  farger:
+    bakgrund: "#FFFFFF"       # MÄTT — --ms-surface + scheme-1 background
+    yta: "#F1F4F5"            # MÄTT — --ms-surface-2 + scheme-2. Kall blågrå: höstvatten, inte sand
+    yta_djup: "#E3E9EB"       # MÄTT — --ms-surface-3 + scheme-5 background
+    mork: "#1B2A33"           # MÄTT — scheme-3/6 background + scheme-5 button. Skrovblå: header, sidfot, logga
+    text: "#16222A"           # MÄTT — --ms-ink + scheme-4 background
+    text_pa_mork: "#EEF3F5"   # MÄTT — scheme-3/4/6 text
+    linje: "#DCE3E6"          # MÄTT — --ms-line
+    linje_stark: "#B4C0C6"    # MÄTT — --ms-line-strong
+    accent: "#E0620F"         # MÄTT — --ms-accent + varje schemas button. Signalorange, enda färgen som ropar
+    accent_text: "#FFFFFF"    # MÄTT — --ms-accent-ink
+    god: "#2E7D5B"            # MÄTT — --ms-good, bock
+    varning: "#A85400"        # MÄTT — --ms-warn
+  typografi:
+    rubriker: "oswald_n6"     # MÄTT — type_header_font. Oswald: smal kondenserad grotesk, skyltkänsla
+    brodtext: "lato_n4"       # MÄTT — type_body_font. Lato: lugn och lättläst i villkor och FAQ
+  form:
+    knapp_radius: 6           # MÄTT — buttons_radius (och variant_pills_radius)
+    kort_radius: 8            # MÄTT — card_corner_radius = --ms-radius 8px
+    input_radius: 6           # MÄTT — inputs_radius
+    badge_radius: 4           # MÄTT — badge_corner_radius = --ms-radius-sm 4px
+    # Kantigt som CaraShell, inte mjukt som CatCabin — utrustning, inte present.
+  stil:
+    # REKONSTRUERAD ur det butiken faktiskt visar (bilder, rubriker, knappar).
+    ikoner: "Linjeikoner, 1.8 i stroke, raka ändar. Truck, sköld, stjärna, spännband, droppe — aldrig emojis i gränssnittet."
+    bilder: "Riktiga foton av skyddet på motorn: båten på trailern i höstväder, två motorer sida vid sida där den ena är täckt, närbild på spännbandet. Gråväder och uppställningsplats. Aldrig stockbilder av solig skärgårdslycka."
+    rubrikstil: "Rubriken säger vad kunden slipper i vår, med eyebrow i versaler. En kort scen från uppställningsplatsen — aldrig en produktegenskap."
+    cta: "Solid signalorange knapp med vit text. Lugna verb — Se skyddet, Lägg i varukorgen, Köp nu. Aldrig SISTA CHANSEN, ingen nedräkningstimer."
+    trust: "Diskreta rader med grön bock på blågrå yta — 14 dagars ångerrätt, fri frakt Sverige & Norge, Klarna. Fakta, inte skrik."
+    spacing: "Luftigt, max 62 tecken per rad, generösa sektionsavstånd. Sidan ska kännas som en välordnad uppställningsplats."
+    logo: "Rund emblem, variant C (MÄTT: settings_data.json bär fjordcover-logga-c.png — vilket val som gjordes och av vem är inte dokumenterat någonstans, och står inte i factory/LOGGA-FEEDBACK.md). Skrovblå cirkel, ordmärket FJORDCOVER. Fungerar i en färg."
+    favicon: "Samma skrovblå cirkel med ett ljust F."
+  # MÄTT — handles i settings_data.json. Filerna ligger i butikens Files med
+  # rena namn (ingen uuid-svans), så de går att peka ut direkt.
+  logga: "output/fjordcover/fjordcover-logga-c.png"
+  favicon: "output/fjordcover/fjordcover-favicon.png"
+  # ⚠️ Källfilerna finns INTE i repot (output/fjordcover/ saknas helt) — bara
+  # i butikens Files. Ska loggan byggas om måste den hämtas därifrån först.
+
+# ---------------------------------------------------------------------------
+# STARTSIDAN — skrivs av factory/startsida.mjs till templates/index.json.
+#
+# Varje rad nedan är AVLÄST ur den live butikens templates/index.json
+# 2026-09-13, sektion för sektion, i ordningen hero → ms_usp → ms_marquee →
+# produkt → berattelse → galleri → statement → omdomen → trygghet → ms_faq →
+# ms_guarantee. Kör man `--igen startsida` med den här filen ska sidan bli
+# densamma som står live — det är hela poängen med att återskapa filen.
+#
+# BILDER: skrivna som shopify://shop_images/-handles, inte som käll-URL:er.
+# startsida.mjs (arBildhandle, rad 55) tar en handle som redan står i
+# konfigen, och bilderAttLaddaUpp hoppar över den. En cdn-URL hade laddats
+# upp PÅ NYTT och gett en dubblett med nytt filnamn — då slutar filen
+# beskriva den butik som faktiskt står live.
+#
+# NORSKAN skrivs aldrig här. Den ligger som egen text i
+# output/fjordcover/oversattning-nb.json. ⚠️ Den filen finns inte i repot —
+# butikens nb-översättningar ligger bara i Shopify och måste läsas hem
+# därifrån innan nästa `--igen oversatt`, annars skrivs de över.
+# ---------------------------------------------------------------------------
+startsida:
+  usp:                                        # MÄTT — ms-usp-bar, items
+    - "truck:Fri frakt – Sverige & Norge"
+    - "shield:14 dagars ångerrätt"
+    - "star:Betala med Klarna"
+  hero:                                       # MÄTT — image-banner
+    rubrik: "Motorn är det du inte kan låsa in"
+    text: "Dras över hela motorn, från kåpan ner över riggen. Spänns fast med en rem runt midjan."
+    knapp: "Se skyddet"
+    bild: "shopify://shop_images/batmotorskydd-vinter-tackt.jpg"
+  marquee:                                    # MÄTT — ms-marquee, items
+    - "Fri frakt till Sverige och Norge"
+    - "14 dagars ångerrätt"
+    - "Klarna, kort, Apple Pay och Google Pay"
+    - "Nio storlekar, 0–350 hk"
+  produkt_etikett: "Inför uppläggningen"      # MÄTT — featured-product, blocket "etikett"
+  berattelse:                                 # MÄTT — rich-text "berattelse"
+    rubrik: "Varför FjordCover finns"
+    # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
+    text:
+      - "Vi på FjordCover har sett för många motorer stå oskyddade på uppställningsplatsen, hela hösten och vintern."
+      - "Nu väljer vi skydd som gör uppläggningen till säsongens sista jobb – dra över, spänn fast, och lämna båten för vintern."
+  galleri:                                    # MÄTT — multicolumn, tre kolumner i denna ordning
+    rubrik: "Skyddet genom säsongen"
+    kolumner:
+      - titel: "På uppställningsplatsen"
+        bild: "shopify://shop_images/batmotor-pa-bat.jpg"
+      - titel: "Två spännband håller skyddet på plats"
+        bild: "shopify://shop_images/batmotorskydd-svart.jpg"
+      - titel: "Genom hösten, på trailern"
+        bild: "shopify://shop_images/batmotorskydd-vinter-tackt.jpg"
+    # Ingen markning: MÄTT som frånvaro — butiken har ingen
+    # galleri_markning-sektion, och bilderna är riktiga produktfoton.
+  statement:                                  # MÄTT — rich-text "statement"
+    rubrik: "En övertäckt motor är ett tråkigare byte"
+    knapp: "Lägg i varukorgen"
+  omdomen:                                    # MÄTT — ms-review-slider, eyebrow + heading
+    eyebrow: "8 recensioner, snitt 5,00 av 5"
+    rubrik: "Vad båtägare säger"
+    # ⚠️ Sektionen visar ENDAST riktiga recensioner ur produktfilerna
+    # (startsida.mjs regel 3). De sex som ligger live kommer alltså ur
+    # produktfilens reviews — men eyebrow:n säger 8. Differensen är inget fel
+    # här: slidern renderar de sex som fått text, eyebrow:n räknar hela
+    # Judge.me-underlaget. Kontrollera talet mot produktfilen när den skrivs.
+  trygghet:                                   # MÄTT — image-with-text
+    rubrik: "Frakt och trygghet"
+    text:
+      - "Fri frakt till Sverige och Norge på alla beställningar. Leverans på 5 till 10 arbetsdagar."
+      - "Du har 14 dagars ångerrätt enligt svensk lag. Betala med Klarna, kort, Apple Pay eller Google Pay."
+    bild: "shopify://shop_images/batmotor-pa-bat.jpg"
+  faq_rubrik: "Vanliga frågor"                # MÄTT — ms-faq-section, heading
+  faq:                                        # MÄTT — de fem qa-blocken, i ordning
+    - fraga: "Hur vet jag vilken storlek jag ska välja?"
+      svar: "Skyddet finns i nio storlekar, från 0–5 hk till 250–350 hk. Storleksguiden visar omkrets och höjd per motor – omkretsen mäts runt motorkåpan."
+    - fraga: "Hur lång är leveranstiden?"
+      svar: "Räkna med 5 till 10 arbetsdagar från beställning."
+    - fraga: "Vad gäller för ångerrätt?"
+      svar: "Du har 14 dagars ångerrätt enligt svensk lag. Mejla hello@fjordcover.se så hjälper vi dig."
+    - fraga: "Skickar ni till Norge?"
+      svar: "Ja, fri frakt till både Sverige och Norge."
+    - fraga: "Vad skyddar det mot?"
+      svar: "Skyddet håller väder och smuts ute genom hösten och vintern på uppställningsplatsen."
+  garanti:                                    # MÄTT — ms-guarantee-section
+    rubrik: "14 dagars ångerrätt"
+    text:
+      - "Du har 14 dagars ångerrätt enligt svensk lag, från dagen du tar emot paketet. Mejla hello@fjordcover.se om du vill ångra."

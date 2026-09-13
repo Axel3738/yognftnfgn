@@ -14,3 +14,4 @@ Varianterna: **a** = ordmärket på mörk platta med motivet ovanför ·
 | 2026-09-10 | tacklebay | c | horisont | Axel: "Jag gillar att det var liv i den" — vågorna och tvåradiga ordmärket ger rörelse; A (sigill) och B (kroken ensam) upplevdes stilla. |
 | 2026-09-10 | carashell | c | tak | Axel: C var den mest neutrala — de andra två (a emblem, b sigill med takmotivet) kändes inte passa produkten. |
 | 2026-09-11 | catcabin | c | koja | Axel: 'C because it's the most neutral of the two' — motivet stort med ordmärket litet under upplevdes neutralast; A (emblem med tagline) och B (ljust sigill, två rader) valdes bort. |
+| 2026-09-13 | fjordcover | c | ingen | Avläst i efterhand ur butikens settings_data.json (fjordcover-logga-c.png) 2026-09-13 — butiken byggdes utanför repot och valet loggades aldrig. Ingen kommentar från Axel finns bevarad, så VARFÖR c vann här är okänt; raden finns med för att statistiken ska bli sann, inte för att tolka valet. |
