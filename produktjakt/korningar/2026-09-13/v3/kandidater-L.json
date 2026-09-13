@@ -1,0 +1,130 @@
+{
+  "agent": "L — djur och vatten ute när det fryser (H09)",
+  "datum": "2026-09-13",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Dammvärmaren 500 W med termostat",
+      "objekt": "Trädgårdsdammen (koi/guldfisk)",
+      "form": "annat",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "B_SKYDDA_DYRT",
+      "slot": "sasong",
+      "hypotes_id": "H09",
+      "vinnarlikhet": {"likast": "Isolerade Utekattkojan", "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "deadline första frost/isläggning", "latent_behov nej", "älskat djur (fisken) inte dyrt objekt"], "avvikelser": ["form annat (0 av 13 dömda vann — Isfria vattenskålen K0232 fick ändå ja)", "golv finns i fackhandeln (735–845 kr utan termostat)", "230 V-elektronik"]},
+      "sasong": {"fonster_id": "islaggning_damm", "deadline_typ": "isläggning", "veckor_kvar": 10.4, "timing": "NOW", "kommentar": "sasong.py --objekt ger först lövfällning (4,6 v, NOW); samma objektrad står under 'Isläggning i trädgårdsdamm och vattenhink' 10,4 v i SASONG.md — det är köpdatumet för en isfrihållare"},
+      "listning": {
+        "product_id": "1005012755128004",
+        "url": "https://www.aliexpress.com/item/1005012755128004.html",
+        "pris_usd": 20.39,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:07:00Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012755128004.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "titeln '/500W /Pond /Heater' antyder effektvarianter (300/500 W); heron visar AMERIKANSK stickpropp — EU/230 V-variant ej bekräftad", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 0, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "packshot: grå flytande dosa 18,5 cm med etikett 'Pond De-Icer' + måttext; egen bild krävs — vaken i isen med fisken under"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Vattenliv", "pris_sek": 735, "url": "https://www.vattenliv.se/produkt-kategori/dammtillbehor/fisk/isstoppare-dammvarmare/", "exakt_samma_form": false, "kommentar": "Doppvärmare 300 W flytande UTAN termostat 735 kr (Vattenliv), Pondteam titan 300 W 799 kr (Bauhaus, i lager), 845 kr (Dammbutiken); passiv frigolit-isfri 155 kr (Vattenliv). Med termostat finns bara IceFree Thermo 330 1 645 kr"},
+        "premium_ankare": {"namn": "IceFree Thermo 330 (flytande, termostat/frostvakt)", "pris_sek": 1645, "url": "https://www.vattenliv.se/produkt-kategori/dammtillbehor/fisk/isstoppare-dammvarmare/", "i_sortiment": true},
+        "ankare_kvot": 1.83,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["vattenliv.se", "bauhaus.se", "dammbutiken.se", "zoo.se (bara akvarievärmare)", "pondteam.com (sökutdrag)"]
+      },
+      "ekonomi": {"landad_sek": [265, 324], "pris_sek": 899, "brutto_sek": [575, 634], "be_cpa_sek": [575, 634], "be_roas": 1.49, "flerkop": false, "returrisk": "låg — en storlek, flyter; risk om varan levereras med US-kontakt"},
+      "meta_tanke": {"hook": "Fryser dammen över i vinter?", "objekt_i_bild": "dammen med en öppen vak, fisken synlig under isen, dosan flytande", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "is runt om, öppet vatten runt dosan, koi under"},
+      "varfor": "Samma struktur som utekattkojan (älskat djur ute + datum ingen kan flytta + form som syns) på nytt objekt: koin dör utan vak när dammen fryser (isläggning 10,4 v). Fackhandelns flytande värmare utan termostat 735–845 kr och IceFree Thermo 1 645 kr ger ankare 1,83× med landad ~295 kr.",
+      "huvudrisk": "Heron visar amerikansk kontakt — EU-variant måste bekräftas hos leverantören innan launch; annars är varan oanvändbar i Sverige.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 14, "K3": 10, "K4": 8, "K5": 8, "K6": 8, "K7": 6, "K8": 6, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (damm/värm: bara Uppvärmd Vattenskål 2,2 L — annan sak)", "koncept.py sok damm (K0106/K0117/K0159/K0166/K0169 = nät/fontän/kudde, ingen värmare)", "fynd 09-11 + 09-12"]},
+      "kallor": ["https://www.aliexpress.com/item/1005012755128004.html", "https://www.vattenliv.se/produkt-kategori/dammtillbehor/fisk/isstoppare-dammvarmare/", "https://www.bauhaus.se/dammvarmare-i-titanstal-300-10-met-300", "https://www.dammbutiken.se/300w-doppvarmare-i-titan"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Ekorrsäkra fröautomaten i bur",
+      "objekt": "Fågelbord/fågelmatare",
+      "form": "annat",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "H_VISUELL_NYHET",
+      "slot": "sasong",
+      "hypotes_id": "H09",
+      "vinnarlikhet": {"likast": "Isolerade Utekattkojan", "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "deadline (vintermatning börjar)", "latent_behov nej"], "avvikelser": ["prisband 300–499 (svagt band)", "golv under oss hos Vivara (249,90)", "form annat"]},
+      "sasong": {"fonster_id": "vintermatning_faglar", "deadline_typ": "vintermatning", "veckor_kvar": 6.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005008775230067",
+        "url": "https://www.aliexpress.com/item/1005008775230067.html",
+        "pris_usd": 11.80,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:12:30Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005008775230067.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant (grön stålbur, tub i mitten) enligt titel/sökträff", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "hero i kontext (hängande i träd, finkar inne i buren) men med halvtransparent kinesisk vattenstämpel — måste beskäras/ersättas"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Vivara", "pris_sek": 249.90, "url": "https://www.vivara.se/skyddspaket-med-foderautomat-adventurer-55-cm", "exakt_samma_form": true, "kommentar": "Fröautomat Adventurer med skyddsbur 55 cm 249,90 kr i lager (läst 2026-09-13; sökutdraget sa 949,90 — sidan säger 249,90). Bryssel med skyddsbur 299,90, 23 cm-modellen slut i lager"},
+        "premium_ankare": {"namn": "Vivara Fröautomat med skyddsbur 56 cm 649,90 / Aura 699,90 / Ekorrbuster Plus (viktstyrd) 1 999,90", "pris_sek": 649.90, "url": "https://www.vivara.se/skyddspaket-med-foderautomat56-cm", "i_sortiment": true, "kommentar": "649,90 och 699,90 ur sökutdrag (sidorna gav 429); Ekorrbuster är annan mekanism och räknas inte som samma form"},
+        "ankare_kvot": 1.30,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["vivara.se", "granngarden.se (inga priser i utdrag)", "amazon.se/costway.se (sökutdrag: ekorrsäkra burmatare finns, pris ej läst)"]
+      },
+      "ekonomi": {"landad_sek": [154, 188], "pris_sek": 499, "brutto_sek": [311, 345], "be_cpa_sek": [311, 345], "be_roas": 1.52, "flerkop": true, "returrisk": "låg — hängs på krok, ingen storlek"},
+      "meta_tanke": {"hook": "Tömmer ekorren fågelmataren igen?", "objekt_i_bild": "buren i trädet, mesar inne, ekorren utanför", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "ekorre/skata klamrar utanpå buren, småfåglarna äter inne"},
+      "varfor": "Vintermatningen börjar om 6 v; småfåglarna är ett älskat objekt för kvinna 55+ och ekorren/skatorna är den synliga fienden (H09-struktur med demonstration i bild). Landad ~171 kr mot Vivara 649,90 ger 1,3× ankare; flerköp rimligt (två matare per trädgård).",
+      "huvudrisk": "Vivara säljer exakt samma form för 249,90 kr i lager — H06-läge (golv under oss, ankare 1,3×), och buren är inte ny för den som handlar hos Vivara.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 2, "lucka": 1, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 10, "K3": 8, "K4": 6, "K5": 8, "K6": 6, "K7": 4, "K8": 5, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (fågel: inget)", "koncept.py sok fågel (K0242 kamera-matare ja, K0250 uppvärmt bad ja — andra former)", "fynd 09-11 + 09-12 (Uppvärmda fågelbadet — annan sak)"]},
+      "kallor": ["https://www.aliexpress.com/item/1005008775230067.html", "https://www.vivara.se/skyddspaket-med-foderautomat-adventurer-55-cm", "https://www.vivara.se/skyddspaket-med-foderautomat56-cm", "https://www.vivara.se/froautomat-ekorrbuster-plus-anti-ekorre", "https://www.vivara.se/froautomat-med-skyddsbur-23-cm"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Automatiska hönsluckan med ljussensor",
+      "objekt": "Hönsen — rastgård och vatten",
+      "form": "annat",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "A_AGARE_FRIKTION",
+      "slot": "sasong",
+      "hypotes_id": "H09",
+      "vinnarlikhet": {"likast": "Övervakningskameran (PTZ)", "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "form elektronik", "golv under ja + ankare ≥1,6×", "prisband ≥1000 (Taköverdraget)"], "avvikelser": ["montering ja (skruvas på hönshuset — 1 av 6 dömda vann)", "kedjan har formen (Kerbl/ChickenGuard)", "adapter i heron är amerikansk (batteridrift 4×AA är huvudläget)"]},
+      "sasong": {"fonster_id": "utedjur_stanger", "deadline_typ": "första frost", "veckor_kvar": 9.0, "timing": "NOW", "kommentar": "sasong.py --objekt ger först 'Första frostnatt Norrland' (0,7 v, utanför köpfönster); objektraden står under 'Utedjurens fönster stänger' 9,0 v. Det verkliga datumet är vintertiden 25 okt (6 v): luckan måste stängas i mörker kl 16 varje kväll"},
+      "listning": {
+        "product_id": "1005012434405111",
+        "url": "https://www.aliexpress.com/item/1005012434405111.html",
+        "pris_usd": 56.32,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:15:00Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012434405111.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant: aluminiumlucka med LCD, ljussensor + timer, 4×AA-batteri, USB-adapter (amerikansk i bild) — jämförd med 1005011784568997 ($58,84, heron visar bara styrboxen)", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 0, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "packshot på vitt: svart aluminiumlucka med LCD-panel, skruvar, sensor, USB-adapter; egen bild/video krävs — luckan som stänger själv i skymningen med hönsen inne"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Lantbutiken", "pris_sek": 1499, "url": "https://www.lantbutiken.se/hons-fjaderfa/luckoppnare-hons", "exakt_samma_form": true, "kommentar": "Automatisk lucköppnare för höns 49-705501 1 499 kr; Granngården Kerbl 300×400 mm med ljussensor/timer (pris laddas ej i utdrag); Bonden.se Kerbl komplett (pris ej läst)"},
+        "premium_ankare": {"namn": "ChickenGuard/automatisk lucköppnare (Lantbutiken 49-70592 2 119 kr; P. Lindberg 2 120 kr)", "pris_sek": 2119, "url": "https://www.lantbutiken.se/hons-fjaderfa/luckoppnare-hons", "i_sortiment": true},
+        "ankare_kvot": 1.63,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["lantbutiken.se", "granngarden.se", "p-lindberg.se", "omlet.se (Autodoor — pris ej läst)"]
+      },
+      "ekonomi": {"landad_sek": [733, 896], "pris_sek": 1299, "brutto_sek": [403, 566], "be_cpa_sek": [403, 566], "be_roas": 2.68, "flerkop": false, "returrisk": "medel — luckmåttet måste passa hönshuset (montering med skruv), elektronik ute i kyla"},
+      "meta_tanke": {"hook": "Stänger du hönsluckan i mörkret varje kväll?", "objekt_i_bild": "hönshuset i skymning, luckan glider ner, hönsen inne", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "luckan stänger av sig själv när det blir mörkt — räven utanför"},
+      "varfor": "Hobbyhönsägaren (55+, landet) måste stänga luckan mot räven varje kväll — från 25 okt i mörker och kyla; luckan gör jobbet själv (H09 djur ute + hårt datum, H04 pris > 1 000 med ankare 1,63×). Kedjan säljer samma sak för 1 499–2 120 kr, landad ~814 kr.",
+      "huvudrisk": "BE-ROAS 2,68 är högt för kontot (landad 814 mot pris 1 299) och montering på hönshuset är en förlorarsignal; höj till 1 499 bara om ankaret Omlet mäts över 2 500 kr.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 10, "K4": 6, "K5": 6, "K6": 8, "K7": 5, "K8": 8, "K9": 3, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (höns: Hönsgårdsduk + arkiverad fågeldrickare — andra saker)", "koncept.py sok lucka / coop door (0 träffar)", "fynd 09-11 (Hönsgårdstaket) + 09-12"]},
+      "kallor": ["https://www.aliexpress.com/item/1005012434405111.html", "https://www.aliexpress.com/item/1005011784568997.html", "https://www.lantbutiken.se/hons-fjaderfa/luckoppnare-hons", "https://www.granngarden.se/honslucka-kerbl-med-automatisk-luckoppnare-300x400mm", "https://www.p-lindberg.se/djur-staengsel-draenering/fjaederfaen-paa-gaarden/hoenshus/luckoeppnare/"]
+    }
+  ],
+  "strukna": [
+    {"namn": "Hästen i hagen — uppvärmd vattenhink / hinkvärmare", "skal": "Åtta fraser (bucket heater de-icer 250W, submersible water tank heater livestock, floating tank de-icer 1500W, heated water bucket 20L 230V, trough heater EU plug, horse bucket heater immersion 230V, heated flat back bucket 20L livestock, floating de-icer 300W water trough horse thermostat) gav bara akvarievärmare, varmvattenberedare, handdukshinkar och isbadkar — ingen hinkvärmare. Svenska golvet är dessutom 24 V-system (Isobar värmehink 17 L / Willab 20 L 1 299–1 349 kr, Börjes: '230 V direkt i hagen avråds'); en 230 V-doppvärmare i hinken är fel form för hästägaren. Lärdom till objekt.json: sök 24 V-hinkvärmare eller lämna raden."},
+    {"namn": "Hästen — Kerbl-typ elvattenkopp med flottör (1005012451135826, 61,59 USD, EU-kontakt sedd i heron)", "skal": "Kräver tryckvatten och montering (förlorarsignal montering=ja); Granngården har 16 elvattenkoppar (Suevia/Kerbl) i exakt samma form — 'sett innan' för varje stallägare; landad ~891 kr mot golv ~1 549 kr ger BE-CPA 319–497 men lucka 0."},
+    {"namn": "Hönsen — uppvärmd vattenautomat/nippeldrickare med värme", "skal": "Fem fraser (heated poultry drinker 230V 5L, heated chicken waterer nipple, heated poultry drinker plastic 5L thermostat, heated chicken waterer 3 gallon winter, chicken drinker with heater winter 220V automatic 5L) gav bara nipplar, koppar, äggkläckare och den 20 W silikonbasen (DT15, 17–21 USD) som föll i går på Lantbutiken 259 kr. Ingen komplett uppvärmd drickare finns på AliExpress."},
+    {"namn": "Utekatten — kattlucka med isolering / värmehylla vid husväggen", "skal": "Kattluckor (4-Way Locking Weatherproof 23,09 USD) säljs av Jula/Clas Ohlson/Staywell i samma form och är standardutrustning; 'värmehylla ute' finns inte — sökningen gav inomhus-katthyllor och en catio för 373 USD. Uppvärmda kojor (20–28 USD) är samma SAK som Isolerade Utekattkojan i butiken (K0193 redan sedd). Värmeplatta ej sökt enligt order."},
+    {"namn": "Igelkotten i trädgården — hus", "skal": "Ingen utomhuslistning under 20 USD: 25,89 USD (K-raden från i går, över gränsen), 68,40 USD; 6,19–17,39 USD är inomhushus för hamster/reptil. Vivara-golv 299,90 står kvar — raden ligger kvar i backlog v 39."},
+    {"namn": "Kanin/marsvin i bur ute — uppvärmd vattenflaska", "skal": "Två fraser (heated rabbit water bottle winter 220V, pet heated water bottle hutch rabbit winter) gav bara plyschvärmeflaskor för människor. Ingen listning."},
+    {"namn": "Vildfåglarna — övernattningsholk/vinterholk", "skal": "Två fraser gav hönshus, papegojnästen och en uggleholk för 48,79 USD; ingen övernattningsholk för småfåglar. Svenska golvet (Nyby bruk-holkar < 200 kr, Sveriges Natur-test) hade ändå legat under oss."},
+    {"namn": "Trädgårdsdammen — vinterluftpump/aerator", "skal": "Vattenliv rekommenderar luftpump ihop med värmaren, men träffarna är solcellsdrivna (döda i svensk vinter) eller Hailea-pumpar 31–53 USD som zoo.se säljer i samma form — inget eget koncept, hellre som bonusprodukt till dammvärmaren i paketnivån."}
+  ]
+}
