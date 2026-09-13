@@ -1,0 +1,26 @@
+{
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "SE",
+  "status": "To be Reviewed",
+  "cs_status": "Creative strat review",
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+    "titel": "Racing Car Advent Calendar creative hub"
+  },
+  "kampanj": null,
+  "kampanj_skal": "ingen ACTIVE SE-kampanj — \"ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10\" är PAUSED med 2797 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+  "kampanjer_bort": 17,
+  "lank_arvd": null,
+  "pris_butik": null,
+  "pris_skal": "ingen länk",
+  "rader": [],
+  "varningar": [
+    "kampanj: ingen ACTIVE SE-kampanj — \"ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10\" är PAUSED med 2797 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+    "\"ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10\" är PAUSED med 2797 kr spend — avvecklad, aldrig mål",
+    "pris: ingen länk"
+  ],
+  "hamtad": "2026-09-13T12:47:20.405Z"
+}
