@@ -89,26 +89,32 @@ dem oförändrade — inte att bedöma dem.
   `/rond` finns kvar som manuellt läge. Dashboarden för människor:
   `agent/dashboard.mjs` → https://claude.ai/code/artifact/1e4b73e9-ce06-41ca-bd18-a2f17037de81
 
-## Startskottet (ersatte annons-triggern 2026-09-10)
+## Annons-triggern (tillbaka sedan 2026-09-13) + Startskottet
 
-⚠️ **Ronden gör inga briefer längre.** Axels beslut 2026-09-10: i stället för
-att bygga en creative-batch och en ny Notion-hub när en produkt klarar testet,
-postar ronden **ett Discord-meddelande** i `#ops-startskott` som säger att
-produkten ska få en egen OPS-butik. Ingen creative strategy, inga nya
-Notion-databaser, inga brief-rundor.
+Ronden flaggar produkter som behöver nya annonser (`/rond-auto` steg 4b) —
+**bara Sverige**. Alla förstabatcher och alla förfallna brief-rundor körs
+samma morgon, utan tak. Rundan är dubbla veckokvoten, minst fyra, mest video.
+Briefarna landar i produktens hub ur `produktkarta.json`; sedan 2026-09-13
+bygger Axel hubbarna själv och döper dem **"BÄVER <produkt>"**.
 
-- **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst** → startskott
-  (`agent/startskott.mjs`, loggas som `OPS_STARTSKOTT`). Det är övergången
-  test → egen butik; en förlorare vid tröskeln går åtgärdstrappan i stället.
+*(Briefhalvan togs bort 2026-09-10 och lades tillbaka 2026-09-13 — Axel vill
+skala på Bäverbutiken OCH bygga OPS-butiker, med fler videoredigerare.)*
+
+## Startskottet (sedan 2026-09-10, körs vid sidan av briefsen)
+
+När en produkt klarar testet postar ronden **dessutom ett Discord-meddelande**
+i `#ops-startskott` som säger att produkten ska få en egen OPS-butik.
+
+- **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst** → första batchen
+  (`/forsta-batch`) OCH ett startskott (`agent/startskott.mjs`, loggas som
+  `OPS_STARTSKOTT`). Det är övergången test → skalning + egen butik; en förlorare vid tröskeln går åtgärdstrappan i stället.
   **Under 20 % vinst chillar produkten** och prövas om nästa dygn. Okänd vinst
   räknas aldrig som godkänd. Axels besked 2026-08-31.
   *(Kravet hette bara "över break-even" fram till dess. Det var för trubbigt:
   Plyschtofflorna låg 2,4 % över och fick 12 briefer byggda samma morgon som
   ronden själv skrev "tunn marginal, se över priset".)*
 - **Bara Sverige.** En norsk kampanj utlöser aldrig ett startskott.
-- `brief_runda`, `ersatt` och `mata_vinnare` räknas fortfarande av
-  `annonsbehov` — men ronden gör ingenting med dem. Matematiken är kvar orörd
-  så den går att slå på igen; utfallet är borttaget.
+- `brief_runda`, `ersatt` och `mata_vinnare` körs som vanligt i steg 4b (`/cs`).
 
 ⚠️ **Listan kommer ur `startskottsbehov`, inte ur `annonsbehov`.**
 `forsta_batch` ges bara till produkter som ALDRIG haft en batch. Byggde man

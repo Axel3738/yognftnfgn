@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-11",
+  "uppdaterad": "2026-09-13",
   "kampanjer": [
     {
       "campaign_id": "120250175763810291",
@@ -17,7 +17,11 @@
       "lage": "test",
       "lage_motivering": "startad 2026-09-11, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "c5a270ab-908c-83e3-b721-81fde8643080",
+      "notion_hub_datakalla": "collection://7d0270ab-908c-831e-8021-8758336851c8",
+      "notion_hub_namn": "BÄVER Termoskyddet för Husbil",
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR."
     },
     {
       "campaign_id": "120250175680140291",
@@ -98,13 +102,14 @@
       "lage_motivering": "1 991,70 kr spend (livstid, avläst 2026-09-10, maximum), 11 köp, ROAS 3,587 mot BE 1,62 — ~36% vinstmarginal enligt /rond-auto 2026-09-10. Passerat 1 500 kr-testtröskeln och fått sin första riktiga batch via /forsta-batch. Bara 1 av 16 launchade annonser bedömbar än (kampanjen ~2 dygn gammal) — se dna.md.",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet",
-      "notion_hub_id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
-      "notion_hub_datakalla": "collection://c19270ab-908c-834c-bf90-874ce69e0381",
-      "notion_hub_namn": "Racing Car Advent Calendar creative hub",
+      "notion_hub_id": "e53270ab-908c-8297-be2d-0162a09dc253",
+      "notion_hub_datakalla": "collection://efe270ab-908c-83ef-aa11-87c98e87f5b0",
+      "notion_hub_namn": "BÄVER Adventskalendern Racingbilar",
       "drive_produktmapp_id": "1OHOLPsPIHqnY7-4n5tR3MUGeRAn2LJvE",
       "drive_produktmapp_not": "Joshs befintliga produktmapp \" Adventskalender Racingbilar\" (ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
       "drive_senaste_batchmapp_id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
-      "minne": "products/adventskalender-racingbilar/"
+      "minne": "products/adventskalender-racingbilar/",
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte Racing Car Advent Calendar creative hub."
     },
     {
       "campaign_id": "120252123868510233",
@@ -337,13 +342,14 @@
       "lage_motivering": "40 köp sedan start, 15 259 kr spend, livstids-ROAS 3,10 mot BE 1,57 (avläst 2026-09-06 av /cs-rundan) — uppfyller driftregeln (≥30 köp + ROAS över break-even), men läget byts av /rond-auto:s huvudflöde, inte av /cs. Tre batcher briefade (#1 2026-08-31, #2 2026-09-03, #3 2026-09-06). Vinnaren SP_2 mjuknar i skalning (marginal-CPA 488 kr mot BE 509) — batch #3 matar den med iterationer i stället för mer budget.",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet",
-      "notion_hub_id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
-      "notion_hub_datakalla": "3b6270ab-908c-8366-a085-8705d1a9f4ef",
-      "notion_hub_namn": "Surveillance Camera creative hub",
+      "notion_hub_id": "a6b270ab-908c-8285-bdde-0180519d9166",
+      "notion_hub_datakalla": "collection://2f7270ab-908c-83f7-a989-87456507e37b",
+      "notion_hub_namn": "BÄVER Övervakningskameran",
       "drive_produktmapp_id": "1Kv5mgwWmsRB2p3BNiUHK-MJKag-i4ZdS",
       "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
       "drive_senaste_batchmapp_id": "1xlH9j8_wwRXsy9DGMde8CLN1m2oBngke",
-      "minne": "products/overvakningskameran/"
+      "minne": "products/overvakningskameran/",
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte Surveillance Camera creative hub."
     },
     {
       "campaign_id": "120249989987370291",
@@ -410,13 +416,14 @@
       "lage_motivering": "22 köp sedan start (avläst 2026-09-01, livstid) — under 30-köpsgränsen för drift. Passerat testtröskeln (4 171 kr, ROAS 3,30 mot BE 1,51) och har nu fått sin första riktiga batch via /forsta-batch.",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet",
-      "notion_hub_id": "3ce270ab-908c-8161-bed2-e22f132a6aba",
-      "notion_hub_datakalla": "5ad270ab-908c-837f-b001-87c077b043cb",
-      "notion_hub_namn": "IBC Tank Cover creative hub",
+      "notion_hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+      "notion_hub_datakalla": "collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2",
+      "notion_hub_namn": "BÄVER IBC-Tanköverdraget",
       "drive_produktmapp_id": "1EL7qjxDtCeKTUJPuCY7Asp2FshiD0nDO",
       "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
       "drive_senaste_batchmapp_id": "1SdP2djgVRGwJnvb-BuM99sTJRg6XcKcd",
-      "minne": "products/ibc-tankoverdraget/"
+      "minne": "products/ibc-tankoverdraget/",
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte IBC Tank Cover creative hub."
     },
     {
       "campaign_id": "120249978017760291",
@@ -753,7 +760,11 @@
       "lage": "test",
       "lage_motivering": "startad 2026-09-09, saknades i kartan — tillagd av /rond-auto",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+      "notion_hub_datakalla": "collection://5f2270ab-908c-82ef-b029-0767819050db",
+      "notion_hub_namn": "BÄVER Taköverdraget för Husvagn",
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR."
     },
     {
       "campaign_id": "120250147309170291",
@@ -761,7 +772,11 @@
       "lage": "test",
       "lage_motivering": "startad 2026-09-09, saknades i kartan — tillagd av /rond-auto",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "d38270ab-908c-8362-a57c-8107bb019d38",
+      "notion_hub_datakalla": "collection://30d270ab-908c-821a-a322-87119dc8f095",
+      "notion_hub_namn": "BÄVER Isolerade Utekattkojan",
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR."
     },
     {
       "campaign_id": "120252140554000233",
