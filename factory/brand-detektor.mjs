@@ -127,11 +127,53 @@ export function läsKälla(produktId) {
  *  inbränt medan butiken ger 14, och fick ändå domen `ren`. Det är exakt det
  *  fel som gav HeimGuard-bakläxan 2026-09-09, en spärr som skrevs för att
  *  förhindra det, och en spärr som aldrig larmade. */
+/** Produktens butik via BRANDET, när ingen state-fil finns. Läser
+ *  produktfilens `brand.namn` och letar den butiksfil vars `butik.brand`
+ *  matchar — samma regel som register.mjs paraIhop(). Returnerar butiks-id
+ *  eller null. Jämförelsen är skiftlägesokänslig och trimmad; två butiker med
+ *  samma brand vore en konfliktkonfig och ger null hellre än en gissning. */
+export function butiksIdViaBrand(produktId) {
+  const produktfil = join(ROT, 'factory', 'produkter', `${produktId}.yaml`);
+  if (!existsSync(produktfil)) return null;
+  const p = lasYaml(readFileSync(produktfil, 'utf8'));
+  const brand = String(p?.brand?.namn ?? '').trim().toLowerCase();
+  if (!brand) return null;
+
+  const butiksmapp = join(ROT, 'factory', 'butiker');
+  if (!existsSync(butiksmapp)) return null;
+  const träffar = readdirSync(butiksmapp)
+    .filter((f) => f.endsWith('.yaml'))
+    .map((f) => {
+      const y = lasYaml(readFileSync(join(butiksmapp, f), 'utf8'));
+      return { id: y?.butik?.id ?? f.replace(/\.yaml$/, ''), brand: String(y?.butik?.brand ?? '').trim().toLowerCase() };
+    })
+    .filter((b) => b.brand && b.brand === brand);
+
+  return träffar.length === 1 ? träffar[0].id : null;
+}
+
 export function läsButik(produktId) {
   const stateMapp = join(ROT, 'factory', 'state');
-  const butiksId = existsSync(stateMapp)
+  let butiksId = existsSync(stateMapp)
     ? readdirSync(stateMapp).find((f) => f.endsWith(`--${produktId}.json`))?.split('--')[0]
     : null;
+
+  // ⚠️ State-filen är inte det enda beviset på vilken butik produkten hör till,
+  // och att lita på den ensam gjorde spärren tyst precis där den behövdes mest.
+  //
+  // Mätt 2026-09-13 på FjordCover: butiken byggdes UTANFÖR repot (som TankGuard
+  // 2026-09-08) och har därför ingen state-fil. läsButik returnerade null,
+  // villkorsjämförelsen kördes inte, och SJU annonser som bär Bäverbutikens
+  // "30 dagars öppet köp" fick domen `ren` — fast FjordCover har 14 dagars
+  // ångerrätt. Det är exakt HeimGuard-bakläxan om igen, i den spärr som skrevs
+  // för att förhindra den.
+  //
+  // Fallback: para ihop produkt → butik på BRANDET, samma koppling som
+  // register.mjs paraIhop() använder när state saknas (produktfilens
+  // brand.namn mot butiksfilens butik.brand). En butik som är konfigurerad men
+  // ännu inte byggd i det här repot har fortfarande riktiga villkor.
+  if (!butiksId) butiksId = butiksIdViaBrand(produktId);
+
   if (!butiksId) return null;
   const fil = join(ROT, 'factory', 'butiker', `${butiksId}.yaml`);
   if (!existsSync(fil)) return null;

@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 import { sökBrand, normalisera, avstånd } from '../brandord.mjs';
 import {
   copyFält, länkAv, mediaAv, klassa, transkriptFör, läsTranskript, replikerMedBrand,
-  attGöra, sökVillkor, vägSamman, källaViaTitel, villkorstexter,
+  attGöra, sökVillkor, vägSamman, källaViaTitel, villkorstexter, läsButik, butiksIdViaBrand,
 } from '../brand-detektor.mjs';
 import { lasYaml } from '../yaml.mjs';
 
@@ -319,4 +319,37 @@ test('varje produktfil med kalla-block pekar på rätt källkonto', () => {
     assert.equal(p.kalla.annonskonto, '1867947880635861', id);
     assert.ok(p.kalla.annonsprefix, `${id} saknar annonsprefix`);
   }
+});
+
+// ------------------------------------------------- butiken hittas utan state
+//
+// Regressionstest för 2026-09-13 (FjordCover). läsButik() härledde butiken
+// ENBART ur factory/state/<butik>--<produkt>.json. En butik som byggts utanför
+// repot har ingen state-fil — då blev butikskonfigen null, villkorsjämförelsen
+// (sjätte ytan) kördes inte, och sju annonser som bar källbutikens "30 dagars
+// öppet köp" fick domen `ren` fast butiken har 14 dagars ångerrätt. Exakt
+// HeimGuard-bakläxan, i den spärr som skrevs för att förhindra den.
+
+test('butiksIdViaBrand hittar butiken på brandet när state saknas', () => {
+  // batmotorskyddet har ingen state-fil men brand.namn "FjordCover", och
+  // butiker/fjordcover.yaml har butik.brand "FjordCover".
+  assert.equal(butiksIdViaBrand('batmotorskyddet'), 'fjordcover');
+});
+
+test('läsButik ger butikens VILLKOR även utan state-fil', () => {
+  const b = läsButik('batmotorskyddet');
+  assert.ok(b, 'butikskonfigen ska hittas utan state — annars är sjätte ytan tyst');
+  assert.equal(b.retur.oppet_kop_dagar, 14);
+  assert.equal(b.retur.angerratt_dagar, 14);
+});
+
+test('läsButik hittar fortfarande butiker som HAR state-fil', () => {
+  // Får inte gå sönder av fallbacken: state är fortfarande första vägen.
+  for (const [produkt, brand] of [['takskyddet', 'CaraShell'], ['tankguard', 'TankGuard']]) {
+    assert.equal(läsButik(produkt)?.brand, brand, `${produkt} ska hitta ${brand}`);
+  }
+});
+
+test('butiksIdViaBrand gissar aldrig — okänd produkt ger null', () => {
+  assert.equal(butiksIdViaBrand('finns-inte-alls'), null);
 });
