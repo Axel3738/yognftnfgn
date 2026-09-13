@@ -557,3 +557,14 @@ Två rättningar gjordes av huvudsessionen efteråt:
 
 Kvar att mäta: ingen dom kan ställas på någon norsk annons än — kampanjen har
 21 nya annonser från i dag och grinden är ≥ 300 kr OCH ≥ 3 köp per annons.
+
+### Beslut 2026-09-13 (Axel, chatten): nya tester stannar i CBO:n, PD får golv
+
+Frågan från nattens rapport (test-ABO enligt regel 11, eller golv på PD) —
+**Axel valde B.** `DRYTREK_SE_PD` fick `daily_min_spend_target` 300 kr/dag
+(satt 2026-09-13, tillbakaläst 30000 öre, loggrad i `factory/budgetlogg.jsonl`).
+Skäl: PD (den ärvda vinnaren, ROAS 2,77 i källan) hade fått 317 kr på 7 dagar
+medan CS + G tog 2 216 kr. De 23 nya annonserna från leveransen ligger kvar i
+CBO:n, ett adset per koncept. Kampanjbudgeten är 700 kr/dag efter nattens
+sänkning (−30 %, vinst 3d −115 %) — golvet tar alltså ~43 % av dagsbudgeten.
+Om Axel höjer tillbaka till 1 000 kr ska golvet inte ändras.
