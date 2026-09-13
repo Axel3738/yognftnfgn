@@ -4,7 +4,7 @@
 okänt (troligen OnlineJobs.ph som redigerarannonsen). Codewordet i den är
 `apple`, synligt i jobbeskrivningen.
 **Ramverket:** `FILTER-RAMVERKET.md`. **Förlagan:** `jobbannons-video-editor.md`.
-**Annonsen är färdigskriven** (`utskick/annons-3-kundsupport-lingon.txt`) men INTE utskickad — fyra beslut väntar på Axel först.
+**Annonsen är färdigskriven** (`utskick/annons-3-kundsupport-lingon.txt`) men INTE utskickad — lönetrappan beslutad 2026-09-13, tre beslut väntar på Axel.
 
 ---
 
@@ -35,17 +35,18 @@ säljargument är "no night shift". Fönstret 10–17 svensk tid är 16–23 i M
 ## Beslut som väntar på Axel innan annonsen går ut
 
 Annonsen är färdigskriven och klistringsklar i
-`utskick/annons-3-kundsupport-lingon.txt`. Fyra saker i den är förslag,
-inte beslut:
+`utskick/annons-3-kundsupport-lingon.txt`. Lönetrappan är beslutad; tre
+saker är fortfarande förslag:
 
-1. **Lönetrappan.** Annonsen säger 20 → 22 (1 mån) → 25 (3 mån) → 28 kr/h
-   (6 mån), automatisk. Startnivån är Axels 20 kr/h; stegen är ett förslag i
-   samma anda som redigerarannonsens trappa. ⚠️ Filtret hittar den bästa i
-   poolen — poolen bestäms av lönen. 20 kr/h ≈ 2 USD/h, samma nivå som
-   redigerarnas $520/mån (≈ 24 kr/h). Vill Axel ha "bästa VA:n någonsin"
-   är trappan viktigare än startlönen: den seriöse räknar på månad 6.
-2. **Consistency-bonus** 200 kr/mån vid noll missade dagar. Förslag.
-   Med 1–2 h/dag är månadslönen 600–1 200 kr, så 200 kr är 15–30 % — stort
+1. **Lönetrappan — BESLUTAD av Axel 2026-09-13:** $2.50/h start → $3.00
+   efter 1 mån → $3.50 efter 3 mån → $4.00 efter 6 mån, automatisk. I USD,
+   inte SEK (originalannonsens 20 kr/h ≈ $2 är borta). Högre än
+   redigerarnas nivå ($520/mån ≈ $2.5/h) redan efter första månaden — det
+   är poängen: filtret hittar den bästa i poolen, och poolen bestäms av
+   lönen.
+2. **Consistency-bonus** $20/mån vid noll missade dagar. Förslag (mitt
+   förslag 200 kr omräknat till dollar så annonsen har en valuta). Med
+   1–2 h/dag är månadslönen $75–150 vid start, så $20 är 13–27 % — stort
    nog att styra beteendet, litet nog att inte kosta.
 3. **Timtrappan:** 1–2 h → upp till 4 h efter 2 månader utan missad dag →
    5–8 h "när nästa brand öppnas för dig". Förslag.
