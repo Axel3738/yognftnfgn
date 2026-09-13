@@ -46,6 +46,10 @@ export const LOOPIA_IMAP = Object.freeze({ host: 'mailcluster.loopia.se', port: 
 /** Trösklarna som gäller om brandfilen inte säger annat. Alla i klartext så
  *  Axel kan ändra dem per brand utan att läsa kod. */
 export const STANDARD_TROSKLAR = Object.freeze({
+  arenden_dagar: 30,             // hur långt bakåt mejlen läses. ⚠️ Var 7 till 2026-09-13
+                                 // — då föll allt obesvarat äldre än en vecka ur rapporten,
+                                 // alltså precis de farligaste ärendena. 30 matchar ordrarnas
+                                 // fönster, så tvistgraden räknas på samma period.
   obesvarad_timmar: 48,          // inkommande utan svar längre än så = larm
   ofullbordad_dagar: 5,          // betald order utan fulfillment längre än så = larm
   tvistgrans_gul_procent: 0.5,   // tvister / ordrar: gult härifrån

@@ -609,6 +609,13 @@ valfritt), samt delade `NOTION_TOKEN`, `DISCORD_BOT_TOKEN`, `ANTHROPIC_NYCKEL`
 (valfria). **Samma repo körs på vilket Claude-konto som helst** — bara nycklarna
 och brandfilerna skiljer; `setup.mjs --nytt-konto` skriver ut receptet.
 
+⚠️ **Perioden är 30 dagar (`arenden_dagar`), inte 7** — rättat 2026-09-13 efter
+Axels invändning "jag tror inte det där var alla mejl". Med 7 dagar föll varje
+obesvarat ärende äldre än en vecka ur rapporten, alltså precis de farligaste.
+Mätt samma dag på Bäverbutiken: **7 dagar gav 45 ärenden / 37 obesvarade,
+120 dagar gav 321 / 205**. Sänk aldrig tillbaka fönstret för att rapporten ska
+se lugnare ut. `--dagar <n>` finns kvar för en djupdykning.
+
 Flödet: `imap.mjs`/`mime.mjs` → `arenden.mjs` (trådar, obesvarat, svarstid) →
 `klassificering.mjs` (regler, 14 kategorier, sv/no/da/en/fi) → `chargeback.mjs`
 (signaler med tak → 0–100, 🟢 < 25, 🟡 25–50, 🔴 > 50; tvistgrad mot Visa 0,9 % /
@@ -625,14 +632,21 @@ som gör "återkommande" mätbart, så den committas.
 
 **Hemsidan** (Axels beslut 2026-09-12: "en hemsida som lagrar all data"):
 https://claude.ai/code/artifact/b318db7b-7623-47df-af8c-55e528771207 —
-`kundtjanst/rapportsida.mjs` bakar alla veckors rapporter (svenska + engelska
-flik till VA:n) och historikens tal till `kundtjanst/rapport-publicerad.html`
+`kundtjanst/rapportsida.mjs` bakar `korningar/<brand>/<vecka>.json`
+(`dashboard.mjs`) och historiken till `kundtjanst/rapport-publicerad.html`
 (mall `rapport-sida.html`), och rutinen publicerar om filen mot **samma URL**
-varje måndag (länken står i `kundtjanst/rapportsida.json`; utan `url` blir det
+varje körning (länken står i `kundtjanst/rapportsida.json`; utan `url` blir det
 en ny sida). Samma regler som topplistan: ingen runtime-capability, datan
-inbakad, sidan räknar aldrig om något. Första publiceringen 2026-09-12 med
-W37 (Bäverbutiken, körd på riktigt: 45 ärenden, 37 obesvarade > 48 h, risk
-🔴 100/100 utan Shopify).
+inbakad, sidan räknar aldrig om något.
+
+⚠️ **Ombyggd 2026-09-13 efter Axels dom "den suger fan legit".** Tre fel var
+verkliga och alla tre är rättade: sidan var på svenska fast **VA:n läser
+engelska** (nu engelsk, med EN/SV-knapp för etiketterna), den visade
+rapporttext men **ingen arbetslista** (nu: åtgärdsplan i tre hinkar ur
+`atgardsplan.mjs`, arbetskö per ärende med ordernummer och väntetid, tvister
+med `evidence due`, kategorier med SOP-status), och den byggde på en
+**7-dagarsperiod som dolde backloggen** (se perioden ovan). Sidan svarar också
+på "har du läst alla mejl?": mejl in → ärenden, och vad som filtrerades bort.
 
 Kundadresser maskeras (`ka***@gmail.com`) i allt som skrivs eller postas;
 ordernumret är nyckeln. Tvister som inte går att läsa rapporteras som okända,

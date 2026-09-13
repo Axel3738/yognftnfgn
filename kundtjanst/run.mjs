@@ -50,6 +50,8 @@ import { klassificeraOvrigt, sammanfattaToppen } from './llm.mjs';
 import { renderaSvensk, renderaEngelsk, renderaRanking, renderaRankingEngelsk, isoVecka } from './rapport.mjs';
 import { anthropicNyckel } from '../tools/lib/anthropic-nyckel.mjs';
 import { granskaSprak, stoppText } from '../tools/lib/engelska.mjs';
+import { maskeraAdress, maskeraText } from './maskera.mjs';
+import { byggDashboard, skrivDashboard } from './dashboard.mjs';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 export const KORNINGAR = join(ROT, 'kundtjanst', 'korningar');
@@ -58,18 +60,10 @@ const DAG = 86_400_000;
 
 // ------------------------------------------------------------------ hjälpare
 
-/** ka***@gmail.com — nog för att känna igen, inte nog för att sprida. */
-export function maskeraAdress(adress) {
-  const s = String(adress ?? '');
-  const i = s.indexOf('@');
-  if (i === -1) return s ? `${s.slice(0, 2)}***` : '';
-  return `${s.slice(0, Math.min(2, i))}***@${s.slice(i + 1)}`;
-}
-
-/** Maskerar adresser i en text (rapporter, detaljer). */
-export function maskeraText(text) {
-  return String(text ?? '').replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, (a) => maskeraAdress(a));
-}
+// Maskeringen bor i maskera.mjs (dashboard.mjs behöver den också) och
+// re-exporteras här — allt som importerat den från run.mjs fungerar som förut.
+// Både import (för bruket här nere) och export (för de som importerar härifrån).
+export { maskeraAdress, maskeraText };
 
 function lasHistorik(brandId) {
   const fil = join(HISTORIK, `${brandId}.jsonl`);
@@ -185,7 +179,7 @@ async function lasViaWebmail(konfig, period, logg) {
  * Returnerar resultatobjektet rapport.mjs läser, eller { hoppad, orsak }.
  */
 export async function korBrand(brand, {
-  nu = new Date(), dagar = 7, torr = false, utanModell = false, fixtur = null, jobb = null, env = process.env, logg = () => {}, historik = null,
+  nu = new Date(), dagar = 30, torr = false, utanModell = false, fixtur = null, jobb = null, env = process.env, logg = () => {}, historik = null,
 } = {}) {
   const konfig = korkonfig(brand, env);
   const vecka = isoVecka(nu);
@@ -314,7 +308,7 @@ export async function korBrand(brand, {
   return {
     brand: konfig, vecka, kord: nu, period, dagar, kallor, varningar, hoppad: false,
     arenden, sammanfattning, risk, ordrar: { antal: ordrar.length }, tvister, sop, aterkommande: ak, forra, historikrad: denna, historikVeckor: tidigare.length + 1, modell, sammanfattningar,
-    bortfiltrerade: byggt.bortfiltrerade,
+    bortfiltrerade: byggt.bortfiltrerade, antalMejl: byggt.antalMejl,
   };
 }
 
@@ -324,10 +318,12 @@ export function sparaResultat(r) {
   mkdirSync(mapp, { recursive: true });
   writeFileSync(join(mapp, `${r.vecka}.md`), maskeraText(renderaSvensk(r)) + '\n');
   writeFileSync(join(mapp, `${r.vecka}.en.md`), maskeraText(renderaEngelsk(r)) + '\n');
+  // Samma körning som maskinläsbar data — det hemsidan bygger på.
+  const dash = skrivDashboard(r, { korningar: KORNINGAR });
   const hist = lasHistorik(r.brand.id).filter((h) => h.vecka !== r.vecka);
   hist.push(r.historikrad);
   skrivHistorik(r.brand.id, hist);
-  return { rapport: join(mapp, `${r.vecka}.md`), engelsk: join(mapp, `${r.vecka}.en.md`) };
+  return { rapport: join(mapp, `${r.vecka}.md`), engelsk: join(mapp, `${r.vecka}.en.md`), dashboard: dash };
 }
 
 /** Postar i Discord: brandets server (bot) eller webhook. Returnerar en rad för loggen. */
@@ -372,7 +368,12 @@ export async function huvud(argv = process.argv.slice(2), env = process.env) {
     try { jobb = JSON.parse(readFileSync(fil, 'utf8')); } catch (e) { console.error(`✗ Jobbfilen går inte att läsa som JSON: ${e.message}`); process.exit(1); }
     if (!jobb || typeof jobb !== 'object' || Array.isArray(jobb)) { console.error('✗ Jobbfilen ska vara ett objekt { "<brandId>": { "inkorg": [...], "skickat": [...] } }.'); process.exit(1); }
   }
-  const dagar = Number(flagga(argv, 'dagar', 7)) || 7;
+  // Perioden: `--dagar` vinner, annars brandets `arenden_dagar` (30 som standard).
+  // ⚠️ Den var 7 fram till 2026-09-13. Det gjorde att ett obesvarat ärende som
+  // var äldre än en vecka FÖLL UR rapporten — precis de farligaste, de som hunnit
+  // ligga längst. 30 dagar matchar ordrarnas fönster, så tvistgraden räknas på
+  // samma period och backloggen aldrig försvinner ur kön.
+  const dagarFlagga = flagga(argv, 'dagar') ? Number(flagga(argv, 'dagar')) || null : null;
   const datumArg = flagga(argv, 'datum');
   const nu = datumArg ? new Date(`${datumArg}T12:00:00Z`) : new Date();
   const logg = finns('verbose') ? (m) => console.error(`  ${m}`) : () => {};
@@ -398,12 +399,13 @@ export async function huvud(argv = process.argv.slice(2), env = process.env) {
     return { brands, kolla: true };
   }
 
-  console.error(`Kundtjänst vecka ${isoVecka(nu)} — ${brands.length} brand(s), ${dagar} dagar${torr ? ' — TORR (inget skrivs, inget postas)' : ''}${fixtur ? ` — fixtur ${fixtur}` : ''}${jobb ? ` — jobbfil (${Object.keys(jobb).join(', ')})` : ''}`);
+  console.error(`Kundtjänst vecka ${isoVecka(nu)} — ${brands.length} brand(s), ${dagarFlagga ? `${dagarFlagga} dagar` : 'periodens längd per brand'}${torr ? ' — TORR (inget skrivs, inget postas)' : ''}${fixtur ? ` — fixtur ${fixtur}` : ''}${jobb ? ` — jobbfil (${Object.keys(jobb).join(', ')})` : ''}`);
   const resultat = [];
   for (const b of brands) {
     console.error(`\n▶ ${b.brand} (${b.id})`);
     let r;
     try {
+      const dagar = dagarFlagga ?? korkonfig(b, env).trosklar.arenden_dagar ?? 30;
       r = await korBrand(b, { nu, dagar, torr, utanModell: finns('utan-modell'), fixtur, jobb, env, logg });
     } catch (e) {
       r = { brand: korkonfig(b, env), vecka: isoVecka(nu), hoppad: true, orsak: e.message };

@@ -1,63 +1,75 @@
-<title>Kundtjänstläget</title>
+<title>Support Control Room</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Instrument+Sans:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 
 <style>
-  /* Sidan läses av Axel (svenska) och av VA:n (den engelska fliken).
-     Brödtexten är Atkinson Hyperlegible — ritad för läsbarhet, inte för stil.
-     Statusen bärs alltid av emoji + ord + tal, aldrig av färg ensam. */
+  /* Arbetsverktyg, inte rapport. VA:n öppnar den varje morgon och jobbar
+     uppifrån och ner: läget → vad som ska göras → kön → tvisterna.
+     Texten i innehållet är ENGELSK (VA:n läser den). Etiketterna går att
+     växla till svenska för Axel — knappen uppe till höger.
+     Status bärs alltid av ikon + ord + tal, aldrig av färg ensam. */
   :root {
-    --ground: #F2F5F7;
+    --ground: #F1F4F7;
     --yta: #FFFFFF;
     --yta-2: #F7F9FB;
-    --ink: #161E23;
-    --ink-svag: #5A6873;
-    --linje: #D8E0E6;
-    --linje-stark: #B9C6D0;
-    --blakk: #23508A;
-    --blakk-yta: #E4ECF7;
-    --lag: #23724A;       --lag-yta: #DFF2E6;
-    --forhojd: #9A6708;   --forhojd-yta: #FBEFD2;
-    --hog: #B23327;       --hog-yta: #FADDD9;
-    --axel-yta: #FFF6DA;
-    --skugga: 0 1px 2px rgba(22, 30, 35, 0.05), 0 10px 28px -18px rgba(22, 30, 35, 0.35);
-    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --yta-3: #EDF1F5;
+    --ink: #131A21;
+    --ink-2: #47545F;
+    --ink-3: #6B7885;
+    --linje: #DCE3EA;
+    --linje-2: #C3CDD7;
+    --accent: #37479B;
+    --accent-yta: #E7EAF8;
+    --god: #1C6B45;      --god-yta: #DFF0E6;
+    --varning: #8A6205;  --varning-yta: #FBEED1;
+    --kritisk: #A32C24;  --kritisk-yta: #FADDD8;
+    --stapel: #4E62B8;
+    --stapel-svag: #C9D1EE;
+    --skugga: 0 1px 2px rgba(19, 26, 33, .05), 0 12px 28px -20px rgba(19, 26, 33, .45);
+    --display: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
     --brod: "Atkinson Hyperlegible", "Segoe UI", Verdana, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --ground: #0E1418;
-      --yta: #161E24;
-      --yta-2: #1B252C;
-      --ink: #E6ECF0;
-      --ink-svag: #93A3AE;
-      --linje: #273239;
-      --linje-stark: #3A4852;
-      --blakk: #8DB8F0;
-      --blakk-yta: #1A2C44;
-      --lag: #6CCB93;       --lag-yta: #14301F;
-      --forhojd: #E9B549;   --forhojd-yta: #3A2C0C;
-      --hog: #F08A7E;       --hog-yta: #43201B;
-      --axel-yta: #3A2F10;
-      --skugga: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 28px -18px rgba(0, 0, 0, 0.9);
+      --ground: #0C1116;
+      --yta: #141B22;
+      --yta-2: #19222A;
+      --yta-3: #202B34;
+      --ink: #E7EDF3;
+      --ink-2: #A7B4C0;
+      --ink-3: #8494A1;
+      --linje: #253039;
+      --linje-2: #35434F;
+      --accent: #93A6F2;
+      --accent-yta: #1C2545;
+      --god: #63C793;      --god-yta: #10301F;
+      --varning: #E5B948;  --varning-yta: #37290A;
+      --kritisk: #F28D80;  --kritisk-yta: #3E1B16;
+      --stapel: #7C8DE0;
+      --stapel-svag: #2A3358;
+      --skugga: 0 1px 2px rgba(0, 0, 0, .5), 0 12px 28px -20px rgba(0, 0, 0, .9);
     }
   }
   :root[data-theme="dark"] {
-    --ground: #0E1418;
-    --yta: #161E24;
-    --yta-2: #1B252C;
-    --ink: #E6ECF0;
-    --ink-svag: #93A3AE;
-    --linje: #273239;
-    --linje-stark: #3A4852;
-    --blakk: #8DB8F0;
-    --blakk-yta: #1A2C44;
-    --lag: #6CCB93;       --lag-yta: #14301F;
-    --forhojd: #E9B549;   --forhojd-yta: #3A2C0C;
-    --hog: #F08A7E;       --hog-yta: #43201B;
-    --axel-yta: #3A2F10;
-    --skugga: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 28px -18px rgba(0, 0, 0, 0.9);
+    --ground: #0C1116;
+    --yta: #141B22;
+    --yta-2: #19222A;
+    --yta-3: #202B34;
+    --ink: #E7EDF3;
+    --ink-2: #A7B4C0;
+    --ink-3: #8494A1;
+    --linje: #253039;
+    --linje-2: #35434F;
+    --accent: #93A6F2;
+    --accent-yta: #1C2545;
+    --god: #63C793;      --god-yta: #10301F;
+    --varning: #E5B948;  --varning-yta: #37290A;
+    --kritisk: #F28D80;  --kritisk-yta: #3E1B16;
+    --stapel: #7C8DE0;
+    --stapel-svag: #2A3358;
+    --skugga: 0 1px 2px rgba(0, 0, 0, .5), 0 12px 28px -20px rgba(0, 0, 0, .9);
   }
 
   * { box-sizing: border-box; }
@@ -66,247 +78,425 @@
     background: var(--ground);
     color: var(--ink);
     font-family: var(--brod);
-    font-size: 17px;
-    line-height: 1.55;
+    font-size: 16px;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
-  .sida {
-    max-width: 900px;
-    margin: 0 auto;
-    padding-inline: 20px;
-    padding-block: 28px 64px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  a { color: var(--blakk); }
-  :focus-visible { outline: 3px solid var(--blakk); outline-offset: 2px; }
+  .sida { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 24px 72px; display: flex; flex-direction: column; gap: 28px; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--display); letter-spacing: -.011em; margin: 0; text-wrap: balance; }
+  .tal { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 
   /* ---------- Huvud ---------- */
-  .huvud { display: flex; flex-direction: column; gap: 14px; }
-  .huvud h1 {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(30px, 5vw, 42px);
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin: 0;
-    text-wrap: balance;
+  .topp { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: flex-end; justify-content: space-between; }
+  .topp h1 { font-size: clamp(23px, 3.6vw, 30px); font-weight: 700; }
+  .topp .under { color: var(--ink-3); font-size: 14px; margin: 4px 0 0; }
+  .reglage { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .valj {
+    font: inherit; font-size: 14px; font-family: var(--display); font-weight: 600;
+    padding: 7px 12px; border-radius: 8px; cursor: pointer;
+    border: 1px solid var(--linje-2); background: var(--yta); color: var(--ink);
   }
-  .huvud .under { color: var(--ink-svag); margin: 0; font-size: 15px; }
-  .veckor { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  .veckor .etikett { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-svag); margin-right: 4px; }
-  .veckor button {
-    font: inherit; font-size: 15px; font-weight: 700;
-    padding: 6px 14px; border-radius: 999px; cursor: pointer;
-    border: 1px solid var(--linje-stark); background: var(--yta); color: var(--ink);
-  }
-  .veckor button[aria-pressed="true"] { background: var(--blakk); border-color: var(--blakk); color: #fff; }
-  :root[data-theme="dark"] .veckor button[aria-pressed="true"] { color: #0E1418; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .veckor button[aria-pressed="true"] { color: #0E1418; } }
+  .knappgrupp { display: inline-flex; border: 1px solid var(--linje-2); border-radius: 8px; overflow: hidden; }
+  .knappgrupp button { font: inherit; font-family: var(--display); font-size: 13px; font-weight: 600; padding: 7px 11px; cursor: pointer; background: var(--yta); color: var(--ink-2); border: 0; }
+  .knappgrupp button + button { border-left: 1px solid var(--linje-2); }
+  .knappgrupp button[aria-pressed="true"] { background: var(--accent-yta); color: var(--accent); }
 
-  /* ---------- Läget: ett kort per brand ---------- */
-  h2.sektion {
-    font-family: var(--display); font-weight: 700; font-size: 22px; margin: 0 0 12px; letter-spacing: -0.005em;
-  }
-  .kort-rad { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; }
-  .kort {
-    background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga);
-    padding: 18px 18px 14px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: inherit;
-  }
-  .kort:hover { border-color: var(--linje-stark); }
-  .kort .namn { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0; }
-  .kort .tal-rad { display: flex; align-items: baseline; gap: 12px; }
-  .kort .poang {
-    font-family: var(--display); font-weight: 800; font-size: 54px; line-height: 1; letter-spacing: -0.03em;
-    font-variant-numeric: tabular-nums;
-  }
-  .kort .av { color: var(--ink-svag); font-size: 14px; }
-  .pill {
-    display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px;
-    font-weight: 700; font-size: 14px; white-space: nowrap;
-  }
-  .pill.lag { background: var(--lag-yta); color: var(--lag); }
-  .pill.forhojd { background: var(--forhojd-yta); color: var(--forhojd); }
-  .pill.hog { background: var(--hog-yta); color: var(--hog); }
-  .pill.okand { background: var(--yta-2); color: var(--ink-svag); }
-  .kort dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 0; font-size: 15px; }
-  .kort dt { color: var(--ink-svag); }
-  .kort dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
-  .kort dd.text { font-weight: 400; text-align: right; }
-  .kort svg { width: 100%; height: 54px; display: block; }
-  .kort .kurva-text { font-size: 12px; color: var(--ink-svag); }
-  .kort .kurva-text.saknas { font-style: italic; }
-  .tomt { background: var(--yta); border: 1px dashed var(--linje-stark); border-radius: 14px; padding: 22px; color: var(--ink-svag); }
+  /* ---------- Läget ---------- */
+  .laget { display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: 14px; align-items: stretch; }
+  @media (max-width: 760px) { .laget { grid-template-columns: 1fr; } }
+  .kort { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga); }
+  .risk { padding: 20px; display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden; }
+  .risk::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--kritisk); }
+  .risk.god::before { background: var(--god); } .risk.varning::before { background: var(--varning); }
+  .risk .etikett { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); }
+  .risk .siffra { font-family: var(--display); font-weight: 700; font-size: 64px; line-height: .95; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .risk .av { font-size: 14px; color: var(--ink-3); font-family: var(--brod); }
+  .matare { height: 8px; border-radius: 99px; background: var(--yta-3); overflow: hidden; }
+  .matare i { display: block; height: 100%; border-radius: 99px; background: var(--kritisk); }
+  .risk.god .matare i { background: var(--god); } .risk.varning .matare i { background: var(--varning); }
+  .risk .band { font-size: 13px; color: var(--ink-3); }
 
-  /* ---------- Rapporterna ---------- */
-  .brand { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga); overflow: hidden; }
-  .brand > .topp {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
-    padding: 16px 20px; border-bottom: 1px solid var(--linje); background: var(--yta-2);
-  }
-  .brand h2 { font-family: var(--display); font-weight: 700; font-size: 22px; margin: 0; }
-  .flikar { display: inline-flex; border: 1px solid var(--linje-stark); border-radius: 10px; overflow: hidden; }
-  .flikar button {
-    font: inherit; font-size: 14px; font-weight: 700; padding: 6px 12px; cursor: pointer;
-    background: var(--yta); color: var(--ink); border: 0;
-  }
-  .flikar button + button { border-left: 1px solid var(--linje-stark); }
-  .flikar button[aria-selected="true"] { background: var(--blakk-yta); color: var(--blakk); }
-  .rapport { padding: 8px 20px 22px; }
-  .rapport[hidden] { display: none; }
+  .tal-rad { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 12px; }
+  .tal-kort { background: var(--yta); border: 1px solid var(--linje); border-radius: 12px; padding: 13px 15px; display: flex; flex-direction: column; gap: 3px; }
+  .tal-kort .namn { font-size: 12.5px; color: var(--ink-3); font-family: var(--display); font-weight: 600; letter-spacing: .02em; }
+  .tal-kort .varde { font-family: var(--display); font-weight: 700; font-size: 27px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+  .tal-kort .fot { font-size: 12.5px; color: var(--ink-3); }
+  .delta { font-family: var(--mono); font-size: 12px; font-weight: 500; }
+  .delta.upp { color: var(--kritisk); } .delta.ner { color: var(--god); } .delta.lika { color: var(--ink-3); }
 
-  /* Markdown-innehållet från kundtjanst/korningar/ */
-  .md h1 { font-family: var(--display); font-size: 20px; font-weight: 700; margin: 16px 0 4px; }
-  .md h2 { font-family: var(--display); font-size: 17px; font-weight: 700; margin: 22px 0 8px; letter-spacing: 0.01em; }
-  .md p { margin: 8px 0; max-width: 68ch; }
-  .md ul, .md ol { margin: 6px 0; padding-left: 24px; max-width: 70ch; }
-  .md li { margin: 3px 0; }
-  .md li ul { margin: 2px 0; }
-  .md code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.92em; background: var(--yta-2); padding: 1px 5px; border-radius: 5px; }
-  .md .tabell { overflow-x: auto; margin: 8px 0 12px; }
-  .md table { border-collapse: collapse; font-size: 15px; min-width: 100%; }
-  .md th, .md td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--linje); vertical-align: top; }
-  .md th { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-svag); font-weight: 700; }
-  .md td { font-variant-numeric: tabular-nums; }
-  .md section[data-sektion="axel"] {
-    background: var(--axel-yta); border-radius: 12px; padding: 4px 16px 10px; margin-top: 18px;
-  }
-  .md section[data-sektion="axel"] h2::before { content: "👉 "; }
-  .md section[data-sektion="va"] ol li, .md section[data-sektion="action"] ol li { font-weight: 700; }
-  .md section[data-sektion="varning"] { border-left: 4px solid var(--hog); padding-left: 12px; }
+  /* ---------- Sektioner ---------- */
+  section > h2 { font-size: 19px; font-weight: 700; margin-bottom: 3px; }
+  section > .ingress { color: var(--ink-3); font-size: 13.5px; margin: 0 0 14px; max-width: 70ch; }
 
-  .ranking .md .tabell { margin-top: 0; }
-  .sidfot { color: var(--ink-svag); font-size: 14px; max-width: 70ch; }
-  .sidfot p { margin: 4px 0; }
+  /* ---------- Åtgärdsplanen ---------- */
+  .hink + .hink { margin-top: 18px; }
+  .hink > h3 { font-size: 14px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+  .hink > h3 .antal { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--ink-3); background: var(--yta-3); border-radius: 99px; padding: 2px 8px; letter-spacing: 0; }
+  .atgard { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga); padding: 17px 19px; display: flex; flex-direction: column; gap: 11px; }
+  .atgard + .atgard { margin-top: 11px; }
+  .atgard.nu { border-left: 4px solid var(--kritisk); }
+  .atgard.veckan { border-left: 4px solid var(--varning); }
+  .atgard.process { border-left: 4px solid var(--accent); }
+  .atgard h4 { font-family: var(--display); font-size: 17px; font-weight: 700; margin: 0; line-height: 1.3; }
+  .atgard .varfor { margin: 0; font-size: 14.5px; color: var(--ink-2); max-width: 78ch; }
+  .atgard ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 5px; font-size: 14.5px; max-width: 78ch; }
+  .atgard .effekt { margin: 0; font-size: 13.5px; color: var(--ink-2); background: var(--yta-2); border-left: 3px solid var(--linje-2); padding: 8px 12px; border-radius: 0 8px 8px 0; max-width: 78ch; }
+  .brickor { display: flex; flex-wrap: wrap; gap: 6px; }
+  .bricka { font-family: var(--mono); font-size: 11.5px; padding: 2px 8px; border-radius: 6px; background: var(--yta-3); color: var(--ink-2); border: 1px solid var(--linje); }
+  .bricka.agare { background: var(--accent-yta); color: var(--accent); border-color: transparent; font-family: var(--display); font-weight: 600; letter-spacing: .02em; }
 
-  @media (max-width: 480px) {
-    body { font-size: 16px; }
-    .kort .poang { font-size: 46px; }
-    .rapport, .brand > .topp { padding-inline: 14px; }
+  /* ---------- Tabeller ---------- */
+  .rullbar { overflow-x: auto; border: 1px solid var(--linje); border-radius: 14px; background: var(--yta); box-shadow: var(--skugga); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 9px 13px; border-bottom: 1px solid var(--linje); vertical-align: top; }
+  thead th { font-family: var(--display); font-size: 11.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); background: var(--yta-2); position: sticky; top: 0; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:hover { background: var(--yta-2); }
+  td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td .amne { display: block; color: var(--ink-3); font-size: 12.5px; margin-top: 2px; max-width: 44ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .prick { display: inline-block; width: 9px; height: 9px; border-radius: 99px; margin-right: 7px; vertical-align: baseline; }
+  .prick.h { background: var(--kritisk); } .prick.m { background: var(--varning); } .prick.l { background: var(--stapel); }
+  .filter { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 11px; }
+  .filter button { font: inherit; font-family: var(--display); font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 99px; cursor: pointer; border: 1px solid var(--linje-2); background: var(--yta); color: var(--ink-2); }
+  .filter button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--yta); }
+  :root[data-theme="dark"] .filter button[aria-pressed="true"], :root:not([data-theme="light"]) .filter button[aria-pressed="true"] { color: #0C1116; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .filter button[aria-pressed="true"] { color: #fff; } }
+  .stampel { font-family: var(--display); font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 6px; white-space: nowrap; display: inline-block; }
+  .stampel.rod { background: var(--kritisk-yta); color: var(--kritisk); }
+  .stampel.gul { background: var(--varning-yta); color: var(--varning); }
+  .stampel.gron { background: var(--god-yta); color: var(--god); }
+  .stampel.grå { background: var(--yta-3); color: var(--ink-3); }
+
+  /* ---------- Kategoristaplar ---------- */
+  .kat { display: grid; grid-template-columns: minmax(140px, 210px) 1fr auto; gap: 10px 14px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--linje); }
+  .kat:last-child { border-bottom: 0; }
+  .kat .namn { font-size: 14.5px; display: flex; align-items: center; gap: 7px; }
+  .kat .spar { background: var(--stapel-svag); border-radius: 4px; height: 13px; position: relative; }
+  .kat .spar i { position: absolute; inset: 0 auto 0 0; background: var(--stapel); border-radius: 4px; }
+  .kat .hoger { display: flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+  .kat .obes { color: var(--kritisk); }
+  .katkort { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga); padding: 6px 18px 10px; }
+
+  /* ---------- Kurvan ---------- */
+  .kurva { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga); padding: 18px; }
+  .kurva svg { width: 100%; height: 190px; display: block; overflow: visible; }
+  .kurva .tom { color: var(--ink-3); font-size: 14px; margin: 0; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); margin-top: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 13px; height: 3px; border-radius: 2px; display: inline-block; }
+
+  /* ---------- Källa ---------- */
+  .kallor { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 10px; }
+  .kallor div { background: var(--yta); border: 1px solid var(--linje); border-radius: 11px; padding: 11px 13px; }
+  .kallor .v { font-family: var(--display); font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums; }
+  .kallor .n { font-size: 12.5px; color: var(--ink-3); }
+  .varning-ruta { background: var(--varning-yta); border: 1px solid transparent; border-left: 4px solid var(--varning); border-radius: 0 11px 11px 0; padding: 11px 15px; font-size: 14px; color: var(--ink); }
+  .varning-ruta ul { margin: 5px 0 0; padding-left: 20px; }
+  .tomt { background: var(--yta); border: 1px dashed var(--linje-2); border-radius: 14px; padding: 22px; color: var(--ink-3); font-size: 14.5px; }
+  footer.fot { color: var(--ink-3); font-size: 13px; display: flex; flex-direction: column; gap: 4px; max-width: 80ch; }
+
+  @media (max-width: 520px) {
+    body { font-size: 15px; }
+    .risk .siffra { font-size: 52px; }
+    .kat { grid-template-columns: 1fr auto; }
+    .kat .spar { grid-column: 1 / -1; }
   }
   @media (prefers-reduced-motion: no-preference) {
-    .kort { transition: border-color 120ms ease; }
+    .matare i, .kat .spar i { transition: width 260ms ease; }
   }
 </style>
 
 <div class="sida">
-  <header class="huvud">
-    <h1>Kundtjänstläget</h1>
-    <p class="under" id="under"></p>
-    <div class="veckor" id="veckor" role="group" aria-label="Välj vecka"></div>
+  <header class="topp">
+    <div>
+      <h1 id="rubrik">Support Control Room</h1>
+      <p class="under" id="under"></p>
+    </div>
+    <div class="reglage" id="reglage"></div>
   </header>
 
-  <section aria-labelledby="laget-rubrik">
-    <h2 class="sektion" id="laget-rubrik">Läget</h2>
-    <div class="kort-rad" id="kort"></div>
+  <section class="laget" aria-labelledby="rubrik">
+    <div class="kort risk" id="risk"></div>
+    <div class="tal-rad" id="nyckeltal"></div>
   </section>
 
-  <section class="ranking" id="ranking" hidden>
-    <h2 class="sektion">Ranking alla brands</h2>
-    <div class="md" id="ranking-md"></div>
+  <div id="varningar"></div>
+
+  <section id="plan-sektion">
+    <h2 data-t="plan">What to do</h2>
+    <p class="ingress" data-t="planIngress">Worked top to bottom. Every item lists the measured number it comes from.</p>
+    <div id="plan"></div>
   </section>
 
-  <section aria-label="Rapporter per brand" id="rapporter" style="display:flex;flex-direction:column;gap:18px"></section>
+  <section id="ko-sektion">
+    <h2 data-t="ko">Work queue</h2>
+    <p class="ingress" data-t="koIngress">Every open ticket, most dangerous and longest waiting first. Search the order number in Shopify.</p>
+    <div class="filter" id="ko-filter"></div>
+    <div class="rullbar"><table id="ko"></table></div>
+  </section>
 
-  <footer class="sidfot">
-    <p>Siffrorna kommer ur måndagsrutinen <code>/kundtjanst</code> — den läser supportmejlen och Shopify, aldrig tvärtom. Sidan räknar inget om.</p>
-    <p>Risk 0–100 är summan av signaler med tak: 🟢 Låg under 25, 🟡 Förhöjd 25–50, 🔴 Hög över 50. Kundadresser är maskerade.</p>
-  </footer>
+  <section id="tvist-sektion">
+    <h2 data-t="tvister">Disputes and bank inquiries</h2>
+    <p class="ingress" data-t="tvistIngress">Shopify admin → Orders → Disputes. An unanswered dispute is lost automatically.</p>
+    <div class="rullbar"><table id="tvister"></table></div>
+  </section>
+
+  <section id="kat-sektion">
+    <h2 data-t="kategorier">What customers write about</h2>
+    <p class="ingress" data-t="katIngress">Volume per category, and whether the VA has an SOP for it in Notion.</p>
+    <div class="katkort" id="kategorier"></div>
+  </section>
+
+  <section id="kurva-sektion">
+    <h2 data-t="trend">Week by week</h2>
+    <p class="ingress" data-t="trendIngress">Risk score and unanswered tickets. Three weeks are needed before "recurring" can be measured.</p>
+    <div class="kurva" id="kurva"></div>
+  </section>
+
+  <section id="kalla-sektion">
+    <h2 data-t="kalla">What was read</h2>
+    <p class="ingress" data-t="kallaIngress">Every email in the support mailbox for the period, and what was filtered out before counting.</p>
+    <div class="kallor" id="kallor"></div>
+  </section>
+
+  <footer class="fot" id="fot"></footer>
 </div>
 
 <script>
   // Datan bakas in av kundtjanst/rapportsida.mjs — sidan är självbärande.
-  const DATA = {"uppdaterad":"2026-09-13T07:20:14.299Z","veckor":["2026-W37"],"brands":[{"id":"baverbutiken","namn":"Bäverbutiken","trosklar":{"obesvarad_timmar":48},"historik":[{"vecka":"2026-W37","datum":"2026-09-12","dagar":7,"antalArenden":45,"obesvarade":44,"larmObesvarade":37,"medianSvarstidTimmar":82,"riskPoang":100,"tvister":null,"ordrar":0,"perKategori":{"var_ar_ordern":17,"ej_levererad":10,"ovrigt":6,"produktfraga":3,"chargeback_hot":2,"okand_debitering":2,"fel_vara":2,"skadad_defekt":2,"aterbetalning":1},"topp":["var_ar_ordern","ej_levererad","ovrigt"]}],"veckor":{"2026-W37":{"sv":"<h1>Kundtjänst Bäverbutiken — vecka 2026-W37<\/h1>\n<p>Period: <strong>2026-09-05 – 2026-09-12<\/strong> · körd 2026-09-12 · källa: ku***@baverbutiken.se via webbmejlen (INBOX: 263, INBOX.Sent: 9)<\/p>\n<section data-sektion=\"varning\">\n<h2>⚠️ Kunde inte läsas<\/h2>\n<ul><li>Shopify inte kopplat — ordrar och tvister okända (saknar SHOPIFY_ADMIN_TOKEN_BAVERBUTIKEN (eller SHOPIFY_CLIENT_ID_BAVERBUTIKEN + SHOPIFY_CLIENT_SECRET_BAVERBUTIKEN)).<\/li><\/ul>\n<\/section>\n<section data-sektion=\"allman\">\n<h2>Siffrorna<\/h2>\n<div class=\"tabell\"><table><thead><tr><th>Vad<\/th><th>Denna vecka<\/th><th>Förra<\/th><\/tr><\/thead><tbody><tr><td>Ärenden (spam borträknat)<\/td><td>45<\/td><td>—<\/td><\/tr><tr><td>Obesvarade just nu<\/td><td>44<\/td><td>—<\/td><\/tr><tr><td>Obesvarade &gt; 48 h<\/td><td>37<\/td><td>—<\/td><\/tr><tr><td>Median första svarstid<\/td><td>82 h<\/td><td>—<\/td><\/tr><tr><td>Ordrar (30 dagar)<\/td><td>0<\/td><td><\/td><\/tr><tr><td>Tvister i perioden<\/td><td>— (ej läsbart)<\/td><td><\/td><\/tr><tr><td>Tvistgrad<\/td><td>—<\/td><td><\/td><\/tr><tr><td><strong>Chargeback-risk<\/strong><\/td><td><strong>🔴 Hög (100/100)<\/strong><\/td><td>—<\/td><\/tr><\/tbody><\/table><\/div>\n<\/section>\n<section data-sektion=\"allman\">\n<h2>Toppärendena (det som återkommer)<\/h2>\n<div class=\"tabell\"><table><thead><tr><th>#<\/th><th>Kategori<\/th><th>Antal<\/th><th>Obesvarade<\/th><th>Återkommande?<\/th><\/tr><\/thead><tbody><tr><td>1<\/td><td>Var är min order (WISMO)<\/td><td>17<\/td><td>17<\/td><td><\/td><\/tr><tr><td>2<\/td><td>Aldrig levererad<\/td><td>10<\/td><td>10<\/td><td><\/td><\/tr><tr><td>3<\/td><td>Övrigt<\/td><td>6<\/td><td>5<\/td><td><\/td><\/tr><tr><td>4<\/td><td>Produktfråga (före köp)<\/td><td>3<\/td><td>3<\/td><td><\/td><\/tr><tr><td>5<\/td><td>Hot om bank/tvist<\/td><td>2<\/td><td>2<\/td><td><\/td><\/tr><tr><td>6<\/td><td>Okänd/dubbel debitering<\/td><td>2<\/td><td>2<\/td><td><\/td><\/tr><tr><td>7<\/td><td>Fel vara / inte som beskrivet<\/td><td>2<\/td><td>2<\/td><td><\/td><\/tr><tr><td>8<\/td><td>Skadad / defekt<\/td><td>2<\/td><td>2<\/td><td><\/td><\/tr><\/tbody><\/table><\/div>\n<ul><li><strong>Var är min order (WISMO):<\/strong> Customers ask where their paid order is, since it hasn't arrived or been confirmed despite tracking showing delivery or long wait times.<\/li><li><strong>Aldrig levererad:<\/strong> Customers report never receiving their paid orders (like motor covers) despite waiting weeks and getting no response from support.<\/li><li><strong>Övrigt:<\/strong> Customers report wrong delivery addresses needing correction, or confirm they received their order and thank support.<\/li><li><strong>Produktfråga (före köp):<\/strong> Customers ask about sizing, product durability/material quality, or how customs rules apply to items shipped from China.<\/li><li><strong>Hot om bank/tvist:<\/strong> Customers threaten to escalate unresolved delivery issues to a dispute resolution board (ARN) after weeks without their order.<\/li><\/ul>\n<\/section>\n<section data-sektion=\"allman\">\n<h2>Chargeback-varningar<\/h2>\n<ul><li><strong>Kunder som hotar med bank/tvist:<\/strong> 2 (24 p)<ul><li>ma***@gmail.com (#5054)<\/li><li>ch***@gmail.com<\/li><\/ul><\/li><li><strong>Okänd eller dubbel debitering:<\/strong> 2 (20 p)<ul><li>a.***@telia.com (#6076)<\/li><li>jo***@hotmail.com<\/li><\/ul><\/li><li><strong>Säger sig aldrig fått varan:<\/strong> 10 (24 p)<ul><li>pe***@hotmail.com<\/li><li>jo***@gmail.com (#5196)<\/li><li>mr***@gmail.com<\/li><li>ma***@hotmail.com<\/li><li>ch***@wpab.eu (#5741)<\/li><li>… +5 till<\/li><\/ul><\/li><li><strong>Fel vara / inte som beskrivet:<\/strong> 2 (12 p)<ul><li>ja***@gmail.com (#5263)<\/li><li>ro***@stenbecks.se (#5763)<\/li><\/ul><\/li><li><strong>Obesvarade ärenden &gt; 48 h:<\/strong> 37 (25 p)<ul><li>pe***@hotmail.com — Never delivered, 147h<\/li><li>jo***@gmail.com (#5196) — Never delivered, 115h<\/li><li>mr***@gmail.com — Never delivered, 111h<\/li><li>ma***@hotmail.com — Never delivered, 108h<\/li><li>ch***@wpab.eu (#5741) — Never delivered, 101h<\/li><li>… +32 till<\/li><\/ul><\/li><li><strong>Obesvarade återbetalnings-/avbeställningskrav:<\/strong> 1 (3 p)<ul><li>ro***@gmail.com (#5241)<\/li><\/ul><\/li><li><strong>Median första svarstid (timmar):<\/strong> 82 (20 p)<\/li><\/ul>\n<\/section>\n<section data-sektion=\"va\">\n<h2>Det här ska VA:n göra, i ordning (på engelska — det är hennes lista)<\/h2>\n<ol><li>Reply to every unanswered ticket today, chargeback-prone ones first (never delivered, unknown charge, threats).<\/li><li>Reply within 24h and offer a refund or reship BEFORE the bank is involved — a dispute costs the fee plus the order.<\/li><li>Send tracking or reship. &quot;Item not received&quot; is the most common chargeback reason.<\/li><li>Check the order in Shopify the same day; refund duplicates immediately. This is the #1 &quot;unauthorized&quot; chargeback reason.<\/li><li>Get first response under 24h. Set a daily fixed inbox time for the VA (morning Manila time = before Swedish customers wake up).<\/li><li>Offer return + refund or partial refund fast. &quot;Not as described&quot; disputes are almost always lost.<\/li><li>Confirm the refund or cancellation in writing today; the money must be back within 14 days.<\/li><\/ol>\n<\/section>\n<section data-sektion=\"axel\">\n<h2>Det här är Axels<\/h2>\n<ol><li>Återkommande-kolumnen fylls först efter tre veckors körningar (1 hittills). Låt rutinen gå.<\/li><\/ol>\n<\/section>","en":"<section data-sektion=\"allman\">\n<h2>📬 Bäverbutiken customer service — week 2026-W37<\/h2>\n<p>Period 2026-09-05 – 2026-09-12 · sources: ku***@baverbutiken.se via webbmejlen (INBOX: 263, INBOX.Sent: 9) ⚠️ Could not read: Shopify inte kopplat — ordrar och tvister okända (saknar SHOPIFY_ADMIN_TOKEN_BAVERBUTIKEN (eller SHOPIFY_CLIENT_ID_BAVERBUTIKEN + SHOPIFY_CLIENT_SECRET_BAVERBUTIKEN)).<\/p>\n<\/section>\n<section data-sektion=\"allman\">\n<h2>Numbers<\/h2>\n<ul><li>Tickets: 45 · unanswered now: 44 · unanswered &gt; 48h: 37<\/li><li>Median first reply: 82h · orders (30d): 0 · disputes: n/a · dispute rate: n/a<\/li><li><strong>Chargeback risk: 🔴 High (100/100)<\/strong><\/li><\/ul>\n<\/section>\n<section data-sektion=\"allman\">\n<h2>Top tickets (recurring problems)<\/h2>\n<ol><li>Where is my order (WISMO): 17 (17 unanswered) Customers ask where their paid order is, since it hasn't arrived or been confirmed despite tracking showing delivery or long wait times.<\/li><li>Never delivered: 10 (10 unanswered) Customers report never receiving their paid orders (like motor covers) despite waiting weeks and getting no response from support.<\/li><li>Other: 6 (5 unanswered) Customers report wrong delivery addresses needing correction, or confirm they received their order and thank support.<\/li><li>Product question (pre-sale): 3 (3 unanswered) Customers ask about sizing, product durability/material quality, or how customs rules apply to items shipped from China.<\/li><li>Threatens bank / dispute: 2 (2 unanswered) Customers threaten to escalate unresolved delivery issues to a dispute resolution board (ARN) after weeks without their order.<\/li><li>Unknown or double charge: 2 (2 unanswered)<\/li><li>Wrong item / not as described: 2 (2 unanswered)<\/li><li>Damaged / defective: 2 (2 unanswered)<\/li><\/ol>\n<\/section>\n<section data-sektion=\"varning\">\n<h2>⚠️ Chargeback warning signs<\/h2>\n<ul><li>Customers threatening bank / dispute: 2 (24 pts)<ul><li>ma***@gmail.com (#5054)<\/li><li>ch***@gmail.com<\/li><\/ul><\/li><li>Unknown or double charge: 2 (20 pts)<ul><li>a.***@telia.com (#6076)<\/li><li>jo***@hotmail.com<\/li><\/ul><\/li><li>Says item never arrived: 10 (24 pts)<ul><li>pe***@hotmail.com<\/li><li>jo***@gmail.com (#5196)<\/li><li>mr***@gmail.com<\/li><li>ma***@hotmail.com<\/li><li>ch***@wpab.eu (#5741)<\/li><li>+5 more (see full report)<\/li><\/ul><\/li><li>Wrong item / not as described: 2 (12 pts)<ul><li>ja***@gmail.com (#5263)<\/li><li>ro***@stenbecks.se (#5763)<\/li><\/ul><\/li><li>Unanswered tickets &gt; 48h: 37 (25 pts)<ul><li>pe***@hotmail.com — Never delivered, 147h<\/li><li>jo***@gmail.com (#5196) — Never delivered, 115h<\/li><li>mr***@gmail.com — Never delivered, 111h<\/li><li>ma***@hotmail.com — Never delivered, 108h<\/li><li>ch***@wpab.eu (#5741) — Never delivered, 101h<\/li><li>+32 more (see full report)<\/li><\/ul><\/li><li>Unanswered refund / cancellation requests: 1 (3 pts)<ul><li>ro***@gmail.com (#5241)<\/li><\/ul><\/li><li>Median first response time (hours): 82 (20 pts)<\/li><\/ul>\n<\/section>\n<section data-sektion=\"action\">\n<h2>🔴 ACTION NEEDED<\/h2>\n<ol><li>Reply to every unanswered ticket today, chargeback-prone ones first (never delivered, unknown charge, threats).<\/li><li>Reply within 24h and offer a refund or reship BEFORE the bank is involved — a dispute costs the fee plus the order.<\/li><li>Send tracking or reship. &quot;Item not received&quot; is the most common chargeback reason.<\/li><li>Check the order in Shopify the same day; refund duplicates immediately. This is the #1 &quot;unauthorized&quot; chargeback reason.<\/li><li>Get first response under 24h. Set a daily fixed inbox time for the VA (morning Manila time = before Swedish customers wake up).<\/li><li>Offer return + refund or partial refund fast. &quot;Not as described&quot; disputes are almost always lost.<\/li><li>Confirm the refund or cancellation in writing today; the money must be back within 14 days.<\/li><\/ol>\n<\/section>"}}}],"ranking":{"2026-W37":"<h1>Chargeback-ranking alla brands — vecka 2026-W37<\/h1>\n<p>Högst risk först. Poängen är summan av signalerna (0–100); nivån 🟢 &lt; 25, 🟡 25–50, 🔴 &gt; 50.<\/p>\n<div class=\"tabell\"><table><thead><tr><th>Plats<\/th><th>Brand<\/th><th>Risk<\/th><th>Ärenden<\/th><th>Obesvarade &gt; gräns<\/th><th>Tvister<\/th><th>Tvistgrad<\/th><th>Toppärende<\/th><\/tr><\/thead><tbody><tr><td>1<\/td><td>Bäverbutiken<\/td><td>🔴 Hög (100/100)<\/td><td>45<\/td><td>37<\/td><td>—<\/td><td>—<\/td><td>Var är min order (WISMO) (17)<\/td><\/tr><\/tbody><\/table><\/div>"},"kategorier":{"chargeback_hot":{"sv":"Hot om bank/tvist","en":"Threatens bank / dispute"},"okand_debitering":{"sv":"Okänd/dubbel debitering","en":"Unknown or double charge"},"ej_levererad":{"sv":"Aldrig levererad","en":"Never delivered"},"fel_vara":{"sv":"Fel vara / inte som beskrivet","en":"Wrong item / not as described"},"var_ar_ordern":{"sv":"Var är min order (WISMO)","en":"Where is my order (WISMO)"},"skadad_defekt":{"sv":"Skadad / defekt","en":"Damaged / defective"},"aterbetalning":{"sv":"Vill ha pengar tillbaka","en":"Wants a refund"},"avbestallning":{"sv":"Avbeställning","en":"Cancellation"},"retur_angerratt":{"sv":"Retur / ångerrätt","en":"Return / right of withdrawal"},"faktura_klarna":{"sv":"Faktura / Klarna","en":"Invoice / Klarna"},"produktfraga":{"sv":"Produktfråga (före köp)","en":"Product question (pre-sale)"},"rabatt_kod":{"sv":"Rabattkod / erbjudande","en":"Discount code / offer"},"spam":{"sv":"Spam / marknadsföring","en":"Spam / marketing"},"ovrigt":{"sv":"Övrigt","en":"Other"}}};
+  const DATA = {"version":2,"uppdaterad":"2026-09-13T09:18:45.305Z","brands":[{"id":"demobutiken","namn":"Demobutiken","vecka":"2026-W38","kord":"2026-09-14T12:00:00.000Z","period":{"fran":"2026-08-15","till":"2026-09-14","dagar":30},"kallor":["fixtur demobutiken (13 in, 4 ut)","ordrar.json (12)"],"varningar":[],"trosklar":{"obesvaradTimmar":48,"ordrarDagar":30,"tvistgradGul":0.5,"tvistgradRod":0.9},"kallflode":{"mejl":17,"arenden":9,"spam":0,"autosvar":1,"system":1,"listmejl":1,"utanAvsandare":0},"nyckeltal":{"risk":100,"riskNiva":"hog","riskNivaEn":"High","arenden":9,"obesvarade":6,"larmObesvarade":4,"medianSvarstidTimmar":3.75,"besvaradeMedTid":4,"ordrar":12,"chargebacks":1,"forfragningar":0,"tvistgrad":8.33,"pengarIRisk":899,"pengarValuta":"SEK","oppnaTvister":1,"forra":null},"kategorier":[{"id":"ej_levererad","en":"Never delivered","vikt":3,"antal":2,"obesvarade":2,"andel":22,"forra":null,"sop":"missing","sopTitel":null,"aterkommande":null,"mening":null},{"id":"chargeback_hot","en":"Threatens bank / dispute","vikt":3,"antal":1,"obesvarade":1,"andel":11,"forra":null,"sop":"missing","sopTitel":null,"aterkommande":null,"mening":null},{"id":"fel_vara","en":"Wrong item / not as described","vikt":3,"antal":1,"obesvarade":1,"andel":11,"forra":null,"sop":"missing","sopTitel":null,"aterkommande":null,"mening":null},{"id":"okand_debitering","en":"Unknown or double charge","vikt":3,"antal":1,"obesvarade":1,"andel":11,"forra":null,"sop":"missing","sopTitel":null,"aterkommande":null,"mening":null},{"id":"var_ar_ordern","en":"Where is my order (WISMO)","vikt":2,"antal":1,"obesvarade":0,"andel":11,"forra":null,"sop":"covered","sopTitel":"SOP – Where is my order (tracking reply)","aterkommande":null,"mening":null},{"id":"skadad_defekt","en":"Damaged / defective","vikt":2,"antal":1,"obesvarade":0,"andel":11,"forra":null,"sop":"unknown","sopTitel":null,"aterkommande":null,"mening":null},{"id":"retur_angerratt","en":"Return / right of withdrawal","vikt":1,"antal":1,"obesvarade":0,"andel":11,"forra":null,"sop":"unknown","sopTitel":null,"aterkommande":null,"mening":null},{"id":"produktfraga","en":"Product question (pre-sale)","vikt":0,"antal":1,"obesvarade":1,"andel":11,"forra":null,"sop":"unknown","sopTitel":null,"aterkommande":null,"mening":null}],"arenden":[{"kategori":"chargeback_hot","kategoriEn":"Threatens bank / dispute","vikt":3,"kund":"ja***@outlook.com","ordernummer":["1031"],"amne":"Order 1031 - third time writing","utdrag":"This is the third time I write to you and no one answers. I paid for order 1031 on August 25 and nothing has been shipped. If I do not hear back within 48 hours","sprak":"en","besvarad":false,"timmarObesvarad":101,"larm":true,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-10","senaste":"2026-09-10","eskalering":2},{"kategori":"ej_levererad","kategoriEn":"Never delivered","vikt":3,"kund":"ol***@online.no","ordernummer":["1038"],"amne":"Pakken har ikke kommet","utdrag":"Hei, Jeg bestilte for tre uker siden (ordre 1038) og pakken har fortsatt ikke kommet. Sporingen sier levert men jeg har ikke mottatt noe. Hva skjer? Ola","sprak":"no","besvarad":false,"timmarObesvarad":139,"larm":true,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-08","senaste":"2026-09-08","eskalering":0},{"kategori":"fel_vara","kategoriEn":"Wrong item / not as described","vikt":3,"kund":"er***@gmail.com","ordernummer":["1044"],"amne":"Fick fel storlek","utdrag":"Hej, jag fick fel storlek i paketet (order #1044). Beställde L men fick M. Kan ni skicka rätt?","sprak":"sv","besvarad":false,"timmarObesvarad":98,"larm":true,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-10","senaste":"2026-09-10","eskalering":0},{"kategori":"ej_levererad","kategoriEn":"Never delivered","vikt":3,"kund":"an***@gmail.com","ordernummer":["1042"],"amne":"Var är min order #1042?","utdrag":"Tack för svaret, men spårningen har inte rört sig på tre dagar. Fortfarande inget paket.","sprak":"sv","besvarad":false,"timmarObesvarad":56,"larm":true,"svarstidTimmar":3.8,"antalInkommande":2,"forsta":"2026-09-09","senaste":"2026-09-12","eskalering":0},{"kategori":"okand_debitering","kategoriEn":"Unknown or double charge","vikt":3,"kund":"ka***@telia.com","ordernummer":["1050"],"amne":"Ni har dragit pengar två gånger","utdrag":"Hej, jag ser på mitt kontoutdrag att ni dragit 599 kr två gånger för order 1050. Vill ha den ena tillbaka.","sprak":"sv","besvarad":false,"timmarObesvarad":27,"larm":false,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-13","senaste":"2026-09-13","eskalering":0},{"kategori":"var_ar_ordern","kategoriEn":"Where is my order (WISMO)","vikt":2,"kund":"sa***@yahoo.co.uk","ordernummer":["1047"],"amne":"Where is my order 1047","utdrag":"Hi, could you send me the tracking for order 1047? Thanks!","sprak":"en","besvarad":true,"timmarObesvarad":0,"larm":false,"svarstidTimmar":0.7,"antalInkommande":1,"forsta":"2026-09-11","senaste":"2026-09-11","eskalering":0},{"kategori":"skadad_defekt","kategoriEn":"Damaged / defective","vikt":2,"kund":"ma***@gmail.com","ordernummer":["1045"],"amne":"Produkten kom trasig","utdrag":"Hej, Produkten kom trasig – locket är sprucket (order #1045). Vad gör vi nu? Maria","sprak":"sv","besvarad":true,"timmarObesvarad":0,"larm":false,"svarstidTimmar":13.5,"antalInkommande":1,"forsta":"2026-09-11","senaste":"2026-09-11","eskalering":0},{"kategori":"retur_angerratt","kategoriEn":"Return / right of withdrawal","vikt":1,"kund":"bo***@hotmail.com","ordernummer":["1049"],"amne":"Vill returnera – ångerrätt","utdrag":"Hej, Jag vill använda min ångerrätt och returnera varan (order #1049). Vart skickar jag den? Hälsningar Börje","sprak":"sv","besvarad":true,"timmarObesvarad":0,"larm":false,"svarstidTimmar":3.7,"antalInkommande":1,"forsta":"2026-09-12","senaste":"2026-09-12","eskalering":0},{"kategori":"produktfraga","kategoriEn":"Product question (pre-sale)","vikt":0,"kund":"li***@icloud.com","ordernummer":[],"amne":"Passar den till 60 cm?","utdrag":"Hej! Passar den till en 60 cm bred modell? Funderar på att beställa.","sprak":"okänt","besvarad":false,"timmarObesvarad":42,"larm":false,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-12","senaste":"2026-09-12","eskalering":0}],"tvister":[{"typ":"chargeback","orsak":"product not received","status":"needs response","oppen":true,"belopp":899,"valuta":"SEK","order":"#1031","initierad":"2026-09-10","deadline":"2026-09-20"}],"signaler":[{"id":"tvister","en":"Chargebacks (last 30 days)","varde":1,"poang":45,"detaljer":["#1031: chargeback · product_not_received · needs_response · evidence due 2026-09-20"]},{"id":"hot","en":"Customers threatening bank / dispute","varde":1,"poang":12,"detaljer":["ja***@outlook.com (#1031)"]},{"id":"okand_debitering","en":"Unknown or double charge","varde":1,"poang":10,"detaljer":["ka***@telia.com (#1050)"]},{"id":"ej_levererad","en":"Says item never arrived","varde":2,"poang":16,"detaljer":["ol***@online.no (#1038)","an***@gmail.com (#1042)"]},{"id":"fel_vara","en":"Wrong item / not as described","varde":1,"poang":6,"detaljer":["er***@gmail.com (#1044)"]},{"id":"obesvarade","en":"Unanswered tickets > 48h","varde":4,"poang":25,"detaljer":["ja***@outlook.com (#1031) — Threatens bank / dispute, 101h","ol***@online.no (#1038) — Never delivered, 139h","er***@gmail.com (#1044) — Wrong item / not as described, 98h","an***@gmail.com (#1042) — Never delivered, 56h"]},{"id":"ofullbordade","en":"Paid orders unfulfilled > 5 days","varde":1,"poang":4,"detaljer":["#1031 · ja***@outlook.com · 2026-08-25"]},{"id":"utan_sparning","en":"Fulfilled orders without tracking","varde":1,"poang":2,"detaljer":["#1038 · ol***@online.no"]},{"id":"svarstid","en":"Median first response time (hours)","varde":3.8,"poang":0,"detaljer":[]}],"sop":{"antal":4,"tackta":["var_ar_ordern"],"saknas":["ej_levererad","chargeback_hot","fel_vara","okand_debitering"],"fel":null},"plan":[{"hink":"nu","prio":1,"id":"tvister","titel":"Respond to 1 open dispute before the deadline","varfor":"899 SEK is on the line. 1 of them are real chargebacks, the rest are bank inquiries. The earliest evidence deadline is 2026-09-20 (order #1031). A dispute you do not answer is lost automatically — you lose the goods, the money and the fee.","steg":["Shopify admin → Orders → filter \"Disputed\" → open the oldest deadline first.","For every dispute attach: tracking number + carrier scan showing delivery, the order confirmation, and the full email thread with the customer.","If the parcel genuinely never arrived: do NOT fight it. Accept the dispute and refund — fighting a lost case costs the fee on top.","Write the outcome in the order timeline so the next person sees what was sent."],"effekt":"Every dispute answered with tracking evidence is a dispute that can be won instead of auto-lost.","matt":{"oppna":1,"chargebacks":1,"belopp":899,"valuta":"SEK","deadline":"2026-09-20"},"agare":"VA"},{"hink":"nu","prio":2,"id":"hot","titel":"Reply to 1 customer threatening to go to the bank","varfor":"1 customer has written that they will contact their bank, Klarna or ARN. Orders: #1031. A chargeback costs the order value plus the dispute fee, and it hurts the account's dispute rate. Refunding today is cheaper than losing the case in three weeks.","steg":["Reply within 24 hours, in the customer's own language.","Offer one of two things immediately and let them pick: full refund now, or a replacement shipped with tracking today.","Never ask them to \"wait a few more days\" — that is the sentence that turns a threat into a real chargeback.","When they accept, write it in the order notes so the case is documented if the bank still contacts us."],"effekt":"Solving it here stops it before it reaches the card network and keeps the dispute rate down.","matt":{"antal":1},"agare":"VA"},{"hink":"nu","prio":3,"id":"dubbel","titel":"Check 1 report of an unknown or double charge today","varfor":"1 customer says they were charged twice or for something they do not recognise. Orders: #1050. This is the number one \"unauthorized transaction\" chargeback reason and banks side with the customer almost every time.","steg":["Search the customer email in Shopify → Orders. Two orders with the same items minutes apart = a real double charge.","Refund the duplicate the same day, then email the customer telling them it is done and when the money lands (3–5 banking days).","If there is only one order: send them the order confirmation and the exact text that appears on their statement, so they recognise it."],"effekt":"A refunded duplicate never becomes a chargeback. An unanswered one almost always does.","matt":{"antal":1},"agare":"VA"},{"hink":"veckan","prio":1,"id":"backlogg","titel":"Clear the backlog: 4 tickets have waited more than 48 h","varfor":"6 of 9 tickets are unanswered, 4 of them past 48 h and the oldest has waited 139 h. 4 of them are in chargeback-prone categories (never delivered, unknown charge, threats). Silence is what turns a support ticket into a dispute.","steg":["Work the list on the dashboard top-down — it is already sorted with the dangerous ones first (4 of them).","Every ticket gets a reply today, even if the answer is \"I am checking this, you will hear from me tomorrow\" — a holding reply stops the clock.","Anything older than 14 days: refund or reship without asking. The goodwill is worth less than the dispute fee.","Mark a ticket done only when the customer has been answered, not when you have read it."],"effekt":"Getting these to zero removes the biggest single driver of the 100/100 risk score.","matt":{"obesvarade":6,"larm":4,"farliga":4,"aldstTimmar":139},"agare":"VA"},{"hink":"veckan","prio":3,"id":"ej_levererad","titel":"Resolve 2 \"never arrived\" tickets with a hard rule","varfor":"2 customers say their parcels never arrived (2 still unanswered). Orders: #1038, #1042. \"Item not received\" is the most common chargeback reason in e-commerce, and the clock is already running on every one of these.","steg":["Open the tracking for each order. Three outcomes, three answers — decide in the same reply, never \"we will look into it\".","Tracking moving: send the link and the expected delivery date. Done.","Tracking stuck more than 7 days, or says delivered but customer has not got it: reship with tracking, or refund. Customer chooses.","No tracking at all on the order: refund immediately — that case cannot be won in a dispute."],"effekt":"Each one resolved here is one less chargeback in 2–6 weeks, when the bank case would have landed.","matt":{"antal":2,"obesvarade":2},"agare":"VA"},{"hink":"veckan","prio":6,"id":"ofullbordade","titel":"Ship or refund 1 paid order that never left","varfor":"1 order has been paid but unfulfilled for more than 5 days. These customers have not written yet — they will, and by then they are angry. This is where \"never arrived\" tickets are born.","steg":["Shopify → Orders → filter Unfulfilled, sort oldest first.","Ship today with tracking, or refund and tell the customer why.","Either way: email the customer first, before they have to ask. A proactive email here prevents the ticket entirely."],"effekt":"Fixing these prevents next week's \"where is my order\" and \"never arrived\" tickets.","matt":{"antal":1},"agare":"VA + Axel"},{"hink":"veckan","prio":7,"id":"sparning","titel":"Add tracking numbers to 1 fulfilled order","varfor":"1 order was marked as shipped without a tracking number. Without tracking a dispute cannot be won — there is no proof the parcel ever moved, so the bank refunds the customer automatically.","steg":["Find the tracking number from the carrier and add it to the fulfillment in Shopify.","If the number cannot be found: treat the order as untracked — refund on the first complaint instead of fighting it.","Going forward: never mark an order fulfilled before the tracking number exists."],"effekt":"Tracking is the single piece of evidence that decides \"item not received\" disputes.","matt":{"antal":1},"agare":"VA + Axel"},{"hink":"process","prio":1,"id":"topp_ej_levererad","titel":"Never delivered is 22% of all tickets — remove the reason, not the ticket","varfor":"2 of 9 tickets are \"Never delivered\". Answering them faster does not reduce them; only changing what the customer sees before they write does. Shipping-time questions are the classic case: the customer writes because the store never told them when to expect the parcel.","steg":["Put the real delivery window in three places: the product page, the cart, and the order confirmation email. Use the honest number, not the optimistic one.","Send a proactive email on day 7 after the order: \"your parcel is on its way, here is the tracking, expected <date>\". Most WISMO tickets are written on days 7–14.","Make the tracking link impossible to miss in the shipping confirmation — big button, not a line of text.","Measure it here next week: this number should drop, and that is the proof it worked."],"effekt":"Cutting this category in half removes roughly 1 ticket every 30 days — permanently, not just faster.","matt":{"kategori":"ej_levererad","antal":2,"andel":22},"agare":"VA + Axel"},{"hink":"process","prio":3,"id":"sop","titel":"Write 4 missing SOPs: Never delivered, Threatens bank / dispute, Wrong item / not as described, Unknown or double charge","varfor":"4 SOPs exist in Notion, but these categories show up in the tickets without one. No SOP means every person answers differently, and nobody can take over the inbox.","steg":["One page per category in the Notion support database, same structure as the existing ones.","Each page answers three things: how to check it in Shopify, what we offer the customer, and when to escalate to Axel.","Link the saved reply from the SOP page so they never drift apart."],"effekt":"An SOP is what makes the inbox transferable — and what keeps the answer consistent when volume doubles.","matt":{"saknas":["ej_levererad","chargeback_hot","fel_vara","okand_debitering"],"antalSop":4},"agare":"VA"},{"hink":"process","prio":4,"id":"tvistgrad","titel":"Dispute rate is 8,33% — above the card networks' limit","varfor":"1 chargebacks on 12 orders over 30 days. Visa acts from 0.9% and Mastercard from 1.0%; we are over that line, which puts the payment account itself at risk (monitoring programs, held payouts, higher fees).","steg":["Track this number every week here — it is the one metric that can shut the store down, not just cost money.","The three levers, in order of effect: answer within 24 h, ship with tracking, refund fast when in doubt.","Refunding a doubtful order costs the order value. A chargeback costs the order value plus the fee plus the ratio."],"effekt":"Getting back under 0.9% protects the payment account, not just the margin.","matt":{"tvistgrad":8.33,"chargebacks":1,"ordrar":12},"agare":"Axel"}],"veckor":["2026-W38"],"historik":[{"vecka":"2026-W38","risk":100,"arenden":9,"obesvarade":6,"larm":4,"median":3.75,"chargebacks":1,"forfragningar":0,"tvistgrad":8.33,"ordrar":12}],"arkiv":{"2026-W38":{"id":"demobutiken","namn":"Demobutiken","vecka":"2026-W38","kord":"2026-09-14T12:00:00.000Z","period":{"fran":"2026-08-15","till":"2026-09-14","dagar":30},"kallor":["fixtur demobutiken (13 in, 4 ut)","ordrar.json (12)"],"varningar":[],"trosklar":{"obesvaradTimmar":48,"ordrarDagar":30,"tvistgradGul":0.5,"tvistgradRod":0.9},"kallflode":{"mejl":17,"arenden":9,"spam":0,"autosvar":1,"system":1,"listmejl":1,"utanAvsandare":0},"nyckeltal":{"risk":100,"riskNiva":"hog","riskNivaEn":"High","arenden":9,"obesvarade":6,"larmObesvarade":4,"medianSvarstidTimmar":3.75,"besvaradeMedTid":4,"ordrar":12,"chargebacks":1,"forfragningar":0,"tvistgrad":8.33,"pengarIRisk":899,"pengarValuta":"SEK","oppnaTvister":1,"forra":null},"kategorier":[{"id":"ej_levererad","en":"Never delivered","vikt":3,"antal":2,"obesvarade":2,"andel":22,"forra":null,"sop":"missing","sopTitel":null,"aterkommande":null,"mening":null},{"id":"chargeback_hot","en":"Threatens bank / dispute","vikt":3,"antal":1,"obesvarade":1,"andel":11,"forra":null,"sop":"missing","sopTitel":null,"aterkommande":null,"mening":null},{"id":"fel_vara","en":"Wrong item / not as described","vikt":3,"antal":1,"obesvarade":1,"andel":11,"forra":null,"sop":"missing","sopTitel":null,"aterkommande":null,"mening":null},{"id":"okand_debitering","en":"Unknown or double charge","vikt":3,"antal":1,"obesvarade":1,"andel":11,"forra":null,"sop":"missing","sopTitel":null,"aterkommande":null,"mening":null},{"id":"var_ar_ordern","en":"Where is my order (WISMO)","vikt":2,"antal":1,"obesvarade":0,"andel":11,"forra":null,"sop":"covered","sopTitel":"SOP – Where is my order (tracking reply)","aterkommande":null,"mening":null},{"id":"skadad_defekt","en":"Damaged / defective","vikt":2,"antal":1,"obesvarade":0,"andel":11,"forra":null,"sop":"unknown","sopTitel":null,"aterkommande":null,"mening":null},{"id":"retur_angerratt","en":"Return / right of withdrawal","vikt":1,"antal":1,"obesvarade":0,"andel":11,"forra":null,"sop":"unknown","sopTitel":null,"aterkommande":null,"mening":null},{"id":"produktfraga","en":"Product question (pre-sale)","vikt":0,"antal":1,"obesvarade":1,"andel":11,"forra":null,"sop":"unknown","sopTitel":null,"aterkommande":null,"mening":null}],"arenden":[{"kategori":"chargeback_hot","kategoriEn":"Threatens bank / dispute","vikt":3,"kund":"ja***@outlook.com","ordernummer":["1031"],"amne":"Order 1031 - third time writing","utdrag":"This is the third time I write to you and no one answers. I paid for order 1031 on August 25 and nothing has been shipped. If I do not hear back within 48 hours","sprak":"en","besvarad":false,"timmarObesvarad":101,"larm":true,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-10","senaste":"2026-09-10","eskalering":2},{"kategori":"ej_levererad","kategoriEn":"Never delivered","vikt":3,"kund":"ol***@online.no","ordernummer":["1038"],"amne":"Pakken har ikke kommet","utdrag":"Hei, Jeg bestilte for tre uker siden (ordre 1038) og pakken har fortsatt ikke kommet. Sporingen sier levert men jeg har ikke mottatt noe. Hva skjer? Ola","sprak":"no","besvarad":false,"timmarObesvarad":139,"larm":true,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-08","senaste":"2026-09-08","eskalering":0},{"kategori":"fel_vara","kategoriEn":"Wrong item / not as described","vikt":3,"kund":"er***@gmail.com","ordernummer":["1044"],"amne":"Fick fel storlek","utdrag":"Hej, jag fick fel storlek i paketet (order #1044). Beställde L men fick M. Kan ni skicka rätt?","sprak":"sv","besvarad":false,"timmarObesvarad":98,"larm":true,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-10","senaste":"2026-09-10","eskalering":0},{"kategori":"ej_levererad","kategoriEn":"Never delivered","vikt":3,"kund":"an***@gmail.com","ordernummer":["1042"],"amne":"Var är min order #1042?","utdrag":"Tack för svaret, men spårningen har inte rört sig på tre dagar. Fortfarande inget paket.","sprak":"sv","besvarad":false,"timmarObesvarad":56,"larm":true,"svarstidTimmar":3.8,"antalInkommande":2,"forsta":"2026-09-09","senaste":"2026-09-12","eskalering":0},{"kategori":"okand_debitering","kategoriEn":"Unknown or double charge","vikt":3,"kund":"ka***@telia.com","ordernummer":["1050"],"amne":"Ni har dragit pengar två gånger","utdrag":"Hej, jag ser på mitt kontoutdrag att ni dragit 599 kr två gånger för order 1050. Vill ha den ena tillbaka.","sprak":"sv","besvarad":false,"timmarObesvarad":27,"larm":false,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-13","senaste":"2026-09-13","eskalering":0},{"kategori":"var_ar_ordern","kategoriEn":"Where is my order (WISMO)","vikt":2,"kund":"sa***@yahoo.co.uk","ordernummer":["1047"],"amne":"Where is my order 1047","utdrag":"Hi, could you send me the tracking for order 1047? Thanks!","sprak":"en","besvarad":true,"timmarObesvarad":0,"larm":false,"svarstidTimmar":0.7,"antalInkommande":1,"forsta":"2026-09-11","senaste":"2026-09-11","eskalering":0},{"kategori":"skadad_defekt","kategoriEn":"Damaged / defective","vikt":2,"kund":"ma***@gmail.com","ordernummer":["1045"],"amne":"Produkten kom trasig","utdrag":"Hej, Produkten kom trasig – locket är sprucket (order #1045). Vad gör vi nu? Maria","sprak":"sv","besvarad":true,"timmarObesvarad":0,"larm":false,"svarstidTimmar":13.5,"antalInkommande":1,"forsta":"2026-09-11","senaste":"2026-09-11","eskalering":0},{"kategori":"retur_angerratt","kategoriEn":"Return / right of withdrawal","vikt":1,"kund":"bo***@hotmail.com","ordernummer":["1049"],"amne":"Vill returnera – ångerrätt","utdrag":"Hej, Jag vill använda min ångerrätt och returnera varan (order #1049). Vart skickar jag den? Hälsningar Börje","sprak":"sv","besvarad":true,"timmarObesvarad":0,"larm":false,"svarstidTimmar":3.7,"antalInkommande":1,"forsta":"2026-09-12","senaste":"2026-09-12","eskalering":0},{"kategori":"produktfraga","kategoriEn":"Product question (pre-sale)","vikt":0,"kund":"li***@icloud.com","ordernummer":[],"amne":"Passar den till 60 cm?","utdrag":"Hej! Passar den till en 60 cm bred modell? Funderar på att beställa.","sprak":"okänt","besvarad":false,"timmarObesvarad":42,"larm":false,"svarstidTimmar":null,"antalInkommande":1,"forsta":"2026-09-12","senaste":"2026-09-12","eskalering":0}],"tvister":[{"typ":"chargeback","orsak":"product not received","status":"needs response","oppen":true,"belopp":899,"valuta":"SEK","order":"#1031","initierad":"2026-09-10","deadline":"2026-09-20"}],"signaler":[{"id":"tvister","en":"Chargebacks (last 30 days)","varde":1,"poang":45,"detaljer":["#1031: chargeback · product_not_received · needs_response · evidence due 2026-09-20"]},{"id":"hot","en":"Customers threatening bank / dispute","varde":1,"poang":12,"detaljer":["ja***@outlook.com (#1031)"]},{"id":"okand_debitering","en":"Unknown or double charge","varde":1,"poang":10,"detaljer":["ka***@telia.com (#1050)"]},{"id":"ej_levererad","en":"Says item never arrived","varde":2,"poang":16,"detaljer":["ol***@online.no (#1038)","an***@gmail.com (#1042)"]},{"id":"fel_vara","en":"Wrong item / not as described","varde":1,"poang":6,"detaljer":["er***@gmail.com (#1044)"]},{"id":"obesvarade","en":"Unanswered tickets > 48h","varde":4,"poang":25,"detaljer":["ja***@outlook.com (#1031) — Threatens bank / dispute, 101h","ol***@online.no (#1038) — Never delivered, 139h","er***@gmail.com (#1044) — Wrong item / not as described, 98h","an***@gmail.com (#1042) — Never delivered, 56h"]},{"id":"ofullbordade","en":"Paid orders unfulfilled > 5 days","varde":1,"poang":4,"detaljer":["#1031 · ja***@outlook.com · 2026-08-25"]},{"id":"utan_sparning","en":"Fulfilled orders without tracking","varde":1,"poang":2,"detaljer":["#1038 · ol***@online.no"]},{"id":"svarstid","en":"Median first response time (hours)","varde":3.8,"poang":0,"detaljer":[]}],"sop":{"antal":4,"tackta":["var_ar_ordern"],"saknas":["ej_levererad","chargeback_hot","fel_vara","okand_debitering"],"fel":null},"plan":[{"hink":"nu","prio":1,"id":"tvister","titel":"Respond to 1 open dispute before the deadline","varfor":"899 SEK is on the line. 1 of them are real chargebacks, the rest are bank inquiries. The earliest evidence deadline is 2026-09-20 (order #1031). A dispute you do not answer is lost automatically — you lose the goods, the money and the fee.","steg":["Shopify admin → Orders → filter \"Disputed\" → open the oldest deadline first.","For every dispute attach: tracking number + carrier scan showing delivery, the order confirmation, and the full email thread with the customer.","If the parcel genuinely never arrived: do NOT fight it. Accept the dispute and refund — fighting a lost case costs the fee on top.","Write the outcome in the order timeline so the next person sees what was sent."],"effekt":"Every dispute answered with tracking evidence is a dispute that can be won instead of auto-lost.","matt":{"oppna":1,"chargebacks":1,"belopp":899,"valuta":"SEK","deadline":"2026-09-20"},"agare":"VA"},{"hink":"nu","prio":2,"id":"hot","titel":"Reply to 1 customer threatening to go to the bank","varfor":"1 customer has written that they will contact their bank, Klarna or ARN. Orders: #1031. A chargeback costs the order value plus the dispute fee, and it hurts the account's dispute rate. Refunding today is cheaper than losing the case in three weeks.","steg":["Reply within 24 hours, in the customer's own language.","Offer one of two things immediately and let them pick: full refund now, or a replacement shipped with tracking today.","Never ask them to \"wait a few more days\" — that is the sentence that turns a threat into a real chargeback.","When they accept, write it in the order notes so the case is documented if the bank still contacts us."],"effekt":"Solving it here stops it before it reaches the card network and keeps the dispute rate down.","matt":{"antal":1},"agare":"VA"},{"hink":"nu","prio":3,"id":"dubbel","titel":"Check 1 report of an unknown or double charge today","varfor":"1 customer says they were charged twice or for something they do not recognise. Orders: #1050. This is the number one \"unauthorized transaction\" chargeback reason and banks side with the customer almost every time.","steg":["Search the customer email in Shopify → Orders. Two orders with the same items minutes apart = a real double charge.","Refund the duplicate the same day, then email the customer telling them it is done and when the money lands (3–5 banking days).","If there is only one order: send them the order confirmation and the exact text that appears on their statement, so they recognise it."],"effekt":"A refunded duplicate never becomes a chargeback. An unanswered one almost always does.","matt":{"antal":1},"agare":"VA"},{"hink":"veckan","prio":1,"id":"backlogg","titel":"Clear the backlog: 4 tickets have waited more than 48 h","varfor":"6 of 9 tickets are unanswered, 4 of them past 48 h and the oldest has waited 139 h. 4 of them are in chargeback-prone categories (never delivered, unknown charge, threats). Silence is what turns a support ticket into a dispute.","steg":["Work the list on the dashboard top-down — it is already sorted with the dangerous ones first (4 of them).","Every ticket gets a reply today, even if the answer is \"I am checking this, you will hear from me tomorrow\" — a holding reply stops the clock.","Anything older than 14 days: refund or reship without asking. The goodwill is worth less than the dispute fee.","Mark a ticket done only when the customer has been answered, not when you have read it."],"effekt":"Getting these to zero removes the biggest single driver of the 100/100 risk score.","matt":{"obesvarade":6,"larm":4,"farliga":4,"aldstTimmar":139},"agare":"VA"},{"hink":"veckan","prio":3,"id":"ej_levererad","titel":"Resolve 2 \"never arrived\" tickets with a hard rule","varfor":"2 customers say their parcels never arrived (2 still unanswered). Orders: #1038, #1042. \"Item not received\" is the most common chargeback reason in e-commerce, and the clock is already running on every one of these.","steg":["Open the tracking for each order. Three outcomes, three answers — decide in the same reply, never \"we will look into it\".","Tracking moving: send the link and the expected delivery date. Done.","Tracking stuck more than 7 days, or says delivered but customer has not got it: reship with tracking, or refund. Customer chooses.","No tracking at all on the order: refund immediately — that case cannot be won in a dispute."],"effekt":"Each one resolved here is one less chargeback in 2–6 weeks, when the bank case would have landed.","matt":{"antal":2,"obesvarade":2},"agare":"VA"},{"hink":"veckan","prio":6,"id":"ofullbordade","titel":"Ship or refund 1 paid order that never left","varfor":"1 order has been paid but unfulfilled for more than 5 days. These customers have not written yet — they will, and by then they are angry. This is where \"never arrived\" tickets are born.","steg":["Shopify → Orders → filter Unfulfilled, sort oldest first.","Ship today with tracking, or refund and tell the customer why.","Either way: email the customer first, before they have to ask. A proactive email here prevents the ticket entirely."],"effekt":"Fixing these prevents next week's \"where is my order\" and \"never arrived\" tickets.","matt":{"antal":1},"agare":"VA + Axel"},{"hink":"veckan","prio":7,"id":"sparning","titel":"Add tracking numbers to 1 fulfilled order","varfor":"1 order was marked as shipped without a tracking number. Without tracking a dispute cannot be won — there is no proof the parcel ever moved, so the bank refunds the customer automatically.","steg":["Find the tracking number from the carrier and add it to the fulfillment in Shopify.","If the number cannot be found: treat the order as untracked — refund on the first complaint instead of fighting it.","Going forward: never mark an order fulfilled before the tracking number exists."],"effekt":"Tracking is the single piece of evidence that decides \"item not received\" disputes.","matt":{"antal":1},"agare":"VA + Axel"},{"hink":"process","prio":1,"id":"topp_ej_levererad","titel":"Never delivered is 22% of all tickets — remove the reason, not the ticket","varfor":"2 of 9 tickets are \"Never delivered\". Answering them faster does not reduce them; only changing what the customer sees before they write does. Shipping-time questions are the classic case: the customer writes because the store never told them when to expect the parcel.","steg":["Put the real delivery window in three places: the product page, the cart, and the order confirmation email. Use the honest number, not the optimistic one.","Send a proactive email on day 7 after the order: \"your parcel is on its way, here is the tracking, expected <date>\". Most WISMO tickets are written on days 7–14.","Make the tracking link impossible to miss in the shipping confirmation — big button, not a line of text.","Measure it here next week: this number should drop, and that is the proof it worked."],"effekt":"Cutting this category in half removes roughly 1 ticket every 30 days — permanently, not just faster.","matt":{"kategori":"ej_levererad","antal":2,"andel":22},"agare":"VA + Axel"},{"hink":"process","prio":3,"id":"sop","titel":"Write 4 missing SOPs: Never delivered, Threatens bank / dispute, Wrong item / not as described, Unknown or double charge","varfor":"4 SOPs exist in Notion, but these categories show up in the tickets without one. No SOP means every person answers differently, and nobody can take over the inbox.","steg":["One page per category in the Notion support database, same structure as the existing ones.","Each page answers three things: how to check it in Shopify, what we offer the customer, and when to escalate to Axel.","Link the saved reply from the SOP page so they never drift apart."],"effekt":"An SOP is what makes the inbox transferable — and what keeps the answer consistent when volume doubles.","matt":{"saknas":["ej_levererad","chargeback_hot","fel_vara","okand_debitering"],"antalSop":4},"agare":"VA"},{"hink":"process","prio":4,"id":"tvistgrad","titel":"Dispute rate is 8,33% — above the card networks' limit","varfor":"1 chargebacks on 12 orders over 30 days. Visa acts from 0.9% and Mastercard from 1.0%; we are over that line, which puts the payment account itself at risk (monitoring programs, held payouts, higher fees).","steg":["Track this number every week here — it is the one metric that can shut the store down, not just cost money.","The three levers, in order of effect: answer within 24 h, ship with tracking, refund fast when in doubt.","Refunding a doubtful order costs the order value. A chargeback costs the order value plus the fee plus the ratio."],"effekt":"Getting back under 0.9% protects the payment account, not just the margin.","matt":{"tvistgrad":8.33,"chargebacks":1,"ordrar":12},"agare":"Axel"}]}}}]};
 
-  const NIVA = (p) => (p === null || p === undefined ? { id: 'okand', text: 'ingen mätning', emoji: '⚪' }
-    : p >= 50 ? { id: 'hog', text: 'Hög', emoji: '🔴' } : p >= 25 ? { id: 'forhojd', text: 'Förhöjd', emoji: '🟡' } : { id: 'lag', text: 'Låg', emoji: '🟢' });
-  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const T = {
+    en: { plan: 'What to do', planIngress: 'Worked top to bottom. Every item lists the measured number it comes from.',
+      ko: 'Work queue', koIngress: 'Every open ticket, most dangerous and longest waiting first. Search the order number in Shopify.',
+      tvister: 'Disputes and bank inquiries', tvistIngress: 'Shopify admin → Orders → Disputes. An unanswered dispute is lost automatically.',
+      kategorier: 'What customers write about', katIngress: 'Volume per category, and whether the VA has an SOP for it in Notion.',
+      trend: 'Week by week', trendIngress: 'Risk score and unanswered tickets. Three weeks are needed before "recurring" can be measured.',
+      kalla: 'What was read', kallaIngress: 'Every email in the support mailbox for the period, and what was filtered out before counting.',
+      risk: 'Chargeback risk', av: 'of 100', tickets: 'Tickets', unans: 'Unanswered', over: 'over', median: 'Median first reply',
+      chargebacks: 'Chargebacks', rate: 'rate', money: 'Money in open disputes', orders: 'Orders', hours: 'h', none: 'none',
+      all: 'All', open: 'Unanswered', danger: 'Chargeback-prone', category: 'Category', customer: 'Customer', order: 'Order',
+      waiting: 'Waiting', subject: 'Subject / last message', status: 'Status', type: 'Type', reason: 'Reason', amount: 'Amount',
+      deadline: 'Evidence due', opened: 'Opened', answered: 'answered', sop: 'SOP', sopMissing: 'no SOP', sopOk: 'SOP',
+      recurring: 'recurring', emails: 'Emails read', tickets2: 'Customer tickets', spam: 'Spam', auto: 'Auto-replies',
+      system: 'System mail', lists: 'Newsletters', noQueue: 'Nothing unanswered. The inbox is clean.', noDisp: 'No disputes or inquiries in the period.',
+      week: 'Week', brand: 'Brand', lang: 'Language', first: 'First measurement — the curve starts next week.', owner: 'Owner' },
+    sv: { plan: 'Vad som ska göras', planIngress: 'Görs uppifrån och ner. Varje punkt bär talet den bygger på.',
+      ko: 'Arbetskön', koIngress: 'Alla obesvarade ärenden, farligast och äldst först. Sök ordernumret i Shopify.',
+      tvister: 'Tvister och bankförfrågningar', tvistIngress: 'Shopify → Orders → Disputes. En obesvarad tvist förloras automatiskt.',
+      kategorier: 'Vad kunderna skriver om', katIngress: 'Volym per kategori, och om VA:n har en SOP för den i Notion.',
+      trend: 'Vecka för vecka', trendIngress: 'Riskpoäng och obesvarade ärenden. Tre veckor krävs innan "återkommande" går att mäta.',
+      kalla: 'Vad som lästes', kallaIngress: 'Alla mejl i supportbrevlådan för perioden, och vad som sorterades bort före räkningen.',
+      risk: 'Chargeback-risk', av: 'av 100', tickets: 'Ärenden', unans: 'Obesvarade', over: 'över', median: 'Median första svar',
+      chargebacks: 'Chargebacks', rate: 'grad', money: 'Pengar i öppna tvister', orders: 'Ordrar', hours: 'h', none: 'inga',
+      all: 'Alla', open: 'Obesvarade', danger: 'Chargeback-nära', category: 'Kategori', customer: 'Kund', order: 'Order',
+      waiting: 'Väntat', subject: 'Ämne / senaste meddelandet', status: 'Status', type: 'Typ', reason: 'Orsak', amount: 'Belopp',
+      deadline: 'Bevis senast', opened: 'Öppnad', answered: 'besvarade', sop: 'SOP', sopMissing: 'ingen SOP', sopOk: 'SOP',
+      recurring: 'återkommande', emails: 'Mejl lästa', tickets2: 'Kundärenden', spam: 'Spam', auto: 'Autosvar',
+      system: 'Systemmejl', lists: 'Nyhetsbrev', noQueue: 'Inget obesvarat. Inkorgen är ren.', noDisp: 'Inga tvister eller förfrågningar i perioden.',
+      week: 'Vecka', brand: 'Brand', lang: 'Språk', first: 'Första mätningen — kurvan börjar nästa vecka.', owner: 'Ansvarig' },
+  };
+
+  let sprak = 'en';
+  let brandIx = 0;
+  let vecka = null;
+  let koFilter = 'all';
+
   const el = (id) => document.getElementById(id);
-  const veckor = DATA.veckor.slice().sort().reverse();
-  let vald = veckor[0] ?? null;
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const t = () => T[sprak];
+  const num = (n) => (n === null || n === undefined ? '—' : Number(n).toLocaleString('en-US'));
+  const brand = () => DATA.brands[brandIx] ?? null;
+  const vy = () => { const b = brand(); if (!b) return null; return (b.arkiv && b.arkiv[vecka]) || b; };
+  const nivaKlass = (p) => (p >= 50 ? '' : p >= 25 ? 'varning' : 'god');
+  const nivaOrd = (p) => (p >= 50 ? ['🔴', 'High', 'Hög'] : p >= 25 ? ['🟡', 'Elevated', 'Förhöjd'] : ['🟢', 'Low', 'Låg']);
+  const viktKlass = (v) => (v >= 3 ? 'h' : v >= 2 ? 'm' : 'l');
 
-  function radFor(brand, vecka) { return (brand.historik || []).find((h) => h.vecka === vecka) ?? null; }
-
-  /** Riskkurvan över veckorna: en punkt per vecka, band vid 25 och 50. */
-  function kurva(brand) {
-    const rader = (brand.historik || []).slice().sort((a, b) => a.vecka.localeCompare(b.vecka));
-    if (!rader.length) return '<p class="kurva-text saknas">Ingen historik än.</p>';
-    const B = 320, H = 54, m = 6, n = rader.length;
-    const x = (i) => (n === 1 ? B / 2 : m + (i * (B - 2 * m)) / (n - 1));
-    const y = (p) => H - m - ((Math.max(0, Math.min(100, p ?? 0))) * (H - 2 * m)) / 100;
-    const band = (p) => `<line x1="0" x2="${B}" y1="${y(p)}" y2="${y(p)}" stroke="var(--linje)" stroke-dasharray="3 4" />`;
-    const punkter = rader.map((r, i) => `${x(i)},${y(r.riskPoang)}`).join(' ');
-    const sista = rader[n - 1];
-    const linje = n > 1 ? `<polyline points="${punkter}" fill="none" stroke="var(--blakk)" stroke-width="2" />` : '';
-    const prickar = rader.map((r, i) => `<circle cx="${x(i)}" cy="${y(r.riskPoang)}" r="${i === n - 1 ? 4 : 2.5}" fill="${i === n - 1 ? 'var(--' + NIVA(r.riskPoang).id + ')' : 'var(--blakk)'}" />`).join('');
-    const text = n > 1 ? `Risk vecka för vecka: ${rader.map((r) => `${r.vecka.slice(5)} = ${r.riskPoang}`).join(', ')}`
-      : `Första mätningen ${sista.vecka}. Kurvan börjar nästa vecka.`;
-    return `<svg viewBox="0 0 ${B} ${H}" role="img" aria-label="${esc(text)}">${band(25)}${band(50)}${linje}${prickar}</svg><p class="kurva-text">${esc(text)}</p>`;
+  /** Skillnad mot förra veckan. Mindre är bättre för allt utom ordrar. */
+  function delta(nu, forr, { braNer = true } = {}) {
+    if (forr === null || forr === undefined || nu === null || nu === undefined) return '';
+    const d = Math.round((nu - forr) * 10) / 10;
+    if (d === 0) return `<span class="delta lika">= ${num(forr)}</span>`;
+    const sammeVag = d > 0 ? !braNer : braNer;
+    return `<span class="delta ${sammeVag ? 'ner' : 'upp'}">${d > 0 ? '▲' : '▼'} ${num(Math.abs(d))}</span>`;
   }
 
-  function kort(brand, vecka) {
-    const r = radFor(brand, vecka);
-    const niva = NIVA(r?.riskPoang);
-    const topp = r?.topp?.[0] ? (DATA.kategorier[r.topp[0]]?.sv ?? r.topp[0]) : '—';
-    const gr = brand.trosklar?.obesvarad_timmar ?? 48;
-    return `<a class="kort" href="#brand-${esc(brand.id)}">
-      <p class="namn">${esc(brand.namn)}</p>
-      <div class="tal-rad"><span class="poang">${r ? r.riskPoang : '–'}</span><span class="av">/ 100</span>
-        <span class="pill ${niva.id}">${niva.emoji} ${esc(niva.text)}</span></div>
-      <dl>
-        <dt>Ärenden</dt><dd>${r ? r.antalArenden : '—'}</dd>
-        <dt>Obesvarade &gt; ${gr} h</dt><dd>${r ? r.larmObesvarade : '—'}</dd>
-        <dt>Chargebacks (30 d)</dt><dd>${r ? (r.tvister === null ? 'ej läsbart' : r.tvister) : '—'}</dd>
-        <dt>Tvistgrad</dt><dd>${r && r.tvistgrad !== null && r.tvistgrad !== undefined ? String(r.tvistgrad).replace('.', ',') + ' %' : '—'}</dd>
-        <dt>Toppärende</dt><dd class="text">${esc(topp)}</dd>
-      </dl>
-      ${kurva(brand)}
-    </a>`;
+  function ritaReglage() {
+    const b = brand();
+    const veckor = (b?.veckor ?? []).slice().sort().reverse();
+    const brandVal = DATA.brands.length > 1
+      ? `<select class="valj" id="brandval" aria-label="${t().brand}">${DATA.brands.map((x, i) => `<option value="${i}"${i === brandIx ? ' selected' : ''}>${esc(x.namn)}</option>`).join('')}</select>` : '';
+    const veckoVal = veckor.length > 1
+      ? `<select class="valj" id="veckoval" aria-label="${t().week}">${veckor.map((v) => `<option value="${esc(v)}"${v === vecka ? ' selected' : ''}>${t().week} ${esc(v)}</option>`).join('')}</select>` : '';
+    el('reglage').innerHTML = `${brandVal}${veckoVal}
+      <div class="knappgrupp" role="group" aria-label="${t().lang}">
+        <button type="button" data-sprak="en" aria-pressed="${sprak === 'en'}">EN</button>
+        <button type="button" data-sprak="sv" aria-pressed="${sprak === 'sv'}">SV</button>
+      </div>`;
   }
 
-  function brandBlock(brand, vecka) {
-    const v = brand.veckor?.[vecka];
-    const id = esc(brand.id);
-    if (!v) return `<article class="brand" id="brand-${id}"><div class="topp"><h2>${esc(brand.namn)}</h2></div><div class="rapport"><p>Ingen rapport skriven för ${esc(vecka)}.</p></div></article>`;
-    return `<article class="brand" id="brand-${id}">
-      <div class="topp"><h2>${esc(brand.namn)}</h2>
-        <div class="flikar" role="tablist" aria-label="Språk">
-          <button role="tab" id="flik-${id}-sv" aria-selected="true" aria-controls="rap-${id}-sv" data-flik="sv" data-brand="${id}">Till Axel</button>
-          <button role="tab" id="flik-${id}-en" aria-selected="false" aria-controls="rap-${id}-en" data-flik="en" data-brand="${id}">To the VA (English)</button>
-        </div></div>
-      <div class="rapport md" id="rap-${id}-sv" role="tabpanel">${v.sv || '<p>Svensk rapport saknas.</p>'}</div>
-      <div class="rapport md" id="rap-${id}-en" role="tabpanel" hidden>${v.en || '<p>English report missing.</p>'}</div>
-    </article>`;
+  function ritaLaget() {
+    const v = vy(); const b = brand(); const k = v.nyckeltal; const f = k.forra;
+    const [emoji, en, sv] = nivaOrd(k.risk);
+    el('under').textContent = `${b.namn} · ${t().week} ${v.vecka} · ${v.period.fran} – ${v.period.till} (${v.period.dagar} ${sprak === 'en' ? 'days' : 'dagar'})`;
+    el('risk').className = `kort risk ${nivaKlass(k.risk)}`;
+    el('risk').innerHTML = `
+      <span class="etikett">${t().risk}</span>
+      <div style="display:flex;align-items:baseline;gap:10px"><span class="siffra">${k.risk}</span><span class="av">${t().av}</span></div>
+      <div class="matare"><i style="width:${Math.max(2, Math.min(100, k.risk))}%"></i></div>
+      <span class="band">${emoji} <strong>${sprak === 'en' ? en : sv}</strong> ${delta(k.risk, f?.risk)}</span>`;
+
+    const tv = k.tvistgrad === null || k.tvistgrad === undefined ? '—' : `${String(k.tvistgrad).replace('.', ',')} %`;
+    const kort = [
+      { n: t().tickets, v: num(k.arenden), f: `${num(k.arenden - k.obesvarade)} ${t().answered}`, d: delta(k.arenden, f?.arenden) },
+      { n: `${t().unans} ${t().over} ${v.trosklar.obesvaradTimmar}${t().hours}`, v: num(k.larmObesvarade), f: `${num(k.obesvarade)} ${sprak === 'en' ? 'unanswered in total' : 'obesvarade totalt'}`, d: delta(k.larmObesvarade, f?.larmObesvarade) },
+      { n: t().median, v: k.medianSvarstidTimmar === null ? '—' : `${num(k.medianSvarstidTimmar)}${t().hours}`, f: `${num(k.besvaradeMedTid)} ${sprak === 'en' ? 'measured' : 'mätta'}`, d: delta(k.medianSvarstidTimmar, f?.medianSvarstidTimmar) },
+      { n: t().chargebacks, v: k.chargebacks === null ? '—' : num(k.chargebacks), f: `${t().rate} ${tv} · ${num(k.forfragningar)} ${sprak === 'en' ? 'inquiries' : 'förfrågningar'}`, d: delta(k.chargebacks, f?.chargebacks) },
+      { n: t().money, v: k.pengarIRisk ? `${num(k.pengarIRisk)}` : '0', f: `${k.pengarValuta ?? ''} · ${num(k.oppnaTvister)} ${sprak === 'en' ? 'open' : 'öppna'}`, d: '' },
+      { n: t().orders, v: k.ordrar === null ? '—' : num(k.ordrar), f: `${sprak === 'en' ? 'last' : 'senaste'} ${v.trosklar.ordrarDagar} ${sprak === 'en' ? 'days' : 'dagarna'}`, d: '' },
+    ];
+    el('nyckeltal').innerHTML = kort.map((x) => `<div class="tal-kort"><span class="namn">${esc(x.n)}</span><span class="varde">${x.v}</span><span class="fot">${esc(x.f)} ${x.d}</span></div>`).join('');
+
+    el('varningar').innerHTML = (v.varningar ?? []).length
+      ? `<div class="varning-ruta"><strong>${sprak === 'en' ? 'Could not be read' : 'Kunde inte läsas'}</strong><ul>${v.varningar.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : '';
+  }
+
+  function ritaPlan() {
+    const v = vy();
+    const hinkar = [
+      { id: 'nu', en: 'Do today', sv: 'Gör i dag' },
+      { id: 'veckan', en: 'Do this week', sv: 'Gör den här veckan' },
+      { id: 'process', en: 'Fix the root cause', sv: 'Bygg bort problemet' },
+    ];
+    const plan = v.plan ?? [];
+    if (!plan.length) { el('plan').innerHTML = `<div class="tomt">${sprak === 'en' ? 'Nothing to act on — every measured signal is inside its threshold.' : 'Inget att åtgärda — alla mätta signaler ligger inom sina gränser.'}</div>`; return; }
+    el('plan').innerHTML = hinkar.map((h) => {
+      const a = plan.filter((x) => x.hink === h.id);
+      if (!a.length) return '';
+      return `<div class="hink"><h3>${esc(sprak === 'en' ? h.en : h.sv)}<span class="antal">${a.length}</span></h3>
+        ${a.map((x) => `<article class="atgard ${h.id}">
+          <h4>${esc(x.titel)}</h4>
+          <p class="varfor">${esc(x.varfor)}</p>
+          <ol>${(x.steg ?? []).map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
+          ${x.effekt ? `<p class="effekt">${esc(x.effekt)}</p>` : ''}
+          <div class="brickor"><span class="bricka agare">${esc(x.agare)}</span>${Object.entries(x.matt ?? {}).filter(([, val]) => val !== null && val !== undefined && val !== '' && !Array.isArray(val)).map(([nyckel, val]) => `<span class="bricka">${esc(nyckel)}: ${esc(val)}</span>`).join('')}</div>
+        </article>`).join('')}</div>`;
+    }).join('');
+  }
+
+  function ritaKo() {
+    const v = vy();
+    const alla = v.arenden ?? [];
+    const urval = koFilter === 'open' ? alla.filter((a) => !a.besvarad)
+      : koFilter === 'danger' ? alla.filter((a) => a.vikt >= 2 && !a.besvarad)
+        : alla;
+    el('ko-filter').innerHTML = [
+      ['all', `${t().all} (${alla.length})`],
+      ['open', `${t().open} (${alla.filter((a) => !a.besvarad).length})`],
+      ['danger', `${t().danger} (${alla.filter((a) => a.vikt >= 2 && !a.besvarad).length})`],
+    ].map(([id, namn]) => `<button type="button" data-ko="${id}" aria-pressed="${koFilter === id}">${esc(namn)}</button>`).join('');
+
+    if (!urval.length) { el('ko').innerHTML = `<tbody><tr><td style="color:var(--ink-3)">${t().noQueue}</td></tr></tbody>`; return; }
+    el('ko').innerHTML = `<thead><tr>
+        <th>${t().category}</th><th>${t().customer}</th><th>${t().order}</th><th>${t().waiting}</th><th>${t().subject}</th></tr></thead>
+      <tbody>${urval.map((a) => `<tr>
+        <td><span class="prick ${viktKlass(a.vikt)}"></span>${esc(a.kategoriEn)}</td>
+        <td class="n">${esc(a.kund)}</td>
+        <td class="n">${a.ordernummer.length ? a.ordernummer.map((o) => `#${esc(o)}`).join(' ') : '—'}</td>
+        <td class="n">${a.besvarad ? `<span class="stampel gron">${sprak === 'en' ? 'answered' : 'besvarad'}</span>` : `${num(a.timmarObesvarad)}${t().hours}${a.larm ? ' ⚠️' : ''}`}</td>
+        <td>${esc(a.amne)}<span class="amne">${esc(a.utdrag)}</span></td></tr>`).join('')}</tbody>`;
+  }
+
+  function ritaTvister() {
+    const v = vy();
+    const lista = (v.tvister ?? []).slice().sort((a, b) => (b.oppen - a.oppen) || String(a.deadline ?? '9999').localeCompare(String(b.deadline ?? '9999')));
+    if (!lista.length) { el('tvister').innerHTML = `<tbody><tr><td style="color:var(--ink-3)">${t().noDisp}</td></tr></tbody>`; return; }
+    el('tvister').innerHTML = `<thead><tr>
+        <th>${t().type}</th><th>${t().order}</th><th>${t().reason}</th><th>${t().status}</th><th>${t().amount}</th><th>${t().deadline}</th></tr></thead>
+      <tbody>${lista.map((x) => `<tr>
+        <td>${x.typ === 'inquiry' ? `<span class="stampel gul">inquiry</span>` : `<span class="stampel rod">chargeback</span>`}</td>
+        <td class="n">${esc(x.order ?? '—')}</td>
+        <td>${esc(x.orsak)}</td>
+        <td>${x.oppen ? `<strong>${esc(x.status)}</strong>` : esc(x.status)}</td>
+        <td class="n">${x.belopp ? `${num(x.belopp)} ${esc(x.valuta ?? '')}` : '—'}</td>
+        <td class="n">${x.deadline ? (x.oppen ? `<span class="stampel rod">${esc(x.deadline)}</span>` : esc(x.deadline)) : '—'}</td></tr>`).join('')}</tbody>`;
+  }
+
+  function ritaKategorier() {
+    const v = vy();
+    const lista = (v.kategorier ?? []).slice(0, 10);
+    if (!lista.length) { el('kategorier').innerHTML = `<p style="color:var(--ink-3)">—</p>`; return; }
+    const max = Math.max(...lista.map((k) => k.antal), 1);
+    el('kategorier').innerHTML = lista.map((k) => `<div class="kat">
+        <span class="namn"><span class="prick ${viktKlass(k.vikt)}"></span>${esc(k.en)}</span>
+        <span class="spar" role="img" aria-label="${k.antal} ${sprak === 'en' ? 'tickets' : 'ärenden'}"><i style="width:${Math.round((k.antal / max) * 100)}%"></i></span>
+        <span class="hoger">
+          <strong>${num(k.antal)}</strong>
+          <span style="color:var(--ink-3)">${k.andel}%</span>
+          ${k.obesvarade ? `<span class="obes">${num(k.obesvarade)} ${sprak === 'en' ? 'open' : 'öppna'}</span>` : ''}
+          ${delta(k.antal, k.forra)}
+          ${k.sop === 'covered' ? `<span class="stampel gron" title="${esc(k.sopTitel ?? '')}">${t().sopOk}</span>` : k.sop === 'missing' ? `<span class="stampel gul">${t().sopMissing}</span>` : ''}
+          ${k.aterkommande ? `<span class="stampel rod">🔁 ${t().recurring}</span>` : ''}
+        </span></div>`).join('');
+  }
+
+  function ritaKurva() {
+    const b = brand();
+    const h = (b.historik ?? []).filter((x) => x.risk !== null);
+    if (h.length < 2) { el('kurva').innerHTML = `<p class="tom">${t().first}</p>`; return; }
+    const B = 860, H = 190, vm = 26, hm = 34;
+    const n = h.length;
+    const x = (i) => hm + (n === 1 ? (B - 2 * hm) / 2 : (i * (B - 2 * hm)) / (n - 1));
+    const yRisk = (p) => vm + (1 - Math.max(0, Math.min(100, p)) / 100) * (H - 2 * vm);
+    const maxO = Math.max(10, ...h.map((r) => r.larm ?? 0));
+    const yObes = (p) => vm + (1 - Math.max(0, p) / maxO) * (H - 2 * vm);
+    const linje = (f, key) => h.map((r, i) => `${x(i)},${f(r[key] ?? 0)}`).join(' ');
+    const rutnat = [0, 25, 50, 75, 100].map((p) => `<line x1="${hm}" x2="${B - hm}" y1="${yRisk(p)}" y2="${yRisk(p)}" stroke="var(--linje)" stroke-width="1" ${p === 25 || p === 50 ? 'stroke-dasharray="3 4"' : ''} />
+      <text x="${hm - 7}" y="${yRisk(p) + 4}" text-anchor="end" font-size="10" font-family="var(--mono)" fill="var(--ink-3)">${p}</text>`).join('');
+    const sista = h[n - 1];
+    el('kurva').innerHTML = `<svg viewBox="0 0 ${B} ${H}" role="img" aria-label="${esc(h.map((r) => `${r.vecka}: risk ${r.risk}, ${r.larm ?? 0} unanswered`).join('; '))}">
+        ${rutnat}
+        <polyline points="${linje(yObes, 'larm')}" fill="none" stroke="var(--varning)" stroke-width="2" stroke-dasharray="5 4" />
+        <polyline points="${linje(yRisk, 'risk')}" fill="none" stroke="var(--stapel)" stroke-width="2" />
+        ${h.map((r, i) => `<circle cx="${x(i)}" cy="${yRisk(r.risk)}" r="${i === n - 1 ? 5 : 3}" fill="var(--stapel)" stroke="var(--yta)" stroke-width="2"><title>${esc(r.vecka)}: risk ${r.risk}</title></circle>`).join('')}
+        ${h.map((r, i) => `<text x="${x(i)}" y="${H - 6}" text-anchor="middle" font-size="10" font-family="var(--mono)" fill="var(--ink-3)">${esc(r.vecka.slice(5))}</text>`).join('')}
+        <text x="${x(n - 1)}" y="${yRisk(sista.risk) - 12}" text-anchor="end" font-size="12" font-weight="600" font-family="var(--display)" fill="var(--ink)">${sista.risk}</text>
+      </svg>
+      <div class="legend"><span><i style="background:var(--stapel)"></i>${t().risk}</span><span><i style="background:var(--varning)"></i>${t().unans} &gt; ${vy().trosklar.obesvaradTimmar}${t().hours} (max ${maxO})</span></div>`;
+  }
+
+  function ritaKallor() {
+    const v = vy(); const f = v.kallflode;
+    const rader = [
+      [t().emails, f.mejl], [t().tickets2, f.arenden], [t().spam, f.spam],
+      [t().auto, f.autosvar], [t().system, f.system], [t().lists, f.listmejl],
+    ].filter(([, x]) => x !== null && x !== undefined);
+    el('kallor').innerHTML = rader.map(([n, x]) => `<div><div class="v">${num(x)}</div><div class="n">${esc(n)}</div></div>`).join('');
+    el('fot').innerHTML = `
+      <div>${sprak === 'en' ? 'Sources' : 'Källor'}: ${esc((v.kallor ?? []).join(' · ')) || '—'}</div>
+      <div>${sprak === 'en' ? 'Built by the Monday routine' : 'Byggd av måndagsrutinen'} <code>/kundtjanst</code> · ${sprak === 'en' ? 'updated' : 'uppdaterad'} ${esc(String(DATA.uppdaterad).slice(0, 16).replace('T', ' '))} UTC · v${DATA.version}</div>
+      <div>${sprak === 'en' ? 'Customer email addresses are masked everywhere. The order number is the key to search on.' : 'Kundernas mejladresser är maskerade överallt. Ordernumret är nyckeln att söka på.'}</div>`;
   }
 
   function rita() {
-    const dag = DATA.uppdaterad ? new Date(DATA.uppdaterad) : null;
-    el('under').textContent = vald
-      ? `Vecka ${vald} · ${DATA.brands.length} brand${DATA.brands.length === 1 ? '' : 's'} · sidan byggd ${dag ? dag.toLocaleDateString('sv-SE') : '—'}`
-      : 'Inga körningar än — första rapporten skrivs av måndagsrutinen.';
-    el('veckor').innerHTML = veckor.length
-      ? `<span class="etikett">Vecka</span>` + veckor.map((v) => `<button type="button" data-vecka="${esc(v)}" aria-pressed="${v === vald}">${esc(v.replace('-W', ' · v'))}</button>`).join('')
-      : '';
-    const sorterade = DATA.brands.slice().sort((a, b) => (radFor(b, vald)?.riskPoang ?? -1) - (radFor(a, vald)?.riskPoang ?? -1));
-    el('kort').innerHTML = sorterade.length ? sorterade.map((b) => kort(b, vald)).join('') : '<div class="tomt">Inget brand har körts än.</div>';
-    const rank = DATA.ranking?.[vald];
-    el('ranking').hidden = !rank;
-    el('ranking-md').innerHTML = rank || '';
-    el('rapporter').innerHTML = sorterade.map((b) => brandBlock(b, vald)).join('');
+    const b = brand();
+    if (!b) { document.querySelector('.sida').innerHTML = '<h1>Support Control Room</h1><p>No runs yet.</p>'; return; }
+    if (!vecka || !(b.arkiv && b.arkiv[vecka])) vecka = (b.veckor ?? [b.vecka]).slice().sort().pop();
+    for (const node of document.querySelectorAll('[data-t]')) node.textContent = t()[node.dataset.t] ?? node.textContent;
+    ritaReglage(); ritaLaget(); ritaPlan(); ritaKo(); ritaTvister(); ritaKategorier(); ritaKurva(); ritaKallor();
   }
 
   document.addEventListener('click', (e) => {
-    const v = e.target.closest('button[data-vecka]');
-    if (v) { vald = v.dataset.vecka; rita(); return; }
-    const f = e.target.closest('button[data-flik]');
-    if (f) {
-      const { brand, flik } = f.dataset;
-      for (const sprak of ['sv', 'en']) {
-        el(`flik-${brand}-${sprak}`).setAttribute('aria-selected', String(sprak === flik));
-        el(`rap-${brand}-${sprak}`).hidden = sprak !== flik;
-      }
-    }
+    const s = e.target.closest('button[data-sprak]');
+    if (s) { sprak = s.dataset.sprak; rita(); return; }
+    const k = e.target.closest('button[data-ko]');
+    if (k) { koFilter = k.dataset.ko; ritaKo(); }
+  });
+  document.addEventListener('change', (e) => {
+    if (e.target.id === 'brandval') { brandIx = Number(e.target.value); vecka = null; rita(); }
+    if (e.target.id === 'veckoval') { vecka = e.target.value; rita(); }
   });
 
   rita();
