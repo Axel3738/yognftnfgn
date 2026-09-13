@@ -33,21 +33,45 @@ const esk = (s) =>
 // (handles är ~45 tecken och nämns tre gånger var). Bildernas gemensamma
 // CDN-prefix skrivs en gång. Samma knep som i mejlmallarna.
 //   katalogpost: [handle, kortnamn, pris, bildsuffix, variant_id, en_variant]
-export function hjulData({ konfig: k, copy, produkter }) {
+export function hjulData({ konfig: k, copy, produkter, alla = [], storsaljare = [] }) {
   const e = k.erbjudande;
   const h = k.hjul;
   const km = produkter.komplement;
-  const bilder = [...km.katalog.values()].map((p) => p.bild ?? '');
+  const minsta = e.minsta_kop_sek;
+  const gratis = new Set(e.gratisprodukter);
+  const perHandle = new Map(alla.map((p) => [p.handle, p]));
+  // Katalogen = komplementens produkter + storsäljarna. Storsäljarna kommer
+  // ur ordrarna (senaste sju dagarna) och kan sakna i komplementkartan.
+  const poster = new Map();
+  for (const [handle, p] of km.katalog) poster.set(handle, { ...p, pris: p.pris });
+  const topp = [];
+  for (const s of storsaljare) {
+    const p = perHandle.get(s.handle);
+    if (!p || !p.bild || gratis.has(s.handle) || Number(p.pris) < minsta) continue;
+    if (!(p.lagerpolicy === 'CONTINUE' || p.lager > 0)) continue;
+    if (!poster.has(s.handle)) {
+      poster.set(s.handle, { kortnamn: kortnamn(p.titel), bild: bildLiten(p.bild), pris: p.pris, url: p.url, variant_id: p.variant_id ?? null, en_variant: p.en_variant !== false });
+    }
+    topp.push(s.handle);
+    if (topp.length >= (h.storsaljare_antal ?? 12)) break;
+  }
+  const bilder = [...poster.values()].map((p) => p.bild ?? '');
   const cdn = gemensamtPrefix([...bilder, ...produkter.gratis.map((p) => bildLiten(p.bild) ?? '')]);
-  const handles = [...km.katalog.keys()];
+  const handles = [...poster.keys()];
   const index = new Map(handles.map((handle, i) => [handle, i]));
   const katalog = handles.map((handle) => {
-    const p = km.katalog.get(handle);
+    const p = poster.get(handle);
     const kopbar = p.en_variant && p.variant_id;
     return [handle, p.kortnamn, Math.round(p.pris), (p.bild ?? '').slice(cdn.length), kopbar ? String(p.variant_id) : '', kopbar ? 1 : 0];
   });
+  // Kartan filtreras till produkter som själva når 299 kr — rubriken är
+  // "Så når du 299 kr", och en vara för 189 kr gör inte det (Axel
+  // 2026-09-13). Produkter under gränsen finns kvar i mejlet.
   const karta = {};
-  for (const [handle, v] of km.karta) karta[handle] = v.lista.map((x) => index.get(x)).filter((i) => i !== undefined);
+  for (const [handle, v] of km.karta) {
+    const lista = v.lista.map((x) => index.get(x)).filter((i) => i !== undefined && katalog[i][2] >= minsta);
+    if (lista.length) karta[handle] = lista;
+  }
   const vinster = produkter.gratis.map((p) => [
     p.handle,
     kortnamn(p.titel),
@@ -62,10 +86,20 @@ export function hjulData({ konfig: k, copy, produkter }) {
     ls: h.localstorage_nyckel,
     varv: h.varv,
     snurrtid: h.snurrtid_ms,
+    perVisning: h.forslag_per_visning ?? 4,
     bas: k.butik.url,
     cdn,
     vinster,
-    komplement: { karta, katalog, fallback: km.fallback.map((x) => index.get(x)).filter((i) => i !== undefined) },
+    // fallback = storsäljarna (≥ 299 kr, senaste sju dagarna). Saknas de
+    // (offline utan cache) tas mejlets fallback, filtrerad på priset.
+    komplement: {
+      karta,
+      katalog,
+      storsaljare: topp.map((x) => index.get(x)),
+      fallback: topp.length
+        ? topp.map((x) => index.get(x))
+        : km.fallback.map((x) => index.get(x)).filter((i) => i !== undefined && katalog[i][2] >= minsta),
+    },
     copy: copy.hjul,
   };
 }
@@ -101,6 +135,9 @@ function stil(k) {
 #bb-hjul .bbh-pris s{color:var(--bbh-gra)}
 #bb-hjul .bbh-pris strong{color:var(--bbh-rod);font-size:20px}
 #bb-hjul .bbh-korg{font-size:15px;font-weight:700;color:#fff;margin:14px 0 0}
+#bb-hjul .bbh-forklaring{font-size:15px;line-height:1.5;color:#fff;background:var(--bbh-rod);padding:12px 16px;margin:12px auto 0;max-width:420px}
+#bb-hjul .bbh-knapp--tunn{background:#fff;color:var(--bbh-svart);border:2px solid var(--bbh-svart);font-size:18px;padding:12px 20px;margin-bottom:14px}
+#bb-hjul .bbh-knapp--tunn:hover{background:var(--bbh-ram);color:var(--bbh-svart)}
 #bb-hjul .bbh-kvar{margin:28px 0 8px}
 #bb-hjul .bbh-kort-rad{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 20px}
 #bb-hjul .bbh-kort{border:1px solid var(--bbh-ram);padding:10px 8px 12px;display:flex;flex-direction:column;gap:6px;align-items:center;background:#fff}
@@ -244,7 +281,24 @@ function skript() {
       .then(function (r) { if (r.status === 422) throw new Error('slut'); if (!r.ok) throw new Error('fel'); return r.json(); });
   }
 
-  function korgStatus() {
+  // Rabattkoden läggs på EFTER att korgen har varor — /discount fäster inte på
+  // en tom korg (mätt i fabriken 2026-09-09). ?redirect=/cart.js gör att
+  // omdirigeringen landar på korgen som JSON, några hundra byte i stället för
+  // en hel sida. Koden ligger sedan på korgen; kassan tar den därifrån.
+  function laggPaKod() {
+    return fetch('/discount/' + encodeURIComponent(D.kod) + '?redirect=' + encodeURIComponent('/cart.js'), { credentials: 'same-origin' })
+      .catch(function () { return null; });
+  }
+
+  // Temats egen varukorgslåda (Impulse): händelsen ajaxProduct:added bygger om
+  // lådan ur /cart.js och öppnar den, precis som temats vanliga köpknapp.
+  // Bubblan med antalet i sidhuvudet följer med. Så ser kunden vinsten i
+  // korgen på riktigt, inte bara i vår text (Axel 2026-09-13).
+  function visaTemaKorg() {
+    try { document.dispatchEvent(new CustomEvent('ajaxProduct:added', { detail: { product: null } })); } catch (e) {}
+  }
+
+  function korgStatus(just) {
     return fetch('/cart.js', { credentials: 'same-origin' }).then(function (r) { return r.json(); }).then(function (c) {
       var ovrigt = 0, harVinst = false;
       (c.items || []).forEach(function (it) {
@@ -254,53 +308,88 @@ function skript() {
       var lagg = $('bbh-lagg');
       lagg.textContent = harVinst ? C.knapp_lagg_klar : C.knapp_lagg;
       lagg.disabled = harVinst;
-      el.textContent = ovrigt >= D.minsta
+      el.className = 'bbh-korg';
+      var rader = [];
+      if (just === 'vinst') rader.push(fyll(C.korg_tillagd, { produkt: vunnen.n }));
+      rader.push(ovrigt >= D.minsta
         ? fyll(C.korg_klar, { produkt: vunnen.n })
-        : fyll(C.korg_under, { summa: kr(ovrigt), kvar: kr(D.minsta - ovrigt), produkt: vunnen.n });
+        : fyll(C.korg_under, { summa: kr(ovrigt), kvar: kr(D.minsta - ovrigt), produkt: vunnen.n }));
+      el.textContent = rader.join(' ');
+      // Förklaringen: vinsten står till fullt pris i korgen tills gränsen är
+      // nådd. Kunder som inte vet det tar bort den (Axel 2026-09-13).
+      var f = $('bbh-forklaring');
+      f.textContent = fyll(C.korg_forklaring, { produkt: vunnen.n });
+      f.hidden = !(harVinst && ovrigt < D.minsta);
       return c;
     }).catch(function () {});
   }
 
+  // Förslagen: EN TILL av det kunden köpte, sedan komplementen som själva når
+  // gränsen, sedan storsäljarna. Fyra åt gången, "Visa fler" tar nästa fyra.
+  var forslagsKo = [], forslagVisade = 0;
   function byggForslag() {
     var param = new URLSearchParams(location.search).get('produkt') || '';
-    var K = D.komplement, lista = [], enTill = null;
-    var egen = -1;
-    for (var j = 0; j < kat.length; j++) if (kat[j].h === param) { egen = j; break; }
-    if (egen >= 0) enTill = egen;
+    var K = D.komplement, sedda = {}, enTill = -1;
+    for (var j = 0; j < kat.length; j++) if (kat[j].h === param) { enTill = j; break; }
     var harKarta = param && Object.prototype.hasOwnProperty.call(K.karta, param);
-    var komp = harKarta ? K.karta[param] : K.fallback;
-    komp.forEach(function (i) { if (kat[i] && kat[i].h !== (vunnen && vunnen.h) && kat[i].h !== param && lista.length < 3) lista.push(i); });
+    var storsaljare = {};
+    K.storsaljare.forEach(function (i) { storsaljare[i] = true; });
+    forslagsKo = []; forslagVisade = 0;
+    var laggTill = function (i, etikett) {
+      if (!kat[i] || sedda[i]) return;
+      if (vunnen && kat[i].h === vunnen.h) return;
+      if (kat[i].h === param && etikett !== C.en_till) return;
+      sedda[i] = true;
+      forslagsKo.push({ i: i, etikett: etikett || (storsaljare[i] ? C.storsaljare_etikett : null) });
+    };
+    if (enTill >= 0) laggTill(enTill, C.en_till);
+    if (harKarta) K.karta[param].forEach(function (i) { laggTill(i, null); });
+    K.fallback.forEach(function (i) { laggTill(i, null); });
     $('bbh-kvar-rubrik').textContent = C.kvar_rubrik;
     $('bbh-kvar-text').textContent = harKarta ? C.kvar_text : C.kvar_text_fallback;
-    var rad = $('bbh-kort'); rad.innerHTML = '';
-    var kort = function (i, etikett) {
-      var p = kat[i]; if (!p) return;
-      var d = document.createElement('div'); d.className = 'bbh-kort';
-      var url = D.bas + '/products/' + p.h;
-      d.innerHTML = (etikett ? '<p class="bbh-etikett">' + etikett + '</p>' : '') +
-        '<a href="' + url + '"><img src="' + p.b + '" alt="" width="120" height="120"></a>' +
-        '<p class="bbh-namn">' + p.n + '</p><p class="bbh-kortpris">' + kr(p.p) + '</p>';
-      if (p.ev && p.v !== '') {
-        var b = document.createElement('button'); b.type = 'button'; b.className = 'bbh-liten'; b.textContent = C.knapp_lagg_till;
-        b.addEventListener('click', function () {
-          b.disabled = true; b.textContent = '…';
-          laggIKorg(p.v, p.n).then(function () { b.textContent = C.lagd; return korgStatus(); })
-            .catch(function () { b.disabled = false; b.textContent = C.knapp_lagg_till; });
-        });
-        d.appendChild(b);
-      } else {
-        var a = document.createElement('a'); a.className = 'bbh-liten'; a.href = url; a.textContent = C.knapp_se; d.appendChild(a);
-      }
-      rad.appendChild(d);
-    };
-    if (enTill !== null) kort(enTill, C.en_till);
-    lista.forEach(function (i) { kort(i, null); });
-    $('bbh-kassa').href = '/discount/' + D.kod + '?redirect=%2Fcheckout';
+    $('bbh-kort').innerHTML = '';
+    visaFler();
+    $('bbh-kassa').href = '/discount/' + encodeURIComponent(D.kod) + '?redirect=%2Fcheckout';
   }
+
+  function visaFler() {
+    var rad = $('bbh-kort');
+    var slut = Math.min(forslagVisade + D.perVisning, forslagsKo.length);
+    for (var n = forslagVisade; n < slut; n++) rad.appendChild(kort(forslagsKo[n].i, forslagsKo[n].etikett));
+    forslagVisade = slut;
+    $('bbh-fler').hidden = forslagVisade >= forslagsKo.length;
+  }
+
+  function kort(i, etikett) {
+    var p = kat[i];
+    var d = document.createElement('div'); d.className = 'bbh-kort';
+    var url = D.bas + '/products/' + p.h;
+    d.innerHTML = '<p class="bbh-etikett">' + (etikett || '&nbsp;') + '</p>' +
+      '<a href="' + url + '"><img src="' + p.b + '" alt="" width="120" height="120" loading="lazy"></a>' +
+      '<p class="bbh-namn">' + p.n + '</p><p class="bbh-kortpris">' + kr(p.p) + '</p>';
+    if (p.ev && p.v !== '') {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'bbh-liten'; b.textContent = C.knapp_lagg_till;
+      b.addEventListener('click', function () {
+        b.disabled = true; b.textContent = '…';
+        laggIKorg(p.v, p.n)
+          .then(function () { return laggPaKod(); })
+          .then(function () { b.textContent = C.lagd; visaTemaKorg(); return korgStatus('forslag'); })
+          .catch(function () { b.disabled = false; b.textContent = C.knapp_lagg_till; });
+      });
+      d.appendChild(b);
+    } else {
+      var a = document.createElement('a'); a.className = 'bbh-liten'; a.href = url; a.textContent = C.knapp_se; d.appendChild(a);
+    }
+    return d;
+  }
+
+  $('bbh-fler').addEventListener('click', visaFler);
 
   $('bbh-lagg').addEventListener('click', function () {
     var b = $('bbh-lagg'); b.disabled = true;
-    laggIKorg(vunnen.v, vunnen.n, { _gratishjul: vunnen.n }).then(function () { return korgStatus(); })
+    laggIKorg(vunnen.v, vunnen.n, { _gratishjul: vunnen.n })
+      .then(function () { return laggPaKod(); })
+      .then(function () { visaTemaKorg(); return korgStatus('vinst'); })
       .catch(function (e) {
         b.disabled = false;
         var el = $('bbh-korg'); el.className = 'bbh-korg bbh-fel';
@@ -325,9 +414,13 @@ function skript() {
 }
 
 // Hela sidkroppen (det som skrivs till Shopify som page.body).
-export function byggHjulsida({ konfig: k, copy, produkter }) {
+export function byggHjulsida(indata) {
+  const { konfig: k, copy } = indata;
   const c = copy.hjul;
-  const data = hjulData({ konfig: k, copy, produkter });
+  // Hela indatan vidare: alla + storsaljare behövs för förslagen. Att bara
+  // plocka ut tre fält här gav en tom storsäljarlista på den publicerade
+  // sidan 2026-09-13, fast loggen sa tolv.
+  const data = hjulData(indata);
   const json = JSON.stringify(data).replace(/<\//g, '<\\/');
   return `<div id="bb-hjul">
 <style>${stil(k)}</style>
@@ -346,11 +439,13 @@ export function byggHjulsida({ konfig: k, copy, produkter }) {
   <p id="bbh-vinst-text"></p>
   <button type="button" id="bbh-lagg" class="bbh-knapp">${esk(c.knapp_lagg)}</button>
   <p id="bbh-korg" class="bbh-korg"></p>
+  <p id="bbh-forklaring" class="bbh-forklaring" hidden></p>
 </div>
 <div id="bbh-kvar" class="bbh-kvar" hidden>
   <h2 id="bbh-kvar-rubrik"></h2>
   <p id="bbh-kvar-text"></p>
   <div id="bbh-kort" class="bbh-kort-rad"></div>
+  <button type="button" id="bbh-fler" class="bbh-knapp bbh-knapp--tunn" hidden>${esk(c.knapp_visa_fler)}</button>
   <a id="bbh-kassa" class="bbh-knapp bbh-knapp--sek" href="${esk(k.butik.url)}/discount/${esk(k.erbjudande.kod)}?redirect=%2Fcheckout">${esk(c.knapp_kassa)}</a>
 </div>
 <p class="bbh-finstilt">${esk(c.finstilt)}</p>

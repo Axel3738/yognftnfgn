@@ -8,11 +8,11 @@
 // Skriver mejl/output/hjul.html (sidkroppen) och forhandsvisning/hjul.html
 // (fristående, för skärmdump) och bokför datumet i konfig.json → lage.
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { valjProdukter } from './mallar.mjs';
-import { byggHjulsida, byggHjulForhandsvisning } from './hjul.mjs';
+import { byggHjulsida, byggHjulForhandsvisning, hjulData } from './hjul.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 const UT = join(ROT, 'output');
@@ -26,13 +26,19 @@ const titel = copy.hjul.titel;
 
 let shopify = null;
 let alla;
+let storsaljare = [];
+const cacheStorsaljare = join(ROT, 'storsaljare.json');
 if (offline) {
   alla = JSON.parse(readFileSync(join(ROT, 'produkter.json'), 'utf8'));
+  if (existsSync(cacheStorsaljare)) storsaljare = JSON.parse(readFileSync(cacheStorsaljare, 'utf8')).lista;
+  else console.log('⚠️ mejl/storsaljare.json saknas — förslagen faller tillbaka på mejlets fallback. Kör utan --offline för riktiga storsäljare.');
 } else {
   shopify = await import('./shopify.mjs');
   shopify.kravProxy();
   alla = await shopify.hamtaProdukter();
   writeFileSync(join(ROT, 'produkter.json'), JSON.stringify(alla, null, 1));
+  storsaljare = await shopify.hamtaStorsaljare(h.storsaljare_dagar ?? 7);
+  writeFileSync(cacheStorsaljare, `${JSON.stringify({ hamtad: new Date().toISOString().slice(0, 10), dagar: h.storsaljare_dagar ?? 7, lista: storsaljare }, null, 1)}\n`);
 }
 const produkter = valjProdukter(alla, konfig);
 for (const p of produkter.gratis) {
@@ -41,11 +47,15 @@ for (const p of produkter.gratis) {
     process.exit(1);
   }
 }
-const kropp = byggHjulsida({ konfig, copy, produkter });
+const indata = { konfig, copy, produkter, alla, storsaljare };
+const kropp = byggHjulsida(indata);
 mkdirSync(join(UT, 'forhandsvisning'), { recursive: true });
 writeFileSync(join(UT, 'hjul.html'), kropp);
-writeFileSync(join(UT, 'forhandsvisning', 'hjul.html'), byggHjulForhandsvisning({ konfig, copy, produkter }));
+writeFileSync(join(UT, 'forhandsvisning', 'hjul.html'), byggHjulForhandsvisning(indata));
+const data = hjulData(indata);
+const topp = data.komplement.storsaljare.map((i) => `${data.komplement.katalog[i][1]} (${data.komplement.katalog[i][2]} kr)`);
 console.log(`Hjulsidan: ${(kropp.length / 1024).toFixed(0)} kB, ${produkter.gratis.length} vinster: ${produkter.gratis.map((p) => p.kortnamn).join(', ')}`);
+console.log(`Storsäljare ≥ ${konfig.erbjudande.minsta_kop_sek} kr senaste ${h.storsaljare_dagar ?? 7} dagarna: ${topp.length ? topp.join(', ') : 'INGA — förslagen faller tillbaka på mejlets lista'}`);
 
 if (torr || offline) {
   console.log(torr ? '--torr: inget skrivet till Shopify.' : '--offline: bara filerna byggda, inget skrivet till Shopify.');
@@ -91,9 +101,17 @@ if (!p.body.includes('id="bbh-data"') || !p.body.includes('<script>')) {
 const url = `${konfig.butik.url}/pages/${h.handle}`;
 let publik = null;
 for (let forsok = 1; forsok <= 4; forsok++) {
-  const r = await fetch(url, { headers: { 'Cache-Control': 'no-cache' } });
+  // Cache-buster i frågesträngen: Shopifys CDN serverar annars förra
+  // versionen en stund, och kontrollen nedan jämför mot det som just skrevs.
+  const r = await fetch(`${url}?v=${Date.now()}`, { headers: { 'Cache-Control': 'no-cache' } });
   const html = await r.text();
-  if (r.ok && html.includes('id="bb-hjul"') && html.includes('id="bbh-data"')) {
+  const har = html.match(/id="bbh-data"[^>]*>([\s\S]*?)<\/script>/);
+  let samma = false;
+  try {
+    const d = JSON.parse((har?.[1] ?? '').replace(/<\\\//g, '</'));
+    samma = (d.komplement?.storsaljare?.length ?? -1) === data.komplement.storsaljare.length;
+  } catch (fel) { /* tolkas nedan */ }
+  if (r.ok && html.includes('id="bb-hjul"') && har && samma) {
     publik = html;
     break;
   }
@@ -108,9 +126,11 @@ if (!publik) {
 // sidredigerare kan omforma HTML, så det räcker inte att API:t svarar rätt.
 const rutan = publik.match(/id="bbh-data"[^>]*>([\s\S]*?)<\/script>/);
 let vinsterUte = 0;
+let storsaljareUte = 0;
 try {
   const d = JSON.parse((rutan?.[1] ?? '').replace(/<\\\//g, '</'));
   vinsterUte = Array.isArray(d.vinster) ? d.vinster.length : 0;
+  storsaljareUte = Array.isArray(d.komplement?.storsaljare) ? d.komplement.storsaljare.length : 0;
 } catch (fel) {
   console.error(`❌ Datan i kundens vy går inte att tolka: ${fel.message}`);
   process.exit(1);
@@ -119,7 +139,14 @@ if (vinsterUte !== produkter.gratis.length) {
   console.error(`❌ Kundens vy har ${vinsterUte} vinster, förväntade ${produkter.gratis.length}.`);
   process.exit(1);
 }
-console.log(`✅ Publikt: ${url} — hjulet finns, ${vinsterUte} vinster i datan`);
+// Samma storsäljare i kundens vy som i bygget — annars visar sidan mejlets
+// gamla fallback och inte veckans lista. Shopifys cache kan ge en äldre
+// version några sekunder; därför sista försöket i slingan ovan, inte första.
+if (storsaljareUte !== data.komplement.storsaljare.length) {
+  console.error(`❌ Kundens vy har ${storsaljareUte} storsäljare, bygget ${data.komplement.storsaljare.length}. Cache, eller så tappades listan på vägen.`);
+  process.exit(1);
+}
+console.log(`✅ Publikt: ${url} — hjulet finns, ${vinsterUte} vinster och ${storsaljareUte} storsäljare i datan`);
 
 konfig.lage.hjul_publicerad = new Date().toISOString().slice(0, 10);
 konfig.lage.hjul_url = url;

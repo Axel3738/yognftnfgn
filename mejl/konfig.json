@@ -55,6 +55,10 @@
     "template_suffix": "full-width",
     "varv": 6,
     "snurrtid_ms": 5200,
+    "storsaljare_dagar": 7,
+    "storsaljare_antal": 12,
+    "storsaljare_comment": "Förslagen under vinsten (Axels beslut 2026-09-13): först en till av det kunden köpte, sedan komplementen som själva når 299 kr, sedan butikens mest sålda de senaste sju dagarna över 299 kr. Läses ur ordrarna vid varje publicering och cachas i mejl/storsaljare.json för --offline. Fyra visas först, knappen Visa fler tar nästa fyra.",
+    "forslag_per_visning": 4,
     "localstorage_nyckel": "bb_gratishjul"
   },
   "komplement": {

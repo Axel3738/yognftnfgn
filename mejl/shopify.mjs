@@ -128,6 +128,38 @@ export async function hamtaProdukter() {
   return ut;
 }
 
+// Mest sålda produkterna de senaste `dagar` dagarna, räknat i antal sålda
+// enheter över alla ordrar som inte annullerats. Hjulsidan visar dem som
+// "vägen till 299 kr" (Axels beslut 2026-09-13: senaste sju dagarna, minst
+// 299 kr). Kräver read_orders. Returnerar [{ handle, antal, ordrar, pris }]
+// sorterat fallande, ofiltrerat — prisgränsen läggs av den som ringer.
+export async function hamtaStorsaljare(dagar = 7) {
+  const sedan = new Date(Date.now() - dagar * 86400 * 1000).toISOString().slice(0, 10);
+  const per = new Map();
+  let after = null;
+  for (let sida = 0; sida < 40; sida++) {
+    const d = await graphql(
+      `query($q: String!, $after: String) { orders(first: 250, query: $q, after: $after) {
+        pageInfo { hasNextPage endCursor }
+        nodes { cancelledAt lineItems(first: 20) { nodes { quantity product { handle } variant { price } } } } } }`,
+      { q: `created_at:>=${sedan}`, after }
+    );
+    for (const o of d.orders.nodes) {
+      if (o.cancelledAt) continue;
+      for (const li of o.lineItems.nodes) {
+        if (!li.product?.handle) continue;
+        const p = per.get(li.product.handle) ?? { handle: li.product.handle, antal: 0, ordrar: 0, pris: Number(li.variant?.price ?? 0) };
+        p.antal += li.quantity;
+        p.ordrar += 1;
+        per.set(li.product.handle, p);
+      }
+    }
+    if (!d.orders.pageInfo.hasNextPage) break;
+    after = d.orders.pageInfo.endCursor;
+  }
+  return [...per.values()].sort((a, b) => b.antal - a.antal || b.ordrar - a.ordrar);
+}
+
 export async function hamtaKollektion(handle) {
   const d = await graphql(
     `query($h: String!) { collectionByHandle(handle: $h) { id title handle descriptionHtml

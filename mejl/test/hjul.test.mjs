@@ -13,7 +13,18 @@ const konfig = JSON.parse(readFileSync(join(ROT, 'konfig.json'), 'utf8'));
 const copy = JSON.parse(readFileSync(join(ROT, 'copy.json'), 'utf8'));
 const alla = JSON.parse(readFileSync(join(ROT, 'produkter.json'), 'utf8'));
 const produkter = valjProdukter(alla, konfig);
-const indata = { konfig, copy, produkter };
+const minsta = konfig.erbjudande.minsta_kop_sek;
+// Storsäljare som fixtur: några riktiga produkter, en under gränsen, en
+// gratisprodukt och en som inte finns — alla tre sista ska sorteras bort.
+const storsaljare = [
+  { handle: 'ibc-tankoverdrag-1000-l-stoppar-alger-uv', antal: 90, ordrar: 60, pris: 489 },
+  { handle: 'fiskespohallare-4-pack-kraftig-forvaring', antal: 73, ordrar: 40, pris: 289 },
+  { handle: 'overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning', antal: 71, ordrar: 50, pris: 799 },
+  { handle: konfig.erbjudande.gratisprodukter[0], antal: 50, ordrar: 50, pris: 199 },
+  { handle: 'finns-inte-i-butiken', antal: 40, ordrar: 40, pris: 999 },
+  { handle: 'mc-kapell-220-120-regn-damm-uv', antal: 32, ordrar: 30, pris: 349 },
+];
+const indata = { konfig, copy, produkter, alla, storsaljare };
 const D = hjulData(indata);
 const kropp = byggHjulsida(indata);
 
@@ -62,6 +73,37 @@ test('komprimeringen: katalog som array, karta som index, gemensamt cdn-prefix',
   assert.ok(D.komplement.fallback.length >= 3, 'fallbacken måste kunna fylla raden');
 });
 
+test('"Så når du 299 kr" visar bara produkter som själva når gränsen', () => {
+  // Rubriken lovar vägen till 299 kr. En vara för 189 kr gör inte det
+  // (Axel 2026-09-13: "alla produkter kostar inte ens 299 kr där").
+  for (const [handle, lista] of Object.entries(D.komplement.karta)) {
+    for (const i of lista) assert.ok(D.komplement.katalog[i][2] >= minsta, `${handle} föreslår ${D.komplement.katalog[i][0]} för ${D.komplement.katalog[i][2]} kr`);
+  }
+  for (const i of D.komplement.fallback) assert.ok(D.komplement.katalog[i][2] >= minsta, `fallback under gränsen: ${D.komplement.katalog[i][0]}`);
+  for (const i of D.komplement.storsaljare) assert.ok(D.komplement.katalog[i][2] >= minsta, `storsäljare under gränsen: ${D.komplement.katalog[i][0]}`);
+});
+
+test('storsäljarna: ordning ur ordrarna, under gränsen/gratis/okända bort, fallbacken = storsäljarna', () => {
+  const handles = D.komplement.storsaljare.map((i) => D.komplement.katalog[i][0]);
+  assert.deepEqual(handles, [
+    'ibc-tankoverdrag-1000-l-stoppar-alger-uv',
+    'overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning',
+    'mc-kapell-220-120-regn-damm-uv',
+  ]);
+  assert.deepEqual(D.komplement.fallback, D.komplement.storsaljare, 'med storsäljare är de fallbacken');
+  // Storsäljare som inte fanns i komplementkatalogen har lagts till med variant-id.
+  const ibc = D.komplement.katalog[D.komplement.storsaljare[0]];
+  assert.equal(ibc[0], 'ibc-tankoverdrag-1000-l-stoppar-alger-uv');
+  assert.ok(ibc[1] && ibc[3].includes('_240x240'), 'namn och förminskad bild');
+});
+
+test('utan storsäljare faller sidan tillbaka på mejlets lista, filtrerad på priset', () => {
+  const D2 = hjulData({ konfig, copy, produkter, alla, storsaljare: [] });
+  assert.deepEqual(D2.komplement.storsaljare, []);
+  assert.ok(D2.komplement.fallback.length >= 1, 'något måste finnas att visa');
+  for (const i of D2.komplement.fallback) assert.ok(D2.komplement.katalog[i][2] >= minsta);
+});
+
 test('kartan känner igen storsäljarna och ger dem rätt komplement', () => {
   const axel = D.komplement.karta['axelbalte-for-trimmer-justerbart-nylonbalte'];
   assert.ok(axel, 'axelbältet saknas i kartan');
@@ -86,7 +128,7 @@ test('sidkroppen: en rot, datan inbakad, inga otillåtna taggar, rimlig storlek'
 });
 
 test('all text kommer ur copy.json, inga hårdkodade kundtexter', () => {
-  for (const nyckel of ['forrubrik', 'intro', 'knapp_snurra', 'knapp_lagg', 'knapp_kassa', 'finstilt']) {
+  for (const nyckel of ['forrubrik', 'intro', 'knapp_snurra', 'knapp_lagg', 'knapp_kassa', 'knapp_visa_fler', 'finstilt']) {
     assert.ok(copy.hjul[nyckel], `copy.hjul.${nyckel} saknas`);
     assert.ok(kropp.includes(copy.hjul[nyckel].replace(/&/g, '&amp;')), `copy.hjul.${nyckel} syns inte på sidan`);
   }
@@ -100,7 +142,7 @@ test('all text kommer ur copy.json, inga hårdkodade kundtexter', () => {
 });
 
 test('platshållarna i copyn matchar dem skriptet fyller i', () => {
-  const tillatna = { vann_rubrik: ['produkt'], vann_text: ['produkt', 'pris'], redan_rubrik: [], redan_text: ['produkt'], korg_under: ['summa', 'kvar', 'produkt'], korg_klar: ['produkt'] };
+  const tillatna = { vann_rubrik: ['produkt'], vann_text: ['produkt', 'pris'], redan_rubrik: [], redan_text: ['produkt'], korg_under: ['summa', 'kvar', 'produkt'], korg_klar: ['produkt'], korg_tillagd: ['produkt'], korg_forklaring: ['produkt'] };
   for (const [nyckel, falt] of Object.entries(tillatna)) {
     const funna = [...copy.hjul[nyckel].matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1]);
     for (const f of funna) assert.ok(falt.includes(f), `copy.hjul.${nyckel}: {{${f}}} fylls aldrig i av skriptet`);
@@ -110,6 +152,15 @@ test('platshållarna i copyn matchar dem skriptet fyller i', () => {
     if (tillatna[nyckel]) continue;
     assert.ok(!/\{\{/.test(text), `copy.hjul.${nyckel} har en platshållare som ingen fyller i`);
   }
+});
+
+test('korgflödet: koden läggs på efter varorna, temats låda öppnas, förklaringen finns', () => {
+  const js = kropp.slice(kropp.lastIndexOf('<script>'));
+  assert.ok(js.indexOf("'/cart/add.js'") < js.indexOf("'/discount/' + encodeURIComponent(D.kod)"), 'varorna först, koden efter (fabrikens mätning 2026-09-09)');
+  assert.ok(js.includes("encodeURIComponent('/cart.js')"), 'koden läggs på via redirect till cart.js, ingen sidladdning');
+  assert.ok(js.includes("new CustomEvent('ajaxProduct:added'"), 'temats varukorgslåda ritas om och öppnas');
+  assert.ok(kropp.includes('id="bbh-forklaring"'), 'förklaringen om fullt pris tills 299 kr');
+  assert.ok(kropp.includes('id="bbh-fler"'), 'visa fler-knappen');
 });
 
 test('länkarna: kassan lägger på koden, inga länkar till fel butik', () => {

@@ -1,0 +1,360 @@
+{
+ "hamtad": "2026-09-13",
+ "dagar": 7,
+ "lista": [
+  {
+   "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+   "antal": 90,
+   "ordrar": 62,
+   "pris": 489
+  },
+  {
+   "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+   "antal": 81,
+   "ordrar": 79,
+   "pris": 1129
+  },
+  {
+   "handle": "fiskespohallare-4-pack-kraftig-forvaring",
+   "antal": 73,
+   "ordrar": 51,
+   "pris": 289
+  },
+  {
+   "handle": "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+   "antal": 71,
+   "ordrar": 41,
+   "pris": 799
+  },
+  {
+   "handle": "batmotorskydd-420d-heltackande-for-utombordare",
+   "antal": 43,
+   "ordrar": 42,
+   "pris": 579
+  },
+  {
+   "handle": "damasker-vandring-haller-sno-vata-grus-ute",
+   "antal": 35,
+   "ordrar": 31,
+   "pris": 389
+  },
+  {
+   "handle": "adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+   "antal": 35,
+   "ordrar": 28,
+   "pris": 499
+  },
+  {
+   "handle": "mc-kapell-220-120-regn-damm-uv",
+   "antal": 32,
+   "ordrar": 25,
+   "pris": 349
+  },
+  {
+   "handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+   "antal": 22,
+   "ordrar": 21,
+   "pris": 559
+  },
+  {
+   "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+   "antal": 18,
+   "ordrar": 14,
+   "pris": 909
+  },
+  {
+   "handle": "isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
+   "antal": 16,
+   "ordrar": 14,
+   "pris": 789
+  },
+  {
+   "handle": "marin-motorholje-420d-universellt-skydd",
+   "antal": 8,
+   "ordrar": 7,
+   "pris": 299
+  },
+  {
+   "handle": "magnetfiskesats-320lb-neodymmagnet-med-10m-rep",
+   "antal": 8,
+   "ordrar": 5,
+   "pris": 279
+  },
+  {
+   "handle": "gravstenspenna-aterstaller-blekt-text-pa-sten",
+   "antal": 7,
+   "ordrar": 5,
+   "pris": 269
+  },
+  {
+   "handle": "glasspints-med-lock-2-pack-gor-glassen-direkt-i-burken",
+   "antal": 7,
+   "ordrar": 3,
+   "pris": 499
+  },
+  {
+   "handle": "batterifranskiljare-huvudstrombrytare-12-24v",
+   "antal": 5,
+   "ordrar": 3,
+   "pris": 189
+  },
+  {
+   "handle": "magnetplattor-i-storformat-byggset-i-lada-med-handtag",
+   "antal": 5,
+   "ordrar": 2,
+   "pris": 469
+  },
+  {
+   "handle": "bavertratt-tanka-utan-spill",
+   "antal": 4,
+   "ordrar": 4,
+   "pris": 149
+  },
+  {
+   "handle": "superkoppling",
+   "antal": 4,
+   "ordrar": 1,
+   "pris": 350
+  },
+  {
+   "handle": "3d-sandbild-20-cm-nytt-landskap-varje-gang-du-vander-den",
+   "antal": 3,
+   "ordrar": 3,
+   "pris": 459
+  },
+  {
+   "handle": "garanti-for-saker-frakt",
+   "antal": 3,
+   "ordrar": 3,
+   "pris": 35
+  },
+  {
+   "handle": "handdriven-kedjeslip-slipverktyg-for-motorsag",
+   "antal": 3,
+   "ordrar": 2,
+   "pris": 249
+  },
+  {
+   "handle": "tofflor-ergonomiska-tjocksulade-for-inne-ute",
+   "antal": 2,
+   "ordrar": 2,
+   "pris": 309
+  },
+  {
+   "handle": "diskstall-i-tva-vaningar-hela-diskens-torkyta-pa-42-cm",
+   "antal": 2,
+   "ordrar": 2,
+   "pris": 739
+  },
+  {
+   "handle": "forsta-hjalpen-kit-260-delar-hem-bil-camping",
+   "antal": 2,
+   "ordrar": 2,
+   "pris": 309
+  },
+  {
+   "handle": "batsitsoverdrag-210d-vadertaligt-stolsskydd",
+   "antal": 2,
+   "ordrar": 1,
+   "pris": 269
+  },
+  {
+   "handle": "lastnat-kraftigt-slapvagnsnat-for-saker-transport",
+   "antal": 2,
+   "ordrar": 1,
+   "pris": 399
+  },
+  {
+   "handle": "staketstolpslagare-2-pack-raddar-stolpen-utan-att-grava",
+   "antal": 2,
+   "ordrar": 1,
+   "pris": 999
+  },
+  {
+   "handle": "sjalvhaftande-tradband-insektsfalla-for-frukttrad",
+   "antal": 2,
+   "ordrar": 1,
+   "pris": 169
+  },
+  {
+   "handle": "mc-led-stralkastare-extraljus-dimljus-12v",
+   "antal": 2,
+   "ordrar": 1,
+   "pris": 799
+  },
+  {
+   "handle": "ateranvandbar-tradgardssack-med-handtag-kraftig-for-lov-gras",
+   "antal": 2,
+   "ordrar": 1,
+   "pris": 318
+  },
+  {
+   "handle": "tradlos-dackpump-150-psi-smart-luftkompressor-med-led-display",
+   "antal": 2,
+   "ordrar": 1,
+   "pris": 519
+  },
+  {
+   "handle": "herrsandaler-konvertibla-for-sport-strand",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 229
+  },
+  {
+   "handle": "tvattpase-for-skor-skyddar-sneakers-i-maskinen",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 169
+  },
+  {
+   "handle": "linupprullare-aluminium-snabbt-linbyte-pa-rullen",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 249
+  },
+  {
+   "handle": "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 649
+  },
+  {
+   "handle": "manuell-vatskepump-borrdriven-sug-overforingspump",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 179
+  },
+  {
+   "handle": "1080p-inspektionskamera-endoskop-ip67-for-bil-ror-motor",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 699
+  },
+  {
+   "handle": "batteridriven-branslepump-barbar-vatskepump-med-flodeskontroll",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 469
+  },
+  {
+   "handle": "cargoshorts-3-pack-avslappnade-herrshorts-med-fickor",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 909
+  },
+  {
+   "handle": "bankhylla-med-utdragbar-korg-dubbel-yta-pa-samma-bank",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 849
+  },
+  {
+   "handle": "axelbalte-for-trimmer-justerbart-nylonbalte",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 599
+  },
+  {
+   "handle": "dorrbottenlist-tatar-mot-ljud-drag-damm",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 319
+  },
+  {
+   "handle": "palsborste-till-dyson-dammsugare-borsta-och-sug-i-samma-drag",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 539
+  },
+  {
+   "handle": "triangulart-solsegel-uv-skydd-for-tradgard-uteplats",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 699
+  },
+  {
+   "handle": "anti-slip-mattdynor-24-pack-haller-mattan-pa-plats",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 249
+  },
+  {
+   "handle": "cykelshorts-herr-vadderade-med-kompression",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 259
+  },
+  {
+   "handle": "luffarschack-i-tra-klassikern-som-ligger-framme",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 259
+  },
+  {
+   "handle": "veckodosett-21-fack-morgon-middag-och-kvall-i-sju-dagar",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 389
+  },
+  {
+   "handle": "vandringskangor-herr-grepp-stod-pa-stigen",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 699
+  },
+  {
+   "handle": "3d-snickarvinkel-vinkellinjal-med-ritskrapa",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 219
+  },
+  {
+   "handle": "stegstod-2-pack-stegen-slutar-glida-i-sidled",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 1189
+  },
+  {
+   "handle": "solcellslarm-2-pack-siren-och-blixt-vid-rorelse",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 769
+  },
+  {
+   "handle": "vandringskangor-herr-latta-med-tjock-sula",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 669
+  },
+  {
+   "handle": "baverlampa-pro",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 199
+  },
+  {
+   "handle": "taktisk-brostvaska-justerbar-med-flera-fack",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 399
+  },
+  {
+   "handle": "skoreparationslappar-lagar-halslitage-mesh",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 249
+  },
+  {
+   "handle": "7-i-1-jumpstart-5000a-med-luftkompressor-12v-batteribooster",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 1599
+  },
+  {
+   "handle": "klistermarken-for-soptunnan-4-pack-tecknade-motiv",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 199
+  }
+ ]
+}
