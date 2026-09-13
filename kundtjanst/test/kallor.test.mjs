@@ -83,6 +83,16 @@ test('i en creative hub räknas bara Typ SOP/Guideline som SOP; en ren SOP-datab
   assert.equal(typAv({ properties: { Typ: { type: 'multi_select', multi_select: [{ name: 'SOP' }, { name: 'VA' }] } } }), 'SOP / VA');
 });
 
+test('VA:ns SOP-databas: avdelningsrader i versaler utan Kategori hoppas över, resten täcker toppärendena', async () => {
+  const rad = (namn, kategorier) => ({ properties: { Dokumentnamn: { type: 'title', title: [{ plain_text: namn }] }, Kategori: { type: 'multi_select', multi_select: kategorier.map((name) => ({ name })) } } });
+  const db = { results: [rad('PAYMENT', []), rad('Chargeback or dispute via bank or Klarna', ['Payment']), rad('Money charged but no order visible', ['Payment']), rad('Package missing after tracking shows delivered', ['Delivery']), rad('Wrong product delivered', ['Order']), rad('', ['Order'])], has_more: false };
+  const titlar = await hamtaSopTitlar('db', { fetchFn: async () => ({ ok: true, status: 200, json: async () => db }), token: 't' });
+  assert.deepEqual(titlar, ['Chargeback or dispute via bank or Klarna', 'Money charged but no order visible', 'Package missing after tracking shows delivered', 'Wrong product delivered']);
+  const t = sopTackning(titlar, ['chargeback_hot', 'okand_debitering', 'ej_levererad', 'fel_vara', 'produktfraga']);
+  assert.deepEqual(t.tackta.map((x) => x.id), ['chargeback_hot', 'okand_debitering', 'ej_levererad', 'fel_vara']);
+  assert.deepEqual(t.saknas, ['produktfraga']);
+});
+
 test('rapporttext blir Notion-block: rubriker, punkter, stycken, max 100', () => {
   const b = tillBlock('# Rubrik\n• punkt ett\n1. punkt två\nett stycke\n\n');
   assert.deepEqual(b.map((x) => x.type), ['heading_1', 'bulleted_list_item', 'bulleted_list_item', 'paragraph']);
