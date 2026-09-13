@@ -1,17 +1,23 @@
 1
-00:00:00,119 --> 00:00:02,480
-Dette er grunnen til at alle snakker om den.
+00:00:00,179 --> 00:00:03,159
+I dag, og bare i dag, tretti prosent rabatt.
 
 2
-00:00:02,740 --> 00:00:05,980
-Se hvor enkelt det er. Ingen graving, ingen dyre verktøy.
+00:00:03,399 --> 00:00:07,539
+I dag er siste dag. Tretti prosent rabatt på Gjerdestolpebøylen.
 
 3
-00:00:06,159 --> 00:00:08,619
-Bare deg, hammeren og stolpen på plass.
+00:00:07,619 --> 00:00:08,559
+Nesten utsolgt.
 
 4
-00:00:08,859 --> 00:00:11,940
-Sånn gjør hjemmefiksere det nå. Din tur til å teste
-</content>
-</invoke>
+00:00:08,840 --> 00:00:12,019
+Ingen graving, ikke noe styr, bare ned med stolpen.
+
+5
+00:00:12,059 --> 00:00:13,699
+Klikk nå før den er tom.
+
+6
+00:00:13,819 --> 00:00:15,659
+Tilbudet gjelder bare i dag
