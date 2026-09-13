@@ -51,7 +51,9 @@ Annonsen är färdigskriven och klistringsklar i
    svensk tid, VA:n loggar de timmar hen faktiskt jobbar och får betalt för
    dem, ca 1–2 h/dag nu, växer mot 5–8 h med fler brands och uppgifter —
    "a direction, not a promise".
-4b. **$3 per Trustpilot-recension** (Axels tillägg 2026-09-13): varje 4- eller
+4. **Översättningsverktyget är DeepL.** Står på fyra ställen i annonsen,
+   inklusive den gömda frågan ("DeepL is down for the whole day").
+5. **$3 per Trustpilot-recension** (Axels tillägg 2026-09-13): varje 4- eller
    5-stjärnig recension från en riktig kund som nämner VA:n vid namn.
    Obegränsat — motsvarigheten till redigerarnas "$15 per winner". Annonsen
    bär två spärrar som jag lade till: (a) recensionen matchas mot en riktig
@@ -63,8 +65,6 @@ Annonsen är färdigskriven och klistringsklar i
    ⚠️ Vid utbetalning: kolla recensionens datum mot ordern och att kundens
    ärende faktiskt gick genom VA:n — annars betalar vi för namn som
    kunden råkat se i en signatur.
-4. **Översättningsverktyget är DeepL.** Står på fyra ställen i annonsen,
-   inklusive den gömda frågan ("DeepL is down for the whole day").
 
 Codewordet är `lingon` (skrivet i listan i `jobbannons-video-editor.md`).
 Kanal: samma som redigerarannonsen, OnlineJobs.ph, om Axel inte säger annat.
