@@ -57,12 +57,15 @@ aldrig** i det läget. Det är avsiktligt skydd, inte ett fel.
    Rullgardin-per-enhet i sig FUNGERAR (temats pill-väljare göms korrekt).
    De 9 varianterna är motorstorlekar, inte färger — ägarbeslut om det ens
    ska finnas en bild per storlek.
-7. **Optionsnamnet "Motorstorlek" saknar nb-översättning** (`translations: []`).
+7. ~~Optionsnamnet "Motorstorlek" saknar nb-översättning.~~ **RÄTTAT
+   2026-09-13** → `Motorstørrelse`, tillbakaläst.
 8. **`snippets/opf-tillagg.liquid` är hårdkodad svenska** på /nb ("Lägg till
    batterifrånskiljare", "+ 189,00 kr"). Filens egen kommentar påstår att den
    är locale-branchad — den innehåller inget `iso_code`. **Drabbar varje
    OPS-butik med bonus-kryssruta**, inte bara den här.
-9. Bonusprodukten `batterifranskiljaren` står på **DENY**, ska vara CONTINUE.
+9. ~~Bonusprodukten `batterifranskiljaren` står på DENY.~~ **RÄTTAT
+   2026-09-13** → CONTINUE (tracked var redan false), tillbakaläst. Alla 9
+   varianter på huvudprodukten låg redan rätt.
 10. **Recensionerna går inte att reproducera ur repot.** Butiken bär **14**
     (5,0 snitt, svenska + norska) — produktfilen bär **8**, avlästa ur källan.
     Dry-run skrev `output/batmotorskyddet/judgeme-import.csv` med just de 8,
