@@ -449,3 +449,18 @@ får fällas. Gårdagens 7 uppladdade hann spendera 1–48 kr vardera innan paus
 **otestade**, inte underkända.
 
 Inget aktiverat, inget pausat, ingen Notion-status ändrad av den här körningen.
+
+---
+
+## Översättning NO `/ops-oversatt` 2026-09-13 — 0 uppladdade, NO-kampanjen pausad av Axel
+
+Kön: **1 rad** i `SE-ACTIVE to be translated` — `Adventskalender_FM_1_H1` (struken 2026-09-12 på
+röstkollen, ligger kvar tills källan får luft efter sista repliken).
+
+**Stopp: ingen ACTIVE NO-kampanj.** `ADVENTLANERACING_NO_Racingkalendern` är PAUSED med 3 157 kr
+spend — Axel pausade den 11:05 (aktivitetsloggen, se leveransrundan ovan). Pausad med spend =
+avvecklad = aldrig mål. Inget översatt, inget renderat, 0 HeyGen-krediter, ingen Notion-status
+ändrad, kontot orört. Discord-rapport i `#annons-uppladdning`, ingen ping (pausen är hans beslut).
+
+Gårdagens sex norska annonser hann spendera 1–48 kr var före pausen — otestade, inte dömda.
+Slås Norge på igen tar rutinen kön automatiskt samma dag 15:55.

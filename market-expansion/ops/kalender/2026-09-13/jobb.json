@@ -1,0 +1,83 @@
+{
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+    "titel": "Racing Car Advent Calendar creative hub"
+  },
+  "kampanj": null,
+  "kampanj_skal": "ingen ACTIVE NO-kampanj — \"ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10\" är PAUSED med 3157 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+  "kampanjer_bort": 17,
+  "lank_arvd": null,
+  "pris_butik": {
+    "pris": 499,
+    "min": 499,
+    "max": 499,
+    "jamforpris": 649,
+    "valuta": "SEK",
+    "titel": "Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor",
+    "handle": "adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+    "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+  },
+  "pris_skal": null,
+  "rader": [
+    {
+      "namn": "Adventskalender_FM_1_H1",
+      "mal_namn": "AdventLaneRacing_NO_FM_1_H1",
+      "page_id": "3d7270ab-908c-81f5-85e6-c70adedc7536",
+      "url": "https://app.notion.com/p/Adventskalender_FM_1_H1-3d7270ab908c81f585e6c70adedc7536",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "prefix": "Adventskalender",
+      "koncept": "FM",
+      "nummer": 1,
+      "variant": "H1",
+      "adset_namn": null,
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": "120249067244690172",
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "market-expansion/ops/kalender/2026-09-13/se/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/kalender/2026-09-13/se/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_1.mp4",
+        "market-expansion/ops/kalender/2026-09-13/se/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_2.mp4"
+      ],
+      "fil_fel": null
+    }
+  ],
+  "varningar": [
+    "kampanj: ingen ACTIVE NO-kampanj — \"ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10\" är PAUSED med 3157 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+    "\"ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10\" är PAUSED med 3157 kr spend — avvecklad, aldrig mål",
+    "Adventskalender_FM_1_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_NO_FM_1_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris"
+  ],
+  "hamtad": "2026-09-13T14:50:26.295Z"
+}

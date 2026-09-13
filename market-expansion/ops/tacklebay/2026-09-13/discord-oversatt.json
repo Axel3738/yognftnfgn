@@ -1,0 +1,23 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay",
+  "datum": "2026-09-13",
+  "lage": "oversatt",
+  "gjort": [
+    "Translation queue read: 1 row in SE-ACTIVE to be translated (hub Fish rod holder)",
+    "TackleBayRod_PD_46_H1 → TackleBayRod_NO_PD_46_H1: live in TACKLEBAY_NO_Spöhållaren, adset PD, ad 120249076557290172 (ACTIVE, video processing)",
+    "Video: HeyGen bokmål voice dub from the Swedish VO (proofread first, then one render), all 9 burned-in captions replaced with Norwegian in place, voice check passed",
+    "Ads Manager copy in bokmål without price; Norwegian landing page inherited from the NO campaign",
+    "Notion row moved to Approved with comment and Translated url. HeyGen credits: 8446 before, 8435 after"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "The 9:16 file (1080x1920) was translated, matching the SE ad that went live; the 4:5 file in the Drive folder was not translated",
+    "The Swedish VO says the price (289 kronor). The Norwegian VO leaves the price out (no NOK price exists); the burned-in caption keeps 289 kr in SEK, same as the NO product page",
+    "The Norwegian mp4 is not attached to the Notion row (file upload via REST is not built) — check the ad in Ads Manager via the Translated url"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-14"
+}
