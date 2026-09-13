@@ -34,6 +34,7 @@ import { mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { valjAdsetForKoncept } from './meta-lib.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const NOTION_API = 'https://api.notion.com/v1';
@@ -90,11 +91,16 @@ export function tolkaNamn(namn) {
   const n = annonsdel(namn);
   const f = n.split('_');
   const prefix = f[0] && /^[A-Za-zÅÄÖåäö0-9-]+$/.test(f[0]) ? f[0] : null;
-  const k = (f[1] ?? '').trim();
+  // Tvådelat prefix (DryTrek_Damasker_PD_14_1, mätt 2026-09-13): ett
+  // produktsegment med fem eller fler bokstäver före konceptkoden hoppas över
+  // när fältet efter det är en kod (1–4 bokstäver).
+  let i = 1;
+  if (/^[A-Za-zÅÄÖåäö]{5,}$/.test(f[1] ?? '') && /^[A-Za-z]{1,4}$/.test(f[2] ?? '')) i = 2;
+  const k = (f[i] ?? '').trim();
   const koncept = /^[A-Za-z]+$/.test(k) ? k.toUpperCase() : null;
-  const nr = (f[2] ?? '').trim();
+  const nr = (f[i + 1] ?? '').trim();
   const nummer = /^\d+$/.test(nr) ? Number(nr) : null;
-  const rest = f.slice(3).join('_');
+  const rest = f.slice(i + 2).join('_');
   return { prefix, koncept, nummer, variant: rest !== '' ? rest : null };
 }
 
@@ -135,9 +141,11 @@ export const kampanjBas = (kampanjnamn) => String(kampanjnamn ?? '').split(' | '
 export const adsetNamn = (bas, koncept) => (bas && koncept ? `${bas} - ${koncept}` : null);
 
 /** Adsetet med exakt namnet (skiftlägesokänsligt), annars null. */
-export function hittaAdset(adsets, namn) {
-  if (!namn) return null;
-  const t = adsets.find((a) => String(a?.name ?? '').trim().toLowerCase() === namn.trim().toLowerCase());
+export function hittaAdset(adsets, namn, koncept = null) {
+  if (!namn && !koncept) return null;
+  // Exakt namn, annars kampanjens egen konvention (DRYTREK_SE_PD) — samma
+  // regel som uppladdaren (tools/meta-lib.mjs valjAdsetForKoncept).
+  const t = valjAdsetForKoncept(adsets ?? [], namn, koncept);
   return t ? { id: t.id, name: t.name, status: t.status ?? null } : null;
 }
 
@@ -453,7 +461,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       drive: (r.drive ?? []).map((x) => ({ id: x.id, typ: x.typ, url: x.url })),
       landning: r.landning ?? null, lank,
       prefix: t.prefix, koncept: t.koncept, nummer: t.nummer, variant: t.variant,
-      adset_namn: adsetnamn, adset: hittaAdset(adsets, adsetnamn),
+      adset_namn: adsetnamn, adset: hittaAdset(adsets, adsetnamn, t.koncept),
       finns_i_meta: d.finns_i_meta, ad_id: d.ad_id,
       prefix_avviker: avviker,
       namn_ommarkt: basnamn !== namn,

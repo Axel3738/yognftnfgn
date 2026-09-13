@@ -65,6 +65,10 @@ export function konceptUrNamn(namn) {
   if (fält.length < 2) return null;
   let i = 1;
   if (MARKNADSKODER.includes(fält[i].toUpperCase())) i += 1;
+  // Tvådelat prefix (DryTrek_Damasker_PD_14_1, mätt 2026-09-13): ett
+  // produktsegment med fem eller fler bokstäver hoppas över när fältet efter
+  // det är en kod. Ett numeriskt fält gissas fortfarande aldrig till kod.
+  if (/^[A-Za-zÅÄÖåäö]{5,}$/.test(fält[i] ?? '') && /^[A-Za-z]{1,4}$/.test(fält[i + 1] ?? '')) i += 1;
   const kandidat = fält[i] ?? '';
   return /^[A-Za-z]{1,4}$/.test(kandidat) ? kandidat.toUpperCase() : null;
 }
@@ -315,7 +319,9 @@ async function huvud() {
 
   // 5b. Adsetet: exakt namn, annars klon av nyaste syskonet (född PAUSED).
   const adsetnamn = adsetNamn(kampanj.name, koncept);
-  const { adset, skapad, mall } = await hittaEllerSkapaAdset({ kampanjId: kampanj.id, act: konto, namn: adsetnamn, torr: TORR });
+  // koncept: hittar även kampanjens egen konvention (DRYTREK_SE_PD) och döper
+  // ett nytt adset efter den, så ett koncept aldrig får två adsets.
+  const { adset, skapad, mall } = await hittaEllerSkapaAdset({ kampanjId: kampanj.id, act: konto, namn: adsetnamn, koncept, torr: TORR });
   logg(`5. Koncept ${koncept} → adset "${adset.name}" (${adset.id})${skapad ? ` — ${TORR ? 'skulle skapas' : 'nyskapat'} som klon av "${mall}", föds PAUSED` : ` — finns, ${adset.status}`}`);
 
   // 6. Sida + IG, länk och DSA ur kampanjens befintliga annonser.

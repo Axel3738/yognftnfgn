@@ -251,3 +251,12 @@ test('tasMedISE: To be Reviewed alltid; Creative strat review bara med butikens 
   // NO-kön: standardstatusen är en annan, CS-status räknas inte där.
   assert.equal(tasMedISE({ status: 'SE-ACTIVE to be translated', prefix_avviker: false, leverans: 'notion-fil' }, { kostatus: 'SE-ACTIVE to be translated' }), true);
 });
+
+test('tolkaNamn + hittaAdset: DryTreks tvådelade namn ger koncept PD och hittar DRYTREK_SE_PD', () => {
+  assert.deepEqual(tolkaNamn('DryTrek_Damasker_PD_14_1'), { prefix: 'DryTrek', koncept: 'PD', nummer: 14, variant: '1' });
+  assert.deepEqual(tolkaNamn('DryTrek_Damasker_FO_2_H1'), { prefix: 'DryTrek', koncept: 'FO', nummer: 2, variant: 'H1' });
+  assert.equal(tolkaNamn('Damasker_PD_10_H1').koncept, 'PD');
+  const adsets = [{ id: '1', name: 'DRYTREK_SE_SP', status: 'ACTIVE' }, { id: '2', name: 'DRYTREK_SE_PD', status: 'ACTIVE' }];
+  assert.deepEqual(hittaAdset(adsets, 'DRYTREK_SE_Damasker Vandring - PD', 'PD'), { id: '2', name: 'DRYTREK_SE_PD', status: 'ACTIVE' });
+  assert.equal(hittaAdset(adsets, 'DRYTREK_SE_Damasker Vandring - FO', 'FO'), null);
+});

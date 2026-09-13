@@ -192,3 +192,11 @@ test('tolkaArgs: positional nyckel, flaggvärden räknas aldrig som positional, 
   assert.equal(tolkaArgs(['--namn', '--torr']).namn, null, 'flagga utan värde');
   assert.equal(tolkaArgs([]).torr, undefined);
 });
+
+test('konceptUrNamn: tvådelat prefix — produktsegmentet hoppas över (DryTrek_Damasker_PD_14_1)', () => {
+  assert.equal(konceptUrNamn('DryTrek_Damasker_PD_14_1'), 'PD');
+  assert.equal(konceptUrNamn('DryTrek_NO_Damasker_PD_14_1'), 'PD', 'marknadskod före produktsegmentet');
+  assert.equal(konceptUrNamn('DryTrek_Damasker_FO_2_H1'), 'FO');
+  assert.equal(konceptUrNamn('DryTrek_Damasker_14_1'), null, 'produktsegment följt av siffra är ingen kod');
+  assert.equal(konceptUrNamn('HeimGuard_SOCIAL_1'), null, 'fler än 4 bokstäver utan kod efter är fortfarande null');
+});
