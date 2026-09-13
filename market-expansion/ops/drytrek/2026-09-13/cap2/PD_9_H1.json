@@ -1,0 +1,31 @@
+{
+ "in": "../video2/render/drytrek_PD_9_H1.mp4",
+ "ut": "../no/DryTrek_NO_Damasker_PD_9_H1.mp4",
+ "srt": "../video2/srt-no/drytrek_PD_9_H1.srt",
+ "captions": {
+  "zon": [
+   1366,
+   1521
+  ],
+  "max_chars": 22,
+  "font_px": 54,
+  "standard_cy": 1442,
+  "x0": 0,
+  "x1": 1080,
+  "bredd_max": 1080,
+  "fyll": [
+   {
+    "rect": [
+     145,
+     1366,
+     940,
+     1522
+    ],
+    "t": [
+     13.4,
+     15.5
+    ]
+   }
+  ]
+ }
+}

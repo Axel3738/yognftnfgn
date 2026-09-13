@@ -568,3 +568,83 @@ medan CS + G tog 2 216 kr. De 23 nya annonserna från leveransen ligger kvar i
 CBO:n, ett adset per koncept. Kampanjbudgeten är 700 kr/dag efter nattens
 sänkning (−30 %, vinst 3d −115 %) — golvet tar alltså ~43 % av dagsbudgeten.
 Om Axel höjer tillbaka till 1 000 kr ska golvet inte ändras.
+---
+
+## 2026-09-13 — översättningsrunda NO, andra körningen: de fem ärvda raderna
+
+**Axels beslut samma kväll: "bara launcha dom också."** De fem `Damasker_*`-rader
+som förmiddagens körning hoppade (Bäverbutikens egna annonser, parkerade i hubben
+sedan 2026-09-10) är nu översatta och live för DryTrek. Axel sa samtidigt nej till
+att skriva om de gamla norska annonsernas pris (381/635) — den frågan är stängd.
+
+**Namnen:** de fick DryTreks konvention, `DryTrek_NO_Damasker_<KOD>_<nr>_H1`, inte
+källans `Damasker_NO_…`. Numret ärvs (SP_4, SP_5, PD_8, PD_9, FO_1) så släktskapet
+med källannonsen syns, men prefixet gör dem skiljbara från Bäverbutikens i kontot.
+
+**Läget i NO-kampanjen efter båda körningarna: 25 annonser, 25 ACTIVE/ACTIVE.**
+`FO_1_H1` skapade adsetet `DRYTREK_NO_FO` — det första FO-adsetet i kampanjen.
+
+| Annons | Adset | Läge |
+|---|---|---|
+| `DryTrek_NO_Damasker_SP_4_H1` | `DRYTREK_NO_SP` | live |
+| `DryTrek_NO_Damasker_SP_5_H1` | `DRYTREK_NO_SP` | live |
+| `DryTrek_NO_Damasker_PD_9_H1` | `DRYTREK_NO_PD` | live |
+| `DryTrek_NO_Damasker_FO_1_H1` | `DRYTREK_NO_FO` (nytt) | live |
+| `DryTrek_NO_Damasker_PD_8_H1` | — | **fast i HeyGens moderering** |
+
+### Det som INTE fick följa med: tre påståenden DryTrek har strukit
+
+Filmerna är Bäverbutikens och bär löften som DryTreks copy-granskning tog bort
+2026-09-09. De stod både i talet och i den inbrända texten. Alla tre är
+omskrivna i den norska versionen:
+
+| Källan säger | Varför det inte får stå | Norska versionen |
+|---|---|---|
+| "Stoppar regn" · "regnet studsade av" (SP_5, PD_8, PD_9, FO_1) | Produkten är inte testad vattentät | "væte blir på utsiden" |
+| "Tio sekunder" · "tio sekunders montering" (PD_8, PD_9, FO_1) | Tidslöfte, förbjudet sedan 2026-09-09 | "Krok, stropp." / "Borrelås hele veien opp." |
+| **"Trettio dagars öppet köp" (PD_8)** | **Sakfel — DryTrek ger 14 dagars ångerrätt** | "Fjorten dagers angrerett." |
+
+⚠️ **PD_8 bär dessutom en STATISK engelsk ruta** som inte är en caption:
+"Stops snow. / Stops rain. / Blocks gravel. / 10-second fit.", 4 rader,
+y 783–1131, x 220–850, synlig 8,25–13,1 s. Den ligger utanför pillerdetektorn
+och suddas med en `blur`-ruta i `cap2/PD_8_H1.json`. Ligger den kvar går både
+regnlöftet och tidslöftet ut på engelska i en norsk annons.
+
+`PD_9` bär en gul prisbricka "389 kr (ord. 649 kr)" på y 886–1035 — den stämmer
+exakt mot butiken och står kvar orörd (regel 4: inbränt pris behålls i SEK).
+`SP_4` har 380/640 kr inbränt, 2 % under butikens 389/649 — inom toleransen.
+
+### Rotorsak lagad i koden: pillerdetektorns fönster var för smalt för 9:16
+
+Första captionkörningen lämnade **svenska textstumpar i vänster- och högerkant**
+av den norska rutan (`Sl…la` av "Sluta gå hem med kalla"). Rotorsaken satt i
+`pipeline/no-precis.py`: `hitta_piller` sökte bara i x 120–600 × skala
+(= 180–900 vid 1080 px) och kastade allt bredare än 560 × skala (= 840 px).
+De här ärvda 9:16-videorna har piller **upp till 1079 px breda**, centrerade på
+539 — alltså bredare än både fönstret och taket.
+
+Lagat additivt: `x0`, `x1` och `bredd_max` går nu att sätta i konfigens
+`captions`-block, i RIKTIGA pixlar, med dagens värden som default. Inget ändras
+för någon annan butik. Med `x0: 0, x1: 1080, bredd_max: 1080` gick träffen från
+410/503 till 358/358, 383/383, 410/503 och 399/409 — och kanterna blev rena.
+
+**Kvarvarande specialfall i `PD_9_H1`:** i 13,4–15,5 s står pillret på ett nästan
+vitt golv, smälter ihop med bakgrunden och gruppen blir för hög för `h_max`.
+Löst med en manuell `fyll`-platta `[145,1366,940,1522]` — den vitmålar och tvingar
+fram den norska cuen. Utan den låg "389 kronor ordinarie" kvar på svenska.
+
+### Röstkollen
+
+Alla fyra uppladdade gröna. Zonerna som mättes upp (pillret ±12 px):
+`SP_4 [1365,1508]` · `SP_5 [1378,1558]` · `PD_8 [1371,1533]` · `PD_9 [1366,1521]`
+· `FO_1 [1359,1520]`. Mät alltid per video — standardzonen i `no-precis.py`
+räknas som `850–1040 × W/720` och hamnar utanför bilden på allt som inte är 9:16
+med 1280 px höjd.
+
+### PD_8 ligger kvar hos HeyGen
+
+`getTranslateStatus` svarar `status: failed`, `failure_message: "video pending
+moderation by our team"` — HeyGens MANUELLA granskning, inte ett renderingsfel.
+Raden står kvar i `SE-ACTIVE to be translated` med kommentar, så nästa körning
+tar den när modereringen släpper. Den norska texten är redan skriven och
+verifierad; bara renderingen saknas.

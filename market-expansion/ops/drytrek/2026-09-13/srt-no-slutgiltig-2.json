@@ -1,0 +1,124 @@
+{
+ "_om": [
+  "Slutgiltig norsk dubbtext for de fem arvda videorna, /ops-oversatt drytrek 2026-09-13 (andra korningen).",
+  "SRT-filerna sjalva ar gitignorerade i market-expansion/ops/ — det har ar kopian som committas.",
+  "Regnskyddslofte, tidslofte och \"30 dagars oppet kop\" ar borttagna, se products/drytrek/batch-log.md."
+ ],
+ "videor": {
+  "drytrek_FO_1_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,059 --> 00:00:11,199",
+    "no": "Snøen kommer. Uten beskyttelse blir sokkene våte på minutter. Krok og stropp gjør det enkelt. Stopper snø, væte blir på utsiden, beskytter mot grus."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:11,259 --> 00:00:12,439",
+    "no": "Krok og stropp, ferdig."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:12,979 --> 00:00:14,399",
+    "no": "Trehundreogåttini kroner."
+   },
+   {
+    "nr": "4",
+    "tid": "00:00:14,859 --> 00:00:16,119",
+    "no": "Klar før snøen kommer."
+   }
+  ],
+  "drytrek_PD_8_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,199 --> 00:00:00,959",
+    "no": "Krok, stropp."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:01,220 --> 00:00:03,039",
+    "no": "Skoene er beskyttet hele dagen."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:05,019 --> 00:00:07,799",
+    "no": "Klart. Holder snø, væte og grus ute."
+   },
+   {
+    "nr": "4",
+    "tid": "00:00:08,099 --> 00:00:08,760",
+    "no": "Stopper snø."
+   },
+   {
+    "nr": "5",
+    "tid": "00:00:09,159 --> 00:00:10,099",
+    "no": "Stopper søle."
+   },
+   {
+    "nr": "6",
+    "tid": "00:00:10,159 --> 00:00:12,919",
+    "no": "Beskytter mot grus. Borrelås gjør jobben."
+   },
+   {
+    "nr": "7",
+    "tid": "00:00:13,299 --> 00:00:14,819",
+    "no": "Trehundreogåttini kroner."
+   },
+   {
+    "nr": "8",
+    "tid": "00:00:15,219 --> 00:00:16,779",
+    "no": "Fjorten dagers angrerett."
+   }
+  ],
+  "drytrek_PD_9_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,199 --> 00:00:02,519",
+    "no": "Slutt å gå hjem med kalde våte føtter."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:06,299 --> 00:00:11,399",
+    "no": "DryTrek. Holder snø ute, væte blir på utsiden, beskytter mot grus."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:11,939 --> 00:00:13,179",
+    "no": "Borrelås hele veien opp."
+   },
+   {
+    "nr": "4",
+    "tid": "00:00:14,099 --> 00:00:19,840",
+    "no": "Tre hundre og åttini kroner, seks hundre og førtini kroner før. Handle nå."
+   }
+  ],
+  "drytrek_SP_4_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,159 --> 00:00:05,179",
+    "no": "Tre mil i regn. Sokkene var fortsatt tørre. Jeg testet gamasjene i tre uker med høstregn."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:05,259 --> 00:00:08,720",
+    "no": "Krok i snøringen, stropp under foten, sitter stille hele turen."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:10,039 --> 00:00:14,099",
+    "no": "Tre hundre og åttini kroner. Før seks hundre og førtini kroner."
+   }
+  ],
+  "drytrek_SP_5_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,179 --> 00:00:07,079",
+    "no": "Jeg testet dem i tre ukers regn og snø. Snøen ble ute, væten ble værende på utsiden, gruset kom aldri inn."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:07,659 --> 00:00:15,059",
+    "no": "Tas på uten å ta av deg støvelen. Tre hundre og åttini kroner. Ordinær seks hundre og førtini. Handle nå."
+   }
+  ]
+ }
+}
