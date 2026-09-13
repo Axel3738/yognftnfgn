@@ -232,7 +232,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
       <div class="inne">
         <p>Samma fem klick för varje mall. Bocka i "Inklistrad" här på sidan när en är klar, så tappar du inte räkningen.</p>
         <ol class="klick">
-          <li>Shopify admin → <strong>Inställningar</strong> (kugghjulet längst ner till vänster) → <strong>Notiser</strong> → <strong>Kundnotiser</strong>.</li>
+          <li>Shopify admin → <strong>Inställningar</strong> (kugghjulet längst ner till vänster) → <strong>Notiser</strong> → <strong>Kundaviseringar</strong>.</li>
           <li>Klicka på mallens namn (står vid varje mall nedan).</li>
           <li>Klicka <strong>Redigera kod</strong>.</li>
           <li>Fältet <strong>E-postämne</strong>: markera allt, klistra in ämnesraden (knappen "Kopiera ämnesraden").</li>
@@ -249,8 +249,8 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
         <p>Shopify har ett tjugotal kundnotiser. Åtta av dem är våra, resten är Shopifys standardmallar — orderfaktura, betalningsfel, kontomejl, returer, lokal leverans. De ser ut som Shopify, inte som Bäverbutiken.</p>
         <p>Den här inställningen sätter loggan och färgen på <strong>alla</strong> standardmallar på en gång. Den rör inte våra åtta, de bär sin egen HTML.</p>
         <ol class="klick">
-          <li>Shopify admin → <strong>Inställningar</strong> → <strong>Notiser</strong> → <strong>Kundnotiser</strong>.</li>
-          <li>Klicka <strong>Anpassa e-postmall</strong> (Customize email template), uppe till höger.</li>
+          <li>Shopify admin → <strong>Inställningar</strong> → <strong>Notiser</strong> → <strong>Kundaviseringar</strong>.</li>
+          <li>Klicka <strong>Anpassa e-postmallar</strong> (Customize email templates), uppe till höger.</li>
           <li><strong>Logotyp</strong>: ladda upp butikens logga. Bredd omkring <strong>240 px</strong>.</li>
           <li><strong>Accentfärg</strong>: skriv <span class="kodbit">${esk(konfig.butik.farg_rod)}</span>.</li>
           <li>Klicka <strong>Spara</strong>.</li>

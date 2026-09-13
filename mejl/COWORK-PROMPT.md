@@ -49,7 +49,7 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 1. Öppna mallens kodlänk i en **ny flik**. Det är en ren textfil. Klicka i
    texten, tryck **Cmd+A**, sedan **Cmd+C**.
 2. Gå tillbaka till Shopify-admin → **Inställningar** → **Notiser** →
-   **Kundnotiser** → klicka på mallens namn.
+   **Kundaviseringar** → klicka på mallens namn.
 3. Klicka **Redigera kod** (Edit code).
 4. Fältet **E-postämne** (Email subject): jämför med ämnesraden i tabellen,
    tecken för tecken. Står den redan exakt rätt: **rör den inte**. Skiljer
@@ -90,14 +90,14 @@ fel innehåll i urklippet.
 kundnotiser; bara åtta är våra. Resten är standardmallar och ska få butikens
 logga och färg via en enda inställning:
 
-1. **Inställningar** → **Notiser** → **Kundnotiser**.
-2. Klicka **Anpassa e-postmall** (Customize email template), uppe till höger.
+1. **Inställningar** → **Notiser** → **Kundaviseringar**.
+2. Klicka **Anpassa e-postmallar** (Customize email templates), uppe till höger.
 3. **Logotyp**: ladda upp butikens logga, bredd omkring **240 px**.
 4. **Accentfärg**: skriv **#dd1d1d**.
 5. **Spara**.
 
 Finns knappen inte där, eller heter den något annat: leta efter logotyp- och
-färginställningen på sidan Kundnotiser, och beskriv vad du ser i stället för
+färginställningen på sidan Kundaviseringar, och beskriv vad du ser i stället för
 att gissa dig fram.
 
 **B. Testmejlet.** Gå in på **Orderbekräftelse** och klicka **Skicka
@@ -111,7 +111,7 @@ Bara den mallen.
 3. Om någon av de fyra textbitarna saknades, och i vilken mall.
 4. Om loggan och accentfärgen sparades (A), och vad inställningen hette.
 5. Om testmejlet gick iväg, och till vilken adress Shopify sa att det gick.
-6. Hela listan med kundnotiser du ser under Kundnotiser, sektion för sektion,
+6. Hela listan med kundnotiser du ser under Kundaviseringar, sektion för sektion,
    med namnen som de står i admin. Den listan finns inte i något API, så det
    är enda sättet att veta vilka mallar butiken faktiskt har.
 7. Allt som såg konstigt ut, även småsaker.

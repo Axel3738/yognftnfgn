@@ -161,10 +161,27 @@ hand.
 
 Vill Axel ha full husstil på fler än åtta: bygg dem i omgångar, sorterade
 efter hur ofta de faktiskt skickas, och räkna en inklistring per mall.
-Namnen i admin är **New gift card** och **Gift card receipt** (inte "Gift
-card created"), **Ready for local pickup** och **Picked up by customer**.
-Sektionerna heter Orderhantering, Orderundantag, Betalningar, Frakt, Lokal
-leverans, Lokal upphämtning, Kundkonton, Presentkort, Returer.
+**Hela listan i Bäverbutikens admin**, avskriven av Cowork 2026-09-13
+(sidan heter **Kundaviseringar**, inte Kundnotiser; listan finns inte i
+något API). Våra åtta i fetstil.
+
+- Orderhantering: **Orderbekräftelse**, Faktura för orderutkast, **Leveransbekräftelse**
+- Lokal upphämtning: Klar för lokal upphämtning, Upphämtad av kund
+- Lokal leverans (alla på, kan inte skickas): Order ute för lokal leverans, Order lokalt levererad, Missad lokal leverans av order
+- Presentkort: Nytt presentkort, Presentkortskvitto
+- Värdecheck: Värdecheck utfärdad
+- Orderundantag: Orderfaktura, Order redigerad, **Order annullerad**, Betalningskvitto för order, **Orderåterbetalning**, Orderlänk
+- Betalningar: Betalningsfel, Fel med väntande betalning, Väntande betalning lyckades, Betalningspåminnelse
+- Kassasystem: Övergiven betalning i kassasystemet, E-post från kassasystem till kund, Kvitto från kassasystem och mobil, Byteskvitto från kassasystem, Returkvitto
+- Leveransuppdateringar: **Leveransuppdatering**, **Ute för leverans**, **Levererad**
+- Returer och annulleringar: Retur skapad, Retursedel skapad på ordernivå, Returförfrågan godkänd, Returförfrågan avvisad, Förfrågan mottagen, Annulleringsförfrågan nekad
+- Konton och kundkampanjer: Inbjudan till kundkonto, Välkomstmeddelande för kundkonto, Återställning av lösenord för kundkonto, tre om betalningsmetod, två om B2B, Kontakta kund, Bekräftelse på ändring av kunds e-postadress
+- Dubbel bekräftelse för marknadsföring: Bekräftelse för marknadsföring till kund
+- Shopify Messaging (installerad — **Övergiven kassa** ligger där, inte under aviseringarna)
+- Återmarknadsföring med Shop: Påminnelse om varukorg, Åter i lager, Prissänkning, Avbrutet surfande
+
+Logga och accentfärg på alla standardmallar sattes 2026-09-13 via
+**Anpassa e-postmallar** (`konfig.json → lage.mallbranding_gjort`).
 
 ### Fallgropar i Shopifys notissystem (docs-läsning 2026-09-13)
 
