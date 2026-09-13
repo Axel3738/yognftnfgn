@@ -203,3 +203,30 @@ Lediga AD-ID:n lästa ur OPS-kontot och hubbens 48 rader (batch #2 inräknad).
 
 Backlog var tom inför ronden. VARIABELTAGGAR överst i varje brief
 (`products/hemvakten/batch-03/…/brief.md`). Notion-resultat i `batch-03/notion-resultat.json`.
+
+---
+
+## Leveransrunda 2026-09-13 (`/ops-leverans hemvakten/overvakningskameran`)
+
+**0 annonser live.** Kön hade 7 färdiga creatives (3 video, 4 bild), men det finns
+ingen ACTIVE SE-kampanj att ladda upp i: `HEIMGUARD_SE_Övervakningskameran` pausades
+för hand 11:06 samma dag. PAUSED med spend är ett beslut — varken kön,
+`ops-till-meta.mjs` (torrkörd, vägrade) eller den här körningen rörde den.
+
+| Annons | Typ | Pris | Dom |
+|---|---|---|---|
+| `HeimGuard_CS_11_H1` | video | 799/1000 ✅ | **Draft** — slutkortet säger `heimgard.se`, butiken är `heimguard.se` (domänen svarar inte alls, HTTP 000). Dessutom "30 dagars öppet kö." → "köp". |
+| `HeimGuard_SP_17_H1` | video | inget pris ✅ | Klar, väntar på kampanj. Anm: rosa/posteriserad färgton i hookens 3 första sek; leverantörens b-roll bär en `5G`-bricka fast produkten är 2,4/5 GHz wifi. |
+| `HeimGuard_SP_17_H2` | video | inget pris ✅ | Klar, väntar på kampanj. Samma `5G`-bricka i b-rollen. |
+| `Overvakningskamera_BOF_7_1` | bild | 799/1000 ✅ | Klar, väntar på kampanj. |
+| `Overvakningskamera_BOF_8_1` | bild | 799/1000 ✅ | **Draft** — rubriken "Klarar den svensk vinter?" är fel svenska, ska vara "den svenska vintern". |
+| `Overvakningskamera_BOF_9_1` | bild | 799/1000 ✅ | Klar, väntar på kampanj. |
+| `Overvakningskamera_LI_2_1` | bild | 799/1000 ✅ | Klar, väntar på kampanj. Alla fem påståenden kontrollerade mot produktsidan. |
+
+De sex `Overvakningskamera_*_H1`-raderna (Bäverbutikens prefix) lämnades parkerade i
+`Creative strat review` av kön — rörda av ingen.
+
+**Avsteg från kommandots stoppregel, medvetet:** regeln säger att priset är det enda
+stoppet för video och att stavfel laddas upp med anmärkning. `CS_11_H1` stoppades ändå,
+för `heimgard.se` är ingen stavning i manus utan en död adress i annonsens sista bild —
+samma sorts fel som ett felaktigt pris. Axel kan överpröva.

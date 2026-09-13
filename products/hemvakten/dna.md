@@ -253,3 +253,14 @@ Batch #2 (4 fable / 3 sonnet) är inte live än (hos redigeraren). Batch #3: 11 
   `To be Reviewed`. Någon (Axel eller `/granska`) måste flytta dem, annars står de.
 - **Metas rate limit på det delade OPS-kontot** slog 2026-09-12 när fem nattvakter
   startade 00:01. Rutinplatser med egen minut finns i registret sedan 2026-09-12.
+- **Kampanjnamnet bär ett FÖRÅLDRAT break-even-tal.**
+  `HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08` heter så för att
+  2,11 räknades MED moms. Momsfrågan avgjordes 2026-09-09 (Axel: räknas utan moms)
+  och det gällande talet står i `factory/produkter/overvakningskameran.yaml`:
+  **break-even ROAS 1,49 / CPA 538 kr**. Mätt 2026-09-13 i leveransrundan: läser man
+  namnet i stället för produktfilen ser 7d ROAS 1,61 ut som en förlust (mot 2,11) när
+  den i själva verket ligger ÖVER break-even (mot 1,49) — nattvakten samma natt
+  räknade +5,1 % vinst på 7 dygn och lät kampanjen vara. Den här sessionen gick på
+  minan och skickade fel tal till Discord innan det rättades. **Läs alltid
+  break-even ur produktfilen, aldrig ur ett kampanj- eller adsetnamn.** Talet i
+  namnet kan inte ändras i efterhand utan att kampanjen döps om.
