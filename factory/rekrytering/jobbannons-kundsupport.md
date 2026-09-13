@@ -67,6 +67,12 @@ Annonsen är färdigskriven och klistringsklar i
    kunden råkat se i en signatur.
 
 Codewordet är `lingon` (skrivet i listan i `jobbannons-video-editor.md`).
+**Axels beslut 2026-09-13: ordet "codeword" förekommer inte alls i annonsen.**
+Meningen "The codeword is written somewhere in this post…" och "missing
+codeword" i raderingsraden är strukna — de tipsade skummaren, som kunde gå
+tillbaka och söka. Kvar är bara `XXXXXX` i exemplet; den som läste
+prioritetsstycket vet vad det är. Raderingsraden lyder "Wrong format or a
+missing field". Det gör filter 1 hårdare än i redigerarannonsen.
 Kanal: samma som redigerarannonsen, OnlineJobs.ph, om Axel inte säger annat.
 
 ---

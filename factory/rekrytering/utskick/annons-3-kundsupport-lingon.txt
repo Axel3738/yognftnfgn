@@ -106,9 +106,7 @@ Ninety percent of applicants will get this wrong. That's the point.
 
 Example: XXXXXX | 45 | 2 | 2 | 7 | 40mbps
 
-The codeword is written somewhere in this post. I'm not telling you where. If you actually read the whole thing, you already have it.
-
-Wrong format, missing codeword, missing a field — deleted unread. No exceptions, no second chances.
+Wrong format or a missing field — deleted unread. No exceptions, no second chances.
 
 2. Your message must contain these eight things, in this order, and nothing else:
 
