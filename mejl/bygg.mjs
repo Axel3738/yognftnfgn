@@ -45,15 +45,39 @@ if (offline) {
   console.log(`Shopify: ${alla.length} aktiva produkter → mejl/produkter.json`);
 }
 
+if (!offline && alla.some((p) => p.kollektioner === undefined)) {
+  console.error('❌ Produkterna saknar fältet kollektioner — shopify.mjs och bygg.mjs är i osynk.');
+  process.exit(1);
+}
+if (offline && alla.some((p) => p.kollektioner === undefined)) {
+  console.error('❌ mejl/produkter.json är från före 2026-09-13 och saknar kollektioner. Kör utan --offline först.');
+  process.exit(1);
+}
+
 const produkter = valjProdukter(alla, konfig);
+const km = produkter.komplement;
 console.log('\nGratisprodukter (välj en):');
 for (const p of produkter.gratis) console.log(`  • ${p.kortnamn} — ${p.pris} kr`);
-console.log('Dyraste (visas bredvid):');
-for (const p of produkter.dyra) console.log(`  • ${p.kortnamn} — ${p.pris} kr (lager ${p.lager})`);
+console.log(`Komplement (en till + ${km.antal} som passar ihop): ${km.karta.size} produkter med egen lista, ${km.katalog.size} i katalogen`);
+console.log(`  källor: ${km.kallor.per_handle} per handle, ${km.kallor.per_kollektion} per kollektion, ${km.kallor.fallback} fallback`);
+console.log(`  fallback: ${km.fallback.map((h) => km.katalog.get(h).kortnamn).join(', ')}`);
+if (km.okanda.length) console.log(`  ⚠️ handles i konfigen som inte finns bland aktiva produkter (hoppas över): ${km.okanda.join(', ')}`);
 
 mkdirSync(join(UT, 'forhandsvisning'), { recursive: true });
 const liquid = byggAlla({ konfig, copy, produkter, lage: 'liquid' });
 const exempel = byggAlla({ konfig, copy, produkter, lage: 'exempel' });
+
+// Notismallarnas storleksgräns i Shopify är inte dokumenterad. Komplement-
+// kartan gör de tre erbjudandemallarna stora — stoppa innan de växer
+// obemärkt förbi vad som är rimligt att klistra in.
+const MAX_KB = 100;
+for (const m of liquid) {
+  const kb = m.html.length / 1024;
+  if (kb > MAX_KB) {
+    console.error(`❌ ${m.id}.liquid är ${kb.toFixed(0)} kB (> ${MAX_KB} kB). Krymp komplementkartan i konfig.json.`);
+    process.exit(1);
+  }
+}
 
 for (const m of liquid) {
   writeFileSync(join(UT, `${m.id}.liquid`), m.html);
@@ -72,11 +96,14 @@ const status = [
   '## Gratisprodukter',
   ...produkter.gratis.map((p) => `- ${p.titel} — ${p.pris} kr (${p.handle})`),
   '',
-  '## Dyraste produkterna i mejlet',
-  ...produkter.dyra.map((p) => `- ${p.titel} — ${p.pris} kr, lager ${p.lager} (${p.handle})`),
+  '## Komplement (en till + tre som passar ihop)',
+  `- ${km.karta.size} produkter med egen lista (${km.kallor.per_handle} per handle, ${km.kallor.per_kollektion} per kollektion), ${km.kallor.fallback} utan — de får storsäljarna`,
+  `- Katalog i mallen: ${km.katalog.size} produkter`,
+  `- Fallback: ${km.fallback.map((h) => `${km.katalog.get(h).kortnamn} (${h})`).join(', ')}`,
+  ...(km.okanda.length ? [`- ⚠️ Handles i konfigen som inte finns i butiken: ${km.okanda.join(', ')}`] : []),
   '',
   '## Mallar',
-  ...liquid.map((m) => `- \`${m.id}.liquid\` → ${m.shopify} · ämne: ${m.amne}`),
+  ...liquid.map((m) => `- \`${m.id}.liquid\` → ${m.shopify} · ämne: ${m.amne} · ${(m.html.length / 1024).toFixed(0)} kB`),
   '',
 ];
 writeFileSync(join(UT, 'STATUS.md'), status.join('\n'));

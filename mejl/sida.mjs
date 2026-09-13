@@ -21,12 +21,16 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
   const inklistrade = lage.inklistrade ?? {};
   const hoppade = lage.hoppade_over ?? {};
   const perId = new Map(exempel.map((m) => [m.id, m]));
+  // Mallar med en äldre version inklistrad (v2 → v3 2026-09-13): de ska
+  // klistras om, de andra är oförändrade i sak och behöver inte röras.
+  const aldre = lage.inklistrade_aldre ?? {};
 
   const mallar = liquid
     .map((m, i) => {
       const ex = perId.get(m.id);
       const klar = inklistrade[m.id];
       const hopp = hoppade[m.id];
+      const gammal = !klar && aldre[m.id];
       return `
     <section class="mall" id="mall-${m.id}">
       <header class="mall-huvud">
@@ -35,6 +39,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
           <h3>${esk(m.shopify.split(' / ')[0])}</h3>
           <p class="dampad">Heter i Shopify: <strong>${esk(m.shopify)}</strong></p>
           ${hopp ? `<p class="dampad">⏭ Hoppas över: ${esk(hopp)}</p>` : ''}
+          ${gammal ? `<p class="dampad">🔁 <strong>Klistra om.</strong> Äldre version inklistrad ${esk(gammal)} — den här mallen har ändrats sedan dess.</p>` : ''}
         </div>
         <label class="klar"><input type="checkbox" id="klar-${m.id}" data-klar="${m.id}"${klar ? ' checked' : ''}> Inklistrad${klar ? ` ${esk(klar)}` : ''}</label>
       </header>
@@ -58,7 +63,13 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
     .join('\n');
 
   const gratisLista = produkter.gratis.map((p) => `<li>${esk(p.kortnamn)} <span class="dampad">(${kr(p.pris)})</span></li>`).join('');
-  const dyraLista = produkter.dyra.map((p) => `<li>${esk(p.kortnamn)} <span class="dampad">(${kr(p.pris)})</span></li>`).join('');
+  const km = produkter.komplement;
+  const exempelKomp = km.karta.get('axelbalte-for-trimmer-justerbart-nylonbalte');
+  const kompLista = [
+    `<li>${km.karta.size} produkter har en egen lista med ${km.antal} som passar ihop <span class="dampad">(${km.kallor.per_handle} valda för hand, ${km.kallor.per_kollektion} per kollektion)</span></li>`,
+    `<li>Vet vi inte vad som passar visas storsäljarna: ${km.fallback.map((h) => esk(km.katalog.get(h).kortnamn)).join(', ')}</li>`,
+    exempelKomp ? `<li>Exempel — köpte kunden Axelbälte för trimmer visas: ${exempelKomp.lista.map((h) => esk(km.katalog.get(h).kortnamn)).join(', ')}</li>` : '',
+  ].join('');
 
   return `<title>Bäverbutikens mejl</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -148,7 +159,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
   <header class="topp">
     <p class="dampad">Bäverbutiken.se · byggd ${esk(byggd)} UTC</p>
     <h1>Bäverbutikens mejl</h1>
-    <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet.</p>
+    <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet. Under gratisprodukterna: en till av det kunden köpte + tre som passar ihop.</p>
   </header>
 
   <section class="lage" aria-label="Läget">
@@ -164,20 +175,20 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
         : ''
     }
     ${
-      lage.inklistrade_v1 && !Object.keys(inklistrade).length
-        ? `<div class="lage-rad att-gora"><span class="ikon">🔁</span><p>En äldre version av mallarna (v1, utan erbjudandet överst, urgency och logga) klistrades in i ${Object.keys(lage.inklistrade_v1).length} mallar ${esk(Object.values(lage.inklistrade_v1)[0])}. Mallarna nedan är v2 och ska klistras in igen, över de gamla.</p></div>`
+      Object.keys(aldre).length
+        ? `<div class="lage-rad att-gora"><span class="ikon">🔁</span><p>${Object.keys(aldre).length} mallar har en äldre version inklistrad (${esk(lage.inklistrade_aldre_comment ?? '')}) och ska klistras om: ${Object.keys(aldre).map((id) => `<strong>${esk(liquid.find((m) => m.id === id)?.shopify.split(' / ')[0] ?? id)}</strong>`).join(', ')}. De övriga är oförändrade i sak.</p></div>`
         : ''
     }
     <div class="lage-rad att-gora"><span class="ikon">👉</span><p>${
       [
         lage.rabattkod_skapad ? null : 'rabattkoden (steg 1)',
-        Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length ? null : `${liquid.length - Object.keys(hoppade).length} inklistringar (steg 2)`,
+        Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length ? null : `${liquid.length - Object.keys(hoppade).length - Object.keys(inklistrade).length} inklistringar (steg 2)`,
       ].filter(Boolean).length
         ? `Kvar för dig: ${[
             lage.rabattkod_skapad ? null : 'rabattkoden (steg 1)',
-            Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length ? null : `${liquid.length - Object.keys(hoppade).length} inklistringar (steg 2)`,
-          ].filter(Boolean).join(' och ')}. Shopify har inget API för det, så det är dina klick eller Coworks.`
-        : 'Kvar för dig: steg 4, koppla om Shopify på claude.ai. Gör gärna också det riktiga köptestet under steg 1.'
+            Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length ? null : `${liquid.length - Object.keys(hoppade).length - Object.keys(inklistrade).length} inklistringar (steg 2)`,
+          ].filter(Boolean).join(' och ')} och testmejlet (steg 3). Shopify har inget API för det, så det är dina klick eller Coworks.`
+        : 'Kvar för dig: det riktiga köptestet under steg 1 — koden har 0 användningar än.'
     }</p></div>
   </section>
 
@@ -231,7 +242,9 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
       <div class="inne">
         <ol class="klick">
           <li>Inne på <strong>Orderbekräftelse</strong>: klicka <strong>Skicka testmejl</strong> (uppe till höger).</li>
-          <li>Öppna mejlet i din inkorg. Kolla att koden <span class="kodbit">${esk(e.kod)}</span> och de fyra gratisprodukterna syns, och att knappen "Välj min gratisprodukt" öppnar kollektionen med koden pålagd.</li>
+          <li>Öppna mejlet i din inkorg. Kolla att koden <span class="kodbit">${esk(e.kod)}</span> och de fyra gratisprodukterna syns, och att knappen öppnar kollektionen med koden pålagd.</li>
+          <li>Kolla raden <strong>"Passar ihop med det du köpte"</strong>: står produkter som hör ihop med testorderns produkt fungerar uppslaget. Står det <strong>"Populärast just nu"</strong> med storsäljarna hittade Shopify inte produktens handle i mejlet — säg det till Claude.</li>
+          <li>Kolla tiden i raden <strong>"Beställ före kl …"</strong>: den ska vara ordertiden plus ${e.samma_paket_timmar ?? 18} timmar, svensk tid. Stämmer inte klockslaget: säg det till Claude.</li>
         </ol>
       </div>
     </article>
@@ -250,7 +263,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
 
   <section class="rutnat" aria-label="Produkterna i mejlen">
     <div><h3>Välj en gratis</h3><ul>${gratisLista}</ul></div>
-    <div><h3>Visas bredvid</h3><ul>${dyraLista}</ul></div>
+    <div><h3>Passar ihop med det du köpte</h3><ul>${kompLista}</ul></div>
   </section>
 
   <section class="steg" aria-labelledby="mallarna">

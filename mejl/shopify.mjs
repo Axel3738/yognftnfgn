@@ -85,15 +85,18 @@ export async function graphql(query, variables = {}) {
 const num = (gid) => String(gid).split('/').pop();
 
 // Alla aktiva produkter, plattade: id, variant, titel, handle, url, pris,
-// jämförpris, lager, lagerpolicy, bild. Sidor om 100 tills slut.
+// jämförpris, lager, lagerpolicy, bild, typ, taggar, kollektioner (handles).
+// Typ/taggar/kollektioner bär komplementkartan (sedan 2026-09-13). Sidor om
+// 50 tills slut — kollektionerna gör frågan dyrare än förr.
 export async function hamtaProdukter() {
   const ut = [];
   let after = null;
   for (;;) {
     const d = await graphql(
-      `query($after: String) { products(first: 100, query: "status:active", after: $after) {
+      `query($after: String) { products(first: 50, query: "status:active", after: $after) {
         pageInfo { hasNextPage endCursor }
-        edges { node { id title handle onlineStoreUrl totalInventory featuredImage { url }
+        edges { node { id title handle onlineStoreUrl totalInventory productType tags featuredImage { url }
+          collections(first: 10) { edges { node { handle } } }
           variants(first: 1) { edges { node { id price compareAtPrice inventoryPolicy } } } } } } }`,
       { after }
     );
@@ -110,6 +113,9 @@ export async function hamtaProdukter() {
         lager: n.totalInventory,
         lagerpolicy: v.inventoryPolicy ?? null,
         bild: n.featuredImage?.url ?? null,
+        typ: n.productType ?? '',
+        taggar: n.tags ?? [],
+        kollektioner: (n.collections?.edges ?? []).map((e) => e.node.handle),
       });
     }
     if (!d.products.pageInfo.hasNextPage) break;

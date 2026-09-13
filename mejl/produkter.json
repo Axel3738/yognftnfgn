@@ -9,7 +9,12 @@
   "jamforpris": null,
   "lager": -2469,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260225_044950_f4b13578-3e4b-41e0-b958-a9df3697b0df_1.jpg?v=1771995114"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260225_044950_f4b13578-3e4b-41e0-b958-a9df3697b0df_1.jpg?v=1771995114",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "15968896614749",
@@ -21,7 +26,14 @@
   "jamforpris": 299,
   "lager": -174,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3XKraftfulltLEDLjus.png?v=1772518783"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3XKraftfulltLEDLjus.png?v=1772518783",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "frontpage",
+   "din-gratisprodukt",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16056898322781",
@@ -33,7 +45,13 @@
   "jamforpris": null,
   "lager": -3681,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlosdesign_15.png?v=1775245506"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlosdesign_15.png?v=1775245506",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "din-gratisprodukt",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16267442028893",
@@ -45,7 +63,21 @@
   "jamforpris": 811.25,
   "lager": -181,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0f0c537d-522e-4e1a-b9f7-653c141d8dc5.jpg?v=1781962959"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0f0c537d-522e-4e1a-b9f7-653c141d8dc5.jpg?v=1781962959",
+  "typ": "Trädgård & gräsklippartillbehör",
+  "taggar": [
+   "gräsklippare",
+   "sätesöverdrag",
+   "test",
+   "traktor",
+   "trädgård",
+   "åkgräsklippare"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "bestsaljare",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268048662877",
@@ -57,7 +89,21 @@
   "jamforpris": 623.75,
   "lager": 36,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37df421f-8d3b-4937-9a6e-b8e58f24d716.jpg?v=1782024307"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37df421f-8d3b-4937-9a6e-b8e58f24d716.jpg?v=1782024307",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "skuggsegel",
+   "solsegel",
+   "test",
+   "trädgård",
+   "uteplats",
+   "utomhus",
+   "uv-skydd"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268058886493",
@@ -69,7 +115,20 @@
   "jamforpris": 486.25,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/915a980aa02448e8a4205cabd55d0c4b-goods.jpg?v=1782025706"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/915a980aa02448e8a4205cabd55d0c4b-goods.jpg?v=1782025706",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "gräsklippare",
+   "test",
+   "trimmer",
+   "trädgård",
+   "trädgårdsredskap",
+   "utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268059771229",
@@ -81,7 +140,20 @@
   "jamforpris": 573.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6bfe9edd-84f1-4a86-a817-6c75e3269804.jpg?v=1782026113"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6bfe9edd-84f1-4a86-a817-6c75e3269804.jpg?v=1782026113",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "gräsklippare",
+   "rengöring",
+   "test",
+   "trädgård",
+   "uteplats",
+   "utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268059935069",
@@ -93,7 +165,20 @@
   "jamforpris": 161.25,
   "lager": 16,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/14a937ff-1574-45b6-b818-26b6f1c4fecb.jpg?v=1782026221"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/14a937ff-1574-45b6-b818-26b6f1c4fecb.jpg?v=1782026221",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "gräsklippare",
+   "slipning",
+   "test",
+   "trädgård",
+   "utomhus",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268060066141",
@@ -105,7 +190,19 @@
   "jamforpris": 373.75,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fdd9b89d-6546-4c13-8217-301d830243ef.jpg?v=1782026312"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fdd9b89d-6546-4c13-8217-301d830243ef.jpg?v=1782026312",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "sele",
+   "test",
+   "trimmer",
+   "trädgård",
+   "utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268060950877",
@@ -117,7 +214,20 @@
   "jamforpris": 723.75,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c0fa0dd6-f70f-4630-ab58-b0f875d8fa30.jpg?v=1782026780"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c0fa0dd6-f70f-4630-ab58-b0f875d8fa30.jpg?v=1782026780",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "röjsåg",
+   "sele",
+   "test",
+   "trimmer",
+   "trädgård",
+   "utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268061147485",
@@ -129,7 +239,20 @@
   "jamforpris": 236.25,
   "lager": -17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d43adcd3-36bf-4613-add9-269600b6ce4b.jpg?v=1782026854"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d43adcd3-36bf-4613-add9-269600b6ce4b.jpg?v=1782026854",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "ogräs",
+   "test",
+   "trimmer",
+   "trädgård",
+   "utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "bestsaljare",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268061507933",
@@ -139,9 +262,22 @@
   "url": "https://baverbutiken.se/products/7-i-1-jumpstart-5000a-med-luftkompressor-12v-batteribooster",
   "pris": 1599,
   "jamforpris": 1998.75,
-  "lager": 17,
+  "lager": 16,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/84ca73da-7259-4b2d-a0bb-cf6bea1555fe.jpg?v=1782027030"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/84ca73da-7259-4b2d-a0bb-cf6bea1555fe.jpg?v=1782027030",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "batteribooster",
+   "bil",
+   "garage",
+   "jumpstart",
+   "test",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268061933917",
@@ -153,7 +289,20 @@
   "jamforpris": 673.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/799a8adf-812c-4541-a050-64efc42cfab6.jpg?v=1782027115"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/799a8adf-812c-4541-a050-64efc42cfab6.jpg?v=1782027115",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "bil",
+   "garage",
+   "lastrem",
+   "spännrem",
+   "test",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268063113565",
@@ -165,7 +314,20 @@
   "jamforpris": 586.25,
   "lager": 13,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/186a9b93-c445-4b16-9949-3044e46e3443.jpg?v=1782027345"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/186a9b93-c445-4b16-9949-3044e46e3443.jpg?v=1782027345",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "bil",
+   "bränsle",
+   "garage",
+   "pump",
+   "test",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268064194909",
@@ -177,7 +339,19 @@
   "jamforpris": 4186.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1a25d723-b76a-44ee-b845-84c9cd017f50.jpg?v=1782027424"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1a25d723-b76a-44ee-b845-84c9cd017f50.jpg?v=1782027424",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "belysning",
+   "garage",
+   "led",
+   "test",
+   "verkstad"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268064522589",
@@ -189,7 +363,20 @@
   "jamforpris": 873.75,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7a695ccf-8a4d-4a7c-8d42-478783c16d8c.jpg?v=1782027500"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7a695ccf-8a4d-4a7c-8d42-478783c16d8c.jpg?v=1782027500",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "bil",
+   "endoskop",
+   "garage",
+   "inspektionskamera",
+   "test",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268065309021",
@@ -201,7 +388,20 @@
   "jamforpris": 886.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/98e11b97-f9fc-4c4a-bb5b-3902416eac72.jpg?v=1782027681"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/98e11b97-f9fc-4c4a-bb5b-3902416eac72.jpg?v=1782027681",
+  "typ": "Camping & Friluft",
+  "taggar": [
+   "camping",
+   "friluft",
+   "liggunderlag",
+   "sovdyna",
+   "test",
+   "vandring"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268065669469",
@@ -211,9 +411,22 @@
   "url": "https://baverbutiken.se/products/tradlos-dackpump-150-psi-smart-luftkompressor-med-led-display",
   "pris": 519,
   "jamforpris": 648.75,
-  "lager": 19,
+  "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7320b9b1-2349-4963-8564-ee5ee5487293.jpg?v=1782027755"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7320b9b1-2349-4963-8564-ee5ee5487293.jpg?v=1782027755",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "bil",
+   "däckpump",
+   "garage",
+   "luftkompressor",
+   "test",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268067307869",
@@ -225,7 +438,20 @@
   "jamforpris": 186.25,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/83530a0e-8c18-4ad6-acc6-f051f00cb282.jpg?v=1782028297"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/83530a0e-8c18-4ad6-acc6-f051f00cb282.jpg?v=1782028297",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "bil",
+   "elektronik",
+   "garage",
+   "test",
+   "trådkoppling",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268068323677",
@@ -237,7 +463,19 @@
   "jamforpris": 123.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cf9fbd0010a94913bf48322d29f5f54a-goods.jpg?v=1782028373"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cf9fbd0010a94913bf48322d29f5f54a-goods.jpg?v=1782028373",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "förvaring",
+   "garage",
+   "test",
+   "trädgård",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268069634397",
@@ -249,7 +487,20 @@
   "jamforpris": 623.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d9a06937-cb1e-4a7c-8483-8c0973b5a9a5.jpg?v=1782028448"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d9a06937-cb1e-4a7c-8483-8c0973b5a9a5.jpg?v=1782028448",
+  "typ": "Bil, Verktyg & Garage",
+  "taggar": [
+   "bil",
+   "garage",
+   "plastsvets",
+   "reparation",
+   "test",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268073664861",
@@ -261,7 +512,20 @@
   "jamforpris": 423.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8b435d56-319c-44ee-bab8-dd824424dee4.jpg?v=1782028648"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8b435d56-319c-44ee-bab8-dd824424dee4.jpg?v=1782028648",
+  "typ": "Lantbruk & Djur",
+  "taggar": [
+   "djur",
+   "grindlås",
+   "hage",
+   "lantbruk",
+   "stängsel",
+   "test"
+  ],
+  "kollektioner": [
+   "lantbruk-djur",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268075565405",
@@ -273,7 +537,20 @@
   "jamforpris": 1148.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/56e2dba6376d79da42c61e9d0276ab2b.jpg?v=1782028718"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/56e2dba6376d79da42c61e9d0276ab2b.jpg?v=1782028718",
+  "typ": "Lantbruk & Djur",
+  "taggar": [
+   "djur",
+   "hage",
+   "lantbruk",
+   "stängsel",
+   "test",
+   "trådspännare"
+  ],
+  "kollektioner": [
+   "lantbruk-djur",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268083265885",
@@ -285,7 +562,20 @@
   "jamforpris": 1248.75,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a99cb6eb-8b0b-4e35-9a77-7cfb03f668d5.jpg?v=1782029107"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a99cb6eb-8b0b-4e35-9a77-7cfb03f668d5.jpg?v=1782029107",
+  "typ": "Lantbruk & Djur",
+  "taggar": [
+   "djur",
+   "lantbruk",
+   "stängsel",
+   "test",
+   "trådsträckare",
+   "verktyg"
+  ],
+  "kollektioner": [
+   "lantbruk-djur",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268084838749",
@@ -297,7 +587,19 @@
   "jamforpris": 123.75,
   "lager": 30,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8e9287e2-5ba0-428b-8de0-01a5833eaf00.jpg?v=1782029194"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8e9287e2-5ba0-428b-8de0-01a5833eaf00.jpg?v=1782029194",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "löv",
+   "test",
+   "trädgård",
+   "trädgårdssäck",
+   "utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268095488349",
@@ -309,7 +611,20 @@
   "jamforpris": 523.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37b22396-1e6c-41b0-b0ca-1a7c11ac93d2.jpg?v=1782029716"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37b22396-1e6c-41b0-b0ca-1a7c11ac93d2.jpg?v=1782029716",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "bevattning",
+   "ibc",
+   "test",
+   "trädgård",
+   "utomhus",
+   "vattentank"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268097716573",
@@ -321,7 +636,19 @@
   "jamforpris": 98.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/92157ad1-5b71-4d65-bcb5-b29352928088.jpg?v=1782029831"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/92157ad1-5b71-4d65-bcb5-b29352928088.jpg?v=1782029831",
+  "typ": "Lantbruk & Djur",
+  "taggar": [
+   "djur",
+   "get",
+   "halsband",
+   "lantbruk",
+   "test"
+  ],
+  "kollektioner": [
+   "lantbruk-djur",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268098830685",
@@ -333,7 +660,20 @@
   "jamforpris": 473.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8cf759a2-02a0-4322-b2d8-447aa85a2cd3.jpg?v=1782029898"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8cf759a2-02a0-4322-b2d8-447aa85a2cd3.jpg?v=1782029898",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "bevattning",
+   "ibc",
+   "test",
+   "trädgård",
+   "utomhus",
+   "vattentank"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268132647261",
@@ -345,7 +685,19 @@
   "jamforpris": 1861.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7c49ee32-e817-4185-b61b-b7dfd7c8708d.jpg?v=1782031389"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7c49ee32-e817-4185-b61b-b7dfd7c8708d.jpg?v=1782031389",
+  "typ": "Trädgårdsredskap",
+  "taggar": [
+   "Trädgård",
+   "Utomhus",
+   "Ved",
+   "Vedklyv",
+   "Värme"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268140282205",
@@ -357,7 +709,19 @@
   "jamforpris": 248.75,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1723182130984-5e54b7e2c64f4198be878ed62d63eb5e-goods.jpg?v=1782031571"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1723182130984-5e54b7e2c64f4198be878ed62d63eb5e-goods.jpg?v=1782031571",
+  "typ": "Verktyg",
+  "taggar": [
+   "DIY",
+   "Mätverktyg",
+   "Snickeri",
+   "Verktyg",
+   "Vinkellinjal"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268141658461",
@@ -369,7 +733,19 @@
   "jamforpris": 136.25,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1fc50502-4b0a-4e04-920a-de17d1bbbffb.jpg?v=1782031634"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1fc50502-4b0a-4e04-920a-de17d1bbbffb.jpg?v=1782031634",
+  "typ": "Trädgård",
+  "taggar": [
+   "Fruktträd",
+   "Insektsskydd",
+   "Odling",
+   "Skadedjur",
+   "Trädgård"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268142969181",
@@ -381,7 +757,19 @@
   "jamforpris": 350,
   "lager": 12,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/141a6638-e41d-4b4f-94bd-5b8d509b3fa3.jpg?v=1782031692"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/141a6638-e41d-4b4f-94bd-5b8d509b3fa3.jpg?v=1782031692",
+  "typ": "Bevattning",
+  "taggar": [
+   "Bevattning",
+   "Slang",
+   "Trädgård",
+   "Utomhus",
+   "Vatten"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268144181597",
@@ -393,7 +781,19 @@
   "jamforpris": 348.75,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5c043c2a-e667-42b5-a556-9b79140caba8.jpg?v=1782031755"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5c043c2a-e667-42b5-a556-9b79140caba8.jpg?v=1782031755",
+  "typ": "Pool",
+  "taggar": [
+   "Filter",
+   "Pool",
+   "Rengöring",
+   "Trädgård",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268145787229",
@@ -405,7 +805,19 @@
   "jamforpris": 311.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ca0f87c1-5811-4638-938b-2c3695e75d90.jpg?v=1782031823"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ca0f87c1-5811-4638-938b-2c3695e75d90.jpg?v=1782031823",
+  "typ": "Biltillbehör",
+  "taggar": [
+   "Bil",
+   "Biltvätt",
+   "Garage",
+   "Rengöring",
+   "Trädgård"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268147818845",
@@ -417,7 +829,19 @@
   "jamforpris": 286.25,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/295cd1066dd2d541e61567e80285f253.jpg?v=1782031922"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/295cd1066dd2d541e61567e80285f253.jpg?v=1782031922",
+  "typ": "Friluft",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Såg",
+   "Verktyg",
+   "Överlevnad"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268148769117",
@@ -429,7 +853,19 @@
   "jamforpris": 498.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0c12e92a-c242-4375-93f1-4251a4367bf5.jpg?v=1782031973"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0c12e92a-c242-4375-93f1-4251a4367bf5.jpg?v=1782031973",
+  "typ": "Trädgård",
+  "taggar": [
+   "Förkläde",
+   "Odling",
+   "Skydd",
+   "Trädgård",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268149981533",
@@ -441,7 +877,19 @@
   "jamforpris": 423.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d7007d0-46b2-46c7-a227-ddf4e8ca12ae.jpg?v=1782032028"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d7007d0-46b2-46c7-a227-ddf4e8ca12ae.jpg?v=1782032028",
+  "typ": "Bevattning",
+  "taggar": [
+   "Bevattning",
+   "Biltvätt",
+   "Slang",
+   "Trädgård",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268150931805",
@@ -453,7 +901,20 @@
   "jamforpris": 789,
   "lager": -140,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e0eacffe518545679195983f7a434ba3-goods.jpg?v=1782032083"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e0eacffe518545679195983f7a434ba3-goods.jpg?v=1782032083",
+  "typ": "Trädgård",
+  "taggar": [
+   "Ryggstöd",
+   "Sele",
+   "Trimmer",
+   "Trädgård",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "bestsaljare",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268152570205",
@@ -465,7 +926,19 @@
   "jamforpris": 498.75,
   "lager": 9,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a24cce6a-c4e5-11ef-9c15-0a580a66d8f5.jpg?v=1782032163"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a24cce6a-c4e5-11ef-9c15-0a580a66d8f5.jpg?v=1782032163",
+  "typ": "Transport",
+  "taggar": [
+   "Bil",
+   "Garage",
+   "Lastsäkring",
+   "Släpvagn",
+   "Transport"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268154208605",
@@ -477,7 +950,20 @@
   "jamforpris": 420,
   "lager": 57,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlosdesign-2026-07-27T131715.079.png?v=1785151048"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlosdesign-2026-07-27T131715.079.png?v=1785151048",
+  "typ": "Skor",
+  "taggar": [
+   "Camping",
+   "Skor",
+   "Strand",
+   "Tofflor",
+   "Trädgård"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "bestsaljare",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268161057117",
@@ -489,7 +975,19 @@
   "jamforpris": 350,
   "lager": 11,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3df2dbe103ffe1845924264eda7b5090.jpg?v=1782032572"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3df2dbe103ffe1845924264eda7b5090.jpg?v=1782032572",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Brygga",
+   "Båt",
+   "Förtöjning",
+   "Lina",
+   "Marin"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268162335069",
@@ -501,7 +999,19 @@
   "jamforpris": 436.25,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3c12e84b-6e72-4fff-a771-5a93143813f7.jpg?v=1782032643"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3c12e84b-6e72-4fff-a771-5a93143813f7.jpg?v=1782032643",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Båt",
+   "Marin",
+   "Motor",
+   "Spolning",
+   "Underhåll"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268164006237",
@@ -513,7 +1023,19 @@
   "jamforpris": 361.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0000e2df-9390-43b5-bfaa-011068263133.jpg?v=1782032728"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0000e2df-9390-43b5-bfaa-011068263133.jpg?v=1782032728",
+  "typ": "Rengöring",
+  "taggar": [
+   "Bil",
+   "Borste",
+   "Båt",
+   "Detailing",
+   "Rengöring"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268165677405",
@@ -525,7 +1047,19 @@
   "jamforpris": 148.75,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5356038fe3c34db47ab9c207eff55e6e.jpg?v=1782032811"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5356038fe3c34db47ab9c207eff55e6e.jpg?v=1782032811",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Båt",
+   "Förvaring",
+   "Marin",
+   "Motor",
+   "Skydd"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268169085277",
@@ -537,7 +1071,19 @@
   "jamforpris": 336.25,
   "lager": 2,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c063a45aa6255095347f0a9b94df50ac.jpg?v=1782032969"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c063a45aa6255095347f0a9b94df50ac.jpg?v=1782032969",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Båt",
+   "Marin",
+   "Sitsöverdrag",
+   "Skydd",
+   "Stol"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268170527069",
@@ -549,7 +1095,19 @@
   "jamforpris": 248.75,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/11c4b17a-8942-408a-bbf3-182635519e41.jpg?v=1782033027"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/11c4b17a-8942-408a-bbf3-182635519e41.jpg?v=1782033027",
+  "typ": "Detailing",
+  "taggar": [
+   "Bil",
+   "Båt",
+   "Detailing",
+   "Skydd",
+   "Vax"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268171542877",
@@ -561,7 +1119,19 @@
   "jamforpris": 86.25,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/da367100cba54ac68430e76029a4044b-goods.jpg?v=1782033077"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/da367100cba54ac68430e76029a4044b-goods.jpg?v=1782033077",
+  "typ": "Säkerhet",
+  "taggar": [
+   "Badrum",
+   "Båt",
+   "Halkskydd",
+   "Säkerhet",
+   "Trappa"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268173214045",
@@ -571,9 +1141,22 @@
   "url": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
   "pris": 289,
   "jamforpris": null,
-  "lager": -583,
+  "lager": -588,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d426b7a-cfe0-49df-8b44-03c3aabbc326.jpg?v=1782033165"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d426b7a-cfe0-49df-8b44-03c3aabbc326.jpg?v=1782033165",
+  "typ": "Fiske",
+  "taggar": [
+   "Båt",
+   "Fiske",
+   "Friluft",
+   "Förvaring",
+   "Spöhållare"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "bestsaljare",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268174295389",
@@ -585,7 +1168,19 @@
   "jamforpris": 1311.25,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c3053ed9-a5f2-4e5e-931c-1b1104a8e5dd.jpg?v=1782033215"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c3053ed9-a5f2-4e5e-931c-1b1104a8e5dd.jpg?v=1782033215",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Båt",
+   "Förvaring",
+   "Marin",
+   "Presenning",
+   "Skydd"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268175442269",
@@ -597,7 +1192,20 @@
   "jamforpris": 367,
   "lager": -573,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f42097e4-160f-48e8-920d-15a08b4e5da9.jpg?v=1782033273"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f42097e4-160f-48e8-920d-15a08b4e5da9.jpg?v=1782033273",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Båt",
+   "Förvaring",
+   "Marin",
+   "Motor",
+   "Skydd"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "bestsaljare",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268176752989",
@@ -609,7 +1217,19 @@
   "jamforpris": 786.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/26ed2b3f-1298-46f2-9170-37b8ec3117be.jpg?v=1782033326"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/26ed2b3f-1298-46f2-9170-37b8ec3117be.jpg?v=1782033326",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Bogsering",
+   "Båt",
+   "Marin",
+   "Trailer",
+   "Vinsch"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268178424157",
@@ -621,7 +1241,19 @@
   "jamforpris": 86.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/31bb6b5f-de73-4ca3-9f72-21024991cf85.jpg?v=1782033387"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/31bb6b5f-de73-4ca3-9f72-21024991cf85.jpg?v=1782033387",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Båt",
+   "Marin",
+   "Motor",
+   "Säkerhet",
+   "Yamaha"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268180128093",
@@ -633,7 +1265,19 @@
   "jamforpris": 61.25,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4e47deb5-1c4b-485b-988d-b08eb4236a01.jpg?v=1782033455"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4e47deb5-1c4b-485b-988d-b08eb4236a01.jpg?v=1782033455",
+  "typ": "Verktyg",
+  "taggar": [
+   "Borr",
+   "DIY",
+   "Garage",
+   "Spärrhake",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268182192477",
@@ -643,9 +1287,21 @@
   "url": "https://baverbutiken.se/products/handdriven-kedjeslip-slipverktyg-for-motorsag",
   "pris": 249,
   "jamforpris": 311.25,
-  "lager": 8,
+  "lager": 6,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c037b5a5-5001-4da8-92a2-388f9cb061da.jpg?v=1782033534"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c037b5a5-5001-4da8-92a2-388f9cb061da.jpg?v=1782033534",
+  "typ": "Verktyg",
+  "taggar": [
+   "Kedja",
+   "Motorsåg",
+   "Slip",
+   "Trädgård",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268184486237",
@@ -657,7 +1313,19 @@
   "jamforpris": 36.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1bcc4730-f76a-4b9c-aa49-0d175782f0d9.jpg?v=1782033681"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1bcc4730-f76a-4b9c-aa49-0d175782f0d9.jpg?v=1782033681",
+  "typ": "Köksredskap",
+  "taggar": [
+   "Köksredskap",
+   "Praktiskt",
+   "Tillbehör",
+   "Vardag",
+   "Öppnare"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268184846685",
@@ -669,7 +1337,20 @@
   "jamforpris": 123.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e635b363-7588-4381-b5ee-564b5db736fe.jpg?v=1782033732"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e635b363-7588-4381-b5ee-564b5db736fe.jpg?v=1782033732",
+  "typ": "Biltillbehör",
+  "taggar": [
+   "Bil",
+   "Däck",
+   "Garage",
+   "Mätverktyg",
+   "Säkerhet"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "din-gratisprodukt",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268184879453",
@@ -681,7 +1362,19 @@
   "jamforpris": 311.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4a1ef9f2-6b2a-4946-a9bf-1644cbd28e89.jpg?v=1782033786"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4a1ef9f2-6b2a-4946-a9bf-1644cbd28e89.jpg?v=1782033786",
+  "typ": "Kläder",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Kläder",
+   "Shorts",
+   "Träning"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268185141597",
@@ -693,7 +1386,19 @@
   "jamforpris": 598.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/2daaadb0-0bb7-4e3b-a7dd-07872c164ed8.jpg?v=1782033860"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/2daaadb0-0bb7-4e3b-a7dd-07872c164ed8.jpg?v=1782033860",
+  "typ": "Telefontillbehör",
+  "taggar": [
+   "iPhone",
+   "Mobilskal",
+   "Skydd",
+   "Telefon",
+   "Tillbehör"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268185272669",
@@ -705,7 +1410,19 @@
   "jamforpris": 198.75,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7c9d7d61-8530-483b-9f5d-74104142e911.jpg?v=1782033910"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7c9d7d61-8530-483b-9f5d-74104142e911.jpg?v=1782033910",
+  "typ": "Accessoarer",
+  "taggar": [
+   "Accessoarer",
+   "Glasögon",
+   "Herr",
+   "Mode",
+   "Tillbehör"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268185370973",
@@ -717,7 +1434,19 @@
   "jamforpris": 73.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/62390db6-ab3e-4d89-9c7c-45b7d79f3d4e.jpg?v=1782033986"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/62390db6-ab3e-4d89-9c7c-45b7d79f3d4e.jpg?v=1782033986",
+  "typ": "Verktyg",
+  "taggar": [
+   "DIY",
+   "Färg",
+   "Hantverk",
+   "Måleri",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268185567581",
@@ -729,7 +1458,19 @@
   "jamforpris": 686.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cc5c4594-f12b-4915-8eb7-3a7f872549a8.jpg?v=1782034060"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cc5c4594-f12b-4915-8eb7-3a7f872549a8.jpg?v=1782034060",
+  "typ": "Verktyg",
+  "taggar": [
+   "Garage",
+   "Mekaniker",
+   "Nyckel",
+   "Spärrnyckel",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268185796957",
@@ -741,7 +1482,19 @@
   "jamforpris": 323.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4b7eddd5-3823-43f5-af76-196da3370fad.jpg?v=1782034113"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4b7eddd5-3823-43f5-af76-196da3370fad.jpg?v=1782034113",
+  "typ": "Verktyg",
+  "taggar": [
+   "Bil",
+   "Filter",
+   "Garage",
+   "Oljebyte",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268186026333",
@@ -753,7 +1506,19 @@
   "jamforpris": 223.75,
   "lager": 15,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/46f88a48-182e-4fbf-a69b-4561eb69612b_800x800_8ed3eb8d-0127-49b8-8e52-d4f15f59023d.jpg?v=1782034167"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/46f88a48-182e-4fbf-a69b-4561eb69612b_800x800_8ed3eb8d-0127-49b8-8e52-d4f15f59023d.jpg?v=1782034167",
+  "typ": "Verktyg",
+  "taggar": [
+   "Bränsle",
+   "Garage",
+   "Pump",
+   "Vatten",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268186386781",
@@ -765,7 +1530,19 @@
   "jamforpris": 823.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9f00625a-3d21-4ee4-9d2b-04b9f42cdb8f.jpg?v=1782034214"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9f00625a-3d21-4ee4-9d2b-04b9f42cdb8f.jpg?v=1782034214",
+  "typ": "Biltillbehör",
+  "taggar": [
+   "Bil",
+   "Dammsugare",
+   "Garage",
+   "Städning",
+   "Trådlös"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268186714461",
@@ -777,7 +1554,19 @@
   "jamforpris": 136.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37b9315e721245afabf2fec43cb40410-goods.jpg?v=1782034272"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/37b9315e721245afabf2fec43cb40410-goods.jpg?v=1782034272",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Förvaring",
+   "Utomhus",
+   "Vatten"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268187337053",
@@ -789,7 +1578,19 @@
   "jamforpris": 123.75,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e33d3d323aaf1ab75078c014315d2ce4.jpg?v=1782034323"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e33d3d323aaf1ab75078c014315d2ce4.jpg?v=1782034323",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Resa",
+   "Tvättlina",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268187566429",
@@ -801,7 +1602,19 @@
   "jamforpris": 411.25,
   "lager": 15,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ff60a886-8a8a-4ff1-a219-0d9753c55367.jpg?v=1782034378"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ff60a886-8a8a-4ff1-a219-0d9753c55367.jpg?v=1782034378",
+  "typ": "Väskor",
+  "taggar": [
+   "Bröstväska",
+   "Camping",
+   "Friluft",
+   "Sport",
+   "Väska"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268189106525",
@@ -813,7 +1626,19 @@
   "jamforpris": 373.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/eacea9df-7727-4fd7-a0a1-6baab89682a1.jpg?v=1782034442"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/eacea9df-7727-4fd7-a0a1-6baab89682a1.jpg?v=1782034442",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Matta",
+   "Picknick",
+   "Strand"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268191498589",
@@ -825,7 +1650,19 @@
   "jamforpris": 236.25,
   "lager": 339,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/00bf0c32-4466-46c3-9331-29e7f04c94e3.jpg?v=1782034511"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/00bf0c32-4466-46c3-9331-29e7f04c94e3.jpg?v=1782034511",
+  "typ": "Skor",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Sandaler",
+   "Skor",
+   "Strand"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268193988957",
@@ -837,7 +1674,19 @@
   "jamforpris": 186.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/aff2e548764a4d2d9083167b1e5a49af-goods.jpg?v=1782034583"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/aff2e548764a4d2d9083167b1e5a49af-goods.jpg?v=1782034583",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Tält",
+   "Tältpinnar",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268195758429",
@@ -849,7 +1698,19 @@
   "jamforpris": 373.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b572584c-0f77-4734-8f14-24bafda28210.jpg?v=1782034635"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b572584c-0f77-4734-8f14-24bafda28210.jpg?v=1782034635",
+  "typ": "Husdjur",
+  "taggar": [
+   "Camping",
+   "Djur",
+   "Hund",
+   "Husdjur",
+   "Resa"
+  ],
+  "kollektioner": [
+   "lantbruk-djur",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268197560669",
@@ -861,7 +1722,19 @@
   "jamforpris": 486.25,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fb5b8a5f-1b39-4958-8394-7f57354ff622.jpg?v=1782034687"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fb5b8a5f-1b39-4958-8394-7f57354ff622.jpg?v=1782034687",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Markankare",
+   "Tält",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268199526749",
@@ -873,7 +1746,20 @@
   "jamforpris": 123.75,
   "lager": 16,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bf853be8-3fb7-4687-ba89-aedbbc3ae574.jpg?v=1782034744"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bf853be8-3fb7-4687-ba89-aedbbc3ae574.jpg?v=1782034744",
+  "typ": "Camping",
+  "taggar": [
+   "Belysning",
+   "Camping",
+   "Fiske",
+   "Friluft",
+   "LED"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "din-gratisprodukt",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268201558365",
@@ -885,7 +1771,19 @@
   "jamforpris": 698.75,
   "lager": 342,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3f2c1992-1070-40e2-b18a-a81735950a92.jpg?v=1782034796"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3f2c1992-1070-40e2-b18a-a81735950a92.jpg?v=1782034796",
+  "typ": "Skor",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Skor",
+   "Strand",
+   "Vattenskor"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268203196765",
@@ -897,7 +1795,19 @@
   "jamforpris": 498.75,
   "lager": 13,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/579d2c83-4d5f-4e49-aee8-32bf77a57f86.jpg?v=1782034845"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/579d2c83-4d5f-4e49-aee8-32bf77a57f86.jpg?v=1782034845",
+  "typ": "Väskor",
+  "taggar": [
+   "Bröstväska",
+   "Camping",
+   "Friluft",
+   "Taktisk",
+   "Väska"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268204835165",
@@ -909,7 +1819,19 @@
   "jamforpris": 436.25,
   "lager": 342,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/95b35a76-000a-4abc-9a3e-9a18b02a35b1.jpg?v=1782034894"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/95b35a76-000a-4abc-9a3e-9a18b02a35b1.jpg?v=1782034894",
+  "typ": "Skor",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Skor",
+   "Sneakers",
+   "Vandring"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268206571869",
@@ -921,7 +1843,19 @@
   "jamforpris": 248.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/76a6dbbc-90bf-49e2-9f8f-dfb3acae73c8.jpg?v=1782034944"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/76a6dbbc-90bf-49e2-9f8f-dfb3acae73c8.jpg?v=1782034944",
+  "typ": "Friluft",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Nödutrustning",
+   "Regnjacka",
+   "Vandring"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268208603485",
@@ -933,7 +1867,19 @@
   "jamforpris": 648.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/513d640f-f9b9-4f78-b581-add0563f4104.jpg?v=1782034998"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/513d640f-f9b9-4f78-b581-add0563f4104.jpg?v=1782034998",
+  "typ": "Väskor",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Ryggsäck",
+   "Vandring",
+   "Väska"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268209881437",
@@ -945,7 +1891,19 @@
   "jamforpris": 311.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bbc7c63f-8e55-48de-879f-19347807be54.jpg?v=1782035049"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bbc7c63f-8e55-48de-879f-19347807be54.jpg?v=1782035049",
+  "typ": "Camping",
+  "taggar": [
+   "Belysning",
+   "Camping",
+   "Friluft",
+   "Nödutrustning",
+   "Solcell"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268210012509",
@@ -957,7 +1915,19 @@
   "jamforpris": 136.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5fbe279c-bef6-4431-8ebb-09d383d4b3ab.jpg?v=1782035100"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5fbe279c-bef6-4431-8ebb-09d383d4b3ab.jpg?v=1782035100",
+  "typ": "Camping",
+  "taggar": [
+   "Brandskydd",
+   "Camping",
+   "Grill",
+   "Trädgård",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268210340189",
@@ -969,7 +1939,19 @@
   "jamforpris": 661.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/00b5156b-bb42-4e99-abe1-6eb20da38ad5.jpg?v=1782035155"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/00b5156b-bb42-4e99-abe1-6eb20da38ad5.jpg?v=1782035155",
+  "typ": "Camping",
+  "taggar": [
+   "Belysning",
+   "Camping",
+   "Friluft",
+   "Nödutrustning",
+   "Solcell"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268210569565",
@@ -981,7 +1963,19 @@
   "jamforpris": 311.25,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ab8323588bcb48f4ac88b05324cad2aa-goods.jpg?v=1782035205"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ab8323588bcb48f4ac88b05324cad2aa-goods.jpg?v=1782035205",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Hängmatta",
+   "Utomhus",
+   "Vandring"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268210798941",
@@ -993,7 +1987,19 @@
   "jamforpris": 98.75,
   "lager": 16,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5641debb-55ad-451a-8a0a-918a23f181f1.jpg?v=1782035252"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5641debb-55ad-451a-8a0a-918a23f181f1.jpg?v=1782035252",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Nödutrustning",
+   "Resa",
+   "Toalett"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268211061085",
@@ -1005,7 +2011,19 @@
   "jamforpris": 361.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1728668380419-c1aabd34ea7648c0a935292e94176b26-goods.jpg?v=1782035302"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1728668380419-c1aabd34ea7648c0a935292e94176b26-goods.jpg?v=1782035302",
+  "typ": "Trädgård",
+  "taggar": [
+   "Pool",
+   "Skugga",
+   "Solskydd",
+   "Trädgård",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268211323229",
@@ -1017,7 +2035,19 @@
   "jamforpris": 523.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/68500873a68b4598ae8cfbbb6e284f95-goods.jpg?v=1782035352"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/68500873a68b4598ae8cfbbb6e284f95-goods.jpg?v=1782035352",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Luftsoffa",
+   "Strand",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268211487069",
@@ -1029,7 +2059,19 @@
   "jamforpris": 573.75,
   "lager": 16,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9507ca9b-3c74-4d2e-941e-c314257fb2bf.jpg?v=1782035404"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9507ca9b-3c74-4d2e-941e-c314257fb2bf.jpg?v=1782035404",
+  "typ": "Kläder",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Kläder",
+   "Shorts",
+   "Träning"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268211781981",
@@ -1041,7 +2083,19 @@
   "jamforpris": 423.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f86246b7234444f783fb8bac2020e166-goods.jpg?v=1782035460"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f86246b7234444f783fb8bac2020e166-goods.jpg?v=1782035460",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Förvaring",
+   "Krokar",
+   "Tält"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268212076893",
@@ -1053,7 +2107,19 @@
   "jamforpris": 711.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5aa084ab-f6e9-479b-90f2-eb084901d6f2.jpg?v=1782035522"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5aa084ab-f6e9-479b-90f2-eb084901d6f2.jpg?v=1782035522",
+  "typ": "Fordon",
+  "taggar": [
+   "ATV",
+   "Fordon",
+   "Fyrhjuling",
+   "Förvaring",
+   "Väska"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268212240733",
@@ -1065,7 +2131,19 @@
   "jamforpris": 336.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/031160974c664478bd27573105cedf8c-goods.jpg?v=1782035572"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/031160974c664478bd27573105cedf8c-goods.jpg?v=1782035572",
+  "typ": "Fordon",
+  "taggar": [
+   "Fordon",
+   "Handvärmare",
+   "Motorcykel",
+   "Skoter",
+   "Vinter"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268212339037",
@@ -1077,7 +2155,19 @@
   "jamforpris": 248.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f66a2d5d-a707-480f-bd40-09b1f10cfc36.jpg?v=1782035629"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f66a2d5d-a707-480f-bd40-09b1f10cfc36.jpg?v=1782035629",
+  "typ": "Fordon",
+  "taggar": [
+   "Fordon",
+   "Handskydd",
+   "MC",
+   "Motocross",
+   "Motorcykel"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268212502877",
@@ -1089,7 +2179,19 @@
   "jamforpris": 273.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/26e714bd68e18e9ffdaafd7a5790a1ff.jpg?v=1782035680"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/26e714bd68e18e9ffdaafd7a5790a1ff.jpg?v=1782035680",
+  "typ": "Transport",
+  "taggar": [
+   "Bil",
+   "Lastsäkring",
+   "Rem",
+   "Släpvagn",
+   "Transport"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268212699485",
@@ -1101,7 +2203,19 @@
   "jamforpris": 236.25,
   "lager": 4,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ddb18f28-317a-4c67-93fb-facfe4ccb8d0.jpg?v=1782035733"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ddb18f28-317a-4c67-93fb-facfe4ccb8d0.jpg?v=1782035733",
+  "typ": "Biltillbehör",
+  "taggar": [
+   "Batteri",
+   "Bil",
+   "Båt",
+   "Garage",
+   "Strömbrytare"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268212797789",
@@ -1113,7 +2227,19 @@
   "jamforpris": 323.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ca3a6c9f-18c8-468a-b260-b02ba527bf12.jpg?v=1782035784"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ca3a6c9f-18c8-468a-b260-b02ba527bf12.jpg?v=1782035784",
+  "typ": "Fordon",
+  "taggar": [
+   "ATV",
+   "Fordon",
+   "MC",
+   "Styrhandtag",
+   "Tillbehör"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268212994397",
@@ -1125,7 +2251,19 @@
   "jamforpris": 373.75,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f19af744-5f87-4030-b5f4-373a3251a63f.jpg?v=1782035846"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f19af744-5f87-4030-b5f4-373a3251a63f.jpg?v=1782035846",
+  "typ": "Belysning",
+  "taggar": [
+   "Arbetsljus",
+   "Belysning",
+   "Fordon",
+   "LED",
+   "Offroad"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268213191005",
@@ -1137,7 +2275,19 @@
   "jamforpris": 998.75,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlosdesign-2026-07-12T204755.239.png?v=1783882083"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlosdesign-2026-07-12T204755.239.png?v=1783882083",
+  "typ": "Belysning",
+  "taggar": [
+   "Belysning",
+   "Extraljus",
+   "Fordon",
+   "LED",
+   "Motorcykel"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268213289309",
@@ -1149,7 +2299,19 @@
   "jamforpris": 1023.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/840da806-ceb3-4963-a9ca-43b2b2811b36.jpg?v=1782035952"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/840da806-ceb3-4963-a9ca-43b2b2811b36.jpg?v=1782035952",
+  "typ": "Fordon",
+  "taggar": [
+   "Fordon",
+   "Lås",
+   "Motorcykel",
+   "Stöldskydd",
+   "Säkerhet"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268213485917",
@@ -1161,7 +2323,19 @@
   "jamforpris": 361.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a53c19df-3d3a-4eb7-b267-5cb7855a1a7a.jpg?v=1782036012"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a53c19df-3d3a-4eb7-b267-5cb7855a1a7a.jpg?v=1782036012",
+  "typ": "Fordon",
+  "taggar": [
+   "Camo",
+   "Fordon",
+   "Motorcykel",
+   "Skydd",
+   "Sätesöverdrag"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268213584221",
@@ -1173,7 +2347,19 @@
   "jamforpris": 398.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c7b44ae3-2910-4fe1-80ee-ceee2eb66378.jpg?v=1782036061"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c7b44ae3-2910-4fe1-80ee-ceee2eb66378.jpg?v=1782036061",
+  "typ": "Belysning",
+  "taggar": [
+   "Arbetsljus",
+   "Belysning",
+   "Fordon",
+   "LED",
+   "Offroad"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268213715293",
@@ -1185,7 +2371,19 @@
   "jamforpris": 2973.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8b40c5b9-09d8-4c78-980e-22029b7b07b2.jpg?v=1782036116"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8b40c5b9-09d8-4c78-980e-22029b7b07b2.jpg?v=1782036116",
+  "typ": "Belysning",
+  "taggar": [
+   "Arbetsljus",
+   "Belysning",
+   "Fordon",
+   "LED",
+   "Offroad"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268213944669",
@@ -1197,7 +2395,19 @@
   "jamforpris": 773.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6d664920-57c4-40ef-965b-06bf7a743e65.jpg?v=1782036178"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6d664920-57c4-40ef-965b-06bf7a743e65.jpg?v=1782036178",
+  "typ": "Fordon",
+  "taggar": [
+   "Bensindunk",
+   "Fordon",
+   "MC",
+   "Motorcykel",
+   "Reservtank"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268214272349",
@@ -1209,7 +2419,19 @@
   "jamforpris": 286.25,
   "lager": 15,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/89e6bca5adba4059984fcc3bccf9290c-goods.jpg?v=1782036245"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/89e6bca5adba4059984fcc3bccf9290c-goods.jpg?v=1782036245",
+  "typ": "Belysning",
+  "taggar": [
+   "Belysning",
+   "Blinkers",
+   "Fordon",
+   "LED",
+   "Motorcykel"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268214567261",
@@ -1221,7 +2443,19 @@
   "jamforpris": 286.25,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5ec7cdff-6d00-47db-a4a4-4ef944242d84.jpg?v=1782036302"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5ec7cdff-6d00-47db-a4a4-4ef944242d84.jpg?v=1782036302",
+  "typ": "Belysning",
+  "taggar": [
+   "Arbetsljus",
+   "Belysning",
+   "Fordon",
+   "LED",
+   "Offroad"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268214698333",
@@ -1233,7 +2467,19 @@
   "jamforpris": 573.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a8db1f18-cb1c-44f6-a661-aaa86ff88dd3.jpg?v=1782036361"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a8db1f18-cb1c-44f6-a661-aaa86ff88dd3.jpg?v=1782036361",
+  "typ": "Belysning",
+  "taggar": [
+   "Arbetsljus",
+   "Belysning",
+   "Fordon",
+   "LED",
+   "Offroad"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268214796637",
@@ -1245,7 +2491,19 @@
   "jamforpris": 386.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cd3a7716-fecc-4b43-96a3-4780e2c040f1.jpg?v=1782036412"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cd3a7716-fecc-4b43-96a3-4780e2c040f1.jpg?v=1782036412",
+  "typ": "Belysning",
+  "taggar": [
+   "Belysning",
+   "Extraljus",
+   "Fordon",
+   "Grill",
+   "LED"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268215026013",
@@ -1257,7 +2515,19 @@
   "jamforpris": 2248.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/efe37e19-dd26-4082-bac2-097eb4300a4b.jpg?v=1782036462"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/efe37e19-dd26-4082-bac2-097eb4300a4b.jpg?v=1782036462",
+  "typ": "Belysning",
+  "taggar": [
+   "Arbetsljus",
+   "Belysning",
+   "Fordon",
+   "Lastbil",
+   "LED"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268215550301",
@@ -1269,7 +2539,19 @@
   "jamforpris": 2873.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/125fa2b7-f544-4173-bc47-4cce5cf02298.jpg?v=1782036511"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/125fa2b7-f544-4173-bc47-4cce5cf02298.jpg?v=1782036511",
+  "typ": "Belysning",
+  "taggar": [
+   "Belysning",
+   "Fordon",
+   "Lastbil",
+   "LED",
+   "Varningsljus"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268215714141",
@@ -1281,7 +2563,19 @@
   "jamforpris": 236.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b9927c12-9041-4b3a-9e8f-e35a35ad0fa5.jpg?v=1782036560"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b9927c12-9041-4b3a-9e8f-e35a35ad0fa5.jpg?v=1782036560",
+  "typ": "Belysning",
+  "taggar": [
+   "Belysning",
+   "Fordon",
+   "Lastbil",
+   "LED",
+   "Markeringsljus"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16268215845213",
@@ -1293,7 +2587,19 @@
   "jamforpris": 523.75,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/299d36cf-fe2c-4439-a4c9-e40a4b8600d7.jpg?v=1782036620"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/299d36cf-fe2c-4439-a4c9-e40a4b8600d7.jpg?v=1782036620",
+  "typ": "Belysning",
+  "taggar": [
+   "Belysning",
+   "Fordon",
+   "Lastbil",
+   "LED",
+   "Markeringsljus"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349626696029",
@@ -1305,7 +2611,20 @@
   "jamforpris": 1136.25,
   "lager": 8,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/89b3b75e-340b-4027-b043-f6496877f18d.jpg?v=1784722820"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/89b3b75e-340b-4027-b043-f6496877f18d.jpg?v=1784722820",
+  "typ": "Kläder",
+  "taggar": [
+   "Cargoshorts",
+   "Herr",
+   "Kläder",
+   "Shorts",
+   "Sommar"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "skor-klader",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349628399965",
@@ -1317,7 +2636,19 @@
   "jamforpris": 911.25,
   "lager": 18,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/27939899-96d8-4b61-8a59-8fb3ae5e27bb.jpg?v=1784722876"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/27939899-96d8-4b61-8a59-8fb3ae5e27bb.jpg?v=1784722876",
+  "typ": "Väskor",
+  "taggar": [
+   "Camping",
+   "Friluft",
+   "Ryggsäck",
+   "Vandring",
+   "Väska"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349629514077",
@@ -1329,7 +2660,20 @@
   "jamforpris": 211.25,
   "lager": 12,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0189276f3ee74de4a50705d3663a4a85-goods.jpg?v=1784722935"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0189276f3ee74de4a50705d3663a4a85-goods.jpg?v=1784722935",
+  "typ": "Tvättillbehör",
+  "taggar": [
+   "Hushåll",
+   "Skor",
+   "Sneakers",
+   "Tvätt",
+   "Tvättpåse"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "hem-forvaring",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349630857565",
@@ -1341,7 +2685,20 @@
   "jamforpris": 311.25,
   "lager": 14,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7484a475-888e-49ea-9a6c-5c8bfe329b11.jpg?v=1784722995"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7484a475-888e-49ea-9a6c-5c8bfe329b11.jpg?v=1784722995",
+  "typ": "Hushåll",
+  "taggar": [
+   "Halkskydd",
+   "Hem",
+   "Hushåll",
+   "Matta",
+   "Säkerhet"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "hem-forvaring",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349632299357",
@@ -1353,7 +2710,19 @@
   "jamforpris": 998.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c666d942-4eb6-4803-b219-8ce33b30be96.jpg?v=1784723055"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c666d942-4eb6-4803-b219-8ce33b30be96.jpg?v=1784723055",
+  "typ": "Leksaker",
+  "taggar": [
+   "Barn",
+   "Bil",
+   "Leksaker",
+   "Present",
+   "Radiostyrd"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349632921949",
@@ -1365,7 +2734,19 @@
   "jamforpris": 623.75,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f3ba15d4-4626-46f9-a941-84c71aa2cb26.jpg?v=1784723110"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f3ba15d4-4626-46f9-a941-84c71aa2cb26.jpg?v=1784723110",
+  "typ": "Fiske",
+  "taggar": [
+   "Fiske",
+   "Fiskeset",
+   "Friluft",
+   "Present",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349633708381",
@@ -1377,7 +2758,20 @@
   "jamforpris": 2336.25,
   "lager": 17,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ab3f0149-f9b2-465a-bc7b-4d565c6c8938.jpg?v=1784723165"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ab3f0149-f9b2-465a-bc7b-4d565c6c8938.jpg?v=1784723165",
+  "typ": "Smarta glasögon",
+  "taggar": [
+   "AI",
+   "Elektronik",
+   "Kamera",
+   "Smarta glasögon",
+   "Solglasögon"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "elektronik-mobil",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349635739997",
@@ -1389,7 +2783,20 @@
   "jamforpris": 198.75,
   "lager": 8,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1cc3524e-c6f9-4a04-a8db-e75d4bdc452f.jpg?v=1784723242"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1cc3524e-c6f9-4a04-a8db-e75d4bdc452f.jpg?v=1784723242",
+  "typ": "Tvättillbehör",
+  "taggar": [
+   "Hushåll",
+   "Skor",
+   "Sneakers",
+   "Tvätt",
+   "Tvättpåse"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "hem-forvaring",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349637116253",
@@ -1401,7 +2808,20 @@
   "jamforpris": 1136.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/809b8b45-fee9-4d1b-b843-f6665b729c79.jpg?v=1784723318"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/809b8b45-fee9-4d1b-b843-f6665b729c79.jpg?v=1784723318",
+  "typ": "Golf",
+  "taggar": [
+   "Golf",
+   "Sport",
+   "Trädgård",
+   "Träning",
+   "Övningsnät"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "golf-sport",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349638787421",
@@ -1413,7 +2833,20 @@
   "jamforpris": 448.75,
   "lager": -1,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/75754142-b098-471c-be45-1d327d5ea1f5.jpg?v=1784723371"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/75754142-b098-471c-be45-1d327d5ea1f5.jpg?v=1784723371",
+  "typ": "Trädgård",
+  "taggar": [
+   "Förvaring",
+   "Garage",
+   "Trimmer",
+   "Trädgård",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "bestsaljare",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349640524125",
@@ -1425,7 +2858,19 @@
   "jamforpris": 436.25,
   "lager": 19,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e06ca4eb-77f9-4f22-93a2-9b95416e4a7f.jpg?v=1784723426"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e06ca4eb-77f9-4f22-93a2-9b95416e4a7f.jpg?v=1784723426",
+  "typ": "Fordon",
+  "taggar": [
+   "Fordon",
+   "Förvaring",
+   "Garage",
+   "Hjälm",
+   "Motorcykel"
+  ],
+  "kollektioner": [
+   "fordon-belysning",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349641900381",
@@ -1437,7 +2882,20 @@
   "jamforpris": 350,
   "lager": 3,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ad372e84-73c0-4aba-8527-288eaf1089af.jpg?v=1784723481"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ad372e84-73c0-4aba-8527-288eaf1089af.jpg?v=1784723481",
+  "typ": "Golf",
+  "taggar": [
+   "Borste",
+   "Golf",
+   "Rengöring",
+   "Sport",
+   "Tillbehör"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "golf-sport",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16349643669853",
@@ -1449,7 +2907,20 @@
   "jamforpris": 248.75,
   "lager": -38,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/22d6528d-2545-4924-bef0-b41246a72f19.jpg?v=1784723540"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/22d6528d-2545-4924-bef0-b41246a72f19.jpg?v=1784723540",
+  "typ": "Skotillbehör",
+  "taggar": [
+   "Hushåll",
+   "Reparation",
+   "Skor",
+   "Sneakers",
+   "Tillbehör"
+  ],
+  "kollektioner": [
+   "tillbehor-ovrigt",
+   "skor-klader",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380214215005",
@@ -1461,7 +2932,19 @@
   "jamforpris": 750,
   "lager": -3,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/01d1af10-a6a3-4693-8faf-efc4f5c3283b.jpg?v=1785593660"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/01d1af10-a6a3-4693-8faf-efc4f5c3283b.jpg?v=1785593660",
+  "typ": "Camping",
+  "taggar": [
+   "Camping",
+   "Dusch",
+   "Friluft",
+   "Sommar",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380215066973",
@@ -1473,7 +2956,19 @@
   "jamforpris": null,
   "lager": -25,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/740baad3a413478fbd645c2618dec9e7-goods.jpg?v=1785594059"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/740baad3a413478fbd645c2618dec9e7-goods.jpg?v=1785594059",
+  "typ": "Friluft",
+  "taggar": [
+   "Friluft",
+   "Hobby",
+   "Magnetfiske",
+   "Present",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380215165277",
@@ -1485,7 +2980,18 @@
   "jamforpris": 430,
   "lager": -7,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b46d69054357183f5bb6199789be32f5.jpg?v=1785594066"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b46d69054357183f5bb6199789be32f5.jpg?v=1785594066",
+  "typ": "Golf",
+  "taggar": [
+   "Förvaring",
+   "Golf",
+   "Sport",
+   "Väska"
+  ],
+  "kollektioner": [
+   "golf-sport",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380215230813",
@@ -1497,7 +3003,18 @@
   "jamforpris": null,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b05d773393119e15b8eab965e57dbd54_1741939977992.jpg?v=1785594069"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b05d773393119e15b8eab965e57dbd54_1741939977992.jpg?v=1785594069",
+  "typ": "Golf",
+  "taggar": [
+   "Golf",
+   "Sport",
+   "Trädgård",
+   "Träning"
+  ],
+  "kollektioner": [
+   "golf-sport",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380215394653",
@@ -1509,7 +3026,19 @@
   "jamforpris": 400,
   "lager": -46,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce963fd939ae7017637863a3d0a0ec07.jpg?v=1785594071"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce963fd939ae7017637863a3d0a0ec07.jpg?v=1785594071",
+  "typ": "Skor",
+  "taggar": [
+   "Bekvämt",
+   "Hem",
+   "Skor",
+   "Tofflor"
+  ],
+  "kollektioner": [
+   "bestsaljare",
+   "skor-klader",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380215525725",
@@ -1521,7 +3050,18 @@
   "jamforpris": null,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1d1d71d-c0b4-40d4-ad6d-a2a3c1d3cc73.jpg?v=1785594074"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1d1d71d-c0b4-40d4-ad6d-a2a3c1d3cc73.jpg?v=1785594074",
+  "typ": "Skor",
+  "taggar": [
+   "Fritid",
+   "Herr",
+   "Skor",
+   "Vandring"
+  ],
+  "kollektioner": [
+   "skor-klader",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380215656797",
@@ -1533,7 +3073,18 @@
   "jamforpris": 438,
   "lager": -6,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/912694ed-892f-4142-b051-5b31980c0a2d.jpg?v=1785594132"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/912694ed-892f-4142-b051-5b31980c0a2d.jpg?v=1785594132",
+  "typ": "Mobiltillbehör",
+  "taggar": [
+   "iPhone",
+   "Magnetiskt",
+   "Mobilskal",
+   "Tillbehör"
+  ],
+  "kollektioner": [
+   "elektronik-mobil",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380215886173",
@@ -1545,7 +3096,18 @@
   "jamforpris": 400,
   "lager": -33,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/73c6e9cb-6221-4086-8e99-3c009a14c8ae.jpg?v=1785594134"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/73c6e9cb-6221-4086-8e99-3c009a14c8ae.jpg?v=1785594134",
+  "typ": "Tillbehör",
+  "taggar": [
+   "iPad",
+   "Kontor",
+   "Ställ",
+   "Surfplatta"
+  ],
+  "kollektioner": [
+   "elektronik-mobil",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380216672605",
@@ -1557,7 +3119,19 @@
   "jamforpris": 500,
   "lager": -2,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3f2e2bf8-883d-41ef-87b9-47e26e53dc20.jpg?v=1785594140"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3f2e2bf8-883d-41ef-87b9-47e26e53dc20.jpg?v=1785594140",
+  "typ": "Verktyg",
+  "taggar": [
+   "Camping",
+   "Multiverktyg",
+   "Present",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380217033053",
@@ -1569,7 +3143,18 @@
   "jamforpris": null,
   "lager": -15,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5661b1e5a1d0413497069942ef7bf1ae-goods.jpg?v=1785594141"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5661b1e5a1d0413497069942ef7bf1ae-goods.jpg?v=1785594141",
+  "typ": "Trädgård & Utomhus",
+  "taggar": [
+   "Gräsklippare",
+   "Skydd",
+   "Trädgård",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380217295197",
@@ -1581,7 +3166,18 @@
   "jamforpris": null,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/afa5554aaa164c7bbdbbb4264a12a532-goods.jpg?v=1785594185"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/afa5554aaa164c7bbdbbb4264a12a532-goods.jpg?v=1785594185",
+  "typ": "Båt & Marin",
+  "taggar": [
+   "Båt",
+   "Fiske",
+   "Marin",
+   "Spöhållare"
+  ],
+  "kollektioner": [
+   "bat-marin",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16380217393501",
@@ -1593,7 +3189,18 @@
   "jamforpris": null,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d8dd15a8-ecc7-436d-9e8c-69d6daf2ada4.jpg?v=1785594142"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/d8dd15a8-ecc7-436d-9e8c-69d6daf2ada4.jpg?v=1785594142",
+  "typ": "Förvaring",
+  "taggar": [
+   "Förvaring",
+   "Garderob",
+   "Hem",
+   "Kepsar"
+  ],
+  "kollektioner": [
+   "hem-forvaring",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16414483906909",
@@ -1605,7 +3212,19 @@
   "jamforpris": 259,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e7b71aa2-1f45-442d-a415-4343682380d4.jpg?v=1786645504"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e7b71aa2-1f45-442d-a415-4343682380d4.jpg?v=1786645504",
+  "typ": "Dekoration",
+  "taggar": [
+   "Dekaler",
+   "Klistermärken",
+   "Roligt",
+   "Sopsortering",
+   "Soptunna"
+  ],
+  "kollektioner": [
+   "hem-forvaring",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427870060893",
@@ -1615,9 +3234,21 @@
   "url": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
   "pris": 799,
   "jamforpris": 1000,
-  "lager": -139,
+  "lager": -142,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-kamera-1.webp?v=1786982539"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-kamera-1.webp?v=1786982539",
+  "typ": "Säkerhet",
+  "taggar": [
+   "smart hem",
+   "säkerhetskamera",
+   "trådlös kamera",
+   "utomhuskamera",
+   "övervakningskamera"
+  ],
+  "kollektioner": [
+   "elektronik-mobil",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427871338845",
@@ -1629,7 +3260,19 @@
   "jamforpris": 402,
   "lager": -13,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-forstahjalpen-1.webp?v=1787023544"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-forstahjalpen-1.webp?v=1787023544",
+  "typ": "Första hjälpen",
+  "taggar": [
+   "bil",
+   "camping",
+   "första hjälpen",
+   "första hjälpen kit",
+   "nödkit"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427873468765",
@@ -1641,7 +3284,19 @@
   "jamforpris": 275,
   "lager": -9,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-stankskarm-1.webp?v=1786982539"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-stankskarm-1.webp?v=1786982539",
+  "typ": "Cykel",
+  "taggar": [
+   "cykel",
+   "cykeltillbehör",
+   "mountainbike",
+   "mtb",
+   "stänkskärm"
+  ],
+  "kollektioner": [
+   "cykel",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427874976093",
@@ -1653,7 +3308,19 @@
   "jamforpris": 358,
   "lager": -3,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/21f347ce-1e2d-44da-acb6-f293b043dbf0.jpg?v=1787282944"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/21f347ce-1e2d-44da-acb6-f293b043dbf0.jpg?v=1787282944",
+  "typ": "Spel & Lek",
+  "taggar": [
+   "bollpannband",
+   "familjespel",
+   "partyspel",
+   "present",
+   "spel och lek"
+  ],
+  "kollektioner": [
+   "golf-sport",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427876843869",
@@ -1665,7 +3332,19 @@
   "jamforpris": 476,
   "lager": -4,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cf861360-b6dc-45a0-87c4-d26602695d39.jpg?v=1787283005"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cf861360-b6dc-45a0-87c4-d26602695d39.jpg?v=1787283005",
+  "typ": "Träning",
+  "taggar": [
+   "bordtennis",
+   "hemmaträning",
+   "pingis",
+   "racketsport",
+   "träningsset"
+  ],
+  "kollektioner": [
+   "golf-sport",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427877892445",
@@ -1677,7 +3356,19 @@
   "jamforpris": 325,
   "lager": -2,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-linupprullare.webp?v=1786982540"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-linupprullare.webp?v=1786982540",
+  "typ": "Fiske",
+  "taggar": [
+   "fiske",
+   "fiskelina",
+   "fiskerulle",
+   "fisketillbehör",
+   "linupprullare"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427879694685",
@@ -1689,7 +3380,19 @@
   "jamforpris": 560,
   "lager": -2,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-fiskespo-1.webp?v=1787023545"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-fiskespo-1.webp?v=1787023545",
+  "typ": "Fiske",
+  "taggar": [
+   "fiske",
+   "fiskeset",
+   "fiskespö",
+   "minispö",
+   "teleskopspö"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427880743261",
@@ -1701,7 +3404,20 @@
   "jamforpris": 360,
   "lager": -3,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-sag.webp?v=1786982540"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-sag.webp?v=1786982540",
+  "typ": "Verktyg",
+  "taggar": [
+   "camping",
+   "handverktyg",
+   "hopfällbar såg",
+   "såg",
+   "trädgård"
+  ],
+  "kollektioner": [
+   "tradgard-utomhus",
+   "camping-friluft",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427882119517",
@@ -1711,9 +3427,21 @@
   "url": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
   "pris": 909,
   "jamforpris": 1182,
-  "lager": -79,
+  "lager": -81,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp?v=1786982539"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp?v=1786982539",
+  "typ": "Verktyg",
+  "taggar": [
+   "bälteslip",
+   "hobbyverktyg",
+   "knivslip",
+   "polermaskin",
+   "slipmaskin"
+  ],
+  "kollektioner": [
+   "bil-verktyg-garage",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427884839261",
@@ -1725,7 +3453,19 @@
   "jamforpris": 1398,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-sneakers-1.jpg?v=1787023544"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-sneakers-1.jpg?v=1787023544",
+  "typ": "Skor",
+  "taggar": [
+   "gymskor",
+   "herrskor",
+   "löparskor",
+   "sneakers",
+   "träningsskor"
+  ],
+  "kollektioner": [
+   "skor-klader",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427886248285",
@@ -1737,7 +3477,20 @@
   "jamforpris": 909,
   "lager": -1,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/vandringskangor-herr.jpg?v=1787287181"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/vandringskangor-herr.jpg?v=1787287181",
+  "typ": "Skor",
+  "taggar": [
+   "friluftsliv",
+   "herrskor",
+   "promenadskor",
+   "sneakers",
+   "vandringsskor"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "skor-klader",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427888312669",
@@ -1749,7 +3502,20 @@
   "jamforpris": 1338,
   "lager": -7,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1147e665992e1c9a66409e98ffd6b8f.jpg?v=1787282945"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1147e665992e1c9a66409e98ffd6b8f.jpg?v=1787282945",
+  "typ": "Skor",
+  "taggar": [
+   "friluftsliv",
+   "herrskor",
+   "kängor",
+   "plus size",
+   "vandringskängor"
+  ],
+  "kollektioner": [
+   "camping-friluft",
+   "skor-klader",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16427889459549",
@@ -1761,7 +3527,20 @@
   "jamforpris": 337,
   "lager": -74,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-cykelshorts-1.webp?v=1787023543"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-cykelshorts-1.webp?v=1787023543",
+  "typ": "Cykel",
+  "taggar": [
+   "cykel",
+   "cykelkläder",
+   "cykelshorts",
+   "kompressionsshorts",
+   "mtb"
+  ],
+  "kollektioner": [
+   "skor-klader",
+   "cykel",
+   "alla-produkter"
+  ]
  },
  {
   "id": "16440375607645",
@@ -1771,9 +3550,19 @@
   "url": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
   "pris": 349,
   "jamforpris": 582,
-  "lager": -97,
+  "lager": -99,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-mc-kapell-1.jpg?v=1787226589"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-mc-kapell-1.jpg?v=1787226589",
+  "typ": "Fordon",
+  "taggar": [
+   "fordonsskydd",
+   "kapell",
+   "mc-skydd",
+   "motorcykel"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16440375705949",
@@ -1785,7 +3574,17 @@
   "jamforpris": 415,
   "lager": -3,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/dorrlist-huvud.jpg?v=1787313822"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/dorrlist-huvud.jpg?v=1787313822",
+  "typ": "Bygg",
+  "taggar": [
+   "dragskydd",
+   "dörrlist",
+   "ljudisolering",
+   "tätning"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16440375738717",
@@ -1797,7 +3596,17 @@
   "jamforpris": 402,
   "lager": -41,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-kranskydd-1.jpg?v=1787226593"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-kranskydd-1.jpg?v=1787226593",
+  "typ": "Trädgård",
+  "taggar": [
+   "frostskydd",
+   "kranskydd",
+   "utekran",
+   "vinter"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16440375869789",
@@ -1809,7 +3618,17 @@
   "jamforpris": 558,
   "lager": -20,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-plyschtofflor-1.jpg?v=1787226596"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-plyschtofflor-1.jpg?v=1787226596",
+  "typ": "Skor",
+  "taggar": [
+   "herr",
+   "plysch",
+   "tofflor",
+   "vintertofflor"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16443175731549",
@@ -1819,9 +3638,19 @@
   "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
   "pris": 579,
   "jamforpris": 965,
-  "lager": -91,
+  "lager": -96,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg?v=1787313816"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg?v=1787313816",
+  "typ": "",
+  "taggar": [
+   "båtmotorskydd",
+   "båttillbehör",
+   "motorskydd",
+   "utombordare"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16454828654941",
@@ -1833,7 +3662,12 @@
   "jamforpris": 636,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg?v=1787626428"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg?v=1787626428",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16454828687709",
@@ -1845,7 +3679,12 @@
   "jamforpris": 493,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/jattefotboll-jattefotboll-06.jpg?v=1787626434"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/jattefotboll-jattefotboll-06.jpg?v=1787626434",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16454828720477",
@@ -1857,7 +3696,12 @@
   "jamforpris": 649,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-08.jpg?v=1787626439"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/benskydd-benskydd-08.jpg?v=1787626439",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16454828753245",
@@ -1869,7 +3713,12 @@
   "jamforpris": 538,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-vattentat-gravstenspenna-sv.jpg?v=1787626446"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-vattentat-gravstenspenna-sv.jpg?v=1787626446",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16454828786013",
@@ -1881,7 +3730,12 @@
   "jamforpris": 376,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-tejp-monster1-sv.jpg?v=1787626452"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-tejp-monster1-sv.jpg?v=1787626452",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474021200221",
@@ -1893,7 +3747,12 @@
   "jamforpris": 798,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/badshorts-logo-badshorts-logo-01.jpg?v=1787951607"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/badshorts-logo-badshorts-logo-01.jpg?v=1787951607",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311197021",
@@ -1905,7 +3764,12 @@
   "jamforpris": 878,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad5.jpg?v=1787974454"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad5.jpg?v=1787974454",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311262557",
@@ -1917,7 +3781,12 @@
   "jamforpris": 961,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad9.jpg?v=1787974460"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad9.jpg?v=1787974460",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311295325",
@@ -1929,7 +3798,12 @@
   "jamforpris": 1104,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad13.jpg?v=1787974466"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad13.jpg?v=1787974466",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311393629",
@@ -1941,7 +3815,12 @@
   "jamforpris": 337,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/luffarschack-main-ren.jpg?v=1788005448"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/luffarschack-main-ren.jpg?v=1788005448",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311426397",
@@ -1953,7 +3832,12 @@
   "jamforpris": 832,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad21.jpg?v=1787974478"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad21.jpg?v=1787974478",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311459165",
@@ -1965,7 +3849,12 @@
   "jamforpris": 545,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad25.jpg?v=1787974483"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad25.jpg?v=1787974483",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311491933",
@@ -1977,7 +3866,12 @@
   "jamforpris": 782,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad29.jpg?v=1787974489"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad29.jpg?v=1787974489",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311524701",
@@ -1989,7 +3883,12 @@
   "jamforpris": 1286,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad33.jpg?v=1787974494"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad33.jpg?v=1787974494",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311590237",
@@ -2001,7 +3900,12 @@
   "jamforpris": 428,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad37.jpg?v=1787974500"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad37.jpg?v=1787974500",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311623005",
@@ -2013,7 +3917,12 @@
   "jamforpris": 381,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad41.jpg?v=1787974505"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad41.jpg?v=1787974505",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311688541",
@@ -2025,7 +3934,12 @@
   "jamforpris": 778,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad45.jpg?v=1787974511"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad45.jpg?v=1787974511",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311721309",
@@ -2037,7 +3951,12 @@
   "jamforpris": 918,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad53.jpg?v=1787974517"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad53.jpg?v=1787974517",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311786845",
@@ -2049,7 +3968,12 @@
   "jamforpris": 701,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad57.jpg?v=1787974523"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad57.jpg?v=1787974523",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474311852381",
@@ -2061,7 +3985,12 @@
   "jamforpris": 732,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad65.jpg?v=1787974528"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batch5-galleri-rad65.jpg?v=1787974528",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16474324238685",
@@ -2073,7 +4002,12 @@
   "jamforpris": 922,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/03_f3aa52ff-2847-44ca-b45f-03ee787d39e3.jpg?v=1787995596"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/03_f3aa52ff-2847-44ca-b45f-03ee787d39e3.jpg?v=1787995596",
+  "typ": "",
+  "taggar": [],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16516655382877",
@@ -2085,7 +4019,18 @@
   "jamforpris": 1039,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg?v=1789079615"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kattkoja-hero_88a1f020-e882-4fba-a4b9-c5ca4d09a353.jpg?v=1789079615",
+  "typ": "",
+  "taggar": [
+   "Husdjur",
+   "Katt",
+   "Kattkoja",
+   "Utekatt",
+   "Vinter"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16516656791901",
@@ -2097,7 +4042,17 @@
   "jamforpris": 1428,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/staketbygel-se-2st.jpg?v=1788967457"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/staketbygel-se-2st.jpg?v=1788967457",
+  "typ": "",
+  "taggar": [
+   "Reparation",
+   "Staket",
+   "Stolpe",
+   "Trädgård"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16516658594141",
@@ -2109,7 +4064,18 @@
   "jamforpris": 689,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-vedklyv-se.jpg?v=1788786749"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-vedklyv-se.jpg?v=1788786749",
+  "typ": "",
+  "taggar": [
+   "Gjutjärn",
+   "Kamin",
+   "Trädgård",
+   "Tändved",
+   "Ved"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16516659937629",
@@ -2121,7 +4087,18 @@
   "jamforpris": 1469,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png?v=1788793284"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png?v=1788793284",
+  "typ": "",
+  "taggar": [
+   "Camping",
+   "Husbil",
+   "Husvagn",
+   "Vinterförvaring",
+   "Överdrag"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16516660298077",
@@ -2133,7 +4110,18 @@
   "jamforpris": 2279,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/solpanel-hero.png?v=1788796549"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/solpanel-hero.png?v=1788796549",
+  "typ": "",
+  "taggar": [
+   "Jakt",
+   "Solpanel",
+   "Ström",
+   "Viltkamera",
+   "Åtelkamera"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16516660691293",
@@ -2145,7 +4133,18 @@
   "jamforpris": 649,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image10.png?v=1788793300"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image10.png?v=1788793300",
+  "typ": "",
+  "taggar": [
+   "Adventskalender",
+   "Barn",
+   "Jul",
+   "Leksaksbilar",
+   "Racing"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16516746969437",
@@ -2157,7 +4156,18 @@
   "jamforpris": 619,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-hero.jpg?v=1789054210"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/fiskekalender-hero.jpg?v=1789054210",
+  "typ": "",
+  "taggar": [
+   "Adventskalender",
+   "Fiske",
+   "Fiskedrag",
+   "Jul",
+   "Present"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16522215358813",
@@ -2169,7 +4179,18 @@
   "jamforpris": 2159,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-grindhjul-se.jpg?v=1788958804"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-grindhjul-se.jpg?v=1788958804",
+  "typ": "",
+  "taggar": [
+   "Grind",
+   "Reparation",
+   "Staket",
+   "Stödhjul",
+   "Trädgård"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16522215522653",
@@ -2181,7 +4202,18 @@
   "jamforpris": 932,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg?v=1788958810"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg?v=1788958810",
+  "typ": "",
+  "taggar": [
+   "Camping",
+   "Husbil",
+   "Husvagn",
+   "Termoskydd",
+   "Vinter"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16522215719261",
@@ -2193,7 +4225,18 @@
   "jamforpris": 1538,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-solcellslarm-se.jpg?v=1788958816"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-solcellslarm-se.jpg?v=1788958816",
+  "typ": "",
+  "taggar": [
+   "Larm",
+   "Rörelsesensor",
+   "Solcell",
+   "Säkerhet",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16522215883101",
@@ -2205,7 +4248,18 @@
   "jamforpris": 1699,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-stegstod-se.jpg?v=1788958823"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-stegstod-se.jpg?v=1788958823",
+  "typ": "",
+  "taggar": [
+   "Bygg",
+   "Stege",
+   "Säkerhet",
+   "Takarbete",
+   "Verktyg"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16522216145245",
@@ -2217,7 +4271,18 @@
   "jamforpris": 639,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-infartslarm-se.jpg?v=1788958829"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-infartslarm-se.jpg?v=1788958829",
+  "typ": "",
+  "taggar": [
+   "Larm",
+   "Rörelsesensor",
+   "Säkerhet",
+   "Trådlöst",
+   "Uppfart"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16522216866141",
@@ -2229,7 +4294,18 @@
   "jamforpris": 1239,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-sittkapp-miljo.png?v=1788959231"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-sittkapp-miljo.png?v=1788959231",
+  "typ": "",
+  "taggar": [
+   "Gånghjälp",
+   "Käpp",
+   "Promenad",
+   "Sittkäpp",
+   "Utomhus"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16526955381085",
@@ -2241,7 +4317,18 @@
   "jamforpris": 599,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-sotarset-hero-se.jpg?v=1789119686"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-sotarset-hero-se.jpg?v=1789119686",
+  "typ": "",
+  "taggar": [
+   "kaminrör",
+   "rökkanal",
+   "skorstensrensning",
+   "sotarborste",
+   "sotning"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16526957183325",
@@ -2253,7 +4340,18 @@
   "jamforpris": 489,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-vedborr-hero-se.jpg?v=1789119701"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-vedborr-hero-se.jpg?v=1789119701",
+  "typ": "",
+  "taggar": [
+   "borrmaskin",
+   "klyvkona",
+   "tändved",
+   "vedbod",
+   "vedklyvborr"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16526958690653",
@@ -2265,7 +4363,19 @@
   "jamforpris": 639,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-tofflor-hero-se.jpg?v=1789119715"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-tofflor-hero-se.jpg?v=1789119715",
+  "typ": "",
+  "taggar": [
+   "fodrade tofflor",
+   "foppatofflor",
+   "herrtofflor",
+   "inomhustofflor",
+   "kamouflage",
+   "vintertofflor"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16526960591197",
@@ -2277,7 +4387,19 @@
   "jamforpris": 769,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-solcellslampa-hero-se.jpg?v=1789119730"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-solcellslampa-hero-se.jpg?v=1789119730",
+  "typ": "",
+  "taggar": [
+   "garagebelysning",
+   "rörelsesensor",
+   "solcell",
+   "solcellslampa",
+   "uteplats",
+   "utomhusbelysning"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16526961869149",
@@ -2289,7 +4411,19 @@
   "jamforpris": 1039,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-bilborste-hero-se.jpg?v=1789119741"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-bilborste-hero-se.jpg?v=1789119741",
+  "typ": "",
+  "taggar": [
+   "bilborste",
+   "biltvätt",
+   "bilvård",
+   "mikrofiber",
+   "teleskopskaft",
+   "utomhus"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16526967112029",
@@ -2301,7 +4435,19 @@
   "jamforpris": 589,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-fonsterlarm-hero-se.jpg?v=1789119792"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-fonsterlarm-hero-se.jpg?v=1789119792",
+  "typ": "",
+  "taggar": [
+   "cykellarm",
+   "dörrlarm",
+   "fjärrkontroll",
+   "fönsterlarm",
+   "hemsäkerhet",
+   "vibrationslarm"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534662709597",
@@ -2313,7 +4459,18 @@
   "jamforpris": 809,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b9-spakapell-hero-se.jpg?v=1789216232"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b9-spakapell-hero-se.jpg?v=1789216232",
+  "typ": "",
+  "taggar": [
+   "badtunnekapell",
+   "spabadskapell",
+   "spaskydd",
+   "trädgårdstillbehör",
+   "utomhuskapell"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534663004509",
@@ -2325,7 +4482,18 @@
   "jamforpris": 689,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b9-vedstallskapell-hero-se.jpg?v=1789216242"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b9-vedstallskapell-hero-se.jpg?v=1789216242",
+  "typ": "",
+  "taggar": [
+   "trädgårdsförvaring",
+   "utomhuskapell",
+   "vedförvaring",
+   "vedskydd",
+   "vedställskapell"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534663364957",
@@ -2337,7 +4505,18 @@
   "jamforpris": 729,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b9-solcellsladdare-hero-se.jpg?v=1789216252"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b9-solcellsladdare-hero-se.jpg?v=1789216252",
+  "typ": "",
+  "taggar": [
+   "batteriladdare 12v",
+   "husvagnstillbehör",
+   "mppt-laddare",
+   "solcellsladdare",
+   "underhållsladdare"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534663922013",
@@ -2349,7 +4528,18 @@
   "jamforpris": 599,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-snoblasarkapell-hero-se.jpg?v=1789216262"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-snoblasarkapell-hero-se.jpg?v=1789216262",
+  "typ": "",
+  "taggar": [
+   "garageförvaring",
+   "kapell till snöslunga",
+   "maskinskydd",
+   "snöslungekapell",
+   "trädgårdsredskap"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534665036125",
@@ -2361,7 +4551,18 @@
   "jamforpris": 599,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-honsgardsduk-hero-se.jpg?v=1789216272"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-honsgardsduk-hero-se.jpg?v=1789216272",
+  "typ": "",
+  "taggar": [
+   "hönsbur tillbehör",
+   "hönsgårdsduk",
+   "hönsnät skärm",
+   "insynsskydd hönsgård",
+   "täckduk"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534666477917",
@@ -2373,7 +4574,19 @@
   "jamforpris": 329,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-snoflingor-hero-se.jpg?v=1789216282"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-snoflingor-hero-se.jpg?v=1789216282",
+  "typ": "",
+  "taggar": [
+   "dörrdekoration",
+   "fönsterdekoration",
+   "garageport",
+   "julpynt",
+   "snöflingor",
+   "vinterdekoration"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534666674525",
@@ -2385,7 +4598,18 @@
   "jamforpris": 1109,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-vattenskal-hero-se.jpg?v=1789216292"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-vattenskal-hero-se.jpg?v=1789216292",
+  "typ": "",
+  "taggar": [
+   "hundskål",
+   "kattskål",
+   "uppvärmd vattenskål",
+   "vattenskål",
+   "vinterskål för husdjur"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534666903901",
@@ -2397,7 +4621,18 @@
   "jamforpris": 759,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-atvkapell-hero-se.jpg?v=1789216302"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-atvkapell-hero-se.jpg?v=1789216302",
+  "typ": "",
+  "taggar": [
+   "4-hjuling tillbehör",
+   "atv skydd",
+   "atv-kapell",
+   "fordonskapell atv",
+   "garageförvaring"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534666969437",
@@ -2409,7 +4644,18 @@
   "jamforpris": 3059,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-snoskyffel-hero-se.jpg?v=1789216312"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-snoskyffel-hero-se.jpg?v=1789216312",
+  "typ": "",
+  "taggar": [
+   "batteridriven",
+   "snöröjning",
+   "snöskyffel",
+   "uppfart",
+   "vinterredskap"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534667067741",
@@ -2421,7 +4667,18 @@
   "jamforpris": 779,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-kajakhallare-hero-se.jpg?v=1789216321"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-kajakhallare-hero-se.jpg?v=1789216321",
+  "typ": "",
+  "taggar": [
+   "båtutrustning",
+   "garageförvaring",
+   "kajakförvaring",
+   "kajakhållare",
+   "väggkrokar"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534667100509",
@@ -2433,7 +4690,18 @@
   "jamforpris": 1189,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-motorlas-hero-se.jpg?v=1789216331"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-motorlas-hero-se.jpg?v=1789216331",
+  "typ": "",
+  "taggar": [
+   "båtstöld",
+   "båttillbehör",
+   "motorlås",
+   "rostfritt stål",
+   "utombordare"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534667166045",
@@ -2445,7 +4713,18 @@
   "jamforpris": 779,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-varmesits-hero-se.jpg?v=1789216342"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-varmesits-hero-se.jpg?v=1789216342",
+  "typ": "",
+  "taggar": [
+   "bilsäte",
+   "kontorsstol",
+   "usb-värme",
+   "värmedyna",
+   "värmesits"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534667198813",
@@ -2457,7 +4736,18 @@
   "jamforpris": 1139,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-taljset-hero-se.jpg?v=1789216352"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-taljset-hero-se.jpg?v=1789216352",
+  "typ": "",
+  "taggar": [
+   "friluftskniv",
+   "hobbykniv",
+   "träsnideri",
+   "täljning",
+   "täljset"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534667264349",
@@ -2469,7 +4759,19 @@
   "jamforpris": 499,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-varmeljus-hero-se.jpg?v=1789216362"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-varmeljus-hero-se.jpg?v=1789216362",
+  "typ": "",
+  "taggar": [
+   "batteridrivna ljus",
+   "flamlösa ljus",
+   "inredning",
+   "ledljus",
+   "varmvitt ljus",
+   "värmeljus"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  },
  {
   "id": "16534667362653",
@@ -2481,6 +4783,18 @@
   "jamforpris": 629,
   "lager": 0,
   "lagerpolicy": "CONTINUE",
-  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-blockljus-hero-se.jpg?v=1789216372"
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-blockljus-hero-se.jpg?v=1789216372",
+  "typ": "",
+  "taggar": [
+   "blockljus",
+   "fjärrkontroll",
+   "flamlösa ljus",
+   "inredning",
+   "ledljus",
+   "timerljus"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ]
  }
 ]

@@ -1,16 +1,21 @@
 {
-  "comment": "All kundtext i mejlen. Skriven av en Sonnet-subagent 2026-09-12 enligt docs/copy-regler.md (CLAUDE.md regel 6), struktur och faktakoll av huvudsessionen. Erbjudandeblocket omskrivet samma kväll efter Axels feedback (överst, wow, urgency). Platshållare: {{förnamn}} {{ordernummer}} {{fraktbolag}} {{belopp}} {{slutdatum}} — mallmotorn byter dem mot Liquid. Ändra text här, aldrig i mallar.mjs. Första ämnesraden och första preheadern är den som används; övriga är A/B-reserver.",
+  "comment": "All kundtext i mejlen. Skriven av en Sonnet-subagent 2026-09-12 enligt docs/copy-regler.md (CLAUDE.md regel 6), struktur och faktakoll av huvudsessionen. Erbjudandeblocket omskrivet 2026-09-12 (överst, wow, urgency) och igen 2026-09-13 efter Axels feedback: villkoret 'nästa köp minst 299 kr' först, 'välj 1 av 4' i rubriken, de tre dyraste borta, nytt block 'komplement' (en till + tre som passar ihop). Datumet står BARA i urgency (döljs när det passerat), aldrig i finstilt. Platshållare: {{förnamn}} {{ordernummer}} {{fraktbolag}} {{belopp}} {{slutdatum}} — mallmotorn byter dem mot Liquid. Ändra text här, aldrig i mallar.mjs. Första ämnesraden och första preheadern är den som används; övriga är A/B-reserver.",
   "upsell": {
-    "forrubrik": "Din tack-gåva",
-    "rubrik": "Välj 1 av 4 — helt gratis",
-    "text": "Nästa gång du handlar för minst 299 kr väljer du en av fyra produkter gratis — värde upp till 199 kr. Knappen lägger på koden åt dig automatiskt.",
-    "urgency": "Gäller till {{slutdatum}} — vissa produkter finns bara i begränsat antal.",
-    "kod_etikett": "Din kod:",
-    "knapp": "Hämta min gratisprodukt",
-    "valj_rubrik": "Fyra att välja mellan",
-    "dyra_rubrik": "Passa på när du ändå får en gratis",
-    "dyra_text": "Tre av butikens dyraste produkter just nu — gratisprodukten följer med även på de här.",
-    "finstilt": "Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med {{slutdatum}}. Kombineras inte med andra koder."
+    "forrubrik": "Din kundgåva",
+    "rubrik": "Din gåva: välj 1 av 4",
+    "text": "Vid nästa köp på minst 299 kr väljer du en av fyra produkter helt gratis — värde upp till 199 kr. Koden läggs på automatiskt när du klickar på knappen.",
+    "urgency": "Gäller i 7 dagar, till {{slutdatum}} — vissa produkter finns bara i begränsat antal.",
+    "samma_paket": "Beställ före {{paketdeadline}} så skickas allt i ett paket, inte två.",
+    "kod_etikett": "Din gåvokod:",
+    "knapp": "Välj min gratisprodukt",
+    "valj_rubrik": "Välj en av dessa fyra",
+    "finstilt": "Gäller vid nästa köp på minst 299 kr, en gång per kund, och kombineras inte med andra koder."
+  },
+  "komplement": {
+    "rubrik": "Passar ihop med det du köpte",
+    "text": "En av de här i korgen räcker för att nå 299 kr. Då får du din gratisprodukt på köpet.",
+    "en_till": "En till",
+    "fallback_rubrik": "Populärast just nu"
   },
   "orderbekraftelse": {
     "amne": ["{{förnamn}}, {{ordernummer}} är mottagen – vi packar", "Vi har din order {{ordernummer}}", "Bekräftelse: {{ordernummer}}"],
