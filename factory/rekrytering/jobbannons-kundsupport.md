@@ -51,6 +51,18 @@ Annonsen är färdigskriven och klistringsklar i
    svensk tid, VA:n loggar de timmar hen faktiskt jobbar och får betalt för
    dem, ca 1–2 h/dag nu, växer mot 5–8 h med fler brands och uppgifter —
    "a direction, not a promise".
+4b. **$3 per Trustpilot-recension** (Axels tillägg 2026-09-13): varje 4- eller
+   5-stjärnig recension från en riktig kund som nämner VA:n vid namn.
+   Obegränsat — motsvarigheten till redigerarnas "$15 per winner". Annonsen
+   bär två spärrar som jag lade till: (a) recensionen matchas mot en riktig
+   order innan den betalas, (b) VA:n får aldrig be om betyg, aldrig erbjuda
+   kunden något för en recension, aldrig skriva en själv — en falsk eller
+   köpt recension = sparken samma dag. Spärren finns för att Trustpilot
+   stänger av företag som betalar kunder för recensioner; att betala den
+   anställde är tillåtet, men VA:n får inte lockas att gå över gränsen.
+   ⚠️ Vid utbetalning: kolla recensionens datum mot ordern och att kundens
+   ärende faktiskt gick genom VA:n — annars betalar vi för namn som
+   kunden råkat se i en signatur.
 4. **Översättningsverktyget är DeepL.** Står på fyra ställen i annonsen,
    inklusive den gömda frågan ("DeepL is down for the whole day").
 
