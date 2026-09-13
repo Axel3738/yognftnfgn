@@ -144,7 +144,14 @@ export function beloppIRad(rad) {
   // Nakna tal plockas BARA ur rader som redan bevisat handla om pengar, och
   // bara i prisintervall, så produktspecar ("1000 liter", "4-pack") står kvar.
   if (ut.length) {
-    const naket = /(?:ner\s+till|ned\s+till|till|for|istallet\s+for|i\s*stallet\s+for|bara|kun|endast|nu)\s+(\d[\d\s.,]*)\b(?!\s*(?:kr|kronor|kroner|nok|sek|liter|cm|mm|m|kg|g|pack|st|dagar|ar|%))/gi;
+    // ⚠️ Enhetslistan måste bära varje enhet produkterna faktiskt mäts i, annars
+    // blir en produktspec ett "prisfel". Mätt 2026-09-13 på FjordCover:
+    // "Storlekar för allt från 5 hk jolle till 350 hk storbåt" gav
+    // "säger 350 kr — butiken säljer för 579 kr", eftersom `till 350` matchade
+    // och `hk` saknades här. Produkten har NIO motorstorlekar i hk, så bruset
+    // drabbade hela uppsättningen. hk/hp = hästkrafter, v/w = bonusproduktens
+    // 12/24V och watt. Ingen av dem är någonsin en valuta.
+    const naket = /(?:ner\s+till|ned\s+till|till|for|istallet\s+for|i\s*stallet\s+for|bara|kun|endast|nu)\s+(\d[\d\s.,]*)\b(?!\s*(?:kr|kronor|kroner|nok|sek|liter|cm|mm|m|kg|g|pack|st|dagar|ar|hk|hp|v|w|%))/gi;
     while ((m = naket.exec(norm)) !== null) {
       const tal = städa(m[1]);
       if (Number.isFinite(tal) && tal >= 10 && tal <= 100000 && !ut.includes(tal)) ut.push(tal);

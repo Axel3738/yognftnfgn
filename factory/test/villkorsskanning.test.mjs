@@ -202,3 +202,27 @@ test('talat fel pris fäller TALET — domen blir omdubb, inte slutkort', () => 
   assert.equal(pris.length, 2);
   assert.ok(pris.every((x) => x.yta === 'tal'), 'ytan avgör priset att fixa');
 });
+
+// ---------------------------------------------- produktspecar är inte priser
+//
+// Mätt 2026-09-13 (FjordCover, Båtmotorskydd 420D): raden "579 kr istället för
+// 965 kr. Storlekar för allt från 5 hk jolle till 350 hk storbåt" gav fyndet
+// "säger 350 kr — butiken säljer för 579 kr". `till 350` matchade naket-tal-
+// regeln och `hk` saknades i enhetslistan. Produkten har nio motorstorlekar i
+// hk, så bruset drabbade hela uppsättningen och gjorde rapporten svår att lita
+// på — en spärr som larmar på allt läses till slut som ingen spärr alls.
+
+test('beloppIRad tar inte hästkrafter för priser', () => {
+  const ut = beloppIRad('579 kr istället för 965 kr. Storlekar för allt från 5 hk jolle till 350 hk storbåt');
+  assert.deepEqual(ut.sort((a, b) => a - b), [579, 965]);
+});
+
+test('beloppIRad tar inte volt för priser', () => {
+  assert.deepEqual(beloppIRad('Batterifrånskiljare 12/24V, nu 189 kr'), [189]);
+});
+
+test('beloppIRad fångar fortfarande det nakna talet i ett prisintervall', () => {
+  // CatCabin 2026-09-11: "från 1059 kronor ner till 809" — 809 bär inget
+  // valutaord men är exakt det pris kunden lovas. Får inte tappas av fixen.
+  assert.deepEqual(beloppIRad('Från 1059 kronor ner till 809').sort((a, b) => a - b), [809, 1059]);
+});
