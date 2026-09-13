@@ -85,7 +85,8 @@ export function byggDashboard(r, { nu = new Date() } = {}) {
     period: { fran: dag(r.period?.fran), till: dag(r.period?.till), dagar: r.dagar ?? t.ordrar_dagar ?? 7 },
     kallor: r.kallor ?? [],
     varningar: (r.varningar ?? []).map((v) => maskeraText(v)),
-    trosklar: { obesvaradTimmar: t.obesvarad_timmar ?? 48, ordrarDagar: t.ordrar_dagar ?? 30, tvistgradGul: t.tvistgrans_gul_procent ?? 0.5, tvistgradRod: t.tvistgrans_rod_procent ?? 0.9 },
+    trosklar: { obesvaradTimmar: t.obesvarad_timmar ?? 48, ordrarDagar: t.ordrar_dagar ?? 30, ofullbordadDagar: t.ofullbordad_dagar ?? 5, tvistgradGul: t.tvistgrans_gul_procent ?? 0.5, tvistgradRod: t.tvistgrans_rod_procent ?? 0.9 },
+    tvisterTillgangliga: Boolean(r.tvister?.tillganglig),
 
     // Vad som lästes och vad som sorterades bort — så "har du läst allt?" går att svara på.
     kallflode: {
@@ -146,6 +147,53 @@ export function byggDashboard(r, { nu = new Date() } = {}) {
   };
 }
 
+/**
+ * Åtgärdsplanen räknad ur en FÄRDIG dashboard-post i stället för ur körningen.
+ *
+ * Varför: planens TEXT ska gå att rätta utan att läsa om brevlådan (en körning
+ * tar tre kvart). Talen ligger kvar i JSON-filen som körningens kvitto; orden
+ * skrivs om vid varje sidbygge. Samma regler, samma tal — bara formuleringen
+ * är färsk.
+ */
+export function planUrDashboard(d, { nu = new Date() } = {}) {
+  if (!d?.nyckeltal) return [];
+  const t = d.trosklar ?? {};
+  return byggAtgardsplan({
+    brand: {
+      id: d.id, brand: d.namn, valuta: d.nyckeltal.pengarValuta,
+      trosklar: {
+        obesvarad_timmar: t.obesvaradTimmar ?? 48, ordrar_dagar: t.ordrarDagar ?? 30,
+        ofullbordad_dagar: t.ofullbordadDagar ?? 5,
+        tvistgrans_gul_procent: t.tvistgradGul ?? 0.5, tvistgrans_rod_procent: t.tvistgradRod ?? 0.9,
+      },
+    },
+    sammanfattning: {
+      antalArenden: d.nyckeltal.arenden, obesvarade: d.nyckeltal.obesvarade, larmObesvarade: d.nyckeltal.larmObesvarade,
+      medianSvarstidTimmar: d.nyckeltal.medianSvarstidTimmar, besvaradeMedTid: d.nyckeltal.besvaradeMedTid,
+      topp: (d.kategorier ?? []).map((k) => ({ id: k.id, antal: k.antal, obesvarade: k.obesvarade })),
+    },
+    arenden: (d.arenden ?? []).map((a) => ({
+      kategori: a.kategori, besvarad: a.besvarad, larmObesvarad: a.larm, timmarObesvarad: a.timmarObesvarad,
+      ordernummer: a.ordernummer ?? [], kund: { adress: a.kund },
+    })),
+    risk: {
+      poang: d.nyckeltal.risk, tvistgrad: d.nyckeltal.tvistgrad, signaler: d.signaler ?? [],
+      underlag: { ordrar: d.nyckeltal.ordrar, chargebacks: d.nyckeltal.chargebacks, forfragningar: d.nyckeltal.forfragningar, dagar: d.period?.dagar ?? t.ordrarDagar ?? 30 },
+    },
+    ordrar: { antal: d.nyckeltal.ordrar },
+    // ⚠️ Utan Shopify fanns aldrig några tvister — då ska inga tviståtgärder
+    // skrivas alls. En tom lista betyder "inga", `tillganglig: false` betyder
+    // "vet inte", och de två får aldrig blandas ihop.
+    // Äldre filer (skrivna innan fältet fanns) saknar flaggan: en ifylld
+    // tvistlista betyder att Shopify lästes, en tom att vi inte vet.
+    tvister: { tillganglig: d.tvisterTillgangliga ?? (d.tvister ?? []).length > 0, lista: (d.tvister ?? []).map((x) => ({
+      typ: x.typ, orsak: x.orsak, status: String(x.status ?? '').replace(/ /g, '_'), belopp: x.belopp,
+      valuta: x.valuta, ordernamn: x.order, evidensSenast: x.deadline,
+    })) },
+    sop: d.sop ? { antalSop: d.sop.antal, tackta: (d.sop.tackta ?? []).map((id) => ({ id })), saknas: d.sop.saknas ?? [], fel: d.sop.fel } : null,
+  }, { nu });
+}
+
 /** Skriver körningens dashboard-JSON bredvid rapporterna. Idempotent per vecka. */
 export function skrivDashboard(r, { korningar } = {}) {
   const mapp = join(korningar ?? join(ROT, 'kundtjanst', 'korningar'), r.brand.id);
@@ -186,6 +234,8 @@ export function samlaDashboard({ korningar, historik, nu = new Date() } = {}) {
     }
     const nycklar = Object.keys(veckor).sort();
     if (!nycklar.length) continue;
+    // Planens ORD skrivs om vid varje sidbygge (talen kommer ur filen).
+    for (const v of nycklar) veckor[v].plan = planUrDashboard(veckor[v], { nu });
     const senaste = veckor[nycklar[nycklar.length - 1]];
     brands.push({
       ...senaste,

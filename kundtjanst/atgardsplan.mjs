@@ -73,7 +73,7 @@ export function byggAtgardsplan(r, { nu = new Date() } = {}) {
     const chargebacks = oppnaTvister.filter((x) => x.typ !== 'inquiry').length;
     lagg('nu', 1, 'tvister',
       `Respond to ${oppnaTvister.length} open dispute${oppnaTvister.length === 1 ? '' : 's'} before the deadline`,
-      `${pengar.belopp > 0 ? `${kr(pengar.belopp, pengar.valuta)} is on the line. ` : ''}${chargebacks} of them are real chargebacks, the rest are bank inquiries. The earliest evidence deadline is ${forst.evidensSenast ?? 'unknown'}${forst.ordernamn ? ` (order ${forst.ordernamn})` : ''}. A dispute you do not answer is lost automatically — you lose the goods, the money and the fee.`,
+      `${pengar.belopp > 0 ? `${kr(pengar.belopp, pengar.valuta)} is on the line. ` : ''}${chargebacks} of them are real chargebacks, the rest are bank inquiries. The earliest evidence deadline is ${forst.evidensSenast ?? 'unknown'}${/^#/.test(String(forst.ordernamn ?? '')) ? ` (order ${forst.ordernamn})` : ''}. A dispute you do not answer is lost automatically — you lose the goods, the money and the fee.`,
       [
         'Shopify admin → Orders → filter "Disputed" → open the oldest deadline first.',
         'For every dispute attach: tracking number + carrier scan showing delivery, the order confirmation, and the full email thread with the customer.',
@@ -169,7 +169,7 @@ export function byggAtgardsplan(r, { nu = new Date() } = {}) {
   const inq = tvistlista(r).filter((x) => x.typ === 'inquiry' && oppen(x)).length;
   if (inq > 0) {
     lagg('veckan', 4, 'inquiries',
-      `Answer ${inq} open bank inquiry${inq === 1 ? '' : 'ies'} — they become chargebacks if ignored`,
+      `Answer ${inq} open bank ${inq === 1 ? 'inquiry' : 'inquiries'} — they become chargebacks if ignored`,
       `An inquiry is the bank asking us for the order details before the customer files a real dispute. It is the cheapest possible stage to win: no fee, no lost goods. ${inq} ${inq === 1 ? 'is' : 'are'} open right now.`,
       [
         'Shopify admin → Orders → Disputes → open each inquiry.',

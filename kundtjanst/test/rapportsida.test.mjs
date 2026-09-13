@@ -6,7 +6,7 @@ import { mkdtempSync, writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { byggAtgardsplan, planPerHink, pengarIRisk, HINKAR } from '../atgardsplan.mjs';
-import { byggDashboard, skrivDashboard, samlaDashboard, arendeRad, tvistRad } from '../dashboard.mjs';
+import { byggDashboard, skrivDashboard, samlaDashboard, arendeRad, tvistRad, planUrDashboard } from '../dashboard.mjs';
 import { byggSida } from '../rapportsida.mjs';
 import { NIVAER } from '../chargeback.mjs';
 
@@ -186,6 +186,25 @@ test('ärende- och tvistraden plattas ut till det sidan visar', () => {
   assert.equal(x.status, 'needs response');
   assert.equal(x.oppen, true);
   assert.equal(x.belopp, 599);
+});
+
+test('planen går att räkna om ur den sparade filen — samma åtgärder, färska ord', () => {
+  const r = resultat();
+  const d = byggDashboard(r, { nu: NU });
+  const ur = planUrDashboard(JSON.parse(JSON.stringify(d)), { nu: NU });
+  assert.deepEqual(ur.map((a) => a.id), byggAtgardsplan(r, { nu: NU }).map((a) => a.id), 'samma regler fyrar');
+  const tv = ur.find((a) => a.id === 'tvister');
+  assert.match(tv.varfor, /1[ ,]?498 SEK/);
+  assert.match(tv.varfor, /2026-09-23/);
+  assert.match(ur.find((a) => a.id === 'backlogg').titel, /6 tickets/);
+  assert.match(ur.find((a) => a.id === 'inquiries').titel, /1 open bank inquiry —/, 'singular, inte "inquiryies"');
+});
+
+test('utan Shopify skrivs inga tviståtgärder när planen räknas om ur filen', () => {
+  const utan = byggDashboard(resultat({ tvister: { tillganglig: false, lista: [], orsak: 'Shopify inte kopplat' } }), { nu: NU });
+  assert.equal(utan.tvisterTillgangliga, false);
+  const plan = planUrDashboard(JSON.parse(JSON.stringify(utan)), { nu: NU });
+  assert.ok(!plan.some((a) => ['tvister', 'inquiries'].includes(a.id)), 'tomt är inte samma sak som noll');
 });
 
 test('samlaDashboard läser veckofilerna och historiken, sorterar brands på risk', () => {
