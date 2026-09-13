@@ -51,18 +51,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 7277.86,
-    "kop": 47,
-    "roas": 7.3996,
-    "cpa": 154.85,
+    "spend": 15166.45,
+    "kop": 71,
+    "roas": 5.3519,
+    "cpa": 213.61,
     "be": 1.63,
-    "be_cpa": 702.95,
-    "vinstbidrag": 25760.7,
+    "be_cpa": 701.37,
+    "vinstbidrag": 34630.96,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-12",
+    "last": "2026-09-13",
     "utfall": "launchad"
    },
    "status": "vinnare",
@@ -135,18 +135,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 4143.84,
+    "spend": 6237.28,
     "kop": 13,
-    "roas": 2.6085,
-    "cpa": 318.76,
+    "roas": 1.733,
+    "cpa": 479.79,
     "be": 1.62,
     "be_cpa": 513.26,
-    "vinstbidrag": 2528.5,
+    "vinstbidrag": 435.11,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-12",
+    "last": "2026-09-13",
     "utfall": "launchad"
    },
    "status": "vinnare",
@@ -212,18 +212,18 @@
     "datum": "2026-09-08"
    },
    "meta": {
-    "spend": 5182.38,
-    "kop": 20,
-    "roas": 2.3356,
-    "cpa": 259.12,
+    "spend": 7398.35,
+    "kop": 24,
+    "roas": 1.9058,
+    "cpa": 308.26,
     "be": 1.62,
-    "be_cpa": 373.57,
-    "vinstbidrag": 2289.0,
+    "be_cpa": 362.65,
+    "vinstbidrag": 1305.36,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-12",
+    "last": "2026-09-13",
     "utfall": "launchad"
    },
    "status": "vinnare",
@@ -1925,18 +1925,18 @@
     "datum": "2026-09-10"
    },
    "meta": {
-    "spend": 1974.46,
-    "kop": 2,
-    "roas": 0.7227,
-    "cpa": 987.23,
+    "spend": 1976.41,
+    "kop": 3,
+    "roas": 0.9706,
+    "cpa": 658.8,
     "be": 1.63,
-    "be_cpa": null,
-    "vinstbidrag": null,
-    "band": "TOO_EARLY",
+    "be_cpa": 392.29,
+    "vinstbidrag": -799.53,
+    "band": "EARLY_SIGNAL",
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-12",
+    "last": "2026-09-13",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2325,10 +2325,10 @@
     "datum": "2026-09-10"
    },
    "meta": {
-    "spend": 1874.99,
+    "spend": 1875.12,
     "kop": 1,
-    "roas": 0.9058,
-    "cpa": 1874.99,
+    "roas": 0.9057,
+    "cpa": 1875.12,
     "be": 1.66,
     "be_cpa": null,
     "vinstbidrag": null,
@@ -2336,7 +2336,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-12",
+    "last": "2026-09-13",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2728,9 +2728,19 @@
     {
      "datum": "2026-09-10",
      "handelse": "Axel: kanske ['Kan bli bra']"
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Spabadskapell I Svart 210D 619 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Lockskydd runt spabad / badtunna (cover cap)"
+   "namn_sv": "Lockskydd runt spabad / badtunna (cover cap)",
+   "butik": {
+    "titel": "Spabadskapell I Svart 210D",
+    "pris_sek": 619,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0054": {
    "id": "K0054",
@@ -6676,9 +6686,19 @@
     {
      "datum": "2026-09-10",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Vedställskapell Med Fönster Och Ventil 529 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Överdrag till vedställ, 8 ft (244 cm), uppfällbar front"
+   "namn_sv": "Överdrag till vedställ, 8 ft (244 cm), uppfällbar front",
+   "butik": {
+    "titel": "Vedställskapell Med Fönster Och Ventil",
+    "pris_sek": 529,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0136": {
    "id": "K0136",
@@ -8465,9 +8485,19 @@
     {
      "datum": "2026-09-10",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Solcellsladdare 10 W MPPT 559 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Solcellsladdare 10 W MPPT, batteriunderhåll"
+   "namn_sv": "Solcellsladdare 10 W MPPT, batteriunderhåll",
+   "butik": {
+    "titel": "Solcellsladdare 10 W MPPT",
+    "pris_sek": 559,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0174": {
    "id": "K0174",
@@ -10027,9 +10057,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Hönsgårdsduk 145 × 109 cm 459 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Hönsgårdstaket, formsytt"
+   "namn_sv": "Hönsgårdstaket, formsytt",
+   "butik": {
+    "titel": "Hönsgårdsduk 145 × 109 cm",
+    "pris_sek": 459,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0206": {
    "id": "K0206",
@@ -11028,9 +11068,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Kapell Till Snöslunga 120 × 82 × 60 cm 459 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Snöslungehuven 600D"
+   "namn_sv": "Snöslungehuven 600D",
+   "butik": {
+    "titel": "Kapell Till Snöslunga 120 × 82 × 60 cm",
+    "pris_sek": 459,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0225": {
    "id": "K0225",
@@ -11117,10 +11167,10 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 1494.11,
+    "spend": 1991.17,
     "kop": 1,
-    "roas": 0.5147,
-    "cpa": 1494.11,
+    "roas": 0.3862,
+    "cpa": 1991.17,
     "be": 1.63,
     "be_cpa": null,
     "vinstbidrag": null,
@@ -11128,7 +11178,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-12",
+    "last": "2026-09-13",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11181,18 +11231,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 1506.84,
-    "kop": 11,
-    "roas": 4.3404,
-    "cpa": 136.99,
+    "spend": 3416.83,
+    "kop": 19,
+    "roas": 3.223,
+    "cpa": 179.83,
     "be": 1.61,
-    "be_cpa": 369.3,
-    "vinstbidrag": 2555.41,
-    "band": "MEANINGFUL",
+    "be_cpa": 359.99,
+    "vinstbidrag": 3423.04,
+    "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-12",
+    "last": "2026-09-13",
     "utfall": "launchad"
    },
    "status": "vinnare",
@@ -11753,9 +11803,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja ['Känns rätt', 'Skyddar något', 'Deadline nu']"
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Uppvärmd Vattenskål 2,2 Liter 849 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Isfria vattenskålen 2,2 L"
+   "namn_sv": "Isfria vattenskålen 2,2 L",
+   "butik": {
+    "titel": "Uppvärmd Vattenskål 2,2 Liter",
+    "pris_sek": 849,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0233": {
    "id": "K0233",
@@ -11963,9 +12023,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja ['Känns rätt', 'Deadline nu', 'Skyddar något']"
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: ATV-Kapell Storlek 3XL 579 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "ATV-kapellet Heavy Duty"
+   "namn_sv": "ATV-kapellet Heavy Duty",
+   "butik": {
+    "titel": "ATV-Kapell Storlek 3XL",
+    "pris_sek": 579,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0235": {
    "id": "K0235",
@@ -12185,9 +12255,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja ['Skyddar något', 'Deadline nu', 'Känns rätt']"
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Motorlås I Rostfritt Stål 909 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Motorlåset rostfritt utombordare"
+   "namn_sv": "Motorlåset rostfritt utombordare",
+   "butik": {
+    "titel": "Motorlås I Rostfritt Stål",
+    "pris_sek": 909,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0237": {
    "id": "K0237",
@@ -12281,9 +12361,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Snöflingor 25-pack 249 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Snöflingor till garageporten 25-pack"
+   "namn_sv": "Snöflingor till garageporten 25-pack",
+   "butik": {
+    "titel": "Snöflingor 25-pack",
+    "pris_sek": 249,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0238": {
    "id": "K0238",
@@ -12391,9 +12481,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Snöskyffel Utan Batteri 2349 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Snöskyffeln för Makita-batteri"
+   "namn_sv": "Snöskyffeln för Makita-batteri",
+   "butik": {
+    "titel": "Snöskyffel Utan Batteri",
+    "pris_sek": 2349,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0239": {
    "id": "K0239",
@@ -12501,9 +12601,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Kajakhållare 2-pack 599 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Kajakhållaren för vägg, 2-pack"
+   "namn_sv": "Kajakhållaren för vägg, 2-pack",
+   "butik": {
+    "titel": "Kajakhållare 2-pack",
+    "pris_sek": 599,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0240": {
    "id": "K0240",
@@ -12597,9 +12707,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Värmesits 45 × 90 cm 599 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Värmesitsen för älgpasset"
+   "namn_sv": "Värmesitsen för älgpasset",
+   "butik": {
+    "titel": "Värmesits 45 × 90 cm",
+    "pris_sek": 599,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0241": {
    "id": "K0241",
@@ -12899,9 +13019,19 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-13",
+     "handelse": "i butiken: Täljset 30 Delar 869 kr (kampanj ej sedd i kontot än)"
     }
    ],
-   "namn_sv": "Täljsetet 30 delar i väska"
+   "namn_sv": "Täljsetet 30 delar i väska",
+   "butik": {
+    "titel": "Täljset 30 Delar",
+    "pris_sek": 869,
+    "sedd": "2026-09-13",
+    "kalla": "katalog-live 2026-09-13 (Shopify Admin API)"
+   }
   },
   "K0244": {
    "id": "K0244",
@@ -12913,7 +13043,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Båt på trailer/bockar",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "1,2–1,3×",
+    "ankare_kalla": "SeaSea Båtkapell Överdrag 488–564 cm, 300D polyester"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -12962,10 +13100,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-12T11:35:26.153Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12975,6 +13121,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Båthuven 600D för trailerbåt 17–19 fot"
@@ -12989,7 +13139,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Kamadogrillen (keramisk grill, Kamado Joe / Big Green Egg / Kamado Sumo)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Bauhaus — Grillöverdrag Kamado Joe Classic Joe I/II (Kamado Joe original)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13038,10 +13196,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-12T11:35:23.586Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13051,6 +13217,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Kamadohuven 600D"
@@ -13065,7 +13235,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "A_AGARE_FRIKTION",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Jägarens händer på passet (avtryckarfingret efter 4 timmar stilla, okt–jan)",
+    "form": "kläder",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "HeatX Heated Hunt Gloves (Jaktia)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13128,10 +13306,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-12T11:35:20.768Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13141,6 +13327,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Värmehandskarna för älgpasset"
@@ -13155,7 +13345,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Kajaken/kanoten på bockarna (samma ägare som Kajakhållaren K0239, ja)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "Seahawk kajaköverdrag 4 m / 5,2 m (soderkajak.se) — pris ej visat på sidan; Galaxy cover 290/400/500 cm (kajakforalle.se) — pris ej visat"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13204,10 +13402,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-12T11:35:17.919Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13217,6 +13423,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 4, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Kajakhuven formsydd"
@@ -13231,7 +13441,15 @@
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Makita 18V-batterisystemet (ägd dyr sak) — vedstapeln och grenarna",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Makita DUC150Z grensåg 18V 15 cm (bar maskin)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13294,10 +13512,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-12T11:35:15.570Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13307,6 +13533,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 5, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Minikedjesågen för Makita-batteri"
@@ -13321,7 +13551,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "A_AGARE_FRIKTION",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Jägarens fötter på passet (kroppen efter 4 timmar stilla, okt–jan)",
+    "form": "kläder",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "ThermaCELL batteridrivna värmesulor med fjärrkontroll (Land.se-test)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13384,10 +13622,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-12T11:35:12.053Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13397,6 +13643,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 6, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Värmesulorna för älgpasset"
@@ -13411,7 +13661,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Fågelbord/fågelmatare",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "vintermatning",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej hittat — Vivara.se säljer 12 fågelbad 139,90–349,90 kr, inget uppvärmt (läst 2026-09-12)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13460,10 +13718,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-12T11:35:10.174Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13473,6 +13739,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 7, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Uppvärmda fågelbadet"
@@ -13487,7 +13757,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+    "form": "huv",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Olivträdsbutiken — Vinterskydd för olivträd, fiberduk 100 g/m² med dragkedja, S–XXL"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13563,7 +13841,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Bikuporna",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "invintring",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "Biredskapsfabriken 'Vinterskydd' 171 kr är ett nät mot talgoxar — annan form, inte isolering (läst 2026-09-12)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13639,7 +13925,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "P.Lindberg verktygshylla 5 fack + låda (stål)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13729,7 +14023,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Julbelysningen utomhus (5–10 slingor per villa, tas fram i november)",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Clas Ohlson Northlight kabelvinda (metall/plast, stativ, 100 m)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -13819,7 +14121,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Makita-maskinerna i garaget (3–6 st à 1–3 tkr)",
+    "form": "klämma",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "K-Bygg Stealthmounts maskinhållare Makita 18V 4-pack"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {

@@ -3,32 +3,32 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-12. **35 svar** — ja 22, kanske 7, nej 6.
+Uppdaterad 2026-09-13. **42 svar** — ja 29, kanske 7, nej 6.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 20 ja, 2 kanske, 2 nej → score 0.846
-- ankare_klass **1,3–1,6×**: 11 ja, 0 kanske, 0 nej → score 0.923
+- prisband **500–999**: 25 ja, 2 kanske, 2 nej → score 0.871
+- ankare_klass **1,3–1,6×**: 12 ja, 0 kanske, 0 nej → score 0.929
+- form **överdrag**: 11 ja, 0 kanske, 1 nej → score 0.857
+- ankare_klass **≥ 1,6×**: 9 ja, 3 kanske, 3 nej → score 0.676
 - deadline_klass **6–12 v**: 8 ja, 1 kanske, 0 nej → score 0.864
-- form **överdrag**: 8 ja, 0 kanske, 1 nej → score 0.818
 - ankare_klass **golv utan ankare**: 7 ja, 0 kanske, 0 nej → score 0.889
 - arketyp **A1**: 7 ja, 1 kanske, 0 nej → score 0.85
 - deadline_klass **2–6 v**: 7 ja, 0 kanske, 0 nej → score 0.889
+- prisband **300–499**: 7 ja, 1 kanske, 0 nej → score 0.85
 - deadline_typ **uppställning**: 6 ja, 1 kanske, 0 nej → score 0.833
-- prisband **300–499**: 6 ja, 1 kanske, 0 nej → score 0.833
-- ankare_klass **≥ 1,6×**: 6 ja, 3 kanske, 3 nej → score 0.607
-- form **annat**: 5 ja, 1 kanske, 0 nej → score 0.812
-- prisband **≥ 1 000**: 5 ja, 0 kanske, 1 nej → score 0.75
-- ankare_klass **1,2–1,3×**: 4 ja, 0 kanske, 0 nej → score 0.833
+- form **annat**: 6 ja, 1 kanske, 0 nej → score 0.833
+- prisband **≥ 1 000**: 6 ja, 0 kanske, 1 nej → score 0.778
+- arketyp **B_SKYDDA_DYRT**: 6 ja, 0 kanske, 2 nej → score 0.7
+- ankare_klass **1,2–1,3×**: 5 ja, 0 kanske, 0 nej → score 0.857
 - arketyp **verktyg**: 4 ja, 0 kanske, 0 nej → score 0.833
-- deadline_typ **1 december**: 4 ja, 0 kanske, 0 nej → score 0.833
 
 ## Det Axel säger nej till
 
-- ankare_klass **≥ 1,6×**: 3 nej, 6 ja → score 0.607
-- arketyp **B_SKYDDA_DYRT**: 2 nej, 3 ja → score 0.571
-- deadline_typ **första frost**: 2 nej, 3 ja → score 0.571
-- prisband **500–999**: 2 nej, 20 ja → score 0.846
+- ankare_klass **≥ 1,6×**: 3 nej, 9 ja → score 0.676
+- deadline_typ **första frost**: 2 nej, 4 ja → score 0.625
+- arketyp **B_SKYDDA_DYRT**: 2 nej, 6 ja → score 0.7
+- prisband **500–999**: 2 nej, 25 ja → score 0.871
 - grupp **belysning och mörker**: 1 nej, 0 ja → score 0.333
 - grupp **Gårdshunden/hundgården**: 1 nej, 0 ja → score 0.333
 - grupp **Luftvärmepumpens utedel**: 1 nej, 0 ja → score 0.333
@@ -63,11 +63,13 @@ Uppdaterad 2026-09-12. **35 svar** — ja 22, kanske 7, nej 6.
 
 - ankare_klass:1,2–1,3×
 - ankare_klass:1,3–1,6×
+- ankare_klass:ej mätt
 - ankare_klass:golv utan ankare
 - ankare_klass:≥ 1,6×
 - arketyp:A1
 - arketyp:A3
 - arketyp:B_SKYDDA_DYRT
+- arketyp:E_VADER_SASONG
 - arketyp:G_Q4_GAVA
 - arketyp:H_VISUELL_NYHET
 - arketyp:verktyg
@@ -78,6 +80,8 @@ Uppdaterad 2026-09-12. **35 svar** — ja 22, kanske 7, nej 6.
 - deadline_typ:första frost
 - deadline_typ:första snö
 - deadline_typ:uppställning
+- deadline_typ:upptagning
+- deadline_typ:älgjakt
 - form:annat
 - form:överdrag
 - objekt:Barnbarnet — adventskalendern
