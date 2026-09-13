@@ -25,9 +25,17 @@ fält är märkt MÄTT eller HÄRLETT. Analystexterna (positionering, tonalitet,
 stil) är en rekonstruktion i efterhand — det finns ingen `BRAND.md`.
 
 `upptackOps()` ser butiken sedan dess (`fjordcover/batmotorskyddet`, prefix
-`FjordMotor`, konto 915422744950975). Den står som **`byggd: false`** eftersom
-ingen state-fil finns — registret redovisar den men **rutinerna kör den
-aldrig** i det läget. Det är avsiktligt skydd, inte ett fel.
+`FjordMotor`, konto 915422744950975).
+
+⚠️ **Statusen ändrades under dagen.** Först stod den som `byggd: false` (ingen
+state-fil) — redovisad men aldrig körd av någon rutin. När paketsteget kördes
+skarpt skrev `ops.mjs` sina state-filer (`fjordcover--_butik.json` +
+`fjordcover--batmotorskyddet.json`), och butiken är nu **`byggd: true`, LÄGE
+SKALA, kördag i dag**. Skalningsronden kan alltså ta den från och med nu.
+
+Det är ofarligt just nu — butiken har **noll kampanjer** i OPS-kontot, så en
+budgetrond hittar ingenting att döma. Men vet om att skyddet är borta: från
+och med nu gäller vanliga rutinregler för FjordCover.
 
 ## Kan butiken launchas i dag? Nej.
 
@@ -76,7 +84,13 @@ aldrig** i det läget. Det är avsiktligt skydd, inte ett fel.
     får laddas upp i appen (API:t skriver över originaldatumen). Någon
     importerade de 14 för hand utan att filen landade i repot.
     `JUDGEME_API_TOKEN` i miljön är **Bäverbutikens** och ger 401 här, så
-    app-filen är enda vägen. Rör inte de 14 som redan ligger i butiken.
+    app-filen är enda vägen.
+
+    ⚠️ **`output/batmotorskyddet/judgeme-app-import.csv` finns nu** (skriven av
+    paketkörningen, 8 recensioner i Judge.mes appformat med originaldatum).
+    **LADDA INTE UPP DEN** — butiken har redan 14 importerade recensioner, och
+    en import till skulle ge dubbletter. Filen ligger där som arkiv och som
+    underlag för en framtida ombyggnad, inget annat.
 
 ### Det som är grönt
 Källskanningen är ren i **båda** temana (317 + 446 filer). Kundvyn är grön på
