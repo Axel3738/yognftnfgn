@@ -38,6 +38,12 @@ telefonnummer från en annan app). **Kontrollera alltid vad du klistrat in
 INNAN du sparar**: rätt längd (se tabellens teckenantal) och rätt innehåll.
 Stämmer det inte: kopiera om, spara inte.
 
+**Börja med att kolla vad som redan sitter.** Öppna Orderbekräftelse →
+Redigera kod. Innehåller brödtexten redan `plus: 604800` och `Passar ihop
+med det du köpte` är mallarna inklistrade sedan tidigare — hoppa då över
+tabellen helt och gå direkt till **A** och **B** längre ner. Saknas
+någondera: gör tabellen.
+
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 1. Öppna mallens kodlänk i en **ny flik**. Det är en ren textfil. Klicka i
