@@ -48,15 +48,16 @@
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
     "inklistrade_comment": "v2 (erbjudandet överst, urgency, logga) inklistrad av Cowork 2026-09-12 sent på kvällen i sju mallar, verifierad efter omladdning med samma teckenlängd som artefaktens v2. v1 (se inklistrade_v1) är helt ersatt.",
+    "inklistrade_v3_comment": "2026-09-13: erbjudandet togs bort ur fraktbekraftelse (Axels beslut). Den mallen (v3) är INTE inklistrad än — raden är borttagen härifrån tills någon klistrat in den nya.",
     "inklistrade": {
       "orderbekraftelse": "2026-09-12 v2",
-      "fraktbekraftelse": "2026-09-12 v2",
       "fraktuppdatering": "2026-09-12 v2",
       "ute_for_leverans": "2026-09-12 v2",
       "levererad": "2026-09-12 v2",
       "aterbetalning": "2026-09-12 v2",
       "avbruten_order": "2026-09-12 v2"
     },
+    "inklistrade_v2_fraktbekraftelse": "2026-09-12 v2 (med erbjudandet — ersätts av v3 utan)",
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",
       "fraktbekraftelse": "2026-09-12",

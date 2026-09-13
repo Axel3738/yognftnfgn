@@ -42,7 +42,7 @@ kan förhandsvisningen aldrig visa något annat än det som skickas.
 | Fil | Notis i Shopify | Erbjudandet med? |
 |---|---|---|
 | `orderbekraftelse` | Orderbekräftelse / Order confirmation | ✅ |
-| `fraktbekraftelse` | Leveransbekräftelse / Shipping confirmation | ✅ |
+| `fraktbekraftelse` | Leveransbekräftelse / Shipping confirmation | – (borttaget 2026-09-13, Axels beslut) |
 | `fraktuppdatering` | Leveransuppdatering / Shipping update | – |
 | `ute_for_leverans` | Ute för leverans / Out for delivery | – |
 | `levererad` | Levererad / Delivered | ✅ |
@@ -55,7 +55,7 @@ kan förhandsvisningen aldrig visa något annat än det som skickas.
 ## Erbjudandet — så funkar mekaniken
 
 1. Kunden lägger första ordern → Shopify räknar `number_of_orders = 1`.
-2. Orderbekräftelsen (och leveransmejlen) visar koden **TACKIGEN**, de fyra
+2. Orderbekräftelsen (och levererad-mejlet) visar koden **TACKIGEN**, de fyra
    gratisprodukterna och de tre dyraste produkterna. Knappen går till
    `baverbutiken.se/discount/TACKIGEN?redirect=/collections/din-gratisprodukt`
    — Shopify lägger på koden i kundens session och öppnar kollektionen.

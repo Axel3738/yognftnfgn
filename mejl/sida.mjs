@@ -148,7 +148,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
   <header class="topp">
     <p class="dampad">Bäverbutiken.se · byggd ${esk(byggd)} UTC</p>
     <h1>Bäverbutikens mejl</h1>
-    <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet.</p>
+    <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen och leverans-klart-mejlet.</p>
   </header>
 
   <section class="lage" aria-label="Läget">

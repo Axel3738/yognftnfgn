@@ -497,7 +497,10 @@ function dokument(k, s, lage, { titel, preheader, rader }) {
 // den ligger, erbjudande = om gratisprodukt-blocket ska med.
 export const MALLAR = [
   { id: 'orderbekraftelse', shopify: 'Orderbekräftelse / Order confirmation', erbjudande: true },
-  { id: 'fraktbekraftelse', shopify: 'Leveransbekräftelse / Shipping confirmation', erbjudande: true },
+  // Erbjudandet togs bort ur leveransbekräftelsen 2026-09-13 (Axel: "onödigt
+  // att erbjuda gåvan även där") — kunden får det i orderbekräftelsen och i
+  // levererad-mejlet, det räcker.
+  { id: 'fraktbekraftelse', shopify: 'Leveransbekräftelse / Shipping confirmation', erbjudande: false },
   { id: 'fraktuppdatering', shopify: 'Leveransuppdatering / Shipping update', erbjudande: false },
   { id: 'ute_for_leverans', shopify: 'Ute för leverans / Out for delivery', erbjudande: false },
   { id: 'levererad', shopify: 'Levererad / Delivered', erbjudande: true },
@@ -555,7 +558,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
         knappRad(s, c.knapp, sparUrl) +
         sparningsInfo(s, lage) +
         stycke(k, s, c.tips, { farg: s.gra, storlek: 13, topp: 8 }) +
-        erbj +
+        avdelare(s) +
         litenRubrik(s, 'I paketet', { topp: 24 }) +
         orderRader(s, lage, 'frakt') +
         leveransadress(s, lage);
