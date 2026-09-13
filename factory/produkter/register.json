@@ -141,6 +141,10 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 23
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."

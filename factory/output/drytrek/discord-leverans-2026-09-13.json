@@ -1,0 +1,27 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-13",
+  "lage": "leverans",
+  "gjort": [
+    "17 colour-variant image ads (concept PD_14: 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18) live in DRYTREK_SE_Damasker Vandring, adset DRYTREK_SE_PD",
+    "FO_2_H1 (video, Jasper's batch #2) live in DRYTREK_SE_Damasker Vandring, adset DRYTREK_SE_FO (new adset, cloned from newest sibling), ad 120249074660690172",
+    "PD_13_H1 (video, Jasper's batch #2) live in DRYTREK_SE_Damasker Vandring, adset DRYTREK_SE_PD, ad 120249074671860172",
+    "SP_7_H1 (video, Jasper's batch #2) live in DRYTREK_SE_Damasker Vandring, adset DRYTREK_SE_SP, ad 120249074726530172",
+    "SP_6_H1 (video, Jasper's batch #2) live in DRYTREK_SE_Damasker Vandring, adset DRYTREK_SE_SP, ad 120249074732640172",
+    "PD_12_H2 (video, Jasper's batch #2) live in DRYTREK_SE_Damasker Vandring, adset DRYTREK_SE_PD, ad 120249074815820172",
+    "PD_12_H1 (video, Jasper's batch #2) live in DRYTREK_SE_Damasker Vandring, adset DRYTREK_SE_PD, ad 120249074855230172",
+    "23 Notion rows moved to \"SE-ACTIVE to be translated\" — the 15:50 Norway run takes them",
+    "Price check: 389 kr per par in every copy card, matches drytrek.se (read live)",
+    "New adset DRYTREK_SE_FO created for the FO concept, cloned from the newest sibling (no own budget, campaign stays CBO at 700 kr/day)"
+  ],
+  "varningar": [
+    "Videos went up with remarks — only a wrong price stops a video. Captions are auto-transcribed word-by-word karaoke, not the script, with several misspellings of the brand and product words.",
+    "The supplier tag is visible on the gaiters in all six videos. No DryTrek branding anywhere in the footage.",
+    "Most cuts run 13-20 seconds against a brief asking for 20-30. Four videos show a real person's face in a stock shot.",
+    "SP_7_H1 shows a price one krona below the store price (within the 20 % tolerance, so uploaded) and has no dog walk although the brief asked for one. PD_12_H1 carries no price line at all.",
+    "Ten older source rows from the parent store sit parked in Creative strat review in the hub. They carry the old prefix, so the run left them untouched.",
+    "Read back from the account: 21 of 23 ads are fully live, 2 are still in Meta review right after upload."
+  ],
+  "action_axel": []
+}

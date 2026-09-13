@@ -316,3 +316,54 @@ Lärdomar (inskrivna i dna.md-rotorsakerna vid nästa `/cs`):
 Hypotes att läsa av vid nästa briefdag: vinstbidrag per färg `(243 − CPA) × köp`
 inom adsetet `PD`; topspendern är benchmark. Grinden ≥ 300 kr OCH ≥ 3 köp per
 variant — med 17 varianter i ett adset tar det tid; döm inte färger på 50 kr.
+
+---
+
+## Leveransen 2026-09-13 — 23 annonser LIVE i DRYTREK_SE (`/ops-leverans drytrek`, första körningen)
+
+Kördes för hand ur setup-sessionen samma förmiddag som rutinen byggdes, för
+att färgbilderna inte skulle stå still ett dygn till. Kampanjen
+`DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` [ACTIVE], CBO
+**700 kr/dag**, pris **389 kr** läst live ur drytrek.se vid körningen.
+
+| Vad | Antal | Adset | Status vid tillbakaläsning |
+|---|---|---|---|
+| Färgbilder `PD_14_1 … _18` (utom `_3`, gul) | 17 | `DRYTREK_SE_PD` | ACTIVE |
+| Jaspers videor `PD_12_H1`, `PD_12_H2`, `PD_13_H1` | 3 | `DRYTREK_SE_PD` | ACTIVE |
+| Jaspers videor `SP_6_H1`, `SP_7_H1` | 2 | `DRYTREK_SE_SP` | ACTIVE |
+| Jaspers video `FO_2_H1` | 1 | `DRYTREK_SE_FO` **(nytt adset)** | ACTIVE |
+
+Tillbakaläst ur kontot: **23 av 23 hittade, 21 ACTIVE/ACTIVE, 2 kvar i Metas
+granskning** (PENDING_REVIEW / IN_PROCESS — normalt direkt efter uppladdning).
+Alla 23 Notion-rader flyttade till `SE-ACTIVE to be translated`; 15:50-rutinen
+tar dem till Norge. Ad-id per rad: `factory/output/drytrek/leverans-2026-09-13-resultat.json`.
+
+**Två saker gjorde att det här inte gick av sig självt, båda lagade i koden:**
+
+1. **Videorna låg i `Creative strat review`** — en status ingen rutin plockade.
+   Jasper levererade sex videor dit 2026-09-12/13 och de hade stått kvar för
+   alltid. Axels beslut 2026-09-13: leveransrundan ÄR granskningen. Sedan dess
+   tar `tools/ops-leveranskon.mjs` SE-kön ur `To be Reviewed` **plus**
+   `Creative strat review` när raden bär butikens brand som prefix och har en
+   fil (`CS_STATUS_SE`, `tasMedISE`, `harBrandPrefix`). Hubbens tio äldre
+   `Damasker_*`-rader (Bäverbutikens, parkerade) rörs aldrig — de listas som
+   `cs_lamnade` i kön.
+2. **Namnparsern klarade inte tvådelade namn.** `DryTrek_Damasker_PD_14_1` tog
+   "Damasker" som konceptkod, och adsetuppslaget sökte bara `<bas> - <KONCEPT>`
+   medan kampanjens egna adsets heter `DRYTREK_SE_PD`. Varje leverans hade
+   skapat ett ANDRA PD-adset bredvid det som redan spenderar. Lagat:
+   produktsegment med ≥ 5 bokstäver hoppas över, och `valjAdsetForKoncept` /
+   `nyttAdsetnamn` i `tools/meta-lib.mjs` matchar båda konventionerna.
+
+**QA:n:** varje bild tittad på av sessionen (Axels beslut 2026-09-13 — han
+granskar aldrig bilder), varje video granskad på 15–20 utdragna frames.
+Noll stopp. Videoanmärkningarna (laddas upp ändå, bara priset stoppar video):
+captions är auto-transkriberad karaoke med stavfel i stället för manusraderna,
+leverantörsetiketten AYXSEE syns på damaskerna i samtliga sex, klippen är
+13–20 s mot briefens 20–30 s, och fyra videor visar ett riktigt ansikte i
+stockmaterial. `SP_7_H1` säger 380 kr (butiken 389 kr — inom 20 %-toleransen,
+uppladdad); `PD_12_H1` har ingen prisrad alls.
+
+Hypotesen från batch #3b står kvar: vinstbidrag per färg `(243 − CPA) × köp`
+inom adsetet `PD`, grinden ≥ 300 kr OCH ≥ 3 köp per variant. Med 17 färger +
+4 videor i samma adset tar det tid — döm inte en färg på 50 kr.

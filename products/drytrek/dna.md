@@ -108,6 +108,21 @@ Källa: `factory/annonscopy/damasker-se.json` (skriven 2026-09-09) och
 
 ## Rotorsaker och fallgropar
 
+- **Tvådelade annonsnamn bröt leveransen** (mätt 2026-09-13, lagat samma dag).
+  DryTrek är den första butiken vars annonser heter `<Brand>_<Produkt>_<KOD>_…`
+  (`DryTrek_Damasker_PD_14_1`). Konceptparsern tog "Damasker" som kod, och
+  adsetuppslaget sökte bara `<kampanjbas> - <KONCEPT>` medan kampanjens egna
+  adsets heter `DRYTREK_SE_PD` — varje leverans hade skapat ett ANDRA PD-adset
+  bredvid det som redan spenderar, och datan per koncept blivit oläsbar.
+  `tools/meta-lib.mjs` matchar nu båda konventionerna (`valjAdsetForKoncept`,
+  `nyttAdsetnamn`) och ett produktsegment med ≥ 5 bokstäver hoppas över i
+  namnparsern. **Kolla alltid kampanjens faktiska adsetnamn innan en ny butiks
+  första leverans** — konventionen är inte densamma i alla butiker.
+- **`Creative strat review` var en återvändsgränd.** Jasper levererade sex
+  videor dit 2026-09-12/13 och de hade stått kvar för alltid — ingen rutin
+  plockade statusen. Axels beslut 2026-09-13: leveransrundan ÄR granskningen,
+  och en rad med butikens brand som prefix + fil tas därifrån direkt. Hubbens
+  tio äldre `Damasker_*`-rader (Bäverbutikens) är parkerade och rörs aldrig.
 - **Talet i de ärvda videorna säger det copyn strök.** `PD_1`:s voiceover
   (SRT `market-expansion/no/video-batches/2026-08-29/srt-orig/damasker_PD_1.orig.srt`)
   säger "Vattentäta, vindtäta … i alla väder" och "På med dem på några
