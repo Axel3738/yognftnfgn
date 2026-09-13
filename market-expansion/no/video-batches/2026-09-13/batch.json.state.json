@@ -1,0 +1,58 @@
+{
+ "staketstolpsbygel_CS_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/b4f424fcd1fa4ba7a57ac40c8897ead6/original.mp4",
+  "proofreadId": "3c383f0997b74810a2a10dfac4ebf6ea-nb-nb-NO"
+ },
+ "staketstolpsbygel_CS_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/58fa30b50aed489bb01374910aa9e585/original.mp4",
+  "proofreadId": "4c9c279dbf3240609fcb15b7f9572ca8-nb-nb-NO",
+  "srtDone": true
+ },
+ "staketstolpsbygel_CS_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/735f219ec5134bcb919d36ddfad4ee0c/original.mp4",
+  "proofreadId": "c946f708f97c4dbfb59ae7d48ffbc514-nb-nb-NO",
+  "srtDone": true
+ },
+ "staketstolpsbygel_GT_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/e0931c26043b4ca0bbda1dd58cfdde34/original.mp4",
+  "proofreadId": "933b562d72584815b0bdc0a7a0df05ed-nb-nb-NO",
+  "srtDone": true
+ },
+ "staketstolpsbygel_GT_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/01e15e22735c4a8aaf2a99121ec5be38/original.mp4",
+  "proofreadId": "53846331689448f59b8f6960b38d1e01-nb-nb-NO",
+  "srtDone": true
+ },
+ "staketstolpsbygel_GT_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/5e470eb87087450da7444bb6dc1a577f/original.mp4",
+  "proofreadId": "d1353f36c74a4b8ba5c8b176791eadc0-nb-nb-NO",
+  "srtDone": true
+ },
+ "staketstolpsbygel_PD_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/ef1590cf05fa4b218e29863eb5bc772b/original.mp4",
+  "proofreadId": "6402f46ab11d494e8569b3eb6a07bbef-nb-nb-NO"
+ },
+ "staketstolpsbygel_PD_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/4a05f55dc0fa4265a145817228b09e61/original.mp4",
+  "proofreadId": "ea9556d1b5d641fdb4157bb6b444c268-nb-nb-NO",
+  "srtDone": true
+ },
+ "staketstolpsbygel_PD_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/f438edadd4e542be86968983530928f1/original.mp4",
+  "proofreadId": "c4f58c9c806e49a09f5614ea24e237b8-nb-nb-NO",
+  "srtDone": true
+ },
+ "staketstolpsbygel_SP_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/087db9666ff940abac5388c974bbbdfa/original.mp4",
+  "proofreadId": "8190e253ada44e59bb4bcbd38e7b22bb-nb-nb-NO",
+  "srtDone": true
+ },
+ "staketstolpsbygel_SP_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/ed9e8cd5f3b843cfb3d11c9b7a92934b/original.mp4",
+  "proofreadId": "dff564c49e1d4025bfb0a230c1af3153-nb-nb-NO"
+ },
+ "staketstolpsbygel_SP_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/81c307d4663240b0b2b80d82b25a5d9a/original.mp4",
+  "proofreadId": "63f69b307e1e4a53baa4cc5a040b7530-nb-nb-NO"
+ }
+}
