@@ -297,9 +297,11 @@ url per rad). Misslyckas uppladdningen: lista raderna som skulle skapats,
 låtsas aldrig.
 **Bildraderna genereras direkt** (`/ops-bild` steg 5–7): `node factory/ops-bild.mjs
 <nyckel> --torr`, sedan skarpt, titta på varje bild med Read-verktyget mot
-checklistan i `/ops-bild` steg 6, och `--godkann` de som håller — de går
-live 13:40 via `/ops-leverans`. Underkända stannar i Draft med `--underkann
---skal` och står i rapporten. Saknas `KIE_API_KEY`: skriv det under
+den lätta checklistan i `/ops-bild` steg 6 — **sessionen dömer, Axel
+granskar aldrig bilder** (Axels beslut 2026-09-13) — och `--godkann` de som
+håller; de går live 13:40 via `/ops-leverans`. Underkända: en omgenerering,
+sedan `--underkann --skal`; de stannar i Draft och står under varningar,
+aldrig under ACTION NEEDED. Saknas `KIE_API_KEY`: skriv det under
 varningar, raderna ligger kvar i Draft och `/ops-bild <nyckel>` tar dem senare.
 
 ### Steg 8 — Logga, rapportera, pusha

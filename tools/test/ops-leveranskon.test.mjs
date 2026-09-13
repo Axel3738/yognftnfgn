@@ -232,3 +232,22 @@ test('ommarkt: flyttad Bäverbutiks-rad får butikens prefix i målnamnet', asyn
   assert.equal(ommarkt('HeimGuard', 'HeimGuard'), 'HeimGuard');   // inget "_" — orört
   assert.equal(ommarkt('Overvakningskamera_BOF_9_1', ''), 'Overvakningskamera_BOF_9_1');
 });
+
+test('tasMedISE: To be Reviewed alltid; Creative strat review bara med butikens prefix och fil', async () => {
+  const { tasMedISE, CS_STATUS_SE } = await import('../ops-leveranskon.mjs');
+  assert.equal(CS_STATUS_SE, 'Creative strat review');
+  assert.equal(tasMedISE({ status: 'To be Reviewed', prefix_avviker: true, leverans: 'saknas' }), true);
+  assert.equal(tasMedISE({ status: 'creative strat review', prefix_avviker: false, leverans: 'drive-lank' }), true);
+  // Parkerad källrad (Rodholder_* i TackleBays hub) — Axels nej till brand-swap står.
+  assert.equal(tasMedISE({ status: 'Creative strat review', prefix_avviker: true, leverans: 'drive-lank' }), false);
+  assert.equal(tasMedISE({ status: 'Creative strat review', prefix_avviker: false, leverans: 'saknas' }), false);
+  assert.equal(tasMedISE({ status: 'Draft', prefix_avviker: false, leverans: 'notion-fil' }), false);
+  // DryTreks hub: registrets prefixfilter godtar "Damasker_…" (ärvd historik), men
+  // CS-raden måste bära brandet — Damasker_PD_10_H1 är Bäverbutikens, DryTrek_Damasker_PD_12_H1 är butikens.
+  assert.equal(tasMedISE({ namn: 'Damasker_PD_10_H1', status: 'Creative strat review', prefix_avviker: false, leverans: 'drive-lank' }, { brand: 'DryTrek' }), false);
+  assert.equal(tasMedISE({ namn: 'DryTrek_Damasker_PD_12_H1', status: 'Creative strat review', prefix_avviker: false, leverans: 'drive-lank' }, { brand: 'DryTrek' }), true);
+  assert.equal(tasMedISE({ namn: 'TackleBayRod_PD_46_H1', status: 'Creative strat review', prefix_avviker: false, leverans: 'drive-lank' }, { brand: 'TackleBay' }), true);
+  assert.equal(tasMedISE({ namn: 'Damasker_PD_10_H1', status: 'To be Reviewed', prefix_avviker: false, leverans: 'drive-lank' }, { brand: 'DryTrek' }), true);   // standardstatusen: oförändrat beteende
+  // NO-kön: standardstatusen är en annan, CS-status räknas inte där.
+  assert.equal(tasMedISE({ status: 'SE-ACTIVE to be translated', prefix_avviker: false, leverans: 'notion-fil' }, { kostatus: 'SE-ACTIVE to be translated' }), true);
+});
