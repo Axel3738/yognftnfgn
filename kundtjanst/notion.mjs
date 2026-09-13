@@ -70,13 +70,36 @@ const titelAv = (sida) => {
   return (p?.title ?? []).map((r) => r.plain_text ?? '').join('').trim();
 };
 
-/** Alla sidtitlar i en databas (paginerat). Det räcker för täckningen. */
+/** Typ-värden som är dokumentation. Allt annat i en hubb är annonser och räknas aldrig som SOP. */
+export const SOP_TYPER = /sop|guideline|riktlinje|rutin|policy|playbook/i;
+
+/** Radens Typ (select eller multi_select), eller null när databasen saknar kolumnen. */
+export function typAv(sida) {
+  const p = sida.properties?.Typ ?? sida.properties?.Type ?? null;
+  if (!p) return null;
+  if (p.type === 'select') return p.select?.name ?? '';
+  if (p.type === 'multi_select') return (p.multi_select ?? []).map((x) => x.name).join(' / ');
+  if (p.type === 'status') return p.status?.name ?? '';
+  return null;
+}
+
+/**
+ * Alla SOP-titlar i en databas (paginerat). En ren SOP-databas saknar Typ-kolumn
+ * och då räknas varje rad. Pekar brandfilen på en creative hub (mätt 2026-09-12:
+ * Bäverbutikens länk var "Creative Hub master", 215 rader varav 1 SOP) räknas
+ * bara raderna vars Typ är dokumentation — annonsraderna är inte SOP:er.
+ */
 export async function hamtaSopTitlar(databasId, alternativ = {}) {
   const ut = [];
   let cursor;
   do {
     const svar = await notion(`databases/${databasId}/query`, { method: 'POST', body: { page_size: 100, ...(cursor ? { start_cursor: cursor } : {}) }, ...alternativ });
-    for (const s of svar.results ?? []) { const t = titelAv(s); if (t) ut.push(t); }
+    for (const s of svar.results ?? []) {
+      const typ = typAv(s);
+      if (typ !== null && !SOP_TYPER.test(typ)) continue;
+      const t = titelAv(s);
+      if (t) ut.push(t);
+    }
     cursor = svar.has_more ? svar.next_cursor : null;
   } while (cursor);
   return ut;

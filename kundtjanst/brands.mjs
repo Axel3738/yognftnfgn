@@ -170,10 +170,19 @@ export function korkonfig(brand, env = process.env) {
   const shopEgen = (env[n.shop] || '').trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '');
   const shop = shopEgen || brand.shop || (nycklar.shop === brand.shop ? nycklar.shop : '');
   const perButik = (namn) => env[`${namn}_${envSuffix(brand.id)}`] ?? env[`${namn}_${brand.id}`] ?? '';
-  const adminToken = perButik('SHOPIFY_ADMIN_TOKEN');
+  // Shopify CLI:s token (atkn_…) ger ALLTID 401 mot Admin API (factory/token.mjs
+  // vet det sedan tidigare; mätt igen 2026-09-12 på Bäverbutiken i en ny
+  // container). Den räknas därför inte som token — client credentials från
+  // appen på dev.shopify.com används i stället om de finns.
+  const adminTokenRa = perButik('SHOPIFY_ADMIN_TOKEN');
+  const cliToken = /^\s*atkn_/i.test(adminTokenRa);
+  const adminToken = cliToken ? '' : adminTokenRa;
   const clientId = perButik('SHOPIFY_CLIENT_ID');
   const clientSecret = perButik('SHOPIFY_CLIENT_SECRET');
   const shopifyVag = shop && adminToken ? 'token' : shop && clientId && clientSecret ? 'client_credentials' : null;
+  const shopifySaknas = cliToken
+    ? `${n.adminToken} är en Shopify CLI-token (atkn_…) som Admin API alltid avvisar — lägg in ${n.clientId} + ${n.clientSecret} från appen på dev.shopify.com (som fabriken), eller en shpat_-token från en custom app i adminpanelen`
+    : `${n.adminToken} (eller ${n.clientId} + ${n.clientSecret})`;
 
   return {
     ...brand,
@@ -201,8 +210,9 @@ export function korkonfig(brand, env = process.env) {
       clientSecret,
       vag: shopifyVag,
       konfigurerad: Boolean(shopifyVag),
+      cliToken,
       saknas: shop
-        ? (shopifyVag ? [] : [`${n.adminToken} (eller ${n.clientId} + ${n.clientSecret})`])
+        ? (shopifyVag ? [] : [shopifySaknas])
         : [`${n.shop} (eller shop i brandfilen)`],
     },
     delade: {

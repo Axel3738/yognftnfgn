@@ -59,6 +59,15 @@ test('miljövariablerna heter samma sak för alla brands och löses per brand', 
   assert.equal(med.shopify.adminToken, '', 'grannens allmänna token används aldrig');
   const token = korkonfig(brand, { KUNDTJANST_MAIL_PASS_BETA: 'x', KUNDTJANST_MAIL_USER_BETA: 'annan@beta.se', SHOPIFY_ADMIN_TOKEN_BETA: 'shpat_1' });
   assert.equal(token.shopify.vag, 'token');
+  // Shopify CLI:s atkn_-token räknas aldrig som token (ger alltid 401 mot Admin API).
+  const cli = korkonfig(brand, { KUNDTJANST_MAIL_PASS_BETA: 'x', SHOPIFY_ADMIN_TOKEN_BETA: 'atkn_abc' });
+  assert.equal(cli.shopify.konfigurerad, false);
+  assert.equal(cli.shopify.cliToken, true);
+  assert.match(cli.shopify.saknas[0], /CLI-token \(atkn_…\)/);
+  assert.match(cli.shopify.saknas[0], /SHOPIFY_CLIENT_ID_BETA \+ SHOPIFY_CLIENT_SECRET_BETA/);
+  const cliMedApp = korkonfig(brand, { KUNDTJANST_MAIL_PASS_BETA: 'x', SHOPIFY_ADMIN_TOKEN_BETA: 'atkn_abc', SHOPIFY_CLIENT_ID_BETA: 'id', SHOPIFY_CLIENT_SECRET_BETA: 'hemlig' });
+  assert.equal(cliMedApp.shopify.vag, 'client_credentials', 'client credentials vinner över en CLI-token');
+  assert.equal(cliMedApp.shopify.adminToken, '');
   assert.equal(token.mail.user, 'annan@beta.se');
 });
 
