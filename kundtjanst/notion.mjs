@@ -20,15 +20,18 @@ export const SOP_ORD = Object.freeze({
   // ("Package missing after tracking shows delivered", "Money charged but no
   // order visible", "Wrong product delivered", "Order not arrived within …").
   chargeback_hot: ['chargeback', 'dispute', 'tvist', 'bank', 'escalat', 'angry', 'threat'],
+  // Ordningen är prioritet: första ordet som träffar en titel vinner, så det
+  // mest specifika står först ('missing' före 'not received', som annars
+  // träffar "Refund not received after approved return").
   okand_debitering: ['double charge', 'duplicate', 'unknown charge', 'charged', 'dubbel', 'debiter', 'unauthorized', 'fraud'],
-  ej_levererad: ['not received', 'never arrived', 'not arrived', 'lost', 'missing', 'shows delivered', 'returned to sender', 'ej levererad', 'försvunn', 'aldrig'],
-  fel_vara: ['wrong item', 'wrong product', 'wrong size', 'not as described', 'fel vara', 'fel storlek', 'incorrect'],
-  var_ar_ordern: ['wismo', 'where is my order', 'tracking', 'shipping status', 'delivery time', 'spårning', 'leverans'],
+  ej_levererad: ['missing', 'not arrived', 'never arrived', 'shows delivered', 'returned to sender', 'not received', 'lost', 'ej levererad', 'försvunn', 'aldrig'],
+  fel_vara: ['wrong product', 'wrong item', 'wrong size', 'not as described', 'fel vara', 'fel storlek', 'incorrect'],
+  var_ar_ordern: ['wismo', 'where is my order', 'delivery time', 'not arrived within', 'shipping status', 'tracking', 'spårning', 'leverans'],
   skadad_defekt: ['damaged', 'defective', 'broken', 'warranty', 'skadad', 'defekt', 'reklamation', 'trasig'],
   aterbetalning: ['refund', 'återbetal', 'money back'],
   avbestallning: ['cancel', 'avbeställ', 'annuller'],
   retur_angerratt: ['return', 'retur', 'ånger', 'withdrawal', 'exchange'],
-  faktura_klarna: ['klarna', 'invoice', 'faktura', 'payment'],
+  faktura_klarna: ['invoice', 'faktura', 'klarna', 'payment'],
   produktfraga: ['product question', 'faq', 'pre-sale', 'produktfråga', 'compatib', 'size guide'],
   rabatt_kod: ['discount', 'promo', 'rabatt', 'coupon', 'code'],
 });
@@ -41,7 +44,8 @@ export function sopTackning(titlar = [], kategorier = []) {
   for (const id of kategorier) {
     if (id === 'spam' || id === 'ovrigt') continue;
     const ord = SOP_ORD[id] ?? [];
-    const traff = gemener.find((t) => ord.some((o) => t.g.includes(o)));
+    let traff = null;
+    for (const o of ord) { traff = gemener.find((t) => t.g.includes(o)); if (traff) break; }
     if (traff) tackta.push({ id, sop: traff.titel });
     else saknas.push(id);
   }
