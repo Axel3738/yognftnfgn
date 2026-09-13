@@ -76,7 +76,11 @@ export function arOpsHubb(id, karta) {
  *  noll undantogs, så det syns i rapporten att spärren kördes.
  *  `idAv` säger var id:t sitter i listans objekt (default `h.id`).
  *  `logg` = null tystar (för hjälplistor som redan loggats en gång). */
-export function utanOpsHubbar(hubbar, karta, { idAv = (h) => h.id, logg = console.error } = {}) {
+export function utanOpsHubbar(hubbar, karta, {
+  idAv = (h) => h.id,
+  titelAv = (h) => h.titel ?? h.name ?? '',
+  logg = console.error,
+} = {}) {
   const bort = [];
   const kvar = [];
   for (const h of hubbar ?? []) {
@@ -84,8 +88,42 @@ export function utanOpsHubbar(hubbar, karta, { idAv = (h) => h.id, logg = consol
     if (träff) bort.push(träff.name || träff.nyckel);
     else kvar.push(h);
   }
-  if (logg) logg(loggrad(bort, karta));
+  if (logg) {
+    logg(loggrad(bort, karta));
+    for (const rad of misstankaDubbletter(kvar, karta, titelAv, idAv)) logg(rad);
+  }
   return kvar;
+}
+
+/** Jämför titel — men BARA för att larma, aldrig för att undanta.
+ *  Filtret går på id (se toppen av filen). En hub som överlevde filtret men bär
+ *  samma titel som en registrerad OPS-hub är nästan säkert en ny eller omskapad
+ *  OPS-hub vars id ingen skrivit in i registret. Då läser Bäverbutikens rutiner
+ *  den, och nästa rad i `To be Reviewed` skulle laddas upp i FEL annonskonto.
+ *  Det syns aldrig som ett fel — bara som konstig data i fel verksamhet.
+ *  *(Mätt 2026-09-13: "Carashell creative hub" 3da270ab…fbdb3fefd3b4 och
+ *  "catcabin creative hub" 3da270ab…caff35a3c895 låg på workspace-nivå medan
+ *  registret pekade på två andra id:n under OPS-teamspacens sidor. Alla fyra var
+ *  tomma, så inget läckte — men larmet fanns inte.)* */
+export function misstankaDubbletter(kvar, karta, titelAv = (h) => h.titel ?? h.name ?? '', idAv = (h) => h.id) {
+  const nyckel = (s) => String(s ?? '').toLowerCase().replace(/[^a-z0-9åäö]/gi, '');
+  const kandaTitlar = new Map();
+  for (const h of karta.values()) {
+    const n = nyckel(h.name);
+    if (n) kandaTitlar.set(n, h);
+  }
+  const ut = [];
+  for (const h of kvar ?? []) {
+    const träff = kandaTitlar.get(nyckel(titelAv(h)));
+    if (!träff) continue;
+    ut.push(
+      `⚠️ OPS-HUB UTAN REGISTRERING: "${titelAv(h)}" ${idAv(h)} har samma namn som ` +
+      `${träff.nyckel} (registrerat id ${träff.id}) men ett ANNAT id — den läses därför ` +
+      `av Bäverbutikens rutiner och skulle laddas upp i fel annonskonto. ` +
+      `Rätta med: node factory/register.mjs notion ${träff.nyckel} <rätt id>`,
+    );
+  }
+  return ut;
 }
 
 /** Loggraden: "OPS-hubbar undantagna: N (namn…)". */
