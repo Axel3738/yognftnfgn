@@ -76,6 +76,11 @@ härleds ur brand-id:t (`tacklebay` → `TACKLEBAY`, `my-shop` → `MY_SHOP`):
 
 `node kundtjanst/setup.mjs` skriver ut exakt vilka som saknas, per brand.
 
+Heter Shopify-nycklarna något annat än `<ID>` — Bäverbutiken har en egen app bara
+för kundtjänsten, `SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER` (Axels namn
+2026-09-13) — sätt `shopify.env_suffix` i brandfilen. Bara Shopify-namnen byter
+svans; mejlens `KUNDTJANST_MAIL_PASS_<ID>` heter alltid som brandet.
+
 ## Köra på ett annat Claude-konto (samma repo, andra brands)
 
 Det här är hela poängen med upplägget: koden är densamma, bara nycklarna och

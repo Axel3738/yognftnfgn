@@ -26,6 +26,12 @@ discord:
   server: "Bäverbutiken"
   kanal: customer-service
 
+shopify:
+  # Axels namn på nycklarna (2026-09-13): appen på dev.shopify.com för
+  # kundtjänstrutinen heter "emailscraper" i Environments —
+  # SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER + SHOPIFY_CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER.
+  env_suffix: "BAVERBUTIKEN_EMAILSCRAPER"
+
 notion:
   # VA:ns SOP-databas, länken Axel gav 2026-09-12 (app.notion.com/p/36f270ab…).
   sop_database_id: "36f270ab-908c-803b-8949-ff2326f4f76c"
