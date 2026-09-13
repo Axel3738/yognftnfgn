@@ -473,6 +473,31 @@ export function byggRapport(rakningar, meta = {}) {
  * aldrig ärva en svensk systerannons dom: den norska är oläst, och oläst är
  * aldrig ren. (Det var precis så de 13 norska videorna såg "rena" ut.)
  */
+/** Brand-detektorns filer, en per marknad. Ordningen spelar roll bara för
+ *  vilket `kalla`-block som blir kvar; domarna slås ihop oavsett. */
+export const DETEKTORFILER = Object.freeze(['brand-detektor.json', 'brand-detektor-no.json']);
+
+/**
+ * Slår ihop brand-detektorns marknadsfiler till EN uppsättning domar.
+ *
+ * ⚠️ Räkningen läste bara `brand-detektor.json`. De norska domarna låg färdiga
+ * i `brand-detektor-no.json` men nådde aldrig fram, så alla 47 norska annonser
+ * räknades som "odömd — brand-detektorn har inte läst annonsen" (mätt
+ * 2026-09-13, FjordCover: NO gick från 0 förväntade till 44 när filen lästes).
+ *
+ * Sammanslagningen är säker eftersom domar slås upp på EXAKT annonsnamn och
+ * marknadernas prefix skiljer sig (Batmotor_ mot Batmotortrekk_NO_) — regeln
+ * "en norsk annons ärver aldrig sin svenska systers dom" står kvar orörd.
+ *
+ * @param {Array<object|null>} filer Inlästa JSON-objekt, null för de som saknas.
+ * @returns {object|null} { ...första filen, annonser: [alla] }, eller null.
+ */
+export function slåIhopDetektorer(filer = []) {
+  const funna = (filer ?? []).filter(Boolean);
+  if (!funna.length) return null;
+  return { ...funna[0], annonser: funna.flatMap((d) => d.annonser ?? []) };
+}
+
 export function samlaKallor({ brandDetektor = null, kallannonser = null, kallkonto = null } = {}) {
   const domPerNamn = new Map();
   for (const a of brandDetektor?.annonser ?? []) {
@@ -617,7 +642,23 @@ async function kör() {
   }
 
   const utMapp = join(ROT, 'output', butikId);
-  const brandDetektor = läsJson(join(utMapp, 'brand-detektor.json'));
+
+  // ⚠️ Brand-detektorn skriver EN fil per marknad: brand-detektor.json (SE) och
+  // brand-detektor-no.json (NO, från --marknad NO). Räkningen läste bara den
+  // första, så de norska domarna fanns på disk men nådde aldrig hit: alla 47
+  // norska annonser räknades som "odömd — brand-detektorn har inte läst
+  // annonsen" trots en färdig NO-körning (mätt 2026-09-13, FjordCover).
+  //
+  // Samma familj av fel som de två andra samma dag — den norska halvan
+  // försvinner tyst — och exakt det kommandots steg 2 varnar för: "Har du bara
+  // läst det svenska kontot: du är halvvägs, inte färdig."
+  //
+  // Domarna slås ihop till EN lista. Det är säkert just för att uppslaget sker
+  // på exakt annonsnamn (samlaKallor: "en norsk annons ärver aldrig sin svenska
+  // systers dom") och prefixen skiljer sig — Batmotor_ mot Batmotortrekk_NO_.
+  const brandDetektor = slåIhopDetektorer(
+    DETEKTORFILER.map((f) => läsJson(join(utMapp, f))),
+  );
   const kallannonser = läsJson(join(utMapp, 'kallannonser.json'));
   if (!brandDetektor && !kallannonser) {
     console.error(`✗ Varken brand-detektor.json eller kallannonser.json finns i factory/output/${butikId}/.`);

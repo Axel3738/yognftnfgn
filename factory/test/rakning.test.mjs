@@ -20,6 +20,7 @@ import {
   filtreraUppladdade,
   DOMAR,
   LADDAS_UPP,
+  slåIhopDetektorer,
 } from '../rakning.mjs';
 
 // ---- namnmatchning -----------------------------------------------------------
@@ -421,4 +422,41 @@ test('utan orsak står det fortfarande att den MÅSTE namnges', () => {
   });
   assert.equal(r.saknade.length, 1);
   assert.match(r.saknade[0].orsak, /orsak saknas — måste namnges/);
+});
+
+// ------------------------------------------- båda marknadernas domar räknas
+//
+// Mätt 2026-09-13 (FjordCover): brand-detektorn skriver EN fil per marknad —
+// brand-detektor.json (SE) och brand-detektor-no.json (NO). Räkningen läste
+// bara den första, så de norska domarna fanns på disk men nådde aldrig fram:
+// alla 47 norska annonser räknades som "odömd" och NO fick "noll förväntade
+// annonser". Efter fixen: 44 förväntade. Samma familj av fel som de två andra
+// samma dag — den norska halvan försvinner tyst.
+
+test('slåIhopDetektorer slår ihop SE- och NO-domarna', () => {
+  const se = { kalla: { annonskonto: '1867947880635861' }, annonser: [{ annons: 'Batmotor_SP_1_H1', dom: 'ren' }] };
+  const no = { kalla: { annonskonto: '1050941584152547' }, annonser: [{ annons: 'Batmotortrekk_NO_SP_1_H1', dom: 'bara-copy' }] };
+  const ut = slåIhopDetektorer([se, no]);
+  assert.equal(ut.annonser.length, 2);
+  assert.deepEqual(ut.annonser.map((a) => a.annons).sort(), ['Batmotor_SP_1_H1', 'Batmotortrekk_NO_SP_1_H1']);
+});
+
+test('slåIhopDetektorer klarar att NO-filen saknas', () => {
+  const se = { annonser: [{ annons: 'Batmotor_SP_1_H1', dom: 'ren' }] };
+  assert.equal(slåIhopDetektorer([se, null]).annonser.length, 1);
+});
+
+test('slåIhopDetektorer ger null när ingen fil finns', () => {
+  assert.equal(slåIhopDetektorer([null, null]), null);
+  assert.equal(slåIhopDetektorer([]), null);
+});
+
+test('en norsk annons ärver aldrig sin svenska systers dom', () => {
+  // Namnen skiljer sig genom prefixet, så sammanslagningen kan inte korsa dem.
+  const ihop = slåIhopDetektorer([
+    { annonser: [{ annons: 'Batmotor_CS_2_1', dom: 'ren' }] },
+    { annonser: [{ annons: 'Batmotortrekk_NO_CS_2_1', dom: 'odömd' }] },
+  ]);
+  const norsk = ihop.annonser.find((a) => a.annons.startsWith('Batmotortrekk'));
+  assert.equal(norsk.dom, 'odömd', 'den norska ska behålla sin egen dom');
 });
