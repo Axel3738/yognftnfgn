@@ -33,6 +33,8 @@ shopify:
   env_suffix: "BAVERBUTIKEN_EMAILSCRAPER"
 
 notion:
-  # VA:ns SOP-databas, länken Axel gav 2026-09-12 (app.notion.com/p/36f270ab…).
-  sop_database_id: "36f270ab-908c-803b-8949-ff2326f4f76c"
+  # VA:ns SOP-databas "Customer support bäverbutiken" (47 rader, kolumnen
+  # Kategori: Payment, Delivery, Return and Refund …), länken Axel gav 2026-09-13.
+  # (Den första länken 2026-09-12, 36f270ab…, var redigerarnas Creative Hub master.)
+  sop_database_id: "3aa270ab-908c-8057-a8a0-cc691d9e956b"
   rapport_database_id: ""
