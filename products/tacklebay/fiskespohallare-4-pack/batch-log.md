@@ -222,3 +222,24 @@ CLAUDE.md-regeln från 2026-09-12 — de rörs aldrig av den här rutinen.
 Discord: `#annons-uppladdning` på TackleBay — OPS (meddelande
 `1548680904203964420`), ingen ping. Kö-JSON:
 `factory/output/tacklebay/leverans-2026-09-13.json`.
+
+---
+
+## Översättning NO — 2026-09-13 16:08 (`/ops-oversatt tacklebay/fiskespohallare-4-pack`, körning nr 2)
+
+Kön `SE-ACTIVE to be translated`: **1 rad** — `TackleBayRod_PD_46_H1` (batch #2, live i SE 13:05 samma dag).
+→ **`TackleBayRod_NO_PD_46_H1` live** i `TACKLEBAY_NO_Spöhållaren` adset PD, annons `120249076557290172`,
+tillbakaläst ACTIVE / effective IN_PROCESS (videon bearbetades). Notion-raden → `Approved` med kommentar
+och `Translated url`.
+
+Så gjordes den: 9:16-filen (1080×1920, den som gick live i SE) → HeyGen proofread visade att redigeraren
+lagt en **svensk voiceover** trots briefens "captions utan VO" (transkript: "En hand, två klick. Låst.
+Svampen låser utan att repa. Fyra pack, tvåhundraåttionio kronor. Ångerrätt"). En render (bokmål,
+röstklon, SRT-block 1 = 1) → `no-precis.py` bytte de 9 inbrända captions på plats (piller hittat i
+121 av 123 frames) → `rostkoll.py` ✅. Norsk VO **utan pris** (inget NOK-pris finns), captionen
+behåller "289 kr." i SEK som NO-sidan. Ads Manager-copy utan pris, länk ärvd från `/nb`.
+HeyGen 8 446 → 8 435 credits. 4:5-filen i Drive-mappen översattes inte.
+Notering: `ops-leveranskon.mjs --ut` hämtade `_1.mp4` (4:5) som `fil` fast SE-annonsen bär `_2.mp4`
+(9:16) — valdes för hand efter ffprobe. Miljön saknade ffmpeg/ffprobe; `apt-get install ffmpeg` löste det.
+Batchfiler: `market-expansion/ops/tacklebay/2026-09-13/`. Discord: `#annons-uppladdning` på
+TackleBay — OPS (meddelande 1548707507927785593), ingen ping.
