@@ -363,3 +363,14 @@ om butiken startas om, och skriv aldrig att de "inte fungerade".
 (Axel 2026-09-11) och har alltså lägre BE-CPA än SE:s 323 kr, men talet är aldrig uträknat
 i repot. NO spenderade mer än SE (3 137 mot 2 799 kr) och gav färre köp. Räkna NO:s
 break-even innan någon ny norsk kampanj byggs för den här produkten.
+
+---
+
+## Körning nr 5 — 2026-09-14, nattvakten (ingen briefdag)
+
+Budgetronden läste kampanjen som **PAUSED/PAUSED** (Axels paus 13/9) och rörde
+ingenting — inga ändringar, ingen loggrad. 7d: 2 834 kr, 5 köp, ROAS 1,18.
+Ingen brief (måndag). Discord `#ads`: budgetrapport + den öppna ägarfrågan
+(A pausa nattvakten / B låt Jazz göra klart / C lägg ner) ställd igen med ping.
+Nästa briefdag ons 16/9 beställer 21 briefer till om inget svar kommit —
+kadensen sänks inte av en session.
