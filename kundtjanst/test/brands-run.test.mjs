@@ -68,6 +68,21 @@ test('miljövariablerna heter samma sak för alla brands och löses per brand', 
   const cliMedApp = korkonfig(brand, { KUNDTJANST_MAIL_PASS_BETA: 'x', SHOPIFY_ADMIN_TOKEN_BETA: 'atkn_abc', SHOPIFY_CLIENT_ID_BETA: 'id', SHOPIFY_CLIENT_SECRET_BETA: 'hemlig' });
   assert.equal(cliMedApp.shopify.vag, 'client_credentials', 'client credentials vinner över en CLI-token');
   assert.equal(cliMedApp.shopify.adminToken, '');
+});
+
+test('shopify.env_suffix i brandfilen byter Shopify-namnens svans, aldrig mejlens', () => {
+  const brand = brandUrEgenfil(lasYaml('brand:\n  namn: "Beta"\n  supportmail: "hello@beta.se"\n  shop: "beta-2.myshopify.com"\nshopify:\n  env_suffix: "beta-emailscraper"\n'), 'beta');
+  assert.equal(brand.shopify.env_suffix, 'beta-emailscraper');
+  const k = korkonfig(brand, { KUNDTJANST_MAIL_PASS_BETA: 'x', SHOPIFY_CLIENT_ID_BETA_EMAILSCRAPER: 'id', SHOPIFY_CLIENT_SECRET_BETA_EMAILSCRAPER: 'hemlig', SHOPIFY_CLIENT_ID_BETA: 'fel', SHOPIFY_CLIENT_SECRET_BETA: 'fel' });
+  assert.equal(k.envNamn.clientId, 'SHOPIFY_CLIENT_ID_BETA_EMAILSCRAPER');
+  assert.equal(k.envNamn.mailPass, 'KUNDTJANST_MAIL_PASS_BETA');
+  assert.equal(k.shopify.vag, 'client_credentials');
+  assert.equal(k.shopify.clientId, 'id', 'svansen i brandfilen vinner över brand-id:t');
+  assert.equal(k.mail.konfigurerad, true);
+  const utan = korkonfig(brand, { KUNDTJANST_MAIL_PASS_BETA: 'x' });
+  assert.match(utan.shopify.saknas[0], /SHOPIFY_ADMIN_TOKEN_BETA_EMAILSCRAPER \(eller SHOPIFY_CLIENT_ID_BETA_EMAILSCRAPER \+ SHOPIFY_CLIENT_SECRET_BETA_EMAILSCRAPER\)/);
+  assert.equal(envNamn('beta').clientId, 'SHOPIFY_CLIENT_ID_BETA');
+  assert.equal(envNamn('beta', 'Beta-Emailscraper').clientSecret, 'SHOPIFY_CLIENT_SECRET_BETA_EMAILSCRAPER');
   assert.equal(token.mail.user, 'annan@beta.se');
 });
 

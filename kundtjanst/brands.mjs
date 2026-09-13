@@ -87,6 +87,9 @@ export function brandUrEgenfil(b, id) {
     discord: b?.discord ?? {},
     notion: b?.notion ?? {},
     trosklar: b?.trosklar ?? {},
+    // shopify.env_suffix: när Shopify-nycklarna heter något annat än <ID>
+    // (Axels val 2026-09-13: SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER).
+    shopify: b?.shopify ?? {},
   };
 }
 
@@ -112,7 +115,7 @@ export function upptackBrands({ fabrik = FABRIKENS_BUTIKER, egna = EGNA_BRANDS }
     if (id === 'testbutiken') continue;
     let b;
     try { b = lasYaml(readFileSync(join(fabrik, f), 'utf8')); } catch { continue; }
-    karta.set(id, { ...brandUrButiksfil(b, id), aktiv: true, mail: {}, discord: {}, notion: {}, trosklar: {} });
+    karta.set(id, { ...brandUrButiksfil(b, id), aktiv: true, mail: {}, discord: {}, notion: {}, trosklar: {}, shopify: {} });
   }
   for (const f of yamlFiler(egna)) {
     const id = basename(f, '.yaml');
@@ -125,28 +128,35 @@ export function upptackBrands({ fabrik = FABRIKENS_BUTIKER, egna = EGNA_BRANDS }
     if (!bas) { karta.set(id, egen); continue; }
     karta.set(id, {
       ...bas,
-      ...Object.fromEntries(Object.entries(egen).filter(([k, v]) => !(v === '' || v === undefined) && !['mail', 'discord', 'notion', 'trosklar', 'kalla'].includes(k))),
+      ...Object.fromEntries(Object.entries(egen).filter(([k, v]) => !(v === '' || v === undefined) && !['mail', 'discord', 'notion', 'trosklar', 'shopify', 'kalla'].includes(k))),
       kalla: `${bas.kalla} + kundtjanst/brands`,
       mail: { ...bas.mail, ...egen.mail },
       discord: { ...bas.discord, ...egen.discord },
       notion: { ...bas.notion, ...egen.notion },
       trosklar: { ...bas.trosklar, ...egen.trosklar },
+      shopify: { ...(bas.shopify ?? {}), ...egen.shopify },
     });
   }
   return [...karta.values()].map(medStandard).sort((a, b) => a.id.localeCompare(b.id));
 }
 
-/** Namnen på miljövariablerna för ett brand — det setup skriver ut. */
-export function envNamn(id) {
+/**
+ * Namnen på miljövariablerna för ett brand — det setup skriver ut.
+ * `shopifySuffix` (brandfilens `shopify.env_suffix`) byter bara Shopify-namnens
+ * svans: `BAVERBUTIKEN_EMAILSCRAPER` ⇒ SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER.
+ */
+export function envNamn(id, shopifySuffix = null) {
   const s = envSuffix(id);
+  const sh = shopifySuffix ? envSuffix(String(shopifySuffix)) : s;
   return {
     mailPass: `KUNDTJANST_MAIL_PASS_${s}`,
     mailUser: `KUNDTJANST_MAIL_USER_${s}`,
     mailHost: `KUNDTJANST_MAIL_HOST_${s}`,
-    shop: `SHOPIFY_SHOP_${s}`,
-    adminToken: `SHOPIFY_ADMIN_TOKEN_${s}`,
-    clientId: `SHOPIFY_CLIENT_ID_${s}`,
-    clientSecret: `SHOPIFY_CLIENT_SECRET_${s}`,
+    shop: `SHOPIFY_SHOP_${sh}`,
+    adminToken: `SHOPIFY_ADMIN_TOKEN_${sh}`,
+    clientId: `SHOPIFY_CLIENT_ID_${sh}`,
+    clientSecret: `SHOPIFY_CLIENT_SECRET_${sh}`,
+    shopifySuffix: sh,
   };
 }
 
@@ -156,7 +166,7 @@ export function envNamn(id) {
  * bara run.mjs läser — logga aldrig objektet rakt av.
  */
 export function korkonfig(brand, env = process.env) {
-  const n = envNamn(brand.id);
+  const n = envNamn(brand.id, String(brand.shopify?.env_suffix ?? '').trim() || null);
   const m = brand.mail ?? {};
   const user = (env[n.mailUser] || m.user || brand.supportmail || '').trim();
   const host = (env[n.mailHost] || m.host || LOOPIA_IMAP.host).trim();
@@ -169,7 +179,7 @@ export function korkonfig(brand, env = process.env) {
   // allmänna används bara om den pekar på just det här brandets domän.
   const shopEgen = (env[n.shop] || '').trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '');
   const shop = shopEgen || brand.shop || (nycklar.shop === brand.shop ? nycklar.shop : '');
-  const perButik = (namn) => env[`${namn}_${envSuffix(brand.id)}`] ?? env[`${namn}_${brand.id}`] ?? '';
+  const perButik = (namn) => env[`${namn}_${n.shopifySuffix}`] ?? env[`${namn}_${brand.id}`] ?? '';
   // Shopify CLI:s token (atkn_…) ger ALLTID 401 mot Admin API (factory/token.mjs
   // vet det sedan tidigare; mätt igen 2026-09-12 på Bäverbutiken i en ny
   // container). Den räknas därför inte som token — client credentials från
