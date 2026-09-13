@@ -161,7 +161,7 @@ Pris hämtat från drytrek.se 2026-09-12: 389 kr (jämför 649 kr).
 | 4 | `DryTrek_Damasker_PD_12_1` | bild | variant | PD_1 | format: video → statisk trestegsbild (krok/rem/kardborre) | CTR ≥ 1,5 %, CPA < 243 kr; ärvt mönster 4 (bilderna fick aldrig chansen) | fable |
 | 5 | `DryTrek_Damasker_SP_7_H1` | video | koncept | ärvd SP_2-rad "Jag testade de här på hundpromenaden i morse" (1 360 kr, −145 kr vinstbidrag) — **svag källa, hypotes** | — | hook rate ≥ 31,2 % (SP_2), CPA < 243 kr | sonnet |
 | 6 | `DryTrek_Damasker_PD_13_H1` | video | koncept | ⚠️ **gissning** — Axels vinkel nr 2 ("testet"), 0 kr data | — | hold ≥ 22,8 %, CPA < 243 kr. Kräver ny film — filmas på riktigt eller görs inte | fable |
-| 7 | `DryTrek_Damasker_FO_2_H1` | video | koncept | ⚠️ **gissning** — Axels vinkel nr 3 (före/efter), FO_1_H1 49 kr/0 köp | — | CTR ≥ 2,44 % (PD_1), CPA < 243 kr. Kräver ny film | sonnet |
+| 7 | `DryTrek_Damasker_FO_2_H1` | video | koncept | ⚠️ **gissning** — Axels vinkel nr 3 (före/efter), FO_1_H1 49 SEK/0 purchases | — | CTR ≥ 2,44 % (PD_1), CPA < 243 kr. Kräver ny film | sonnet |
 
 Copy-A/B: 4 fable (1, 2, 4, 6) / 3 sonnet (3, 5, 7). Avvikelse från
 "varannan": PD_12_H1/H2 delar manus med flit — bara hooken får skilja, och
@@ -648,3 +648,15 @@ moderation by our team"` — HeyGens MANUELLA granskning, inte ett renderingsfel
 Raden står kvar i `SE-ACTIVE to be translated` med kommentar, så nästa körning
 tar den när modereringen släpper. Den norska texten är redan skriven och
 verifierad; bara renderingen saknas.
+
+---
+
+## Nattvakten 2026-09-14 (körning nr 3, ingen briefdag)
+
+Kampanjen 5 dagsrader: **3 623 kr, 7 köp, ROAS 0,83** (7d); 3d 2 751 kr / 5 köp / 0,81.
+Dygn: 09-09 16 SEK/0 purchases · 09-10 856 SEK/2 purchases · 09-11 788 SEK/0 purchases · 09-12 1123 SEK/3 purchases · 09-13 840 SEK/2 purchases. **Förlustserie 5 dygn i rad → −30 %: 700 → 500 kr (golvet).**
+Tillbakaläst, loggrad. Inga annonspauser: 39 annonser i kampanjen, de 23 nya
+(13/9) alla under grinden. `PD_2_1` stod PAUSED vid avläsningen (444 kr, 0 köp)
+— pausad dagtid av någon annan, ett beslut, orörd. PD-golvet 300 kr (Axel 13/9)
+syns: PD_1 21 → 134 kr på ett dygn. Trenden vänder uppåt (0,56 → 0,83) men
+ligger under break-even 1,60. Utfall per annons läses på onsdag 16/9.
