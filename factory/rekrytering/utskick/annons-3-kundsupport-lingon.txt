@@ -15,12 +15,12 @@ General questions about the brand.
 
 The emails are boring. The job is not. Here is what a normal day actually looks like:
 
-Open the inboxes. Look each order up in Shopify. Find the tracking. Reply in the customer's language using [TRANSLATION TOOL], following our reply guide.
+Open the inboxes. Look each order up in Shopify. Find the tracking. Reply in the customer's language using DeepL, following our reply guide.
 When tracking has been dead for a week, you do not tell the customer "please wait." You message our shipping agents in China, get an answer, and then tell the customer what is actually happening and when.
 When a customer opens a dispute with their bank, you collect the evidence — order, tracking, delivery proof, your email thread — and submit it to the payment provider. Before the deadline. Without being reminded.
 When the same problem shows up three times in one week, you write it down and tell us. Once, with numbers.
 
-The tools: Shopify admin, email, [TRANSLATION TOOL], the carriers' tracking pages, the payment provider's dispute portal, and a chat with our China agents. We teach you all of it in week one.
+The tools: Shopify admin, email, DeepL, the carriers' tracking pages, the payment provider's dispute portal, and a chat with our China agents. We teach you all of it in week one.
 
 
 THE ONE THING THIS JOB IS REALLY ABOUT
@@ -35,7 +35,7 @@ What I need from you: A yes or a no.
 
 That is the whole job in four lines. Anyone can answer "where is my order" when the tracking works. I am hiring the person who knows what to do when it doesn't — and who decides first and asks second.
 
-Quick question, and I mean it: a customer writes in Danish, and the translation tool is down for the whole day. What do you do? Put your answer on the very last line of your application, after everything else. You'll see why below.
+Quick question, and I mean it: a customer writes in Danish, and DeepL is down for the whole day. What do you do? Put your answer on the very last line of your application, after everything else. You'll see why below.
 
 
 WHAT WE ACTUALLY CARE ABOUT, IN THIS EXACT ORDER
@@ -45,17 +45,13 @@ WHAT WE ACTUALLY CARE ABOUT, IN THIS EXACT ORDER
 4. You stay. We are building a team, not renting an assistant for two months.
 5. Your English and your tone are good enough — and get better.
 
-Notice that skill is fifth on this list. That is not a mistake. We can teach you our brands, our reply guide, our shipping, our tone — we have a whole system for it, and the person who reads this carefully and types "lingon" as the first word of the subject line when applying is already showing me the exact trait I'm hiring for. It is not mentioned in the subject line structure below, but it is supposed to be the first word, then the structure. What we cannot teach is a person who opens the inbox at the same time every day for the next two years, weekends included, and who would rather make a decision than wait for one.
+Notice that skill is fifth on this list. That is not a mistake. We can teach you our brands, our reply guide, our shipping, our tone — we have a whole system for it, and the person who reads this carefully and types "lingon" as the first word of the subject line when applying is already showing me the exact trait I'm hiring for. It is not mentioned in the subject line structure below, but it is supposed to be the first word, then the structure. What we cannot teach is a person who opens the inbox every single day for the next two years, weekends included, and who would rather make a decision than wait for one.
 
 
 HOURS — READ THIS PART HONESTLY
-Every day, 7 days a week. About 1–2 hours per day, inside 10:00–17:00 Swedish time. If you are in the Philippines, that window is 16:00–23:00 (17:00–00:00 in winter). You pick a fixed daily slot inside it, and we lock it together before you start. Weekends are usually lighter. They are never optional.
+This is work on demand. There is no fixed shift and no fixed number of hours. The rule is simpler than that: the inbox is cleared every day, 7 days a week, inside 10:00–17:00 Swedish time. If you are in the Philippines, that window is 16:00–23:00 (17:00–00:00 in winter). You decide when inside it. Some days that takes 30 minutes. Some days it takes 2 hours. Weekends are usually lighter. They are never optional.
 
-Hours grow on a schedule, not on a promise:
-
-Start: 1–2 hours per day.
-After 2 months with zero missed days: up to 4 hours per day.
-When we open the next brand to you: 5–8 hours per day.
+You log the hours you actually work, and you are paid for them. Right now that is roughly 1–2 hours a day. More hours come with more brands and more tasks, on demand, not on a schedule. For the person who clears the inbox every single day, this grows towards 5–8 hours a day. That is a direction, not a promise, and I'd rather say so.
 
 If you cannot open the inbox every single day, including weekends, do not apply. That is the entire job.
 
@@ -74,7 +70,7 @@ Every step is automatic if you are still clearing the inbox every day. It goes i
 
 On top of that: a $20 USD consistency bonus every month you open the inbox on every single day with zero missed days. This is the easiest money in the job, and it is entirely within your control.
 
-You are paid for the hours in your slot, not for counting emails. Some days the inbox is six emails. Some days it is forty and a dispute deadline. You get paid for clearing the day.
+You are paid for the hours you actually work, not for counting emails. Some days the inbox is six emails and thirty minutes. Some days it is forty emails and a dispute deadline. Either way, the day is cleared.
 
 
 WHAT COUNTS AS DONE
@@ -133,13 +129,13 @@ Do not attach a generic CV. It will not be read.
 THE THREE STAGES
 Stage 1 — The application above. Takes 25 minutes if you're serious. Most people won't do it.
 
-Stage 2 — The inbox test. Unpaid. If your application is sharp, I send you five real customer emails (names removed) in three languages, our reply guide, and access to the translation tool. You return five replies within 24 hours. One of the five has no answer in the guide. I am watching what you do with that one: guess, ask a smart question, or find it. I am not grading style. I am grading: did you follow the guide exactly, did you deliver on time, and did you decide before you asked. This is a real preview of the daily job.
+Stage 2 — The inbox test. Unpaid. If your application is sharp, I send you five real customer emails (names removed) in three languages, our reply guide, and access to DeepL. You return five replies within 24 hours. One of the five has no answer in the guide. I am watching what you do with that one: guess, ask a smart question, or find it. I am not grading style. I am grading: did you follow the guide exactly, did you deliver on time, and did you decide before you asked. This is a real preview of the daily job.
 
 Stage 3 — Paid trial week on one brand's live inbox. Real customers, real China agents, real feedback. This is where the seat is won.
 
 
 WHAT YOU GET IF YOU WIN IT
-One company, several brands, the same people every day. A fixed daily slot you choose. Pay on time, twice a month, without ever having to ask. Hours that grow on a schedule you can see, and a rate that grows with them. Someone who tells you exactly what's wrong in one sentence so you can fix it and get better fast.
+One company, several brands, the same people every day. You choose when you work inside the window. Pay on time, twice a month, without ever having to ask. A rate that grows on a schedule you can see, and hours that grow with the work. Someone who tells you exactly what's wrong in one sentence so you can fix it and get better fast.
 
 And a real path. Once the inbox has been cleared every day for months, the next tasks are real: finding products, searching for ad videos, writing ad copy, product descriptions, talking to UGC creators and influencers. We train you for them. But that comes after, not instead.
 

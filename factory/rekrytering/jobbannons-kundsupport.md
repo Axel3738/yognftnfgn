@@ -4,7 +4,7 @@
 okänt (troligen OnlineJobs.ph som redigerarannonsen). Codewordet i den är
 `apple`, synligt i jobbeskrivningen.
 **Ramverket:** `FILTER-RAMVERKET.md`. **Förlagan:** `jobbannons-video-editor.md`.
-**Annonsen är färdigskriven** (`utskick/annons-3-kundsupport-lingon.txt`) men INTE utskickad — lönetrappan beslutad 2026-09-13, tre beslut väntar på Axel.
+**Annonsen är färdigskriven** (`utskick/annons-3-kundsupport-lingon.txt`) men INTE utskickad. Alla beslut tagna 2026-09-13 — den väntar bara på Axels "skicka".
 
 ---
 
@@ -32,11 +32,10 @@ säljargument är "no night shift". Fönstret 10–17 svensk tid är 16–23 i M
 
 ---
 
-## Beslut som väntar på Axel innan annonsen går ut
+## Besluten (alla tagna av Axel 2026-09-13)
 
 Annonsen är färdigskriven och klistringsklar i
-`utskick/annons-3-kundsupport-lingon.txt`. Lönetrappan är beslutad; tre
-saker är fortfarande förslag:
+`utskick/annons-3-kundsupport-lingon.txt`:
 
 1. **Lönetrappan — BESLUTAD av Axel 2026-09-13:** $2.50/h start → $3.00
    efter 1 mån → $3.50 efter 3 mån → $4.00 efter 6 mån, automatisk. I USD,
@@ -44,14 +43,16 @@ saker är fortfarande förslag:
    redigerarnas nivå ($520/mån ≈ $2.5/h) redan efter första månaden — det
    är poängen: filtret hittar den bästa i poolen, och poolen bestäms av
    lönen.
-2. **Consistency-bonus** $20/mån vid noll missade dagar. Förslag (mitt
-   förslag 200 kr omräknat till dollar så annonsen har en valuta). Med
-   1–2 h/dag är månadslönen $75–150 vid start, så $20 är 13–27 % — stort
-   nog att styra beteendet, litet nog att inte kosta.
-3. **Timtrappan:** 1–2 h → upp till 4 h efter 2 månader utan missad dag →
-   5–8 h "när nästa brand öppnas för dig". Förslag.
-4. **Översättningsverktyget** heter inget i originalet (`----------`).
-   Byt ut `[TRANSLATION TOOL]` på två ställen i txt-filen (steg 2 säger bara "the translation tool").
+2. **Consistency-bonus $20/mån** vid noll missade dagar — OK från Axel.
+   Med 1–2 h/dag är månadslönen $75–150 vid start, så $20 är 13–27 % —
+   stort nog att styra beteendet, litet nog att inte kosta.
+3. **Inga fasta timmar — work on demand** (Axels besked). Timtrappan jag
+   föreslog är struken. Annonsen säger: inkorgen töms varje dag inom 10–17
+   svensk tid, VA:n loggar de timmar hen faktiskt jobbar och får betalt för
+   dem, ca 1–2 h/dag nu, växer mot 5–8 h med fler brands och uppgifter —
+   "a direction, not a promise".
+4. **Översättningsverktyget är DeepL.** Står på fyra ställen i annonsen,
+   inklusive den gömda frågan ("DeepL is down for the whole day").
 
 Codewordet är `lingon` (skrivet i listan i `jobbannons-video-editor.md`).
 Kanal: samma som redigerarannonsen, OnlineJobs.ph, om Axel inte säger annat.
@@ -68,7 +69,7 @@ självständighet**, inte bara instruktionsföljsamhet.
 | Del i annonsen | Vad den testar | Nytt jämfört med redigerarannonsen |
 |---|---|---|
 | "The one thing this job is really about" + fyrradersformatet (problem / vad jag gjort / vad jag föreslår / vad jag behöver) | sätter standarden för självständighet INNAN de söker, med ett exempel | nytt. Redigerarannonsen har ingen motsvarighet, för redigeraren får en lista varje morgon. VA:n får det inte |
-| Den gömda frågan ("dansk kund, verktyget nere hela dagen — vad gör du?") mitt i texten, svaret ska stå sist | läser hela texten (som codewordet) OCH tänker själv. Två saker på en rad | nytt. Ett andra gömt test, men ett som kräver ett beslut, inte bara ett ord |
+| Den gömda frågan ("dansk kund, DeepL nere hela dagen — vad gör du?") mitt i texten, svaret ska stå sist | läser hela texten (som codewordet) OCH tänker själv. Två saker på en rad | nytt. Ett andra gömt test, men ett som kräver ett beslut, inte bara ett ord |
 | Codeword `lingon` gömt i prioritetsstycket | läser hela texten | samma mekanik |
 | Ämnesrad: `lingon \| flest mejl på en dag \| år i Shopify admin \| h/dag \| dagar/vecka \| hastighet` | sorterbar inkorg, radera oläst | fälten bytta till rollens |
 | Prioritetsordning med fem punkter, "decide first, ask second" som nr 3 | accepterar att självständighet står över skicklighet | en punkt till |
@@ -115,7 +116,7 @@ Rött direkt: "please wait", "we will look into it" utan att be om något,
 | +1 | "What I already did" innehåller något konkret som inte stod i uppgiften (kollat carrier-sidan själv, pingat agenten en andra gång, kollat om andra ordrar i samma batch rör sig) |
 | +1 | "What I need from you" är litet: ett ja/nej, en gräns i kronor — inte "tell me how to handle this" |
 
-### Last line (dansk kund, verktyget nere)
+### Last line (dansk kund, DeepL nere)
 
 | Poäng | Kriterium |
 |---|---|
