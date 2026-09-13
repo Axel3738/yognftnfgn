@@ -194,7 +194,7 @@
     },
     "store-ready": {
       "klar": false,
-      "manuell": "recensioner batmotorskyddet: ingen Judge.me-token (env JUDGEME_FJORDCOVER_TOKEN) — ladda upp output/batmotorskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · WeTracked: klistra in pixel-id 1774648277117873 (VA:ns klick) · Discord: boten kan inte skapa servrar — VA:n skapar \"FjordCover — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/fjordcover.yaml skriver ut länken) och kör sen node factory/store-ready.mjs fjordcover --guild <server-id>",
+      "manuell": "recensioner batmotorskyddet: ingen Judge.me-token (env JUDGEME_FJORDCOVER_TOKEN) — ladda upp output/batmotorskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · Discord: boten kan inte skapa servrar — VA:n skapar \"FjordCover — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/fjordcover.yaml skriver ut länken) och kör sen node factory/store-ready.mjs fjordcover --guild <server-id>",
       "pixelId": "1774648277117873",
       "discordGuild": null,
       "recensioner": [
@@ -205,7 +205,6 @@
       ],
       "vantar": [
         "recensioner batmotorskyddet: ingen Judge.me-token (env JUDGEME_FJORDCOVER_TOKEN) — ladda upp output/batmotorskyddet/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
-        "WeTracked: klistra in pixel-id 1774648277117873 (VA:ns klick)",
         "Discord: boten kan inte skapa servrar — VA:n skapar \"FjordCover — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/fjordcover.yaml skriver ut länken) och kör sen node factory/store-ready.mjs fjordcover --guild <server-id>"
       ]
     },
@@ -222,5 +221,5 @@
     "kritiska": [],
     "tid": "2026-09-12T19:17:43.366Z"
   },
-  "uppdaterad": "2026-09-12T19:17:50.391Z"
+  "uppdaterad": "2026-09-13T09:28:17.024Z"
 }

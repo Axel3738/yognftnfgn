@@ -83,6 +83,23 @@ export async function hamtaPixlar(kontoId = OPS_ANNONSKONTO) {
   return ut;
 }
 
+/**
+ * Har pixeln FAKTISKT tagit emot ett event? `last_fired_time` saknas helt i
+ * svaret så länge ingenting skickats.
+ *
+ * Finns för att WeTracked-kopplingen annars aldrig kan bockas av av koden:
+ * pixeln skapas av fabriken, men det är appen i Shopify som gör den
+ * användbar, och en pixel utan events är en tom brevlåda. FjordCover
+ * 2026-09-13: pixeln stod som "väntar på en människa" i två dygn, och det
+ * enda som skilde ett skapat id från en fungerande koppling var det här
+ * fältet. → { fyrat: bool, senast: ISO-sträng | null }
+ */
+export async function pixelHarFyrat(pixelId) {
+  const d = await graph(`/${pixelId}`, { form: { fields: 'id,last_fired_time' } });
+  const senast = d?.last_fired_time ?? null;
+  return { fyrat: Boolean(senast), senast };
+}
+
 // Ren hjälpfunktion (testbar): pixeln som redan bär brandets namn, annars null.
 export function hittaBrandpixel(pixlar, brand) {
   const mal = String(brand ?? '').trim().toLowerCase();

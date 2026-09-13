@@ -35,7 +35,8 @@ import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
 import { lasState, skrivState, markeraKlart, markeraManuell, BUTIKSNYCKEL, lasArbetstemaNamn } from './state.mjs';
 import { produktHandle } from './build-store.mjs';
-import { skapaPixel, hamtaPixlar, hittaBrandpixel, tilldelaCapiAnvandare, OPS_ANNONSKONTO, OPS_BUSINESS } from './meta-setup.mjs';
+import { hamtaArbetstema } from './shopify.mjs';
+import { skapaPixel, hamtaPixlar, hittaBrandpixel, pixelHarFyrat, tilldelaCapiAnvandare, OPS_ANNONSKONTO, OPS_BUSINESS } from './meta-setup.mjs';
 import { byggKanalplan, byggServer } from './discord.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
@@ -86,7 +87,15 @@ export function bedomStoreReady({ recensioner = [], pixel = null, capi = null, d
   }
   if (pixel?.id) {
     gjort.push(`pixel "${pixel.namn}" ${pixel.id} i OPS-kontot ${OPS_ANNONSKONTO}${pixel.redan ? ' (fanns redan)' : ' (skapad)'}`);
-    vantar.push(`WeTracked: klistra in pixel-id ${pixel.id} (VA:ns klick)`);
+    // WeTracked-kopplingen syns i pixelns last_fired_time — en pixel som tagit
+    // emot ett event HAR en sändare. Att fortsätta be om klicket när det är
+    // gjort är samma falska rapport som Meta-sidan och temat (FjordCover
+    // 2026-09-13: pixeln fyrade och raden stod ändå kvar).
+    if (pixel.fyrat) {
+      gjort.push(`WeTracked skickar: pixeln har tagit emot event (senast ${pixel.senastFyrat ?? 'okänt när'})`);
+    } else {
+      vantar.push(`WeTracked: klistra in pixel-id ${pixel.id} (VA:ns klick) — pixeln har ännu inte tagit emot ett enda event`);
+    }
     if (capi?.tilldelad) gjort.push(`CAPI-användaren "${capi.anvandare}" har pixeln`);
     else vantar.push(`CAPI: ${capi?.varfor ?? 'tilldelningen gjordes inte'} — VA:n hämtar tokenen i Events Manager → Data sources → pixeln → Settings → Conversions API → Generate access token → WeTracked`);
     // Sidan är människans jobb — men bara tills den FINNS. Står id:t i
@@ -186,7 +195,12 @@ async function sakerstallPixel(butik, produkter, { torr }) {
       skrivna.push(fil);
     }
   }
-  return { pixel: { id: pixel.id, namn: brand, redan: Boolean(redan), skrivna }, capi };
+  // Har någon kopplat WeTracked? Svaret står i pixeln själv.
+  const fyr = await pixelHarFyrat(pixel.id).catch(() => ({ fyrat: false, senast: null }));
+  return {
+    pixel: { id: pixel.id, namn: brand, redan: Boolean(redan), skrivna, fyrat: fyr.fyrat, senastFyrat: fyr.senast },
+    capi,
+  };
 }
 
 async function byggDiscord(butik, { torr, guildId }) {
@@ -251,13 +265,21 @@ export async function storeReady(butikId, { torr = false, guildId = null } = {})
     skrivState(state);
   }
 
-  const temaNamn = lasArbetstemaNamn(lasState(butikId, BUTIKSNYCKEL));
+  // Temat: samma regel som i ops.mjs --launch — be aldrig om ett klick som
+  // redan är gjort. Är arbetstemat MAIN är det temat kunden ser.
+  const butiksstate = lasState(butikId, BUTIKSNYCKEL);
+  const temaNamn = lasArbetstemaNamn(butiksstate);
+  const arbetstema = torr
+    ? null
+    : await hamtaArbetstema(butiksstate.arbetstemaId ?? butiksstate.steg?.['tema-upload']?.arbetstemaId ?? null).catch(() => null);
+  const temaPublicerat = arbetstema?.role === 'MAIN';
   console.log('\nGJORT AV MIG:');
   for (const g of bedomning.gjort) console.log(`   • ${g}`);
-  if (bedomning.gjort.length === 0) console.log('   (inget)');
+  if (temaPublicerat) console.log(`   • Temat "${arbetstema.name ?? temaNamn}" är publicerat (MAIN)`);
+  if (bedomning.gjort.length === 0 && !temaPublicerat) console.log('   (inget)');
   console.log('\nVÄNTAR PÅ EN MÄNNISKA:');
   for (const v of bedomning.vantar) console.log(`   • ${v}`);
-  if (temaNamn) console.log(`   • Publicera temat "${temaNamn}": Online Store → Themes → ${temaNamn} → Publish (VA:ns klick)`);
+  if (temaNamn && !temaPublicerat) console.log(`   • Publicera temat "${temaNamn}": Online Store → Themes → ${temaNamn} → Publish (VA:ns klick)`);
   console.log('');
   return { ...bedomning, delar: { recensioner, pixel, capi, discord } };
 }

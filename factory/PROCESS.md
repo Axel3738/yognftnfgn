@@ -497,11 +497,24 @@ gick rakt igenom på första körningen. Mätningar:
   fortfarande** (avläst 2026-09-12) — deras kundvyar rapporterar alltså en
   markör som inte är en läcka. Rättas i respektive butiks egen körning, inte
   härifrån.
+- **WeTracked-kopplingen går att MÄTA — pixelns `last_fired_time`.** Fältet
+  saknas helt i Graph-svaret tills något faktiskt skickat ett event, och det
+  är hela skillnaden mellan "pixeln är skapad" (fabrikens jobb) och "pixeln
+  får data" (WeTracked i Shopify + ett besök på sidan). FjordCover
+  2026-09-13: pixeln stod som väntande i två dygn, VA:n kopplade appen och
+  fältet dök upp inom minuter. `meta-setup.pixelHarFyrat()` läser det, och
+  store-ready flyttar raden till "gjort av mig" när det finns.
+  ⚠️ `/{pixel}/stats?aggregation=event` svarade tom lista samtidigt som
+  `last_fired_time` var tre minuter gammal — aggregeringen släpar. Läs
+  fältet, inte statistiken.
+  ⚠️ En lösenordsskyddad butik får inga events av sig själv: någon måste
+  besöka sidan bakom lösenordet innan pixeln kan fyra första gången.
 - **Två människoklick rapporterades som väntande efter att de var gjorda.**
   VA:n bytte butiksnamn, publicerade temat, kopplade fjordcover.se och skapade
   Meta-sidan. Kundvyn och trippelkollen såg det direkt (alla gröna), men
   `store-ready.mjs` skrev ändå "Meta-sidan skapar VA:n" och `--launch`
-  skrev "Temat att publicera (VA:ns klick)" — båda raderna var hårdkodade,
+  skrev "Temat att publicera (VA:ns klick)" (store-ready hade en egen kopia av
+  samma rad) — alla tre var hårdkodade,
   inte mätta. Det är samma sorts falska rapport som regel 4 finns för, bara
   åt andra hållet. Nu läser båda verkligheten först: sidan mot
   `meta.page_id` i produktfilen, temat mot `hamtaArbetstema().role === 'MAIN'`.

@@ -268,6 +268,19 @@ test('store-ready: bedömningen sätter WeTracked/CAPI/sidan under "väntar" äv
   assert.equal(utan.vantar.length, 2);
 });
 
+test('store-ready: en pixel som FYRAT betyder att WeTracked är kopplat', () => {
+  const bas = { capi: { tilldelad: true, anvandare: 'CAPI' }, discord: { manuell: 'ingen server' } };
+  // FjordCover 2026-09-13: pixeln stod som "väntar på en människa" i två dygn.
+  // last_fired_time är det enda som skiljer ett skapat id från en koppling.
+  const kopplad = bedomStoreReady({ ...bas, pixel: { id: '99', namn: 'Brand', redan: true, fyrat: true, senastFyrat: '2026-09-13T12:24:00+0300' } });
+  assert.ok(kopplad.gjort.some((x) => x.includes('WeTracked skickar') && x.includes('2026-09-13')));
+  assert.ok(!kopplad.vantar.some((x) => x.includes('WeTracked')), 'ska inte be om klicket igen');
+  // Tom brevlåda = klicket är kvar, och raden säger varför.
+  const tyst = bedomStoreReady({ ...bas, pixel: { id: '99', namn: 'Brand', redan: false, fyrat: false } });
+  assert.ok(tyst.vantar.some((x) => x.includes('WeTracked') && x.includes('inte tagit emot')));
+  assert.ok(!tyst.gjort.some((x) => x.includes('WeTracked skickar')));
+});
+
 test('store-ready: en Meta-sida som FINNS står som gjord, inte som väntande', () => {
   const bas = { pixel: { id: '99', namn: 'Brand', redan: true }, capi: { tilldelad: true, anvandare: 'CAPI' }, discord: { manuell: 'ingen server' } };
   // Sidan skapad för hand och id:t inskrivet i produktfilen ⇒ inget kvar att göra.
