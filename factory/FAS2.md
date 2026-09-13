@@ -708,3 +708,74 @@ annonser? `FRAMMANDE_MARKNAD`-regexen filtrerar bort varje annonsnamn med
 segmentet `NO`, men SE+NO är standard i varje OPS-butik och det är samma
 redigerare. Frågan blir skarp först när någon anställs — men uppdrag D:s
 commission-fix ska byggas så att svaret bara är en konfigrad.
+
+---
+
+## Tre tysta fel i den norska halvan — mätt på FjordCover 2026-09-13
+
+`/ny-annonser fjordcover` körde in i **tre separata buggar som alla nollade
+den norska halvan utan att larma**, plus ett fjärde fel som tystade
+villkorsspärren. Ingen av dem gav ett felmeddelande — de gav bara siffror som
+såg rimliga ut. Det är mönstret att leta efter: *en rapport som säger noll är
+ett påstående som måste bevisas, inte ett resultat.*
+
+### 1. Kampanjens status nollade marknaden (`kallannonser.mjs`)
+
+Filtret krävde ACTIVE på **tre** nivåer — annons, adset OCH kampanj.
+FjordCovers norska källkampanj står PAUSED (ett budgetbeslut), medan 47 av 47
+adsets och 46 av 47 annonser är ACTIVE. Rapporten skrev *"47 annonser,
+0 ACTIVE"*.
+
+**Regeln, som redan stod i kommandot:** en pausad **kampanj** är ett
+marknads-/budgetbeslut; en pausad **annons** eller ett pausat **adset** är en
+dom över just den creativen. Bara det senare får utesluta något.
+
+### 2. Villkorsspärren var tyst utan state-fil (`brand-detektor.mjs`)
+
+`läsButik()` härledde butiken enbart ur `factory/state/<butik>--<produkt>.json`.
+FjordCovers butik byggdes **utanför repot** (som TankGuard 2026-09-08) och har
+ingen state-fil ⇒ butikskonfigen blev `null` ⇒ sjätte ytan kördes inte.
+
+Sju annonser fick domen `ren` trots att de bär Bäverbutikens **"30 dagars
+öppet köp"** — FjordCover har 14 dagars ångerrätt. Med spärren på gick SE från
+**21 rena till 11**, och tre annonser visade sig kräva omdubb.
+
+Det är HeimGuard-bakläxan om igen, och den inträffade **inne i den spärr som
+skrevs för att förhindra den**. Lärdomen är generell: *en spärr vars indata
+kan saknas tyst är ingen spärr.* Fallback är nu brand-matchning
+(produktfilens `brand.namn` mot butiksfilens `butik.brand`), samma koppling
+som `register.mjs paraIhop()`.
+
+### 3. Räkningen läste bara SE:s domfil (`rakning.mjs`)
+
+Brand-detektorn skriver **en fil per marknad** — `brand-detektor.json` och
+`brand-detektor-no.json`. Räkningen läste bara den första, så en färdig
+NO-körning såg ut som en oläst marknad: alla 47 blev "odömd", NO fick *"noll
+förväntade annonser"*. Efter fixen: **44 förväntade**.
+
+Sammanslagningen är säker just för att domar slås upp på exakt annonsnamn och
+prefixen skiljer sig (`Batmotor_` mot `Batmotortrekk_NO_`) — regeln "en norsk
+annons ärver aldrig sin svenska systers dom" står orörd och vaktas av ett test.
+
+### 4. Produktspecar lästes som priser (`villkorsskanning.mjs`)
+
+"Storlekar för allt från 5 hk jolle **till 350 hk** storbåt" gav *"säger 350 kr
+— butiken säljer för 579 kr"*. `hk` saknades i enhetslistan som ska stoppa
+nakna tal. Produkten har nio motorstorlekar i hk, så bruset drabbade hela
+uppsättningen. Tillagt: `hk`, `hp`, `v`, `w`.
+
+*En spärr som larmar på allt läses till slut som ingen spärr alls* — och det är
+samma spärr som ska fånga de äkta prisfelen.
+
+### Verktygen som saknas i en ren container
+
+Brand-detektorn kan inte läsa yta 2 och 3 utan dem, och skriver då `okänd` på
+42 av 46 annonser. Båda är gratis och installeras på en minut:
+
+```
+pip install imageio-ffmpeg      # frames ur videon (qa-frames.py)
+pip install rapidocr-onnxruntime # OCR på frames och bildannonser (brand-text.py)
+```
+
+Med dem gick SE från *"bara-copy 4, okänd 42"* till en riktig klassning.
+Rapportera hellre `okänd` än att gissa — men installera verktygen först.
