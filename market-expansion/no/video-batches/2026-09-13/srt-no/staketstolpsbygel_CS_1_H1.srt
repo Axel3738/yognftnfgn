@@ -1,0 +1,17 @@
+1
+00:00:00,119 --> 00:00:02,480
+Dette er grunnen til at alle snakker om den.
+
+2
+00:00:02,740 --> 00:00:05,980
+Se hvor enkelt det er. Ingen graving, ingen dyre verktøy.
+
+3
+00:00:06,159 --> 00:00:08,619
+Bare deg, hammeren og stolpen på plass.
+
+4
+00:00:08,859 --> 00:00:11,940
+Sånn gjør hjemmefiksere det nå. Din tur til å teste
+</content>
+</invoke>
