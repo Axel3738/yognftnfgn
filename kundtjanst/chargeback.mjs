@@ -66,22 +66,40 @@ export function bedomRisk({ arenden = [], ordrar = [], tvister = null, trosklar 
   const signaler = [];
   const lagg = (id, sv, en, varde, poang, detaljer = [], atgard_en = null) => signaler.push({ id, sv, en, varde, poang: Math.round(poang), detaljer, atgard_en });
 
-  // 1. Riktiga tvister ur Shopify Payments + tvistgraden mot ordrarna.
+  // 1. Riktiga tvister ur Shopify Payments, i SAMMA fönster som ordrarna
+  //    (ordrar_dagar, normalt 30) — annars blir graden fel. Mätt 2026-09-13 på
+  //    Bäverbutiken: 11 tvister på 7 dagar mot 1 739 ordrar på 30 gav 0,63 %,
+  //    fast samma takt över 30 dagar är ~2,7 %. Bara CHARGEBACKS räknas i
+  //    tvistgraden — det är dem Visa (0,9 %) och Mastercard (1 %) mäter.
+  //    Inquiries (bankens förfrågningar) är förvarningen: obesvarade blir de
+  //    chargebacks, så de får en egen signal och en egen åtgärd.
   let tvistgrad = null;
+  let antalChargebacks = null;
+  let antalForfragningar = null;
+  const dagar = t.ordrar_dagar ?? 30;
+  const oppenStatus = (x) => ['needs_response', 'under_review'].includes(x.status);
+  const rad = (x) => `${x.ordernamn ?? x.orderId ?? '?'}: ${x.typ} · ${x.orsak} · ${x.status}${x.evidensSenast ? ` · evidence due ${x.evidensSenast}` : ''}`;
   if (tvister?.tillganglig) {
     const lista = tvister.lista ?? [];
-    const oppna = lista.filter((x) => ['needs_response', 'under_review'].includes(x.status));
-    let p = tak(lista.length, 15, 40);
+    const chargebacks = lista.filter((x) => x.typ !== 'inquiry');
+    const forfragningar = lista.filter((x) => x.typ === 'inquiry');
+    antalChargebacks = chargebacks.length;
+    antalForfragningar = forfragningar.length;
+    const oppnaCb = chargebacks.filter(oppenStatus);
+    const oppnaInq = forfragningar.filter(oppenStatus);
+    const senast = (l) => l.map((x) => x.evidensSenast).filter(Boolean).sort()[0];
+    let p = tak(chargebacks.length, 15, 40);
     if (o.antal > 0) {
-      tvistgrad = Math.round((lista.length / o.antal) * 10000) / 100;
+      tvistgrad = Math.round((chargebacks.length / o.antal) * 10000) / 100;
       if (tvistgrad >= t.tvistgrans_rod_procent) p += 30;
       else if (tvistgrad >= t.tvistgrans_gul_procent) p += 15;
     }
-    lagg('tvister', 'Tvister (chargebacks) i perioden', 'Disputes (chargebacks) in period', lista.length, p,
-      lista.map((x) => `${x.ordernamn ?? x.orderId ?? '?'}: ${x.typ} · ${x.orsak} · ${x.status}${x.evidensSenast ? ` · evidence due ${x.evidensSenast}` : ''}`),
-      oppna.length ? `Answer the ${oppna.length} open dispute(s) in Shopify → Orders → Disputes before the evidence deadline. Include tracking + delivery proof.` : null);
+    lagg('tvister', `Chargebacks (${dagar} dagar)`, `Chargebacks (last ${dagar} days)`, chargebacks.length, p, chargebacks.map(rad),
+      oppnaCb.length ? `Answer the ${oppnaCb.length} open chargeback(s) in Shopify → Orders → Disputes before the evidence deadline${senast(oppnaCb) ? ` (earliest ${senast(oppnaCb)})` : ''}. Include tracking + delivery proof.` : null);
+    lagg('forfragningar', `Förfrågningar från banken (inquiries, ${dagar} dagar)`, `Bank inquiries (retrieval requests, last ${dagar} days)`, forfragningar.length, tak(forfragningar.length, 5, 15), forfragningar.map(rad),
+      oppnaInq.length ? `Answer the ${oppnaInq.length} open inquiry(ies) in Shopify → Orders → Disputes${senast(oppnaInq) ? ` before ${senast(oppnaInq)}` : ''} with tracking + the customer email thread — an unanswered inquiry becomes a chargeback.` : null);
   } else {
-    lagg('tvister', 'Tvister (chargebacks) i perioden', 'Disputes (chargebacks) in period', null, 0, [tvister?.orsak ?? 'Shopify inte kopplat — tvister okända'], null);
+    lagg('tvister', `Chargebacks (${dagar} dagar)`, `Chargebacks (last ${dagar} days)`, null, 0, [tvister?.orsak ?? 'Shopify inte kopplat — tvister okända'], null);
   }
 
   // 2–5. Mejlsignalerna, var och en spårbar till kund + ordernummer.
@@ -128,7 +146,7 @@ export function bedomRisk({ arenden = [], ordrar = [], tvister = null, trosklar 
     signaler,
     atgarder,
     tvistgrad,
-    underlag: { arenden: kundarenden.length, ordrar: o.antal, tvisterTillgangliga: Boolean(tvister?.tillganglig), aterbetalda: o.aterbetalda, avbrutna: o.avbrutna },
+    underlag: { arenden: kundarenden.length, ordrar: o.antal, tvisterTillgangliga: Boolean(tvister?.tillganglig), chargebacks: antalChargebacks, forfragningar: antalForfragningar, dagar, aterbetalda: o.aterbetalda, avbrutna: o.avbrutna },
   };
 }
 

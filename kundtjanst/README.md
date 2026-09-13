@@ -121,7 +121,8 @@ systemmejl (Shopify, Klarna, PostNord …) räknas aldrig.
 
 | Signal | Poäng | Tak |
 |---|---|---|
-| Tvister i perioden (Shopify Payments) | 15/st + 15 vid gul tvistgrad, +30 vid röd | 40 (+30) |
+| Chargebacks (Shopify Payments, samma fönster som ordrarna: 30 dagar) | 15/st + 15 vid gul tvistgrad, +30 vid röd | 40 (+30) |
+| Bankförfrågningar (inquiries, 30 dagar) — förvarningen, obesvarade blir chargebacks | 5/st | 15 |
 | Kunder som hotar med bank/tvist | 12/st | 36 |
 | Okänd/dubbel debitering | 10/st | 30 |
 | Aldrig levererad | 8/st | 24 |
@@ -132,7 +133,8 @@ systemmejl (Shopify, Klarna, PostNord …) räknas aldrig.
 | Obesvarade återbetalnings-/avbeställningskrav | 3/st | 12 |
 | Median första svarstid | +10 över 24 h, +20 över 48 h | 20 |
 
-Summan kapas vid 100. 🟢 < 25, 🟡 25–50, 🔴 > 50. Tvistgrad = tvister / ordrar
+Summan kapas vid 100. 🟢 < 25, 🟡 25–50, 🔴 > 50. Tvistgrad = chargebacks / ordrar över SAMMA 30 dagar (inquiries räknas inte — mätt
+2026-09-13: 11 tvister på 7 dagar mot 30 dagars ordrar gav falska 0,63 %)
 senaste 30 dagarna; gult 0,5 %, rött 0,9 % (Visa varnar vid 0,9 %, Mastercard
 vid 1 %). Trösklarna ändras per brand i brandfilen.
 
