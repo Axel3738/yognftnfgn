@@ -16,10 +16,20 @@ Och sist i varje rapport: en numrerad lista till VA:n (engelska) och en till
 Axel (svenska) — SOP:er som saknas i Notion, rotorsaker att ta tag i, nycklar
 som fattas.
 
+Vid sidan av veckorapporten går **tvistkollen** varje dag: `tvistkoll.mjs` läser
+bara Shopify-tvisterna och larmar om någon har evidence-deadline inom tre dagar.
+Den finns för att veckorapporten går måndag 07:00 — en tvist som kommer in på
+tisdag med deadline på torsdag hinner annars gå ut, och **en obesvarad tvist
+förloras automatiskt** (Axels beslut 2026-09-13). Den läser inga mejl, tar
+sekunder och skriver ingenting i repot. Håll den så: bygger man in ärenden och
+ranking i den blir den långsam och slutar köras.
+
 ```bash
 node kundtjanst/run.mjs --kolla                       # vad går att läsa här?
 node kundtjanst/run.mjs --brand tacklebay --torr      # provkör ett brand, skriv inget
 node kundtjanst/run.mjs --alla --discord              # rutinen
+node kundtjanst/tvistkoll.mjs --torr                  # dagliga tvistkollen, posta inget
+node kundtjanst/tvistkoll.mjs --alla --discord        # dagliga rutinen
 node kundtjanst/setup.mjs                             # nycklar som saknas + rutinens cron
 node kundtjanst/setup.mjs --nytt-konto                # receptet för ett annat Claude-konto
 node kundtjanst/setup.mjs --mappar tacklebay          # brevlådans mappnamn (Skickat?)
@@ -46,6 +56,8 @@ kundtjanst/brands/*.yaml ┴─ brands.mjs ─ run.mjs ┼─ shopify.mjs       
                         kundtjanst/historik/<brand>.jsonl   ← det som gör "återkommande" mätbart
                                                         │
                         rapportsida.mjs → rapport-publicerad.html → Artifact (samma url)
+
+shopify.mjs ─ tvistkoll.mjs   (DAGLIGEN, eget spår: bara tvister → Discord, inga filer)
 ```
 
 **Hemsidan** (Axels beslut 2026-09-12: "en hemsida som lagrar all data";
@@ -231,7 +243,7 @@ och svarstiderna mäts då bara på svar som råkar ligga i inkorgen —
 ## Tester
 
 ```bash
-node --test kundtjanst/test/*.test.mjs     # 67 tester, inget nät
+node --test kundtjanst/test/*.test.mjs     # 111 tester, inget nät
 npm test                                   # hela repot
 ```
 
