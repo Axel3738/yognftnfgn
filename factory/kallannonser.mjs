@@ -132,11 +132,27 @@ export async function lasKonto(kontoId, kampanjMonster) {
           cta: cta.type ?? null,
         },
         utfall: utfall.get(a.id),
-        // ACTIVE-annons i ett ACTIVE adset i en ACTIVE kampanj.
+        // ACTIVE-annons i ett ACTIVE adset. KAMPANJENS status räknas INTE.
+        //
+        // ⚠️ Kampanjvillkoret satt här till 2026-09-13 och nollade tyst hela
+        // marknader. FjordCover: NO-kampanjen "Båtmotortrekk NO" står PAUSED,
+        // men dess 47 adsets är ACTIVE och 46 av 47 annonser är ACTIVE —
+        // rapporten sa ändå "47 annonser, 0 ACTIVE" och den norska halvan såg
+        // tom ut. (effective_status på de 46 är CAMPAIGN_PAUSED, alltså
+        // släckta AV kampanjen, inte utdömda var för sig.)
+        //
+        // Regeln står i .claude/commands/ny-annonser.md steg 8: "Att den
+        // norska källkampanjen står PAUSED är ett marknadsbeslut, inte en dom
+        // över annonserna: räkna annons + adset ACTIVE, inte kampanjen."
+        // En pausad KAMPANJ är ett budget-/marknadsbeslut; en pausad ANNONS
+        // eller ett pausat ADSET är en dom över just den creativen. Bara det
+        // senare får utesluta något här.
+        //
+        // Kampanjens status finns kvar i `kampanj.status` för den som vill
+        // veta — den är information, inte ett filter.
         med:
           a.status === 'ACTIVE' &&
-          a.adset?.status === 'ACTIVE' &&
-          a.campaign?.status === 'ACTIVE',
+          a.adset?.status === 'ACTIVE',
       };
     })
     .sort((x, y) => y.utfall.spend - x.utfall.spend);

@@ -383,6 +383,11 @@ kalla:
   # kampanj 120252047563660233 "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
   # PAUSED, 47 annonser med prefix "Batmotortrekk_NO_".
   no_kampanjmonster: "Båtmotortrekk"
+  # NO-källkontot "Magiborsten NO" (NOK). Stod inte här vid första skrivningen
+  # 2026-09-13 — kallannonser.mjs behöver det för att läsa den norska halvan,
+  # och utan fältet läses bara SE (Axels bakläxa 2026-09-09: varken HeimGuard
+  # eller TankGuard fick någon norsk kampanj, det norska kontot lästes aldrig).
+  no_annonskonto: "1050941584152547"
   no_annonsprefix: "Batmotortrekk"
   no_kampanj_id: "120252047563660233"
   # Transkripten ligger under NORSKT slug i tre notion-batcher
