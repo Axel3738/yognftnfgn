@@ -15,6 +15,7 @@ import {
   utanJudgeMe,
   avkodaEntiteter,
   produktkoll,
+  jamforprisRenderat,
 } from '../kundvy.mjs';
 import { Kakburk, byggBas, sidvag, previewTemaId } from '../kundvy-kor.mjs';
 
@@ -199,9 +200,24 @@ test('produktkoll kräver att JÄMFÖRPRISET syns — annars ser kunden ingen ra
   const tom = produktkoll('<h1>Motorskyddet</h1><span>579,00 kr</span><s> </s>', p);
   assert.equal(tom.ok, false);
   assert.ok(tom.fel.some((f) => f.includes('965') && f.includes('rabatt')), tom.fel.join(' | '));
+  // ⚠️ Talet i en SÄLJTEXT får inte rädda kollen. Produktens punktlista på
+  // FjordCover säger "579 kr i stället för 965 kr" medan prisblocket är tomt —
+  // första versionen av kollen blev grön på just den raden (mätt 2026-09-13).
+  const saljtext = produktkoll(
+    '<h1>Motorskyddet</h1><span>579,00 kr</span><s> </s><li>579 kr i stället för 965 kr</li>',
+    p
+  );
+  assert.equal(saljtext.ok, false, 'en mening om priset är inte ett renderat jämförpris');
   // Utan jämförpris i filen krävs ingenting.
   const utan = { produkt: { namn: 'Motorskyddet' }, ekonomi: { pris: 579, jamforpris: 0 } };
   assert.equal(produktkoll('<h1>Motorskyddet</h1><span>579,00 kr</span>', utan).ok, true);
+});
+
+test('jamforprisRenderat läser <s> och compare-klasser, inte sidans text', () => {
+  assert.equal(jamforprisRenderat('<s class="price-item">1 039,00 kr</s>', 1039), true);
+  assert.equal(jamforprisRenderat('<span class="price-compare">965 kr</span>', 965), true);
+  assert.equal(jamforprisRenderat('<p>ord. 965 kr</p><s> </s>', 965), false);
+  assert.equal(jamforprisRenderat('', 965), false);
 });
 
 test('produktkoll godtar pris med tusentalsavstånd (1 129,00 kr) — CaraShell 2026-09-10', () => {

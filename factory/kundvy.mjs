@@ -211,6 +211,28 @@ export function strukturkoll(html, { produkt, butik } = {}) {
   return { ok: fel.length === 0, fel, punkter };
 }
 
+/**
+ * Står jämförpriset i det ÖVERSTRUKNA priset — inte bara någonstans på sidan?
+ * Tittar i <s>-taggar och i element vars klass bär "compare" (temats
+ * `price-item--regular` inne i `price__sale` ligger i en <s>).
+ *
+ * Finns för att FjordCovers prisblock renderade `<s class="price-item
+ * price-item--regular"> </s>` tomt medan punktlistan sa "579 kr i stället för
+ * 965 kr" — sidan innehöll alltså talet utan att visa någon rabatt
+ * (mätt 2026-09-12/13).
+ */
+export function jamforprisRenderat(html, jamforpris) {
+  const tal = String(jamforpris);
+  const bitar = [
+    ...String(html ?? '').matchAll(/<s\b[^>]*>([\s\S]*?)<\/s>/gi),
+    ...String(html ?? '').matchAll(/<[^>]+class="[^"]*compare[^"]*"[^>]*>([\s\S]*?)<\//gi),
+  ].map((m) => m[1].replace(/<[^>]+>/g, ' '));
+  return bitar.some((b) => {
+    const rent = b.replace(/[\s  .]/g, '');
+    return b.includes(tal) || rent.includes(tal);
+  });
+}
+
 // Huvudspråkets vy: produktnamn och pris ska SYNAS som text på sidan.
 export function produktkoll(html, produkt) {
   const t = synligText(html);
@@ -232,12 +254,20 @@ export function produktkoll(html, produkt) {
   // kunden såg bara 579 kr. catcabin.se har samma symptom (jämförpris 1 039 i
   // filen, null i products.json), tankguard.se har det inte. Rotorsaken är
   // inte fastställd.
+  //
+  // ⚠️ Sök talet i SJÄLVA PRISET, inte i sidans text. Första versionen av den
+  // här kollen letade i hela den synliga texten och blev grön på FjordCover —
+  // för produktens punktlista innehåller raden "579 kr i stället för 965 kr".
+  // Prisblocket var tomt hela tiden. En kontroll som kan bli grön av en
+  // säljande mening kontrollerar ingenting.
   const jamfor =
     produkt?.ekonomi?.jamforpris === undefined || produkt?.ekonomi?.jamforpris === null
       ? 0
       : Number(produkt.ekonomi.jamforpris);
-  if (jamfor > 0 && !t.includes(String(jamfor)) && !tUtanAvstand.includes(String(jamfor))) {
-    fel.push(`jämförpriset "${jamfor}" syns inte i huvudspråkets vy — kunden ser inget överstruket pris och ingen rabatt`);
+  if (jamfor > 0 && !jamforprisRenderat(html, jamfor)) {
+    fel.push(
+      `jämförpriset "${jamfor}" står inte i prisblocket — kunden ser inget överstruket pris och ingen rabatt (talet i en säljtext räknas inte)`
+    );
   }
   return { ok: fel.length === 0, fel };
 }
