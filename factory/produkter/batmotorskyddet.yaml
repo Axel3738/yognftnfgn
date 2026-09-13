@@ -33,18 +33,38 @@ ekonomi:
   # det styr PRISVISNINGEN, aldrig break-even. Läs aldrig hit.
   moms_antagen: false                                        # HÄRLETT ur husregeln
 
-  # ⚠️⚠️ INKÖPSPRISET FINNS INTE I REPOT — MÅSTE FYLLAS AV AXEL.
-  # Genomsökt 2026-09-13: docs/, products/, factory/, market-expansion/ och
-  # SKU:t TEMU-605748427852371 ger NOLL träffar på en COGS-rad, ett Temu-kvitto
-  # eller ett batch-sheet för den här produkten.
-  # Talet nedan är HÄRLETT ur källkampanjens egen break-even, som Axel satte i
-  # kampanjnamnet ("Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29"):
-  #   TB = 579 / 1,62 = 357,41 kr  →  inköp = 579 − 357 = 222 kr
-  # Bäverbutiken säljer UTAN moms, så marginalen räknas rakt på priset.
-  # Samma metod som damasker.yaml och utekattkojan.yaml använder.
-  # Det är en HÄRLEDNING ur ett verkligt break-even, inte ett avläst inköp —
-  # bekräfta mot Temu-kvittot INNAN talet får döma en enda annons.
-  inkopskostnad: 222                                         # HÄRLETT — SAKNAS-KRÄVER-AXEL
+  # ✅ RIKTIGA TAL — Axel 2026-09-13, ur StonePNL:s kostnadsvy (skärmbild).
+  # Ersätter den tidigare härledningen ur kampanjnamnet (inköp 222 kr), som
+  # var för hög: den kände inte till de övriga rörliga kostnaderna nedan.
+  #
+  # COGS per variant (alla säljs för 579 kr):
+  #   0–5 hk 90,36 · 6–15 hk 87,51 · 15–20 hk 96,07 · 20–30 hk 110,34
+  #   30–60 hk 115,09 · 60–100 hk 125,56 · 100–150 hk 136,02
+  #   175–225 hk 141,73 · 250–350 hk 160,75      ⇒ snitt 118,16 kr
+  #
+  # ⚠️ PLUS 3 EUR TAX PER ENHET som StonePNL-vyn INTE räknar med (Axels
+  # besked 2026-09-13). 3 × 11,2373 = 33,71 kr, EUR/SEK ur ECB via
+  # api.frankfurter.dev 2026-09-11. Kursen gissas aldrig — den hämtas, precis
+  # som commission/valuta.mjs gör för topplistan. Rör sig kursen märkbart ska
+  # talet räknas om; 1 % på kursen är ~0,34 kr per enhet.
+  #
+  #   inkopskostnad = COGS-snitt 118,16 + tax 33,71 = 151,87 kr
+  #
+  # ⚠️ SNITTET ÄR ETT ANTAGANDE OM MIXEN. Varianterna skiljer 87,51–160,75 kr,
+  # alltså break-even-ROAS 1,40 (6–15 hk) till 1,70 (250–350 hk). Ingen vet
+  # vilken motorstorlek som faktiskt säljer mest — det oviktade snittet är det
+  # ärligaste enskilda talet tills det finns orderdata. Byt till ett VIKTAT
+  # snitt så fort butiken sålt ett par hundra ordrar, och döm aldrig en enskild
+  # annons stenhårt mot 1,51 när spannet är så brett.
+  inkopskostnad: 151.87                                      # MÄTT (COGS-snitt + 3 EUR tax)
+
+  # Konstant påslag i StonePNL utöver COGS: 579 − COGS − CM = 44,291 kr på
+  # ALLA nio raderna (t.ex. 579 − 90,36 − 444,349). Härlett ur bildens egna
+  # tal, inte antaget. Troligen betalavgift + frakt ut.
+  # ⚠️ Räknas här per ENHET, vilket är den försiktiga tolkningen: är en del av
+  # det i själva verket per ORDER blir flerpacken lönsammare än modellen säger,
+  # aldrig sämre.
+  ovriga_kostnader_per_order: 44.29                          # HÄRLETT ur bildens tal
 
   # Samma pris som källan. Priset ändras INTE i OPS-butiken: /ny-annonser
   # brand-swappar källans creatives, och ett annat pris gör varje inbränd
@@ -53,15 +73,20 @@ ekonomi:
   pris: 579                                                  # MÄTT (butik + källa)
   jamforpris: 965                                            # MÄTT (butik + källa)
 
-  # Räknat med ekonomi.mjs på inköp 222, UTAN moms:
-  #   TB 357 kr · break-even-ROAS 1,62 · break-even-CPA 357 kr
-  #   target-ROAS 2,73 · target-CPA 212 kr
-  # (MED 25 % moms blir samma tal 2,40 / 241 kr / 4,62 / 125 kr.)
-  # Talen faller med inköpspriset — de är lika preliminära som det.
-  break_even_roas: 1.62                                      # HÄRLETT (följer inköpet)
-  break_even_cpa_sek: 357                                    # HÄRLETT
-  target_roas: 2.73                                          # HÄRLETT
-  target_cpa_sek: 212                                        # HÄRLETT
+  # Räknat med ekonomi.mjs på inköp 151,87 + övrigt 44,29, UTAN moms:
+  #   TB 382,84 kr · break-even-ROAS 1,512 · break-even-CPA 383 kr
+  #
+  # SPANNET per variant (det som faktiskt gäller för en enskild order):
+  #   6–15 hk    CM 413,49 kr · BE ROAS 1,40  ← bäst
+  #   snitt      CM 382,84 kr · BE ROAS 1,51
+  #   250–350 hk CM 340,25 kr · BE ROAS 1,70  ← sämst
+  #
+  # Källkampanjens namn säger "BE ROAS 1.62" — det var Bäverbutikens tal,
+  # räknat före de 3 EUR i tax var kända. 1,51 ersätter det här.
+  break_even_roas: 1.51                                      # MÄTT (snitt över nio varianter)
+  break_even_cpa_sek: 383                                    # MÄTT
+  target_roas: 2.43                                           # HÄRLETT (ekonomi.mjs, 25 % målmarginal)
+  target_cpa_sek: 238                                        # HÄRLETT
 
   # Marknader Sverige + Norge är båda ACTIVE, men ingen av dem har en
   # priskatalog eller prislista (MÄTT 2026-09-13: catalogs = []). Norge
@@ -170,27 +195,37 @@ features:                                                    # MÄTT — opf.fea
 
 offer:
   beskrivning: "579 kr i stället för 965 kr (spara 386 kr), fri frakt, 14 dagars ångerrätt och leverans på 5–10 arbetsdagar."
-  # ⚠️⚠️ PAKETNIVÅERNA ÄR 1 / 2 / 3 I DEN BYGGDA BUTIKEN — INTE 1 / 2 / 4.
-  # MÄTT 2026-09-13 i ms_paketniva-metaobjekten och i de fyra rabattkoderna.
-  # Butiken byggdes alltså på paket.mjs standardsteg (NIVAER.a/b), inte på
-  # Axels paketregel av 2026-09-10 (.claude/commands/ny-ops.md rad 107,
-  # factory/PROCESS.md rad 149: "nivåerna är alltid 1 / 2 / 4").
-  # Filen nedan beskriver VERKLIGHETEN, så inget körs sönder av misstag.
-  # Vill Axel ha 1/2/4 blir toppnivån (källans procent behålls):
-  #   A 4-pack: 4×579 × 0,80 = 1 853 kr, kod FJORD4A, belopp
-  #             4×579 + 4×189 − 1853 = 1 219 kr, min 8 varor
-  #   B 4-pack: 4×579 × 0,75 = 1 737 kr, kod FJORD4B, belopp
-  #             2316 + 756 − 1737 = 1 335 kr, min 8 varor
-  # Det kräver en ny paket.mjs-körning som skriver om metaobjekt OCH koder.
-  bundle: "A (butikens standard): 1 st 579 kr (+ batterifrånskiljare 189 kr som tillval), 2-pack 984 kr FÖRVALD 'Mest populär' (−15 %, FJORD2A, 2 batterifrånskiljare gratis), 3-pack 1 390 kr 'Bäst pris' (−20 %, FJORD3A, 3 gratis). B (test): 1 st 579 kr, 2-pack 926 kr FÖRVALD (−20 %, FJORD2B, 2 gratis), 3-pack 1 303 kr (−25 %, FJORD3B, 3 gratis). A/B mäts med temats ms-ab, test 'paket'."
+  # ✅ NIVÅERNA ÄR 1 / 2 / 4 — Axels beslut 2026-09-13 ("ja, 1/2/4").
+  # Butiken byggdes ursprungligen på 1 / 2 / 3 (paket.mjs standardsteg), vilket
+  # bröt mot paketregeln av 2026-09-10 (.claude/commands/ny-ops.md rad 107,
+  # factory/PROCESS.md rad 149: "nivåerna är alltid 1 / 2 / 4"). Toppnivån
+  # bytt 3-pack → 4-pack med KÄLLANS PROCENT BEHÅLLEN, som regeln föreskriver:
+  #   A: −20 % ⇒ 4×579 × 0,80 = 1 853 kr, kod FJORD4A
+  #   B: −25 % ⇒ 4×579 × 0,75 = 1 737 kr, kod FJORD4B
+  # De gamla koderna FJORD3A/FJORD3B är avaktiverade i butiken, inte raderade —
+  # en kund med en sparad länk ska mötas av en död kod, inte av ett pris som
+  # inte finns.
+  #
+  # LÖNSAMHETEN, räknad på riktiga COGS + 3 EUR tax (ekonomiblocket ovan) och
+  # med 1 GRATIS batterifrånskiljare per enhet från 2-pack och uppåt
+  # (à 116,99 kr i ren kostnad — COGS 83,28 + tax 33,71):
+  #   A  1-pack  579 kr → 383 kr marginal   2-pack  984 kr → 358 kr   4-pack 1 853 kr → 600 kr
+  #   B  1-pack  579 kr → 383 kr marginal   2-pack  926 kr → 300 kr   4-pack 1 737 kr → 484 kr
+  # (snitt-COGS; med värsta varianten 250–350 hk: A 340/273/430, B 340/215/314)
+  # Alla nivåer är lönsamma även i värsta fall.
+  # ⚠️ Men B:s 2-pack tjänar MINDRE än att sälja ett enda skydd (300 mot 383,
+  # och 215 mot 340 i värsta fall) — 20 % rabatt plus två gratis bonusar äter
+  # upp mer än den andra enheten drar in. Det är inte nödvändigtvis fel (högre
+  # AOV, fler enheter ute), men vet om det när A/B-testet döms.
+  bundle: "A (butikens standard): 1 st 579 kr (+ batterifrånskiljare 189 kr som tillval), 2-pack 984 kr FÖRVALD 'Mest populär' (−15 %, FJORD2A, 2 batterifrånskiljare gratis), 4-pack 1 853 kr 'Bäst pris' (−20 %, FJORD4A, 4 gratis). B (test): 1 st 579 kr, 2-pack 926 kr FÖRVALD (−20 %, FJORD2B, 2 gratis), 4-pack 1 737 kr (−25 %, FJORD4B, 4 gratis). A/B mäts med temats ms-ab, test 'paket'."
   paket:
     test: "paket"
     # Alla sex nivåerna MÄTTA ur metaobjekten. Rabattbeloppen kontrollräknade
     # mot de fyra live-koderna och stämmer på kronan:
     #   FJORD2A 552 = 2×579 + 2×189 − 984   (min 4 varor) ✅
-    #   FJORD3A 914 = 3×579 + 3×189 − 1390  (min 6 varor) ✅
+    #   FJORD4A 1219 = 4×579 + 4×189 − 1853 (min 8 varor) — NY 2026-09-13
     #   FJORD2B 610 = 2×579 + 2×189 − 926   (min 4 varor) ✅
-    #   FJORD3B 1001 = 3×579 + 3×189 − 1303 (min 6 varor) ✅
+    #   FJORD4B 1335 = 4×579 + 4×189 − 1737 (min 8 varor) — NY 2026-09-13
     # ⚠️ `kod:` står UTSKRIVET på varje nivå med flit. Koderna är byggda med
     # paketPrefix "FJORD" (paket.mjs rad 182: prefix + antal + variant), och
     # `meta.creative_prefix` nedan är INTE "Fjord". Utan de här raderna skulle
@@ -211,13 +246,13 @@ offer:
         gratis_text: "2 batterifrånskiljare på köpet"
         forvald: true
       - variant: a
-        antal: 3
-        rubrik: "3 st"
-        pris: 1390
-        kod: "FJORD3A"
+        antal: 4
+        rubrik: "4 st"
+        pris: 1853
+        kod: "FJORD4A"
         bricka: "Bäst pris"
-        gratis_antal: 3
-        gratis_text: "3 batterifrånskiljare på köpet"
+        gratis_antal: 4
+        gratis_text: "4 batterifrånskiljare på köpet"
       - variant: b
         antal: 1
         rubrik: "1 st"
@@ -232,13 +267,13 @@ offer:
         gratis_text: "2 batterifrånskiljare på köpet"
         forvald: true
       - variant: b
-        antal: 3
-        rubrik: "3 st"
-        pris: 1303
-        kod: "FJORD3B"
+        antal: 4
+        rubrik: "4 st"
+        pris: 1737
+        kod: "FJORD4B"
         bricka: "Bäst pris"
-        gratis_antal: 3
-        gratis_text: "3 batterifrånskiljare på köpet"
+        gratis_antal: 4
+        gratis_text: "4 batterifrånskiljare på köpet"
 
   # Q4-RAMVERKET: gratis bonus i paketen + betald upsell i korgen.
   # Bonusen finns redan som produkt 2 i butiken och är redan kopplad i
@@ -247,8 +282,8 @@ offer:
   bonus_produkt:
     titel: "Batterifrånskiljare – Huvudströmbrytare 12/24V"   # MÄTT
     handle: "batterifranskiljaren"                           # MÄTT
-    produkt_id: "8085255061552"                              # MÄTT (legacyResourceId)
-    variant_id: "43611497562160"                             # MÄTT
+    produkt_id: "8085255061552"
+    variant_id: "43611497562160"
     pris: 189                                                # MÄTT (inget jämförpris satt)
     i_paket: "Antalsregeln: 2 st gratis i 2-pack, 3 st i 3-pack (A och B). Nivå 1: betald kryssruta till fullpris 189 kr."
     tillagg_kryssruta: true                                  # HÄRLETT (mallens standard + PROCESS-regeln)

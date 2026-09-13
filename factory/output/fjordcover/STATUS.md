@@ -48,11 +48,14 @@ aldrig** i det läget. Det är avsiktligt skydd, inte ett fel.
    mobilvyn: går inte att läsa via API:t.
 
 ### ⚙️ Fabriken
-5. **Paketnivåerna är 1 / 2 / 3, inte 1 / 2 / 4.** MÄTT i de sex
-   `ms_paketniva`-metaobjekten och i koderna FJORD2A/3A/2B/3B. Bryter mot
-   paketregeln (Axel 2026-09-10, `ny-ops.md` rad 107). Butiken byggdes på
-   `paket.mjs` standardsteg. Rättning kräver nya metaobjekt + en fjärde kod
-   per A/B.
+5. ~~Paketnivåerna är 1 / 2 / 3.~~ **RÄTTAT 2026-09-13** på Axels besked
+   "ja, 1/2/4". Toppnivån bytt 3-pack → 4-pack med källans procent behållen:
+   A 1 853 kr (−20 %, FJORD4A), B 1 737 kr (−25 %, FJORD4B). De gamla
+   3-nivåerna städades bort (`paket.mjs --stada` — den varnar men tar inte
+   bort av sig själv, och utan den stod butiken en stund med FYRA nivåer
+   1/2/3/4). FJORD3A och FJORD3B är satta till EXPIRED, inte raderade: en
+   kund med en sparad kod ska mötas av en död kod, inte av ett pris som inte
+   finns. Alla sex priser och koder tillbakalästa mot admin.
 6. **Variantbilderna saknas** — 60 tomma platshållare i rullgardinerna.
    Rullgardin-per-enhet i sig FUNGERAR (temats pill-väljare göms korrekt).
    De 9 varianterna är motorstorlekar, inte färger — ägarbeslut om det ens
