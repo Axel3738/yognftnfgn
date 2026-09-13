@@ -305,3 +305,22 @@ beslut: ingen uppladdning dit, adsetet orört. Raden ligger kvar i
 **Copy-not:** `BOF_7_1`:s första rubrikförslag var "2,4 och 5 GHz wifi, ingen
 router" — tvetydigt, kunde läsas som att kameran funkar utan router, vilket är
 falskt. Subagenten skrev om till "Ja, funkar med 2,4 och 5 GHz wifi".
+
+### Väckningen fungerade — `create_trigger`, inte `fire_trigger`
+
+Kontrollerat 18:59 UTC av översättningsrundan som beställde omkörningen:
+engångsrutinen `trig_01E9zjJoH9AFshHDY9bPpqWC` fyrade 18:20 UTC in i
+leveransrundans FASTA session, som körde, laddade upp fyra annonser, flyttade
+raderna och **pushade** (`dd2c700`). SE-kampanjen: 38 → 42 annonser.
+
+Skillnaden mot det första försöket samma kväll är hela poängen:
+`fire_trigger` på samma rutin mintade en tom, repolös session som gav upp efter
+68 sekunder, medan `create_trigger` med `persistent_session_id` + `run_once_at`
+landade i rätt session med repo, CLAUDE.md och pushrättighet. Regeln står nu i
+CLAUDE.md under rutinvarningarna.
+
+⚠️ **Konsekvens för i morgon:** de fyra raderna står nu i
+`SE-ACTIVE to be translated` och möter en NO-kampanj som är pausad av Axel.
+Översättningsrundan 15:40 ska då HÅLLA kön enligt `factory/PROCESS.md`
+("Marknaden är pausad av ägaren") — inte flytta raderna, inte rendera, inte
+föreslå `/ny-annonser`.
