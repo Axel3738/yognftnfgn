@@ -14,7 +14,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "15968896614749",
@@ -33,7 +35,9 @@
    "frontpage",
    "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16056898322781",
@@ -49,9 +53,10 @@
   "typ": "",
   "taggar": [],
   "kollektioner": [
-   "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16267442028893",
@@ -77,7 +82,9 @@
    "tradgard-utomhus",
    "bestsaljare",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268048662877",
@@ -103,7 +110,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268058886493",
@@ -128,7 +137,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268059771229",
@@ -153,7 +164,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268059935069",
@@ -178,7 +191,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268060066141",
@@ -202,7 +217,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268060950877",
@@ -227,7 +244,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268061147485",
@@ -252,7 +271,9 @@
    "tradgard-utomhus",
    "bestsaljare",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268061507933",
@@ -277,7 +298,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268061933917",
@@ -302,7 +325,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268063113565",
@@ -327,7 +352,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268064194909",
@@ -351,7 +378,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268064522589",
@@ -376,7 +405,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268065309021",
@@ -401,7 +432,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268065669469",
@@ -426,7 +459,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268067307869",
@@ -451,7 +486,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268068323677",
@@ -475,7 +512,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268069634397",
@@ -500,7 +539,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268073664861",
@@ -525,7 +566,9 @@
   "kollektioner": [
    "lantbruk-djur",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268075565405",
@@ -550,7 +593,9 @@
   "kollektioner": [
    "lantbruk-djur",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268083265885",
@@ -575,7 +620,9 @@
   "kollektioner": [
    "lantbruk-djur",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268084838749",
@@ -599,7 +646,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268095488349",
@@ -624,7 +673,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268097716573",
@@ -648,7 +699,9 @@
   "kollektioner": [
    "lantbruk-djur",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268098830685",
@@ -673,7 +726,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268132647261",
@@ -697,7 +752,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268140282205",
@@ -720,8 +777,11 @@
   ],
   "kollektioner": [
    "bil-verktyg-garage",
+   "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268141658461",
@@ -745,7 +805,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268142969181",
@@ -769,7 +831,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268144181597",
@@ -793,7 +857,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268145787229",
@@ -817,7 +883,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268147818845",
@@ -840,8 +908,11 @@
   ],
   "kollektioner": [
    "camping-friluft",
+   "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268148769117",
@@ -865,7 +936,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268149981533",
@@ -889,7 +962,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268150931805",
@@ -914,7 +989,9 @@
    "tradgard-utomhus",
    "bestsaljare",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268152570205",
@@ -938,7 +1015,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268154208605",
@@ -963,7 +1042,9 @@
    "camping-friluft",
    "bestsaljare",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268161057117",
@@ -987,7 +1068,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268162335069",
@@ -1011,7 +1094,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268164006237",
@@ -1035,7 +1120,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268165677405",
@@ -1059,7 +1146,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268169085277",
@@ -1083,7 +1172,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268170527069",
@@ -1106,8 +1197,11 @@
   ],
   "kollektioner": [
    "bil-verktyg-garage",
+   "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268171542877",
@@ -1131,7 +1225,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268173214045",
@@ -1141,7 +1237,7 @@
   "url": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
   "pris": 289,
   "jamforpris": null,
-  "lager": -588,
+  "lager": -593,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d426b7a-cfe0-49df-8b44-03c3aabbc326.jpg?v=1782033165",
   "typ": "Fiske",
@@ -1156,7 +1252,9 @@
    "bat-marin",
    "bestsaljare",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268174295389",
@@ -1180,7 +1278,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268175442269",
@@ -1190,7 +1290,7 @@
   "url": "https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd",
   "pris": 299,
   "jamforpris": 367,
-  "lager": -573,
+  "lager": -575,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f42097e4-160f-48e8-920d-15a08b4e5da9.jpg?v=1782033273",
   "typ": "Båt & Marin",
@@ -1205,7 +1305,9 @@
    "bat-marin",
    "bestsaljare",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268176752989",
@@ -1229,7 +1331,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268178424157",
@@ -1253,7 +1357,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268180128093",
@@ -1277,7 +1383,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268182192477",
@@ -1301,7 +1409,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268184486237",
@@ -1325,7 +1435,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268184846685",
@@ -1350,7 +1462,9 @@
    "bil-verktyg-garage",
    "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268184879453",
@@ -1374,7 +1488,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268185141597",
@@ -1398,7 +1514,9 @@
   "kollektioner": [
    "tillbehor-ovrigt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268185272669",
@@ -1422,7 +1540,9 @@
   "kollektioner": [
    "tillbehor-ovrigt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268185370973",
@@ -1446,7 +1566,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268185567581",
@@ -1470,7 +1592,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268185796957",
@@ -1494,7 +1618,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268186026333",
@@ -1518,7 +1644,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268186386781",
@@ -1542,7 +1670,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268186714461",
@@ -1566,7 +1696,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268187337053",
@@ -1590,7 +1722,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268187566429",
@@ -1614,7 +1748,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268189106525",
@@ -1638,7 +1774,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268191498589",
@@ -1662,7 +1800,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268193988957",
@@ -1686,7 +1826,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268195758429",
@@ -1710,7 +1852,9 @@
   "kollektioner": [
    "lantbruk-djur",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268197560669",
@@ -1734,7 +1878,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268199526749",
@@ -1759,7 +1905,9 @@
    "camping-friluft",
    "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268201558365",
@@ -1783,7 +1931,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268203196765",
@@ -1807,7 +1957,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268204835165",
@@ -1831,7 +1983,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268206571869",
@@ -1854,8 +2008,11 @@
   ],
   "kollektioner": [
    "camping-friluft",
+   "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268208603485",
@@ -1879,7 +2036,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268209881437",
@@ -1902,8 +2061,11 @@
   ],
   "kollektioner": [
    "camping-friluft",
+   "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268210012509",
@@ -1927,7 +2089,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268210340189",
@@ -1951,7 +2115,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268210569565",
@@ -1975,7 +2141,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268210798941",
@@ -1999,7 +2167,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268211061085",
@@ -2023,7 +2193,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268211323229",
@@ -2047,7 +2219,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268211487069",
@@ -2071,7 +2245,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268211781981",
@@ -2095,7 +2271,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268212076893",
@@ -2119,7 +2297,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268212240733",
@@ -2143,7 +2323,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268212339037",
@@ -2167,7 +2349,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268212502877",
@@ -2191,7 +2375,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268212699485",
@@ -2201,7 +2387,7 @@
   "url": "https://baverbutiken.se/products/batterifranskiljare-huvudstrombrytare-12-24v",
   "pris": 189,
   "jamforpris": 236.25,
-  "lager": 4,
+  "lager": 3,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ddb18f28-317a-4c67-93fb-facfe4ccb8d0.jpg?v=1782035733",
   "typ": "Biltillbehör",
@@ -2215,7 +2401,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268212797789",
@@ -2239,7 +2427,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268212994397",
@@ -2263,7 +2453,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16268213191005",
@@ -2287,7 +2479,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268213289309",
@@ -2311,7 +2505,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268213485917",
@@ -2335,7 +2531,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268213584221",
@@ -2359,7 +2557,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268213715293",
@@ -2383,7 +2583,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268213944669",
@@ -2407,7 +2609,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268214272349",
@@ -2431,7 +2635,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268214567261",
@@ -2455,7 +2661,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268214698333",
@@ -2479,7 +2687,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268214796637",
@@ -2503,7 +2713,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268215026013",
@@ -2527,7 +2739,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268215550301",
@@ -2551,7 +2765,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268215714141",
@@ -2575,7 +2791,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16268215845213",
@@ -2599,7 +2817,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349626696029",
@@ -2624,7 +2844,9 @@
    "camping-friluft",
    "skor-klader",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16349628399965",
@@ -2648,7 +2870,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16349629514077",
@@ -2673,7 +2897,9 @@
    "tillbehor-ovrigt",
    "hem-forvaring",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349630857565",
@@ -2698,7 +2924,9 @@
    "tillbehor-ovrigt",
    "hem-forvaring",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349632299357",
@@ -2722,7 +2950,9 @@
   "kollektioner": [
    "tillbehor-ovrigt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349632921949",
@@ -2746,7 +2976,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349633708381",
@@ -2771,7 +3003,9 @@
    "tillbehor-ovrigt",
    "elektronik-mobil",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349635739997",
@@ -2796,7 +3030,9 @@
    "tillbehor-ovrigt",
    "hem-forvaring",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349637116253",
@@ -2821,7 +3057,9 @@
    "tillbehor-ovrigt",
    "golf-sport",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349638787421",
@@ -2846,7 +3084,9 @@
    "tradgard-utomhus",
    "bestsaljare",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349640524125",
@@ -2870,7 +3110,9 @@
   "kollektioner": [
    "fordon-belysning",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349641900381",
@@ -2895,7 +3137,9 @@
    "tillbehor-ovrigt",
    "golf-sport",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16349643669853",
@@ -2920,7 +3164,9 @@
    "tillbehor-ovrigt",
    "skor-klader",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16380214215005",
@@ -2944,7 +3190,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16380215066973",
@@ -2967,8 +3215,11 @@
   ],
   "kollektioner": [
    "camping-friluft",
+   "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16380215165277",
@@ -2991,7 +3242,9 @@
   "kollektioner": [
    "golf-sport",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16380215230813",
@@ -3014,7 +3267,9 @@
   "kollektioner": [
    "golf-sport",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16380215394653",
@@ -3024,7 +3279,7 @@
   "url": "https://baverbutiken.se/products/tofflor-ergonomiska-tjocksulade-for-inne-ute",
   "pris": 309,
   "jamforpris": 400,
-  "lager": -46,
+  "lager": -47,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce963fd939ae7017637863a3d0a0ec07.jpg?v=1785594071",
   "typ": "Skor",
@@ -3038,7 +3293,9 @@
    "bestsaljare",
    "skor-klader",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16380215525725",
@@ -3061,7 +3318,9 @@
   "kollektioner": [
    "skor-klader",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16380215656797",
@@ -3084,7 +3343,9 @@
   "kollektioner": [
    "elektronik-mobil",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16380215886173",
@@ -3107,7 +3368,9 @@
   "kollektioner": [
    "elektronik-mobil",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16380216672605",
@@ -3131,7 +3394,9 @@
    "bil-verktyg-garage",
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16380217033053",
@@ -3154,7 +3419,9 @@
   "kollektioner": [
    "tradgard-utomhus",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16380217295197",
@@ -3177,7 +3444,9 @@
   "kollektioner": [
    "bat-marin",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16380217393501",
@@ -3200,7 +3469,9 @@
   "kollektioner": [
    "hem-forvaring",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16414483906909",
@@ -3224,7 +3495,9 @@
   "kollektioner": [
    "hem-forvaring",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16427870060893",
@@ -3248,7 +3521,9 @@
   "kollektioner": [
    "elektronik-mobil",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16427871338845",
@@ -3272,7 +3547,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16427873468765",
@@ -3296,7 +3573,9 @@
   "kollektioner": [
    "cykel",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16427874976093",
@@ -3320,7 +3599,9 @@
   "kollektioner": [
    "golf-sport",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16427876843869",
@@ -3344,7 +3625,9 @@
   "kollektioner": [
    "golf-sport",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16427877892445",
@@ -3368,7 +3651,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16427879694685",
@@ -3392,7 +3677,9 @@
   "kollektioner": [
    "camping-friluft",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16427880743261",
@@ -3416,8 +3703,11 @@
   "kollektioner": [
    "tradgard-utomhus",
    "camping-friluft",
+   "din-gratisprodukt",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16427882119517",
@@ -3427,7 +3717,7 @@
   "url": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
   "pris": 909,
   "jamforpris": 1182,
-  "lager": -81,
+  "lager": -86,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp?v=1786982539",
   "typ": "Verktyg",
@@ -3441,7 +3731,9 @@
   "kollektioner": [
    "bil-verktyg-garage",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16427884839261",
@@ -3465,7 +3757,9 @@
   "kollektioner": [
    "skor-klader",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16427886248285",
@@ -3490,7 +3784,9 @@
    "camping-friluft",
    "skor-klader",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16427888312669",
@@ -3515,7 +3811,9 @@
    "camping-friluft",
    "skor-klader",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16427889459549",
@@ -3540,7 +3838,9 @@
    "skor-klader",
    "cykel",
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16440375607645",
@@ -3550,7 +3850,7 @@
   "url": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
   "pris": 349,
   "jamforpris": 582,
-  "lager": -99,
+  "lager": -101,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-mc-kapell-1.jpg?v=1787226589",
   "typ": "Fordon",
@@ -3562,7 +3862,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16440375705949",
@@ -3584,7 +3886,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16440375738717",
@@ -3606,7 +3910,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16440375869789",
@@ -3628,7 +3934,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16443175731549",
@@ -3638,7 +3946,7 @@
   "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
   "pris": 579,
   "jamforpris": 965,
-  "lager": -96,
+  "lager": -102,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg?v=1787313816",
   "typ": "",
@@ -3650,7 +3958,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16454828654941",
@@ -3667,7 +3977,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16454828687709",
@@ -3684,7 +3996,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16454828720477",
@@ -3701,7 +4015,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16454828753245",
@@ -3718,7 +4034,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16454828786013",
@@ -3735,7 +4053,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474021200221",
@@ -3752,7 +4072,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311197021",
@@ -3769,7 +4091,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311262557",
@@ -3786,7 +4110,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311295325",
@@ -3803,7 +4129,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311393629",
@@ -3820,7 +4148,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311426397",
@@ -3837,7 +4167,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16474311459165",
@@ -3854,7 +4186,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16474311491933",
@@ -3871,7 +4205,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311524701",
@@ -3888,7 +4224,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311590237",
@@ -3905,7 +4243,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16474311623005",
@@ -3922,7 +4262,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311688541",
@@ -3939,7 +4281,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16474311721309",
@@ -3956,7 +4300,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474311786845",
@@ -3973,7 +4319,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16474311852381",
@@ -3990,7 +4338,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16474324238685",
@@ -4007,7 +4357,9 @@
   "taggar": [],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16516655382877",
@@ -4030,7 +4382,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16516656791901",
@@ -4052,7 +4406,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16516658594141",
@@ -4075,7 +4431,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16516659937629",
@@ -4098,7 +4456,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16516660298077",
@@ -4121,7 +4481,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16516660691293",
@@ -4144,7 +4506,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16516746969437",
@@ -4167,7 +4531,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16522215358813",
@@ -4190,7 +4556,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16522215522653",
@@ -4213,7 +4581,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16522215719261",
@@ -4236,7 +4606,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16522215883101",
@@ -4259,7 +4631,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16522216145245",
@@ -4282,7 +4656,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16522216866141",
@@ -4305,7 +4681,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16526955381085",
@@ -4328,7 +4706,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16526957183325",
@@ -4351,7 +4731,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16526958690653",
@@ -4375,7 +4757,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": false,
+  "kopbar": true
  },
  {
   "id": "16526960591197",
@@ -4399,7 +4783,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16526961869149",
@@ -4423,7 +4809,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16526967112029",
@@ -4447,7 +4835,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534662709597",
@@ -4470,7 +4860,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534663004509",
@@ -4493,7 +4885,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534663364957",
@@ -4516,7 +4910,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534663922013",
@@ -4539,7 +4935,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534665036125",
@@ -4562,7 +4960,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534666477917",
@@ -4586,7 +4986,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534666674525",
@@ -4609,7 +5011,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534666903901",
@@ -4632,7 +5036,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534666969437",
@@ -4655,7 +5061,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534667067741",
@@ -4678,7 +5086,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534667100509",
@@ -4701,7 +5111,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534667166045",
@@ -4724,7 +5136,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534667198813",
@@ -4747,7 +5161,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534667264349",
@@ -4771,7 +5187,9 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  },
  {
   "id": "16534667362653",
@@ -4795,6 +5213,8 @@
   ],
   "kollektioner": [
    "alla-produkter"
-  ]
+  ],
+  "en_variant": true,
+  "kopbar": true
  }
 ]

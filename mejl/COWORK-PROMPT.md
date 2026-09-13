@@ -11,8 +11,9 @@ en flik och går att markera med Ctrl+A.
 
 **Länkarna pekar på en gren.** Byt `claude/fervent-bardeen-pzyuql` mot
 `main` när grenen mergats, annars klistrar Cowork in en gammal version.
-Tecknantalen nedan är från bygget 2026-09-13 (v3) — bygger du om mallarna,
-kör `node -e` på filerna och uppdatera dem, annars stämmer inte kontrollen.
+Tecknantalen nedan är från bygget 2026-09-13 (**v4: knappen går till
+lyckohjulet**) — bygger du om mallarna, kör `node -e` på filerna och
+uppdatera dem, annars stämmer inte kontrollen.
 
 ---
 
@@ -39,10 +40,9 @@ INNAN du sparar**: rätt längd (se tabellens teckenantal) och rätt innehåll.
 Stämmer det inte: kopiera om, spara inte.
 
 **Börja med att kolla vad som redan sitter.** Öppna Orderbekräftelse →
-Redigera kod. Innehåller brödtexten redan `plus: 604800` och `Passar ihop
-med det du köpte` är mallarna inklistrade sedan tidigare — hoppa då över
-tabellen helt och gå direkt till **A** och **B** längre ner. Saknas
-någondera: gör tabellen.
+Redigera kod. Innehåller brödtexten redan `/pages/din-gratisprodukt` är
+mallarna inklistrade sedan tidigare — hoppa då över tabellen helt och gå
+direkt till **A** och **B** längre ner. Saknas den: gör tabellen.
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
@@ -73,13 +73,13 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 **Kontrollera** (samma fyra i alla tre mallarna, efter omladdning):
 
-- `Din gåva: välj 1 av 4`
+- `/pages/din-gratisprodukt`
 - `Passar ihop med det du köpte`
 - `Beställ före kl`
 - `plus: 604800`
 
 Antal tecken efter inklistring, som extra kontroll: Orderbekräftelse
-**85 597**, Leveransbekräftelse **78 809**, Levererad **78 013**. Shopifys
+**87 979**, Leveransbekräftelse **81 235**, Levererad **80 439**. Shopifys
 redigerare visar **ett tecken mindre** än källan (filens avslutande
 radbrytning följer inte med) — det är rätt. Skiljer det mer än så är det
 fel innehåll i urklippet.

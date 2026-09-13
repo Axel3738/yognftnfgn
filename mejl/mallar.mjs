@@ -580,7 +580,17 @@ export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 
     finstilt: ersatt(copy.upsell.finstilt, lage),
     samma_paket: ersatt(copy.upsell.samma_paket, lage),
   };
-  const lank = `${k.butik.url}/discount/${e.kod}?redirect=%2Fcollections%2F${e.kollektion_handle}`;
+  // Knappen går till hjulet, med produkten kunden köpte som parameter så
+  // sidan kan visa "en till" + komplement. Rabattkoden läggs INTE på här:
+  // /discount/…?redirect= med en egen frågesträng inuti redirect är
+  // odokumenterat, och hjulets kassaknapp lägger på koden när den behövs.
+  const radNyckel = kalla === 'order' ? 'line' : 'line.line_item';
+  const loop = kalla === 'order' ? 'line_items' : 'fulfillment.fulfillment_line_items';
+  const hjulUrl = `${k.butik.url}/pages/${k.hjul.handle}`;
+  const lank =
+    lage === 'liquid'
+      ? `${hjulUrl}{% for line in ${loop} limit: 1 %}{% if ${radNyckel}.product.handle != blank %}?produkt={{ ${radNyckel}.product.handle }}{% endif %}{% endfor %}`
+      : `${hjulUrl}?produkt=${EXEMPEL.rader[0].handle}`;
   // Samma-paket-raden: bara när konfigen har timmar > 0 och copyn en rad.
   // I Liquid döljs den när deadline passerat (paket_passerat).
   const paketRad =
@@ -588,14 +598,26 @@ export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 
       ? `<p style="${s.brod} font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;">&#128230; ${esk(u.samma_paket)}</p>`
       : '';
   const paket = lage === 'liquid' && paketRad ? `{% if paket_passerat == false %}${paketRad}{% endif %}` : paketRad;
-  const gratis = produkter.gratis
-    .map((p) =>
-      produktKort(s, {
-        url: p.url,
-        bild: bildLiten(p.bild),
-        namn: esk(p.kortnamn),
-        pris: `<s>${kr(p.pris)}</s> <strong style="color: ${s.rod};">0 kr</strong>`,
-      })
+  // Vinsterna på hjulet: bild + namn, fem i bredd. Inga priser — hjulet
+  // avgör vilken kunden får, mejlet visar bara vad som kan komma upp.
+  const perRad = 5;
+  const vinstrader = [];
+  for (let i = 0; i < produkter.gratis.length; i += perRad) vinstrader.push(produkter.gratis.slice(i, i + perRad));
+  const gratis = vinstrader
+    .map(
+      (rad) => `
+                <tr>${rad
+                  .map(
+                    (p) => `
+                  <td width="20%" valign="top" align="center" style="padding: 6px 3px;">
+                    <a href="${p.url}" style="text-decoration: none;">
+                      <img src="${bildLiten(p.bild)}" alt="" width="72" height="72" style="display: block; border: 1px solid ${s.ram}; margin: 0 auto;">
+                      <p style="${s.brod} font-size: 11px; line-height: 1.3; color: ${s.gra}; margin: 5px 0 0;">${esk(p.kortnamn)}</p>
+                    </a>
+                  </td>`
+                  )
+                  .join('')}${'<td width="20%"></td>'.repeat(perRad - rad.length)}
+                </tr>`
     )
     .join('');
   const komplement = komplementBlock(k, s, copy, produkter.komplement, lage, kalla);
@@ -635,9 +657,7 @@ export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 
           </tr>${litenRubrik(s, u.valj_rubrik, { topp: 20 })}
           <tr>
             <td style="padding: 0 28px 8px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>${gratis}
-                </tr>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${gratis}
               </table>
             </td>
           </tr>${komplement}${stycke(k, s, u.finstilt, { farg: s.gra, storlek: 11, topp: 4 })}
@@ -905,7 +925,17 @@ export function valjKomplement(alla, konfig) {
   const visbara = new Set([...fallback, ...[...karta.values()].flatMap((v) => v.lista)]);
   for (const h of visbara) {
     const p = perHandle.get(h);
-    katalog.set(h, { kortnamn: kortnamn(p.titel), bild: bildLiten(p.bild), pris: p.pris, url: p.url });
+    // variant_id och en_variant används av hjulsidan: en produkt med bara en
+    // variant kan läggas i korgen direkt, övriga får en länk till produktsidan
+    // eftersom kunden måste välja storlek eller färg först.
+    katalog.set(h, {
+      kortnamn: kortnamn(p.titel),
+      bild: bildLiten(p.bild),
+      pris: p.pris,
+      url: p.url,
+      variant_id: p.variant_id ?? null,
+      en_variant: p.en_variant !== false,
+    });
   }
   return { antal, karta, katalog, fallback, kallor, okanda: [...okanda].sort() };
 }

@@ -139,12 +139,18 @@ test('exempel-läget innehåller ingen Liquid alls', () => {
   }
 });
 
-test('erbjudandet ligger i rätt mallar och bär kod, kollektionslänk, fyra gratis och komplementen', () => {
+test('erbjudandet ligger i rätt mallar och bär hjullänk, vinsterna och komplementen', () => {
   const e = konfig.erbjudande;
   for (const meta of MALLAR) {
     const m = byggMall(meta.id, { ...indata, lage: 'liquid' });
-    const har = m.html.includes(`/discount/${e.kod}?redirect=%2Fcollections%2F${e.kollektion_handle}`);
+    // Knappen går till hjulet, med produkten kunden köpte som parameter.
+    const har = m.html.includes(`${konfig.butik.url}/pages/${konfig.hjul.handle}`);
     assert.equal(har, meta.erbjudande, `${meta.id}: erbjudande ${meta.erbjudande ? 'saknas' : 'ska inte vara med'}`);
+    if (meta.erbjudande) {
+      const rad = meta.id === 'orderbekraftelse' ? 'line' : 'line.line_item';
+      assert.ok(m.html.includes(`?produkt={{ ${rad}.product.handle }}`), `${meta.id}: produktparametern`);
+      assert.ok(!m.html.includes('redirect=%2Fcollections%2F'), `${meta.id}: gamla kollektionslänken kvar`);
+    }
     assert.equal(m.html.includes(copy.komplement.rubrik), meta.erbjudande, `${meta.id}: komplementblocket`);
     if (meta.erbjudande) {
       for (const g of produkter.gratis) assert.ok(m.html.includes(g.url), `${meta.id}: gratis ${g.handle}`);

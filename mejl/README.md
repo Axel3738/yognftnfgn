@@ -1,20 +1,29 @@
 # Bäverbutikens mejl — kundnotiser + "köp igen → gratisprodukt"
 
 Bäverbutikens åtta kundmejl (orderbekräftelse, leverans, återbetalning …) i
-butikens stil, med erbjudandet **den som handlat en gång får välja en
-gratisprodukt vid nästa köp**, följt av **en till av det kunden köpte + tre
-produkter som passar ihop med det** (vägen till 299 kr). Byggt 2026-09-12 på
-Axels uppdrag ("fixa upsell på mejlet"), omgjort 2026-09-13 efter hans
-feedback (se "v3" nedan).
+butikens stil **plus lyckohjulet på sajten**. Den som handlat en gång får
+snurra ett hjul på https://baverbutiken.se/pages/din-gratisprodukt och vinna
+en av tio produkter, som blir gratis vid nästa köp på minst 299 kr. Under
+hjulet: **en till av det kunden köpte + tre som passar ihop med det**
+(vägen till 299 kr). Byggt 2026-09-12 på Axels uppdrag ("fixa upsell på
+mejlet"), omgjort 2026-09-13 två gånger efter hans feedback — först
+komplement i stället för dyraste produkter (v3), sedan hjulet (v4).
 
 Noll beroenden. Kör från repo-roten:
 
 ```bash
-npm run mejl                    # = node mejl/bygg.mjs — hämtar produkter ur Shopify, bygger allt
-node mejl/bygg.mjs --offline    # bygger på förra körningens mejl/produkter.json
-node mejl/kollektion.mjs        # skapar/synkar kollektionen "Din gratisprodukt" (idempotent)
+npm run mejl                        # = node mejl/bygg.mjs — hämtar produkter ur Shopify, bygger mejlen
+node mejl/bygg.mjs --offline        # bygger på förra körningens mejl/produkter.json
+node mejl/kollektion.mjs            # synkar kollektionen "Din gratisprodukt" = hjulets tio vinster
+node mejl/hjul-publicera.mjs        # bygger OCH publicerar hjulsidan, med trippelkoll mot kundens vy
+node mejl/hjul-publicera.mjs --offline   # bara filerna, inget till Shopify
 node --test mejl/test/*.test.mjs
 ```
+
+⚠️ **Kör alltid `kollektion.mjs` när vinstlistan ändras.** Hjulet kan bara
+ge bort det rabattkoden täcker: kollektionen "Din gratisprodukt" är
+rabattens Y-sida. Står en vinst inte i kollektionen blir den inte gratis i
+kassan, och hjulets löfte blir falskt.
 
 Kommandot för Axel: **`/mejl`** (`.claude/commands/mejl.md`) — bygger,
 publicerar sidan och ger honom klickschemat.
@@ -34,7 +43,9 @@ finns inte i kontots lista). Använd länken ovan; den gamla visar v2.
 | Erbjudandet (kod, minsta köp, gratisprodukter, 7 dagar, 18 timmar) | `mejl/konfig.json` | ändras i filen, aldrig i mallarna |
 | Komplementkartan (vad som visas bredvid "en till") | `mejl/konfig.json → komplement` | kurerad för hand, se nedan |
 | All kundtext | `mejl/copy.json` | Sonnet-subagent enligt `docs/copy-regler.md` (CLAUDE.md regel 6) |
-| Struktur och HTML | `mejl/mallar.mjs` | huvudsessionen |
+| Struktur och HTML i mejlen | `mejl/mallar.mjs` | huvudsessionen |
+| Hjulsidan (HTML, CSS, JS) | `mejl/hjul.mjs` | huvudsessionen |
+| Publicering av hjulsidan | `mejl/hjul-publicera.mjs` | skriptet, med trippelkoll |
 | Produkter, priser, bilder, länkar | Shopify via `mejl/shopify.mjs` | hämtas vid varje bygge |
 | Kollektionen `/collections/din-gratisprodukt` | Shopify | `mejl/kollektion.mjs` |
 | **Rabattkoden `TACKIGEN`** | Shopify admin → Rabatter | **Axel för hand** (se nedan) |
@@ -60,13 +71,70 @@ kan förhandsvisningen aldrig visa något annat än det som skickas.
 
 Ämnesraden är ett eget fält i Shopify och ligger i `<mall>.amne.txt`.
 
+## Lyckohjulet (v4, Axels beslut 2026-09-13)
+
+**https://baverbutiken.se/pages/din-gratisprodukt** — publicerad 2026-09-13,
+sid-id `gid://shopify/Page/728819564893`, mall `page.full-width`.
+
+Axel ville ha exklusivitetskänslan: "som en goodie bag", inte en kupong.
+Därför snurr i stället för en lista att välja ur. Flödet:
+
+1. Mejlets knapp går till hjulet, med `?produkt=<handle på det kunden köpte>`.
+   **Ingen rabattkod i länken** — `/discount/…?redirect=` med en egen
+   frågesträng inuti redirect är odokumenterat, och hjulets kassaknapp
+   lägger på koden ändå.
+2. Kunden snurrar. Vinnaren lottas i webbläsaren bland vinster som är i
+   lager (`crypto.getRandomValues`), hjulet roterar dit och stannar.
+3. Vinsten sparas i `localStorage` (`bb_gratishjul`) — kommer kunden
+   tillbaka visas samma vinst, inget nytt snurr. Det är **per webbläsare**,
+   inte per kund: inkognito ger ett nytt snurr. Den riktiga spärren är
+   rabattkoden, som bara går en gång per kund.
+4. "Lägg i korgen" kör `/cart/add.js` med line item-property `_gratishjul`,
+   så vinsten går att se på orderraden i admin utan app.
+5. Under vinsten: "En till" av produkten ur `?produkt=` plus tre komplement
+   ur samma karta som mejlet. Okänd produkt ⇒ storsäljarna.
+6. Korgstatus läses ur `/cart.js` och räknar **exklusive vinsten**: "du har
+   X i korgen, Y kvar". "Till kassan" går till
+   `/discount/TACKIGEN?redirect=%2Fcheckout`.
+
+### Det här är hjulet inte
+
+- ⚠️ **Hjulet är upplevelse, inte kontroll.** Rabatten är "1 ur kollektionen
+  Din gratisprodukt", så vilken som helst av de tio blir gratis i kassan.
+  Kunden kan byta ut vinsten. Ekonomisk exponering: max 279 kr per order,
+  samma som dyraste vinsten. Vill Axel ha bindande vinst krävs tio
+  produktspecifika koder, och då måste mejlen bära rätt kod per kund.
+- ⚠️ **Rabatten syns först i kassan**, efter att kunden fyllt i sin e-post
+  (segmentet `number_of_orders >= 1`). I varukorgen står vinsten kvar till
+  fullt pris. Sidan säger det rakt ut — lova aldrig "0 kr i varukorgen".
+- ⚠️ **Bara produkter med EN variant kan ligga på hjulet.** Kunden ska
+  slippa välja storlek på något hen inte bett om. `hjul-publicera.mjs`
+  stoppar körningen om en vinst har flera varianter. Bävertratten (5
+  varianter) åkte ut av det skälet.
+
+### Sidan är en Shopify-sida, inte en temafil
+
+Allt ligger inline i sidkroppen: HTML, `<style>` avgränsad till `#bb-hjul`,
+och `<script>`. Shopify strippar inte script ur sidkroppen (verifierat mot
+den publika sidan 2026-09-13). Fördelen är att sidan överlever temabyten och
+GemPages. Priset är att Liquid **inte** renderas i `page.content`, så
+produkterna bakas in vid bygget och uppdateras levande i webbläsaren ur
+`/collections/din-gratisprodukt/products.json`.
+
+Sidkroppen är 53 kB. Kartan och katalogen komprimeras precis som i mejlen:
+katalogen är en array, kartan pekar med index, bildernas CDN-prefix skrivs
+en gång. Utan det blev sidan 90 kB.
+
+⚠️ **Öppna aldrig sidan i Shopifys WYSIWYG-redigerare och spara.** Den kan
+omforma HTML och bryta skriptet. Ändringar görs i `mejl/hjul.mjs` och
+publiceras om med `node mejl/hjul-publicera.mjs`.
+
 ## Erbjudandet — så funkar mekaniken
 
 1. Kunden lägger första ordern → Shopify räknar `number_of_orders = 1`.
-2. Orderbekräftelsen (och leveransmejlen) visar koden **TACKIGEN**, de fyra
-   gratisprodukterna och komplementen. Knappen går till
-   `baverbutiken.se/discount/TACKIGEN?redirect=/collections/din-gratisprodukt`
-   — Shopify lägger på koden i kundens varukorg och öppnar kollektionen.
+2. Orderbekräftelsen (och leveransmejlen) visar koden **TACKIGEN**, hjulets
+   tio vinster som en bildrad och komplementen. Knappen går till
+   `baverbutiken.se/pages/din-gratisprodukt?produkt=<det kunden köpte>`.
 3. Rabattkoden är en **Köp X få Y**: minst 299 kr i korgen (ur kollektionen
    "Alla produkter") → 1 produkt ur kollektionen "Din gratisprodukt" gratis.
    Berättigade: segmentet "Kunder som har gjort inköp minst en gång"
@@ -76,10 +144,13 @@ kan förhandsvisningen aldrig visa något annat än det som skickas.
    kundregistret: ingen inloggning krävs (Shopify help, "identified when
    they check out using a valid email address or phone number", läst
    2026-09-13), men e-posten måste vara samma som vid första köpet.
-4. Gratisprodukterna (Axels val kan bytas i `konfig.json`): Bäverlampa Pro
-   199 kr, Bävertratt 149 kr, Kepslampa 300 lumen 169 kr, Digital
-   däckdjupsmätare 169 kr. Billiga, i lager, passar butikens kunder (bil,
-   garage, båt). "Värde upp till 199 kr" i mejlet följer av det dyraste.
+4. Vinsterna på hjulet (`konfig.json → erbjudande.gratisprodukter`, tio
+   stycken 169–279 kr): Bäverlampa Pro, Kepslampa 300 lumen, Digital
+   däckdjupsmätare, Nano Coating Vax, Solcellslampa COB, Fickkedjesåg,
+   Magnetfiskesats, Hopfällbar såg, 3D Snickarvinkel, Nödregnjacka. Alla
+   med en variant, i lager, breda i tilltal (bil, garage, båt, friluft).
+   "Värde upp till 279 kr" i mejlet följer av det dyraste. Storsäljarna är
+   medvetet **inte** med — de är det kunden ska köpa för att nå 299 kr.
 5. **Komplementen (v3, 2026-09-13):** under gratisprodukterna fyra kort —
    "En till" av produkten kunden köpte (Liquid: `line | img_url`,
    `line.title`, `line.price`) + tre ur kartan `konfig.json → komplement`.

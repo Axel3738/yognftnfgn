@@ -95,9 +95,9 @@ export async function hamtaProdukter() {
     const d = await graphql(
       `query($after: String) { products(first: 50, query: "status:active", after: $after) {
         pageInfo { hasNextPage endCursor }
-        edges { node { id title handle onlineStoreUrl totalInventory productType tags featuredImage { url }
+        edges { node { id title handle onlineStoreUrl totalInventory productType tags hasOnlyDefaultVariant featuredImage { url }
           collections(first: 10) { edges { node { handle } } }
-          variants(first: 1) { edges { node { id price compareAtPrice inventoryPolicy } } } } } } }`,
+          variants(first: 1) { edges { node { id price compareAtPrice inventoryPolicy availableForSale } } } } } } }`,
       { after }
     );
     for (const { node: n } of d.products.edges) {
@@ -116,6 +116,10 @@ export async function hamtaProdukter() {
         typ: n.productType ?? '',
         taggar: n.tags ?? [],
         kollektioner: (n.collections?.edges ?? []).map((e) => e.node.handle),
+        // Hjulet och förslagskorten lägger i korgen direkt bara när det inte
+        // finns något att välja (storlek, färg) — annars länk till produktsidan.
+        en_variant: Boolean(n.hasOnlyDefaultVariant),
+        kopbar: v.availableForSale !== false,
       });
     }
     if (!d.products.pageInfo.hasNextPage) break;
