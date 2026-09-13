@@ -37,7 +37,7 @@ import { lasState, skrivState, markeraKlart, markeraManuell, BUTIKSNYCKEL, lasAr
 import { produktHandle } from './build-store.mjs';
 import { hamtaArbetstema } from './shopify.mjs';
 import { skapaPixel, hamtaPixlar, hittaBrandpixel, pixelHarFyrat, tilldelaCapiAnvandare, OPS_ANNONSKONTO, OPS_BUSINESS } from './meta-setup.mjs';
-import { byggKanalplan, byggServer } from './discord.mjs';
+import { byggKanalplan, byggServer, hittaGuildForBrand } from './discord.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 const text = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
@@ -207,12 +207,21 @@ async function byggDiscord(butik, { torr, guildId }) {
   const brand = butik.butik.brand;
   const plan = byggKanalplan(brand);
   if (!process.env.DISCORD_BOT_TOKEN) return { manuell: `DISCORD_BOT_TOKEN saknas — kanalerna (${plan.kategorier.flatMap((k) => k.kanaler.map((c) => `#${c.namn}`)).join(', ')}) byggs när nyckeln finns` };
-  if (!guildId) {
-    return { manuell: `boten kan inte skapa servrar — VA:n skapar "${plan.servernamn}" i Discord, auktoriserar boten (node factory/discord.mjs ${join('factory', 'butiker', `${butik.butik.id}.yaml`)} skriver ut länken) och kör sen node factory/store-ready.mjs ${butik.butik.id} --guild <server-id>` };
+  // Utan --guild: fråga boten vilka servrar den är med i. Har någon redan
+  // skapat servern och klickat auktoriseringslänken finns id:t där — ingen
+  // ska behöva slå på utvecklarläget i Discord och kopiera ett tal
+  // (FjordCover 2026-09-13).
+  let guild = guildId;
+  if (!guild) {
+    const traff = await hittaGuildForBrand(brand).catch(() => null);
+    if (traff) guild = traff.id;
   }
-  if (torr) return { manuell: `(torr) ${plan.kategorier.flatMap((k) => k.kanaler).length} kanaler skulle byggas i server ${guildId}` };
+  if (!guild) {
+    return { manuell: `boten kan inte skapa servrar — VA:n skapar "${plan.servernamn}" i Discord och klickar auktoriseringslänken (node factory/discord.mjs ${join('factory', 'butiker', `${butik.butik.id}.yaml`)} skriver ut den). Sen hittar node factory/store-ready.mjs ${butik.butik.id} servern själv — inget server-id behövs.` };
+  }
+  if (torr) return { manuell: `(torr) ${plan.kategorier.flatMap((k) => k.kanaler).length} kanaler skulle byggas i server ${guild}` };
   const ikon = join(FACTORY_ROT, 'output', butik.butik.id, 'logga.png');
-  const r = await byggServer(brand, guildId, existsSync(ikon) ? ikon : null);
+  const r = await byggServer(brand, guild, existsSync(ikon) ? ikon : null);
   return { guildId: r.guildId, kanaler: r.kanaler, invite: r.invite ?? null, ikon: r.ikon ?? null, redigerare: null };
 }
 

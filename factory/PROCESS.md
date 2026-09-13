@@ -509,6 +509,15 @@ gick rakt igenom på första körningen. Mätningar:
   fältet, inte statistiken.
   ⚠️ En lösenordsskyddad butik får inga events av sig själv: någon måste
   besöka sidan bakom lösenordet innan pixeln kan fyra första gången.
+- **Discord-serverns id behöver aldrig letas upp.** Steget bad VA:n slå på
+  utvecklarläget i Discord och kopiera ett tal till `--guild`. Men boten är
+  medlem i servern i samma sekund som auktoriseringslänken klickas, och
+  `/users/@me/guilds` listar den. `discord.hittaGuildForBrand(brand)` matchar
+  på "<Brand> — OPS", på brandet ensamt (AdventLanes server heter så) och på
+  brandet med valfritt suffix, skifteslägesokänsligt och med tankstreck
+  normaliserade. `store-ready` kör uppslaget när `--guild` saknas.
+  FjordCover 2026-09-13: VA:n frågade var id:t fanns, och boten hade sett
+  servern hela tiden.
 - **Två människoklick rapporterades som väntande efter att de var gjorda.**
   VA:n bytte butiksnamn, publicerade temat, kopplade fjordcover.se och skapade
   Meta-sidan. Kundvyn och trippelkollen såg det direkt (alla gröna), men

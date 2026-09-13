@@ -102,6 +102,31 @@ export async function hamtaGuilds() {
 }
 
 /** En server med ägare: { id, name, owner_id }. Ägaren är den larmet pingar. */
+/**
+ * Serverns id givet brandet — boten är redan medlem, så id:t behöver aldrig
+ * letas upp för hand. Matchar i tur och ordning på "<Brand> — OPS" (plan-
+ * namnet), på brandet ensamt, och sist på brandet med valfritt suffix.
+ * Alla jämförelser är skifteslägesokänsliga och normaliserar tankstreck.
+ *
+ * Finns för att steget annars fastnar på en fråga: VA:n hade skapat servern
+ * och auktoriserat boten, men bads leta upp ett id i Discords utvecklarläge
+ * (FjordCover 2026-09-13). Boten kunde se servern hela tiden.
+ * → { id, name } eller null.
+ */
+export async function hittaGuildForBrand(brand, guilds = null) {
+  const norm = (v) => String(v ?? '').replace(/[—–-]/g, '-').replace(/\s+/g, ' ').trim().toLowerCase();
+  const mal = norm(brand);
+  if (!mal) return null;
+  const lista = guilds ?? (await hamtaGuilds());
+  const planNamn = norm(byggKanalplan(brand).servernamn);
+  return (
+    lista.find((g) => norm(g.name) === planNamn) ??
+    lista.find((g) => norm(g.name) === mal) ??
+    lista.find((g) => norm(g.name).startsWith(`${mal} `)) ??
+    null
+  );
+}
+
 export async function hamtaGuild(guildId) {
   const g = await discord(`/guilds/${guildId}`);
   return { id: g.id, name: g.name, owner_id: g.owner_id };
