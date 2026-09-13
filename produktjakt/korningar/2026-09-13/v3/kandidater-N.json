@@ -1,0 +1,343 @@
+{
+  "agent": "N — formsydd form på nya maskinobjekt (H01/H02/H04)",
+  "datum": "2026-09-13",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Poolvärmepumpens vinterhuv",
+      "objekt": "NYTT: Poolvärmepumpen (15–40 tkr, står ute vid poolen hela vintern efter poolstängningen)",
+      "form": "överdrag",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploitation",
+      "hypotes_id": "H02",
+      "vinnarlikhet": {
+        "likast": "Termoskyddet för Husbil 211 × 171 cm / Taköverdraget för Husvagn",
+        "delade_variabler": [
+          "objekt ute, dyr > 10 tkr (poolvärmepump 15–40 tkr)",
+          "formsydd form (överdrag) över maskinen",
+          "hårt datum: poolstängning 30 sept–20 okt (NOW 2,4 v)",
+          "improvisation i dag (presenning + tegelsten, eller inget alls)",
+          "ägare 55+ i småhus med pool",
+          "fackhandelsankare 645–695 kr finns (poolklubben), inget kedjegolv under oss"
+        ],
+        "avvikelser": [
+          "kortare fönster än husvagnens (2,4 v till topp, slut 20 okt)",
+          "andel pooler med värmepump ej mätt"
+        ]
+      },
+      "sasong": {
+        "fonster_id": "poolstangning",
+        "deadline_typ": "poolstängning",
+        "veckor_kvar": 2.4,
+        "timing": "NOW"
+      },
+      "listning": {
+        "product_id": "1005009382324430",
+        "url": "https://www.aliexpress.com/item/1005009382324430.html",
+        "pris_usd": 21.24,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:11:39Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005009382324430.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ej sedda i sökträff/titel — troligen en storlek (heron visar en rektangulär huv med rörutskärning och dragsnören); storlek mot GreenMachine S/L 890–1060 × 440 × 658–758 mm måste kontrolleras med leverantören",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": false,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "heron visar huven på en värmepump vid husväggen med rören ut genom sidan — bra kontext, men inbränd text uppe ('Cover the entire surface…') och 'Special offer'-badge måste beskäras bort"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {
+          "aktor": "Poolklubben (GreenMachine) Poolvärmepump Vinterskydd S",
+          "pris_sek": 645,
+          "url": "https://www.poolklubben.se/product/greenmachine-vinterskydd",
+          "exakt_samma_form": true
+        },
+        "premium_ankare": {
+          "namn": "Poolklubben Poolvärmepump Vinterskydd L (gummerad presenning, 13 i lager)",
+          "pris_sek": 695,
+          "url": "https://www.poolklubben.se/product/poolvarmepump-vinterskydd-l",
+          "i_sortiment": true
+        },
+        "ankare_kvot": 1.16,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "poolklubben.se (S 645 kr / L 695 kr, gummerad presenning, i lager 16/13 — läst 2026-09-13)",
+          "poolkungen.se ('Vinterskydd Ecoheat I/II från 785 kr' i sökutdrag; produktsidan gav ett annat objekt vid hämtning — ej bekräftat)",
+          "folkpool.se (bara pooltäcken, inget värmepumpsskydd i utdragen)",
+          "hornbach.se (vinteröverdrag pool 499–3 199 kr; inget för värmepumpen)",
+          "bauhaus.se (Värmepumpsskydd Jabo/Superroof = aluminiumtak för luftvärmepump — annan form, Axel NEJ 09-12)",
+          "svenskabadbranschen.se via mynewsdesk: 129 000 pooler ≥ 15 tkr i Sverige 2023 (prognos), 100 000 år 2020"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [276, 338],
+        "pris_sek": 599,
+        "brutto_sek": [261, 323],
+        "be_cpa_sek": [261, 323],
+        "be_roas": 2.05,
+        "flerkop": false,
+        "returrisk": "medel — kunden måste veta pumpens mått; en storlek mot många pumpmodeller"
+      },
+      "meta_tanke": {
+        "hook": "Står poolvärmepumpen ute i vinter?",
+        "objekt_i_bild": "poolvärmepumpen vid husväggen, huven dras över, rören ut genom utskärningen",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "huven på pumpen med snö ovanpå; alternativt smältvatten som rinner av — mot en pump i frostnatt utan"
+      },
+      "varfor": "Samma struktur som husvagnstaket och termoskyddet: dyr maskin (15–40 tkr) ute inför ett datum ingen kan flytta (poolstängning 30 sept–20 okt), formsydd huv, fackhandelsankare 645–695 kr och inget kedjegolv under oss. Objektet har aldrig sökts i rutinen.",
+      "huvudrisk": "Fönstret är kort (2,4 v till topp, slut 20 okt) och andelen av 129 000 pooler som har värmepump är inte mätt; ankarkvoten är svag (1,16×) så priset kan inte gå högre än 599.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 1, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep pool/pump: bara poolfilterborste 279 och vätskepumpar — annan form)", "koncept.py sok pool (K0077 solpooltäcke, K0166 vinterkudde — annat objekt)", "fynd.json 09-11/09-12 (inget poolobjekt)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005009382324430.html",
+        "https://www.poolklubben.se/product/poolvarmepump-vinterskydd-l",
+        "https://www.poolklubben.se/product/greenmachine-vinterskydd",
+        "https://www.poolkungen.se/vinterskydd-ecoheat-i-ii-p982",
+        "https://www.mynewsdesk.com/se/svenska-badbranschen/pressreleases/svenska-badbranschen-delar-branschstatistik-foer-pooler-och-spabad-3277173",
+        "https://www.bygghemma.se/reportage-och-guider/vinterstangning-av-pool (SASONG.md poolstangning)"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Vedklyvshuven 210D",
+      "objekt": "NYTT: Vedklyven (hydraulisk/elektrisk, 3–8 tkr — Scheppach HL460 2 995, HL810 8 145; står under skärmtak vid vedstapeln hela vintern)",
+      "form": "överdrag",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploitation",
+      "hypotes_id": "H01",
+      "vinnarlikhet": {
+        "likast": "Motorhöljet (Marin motorhölje 420D) / Sätesöverdragaren",
+        "delade_variabler": [
+          "ägd maskin ute (under skärmtak/vid vedstapeln), medel 1–10 tkr",
+          "formsydd huv i stället för presenning (improvisation i dag)",
+          "datum: vedsäsongens start 15 okt (NOW 4,6 v) — maskinen står ute tills våren",
+          "ägare 55+ i småhus med vedeldning (1,7 miljoner vedeldade eldstäder i Sverige, MSB via sökutdrag)",
+          "inget kedjegolv i dag: Jula (Meec 380055) och Clas Ohlson (Cocraft 40-1033) har haft formen och tagit bort den"
+        ],
+        "avvikelser": [
+          "objektet är medel 1–10 tkr, inte > 10 tkr",
+          "inget svenskt ankare att prissätta mot — priset bygger på landad × 2,4",
+          "listningen 'fits 12 ton' är gjord för större amerikanska klyvar; svensk standard är 4–7 ton horisontell"
+        ]
+      },
+      "sasong": {
+        "fonster_id": "vedsasong",
+        "deadline_typ": "vedsäsong",
+        "veckor_kvar": 4.6,
+        "timing": "NOW"
+      },
+      "listning": {
+        "product_id": "1005012964334132",
+        "url": "https://www.aliexpress.com/item/1005012964334132.html",
+        "pris_usd": 14.45,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:11:39Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012964334132.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en storlek ('Fits 12 Ton Models', 210D Oxford) enligt titel; alternativ listning 1005013120562780 (17,79 USD, hero-collage med text, snöpanel) öppnad och sedd",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "heron: klyven under huven i ett skärmtak i regn, vedstapel bredvid — huven genomskinligt ritad så maskinen syns; bara två små sol/regn-ikoner, inga ord. Bästa heron i linsen."
+      },
+      "marknad": {
+        "lagsta_jamforbara": {
+          "aktor": "ingen svensk aktör live i samma form (mätt 2026-09-13): Jula Meec Skyddsöverdrag 380055 'ingår inte längre i sortimentet', Clas Ohlson Cocraft 40-1033 'produkten har utgått'",
+          "pris_sek": null,
+          "url": "https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/vedbearbetning/vedklyvar/skyddsoverdrag-380055/",
+          "exakt_samma_form": false
+        },
+        "premium_ankare": {
+          "namn": "ej mätt — Bauhaus Espegard-överdrag gäller Kindling Cracker (manuell klyv, annat objekt); inget märkesöverdrag för hydraulisk vedklyv hittat hos Bauhaus/Skogma/P. Lindberg",
+          "pris_sek": null,
+          "url": null,
+          "i_sortiment": false
+        },
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "jula.se (sökutdrag: 380055 utgått, passade vedklyv 380-025)",
+          "clasohlson.com (40-1033 överdrag för vedklyv 40-9122, 115×37×95 cm — utgått)",
+          "bauhaus.se (vedklyvar Scheppach 2 995–8 145 kr; Espegard-överdrag bara till Kindling Cracker)",
+          "skogma.se / p-lindberg.se (sökutdrag: klyvar, inga överdrag)",
+          "MSB via sökutdrag: > 1,7 miljoner vedeldade eldstäder i Sverige (antal hydrauliska vedklyvar ej mätt)"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [188, 230],
+        "pris_sek": 499,
+        "brutto_sek": [269, 311],
+        "be_cpa_sek": [269, 311],
+        "be_roas": 1.72,
+        "flerkop": false,
+        "returrisk": "medel — en storlek mot klyvar 4–12 ton; kunden måste jämföra mått"
+      },
+      "meta_tanke": {
+        "hook": "Står vedklyven ute i höst?",
+        "objekt_i_bild": "vedklyven under skärmtaket, huven dras på, regnet slår mot taket, vedstapeln bredvid",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "rost på hydraulcylinder/kolv och vatten i elmotorn utan — torr blank klyv under huven med"
+      },
+      "varfor": "Motorhöljets struktur på ett objekt rutinen aldrig sökt: maskin ute vid vedstapeln, presenning som improvisation, vedsäsongen 4,6 v bort, och båda kedjorna som haft formen har tagit bort den — hyllan är tom. Heron är textfri och i kontext.",
+      "huvudrisk": "Inget svenskt ankare att luta priset mot och listningen är sydd för 12-tons klyvar — passformen mot svenska 4–7-tonsmaskiner måste bekräftas innan launch.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 3, "efterfragan": 2, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep vedklyv: Manuell Vedklyv väggmonterad 1 489 och Vedklyvborr 369 — annan form, inte huv)", "koncept.py sok vedklyv (0 träffar)", "fynd.json 09-11/09-12 (Vedställskapellet i butiken är vedstapeln, inte maskinen)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012964334132.html",
+        "https://www.aliexpress.com/item/1005013120562780.html",
+        "https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/vedbearbetning/vedklyvar/skyddsoverdrag-380055/",
+        "https://clasohlson.com/se/%C3%96verdrag-f%C3%B6r-vedklyv-Cocraft/40-1033",
+        "https://www.bauhaus.se/maskiner/tradgardsmaskiner/vedkapar-vedklyvar",
+        "https://vedmatch.se/guider/kopa-ved-guide/ (SASONG.md vedsasong)"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Promenadscooterns regnkapell",
+      "objekt": "NYTT: Promenadscootern/elskotern (10–30 tkr, ägare 70+; står under carport/vid entrén, elektronik + sits i regnet)",
+      "form": "överdrag",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploitation",
+      "hypotes_id": "H01",
+      "vinnarlikhet": {
+        "likast": "MC-Kapellet / Motorhöljet",
+        "delade_variabler": [
+          "ägd dyr sak ute (10–30 tkr, sökutdrag promenadskoter.se/blimo)",
+          "formsydd kapell över hela fordonet",
+          "väderhot nu: höstregn 10 okt–15 nov, sen frost på display/batteri",
+          "improvisation i dag (presenning, sopsäck över sitsen)",
+          "ägaren är kontots köpare: kvinna/man 70+ i småhus",
+          "fackhandelsankare 895–1 095 kr (promenadskoter.se) och 999 kr (Blimo) — ankare 1,67×, inget kedjegolv"
+        ],
+        "avvikelser": [
+          "inget hårt datum — objektet används året runt, hotet är löpande (H01, inte H02)",
+          "ägarantal ej mätt (Socialstyrelsen särredovisar inte elskoter)"
+        ]
+      },
+      "sasong": {
+        "fonster_id": "hostregn",
+        "deadline_typ": "höstregn",
+        "veckor_kvar": 3.9,
+        "timing": "NOW"
+      },
+      "listning": {
+        "product_id": "1005013078903398",
+        "url": "https://www.aliexpress.com/item/1005013078903398.html",
+        "pris_usd": 18.29,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:11:39Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013078903398.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ej sedda i sökträff/titel (190D Oxford; storlekar troliga — fyrhjulig scooter med korg kräver stor variant); alternativ listning 1005009438741122 (27,19 USD) öppnad, hero packshot med scooter-inset",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "heron: gråhårig man drar kapellet över sin fyrhjuliga scooter på uppfarten, reflexband, hjulen synliga under — textfri, rätt avatar, färdig att köra"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {
+          "aktor": "Blimo Skyddsöverdrag (50-/90-/100-/1400-serien, Moto sport 950)",
+          "pris_sek": 999,
+          "url": "https://www.blimo.se/skyddsoverdrag",
+          "exakt_samma_form": true
+        },
+        "premium_ankare": {
+          "namn": "promenadskoter.se Överdrag HS-828 & HS-925 (HS-328 895, HS-520 995)",
+          "pris_sek": 1095,
+          "url": "https://promenadskoter.se/tillbehor/",
+          "i_sortiment": true
+        },
+        "ankare_kvot": 1.67,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "promenadskoter.se/tillbehor (HS-328 895 / HS-520 995 / HS-828&925 1 095 kr, '+30 butiker i Sverige' — läst 2026-09-13)",
+          "blimo.se/skyddsoverdrag (999 kr inkl. moms)",
+          "inwistore.se (regnskydd universal — sidan tom vid hämtning, pris ej sett)",
+          "amazon.se B09KN5D971 (generiskt överdrag finns; 503 vid hämtning, pris ej sett)",
+          "shoppo.se (403), seniorlife.se (404)",
+          "Socialstyrelsen via sökutdrag: 876 000 personer med förskrivet förflyttningshjälpmedel 2021; elskoter/elrullstol ej särredovisat"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [238, 291],
+        "pris_sek": 599,
+        "brutto_sek": [308, 361],
+        "be_cpa_sek": [308, 361],
+        "be_roas": 1.79,
+        "flerkop": false,
+        "returrisk": "medel — storlek mot tre-/fyrhjulig scooter med korg och tak; storleksguide krävs"
+      },
+      "meta_tanke": {
+        "hook": "Står din scooter ute i regnet?",
+        "objekt_i_bild": "promenadscootern på uppfarten, kapellet dras över av ägaren själv, regn på kapellet",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "våt sits + immig display utan — torr scooter under kapellet med; reflexbanden lyser i mörkret"
+      },
+      "varfor": "MC-kapellets struktur på ett objekt rutinen aldrig sökt, hos exakt kontots avatar (70+): 10–30 tkr ute vid entrén, presenning i dag, fackhandeln tar 895–1 095 kr och ingen kedja säljer formen. Heron är textfri, i kontext och visar ägaren själv.",
+      "huvudrisk": "Ägarantalet är inte mätt och fordonet används dagligen — kapellet måste vara enkelt att ta av/på; storleksvarianter är inte sedda i listningen.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 3, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep scooter/rullstol: 0 träffar)", "koncept.py sok scooter (K0110–K0189 = MC-/moped-/sparkcykelkapell — annat objekt)", "koncept.py sok rullstol (0)", "fynd.json 09-11/09-12 (inget)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005013078903398.html",
+        "https://www.aliexpress.com/item/1005009438741122.html",
+        "https://promenadskoter.se/tillbehor/",
+        "https://www.blimo.se/skyddsoverdrag",
+        "https://www.amazon.se/dp/B09KN5D971"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Kompostkvarnshuven (flishugg/kompostkvarn)", "skal": "Båda öppnade listningarna (1005013131647426 23,39 USD, 1005012660178887 12,33 USD) har rena packshots utan kontext (materialklass 0); ingen svensk aktör i formen men objektet (Bosch AXT/Stiga 3–6 tkr) förvaras oftast inne efter höststädningen — objekt_ute tveksamt. Kan sökas om med bättre hero."},
+    {"namn": "Golfbilskapellet", "skal": "Ägarantal går inte att motivera: golfbilar ägs av klubbar (B2B), inte av kontots 55+-hushåll; ingen svensk siffra hittad. Listning 1005008135544189 (41,25 USD) öppnad och hero sedd, men struken på efterfrågan."},
+    {"namn": "Hydroforens/vattenpumpens frosthuv", "skal": "AliExpress-formen (1005012967933484, 57,29 USD, isolerad rund huv) är byggd för amerikanska 'well pump/backflow preventer' ute på tomten; svenska hydroforer står i pumphus eller källare (byggahus/flashback-trådar) — objektet finns inte ute i Sverige på samma sätt. Landad ~830 kr utan ankare."},
+    {"namn": "Poolpumpshuven (sandfilterpump)", "skal": "1005006306424085 (25,89 USD) visade sig vara huv för sandfilterpump till ovanmarkspool — annat, billigare objekt (1–3 tkr) och packshot-hero; poolvärmepumpen är det dyra objektet och tar platsen."},
+    {"namn": "Terrassvärmarhuven (felträff)", "skal": "1005008170713357 (19,99 USD) heter 'pool heat pump cover' i sökträffen men heron visar en cylindrisk huv för terrassvärmare — inte samma produkt som konceptet. Struken som felträff."},
+    {"namn": "Jordfräsen / sopmaskinen", "skal": "Inte sökta: få ägare bland 55+-hushåll och maskinerna förvaras inne; formtaket (≤ 40 % skyddsformer) gör att linsen stannar vid tre starka rader hellre än fyra svaga."},
+    {"namn": "Elcykelkapellet", "skal": "Ankare 299 mätt (objekt.json), kedjeform — söks inte enligt uppdraget."}
+  ]
+}
