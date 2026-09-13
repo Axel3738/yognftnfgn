@@ -1,5 +1,11 @@
 # Skalningskungen — ombyggnaden av annonshalvan
 
+> ⚠️ **ÄNDRAT 2026-09-13 (Axels beslut):** briefhalvan är TILLBAKA. Ronden gör
+> både brief-rundor på Bäverbutiken (steg 4b–4c, i Axels nya hubbar "BÄVER
+> <produkt>") OCH startskott till #ops-startskott (steg 4d). Axel skalar vidare
+> på Bäverbutiken med fler videoredigerare och bygger OPS-butiker parallellt.
+> Stycken nedan som säger att ronden "inte gör briefer" gäller 10–13 sept.
+
 ✅ **LIVE sedan 2026-09-10.** Pushad till `claude/daily-agent-discussion-uos5df`
 (commit `9a0303f` + `a1c83dd`). Nästa körning 07:30 plockar upp den själv.
 Filerna här är en kopia så arbetet överlever att containern försvinner.

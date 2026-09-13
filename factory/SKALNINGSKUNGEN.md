@@ -1,5 +1,11 @@
 # Skalningskungen — kravspec
 
+> ⚠️ **ÄNDRAT 2026-09-13 (Axels beslut):** briefhalvan är TILLBAKA. Ronden gör
+> både brief-rundor på Bäverbutiken (steg 4b–4c, i Axels nya hubbar "BÄVER
+> <produkt>") OCH startskott till #ops-startskott (steg 4d). Axel skalar vidare
+> på Bäverbutiken med fler videoredigerare och bygger OPS-butiker parallellt.
+> Stycken nedan som säger att ronden "inte gör briefer" gäller 10–13 sept.
+
 **Vad det är:** den dagliga rutinen som läser annonsdatan, ändrar budgetarna,
 och beställer nya brief-rundor.
 

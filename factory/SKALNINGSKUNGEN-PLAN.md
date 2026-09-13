@@ -1,5 +1,11 @@
 # Skalningskungen — ombyggnadsplanen
 
+> ⚠️ **ÄNDRAT 2026-09-13 (Axels beslut):** briefhalvan är TILLBAKA. Ronden gör
+> både brief-rundor på Bäverbutiken (steg 4b–4c, i Axels nya hubbar "BÄVER
+> <produkt>") OCH startskott till #ops-startskott (steg 4d). Axel skalar vidare
+> på Bäverbutiken med fler videoredigerare och bygger OPS-butiker parallellt.
+> Stycken nedan som säger att ronden "inte gör briefer" gäller 10–13 sept.
+
 **Skriven 2026-09-09** efter en avläsning av den KÖRANDE rutinen, inte av
 repots dokument. Läs `TRAPPAN.md` för när, den här filen för vad och hur.
 
