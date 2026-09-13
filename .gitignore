@@ -24,3 +24,8 @@ factory/output/*/leverans-*/
 factory/output/*/bild-*/
 factory/output/*/*.logg
 kundtjanst/jobb/
+# Fixturkörningens utdata (`--fixtur kundtjanst/test/fixturer/demo`). Den skriver
+# brandet "demobutiken" som en riktig körning — men den är demodata och ska
+# aldrig blandas ihop med brevlådornas verkliga historik.
+kundtjanst/korningar/demobutiken/
+kundtjanst/historik/demobutiken.jsonl
