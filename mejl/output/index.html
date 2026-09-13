@@ -84,7 +84,7 @@
 
 <main>
   <header class="topp">
-    <p class="dampad">Bäverbutiken.se · byggd 2026-09-13 05:18 UTC</p>
+    <p class="dampad">Bäverbutiken.se · byggd 2026-09-13 06:18 UTC</p>
     <h1>Bäverbutikens mejl</h1>
     <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet.</p>
   </header>
@@ -192,7 +192,7 @@
         <p class="dampad">25 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-orderbekraftelse">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-orderbekraftelse">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
+{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -549,7 +549,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller till 13 oktober — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller till 20 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -640,7 +640,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td style=&quot;padding: 4px 32px 8px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med 13 oktober. Kombineras inte med andra koder.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med 20 september. Kombineras inte med andra koder.&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;&lt;td style=&quot;padding: 0 0 12px;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
@@ -813,7 +813,7 @@
         <p class="dampad">18 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-fraktbekraftelse">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-fraktbekraftelse">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
+{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -1118,7 +1118,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller till 13 oktober — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller till 20 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -1209,7 +1209,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td style=&quot;padding: 4px 32px 8px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med 13 oktober. Kombineras inte med andra koder.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med 20 september. Kombineras inte med andra koder.&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;&lt;td style=&quot;padding: 0 0 12px;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
@@ -1292,7 +1292,7 @@
         <p class="dampad">6 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-fraktuppdatering">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-fraktuppdatering">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
+{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -1497,7 +1497,7 @@
         <p class="dampad">6 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-ute_for_leverans">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-ute_for_leverans">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
+{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -1702,7 +1702,7 @@
         <p class="dampad">18 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-levererad">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-levererad">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
+{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -1985,7 +1985,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller till 13 oktober — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller till 20 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -2076,7 +2076,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td style=&quot;padding: 4px 32px 8px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med 13 oktober. Kombineras inte med andra koder.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med 20 september. Kombineras inte med andra koder.&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;&lt;td style=&quot;padding: 0 0 12px;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
@@ -2169,7 +2169,7 @@
         <p class="dampad">6 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-overgiven_kassa">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-overgiven_kassa">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
+{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -2376,7 +2376,7 @@
         <p class="dampad">5 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-aterbetalning">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-aterbetalning">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
+{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -2551,7 +2551,7 @@
         <p class="dampad">5 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-avbruten_order">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-avbruten_order">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
+{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>

@@ -70,22 +70,28 @@ const LIQUID = {
 
 export const MANADER = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'];
 
-// Sista dag för erbjudandet: i dag + giltig_dagar, som "12 oktober". Exempel-
-// läget räknar i JavaScript; Liquid-läget räknar i Shopify vid utskick (se
-// `slutdatumLiquid`), så datumet i mejlet alltid utgår från orderdagen.
+// Sista dag för erbjudandet: orderdag + giltig_dagar, som "20 september".
+// Exempel-läget räknar i JavaScript från i dag; Liquid-läget räknar i Shopify
+// vid utskick (se `slutdatumLiquid`) från orderns created_at.
 export function exempelSlutdatum(dagar, nu = new Date()) {
   const d = new Date(nu.getTime() + dagar * 86400 * 1000);
   return `${d.getDate()} ${MANADER[d.getMonth()]}`;
 }
 
 // Liquid som sätter `slutdatum` = orderdag + N dagar med svensk månad.
-// 'now' | date: '%s' ger unix-sekunder som sträng; plus gör tal av den och
+// Utgår från orderns `created_at` (finns i alla ordernotiser, även frakt- och
+// leveransmejlen), så alla mejl om samma order visar samma sista dag. Före
+// 2026-09-13 stod här 'now' = utskickstiden, och fraktmejlet tre dagar senare
+// lovade tre dagar mer än orderbekräftelsen — det var det Axel såg som att
+// datumet "sköts upp". 'now' är kvar bara som reserv om created_at saknas.
+// date: '%s' ger unix-sekunder som sträng; plus gör tal av den och
 // date-filtret tar tal. Månaden mappas för hand — Shopify ger engelska namn.
 export function slutdatumLiquid(dagar) {
   const sek = dagar * 86400;
   const fall = MANADER.map((m, i) => `{% when '${String(i + 1).padStart(2, '0')}' %}{% assign slut_man = '${m}' %}`).join('');
   return (
-    `{% assign slut_ts = 'now' | date: '%s' | plus: ${sek} %}` +
+    `{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}` +
+    `{% assign slut_ts = start_ts | plus: ${sek} %}` +
     `{% assign slut_dag = slut_ts | date: '%-d' %}` +
     `{% assign slut_mm = slut_ts | date: '%m' %}` +
     `{% case slut_mm %}${fall}{% else %}{% assign slut_man = '' %}{% endcase %}` +

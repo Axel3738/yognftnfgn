@@ -27,8 +27,8 @@
     "minsta_kop_sek": 299,
     "gratis_antal": 1,
     "en_gang_per_kund": true,
-    "giltig_dagar": 30,
-    "giltig_dagar_comment": "Mejlet säger 'gäller till <orderdatum + 30 dagar>'. Shopify kan inte stänga koden per kund efter 30 dagar, så koden funkar längre än mejlet lovar — kunden förlorar aldrig på det. Hård gräns kräver ett Shopify Flow (kundtagg som tas bort efter 30 dagar + segment på taggen).",
+    "giltig_dagar": 7,
+    "giltig_dagar_comment": "Mejlet säger 'gäller till <orderdatum + 7 dagar>' (Axels beslut 2026-09-13, var 30). Datumet räknas ur orderns created_at i Liquid, så orderbekräftelsen, fraktmejlet och leveransmejlet visar SAMMA dag — före 2026-09-13 räknades det ur 'now' vid varje utskick och sköts framåt för varje mejl. Shopify kan inte stänga koden per kund efter 7 dagar, så koden funkar längre än mejlet lovar — kunden förlorar aldrig på det. Hård gräns kräver ett Shopify Flow (kundtagg som tas bort efter 7 dagar + segment på taggen).",
     "kollektion_handle": "din-gratisprodukt",
     "kollektion_titel": "Din gratisprodukt",
     "gratisprodukter": [

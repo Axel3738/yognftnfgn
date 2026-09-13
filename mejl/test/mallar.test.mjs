@@ -93,7 +93,9 @@ test('erbjudandet ligger överst (före orderknappen) och bär sista datum, logg
   const m = byggMall('orderbekraftelse', { ...indata, lage: 'liquid' });
   assert.ok(m.html.indexOf('Erbjudandet:') < m.html.indexOf('{{ order_status_url }}'), 'erbjudandet ska komma före Följ din order');
   assert.ok(m.html.indexOf('Erbjudandet:') < m.html.indexOf('Vad händer nu?'), 'erbjudandet ska komma före tidslinjen');
-  assert.ok(m.html.includes("{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}"), 'slutdatum räknas ur orderdagen + 30 dagar');
+  assert.ok(m.html.includes("{% assign start_ts = created_at | date: '%s' %}"), 'slutdatum utgår från orderns created_at, inte utskickstiden');
+  assert.ok(m.html.includes("{% assign slut_ts = start_ts | plus: 604800 %}"), 'slutdatum räknas ur orderdagen + 7 dagar');
+  assert.ok(!m.html.includes("'now' | date: '%s' | plus:"), "'now' får inte längre vara basen för slutdatumet");
   assert.ok(m.html.includes('{{ slutdatum }}'), 'urgency-raden bär slutdatum');
   assert.ok(m.html.includes(`src="${konfig.butik.logga_url}"`), 'loggan i sidhuvudet');
   assert.ok(m.html.includes('Impact'), 'rubriktypsnitt som finns i mejlklienter');
@@ -101,11 +103,14 @@ test('erbjudandet ligger överst (före orderknappen) och bär sista datum, logg
   assert.match(ex.html, /Gäller till \d{1,2} (januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)/);
 });
 
-test('exempelSlutdatum och slutdatumLiquid: 30 dagar, svensk månad, alla tolv månader i case-satsen', () => {
-  assert.equal(exempelSlutdatum(30, new Date(2026, 8, 12)), '12 oktober');
-  assert.equal(exempelSlutdatum(30, new Date(2026, 11, 15)), '14 januari');
+test('exempelSlutdatum och slutdatumLiquid: 7 dagar, svensk månad, alla tolv månader i case-satsen', () => {
+  assert.equal(konfig.erbjudande.giltig_dagar, 7, 'Axels beslut 2026-09-13: sju dagar, inte trettio');
+  assert.equal(exempelSlutdatum(7, new Date(2026, 8, 13)), '20 september');
+  assert.equal(exempelSlutdatum(7, new Date(2026, 11, 28)), '4 januari');
   const l = slutdatumLiquid(14);
   assert.ok(l.includes('plus: 1209600'));
+  assert.ok(l.includes("{% if created_at %}"), 'orderdatumet är basen');
+  assert.ok(l.includes("{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}"), "'now' bara som reserv");
   for (const m of ['januari', 'december']) assert.ok(l.includes(`'${m}'`));
   assert.equal((l.match(/\{% when /g) ?? []).length, 12);
 });
