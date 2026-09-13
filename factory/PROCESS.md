@@ -288,7 +288,20 @@ Hela listan i `factory/README.md`.
     `paket.mjs` räknar varje nivås pris i den valutan med samma procent och
     skriver det i metaobjektfältet `fastpris_valutor` ("NOK:1880.20");
     `tema.patchaMsPaketValuta` låter snippeten läsa det fältet när
-    `cart.currency` inte är butikens valuta. Rabattkoden blir en
+    `cart.currency` inte är butikens valuta.
+    ⚠️ **Mallen `ops-tema.zip` saknar både de norska orden och
+    `fastpris_valutor` — det är med flit, inte en lucka.** Mallen hålls ren och
+    `ops.mjs` steg `tema` patchar in båda vid VARJE bygge (`patchaMsPaket` +
+    `patchaMsPaketValuta`, idempotenta). Lägg dem aldrig i zipen: då blir
+    patcharna no-ops och två källor ska hållas i synk i stället för en.
+    ⚠️ Men patcharna är TYSTA när de missar: båda svarar `null` både när
+    jobbet redan är gjort och när ankaret saknas. Skrivs snippeten om så att
+    raden `assign fast = niva.fastpris.value` ändras, försvinner NOK-priset
+    utan felmeddelande och syns först som SEK-pris i en norsk kassa. Testet
+    "zipens ms-paket.liquid bär ankaret för BÅDA bygg-patcharna"
+    (`factory/test/tema.test.mjs`, skrivet 2026-09-13 efter att snippeten
+    bytts mot rullgardinsversionen) kör patcherna mot den riktiga zipen och
+    blir rött innan det når en butik. Rabattkoden blir en
     **procentkod** när nivån är en hel procent utan gratisrad — ett fast
     SEK-belopp räknas om med dagskursen i kassan och driver ifrån sidan
     (mätt: sidan 1 919,30, kassan 1 880,63). Med procent stämmer sida och

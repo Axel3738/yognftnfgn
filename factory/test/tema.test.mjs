@@ -621,3 +621,35 @@ test('patchaMsPaketValuta: fastpris_valutor vinner i kundens valuta, idempotent'
   assert.equal(patchaMsPaketValuta(p), null);
   assert.equal(patchaMsPaketValuta('inget fastpris här'), null);
 });
+
+// De två bygg-patcharna i ops.mjs steg `tema` lagar mallens två medvetna
+// luckor: husets norska ord och paketpriset i kundens valuta. Mallen ska
+// förbli ren — men patcherna är TYSTA när de missar. Båda returnerar `null`
+// både när jobbet redan är gjort OCH när ankaret saknas, så en omskriven
+// snippet i zipen tar bort norska ord och NOK-priset utan ett enda
+// felmeddelande; det syns först som SEK-pris i en norsk kassa (CaraShell
+// 2026-09-12). Testet ovan kör mot en handskriven sträng — det här kör mot
+// den RIKTIGA zipen, så ankaret inte kan försvinna tyst.
+// (Nära ögat 2026-09-13: zipens ms-paket.liquid byttes mot rullgardinsversionen.)
+test('zipens ms-paket.liquid bär ankaret för BÅDA bygg-patcharna', async () => {
+  const { patchaMsPaket, patchaMsPaketValuta, MS_PAKET_VALUTA_MARKE } = await import('../tema.mjs');
+  const snippet = urZip('snippets/ms-paket.liquid');
+
+  // Mallen är ren: ingen av patcharna får redan vara gjord.
+  assert.ok(!snippet.includes("request.locale.iso_code == 'nb'"), 'mallen ska INTE bära norska grenar — motorn patchar in dem');
+  assert.ok(!snippet.includes(MS_PAKET_VALUTA_MARKE), 'mallen ska INTE bära valutapatchen — motorn patchar in den');
+
+  // …men båda ska FINNA sitt ankare, annars lagas luckan aldrig.
+  const norska = patchaMsPaket(snippet);
+  assert.ok(norska, 'patchaMsPaket hittade inget att översätta i zipens snippet — norska orden skulle tyst utebli');
+  assert.ok(norska.includes("request.locale.iso_code == 'nb'"));
+
+  const valuta = patchaMsPaketValuta(norska);
+  assert.ok(valuta, 'patchaMsPaketValuta hittade inte raden "assign fast = niva.fastpris.value" — NOK-priset skulle tyst utebli');
+  assert.ok(valuta.includes(MS_PAKET_VALUTA_MARKE));
+  assert.ok(valuta.includes('cart.currency.iso_code != shop.currency'));
+
+  // Kör i samma ordning som ops.mjs och är idempotent efteråt.
+  assert.equal(patchaMsPaket(valuta), null);
+  assert.equal(patchaMsPaketValuta(valuta), null);
+});
