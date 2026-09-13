@@ -334,3 +334,72 @@ Tre verktygsfynd, alla fixade i samma körning:
 
 Nästa: NO-kampanjen har nu 22 annonser i 7 adsets. Nattvakten dömer bara SE; NO-utfallet
 syns bara i "bortfiltrerade" (dna.md rotorsak 3).
+
+### Utfall vid avläsning 2026-09-13 (körning nr 3, 14d, SE) — batch #2:s feedback-loop
+
+Kampanjen passerade grinden på kampanjnivå: **2 410 kr, 5 köp, ROAS 1,37, intäkt
+3 293 kr (AOV 659 kr — paket har sålts)** — under BE-ROAS 1,54 ⇒ budgetronden
+sänkte 1 000 → 700 kr (vinst 3d −8,2 %). **Ingen enskild annons ≥ 3 köp ⇒ 0
+bedömbara, ingen dom, kallstart fortsätter.** 23 annonser (7 nya sedan 12/9).
+
+| Annons | Status | Spend | Köp | CPA | ROAS | Hook | Hold | CTR | CVR | Läge |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| PD_1_H1 | PAUSED (12/9) | 847 kr | 2 | 423 kr | 1,18 | 20,9 % | 23,4 % | 3,66 % | 1,20 % | för tidigt — pausad enligt ny annons-regeln |
+| GT_3_H1 | ACTIVE | 520 kr | 1 | 520 kr | 0,96 | 23,3 % | 21,5 % | 2,84 % | 0,85 % | för tidigt |
+| GT_1_H1 | ACTIVE | 410 kr | 1 | 410 kr | 2,31 | 31,2 % | 28,0 % | 2,75 % | 1,54 % | för tidigt |
+| GT_2_1 | ACTIVE | 292 kr | 1 | 292 kr | 2,90 | — | — | 2,76 % | 1,82 % | för tidigt |
+| GT_2_H1 · CS_1_H1 · PD_2_1 · AU_1_H1 | ACTIVE | 77 · 53 · 46 · 35 kr | 0 | — | — | — | — | — | — | för tidigt |
+| 15 annonser ≤ 24 kr | ACTIVE | 131 kr | 0 | — | — | — | — | — | — | för tidigt |
+
+**Batch #2, annons för annons (hypotes → utfall):** `MR_1_H1` 16 kr, 0 köp (hook
+46,7 % på 30 visningar — brus) · `PD_8_H1` 1 kr · `SY_1_H1` 1 kr · `PD_2_H2`,
+`SO_1_1`, `FF_1_1`, `EF_1_1` fortfarande Draft i hubben (inte gjorda). **Ingen
+hypotes kan avläsas.** Tre videor gjordes och laddades upp samma dag (Jazz +
+`/ops-leverans`) — snabbare än väntat.
+
+**Vad datan säger utan att döma:** efter pausen av PD_1_H1 flyttade CBO:n spenden
+till **GT-adsetet** (1 222 kr, 3 köp, CPA 407 kr sammanlagt — över BE 323), inte
+till källans PD-vinnare (`PD_2_1` 46 kr, `PD_2_H1` 9 kr). Axels beslut B (CBO:n
+står kvar) gäller; datan bokförs.
+
+**Ärvd historik 2026-09-13 (livstid):** 5 858 kr, 23 köp, ROAS 2,32, AOV 591 kr.
+`PD_2_H1` 2 897 kr / 11 köp / **CPA 263 kr** (var 150 → 191 → 263 över tre
+läsningar — regressionen fortsätter) · `PD_2_1` 1 691 kr / 8 köp / CPA 211 kr ·
+`GT_1_H1` 938 kr / **3 köp / CPA 313 kr** — nu bedömbar, 10 kr under BE (vinst 31 kr).
+
+---
+
+## Batch #3 — 2026-09-13 · andra briefronden (körning nr 3) · KALLSTART, 21 briefer
+
+**Redigerare tilldelad:** Jazz (2026-09-12) ⇒ kadens 21 (7/dag × 3). OPS har
+0 bedömbara ⇒ föräldrarna är de ÄRVDA vinnarna `PD_2_H1` (video) och `PD_2_1`
+(bild): **11 varianter** (hook / format / angle roterat, en variabel var) + **10 nya
+koncept** (4 med källa: playbook citat-kort + riktiga recensioner, winning line PD;
+**6 märkta gissning**). Planen i klartext: `batch-03/plan.json`. Copy A/B: fable 11,
+sonnet 10, via Agent-verktyget (fyra subagenter parallellt).
+
+| # | Annons | Typ | Slot | Förälder / källa | Variabel | Hypotes (kort) | copy |
+|---|---|---|---|---|---|---|---|
+| 1 | PD_2_H3 | video | variant | PD_2_H1 | hook | 24 bilar på bordet i sek 0 | fable |
+| 2 | PD_2_H4 | video | variant | PD_2_H1 | hook | lucka 1 öppnas, bilen rullar ut | sonnet |
+| 3 | PD_2_H5 | video | variant | PD_2_H1 | hook | fråga över tom chokladkalender | fable |
+| 4 | PD_2_H6 | video | variant | PD_2_H1 | format: ingen röst | captions bär allt | sonnet |
+| 5 | PD_2_H7 | video | variant | PD_2_H1 | hook | "24 luckor. Ingen choklad." på kartongens framsida | fable |
+| 6 | PD_2_H8 | video | variant | PD_2_H1 | format: 6 s | hook + CTA, inget mellan | sonnet |
+| 7 | ID_1_H1 | video | variant | PD_2_H1 | angle: identitet | "du hade själv en chokladkalender" | fable |
+| 8 | PD_2_2 | bild | variant | PD_2_1 | textmängd: ingen | allt i copy card | sonnet |
+| 9 | PD_2_3 | bild | variant | PD_2_1 | visuell stil: UGC-mobilfoto | samma budskap, hemmafoto | fable |
+| 10 | PD_2_4 | bild | variant | PD_2_1 | visuell stil: minimal | kartong + en bil | sonnet |
+| 11 | GT_4_1 | bild | variant | PD_2_1 | angle: present | klar att ge bort, öppnas 24 gånger | fable |
+| 12 | SP_4_1 | bild | koncept | playbook citat-kort + Sara | — | "ett bra alternativ till godis" | sonnet |
+| 13 | SP_5_1 | bild | koncept | playbook citat-kort + Erik | — | "Min dotter gillar den mycket" (flickförälder) | fable |
+| 14 | SP_6_H1 | video | koncept | playbook + Johan | — | en recension som hela filmen | sonnet |
+| 15 | SO_1_H1 | video | koncept | winning line PD (tidsram) | — | "24 frukostar" som video | fable |
+| 16 | PR_1_1 | bild | koncept | **gissning** | — | knappt 21 kr per lucka | sonnet |
+| 17 | KV_1_H1 | video | koncept | **gissning** (brandcopy) | — | "Öppnas en gång. Finns kvar sen." | fable |
+| 18 | MH_1_1 | bild | koncept | **gissning** (brandscen) | — | morgonrutinen som stillbild | sonnet |
+| 19 | ST_1_H1 | video | koncept | **gissning** (format) | — | stop-motion 24 bilar | fable |
+| 20 | GT_5_H1 | video | koncept | **gissning** (GT under grinden) | — | farmor/farfar som video | sonnet |
+| 21 | AU_2_1 | bild | koncept | **gissning** (formatöverföring) | — | makro på hjul och startnummer | fable |
+
+Döms tidigast ons 2026-09-16, bara det som passerat grinden. Kill mot BE-CPA 323 / BE-ROAS 1,54.

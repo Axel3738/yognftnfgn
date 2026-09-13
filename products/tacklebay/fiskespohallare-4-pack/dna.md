@@ -2,7 +2,7 @@
 
 Skapad 2026-09-11 av `/notionscalercs setup tacklebay/fiskespohallare-4-pack`
 (körning nr 1 — setup, ingen briefrond).
-**Senast uppdaterad 2026-09-12 — körning nr 2, första briefronden (KALLSTART).**
+**Senast uppdaterad 2026-09-13 — körning nr 3, andra briefronden (fortfarande KALLSTART).**
 Nyckel `tacklebay/fiskespohallare-4-pack`, brand **TackleBay**, tacklebay.se.
 
 ⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken.**
@@ -215,6 +215,76 @@ break-even-CPA med ~2 kr — inte akut, men räkna om vid nästa `/cs`.
   `UTLANDSKA_KONTON`, FAS2 uppdrag D). Känt, inte ett fel att rätta här.
 - **Norska kampanjen** `TACKLEBAY_NO_Spöhållaren` (9 annonser) döms separat
   med `--marknad NO` — aldrig i samma tabell som SE.
+
+---
+
+## Körning nr 3 — 2026-09-13, andra briefronden: fortfarande KALLSTART
+
+**Ingen bedömbar annons än.** Meta last_14d (`budgetrond.mjs` + `skalning.mjs`
+2026-09-13): **65 annonser, 2 170 kr, 3 köp, 18 368 visningar, intäkt 1 272 kr,
+ROAS 0,59.** Dygn: 181 kr/0 · 602 kr/1 · 1 387 kr/2. 0 av 65 över grinden.
+Datakvalitet: 0 trasiga rader. **Budgetronden sänkte kampanjen 1 000 → 700 kr**
+(vinst 3d −104 % mot BE-ROAS 1,49, tillbakaläst) — kampanjnivån passerade
+grinden på exakt 3 köp, alltså preliminärt (ANALYSMETOD 2c); regeln är
+skriptets och sänkningen står, men läs den som "för tidigt att döma en
+enskild annons, tillräckligt för att bromsa budgeten".
+
+| Annons | Spend | Köp | CPA | Hook 3 s | Hold p50 | CTR | CPC |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| `TackleBayRod_PD_25_H1` | 534 kr | **2** | 267 kr | 31,5 % | 19,4 % | 1,92 % | 5,80 kr |
+| `TackleBayRod_PD_11_H1` | 465 kr | 0 | — | 24,5 % | 17,9 % | 2,16 % | 4,79 kr |
+| `TackleBayRod_B_PD_EXTRA` | 183 kr | 0 | — | 29,3 % | 16,7 % | 2,45 % | 5,22 kr |
+| `TackleBayRod_SP_1_H3` | 153 kr | 0 | — | 38,0 % | 27,8 % | 2,75 % | 5,66 kr |
+| `TackleBayRod_PD_1_H1` | 147 kr | 0 | — | 31,3 % | 16,6 % | 1,18 % | 12,26 kr |
+| `TackleBayRod_PD_29_H1` | 72 kr | 0 | — | 34,1 % | 27,3 % | 2,13 % | 8,94 kr |
+| `TackleBayRod_PD_16_H2` | 70 kr | 0 | — | **49,6 %** | 19,4 % | 2,22 % | 3,86 kr |
+
+Pekare (ingen dom): `PD_25_H1` är närmast grinden (2 köp, CPA 267 kr under
+BE 294 — men 2 köp). `SP_1_H3` håller bäst hold + CTR tredje avläsningen i
+rad. `PD_16_H2` hook 49,6 % — samma familj som ärvda `PD_16_H1` ("Passar
+alla", bäst hold i källan). **13 nya annonser dök upp i kampanjen sedan
+2026-09-12** (`PD_25_H1`, `PD_8_*`, `PD_19_H1`, `PD_16_H1`, `PD_26_H1` …) —
+uppladdade utanför nattvakten, källa inte loggad. `PD_16_H1` ligger alltså
+nu i kampanjen (4 kr) — backloggens "saknas i kampanjen" gäller bara
+`PD_15_H1` och `PD_11_H2`.
+
+**Hubben 2026-09-13:** batch #2:s `PD_42_H1` och `PD_45_H1` står `in progress`,
+`PD_46_H1` i `Creative strat review` (Jasper Tomboc), fyra bilder kvar i
+`Draft`. De 10 källvideorna flyttades 2026-09-12 08:55 från `To be Reviewed`
+till `Creative strat review` av Jasper — Axels nej till brand-swap står,
+nattvakten rör dem inte.
+
+**Redigerare tilldelad 2026-09-12: Eric J** ⇒ kadens 21 per briefrond.
+Batch #3 = 21 briefer: 7 varianter av ärvda vinnare (`PD_15_H1`, `PD_6_1`,
+`PD_16_H1`, `SO_4_1`, winning line), 7 syskon till batch #2, 7 nya koncept
+(2 med playbook-källa, 5 hypoteser). Se batch-log.md.
+
+### Ärvda briefer lästa 2026-09-13 (teardown-underlag)
+- `Rodholder_PD_16_H1` "Passar alla": samma klämma på tunt spinnspö och tjockt
+  båtspö, ingen text, ingen VO, 8–15 s. Bäst hold i källan (23,3 %). → `PD_57_H1`
+  isolerar captions.
+- `Rodholder_PD_11_H2` "Klicket": öppnar på spöt lyft i den klämda sektionen,
+  sedan klicken. Samma fotage som `PD_11_H1`. → modell för `PD_60_H1`, `PD_61_H1`.
+- `Rodholder_SO_4_1`: **inte social proof utan en 2×2-listicle** "4 hållare,
+  fyra platser" (båt / vägg / förråd / transport) — två celler säljer förvaring,
+  fel löfte. Brödtexten "Inget rabattpris — bara det verkliga priset … 72,25 kr
+  per hållare … Klarna … 30 dagars nöjd-kund-garanti". ⚠️ 30-dagarsgarantin och
+  Klarna är källans, inte TackleBays (14 dagars ångerrätt). → `PD_58_1`
+  (transportceller), `GT_5_1` (trust-vinkeln).
+
+### Mönster → instruktion i batch #3
+| Mönster | Status | Instruktion |
+|---|---|---|
+| 1. PD/demo bär köpen | **bevisad** (ärvd) | 14 av 21 briefer är demo-baserade |
+| 2. Skaka-testet: hook ja, hold nej | **bevisad som hook** | Tre isoleringar av holden: mitten (`PD_42_H1`, batch #2), längd (`PD_47_H1`), ljud (`PD_48_H1`) |
+| 3. `PD_6_1`-bilden konverterar | **bevisad för DEN bilden** | Fyra syskon isolerar scen / rubrik / prisrad / antal (`PD_43_1`, `PD_44_1`, `PD_49_1`, `PD_50_1`) |
+| 4. "Passar alla" håller bäst | **bevisad** (11 köp, +403 kr) | `PD_57_H1` — samma film, captions på |
+| 5. Trust/anti-hype | **hypotes** (playbook-vinnare på annan verksamhet) | `GT_5_1` |
+| 6. Jämförelse mot gummiband | **hypotes** | `JF_4_1`, `JF_5_H1` |
+
+### Copy A/B — ställning 2026-09-13
+Batch #3: **Fable 11 · Sonnet 9 · ärvd 1.** Ackumulerat (batch #2 + #3):
+Fable 14, Sonnet 12, ärvd 2. Bedömbara per modell: 0 / 0. Väg: Agent-verktyget.
 
 ---
 

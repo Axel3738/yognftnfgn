@@ -1,0 +1,14 @@
+# Fixtur för tester och demo — inte ett riktigt brand.
+brand:
+  namn: "Demobutiken"
+  supportmail: "hello@demobutiken.se"
+  shop: "demo-butiken.myshopify.com"
+  land: SE
+  valuta: SEK
+discord:
+  kanal: customer-service
+notion:
+  sop_database_id: "fixtur"
+trosklar:
+  obesvarad_timmar: 48
+  ofullbordad_dagar: 5

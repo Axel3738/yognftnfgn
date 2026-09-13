@@ -130,13 +130,17 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-12",
-      "senaste_brief": "2026-09-12",
+      "senaste_korning": "2026-09-13",
+      "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
         {
           "date": "2026-09-12",
           "count": 7
+        },
+        {
+          "date": "2026-09-13",
+          "count": 21
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -152,13 +156,17 @@
         "url": ""
       },
       "kordag_offset": 1,
-      "senaste_korning": "2026-09-12",
-      "senaste_brief": "2026-09-11",
+      "senaste_korning": "2026-09-13",
+      "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-11",
       "launches": [
         {
           "date": "2026-09-11",
           "count": 7
+        },
+        {
+          "date": "2026-09-13",
+          "count": 21
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -191,13 +199,17 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-12",
-      "senaste_brief": "2026-09-12",
+      "senaste_korning": "2026-09-13",
+      "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
         {
           "date": "2026-09-12",
           "count": 7
+        },
+        {
+          "date": "2026-09-13",
+          "count": 21
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -232,8 +244,8 @@
           "count": 7
         },
         {
-          "date": "2026-09-12",
-          "count": 7
+          "date": "2026-09-13",
+          "count": 21
         }
       ],
       "notion": {
@@ -243,10 +255,10 @@
         "url": ""
       },
       "lage": "skala",
-      "senaste_brief": "2026-09-12",
+      "senaste_brief": "2026-09-13",
       "redigerare_discord_id": "740814777374343259",
       "cycle_start": "2026-09-12",
-      "senaste_korning": "2026-09-12",
+      "senaste_korning": "2026-09-13",
       "redigerare": "Jazz (jazzer1522)"
     },
     "carashell/takskyddet": {
@@ -254,8 +266,8 @@
       "redigerare": null,
       "redigerare_discord_id": null,
       "notion": {
-        "name": "",
-        "database_id": "",
+        "name": "CaraShell creative hub",
+        "database_id": "3d9270ab-908c-819d-be0f-c6cb71320871",
         "foralder_page_id": "",
         "url": ""
       },
@@ -271,8 +283,8 @@
       "redigerare": null,
       "redigerare_discord_id": null,
       "notion": {
-        "name": "",
-        "database_id": "",
+        "name": "CatCabin creative hub",
+        "database_id": "3d9270ab-908c-8145-8538-d55aaaf4a7e2",
         "foralder_page_id": "",
         "url": ""
       },
@@ -281,7 +293,13 @@
       "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
-      "anteckning": "Upptäckt automatiskt ur state-filen."
+      "anteckning": "Upptäckt automatiskt ur state-filen.",
+      "briefantal_override": {
+        "antal": 21,
+        "engang": true,
+        "motivering": "Axels beslut 2026-09-12: redigerare obestämd men första briefronden ska ändå ge 21 briefer — han fixar redigerare asap",
+        "satt": "2026-09-12"
+      }
     }
   },
   "rutinplatser": {
@@ -289,7 +307,9 @@
     "tankguard": 1,
     "drytrek": 2,
     "kalender": 3,
-    "tacklebay": 4
+    "tacklebay": 4,
+    "carashell": 5,
+    "catcabin": 6
   },
   "kommentar_rutinplatser": "Butikens plats i rutinschemat (factory/rutin.mjs tidFor): nattvakt 00:01 + 8 min × plats, leverans 13:40 + 5 min × plats, översättning 15:40 + 5 min × plats. Delas ut en gång av /notionscalercs setup och ändras aldrig — så ingen gammal butik flyttar när en ny tillkommer (Meta rate limit 2026-09-12 när fem startade samtidigt)."
 }

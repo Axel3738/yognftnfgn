@@ -153,3 +153,53 @@ första körning 2026-09-13. Fyra SE-bilder (BOF_7_1, BOF_8_1, BOF_9_1, LI_2_1) 
 Notering: 6 rader i `Translation in review` (2026-09-06, före OPS-flödet) — SP_5_H1, SP_6_H1,
 CO_1_H1, AU_1_H1 är redan live i NO, SP_4_H1 och RI_1_H1 inte. Utanför kön, orörda.
 Batchfiler: `market-expansion/ops/hemvakten/2026-09-12/`. Discord: `#annons-uppladdning`, ingen ping.
+
+### Utfall vid avläsning 2026-09-13 (körning nr 3)
+
+Batch #2:s sju briefer är **inte producerade än** — status i hubben 2026-09-13 00:05:
+`SP_17_H1`, `SP_17_H2`, `CS_11_H1` = Creative strat review · `TR_1_H1`, `SR_1_H1`,
+`FD_1_H1` = In progress (Carl Vicente) · `SP_18_1` = Draft. Ingen data, inga utfall.
+
+Batch #1 (ärvda 40): **`PD_2` passerade grinden** — 1 673 kr, 4 köp, CPA 418 kr,
+vinstbidrag 479 kr, klass vinnare (preliminär). Hypotes 3 ("otestade vinklar får
+ingen dom") → PD är nu den första testade. Hypotes 1 (SP med riktiga recensioner):
+`SP_2` har 34 kr — fortfarande obesvarad. Hypotes 2 (CS utan brådska): `CS_2` 466 kr /
+1 köp, `CS_3` 25 kr — pausade av Axel 2026-09-12 (talet lovade fel villkor); svaret
+kommer via `CS_11_H1`. Övriga 34 annonser: under grinden (tabell i `dna.md` körning nr 3).
+
+---
+
+## Batch #3 — 2026-09-13 · andra briefronden (`/notionscalercs`, körning nr 3)
+
+Redigerare **Carl Vicente** tilldelad 2026-09-12 → kadensen **21 briefer**
+(7/dag × 3). Enda bedömbara vinnaren är `PD_2` (preliminär) + de ärvda `SP_2`/`CS_3`
+→ 10 varianter (förälder + EN variabel) + 11 koncept. Copy: varannan fable/sonnet
+(11/10). Hubb: Surveillance Camera creative hub, status `Draft`.
+Lediga AD-ID:n lästa ur OPS-kontot och hubbens 48 rader (batch #2 inräknad).
+
+| # | Namn | Typ | Slag | Förälder / källa | Variabel / hypotes | Copy |
+|---|---|---|---|---|---|---|
+| 1 | `HeimGuard_PD_5_H1` | video | variant | PD_2 | hook: mobilen tänds kl 3 · hook rate > 43 % | fable |
+| 2 | `HeimGuard_PD_5_H2` | video | variant | PD_2 | hook: siffra (två linser, 355°) | sonnet |
+| 3 | `HeimGuard_PD_5_H3` | video | variant | PD_2 | hook: fråga | fable |
+| 4 | `HeimGuard_PD_5_H4` | video | variant | PD_2 | hook: negation ("sluta gissa") | sonnet |
+| 5 | `HeimGuard_PD_6_H1` | video | variant | PD_2 | längd 30 → 15 s · hold p50 ≥ 35 % | fable |
+| 6 | `HeimGuard_PD_6_1` | bild | variant | PD_2 | format video → statisk · CVR ≥ 1,5 % | sonnet |
+| 7 | `HeimGuard_PD_7_H1` | video | variant | PD_2 | copy card (recensionsledd), filmen orörd · CVR | fable |
+| 8 | `HeimGuard_SP_19_H1` | video | variant | SP_2 (ärvd) | längd 30 → 15 s | sonnet |
+| 9 | `HeimGuard_CS_12_1` | bild | variant | CS_3 (ärvd) | format → statisk priskort utan brådska | fable |
+| 10 | `HeimGuard_PD_8_H1` | video | variant | PD_2 | offer: pris-end card · CVR | sonnet |
+| 11 | `HeimGuard_BOF_10_H1` | video | koncept | playbook: trust/anti-scam (049, ROAS 2,47) | CPA < 538 på ≥ 3 köp | fable |
+| 12 | `HeimGuard_PD_9_H1` | video | koncept | playbook: "det var aldrig köttet"-mönstret (088) | CTR > 3,0 % | sonnet |
+| 13 | `HeimGuard_TR_2_H1` | video | koncept | ⚠️ gissning — säsong (mörkt kl 5) | hook ≥ 40 % | fable |
+| 14 | `HeimGuard_CO_5_H1` | video | koncept | ⚠️ gissning — ärvd CO otestad, 90° vs 355°-grafik finns | CTR > 3,0 % | sonnet |
+| 15 | `HeimGuard_RI_4_H1` | video | koncept | ⚠️ gissning — notisen som hela storyn | hold ≥ 35 % | fable |
+| 16 | `HeimGuard_SR_2_1` | bild | koncept | ⚠️ gissning — Axels seniorvinkel, statisk | CVR ≥ 1,5 % | sonnet |
+| 17 | `HeimGuard_FD_2_H1` | video | koncept | ⚠️ gissning — grenen i vinden (syskon till FD_1) | CTR > 3,0 % | fable |
+| 18 | `HeimGuard_SP_20_H1` | video | koncept | winning line: SP-vinkeln, recensionerna lästa högt | hold ≥ 30 % | sonnet |
+| 19 | `HeimGuard_TR_3_1` | bild | koncept | winning line: SP_2:s sömnrad som butikens löfte | CVR ≥ 1,5 % | fable |
+| 20 | `HeimGuard_BOF_11_1` | bild | koncept | playbook: trust-static (villkoren) | CPA < 538 | sonnet |
+| 21 | `HeimGuard_PD_10_1` | bild | koncept | ⚠️ gissning — sidans hero-rad som annons | CVR > 1,5 % | fable |
+
+Backlog var tom inför ronden. VARIABELTAGGAR överst i varje brief
+(`products/hemvakten/batch-03/…/brief.md`). Notion-resultat i `batch-03/notion-resultat.json`.

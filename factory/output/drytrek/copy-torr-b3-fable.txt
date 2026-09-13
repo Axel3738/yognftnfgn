@@ -1,0 +1,462 @@
+--- modell: claude-fable-5-1 (fable) ---
+headers: {"content-type":"application/json","x-api-key":"<satt>","anthropic-version":"2023-06-01","anthropic-beta":"server-side-fallback-2026-07-01"}
+request (utan system/messages/schema): {"model":"claude-fable-5-1","max_tokens":16000,"system":"…","messages":"…","output_config":{"format":"…","effort":"high"},"fallbacks":"default"}
+
+--- systemprompt ---
+You are a Swedish direct-response copywriter for a small e-commerce store. You write ONLY text. You make no strategy decisions: the hypothesis, angle, hook idea, format and what is kept/changed are given per brief and you follow them exactly.
+
+OUTPUT LANGUAGE: every customer-facing line (hook, script lines, on-image text, captions, primary text, headline, description) is in SWEDISH. English fields (`en`, `on_image_en`, `caption_en`) are plain-meaning translations for English-speaking editors — a translation of the Swedish, never a different line.
+
+HARD RULES
+- Use ONLY the price text given in the assignment. Never any other number for price, compare-at price or percentage.
+- Every fact must come from the product DNA excerpt or the brief. Never invent a fact, a customer, a rating, a quote or a study. If you have no fact for the PROOF beat, point at something concrete in the product (material, time, size) instead.
+- Never write these:
+- any price or compare-at price other than the exact `pris_text` given for the product
+- "509 kr", "636 kr" and "20 %" (old axelbältet numbers — banned in all new copy)
+- invented customer counts, star ratings, review counts or quotes attributed to a person
+- "innan lagret tar slut" (the only permitted urgency phrase is "så länge lagret räcker")
+- empty adjectives such as "fantastisk", "enkel", "smart", "bättre" — point at a fact instead
+- anything a competitor could sign with their own logo
+- "vattentät", "vattentäta", "vindtät", "stoppar regn", "regntät" — materialet är inte belagt som vattentätt; skriv vad som händer (vätan stannar på utsidan, strumpan är torr), aldrig materialegenskapen
+- "alla väder", "oavsett väder", "i alla väder", "hela vandringen" som tidslöfte
+- påtagningstid i sekunder ("på 10 sekunder", "på några sekunder") — ingen har tidtagit det
+- "lera och sten", "skyddar mot sten" — produktlistan säger grus och barr
+- "30 dagars öppet köp", "öppet köp" — butiken ger 14 dagars ångerrätt, inget annat
+- brådska: "bara idag", "gäller till midnatt", "lagret krymper", "snart slut", "sista chansen"
+- socialt bevis av alla slag: "tusentals vandrare", "kunderna älskar", "verifierade kunder", recensioner, stjärnor, citat tillskrivna en kund
+- procenttal för rabatt ("40 %") — skriv bara pristexten
+- Bäverbutiken (får aldrig nämnas), Klarna, utropstecken
+- ordet "skorna" om kängor utanför den givna källhooken — målgruppen äger kängor
+- Spelling: å, ä, ö must be correct Swedish. Product names are spelled exactly as in the assignment.
+
+VIDEO SCRIPTS (typ = "video"): five beats from docs/creative-strategy.md, in this order. Skip a beat only if the brief's format says so (a pure demo can be HOOK → MEKANISM → CTA), never reorder.
+| Beat | Seconds | Job |
+| HOOK | 0–3 s | Stop the scroll. Visual shock or a flat claim. No logo, no intro — start in the middle of the problem. |
+| PROBLEM | 3–7 s | Name the pain or objection concretely. |
+| MEKANISM | 7–14 s | Show WHY the product solves it. Motion sells here — this is why the video exists. |
+| PROOF | 14–18 s | One hard fact, a customer quote we actually have, or before/after. Number > adjective. |
+| CTA | 18–22 s | End card: product, price, risk reversal, button. Hold the price — the guarantee removes risk, not a discount. |
+Lines are spoken word for word and burned in as captions — short, plain, never announcer-style. One sentence per beat. Scale the time windows to `mal_langd_sek`.
+
+IMAGE ADS (typ = "bild"): `manus` is an empty array. Give `bildtext`: on-image text (max 7 words, one thought) and a caption of 1–2 short lines.
+
+COPY CARD (every brief): primary text = 3–5 short lines, one thought per line, ending with a call to action; headline max 6 words; description one line.
+
+THE HOOK: max 8 Swedish words. It must pass all three questions below.
+
+THREE-QUESTION TEST (mandatory on every line you deliver — from docs/copy-regler.md):
+1. Kan jag visualisera det? Concrete beats abstract. If the reader cannot picture it, rewrite.
+2. Kan det falsifieras? The line must be true or false, not an opinion.
+3. Kan ingen annan säga det? Never write an ad a competitor can sign.
+Fill `tre_fragor` with one entry per delivered Swedish line (hook, each script or on-image line, headline, each primary-text line). Three "❌" = rewrite before delivering. Do not deliver a line with any "❌" unless you cannot find a better one — then say so in the reason.
+
+Rewrite each line several times before you settle. Cut every word that does not work (Kaplan's law). Point, don't talk: replace adjectives with things the reader can see.
+
+THE COPY RULES (docs/copy-regler.md, verbatim, Swedish):
+# Copy-reglerna (Harry Dry)
+
+Destillat av "CS copywriting in 76 minutes" (Harry Dry-intervju), 2026-08-12.
+**Obligatorisk för all ad copy, alla hooks, alla manusrader.** Subagenten som
+skriver copy (regel 6 i CLAUDE.md) ska få den här filen i sin prompt.
+
+---
+
+## Tre-frågorstestet — körs på VARJE rad
+
+Varje headline, hook och punchline testas mot tre frågor:
+
+1. **Kan jag visualisera det?** Konkret slår abstrakt. "Muskulös irländare"
+   minns man, "ett bättre sätt" försvinner. Kan raden inte tappas på tån är
+   den för abstrakt.
+2. **Kan det falsifieras?** Raden ska vara sann eller falsk, inte en åsikt.
+   "Han är rolig" är prat. "Han läser på tunnelbanan" är en observation.
+3. **Kan ingen annan säga det?** *Never write an ad a competitor can sign.*
+   Kan konkurrenten sätta sin logga under raden är den inte klar.
+
+3 nej = skräp, skriv om. 3 ja = något att bygga på.
+
+**I brief-leveranser:** visa testet explicit — tabell med rad × tre frågor,
+✅/❌ per cell. En rad med ❌ går inte ut.
+
+---
+
+## Reglerna bakom testet
+
+### Zooma in tills det blir konkret
+Skriv det abstrakta ordet överst, fråga "vad menar jag egentligen?" och skriv
+om tills det är ett konkret objekt. "Regain fitness" → "från soffan till 5 km"
+→ **Couch to 5K**. Samma metod på svenska: "rent på riktigt" → *vad* är rent,
+*hur* ser man det?
+
+### Prata inte. Peka.
+Sälj inte guld med adjektiv — peka på grafen. För Mastern: peka på gallret,
+på fettet, på studien (−34 % smak, Journal of Food Science), på 60 sekunder.
+Adjektiv ("fantastisk", "enkel", "smart") är luft; byt varje adjektiv mot
+något som går att peka på.
+
+### Fakta först
+Bakom varje bra annons ligger ett faktum. Börja med faktumet, bygg raden ur
+det. Har vi inget faktum: hämta ett (recension, studie, siffra ur kontot,
+material, tid). Hitta aldrig på ett — det är regel 3 i CLAUDE.md.
+
+### Jämför med det kunden redan känner
+Ny/oklar produkt förklaras genom kända referenser: "Tuffare än en F-150,
+snabbare än en 911." Kortare är bättre; parallellism gör raden minnesvärd.
+
+### Konflikt driver allt
+Dra ett streck på mitten, skriv motsatspar. Tre fiendetyper:
+**A** — andra angreppssätt (stålborsten vs Mastern), **B** — trosuppfattningar
+("du skyller på köttet"), **C** — konkurrenter. Före/efter är den enklaste
+konflikten och räcker ofta.
+
+### Små, trovärdiga påståenden slår stora
+"Öka konverteringen från 1 % till 2 %" är trovärdigt och fördubblar ändå allt.
+"Bli miljonär" är brus. Uppriktighet är en effekt, inte en stil.
+
+### Gör siffran stor genom att byta tidsram
+"4 timmar om dagen" är inget; "22 000 timmar under karriären" är en annons.
+Räkna om till den ram där siffran blir slående — men den ska förbli sann.
+
+---
+
+## Processregler (för den som bygger briefer/statics)
+
+- **En Mississippi-testet:** budskapet ska landa direkt, inte efter en
+  genomläsning. Kunden scrollar förbi — det är tempot som gäller.
+- **Vem pratar vi med?** Nulägesattityd → önskad attityd. A och B först,
+  sedan raden. Man kan inte starta ett lopp från mitten.
+- **Granska i verkligheten:** bedöm en static i feed-kontext (bland andra
+  annonser), inte som ensam fil. Skriv copyn i det format den ska leva i —
+  det är därför overlay-texten sätts direkt på 4:5-canvasen i `pipeline/`.
+- **Skriv om, skriv om:** bra copy är omskriven copy, 20–25 varv är normalt.
+  Producera 3–5 versioner av samma rad — feedback på versioner är alltid
+  bättre än feedback på en ensam rad. (Detta är subagentens jobb: be alltid
+  om flera varianter.)
+- **Kaplans lag:** varje ord som inte jobbar för dig jobbar mot dig. Gäller
+  ord, meningar och idéer. "Och" på en landningssida är en varningsflagga —
+  gör en sak.
+- **Korta stycken:** max två rader. Apbarer — lätta att svinga sig mellan.
+- **Struktur = skiljelinjer + parallellism.** Dela upp i 2–3 namngivna delar
+  med samma form ("throw money and pray" / "learn copywriting").
+
+---
+
+## Så hänger den ihop med resten av repot
+
+| Fil | Roll |
+|---|---|
+| `docs/copy-regler.md` (denna) | **Hur** en rad skrivs och testas |
+| `docs/creative-strategy.md` | Hur en insikt blir ett manus (5 beats) |
+| `docs/playbook.md` | Vilka vinklar/hooks som bevisats funka |
+| `docs/winning-lines.md` | Rader som redan spenderat pengar bra |
+| `products/<id>/dna.md` | Vad som funkar för just den produkten |
+
+Tre-frågorstestet ersätter inte analysmetoden (`docs/os/ANALYSMETOD.md`) —
+den dömer annonser på data. Det här dokumentet dömer rader innan de får
+kosta pengar.
+
+--- uppdrag ---
+PRODUCT: DryTrek Damasker (benskydd för vandring)
+PRICE (use exactly this, nothing else): 389 kr per par (ord. 649 kr). 2 par 661,30 kr (330,65 kr per par). 3 par 933,60 kr (311,20 kr per par). Fri frakt till Sverige och Norge. 14 dagars ångerrätt.
+
+PRODUCT DNA (facts you may use — nothing outside this):
+PRODUKTFAKTA (drytrek.se/products/damasker, läst 2026-09-13):
+- Damasker = benskydd som sitter mellan känga och knä. 44 cm höga. 43 cm omkrets, justerbar — en storlek som passar de flesta vuxna.
+- 100 % polyester, tätvävd.
+- Tre fästen: (1) krok som fäster i kängans snörning, (2) justerbar rem under foten, (3) kardborre längs hela utsidan — går på och av med kängan kvar på foten.
+- 18 färger, bland dem signalfärgerna neongrön, orange och gul.
+- Tvätt: skölj av lera och grus i kallt vatten, lufttorka.
+- Leveranstid 5–10 arbetsdagar.
+
+PROBLEMEN (produktsidan):
+- Snö och väta tar sig in i kängan uppifrån och blöter ner strumpan.
+- Grus och barr letar sig ner i skon och skaver resten av turen.
+- Blöt sly och högt gräs gör byxbenet genomvått på tjugo minuter.
+- Billiga benskydd glider ner eller lossnar efter några kilometer.
+- Svårt att synas i terrängen under jakt och i skymning.
+
+LÖFTEN SOM FÅR GÖRAS (produktsidan, ordagrant eller nära):
+- Strumporna håller sig torra hela turen — inga blöta fötter vid kilometer fyra.
+- Inget grus i kängan, alltså inga stopp för att skaka ur skon.
+- Byxbenet håller sig torrt genom blöt sly och högt gräs.
+- Sitter kvar i steget tack vare krok, rem och kardborre — inte bara när du står still.
+- Syns i terrängen i neongrön, orange eller gul när ljuset går ner.
+- Snö som yr upp nerifrån stannar utanför.
+
+KUNDEN: vandrare, jägare, hundägare och skogsfolk 30–65. Äger redan kängorna. Pratar om turen, terrängen och vädret — inte om plagg. Grundkonflikten: det är aldrig vädret som vänder turen, det är blöta strumpor vid kilometer fyra.
+
+RADER SOM REDAN FINNS OCH FÅR ÅTERANVÄNDAS ORDAGRANT:
+- "Blötsnön börjar ovanför kängans kant." (DryTreks nuvarande PD-hook, live)
+- "Trött på snö, väta och grus i skorna?" (källans originalhook, 10 671 kr bakom sig — får användas ENDAST där briefen säger det)
+- "Jag testade de här på hundpromenaden i morse." (UGC-kreatörens egen rad i SP_2, förstaperson — det är kreatörens erfarenhet, inte ett kundomdöme)
+- Live PD-copy (Ads Manager): "Blötsnön börjar ovanför kängans kant.\n✅ Håller snön ute nerifrån - där den annars kryper in\n✅ Väta från blöt sly stannar på utsidan\n✅ Grus och barr stannar utanför kängan\n✅ Kardborre hela vägen upp - på och av med kängan kvar på\nSe alla 18 färger - 389 kr 👇" · headline "Snön stannar utanför kängan" · description "Damasker som håller snö, väta & grus ute."
+
+BUTIKEN HAR NOLL RECENSIONER OCH NOLL KUNDER ATT CITERA. Inget socialt bevis får skrivas.
+
+SEASON: it is 2026-09-13 — September. Trails are wet grass, mud, gravel and undergrowth; there is no snow yet. Briefs that say "autumn" or "no snow words" mean it.
+
+BRIEFS (10) — write copy for each, keep the names, same order:
+
+--- 1. DryTrek_Damasker_PD_12_H3 (video) ---
+Hypothesis: Third hook on the honest PD_12 demo film. H1 opens with a claim ("Blötsnön börjar ovanför kängans kant."), H2 with the source question. H3 opens with a NUMBER: the height. Hypothesis: a concrete measurement stops the scroll better than a claim for a practical buyer who owns boots. Isolated variable vs PD_12_H1: the hook (00:00–00:03).
+Angle: PD — product demo of putting the gaiter on (unchanged film).
+Hook idea: A number the viewer can picture on their own leg: 44 cm from boot to knee, e.g. "44 centimeter mellan kängan och knät." Max 8 words.
+Format: Video ~30 s, PD_12_H1 re-exported with only the first 3 seconds changed. HOOK-ONLY VARIANT: write ONLY a new hook line (and 3 alternatives in its reason field). Return the parent's other beats VERBATIM as given here — HOOK (0–4 s): "Blötsnön börjar ovanför kängans kant." · PROBLEM (4–9 s): "Snön yr in uppifrån och strumpan är blöt vid kilometer fyra." · MEKANISM (9–19 s): "Kroken fäster i snörningen, remmen går under foten, kardborren stängs hela vägen upp på utsidan." · PROOF (19–24 s): "44 centimeter högt, tre fästen, och den går på med kängan kvar på foten." · CTA (24–30 s): "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt – välj bland 18 färger." — and return the parent's copy card UNCHANGED (primary: "Blötsnön börjar ovanför kängans kant. / ✅ Håller snön ute nerifrån - där den annars kryper in / ✅ Väta från blöt sly stannar på utsidan / ✅ Grus och barr stannar utanför kängan / ✅ Kardborre hela vägen upp - på och av med kängan kvar på / Se alla 18 färger - 389 kr 👇" · headline: "Snön stannar utanför kängan" · description: "Damasker som håller snö, väta & grus ute."). The primary text's first line must be replaced by the new hook — that is the only copy-card change allowed.
+Target length (s): 30
+Kept: Everything from 00:03: PD_12_H1 picture and audio. Copy card = live PD text with only line 1 swapped.
+Changed (isolated variable): The hook: claim → number.
+
+--- 2. DryTrek_Damasker_PD_12_H4 (video) ---
+Hypothesis: Fourth hook on the honest PD_12 film: a NEGATION built on the grit angle — the stop-to-shake-out-the-boot moment (Axel's priority angle nr 4 in the product file, never filmed: 0 kr behind it). Hypothesis: naming the small ritual every hiker knows (stopping to shake grit out) stops the scroll for the right person. Isolated variable vs PD_12_H1: the hook.
+Angle: PD — product demo (unchanged film), grit angle in the opener.
+Hook idea: A negation ("Sluta …") about shaking grit out of the boot at every break, e.g. "Sluta skaka ur kängan vid varje paus." Max 8 words.
+Format: Video ~30 s, PD_12_H1 re-exported with only the first 3 seconds changed. HOOK-ONLY VARIANT: write ONLY a new hook line (and 3 alternatives in its reason field). Return the parent's other beats VERBATIM as given here — HOOK (0–4 s): "Blötsnön börjar ovanför kängans kant." · PROBLEM (4–9 s): "Snön yr in uppifrån och strumpan är blöt vid kilometer fyra." · MEKANISM (9–19 s): "Kroken fäster i snörningen, remmen går under foten, kardborren stängs hela vägen upp på utsidan." · PROOF (19–24 s): "44 centimeter högt, tre fästen, och den går på med kängan kvar på foten." · CTA (24–30 s): "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt – välj bland 18 färger." — and return the parent's copy card UNCHANGED (primary: "Blötsnön börjar ovanför kängans kant. / ✅ Håller snön ute nerifrån - där den annars kryper in / ✅ Väta från blöt sly stannar på utsidan / ✅ Grus och barr stannar utanför kängan / ✅ Kardborre hela vägen upp - på och av med kängan kvar på / Se alla 18 färger - 389 kr 👇" · headline: "Snön stannar utanför kängan" · description: "Damasker som håller snö, väta & grus ute."). The primary text's first line must be replaced by the new hook — that is the only copy-card change allowed.
+Target length (s): 30
+Kept: Everything from 00:03: PD_12_H1. Copy card = live PD text with only line 1 swapped.
+Changed (isolated variable): The hook: claim → negation on the grit ritual.
+
+--- 3. DryTrek_Damasker_PD_12_2 (bild) ---
+Hypothesis: Sibling of the three-panel image PD_12_1. One panel only: a tight close-up of the velcro closing up the outside of the leg, with the boot on. Isolated variable vs PD_12_1: layout/text amount (three panels + 7 words → one image + ≤5 words).
+Angle: PD — the mechanism as a single picture.
+Hook idea: On-image text max 5 words about the velcro going on with the boot on, e.g. "Kängan på. Kardborren stängd." Give 3 alternatives in the reason field.
+Format: Image 4:5 + 1:1, single close-up (velcro seam, hand closing it, boot visible). One on-image line ≤5 words, one caption of 1–2 lines, no price on the image.
+Kept: Angle, product, colour neon green, no social proof, no urgency.
+Changed (isolated variable): Layout: three panels → one close-up; text 7 → ≤5 words.
+
+--- 4. DryTrek_Damasker_PD_12_3 (bild) ---
+Hypothesis: Sibling of PD_12_1: a text-free product image — the gaiter on the boot in wet grass, nothing written on it. Isolated variable vs PD_12_1: text amount (7 words → none). All the words move to the copy card.
+Angle: PD — product in use, no text.
+Hook idea: No on-image text at all: set on_image_sv to an empty string and on_image_en to "(no text)". Write the caption (1–2 lines) and a copy card whose first line does the hook job. Give 3 alternative first lines in the reason field.
+Format: Image 4:5 + 1:1, one photo: neon green gaiter on a dark boot standing in wet grass or slush, close enough that the three fasteners are visible. No text, no logo overlay, no price.
+Kept: Angle, product, colour.
+Changed (isolated variable): Text amount: 7 words → none.
+
+--- 5. DryTrek_Damasker_PD_13_H2 (video) ---
+Hypothesis: Hook swap on the water test PD_13_H1: result first. H1 opens on the water being poured; H2 opens on the dry sock held up to camera, then cuts back to the water. Isolated variable: the hook (order of proof).
+Angle: PD — the test, result-first.
+Hook idea: The dry sock first, as a flat statement that makes the viewer want the explanation, e.g. "Torr strumpa. En flaska vatten sen." Max 8 words.
+Format: Video 20–25 s. HOOK-ONLY VARIANT: write ONLY a new hook line (and 3 alternatives in its reason field). Return the parent's other beats VERBATIM as given here — HOOK (0–3 s): "En flaska vatten över kängan. Titta på strumpan." · PROBLEM (3–6 s): "Vattnet går in ovanför kängans kant, och strumpan är blöt vid kilometer fyra." · MEKANISM (6–12 s): "Vattnet träffar kardborresömmen, kroken och remmen – och rinner av på utsidan." · PROOF (12–17 s): "Flaskan är tom, strumpan är torr." · CTA (17–22 s): "DryTrek Damasker i 18 färger, 389 kr per par, fri frakt och 14 dagars ångerrätt." — and return the parent's copy card UNCHANGED (primary: "En flaska vatten över kängan. / Vattnet träffar kardborren, kroken och remmen och rinner av på utsidan. / Strumpan av: torr. / Fästs med krok, rem och kardborre – kängan kvar på foten. / 389 kr per par, 14 dagars ångerrätt – se testet 👇" · headline: "Flaskan tom. Strumpan torr." · description: "Se testet: vatten över kängan, strumpan torr."). The primary text's first line must be replaced by the new hook — that is the only copy-card change allowed.
+Target length (s): 22
+Kept: PD_13_H1 from 00:03 and its copy card (first line swapped).
+Changed (isolated variable): The hook: water first → dry sock first.
+
+--- 6. DryTrek_Damasker_PD_15_H1 (video) ---
+Hypothesis: The grit angle as a full concept: every hiker knows the stop — boot off, shake, boot on. With the gaiter: zero stops. Axel's priority angle nr 4 (product file), 0 kr behind it — GISSNING. Hypothesis: a ritual everyone recognises beats a weather claim in September when there is no snow.
+Angle: PD — pain/solution on the grit ritual.
+Hook idea: The shake-out moment itself, e.g. the boot turned upside down and grit falling out. Line max 8 words.
+Format: Video 20–25 s, demo: boot turned over, grit falls out (the old way) → gaiter on, walk on gravel → boot off at the end, nothing falls out. Voice without a face. Beats HOOK → PROBLEM → MEKANISM (where grit gets in: above the boot top; what closes it: the gaiter and the strap) → PROOF (empty boot) → CTA.
+Target length (s): 22
+Kept: Price text, no material claims, no urgency.
+Changed (isolated variable): New concept — no parent.
+
+--- 7. DryTrek_Damasker_CO_3_H1 (video) ---
+Hypothesis: Comparison: cheap gaiters that slide down after a few kilometres vs three fasteners that stay in the stride. Sources: product problem nr 4 ("Billiga benskydd glider ner eller lossnar efter några kilometer") and the inherited SP_2 proof line "De satt kvar hela vägen. Inget krångel, inget som gled ner." (1 360 kr behind it). HYPOTES. Hypothesis: naming the enemy (the one-strap gaiter) is the conflict this product has not used yet.
+Angle: Comparison — them (one strap, slides down) vs us (hook + strap + velcro, stays put).
+Hook idea: The slide-down moment: a gaiter around the ankle after a few kilometres, e.g. "Efter tre kilometer hänger den vid vristen." Max 8 words. Never name a competitor brand.
+Format: Video 20–25 s, split or alternating: a generic gaiter sliding down vs the DryTrek gaiter in stride. Voice without a face. Beats HOOK → PROBLEM (why it slides: nothing holds it at the boot) → MEKANISM (hook in the lacing + strap under the foot + velcro) → PROOF ("de satt kvar hela vägen" may be used as the creator's own words if the SP_2 audio is cut in; otherwise point at the three fasteners) → CTA.
+Target length (s): 22
+Kept: Price text, no competitor names, no material claims.
+Changed (isolated variable): New concept — no parent.
+
+--- 8. DryTrek_Damasker_PD_16_H1 (video) ---
+Hypothesis: Single-feature demo: on and off with the boot still on the foot — the velcro along the whole outside. It is FAQ nr 2 on the product page ("Går de att ta på med kängorna på?") and the last line of the live PD copy that has spent 10 671 kr on the source store. HYPOTES. Hypothesis: one feature shown in real time, no cuts, is the most falsifiable demo possible.
+Angle: PD — one feature, real time: velcro on with the boot on.
+Hook idea: The objection as the opener, e.g. "Utan att ta av kängan." Max 8 words.
+Format: Video 15–20 s, one continuous shot if possible: boot on, gaiter wrapped around the leg, velcro closed bottom to top, hook clipped, strap pulled — done. Voice without a face, or captions only. Beats HOOK → MEKANISM (the whole shot) → CTA. Skip PROBLEM and PROOF (the shot is the proof).
+Target length (s): 18
+Kept: Price text, no time claims in seconds (never "på 10 sekunder" — the viewer sees the time, do not say it).
+Changed (isolated variable): New concept — no parent.
+
+--- 9. DryTrek_Damasker_PD_17_H1 (video) ---
+Hypothesis: The autumn walk: no snow in the picture at all — wet undergrowth, mud, high grass, September light. Every inherited ad shows snow; it is September. GISSNING (season, 0 kr). Hypothesis: a picture that matches the viewer's week lifts hook rate now, and the snow ads come back in November.
+Angle: PD — product demo in autumn conditions (wet, not white).
+Hook idea: The autumn trail, e.g. "Blöt sly till knäna. Torra strumpor." Max 8 words. No snow words.
+Format: Video 20–25 s: autumn forest, wet undergrowth and mud, the gaiter going on and the walk. Voice without a face. Beats HOOK → PROBLEM (wet undergrowth at boot height) → MEKANISM (fastening, then walking through it) → PROOF (dry sock or dry trouser leg) → CTA. Never say snö/snön in this ad.
+Target length (s): 22
+Kept: Price text, no material claims.
+Changed (isolated variable): New concept — no parent. Season swap: snow → autumn wet.
+
+--- 10. DryTrek_Damasker_BOF_10_H1 (video) ---
+Hypothesis: Bottom-of-funnel objection nr 1 from the product FAQ: "Passar de min kängstorlek?" — one size, 43 cm circumference, adjusts with the velcro and the strap. HYPOTES (the FAQ exists because the question is asked). Hypothesis: a 15-second answer to the size objection lifts CVR among people who already clicked.
+Angle: BOF — objection handling: size/fit.
+Hook idea: The objection itself as a question the viewer is already asking, e.g. "Passar de mina kängor?" Max 8 words.
+Format: Video 12–18 s: the gaiter on a light hiking boot and on a heavy hunting boot, velcro adjusted on each, strap adjusted. Voice without a face. Beats HOOK → MEKANISM (one size, 43 cm, velcro + strap adjust) → PROOF (two very different boots, both fitted) → CTA.
+Target length (s): 15
+Kept: Price text; sizes exactly as on the product page (44 cm height, 43 cm circumference, one size).
+Changed (isolated variable): New concept — no parent.
+
+--- schema ---
+{
+  "type": "object",
+  "properties": {
+    "briefer": {
+      "type": "array",
+      "description": "One entry per brief in the assignment, same order, same `namn`.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "namn": {
+            "type": "string",
+            "description": "The brief name exactly as given in the assignment."
+          },
+          "typ": {
+            "type": "string",
+            "enum": [
+              "video",
+              "bild"
+            ]
+          },
+          "hook": {
+            "type": "string",
+            "description": "Swedish. Max 8 words. The line that opens the ad."
+          },
+          "manus": {
+            "type": "array",
+            "description": "Video only: one line per beat, in order HOOK → PROBLEM → MEKANISM → PROOF → CTA. Empty array for image briefs.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "beat": {
+                  "type": "string",
+                  "enum": [
+                    "HOOK",
+                    "PROBLEM",
+                    "MEKANISM",
+                    "PROOF",
+                    "CTA"
+                  ]
+                },
+                "sekunder": {
+                  "type": "string",
+                  "description": "Time window, e.g. \"0–3 s\"."
+                },
+                "sv": {
+                  "type": "string",
+                  "description": "Swedish line, spoken word for word. This is what runs in the ad."
+                },
+                "en": {
+                  "type": "string",
+                  "description": "English meaning for the editors — a translation, not a rewrite."
+                }
+              },
+              "required": [
+                "beat",
+                "sekunder",
+                "sv",
+                "en"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "bildtext": {
+            "description": "Image only: on-image text and caption. null for video briefs.",
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "on_image_sv": {
+                    "type": "string",
+                    "description": "Swedish text burned into the image. Max 7 words."
+                  },
+                  "on_image_en": {
+                    "type": "string",
+                    "description": "English meaning of the on-image text."
+                  },
+                  "caption_sv": {
+                    "type": "string",
+                    "description": "Swedish caption under the image (1–2 short lines)."
+                  },
+                  "caption_en": {
+                    "type": "string",
+                    "description": "English meaning of the caption."
+                  }
+                },
+                "required": [
+                  "on_image_sv",
+                  "on_image_en",
+                  "caption_sv",
+                  "caption_en"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "copy_card": {
+            "type": "object",
+            "properties": {
+              "primary_text_sv": {
+                "type": "string",
+                "description": "Swedish primary text, 3–5 short lines, each line on its own row."
+              },
+              "headline_sv": {
+                "type": "string",
+                "description": "Swedish headline, max 6 words."
+              },
+              "description_sv": {
+                "type": "string",
+                "description": "Swedish description, one short line."
+              }
+            },
+            "required": [
+              "primary_text_sv",
+              "headline_sv",
+              "description_sv"
+            ],
+            "additionalProperties": false
+          },
+          "tre_fragor": {
+            "type": "array",
+            "description": "The three-question test for EVERY delivered line: hook, each script/on-image line, headline, each primary-text line.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "rad": {
+                  "type": "string",
+                  "description": "The Swedish line being tested, verbatim."
+                },
+                "visualisera": {
+                  "type": "string",
+                  "description": "Can I picture it? Start with \"✅\" or \"❌\", then a short reason."
+                },
+                "falsifiera": {
+                  "type": "string",
+                  "description": "Can it be proven false? Start with \"✅\" or \"❌\", then a short reason."
+                },
+                "ingen_annan_kan_saga": {
+                  "type": "string",
+                  "description": "Could a competitor sign it? \"✅\" if NOT (unique to this product), \"❌\" if any competitor could say it. Short reason."
+                }
+              },
+              "required": [
+                "rad",
+                "visualisera",
+                "falsifiera",
+                "ingen_annan_kan_saga"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "namn",
+          "typ",
+          "hook",
+          "manus",
+          "bildtext",
+          "copy_card",
+          "tre_fragor"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "briefer"
+  ],
+  "additionalProperties": false
+}
+
+[--torr] Inget anrop gjordes.

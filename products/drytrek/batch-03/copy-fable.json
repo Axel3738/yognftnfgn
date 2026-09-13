@@ -1,0 +1,305 @@
+{
+  "modell_begard": "fable",
+  "modell_svarade": "agent-tool:fable",
+  "fallback_korde": false,
+  "vag": "Agent-verktyget (model: fable)",
+  "briefer": [
+    {
+      "namn": "DryTrek_Damasker_PD_12_H3",
+      "typ": "video",
+      "hook": "44 centimeter mellan kängan och knät.",
+      "manus": [
+        { "beat": "HOOK", "sekunder": "0–3 s", "sv": "44 centimeter mellan kängan och knät.", "en": "44 centimetres between the boot and the knee." },
+        { "beat": "PROBLEM", "sekunder": "4–9 s", "sv": "Snön yr in uppifrån och strumpan är blöt vid kilometer fyra.", "en": "Snow swirls in from above and the sock is wet by kilometre four." },
+        { "beat": "MEKANISM", "sekunder": "9–19 s", "sv": "Kroken fäster i snörningen, remmen går under foten, kardborren stängs hela vägen upp på utsidan.", "en": "The hook clips into the lacing, the strap goes under the foot, the velcro closes all the way up the outside." },
+        { "beat": "PROOF", "sekunder": "19–24 s", "sv": "44 centimeter högt, tre fästen, och den går på med kängan kvar på foten.", "en": "44 centimetres high, three fasteners, and it goes on with the boot still on the foot." },
+        { "beat": "CTA", "sekunder": "24–30 s", "sv": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt – välj bland 18 färger.", "en": "DryTrek Gaiters, 389 kr per pair, 14-day right of withdrawal – choose from 18 colours." }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "44 centimeter mellan kängan och knät.\n✅ Håller snön ute nerifrån - där den annars kryper in\n✅ Väta från blöt sly stannar på utsidan\n✅ Grus och barr stannar utanför kängan\n✅ Kardborre hela vägen upp - på och av med kängan kvar på\nSe alla 18 färger - 389 kr 👇",
+        "headline_sv": "Snön stannar utanför kängan",
+        "description_sv": "Damasker som håller snö, väta & grus ute."
+      },
+      "tre_fragor": [
+        { "rad": "44 centimeter mellan kängan och knät.", "visualisera": "✅ Ett mått tittaren kan lägga på sitt eget ben – från kängkanten till knät.", "falsifiera": "✅ Damasken är 44 cm hög enligt produktsidan – sant eller falskt.", "ingen_annan_kan_saga": "✅ Siffran är DryTreks eget mått; ingen konkurrent skriver ut 44 cm. Alternativ: 1) \"44 centimeter högt. Tre fästen.\" 2) \"Från kängans kant till knät: 44 centimeter.\" 3) \"44 centimeter damask över kängans kant.\"" },
+        { "rad": "Snön yr in uppifrån och strumpan är blöt vid kilometer fyra.", "visualisera": "✅ Snö över kängkanten, blöt strumpa vid en bestämd kilometer.", "falsifiera": "✅ Antingen blir strumpan blöt eller inte.", "ingen_annan_kan_saga": "❌ Låst föräldrarad (PD_12_H1) – problemet kan vilken damasktillverkare som helst beskriva. Lämnas orörd enligt briefen." },
+        { "rad": "Kroken fäster i snörningen, remmen går under foten, kardborren stängs hela vägen upp på utsidan.", "visualisera": "✅ Tre handgrepp, i ordning.", "falsifiera": "✅ Tre fästen finns eller inte.", "ingen_annan_kan_saga": "✅ Just DryTreks tre fästen i den ordningen. Låst föräldrarad." },
+        { "rad": "44 centimeter högt, tre fästen, och den går på med kängan kvar på foten.", "visualisera": "✅ Höjd, antal fästen, känga på foten.", "falsifiera": "✅ Tre mätbara påståenden.", "ingen_annan_kan_saga": "✅ Produktsidans egna mått och fästen. Låst föräldrarad." },
+        { "rad": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt – välj bland 18 färger.", "visualisera": "✅ Namn, pris, färgval.", "falsifiera": "✅ Priset och färgantalet går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget namn, eget pris, 18 färger. Låst föräldrarad." },
+        { "rad": "✅ Håller snön ute nerifrån - där den annars kryper in", "visualisera": "✅ Snö som kryper in nerifrån.", "falsifiera": "✅ Antingen kommer snön in eller inte.", "ingen_annan_kan_saga": "❌ Låst föräldrarad ur live-copyn – en konkurrent kan skriva samma. Lämnas orörd enligt briefen." },
+        { "rad": "✅ Väta från blöt sly stannar på utsidan", "visualisera": "✅ Blöt sly mot benet, vätan utanpå.", "falsifiera": "✅ Sant eller falskt vid rasten.", "ingen_annan_kan_saga": "❌ Låst föräldrarad ur live-copyn. Lämnas orörd enligt briefen." },
+        { "rad": "✅ Grus och barr stannar utanför kängan", "visualisera": "✅ Grus och barr utanför kängan.", "falsifiera": "✅ Kängan är tom eller inte.", "ingen_annan_kan_saga": "❌ Låst föräldrarad ur live-copyn. Lämnas orörd enligt briefen." },
+        { "rad": "✅ Kardborre hela vägen upp - på och av med kängan kvar på", "visualisera": "✅ Kardborre längs hela benet, känga på.", "falsifiera": "✅ Går den på med kängan kvar eller inte.", "ingen_annan_kan_saga": "✅ Kardborre längs hela utsidan är DryTreks konstruktion. Låst föräldrarad." },
+        { "rad": "Se alla 18 färger - 389 kr 👇", "visualisera": "✅ 18 färger, ett pris.", "falsifiera": "✅ Antal färger och pris går att kolla.", "ingen_annan_kan_saga": "✅ Eget färgantal och pris. Låst föräldrarad." },
+        { "rad": "Snön stannar utanför kängan", "visualisera": "✅ Snö utanför kängan.", "falsifiera": "✅ Sant eller falskt.", "ingen_annan_kan_saga": "❌ Låst föräldra-headline – generisk. Lämnas orörd enligt briefen." },
+        { "rad": "Damasker som håller snö, väta & grus ute.", "visualisera": "✅ Tre saker som hålls ute.", "falsifiera": "✅ Går att testa.", "ingen_annan_kan_saga": "❌ Låst föräldra-description – generisk. Lämnas orörd enligt briefen." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_H4",
+      "typ": "video",
+      "hook": "Sluta skaka ur kängan vid varje paus.",
+      "manus": [
+        { "beat": "HOOK", "sekunder": "0–3 s", "sv": "Sluta skaka ur kängan vid varje paus.", "en": "Stop shaking out your boot at every break." },
+        { "beat": "PROBLEM", "sekunder": "4–9 s", "sv": "Snön yr in uppifrån och strumpan är blöt vid kilometer fyra.", "en": "Snow swirls in from above and the sock is wet by kilometre four." },
+        { "beat": "MEKANISM", "sekunder": "9–19 s", "sv": "Kroken fäster i snörningen, remmen går under foten, kardborren stängs hela vägen upp på utsidan.", "en": "The hook clips into the lacing, the strap goes under the foot, the velcro closes all the way up the outside." },
+        { "beat": "PROOF", "sekunder": "19–24 s", "sv": "44 centimeter högt, tre fästen, och den går på med kängan kvar på foten.", "en": "44 centimetres high, three fasteners, and it goes on with the boot still on the foot." },
+        { "beat": "CTA", "sekunder": "24–30 s", "sv": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt – välj bland 18 färger.", "en": "DryTrek Gaiters, 389 kr per pair, 14-day right of withdrawal – choose from 18 colours." }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Sluta skaka ur kängan vid varje paus.\n✅ Håller snön ute nerifrån - där den annars kryper in\n✅ Väta från blöt sly stannar på utsidan\n✅ Grus och barr stannar utanför kängan\n✅ Kardborre hela vägen upp - på och av med kängan kvar på\nSe alla 18 färger - 389 kr 👇",
+        "headline_sv": "Snön stannar utanför kängan",
+        "description_sv": "Damasker som håller snö, väta & grus ute."
+      },
+      "tre_fragor": [
+        { "rad": "Sluta skaka ur kängan vid varje paus.", "visualisera": "✅ Kängan av, upp och ner, grus på marken – varje vandrare har gjort det.", "falsifiera": "✅ Antingen behöver du stanna och skaka eller inte.", "ingen_annan_kan_saga": "✅ Raden är DryTreks eget löfte från produktsidan (\"inga stopp för att skaka ur skon\") vänt till ett förbud. Alternativ: 1) \"Sluta stanna för att skaka ur kängan.\" 2) \"Kängan av. Skaka. Kängan på. Igen.\" 3) \"Inget grus att skaka ur vid pausen.\"" },
+        { "rad": "Snön yr in uppifrån och strumpan är blöt vid kilometer fyra.", "visualisera": "✅ Snö över kängkanten, blöt strumpa vid en bestämd kilometer.", "falsifiera": "✅ Antingen blir strumpan blöt eller inte.", "ingen_annan_kan_saga": "❌ Låst föräldrarad (PD_12_H1) – generiskt problem. Lämnas orörd enligt briefen." },
+        { "rad": "Kroken fäster i snörningen, remmen går under foten, kardborren stängs hela vägen upp på utsidan.", "visualisera": "✅ Tre handgrepp, i ordning.", "falsifiera": "✅ Tre fästen finns eller inte.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen. Låst föräldrarad." },
+        { "rad": "44 centimeter högt, tre fästen, och den går på med kängan kvar på foten.", "visualisera": "✅ Höjd, antal fästen, känga på foten.", "falsifiera": "✅ Tre mätbara påståenden.", "ingen_annan_kan_saga": "✅ Produktsidans egna mått. Låst föräldrarad." },
+        { "rad": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt – välj bland 18 färger.", "visualisera": "✅ Namn, pris, färgval.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget namn, pris och färgantal. Låst föräldrarad." },
+        { "rad": "✅ Håller snön ute nerifrån - där den annars kryper in", "visualisera": "✅ Snö som kryper in nerifrån.", "falsifiera": "✅ Sant eller falskt.", "ingen_annan_kan_saga": "❌ Låst föräldrarad ur live-copyn. Lämnas orörd enligt briefen." },
+        { "rad": "✅ Väta från blöt sly stannar på utsidan", "visualisera": "✅ Blöt sly, vätan utanpå.", "falsifiera": "✅ Sant eller falskt vid rasten.", "ingen_annan_kan_saga": "❌ Låst föräldrarad ur live-copyn. Lämnas orörd enligt briefen." },
+        { "rad": "✅ Grus och barr stannar utanför kängan", "visualisera": "✅ Grus och barr utanför kängan.", "falsifiera": "✅ Kängan är tom eller inte.", "ingen_annan_kan_saga": "❌ Låst föräldrarad ur live-copyn. Lämnas orörd enligt briefen." },
+        { "rad": "✅ Kardborre hela vägen upp - på och av med kängan kvar på", "visualisera": "✅ Kardborre längs hela benet, känga på.", "falsifiera": "✅ Går den på med kängan kvar eller inte.", "ingen_annan_kan_saga": "✅ DryTreks konstruktion. Låst föräldrarad." },
+        { "rad": "Se alla 18 färger - 389 kr 👇", "visualisera": "✅ 18 färger, ett pris.", "falsifiera": "✅ Går att kolla.", "ingen_annan_kan_saga": "✅ Eget färgantal och pris. Låst föräldrarad." },
+        { "rad": "Snön stannar utanför kängan", "visualisera": "✅ Snö utanför kängan.", "falsifiera": "✅ Sant eller falskt.", "ingen_annan_kan_saga": "❌ Låst föräldra-headline – generisk. Lämnas orörd enligt briefen." },
+        { "rad": "Damasker som håller snö, väta & grus ute.", "visualisera": "✅ Tre saker som hålls ute.", "falsifiera": "✅ Går att testa.", "ingen_annan_kan_saga": "❌ Låst föräldra-description – generisk. Lämnas orörd enligt briefen." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_2",
+      "typ": "bild",
+      "hook": "Kängan på. Kardborren stängd.",
+      "manus": [],
+      "bildtext": {
+        "on_image_sv": "Kängan på. Kardborren stängd.",
+        "on_image_en": "Boot on. Velcro closed.",
+        "caption_sv": "Kardborre längs hela utsidan – damaskerna går på och av med kängan kvar på foten.\n389 kr per par, 14 dagars ångerrätt.",
+        "caption_en": "Velcro along the whole outside – the gaiters go on and off with the boot still on the foot.\n389 kr per pair, 14-day right of withdrawal."
+      },
+      "copy_card": {
+        "primary_text_sv": "Kängan på. Kardborren stängd.\nKardborre längs hela utsidan, krok i snörningen, rem under foten.\nKanten är täckt upp till knät – grus och barr stannar utanför.\n44 centimeter högt, 18 färger.\n389 kr per par, 14 dagars ångerrätt – se färgerna 👇",
+        "headline_sv": "På och av med kängan på",
+        "description_sv": "Kardborre hela vägen upp. 18 färger, 389 kr per par."
+      },
+      "tre_fragor": [
+        { "rad": "Kängan på. Kardborren stängd.", "visualisera": "✅ Exakt det bilden visar: en känga på foten, en stängd kardborresöm.", "falsifiera": "✅ Antingen sitter kängan på när kardborren stängs eller inte.", "ingen_annan_kan_saga": "✅ Kardborre längs hela utsidan som stängs med kängan på är DryTreks konstruktion. Alternativ: 1) \"Stängs med kängan på.\" 2) \"Kardborre. Hela vägen upp.\" 3) \"På utan att snöra upp.\"" },
+        { "rad": "Kardborre längs hela utsidan – damaskerna går på och av med kängan kvar på foten.", "visualisera": "✅ Sömmen längs benet, kängan på.", "falsifiera": "✅ Går att testa med en känga.", "ingen_annan_kan_saga": "✅ Hela utsidan + kängan kvar är produktsidans egen konstruktion." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt.", "visualisera": "✅ Pris och ångerrätt.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris – ren prisrad." },
+        { "rad": "Kardborre längs hela utsidan, krok i snörningen, rem under foten.", "visualisera": "✅ Tre fästen på tre ställen.", "falsifiera": "✅ Finns de eller inte.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen." },
+        { "rad": "Kanten är täckt upp till knät – grus och barr stannar utanför.", "visualisera": "✅ Kängkanten under tyget, gruset på utsidan.", "falsifiera": "✅ Kängan är tom eller inte.", "ingen_annan_kan_saga": "✅ \"Upp till knät\" är DryTreks 44 cm – omskriven från \"Grus och barr stannar utanför kängan\" som en konkurrent kunde skriva under." },
+        { "rad": "44 centimeter högt, 18 färger.", "visualisera": "✅ Höjd och färgrad.", "falsifiera": "✅ Två siffror.", "ingen_annan_kan_saga": "✅ DryTreks mått och färgantal." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt – se färgerna 👇", "visualisera": "✅ Pris, ångerrätt, färger.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris – ren prisrad." },
+        { "rad": "På och av med kängan på", "visualisera": "✅ Damasken på och av, kängan kvar.", "falsifiera": "✅ Antingen går det eller inte.", "ingen_annan_kan_saga": "✅ Kräver kardborre längs hela utsidan – DryTreks konstruktion." },
+        { "rad": "Kardborre hela vägen upp. 18 färger, 389 kr per par.", "visualisera": "✅ Söm, färger, pris.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Egen konstruktion, eget färgantal, eget pris." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_3",
+      "typ": "bild",
+      "hook": "Blött gräs till knäna. Torr strumpa.",
+      "manus": [],
+      "bildtext": {
+        "on_image_sv": "",
+        "on_image_en": "(no text)",
+        "caption_sv": "Krok i snörningen, rem under foten, kardborre upp till knät.\nBlött gräs stannar på utsidan – 389 kr per par.",
+        "caption_en": "Hook in the lacing, strap under the foot, velcro up to the knee.\nWet grass stays on the outside – 389 kr per pair."
+      },
+      "copy_card": {
+        "primary_text_sv": "Blött gräs till knäna. Torr strumpa.\nKrok i snörningen, rem under foten, kardborre upp till knät.\nKanten är täckt hela vägen – grus och barr stannar utanför.\n44 centimeter högt, en storlek, 18 färger.\n389 kr per par, 14 dagars ångerrätt 👇",
+        "headline_sv": "Torr strumpa vid kilometer fyra",
+        "description_sv": "Damasker med tre fästen. 389 kr per par."
+      },
+      "tre_fragor": [
+        { "rad": "Blött gräs till knäna. Torr strumpa.", "visualisera": "✅ Gräset i knähöjd på bilden, strumpan i kängan.", "falsifiera": "✅ Strumpan är torr eller inte.", "ingen_annan_kan_saga": "✅ \"Till knäna\" är DryTreks 44 cm; kortare damasker når inte dit. Alternativ: 1) \"Tre fästen. Kängan kvar på foten.\" 2) \"Byxbenet torrt genom blött gräs.\" 3) \"44 centimeter mellan gräset och strumpan.\"" },
+        { "rad": "Krok i snörningen, rem under foten, kardborre upp till knät.", "visualisera": "✅ Tre fästen, synliga på bilden.", "falsifiera": "✅ Finns de eller inte.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen." },
+        { "rad": "Blött gräs stannar på utsidan – 389 kr per par.", "visualisera": "✅ Gräs mot tyget, vätan utanpå.", "falsifiera": "✅ Sant eller falskt vid rasten.", "ingen_annan_kan_saga": "✅ Kopplad till eget pris; löftet är produktsidans (byxbenet torrt genom högt gräs)." },
+        { "rad": "Kanten är täckt hela vägen – grus och barr stannar utanför.", "visualisera": "✅ Kängkanten under tyget, gruset på utsidan.", "falsifiera": "✅ Kängan är tom eller inte.", "ingen_annan_kan_saga": "✅ \"Hela vägen\" pekar på kardborren längs hela utsidan i raden ovanför – omskriven från \"Grus och barr stannar utanför kängan\" som en konkurrent kunde skriva under." },
+        { "rad": "44 centimeter högt, en storlek, 18 färger.", "visualisera": "✅ Tre siffror.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ DryTreks mått och färgantal." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt 👇", "visualisera": "✅ Pris och ångerrätt.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris – ren prisrad." },
+        { "rad": "Torr strumpa vid kilometer fyra", "visualisera": "✅ Strumpan, en bestämd kilometer.", "falsifiera": "✅ Torr eller blöt.", "ingen_annan_kan_saga": "✅ \"Kilometer fyra\" är DryTreks egen formulering (produktsidan + live-copyn)." },
+        { "rad": "Damasker med tre fästen. 389 kr per par.", "visualisera": "✅ Tre fästen, ett pris.", "falsifiera": "✅ Går att räkna.", "ingen_annan_kan_saga": "✅ Tre fästen + eget pris." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_13_H2",
+      "typ": "video",
+      "hook": "Torr strumpa. En flaska vatten sen.",
+      "manus": [
+        { "beat": "HOOK", "sekunder": "0–3 s", "sv": "Torr strumpa. En flaska vatten sen.", "en": "Dry sock. One bottle of water later." },
+        { "beat": "PROBLEM", "sekunder": "3–6 s", "sv": "Vattnet går in ovanför kängans kant, och strumpan är blöt vid kilometer fyra.", "en": "The water gets in above the boot top, and the sock is wet by kilometre four." },
+        { "beat": "MEKANISM", "sekunder": "6–12 s", "sv": "Vattnet träffar kardborresömmen, kroken och remmen – och rinner av på utsidan.", "en": "The water hits the velcro seam, the hook and the strap – and runs off on the outside." },
+        { "beat": "PROOF", "sekunder": "12–17 s", "sv": "Flaskan är tom, strumpan är torr.", "en": "The bottle is empty, the sock is dry." },
+        { "beat": "CTA", "sekunder": "17–22 s", "sv": "DryTrek Damasker i 18 färger, 389 kr per par, fri frakt och 14 dagars ångerrätt.", "en": "DryTrek Gaiters in 18 colours, 389 kr per pair, free shipping and 14-day right of withdrawal." }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Torr strumpa. En flaska vatten sen.\nVattnet träffar kardborren, kroken och remmen och rinner av på utsidan.\nStrumpan av: torr.\nFästs med krok, rem och kardborre – kängan kvar på foten.\n389 kr per par, 14 dagars ångerrätt – se testet 👇",
+        "headline_sv": "Flaskan tom. Strumpan torr.",
+        "description_sv": "Se testet: vatten över kängan, strumpan torr."
+      },
+      "tre_fragor": [
+        { "rad": "Torr strumpa. En flaska vatten sen.", "visualisera": "✅ Strumpan i handen, flaskan bakom – resultatet före testet.", "falsifiera": "✅ Strumpan är torr efter flaskan eller inte.", "ingen_annan_kan_saga": "✅ Det är DryTreks eget flasktest (PD_13) – raden pekar på filmens bevis. Alternativ: 1) \"Strumpan är torr. Flaskan är tom.\" 2) \"Torr strumpa. Vattnet gick på utsidan.\" 3) \"Först strumpan. Sen flaskan.\"" },
+        { "rad": "Vattnet går in ovanför kängans kant, och strumpan är blöt vid kilometer fyra.", "visualisera": "✅ Vatten över kanten, blöt strumpa.", "falsifiera": "✅ Sant eller falskt.", "ingen_annan_kan_saga": "❌ Låst föräldrarad (PD_13_H1) – generiskt problem. Lämnas orörd enligt briefen." },
+        { "rad": "Vattnet träffar kardborresömmen, kroken och remmen – och rinner av på utsidan.", "visualisera": "✅ Vattnet mot tre namngivna delar.", "falsifiera": "✅ Rinner av eller går in.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen i testet. Låst föräldrarad." },
+        { "rad": "Flaskan är tom, strumpan är torr.", "visualisera": "✅ Tom flaska, torr strumpa.", "falsifiera": "✅ Båda går att se.", "ingen_annan_kan_saga": "✅ Eget test. Låst föräldrarad." },
+        { "rad": "DryTrek Damasker i 18 färger, 389 kr per par, fri frakt och 14 dagars ångerrätt.", "visualisera": "✅ Namn, färger, pris.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget namn och pris. Låst föräldrarad." },
+        { "rad": "Vattnet träffar kardborren, kroken och remmen och rinner av på utsidan.", "visualisera": "✅ Vattnet mot tre delar.", "falsifiera": "✅ Rinner av eller går in.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen. Låst föräldrarad." },
+        { "rad": "Strumpan av: torr.", "visualisera": "✅ Strumpan av foten, torr.", "falsifiera": "✅ Torr eller blöt.", "ingen_annan_kan_saga": "✅ Resultatet av DryTreks eget test. Låst föräldrarad." },
+        { "rad": "Fästs med krok, rem och kardborre – kängan kvar på foten.", "visualisera": "✅ Tre fästen, känga på.", "falsifiera": "✅ Går att testa.", "ingen_annan_kan_saga": "✅ DryTreks konstruktion. Låst föräldrarad." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt – se testet 👇", "visualisera": "✅ Pris, ångerrätt, test.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris. Låst föräldrarad." },
+        { "rad": "Flaskan tom. Strumpan torr.", "visualisera": "✅ Två bilder.", "falsifiera": "✅ Båda går att se.", "ingen_annan_kan_saga": "✅ Eget test. Låst föräldra-headline." },
+        { "rad": "Se testet: vatten över kängan, strumpan torr.", "visualisera": "✅ Testet i en rad.", "falsifiera": "✅ Går att se i filmen.", "ingen_annan_kan_saga": "✅ Eget test. Låst föräldra-description." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_15_H1",
+      "typ": "video",
+      "hook": "Vänd kängan. Där kommer gruset.",
+      "manus": [
+        { "beat": "HOOK", "sekunder": "0–3 s", "sv": "Vänd kängan. Där kommer gruset.", "en": "Turn the boot over. There comes the grit." },
+        { "beat": "PROBLEM", "sekunder": "3–7 s", "sv": "Det går in ovanför kängans kant och skaver resten av turen.", "en": "It gets in above the boot top and chafes for the rest of the hike." },
+        { "beat": "MEKANISM", "sekunder": "7–14 s", "sv": "Damasken täcker kanten, remmen låser under foten och kardborren stängs upp till knät.", "en": "The gaiter covers the boot top, the strap locks under the foot and the velcro closes up to the knee." },
+        { "beat": "PROOF", "sekunder": "14–18 s", "sv": "Kängan av efter grusvägen: ingenting faller ut.", "en": "Boot off after the gravel road: nothing falls out." },
+        { "beat": "CTA", "sekunder": "18–22 s", "sv": "DryTrek Damasker, 389 kr per par, fri frakt och 14 dagars ångerrätt.", "en": "DryTrek Gaiters, 389 kr per pair, free shipping and 14-day right of withdrawal." }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Vänd kängan. Där kommer gruset.\nDet går in ovanför kängans kant och skaver resten av turen.\nDamasken täcker kanten, remmen låser under foten, kardborren stängs upp till knät.\nKängan av efter grusvägen: ingenting faller ut.\n389 kr per par, 14 dagars ångerrätt – se alla 18 färger 👇",
+        "headline_sv": "Inget grus att skaka ur",
+        "description_sv": "Damasker med krok, rem och kardborre. 389 kr per par."
+      },
+      "tre_fragor": [
+        { "rad": "Vänd kängan. Där kommer gruset.", "visualisera": "✅ Kängan upp och ner, gruset rinner ut – exakt hookbilden.", "falsifiera": "✅ Antingen faller grus ut eller inte.", "ingen_annan_kan_saga": "✅ Raden beskriver filmens egen före-bild, inte ett generellt löfte; ingen konkurrent kör grusritualen (0 kr bakom vinkeln). Alternativ: 1) \"Pausen går åt till att skaka ur kängan.\" 2) \"Grus i kängan vid varje paus.\" 3) \"Kängan av, gruset ut, kängan på.\"" },
+        { "rad": "Det går in ovanför kängans kant och skaver resten av turen.", "visualisera": "✅ Gruset över kanten, skavet i steget.", "falsifiera": "✅ Går att kontrollera var gruset kommer in.", "ingen_annan_kan_saga": "✅ Produktsidans egen problemformulering (\"letar sig ner ... skaver resten av turen\") – pekar på kängkanten, som damasken täcker." },
+        { "rad": "Damasken täcker kanten, remmen låser under foten och kardborren stängs upp till knät.", "visualisera": "✅ Tre handgrepp i bild.", "falsifiera": "✅ Fästen finns eller inte.", "ingen_annan_kan_saga": "✅ DryTreks rem + kardborre upp till knät (44 cm)." },
+        { "rad": "Kängan av efter grusvägen: ingenting faller ut.", "visualisera": "✅ Tom känga vänd mot kameran.", "falsifiera": "✅ Antingen faller något ut eller inte.", "ingen_annan_kan_saga": "✅ Filmens eget bevis – tom känga efter samma grusväg som i hooken." },
+        { "rad": "DryTrek Damasker, 389 kr per par, fri frakt och 14 dagars ångerrätt.", "visualisera": "✅ Namn, pris, frakt.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget namn och pris – ren prisrad." },
+        { "rad": "Damasken täcker kanten, remmen låser under foten, kardborren stängs upp till knät.", "visualisera": "✅ Tre handgrepp.", "falsifiera": "✅ Fästen finns eller inte.", "ingen_annan_kan_saga": "✅ DryTreks fästen och höjd." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt – se alla 18 färger 👇", "visualisera": "✅ Pris, ångerrätt, färger.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris och färgantal." },
+        { "rad": "Inget grus att skaka ur", "visualisera": "✅ Tom känga.", "falsifiera": "✅ Grus eller inget grus.", "ingen_annan_kan_saga": "✅ Produktsidans eget löfte (\"inga stopp för att skaka ur skon\") i fem ord." },
+        { "rad": "Damasker med krok, rem och kardborre. 389 kr per par.", "visualisera": "✅ Tre fästen, ett pris.", "falsifiera": "✅ Går att räkna.", "ingen_annan_kan_saga": "✅ Tre fästen + eget pris." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_CO_3_H1",
+      "typ": "video",
+      "hook": "En rem: vristen. Tre fästen: knät.",
+      "manus": [
+        { "beat": "HOOK", "sekunder": "0–3 s", "sv": "En rem: vristen. Tre fästen: knät.", "en": "One strap: the ankle. Three fasteners: the knee." },
+        { "beat": "PROBLEM", "sekunder": "3–7 s", "sv": "Med bara en rem är det inget som håller damasken vid kängan, så den glider ner i steget.", "en": "With only one strap there is nothing holding the gaiter to the boot, so it slides down as you walk." },
+        { "beat": "MEKANISM", "sekunder": "7–14 s", "sv": "Kroken sitter i snörningen, remmen går under foten och kardborren håller hela utsidan.", "en": "The hook sits in the lacing, the strap goes under the foot and the velcro holds the whole outside." },
+        { "beat": "PROOF", "sekunder": "14–18 s", "sv": "Krok, rem och kardborre: den sitter kvar i steget, inte bara när du står still.", "en": "Hook, strap and velcro: it stays put in the stride, not only when you stand still." },
+        { "beat": "CTA", "sekunder": "18–22 s", "sv": "DryTrek Damasker, 389 kr per par, fri frakt och 14 dagars ångerrätt.", "en": "DryTrek Gaiters, 389 kr per pair, free shipping and 14-day right of withdrawal." }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "En rem: vristen. Tre fästen: knät.\nMed en rem håller inget damasken vid kängan – den glider ner i steget.\nKrok i snörningen, rem under foten, kardborre längs hela utsidan.\nDen sitter kvar i steget, inte bara när du står still.\n389 kr per par, 14 dagars ångerrätt – se alla 18 färger 👇",
+        "headline_sv": "Tre fästen. Sitter kvar i steget.",
+        "description_sv": "Krok, rem och kardborre – damasker som stannar vid knät."
+      },
+      "tre_fragor": [
+        { "rad": "En rem: vristen. Tre fästen: knät.", "visualisera": "✅ Två ben bredvid varandra: en damask vid vristen, en vid knät.", "falsifiera": "✅ Antal fästen och var damasken sitter går att se.", "ingen_annan_kan_saga": "✅ \"Tre fästen\" är DryTreks konstruktion; en enremsdamask kan inte skriva under. Alternativ: 1) \"Efter några kilometer hänger den vid vristen.\" (briefens idé – klarar fråga 1–2 men beskriver bara fienden, därför inte vald som huvudrad) 2) \"Den ena vid knät. Den andra vid vristen.\" 3) \"Benskyddet som glider ner har en rem.\"" },
+        { "rad": "Med bara en rem är det inget som håller damasken vid kängan, så den glider ner i steget.", "visualisera": "✅ Damasken som hasar ner mot vristen.", "falsifiera": "✅ Går att testa på en enremsdamask.", "ingen_annan_kan_saga": "✅ Pekar på fienden som saknar krok i snörningen – bara den med krok kan säga det. Ingen konkurrent namnges." },
+        { "rad": "Kroken sitter i snörningen, remmen går under foten och kardborren håller hela utsidan.", "visualisera": "✅ Tre fästen på tre ställen.", "falsifiera": "✅ Finns de eller inte.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen." },
+        { "rad": "Krok, rem och kardborre: den sitter kvar i steget, inte bara när du står still.", "visualisera": "✅ Damasken vid knät mitt i steget.", "falsifiera": "✅ Sitter kvar eller glider ner.", "ingen_annan_kan_saga": "✅ Produktsidans eget löfte, bundet till de tre fästena. Byts mot SP_2-raden \"De satt kvar hela vägen. Inget krångel, inget som gled ner.\" om kreatörens ljud klipps in." },
+        { "rad": "DryTrek Damasker, 389 kr per par, fri frakt och 14 dagars ångerrätt.", "visualisera": "✅ Namn, pris, frakt.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget namn och pris – ren prisrad." },
+        { "rad": "Med en rem håller inget damasken vid kängan – den glider ner i steget.", "visualisera": "✅ Damasken hasar ner.", "falsifiera": "✅ Går att testa.", "ingen_annan_kan_saga": "✅ Bara den med krok i snörningen kan peka på det." },
+        { "rad": "Krok i snörningen, rem under foten, kardborre längs hela utsidan.", "visualisera": "✅ Tre fästen.", "falsifiera": "✅ Finns de eller inte.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen." },
+        { "rad": "Den sitter kvar i steget, inte bara när du står still.", "visualisera": "✅ Damasken vid knät i rörelse.", "falsifiera": "✅ Sitter kvar eller inte.", "ingen_annan_kan_saga": "✅ Produktsidans egen formulering, i en text som just räknat upp de tre fästena." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt – se alla 18 färger 👇", "visualisera": "✅ Pris, ångerrätt, färger.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris och färgantal." },
+        { "rad": "Tre fästen. Sitter kvar i steget.", "visualisera": "✅ Tre fästen, ett steg.", "falsifiera": "✅ Går att räkna och se.", "ingen_annan_kan_saga": "✅ Tre fästen är DryTreks." },
+        { "rad": "Krok, rem och kardborre – damasker som stannar vid knät.", "visualisera": "✅ Tre fästen, damasken vid knät.", "falsifiera": "✅ Stannar vid knät eller inte.", "ingen_annan_kan_saga": "✅ Namngivna fästen." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_16_H1",
+      "typ": "video",
+      "hook": "Utan att ta av kängan.",
+      "manus": [
+        { "beat": "HOOK", "sekunder": "0–3 s", "sv": "Utan att ta av kängan.", "en": "Without taking the boot off." },
+        { "beat": "MEKANISM", "sekunder": "3–14 s", "sv": "Runt benet, kardborren stängs nerifrån och upp, kroken i snörningen, remmen under foten – klart.", "en": "Around the leg, the velcro closes bottom to top, the hook into the lacing, the strap under the foot – done." },
+        { "beat": "CTA", "sekunder": "14–18 s", "sv": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt.", "en": "DryTrek Gaiters, 389 kr per pair, 14-day right of withdrawal." }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Utan att ta av kängan.\nKardborre längs hela utsidan – stängs nerifrån och upp med kängan kvar på foten.\nKroken i snörningen, remmen under foten.\n44 centimeter högt, en storlek, 18 färger.\n389 kr per par, 14 dagars ångerrätt 👇",
+        "headline_sv": "På med kängan kvar på foten",
+        "description_sv": "Kardborre hela vägen upp. 389 kr per par."
+      },
+      "tre_fragor": [
+        { "rad": "Utan att ta av kängan.", "visualisera": "✅ Kängan sitter på foten genom hela bilden.", "falsifiera": "✅ Antingen tas kängan av eller inte.", "ingen_annan_kan_saga": "✅ Kräver kardborre längs hela utsidan – DryTreks konstruktion, produktsidans FAQ nr 2. Alternativ: 1) \"Kängan stannar på. Kardborren går upp.\" 2) \"Snörningen orörd. Damasken på.\" 3) \"Ingen känga av. Titta.\"" },
+        { "rad": "Runt benet, kardborren stängs nerifrån och upp, kroken i snörningen, remmen under foten – klart.", "visualisera": "✅ Fyra handgrepp i den ordning bilden visar dem.", "falsifiera": "✅ Varje steg går att se.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen. Ingen tid i sekunder nämns – tittaren ser tiden." },
+        { "rad": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt.", "visualisera": "✅ Namn och pris.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget namn och pris – ren prisrad." },
+        { "rad": "Kardborre längs hela utsidan – stängs nerifrån och upp med kängan kvar på foten.", "visualisera": "✅ Sömmen, riktningen, kängan på.", "falsifiera": "✅ Går att testa.", "ingen_annan_kan_saga": "✅ Hela utsidan är DryTreks konstruktion." },
+        { "rad": "Kroken i snörningen, remmen under foten.", "visualisera": "✅ Två fästen.", "falsifiera": "✅ Finns de eller inte.", "ingen_annan_kan_saga": "✅ Krok i snörningen är DryTreks." },
+        { "rad": "44 centimeter högt, en storlek, 18 färger.", "visualisera": "✅ Tre siffror.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Egna mått och färgantal." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt 👇", "visualisera": "✅ Pris och ångerrätt.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris – ren prisrad." },
+        { "rad": "På med kängan kvar på foten", "visualisera": "✅ Känga på, damask på.", "falsifiera": "✅ Går eller går inte.", "ingen_annan_kan_saga": "✅ Kräver kardborre längs hela utsidan." },
+        { "rad": "Kardborre hela vägen upp. 389 kr per par.", "visualisera": "✅ Söm, pris.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Egen konstruktion, eget pris." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_17_H1",
+      "typ": "video",
+      "hook": "Blöt sly till knäna. Torra strumpor.",
+      "manus": [
+        { "beat": "HOOK", "sekunder": "0–3 s", "sv": "Blöt sly till knäna. Torra strumpor.", "en": "Wet undergrowth up to the knees. Dry socks." },
+        { "beat": "PROBLEM", "sekunder": "3–7 s", "sv": "Blött gräs i kängans höjd, och byxbenet är genomvått på tjugo minuter.", "en": "Wet grass at boot height, and the trouser leg is soaked through in twenty minutes." },
+        { "beat": "MEKANISM", "sekunder": "7–14 s", "sv": "Kroken i snörningen, remmen under foten, kardborren upp till knät – sen rakt genom slyn.", "en": "The hook into the lacing, the strap under the foot, the velcro up to the knee – then straight through the undergrowth." },
+        { "beat": "PROOF", "sekunder": "14–18 s", "sv": "Kängan av vid rasten: strumpan är torr, byxbenet också.", "en": "Boot off at the break: the sock is dry, and so is the trouser leg." },
+        { "beat": "CTA", "sekunder": "18–22 s", "sv": "DryTrek Damasker, 389 kr per par, fri frakt och 14 dagars ångerrätt.", "en": "DryTrek Gaiters, 389 kr per pair, free shipping and 14-day right of withdrawal." }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Blöt sly till knäna. Torra strumpor.\nBlött gräs i kängans höjd gör byxbenet genomvått på tjugo minuter.\nKrok i snörningen, rem under foten, kardborre upp till knät.\nVätan stannar på utsidan – strumpan är torr vid rasten.\n389 kr per par, 14 dagars ångerrätt – se alla 18 färger 👇",
+        "headline_sv": "Torrt byxben genom blöt sly",
+        "description_sv": "Damasker, 44 cm höga, tre fästen. 389 kr per par."
+      },
+      "tre_fragor": [
+        { "rad": "Blöt sly till knäna. Torra strumpor.", "visualisera": "✅ Slyn i knähöjd, torra strumpor – septemberbilden.", "falsifiera": "✅ Strumporna är torra eller inte.", "ingen_annan_kan_saga": "✅ \"Till knäna\" är DryTreks 44 cm; produktsidans eget löfte om blöt sly. Inga snöord. Alternativ: 1) \"Högt gräs. Blött byxben på tjugo minuter.\" 2) \"Sly upp till knät. Strumpan torr.\" 3) \"Septemberstig: blött gräs, torr strumpa.\"" },
+        { "rad": "Blött gräs i kängans höjd, och byxbenet är genomvått på tjugo minuter.", "visualisera": "✅ Gräset mot kängan, det mörka byxbenet.", "falsifiera": "✅ Tidsangivelsen kommer från produktsidan och går att pröva.", "ingen_annan_kan_saga": "✅ Produktsidans egen problemformulering (\"genomvått på tjugo minuter\")." },
+        { "rad": "Kroken i snörningen, remmen under foten, kardborren upp till knät – sen rakt genom slyn.", "visualisera": "✅ Tre fästen, sedan gången genom slyn.", "falsifiera": "✅ Finns fästena, går man genom slyn.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen och höjd." },
+        { "rad": "Kängan av vid rasten: strumpan är torr, byxbenet också.", "visualisera": "✅ Kängan av, strumpan mot kameran.", "falsifiera": "✅ Torr eller blöt.", "ingen_annan_kan_saga": "✅ Filmens eget bevis efter filmens egen sly; produktsidans två löften (strumpa + byxben) i samma bild." },
+        { "rad": "DryTrek Damasker, 389 kr per par, fri frakt och 14 dagars ångerrätt.", "visualisera": "✅ Namn, pris, frakt.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget namn och pris – ren prisrad." },
+        { "rad": "Blött gräs i kängans höjd gör byxbenet genomvått på tjugo minuter.", "visualisera": "✅ Gräs mot kängan, blött byxben.", "falsifiera": "✅ Går att pröva.", "ingen_annan_kan_saga": "✅ Produktsidans egen formulering." },
+        { "rad": "Krok i snörningen, rem under foten, kardborre upp till knät.", "visualisera": "✅ Tre fästen.", "falsifiera": "✅ Finns de eller inte.", "ingen_annan_kan_saga": "✅ DryTreks tre fästen." },
+        { "rad": "Vätan stannar på utsidan – strumpan är torr vid rasten.", "visualisera": "✅ Vatten utanpå tyget, torr strumpa.", "falsifiera": "✅ Torr eller blöt.", "ingen_annan_kan_saga": "✅ Produktsidans löfte, ingen materialegenskap påstås." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt – se alla 18 färger 👇", "visualisera": "✅ Pris, ångerrätt, färger.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris och färgantal." },
+        { "rad": "Torrt byxben genom blöt sly", "visualisera": "✅ Byxbenet, slyn.", "falsifiera": "✅ Torrt eller blött.", "ingen_annan_kan_saga": "✅ Produktsidans eget löfte, ordagrant nära." },
+        { "rad": "Damasker, 44 cm höga, tre fästen. 389 kr per par.", "visualisera": "✅ Höjd, fästen, pris.", "falsifiera": "✅ Går att mäta och räkna.", "ingen_annan_kan_saga": "✅ Egna mått, eget pris." }
+      ]
+    },
+    {
+      "namn": "DryTrek_Damasker_BOF_10_H1",
+      "typ": "video",
+      "hook": "Passar de mina kängor?",
+      "manus": [
+        { "beat": "HOOK", "sekunder": "0–2 s", "sv": "Passar de mina kängor?", "en": "Do they fit my boots?" },
+        { "beat": "MEKANISM", "sekunder": "2–8 s", "sv": "En storlek, 43 centimeter i omkrets – kardborren och remmen ställer in resten.", "en": "One size, 43 centimetres in circumference – the velcro and the strap adjust the rest." },
+        { "beat": "PROOF", "sekunder": "8–12 s", "sv": "Lätt vandringskänga och tung jaktkänga: samma damask, båda sitter.", "en": "Light hiking boot and heavy hunting boot: same gaiter, both fitted." },
+        { "beat": "CTA", "sekunder": "12–15 s", "sv": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt.", "en": "DryTrek Gaiters, 389 kr per pair, 14-day right of withdrawal." }
+      ],
+      "bildtext": null,
+      "copy_card": {
+        "primary_text_sv": "Passar de mina kängor?\nEn storlek: 43 centimeter i omkrets, 44 centimeter hög.\nKardborren längs utsidan och remmen under foten ställer in passformen.\nLätt vandringskänga eller tung jaktkänga – samma damask sitter på båda.\n389 kr per par, 14 dagars ångerrätt 👇",
+        "headline_sv": "En storlek. Justeras med kardborren.",
+        "description_sv": "43 cm omkrets, 44 cm hög. Passar de flesta vuxna."
+      },
+      "tre_fragor": [
+        { "rad": "Passar de mina kängor?", "visualisera": "✅ Tittarens egna kängor i hallen.", "falsifiera": "✅ Frågan besvaras av filmen: sitter de eller inte.", "ingen_annan_kan_saga": "✅ Produktsidans egen FAQ-fråga, ställd ordagrant – svaret (en storlek, 43 cm, kardborre + rem) är DryTreks. Alternativ: 1) \"En storlek. Två helt olika kängor.\" 2) \"Lätt vandringskänga eller tung jaktkänga?\" 3) \"43 centimeter runt – justeras med kardborren.\"" },
+        { "rad": "En storlek, 43 centimeter i omkrets – kardborren och remmen ställer in resten.", "visualisera": "✅ Måttet runt benet, kardborren som dras åt.", "falsifiera": "✅ Omkretsen går att mäta.", "ingen_annan_kan_saga": "✅ DryTreks eget mått och fästen." },
+        { "rad": "Lätt vandringskänga och tung jaktkänga: samma damask, båda sitter.", "visualisera": "✅ Två kängor bredvid varandra, samma damask.", "falsifiera": "✅ Sitter eller sitter inte – syns i bild.", "ingen_annan_kan_saga": "✅ Filmens eget bevis på DryTreks en-storlek." },
+        { "rad": "DryTrek Damasker, 389 kr per par, 14 dagars ångerrätt.", "visualisera": "✅ Namn och pris.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget namn och pris – ren prisrad." },
+        { "rad": "En storlek: 43 centimeter i omkrets, 44 centimeter hög.", "visualisera": "✅ Två mått.", "falsifiera": "✅ Går att mäta.", "ingen_annan_kan_saga": "✅ DryTreks mått." },
+        { "rad": "Kardborren längs utsidan och remmen under foten ställer in passformen.", "visualisera": "✅ Två fästen som justeras.", "falsifiera": "✅ Går att testa.", "ingen_annan_kan_saga": "✅ Kardborre längs hela utsidan är DryTreks." },
+        { "rad": "Lätt vandringskänga eller tung jaktkänga – samma damask sitter på båda.", "visualisera": "✅ Två kängor, en damask.", "falsifiera": "✅ Syns i filmen.", "ingen_annan_kan_saga": "✅ Filmens eget bevis." },
+        { "rad": "389 kr per par, 14 dagars ångerrätt 👇", "visualisera": "✅ Pris och ångerrätt.", "falsifiera": "✅ Går att kontrollera.", "ingen_annan_kan_saga": "✅ Eget pris – ren prisrad." },
+        { "rad": "En storlek. Justeras med kardborren.", "visualisera": "✅ En storlek, kardborren.", "falsifiera": "✅ Går att testa.", "ingen_annan_kan_saga": "✅ Kardborre längs hela utsidan." },
+        { "rad": "43 cm omkrets, 44 cm hög. Passar de flesta vuxna.", "visualisera": "✅ Två mått.", "falsifiera": "✅ Går att mäta; \"de flesta vuxna\" är produktsidans egen formulering.", "ingen_annan_kan_saga": "✅ DryTreks mått." }
+      ]
+    }
+  ]
+}
