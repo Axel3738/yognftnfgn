@@ -276,3 +276,32 @@ pausade. Nytt avsnitt `factory/PROCESS.md` → "Marknaden är pausad av ägaren"
 
 Batchfiler: `market-expansion/ops/hemvakten/2026-09-13/`. Discord:
 `#annons-uppladdning`, ping bara på Norge-beslutet.
+
+### Omkörning samma kväll — 4 annonser live
+
+Axel startade om `HEIMGUARD_SE_Övervakningskameran` själv 15:06 (Metas
+aktivitetslogg, actor Axel Odhner: pausad 11:06, påslagen 15:06). Kampanjen
+verifierad ACTIVE i kontot före uppladdning; NO-kampanjen lämnad PAUSED.
+Filerna kontrollerade med md5 mot morgonens granskning — identiska, så QA:n
+från förmiddagen gäller.
+
+| Annons | Adset | Annons-ID | Copy |
+|---|---|---|---|
+| `HeimGuard_SP_17_H1` | SP | `120249078128770172` | briefens COPY CARD |
+| `HeimGuard_SP_17_H2` | SP | `120249078136150172` | briefens COPY CARD (samma, hookvarianten är variabeln) |
+| `HeimGuard_BOF_7_1` | BOF | `120249078146060172` | sonnet-subagent (ingen COPY CARD i bildbriefen) |
+| `HeimGuard_BOF_9_1` | BOF | `120249078166950172` | sonnet-subagent |
+
+Alla fyra tillbakalästa ACTIVE. De två bildraderna ommärkta från Bäverbutikens
+prefix till butikens eget vid uppladdningen. Alla fyra flyttade till
+`SE-ACTIVE to be translated`.
+
+**`Overvakningskamera_LI_2_1` hölls.** Inget fel på creativen — priset stämmer
+och alla fem påståenden i listan är verifierade mot produktsidan. Konceptet är
+LI, och LI-adsetet är PAUSED för hand sedan 2026-09-10. Ett pausat adset är ett
+beslut: ingen uppladdning dit, adsetet orört. Raden ligger kvar i
+`To be Reviewed` och går upp av sig själv om LI slås på.
+
+**Copy-not:** `BOF_7_1`:s första rubrikförslag var "2,4 och 5 GHz wifi, ingen
+router" — tvetydigt, kunde läsas som att kameran funkar utan router, vilket är
+falskt. Subagenten skrev om till "Ja, funkar med 2,4 och 5 GHz wifi".

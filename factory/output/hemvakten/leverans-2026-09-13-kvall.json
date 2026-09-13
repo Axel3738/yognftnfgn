@@ -1,0 +1,360 @@
+{
+  "butik": "HeimGuard",
+  "nyckel": "hemvakten/overvakningskameran",
+  "konto": "915422744950975",
+  "marknad": "SE",
+  "status": "To be Reviewed",
+  "cs_status": "Creative strat review",
+  "cs_lamnade": [
+    {
+      "namn": "Overvakningskamera_SP_15_H1",
+      "page_id": "3d7270ab-908c-810f-81c4-fad9f501feac",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Overvakningskamera\" är inte butikens brand (HeimGuard) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Overvakningskamera_RI_3_H1",
+      "page_id": "3d7270ab-908c-8126-a315-e47a3212da87",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Overvakningskamera\" är inte butikens brand (HeimGuard) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Overvakningskamera_CO_4_H1",
+      "page_id": "3d7270ab-908c-8148-ad84-c8e985fb2613",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Overvakningskamera\" är inte butikens brand (HeimGuard) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Overvakningskamera_CS_8_H1",
+      "page_id": "3d7270ab-908c-8169-9af4-c6ce3481129d",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Overvakningskamera\" är inte butikens brand (HeimGuard) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Overvakningskamera_CS_9_H1",
+      "page_id": "3d7270ab-908c-816b-9eba-fb81c744adfb",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Overvakningskamera\" är inte butikens brand (HeimGuard) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Overvakningskamera_SP_16_H1",
+      "page_id": "3d7270ab-908c-81b0-8045-f4a4b6eec8b0",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Overvakningskamera\" är inte butikens brand (HeimGuard) — parkerad källrad, rörs inte"
+    }
+  ],
+  "hub": {
+    "id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
+    "titel": "Surveillance Camera creative hub"
+  },
+  "kampanj": {
+    "id": "120249005476160172",
+    "namn": "HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08",
+    "bas": "HEIMGUARD_SE_Övervakningskameran",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249006071490172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - RI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249006021330172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - LI",
+        "status": "PAUSED"
+      },
+      {
+        "id": "120249005990380172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - BOF",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249005718350172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - G",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249005694260172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249005670090172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - CO",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249005624680172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - AU",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249005591570172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249005476730172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - SP",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 17,
+  "lank_arvd": "https://heimguard.se/products/overvakningskameran",
+  "pris_butik": {
+    "pris": 799,
+    "min": 799,
+    "max": 799,
+    "jamforpris": 1000,
+    "valuta": "SEK",
+    "titel": "Övervakningskamera Trådlös – Dubbellins PTZ med AI-Spårning",
+    "handle": "overvakningskameran",
+    "kalla": "https://heimguard.se/products/overvakningskameran.json"
+  },
+  "pris_skal": null,
+  "rader": [
+    {
+      "namn": "HeimGuard_SP_17_H2",
+      "mal_namn": "HeimGuard_SP_17_H2",
+      "page_id": "3d7270ab-908c-81c9-9482-f22dd36b79e3",
+      "url": "https://app.notion.com/p/HeimGuard_SP_17_H2-3d7270ab908c81c99482f22dd36b79e3",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 15L1V4z_S2b_fbcKRWID6mILGw-vGnSil",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "15L1V4z_S2b_fbcKRWID6mILGw-vGnSil",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/15L1V4z_S2b_fbcKRWID6mILGw-vGnSil?usp=drive_link"
+        }
+      ],
+      "landning": "https://heimguard.se/products/overvakningskameran",
+      "lank": "https://heimguard.se/products/overvakningskameran",
+      "prefix": "HeimGuard",
+      "koncept": "SP",
+      "nummer": 17,
+      "variant": "H2",
+      "adset_namn": "HEIMGUARD_SE_Övervakningskameran - SP",
+      "adset": {
+        "id": "120249005476730172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - SP",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T22:27:00.000Z",
+      "hub": "Surveillance Camera creative hub",
+      "fil": "factory/output/hemvakten/leverans-2026-09-13-kvall/HeimGuard_SP_17_H2/HeimGuard_SP_17_H2.mp4",
+      "fil_alla": [
+        "factory/output/hemvakten/leverans-2026-09-13-kvall/HeimGuard_SP_17_H2/HeimGuard_SP_17_H2.mp4"
+      ],
+      "fil_fel": null
+    },
+    {
+      "namn": "HeimGuard_SP_17_H1",
+      "mal_namn": "HeimGuard_SP_17_H1",
+      "page_id": "3d7270ab-908c-8175-b9bc-f62e19b5d1b3",
+      "url": "https://app.notion.com/p/HeimGuard_SP_17_H1-3d7270ab908c8175b9bcf62e19b5d1b3",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 15L1V4z_S2b_fbcKRWID6mILGw-vGnSil",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "15L1V4z_S2b_fbcKRWID6mILGw-vGnSil",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/15L1V4z_S2b_fbcKRWID6mILGw-vGnSil?usp=drive_link"
+        }
+      ],
+      "landning": "https://heimguard.se/products/overvakningskameran",
+      "lank": "https://heimguard.se/products/overvakningskameran",
+      "prefix": "HeimGuard",
+      "koncept": "SP",
+      "nummer": 17,
+      "variant": "H1",
+      "adset_namn": "HEIMGUARD_SE_Övervakningskameran - SP",
+      "adset": {
+        "id": "120249005476730172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - SP",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T22:27:00.000Z",
+      "hub": "Surveillance Camera creative hub",
+      "fil": "factory/output/hemvakten/leverans-2026-09-13-kvall/HeimGuard_SP_17_H1/HeimGuard_SP_17_H1.mp4",
+      "fil_alla": [
+        "factory/output/hemvakten/leverans-2026-09-13-kvall/HeimGuard_SP_17_H1/HeimGuard_SP_17_H1.mp4"
+      ],
+      "fil_fel": null
+    },
+    {
+      "namn": "Overvakningskamera_BOF_9_1",
+      "mal_namn": "HeimGuard_BOF_9_1",
+      "page_id": "3d7270ab-908c-8139-8280-c58b2fb3930d",
+      "url": "https://app.notion.com/p/Overvakningskamera_BOF_9_1-3d7270ab908c81398280c58b2fb3930d",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: Overvakningskamera_BOF_9_1.jpg, Overvakningskamera_BOF_9_1_1x1.jpg",
+      "filer": [
+        {
+          "namn": "Overvakningskamera_BOF_9_1.jpg"
+        },
+        {
+          "namn": "Overvakningskamera_BOF_9_1_1x1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://bäverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "lank": "https://heimguard.se/products/overvakningskameran",
+      "prefix": "Overvakningskamera",
+      "koncept": "BOF",
+      "nummer": 9,
+      "variant": "1",
+      "adset_namn": "HEIMGUARD_SE_Övervakningskameran - BOF",
+      "adset": {
+        "id": "120249005990380172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - BOF",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T06:33:00.000Z",
+      "hub": "Surveillance Camera creative hub",
+      "fil": "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_BOF_9_1/Overvakningskamera_BOF_9_1_1.jpg",
+      "fil_alla": [
+        "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_BOF_9_1/Overvakningskamera_BOF_9_1_1.jpg",
+        "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_BOF_9_1/Overvakningskamera_BOF_9_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "Overvakningskamera_BOF_7_1",
+      "mal_namn": "HeimGuard_BOF_7_1",
+      "page_id": "3d7270ab-908c-8175-a333-d78c7eb2a27b",
+      "url": "https://app.notion.com/p/Overvakningskamera_BOF_7_1-3d7270ab908c8175a333d78c7eb2a27b",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: Overvakningskamera_BOF_7_1.jpg, Overvakningskamera_BOF_7_1_1x1.jpg",
+      "filer": [
+        {
+          "namn": "Overvakningskamera_BOF_7_1.jpg"
+        },
+        {
+          "namn": "Overvakningskamera_BOF_7_1_1x1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://bäverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "lank": "https://heimguard.se/products/overvakningskameran",
+      "prefix": "Overvakningskamera",
+      "koncept": "BOF",
+      "nummer": 7,
+      "variant": "1",
+      "adset_namn": "HEIMGUARD_SE_Övervakningskameran - BOF",
+      "adset": {
+        "id": "120249005990380172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - BOF",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T06:33:00.000Z",
+      "hub": "Surveillance Camera creative hub",
+      "fil": "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_BOF_7_1/Overvakningskamera_BOF_7_1_1.jpg",
+      "fil_alla": [
+        "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_BOF_7_1/Overvakningskamera_BOF_7_1_1.jpg",
+        "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_BOF_7_1/Overvakningskamera_BOF_7_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "Overvakningskamera_LI_2_1",
+      "mal_namn": "HeimGuard_LI_2_1",
+      "page_id": "3d7270ab-908c-81f4-ba49-e80453345641",
+      "url": "https://app.notion.com/p/Overvakningskamera_LI_2_1-3d7270ab908c81f4ba49e80453345641",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: Overvakningskamera_LI_2_1.jpg, Overvakningskamera_LI_2_1_1x1.jpg",
+      "filer": [
+        {
+          "namn": "Overvakningskamera_LI_2_1.jpg"
+        },
+        {
+          "namn": "Overvakningskamera_LI_2_1_1x1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://bäverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "lank": "https://heimguard.se/products/overvakningskameran",
+      "prefix": "Overvakningskamera",
+      "koncept": "LI",
+      "nummer": 2,
+      "variant": "1",
+      "adset_namn": "HEIMGUARD_SE_Övervakningskameran - LI",
+      "adset": {
+        "id": "120249006021330172",
+        "name": "HEIMGUARD_SE_Övervakningskameran - LI",
+        "status": "PAUSED"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": null,
+      "skapad": "2026-09-10T06:33:00.000Z",
+      "hub": "Surveillance Camera creative hub",
+      "fil": "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_LI_2_1/Overvakningskamera_LI_2_1_1.jpg",
+      "fil_alla": [
+        "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_LI_2_1/Overvakningskamera_LI_2_1_1.jpg",
+        "factory/output/hemvakten/leverans-2026-09-13-kvall/Overvakningskamera_LI_2_1/Overvakningskamera_LI_2_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    }
+  ],
+  "varningar": [
+    "Overvakningskamera_BOF_9_1: prefixet \"Overvakningskamera\" är inte butikens (heimguard_ / heimguard) — målnamnet är ommärkt till \"HeimGuard_BOF_9_1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris",
+    "Overvakningskamera_BOF_7_1: prefixet \"Overvakningskamera\" är inte butikens (heimguard_ / heimguard) — målnamnet är ommärkt till \"HeimGuard_BOF_7_1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris",
+    "Overvakningskamera_LI_2_1: prefixet \"Overvakningskamera\" är inte butikens (heimguard_ / heimguard) — målnamnet är ommärkt till \"HeimGuard_LI_2_1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris"
+  ],
+  "hamtad": "2026-09-13T18:23:04.493Z"
+}
