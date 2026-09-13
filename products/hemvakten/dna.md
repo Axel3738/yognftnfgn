@@ -332,3 +332,25 @@ verifierat live i NO, två (`RI_1_H1`, `SP_4_H1`) finns inte ens som SE-annonser
   är från 2026-08-31; beslutet att lägga alla OPS-butiker i DK-kontot är från
   2026-09-07 och är yngre. Vad som gäller för OPS-redigerarnas lön står
   ingenstans skrivet — det är Axels att avgöra.
+
+---
+
+## Körning nr 4 — 2026-09-14, budgetnatt (`/notionscalercs`)
+
+Data: 7d 6 338 kr, 7 köp, ROAS 1,43 (under BE 1,49), vinstbidrag −113 kr. Dygn:
+09-11 795 kr/2 köp · 09-12 585 kr/0 · 09-13 726 kr/0. Kampanjbudget oförändrad 700 kr
+(3d under grinden: 2 106 kr, 2 köp).
+
+**`PD_2` gick från preliminär vinnare till preliminär förlorare på ett dygn utan
+köp:** 14d 2 265 kr, 4 köp, CPA 566 kr (5 % över 538). Skriptet ville pausa den.
+**Inte gjort** — lagd under ACTION NEEDED åt Axel (`--max 0`), för:
+1. ANALYSMETOD steg 5: top spendern är benchmark, inte kandidat. PD_2 är top spender
+   (2 265 kr) och enda annonsen med köp.
+2. ANALYSMETOD 2c: en dom på 3–4 köp är preliminär. Ett köp till ger CPA 453 (under BE).
+3. **Regel-lucka i `factory/budgetbeslut.mjs`:** `BENCHMARK_ANDEL` räknas på
+   *positivt* vinstbidrag (`positivTotal`), så skyddet försvinner exakt när
+   benchmarken tippar under break-even. Förslag: skydda även annonsen med störst
+   spendandel. Ändras bara på Axels besked.
+
+Batch #2 + #3 (28 briefer) ligger hos Carl, inget nytt live. Kampanjen kör 700 kr/dag
+på oprövade annonser tills leveranserna kommer.
