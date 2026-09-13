@@ -62,6 +62,20 @@ Partner"-märke. Den öppnas av att appen används.
    Appinställningar → Grundläggande → **App-ID** och **App-hemlighet**.
    `TOKEN_ENCRYPTION_KEY` finns däremot redan på App Store-tjänsten och ska
    inte röras — den måste vara identisk på alla sex (delad databas).
+
+   ⚠ **Det finns ingen Meta-app som heter "StonePNL".** Mätt 2026-09-13
+   (Axels egen kontroll): utvecklarkontot har **exakt en app**, och den heter
+   något annat. Det spelar ingen roll för koden — `META_APP_ID` /
+   `META_APP_SECRET` kommer från vilken app som helst där Axel är
+   administratör, och det är samma app som ska bära Facebook-inloggningens
+   omdirigerings-URI. Appens namn är däremot det handlaren ser i
+   inloggningsrutan, så döp om den till **StonePNL** i samma vända
+   (Grundläggande → Visningsnamn). Att byta namn påverkar inte App-ID,
+   App-hemligheten eller redan utfärdade tokens.
+
+   ⚠ Är det här samma app som gav Bäverbutikens handinklistrade
+   `META_ACCESS_TOKEN`: **rör inte "Kräv apphemlighet"**. Slås den på slutar
+   de anropen fungera samma sekund.
 5. Rökprova utan att vara inloggad:
    - `GET /privacy` → 200, och Meta-avsnittet syns.
    - `GET /meta/deletion` → statussidan (inte 404).
@@ -99,8 +113,11 @@ ger avslag och ny väntetid.
 
 ### Del 2 — Fyll i Meta-appen
 
-1. `developers.facebook.com/apps` → öppna **StonePNL**.
+1. `developers.facebook.com/apps` → öppna appen (det finns bara en, och den
+   heter inte StonePNL — se varningen ovan).
 2. **Appinställningar → Grundläggande**:
+   - Visningsnamn: **StonePNL** (det är namnet handlaren ser i
+     inloggningsrutan)
    - Sekretesspolicyns URL: `https://pnl-app-store-production.up.railway.app/privacy`
    - Appikon 1024 × 1024 px
    - Kategori: **Business**

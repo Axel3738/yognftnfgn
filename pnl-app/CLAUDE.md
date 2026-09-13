@@ -820,6 +820,17 @@ det Meta kräver av OSS innan ansökan kan skickas:
   "sätts på alla sex tjänster" beskrev avsikten, inte verkligheten. Värdena
   hämtas i Meta-appen (Appinställningar → Grundläggande) och måste in innan
   något av Meta-arbetet går att prova skarpt.
+- ⚠ **Det finns ingen Meta-app som heter "StonePNL"** (Axels kontroll
+  2026-09-13). Utvecklarkontot har **exakt en app**, med ett annat namn.
+  Skriv aldrig "öppna appen StonePNL" i en instruktion — den finns inte, och
+  Axel fastnar på steget. Appens namn saknar betydelse för koden: `META_APP_ID`
+  och `META_APP_SECRET` kommer från vilken app som helst där han är
+  administratör, så länge det är samma app som bär Facebook-inloggningens
+  omdirigerings-URI. Namnet är däremot det handlaren ser i inloggningsrutan,
+  så visningsnamnet döps om till StonePNL i samma vända (påverkar varken
+  App-ID, App-hemligheten eller redan utfärdade tokens).
+  ⚠ Är det samma app som gav Bäverbutikens handinklistrade `META_ACCESS_TOKEN`:
+  rör inte **Kräv apphemlighet**. Slås den på slutar de anropen fungera direkt.
 - **Kvar, och det är inte kod:** Business Verification av Business Manager
   (juridiska dokument, görs FÖRE ansökan), Meta-appen till Live, Marketing
   API-produkten tillagd, och App Review för `ads_read` i Advanced Access med

@@ -274,32 +274,40 @@ Spara nyckeln Cowork skriver ut. Den behövs i prompt 11 och 12.
 > pnl-app-store visade META_REVIEW_KEY men inga META_APP_*.
 >
 > Det betyder att knappen "Logga in med Facebook" **aldrig har funnits** i
-> App Store-versionen av appen — den döljs helt utan variablerna. De fem egna
-> butikernas tjänster har dem sedan tidigare.
+> App Store-versionen av appen — den döljs helt utan variablerna.
 >
-> ⚠ `TOKEN_ENCRYPTION_KEY` måste vara **exakt samma sträng på alla sex
-> tjänster**. De delar en databas: en annan nyckel gör sparade Meta-nycklar
-> oläsbara för de andra tjänsterna och ändrar kundhashen i LTV:n för alltid.
+> **Rättelse 2026-09-12, samma dag:** den första versionen av den här
+> prompten sa "kopiera dem från tjänsten beautiful-curiosity". Det var fel.
+> Cowork gick igenom **alla sex tjänster plus projektets Shared Variables**
+> och hittade ingen enda `META_`-variabel någonstans. Det finns alltså inget
+> att kopiera — värdena måste hämtas i Meta-appen och skrivas in för hand.
+>
+> ⚠ `TOKEN_ENCRYPTION_KEY` finns redan på PNL App store och ska **inte**
+> röras. Den måste vara exakt samma sträng på alla sex tjänster: de delar en
+> databas, och en annan nyckel gör sparade Meta-nycklar oläsbara för de andra
+> tjänsterna och ändrar kundhashen i LTV:n för alltid.
+>
+> Hämta värdena först: developers.facebook.com/apps → appen (det finns bara
+> en, och den heter inte StonePNL) → Appinställningar → Grundläggande →
+> **App-ID** och **App-hemlighet** (klicka Visa).
 
 ```
 Du styr min webbläsare. Jag är inloggad på railway.app.
-Uppgift: kopiera tre miljövariabler från en tjänst till en annan i samma projekt.
+Uppgift: lägg till två nya miljövariabler på en tjänst. Jag skriver värdena själv.
 
-VIKTIGT: läs ALDRIG upp värdena i chatten och skriv dem aldrig i ett meddelande.
-Använd kopiera/klistra in. Säg bara om det gick eller inte.
+VIKTIGT: du ska ALDRIG skriva, gissa eller läsa upp värdena. Du skapar bara
+fälten och stannar. Jag klistrar in. Bekräfta bara att det gick.
 
-1. Öppna projektet och klicka på tjänsten beautiful-curiosity.
+1. Öppna projektet och klicka på tjänsten PNL App store.
 2. Klicka Variables.
-3. Leta upp META_APP_ID. Klicka de tre prickarna på raden och välj Copy (eller visa värdet och markera det).
-4. Öppna tjänsten PNL App store → Variables → New Variable.
-   Namn: META_APP_ID. Klistra in värdet. Klicka Add.
-5. Gå tillbaka till beautiful-curiosity och gör samma sak med META_APP_SECRET.
-   Lägg in den på PNL App store som META_APP_SECRET.
-6. Kontrollera om PNL App store redan har TOKEN_ENCRYPTION_KEY.
-   - Finns den redan: rör den INTE.
-   - Saknas den: kopiera den från beautiful-curiosity på samma sätt och lägg in den.
-7. Finns META_LOGIN_CONFIG_ID på beautiful-curiosity: kopiera även den. Saknas den: hoppa över.
-8. Klicka Deploy Changes. Läs upp för mig vilka variabelnamn som står i dialogen innan du bekräftar.
+3. Klicka New Variable. Skriv namnet META_APP_ID i namnfältet.
+   Klicka i värdefältet och säg till mig "Klistra in App-ID". Vänta på mig.
+4. När jag sagt klart: klicka Add.
+5. Klicka New Variable igen. Skriv namnet META_APP_SECRET i namnfältet.
+   Klicka i värdefältet och säg till mig "Klistra in App-hemligheten". Vänta på mig.
+6. När jag sagt klart: klicka Add.
+7. Rör INTE TOKEN_ENCRYPTION_KEY. Den ska ligga kvar precis som den är.
+8. Klicka Deploy Changes. Läs upp vilka variabelnamn som står i dialogen innan du bekräftar.
 9. Vänta tills deployen är Active (ca 2 minuter).
 10. Öppna https://pnl-app-store-production.up.railway.app/meta/granska?key=NYCKELN
     (jag ger dig NYCKELN) och berätta vad rubriken på sidan är.
@@ -314,8 +322,12 @@ Använd kopiera/klistra in. Säg bara om det gick eller inte.
 Du styr min webbläsare. Jag är inloggad på developers.facebook.com.
 Uppgift: fyll i fälten som krävs för att min app ska få skickas in på granskning.
 
-1. Öppna https://developers.facebook.com/apps och klicka på appen StonePNL.
+1. Öppna https://developers.facebook.com/apps. Jag har bara EN app och den
+   heter inte StonePNL. Klicka på den app som finns. Står det flera appar:
+   läs upp namnen för mig och vänta på svar.
 2. Vänstermenyn: Appinställningar → Grundläggande (App Settings → Basic).
+2b. Läs upp vad som står i fältet Visningsnamn (Display Name).
+    Står det inte StonePNL: ändra det till StonePNL.
 3. Sekretesspolicyns URL (Privacy Policy URL), klistra in:
    https://pnl-app-store-production.up.railway.app/privacy
 4. Användarvillkorens URL lämnas tom om den är tom.
@@ -392,9 +404,10 @@ Kör den här SIST, när prompt 10 är godkänd och videon är inspelad.
 
 ```
 Du styr min webbläsare. Jag är inloggad på developers.facebook.com.
-Uppgift: skicka in min app StonePNL på granskning för behörigheten ads_read.
+Uppgift: skicka in min app på granskning för behörigheten ads_read.
 
-1. Öppna https://developers.facebook.com/apps och klicka på appen StonePNL.
+1. Öppna https://developers.facebook.com/apps och klicka på min app.
+   Jag har bara en. Står det flera: läs upp namnen och vänta på svar.
 2. Vänstermenyn: App Review → Permissions and Features (Behörigheter och funktioner).
 3. Sök fram ads_read i listan.
 4. Klicka Request Advanced Access (Begär avancerad åtkomst) på raden ads_read.
@@ -414,9 +427,10 @@ en blandad ansökan avslås i sin helhet. Fråga mig om något fält ser annorlu
 
 ```
 Du styr min webbläsare. Jag är inloggad på developers.facebook.com.
-Uppgift: sätt appen StonePNL i Live-läge.
+Uppgift: sätt min app i Live-läge.
 
-1. Öppna https://developers.facebook.com/apps och klicka på appen StonePNL.
+1. Öppna https://developers.facebook.com/apps och klicka på min app.
+   Jag har bara en. Står det flera: läs upp namnen och vänta på svar.
 2. Högst upp finns ett reglage som står på Utveckling (Development).
 3. Dra det till Live.
 4. Kommer det upp en ruta som säger att något saknas: läs upp exakt vad som står
