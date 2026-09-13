@@ -133,6 +133,15 @@ vara ordertiden + 18 h svensk tid.
   rabatten själv), eller ge appen Discounts-behörighet i Shopify admin →
   Appar → Utveckla appar → Bäver uppladdare → Konfiguration.
 
+## Inklistringen via Cowork
+
+`mejl/COWORK-PROMPT.md` är den färdiga prompten till Cowork (Claude i
+Chrome) för steg 2 nedan: den hämtar mallarna som råtext från GitHub (repot
+är publikt), klistrar in dem i admin och verifierar efter omladdning.
+Kopiera allt under linjen i den filen. ⚠️ Länkarna i prompten pekar på en
+gren — byt till `main` när grenen mergats, och uppdatera tecknantalen om
+mallarna byggts om.
+
 ## Axels klick (står också på sidan)
 
 1. Rabatter → Skapa rabatt → Köp X få Y → kod `TACKIGEN`, minst 299 kr,
