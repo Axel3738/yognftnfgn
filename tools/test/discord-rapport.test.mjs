@@ -131,7 +131,7 @@ test('listtak utan kapning: max 8 gjort och 10 briefer, sen "+N more"', () => {
 });
 
 test('saknade fält vägras', () => {
-  assert.deepEqual(saknadeFalt({}), ['brand', 'datum', 'lage (budget | brief | leverans | oversatt)']);
+  assert.deepEqual(saknadeFalt({}), ['brand', 'datum', 'lage (budget | brief | leverans | oversatt | bild)']);
   assert.throws(() => renderaRapport({ brand: 'X', datum: '2026-09-10', lage: 'natt' }), /lage/);
 });
 
@@ -164,7 +164,8 @@ test('lägena leverans och oversatt: egen rubrik, kanal #annons-uppladdning', as
   assert.equal(kanalFor({ lage: 'oversatt' }), 'annons-uppladdning');
   assert.equal(kanalFor({ lage: 'budget' }), 'ads');
   assert.equal(kanalFor({ lage: 'brief', kanal: '#egen' }), 'egen');
-  assert.equal(Object.keys(KANAL_PER_LAGE).length, 4);
+  assert.equal(Object.keys(KANAL_PER_LAGE).length, 5);
+  assert.equal(kanalFor({ lage: 'bild' }), 'ads-to-do');
   const text = renderaRapport({ brand: 'HeimGuard', butik: 'hemvakten', datum: '2026-09-11', lage: 'leverans', gjort: ['Uploaded HeimGuard_SP_4_1 live in HEIMGUARD_SE (adset SP)'], nasta_korning: '2026-09-12' }, { axelId: '1' });
   assert.match(text, /^🚀 HEIMGUARD delivery run — 2026-09-11/);
   const no = renderaRapport({ brand: 'HeimGuard', butik: 'hemvakten', datum: '2026-09-11', lage: 'oversatt', gjort: ['Translated 2 ads'], nasta_korning: '2026-09-12' }, { axelId: '1' });

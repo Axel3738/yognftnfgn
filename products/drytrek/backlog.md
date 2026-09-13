@@ -42,3 +42,11 @@ Skapad 2026-09-11 av `/notionscalercs setup drytrek`. Uppdaterad 2026-09-12 (kö
 | **Batch #2:s 6 videor i `Creative strat review`** | Jasper levererade dem 2026-09-12 men `/ops-leverans` plockar bara `To be Reviewed`, och DryTrek har ingen leveransrunda byggd. Någon måste QA:a mot briefen (tre av dem krävde ny film) och flytta statusen — eller bygga rutinen (`/notionscalercs setup drytrek` är idempotent). | Notion-hubben, läst 2026-09-13 |
 | **PD_14_1–18 (18 färgbilder, `/ops-bild`)** | 17 i `To be Reviewed` — samma leveransproblem. Vem som skapade rutinen `/ops-bild` står inte på main. | Notion-hubben, läst 2026-09-13 |
 | **Koncept-backloggen är tom** | Alla åtta ursprungliga koncept plockade (batch #2 + #3). Nästa koncept måste komma ur data (första bedömbara annonsen) eller ur swipes — `docs/swipes/` har inga damask-swipes än. | denna körning |
+
+---
+
+## Axels egna idéer (loggade av `/ops-bild`)
+
+| Datum | Idé | Status | Källa |
+|---|---|---|---|
+| 2026-09-12 | **En bildannons per färgvariant** — vit bakgrund, bara produkten, 18 färger = 18 bilder i ETT koncept (`PD_14_1 … _18`, ett adset). Variabeln är färgen; vinstbidrag per färg säger vilka färger som ska leda copyn framöver. | **[byggd i batch #3b (färgvarianterna) samma dag]** — genererad av `factory/ops-bild.mjs` (kie.ai), ingen redigerare | Axel, chatten 2026-09-12. Produktens säljpunkt "18 färger" (`factory/produkter/damasker.yaml` benefits) — ingen annons på kontot visar mer än neongrön |

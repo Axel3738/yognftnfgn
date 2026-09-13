@@ -21,4 +21,6 @@ market-expansion/ops/**/*.jpeg
 market-expansion/ops/**/*.png
 market-expansion/ops/**/*.srt
 factory/output/*/leverans-*/
+factory/output/*/bild-*/
+factory/output/*/*.logg
 kundtjanst/jobb/

@@ -1,0 +1,94 @@
+{
+  "batch": "03",
+  "copy_model": "sonnet",
+  "primary_text": {
+    "sv": "Billiga benskydd glider ner efter några kilometer.\nDryTrek Damasker har tre fästen: krok i snörningen, rem under foten, kardborre hela vägen upp.\n44 centimeter skydd mellan känga och knä.\n18 färger att välja mellan.\n389 kr per par.\nSe hela färgkartan här 👇",
+    "en": "Cheap gaiters slide down after a few kilometres.\nDryTrek Damasker has three fasteners: hook in the boot lacing, strap under the foot, velcro all the way up.\n44 centimetres of coverage between boot and knee.\n18 colours to choose from.\n389 kr per pair.\nSee the full colour chart here 👇"
+  },
+  "description": {
+    "sv": "Damasker i 18 färger. Tre fästen. 389 kr per par.",
+    "en": "Gaiters in 18 colours. Three fasteners. 389 kr per pair."
+  },
+  "headline_per_farg": {
+    "Neongrön": { "sv": "Damasker i neongrönt", "en": "Gaiters in neon green" },
+    "Orange": { "sv": "Damasker i orange", "en": "Gaiters in orange" },
+    "Gul": { "sv": "Damasker i gult", "en": "Gaiters in yellow" },
+    "Svart": { "sv": "Damasker i svart", "en": "Gaiters in black" },
+    "Grå": { "sv": "Damasker i grått", "en": "Gaiters in grey" },
+    "Marinblå": { "sv": "Damasker i marinblått", "en": "Gaiters in navy blue" },
+    "Blå": { "sv": "Damasker i blått", "en": "Gaiters in blue" },
+    "Ljusblå": { "sv": "Damasker i ljusblått", "en": "Gaiters in light blue" },
+    "Röd": { "sv": "Damasker i rött", "en": "Gaiters in red" },
+    "Lila": { "sv": "Damasker i lila", "en": "Gaiters in purple" },
+    "Rosa": { "sv": "Damasker i rosa", "en": "Gaiters in pink" },
+    "Brun": { "sv": "Damasker i brunt", "en": "Gaiters in brown" },
+    "Vit": { "sv": "Damasker i vitt", "en": "Gaiters in white" },
+    "Olivgrön": { "sv": "Damasker i olivgrönt", "en": "Gaiters in olive green" },
+    "Kamouflage Grön": { "sv": "Damasker i grön kamouflage", "en": "Gaiters in green camo" },
+    "Kamouflage Svart": { "sv": "Damasker i svart kamouflage", "en": "Gaiters in black camo" },
+    "Blå/Neongrön": { "sv": "Damasker i blått och neongrönt", "en": "Gaiters in blue and neon green" },
+    "Cerise/Neongrön": { "sv": "Damasker i cerise och neongrönt", "en": "Gaiters in cerise and neon green" }
+  },
+  "tre_fragor": [
+    {
+      "rad": "Billiga benskydd glider ner efter några kilometer.",
+      "visualisera": "✅ Ett benskydd som hasar ner mot kängan under gång.",
+      "falsifiera": "✅ Antingen glider de ner eller inte – produktsidans problem 4.",
+      "bara_vi": "✅ Fiende A (andra angreppssätt) ställd mot DryTreks trefästessystem på nästa rad; en billig konkurrent kan inte signera raden."
+    },
+    {
+      "rad": "DryTrek Damasker har tre fästen: krok i snörningen, rem under foten, kardborre hela vägen upp.",
+      "visualisera": "✅ Tre namngivna fästen på tre ställen på kängan – går att peka på i bilden.",
+      "falsifiera": "✅ Varje fäste finns eller finns inte, går att räkna.",
+      "bara_vi": "✅ Produktnamn + exakt fästsystem ur produktfaktan (features damasker.yaml)."
+    },
+    {
+      "rad": "44 centimeter skydd mellan känga och knä.",
+      "visualisera": "✅ Ett mätbart avstånd från kängans kant till knät.",
+      "falsifiera": "✅ 44 cm är en mätbar höjd, sann eller falsk.",
+      "bara_vi": "✅ Exakt mått ur produktfaktan – en konkurrent med annan höjd kan inte signera det."
+    },
+    {
+      "rad": "18 färger att välja mellan.",
+      "visualisera": "✅ En färgkarta att bläddra i, ett antal att räkna.",
+      "falsifiera": "✅ Antalet färger går att räkna och kontrollera mot sortimentet.",
+      "bara_vi": "✅ 18 är DryTreks exakta sortiment – en konkurrent med annat antal kan inte skriva under."
+    },
+    {
+      "rad": "389 kr per par.",
+      "visualisera": "✅ En prislapp, en siffra.",
+      "falsifiera": "✅ Priset är kontrollerbart mot drytrek.se.",
+      "bara_vi": "✅ Butikens eget, exakta pris."
+    },
+    {
+      "rad": "Se hela färgkartan här 👇",
+      "visualisera": "✅ En pil som pekar ner mot en färgkarta.",
+      "falsifiera": "✅ Antingen finns färgkartan bakom länken eller inte.",
+      "bara_vi": "✅ Pekar på DryTreks 18-färgskarta, inte en generisk 'köp nu'."
+    },
+    {
+      "rad": "Damasker i 18 färger. Tre fästen. 389 kr per par.",
+      "visualisera": "✅ Färgantal, fästantal och pris – tre siffror att peka på.",
+      "falsifiera": "✅ Alla tre delar är kontrollerbara mot sortiment, produkt och pris.",
+      "bara_vi": "✅ Den exakta kombinationen 18 färger + tre fästen + 389 kr är DryTreks egen."
+    },
+    {
+      "rad": "Damasker i neongrönt",
+      "visualisera": "✅ En neongrön damask på en mörk känga.",
+      "falsifiera": "✅ Antingen är plagget neongrönt eller inte.",
+      "bara_vi": "✅ DryTreks egen SKU i exakt den här färgvarianten (TEMU-...-NG)."
+    },
+    {
+      "rad": "Damasker i svart kamouflage",
+      "visualisera": "✅ Ett mönstrat, mörkt plagg – går att peka på i bilden.",
+      "falsifiera": "✅ Antingen är mönstret svart kamouflage eller inte.",
+      "bara_vi": "✅ DryTreks egen SKU i exakt den här varianten (TEMU-...-KS)."
+    },
+    {
+      "rad": "Damasker i cerise och neongrönt",
+      "visualisera": "✅ En tvåfärgad damask, cerise och neongrönt sida vid sida.",
+      "falsifiera": "✅ Antingen är plagget i just de två färgerna eller inte.",
+      "bara_vi": "✅ DryTreks egen tvåfärgade SKU (TEMU-...-CN), ingen generisk färgrad."
+    }
+  ]
+}

@@ -170,6 +170,11 @@ Börja med färsk `main`: `git fetch origin main && git checkout main && git res
 `node factory/register.mjs <nyckel> --idag $IDAG`. Läs av: konto, prefix,
 hubb (saknas hubben: stoppa briefdelen, gör budgetdelen, larma i rapporten),
 **Briefdag JA/NEJ**, redigerare.
+**Svarar registret "Okänd butik" eller står posten i läge `avslutad`**
+(t.ex. TankGuard, avslutad 2026-09-12): butiken körs inte längre. Gör
+INGENTING i kontot, ingen Discord-post, ingen commit. Skriv en rad i
+chatten: "<butik> är avslutad i registret — pausa rutinen i Routines-vyn"
+och avsluta. Samma regel gäller `/ops-leverans` och `/ops-oversatt`.
 
 ### Steg 1 — Budgetronden (varje natt)
 ```
@@ -247,6 +252,10 @@ ovan den ronden — Axel har tagit beslutet själv — och förbrukas av
 `brief-kord` i steg 8; skriptet säger då vad nästa rond går på. Varje
 variant pekar på sin förälder och isolerar EN variabel. Varje nytt koncept
 pekar på playbook, winning line eller swipe — annars märks det `gissning`.
+**Minst två av raderna är bildannonser** (Axels beslut 2026-09-12: bild är
+billigt och snabbt) — de räknas inom antalet, inte ovanpå, och varje
+bildbrief slutar med ett IMAGE PROMPT-block enligt `.claude/commands/ops-bild.md`
+steg 3, så att steg 7 kan generera dem samma natt.
 Ta med alla väntande items i `backlog.md` (märk `[använd i batch #N]`).
 Namn enligt `docs/naming-convention.md` med butikens prefix; lediga AD-ID:n
 läses ur OPS-kontot (analys-JSON:en) OCH ur hubbens befintliga radnamn.
@@ -286,6 +295,12 @@ Status `Draft`, Typ `Video - Pending Approval` / `Image - Pending Approval`.
 Skriptet hoppar över namn som redan finns i hubben. Visa resultatet (namn +
 url per rad). Misslyckas uppladdningen: lista raderna som skulle skapats,
 låtsas aldrig.
+**Bildraderna genereras direkt** (`/ops-bild` steg 5–7): `node factory/ops-bild.mjs
+<nyckel> --torr`, sedan skarpt, titta på varje bild med Read-verktyget mot
+checklistan i `/ops-bild` steg 6, och `--godkann` de som håller — de går
+live 13:40 via `/ops-leverans`. Underkända stannar i Draft med `--underkann
+--skal` och står i rapporten. Saknas `KIE_API_KEY`: skriv det under
+varningar, raderna ligger kvar i Draft och `/ops-bild <nyckel>` tar dem senare.
 
 ### Steg 8 — Logga, rapportera, pusha
 - `node factory/register.mjs log <nyckel> <antal> $IDAG`,
