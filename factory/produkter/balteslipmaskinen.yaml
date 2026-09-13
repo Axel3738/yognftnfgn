@@ -331,8 +331,14 @@ meta:
   # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
   # 1867947880635861 (Bäverbutiken, källan).
   ad_account_id: "915422744950975"
-  page_id: ""                 # Meta-sidan skapas av en människa (avsnitt 9)
-  pixel_id: ""                # skrivs av store-ready.mjs
+  # Sidan "EdgeBench" skapad av Axel 2026-09-13. Verifierad i MagiBorsten-
+  # företaget 1164852855167090: träff i owned_pages (11 sidor), ingen i
+  # client_pages — det är en ÄGD sida, precis som CatCabins.
+  # ⚠️ me/accounts listar den INTE än (45 sidor, ingen träff). Den kollen ska
+  # vara grön innan annonser launchas (FAS2.md) — kontrollera om den innan
+  # /ny-annonser, det brukar dröja tills sidan fått en admin-roll på tokenen.
+  page_id: "1255520490988068"
+  pixel_id: "2005404160146799"                # skrivs av store-ready.mjs
   # Prefixet är PER PRODUKT. Källan använder "Balteslipmaskin_" — samma prefix
   # här hade kolliderat i prefixkartan, översättningskön, adsetuppslaget och
   # commission-kopplingen med Bäverbutikens annonser.

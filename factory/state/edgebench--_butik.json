@@ -5,8 +5,8 @@
     "anslutning": {
       "klar": true,
       "domain": "aphkky-ke.myshopify.com",
-      "name": "My Store 5",
-      "primaryDomain": "aphkky-ke.myshopify.com",
+      "name": "EdgeBench",
+      "primaryDomain": "edgebench.se",
       "currencyCode": "SEK"
     },
     "tema-upload": {
@@ -170,7 +170,7 @@
           "locale": "nb",
           "marknad": "Norge",
           "status": "ACTIVE",
-          "localeSkapad": true
+          "localeSkapad": false
         }
       ]
     },
@@ -196,16 +196,32 @@
           "granskning": "4227/4240"
         }
       }
+    },
+    "store-ready": {
+      "klar": false,
+      "manuell": "recensioner balteslipmaskinen: ingen Judge.me-token (env JUDGEME_EDGEBENCH_TOKEN) — ladda upp output/balteslipmaskinen/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import · WeTracked: klistra in pixel-id 2005404160146799 (VA:ns klick) · Meta-sidan skapar VA:n i Business Manager (API:t kan inte) · Discord: boten kan inte skapa servrar — VA:n skapar \"EdgeBench — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/edgebench.yaml skriver ut länken) och kör sen node factory/store-ready.mjs edgebench --guild <server-id>",
+      "pixelId": "2005404160146799",
+      "discordGuild": null,
+      "recensioner": [
+        {
+          "produkt": "balteslipmaskinen",
+          "viaApi": false
+        }
+      ],
+      "vantar": [
+        "recensioner balteslipmaskinen: ingen Judge.me-token (env JUDGEME_EDGEBENCH_TOKEN) — ladda upp output/balteslipmaskinen/judgeme-app-import.csv i Judge.me → Settings → Import reviews → Import from apps → Judge.me format → Import",
+        "WeTracked: klistra in pixel-id 2005404160146799 (VA:ns klick)",
+        "Meta-sidan skapar VA:n i Business Manager (API:t kan inte)",
+        "Discord: boten kan inte skapa servrar — VA:n skapar \"EdgeBench — OPS\" i Discord, auktoriserar boten (node factory/discord.mjs factory/butiker/edgebench.yaml skriver ut länken) och kör sen node factory/store-ready.mjs edgebench --guild <server-id>"
+      ]
     }
   },
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/188720447783",
   "arbetstemaNamn": "EdgeBench – CRO v1",
   "qa": {
-    "gron": false,
-    "kritiska": [
-      "kundvy-startsida"
-    ],
-    "tid": "2026-09-12T15:47:38.244Z"
+    "gron": true,
+    "kritiska": [],
+    "tid": "2026-09-13T14:07:36.405Z"
   },
-  "uppdaterad": "2026-09-12T15:47:38.244Z"
+  "uppdaterad": "2026-09-13T14:07:36.405Z"
 }

@@ -19,3 +19,4 @@ ett sigill. Raderna före 2026-09-12 nedan gäller alltså de GAMLA a och b.
 | 2026-09-10 | tacklebay | c | horisont | Axel: "Jag gillar att det var liv i den" — vågorna och tvåradiga ordmärket ger rörelse; A (sigill) och B (kroken ensam) upplevdes stilla. |
 | 2026-09-10 | carashell | c | tak | Axel: C var den mest neutrala — de andra två (a emblem, b sigill med takmotivet) kändes inte passa produkten. |
 | 2026-09-11 | catcabin | c | koja | Axel: 'C because it's the most neutral of the two' — motivet stort med ordmärket litet under upplevdes neutralast; A (emblem med tagline) och B (ljust sigill, två rader) valdes bort. |
+| 2026-09-13 | edgebench | c | egg | Axel valde C igen — fjärde gången av fyra, nu med NYA a och b (bandet respektive delad disk) och ett nytt motiv (knivklingan). Även med två nya kompositioner vinner det rena märket med motivet stort och ordmärket litet under. |

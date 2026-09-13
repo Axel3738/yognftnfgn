@@ -57,11 +57,9 @@
   "qa": {
     "gron": false,
     "kritiska": [
-      "tracking",
-      "doman",
       "kundvy-produktsida"
     ],
-    "tid": "2026-09-12T15:47:44.313Z"
+    "tid": "2026-09-13T14:07:42.603Z"
   },
-  "uppdaterad": "2026-09-12T15:47:44.313Z"
+  "uppdaterad": "2026-09-13T14:07:42.603Z"
 }
