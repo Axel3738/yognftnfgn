@@ -256,6 +256,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
           <li>Klicka <strong>Spara</strong>.</li>
         </ol>
         <p class="dampad">⚠️ De tre mejlen under <strong>Lokal leverans</strong> kan inte skickas i din butik: alla ordrar hittills har fraktsättet "Fri Frakt", och lokal leverans är inte påslaget. De syns i listan men går aldrig ut.</p>
+        <p class="dampad">⚠️ Ser du ett erbjudande om att gå över till <strong>den nya övergivna kassan</strong> (Shopify Messaging / Marknadsföring): tacka nej. Shopify skriver att bytet är permanent, och våra mallar går inte att använda där.</p>
       </div>
     </article>
 

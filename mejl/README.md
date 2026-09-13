@@ -161,6 +161,43 @@ hand.
 
 Vill Axel ha full husstil på fler än åtta: bygg dem i omgångar, sorterade
 efter hur ofta de faktiskt skickas, och räkna en inklistring per mall.
+Namnen i admin är **New gift card** och **Gift card receipt** (inte "Gift
+card created"), **Ready for local pickup** och **Picked up by customer**.
+Sektionerna heter Orderhantering, Orderundantag, Betalningar, Frakt, Lokal
+leverans, Lokal upphämtning, Kundkonton, Presentkort, Returer.
+
+### Fallgropar i Shopifys notissystem (docs-läsning 2026-09-13)
+
+- ⚠️ **Övergiven kassa: opta ALDRIG in i den nya automationen.** Shopify:
+  "Activating the new abandoned checkout automation is a permanent change.
+  You can't change back." Den nya bygger man i Shopify Emails dra-och-släpp,
+  inte i Liquid — vår mall dör i samma sekund och går inte att få tillbaka.
+  Butiken ser redan ut att vara flyttad (mallen finns inte under Notiser,
+  mätt 2026-09-12), så `overgiven_kassa.liquid` är troligen redan vilande.
+- **"Återställ till standard" raderar hela brödtexten** men rör inte logga
+  och accentfärg. Det finns ingen ångra utöver "Föregående version".
+- **Shopify kräver ibland handpatchar i anpassade mallar.** Hela
+  `/manual/taxes/shopify-tax/notifications/`-serien finns för att
+  "Not all customized templates can be updated automatically" — nio mallar
+  behövde ändras för hand vid en skatteomläggning. En egen mall missar
+  sådana fixar tyst.
+- **`pickup_instructions` överskriver mallen** om upphämtning någonsin slås
+  på: "This field replaces any customizations that you have in the
+  `email_body` variable in the Ready for pickup notification template."
+- **SMS-notiserna går inte att redigera alls**, och där krävs `order.`-
+  prefixet som notismallarna förbjuder.
+- **Shop-appens notiser kan varken stängas av eller ändras** av butiken.
+- Shopifys stödda klienter inkluderar Outlook 2007 ⇒ tabeller och inline-
+  stilar, aldrig flexbox eller grid. Redigeraren inlinear `<style>` i
+  `<head>` automatiskt och behåller media queries.
+
+### Mallens storlek är inte mejlets storlek
+
+Källan är 87 kB för orderbekräftelsen, men det är **Liquid**: case-satsen
+med komplementkartan renderas bort vid utskick. Det färdiga mejlet är
+25 kB (mätt 2026-09-13 på `output/forhandsvisning/orderbekraftelse.html`,
+som byggs ur samma kod). Gmail klipper vid ~102 kB, så marginalen är stor.
+Shopify dokumenterar **ingen** storleksgräns för notismallar.
 
 ## Inklistringen via Cowork
 
