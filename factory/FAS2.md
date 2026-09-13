@@ -394,8 +394,16 @@ Bäverbutikens creatives går inte att referera från OPS-kontot. Kedjan är:
 hämta ner filen → brand-swappa → ladda upp på nytt till `act_915422744950975`.
 
 **Återanvänd detta:**
-- `pipeline/no-video-launch.mjs` — den ENDA koden som bygger en hel kampanjstruktur i ett
+- `factory/kampanj.mjs <produkt> --marknad SE|NO` — **kampanjbyggaren sedan 2026-09-09.**
+  ABO, ett adset per vinkel med lika budget, `is_adset_budget_sharing_enabled: false`,
+  allt PAUSED, tre spärrar före första skrivningen (konto-id, sida, pixel ≠ Bäverbutikens).
+  Mätt samma dag: en CBO med alla 16 annonser i ett adset rapporterades som klar — Axel
+  såg det direkt i Ads Manager. Regel 11 i CLAUDE.md gäller även här.
+  Norge: `--marknad NO` läser `annonscopy/<produkt>-no.json`, `media-i-malkontot-no.json`
+  och länkar till `/nb/products/<handle>`.
+- `pipeline/no-video-launch.mjs` — äldre referens för att bygga en hel kampanjstruktur i ett
   målkonto (CBO, adset per koncept med `promoted_object`, idempotent, statusar explicit).
+  ⚠️ CBO-delen är inte längre mönstret för tester.
 - `pipeline/no-image-launch.mjs` / `no-image-ads.mjs` — bildannonshalvan.
 - `pipeline/waves/no-ibc-video.config.mjs` — **detta ÄR TankGuards produkt.** Färdig
   mall och färdig copy-struktur; byt `act`/`page`/`pixel`/`link`/`campaignName`.

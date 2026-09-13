@@ -420,12 +420,25 @@ export function rabattkodInput(k, produktGid, { bonusGid = null } = {}) {
 export async function sakerstallRabattkod(k, produktGid, { valuta = null, bonusGid = null } = {}) {
   const q = await graphql(
     `query opsFactoryRabattkod($code: String!) {
-      codeDiscountNodeByCode(code: $code) { id }
+      codeDiscountNodeByCode(code: $code) {
+        id
+        codeDiscount { ... on DiscountCodeBasic { codes(first: 5) { nodes { code } } } }
+      }
     }`,
     { code: k.kod }
   );
   const input = rabattkodInput(k, produktGid, { bonusGid });
-  const finns = q.codeDiscountNodeByCode?.id ?? null;
+  // ⚠️ Träffen räknas bara vid EXAKT kodmatch (mätt 2026-09-10 på DryTrek):
+  // Shopifys sökning `query: "code:X"` är luddig — sökningen efter
+  // DAMASKER4PACK svarade med DAMASKER2PACK, och 2-packets kod skrevs över
+  // till 20 % / min 4, så det förvalda paketet stod utan rabatt i kassan
+  // medan kortet lovade 661,30. codeDiscountNodeByCode slår upp på koden,
+  // men den returnerade koden jämförs ändå tecken för tecken med den önskade
+  // — stämmer den inte räknas koden som saknad och skapas i stället för att
+  // någon annans kod skrivs över.
+  const nod = q.codeDiscountNodeByCode ?? null;
+  const exakt = (nod?.codeDiscount?.codes?.nodes ?? []).some((c) => c.code === k.kod);
+  const finns = nod && exakt ? nod.id : null;
   if (finns) {
     const u = await graphql(
       `mutation opsFactoryRabattUppdatera($id: ID!, $basicCodeDiscount: DiscountCodeBasicInput!) {

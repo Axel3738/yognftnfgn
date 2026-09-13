@@ -265,11 +265,13 @@ test('damasker.yaml: DryTreks nivåer ligger i offer.paket och ger källans kode
   const plan = byggPaketplan(p);
   assert.equal(plan.kalla, 'produktfil');
   assert.equal(plan.test, '');
-  assert.deepEqual(plan.poster.map((x) => x.handle), ['damasker-a1', 'damasker-a2', 'damasker-a3']);
-  assert.deepEqual(plan.poster.map((x) => x.kundpris), [389, 661.3, 933.6]);
+  // Nivåerna är 1 / 2 / 4 sedan Axels beslut 2026-09-10 (3-packet DAMASKER3PACK
+  // avaktiverades och damasker-a3 raderades i butiken samma dag).
+  assert.deepEqual(plan.poster.map((x) => x.handle), ['damasker-a1', 'damasker-a2', 'damasker-a4']);
+  assert.deepEqual(plan.poster.map((x) => x.kundpris), [389, 661.3, 1244.8]);
   assert.deepEqual(plan.poster.map((x) => x.forvald), [false, true, false]);
   assert.equal(plan.poster[1].bricka, 'Mest populär');
-  assert.deepEqual(plan.koder.map((k) => [k.kod, k.belopp, k.minstAntal]), [['DAMASKER2PACK', 116.7, 2], ['DAMASKER3PACK', 233.4, 3]]);
+  assert.deepEqual(plan.koder.map((k) => [k.kod, k.belopp, k.minstAntal]), [['DAMASKER2PACK', 116.7, 2], ['DAMASKER4PACK', 311.2, 4]]);
 });
 
 test('alla produktfiler med offer.paket ger en giltig plan', () => {

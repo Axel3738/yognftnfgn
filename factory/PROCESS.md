@@ -145,6 +145,22 @@ Hela listan i `factory/README.md`.
    upsell i varukorgen (`tema.byggKorgUpsell`). Nivå 1 får en betald
    tilläggs-kryssruta till FULLPRIS (`tema.byggTillagg`), aldrig rabatterad.
    Fältet: `offer.bonus_produkt`; `bonus.mjs` skriver id:n tillbaka i filen.
+   **Nivåerna är 1 / 2 / 4, inte 1 / 2 / 3** (Axels beslut 2026-09-10, gäller
+   alla framtida OPS): största nivån är alltid 4-pack, med källans procent
+   för toppnivån. **Produkter med varianter får en rullgardin per enhet i
+   paketet** (1 par = 1 ruta, 2 = 2, 4 = 4) med variantbilden som miniatyr,
+   som Kaching — temats pill-väljare göms. Kunden kan blanda färger; köpet
+   lägger en rad per vald variant och rabattkoderna räknar antal per
+   produkt, så koden gäller oavsett mix. Koden bor i
+   `snippets/ms-paket.liquid` + `assets/ms-paket.js/.css` (i
+   `factory/tema/ops-tema.zip`); produktmallen skickar `enhet: 'par'` (ordet
+   i rutans etikett). `underrubrik` lämnas TOM på nivåer > 1 — styckpriset
+   räknas i temat och följer valutan.
+   ⚠️ Slå aldrig upp en befintlig rabattkod med `query: "code:X"` — sökningen
+   är LUDDIG: mätt 2026-09-10 på DryTrek svarade den DAMASKER2PACK på
+   sökningen efter DAMASKER4PACK och 2-packets kod skrevs över. `paket.mjs`
+   räknar en träff bara vid exakt kodmatch — kontrollera ändå alla koder
+   efter en körning.
 8. ⚙️ Bilder: inbränd engelska bort. kie.ai klarar INTE svensk text — metoden
    är kie RENSAR text → `bildtext.mjs` (sharp) lägger vektortext. Gif =
    redigerarjobb.
@@ -152,6 +168,11 @@ Hela listan i `factory/README.md`.
    ingen plan, inget kort; staff-inbjudningar kräver betald plan). Claude
    kopplas via butikens EGEN app (custom distribution låses till EN butik
    utanför Plus, mätt 2026-09-08); nycklarna läggs i miljön, aldrig i chatten.
+   ⚠️ **Tokenen från `client_credentials` lever 24 timmar** (mätt 2026-09-10 på
+   DryTrek: dagen efter bygget svarade allt 401 "Invalid API key or access
+   token"). Det är inte butiken som ändrats — kör om anslutningen (steg 0 /
+   `token.mjs` mintar en ny med samma client id/secret och skriver om `.env`),
+   kontrollera `shop.name` och felsök inte butiken.
    Valuta, primärmarknad och primärspråk är ett mänskligt klick (avsnitt 2) — ingen
    av de tre går via API — och de kontrolleras FÖRE bygget, inte efter: bygget
    skriver priser, paket och rabattkoder i butikens valuta.
@@ -181,6 +202,14 @@ Hela listan i `factory/README.md`.
     rader utan datum och stoppar bara med `--krav-datum`. Judge.mes
     auto-översättning är paid och köps aldrig (Axel 2026-09-07).
     Widgeten i temats **Appyta** (ms-app-slot), stylas ALDRIG från temat.
+    **Har den svenska källprodukten noll recensioner: läs den NORSKA
+    tvillingen först** (mätt 2026-09-09, DryTrek: baverbutiken.se 0 st,
+    beverbutikken.no 10 st à 4,4 på samma produkt) — samma serverrenderade
+    HTML (`jdgm-rev__body`, `data-score`, `jdgm-rev__author`), inget token
+    behövs. Riktningen blir då omvänd: de norska importeras som original och
+    fabriken översätter dem till svenska med svenska namn för huvudmarknaden.
+    `reviewer_email` fylls med `<namn>@<brand>.invalid` (reserverad TLD) —
+    Judge.me kräver en adress och knyter namnet till den.
 
 ## Fas 4 — Marknader (kedjans steg 16–17)
 
@@ -189,6 +218,17 @@ Hela listan i `factory/README.md`.
     skapar marknad + locale (publicerad) + nb som alternateLocale på
     huvuddomänens webPresence. Lokal valuta (NOK) slås på i admin — ett
     mänskligt klick (checklistans avsnitt 5).
+    ⚠️ **/nb är ett SPRÅK, inte en marknad** (mätt 2026-09-10 på DryTrek, efter
+    en dag med 16 norska annonser live): huvuddomänens webPresence hör till
+    Sverige, så `drytrek.se/nb/…` gav norsk text men SVENSKA priser (389 kr)
+    och kassa i SEK — annonsen lovade 381 kr. Två saker krävs, båda:
+    (1) koppla webbnärvaron till marknaden Norge —
+    `marketUpdate(webPresencesToAdd: [<alla webPresence-id>])` i `marknad.mjs`
+    — så Shopify väljer NOK på norsk IP; huvudmarknaden Sverige förblir
+    default för alla andra (verifierat: `/products/<handle>` utan land = SEK).
+    (2) alla norska annonslänkar bär `?country=NO` (`kampanj.mjs` gör det
+    sedan 2026-09-10) — Shopify honorerar parametern server-side, så första
+    renderingen är rätt oavsett IP.
 13. ⚙️ Översättningen: `oversattning.mjs` skriver `output/<butik>/oversattning-sv.json`
     (alla kundsynliga strängar, nycklade på produkthandle), en **subagent
     (sonnet)** översätter till `oversattning-<locale>.json` med samma nycklar,
@@ -209,8 +249,31 @@ Hela listan i `factory/README.md`.
     typen — den butiken hade plan). Sidfotens brandtext skrivs därför som ett
     **text-block** i `footer-group.json` (`startsida.byggFooterGroup`), som
     registreras i sektionsgruppen som vilken text som helst.
+    ⚠️ **Shopify faller TYST tillbaka på svenskan för varje sträng som saknar
+    nb** — mitt i en annars norsk sida, utan felmeddelande. Axels bakläxa
+    2026-09-09 (DryTrek): marknaden var uppe, paketen översatta, och ändå stod
+    meny, sidfot, sidor, färgnamn, fraktmetoder och hela produktbeskrivningen
+    på svenska för en norsk kund — dåvarande `oversatt.mjs` täckte 4 av 13
+    resurstyper. Facit är därför alltid två saker: (a) `translatableResources`
+    per resurstyp — PRODUCT, PRODUCT_OPTION, PRODUCT_OPTION_VALUE, COLLECTION,
+    LINK, SHOP_POLICY, PAGE, BLOG, METAOBJECT, METAFIELD,
+    DELIVERY_METHOD_DEFINITION, ONLINE_STORE_THEME_* — och varje rad med text
+    ska ha en nb-rad (appgenererade metafält som Judge.me-widgetar,
+    rabattkoder och Liquid räknas inte); (b) **`node factory/sprakkoll.mjs
+    <butik> <handle> --losenord X`** läser de riktiga /nb-sidorna och slår
+    larm på svenska former som inte finns i bokmål ("och", "är", "känga",
+    "färger", "ångerrätt" …) och på svenska priser. Butiken får inga norska
+    annonser förrän den är tom. Juridiken BYTS, översätts inte:
+    distansavtalslagen → angrerettloven.
 14. ⚙️ Bilder per marknad: alt-texten märks `[SV]`/`[NO]` (omärkt = alla),
     båda språkens bilder läggs som media, ms-head döljer fel språk per locale.
+    Gjort på DryTrek 2026-09-09: norska tvillingar av textbilderna ritade med
+    PIL + DejaVu Sans Bold (samma typsnitt som originalen, inget kie behövdes),
+    inlagda med `productCreateMedia` (alt `[NO] …`), de svenska ommärkta
+    `[SV] …` med `productUpdateMedia` och sorterade parvis med
+    `productReorderMedia`. ⚠️ Reorder är ett JOBB — polla `job.done` innan
+    tillbakaläsningen; första körningen lästes tillbaka för tidigt och såg
+    oförändrad ordning ut.
 15. ⚙️ Norge ska SYNAS i kundvyn (Axel 2026-09-08): "Fri frakt – Sverige &
     Norge" / "Gratis frakt i hele Norge". NOK-paketnivåer innan norska annonser.
 16. ⚙️ **NOK-priset går att sätta via API när NOK är marknadens basvaluta**
@@ -244,6 +307,12 @@ Hela listan i `factory/README.md`.
     systemanvändaren får pixeln, pixel-id:t skrivs i produktfilen) och
     Discord-kanalerna i servern VA:n skapat (`discord.mjs --guild <id>`; boten
     kan inte skapa servrar, `POST /guilds` → 20001, mätt 2026-09-08).
+    Invite-länken till boten (Bävern, id 1543628123289952277 — `discord.mjs`
+    skriver ut den utan `--guild`) ska bära **Manage Server**: utan det går
+    kanalerna in men serverikonen får 403 (mätt 2026-09-09, DryTrek). Länken
+    `discord.mjs` skriver ut bär `permissions=268435505` (Manage Channels +
+    Manage Roles + Manage Server + Create Invite); fullt set med View + Send
+    är `permissions=268438577`.
     WeTracked-kopplingen, CAPI-tokenen (Events Manager → Generate access
     token, passerar aldrig chatten) och Meta-sidan är ALLTID hennes.
 17. 🖐 Meta-sidan skapar VA:n i Business Manager (API:t kan inte). Verifiera

@@ -1,7 +1,8 @@
 # DAMASKER (benskydd för vandring) — DryTreks huvudprodukt.
 # Byggd 2026-09-09 ur Bäverbutikens vinnare. Allt nedan är HÄMTAT, inte gissat:
 #   produktdata + priser  → baverbutiken.se/products/<handle>.json  (2026-09-09)
-#   paketnivåer           → källsidans Kaching-widget (dealBars i sidans HTML)
+#   paketprocenten        → källsidans Kaching-widget (dealBars i sidans HTML);
+#                           4-packet är Axels beslut 2026-09-10, se offer.paket
 #   utfall + break-even   → MagiBorsten 1867947880635861, kampanj 120250009391470291
 #
 # ⚠️ TVÅ FÄLT ÄR INTE IFYLLDA OCH SKA INTE GISSAS:
@@ -154,13 +155,19 @@ features:
 
 offer:
   beskrivning: "389 kr per par (ord. 649 kr). Fri frakt till Sverige och Norge, 14 dagars ångerrätt."
-  bundle: "Paketnivåer 1/2/3 par — mittennivån förvald enligt fabriksregeln"
-  # PAKET A — källans egna Kaching-nivåer, ordagrant. Läst 2026-09-09 ur
-  # baverbutiken.se produktsidas kaching-bundles-deal-block-settings:
-  # 1 st 0 %, 2 st 15 % (förvald, badge 'Mest populär'), 3 st 20 %.
-  # Styckpriset 389 kr ger 389 / 661,30 / 933,60 kr. Rabattkoderna drar exakt
-  # mellanskillnaden (factory/paket.mjs räknar i öre), så kortet och kassan
-  # aldrig kan säga olika saker.
+  bundle: "Paketnivåer 1/2/4 par — mittennivån förvald enligt fabriksregeln"
+  # PAKET A — 1 / 2 / 4 par (Axels beslut 2026-09-10: största nivån är 4-pack,
+  # inte källans 3-pack; regeln gäller alla framtida OPS). Rabatterna är
+  # källans egna Kaching-procent, lästa 2026-09-09 ur baverbutiken.se
+  # produktsidas kaching-bundles-deal-block-settings: 2 st 15 % (förvald,
+  # badge 'Mest populär'), största nivån 20 %. Styckpriset 389 kr ger
+  # 389 / 661,30 / 1 244,80 kr. Rabattkoderna är PROCENT (giltiga i alla
+  # valutor): factory/paket.mjs räknar procenten ur paketpriset — en hel
+  # procent utan gratisrad blir en procentkod — så kortet och kassan aldrig
+  # kan säga olika saker.
+  #
+  # underrubrik är TOM på nivåer > 1: styckpriset per par räknas i temat
+  # (valutasäkert) i stället för att stå hårdkodat i SEK.
   #
   # variant är TOM med flit: alla kunder ser den bevisade stegen, inget A/B.
   # PAKET B (Q4-ramverket: gratis bonusprodukt i stället för djupare rabatt)
@@ -170,7 +177,9 @@ offer:
   #
   # handle står uttryckligen: nivåerna skrevs live i DryTrek 2026-09-09 med
   # de här handles (paket_a klar i state) — utan raden skulle fabrikens
-  # standardhandle (damasker-x-N) ge dubbla kort på produktsidan.
+  # standardhandle (damasker-x-N) ge dubbla kort på produktsidan. 3-packet
+  # byttes mot 4-packet 2026-09-10 (state: DAMASKER3PACK avaktiverad,
+  # metaobjektet damasker-a3 raderat).
   # Mittennivån är förvald enligt fabriksregeln ⌈n/2⌉ = 2. Källan hade redan
   # st2b förvald, så regeln och källan säger samma sak.
   paket:
@@ -183,17 +192,17 @@ offer:
       - antal: 2
         handle: "damasker-a2"
         rubrik: "2 par"
-        underrubrik: "330,65 kr per par"
+        underrubrik: ""
         bricka: "Mest populär"
         pris: 661.30
         kod: "DAMASKER2PACK"
         forvald: true
-      - antal: 3
-        handle: "damasker-a3"
-        rubrik: "3 par"
-        underrubrik: "311,20 kr per par"
-        pris: 933.60
-        kod: "DAMASKER3PACK"
+      - antal: 4
+        handle: "damasker-a4"
+        rubrik: "4 par"
+        underrubrik: ""
+        pris: 1244.80
+        kod: "DAMASKER4PACK"
   # Q4-RAMVERKET (standard för varje OPS). Vald bonus: reflexband.
   # Varför just det: produktens fjärde sälj-punkt är redan "syns i terrängen",
   # så bonusen förstärker ett löfte sidan redan gör i stället för att införa
@@ -204,7 +213,7 @@ offer:
     titel: "Reflexband för ben & arm – 2-pack"
     handle: ""
     pris: 149
-    i_paket: "Gratis i nivå 2 och 3, med antalet följande paketantalet (2 par ⇒ 2 st, 3 par ⇒ 3 st). Nivå 1 får den som betald kryssruta till fullpris 149 kr — aldrig rabatterad, annars blir 'värde 298 kr' på paketen en lögn."
+    i_paket: "Gratis i nivå 2 och 3, med antalet följande paketantalet (2 par ⇒ 2 st, 4 par ⇒ 4 st). Nivå 1 får den som betald kryssruta till fullpris 149 kr — aldrig rabatterad, annars blir 'värde 298 kr' på paketen en lögn."
 
 reviews:
 # ⚠️ TOM MED FLIT. Källprodukten har NOLL recensioner (avläst 2026-09-09:
@@ -251,9 +260,16 @@ kalla:
   annonsprefix: "Damasker"
   kampanj_id: "120250009391470291"
   kampanj: "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29"
+  # NORGE. Bäverbutiken har EGNA norska creatives i ett annat konto — redan
+  # dubbade, med norsk inbränd text. De brand-swappas rakt av; ingen HeyGen
+  # behövs. Kampanjen är pausad hos källan, så det finns inget utfall att
+  # luta sig mot — vinkelordningen ärvs från Sverige (Axels beslut 2026-09-09).
+  no_annonskonto: "1050941584152547"   # Magiborsten NO
+  no_annonsprefix: "Gamasjer_NO"
   srt_slug:
     - "damask"
     - "damasker"
+    - "gamasjer"
 
 kallor:
   drive_mapp: ""
@@ -264,7 +280,7 @@ meta:
   # prefixas med brandet (DRYTREK_…) så datan går att skära per butik.
   # ⚠️ Förväxla ALDRIG med MagiBorsten 1867947880635861 (Bäverbutiken SE) ovan.
   ad_account_id: "915422744950975"
-  page_id: ""                 # kan inte skapas via API — väntar på Meta-sidan
+  page_id: "1339381299252136"  # DryTrek, ägd av MagiBorsten (verifierad i owned_pages 2026-09-09)
   pixel_id: "945311424682796"                # skapas när sidan finns
   # creative_prefix är per PRODUKT, aldrig per brand (regeln i PROCESS.md):
   # brandet bor i kampanjnamnet, prefixet i produkten. Samma prefix som källan

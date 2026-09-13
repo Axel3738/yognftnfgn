@@ -9,7 +9,9 @@
 // kommer ur butiker/<id>.yaml (`butik.marknader`), aldrig härifrån.
 //
 // Vad API:t KAN: skapa marknad, lägga till region, aktivera och publicera en
-// locale, lägga locale:n som alternateLocale på webPresence, registrera
+// locale, lägga locale:n som alternateLocale på webPresence, koppla
+// webPresence till marknaden (webPresencesToAdd — utan det är /nb bara ett
+// språk på Sveriges domän, mätt på DryTrek 2026-09-10), registrera
 // översättningar. Vad API:t INTE kan: byta butikens PRIMÄRSPRÅK och slå på
 // NOK (unified markets). Båda är klick i adminen och står i VA:ns checklista.
 //
@@ -293,8 +295,37 @@ export async function laggTillAlternateLocale(locale, { torr = false } = {}) {
   return { presences };
 }
 
-// Hela marknadssteget för en butik: marknad + locale + webbnärvaro per rad i
-// butik.marknader. Det ops.mjs steg 16 anropar.
+// Webbnärvaron måste KOPPLAS till marknaden, annars är /nb bara ett språk på
+// Sveriges domän: norsk text, svenska priser, kassa i SEK (mätt 2026-09-10
+// på DryTrek efter en dag med live norska annonser). Med närvaron kopplad
+// väljer Shopify NOK på norsk IP; huvudmarknaden förblir default för andra.
+// marketUpdate(webPresencesToAdd) med ALLA webPresence-id:n — "already" i
+// userErrors betyder redan kopplad, och det är rätt läge, inte ett fel.
+export async function kopplaPresence(marketId, { torr = false } = {}) {
+  const lage = await hamtaLage();
+  const ids = lage.webPresences.map((w) => w.id);
+  const hosts = lage.webPresences.map((w) => w.domain?.host ?? w.id);
+  if (ids.length === 0) return { manuell: 'Ingen webPresence att koppla ännu.', hosts: [] };
+  if (torr || !marketId) return { hosts, redan: false, torr: true };
+  const d = await graphql(
+    `mutation opsFactoryMarknadPresence($id: ID!, $input: MarketUpdateInput!) {
+      marketUpdate(id: $id, input: $input) {
+        market { id webPresences(first: 10) { nodes { id domain { host } } } }
+        userErrors { field message }
+      }
+    }`,
+    { id: marketId, input: { webPresencesToAdd: ids } }
+  );
+  const fel = d.marketUpdate?.userErrors ?? [];
+  const redan = fel.length > 0 && fel.every((f) => /already/i.test(f.message));
+  if (fel.length > 0 && !redan) throw new Error(`Koppla webPresence: ${fel.map((f) => f.message).join('; ')}`);
+  const noder = d.marketUpdate?.market?.webPresences?.nodes ?? [];
+  return { hosts: noder.length > 0 ? noder.map((w) => w.domain?.host ?? w.id) : hosts, redan };
+}
+
+// Hela marknadssteget för en butik: marknad + locale + webbnärvaro (som
+// alternateLocale OCH kopplad till marknaden) per rad i butik.marknader.
+// Det ops.mjs steg 16 anropar.
 export async function sakerstallMarknader(butik, { torr = false } = {}) {
   const rader = Array.isArray(butik?.butik?.marknader) ? butik.butik.marknader : [];
   if (rader.length === 0) throw new Error('butik.marknader är tom — SE + NO är standard i varje OPS.');
@@ -303,7 +334,8 @@ export async function sakerstallMarknader(butik, { torr = false } = {}) {
     const marknad = await sakerstallMarknad(m, { torr });
     const locale = await sakerstallLocale(String(m.locale), { torr });
     const wp = await laggTillAlternateLocale(String(m.locale), { torr });
-    ut.push({ land: String(m.land).toUpperCase(), locale: String(m.locale), valuta: m.valuta ?? null, marknad, localeLage: locale, webPresence: wp });
+    const koppling = await kopplaPresence(marknad.id, { torr });
+    ut.push({ land: String(m.land).toUpperCase(), locale: String(m.locale), valuta: m.valuta ?? null, marknad, localeLage: locale, webPresence: wp, koppling });
   }
   return ut;
 }
@@ -543,6 +575,8 @@ async function huvud() {
     console.log(`✅ Språk ${r.locale}: ${r.localeLage.skapad ? (torr ? 'skulle aktiveras' : 'aktiverat') : 'fanns'}${r.localeLage.publicerad ? ', publicerat' : ''}`);
     if (r.webPresence.manuell) console.log(`🖐 webPresence: ${r.webPresence.manuell}`);
     for (const wp of r.webPresence.presences) console.log(`   webbnärvaro ${wp.host}: ${wp.redan ? `har ${r.locale}` : torr ? `skulle få ${r.locale}` : `${r.locale} tillagd`}`);
+    if (r.koppling.manuell) console.log(`🖐 Marknaden ${r.marknad.namn} → webbnärvaro: ${r.koppling.manuell}`);
+    else console.log(`✅ Marknaden ${r.marknad.namn} ${torr ? 'skulle kopplas' : r.koppling.redan ? 'var redan kopplad' : 'kopplad'} till webbnärvaron: ${r.koppling.hosts.join(', ')}`);
     console.log(`🖐 Valutan ${m.valuta ?? 'NOK'} slås på i admin: Inställningar → Marknader → ${r.marknad.namn} (API-spärrat i unified markets).`);
 
     const ov = lasOversattning(butikId, r.locale);
