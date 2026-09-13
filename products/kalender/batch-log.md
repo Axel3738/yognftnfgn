@@ -403,3 +403,64 @@ sonnet 10, via Agent-verktyget (fyra subagenter parallellt).
 | 21 | AU_2_1 | bild | koncept | **gissning** (formatöverföring) | — | makro på hjul och startnummer | fable |
 
 Döms tidigast ons 2026-09-16, bara det som passerat grinden. Kill mot BE-CPA 323 / BE-ROAS 1,54.
+
+---
+
+## Leveransrunda `/ops-leverans` 2026-09-13 — 0 uppladdade, butiken avstängd av Axel
+
+**Kön: tom.** Hubben lästes oberoende via Notions REST (48 rader): **0 i `To be Reviewed`,
+0 i `Creative strat review`** — ingen färdig creative missades. Fördelningen:
+6 `Approved` (gårdagens videor, klara hela vägen till Norge), 1 `SE-ACTIVE to be translated`
+(`Adventskalender_FM_1_H1` — struken av `/ops-oversatt` 2026-09-12 på röstkollen, ligger kvar
+i översättningskön), 5 `In progress` (Jazz jobbar), 36 `Draft` (23 bild + 13 video, batch #3).
+
+**Stopp: ingen ACTIVE SE-kampanj.** `ADVENTLANERACING_SE_Racingkalendern` är PAUSED med
+2 799 kr spend. Kön vägrade ladda upp — rätt: en pausad kampanj med spend är ett beslut.
+
+### Vem pausade, och när (Metas aktivitetslogg, `/act_915422744950975/activities`)
+
+| Tid UTC | Svensk tid | Vem | Vad |
+|---|---|---|---|
+| 2026-09-13 09:05:32 | 11:05 | Axel Odhner | ADVENTLANERACING_**NO** → Inaktiv |
+| 2026-09-13 09:06:20 | 11:06 | Axel Odhner | ADVENTLANERACING_**SE** → Inaktiv |
+| 2026-09-13 09:06:29 | 11:06 | Axel Odhner | HEIMGUARD_NO → Inaktiv |
+| 2026-09-13 09:06:41 | 11:06 | Axel Odhner | HEIMGUARD_SE → Inaktiv |
+| 2026-09-13 13:06:02 | 15:06 | Axel Odhner | HEIMGUARD_SE → **Aktiv igen** |
+
+Fyra kampanjer över två brand på 69 sekunder, och fyra timmar senare slås HeimGuard SE på
+igen medan AdventLane lämnas av. Det är en människa i Ads Manager, inte ett skript: ingen
+rutin kör 09:05 UTC och ingen commit den morgonen rör AdventLanes status (DryTrek-sessionen
+committade 08:53 och 10:14). ⚠️ Notera att API-anrop med Axels token också loggas som
+"Axel Odhner" — mönstret, inte namnet, är beviset.
+
+### Siffrorna bakom pausen (livstid, läst 2026-09-13)
+
+| Kampanj | Spend | Köp | CPA | ROAS | Vinstbidrag mot BE-CPA 323 kr |
+|---|---:|---:|---:|---:|---:|
+| SE | 2 799 kr | 5 | 560 kr | 1,18 | **−1 185 kr** |
+| NO | 3 137 kr | 3 | 1 046 kr | 0,44 | ⚠️ eget pris 439 kr, egen BE ej räknad i repot |
+
+Båda passerar grinden på kampanjnivå (≥ 300 kr OCH ≥ 3 köp) ⇒ **domen är tillåten: båda
+gick med förlust mot break-even 1,54 / 323 kr.** Pausen är motiverad av datan.
+
+**Ingen enskild annons passerar grinden** — högst 2 köp (`PD_1_H1` 847 kr / 2 köp / CPA 423 kr,
+`GT_3_H1` 750 kr / 1 köp, `GT_1_H1` 420 kr / 1 köp, `GT_2_1` 381 kr / 1 köp). Ingen annonsdom
+får fällas. Gårdagens 7 uppladdade hann spendera 1–48 kr vardera innan pausen och är därmed
+**otestade**, inte underkända.
+
+Inget aktiverat, inget pausat, ingen Notion-status ändrad av den här körningen.
+
+---
+
+## Översättning NO `/ops-oversatt` 2026-09-13 — 0 uppladdade, NO-kampanjen pausad av Axel
+
+Kön: **1 rad** i `SE-ACTIVE to be translated` — `Adventskalender_FM_1_H1` (struken 2026-09-12 på
+röstkollen, ligger kvar tills källan får luft efter sista repliken).
+
+**Stopp: ingen ACTIVE NO-kampanj.** `ADVENTLANERACING_NO_Racingkalendern` är PAUSED med 3 157 kr
+spend — Axel pausade den 11:05 (aktivitetsloggen, se leveransrundan ovan). Pausad med spend =
+avvecklad = aldrig mål. Inget översatt, inget renderat, 0 HeyGen-krediter, ingen Notion-status
+ändrad, kontot orört. Discord-rapport i `#annons-uppladdning`, ingen ping (pausen är hans beslut).
+
+Gårdagens sex norska annonser hann spendera 1–48 kr var före pausen — otestade, inte dömda.
+Slås Norge på igen tar rutinen kön automatiskt samma dag 15:55.

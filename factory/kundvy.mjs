@@ -84,6 +84,49 @@ export function kontrolleraKundvy(html, butik, produkt) {
   return { ok, gron: ok, fel, varningar };
 }
 
+// PRODUKTSIDAN. Startsidan kan vara perfekt medan produktsidan är ren text.
+// Mätt 2026-09-09 på DryTrek: startsidan grön, men beskrivningsblocken hade
+// noll bilder (gif_problem och media_losning fanns inte som metafält) och
+// lifestyle-bilden hotlänkade KÄLLBUTIKENS cdn.
+export function kontrolleraProduktsida(html, butik, produkt) {
+  const h = String(html);
+  const fel = [];
+
+  for (const d of DEFAULTSPAR) {
+    if (d.monster.test(h)) fel.push(`DEFAULT KVAR: ${d.vad}`);
+  }
+
+  // Bilderna mellan styckena — en per innehållsblock som ska ha en.
+  for (const [sektion, vad] of [
+    ['opf_problem', 'bilden efter problemtexten'],
+    ['opf_losning', 'bilden som visar lösningen'],
+    ['opf_lifestyle', 'lifestyle-bilden'],
+  ]) {
+    const re = new RegExp(`id="shopify-section-template--\\d+__${sektion}"`);
+    const i = h.search(re);
+    if (i === -1) { fel.push(`SAKNAS: sektionen ${sektion} renderas inte`); continue; }
+    const bit = h.slice(i, i + 6000);
+    if (!BILDMONSTER.test(bit)) fel.push(`SAKNAS: ${vad} (${sektion} har ingen bild)`);
+  }
+
+  // Ingen bild får hotlänkas från en annan butik.
+  const frammande = [...new Set(h.match(/cdn\.shopify\.com\/s\/files\/\d+\/\d+\/\d+\/\d+\//g) ?? [])];
+  const egen = frammande.filter((f) => h.includes(f)).length;
+  if (frammande.length > 1) {
+    fel.push(`FRÄMMANDE CDN: bilder laddas från ${frammande.length} olika butiker — hotlänkning: ${frammande.join(', ')}`);
+  }
+
+  // Varianterna ska ha egna bilder.
+  if (!/variant-picker|product-form__input/i.test(h)) fel.push('SAKNAS: ingen variantväljare');
+
+  for (const k of byggKrav(butik, produkt)) {
+    if (k.namn === 'logga' || k.namn === 'produktbild' || k.namn === 'köpknapp' || k.namn === 'produkt') {
+      if (!k.finns(h)) fel.push(`SAKNAS: ${k.fel}`);
+    }
+  }
+  return { gron: fel.length === 0, fel };
+}
+
 export function rapport(resultat) {
   if (resultat.ok ?? resultat.gron) return '✅ Kundvyn grön — butiken ser ut som en butik.';
   return [

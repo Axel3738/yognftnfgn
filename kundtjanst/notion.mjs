@@ -16,16 +16,22 @@ const API = 'https://api.notion.com/v1';
 
 /** Ord i en SOP-titel som betyder att kategorin är täckt. Gemener, engelska + svenska. */
 export const SOP_ORD = Object.freeze({
+  // Orden är avlästa mot VA:ns databas "Customer support bäverbutiken" 2026-09-13
+  // ("Package missing after tracking shows delivered", "Money charged but no
+  // order visible", "Wrong product delivered", "Order not arrived within …").
   chargeback_hot: ['chargeback', 'dispute', 'tvist', 'bank', 'escalat', 'angry', 'threat'],
-  okand_debitering: ['double charge', 'duplicate', 'unknown charge', 'dubbel', 'debiter', 'unauthorized', 'fraud'],
-  ej_levererad: ['not received', 'never arrived', 'lost', 'missing package', 'ej levererad', 'försvunn', 'aldrig'],
-  fel_vara: ['wrong item', 'wrong size', 'not as described', 'fel vara', 'fel storlek', 'incorrect'],
-  var_ar_ordern: ['wismo', 'where is my order', 'tracking', 'shipping status', 'delivery time', 'spårning', 'leverans'],
+  // Ordningen är prioritet: första ordet som träffar en titel vinner, så det
+  // mest specifika står först ('missing' före 'not received', som annars
+  // träffar "Refund not received after approved return").
+  okand_debitering: ['double charge', 'duplicate', 'unknown charge', 'charged', 'dubbel', 'debiter', 'unauthorized', 'fraud'],
+  ej_levererad: ['missing', 'not arrived', 'never arrived', 'shows delivered', 'returned to sender', 'not received', 'lost', 'ej levererad', 'försvunn', 'aldrig'],
+  fel_vara: ['wrong product', 'wrong item', 'wrong size', 'not as described', 'fel vara', 'fel storlek', 'incorrect'],
+  var_ar_ordern: ['wismo', 'where is my order', 'delivery time', 'not arrived within', 'shipping status', 'tracking', 'spårning', 'leverans'],
   skadad_defekt: ['damaged', 'defective', 'broken', 'warranty', 'skadad', 'defekt', 'reklamation', 'trasig'],
   aterbetalning: ['refund', 'återbetal', 'money back'],
   avbestallning: ['cancel', 'avbeställ', 'annuller'],
   retur_angerratt: ['return', 'retur', 'ånger', 'withdrawal', 'exchange'],
-  faktura_klarna: ['klarna', 'invoice', 'faktura', 'payment'],
+  faktura_klarna: ['invoice', 'faktura', 'klarna', 'payment'],
   produktfraga: ['product question', 'faq', 'pre-sale', 'produktfråga', 'compatib', 'size guide'],
   rabatt_kod: ['discount', 'promo', 'rabatt', 'coupon', 'code'],
 });
@@ -38,7 +44,8 @@ export function sopTackning(titlar = [], kategorier = []) {
   for (const id of kategorier) {
     if (id === 'spam' || id === 'ovrigt') continue;
     const ord = SOP_ORD[id] ?? [];
-    const traff = gemener.find((t) => ord.some((o) => t.g.includes(o)));
+    let traff = null;
+    for (const o of ord) { traff = gemener.find((t) => t.g.includes(o)); if (traff) break; }
     if (traff) tackta.push({ id, sop: traff.titel });
     else saknas.push(id);
   }
@@ -70,13 +77,48 @@ const titelAv = (sida) => {
   return (p?.title ?? []).map((r) => r.plain_text ?? '').join('').trim();
 };
 
-/** Alla sidtitlar i en databas (paginerat). Det räcker för täckningen. */
+/** Typ-värden som är dokumentation. Allt annat i en hubb är annonser och räknas aldrig som SOP. */
+export const SOP_TYPER = /sop|guideline|riktlinje|rutin|policy|playbook/i;
+
+/** Radens Typ (select eller multi_select), eller null när databasen saknar kolumnen. */
+export function typAv(sida) {
+  const p = sida.properties?.Typ ?? sida.properties?.Type ?? null;
+  if (!p) return null;
+  if (p.type === 'select') return p.select?.name ?? '';
+  if (p.type === 'multi_select') return (p.multi_select ?? []).map((x) => x.name).join(' / ');
+  if (p.type === 'status') return p.status?.name ?? '';
+  return null;
+}
+
+/** Rubrikrad i en SOP-databas: versaler rakt igenom och tom Kategori (när kolumnen finns). */
+export function arAvdelningsrad(sida, titel) {
+  const k = sida.properties?.Kategori ?? sida.properties?.Category ?? null;
+  if (!k) return false;
+  const tom = k.type === 'multi_select' ? !(k.multi_select ?? []).length : k.type === 'select' ? !k.select : false;
+  return tom && titel === titel.toUpperCase() && /[A-ZÅÄÖ]/.test(titel);
+}
+
+/**
+ * Alla SOP-titlar i en databas (paginerat). En ren SOP-databas saknar Typ-kolumn
+ * och då räknas varje rad. Pekar brandfilen på en creative hub (mätt 2026-09-12:
+ * Bäverbutikens länk var "Creative Hub master", 215 rader varav 1 SOP) räknas
+ * bara raderna vars Typ är dokumentation — annonsraderna är inte SOP:er.
+ */
 export async function hamtaSopTitlar(databasId, alternativ = {}) {
   const ut = [];
   let cursor;
   do {
     const svar = await notion(`databases/${databasId}/query`, { method: 'POST', body: { page_size: 100, ...(cursor ? { start_cursor: cursor } : {}) }, ...alternativ });
-    for (const s of svar.results ?? []) { const t = titelAv(s); if (t) ut.push(t); }
+    for (const s of svar.results ?? []) {
+      const typ = typAv(s);
+      if (typ !== null && !SOP_TYPER.test(typ)) continue;
+      const t = titelAv(s);
+      if (!t) continue;
+      // VA:ns databas har avdelningsrader ("PAYMENT", "RETURN & REFUND") utan
+      // Kategori och i versaler — de är rubriker, inte SOP:er.
+      if (arAvdelningsrad(s, t)) continue;
+      ut.push(t);
+    }
     cursor = svar.has_more ? svar.next_cursor : null;
   } while (cursor);
   return ut;

@@ -177,3 +177,69 @@ Orsak: batch #2 (7 briefer) lades upp som `Draft` i dag och ligger hos Eric J �
 färdiga annonser går via leveransrundan 14:00 och når översättningen 16:00 samma dag.
 Batchfiler: `market-expansion/ops/tacklebay/2026-09-12/`. Discord: `#annons-uppladdning`
 på TackleBay — OPS (meddelande 1548333932481880100), ingen ping.
+
+---
+
+## Leveransrunda SE — 2026-09-13 (`/ops-leverans tacklebay/fiskespohallare-4-pack`, körning nr 2)
+
+Kön `To be Reviewed` i hubben Fish rod holder: **1 rad**, batch #2:s
+`TackleBayRod_PD_46_H1` (video, Eric J). Live i `TACKLEBAY_SE_Spöhållaren`
+adset **PD** (`120249037504230172`), annons `120249075781570172`,
+tillbakaläst **ACTIVE/ACTIVE** efter PENDING_REVIEW. Raden flyttad till
+`SE-ACTIVE to be translated` — 16:00-rutinen tar den till Norge.
+
+Priset i butiken lästes live: **289 SEK** (inget jämförpris), ur
+`tacklebay.se/products/fiskespohallare-4-pack.json`. **Inget pris syns i
+annonsen** ⇒ grön på den enda stoppregeln.
+
+**Två filer i Drive-mappen, inte en:** `_1` är 4:5 (1080×1350) och `_2` är
+9:16 (1080×1920) — briefen beställde båda formaten. Uppladdaren tar en fil,
+så **9:16 gick live** (kampanjen är Reels-först); 4:5-versionen ligger kvar
+i Drive-mappen om vi vill ha en feed-native variant.
+
+### Avvikelser mot briefen (uppladdad ändå — video, priset är enda stoppet)
+
+| Vad | Briefat | Levererat |
+|---|---|---|
+| Längd | 8 s | **5,0 s** |
+| Hook-caption | "En hand. Två klick. Låst." | "Lås." |
+| Mekanism-caption | "Svampen låser utan att repa." | "Svampen låser / att **reppa**." (stavfel, ska vara *repa*) |
+| CTA-caption | "4-pack. 289 kr. Ångerrätt." | "4 pack" + "**Ångerätt**." (stavfel, ska vara *Ångerrätt*) |
+| Slutkort | 4-pack + "289 kr" | 4-pack i händerna, **inget pris** |
+
+Allt annat höll: produkten i bild från sekund 0, riktiga händer och riktigt
+spö (inga genererade människor), inget annat brand eller Bäverbutiken i
+bilden, ingen urgency, inga utropstecken, å/ä/ö renderar. Anmärkningarna
+står som kommentar på Notion-raden så Eric J ser dem inför nästa klipp.
+
+### Parkerade källrader — rörda: inga
+
+10 rader i `Creative strat review` bär Bäverbutikens prefix `Rodholder_`
+(`PD_40_H1`, `CS_6_H1`, `PD_37_H1`, `PD_36_H1`, `SP_5_H1`, `PD_34_H1`,
+`CS_5_H1`, `PD_31_H1`, `GT_4_H1`, `CS_4_H1`). Kön parkerar dem enligt
+CLAUDE.md-regeln från 2026-09-12 — de rörs aldrig av den här rutinen.
+
+Discord: `#annons-uppladdning` på TackleBay — OPS (meddelande
+`1548680904203964420`), ingen ping. Kö-JSON:
+`factory/output/tacklebay/leverans-2026-09-13.json`.
+
+---
+
+## Översättning NO — 2026-09-13 16:08 (`/ops-oversatt tacklebay/fiskespohallare-4-pack`, körning nr 2)
+
+Kön `SE-ACTIVE to be translated`: **1 rad** — `TackleBayRod_PD_46_H1` (batch #2, live i SE 13:05 samma dag).
+→ **`TackleBayRod_NO_PD_46_H1` live** i `TACKLEBAY_NO_Spöhållaren` adset PD, annons `120249076557290172`,
+tillbakaläst ACTIVE / effective IN_PROCESS (videon bearbetades). Notion-raden → `Approved` med kommentar
+och `Translated url`.
+
+Så gjordes den: 9:16-filen (1080×1920, den som gick live i SE) → HeyGen proofread visade att redigeraren
+lagt en **svensk voiceover** trots briefens "captions utan VO" (transkript: "En hand, två klick. Låst.
+Svampen låser utan att repa. Fyra pack, tvåhundraåttionio kronor. Ångerrätt"). En render (bokmål,
+röstklon, SRT-block 1 = 1) → `no-precis.py` bytte de 9 inbrända captions på plats (piller hittat i
+121 av 123 frames) → `rostkoll.py` ✅. Norsk VO **utan pris** (inget NOK-pris finns), captionen
+behåller "289 kr." i SEK som NO-sidan. Ads Manager-copy utan pris, länk ärvd från `/nb`.
+HeyGen 8 446 → 8 435 credits. 4:5-filen i Drive-mappen översattes inte.
+Notering: `ops-leveranskon.mjs --ut` hämtade `_1.mp4` (4:5) som `fil` fast SE-annonsen bär `_2.mp4`
+(9:16) — valdes för hand efter ffprobe. Miljön saknade ffmpeg/ffprobe; `apt-get install ffmpeg` löste det.
+Batchfiler: `market-expansion/ops/tacklebay/2026-09-13/`. Discord: `#annons-uppladdning` på
+TackleBay — OPS (meddelande 1548707507927785593), ingen ping.

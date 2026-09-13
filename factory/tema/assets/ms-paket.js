@@ -24,6 +24,13 @@
    Den här filen ägs av OPS Factory (factory/tema/assets/ms-paket.js) och
    skrivs till varje butik av fabriken. Ändra den HÄR, aldrig i en enskild
    butiks tema — annars lever butikerna isär.
+
+   VARIANTVAL PER ENHET (Axels beslut 2026-09-10): varje nivå har lika många
+   rullgardiner som antalet (data-ms-val-enhet). Kunden kan välja olika färger
+   per enhet, så köpet lägger EN rad per vald variant (grupperat på id) i
+   stället för en rad med quantity = antal. Priset räknas på summan av de
+   valda varianternas priser — inte styckpris × antal — så det stämmer även
+   om varianterna skulle kosta olika.
    ========================================================================== */
 
 (function () {
@@ -74,10 +81,110 @@
         this.form.addEventListener('change', this.rita);
       }
 
+      this.kopplaVal();
       this.kopplaKnapp();
       var vald = this.inputs.filter(function (i) { return i.checked; })[0] || this.inputs[0];
       vald.checked = true;
       this.onChange({ target: vald });
+    }
+
+    /* Rullgardinerna. En knapp öppnar listan, ett klick på ett alternativ
+       skriver bild + namn + id i knappen och räknar om korten. Bara den valda
+       nivåns rutor visas. Temats egen pill-väljare göms när vi har egna
+       rutor — två färgväljare på samma sida är en garanterad felklick. */
+    kopplaVal() {
+      var self = this;
+      this.egenVal = this.dataset.egenVal === '1' && !!this.querySelector('[data-ms-val]');
+      if (!this.egenVal) return;
+
+      var scope = this.closest('[id^="shopify-section"]') || document;
+      Array.prototype.forEach.call(scope.querySelectorAll('variant-selects, .product-form__input--pill, .product-form__input--swatch'), function (el) {
+        el.hidden = true;
+      });
+
+      this.addEventListener('click', function (ev) {
+        var knapp = ev.target.closest('[data-ms-val-knapp]');
+        var alt = ev.target.closest('.ms-val__alt');
+        if (knapp && self.contains(knapp)) {
+          ev.preventDefault();
+          var oppen = knapp.getAttribute('aria-expanded') === 'true';
+          self.stangAlla();
+          if (!oppen) {
+            knapp.setAttribute('aria-expanded', 'true');
+            knapp.nextElementSibling.hidden = false;
+          }
+          return;
+        }
+        if (alt && self.contains(alt)) {
+          ev.preventDefault();
+          self.valj(alt);
+        }
+      });
+      document.addEventListener('click', function (ev) {
+        if (!self.contains(ev.target)) self.stangAlla();
+      });
+      this.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape') self.stangAlla();
+      });
+    }
+
+    stangAlla() {
+      Array.prototype.forEach.call(this.querySelectorAll('[data-ms-val-knapp][aria-expanded="true"]'), function (k) {
+        k.setAttribute('aria-expanded', 'false');
+        k.nextElementSibling.hidden = true;
+      });
+    }
+
+    valj(alt) {
+      var ruta = alt.closest('.ms-val');
+      var knapp = ruta.querySelector('[data-ms-val-knapp]');
+      knapp.dataset.id = alt.dataset.id;
+      var namn = knapp.querySelector('[data-ms-val-namn]');
+      if (namn) namn.textContent = alt.dataset.namn;
+      var bild = knapp.querySelector('[data-ms-val-bild]');
+      if (bild && bild.tagName === 'IMG' && alt.dataset.bild) bild.src = alt.dataset.bild;
+      Array.prototype.forEach.call(ruta.querySelectorAll('.ms-val__alt'), function (li) {
+        var ar = li === alt;
+        li.classList.toggle('is-vald', ar);
+        li.setAttribute('aria-selected', ar ? 'true' : 'false');
+      });
+      this.stangAlla();
+
+      // Första enheten styr temats formulär (bild i galleriet, sticky-raden),
+      // så att sidan följer med när kunden byter färg i ruta 1.
+      if (ruta.dataset.msValEnhet === '1' && this.form) {
+        var idFalt = this.form.querySelector('select[name="id"], input[name="id"]');
+        if (idFalt && idFalt.value !== alt.dataset.id) {
+          idFalt.value = alt.dataset.id;
+          idFalt.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+      this.rita();
+      if (this.vald) this.onChange({ target: this.vald });
+    }
+
+    /* Variant-id per enhet för ett kort. Utan egna rutor: samma variant
+       antal gånger — exakt som förr. */
+    enheterFor(i) {
+      var antal = Number(i.dataset.antal || 1);
+      var opt = i.closest('.ms-paket__opt');
+      var knappar = opt ? opt.querySelectorAll('[data-ms-val-knapp]') : [];
+      if (this.egenVal && knappar.length === antal) {
+        return Array.prototype.map.call(knappar, function (k) { return String(k.dataset.id); });
+      }
+      var id = this.variantId(), ut = [];
+      for (var n = 0; n < antal; n++) ut.push(id);
+      return ut;
+    }
+
+    /* Ordinarie pris för kortet = summan av de valda varianternas priser. */
+    ordinarieFor(i) {
+      var self = this, summa = 0, styck = this.styckpris();
+      this.enheterFor(i).forEach(function (id) {
+        var p = self.priser[id];
+        summa += typeof p === 'number' ? p : styck;
+      });
+      return summa;
     }
 
     variantId() {
@@ -99,6 +206,13 @@
       var bogo = Number(i.dataset.bogo || 0);
       var gvarde = Number(i.dataset.gratisVarde || 0);
       if (bogo > 0) return bogo * styck + gvarde;
+      /* Procentnivåer skalar med priset, precis som procentrabattkoden i
+         kassan. Ett fast belopp här hade visat svenska kronor på den norska
+         sidan. */
+      var procent = Number(i.dataset.procent || 0);
+      if (procent > 0 && !gvarde) {
+        return Math.round((this.ordinarieFor(i) * procent) / 100);
+      }
       return Number(i.dataset.rabatt || 0);
     }
 
@@ -113,11 +227,12 @@
       if (!styck) return;
       var format = this.dataset.moneyFormat;
       var self = this;
+      var enhet = this.dataset.enhet || 'st';
       this.inputs.forEach(function (i) {
         var antal = Number(i.dataset.antal || 1);
         var rabatt = self.rabattFor(i, styck);
         var gvarde = Number(i.dataset.gratisVarde || 0);
-        var ordinarie = styck * antal + gvarde;
+        var ordinarie = self.ordinarieFor(i) + gvarde;
         var nu = Math.max(0, ordinarie - rabatt);
         var kort = i.nextElementSibling;
         function satt(sel, v) {
@@ -126,7 +241,7 @@
         }
         satt('[data-ms-paket-nu]', money(nu, format));
         satt('[data-ms-paket-forr]', money(ordinarie, format));
-        satt('[data-ms-paket-styck]', money(Math.round(nu / antal), format) + ' / st');
+        satt('[data-ms-paket-styck]', money(Math.round(nu / antal), format) + ' per ' + enhet);
         var spar = i.parentElement.querySelector('[data-ms-paket-spar]');
         if (spar && rabatt > 0) spar.textContent = 'Du sparar ' + money(rabatt, format);
       });
@@ -149,6 +264,13 @@
         }
         q.value = this.vald.dataset.antal || '1';
       }
+      if (this.egenVal) {
+        var valdOpt = this.vald.closest('.ms-paket__opt');
+        Array.prototype.forEach.call(this.querySelectorAll('[data-ms-val]'), function (el) {
+          el.hidden = el.closest('.ms-paket__opt') !== valdOpt;
+        });
+        this.stangAlla();
+      }
       this.rita();
       this.direktkop(!this.vald.dataset.kod);
 
@@ -156,12 +278,13 @@
       var antal = Number(this.vald.dataset.antal || 1);
       var gvarde = Number(this.vald.dataset.gratisVarde || 0);
       var rabatt = this.rabattFor(this.vald, styck);
+      var ordinarie = this.ordinarieFor(this.vald) + gvarde;
       document.dispatchEvent(new CustomEvent('ms:variant', {
         detail: {
           id: this.variantId(),
           quantity: antal,
-          price: Math.max(0, styck * antal + gvarde - rabatt),
-          compareAtPrice: styck * antal + gvarde
+          price: Math.max(0, ordinarie - rabatt),
+          compareAtPrice: ordinarie
         }
       }));
     }
@@ -262,7 +385,12 @@
       var gvariant = this.vald.dataset.gratisVariant;
       var gantal = Number(this.vald.dataset.gratisAntal || 0);
 
-      var varor = [{ id: Number(this.variantId()), quantity: antal }];
+      // En rad per vald variant, grupperat: två gånger "Svart" blir
+      // { id: svart, quantity: 2 }, aldrig två rader med samma id.
+      var grupper = {};
+      this.enheterFor(this.vald).forEach(function (id) { grupper[id] = (grupper[id] || 0) + 1; });
+      var varor = Object.keys(grupper).map(function (id) { return { id: Number(id), quantity: grupper[id] }; });
+      if (!varor.length) varor = [{ id: Number(this.variantId()), quantity: antal }];
       if (gvariant && gantal > 0) varor.push({ id: Number(gvariant), quantity: gantal });
 
       var self = this;

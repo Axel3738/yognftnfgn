@@ -5,12 +5,16 @@
 //   node factory/discord.mjs factory/butiker/<butik>.yaml --guild <id> [--ikon <logga.png>]
 //   ... --torr        visa planen utan att röra Discord eller listan
 //
-// Kräver env DISCORD_BOT_TOKEN (bot-token, INTE webhook). ⚠️ Boten kan INTE
-// skapa servrar: POST /guilds svarar 400 kod 20001 "Bots cannot use this
-// endpoint" (mätt på TankGuard 2026-09-08, boten satt i 3 servrar — gränsen
-// "färre än 10" gäller alltså inte längre). Servern skapas därför alltid av
-// en människa (checklistans avsnitt 9) som auktoriserar boten via länken skriptet
-// skriver ut utan --guild; sen bygger boten kanalerna med --guild <id>.
+// Kräver env DISCORD_BOT_TOKEN (bot-token, INTE webhook).
+//
+// ⚠️ Boten kan INTE skapa servern. POST /guilds svarar
+// 400 {"code":20001,"message":"Bots cannot use this endpoint"} — mätt två
+// gånger: på TankGuard 2026-09-08 (boten satt i 3 servrar, så gränsen "färre
+// än 10" som stod här gäller inte) och igen på DryTrek 2026-09-09. Discord
+// vitlistar inte vanliga botar för guild-skapande. Servern skapas därför
+// alltid av en människa (VA:n, checklistans avsnitt 9), boten bjuds in via
+// auktoriseringslänken, och kanalerna byggs med --guild <id>. Utan --guild i
+// skarpt läge byggs inget: huvud() skriver ut länken och avbryter (exit 1).
 //
 // Redigerarlistan bor i factory/redigerare/standby.md (byggs av
 // rekryteringsmotorn, se factory/PLAN.md punkt 4). Första raden med status

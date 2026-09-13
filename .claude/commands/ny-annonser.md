@@ -218,6 +218,16 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Finns kampanjen redan (samma namn) fylls DEN, exakt så här, aldrig en ny
    bredvid. Hela strukturen skrivs i vågkonfigen FÖRE körning och visas i
    chatten som en tabell: kampanj → adsets → antal annonser per adset.
+   - ⚠️ **Norge har oftast EGNA källcreatives.** Bäverbutiken kör en norsk
+     tvilling per produkt i Magiborsten NO `1050941584152547` (prefix t.ex.
+     `Gamasjer_NO_`), redan dubbad och med norsk inbränd text. Skanna den med
+     `node factory/brand-detektor.mjs --produkt <id> --marknad NO --hamta` och
+     brand-swappa rakt av — dubba ALDRIG om de svenska med HeyGen när en
+     norsk version redan finns. Att den norska källkampanjen står PAUSED är
+     ett marknadsbeslut (mätt på DryTrek 2026-09-09: 6 kr spend), inte en dom
+     över annonserna: räkna annons + adset ACTIVE, inte kampanjen. Kontot
+     och prefixet står i produktfilen som `kalla.no_annonskonto` +
+     `kalla.no_annonsprefix`.
    - Kampanjnamnen prefixas ALLTID med brandet OCH marknaden:
      `TANKGUARD_SE_…` och `TANKGUARD_NO_…`. Alla OPS-butiker delar ett konto,
      och utan marknaden i namnet går datan inte att skära per land.

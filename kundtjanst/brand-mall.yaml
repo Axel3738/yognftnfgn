@@ -41,11 +41,20 @@ discord:
   server: ""                  # servern boten postar i (namn eller id). Tomt = brandets namn
   kanal: customer-service     # kanalen — skapas av boten om den saknas
 
+shopify:
+  # Tomt = nycklarna heter SHOPIFY_CLIENT_ID_<ID> osv. Heter de något annat
+  # (t.ex. en egen app bara för kundtjänsten) skriv svansen här:
+  # "BAVERBUTIKEN_EMAILSCRAPER" ⇒ SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER.
+  env_suffix: ""
+
 notion:
   sop_database_id: ""         # VA:ns SOP-databas → rapporten säger vilka toppärenden som saknar SOP
   rapport_database_id: ""     # databas där veckorapporten läggs som sida (--notion)
 
 trosklar:
+  arenden_dagar: 30           # hur långt bakåt mejlen läses. ⚠️ Sänk den inte till 7 —
+                              # då faller allt obesvarat äldre än en vecka ur rapporten,
+                              # alltså precis de ärenden som hunnit bli farligast
   obesvarad_timmar: 48        # inkommande utan svar längre än så = larm
   ofullbordad_dagar: 5        # betald order utan fulfillment längre än så = larm
   tvistgrans_gul_procent: 0.5 # tvister / ordrar (30 dagar): gult härifrån

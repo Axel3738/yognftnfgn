@@ -55,7 +55,7 @@ export const MAXLANGD = 2000;
  *  har redan kanalerna (Axels bild 2026-09-10): nattens budgetrapport går
  *  till #ads, briefdagens rapport till #ads-to-do där redigeraren tittar. */
 export const STANDARDKANAL = 'ads';
-export const KANAL_PER_LAGE = Object.freeze({ budget: 'ads', brief: 'ads-to-do', leverans: 'annons-uppladdning', oversatt: 'annons-uppladdning' });
+export const KANAL_PER_LAGE = Object.freeze({ budget: 'ads', brief: 'ads-to-do', leverans: 'annons-uppladdning', oversatt: 'annons-uppladdning', bild: 'ads-to-do' });
 export const kanalFor = (jobb) => String(jobb?.kanal || KANAL_PER_LAGE[jobb?.lage] || STANDARDKANAL).replace(/^#/, '');
 /** Tak per lista i mallen — fler rader gör den oläslig, inte tydligare. */
 export const TAK = { siffror: 4, gjort: 8, briefer: 10 };
@@ -65,6 +65,7 @@ const LAGEN = {
   brief: { emoji: '📝', rubrik: 'brief day' },
   leverans: { emoji: '🚀', rubrik: 'delivery run' },
   oversatt: { emoji: '🇳🇴', rubrik: 'Norway translation' },
+  bild: { emoji: '🖼️', rubrik: 'image ads' },
 };
 
 /** Fält som måste finnas för att mallen ska gå att rendera alls. */
@@ -73,7 +74,7 @@ export function saknadeFalt(jobb) {
   const saknade = [];
   if (!String(jobb.brand ?? '').trim()) saknade.push('brand');
   if (!String(jobb.datum ?? '').trim()) saknade.push('datum');
-  if (!LAGEN[jobb.lage]) saknade.push('lage (budget | brief | leverans | oversatt)');
+  if (!LAGEN[jobb.lage]) saknade.push('lage (budget | brief | leverans | oversatt | bild)');
   return saknade;
 }
 

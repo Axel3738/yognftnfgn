@@ -6,9 +6,12 @@
 //   node tools/ops-leveranskon.mjs <nyckel> [--marknad SE|NO] [--status "To be Reviewed"] [--json] [--ut <mapp>]
 //
 //   <nyckel>    OPS-registrets nyckel: hemvakten, tacklebay/fiskespohallare-4-pack …
-//   --marknad   SE (standard) = leveransrundan, rader i "To be Reviewed".
+//   --marknad   SE (standard) = leveransrundan, rader i "To be Reviewed" — plus
+//               redigerarens rader i "Creative strat review" som bär butikens
+//               eget prefix och har en fil (Axels beslut 2026-09-13, se CS_STATUS_SE).
 //               NO = översättningsrundan; kör då --status "SE-ACTIVE to be translated".
-//   --status    statusen raderna ska stå i (skiftlägesokänsligt).
+//   --status    statusen raderna ska stå i (skiftlägesokänsligt). Med flaggan
+//               satt tas INGA extra CS-rader.
 //   --json      maskinläsbar kö på stdout (loggen går alltid på stderr).
 //   --ut <mapp> hämta varje rads fil via tools/notion-fil.mjs till <mapp>/<namn>.
 //               Utan flaggan hämtas inget — Notions fil-URL:er är signerade och
@@ -31,11 +34,38 @@ import { mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { valjAdsetForKoncept } from './meta-lib.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const NOTION_API = 'https://api.notion.com/v1';
 const TYP_RE = /pending approval/i;          // inkludering, aldrig uteslutning
 export const STANDARD_STATUS = { SE: 'To be Reviewed', NO: 'SE-ACTIVE to be translated' };
+// Redigerarna lämnar färdiga videor i "Creative strat review" (CS ska bedöma).
+// Sedan 2026-09-13 är CS = leveransrundan själv (Axels beslut: ingen människa
+// ska granska eller flytta status), så en sådan rad räknas som levererad OM
+// den bär butikens eget prefix OCH har en fil. Bäverbutikens gamla källrader i
+// samma status rörs ALDRIG — TackleBay 2026-09-12: Jasper parkerade tio
+// källvideor där, och Axels nej till brand-swap står. Gäller bara SE-kön
+// utan uttryckligt --status.
+export const CS_STATUS_SE = 'Creative strat review';
+
+/** Bär namnet butikens BRAND som prefix ("DryTrek_Damasker_PD_1" för DryTrek)?
+ *  Registrets prefixfilter är bredare med flit (ärvd historik: "damasker" räknas
+ *  som DryTreks i kontot), så för CS-raderna räcker det inte — Bäverbutikens
+ *  "Damasker_PD_10_H1" i samma hub är en parkerad källrad, inte en leverans. */
+export function harBrandPrefix(namn, brand) {
+  const b = String(brand ?? '').replace(/[^a-z0-9]/gi, '').toLowerCase();
+  if (!b) return true;   // okänt brand: ingen extra spärr
+  return String(namn ?? '').replace(/[^a-z0-9]/gi, '').toLowerCase().startsWith(b);
+}
+
+/** Ren regel: tas raden med i SE-kön? Standardstatusen alltid; CS-statusen
+ *  bara med butikens brand som prefix, butikens prefix och en fil. Testas utan nät. */
+export function tasMedISE(rad, { kostatus = STANDARD_STATUS.SE, brand = null } = {}) {
+  if (statusLika(rad.status, kostatus)) return true;
+  if (!statusLika(rad.status, CS_STATUS_SE)) return false;
+  return !rad.prefix_avviker && rad.leverans !== 'saknas' && harBrandPrefix(rad.namn, brand);
+}
 
 // ------------------------------------------------------------ ren logik
 // Allt nedan är utan nät och testas i tools/test/ops-leveranskon.test.mjs.
@@ -61,11 +91,16 @@ export function tolkaNamn(namn) {
   const n = annonsdel(namn);
   const f = n.split('_');
   const prefix = f[0] && /^[A-Za-zÅÄÖåäö0-9-]+$/.test(f[0]) ? f[0] : null;
-  const k = (f[1] ?? '').trim();
+  // Tvådelat prefix (DryTrek_Damasker_PD_14_1, mätt 2026-09-13): ett
+  // produktsegment med fem eller fler bokstäver före konceptkoden hoppas över
+  // när fältet efter det är en kod (1–4 bokstäver).
+  let i = 1;
+  if (/^[A-Za-zÅÄÖåäö]{5,}$/.test(f[1] ?? '') && /^[A-Za-z]{1,4}$/.test(f[2] ?? '')) i = 2;
+  const k = (f[i] ?? '').trim();
   const koncept = /^[A-Za-z]+$/.test(k) ? k.toUpperCase() : null;
-  const nr = (f[2] ?? '').trim();
+  const nr = (f[i + 1] ?? '').trim();
   const nummer = /^\d+$/.test(nr) ? Number(nr) : null;
-  const rest = f.slice(3).join('_');
+  const rest = f.slice(i + 2).join('_');
   return { prefix, koncept, nummer, variant: rest !== '' ? rest : null };
 }
 
@@ -106,9 +141,11 @@ export const kampanjBas = (kampanjnamn) => String(kampanjnamn ?? '').split(' | '
 export const adsetNamn = (bas, koncept) => (bas && koncept ? `${bas} - ${koncept}` : null);
 
 /** Adsetet med exakt namnet (skiftlägesokänsligt), annars null. */
-export function hittaAdset(adsets, namn) {
-  if (!namn) return null;
-  const t = adsets.find((a) => String(a?.name ?? '').trim().toLowerCase() === namn.trim().toLowerCase());
+export function hittaAdset(adsets, namn, koncept = null) {
+  if (!namn && !koncept) return null;
+  // Exakt namn, annars kampanjens egen konvention (DRYTREK_SE_PD) — samma
+  // regel som uppladdaren (tools/meta-lib.mjs valjAdsetForKoncept).
+  const t = valjAdsetForKoncept(adsets ?? [], namn, koncept);
   return t ? { id: t.id, name: t.name, status: t.status ?? null } : null;
 }
 
@@ -315,6 +352,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   const m = String(marknad).toUpperCase();
   if (!['SE', 'NO'].includes(m)) throw new Error(`--marknad måste vara SE eller NO (fick "${marknad}").`);
   const kostatus = status ?? STANDARD_STATUS[m];
+  const csExtra = status === null && m === 'SE';   // bara standardkön för SE tar CS-raderna
   const varningar = [];
 
   // 1. Butiken ur registret + kontospärren. laddaButik godtar läge test
@@ -336,8 +374,9 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   const hub = await hamtaHub(hubId);
   logg(`OPS-hubb: ${hub.titel} (${hub.id})`);
   const { klaraRader } = await import('./notion-kalla.mjs');
-  const raa = await klaraRader(hub, { statusar: [kostatus.trim().toLowerCase()], typ: TYP_RE });
-  logg(`  ${raa.length} rader i "${kostatus}" (Typ ~ pending approval)`);
+  const statusar = [kostatus.trim().toLowerCase(), ...(csExtra ? [CS_STATUS_SE.toLowerCase()] : [])];
+  const raa = await klaraRader(hub, { statusar, typ: TYP_RE });
+  logg(`  ${raa.length} rader i "${kostatus}"${csExtra ? ` + "${CS_STATUS_SE}"` : ''} (Typ ~ pending approval)`);
 
   // 3. Kontot: alla annonser (dubblettkoll + kampanjkoppling) och alla kampanjer.
   const { alla, kampanjUtfall } = await import('./meta-lib.mjs');
@@ -393,12 +432,20 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
 
   // 6. Raderna.
   const rader = [];
+  const cs_lamnade = [];   // CS-rader som INTE tas: annat prefix eller ingen fil
   for (const r of raa) {
     const namn = annonsdel(r.namn);
     const t = tolkaNamn(namn);
     // Bär raden ett annat prefix än butikens (flyttad Bäverbutiks-hubb) blir
     // målnamnet ommärkt till butikens annonsprefix — det är namnet i kontot.
     const avviker = prefixAvviker(namn, butik.prefix, tillhorButiken);
+    if (!tasMedISE({ namn, status: r.status, prefix_avviker: avviker, leverans: r.leverans }, { kostatus, brand: butik.post.brand })) {
+      const skal = avviker || !harBrandPrefix(namn, butik.post.brand)
+        ? `prefixet "${t.prefix}" är inte butikens brand (${butik.post.brand}) — parkerad källrad, rörs inte`
+        : 'ingen fil än';
+      cs_lamnade.push({ namn, page_id: r.id, status: r.status, skal });
+      continue;
+    }
     const basnamn = avviker && butik.post.annonsprefix ? ommarkt(namn, butik.post.annonsprefix) : namn;
     const mal_namn = malNamn(basnamn, m);
     const adsetnamn = kampanj ? adsetNamn(kampanj.bas, t.koncept) : null;
@@ -406,6 +453,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     const lank = lank_arvd ?? r.landning ?? null;
     const rad = {
       namn, mal_namn, page_id: r.id, url: r.url, typ: typAv(r.typ), typ_notion: r.typ, status: r.status,
+      fran_cs: statusLika(r.status, CS_STATUS_SE),
       leverans: r.leverans, leverans_text: leveransText(r),
       // Signerade Notion-URL:er skrivs aldrig ut — bara namnen.
       filer: (r.filer ?? []).map((f) => ({ namn: f.namn })),
@@ -413,7 +461,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       drive: (r.drive ?? []).map((x) => ({ id: x.id, typ: x.typ, url: x.url })),
       landning: r.landning ?? null, lank,
       prefix: t.prefix, koncept: t.koncept, nummer: t.nummer, variant: t.variant,
-      adset_namn: adsetnamn, adset: hittaAdset(adsets, adsetnamn),
+      adset_namn: adsetnamn, adset: hittaAdset(adsets, adsetnamn, t.koncept),
       finns_i_meta: d.finns_i_meta, ad_id: d.ad_id,
       prefix_avviker: avviker,
       namn_ommarkt: basnamn !== namn,
@@ -435,9 +483,11 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     }
     rader.push(rad);
   }
+  if (cs_lamnade.length) logg(`  ${cs_lamnade.length} rad(er) lämnade i "${CS_STATUS_SE}": ${cs_lamnade.map((x) => `${x.namn} (${x.skal})`).join(' · ')}`);
 
   return {
     butik: butik.post.brand, nyckel: butik.post.nyckel, konto, marknad: m, status: kostatus,
+    cs_status: csExtra ? CS_STATUS_SE : null, cs_lamnade,
     hub: { id: hub.id, titel: hub.titel },
     kampanj: kampanj ? { ...kampanj, adsets: adsets.map((a) => ({ id: a.id, name: a.name, status: a.status })) } : null,
     kampanj_skal: kampanjSkal,
@@ -463,7 +513,7 @@ export function tabell(ko) {
   for (const r of ko.rader) {
     const pil = r.mal_namn && r.mal_namn !== r.namn ? ` → ${r.mal_namn}` : '';
     const dubb = r.finns_i_meta ? `  ✓ FINNS REDAN i kontot (${r.ad_id}) — laddas inte upp` : '';
-    ut.push(`• ${r.namn}${pil}  [${r.typ}]${dubb}${r.prefix_avviker ? '  ⚠️ PREFIX ≠ BUTIKENS' : ''}`);
+    ut.push(`• ${r.namn}${pil}  [${r.typ}]${dubb}${r.prefix_avviker ? '  ⚠️ PREFIX ≠ BUTIKENS' : ''}${r.fran_cs ? `  (ur "${CS_STATUS_SE}")` : ''}`);
     ut.push(`    fil:      ${r.leverans_text}${r.fil ? `  → ${r.fil}` : ''}${r.fil_fel ? `  ✗ ${r.fil_fel}` : ''}`);
     ut.push(`    koncept:  ${r.koncept ?? '⚠️  saknas'}${r.nummer != null ? ` · nr ${r.nummer}` : ''}${r.variant ? ` · variant ${r.variant}` : ''}`);
     ut.push(`    adset:    ${r.adset_namn ?? '—'}  ${r.adset ? `finns (${r.adset.id}, ${r.adset.status})` : (r.adset_namn ? 'saknas — skapas av uppladdaren' : '')}`);
@@ -474,6 +524,10 @@ export function tabell(ko) {
   ut.push('');
   const nya = ko.rader.filter((r) => !r.finns_i_meta);
   ut.push(`${ko.rader.length} rad(er) i kön · ${nya.length} att ladda upp · ${ko.rader.length - nya.length} finns redan`);
+  if (ko.cs_lamnade?.length) {
+    ut.push(`\nLämnade i "${CS_STATUS_SE}" (${ko.cs_lamnade.length}) — rörs inte:`);
+    for (const x of ko.cs_lamnade) ut.push(`  · ${x.namn}: ${x.skal}`);
+  }
   if (ko.varningar.length) {
     ut.push(`\nVarningar (${ko.varningar.length}):`);
     for (const v of ko.varningar) ut.push(`  ⚠️  ${v}`);

@@ -27,7 +27,7 @@ export const RUTIN_VECKODAG = '1'; // måndag — förra veckan är stängd, VA:
 /** Det setup skriver ut per brand: rad + saknade namn. Ren över env. */
 export function brandstatus(brand, env = process.env) {
   const k = korkonfig(brand, env);
-  const n = envNamn(brand.id);
+  const n = envNamn(brand.id, brand.shopify?.env_suffix || null);
   const saknas = [];
   if (!k.mail.konfigurerad) saknas.push(...k.mail.saknas);
   return {
@@ -105,7 +105,7 @@ behöver ändras. Fem steg:
    Vill kontot INTE köra ett brand: sätt \`aktiv: false\` i dess brandfil,
    eller kör rutinen med \`--brand a,b\` i stället för \`--alla\`.
 3. Environment på claude.ai (Settings → Environments → variabler), per brand:
-${brands.map((b) => { const n = envNamn(b.id); return `     ${b.id.padEnd(14)} ${n.mailPass}   (Loopia-lösenordet för ${b.supportmail || 'supportmailen'})\n     ${''.padEnd(14)} ${n.shop} + ${n.adminToken}  (eller ${n.clientId} + ${n.clientSecret})`; }).join('\n')}
+${brands.map((b) => { const n = envNamn(b.id, b.shopify?.env_suffix || null); return `     ${b.id.padEnd(14)} ${n.mailPass}   (Loopia-lösenordet för ${b.supportmail || 'supportmailen'})\n     ${''.padEnd(14)} ${n.shop} + ${n.adminToken}  (eller ${n.clientId} + ${n.clientSecret})`; }).join('\n')}
    Delade (en gång per konto): NOTION_TOKEN, DISCORD_BOT_TOKEN, ANTHROPIC_NYCKEL (valfri).
    ⚠️ Nya variabler syns först i en NY container — inte i en session som redan kör.
 4. Kontrollera: \`node kundtjanst/setup.mjs\` ska visa ✅ på varje brand som ska köras.

@@ -1,0 +1,82 @@
+{
+  "Gamasjer_NO_SP_1": {
+    "typ": "video_id",
+    "id": "1105698891905823",
+    "namn": "DRYTREK_Gamasjer_NO_SP_1"
+  },
+  "Gamasjer_NO_PD_2_1": {
+    "typ": "image_hash",
+    "id": "fc752774ca9f3f4a69662f47d999ea8d",
+    "namn": "DRYTREK_Gamasjer_NO_PD_2_1"
+  },
+  "Gamasjer_NO_SP_3": {
+    "typ": "video_id",
+    "id": "2252840565557033",
+    "namn": "DRYTREK_Gamasjer_NO_SP_3"
+  },
+  "Gamasjer_NO_G_3": {
+    "typ": "video_id",
+    "id": "1769098141024662",
+    "namn": "DRYTREK_Gamasjer_NO_G_3"
+  },
+  "Gamasjer_NO_SP_2_1": {
+    "typ": "image_hash",
+    "id": "77830d834bddc8a01a3266c795b0f136",
+    "namn": "DRYTREK_Gamasjer_NO_SP_2_1"
+  },
+  "Gamasjer_NO_SP_2": {
+    "typ": "video_id",
+    "id": "1095757846652169",
+    "namn": "DRYTREK_Gamasjer_NO_SP_2"
+  },
+  "Gamasjer_NO_PD_2": {
+    "typ": "video_id",
+    "id": "1094141299793196",
+    "namn": "DRYTREK_Gamasjer_NO_PD_2"
+  },
+  "Gamasjer_NO_PD_1": {
+    "typ": "video_id",
+    "id": "28067530982939060",
+    "namn": "DRYTREK_Gamasjer_NO_PD_1"
+  },
+  "Gamasjer_NO_PD_3": {
+    "typ": "video_id",
+    "id": "1559250315998072",
+    "namn": "DRYTREK_Gamasjer_NO_PD_3"
+  },
+  "Gamasjer_NO_CS_3": {
+    "typ": "video_id",
+    "id": "3654867734669332",
+    "namn": "DRYTREK_Gamasjer_NO_CS_3"
+  },
+  "Gamasjer_NO_CS_1": {
+    "typ": "video_id",
+    "id": "1055191810890129",
+    "namn": "DRYTREK_Gamasjer_NO_CS_1"
+  },
+  "Gamasjer_NO_CS_2": {
+    "typ": "video_id",
+    "id": "2450190475510829",
+    "namn": "DRYTREK_Gamasjer_NO_CS_2"
+  },
+  "Gamasjer_NO_CS_2_1": {
+    "typ": "image_hash",
+    "id": "7fc8b3a2e486751425adf4bab3a3b066",
+    "namn": "DRYTREK_Gamasjer_NO_CS_2_1"
+  },
+  "Gamasjer_NO_G_2": {
+    "typ": "video_id",
+    "id": "1811515660045151",
+    "namn": "DRYTREK_Gamasjer_NO_G_2"
+  },
+  "Gamasjer_NO_G_2_1": {
+    "typ": "image_hash",
+    "id": "70aab4f30bc978420a6c738daa30e89c",
+    "namn": "DRYTREK_Gamasjer_NO_G_2_1"
+  },
+  "Gamasjer_NO_G_1": {
+    "typ": "video_id",
+    "id": "1766986601008473",
+    "namn": "DRYTREK_Gamasjer_NO_G_1"
+  }
+}

@@ -334,3 +334,32 @@ söndag 2026-09-13 (briefdagar sön + ons).
   `/ops-oversatt` → Approved). Bra — men det betyder att hubben töms i takt med
   kadensen medan grinden fortfarande stoppar all dom. Nästa briefdag (ons 16/9)
   är första chansen att läsa batch #2 med data; batch #3 tidigast sön 20/9.
+
+---
+
+## Körning nr 4 — 2026-09-13, leveransrundan (`/ops-leverans`)
+
+⚠️ **BUTIKEN ÄR AVSTÄNGD AV ÄGAREN.** Axel pausade `ADVENTLANERACING_SE` och `_NO`
+själv 2026-09-13 kl 11:05–11:06 svensk tid (Metas aktivitetslogg; samma svep tog
+HeimGuards båda kampanjer, men HeimGuard SE slogs på igen 15:06 — AdventLane lämnades av).
+**Ingen rutin och ingen session får aktivera dem.** Tills Axel säger annat gäller:
+
+- `/ops-leverans` laddar inte upp (kön stoppar på "ingen ACTIVE SE-kampanj") — korrekt.
+- `/ops-oversatt` har ingen ACTIVE NO-kampanj att lägga i.
+- **Nattvakten fortsätter ändå brieffa.** Natten till 13/9 beställdes batch #3:s 21 briefer
+  av Jazz — timmar innan Axel stängde av. Fortsätter kadensen producerar redigeraren
+  creatives för en butik som inte annonserar. Det är en ägarfråga, se backloggen.
+
+**Rotorsak 13 — pausen var motiverad, och den syntes bara på kampanjnivå.** Livstid:
+SE 2 799 kr / 5 köp / **CPA 560 kr** / ROAS 1,18; NO 3 137 kr / 3 köp / **CPA 1 046 kr** /
+ROAS 0,44. Mot break-even 323 kr / 1,54 är SE:s vinstbidrag **−1 185 kr**. Båda kampanjerna
+passerar grinden (≥ 300 kr och ≥ 3 köp) så domen är tillåten. **Men ingen ENSKILD annons
+passerar den** — bäst är `PD_1_H1` med 847 kr på 2 köp. Butiken dog alltså utan att en enda
+creative hann bli bedömbar: det ärvda materialet räckte inte, och de 7 videor som gick live
+12/9 hann spendera 1–48 kr innan pausen. De är **otestade, inte underkända** — återanvänd dem
+om butiken startas om, och skriv aldrig att de "inte fungerade".
+
+**Rotorsak 14 — NO hade egen ekonomi men ingen egen break-even.** Norge säljer för 439 kr
+(Axel 2026-09-11) och har alltså lägre BE-CPA än SE:s 323 kr, men talet är aldrig uträknat
+i repot. NO spenderade mer än SE (3 137 mot 2 799 kr) och gav färre köp. Räkna NO:s
+break-even innan någon ny norsk kampanj byggs för den här produkten.

@@ -25,8 +25,9 @@ const args = process.argv.slice(2);
 // --market SE|NO|DK|FI|UK väljer butik (env-tripletterna SHOPIFY_*_<MARKNAD>); SE är default.
 const market = (args.includes('--market') ? args[args.indexOf('--market') + 1] : 'SE').toUpperCase();
 const SHOP = process.env[`SHOPIFY_SHOP_${market}`];
-const ID = process.env[`SHOPIFY_CLIENT_ID_${market}`];
-const SECRET = process.env[`SHOPIFY_CLIENT_SECRET_${market}`];
+// SE: den nya appen (2026-09-12) heter `_SE_BAVER_SE` i Environments och vinner när den finns.
+const ID = process.env[`SHOPIFY_CLIENT_ID_${market}_BAVER_SE`] || process.env[`SHOPIFY_CLIENT_ID_${market}`];
+const SECRET = process.env[`SHOPIFY_CLIENT_SECRET_${market}_BAVER_SE`] || process.env[`SHOPIFY_CLIENT_SECRET_${market}`];
 const productId = args[args.indexOf('--product-id') + 1];
 const rabatt = Number(args[args.indexOf('--rabatt') + 1]);
 const dry = args.includes('--dry');

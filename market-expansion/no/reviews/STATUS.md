@@ -3,6 +3,46 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-13 — 10 nya, tre överhoppade, 30 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade tre nya mappar:
+**Lövblåsare**, **Solcellslarm 2-pack** och **Termoskydd Husbil**. En
+importerades, två hoppades över.
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Solcellealarm 2-pk | 10 | `solcellealarm-2-pk-sirene-og-strobelys-ved-bevegelse` |
+
+Kartorna: +16 översättningar, +1 namn. Butiksfeeden 186 → 200 produkter.
+
+### ⚠️ Tre ark har nu personnamn i title-kolumnen — ett mönster, inte en engångsmiss
+
+| Ark | title på rad 2 | reviewer_name | Läge |
+|---|---|---|---|
+| `Taköverdrag Husvagn_REVIEW` | `Lars` | `Anna` | oförändrat sedan 2026-09-12 |
+| `Termoskydd Husbil_REVIEW` | `Anna` | `Anna` | **nytt 2026-09-13** |
+
+Taköverdrag har namnen förskjutna ett steg (title och reviewer_name bär
+olika namn); Termoskydd har samma namn i båda kolumnerna. Båda ger
+recensioner med rubriken "Anna" eller "Lars" om de importeras. **Rubriker
+går inte att hitta på — arken måste rättas.** Handlen finns för båda:
+`takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten` och
+`frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende`.
+
+Den som fyller arken skriver uppenbarligen ibland ett namn i title-fältet.
+Värt att säga till om en gång i stället för att rätta ark i efterhand.
+
+### ⚠️ Lövblåsaren finns inte i den norska butiken
+
+`5.1 Lövblåsare_REVIEW` (`1WQ3XiXRPKi61FzHra4iTBRsuupXdrm2kWXkqVjG7L78`)
+finns och har rader, men beverbutikken.no har ingen løvblåser i sina 200
+produkter (sökt på "blås", "vifte", "løv", "lauv" 2026-09-13). Närmaste
+träff är "Jetvifte for Makita-batteri" — en annan produkt, så ingen
+koppling görs. Produkten läggs in när den lanserats i butiken.
+
+**Datumen tog inte, som väntat.** 26 produkter / 234 recensioner bär nu
+importdagens datum.
+
 ## Läget 2026-09-12 — 20 nya på två produkter, 29 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade tre nya mappar:

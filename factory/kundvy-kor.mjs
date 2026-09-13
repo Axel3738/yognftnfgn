@@ -192,7 +192,23 @@ export async function hamtaSida(ctx, vag, { locale = null, losenord = null, tema
   return svar.html;
 }
 
-export const hamtaStartsida = (ctx, opt = {}) => hamtaSida(ctx, '/', opt);
+// Gammal anropsform (sprakkoll.mjs, 2026-09-09): hamtaStartsida(bas, losenord, vag)
+// → { status, url, html } och kastar INTE på HTTP-fel — anroparen läser status
+// själv. Behålls så språkkollen fungerar utan att skrivas om; nya anropare
+// använder hamtaSida(ctx, vag, opt).
+async function hamtaGammalForm(bas, losenord = null, vag = '/') {
+  const ctx = { bas };
+  const losen = losenord ?? process.env.SHOPIFY_STOREFRONT_PASSWORD ?? null;
+  let svar = await hamtaSidaRa(ctx, vag);
+  if (svar.status === 401 && losen) {
+    await loggaInLosenord(ctx, losen);
+    svar = await hamtaSidaRa(ctx, vag);
+  }
+  return svar;
+}
+
+export const hamtaStartsida = (ctx, opt = {}, vag = '/') =>
+  typeof ctx === 'string' ? hamtaGammalForm(ctx, opt, vag) : hamtaSida(ctx, '/', opt);
 export const hamtaProduktsida = (ctx, handle, opt = {}) => hamtaSida(ctx, `/products/${handle}`, opt);
 
 // ---- köptestet ------------------------------------------------------------------

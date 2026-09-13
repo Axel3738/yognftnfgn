@@ -277,3 +277,294 @@ Backlog: grus och signalfärg plockade (`[använd i batch #3]`) — backloggen
 Notion-resultat: `products/drytrek/batch-03/notion-resultat.json`.
 
 *(Utfall skrivs vid nästa briefdag. Grinden: ≥ 300 kr OCH ≥ 3 köp per annons.)*
+
+## Batch #3b (färgvarianterna) — 2026-09-12 · Axels idé: en bildannons per färgvariant (`/ops-bild drytrek`, samma dag som batch #2)
+
+**Ingen redigerare, ingen väntan.** Idén kom från Axel i chatten 2026-09-12
+("bara vit bakgrund och sen produkten, en av varje färgvariant"). Byggd och
+genererad samma dag av den nya motorn `factory/ops-bild.mjs` (kie.ai
+`google/nano-banana-edit` med produktfotot `damask-se-NG-ren.jpg` som
+formreferens, bilden lagd i Notion via REST med `tools/notion-fil-upp.mjs`).
+Copy: sonnet (`products/drytrek/batch-03-farger/copy-sonnet.json`, tre-frågorstestet
+3 × ✅ på varje rad). Pris 389 kr per par ur `factory/produkter/damasker.yaml`.
+Hubb: Damasker vandring, rader `DryTrek_Damasker_PD_14_1 … _18` — **ETT
+koncept, 18 varianter, ett adset** (leveransrundan döper adsetet på
+konceptbokstäverna `PD`). Isolerad variabel: **färgen**. Ingen text på bilden.
+
+| # | Namn | Färg | Utfall i QA | Status |
+|---|---|---|---|---|
+| 1 | `PD_14_1` | Neongrön | ✅ | To be Reviewed |
+| 2 | `PD_14_2` | Orange | ✅ efter en omgenerering (kängans tryck "CANSPORT" satt kvar första gången) | To be Reviewed |
+| 3 | `PD_14_3` | Gul | ❌ **två försök blev neonlime** = samma som neongrön. Referensfotot styr färgen. Underkänd, ligger kvar i Draft med kommentar | Draft |
+| 4–13 | `PD_14_4 … _13` | Svart, Grå, Marinblå, Blå, Ljusblå, Röd, Lila, Rosa, Brun, Vit | ✅ (grå saknar ett snörlås — godtagbart) | To be Reviewed |
+| 14 | `PD_14_14` | Olivgrön | ✅ efter en omgenerering (leverantörsetiketten "AYXSEE" följde med ur OL-fotot — togs bort som referens) | To be Reviewed |
+| 15–16 | `PD_14_15 … _16` | Kamouflage grön, kamouflage svart | ✅ | To be Reviewed |
+| 17–18 | `PD_14_17 … _18` | Blå/neongrön, cerise/neongrön | ✅ — ⚠️ **gissning på utseendet**: butiken saknar foto, prompten satte neongrön på frontremsan | To be Reviewed |
+
+**17 av 18 klara → live 13:40 2026-09-13 via `/ops-leverans drytrek`
+(SE), Norge 15:40.** Kostnad: 21 kie.ai-genereringar, noll redigerartid.
+
+Lärdomar (inskrivna i dna.md-rotorsakerna vid nästa `/cs`):
+- Källfotona bär leverantörsetiketten **AYXSEE** och kängmärket **CANSPORT** —
+  prompten måste uttryckligen radera båda, och en variant-egen referensbild
+  med etikett (OL) drar in etiketten igen. Använd det rena NG-fotot som enda
+  formreferens.
+- Bildmodellen kan inte flytta färgen långt från referensen: gul blev
+  neonlime två gånger. Nästa försök för Gul: riktigt foto av gula varianten,
+  eller textgenerering utan referens (då ser produkten inte ut som produkten).
+
+Hypotes att läsa av vid nästa briefdag: vinstbidrag per färg `(243 − CPA) × köp`
+inom adsetet `PD`; topspendern är benchmark. Grinden ≥ 300 kr OCH ≥ 3 köp per
+variant — med 17 varianter i ett adset tar det tid; döm inte färger på 50 kr.
+
+---
+
+## Leveransen 2026-09-13 — 23 annonser LIVE i DRYTREK_SE (`/ops-leverans drytrek`, första körningen)
+
+Kördes för hand ur setup-sessionen samma förmiddag som rutinen byggdes, för
+att färgbilderna inte skulle stå still ett dygn till. Kampanjen
+`DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` [ACTIVE], CBO
+**700 kr/dag**, pris **389 kr** läst live ur drytrek.se vid körningen.
+
+| Vad | Antal | Adset | Status vid tillbakaläsning |
+|---|---|---|---|
+| Färgbilder `PD_14_1 … _18` (utom `_3`, gul) | 17 | `DRYTREK_SE_PD` | ACTIVE |
+| Jaspers videor `PD_12_H1`, `PD_12_H2`, `PD_13_H1` | 3 | `DRYTREK_SE_PD` | ACTIVE |
+| Jaspers videor `SP_6_H1`, `SP_7_H1` | 2 | `DRYTREK_SE_SP` | ACTIVE |
+| Jaspers video `FO_2_H1` | 1 | `DRYTREK_SE_FO` **(nytt adset)** | ACTIVE |
+
+Tillbakaläst ur kontot: **23 av 23 hittade, 21 ACTIVE/ACTIVE, 2 kvar i Metas
+granskning** (PENDING_REVIEW / IN_PROCESS — normalt direkt efter uppladdning).
+Alla 23 Notion-rader flyttade till `SE-ACTIVE to be translated`; 15:50-rutinen
+tar dem till Norge. Ad-id per rad: `factory/output/drytrek/leverans-2026-09-13-resultat.json`.
+
+**Två saker gjorde att det här inte gick av sig självt, båda lagade i koden:**
+
+1. **Videorna låg i `Creative strat review`** — en status ingen rutin plockade.
+   Jasper levererade sex videor dit 2026-09-12/13 och de hade stått kvar för
+   alltid. Axels beslut 2026-09-13: leveransrundan ÄR granskningen. Sedan dess
+   tar `tools/ops-leveranskon.mjs` SE-kön ur `To be Reviewed` **plus**
+   `Creative strat review` när raden bär butikens brand som prefix och har en
+   fil (`CS_STATUS_SE`, `tasMedISE`, `harBrandPrefix`). Hubbens tio äldre
+   `Damasker_*`-rader (Bäverbutikens, parkerade) rörs aldrig — de listas som
+   `cs_lamnade` i kön.
+2. **Namnparsern klarade inte tvådelade namn.** `DryTrek_Damasker_PD_14_1` tog
+   "Damasker" som konceptkod, och adsetuppslaget sökte bara `<bas> - <KONCEPT>`
+   medan kampanjens egna adsets heter `DRYTREK_SE_PD`. Varje leverans hade
+   skapat ett ANDRA PD-adset bredvid det som redan spenderar. Lagat:
+   produktsegment med ≥ 5 bokstäver hoppas över, och `valjAdsetForKoncept` /
+   `nyttAdsetnamn` i `tools/meta-lib.mjs` matchar båda konventionerna.
+
+**QA:n:** varje bild tittad på av sessionen (Axels beslut 2026-09-13 — han
+granskar aldrig bilder), varje video granskad på 15–20 utdragna frames.
+Noll stopp. Videoanmärkningarna (laddas upp ändå, bara priset stoppar video):
+captions är auto-transkriberad karaoke med stavfel i stället för manusraderna,
+leverantörsetiketten AYXSEE syns på damaskerna i samtliga sex, klippen är
+13–20 s mot briefens 20–30 s, och fyra videor visar ett riktigt ansikte i
+stockmaterial. `SP_7_H1` säger 380 kr (butiken 389 kr — inom 20 %-toleransen,
+uppladdad); `PD_12_H1` har ingen prisrad alls.
+
+Hypotesen från batch #3b står kvar: vinstbidrag per färg `(243 − CPA) × köp`
+inom adsetet `PD`, grinden ≥ 300 kr OCH ≥ 3 köp per variant. Med 17 färger +
+4 videor i samma adset tar det tid — döm inte en färg på 50 kr.
+
+---
+
+## 2026-09-13 — leveransrunda, andra körningen samma dag: tom kö, och kvittot på att den första höll
+
+Rutinen kördes en gång till på eftermiddagen. **Kön var tom för att förmiddagens
+körning ovan redan tagit allt** — inte för att något saknades. Det här är alltså
+avstämningen av den körningen, inte en egen leverans.
+
+**Tillbakaläsning ur kontot av alla 23 uppladdade annonser:** 23 av 23 står nu
+**ACTIVE/ACTIVE**. De två som låg i Metas granskning på förmiddagen
+(IN_PROCESS) har släppts igenom. Fördelningen stämmer med planen och inget
+extra adset skapades: `DRYTREK_SE_PD` 20 annonser, `DRYTREK_SE_SP` 2,
+`DRYTREK_SE_FO` 1 — alla i `DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 |
+2026-09-09`. Namnparser-buggen som hade kunnat skapa ett andra PD-adset är
+därmed bevisat lagad i skarp drift, inte bara i koden.
+
+`To be Reviewed` i hubben "Damasker vandring": **0 rader**. Inget laddades upp,
+inget rördes i kontot 915422744950975. Kampanjen
+`DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` är ACTIVE med fyra
+av fem adsets igång (`DRYTREK_SE_G` är PAUSED — ett beslut, aktiveras aldrig
+härifrån). Butikspriset läst live: **389 SEK** (jämförpris 649 SEK).
+
+Hubbens 79 rader fördelade sig så här vid körningen:
+
+| Status | Video | Bild | Övrigt |
+|---|---|---|---|
+| Draft | 17 | 23 | 1 Guideline |
+| SE-ACTIVE to be translated | 11 | 17 | — |
+| Creative strat review | 10 | — | — |
+
+De 28 raderna i `SE-ACTIVE to be translated` tillhör översättningsrundan, inte
+den här. De 40 Draft-raderna är inte färdiga.
+
+**De tio `Damasker_*`-raderna i `Creative strat review` är kontrollerade, inte
+bara överhoppade.** Skapade 2026-09-02 till 2026-09-08 med Jasper Tomboc som
+ansvarig, alla `Video - Pending Approval`, alla med `Link for approval` till en
+Drive-mapp — men briefernas `Landing page` pekar på
+`baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute`. Det är
+alltså Bäverbutikens källrader, inte DryTrek-leveranser, precis som
+`harBrandPrefix` dömer dem. De rörs inte, och Axels nej till brand-swap
+(TackleBay 2026-09-12) står kvar.
+
+⚠️ **De kan aldrig levereras av någon rutin som den ligger nu.** Bäverbutikens
+läsare undantar OPS-hubbarna per id (`tools/lib/ops-hubbar.mjs`), och den här
+rundan hoppar dem på prefixet. Frågan är ställd till Axel i Discord
+`#annons-uppladdning` 2026-09-13: ska Jasper bygga om dem som DryTrek-versioner
+eller ska de arkiveras? **Frågan är ställd en gång — kommande körningar
+rapporterar dem som varning, inte som ACTION NEEDED, tills Axel svarat.**
+
+Köfilen från den här andra körningen ligger i
+`factory/output/drytrek/leverans-2026-09-13-omkoll.json`. Förmiddagens
+`leverans-2026-09-13.json` (23 rader) skrevs medvetet INTE över — den är
+kvittot på vad som faktiskt levererades.
+
+---
+
+## 2026-09-13 — översättningsrunda NO (`/ops-oversatt drytrek`), första körningen
+
+**21 av 28 rader är live i Norge.** Kampanj `DRYTREK_NO_Damasker Vandring |
+BE-ROAS 1.60 | 2026-09-09` i OPS-kontot 915422744950975, tillbakaläst:
+**21 av 21 ACTIVE/ACTIVE**, 20 i `DRYTREK_NO_PD` och 1 i `DRYTREK_NO_SP`.
+Inget nytt adset skapades, kampanjen rördes inte. Alla 21 Notion-rader flyttade
+till `Approved` med kommentar och `Translated url`.
+
+| | Antal | Vad |
+|---|---:|---|
+| Bilder live | 17 | `DryTrek_NO_Damasker_PD_14_1…18` (färgkartan, PD_14_3 finns inte) |
+| Videor live | 4 | `PD_12_H1`, `PD_12_H2`, `PD_13_H1`, `SP_7_H1` |
+| Videor hoppade | 2 | `FO_2_H1`, `SP_6_H1` — röstkollen röd |
+| Rader hoppade | 5 | Bäverbutikens parkerade `Damasker_*` |
+
+### Det som gjorde jobbet mycket mindre än väntat: bilderna har ingen text
+
+Alla 17 färgbilderna är **rena produktfoton mot vit bakgrund utan ett enda
+inbränt ord** — kontrollerat genom att titta på var och en av dem, inte genom
+att lita på detektorn. `pipeline/oversatt-bild.py --analys` rapporterade
+"knapp"-former på 7 av dem, men varje sådan träff var det **svarta
+kardborrefältet på damasken**, inte text. Bildmotorn (fas 3) behövdes alltså
+inte alls: bilderna laddades upp som de är och bara copyn översattes.
+⚠️ **`--analys` ensam är inte ett svar på frågan "finns det text i bilden".**
+Den hittar bara text som ligger på en form, och den hittar former som inte är
+text. Titta på bilden.
+
+### Zonen är allt i `no-precis.py` — och standardzonen passar inte 4:5
+
+Videorna är **1080×1350** (SE laddade upp 4:5-versionen; kollat i Metas
+`format`-fält på källannonserna, alla fyra storlekarna slutar på 1080×1350).
+`no-precis.py`:s standardzon räknas som `850–1040 × W/720` = **1275–1560 px**,
+vilket ligger helt utanför en 1350 px hög bild. Zonen måste sättas per video.
+
+Första försöket med en rundlig zon (`810–1030`) gav **515 av 592 frames** på
+`PD_12_H1` — och de missade frameserna släppte igenom svensk text i den
+färdiga filen (`Kruken fester`, `går på`, `på foten.` syntes i QA-svepet).
+Rotorsaken: en för hög zon får pillret att **smälta ihop med ljus bakgrund**
+(snö, himmel) i grupperingen, gruppen blir högre än `h_max` och kastas.
+Med en tajt zon (pillret ±12 px) blev det **583 av 592**, och de 9 kvarvarande
+frameserna innehöll ingen svensk text alls (kontrollerat bild för bild).
+
+Uppmätta zoner, damaskvideorna 2026-09-13:
+
+| Video | Piller y | Zon | Träff |
+|---|---|---|---:|
+| `FO_2_H1` | 879–992 | `[867, 1004]` | 414/414 |
+| `PD_13_H1` | 857–968 | `[845, 980]` | 505/505 |
+| `SP_7_H1` | 858–968 | `[846, 980]` | 416/419 |
+| `SP_6_H1` | 830–961 | `[818, 973]` | 476/480 |
+| `PD_12_H2` | 830–955 | `[818, 967]` | 582/587 |
+| `PD_12_H1` | 829–972 | `[817, 984]` | 583/592 |
+
+Mät zonen på ~40 frames innan du kör skarpt — det tar två minuter och är
+skillnaden mellan svensk text i en live-annons och inte.
+
+### HeyGen hittade på två sakfel som bara en människa kunde fånga
+
+Proofread-transkriptet är facit för vad rösten säger, och det bar två fel som
+hade gått rakt ut i en norsk annons:
+
+1. **44 cm blev 14 cm.** `PD_12_H1` block 2: svenskan säger "Fyrtiofyra
+   centimeter", HeyGens norska sa "Fjorten centimeter". Produkten är 44 cm.
+2. **Brandet mosades.** "Dry3 Damasko" / "Drytre Damasko" / "Dry 3-gamasjer"
+   i tre block. Brandet heter DryTrek, produkten heter gamasjer.
+
+Dessutom var HeyGens norska genomgående **upp till 40 % kortare** än svenskan,
+vilket ger tyst luft i slutet av varje block. Den rättade SRT:en ligger på
+90–105 % av källans teckenantal per block.
+
+### Röstkollen föll på två videor — och mätningen pekar på musiken, inte rösten
+
+`FO_2_H1` och `SP_6_H1` fick ❌: *"talet slutar 0.10s före slutet, källan hade
+0.20s"*. Båda renderades om med en **kortare slutrad** (FO_2 84 → 56 tecken,
+SP_6 177 → 140). **Mätvärdet rörde sig inte en enda 50 ms-ruta.** Med ~30 %
+mindre tal kan det uppmätta "talslutet" inte vara rösten — `rostkoll.py`:s
+`talslut()` mäter energi i 300–3400 Hz, och det bandet fångar **musikbädden**
+som HeyGen behåller och som spelar till sista rutan.
+
+Energiprofilen sista 1,2 s stöder det: `FO_2_H1` går 60 → 16 → 3 → 0 % av
+toppen, alltså en avtoning, inte ett hugg.
+
+Reglen är ändå Axels och den följdes: **ingen video med ❌ laddades upp.**
+De två ligger kvar i `SE-ACTIVE to be translated` med kommentar i Notion, och
+de färdiga filerna står i `market-expansion/ops/drytrek/2026-09-13/no-underkanda/`.
+**Förslag på fix i `rostkoll.py`:** jämför talslutet mot källans talslut i
+samma fil (musiken är identisk i båda) i stället för mot en absolut marginal,
+eller mät röstbandet efter att källans ljudbädd subtraherats.
+
+### De fem `Damasker_*`-raderna är Bäverbutikens — nu bevisat, inte antaget
+
+`Damasker_SP_4_H1`, `SP_5_H1`, `PD_8_H1`, `PD_9_H1` och `FO_1_H1` stod i
+`SE-ACTIVE to be translated`. Alla fem är **ACTIVE i Bäverbutikens konto
+1867947880635861**, kampanj `Damasker Vandring | BE ROAS 1.60 | Launch
+2026-08-29` (avläst 2026-09-13), och finns **inte** i Magiborsten NO
+`1050941584152547`. De är alltså Bäverbutikens svenska annonser som väntar på
+Bäverbutikens egen Norge-runda — men den når dem aldrig, eftersom hubben sedan
+2026-09-10 är undantagen ur Bäverbutikens läsare (`tools/lib/ops-hubbar.mjs`).
+De laddades inte upp: namnen bär inget brandprefix, och Bäverbutikens creatives
+hör inte hemma i DryTreks konto. Status orörd, kommentar skriven, frågan ställd
+till Axel i Discord.
+
+### Priset: norsk copy utan pris, men de gamla annonserna säger fel
+
+`factory/produkter/damasker.yaml` saknar `no_pris_nok`, och `drytrek.se/nb`
+visar **389,00 kr i valutan SEK** (`currencyCode: SEK`, avläst 2026-09-13 —
+NOK är inte påslaget). Enligt `/ops-oversatt` regel 4 skrevs därför all ny
+norsk copy **helt utan pris**. Beloppet 389 står kvar i tal och captions där
+källan säger det, aldrig omräknat.
+
+⚠️ De **16 norska annonser som redan körde** bär `factory/annonscopy/damasker-no.json`
+(skriven 2026-09-09) med **381 kr i stedet for 635 kr — 40 % rabatt**. Den
+prisuppgiften stämmer inte mot butiken i dag. Frågan är ställd till Axel.
+
+### Copyn
+
+Skriven av sonnet-subagenter i två rundor, den andra förankrad i husets egen
+norska copy (`factory/annonscopy/damasker-no.json`) efter att fyra granskare
+underkänt 24 rader i den första. Husets ordval är norm: *"blir på utsiden"*
+(inte "utenfor", som är rumsligt på norska), *"Tetter mellom støvel og bukse"*
+(inte "ute nedenfra"), *"blir værende"* (inte intransitivt "stopper"),
+*"Se alle **de** 18 fargene"* (dubbel bestämdhet), *væte* (inte "fukt").
+
+Två rättningar gjordes av huvudsessionen efteråt:
+- `PD_12_H2` fick **samma headline som `PD_12_H1`** ("Snøen blir på utsiden").
+  H1/H2 delar film och copy med flit — bara hooken får skilja, precis som i
+  Sverige. En egen headline hade lagt till en andra variabel och gjort testet
+  oläsbart.
+- `SP_7_H1`:s headline blev "Testet på hundeturen i morges." Utkastet hade
+  tappat hundpromenad-situationen, som är hela annonsens vinkel.
+
+Kvar att mäta: ingen dom kan ställas på någon norsk annons än — kampanjen har
+21 nya annonser från i dag och grinden är ≥ 300 kr OCH ≥ 3 köp per annons.
+
+### Beslut 2026-09-13 (Axel, chatten): nya tester stannar i CBO:n, PD får golv
+
+Frågan från nattens rapport (test-ABO enligt regel 11, eller golv på PD) —
+**Axel valde B.** `DRYTREK_SE_PD` fick `daily_min_spend_target` 300 kr/dag
+(satt 2026-09-13, tillbakaläst 30000 öre, loggrad i `factory/budgetlogg.jsonl`).
+Skäl: PD (den ärvda vinnaren, ROAS 2,77 i källan) hade fått 317 kr på 7 dagar
+medan CS + G tog 2 216 kr. De 23 nya annonserna från leveransen ligger kvar i
+CBO:n, ett adset per koncept. Kampanjbudgeten är 700 kr/dag efter nattens
+sänkning (−30 %, vinst 3d −115 %) — golvet tar alltså ~43 % av dagsbudgeten.
+Om Axel höjer tillbaka till 1 000 kr ska golvet inte ändras.

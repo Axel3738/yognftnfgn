@@ -1,0 +1,580 @@
+{
+ "DryTrek_NO_Damasker_PD_14_18": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249076858970172",
+    "namn": "DryTrek_NO_Damasker_PD_14_18",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1039721785786933",
+   "media": {
+    "typ": "bild",
+    "hash": "c5df9b78fe1ad7e0fa07b350a6cb989c"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_17": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249076866930172",
+    "namn": "DryTrek_NO_Damasker_PD_14_17",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "945800851277377",
+   "media": {
+    "typ": "bild",
+    "hash": "666072cf384b87667a3d6dbf78e17232"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_16": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249076904390172",
+    "namn": "DryTrek_NO_Damasker_PD_14_16",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "2826128787772979",
+   "media": {
+    "typ": "bild",
+    "hash": "ddce951ef520e3ab5a87e2d6dc1655f5"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_15": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249076909700172",
+    "namn": "DryTrek_NO_Damasker_PD_14_15",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "2050477445673995",
+   "media": {
+    "typ": "bild",
+    "hash": "99ab850f74b16d748ff70bc871349625"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_14": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249076969100172",
+    "namn": "DryTrek_NO_Damasker_PD_14_14",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1526008632569129",
+   "media": {
+    "typ": "bild",
+    "hash": "b9b1167eb1d2f59f6f241678e84e1f71"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_13": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077051020172",
+    "namn": "DryTrek_NO_Damasker_PD_14_13",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1030354339970315",
+   "media": {
+    "typ": "bild",
+    "hash": "71da1561214cd9f6e1929a315c0c8d79"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_12": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077121240172",
+    "namn": "DryTrek_NO_Damasker_PD_14_12",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1044529741534264",
+   "media": {
+    "typ": "bild",
+    "hash": "a78aaba0cd74b4a454762f8872f42d8c"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_11": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077197490172",
+    "namn": "DryTrek_NO_Damasker_PD_14_11",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1616984573421794",
+   "media": {
+    "typ": "bild",
+    "hash": "3e4490095a90ab1e3a64bc31fb412188"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_10": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077264980172",
+    "namn": "DryTrek_NO_Damasker_PD_14_10",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1815825256537643",
+   "media": {
+    "typ": "bild",
+    "hash": "85e694ecc65d7e64a81a7b9fb764c9a9"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_9": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077296640172",
+    "namn": "DryTrek_NO_Damasker_PD_14_9",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1373210687853263",
+   "media": {
+    "typ": "bild",
+    "hash": "7bb7de1f563195c9ec258605bd631336"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_8": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077306590172",
+    "namn": "DryTrek_NO_Damasker_PD_14_8",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1121100683910751",
+   "media": {
+    "typ": "bild",
+    "hash": "28a8def144a17186b04dd082ea8e9eba"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_7": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077353880172",
+    "namn": "DryTrek_NO_Damasker_PD_14_7",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "826431673866396",
+   "media": {
+    "typ": "bild",
+    "hash": "23aafeb29550a3a27121ec995bc078dc"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_6": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077359200172",
+    "namn": "DryTrek_NO_Damasker_PD_14_6",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1399982624886539",
+   "media": {
+    "typ": "bild",
+    "hash": "c745db3704f6dc5e1e4c0bee2824ab09"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_5": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077384330172",
+    "namn": "DryTrek_NO_Damasker_PD_14_5",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1372159581570532",
+   "media": {
+    "typ": "bild",
+    "hash": "6dbafb2b88ca0946c26da6547d216436"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_4": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077420060172",
+    "namn": "DryTrek_NO_Damasker_PD_14_4",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "2279685839462367",
+   "media": {
+    "typ": "bild",
+    "hash": "a4cc84d178d0550b6a9b8e5c3d38ac24"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_2": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077425600172",
+    "namn": "DryTrek_NO_Damasker_PD_14_2",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1800149454770113",
+   "media": {
+    "typ": "bild",
+    "hash": "e24e943f885bf6b0e338a6dba5cb7ca4"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ },
+ "DryTrek_NO_Damasker_PD_14_1": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249077471840172",
+    "namn": "DryTrek_NO_Damasker_PD_14_1",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "1208173605394644",
+   "media": {
+    "typ": "bild",
+    "hash": "d96c19bedf0c2e927c3a853e12344fa8"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
+ }
+}

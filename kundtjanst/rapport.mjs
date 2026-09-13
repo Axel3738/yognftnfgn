@@ -26,6 +26,10 @@ const pct = (n) => (n === null || n === undefined ? '—' : `${String(n).replace
 const pctEn = (n) => (n === null || n === undefined ? 'n/a' : `${n}%`);
 const trend = (nu, forr) => (forr === null || forr === undefined ? '' : nu > forr ? ` ↑ (${forr})` : nu < forr ? ` ↓ (${forr})` : ` = (${forr})`);
 
+/** Antal chargebacks resp. bankförfrågningar — ur risken när den finns, annars listan. */
+const chargebacks = (r) => r.risk?.underlag?.chargebacks ?? (r.tvister?.lista ?? []).filter((x) => x.typ !== 'inquiry').length;
+const forfragningar = (r) => r.risk?.underlag?.forfragningar ?? (r.tvister?.lista ?? []).filter((x) => x.typ === 'inquiry').length;
+
 function nivaText(risk, sprak) {
   const n = risk?.niva ?? NIVAER[0];
   return `${n.emoji} ${sprak === 'sv' ? n.sv : n.en} (${risk?.poang ?? 0}/100)`;
@@ -56,9 +60,11 @@ export function renderaSvensk(r) {
   rad.push(`| Obesvarade just nu | ${s.obesvarade} | ${r.forra?.obesvarade ?? '—'} |`);
   rad.push(`| Obesvarade > ${r.brand.trosklar?.obesvarad_timmar ?? 48} h | ${s.larmObesvarade} | ${r.forra?.larmObesvarade ?? '—'} |`);
   rad.push(`| Median första svarstid | ${s.medianSvarstidTimmar === null ? '— (inga svar hittade)' : `${String(s.medianSvarstidTimmar).replace('.', ',')} h`} | ${r.forra?.medianSvarstidTimmar ?? '—'} |`);
-  rad.push(`| Ordrar (${r.brand.trosklar?.ordrar_dagar ?? 30} dagar) | ${r.ordrar?.antal ?? '—'} | |`);
-  rad.push(`| Tvister i perioden | ${r.tvister?.tillganglig ? r.tvister.lista.length : '— (ej läsbart)'} | |`);
-  rad.push(`| Tvistgrad | ${pct(r.risk?.tvistgrad)} | |`);
+  const dagar = r.brand.trosklar?.ordrar_dagar ?? 30;
+  rad.push(`| Ordrar (${dagar} dagar) | ${r.ordrar?.antal ?? '—'} | |`);
+  rad.push(`| Chargebacks (${dagar} dagar) | ${r.tvister?.tillganglig ? chargebacks(r) : '— (ej läsbart)'} | ${r.forra?.tvister ?? ''} |`);
+  rad.push(`| Förfrågningar från banken (${dagar} dagar) | ${r.tvister?.tillganglig ? forfragningar(r) : '—'} | ${r.forra?.forfragningar ?? ''} |`);
+  rad.push(`| Tvistgrad (chargebacks / ordrar) | ${pct(r.risk?.tvistgrad)} | ${r.forra?.tvistgrad === undefined || r.forra?.tvistgrad === null ? '' : pct(r.forra.tvistgrad)} |`);
   rad.push(`| **Chargeback-risk** | **${nivaText(r.risk, 'sv')}** | ${r.forra?.riskPoang ?? '—'} |`);
   rad.push('');
 
@@ -133,7 +139,7 @@ export function renderaEngelsk(r, { kort = false, pingId = null } = {}) {
   rad.push('');
   rad.push('**Numbers**');
   rad.push(`• Tickets: ${s.antalArenden}${trend(s.antalArenden, r.forra?.antalArenden ?? null)} · unanswered now: ${s.obesvarade} · unanswered > ${r.brand.trosklar?.obesvarad_timmar ?? 48}h: ${s.larmObesvarade}`);
-  rad.push(`• Median first reply: ${s.medianSvarstidTimmar === null ? 'n/a' : `${s.medianSvarstidTimmar}h`} · orders (${r.brand.trosklar?.ordrar_dagar ?? 30}d): ${r.ordrar?.antal ?? 'n/a'} · disputes: ${r.tvister?.tillganglig ? r.tvister.lista.length : 'n/a'} · dispute rate: ${pctEn(r.risk?.tvistgrad)}`);
+  rad.push(`• Median first reply: ${s.medianSvarstidTimmar === null ? 'n/a' : `${s.medianSvarstidTimmar}h`} · orders (${r.brand.trosklar?.ordrar_dagar ?? 30}d): ${r.ordrar?.antal ?? 'n/a'} · chargebacks: ${r.tvister?.tillganglig ? chargebacks(r) : 'n/a'} · bank inquiries: ${r.tvister?.tillganglig ? forfragningar(r) : 'n/a'} · chargeback rate: ${pctEn(r.risk?.tvistgrad)}`);
   rad.push(`• **Chargeback risk: ${n.emoji} ${n.en} (${r.risk?.poang ?? 0}/100)**`);
   rad.push('');
   rad.push('**Top tickets (recurring problems)**');
@@ -194,12 +200,12 @@ export function renderaRanking(rankade, vecka) {
   rad.push('');
   rad.push('Högst risk först. Poängen är summan av signalerna (0–100); nivån 🟢 < 25, 🟡 25–50, 🔴 > 50.');
   rad.push('');
-  rad.push('| Plats | Brand | Risk | Ärenden | Obesvarade > gräns | Tvister | Tvistgrad | Toppärende |');
+  rad.push('| Plats | Brand | Risk | Ärenden | Obesvarade > gräns | Chargebacks | Tvistgrad | Toppärende |');
   rad.push('|---|---|---|---|---|---|---|---|');
   for (const r of rankade) {
     if (r.hoppad) { rad.push(`| — | ${r.brand.brand} | hoppad: ${r.orsak} | | | | | |`); continue; }
     const s = r.sammanfattning;
-    rad.push(`| ${r.plats} | ${r.brand.brand} | ${nivaText(r.risk, 'sv')} | ${s.antalArenden} | ${s.larmObesvarade} | ${r.tvister?.tillganglig ? r.tvister.lista.length : '—'} | ${pct(r.risk?.tvistgrad)} | ${s.topp[0] ? `${KATEGORI[s.topp[0].id]?.sv ?? s.topp[0].id} (${s.topp[0].antal})` : '—'} |`);
+    rad.push(`| ${r.plats} | ${r.brand.brand} | ${nivaText(r.risk, 'sv')} | ${s.antalArenden} | ${s.larmObesvarade} | ${r.tvister?.tillganglig ? chargebacks(r) : '—'} | ${pct(r.risk?.tvistgrad)} | ${s.topp[0] ? `${KATEGORI[s.topp[0].id]?.sv ?? s.topp[0].id} (${s.topp[0].antal})` : '—'} |`);
   }
   rad.push('');
   return rad.join('\n');
@@ -212,7 +218,7 @@ export function renderaRankingEngelsk(rankade, vecka) {
     if (r.hoppad) { rad.push(`• ${r.brand.brand}: skipped (${r.orsak})`); continue; }
     const s = r.sammanfattning;
     const n = r.risk?.niva ?? NIVAER[0];
-    rad.push(`${r.plats}. ${n.emoji} **${r.brand.brand}** ${r.risk?.poang ?? 0}/100 · ${s.antalArenden} tickets · ${s.larmObesvarade} unanswered · disputes ${r.tvister?.tillganglig ? r.tvister.lista.length : 'n/a'} · top: ${s.topp[0] ? KATEGORI[s.topp[0].id]?.en ?? s.topp[0].id : '—'}`);
+    rad.push(`${r.plats}. ${n.emoji} **${r.brand.brand}** ${r.risk?.poang ?? 0}/100 · ${s.antalArenden} tickets · ${s.larmObesvarade} unanswered · chargebacks ${r.tvister?.tillganglig ? chargebacks(r) : 'n/a'} (${pctEn(r.risk?.tvistgrad)}) · top: ${s.topp[0] ? KATEGORI[s.topp[0].id]?.en ?? s.topp[0].id : '—'}`);
   }
   return rad.join('\n').slice(0, DISCORD_MAX);
 }

@@ -52,7 +52,32 @@ test('tvistgraden räknas mot ordrarna och slår i gul och röd gräns', () => {
   assert.equal(gul.signaler[0].poang, 15 + 15);
   assert.equal(rod.signaler[0].poang, 30 + 30);
   const oppen = bedomRisk({ ordrar, tvister: { tillganglig: true, lista: [{ status: 'needs_response', typ: 'chargeback', orsak: 'product_not_received', ordernamn: '#5', evidensSenast: '2026-09-20' }] }, nu: NU });
-  assert.match(oppen.atgarder[0].en, /open dispute/);
+  assert.match(oppen.atgarder[0].en, /1 open chargeback\(s\).*earliest 2026-09-20/);
+});
+
+test('inquiries räknas inte i tvistgraden men får egen signal och egen åtgärd', () => {
+  const ordrar = Array.from({ length: 200 }, (_, i) => order({ id: i, nummer: String(i) }));
+  const lista = [
+    { status: 'needs_response', typ: 'inquiry', orsak: 'product_not_received', ordernamn: '#1', evidensSenast: '2026-09-28' },
+    { status: 'won', typ: 'inquiry', orsak: 'credit_not_processed', ordernamn: '#2' },
+    { status: 'needs_response', typ: 'chargeback', orsak: 'product_not_received', ordernamn: '#3', evidensSenast: '2026-09-23' },
+  ];
+  const r = bedomRisk({ ordrar, tvister: { tillganglig: true, lista }, nu: NU });
+  assert.equal(r.tvistgrad, 0.5, 'bara chargebacken räknas: 1 av 200');
+  assert.equal(r.underlag.chargebacks, 1);
+  assert.equal(r.underlag.forfragningar, 2);
+  assert.equal(r.underlag.dagar, 30);
+  const cb = r.signaler.find((s) => s.id === 'tvister');
+  const inq = r.signaler.find((s) => s.id === 'forfragningar');
+  assert.equal(cb.varde, 1);
+  assert.equal(cb.poang, 15 + 15);
+  assert.match(cb.sv, /Chargebacks \(30 dagar\)/);
+  assert.match(cb.atgard_en, /1 open chargeback\(s\).*earliest 2026-09-23/);
+  assert.equal(inq.varde, 2);
+  assert.equal(inq.poang, 10);
+  assert.match(inq.atgard_en, /1 open inquiry.*before 2026-09-28.*becomes a chargeback/);
+  const utanOppna = bedomRisk({ ordrar, tvister: { tillganglig: true, lista: [lista[1]] }, nu: NU });
+  assert.equal(utanOppna.signaler.find((s) => s.id === 'forfragningar').atgard_en, null);
 });
 
 test('ordersignalerna: betald utan fulfillment efter gränsen, skickad utan spårning', () => {

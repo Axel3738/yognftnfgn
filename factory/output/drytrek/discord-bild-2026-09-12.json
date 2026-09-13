@@ -1,0 +1,113 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-12",
+  "lage": "bild",
+  "gjort": [
+    "Axel's idea: one white-background product image per colour variant (18 colours), concept PD_14, one adset",
+    "18 briefs + Notion rows created (Draft, Image - Pending Approval), copy by the sonnet subagent",
+    "18 images generated with kie.ai, uploaded to Notion via REST — no editor time",
+    "17 of 18 checked and moved to To be Reviewed → live in DRYTREK_SE at 13:40 tomorrow, Norway 15:40",
+    "Orange and Olive regenerated once (boot lettering / supplier tag removed)"
+  ],
+  "briefer": [
+    {
+      "namn": "DryTrek_Damasker_PD_14_1",
+      "typ": "image · Neon green",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_1-3d9270ab908c8108a583ccb58c9fb3a7"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_2",
+      "typ": "image · Orange",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_2-3d9270ab908c812782f8d6b5d40f0bb1"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_3",
+      "typ": "image · Yellow · REJECTED",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_3-3d9270ab908c810fa3ebf64113f20b38"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_4",
+      "typ": "image · Black",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_4-3d9270ab908c81969c97df8015524943"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_5",
+      "typ": "image · Grey",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_5-3d9270ab908c81a1b051ff31a7d0dbe2"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_6",
+      "typ": "image · Navy",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_6-3d9270ab908c811f9d43c798f0320b38"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_7",
+      "typ": "image · Blue",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_7-3d9270ab908c8167b938f87c5cee904f"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_8",
+      "typ": "image · Light blue",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_8-3d9270ab908c81f99738e91e35f48835"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_9",
+      "typ": "image · Red",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_9-3d9270ab908c81f08483ed7882a1ef38"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_10",
+      "typ": "image · Purple",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_10-3d9270ab908c8171bcaacffc63e63742"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_11",
+      "typ": "image · Pink",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_11-3d9270ab908c81fbb3dbf8812dc1e9a5"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_12",
+      "typ": "image · Brown",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_12-3d9270ab908c81eea1bbd5f6fa50ed68"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_13",
+      "typ": "image · White",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_13-3d9270ab908c81a996b7e8adfd1f6652"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_14",
+      "typ": "image · Olive",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_14-3d9270ab908c815cb7e4f7b2cb05041f"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_15",
+      "typ": "image · Green camo",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_15-3d9270ab908c819baaccddfbf865c111"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_16",
+      "typ": "image · Black camo",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_16-3d9270ab908c81298909e1382f03c0a6"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_17",
+      "typ": "image · Blue/neon green",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_17-3d9270ab908c81af8cbbdc46bb80cf9a"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_18",
+      "typ": "image · Cerise/neon green",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_14_18-3d9270ab908c81249bc4c7d85a5de749"
+    }
+  ],
+  "siffror": {
+    "briefs_nya": 17
+  },
+  "varningar": [
+    "Yellow (PD_14_3) rejected twice — the model renders it as neon lime, identical to neon green. Left in Draft with a comment. Needs a real photo of the yellow variant.",
+    "Blue/neon green and Cerise/neon green are a guess: the store has no photo of those two-tone variants, the prompt put neon green on the front strip."
+  ],
+  "nasta_korning": "2026-09-13 13:40 (delivery run)"
+}

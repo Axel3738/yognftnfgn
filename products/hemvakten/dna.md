@@ -253,3 +253,82 @@ Batch #2 (4 fable / 3 sonnet) är inte live än (hos redigeraren). Batch #3: 11 
   `To be Reviewed`. Någon (Axel eller `/granska`) måste flytta dem, annars står de.
 - **Metas rate limit på det delade OPS-kontot** slog 2026-09-12 när fem nattvakter
   startade 00:01. Rutinplatser med egen minut finns i registret sedan 2026-09-12.
+- **Kampanjnamnet bär ett FÖRÅLDRAT break-even-tal.**
+  `HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08` heter så för att
+  2,11 räknades MED moms. Momsfrågan avgjordes 2026-09-09 (Axel: räknas utan moms)
+  och det gällande talet står i `factory/produkter/overvakningskameran.yaml`:
+  **break-even ROAS 1,49 / CPA 538 kr**. Mätt 2026-09-13 i leveransrundan: läser man
+  namnet i stället för produktfilen ser 7d ROAS 1,61 ut som en förlust (mot 2,11) när
+  den i själva verket ligger ÖVER break-even (mot 1,49) — nattvakten samma natt
+  räknade +5,1 % vinst på 7 dygn och lät kampanjen vara. Den här sessionen gick på
+  minan och skickade fel tal till Discord innan det rättades. **Läs alltid
+  break-even ur produktfilen, aldrig ur ett kampanj- eller adsetnamn.** Talet i
+  namnet kan inte ändras i efterhand utan att kampanjen döps om.
+
+---
+
+## Översättningsrundan nr 2 — 2026-09-13 (`/ops-oversatt`, tom kö men en rotorsak funnen)
+
+Kön `SE-ACTIVE to be translated` var tom och NO-kampanjen pausad, så inget
+översattes. Körningen ägnades i stället åt att mäta VARFÖR Norge gick sämre än
+Sverige på exakt samma produkt och samma creatives.
+
+### Läget (mätt 2026-09-13 13:45–14:20 UTC)
+
+| Marknad | Spend (livstid) | Köp | ROAS | Mot BE-ROAS 1,49 | Status |
+|---|---|---|---|---|---|
+| SE | 6 049 kr | 7 | **1,50** | precis på break-even | ACTIVE (Axel slog på 15:06) |
+| NO | 4 141 kr | 4 | **1,28** | under break-even | PAUSED (Axel pausade 11:06) |
+
+Metas aktivitetslogg: `Axel Odhner` pausade båda 11:06 CEST och slog på SE igen
+15:06. Båda är alltså ägarbeslut — ingen rutin rörde något.
+
+### ROTORSAK: de norska annonserna pekade på en sida som tar betalt i SEK
+
+Uppmätt på samma URL, samma minut:
+
+| Länk | Valuta | Pris |
+|---|---|---|
+| `heimguard.se/nb/products/overvakningskameran` | **SEK** | 799,00 kr |
+| samma sida `?country=NO` | **NOK** | 781,00 |
+
+Alla 27 NO-annonser bär den **parameterlösa** länken. DryTreks NO-annonser bär
+`?country=NO`. Skillnaden är ett datum: fixen (webbnärvaro kopplad till marknaden
++ parametern i `kampanj.mjs`) landade 2026-09-10, och HeimGuards NO-kampanj
+byggdes **2026-09-09** — en dag för tidigt. Butiksfilens kommentar "Betalar i SEK
+tills NOK slås på i admin" är därmed **inaktuell**: NOK svarar redan, det var
+länken som saknade parametern.
+
+Det betyder att varje norsk klick landade på svenskt pris. Det är den enda
+uppmätta strukturella skillnaden mellan marknaderna, och den ligger i kassan,
+inte i creativen. **Döm ingen norsk creative på den datan.** Rättningen kräver
+nya creatives på annonserna, vilket nollställer deras gilla-markeringar och
+kommentarer — väg det mot hur mycket engagemang de hunnit samla.
+
+### Översättningsskulden (mätt i kontot, inte gissad)
+
+11 SE-annonser saknar norsk tvilling. Två av dem (`CS_2`, `CS_3`) är pausade i SE
+och ska inte översättas ⇒ **reell skuld 9**. Värre: **8 av dem står som
+`Approved` i hubben** trots att den norska annonsen aldrig skapades. `Approved`
+är slutstatus, så `/ops-oversatt` plockar dem aldrig — skulden är osynlig för
+automatiken och växer tyst. Tre annonser (`CS_1`, `CS_2`, `CS_3`) saknar
+hubbrad helt och kan aldrig gå via Notion-kön.
+
+Dessutom: 6 rader står kvar i `Translation in review` sedan 2026-09-06 — en
+status från flödet före OPS som **ingen rutin i repot läser**. Fyra av dem är
+verifierat live i NO, två (`RI_1_H1`, `SP_4_H1`) finns inte ens som SE-annonser.
+
+### Två systemfel som inte är HeimGuards ensak
+
+- **Nattvakten ser aldrig någon NO-kampanj.** `budgetrond.mjs` kör
+  `STANDARDMARKNAD='SE'`, och alla fyra rondfilerna för hemvakten innehåller
+  exakt en kampanj: SE. I OPS-kontot finns sex NO-kampanjer med 17 522 kr spend,
+  tre ACTIVE. `TACKLEBAY_NO_Spöhållaren` är ACTIVE med ROAS **0,44** på 2 981 kr
+  och 3 köp — dömbar enligt ANALYSMETOD, men ingen rutin kan se den.
+- **HeimGuard-arbete ger 0 kr i commission.** OPS-kontot står som utländskt i
+  `commission/berakning.mjs` (`arSvensk()` = false för varje HeimGuard-annons)
+  OCH hubben är undantagen som OPS-hub. Dubbelspärrat. Carl Vicente fick 21
+  briefer 2026-09-13 och tjänar noll på dem. Regeln "endast svenska annonser"
+  är från 2026-08-31; beslutet att lägga alla OPS-butiker i DK-kontot är från
+  2026-09-07 och är yngre. Vad som gäller för OPS-redigerarnas lön står
+  ingenstans skrivet — det är Axels att avgöra.
