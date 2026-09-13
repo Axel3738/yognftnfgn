@@ -59,6 +59,7 @@ test('miljövariablerna heter samma sak för alla brands och löses per brand', 
   assert.equal(med.shopify.adminToken, '', 'grannens allmänna token används aldrig');
   const token = korkonfig(brand, { KUNDTJANST_MAIL_PASS_BETA: 'x', KUNDTJANST_MAIL_USER_BETA: 'annan@beta.se', SHOPIFY_ADMIN_TOKEN_BETA: 'shpat_1' });
   assert.equal(token.shopify.vag, 'token');
+  assert.equal(token.mail.user, 'annan@beta.se');
   // Shopify CLI:s atkn_-token räknas aldrig som token (ger alltid 401 mot Admin API).
   const cli = korkonfig(brand, { KUNDTJANST_MAIL_PASS_BETA: 'x', SHOPIFY_ADMIN_TOKEN_BETA: 'atkn_abc' });
   assert.equal(cli.shopify.konfigurerad, false);
@@ -83,7 +84,6 @@ test('shopify.env_suffix i brandfilen byter Shopify-namnens svans, aldrig mejlen
   assert.match(utan.shopify.saknas[0], /SHOPIFY_ADMIN_TOKEN_BETA_EMAILSCRAPER \(eller SHOPIFY_CLIENT_ID_BETA_EMAILSCRAPER \+ SHOPIFY_CLIENT_SECRET_BETA_EMAILSCRAPER\)/);
   assert.equal(envNamn('beta').clientId, 'SHOPIFY_CLIENT_ID_BETA');
   assert.equal(envNamn('beta', 'Beta-Emailscraper').clientSecret, 'SHOPIFY_CLIENT_SECRET_BETA_EMAILSCRAPER');
-  assert.equal(token.mail.user, 'annan@beta.se');
 });
 
 test('valjBrands: alla aktiva, ett id, en lista, okänt id stoppar', () => {
