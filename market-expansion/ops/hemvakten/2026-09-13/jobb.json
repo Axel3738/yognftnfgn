@@ -1,0 +1,26 @@
+{
+  "butik": "HeimGuard",
+  "nyckel": "hemvakten/overvakningskameran",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
+    "titel": "Surveillance Camera creative hub"
+  },
+  "kampanj": null,
+  "kampanj_skal": "ingen ACTIVE NO-kampanj — \"HEIMGUARD_NO_Overvåkingskamera | BE-ROAS 2,11 | 2026-09-09\" är PAUSED med 4141 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+  "kampanjer_bort": 17,
+  "lank_arvd": null,
+  "pris_butik": null,
+  "pris_skal": "ingen länk",
+  "rader": [],
+  "varningar": [
+    "kampanj: ingen ACTIVE NO-kampanj — \"HEIMGUARD_NO_Overvåkingskamera | BE-ROAS 2,11 | 2026-09-09\" är PAUSED med 4141 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+    "\"HEIMGUARD_NO_Overvåkingskamera | BE-ROAS 2,11 | 2026-09-09\" är PAUSED med 4141 kr spend — avvecklad, aldrig mål",
+    "pris: ingen länk"
+  ],
+  "hamtad": "2026-09-13T13:44:14.790Z"
+}

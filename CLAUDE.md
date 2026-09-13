@@ -303,6 +303,20 @@ körningar, en bugfix fast i containern. Ombyggd 2026-09-07 till fast session
 `list_triggers` innan du bygger om en rutin — 2026-09-08 skapades en dubblett
 av misstag och fick raderas.)*
 
+⚠️ **`fire_trigger` väcker INTE en rutins fasta session — den mintar en ny, tom.**
+Mätt 2026-09-13 på Leveransrundan hemvakten: `fire_trigger` på
+`trig_01MTMMgsTxZKVxWin6C1AXNQ` (fast session `session_019B13NJBCepT1wo5sFG59F4`)
+startade i stället `session_01SmbW5A9GrYGaEnGSJRww1W` — `origin: force_run_trigger`,
+taggar `routine:agent-minted` + `routine-lineage-none`, **`sources` tomt**, alltså
+samma repolösa container som varningen ovan handlar om. Den gav upp efter 68
+sekunder, laddade upp noll och lämnade den fasta sessionen orörd (`updated_at`
+oförändrad). `SendMessage` fungerar inte heller: `ListAgents` ser bara den egna
+maskinen, så en annan molnsession är oåtkomlig den vägen.
+**Vill du köra en rutin utanför schemat: `create_trigger` med
+`persistent_session_id` + `run_once_at`** — samma mekanism som cron-triggern,
+och den landar i rätt session med repo och CLAUDE.md. Lägg fyrningstiden minst
+tio minuter fram; en session kan ligga stilla länge mellan två verktygsanrop och
+`run_once_at` i det förflutna avvisas.
 
 ⚠️ **Rutiner ärver inte sessionens MCP-connectors.** En rutin som behöver Notion,
 Drive eller Shopify måste få connectorn kopplad på själva rutinen i Routines-vyn
