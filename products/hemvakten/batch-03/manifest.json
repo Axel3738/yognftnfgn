@@ -1,0 +1,107 @@
+[
+  {
+    "namn": "HeimGuard_PD_5_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_PD_5_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_5_H2",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_PD_5_H2/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_5_H3",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_PD_5_H3/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_5_H4",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_PD_5_H4/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_6_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_PD_6_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_6_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/HeimGuard_PD_6_1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_7_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_PD_7_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_SP_19_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_SP_19_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_CS_12_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/HeimGuard_CS_12_1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_8_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_PD_8_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_BOF_10_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_BOF_10_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_9_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_PD_9_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_TR_2_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_TR_2_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_CO_5_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_CO_5_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_RI_4_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_RI_4_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_SR_2_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/HeimGuard_SR_2_1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_FD_2_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_FD_2_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_SP_20_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/HeimGuard_SP_20_H1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_TR_3_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/HeimGuard_TR_3_1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_BOF_11_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/HeimGuard_BOF_11_1/brief.md"
+  },
+  {
+    "namn": "HeimGuard_PD_10_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/HeimGuard_PD_10_1/brief.md"
+  }
+]

@@ -1,0 +1,389 @@
+{
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "hub": {
+    "id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+    "titel": "Racing Car Advent Calendar creative hub"
+  },
+  "kampanj": {
+    "id": "120249031977180172",
+    "namn": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+    "bas": "ADVENTLANERACING_NO_Racingkalendern",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249033401000172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249033144980172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249033104930172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - G",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249031977810172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - SP",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 17,
+  "lank_arvd": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "pris_butik": {
+    "pris": 499,
+    "min": 499,
+    "max": 499,
+    "jamforpris": 649,
+    "valuta": "SEK",
+    "titel": "Adventskalender Racerbiler – 24 Biler Bak 24 Luker",
+    "handle": "adventskalender-racingbilar",
+    "kalla": "https://adventlane.se/nb/products/adventskalender-racingbilar.json"
+  },
+  "pris_skal": null,
+  "rader": [
+    {
+      "namn": "AdventLaneRacing_PD_8_H1",
+      "mal_namn": "AdventLaneRacing_NO_PD_8_H1",
+      "page_id": "3d8270ab-908c-81db-83cb-e0858c529cfc",
+      "url": "https://app.notion.com/p/AdventLaneRacing_PD_8_H1-3d8270ab908c81db83cbe0858c529cfc",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1lymTvrIuO8kHhNP34d4pZ1Gb3jApxJT9",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1lymTvrIuO8kHhNP34d4pZ1Gb3jApxJT9",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1lymTvrIuO8kHhNP34d4pZ1Gb3jApxJT9?usp=drive_link"
+        }
+      ],
+      "landning": "https://adventlane.se/products/adventskalender-racingbilar",
+      "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+      "prefix": "AdventLaneRacing",
+      "koncept": "PD",
+      "nummer": 8,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_NO_Racingkalendern - PD",
+      "adset": {
+        "id": "120249033144980172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249067119370172",
+      "skapad": "2026-09-11T22:21:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_PD_8_H1/AdventLaneRacing_PD_8_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_PD_8_H1/AdventLaneRacing_PD_8_H1_1.mp4",
+        "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_PD_8_H1/AdventLaneRacing_PD_8_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "AdventLaneRacing_SY_1_H1",
+      "mal_namn": "AdventLaneRacing_NO_SY_1_H1",
+      "page_id": "3d8270ab-908c-819d-9f59-c2c28386ee7e",
+      "url": "https://app.notion.com/p/AdventLaneRacing_SY_1_H1-3d8270ab908c819d9f59c2c28386ee7e",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 11pvkaF8J_9ENYXXSyN_yqKHblMZ9bsrX",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "11pvkaF8J_9ENYXXSyN_yqKHblMZ9bsrX",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/11pvkaF8J_9ENYXXSyN_yqKHblMZ9bsrX?usp=drive_link"
+        }
+      ],
+      "landning": "https://adventlane.se/products/adventskalender-racingbilar",
+      "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+      "prefix": "AdventLaneRacing",
+      "koncept": "SY",
+      "nummer": 1,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_NO_Racingkalendern - SY",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249067124490172",
+      "skapad": "2026-09-11T22:21:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_SY_1_H1/AdventLaneRacing_SY_1_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_SY_1_H1/AdventLaneRacing_SY_1_H1_1.mp4",
+        "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_SY_1_H1/AdventLaneRacing_SY_1_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "AdventLaneRacing_MR_1_H1",
+      "mal_namn": "AdventLaneRacing_NO_MR_1_H1",
+      "page_id": "3d8270ab-908c-8111-8aa8-efda76fabaed",
+      "url": "https://app.notion.com/p/AdventLaneRacing_MR_1_H1-3d8270ab908c81118aa8efda76fabaed",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1rpkTQlzh2sqxOQe2s7J7XeKva0QiJ1Q5",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1rpkTQlzh2sqxOQe2s7J7XeKva0QiJ1Q5",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1rpkTQlzh2sqxOQe2s7J7XeKva0QiJ1Q5?usp=drive_link"
+        }
+      ],
+      "landning": "https://adventlane.se/products/adventskalender-racingbilar",
+      "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+      "prefix": "AdventLaneRacing",
+      "koncept": "MR",
+      "nummer": 1,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_NO_Racingkalendern - MR",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249067128200172",
+      "skapad": "2026-09-11T22:21:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_MR_1_H1/AdventLaneRacing_MR_1_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_MR_1_H1/AdventLaneRacing_MR_1_H1_1.mp4",
+        "market-expansion/ops/kalender/2026-09-12/se/AdventLaneRacing_MR_1_H1/AdventLaneRacing_MR_1_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "Adventskalender_PD_4_H1",
+      "mal_namn": "AdventLaneRacing_NO_PD_4_H1",
+      "page_id": "3d7270ab-908c-8153-b82f-de424d64ff42",
+      "url": "https://app.notion.com/p/Adventskalender_PD_4_H1-3d7270ab908c8153b82fde424d64ff42",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1YrxOIy6vssXslWLeBvvID83gBzX8tXOu, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1YrxOIy6vssXslWLeBvvID83gBzX8tXOu",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1YrxOIy6vssXslWLeBvvID83gBzX8tXOu?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+      "prefix": "Adventskalender",
+      "koncept": "PD",
+      "nummer": 4,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_NO_Racingkalendern - PD",
+      "adset": {
+        "id": "120249033144980172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": "120249067191790172",
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_PD_4_H1/Adventskalender_PD_4_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_PD_4_H1/Adventskalender_PD_4_H1_1.mp4",
+        "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_PD_4_H1/Adventskalender_PD_4_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "Adventskalender_PD_6_H1",
+      "mal_namn": "AdventLaneRacing_NO_PD_6_H1",
+      "page_id": "3d7270ab-908c-81b7-9bfc-cf353ae11f0a",
+      "url": "https://app.notion.com/p/Adventskalender_PD_6_H1-3d7270ab908c81b79bfccf353ae11f0a",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1uk-mfgcOtIN-WRmBWSezRB42xJ4HEsAn, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1uk-mfgcOtIN-WRmBWSezRB42xJ4HEsAn",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1uk-mfgcOtIN-WRmBWSezRB42xJ4HEsAn?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+      "prefix": "Adventskalender",
+      "koncept": "PD",
+      "nummer": 6,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_NO_Racingkalendern - PD",
+      "adset": {
+        "id": "120249033144980172",
+        "name": "ADVENTLANERACING_NO_Racingkalendern - PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": "120249067199250172",
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_PD_6_H1/Adventskalender_PD_6_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_PD_6_H1/Adventskalender_PD_6_H1_1.mp4",
+        "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_PD_6_H1/Adventskalender_PD_6_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "Adventskalender_AU_1_H1",
+      "mal_namn": "AdventLaneRacing_NO_AU_1_H1",
+      "page_id": "3d7270ab-908c-81d9-b5c4-effc75f3ee33",
+      "url": "https://app.notion.com/p/Adventskalender_AU_1_H1-3d7270ab908c81d9b5c4effc75f3ee33",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1sqf-GTPcnO7K2A1mgzjhC6GgvpGSgQ3h, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1sqf-GTPcnO7K2A1mgzjhC6GgvpGSgQ3h",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1sqf-GTPcnO7K2A1mgzjhC6GgvpGSgQ3h?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+      "prefix": "Adventskalender",
+      "koncept": "AU",
+      "nummer": 1,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_NO_Racingkalendern - AU",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": "120249067207360172",
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_AU_1_H1/Adventskalender_AU_1_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_AU_1_H1/Adventskalender_AU_1_H1_1.mp4",
+        "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_AU_1_H1/Adventskalender_AU_1_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "Adventskalender_FM_1_H1",
+      "mal_namn": "AdventLaneRacing_NO_FM_1_H1",
+      "page_id": "3d7270ab-908c-81f5-85e6-c70adedc7536",
+      "url": "https://app.notion.com/p/Adventskalender_FM_1_H1-3d7270ab908c81f585e6c70adedc7536",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s, mapp 1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1MKzZ7QZ60BKq9V38MML0lN_mJVklSA9s?usp=drive_link"
+        },
+        {
+          "id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt"
+        }
+      ],
+      "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+      "prefix": "Adventskalender",
+      "koncept": "FM",
+      "nummer": 1,
+      "variant": "H1",
+      "adset_namn": "ADVENTLANERACING_NO_Racingkalendern - FM",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": true,
+      "namn_ommarkt": true,
+      "se_ad_id": "120249067244690172",
+      "skapad": "2026-09-10T06:00:00.000Z",
+      "hub": "Racing Car Advent Calendar creative hub",
+      "fil": "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_1.mp4",
+        "market-expansion/ops/kalender/2026-09-12/se/Adventskalender_FM_1_H1/Adventskalender_FM_1_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    }
+  ],
+  "varningar": [
+    "Adventskalender_PD_4_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_NO_PD_4_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris",
+    "Adventskalender_PD_6_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_NO_PD_6_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris",
+    "Adventskalender_AU_1_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_NO_AU_1_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris",
+    "Adventskalender_FM_1_H1: prefixet \"Adventskalender\" är inte butikens (adventlaneracing_ / adventlaneracing / adventlane) — målnamnet är ommärkt till \"AdventLaneRacing_NO_FM_1_H1\"; kontrollera att creativen inte bär Bäverbutikens brand eller pris"
+  ],
+  "hamtad": "2026-09-12T13:43:27.562Z"
+}

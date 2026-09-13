@@ -17,8 +17,8 @@ Skapad 2026-09-11 av `/notionscalercs setup drytrek`. Uppdaterad 2026-09-12 (kö
 | **Recensioner** | Källan har noll (Judge.me 0, Loox null, 2026-09-09). SP-vinkeln kan inte bli social proof igen förrän butiken har riktiga omdömen. | `factory/state/drytrek--damasker.json` |
 | **`FO_1_H1` och `SP_4_H1`** | Uteslutna ur batch #1 för att talet inte gick att läsa (inget transkript). Kör `pipeline/rostkoll.py` + transkribera, sen brand-detektorn igen — då kan de laddas upp. | `factory/output/damasker/brand-detektor.md` |
 | **Hubbens 9 videor i `Creative strat review`** (Jasper Tomboc, 2026-09-02: PD_4/5/6/10, UG_1, CI_1, CO_1, CS_4, MB_1, AU_1) | Bäverbutikens produktion som följde med hubben till DryTreks teamspace. De är gjorda men aldrig granskade. Vem som granskar dem, och för vilken butik, är Axels beslut. | Notion-hubben, läst 2026-09-11 |
-| **Redigerare** | Ingen tilldelad i registret → briefronden begränsas till 7 per rond. `node factory/register.mjs redigerare drytrek/damasker "<namn>" <discord-id>` när Axel bestämt. | `factory/produkter/register.json` |
-| **Discord: state-filen ljuger** | `factory/state` säger `discord: klar false`, men servern **DryTrek — OPS** (`1547345265671934083`) finns med `#ads` och `#ads-to-do`, och boten sitter i den (kollat 2026-09-11). Rapporten kan postas. State-fältet är bara inte uppdaterat. | Discord API, läst 2026-09-11 |
+| **[LÖST 2026-09-12: Jasper Tomboc]** **Redigerare** | Ingen tilldelad i registret → briefronden begränsas till 7 per rond. `node factory/register.mjs redigerare drytrek/damasker "<namn>" <discord-id>` när Axel bestämt. | `factory/produkter/register.json` |
+| **[rapporten postas — servern funkar, 2026-09-12]** **Discord: state-filen ljuger** | `factory/state` säger `discord: klar false`, men servern **DryTrek — OPS** (`1547345265671934083`) finns med `#ads` och `#ads-to-do`, och boten sitter i den (kollat 2026-09-11). Rapporten kan postas. State-fältet är bara inte uppdaterat. | Discord API, läst 2026-09-11 |
 
 ---
 
@@ -31,9 +31,17 @@ Skapad 2026-09-11 av `/notionscalercs setup drytrek`. Uppdaterad 2026-09-12 (kö
 | **[använd i batch #2 → `SP_6_H1`]** **UGC med demo-hook** — `SP_2`:s förstapersonsberättelse, men sekund 0–3 visar kroken i snörningen i stället för att prata | `SP_2` har källans högsta CVR (3,52 %) men CPC 9,18 kr mot PD_1:s 4,98. Hypotes: vinkeln säljer, öppningen köper dyra klick. | ärvd `SP_2`, 1 304 kr / 5 köp (läst 2026-09-11) |
 | **[använd i batch #2 → `PD_13_H1`, märkt gissning]** **"Testet"** — vatten hälls över kängan med damasken på, strumpan dras av torr efteråt | Axels egen prioriterade vinkel nr 2 i produktfilen. `SP_4_H1`-copyn ("Vände upp skon efter tre mil. Strumpan helt torr") bär samma bild men har 18 kr data. ⚠️ **gissning** — ingen spend bakom. | `factory/produkter/damasker.yaml` `meta.vinklar`, `SP_4_H1` |
 | **[använd i batch #2 → `FO_2_H1`, märkt gissning]** **Före/efter samma tur** — blöt strumpa utan, torr strumpa med | Axels vinkel nr 3. `FO_1_H1` finns (49 kr, 0 köp, talet oläst). ⚠️ **gissning**. | produktfilen, ärvd `FO_1_H1` |
-| **[väntar — batch #2 var full: 7 utan redigerare]** **Grus-vinkeln** — skaka ur kängan vid varje paus, mot noll stopp | Axels vinkel nr 4. Ingen annons bär den än (G-koden i kontot är *present*, inte grus). ⚠️ **gissning**. | produktfilen `meta.vinklar` |
+| **[använd i batch #3 → `PD_15_H1` + hook `PD_12_H4`, gissning]** **Grus-vinkeln** — skaka ur kängan vid varje paus, mot noll stopp | Axels vinkel nr 4. Ingen annons bär den än (G-koden i kontot är *present*, inte grus). ⚠️ **gissning**. | produktfilen `meta.vinklar` |
 | **[använd i batch #2 → `SP_7_H1`, märkt hypotes — svag källa]** **Hundpromenaden** — hela konceptet byggt på `SP_2`:s rad "Jag testade de här på hundpromenaden i morse" | Den enda ärvda raden utanför PD som fått pengar (1 304 kr) och nästan bar sig (CPA 261 mot 243). Målgruppen i produktfilen nämner hundägare uttryckligen. | ärvd `SP_2` VO, `docs/winning-lines.md`-kandidat (inte inskriven än) |
-| **[väntar — batch #2 var full: 7 utan redigerare]** **Signalfärg/jakt** — "syns i skymningen" med neongrön/orange | Produktens fjärde säljpunkt och skälet till bonusprodukten (reflexband) i Q4-ramverket. Ingen annons bär den. ⚠️ **gissning**. | `factory/produkter/damasker.yaml` benefits, `offer.bonus_produkt` |
+| **[använd i batch #3 → `ID_2_H1`, gissning]** **Signalfärg/jakt** — "syns i skymningen" med neongrön/orange | Produktens fjärde säljpunkt och skälet till bonusprodukten (reflexband) i Q4-ramverket. Ingen annons bär den. ⚠️ **gissning**. | `factory/produkter/damasker.yaml` benefits, `offer.bonus_produkt` |
+
+## Nytt 2026-09-13 (körning nr 2)
+
+| Vad | Varför det ligger här | Källa |
+|---|---|---|
+| **Batch #2:s 6 videor i `Creative strat review`** | Jasper levererade dem 2026-09-12 men `/ops-leverans` plockar bara `To be Reviewed`, och DryTrek har ingen leveransrunda byggd. Någon måste QA:a mot briefen (tre av dem krävde ny film) och flytta statusen — eller bygga rutinen (`/notionscalercs setup drytrek` är idempotent). | Notion-hubben, läst 2026-09-13 |
+| **PD_14_1–18 (18 färgbilder, `/ops-bild`)** | 17 i `To be Reviewed` — samma leveransproblem. Vem som skapade rutinen `/ops-bild` står inte på main. | Notion-hubben, läst 2026-09-13 |
+| **Koncept-backloggen är tom** | Alla åtta ursprungliga koncept plockade (batch #2 + #3). Nästa koncept måste komma ur data (första bedömbara annonsen) eller ur swipes — `docs/swipes/` har inga damask-swipes än. | denna körning |
 
 ---
 

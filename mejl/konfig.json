@@ -1,0 +1,74 @@
+{
+  "comment": "Bäverbutikens mejlsystem: erbjudandet 'köp igen → välj en gratisprodukt' och de produkter som visas i mejlen. Ändra här, kör sedan `npm run mejl` — aldrig i mallarna. Priser, bilder och länkar hämtas ur Shopify vid varje körning, aldrig ur den här filen.",
+  "butik": {
+    "namn": "Bäverbutiken.se",
+    "url": "https://baverbutiken.se",
+    "support": "kundsupport@baverbutiken.se",
+    "grundare": "Axel",
+    "farg_rod": "#dd1d1d",
+    "farg_svart": "#000000",
+    "farg_ram": "#e8e8e1",
+    "font_rubrik_comment": "Mejlklienter laddar inga webbtypsnitt (mätt i Gmail 2026-09-12: Anton föll till Arial). Impact finns på Windows och Mac och ser ut som Anton — därför först.",
+    "font_rubrik": "Impact,'Anton','Arial Narrow','Arial Black',sans-serif",
+    "logga_comment": "Butikens riktiga logga (vit text + röd bäver på transparent, hämtad ur sajtens header 2026-09-12). Visas på svart bakgrund. Shopifys _600x200_crop_center klipper bort tomytan i 16:9-filen.",
+    "logga_url": "https://baverbutiken.se/cdn/shop/files/Namnlos_design_44_67839842-4d7e-4a47-bad7-edcdcd627348_600x200_crop_center.png?v=1776922108",
+    "logga_bredd": 240,
+    "logga_hojd": 80
+  },
+  "frakt": {
+    "packas": "0–2 arbetsdagar",
+    "sverige": "1–2 arbetsdagar med PostNord från vårt svenska lager",
+    "utland": "5–10 arbetsdagar från vårt utländska lager",
+    "angerratt_dagar": 14,
+    "retur_dagar": 30
+  },
+  "erbjudande": {
+    "kod": "TACKIGEN",
+    "minsta_kop_sek": 299,
+    "gratis_antal": 1,
+    "en_gang_per_kund": true,
+    "giltig_dagar": 30,
+    "giltig_dagar_comment": "Mejlet säger 'gäller till <orderdatum + 30 dagar>'. Shopify kan inte stänga koden per kund efter 30 dagar, så koden funkar längre än mejlet lovar — kunden förlorar aldrig på det. Hård gräns kräver ett Shopify Flow (kundtagg som tas bort efter 30 dagar + segment på taggen).",
+    "kollektion_handle": "din-gratisprodukt",
+    "kollektion_titel": "Din gratisprodukt",
+    "gratisprodukter": [
+      "baverlampa-pro",
+      "bavertratt-tanka-utan-spill",
+      "kepslampa-300-lumen-clip-on-led-pannlampa",
+      "digital-dackdjupsmatare-lcd-display"
+    ],
+    "dyra_antal": 3,
+    "dyra_override": [],
+    "dyra_krav_lager": true,
+    "kop_kollektion_handle": "alla-produkter",
+    "kop_kollektion_titel": "Alla produkter"
+  },
+  "lage": {
+    "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
+    "rabattkod_skapad": "2026-09-12",
+    "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
+    "inklistrade_comment": "v2 (erbjudandet överst, urgency, logga) inklistrad av Cowork 2026-09-12 sent på kvällen i sju mallar, verifierad efter omladdning med samma teckenlängd som artefaktens v2. v1 (se inklistrade_v1) är helt ersatt.",
+    "inklistrade": {
+      "orderbekraftelse": "2026-09-12 v2",
+      "fraktbekraftelse": "2026-09-12 v2",
+      "fraktuppdatering": "2026-09-12 v2",
+      "ute_for_leverans": "2026-09-12 v2",
+      "levererad": "2026-09-12 v2",
+      "aterbetalning": "2026-09-12 v2",
+      "avbruten_order": "2026-09-12 v2"
+    },
+    "inklistrade_v1": {
+      "orderbekraftelse": "2026-09-12",
+      "fraktbekraftelse": "2026-09-12",
+      "fraktuppdatering": "2026-09-12",
+      "ute_for_leverans": "2026-09-12",
+      "levererad": "2026-09-12",
+      "aterbetalning": "2026-09-12",
+      "avbruten_order": "2026-09-12"
+    },
+    "hoppade_over": {
+      "overgiven_kassa": "Finns inte under Inställningar → Notiser i Bäverbutiken (mätt 2026-09-12) — sköts av Shopify Email under Marknadsföring → Automatiseringar."
+    },
+    "testmejl_skickat": "2026-09-12"
+  }
+}

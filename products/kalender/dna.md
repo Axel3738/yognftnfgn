@@ -1,7 +1,7 @@
 # Creative DNA — AdventLane (Adventskalender Racingbilar)
 
 Skapad 2026-09-11 av `/notionscalercs setup kalender` (körning nr 1 — setup, ingen brief).
-**Senast uppdaterad 2026-09-12, körning nr 2 — första briefdagen (KALLSTART, batch #2).**
+**Senast uppdaterad 2026-09-13, körning nr 3 — andra briefdagen (fortfarande KALLSTART, batch #3, 21 briefer).**
 Butiks-id `kalender` (nischbutik för adventskalendrar), produkt-id
 `adventskalender-racingbilar`, registernyckel `kalender/adventskalender-racingbilar`,
 brand **AdventLane**, adventlane.se (Shopify `ikf0tu-5e`).
@@ -215,6 +215,13 @@ annons → Meta 400); rättad samma natt, se rotorsak 8.
    setup-fynd 2026-09-11 kallade NO-annonsernas 439 kr "fel pris" utifrån
    `kalender.yaml` (`valuta: SEK`) — det var fel; kontot och Axel är facit.
    Läs aldrig norskt pris ur butikskonfigen, läs det ur kontot eller fråga.
+   **Avgjort 2026-09-12 (Axel: "439 i Shopify"):** Norge-marknaden har NOK som
+   basvaluta och ett fast pris **439 NOK, jämförpris 579 NOK** i prislistan
+   "Norge NOK" — läst ur Admin-API:t och verifierat som norsk kund
+   (`Shopify.currency = NOK`, 439,00 / 579,00 kr). NO-annonsernas "579 kr → 439 kr"
+   stämmer alltså mot sidan. `kalender.yaml` säger nu `valuta: NOK`, produktfilen
+   `no_pris_nok: 439`. ⚠️ Paketnivåerna visar SEK-tal i norska vyn (848,30 kr
+   för 2 st bredvid 878 = 2 × 439) — NOK-paketnivåer är ett obyggt steg.
    NO-CS-copyns brådska ("i dag", "begrenset lager") strider mot brandets ton,
    men **Axel beslutade 2026-09-11 att inget pausas.** Marknadsfiltret i ronden
    är SE, så NO-kampanjen döms inte av nattvakten men spenderar (≈ 445 kr
@@ -235,6 +242,7 @@ annons → Meta 400); rättad samma natt, se rotorsak 8.
    pauser är inte körningens egna: de återaktiveras av Axel eller på hans
    order, aldrig av en rutin på eget bevåg. Spend-datan 2026-09-11 → tills
    sidan är uppe är därför inte jämförbar (annonserna levererade inte).
+   **Löst: sidan publicerad 2026-09-12** (`is_published: true` 11:41 UTC; alla annonser ACTIVE igen).
    **Löst 2026-09-12:** alla 16 SE-annonser ACTIVE/ACTIVE vid nattvaktens
    läsning — sidan är publicerad (av Axel, utanför repot).
 8. **`pausa()` i `tools/meta-lib.mjs` läste budgetfält på en annons** (mätt
@@ -254,6 +262,9 @@ annons → Meta 400); rättad samma natt, se rotorsak 8.
    45 kr i källan) och 13 kr totalt till källans båda vinnare. Ett nytt test-
    ABO med lika budget (regel 11 i CLAUDE.md) hade gett vinnarna data på ett
    dygn. Nattvakten pausar bara; strukturen är Axels beslut — se rapporten.
+   **Axels beslut 2026-09-12: B — CBO:n står kvar** nu när PD_1_H1 är pausad.
+   Inget test-ABO byggs. Nästa avläsning visar om Meta flyttar spenden till
+   PD_2_1 / PD_2_H1 utan strukturändring.
 11. **Nästa briefdag är redan i morgon (sön 2026-09-13)** enligt kadensen
    sön + ons. Ingen av batch #2:s sju annonser har data då. Briefdag utan
    bedömbar annons = ny kallstart-rond — kvoten fylls, men lärdomen är noll
@@ -298,3 +309,28 @@ söndag 2026-09-13 (briefdagar sön + ons).
   PD_2_x får spend efter pausen.
 - **Nästa körning:** sön 2026-09-13 är briefdag enligt kadens — troligen ny
   kallstart (rotorsak 11). Döm inget under grinden.
+
+---
+
+## Körning nr 3 — 2026-09-13, andra briefdagen (`/notionscalercs kalender/adventskalender-racingbilar`)
+
+- **Budgetrond:** kampanjen över grinden på kampanjnivå (2 410 kr, 5 köp, ROAS 1,37
+  < BE 1,54) ⇒ **sänkt 1 000 → 700 kr** (−30 %, vinst 3d −8,2 %), tillbakaläst.
+  Inga annonspauser (PD_1_H1 redan PAUSED och rörs inte). Kördag enligt registret
+  var "nej" (offset 2) men kommandot kör budgetronden varje natt — skriptets egna
+  kadensspärrar (3 dygn mellan ändringar) gäller framåt.
+- **Analys:** 0 bedömbara annonser (ingen ≥ 3 köp) ⇒ kallstart nr 2. Tabellen i
+  batch-log.md. Data utan dom: efter PD_1_H1-pausen tog **GT-adsetet** spenden
+  (1 222 kr, 3 köp, CPA 407) — inte källans PD-vinnare (55 kr tillsammans).
+- **Ärvt (livstid 2026-09-13):** PD_2_H1 CPA **263 kr** (150 → 191 → 263 på tre
+  läsningar — den ärvda benchmarken sjunker med spend; skriv aldrig in 150 kr som
+  facit igen), PD_2_1 211 kr, GT_1_H1 313 kr på 3 köp (bedömbar, +31 kr).
+- **Batch #3:** 21 briefer (12 video, 9 bild) — 11 varianter av de ärvda vinnarna,
+  10 koncept varav 6 gissningar. Jazz pingad i Discord. Plan: `batch-03/plan.json`.
+- **Copy A/B ställning:** briefade fable 4 + 11 = 15, sonnet 3 + 10 = 13.
+  Bedömbara: 0 / 0. Väg: Agent-verktyget (fyra subagenter).
+- **Rotorsak 12 — hubben rör sig snabbare än datan.** Tre av batch #2:s videor
+  gjordes, laddades upp och gick live inom ett dygn (Jazz + `/ops-leverans` +
+  `/ops-oversatt` → Approved). Bra — men det betyder att hubben töms i takt med
+  kadensen medan grinden fortfarande stoppar all dom. Nästa briefdag (ons 16/9)
+  är första chansen att läsa batch #2 med data; batch #3 tidigast sön 20/9.

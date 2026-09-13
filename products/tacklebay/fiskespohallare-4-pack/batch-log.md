@@ -108,6 +108,72 @@ Tre-frågorstestet står per rad i varje brief (sektion 8); ❌ finns bara på
 ärvda rader som briefen kräver ordagranna (winning line) och på Mikaels
 ordagranna recension — inga nyskrivna rader med ❌.
 
+### Utfall — avläst 2026-09-13 (körning nr 3)
+
+**Inget att avläsa än:** ingen av de 7 ligger i kontot. Hubben 2026-09-13:
+`PD_42_H1`, `PD_45_H1` = `in progress` · `PD_46_H1` = `Creative strat review`
+(Jasper Tomboc) · `PD_43_1`, `PD_44_1`, `SO_8_1`, `CS_7_1` = `Draft`.
+Redigerare Eric J tilldelad 2026-09-12. Hypoteserna står kvar oprövade.
+
+Kampanjen 14 d: 65 annonser, 2 170 kr, 3 köp — 0 bedömbara. 13 annonser dök
+upp utanför nattvakten (bl.a. `PD_25_H1` 534 kr / 2 köp, närmast grinden;
+`PD_16_H1` — ärvd vinnare — nu i kampanjen med 4 kr). Budgetronden sänkte
+kampanjen 1 000 → 700 kr (ROAS 0,59 på 3 köp, tillbakaläst).
+
+---
+
+## Batch #3 — 2026-09-13 · andra briefronden (`/notionscalercs`, körning nr 3)
+
+**Fortfarande kallstart** (0 bedömbara egna annonser). Redigerare **Eric J**
+⇒ kadens 21. Fördelning: 7 varianter av ärvda vinnare · 7 syskon till batch #2
+· 7 nya koncept (2 med playbook-källa, 5 hypoteser). Copy A/B: **Fable 11,
+Sonnet 9, ärvd 1.** Upp i hubben som `Draft` 2026-09-13
+(`factory/output/tacklebay/notion-batch-03-2026-09-13.json`). Pris verifierat
+2026-09-13: 289 kr, inget jämförpris.
+
+| Annons | Typ | Förälder / källa | Isolerad variabel / hypotes | Hook | Copy |
+|---|---|---|---|---|---|
+| `PD_47_H1` | video 8 s | ärvd `PD_15_H1` | längd (15 → 8 s); holden > 16,4 % | "Tre sekunder upp och ner. Fortfarande stängt." | fable |
+| `PD_48_H1` | video 12 s | ärvd `PD_15_H1` | ljud (tyst → winning line som VO) | "Trassliga fiskespön i båten – igen?" (VO) | sonnet |
+| `PD_49_1` | bild | ärvd `PD_6_1` | prisraden borttagen (offer synlig) | "Ett klick. Spöet stängt." (ärvd) | ärvd |
+| `PD_50_1` | bild | ärvd `PD_6_1` | antal synligt (fyra klämmor på fyra spön) | ärvd rubrik + "Fyra klämmor, fyra spön, fyra klick." | fable |
+| `PD_51_1` | bild | winning line (85 köp) | raden flyttad till bilden (text-tung) | "Trassliga fiskespön i båten – igen?" | sonnet |
+| `PD_57_H1` | video 14 s | ärvd `PD_16_H1` "Passar alla" (11 köp) | captions på (källan hade inga) | "Passar den mitt spö? Tunt spinnspö: klick." | fable |
+| `PD_58_1` | bild 2×2 | ärvd `SO_4_1` listicle (3 köp, prel.) | cellerna: förvaring → transport | "Fyra klämmor. Fyra platser på vägen." | sonnet |
+| `PD_52_1` | bild | `PD_45_H1` (batch #2) | format (video → statisk) | "Trasslet började i baksätet, inte vid vattnet." | fable |
+| `PD_53_1` | bild 3 steg | `PD_46_H1` (batch #2) | format (video → statisk) | "En hand. Två klick. Låst." | sonnet |
+| `PD_54_H1` | video 18 s | `PD_45_H1` (batch #2) | hooken (linan i fel ring) | "Linan i fel ring, innan du ens parkerat." | fable |
+| `PD_55_H1` | video 18 s | `PD_45_H1` (batch #2) | scen (bil → båt) | "Trasslet började på vägen ut, inte vid fiskeplatsen." | fable |
+| `SO_9_H1` | video 12 s | `SO_8_1` (batch #2) — **gissning** | format (statisk → video) | "Sju recensioner. Sju av sju ger fem stjärnor." | sonnet |
+| `SO_10_1` | bild | `SO_8_1` (batch #2) — **gissning** | antal recensioner (3 → 1) | ★★★★★ "Lätt att sätta upp och spöna sitter bra." – Fredrik | fable |
+| `CS_8_1` | bild | **hypotes** — fyra i setet + 72,25 kr/klämma | antal-nytta utan rabatt | "Tre spön i bilen. Ett set räcker." | sonnet |
+| `GT_5_1` | bild | playbook trust/anti-hype + ärvd `SO_4_1`-brödtext | trust-vinkeln på den här produkten | "Inget överstruket pris. 289 kr är priset." | fable |
+| `JF_4_1` | bild split | **hypotes** — fiende A (gummiband) | jämförelse statisk | "Gummiband glider. Klämman låser." | sonnet |
+| `JF_5_H1` | video 12 s | ärvd skaka-test + jämförelse — **hypotes** | kontrast lyfter holden | "Gummisnodd runt spöet. Skaka. Den glider." | fable |
+| `PD_56_H1` | video 15 s UGC | **hypotes** — dna mönster 3 + UGC-format | POV-rutin vs studio | "Jag klämmer fast första spöet såhär." | sonnet |
+| `PD_59_1` | bild före/efter | playbook "problem = before/after" — **hypotes** | split-format | "Samma baksäte. Skillnaden är klämman." | fable |
+| `PD_60_H1` | video 10 s macro | produktfilens problem 3 + ärvd `PD_11_H2` — **hypotes** | toppen som egen vinkel | "Toppen skaver mot rullfästet i varje kurva." | sonnet |
+| `PD_61_H1` | video 12 s | benefit "lossas med en hand" + ärvd `PD_11_H2` — **hypotes** | frisläppet, inte låset | "Bildörren upp. Spöet kommer ut låst." | fable |
+
+Tre-frågorstestet står per rad i varje brief (sektion 8). ❌ på nya rader:
+Sonnets fyra celletiketter i `PD_58_1` och etiketten "Spöet i klämman" i
+`PD_53_1` faller på "ingen annan kan säga det" — de är bildtexter, inte
+påståenden; redovisat i cellen. Fable: 0 nya rader med ❌. Kept-rader
+(winning line) bär sina ❌ som i batch #2.
+
 ### Utfall
 
 *Fylls i vid nästa briefrond när annonserna passerat grinden.*
+
+---
+
+## Översättning NO — 2026-09-12 16:00 (`/ops-oversatt tacklebay/fiskespohallare-4-pack`, körning nr 1)
+
+Kön `SE-ACTIVE to be translated`: **0 rader** (hubben Fish rod holder, 87 rader
+kontrollerade oavsett Typ — inte heller någon i `To be Reviewed`). NO-kampanjen
+`TACKLEBAY_NO_Spöhållaren` ACTIVE, 5 adsets, 11 annonser live. Inget översatt,
+inget uppladdat, HeyGen 8 826 → 8 826 credits.
+Orsak: batch #2 (7 briefer) lades upp som `Draft` i dag och ligger hos Eric J —
+färdiga annonser går via leveransrundan 14:00 och når översättningen 16:00 samma dag.
+Batchfiler: `market-expansion/ops/tacklebay/2026-09-12/`. Discord: `#annons-uppladdning`
+på TackleBay — OPS (meddelande 1548333932481880100), ingen ping.

@@ -1,0 +1,20 @@
+From: Erik Johansson <erik.johansson@gmail.com>
+To: hello@demobutiken.se
+Subject: Fick fel storlek
+Date: Thu, 10 Sep 2026 12:00:00 +0200
+Message-ID: <m11@gmail.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="000000000000abcdef"
+
+--000000000000abcdef
+Content-Type: text/plain; charset="UTF-8"
+
+Hej, jag fick fel storlek i paketet (order #1044). Beställde L men fick M.
+Kan ni skicka rätt?
+
+--000000000000abcdef
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Hej, jag fick fel storlek i paketet (order #1044). Best&auml;llde L men fick M.<br>Kan ni skicka r&auml;tt?</div>
+
+--000000000000abcdef--

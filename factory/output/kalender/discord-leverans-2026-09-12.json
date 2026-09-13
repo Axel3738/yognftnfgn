@@ -1,0 +1,26 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-12",
+  "lage": "leverans",
+  "gjort": [
+    "Facebook page is published again - all SE and NO ads deliver (page blocker from yesterday is gone)",
+    "7 videos QA-checked and uploaded LIVE in ADVENTLANERACING_SE_Racingkalendern (price 499 SEK checked against adventlane.se on every one)",
+    "PD_8_H1, PD_4_H1, PD_6_H1 -> adset PD (existing)",
+    "SY_1_H1 -> adset SY (new) · MR_1_H1 -> adset MR (new) · AU_1_H1 -> adset AU (new) · FM_1_H1 -> adset FM (new)",
+    "All 7 read back ACTIVE (FM_1_H1 still IN_PROCESS at Meta right after creation)",
+    "All 7 Notion rows moved to SE-ACTIVE to be translated - the 15:40 Norway run picks them up",
+    "Nothing paused, nothing re-activated; PD_1_H1 stays paused (night watch decision)"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "Caption typos, uploaded anyway (video rule): PD_8 `Kokladen`, `499 unior` · SY_1 `snorrar`, `Advent Lane` split · MR_1 `Advent Lane` / `jamfor pris` split · PD_6 `649 nio` / `Jock den` · AU_1 `och pappor` (should be `av papper`)",
+    "PD_8, SY_1, MR_1 show faces although the briefs asked for hands only - not a stop, but the brief rule was not followed",
+    "Two uploads stalled on the network proxy (8 min and 5 min) and were re-run - no duplicates, nothing left half-made",
+    "SE adset CS still runs the inherited copy with `bara idag` / `Begransat lager` (false urgency) - untouched by this run"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13"
+}

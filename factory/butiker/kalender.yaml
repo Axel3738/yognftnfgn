@@ -17,12 +17,13 @@ butik:
   supportmail: "hello@adventlane.se"
   land: SE
   huvudmarknad: Sverige
-  # SE + NO är standard i varje OPS (Axel 2026-09-08). SEK tills NOK slås på i
-  # admin (VA:ns klick) — NOK-paketnivåer krävs före norska annonser.
+  # SE + NO är standard i varje OPS (Axel 2026-09-08). NOK är påslaget som
+  # Norge-marknadens basvaluta (läst ur Shopify 2026-09-12: prislista "Norge NOK",
+  # fast pris 439 / 579 NOK — se produktfilens no_pris_nok). Kvar: NOK-paketnivåer.
   marknader:
     - land: NO
       locale: nb
-      valuta: SEK
+      valuta: NOK
   valuta: SEK
   moms_i_pris: true
   # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika

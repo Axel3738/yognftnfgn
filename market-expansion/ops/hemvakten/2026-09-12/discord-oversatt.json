@@ -1,0 +1,20 @@
+{
+  "brand": "HeimGuard",
+  "butik": "hemvakten",
+  "datum": "2026-09-12",
+  "lage": "oversatt",
+  "gjort": [
+    "Translation queue read: 0 rows in SE-ACTIVE to be translated (hub Surveillance Camera creative hub)",
+    "NO campaign found and ACTIVE: HEIMGUARD_NO_Overvåkingskamera (9 adsets, 27 ads live)",
+    "Nothing translated, nothing uploaded, campaign untouched. HeyGen credits: 8938 before, 8938 after"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "The queue is empty because the 13:40 delivery run for HeimGuard was built today at 15:04, after its own run time - its first run is tomorrow 13:40. The 4 finished SE images (BOF_7_1, BOF_8_1, BOF_9_1, LI_2_1) are still in To be Reviewed and reach this translation run tomorrow at 15:40",
+    "6 old rows sit in status Translation in review (from 2026-09-06, the pre-OPS flow): SP_5_H1, SP_6_H1, CO_1_H1, AU_1_H1 are already live in the NO campaign; SP_4_H1 and RI_1_H1 are not. This run only reads SE-ACTIVE to be translated, so they were left untouched"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13"
+}

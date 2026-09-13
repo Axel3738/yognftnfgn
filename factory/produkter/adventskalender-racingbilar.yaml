@@ -45,6 +45,19 @@ ekonomi:
   no_inkopskostnad_eur: 15.69
   no_inkopskostnad: 176.50
   no_ovriga_kostnader_per_order: 0
+  # NORGE (NOK) — läst ur Shopify 2026-09-12 (nattvakten, Axels besked
+  # "439 i Shopify"): marknaden Norge har NOK som basvaluta, katalogen
+  # "Norge (NOK)" med prislistan "Norge NOK" gid://shopify/PriceList/31613288791,
+  # fast pris 439 NOK + jämförpris 579 NOK på varianten 54973070934359.
+  # Verifierat som norsk kund (POST /localization, country_code=NO):
+  # Shopify.currency NOK, 439,00 / 579,00 kr. NO-annonserna säger "579 kr → 439 kr".
+  # Fasta priser följer INTE valutakursen — ändras SEK-priset måste NOK sättas om.
+  # ⚠️ Paketnivåerna (ms_paketniva) räknas fortfarande på SEK-talen och visar
+  # 848,30 / 798,40 kr för 2 st bredvid 878 kr (2 × 439) i den norska vyn —
+  # NOK-paketnivåer är ett eget, obyggt steg (PROCESS.md punkt 15–16).
+  # BE-ROAS mot norsk inköpskostnad ovan (169,09 NOK): 439 / (439 − 169,09) = 1,63.
+  no_pris_nok: 439
+  no_jamforpris_nok: 579
 
 varianter:
 media:

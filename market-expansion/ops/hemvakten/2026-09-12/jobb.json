@@ -1,0 +1,82 @@
+{
+  "butik": "HeimGuard",
+  "nyckel": "hemvakten/overvakningskameran",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "hub": {
+    "id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
+    "titel": "Surveillance Camera creative hub"
+  },
+  "kampanj": {
+    "id": "120249012332010172",
+    "namn": "HEIMGUARD_NO_Overvåkingskamera | BE-ROAS 2,11 | 2026-09-09",
+    "bas": "HEIMGUARD_NO_Overvåkingskamera",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249014130410172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - RI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249014126390172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - BOF",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249014115960172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - LI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249012910660172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - G",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249012908590172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249012735950172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - CO",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249012634980172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249012424200172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - AU",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249012421940172",
+        "name": "HEIMGUARD_NO_Overvåkingskamera - CS",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 17,
+  "lank_arvd": "https://heimguard.se/nb/products/overvakningskameran",
+  "pris_butik": {
+    "pris": 799,
+    "min": 799,
+    "max": 799,
+    "jamforpris": 1000,
+    "valuta": "SEK",
+    "titel": "Overvåkingskamera Trådløs – Dobbel linse PTZ med AI-sporing",
+    "handle": "overvakningskameran",
+    "kalla": "https://heimguard.se/nb/products/overvakningskameran.json"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [],
+  "hamtad": "2026-09-12T13:42:06.285Z"
+}

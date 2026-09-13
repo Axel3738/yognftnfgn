@@ -1,7 +1,7 @@
 # Creative DNA — DryTrek (damasker)
 
 Skapad 2026-09-11 av `/notionscalercs setup drytrek` (körning nr 0 — setup).
-**Senast uppdaterad 2026-09-12, körning nr 1 (första briefdagen, batch #2).** Butiks-id `drytrek`, produktnyckel `drytrek/damasker`,
+**Senast uppdaterad 2026-09-13, körning nr 2 (andra briefdagen, batch #3).** Butiks-id `drytrek`, produktnyckel `drytrek/damasker`,
 brand **DryTrek**, drytrek.se (Shopify `i1da39-zd`).
 
 ⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken**
@@ -228,7 +228,7 @@ Facit oförändrat.
   (50 %, 0 köp) · CS 498 · SP 170 · PD 163 kr (10 %). Källans vinnare PD_1 har
   15 kr. G-adsetet står på 3,4 × break-even-CPA utan köp. Fyra annonser under
   grinden är ingen dom — men G är den enda vinkeln utan spend i källan (45 kr)
-  OCH utan köp här. Lyft till Axel som fråga, inte som åtgärd.
+  OCH utan köp här. Lyft till Axel som fråga, inte som åtgärd. **Svar 2026-09-12: Axel pausade adsetet `DRYTREK_SE_G`** (manuellt via chatten, tillbakaläst). Mönstret får nu sitt test: går PD upp när G är borta?
 - **Mönster 6 (hypotes, OPS) — billiga klick utan köp.** `G_2_1` (bild,
   present) hade kampanjens lägsta CPC (3,5 kr) och högsta CTR (5,5 %) och
   0 köp på 480 kr. Klick-metrik säger inget om köpavsikt. Instruktion: döm
@@ -260,3 +260,73 @@ har inte haft en annonskill än, så buggen syntes först här.
    "hubben fylls inte med briefer ingen gör" — inte ett beslut av Axel.)*
 2. Hypotes 4 (OPS): PD-adsetet under 200 kr när kampanjen passerar 3 000 kr →
    `🔴 ACTION NEEDED`. Kampanjen står på 1 654 kr; PD på 163 kr. Nära.
+
+---
+
+## Körning nr 2 — 2026-09-13, Nattvakten natt 2 + andra briefdagen
+
+### Data (OPS-kampanjen, 14d = livstiden 2026-09-09 → 09-12, 4 dagsrader)
+
+| | Spend | Köp | ROAS | Mot BE 1,60 |
+|---|---:|---:|---:|---|
+| Hela kampanjen | 2 778 kr | 4 | 0,56 | under break-even — **över grinden**, budget sänkt 1 000 → 700 kr |
+
+**Bedömbara annonser: 0 av 16** (ingen har 3 köp). Fortfarande kallstart för
+feedback-loopen. Ronden pausade `CS_2_1` och `CS_1` (ny annons-regeln).
+Ärvt facit oförändrat: PD_1 vinnare (11 439 kr, 59 köp, +2 898 kr), SP_2
+förlorare (−147 kr).
+
+### Vad som syns (hypoteser, aldrig domar)
+
+- **Mönster 5, uppdaterat (hypotes, OPS) — CBO svälter demon.** 14d: CS
+  1 208 kr (2 köp) · G 1 005 kr (0) · PD 317 kr (0) · SP 249 kr (2). När
+  G pausades 09-12 gick pengarna till CS (CS_2_1 550 kr, 1 köp), inte till
+  PD. `PD_1` — källans hela bevis — har 21 kr på fyra dygn. Det är inte en
+  dom över PD; det är att CBO:n aldrig ger den chansen. **Instruktion:**
+  batch #2/#3 går upp via leveransrundan "ett adset per koncept" i samma
+  CBO — samma risk. Lyft till Axel: egen test-ABO med lika budget per
+  annons (regel 11) för de nya, eller ett minsta adset-budgetgolv på PD.
+- **Mönster 7 (hypotes, OPS) — bilderna köper klick utan köp.** Tre av fyra
+  bildannonser: G_2_1 485 kr/0 (CTR 5,5 %, CPC 3,5 kr), CS_2_1 550 kr/1,
+  PD_2_1 253 kr/0. SP_2_1 92 kr/1. Bild-CTR i den här kampanjen säger
+  inget om köp. **Instruktion:** bildbriefer döms bara på CPA; ingen
+  bild skalas på CTR. Batch #3:s fyra bilder får hypoteser i CPA.
+- **Mönster 8 (hypotes, OPS) — CS-vinkeln utan brådska bär inte.** CS fick
+  mest pengar (1 208 kr) och två köp till CPA 463–550 kr — dubbla
+  break-even. Källans CS hade 132 kr (otestad). Hypotes: erbjudandet
+  ("40 %") utan brådska och utan socialt bevis är bara ett pris.
+  **Instruktion:** inga nya CS-briefer förrän PD/SP har data; batch #3 har
+  noll CS.
+- **Hook rate på videor > 50 kr: 25–37 %**, hold 13–33 % (CS_3 bäst 32,6 %).
+  Hooken är fortfarande inte flaskhalsen.
+
+### Vad som hände utanför ronden (2026-09-12)
+
+- Axel tilldelade **Jasper Tomboc** som redigerare → briefronden 21.
+- Jasper **levererade 6 av 7 batch #2-briefer samma dag** (Drive-länkar i
+  raderna, status `Creative strat review`). Inte live: DryTrek saknar
+  leveransrunda, och rundan plockar `To be Reviewed`. ⚠️ Tre av videorna
+  krävde ny film enligt briefen — QA innan de går upp.
+- En annan rutin (`/ops-bild`, inte på main) skapade **18 färgbilder
+  PD_14_1–18** i hubben (17 `To be Reviewed`). AD-ID PD_14 upptaget.
+- Axel pausade adsetet `DRYTREK_SE_G` (dagtid, manuellt).
+
+### Copy-modell A/B (Axels beslut 2026-09-10)
+
+Batch #3: 10 `copy_model: fable` / 11 `sonnet`. Hook-only-varianter
+skrivs av förälderns modell (fable: PD_12_H3/H4, PD_13_H2; sonnet: SP_6_H2,
+SP_7_H2, FO_2_H2). Ackumulerat: fable 14 briefer, sonnet 14. Ställning:
+**0 bedömbara per modell** — inget av batch #2/#3 är live. Avgörs när båda
+har ≥ 5 bedömbara.
+
+### Instruktion till nästa briefdag (2026-09-16, onsdag)
+
+1. Batch #2 kan vara live via leveransrundan då — läs utfallet per annons
+   mot hypotesen i batch-log. Hook-familjen PD_12_H1–H4: gruppera hook rate
+   per hook-typ (påstående / fråga / siffra / negation).
+2. Backloggen är tom på koncept: nästa batch ska växa ur första bedömbara
+   annonsen, inte ur nya gissningar. Finns ingen bedömbar 09-16: bara
+   varianter av det som fått mest spend, och rapportera "inga nya koncept
+   — ingen data".
+3. Hypotes 4 (OPS) står kvar: PD-adsetet har 317 kr när kampanjen passerat
+   2 778 kr → ACTION NEEDED i natt.

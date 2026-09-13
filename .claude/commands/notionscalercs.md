@@ -92,6 +92,15 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    Annars lämna tomt — rapporten säger då "ingen redigerare tilldelad" och
    briefronden begränsas till 7 per rond (en dags produktion) i stället för
    kadensens 21, så hubben inte fylls med briefer ingen gör.
+   **Säger Axel uttryckligen att ronden ändå ska få fler** (CatCabin
+   2026-09-12: "redigerare obestämt men leverera 21 briefer ändå den första
+   ronden, jag fixar redigerare asap"), skriv in det som en överstyrning —
+   aldrig som ett tal i huvudet:
+   `node factory/register.mjs briefantal <nyckel> 21 "Axels beslut <datum>: …"`.
+   Engång som standard: `brief-kord` i rutinens steg 8 förbrukar den, och
+   nästa rond går på 7 igen tills `redigerare` är satt. `--tillsvidare`
+   låter den stå; `briefantal <nyckel> auto` tar bort den. Raden
+   `Briefrond:` i `node factory/register.mjs <nyckel>` är facit för rutinen.
 5. **Torrkörning av allt.** I ordning, visa utskrifterna:
    ```
    node factory/budgetrond.mjs <nyckel> --idag <datum> --torr
@@ -234,8 +243,13 @@ nya briefer den här ronden. Rapportera "waiting for editor — N briefs
 still in Draft" under ACTION NEEDED och gå till steg 8. (Mätt 2026-09-12:
 fyra butiker fick 7 briefer var på lördagen och skulle fått 7 till på
 söndagen utan att någon gjort en enda.)
-Storlek: `factory/kadens.mjs` (7/dag × 3 = 21, hälften varianter av vinnare,
-hälften nya koncept) när en redigerare är tilldelad; annars **7**. Varje
+Storlek: **raden `Briefrond:` i `node factory/register.mjs <nyckel>` är
+facit** — `factory/kadens.mjs` (7/dag × 3 = 21, hälften varianter av vinnare,
+hälften nya koncept) när en redigerare är tilldelad; annars **7**; eller
+Axels överstyrning (`briefantal`, t.ex. CatCabin 2026-09-12: 21 första
+ronden trots ingen redigerare). En engångsöverstyrning gäller före stoppet
+ovan den ronden — Axel har tagit beslutet själv — och förbrukas av
+`brief-kord` i steg 8; skriptet säger då vad nästa rond går på. Varje
 variant pekar på sin förälder och isolerar EN variabel. Varje nytt koncept
 pekar på playbook, winning line eller swipe — annars märks det `gissning`.
 **Minst två av raderna är bildannonser** (Axels beslut 2026-09-12: bild är
@@ -311,7 +325,7 @@ varningar, raderna ligger kvar i Draft och `/ops-bild <nyckel>` tar dem senare.
 - [ ] Briefdag avläst ur registret (JA/NEJ med skäl)
 - [ ] *(briefdag)* ANALYSMETOD:s snabbchecklista avbockad; vinstbidragstabellen visad; "för tidigt" utanför rankingen; ärvd historik märkt ÄRVD
 - [ ] *(briefdag)* Feedback-loop: varje annons i förra batchen har sitt utfall i batch-log.md; ≥ 3 mönster med bevisad/hypotes; dna.md uppdaterad — eller "kallstart" utskrivet
-- [ ] *(briefdag)* Batch enligt kadens (21 med redigerare / 7 utan), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
+- [ ] *(briefdag)* Batch enligt registrets `Briefrond:`-rad (21 med redigerare / 7 utan / Axels `briefantal`-överstyrning), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
 - [ ] *(briefdag)* Copy av subagent, varannan fable/sonnet, taggen i VARIABELTAGGAR, tre-frågorstestet redovisat, vägen (Agent/API) rapporterad
 - [ ] *(briefdag)* Rader skapade i hubben via `tools/notion-brief.mjs` — resultat med url visat
 - [ ] Discord-rapport postad på engelska i butikens server; ping bara under ACTION NEEDED

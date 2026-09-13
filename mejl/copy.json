@@ -1,0 +1,88 @@
+{
+  "comment": "All kundtext i mejlen. Skriven av en Sonnet-subagent 2026-09-12 enligt docs/copy-regler.md (CLAUDE.md regel 6), struktur och faktakoll av huvudsessionen. Erbjudandeblocket omskrivet samma kväll efter Axels feedback (överst, wow, urgency). Platshållare: {{förnamn}} {{ordernummer}} {{fraktbolag}} {{belopp}} {{slutdatum}} — mallmotorn byter dem mot Liquid. Ändra text här, aldrig i mallar.mjs. Första ämnesraden och första preheadern är den som används; övriga är A/B-reserver.",
+  "upsell": {
+    "forrubrik": "Din tack-gåva",
+    "rubrik": "Välj 1 av 4 — helt gratis",
+    "text": "Nästa gång du handlar för minst 299 kr väljer du en av fyra produkter gratis — värde upp till 199 kr. Knappen lägger på koden åt dig automatiskt.",
+    "urgency": "Gäller till {{slutdatum}} — vissa produkter finns bara i begränsat antal.",
+    "kod_etikett": "Din kod:",
+    "knapp": "Hämta min gratisprodukt",
+    "valj_rubrik": "Fyra att välja mellan",
+    "dyra_rubrik": "Passa på när du ändå får en gratis",
+    "dyra_text": "Tre av butikens dyraste produkter just nu — gratisprodukten följer med även på de här.",
+    "finstilt": "Gäller vid nästa köp, minst 299 kr, en gång per kund, till och med {{slutdatum}}. Kombineras inte med andra koder."
+  },
+  "orderbekraftelse": {
+    "amne": ["{{förnamn}}, {{ordernummer}} är mottagen – vi packar", "Vi har din order {{ordernummer}}", "Bekräftelse: {{ordernummer}}"],
+    "preheader": ["Så här går det till härifrån, steg för steg.", "Packas inom 0–2 arbetsdagar."],
+    "rubrik": "Tack för din beställning!",
+    "intro": "Vi har tagit emot din order {{ordernummer}}. Här är exakt vad som händer nu.",
+    "knapp": "Följ din order",
+    "steg_rubrik": "Vad händer nu?",
+    "steg1": "Vi packar din order inom 0–2 arbetsdagar.",
+    "steg2": "Paketet skickas — du får ett mejl med spårningslänk samma stund. Hittar du det inte, kolla skräpposten.",
+    "steg3": "Framme hos dig: 1–2 arbetsdagar med PostNord från vårt svenska lager, 5–10 arbetsdagar från vårt utländska lager. Alltid spårbart.",
+    "grundare": "Tack för din beställning! Om något är fel eller känns oklart, mejla kundsupport@baverbutiken.se så tittar jag på det personligen.",
+    "faq_rubrik": "Vanliga frågor",
+    "faq": [
+      ["När skickas min order?", "Vi behandlar ordern inom 0–2 arbetsdagar. När den skickas får du ett mejl med spårningslänk."],
+      ["Hur lång är leveranstiden?", "1–2 arbetsdagar med PostNord från vårt svenska lager, 5–10 arbetsdagar från vårt utländska lager. Frakten är alltid spårbar."],
+      ["Kan jag ångra eller returnera?", "Du har 14 dagars ångerrätt och 30 dagars returpolicy. Ångerfunktionen finns i sidfoten på baverbutiken.se."],
+      ["Jag vill ändra något i ordern", "Mejla kundsupport@baverbutiken.se så fort som möjligt — innan ordern packats hinner vi oftast fixa det."]
+    ]
+  },
+  "fraktbekraftelse": {
+    "amne": ["Ditt paket är på väg", "{{ordernummer}} har lämnat lagret", "På väg till dig nu"],
+    "preheader": ["Spårningslänken finns här.", "Kolla skräpposten om du inte ser mejlet."],
+    "rubrik": "Paketet är på väg!",
+    "intro": "Din order {{ordernummer}} har lämnat lagret och är på väg med {{fraktbolag}}.",
+    "knapp": "Spåra paketet",
+    "tips": "Spårningen kan ta några timmar att aktiveras — visar länken inget än, prova igen i kväll."
+  },
+  "fraktuppdatering": {
+    "amne": ["Ny info om ditt paket", "Spårningen är uppdaterad", "Uppdatering: {{ordernummer}}"],
+    "preheader": ["Så här ligger det till just nu.", "Se de senaste uppgifterna här."],
+    "rubrik": "Spårningen är uppdaterad",
+    "intro": "Spårningsuppgifterna för din order {{ordernummer}} har uppdaterats hos {{fraktbolag}}.",
+    "knapp": "Spåra paketet"
+  },
+  "ute_for_leverans": {
+    "amne": ["Paketet kommer idag", "Ute för leverans nu", "{{ordernummer}} levereras idag"],
+    "preheader": ["Håll utkik under dagen.", "Snart i din brevlåda eller hos ombudet."],
+    "rubrik": "Paketet kommer idag",
+    "intro": "Din order {{ordernummer}} är ute för leverans med {{fraktbolag}} och kommer fram under dagen.",
+    "knapp": "Spåra paketet"
+  },
+  "levererad": {
+    "amne": ["Paketet är levererat", "Din order har kommit fram", "{{ordernummer}} är levererad"],
+    "preheader": ["Hoppas allt stämmer.", "Vi vill gärna höra vad du tycker."],
+    "rubrik": "Ditt paket är levererat",
+    "intro": "Din order {{ordernummer}} har levererats av {{fraktbolag}}.",
+    "problem": "Är något fel eller trasigt, mejla kundsupport@baverbutiken.se inom 30 dagar så löser vi det.",
+    "recension_text": "Har du två minuter? Ett omdöme hjälper nästa kund att välja rätt.",
+    "recension_knapp": "Lämna ett omdöme"
+  },
+  "overgiven_kassa": {
+    "amne": ["Du glömde något i kassan", "Dina varor väntar fortfarande", "Kvar i kassan: din beställning"],
+    "preheader": ["Varorna ligger kvar, redo när du är.", "Bara en påminnelse."],
+    "rubrik": "Dina varor väntar i kassan",
+    "intro": "Vi har sparat varorna i din kundvagn — du behöver bara slutföra köpet.",
+    "knapp": "Slutför köpet",
+    "trygghet": "14 dagars ångerrätt och spårbar frakt på alla köp."
+  },
+  "aterbetalning": {
+    "amne": ["{{belopp}} är återbetalat", "Din återbetalning är klar", "Pengarna är på väg tillbaka"],
+    "preheader": ["Syns på kontot inom 5–10 bankdagar.", "Så här ligger det till."],
+    "rubrik": "Din återbetalning är genomförd",
+    "intro": "{{belopp}} är återbetalat för order {{ordernummer}}. Det är bankens tid som gäller — pengarna syns på kontot inom 5–10 bankdagar."
+  },
+  "avbruten_order": {
+    "amne": ["Din order är avbruten", "{{ordernummer}} har avbrutits", "Ordern gick inte igenom"],
+    "preheader": ["Inga pengar dras.", "Redan dragna pengar återbetalas."],
+    "rubrik": "Din order är avbruten",
+    "intro": "Order {{ordernummer}} är avbruten. Pengar dras inte — är de redan dragna återbetalas de automatiskt."
+  },
+  "sidfot": {
+    "fragor": "Frågor om din order? Svara på det här mejlet eller skriv till kundsupport@baverbutiken.se."
+  }
+}

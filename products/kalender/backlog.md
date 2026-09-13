@@ -12,7 +12,9 @@ eller konkurrent-signal i `docs/swipes/`. Kan den inte det är den märkt
 | Vad | Varför det ligger här | Källa |
 |---|---|---|
 | **Copyn i OPS-kampanjen läses ur kontot** | Bygget 2026-09-10 är inte loggat i repot. Innan någon ärvd annons dupliceras måste det stå svart på vitt om brådskan (CS), det påhittade citatet och "30 dagars öppet köp" (SP) och länken följde med. | `dna.md` "Vad AdventLane måste ändra", mätt 2026-09-11 |
-| **`kalender.yaml` släpar efter kontot på norskt pris** | Norge kostar 439 kr, Sverige 499 kr (Axel 2026-09-11), men `marknader[0].valuta: SEK` och inget norskt pris står i konfigen. Valutan (NOK eller SEK) är inte bekräftad — fråga Axel innan fältet skrivs, så nästa bygge inte gissar. | Axels besked 2026-09-11; kontot `_NO_CS_*` |
+| ~~`kalender.yaml` släpar efter kontot på norskt pris~~ **KLART 2026-09-12** | Shopify har 439 NOK / jämförpris 579 NOK som fast pris (prislista "Norge NOK"), verifierat som norsk kund. `kalender.yaml` → `valuta: NOK`, produktfilen → `no_pris_nok: 439`. | Axel 2026-09-12 "439 i Shopify"; Admin-API |
+| **NOK-paketnivåer** | I norska vyn visar paketen SEK-räknade tal (848,30 / 798,40 kr för 2 st) bredvid 878 kr (2 × 439). Samma öppna steg som CaraShell (PROCESS.md punkt 15–16) — byggs inte av nattvakten. | mätt 2026-09-12 som norsk kund |
+| ~~Kampanjstruktur (CBO vs test-ABO)~~ **AVGJORT 2026-09-12: B** | CBO:n står kvar, inget test-ABO. Bevaka om PD_2_1 / PD_2_H1 får spend efter pausen av PD_1_H1. | Axels beslut 2026-09-12 |
 | **Brådskan i NO-CS-copyn** | "i dag", "begrenset lager", "før den er utsolgt" strider mot brandets ton (inga utropstecken, ingen nedräkning). Axel beslutade 2026-09-11 att inget pausas — ersätt med lugn variant i nästa NO-batch i stället. | kontot 2026-09-11; `kalender.yaml` branding |
 | **`kalla.no_kampanjmonster` i produktfilen** | `kallannonser.mjs` faller tillbaka på `gamasj\|damask` (DryTrek) när fältet saknas och läser fel produkts norska historik. Sätt fältet (eller gör defaulten till ett stopp) före nästa `/ny-annonser` för en kalender. | `factory/kallannonser.mjs` rad 163, mätt 2026-09-11 |
 | **Ny leverantörslänk** | COGS kvitterad 2026-09-11 (142,27 kr + 3 EUR tull/order). Men Temu-länken i produktfilen svarar "discontinued" — ny leverantör krävs före inköp. | `factory/produkter/adventskalender-racingbilar.yaml` |
@@ -46,5 +48,7 @@ briefade av någon annan — de markeras "täckt av hubbraden" och briefas inte 
 
 | Idé | Varför | Källa |
 |---|---|---|
-| **Textfri produktbild** — öppnad kalender med bilar, ingen text i bild, PD-copyn i copy card | Variabeln textmängd är otestad; `PD_2_1`:s textmängd är inte läst ur kontot än (kräver bildnedladdning). | winning line `PD_2_1` — läs bilden först |
-| **"Alternativ till godis" som hook** — Saras recension ordagrant | Tre av tio recensioner säger det självmant. Skiljer sig från RV/TR (som citerar andra rader). | produktfilens `reviews` — kolla RV_1/RV_2:s citat först så det inte dubbleras |
+| ~~**Textfri produktbild**~~ | **[använd i batch #3]** → `AdventLaneRacing_PD_2_2` (variant av PD_2_1, variabel textmängd). | winning line `PD_2_1` |
+| ~~**"Alternativ till godis" som hook**~~ | **[använd i batch #3]** → `AdventLaneRacing_SP_4_1`. Kontrollerat 2026-09-13: hubbens RV_1_1 citerar Anna, RV_2_1/TR_1_H1/TR_2_1 citerar Johan — Sara och Erik var lediga; SP_6_H1 fick därför Daniel i stället för Johan. | produktfilens `reviews` |
+| **Övriga lediga recensioner för citat-kort** — Peter, Sofia, Maria, Linda, Emma | Johan (×3), Anna, Sara, Erik, Daniel är använda i hubben efter batch #3. Fem riktiga rader kvar. | produktfilens `reviews`, läst 2026-09-13 |
+| **Hook-swap-serien på PD_2_H1 är uttömd på idéer med källa** | H2–H8 testar tomt omslag, slutresultat, demo först, fråga, siffra+negation, ingen röst, 6 s. Nästa hook-variant ska bygga på VILKEN av dem som vann — inte på fler gissningar. | batch #2–#3 |

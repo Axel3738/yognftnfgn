@@ -1,0 +1,16 @@
+{
+ "adventlane": {
+  "produkt": "Adventskalender racerbiler",
+  "link": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "pris_nok": 439,
+  "videos": {
+   "AdventLaneRacing_PD_8_H1": "3d8270ab-908c-81db-83cb-e0858c529cfc",
+   "AdventLaneRacing_SY_1_H1": "3d8270ab-908c-819d-9f59-c2c28386ee7e",
+   "AdventLaneRacing_MR_1_H1": "3d8270ab-908c-8111-8aa8-efda76fabaed",
+   "AdventLaneRacing_PD_4_H1": "3d7270ab-908c-8153-b82f-de424d64ff42",
+   "AdventLaneRacing_PD_6_H1": "3d7270ab-908c-81b7-9bfc-cf353ae11f0a",
+   "AdventLaneRacing_AU_1_H1": "3d7270ab-908c-81d9-b5c4-effc75f3ee33",
+   "AdventLaneRacing_FM_1_H1": "3d7270ab-908c-81f5-85e6-c70adedc7536"
+  }
+ }
+}

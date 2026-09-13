@@ -27,7 +27,11 @@ hub (dit `/ops-leverans` lade dem), översätter till norska, laddar upp
 1. **Rendera aldrig före proofread.** Rendering drar HeyGen-credits.
 2. **Skanna källvideon efter inbränd svensk text** — HeyGen översätter bara ljudet.
 3. **`python3 pipeline/rostkoll.py` på varje renderad video.** ❌ laddas inte upp.
-4. **Norska priser finns inte.** OPS-butikerna tar SEK-pris även på `/nb`
+4. **Norska priser finns inte — utom där produktfilen säger annat.** Har
+   `factory/produkter/<id>.yaml` fältet `no_pris_nok` (AdventLane: 439 / 579 NOK,
+   Axels besked ur Shopify 2026-09-12) är DET priset facit för all norsk copy,
+   dubb och captions — aldrig SEK-talet. Saknas fältet gäller resten av punkten:
+   OPS-butikerna tar SEK-pris även på `/nb`
    (`factory/butiker/*.yaml`, NOK ej påslaget). Norsk copy skrivs **utan
    pris**, precis som TankGuards NO-kampanj. En SE-bild med inbränt pris
    översätts med priset kvar i SEK och "kr" — aldrig ett påhittat NOK-pris.

@@ -1,0 +1,148 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-13",
+  "lage": "brief",
+  "siffror": {
+    "spend_7d": 2778,
+    "kop_7d": 4,
+    "roas_7d": 0.56,
+    "briefs_nya": 21
+  },
+  "gjort": [
+    "Budget round: DRYTREK_SE campaign 1 000 -> 700 SEK/day (over the data gate now: 2 778 SEK, 4 purchases, ROAS 0.56 vs break-even 1.60; 3-day margin -115 %). Read back, logged.",
+    "Paused ads DryTrek_Damasker_CS_2_1 (550 SEK, 1 purchase) and CS_1 (463 SEK, 1 purchase): over 3 x target CPA without profit. Read back, logged. Nothing activated; the G ad set stays paused (Axel, 12 Sep).",
+    "Still a cold start: 0 of 16 ads have 3 purchases. Spend by angle: CS 1 208 / G 1 005 / PD 317 / SP 249 SEK. The proven demo PD_1 has 21 SEK in 4 days.",
+    "21 new briefs in the Damasker vandring hub as Draft (editor Jasper, cadence 7/day x 3): 11 variants (hook tests on the batch #2 films, 4 images) + 10 new concepts. Copy A/B: 10 Fable, 11 Sonnet.",
+    "dna.md, batch-log.md, backlog.md updated and pushed."
+  ],
+  "briefer": [
+    {
+      "namn": "DryTrek_Damasker_PD_12_H3",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_12_H3-3d9270ab908c81fb8b79fdc6593df950"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_H4",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_12_H4-3d9270ab908c81e08613ca17daebceaa"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_2",
+      "typ": "image",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_12_2-3d9270ab908c8137bdc1de35b8ff6d05"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_3",
+      "typ": "image",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_12_3-3d9270ab908c814fa48adc171a44d9c7"
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_6_H2",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_SP_6_H2-3d9270ab908c814f95fbcc0c18d75822"
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_8_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_SP_8_H1-3d9270ab908c8129809fc5d545d0c61d"
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_H2",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_SP_7_H2-3d9270ab908c81bd800ef9dd0ab90c37"
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_SP_7_1-3d9270ab908c8165835bf111b25e3429"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_13_H2",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_13_H2-3d9270ab908c810eb90efd42f6db7f99"
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_2_1",
+      "typ": "image",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_FO_2_1-3d9270ab908c816c83efc23ec804c1d7"
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_2_H2",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_FO_2_H2-3d9270ab908c81c2b7eef87fa4c02e52"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_15_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_15_H1-3d9270ab908c81348e71d6d4fb908509"
+    },
+    {
+      "namn": "DryTrek_Damasker_ID_2_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_ID_2_H1-3d9270ab908c8104bd92f7b9b379a8ae"
+    },
+    {
+      "namn": "DryTrek_Damasker_CO_3_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_CO_3_H1-3d9270ab908c813d8af3f4d7c0f243cb"
+    },
+    {
+      "namn": "DryTrek_Damasker_FO_3_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_FO_3_H1-3d9270ab908c812b807ee6279199699f"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_16_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_16_H1-3d9270ab908c8100ac5bd18ee09e847f"
+    },
+    {
+      "namn": "DryTrek_Damasker_CI_3_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_CI_3_H1-3d9270ab908c81a18d35f23aee230f1f"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_17_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_PD_17_H1-3d9270ab908c81c4837df70d1c7eb69d"
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_9_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_SP_9_H1-3d9270ab908c81fc97c9f04898f19270"
+    },
+    {
+      "namn": "DryTrek_Damasker_BOF_10_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_BOF_10_H1-3d9270ab908c81ef9a11e93c04b95e62"
+    },
+    {
+      "namn": "DryTrek_Damasker_BOF_11_H1",
+      "typ": "video",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_BOF_11_H1-3d9270ab908c8112b31bd84da9eb6f7a"
+    }
+  ],
+  "varningar": [
+    "Jasper delivered 6 of 7 batch #2 videos on 12 Sep (Drive links in the rows) but they sit in status Creative strat review. The delivery run only picks up To be Reviewed, and DryTrek has NO delivery/translation routine built yet — nothing goes live by itself.",
+    "18 colour images DryTrek_Damasker_PD_14_1-18 were created by /ops-bild on 12 Sep (17 in To be Reviewed, PD_14_3 rejected: yellow rendered as neon green). Same delivery gap.",
+    "Three delivered batch #2 videos (PD_13_H1 water test, FO_2_H1 split legs, SP_7_H1 dog walk) were briefed as needing NEW footage. Check what they were built from before they go live.",
+    "CBO starves the demo: after G was paused the money went to CS (now paused too), not to PD. New ads go into the same CBO via the delivery run — same risk.",
+    "Batch #3 has 9 briefs that need new footage (grit, hunter at dusk, wet trouser leg, autumn trail, mushroom forest, and the image/hook siblings of PD_13/FO_2/SP_7). The hook-only variants and images can be built today from the batch #2 exports."
+  ],
+  "action_axel": [
+    "Build DryTrek's delivery + translation routines: run `/notionscalercs setup drytrek` again (it is idempotent and only adds what is missing). Until then the 6 delivered videos and 17 images never reach Meta.",
+    "Decide how the new creatives go live: a separate test ad set with equal budget per ad (rule 11), or a minimum budget on the PD ad set. In the current CBO the proven demo gets 11 % of spend and nothing new gets a fair read."
+  ],
+  "action_redigerare": [
+    {
+      "discord_id": "740814777374343259",
+      "namn": "Jasper Tomboc",
+      "rader": [
+        "21 new Draft briefs in the Damasker vandring hub (links above). Start with the hook-only variants and the 4 images — they build from your batch #2 exports.",
+        "Your 6 delivered batch #2 videos are in Creative strat review. If they are final, set them to To be Reviewed — that is the status the delivery run picks up."
+      ]
+    }
+  ],
+  "nasta_korning": "2026-09-14 (budget) · 2026-09-16 (briefs, Wednesday)"
+}

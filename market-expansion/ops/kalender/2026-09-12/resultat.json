@@ -1,0 +1,200 @@
+{
+ "AdventLaneRacing_NO_PD_8_H1": {
+  "ok": true,
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "kampanj": {
+   "id": "120249031977180172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+   "bas": "ADVENTLANERACING_NO_Racingkalendern"
+  },
+  "adset": {
+   "id": "120249033144980172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern - PD",
+   "skapad": false
+  },
+  "annons": {
+   "id": "120249068363040172",
+   "namn": "AdventLaneRacing_NO_PD_8_H1",
+   "status": "ACTIVE",
+   "effective_status": "IN_PROCESS"
+  },
+  "creative_id": "4480401795552724",
+  "media": {
+   "typ": "video",
+   "id": "1654666892844451"
+  },
+  "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "dsa": null,
+  "torr": false,
+  "sek": 48,
+  "tid": "2026-09-12T14:21:38.347Z"
+ },
+ "AdventLaneRacing_NO_SY_1_H1": {
+  "ok": true,
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "kampanj": {
+   "id": "120249031977180172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+   "bas": "ADVENTLANERACING_NO_Racingkalendern"
+  },
+  "adset": {
+   "id": "120249068364510172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern - SY",
+   "skapad": true
+  },
+  "annons": {
+   "id": "120249068365820172",
+   "namn": "AdventLaneRacing_NO_SY_1_H1",
+   "status": "ACTIVE",
+   "effective_status": "IN_PROCESS"
+  },
+  "creative_id": "28275885865371820",
+  "media": {
+   "typ": "video",
+   "id": "4698017880454595"
+  },
+  "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "dsa": null,
+  "torr": false,
+  "sek": 64,
+  "tid": "2026-09-12T14:22:41.974Z"
+ },
+ "AdventLaneRacing_NO_MR_1_H1": {
+  "ok": true,
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "kampanj": {
+   "id": "120249031977180172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+   "bas": "ADVENTLANERACING_NO_Racingkalendern"
+  },
+  "adset": {
+   "id": "120249068367380172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern - MR",
+   "skapad": true
+  },
+  "annons": {
+   "id": "120249068371220172",
+   "namn": "AdventLaneRacing_NO_MR_1_H1",
+   "status": "ACTIVE",
+   "effective_status": "IN_PROCESS"
+  },
+  "creative_id": "928217833683807",
+  "media": {
+   "typ": "video",
+   "id": "1091349220036036"
+  },
+  "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "dsa": null,
+  "torr": false,
+  "sek": 64,
+  "tid": "2026-09-12T14:23:46.155Z"
+ },
+ "AdventLaneRacing_NO_PD_4_H1": {
+  "ok": true,
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "kampanj": {
+   "id": "120249031977180172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+   "bas": "ADVENTLANERACING_NO_Racingkalendern"
+  },
+  "adset": {
+   "id": "120249033144980172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern - PD",
+   "skapad": false
+  },
+  "annons": {
+   "id": "120249068376090172",
+   "namn": "AdventLaneRacing_NO_PD_4_H1",
+   "status": "ACTIVE",
+   "effective_status": "IN_PROCESS"
+  },
+  "creative_id": "1492593532675634",
+  "media": {
+   "typ": "video",
+   "id": "1099819822574015"
+  },
+  "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "dsa": null,
+  "torr": false,
+  "sek": 50,
+  "tid": "2026-09-12T14:24:36.591Z"
+ },
+ "AdventLaneRacing_NO_PD_6_H1": {
+  "ok": true,
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "kampanj": {
+   "id": "120249031977180172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+   "bas": "ADVENTLANERACING_NO_Racingkalendern"
+  },
+  "adset": {
+   "id": "120249033144980172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern - PD",
+   "skapad": false
+  },
+  "annons": {
+   "id": "120249068384650172",
+   "namn": "AdventLaneRacing_NO_PD_6_H1",
+   "status": "ACTIVE",
+   "effective_status": "IN_PROCESS"
+  },
+  "creative_id": "1820681306048640",
+  "media": {
+   "typ": "video",
+   "id": "28298764599817967"
+  },
+  "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "dsa": null,
+  "torr": false,
+  "sek": 60,
+  "tid": "2026-09-12T14:25:36.372Z"
+ },
+ "AdventLaneRacing_NO_AU_1_H1": {
+  "ok": true,
+  "butik": "AdventLane",
+  "nyckel": "kalender/adventskalender-racingbilar",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "kampanj": {
+   "id": "120249031977180172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern | BE-ROAS 1,62 | 2026-09-10",
+   "bas": "ADVENTLANERACING_NO_Racingkalendern"
+  },
+  "adset": {
+   "id": "120249068464680172",
+   "namn": "ADVENTLANERACING_NO_Racingkalendern - AU",
+   "skapad": true
+  },
+  "annons": {
+   "id": "120249068473210172",
+   "namn": "AdventLaneRacing_NO_AU_1_H1",
+   "status": "ACTIVE",
+   "effective_status": "IN_PROCESS"
+  },
+  "creative_id": "1085776237146385",
+  "media": {
+   "typ": "video",
+   "id": "1543107850888206"
+  },
+  "lank": "https://adventlane.se/nb/products/adventskalender-racingbilar",
+  "dsa": null,
+  "torr": false,
+  "sek": 509,
+  "tid": "2026-09-12T14:34:07.623Z"
+ }
+}

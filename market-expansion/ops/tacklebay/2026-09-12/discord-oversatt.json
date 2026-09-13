@@ -1,0 +1,19 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay",
+  "datum": "2026-09-12",
+  "lage": "oversatt",
+  "gjort": [
+    "Translation queue read: 0 rows in SE-ACTIVE to be translated (hub Fish rod holder, 87 rows checked regardless of type)",
+    "NO campaign found and ACTIVE: TACKLEBAY_NO_Spöhållaren (5 adsets, 11 ads live)",
+    "Nothing translated, nothing uploaded, campaign untouched. HeyGen credits: 8826 before, 8826 after"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "The queue is empty because nothing has reached To be Reviewed yet: the hub has 0 rows there. Batch #2 (7 briefs, uploaded today as Draft) is with editor Eric J - finished ads go through the 14:00 delivery run first and reach this translation run the same afternoon at 16:00"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-13"
+}

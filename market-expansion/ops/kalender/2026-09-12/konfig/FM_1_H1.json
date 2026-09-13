@@ -1,0 +1,19 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/ops/kalender/2026-09-12/out/adventlane_AdventLaneRacing_FM_1_H1.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/ops/kalender/2026-09-12/no/AdventLaneRacing_NO_FM_1_H1.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/ops/kalender/2026-09-12/srt-fix/adventlane_AdventLaneRacing_FM_1_H1.srt",
+ "captions": {
+  "zon": [
+   1113,
+   1401
+  ],
+  "max_chars": 26,
+  "font_px": 45,
+  "standard_cy": 1251,
+  "pad_x": 21,
+  "pad_y": 24
+ },
+ "blur": [],
+ "lager": [],
+ "qa": "/home/user/yognftnfgn/market-expansion/ops/kalender/2026-09-12/qa"
+}

@@ -235,3 +235,171 @@ källans PD-vinnare, och den har 2 köp till 419 kr. Data, ej dom.
 Ärvd historik (`--arv`, livstid): 4 384 kr, 19 köp, ROAS 2,65, AOV 611 kr.
 PD_2_H1 191 kr CPA / 9 köp / vinst 1 192 kr · PD_2_1 192 kr / 8 köp / 1 045 kr ·
 GT_1_H1 408 kr / 2 köp (nu över BE). Regression mot 2026-09-11 noterad i dna.md.
+
+---
+
+## Leveransrunda `/ops-leverans` 2026-09-12 — 7 uppladdade LIVE i SE-kampanjen
+
+Sidan `1304279782771044` publicerad sedan gårdagen (`is_published: true` 2026-09-12 11:41 UTC),
+SE 15/16 ACTIVE (PD_1_H1 pausad av nattvakten 00:32), NO 16/16 ACTIVE. Blockeringen borta.
+
+Kön: 7 videorader i `To be Reviewed` — gårdagens 4 (filer byte för byte samma, QA:n från
+2026-09-11 gäller) + 3 nya ur batch #2 (levererade < 12 h efter briefen):
+`PD_8_H1`, `SY_1_H1`, `MR_1_H1`. Alla 9:16-filen (`_2`), pris 499 kr mot butiken (499,
+jämförpris 649) — inga stopp.
+
+| Annons | Ad-id | Adset | Copy | Anmärkning |
+|---|---|---|---|---|
+| `AdventLaneRacing_PD_8_H1` | 120249067119370172 | PD (fanns) | COPY CARD (fable) | "Kokladen", "499 unior", ansikten trots briefen |
+| `AdventLaneRacing_SY_1_H1` | 120249067124490172 | SY (**ny**) | COPY CARD (sonnet) | "snorrar", "Advent Lane" särskrivet, ansikte |
+| `AdventLaneRacing_MR_1_H1` | 120249067128200172 | MR (**ny**) | COPY CARD (sonnet) | "Advent Lane"/"jämför pris" särskrivna, ansikten |
+| `AdventLaneRacing_PD_4_H1` | 120249067191790172 | PD (fanns) | kontots PD-copy (formattest) | 9 s mot 15–20 |
+| `AdventLaneRacing_PD_6_H1` | 120249067199250172 | PD (fanns) | subagent sonnet 09-11 | "649 nio", "Jock den" |
+| `AdventLaneRacing_AU_1_H1` | 120249067207360172 | AU (**ny**) | subagent sonnet 09-11 | "och pappor", "beställd december" |
+| `AdventLaneRacing_FM_1_H1` | 120249067244690172 | FM (**ny**) | subagent sonnet 09-11 | ingen prisskylt, 8 s |
+
+Tillbakaläst 12:15 UTC: alla 8 adsets ACTIVE, 6 annonser ACTIVE/ACTIVE, FM_1_H1 ACTIVE/PENDING_REVIEW (Metas granskning, nyskapad).
+Nya adsets klonade från SP, aktiverade av körningen (bara de egna). Alla 7 rader →
+`SE-ACTIVE to be translated`. Registret: 7 loggade 2026-09-12.
+
+⚠️ **Två uppladdningar hängde på proxyn** (PD_4_H1 8 min utan att videon nådde Meta,
+FM_1_H1 ETIMEDOUT 300 s redan vid kontoläsningen). Båda dödades och kördes om utan
+dubbletter. Lärdom: kör `ops-till-meta` med tidsgräns per rad och skriv resultatfilen
+efter varje rad — annars försvinner de klara raderna med en hängning.
+
+Kvar i kön: 0. Batch #2:s övriga 4 briefer (`PD_7`, `GT_4`, `CS_4`, `SP_4` eller vad
+nattvakten döpte dem) väntar på leverans.
+
+---
+
+## Översättning NO `/ops-oversatt` 2026-09-12 — 6 av 7 live i NO-kampanjen
+
+Kön: 7 videorader i `SE-ACTIVE to be translated` (dagens leveransrunda). NO-kampanjen
+`ADVENTLANERACING_NO_Racingkalendern` (`120249031977180172`) ACTIVE, ärvd länk
+`adventlane.se/nb/products/adventskalender-racingbilar`, sida `1304279782771044`.
+
+**Pris i norskan: 439 kr / førpris 579 kr / spar 140 kr** — Norges prislista i Shopify
+(Axels besked 2026-09-12, `no_pris_nok` i produktfilen). Kommandots regel 4 ("norsk
+copy utan pris") fick undantaget inskrivet samma dag. "Fri frakt inom Sverige och
+Norge" → "Gratis frakt til Norge" (NO-sidan: "Gratis frakt til alle land", 14 dagers
+angrerett).
+
+Källorna: 9:16-filen (`_2`, samma som SE-annonsen), 1080×1920, 8–14 s. Kontaktark
+lästa: **bara ordcaptions inbrända** (vitt piller y 1147–1352, Carl Vicentes mall),
+inga prisplattor, inga slutkort. Priserna satt i captions ("499 unior", "649 kronor",
+"Spara 150") och i talet.
+
+Flödet: HeyGen proofread (7 sessioner) → SRT-texter av sonnet-subagent med samma
+tidkoder (STT-fel rättade: "på samma bod", "av pappen", "Var morgonen till" = "Varje
+morgon en till") → regexgrind (`bygg-srt.mjs`: inga ä/ö, inga 499/649/150, inget
+Sverige) → apply verifierad → render → `no-precis.py` (norska captions i pillrets ruta,
+per frame) → röstkoll. Copy av sonnet-subagent, tre-frågorstestet grönt på alla 7
+headlines.
+
+| SE | NO | Ad-id | Adset | Tillbakaläst 14:35 UTC |
+|---|---|---|---|---|
+| PD_8_H1 | `AdventLaneRacing_NO_PD_8_H1` | 120249068363040172 | PD | ACTIVE/ACTIVE |
+| SY_1_H1 | `AdventLaneRacing_NO_SY_1_H1` | 120249068365820172 | SY (**ny**) | ACTIVE/ACTIVE |
+| MR_1_H1 | `AdventLaneRacing_NO_MR_1_H1` | 120249068371220172 | MR (**ny**) | ACTIVE/ACTIVE |
+| PD_4_H1 | `AdventLaneRacing_NO_PD_4_H1` | 120249068376090172 | PD | ACTIVE/ACTIVE |
+| PD_6_H1 | `AdventLaneRacing_NO_PD_6_H1` | 120249068384650172 | PD | ACTIVE/ACTIVE |
+| AU_1_H1 | `AdventLaneRacing_NO_AU_1_H1` | 120249068473210172 | AU (**ny**) | ACTIVE/IN_PROCESS (Meta kodar videon) |
+| FM_1_H1 | — | — | — | **STRUKEN: röstkoll ❌ två gånger** |
+
+Alla sex → `Approved` i Notion med `Translated url`. FM_1 kvar i kön med kommentar.
+HeyGen 8 938 → 8 786 krediter (7 proofread, 8 render). AU_1 tog 509 s att ladda upp
+(proxyn), de andra 48–64 s — tidsgränsen per rad i `ladda-upp.mjs` gjorde att inget hängde.
+
+**FM_1_H1 struken.** Talet i dubben slutar 0,08 s före filmens slut (källan: 0,20 s) —
+sista ordet "kjøkkenbordet" kan vara klippt. Renderades om med kortare sista rad
+("en garasje" i stället för "en hel garasje"), fortfarande 0,08 s. HeyGen fyller cuen
+(5,66–8,13 s) oavsett textlängd. Vägen vidare: en källa med luft efter sista repliken,
+eller att någon lyssnar och laddar upp för hand.
+
+Tre verktygsfynd, alla fixade i samma körning:
+1. **`pipeline/no-precis.py` var hårdkodad för 720 px bredd** (Båtmotortrekk) — vid 1080
+   hittades inget piller. Nu skalas alla mått med `W/720`. Minsta pillerbredd sänkt
+   100 → 70 (skalat): prispillret "649" är ~115 px och missades (svensk siffra kvar i tre
+   frames i AU_1 första varvet). Meningsdelaren delade "adventlane.se." i "adventlane." +
+   "se." — punkt räknas nu bara före blanksteg.
+2. **`pipeline/rostkoll.py` rödmarkerade 6 av 7 för "avhugget slut" utifrån tidkoden** —
+   men tidkoden är källans (HeyGen kräver samma tidkoder), så den mäter hur tätt den
+   SVENSKA källan slutar. Nu mäts talbandet (300–3 400 Hz) i ljudet på både källa och
+   dubb när `--kalla` finns: ❌ bara om dubben slutar under marginalen OCH tätare än
+   källan. FM_1 föll på den riktiga mätningen; de andra sex hade lika mycket eller mer luft
+   än svenskan.
+3. **ffmpeg/ffprobe saknas i containern** och apt är blockerat — statisk build hämtad från
+   johnvansickle.com till scratchpad. `no-precis` klarar sig på imageio-ffmpeg, `rostkoll`
+   kräver ffprobe.
+
+Nästa: NO-kampanjen har nu 22 annonser i 7 adsets. Nattvakten dömer bara SE; NO-utfallet
+syns bara i "bortfiltrerade" (dna.md rotorsak 3).
+
+### Utfall vid avläsning 2026-09-13 (körning nr 3, 14d, SE) — batch #2:s feedback-loop
+
+Kampanjen passerade grinden på kampanjnivå: **2 410 kr, 5 köp, ROAS 1,37, intäkt
+3 293 kr (AOV 659 kr — paket har sålts)** — under BE-ROAS 1,54 ⇒ budgetronden
+sänkte 1 000 → 700 kr (vinst 3d −8,2 %). **Ingen enskild annons ≥ 3 köp ⇒ 0
+bedömbara, ingen dom, kallstart fortsätter.** 23 annonser (7 nya sedan 12/9).
+
+| Annons | Status | Spend | Köp | CPA | ROAS | Hook | Hold | CTR | CVR | Läge |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| PD_1_H1 | PAUSED (12/9) | 847 kr | 2 | 423 kr | 1,18 | 20,9 % | 23,4 % | 3,66 % | 1,20 % | för tidigt — pausad enligt ny annons-regeln |
+| GT_3_H1 | ACTIVE | 520 kr | 1 | 520 kr | 0,96 | 23,3 % | 21,5 % | 2,84 % | 0,85 % | för tidigt |
+| GT_1_H1 | ACTIVE | 410 kr | 1 | 410 kr | 2,31 | 31,2 % | 28,0 % | 2,75 % | 1,54 % | för tidigt |
+| GT_2_1 | ACTIVE | 292 kr | 1 | 292 kr | 2,90 | — | — | 2,76 % | 1,82 % | för tidigt |
+| GT_2_H1 · CS_1_H1 · PD_2_1 · AU_1_H1 | ACTIVE | 77 · 53 · 46 · 35 kr | 0 | — | — | — | — | — | — | för tidigt |
+| 15 annonser ≤ 24 kr | ACTIVE | 131 kr | 0 | — | — | — | — | — | — | för tidigt |
+
+**Batch #2, annons för annons (hypotes → utfall):** `MR_1_H1` 16 kr, 0 köp (hook
+46,7 % på 30 visningar — brus) · `PD_8_H1` 1 kr · `SY_1_H1` 1 kr · `PD_2_H2`,
+`SO_1_1`, `FF_1_1`, `EF_1_1` fortfarande Draft i hubben (inte gjorda). **Ingen
+hypotes kan avläsas.** Tre videor gjordes och laddades upp samma dag (Jazz +
+`/ops-leverans`) — snabbare än väntat.
+
+**Vad datan säger utan att döma:** efter pausen av PD_1_H1 flyttade CBO:n spenden
+till **GT-adsetet** (1 222 kr, 3 köp, CPA 407 kr sammanlagt — över BE 323), inte
+till källans PD-vinnare (`PD_2_1` 46 kr, `PD_2_H1` 9 kr). Axels beslut B (CBO:n
+står kvar) gäller; datan bokförs.
+
+**Ärvd historik 2026-09-13 (livstid):** 5 858 kr, 23 köp, ROAS 2,32, AOV 591 kr.
+`PD_2_H1` 2 897 kr / 11 köp / **CPA 263 kr** (var 150 → 191 → 263 över tre
+läsningar — regressionen fortsätter) · `PD_2_1` 1 691 kr / 8 köp / CPA 211 kr ·
+`GT_1_H1` 938 kr / **3 köp / CPA 313 kr** — nu bedömbar, 10 kr under BE (vinst 31 kr).
+
+---
+
+## Batch #3 — 2026-09-13 · andra briefronden (körning nr 3) · KALLSTART, 21 briefer
+
+**Redigerare tilldelad:** Jazz (2026-09-12) ⇒ kadens 21 (7/dag × 3). OPS har
+0 bedömbara ⇒ föräldrarna är de ÄRVDA vinnarna `PD_2_H1` (video) och `PD_2_1`
+(bild): **11 varianter** (hook / format / angle roterat, en variabel var) + **10 nya
+koncept** (4 med källa: playbook citat-kort + riktiga recensioner, winning line PD;
+**6 märkta gissning**). Planen i klartext: `batch-03/plan.json`. Copy A/B: fable 11,
+sonnet 10, via Agent-verktyget (fyra subagenter parallellt).
+
+| # | Annons | Typ | Slot | Förälder / källa | Variabel | Hypotes (kort) | copy |
+|---|---|---|---|---|---|---|---|
+| 1 | PD_2_H3 | video | variant | PD_2_H1 | hook | 24 bilar på bordet i sek 0 | fable |
+| 2 | PD_2_H4 | video | variant | PD_2_H1 | hook | lucka 1 öppnas, bilen rullar ut | sonnet |
+| 3 | PD_2_H5 | video | variant | PD_2_H1 | hook | fråga över tom chokladkalender | fable |
+| 4 | PD_2_H6 | video | variant | PD_2_H1 | format: ingen röst | captions bär allt | sonnet |
+| 5 | PD_2_H7 | video | variant | PD_2_H1 | hook | "24 luckor. Ingen choklad." på kartongens framsida | fable |
+| 6 | PD_2_H8 | video | variant | PD_2_H1 | format: 6 s | hook + CTA, inget mellan | sonnet |
+| 7 | ID_1_H1 | video | variant | PD_2_H1 | angle: identitet | "du hade själv en chokladkalender" | fable |
+| 8 | PD_2_2 | bild | variant | PD_2_1 | textmängd: ingen | allt i copy card | sonnet |
+| 9 | PD_2_3 | bild | variant | PD_2_1 | visuell stil: UGC-mobilfoto | samma budskap, hemmafoto | fable |
+| 10 | PD_2_4 | bild | variant | PD_2_1 | visuell stil: minimal | kartong + en bil | sonnet |
+| 11 | GT_4_1 | bild | variant | PD_2_1 | angle: present | klar att ge bort, öppnas 24 gånger | fable |
+| 12 | SP_4_1 | bild | koncept | playbook citat-kort + Sara | — | "ett bra alternativ till godis" | sonnet |
+| 13 | SP_5_1 | bild | koncept | playbook citat-kort + Erik | — | "Min dotter gillar den mycket" (flickförälder) | fable |
+| 14 | SP_6_H1 | video | koncept | playbook + Johan | — | en recension som hela filmen | sonnet |
+| 15 | SO_1_H1 | video | koncept | winning line PD (tidsram) | — | "24 frukostar" som video | fable |
+| 16 | PR_1_1 | bild | koncept | **gissning** | — | knappt 21 kr per lucka | sonnet |
+| 17 | KV_1_H1 | video | koncept | **gissning** (brandcopy) | — | "Öppnas en gång. Finns kvar sen." | fable |
+| 18 | MH_1_1 | bild | koncept | **gissning** (brandscen) | — | morgonrutinen som stillbild | sonnet |
+| 19 | ST_1_H1 | video | koncept | **gissning** (format) | — | stop-motion 24 bilar | fable |
+| 20 | GT_5_H1 | video | koncept | **gissning** (GT under grinden) | — | farmor/farfar som video | sonnet |
+| 21 | AU_2_1 | bild | koncept | **gissning** (formatöverföring) | — | makro på hjul och startnummer | fable |
+
+Döms tidigast ons 2026-09-16, bara det som passerat grinden. Kill mot BE-CPA 323 / BE-ROAS 1,54.
