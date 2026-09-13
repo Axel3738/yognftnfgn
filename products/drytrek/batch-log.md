@@ -367,3 +367,57 @@ uppladdad); `PD_12_H1` har ingen prisrad alls.
 Hypotesen från batch #3b står kvar: vinstbidrag per färg `(243 − CPA) × köp`
 inom adsetet `PD`, grinden ≥ 300 kr OCH ≥ 3 köp per variant. Med 17 färger +
 4 videor i samma adset tar det tid — döm inte en färg på 50 kr.
+
+---
+
+## 2026-09-13 — leveransrunda, andra körningen samma dag: tom kö, och kvittot på att den första höll
+
+Rutinen kördes en gång till på eftermiddagen. **Kön var tom för att förmiddagens
+körning ovan redan tagit allt** — inte för att något saknades. Det här är alltså
+avstämningen av den körningen, inte en egen leverans.
+
+**Tillbakaläsning ur kontot av alla 23 uppladdade annonser:** 23 av 23 står nu
+**ACTIVE/ACTIVE**. De två som låg i Metas granskning på förmiddagen
+(IN_PROCESS) har släppts igenom. Fördelningen stämmer med planen och inget
+extra adset skapades: `DRYTREK_SE_PD` 20 annonser, `DRYTREK_SE_SP` 2,
+`DRYTREK_SE_FO` 1 — alla i `DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 |
+2026-09-09`. Namnparser-buggen som hade kunnat skapa ett andra PD-adset är
+därmed bevisat lagad i skarp drift, inte bara i koden.
+
+`To be Reviewed` i hubben "Damasker vandring": **0 rader**. Inget laddades upp,
+inget rördes i kontot 915422744950975. Kampanjen
+`DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` är ACTIVE med fyra
+av fem adsets igång (`DRYTREK_SE_G` är PAUSED — ett beslut, aktiveras aldrig
+härifrån). Butikspriset läst live: **389 SEK** (jämförpris 649 SEK).
+
+Hubbens 79 rader fördelade sig så här vid körningen:
+
+| Status | Video | Bild | Övrigt |
+|---|---|---|---|
+| Draft | 17 | 23 | 1 Guideline |
+| SE-ACTIVE to be translated | 11 | 17 | — |
+| Creative strat review | 10 | — | — |
+
+De 28 raderna i `SE-ACTIVE to be translated` tillhör översättningsrundan, inte
+den här. De 40 Draft-raderna är inte färdiga.
+
+**De tio `Damasker_*`-raderna i `Creative strat review` är kontrollerade, inte
+bara överhoppade.** Skapade 2026-09-02 till 2026-09-08 med Jasper Tomboc som
+ansvarig, alla `Video - Pending Approval`, alla med `Link for approval` till en
+Drive-mapp — men briefernas `Landing page` pekar på
+`baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute`. Det är
+alltså Bäverbutikens källrader, inte DryTrek-leveranser, precis som
+`harBrandPrefix` dömer dem. De rörs inte, och Axels nej till brand-swap
+(TackleBay 2026-09-12) står kvar.
+
+⚠️ **De kan aldrig levereras av någon rutin som den ligger nu.** Bäverbutikens
+läsare undantar OPS-hubbarna per id (`tools/lib/ops-hubbar.mjs`), och den här
+rundan hoppar dem på prefixet. Frågan är ställd till Axel i Discord
+`#annons-uppladdning` 2026-09-13: ska Jasper bygga om dem som DryTrek-versioner
+eller ska de arkiveras? **Frågan är ställd en gång — kommande körningar
+rapporterar dem som varning, inte som ACTION NEEDED, tills Axel svarat.**
+
+Köfilen från den här andra körningen ligger i
+`factory/output/drytrek/leverans-2026-09-13-omkoll.json`. Förmiddagens
+`leverans-2026-09-13.json` (23 rader) skrevs medvetet INTE över — den är
+kvittot på vad som faktiskt levererades.
