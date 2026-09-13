@@ -194,6 +194,8 @@
     "hoppade_over": {
       "overgiven_kassa": "Finns inte under Inställningar → Notiser i Bäverbutiken (mätt 2026-09-12) — sköts av Shopify Email under Marknadsföring → Automatiseringar."
     },
+    "mallbranding": null,
+    "mallbranding_comment": "Datum när logga + accentfärg satts under Inställningar → Notiser → Kundnotiser → Anpassa e-postmall. Den inställningen gäller ALLA Shopifys standardmallar (orderfaktura, betalningsfel, kontomejl, returer, lokal leverans) — de vi klistrat in bär sin egen HTML och påverkas inte. null ⇒ sidan säger att det återstår.",
     "testmejl_skickat": "2026-09-12",
     "testmejl_aktuell_version": null,
     "testmejl_aktuell_version_comment": "Sätt till datumet när testmejlet skickats på de mallar som ligger uppe NU. null ⇒ sidan säger att det återstår. Testmejlet på v3 är INTE skickat. Cowork tappade Chrome-kopplingen precis innan klicket 2026-09-13. Det är testmejlet som visar två saker som inte går att mäta någon annanstans: att line.product.handle finns i notis-Liquid (rätt komplement = ja, 'Populärast just nu' = nej) och i vilken tidszon date: '%H:%M' skriver klockslaget."

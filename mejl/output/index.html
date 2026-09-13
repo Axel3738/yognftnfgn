@@ -84,7 +84,7 @@
 
 <main>
   <header class="topp">
-    <p class="dampad">Bäverbutiken.se · byggd 2026-09-13 13:41 UTC</p>
+    <p class="dampad">Bäverbutiken.se · byggd 2026-09-13 14:05 UTC</p>
     <h1>Bäverbutikens mejl</h1>
     <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet. Under gratisprodukterna: en till av det kunden köpte + tre som passar ihop.</p>
   </header>
@@ -94,7 +94,7 @@
     <div class="lage-rad"><span class="ikon">✅</span><p>Rabattkoden <strong>TACKIGEN</strong> är skapad och aktiv (2026-09-12, Cowork (Claude i Chrome) i Axels inloggade Shopify admin). Köpvillkoret är kollektionen <strong>Alla produkter</strong> (automatisk, pris över 0 kr) eftersom Shopify inte tillåter "Alla produkter" i Köp X få Y.</p></div>
     <div class="lage-rad"><span class="ikon">✅</span><p>7 av 8 mallar inklistrade och sparade under Inställningar → Notiser. Testmejl på Orderbekräftelse skickat 2026-09-12. Hoppades över: Övergiven kassa (se mallen längst ner).</p></div>
     
-    <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: testmejlet på de nya mallarna (steg 3). Shopify har inget API för det, så det är dina klick eller Coworks.</p></div>
+    <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: loggan och färgen på Shopifys egna mallar (steg 3) och testmejlet på de nya mallarna (steg 4). Shopify har inget API för det, så det är dina klick eller Coworks.</p></div>
   </section>
 
   <section class="steg" aria-labelledby="gor">
@@ -143,6 +143,23 @@
 
     <article class="steg-kort">
       <span class="nr">3</span>
+      <h3>Sätt logga och färg på Shopifys egna mallar</h3>
+      <div class="inne">
+        <p>Shopify har ett tjugotal kundnotiser. Åtta av dem är våra, resten är Shopifys standardmallar — orderfaktura, betalningsfel, kontomejl, returer, lokal leverans. De ser ut som Shopify, inte som Bäverbutiken.</p>
+        <p>Den här inställningen sätter loggan och färgen på <strong>alla</strong> standardmallar på en gång. Den rör inte våra åtta, de bär sin egen HTML.</p>
+        <ol class="klick">
+          <li>Shopify admin → <strong>Inställningar</strong> → <strong>Notiser</strong> → <strong>Kundnotiser</strong>.</li>
+          <li>Klicka <strong>Anpassa e-postmall</strong> (Customize email template), uppe till höger.</li>
+          <li><strong>Logotyp</strong>: ladda upp butikens logga. Bredd omkring <strong>240 px</strong>.</li>
+          <li><strong>Accentfärg</strong>: skriv <span class="kodbit">#dd1d1d</span>.</li>
+          <li>Klicka <strong>Spara</strong>.</li>
+        </ol>
+        <p class="dampad">⚠️ De tre mejlen under <strong>Lokal leverans</strong> kan inte skickas i din butik: alla ordrar hittills har fraktsättet "Fri Frakt", och lokal leverans är inte påslaget. De syns i listan men går aldrig ut.</p>
+      </div>
+    </article>
+
+    <article class="steg-kort">
+      <span class="nr">4</span>
       <h3>Skicka ett testmejl</h3>
       <div class="inne">
         <ol class="klick">
@@ -155,7 +172,7 @@
     </article>
 
     <article class="steg-kort">
-      <span class="nr">4</span>
+      <span class="nr">5</span>
       <h3>Koppla om Shopify på claude.ai</h3>
       <div class="inne">
         <p>Shopify-connectorn har gått ut. Kopplas den om kan nästa session skapa rabattkoder och läsa ordrar själv i stället för att be dig klicka.</p>
@@ -536,7 +553,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 07:41 den 14 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 08:05 den 14 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -1114,7 +1131,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 07:41 den 14 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 08:05 den 14 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -1310,10 +1327,9 @@
       </div>
       <div class="rad">
         <div class="etikett">Mallens kod</div>
-        <p class="dampad">7 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
+        <p class="dampad">5 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-fraktuppdatering">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-fraktuppdatering">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: 0 %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}{% assign paket_ts = start_ts | plus: 64800 %}{% assign paket_dag = paket_ts | date: '%-d' %}{% assign paket_mm = paket_ts | date: '%m' %}{% case paket_mm %}{% when '01' %}{% assign paket_man = 'januari' %}{% when '02' %}{% assign paket_man = 'februari' %}{% when '03' %}{% assign paket_man = 'mars' %}{% when '04' %}{% assign paket_man = 'april' %}{% when '05' %}{% assign paket_man = 'maj' %}{% when '06' %}{% assign paket_man = 'juni' %}{% when '07' %}{% assign paket_man = 'juli' %}{% when '08' %}{% assign paket_man = 'augusti' %}{% when '09' %}{% assign paket_man = 'september' %}{% when '10' %}{% assign paket_man = 'oktober' %}{% when '11' %}{% assign paket_man = 'november' %}{% when '12' %}{% assign paket_man = 'december' %}{% else %}{% assign paket_man = '' %}{% endcase %}{% assign paket_datum = paket_dag | append: ' ' | append: paket_man %}{% assign paket_tid = paket_ts | date: '%H:%M' %}{% if paket_ts < nu_ts %}{% assign paket_passerat = true %}{% else %}{% assign paket_passerat = false %}{% endif %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -1516,10 +1532,9 @@
       </div>
       <div class="rad">
         <div class="etikett">Mallens kod</div>
-        <p class="dampad">7 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
+        <p class="dampad">5 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-ute_for_leverans">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-ute_for_leverans">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: 0 %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}{% assign paket_ts = start_ts | plus: 64800 %}{% assign paket_dag = paket_ts | date: '%-d' %}{% assign paket_mm = paket_ts | date: '%m' %}{% case paket_mm %}{% when '01' %}{% assign paket_man = 'januari' %}{% when '02' %}{% assign paket_man = 'februari' %}{% when '03' %}{% assign paket_man = 'mars' %}{% when '04' %}{% assign paket_man = 'april' %}{% when '05' %}{% assign paket_man = 'maj' %}{% when '06' %}{% assign paket_man = 'juni' %}{% when '07' %}{% assign paket_man = 'juli' %}{% when '08' %}{% assign paket_man = 'augusti' %}{% when '09' %}{% assign paket_man = 'september' %}{% when '10' %}{% assign paket_man = 'oktober' %}{% when '11' %}{% assign paket_man = 'november' %}{% when '12' %}{% assign paket_man = 'december' %}{% else %}{% assign paket_man = '' %}{% endcase %}{% assign paket_datum = paket_dag | append: ' ' | append: paket_man %}{% assign paket_tid = paket_ts | date: '%H:%M' %}{% if paket_ts < nu_ts %}{% assign paket_passerat = true %}{% else %}{% assign paket_passerat = false %}{% endif %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -1992,7 +2007,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 07:41 den 14 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 08:05 den 14 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -2198,10 +2213,9 @@
       </div>
       <div class="rad">
         <div class="etikett">Mallens kod</div>
-        <p class="dampad">7 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
+        <p class="dampad">5 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-overgiven_kassa">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-overgiven_kassa">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: 0 %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}{% assign paket_ts = start_ts | plus: 64800 %}{% assign paket_dag = paket_ts | date: '%-d' %}{% assign paket_mm = paket_ts | date: '%m' %}{% case paket_mm %}{% when '01' %}{% assign paket_man = 'januari' %}{% when '02' %}{% assign paket_man = 'februari' %}{% when '03' %}{% assign paket_man = 'mars' %}{% when '04' %}{% assign paket_man = 'april' %}{% when '05' %}{% assign paket_man = 'maj' %}{% when '06' %}{% assign paket_man = 'juni' %}{% when '07' %}{% assign paket_man = 'juli' %}{% when '08' %}{% assign paket_man = 'augusti' %}{% when '09' %}{% assign paket_man = 'september' %}{% when '10' %}{% assign paket_man = 'oktober' %}{% when '11' %}{% assign paket_man = 'november' %}{% when '12' %}{% assign paket_man = 'december' %}{% else %}{% assign paket_man = '' %}{% endcase %}{% assign paket_datum = paket_dag | append: ' ' | append: paket_man %}{% assign paket_tid = paket_ts | date: '%H:%M' %}{% if paket_ts < nu_ts %}{% assign paket_passerat = true %}{% else %}{% assign paket_passerat = false %}{% endif %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -2406,10 +2420,9 @@
       </div>
       <div class="rad">
         <div class="etikett">Mallens kod</div>
-        <p class="dampad">7 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
+        <p class="dampad">4 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-aterbetalning">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-aterbetalning">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: 0 %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}{% assign paket_ts = start_ts | plus: 64800 %}{% assign paket_dag = paket_ts | date: '%-d' %}{% assign paket_mm = paket_ts | date: '%m' %}{% case paket_mm %}{% when '01' %}{% assign paket_man = 'januari' %}{% when '02' %}{% assign paket_man = 'februari' %}{% when '03' %}{% assign paket_man = 'mars' %}{% when '04' %}{% assign paket_man = 'april' %}{% when '05' %}{% assign paket_man = 'maj' %}{% when '06' %}{% assign paket_man = 'juni' %}{% when '07' %}{% assign paket_man = 'juli' %}{% when '08' %}{% assign paket_man = 'augusti' %}{% when '09' %}{% assign paket_man = 'september' %}{% when '10' %}{% assign paket_man = 'oktober' %}{% when '11' %}{% assign paket_man = 'november' %}{% when '12' %}{% assign paket_man = 'december' %}{% else %}{% assign paket_man = '' %}{% endcase %}{% assign paket_datum = paket_dag | append: ' ' | append: paket_man %}{% assign paket_tid = paket_ts | date: '%H:%M' %}{% if paket_ts < nu_ts %}{% assign paket_passerat = true %}{% else %}{% assign paket_passerat = false %}{% endif %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -2582,10 +2595,9 @@
       </div>
       <div class="rad">
         <div class="etikett">Mallens kod</div>
-        <p class="dampad">7 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
+        <p class="dampad">4 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-avbruten_order">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-avbruten_order">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: 0 %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}{% assign paket_ts = start_ts | plus: 64800 %}{% assign paket_dag = paket_ts | date: '%-d' %}{% assign paket_mm = paket_ts | date: '%m' %}{% case paket_mm %}{% when '01' %}{% assign paket_man = 'januari' %}{% when '02' %}{% assign paket_man = 'februari' %}{% when '03' %}{% assign paket_man = 'mars' %}{% when '04' %}{% assign paket_man = 'april' %}{% when '05' %}{% assign paket_man = 'maj' %}{% when '06' %}{% assign paket_man = 'juni' %}{% when '07' %}{% assign paket_man = 'juli' %}{% when '08' %}{% assign paket_man = 'augusti' %}{% when '09' %}{% assign paket_man = 'september' %}{% when '10' %}{% assign paket_man = 'oktober' %}{% when '11' %}{% assign paket_man = 'november' %}{% when '12' %}{% assign paket_man = 'december' %}{% else %}{% assign paket_man = '' %}{% endcase %}{% assign paket_datum = paket_dag | append: ' ' | append: paket_man %}{% assign paket_tid = paket_ts | date: '%H:%M' %}{% if paket_ts < nu_ts %}{% assign paket_passerat = true %}{% else %}{% assign paket_passerat = false %}{% endif %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>

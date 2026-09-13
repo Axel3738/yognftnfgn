@@ -133,6 +133,35 @@ vara ordertiden + 18 h svensk tid.
   rabatten själv), eller ge appen Discounts-behörighet i Shopify admin →
   Appar → Utveckla appar → Bäver uppladdare → Konfiguration.
 
+## De andra kundnotiserna (Shopifys egna)
+
+Shopify har ett tjugotal kundnotiser i sektioner: Orderhantering,
+Orderundantag (Order ändrad, Orderfaktura, Order återbetalad, Order
+annullerad), Betalningar, Returer, Frakt, **Lokal leverans**, **Lokal
+upphämtning**, Kundkonton. Vi har egna mallar för åtta. Resten är Shopifys
+standardmallar och ser ut därefter.
+
+**Fixet är inte att bygga tjugo mallar till.** Under Inställningar →
+Notiser → Kundnotiser finns **Anpassa e-postmall**, som sätter logga och
+accentfärg på **alla** standardmallar på en gång (docs:
+help.shopify.com/en/manual/fulfillment/setup/notifications/customizing-notification-template,
+läst 2026-09-13). Våra åtta bär egen HTML och påverkas inte. Datumet bokförs
+i `konfig.json → lage.mallbranding`; sidan säger att det återstår tills dess.
+
+⚠️ **Lokal leverans och lokal upphämtning kan inte skickas i den här
+butiken** (mätt 2026-09-13): alla 2 719 ordrar har fraktsättet "Fri Frakt",
+och appen saknar `read_shipping` så fraktprofilerna går inte att läsa —
+ordrarna är beviset. De tre mejlen under Lokal leverans syns i admin men går
+aldrig ut. Bygg inga egna mallar för dem.
+
+⚠️ **Kontomejlen kan däremot skickas:** 159 av 2 000 slumpade kunder har
+`state: ENABLED`, alltså ett riktigt kundkonto. Presentkortsprodukterna är
+båda `DRAFT`, så presentkortsmejlet är vilande tills någon utfärdar ett för
+hand.
+
+Vill Axel ha full husstil på fler än åtta: bygg dem i omgångar, sorterade
+efter hur ofta de faktiskt skickas, och räkna en inklistring per mall.
+
 ## Inklistringen via Cowork
 
 `mejl/COWORK-PROMPT.md` är den färdiga prompten till Cowork (Claude i

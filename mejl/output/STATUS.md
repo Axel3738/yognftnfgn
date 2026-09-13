@@ -1,4 +1,4 @@
-# Mejlmallarna — byggda 2026-09-13 13:41 UTC
+# Mejlmallarna — byggda 2026-09-13 14:05 UTC
 
 Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratisprodukt
 
@@ -16,9 +16,9 @@ Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratispr
 ## Mallar
 - `orderbekraftelse.liquid` → Orderbekräftelse / Order confirmation · ämne: {% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}{{ name }} är mottagen – vi packar · 84 kB
 - `fraktbekraftelse.liquid` → Leveransbekräftelse / Shipping confirmation · ämne: Ditt paket är på väg · 77 kB
-- `fraktuppdatering.liquid` → Leveransuppdatering / Shipping update · ämne: Ny info om ditt paket · 7 kB
-- `ute_for_leverans.liquid` → Ute för leverans / Out for delivery · ämne: Paketet kommer idag · 7 kB
+- `fraktuppdatering.liquid` → Leveransuppdatering / Shipping update · ämne: Ny info om ditt paket · 5 kB
+- `ute_for_leverans.liquid` → Ute för leverans / Out for delivery · ämne: Paketet kommer idag · 5 kB
 - `levererad.liquid` → Levererad / Delivered · ämne: Paketet är levererat · 76 kB
-- `overgiven_kassa.liquid` → Övergiven kassa / Abandoned checkout · ämne: Du glömde något i kassan · 7 kB
-- `aterbetalning.liquid` → Återbetalning / Refund notification · ämne: {{ amount | money }} är återbetalat · 7 kB
-- `avbruten_order.liquid` → Order annullerad / Order cancelled · ämne: Din order är avbruten · 7 kB
+- `overgiven_kassa.liquid` → Övergiven kassa / Abandoned checkout · ämne: Du glömde något i kassan · 5 kB
+- `aterbetalning.liquid` → Återbetalning / Refund notification · ämne: {{ amount | money }} är återbetalat · 4 kB
+- `avbruten_order.liquid` → Order annullerad / Order cancelled · ämne: Din order är avbruten · 4 kB

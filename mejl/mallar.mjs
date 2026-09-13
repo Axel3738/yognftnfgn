@@ -654,11 +654,16 @@ function sidfot(k, s, copy) {
           </tr>`;
 }
 
-// Hela dokumentet runt innehållsraderna.
-function dokument(k, s, lage, { titel, preheader, rader }) {
+// Hela dokumentet runt innehållsraderna. `erbjudande` styr om datum-assignen
+// ska med — mallar utan erbjudandeblock använder aldrig {{ slutdatum }}, och
+// mallar utan order (lösenord, kontoinbjudan) har inget created_at att räkna
+// ur, så assignen vore bara död kod i deras HTML.
+function dokument(k, s, lage, { titel, preheader, rader, erbjudande = false }) {
   const assign =
     lage === 'liquid'
-      ? `{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}\n${slutdatumLiquid(k.erbjudande.giltig_dagar ?? 30, k.erbjudande.samma_paket_timmar ?? 0)}\n`
+      ? `{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}\n${
+          erbjudande ? `${slutdatumLiquid(k.erbjudande.giltig_dagar ?? 30, k.erbjudande.samma_paket_timmar ?? 0)}\n` : ''
+        }`
       : '';
   return `${assign}<!DOCTYPE html>
 <html lang="sv">
@@ -805,7 +810,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   }
 
   rader += sidfot(k, s, copy);
-  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader });
+  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, erbjudande: Boolean(meta.erbjudande) });
   return {
     id,
     shopify: meta.shopify,

@@ -188,7 +188,8 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
             : `${liquid.length - Object.keys(hoppade).length - Object.keys(inklistrade).length} inklistringar (steg 2)`,
           // Testmejlet räknas som gjort först när det skickats på de mallar
           // som ligger uppe NU — v2:s testmejl säger inget om v3.
-          lage.testmejl_aktuell_version ? null : 'testmejlet på de nya mallarna (steg 3)',
+          lage.mallbranding ? null : 'loggan och färgen på Shopifys egna mallar (steg 3)',
+          lage.testmejl_aktuell_version ? null : 'testmejlet på de nya mallarna (steg 4)',
         ].filter(Boolean);
         return kvar.length
           ? `Kvar för dig: ${kvar.join(' och ')}. Shopify har inget API för det, så det är dina klick eller Coworks.`
@@ -243,6 +244,23 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
 
     <article class="steg-kort">
       <span class="nr">3</span>
+      <h3>Sätt logga och färg på Shopifys egna mallar</h3>
+      <div class="inne">
+        <p>Shopify har ett tjugotal kundnotiser. Åtta av dem är våra, resten är Shopifys standardmallar — orderfaktura, betalningsfel, kontomejl, returer, lokal leverans. De ser ut som Shopify, inte som Bäverbutiken.</p>
+        <p>Den här inställningen sätter loggan och färgen på <strong>alla</strong> standardmallar på en gång. Den rör inte våra åtta, de bär sin egen HTML.</p>
+        <ol class="klick">
+          <li>Shopify admin → <strong>Inställningar</strong> → <strong>Notiser</strong> → <strong>Kundnotiser</strong>.</li>
+          <li>Klicka <strong>Anpassa e-postmall</strong> (Customize email template), uppe till höger.</li>
+          <li><strong>Logotyp</strong>: ladda upp butikens logga. Bredd omkring <strong>240 px</strong>.</li>
+          <li><strong>Accentfärg</strong>: skriv <span class="kodbit">${esk(konfig.butik.farg_rod)}</span>.</li>
+          <li>Klicka <strong>Spara</strong>.</li>
+        </ol>
+        <p class="dampad">⚠️ De tre mejlen under <strong>Lokal leverans</strong> kan inte skickas i din butik: alla ordrar hittills har fraktsättet "Fri Frakt", och lokal leverans är inte påslaget. De syns i listan men går aldrig ut.</p>
+      </div>
+    </article>
+
+    <article class="steg-kort">
+      <span class="nr">4</span>
       <h3>Skicka ett testmejl</h3>
       <div class="inne">
         <ol class="klick">
@@ -255,7 +273,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
     </article>
 
     <article class="steg-kort">
-      <span class="nr">4</span>
+      <span class="nr">5</span>
       <h3>Koppla om Shopify på claude.ai</h3>
       <div class="inne">
         <p>Shopify-connectorn har gått ut. Kopplas den om kan nästa session skapa rabattkoder och läsa ordrar själv i stället för att be dig klicka.</p>
