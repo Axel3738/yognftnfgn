@@ -174,6 +174,16 @@ nattvakten, rörs aldrig.** Batch #2:s `PD_46_H1` är Approved i hubben och
 ligger nu i SE-kampanjen (första levererade från batch #2); `PD_42_H1`,
 `PD_45_H1` och batch #3:s `PD_61_H1` är `in progress`, 24 rader `Draft`.
 
+**Nattvakten 2026-09-15 (ingen briefdag, körning nr 5):** kampanjen **sänkt
+700 → 500 kr** (förlustserie: 5 dygn i rad under BE-ROAS 1,49 — regeln går
+förbi kadensspärren; tillbakaläst, loggrad). Golvet är nått. 7 d: 3 452 kr,
+6 köp, ROAS 0,68, 0 bedömbara. Dygn 2026-09-14: 394 kr / 1 köp / ROAS 1,25 —
+första dygnet nära break-even, men ett dygn. Hubben: **8 videor i
+`To be Reviewed`** (Carl Vicente levererade `PD_47_H1`, `PD_48_H1`, `PD_54_H1`,
+`PD_55_H1`, `PD_57_H1`, `SO_9_H1`, `PD_61_H1` 2026-09-14; `PD_42_H1` utan
+ansvarig) — leveransrundan 14:00 tar dem live. `PD_56_H1`, `PD_60_H1`,
+`JF_5_H1` `in progress`, 16 rader `Draft`.
+
 ---
 
 ## Översättning NO — 2026-09-12 16:00 (`/ops-oversatt tacklebay/fiskespohallare-4-pack`, körning nr 1)

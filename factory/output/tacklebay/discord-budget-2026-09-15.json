@@ -1,0 +1,23 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay",
+  "datum": "2026-09-15",
+  "lage": "budget",
+  "server": "TackleBay — OPS",
+  "gjort": [
+    "Budget round: campaign TACKLEBAY_SE_Spöhållaren lowered 700 → 500 kr/day (five losing days in a row, ROAS under break-even 1.49 every day — the loss-streak rule ignores the cadence lock). Read back and logged. 500 kr is the floor; the rules never go lower and never pause a campaign",
+    "Nothing paused by me, nothing activated. PD_11_H1 and PD_25_H1 stay paused (someone else's decision)",
+    "Still a cold start: 66 ads, 3 452 kr, 6 purchases over 7 days, 0 above the data gate",
+    "Hub: 8 finished videos are in To be Reviewed (Carl Vicente delivered PD_47_H1, PD_48_H1, PD_54_H1, PD_55_H1, PD_57_H1, SO_9_H1, PD_61_H1; PD_42_H1 too) — the 14:00 delivery run takes them live. 3 more in progress, 16 briefs still in Draft",
+    "No brief day (Tuesday). Next brief day: Wednesday 2026-09-16"
+  ],
+  "siffror": { "spend_7d": 3452, "kop_7d": 6, "roas_7d": 0.68, "vinstbidrag_7d": 0 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-16",
+  "varningar": [
+    "The campaign is now at the 500 kr floor with ROAS 0.68 over 7 days. From here the rules can only pause it if it has 0 purchases for a week at the floor — otherwise it keeps spending. Say 'pausa TackleBay SE' if you want it stopped until the new videos have run",
+    "DISCORD_AXEL_ID is not set — no ping possible for Axel"
+  ]
+}
