@@ -17,7 +17,7 @@ VA-listan i de rapporterna den här personen ska beta av.
 |---|---|---|
 | Vad som mäts först | Närvaro + volym | **Svarar** + avslutar det hen börjar |
 | Skicklighet i prioritetslistan | 4:a | **5:a** — karaktär är jobbkravet |
-| Arbetstid | Fast, 8 h/dag mån–lör | **Rörligt 2–10 h/dag**, fast fönster |
+| Arbetstid | Fast, 8 h/dag mån–lör | **Rörligt 2–10 h/dag, 7 dagar** |
 | Lön | Månadslön $520 | **Timlön $3,50 + golv $350/mån** |
 | Stage 2-test | 3 ads på 24 h (volym) | **En riktig arbetsdag** på 24 h (omdöme) |
 | Bonusar | Consistency / push / winner | Responsiveness $40 / ownership $40 |
@@ -36,9 +36,17 @@ VA-listan i de rapporterna den här personen ska beta av.
    den här personen får erbjudanden. Trappa $3,50 → $3,75 (1 mån) → $4,00
    (3 mån) → $4,35 (6 mån). Ett normalt 170-timmarsmånad landar på
    ~$595–675 inkl. bonus. Annonshuvudet på OnlineJobs: **"$500-700 usd/month"**.
-3. **Tillgängligheten är produkten, och det står i klartext.** Mån–lör,
-   nåbar 09:00–18:00 PHT, inga parallella klienter i samma fönster. Utan den
-   raden får vi någon som jobbar 3 h och försvinner precis när det brinner.
+3. **Tillgängligheten är produkten, och det står i klartext.** Nåbar
+   09:00–18:00 PHT, inga parallella klienter i samma fönster. Utan den raden
+   får vi någon som jobbar 3 h och försvinner precis när det brinner.
+   **Sju dagar i veckan, söndag inkluderad — Axels beslut 2026-09-14.**
+   Söndagen skrivs som veckans lättaste dag (oftast en timme inkorg), och
+   annonsen säger rakt ut att det är det folk kommer hoppa av på. Ledighet
+   finns kvar: säg till några dagar i förväg så är det ja. Utan den ventilen
+   filtrerar sjudagarskravet bort exakt de stabila personer vi vill ha.
+   ⚠️ Sju dagar utan en enda fast ledig dag är den vanligaste orsaken till
+   att en annars bra assistent säger upp sig runt månad 4–6. Ser du trötthet:
+   ge en fast halvdag ledig i veckan innan hen ber om den.
 
 ## Testerna (varför varje del finns)
 
