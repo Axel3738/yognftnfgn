@@ -374,3 +374,16 @@ Ingen brief (måndag). Discord `#ads`: budgetrapport + den öppna ägarfrågan
 (A pausa nattvakten / B låt Jazz göra klart / C lägg ner) ställd igen med ping.
 Nästa briefdag ons 16/9 beställer 21 briefer till om inget svar kommit —
 kadensen sänks inte av en session.
+
+---
+
+## Körning nr 6 — 2026-09-15, nattvakten (ingen briefdag)
+
+Kampanjen fortfarande **PAUSED** (Axel 13/9) — 0 ändringar. 7d: 2 835 kr, 5 köp,
+ROAS 1,18. **Briefronden pausad i registret** (`briefantal … paus`, satt
+2026-09-15): butiken annonserar inte, 36 briefer ligger som Draft, och alla tre
+svar på ägarfrågan (A/B/C) betyder "inga nya briefer" — samma princip som Axels
+CatCabin-beslut 14/9 ("inte värt att spamma nya ads"). Budgetronden går varje
+natt som förut. Släpps med `node factory/register.mjs briefantal
+kalender/adventskalender-racingbilar auto` när kampanjen är igång igen.
+Discord `#ads`: rapport utan ping (frågan står i varningarna, pingad 14/9).
