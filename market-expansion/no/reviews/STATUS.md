@@ -3,6 +3,39 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-14 — 8 nya, tre överhoppade, 31 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade **en** ny mapp:
+**Staketstolpsbygel**. Den importerades. De tre överhoppade från 2026-09-13
+(Taköverdrag, Termoskydd, Lövblåsare) kollades om och är oförändrade.
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Gjerdestolpebøyle 2-pk | 8 | `gjerdestolpeboyle-2-pk-redder-stolpen-uten-a-grave` |
+
+Kartorna: +11 översättningar, +6 namn. Butiksfeeden står kvar på 200 produkter.
+
+### Mappnamnen skiljer sig mellan svenska och norska mappen
+
+Den svenska produktmappen heter **Staketstolpslagare**
+(`18SeThNxJbarejclFrJQlgDecuQhtwti7`, ark `Staketstolpslagare_REVIEWS`
+= `1qVw3IQXRfO_wpJ3j4eVeKCIVlH3VCyP8AGhS3OZnrhE`), NO-mappen heter
+**NO Staketstolpsbygel**. Samma produkt — samma fyra vinkelkoder
+(CS/GT/PD/SP) och samma hooknumrering i båda mapparna, och det norska
+handlet är `gjerdestolpeboyle-…`. En sökning på "bygel" i huvudmappen ger
+noll träffar; matcha på produktens stam, inte på hela namnet.
+
+### ⚠️ Omkoll av de tre överhoppade — inget har ändrats
+
+| Ark | Läge 2026-09-14 |
+|---|---|
+| `Taköverdrag Husvagn_REVIEW` | title `Lars` / reviewer `Anna` — förskjutet, oförändrat sedan 2026-09-12. Bär dessutom **utekattkojans** `product_handle` |
+| `Termoskydd Husbil_REVIEW` | title `Anna` / reviewer `Anna` — oförändrat sedan 2026-09-13 |
+| `5.1 Lövblåsare_REVIEW` | arket finns; beverbutikken.no har fortfarande ingen løvblåser i sina 200 produkter (sökt på "blås", "vifte", "løv", "lauv", "stolp"). Närmaste träff är fortfarande "Jetvifte for Makita-batteri" — en annan produkt |
+
+**Datumen tog inte, som väntat.** 27 produkter / 242 recensioner bär nu
+importdagens datum.
+
 ## Läget 2026-09-13 — 10 nya, tre överhoppade, 30 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade tre nya mappar:
