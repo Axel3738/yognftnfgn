@@ -40,7 +40,7 @@ export const FAKTA = {
     kalla: `${B}/image20.png (597 px: rutnät 6+6+6+7 = 25 flingor + garageport med flingorna) · ${B}/image27.jpg (mått 4,1 × 5,0 cm) · ${B}/image15.jpg (collage, INTE förpackningen)`,
     latt: { antal: 25, storlekCm: [4.1, 5.0], motiv: 'snöflingor i vitt, blått och silver', anvandning: 'garageport, fönster, dörr' },
     obs: '⚠️ Axels radnamn säger 25-pack och leverantörens rutnät visar 25 (raderna har 6+6+6+7 flingor — en tidigare räkning sa 24, rättat 2026-09-12 efter zoom på image20.png). Räknebart vinner: 25. Antalet ska synas i titel, som badge på huvudbilden och som första bullet. Inget om häftmassa/magnet/vad de fäster med.', varning: null },
-  vattenskal: { batch: 10, sku: 'TEMU-B10-VATTENSKAL', kategori: 'gid://shopify/TaxonomyCategory/ap-2-14',
+  vattenskal: { batch: 10, sku: 'TEMU-B10-VATTENSKAL', kategori: 'gid://shopify/TaxonomyCategory/hg-3-11',   // Bird Baths — omvinklad till vilda fåglar 2026-09-14 (var ap-2-14 Pet Bowls)
     kalla: `${B}/image8.png (459 px, EU plug, ren engelsk) · ${B}/image18.jpg (1600 px, samma skål, "EU (欧规)" — kinesiskt tecken beskärs)`,
     latt: { volymL: 2.2, spanning: '220–230 V', kontakt: 'EU-kontakt', farg: 'grön/svart', sladd: 'sladd med metallspiral', etikett: 'Heated Pet Bowl' },
     obs: 'Effekt, temperatur och "fryser inte ner till −X °C" står inte i offerten — påstå bara att den är uppvärmd. Sladdens metallspiral syns på bilden.', varning: null },

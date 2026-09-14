@@ -50,7 +50,14 @@ const kie = (path, body) => fetch(`https://api.kie.ai/api/v1/${path}`, { method:
 const ref = {}, tmpMedia = [];
 for (const id of ids) {
   if (REF_OVR[id]) { ref[id] = REF_OVR[id]; continue; }
-  if (!TEMP_REF.has(id)) { ref[id] = live.find((x) => x.land === 'SE' && x.id === id).hero; continue; }
+  if (!TEMP_REF.has(id)) {
+    const l = live.find((x) => x.land === 'SE' && x.id === id);
+    if (l) { ref[id] = l.hero; continue; }
+    // inte med i live-urls.json (skriven av granska.mjs) → hämta heron direkt ur SE-produkten
+    const f = (await import('./fakta.mjs')).FAKTA[id];
+    const q = await b.fraga(`query($q:String!){products(first:1,query:$q){nodes{media(first:1){nodes{... on MediaImage{image{url}}}}}}}`, { q: `sku:${f.sku}` });
+    ref[id] = q.products.nodes[0].media.nodes[0].image.url; continue;
+  }
   const fil = `/tmp/b9/ut/${id}/${id}-ref.jpg`;
   const p = await b.fraga(`query($q:String!){products(first:1,query:$q){nodes{id}}}`, { q: `sku:TEMU-B10-${id.toUpperCase()}` });
   const pid = p.products.nodes[0].id;

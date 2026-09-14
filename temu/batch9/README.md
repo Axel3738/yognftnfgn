@@ -8,7 +8,7 @@ Axel: *"Kan du lägga upp alla dessa produkter på sidan i sverige och sen norge
 notion. Dom som står out of stock eller nån sjuk moq eller bara inte har en quote får du strunta i
 och rapportera till mig."*
 
-**21 rader i arken, 15 byggda** (SE + NO, snöskyffeln bara SE). Varje produkt har hero + detalj +
+**21 rader i arken, 16 byggda** (SE + NO, snöskyffeln bara SE). Varje produkt har hero + detalj +
 faktabild (SV/NO). AI-miljöbild + GIF gjordes i efterhand via **KIE** (Higgsfield var slut på credits,
 Axel: *"Men du kan inte bara använda Kie Ai api då?"* — jo): `miljo-kie.mjs` → `miljo-in.mjs se|no bild`
 → `gif-kie.mjs` → `miljo-in.mjs se|no gif`.
@@ -21,7 +21,7 @@ Axel: *"Men du kan inte bara använda Kie Ai api då?"* — jo): `miljo-kie.mjs`
 | snoblasarkapell | 10 | 459 | 389 | ✅ |
 | honsgardsduk | 10 | 459 | 379 | ✅ |
 | snoflingor (**25**-pack) | 10 | 249 | 179 | ✅ Axels "25" stämde — leverantörens rutnät är 6+6+6+7 |
-| vattenskal | 10 | 849 | 879 | ✅ NO dyrare än SE (offertens NO-pris) |
+| vattenskal | 10 | 849 | 879 | ✅ NO dyrare än SE. **Omvinklad 2026-09-14 till VILDA FÅGLAR** (Axel: "riktad mer mot fåglar … istället för ens egna hund"): ny copy, fågelbild + GIF (hundbilden borta), kategori Bird Baths, taggar. `vattenskal-faglar.mjs` |
 | atvkapell (3XL) | 10 | 579 | 539 | ✅ |
 | snoskyffel (utan batteri) | 10 | 2 349 | — | ✅ bara SE — CWD: oversize till Norge |
 | kajakhallare (2-pack) | 10 | 599 | 809 | ✅ 4 skruvar + 4 pluggar (räknade på bilden) |
@@ -30,11 +30,12 @@ Axel: *"Men du kan inte bara använda Kie Ai api då?"* — jo): `miljo-kie.mjs`
 | taljset (30 delar) | 10 | 869 | 1 039 | ✅ |
 | varmeljus (24-pack, **utan fjärr**) | 10 | 379 | 519 | ✅ Axel ville först ha versionen med fjärr (CWD offererade bara utan) — beslut 2026-09-12: *"skit i ny offert vi kör utan fjärr"*. Låg i draft ~1 h |
 | blockljus (3-pack, med fjärr) | 10 | 479 | 619 | ✅ |
+| fagelmatare (kamera, solcell) | 10 | 1 659 | 1 919 | ✅ **byggd 2026-09-14** på CWD:s offertbild ("similar" — annan modell än Axels JOOAN-länk) efter Axels besked: "kommer med instruktioner där visas appen". 5 MP ur Axels rad; inga JOOAN-specar. Arket sa 1 499 |
 
 **Byggs inte (rapporterat till Axel):** caravan front cover (ark A, out of stock) · deer hanger
 pulley (ark A, out of stock) · snöskoterkapell (ark B, MOQ 50 custom) · takluckehuv 2-pack (ark B,
-out of stock) · viltsläde (ark B, MOQ 100) · fågelmatare med kamera (ark B, CWD skrev "similar" —
-annan produkt än länken).
+out of stock) · viltsläde (ark B, MOQ 100). *(Fågelmataren låg först här — CWD skrev "similar" — men
+byggdes 2026-09-14 på Axels besked. Lärdom: en "similar"-offert är en fråga till Axel, inte ett skäl att hoppa.)*
 
 ## Filerna
 - `fakta.mjs` — låsta fakta, SKU (`TEMU-B9-*` / `TEMU-B10-*`), verifierade kategori-GID. **Facit.**
@@ -45,12 +46,12 @@ annan produkt än länken).
 - `skapa.mjs <se|no> [--skarp] [id]` — skapar produkten med 3 bilder, 7-blocksbeskrivning, cogs, publicering.
 
 ## AI-material via KIE (2026-09-12, 908 credits)
-- **14 miljöbilder** (`google/nano-banana-edit`, referens = produktens egen livebild; badge-heroer
+- **16 miljöbilder** (`google/nano-banana-edit`, referens = produktens egen livebild; badge-heroer
   fick tillfällig badgefri referens som media på SE-produkten och raderades efteråt). Tre gjordes om
   efter granskning: motorlåset syntes knappt, täljsetet fick dubbla verktyg (referensen byttes till
   detaljbilden med en kniv), snöflingorna visade 17 st (nu fyra flingor på en dörrpanel — ingen
   räknebar totalsumma). Värmeljusen fick sin när Axel satte tillbaka dem (sex ljus på en fönsterbräda, ingen fjärr).
-- **14 GIF:ar** (`veo3_fast` 8 s 720p → ffmpeg 8 fps / 400 px, alla < 4 MB). Blockljusen fick ingen:
+- **16 GIF:ar** (`veo3_fast` 8 s 720p → ffmpeg 8 fps / 400 px, alla < 4 MB). Blockljusen fick ingen:
   Veo vägrade två gånger med "unable to generate audio" — miljöbilden ligger i GIF:ens plats i stället.
   Snöskyffelns första video byggde om maskinen (såg ut att ha batteri) — omgjord med "completely
   motionless and unchanged"; granska ALLTID rutremsan innan GIF:en läggs in.
