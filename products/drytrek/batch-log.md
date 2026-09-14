@@ -778,3 +778,13 @@ cy 908.
 NO-kampanjen kör efter körningen **45 annonser, samtliga ACTIVE**: PD 27, SP 7,
 CS 4, G 4, CI 1, BOF 1, FO 1. Kön är därmed tom utom de två röstkollsstoppade
 raderna.
+
+---
+
+## Nattvakten 2026-09-15 (körning nr 4, ingen briefdag)
+
+Kampanjen 6 dagsrader: **4 167 kr, 7 köp, ROAS 0,72** (7d); 3d 2 508 kr / 5 köp / 0,88.
+Dygn: 09-09 16 kr/0 köp · 09-10 856 kr/2 köp · 09-11 788 kr/0 köp · 09-12 1123 kr/3 köp · 09-13 848 kr/2 köp · 09-14 537 kr/0 köp. **Sex förlustdygn i rad — står redan på
+golvet 500 kr: ingen sänkning, ingen paus** (Axels regel 2026-09-10). 0 annonspauser
+(42 annonser, alla under kill-gränsen efter budgetsänkningen). Toppspend aktiva:
+PD_14_12 257 kr/0 · SP_6_H1 196 kr/0 · CS_2 155 kr/0 · PD_1 146 kr/0 · CS_3 141 kr/0 · PD_14_15 122 kr/0. Utfall per annons läses på onsdag 16/9.
