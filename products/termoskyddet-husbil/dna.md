@@ -1,0 +1,79 @@
+# Creative DNA — Termoskydd Husbil 211 × 171 cm
+
+Skapad 2026-09-14. Första avläsningen. Kampanj `120250175763810291`,
+`Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11`.
+
+## Verifierade fakta (produktsidan, avläst 2026-09-14)
+
+- URL: https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande
+- **559 kr** (jämförpris 932 kr) = 373 kr / **40 %** rabatt.
+  Verifierat i sidans rådata: `"price":55900`, `"compare_at_price":93200`, och
+  i JSON-LD (`"price" : 559.0`). Annonsernas "40 % rabatt" stämmer alltså exakt.
+- Mängdrabatt: **2 st −15 % (förvald, "Mest populär")**, 3 st −20 %. Det är
+  förklaringen till att Metas intäkt per köp (576 kr) ligger över styckpriset.
+- Fri frakt inom Sverige · 5–10 arbetsdagar · 30 dagars öppet köp · Klarna.
+- Rubrik: "Termoskydd Husbil 211 × 171 cm – Utvändigt och Mörkläggande"
+- Sidans egna formuleringar:
+  - "Kondensen får inte fäste på insidan av rutan – skyddet sitter utanpå glaset, inte innanför"
+  - "Kupén blir inte trettio grader av morgonsolen"
+  - "Ingen ser in på rastplatsen – mörkläggande hela vägen över framvagnen"
+  - "Täcker vindrutan och båda sidorutorna – 211 cm bred, 171 cm över mitten, 90 cm sidflikar"
+  - "Spänns fast utan att öppna dörrarna – flikarna kläms i dörrkarmen och håller i blåst"
+  - "Två minuters jobb på utsidan i stället för imma att torka bort varje dag."
+
+## ⚠️ Tre saker som INTE får förekomma i ny copy
+
+1. **Produkten har NOLL recensioner.** Judge.me-widgeten säger
+   `data-average-rating='0.00'`, `data-number-of-reviews='0'`. Live-annonserna
+   `SP_2` och `SP_2_1` påstår ändå "⭐⭐⭐⭐⭐", "det hör vi om och om igen" och
+   **"Tusentals husbilsägare har redan bytt"** — inget av det går att belägga.
+   Butikens totalbetyg (4,86 på 681 recensioner) gäller hela butiken och får
+   aldrig presenteras som produktens.
+2. **Säsongen är fel i den bäst säljande annonsen.** `CS_3` säger "inför
+   sommaren" och "Svalare på sommaren" — det är september på väg in i vintern.
+   Kondens, imma, mörker och kyla är rätt vinkel nu.
+3. **Påhittad brådska.** `CS_3` säger "⏰ IDAG ENDAST" och "priset går tillbaka
+   imorgon". Rean har legat i dagar. Ska bort.
+
+Sidan skriver själv att miljöbilderna är AI-genererade illustrationer — påstå
+aldrig att de föreställer riktiga kunder eller riktiga husbilar.
+
+## Siffrorna (livstid, avläst 2026-09-14)
+
+Kampanj: 3 682 kr spend · 23 köp · ROAS 3,60 · intäkt 13 248 kr.
+**AOV 576 kr → break-even-CPA 358 kr.** Totalt vinstbidrag 2 772 kr.
+Budget höjd 1 400 → 1 650 kr/dag 2026-09-14 (ROAS 3,52, snabbspåret).
+
+| Annons | Spend | Andel | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|
+| CS_3 (statisk) | 2 392 kr | 65 % | 13 | 184 kr | 3,20 | **2 259 kr (81 %)** |
+| SP_2 (statisk) | 560 kr | 15 % | 3 | 187 kr | 3,00 | 513 kr (19 %) |
+
+För tidigt (ingen dom): **SP_2_1 (statisk) 204 kr, 4 köp, CPA 51 kr, ROAS 10,96**
+— produktens mest lovande annons, men under 300 kr spend. CS_2_1 (282 kr, 2 köp),
+CS_2 (107 kr, 1 köp), G_1 (77 kr, 0 köp), CS_1, SP_1.
+
+## Winning DNA (allt är hypotes — bara två bedömbara annonser)
+
+- **HYPOTES — statiskt är det enda som säljer hittills.** Båda bedömbara
+  annonserna är statiska. **Ingen video har ett enda köp**, och G-, PD- och
+  SP-videorna har alla under 80 kr spend. Det kan lika gärna vara svält som
+  svaghet — läs aldrig låg spend som svag creative.
+- **HYPOTES — prisankaret bär.** CS_3 står för 81 % av vinsten. Men dess copy
+  innehåller både påhittad brådska och fel säsong, så det som bevisats är
+  prisankaret, inte formuleringen.
+
+## Losing DNA
+
+Inget bevisat kill. Ingen annons har nått 500 kr spend under break-even.
+
+## Batchen som är specad men INTE levererad
+
+17 briefer (6 videokoncept byggda på kondens/mörkläggning/integritet, 2 varianter
+på vinnarna med brådskan och sommarsäsongen borttagen, 6 statiska, 3 BOF, inga
+review-bilder eftersom produkten saknar recensioner) var färdigspecade
+2026-09-14 men skrevs aldrig — kontots månadsgräns tog slut mitt i körningen.
+Hubben `BÄVER Termoskyddet för Husbil`
+(`collection://7d0270ab-908c-831e-8021-8758336851c8`) är fortfarande tom.
+
+Upptagna AD-ID i kontot: CS 1–3, G 1–3, PD 1–3, SP 1–3. Nästa lediga är 4.
