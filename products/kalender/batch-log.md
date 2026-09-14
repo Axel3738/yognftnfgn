@@ -464,3 +464,16 @@ avvecklad = aldrig mål. Inget översatt, inget renderat, 0 HeyGen-krediter, ing
 
 Gårdagens sex norska annonser hann spendera 1–48 kr var före pausen — otestade, inte dömda.
 Slås Norge på igen tar rutinen kön automatiskt samma dag 15:55.
+
+## Leveransrunda 2026-09-14 — oförändrat, 0 uppladdade
+
+Butiken fortfarande avstängd (SE PAUSED sedan 13/9 09:06 UTC, ingen statusändring i kontot
+sedan dess — Axel har rört HeimGuard och DryTrek men lämnat AdventLane). Kön tom: 0 i
+`To be Reviewed`, 0 i `Creative strat review`. Hubben har **inte ändrats på 22 timmar**
+(48 rader, samma fördelning som 13/9) — ingen redigerartid bränns just nu på den stängda
+butiken. Frågan om batch #3 obesvarad. Spend står stilla på 2 835 kr (36 kr eftersläpande
+attribution sedan 13/9). Inget uppladdat, inget aktiverat, ingen status ändrad.
+
+⚠️ Kontoläsningen fick Metas rate limit och behövde 5 omförsök (~12 min) innan de 463
+annonserna gick att läsa. Den återhämtade sig själv — normalt när flera OPS-rutiner läser
+samma konto samma kvart, inte ett fel att åtgärda.
