@@ -3,6 +3,14 @@
 Butik: catcabin.se (Shopify `ras1t2-2x`) · produkt `utekattkojan` ·
 annonskonto **MagiBorsten DK `915422744950975`** (OPS Factorys gemensamma).
 Break-even-ROAS 1,62 · pris 789 kr (jämförpris 1 039 kr).
+Notion-hub: `catcabin creative hub` (`3da270ab-908c-80f6-9663-caff35a3c895`).
+
+⚠️ **Hub-id:t byttes 2026-09-14.** Bygget 2026-09-12 skapade
+`3d9270ab-908c-8145-8538-d55aaaf4a7e2`; den svarar 404 på `databases/<id>/query`
+— integrationen "Bäverbutiken RUTINER" når dess metadata men inte innehållet, så
+ingen rutin kunde läsa hubben. Axel skapade 2026-09-13 en ny för hand med samma
+namn (äkta `status`-kolumn, 14 statusvärden). Mätt 2026-09-14: gammal → 404,
+ny → 200 med 0 rader, alltså gick ingen data förlorad.
 
 ---
 

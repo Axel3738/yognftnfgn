@@ -6,7 +6,11 @@ av.** Saknas en hypotes skrivs `hypotes: ej loggad` — den hittas aldrig på i
 efterhand.
 
 Nyckel `carashell/takskyddet` · konto **MagiBorsten DK `915422744950975`** ·
-hub `CaraShell creative hub` (`3d9270ab-908c-819d-be0f-c6cb71320871`).
+hub `Carashell creative hub` (`3da270ab-908c-80c4-80d1-fbdb3fefd3b4`).
+⚠️ Hub-id:t byttes 2026-09-14: det ursprungliga `3d9270ab-908c-819d-be0f-c6cb71320871`
+svarar 404 på query (integrationen når inte innehållet) och var alltså oläsbart för
+rutinerna. Axels handgjorda ersättare från 2026-09-13 svarar 200 med 0 rader — ingen
+data gick förlorad. Se CLAUDE.md:s CaraShell-rad.
 
 ---
 
