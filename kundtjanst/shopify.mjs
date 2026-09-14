@@ -149,6 +149,23 @@ export class ShopifyLasare {
     return ut;
   }
 
+  /**
+   * EN order på id. Tvistkollen använder den: den läser tvister långt bakåt
+   * men vill inte paginera hem ett år av ordrar bara för att få fram namnet
+   * (#1052) på de få som brådskar. Saknas ordern: null, aldrig ett kast.
+   */
+  async hamtaOrder(id) {
+    if (!id) return null;
+    const falt = 'id,name,order_number,email,contact_email,created_at,financial_status,fulfillment_status,fulfillments,refunds,cancelled_at,total_price,currency,tags';
+    try {
+      const { data } = await this.get(`https://${this.shop}/admin/api/${API_VERSION()}/orders/${encodeURIComponent(id)}.json?fields=${falt}`);
+      return data.order ? normaliseraOrder(data.order) : null;
+    } catch (e) {
+      if (e.status === 404) return null;
+      throw e;
+    }
+  }
+
   /** Tvister initierade sedan `sedan`. { tillganglig, lista, orsak }. */
   async hamtaTvister(sedan, ordrar = []) {
     const url = `https://${this.shop}/admin/api/${API_VERSION()}/shopify_payments/disputes.json`;
