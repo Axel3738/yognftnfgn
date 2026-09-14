@@ -67,8 +67,88 @@ skalningens CBO.
 
 ---
 
-## Batch #2 — planerad
+### Utfall per 2026-09-14 (efter 5 dygn) — briefrond nr 1
 
-Skrivs av första briefdagen som faller efter 2026-09-12
-(`/notionscalercs carashell/takskyddet`, onsdag eller söndag). Storlek **7**
-briefer så länge ingen redigerare är tilldelad butiken; 21 när en är det.
+**2 435 kr spend, 8 köp, CPA 304 kr mot break-even 693 kr.** Datakvaliteten är
+ren: `amount_spent × purchase_roas` matchar `omni_purchase_values` på 0,0 %
+avvikelse för alla sex annonser med köp, 0 trasiga rader.
+
+⚠️ **0 av 16 annonser är bedömbara.** Grinden går vid 300 kr **och** 3 köp per
+annons; ingen passerar båda. `SP_2_1` är 3 kr från den (297 kr, 3 köp). Alltså:
+ingen ranking, ingen kill-kandidat, ingen dom över en enskild creative. Mönstren
+nedan är grupperade utfall och är därför **hypoteser**, inte bevis.
+
+| Annons | Typ | Spend | Köp | CPA | ROAS | Hook | Hold | CTR | CPC |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `PD_2_H1` | video | 462 kr | 1 | 462 kr | 2,44 | 47 % | 42 % | 6,46 % | 1,78 kr |
+| `SP_3_H1` | video | 307 kr | 1 | 307 kr | 3,68 | 47 % | 31 % | 4,34 % | 3,07 kr |
+| **`SP_2_1`** | **bild** | 297 kr | **3** | **99 kr** | **11,39** | — | — | 4,72 % | 1,77 kr |
+| `SP_2_H1` | video | 268 kr | 1 | 268 kr | 4,21 | 48 % | 32 % | 3,61 % | 2,49 kr |
+| `PD_1_H1` | video | 266 kr | 0 | — | — | 54 % | 42 % | 7,52 % | 0,94 kr |
+| `CS_2_1` | bild | 189 kr | 0 | — | — | — | — | 3,01 % | 3,64 kr |
+| `SP_1_H1` | video | 145 kr | 0 | — | — | 38 % | 28 % | 4,39 % | 4,03 kr |
+| `PD_3_H1` | video | 129 kr | 0 | — | — | 43 % | 36 % | 7,39 % | 1,61 kr |
+| `CS_1_H1` | video | 110 kr | 1 | **110 kr** | 10,26 | 44 % | 22 % | 3,15 % | 3,93 kr |
+| `GT_3_H1` | video | 66 kr | 0 | — | — | 36 % | 26 % | 5,70 % | 2,26 kr |
+| `GT_1_H1` | video | 54 kr | 0 | — | — | 42 % | 15 % | 3,41 % | 3,61 kr |
+| `GT_2_H1` | video | 54 kr | 0 | — | — | 42 % | 22 % | 4,02 % | 2,55 kr |
+| `PD_2_1` | bild | 29 kr | 1 | 29 kr | 38,61 | — | — | 4,55 % | 1,83 kr |
+| `CS_3_H1` | video | 26 kr | 0 | — | — | 36 % | 20 % | 3,07 % | 3,76 kr |
+| `CS_2_H1` | video | 17 kr | 0 | — | — | 37 % | 16 % | 0,99 % | 16,85 kr |
+| `GT_2_1` | bild | 15 kr | 0 | — | — | — | — | 1,10 % | 14,75 kr |
+
+**Variabeltabell** (vinstbidrag = `(693 − CPA) × köp`):
+
+| Variabel | Värde | Spend | Andel | Köp | CPA | Vinstbidrag |
+|---|---|---:|---:|---:|---:|---:|
+| Format | **bild** | 531 kr | 22 % | 4 | **133 kr** | **2 241 kr** |
+| Format | video | 1 904 kr | 78 % | 4 | 476 kr | 868 kr |
+| Vinkel | **SP** | 1 018 kr | 42 % | 5 | **204 kr** | **2 447 kr** |
+| Vinkel | PD | 887 kr | 36 % | 2 | 443 kr | 499 kr |
+| Vinkel | CS | 343 kr | 14 % | 1 | 343 kr | 350 kr |
+| Vinkel | GT | 188 kr | 8 % | 0 | — | — |
+
+### Svar på de tre frågorna batch #1 lämnade
+
+1. **Håller PD sin volym när mekanismraden är utbytt?** **Nej.** PD gick från
+   61 % av spenden (avläst 2026-09-12) till 36 %, och ligger på CPA 443 kr mot
+   SP:s 204 kr. Rekonstruktionen av hypotesen håller alltså inte så här långt —
+   men PD är fortfarande långt under break-even 693 kr, så det är en
+   omprioritering, inte en utdömning.
+2. **Replikerar bilderna (mönster 3)?** **Ja, kraftigt.** Bild CPA 133 kr mot
+   video 476 kr, och bild står för 72 % av vinstbidraget på 22 % av spenden.
+   Ärvd mönster 3 bekräftas nu i CaraShells eget konto.
+3. **Får CS och GT spend alls i CBO:n?** **Nej** — 14 % respektive 8 %.
+   Frågan är därmed besvarad: de måste testas separat, i eget ABO.
+
+---
+
+## Batch #2 — 2026-09-14, briefrond nr 1 (`/notionscalercs carashell`)
+
+**7 briefer** (ingen redigerare tilldelad ⇒ registrets `Briefrond:` säger 7).
+**4 bild + 3 video** — övervikten åt bild är datadriven, se mönster 6.
+Copy-modell `ab`: 4 fable / 3 sonnet, taggen står i varje briefs VARIABELTAGGAR.
+Backloggens fem väntande koncept är alla plockade i den här ronden; de två
+återstående platserna är varianter av den bäst presterande annonsen.
+
+| Annons | Typ | Vinkel | Hypotes | Källa / förälder | copy_model |
+|---|---|---|---|---|---|
+| `CaraShellRoof_CS_4_1` | bild | CS | Rabatten säljer lika bra utan falsk brådska — "IDAG" bort, priset som stående erbjudande. Isolerar brådskan. | backlog #1; ärvd `Takoverdrag_CS_2_H1` CPA 81 kr | fable |
+| `CaraShellRoof_GT_4_1` | bild | GT | Presentvinkeln bar i källan men bara som video; bilderna replikerar här (mönster 3+6). Testar vinkel mot creative — den öppna frågan i mönster 2. | backlog #2; ärvd `Takoverdrag_GT_2_H1` 14 köp | sonnet |
+| `CaraShellRoof_PD_4_1` | bild | PD | "Vårsyndet": före/efter mellan fukttestet och torrt tak skärper PD till en konkret konsekvens — och flyttar PD till det format som vinner. | backlog #3; produktfilens `problem_text` | fable |
+| `CaraShellRoof_SP_4_1` | bild | SP | Variant av bäst presterande annonsen. **Isolerad variabel: citatet** — allt annat hålls identiskt. | **förälder `SP_2_1`** (297 kr, 3 köp, CPA 99 kr) | sonnet |
+| `CaraShellRoof_PD_4_H1` | video | PD | "Bara taket. En person." har aldrig varit hook, bara bullet. Demo av påsättningen. | backlog #4; produktfilens `usp` | fable |
+| `CaraShellRoof_PD_5_H1` | video | PD | Husbilsägaren som avatar — all copy säger husvagn, bilderna visar husbil. ⚠️ **gissning**, ingen data skiljer avatarerna. | backlog #5; produktfilens mediakommentar | sonnet |
+| `CaraShellRoof_SP_4_H1` | video | SP | SP är CaraShells starkaste vinkel (5 av 8 köp). Äkta omdöme + "16 omdömen, alla fem stjärnor" som video. | **data**: SP-vinkeln, vinstbidrag 2 447 kr | fable |
+
+Recensionsunderlaget verifierat mot carashell.se samma dag: **16 omdömen,
+snitt 5,00** — påståendet "Ett av 16 omdömen – alla fem stjärnor" är alltså sant
+och får stå kvar.
+
+### Att läsa av nästa briefdag (2026-09-16)
+
+1. Passerar `SP_2_1` grinden, och håller CPA 99 kr när den får mer spend?
+2. Slår bildvarianterna (`CS_4_1`, `GT_4_1`, `PD_4_1`, `SP_4_1`) videosnittet
+   476 kr — alltså replikerar mönster 6 på nya creatives?
+3. Ger CS utan brådska (`CS_4_1`) bättre eller sämre CPA än `CS_2_1` med den?
+4. Får GT någon spend alls den här gången, eller måste eget ABO till?
