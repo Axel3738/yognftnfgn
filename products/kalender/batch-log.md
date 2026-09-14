@@ -477,3 +477,12 @@ attribution sedan 13/9). Inget uppladdat, inget aktiverat, ingen status ändrad.
 ⚠️ Kontoläsningen fick Metas rate limit och behövde 5 omförsök (~12 min) innan de 463
 annonserna gick att läsa. Den återhämtade sig själv — normalt när flera OPS-rutiner läser
 samma konto samma kvart, inte ett fel att åtgärda.
+
+---
+
+## Översättning NO `/ops-oversatt` 2026-09-14 — oförändrat, kön hålls
+
+NO-kampanjen fortfarande PAUSED med spend (3 211 kr livstid, +54 kr eftersläpande attribution
+sedan 13/9), Axels paus 13/9 11:05. Kön: 1 rad (`FM_1_H1`) hålls. Inget översatt, inget
+renderat, 0 HeyGen-krediter, ingen Notion-status ändrad, kontot orört. Discord-rapport i
+`#annons-uppladdning`, ingen ping. Kontoläsningen gick utan rate limit (471 annonser, 19 kampanjer).
