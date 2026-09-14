@@ -715,3 +715,66 @@ kampanjen på en gång.
 De tio parkerade `Damasker_*`-raderna i `Creative strat review` ligger kvar,
 orörda, och rapporterades som varning utan ping enligt regeln som skrevs
 2026-09-13. Frågan till Axel är fortfarande obesvarad.
+
+---
+
+## Norge 2026-09-14 — 4 videor live i NO-kampanjen (`/ops-oversatt drytrek`, rutinens första egna körning)
+
+Rutinen `trig_01Th8prN9yBckpUNgThJef9c` triggade själv 13:50 UTC. Kön hade **6
+rader** i `SE-ACTIVE to be translated` i hubben *Damasker vandring*: dagens tre
+SE-videor från leveransrundan, de två röstkollsstoppade från 13/9, och
+`Damasker_PD_8_H1` som låg kvar sedan gårdagens andra runda.
+
+Kampanjen `DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` [ACTIVE],
+ärvd länk `https://drytrek.se/nb/products/damasker?country=NO`, pris läst live
+ur butiken: **389 SEK**.
+
+| Annons | Adset | Ad-id | Tillbakaläst |
+|---|---|---|---|
+| `DryTrek_NO_Damasker_PD_8_H1` | `DRYTREK_NO_PD` | 120249089013610172 | ACTIVE/ACTIVE |
+| `DryTrek_NO_Damasker_BOF_10_H1` | `DRYTREK_NO_BOF` **(nytt)** | 120249089601800172 | ACTIVE/ACTIVE |
+| `DryTrek_NO_Damasker_CI_3_H1` | `DRYTREK_NO_CI` **(nytt)** | 120249089735240172 | ACTIVE/ACTIVE |
+| `DryTrek_NO_Damasker_PD_16_H1` | `DRYTREK_NO_PD` | 120249089767180172 | ACTIVE/ACTIVE |
+
+HeyGen-krediter: **8 315 → 8 135** (180 för tre renderingar).
+
+**Hoppade, tredje dagen i rad:** `FO_2_H1` och `SP_6_H1`. Dubben är renderad och
+captionsen klara, men `pipeline/rostkoll.py` är röd på båda: "talet slutar 0,10 s
+före slutet, källan hade 0,20 s". Båda renderades om en gång med ~30 % kortare
+slutrad — **det mätta värdet rörde sig inte ett enda 50 ms-fönster**. Det är
+beviset på att `talslut()` mäter bakgrundsmusiken, inte rösten: energiprofilen
+visar en ren uttoning (60 → 16 → 3 → 0) utan avhugget tal. Regeln säger att en
+röd video inte laddas upp, så de ligger kvar. Frågan till Axel — om mätningen
+ska lagas — är fortfarande obesvarad efter tre dygn.
+
+**Priset:** norsk ad copy är helt utan pris (regel 4, produktfilen saknar
+`no_pris_nok`). Voiceovern behåller källans SEK-tal, "tre hundre og åttini
+kroner paret" — aldrig ett påhittat NOK-pris.
+
+### Captionsdetektorn: tre nya lägen där pillret inte hittas
+
+Alla tre filmerna kördes genom `pipeline/no-precis.py`. Detektorn hittade
+pillret i 314/328, 345/357 och 242/242 frames. Luckorna, och vad som gjordes:
+
+1. **BOF_10_H1 0,00–0,12 s** — ingen caption alls i källan där. Inget att göra.
+2. **BOF_10_H1 10,72–11,08 s** — pillret ligger på nysnö, gruppen spränger
+   `h_max` och förkastas. Manuell `fyll`-platta 10,65–11,20.
+3. **BOF_10_H1 3,3–5,3 s** — **tvåradig** caption (y 798–1055). Detektorn klarar
+   bara ett band; `fyll`-platta över hela blocket.
+4. **CI_3_H1 8,00–8,16 s och 8,76–9,00 s** — samma snöproblem, och här slapp
+   svensk text igenom första gången (`Damasken stängd`). Två `fyll`-plattor
+   [200,813,880,977]. Efterkontroll på frames 7,9/8,1/8,3/8,6/8,9/9,1 s: bara
+   norska kvar.
+
+⚠️ **Mönstret är nu mätt tre gånger: pillret på nästan vit bakgrund förkastas av
+`h_max`.** Det är inte ett fel i zonen — det är att gruppen växer ihop med
+bakgrunden. Leta alltid efter luckorna i `<fil>.piller.json` innan leverans och
+lägg `fyll` över dem; en lucka betyder att källans svenska caption ligger kvar.
+
+**Zonerna (piller ±12) för dagens filmer**, alla 1080×1350:
+`BOF_10_H1` [854,999] cy 926 · `CI_3_H1` [805,983] cy 907 · `PD_16_H1` [818,982]
+cy 908.
+
+NO-kampanjen kör efter körningen **45 annonser, samtliga ACTIVE**: PD 27, SP 7,
+CS 4, G 4, CI 1, BOF 1, FO 1. Kön är därmed tom utom de två röstkollsstoppade
+raderna.

@@ -712,5 +712,39 @@
    "dsa": null,
    "torr": false
   }
+ },
+ "DryTrek_NO_Damasker_PD_8_H1": {
+  "ok": true,
+  "svar": {
+   "ok": true,
+   "butik": "DryTrek",
+   "nyckel": "drytrek/damasker",
+   "konto": "915422744950975",
+   "marknad": "NO",
+   "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring"
+   },
+   "adset": {
+    "id": "120249020612300172",
+    "namn": "DRYTREK_NO_PD",
+    "skapad": false
+   },
+   "annons": {
+    "id": "120249089013610172",
+    "namn": "DryTrek_NO_Damasker_PD_8_H1",
+    "status": "ACTIVE",
+    "effective_status": "IN_PROCESS"
+   },
+   "creative_id": "2500586197094540",
+   "media": {
+    "typ": "video",
+    "id": "1782427259456197"
+   },
+   "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+   "dsa": null,
+   "torr": false
+  }
  }
 }
