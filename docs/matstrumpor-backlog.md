@@ -16,4 +16,6 @@ Regel: ett koncept föds aldrig ur tomma intet — det ska peka på sin källa
 | Namn på lådan (custom-tjänst) | Theo Grace-mönstret + 012 v2:s namnlappsbild | Sortimentsbeslut Axel |
 | **017 — bekännelse-UGC ("skulle bara kolla → nu äger flera")** | SweSocks hundstrumpe-annons, `docs/swipes/swesocks-dog-socks-2026-08-27.md` | Manus klart — bildlagret väntar på videon |
 | **018 — "Hinner jag få den till jul?" (statisk + långtext)** | Ristals julspegel, `docs/swipes/ristal-julspegel-2026-08-27.md` | Copy klar — väntar på fjolårets säljsiffra + lagerfoto |
+| **Faceless mini-clip UGC (10 s, ingen dialog, vändningen direkt, hooken i captionen)** | Redigerarens (blivande CS) strategy brief 2026-09-14; TikTok @sushistrap1 1,1M views + Temu-klipp 84K (views, inte köp — Temu är ingen prisreferens). Stöd i kontot: hold rate är enda urskiljande videometrik (avläsning 1) | Väntar — captionen skrivs till **givaren**, aldrig till "Mia 24 köper åt sig själv" (Axels beslut 2026-09-14). Mottagarens reaktion i bild där det går |
+| **Food-inspired statics ("visuellt aptitliga" strumpor som sushi)** | Samma brief; London Sock Exchange som visuell referens; `offer_static_d3_v1` 2 köp på 104 kr (för tidigt, men en signal) | Väntar — genereras i Higgsfield. Samma avatarregel som ovan |
 
