@@ -7,7 +7,7 @@
 // ⛔ Byggs INTE (rapporteras till Axel):
 //   ark A: Caravan front cover (out of stock) · Deer hanger pulley (out of stock)
 //   ark B: Snöskoterkapell (MOQ 50, custom) · Takluckehuv 2-pack (out of stock) ·
-//          Viltsläde (MOQ 100) · Fågelmatare med kamera (CWD: "similar" — annan produkt än länken)
+//          Viltsläde (MOQ 100). Fågelmataren (CWD "similar") byggdes 2026-09-14 på Axels besked.
 // ⚠️ Higgsfield 0,61 credits 2026-09-12 → inga AI-miljöbilder/GIF:ar i den här batchen.
 
 const B = '/tmp/b9/b/bilder', A = '/tmp/b9/a/bilder', ALI = '/tmp/b9/ali';
@@ -72,6 +72,10 @@ export const FAKTA = {
     kalla: `${B}/image22.jpg (800 px: 24 ljus, "24只 / 暖白色" kinesisk text beskärs) · ${B}/image6.png (visar EN FJÄRR som INTE ingår — använd inte som hero) · /tmp/b9/b/t-tealight.jpg (Temu, 1697 px)`,
     latt: { antal: 24, ljus: 'varmvitt', typ: 'LED-värmeljus, batteridrivna', fjarrkontroll: false },
     obs: '⚠️ CWD offererade "24pcs, No remote control". Axels radnamn "Ljus med fjärrkontroll" stämmer INTE för den här. Ingen fjärr, ingen timer får påstås. 24-PACK: titel + badge + första bullet. Batterityp står inte i offerten.', varning: null },
+  fagelmatare: { batch: 10, sku: 'TEMU-B10-FAGELMATARE', kategori: 'gid://shopify/TaxonomyCategory/hg-3-8-1',
+    kalla: `${B}/image24.png (800 px, CWD:s offertbild: grön fågelmatare med kamera i huset, solcellspanel på taket, antenn, transparent foderboll, liten vattenkopp, sittramp — ren, ingen text) · ${B}/image23.png (Axels AliExpress-länk, JOOAN 5MP — ANNAN produkt, används INTE)`,
+    latt: { kameraMP: 5, solcell: 'panel på taket', app: 'app med instruktioner i förpackningen', antenn: true, ingar: ['fågelmatare med kamera', 'foderboll', 'vattenkopp', 'sittramp'], farg: 'grön' },
+    obs: 'CWD skrev "similar" — offertbilden (image24) är en annan modell än Axels länk (JOOAN). Byggd på Axels besked 2026-09-14: "fågelmataren kommer med instruktioner där visas appen". 5 MP kommer ur Axels radnamn, solcell/antenn/foderboll/vattenkopp syns på CWD:s bild. Påstå INGET ur JOOAN-bilden: ingen AI-igenkänning, inget tvåvägsljud, ingen IP66, ingen molnlagring, inget minneskort, ingen batteritid. Säg "app", inte appens namn.', varning: null },
   blockljus: { batch: 10, sku: 'TEMU-B10-BLOCKLJUS', kategori: 'gid://shopify/TaxonomyCategory/hg-3-34',
     kalla: `${B}/image9.png (800 px: 3 grå blockljus + fjärr, ren) · ${B}/image16.jpg (1200 px, tända på bord) · /tmp/b9/b/t-pillar.jpg (Temu)`,
     latt: { antal: 3, hojdCm: [10, 12.5, 15], diameterCm: 7.8, farg: 'grått glas', fjarrkontroll: true, timer: ['2H', '4H', '6H', '8H'], batterier: '3 × AA per ljus, ingår inte' },
@@ -83,5 +87,4 @@ export const EJ_BYGGDA = {
   'Snöskoterkapell 600D': 'ark B — MOQ 50, custom order',
   'Takluckehuv 40×40 2-pack': 'ark B — out of stock',
   'Viltsläde rullbar dragmatta': 'ark B — MOQ 100',
-  'Fågelmatare med kamera 5MP': 'ark B — CWD skrev "similar": offererat en annan fågelmatare än länken (grön, annan kamera). Byggs inte utan besked.',
 };

@@ -22,6 +22,7 @@ export const RADER = [
   { rad: 40, id: 'kajakhallare',    namn: 'Kajakhållare 2-pack', mal: 499 },
   { rad: 44, id: 'motorlas',        namn: 'Motorlås utombordare', mal: 599 },
   { rad: 48, id: 'varmesits',       namn: 'Värmesits 45×90', mal: 599 },
+  { rad: 52, id: 'fagelmatare',     namn: 'Fågelmatare med kamera (5MP, solcell) — CWD "similar"', mal: 1499 },
   { rad: 56, id: 'taljset',         namn: 'Täljset 30 delar', mal: 899 },
   { rad: 60, id: 'varmeljus',       namn: 'LED-värmeljus 24-pack (utan fjärr)', mal: null },
   { rad: 64, id: 'blockljus',       namn: 'LED-blockljus 3-pack med fjärr', mal: null },
