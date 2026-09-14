@@ -387,3 +387,15 @@ Fyra färdiga rader väntar i `SE-ACTIVE to be translated`.
   leverans, inte bara priset — och be redigeraren korrekturläsa transkriberingen mot
   briefens manustabell innan rendering. Briefen har redan raderna ordagrant; det är
   den enda facit som behövs.
+
+### Uppföljning 2026-09-15 (körning nr 5, budgetnatt)
+
+`PD_2` fick 2 köp 2026-09-14 (dygnet: 558 kr, ROAS 3,58) → 14d 2 651 kr, 6 köp,
+CPA 442 kr — **tillbaka som benchmark**. Att inte pausa den på 4 köp var rätt: ett
+dygn skilde "förlorare" från "vinnare". Regel-luckan i `budgetbeslut.mjs` står kvar
+i backloggen. 7d: 6 904 kr, 9 köp, ROAS 1,60, vinstbidrag 578 kr. Budget 700 kr oförändrad.
+
+**Första leveranserna live 2026-09-14 (via `/ops-leverans`):** `CS_11_H1`, `SP_17_H1`,
+`SP_17_H2` (batch #2), `TR_2_H1`, `PD_9_H1`, `CO_5_H1`, `PD_6_H1`, `SP_19_H1`, `RI_4_H1`
+(batch #3) och `BOF_7_1` (ärvd hubbrad, omdöpt). 0–11 kr var, ingen dom. Copy-A/B:
+4 fable / 5 sonnet live.

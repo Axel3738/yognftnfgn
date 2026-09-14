@@ -393,3 +393,10 @@ påhittat ord samtidigt — då är den trasig, inte slarvig. Axel kan överprö
 
 Metas ratelimit på det delade OPS-kontot slog under körningen (kod 17). Uppladdaren
 väntade ut den själv; alla sju kom upp.
+
+### Live-status 2026-09-15
+
+Batch #2 live: `SP_17_H1`, `SP_17_H2`, `CS_11_H1` (2026-09-14). Kvar hos Carl: `SP_18_1`,
+`TR_1_H1`, `SR_1_H1`, `FD_1_H1`.
+Batch #3 live: `PD_6_H1`, `SP_19_H1`, `PD_9_H1`, `TR_2_H1`, `CO_5_H1`, `RI_4_H1` (2026-09-14).
+Kvar: 15. Alla nya under 12 kr — data tidigast om några dygn.

@@ -1,0 +1,16 @@
+{
+  "brand": "HeimGuard", "butik": "hemvakten", "datum": "2026-09-15", "lage": "budget",
+  "siffror": { "spend_7d": 6904, "kop_7d": 9, "roas_7d": 1.60, "vinstbidrag_7d": 578 },
+  "gjort": [
+    "Budget unchanged at 700 SEK/day: last 3 days 1 877 SEK / 2 purchases — under the data gate.",
+    "HeimGuard_PD_2 recovered on its own: 2 more purchases yesterday → 14d 2 651 SEK, 6 purchases, CPA 442 (break-even 538). Back to benchmark. The pause question from yesterday is closed by the data — nothing to decide.",
+    "10 new ads went live via the 13:40 delivery run: CS_11_H1, SP_17_H1, SP_17_H2 (batch #2) + TR_2_H1, PD_9_H1, CO_5_H1, PD_6_H1, SP_19_H1, RI_4_H1 (batch #3) + BOF_7_1. First copy A/B ads are now spending — 4 Fable, 5 Sonnet.",
+    "Nothing paused, nothing activated."
+  ],
+  "varningar": [
+    "The 10 new ads have 0–11 SEK each so far. No verdicts before 300 SEK and 3 purchases each."
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-16 (brief day)"
+}
