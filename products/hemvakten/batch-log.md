@@ -359,3 +359,37 @@ läser ändå bara marknad SE, så den märker ingen skillnad.
 till, (2) `?country=NO` läggs på annonslänkarna — annars upprepas exakt samma
 utfall, (3) rutinen sätts `enabled: true` med `update_trigger`. Kön töms då av
 sig själv nästa 15:40.
+
+---
+
+## Leveransrunda 2026-09-14 — batch #3 ut, 7 annonser live
+
+Carl levererade batch #3. Kön hade 9 rader: 8 video (7 nya + omgjorda `CS_11_H1`)
+och LI-bilden som fortfarande är blockerad.
+
+| Annons | Adset | Annons-ID | Pris i annonsen | Dom |
+|---|---|---|---|---|
+| `HeimGuard_CS_11_H1` | CS | `120249087261500172` | 799/1000 ✅ | Live. Domänen rättad till `heimguard.se`. Kvar: "öppet **kop**" (ska vara köp). |
+| `HeimGuard_RI_4_H1` | RI | `120249087268180172` | 799 ✅ | Live. "Heimguard 799 **unio**", "Mobilen **sörrar**". |
+| `HeimGuard_CO_5_H1` | CO | `120249087282300172` | 799/1000 ✅ | Live. "Heimguard", "gör noll döda" saknar *vinklar*. |
+| `HeimGuard_TR_2_H1` | **TR (ny)** | `120249087297600172` | 799 ✅ | Live. Adsetet fanns inte — uppladdaren klonade RI. Svart första bildruta. "Få **linsor**". |
+| `HeimGuard_PD_9_H1` | PD | `120249087311770172` | 799/1000 ✅ | Live. "**Lärmet** vet det" (ska vara Larmet). |
+| `HeimGuard_SP_19_H1` | SP | `120249087380710172` | inget pris ✅ | Live. "har vi **en eh vi**", "**linsor**". |
+| `HeimGuard_PD_6_H1` | PD | `120249087463960172` | inget pris ✅ | Live. "**linsor**". |
+| `HeimGuard_FD_2_H1` | — | — | **790** ✗ | **Draft.** "Heimgard **790 unior**" — fel pris, fel brand, nonsensord i samma rad. Även "ligger **mörd**" och "**AIN** skiljer". |
+| `Overvakningskamera_LI_2_1` | LI | — | 799/1000 ✅ | Hållen andra dygnet. LI-adsetet PAUSED för hand sedan 2026-09-10, orört. |
+
+Copyn togs ur briefarnas COPY CARD, som ligger lokalt i
+`products/hemvakten/batch-0{2,3}/video-ads-briefs/` — ingen subagent behövdes.
+
+**Rotorsaken skriven till `dna.md`:** bildtexterna är automattranskriberade ur
+voiceovern i stället för tagna ur briefens manustabell. Felen är samma sort i alla
+sju videor, och i `FD_2_H1` drabbade det priset. Åtgärden ligger hos redigeraren:
+texta från tabellen i briefens avsnitt 4.
+
+**Stoppet på `FD_2_H1` är en bedömning, inte regeln.** 790 mot 799 är 1,1 % och
+kommandots stoppgräns går vid 20 %. Raden bär ändå fel pris, fel brandnamn och ett
+påhittat ord samtidigt — då är den trasig, inte slarvig. Axel kan överpröva.
+
+Metas ratelimit på det delade OPS-kontot slog under körningen (kod 17). Uppladdaren
+väntade ut den själv; alla sju kom upp.

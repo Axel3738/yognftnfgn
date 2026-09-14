@@ -364,3 +364,26 @@ till. Svenska sidan är opåverkad och kör vidare.
 Den dag Norge startas om: rotorsaken ovan (`?country=NO` saknas i annonslänken,
 så norska kunder ser SEK) måste lagas FÖRST, annars upprepas samma utfall.
 Fyra färdiga rader väntar i `SE-ACTIVE to be translated`.
+- **Bildtexterna är automattranskriberade ur voiceovern och mangla ord — systematiskt,
+  inte enstaka slarv.** Mätt 2026-09-14 på batch #3:s sju levererade videor: felen är
+  samma sorts fel i alla, alltså ett steg i redigerarens flöde och inte en tabbe.
+
+  | Vad det ska stå | Vad som står | Var |
+  |---|---|---|
+  | HeimGuard | `Heimguard` / `Heimgard` | FD_2, RI_4, CO_5, TR_2 |
+  | kronor | `unior` / `unio` | FD_2, RI_4 |
+  | 799 | `790` | FD_2 |
+  | linser | `linsor` | TR_2, SP_19, PD_6 |
+  | Larmet | `Lärmet` | PD_9 |
+  | surrar | `sörrar` | RI_4 |
+  | mörk | `mörd` | FD_2 |
+  | AI:n | `AIN` | FD_2 |
+  | köp | `kop` | CS_11 (omgjord — `kö` blev `kop`, aldrig `köp`) |
+  | en enda | `en eh vi` | SP_19 |
+
+  Mönstret är en transkriberare som inte kan svenska å/ä/ö, inte kan brandnamnet och
+  hittar på ord där ljudet är otydligt. **Priset drabbas också** (`790`), och då är det
+  inte längre kosmetiskt. Kontrollera därför bildtexterna på VARJE video i varje
+  leverans, inte bara priset — och be redigeraren korrekturläsa transkriberingen mot
+  briefens manustabell innan rendering. Briefen har redan raderna ordagrant; det är
+  den enda facit som behövs.
