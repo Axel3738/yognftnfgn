@@ -354,3 +354,13 @@ köp:** 14d 2 265 kr, 4 köp, CPA 566 kr (5 % över 538). Skriptet ville pausa d
 
 Batch #2 + #3 (28 briefer) ligger hos Carl, inget nytt live. Kampanjen kör 700 kr/dag
 på oprövade annonser tills leveranserna kommer.
+
+### Norge är AV sedan 2026-09-13 (Axels beslut A)
+
+NO-kampanjen är pausad av Axel och översättningsrutinen är avstängd. **Briefa
+inga norska creatives** och räkna inte in NO i någon kadens förrän han säger
+till. Svenska sidan är opåverkad och kör vidare.
+
+Den dag Norge startas om: rotorsaken ovan (`?country=NO` saknas i annonslänken,
+så norska kunder ser SEK) måste lagas FÖRST, annars upprepas samma utfall.
+Fyra färdiga rader väntar i `SE-ACTIVE to be translated`.

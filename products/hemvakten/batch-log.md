@@ -324,3 +324,38 @@ CLAUDE.md under rutinvarningarna.
 Översättningsrundan 15:40 ska då HÅLLA kön enligt `factory/PROCESS.md`
 ("Marknaden är pausad av ägaren") — inte flytta raderna, inte rendera, inte
 föreslå `/ny-annonser`.
+
+---
+
+## Axels beslut 2026-09-13 kväll: **Norge av tills vidare** (alternativ A)
+
+Frågan ställdes av översättningsrundan samma kväll, med tre alternativ. Axel
+svarade **A**.
+
+**Vad som gjordes:** rutinen `Översättning NO: hemvakten`
+(`trig_01MU7mRV7qFULBF2tTvpRc8K`) står nu `enabled: false` och heter
+"Översättning NO: hemvakten (PAUSAD 2026-09-13 — Axels beslut A, Norge av)".
+Den slutar alltså rapportera en tom kö varje dag 15:40.
+
+**Vad som INTE gjordes, med flit:**
+- NO-kampanjen `HEIMGUARD_NO_Overvåkingskamera` rördes inte. Den är PAUSED med
+  4 141 kr spend — Axels beslut, inte något en rutin får slå på.
+- De fyra raderna i `SE-ACTIVE to be translated` (`HeimGuard_SP_17_H1`,
+  `SP_17_H2`, `BOF_7_1`, `BOF_9_1`) flyttades inte och fick ingen ny status.
+  Kön HÅLLS enligt `factory/PROCESS.md` → "Marknaden är pausad av ägaren".
+  De ligger kvar som en färdig kö den dagen Norge slås på.
+- `?country=NO`-felet på de 27 NO-annonserna lagades inte. Det ingår i
+  alternativ C, som Axel valde bort. Det är fortfarande sant och står i
+  `dna.md` — läs det innan någon startar om Norge.
+- `TACKLEBAY_NO_Spöhållaren` (ACTIVE, ROAS 0,44 på 2 981 kr) rördes inte.
+  Axel svarade inte på den frågan, och en annan butiks kampanj ändras aldrig
+  av en HeimGuard-körning. Frågan står kvar.
+
+**Det här påverkar inte Sverige.** `HEIMGUARD_SE_Övervakningskameran` är ACTIVE,
+leveransrundan 13:40 och nattvakten 00:01 kör vidare som vanligt. Nattvakten
+läser ändå bara marknad SE, så den märker ingen skillnad.
+
+**För att starta Norge igen** krävs tre saker i den ordningen: (1) Axel säger
+till, (2) `?country=NO` läggs på annonslänkarna — annars upprepas exakt samma
+utfall, (3) rutinen sätts `enabled: true` med `update_trigger`. Kön töms då av
+sig själv nästa 15:40.
