@@ -49,8 +49,13 @@ lönetrappan ur annonsen + 0,4 % commission på adspend (samma sats som
 
 **Använda codewords (återanvänd aldrig):** `semla` (originalannonsen,
 2026-08-21) · `kanelbulle` (utskick 2026-09-06, `utskick/annons-1-kanelbulle.txt`)
-· `surdeg` (utskick 2026-09-06, `utskick/annons-2-surdeg.txt`). Codewordet
+· `surdeg` (utskick 2026-09-06, `utskick/annons-2-surdeg.txt`) · `lussekatt`
+(PA-annonsen 2026-09-14, `utskick/annons-3-lussekatt-pa.txt`). Codewordet
 avslöjar vilken annons en ansökan kommer ifrån.
+
+**Samma ramverk, annan roll:** `jobbannons-personlig-assistent.md` — personlig
+assistent + kundtjänst, rörliga 2–10 h/dag, timlön med golv. Där sitter
+skicklighet som **femma** i prioritetslistan och karaktär är jobbkravet.
 
 ## Att göra inför nästa utskick
 
