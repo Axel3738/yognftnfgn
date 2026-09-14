@@ -1,4 +1,4 @@
-# Mejlmallarna — byggda 2026-09-14 15:20 UTC
+# Mejlmallarna — byggda 2026-09-14 19:50 UTC
 
 Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratisprodukt
 
@@ -15,7 +15,7 @@ Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratispr
 - Nödregnjacka – Lätt & Packbar Regnskydd — 199 kr (nodregnjacka-latt-packbar-regnskydd)
 
 ## Komplement (en till + tre som passar ihop)
-- 204 produkter med egen lista (103 per handle, 102 per kollektion), 2 utan — de får storsäljarna
+- 204 produkter med egen lista (103 per handle, 102 per kollektion), 3 utan — de får storsäljarna
 - Katalog i mallen: 105 produkter
 - Fallback: IBC-tanköverdrag 1000 L (ibc-tankoverdrag-1000-l-stoppar-alger-uv), Övervakningskamera Trådlös (overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning), Båtmotorskydd 420D (batmotorskydd-420d-heltackande-for-utombordare)
 

@@ -117,8 +117,9 @@ function stil(k) {
 #bb-hjul .bbh-scen{position:relative;margin:0 auto 20px;width:min(100%,360px)}
 #bb-hjul .bbh-pil{position:absolute;left:50%;top:-6px;transform:translateX(-50%);width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-top:28px solid var(--bbh-svart);z-index:2;filter:drop-shadow(0 2px 0 #fff)}
 #bb-hjul .bbh-hjul{width:100%;aspect-ratio:1;border-radius:50%;border:6px solid var(--bbh-svart);background:#fff;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.18)}
-#bb-hjul .bbh-hjul svg{display:block;width:100%;height:100%;transform:rotate(0deg);transition:transform ${k.hjul.snurrtid_ms}ms cubic-bezier(.17,.67,.12,1)}
-#bb-hjul .bbh-hjul svg.bbh-still{transition:none}
+#bb-hjul .bbh-rotor{width:100%;aspect-ratio:1;transform:rotate(0deg);transform-origin:50% 50%;will-change:transform;backface-visibility:hidden;transition:transform ${k.hjul.snurrtid_ms}ms cubic-bezier(.5,1,.89,1)}
+#bb-hjul .bbh-rotor.bbh-still{transition:none}
+#bb-hjul .bbh-hjul svg{display:block;width:100%;height:100%}
 #bb-hjul .bbh-nav{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border-radius:50%;background:#fff;border:5px solid var(--bbh-svart);display:flex;align-items:center;justify-content:center;font-family:Impact,'Anton','Arial Black',sans-serif;font-size:14px;letter-spacing:1px;text-transform:uppercase;z-index:1}
 #bb-hjul .bbh-knapp{display:inline-block;width:100%;max-width:360px;padding:16px 24px;margin:0 auto;background:var(--bbh-rod);color:#fff;border:0;border-radius:0;font-family:Impact,'Anton','Arial Narrow','Arial Black',sans-serif;font-size:22px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;line-height:1.2}
 #bb-hjul .bbh-knapp:hover,#bb-hjul .bbh-knapp:focus-visible{background:#b81616;color:#fff;text-decoration:none;outline:3px solid var(--bbh-svart);outline-offset:2px}
@@ -150,7 +151,7 @@ function stil(k) {
 #bb-hjul .bbh-finstilt{font-size:12px;color:var(--bbh-gra);max-width:60ch;margin:20px auto 0}
 #bb-hjul .bbh-fel{color:var(--bbh-rod);font-weight:700}
 @media (max-width:560px){#bb-hjul .bbh-kort-rad{grid-template-columns:repeat(2,1fr)}#bb-hjul h2{font-size:26px}}
-@media (prefers-reduced-motion:reduce){#bb-hjul .bbh-hjul svg{transition-duration:400ms}}
+@media (prefers-reduced-motion:reduce){#bb-hjul .bbh-rotor{transition-duration:400ms}}
 `;
 }
 
@@ -173,7 +174,7 @@ function skript() {
   var bild = function (suffix) { return suffix.indexOf('http') === 0 ? suffix : D.cdn + suffix; };
   var vinster = D.vinster.map(function (a) { return { h: a[0], n: a[1], p: a[2], b: bild(a[3]), v: a[4], slut: false }; });
   var kat = D.komplement.katalog.map(function (a) { return { h: a[0], n: a[1], p: a[2], b: bild(a[3]), v: a[4], ev: a[5] === 1 }; });
-  var svg = $('bbh-svg'), knappSnurra = $('bbh-snurra'), status = $('bbh-status');
+  var svg = $('bbh-svg'), rotor = $('bbh-rotor'), knappSnurra = $('bbh-snurra'), status = $('bbh-status');
   var N = vinster.length, A = 360 / N, snurrar = false, vunnen = null;
 
   // Levande produktdata ur kollektionen: pris, bild, variant, i lager.
@@ -250,11 +251,11 @@ function skript() {
     status.hidden = false; status.textContent = C.snurrar;
     var i = valjVinnare();
     var slump = (Math.random() - 0.5) * (A * 0.6);
-    svg.classList.remove('bbh-still');
-    svg.style.transform = 'rotate(' + (vinkelFor(i) + slump) + 'deg)';
+    rotor.classList.remove('bbh-still');
+    rotor.style.transform = 'rotate(' + (vinkelFor(i) + slump) + 'deg)';
     var klar = false;
     var done = function () { if (klar) return; klar = true; snurrar = false; vinn(i, false); };
-    svg.addEventListener('transitionend', done, { once: true });
+    rotor.addEventListener('transitionend', done, { once: true });
     setTimeout(done, D.snurrtid + 400);
   }
 
@@ -393,7 +394,7 @@ function skript() {
       .catch(function (e) {
         b.disabled = false;
         var el = $('bbh-korg'); el.className = 'bbh-korg bbh-fel';
-        if (e.message === 'slut') { el.textContent = C.fel_slut; minne.glom(); vinster[vinster.indexOf(vunnen)].slut = true; vunnen = null; $('bbh-vinst').hidden = true; $('bbh-kvar').hidden = true; knappSnurra.hidden = false; knappSnurra.disabled = false; svg.classList.add('bbh-still'); svg.style.transform = 'rotate(0deg)'; }
+        if (e.message === 'slut') { el.textContent = C.fel_slut; minne.glom(); vinster[vinster.indexOf(vunnen)].slut = true; vunnen = null; $('bbh-vinst').hidden = true; $('bbh-kvar').hidden = true; knappSnurra.hidden = false; knappSnurra.disabled = false; rotor.classList.add('bbh-still'); rotor.style.transform = 'rotate(0deg)'; }
         else el.textContent = C.fel_allmant;
       });
   });
@@ -404,8 +405,8 @@ function skript() {
     var m = minne.las();
     var i = m ? vinster.map(function (v) { return v.h; }).indexOf(m.h) : -1;
     if (i >= 0 && !vinster[i].slut) {
-      svg.classList.add('bbh-still');
-      svg.style.transform = 'rotate(' + vinkelFor(i) + 'deg)';
+      rotor.classList.add('bbh-still');
+      rotor.style.transform = 'rotate(' + vinkelFor(i) + 'deg)';
       vinn(i, true);
     } else if (m) { minne.glom(); }
   });
@@ -428,7 +429,7 @@ export function byggHjulsida(indata) {
 <p class="bbh-intro">${esk(c.intro)}</p>
 <div class="bbh-scen">
   <div class="bbh-pil" aria-hidden="true"></div>
-  <div class="bbh-hjul"><svg id="bbh-svg" viewBox="0 0 400 400" role="img" aria-label="${esk(c.titel)}"></svg></div>
+  <div class="bbh-hjul"><div class="bbh-rotor" id="bbh-rotor"><svg id="bbh-svg" viewBox="0 0 400 400" role="img" aria-label="${esk(c.titel)}"></svg></div></div>
   <div class="bbh-nav" aria-hidden="true">${esk(k.butik.namn.split('.')[0].slice(0, 5))}</div>
 </div>
 <button type="button" id="bbh-snurra" class="bbh-knapp">${esk(c.knapp_snurra)}</button>

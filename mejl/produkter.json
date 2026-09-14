@@ -974,7 +974,7 @@
   "url": "https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte",
   "pris": 599,
   "jamforpris": 789,
-  "lager": -140,
+  "lager": -141,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e0eacffe518545679195983f7a434ba3-goods.jpg?v=1782032083",
   "typ": "Trädgård",
@@ -1237,7 +1237,7 @@
   "url": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
   "pris": 289,
   "jamforpris": null,
-  "lager": -593,
+  "lager": -598,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d426b7a-cfe0-49df-8b44-03c3aabbc326.jpg?v=1782033165",
   "typ": "Fiske",
@@ -2387,7 +2387,7 @@
   "url": "https://baverbutiken.se/products/batterifranskiljare-huvudstrombrytare-12-24v",
   "pris": 189,
   "jamforpris": 236.25,
-  "lager": 3,
+  "lager": 2,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ddb18f28-317a-4c67-93fb-facfe4ccb8d0.jpg?v=1782035733",
   "typ": "Biltillbehör",
@@ -3507,7 +3507,7 @@
   "url": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
   "pris": 799,
   "jamforpris": 1000,
-  "lager": -142,
+  "lager": -146,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-kamera-1.webp?v=1786982539",
   "typ": "Säkerhet",
@@ -3717,7 +3717,7 @@
   "url": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
   "pris": 909,
   "jamforpris": 1182,
-  "lager": -86,
+  "lager": -89,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp?v=1786982539",
   "typ": "Verktyg",
@@ -3796,7 +3796,7 @@
   "url": "https://baverbutiken.se/products/vandringskangor-herr-latta-med-tjock-sula",
   "pris": 669,
   "jamforpris": 1338,
-  "lager": -7,
+  "lager": -8,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b1147e665992e1c9a66409e98ffd6b8f.jpg?v=1787282945",
   "typ": "Skor",
@@ -3850,7 +3850,7 @@
   "url": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
   "pris": 349,
   "jamforpris": 582,
-  "lager": -101,
+  "lager": -104,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-mc-kapell-1.jpg?v=1787226589",
   "typ": "Fordon",
@@ -3922,7 +3922,7 @@
   "url": "https://baverbutiken.se/products/plyschtofflor-herr-varma-med-tpr-sula-for-inne-ute",
   "pris": 429,
   "jamforpris": 558,
-  "lager": -20,
+  "lager": -21,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-plyschtofflor-1.jpg?v=1787226596",
   "typ": "Skor",
@@ -3946,7 +3946,7 @@
   "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
   "pris": 579,
   "jamforpris": 965,
-  "lager": -102,
+  "lager": -104,
   "lagerpolicy": "CONTINUE",
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg?v=1787313816",
   "typ": "",
@@ -4993,7 +4993,7 @@
  {
   "id": "16534666674525",
   "variant_id": "65902967521629",
-  "titel": "Uppvärmd Vattenskål 2,2 Liter – Grön/Svart Med EU-Kontakt",
+  "titel": "Uppvärmd Vattenskål För Vinterfåglar – 2,2 Liter",
   "handle": "uppvarmd-vattenskal-2-2-liter-gron-svart-med-eu-kontakt",
   "url": "https://baverbutiken.se/products/uppvarmd-vattenskal-2-2-liter-gron-svart-med-eu-kontakt",
   "pris": 849,
@@ -5003,11 +5003,11 @@
   "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-vattenskal-hero-se.jpg?v=1789216292",
   "typ": "",
   "taggar": [
-   "hundskål",
-   "kattskål",
-   "uppvärmd vattenskål",
-   "vattenskål",
-   "vinterskål för husdjur"
+   "fågelbord vinter",
+   "fågelmatning vinter",
+   "uppvärmd fågelvattenskål",
+   "vattenskål för vinterfåglar",
+   "vinterfåglar"
   ],
   "kollektioner": [
    "alla-produkter"
@@ -5210,6 +5210,31 @@
    "inredning",
    "ledljus",
    "timerljus"
+  ],
+  "kollektioner": [
+   "alla-produkter"
+  ],
+  "en_variant": true,
+  "kopbar": true
+ },
+ {
+  "id": "16540132704605",
+  "variant_id": "65915591360861",
+  "titel": "Fågelmatare Med Kamera Och Solcellspanel – Se Fåglarna I Appen",
+  "handle": "fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen",
+  "url": "https://baverbutiken.se/products/fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen",
+  "pris": 1659,
+  "jamforpris": 2159,
+  "lager": 0,
+  "lagerpolicy": "CONTINUE",
+  "bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-fagelmatare-hero-se.jpg?v=1789369458",
+  "typ": "",
+  "taggar": [
+   "fågelkamera",
+   "fågelmatare",
+   "fågelmatning",
+   "solcellspanel",
+   "trädgård"
   ],
   "kollektioner": [
    "alla-produkter"
