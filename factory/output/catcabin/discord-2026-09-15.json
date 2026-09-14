@@ -1,0 +1,24 @@
+{
+  "brand": "CatCabin",
+  "butik": "catcabin",
+  "datum": "2026-09-15",
+  "lage": "budget",
+  "server": "1547844745412350012",
+  "kanal": "ads",
+  "siffror": {
+    "spend_7d": 3191,
+    "kop_7d": 2,
+    "roas_7d": 0.49,
+    "vinstbidrag_7d": -2216
+  },
+  "gjort": [
+    "Paused ad CatCabin_PD_1_H1 — 1 220 SEK spend (over 3x target CPA 290), 1 purchase at CPA 1 220 vs break-even 487. Read back ACTIVE -> PAUSED.",
+    "Campaign budget left at 1 000 SEK/day: only 2 purchases in 3 days, below the 3-purchase gate, so no verdict allowed.",
+    "Break-even ROAS 1.62 / CPA 487 SEK (no VAT) is the kill line."
+  ],
+  "varningar": [
+    "Briefs paused (owner decision 2026-09-14): 13 ads, 1 purchase, ROAS 0.30 — no judgeable data, so no feedback loop to brief from. Budget round still runs every night. Released with `briefantal catcabin auto` once 3 purchases exist.",
+    "No editor assigned to CatCabin."
+  ],
+  "nasta_korning": "2026-09-16"
+}
