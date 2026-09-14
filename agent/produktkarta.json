@@ -12,6 +12,14 @@
   "uppdaterad": "2026-09-13",
   "kampanjer": [
     {
+      "campaign_id": "120252216935950233",
+      "produkt": "Gjerdestolpebøyle NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-13, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
       "campaign_id": "120250175763810291",
       "produkt": "Termoskyddet för Husbil 211 × 171 cm",
       "lage": "test",
