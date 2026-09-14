@@ -10,8 +10,10 @@
 //   node factory/register.mjs brief-kord <butik> [YYYY-MM-DD]    → stämpla senaste_brief (briefronden)
 //   node factory/register.mjs notion <butik> <database_id|url> [namn…]  → koppla Notion-hubben
 //   node factory/register.mjs redigerare <butik> <namn> [discord-id]    → tilldela redigerare
-//   node factory/register.mjs briefantal <butik> <antal|auto> [--tillsvidare] [motivering…]
+//   node factory/register.mjs briefantal <butik> <antal|paus|auto> [--tillsvidare] [motivering…]
 //                                                     → överstyr briefrondens storlek (engång som standard)
+//                                                     → "paus" stoppar briefronden men INTE budgetronden,
+//                                                        och står tills vidare. Släpps med "auto".
 //
 // Två kalendrar per post (Axels beslut 2026-09-10):
 //   KÖRDAG   — budgetronden (/skalningskungen), var tredje dag via kordag_offset.
@@ -619,7 +621,7 @@ export const BRIEFANTAL_UTAN_REDIGERARE = VIDEOR_PER_DAG;
 
 /** En överstyrning är giltig bara med ett heltal > 0 — allt annat ignoreras tyst men syns i rapporten som "ingen". */
 function giltigOverride(o) {
-  return Boolean(o) && typeof o === 'object' && Number.isInteger(o.antal) && o.antal > 0;
+  return Boolean(o) && typeof o === 'object' && Number.isInteger(o.antal) && o.antal >= 0;
 }
 
 /**
@@ -640,19 +642,36 @@ function giltigOverride(o) {
 export function briefantal(post) {
   const o = post?.briefantal_override;
   if (giltigOverride(o)) {
+    // 0 = briefronden är PAUSAD. Budgetronden går som vanligt varje natt —
+    // det är hela poängen: en kampanj utan bedömbar data ska skyddas mot att
+    // bränna budget, men inte matas med briefer som bygger på gissningar.
+    // (Axels beslut 2026-09-14 på CatCabin: "vi kan nästan låta denna runna
+    // lite eftersom vi inte ens vet om den går bra — är det inte värt att
+    // spamma nya ads".) Nollas med `briefantal <butik> auto`.
+    if (o.antal === 0) {
+      return {
+        antal: 0,
+        kalla: 'pausad',
+        engang: o.engang !== false,
+        pausad: true,
+        skal: `⏸️ BRIEFRONDEN PAUSAD — budgetronden går ändå varje natt. Släpps med \`briefantal <butik> auto\``
+          + `${finns(o.motivering) ? `: ${o.motivering}` : ''}${finns(o.satt) ? ` [satt ${o.satt}]` : ''}`,
+      };
+    }
     return {
       antal: o.antal,
       kalla: 'override',
       engang: o.engang !== false,
+      pausad: false,
       skal: `ÖVERSTYRD (${o.engang !== false ? 'engång — förbrukas av brief-kord' : 'tillsvidare — nollas med `briefantal <butik> auto`'})`
         + `${finns(o.motivering) ? `: ${o.motivering}` : ''}${finns(o.satt) ? ` [satt ${o.satt}]` : ''}`,
     };
   }
   const redigerare = redigerareFor(post);
   if (redigerare) {
-    return { antal: BRIEFANTAL_KADENS, kalla: 'kadens', engang: false, skal: `kadensen ${VIDEOR_PER_DAG}/dag × ${RONDDAGAR} dagar — redigerare ${redigerare}` };
+    return { antal: BRIEFANTAL_KADENS, kalla: 'kadens', engang: false, pausad: false, skal: `kadensen ${VIDEOR_PER_DAG}/dag × ${RONDDAGAR} dagar — redigerare ${redigerare}` };
   }
-  return { antal: BRIEFANTAL_UTAN_REDIGERARE, kalla: 'utan-redigerare', engang: false, skal: 'ingen redigerare tilldelad — en dags produktion, så hubben inte fylls med briefer ingen gör' };
+  return { antal: BRIEFANTAL_UTAN_REDIGERARE, kalla: 'utan-redigerare', engang: false, pausad: false, skal: 'ingen redigerare tilldelad — en dags produktion, så hubben inte fylls med briefer ingen gör' };
 }
 
 /**
@@ -761,13 +780,19 @@ export function sattBriefantal(nyckel, antal, { motivering = '', tillsvidare = f
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
   const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
-  if (normalisera(antal) === 'auto') {
+  const arg = normalisera(antal);
+  if (arg === 'auto') {
     rad.briefantal_override = null;
   } else {
-    const n = Number(antal);
-    if (!Number.isInteger(n) || n <= 0) throw new Error(`Ange antal briefer som ett heltal > 0, eller "auto" — fick "${antal}".`);
+    // "paus" (eller 0) stoppar briefronden men INTE budgetronden. En paus står
+    // ALLTID tills vidare: en paus som tyst förbrukas av nästa brief-kord vore
+    // en fälla, för då börjar briefarna igen utan att någon bestämt det.
+    // Släpps med `briefantal <butik> auto`.
+    const paus = arg === 'paus' || arg === 'pausa' || Number(antal) === 0;
+    const n = paus ? 0 : Number(antal);
+    if (!Number.isInteger(n) || n < 0) throw new Error(`Ange antal briefer som ett heltal > 0, "paus" för att stoppa briefronden, eller "auto" — fick "${antal}".`);
     if (!finns(motivering)) throw new Error('Ange en motivering — en överstyrning utan skäl går inte att förstå senare.');
-    rad.briefantal_override = { antal: n, engang: !tillsvidare, motivering: motivering.trim(), satt };
+    rad.briefantal_override = { antal: n, engang: paus ? false : !tillsvidare, motivering: motivering.trim(), satt };
   }
   rad.lage = rad.lage ?? post.lage;
   drift.poster[post.nyckel] = rad;
@@ -861,7 +886,7 @@ function skrivPost(post, idag) {
   console.log(`  Redigerare:   ${redigerareFor(post) ?? 'ingen redigerare tilldelad'}`);
   if (post.lage !== 'test') {
     const b = briefantal(post);
-    console.log(`  Briefrond:    ${b.antal} briefer — ${b.skal}`);
+    console.log(`  Briefrond:    ${b.pausad ? 'INGA briefer' : `${b.antal} briefer`} — ${b.skal}`);
   }
   console.log(`  Dagsbudget:   ${post.daily_budget_sek ? `${post.daily_budget_sek} kr` : 'oklart — saknas i konfigen'}`);
   console.log(`  Kördag ${idag}: ${kord.kordag ? '✅ JA' : '⏭️  nej'} — ${kord.skal}. Nästa: ${kord.nastaKordag}`);
@@ -914,12 +939,12 @@ function huvud() {
     return;
   }
   if (arg[0] === 'briefantal') {
-    if (!arg[2]) throw new Error('Ange antal eller "auto": briefantal <butik> <antal|auto> [--tillsvidare] [motivering…]');
+    if (!arg[2]) throw new Error('Ange antal, "paus" eller "auto": briefantal <butik> <antal|paus|auto> [--tillsvidare] [motivering…]');
     const tillsvidare = arg.includes('--tillsvidare');
     const motivering = arg.slice(3).filter((a) => a !== '--tillsvidare').join(' ');
     const post = sattBriefantal(arg[1], arg[2], { motivering, tillsvidare, satt: idag });
     const b = briefantal(post);
-    console.log(`Briefrond på ${post.namn}: ${b.antal} briefer — ${b.skal}`);
+    console.log(`Briefrond på ${post.namn}: ${b.pausad ? 'INGA briefer' : `${b.antal} briefer`} — ${b.skal}`);
     return;
   }
   if (arg[0] === 'notion') {

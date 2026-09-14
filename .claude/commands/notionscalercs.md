@@ -101,6 +101,14 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    nästa rond går på 7 igen tills `redigerare` är satt. `--tillsvidare`
    låter den stå; `briefantal <nyckel> auto` tar bort den. Raden
    `Briefrond:` i `node factory/register.mjs <nyckel>` är facit för rutinen.
+   **Vill Axel ha budgetskyddet men inga nya briefer** — vanligast när
+   kampanjen ännu inte har en enda bedömbar annons, så det inte finns någon
+   feedback-loop att brieffa ur:
+   `node factory/register.mjs briefantal <nyckel> paus "<skäl>"`.
+   Pausen stoppar BARA briefronden; budgetronden går varje natt och sänker
+   eller dödar som vanligt. Den står tills vidare (`brief-kord` förbrukar den
+   aldrig — annars hade briefarna startat igen utan beslut) och släpps med
+   `briefantal <nyckel> auto`. *(Axels beslut 2026-09-14 på CatCabin.)*
 5. **Torrkörning av allt.** I ordning, visa utskrifterna:
    ```
    node factory/budgetrond.mjs <nyckel> --idag <datum> --torr
@@ -237,7 +245,19 @@ För VARJE annons i förra batchen (`products/<butik>/batch-log.md`):
   rotorsaker. Data skild från hypotes.
 
 ### Steg 5 — Nästa batch
-**Först: finns det någon som gör dem?** Ligger förra batchens rader
+**Allra först: är briefronden pausad?** Säger raden `Briefrond:` **INGA
+briefer — ⏸️ BRIEFRONDEN PAUSAD**, så lägger du noll briefer den här ronden.
+Budgetronden i steg 1 har redan gått och gäller — pausen rör bara briefarna.
+Skriv en rad i rapporten under varningar ("briefs paused: <motiveringen>"),
+INTE under ACTION NEEDED (det är ett ägarbeslut, inget att åtgärda), hoppa
+över steg 6 och 7 och gå till steg 8. Stämpla `kord` men INTE `brief-kord` —
+pausen står tills vidare och släpps bara av `briefantal <nyckel> auto`.
+*(Axels beslut 2026-09-14 på CatCabin: en kampanj med 1 köp på 13 annonser
+har ingen feedback-loop att brieffa ur — "är det inte värt att spamma nya
+ads". Briefer utan bedömbar data är gissningar, och de kostar redigerartid
+och kontots läsbarhet.)*
+
+**Sedan: finns det någon som gör dem?** Ligger förra batchens rader
 fortfarande i `Draft` i hubben OCH ingen redigerare är tilldelad ⇒ inga
 nya briefer den här ronden. Rapportera "waiting for editor — N briefs
 still in Draft" under ACTION NEEDED och gå till steg 8. (Mätt 2026-09-12:
@@ -327,7 +347,7 @@ varningar, raderna ligger kvar i Draft och `/ops-bild <nyckel>` tar dem senare.
 - [ ] Briefdag avläst ur registret (JA/NEJ med skäl)
 - [ ] *(briefdag)* ANALYSMETOD:s snabbchecklista avbockad; vinstbidragstabellen visad; "för tidigt" utanför rankingen; ärvd historik märkt ÄRVD
 - [ ] *(briefdag)* Feedback-loop: varje annons i förra batchen har sitt utfall i batch-log.md; ≥ 3 mönster med bevisad/hypotes; dna.md uppdaterad — eller "kallstart" utskrivet
-- [ ] *(briefdag)* Batch enligt registrets `Briefrond:`-rad (21 med redigerare / 7 utan / Axels `briefantal`-överstyrning), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
+- [ ] *(briefdag)* Batch enligt registrets `Briefrond:`-rad (21 med redigerare / 7 utan / Axels `briefantal`-överstyrning / **INGA om ronden är pausad** — då står skälet under varningar och budgetronden har ändå gått), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
 - [ ] *(briefdag)* Copy av subagent, varannan fable/sonnet, taggen i VARIABELTAGGAR, tre-frågorstestet redovisat, vägen (Agent/API) rapporterad
 - [ ] *(briefdag)* Rader skapade i hubben via `tools/notion-brief.mjs` — resultat med url visat
 - [ ] Discord-rapport postad på engelska i butikens server; ping bara under ACTION NEEDED

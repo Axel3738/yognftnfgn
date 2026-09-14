@@ -307,10 +307,10 @@
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen.",
       "briefantal_override": {
-        "antal": 21,
-        "engang": true,
-        "motivering": "Axels beslut 2026-09-12: redigerare obestämd men första briefronden ska ändå ge 21 briefer — han fixar redigerare asap",
-        "satt": "2026-09-12"
+        "antal": 0,
+        "engang": false,
+        "motivering": "Axels beslut 2026-09-14: kampanjen har 1 köp på 13 annonser och ROAS 0,30 — ingen bedömbar data, alltså ingen feedback-loop att brieffa ur. Låt den samla data i stället för att spamma nya ads. Budgetronden går varje natt och skyddar budgeten. Släpps med briefantal auto när 3 köp finns.",
+        "satt": "2026-09-14"
       }
     }
   },
