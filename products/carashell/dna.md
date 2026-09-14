@@ -220,6 +220,45 @@ tittaren tappar, aldrig som urvalskriterium.
 
 ---
 
+## Norge-runda 2026-09-14 (`/ops-oversatt carashell`) — tre fynd som gäller framåt
+
+**1. Konceptkoden heter GT i Sverige och G i Norge.** `CARASHELL_SE_Taköverdraget`
+har adsetet `- GT` för presentvinkeln; `CARASHELL_NO_Takovertrekket` har `- G`
+för exakt samma vinkel (kampanjen byggd av `/ny-annonser` ur källans norska
+kampanj). `valjAdsetForKoncept` i `tools/meta-lib.mjs` matchar på suffix och ser
+därför inte att `GT` och `G` är samma sak — den mekaniska namnöversättningen
+`CaraShellRoof_GT_4_1` → `CaraShellRoof_NO_GT_4_1` hade skapat ett ANDRA
+presentadset bredvid det som redan spenderar, och delat vinkelns budget i två i
+en CBO.
+→ **Instruktion:** presentannonser döps `CaraShellRoof_NO_G_<n>_<v>` i Norge,
+aldrig `NO_GT`. Läs alltid NO-kampanjens egna adsetnamn innan du litar på den
+mekaniska namnöversättningen. PD, SP och CS heter lika på båda marknaderna.
+
+**2. De norska annonserna landar på en sida som visar SEK.** Mätt 2026-09-14:
+`https://carashell.se/nb/products/takskyddet` svarar `"currencyCode":"SEK"` och
+1 129,00 kr, medan samma URL med `?country=NO` svarar `"currencyCode":"NOK"` och
+1 106,00 kr (jämförpris 1 382,50). NOK är alltså påslaget som Norges
+marknadsvaluta (prislistan i `factory/produkter/takskyddet.yaml`), men
+marknadsparametern måste stå i länken för att slå igenom. De nio ärvda
+NO-annonserna (`NO_PD_1–3`, `NO_SP_1–3`, `NO_G_1–3`) saknar parametern och
+skickar därför norska kunder till en SEK-sida. Samma fel som HeimGuard, se
+`products/hemvakten/dna.md`.
+→ **Instruktion:** varje ny NO-annons laddas upp med
+`--lank https://carashell.se/nb/products/takskyddet?country=NO`. De fyra
+annonserna från den här ronden har den; de nio äldre har den inte, och att göra
+om deras creatives är Axels beslut.
+
+**3. Norsk copy skrivs utan pris.** `factory/butiker/carashell.yaml` säger
+`valuta: SEK` för NO medan `factory/produkter/takskyddet.yaml` bär en
+NOK-prislista — filerna säger olika. Tills det är utrett gäller kommandots
+grundregel: ingen prissiffra i norsk copy, precis som i alla nio ärvda
+NO-annonser. CS-vinkeln (erbjudandet) bär därför villkoren — fri frakt SE/NO,
+5–10 arbetsdagar, 14 dagars ångerrätt — i stället för prisfallet, och
+**CS-annonsen i Norge kan inte läsas som ett pristest** även om den svenska
+tvillingen är det.
+
+---
+
 ## Körning nr 2 — 2026-09-14 (`/notionscalercs carashell`, briefrond nr 1)
 
 Butikens **första riktiga rond** — de tre rutinerna som setup-körningen trodde

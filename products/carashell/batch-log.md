@@ -189,3 +189,40 @@ rundan (8-stegs backoff slog till på både köläsningen och varje uppladdning,
 upp till 300 s väntan). Fyra annonser tog ~40 minuter i stället för ~4.
 Ingenting misslyckades — det är väntetid, inte fel. Kör inte om en rutin som
 "hängt sig" på det här; den jobbar.
+
+---
+
+## Norge-runda 2026-09-14 (`/ops-oversatt carashell`)
+
+Batch #2:s fyra bildannonser översatta till bokmål och uppladdade **live** i
+`CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11` (CBO 2 000 kr/dag,
+konto 915422744950975), samma dag som de gick live i Sverige. Videorna
+(`PD_4_H1`, `PD_5_H1`, `SP_4_H1`) är fortfarande inte levererade av någon och
+stod alltså inte i kön.
+
+**Ingen HeyGen-rendering:** kön var bara bild, så noll krediter drogs.
+**Ingen bildöversättning heller** — alla fyra SE-bilder är rena foton utan
+inbränd text (samma fynd som leveransrundan gjorde samma dag), så exakt samma
+filer gick upp i Norge. Metas `image_hash` blev identisk med SE-annonsernas,
+vilket bekräftar att filerna är byte-lika.
+
+| SE-annons | NO-annons | Adset | Ad-ID |
+|---|---|---|---|
+| `CaraShellRoof_PD_4_1` | `CaraShellRoof_NO_PD_4_1` | CARASHELL_NO_Takovertrekket - PD (fanns) | 120249089323760172 |
+| `CaraShellRoof_SP_4_1` | `CaraShellRoof_NO_SP_4_1` | CARASHELL_NO_Takovertrekket - SP (fanns) | 120249089335500172 |
+| `CaraShellRoof_GT_4_1` | `CaraShellRoof_NO_G_4_1` | CARASHELL_NO_Takovertrekket - G (fanns) | *pågår* |
+| `CaraShellRoof_CS_4_1` | `CaraShellRoof_NO_CS_4_1` | CARASHELL_NO_Takovertrekket - CS (nytt) | *pågår* |
+
+⚠️ **Presentannonsen heter `NO_G`, inte `NO_GT`** — se `dna.md`, Norge-rundans
+fynd 1. Den mekaniska namnöversättningen hade skapat ett andra presentadset
+bredvid det som redan spenderar.
+
+⚠️ **Länken bär `?country=NO`** — se `dna.md`, fynd 2. Utan parametern visar
+`/nb`-sidan SEK för norska kunder.
+
+Copyn skriven av en sonnet-subagent ur SE-copyn + `docs/copy-regler.md`, utan
+pris i någon av de fyra (fynd 3). Tre-frågorstestet redovisat per annons i
+`market-expansion/ops/carashell/2026-09-14/oversatt-output.json`.
+
+⚠️ **Metas rate limit slog till genom hela rundan igen** (8-stegs backoff, upp
+till 27 minuter per anrop). Kör inte om rutinen för att den ser ut att hänga.
