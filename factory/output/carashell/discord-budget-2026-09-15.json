@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-15",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: campaign CARASHELL_SE_Taköverdraget raised 2 400 → 2 850 kr/day (+20 %, fast-track rule: 3-day profit 37.2 % and 3-day ROAS 4.14, both above the gate). Read back from Meta and logged",
+    "Nothing paused, nothing activated. No ad killed — SP_2_1 is the benchmark (4 purchases, CPA 137 kr, carries 100 % of the profit contribution) and the other 19 ads are all still under the data gate (300 kr / 3 purchases)",
+    "Hub check: 4 image ads are Approved and already running (GT_4_1, PD_4_1, CS_4_1, SP_4_1). 3 video briefs sit in Draft — nobody is assigned to make them",
+    "No brief day (Tuesday). Next brief day: Wednesday 2026-09-16"
+  ],
+  "siffror": { "spend_7d": 4019, "kop_7d": 13, "roas_7d": 3.82, "vinstbidrag_7d": 2224 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-16",
+  "varningar": [
+    "No editor is assigned to CaraShell, so the 3 video briefs from Sunday are still in Draft. Wednesday's brief round will therefore add no new briefs until someone is assigned — the budget round keeps running every night either way",
+    "Profit contribution 2 224 kr counts only ads above the data gate — that is the benchmark ad alone. The other 19 ads have too little spend to be judged yet"
+  ]
+}
