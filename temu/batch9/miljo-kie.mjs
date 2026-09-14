@@ -31,6 +31,7 @@ const SCEN = {
   varmesits:      'The grey heated seat pad from the reference lying on a wooden bench seat at an outdoor ice rink, a thermos beside it, cold winter light, no people.',
   taljset:        'The whittling set from the reference lying open on a wooden workbench by a cabin window, seen at an angle from a distance, wood shavings and a half-carved wooden spoon in the foreground, warm light, no people.',
   varmeljus:      'A handful of the LED tealights from the reference glowing on a white windowsill in the evening, a snowy garden outside the window, warm cosy light, no remote control anywhere, no people.',
+  fagelmatare:    'The green bird feeder with camera from the reference mounted on top of a wooden post in a snowy Swedish garden, a great tit perched on its front perch ramp eating, snow-covered spruce trees blurred in the background, soft winter daylight, no people.',
   blockljus:      'Exactly three grey glass LED pillar candles from the reference, lit, standing on a wooden coffee table in a dim cosy living room in the evening, the remote lying beside them, no people.',
 };
 const TEMP_REF = new Set(['snoflingor', 'blockljus', 'kajakhallare', 'varmeljus']);   // badge-heroer

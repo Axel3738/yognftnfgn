@@ -413,66 +413,68 @@
   },
   "vattenskal": {
     "sv": {
-      "titel": "Uppvärmd Vattenskål 2,2 Liter – Grön/Svart Med EU-Kontakt",
-      "problemH": "Isen i skålen hinner bildas innan du ens vaknat",
-      "problemP": "Vintermorgnar börjar ofta med att kolla om vattnet i hundens eller kattens skål har frusit till is ute på verandan, hacka loss isen för hand eller bära ut nytt varmt vatten flera gånger om dagen. Det är en liten syssla som ändå tar tid varje dag.",
-      "losningH": "En skål som värmer vattnet åt dig",
-      "losningP": "Skålen är eluppvärmd och ansluts direkt till ett vanligt vägguttag via sin EU-kontakt (220–230 V). Den rymmer 2,2 liter vatten, är grön/svart och sladden är skyddad med en metallspiral längs hela sin längd.",
+      "titel": "Uppvärmd Vattenskål För Vinterfåglar – 2,2 Liter",
+      "problemH": "Vattnet fryser till is innan fåglarna hunnit dricka",
+      "problemP": "En vintermorgon ställer du ut färskt vatten vid fågelbordet – en timme senare är skålen en isskiva. Du hackar loss isen, bär ut nytt, kanske flera gånger samma dag, och när kylan biter som hårdast står talgoxar, blåmesar och domherrar ändå utan något att dricka.",
+      "losningH": "En skål som håller vattnet öppet åt dig",
+      "losningP": "Skålen är uppvärmd så vattnet inte fryser till, och kopplas in med en vanlig EU-kontakt (220–230 V). Den rymmer 2,2 liter, är grön/svart, och sladden är skyddad av en metallspiral hela vägen.",
       "bullets": [
-        "<strong>Vattnet hålls uppvärmt i stället för att stå ute och kallna</strong> – skålen är eluppvärmd, 220–230 V.",
-        "<strong>Sladden är skyddad av en metallspiral</strong> – spiralen ligger synlig längs hela sladdens längd.",
-        "<strong>2,2 liter räcker mellan påfyllningarna</strong> – skålen rymmer 2,2 liter vatten.",
-        "<strong>Ansluts direkt till ett vanligt vägguttag</strong> – EU-kontakt, 220–230 V."
+        "<strong>Vattnet hålls öppet i stället för att frysa till is</strong> – skålen är uppvärmd och ansluts med en EU-kontakt (220–230 V).",
+        "<strong>Du slipper hacka loss is och bära ut nytt vatten flera gånger om dagen</strong> – vattnet hålls öppet av sig självt.",
+        "<strong>Passar där det redan finns ström i närheten</strong> – EU-kontakt, 220–230 V, i ett vanligt vägguttag vid fågelbordet, altanen eller verandan.",
+        "<strong>Sladden är skyddad mot gnag</strong> – en metallspiral löper längs hela dess längd.",
+        "<strong>Rymmer 2,2 liter, du fyller på mer sällan</strong> – skålen rymmer 2,2 liter vatten."
       ],
       "alt": {
-        "hero": "Grön och svart uppvärmd vattenskål för husdjur på vit botten",
-        "detalj": "Närbild på sladden med metallspiral vid vattenskålen",
+        "hero": "Grön och svart uppvärmd vattenskål för vinterfåglar på vit botten",
+        "detalj": "Närbild på sladdens metallspiral vid vattenskålen",
         "fakta": "Infografik som visar 2,2 liters volym, 220–230 V EU-kontakt och sladd med metallspiral",
-        "miljo": "",
-        "gif": ""
+        "miljo": "Vattenskålen på snötäckt mark bredvid en fågelmatare, med blåmesar som dricker vid kanten",
+        "gif": "Blåmesar som dricker ur den uppvärmda vattenskålen på snöig mark bredvid fågelmataren"
       },
       "taggar": [
-        "vattenskål",
-        "uppvärmd vattenskål",
-        "hundskål",
-        "kattskål",
-        "vinterskål för husdjur"
+        "vattenskål för vinterfåglar",
+        "uppvärmd fågelvattenskål",
+        "fågelbord vinter",
+        "vinterfåglar",
+        "fågelmatning vinter"
       ],
-      "seoTitel": "Uppvärmd Vattenskål 2,2 Liter Med EU-Kontakt",
-      "seoText": "Eluppvärmd vattenskål för husdjur, 2,2 liter, grön/svart, EU-kontakt (220–230 V). Sladden är skyddad med en metallspiral.",
+      "seoTitel": "Uppvärmd Vattenskål För Vinterfåglar – 2,2 Liter",
+      "seoText": "Uppvärmd vattenskål för vinterfåglar vid fågelbordet. Håller vattnet öppet i kylan, 2,2 liter, grön/svart, EU-kontakt (220–230 V), sladd med metallspiral.",
       "aiRad": "Livsstilsbilderna är AI-genererade illustrationer.",
       "varning": "",
       "optionNamn": "",
       "optionVarden": []
     },
     "no": {
-      "titel": "Oppvarmet Vannskål 2,2 Liter – Grønn/Svart Med EU-Plugg",
-      "problemH": "Vannet i skålen rekker å fryse før du er våken",
-      "problemP": "Vintermorgener starter ofte med å sjekke om vannet i hundens eller kattens skål har frosset til is ute på verandaen, hakke løs isen for hånd eller bære ut nytt varmt vann flere ganger om dagen. Det er en liten oppgave som likevel tar tid hver dag.",
-      "losningH": "En skål som varmer vannet for deg",
-      "losningP": "Skålen er elektrisk oppvarmet og kobles til med en vanlig EU-plugg (220–230 V). Den rommer 2,2 liter vann, er grønn/svart, og ledningen er beskyttet med en metallspiral langs hele lengden.",
+      "titel": "Oppvarmet Vannskål For Vinterfugler – 2,2 Liter",
+      "problemH": "Vannet fryser til is før fuglene har fått drukket",
+      "problemP": "En vintermorgen setter du ut ferskt vann ved fuglebrettet – en time senere er skålen en isflate. Du hakker løs isen, bærer ut nytt, kanskje flere ganger samme dag, og når kulden biter som hardest står kjøttmeis, blåmeis og dompap likevel uten noe å drikke.",
+      "losningH": "En skål som holder vannet åpent for deg",
+      "losningP": "Skålen er oppvarmet slik at vannet ikke fryser til, og kobles til med en vanlig EU-plugg (220–230 V). Den rommer 2,2 liter, er grønn/svart, og ledningen er beskyttet med en metallspiral hele veien.",
       "bullets": [
-        "<strong>Vannet holdes oppvarmet i stedet for å bli iskaldt</strong> – skålen er elektrisk oppvarmet, 220–230 V.",
-        "<strong>Ledningen er beskyttet av en metallspiral</strong> – spiralen ligger synlig langs hele ledningen.",
-        "<strong>2,2 liter rekker mellom hver påfylling</strong> – skålen rommer 2,2 liter vann.",
-        "<strong>Kobles rett til en vanlig stikkontakt</strong> – EU-plugg, 220–230 V."
+        "<strong>Vannet holdes åpent i stedet for å fryse til is</strong> – skålen er oppvarmet og kobles til med en EU-plugg (220–230 V).",
+        "<strong>Du slipper å hakke løs is og bære ut nytt vann flere ganger om dagen</strong> – vannet holdes åpent av seg selv.",
+        "<strong>Passer der det allerede finnes strøm i nærheten</strong> – EU-plugg, 220–230 V, i en vanlig stikkontakt ved fuglebrettet, terrassen eller verandaen.",
+        "<strong>Ledningen er beskyttet mot gnaging</strong> – en metallspiral løper langs hele lengden.",
+        "<strong>Rommer 2,2 liter, du fyller på sjeldnere</strong> – skålen rommer 2,2 liter vann."
       ],
       "alt": {
-        "hero": "Grønn og svart oppvarmet vannskål for kjæledyr på hvit bunn",
-        "detalj": "Nærbilde av ledningen med metallspiral ved vannskålen",
+        "hero": "Grønn og svart oppvarmet vannskål for vinterfugler på hvit bunn",
+        "detalj": "Nærbilde av ledningens metallspiral ved vannskålen",
         "fakta": "Infografikk som viser 2,2 liters volum, 220–230 V EU-plugg og ledning med metallspiral",
-        "miljo": "",
-        "gif": ""
+        "miljo": "Vannskålen på snødekket bakke ved siden av en fuglemater, med blåmeis som drikker ved kanten",
+        "gif": "Blåmeis som drikker fra den oppvarmede vannskålen på snøen ved fuglemateren"
       },
       "taggar": [
-        "vannskål",
-        "oppvarmet vannskål",
-        "hundeskål",
-        "katteskål",
-        "vinterskål for kjæledyr"
+        "vannskål for vinterfugler",
+        "oppvarmet fuglevannskål",
+        "fuglebrett vinter",
+        "vinterfugler",
+        "fuglemating vinter"
       ],
-      "seoTitel": "Oppvarmet Vannskål 2,2 Liter Med EU-Plugg",
-      "seoText": "Elektrisk oppvarmet vannskål for kjæledyr, 2,2 liter, grønn/svart, EU-plugg (220–230 V). Ledningen er beskyttet med en metallspiral.",
+      "seoTitel": "Oppvarmet Vannskål For Vinterfugler – 2,2 Liter",
+      "seoText": "Oppvarmet vannskål for vinterfugler ved fuglebrettet. Holder vannet åpent i kulden, 2,2 liter, grønn/svart, EU-plugg (220–230 V), ledning med metallspiral.",
       "aiRad": "Livsstilsbildene er AI-genererte illustrasjoner.",
       "varning": "",
       "optionNamn": "",
@@ -957,6 +959,76 @@
       ],
       "seoTitel": "Telys 24-pk – Batteridrevne LED-Lys",
       "seoText": "24 batteridrevne LED-telys i varmhvitt. Samme mengde som en pose ekte telys, men uten åpen flamme i rommet.",
+      "aiRad": "Livsstilsbildene er AI-genererte illustrasjoner.",
+      "varning": "",
+      "optionNamn": "",
+      "optionVarden": []
+    }
+  },
+  "fagelmatare": {
+    "sv": {
+      "titel": "Fågelmatare Med Kamera Och Solcellspanel – Se Fåglarna I Appen",
+      "problemH": "Du hör fåglarna men hinner aldrig fram i tid",
+      "problemP": "Kvittret utanför fönstret betyder att någon redan landat på sittrampen – men när du reser dig från soffan och kommer fram är fågeln borta. Talgoxen, blåmesen, kanske en domherre eller en nötväcka: du vet att de äter av fodret, bara inte vilka.",
+      "losningH": "Kameran sitter kvar där du inte hinner",
+      "losningP": "En kamera i fågelmatarens hus filmar sittrampen, och en app visar bilden i din mobil – instruktionerna för att koppla ihop dem ligger i förpackningen. Solcellspanelen på taket laddar kameran i dagsljus, så du slipper dra ström till den.",
+      "bullets": [
+        "<strong>Du ser vem som landar på sittrampen</strong> – 5 MP-kameran i fågelmatarens hus visar bilden i appen i mobilen.",
+        "<strong>Inget vägguttag att hålla koll på</strong> – solcellspanelen på taket laddar kameran i dagsljus.",
+        "<strong>Ser om det är dags att fylla på utan att öppna locket</strong> – foderbollen är transparent.",
+        "<strong>En liten vattenkopp ger fåglarna anledning att stanna</strong> – sittrampen och vattenkoppen sitter sida vid sida.",
+        "<strong>Smälter in i trädgården i stället för att sticka ut</strong> – fågelmataren är grön, som lövverket den hänger i."
+      ],
+      "alt": {
+        "hero": "Grön fågelmatare med kamera i huset, solcellspanel på taket och transparent foderboll, fotograferad på vit botten",
+        "detalj": "Närbild på kameran i fågelmatarens hus och den lilla vattenkoppen bredvid sittrampen",
+        "fakta": "Infografik som visar kameran på 5 MP, solcellspanelen på taket, foderbollen, vattenkoppen och appen",
+        "miljo": "AI-genererad bild av fågelmataren monterad på en trästolpe i en snöig trädgård, med en talgoxe på sittrampen",
+        "gif": "Samma scen som miljöbilden i rörelse – talgoxen på sittrampen i den snöiga trädgården"
+      },
+      "taggar": [
+        "fågelmatare",
+        "fågelkamera",
+        "solcellspanel",
+        "fågelmatning",
+        "trädgård"
+      ],
+      "seoTitel": "Fågelmatare Med Kamera – Se Fåglarna I Appen",
+      "seoText": "Fågelmatare med kamera i huset och solcellspanel på taket. Se fåglarna i appen – talgoxe, blåmes, domherre och nötväcka landar på sittrampen.",
+      "aiRad": "Livsstilsbilderna är AI-genererade illustrationer.",
+      "varning": "",
+      "optionNamn": "",
+      "optionVarden": []
+    },
+    "no": {
+      "titel": "Fuglemater Med Kamera Og Solcellepanel – Se Fuglene I Appen",
+      "problemH": "Du hører fuglene, men rekker aldri frem i tide",
+      "problemP": "Kvitringen utenfor vinduet betyr at noen allerede har landet på sittepinnen – men når du reiser deg fra sofaen og kommer bort, er fuglen borte. Kjøttmeisen, blåmeisen, kanskje en dompap eller en spettmeis: du vet at de spiser av fôret, bare ikke hvem.",
+      "losningH": "Kameraet er der du ikke rekker å være",
+      "losningP": "Et kamera i fuglematerens hus filmer sittepinnen, og en app viser bildet på mobilen din – instruksjonene for å koble dem sammen ligger i pakken. Solcellepanelet på taket lader kameraet i dagslys, så du slipper å trekke strøm til den.",
+      "bullets": [
+        "<strong>Du ser hvem som lander på sittepinnen</strong> – 5 MP-kameraet i fuglematerens hus viser bildet i appen på mobilen.",
+        "<strong>Ingen stikkontakt å holde styr på</strong> – solcellepanelet på taket lader kameraet i dagslys.",
+        "<strong>Ser når det er tid for påfyll uten å åpne lokket</strong> – fôrballen er gjennomsiktig.",
+        "<strong>En liten vannskål gir fuglene en grunn til å bli</strong> – sittepinnen og vannskålen sitter side om side.",
+        "<strong>Går i ett med hagen i stedet for å skille seg ut</strong> – fuglemateren er grønn, som løvverket den henger i."
+      ],
+      "alt": {
+        "hero": "Grønn fuglemater med kamera i huset, solcellepanel på taket og gjennomsiktig fôrball, fotografert på hvit bunn",
+        "detalj": "Nærbilde av kameraet i fuglematerens hus og den lille vannskålen ved siden av sittepinnen",
+        "fakta": "Infografikk som viser kameraet på 5 MP, solcellepanelet på taket, fôrballen, vannskålen og appen",
+        "miljo": "AI-generert bilde av fuglemateren montert på en trestolpe i en snødekt hage, med en kjøttmeis på sittepinnen",
+        "gif": "Samme scene som miljøbildet i bevegelse – kjøttmeisen på sittepinnen i den snødekte hagen"
+      },
+      "taggar": [
+        "fuglemater",
+        "fuglekamera",
+        "solcellepanel",
+        "fuglemating",
+        "hage"
+      ],
+      "seoTitel": "Fuglemater Med Kamera – Se Fuglene I Appen",
+      "seoText": "Fuglemater med kamera i huset og solcellepanel på taket. Se fuglene i appen – kjøttmeis, blåmeis, dompap og spettmeis lander på sittepinnen.",
       "aiRad": "Livsstilsbildene er AI-genererte illustrasjoner.",
       "varning": "",
       "optionNamn": "",

@@ -19,7 +19,7 @@ const RORELSE = {
   snoblasarkapell:'Very slow, gentle push-in towards the covered snow blower in the garage.',
   honsgardsduk:   'The two hens peck at the grass and walk slowly inside the run; the tarp stays still.',
   snoflingor:     'The warm porch light slowly brightens as dusk deepens; the snowflakes stay fixed on the door.',
-  vattenskal:     'The dog drinks from the bowl, a little steam rises from the water, its tail moves slightly.',
+  vattenskal:     'The two blue tits on the rim dip their beaks and drink, the bullfinch hops a step on the snow, faint steam rises from the water; the bowl stays exactly as in the image.',
   atvkapell:      'A light breeze moves the birch trees and a few yellow leaves drift down past the covered ATV.',
   snoskyffel:     'Light snow falls softly in the background; the tool stays leaning against the post.',
   kajakhallare:   'Very slow, gentle push-in towards the kayak resting on the two wall hooks.',
@@ -27,6 +27,7 @@ const RORELSE = {
   varmesits:      'Light snow falls; skaters glide slowly in the blurred background; the seat pad and thermos stay still.',
   taljset:        'Very slow, gentle push-in towards the knife and the carved spoon; a few shavings settle.',
   varmeljus:      'The LED tealights glow steadily with a very gentle flicker on the windowsill; outside the window light snow falls slowly. Quiet room ambience, no music.',
+  fagelmatare:    'The great tit on the perch pecks at the food and turns its head; a second small bird lands briefly; light snow drifts down; the feeder stays exactly as in the image.',
   blockljus:      'The three LED candle flames flicker gently in the dim room; nothing else moves.',
 };
 // Omkörning med annan rörelse: RORELSE_JSON='{"id":"…"}'
@@ -41,7 +42,7 @@ const task = {};
 for (const id of ids) {
   const f = FAKTA[id];
   const q = await b.fraga(`query($q:String!){products(first:1,query:$q){nodes{media(first:20){nodes{... on MediaImage{image{url}}}}}}}`, { q: `sku:${f.sku}` });
-  const ref = q.products.nodes[0]?.media.nodes.map((m) => m.image?.url).find((u) => (u || '').includes(`b${f.batch}-${id}-miljo-se.jpg`));
+  const ref = q.products.nodes[0]?.media.nodes.map((m) => m.image?.url).find((u) => (u || '').includes(`b${f.batch}-${id}-miljo-se.jpg`) || (u || '').includes(`b${f.batch}-${id}-miljo-faglar-se.jpg`));
   if (!ref) { console.error(`${id}: ingen miljöbild på SE-produkten — kör miljo-in.mjs se bild först`); continue; }
   const r = await fetch('https://api.kie.ai/api/v1/veo/generate', { method: 'POST', headers: h, body: JSON.stringify({
     prompt: RORELSE[id] + GUARD, imageUrls: [ref], model: 'veo3_fast', aspectRatio: '16:9', generationType: 'REFERENCE_2_VIDEO' }) }).then((x) => x.json());
