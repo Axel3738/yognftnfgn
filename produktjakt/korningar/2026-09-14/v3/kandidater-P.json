@@ -5,7 +5,7 @@
   {
    "koncept_id": null,
    "namn_sv": "Stånggrensågen för Makita-batteri",
-   "objekt": "NYTT: Makita-batteriet — grenarna över taket",
+   "objekt": "NYTT: Grenarna över taket (Makita-batteriet gör jobbet)",
    "form": "verktyg",
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "E_VADER_SASONG",
@@ -79,10 +79,19 @@
     ]
    },
    "ekonomi": {
-    "landad_sek": [770, 941],
+    "landad_sek": [
+     770,
+     941
+    ],
     "pris_sek": 1299,
-    "brutto_sek": [358, 529],
-    "be_cpa_sek": [358, 529],
+    "brutto_sek": [
+     358,
+     529
+    ],
+    "be_cpa_sek": [
+     358,
+     529
+    ],
     "be_roas": 2.9,
     "flerkop": false,
     "returrisk": "låg–medel — passar Makita 18V LXT om bar-varianten bekräftas; ägaren vet själv om han har systemet; ingen storlek"
@@ -143,7 +152,7 @@
   {
    "koncept_id": null,
    "namn_sv": "Hjulmutterdragaren för Makita-batteri",
-   "objekt": "NYTT: Makita-batteriet — däckbytet",
+   "objekt": "NYTT: Däckbytet i oktober (Makita-batteriet gör jobbet)",
    "form": "verktyg",
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "E_VADER_SASONG",
@@ -217,10 +226,19 @@
     ]
    },
    "ekonomi": {
-    "landad_sek": [517, 632],
+    "landad_sek": [
+     517,
+     632
+    ],
     "pris_sek": 999,
-    "brutto_sek": [367, 482],
-    "be_cpa_sek": [367, 482],
+    "brutto_sek": [
+     367,
+     482
+    ],
+    "be_cpa_sek": [
+     367,
+     482
+    ],
     "be_roas": 2.4,
     "flerkop": false,
     "returrisk": "låg — en variant, ingen storlek; ägaren vet om han har Makita 18V"
@@ -281,7 +299,7 @@
   {
    "koncept_id": null,
    "namn_sv": "Batterisekatören för Makita-batteri",
-   "objekt": "NYTT: Makita-batteriet — bärbuskarna och rosorna",
+   "objekt": "NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)",
    "form": "verktyg",
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "A_AGARE_FRIKTION",
@@ -355,10 +373,19 @@
     ]
    },
    "ekonomi": {
-    "landad_sek": [625, 764],
+    "landad_sek": [
+     625,
+     764
+    ],
     "pris_sek": 999,
-    "brutto_sek": [235, 374],
-    "be_cpa_sek": [235, 374],
+    "brutto_sek": [
+     235,
+     374
+    ],
+    "be_cpa_sek": [
+     235,
+     374
+    ],
     "be_roas": 3.3,
     "flerkop": false,
     "returrisk": "låg — en variant; risk att ägaren väntar med köpet till vårbeskärningen"

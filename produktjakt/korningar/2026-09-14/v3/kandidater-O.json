@@ -1,0 +1,374 @@
+{
+ "agent": "O — kroppen i säsongsjobbet (H02)",
+ "datum": "2026-09-14",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Läktarponchon med värme",
+   "objekt": "NYTT: Åskådarens kropp på läktaren i oktober (barnbarnets match, far-/morföräldrar 55+ sitter stilla 90 min i frost)",
+   "form": "kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Damasker Vandring",
+    "delade_variabler": [
+     "form kläder",
+     "E_VADER_SASONG",
+     "hårt datum (första frost)",
+     "kroppsligt i säsongsjobbet",
+     "one-size (ingen storlek att mäta)"
+    ],
+    "avvikelser": [
+     "kroppen är objektet, inte en ägd sak ute",
+     "elektronik + powerbank (ingår ej)",
+     "prisband 500–999 mot damaskernas 300–499"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010434731652",
+    "url": "https://www.aliexpress.com/item/1005010434731652.html",
+    "pris_usd": 25.79,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:32:10Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005010434731652.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "one-size poncho med dragkedja fram, 3 värmelägen (ur titeln); färg beige sedd i heron; powerbank ingår ej (ej bekräftat — 'ej mätt')",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "modell i beige poncho mot snökomposit; RAUGEE-logga uppe till vänster och flamikon nere till vänster måste beskäras; två insatta bilder (soffa, skrivbord) drar åt inomhus — egen bild på läktaren behövs"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Fyndiq (look-alike, 'Elektrisk värmefilt, USB-uppvärmd sjal, elektrisk värmeponcho')",
+     "pris_sek": 554,
+     "url": "https://fyndiq.se/produkt/elektrisk-varmefilt-usb-uppvarmd-sjal-elektrisk-varmeponcho-25e3ff38281843b8/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Medisana HB 674 3-i-1 värmefilt (poncho/filt/sjal, powerbank ingår)",
+     "pris_sek": 1251,
+     "url": "https://cdon.se/halsa/medisana-3-i-1-varmefilt-hb-674-162x62-cm-gra-p76591177",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.57,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "fyndiq.se 554 kr (sida läst 2026-09-14)",
+     "cdon.se / pricerunner.se Medisana HB 674 1 251–1 646 kr (sökutdrag 2026-09-14; CDON lägst 1 251)",
+     "inf.se USB-värmefilt sjal (finns, pris ej läst)",
+     "ortorex.se → flexorex.se (403)",
+     "jula.se: 'Värmefilt 6 värmelägen Bright' = nätdriven, ingen USB-poncho i sökutdrag",
+     "clasohlson.se: värmefiltar Beurer = nätdrivna (sökutdrag)",
+     "dynan.se / smartasaker.se säljer sittdynor, inte poncho"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     336,
+     410
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     389,
+     463
+    ],
+    "be_cpa_sek": [
+     389,
+     463
+    ],
+    "be_roas": 1.88,
+    "flerkop": true,
+    "returrisk": "låg — one-size, dragkedja; risk att powerbank saknas hemma"
+   },
+   "meta_tanke": {
+    "hook": "Fryser du på läktaren i oktober?",
+    "objekt_i_bild": "farmor/farfar på läktaren med ponchon på, andra runt omkring i täckjackor och filtar",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "knappen trycks, värmekamerabild visar rygg och axlar lysa rött under ponchon — 3 sekunder"
+   },
+   "varfor": "Samma struktur som Värmesitsen (Axel ja 09-11) och damaskerna: kroppen som fryser stilla i höstens jobb ute, one-size utan storlek, Medisana-ankare 1,57× och första frost om 4,4 v. Flerköp: två på läktaren (båda farföräldrarna).",
+   "huvudrisk": "Fyndiq-look-alike 554 kr under vårt pris (H06 säger att ankaret räddar det) och powerbank ingår ej — annonsen måste säga 'din vanliga powerbank'.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 8,
+    "K7": 4,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (poncho/sjal/filt: 0 träffar)",
+     "koncept.py sok poncho/sjal: 0",
+     "fynd.json 09-11/12/13: ingen poncho"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010434731652.html",
+    "https://fyndiq.se/produkt/elektrisk-varmefilt-usb-uppvarmd-sjal-elektrisk-varmeponcho-25e3ff38281843b8/",
+    "https://cdon.se/halsa/medisana-3-i-1-varmefilt-hb-674-162x62-cm-gra-p76591177",
+    "https://www.pricerunner.se/pl/75-3200458555/Massage-Avslappningsprodukter/Medisana-HB-674-priser",
+    "https://inf.se/filtar/202744-inf-brbar-usb-driven-vrmefilt-sjal-fr-kontor-och-hem-7314281117382.html",
+    "alt. listning med huva: https://www.aliexpress.com/item/1005012995068954.html (40,59 USD, sida öppnad, hero ej nedladdad)"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Värmemuffen för fisket och passet",
+   "objekt": "NYTT: Händerna mellan kasten och på passet i höstkyla (fiskaren och jägaren)",
+   "form": "kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Damasker Vandring",
+    "delade_variabler": [
+     "form kläder",
+     "E_VADER_SASONG",
+     "hårt datum (första frost / älgjakt)",
+     "kroppsligt i säsongsjobbet",
+     "one-size",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "fackhandeln (Jaktmagasinet, Hylte) har formen — golv 619 kr",
+     "elektronik + powerbank"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012053186779",
+    "url": "https://www.aliexpress.com/item/1005012053186779.html",
+    "pris_usd": 26.39,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:32:10Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012053186779.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "one-size, midjerem, 3 värmelägen; två färger sedda i heron (rutig röd/svart, beige); powerbank ingår ej ('ej mätt')",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ": [
+     {
+      "product_id": "1005010581551676",
+      "pris_usd": 38.79,
+      "hero": "korningar/2026-09-14/v3/bilder/1005010581551676.jpg",
+      "kommentar": "premiumvarianten (jägarens muff, 899 kr, BE-CPA 282–394) — enda helt textfria kontextheron; samma form, samma ägare — EN muff på arket (huvudsessionen 09-14)"
+     }
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "komposit: muffen med glödande värmeslinga ritad i rött + tre insatta bruksbilder (fiskare vid sjön, campingstol, tält); bara en termometer-/flamikon som text — beskärbar. Alt-listning 1005010581551676 (38,79 USD) har en ren textfri kontextbild: jägare i grön jacka i snö, muffen glöder — bättre hero, sämre ekonomi"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Jaktmagasinet — HuntElite Handmuff med värme (USB, powerbank ingår ej)",
+     "pris_sek": 619,
+     "url": "https://www.jaktmagasinet.se/products/varme-handmuff-huntelite",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Härkila Driven Hunt Heat muff (Hylte Jakt & Lantman)",
+     "pris_sek": 1490,
+     "url": "https://www.hylte-lantman.com/harkila-driven-hunt-varmemuff-willow-green",
+     "i_sortiment": false
+    },
+    "ankare_kvot": 1.86,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "jaktmagasinet.se HuntElite 619 kr (sida läst 2026-09-14; 'I lager' och 'Inte tillgänglig' båda på sidan)",
+     "hylte-lantman.com Härkila 1 490 kr — slut i lager webb + butik (sida läst 2026-09-14); Deerhunter Heat-handvärmare Wood one size 792 kr på samma sajt (kategorisida läst)",
+     "harkila.com ord. pris 1 895 kr, pricerunner.se 1 000–1 799 kr (sökutdrag 2026-09-14)",
+     "fyndiq.se + amazon.se (Warooma) look-alikes utan pris i sökutdrag",
+     "jaktia.se: 14 värmehandskar 559–2 995 (lins H 09-12) — muff ej sedd där i denna körning",
+     "jula.se/clasohlson.se/biltema.se: inga träffar på 'handmuff' i sökutdrag"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     344,
+     420
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     379,
+     455
+    ],
+    "be_cpa_sek": [
+     379,
+     455
+    ],
+    "be_roas": 1.92,
+    "flerkop": false,
+    "returrisk": "låg — one-size, midjerem; powerbank ingår ej"
+   },
+   "meta_tanke": {
+    "hook": "Stelfrusna fingrar mellan kasten?",
+    "objekt_i_bild": "fiskaren på bryggan i oktoberdimma, spöet i hållaren, händerna i muffen framför magen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "händerna dras ur muffen och knyter tafsen på 5 sekunder utan att blåsa på fingrarna; muffen glöder rött i värmekamera"
+   },
+   "varfor": "Strukturell kusin till Värmehandskarna (Axel ja 09-12) utan deras storleksrisk: one-size, fingrarna fria för lina och avtryckare, premiumankare Härkila 1,86× (slut i lager = hyllfrånvaro hos ankaret). Första frost 4,4 v, älgjakt syd 3,4 v — två köpare i samma fönster.",
+   "huvudrisk": "Fackhandeln har exakt formen för 619 kr (HuntElite) — vår vinst hänger på att vi når fiskaren i flödet före han går till Jaktmagasinet, och på att powerbank-kravet inte sänker CVR.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 8,
+    "K7": 5,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (muff: 0 träffar; 'MC Handvärmare' är greppöverdrag, annan sak)",
+     "koncept.py sok muff: bara utombordarspolmuff K0038",
+     "fynd.json 09-11/12/13: handskar och sulor finns, muff inte"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012053186779.html",
+    "alt. premiumlistning: https://www.aliexpress.com/item/1005010581551676.html (38,79 USD, LIVE: sida öppnad, hero nedladdad korningar/2026-09-14/v3/bilder/1005010581551676.jpg och sedd)",
+    "https://www.jaktmagasinet.se/products/varme-handmuff-huntelite",
+    "https://www.hylte-lantman.com/harkila-driven-hunt-varmemuff-willow-green",
+    "https://www.hylte-lantman.com/varmehandskar-handvarmare",
+    "https://harkila.com/sv-se/shop/jaktklader-foer-herr/jakthandskar/driven-hunt-heat-muff-1901085",
+    "https://www.pricerunner.se/pl/648-3200681986/Jakt/Haerkila-Driven-Hunt-Heat-Muff-WillowGreen-priser"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Uppvärmd läktarsits med batteri (åskådaren)",
+   "skal": "Svensk D2C-hylla tät i exakt formen: Dynan 479 kr, Nates 489, SmartaSaker 598, Erlandsons Brygga — och Värmesitsen 45×90 USB ligger redan i butiken (599). Ingen lucka."
+  },
+  {
+   "namn": "Värmefilt 12 V för husvagnen/bilen (campingägaren)",
+   "skal": "Jula Hamron 'Värmefilt 12 V' är exakt samma form (kedjan har den, pris ej läst — 403); inget märkesankare funnet i camping-fackhandeln. Kedjegolv utan ankare = förlorarsignal."
+  },
+  {
+   "namn": "Uppvärmda fällbara vantar (fiskaren)",
+   "skal": "Ingen uppvärmd flip-top-listning på AliExpress i två sökningar — bara stickade fällvantar 3–12 USD (kedjeform, lågt upplevt värde) och storleksberoende värmehandskar (jägaren tagen 09-12). Muffen tar situationen utan storlek."
+  },
+  {
+   "namn": "Vedbärarryggsäck / sele (vedhuggarens rygg)",
+   "skal": "Bara canvas-totes på AliExpress (kedjan: Clas/Jula/Fyndiq vedbärare); ryggsäcksformen finns på Amazon.se (CYUREAY) men saknar listning. Landad ~424 → BE-CPA under 190 vid rimligt väskpris."
+  },
+  {
+   "namn": "Uppvärmda knäskydd (vedhuggaren/trädgården)",
+   "skal": "Sökningen ger bara massage-/rödljusprodukter för inomhusbruk (form annat, 0/13 i facit). Knäskydd är dessutom 'sett innan'."
+  },
+  {
+   "namn": "Värmemössa USB (hundägaren i mörkret)",
+   "skal": "Smärtan syns inte i bild på 3 s; Amazon.se-look-alikes + HeatPerformance-ankare utan läst pris. Ingen trea på någon axel — LÅG-rad utan asymmetri stryks."
+  },
+  {
+   "namn": "Uppvärmt ryggbälte (vedhuggaren/snöskottaren)",
+   "skal": "Medicinsk pryl (lumbalstöd med värme) — form annat, inomhusuttryck, lågt upplevt värde. Inte säsongsjobb ute."
+  },
+  {
+   "namn": "Bärsele för lövblås (lövfällning, samma ägare som axelbältet)",
+   "skal": "AliExpress-listningarna (3–18 USD) är samma sak som Axelbältet/Dubbel axelrem i kontot — bara ny användning, inte ny form. SAK-kollision."
+  },
+  {
+   "namn": "Uppvärmd madrass 5 V/12 V för husbilsbädden",
+   "skal": "Höstcamping är inget fönster i SASONG.md (uppställning är motsatt köp); Jula har 12 V-dyna/filt; ankare saknas."
+  },
+  {
+   "namn": "Isfiskesits/-handskar",
+   "skal": "Isfiske är EARLY (18,3 v) — parkera enligt protokollet. Muffens titel täcker isfiske när fönstret öppnar."
+  },
+  {
+   "namn": "Neoprenhandskar båtupptagningen",
+   "skal": "Biltema/Jula-form (kedja), inte ny."
+  },
+  {
+   "namn": "Uppvärmd väst USB (trädgårdsägaren)",
+   "skal": "Jula har formen (ordern), storleksberoende."
+  },
+  {
+   "namn": "Handtagsvärmare skoter/MC",
+   "skal": "MC Handvärmare ligger i kontot — samma situation."
+  },
+  {
+   "namn": "Värmemuffen på passet (premiumvarianten)",
+   "skal": "samma form och ägare som fiskemuffen — slagen ihop till en rad med premiumlistningen som alternativ (huvudsessionen 09-14)"
+  }
+ ]
+}

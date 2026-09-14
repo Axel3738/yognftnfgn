@@ -81,5 +81,13 @@
   "deadline": "vintermatning (6 v)",
   "korningsvecka": 38,
   "orsak": "2026-09-13 lins L: LIVE 1005008775230067, 11,80 USD, men Vivara säljer samma form 249,90 — utanför batch på plats, LÅG."
+ },
+ {
+  "objekt": "NYTT: Isfiskaren — sits och händer på isen",
+  "form": "uppvärmd sits / fällbara värmevantar",
+  "arketyp": "E_VADER_SASONG",
+  "deadline": "isfiske (säker is 20 jan)",
+  "korningsvecka": 2,
+  "orsak": "2026-09-14 lins O: EARLY 18 v — parkerad enligt protokollet; muffen (K0268) täcker isfiske när fönstret öppnar."
  }
 ]

@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 267,
+ "nasta": 275,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -15268,6 +15268,726 @@
     }
    ],
    "namn_sv": "Ädelstenskalendern, 24 grävblock"
+  },
+  "K0267": {
+   "id": "K0267",
+   "skapad": "2026-09-14",
+   "namn": "Fönstertermomattan för husvagn, 2-pack",
+   "objekt": "NYTT: Husvagnens sidofönster (3–5 fönster per vagn; kondens, frost och UV på akrylrutorna under vinterståndet — samma ägare som Taköverdraget och Termoskyddet)",
+   "form": "överdrag",
+   "sak": "nytt: husvagnens sidofönster+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012434201685",
+     "url": "https://www.aliexpress.com/item/1005012434201685.html",
+     "bild": null,
+     "pris_usd": 15.45,
+     "forst_sedd": "2026-09-14",
+     "verifieringar": [
+      {
+       "datum": "2026-09-14",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-14T06:32:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-14",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 16.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 3,
+      "efterfragan": 3,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 799,
+     "landad": 446,
+     "be_cpa": 352,
+     "hook": "Hänger husvagnens fönster nakna i vinter?",
+     "varfor": "Rakt syskon till Termoskyddet (ROAS 3,55) och Taköverdraget (5,65): samma ägare, samma helg, nästa yta — sidofönstren. Hindermann-ankare 539–760 kr per matta, leverantören 15 USD, textfri hero i kontext och 3–5 fönster per vagn ger flerköp (H08).",
+     "huvudrisk": "Storlekarna i listningen är inte sedda — Hindermann säljer åtta, och en 'universal' som slirar mot fönstermåttet ger returer.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-14",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-14",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Fönstertermomattan för husvagn, 2-pack"
+  },
+  "K0268": {
+   "id": "K0268",
+   "skapad": "2026-09-14",
+   "namn": "Värmemuffen för fisket och passet",
+   "objekt": "NYTT: Händerna mellan kasten och på passet i höstkyla (fiskaren och jägaren)",
+   "form": "kläder",
+   "sak": "nytt: händerna mellan kasten och på passet i höstkyla+kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012053186779",
+     "url": "https://www.aliexpress.com/item/1005012053186779.html",
+     "bild": null,
+     "pris_usd": 26.39,
+     "forst_sedd": "2026-09-14",
+     "verifieringar": [
+      {
+       "datum": "2026-09-14",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-14T06:32:10Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-14",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 14.1,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 799,
+     "landad": 382,
+     "be_cpa": 417,
+     "hook": "Stelfrusna fingrar mellan kasten?",
+     "varfor": "Strukturell kusin till Värmehandskarna (Axel ja 09-12) utan deras storleksrisk: one-size, fingrarna fria för lina och avtryckare, premiumankare Härkila 1,86× (slut i lager = hyllfrånvaro hos ankaret). Första frost 4,4 v, älgjakt syd 3,4 v — två köpare i samma fönster.",
+     "huvudrisk": "Fackhandeln har exakt formen för 619 kr (HuntElite) — vår vinst hänger på att vi når fiskaren i flödet före han går till Jaktmagasinet, och på att powerbank-kravet inte sänker CVR.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 6,
+      "K5": 8,
+      "K6": 8,
+      "K7": 5,
+      "K8": 8,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-14",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-14",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Värmemuffen för fisket och passet"
+  },
+  "K0269": {
+   "id": "K0269",
+   "skapad": "2026-09-14",
+   "namn": "Läktarponchon med värme",
+   "objekt": "NYTT: Åskådarens kropp på läktaren i oktober (barnbarnets match, far-/morföräldrar 55+ sitter stilla 90 min i frost)",
+   "form": "kläder",
+   "sak": "nytt: åskådarens kropp på läktaren i oktober+kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010434731652",
+     "url": "https://www.aliexpress.com/item/1005010434731652.html",
+     "bild": null,
+     "pris_usd": 25.79,
+     "forst_sedd": "2026-09-14",
+     "verifieringar": [
+      {
+       "datum": "2026-09-14",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-14T06:32:10Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-14",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 13.1,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 799,
+     "landad": 373,
+     "be_cpa": 426,
+     "hook": "Fryser du på läktaren i oktober?",
+     "varfor": "Samma struktur som Värmesitsen (Axel ja 09-11) och damaskerna: kroppen som fryser stilla i höstens jobb ute, one-size utan storlek, Medisana-ankare 1,57× och första frost om 4,4 v. Flerköp: två på läktaren (båda farföräldrarna).",
+     "huvudrisk": "Fyndiq-look-alike 554 kr under vårt pris (H06 säger att ankaret räddar det) och powerbank ingår ej — annonsen måste säga 'din vanliga powerbank'.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 10,
+      "K3": 8,
+      "K4": 6,
+      "K5": 8,
+      "K6": 8,
+      "K7": 4,
+      "K8": 8,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-14",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-14",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Läktarponchon med värme"
+  },
+  "K0270": {
+   "id": "K0270",
+   "skapad": "2026-09-14",
+   "namn": "Utombordarvagnen, hopfällbar 85 kg",
+   "objekt": "NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)",
+   "form": "annat",
+   "sak": "nytt: utombordaren på land+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012839771194",
+     "url": "https://www.aliexpress.com/item/1005012839771194.html",
+     "bild": null,
+     "pris_usd": 46.49,
+     "forst_sedd": "2026-09-14",
+     "verifieringar": [
+      {
+       "datum": "2026-09-14",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-14T06:31:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-14",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 4,
+     "rank_poang": 11.0,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 672,
+     "be_cpa": 326,
+     "hook": "Var står utombordaren i vinter?",
+     "varfor": "Samma ägare som Båtmotorskyddet (ROAS 2,72) en vecka senare: motorn ska av vid upptagningen och stå sex månader — i dag lutad mot en vägg. Fackhandeln säljer formen för 1 635 kr (1,64× vårt pris) och bocken utan hjul för 1 950; leverantören 46 USD.",
+     "huvudrisk": "Egenvikten är inte mätt — en 6–8 kg stålvagn kan landa över 740 kr i frakt, och SeaSea har en enklare motorkärra för 795 kr under vårt pris.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-14",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-14",
+     "handelse": "levererad på V3-arket (rank 4, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Utombordarvagnen, hopfällbar 85 kg"
+  },
+  "K0271": {
+   "id": "K0271",
+   "skapad": "2026-09-14",
+   "namn": "Stånggrensågen för Makita-batteri",
+   "objekt": "NYTT: Grenarna över taket (Makita-batteriet gör jobbet)",
+   "form": "verktyg",
+   "sak": "nytt: grenarna över taket+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012433239872",
+     "url": "https://www.aliexpress.com/item/1005012433239872.html",
+     "bild": null,
+     "pris_usd": 59.18,
+     "forst_sedd": "2026-09-14",
+     "verifieringar": [
+      {
+       "datum": "2026-09-14",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-14T06:30:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-14",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 5,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 1299,
+     "landad": 856,
+     "be_cpa": 444,
+     "hook": "Har du Makita-batterier i garaget?",
+     "varfor": "Samma struktur som Snöskyffeln/Jetfläkten/Minikedjesågen för Makita (tre ja) men med den tyngsta payoffen: Makitas egen stångsåg kostar 7 493 kr, Ryobi/Bosch-klassen 2 449–2 559 med batteri, vår 1 299 på batteriet ägaren redan har (ankare 5,8× / 1,9×). Vedsäsong 4,4 v och höststormarna gör grenen över taket till ett datumjobb — testar H12 rent: motoriserat, ≥ 900 kr, synligt resultat.",
+     "huvudrisk": "Heron visar kit med egna gula batterier — bar Makita-variant och obrandad maskin måste bekräftas (piratrisk på DeWalt-look); form=verktyg är 1 vinnare/2 förlorare/7 för tidigt i facit och Axels egna verktygslauncher ligger under BE, så H12 måste bära hela raden.",
+     "hypotes_id": "H12",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 7,
+      "K6": 8,
+      "K7": 4,
+      "K8": 9,
+      "K9": 4,
+      "K10": 1,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-14",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-14",
+     "handelse": "levererad på V3-arket (rank 5, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Stånggrensågen för Makita-batteri"
+  },
+  "K0272": {
+   "id": "K0272",
+   "skapad": "2026-09-14",
+   "namn": "Hjulmutterdragaren för Makita-batteri",
+   "objekt": "NYTT: Däckbytet i oktober (Makita-batteriet gör jobbet)",
+   "form": "verktyg",
+   "sak": "nytt: däckbytet i oktober+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012743142283",
+     "url": "https://www.aliexpress.com/item/1005012743142283.html",
+     "bild": null,
+     "pris_usd": 39.76,
+     "forst_sedd": "2026-09-14",
+     "verifieringar": [
+      {
+       "datum": "2026-09-14",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-14T06:33:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-14",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 6,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 574,
+     "be_cpa": 424,
+     "hook": "Byter du vinterdäcken själv i år?",
+     "varfor": "Däckbytet är ett datumjobb som varje Makita-ägare 55+ med bil gör två gånger om året (första snö Norrland 5,9 v, Svealand 9,6 v); Makitas egen DTW285Z kostar 2 099–3 499 kr utan batteri, vår 999 på ägarens batteri (ankare 2,1–3,5×). Payoffen syns på 3 s — testar H12 rent på det tydligaste jobbet i säsongskartan.",
+     "huvudrisk": "Ankaret 2,1× ligger under H12:s 2,4×-mål och Biltema/Jula säljer formen med eget batteri runt 1 000 kr (pris ej läst); heron visar eget batteri, bar Makita-variant måste bekräftas; form=verktyg och Axels verktygslauncher under BE i facit.",
+     "hypotes_id": "H12",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 13,
+      "K2": 12,
+      "K3": 8,
+      "K4": 7,
+      "K5": 6,
+      "K6": 8,
+      "K7": 4,
+      "K8": 8,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-14",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-14",
+     "handelse": "levererad på V3-arket (rank 6, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Hjulmutterdragaren för Makita-batteri"
+  },
+  "K0273": {
+   "id": "K0273",
+   "skapad": "2026-09-14",
+   "namn": "Batterisekatören för Makita-batteri",
+   "objekt": "NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)",
+   "form": "verktyg",
+   "sak": "nytt: bärbuskarna och rosorna+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012879880737",
+     "url": "https://www.aliexpress.com/item/1005012879880737.html",
+     "bild": null,
+     "pris_usd": 48.02,
+     "forst_sedd": "2026-09-14",
+     "verifieringar": [
+      {
+       "datum": "2026-09-14",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-14T06:30:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-14",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 7,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 1,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "LÅG",
+     "pris": 999,
+     "landad": 694,
+     "be_cpa": 304,
+     "hook": "Värker handen efter rosorna?",
+     "varfor": "Störst ankarkvot i linsen: Makitas egen sekatör kostar 7 500–16 499 kr, vår 999 på ägarens batteri (7,5×) — och heron är den enda i linsen som redan är i kontext (klass 2). Testar H12 rent på en form ägaren aldrig skulle köpa från Makita själv.",
+     "huvudrisk": "Fel säsong för huvudjobbet (fruktträd feb–mars, EARLY) — hösten bär bara bärbuskar/rosor/häck; Bosch EasyPrune 499 kr hos Bauhaus är ett kedjegolv i exakt samma form under halva vårt pris, och sekatören ser ut som en pryl bredvid stångsågen (upplevt värde).",
+     "hypotes_id": "H12",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 11,
+      "K2": 11,
+      "K3": 8,
+      "K4": 6,
+      "K5": 5,
+      "K6": 8,
+      "K7": 3,
+      "K8": 6,
+      "K9": 3,
+      "K10": 1,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-14",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-14",
+     "handelse": "levererad på V3-arket (rank 7, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Batterisekatören för Makita-batteri"
+  },
+  "K0274": {
+   "id": "K0274",
+   "skapad": "2026-09-14",
+   "namn": "Big Foot-stödbensplattorna, 4-pack",
+   "objekt": "NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)",
+   "form": "annat",
+   "sak": "nytt: husvagnens stödben+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012051294010",
+     "url": "https://www.aliexpress.com/item/1005012051294010.html",
+     "bild": null,
+     "pris_usd": 65.49,
+     "forst_sedd": "2026-09-14",
+     "verifieringar": [
+      {
+       "datum": "2026-09-14",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-14T06:32:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-14",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 8,
+     "rank_poang": 9.4,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 3,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 1290,
+     "landad": 947,
+     "be_cpa": 343,
+     "hook": "Sjunker husvagnens stödben i höst?",
+     "varfor": "Fyra ägda saker på samma vagn som just fick tak och front — plattan sitter kvar på benet och ersätter plankbiten (H08 + H03). AL-KO tar 1 790 kr för exakt samma form (1,39× vårt pris), leverantören 65 USD ger BE-CPA 248–438.",
+     "huvudrisk": "Lågt upplevt värde i bild (orange plastplattor för 1 290 kr) och form=annat är kontots sämsta signal; bara AL-KO-chassin passar och lösa 130-kronorsplattor finns under oss.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-14",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-14",
+     "handelse": "levererad på V3-arket (rank 8, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Big Foot-stödbensplattorna, 4-pack"
   }
  }
 }

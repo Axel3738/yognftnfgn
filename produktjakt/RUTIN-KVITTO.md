@@ -16,3 +16,4 @@ Anmärkning 2026-09-09: 18 kandidater kördes genom mekanismgrinden i två omgå
 noll passerade. De två levererade är Axels egna val.
 | 2026-09-12 (V3, 4 linser) | 14 sökta / ~68 prövade | 12 | 1 i grinden + ~54 i linserna | ja (v17) | ja |
 | 2026-09-13 (V3, 4 linser) | 13 sökta / ~46 prövade | 11 | 2 utanför på plats + 33 i linserna | ja (v18) | ja |
+| 2026-09-14 (V3, 3 linser) | 9 sökta / ~46 prövade | 8 | 1 ihopslagen + 37 i linserna | ja (v19) | ja |

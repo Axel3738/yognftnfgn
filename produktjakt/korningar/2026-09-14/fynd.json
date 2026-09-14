@@ -1,0 +1,1307 @@
+{
+ "datum": "2026-09-14",
+ "version": "v3",
+ "kalla": "korningar/2026-09-14/v3/batch.json",
+ "antal_kandidater": 8,
+ "per_slot": {
+  "exploitation": 5,
+  "exploration": 3,
+  "sasong": 0
+ },
+ "produkter": [
+  {
+   "product_id": "1005012434201685",
+   "titel": "Fönstertermomattan för husvagn, 2-pack",
+   "url": "https://www.aliexpress.com/item/1005012434201685.html",
+   "pris": 15.45,
+   "valuta": "USD",
+   "pris_text": "US $15.45",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-14/v3/bilder/1005012434201685.jpg",
+   "sald": "",
+   "grupp": "NYTT: Husvagnens sidofönster (3–5 fönster per vagn; kondens, frost och UV på akrylrutorna under vinterståndet — samma ägare som Taköverdraget och Termoskyddet)",
+   "objekt": "NYTT: Husvagnens sidofönster (3–5 fönster per vagn; kondens, frost och UV på akrylrutorna under vinterståndet — samma ägare som Taköverdraget och Termoskyddet)",
+   "taggar": {
+    "objekt": "NYTT: Husvagnens sidofönster (3–5 fönster per vagn; kondens, frost och UV på akrylrutorna under vinterståndet — samma ägare som Taköverdraget och Termoskyddet)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "uppställning",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Camping4u — Hindermann Thermomatta husvagnsfönster 'från 760 kr' (lagersaldo 0)"
+   },
+   "ekonomi": {
+    "landad": 446,
+    "forslag_pris": 799,
+    "multipel": 1.79,
+    "be_cpa": 352,
+    "be_roas": 2.27,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     402,
+     491
+    ]
+   },
+   "namn_sv": "Fönstertermomattan för husvagn, 2-pack",
+   "status": "bevisad struktur",
+   "poang": 16.0,
+   "rank_slutlig": 16.0,
+   "rank": 1,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Hänger husvagnens fönster nakna i vinter?",
+   "efter_bild": "frost/kondens på rutan utan matta — matta hängs på i ett grepp från listen, två snören ner",
+   "huvudrisk": "Storlekarna i listningen är inte sedda — Hindermann säljer åtta, och en 'universal' som slirar mot fönstermåttet ger returer.",
+   "varfor": "Rakt syskon till Termoskyddet (ROAS 3,55) och Taköverdraget (5,65): samma ägare, samma helg, nästa yta — sidofönstren. Hindermann-ankare 539–760 kr per matta, leverantören 15 USD, textfri hero i kontext och 3–5 fönster per vagn ger flerköp (H08).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0267",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm / Taköverdraget för Husvagn",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (husvagn 100–400 tkr)",
+     "formsydd termomatta som hängs utanpå rutan — samma form som Termoskyddet, nytt fönster",
+     "hårt datum: uppställning 10–31 okt (NOW 3,7 v)",
+     "old way: ingenting eller bubbelplast/aluminiumfolie tejpad på insidan",
+     "fackhandelsankare Hindermann 539–760 kr per matta, inget kedjegolv (Biltema/Jula saknar formen — ej mätt i dag, 403)",
+     "ägare 55+ i småhus; 283 840 husvagnar (objekt.json, Trafikanalys 2024)"
+    ],
+    "avvikelser": [
+     "flera fönster per vagn → 2-pack i stället för ett stycke",
+     "storlekar i listningen ej sedda (Hindermann säljer 8 storlekar) — variantrisk"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 3 + lucka 1 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8); deadline_typ=uppställning 4V/0F (+1.0); prisband=500–999 8V/2F (+0.6)] = 16.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Campingvaruhuset — Hindermann Thermomatta för husvagnsfönster (8 storlekar, alla i lager)",
+     "pris_sek": 539,
+     "url": "https://www.campingvaruhuset.se/sv/thermomatta-for-husvagnsfonster",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Camping4u — Hindermann Thermomatta husvagnsfönster 'från 760 kr' (lagersaldo 0)",
+     "pris_sek": 760,
+     "url": "https://www.camping4u.se/sv/artiklar/hindermann-thermomatta-husvagnsfonster.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.35,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "campingvaruhuset.se (Hindermann 539 kr/matta, 8 storlekar, i lager — läst 2026-09-14)",
+     "camping4u.se (Hindermann från 760 kr, lagersaldo 0 — läst 2026-09-14)",
+     "getcamping.eu (Hindermann Thermal Window Mat Classic 261 € = husbilshytt, annan form, slut i lager — läst 2026-09-14)",
+     "scandihills.se (Isoflex isolermatta 7 skikt — sidan gav inget pris)",
+     "campingaffaren.se (domänen till salu — död), campinggrossisten.se (503)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är helt textfri: silvermattan hänger utanpå ett husvagnsfönster från markislisten, med snören ner till hörnen — exakt Hindermann-formen. Bara ett 'MONSTERLAND'-märke på vagnen syns under mattan; går att beskära eller lämna."
+   },
+   "meta_tanke": {
+    "hook": "Hänger husvagnens fönster nakna i vinter?",
+    "objekt_i_bild": "husvagnens sidofönster med silvermattan hängd från markislisten, snön på taket bakom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "frost/kondens på rutan utan matta — matta hängs på i ett grepp från listen, två snören ner"
+   },
+   "listning": {
+    "product_id": "1005012434201685",
+    "url": "https://www.aliexpress.com/item/1005012434201685.html",
+    "pris_usd": 15.45,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:32:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012434201685.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ej sedda i sökträff/titel — 'Motorhome Window Insulation Pads', troligen en eller få storlekar; Hindermann-formen finns i 90×55 till 180×80 cm, så storleken måste kontrolleras med leverantören. Alternativ listning öppnad: 1005012926951426 (11,99 USD, samma titel, sida svarar med titel + hero — hero ej nedladdad = SOKTRAFF); 1005012554888812 (17,79 USD, identisk hero)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 3,
+    "efterfragan": 3,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012434201685.html",
+    "https://www.aliexpress.com/item/1005012926951426.html",
+    "https://www.campingvaruhuset.se/sv/thermomatta-for-husvagnsfonster",
+    "https://www.camping4u.se/sv/artiklar/hindermann-thermomatta-husvagnsfonster.html",
+    "https://www.getcamping.eu/en/caravan-motorhome-accessories/cooling-and-heating/insulating-mats-sun-protection-windows/hindermann-thermal-window-mat-classic/"
+   ]
+  },
+  {
+   "product_id": "1005012053186779",
+   "titel": "Värmemuffen för fisket och passet",
+   "url": "https://www.aliexpress.com/item/1005012053186779.html",
+   "pris": 26.39,
+   "valuta": "USD",
+   "pris_text": "US $26.39",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-14/v3/bilder/1005012053186779.jpg",
+   "sald": "ej mätt",
+   "grupp": "NYTT: Händerna mellan kasten och på passet i höstkyla (fiskaren och jägaren)",
+   "objekt": "NYTT: Händerna mellan kasten och på passet i höstkyla (fiskaren och jägaren)",
+   "taggar": {
+    "objekt": "NYTT: Händerna mellan kasten och på passet i höstkyla (fiskaren och jägaren)",
+    "form": "kläder",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Härkila Driven Hunt Heat muff (Hylte Jakt & Lantman)"
+   },
+   "ekonomi": {
+    "landad": 382,
+    "forslag_pris": 799,
+    "multipel": 2.09,
+    "be_cpa": 417,
+    "be_roas": 1.92,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     344,
+     420
+    ]
+   },
+   "namn_sv": "Värmemuffen för fisket och passet",
+   "status": "bevisad struktur",
+   "poang": 14.1,
+   "rank_slutlig": 14.1,
+   "rank": 2,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 8,
+    "K7": 5,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Stelfrusna fingrar mellan kasten?",
+   "efter_bild": "händerna dras ur muffen och knyter tafsen på 5 sekunder utan att blåsa på fingrarna; muffen glöder rött i värmekamera",
+   "huvudrisk": "Fackhandeln har exakt formen för 619 kr (HuntElite) — vår vinst hänger på att vi når fiskaren i flödet före han går till Jaktmagasinet, och på att powerbank-kravet inte sänker CVR.",
+   "varfor": "Strukturell kusin till Värmehandskarna (Axel ja 09-12) utan deras storleksrisk: one-size, fingrarna fria för lina och avtryckare, premiumankare Härkila 1,86× (slut i lager = hyllfrånvaro hos ankaret). Första frost 4,4 v, älgjakt syd 3,4 v — två köpare i samma fönster.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0268",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Damasker Vandring",
+    "delade_variabler": [
+     "form kläder",
+     "E_VADER_SASONG",
+     "hårt datum (första frost / älgjakt)",
+     "kroppsligt i säsongsjobbet",
+     "one-size",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "fackhandeln (Jaktmagasinet, Hylte) har formen — golv 619 kr",
+     "elektronik + powerbank"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 2 + säsong 3 + creative 2 + lucka 2 + signalbonus +1.1 [arketyp=E_VADER_SASONG 2V/1F (+0.3); form=kläder 4V/3F (+0.1); prisband=500–999 8V/2F (+0.6)] = 14.1",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Jaktmagasinet — HuntElite Handmuff med värme (USB, powerbank ingår ej)",
+     "pris_sek": 619,
+     "url": "https://www.jaktmagasinet.se/products/varme-handmuff-huntelite",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Härkila Driven Hunt Heat muff (Hylte Jakt & Lantman)",
+     "pris_sek": 1490,
+     "url": "https://www.hylte-lantman.com/harkila-driven-hunt-varmemuff-willow-green",
+     "i_sortiment": false
+    },
+    "ankare_kvot": 1.86,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "jaktmagasinet.se HuntElite 619 kr (sida läst 2026-09-14; 'I lager' och 'Inte tillgänglig' båda på sidan)",
+     "hylte-lantman.com Härkila 1 490 kr — slut i lager webb + butik (sida läst 2026-09-14); Deerhunter Heat-handvärmare Wood one size 792 kr på samma sajt (kategorisida läst)",
+     "harkila.com ord. pris 1 895 kr, pricerunner.se 1 000–1 799 kr (sökutdrag 2026-09-14)",
+     "fyndiq.se + amazon.se (Warooma) look-alikes utan pris i sökutdrag",
+     "jaktia.se: 14 värmehandskar 559–2 995 (lins H 09-12) — muff ej sedd där i denna körning",
+     "jula.se/clasohlson.se/biltema.se: inga träffar på 'handmuff' i sökutdrag"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "komposit: muffen med glödande värmeslinga ritad i rött + tre insatta bruksbilder (fiskare vid sjön, campingstol, tält); bara en termometer-/flamikon som text — beskärbar. Alt-listning 1005010581551676 (38,79 USD) har en ren textfri kontextbild: jägare i grön jacka i snö, muffen glöder — bättre hero, sämre ekonomi"
+   },
+   "meta_tanke": {
+    "hook": "Stelfrusna fingrar mellan kasten?",
+    "objekt_i_bild": "fiskaren på bryggan i oktoberdimma, spöet i hållaren, händerna i muffen framför magen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "händerna dras ur muffen och knyter tafsen på 5 sekunder utan att blåsa på fingrarna; muffen glöder rött i värmekamera"
+   },
+   "listning": {
+    "product_id": "1005012053186779",
+    "url": "https://www.aliexpress.com/item/1005012053186779.html",
+    "pris_usd": 26.39,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:32:10Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012053186779.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "one-size, midjerem, 3 värmelägen; två färger sedda i heron (rutig röd/svart, beige); powerbank ingår ej ('ej mätt')",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ": [
+     {
+      "product_id": "1005010581551676",
+      "pris_usd": 38.79,
+      "hero": "korningar/2026-09-14/v3/bilder/1005010581551676.jpg",
+      "kommentar": "premiumvarianten (jägarens muff, 899 kr, BE-CPA 282–394) — enda helt textfria kontextheron; samma form, samma ägare — EN muff på arket (huvudsessionen 09-14)"
+     }
+    ]
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012053186779.html",
+    "alt. premiumlistning: https://www.aliexpress.com/item/1005010581551676.html (38,79 USD, LIVE: sida öppnad, hero nedladdad korningar/2026-09-14/v3/bilder/1005010581551676.jpg och sedd)",
+    "https://www.jaktmagasinet.se/products/varme-handmuff-huntelite",
+    "https://www.hylte-lantman.com/harkila-driven-hunt-varmemuff-willow-green",
+    "https://www.hylte-lantman.com/varmehandskar-handvarmare",
+    "https://harkila.com/sv-se/shop/jaktklader-foer-herr/jakthandskar/driven-hunt-heat-muff-1901085",
+    "https://www.pricerunner.se/pl/648-3200681986/Jakt/Haerkila-Driven-Hunt-Heat-Muff-WillowGreen-priser"
+   ]
+  },
+  {
+   "product_id": "1005010434731652",
+   "titel": "Läktarponchon med värme",
+   "url": "https://www.aliexpress.com/item/1005010434731652.html",
+   "pris": 25.79,
+   "valuta": "USD",
+   "pris_text": "US $25.79",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-14/v3/bilder/1005010434731652.jpg",
+   "sald": "ej mätt",
+   "grupp": "NYTT: Åskådarens kropp på läktaren i oktober (barnbarnets match, far-/morföräldrar 55+ sitter stilla 90 min i frost)",
+   "objekt": "NYTT: Åskådarens kropp på läktaren i oktober (barnbarnets match, far-/morföräldrar 55+ sitter stilla 90 min i frost)",
+   "taggar": {
+    "objekt": "NYTT: Åskådarens kropp på läktaren i oktober (barnbarnets match, far-/morföräldrar 55+ sitter stilla 90 min i frost)",
+    "form": "kläder",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Medisana HB 674 3-i-1 värmefilt (poncho/filt/sjal, powerbank ingår)"
+   },
+   "ekonomi": {
+    "landad": 373,
+    "forslag_pris": 799,
+    "multipel": 2.14,
+    "be_cpa": 426,
+    "be_roas": 1.88,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     336,
+     410
+    ]
+   },
+   "namn_sv": "Läktarponchon med värme",
+   "status": "bevisad struktur",
+   "poang": 13.1,
+   "rank_slutlig": 13.1,
+   "rank": 3,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 8,
+    "K7": 4,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Fryser du på läktaren i oktober?",
+   "efter_bild": "knappen trycks, värmekamerabild visar rygg och axlar lysa rött under ponchon — 3 sekunder",
+   "huvudrisk": "Fyndiq-look-alike 554 kr under vårt pris (H06 säger att ankaret räddar det) och powerbank ingår ej — annonsen måste säga 'din vanliga powerbank'.",
+   "varfor": "Samma struktur som Värmesitsen (Axel ja 09-11) och damaskerna: kroppen som fryser stilla i höstens jobb ute, one-size utan storlek, Medisana-ankare 1,57× och första frost om 4,4 v. Flerköp: två på läktaren (båda farföräldrarna).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0269",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Damasker Vandring",
+    "delade_variabler": [
+     "form kläder",
+     "E_VADER_SASONG",
+     "hårt datum (första frost)",
+     "kroppsligt i säsongsjobbet",
+     "one-size (ingen storlek att mäta)"
+    ],
+    "avvikelser": [
+     "kroppen är objektet, inte en ägd sak ute",
+     "elektronik + powerbank (ingår ej)",
+     "prisband 500–999 mot damaskernas 300–499"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 2 + säsong 3 + creative 2 + lucka 1 + signalbonus +1.1 [arketyp=E_VADER_SASONG 2V/1F (+0.3); form=kläder 4V/3F (+0.1); prisband=500–999 8V/2F (+0.6)] = 13.1",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Fyndiq (look-alike, 'Elektrisk värmefilt, USB-uppvärmd sjal, elektrisk värmeponcho')",
+     "pris_sek": 554,
+     "url": "https://fyndiq.se/produkt/elektrisk-varmefilt-usb-uppvarmd-sjal-elektrisk-varmeponcho-25e3ff38281843b8/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Medisana HB 674 3-i-1 värmefilt (poncho/filt/sjal, powerbank ingår)",
+     "pris_sek": 1251,
+     "url": "https://cdon.se/halsa/medisana-3-i-1-varmefilt-hb-674-162x62-cm-gra-p76591177",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.57,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "fyndiq.se 554 kr (sida läst 2026-09-14)",
+     "cdon.se / pricerunner.se Medisana HB 674 1 251–1 646 kr (sökutdrag 2026-09-14; CDON lägst 1 251)",
+     "inf.se USB-värmefilt sjal (finns, pris ej läst)",
+     "ortorex.se → flexorex.se (403)",
+     "jula.se: 'Värmefilt 6 värmelägen Bright' = nätdriven, ingen USB-poncho i sökutdrag",
+     "clasohlson.se: värmefiltar Beurer = nätdrivna (sökutdrag)",
+     "dynan.se / smartasaker.se säljer sittdynor, inte poncho"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "modell i beige poncho mot snökomposit; RAUGEE-logga uppe till vänster och flamikon nere till vänster måste beskäras; två insatta bilder (soffa, skrivbord) drar åt inomhus — egen bild på läktaren behövs"
+   },
+   "meta_tanke": {
+    "hook": "Fryser du på läktaren i oktober?",
+    "objekt_i_bild": "farmor/farfar på läktaren med ponchon på, andra runt omkring i täckjackor och filtar",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "knappen trycks, värmekamerabild visar rygg och axlar lysa rött under ponchon — 3 sekunder"
+   },
+   "listning": {
+    "product_id": "1005010434731652",
+    "url": "https://www.aliexpress.com/item/1005010434731652.html",
+    "pris_usd": 25.79,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:32:10Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005010434731652.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "one-size poncho med dragkedja fram, 3 värmelägen (ur titeln); färg beige sedd i heron; powerbank ingår ej (ej bekräftat — 'ej mätt')",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010434731652.html",
+    "https://fyndiq.se/produkt/elektrisk-varmefilt-usb-uppvarmd-sjal-elektrisk-varmeponcho-25e3ff38281843b8/",
+    "https://cdon.se/halsa/medisana-3-i-1-varmefilt-hb-674-162x62-cm-gra-p76591177",
+    "https://www.pricerunner.se/pl/75-3200458555/Massage-Avslappningsprodukter/Medisana-HB-674-priser",
+    "https://inf.se/filtar/202744-inf-brbar-usb-driven-vrmefilt-sjal-fr-kontor-och-hem-7314281117382.html",
+    "alt. listning med huva: https://www.aliexpress.com/item/1005012995068954.html (40,59 USD, sida öppnad, hero ej nedladdad)"
+   ]
+  },
+  {
+   "product_id": "1005012839771194",
+   "titel": "Utombordarvagnen, hopfällbar 85 kg",
+   "url": "https://www.aliexpress.com/item/1005012839771194.html",
+   "pris": 46.49,
+   "valuta": "USD",
+   "pris_text": "US $46.49",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-14/v3/bilder/1005012839771194.jpg",
+   "sald": "",
+   "grupp": "NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)",
+   "objekt": "NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)",
+   "taggar": {
+    "objekt": "NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "upptagning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Compass24 — Fällbar transportvagn för utombordare (upp till 15 hk, 6 kg, i lager)"
+   },
+   "ekonomi": {
+    "landad": 672,
+    "forslag_pris": 999,
+    "multipel": 1.49,
+    "be_cpa": 326,
+    "be_roas": 3.05,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     605,
+     740
+    ]
+   },
+   "namn_sv": "Utombordarvagnen, hopfällbar 85 kg",
+   "status": "bevisad struktur",
+   "poang": 11.0,
+   "rank_slutlig": 11.0,
+   "rank": 4,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Var står utombordaren i vinter?",
+   "efter_bild": "motorn lyfts från akterspegeln rakt på vagnen och rullas in — mot en motor lutad mot väggen som glider",
+   "huvudrisk": "Egenvikten är inte mätt — en 6–8 kg stålvagn kan landa över 740 kr i frakt, och SeaSea har en enklare motorkärra för 795 kr under vårt pris.",
+   "varfor": "Samma ägare som Båtmotorskyddet (ROAS 2,72) en vecka senare: motorn ska av vid upptagningen och stå sex månader — i dag lutad mot en vägg. Fackhandeln säljer formen för 1 635 kr (1,64× vårt pris) och bocken utan hjul för 1 950; leverantören 46 USD.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0270",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D / Motorhöljet (samma ägare, samma motor, nästa fas: motorn av båten)",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (utombordare 20–100 tkr)",
+     "hårt datum: båtupptagning 10–31 okt (NOW 3,7 v) — motorn ska av och stå någonstans",
+     "old way improvisation: motorn lutad mot garageväggen, sågbock eller däckstapel (riggen skadas, olja rinner)",
+     "fackhandelsankare 1 635 kr i samma form (Compass24) och 1 950 kr motorbock (SeaSea), ≥ 1,6×",
+     "ägare 55+ med båt på trailer/bockar"
+    ],
+    "avvikelser": [
+     "form 'annat' (ställning/vagn), inte överdrag — kontots form=annat är 0 av 13 dömda, men alla de var inomhusprylar utan datum",
+     "egenvikt ej mätt (Compass24-varianten väger 6 kg) — fraktfaktorn 1,5 kan vara för låg"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 2 + signalbonus -1.0 [arketyp=A_AGARE_FRIKTION 2V/7F (-0.6); form=annat 0V/13F (-1.0); prisband=500–999 8V/2F (+0.6)] = 11.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "SeaSea — Motorkärra 90 kg (art. 8897)",
+     "pris_sek": 795,
+     "url": "https://www.seasea.se/produkter/upplaggning/motorbock-motorvagn",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Compass24 — Fällbar transportvagn för utombordare (upp till 15 hk, 6 kg, i lager)",
+     "pris_sek": 1635,
+     "url": "https://www.compass24.se/hopfaellbar-transportvagn-foer-utombordsmotor-186970",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.64,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "seasea.se (Motorkärra 90 kg 795 kr; Motorbock Tls 150 kg 1 950; Motorvagn L 150 kg Tyresö 3 550 — läst 2026-09-14)",
+     "compass24.se (Fällbar transportvagn 1 635 kr, i lager — läst 2026-09-14)",
+     "watski.se (kategorisidan gav inga produktrader)",
+     "utombordare.shop (omdirigerar till tysk sajt — död)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "huvudlistningens hero är en textfri packshot av stålvagnen mot vitt (ingen motor); den alternativa listningen 1005012641498413 visar vagnen med en utombordare fastspänd i en infälld bild — använd den som creative-referens"
+   },
+   "meta_tanke": {
+    "hook": "Var står utombordaren i vinter?",
+    "objekt_i_bild": "utombordaren hängd på vagnen i garaget, hjulen rullar in den",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "motorn lyfts från akterspegeln rakt på vagnen och rullas in — mot en motor lutad mot väggen som glider"
+   },
+   "listning": {
+    "product_id": "1005012839771194",
+    "url": "https://www.aliexpress.com/item/1005012839771194.html",
+    "pris_usd": 46.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:31:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012839771194.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant ('Black Color 1'), 85 kg kapacitet, hopfällbar. Alternativ listning LIVE: 1005012641498413 (65,88 USD, 4 hjul, hero med motorn på vagnen — korningar/2026-09-14/v3/bilder/1005012641498413.jpg, sedd, textfri) — dyrare men bättre bild",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012839771194.html",
+    "https://www.aliexpress.com/item/1005012641498413.html",
+    "https://www.seasea.se/produkter/upplaggning/motorbock-motorvagn",
+    "https://www.compass24.se/hopfaellbar-transportvagn-foer-utombordsmotor-186970"
+   ]
+  },
+  {
+   "product_id": "1005012433239872",
+   "titel": "Stånggrensågen för Makita-batteri",
+   "url": "https://www.aliexpress.com/item/1005012433239872.html",
+   "pris": 59.18,
+   "valuta": "USD",
+   "pris_text": "US $59.18",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-14/v3/bilder/1005012433239872.jpg",
+   "sald": "ej mätt",
+   "grupp": "NYTT: Grenarna över taket (Makita-batteriet gör jobbet)",
+   "objekt": "NYTT: Grenarna över taket (Makita-batteriet gör jobbet)",
+   "taggar": {
+    "objekt": "NYTT: Grenarna över taket (Makita-batteriet gör jobbet)",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Makita DUA301Z stångsåg 2×18V utan batteri (Proffsmagasinet/Ahlsell/Verktygsvaruhuset)"
+   },
+   "ekonomi": {
+    "landad": 856,
+    "forslag_pris": 1299,
+    "multipel": 1.52,
+    "be_cpa": 444,
+    "be_roas": 2.9,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     770,
+     941
+    ]
+   },
+   "namn_sv": "Stånggrensågen för Makita-batteri",
+   "status": "utforskning",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 5,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 4,
+    "K8": 9,
+    "K9": 4,
+    "K10": 1,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Har du Makita-batterier i garaget?",
+   "efter_bild": "batteriet i → grenen av på 3 sekunder, från marken utan stege",
+   "huvudrisk": "Heron visar kit med egna gula batterier — bar Makita-variant och obrandad maskin måste bekräftas (piratrisk på DeWalt-look); form=verktyg är 1 vinnare/2 förlorare/7 för tidigt i facit och Axels egna verktygslauncher ligger under BE, så H12 måste bära hela raden.",
+   "varfor": "Samma struktur som Snöskyffeln/Jetfläkten/Minikedjesågen för Makita (tre ja) men med den tyngsta payoffen: Makitas egen stångsåg kostar 7 493 kr, Ryobi/Bosch-klassen 2 449–2 559 med batteri, vår 1 299 på batteriet ägaren redan har (ankare 5,8× / 1,9×). Vedsäsong 4,4 v och höststormarna gör grenen över taket till ett datumjobb — testar H12 rent: motoriserat, ≥ 900 kr, synligt resultat.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0271",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H12",
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 4.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen",
+    "delade_variabler": [
+     "form verktyg, motoriserat",
+     "ankare ≥1,6× (Makita DUA301Z 5,8×, Ryobi/Bosch 1,9×)",
+     "synlig payoff på 3 s (grenen faller)",
+     "old way köpt produkt som fungerar (handsåg på stång / stege)"
+    ],
+    "avvikelser": [
+     "prisband ≥1000 (bandslipen 500–999)",
+     "ägd dyr sak (Makita-systemet) — bandslipen hade inget ägt objekt",
+     "vedsäsong NOW i stället för ingen säsong"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 1 + creative 1 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Gardena Powerforall teleskopisk grensåg 20/18V med 1×2,5 Ah batteri (sökutdrag 2026-09-14)",
+     "pris_sek": 2449,
+     "url": "https://duab.se/skog-tradgard/skogsutrustning/gren-stangsagar",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Makita DUA301Z stångsåg 2×18V utan batteri (Proffsmagasinet/Ahlsell/Verktygsvaruhuset)",
+     "pris_sek": 7493,
+     "url": "https://www.proffsmagasinet.se/tradgard-utemiljo/tradgardsmaskiner/motorsagar/stangsagar/makita-dua301z-stangsag-utan-batteri-och-laddare-3123872",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 5.8,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "proffsmagasinet.se / ahlsell.se / verktygsvaruhuset.se (Makita DUA301Z 7 493–7 494 kr, sökutdrag 2026-09-14)",
+     "duab.se (Bosch teleskopisk grensåg 18V med batteri 2 559 kr; Ryobi RY18PP20A-0 2 499 kr; Gardena 2 449 kr — alla med eget batterisystem, inte Makita)",
+     "bygghemma.se bäst-i-test (batteridrivna grensågar 1 500–3 000 kr)",
+     "jula.se (Meec Tools SP-18V HOME 500 finns i formen — 403, pris ej läst)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot utan text: hela kitet (stång, löstagbar såg, två batterier, handskar, kedjor) — hand håller sågen men ingen gren i bild; gul/svart DeWalt-look, ingen Makita-logga i heron; egen bild med Makita-batteriet i sågen och grenen som faller krävs"
+   },
+   "meta_tanke": {
+    "hook": "Har du Makita-batterier i garaget?",
+    "objekt_i_bild": "Makita-batteriet klickas i, stången skjuts ut, grenen över taket faller",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "batteriet i → grenen av på 3 sekunder, från marken utan stege"
+   },
+   "listning": {
+    "product_id": "1005012433239872",
+    "url": "https://www.aliexpress.com/item/1005012433239872.html",
+    "pris_usd": 59.18,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:30:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012433239872.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "6 tum, 2-i-1 (stång + handhållen minisåg); titeln säger 'For Makita 18V Battery' men heron visar gul maskin med två egna 'POWER SHARE'-batterier — bar Makita-variant måste bekräftas med leverantören innan beställning",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012433239872.html",
+    "https://www.proffsmagasinet.se/tradgard-utemiljo/tradgardsmaskiner/motorsagar/stangsagar/makita-dua301z-stangsag-utan-batteri-och-laddare-3123872",
+    "https://www.verktygsvaruhuset.se/product/makita-dua301z-stangsag-",
+    "https://duab.se/skog-tradgard/skogsutrustning/gren-stangsagar",
+    "https://www.bygghemma.se/reportage-och-guider/bast-i-test-batteridriven-grensag/"
+   ]
+  },
+  {
+   "product_id": "1005012743142283",
+   "titel": "Hjulmutterdragaren för Makita-batteri",
+   "url": "https://www.aliexpress.com/item/1005012743142283.html",
+   "pris": 39.76,
+   "valuta": "USD",
+   "pris_text": "US $39.76",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-14/v3/bilder/1005012743142283.jpg",
+   "sald": "ej mätt",
+   "grupp": "NYTT: Däckbytet i oktober (Makita-batteriet gör jobbet)",
+   "objekt": "NYTT: Däckbytet i oktober (Makita-batteriet gör jobbet)",
+   "taggar": {
+    "objekt": "NYTT: Däckbytet i oktober (Makita-batteriet gör jobbet)",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "första snö",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Makita DTW285Z mutterdragare 18V utan batteri (PriceRunner lägst 2 099 kr av 16 butiker; K-Bygg 3 499 kr)"
+   },
+   "ekonomi": {
+    "landad": 574,
+    "forslag_pris": 999,
+    "multipel": 1.74,
+    "be_cpa": 424,
+    "be_roas": 2.4,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     517,
+     632
+    ]
+   },
+   "namn_sv": "Hjulmutterdragaren för Makita-batteri",
+   "status": "utforskning",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 6,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 13,
+    "K2": 12,
+    "K3": 8,
+    "K4": 7,
+    "K5": 6,
+    "K6": 8,
+    "K7": 4,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Byter du vinterdäcken själv i år?",
+   "efter_bild": "fyra muttrar av på 5 sekunder utan fälgkors — batteriet ägaren redan har",
+   "huvudrisk": "Ankaret 2,1× ligger under H12:s 2,4×-mål och Biltema/Jula säljer formen med eget batteri runt 1 000 kr (pris ej läst); heron visar eget batteri, bar Makita-variant måste bekräftas; form=verktyg och Axels verktygslauncher under BE i facit.",
+   "varfor": "Däckbytet är ett datumjobb som varje Makita-ägare 55+ med bil gör två gånger om året (första snö Norrland 5,9 v, Svealand 9,6 v); Makitas egen DTW285Z kostar 2 099–3 499 kr utan batteri, vår 999 på ägarens batteri (ankare 2,1–3,5×). Payoffen syns på 3 s — testar H12 rent på det tydligaste jobbet i säsongskartan.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0272",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H12",
+   "sasong": {
+    "fonster_id": "forsta_sno_norr",
+    "deadline_typ": "första snö",
+    "veckor_kvar": 5.9,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen",
+    "delade_variabler": [
+     "form verktyg, motoriserat",
+     "ankare ≥1,6× (Makita DTW285Z 2,1–3,5×)",
+     "prisband 500–999",
+     "synlig payoff på 3 s (muttern lossnar)"
+    ],
+    "avvikelser": [
+     "hårt datum (första snö / vinterdäck) i stället för ingen säsong",
+     "kedjegolv finns (Biltema/Jula med eget batteri ~1 000 kr, pris ej läst)"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 1 + creative 1 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Biltema Hjulmutterdragare IW 18V (eget batterisystem; forumuppgift 'runt 1 000 kr', sidan ej läst)",
+     "pris_sek": null,
+     "url": "https://www.biltema.se/verktyg/elverktyg/mutterdragare/hjulmutterdragare-iw-18v-2000043572",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Makita DTW285Z mutterdragare 18V utan batteri (PriceRunner lägst 2 099 kr av 16 butiker; K-Bygg 3 499 kr)",
+     "pris_sek": 2099,
+     "url": "https://www.pricerunner.se/pl/1258-4072112/Borrmaskiner-och-Skruvdragare/Makita-DTW285Z-Solo-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.1,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se sökutdrag (Makita DTW285Z Solo lägst 2 099 kr, 2026-09-14)",
+     "k-bygg.se (DTW285Z 3 499 kr, sökutdrag)",
+     "jula.se (Meec Tools IW-18V WORK 700 finns i formen, 800 Nm — pris ej läst)",
+     "biltema.se (Hjulmutterdragare IW 18V — pris ej läst, 403)",
+     "bygghemma.se mutterdragare-test (DeWalt 18V 450 Nm ~2 300 kr utan batteri)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot med rubriktext ('Actual torque 900 N.m', '2800RPM') och eget batteri i bild; Makita-blå färg men märkt Mamidw — ingen Makita-logga; egen bild vid hjulet med Makita-batteriet krävs"
+   },
+   "meta_tanke": {
+    "hook": "Byter du vinterdäcken själv i år?",
+    "objekt_i_bild": "Makita-batteriet klickas i, hjulmuttern lossnar på en sekund",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "fyra muttrar av på 5 sekunder utan fälgkors — batteriet ägaren redan har"
+   },
+   "listning": {
+    "product_id": "1005012743142283",
+    "url": "https://www.aliexpress.com/item/1005012743142283.html",
+    "pris_usd": 39.76,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:33:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012743142283.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1/2-tums fyrkant, 900 Nm, borstlös; titeln säger 'For Makita 18V Battery PIN' men heron visar Mamidws eget '598VF'-batteri — bar variant för Makita-slot måste bekräftas; hylsor ingår ej enligt bild",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012743142283.html",
+    "https://www.pricerunner.se/pl/1258-4072112/Borrmaskiner-och-Skruvdragare/Makita-DTW285Z-Solo-priser",
+    "https://k-bygg.se/produkt/mutterdragare-makita-dtw285z-18v/088381831765",
+    "https://www.jula.se/catalog/verktyg-och-maskiner/elverktyg-och-maskiner/mutterdragare/batteridrivna-mutterdragare/batteridriven-mutterdragare-031846/",
+    "https://www.biltema.se/verktyg/elverktyg/mutterdragare/hjulmutterdragare-iw-18v-2000043572"
+   ]
+  },
+  {
+   "product_id": "1005012879880737",
+   "titel": "Batterisekatören för Makita-batteri",
+   "url": "https://www.aliexpress.com/item/1005012879880737.html",
+   "pris": 48.02,
+   "valuta": "USD",
+   "pris_text": "US $48.02",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-14/v3/bilder/1005012879880737.jpg",
+   "sald": "ej mätt",
+   "grupp": "NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)",
+   "objekt": "NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)",
+   "taggar": {
+    "objekt": "NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vintertäckning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Makita DUP361Z sekatör 2×18V utan batteri (PriceRunner/Prisjakt lägst 7 500–7 750 kr; DUP362Z 16 499 kr Duab)"
+   },
+   "ekonomi": {
+    "landad": 694,
+    "forslag_pris": 999,
+    "multipel": 1.44,
+    "be_cpa": 304,
+    "be_roas": 3.3,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     625,
+     764
+    ]
+   },
+   "namn_sv": "Batterisekatören för Makita-batteri",
+   "status": "utforskning",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 7,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 11,
+    "K2": 11,
+    "K3": 8,
+    "K4": 6,
+    "K5": 5,
+    "K6": 8,
+    "K7": 3,
+    "K8": 6,
+    "K9": 3,
+    "K10": 1,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Värker handen efter rosorna?",
+   "efter_bild": "gren i tjocklek som en tumme av på en sekund — ingen kraft i handen",
+   "huvudrisk": "Fel säsong för huvudjobbet (fruktträd feb–mars, EARLY) — hösten bär bara bärbuskar/rosor/häck; Bosch EasyPrune 499 kr hos Bauhaus är ett kedjegolv i exakt samma form under halva vårt pris, och sekatören ser ut som en pryl bredvid stångsågen (upplevt värde).",
+   "varfor": "Störst ankarkvot i linsen: Makitas egen sekatör kostar 7 500–16 499 kr, vår 999 på ägarens batteri (7,5×) — och heron är den enda i linsen som redan är i kontext (klass 2). Testar H12 rent på en form ägaren aldrig skulle köpa från Makita själv.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0273",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploration",
+   "hypotes_id": "H12",
+   "sasong": {
+    "fonster_id": "vintertackning_vaxter",
+    "deadline_typ": "vintertäckning",
+    "veckor_kvar": 8.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen",
+    "delade_variabler": [
+     "form verktyg, motoriserat",
+     "ankare ≥1,6× (Makita DUP361Z 7,5×)",
+     "prisband 500–999",
+     "synlig payoff på 3 s (25 mm-grenen klipps utan kraft)"
+    ],
+    "avvikelser": [
+     "kedjegolv under oss i samma form (Bosch EasyPrune 499 kr Bauhaus, Gardena AssistCut 1 172)",
+     "toppen för beskärning (fruktträd) är feb–mars = EARLY; hösten är bara bärbuskar/rosor/häck"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 1 + creative 2 + ekonomi 1 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Bauhaus — Bosch EasyPrune 25 mm 3,6 V (inbyggt batteri, rea 499 kr / ord. 649)",
+     "pris_sek": 499,
+     "url": "https://www.bauhaus.se/sekator-bosch-easy-prune-25mm-3-6v",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Makita DUP361Z sekatör 2×18V utan batteri (PriceRunner/Prisjakt lägst 7 500–7 750 kr; DUP362Z 16 499 kr Duab)",
+     "pris_sek": 7500,
+     "url": "https://www.bygghemma.se/tradgard-och-utemiljo/tradgardsredskap/beskarning/sekator/sekator-makita-dup361z-2x18v-utan-batteri/p-722130",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 7.5,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.dk/prisjagt.dk sökutdrag (DUP361Z 7 500–7 750 kr, 2026-09-14)",
+     "duab.se (Makita DUP362Z 16 499 kr)",
+     "bauhaus.se (Bosch EasyPrune 499 kr rea, sökutdrag)",
+     "amazon.se (Gardena AssistCut 25 mm 1 172 kr, sökutdrag)",
+     "gardenstore.se (503)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "hero i kontext (kvinna klipper gren i trädgård) med rubriktext 'Efficient pruning / Wireless tools' uppe till höger — beskärbar; sekatören och batteriet syns tydligt"
+   },
+   "meta_tanke": {
+    "hook": "Värker handen efter rosorna?",
+    "objekt_i_bild": "Makita-batteriet i sekatören, en 25 mm-gren klipps med ett fingertryck",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "gren i tjocklek som en tumme av på en sekund — ingen kraft i handen"
+   },
+   "listning": {
+    "product_id": "1005012879880737",
+    "url": "https://www.aliexpress.com/item/1005012879880737.html",
+    "pris_usd": 48.02,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:30:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012879880737.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "25 mm klipp, borstlös, volframstålblad; heron visar Makita-blå sekatör med Makita-format batteri (ingen logga synlig) — bar variant enligt titel 'for Makita 18V Battery'",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 1,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012879880737.html",
+    "https://www.bygghemma.se/tradgard-och-utemiljo/tradgardsredskap/beskarning/sekator/sekator-makita-dup361z-2x18v-utan-batteri/p-722130",
+    "https://duab.se/skog-tradgard/tradgardsredskap/sekatorer/makita-sekator-dup362z-18v",
+    "https://www.bauhaus.se/sekator-bosch-easy-prune-25mm-3-6v",
+    "https://www.amazon.se/Gardena-AssistCut-batteridriven-besk%C3%A4rningssax-USB-C-laddningskabel/dp/B09TV879FD"
+   ]
+  },
+  {
+   "product_id": "1005012051294010",
+   "titel": "Big Foot-stödbensplattorna, 4-pack",
+   "url": "https://www.aliexpress.com/item/1005012051294010.html",
+   "pris": 65.49,
+   "valuta": "USD",
+   "pris_text": "US $65.49",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-14/v3/bilder/1005012051294010.jpg",
+   "sald": "",
+   "grupp": "NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)",
+   "objekt": "NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)",
+   "taggar": {
+    "objekt": "NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "uppställning",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "AL-KO Big Foot ordinarie pris (camping4u) / TIAB Bohlins 3 075 kr"
+   },
+   "ekonomi": {
+    "landad": 947,
+    "forslag_pris": 1290,
+    "multipel": 1.36,
+    "be_cpa": 343,
+    "be_roas": 3.76,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     852,
+     1042
+    ]
+   },
+   "namn_sv": "Big Foot-stödbensplattorna, 4-pack",
+   "status": "bevisad struktur",
+   "poang": 9.4,
+   "rank_slutlig": 9.4,
+   "rank": 8,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Sjunker husvagnens stödben i höst?",
+   "efter_bild": "benet på en plankbit som tippar i leran — mot Big Foot som står kvar; plattan fälls upp med benet när vagnen kör",
+   "huvudrisk": "Lågt upplevt värde i bild (orange plastplattor för 1 290 kr) och form=annat är kontots sämsta signal; bara AL-KO-chassin passar och lösa 130-kronorsplattor finns under oss.",
+   "varfor": "Fyra ägda saker på samma vagn som just fick tak och front — plattan sitter kvar på benet och ersätter plankbiten (H08 + H03). AL-KO tar 1 790 kr för exakt samma form (1,39× vårt pris), leverantören 65 USD ger BE-CPA 248–438.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0274",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn (samma ägare, samma helg) / Fiskespöhållaren (4-pack, ordning på flera ägda saker)",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (husvagnen)",
+     "hårt datum: uppställning 10–31 okt (NOW 3,7 v) — benen går ner i mjuk mark",
+     "old way improvisation: plankbitar/tegel under benen, eller lösa 130-kronorsplattor som blåser bort",
+     "flerköp inbyggt: fyra ben = fyra plattor (H08)",
+     "märkesankare AL-KO Big Foot 1 790 kr (ord. 2 189) i exakt samma form, kvot 1,39×"
+    ],
+    "avvikelser": [
+     "form 'annat' (fastskruvad platta), inte överdrag",
+     "passar bara AL-KO Stabilform/Premium-ben — ägarkänd parameter men returrisk",
+     "heron är packshot med text; kontexten är en liten infälld bild"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 2 + säsong 2 + creative 1 + lucka 1 + signalbonus -0.6 [arketyp=A_AGARE_FRIKTION 2V/7F (-0.6); form=annat 0V/13F (-1.0); deadline_typ=uppställning 4V/0F (+1.0)] = 9.4",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Camping4u — AL-KO Big Foot stödbensplattor 4-pack (2–8 dagars leverans)",
+     "pris_sek": 1790,
+     "url": "https://www.camping4u.se/sv/artiklar/al-ko-big-foot.html",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "AL-KO Big Foot ordinarie pris (camping4u) / TIAB Bohlins 3 075 kr",
+     "pris_sek": 2189,
+     "url": "https://bohlinsab.se/tiab/husvagn-husbil/stodbensplattor.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.39,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "camping4u.se (AL-KO Big Foot 4-pack 1 790 kr, ord. 2 189, 200 × 180 mm, 1 250 kg — läst 2026-09-14)",
+     "bohlinsab.se/TIAB (Big Foot 3 075 kr — ur sökutdrag, sidan ej öppnad)",
+     "campingvaruhuset.se (Stödbensplatta 4-pack Universal 130 kr med sprint — LÖS platta, annan form; Campout stapelbara 4-pack 152 kr, slut till 22 okt — läst 2026-09-14)",
+     "scandihills.se, campweb.se, slapet.se (Big Foot i sortiment enligt sökutdrag, pris ej läst)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "orange platta i packshot med Roqify-logga och rubriktext; infälld bild visar plattan monterad på ett stödben mot marken. Creativen måste byggas på egen bild/video av benet som vevas ner på plattan."
+   },
+   "meta_tanke": {
+    "hook": "Sjunker husvagnens stödben i höst?",
+    "objekt_i_bild": "stödbenet vevas ner på den stora orange plattan i blött gräs",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "benet på en plankbit som tippar i leran — mot Big Foot som står kvar; plattan fälls upp med benet när vagnen kör"
+   },
+   "listning": {
+    "product_id": "1005012051294010",
+    "url": "https://www.aliexpress.com/item/1005012051294010.html",
+    "pris_usd": 65.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:32:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012051294010.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "'A set of 4' med bultar, fjädrar, brickor och saxsprint enligt heron; titeln säger 'Compatible with ALKO Stabilizer Legs' — en variant. Första försöket att öppna sidan svarade tomt, andra försöket gav titel + hero",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 3,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012051294010.html",
+    "https://www.camping4u.se/sv/artiklar/al-ko-big-foot.html",
+    "https://www.campingvaruhuset.se/sv/stodbensplatta-4-pack-universal",
+    "https://www.campingvaruhuset.se/sv/campout-stodbensplattor-stapelbara-4-pack-21-x-21-x-33-cm-",
+    "https://bohlinsab.se/tiab/husvagn-husbil/stodbensplattor.html"
+   ]
+  }
+ ],
+ "strukna": [],
+ "utanfor_batch": []
+}
