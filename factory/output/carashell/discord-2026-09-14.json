@@ -1,0 +1,30 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell/takskyddet",
+  "datum": "2026-09-14",
+  "lage": "brief",
+  "server": "CaraShell — OPS",
+  "siffror": { "spend_7d": 2435, "kop_7d": 8, "roas_7d": 3.71, "vinstbidrag_7d": 3109, "briefs_nya": 7 },
+  "gjort": [
+    "Campaign budget 1 000 -> 1 200 kr (profit 34%, ROAS 3.71 on both 3d and 7d windows).",
+    "No ads paused: 0 of 16 have passed the gate (300 kr AND 3 purchases).",
+    "Fixed the Notion hub ID — the old one was in the trash, so the store had never been readable.",
+    "Batch #2: 7 briefs written, 4 image + 3 video. Copy A/B: 4 fable, 3 sonnet.",
+    "4 image ads generated, reviewed and moved to To be Reviewed — they go live at 14:05."
+  ],
+  "briefer": [
+    { "namn": "CaraShellRoof_SP_4_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_SP_4_1" },
+    { "namn": "CaraShellRoof_CS_4_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_CS_4_1" },
+    { "namn": "CaraShellRoof_PD_4_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_PD_4_1" },
+    { "namn": "CaraShellRoof_GT_4_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_GT_4_1" },
+    { "namn": "CaraShellRoof_PD_4_H1", "typ": "video", "url": "https://app.notion.com/p/CaraShellRoof_PD_4_H1" },
+    { "namn": "CaraShellRoof_SP_4_H1", "typ": "video", "url": "https://app.notion.com/p/CaraShellRoof_SP_4_H1" },
+    { "namn": "CaraShellRoof_PD_5_H1", "typ": "video", "url": "https://app.notion.com/p/CaraShellRoof_PD_5_H1" }
+  ],
+  "varningar": [
+    "Image beats video 3.6x on CPA here (133 kr vs 476 kr) — that is why 4 of 7 briefs are images.",
+    "GT has 0 purchases but only 188 kr of spend. That is starvation, not a verdict.",
+    "3 video briefs are waiting for an editor. No editor is assigned to this store."
+  ],
+  "nasta_korning": "2026-09-16"
+}

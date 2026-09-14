@@ -1,0 +1,26 @@
+{
+  "datum": "2026-09-14",
+  "butik": "carashell/takskyddet",
+  "hub": "Carashell creative hub",
+  "torr": false,
+  "jobb": [],
+  "hoppade": [
+    {
+      "namn": "CaraShellRoof_GT_4_1",
+      "skal": "har redan 1 fil(er) — granska och kör --godkann/--underkann, eller --igen för en ny bild"
+    },
+    {
+      "namn": "CaraShellRoof_PD_4_1",
+      "skal": "har redan 1 fil(er) — granska och kör --godkann/--underkann, eller --igen för en ny bild"
+    },
+    {
+      "namn": "CaraShellRoof_CS_4_1",
+      "skal": "har redan 1 fil(er) — granska och kör --godkann/--underkann, eller --igen för en ny bild"
+    },
+    {
+      "namn": "CaraShellRoof_SP_4_1",
+      "skal": "har redan 1 fil(er) — granska och kör --godkann/--underkann, eller --igen för en ny bild"
+    }
+  ],
+  "resultat": []
+}
