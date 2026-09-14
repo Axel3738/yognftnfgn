@@ -660,3 +660,58 @@ Tillbakaläst, loggrad. Inga annonspauser: 39 annonser i kampanjen, de 23 nya
 — pausad dagtid av någon annan, ett beslut, orörd. PD-golvet 300 kr (Axel 13/9)
 syns: PD_1 21 → 134 kr på ett dygn. Trenden vänder uppåt (0,56 → 0,83) men
 ligger under break-even 1,60. Utfall per annons läses på onsdag 16/9.
+
+---
+
+## Leveransen 2026-09-14 — 3 videor LIVE, två nya adsets (`/ops-leverans drytrek`, rutinens första egna körning)
+
+Första gången rutinen `trig_01QVN2LoiGK5UdSW3aivhRM1` triggade själv (11:50 UTC).
+Kön hade **3 rader**, alla Jaspers batch #3-videor i `Creative strat review` med
+DryTrek-prefix och Drive-länk. Kampanjen `DRYTREK_SE_Damasker Vandring |
+BE-ROAS 1.60 | 2026-09-09` [ACTIVE], **CBO 500 kr/dag** (nattvakten sänkte
+700 → 500), pris **389 kr** läst live ur drytrek.se vid körningen.
+
+| Annons | Adset | Ad-id | Längd | Tillbakaläst |
+|---|---|---|---|---|
+| `DryTrek_Damasker_BOF_10_H1` | `DRYTREK_SE_BOF` **(nytt)** | 120249087548860172 | 13,1 s | ACTIVE/ACTIVE |
+| `DryTrek_Damasker_CI_3_H1` | `DRYTREK_SE_CI` **(nytt)** | 120249087650360172 | 14,3 s | ACTIVE/PENDING_REVIEW |
+| `DryTrek_Damasker_PD_16_H1` | `DRYTREK_SE_PD` | 120249087654710172 | 9,7 s | ACTIVE/IN_PROCESS |
+
+Båda nya adsetsen är klonade ur ett syskon, föddes PAUSED och aktiverades av
+körningen själv — inget befintligt PAUSED rördes. `DRYTREK_SE_G` står kvar
+PAUSED (Axels beslut 2026-09-12). Ad-id per rad:
+`factory/output/drytrek/leverans-2026-09-14-resultat.json`. Alla tre Notion-rader
+flyttade till `SE-ACTIVE to be translated` med kommentar.
+
+**Priset stoppade ingen:** alla tre endcards säger 389 kr per par, identiskt med
+butiken. Det är det enda stoppet för video.
+
+**QA:n gjordes på 12–15 utdragna frames per film.** Anmärkningar som följde med
+upp (bara priset stoppar en video):
+
+1. **Captionsen är auto-transkriberad karaoke i alla tre**, inte briefens rader
+   ur avsnitt 4. Det ger stavfel som `Damaskor` (CI_3_H1) och `av sjängan`
+   (PD_16_H1), och i BOF_10_H1 en caption med ett kängstorleksintervall som inte
+   står i briefen alls. Tredje leveransen i rad med samma fel — påtalat för
+   Jasper i Discord 2026-09-14.
+2. ⚠️ **`PD_16_H1` svarar inte på sin egen hypotes.** Briefens avsnitt 3 och
+   edit map krävde **EN obruten tagning** av påtagningen med kängan kvar på
+   foten, 15–20 s, realtid, inga klipp i fästsekvensen. Det som kom är en
+   **trepanels split screen med klipp, 9,7 s**. Hela poängen var att mäta
+   obruten demo mot klippt demo (PD_12), så som den ligger nu mäter den inget.
+   Den är live under tiden; omgörning begärd av Jasper.
+3. Leverantörsetiketten **AYXSEE** syns på damaskerna i samtliga tre. Inget
+   DryTrek-märke någonstans i materialet.
+4. `CI_3_H1` är 14,3 s mot briefens 20–25 s; `PD_16_H1` 9,7 s mot 15–20 s.
+
+⚠️ **Varje Drive-mapp innehåller filmen två gånger: `_1` är 4:5 (1080×1350) och
+`_2` är 9:16 (1080×1920).** Kön plockar `_1`, och det är vad både den här och
+gårdagens körning laddade upp — sex videor 2026-09-13 och tre 2026-09-14, alla
+i 4:5. Konsekvent, men obeslutat: Reels/Stories får då en beskuren version
+medan 9:16-filen ligger oanvänd i mappen. Ändra inte för en enskild film — det
+bryter jämförbarheten mellan syskonen. Ska det ändras ska det ändras för hela
+kampanjen på en gång.
+
+De tio parkerade `Damasker_*`-raderna i `Creative strat review` ligger kvar,
+orörda, och rapporterades som varning utan ping enligt regeln som skrevs
+2026-09-13. Frågan till Axel är fortfarande obesvarad.
