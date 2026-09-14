@@ -539,6 +539,18 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   enda äkta tiderna är sidans `createdTime` och kommentarernas `datetime`.
 - **Alla ledtider räknas i arbetstid, inte kalendertid.** En task som lämnas ut
   fredag 16:45 och levereras måndag 09:15 tog 1h 30m — inte 64 timmar.
+- **Döda aldrig en kampanj innan spendtjuvsspärren körts.** En kampanj som går
+  back gör det ofta för att ett par enskilda annonser ätit nästan hela spenden
+  under break-even — medan resten av kampanjen går plus. `agent/spendtjuv.mjs`
+  räknar bort tjuvarna och svarar om kärnan som blir kvar ligger över
+  break-even. Gör den det: pausa tjuvarna, låt kampanjen stå. Proceduren står i
+  `/rond-auto` steg 3. *(Axels larm 2026-09-14: Övervakningskameran och
+  Adventskalendern Racingbilar stängdes av på morgonen. I båda fallen åt två–tre
+  annonser MED köp 89 % av spenden på ROAS 0,55–1,09 mot break-even 1,57/1,62 —
+  den gamla regeln letade bara efter en spendtjuv med noll köp och föll därför.
+  Utan tjuvarna låg resten på ROAS 3,62 respektive 2,03. Axel startade om båda
+  för hand: "detta vill jag förhindra från att det händer igen innan vi dödar
+  grejer.")*
 - **Larmet "bränner pengar" kräver att kampanjen faktiskt går back.** Få köp
   räcker inte som skäl. Går den plus är den tidig, inte trasig — då gäller
   vanliga grinden (300 kr / 3 köp) och ronden rör den inte. *(Övervåkingskamera

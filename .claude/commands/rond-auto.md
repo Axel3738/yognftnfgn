@@ -189,37 +189,76 @@ färdigt i `plan.atgarder`. *(Kranskydd Frost 420D stängdes av 2026-09-03 med
 7 417 kr spend, 28 köp och livstids-ROAS 1,59 mot break-even 1,49 — plus 4,4 % —
 på en tredagarsdipp till 1,35. Startades om 2026-09-04.)*
 
+🛑 **SPENDTJUVSSPÄRREN GÅR FÖRE AVSTÄNGNINGEN. Hoppa den aldrig.**
+
 Hämta kampanjens annonser (`level: "ad"`, `date_preset: "last_3d"`, filtrering
 på `campaign.id`, fälten `amount_spent`, `omni_purchase`, `purchase_roas`,
-`effective_status`) och avgör:
+`effective_status`), skriv dem **ordagrant** till en jobbfil och låt koden döma:
 
-- **POTENTIAL** = BÅDA sakerna är sanna samtidigt:
-  1. minst en aktiv annons har ≥1 köp OCH `purchase_roas` ≥ kampanjens
-     break-even, och
-  2. minst en annan aktiv annons har tagit ≥40 % av kampanjens 3-dagarsspend
-     med **noll** köp.
+```json
+{
+  "kampanj_id": "...", "kampanj_namn": "...",
+  "break_even": 1.62,
+  "spend_3d": "4 319,97 kr (SEK)",
+  "raddningar_14d": 0,
+  "annonser": [{ "id": "...", "namn": "...", "spend": "3 316,26 kr (SEK)",
+                 "kop": 5, "roas": "0.752354", "status": "ACTIVE" }]
+}
+```
 
-  Då: pausa **bara** spendtjuven (`entity_type: "ad"`,
-  `fields: {"status":"PAUSED"}`), verifiera med en tillbakaläsning, låt
-  kampanjen stå kvar ACTIVE, och logga `TRAPPA_FORLANGNING` med namnet på den
-  pausade annonsen. Kampanjen får **ett** dygn till.
-- **INGEN POTENTIAL** = ingen enda aktiv annons ligger över break-even, eller
-  ingen enskild annons äter spenden. Då: pausa **hela kampanjen** i dag
-  (`entity_type: "campaign"`, `fields: {"status":"PAUSED"}`), verifiera, logga
-  `STANG_AV` med motiveringen att potentialkollen föll.
+```bash
+node agent/spendtjuv.mjs --jobb <fil.json> --json
+```
 
-**Förlängningen ges en gång, och den gäller ett HELT dygn.** Finns redan en
-`TRAPPA_FORLANGNING`-rad för kampanjen de senaste 14 dagarna
-(`senasteRadMedKod(logg, id, ["TRAPPA_FORLANGNING"], { maxAlderDagar: 14,
-idag })` i `agent/logg.mjs`):
-- är raden **från i dag** → rör inte kampanjen, logga `VANTA_FORLANGNING`
-  (`genomford: false`). Dygnet har inte gått. *(2026-09-02: Badshorts och
-  Plyschtofflorna fick förlängning på morgonen och stängdes av av samma dags
-  körning några timmar senare — det var fel. Ett dygn är ett dygn.)*
-- är raden **från ett tidigare datum** och kampanjen fortfarande går back →
-  stäng av hela kampanjen, ingen ny förlängning.
-Har den däremot vänt över break-even faller domen bort av sig själv — då står
-det inte längre `trappa` i planen.
+`raddningar_14d` = antal `TRAPPA_FORLANGNING`-rader för kampanjen de senaste
+14 dagarna (`senasteRadMedKod` i `agent/logg.mjs`). **Du räknar aldrig själv
+vilken annons som är tjuven** — talen står i utfallet.
+
+Utfallet ger en av tre domar:
+
+- **`PAUSA_TJUVAR`** — några få annonser åt spenden under break-even medan
+  resten av kampanjen ligger över den. Pausa **bara** de annonser som står i
+  `tjuvar` (`entity_type: "ad"`, `fields: {"status":"PAUSED"}`), verifiera med
+  en tillbakaläsning per annons, låt kampanjen stå kvar ACTIVE, och logga
+  `TRAPPA_FORLANGNING` med tjuvarnas namn och `rest`-siffrorna i motiveringen.
+  Redovisa `raddade` i leveransen — det är annonserna som hade dött med
+  kampanjen.
+- **`INGEN_TJUV`** — förlusten sitter i hela kampanjen, ingen enskild annons
+  bär den. Pausa **hela kampanjen** (`entity_type: "campaign"`), verifiera,
+  logga `STANG_AV` med utfallets motivering.
+- **`STANG_AV`** — tjuvar finns, men kärnan som blir kvar går inte att rädda
+  (för tunn, fortfarande under break-even, för många tjuvar, eller taket på
+  tre räddningar per 14 dagar nått). Pausa hela kampanjen, verifiera, logga
+  `STANG_AV` med utfallets motivering.
+
+**Varför spärren finns (Axels larm 2026-09-14):** den gamla potentialkollen
+krävde en spendtjuv med **noll köp**. Samma morgon stängdes Övervakningskameran
+och Adventskalendern Racingbilar av — i båda fallen åt två–tre annonser 89 % av
+spenden på ROAS långt under break-even, men de hade köp, så kollen föll och
+kampanjerna dog. Utan tjuvarna låg resten på ROAS 3,62 respektive 2,03, alltså
+tydligt över break-even. Axel startade om båda för hand och skrev: *"detta vill
+jag förhindra från att det händer igen innan vi dödar grejer."* Trösklarna står
+som konstanter högst upp i `agent/spendtjuv.mjs` — ändra dem där, aldrig här.
+
+⚠️ Ligger kampanjens ROAS under break-even utan att vara i trappan (domarna
+`HALVERA` och `SANK`): kör spärren ändå, men **utför ingenting** — redovisa
+tjuvarna i leveransen så Axel ser blödningen innan den blir en avstängning.
+Bara trappan får pausa annonser.
+
+**En förlängning gäller ett HELT dygn.** Finns en `TRAPPA_FORLANGNING`-rad för
+kampanjen **från i dag** (`senasteRadMedKod(logg, id, ["TRAPPA_FORLANGNING"],
+{ maxAlderDagar: 14, idag })` i `agent/logg.mjs`): rör inte kampanjen, logga
+`VANTA_FORLANGNING` (`genomford: false`). Dygnet har inte gått. *(2026-09-02:
+Badshorts och Plyschtofflorna fick förlängning på morgonen och stängdes av av
+samma dags körning några timmar senare — det var fel.)*
+
+Är raden från ett tidigare datum kör du spärren igen som vanligt: hittar den
+nya tjuvar och en kärna över break-even får kampanjen leva vidare. **Taket är
+tre räddningar per 14 dagar** och räknas av koden (`MAX_RADDNINGAR_14D` i
+`agent/spendtjuv.mjs`) — nya tjuvar varje dygn är ett kampanjproblem, och då
+faller domen tillbaka till `STANG_AV`. Har kampanjen vänt över break-even
+faller hela trappan bort av sig själv — då står det inte längre `trappa`
+i planen.
 
 De gamla koderna `TRAPPA_STEG_1/2/3` skrivs aldrig mer. De ligger kvar i
 budgetloggen som historik och ska läsas, inte återanvändas.

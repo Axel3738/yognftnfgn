@@ -23,6 +23,7 @@ npm test                     # 69 tester, ska vara gröna
 | Fil | Vad |
 |---|---|
 | `besked.mjs` | Beslutsmotorn. All matematik. Inga API-anrop, inget Claude. |
+| `spendtjuv.mjs` | Spendtjuvsspärren. Avgör om en kampanj som går back bärs av ett par olönsamma annonser — då pausas de i stället för hela kampanjen. |
 | `logg.mjs` | Läser och skriver budgetloggen. Räknar dagar sedan ändring och back-dagar i rad. |
 | `rond.mjs` | Kör ihop det: kontroller, dom per kampanj, färdig rapport. |
 | `produktkarta.json` | Vilka kampanjer som är test respektive drift. Sanningskällan. |
@@ -66,6 +67,15 @@ dem oförändrade — inte att bedöma dem.
   efterhand (ny COGS) fryses kampanjen och PRISET åtgärdas först — annonser
   som säljer bra på fel kalkyl ska inte straffas. Frys: `frys_till` +
   `frys_motivering` i `produktkarta.json`, tinar av sig själv på datumet.
+- **Spendtjuvsspärren går före varje avstängning.** Innan trappan stänger av en
+  kampanj räknar `spendtjuv.mjs` bort de annonser som tagit ≥10 % av spenden på
+  en ROAS minst 10 % under break-even. Ligger resten av kampanjen ÖVER
+  break-even (och är själv bedömbar: ≥300 kr, ≥1 köp) pausas bara tjuvarna —
+  kampanjen lever vidare. Taket är tre räddningar per 14 dagar.
+  *(Axels larm 2026-09-14: den gamla kollen krävde en spendtjuv med noll köp.
+  Övervakningskameran och Adventskalendern Racingbilar stängdes av samma morgon
+  fast två–tre annonser med köp åt 89 % av spenden långt under break-even —
+  resten låg på ROAS 3,62 respektive 2,03. Axel startade om båda för hand.)*
 - **Orimliga siffror ger ingen dom.** ROAS utanför 0–15 flaggas i stället.
 - **⚠ nära zongräns.** Ligger vinsten inom 3 procentenheter från en gräns
   flaggas raden — ROAS för de senaste dygnen revideras uppåt i efterhand.
