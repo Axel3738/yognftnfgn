@@ -122,4 +122,7 @@ Ur Metas annonsbibliotek. **Antal annonser är inte spend och inte köp** — de
 
 ## Backlog
 
-Se `docs/matstrumpor-backlog.md`.
+Se `docs/matstrumpor-backlog.md` — från 2026-09-14 i Growth Guide-format (avatar,
+desire, awareness, typ) enligt `docs/os/ECOMTALENT-METOD.md`, kursen redigeraren
+tränas i. Matstrumpor i kursens ram: avatar = givaren, awareness = problem aware
+från oktober, sophistication nivå 4–5 → identitet + nisch.
