@@ -3,32 +3,32 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-13. **42 svar** — ja 29, kanske 7, nej 6.
+Uppdaterad 2026-09-14. **47 svar** — ja 32, kanske 9, nej 6.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 25 ja, 2 kanske, 2 nej → score 0.871
-- ankare_klass **1,3–1,6×**: 12 ja, 0 kanske, 0 nej → score 0.929
-- form **överdrag**: 11 ja, 0 kanske, 1 nej → score 0.857
-- ankare_klass **≥ 1,6×**: 9 ja, 3 kanske, 3 nej → score 0.676
-- deadline_klass **6–12 v**: 8 ja, 1 kanske, 0 nej → score 0.864
-- ankare_klass **golv utan ankare**: 7 ja, 0 kanske, 0 nej → score 0.889
-- arketyp **A1**: 7 ja, 1 kanske, 0 nej → score 0.85
-- deadline_klass **2–6 v**: 7 ja, 0 kanske, 0 nej → score 0.889
-- prisband **300–499**: 7 ja, 1 kanske, 0 nej → score 0.85
-- deadline_typ **uppställning**: 6 ja, 1 kanske, 0 nej → score 0.833
-- form **annat**: 6 ja, 1 kanske, 0 nej → score 0.833
-- prisband **≥ 1 000**: 6 ja, 0 kanske, 1 nej → score 0.778
-- arketyp **B_SKYDDA_DYRT**: 6 ja, 0 kanske, 2 nej → score 0.7
-- ankare_klass **1,2–1,3×**: 5 ja, 0 kanske, 0 nej → score 0.857
-- arketyp **verktyg**: 4 ja, 0 kanske, 0 nej → score 0.833
+- prisband **500–999**: 27 ja, 3 kanske, 2 nej → score 0.868
+- ankare_klass **1,3–1,6×**: 14 ja, 1 kanske, 0 nej → score 0.912
+- form **överdrag**: 13 ja, 0 kanske, 1 nej → score 0.875
+- deadline_klass **6–12 v**: 10 ja, 1 kanske, 0 nej → score 0.885
+- prisband **300–499**: 10 ja, 2 kanske, 0 nej → score 0.857
+- ankare_klass **≥ 1,6×**: 9 ja, 4 kanske, 3 nej → score 0.667
+- ankare_klass **golv utan ankare**: 8 ja, 0 kanske, 0 nej → score 0.9
+- arketyp **A1**: 8 ja, 1 kanske, 0 nej → score 0.864
+- deadline_klass **2–6 v**: 8 ja, 0 kanske, 0 nej → score 0.9
+- ankare_klass **1,2–1,3×**: 7 ja, 0 kanske, 0 nej → score 0.889
+- deadline_typ **uppställning**: 7 ja, 1 kanske, 0 nej → score 0.85
+- form **annat**: 7 ja, 2 kanske, 0 nej → score 0.818
+- prisband **≥ 1 000**: 7 ja, 0 kanske, 1 nej → score 0.8
+- arketyp **B_SKYDDA_DYRT**: 7 ja, 0 kanske, 2 nej → score 0.727
+- deadline_typ **första frost**: 6 ja, 0 kanske, 2 nej → score 0.7
 
 ## Det Axel säger nej till
 
-- ankare_klass **≥ 1,6×**: 3 nej, 9 ja → score 0.676
-- deadline_typ **första frost**: 2 nej, 4 ja → score 0.625
-- arketyp **B_SKYDDA_DYRT**: 2 nej, 6 ja → score 0.7
-- prisband **500–999**: 2 nej, 25 ja → score 0.871
+- ankare_klass **≥ 1,6×**: 3 nej, 9 ja → score 0.667
+- deadline_typ **första frost**: 2 nej, 6 ja → score 0.7
+- arketyp **B_SKYDDA_DYRT**: 2 nej, 7 ja → score 0.727
+- prisband **500–999**: 2 nej, 27 ja → score 0.868
 - grupp **belysning och mörker**: 1 nej, 0 ja → score 0.333
 - grupp **Gårdshunden/hundgården**: 1 nej, 0 ja → score 0.333
 - grupp **Luftvärmepumpens utedel**: 1 nej, 0 ja → score 0.333
@@ -43,7 +43,7 @@ Uppdaterad 2026-09-13. **42 svar** — ja 29, kanske 7, nej 6.
 
 ## Orsakerna han anger
 
-- **Känns rätt**: 0 nej, 10 ja, 0 kanske
+- **Känns rätt**: 0 nej, 12 ja, 0 kanske
 - **Skyddar något**: 0 nej, 8 ja, 0 kanske
 - **Deadline nu**: 0 nej, 4 ja, 0 kanske
 - **För dyr**: 2 nej, 0 ja, 0 kanske
@@ -54,6 +54,7 @@ Uppdaterad 2026-09-13. **42 svar** — ja 29, kanske 7, nej 6.
 - **Tråkig**: 1 nej, 0 ja, 0 kanske
 - **Har redan**: 1 nej, 0 ja, 0 kanske
 - **Kan bli bra**: 0 nej, 0 ja, 1 kanske
+- **Lågt upplevt värde**: 0 nej, 0 ja, 1 kanske
 
 ## Stoppas i nästa körning (≥ 3 nej, 0 ja)
 
@@ -61,6 +62,9 @@ Uppdaterad 2026-09-13. **42 svar** — ja 29, kanske 7, nej 6.
 
 ## Lyfts i nästa körning (≥ 3 ja)
 
+- ankare_kalla:eurotrail/getcamping.se
+- ankare_kalla:lego.com/kedjan
+- ankare_kalla:pricerunner.se (Kerbl/Northix)
 - ankare_klass:1,2–1,3×
 - ankare_klass:1,3–1,6×
 - ankare_klass:ej mätt
@@ -68,6 +72,8 @@ Uppdaterad 2026-09-13. **42 svar** — ja 29, kanske 7, nej 6.
 - ankare_klass:≥ 1,6×
 - arketyp:A1
 - arketyp:A3
+- arketyp:A4
+- arketyp:A_AGARE_FRIKTION
 - arketyp:B_SKYDDA_DYRT
 - arketyp:E_VADER_SASONG
 - arketyp:G_Q4_GAVA
@@ -83,6 +89,8 @@ Uppdaterad 2026-09-13. **42 svar** — ja 29, kanske 7, nej 6.
 - deadline_typ:upptagning
 - deadline_typ:älgjakt
 - form:annat
+- form:kalender
+- form:koja
 - form:överdrag
 - objekt:Barnbarnet — adventskalendern
 - objekt:Husvagn — taket

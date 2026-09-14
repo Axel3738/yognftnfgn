@@ -979,6 +979,142 @@
    },
    "ts": "2026-09-12T11:35:23.586Z",
    "url": "https://www.aliexpress.com/item/1005013106730364.html"
+  },
+  "2026-09-12__1005010360604942": {
+   "arketyp": "B_SKYDDA_DYRT",
+   "datum": "2026-09-12",
+   "dom": "ja",
+   "grupp": "Bikuporna",
+   "kalla": "sida",
+   "koncept_id": "K0252",
+   "konfidens": "MEDEL",
+   "landad": 404,
+   "namn": "Bikupans vinterjacka",
+   "orsaker": [
+    "Känns rätt"
+   ],
+   "pris": 799,
+   "product_id": "1005010360604942",
+   "slot": "sasong",
+   "taggar": {
+    "ankare_kalla": "Biredskapsfabriken 'Vinterskydd' 171 kr är ett nät mot talgoxar — annan form, inte isolering (läst 2026-09-12)",
+    "ankare_klass": "ej mätt",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "invintring",
+    "form": "överdrag",
+    "objekt": "Bikuporna",
+    "prisband": "500–999"
+   },
+   "ts": "2026-09-13T19:03:33.875Z",
+   "url": "https://www.aliexpress.com/item/1005010360604942.html"
+  },
+  "2026-09-12__1005010439326565": {
+   "arketyp": "E_VADER_SASONG",
+   "datum": "2026-09-12",
+   "dom": "ja",
+   "grupp": "Krukväxter — citrus, oliv, fikon, pelargon",
+   "kalla": "sida",
+   "koncept_id": "K0251",
+   "konfidens": "LÅG",
+   "landad": 166,
+   "namn": "Krukväxthuven med dragkedja, 3-pack",
+   "orsaker": [
+    "Känns rätt"
+   ],
+   "pris": 449,
+   "product_id": "1005010439326565",
+   "slot": "sasong",
+   "taggar": {
+    "ankare_kalla": "Olivträdsbutiken — Vinterskydd för olivträd, fiberduk 100 g/m² med dragkedja, S–XXL",
+    "ankare_klass": "1,3–1,6×",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "form": "huv",
+    "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+    "prisband": "300–499"
+   },
+   "ts": "2026-09-13T19:03:31.526Z",
+   "url": "https://www.aliexpress.com/item/1005010439326565.html"
+  },
+  "2026-09-12__1005010585659348": {
+   "arketyp": "A_AGARE_FRIKTION",
+   "datum": "2026-09-12",
+   "dom": "kanske",
+   "grupp": "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)",
+   "kalla": "sida",
+   "koncept_id": "K0253",
+   "konfidens": "LÅG",
+   "landad": 253,
+   "namn": "Maskinhyllan för 4 elverktyg",
+   "orsaker": [
+    "Lågt upplevt värde"
+   ],
+   "pris": 599,
+   "product_id": "1005010585659348",
+   "slot": "exploitation",
+   "taggar": {
+    "ankare_kalla": "P.Lindberg verktygshylla 5 fack + låda (stål)",
+    "ankare_klass": "≥ 1,6×",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "form": "annat",
+    "objekt": "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)",
+    "prisband": "500–999"
+   },
+   "ts": "2026-09-13T19:03:39.576Z",
+   "url": "https://www.aliexpress.com/item/1005010585659348.html"
+  },
+  "2026-09-12__1005012077981896": {
+   "arketyp": "A_AGARE_FRIKTION",
+   "datum": "2026-09-12",
+   "dom": "kanske",
+   "grupp": "NYTT: Makita-maskinerna i garaget (3–6 st à 1–3 tkr)",
+   "kalla": "sida",
+   "koncept_id": "K0255",
+   "konfidens": "MEDEL",
+   "landad": 138,
+   "namn": "Makita-hållaren 5-pack (maskinen på väggen)",
+   "orsaker": [],
+   "pris": 399,
+   "product_id": "1005012077981896",
+   "slot": "exploitation",
+   "taggar": {
+    "ankare_kalla": "K-Bygg Stealthmounts maskinhållare Makita 18V 4-pack",
+    "ankare_klass": "1,3–1,6×",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "form": "klämma",
+    "objekt": "NYTT: Makita-maskinerna i garaget (3–6 st à 1–3 tkr)",
+    "prisband": "300–499"
+   },
+   "ts": "2026-09-13T19:03:48.843Z",
+   "url": "https://www.aliexpress.com/item/1005012077981896.html"
+  },
+  "2026-09-12__1005012582663728": {
+   "arketyp": "A_AGARE_FRIKTION",
+   "datum": "2026-09-12",
+   "dom": "ja",
+   "grupp": "NYTT: Julbelysningen utomhus (5–10 slingor per villa, tas fram i november)",
+   "kalla": "sida",
+   "koncept_id": "K0254",
+   "konfidens": "LÅG",
+   "landad": 174,
+   "namn": "Ljusslingevindorna 10-pack",
+   "orsaker": [],
+   "pris": 399,
+   "product_id": "1005012582663728",
+   "slot": "exploitation",
+   "taggar": {
+    "ankare_kalla": "Clas Ohlson Northlight kabelvinda (metall/plast, stativ, 100 m)",
+    "ankare_klass": "golv utan ankare",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "ingen",
+    "form": "annat",
+    "objekt": "NYTT: Julbelysningen utomhus (5–10 slingor per villa, tas fram i november)",
+    "prisband": "300–499"
+   },
+   "ts": "2026-09-13T19:03:44.260Z",
+   "url": "https://www.aliexpress.com/item/1005012582663728.html"
   }
  }
 }

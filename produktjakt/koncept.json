@@ -51,19 +51,19 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 15166.45,
-    "kop": 71,
-    "roas": 5.3519,
-    "cpa": 213.61,
+    "spend": 16109.44,
+    "kop": 79,
+    "roas": 5.6484,
+    "cpa": 203.92,
     "be": 1.63,
-    "be_cpa": 701.37,
-    "vinstbidrag": 34630.96,
+    "be_cpa": 706.63,
+    "vinstbidrag": 39714.09,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
-    "bekraftelse": "preliminär",
-    "last": "2026-09-13",
-    "utfall": "launchad"
+    "bekraftelse": "bekräftad (snapshot 2026-09-11)",
+    "last": "2026-09-14",
+    "utfall": ">=BE"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -135,19 +135,19 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 6237.28,
+    "spend": 6389.77,
     "kop": 13,
-    "roas": 1.733,
-    "cpa": 479.79,
+    "roas": 1.6917,
+    "cpa": 491.52,
     "be": 1.62,
     "be_cpa": 513.26,
-    "vinstbidrag": 435.11,
+    "vinstbidrag": 282.62,
     "band": "HIGH",
     "klass": "REAL_WINNER",
-    "lutning": "positiv",
-    "bekraftelse": "preliminär",
-    "last": "2026-09-13",
-    "utfall": "launchad"
+    "lutning": "positiv (marginell, < 5 % från BE)",
+    "bekraftelse": "bekräftad (snapshot 2026-09-11)",
+    "last": "2026-09-14",
+    "utfall": ">=BE"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -212,19 +212,19 @@
     "datum": "2026-09-08"
    },
    "meta": {
-    "spend": 7398.35,
+    "spend": 7508.96,
     "kop": 24,
-    "roas": 1.9058,
-    "cpa": 308.26,
+    "roas": 1.8777,
+    "cpa": 312.87,
     "be": 1.62,
     "be_cpa": 362.65,
-    "vinstbidrag": 1305.36,
+    "vinstbidrag": 1194.72,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
-    "bekraftelse": "preliminär",
-    "last": "2026-09-13",
-    "utfall": "launchad"
+    "bekraftelse": "bekräftad (snapshot 2026-09-11)",
+    "last": "2026-09-14",
+    "utfall": ">=BE"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -1936,7 +1936,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-13",
+    "last": "2026-09-14",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2336,7 +2336,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-13",
+    "last": "2026-09-14",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11167,10 +11167,10 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 1991.17,
+    "spend": 1992.58,
     "kop": 1,
-    "roas": 0.3862,
-    "cpa": 1991.17,
+    "roas": 0.3859,
+    "cpa": 1992.58,
     "be": 1.63,
     "be_cpa": null,
     "vinstbidrag": null,
@@ -11178,7 +11178,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-13",
+    "last": "2026-09-14",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11231,18 +11231,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 3416.83,
-    "kop": 19,
-    "roas": 3.223,
-    "cpa": 179.83,
+    "spend": 3732.11,
+    "kop": 23,
+    "roas": 3.5498,
+    "cpa": 162.27,
     "be": 1.61,
-    "be_cpa": 359.99,
-    "vinstbidrag": 3423.04,
+    "be_cpa": 357.77,
+    "vinstbidrag": 4496.5,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-13",
+    "last": "2026-09-14",
     "utfall": "launchad"
    },
    "status": "vinnare",
@@ -13814,10 +13814,20 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [
+      "Känns rätt"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-13T19:03:31.526Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13827,6 +13837,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja ['Känns rätt']"
     }
    ],
    "namn_sv": "Krukväxthuven med dragkedja, 3-pack"
@@ -13898,10 +13912,20 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [
+      "Känns rätt"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-13T19:03:33.875Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13911,6 +13935,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja ['Känns rätt']"
     }
    ],
    "namn_sv": "Bikupans vinterjacka"
@@ -13996,10 +14024,20 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "kanske",
+     "orsaker": [
+      "Lågt upplevt värde"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-13T19:03:39.576Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14009,6 +14047,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 10, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: kanske ['Lågt upplevt värde']"
     }
    ],
    "namn_sv": "Maskinhyllan för 4 elverktyg"
@@ -14094,10 +14136,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-13T19:03:44.260Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14107,6 +14157,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 11, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Ljusslingevindorna 10-pack"
@@ -14192,10 +14246,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-12",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-13T19:03:48.843Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14205,6 +14267,10 @@
     {
      "datum": "2026-09-12",
      "handelse": "levererad på V3-arket (rank 12, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-12",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Makita-hållaren 5-pack (maskinen på väggen)"
@@ -14219,7 +14285,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Vedklyven (hydraulisk/elektrisk, 3–8 tkr — Scheppach HL460 2 995, HL810 8 145; står under skärmtak vid vedstapeln hela vintern)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "vedsäsong",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — Bauhaus Espegard-överdrag gäller Kindling Cracker (manuell klyv, annat objekt); inget märkesöverdrag för hydraulisk vedklyv hittat hos Bauhaus/Skogma/P. Lindberg"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14309,7 +14383,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Promenadscootern/elskotern (10–30 tkr, ägare 70+; står under carport/vid entrén, elektronik + sits i regnet)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "höstregn",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "promenadskoter.se Överdrag HS-828 & HS-925 (HS-328 895, HS-520 995)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14399,7 +14481,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Poolvärmepumpen (15–40 tkr, står ute vid poolen hela vintern efter poolstängningen)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "poolstängning",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Poolklubben Poolvärmepump Vinterskydd L (gummerad presenning, 13 i lager)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14489,7 +14579,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Trädet på tomten — dekor på stammen",
+    "form": "dekor",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "ingen",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Relaxdays Träd ansikte Natur ande (enda svenska prislappen som gick att läsa; Amazon.se-sidan svarade 503)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14565,7 +14663,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Stupröret — regnkedja i stället för rör",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "lövfällning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Gecko Trädgård — Japansk regnkedja, Utsvängd, aluminium (i lager 2026-09-13)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14641,7 +14747,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Trappan och entrén — snö och is på stegen",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "första snö",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Safestep Värmematta 27 × 95 cm (inkl. moms, strömkabel säljs separat)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14717,7 +14831,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Trädgårdsdammen (koi/guldfisk)",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "isläggning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "IceFree Thermo 330 (flytande, termostat/frostvakt)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14807,7 +14929,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "A_AGARE_FRIKTION",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "ChickenGuard/automatisk lucköppnare (Lantbutiken 49-70592 2 119 kr; P. Lindberg 2 120 kr)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14897,7 +15027,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "D_SNABBARE_METOD",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Mannen vid skärbrädan — köksknivarna och jaktkniven (fars dag)",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "HORL 2 HO2 (ek/valnöt), PriceRunner lägsta"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -14973,7 +15111,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Barnbarnet 3–8 år — Highland Cow-kalendern (samma ägare som racingbilarna, nytt tema)",
+    "form": "kalenderlåda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "1 december",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "LEGO City adventskalender 2026 (60510), Lekia — kategoriankare, inte samma tema"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -15049,7 +15195,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Barnbarnet 6–10 år — ädelstenskalendern (gräva fram en sten per dag)",
+    "form": "kalenderlåda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "1 december",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "LEGO City adventskalender 2026, Lekia — kategoriankare, inte samma form"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {

@@ -1,4 +1,4 @@
-# Metas facit — MagiBorsten `1867947880635861`, livstid, hämtat 2026-09-13
+# Metas facit — MagiBorsten `1867947880635861`, livstid, hämtat 2026-09-14
 
 Skrivs av `meta_facit.py hamta`. Ändra aldrig för hand — ändra `facit/historik-taggar.json` (produktkoppling, arketyp) eller `facit/be-override.json` (BE för kampanjer utan BE i namnet) och kör om.
 
@@ -11,34 +11,34 @@ Band relativt produktens egen BE-CPA (AOV ÷ BE-ROAS): UNTESTED < 300 kr · TOO_
 | Klass | Band | Produkt | Arketyp | Spend | Köp | CPA | ROAS | BE | BE-CPA | Vinstbidrag | Första launch |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
 | REAL_WINNER | HIGH | Motorhöljet (Marin motorhölje 420D) | B_SKYDDA_DYRT | 99111 | 486 | 203.93 | 1.8689 | 1.63 | 233.82 | 14526.54 | 2026-08-01 |
-| REAL_WINNER | HIGH | Fiskespöhållaren (spöklämma 4-pack) | A_AGARE_FRIKTION | 74426 | 374 | 199.0 | 2.1812 | 1.5 | 289.38 | 33802.12 | 2026-08-18 |
+| REAL_WINNER | HIGH | Fiskespöhållaren (spöklämma 4-pack) | A_AGARE_FRIKTION | 74647 | 374 | 199.59 | 2.1748 | 1.5 | 289.38 | 33581.46 | 2026-08-18 |
 | REAL_WINNER | HIGH | Sätesöverdragaren (åkgräsklippare) | C_LAGA_ISTALLET | 62441 | 182 | 343.08 | 2.1084 | 1.47 | 492.07 | 27116.18 | 2026-07-20 |
 | REAL_WINNER | HIGH | Axelbältet (trimmersele) | A_AGARE_FRIKTION | 50235 | 158 | 317.94 | 1.8653 | 1.72 | 344.8 | 4243.88 | 2026-07-22 |
 | REAL_WINNER | HIGH | Strandtofflorna (EVA-clog) | X_UTANFOR | 41377 | 187 | 221.27 | 2.0416 | 1.7 | 265.72 | 8312.15 | 2026-07-23 |
-| REAL_WINNER | HIGH | Övervakningskameran (PTZ dubbellins) | B_SKYDDA_DYRT | 37191 | 79 | 470.77 | 2.5162 | 1.57 | 754.47 | 22412.3 | 2026-08-21 |
-| REAL_WINNER | HIGH | IBC-Tanköverdraget | B_SKYDDA_DYRT | 31255 | 119 | 262.65 | 2.455 | 1.51 | 427.02 | 19560.03 | 2026-08-28 |
-| REAL_WINNER | HIGH | Bälteslipmaskinen (mini bandslipare 3-i-1) | D_SNABBARE_METOD | 29680 | 71 | 418.04 | 2.3802 | 1.73 | 575.14 | 11154.1 | 2026-08-21 |
-| REAL_WINNER | HIGH | Båtmotorskyddet 420D | B_SKYDDA_DYRT | 20917 | 92 | 227.36 | 2.7206 | 1.62 | 381.83 | 14211.24 | 2026-08-29 |
-| REAL_WINNER | HIGH | MC-Kapellet | B_SKYDDA_DYRT | 15817 | 73 | 216.67 | 2.0016 | 1.49 | 291.06 | 5430.47 | 2026-08-27 |
+| REAL_WINNER | HIGH | Övervakningskameran (PTZ dubbellins) | B_SKYDDA_DYRT | 37264 | 79 | 471.7 | 2.5112 | 1.57 | 754.47 | 22338.83 | 2026-08-21 |
+| REAL_WINNER | HIGH | IBC-Tanköverdraget | B_SKYDDA_DYRT | 31674 | 120 | 263.95 | 2.438 | 1.51 | 426.17 | 19466.4 | 2026-08-28 |
+| REAL_WINNER | HIGH | Bälteslipmaskinen (mini bandslipare 3-i-1) | D_SNABBARE_METOD | 29804 | 71 | 419.78 | 2.3703 | 1.73 | 575.14 | 11030.56 | 2026-08-21 |
+| REAL_WINNER | HIGH | Båtmotorskyddet 420D | B_SKYDDA_DYRT | 21105 | 93 | 226.94 | 2.7239 | 1.62 | 381.57 | 14380.59 | 2026-08-29 |
+| REAL_WINNER | HIGH | Taköverdraget för Husvagn 6,5 × 3 m | B_SKYDDA_DYRT | 16109 | 79 | 203.92 | 5.6484 | 1.63 | 706.63 | 39714.09 | 2026-09-09 |
+| REAL_WINNER | HIGH | MC-Kapellet | B_SKYDDA_DYRT | 15936 | 73 | 218.3 | 1.9867 | 1.49 | 291.06 | 5311.48 | 2026-08-27 |
 | REAL_WINNER | HIGH | Damasker Vandring | E_VADER_SASONG | 15759 | 68 | 231.76 | 2.2081 | 1.6 | 319.84 | 5989.44 | 2026-08-29 |
-| REAL_WINNER | HIGH | Taköverdraget för Husvagn 6,5 × 3 m | B_SKYDDA_DYRT | 15179 | 71 | 213.78 | 5.3476 | 1.63 | 701.37 | 34618.89 | 2026-09-09 |
 | REAL_WINNER | HIGH | Soptunneklistermärkena | H_VISUELL_NYHET | 11255 | 83 | 135.61 | 1.9784 | 1.67 | 160.65 | 2078.32 | 2026-08-21 |
 | REAL_WINNER | HIGH | Cykelshorts Herr | X_UTANFOR | 8762 | 48 | 182.55 | 1.9988 | 1.68 | 217.19 | 1662.72 | 2026-08-27 |
 | REAL_WINNER | HIGH | Kranskydd Frost 420D | E_VADER_SASONG | 8293 | 30 | 276.45 | 1.4999 | 1.49 | 278.28 | 54.9 | 2026-08-21 |
+| REAL_WINNER | HIGH | Adventskalendern Racingbilar | G_Q4_GAVA | 7509 | 24 | 312.87 | 1.8777 | 1.62 | 362.65 | 1194.72 | 2026-09-08 |
 | REAL_LOSER | HIGH | Ergonomiska Tofflorna (Tofflor Ergonomiska – Tjo | X_UTANFOR | 7492 | 31 | 241.67 | 1.5876 | 1.8 | 213.14 | -884.43 | 2026-08-13 |
-| REAL_WINNER | HIGH | Adventskalendern Racingbilar | G_Q4_GAVA | 7407 | 24 | 308.62 | 1.9036 | 1.62 | 362.65 | 1296.72 | 2026-09-08 |
 | INSUFFICIENT_DATA (be okänd) | MEANINGFUL | Skoreparationslapparna | C_LAGA_ISTALLET | 6664 | 42 | 158.67 | 1.7427 | — | — | — | 2026-08-16 |
-| REAL_WINNER | HIGH | Isolerade Utekattkojan | B_SKYDDA_DYRT | 6249 | 13 | 480.7 | 1.7297 | 1.62 | 513.26 | 423.28 | 2026-09-09 |
+| REAL_WINNER | HIGH | Isolerade Utekattkojan | B_SKYDDA_DYRT | 6390 | 13 | 491.52 | 1.6917 | 1.62 | 513.26 | 282.62 | 2026-09-09 |
 | REAL_LOSER | HIGH | Gravstenspennan | C_LAGA_ISTALLET | 6068 | 22 | 275.81 | 1.4756 | 1.6 | 254.38 | -471.46 | 2026-08-29 |
 | REAL_LOSER | HIGH | Surfplattestället | A_AGARE_FRIKTION | 5505 | 21 | 262.13 | 1.5937 | 1.67 | 250.16 | -251.37 | 2026-08-21 |
 | REAL_LOSER | HIGH | Plyschtofflorna Herr | X_UTANFOR | 5363 | 15 | 357.54 | 1.4623 | 1.49 | 350.88 | -99.9 | 2026-08-21 |
 | INSUFFICIENT_DATA (negativ) | EARLY_SIGNAL | AI Smarta Glasögon | X_UTANFOR | 4471 | 2 | 2235.56 | 0.836 | 1.34 | 1394.78 | -1681.56 | 2026-08-01 |
 | INSUFFICIENT_DATA (be okänd) | MEANINGFUL | Cargoshortsen (3-pack) | X_UTANFOR | 4324 | 8 | 540.44 | 1.6285 | — | — | — | 2026-08-01 |
 | REAL_LOSER | MEANINGFUL | Väggfästet (trimmer) | A_AGARE_FRIKTION | 3762 | 9 | 418.01 | 1.636 | 2.0 | 341.93 | -684.72 | 2026-07-31 |
+| REAL_WINNER | HIGH | Termoskyddet för Husbil 211 × 171 cm | B_SKYDDA_DYRT | 3732 | 23 | 162.27 | 3.5498 | 1.61 | 357.77 | 4496.5 | 2026-09-11 |
 | INSUFFICIENT_DATA (negativ) | EARLY_SIGNAL | Bordtennisnätet Infällbart | X_UTANFOR | 3584 | 3 | 1194.83 | 0.319 | 1.8 | 211.72 | -2949.33 | 2026-08-29 |
 | REAL_LOSER | MEANINGFUL | Gräsklippartäcket | B_SKYDDA_DYRT | 3537 | 11 | 321.5 | 1.2938 | — | — | — | 2026-08-16 |
 | REAL_LOSER | HIGH | Badshorts med Skämttryck | X_UTANFOR | 3533 | 10 | 353.29 | 1.2875 | 1.62 | 280.78 | -725.1 | 2026-08-29 |
-| REAL_WINNER | HIGH | Termoskyddet för Husbil 211 × 171 cm | B_SKYDDA_DYRT | 3435 | 19 | 180.81 | 3.2056 | 1.61 | 359.99 | 3404.42 | 2026-09-11 |
 | REAL_LOSER | HIGH | Magnetfiskesatsen | F_HOBBY_IDENTITET | 3111 | 10 | 311.09 | 1.1014 | 1.65 | 207.65 | -1034.4 | 2026-08-17 |
 | REAL_LOSER | MEANINGFUL | Golfklubbsborsten | A_AGARE_FRIKTION | 2940 | 10 | 293.96 | 1.3124 | — | — | — | 2026-07-31 |
 | INSUFFICIENT_DATA (negativ) | EARLY_SIGNAL | Jättefotbollen | X_UTANFOR | 2697 | 4 | 674.16 | 0.6606 | 1.61 | 276.6 | -1590.24 | 2026-08-29 |
@@ -57,7 +57,7 @@ Band relativt produktens egen BE-CPA (AOV ÷ BE-ROAS): UNTESTED < 300 kr · TOO_
 | REAL_LOSER | MEANINGFUL | Medicinasken i Fickformat | X_UTANFOR | 2037 | 2 | 1018.34 | 0.4825 | 1.6 | 180.62 | -1675.44 | 2026-09-02 |
 | REAL_WINNER | MEANINGFUL | Vandringskängor Herr | X_UTANFOR | 2026 | 5 | 405.17 | 1.6117 | 1.6 | 408.12 | 14.75 | 2026-08-21 |
 | REAL_LOSER | MEANINGFUL | Kasta & Fånga-settet | X_UTANFOR | 2014 | 1 | 2013.59 | 0.5756 | 1.61 | 260.25 | -1753.34 | 2026-09-02 |
-| INSUFFICIENT_DATA (negativ) | TOO_EARLY | Solcellslarmet 2-pack | B_SKYDDA_DYRT | 1991 | 1 | 1991.17 | 0.3862 | 1.63 | — | — | 2026-09-11 |
+| INSUFFICIENT_DATA (negativ) | TOO_EARLY | Solcellslarmet 2-pack | B_SKYDDA_DYRT | 1993 | 1 | 1992.58 | 0.3859 | 1.63 | — | — | 2026-09-11 |
 | INSUFFICIENT_DATA (negativ) | EARLY_SIGNAL | Stegstödet 2-pack | D_SNABBARE_METOD | 1976 | 3 | 658.8 | 0.9706 | 1.63 | 392.29 | -799.53 | 2026-09-10 |
 | INSUFFICIENT_DATA (negativ) | EARLY_SIGNAL | Golfskoväskan | A_AGARE_FRIKTION | 1933 | 4 | 483.2 | 1.0857 | 1.79 | 293.07 | -760.52 | 2026-08-19 |
 | REAL_LOSER | MEANINGFUL | Uteduschen | E_VADER_SASONG | 1930 | 2 | 964.9 | 0.6001 | 1.51 | 383.44 | -1162.92 | 2026-08-16 |
@@ -91,74 +91,74 @@ Band relativt produktens egen BE-CPA (AOV ÷ BE-ROAS): UNTESTED < 300 kr · TOO_
 
 | Klass | Bekräftelse | Kampanj | Status | Spend | Köp | CPA | ROAS | BE | Produkt |
 |---|---|---|---|---:|---:|---:|---:|---:|---|
-| REAL_WINNER | preliminär | Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18 | ACTIVE | 74426 | 374 | 199.0 | 2.1812 | 1.5 | fiskespohallaren |
-| REAL_WINNER | preliminär | Motorhöljet | PAUSED | 72235 | 363 | 198.99 | 1.9318 | 1.63 | motorholjet |
-| REAL_WINNER | preliminär | Sätesöverdragaren | PAUSED | 60206 | 179 | 336.34 | 2.1478 | 1.47 | satesoverdragaren |
-| REAL_WINNER | preliminär | Axelbältet | PAUSED | 47090 | 152 | 309.8 | 1.905 | 1.72 | axelbaltet |
-| REAL_WINNER | preliminär | Strandtofflorna | PAUSED | 38785 | 180 | 215.47 | 2.1026 | 1.7 | strandtofflorna |
-| REAL_WINNER | preliminär | Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21 | ACTIVE | 37191 | 79 | 470.77 | 2.5162 | 1.57 | overvakningskameran |
-| REAL_WINNER | preliminär | IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28 | ACTIVE | 31255 | 119 | 262.65 | 2.455 | 1.51 | ibc-tankoverdraget |
-| REAL_WINNER | preliminär | Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21 | ACTIVE | 29680 | 71 | 418.04 | 2.3801 | 1.73 | balteslipmaskinen |
-| REAL_WINNER | preliminär | Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29 | ACTIVE | 20917 | 92 | 227.36 | 2.7206 | 1.62 | batmotorskyddet |
-| REAL_WINNER | preliminär | Motorhöljet Lagerrensingsrea | PAUSED | 20822 | 96 | 216.9 | 1.7084 | 1.63 | motorholjet |
-| REAL_WINNER | preliminär | MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27 | ACTIVE | 15817 | 73 | 216.67 | 2.0016 | 1.49 | mc-kapellet |
-| REAL_WINNER | preliminär | Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29 | PAUSED | 15759 | 68 | 231.76 | 2.2081 | 1.6 | damasker-vandring |
-| REAL_WINNER | preliminär | Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09 | ACTIVE | 15179 | 71 | 213.78 | 5.3476 | 1.63 | takoverdraget-husvagn |
-| REAL_WINNER | preliminär | Soptunneklistermärkena | BE ROAS 1.67 | Launch 2026-08-21 | PAUSED | 11255 | 83 | 135.61 | 1.9784 | 1.67 | soptunneklistermarkena |
-| REAL_WINNER | preliminär | Cykelshorts Herr | BE ROAS 1.68 | Launch 2026-08-27 | PAUSED | 8762 | 48 | 182.55 | 1.9988 | 1.68 | cykelshorts-herr |
-| REAL_WINNER | preliminär | Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21 | PAUSED | 8293 | 30 | 276.45 | 1.4999 | 1.49 | kranskydd-frost |
-| REAL_LOSER | preliminär | Ergonomiska Tofflorna | PAUSED | 7492 | 31 | 241.67 | 1.5876 | 1.8 | ergonomiska-tofflorna |
-| REAL_WINNER | preliminär | Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08 | ACTIVE | 7407 | 24 | 308.62 | 1.9036 | 1.62 | adventskalendern-racingbilar |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18 | ACTIVE | 74647 | 374 | 199.59 | 2.1748 | 1.5 | fiskespohallaren |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Motorhöljet | PAUSED | 72235 | 363 | 198.99 | 1.9318 | 1.63 | motorholjet |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Sätesöverdragaren | PAUSED | 60206 | 179 | 336.34 | 2.1478 | 1.47 | satesoverdragaren |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Axelbältet | PAUSED | 47090 | 152 | 309.8 | 1.905 | 1.72 | axelbaltet |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Strandtofflorna | PAUSED | 38785 | 180 | 215.47 | 2.1026 | 1.7 | strandtofflorna |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21 | PAUSED | 37264 | 79 | 471.7 | 2.5112 | 1.57 | overvakningskameran |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28 | ACTIVE | 31674 | 120 | 263.95 | 2.438 | 1.51 | ibc-tankoverdraget |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21 | ACTIVE | 29804 | 71 | 419.78 | 2.3703 | 1.73 | balteslipmaskinen |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29 | ACTIVE | 21105 | 93 | 226.94 | 2.7239 | 1.62 | batmotorskyddet |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Motorhöljet Lagerrensingsrea | PAUSED | 20822 | 96 | 216.9 | 1.7084 | 1.63 | motorholjet |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09 | ACTIVE | 16109 | 79 | 203.92 | 5.6484 | 1.63 | takoverdraget-husvagn |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27 | ACTIVE | 15936 | 73 | 218.3 | 1.9867 | 1.49 | mc-kapellet |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29 | PAUSED | 15759 | 68 | 231.76 | 2.2081 | 1.6 | damasker-vandring |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Soptunneklistermärkena | BE ROAS 1.67 | Launch 2026-08-21 | PAUSED | 11255 | 83 | 135.61 | 1.9784 | 1.67 | soptunneklistermarkena |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Cykelshorts Herr | BE ROAS 1.68 | Launch 2026-08-27 | PAUSED | 8762 | 48 | 182.55 | 1.9988 | 1.68 | cykelshorts-herr |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Kranskydd Frost 420D | BE ROAS 1.49 | Launch 2026-08-21 | PAUSED | 8293 | 30 | 276.45 | 1.4999 | 1.49 | kranskydd-frost |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08 | PAUSED | 7509 | 24 | 312.87 | 1.8777 | 1.62 | adventskalendern-racingbilar |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Ergonomiska Tofflorna | PAUSED | 7492 | 31 | 241.67 | 1.5876 | 1.8 | ergonomiska-tofflorna |
 | INSUFFICIENT_DATA | preliminär | Skoreparationslapparna | PAUSED | 6664 | 42 | 158.67 | 1.7427 | — | skoreparationslapparna |
-| REAL_WINNER | preliminär | Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09 | ACTIVE | 6249 | 13 | 480.7 | 1.7297 | 1.62 | utekattkojan |
-| REAL_LOSER | preliminär | Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29 | PAUSED | 6068 | 22 | 275.81 | 1.4756 | 1.6 | gravstenspennan |
-| REAL_LOSER | preliminär | Surfplattestället | BE ROAS 1.67 | Launch 2026-08-21 | PAUSED | 5505 | 21 | 262.13 | 1.5937 | 1.67 | surfplattestallet |
-| REAL_LOSER | preliminär | Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21 | PAUSED | 5363 | 15 | 357.54 | 1.4623 | 1.49 | plyschtofflorna-herr |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09 | PAUSED | 6390 | 13 | 491.52 | 1.6917 | 1.62 | utekattkojan |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Gravstenspennan | BE ROAS 1.60 | Launch 2026-08-29 | PAUSED | 6068 | 22 | 275.81 | 1.4756 | 1.6 | gravstenspennan |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Surfplattestället | BE ROAS 1.67 | Launch 2026-08-21 | PAUSED | 5505 | 21 | 262.13 | 1.5937 | 1.67 | surfplattestallet |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Plyschtofflorna Herr | BE ROAS 1.49 | Launch 2026-08-21 | PAUSED | 5363 | 15 | 357.54 | 1.4623 | 1.49 | plyschtofflorna-herr |
 | INSUFFICIENT_DATA | preliminär | AI Smarta Glasögon | PAUSED | 4471 | 2 | 2235.56 | 0.836 | 1.34 | ai-glasogon |
 | INSUFFICIENT_DATA | preliminär | Cargoshortsen | PAUSED | 4324 | 8 | 540.44 | 1.6285 | — | cargoshortsen |
-| REAL_WINNER | preliminär | Motorhöljet ABO-test 08-12 | PAUSED | 3857 | 19 | 203.02 | 1.9004 | 1.63 | motorholjet |
-| REAL_LOSER | preliminär | Väggfästet | PAUSED | 3762 | 9 | 418.01 | 1.636 | 2.0 | vaggfastet |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Motorhöljet ABO-test 08-12 | PAUSED | 3857 | 19 | 203.02 | 1.9004 | 1.63 | motorholjet |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Väggfästet | PAUSED | 3762 | 9 | 418.01 | 1.636 | 2.0 | vaggfastet |
+| REAL_WINNER | preliminär | Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-1 | ACTIVE | 3732 | 23 | 162.27 | 3.5498 | 1.61 | termoskyddet-husbil |
 | INSUFFICIENT_DATA | preliminär | Bordtennisnätet Infällbart | BE ROAS 1.80 | Launch 2026-08-29 | PAUSED | 3584 | 3 | 1194.83 | 0.319 | 1.8 | bordtennisnatet |
-| REAL_LOSER | preliminär | Gräsklippartäcket | PAUSED | 3537 | 11 | 321.5 | 1.2938 | — | grasklippartacket |
-| REAL_LOSER | preliminär | Badshorts med Skämttryck | BE ROAS 1.62 | Launch 2026-08-29 | PAUSED | 3533 | 10 | 353.29 | 1.2875 | 1.62 | badshorts-skamttryck |
-| REAL_WINNER | preliminär | Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-1 | ACTIVE | 3435 | 19 | 180.81 | 3.2056 | 1.61 | termoskyddet-husbil |
-| REAL_LOSER | preliminär | Magnetfiskesatsen CBO 08-17 1,65 BE | PAUSED | 3111 | 10 | 311.1 | 1.1014 | 1.65 | magnetfiskesatsen |
-| REAL_LOSER | preliminär | Golfklubbsborsten | PAUSED | 2940 | 10 | 293.96 | 1.3124 | — | golfklubbsborsten |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Gräsklippartäcket | PAUSED | 3537 | 11 | 321.5 | 1.2938 | — | grasklippartacket |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Badshorts med Skämttryck | BE ROAS 1.62 | Launch 2026-08-29 | PAUSED | 3533 | 10 | 353.29 | 1.2875 | 1.62 | badshorts-skamttryck |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Magnetfiskesatsen CBO 08-17 1,65 BE | PAUSED | 3111 | 10 | 311.1 | 1.1014 | 1.65 | magnetfiskesatsen |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Golfklubbsborsten | PAUSED | 2940 | 10 | 293.96 | 1.3124 | — | golfklubbsborsten |
 | INSUFFICIENT_DATA | preliminär | Jättefotbollen | BE ROAS 1.61 | Launch 2026-08-29 | PAUSED | 2697 | 4 | 674.16 | 0.6606 | 1.61 | jattefotbollen |
-| REAL_LOSER | preliminär | Strandtofflorna brynis lagris | PAUSED | 2592 | 7 | 370.27 | 1.1277 | 1.7 | strandtofflorna |
-| REAL_LOSER | preliminär | Ståltrådsborsthuvuden | PAUSED | 2490 | 7 | 355.71 | 0.9566 | — | staltradsborsthuvuden |
-| REAL_LOSER | preliminär | Skotvättpåsen | PAUSED | 2425 | 8 | 303.08 | 1.4787 | — | skotvattpasen |
-| REAL_LOSER | preliminär | Krananslutningen | PAUSED | 2261 | 7 | 322.95 | 1.1258 | — | krananslutningen |
-| REAL_LOSER | preliminär | Lastnätet | PAUSED | 2249 | 6 | 374.77 | 1.1091 | — | lastnatet |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Strandtofflorna brynis lagris | PAUSED | 2592 | 7 | 370.27 | 1.1277 | 1.7 | strandtofflorna |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Ståltrådsborsthuvuden | PAUSED | 2490 | 7 | 355.71 | 0.9566 | — | staltradsborsthuvuden |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Skotvättpåsen | PAUSED | 2425 | 8 | 303.08 | 1.4787 | — | skotvattpasen |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Krananslutningen | PAUSED | 2261 | 7 | 322.95 | 1.1258 | — | krananslutningen |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Lastnätet | PAUSED | 2249 | 6 | 374.77 | 1.1091 | — | lastnatet |
 | INSUFFICIENT_DATA | preliminär | Sätesöverdragaren – kopia | PAUSED | 2235 | 3 | 745.15 | 1.0452 | 1.47 | satesoverdragaren |
-| REAL_LOSER | preliminär | Magnethyllan för Tvättmaskin och Kylskåp | BE ROAS 1.62 | Launch 2026- | PAUSED | 2190 | 2 | 1095.04 | 0.6815 | 1.62 | magnethyllan |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Magnethyllan för Tvättmaskin och Kylskåp | BE ROAS 1.62 | Launch 2026- | PAUSED | 2190 | 2 | 1095.04 | 0.6815 | 1.62 | magnethyllan |
 | INSUFFICIENT_DATA | preliminär | Arbetslampan för Makita-batteri | BE ROAS 1.61 | Launch 2026-09-04 | PAUSED | 2135 | 3 | 711.81 | 0.9045 | 1.61 | arbetslampan |
-| REAL_LOSER | preliminär | Axelbältet brynis lagris | PAUSED | 2124 | 5 | 424.85 | 1.5982 | 1.72 | axelbaltet |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Axelbältet brynis lagris | PAUSED | 2124 | 5 | 424.85 | 1.5982 | 1.72 | axelbaltet |
 | INSUFFICIENT_DATA | preliminär | Magnetplattorna i Storformat | BE ROAS 1.63 | Launch 2026-09-03 | PAUSED | 2121 | 3 | 707.08 | 0.8181 | 1.63 | magnetplattorna |
-| REAL_LOSER | preliminär | Lättviktsryggsäcken | PAUSED | 2112 | 1 | 2111.95 | 0.3452 | — | lattviktsryggsacken |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Lättviktsryggsäcken | PAUSED | 2112 | 1 | 2111.95 | 0.3452 | — | lattviktsryggsacken |
 | INSUFFICIENT_DATA | preliminär | Glasspintsen med Lock 2-pack | BE ROAS 1.62 | Launch 2026-09-05 | PAUSED | 2108 | 3 | 702.81 | 1.3963 | 1.62 | glasspintsen |
 | INSUFFICIENT_DATA | preliminär | 3D-sandbilden | BE ROAS 1.61 | Launch 2026-09-05 | PAUSED | 2100 | 3 | 700.07 | 0.8086 | 1.61 | 3d-sandbilden |
-| REAL_LOSER | preliminär | Luffarschacket i Trä | BE ROAS 1.59 | Launch 2026-09-01 | PAUSED | 2088 | 2 | 1043.79 | 0.3585 | 1.59 | luffarschacket |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Luffarschacket i Trä | BE ROAS 1.59 | Launch 2026-09-01 | PAUSED | 2088 | 2 | 1043.79 | 0.3585 | 1.59 | luffarschacket |
 | INSUFFICIENT_DATA | preliminär | Sömnadskitet 104 Delar | BE ROAS 1.60 | Launch 2026-09-01 | PAUSED | 2082 | 4 | 520.46 | 0.7428 | 1.6 | somnadskitet |
-| REAL_LOSER | preliminär | Medicinasken i Fickformat | BE ROAS 1.60 | Launch 2026-09-02 | PAUSED | 2037 | 2 | 1018.34 | 0.4825 | 1.6 | medicinasken |
-| REAL_WINNER | preliminär | Vandringskängor Herr | BE ROAS 1.60 | Launch 2026-08-21 | PAUSED | 2026 | 5 | 405.17 | 1.6117 | 1.6 | vandringskangor-herr |
-| REAL_LOSER | preliminär | Kasta & Fånga-settet | BE ROAS 1.61 | Launch 2026-09-02 | PAUSED | 2014 | 1 | 2013.59 | 0.5756 | 1.61 | kasta-fanga-settet |
-| INSUFFICIENT_DATA | preliminär | Solcellslarmet 2-pack | BE ROAS 1.63 | Launch 2026-09-11 | PAUSED | 1991 | 1 | 1991.17 | 0.3862 | 1.63 | solcellslarmet |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Medicinasken i Fickformat | BE ROAS 1.60 | Launch 2026-09-02 | PAUSED | 2037 | 2 | 1018.34 | 0.4825 | 1.6 | medicinasken |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Vandringskängor Herr | BE ROAS 1.60 | Launch 2026-08-21 | PAUSED | 2026 | 5 | 405.17 | 1.6117 | 1.6 | vandringskangor-herr |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Kasta & Fånga-settet | BE ROAS 1.61 | Launch 2026-09-02 | PAUSED | 2014 | 1 | 2013.59 | 0.5756 | 1.61 | kasta-fanga-settet |
+| INSUFFICIENT_DATA | preliminär | Solcellslarmet 2-pack | BE ROAS 1.63 | Launch 2026-09-11 | PAUSED | 1993 | 1 | 1992.58 | 0.3859 | 1.63 | solcellslarmet |
 | INSUFFICIENT_DATA | preliminär | Stegstödet 2-pack | BE ROAS 1.63 | Launch 2026-09-10 | PAUSED | 1976 | 3 | 658.8 | 0.9706 | 1.63 | stegstodet |
 | INSUFFICIENT_DATA | preliminär | Golfskoväskan | BE ROAS 1.79 | Launch 2026-08-19 | PAUSED | 1933 | 4 | 483.2 | 1.0857 | 1.79 | golfskovaskan |
-| REAL_LOSER | preliminär | Uteduschen | PAUSED | 1930 | 2 | 964.9 | 0.6001 | 1.51 | uteduschen |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Uteduschen | PAUSED | 1930 | 2 | 964.9 | 0.6001 | 1.51 | uteduschen |
 | INSUFFICIENT_DATA | preliminär | Bänkhyllan med Utdragbar Korg | BE ROAS 1.63 | Launch 2026-09-08 | PAUSED | 1903 | 0 | — | — | 1.63 | bankhyllan |
 | INSUFFICIENT_DATA | preliminär | Staketstolpslagaren 2-pack | BE ROAS 1.66 | Launch 2026-09-10 | PAUSED | 1875 | 1 | 1875.12 | 0.9057 | 1.66 | staketstolpslagaren |
 | INSUFFICIENT_DATA | preliminär | Motocentric Bakväskan 37 L | BE ROAS 1.63 | Launch 2026-09-03 | PAUSED | 1849 | 2 | 924.46 | 1.0698 | 1.63 | motocentric-bakvaskan |
 | INSUFFICIENT_DATA | preliminär | Liggunderlaget | PAUSED | 1829 | 0 | — | — | — | liggunderlaget |
 | INSUFFICIENT_DATA | preliminär | Diskstället i Två Våningar | BE ROAS 1.62 | Launch 2026-09-08 | PAUSED | 1785 | 1 | 1784.55 | 0.704 | 1.62 | diskstallet |
 | INSUFFICIENT_DATA | preliminär | MagiBorsten - SE | PAUSED | 1716 | 0 | — | — | — | magiborsten-se-brand |
-| REAL_LOSER | preliminär | Första Hjälpen-Kitet | BE ROAS 1.78 | Launch 2026-08-21 | PAUSED | 1705 | 5 | 341.0 | 1.2974 | 1.78 | forsta-hjalpen-kitet |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Första Hjälpen-Kitet | BE ROAS 1.78 | Launch 2026-08-21 | PAUSED | 1705 | 5 | 341.0 | 1.2974 | 1.78 | forsta-hjalpen-kitet |
 | INSUFFICIENT_DATA | preliminär | Herrshortsen | PAUSED | 1651 | 2 | 825.52 | 0.556 | — | herrshortsen |
 | INSUFFICIENT_DATA | preliminär | Pälsborsten till Dyson-dammsugare | BE ROAS 1.61 | Launch 2026-09-08 | PAUSED | 1641 | 1 | 1640.65 | 0.3285 | 1.61 | palsborsten |
 | INSUFFICIENT_DATA | preliminär | Mattdynorna | PAUSED | 1569 | 4 | 392.17 | 0.7599 | — | mattdynorna |
-| REAL_WINNER | preliminär | Motorhöljet CBO 2026-08-20 | PAUSED | 1537 | 8 | 192.17 | 1.8109 | 1.63 | motorholjet |
-| REAL_LOSER | preliminär | Bollpannbandet | BE ROAS 2.03 | Launch 2026-08-21 | PAUSED | 1534 | 2 | 767.17 | 0.3469 | 2.03 | bollpannbandet |
+| REAL_WINNER | bekräftad (snapshot 2026-09-11) | Motorhöljet CBO 2026-08-20 | PAUSED | 1537 | 8 | 192.17 | 1.8109 | 1.63 | motorholjet |
+| REAL_LOSER | bekräftad (snapshot 2026-09-11) | Bollpannbandet | BE ROAS 2.03 | Launch 2026-08-21 | PAUSED | 1534 | 2 | 767.17 | 0.3469 | 2.03 | bollpannbandet |
 | INSUFFICIENT_DATA | preliminär | Stänkskärmen | BE ROAS TBC | Launch 2026-08-19 | PAUSED | 1487 | 4 | 371.85 | 1.1043 | — | stankskarmen |
 | INSUFFICIENT_DATA | preliminär | Trädgårdssäcken | PAUSED | 1487 | 2 | 743.47 | 1.0627 | — | tradgardssacken |
 | INSUFFICIENT_DATA | preliminär | 14-i-1 Verktyget | BE ROAS 1.63 | Launch 2026-08-18 | PAUSED | 1483 | 2 | 741.69 | 0.538 | 1.63 | 14-i-1-verktyget |
