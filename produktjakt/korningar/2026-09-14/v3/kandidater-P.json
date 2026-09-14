@@ -1,0 +1,458 @@
+{
+ "agent": "P — maskinen på Makita-batteriet (H12)",
+ "datum": "2026-09-14",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Stånggrensågen för Makita-batteri",
+   "objekt": "NYTT: Makita-batteriet — grenarna över taket",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H12",
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen",
+    "delade_variabler": [
+     "form verktyg, motoriserat",
+     "ankare ≥1,6× (Makita DUA301Z 5,8×, Ryobi/Bosch 1,9×)",
+     "synlig payoff på 3 s (grenen faller)",
+     "old way köpt produkt som fungerar (handsåg på stång / stege)"
+    ],
+    "avvikelser": [
+     "prisband ≥1000 (bandslipen 500–999)",
+     "ägd dyr sak (Makita-systemet) — bandslipen hade inget ägt objekt",
+     "vedsäsong NOW i stället för ingen säsong"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 4.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012433239872",
+    "url": "https://www.aliexpress.com/item/1005012433239872.html",
+    "pris_usd": 59.18,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:30:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012433239872.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "6 tum, 2-i-1 (stång + handhållen minisåg); titeln säger 'For Makita 18V Battery' men heron visar gul maskin med två egna 'POWER SHARE'-batterier — bar Makita-variant måste bekräftas med leverantören innan beställning",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot utan text: hela kitet (stång, löstagbar såg, två batterier, handskar, kedjor) — hand håller sågen men ingen gren i bild; gul/svart DeWalt-look, ingen Makita-logga i heron; egen bild med Makita-batteriet i sågen och grenen som faller krävs"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Gardena Powerforall teleskopisk grensåg 20/18V med 1×2,5 Ah batteri (sökutdrag 2026-09-14)",
+     "pris_sek": 2449,
+     "url": "https://duab.se/skog-tradgard/skogsutrustning/gren-stangsagar",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Makita DUA301Z stångsåg 2×18V utan batteri (Proffsmagasinet/Ahlsell/Verktygsvaruhuset)",
+     "pris_sek": 7493,
+     "url": "https://www.proffsmagasinet.se/tradgard-utemiljo/tradgardsmaskiner/motorsagar/stangsagar/makita-dua301z-stangsag-utan-batteri-och-laddare-3123872",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 5.8,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "proffsmagasinet.se / ahlsell.se / verktygsvaruhuset.se (Makita DUA301Z 7 493–7 494 kr, sökutdrag 2026-09-14)",
+     "duab.se (Bosch teleskopisk grensåg 18V med batteri 2 559 kr; Ryobi RY18PP20A-0 2 499 kr; Gardena 2 449 kr — alla med eget batterisystem, inte Makita)",
+     "bygghemma.se bäst-i-test (batteridrivna grensågar 1 500–3 000 kr)",
+     "jula.se (Meec Tools SP-18V HOME 500 finns i formen — 403, pris ej läst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [770, 941],
+    "pris_sek": 1299,
+    "brutto_sek": [358, 529],
+    "be_cpa_sek": [358, 529],
+    "be_roas": 2.9,
+    "flerkop": false,
+    "returrisk": "låg–medel — passar Makita 18V LXT om bar-varianten bekräftas; ägaren vet själv om han har systemet; ingen storlek"
+   },
+   "meta_tanke": {
+    "hook": "Har du Makita-batterier i garaget?",
+    "objekt_i_bild": "Makita-batteriet klickas i, stången skjuts ut, grenen över taket faller",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "batteriet i → grenen av på 3 sekunder, från marken utan stege"
+   },
+   "varfor": "Samma struktur som Snöskyffeln/Jetfläkten/Minikedjesågen för Makita (tre ja) men med den tyngsta payoffen: Makitas egen stångsåg kostar 7 493 kr, Ryobi/Bosch-klassen 2 449–2 559 med batteri, vår 1 299 på batteriet ägaren redan har (ankare 5,8× / 1,9×). Vedsäsong 4,4 v och höststormarna gör grenen över taket till ett datumjobb — testar H12 rent: motoriserat, ≥ 900 kr, synligt resultat.",
+   "huvudrisk": "Heron visar kit med egna gula batterier — bar Makita-variant och obrandad maskin måste bekräftas (piratrisk på DeWalt-look); form=verktyg är 1 vinnare/2 förlorare/7 för tidigt i facit och Axels egna verktygslauncher ligger under BE, så H12 måste bära hela raden.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 4,
+    "K8": 9,
+    "K9": 4,
+    "K10": 1,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grensåg/kedjesåg: bara Fickkedjesåg 229 = handverktyg, annan form)",
+     "koncept.py sok 'grensåg', 'stånggrensåg', 'chainsaw' (0 träffar; Minikedjesågen K0248 är handhållen 6 tum utan stång)",
+     "fynd.json 09-11/09-12/09-13 (ingen stångsåg)",
+     "uteslutningslistan (minikedjesåg levererad — stången är ny form på samma batteri)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012433239872.html",
+    "https://www.proffsmagasinet.se/tradgard-utemiljo/tradgardsmaskiner/motorsagar/stangsagar/makita-dua301z-stangsag-utan-batteri-och-laddare-3123872",
+    "https://www.verktygsvaruhuset.se/product/makita-dua301z-stangsag-",
+    "https://duab.se/skog-tradgard/skogsutrustning/gren-stangsagar",
+    "https://www.bygghemma.se/reportage-och-guider/bast-i-test-batteridriven-grensag/"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Hjulmutterdragaren för Makita-batteri",
+   "objekt": "NYTT: Makita-batteriet — däckbytet",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H12",
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen",
+    "delade_variabler": [
+     "form verktyg, motoriserat",
+     "ankare ≥1,6× (Makita DTW285Z 2,1–3,5×)",
+     "prisband 500–999",
+     "synlig payoff på 3 s (muttern lossnar)"
+    ],
+    "avvikelser": [
+     "hårt datum (första snö / vinterdäck) i stället för ingen säsong",
+     "kedjegolv finns (Biltema/Jula med eget batteri ~1 000 kr, pris ej läst)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_sno_norr",
+    "deadline_typ": "första snö",
+    "veckor_kvar": 5.9,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012743142283",
+    "url": "https://www.aliexpress.com/item/1005012743142283.html",
+    "pris_usd": 39.76,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:33:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012743142283.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1/2-tums fyrkant, 900 Nm, borstlös; titeln säger 'For Makita 18V Battery PIN' men heron visar Mamidws eget '598VF'-batteri — bar variant för Makita-slot måste bekräftas; hylsor ingår ej enligt bild",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot med rubriktext ('Actual torque 900 N.m', '2800RPM') och eget batteri i bild; Makita-blå färg men märkt Mamidw — ingen Makita-logga; egen bild vid hjulet med Makita-batteriet krävs"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Biltema Hjulmutterdragare IW 18V (eget batterisystem; forumuppgift 'runt 1 000 kr', sidan ej läst)",
+     "pris_sek": null,
+     "url": "https://www.biltema.se/verktyg/elverktyg/mutterdragare/hjulmutterdragare-iw-18v-2000043572",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Makita DTW285Z mutterdragare 18V utan batteri (PriceRunner lägst 2 099 kr av 16 butiker; K-Bygg 3 499 kr)",
+     "pris_sek": 2099,
+     "url": "https://www.pricerunner.se/pl/1258-4072112/Borrmaskiner-och-Skruvdragare/Makita-DTW285Z-Solo-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.1,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se sökutdrag (Makita DTW285Z Solo lägst 2 099 kr, 2026-09-14)",
+     "k-bygg.se (DTW285Z 3 499 kr, sökutdrag)",
+     "jula.se (Meec Tools IW-18V WORK 700 finns i formen, 800 Nm — pris ej läst)",
+     "biltema.se (Hjulmutterdragare IW 18V — pris ej läst, 403)",
+     "bygghemma.se mutterdragare-test (DeWalt 18V 450 Nm ~2 300 kr utan batteri)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [517, 632],
+    "pris_sek": 999,
+    "brutto_sek": [367, 482],
+    "be_cpa_sek": [367, 482],
+    "be_roas": 2.4,
+    "flerkop": false,
+    "returrisk": "låg — en variant, ingen storlek; ägaren vet om han har Makita 18V"
+   },
+   "meta_tanke": {
+    "hook": "Byter du vinterdäcken själv i år?",
+    "objekt_i_bild": "Makita-batteriet klickas i, hjulmuttern lossnar på en sekund",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "fyra muttrar av på 5 sekunder utan fälgkors — batteriet ägaren redan har"
+   },
+   "varfor": "Däckbytet är ett datumjobb som varje Makita-ägare 55+ med bil gör två gånger om året (första snö Norrland 5,9 v, Svealand 9,6 v); Makitas egen DTW285Z kostar 2 099–3 499 kr utan batteri, vår 999 på ägarens batteri (ankare 2,1–3,5×). Payoffen syns på 3 s — testar H12 rent på det tydligaste jobbet i säsongskartan.",
+   "huvudrisk": "Ankaret 2,1× ligger under H12:s 2,4×-mål och Biltema/Jula säljer formen med eget batteri runt 1 000 kr (pris ej läst); heron visar eget batteri, bar Makita-variant måste bekräftas; form=verktyg och Axels verktygslauncher under BE i facit.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 13,
+    "K2": 12,
+    "K3": 8,
+    "K4": 7,
+    "K5": 6,
+    "K6": 8,
+    "K7": 4,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (mutter/dragare/hjul: bara Stödhjul till grinden, Däckpump 519 = annan sak)",
+     "koncept.py sok 'mutterdragare', 'hjulmutter', 'wrench' (0 träffar)",
+     "fynd.json 09-11/09-12/09-13 (ingen)",
+     "uteslutningslistan (kompressor/däckpump struken separat)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012743142283.html",
+    "https://www.pricerunner.se/pl/1258-4072112/Borrmaskiner-och-Skruvdragare/Makita-DTW285Z-Solo-priser",
+    "https://k-bygg.se/produkt/mutterdragare-makita-dtw285z-18v/088381831765",
+    "https://www.jula.se/catalog/verktyg-och-maskiner/elverktyg-och-maskiner/mutterdragare/batteridrivna-mutterdragare/batteridriven-mutterdragare-031846/",
+    "https://www.biltema.se/verktyg/elverktyg/mutterdragare/hjulmutterdragare-iw-18v-2000043572"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Batterisekatören för Makita-batteri",
+   "objekt": "NYTT: Makita-batteriet — bärbuskarna och rosorna",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploration",
+   "hypotes_id": "H12",
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen",
+    "delade_variabler": [
+     "form verktyg, motoriserat",
+     "ankare ≥1,6× (Makita DUP361Z 7,5×)",
+     "prisband 500–999",
+     "synlig payoff på 3 s (25 mm-grenen klipps utan kraft)"
+    ],
+    "avvikelser": [
+     "kedjegolv under oss i samma form (Bosch EasyPrune 499 kr Bauhaus, Gardena AssistCut 1 172)",
+     "toppen för beskärning (fruktträd) är feb–mars = EARLY; hösten är bara bärbuskar/rosor/häck"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintertackning_vaxter",
+    "deadline_typ": "vintertäckning",
+    "veckor_kvar": 8.1,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012879880737",
+    "url": "https://www.aliexpress.com/item/1005012879880737.html",
+    "pris_usd": 48.02,
+    "sald": "ej mätt",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:30:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012879880737.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "25 mm klipp, borstlös, volframstålblad; heron visar Makita-blå sekatör med Makita-format batteri (ingen logga synlig) — bar variant enligt titel 'for Makita 18V Battery'",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "hero i kontext (kvinna klipper gren i trädgård) med rubriktext 'Efficient pruning / Wireless tools' uppe till höger — beskärbar; sekatören och batteriet syns tydligt"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Bauhaus — Bosch EasyPrune 25 mm 3,6 V (inbyggt batteri, rea 499 kr / ord. 649)",
+     "pris_sek": 499,
+     "url": "https://www.bauhaus.se/sekator-bosch-easy-prune-25mm-3-6v",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Makita DUP361Z sekatör 2×18V utan batteri (PriceRunner/Prisjakt lägst 7 500–7 750 kr; DUP362Z 16 499 kr Duab)",
+     "pris_sek": 7500,
+     "url": "https://www.bygghemma.se/tradgard-och-utemiljo/tradgardsredskap/beskarning/sekator/sekator-makita-dup361z-2x18v-utan-batteri/p-722130",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 7.5,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.dk/prisjagt.dk sökutdrag (DUP361Z 7 500–7 750 kr, 2026-09-14)",
+     "duab.se (Makita DUP362Z 16 499 kr)",
+     "bauhaus.se (Bosch EasyPrune 499 kr rea, sökutdrag)",
+     "amazon.se (Gardena AssistCut 25 mm 1 172 kr, sökutdrag)",
+     "gardenstore.se (503)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [625, 764],
+    "pris_sek": 999,
+    "brutto_sek": [235, 374],
+    "be_cpa_sek": [235, 374],
+    "be_roas": 3.3,
+    "flerkop": false,
+    "returrisk": "låg — en variant; risk att ägaren väntar med köpet till vårbeskärningen"
+   },
+   "meta_tanke": {
+    "hook": "Värker handen efter rosorna?",
+    "objekt_i_bild": "Makita-batteriet i sekatören, en 25 mm-gren klipps med ett fingertryck",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "gren i tjocklek som en tumme av på en sekund — ingen kraft i handen"
+   },
+   "varfor": "Störst ankarkvot i linsen: Makitas egen sekatör kostar 7 500–16 499 kr, vår 999 på ägarens batteri (7,5×) — och heron är den enda i linsen som redan är i kontext (klass 2). Testar H12 rent på en form ägaren aldrig skulle köpa från Makita själv.",
+   "huvudrisk": "Fel säsong för huvudjobbet (fruktträd feb–mars, EARLY) — hösten bär bara bärbuskar/rosor/häck; Bosch EasyPrune 499 kr hos Bauhaus är ett kedjegolv i exakt samma form under halva vårt pris, och sekatören ser ut som en pryl bredvid stångsågen (upplevt värde).",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 1,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 11,
+    "K2": 11,
+    "K3": 8,
+    "K4": 6,
+    "K5": 5,
+    "K6": 8,
+    "K7": 3,
+    "K8": 6,
+    "K9": 3,
+    "K10": 1,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (sekatör/grensax: 0 träffar)",
+     "koncept.py sok 'sekatör', 'grensax', 'pruning' (0 träffar)",
+     "fynd.json 09-11/09-12/09-13 (ingen)",
+     "uteslutningslistan"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012879880737.html",
+    "https://www.bygghemma.se/tradgard-och-utemiljo/tradgardsredskap/beskarning/sekator/sekator-makita-dup361z-2x18v-utan-batteri/p-722130",
+    "https://duab.se/skog-tradgard/tradgardsredskap/sekatorer/makita-sekator-dup362z-18v",
+    "https://www.bauhaus.se/sekator-bosch-easy-prune-25mm-3-6v",
+    "https://www.amazon.se/Gardena-AssistCut-batteridriven-besk%C3%A4rningssax-USB-C-laddningskabel/dp/B09TV879FD"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Länspumpen/dränkbara pumpen för Makita-batteri (adapterpump US $35,59 id 1005012370617725; YOFIDRA 50–80 L/min stål US $51,19 id 1005012389588138 — båda LIVE, heron sedda)",
+   "skal": "Adapterpumpen (landad 463–566) är samma pumpkropp som katalogens Batteridriven Bränslepump 469 kr (K0-kusin, lågt upplevt värde) och saknar Makita-ankare — Makita har ingen egen pump; närmaste märke Bosch GardenPump 18V bar 1 365 kr ger 1,5× mot 899, och Gardena regntunnepump 2000/2 18V P4A ligger på 619 kr bar (golv under oss). Stålvarianten landar 666–814 → BE-CPA 185–333 vid 999, under 190-golvet i nedre änden, och heron visar YOFIDRAs egna 21V-batterier. Ingen trea på någon axel → ingen LÅG-rad."
+  },
+  {
+   "namn": "Däckpumpen/kompressorn för Makita-batteri (US $51–71, id 1005013001276098 LIVE, hero sedd)",
+   "skal": "Makitas egen DMP180Z kostar 790–1 675 kr (PriceRunner) — ankaret ligger på eller under vårt möjliga pris (landad 740–1 020) och katalogen har redan Trådlös Däckpump 150 PSI 519 kr (samma jobb). Död på ekonomi och K0."
+  },
+  {
+   "namn": "Makita-batteri → 12 V/USB-adapter med uttag (US $18–29)",
+   "skal": "Landad 260–415, Makita ADP05 ~500 kr som ankare ger < 1,5×; pryl under 900 kr som ser ut som sitt pris — bryter H12:s golv (samma dom som kupévärmaren 09-12)."
+  },
+  {
+   "namn": "Värmefläkten/elementet för Makita-batteri (US $13–52)",
+   "skal": "Bara bil-defrosters (kupévärmaren struken 09-12) och en 'Cordless Car Heater' US $51,59 utan något märkesankare — Makita har ingen värmefläkt; landad ~746 utan ankare ger inget pris."
+  },
+  {
+   "namn": "Lövsugen för Makita-batteri (YOFIDRA 2-in-1 blås/sug US $66,59, id 1005010258452681 LIVE, hero sedd)",
+   "skal": "Heron visar en handhållen 1 200 W bil-dammsugare med sugmunstycken, inte en lövsug med säck — i praktiken Jetfläkten (709 kr i katalogen) med tillbehör = K0-dubblett. Makita DUB187Z lövblås/sug 1 999–2 749 kr finns som ankare men formen saknas på AliExpress för Makita-slot."
+  },
+  {
+   "namn": "Ljusstolpen/arbetsstrålkastaren för Makita-batteri",
+   "skal": "Sökningen gav bara små arbetslampor (US $7–18) i samma form som Arbetslampan 439 kr i katalogen, plus laserinstrument. Ingen ny form, K0."
+  },
+  {
+   "namn": "Jordborren/stolphålsborren för Makita-batteri (höstlökar, staketstolpar)",
+   "skal": "Ingen listning i formen — sökningarna gav skruvdragare, jordfräs och borrhammare. Inte verifierbar i dag."
+  },
+  {
+   "namn": "Vinschen för Makita-batteri (båtupptagningen)",
+   "skal": "Ingen listning i formen — sökningen gav mutterdragare och stångsågar."
+  },
+  {
+   "namn": "Tryckspruta/sprutflaska på Makita-batteri",
+   "skal": "Inte sökt — fel säsong (bevattning/besprutning är vår–sommar), som ordern sa."
+  }
+ ]
+}
