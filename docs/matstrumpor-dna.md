@@ -101,6 +101,11 @@ Ur Metas annonsbibliotek. **Antal annonser är inte spend och inte köp** — de
 - **Aldrig rea-race** (Husmans hemmaplan, urholkar 399 kr-integriteten). Offer
   uttrycks som antal: "Köp 1 Få 1" — aldrig procent, aldrig "spara X kr".
 - **Aldrig priser i identity-annonser** (012-serien).
+- **Aldrig "kul pryl till mig själv"-avataren** ("Mia, 24, köper för att det är
+  delbart"). Axels beslut 2026-09-14 efter redigerarens första strategiutkast:
+  den köparen betalar 79 kr på Temu, inte 399 kr hos oss, och hörnet ägs redan av
+  Temu/SweSocks/Amazon. Avataren är alltid **givaren** (VOC 2026-08-23). Format
+  och vändning ur utkastet behålls — det är captionen som byter mottagare.
 - Positiv/låg intensitet utan syfte = Husman-kopia utan deras varumärke
   (därför gjordes 012 → 012 v2). Undantag med syfte: Meet matstrumpor
   (tyst brandvideo, öronmärkt brand/retargeting — aldrig kall testbudget).
@@ -117,4 +122,7 @@ Ur Metas annonsbibliotek. **Antal annonser är inte spend och inte köp** — de
 
 ## Backlog
 
-Se `docs/matstrumpor-backlog.md`.
+Se `docs/matstrumpor-backlog.md` — från 2026-09-14 i Growth Guide-format (avatar,
+desire, awareness, typ) enligt `docs/os/ECOMTALENT-METOD.md`, kursen redigeraren
+tränas i. Matstrumpor i kursens ram: avatar = givaren, awareness = problem aware
+från oktober, sophistication nivå 4–5 → identitet + nisch.

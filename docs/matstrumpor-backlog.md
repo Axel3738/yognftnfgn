@@ -1,19 +1,34 @@
-# Matstrumpor — backlog (koncept som väntar)
+# Matstrumpor — backlog (koncept som väntar) · Growth Guide-format
 
 Regel: ett koncept föds aldrig ur tomma intet — det ska peka på sin källa
 (playbook-vinnare, bevisad line eller konkurrent-/VOC-signal).
 
-| Koncept | Källa | Status |
-|---|---|---|
-| Kräftskive-/säsongskrok (matlådan på kräftskivan, "en av kartongerna...") | Husmans säsongsannonser 🦞 + vår bluffpizza-mekanik (012 v2) | Väntar — säsong: aug–sep, brådskar |
-| Licensmotiv i presentbox mot småbarnsföräldrar | Husmans Babblarna-mönster + BubblyDoo i VOC-spaningen (licens = "kan inte köpas fel") | Väntar — kräver sortimentsbeslut av Axel |
-| "Presentkort 150 kr som ändå ger något att öppna"-vinkel (vi säljer eget presentkort) | VOC: "en immateriell gåva behöver ändå något fysiskt att öppna" | Väntar |
-| Värdecheck 50 kr vs KLUBB10 10 % i skrapkortet | Axels idé 2026-08-24, A/B-test föreslaget | Väntar på Axels val |
-| Julbatch (reverse-hook "För tidigt för julklappar?") | Q4-playbooken: Lovepop körde julhooks 25 aug; VOC "julklappshandeln ger hjärnsläpp" | Launch ~15 sep — bygg från v.36 |
-| Katalog/DPA-lager (evergreen-botten) | Q4-playbooken: West & Willow 308 d, Husman 2,5 mån — alla sunda konton har det | Väntar på Axels go |
-| Presentväljar-sektion + Q4-leveransbanner på sajten | Q4-playbooken: faith.se prisnav, givaren shoppar person+budget | Väntar på Axels go |
-| "Filma när de öppnar den" — öppningsögonblicket som keepsake + UGC-pipeline | Axels DTC-research: "spara en stund"-temat (Storyworth/ArtPix) applicerat utan produktändring | Väntar — kan in i nästa copybatch direkt |
-| Namn på lådan (custom-tjänst) | Theo Grace-mönstret + 012 v2:s namnlappsbild | Sortimentsbeslut Axel |
-| **017 — bekännelse-UGC ("skulle bara kolla → nu äger flera")** | SweSocks hundstrumpe-annons, `docs/swipes/swesocks-dog-socks-2026-08-27.md` | Manus klart — bildlagret väntar på videon |
-| **018 — "Hinner jag få den till jul?" (statisk + långtext)** | Ristals julspegel, `docs/swipes/ristal-julspegel-2026-08-27.md` | Copy klar — väntar på fjolårets säljsiffra + lagerfoto |
+Från 2026-09-14 i Ecomtalent-kursens "Growth Guide"-kolumner, så att Axel och
+redigeraren (blivande CS) pratar samma språk — se `docs/os/ECOMTALENT-METOD.md`.
+**Avatar** är alltid givaren om inget annat sägs (DNA:t förbjuder "kul pryl till mig
+själv"). **Awareness:** unaware / problem / solution / product / most aware.
+**Typ:** imitation (annans annons, vår version) / ideation (ur research) / iteration
+(på något som fått spend). Innan ett koncept briefas ska avatar, desire och awareness
+stå ifyllda — och raden "vad ger oss tro på att testet lyfter kontot" ska gå att
+skriva.
 
+| Koncept | Avatar | Desire | Awareness | Typ | Format | Källa | Status |
+|---|---|---|---|---|---|---|---|
+| Kräftskive-/säsongskrok (matlådan på kräftskivan, "en av kartongerna…") | givaren som tar med något till bordet | reaktionen vid bordet | problem | iteration (012 v2-mekaniken i ny säsong) | video (bluff-öppning) | Husmans säsongsannonser 🦞 + vår bluffpizza-mekanik (012 v2) | Väntar — säsong aug–sep, brådskar |
+| Licensmotiv i presentbox mot småbarnsföräldrar | förälder/släkting som ger till barn | kan inte köpas fel ("de har redan allt") | solution | ideation | sortiment | Husmans Babblarna-mönster + BubblyDoo i VOC-spaningen | Väntar — kräver sortimentsbeslut av Axel |
+| "Presentkort 150 kr som ändå ger något att öppna" | givaren som annars ger pengar/kort | något fysiskt att öppna | problem | ideation | static + primärtext | VOC: "en immateriell gåva behöver ändå något fysiskt att öppna" | Väntar |
+| ~~Värdecheck 50 kr vs KLUBB10 10 % i skrapkortet~~ | — | — | most | iteration (sajt) | sajt | Axels idé 2026-08-24 | **Inaktuell** — skrapkortet togs bort ur temat (commit `97f1eb6`) |
+| Julbatch (reverse-hook "För tidigt för julklappar?") | givaren med julklappsstress | slippa hjärnsläppet, vara klar tidigt | problem | ideation | video + static | Q4-playbooken: Lovepop körde julhooks 25 aug; VOC "julklappshandeln ger hjärnsläpp" | **Launch ~15 sep — bygg från v.36.** Ristal startade jul 26 okt; sju veckors skillnad, medvetet beslut krävs |
+| Katalog/DPA-lager (evergreen-botten) | alla som redan besökt sajten | — | product / most | — | DPA | Q4-playbooken: West & Willow 308 d, Husman 2,5 mån | Väntar på Axels go |
+| Presentväljar-sektion + Q4-leveransbanner på sajten | givaren som shoppar person + budget | slippa gissa | solution / product | — | sajt | Q4-playbooken: faith.se prisnav | Väntar på Axels go |
+| "Filma när de öppnar den" — öppningsögonblicket som keepsake + UGC-pipeline | givaren | se (och spara) reaktionen | problem / solution | ideation | copy + UGC-uppmaning | Axels DTC-research: "spara en stund"-temat (Storyworth/ArtPix) | Väntar — kan in i nästa copybatch direkt |
+| Namn på lådan (custom-tjänst) | givaren | att mottagaren känner sig sedd; kan inte köpas fel | solution | ideation | sortiment | Theo Grace-mönstret + 012 v2:s namnlappsbild | Sortimentsbeslut Axel |
+| **017 — bekännelse-UGC ("skulle bara kolla → nu äger flera")** | givaren (barnbarnen / dottern som mottagare) | reaktionen + används efteråt (byrålåde-skälet) | problem → most (bär hela vägen till Köp 1 Få 1) | imitation → ideation (Axels egna bodies) | UGC-video, talad | SweSocks hundstrumpe-annons, `docs/swipes/swesocks-dog-socks-2026-08-27.md`; slutversioner `docs/briefs/017-slutversioner.md` | Manus klart — bildlagret väntar på videon |
+| **019 — Presentkungen** | givaren som vill vara den som alltid ger bäst | identitet: "presentkungen i släkten" | problem → most | ideation (Axels original, ingen swipe) | talking head 9:16 ~45 s | `docs/briefs/017-slutversioner.md` | Manus klart — väntar på inspelning |
+| **018 — "Hinner jag få den till jul?" (statisk + långtext)** | den sena julklappsköparen | slippa stå utan | product / most | imitation (Ristal-mekaniken) | static + långtext | Ristals julspegel, `docs/swipes/ristal-julspegel-2026-08-27.md` | Copy klar — väntar på fjolårets säljsiffra + lagerfoto |
+| **Faceless mini-clip UGC (10 s, ingen dialog, vändningen direkt, hooken i captionen)** | givaren — captionen skrivs till den som ger, aldrig till "Mia 24" | mottagarens reaktion ("wait, those are socks?") | unaware-hook → problem (captionen kvalificerar givaren) | imitation | organic video 10 s, text-on-screen | Redigerarens strategy brief 2026-09-14; TikTok @sushistrap1 1,1M views + Temu-klipp 84K (views, inte köp — Temu är ingen prisreferens). Stöd i kontot: hold rate är enda urskiljande videometrik | Väntar — mottagarens reaktion i bild där det går. Hook-test: tre captions på samma klipp (budskap), inte tre klipp |
+| **022 — "Högen"** (de har redan allt → det man minns är stunderna → strumpor används) — *numrerad 022, inte 020: kontot har redan annonser 017v1/v2, 019, 020 och 021 (avlästa 2026-09-14)* | mor-/farföräldern eller släktingen som ger till barn som redan har allt, julklappshandlar tidigt | ge något som används och skapar en stund, inte ännu en pryl | problem → most | ideation | talking head ~35 s, funkar som text-on-screen | VOC "De har redan allt" + "Gemensam tid" + "Praktiskt och användbart", Axels vändning 2026-09-14 | **Brief klar** `docs/briefs/022.md` (tre bodies A/B/C, tre hookar var; sista kontrollrundan föll på spend-taket och texten granskades för hand) — Google Doc i batchmappen |
+| **024 — Julvinnaren som text-on-screen** (fjolårets julannons, ~100k spend, ROAS 3–5 enligt Axel; samma klipp, ingen voiceover, en mening i bild som byts var 3–5 s, VOC-meningen "en liten träffsäker gåva kopplad till ett samtal vi haft betyder mer än dyra saker" som bärande rad) | givaren | att mottagaren känner sig sedd; träffsäkerhet slår pris | product → most (varm publik som sett vinnaren) | iteration (Lindner & Co-mönstret: vinnaren återanvänds per högtid) | text-on-screen på vinnarens klipp | Axels julvinnare 2025 + VOC "Omtanke" | Video + transkript från Axel 2026-09-14 → `docs/source/matstrumpor-julvinnare-2025.md`. Textspår skrivs i Fable 5.1-workflow. Badge-texten ska vara dagens offer (Köp 1 Få 1), inte "Rea" |
+| **023 — "Samtalet"** (den lilla träffsäkra gåvan kopplad till något hon sagt) | givaren som lyssnade | att mottagaren känner sig sedd; träffsäkerhet slår pris | problem → most | ideation | talking head / text-on-screen | VOC "Omtanke — att bli sedd": "En liten träffsäker gåva kopplad till ett samtal vi haft betyder mer än dyra saker"; Axels body 2 ("sushi är typ hela hennes liv") | **Brief klar** `docs/briefs/023.md` (tre bodies A/B/C, tre hookar var, verifierad) — Google Doc i batchmappen |
+| **025 — "Hjärnan är tom"** (släkten frågar vad barnen vill ha, givaren står tom → lådan är svaret) | givaren i oktober när frågan kommer | slippa gissa fel, ha ett svar, vara klar tidigt | problem → most | ideation | faceless text-on-screen 12–15 s, 5 rader | VOC "Jag vet inte vad jag ska köpa": "släktingarna jagar julklappstips redan i oktober, hjärnan är tom", "högskoleprovet" | **Brief klar** `docs/briefs/025.md` (tre spår A/B/C à 5 rader, tre hookar var, verifierad efter två reparationsrundor) — Google Doc i batchmappen |
+| **Food-inspired statics ("visuellt aptitliga" strumpor som sushi)** | givaren | reaktionen — "ser ut som riktig sushi" | unaware-hook → problem | imitation | static, product-focused | Samma brief; London Sock Exchange som visuell referens; `offer_static_d3_v1` 2 köp på 104 kr (för tidigt, men en signal) | Väntar — genereras i Higgsfield. Rubriken bär 80 %: skriv den till givaren |

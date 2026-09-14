@@ -196,6 +196,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | **Copy-reglerna (obligatoriska för varje rad som skrivs)** | **`docs/copy-regler.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
 | Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |
+| Ecomtalent-kursen (redigerarens CS-utbildning) översatt till vårt system | `docs/os/ECOMTALENT-METOD.md` |
 | Hook-regeln (visuellt) | `docs/hook-visual-rule-2026-08-04.md` |
 | Avatar-research + VoC (Reddit) | `docs/avatar-research-*.md`, `docs/voc-reddit-*.md` |
 | Swipes från konkurrenter | `docs/swipes/` |
