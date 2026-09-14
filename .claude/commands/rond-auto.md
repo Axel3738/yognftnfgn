@@ -201,8 +201,10 @@ på `campaign.id`, fälten `amount_spent`, `omni_purchase`, `purchase_roas`,
   "break_even": 1.62,
   "spend_3d": "4 319,97 kr (SEK)",
   "raddningar_14d": 0,
+  "agarbeslut_idag": false,
   "annonser": [{ "id": "...", "namn": "...", "spend": "3 316,26 kr (SEK)",
-                 "kop": 5, "roas": "0.752354", "status": "ACTIVE" }]
+                 "kop": 5, "roas": "0.752354", "status": "ACTIVE",
+                 "roas_livstid": 1.405326 }]
 }
 ```
 
@@ -210,11 +212,18 @@ på `campaign.id`, fälten `amount_spent`, `omni_purchase`, `purchase_roas`,
 node agent/spendtjuv.mjs --jobb <fil.json> --json
 ```
 
-`raddningar_14d` = antal `TRAPPA_FORLANGNING`-rader för kampanjen de senaste
-14 dagarna (`senasteRadMedKod` i `agent/logg.mjs`). **Du räknar aldrig själv
-vilken annons som är tjuven** — talen står i utfallet.
+- `raddningar_14d` = antal `TRAPPA_FORLANGNING`-rader för kampanjen de senaste
+  14 dagarna (`senasteRadMedKod` i `agent/logg.mjs`).
+- `agarbeslut_idag` = `true` om det finns en `ATERAKTIVERA`-rad med **dagens
+  datum**, alltså om Axel själv startat om kampanjen i dag.
+- `roas_livstid` per annons = samma annons hämtad med `date_preset: "maximum"`.
+  **Hämta alltid den också** — ett extra Meta-anrop per kampanj i trappan.
+  Talet dömer ingenting, men märker en tjuv som *trött vinnare* så leveransen
+  kan säga "mata ersättarna" i stället för "creativen var dålig".
 
-Utfallet ger en av tre domar:
+**Du räknar aldrig själv vilken annons som är tjuven** — talen står i utfallet.
+
+Utfallet ger en av fyra domar:
 
 - **`PAUSA_TJUVAR`** — några få annonser åt spenden under break-even medan
   resten av kampanjen ligger över den. Pausa **bara** de annonser som står i
@@ -230,6 +239,14 @@ Utfallet ger en av tre domar:
   (för tunn, fortfarande under break-even, för många tjuvar, eller taket på
   tre räddningar per 14 dagar nått). Pausa hela kampanjen, verifiera, logga
   `STANG_AV` med utfallets motivering.
+- **`ROR_INGENTING`** — ägarskyddet har slagit till: Axel startade om kampanjen
+  i dag och det finns inga tjuvar att pausa. Rör ingenting, logga
+  `VANTA_AGARBESLUT` (`genomford: false`) och läs om i morgon.
+
+⚠️ **Ägarskyddet.** Har ägaren startat om kampanjen i dag stänger ronden
+ALDRIG av den samma dygn — att slå på en kampanj är ett beslut precis som att
+pausa en är det. Blödningen stoppas ändå genom att tjuvarna pausas. Koden
+sätter `agarskydd: true` i utfallet när det inträffat; säg det i leveransen.
 
 **Varför spärren finns (Axels larm 2026-09-14):** den gamla potentialkollen
 krävde en spendtjuv med **noll köp**. Samma morgon stängdes Övervakningskameran

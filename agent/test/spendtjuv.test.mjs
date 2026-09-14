@@ -63,16 +63,62 @@ test('Övervakningskameran: tre tjuvar pausas, den lönsamma kärnan räddas', (
   );
 });
 
-test('Adventskalendern: två tjuvar pausas, GT_1_H1 är för liten för att röras', () => {
+test('Adventskalendern: bara videon är tjuv — den statiska tvillingen dränerar för lite', () => {
   const utfall = spendtjuvsdom(ADVENTSKALENDERN);
-  assert.equal(utfall.dom, DOM.PAUSA_TJUVAR);
-  assert.deepEqual(
-    utfall.tjuvar.map((a) => a.namn).sort(),
-    ['Adventskalender_PD_2_1', 'Adventskalender_PD_2_H1'],
-  );
+  assert.deepEqual(utfall.tjuvar.map((a) => a.namn), ['Adventskalender_PD_2_H1']);
+  // PD_2_1 dränerar 205 kr på ETT köp i fönstret och har livstids-ROAS 3,04.
+  // Den är brus, inte en tjuv — grinden TJUV_MIN_DRANERING_SEK stoppar den.
+  assert.ok(!utfall.tjuvar.some((a) => a.namn === 'Adventskalender_PD_2_1'));
   // GT_1_H1 tog 9,6 % av spenden — under andelsgrinden, rörs inte.
   assert.ok(!utfall.tjuvar.some((a) => a.namn === 'Adventskalender_GT_1_H1'));
-  assert.ok(utfall.rest.roas > utfall.break_even, `rest-ROAS ${utfall.rest.roas}`);
+  // Utan videon ligger resten på 1,49 mot break-even 1,62 — kampanjen bär sig
+  // inte av egen kraft, så utan ägarskydd är domen avstängning.
+  assert.equal(utfall.dom, DOM.STANG_AV);
+});
+
+test('ägarskyddet: en kampanj ägaren startat om i dag stängs aldrig av', () => {
+  const utfall = spendtjuvsdom({ ...ADVENTSKALENDERN, agarbeslut_idag: true });
+  assert.equal(utfall.dom, DOM.PAUSA_TJUVAR);
+  assert.equal(utfall.agarskydd, true);
+  assert.deepEqual(utfall.tjuvar.map((a) => a.namn), ['Adventskalender_PD_2_H1']);
+  assert.match(utfall.motivering, /ÄGARSKYDD/);
+});
+
+test('ägarskyddet utan tjuvar rör ingenting alls', () => {
+  const utfall = spendtjuvsdom({
+    break_even: 2,
+    spend_3d: 1000,
+    agarbeslut_idag: true,
+    annonser: [{ namn: 'Liten', id: '1', spend: 1000, kop: 2, roas: 1.9, status: 'ACTIVE' }],
+  });
+  assert.equal(utfall.dom, DOM.ROR_INGENTING);
+  assert.equal(utfall.agarskydd, true);
+});
+
+test('en tjuv som gått plus över livstiden märks som trött vinnare', () => {
+  const utfall = spendtjuvsdom({
+    ...OVERVAKNINGSKAMERAN,
+    annonser: OVERVAKNINGSKAMERAN.annonser.map((a) => (
+      a.namn === 'Overvakningskamera_SP_2' ? { ...a, roas_livstid: '2.409417' } : a
+    )),
+  });
+  const sp2 = utfall.tjuvar.find((a) => a.namn === 'Overvakningskamera_SP_2');
+  assert.equal(sp2.trott_vinnare, true, 'livstids-ROAS 2,41 ligger över break-even 1,57');
+  // Den pausas ändå — den blöder nu och svälter ut ersättarna.
+  assert.equal(utfall.dom, DOM.PAUSA_TJUVAR);
+});
+
+test('en liten dränering är brus även om ROAS ser hemsk ut', () => {
+  const utfall = spendtjuvsdom({
+    break_even: 1.6,
+    spend_3d: 3000,
+    annonser: [
+      // 400 kr spend, ROAS 0,2 → dränerar bara 350 kr. Under grinden.
+      { namn: 'Liten usling', id: '1', spend: 400, kop: 1, roas: 0.2, status: 'ACTIVE' },
+      { namn: 'Bra', id: '2', spend: 2600, kop: 9, roas: 2.4, status: 'ACTIVE' },
+    ],
+  });
+  assert.equal(utfall.dom, DOM.INGEN_TJUV);
 });
 
 test('den gamla regeln hade fällt båda fallen — tjuvarna har köp', () => {
@@ -101,10 +147,10 @@ test('jämnt fördelad förlust ger ingen tjuv — kampanjen är problemet', () 
 
 test('för många tjuvar är ett kampanjproblem', () => {
   const annonser = Array.from({ length: 6 }, (_, i) => ({
-    namn: `A${i}`, id: String(i), spend: 500, kop: 1, roas: 0.5, status: 'ACTIVE',
+    namn: `A${i}`, id: String(i), spend: 1000, kop: 1, roas: 0.5, status: 'ACTIVE',
   }));
-  annonser.push({ namn: 'Vinnare', id: 'v', spend: 500, kop: 3, roas: 5, status: 'ACTIVE' });
-  const utfall = spendtjuvsdom({ break_even: 1.6, spend_3d: 3500, annonser });
+  annonser.push({ namn: 'Vinnare', id: 'v', spend: 1000, kop: 3, roas: 5, status: 'ACTIVE' });
+  const utfall = spendtjuvsdom({ break_even: 1.6, spend_3d: 7000, annonser });
   assert.equal(utfall.dom, DOM.STANG_AV);
   assert.match(utfall.motivering, /kampanjproblem/);
 });

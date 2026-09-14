@@ -52,6 +52,20 @@ export const TJUV_MIN_SPENDANDEL = 0.10;
 export const TJUV_MARGINAL = 0.9;
 
 /**
+ * ...och dränera minst så här många KRONOR i fönstret.
+ *
+ * Det här är grinden som skiljer en riktig tjuv från en tunn avläsning. En
+ * annons med 513 kr spend och ETT köp kan visa ROAS 0,97 i dag och 3,04 sett
+ * över livstiden — ett enda sent attribuerat köp vänder talet. Den dränerar
+ * 205 kr och är brus. En annons som dränerar 2 078 kr är ett beslut.
+ *
+ * *(Lagt till 2026-09-14 samma dag som spärren byggdes: första skarpa körningen
+ * pausade Adventskalender_PD_2_1 på 1 köp i fönstret, trots livstids-ROAS 3,04.
+ * Det var precis det misstag spärren finns för att hindra, en nivå ner.)*
+ */
+export const TJUV_MIN_DRANERING_SEK = 500;
+
+/**
  * Fler tjuvar än så och det är inte längre några enskilda annonser som är
  * problemet — då är det kampanjen. Då gäller trappan som vanligt.
  */
@@ -72,6 +86,7 @@ export const DOM = {
   PAUSA_TJUVAR: 'PAUSA_TJUVAR',
   STANG_AV: 'STANG_AV',
   INGEN_TJUV: 'INGEN_TJUV',
+  ROR_INGENTING: 'ROR_INGENTING',
 };
 
 /** Svenskt heltal med tusenmellanslag. */
@@ -93,6 +108,7 @@ export function lasAnnons(rad) {
   const spend = lasBelopp(rad.spend ?? rad.amount_spent);
   const roasRå = lasBelopp(rad.roas ?? rad.purchase_roas);
   const kopRå = lasBelopp(rad.kop ?? rad.omni_purchase);
+  const roasLivstid = lasBelopp(rad.roas_livstid);
   const status = String(rad.status ?? rad.effective_status ?? '').toUpperCase();
   return {
     id: String(rad.id ?? ''),
@@ -101,6 +117,10 @@ export function lasAnnons(rad) {
     spend: Number.isFinite(spend) ? spend : null,
     roas: Number.isFinite(roasRå) ? roasRå : 0,
     kop: Number.isFinite(kopRå) ? kopRå : 0,
+    // Livstids-ROAS är frivillig. Den dömer aldrig — den märker en tjuv som
+    // en TRÖTT VINNARE, så leveransen kan säga "mata ersättarna" i stället för
+    // "den här creativen var dålig".
+    roas_livstid: Number.isFinite(roasLivstid) ? roasLivstid : null,
     // Intäkt räknas som spend × ROAS. omni_purchase_values är buggig i det här
     // kontot (100× för lågt på 5 av 8 rader) — se CLAUDE.md.
     intakt: Number.isFinite(spend) && Number.isFinite(roasRå) ? spend * roasRå : 0,
@@ -126,7 +146,7 @@ export function dranering(annons, breakEven) {
  * @param {number} jobb.break_even   kampanjens break-even-ROAS ur kampanjnamnet
  * @param {number} [jobb.raddningar_14d]  antal PAUSA_TJUVAR-rader senaste 14 dygnen
  */
-export function spendtjuvsdom(jobb = {}) {
+function raknaDom(jobb = {}) {
   const breakEven = lasBelopp(jobb.break_even);
   const kampanjSpend = lasBelopp(jobb.spend_3d);
   const raddningar = Number(jobb.raddningar_14d ?? 0);
@@ -156,7 +176,15 @@ export function spendtjuvsdom(jobb = {}) {
     .filter((a) => a.spend >= TJUV_MIN_SPEND_SEK)
     .filter((a) => a.spend / kampanjSpend >= TJUV_MIN_SPENDANDEL)
     .filter((a) => a.roas < tak)
+    .filter((a) => dranering(a, breakEven) >= TJUV_MIN_DRANERING_SEK)
     .sort((a, b) => dranering(b, breakEven) - dranering(a, breakEven));
+
+  // Tjuvar som gick plus över livstiden är trötta vinnare, inte dåliga
+  // creatives. De pausas ändå — de blöder nu och svälter ut ersättarna — men
+  // leveransen ska säga varför, så nästa batch matar rätt spår.
+  for (const a of tjuvar) {
+    a.trott_vinnare = Number.isFinite(a.roas_livstid) && a.roas_livstid >= breakEven;
+  }
 
   if (tjuvar.length === 0) {
     return {
@@ -221,6 +249,34 @@ export function spendtjuvsdom(jobb = {}) {
   };
 }
 
+/**
+ * Fäller domen — och lägger på ägarskyddet.
+ *
+ * **Ägarskyddet (Axels beslut 2026-09-14).** Har ägaren själv startat om
+ * kampanjen i dag (`agarbeslut_idag`, dvs en `ATERAKTIVERA`-rad med dagens
+ * datum i budgetloggen) får ronden ALDRIG stänga av den samma dygn. Att slå
+ * på en kampanj är ett beslut precis som att pausa en är det — och en rutin
+ * som river upp ägarens beslut några timmar senare är trasig, oavsett vad
+ * siffrorna säger. Blödningen stoppas ändå: finns tjuvar pausas de.
+ */
+export function spendtjuvsdom(jobb = {}) {
+  const utfall = raknaDom(jobb);
+  if (!jobb.agarbeslut_idag) return utfall;
+  if (utfall.dom !== DOM.STANG_AV && utfall.dom !== DOM.INGEN_TJUV) return utfall;
+
+  const kanPausa = utfall.tjuvar?.length > 0 && utfall.tjuvar.length <= MAX_TJUVAR;
+  return {
+    ...utfall,
+    dom: kanPausa ? DOM.PAUSA_TJUVAR : DOM.ROR_INGENTING,
+    agarskydd: true,
+    motivering: `${utfall.motivering} ⚠️ ÄGARSKYDD: ägaren startade om kampanjen i dag, så ronden stänger inte av den. ${
+      kanPausa
+        ? 'Tjuvarna pausas ändå så blödningen stoppas — men resten av kampanjen bär sig inte ännu, så läs om i morgon.'
+        : 'Ingenting rörs i dag.'
+    }`,
+  };
+}
+
 /** Rapporten en människa läser. */
 export function formatera(utfall, jobb = {}) {
   const rader = [];
@@ -233,7 +289,8 @@ export function formatera(utfall, jobb = {}) {
     rader.push('');
     rader.push('Tjuvar:');
     for (const a of utfall.tjuvar) {
-      rader.push(`  ⛔ ${a.namn.padEnd(34)} ${heltal(a.spend).padStart(7)} kr  ${a.kop} köp  ROAS ${decimal(a.roas)}`);
+      const trott = a.trott_vinnare ? `  ← trött vinnare (livstid ${decimal(a.roas_livstid)})` : '';
+      rader.push(`  ⛔ ${a.namn.padEnd(34)} ${heltal(a.spend).padStart(7)} kr  ${a.kop} köp  ROAS ${decimal(a.roas)}${trott}`);
     }
   }
   if (utfall.raddade?.length) {
