@@ -30,7 +30,8 @@ VA-listan i de rapporterna den här personen ska beta av.
    gratis. Golvet ($350 = 100 h) är priset för tillgängligheten; timlönen är
    priset för arbetet. Annonsen säger rakt ut "om jag går tyst är det mitt
    problem, inte din hyra" — det är den raden som gör flexibiliteten säljbar.
-2. **$3,50/h i start.** Över snittet för all-around-VA på OnlineJobs.ph, med
+2. **$3,50/h i start — bekräftad av Axel 2026-09-14** (valde "ja, kör" ur
+   $3,00 / $3,50 / $4,00). Över snittet för all-around-VA på OnlineJobs.ph, med
    flit: personlighet > skills betyder att vi konkurrerar om *personen*, och
    den här personen får erbjudanden. Trappa $3,50 → $3,75 (1 mån) → $4,00
    (3 mån) → $4,35 (6 mån). Ett normalt 170-timmarsmånad landar på
