@@ -753,29 +753,34 @@
         "snabbtorkande-sportshorts-andningsbara"
       ]
     },
-    "fallback_comment": "Storsäljarna mätt ur ordrarna 2026-07-16 → 2026-09-13 (530 / 389 / 211 / 196 ordrar).",
+    "fallback_comment": "Storsäljarna över 299 kr, mätt ur ordrarna 2026-09-07 → 2026-09-14 (90 / 71 / 43 / 32 st). Hjulsidan läser sin lista levande ur ordrarna vid varje publicering; mejlet är statiskt och tar den här. Uppdatera vid nästa /mejl om listan ändrats — node mejl/hjul-publicera.mjs skriver de aktuella till mejl/storsaljare.json.",
     "fallback": [
+      "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+      "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "batmotorskydd-420d-heltackande-for-utombordare",
+      "mc-kapell-220-120-regn-damm-uv",
       "marin-motorholje-420d-universellt-skydd",
-      "fiskespohallare-4-pack-kraftig-forvaring",
-      "strandtofflor-for-herr-halkfria-tradgardsskor",
-      "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford"
-    ]
+      "strandtofflor-for-herr-halkfria-tradgardsskor"
+    ],
+    "min_pris": "erbjudande",
+    "min_pris_comment": "Förslagen i mejlet ska själva nå erbjudandets gräns (299 kr) — texten lovar att en räcker. \"erbjudande\" = erbjudande.minsta_kop_sek, ett tal = egen gräns, 0 = ingen. Axels beslut 2026-09-14."
   },
   "lage": {
     "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
-    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v4 (knappen till lyckohjulet, tio vinster som bildrad) inklistrad av Cowork 2026-09-14 i de tre erbjudandemallarna, verifierad efter omladdning: alla fyra kontrollsträngarna, teckenantal 87 978 / 81 234 / 80 438 (ett mindre än källan, filens avslutande radbrytning) och checksumma identisk med GitHub-filen. Ämnesraderna stod redan rätt. De fem andra mallarna har v2 från 2026-09-12 och är oförändrade i sak. Levererad ligger på adressen email_templates/shipment_delivered i admin.",
-    "inklistrade_aldre_comment": "v3 från 2026-09-13 — knappen går till kollektionen i stället för hjulet, och visar fyra gratisprodukter i stället för hjulets tio vinster",
-    "inklistrade_aldre": {},
+    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. De fem mallarna utan erbjudande har v2 från 2026-09-12 och är oförändrade i sak. De tre erbjudandemallarna väntar på v5 (se inklistrade_aldre).",
+    "inklistrade_aldre_comment": "v4 från 2026-09-14 (inklistrad av Cowork, verifierad, teckenantal 87 978 / 81 234 / 80 438) — den version kunden fick mejlet med. v5 rättar fyra fel ur Gmail-PDF:en: rubriken 'Passar ihop med det du köpte' skrevs innan produktkopplingen räknats (visade fallback-rubriken), en 289 kr-produkt låg under 'en räcker till 299 kr', klockslaget stod en timme fel, och mallen var inte mobilanpassad",
+    "inklistrade_aldre": {
+      "orderbekraftelse": "2026-09-14 v4",
+      "fraktbekraftelse": "2026-09-14 v4",
+      "levererad": "2026-09-14 v4"
+    },
     "inklistrade": {
       "fraktuppdatering": "2026-09-12 v2",
       "ute_for_leverans": "2026-09-12 v2",
       "aterbetalning": "2026-09-12 v2",
-      "avbruten_order": "2026-09-12 v2",
-      "orderbekraftelse": "2026-09-14 v4",
-      "fraktbekraftelse": "2026-09-14 v4",
-      "levererad": "2026-09-14 v4"
+      "avbruten_order": "2026-09-12 v2"
     },
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",
@@ -795,9 +800,9 @@
     "mallbranding_gjort": "Cowork 2026-09-13: sidan heter 'Anpassa e-postmallar' (knapp uppe till höger på Kundaviseringar). Logotyp = Namnlos_design_44_67839842-4d7e-4a47-bad7-edcdcd627348.png (samma fil som mallarna länkar), Logotypstorlek 180 → 240, Varumärkeshantering → Accentfärg #1990C6 → #dd1d1d. Bekräftat 'Inställningar sparade'.",
     "mallbranding_comment": "Datum när logga + accentfärg satts under Inställningar → Notiser → Kundnotiser → Anpassa e-postmall. Den inställningen gäller ALLA Shopifys standardmallar (orderfaktura, betalningsfel, kontomejl, returer, lokal leverans) — de vi klistrat in bär sin egen HTML och påverkas inte. null ⇒ sidan säger att det återstår.",
     "testmejl_skickat": "2026-09-12",
-    "testmejl_aktuell_version": "2026-09-14",
-    "testmejl_aktuell_version_gjort": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel.",
-    "testmejl_aktuell_version_comment": "Sätt till datumet när testmejlet skickats på de mallar som ligger uppe NU. null ⇒ sidan säger att det återstår. Testmejlet på v3 är INTE skickat. Cowork tappade Chrome-kopplingen precis innan klicket 2026-09-13. Det är testmejlet som visar två saker som inte går att mäta någon annanstans: att line.product.handle finns i notis-Liquid (rätt komplement = ja, 'Populärast just nu' = nej) och i vilken tidszon date: '%H:%M' skriver klockslaget.",
-    "hjul_url": "https://baverbutiken.se/pages/din-gratisprodukt"
+    "testmejl_aktuell_version": null,
+    "testmejl_aktuell_version_comment": "Sätt till datumet när testmejlet skickats på de mallar som ligger uppe NU. null ⇒ sidan säger att det återstår. v4-testmejlet 2026-09-14 gav Gmail-PDF:en som avslöjade fyra fel (se inklistrade_aldre_comment); v5-testmejlet är inte skickat. Testmejlet visar det som inte går att mäta någon annanstans: att line.product.handle finns i notis-Liquid (rätt komplement = ja), klockslaget (ska stämma med svensk tid) och hur mejlet ser ut på mobilen.",
+    "hjul_url": "https://baverbutiken.se/pages/din-gratisprodukt",
+    "testmejl_aktuell_version_gjort_v4": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel."
   }
 }

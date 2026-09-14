@@ -344,6 +344,29 @@ bokfört i `konfig.json → lage`:
   teater, och rabatten dras först i kassan efter e-post (inte i varukorgen).
   Ett äldre skrapkort-popup finns i det opublicerade temat "Live + skrapkort
   2026-08-23" (`sections/skrapkort.liquid`) och kan återanvändas som mönster.
+- **2026-09-14 (v5), byggd ur Gmail-PDF:en av v4-testmejlet.** Fyra fel
+  rättade i `mallar.mjs`: (1) rubriken över komplementen skrevs i Liquid
+  *innan* `komp_okand` räknats, så kunden såg fallback-rubriken fast
+  produkterna var rätt — `samla`-blocket ligger nu före rubriken; (2) ett
+  289 kr-förslag stod under "en av de här räcker till 299 kr" —
+  `komplement.min_pris: "erbjudande"` filtrerar katalogen på
+  `minsta_kop_sek`, och fallback-listan är bytt till sex produkter ≥ 299 kr;
+  (3) klockslaget "Beställ före kl" stod en timme fel — `date: '%s'` på
+  `created_at` räknar i UTC medan `'%H'` skriver butikens tid, så mallen
+  mäter skillnaden själv och lägger på den (`tz_skift`); (4) mallen var inte
+  mobilanpassad — `<style>` med media query ≤ 480 px (`bb-kort` två i bredd,
+  `bb-vinst` tre i bredd, knappen full bredd, mindre rubrik). Teckenantal
+  83 177 / 76 381 / 75 578. Kollektionssidans text är omskriven till
+  hjulflödet (länk till hjulet, 299 kr-regeln, "samma e-postadress") och
+  uppdaterad i Shopify samma dag. **Inte inklistrad ännu** — Cowork-prompten
+  är uppdaterad (kontrollsträngen är `tz_skift`; steg A är borttaget, redan
+  gjort). De fem mallarna utan erbjudande fick också mobil-CSS:en i bygget
+  men behöver inte klistras om — skillnaden är bara marginaler på mobil.
+  **Kundklagomålet 2026-09-14** ("wants to use TACKIGEN but can't add to
+  cart"): koden läst via API samma dag — ACTIVE, 0 användningar,
+  kollektionen 10 köpbara produkter, `/cart/add.js` svarar 200. Koden är
+  hel. Troligaste orsak: bara vinsten i korgen (kräver ≥ 299 kr annat), eller
+  annan e-post än ordern. Kundens exakta ord saknas.
 
 ## Nycklarna
 

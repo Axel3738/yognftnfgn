@@ -22,10 +22,11 @@ const e = konfig.erbjudande;
 
 export function beskrivning(k) {
   const o = k.erbjudande;
+  const hjul = `${k.butik.url}/pages/${k.hjul.handle}`;
   return [
-    `<p><strong>Har du handlat hos oss förut?</strong> Då väljer du en av produkterna nedan gratis vid nästa köp.</p>`,
-    `<p>Så funkar det: lägg valfria varor för minst ${o.minsta_kop_sek} kr i korgen, lägg till en produkt härifrån och ange koden <strong>${o.kod}</strong> i kassan. Priset på den dras av automatiskt.</p>`,
-    `<p>Gäller en gång per kund, för dig som lagt minst en order hos ${k.butik.namn} tidigare.</p>`,
+    `<p><strong>Har du handlat hos oss förut?</strong> Då får du en av produkterna nedan gratis vid nästa köp — vilken avgör <a href="${hjul}">lyckohjulet</a>.</p>`,
+    `<p>Så funkar det: <a href="${hjul}">snurra hjulet</a>, lägg vinsten i korgen och handla för minst ${o.minsta_kop_sek} kr till. Koden <strong>${o.kod}</strong> läggs på automatiskt och vinsten blir 0 kr i kassan. Ligger bara vinsten i korgen står den till fullt pris tills du lagt till varor för ${o.minsta_kop_sek} kr.</p>`,
+    `<p>Gäller en gång per kund, för dig som lagt minst en order hos ${k.butik.namn} tidigare, med samma e-postadress som förra ordern.</p>`,
   ].join('\n');
 }
 

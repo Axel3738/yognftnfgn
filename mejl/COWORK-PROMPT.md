@@ -11,9 +11,10 @@ en flik och går att markera med Ctrl+A.
 
 **Länkarna pekar på en gren.** Byt `claude/fervent-bardeen-pzyuql` mot
 `main` när grenen mergats, annars klistrar Cowork in en gammal version.
-Tecknantalen nedan är från bygget 2026-09-13 (**v4: knappen går till
-lyckohjulet**) — bygger du om mallarna, kör `node -e` på filerna och
-uppdatera dem, annars stämmer inte kontrollen.
+Tecknantalen nedan är från bygget 2026-09-14 (**v5: mobilanpassad, rätt
+rubrik över komplementen, bara förslag ≥ 299 kr, rätt klockslag**) —
+bygger du om mallarna, kör `wc -c mejl/output/*.liquid` och uppdatera dem,
+annars stämmer inte kontrollen.
 
 ---
 
@@ -40,9 +41,10 @@ INNAN du sparar**: rätt längd (se tabellens teckenantal) och rätt innehåll.
 Stämmer det inte: kopiera om, spara inte.
 
 **Börja med att kolla vad som redan sitter.** Öppna Orderbekräftelse →
-Redigera kod. Innehåller brödtexten redan `/pages/din-gratisprodukt` är
-mallarna inklistrade sedan tidigare — hoppa då över tabellen helt och gå
-direkt till **A** och **B** längre ner. Saknas den: gör tabellen.
+Redigera kod. Innehåller brödtexten redan texten `tz_skift` är den nya
+versionen inklistrad sedan tidigare — hoppa då över tabellen helt och gå
+direkt till **B** längre ner. Saknas den (den gamla versionen innehåller
+`/pages/din-gratisprodukt` men inte `tz_skift`): gör tabellen.
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
@@ -74,31 +76,20 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 **Kontrollera** (samma fyra i alla tre mallarna, efter omladdning):
 
 - `/pages/din-gratisprodukt`
-- `Passar ihop med det du köpte`
-- `Beställ före kl`
+- `tz_skift`
+- `max-width: 480px`
 - `plus: 604800`
 
 Antal tecken efter inklistring, som extra kontroll: Orderbekräftelse
-**87 979**, Leveransbekräftelse **81 235**, Levererad **80 439**. Shopifys
+**83 177**, Leveransbekräftelse **76 381**, Levererad **75 578**. Shopifys
 redigerare visar **ett tecken mindre** än källan (filens avslutande
 radbrytning följer inte med) — det är rätt. Skiljer det mer än så är det
 fel innehåll i urklippet.
 
-**När alla tre är klara**, gör två saker till:
+Logga och accentfärg under **Anpassa e-postmallar** är redan gjorda
+(2026-09-13) — rör dem inte.
 
-**A. Logga och färg på Shopifys egna mallar.** Shopify har ett tjugotal
-kundnotiser; bara åtta är våra. Resten är standardmallar och ska få butikens
-logga och färg via en enda inställning:
-
-1. **Inställningar** → **Notiser** → **Kundaviseringar**.
-2. Klicka **Anpassa e-postmallar** (Customize email templates), uppe till höger.
-3. **Logotyp**: ladda upp butikens logga, bredd omkring **240 px**.
-4. **Accentfärg**: skriv **#dd1d1d**.
-5. **Spara**.
-
-Finns knappen inte där, eller heter den något annat: leta efter logotyp- och
-färginställningen på sidan Kundaviseringar, och beskriv vad du ser i stället för
-att gissa dig fram.
+**När alla tre är klara**, gör en sak till:
 
 **B. Testmejlet.** Gå in på **Orderbekräftelse** och klicka **Skicka
 testmejl** (Send test email) uppe till höger på förhandsgranskningssidan.
@@ -109,12 +100,8 @@ Bara den mallen.
 1. Vilka av de tre som sparades och verifierades efter omladdning.
 2. Tecknantalet du såg per mall.
 3. Om någon av de fyra textbitarna saknades, och i vilken mall.
-4. Om loggan och accentfärgen sparades (A), och vad inställningen hette.
-5. Om testmejlet gick iväg, och till vilken adress Shopify sa att det gick.
-6. Hela listan med kundnotiser du ser under Kundaviseringar, sektion för sektion,
-   med namnen som de står i admin. Den listan finns inte i något API, så det
-   är enda sättet att veta vilka mallar butiken faktiskt har.
-7. Allt som såg konstigt ut, även småsaker.
+4. Om testmejlet gick iväg, och till vilken adress Shopify sa att det gick.
+5. Allt som såg konstigt ut, även småsaker.
 
 Om Shopify vägrar spara (för stor mall, felmeddelande, snurrande knapp):
 spara inte om, utan skriv exakt vad felmeddelandet sa.

@@ -1,4 +1,4 @@
-# Mejlmallarna — byggda 2026-09-14 06:49 UTC
+# Mejlmallarna — byggda 2026-09-14 15:20 UTC
 
 Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratisprodukt
 
@@ -15,16 +15,16 @@ Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratispr
 - Nödregnjacka – Lätt & Packbar Regnskydd — 199 kr (nodregnjacka-latt-packbar-regnskydd)
 
 ## Komplement (en till + tre som passar ihop)
-- 205 produkter med egen lista (103 per handle, 102 per kollektion), 2 utan — de får storsäljarna
-- Katalog i mallen: 140 produkter
-- Fallback: Marin Motorhölje 420D (marin-motorholje-420d-universellt-skydd), Fiskespöhållare 4-Pack (fiskespohallare-4-pack-kraftig-forvaring), Strandtofflor för Herr (strandtofflor-for-herr-halkfria-tradgardsskor)
+- 204 produkter med egen lista (103 per handle, 102 per kollektion), 2 utan — de får storsäljarna
+- Katalog i mallen: 105 produkter
+- Fallback: IBC-tanköverdrag 1000 L (ibc-tankoverdrag-1000-l-stoppar-alger-uv), Övervakningskamera Trådlös (overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning), Båtmotorskydd 420D (batmotorskydd-420d-heltackande-for-utombordare)
 
 ## Mallar
-- `orderbekraftelse.liquid` → Orderbekräftelse / Order confirmation · ämne: {% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}{{ name }} är mottagen – vi packar · 86 kB
-- `fraktbekraftelse.liquid` → Leveransbekräftelse / Shipping confirmation · ämne: Ditt paket är på väg · 79 kB
-- `fraktuppdatering.liquid` → Leveransuppdatering / Shipping update · ämne: Ny info om ditt paket · 5 kB
-- `ute_for_leverans.liquid` → Ute för leverans / Out for delivery · ämne: Paketet kommer idag · 5 kB
-- `levererad.liquid` → Levererad / Delivered · ämne: Paketet är levererat · 79 kB
-- `overgiven_kassa.liquid` → Övergiven kassa / Abandoned checkout · ämne: Du glömde något i kassan · 5 kB
-- `aterbetalning.liquid` → Återbetalning / Refund notification · ämne: {{ amount | money }} är återbetalat · 4 kB
-- `avbruten_order.liquid` → Order annullerad / Order cancelled · ämne: Din order är avbruten · 4 kB
+- `orderbekraftelse.liquid` → Orderbekräftelse / Order confirmation · ämne: {% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}{{ name }} är mottagen – vi packar · 80 kB
+- `fraktbekraftelse.liquid` → Leveransbekräftelse / Shipping confirmation · ämne: Ditt paket är på väg · 74 kB
+- `fraktuppdatering.liquid` → Leveransuppdatering / Shipping update · ämne: Ny info om ditt paket · 6 kB
+- `ute_for_leverans.liquid` → Ute för leverans / Out for delivery · ämne: Paketet kommer idag · 6 kB
+- `levererad.liquid` → Levererad / Delivered · ämne: Paketet är levererat · 73 kB
+- `overgiven_kassa.liquid` → Övergiven kassa / Abandoned checkout · ämne: Du glömde något i kassan · 6 kB
+- `aterbetalning.liquid` → Återbetalning / Refund notification · ämne: {{ amount | money }} är återbetalat · 5 kB
+- `avbruten_order.liquid` → Order annullerad / Order cancelled · ämne: Din order är avbruten · 5 kB
