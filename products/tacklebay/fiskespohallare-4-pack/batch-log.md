@@ -304,3 +304,16 @@ Samma 10 rader med Bäverbutikens prefix `Rodholder_` ligger kvar i
 Discord: `#annons-uppladdning` på TackleBay — OPS (meddelande
 `1549033179296440364`), **med ping** under ACTION NEEDED. Kö-JSON:
 `factory/output/tacklebay/leverans-2026-09-14.json`.
+
+---
+
+## Översättning NO — 2026-09-14 16:08 (`/ops-oversatt tacklebay/fiskespohallare-4-pack`, körning nr 3)
+
+Kön `SE-ACTIVE to be translated`: **0 rader** (bekräftat med filtrerad Notion-fråga över alla typer;
+hubben har 100+ rader, 7 i `To be Reviewed`). NO-kampanjen `TACKLEBAY_NO_Spöhållaren` ACTIVE, 5 adsets.
+Gårdagens `TackleBayRod_NO_PD_46_H1` är nu fullt ACTIVE (videobearbetningen klar).
+Inget översatt, inget uppladdat, HeyGen 8 166 → 8 166 credits.
+Orsak: leveransrundan 14:00 stoppade dagens två videor (PD_45_H1, PD_42_H1) på priset och skickade dem
+till `Draft` — inget nådde SE, alltså inget till NO.
+Batchfiler: `market-expansion/ops/tacklebay/2026-09-14/`. Discord: `#annons-uppladdning` på
+TackleBay — OPS (meddelande 1549059867677823047), ingen ping.
