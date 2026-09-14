@@ -1,0 +1,367 @@
+{
+ "agent": "R — syskonen till vinnarna vid uppställningen (H02/H08)",
+ "datum": "2026-09-14",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Fönstertermomattan för husvagn, 2-pack",
+   "objekt": "NYTT: Husvagnens sidofönster (3–5 fönster per vagn; kondens, frost och UV på akrylrutorna under vinterståndet — samma ägare som Taköverdraget och Termoskyddet)",
+   "form": "överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm / Taköverdraget för Husvagn",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (husvagn 100–400 tkr)",
+     "formsydd termomatta som hängs utanpå rutan — samma form som Termoskyddet, nytt fönster",
+     "hårt datum: uppställning 10–31 okt (NOW 3,7 v)",
+     "old way: ingenting eller bubbelplast/aluminiumfolie tejpad på insidan",
+     "fackhandelsankare Hindermann 539–760 kr per matta, inget kedjegolv (Biltema/Jula saknar formen — ej mätt i dag, 403)",
+     "ägare 55+ i småhus; 283 840 husvagnar (objekt.json, Trafikanalys 2024)"
+    ],
+    "avvikelser": [
+     "flera fönster per vagn → 2-pack i stället för ett stycke",
+     "storlekar i listningen ej sedda (Hindermann säljer 8 storlekar) — variantrisk"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012434201685",
+    "url": "https://www.aliexpress.com/item/1005012434201685.html",
+    "pris_usd": 15.45,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:32:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012434201685.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ej sedda i sökträff/titel — 'Motorhome Window Insulation Pads', troligen en eller få storlekar; Hindermann-formen finns i 90×55 till 180×80 cm, så storleken måste kontrolleras med leverantören. Alternativ listning öppnad: 1005012926951426 (11,99 USD, samma titel, sida svarar med titel + hero — hero ej nedladdad = SOKTRAFF); 1005012554888812 (17,79 USD, identisk hero)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är helt textfri: silvermattan hänger utanpå ett husvagnsfönster från markislisten, med snören ner till hörnen — exakt Hindermann-formen. Bara ett 'MONSTERLAND'-märke på vagnen syns under mattan; går att beskära eller lämna."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Campingvaruhuset — Hindermann Thermomatta för husvagnsfönster (8 storlekar, alla i lager)",
+     "pris_sek": 539,
+     "url": "https://www.campingvaruhuset.se/sv/thermomatta-for-husvagnsfonster",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Camping4u — Hindermann Thermomatta husvagnsfönster 'från 760 kr' (lagersaldo 0)",
+     "pris_sek": 760,
+     "url": "https://www.camping4u.se/sv/artiklar/hindermann-thermomatta-husvagnsfonster.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.35,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "campingvaruhuset.se (Hindermann 539 kr/matta, 8 storlekar, i lager — läst 2026-09-14)",
+     "camping4u.se (Hindermann från 760 kr, lagersaldo 0 — läst 2026-09-14)",
+     "getcamping.eu (Hindermann Thermal Window Mat Classic 261 € = husbilshytt, annan form, slut i lager — läst 2026-09-14)",
+     "scandihills.se (Isoflex isolermatta 7 skikt — sidan gav inget pris)",
+     "campingaffaren.se (domänen till salu — död), campinggrossisten.se (503)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [402, 491],
+    "pris_sek": 799,
+    "brutto_sek": [308, 397],
+    "be_cpa_sek": [308, 397],
+    "be_roas": 2.27,
+    "flerkop": true,
+    "returrisk": "medel — kunden måste veta fönstermåttet; leverantörens storlekar ej sedda"
+   },
+   "meta_tanke": {
+    "hook": "Hänger husvagnens fönster nakna i vinter?",
+    "objekt_i_bild": "husvagnens sidofönster med silvermattan hängd från markislisten, snön på taket bakom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "frost/kondens på rutan utan matta — matta hängs på i ett grepp från listen, två snören ner"
+   },
+   "varfor": "Rakt syskon till Termoskyddet (ROAS 3,55) och Taköverdraget (5,65): samma ägare, samma helg, nästa yta — sidofönstren. Hindermann-ankare 539–760 kr per matta, leverantören 15 USD, textfri hero i kontext och 3–5 fönster per vagn ger flerköp (H08).",
+   "huvudrisk": "Storlekarna i listningen är inte sedda — Hindermann säljer åtta, och en 'universal' som slirar mot fönstermåttet ger returer.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 3, "efterfragan": 3, "lucka": 1, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep termo/isoler/fönster: bara Termoskydd Husbil 559 = hytten, annat fönster; Snöflingor fönsterdekor = annat)",
+     "koncept.py sok termo/isoler/fönster (K0227 Termoskyddet husbil = hytten; K0056 källarfönsterfilm — annat objekt)",
+     "fynd.json 09-11/09-12/09-13 (inget fönsterobjekt på husvagn)",
+     "objekt.json: 'Husvagn — fronten' finns (frontskydd, ja K0059); sidofönstren saknas → NYTT"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012434201685.html",
+    "https://www.aliexpress.com/item/1005012926951426.html",
+    "https://www.campingvaruhuset.se/sv/thermomatta-for-husvagnsfonster",
+    "https://www.camping4u.se/sv/artiklar/hindermann-thermomatta-husvagnsfonster.html",
+    "https://www.getcamping.eu/en/caravan-motorhome-accessories/cooling-and-heating/insulating-mats-sun-protection-windows/hindermann-thermal-window-mat-classic/"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Utombordarvagnen, hopfällbar 85 kg",
+   "objekt": "NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)",
+   "form": "annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D / Motorhöljet (samma ägare, samma motor, nästa fas: motorn av båten)",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (utombordare 20–100 tkr)",
+     "hårt datum: båtupptagning 10–31 okt (NOW 3,7 v) — motorn ska av och stå någonstans",
+     "old way improvisation: motorn lutad mot garageväggen, sågbock eller däckstapel (riggen skadas, olja rinner)",
+     "fackhandelsankare 1 635 kr i samma form (Compass24) och 1 950 kr motorbock (SeaSea), ≥ 1,6×",
+     "ägare 55+ med båt på trailer/bockar"
+    ],
+    "avvikelser": [
+     "form 'annat' (ställning/vagn), inte överdrag — kontots form=annat är 0 av 13 dömda, men alla de var inomhusprylar utan datum",
+     "egenvikt ej mätt (Compass24-varianten väger 6 kg) — fraktfaktorn 1,5 kan vara för låg"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012839771194",
+    "url": "https://www.aliexpress.com/item/1005012839771194.html",
+    "pris_usd": 46.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:31:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012839771194.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant ('Black Color 1'), 85 kg kapacitet, hopfällbar. Alternativ listning LIVE: 1005012641498413 (65,88 USD, 4 hjul, hero med motorn på vagnen — korningar/2026-09-14/v3/bilder/1005012641498413.jpg, sedd, textfri) — dyrare men bättre bild",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "huvudlistningens hero är en textfri packshot av stålvagnen mot vitt (ingen motor); den alternativa listningen 1005012641498413 visar vagnen med en utombordare fastspänd i en infälld bild — använd den som creative-referens"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "SeaSea — Motorkärra 90 kg (art. 8897)",
+     "pris_sek": 795,
+     "url": "https://www.seasea.se/produkter/upplaggning/motorbock-motorvagn",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Compass24 — Fällbar transportvagn för utombordare (upp till 15 hk, 6 kg, i lager)",
+     "pris_sek": 1635,
+     "url": "https://www.compass24.se/hopfaellbar-transportvagn-foer-utombordsmotor-186970",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.64,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "seasea.se (Motorkärra 90 kg 795 kr; Motorbock Tls 150 kg 1 950; Motorvagn L 150 kg Tyresö 3 550 — läst 2026-09-14)",
+     "compass24.se (Fällbar transportvagn 1 635 kr, i lager — läst 2026-09-14)",
+     "watski.se (kategorisidan gav inga produktrader)",
+     "utombordare.shop (omdirigerar till tysk sajt — död)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [605, 740],
+    "pris_sek": 999,
+    "brutto_sek": [259, 394],
+    "be_cpa_sek": [259, 394],
+    "be_roas": 3.05,
+    "flerkop": false,
+    "returrisk": "låg — en variant, kapacitet 85 kg täcker motorer upp till ~25 hk; kunden behöver bara veta motorvikten"
+   },
+   "meta_tanke": {
+    "hook": "Var står utombordaren i vinter?",
+    "objekt_i_bild": "utombordaren hängd på vagnen i garaget, hjulen rullar in den",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "motorn lyfts från akterspegeln rakt på vagnen och rullas in — mot en motor lutad mot väggen som glider"
+   },
+   "varfor": "Samma ägare som Båtmotorskyddet (ROAS 2,72) en vecka senare: motorn ska av vid upptagningen och stå sex månader — i dag lutad mot en vägg. Fackhandeln säljer formen för 1 635 kr (1,64× vårt pris) och bocken utan hjul för 1 950; leverantören 46 USD.",
+   "huvudrisk": "Egenvikten är inte mätt — en 6–8 kg stålvagn kan landa över 740 kr i frakt, och SeaSea har en enklare motorkärra för 795 kr under vårt pris.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep bock/vagn/motor/utombord: Motorlås 909, Spolklämma 359, Båtmotorskydd 579, Motorhölje 299/329 — ingen ställning eller vagn)",
+     "koncept.py sok utombord/trailer/propeller (K0023 transom saver = annan form; K0236 motorlås ja; inga vagnar/bockar)",
+     "fynd.json 09-11/09-12/09-13 (båthuven K0244 = annat objekt)",
+     "objekt.json 'Utombordare — kåpan, hela motorn, nästa fas' nämner propeller-/riggskydd och motorlås som nästa fas — vagnen är osökt"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012839771194.html",
+    "https://www.aliexpress.com/item/1005012641498413.html",
+    "https://www.seasea.se/produkter/upplaggning/motorbock-motorvagn",
+    "https://www.compass24.se/hopfaellbar-transportvagn-foer-utombordsmotor-186970"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Big Foot-stödbensplattorna, 4-pack",
+   "objekt": "NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)",
+   "form": "annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn (samma ägare, samma helg) / Fiskespöhållaren (4-pack, ordning på flera ägda saker)",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (husvagnen)",
+     "hårt datum: uppställning 10–31 okt (NOW 3,7 v) — benen går ner i mjuk mark",
+     "old way improvisation: plankbitar/tegel under benen, eller lösa 130-kronorsplattor som blåser bort",
+     "flerköp inbyggt: fyra ben = fyra plattor (H08)",
+     "märkesankare AL-KO Big Foot 1 790 kr (ord. 2 189) i exakt samma form, kvot 1,39×"
+    ],
+    "avvikelser": [
+     "form 'annat' (fastskruvad platta), inte överdrag",
+     "passar bara AL-KO Stabilform/Premium-ben — ägarkänd parameter men returrisk",
+     "heron är packshot med text; kontexten är en liten infälld bild"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012051294010",
+    "url": "https://www.aliexpress.com/item/1005012051294010.html",
+    "pris_usd": 65.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-14T06:32:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-14/v3/bilder/1005012051294010.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "'A set of 4' med bultar, fjädrar, brickor och saxsprint enligt heron; titeln säger 'Compatible with ALKO Stabilizer Legs' — en variant. Första försöket att öppna sidan svarade tomt, andra försöket gav titel + hero",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "orange platta i packshot med Roqify-logga och rubriktext; infälld bild visar plattan monterad på ett stödben mot marken. Creativen måste byggas på egen bild/video av benet som vevas ner på plattan."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Camping4u — AL-KO Big Foot stödbensplattor 4-pack (2–8 dagars leverans)",
+     "pris_sek": 1790,
+     "url": "https://www.camping4u.se/sv/artiklar/al-ko-big-foot.html",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "AL-KO Big Foot ordinarie pris (camping4u) / TIAB Bohlins 3 075 kr",
+     "pris_sek": 2189,
+     "url": "https://bohlinsab.se/tiab/husvagn-husbil/stodbensplattor.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.39,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "camping4u.se (AL-KO Big Foot 4-pack 1 790 kr, ord. 2 189, 200 × 180 mm, 1 250 kg — läst 2026-09-14)",
+     "bohlinsab.se/TIAB (Big Foot 3 075 kr — ur sökutdrag, sidan ej öppnad)",
+     "campingvaruhuset.se (Stödbensplatta 4-pack Universal 130 kr med sprint — LÖS platta, annan form; Campout stapelbara 4-pack 152 kr, slut till 22 okt — läst 2026-09-14)",
+     "scandihills.se, campweb.se, slapet.se (Big Foot i sortiment enligt sökutdrag, pris ej läst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [852, 1042],
+    "pris_sek": 1290,
+    "brutto_sek": [248, 438],
+    "be_cpa_sek": [248, 438],
+    "be_roas": 3.76,
+    "flerkop": false,
+    "returrisk": "medel — passar AL-KO Stabilform/Premium från 2001; ägaren vet sitt chassi, men fel benmodell ger retur"
+   },
+   "meta_tanke": {
+    "hook": "Sjunker husvagnens stödben i höst?",
+    "objekt_i_bild": "stödbenet vevas ner på den stora orange plattan i blött gräs",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "benet på en plankbit som tippar i leran — mot Big Foot som står kvar; plattan fälls upp med benet när vagnen kör"
+   },
+   "varfor": "Fyra ägda saker på samma vagn som just fick tak och front — plattan sitter kvar på benet och ersätter plankbiten (H08 + H03). AL-KO tar 1 790 kr för exakt samma form (1,39× vårt pris), leverantören 65 USD ger BE-CPA 248–438.",
+   "huvudrisk": "Lågt upplevt värde i bild (orange plastplattor för 1 290 kr) och form=annat är kontots sämsta signal; bara AL-KO-chassin passar och lösa 130-kronorsplattor finns under oss.",
+   "konfidens": "LÅG",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 3, "lucka": 1, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep stöd/platta/ben: Stegstöd 2-pack, Stödhjul grind — annat objekt)",
+     "koncept.py sok stödben (0 träffar)",
+     "fynd.json 09-11/09-12/09-13 (inget stödbensobjekt); kandidater-N 09-13 (inget)",
+     "objekt.json saknar stödbenen → NYTT; SIGNALER 'sett innan': plattorna följer INTE med vagnen (AL-KO säljer dem som eftermontering), till skillnad från ramper och kulskydd"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012051294010.html",
+    "https://www.camping4u.se/sv/artiklar/al-ko-big-foot.html",
+    "https://www.campingvaruhuset.se/sv/stodbensplatta-4-pack-universal",
+    "https://www.campingvaruhuset.se/sv/campout-stodbensplattor-stapelbara-4-pack-21-x-21-x-33-cm-",
+    "https://bohlinsab.se/tiab/husvagn-husbil/stodbensplattor.html"
+   ]
+  }
+ ],
+ "strukna": [
+  {"namn": "Lösa stödbensplattor 4-pack (Roqify 26,19 USD / stapelbara 32–34 USD)", "skal": "Tre listningar öppnade och heron sedda (1005012789739524, 1005012287662234, 1005009552425794) — exakt samma form säljs av Campingvaruhuset för 130 kr (Universal med sprint) och 152 kr (Campout stapelbara): golv under oss utan ankare, BE-CPA omöjlig. Bara den fastskruvade Big Foot-formen bär ett ankare."},
+  {"namn": "Spolmuffar / flushing muffs till utombordaren", "skal": "K0: 'Spolklämma för Båtmotor – Testvattenklämma' 359 kr ligger redan ACTIVE i katalogen (K0038 sedd tidigare). Inte sökt."},
+  {"namn": "Båtens täckställning i bågar (boat cover frame kit)", "skal": "Sökningen 'boat cover support bow frame kit' gav bara biminitoppar och stöttan (1005012852698418) — stöttan är K0052 med Axels ja 09-09 (finns inte i katalogen än; leverera inte om). Ingen bågställning på AliExpress."},
+  {"namn": "Dragkulsskydd husvagn", "skal": "SIGNALER 'sett innan' + uppdraget: kulskyddet följer med vagnen (K0116/K0168 sedda tidigare). Inte sökt."},
+  {"namn": "Gasolflaskskydd 11 kg", "skal": "objekt.json: ankare 399 mätt (Landmann grilltorget), K7-kill vid > 8 USD; K0071/K0081 sedda tidigare. Ingen ny form hittad — inte sökt om."},
+  {"namn": "Möss i husvagnen — ultraljud", "skal": "Sökningen 'ultrasonic rodent repeller caravan battery' gav bara hjortvisslor till bilen; ultraljudsskrämmare är kedjeform (Clas Ohlson/Jula, pris ej mätt). Nätformen föll 09-13. Struken utan listning."},
+  {"namn": "MC-avfuktarpåse (silica, återladdningsbar)", "skal": "Sökträffar 3–13 USD, kedjeform (Biltema/Jula bilavfuktare), lågt upplevt värde — Axels signal 09-09. Struken utan att öppna."},
+  {"namn": "Propellerskydd/förvaringspåse utombordare", "skal": "Sökningen gav bara svetsade metallgaller för små Hangkai-motorer (32–84 USD) och halvhöljen som redan finns i katalogen. Ingen förvaringsform."},
+  {"namn": "Husbilens hytt — invändig isolermatta (nästa fas i objekt.json)", "skal": "Sökningen 'motorhome cab insulation mat interior ducato' gav bara ljuddämpningsmatta på rulle och golvmattor — ingen formsydd hyttmatta på AliExpress i dag. Hindermann Classic 261 € (getcamping, slut) är ankaret om formen dyker upp."},
+  {"namn": "Husvagnens batteri", "skal": "Solcellsladdare 10 W MPPT 559 kr ligger ACTIVE i katalogen (K0173 ja). Inte sökt."},
+  {"namn": "Husvagnens avlopp/toalett vid vinterförvaring", "skal": "Inget dyrt objekt att skydda och förbrukningsvaror (Thetford-kemi, tätningsfett) är kedjeform — inte sökt."},
+  {"namn": "Elverkets/kompressorns huv", "skal": "objekt.json: Biltema Skyddsöverdrag för elverk = K4-kill (mätt 09-10). Inte sökt."},
+  {"namn": "Båttrailerns navskydd", "skal": "K0015 nej 09-09 ('Kedjan har den', 'Tråkig'). Inte sökt."},
+  {"namn": "Båtens dynor", "skal": "Båtsitsöverdrag 210D 269 kr ACTIVE i katalogen; dynväska (K0054–K0073-formen) är hammockobjektets. Inte sökt."},
+  {"namn": "MC-hjulskydd/paddockstöd", "skal": "Paddockstöd är kedjeform enligt uppdraget; hjulskydd för vinterförvaring har lågt upplevt värde och MC-kapellet (349 kr) täcker redan hjulen. Inte sökt."}
+ ]
+}
