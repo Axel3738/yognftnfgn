@@ -1,0 +1,23 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay",
+  "datum": "2026-09-14",
+  "lage": "budget",
+  "server": "TackleBay — OPS",
+  "gjort": [
+    "Budget round: 0 changes. Campaign TACKLEBAY_SE_Spöhållaren stays at 700 kr/day — still under 16 % profit (3-day ROAS 0.64 on 5 purchases) but the cadence lock holds: lowered yesterday, next change earliest 2026-09-16",
+    "Nothing paused by me, nothing activated. PD_11_H1 (1 030 kr, 2 purchases) and PD_25_H1 (747 kr, 2 purchases) were paused by someone else — left alone as a decision",
+    "Still a cold start: 66 ads, 3 050 kr, 5 purchases over 14 days, 0 above the data gate (300 kr and 3 purchases)",
+    "First batch #2 ad is live: PD_46_H1 (one hand, two clicks) reached the SE campaign via the delivery run. PD_42_H1, PD_45_H1, PD_61_H1 are in progress in the hub; 24 briefs still in Draft",
+    "No brief day (Monday). Next brief day: Wednesday 2026-09-16"
+  ],
+  "siffror": { "spend_7d": 3050, "kop_7d": 5, "roas_7d": 0.61, "vinstbidrag_7d": 0 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-15",
+  "varningar": [
+    "The campaign has lost money every day since launch (ROAS 0.48 / 0.71 / 0.66 per day vs break-even 1.49). The rules will lower it to 500 kr on 2026-09-16 if nothing changes — and never below that. If you want it paused, say so",
+    "DISCORD_AXEL_ID is not set — no ping possible for Axel"
+  ]
+}

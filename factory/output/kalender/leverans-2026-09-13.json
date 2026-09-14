@@ -22,5 +22,62 @@
     "\"ADVENTLANERACING_SE_Racingkalendern | BE-ROAS 1,62 | 2026-09-10\" är PAUSED med 2797 kr spend — avvecklad, aldrig mål",
     "pris: ingen länk"
   ],
-  "hamtad": "2026-09-13T12:47:20.405Z"
+  "hamtad": "2026-09-13T12:47:20.405Z",
+  "utfall": {
+    "uppladdade": 0,
+    "stoppade": 0,
+    "vantar_pa_fil": 0,
+    "redan_uppe": 0,
+    "skal": "Ingen ACTIVE SE-kampanj OCH tom kö."
+  },
+  "paus": {
+    "vem": "Axel Odhner (Metas aktivitetslogg)",
+    "se": "2026-09-13T09:06:20Z (11:06 svensk)",
+    "no": "2026-09-13T09:05:32Z (11:05 svensk)",
+    "samma_svep": [
+      "HEIMGUARD_NO 09:06:29Z",
+      "HEIMGUARD_SE 09:06:41Z"
+    ],
+    "heimguard_se_paslagen_igen": "2026-09-13T13:06:02Z",
+    "bedomning": "Människa i Ads Manager: 4 kampanjer över 2 brand på 69 s, sedan selektiv återaktivering 4 h senare. Ingen rutin kör 09:05 UTC, ingen commit rör AdventLanes status den morgonen. OBS: API-anrop med Axels token loggas också som Axel Odhner."
+  },
+  "siffror": {
+    "se": {
+      "spend": 2799.2,
+      "kop": 5,
+      "cpa": 560,
+      "roas": 1.176515,
+      "visningar": 17399,
+      "klick": 535,
+      "vinstbidrag_mot_be323": -1185
+    },
+    "no": {
+      "spend": 3137.39,
+      "kop": 3,
+      "cpa": 1046,
+      "roas": 0.438368,
+      "visningar": 15115,
+      "klick": 483,
+      "anm": "eget pris 439 kr, egen break-even ej uträknad i repot"
+    },
+    "bedombara_annonser": 0,
+    "basta_annons": {
+      "namn": "AdventLaneRacing_PD_1_H1",
+      "spend": 847,
+      "kop": 2,
+      "cpa": 423,
+      "anm": "under grinden — ingen dom"
+    }
+  },
+  "hubb_oberoende": {
+    "rader": 48,
+    "to_be_reviewed": 0,
+    "creative_strat_review": 0,
+    "approved": 6,
+    "se_active_to_be_translated": 1,
+    "in_progress": 5,
+    "draft": 36,
+    "slutsats": "Kön verkligen tom — ingen färdig creative missades."
+  },
+  "discord": "1548683221850652745"
 }

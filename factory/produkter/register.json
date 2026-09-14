@@ -130,7 +130,7 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-14",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
@@ -160,7 +160,7 @@
         "url": ""
       },
       "kordag_offset": 1,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-14",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-11",
       "launches": [
@@ -171,6 +171,10 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 4
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -203,7 +207,7 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-14",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
@@ -214,6 +218,10 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 1
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -262,7 +270,7 @@
       "senaste_brief": "2026-09-13",
       "redigerare_discord_id": "740814777374343259",
       "cycle_start": "2026-09-12",
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-14",
       "redigerare": "Jazz (jazzer1522)"
     },
     "carashell/takskyddet": {

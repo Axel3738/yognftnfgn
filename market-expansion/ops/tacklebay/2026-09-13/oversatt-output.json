@@ -1,0 +1,66 @@
+{
+  "TackleBayRod_NO_PD_46_H1": {
+    "captions": [
+      "En hånd.",
+      "To klikk.",
+      "Lås.",
+      "Svampen låser",
+      "uten",
+      "å ripe.",
+      "4-pakning",
+      "289 kr.",
+      "Angrerett."
+    ],
+    "copy": {
+      "message": "Slå sammen stangen. Låst på 1 sekund.\nEn hånd. To klikk. Klart.\nHolder stangen lukket gjennom hver sving.\nBestill 4-pakning. 14 dagers angrerett.",
+      "headline": "En hånd. To klikk. Lukket.",
+      "description": "Fiskestangholder som låses med en hånd på 1 sekund."
+    },
+    "andringar": [
+      "Rad 4 i svenska primary text ('4-pack 289 kr – fri frakt') strök helt — pris och frakt är förbjudet i NO-copyn, ersätts aldrig med NOK-pris eller ett gissat fraktvillkor.",
+      "Stavfelen i svenska captions rättades i norsk text: 'reppa' blev 'ripe' (rätt norskt verb för repa/skrapa ytan), 'Ångerätt' blev 'Angrerett'.",
+      "Pris i captions ('289 kronor.') översattes till '289 kr.' — behåller SEK, hittar aldrig på ett NOK-pris.",
+      "'spöet' översatt till 'stangen' (fiskestang), '4-pack' till '4-pakning' enligt produktens NO-namn.",
+      "Inga utropstecken eller urgency-ord lagt till; tonen hålls torr och saklig eftersom målgruppen (sportfiskare) genomskådar säljprat.",
+      "Produkten beskrivs aldrig som väggfäste ('vegg') — det är ett transportlås, ordvalet 'holder stangen lukket' håller sig till transport/rörelse."
+    ],
+    "tre_fragor": [
+      {
+        "rad": "Headline: En hånd. To klikk. Lukket.",
+        "visualisera": "✅ konkreta handlingar (hand, två klick, låst)",
+        "falsifiera": "✅ verifierbart — går att testa om det tar två klick",
+        "bara_vi": "✅ specifik mekanism (tvåklickslåset), ingen generisk rem kan säga samma"
+      },
+      {
+        "rad": "Description: Fiskestangholder som låses med en hånd på 1 sekund.",
+        "visualisera": "✅ en hand som låser på en sekund går att se framför sig",
+        "falsifiera": "✅ 1-sekundspåståendet är mätbart, sant eller falskt",
+        "bara_vi": "✅ knutet till produktens faktiska låsmekanism"
+      },
+      {
+        "rad": "Rad 1: Slå sammen stangen. Låst på 1 sekund.",
+        "visualisera": "✅ konkret rörelse (fälla ihop stången)",
+        "falsifiera": "✅ tidspåståendet går att kontrollera",
+        "bara_vi": "✅ 1-sekundssiffran är specifik för produktens klicklås"
+      },
+      {
+        "rad": "Rad 2: En hånd. To klikk. Klart.",
+        "visualisera": "✅ hand + två klick, lätt att se framför sig",
+        "falsifiera": "✅ antal klick är ett kontrollerbart faktum",
+        "bara_vi": "✅ samma specifika mekanism som headline"
+      },
+      {
+        "rad": "Rad 3: Holder stangen lukket gjennom hver sving.",
+        "visualisera": "✅ stången som håller stängd i en sväng är en bild",
+        "falsifiera": "✅ går att testa om den håller stängt genom en sväng",
+        "bara_vi": "❌ generiskt — vilken rem eller vilket spänne som helst kan påstå samma sak"
+      },
+      {
+        "rad": "Rad 4: Bestill 4-pakning. 14 dagers angrerett.",
+        "visualisera": "❌ ren uppmaning + juridisk text, ingen bild att se framför sig",
+        "falsifiera": "✅ 14 dagers ångerrätt är ett faktiskt, kontrollerbart villkor",
+        "bara_vi": "❌ lagstadgad ångerrätt gäller alla norska e-handlare, ingen unik produktclaim"
+      }
+    ]
+  }
+}

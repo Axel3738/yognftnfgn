@@ -1,0 +1,445 @@
+{
+ "videor": [
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": [
+    {
+     "nr": "1",
+     "tid": "00:00:00,059 --> 00:00:07,299",
+     "no": "Samme tur, ett bein med gamasje, ett uten. Uten kryper snøen allerede inn ved støvelkanten. Gamasjen tetter glipen mellom støvelen og kneet, helt opp.",
+     "tecken": 150
+    },
+    {
+     "nr": "2",
+     "tid": "00:00:07,359 --> 00:00:09,359",
+     "no": "Etterpå: den ene sokken våt, den andre tørr.",
+     "tecken": 44
+    },
+    {
+     "nr": "3",
+     "tid": "00:00:09,359 --> 00:00:13,800",
+     "no": "DryTrek-gamasjer, tre hundre og åttini kroner paret. Fri frakt til Norge og Sverige.",
+     "tecken": 84
+    }
+   ]
+  },
+  {
+   "nyckel": "drytrek_PD_12_H1",
+   "block": [
+    {
+     "nr": "1",
+     "tid": "00:00:00,059 --> 00:00:10,099",
+     "no": "Sørpesnøen når over støvelkanten, snøen fyker inn ovenfra og sokken er våt etter fire kilometer. Kroken festes i snøringen, remmen går under foten. Borrelåsen lukkes hele veien oppover på utsiden.",
+     "tecken": 196
+    },
+    {
+     "nr": "2",
+     "tid": "00:00:10,159 --> 00:00:14,039",
+     "no": "Gamasjen er førtifire centimeter høy, og den tas på uten å ta av støvelen.",
+     "tecken": 74
+    },
+    {
+     "nr": "3",
+     "tid": "00:00:14,079 --> 00:00:19,680",
+     "no": "DryTrek-gamasjer, tre hundre og åttini kroner paret. Fjorten dagers angrerett. Velg blant atten farger.",
+     "tecken": 103
+    }
+   ]
+  },
+  {
+   "nyckel": "drytrek_PD_12_H2",
+   "block": [
+    {
+     "nr": "1",
+     "tid": "00:00:00,000 --> 00:00:04,819",
+     "no": "Lei av snø, fukt og grus i skoene? Snøen fyker inn ovenfra, og sokkene er våte etter fire kilometer.",
+     "tecken": 100
+    },
+    {
+     "nr": "2",
+     "tid": "00:00:04,819 --> 00:00:07,679",
+     "no": "Kroken festes i snøringen, remmen går under foten.",
+     "tecken": 50
+    },
+    {
+     "nr": "3",
+     "tid": "00:00:07,739 --> 00:00:16,719",
+     "no": "Borrelåsen lukkes hele veien oppover på utsiden. Gamasjen er førtifire centimeter høy, og den tas på uten å ta av støvelen. DryTrek-gamasjer, tre hundre og åttini kroner paret.",
+     "tecken": 176
+    },
+    {
+     "nr": "4",
+     "tid": "00:00:16,719 --> 00:00:19,567",
+     "no": "Fjorten dagers angrerett. Velg blant atten farger.",
+     "tecken": 50
+    }
+   ]
+  },
+  {
+   "nyckel": "drytrek_PD_13_H1",
+   "block": [
+    {
+     "nr": "1",
+     "tid": "00:00:00,059 --> 00:00:05,779",
+     "no": "En flaske vann over støvelen. Se på sokken. Vannet renner inn over støvelkanten, og sokken er våt etter noen sekunder.",
+     "tecken": 118
+    },
+    {
+     "nr": "2",
+     "tid": "00:00:05,839 --> 00:00:09,579",
+     "no": "Tettvevd polyester over borrelåssømmen, kroken og remmen, hele veien opp.",
+     "tecken": 73
+    },
+    {
+     "nr": "3",
+     "tid": "00:00:09,639 --> 00:00:11,339",
+     "no": "Flasken er tom, sokken er tørr nå.",
+     "tecken": 34
+    },
+    {
+     "nr": "4",
+     "tid": "00:00:11,380 --> 00:00:16,800",
+     "no": "DryTrek-gamasjer i atten farger, tre hundre og åttini kroner paret, fri frakt og fjorten dagers angrerett.",
+     "tecken": 106
+    }
+   ]
+  },
+  {
+   "nyckel": "drytrek_SP_6_H1",
+   "block": [
+    {
+     "nr": "1",
+     "tid": "00:00:00,000 --> 00:00:01,100",
+     "no": "Kroken i snøringen, sånn.",
+     "tecken": 25
+    },
+    {
+     "nr": "2",
+     "tid": "00:00:01,100 --> 00:00:07,219",
+     "no": "Jeg var litt skeptisk, ærlig talt, men jeg tok på meg disse før turen i morges. Eh, vått, gjørmete, snø overalt.",
+     "tecken": 112
+    },
+    {
+     "nr": "3",
+     "tid": "00:00:07,299 --> 00:00:15,659",
+     "no": "Etterpå, helt tørre sokker, ingen snø i skoene, ingen grus, ingenting. De satt på plass hele veien. Ikke noe styr, ikke noe som gled ned. En enkel greie, men den funker på ekte.",
+     "tecken": 177
+    },
+    {
+     "nr": "4",
+     "tid": "00:00:15,679 --> 00:00:15,880",
+     "no": "Men",
+     "tecken": 3
+    }
+   ]
+  },
+  {
+   "nyckel": "drytrek_SP_7_H1",
+   "block": [
+    {
+     "nr": "1",
+     "tid": "00:00:00,059 --> 00:00:10,639",
+     "no": "Jeg testet disse på hundeluftingen i morges. Uten gamasjer blir sokken våt allerede på den korte runden rundt kvartalet. Borrelåsen lukkes mens støvelen står på, rett på trappa. Etter runden er hunden våt på potene, men sokken er tørr.",
+     "tecken": 235
+    },
+    {
+     "nr": "2",
+     "tid": "00:00:10,639 --> 00:00:13,967",
+     "no": "Gamasjer til hundelufting, tre hundre og åttini kroner paret.",
+     "tecken": 61
+    }
+   ]
+  }
+ ],
+ "andringar": [
+  "PD_12_H1 block 2 + PD_12_H2 block 3: HeyGen skrev \"Fjorten centimeter\"/\"44 cm\" oregelbundet — rättat till korrekt höjd 44 cm, utskrivet \"førtifire centimeter\" för säker uppläsning.",
+  "PD_12_H1 block 3 + PD_12_H2 block 3: HeyGen mosade brandnamnet till \"Drytre Damasko\"/\"Dry 3-gamasjer\" — rättat till \"DryTrek gamasjer\" överallt.",
+  "Genomgående: produktordet är alltid norska \"gamasje/gamasjer\", aldrig \"damask(er)\" eller \"damasko\" (svenska ordet finns bara i källtranskriptet, inte i den norska texten).",
+  "SP_6_H1 block 1: svenska källans hörfel \"Kroken i snaringen\" är egentligen \"kroken i snøringen\" (kängans snörning) — översatt till den avsedda betydelsen \"Kroken i snøringen\", inte hörfelet.",
+  "SP_7_H1 block 1: svenska källans hörfel \"manschengen\" är \"manschetten\" (linningen/kanten) — översatt till korrekt norska \"mansjetten\".",
+  "PD_12_H1 block 2 + PD_12_H2 block 3: svenska källans hörfel \"är fästen\" betyder \"är damasken\" (dvs. gamasjen) — översatt till den avsedda betydelsen \"er gamasjen\", inte hörfelet.",
+  "Siffrorna 44, 18, 14 och 389 skrivs utskrivna (t.ex. \"førtifire\", \"atten\", \"fjorten\", \"trehundreogåttini\") i stället för siffror, dels för att matcha svenska källans stil, dels för säker uppläsning av röstklonen — det gav dessutom rätt taltid i de block där HeyGen redan gjorde så (PD_13_H1 block 4, oförändrat).",
+  "Alla HeyGens utkast var för korta (upp till ~40 %) mot måltecken — fyllda ut till 90–105 % av svenska teckenantalet med innehåll som redan finns i det svenska talet, inga nya påståenden tillagda.",
+  "SP_7_H1 block 2: källans \"SVENSKT TAL\" upprepar block 1:s inledning (\"Jag testade de här på hundpromenaden i morse\"), vilket inte får plats på blockets 3,33 sekunder och som HeyGen självt hoppade över — den norska texten täcker därför bara prisraden (\"Gamasjer til hundeluftingen, 389 kroner paret\"), samma tolkning som HeyGens utkast."
+ ],
+ "granskning": [
+  {
+   "lins": "fakta",
+   "antal": 9,
+   "sammanfattning": "9 anmärkningar på 20 block: 1 stopp, 8 nits. Inget av de obligatoriska sakfelen finns kvar.\n\nVERIFIERAT RÄTT (räknat, inte bedömt): 44 cm står som \"førtifire\" på båda ställena — HeyGens sakfel \"Fjorten centimeter\" i PD_12_H1 block 2 är rättat. \"atten farger\" 3 ggr, \"fjorten dagers angrerett\" 3 ggr, beloppet 389 i alla fem prisblock, \"kroner\" genomgående (ingen omräkning till NOK). Brandet står \"DryTrek\" på alla tre ställen där det nämns — Dry3, Drytre och \"Dry 3\" är borta. Produkten heter \"gamasjer\" i varje rad; orden \"damasker\"/\"Damasko\" finns inte kvar någonstans. Inga förbjudna påståenden är tillagda: ingen \"vanntett\", \"vindtett\", \"i alle vær\", ingen tidsangivelse för påtagning, ingen social proof, ingen brådska, ingen 30-dagarsgaranti. Alla 20 block ligger inom sitt teckenfönster och alla uppgivna teckenantal stämmer exakt vid omräkning.\n\nDET SOM MÅSTE AVGÖRAS FÖRE SKARP KÖRNING: PD_13_H1:s vattentest (\"Vannet ... renner av på utsiden\" + \"Flasken er tom, sokken er tørr\") är ett vattenavvisningspåstående som inte går att belägga ur produktfakta — det står bara \"100 % tätvävd polyester\". Påståendet är ärvt ur det svenska talet, alltså inte översättarens fel, men PD_13_H1 ligger utanför UGC-undantaget (som bara gäller SP_6_H1 och SP_7_H1) och briefen krävde uttryckligen att filmen skulle filmas på riktigt. Antingen bekräftas att den levererade filmen visar hällningen och den torra strumpan, eller så skrivs raderna om.\n\nMÖNSTER I NITSEN: (1) Förstärkningsordet \"redan/allerede\" har flyttat fel — det har fallit bort i FO_2_H1 block 1 där svenskan har det, och lagts till i PD_13_H1 block 1 där svenskan inte har det. (2) Talet 389 är stavat med svensk sammanskrivning (\"trehundreogåttini\") i alla fem prisblock; norska skriver tal över hundra med mellanrum, och klumpen är en uttalsrisk för TTS:en. (3) Prisraden sägs \"per par\" i två block och \"paret\" i tre — välj ett. (4) Tre block ligger 0–1 tecken från sitt tak (FO_2_H1 b1 på exakt 158/158, PD_12_H1 b3 på 102/103, PD_13_H1 b1 på 130/131) och är samtidigt batchens snabbaste — de har ingen marginal om rösten drar över. Samtliga föreslagna rättningar är kontrollräknade och ligger inom respektive fönster."
+  },
+  {
+   "lins": "sprak",
+   "antal": 14,
+   "sammanfattning": "14 anmärkningar på 6 annonser: 6 stopp, 8 nit. Faktakollen är grön hela vägen — 44 cm (HeyGens \\\"Fjorten\\\" är rättad), 389 kroner, 18 farger, 14 dagers angrerett, fri frakt, DryTrek stavat rätt överallt och \\\"gamasjer\\\" konsekvent (aldrig \\\"damasker/Damasko\\\"). Inga förbjudna påståenden: inget \\\"vanntett\\\", \\\"vindtett\\\", \\\"i alle vær\\\", ingen påtagningstid, ingen social proof, ingen brådska, ingen 30-dagarsgaranti. UGC-jaget står kvar i SP_6 och SP_7. Alla 20 block ligger inom sina målängder. Det som faller är språket: en återkommande svecism, \\\"ved kilometer fire\\\" (PD_12_H1, PD_12_H2, PD_13_H1 — ska vara \\\"etter fire kilometer\\\"), en falsk vän i SP_6_H1 block 3 där \\\"De satt på hele veien\\\" på norska betyder att de fick skjuts, en inversion i PD_12_H1 block 2 (\\\"Førtifire centimeter høy er gamasjen\\\") som ingen norrman säger och som dessutom motsäger PD_12_H2 block 3, saknad bestämd form i FO_2_H1 block 1 (\\\"mellom støvel og kne\\\") plus fel ord (\\\"gapet\\\" i stället för \\\"glipen\\\"), och i PD_13_H1 block 1 ett logiskt brott mot bilden — flaskdemon påstår \\\"våt ved kilometer fire\\\". Två längder att hålla ögonen på vid rättning: FO_2_H1 block 1 ligger på exakt taket (158/158) och PD_12_H1 block 3 på 102 av 103, så inget får läggas till där. Varje rättad rad ovan är teckenräknad och ryms i sitt fönster."
+  },
+  {
+   "lins": "timing",
+   "antal": 6,
+   "sammanfattning": "20 block i 6 videor granskade. INGET STOPP — men sex nits, varav två (PD_12_H2 b3 och SP_7_H1 b1) ändrar vad annonsen faktiskt påstår och bör rättas före rendering.\n\nFAKTA — allt rätt, inklusive de tre fällorna: \"Fjorten centimeter\" (14) i PD_12_H1 b2 är rättat till \"Førtifire centimeter\" (44), och 44 står även rätt i PD_12_H2 b3. Brandet heter DryTrek överallt där det nämns (PD_12_H1 b3, PD_12_H2 b3, PD_13_H1 b4) — HeyGens \"Drytre\"/\"Dry 3\" är borta. \"Damasko/damasker\" är borta i hela materialet; det heter gamasjer, gamasjen. Priset är 389 i alla fem prisblock, aldrig omräknat till NOK. 14 dagers angrerett (aldrig 30), atten farger, fri frakt til Norge og Sverige, tre fästen (krok i snøringen, rem under foten, borrelås på utsiden) — allt stämmer mot factory/produkter/damasker.yaml.\n\nFÖRBUDSLISTAN — ren. Inga \"vanntett\"/\"vindtett\"/\"i alle vær\", ingen påtagningstid, ingen brådska, inga betyg eller kundantal. SP_6_H1 och SP_7_H1 är kvar i första person (\"Jeg var litt skeptisk\", \"Jeg testet disse\") vilket är rätt enligt undantaget.\n\nTIMING — alla 20 block ligger mellan 93,3 % och 105,3 % av mållängden, alltså långt inifrån 85–115 %. De uppgivna teckenantalen stämmer exakt på samtliga block (kontrollräknat med skript). Kortaste blocket är SP_6_H1 b2 (112/120 = 93,3 %), längsta FO_2_H1 b1 (158/150 = 105,3 %). Alla sex rättningsförslag nedan håller sig också inom bandet, så inget av dem skapar ett nytt timingproblem.\n\nKvar att kolla som INTE går att se i texten: järnregel 2 och 3 — skanna källvideorna efter inbränd svensk text (PD_12/PD_13 visar mått och spänne, och källbutikens produktbilder har bevisligen svensk inbränd text), och kör pipeline/rostkoll.py på varje renderad video före leverans."
+  }
+ ],
+ "anmarkningar": [
+  {
+   "nyckel": "drytrek_PD_13_H1",
+   "block": "2",
+   "citat": "Vannet treffer borrelåssømmen, kroken og remmen og renner av på utsiden.",
+   "problem": "Tillsammans med block 3 (\"Flasken er tom, sokken er tørr.\") påstår dubben att en hel flaska vatten rinner av på utsidan och att strumpan är torr efteråt. Produktfakta säger bara \"100 % tätvävd polyester\" — ingen vattentäthet, ingen vattenavvisning. Det är i praktiken samma påstående som \"vanntett\", som ströks ur den svenska copyn 2026-09-09 (products/drytrek/dna.md, \"Vad DryTrek ändrade\" punkt 1). Undantaget för kreatörens egen upplevelse gäller uttryckligen bara SP_6_H1 och SP_7_H1 — PD_13_H1 är en produktdemo. ⚠️ Påståendet är INTE tillagt av översättaren, det står redan i det svenska talet — men det är i den norska dubben det blir ett uttalat löfte på en ny marknad. Briefen för PD_13_H1 sa dessutom \"Kräver ny film — filmas på riktigt eller görs inte\" (products/drytrek/batch-log.md rad 163) och batch-loggen rad 223 noterar att det aldrig verifierades vad som faktiskt levererades. Kräver Axels besked, inte en översättares.",
+   "forslag": "Behåll raden ENBART om den levererade filmen verkligen visar hällningen och en torr strumpa i samma tagning. Går det inte att verifiera: \"Tettvevd polyester over borrelåssømmen, kroken og remmen, hele veien opp.\" (73 tecken, inom 68–80) och skriv om block 3 utan absolut torrhetslöfte.",
+   "allvar": "stopp",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": "1",
+   "citat": "Samme tur, ett bein med gamasje, ett uten. Beinet uten gamasje: snøen kryper inn ved støvelkanten.",
+   "problem": "Två saker. (a) Blocket ligger på exakt 158 tecken = taket i fönstret 135–158, 21,8 tecken/s. Noll marginal om HeyGens TTS drar över, och det är batchens näst snabbaste block. Orsaken är att \"gamasje/gamasjen\" sägs tre gånger i samma block. (b) Det svenska talet säger \"snön kryper REDAN in vid kängans kant\" — \"redan\" är hela poängen i före/efter-vinkeln (det händer direkt) och har fallit bort. Samtidigt har \"allerede\" lagts TILL i PD_13_H1 block 1 där svenskan inte har det. Ordet har alltså flyttat till fel annons.",
+   "forslag": "Samme tur, ett bein med gamasje, ett uten. Uten kryper snøen allerede inn ved støvelkanten. Gamasjen dekker gapet mellom støvel og kne, hele veien opp. (151 tecken, 20,9 t/s)",
+   "allvar": "nit",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_PD_13_H1",
+   "block": "1",
+   "citat": "og sokken er våt allerede ved kilometer fire",
+   "problem": "\"allerede\" finns inte i det svenska talet (\"och strumpan är blöt vid kilometer fyra\"). Det är ett tillagt förstärkningsord, och det skaver extra i just den här annonsen: bilden visar en vattenflaska hällas över kängan, inte en fyra kilometer lång tur. Även \"her\" i \"Se på sokken her\" är tillagt (svenskan: \"Titta på strumpan\"). Blocket landar på 130 av 131 tillåtna tecken och 22,7 tecken/s — batchens snabbaste block, ett tecken från taket.",
+   "forslag": "En flaske vann over støvelen. Se på sokken her. Vannet renner inn over støvelkanten, og sokken er våt ved kilometer fire. (121 tecken, 21,2 t/s)",
+   "allvar": "nit",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_PD_12_H1",
+   "block": "2",
+   "citat": "og den tas på med støvelen på foten",
+   "problem": "Svenskan säger \"med kängan KVAR på foten\" — att man inte behöver ta av kängan är hela poängen med kardborren längs hela utsidan, och det är en av produktens fyra säljpunkter. \"med støvelen på foten\" tappar \"kvar\" och går dessutom att läsa som att gamasjen tas på TILLSAMMANS med kängan. HeyGens utkast hade det otvetydiga \"mens støvelen fortsatt er på foten\" men den varianten blir 81 tecken = ett över taket, så den går inte att återställa rakt av. Samma formulering står i PD_12_H2 block 3.",
+   "forslag": "Førtifire centimeter høy er gamasjen, og den tas på uten å ta av støvelen. (74 tecken, exakt samma längd som nu). Samma byte i PD_12_H2 block 3 — med rättad talstavning blir det blocket 171 tecken, inom 152–177.",
+   "allvar": "nit",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": "3",
+   "citat": "trehundreogåttini kroner paret",
+   "problem": "Norska skriver tal över hundra med mellanrum: \"tre hundre og åttini\". Sammanskrivningen är den SVENSKA stavningskonventionen (\"trehundraåttionio\") som följt med rakt över, och en sammanskriven klump på 17 tecken är dessutom en uttalsrisk för HeyGens TTS. Gäller fem block: FO_2_H1 b3, PD_12_H1 b3, PD_12_H2 b3, PD_13_H1 b4, SP_7_H1 b2. Beloppet 389 och ordet \"kroner\" är rätt och ska inte röras. \"Førtifire\" och \"atten\" är korrekt sammanskrivna (norska skriver tal UNDER hundra ihop) — ändra inte dem.",
+   "forslag": "Samme tur. Gamasjer, tre hundre og åttini kroner paret. Fri frakt til Norge og Sverige. (87 tecken = måltalet). Samma byte i de övriga: PD_12_H2 b3 → 171, PD_13_H1 b4 → 106, SP_7_H1 b2 → 63 tecken, alla inom fönstret. PD_12_H1 b3 se nästa punkt.",
+   "allvar": "nit",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_PD_12_H1",
+   "block": "3",
+   "citat": "DryTrek gamasjer, trehundreogåttini kroner per par. Fjorten dagers angrerett. Velg blant atten farger.",
+   "problem": "Prisraden sägs på två sätt i samma batch: \"per par\" i PD_12_H1 b3 och PD_13_H1 b4, \"paret\" i FO_2_H1 b3, PD_12_H2 b3 och SP_7_H1 b2. Båda är korrekt norska, men annonserna körs sida vid sida i samma kampanj och prisraden ska låta likadant. Blocket ligger dessutom på 102 av 103 tillåtna tecken — sätter man mellanrum i talet (punkten ovan) blir raden 104 och åker ut ur fönstret.",
+   "forslag": "DryTrek gamasjer, tre hundre og åttini kroner paret. Fjorten dagers angrerett og atten farger. (94 tecken, mål 98). Vill man behålla imperativen \"Velg blant atten farger.\" blir raden exakt 103 = taket — välj då hellre den kortare. Byt \"per par\" → \"paret\" även i PD_13_H1 block 4 (blir 106 tecken = måltalet).",
+   "allvar": "nit",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_SP_7_H1",
+   "block": "1",
+   "citat": "Borrelåsen holder mansjetten på plass, selv i trappen.",
+   "problem": "\"selv\" (till och med) finns inte i det svenska talet (\"Kardborren stänger manschengen kvar på foten på trappan\"). Det gör trappan till ett stresstest — ett litet påstående som tillkommit i översättningen och som inget i produktfakta backar. Blocket ligger dessutom på 233 av 240 tecken och 22,0 tecken/s, batchens tredje snabbaste. Att \"allerede\" står kvar tidigare i samma block är däremot RÄTT — svenskan har \"blir strumpan blöt redan på den korta rundan\". Ta inte bort det.",
+   "forslag": "Jeg testet disse på hundeluftingen i morges. Uten gamasjer blir sokken våt allerede på den korte runden rundt kvartalet. Borrelåsen holder mansjetten på plass i trappen. Etter runden er hunden våt på potene, men sokken er tørr. (227 tecken, 21,5 t/s)",
+   "allvar": "nit",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_SP_6_H1",
+   "block": "3",
+   "citat": "Ikke noe krøll, ikke noe som gled ned.",
+   "problem": "Svenskans \"Inget krångel\" betyder besvär. Norska \"krøll\" betyder i första hand skrynkla/trassel på ett plagg, och eftersom nästa sats handlar om att de inte gled ner läser lyssnaren sannolikt \"inga veck på gamasjen\" i stället för \"inget besvär\". OSÄKER — \"krøll\" används också om strul i norskt talspråk, men i en plaggkontext är läsningen otydlig och detta är en UGC-rad där formuleringen ska vara självklar.",
+   "forslag": "Etterpå, helt tørre sokker, ingen snø i skoene, ingen grus, ingenting. De satt på hele veien. Ikke noe styr, ikke noe som gled ned. Enkel greie, men den funker på ordentlig. (173 tecken)",
+   "allvar": "nit",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": "2",
+   "citat": "Etterpå, en sokk er våt, en sokk er tørr.",
+   "problem": "Svenskans poänglinje är elliptisk och knapp — \"en strumpa blöt, en strumpa torr\" — och HeyGens utkast behöll ellipsen. De två tillagda \"er\" gör raden platt precis där hela före/efter-annonsen ska landa. Orsaken är rimligen längden: ren ellips (\"Etterpå: en sokk våt, en sokk tørr.\" = 35 tecken) hamnar under minimum 38, så fyllnaden måste tas någon annanstans i raden. Stilnit, inget sakfel.",
+   "forslag": "Og etterpå, en sokk våt og en sokk tørr. (40 tecken)",
+   "allvar": "nit",
+   "lins": "fakta"
+  },
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": "1",
+   "citat": "Gamasjen dekker gapet mellom støvel og kne, hele veien opp.",
+   "problem": "Två fel i samma sats. (1) Bestämd form saknas: en norrman säger \"mellom støvelen og kneet\", aldrig \"mellom støvel og kne\" — den nakna formen är svensk/telegrafisk och hörs direkt när raden läses högt. (2) \"gapet\" är fel ord; springan mellan känga och byxa heter \"glipa/glipen\" på norska, \"gap\" läses som munnen som gapar. Blocket ligger dessutom på exakt 158 tecken = takgränsen, så rättningen måste korta.",
+   "forslag": "Samme tur, ett bein med gamasje, ett uten. Uten gamasje kryper snøen inn ved støvelkanten. Gamasjen tetter glipen mellom støvelen og kneet, helt opp. (149 tecken, inom 135–158)",
+   "allvar": "stopp",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_PD_12_H1",
+   "block": "2",
+   "citat": "Førtifire centimeter høy er gamasjen, og den tas på med støvelen på foten.",
+   "problem": "Ordföljd ingen norrman använder i tal. Inversionen är ärvd rakt ur den trasiga svenska raden (\"Fyrtiofyra centimeter hög är fästen\") och låter arkaisk/maskinöversatt uppläst. Samma faktum står dessutom i korrekt ordföljd i PD_12_H2 block 3 (\"Gamasjen er førtifire centimeter høy\") — texterna motsäger alltså varandra i stil. (Siffran 44 är däremot rätt rättad från HeyGens \"Fjorten\".)",
+   "forslag": "Gamasjen er førtifire centimeter høy, og den tas på med støvelen på foten. (74 tecken, inom 68–80)",
+   "allvar": "stopp",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_PD_12_H1",
+   "block": "1",
+   "citat": "Sørpesnøen begynner over støvelkanten, snøen fyker inn ovenfra og sokken er våt ved kilometer fire.",
+   "problem": "Två svecismer. (1) \"ved kilometer fire\" är en direktöversättning av \"vid kilometer fyra\" — på norska låter det som en mätarskylt i ett löplopp; det heter \"etter fire kilometer\". (2) \"begynner over støvelkanten\" är maskinnorska; sörja \"når\"/\"går\" över kanten, den \"begynner\" inte. Samma km-konstruktion återkommer i PD_12_H2 block 1 och PD_13_H1 block 1.",
+   "forslag": "Sørpesnøen når over støvelkanten, snøen fyker inn ovenfra og sokken er våt etter fire kilometer. Kroken festes i snøringen, remmen går under foten. Borrelåsen lukkes hele veien oppover på utsiden. (196 tecken, inom 176–205)",
+   "allvar": "stopp",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_PD_12_H2",
+   "block": "1",
+   "citat": "Snøen fyker inn ovenfra, og sokkene er våte ved kilometer fire.",
+   "problem": "Samma svecism som i PD_12_H1: \"ved kilometer fire\" är svenska \"vid kilometer fyra\" ord för ord. Norska säger \"etter fire kilometer\".",
+   "forslag": "Lei av snø, fukt og grus i skoene? Snøen fyker inn ovenfra, og sokkene er våte etter fire kilometer. (100 tecken, inom 90–105)",
+   "allvar": "stopp",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_PD_13_H1",
+   "block": "1",
+   "citat": "Vannet renner inn over støvelkanten, og sokken er våt allerede ved kilometer fire.",
+   "problem": "Två fel. (1) Samma svecism \"ved kilometer fire\" (ska vara \"etter fire kilometer\"). (2) Logiskt brott mot bilden: blocket visar en vattenflaska som hälls över kängan på några sekunder, men rösten påstår att strumpan blir blöt \"vid kilometer fyra\" — tittaren hör en vandringstid till en flaskdemo. Felet finns i den svenska källan också, men ska inte bäras vidare till norskan.",
+   "forslag": "En flaske vann over støvelen. Se på sokken. Vannet renner inn over støvelkanten, og sokken er våt etter noen sekunder. (118 tecken, inom 113–131)",
+   "allvar": "stopp",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_SP_6_H1",
+   "block": "3",
+   "citat": "De satt på hele veien. Ikke noe krøll, ikke noe som gled ned. Enkel greie, men den funker på ordentlig.",
+   "problem": "Tre saker. (1) \"De satt på hele veien\" är en falsk vän: \"å sitte på\" betyder på norska att åka med/få skjuts. En norrman hör \"de fick skjuts hela vägen\", inte \"de satt kvar\". Ska vara \"De satt på plass hele veien\". (2) \"Enkel greie\" saknar artikel — norska kräver \"En enkel greie\". (3) \"på ordentlig\" är släpad svenska (\"på riktigt\"); norsk UGC säger \"på ekte\" eller \"skikkelig\". (Punkt 3 är den jag är minst säker på — \"på ordentlig\" förekommer, men låter stelt i en spontan UGC-replik.)",
+   "forslag": "Etterpå, helt tørre sokker, ingen snø i skoene, ingen grus, ingenting. De satt på plass hele veien. Ikke noe krøll, ikke noe som gled ned. En enkel greie, men den funker på ekte. (178 tecken, inom 154–180)",
+   "allvar": "stopp",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_SP_7_H1",
+   "block": "1",
+   "citat": "Borrelåsen holder mansjetten på plass, selv i trappen.",
+   "problem": "\"Mansjetten\" introduceras utan att ha nämnts någonstans — varken i manuset eller i produktfakta (delarna heter krok, rem och borrelås). Lyssnaren vet inte vilken manschett som avses; ordet är ett arv från den trasiga svenska raden (\"stänger manschengen\"). Dessutom: \"i trappen\" är stel bokmål i en talad UGC-replik, \"i trappa\" är det folk säger.",
+   "forslag": "Jeg testet disse på hundeluftingen i morges. Uten gamasjer blir sokken våt allerede på den korte runden rundt kvartalet. Borrelåsen holder gamasjen på plass, selv i trappa. Etter runden er hunden våt på potene, men sokken er tørr. (230 tecken, inom 206–240)",
+   "allvar": "nit",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_SP_6_H1",
+   "block": "1",
+   "citat": "Kroken i snøringen, klar.",
+   "problem": "\"klar\" är en mekanisk ombildning av svenskans \"klart\" och läses som adjektivet till kroken (\"kroken är färdig\"). Norskan markerar ett avklarat moment med \"sånn\" eller \"ferdig\". (\"snøringen\" är däremot rätt fixat ur svenskans felhörda \"snaringen\".)",
+   "forslag": "Kroken i snøringen, sånn. (25 tecken, inom 23–27)",
+   "allvar": "nit",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": "2",
+   "citat": "Etterpå, en sokk er våt, en sokk er tørr.",
+   "problem": "Hela poängen är räkneordet ETT: en strumpa mot en annan. Utan accent läses \"en\" som obestämd artikel och kontrasten försvinner när rösten läser raden. Norsk ortografi skiljer med \"én\". Teckenantalet påverkas inte.",
+   "forslag": "Etterpå: én sokk er våt, én sokk er tørr. (41 tecken, inom 38–44)",
+   "allvar": "nit",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": "3",
+   "citat": "Samme tur. Gamasjer, trehundreogåttini kroner paret. Fri frakt til Norge og Sverige.",
+   "problem": "\"Samme tur.\" är ett transkriberingsartefakt ur den svenska källan (samma fras öppnar block 1) och hänger löst framför prisraden — uppläst låter det som en kvarglömd rest. Samtidigt nämns varumärket inte en enda gång i hela FO_2_H1. Att byta artefakten mot brandet löser båda och håller längden (att bara stryka \"Samme tur.\" ger 73 tecken = under minimum 78).",
+   "forslag": "DryTrek-gamasjer, trehundreogåttini kroner paret. Fri frakt til Norge og Sverige. (81 tecken, inom 78–91)",
+   "allvar": "nit",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_PD_12_H1",
+   "block": "3",
+   "citat": "DryTrek gamasjer, trehundreogåttini kroner per par.",
+   "problem": "Särskrivning. Norska (som svenska) binder egennamn + substantiv med bindestreck: \"DryTrek-gamasjer\". Gäller likadant i PD_12_H2 block 3 (\"DryTrek gamasjer koster …\") och PD_13_H1 block 4 (\"DryTrek gamasjer i atten farger\"). Hörs inte i dubben, men syns om raderna bränns som captions. Rättningen är teckenneutral (bindestrecket ersätter mellanslaget).",
+   "forslag": "DryTrek-gamasjer, trehundreogåttini kroner per par. Fjorten dagers angrerett. Velg blant atten farger. (102 tecken, inom 88–103 — ligger nära taket, korta inte in något annat här)",
+   "allvar": "nit",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_PD_13_H1",
+   "block": "4",
+   "citat": "trehundreogåttini kroner per par",
+   "problem": "Talet skrivet som ett enda ord. Bokmålsnormen (Språkrådet) är \"tre hundre og åttini\". Beloppet är rätt (389, samma som butiken) och ska inte räknas om — det här gäller bara stavningen. Samma skrivsätt i FO_2_H1 b3, PD_12_H1 b3, PD_12_H2 b3 och SP_7_H1 b2. Obs: i PD_12_H1 block 3 ryms INTE särskrivningen (+2 tecken ⇒ 104 mot taket 103) — skriv \"389\" med siffror där, eller låt den raden stå.",
+   "forslag": "DryTrek-gamasjer i atten farger, tre hundre og åttini kroner per par, fri frakt og fjorten dagers angrerett. (108 tecken, inom 95–111)",
+   "allvar": "nit",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_SP_7_H1",
+   "block": "2",
+   "citat": "Gamasjer til hundeluftingen, trehundreogåttini kroner paret.",
+   "problem": "Bestämd form i en generisk CTA. \"hundeluftingen\" pekar ut en bestämd hundpromenad (rätt i block 1, där kreatören berättar om just sin runda), men i prisraden ska det vara obestämt: \"Gamasjer til hundelufting\".",
+   "forslag": "Gamasjer til hundelufting, trehundreogåttini kroner paret. (58 tecken, inom 55–64)",
+   "allvar": "nit",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_PD_13_H1",
+   "block": "2",
+   "citat": "Vannet treffer borrelåssømmen, kroken og remmen og renner av på utsiden. … Flasken er tom, sokken er tørr.",
+   "problem": "Osäkerhet som jag flaggar hellre än gissar: hela PD_13-vinkeln demonstrerar vattenavvisning i ord, och ordet \"vanntett\" ströks ur copyn 2026-09-09. De förbjudna orden används inte, och den norska texten är trogen den svenska källan — men uppläst påstår annonsen i praktiken det som strykningen skulle undvika. Det går inte att lösa i en enskild rad.",
+   "forslag": "Ingen ändring i texten föreslås. Be Axel bekräfta att PD_13-vinkeln (flaska vatten → torr strumpa) fortfarande är godkänd efter strykningen av \"vanntett\"; är den inte det ska hela annonsen tas ur NO-batchen, inte skrivas om rad för rad.",
+   "allvar": "nit",
+   "lins": "sprak"
+  },
+  {
+   "nyckel": "drytrek_PD_12_H2",
+   "block": "3",
+   "citat": "Borrelåsen lukkes oppover på utsiden.",
+   "problem": "\"hele veien\" har fallit bort. Källan säger \"Kardborren stängs hela vägen upp på utsidan\", och att kardborren löper längs HELA utsidan är själva skälet till att damasken går på med kängan kvar på foten (produktfil: \"Kardborrestängning längs hela utsidan\"). Samma mening i drytrek_PD_12_H1 block 1 behåller \"hele veien oppover\" — nu säger de två videorna olika om samma mekanism. Timing: 168 tecken mot mållängd 169 = 99,4 % (godkänd), och med tillägget 179 tecken = 105,9 % — fortfarande inom bandet, så inget skäl att korta.",
+   "forslag": "Borrelåsen lukkes hele veien oppover på utsiden. Gamasjen er førtifire centimeter høy, og den tas på med støvelen på foten. DryTrek gamasjer koster trehundreogåttini kroner paret.",
+   "allvar": "nit",
+   "lins": "timing"
+  },
+  {
+   "nyckel": "drytrek_SP_7_H1",
+   "block": "1",
+   "citat": "Borrelåsen holder mansjetten på plass, selv i trappen.",
+   "problem": "Meningen har bytt innebörd. Källan (\"Kardborren stänger manschengen kvar på foten på trappan\") beskriver att kreatören stänger kardborren medan kängan sitter kvar på foten, stående på trappan — alltså påtagningen. Norskan gör om platsen till ett prestandapåstående: \"holder … på plass, selv i trappen\" = håller även när hon går i trappor. Det ordet \"selv\" finns inte i källan och är inget mätt påstående. UGC-undantaget skyddar kreatörens egen upplevelse, inte tillagda produktlöften. Timing: 233 tecken mot mållängd 229 = 101,7 %; förslaget 235 tecken = 102,6 %.",
+   "forslag": "Jeg testet disse på hundeluftingen i morges. Uten gamasjer blir sokken våt allerede på den korte runden rundt kvartalet. Borrelåsen lukkes mens støvelen står på, rett på trappa. Etter runden er hunden våt på potene, men sokken er tørr.",
+   "allvar": "nit",
+   "lins": "timing"
+  },
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": "2",
+   "citat": "Etterpå, en sokk er våt, en sokk er tørr.",
+   "problem": "Svensk ordföljd som står kvar. På norska kräver ett framflyttat adverbial V2 (\"Etterpå er …\"); \"Etterpå, en sokk er våt\" läses som direktöversatt svenska. Dessutom upprepas \"en sokk … en sokk\" där norska talspråket säger \"den ene … den andre\". HeyGens eget utkast (\"Etterpå, en sokk våt, en sokk tørr\") var verblöst och slapp problemet, men blir 35 tecken = 83 % av mållängden och underkänns på timing. Timing nu: 41 tecken mot mållängd 42 = 97,6 % (godkänd); förslaget 44 tecken = 104,8 %, fortfarande inom det angivna fönstret 38–44.",
+   "forslag": "Etterpå: den ene sokken våt, den andre tørr.",
+   "allvar": "nit",
+   "lins": "timing"
+  },
+  {
+   "nyckel": "drytrek_PD_12_H1",
+   "block": "1",
+   "citat": "Sørpesnøen begynner over støvelkanten,",
+   "problem": "Direktöversättning av \"Blötsnön börjar ovanför kängans kant\". \"begynner over\" är inte norsk idiom här — meningen är att sörjan är djupare än kängskaftet, och det säger norskan med \"når over\" (HeyGens eget utkast hade \"Sørpesnøen når over støvelkanten\", vilket var rätt och ändrades bort). Flaggar också ordet \"Sørpesnøen\": standardordet på bokmål är \"snøsørpe\"/\"sørpe\" — \"sørpesnø\" förekommer men är mindre etablerat, och jag är osäker, så det ska en norsktalande titta på. Timing: 199 tecken mot mållängd 195 = 102,1 % (godkänd); förslaget 194 tecken = 99,5 %.",
+   "forslag": "Sørpesnøen når over støvelkanten, snøen fyker inn ovenfra og sokken er våt ved kilometer fire. Kroken festes i snøringen, remmen går under foten. Borrelåsen lukkes hele veien oppover på utsiden.",
+   "allvar": "nit",
+   "lins": "timing"
+  },
+  {
+   "nyckel": "drytrek_SP_6_H1",
+   "block": "3",
+   "citat": "Ikke noe krøll, ikke noe som gled ned.",
+   "problem": "\"krøll\" är fel register för svenskans \"krångel\" (= besvär). På norska betyder \"krøll\" i första hand veck/trassel, och om ett tygplagg riskerar raden att läsas som ett påstående om att materialet inte skrynklar sig — ett löfte som inte finns i produktfakta. Norskt talspråk för \"inget krångel\" är \"ikke noe styr\". Timing: 174 tecken mot mållängd 171 = 101,8 % (godkänd); förslaget 173 tecken = 101,2 %.",
+   "forslag": "Etterpå, helt tørre sokker, ingen snø i skoene, ingen grus, ingenting. De satt på hele veien. Ikke noe styr, ikke noe som gled ned. Enkel greie, men den funker på ordentlig.",
+   "allvar": "nit",
+   "lins": "timing"
+  },
+  {
+   "nyckel": "drytrek_FO_2_H1",
+   "block": "3",
+   "citat": "Gamasjer, trehundreogåttini kroner paret.",
+   "problem": "Priset är rätt belopp (389) och rätt ord (kroner), och det MÅSTE stå utskrivet i bokstäver — skrivs det \"389\" faller blocket till 70 tecken = 80 % av mållängden och underkänns. Men 17 tecken i ett enda ihopskrivet räkneord är en röstrisk: HeyGens TTS kan läsa \"trehundreogåttini\" som ett okänt ord. Skriv det i tre ord i stället — samma belopp, samma tal, +2 tecken. Gäller alla fem prisblock: FO_2_H1 b3, PD_12_H1 b3, PD_12_H2 b3, PD_13_H1 b4 och SP_7_H1 b2. Timing: 84 tecken mot mållängd 87 = 96,6 %; förslaget 87 tecken = 100,0 %. Lyssna extra på just prisraden i röstkollen.",
+   "forslag": "Samme tur. Gamasjer, tre hundre og åttini kroner paret. Fri frakt til Norge og Sverige.",
+   "allvar": "nit",
+   "lins": "timing"
+  }
+ ]
+}

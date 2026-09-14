@@ -52,3 +52,22 @@ briefade av någon annan — de markeras "täckt av hubbraden" och briefas inte 
 | ~~**"Alternativ till godis" som hook**~~ | **[använd i batch #3]** → `AdventLaneRacing_SP_4_1`. Kontrollerat 2026-09-13: hubbens RV_1_1 citerar Anna, RV_2_1/TR_1_H1/TR_2_1 citerar Johan — Sara och Erik var lediga; SP_6_H1 fick därför Daniel i stället för Johan. | produktfilens `reviews` |
 | **Övriga lediga recensioner för citat-kort** — Peter, Sofia, Maria, Linda, Emma | Johan (×3), Anna, Sara, Erik, Daniel är använda i hubben efter batch #3. Fem riktiga rader kvar. | produktfilens `reviews`, läst 2026-09-13 |
 | **Hook-swap-serien på PD_2_H1 är uttömd på idéer med källa** | H2–H8 testar tomt omslag, slutresultat, demo först, fråga, siffra+negation, ingen röst, 6 s. Nästa hook-variant ska bygga på VILKEN av dem som vann — inte på fler gissningar. | batch #2–#3 |
+
+---
+
+## Öppen ägarfråga 2026-09-13 — ska batch #3 göras klar?
+
+Axel pausade AdventLanes båda kampanjer 13/9 kl 11:05–11:06 (se `dna.md` körning nr 4).
+Natten innan beställde nattvakten **21 briefer (batch #3) av redigeraren Jazz** — 36 rader
+ligger nu som `Draft` i hubben. Gör hon dem klara produceras creatives för en butik som
+inte annonserar.
+
+Tre vägar, Axels val:
+1. **Pausa kadensen** — stäng av nattvakten för `kalender/adventskalender-racingbilar` och
+   sätt Jazz på en butik som snurrar. Briefarna ligger kvar och går att plocka upp.
+2. **Låt henne göra klart** — materialet finns färdigt när/om kampanjen startas om.
+   Säsongen tar slut 24 dec, så en omstart måste ske inom ett par veckor för att hinna.
+3. **Lägg ner produkten** — då ska rutinerna (00:25 / 13:55 / 15:55) tas bort helt, annars
+   kör tre tomma körningar per dygn i evighet.
+
+Ingen av dem får väljas av en session. Frågan ställdes i Discord `#annons-uppladdning` 13/9.

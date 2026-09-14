@@ -288,7 +288,20 @@ Hela listan i `factory/README.md`.
     `paket.mjs` räknar varje nivås pris i den valutan med samma procent och
     skriver det i metaobjektfältet `fastpris_valutor` ("NOK:1880.20");
     `tema.patchaMsPaketValuta` låter snippeten läsa det fältet när
-    `cart.currency` inte är butikens valuta. Rabattkoden blir en
+    `cart.currency` inte är butikens valuta.
+    ⚠️ **Mallen `ops-tema.zip` saknar både de norska orden och
+    `fastpris_valutor` — det är med flit, inte en lucka.** Mallen hålls ren och
+    `ops.mjs` steg `tema` patchar in båda vid VARJE bygge (`patchaMsPaket` +
+    `patchaMsPaketValuta`, idempotenta). Lägg dem aldrig i zipen: då blir
+    patcharna no-ops och två källor ska hållas i synk i stället för en.
+    ⚠️ Men patcharna är TYSTA när de missar: båda svarar `null` både när
+    jobbet redan är gjort och när ankaret saknas. Skrivs snippeten om så att
+    raden `assign fast = niva.fastpris.value` ändras, försvinner NOK-priset
+    utan felmeddelande och syns först som SEK-pris i en norsk kassa. Testet
+    "zipens ms-paket.liquid bär ankaret för BÅDA bygg-patcharna"
+    (`factory/test/tema.test.mjs`, skrivet 2026-09-13 efter att snippeten
+    bytts mot rullgardinsversionen) kör patcherna mot den riktiga zipen och
+    blir rött innan det når en butik. Rabattkoden blir en
     **procentkod** när nivån är en hel procent utan gratisrad — ett fast
     SEK-belopp räknas om med dagskursen i kassan och driver ifrån sidan
     (mätt: sidan 1 919,30, kassan 1 880,63). Med procent stämmer sida och
@@ -529,7 +542,48 @@ en människa i en webbläsare".
 
 ---
 
+## Marknaden är pausad av ägaren (skrivet 2026-09-13, HeimGuard NO)
+
+Ett tillstånd som saknade rutin tills det inträffade: Axel pausar en marknads
+kampanj för hand, och de tre rutinerna fortsätter köra varje dag. Så här gäller
+det, för varje OPS-butik och varje marknad:
+
+1. **Kön hålls.** Ingen rad flyttas, ingen status ändras i Notion, inget
+   laddas upp. Raderna ligger kvar i sin status tills kampanjen är ACTIVE igen.
+2. **Inget renderas.** HeyGen-credits dras aldrig för en marknad som är av.
+   Spärren ska sitta FÖRE renderingen, inte efter.
+3. **Rapporten säger vad som gäller**, inte "kampanjen saknas":
+   `market paused by owner since <tid>, N rows held`, plus vad marknaden
+   tjänade eller kostade innan pausen. Föreslå aldrig `/ny-annonser` —
+   det bygger en andra kampanj bredvid den pausade.
+4. **Bara ägaren slår på den igen.** PAUSED med spend är ett beslut. Först när
+   kampanjen är ACTIVE tömmer nästa körning kön.
+5. **Den andra marknaden påverkas inte.** SE-leveransen körs vidare som vanligt
+   även när NO är av — mätt 2026-09-13: Axel pausade båda HeimGuards kampanjer
+   11:06, slog på SE igen 15:06 och lät NO ligga kvar.
+
+⚠️ **Nattvakten ser bara SE.** `budgetrond.mjs` kör med `STANDARDMARKNAD='SE'`,
+så ingen NO-kampanj i något OPS-konto har någonsin varit med i en budgetrond
+(mätt 2026-09-13: sex NO-kampanjer, 17 522 kr spend, tre ACTIVE). En pausad
+NO-kampanj bevakas alltså inte heller — men en ACTIV gör det inte heller, och
+det är det farliga fallet. Skriv aldrig i en rapport att butiken är bevakad
+utan att säga vilken marknad som menas.
+
 ## Regler som bevisats den hårda vägen
+- **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
+  visar SVENSKA priser för norska kunder.** Fixen i Fas 4 (webbnärvaro +
+  `?country=NO` i `kampanj.mjs`) landade 2026-09-10; allt som byggdes innan
+  bär bara `/nb`-länken. Mätt 2026-09-13 på HeimGuard, vars NO-kampanj byggdes
+  2026-09-09: `heimguard.se/nb/products/overvakningskameran` svarar 799,00 kr
+  i **SEK**, samma sida med `?country=NO` svarar 781,00 **NOK** — NOK var
+  alltså påslaget hela tiden, det var länken som saknade parametern. Alla 27
+  NO-annonser pekade på den parameterlösa länken, medan DryTreks (byggda efter
+  fixen) bär den. Utfallet: NO ROAS 1,28 mot SE 1,50 på samma produkt.
+  **Kontrollera länken i varje NO-kampanj som byggdes före 2026-09-10** innan
+  någon dömer creativen — felet ligger i kassan, inte i annonsen. Att rätta
+  det kräver nya creatives på annonserna, och en ny creative nollställer
+  annonsens gilla-markeringar och kommentarer; väg det mot hur mycket
+  engagemang annonsen hunnit samla.
 - **"Butiken ser obrandad ut" är nästan aldrig brandingen — det är ett steg som
   inte kördes.** Mätt 2026-09-09 när Axel jämförde sina tre OPS-butiker och
   gillade DryTrek mest: TackleBays `branding:`-block är lika genomarbetat som

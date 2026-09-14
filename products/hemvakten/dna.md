@@ -264,3 +264,103 @@ Batch #2 (4 fable / 3 sonnet) är inte live än (hos redigeraren). Batch #3: 11 
   minan och skickade fel tal till Discord innan det rättades. **Läs alltid
   break-even ur produktfilen, aldrig ur ett kampanj- eller adsetnamn.** Talet i
   namnet kan inte ändras i efterhand utan att kampanjen döps om.
+
+---
+
+## Översättningsrundan nr 2 — 2026-09-13 (`/ops-oversatt`, tom kö men en rotorsak funnen)
+
+Kön `SE-ACTIVE to be translated` var tom och NO-kampanjen pausad, så inget
+översattes. Körningen ägnades i stället åt att mäta VARFÖR Norge gick sämre än
+Sverige på exakt samma produkt och samma creatives.
+
+### Läget (mätt 2026-09-13 13:45–14:20 UTC)
+
+| Marknad | Spend (livstid) | Köp | ROAS | Mot BE-ROAS 1,49 | Status |
+|---|---|---|---|---|---|
+| SE | 6 049 kr | 7 | **1,50** | precis på break-even | ACTIVE (Axel slog på 15:06) |
+| NO | 4 141 kr | 4 | **1,28** | under break-even | PAUSED (Axel pausade 11:06) |
+
+Metas aktivitetslogg: `Axel Odhner` pausade båda 11:06 CEST och slog på SE igen
+15:06. Båda är alltså ägarbeslut — ingen rutin rörde något.
+
+### ROTORSAK: de norska annonserna pekade på en sida som tar betalt i SEK
+
+Uppmätt på samma URL, samma minut:
+
+| Länk | Valuta | Pris |
+|---|---|---|
+| `heimguard.se/nb/products/overvakningskameran` | **SEK** | 799,00 kr |
+| samma sida `?country=NO` | **NOK** | 781,00 |
+
+Alla 27 NO-annonser bär den **parameterlösa** länken. DryTreks NO-annonser bär
+`?country=NO`. Skillnaden är ett datum: fixen (webbnärvaro kopplad till marknaden
++ parametern i `kampanj.mjs`) landade 2026-09-10, och HeimGuards NO-kampanj
+byggdes **2026-09-09** — en dag för tidigt. Butiksfilens kommentar "Betalar i SEK
+tills NOK slås på i admin" är därmed **inaktuell**: NOK svarar redan, det var
+länken som saknade parametern.
+
+Det betyder att varje norsk klick landade på svenskt pris. Det är den enda
+uppmätta strukturella skillnaden mellan marknaderna, och den ligger i kassan,
+inte i creativen. **Döm ingen norsk creative på den datan.** Rättningen kräver
+nya creatives på annonserna, vilket nollställer deras gilla-markeringar och
+kommentarer — väg det mot hur mycket engagemang de hunnit samla.
+
+### Översättningsskulden (mätt i kontot, inte gissad)
+
+11 SE-annonser saknar norsk tvilling. Två av dem (`CS_2`, `CS_3`) är pausade i SE
+och ska inte översättas ⇒ **reell skuld 9**. Värre: **8 av dem står som
+`Approved` i hubben** trots att den norska annonsen aldrig skapades. `Approved`
+är slutstatus, så `/ops-oversatt` plockar dem aldrig — skulden är osynlig för
+automatiken och växer tyst. Tre annonser (`CS_1`, `CS_2`, `CS_3`) saknar
+hubbrad helt och kan aldrig gå via Notion-kön.
+
+Dessutom: 6 rader står kvar i `Translation in review` sedan 2026-09-06 — en
+status från flödet före OPS som **ingen rutin i repot läser**. Fyra av dem är
+verifierat live i NO, två (`RI_1_H1`, `SP_4_H1`) finns inte ens som SE-annonser.
+
+### Två systemfel som inte är HeimGuards ensak
+
+- **Nattvakten ser aldrig någon NO-kampanj.** `budgetrond.mjs` kör
+  `STANDARDMARKNAD='SE'`, och alla fyra rondfilerna för hemvakten innehåller
+  exakt en kampanj: SE. I OPS-kontot finns sex NO-kampanjer med 17 522 kr spend,
+  tre ACTIVE. `TACKLEBAY_NO_Spöhållaren` är ACTIVE med ROAS **0,44** på 2 981 kr
+  och 3 köp — dömbar enligt ANALYSMETOD, men ingen rutin kan se den.
+- **HeimGuard-arbete ger 0 kr i commission.** OPS-kontot står som utländskt i
+  `commission/berakning.mjs` (`arSvensk()` = false för varje HeimGuard-annons)
+  OCH hubben är undantagen som OPS-hub. Dubbelspärrat. Carl Vicente fick 21
+  briefer 2026-09-13 och tjänar noll på dem. Regeln "endast svenska annonser"
+  är från 2026-08-31; beslutet att lägga alla OPS-butiker i DK-kontot är från
+  2026-09-07 och är yngre. Vad som gäller för OPS-redigerarnas lön står
+  ingenstans skrivet — det är Axels att avgöra.
+
+---
+
+## Körning nr 4 — 2026-09-14, budgetnatt (`/notionscalercs`)
+
+Data: 7d 6 338 kr, 7 köp, ROAS 1,43 (under BE 1,49), vinstbidrag −113 kr. Dygn:
+09-11 795 kr/2 köp · 09-12 585 kr/0 · 09-13 726 kr/0. Kampanjbudget oförändrad 700 kr
+(3d under grinden: 2 106 kr, 2 köp).
+
+**`PD_2` gick från preliminär vinnare till preliminär förlorare på ett dygn utan
+köp:** 14d 2 265 kr, 4 köp, CPA 566 kr (5 % över 538). Skriptet ville pausa den.
+**Inte gjort** — lagd under ACTION NEEDED åt Axel (`--max 0`), för:
+1. ANALYSMETOD steg 5: top spendern är benchmark, inte kandidat. PD_2 är top spender
+   (2 265 kr) och enda annonsen med köp.
+2. ANALYSMETOD 2c: en dom på 3–4 köp är preliminär. Ett köp till ger CPA 453 (under BE).
+3. **Regel-lucka i `factory/budgetbeslut.mjs`:** `BENCHMARK_ANDEL` räknas på
+   *positivt* vinstbidrag (`positivTotal`), så skyddet försvinner exakt när
+   benchmarken tippar under break-even. Förslag: skydda även annonsen med störst
+   spendandel. Ändras bara på Axels besked.
+
+Batch #2 + #3 (28 briefer) ligger hos Carl, inget nytt live. Kampanjen kör 700 kr/dag
+på oprövade annonser tills leveranserna kommer.
+
+### Norge är AV sedan 2026-09-13 (Axels beslut A)
+
+NO-kampanjen är pausad av Axel och översättningsrutinen är avstängd. **Briefa
+inga norska creatives** och räkna inte in NO i någon kadens förrän han säger
+till. Svenska sidan är opåverkad och kör vidare.
+
+Den dag Norge startas om: rotorsaken ovan (`?country=NO` saknas i annonslänken,
+så norska kunder ser SEK) måste lagas FÖRST, annars upprepas samma utfall.
+Fyra färdiga rader väntar i `SE-ACTIVE to be translated`.

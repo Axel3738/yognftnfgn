@@ -1,0 +1,26 @@
+{
+  "brand": "HeimGuard",
+  "butik": "hemvakten",
+  "datum": "2026-09-13",
+  "lage": "oversatt",
+  "gjort": [
+    "Translation queue: 0 rows in SE-ACTIVE to be translated (69 rows in the hub scanned). Nothing translated, nothing uploaded, HeyGen credits 8497 before and after",
+    "NO campaign HEIMGUARD_NO_Overvakingskamera is PAUSED with 4141 kr spend, so it was not touched. Meta activity log: Axel paused it 11:06 CEST and left it off",
+    "Found why Norway underperformed: all 27 NO ads link to heimguard.se/nb WITHOUT ?country=NO, so Norwegian customers saw 799,00 kr in SEK. The same page with the parameter returns 781,00 NOK. NOK was switched on all along",
+    "Asked the delivery run to go again tonight: its 13:40 run uploaded 0 of 7 because SE was paused at that moment, and Axel switched SE back on at 15:06"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "NO lifetime: 4141 kr, 4 purchases, ROAS 1.28 against break-even 1.49. Under break-even, so the pause matches the numbers - but read it with the SEK landing page in mind, not as a verdict on the creatives",
+    "SE lifetime: 6049 kr, 7 purchases, ROAS 1.50, right at break-even. ACTIVE again since 15:06 CEST",
+    "Translation debt: 11 Swedish ads have no Norwegian twin, and 8 of them already sit as Approved in the hub although the Norwegian ad was never created. Approved is the end status, so this routine will never pick them up",
+    "6 rows have been stuck in Translation in review since 2026-09-06. No routine in the repo reads that status"
+  ],
+  "action_axel": [
+    "One decision: what happens to Norway? (A) stays off - I pause this 15:40 routine so it stops reporting every day. (B) on as it is - it starts on 1000 kr/day against a checkout in SEK. (C) on after the links are fixed - I rebuild the 27 NO ads with ?country=NO first, which resets their likes and comments.",
+    "Nothing to click right now. Sweden is live and the delivery run is putting today's 5 finished creatives up tonight."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-14"
+}

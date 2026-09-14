@@ -1,0 +1,24 @@
+{
+ "brand": "DryTrek",
+ "butik": "drytrek",
+ "datum": "2026-09-13",
+ "lage": "oversatt",
+ "server": "DryTrek",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "Second Norway run today: the five inherited rows are now live for DryTrek too.",
+  "SP_4_H1, SP_5_H1, PD_9_H1 and FO_1_H1 are ACTIVE in the Norwegian campaign.",
+  "FO_1_H1 opened the first FO adset in that campaign, DRYTREK_NO_FO.",
+  "They were renamed to the DryTrek pattern so the data stays separable from the source store.",
+  "The Norwegian campaign now runs 25 ads, all ACTIVE."
+ ],
+ "varningar": [
+  "These films came from another store and promised three things DryTrek does not: rain-proofing, a ten-second fitting time, and 30-day returns.",
+  "All three are rewritten in the Norwegian voice-over and captions. The returns line now says 14 days, which is what the shop actually gives.",
+  "PD_8_H1 also carries a burned-in English block reading Stops snow, Stops rain, Blocks gravel, 10-second fit. It is set to be painted out.",
+  "PD_8_H1 is not uploaded: HeyGen has held the render in manual moderation for over an hour. The row stays in the queue for the next run.",
+  "A real bug was found and fixed in the caption tool: its search window was too narrow for these 9:16 films, so Swedish text survived at the left and right edges."
+ ],
+ "action_axel": [],
+ "nasta_korning": "2026-09-14"
+}

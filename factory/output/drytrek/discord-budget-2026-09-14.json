@@ -1,0 +1,25 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-14",
+  "lage": "budget",
+  "siffror": {
+    "spend_7d": 3623,
+    "kop_7d": 7,
+    "roas_7d": 0.83
+  },
+  "gjort": [
+    "Budget round: DRYTREK_SE campaign 700 -> 500 SEK/day (floor). Rule: 5 losing days in a row (ROAS under break-even 1.60 every day with spend). Read back, logged. No campaign pause — ever.",
+    "No ads paused: all 23 creatives that went live on 13 Sep (17 colour images + Jasper's 6 videos) are under the data gate. Nothing activated. PD_2_1 is PAUSED since daytime — a decision, untouched.",
+    "Trend: 7 days 3 623 SEK / 7 purchases / ROAS 0.83 (was 0.56 yesterday). Per day: 09-09 16 SEK/0 purchases · 09-10 856 SEK/2 purchases · 09-11 788 SEK/0 purchases · 09-12 1123 SEK/3 purchases · 09-13 840 SEK/2 purchases. PD ad set floor 300 SEK (Axel, 13 Sep) is working: PD_1 went 21 -> 134 SEK.",
+    "Not a brief day (Monday). Next brief day Wednesday 16 Sep: first read of the 23 live creatives against their briefs."
+  ],
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "varningar": [
+    "The campaign is now at the 500 SEK floor. If purchases stay at 0 for a week at the floor, the rule pauses the campaign — that is the only campaign pause the night watch can make.",
+    "39 ads share 500 SEK/day: 17 colour variants in one PD ad set plus 6 new videos. At this budget the gate (300 SEK + 3 purchases per ad) takes weeks per ad. The Wednesday read will be on the ad-set level and the colour family as a whole."
+  ],
+  "nasta_korning": "2026-09-15 (budget) · 2026-09-16 (briefs, Wednesday)"
+}

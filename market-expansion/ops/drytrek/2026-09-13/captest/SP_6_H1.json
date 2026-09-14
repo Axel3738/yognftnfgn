@@ -1,0 +1,14 @@
+{
+ "in": "../video/drytrek/up/SP_6_H1.mp4",
+ "ut": "../captest/out/SP_6_H1.mp4",
+ "srt": "../video/srt-orig/drytrek_SP_6_H1.srt",
+ "captions": {
+  "zon": [
+   818,
+   973
+  ],
+  "max_chars": 22,
+  "font_px": 52,
+  "standard_cy": 906
+ }
+}
