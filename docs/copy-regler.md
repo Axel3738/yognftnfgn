@@ -23,6 +23,20 @@ Varje headline, hook och punchline testas mot tre frågor:
 **I brief-leveranser:** visa testet explicit — tabell med rad × tre frågor,
 ✅/❌ per cell. En rad med ❌ går inte ut.
 
+### Det fjärde testet — läs raden högt
+*(Axel, 2026-09-14: "läs raden högt, och låter den inte som något du faktiskt
+skulle säga till en kompis så är den underkänd, hur väl den än klarar
+tre-frågorstestet.")*
+
+En rad kan få tre ✅ och ändå vara skräp, om ingen människa skulle säga den
+rakt upp och ner. Testa den därför muntligt innan den lämnas — högt, inte
+bara i huvudet. Två tecken på att en rad är skriven, inte sagd:
+telegramformeln **"[tidsram]: [resultat]"** ("I år: sushistrumpor", "Så i år:
+nåt som ser ut som mat") och hopklippta utropsfragment ("Sushi, alltså.",
+"Ja. Farfar ger strumpor."). Facit: skulle du säga *exakt* den här meningen,
+i den ordningen, med de orden, till en kompis? Nej — skriv om till hur du
+faktiskt pratar, även om tre-frågorstestet redan är grönt.
+
 ---
 
 ## Reglerna bakom testet
