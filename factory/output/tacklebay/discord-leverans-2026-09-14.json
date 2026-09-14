@@ -1,0 +1,22 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay/fiskespohallare-4-pack",
+  "datum": "2026-09-14",
+  "lage": "leverans",
+  "gjort": [
+    "Queue read: 2 videos in To be Reviewed, both stopped on the price rule, nothing uploaded",
+    "Both rows commented in Notion and moved back to Draft for Eric J",
+    "Store price read live from tacklebay.se today: 289 SEK, no compare-at"
+  ],
+  "varningar": [
+    "PD_45_H1 also has kawaii stickers burned into the whole second half, which the brief forbids, plus \"angeratt\" misspelled and no end card",
+    "PD_42_H1 also carries a \"Lilybady\" watermark in the top-left corner for the entire film",
+    "Both films are missing the briefed end card showing the 4-pack with 289 kr"
+  ],
+  "action_axel": [
+    "Two videos were pulled back to Draft because the price caption is wrong, not because of style.",
+    "PD_45_H1 says \"4-pack 200 och tionio kronor\" and PD_42_H1 says \"200 ationio kronor\". The real price is 289 kr, so both read about 31 percent too low.",
+    "Eric J needs to re-cut both captions to \"289 kr\" in digits. The full note is already on each Notion row."
+  ],
+  "nasta_korning": "2026-09-15"
+}

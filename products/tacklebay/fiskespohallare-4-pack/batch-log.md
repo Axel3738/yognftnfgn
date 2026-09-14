@@ -252,3 +252,55 @@ Notering: `ops-leveranskon.mjs --ut` hämtade `_1.mp4` (4:5) som `fil` fast SE-a
 (9:16) — valdes för hand efter ffprobe. Miljön saknade ffmpeg/ffprobe; `apt-get install ffmpeg` löste det.
 Batchfiler: `market-expansion/ops/tacklebay/2026-09-13/`. Discord: `#annons-uppladdning` på
 TackleBay — OPS (meddelande 1548707507927785593), ingen ping.
+
+---
+
+## Leveransrunda SE — 2026-09-14 (`/ops-leverans tacklebay/fiskespohallare-4-pack`, körning nr 3)
+
+Kön `To be Reviewed`: **2 videor**, båda batch #2 (Eric J). **Noll uppladdade —
+båda stoppade på den enda stoppregeln: priset.** Kampanjen
+`TACKLEBAY_SE_Spöhållaren` ACTIVE, adset PD ACTIVE, pris ur butiken **289 SEK**
+(inget jämförpris), läst live ur `tacklebay.se/products/fiskespohallare-4-pack.json`.
+
+### Rotorsaken: talet 289 är uttalat, inte skrivet
+
+Båda filmerna bränner in priset som **utskrivna ord i stället för siffror**, och
+ordet har gått sönder på exakt samma ställe i båda:
+
+| Annons | Längd | Pristext på skärmen | Tid | Läses som | Avvikelse mot 289 kr |
+|---|---|---|---|---|---|
+| `TackleBayRod_PD_45_H1` | 20,4 s | "4-pack 200 och tionio kronor fri frakt." | 16,5–18,0 s | 200 | −31 % |
+| `TackleBayRod_PD_42_H1` | 13,4 s | "200 åtionio kronor." | 10,5 s | 200 | −31 % |
+
+Det är "tvåhundraåttionio" som tappat "åtta" i captiongenereringen. Båda ligger
+långt över 20 %-gränsen ⇒ kommentar i Notion + status `Draft`, ingen uppladdning.
+**Lärdom till nästa brief: skriv ut i formatkravet att priset ska stå som siffror
+("289 kr"), aldrig som utskrivna ord** — en talsyntes eller autocaption klarar
+inte svenska räkneord och felet syns inte förrän det är inbränt.
+
+### Övriga fel (rapporterade i samma Notion-kommentar, inte egna stopp)
+
+**`PD_45_H1`** — kawaii-stickers inbrända i hela andra halvan (tecknade björnar,
+rosa bläckfisk, pussmun- och hjärtögon-emoji i alla fyra hörn). Briefens sektion 6
+säger uttryckligen "no stickers". De kommer från källklippet. Dessutom
+"14 dagars **ångerätt**." (ska vara *ångerrätt*), inget slutkort med 289 kr, 20,4 s
+mot briefens 15–20 s, och ett suddigt dubblettband över nedre tredjedelen från
+~9 s som ser ut som felaktig padding i stället för beskärning.
+De första 8 sekunderna är däremot precis transportvinkeln vi ville ha:
+trassliga spön i bilen, toppen mot rullfästet, linan i fel ring.
+
+**`PD_42_H1`** — vattenstämpeln **"Lilybady"** med fiskelogga uppe till vänster
+i *varje* bildruta, från 0,00 s till 13,20 s. Ett annat brands märke på en
+TackleBay-annons. Inget slutkort. Allt annat höll: skaka-testet öppnar rent,
+captionen landar på sekund 3 som briefat, längden ligger i spannet,
+"14 dagars ångerrätt." är rättstavad här, och macro-sekvensen på svampen och
+tvåstegslåset är den mittdel briefen beställde.
+
+### Parkerade källrader — rörda: inga
+
+Samma 10 rader med Bäverbutikens prefix `Rodholder_` ligger kvar i
+`Creative strat review` och rörs inte.
+
+Discord: `#annons-uppladdning` på TackleBay — OPS (meddelande
+`1549033179296440364`), **med ping** under ACTION NEEDED. Kö-JSON:
+`factory/output/tacklebay/leverans-2026-09-14.json`.
