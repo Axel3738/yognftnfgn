@@ -1,16 +1,11 @@
 {
   "brand": "CaraShell",
   "butik": "carashell/takskyddet",
-  "datum": "2026-09-12",
+  "datum": "2026-09-14",
   "lage": "budget",
   "server": "CaraShell — OPS",
-  "kanal": "ads",
-  "gjort": [
-    "Budget round: no change — campaign below the data gate (314 kr, 0 purchases)."
-  ],
-  "siffror": { "spend_7d": 314, "kop_7d": 0, "roas_7d": 0, "vinstbidrag_7d": 0, "briefs_nya": 0 },
-  "varningar": [
-    "Setup dry run — nothing was written to the ad account."
-  ],
-  "nasta_korning": "2026-09-13"
+  "gjort": ["Setup dry run — nothing was written to the ad account."],
+  "siffror": { "spend_7d": 2432, "kop_7d": 8, "roas_7d": 3.71 },
+  "nasta_korning": "2026-09-15",
+  "varningar": []
 }
