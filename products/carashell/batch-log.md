@@ -152,3 +152,40 @@ och får stå kvar.
    476 kr — alltså replikerar mönster 6 på nya creatives?
 3. Ger CS utan brådska (`CS_4_1`) bättre eller sämre CPA än `CS_2_1` med den?
 4. Får GT någon spend alls den här gången, eller måste eget ABO till?
+
+---
+
+## Leveransrunda 2026-09-14 (`/ops-leverans carashell`)
+
+Batch #2:s fyra **bildannonser** gick live samma dag som de briefades — hela
+ronden låg i hubben som `To be Reviewed` med bilagan på plats. Videorna
+(`PD_4_H1`, `PD_5_H1`, `SP_4_H1`) är inte levererade av någon ännu och stod
+alltså inte i kön.
+
+| Annons | Adset | Ad-ID | Creative |
+|---|---|---|---|
+| `CaraShellRoof_CS_4_1` | CARASHELL_SE_Taköverdraget - CS | 120249087719640172 | 2068674053741533 |
+| `CaraShellRoof_PD_4_1` | CARASHELL_SE_Taköverdraget - PD | 120249087724280172 | 2336281057197943 |
+| `CaraShellRoof_SP_4_1` | CARASHELL_SE_Taköverdraget - SP | 120249087728680172 | 1126722523039617 |
+| `CaraShellRoof_GT_4_1` | CARASHELL_SE_Taköverdraget - GT | 120249087853210172 | 1772658683861592 |
+
+Alla fyra ACTIVE/ACTIVE (effective `IN_PROCESS` = Metas granskning), ett
+adset per koncept, inget nytt adset skapat, kampanjen orörd. Länken ärvd ur
+`CaraShellRoof_SP_2_1`: `https://carashell.se/products/takskyddet`.
+
+**Priskollen:** butiken läst live (`takskyddet.json`) → 1 129 kr, jämförpris
+1 469 kr. Samma tal i alla fyra copytexter ⇒ noll avvikelse, inget stopp.
+Bilderna bär ingen inbränd text eller pris — prisregeln är grön per
+definition, och granskningen (produkt syns, ingen text, inga ansikten) gick
+igenom på alla fyra. `PD_4_1` visar en hand som håller fuktmätaren; det är
+vad briefens egen IMAGE PROMPT beställde ("a handheld moisture meter"), inget
+ansikte.
+
+Alla fyra flyttade till `SE-ACTIVE to be translated` med ad-id i kommentaren
+— norska rundan tar dem 15:40.
+
+⚠️ **Mätt vid körningen:** Metas API rate-limitade OPS-kontot genom hela
+rundan (8-stegs backoff slog till på både köläsningen och varje uppladdning,
+upp till 300 s väntan). Fyra annonser tog ~40 minuter i stället för ~4.
+Ingenting misslyckades — det är väntetid, inte fel. Kör inte om en rutin som
+"hängt sig" på det här; den jobbar.
