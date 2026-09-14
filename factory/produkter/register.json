@@ -279,7 +279,13 @@
       "redigerare_discord_id": "740814777374343259",
       "cycle_start": "2026-09-12",
       "senaste_korning": "2026-09-14",
-      "redigerare": "Jazz (jazzer1522)"
+      "redigerare": "Jazz (jazzer1522)",
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Butiken PAUSED av Axel 13/9 — ingen annons kan få data, 36 briefer ligger redan som Draft. Nya briefer vore spam (Axels princip från CatCabin 14/9). Släpps när Axel svarat A/B/C och kampanjen är igång igen.",
+        "satt": "2026-09-15"
+      }
     },
     "carashell/takskyddet": {
       "lage": "skala",
