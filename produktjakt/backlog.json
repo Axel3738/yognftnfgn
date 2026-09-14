@@ -47,22 +47,39 @@
   "arketyp": "G_Q4_GAVA",
   "deadline": "1 december (10,4 v)",
   "korningsvecka": 38,
-  "orsak": "2026-09-12 lins I: LIVE 1005013109493697, 25,99 USD → BE-CPA 185–261, undre gränsen < 190 i rank.py-grinden. Söks om bara med listning < 20 USD eller pris 649 mot ankare."
+  "orsak": "2026-09-12 lins I: LIVE 1005013109493697, 25,99 USD → BE-CPA 185–261, undre gränsen < 190 i rank.py-grinden. Söks om bara med listning < 20 USD eller pris 649 mot ankare.",
+  "lost": "2026-09-13: listning 1005013105983191 för 17,33 USD klarade grinden (BE-CPA 223–273 vid 499) — levererad som K0265."
  },
  {
   "objekt": "Hästen i hagen",
-  "form": "uppvärmd vattenhink",
+  "form": "uppvärmd vattenhink — 24 V-system (Isobar/Willab)",
   "arketyp": "E_VADER_SASONG",
   "deadline": "isläggning (10,6 v)",
-  "korningsvecka": 38,
-  "orsak": "2026-09-12 lins I: ankare Willab 20 L 1 299 kr (Hööks/Börjes) skrivet i objekt.json, men AliExpress gav bara 930-dollarstankar och drickskålar — ingen listning."
+  "korningsvecka": 39,
+  "orsak": "2026-09-12 lins I: ankare Willab 20 L 1 299 kr (Hööks/Börjes) skrivet i objekt.json, men AliExpress gav bara 930-dollarstankar och drickskålar — ingen listning. · 2026-09-13 lins L: åtta fraser utan listning; svenska hagar kör 24 V (Isobar/Willab 1 299–1 349), 230 V avråds — sök bara '24V bucket heater / trough de-icer 24V'."
  },
  {
   "objekt": "Igelkotten i trädgården",
   "form": "hus",
   "arketyp": "E_VADER_SASONG",
   "deadline": "första frost",
-  "korningsvecka": 39,
-  "orsak": "2026-09-12 lins I: 25,89 USD > 20-dollarsgränsen mot Vivara 299,90."
+  "korningsvecka": 42,
+  "orsak": "2026-09-12 lins I: 25,89 USD > 20-dollarsgränsen mot Vivara 299,90. · 2026-09-13: fortfarande inget < 20 USD utomhus (25,89 / 68,40) — tredje gången, sök inte igen utan ny källa."
+ },
+ {
+  "objekt": "Mannen själv / partnern — hobbykalendern (fars dag, jul)",
+  "form": "kalenderlåda (Husbilskalendern, 24 retrobussar)",
+  "arketyp": "G_Q4_GAVA",
+  "deadline": "1 december (10,3 v)",
+  "korningsvecka": 38,
+  "orsak": "2026-09-13 lins M: LIVE 1005013149476732, 16,33 USD, BE-CPA 239–287 vid 499, ingen svensk aktör — klarade grindarna men föll utanför batch på plats (säsong 5 > 3). Först i kön i morgon."
+ },
+ {
+  "objekt": "Fågelbord/fågelmatare",
+  "form": "ekorrsäker fröautomat i bur",
+  "arketyp": "E_VADER_SASONG",
+  "deadline": "vintermatning (6 v)",
+  "korningsvecka": 38,
+  "orsak": "2026-09-13 lins L: LIVE 1005008775230067, 11,80 USD, men Vivara säljer samma form 249,90 — utanför batch på plats, LÅG."
  }
 ]

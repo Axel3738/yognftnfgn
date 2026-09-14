@@ -5,7 +5,7 @@
   {
    "koncept_id": null,
    "namn_sv": "Highland Cow-kalendern 3D, 24 figurer",
-   "objekt": "Barnbarnet — adventskalendern",
+   "objekt": "Barnbarnet 3–8 år — Highland Cow-kalendern (samma ägare som racingbilarna, nytt tema)",
    "form": "kalenderlåda",
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "I_FLERKOP",
@@ -13,10 +13,25 @@
    "hypotes_id": "H05",
    "vinnarlikhet": {
     "likast": "Adventskalendern Racingbilar",
-    "delade_variabler": ["24 synliga saker bakom luckor", "hårt datum 1 december", "mottagare i relation (barnbarnet)", "svikande default = chokladkalendern", "prisband 300–499", "flerköp (flera barnbarn)"],
-    "avvikelser": ["djurtema i stället för fordon — når flickor och mormor lika mycket som pojkar", "3D-vinylfigurer i stället för bilar"]
+    "delade_variabler": [
+     "24 synliga saker bakom luckor",
+     "hårt datum 1 december",
+     "mottagare i relation (barnbarnet)",
+     "svikande default = chokladkalendern",
+     "prisband 300–499",
+     "flerköp (flera barnbarn)"
+    ],
+    "avvikelser": [
+     "djurtema i stället för fordon — når flickor och mormor lika mycket som pojkar",
+     "3D-vinylfigurer i stället för bilar"
+    ]
    },
-   "sasong": {"fonster_id": "advent_1_december", "deadline_typ": "1 december", "veckor_kvar": 10.3, "timing": "NOW"},
+   "sasong": {
+    "fonster_id": "advent_1_december",
+    "deadline_typ": "1 december",
+    "veckor_kvar": 10.3,
+    "timing": "NOW"
+   },
    "listning": {
     "product_id": "1005013105983191",
     "url": "https://www.aliexpress.com/item/1005013105983191.html",
@@ -24,25 +39,101 @@
     "sald": "",
     "verdict": "LIVE_VERIFIED",
     "verifierad_at": "2026-09-13T19:10:00Z",
-    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013105983191.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant enligt titeln (2026-upplagan, 24 figurer); tre olika omslagsmotiv syns i heron — vilket som skickas ej angivet", "video": "ej tillgänglig i containern"}
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013105983191.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titeln (2026-upplagan, 24 figurer); tre olika omslagsmotiv syns i heron — vilket som skickas ej angivet",
+     "video": "ej tillgänglig i containern"
+    }
    },
-   "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron visar tre lådor + alla 24 3D-figurerna på rad — figurerna ser ut som sitt pris; röd '3D'-stämpel och vattenstämpel 'Blissful Party Store' måste beskäras; alternativ listning 1005013118324824 (13,85 USD, ej öppnad) om leverantören sviktar"},
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar tre lådor + alla 24 3D-figurerna på rad — figurerna ser ut som sitt pris; röd '3D'-stämpel och vattenstämpel 'Blissful Party Store' måste beskäras; alternativ listning 1005013118324824 (13,85 USD, ej öppnad) om leverantören sviktar"
+   },
    "marknad": {
-    "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i denna körning (cdon.se/fyndiq.se/amazon.se-sökning gav bara Amazon.com/Walmart)", "pris_sek": null, "url": "https://www.amazon.com/Highland-Calendar-Christmas-Calendars-cow-Box/dp/B0HG9FCW82", "exakt_samma_form": false},
-    "premium_ankare": {"namn": "LEGO City adventskalender 2026 (60510), Lekia — kategoriankare, inte samma tema", "pris_sek": 349, "url": "https://www.lekia.se/lego-city-60352-lego-city-adventskalender", "i_sortiment": true},
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i denna körning (cdon.se/fyndiq.se/amazon.se-sökning gav bara Amazon.com/Walmart)",
+     "pris_sek": null,
+     "url": "https://www.amazon.com/Highland-Calendar-Christmas-Calendars-cow-Box/dp/B0HG9FCW82",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "LEGO City adventskalender 2026 (60510), Lekia — kategoriankare, inte samma tema",
+     "pris_sek": 349,
+     "url": "https://www.lekia.se/lego-city-60352-lego-city-adventskalender",
+     "i_sortiment": true
+    },
     "ankare_kvot": 0.7,
     "annonsorer_se": "ej mätt",
-    "kollade_kallor": ["lekia.se (LEGO City 60510 349 kr, sökutdrag 2026-09-13)", "cdon.se (sök 403 — bara sökutdrag)", "amazon.se (503)", "amazon.com/walmart.com (finns i USA, ingen SEK-prisbild)"]
+    "kollade_kallor": [
+     "lekia.se (LEGO City 60510 349 kr, sökutdrag 2026-09-13)",
+     "cdon.se (sök 403 — bara sökutdrag)",
+     "amazon.se (503)",
+     "amazon.com/walmart.com (finns i USA, ingen SEK-prisbild)"
+    ]
    },
-   "ekonomi": {"landad_sek": [226, 276], "pris_sek": 499, "brutto_sek": [223, 273], "be_cpa_sek": [223, 273], "be_roas": 2.0, "flerkop": true, "returrisk": "låg — ingen storlek, en variant"},
-   "meta_tanke": {"hook": "Chokladkalender till barnbarnet igen i år?", "objekt_i_bild": "lådan öppen med 24 numrerade luckor och de 24 kofigurerna uppradade på fönsterbrädan", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "en lucka öppnas, en liten ko med solglasögon kommer ut och ställs bredvid de andra"},
+   "ekonomi": {
+    "landad_sek": [
+     226,
+     276
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     223,
+     273
+    ],
+    "be_cpa_sek": [
+     223,
+     273
+    ],
+    "be_roas": 2.0,
+    "flerkop": true,
+    "returrisk": "låg — ingen storlek, en variant"
+   },
+   "meta_tanke": {
+    "hook": "Chokladkalender till barnbarnet igen i år?",
+    "objekt_i_bild": "lådan öppen med 24 numrerade luckor och de 24 kofigurerna uppradade på fönsterbrädan",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "en lucka öppnas, en liten ko med solglasögon kommer ut och ställs bredvid de andra"
+   },
    "varfor": "Exakt racingbilarnas struktur (24 synliga saker, 1 dec, barnbarnet, chokladkalendern som svikande default) på ett tema som når flickor och mormödrar — och backlogens återöppningsvillkor är uppfyllt: listningen ligger på 17,33 USD (< 20), så BE-CPA klarar 190 med marginal där gårdagens 25,99-USD-listning föll på 185.",
    "huvudrisk": "Ankaret (LEGO 349) ligger under vårt pris — priset 499 vilar på racingbilarnas bevisade prispunkt, inte på ett märkesankare; 549 är möjligt om figurerna bär det.",
    "konfidens": "MEDEL",
-   "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 3},
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
    "per_kriterium": null,
-   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (advent: Racingbilar 499, Fiskedrag 469 — annat tema)", "koncept.py sok highland/ko — 0 träffar på temat", "backlog.json: Highland Cow struken 09-12 på BE-CPA 185 vid 25,99 USD, 'söks om bara med listning < 20 USD' — villkoret uppfyllt (17,33 USD)", "fynd 09-12 strukna: samma koncept, annan listning (1005013109493697)"]},
-   "kallor": ["https://www.aliexpress.com/item/1005013105983191.html", "https://www.lekia.se/lego-city-60352-lego-city-adventskalender", "https://www.lego.com/sv-se/product/advent-calendar-2026-60510", "https://www.amazon.com/Highland-Calendar-Christmas-Calendars-cow-Box/dp/B0HG9FCW82"]
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (advent: Racingbilar 499, Fiskedrag 469 — annat tema)",
+     "koncept.py sok highland/ko — 0 träffar på temat",
+     "backlog.json: Highland Cow struken 09-12 på BE-CPA 185 vid 25,99 USD, 'söks om bara med listning < 20 USD' — villkoret uppfyllt (17,33 USD)",
+     "fynd 09-12 strukna: samma koncept, annan listning (1005013109493697)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013105983191.html",
+    "https://www.lekia.se/lego-city-60352-lego-city-adventskalender",
+    "https://www.lego.com/sv-se/product/advent-calendar-2026-60510",
+    "https://www.amazon.com/Highland-Calendar-Christmas-Calendars-cow-Box/dp/B0HG9FCW82"
+   ]
   },
   {
    "koncept_id": null,
@@ -55,10 +146,25 @@
    "hypotes_id": "H05",
    "vinnarlikhet": {
     "likast": "Adventskalendern Racingbilar",
-    "delade_variabler": ["24 synliga saker bakom luckor", "hårt datum 1 december", "mottagare i relation (partnern med husbilen)", "svikande default = chokladkalendern", "prisband 300–499"],
-    "avvikelser": ["mottagaren är vuxen, inte barnbarnet", "delarna är skiktad akryl (2,5D), inte 3D-leksaker", "identitetsköp (husbilsägaren) — F_HOBBY_IDENTITET är 0/1 i kontot"]
+    "delade_variabler": [
+     "24 synliga saker bakom luckor",
+     "hårt datum 1 december",
+     "mottagare i relation (partnern med husbilen)",
+     "svikande default = chokladkalendern",
+     "prisband 300–499"
+    ],
+    "avvikelser": [
+     "mottagaren är vuxen, inte barnbarnet",
+     "delarna är skiktad akryl (2,5D), inte 3D-leksaker",
+     "identitetsköp (husbilsägaren) — F_HOBBY_IDENTITET är 0/1 i kontot"
+    ]
    },
-   "sasong": {"fonster_id": "advent_1_december", "deadline_typ": "1 december", "veckor_kvar": 10.3, "timing": "NOW"},
+   "sasong": {
+    "fonster_id": "advent_1_december",
+    "deadline_typ": "1 december",
+    "veckor_kvar": 10.3,
+    "timing": "NOW"
+   },
    "listning": {
     "product_id": "1005013149476732",
     "url": "https://www.aliexpress.com/item/1005013149476732.html",
@@ -66,25 +172,101 @@
     "sald": "",
     "verdict": "LIVE_VERIFIED",
     "verifierad_at": "2026-09-13T19:10:00Z",
-    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013149476732.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant (2026-upplagan, 24 delar) enligt titel; låda ca 26 × 18 × 3 cm enligt Amazon-utdrag", "video": "ej tillgänglig i containern"}
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013149476732.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (2026-upplagan, 24 delar) enligt titel; låda ca 26 × 18 × 3 cm enligt Amazon-utdrag",
+     "video": "ej tillgänglig i containern"
+    }
    },
-   "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är ren packshot: orange låda + alla 24 delar (18 bussar, campingstolar, lykta, surfbrädor) uppradade — bara lådans egen tryckta text, ingen överlagrad; delarna är skiktad akryl, ser ut som prydnader snarare än leksaker"},
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är ren packshot: orange låda + alla 24 delar (18 bussar, campingstolar, lykta, surfbrädor) uppradade — bara lådans egen tryckta text, ingen överlagrad; delarna är skiktad akryl, ser ut som prydnader snarare än leksaker"
+   },
    "marknad": {
-    "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i denna körning — svensk sökning på husbil/campare-adventskalender gav bara Majorette-bilkalender och presenttipslistor", "pris_sek": null, "url": "https://www.amazon.com/Campervan-Advent-Calendar-Pieces-Designs/dp/B0HGF7Y16M", "exakt_samma_form": false},
-    "premium_ankare": {"namn": "ej hittat — närmast Majorette adventskalender 8 bilar + 16 tillbehör (leksaksbilar.se, pris ej läst)", "pris_sek": null, "url": "https://leksaksbilar.se/sv/products/adventskalender-med-8-bilar-och-16-tillbehor-majorette", "i_sortiment": true},
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i denna körning — svensk sökning på husbil/campare-adventskalender gav bara Majorette-bilkalender och presenttipslistor",
+     "pris_sek": null,
+     "url": "https://www.amazon.com/Campervan-Advent-Calendar-Pieces-Designs/dp/B0HGF7Y16M",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej hittat — närmast Majorette adventskalender 8 bilar + 16 tillbehör (leksaksbilar.se, pris ej läst)",
+     "pris_sek": null,
+     "url": "https://leksaksbilar.se/sv/products/adventskalender-med-8-bilar-och-16-tillbehor-majorette",
+     "i_sortiment": true
+    },
     "ankare_kvot": null,
     "annonsorer_se": "ej mätt",
-    "kollade_kallor": ["adventskalenderguiden.se (sökutdrag: ingen husbilskalender)", "husbilhusvagn.se / husbil.se julklappstips (sökutdrag: stolar, bord, underkläder — ingen kalender)", "leksaksbilar.se (Majorette, pris ej läst)", "amazon.com/walmart.com (finns, ingen SEK)"]
+    "kollade_kallor": [
+     "adventskalenderguiden.se (sökutdrag: ingen husbilskalender)",
+     "husbilhusvagn.se / husbil.se julklappstips (sökutdrag: stolar, bord, underkläder — ingen kalender)",
+     "leksaksbilar.se (Majorette, pris ej läst)",
+     "amazon.com/walmart.com (finns, ingen SEK)"
+    ]
    },
-   "ekonomi": {"landad_sek": [212, 260], "pris_sek": 499, "brutto_sek": [239, 287], "be_cpa_sek": [239, 287], "be_roas": 1.9, "flerkop": false, "returrisk": "låg — en variant, ingen storlek"},
-   "meta_tanke": {"hook": "Har han husbilen? Här är hans kalender.", "objekt_i_bild": "lådan på husbilens bord (eller på köksbordet med husbilen i fönstret) och bussarna uppradade på hyllan", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "lucka öppnas, en folkabuss med pop-up-tak kommer ut, ställs bredvid de andra på hyllkanten"},
+   "ekonomi": {
+    "landad_sek": [
+     212,
+     260
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     239,
+     287
+    ],
+    "be_cpa_sek": [
+     239,
+     287
+    ],
+    "be_roas": 1.9,
+    "flerkop": false,
+    "returrisk": "låg — en variant, ingen storlek"
+   },
+   "meta_tanke": {
+    "hook": "Har han husbilen? Här är hans kalender.",
+    "objekt_i_bild": "lådan på husbilens bord (eller på köksbordet med husbilen i fönstret) och bussarna uppradade på hyllan",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "lucka öppnas, en folkabuss med pop-up-tak kommer ut, ställs bredvid de andra på hyllkanten"
+   },
    "varfor": "Kontots största bevisade ägargrupp (283 840 husvagnar + 94 000–300 000 husbilar, ägare 55+) får en adventskalender med 24 synliga saker och 1 december som datum — formen som vann med racingbilarna, och ingen svensk aktör säljer den. Frun köper till mannen; hårt datum + relation är exakt H05.",
    "huvudrisk": "Delarna är platt akryl — upplevt värde kan landa under 499 kr i bild, och identitetsköp (F_HOBBY_IDENTITET) har bara en förlorare i facit.",
    "konfidens": "MEDEL",
-   "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 3, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
    "per_kriterium": null,
-   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (husbil: bara Termoskydd Husbil — annan sak)", "koncept.py sok husbil/camper — 23/4 träffar, alla skydd/larm, ingen kalender", "fynd 09-11/09-12: ingen kalender till husbilsägaren"]},
-   "kallor": ["https://www.aliexpress.com/item/1005013149476732.html", "https://www.amazon.com/Campervan-Advent-Calendar-Pieces-Designs/dp/B0HGF7Y16M", "https://www.walmart.com/ip/Campervan-Advent-Calendar-2026-24-Pieces-Unique-Retro-Designs/20942705146", "https://adventskalenderguiden.se/", "https://www.husbilhusvagn.se/nyheter/julklappar-12-sakra-presenttips-till-mobila-manniskor"]
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (husbil: bara Termoskydd Husbil — annan sak)",
+     "koncept.py sok husbil/camper — 23/4 träffar, alla skydd/larm, ingen kalender",
+     "fynd 09-11/09-12: ingen kalender till husbilsägaren"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013149476732.html",
+    "https://www.amazon.com/Campervan-Advent-Calendar-Pieces-Designs/dp/B0HGF7Y16M",
+    "https://www.walmart.com/ip/Campervan-Advent-Calendar-2026-24-Pieces-Unique-Retro-Designs/20942705146",
+    "https://adventskalenderguiden.se/",
+    "https://www.husbilhusvagn.se/nyheter/julklappar-12-sakra-presenttips-till-mobila-manniskor"
+   ]
   },
   {
    "koncept_id": null,
@@ -97,10 +279,24 @@
    "hypotes_id": "H05",
    "vinnarlikhet": {
     "likast": "Bälteslipmaskinen (mini bandslipare 3-i-1)",
-    "delade_variabler": ["samma jobb: slö kniv → vass på 30 s", "märkesankare ≥ 1,6× (HORL 2 1 995 kr = 2,5×)", "prisband 500–999", "synlig payoff (kniven skär papper) på 3 s"],
-    "avvikelser": ["manuell, inte motoriserad", "objektet står inomhus (köksknivarna) — objekt_ute = nej är en HÖG förlorarsignal", "hobbylåda med hårt datum (fars dag) i stället för 'ingen säsong'"]
+    "delade_variabler": [
+     "samma jobb: slö kniv → vass på 30 s",
+     "märkesankare ≥ 1,6× (HORL 2 1 995 kr = 2,5×)",
+     "prisband 500–999",
+     "synlig payoff (kniven skär papper) på 3 s"
+    ],
+    "avvikelser": [
+     "manuell, inte motoriserad",
+     "objektet står inomhus (köksknivarna) — objekt_ute = nej är en HÖG förlorarsignal",
+     "hobbylåda med hårt datum (fars dag) i stället för 'ingen säsong'"
+    ]
    },
-   "sasong": {"fonster_id": "fars_dag", "deadline_typ": "fars dag", "veckor_kvar": 8.0, "timing": "NOW"},
+   "sasong": {
+    "fonster_id": "fars_dag",
+    "deadline_typ": "fars dag",
+    "veckor_kvar": 8.0,
+    "timing": "NOW"
+   },
    "listning": {
     "product_id": "1005010360834099",
     "url": "https://www.aliexpress.com/item/1005010360834099.html",
@@ -108,25 +304,101 @@
     "sald": "",
     "verdict": "LIVE_VERIFIED",
     "verifierad_at": "2026-09-13T19:10:00Z",
-    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005010360834099.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "15°/20° magnetisk vinkelbas, diamantskivor 400/1000 enligt heron; träslag/skivpaket kan vara varianter — ej angivet i sökträffen", "video": "ej tillgänglig i containern"}
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005010360834099.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "15°/20° magnetisk vinkelbas, diamantskivor 400/1000 enligt heron; träslag/skivpaket kan vara varianter — ej angivet i sökträffen",
+     "video": "ej tillgänglig i containern"
+    }
    },
-   "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är packshot av trärullen + vinkelbasen med '20°' och textrad 'sharpener+diamond 400#+1000#' längst ner — måste beskäras; alternativ listning 1005012436382024 (36,19 USD, LIVE 19:09Z, hero i kökskontext med kollage) ser dyrare ut men är för dyr i landad"},
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är packshot av trärullen + vinkelbasen med '20°' och textrad 'sharpener+diamond 400#+1000#' längst ner — måste beskäras; alternativ listning 1005012436382024 (36,19 USD, LIVE 19:09Z, hero i kökskontext med kollage) ser dyrare ut men är för dyr i landad"
+   },
    "marknad": {
-    "lagsta_jamforbara": {"aktor": "CDON — rullknivslip 15°/20° diamant (343 kr) och set med bokhandtag + magnetstöd (419 kr)", "pris_sek": 343, "url": "https://cdon.se/hushall-kok/koksredskap/koksknivar/knivslip-brynstal/", "exakt_samma_form": true},
-    "premium_ankare": {"namn": "HORL 2 HO2 (ek/valnöt), PriceRunner lägsta", "pris_sek": 1995, "url": "https://www.pricerunner.se/pl/243-3203718839/Koeksknivar/HORL-2-HO2-priser", "i_sortiment": true},
+    "lagsta_jamforbara": {
+     "aktor": "CDON — rullknivslip 15°/20° diamant (343 kr) och set med bokhandtag + magnetstöd (419 kr)",
+     "pris_sek": 343,
+     "url": "https://cdon.se/hushall-kok/koksredskap/koksknivar/knivslip-brynstal/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "HORL 2 HO2 (ek/valnöt), PriceRunner lägsta",
+     "pris_sek": 1995,
+     "url": "https://www.pricerunner.se/pl/243-3203718839/Koeksknivar/HORL-2-HO2-priser",
+     "i_sortiment": true
+    },
     "ankare_kvot": 2.5,
     "annonsorer_se": "ej mätt (Fyndiq/Fruugo/Swagg/PartyHandel säljer formen — sökutdrag 2026-09-13)",
-    "kollade_kallor": ["pricerunner.se (HORL 2 1 995 kr, sökutdrag — sidan gav tomt vid hämtning)", "cdon.se (343–419 kr, sökutdrag — sidan 403)", "amazon.se (Pietuley-rullslip finns, pris ej läst)", "fyndiq.se (roterande knivslip 15/20° med läderstrigel finns, pris ej läst)"]
+    "kollade_kallor": [
+     "pricerunner.se (HORL 2 1 995 kr, sökutdrag — sidan gav tomt vid hämtning)",
+     "cdon.se (343–419 kr, sökutdrag — sidan 403)",
+     "amazon.se (Pietuley-rullslip finns, pris ej läst)",
+     "fyndiq.se (roterande knivslip 15/20° med läderstrigel finns, pris ej läst)"
+    ]
    },
-   "ekonomi": {"landad_sek": [277, 338], "pris_sek": 799, "brutto_sek": [461, 522], "be_cpa_sek": [461, 522], "be_roas": 1.62, "flerkop": false, "returrisk": "låg — passar alla raka knivar, ingen mätning"},
-   "meta_tanke": {"hook": "Slipar han fortfarande med brynstål?", "objekt_i_bild": "trärullen rullas fram och tillbaka längs kniven som står på magnetbasen på skärbrädan", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "30 s rullande, sedan skär kniven ett tidningsblad rakt igenom"},
+   "ekonomi": {
+    "landad_sek": [
+     277,
+     338
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     461,
+     522
+    ],
+    "be_cpa_sek": [
+     461,
+     522
+    ],
+    "be_roas": 1.62,
+    "flerkop": false,
+    "returrisk": "låg — passar alla raka knivar, ingen mätning"
+   },
+   "meta_tanke": {
+    "hook": "Slipar han fortfarande med brynstål?",
+    "objekt_i_bild": "trärullen rullas fram och tillbaka längs kniven som står på magnetbasen på skärbrädan",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "30 s rullande, sedan skär kniven ett tidningsblad rakt igenom"
+   },
    "varfor": "Kontots enda vinnande verktyg är just knivslipning (Bälteslipmaskinen 909 kr, ROAS 2,33) — här är samma jobb som farsdagspresent i trä, 8 v före datumet, med HORL 2 som synligt märkesankare 2,5× över vårt pris och BE-CPA 461–522 (ekonomi 3). Ser ut som sitt pris: massivt trä, stål, två diamantskivor.",
    "huvudrisk": "Objektet står inomhus (objekt_ute = nej, 16 av 19 förlorare) och kedjan har samma form för 343–419 kr — bär bara om HORL-ankaret syns i annonsen (H06).",
    "konfidens": "MEDEL",
-   "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
    "per_kriterium": null,
-   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (slip: Bälteslipmaskin Mini 3-i-1 909 kr — annan form, motoriserad; Gräsklipparslipare, Kedjeslip — andra objekt)", "koncept.py sok kniv — 0 träffar; sok slip — bara anti-slip-överdrag", "Täljsetet (K0243, ja) är annan sak"]},
-   "kallor": ["https://www.aliexpress.com/item/1005010360834099.html", "https://www.aliexpress.com/item/1005012436382024.html", "https://www.pricerunner.se/pl/243-3203718839/Koeksknivar/HORL-2-HO2-priser", "https://cdon.se/hushall-kok/koksredskap/koksknivar/knivslip-brynstal/", "https://fyndiq.se/produkt/roterande-knivslip-med-15-och-20-graders-magnetisk-vinkelguide-och-laderstrigel-eff0bc5876964664/"]
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (slip: Bälteslipmaskin Mini 3-i-1 909 kr — annan form, motoriserad; Gräsklipparslipare, Kedjeslip — andra objekt)",
+     "koncept.py sok kniv — 0 träffar; sok slip — bara anti-slip-överdrag",
+     "Täljsetet (K0243, ja) är annan sak"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010360834099.html",
+    "https://www.aliexpress.com/item/1005012436382024.html",
+    "https://www.pricerunner.se/pl/243-3203718839/Koeksknivar/HORL-2-HO2-priser",
+    "https://cdon.se/hushall-kok/koksredskap/koksknivar/knivslip-brynstal/",
+    "https://fyndiq.se/produkt/roterande-knivslip-med-15-och-20-graders-magnetisk-vinkelguide-och-laderstrigel-eff0bc5876964664/"
+   ]
   },
   {
    "koncept_id": null,
@@ -139,10 +411,24 @@
    "hypotes_id": "H05",
    "vinnarlikhet": {
     "likast": "Adventskalendern Racingbilar",
-    "delade_variabler": ["24 saker bakom luckor", "hårt datum 1 december", "mottagare i relation (barnbarnet)", "svikande default = chokladkalendern"],
-    "avvikelser": ["sakerna syns inte förrän de grävts fram — 24 gipsblock i luckorna, inte 24 färdiga saker", "Amazon.se har formen under vårt pris (259,98 kr)", "landad under 100 kr — upplevt värde måste bäras av stenarna i bild"]
+    "delade_variabler": [
+     "24 saker bakom luckor",
+     "hårt datum 1 december",
+     "mottagare i relation (barnbarnet)",
+     "svikande default = chokladkalendern"
+    ],
+    "avvikelser": [
+     "sakerna syns inte förrän de grävts fram — 24 gipsblock i luckorna, inte 24 färdiga saker",
+     "Amazon.se har formen under vårt pris (259,98 kr)",
+     "landad under 100 kr — upplevt värde måste bäras av stenarna i bild"
+    ]
    },
-   "sasong": {"fonster_id": "advent_1_december", "deadline_typ": "1 december", "veckor_kvar": 10.3, "timing": "NOW"},
+   "sasong": {
+    "fonster_id": "advent_1_december",
+    "deadline_typ": "1 december",
+    "veckor_kvar": 10.3,
+    "timing": "NOW"
+   },
    "listning": {
     "product_id": "1005012944140041",
     "url": "https://www.aliexpress.com/item/1005012944140041.html",
@@ -150,35 +436,133 @@
     "sald": "",
     "verdict": "LIVE_VERIFIED",
     "verifierad_at": "2026-09-13T19:10:00Z",
-    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012944140041.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant: 24 grävblock ca 2 cm + 5 verktyg, låda 25,5 × 14,5 cm enligt heron", "video": "ej tillgänglig i containern"}
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012944140041.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: 24 grävblock ca 2 cm + 5 verktyg, låda 25,5 × 14,5 cm enligt heron",
+     "video": "ej tillgänglig i containern"
+    }
    },
-   "material": {"klass": 0, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en katalogbild med måttext och 'Merry Christmas'-låda; de 24 stenarna på rad nederst är det som bär upplevt värde — kräver egen bild av ett barn med hammaren och en halvt framgrävd sten"},
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en katalogbild med måttext och 'Merry Christmas'-låda; de 24 stenarna på rad nederst är det som bär upplevt värde — kräver egen bild av ett barn med hammaren och en halvt framgrävd sten"
+   },
    "marknad": {
-    "lagsta_jamforbara": {"aktor": "Amazon.se — 24 dagars kristalladventskalender (lägsta 30-dagarspris 259,98 kr enligt sökutdrag)", "pris_sek": 260, "url": "https://www.amazon.se/Adventskalender-Kristaller-Nedr%C3%A4kningskalender-Kristallsten-Entusiaster/dp/B0DK4KTFHX", "exakt_samma_form": true},
-    "premium_ankare": {"namn": "LEGO City adventskalender 2026, Lekia — kategoriankare, inte samma form", "pris_sek": 349, "url": "https://www.lekia.se/lego-city-60352-lego-city-adventskalender", "i_sortiment": true},
+    "lagsta_jamforbara": {
+     "aktor": "Amazon.se — 24 dagars kristalladventskalender (lägsta 30-dagarspris 259,98 kr enligt sökutdrag)",
+     "pris_sek": 260,
+     "url": "https://www.amazon.se/Adventskalender-Kristaller-Nedr%C3%A4kningskalender-Kristallsten-Entusiaster/dp/B0DK4KTFHX",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "LEGO City adventskalender 2026, Lekia — kategoriankare, inte samma form",
+     "pris_sek": 349,
+     "url": "https://www.lekia.se/lego-city-60352-lego-city-adventskalender",
+     "i_sortiment": true
+    },
     "ankare_kvot": 1.0,
     "annonsorer_se": "ej mätt",
-    "kollade_kallor": ["amazon.se (sju kristallkalendrar i sökutdrag, ett pris läst: 259,98 kr)", "lekia.se (National Geographic Rock & Mineral Starter Kit finns, 15 stenar, pris ej läst; LEGO City 349 kr)", "adventskalendern.se/adventskalender-kristaller (guide finns, priser ej lästa)"]
+    "kollade_kallor": [
+     "amazon.se (sju kristallkalendrar i sökutdrag, ett pris läst: 259,98 kr)",
+     "lekia.se (National Geographic Rock & Mineral Starter Kit finns, 15 stenar, pris ej läst; LEGO City 349 kr)",
+     "adventskalendern.se/adventskalender-kristaller (guide finns, priser ej lästa)"
+    ]
    },
-   "ekonomi": {"landad_sek": [81, 99], "pris_sek": 349, "brutto_sek": [250, 268], "be_cpa_sek": [250, 268], "be_roas": 1.35, "flerkop": true, "returrisk": "låg — en variant, ingen storlek"},
-   "meta_tanke": {"hook": "Barnbarnet får gräva fram en sten om dagen", "objekt_i_bild": "barnhand med hammare som knackar loss en ametist ur gipsblocket, lådan med 24 luckor bakom", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "blocket spricker, stenen kommer fram, radas upp med de tidigare dagarnas"},
+   "ekonomi": {
+    "landad_sek": [
+     81,
+     99
+    ],
+    "pris_sek": 349,
+    "brutto_sek": [
+     250,
+     268
+    ],
+    "be_cpa_sek": [
+     250,
+     268
+    ],
+    "be_roas": 1.35,
+    "flerkop": true,
+    "returrisk": "låg — en variant, ingen storlek"
+   },
+   "meta_tanke": {
+    "hook": "Barnbarnet får gräva fram en sten om dagen",
+    "objekt_i_bild": "barnhand med hammare som knackar loss en ametist ur gipsblocket, lådan med 24 luckor bakom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "blocket spricker, stenen kommer fram, radas upp med de tidigare dagarnas"
+   },
    "varfor": "Samma datum och mottagare som racingbilarna, men ett pyssel i stället för en leksak — varje lucka är en aktivitet (hammare + gips + sten), vilket ingen chokladkalender kan vara. Landad under 100 kr ger BE-CPA 250–268 trots Amazon-golvet.",
    "huvudrisk": "Golvet ligger under oss i exakt samma form (Amazon.se ca 260 kr) och inget ankare finns över 349 — lucka 0, så konceptet bär bara på egen video av grävandet.",
    "konfidens": "LÅG",
-   "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 0, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 0,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
    "per_kriterium": null,
-   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ädelsten/kristall/gräv: 0 träffar)", "koncept.py sok ädelsten/kristall/gräv — 0 träffar", "fynd 09-11/09-12: ingen"]},
-   "kallor": ["https://www.aliexpress.com/item/1005012944140041.html", "https://www.amazon.se/Adventskalender-Kristaller-Nedr%C3%A4kningskalender-Kristallsten-Entusiaster/dp/B0DK4KTFHX", "https://www.lekia.se/national-geographic-rock-and-mineral-starter-kit", "https://www.adventskalendern.se/adventskalender-kristaller/"]
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (ädelsten/kristall/gräv: 0 träffar)",
+     "koncept.py sok ädelsten/kristall/gräv — 0 träffar",
+     "fynd 09-11/09-12: ingen"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012944140041.html",
+    "https://www.amazon.se/Adventskalender-Kristaller-Nedr%C3%A4kningskalender-Kristallsten-Entusiaster/dp/B0DK4KTFHX",
+    "https://www.lekia.se/national-geographic-rock-and-mineral-starter-kit",
+    "https://www.adventskalendern.se/adventskalender-kristaller/"
+   ]
   }
  ],
  "strukna": [
-  {"namn": "Golfkalendern 24 luckor (1005013097539386, 28,75 USD, LIVE + hero sedd)", "skal": "Fyndiq säljer samma form för 315 kr och CDON för 649 kr; landad 374–457 kräver pris ≥ 699 = över CDON-ankaret, ingen lucka. Golfklubbsborsten är dessutom REAL LOSER på samma ägare."},
-  {"namn": "Flugbindningssetet i låda (1005005036834962, 20,52 USD, LIVE + hero sedd)", "skal": "Bara verktyg i en plastask utan bindstäd — ser ut som 150 kr; svenska nybörjarsatser med städ kostar 799 kr (Fly Dressing, fiske.se). Lågt upplevt värde och liten ägargrupp."},
-  {"namn": "Knivbyggsatsen (DIY knife making kit)", "skal": "Sökningen gav bara handtagsskal (5–74 USD), ingen komplett byggsats med blad i låda — inget att verifiera."},
-  {"namn": "Fågelholksbyggsatsen (1–5 USD, ej öppnad)", "skal": "Landad 15–75 kr, ser ut som sitt pris; Vivara/Granngården säljer färdiga holkar från ~150 kr. Lågt upplevt värde."},
-  {"namn": "3D-träpussel / mekanisk modell (13–26 USD, ej öppnad)", "skal": "Samma struktur som Luffarschacket i Trä (dekor, objekt nej/ute, REAL LOSER −1 762 kr); UGEARS-kopior finns på Amazon.se."},
-  {"namn": "2D-akrylkalendrar traktor (20,19 USD) / grävmaskin (16,19 USD) / tax (11–13 USD), ej öppnade", "skal": "Platta akrylhängen — inte 24 saker att leka med; lägre upplevt värde än racingbilarna. Husbilskalendern togs i stället eftersom mottagaren där är en bevisad ägargrupp."},
-  {"namn": "Highland Cow 3D 28,79 USD (1005013116158239) och 25,99 USD (1005013109493697)", "skal": "Samma koncept som kandidat 1 men landad 375–415 → BE-CPA under 190 vid 499 kr. Den billigare listningen levereras i stället."},
-  {"namn": "Adventskalender byggklossar (K0141, kandidat sedan tidigare) och Racingbilar-kopior 24,89–30,49 USD", "skal": "Byggklossar: Magnetplattor byggset är INSUFFICIENT i kontot och LEGO 349 är golv+ankare i ett; bilkopiorna är dubbletter av butikens vinnare."}
+  {
+   "namn": "Golfkalendern 24 luckor (1005013097539386, 28,75 USD, LIVE + hero sedd)",
+   "skal": "Fyndiq säljer samma form för 315 kr och CDON för 649 kr; landad 374–457 kräver pris ≥ 699 = över CDON-ankaret, ingen lucka. Golfklubbsborsten är dessutom REAL LOSER på samma ägare."
+  },
+  {
+   "namn": "Flugbindningssetet i låda (1005005036834962, 20,52 USD, LIVE + hero sedd)",
+   "skal": "Bara verktyg i en plastask utan bindstäd — ser ut som 150 kr; svenska nybörjarsatser med städ kostar 799 kr (Fly Dressing, fiske.se). Lågt upplevt värde och liten ägargrupp."
+  },
+  {
+   "namn": "Knivbyggsatsen (DIY knife making kit)",
+   "skal": "Sökningen gav bara handtagsskal (5–74 USD), ingen komplett byggsats med blad i låda — inget att verifiera."
+  },
+  {
+   "namn": "Fågelholksbyggsatsen (1–5 USD, ej öppnad)",
+   "skal": "Landad 15–75 kr, ser ut som sitt pris; Vivara/Granngården säljer färdiga holkar från ~150 kr. Lågt upplevt värde."
+  },
+  {
+   "namn": "3D-träpussel / mekanisk modell (13–26 USD, ej öppnad)",
+   "skal": "Samma struktur som Luffarschacket i Trä (dekor, objekt nej/ute, REAL LOSER −1 762 kr); UGEARS-kopior finns på Amazon.se."
+  },
+  {
+   "namn": "2D-akrylkalendrar traktor (20,19 USD) / grävmaskin (16,19 USD) / tax (11–13 USD), ej öppnade",
+   "skal": "Platta akrylhängen — inte 24 saker att leka med; lägre upplevt värde än racingbilarna. Husbilskalendern togs i stället eftersom mottagaren där är en bevisad ägargrupp."
+  },
+  {
+   "namn": "Highland Cow 3D 28,79 USD (1005013116158239) och 25,99 USD (1005013109493697)",
+   "skal": "Samma koncept som kandidat 1 men landad 375–415 → BE-CPA under 190 vid 499 kr. Den billigare listningen levereras i stället."
+  },
+  {
+   "namn": "Adventskalender byggklossar (K0141, kandidat sedan tidigare) och Racingbilar-kopior 24,89–30,49 USD",
+   "skal": "Byggklossar: Magnetplattor byggset är INSUFFICIENT i kontot och LEGO 349 är golv+ankare i ett; bilkopiorna är dubbletter av butikens vinnare."
+  }
  ]
 }

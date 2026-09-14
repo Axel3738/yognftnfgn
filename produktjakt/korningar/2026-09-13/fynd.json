@@ -1,0 +1,1710 @@
+{
+ "datum": "2026-09-13",
+ "version": "v3",
+ "kalla": "korningar/2026-09-13/v3/batch.json",
+ "antal_kandidater": 13,
+ "per_slot": {
+  "exploitation": 3,
+  "exploration": 3,
+  "sasong": 5
+ },
+ "produkter": [
+  {
+   "product_id": "1005012964334132",
+   "titel": "Vedklyvshuven 210D",
+   "url": "https://www.aliexpress.com/item/1005012964334132.html",
+   "pris": 14.45,
+   "valuta": "USD",
+   "pris_text": "US $14.45",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005012964334132.jpg",
+   "sald": "",
+   "grupp": "NYTT: Vedklyven (hydraulisk/elektrisk, 3–8 tkr — Scheppach HL460 2 995, HL810 8 145; står under skärmtak vid vedstapeln hela vintern)",
+   "objekt": "NYTT: Vedklyven (hydraulisk/elektrisk, 3–8 tkr — Scheppach HL460 2 995, HL810 8 145; står under skärmtak vid vedstapeln hela vintern)",
+   "taggar": {
+    "objekt": "NYTT: Vedklyven (hydraulisk/elektrisk, 3–8 tkr — Scheppach HL460 2 995, HL810 8 145; står under skärmtak vid vedstapeln hela vintern)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "vedsäsong",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — Bauhaus Espegard-överdrag gäller Kindling Cracker (manuell klyv, annat objekt); inget märkesöverdrag för hydraulisk vedklyv hittat hos Bauhaus/Skogma/P. Lindberg"
+   },
+   "ekonomi": {
+    "landad": 209,
+    "forslag_pris": 499,
+    "multipel": 2.39,
+    "be_cpa": 290,
+    "be_roas": 1.72,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     188,
+     230
+    ]
+   },
+   "namn_sv": "Vedklyvshuven 210D",
+   "status": "bevisad struktur",
+   "poang": 17.3,
+   "rank_slutlig": 17.3,
+   "rank": 1,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Står vedklyven ute i höst?",
+   "efter_bild": "rost på hydraulcylinder/kolv och vatten i elmotorn utan — torr blank klyv under huven med",
+   "huvudrisk": "Inget svenskt ankare att luta priset mot och listningen är sydd för 12-tons klyvar — passformen mot svenska 4–7-tonsmaskiner måste bekräftas innan launch.",
+   "varfor": "Motorhöljets struktur på ett objekt rutinen aldrig sökt: maskin ute vid vedstapeln, presenning som improvisation, vedsäsongen 4,6 v bort, och båda kedjorna som haft formen har tagit bort den — hyllan är tom. Heron är textfri och i kontext.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0256",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H01",
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 4.6,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Motorhöljet (Marin motorhölje 420D) / Sätesöverdragaren",
+    "delade_variabler": [
+     "ägd maskin ute (under skärmtak/vid vedstapeln), medel 1–10 tkr",
+     "formsydd huv i stället för presenning (improvisation i dag)",
+     "datum: vedsäsongens start 15 okt (NOW 4,6 v) — maskinen står ute tills våren",
+     "ägare 55+ i småhus med vedeldning (1,7 miljoner vedeldade eldstäder i Sverige, MSB via sökutdrag)",
+     "inget kedjegolv i dag: Jula (Meec 380055) och Clas Ohlson (Cocraft 40-1033) har haft formen och tagit bort den"
+    ],
+    "avvikelser": [
+     "objektet är medel 1–10 tkr, inte > 10 tkr",
+     "inget svenskt ankare att prissätta mot — priset bygger på landad × 2,4",
+     "listningen 'fits 12 ton' är gjord för större amerikanska klyvar; svensk standard är 4–7 ton horisontell"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 3 + creative 3 + lucka 3 + signalbonus +1.3 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8); prisband=300–499 6V/11F (-0.3)] = 17.3",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör live i samma form (mätt 2026-09-13): Jula Meec Skyddsöverdrag 380055 'ingår inte längre i sortimentet', Clas Ohlson Cocraft 40-1033 'produkten har utgått'",
+     "pris_sek": null,
+     "url": "https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/vedbearbetning/vedklyvar/skyddsoverdrag-380055/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — Bauhaus Espegard-överdrag gäller Kindling Cracker (manuell klyv, annat objekt); inget märkesöverdrag för hydraulisk vedklyv hittat hos Bauhaus/Skogma/P. Lindberg",
+     "pris_sek": null,
+     "url": null,
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "jula.se (sökutdrag: 380055 utgått, passade vedklyv 380-025)",
+     "clasohlson.com (40-1033 överdrag för vedklyv 40-9122, 115×37×95 cm — utgått)",
+     "bauhaus.se (vedklyvar Scheppach 2 995–8 145 kr; Espegard-överdrag bara till Kindling Cracker)",
+     "skogma.se / p-lindberg.se (sökutdrag: klyvar, inga överdrag)",
+     "MSB via sökutdrag: > 1,7 miljoner vedeldade eldstäder i Sverige (antal hydrauliska vedklyvar ej mätt)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: klyven under huven i ett skärmtak i regn, vedstapel bredvid — huven genomskinligt ritad så maskinen syns; bara två små sol/regn-ikoner, inga ord. Bästa heron i linsen."
+   },
+   "meta_tanke": {
+    "hook": "Står vedklyven ute i höst?",
+    "objekt_i_bild": "vedklyven under skärmtaket, huven dras på, regnet slår mot taket, vedstapeln bredvid",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "rost på hydraulcylinder/kolv och vatten i elmotorn utan — torr blank klyv under huven med"
+   },
+   "listning": {
+    "product_id": "1005012964334132",
+    "url": "https://www.aliexpress.com/item/1005012964334132.html",
+    "pris_usd": 14.45,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:11:39Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012964334132.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en storlek ('Fits 12 Ton Models', 210D Oxford) enligt titel; alternativ listning 1005013120562780 (17,79 USD, hero-collage med text, snöpanel) öppnad och sedd",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012964334132.html",
+    "https://www.aliexpress.com/item/1005013120562780.html",
+    "https://www.jula.se/catalog/tradgard/motorsagar-och-vedklyvning/vedbearbetning/vedklyvar/skyddsoverdrag-380055/",
+    "https://clasohlson.com/se/%C3%96verdrag-f%C3%B6r-vedklyv-Cocraft/40-1033",
+    "https://www.bauhaus.se/maskiner/tradgardsmaskiner/vedkapar-vedklyvar",
+    "https://vedmatch.se/guider/kopa-ved-guide/ (SASONG.md vedsasong)"
+   ]
+  },
+  {
+   "product_id": "1005013078903398",
+   "titel": "Promenadscooterns regnkapell",
+   "url": "https://www.aliexpress.com/item/1005013078903398.html",
+   "pris": 18.29,
+   "valuta": "USD",
+   "pris_text": "US $18.29",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005013078903398.jpg",
+   "sald": "",
+   "grupp": "NYTT: Promenadscootern/elskotern (10–30 tkr, ägare 70+; står under carport/vid entrén, elektronik + sits i regnet)",
+   "objekt": "NYTT: Promenadscootern/elskotern (10–30 tkr, ägare 70+; står under carport/vid entrén, elektronik + sits i regnet)",
+   "taggar": {
+    "objekt": "NYTT: Promenadscootern/elskotern (10–30 tkr, ägare 70+; står under carport/vid entrén, elektronik + sits i regnet)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "höstregn",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "promenadskoter.se Överdrag HS-828 & HS-925 (HS-328 895, HS-520 995)"
+   },
+   "ekonomi": {
+    "landad": 264,
+    "forslag_pris": 599,
+    "multipel": 2.27,
+    "be_cpa": 334,
+    "be_roas": 1.79,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     238,
+     291
+    ]
+   },
+   "namn_sv": "Promenadscooterns regnkapell",
+   "status": "bevisad struktur",
+   "poang": 17.0,
+   "rank_slutlig": 17.0,
+   "rank": 2,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Står din scooter ute i regnet?",
+   "efter_bild": "våt sits + immig display utan — torr scooter under kapellet med; reflexbanden lyser i mörkret",
+   "huvudrisk": "Ägarantalet är inte mätt och fordonet används dagligen — kapellet måste vara enkelt att ta av/på; storleksvarianter är inte sedda i listningen.",
+   "varfor": "MC-kapellets struktur på ett objekt rutinen aldrig sökt, hos exakt kontots avatar (70+): 10–30 tkr ute vid entrén, presenning i dag, fackhandeln tar 895–1 095 kr och ingen kedja säljer formen. Heron är textfri, i kontext och visar ägaren själv.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0257",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H01",
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn",
+    "veckor_kvar": 3.9,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "MC-Kapellet / Motorhöljet",
+    "delade_variabler": [
+     "ägd dyr sak ute (10–30 tkr, sökutdrag promenadskoter.se/blimo)",
+     "formsydd kapell över hela fordonet",
+     "väderhot nu: höstregn 10 okt–15 nov, sen frost på display/batteri",
+     "improvisation i dag (presenning, sopsäck över sitsen)",
+     "ägaren är kontots köpare: kvinna/man 70+ i småhus",
+     "fackhandelsankare 895–1 095 kr (promenadskoter.se) och 999 kr (Blimo) — ankare 1,67×, inget kedjegolv"
+    ],
+    "avvikelser": [
+     "inget hårt datum — objektet används året runt, hotet är löpande (H01, inte H02)",
+     "ägarantal ej mätt (Socialstyrelsen särredovisar inte elskoter)"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 3 + lucka 2 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8); prisband=500–999 8V/2F (+0.6)] = 17.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Blimo Skyddsöverdrag (50-/90-/100-/1400-serien, Moto sport 950)",
+     "pris_sek": 999,
+     "url": "https://www.blimo.se/skyddsoverdrag",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "promenadskoter.se Överdrag HS-828 & HS-925 (HS-328 895, HS-520 995)",
+     "pris_sek": 1095,
+     "url": "https://promenadskoter.se/tillbehor/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.67,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "promenadskoter.se/tillbehor (HS-328 895 / HS-520 995 / HS-828&925 1 095 kr, '+30 butiker i Sverige' — läst 2026-09-13)",
+     "blimo.se/skyddsoverdrag (999 kr inkl. moms)",
+     "inwistore.se (regnskydd universal — sidan tom vid hämtning, pris ej sett)",
+     "amazon.se B09KN5D971 (generiskt överdrag finns; 503 vid hämtning, pris ej sett)",
+     "shoppo.se (403), seniorlife.se (404)",
+     "Socialstyrelsen via sökutdrag: 876 000 personer med förskrivet förflyttningshjälpmedel 2021; elskoter/elrullstol ej särredovisat"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: gråhårig man drar kapellet över sin fyrhjuliga scooter på uppfarten, reflexband, hjulen synliga under — textfri, rätt avatar, färdig att köra"
+   },
+   "meta_tanke": {
+    "hook": "Står din scooter ute i regnet?",
+    "objekt_i_bild": "promenadscootern på uppfarten, kapellet dras över av ägaren själv, regn på kapellet",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "våt sits + immig display utan — torr scooter under kapellet med; reflexbanden lyser i mörkret"
+   },
+   "listning": {
+    "product_id": "1005013078903398",
+    "url": "https://www.aliexpress.com/item/1005013078903398.html",
+    "pris_usd": 18.29,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:11:39Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013078903398.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ej sedda i sökträff/titel (190D Oxford; storlekar troliga — fyrhjulig scooter med korg kräver stor variant); alternativ listning 1005009438741122 (27,19 USD) öppnad, hero packshot med scooter-inset",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013078903398.html",
+    "https://www.aliexpress.com/item/1005009438741122.html",
+    "https://promenadskoter.se/tillbehor/",
+    "https://www.blimo.se/skyddsoverdrag",
+    "https://www.amazon.se/dp/B09KN5D971"
+   ]
+  },
+  {
+   "product_id": "1005009382324430",
+   "titel": "Poolvärmepumpens vinterhuv",
+   "url": "https://www.aliexpress.com/item/1005009382324430.html",
+   "pris": 21.24,
+   "valuta": "USD",
+   "pris_text": "US $21.24",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005009382324430.jpg",
+   "sald": "",
+   "grupp": "NYTT: Poolvärmepumpen (15–40 tkr, står ute vid poolen hela vintern efter poolstängningen)",
+   "objekt": "NYTT: Poolvärmepumpen (15–40 tkr, står ute vid poolen hela vintern efter poolstängningen)",
+   "taggar": {
+    "objekt": "NYTT: Poolvärmepumpen (15–40 tkr, står ute vid poolen hela vintern efter poolstängningen)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "poolstängning",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Poolklubben Poolvärmepump Vinterskydd L (gummerad presenning, 13 i lager)"
+   },
+   "ekonomi": {
+    "landad": 307,
+    "forslag_pris": 599,
+    "multipel": 1.95,
+    "be_cpa": 292,
+    "be_roas": 2.05,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     276,
+     338
+    ]
+   },
+   "namn_sv": "Poolvärmepumpens vinterhuv",
+   "status": "bevisad struktur",
+   "poang": 14.0,
+   "rank_slutlig": 14.0,
+   "rank": 3,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Står poolvärmepumpen ute i vinter?",
+   "efter_bild": "huven på pumpen med snö ovanpå; alternativt smältvatten som rinner av — mot en pump i frostnatt utan",
+   "huvudrisk": "Fönstret är kort (2,4 v till topp, slut 20 okt) och andelen av 129 000 pooler som har värmepump är inte mätt; ankarkvoten är svag (1,16×) så priset kan inte gå högre än 599.",
+   "varfor": "Samma struktur som husvagnstaket och termoskyddet: dyr maskin (15–40 tkr) ute inför ett datum ingen kan flytta (poolstängning 30 sept–20 okt), formsydd huv, fackhandelsankare 645–695 kr och inget kedjegolv under oss. Objektet har aldrig sökts i rutinen.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0258",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "poolstangning",
+    "deadline_typ": "poolstängning",
+    "veckor_kvar": 2.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm / Taköverdraget för Husvagn",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (poolvärmepump 15–40 tkr)",
+     "formsydd form (överdrag) över maskinen",
+     "hårt datum: poolstängning 30 sept–20 okt (NOW 2,4 v)",
+     "improvisation i dag (presenning + tegelsten, eller inget alls)",
+     "ägare 55+ i småhus med pool",
+     "fackhandelsankare 645–695 kr finns (poolklubben), inget kedjegolv under oss"
+    ],
+    "avvikelser": [
+     "kortare fönster än husvagnens (2,4 v till topp, slut 20 okt)",
+     "andel pooler med värmepump ej mätt"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 2 + creative 2 + lucka 1 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8); prisband=500–999 8V/2F (+0.6)] = 14.0",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Poolklubben (GreenMachine) Poolvärmepump Vinterskydd S",
+     "pris_sek": 645,
+     "url": "https://www.poolklubben.se/product/greenmachine-vinterskydd",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Poolklubben Poolvärmepump Vinterskydd L (gummerad presenning, 13 i lager)",
+     "pris_sek": 695,
+     "url": "https://www.poolklubben.se/product/poolvarmepump-vinterskydd-l",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.16,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "poolklubben.se (S 645 kr / L 695 kr, gummerad presenning, i lager 16/13 — läst 2026-09-13)",
+     "poolkungen.se ('Vinterskydd Ecoheat I/II från 785 kr' i sökutdrag; produktsidan gav ett annat objekt vid hämtning — ej bekräftat)",
+     "folkpool.se (bara pooltäcken, inget värmepumpsskydd i utdragen)",
+     "hornbach.se (vinteröverdrag pool 499–3 199 kr; inget för värmepumpen)",
+     "bauhaus.se (Värmepumpsskydd Jabo/Superroof = aluminiumtak för luftvärmepump — annan form, Axel NEJ 09-12)",
+     "svenskabadbranschen.se via mynewsdesk: 129 000 pooler ≥ 15 tkr i Sverige 2023 (prognos), 100 000 år 2020"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar huven på en värmepump vid husväggen med rören ut genom sidan — bra kontext, men inbränd text uppe ('Cover the entire surface…') och 'Special offer'-badge måste beskäras bort"
+   },
+   "meta_tanke": {
+    "hook": "Står poolvärmepumpen ute i vinter?",
+    "objekt_i_bild": "poolvärmepumpen vid husväggen, huven dras över, rören ut genom utskärningen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "huven på pumpen med snö ovanpå; alternativt smältvatten som rinner av — mot en pump i frostnatt utan"
+   },
+   "listning": {
+    "product_id": "1005009382324430",
+    "url": "https://www.aliexpress.com/item/1005009382324430.html",
+    "pris_usd": 21.24,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:11:39Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005009382324430.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ej sedda i sökträff/titel — troligen en storlek (heron visar en rektangulär huv med rörutskärning och dragsnören); storlek mot GreenMachine S/L 890–1060 × 440 × 658–758 mm måste kontrolleras med leverantören",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009382324430.html",
+    "https://www.poolklubben.se/product/poolvarmepump-vinterskydd-l",
+    "https://www.poolklubben.se/product/greenmachine-vinterskydd",
+    "https://www.poolkungen.se/vinterskydd-ecoheat-i-ii-p982",
+    "https://www.mynewsdesk.com/se/svenska-badbranschen/pressreleases/svenska-badbranschen-delar-branschstatistik-foer-pooler-och-spabad-3277173",
+    "https://www.bygghemma.se/reportage-och-guider/vinterstangning-av-pool (SASONG.md poolstangning)"
+   ]
+  },
+  {
+   "product_id": "1005012337155910",
+   "titel": "Trädansiktet — gubben i trädet",
+   "url": "https://www.aliexpress.com/item/1005012337155910.html",
+   "pris": 8.95,
+   "valuta": "USD",
+   "pris_text": "US $8.95",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005012337155910.jpg",
+   "sald": "",
+   "grupp": "NYTT: Trädet på tomten — dekor på stammen",
+   "objekt": "NYTT: Trädet på tomten — dekor på stammen",
+   "taggar": {
+    "objekt": "NYTT: Trädet på tomten — dekor på stammen",
+    "form": "dekor",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "ingen",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Relaxdays Träd ansikte Natur ande (enda svenska prislappen som gick att läsa; Amazon.se-sidan svarade 503)"
+   },
+   "ekonomi": {
+    "landad": 130,
+    "forslag_pris": 349,
+    "multipel": 2.68,
+    "be_cpa": 220,
+    "be_roas": 1.6,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     117,
+     142
+    ]
+   },
+   "namn_sv": "Trädansiktet — gubben i trädet",
+   "status": "utforskning",
+   "poang": 13,
+   "rank_slutlig": 13,
+   "rank": 4,
+   "per_kriterium": null,
+   "hook": "Vad har hänt med din tall?",
+   "efter_bild": "ansiktet på stammen — hela produkten är bilden",
+   "huvudrisk": "Lågt upplevt värde (Axels signal 09-09) — resin för 349 kr kan se ut som en 99-kronorspryl; inget säsongsfönster, och dekor-formen står 1 vinnare/1 förlorare i facit.",
+   "varfor": "Renaste H10-testet i batchen: samma struktur som klistermärkena (objekt alla har, dekor, ingen friktion, flerköp) men ny form och nytt objekt — formen finns inte hos någon kedja, bara Relaxdays/Amazon/Fyndiq. Textfri hero rakt ur listningen.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0259",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": null,
+    "deadline_typ": "ingen",
+    "veckor_kvar": null,
+    "timing": "EVERGREEN"
+   },
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "objekt_ute",
+     "form_dekor",
+     "old_way_ingenting",
+     "flerkop_ja",
+     "noll_friktion",
+     "agare_55plus_smahus"
+    ],
+    "avvikelser": [
+     "349 kr i stället för 199",
+     "resin i stället för dekal — måste skruvas/spikas i barken (två skruvar)"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 3 + creative 3 + ekonomi 1 = 13",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Relaxdays.se (Träd ansikte Natur ande, 61 recensioner)",
+     "pris_sek": 349.9,
+     "url": "https://relaxdays.se/rum/tradgard-balkong/tradgardsdekorationer/tradgardsprydnader.html",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Relaxdays Träd ansikte Natur ande (enda svenska prislappen som gick att läsa; Amazon.se-sidan svarade 503)",
+     "pris_sek": 349.9,
+     "url": "https://relaxdays.se/rum/tradgard-balkong/tradgardsdekorationer/tradgardsprydnader.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "relaxdays.se (349,90)",
+     "amazon.se B094RJJFKG (503 — pris ej läst)",
+     "fyndiq.se (finns i sökträff, pris ej läst)",
+     "jula/rusta/clas ohlson/plantagen/granngården: 0 träffar på trädansikte i sökningen"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "vänstra halvan av heron är ett textfritt foto av ansiktet på en tallstam — beskärs rakt av; högra halvan är packshot av fyra varianter"
+   },
+   "meta_tanke": {
+    "hook": "Vad har hänt med din tall?",
+    "objekt_i_bild": "trädstammen på tomten med ansiktet monterat, barnbarn eller hund i förgrunden",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "ansiktet på stammen — hela produkten är bilden"
+   },
+   "listning": {
+    "product_id": "1005012337155910",
+    "url": "https://www.aliexpress.com/item/1005012337155910.html",
+    "pris_usd": 8.95,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:17:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012337155910.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "fyra ansikten (olika ögon/näsa/mun) enligt heron — smakval, en storlek; syskonlistningen 1005006860810991 (USD 9,79) svarade utan titel",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 0,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012337155910.html",
+    "https://relaxdays.se/rum/tradgard-balkong/tradgardsdekorationer/tradgardsprydnader.html",
+    "https://www.amazon.se/Tr%C3%A4dansikte-tr%C3%A4dansikten-tr%C3%A4ddekorationer-tr%C3%A4dkramare-f%C3%A5gelmatare/dp/B094RJJFKG"
+   ]
+  },
+  {
+   "product_id": "1005011850496209",
+   "titel": "Regnkedjan 3,8 m med 12 koppar",
+   "url": "https://www.aliexpress.com/item/1005011850496209.html",
+   "pris": 44.24,
+   "valuta": "USD",
+   "pris_text": "US $44.24",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005011850496209.jpg",
+   "sald": "",
+   "grupp": "NYTT: Stupröret — regnkedja i stället för rör",
+   "objekt": "NYTT: Stupröret — regnkedja i stället för rör",
+   "taggar": {
+    "objekt": "NYTT: Stupröret — regnkedja i stället för rör",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "lövfällning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Gecko Trädgård — Japansk regnkedja, Utsvängd, aluminium (i lager 2026-09-13)"
+   },
+   "ekonomi": {
+    "landad": 640,
+    "forslag_pris": 899,
+    "multipel": 1.4,
+    "be_cpa": 259,
+    "be_roas": 3.47,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     576,
+     704
+    ]
+   },
+   "namn_sv": "Regnkedjan 3,8 m med 12 koppar",
+   "status": "utforskning",
+   "poang": 12,
+   "rank_slutlig": 12,
+   "rank": 5,
+   "per_kriterium": null,
+   "hook": "Har du fortfarande stuprör?",
+   "efter_bild": "vattnet syns rinna genom kopparna — stupröret göms, kedjan visas",
+   "huvudrisk": "Look-alikes i plåt för 369–489 kr hos Gardenlife/Naturbutiken/Fyndiq ligger under vårt pris (H06 säger att det bär med ankare ≥ 1,2×); BE-CPA 195–323 är på gränsen mot 190.",
+   "varfor": "Testar H10 rent: objekt som varje småhus har (stuprör), en form som inte finns hos Jula/Biltema/Bauhaus/Clas (bara specialister + marknadsplatser), och en hero som förstås utan ett ord. Höstregn/lövfällning NOW (4,6 v) och ankare 2,4× hos Gecko.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0260",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "lovfallning",
+    "deadline_typ": "lövfällning",
+    "veckor_kvar": 4.6,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "old_way_ingenting",
+     "latent_behov_nej",
+     "noll_friktion"
+    ],
+    "avvikelser": [
+     "pris 899 i stället för < 300",
+     "ersätter ett stuprör (hängs i rännans utlopp) — ett handgrepp mer än ett klistermärke"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 2 + creative 3 + ekonomi 1 = 12",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Gardenlife/rumattälska.se (Regnkedja 12 koppar, 259 cm plåt)",
+     "pris_sek": 369,
+     "url": "https://www.xn--rumattlska-v5a.se/gardenlife/%C3%B6vrig-prydnad-dekoration-utemilj%C3%B6/regnkedja-12-koppar-gr%C3%B6n",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Gecko Trädgård — Japansk regnkedja, Utsvängd, aluminium (i lager 2026-09-13)",
+     "pris_sek": 2150,
+     "url": "https://www.gecko.se/typ/regnkedjor",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.39,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "gecko.se (plåt 375, japanska 2 150–4 450)",
+     "naturbutiken.se (kopparpläterad 259 cm 375 kr, i lager)",
+     "rumattälska.se/Gardenlife (369)",
+     "fyndiq.se (299–489, look-alikes)",
+     "bauhaus.se stuprörskategori (ingen regnkedja)",
+     "jula/biltema/clas ohlson: inga träffar på regnkedja i sökningen"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är textfri och visar kedjan hängande från hängrännans utlopp med regn — användbar rakt av; sekundärlistningen 1005013042882836 (8 koppar 180 cm, USD 30,99) har inbränd infografik"
+   },
+   "meta_tanke": {
+    "hook": "Har du fortfarande stuprör?",
+    "objekt_i_bild": "hängrännans utlopp med kedjan i stället för röret, regn som rinner kopp för kopp",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "vattnet syns rinna genom kopparna — stupröret göms, kedjan visas"
+   },
+   "listning": {
+    "product_id": "1005011850496209",
+    "url": "https://www.aliexpress.com/item/1005011850496209.html",
+    "pris_usd": 44.24,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:15:40Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005011850496209.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (3,8 m, 12 koppar, kopparfärgad metall) enligt titeln; alternativ billigare listning 1005011989356318 (8 koppar, fågelmotiv, USD 19,10, LIVE, hero packshot utan kontext)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005011850496209.html",
+    "https://www.aliexpress.com/item/1005011989356318.html",
+    "https://www.gecko.se/typ/regnkedjor",
+    "https://www.naturbutiken.se/sv/articles/2.469.19107/regnkedja-kopparplaterad",
+    "https://www.xn--rumattlska-v5a.se/gardenlife/%C3%B6vrig-prydnad-dekoration-utemilj%C3%B6/regnkedja-12-koppar-gr%C3%B6n",
+    "https://fyndiq.se/produkt/regnkedja-24-m-regnkedjor-for-kolibrier-och-koppar-for-hangrannor-funktionell-ersattning-for-stupror-metallregnvattenuppsamlingskedja-one-size-d479db04c9a44343/"
+   ]
+  },
+  {
+   "product_id": "1005013031048503",
+   "titel": "Snösmältmattan för trappan",
+   "url": "https://www.aliexpress.com/item/1005013031048503.html",
+   "pris": 34.79,
+   "valuta": "USD",
+   "pris_text": "US $34.79",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005013031048503.jpg",
+   "sald": "",
+   "grupp": "NYTT: Trappan och entrén — snö och is på stegen",
+   "objekt": "NYTT: Trappan och entrén — snö och is på stegen",
+   "taggar": {
+    "objekt": "NYTT: Trappan och entrén — snö och is på stegen",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "första snö",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Safestep Värmematta 27 × 95 cm (inkl. moms, strömkabel säljs separat)"
+   },
+   "ekonomi": {
+    "landad": 503,
+    "forslag_pris": 1299,
+    "multipel": 2.58,
+    "be_cpa": 796,
+    "be_roas": 1.63,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     453,
+     553
+    ]
+   },
+   "namn_sv": "Snösmältmattan för trappan",
+   "status": "utforskning",
+   "poang": 11,
+   "rank_slutlig": 11,
+   "rank": 6,
+   "per_kriterium": null,
+   "hook": "Skottar du trappan varje morgon?",
+   "efter_bild": "snö runt omkring, inte på mattan — behöver inte en rad text",
+   "huvudrisk": "230 V-produkt från AliExpress utan verifierad CE-märkning — Axel måste godkänna elrisken; Ebeco-formen har funnits hos Clas Ohlson, så 'sett innan' kan slå.",
+   "varfor": "Kategorinyhet i svenskt flöde (bara B2B-Safestep, Clas Ohlsons Ebeco har utgått) på ett objekt varje småhus har, med första snö 6–13 v bort och BE-CPA 746–846 kr. Flerköp inbyggt: en matta per trappsteg, som heron visar.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0261",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "forsta_sno_norr",
+    "deadline_typ": "första snö",
+    "veckor_kvar": 6.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "deadline_forsta_sno",
+     "prisband_over_1000",
+     "flerkop_ja (en matta per steg)"
+    ],
+    "avvikelser": [
+     "elprodukt 230 V (CE ej verifierad)",
+     "objektet (trappan) är inte dyrt — det som skyddas är kroppen, inte saken"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 2 + creative 2 + ekonomi 3 = 11",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Safestep (Värmematta 27 × 95 cm, 90 W)",
+     "pris_sek": 2000,
+     "url": "https://safestep.se/produkt/safestep-varmematta-27-x-95-cm-uppvarmd-snosmaltningsmatta/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Safestep Värmematta 27 × 95 cm (inkl. moms, strömkabel säljs separat)",
+     "pris_sek": 2000,
+     "url": "https://safestep.se/produkt/safestep-varmematta-27-x-95-cm-uppvarmd-snosmaltningsmatta/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.54,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "safestep.se (2 000 kr 27 × 95)",
+     "clasohlson.com (Ebeco Multimat 110 × 60 — UTGÅNGEN 2026-09-13, inget pris)",
+     "varmematta.se (fyra storlekar, inga priser på sidan)",
+     "warmup.se (systemlösning, ej jämförbar)",
+     "jula/biltema/rusta: inga träffar på värmematta för snö i sökningen"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar fem mattor på en snöig trätrappa med snöfria steg — stark bild, men inbränd rubrik uppe till vänster och vattenstämplar måste beskäras/genereras om"
+   },
+   "meta_tanke": {
+    "hook": "Skottar du trappan varje morgon?",
+    "objekt_i_bild": "entrétrappan i snö, stegen med mattan är bara och torra",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "snö runt omkring, inte på mattan — behöver inte en rad text"
+   },
+   "listning": {
+    "product_id": "1005013031048503",
+    "url": "https://www.aliexpress.com/item/1005013031048503.html",
+    "pris_usd": 34.79,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:15:50Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013031048503.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "två storlekar (25,4 × 76 cm och 25,4 × 122 cm) och US/EU-kontakt enligt syskonlistningen 1005012484070297 (USD 40,39, LIVE, packshot med kinesisk text) — EU-varianten måste väljas",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013031048503.html",
+    "https://www.aliexpress.com/item/1005012484070297.html",
+    "https://safestep.se/produkt/safestep-varmematta-27-x-95-cm-uppvarmd-snosmaltningsmatta/",
+    "https://www.clasohlson.com/se/Ebeco-Multimat-varmematta-utomhus/p/36-9934",
+    "https://varmematta.se/"
+   ]
+  },
+  {
+   "product_id": "1005012755128004",
+   "titel": "Dammvärmaren 500 W med termostat",
+   "url": "https://www.aliexpress.com/item/1005012755128004.html",
+   "pris": 20.39,
+   "valuta": "USD",
+   "pris_text": "US $20.39",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005012755128004.jpg",
+   "sald": "",
+   "grupp": "Trädgårdsdammen (koi/guldfisk)",
+   "objekt": "Trädgårdsdammen (koi/guldfisk)",
+   "taggar": {
+    "objekt": "Trädgårdsdammen (koi/guldfisk)",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "isläggning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "IceFree Thermo 330 (flytande, termostat/frostvakt)"
+   },
+   "ekonomi": {
+    "landad": 294,
+    "forslag_pris": 899,
+    "multipel": 3.06,
+    "be_cpa": 604,
+    "be_roas": 1.49,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     265,
+     324
+    ]
+   },
+   "namn_sv": "Dammvärmaren 500 W med termostat",
+   "status": "säsong",
+   "poang": 11,
+   "rank_slutlig": 11,
+   "rank": 7,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 14,
+    "K3": 10,
+    "K4": 8,
+    "K5": 8,
+    "K6": 8,
+    "K7": 6,
+    "K8": 6,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Fryser dammen över i vinter?",
+   "efter_bild": "is runt om, öppet vatten runt dosan, koi under",
+   "huvudrisk": "Heron visar amerikansk kontakt — EU-variant måste bekräftas hos leverantören innan launch; annars är varan oanvändbar i Sverige.",
+   "varfor": "Samma struktur som utekattkojan (älskat djur ute + datum ingen kan flytta + form som syns) på nytt objekt: koin dör utan vak när dammen fryser (isläggning 10,4 v). Fackhandelns flytande värmare utan termostat 735–845 kr och IceFree Thermo 1 645 kr ger ankare 1,83× med landad ~295 kr.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0262",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "sasong",
+   "hypotes_id": "H09",
+   "sasong": {
+    "fonster_id": "islaggning_damm",
+    "deadline_typ": "isläggning",
+    "veckor_kvar": 10.4,
+    "timing": "NOW",
+    "kommentar": "sasong.py --objekt ger först lövfällning (4,6 v, NOW); samma objektrad står under 'Isläggning i trädgårdsdamm och vattenhink' 10,4 v i SASONG.md — det är köpdatumet för en isfrihållare"
+   },
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "deadline första frost/isläggning",
+     "latent_behov nej",
+     "älskat djur (fisken) inte dyrt objekt"
+    ],
+    "avvikelser": [
+     "form annat (0 av 13 dömda vann — Isfria vattenskålen K0232 fick ändå ja)",
+     "golv finns i fackhandeln (735–845 kr utan termostat)",
+     "230 V-elektronik"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 3 = 11",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Vattenliv",
+     "pris_sek": 735,
+     "url": "https://www.vattenliv.se/produkt-kategori/dammtillbehor/fisk/isstoppare-dammvarmare/",
+     "exakt_samma_form": false,
+     "kommentar": "Doppvärmare 300 W flytande UTAN termostat 735 kr (Vattenliv), Pondteam titan 300 W 799 kr (Bauhaus, i lager), 845 kr (Dammbutiken); passiv frigolit-isfri 155 kr (Vattenliv). Med termostat finns bara IceFree Thermo 330 1 645 kr"
+    },
+    "premium_ankare": {
+     "namn": "IceFree Thermo 330 (flytande, termostat/frostvakt)",
+     "pris_sek": 1645,
+     "url": "https://www.vattenliv.se/produkt-kategori/dammtillbehor/fisk/isstoppare-dammvarmare/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.83,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "vattenliv.se",
+     "bauhaus.se",
+     "dammbutiken.se",
+     "zoo.se (bara akvarievärmare)",
+     "pondteam.com (sökutdrag)"
+    ]
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot: grå flytande dosa 18,5 cm med etikett 'Pond De-Icer' + måttext; egen bild krävs — vaken i isen med fisken under"
+   },
+   "meta_tanke": {
+    "hook": "Fryser dammen över i vinter?",
+    "objekt_i_bild": "dammen med en öppen vak, fisken synlig under isen, dosan flytande",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "is runt om, öppet vatten runt dosan, koi under"
+   },
+   "listning": {
+    "product_id": "1005012755128004",
+    "url": "https://www.aliexpress.com/item/1005012755128004.html",
+    "pris_usd": 20.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:07:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012755128004.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "titeln '/500W /Pond /Heater' antyder effektvarianter (300/500 W); heron visar AMERIKANSK stickpropp — EU/230 V-variant ej bekräftad",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012755128004.html",
+    "https://www.vattenliv.se/produkt-kategori/dammtillbehor/fisk/isstoppare-dammvarmare/",
+    "https://www.bauhaus.se/dammvarmare-i-titanstal-300-10-met-300",
+    "https://www.dammbutiken.se/300w-doppvarmare-i-titan"
+   ]
+  },
+  {
+   "product_id": "1005012434405111",
+   "titel": "Automatiska hönsluckan med ljussensor",
+   "url": "https://www.aliexpress.com/item/1005012434405111.html",
+   "pris": 56.32,
+   "valuta": "USD",
+   "pris_text": "US $56.32",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005012434405111.jpg",
+   "sald": "",
+   "grupp": "Hönsen — rastgård och vatten",
+   "objekt": "Hönsen — rastgård och vatten",
+   "taggar": {
+    "objekt": "Hönsen — rastgård och vatten",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "ChickenGuard/automatisk lucköppnare (Lantbutiken 49-70592 2 119 kr; P. Lindberg 2 120 kr)"
+   },
+   "ekonomi": {
+    "landad": 814,
+    "forslag_pris": 1299,
+    "multipel": 1.6,
+    "be_cpa": 484,
+    "be_roas": 2.68,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     733,
+     896
+    ]
+   },
+   "namn_sv": "Automatiska hönsluckan med ljussensor",
+   "status": "säsong",
+   "poang": 11,
+   "rank_slutlig": 11,
+   "rank": 8,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 10,
+    "K4": 6,
+    "K5": 6,
+    "K6": 8,
+    "K7": 5,
+    "K8": 8,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Stänger du hönsluckan i mörkret varje kväll?",
+   "efter_bild": "luckan stänger av sig själv när det blir mörkt — räven utanför",
+   "huvudrisk": "BE-ROAS 2,68 är högt för kontot (landad 814 mot pris 1 299) och montering på hönshuset är en förlorarsignal; höj till 1 499 bara om ankaret Omlet mäts över 2 500 kr.",
+   "varfor": "Hobbyhönsägaren (55+, landet) måste stänga luckan mot räven varje kväll — från 25 okt i mörker och kyla; luckan gör jobbet själv (H09 djur ute + hårt datum, H04 pris > 1 000 med ankare 1,63×). Kedjan säljer samma sak för 1 499–2 120 kr, landad ~814 kr.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0263",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "sasong",
+   "hypotes_id": "H09",
+   "sasong": {
+    "fonster_id": "utedjur_stanger",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 9.0,
+    "timing": "NOW",
+    "kommentar": "sasong.py --objekt ger först 'Första frostnatt Norrland' (0,7 v, utanför köpfönster); objektraden står under 'Utedjurens fönster stänger' 9,0 v. Det verkliga datumet är vintertiden 25 okt (6 v): luckan måste stängas i mörker kl 16 varje kväll"
+   },
+   "vinnarlikhet": {
+    "likast": "Övervakningskameran (PTZ)",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "form elektronik",
+     "golv under ja + ankare ≥1,6×",
+     "prisband ≥1000 (Taköverdraget)"
+    ],
+    "avvikelser": [
+     "montering ja (skruvas på hönshuset — 1 av 6 dömda vann)",
+     "kedjan har formen (Kerbl/ChickenGuard)",
+     "adapter i heron är amerikansk (batteridrift 4×AA är huvudläget)"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 3 = 11",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Lantbutiken",
+     "pris_sek": 1499,
+     "url": "https://www.lantbutiken.se/hons-fjaderfa/luckoppnare-hons",
+     "exakt_samma_form": true,
+     "kommentar": "Automatisk lucköppnare för höns 49-705501 1 499 kr; Granngården Kerbl 300×400 mm med ljussensor/timer (pris laddas ej i utdrag); Bonden.se Kerbl komplett (pris ej läst)"
+    },
+    "premium_ankare": {
+     "namn": "ChickenGuard/automatisk lucköppnare (Lantbutiken 49-70592 2 119 kr; P. Lindberg 2 120 kr)",
+     "pris_sek": 2119,
+     "url": "https://www.lantbutiken.se/hons-fjaderfa/luckoppnare-hons",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.63,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "lantbutiken.se",
+     "granngarden.se",
+     "p-lindberg.se",
+     "omlet.se (Autodoor — pris ej läst)"
+    ]
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot på vitt: svart aluminiumlucka med LCD-panel, skruvar, sensor, USB-adapter; egen bild/video krävs — luckan som stänger själv i skymningen med hönsen inne"
+   },
+   "meta_tanke": {
+    "hook": "Stänger du hönsluckan i mörkret varje kväll?",
+    "objekt_i_bild": "hönshuset i skymning, luckan glider ner, hönsen inne",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "luckan stänger av sig själv när det blir mörkt — räven utanför"
+   },
+   "listning": {
+    "product_id": "1005012434405111",
+    "url": "https://www.aliexpress.com/item/1005012434405111.html",
+    "pris_usd": 56.32,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:15:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012434405111.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: aluminiumlucka med LCD, ljussensor + timer, 4×AA-batteri, USB-adapter (amerikansk i bild) — jämförd med 1005011784568997 ($58,84, heron visar bara styrboxen)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012434405111.html",
+    "https://www.aliexpress.com/item/1005011784568997.html",
+    "https://www.lantbutiken.se/hons-fjaderfa/luckoppnare-hons",
+    "https://www.granngarden.se/honslucka-kerbl-med-automatisk-luckoppnare-300x400mm",
+    "https://www.p-lindberg.se/djur-staengsel-draenering/fjaederfaen-paa-gaarden/hoenshus/luckoeppnare/"
+   ]
+  },
+  {
+   "product_id": "1005010360834099",
+   "titel": "Rullknivslipen i trä, 2 diamantskivor",
+   "url": "https://www.aliexpress.com/item/1005010360834099.html",
+   "pris": 21.25,
+   "valuta": "USD",
+   "pris_text": "US $21.25",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005010360834099.jpg",
+   "sald": "",
+   "grupp": "NYTT: Mannen vid skärbrädan — köksknivarna och jaktkniven (fars dag)",
+   "objekt": "NYTT: Mannen vid skärbrädan — köksknivarna och jaktkniven (fars dag)",
+   "taggar": {
+    "objekt": "NYTT: Mannen vid skärbrädan — köksknivarna och jaktkniven (fars dag)",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "HORL 2 HO2 (ek/valnöt), PriceRunner lägsta"
+   },
+   "ekonomi": {
+    "landad": 308,
+    "forslag_pris": 799,
+    "multipel": 2.59,
+    "be_cpa": 492,
+    "be_roas": 1.62,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     277,
+     338
+    ]
+   },
+   "namn_sv": "Rullknivslipen i trä, 2 diamantskivor",
+   "status": "säsong",
+   "poang": 11,
+   "rank_slutlig": 11,
+   "rank": 9,
+   "per_kriterium": null,
+   "hook": "Slipar han fortfarande med brynstål?",
+   "efter_bild": "30 s rullande, sedan skär kniven ett tidningsblad rakt igenom",
+   "huvudrisk": "Objektet står inomhus (objekt_ute = nej, 16 av 19 förlorare) och kedjan har samma form för 343–419 kr — bär bara om HORL-ankaret syns i annonsen (H06).",
+   "varfor": "Kontots enda vinnande verktyg är just knivslipning (Bälteslipmaskinen 909 kr, ROAS 2,33) — här är samma jobb som farsdagspresent i trä, 8 v före datumet, med HORL 2 som synligt märkesankare 2,5× över vårt pris och BE-CPA 461–522 (ekonomi 3). Ser ut som sitt pris: massivt trä, stål, två diamantskivor.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0264",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "D_SNABBARE_METOD",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "fars_dag",
+    "deadline_typ": "fars dag",
+    "veckor_kvar": 8.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen (mini bandslipare 3-i-1)",
+    "delade_variabler": [
+     "samma jobb: slö kniv → vass på 30 s",
+     "märkesankare ≥ 1,6× (HORL 2 1 995 kr = 2,5×)",
+     "prisband 500–999",
+     "synlig payoff (kniven skär papper) på 3 s"
+    ],
+    "avvikelser": [
+     "manuell, inte motoriserad",
+     "objektet står inomhus (köksknivarna) — objekt_ute = nej är en HÖG förlorarsignal",
+     "hobbylåda med hårt datum (fars dag) i stället för 'ingen säsong'"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 3 = 11",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "CDON — rullknivslip 15°/20° diamant (343 kr) och set med bokhandtag + magnetstöd (419 kr)",
+     "pris_sek": 343,
+     "url": "https://cdon.se/hushall-kok/koksredskap/koksknivar/knivslip-brynstal/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "HORL 2 HO2 (ek/valnöt), PriceRunner lägsta",
+     "pris_sek": 1995,
+     "url": "https://www.pricerunner.se/pl/243-3203718839/Koeksknivar/HORL-2-HO2-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.5,
+    "annonsorer_se": "ej mätt (Fyndiq/Fruugo/Swagg/PartyHandel säljer formen — sökutdrag 2026-09-13)",
+    "kollade_kallor": [
+     "pricerunner.se (HORL 2 1 995 kr, sökutdrag — sidan gav tomt vid hämtning)",
+     "cdon.se (343–419 kr, sökutdrag — sidan 403)",
+     "amazon.se (Pietuley-rullslip finns, pris ej läst)",
+     "fyndiq.se (roterande knivslip 15/20° med läderstrigel finns, pris ej läst)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är packshot av trärullen + vinkelbasen med '20°' och textrad 'sharpener+diamond 400#+1000#' längst ner — måste beskäras; alternativ listning 1005012436382024 (36,19 USD, LIVE 19:09Z, hero i kökskontext med kollage) ser dyrare ut men är för dyr i landad"
+   },
+   "meta_tanke": {
+    "hook": "Slipar han fortfarande med brynstål?",
+    "objekt_i_bild": "trärullen rullas fram och tillbaka längs kniven som står på magnetbasen på skärbrädan",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "30 s rullande, sedan skär kniven ett tidningsblad rakt igenom"
+   },
+   "listning": {
+    "product_id": "1005010360834099",
+    "url": "https://www.aliexpress.com/item/1005010360834099.html",
+    "pris_usd": 21.25,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:10:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005010360834099.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "15°/20° magnetisk vinkelbas, diamantskivor 400/1000 enligt heron; träslag/skivpaket kan vara varianter — ej angivet i sökträffen",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010360834099.html",
+    "https://www.aliexpress.com/item/1005012436382024.html",
+    "https://www.pricerunner.se/pl/243-3203718839/Koeksknivar/HORL-2-HO2-priser",
+    "https://cdon.se/hushall-kok/koksredskap/koksknivar/knivslip-brynstal/",
+    "https://fyndiq.se/produkt/roterande-knivslip-med-15-och-20-graders-magnetisk-vinkelguide-och-laderstrigel-eff0bc5876964664/"
+   ]
+  },
+  {
+   "product_id": "1005013105983191",
+   "titel": "Highland Cow-kalendern 3D, 24 figurer",
+   "url": "https://www.aliexpress.com/item/1005013105983191.html",
+   "pris": 17.33,
+   "valuta": "USD",
+   "pris_text": "US $17.33",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005013105983191.jpg",
+   "sald": "",
+   "grupp": "Barnbarnet 3–8 år — Highland Cow-kalendern (samma ägare som racingbilarna, nytt tema)",
+   "objekt": "Barnbarnet 3–8 år — Highland Cow-kalendern (samma ägare som racingbilarna, nytt tema)",
+   "taggar": {
+    "objekt": "Barnbarnet 3–8 år — Highland Cow-kalendern (samma ägare som racingbilarna, nytt tema)",
+    "form": "kalenderlåda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "1 december",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "LEGO City adventskalender 2026 (60510), Lekia — kategoriankare, inte samma tema"
+   },
+   "ekonomi": {
+    "landad": 251,
+    "forslag_pris": 499,
+    "multipel": 1.99,
+    "be_cpa": 248,
+    "be_roas": 2.0,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     226,
+     276
+    ]
+   },
+   "namn_sv": "Highland Cow-kalendern 3D, 24 figurer",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 10,
+   "per_kriterium": null,
+   "hook": "Chokladkalender till barnbarnet igen i år?",
+   "efter_bild": "en lucka öppnas, en liten ko med solglasögon kommer ut och ställs bredvid de andra",
+   "huvudrisk": "Ankaret (LEGO 349) ligger under vårt pris — priset 499 vilar på racingbilarnas bevisade prispunkt, inte på ett märkesankare; 549 är möjligt om figurerna bär det.",
+   "varfor": "Exakt racingbilarnas struktur (24 synliga saker, 1 dec, barnbarnet, chokladkalendern som svikande default) på ett tema som når flickor och mormödrar — och backlogens återöppningsvillkor är uppfyllt: listningen ligger på 17,33 USD (< 20), så BE-CPA klarar 190 med marginal där gårdagens 25,99-USD-listning föll på 185.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0265",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "advent_1_december",
+    "deadline_typ": "1 december",
+    "veckor_kvar": 10.3,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "24 synliga saker bakom luckor",
+     "hårt datum 1 december",
+     "mottagare i relation (barnbarnet)",
+     "svikande default = chokladkalendern",
+     "prisband 300–499",
+     "flerköp (flera barnbarn)"
+    ],
+    "avvikelser": [
+     "djurtema i stället för fordon — når flickor och mormor lika mycket som pojkar",
+     "3D-vinylfigurer i stället för bilar"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 1 = 9",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i denna körning (cdon.se/fyndiq.se/amazon.se-sökning gav bara Amazon.com/Walmart)",
+     "pris_sek": null,
+     "url": "https://www.amazon.com/Highland-Calendar-Christmas-Calendars-cow-Box/dp/B0HG9FCW82",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "LEGO City adventskalender 2026 (60510), Lekia — kategoriankare, inte samma tema",
+     "pris_sek": 349,
+     "url": "https://www.lekia.se/lego-city-60352-lego-city-adventskalender",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 0.7,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "lekia.se (LEGO City 60510 349 kr, sökutdrag 2026-09-13)",
+     "cdon.se (sök 403 — bara sökutdrag)",
+     "amazon.se (503)",
+     "amazon.com/walmart.com (finns i USA, ingen SEK-prisbild)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar tre lådor + alla 24 3D-figurerna på rad — figurerna ser ut som sitt pris; röd '3D'-stämpel och vattenstämpel 'Blissful Party Store' måste beskäras; alternativ listning 1005013118324824 (13,85 USD, ej öppnad) om leverantören sviktar"
+   },
+   "meta_tanke": {
+    "hook": "Chokladkalender till barnbarnet igen i år?",
+    "objekt_i_bild": "lådan öppen med 24 numrerade luckor och de 24 kofigurerna uppradade på fönsterbrädan",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "en lucka öppnas, en liten ko med solglasögon kommer ut och ställs bredvid de andra"
+   },
+   "listning": {
+    "product_id": "1005013105983191",
+    "url": "https://www.aliexpress.com/item/1005013105983191.html",
+    "pris_usd": 17.33,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:10:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013105983191.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titeln (2026-upplagan, 24 figurer); tre olika omslagsmotiv syns i heron — vilket som skickas ej angivet",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013105983191.html",
+    "https://www.lekia.se/lego-city-60352-lego-city-adventskalender",
+    "https://www.lego.com/sv-se/product/advent-calendar-2026-60510",
+    "https://www.amazon.com/Highland-Calendar-Christmas-Calendars-cow-Box/dp/B0HG9FCW82"
+   ]
+  },
+  {
+   "product_id": "1005012944140041",
+   "titel": "Ädelstenskalendern, 24 grävblock",
+   "url": "https://www.aliexpress.com/item/1005012944140041.html",
+   "pris": 6.25,
+   "valuta": "USD",
+   "pris_text": "US $6.25",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-13/v3/bilder/1005012944140041.jpg",
+   "sald": "",
+   "grupp": "NYTT: Barnbarnet 6–10 år — ädelstenskalendern (gräva fram en sten per dag)",
+   "objekt": "NYTT: Barnbarnet 6–10 år — ädelstenskalendern (gräva fram en sten per dag)",
+   "taggar": {
+    "objekt": "NYTT: Barnbarnet 6–10 år — ädelstenskalendern (gräva fram en sten per dag)",
+    "form": "kalenderlåda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "1 december",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "LEGO City adventskalender 2026, Lekia — kategoriankare, inte samma form"
+   },
+   "ekonomi": {
+    "landad": 90,
+    "forslag_pris": 349,
+    "multipel": 3.88,
+    "be_cpa": 259,
+    "be_roas": 1.35,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     81,
+     99
+    ]
+   },
+   "namn_sv": "Ädelstenskalendern, 24 grävblock",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 11,
+   "per_kriterium": null,
+   "hook": "Barnbarnet får gräva fram en sten om dagen",
+   "efter_bild": "blocket spricker, stenen kommer fram, radas upp med de tidigare dagarnas",
+   "huvudrisk": "Golvet ligger under oss i exakt samma form (Amazon.se ca 260 kr) och inget ankare finns över 349 — lucka 0, så konceptet bär bara på egen video av grävandet.",
+   "varfor": "Samma datum och mottagare som racingbilarna, men ett pyssel i stället för en leksak — varje lucka är en aktivitet (hammare + gips + sten), vilket ingen chokladkalender kan vara. Landad under 100 kr ger BE-CPA 250–268 trots Amazon-golvet.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0266",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "advent_1_december",
+    "deadline_typ": "1 december",
+    "veckor_kvar": 10.3,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "24 saker bakom luckor",
+     "hårt datum 1 december",
+     "mottagare i relation (barnbarnet)",
+     "svikande default = chokladkalendern"
+    ],
+    "avvikelser": [
+     "sakerna syns inte förrän de grävts fram — 24 gipsblock i luckorna, inte 24 färdiga saker",
+     "Amazon.se har formen under vårt pris (259,98 kr)",
+     "landad under 100 kr — upplevt värde måste bäras av stenarna i bild"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 1 = 9",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Amazon.se — 24 dagars kristalladventskalender (lägsta 30-dagarspris 259,98 kr enligt sökutdrag)",
+     "pris_sek": 260,
+     "url": "https://www.amazon.se/Adventskalender-Kristaller-Nedr%C3%A4kningskalender-Kristallsten-Entusiaster/dp/B0DK4KTFHX",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "LEGO City adventskalender 2026, Lekia — kategoriankare, inte samma form",
+     "pris_sek": 349,
+     "url": "https://www.lekia.se/lego-city-60352-lego-city-adventskalender",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "amazon.se (sju kristallkalendrar i sökutdrag, ett pris läst: 259,98 kr)",
+     "lekia.se (National Geographic Rock & Mineral Starter Kit finns, 15 stenar, pris ej läst; LEGO City 349 kr)",
+     "adventskalendern.se/adventskalender-kristaller (guide finns, priser ej lästa)"
+    ]
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en katalogbild med måttext och 'Merry Christmas'-låda; de 24 stenarna på rad nederst är det som bär upplevt värde — kräver egen bild av ett barn med hammaren och en halvt framgrävd sten"
+   },
+   "meta_tanke": {
+    "hook": "Barnbarnet får gräva fram en sten om dagen",
+    "objekt_i_bild": "barnhand med hammare som knackar loss en ametist ur gipsblocket, lådan med 24 luckor bakom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "blocket spricker, stenen kommer fram, radas upp med de tidigare dagarnas"
+   },
+   "listning": {
+    "product_id": "1005012944140041",
+    "url": "https://www.aliexpress.com/item/1005012944140041.html",
+    "pris_usd": 6.25,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-13T19:10:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012944140041.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: 24 grävblock ca 2 cm + 5 verktyg, låda 25,5 × 14,5 cm enligt heron",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 0,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012944140041.html",
+    "https://www.amazon.se/Adventskalender-Kristaller-Nedr%C3%A4kningskalender-Kristallsten-Entusiaster/dp/B0DK4KTFHX",
+    "https://www.lekia.se/national-geographic-rock-and-mineral-starter-kit",
+    "https://www.adventskalendern.se/adventskalender-kristaller/"
+   ]
+  }
+ ],
+ "strukna": [],
+ "utanfor_batch": [
+  {
+   "namn_sv": "Ekorrsäkra fröautomaten i bur",
+   "slot": "sasong",
+   "rank_poang": 10,
+   "orsak": "plats"
+  },
+  {
+   "namn_sv": "Husbilskalendern, 24 retrobussar",
+   "slot": "sasong",
+   "rank_poang": 10,
+   "orsak": "plats"
+  }
+ ]
+}

@@ -1,0 +1,203 @@
+{
+  "agent": "K — ny form på ägt objekt (H10)",
+  "datum": "2026-09-13",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Regnkedjan 3,8 m med 12 koppar",
+      "objekt": "NYTT: Stupröret — regnkedja i stället för rör",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "old_way_ingenting", "latent_behov_nej", "noll_friktion"],
+        "avvikelser": ["pris 899 i stället för < 300", "ersätter ett stuprör (hängs i rännans utlopp) — ett handgrepp mer än ett klistermärke"]
+      },
+      "sasong": {"fonster_id": "lovfallning", "deadline_typ": "lövfällning", "veckor_kvar": 4.6, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005011850496209",
+        "url": "https://www.aliexpress.com/item/1005011850496209.html",
+        "pris_usd": 44.24,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:15:40Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005011850496209.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant (3,8 m, 12 koppar, kopparfärgad metall) enligt titeln; alternativ billigare listning 1005011989356318 (8 koppar, fågelmotiv, USD 19,10, LIVE, hero packshot utan kontext)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 2, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är textfri och visar kedjan hängande från hängrännans utlopp med regn — användbar rakt av; sekundärlistningen 1005013042882836 (8 koppar 180 cm, USD 30,99) har inbränd infografik"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Gardenlife/rumattälska.se (Regnkedja 12 koppar, 259 cm plåt)", "pris_sek": 369, "url": "https://www.xn--rumattlska-v5a.se/gardenlife/%C3%B6vrig-prydnad-dekoration-utemilj%C3%B6/regnkedja-12-koppar-gr%C3%B6n", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "Gecko Trädgård — Japansk regnkedja, Utsvängd, aluminium (i lager 2026-09-13)", "pris_sek": 2150, "url": "https://www.gecko.se/typ/regnkedjor", "i_sortiment": true},
+        "ankare_kvot": 2.39,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["gecko.se (plåt 375, japanska 2 150–4 450)", "naturbutiken.se (kopparpläterad 259 cm 375 kr, i lager)", "rumattälska.se/Gardenlife (369)", "fyndiq.se (299–489, look-alikes)", "bauhaus.se stuprörskategori (ingen regnkedja)", "jula/biltema/clas ohlson: inga träffar på regnkedja i sökningen"]
+      },
+      "ekonomi": {"landad_sek": [576, 704], "pris_sek": 899, "brutto_sek": [195, 323], "be_cpa_sek": [195, 323], "be_roas": 3.47, "flerkop": true, "returrisk": "låg — hängs i rännans utlopp, ingen mätning; längden 3,8 m räcker för enplanshus (överskott kapas)"},
+      "meta_tanke": {
+        "hook": "Har du fortfarande stuprör?",
+        "objekt_i_bild": "hängrännans utlopp med kedjan i stället för röret, regn som rinner kopp för kopp",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "vattnet syns rinna genom kopparna — stupröret göms, kedjan visas"
+      },
+      "varfor": "Testar H10 rent: objekt som varje småhus har (stuprör), en form som inte finns hos Jula/Biltema/Bauhaus/Clas (bara specialister + marknadsplatser), och en hero som förstås utan ett ord. Höstregn/lövfällning NOW (4,6 v) och ankare 2,4× hos Gecko.",
+      "huvudrisk": "Look-alikes i plåt för 369–489 kr hos Gardenlife/Naturbutiken/Fyndiq ligger under vårt pris (H06 säger att det bär med ankare ≥ 1,2×); BE-CPA 195–323 är på gränsen mot 190.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 3, "efterfragan": 2, "lucka": 2, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (stuprör/regnkedja: 0 träffar)", "koncept.py sok regnked/stuprör: 0", "fynd.json 09-11/09-12: ej med"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005011850496209.html",
+        "https://www.aliexpress.com/item/1005011989356318.html",
+        "https://www.gecko.se/typ/regnkedjor",
+        "https://www.naturbutiken.se/sv/articles/2.469.19107/regnkedja-kopparplaterad",
+        "https://www.xn--rumattlska-v5a.se/gardenlife/%C3%B6vrig-prydnad-dekoration-utemilj%C3%B6/regnkedja-12-koppar-gr%C3%B6n",
+        "https://fyndiq.se/produkt/regnkedja-24-m-regnkedjor-for-kolibrier-och-koppar-for-hangrannor-funktionell-ersattning-for-stupror-metallregnvattenuppsamlingskedja-one-size-d479db04c9a44343/"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Snösmältmattan för trappan",
+      "objekt": "NYTT: Trappan och entrén — snö och is på stegen",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "deadline_forsta_sno", "prisband_over_1000", "flerkop_ja (en matta per steg)"],
+        "avvikelser": ["elprodukt 230 V (CE ej verifierad)", "objektet (trappan) är inte dyrt — det som skyddas är kroppen, inte saken"]
+      },
+      "sasong": {"fonster_id": "forsta_sno_norr", "deadline_typ": "första snö", "veckor_kvar": 6.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013031048503",
+        "url": "https://www.aliexpress.com/item/1005013031048503.html",
+        "pris_usd": 34.79,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:15:50Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005013031048503.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "två storlekar (25,4 × 76 cm och 25,4 × 122 cm) och US/EU-kontakt enligt syskonlistningen 1005012484070297 (USD 40,39, LIVE, packshot med kinesisk text) — EU-varianten måste väljas",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron visar fem mattor på en snöig trätrappa med snöfria steg — stark bild, men inbränd rubrik uppe till vänster och vattenstämplar måste beskäras/genereras om"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Safestep (Värmematta 27 × 95 cm, 90 W)", "pris_sek": 2000, "url": "https://safestep.se/produkt/safestep-varmematta-27-x-95-cm-uppvarmd-snosmaltningsmatta/", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "Safestep Värmematta 27 × 95 cm (inkl. moms, strömkabel säljs separat)", "pris_sek": 2000, "url": "https://safestep.se/produkt/safestep-varmematta-27-x-95-cm-uppvarmd-snosmaltningsmatta/", "i_sortiment": true},
+        "ankare_kvot": 1.54,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["safestep.se (2 000 kr 27 × 95)", "clasohlson.com (Ebeco Multimat 110 × 60 — UTGÅNGEN 2026-09-13, inget pris)", "varmematta.se (fyra storlekar, inga priser på sidan)", "warmup.se (systemlösning, ej jämförbar)", "jula/biltema/rusta: inga träffar på värmematta för snö i sökningen"]
+      },
+      "ekonomi": {"landad_sek": [453, 553], "pris_sek": 1299, "brutto_sek": [746, 846], "be_cpa_sek": [746, 846], "be_roas": 1.63, "flerkop": true, "returrisk": "medel — elprodukt; kontakttyp och CE-märkning måste bekräftas med leverantören innan launch"},
+      "meta_tanke": {
+        "hook": "Skottar du trappan varje morgon?",
+        "objekt_i_bild": "entrétrappan i snö, stegen med mattan är bara och torra",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "snö runt omkring, inte på mattan — behöver inte en rad text"
+      },
+      "varfor": "Kategorinyhet i svenskt flöde (bara B2B-Safestep, Clas Ohlsons Ebeco har utgått) på ett objekt varje småhus har, med första snö 6–13 v bort och BE-CPA 746–846 kr. Flerköp inbyggt: en matta per trappsteg, som heron visar.",
+      "huvudrisk": "230 V-produkt från AliExpress utan verifierad CE-märkning — Axel måste godkänna elrisken; Ebeco-formen har funnits hos Clas Ohlson, så 'sett innan' kan slå.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 1, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (trapp: bara Anti-Slip Tejp — annan form)", "koncept.py sok värmematt/snösmält: 0, trapp: Snöskyffeln (annan form)", "fynd.json 09-11/09-12: ej med"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005013031048503.html",
+        "https://www.aliexpress.com/item/1005012484070297.html",
+        "https://safestep.se/produkt/safestep-varmematta-27-x-95-cm-uppvarmd-snosmaltningsmatta/",
+        "https://www.clasohlson.com/se/Ebeco-Multimat-varmematta-utomhus/p/36-9934",
+        "https://varmematta.se/"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Trädansiktet — gubben i trädet",
+      "objekt": "NYTT: Trädet på tomten — dekor på stammen",
+      "form": "dekor",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["objekt_ute", "form_dekor", "old_way_ingenting", "flerkop_ja", "noll_friktion", "agare_55plus_smahus"],
+        "avvikelser": ["349 kr i stället för 199", "resin i stället för dekal — måste skruvas/spikas i barken (två skruvar)"]
+      },
+      "sasong": {"fonster_id": null, "deadline_typ": "ingen", "veckor_kvar": null, "timing": "EVERGREEN"},
+      "listning": {
+        "product_id": "1005012337155910",
+        "url": "https://www.aliexpress.com/item/1005012337155910.html",
+        "pris_usd": 8.95,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-13T19:17:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-13/v3/bilder/1005012337155910.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "fyra ansikten (olika ögon/näsa/mun) enligt heron — smakval, en storlek; syskonlistningen 1005006860810991 (USD 9,79) svarade utan titel",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "vänstra halvan av heron är ett textfritt foto av ansiktet på en tallstam — beskärs rakt av; högra halvan är packshot av fyra varianter"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Relaxdays.se (Träd ansikte Natur ande, 61 recensioner)", "pris_sek": 349.9, "url": "https://relaxdays.se/rum/tradgard-balkong/tradgardsdekorationer/tradgardsprydnader.html", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "Relaxdays Träd ansikte Natur ande (enda svenska prislappen som gick att läsa; Amazon.se-sidan svarade 503)", "pris_sek": 349.9, "url": "https://relaxdays.se/rum/tradgard-balkong/tradgardsdekorationer/tradgardsprydnader.html", "i_sortiment": true},
+        "ankare_kvot": 1.0,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["relaxdays.se (349,90)", "amazon.se B094RJJFKG (503 — pris ej läst)", "fyndiq.se (finns i sökträff, pris ej läst)", "jula/rusta/clas ohlson/plantagen/granngården: 0 träffar på trädansikte i sökningen"]
+      },
+      "ekonomi": {"landad_sek": [117, 142], "pris_sek": 349, "brutto_sek": [207, 232], "be_cpa_sek": [207, 232], "be_roas": 1.6, "flerkop": true, "returrisk": "låg — ingen storlek, passar alla stammar > 20 cm"},
+      "meta_tanke": {
+        "hook": "Vad har hänt med din tall?",
+        "objekt_i_bild": "trädstammen på tomten med ansiktet monterat, barnbarn eller hund i förgrunden",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "ansiktet på stammen — hela produkten är bilden"
+      },
+      "varfor": "Renaste H10-testet i batchen: samma struktur som klistermärkena (objekt alla har, dekor, ingen friktion, flerköp) men ny form och nytt objekt — formen finns inte hos någon kedja, bara Relaxdays/Amazon/Fyndiq. Textfri hero rakt ur listningen.",
+      "huvudrisk": "Lågt upplevt värde (Axels signal 09-09) — resin för 349 kr kan se ut som en 99-kronorspryl; inget säsongsfönster, och dekor-formen står 1 vinnare/1 förlorare i facit.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 3, "efterfragan": 1, "lucka": 1, "ekonomi": 1, "sasong": 0, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ansikte/träd: bara Trädband — annan sak)", "koncept.py sok ansikte: 0, träd: bara sätesöverdrag/damm/piggar", "fynd.json 09-11/09-12: ej med"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012337155910.html",
+        "https://relaxdays.se/rum/tradgard-balkong/tradgardsdekorationer/tradgardsprydnader.html",
+        "https://www.amazon.se/Tr%C3%A4dansikte-tr%C3%A4dansikten-tr%C3%A4ddekorationer-tr%C3%A4dkramare-f%C3%A5gelmatare/dp/B094RJJFKG"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Utrullbar stuprörsförlängare (rullar ut vid regn)", "skal": "Kedjeform: Granngården 'Rain Drain 3,6 m', Clas Ohlson 'Regnvattenspridare' 31-466, Bauhaus Mr Flowout — sett på hyllan."},
+    {"namn": "Rullande fruktplockare för fallfrukt", "skal": "Kedjeform: Gardena hos Clas Ohlson 31-7256, Fiskars/Wolf-Garten 188–502 kr (sakletaren.se) — och verktyg som läggs i förrådet."},
+    {"namn": "Sopkärlsrem mot vind och djur", "skal": "Golv på Fyndiq (Ali-look-alike), specialist smartaskydd.se; en rem = lågt upplevt värde (Axel 09-09), och BE-CPA landar under 190 vid 249 kr."},
+    {"namn": "Skorstensballong (spjälltätning)", "skal": "Ingen AliExpress-listning — två sökfraser gav bara dörrlister och rörproppar."},
+    {"namn": "Hängrännsborste mot löv", "skal": "Lövskydd är kedjekategori (Biltema 2000037487, Hornbach från 49,90, jem & fix) och borsten kräver stege — verktygsvarning."},
+    {"namn": "Takraka med glidduk", "skal": "Kedjeform: Clas Ohlson 41-2838, Biltema 2000033547, Granngården (Masi/Fiskars) 328–779 kr."},
+    {"namn": "Postlådelarm (sändare i brevlådan)", "skal": "Finns hos roligaprylar.se och Fruugo; AliExpress-sökningen gav bara dörrklockor/hemlarm — ingen ren listning."},
+    {"namn": "Laddkabellås typ 2", "skal": "Kedjeform: DEFA eConnect låsbar hållare hos Mekonomen, låsbara kablar hos Clas Ohlson/Biltema."},
+    {"namn": "Garageportsdekor (fönster/motiv)", "skal": "Snöflingor till garageport fick ja 09-11 och ligger i butiken — samma objekt + dekorform."},
+    {"namn": "Fönstermatare med spegelfilm", "skal": "AliExpress-sökningen gav bara fönsterfilm och antikollisionsdekaler — ingen matare med spegel hittad."}
+  ]
+}
