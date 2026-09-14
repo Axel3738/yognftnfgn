@@ -331,3 +331,54 @@ samma dokumenterade avvikelse som batch #1–#3.
   hook-tabell, tre-frågorstabell och shot list står i sidan.
 - `agent/produktkarta.json`: `drive_senaste_batchmapp_id` uppdaterad till
   Batch #4:s mapp-id (`1SdP2djgVRGwJnvb-BuM99sTJRg6XcKcd`).
+
+## Batch #5 — 2026-09-14 (`/cs`, på Axels begäran efter att han skapat nya hubbar)
+
+**Trigger:** Axel skapade sex nya `BÄVER …`-hubbar i Notion och bad om creative
+strategy för fyra av produkterna i samma vända. IBC var en av dem.
+
+**Underlag:** livstidsdata ur Meta 2026-09-14 — 31 591 kr spend, 120 köp,
+ROAS 2,44, intäkt 77 221 kr. AOV 644 kr → **break-even-CPA 426 kr**
+(break-even-ROAS 1,51 ur kampanjnamnet). Rangordning på vinstbidrag enligt
+`docs/os/ANALYSMETOD.md`, grind 300 kr / 3 köp.
+
+| Annons | Spend | Andel | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|
+| PD_1_H1 (video) | 26 093 kr | 83 % | 102 | 256 kr | 2,57 | **17 393 kr (86 %)** |
+| PD_Extra (video) | 1 377 kr | 4 % | 8 | 172 kr | 3,09 | 2 031 kr (10 %) |
+| CS_1_H3 (statisk) | 888 kr | 3 % | 4 | 222 kr | 2,97 | 816 kr (4 %) |
+
+`PD_1_H1` är kampanjens benchmark, inte en kandidat att döma mot småannonser.
+För tidigt (ingen dom): SP_3_H1, CO_1_1, PD_2_1, PD_1_H2 m.fl.
+
+**Briefer i denna batch — 11 st (4 video, 7 statiska):**
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| IBC_PD_8_H1 | Video | Öppningen är grönt algvatten i tanken i stället för produkten, resten av vinnarens struktur konstant | PD_1_H1, isolerad variabel |
+| IBC_PD_8_H2 | Video | Samma manus klippt till 12–15 s — isolerar längden mot vinnarens 20–25 s | PD_8_H1 |
+| IBC_CO_2_H1 | Video | Konflikt mot presenningen: den blåser av och släpper igenom ljus, 210D Oxford gör inte det | Sidans eget materialfaktum |
+| IBC_SP_5_H1 | Video | Ärlig aggregerad proof i endcard (4,7 av 5 på 10 recensioner) i stället för volympåstående | Produktsidans aggregat |
+| IBC_PD_9_1 | Statisk | Statisk tvilling till PD_8_H1 — formattest på produkten där videon bär 86 % av vinsten | PD_8_H1 |
+| IBC_CS_7_1 | Statisk | 2-packet är förvalt på sidan men har aldrig varit huvudbudskap | Produktsidans erbjudande |
+| IBC_BOF_10_1 | Statisk | BOF: priset ensamt | — |
+| IBC_BOF_11_1 | Statisk | BOF: fri frakt och öppet köp som riskavlastning | Produktsidan |
+| IBC_BOF_12_1 | Statisk | BOF-invändning: räcker skugga? Nej — UV når ändå | Produktsidan |
+| IBC_RV_7_1 | Statisk | Recensionsbild, Karins rad pekar på utomhusbruk | Verifierad recension |
+| IBC_RV_8_1 | Statisk | Recensionsbild, Daniels rad pekar på pris och passform | Verifierad recension |
+
+**Levererat:** samtliga 11 som items i **`BÄVER IBC-Tanköverdraget`**
+(data source `collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2`), Status
+`Draft`, Typ `Video`/`Image - Pending Approval`, hela briefen i sidan.
+Verifierat med SQL mot collectionen: 4 video + 7 bild = 11. En sida
+(`IBC_PD_8_H1`) öppnad och lästs igenom — shot list och tre-frågorstabell låg
+som riktiga Notion-tabeller.
+
+⚠️ **Produkten har nu TVÅ hubbar.** Batch #1–#4 ligger i den äldre hubben;
+batch #5 ligger i `BÄVER IBC-Tanköverdraget`, som Axel själv skapade
+2026-09-14 och uttryckligen pekade ut. Skapa aldrig en tredje — nya briefer
+läggs som rader i en av dessa två.
+
+**Modellpolicy:** följd. En sonnet-subagent per brief skrev all copy och körde
+tre-frågorstestet per rad; huvudsessionen gjorde analys, hypoteser och
+briefstruktur.

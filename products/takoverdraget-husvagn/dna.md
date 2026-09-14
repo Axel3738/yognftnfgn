@@ -72,12 +72,15 @@ SP_3_H1, GT_1_H1, SP_1_H1, GT_3_H1, GT_2_1 — alla under 300 kr.
   format — kombinationen är otestad.
 - Går CS_2_1:s siffra att hålla utan den påhittade bristen?
 
-## Batchen som är specad men INTE levererad
+## Batch #1 — levererad 2026-09-14
 
-18 briefer (6 nya videokoncept, 3 varianter på vinnarna, 6 statiska, 3 BOF,
-inga review-bilder eftersom recensionerna inte duger som kundröst) var
-färdigspecade 2026-09-14 men skrevs aldrig — kontots månadsgräns tog slut mitt
-i körningen. Hubben `BÄVER Taköverdraget för Husvagn`
-(`collection://5f2270ab-908c-82ef-b029-0767819050db`) är fortfarande tom.
+18 briefer (7 video, 11 statiska, varav 3 BOF, inga review-bilder eftersom
+recensionerna inte duger som kundröst) skrivna och lagda som items i hubben
+`BÄVER Taköverdraget för Husvagn`
+(`collection://5f2270ab-908c-82ef-b029-0767819050db`), alla Status `Draft`.
+Verifierat med SQL mot collectionen: 7 video + 11 bild = 18.
+Hypoteser, källor och verifiering per brief står i `batch-log.md`.
 
-Upptagna AD-ID i kontot: CS 1–3, GT 1–3, PD 1–3, SP 1–3. Nästa lediga är 4.
+Upptagna AD-ID i kontot före batchen: CS 1–3, GT 1–3, PD 1–3, SP 1–3.
+Nästa lediga efter batch #1: CS 7, GT 7, PD 6, SP 6, CO 3, LI 2, RI 2, TR 2,
+UG 2, BOF 4.

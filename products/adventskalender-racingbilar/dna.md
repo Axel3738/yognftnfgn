@@ -170,3 +170,41 @@ skrev all svensk copy själv och körde tre-frågorstestet
 avvikelse som tidigare batcher (Kranskydd Frost 420D, Surveillance Camera,
 IBC-Tanköverdraget, Fish rod holder NO, Båtmotorskyddet 420D m.fl.,
 2026-08-29 → 2026-09-08).
+
+## Uppdatering 2026-09-14 — första `/cs`-körningen efter launch
+
+Livstidsavläsning: 7 505 kr spend, 24 köp, ROAS 1,88, intäkt 14 100 kr.
+**AOV 588 kr → break-even-CPA 363 kr** (BE-ROAS 1,62 ur kampanjnamnet).
+
+| Annons | Spend | Andel | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|
+| PD_2_1 (statisk) | 1 906 kr | 25 % | 9 | 212 kr | 3,04 | **1 359 kr (72 %)** |
+| PD_2_H1 (video) | 4 239 kr | 56 % | 11 | 385 kr | 1,41 | −246 kr |
+| GT_1_H1 (video) | 1 012 kr | 13 % | 3 | 337 kr | 1,82 | 76 kr |
+
+## Mönster 1 — BEVISAD: den statiska tvillingen slår videon på samma koncept
+
+`PD_2_1` och `PD_2_H1` bär samma chokladkonflikt. Den statiska tar 25 % av
+spenden och 72 % av vinsten; videon tar 56 % av spenden och går back. Enda
+skillnaden är formatet och att videon bygger på handnärbilder i stället för
+helscenen. Batch #2 bygger om videon på stillbildens komposition
+(`PD_9_H1`) — det är testet som avgör om det är formatet eller regin.
+
+## ⚠️ Det här är kampanjen som spendtjuvsspärren finns för
+
+Ronden stängde av kampanjen på morgonen 2026-09-14. Axel startade om den för
+hand: `PD_2_H1` hade ätit 56 % av spenden under break-even medan den statiska
+tvillingen bar hela vinsten. **Den gamla regeln letade bara efter en spendtjuv
+med noll köp** — `PD_2_H1` har elva köp och slank därför igenom.
+`agent/spendtjuv.mjs` räknar nu bort tjuvarna och svarar om kärnan som blir
+kvar ligger över break-even. Utan tjuven låg resten på ROAS 2,03.
+Döda aldrig den här kampanjen utan att ha kört spärren först.
+
+⚠️ **Produkten har nu TVÅ Notion-hubbar.** Batch #1 (20 briefer) ligger i
+hubben från 2026-09-10 (`c19270ab-908c-834c-bf90-874ce69e0381`); batch #2 i
+`BÄVER Adventskalendern Racingbilar`
+(`collection://efe270ab-908c-83ef-aa11-87c98e87f5b0`).
+
+**Modellpolicy följd denna gång** — avvikelsen ovan gällde batch #1, där
+Agent-verktyget saknades. I den här körningen fanns det: en sonnet-subagent per
+brief skrev copyn och körde tre-frågorstestet rad för rad.

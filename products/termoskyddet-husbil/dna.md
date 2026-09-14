@@ -67,13 +67,20 @@ CS_2 (107 kr, 1 köp), G_1 (77 kr, 0 köp), CS_1, SP_1.
 
 Inget bevisat kill. Ingen annons har nått 500 kr spend under break-even.
 
-## Batchen som är specad men INTE levererad
+## Batch #1 — levererad 2026-09-14
 
-17 briefer (6 videokoncept byggda på kondens/mörkläggning/integritet, 2 varianter
-på vinnarna med brådskan och sommarsäsongen borttagen, 6 statiska, 3 BOF, inga
-review-bilder eftersom produkten saknar recensioner) var färdigspecade
-2026-09-14 men skrevs aldrig — kontots månadsgräns tog slut mitt i körningen.
-Hubben `BÄVER Termoskyddet för Husbil`
-(`collection://7d0270ab-908c-831e-8021-8758336851c8`) är fortfarande tom.
+17 briefer (6 videokoncept byggda på kondens/mörkläggning/integritet, varianter
+på vinnarna med brådskan och sommarsäsongen borttagen, 11 statiska varav 3 BOF,
+inga review-bilder eftersom produkten saknar recensioner) skrivna och lagda som
+items i hubben `BÄVER Termoskyddet för Husbil`
+(`collection://7d0270ab-908c-831e-8021-8758336851c8`), alla Status `Draft`.
+Verifierat med SQL mot collectionen: 6 video + 11 bild = 17.
+Hypoteser, källor och verifiering per brief står i `batch-log.md`.
 
-Upptagna AD-ID i kontot: CS 1–3, G 1–3, PD 1–3, SP 1–3. Nästa lediga är 4.
+⚠️ Hubbens moderdatabas heter fortfarande `Hiking Gaiters creative hub` — Axel
+har återanvänt en befintlig databas. Data sourcen heter rätt. Sök på
+data source-id, aldrig på databasens titel.
+
+Upptagna AD-ID i kontot före batchen: CS 1–3, G 1–3, PD 1–3, SP 1–3.
+Nästa lediga efter batch #1: CS 6, G 4, PD 6, SP 6, CO 3, LI 2, MT 2, PR 3,
+RI 2, UG 2, BOF 4.

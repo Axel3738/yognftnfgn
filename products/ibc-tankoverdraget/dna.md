@@ -382,3 +382,32 @@ utan påhittad brådska, GT_5_H1 konkret gåva-koncept; 2 statiska: PD_6_1
 format-transfer, CS_5_1 format-transfer) + 3 BOF (investering/UV-åldrande,
 skugga-invändning, riskfri-kombo garanti+frakt) + 2 review-bilder (Magnus,
 Peter — verbatim). Se `batch-log.md` för fullständig lista och variabeltaggar.
+
+## Uppdatering 2026-09-14 — femte `/cs`-körningen
+
+Livstidsavläsning: 31 591 kr spend, 120 köp, ROAS 2,44, intäkt 77 221 kr.
+**AOV 644 kr → break-even-CPA 426 kr** (BE-ROAS 1,51 ur kampanjnamnet).
+
+| Annons | Spend | Andel | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|
+| PD_1_H1 (video) | 26 093 kr | 83 % | 102 | 256 kr | 2,57 | **17 393 kr (86 %)** |
+| PD_Extra (video) | 1 377 kr | 4 % | 8 | 172 kr | 3,09 | 2 031 kr (10 %) |
+| CS_1_H3 (statisk) | 888 kr | 3 % | 4 | 222 kr | 2,97 | 816 kr (4 %) |
+
+`PD_1_H1` är **benchmark, inte kandidat** — den bär 86 % av vinsten. `PD_Extra`
+håller sin höga vinst per krona från 2026-09-10 (CPA 172 kr) och är fortfarande
+produktens mest effektiva annons.
+
+**Koncentrationen är produktens största risk.** 83 % av spenden ligger på en
+enda creative. Faller den finns ingen färdig ersättare med bevisad data —
+batch #5 isolerar därför öppningsbild (`PD_8_H1`) och klipplängd (`PD_8_H2`)
+på vinnarens struktur i stället för att lägga till nya obevisade vinklar.
+
+⚠️ **Produkten har nu TVÅ Notion-hubbar.** Batch #1–#4 ligger i den äldre;
+batch #5 i `BÄVER IBC-Tanköverdraget`
+(`collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2`), som Axel skapade
+2026-09-14. Nya briefer läggs som rader i en av de två — aldrig en tredje hub.
+
+**Modellpolicy följd denna gång** (första gången för den här produkten): en
+sonnet-subagent per brief skrev copyn och körde tre-frågorstestet rad för rad.
+Agent-verktyget med `model`-parameter fanns i den här miljön.

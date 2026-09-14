@@ -101,3 +101,57 @@ utanför kärnbatchen per Axels egen regel.
 under hela körningen. Löst genom att läsa produktens publika storefront-JSON
 (`baverbutiken.se/products/<handle>.json`) direkt — pris/jämförpris
 dubbelkollat den vägen i stället. Ingen data hittades på gissning.
+
+---
+
+## Batch #2 — 2026-09-14 (`/cs`, på Axels begäran efter att han skapat nya hubbar)
+
+**Trigger:** Axel skapade sex nya `BÄVER …`-hubbar i Notion och bad om creative
+strategy för fyra produkter i samma vända. Adventskalendern var en av dem.
+Samma morgon startade han om kampanjen för hand efter att ronden stängt av den.
+
+**Underlag:** livstidsdata ur Meta 2026-09-14 — 7 505 kr spend, 24 köp,
+ROAS 1,88, intäkt 14 100 kr. AOV 588 kr → **break-even-CPA 363 kr**
+(break-even-ROAS 1,62 ur kampanjnamnet). Grind 300 kr / 3 köp.
+
+| Annons | Spend | Andel | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|
+| PD_2_1 (statisk) | 1 906 kr | 25 % | 9 | 212 kr | 3,04 | **1 359 kr (72 %)** |
+| PD_2_H1 (video) | 4 239 kr | 56 % | 11 | 385 kr | 1,41 | −246 kr |
+| GT_1_H1 (video) | 1 012 kr | 13 % | 3 | 337 kr | 1,82 | 76 kr |
+
+**Detta är exakt fallet som spendtjuvsspärren finns för.** `PD_2_H1` åt 56 % av
+spenden under break-even medan den statiska tvillingen `PD_2_1` bar hela
+vinsten. Den gamla regeln letade bara efter en spendtjuv med noll köp och
+missade därför den här — `PD_2_H1` har 11 köp. `agent/spendtjuv.mjs` fångar den
+nu. Se rättelseraden i `agent/budgetlogg.jsonl` 2026-09-14.
+
+**Briefer i denna batch — 11 st (4 video, 7 statiska):**
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| Adventskalender_PD_9_1 | Statisk | Vinnaren itererad med samma chokladkonflikt men ny komposition: bilarna uppradade så att man ser att de är 24 | PD_2_1, kampanjens vinnare |
+| Adventskalender_CS_5_1 | Statisk | Prisankare utan påhittad brådska — ersätter CS_2_1:s "BEGRÄNSAT LAGER – SLUT INNAN JUL" | CS_2_1, brådskan borttagen |
+| Adventskalender_PD_9_H1 | Video | Videon tappade helscenen. Bygg den på den vinnande stillbildens komposition i stället för på handnärbilder | PD_2_1 + PD_2_H1:s utfall |
+| Adventskalender_CO_3_H1 | Video | Konflikten visuell: chokladkalendern tom och i soporna den 24:e, bilarna kvar på hyllan | Vinnarvinkeln, visualiserad |
+| Adventskalender_FM_2_H1 | Video | Familjeritualen dag 1 → dag 24, mekanismen är tid | Båtmotorskyddets FM_1_H1, kontots bästa hook/hold |
+| Adventskalender_UG_2_H1 | Video | UGC med en förälder — inget launchmaterial har en talande person | Luckan i kontot |
+| Adventskalender_BF_4_1 | Statisk | BOF: priset ensamt | — |
+| Adventskalender_BF_5_1 | Statisk | BOF: fri frakt, öppet köp, Klarna — nu belagt på sidan | Produktsidan |
+| Adventskalender_BF_6_1 | Statisk | BOF: åldersgränsen 3 år som målgruppsklarhet — rättar samtidigt GT_2_1 som anger fel ålder | Produktsidan |
+| Adventskalender_RV_3_1 | Statisk | Saras recension stödjer vinnarvinkeln oberoende — hon kallar den själv ett alternativ till godis | Verifierad recension |
+| Adventskalender_RV_4_1 | Statisk | Emmas recension pekar på den dagliga upprepningen, samma mekanism som familjeritualen | Verifierad recension |
+
+**Levererat:** samtliga 11 som items i **`BÄVER Adventskalendern Racingbilar`**
+(data source `collection://efe270ab-908c-83ef-aa11-87c98e87f5b0`), Status
+`Draft`, Typ `Video`/`Image - Pending Approval`, hela briefen i sidan.
+Verifierat med SQL mot collectionen: 4 video + 7 bild = 11, alla `Draft`.
+
+⚠️ **Produkten har nu TVÅ hubbar.** Batch #1 (20 briefer) ligger i hubben från
+2026-09-10 (data source `c19270ab-908c-834c-bf90-874ce69e0381`); batch #2 i
+`BÄVER Adventskalendern Racingbilar`, som Axel själv skapade 2026-09-14 och
+uttryckligen pekade ut. Skapa aldrig en tredje.
+
+**Modellpolicy:** följd denna gång — en sonnet-subagent per brief skrev copyn
+och körde tre-frågorstestet per rad. (Avvikelsen i batch #1 berodde på att
+Agent-verktyget saknades i den körningen.)
