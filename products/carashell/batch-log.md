@@ -210,8 +210,18 @@ vilket bekräftar att filerna är byte-lika.
 |---|---|---|---|
 | `CaraShellRoof_PD_4_1` | `CaraShellRoof_NO_PD_4_1` | CARASHELL_NO_Takovertrekket - PD (fanns) | 120249089323760172 |
 | `CaraShellRoof_SP_4_1` | `CaraShellRoof_NO_SP_4_1` | CARASHELL_NO_Takovertrekket - SP (fanns) | 120249089335500172 |
-| `CaraShellRoof_GT_4_1` | `CaraShellRoof_NO_G_4_1` | CARASHELL_NO_Takovertrekket - G (fanns) | *pågår* |
-| `CaraShellRoof_CS_4_1` | `CaraShellRoof_NO_CS_4_1` | CARASHELL_NO_Takovertrekket - CS (nytt) | *pågår* |
+| `CaraShellRoof_GT_4_1` | `CaraShellRoof_NO_G_4_1` | CARASHELL_NO_Takovertrekket - G (fanns) | 120249089471580172 |
+| `CaraShellRoof_CS_4_1` | `CaraShellRoof_NO_CS_4_1` | CARASHELL_NO_Takovertrekket - CS (**nytt**) | 120249089482280172 |
+
+Alla fyra ACTIVE/ACTIVE (effective `IN_PROCESS` = Metas granskning), tillbakalästa
+efter uppladdningen. Tre av fyra landade i adsets som redan fanns; bara `- CS`
+skapades (klon av `- G`, ingen egen budget — kampanjen är CBO) eftersom
+CS-vinkeln inte fanns i Norge tidigare. Kampanjen rördes aldrig, inget befintligt
+adset ändrades.
+
+Alla fyra Notion-rader flyttade till `Approved` med `Translated url` ifylld.
+⚠️ Den norska filen ligger inte i Notion-sidan (REST-uppladdning av filer är inte
+byggd) — granskningen görs i Ads Manager.
 
 ⚠️ **Presentannonsen heter `NO_G`, inte `NO_GT`** — se `dna.md`, Norge-rundans
 fynd 1. Den mekaniska namnöversättningen hade skapat ett andra presentadset
