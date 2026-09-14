@@ -137,22 +137,41 @@ export function lasPlatser(fil = REGISTERFIL) {
   try { return JSON.parse(readFileSync(fil, 'utf8')).rutinplatser ?? {}; } catch { return {}; }
 }
 
-/** Platsen för en butik: den registrerade, annars första lediga heltalet. Ren. */
-export function platsFor(butik, platser = lasPlatser()) {
-  const id = String(butik ?? '').split('/')[0].trim().toLowerCase();
-  if (!id) throw new Error('Ange en butik.');
-  if (Number.isInteger(platser[id])) return { plats: platser[id], ny: false, id };
+/**
+ * Platsen för en rutinnyckel: den registrerade, annars första lediga heltalet.
+ * Ren.
+ *
+ * Nyckeln får vara ett butiks-id (`carashell`) eller `butik/produkt`
+ * (`tacklebay/fiskespohallare-4-pack`). Uppslaget görs på HELA nyckeln först
+ * och faller tillbaka på butiksdelen — så enproduktsbutikernas befintliga
+ * platser gäller oförändrat.
+ *
+ * ⚠️ `flerprodukt: true` betyder att butiken bär mer än en produkt med egna
+ * rutiner. Då ärvs ALDRIG butiksplatsen: två produkter i samma butik skulle
+ * annars få identisk cron och starta sina nattvakter på samma minut mot det
+ * delade OPS-kontot — precis den rate limit platserna finns för. Skickar
+ * anroparen inget vet funktionen inte hur många produkter butiken har, och
+ * arv är då rätt svar (det är enproduktsfallet, som är det vanliga).
+ */
+export function platsFor(butik, platser = lasPlatser(), { flerprodukt = false } = {}) {
+  const hel = String(butik ?? '').trim().toLowerCase();
+  if (!hel) throw new Error('Ange en butik.');
+  const butiksdel = hel.split('/')[0];
+  if (Number.isInteger(platser[hel])) return { plats: platser[hel], ny: false, id: hel };
+  if (!flerprodukt && Number.isInteger(platser[butiksdel])) {
+    return { plats: platser[butiksdel], ny: false, id: butiksdel, arvd: hel !== butiksdel };
+  }
   const upptagna = new Set(Object.values(platser).filter(Number.isInteger));
   let plats = 0;
   while (upptagna.has(plats)) plats += 1;
-  return { plats, ny: true, id };
+  return { plats, ny: true, id: hel };
 }
 
 /** Skriver in en ny plats i register.json. Rör aldrig en befintlig. */
-export function skrivInPlats(butik, fil = REGISTERFIL) {
+export function skrivInPlats(butik, fil = REGISTERFIL, opt = {}) {
   const drift = existsSync(fil) ? JSON.parse(readFileSync(fil, 'utf8')) : {};
   drift.rutinplatser = drift.rutinplatser ?? {};
-  const p = platsFor(butik, drift.rutinplatser);
+  const p = platsFor(butik, drift.rutinplatser, opt);
   if (p.ny) {
     drift.rutinplatser[p.id] = p.plats;
     drift.kommentar_rutinplatser = drift.kommentar_rutinplatser
@@ -172,10 +191,25 @@ export function plusMinuter(tid, minuter) {
 
 /** Svensk tid för en butiks rutin: bastiden + butikens plats × steget.
  *  Butiksnyckeln får vara `butik/produkt` — platsen räknas på butiksdelen. */
-export function tidFor(kommando, butik, platser = lasPlatser()) {
+export function tidFor(kommando, butik, platser = lasPlatser(), opt = {}) {
   const r = BUTIKSRUTINER[kommandonamn(kommando)];
   if (!r) throw new Error(`"${kommando}" är ingen butiksrutin — kända: ${Object.keys(BUTIKSRUTINER).join(', ')}.`);
-  return plusMinuter(r.bas, platsFor(butik, platser).plats * r.steg);
+  return plusMinuter(r.bas, platsFor(butik, platser, opt).plats * r.steg);
+}
+
+/**
+ * Rutinnycklar som skulle dela minut med `nyckel`. Ren.
+ * `andra` = övriga nycklar som har rutiner (butiks-id eller butik/produkt).
+ * Två rutiner på samma minut mot det delade OPS-kontot är den rate limit
+ * platserna finns för, och den syns bara som långsamma körningar.
+ */
+export function minutkrockar(nyckel, andra = [], platser = lasPlatser(), opt = {}) {
+  const min = platsFor(nyckel, platser, opt).plats;
+  const hel = String(nyckel ?? '').trim().toLowerCase();
+  return andra
+    .map((a) => String(a ?? '').trim().toLowerCase())
+    .filter((a) => a && a !== hel)
+    .filter((a) => platsFor(a, platser).plats === min);
 }
 
 /** Alla tre tiderna för en butik, med cron för båda halvåren. */

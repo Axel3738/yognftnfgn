@@ -93,6 +93,60 @@ bara som konstig data.
 
 ---
 
+---
+
+## Läget 2026-09-14 — vad som byggts sedan kartläggningen
+
+Kommandot **`/ops-produkt <butik> <källänk>`** finns nu (Axels fråga: "lägg
+till en produkt på en befintlig butik i stället för att bygga en ny"), med
+`factory/ops-produkt.mjs` som motor. Det gör förarbetet och kapslar in
+fällorna, men **löser inte pixelproblemet** — det står kvar nedan.
+
+**Klart sedan kartläggningen:**
+
+| Punkt ovan | Läge |
+|---|---|
+| 1 — `ops.mjs` tar flera produktfiler | **Byggt.** `STEG` har `niva: 'butik'` / `'produkt'`; butikssteg körs en gång, de sex produktstegen loopas per produktfil. |
+| 2 — startsidesteget | **Byggt.** `startsida` skriver `templates/index.json` ur konfigen. |
+| 3 — menyn per produkt | **Byggt.** `meny` skriver `main-menu` ur alla produkter i körningen. |
+| Fynd 1 — `creative_prefix` på produkten | **Gjort i filerna.** Alla produktfiler bär eget prefix under `meta:`. `ops.mjs` stoppar två produkter som delar prefix. |
+
+**Lagat 2026-09-14, båda tysta:**
+
+- `factory/kampanj.mjs` hade `const butikId = 'drytrek'` **hårdkodat**. Varje
+  butiks kampanj byggdes alltså med DryTreks brand i namnet och `drytrek.se`
+  i annonslänken. Butiken härleds nu ur produktens `brand.namn`
+  (`butikForProdukt`, kastar hellre än gissar), och länken använder produktens
+  `handle` i stället för filnamnet — TackleBays produkt pekade fel av samma skäl.
+- `factory/rutin.mjs platsFor` räknade bara på butiksdelen av nyckeln, så en
+  ANDRA produkt i samma butik fick **identisk cron** och två nattvakter startade
+  samma minut mot det delade OPS-kontot — precis den rate limit platserna finns
+  för. Uppslaget går nu på hela nyckeln, med butiksdelen som fallback så
+  enproduktsbutikernas tider står still. `minutkrockar()` pekar ut en krock.
+
+**Kvar, och det är fortfarande fällan:**
+
+1. **Pixeln.** Oförändrad. Ingen kod delar upp köp per produkt — sökning på
+   `content_ids|product_id` i `skalning.mjs`, `budgetrond.mjs` och `ekonomi.mjs`
+   ger noll träffar (2026-09-14). Motmedlet "läs köp per produkt ur Shopify"
+   är inte byggt. Tills det är det: **döm aldrig en annons i en
+   flerproduktsbutik på pixelns CPA** — hämta köpen ur Shopify och skriv i
+   rapporten att du gjort det.
+2. **Tre butiker har prefix = brandnamn:** `overvakningskameran.yaml`
+   (`HeimGuard`), `tankguard.yaml` (`TankGuard`), `utekattkojan.yaml`
+   (`CatCabin`). De är enproduktsbutiker i dag, så det håller — men får någon
+   av dem en andra produkt måste prefixet göras produktskopat FÖRST, annars
+   matchar brandprefixet båda produkternas annonser.
+3. **Ett bart butiks-id kastar** så fort butiken bär två produkter
+   (`register.mjs hittaPost`). Butikens tre befintliga rutiner har butiks-id i
+   sin prompt och slutar då gå. De måste skrivas om till `<butik>/<produkt>`
+   med `update_trigger` **innan** produkt 2 får en state-fil. Högljutt fel,
+   men det inträffar på natten.
+4. **Adsetnamnen saknar produkt** (`kampanj.mjs`: `{BRAND}_{MARKNAD}_{vinkel}`).
+   Två produkter får identiskt namngivna adsets i var sin kampanj. Inte fel i
+   dag — adsetuppslaget går på kampanjen — men det gör en manuell avläsning i
+   Ads Manager förvirrande.
+
 ## Rekommendation
 
 **Bygg fiskebutiken — men i den här ordningen:**

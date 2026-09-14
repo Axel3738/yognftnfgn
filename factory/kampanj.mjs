@@ -26,7 +26,7 @@
 // Media ska redan ligga i målkontot (factory/media-upload.mjs) — image_hash
 // och video_id är per konto och går inte att referera från källkontot.
 
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
@@ -41,6 +41,28 @@ const ROT = dirname(fileURLToPath(import.meta.url));
 // ⚠️ Prefixet måste skickas med när det är fler än ett ord. Det norska
 // prefixet är `Gamasjer_NO`, så Gamasjer_NO_PD_2_1 ger "NO" som vinkel om
 // man bara tar andra ordet — och då hittas ingen copy alls.
+/**
+ * Butiksfilen som hör till produkten: `brand.namn` mot butikens `butik.brand`,
+ * samma koppling som `factory/register.mjs paraIhop()` använder. Skiftläges-
+ * okänsligt. Kastar hellre än gissar — fel butik ger fel brand i kampanjnamnet
+ * och fel domän i annonslänken, och inget av det syns som ett fel i Meta.
+ */
+export function butikForProdukt(p, mapp = join(ROT, 'butiker')) {
+  const brand = String(p?.brand?.namn ?? '').trim().toLowerCase();
+  if (!brand) throw new Error('Produktfilen saknar brand.namn — butiken går inte att härleda.');
+  const traffar = [];
+  for (const fil of readdirSync(mapp).filter((f) => f.endsWith('.yaml'))) {
+    const y = lasYaml(readFileSync(join(mapp, fil), 'utf8'));
+    if (String(y?.butik?.brand ?? '').trim().toLowerCase() === brand) traffar.push({ butikId: y.butik.id, butik: y });
+  }
+  if (traffar.length === 1) return traffar[0];
+  if (traffar.length === 0) throw new Error(`Ingen butik i factory/butiker/ har brand "${p?.brand?.namn}". Sätt brand.namn i produktfilen till butikens brand.`);
+  throw new Error(`Flera butiker har brand "${p?.brand?.namn}": ${traffar.map((t) => t.butikId).join(', ')}. Brandet måste vara unikt per butik.`);
+}
+
+/** Produktens handle i butiken — `produkt.handle` när det skiljer sig från id. */
+export const handleFor = (p) => String(p?.produkt?.handle || p?.produkt?.id || '').trim();
+
 export function vinkelAv(namn, prefix = '') {
   let rest = String(namn);
   if (prefix && rest.startsWith(`${prefix}_`)) rest = rest.slice(prefix.length + 1);
@@ -84,8 +106,10 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
   const torr = arg.includes('--torr');
 
   const p = lasYaml(readFileSync(join(ROT, 'produkter', `${produktId}.yaml`), 'utf8'));
-  const butikId = 'drytrek';
-  const butik = lasYaml(readFileSync(join(ROT, 'butiker', `${butikId}.yaml`), 'utf8'));
+  // Butiken härleds ur produktens brand — den stod som `const butikId =
+  // 'drytrek'` till 2026-09-14, alltså byggdes VARJE butiks kampanj med
+  // DryTreks brand i namnet och drytrek.se i länken. Inget kastade.
+  const { butikId, butik } = butikForProdukt(p);
 
   // --- spärrarna, före allt annat
   const act = String(p.meta?.ad_account_id ?? '');
@@ -112,8 +136,8 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
   // en dag på /nb utan country. Shopify honorerar country= server-side och
   // sätter kakan, så priset är rätt redan i första renderingen.
   const lank = marknad === 'NO'
-    ? `https://${doman}/nb/products/${produktId}?country=NO`
-    : `https://${doman}/products/${produktId}`;
+    ? `https://${doman}/nb/products/${handleFor(p)}?country=NO`
+    : `https://${doman}/products/${handleFor(p)}`;
 
   const mediaFil = join(ROT, 'output', produktId, `media-i-malkontot${suffix}.json`);
   if (!existsSync(mediaFil)) throw new Error(`${mediaFil.split('/').pop()} saknas — kör factory/media-upload.mjs --marknad ${marknad} först.`);
