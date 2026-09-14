@@ -169,3 +169,30 @@ tillräckligt med köp för att koppla hold till intäkt. Frekvens ligger på
 När minst en annons nått ≥300 kr **och** ≥3 köp. Marginal-CPA kräver dessutom
 snapshots ≥3 dygn isär och ≥5 inkrementella köp — den här avläsningen är
 snapshot 1.
+
+---
+
+# Kontoläge 2026-09-14 (ingen avläsning — bara vad som finns, inför avläsning 2)
+
+Lifetime per kampanj i `nya kungen`, sorterat på spend (`purchase_roas` rakt ur
+Meta, okontrollerat): `MATSTRUMP_SALES_20260826` 22 526 kr / ROAS 1,19 ·
+`MATSTRUMP_SALES AU` 9 656 kr / 0,97 · `MATSTRUMP_SALES_US_20260828` 6 193 kr /
+0,76 · `MATSTRUMP_SALES UK` 5 845 kr / 1,07 · `MATSTRUMP_SALES_20260825`
+2 293 kr / 0,70. **~46 000 kr har spenderats sedan avläsning 1**, i fyra kampanjer
+varav tre (AU, US, UK) inte finns i något dokument här — de kör svenska
+UGC-annonser med `MATSTRUMP_AU_`/`_US_`-prefix.
+
+Största annonser lifetime: `haikuh3_v1` **12 863 kr**, `offer_static_d3_v1`
+3 063 kr, `s001h1_v2` 1 721 kr, `012v2_v1` 910 kr. Alla fyra är långt förbi
+spendgrinden — köp och vinstbidrag läses vid nästa `/cs`, break-even saknas
+fortfarande.
+
+**Upptagna AD-ID:n:** 010v2, 011v2, 012, 012v2, 013, 016, meet, s001–s009,
+haiku h1–h3, somnet h1–h3, opus h1, trodde, julstrumpa, november, statics b001–b005,
+c, d1–d4, f, **017v1 h1–h3, 017v2 h1–h3, 019 h1–h3, 020 h1–h3, 021 h1–h3** (de
+senaste, 0–42 kr spend = just launchade). Nästa lediga nummer: **022.**
+
+Fjolårets julvinnare (~100k spend, ROAS 3–5 enligt Axel) finns **inte** i något
+konto kopplingen ser: `Sushi kanske?` (1550615276530638) innehåller
+Grillklinikens NO-annonser, `Norge` och `Axel Odhner` är tomma, `Finland DK`
+gick inte att läsa.

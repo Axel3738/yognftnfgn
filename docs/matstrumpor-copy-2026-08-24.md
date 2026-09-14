@@ -25,7 +25,10 @@
 ## Sanningslistan (enda tillåtna påståenden i copyn)
 
 Priserna ovan · Köp 1 Få 1 på alla fyra · sushilådan = 5 par + ätpinnar i trä ·
-förpackningen ser ut som riktig mat · onesize 36–44 · fri frakt i Sverige ·
+förpackningen ser ut som riktig mat · onesize 36–44 (**Axels beslut 2026-09-14:
+storleken nämns inte alls i annonserna — den är en spec, inte en känsla; siffrorna
+36–44 står på sajten. Annonserna bär emotionella features och pain points, aldrig
+produktspecar**) · fri frakt i Sverige ·
 leverans 5–10 arbetsdagar · 30 dagars öppet köp · svensk webbutik/bolag/kundsupport.
 **Stoppat i granskningen:** "skickar från Sverige" och "ingen retur till annat land" —
 lagrets och returadressens plats är overifierade. Kontrasten mot utländska dropshippers
