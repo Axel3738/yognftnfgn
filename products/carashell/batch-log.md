@@ -236,3 +236,20 @@ pris i någon av de fyra (fynd 3). Tre-frågorstestet redovisat per annons i
 
 ⚠️ **Metas rate limit slog till genom hela rundan igen** (8-stegs backoff, upp
 till 27 minuter per anrop). Kör inte om rutinen för att den ser ut att hänga.
+
+---
+
+## Norge-runda 2026-09-15 (`/ops-oversatt carashell`) — tom kö
+
+Noll rader i `SE-ACTIVE to be translated`. Gårdagens fyra bildannonser är tagna
+och står som `Approved`. `CARASHELL_NO_Takovertrekket` är ACTIVE med fyra adsets
+— marknaden går, det här är en tom kö och inget hållet läge. Noll HeyGen-krediter.
+
+Hubben har 7 rader totalt: de 4 godkända bildannonserna + batch #2:s tre
+videobriefer (`PD_4_H1`, `PD_5_H1`, `SP_4_H1`) som fortfarande står `Draft`.
+Ingen redigerare är tilldelad CaraShell, så inget produceras mot dem.
+
+✅ **Länkfixen ärvs nu av sig själv.** Kön läste ärvd länk
+`https://carashell.se/nb/products/takskyddet?country=NO` ur `CaraShellRoof_NO_CS_4_1`
+— gårdagens annons är nyast ACTIVE och bär parametern, så nya norska annonser får
+rätt valuta utan `--lank`. De nio äldsta NO-annonserna saknar den fortfarande.
