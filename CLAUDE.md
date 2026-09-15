@@ -580,6 +580,28 @@ Typ-filtret dolde hela Masterns produktion och gav 33,74 kr i stället för
 2 260 kr.)* Hubbarna står i `commission/hubbar.json` — 12 svenska över tre
 verksamheter, inte bara Bäverbutikens.
 
+⚠️ **Redigerare utan Notion-konto räknas via KOMMENTAR** (`commission/kommentarer.mjs`,
+Axels besked 2026-09-15). **Jerzee** har aldrig fått ett Notion-konto och kan därför
+aldrig stå i kolumnen Ansvarig — hans rader märks i stället med en kommentar
+("jerzee is working on this", "By Jerzee"), skriven från gästkontot
+`05b30396-13bd-41c1-b205-94169150bde3`. Han ligger i `team.json` med det syntetiska
+id:t `kommentar:jerzee` + fältet `notionKommentarMonster`. Två järnregler: **Ansvarig
+vinner alltid** (kommentaren används bara på rader där Ansvarig är tom), och **två
+personers mönster på samma rad ger ingen** — hellre okopplat än fel person.
+Mätt 2026-09-15: 50 rader i 8 hubbar. Bara rader utan Ansvarig kostar ett API-anrop.
+`--utan-kommentarer` stänger av steget.
+
+⚠️ **OPS-butikernas hubbar RÄKNAS i commission sedan 2026-09-15** — till skillnad
+från alla andra Bäverbutiks-rutiner. Commission är läs-bart och kan inte ladda upp i
+fel konto, medan spenden i OPS-kontot räknas med ändå: utan hubbarna föll de
+annonserna tillbaka på produktens ägare i `koppling.mjs`, så **Josh fick betalt för
+Jerzees, Gilz och Jaspers arbete**. Mätt samma dag, två körningar med minuters
+mellanrum: utan hubbarna Josh 442,36 kr / Jerzee 0,43 kr; med dem Josh 421,55 kr,
+Jerzee 6,12 kr, Gilz +4,60, Jasper +3,22, Carl +1,09 — alltså ~21 kr på fel person.
+`--utan-ops-hubbar` återgår till det gamla beteendet. **Rör inte spärren i de andra
+rutinerna** (`tools/lib/ops-hubbar.mjs`): där handlar den om vilket annonskonto som
+laddas upp till, och det problemet finns fortfarande.
+
 ⚠️ **De fyra skalningsprodukternas creative hubs är ARKIVERADE i Notion** och
 syns inte i en teamspace-sökning. Hubbarna måste därför alltid unionsläggas med
 `products.json`. `run.mjs` avbryter om en känd hubb saknas eller om noll godkända
@@ -865,6 +887,15 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   en anmärkning. Ingen nödbroms på antal leveranser. **Uppladdad rad flyttas till
   `SE-ACTIVE to be translated`** (översättningskön), aldrig till `Approved`.
 
+  ⚠️ **Stoppregeln gäller före uppladdning. En annons som redan är live stängs
+  aldrig av i efterhand** (Axels beslut 2026-09-15: "om annonsen redan är live så
+  ska vi inte stänga av den faktiskt alls"). Hittar en senare körning ett fel som
+  stoppregeln släppte igenom — fel siffra i en caption, ett trasigt captionspår,
+  en ful produktbild — så går det till redigeraren som en anmärkning för nästa
+  version. Det blir aldrig ett skäl att pausa något som spenderar. *(Bakgrund:
+  `IBC_CS_5_H1` säger 400 kr i bild mot 489 kr på sidan — 18,2 %, alltså innanför
+  20 %-gränsen. Den frågan ställdes till Axel och svaret blev den här regeln.)*
+
 - **Skriv aldrig en mätning som en evig lag.** Regeln ovan stod en gång som
   "`Filer och media` är tomt på samtliga rader … bygg därför aldrig". Den var falsk
   fyra minuter senare — `/bildannonser` mergades och började fylla exakt det fältet
@@ -929,16 +960,31 @@ hämta data: **Notion** (creative hub-databaserna), **Slack** (workspace
 Stonebite), **Meta Ads** (MagiBorsten `1867947880635861`), **Shopify**
 (bäverbutiken.se, för verklig AOV).
 
-Notion-hubbarna hittas **dynamiskt via teamspacet Bäverbutiken**
-(`3a9270ab-908c-81a8-a48c-004222d195e7`) — databaser vars titel slutar på
-`creative hub`, minus mallen `Creative hub MALL`. ⚠️ Titelregeln är inte
-vattentät: **"Damasker vandring"** och **"Fish rod holder"** är hubbar med samma
-schema men utan ordet "creative hub" (mätt 2026-09-08, två videor missades).
-Sök därför även på innehållet (statusen "SE-ACTIVE to be translated" /
-"To be Reviewed") och läs träffarnas `path`. Håll aldrig en handskriven
-lista: nya produkter ska komma med av sig själva, och teamspacet är det som
-hindrar att Grillkliniken, Matstrumpor eller Ploomi.se blandas in (de har egna
-teamspaces). `products.json` känner bara fyra av hubbarna — den är inte facit här.
+Notion-hubbarna hittas **dynamiskt**. ⚠️ **Titelregeln "slutar på `creative hub`"
+är DÖD — lita aldrig på den, och skriv aldrig hubblistan ur minnet.**
+Mätt 2026-09-08: "Damasker vandring" och "Fish rod holder" saknade orden.
+Mätt 2026-09-15: Axel döper om och skapar hubbar löpande — samma dag fanns
+`BÄVER IBC-Tanköverdraget`, `BÄVER Taköverdraget för Husvagn`,
+`BÄVER Termoskyddet för Husbil`, `BÄVER Adventskalendern Racingbilar`,
+`arkiverad Övervakningskamera` och `Arkiverad Isolerade Utekattkojan`, och en
+`/oversatt`-körning som läste sex hubbar ur minnet missade alla sex. Den
+rapporterade "30 rader, alla blockerade"; verkligheten var **57 rader, varav 20
+skulle ha gått live samma dag**. Axel fick upptäcka det själv.
+
+**Rätt sätt (MCP-vägen, utan `NOTION_TOKEN`):** `notion-search` med
+`sort: "last_edited"` först — den listar allt som faktiskt rörts, och varje
+distinkt `path` är en kandidathubb. Komplettera med sökningar på `"BÄVER"`,
+`"creative hub"` och `"arkiverad"`. Hämta `collection://`-id genom att
+`notion-fetch`:a en **sida** i hubben (`parent-data-source` står i svaret) —
+en databashämtning är flera gånger dyrare. SQL tar **max 10 data sources**
+per fråga. Räkna hubbarna i rapporten; färre än förra körningen = något
+hittades inte.
+
+Dra bort OPS-hubbarna **per id** (`node tools/lib/ops-hubbar.mjs`) och andra
+verksamheters hubbar (`Matstrumpor creative hub`, `kundsupport Grillkliniken`,
+`Bäverkoppling.se`, `Creative Hub master`) samt mallen `MALL Creative hub MALL`.
+`products.json` känner bara fyra av hubbarna — den är inte facit här.
+**En hubb som inte hittas ger aldrig ett felmeddelande, bara en kortare kö.**
 
 **Env-nycklar rutinerna behöver:** `KIE_API_KEY` (bildannonser),
 `HEYGEN_API_KEY` (`/translate`), `META_ACCESS_TOKEN`, `DISCORD_WEBHOOK_URL`

@@ -1,0 +1,17 @@
+{
+ "takovertrekk_GT_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/ea65fd2ade57447e956622b84247f37b/original.mp4",
+  "proofreadId": "6c3afb8812ad41dfa9044fff44d8aaf1-nb-nb-NO",
+  "srtDone": true
+ },
+ "takovertrekk_GT_5_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/91c5c5a8f2f645a081f629f43c288e9e/original.mp4",
+  "proofreadId": "425417aea8614ef8853aa9701abad3ef-nb-nb-NO",
+  "srtDone": true
+ },
+ "takovertrekk_PD_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/4a740394b45545b4bb28d6a9d4ff9e83/original.mp4",
+  "proofreadId": "7450ac24525047ddb54baf82c1bff488-nb-nb-NO",
+  "srtDone": true
+ }
+}

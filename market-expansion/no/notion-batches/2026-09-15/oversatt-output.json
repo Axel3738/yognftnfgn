@@ -1,0 +1,589 @@
+{
+  "IBC_BOF_10_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0], "text": "439 kr – spar 147 kr"},
+          {"rader": [1], "text": "Ord. pris 586 kr (25% rabatt)"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "439 kr inkl. fri frakt i Norge"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Bestill tanktrekket – 439 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "IBC-tanktrekket beskytter tanken din mot alger og UV-stråling. Nå 439 kr i stedet for 586 kr – spar 147 kr (25 % rabatt). Fri frakt i Norge og 30 dagers åpent kjøp.",
+      "headline": "IBC-tanktrekk – spar 147 kr",
+      "description": "439 kr · Fri frakt · Klarna"
+    },
+    "andringar": [
+      "'i Sverige' → 'i Norge' (Norge-regeln gäller aldrig for landet)",
+      "pris 489→439 kr, jämförpris 636→586 kr, rabatt 23%→25% (norska fakta)"
+    ],
+    "trefragor": "Alla rader konkreta och falsifierbara (exakt pris, exakt rabatt). Svåraste raden: platta rad 2 – 30 kr kortare pristal gav luft att fylla med '(25% rabatt)' utan att spränga rutan."
+  },
+
+  "IBC_BOF_11_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0], "text": "IBC-tanken beskyttet."},
+          {"rader": [1, 2], "text": "Pengene beskyttet også."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Passer den ikke? 30 dagers åpent kjøp – send tilbake og få pengene."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Fri frakt til din IBC-tank. Klarna i kassen. 30 dagers åpent kjøp."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Test tanken risikofritt i 30 dager."}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "IBC-tanken din blir beskyttet – og pengene dine også. 30 dagers åpent kjøp: liker du det ikke, sender du det tilbake og får pengene tilbake. Fri frakt i Norge, Klarna i kassen.",
+      "headline": "Tanken beskyttet – risikofritt",
+      "description": "439 kr · 30 dagers åpent kjøp"
+    },
+    "andringar": [
+      "Inget pris i denna annons – inga siffror att byta. Endast direktöversättning."
+    ],
+    "trefragor": "Alla rader falsifierbara (garantivillkoret är ett faktum, inte en åsikt). Svåraste raden: block 1+2 i platta 2, där norska 'send tilbake og få pengene' fick kortas jämfört med SE för att hålla samma två rader."
+  },
+
+  "IBC_BOF_12_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Er skygge nok mot UV på IBC-tanken?"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Nei. 210D-stoffet tar UV-strålingen i stedet for plasten."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "439 kr (ord. 586 kr)"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Beskytt tanken – 439 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Vanlig skygge stopper ikke UV-strålingen som bryter ned plasten på IBC-tanken. 210D-stoffet i tanktrekket tar UV-strålingen i stedet for tanken. 439 kr (ord. 586 kr).",
+      "headline": "Stopper UV – ikke bare skygge",
+      "description": "439 kr · 210D oxfordstoff"
+    },
+    "andringar": [
+      "pris 489→439 kr, jämförpris 636→586 kr (norska fakta)"
+    ],
+    "trefragor": "Frågan/svaret-paret klarar testet (konkret mekanism 210D-tyg, falsifierbart). Svåraste raden: fototext '439 kr (ord. 586 kr)' – kortare NO-tal gjorde raden lättare, inte svårare, denna gång."
+  },
+
+  "IBC_PD_9_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Stoffet stenger ute lyset som får alger til å vokse."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Åpning på toppen – kom til lokket uten å ta av trekket."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "439 kr (ord. 586 kr) · Fri frakt i Norge."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Beskytt tanken for 439 kr."}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Stoffet stenger ute lyset som får alger til å vokse, og har åpning på toppen så du kommer til lokket uten å ta av trekket. 439 kr (ord. 586 kr), fri frakt i Norge.",
+      "headline": "Stopper alger – enkel tilgang",
+      "description": "439 kr · Fri frakt i Norge"
+    },
+    "andringar": [
+      "'inom Sverige' → 'i Norge' (Norge-regeln)",
+      "pris 489→439 kr, jämförpris 636→586 kr"
+    ],
+    "trefragor": "Båda mekanism-raderna pekar på ett konkret designval (ljus/öppning) – klarar visualisera/falsifiera/konkurrent-testet. Svåraste raden: fototext, där tre fakta (pris, jämförpris, land) skulle in på en rad utan att spränga bredden."
+  },
+
+  "IBC_RV_7_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "”Fungerer akkurat som jeg hadde håpet. Godt vern for tanken min utendørs.”"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Karin – hos baverbutiken.se"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "439 kr (veil. pris 586 kr)"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Handle nå – 439 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "\"Fungerer akkurat som jeg hadde håpet. Godt vern for tanken min utendørs\" – Karin, hos baverbutiken.se. IBC-tanktrekket koster 439 kr (veil. pris 586 kr).",
+      "headline": "4,7 av 5 – 10 anmeldelser",
+      "description": "439 kr · Klarna i kassen"
+    },
+    "andringar": [
+      "Svensk recension attribuerad: 'Karin' → 'Karin – hos baverbutiken.se' (regel 3, äkta betyg är norskt: 4,7 av 5, 10 anmeldelser, men själva kundcitatet är svenskt)",
+      "'jämförpris' → 'veil. pris' (norsk handelsterm), pris 489→439 kr, 636→586 kr"
+    ],
+    "trefragor": "Citatet klarar testet (konkret upplevelse, falsifierbart, ingen konkurrent kan äga Karins ord). Svåraste raden: namnformen 'Karin – hos baverbutiken.se' är 5x längre än SE-originalets 'Karin' och bryter ±15%-regeln – nödvändigt för att inte ge sken av en norsk recension."
+  },
+
+  "IBC_RV_8_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1, 2], "text": "”God pris for pengene. Passer min IBC-tank og er enkel å bruke.”"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Daniel – hos baverbutiken.se"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "439 kr – veil. pris 586 kr"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Bestill trekket ditt for 439 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "\"God pris for pengene. Passer min IBC-tank og er enkel å bruke\" – Daniel, hos baverbutiken.se. Bestill ditt tanktrekk for 439 kr.",
+      "headline": "4,7 av 5 – 10 anmeldelser",
+      "description": "439 kr · Fri frakt i Norge"
+    },
+    "andringar": [
+      "Svensk recension attribuerad: 'Daniel' → 'Daniel – hos baverbutiken.se' (regel 3)",
+      "'jämförpris' → 'veil. pris', pris 489→439 kr, 636→586 kr"
+    ],
+    "trefragor": "Citatet är konkret och falsifierbart, ingen konkurrent kan skriva under på Daniels erfarenhet. Svåraste raden: samma attributionsproblem som IBC_RV_7_1 – 'Daniel – hos baverbutiken.se' är betydligt längre än 'Daniel'."
+  },
+
+  "Takoverdrag_BOF_1_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0], "text": "1 549 kr → 1 189 kr"},
+          {"rader": [1], "text": "Dekker taket – ikke hele vogna"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "210D-vev – tåler en hel vintersesong ute"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Bestill nå – spar 360 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Takovertrekket dekker taket på campingvogna – ikke hele vogna, men den dyreste flaten. 210D-vev som tåler en hel vintersesong ute. Nå 1 189 kr i stedet for 1 549 kr – spar 360 kr.",
+      "headline": "Spar 360 kr på takovertrekket",
+      "description": "1 189 kr · Fri frakt i Norge"
+    },
+    "andringar": [
+      "pris 1 469→1 549 kr / 1 129→1 189 kr, spar 340→360 kr (norska fakta)"
+    ],
+    "trefragor": "Prisraden och materialraden är båda falsifierbara siffror/fakta. Svåraste raden: platta rad 1 där de norska prissiffrorna (1 549/1 189) är en siffra längre än svenska (1 469/1 129) men rymdes ändå inom samma bredd."
+  },
+
+  "Takoverdrag_BOF_2_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "1 189 kr i stedet for 1 549 kr – spar 360 kr."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Fri frakt i Norge – inkludert i takovertrekkets 1 189 kr."},
+          {"rader": [1, 2], "text": "30 dagers åpent kjøp på takovertrekket for 1 189 kr: liker du det ikke, får du pengene tilbake."},
+          {"rader": [3], "text": "Klarna i kassen – takovertrekket for 1 189 kr."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Takovertrekk Campingvogn 6,5 × 3 m – 1 189 kr"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Beskytt taket – 1 189 kr, fri frakt."}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Takovertrekk til campingvogn, 6,5 × 3 m, for 1 189 kr i stedet for 1 549 kr – spar 360 kr. Fri frakt i Norge, 30 dagers åpent kjøp og Klarna i kassen.",
+      "headline": "1 189 kr – fri frakt i Norge",
+      "description": "30 dagers åpent kjøp · Klarna"
+    },
+    "andringar": [
+      "'inom Sverige' → 'i Norge' (Norge-regeln)",
+      "pris 1 129→1 189 kr, 1 469→1 549 kr, spar 340→360 kr"
+    ],
+    "trefragor": "Garantiraderna är falsifierbara villkor (30 dagar, Klarna). Svåraste raden: bock-blocket rad 1+2, tre norska prisrepetitioner (1 189 kr) fick plats men gjorde raden tätt packad – kortades minimalt utan att tappa sakinnehåll."
+  },
+
+  "Takoverdrag_BOF_3_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Holder det med en vanlig presenning?"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "210D-vev tåler vinteren. Presenning sprekker i frost."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "1 189 kr (ord. 1 549 kr)"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Beskytt den dyre flaten"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "En vanlig presenning sprekker i frost. 210D-veven i takovertrekket tåler vinteren ute. Beskytt den dyre flaten for 1 189 kr (ord. 1 549 kr).",
+      "headline": "Tåler vinteren – ikke presenning",
+      "description": "1 189 kr · 210D-vev"
+    },
+    "andringar": [
+      "pris 1 129→1 189 kr, jämförpris 1 469→1 549 kr"
+    ],
+    "trefragor": "Konflikten (210D-vev mot presenning) är falsifierbar och specifik för produkten. Svåraste raden: knappen 'Beskytt den dyre flaten' – korta norska ord gjorde den lättare än svenska att få plats."
+  },
+
+  "Takoverdrag_CO_2_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0], "text": "Dekk taket."},
+          {"rader": [1], "text": "Ikke hele vogna."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Tungt å få på plass alene"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Håndteres av én person"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Skurer mot lakken hele vinteren"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Beskytter den dyreste flaten"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Handle takovertrekket – 1 189 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Ett trekk, én person, hele vinteren: takovertrekket dekker bare taket – den dyreste flaten – og er enkelt å håndtere alene. Skurer ikke mot lakken. 1 189 kr.",
+      "headline": "Dekker taket – ikke hele vogna",
+      "description": "1 189 kr · Håndteres alene"
+    },
+    "andringar": [
+      "pris 1 129→1 189 kr (norska fakta)"
+    ],
+    "trefragor": "Varje etikett är en konkret, falsifierbar egenskap (tungt/lätt, skaver/skaver inte). Svåraste raden: 'Håndteres av én person' – 'én' med aksent tar visuellt lite mer plats men höll sig inom bredden."
+  },
+
+  "Takoverdrag_CS_4_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0], "text": "1 549 kr — 1 189 kr", "stryk": "1 549 kr"},
+          {"rader": [1], "text": "Beskytter taket – ikke hele vogna"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "1 189 kr – frakt inkludert"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Kjøp takovertrekket – 1 189 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Takovertrekket beskytter taket – ikke hele vogna. Før 1 549 kr, nå 1 189 kr med frakt inkludert.",
+      "headline": "1 549 kr → 1 189 kr",
+      "description": "Frakt inkludert · Klarna"
+    },
+    "andringar": [
+      "pris 1 469→1 549 kr (struken del), 1 129→1 189 kr"
+    ],
+    "trefragor": "Det överstrukna priset mot det aktuella är rakt falsifierbart. Svåraste raden: platta rad 1 med stryk-delen – båda norska talen är en siffra längre än svenska, men skiljetecknet '—' gav marginal nog."
+  },
+
+  "Takoverdrag_CS_6_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Fri frakt på takovertrekk for campingvogn, 6,5 × 3 m"},
+          {"rader": [2], "text": "1 189 kr (ord. 1 549 kr) – spar 360 kr"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "30 dagers åpent kjøp – liker du ikke beskyttelsen får du pengene tilbake"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Bestill takovertrekket – fri frakt"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Fri frakt på takovertrekk til campingvogn, 6,5 × 3 m. 1 189 kr i stedet for 1 549 kr – spar 360 kr. 30 dagers åpent kjøp: liker du ikke beskyttelsen, får du pengene tilbake.",
+      "headline": "Fri frakt – spar 360 kr",
+      "description": "1 189 kr · 30 dagers åpent kjøp"
+    },
+    "andringar": [
+      "pris 1 129→1 189 kr, jämförpris 1 469→1 549 kr, spar 340→360 kr (norska fakta)"
+    ],
+    "trefragor": "Garantivillkoret är falsifierbart och produktspecifikt (måtten 6,5×3 m). Svåraste raden: block rad 0+1, där 'campingvogn' är längre än svenska 'husvagn' – kompenserades genom att stryka ordet 'för' framför måttet."
+  },
+
+  "Takoverdrag_GT_6_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Beskytt taket i jul – 1 189 kr"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Tåler vinteren ute – ikke tynn presenning som sprekker i frost"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Ord. 1 549 kr · Fri frakt · 30 dagers åpent kjøp"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Bestill takovertrekket – 1 189 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Beskytt taket i jul for 1 189 kr. 210D-vev tåler vinteren ute – ikke tynn presenning som sprekker i frost. Fri frakt og 30 dagers åpent kjøp.",
+      "headline": "Beskytt taket i jul",
+      "description": "1 189 kr (ord. 1 549 kr)"
+    },
+    "andringar": [
+      "pris 1 129→1 189 kr, jämförpris 1 469→1 549 kr"
+    ],
+    "trefragor": "Materialpåståendet (210D-vev mot presenning i frost) är falsifierbart. Svåraste raden: fototext med tre fakta (pris, frakt, garanti) på en rad – höll sig inom bredden trots norska ordens extra bokstäver ('åpent' vs 'öppet')."
+  },
+
+  "Takoverdrag_LI_1_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1, 2], "text": "Vannet blir aldri stående ved takluken – dekker hele taket, 6,5 × 3 meter."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Sitter fast når det blåser – stropp og strammer holder den på plass."},
+          {"rader": [2], "text": "Én person klarer det selv – bare taket, ikke hele vogna."},
+          {"rader": [3, 4], "text": "Holder en hel vintersesong ute – 210D-vev som ikke sprekker i frost."},
+          {"rader": [5], "text": "Får plass i posen som følger med – tar ingen plass i fortelt-boksen."}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "1 189 kr (ord. 1 549 kr) – fri frakt – 30 dagers åpent kjøp"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Bestill takovertrekket"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Dekker hele taket, 6,5 × 3 meter, så vannet aldri blir stående ved takluken. Sitter fast når det blåser, én person setter den på selv, og den holder en hel vintersesong ute. 1 189 kr, fri frakt, 30 dagers åpent kjøp.",
+      "headline": "4 grunner til å beskytte taket",
+      "description": "1 189 kr (ord. 1 549 kr)"
+    },
+    "andringar": [
+      "pris 1 129→1 189 kr, jämförpris 1 469→1 549 kr"
+    ],
+    "trefragor": "Fyra separata, falsifierbara egenskaper (mått, vind, frost, förvaring). Svåraste raden: block rad 0+1 i bocken – 'stropp og strammer' fick ersätta 'rem och dragsko' med kortare norska ord för att hålla samma två rader."
+  },
+
+  "Takoverdrag_PD_5_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Dekk bare taket – ikke hele vogna"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Strammes fast med stropp"},
+          {"rader": [1], "text": "Strammer i kanten"},
+          {"rader": [2], "text": "Takluken holdes tørr"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "1 189 kr (ord. 1 549 kr) – fri frakt"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Handle nå – 1 189 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "Strammes fast med stropp og strammer i kanten, så takluken holdes tørr. Takovertrekket dekker bare taket – ikke hele vogna. 1 189 kr (ord. 1 549 kr), fri frakt.",
+      "headline": "Holder takluken tørr",
+      "description": "1 189 kr · Fri frakt i Norge"
+    },
+    "andringar": [
+      "pris 1 129→1 189 kr, jämförpris 1 469→1 549 kr"
+    ],
+    "trefragor": "Tre konkreta, falsifierbara detaljer (stropp, kant, luke). Svåraste raden: bock rad 2 'Strammer i kanten' – 'dragsko' finns inte som enkelt norskt ord, löstes med 'strammer' som beskriver funktionen i stället för delen."
+  },
+
+  "Takoverdrag_SP_5_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0], "text": "5,0 av 5 – 10 anmeldelser"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "Vannet blir aldri stående ved takluken – dekker hele takflaten, 6,5 × 3 m"},
+          {"rader": [2, 3], "text": "Sitter fast når det blåser – strammes fast med stropp og strammer i kanten"},
+          {"rader": [4, 5], "text": "Tåler en hel vintersesong ute – 210D-vev, ikke tynn presenning som sprekker i frost"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "1 189 kr – spar 360 kr"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Beskytt taket for 1 189 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "5,0 av 5 på 10 anmeldelser. Dekker hele takflaten så vannet aldri blir stående, sitter fast når det blåser, og tåler en hel vintersesong ute – 210D-vev, ikke presenning som sprekker i frost. 1 189 kr, spar 360 kr.",
+      "headline": "5,0 av 5 – 10 anmeldelser",
+      "description": "1 189 kr · Spar 360 kr"
+    },
+    "andringar": [
+      "pris 1 129→1 189 kr, spar 340→360 kr, 'recensioner'→'anmeldelser' (norska fakta bekräftar betyget äkta)"
+    ],
+    "trefragor": "Betyget 5,0/10 är ett äkta, falsifierbart norskt faktum – enda raden i batchen som inte behövde ändras i sak. Svåraste raden: block rad 0+1 – norska 'takflaten' är längre än svenska 'takytan', kompenserat genom att korta 'kring takluckorna' till 'ved takluken'."
+  },
+
+  "Takoverdrag_TR_1_1": {
+    "former": [
+      {
+        "texter": [
+          {"rader": [0, 1], "text": "5,0 av 5 på 10 anmeldelser"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Dekk bare taket – ikke hele vogna"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "1 189 kr i stedet for 1 549 kr – spar 360 kr"}
+        ]
+      },
+      {
+        "texter": [
+          {"rader": [0], "text": "Dekk taket – 1 189 kr"}
+        ]
+      }
+    ],
+    "copy": {
+      "message": "5,0 av 5 på 10 anmeldelser. Takovertrekket dekker bare taket – ikke hele vogna. 1 189 kr i stedet for 1 549 kr – spar 360 kr.",
+      "headline": "5,0 av 5 – spar 360 kr",
+      "description": "1 189 kr · Fri frakt i Norge"
+    },
+    "andringar": [
+      "pris 1 129→1 189 kr, 1 469→1 549 kr, spar 340→360 kr, 'recensioner'→'anmeldelser'"
+    ],
+    "trefragor": "Betyget är äkta norskt faktum, priset är falsifierbart. Svåraste raden: fototext 'i stedet for' är längre än svenska 'istället för' på en rad, men de kortare norska pristalen (fyra siffror mot fyra) gav marginalen tillbaka."
+  }
+}

@@ -399,3 +399,27 @@ i backloggen. 7d: 6 904 kr, 9 köp, ROAS 1,60, vinstbidrag 578 kr. Budget 700 kr
 `SP_17_H2` (batch #2), `TR_2_H1`, `PD_9_H1`, `CO_5_H1`, `PD_6_H1`, `SP_19_H1`, `RI_4_H1`
 (batch #3) och `BOF_7_1` (ärvd hubbrad, omdöpt). 0–11 kr var, ingen dom. Copy-A/B:
 4 fable / 5 sonnet live.
+- **Leverantörens b-roll bär KONKURRENTERNAS varumärken.** Mätt 2026-09-15 på batch
+  #3:s tre sista videor (`SP_20_H1`, `BOF_10_H1`, `PD_8_H1`) — alla tre:
+
+  | Märke | Var det syns |
+  |---|---|
+  | `imou` | vattenstämpel i appinspelningarna, och **tryckt på kamerahuset** i uppackningsklippen |
+  | `Dahua` | tryckt på kameran i `PD_8_H1`:s första bildrutor |
+  | `EZVIZ` | på den beigea kameran i flera klipp |
+
+  `BOF_10_H1` öppnar med "Aldrig hört talas om HEIMGUARD?" och packar tio sekunder
+  senare upp en kartong där det står **imou** på produkten. Det är inte en stavning
+  utan ett annat företags märke i vår annons, på material vi knappast har rätt till.
+  Uppladdat ändå (priset stämmer, och stoppregeln för video är priset) — men det är
+  ett **ägarbeslut**, inte ett redigerarfel: det sitter i hela bildbanken och går
+  inte att fixa genom att stoppa tre annonser. Öppen fråga till Axel 2026-09-15.
+- **Recensionstalet i briefarna är förlegat.** Briefarnas hårda regel säger "exakt
+  10 recensioner, alla fem stjärnor". **Mätt på produktsidan 2026-09-15: 16
+  recensioner, snitt 4,94.** Alltså är "alla fem stjärnor" inte längre sant — 4,94
+  på 16 betyg betyder minst en fyrastjärnig. `SP_20_H1` och `BOF_10_H1` har "10
+  RECENSIONER" inbränt som grafik, och visar i sin egen slutbild produktsidan med
+  "16 recensioner" — annonsen motsäger sig själv. Understatement skadar ingen kund,
+  så videorna laddades upp; **annonstexten rättades däremot** till de uppmätta
+  talen innan den gick ut. **Läs recensionstalet ur butiken vid varje körning,
+  precis som priset** — det växer, och en brief åldras.

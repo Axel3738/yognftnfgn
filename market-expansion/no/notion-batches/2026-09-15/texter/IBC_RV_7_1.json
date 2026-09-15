@@ -1,0 +1,32 @@
+[
+ {
+  "form": 0,
+  "klipp_efter_rad": 1,
+  "rad": null
+ },
+ {
+  "form": 0,
+  "text": "”Fungerer akkurat som jeg hadde håpet. Godt vern for tanken min utendørs.”",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "”Fungerar precis som jag hade hoppats.",
+   "Bra skydd för min tank utomhus.”"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 1,
+  "text": "Handle nå – 439 kr",
+  "rad": 0,
+  "se": "Handla nu – 489 kr",
+  "vanster": false
+ }
+]

@@ -33,6 +33,24 @@ def ffmpeg(*argv):
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *argv], check=True)
 
 
+def kap_mitt_i_ljud(fil):
+    """Sekunden att kapa vid för att filen garanterat ska sluta MEDAN något låter.
+
+    Letar upp det energistarkaste 50 ms-fönstret i sista tre sekunderna och lägger
+    snittet 30 ms in i det. En kapning som råkar hamna i en paus hörs inte och ska
+    inte flaggas — den duger därför inte som testfall."""
+    import array
+    r = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-i", str(fil), "-vn",
+                        "-af", "highpass=f=300,lowpass=f=3400", "-ac", "1", "-ar", "16000",
+                        "-f", "s16le", "-"], capture_output=True)
+    a = array.array("h"); a.frombytes(r.stdout[: len(r.stdout) // 2 * 2])
+    w = 800
+    rms = [ (sum(x * x for x in a[i * w:(i + 1) * w]) / w) ** 0.5 for i in range(len(a) // w) ]
+    fonster = rms[-60:-4]
+    i = max(range(len(fonster)), key=lambda j: fonster[j])
+    return (len(rms) - 60 + i) * 0.05 + 0.03
+
+
 def hitta_kalla():
     """En riktig annons att utgå från. Hoppar över testet om ingen finns."""
     for m in [ROT / ".scratch/heimguard/se/video", ROT / "market-expansion"]:
@@ -71,12 +89,26 @@ def main():
         fel, _, _ = rostkoll.kolla(kalla, drift)
         pastar(any("drev" in f for f in fel), "längddriften fångades")
 
-        print("\nsista repliken som går till sista bildrutan ska bli RÖTT:")
-        srt = t / "avhuggen.srt"
+        # Tidkoden i den översatta SRT:en är KÄLLANS — HeyGen kräver det. Att sista
+        # cue:n går till sista bildrutan säger därför ingenting om dubben, och får
+        # aldrig ensamt fälla en film. (DryTrek FO_2_H1 och SP_6_H1 stod röda i tre
+        # dygn på precis det, med ett slut som låg 13–49 dB under sin egen median.)
+        srt = t / "sista-cue.srt"
         h, m, s = int(d // 3600), int(d % 3600 // 60), d % 60
         srt.write_text(f"1\n00:00:01,000 --> {h:02d}:{m:02d}:{s:06.3f}\nsista repliken\n"
                        .replace(f"{s:06.3f}", f"{s:06.3f}".replace(".", ",")), encoding="utf-8")
+
+        print("\nsista cue:n till sista bildrutan, men ljudet tonar ut — ska bli GRÖNT:")
         fel, _, _ = rostkoll.kolla(None, kalla, srt)
+        pastar(not fel, f"inte fälld på tidkoden{'' if not fel else ': ' + '; '.join(fel)}")
+
+        print("\ndubb som kapats mitt i ett ljud ska bli RÖTT:")
+        kapad = t / "kapad.mp4"
+        # Kapa strax efter det energistarkaste fönstret i slutet, så filen garanterat
+        # slutar medan något fortfarande låter. Det är vad ett avhugget slut ÄR.
+        ffmpeg("-i", str(kalla), "-t", f"{kap_mitt_i_ljud(kalla):.2f}",
+               "-c:v", "copy", "-c:a", "aac", str(kapad))
+        fel, _, _ = rostkoll.kolla(kalla, kapad, srt)
         pastar(any("tala klart" in f for f in fel), "det avhuggna slutet fångades")
 
         print("\növersättning som tappat 90 % av talet ska bli RÖTT:")

@@ -1,0 +1,203 @@
+{
+ "IBC_BOF_10_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_10_1",
+  "karta": [
+   0,
+   null,
+   3
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [1] (detekterat: [('platta', 2), ('knapp', 6), ('knapp', 9), ('knapp', 1)])"
+ },
+ "IBC_BOF_11_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_11_1",
+  "karta": [
+   null,
+   null,
+   null,
+   1
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1, 2] (detekterat: [('platta', 2), ('knapp', 1)])"
+ },
+ "IBC_BOF_12_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_12_1",
+  "karta": [
+   null,
+   null,
+   0,
+   3
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1] (detekterat: [('platta', 1), ('platta', 2), ('platta', 1), ('knapp', 1)])"
+ },
+ "IBC_PD_9_1": {
+  "malnamn": "IBC-tanktrekk_NO_PD_9_1",
+  "karta": [
+   null,
+   null,
+   0,
+   1
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1] (detekterat: [('platta', 1), ('knapp', 1)])"
+ },
+ "IBC_RV_7_1": {
+  "malnamn": "IBC-tanktrekk_NO_RV_7_1",
+  "karta": [
+   0,
+   null,
+   null,
+   1
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [1, 2] (detekterat: [('platta', 3), ('knapp', 2)])"
+ },
+ "IBC_RV_8_1": {
+  "malnamn": "IBC-tanktrekk_NO_RV_8_1",
+  "karta": [
+   null,
+   null,
+   null,
+   0
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1, 2] (detekterat: [('knapp', 1)])"
+ },
+ "Takoverdrag_BOF_1_1": {
+  "malnamn": "Takovertrekk_NO_BOF_1_1",
+  "karta": [
+   null,
+   1,
+   4
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0] (detekterat: [('platta', 3), ('platta', 1), ('platta', 3), ('platta', 1), ('knapp', 1)])"
+ },
+ "Takoverdrag_BOF_2_1": {
+  "malnamn": "Takovertrekk_NO_BOF_2_1",
+  "karta": [
+   null,
+   null,
+   null,
+   0
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1, 2] (detekterat: [('knapp', 1)])"
+ },
+ "Takoverdrag_BOF_3_1": {
+  "malnamn": "Takovertrekk_NO_BOF_3_1",
+  "karta": [
+   null,
+   null,
+   null,
+   1
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1, 2] (detekterat: [('platta', 3), ('knapp', 1)])"
+ },
+ "Takoverdrag_CO_2_1": {
+  "malnamn": "Takovertrekk_NO_CO_2_1",
+  "karta": [
+   null,
+   0,
+   1,
+   4,
+   5,
+   6
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0] (detekterat: [('knapp', 1), ('knapp', 1), ('platta', 1), ('platta', 1), ('knapp', 1), ('knapp', 1), ('knapp', 1)])"
+ },
+ "Takoverdrag_CS_4_1": {
+  "malnamn": "Takovertrekk_NO_CS_4_1",
+  "karta": [
+   0,
+   5,
+   7
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-15/no/Takovertrekk_NO_CS_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-15/no/Takovertrekk_NO_CS_4_1.jpg.qa.png"
+ },
+ "Takoverdrag_CS_6_1": {
+  "malnamn": "Takovertrekk_NO_CS_6_1",
+  "karta": [
+   0,
+   null,
+   5
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [1] (detekterat: [('platta', 3), ('knapp', 2), ('knapp', 2), ('platta', 2), ('knapp', 2), ('knapp', 1)])"
+ },
+ "Takoverdrag_GT_4_H1": {
+  "malnamn": "Takovertrekk_NO_GT_4_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_GT_4_H1'"
+ },
+ "Takoverdrag_GT_5_H1": {
+  "malnamn": "Takovertrekk_NO_GT_5_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_GT_5_H1'"
+ },
+ "Takoverdrag_GT_6_1": {
+  "malnamn": "Takovertrekk_NO_GT_6_1",
+  "karta": [
+   null,
+   null,
+   null,
+   1
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1, 2] (detekterat: [('platta', 4), ('knapp', 1)])"
+ },
+ "Takoverdrag_LI_1_1": {
+  "malnamn": "Takovertrekk_NO_LI_1_1",
+  "karta": [
+   null,
+   null,
+   0,
+   3
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1] (detekterat: [('platta', 1), ('knapp', 5), ('platta', 1), ('knapp', 1)])"
+ },
+ "Takoverdrag_PD_4_H1": {
+  "malnamn": "Takovertrekk_NO_PD_4_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_PD_4_H1'"
+ },
+ "Takoverdrag_PD_5_1": {
+  "malnamn": "Takovertrekk_NO_PD_5_1",
+  "karta": [
+   null,
+   null,
+   2,
+   5
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1] (detekterat: [('platta', 5), ('knapp', 2), ('platta', 1), ('platta', 2), ('platta', 1), ('knapp', 1), ('knapp', 4), ('knapp', 1)])"
+ },
+ "Takoverdrag_SP_5_1": {
+  "malnamn": "Takovertrekk_NO_SP_5_1",
+  "karta": [
+   null,
+   null,
+   null,
+   3
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1, 2] (detekterat: [('platta', 7), ('knapp', 1), ('platta', 3), ('knapp', 2), ('platta', 3), ('knapp', 2), ('knapp', 1)])"
+ },
+ "Takoverdrag_TR_1_1": {
+  "malnamn": "Takovertrekk_NO_TR_1_1",
+  "karta": [
+   null,
+   null,
+   null,
+   3
+  ],
+  "status": "MISMATCH",
+  "skal": "SE-former utan detekterad motsvarighet: [0, 1, 2] (detekterat: [('platta', 4), ('knapp', 3), ('knapp', 3), ('knapp', 1), ('knapp', 3), ('knapp', 2)])"
+ }
+}

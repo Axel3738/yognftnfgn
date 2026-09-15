@@ -400,3 +400,37 @@ Batch #2 live: `SP_17_H1`, `SP_17_H2`, `CS_11_H1` (2026-09-14). Kvar hos Carl: `
 `TR_1_H1`, `SR_1_H1`, `FD_1_H1`.
 Batch #3 live: `PD_6_H1`, `SP_19_H1`, `PD_9_H1`, `TR_2_H1`, `CO_5_H1`, `RI_4_H1` (2026-09-14).
 Kvar: 15. Alla nya under 12 kr — data tidigast om några dygn.
+
+---
+
+## Leveransrunda 2026-09-15 — batch #3 färdiglevererad
+
+Kön hade 4 rader: tre sista videorna ur batch #3 och LI-bilden som fortfarande är
+blockerad. `FD_2_H1` har inte kommit tillbaka från `Draft`.
+
+| Annons | Adset | Annons-ID | Pris | Dom |
+|---|---|---|---|---|
+| `HeimGuard_PD_8_H1` | PD | `120249104142940172` | 799/1000 ✅ | Live. Bildtext "**CD:** 799 kronor istället" — shot-list-etiketten ur briefen har lästs som manus. "Ingen falsklarm" ska vara "Inga". |
+| `HeimGuard_SP_20_H1` | SP | `120249104151690172` | 799/1000 ✅ | Live. "**Hemguard** kostar" — tredje stavningsvarianten i veckan. |
+| `HeimGuard_BOF_10_H1` | BOF | `120249104165170172` | 799/1000 ✅ | Live. Logotypkortet stavar HEIMGUARD rätt. |
+| `Overvakningskamera_LI_2_1` | LI | — | 799/1000 ✅ | Hållen tredje dygnet. LI-adsetet PAUSED för hand, orört. |
+
+**Två fynd skrivna till `dna.md`:**
+
+1. **Konkurrenternas märken i leverantörens b-roll** — `imou` (vattenstämpel OCH
+   tryckt på kamerahuset i uppackningen), `Dahua`, `EZVIZ`. Alla tre videorna.
+   `BOF_10_H1` frågar "Aldrig hört talas om HeimGuard?" och packar sedan upp en
+   imou-kamera. Uppladdat ändå: priset stämmer, stoppregeln för video är priset,
+   och felet sitter i hela bildbanken — att stoppa tre annonser fixar det inte.
+   **Ägarbeslut, öppen fråga till Axel.**
+2. **Recensionstalet har vuxit ur briefen.** Briefarna säger "exakt 10 recensioner,
+   alla fem stjärnor". Butiken 2026-09-15: **16 recensioner, snitt 4,94** — alltså
+   är "alla fem stjärnor" inte sant längre. Videorna har "10 RECENSIONER" inbränt
+   och visar samtidigt 16 i sin egen slutbild. Understatement skadar ingen kund, så
+   de gick upp; **annonstexten rättades** före uppladdning av en sonnet-subagent
+   till "16 kunder har betygsatt HeimGuard, snitt 4,94 av 5". Läs recensionstalet
+   ur butiken vid varje körning, precis som priset.
+
+**Not om spenden:** gårdagens sju annonser hade tillsammans 25 kr och noll köp efter
+ett dygn. Under grinden (300 kr / 3 köp) — ingen dom, men värt att veta att de nya
+creativesen får väldigt lite av CBO:ns budget.

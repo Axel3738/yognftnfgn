@@ -60,8 +60,12 @@ async function metaAnnonser(act) {
   return ut;
 }
 
-/** Prefixet ur ett annonsnamn: "Rodholder_PD_11_H1" -> "rodholder". */
-const prefixAv = (namn) => (annonsdel(namn).match(/^([A-Za-z]+)_/) || [])[1]?.toLowerCase() ?? null;
+/** Prefixet ur ett annonsnamn: "Rodholder_PD_11_H1" -> "rodholder".
+ *  Bindestreck och siffror RÄKNAS med: "MC-Kapell_OF_4_1" -> "mc-kapell".
+ *  *(Mätt 2026-09-15: mönstret var `^([A-Za-z]+)_`, så varje namn med bindestreck
+ *  i prefixet gav null och raden föll ur kön TYST. Motorcycle Cover-hubben hade
+ *  13 färdiga creatives i `To be Reviewed` som aldrig syntes i någon rapport.)* */
+const prefixAv = (namn) => (annonsdel(namn).match(/^([A-Za-z][A-Za-z0-9-]*)_/) || [])[1]?.toLowerCase() ?? null;
 
 /** Kontot lar oss sjalvt vilken kampanj ett prefix hor till — ingen konfig behovs.
  *  Nya produkter dyker upp standigt i Baverbutiken; en hardkodad lista missar dem
@@ -156,6 +160,8 @@ const avvecklade = new Set(products
 
 let notionFel = null;
 let notionInfo = null;
+/** Rader med fil som inte gick att koppla till ett annonsnamn. Rapporteras alltid. */
+const otolkade = [];
 let notionHubbar = 0;
 let hubbNamn = [];
 try {
@@ -169,7 +175,10 @@ try {
   for (const r of rader) {
     const namn = annonsdel(r.namn);
     const pfx = prefixAv(namn);
-    if (!pfx) continue;
+    // ALDRIG `continue` här. En rad i "To be Reviewed" med fil är färdigt arbete;
+    // går namnet inte att tolka ska den SYNAS som ett problem, inte försvinna.
+    // *(Det var exakt så 13 MC-Kapell-creatives var osynliga fram till 2026-09-15.)*
+    if (!pfx) { otolkade.push({ namn: r.namn, hub: r.hub, url: r.url }); continue; }
     const p = konfig[pfx] ?? null;
     const al = alias[pfx];
     // Kampanjkartan ur MagiBorsten ar ocksa teamspace-sparren: en hub vars prefix inte
@@ -274,6 +283,7 @@ if (finns('json')) {
   console.log(JSON.stringify({
     hämtadAt: new Date().toISOString(),
     levereratTotalt: leveranser.length,
+    otolkade,
     kö,
   }, null, 2));
   process.exit(0);
@@ -357,6 +367,10 @@ for (const [pid, rader] of Object.entries(perProdukt)) {
 
 const utanFil = nya.filter(k => !k.filer.length);
 console.log(`${nya.length} leverans(er) väntar på uppladdning.`);
+if (otolkade.length) {
+  console.log(`⚠️  ${otolkade.length} rad(er) i "To be Reviewed" har fil men ett namn som inte går att tolka som annonsnamn — de laddas INTE upp och måste döpas om:`);
+  for (const o of otolkade) console.log(`      ${o.hub} | "${o.namn}" | ${o.url}`);
+}
 if (utanFil.length) console.log(`⚠️  ${utanFil.length} av dem saknar fil/video och väntar på redigeraren: ${utanFil.map(k => k.namn).join(', ')}`);
 if (utan.length) console.log(`⚠️  ${utan.length} av dem saknar kampanj i kontot och laddas inte upp.`);
 if (hyllade.length) console.log(`⏭  ${hyllade.length} hör till en avvecklad kampanj och laddas inte upp.`);

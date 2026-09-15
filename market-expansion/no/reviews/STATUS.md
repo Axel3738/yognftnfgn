@@ -3,6 +3,25 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## ✅ Taköverdrag och Termoskydd är KLARA — Axel importerade dem för hand 2026-09-15
+
+Axel rättade de två arken och importerade recensionerna själv samma kväll.
+Mätt direkt efteråt mot den norska Judge.me-butiken: **10 synliga recensioner
+på vardera.**
+
+| Produkt | Synliga | Handle | Shopify-id |
+|---|---:|---|---|
+| Takovertrekk til campingvogn | 10 | `takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten` | 15552229671287 |
+| Frontrutetrekk til bobil | 10 | `frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende` | 15553084391799 |
+
+De står **inte** i `sources.json` och ska inte läggas in: rutinen har aldrig
+byggt deras CSV:er, och importen är gjord utanför den. Tas de in nu skulle
+bygget kräva översättningar för rader ingen har läst. **Rapportera dem aldrig
+mer som väntande.**
+
+Kvar att vänta på är alltså tre, inte fem: Gravstenspenna, Medicinask och
+Lövblåsare.
+
 ## Läget 2026-09-15 — 0 nya, allt redan klart, 31 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade **inga** nya mappar (33 +

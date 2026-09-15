@@ -1,0 +1,23 @@
+{
+ "brand": "DryTrek",
+ "butik": "drytrek",
+ "datum": "2026-09-15",
+ "lage": "oversatt",
+ "server": "DryTrek",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "The last two Norwegian videos are live: FO_2_H1 in adset DRYTREK_NO_FO and SP_6_H1 in DRYTREK_NO_SP.",
+  "The Norwegian campaign now runs 47 ads, all ACTIVE: PD 27, SP 8, CS 4, G 4, FO 2, CI 1, BOF 1. The queue is empty.",
+  "Nothing was re-rendered. Both dubs and their sources were still on disk from Saturday, so this cost 0 HeyGen credits.",
+  "The voice check that had blocked these two for three days was measuring the wrong thing, and it is now rewritten and retested."
+ ],
+ "varningar": [
+  "The old check looked for where speech energy last crossed 15% of the peak and compared that margin with the source. That punishes the opposite of the fault it was meant to catch: a dub that says its last word clearly and then goes quiet gets a SHORT margin.",
+  "It now measures how loud the file still is in its final 100 ms against its own median, compared with the source. A cut-off ending is a sound that never fades out.",
+  "Validated on 14 dubs plus 14 copies cut mid-sound: whole dubs land between -141 and 0 dB, cut ones between +0.8 and +55 dB. Zero false alarms on the 14, and 12 of the 14 cuts caught.",
+  "Two films cannot be judged this way at all, because their own source ends at full volume (PD_13_H1 and SP_7_H1). Those are now reported as unmeasurable with a reason, never as green.",
+  "The test suite had encoded the bug: it asserted that a file ending in complete silence should fail. That test is rewritten."
+ ],
+ "action_axel": [],
+ "nasta_korning": "2026-09-16"
+}
