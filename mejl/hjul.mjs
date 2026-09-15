@@ -346,6 +346,16 @@ function skript() {
     if (enTill >= 0) laggTill(enTill, C.en_till);
     if (harKarta) K.karta[param].forEach(function (i) { laggTill(i, null); });
     K.fallback.forEach(function (i) { laggTill(i, null); });
+    // Sedan resten av katalogen, blandad. Utan den tog kön slut efter tolv
+    // förslag och "Visa fler" gick bara att klicka två gånger (Axel
+    // 2026-09-14). Blandningen görs per besök så listan inte ser likadan ut.
+    var resten = [];
+    for (var q = 0; q < kat.length; q++) if (!sedda[q]) resten.push(q);
+    for (var r = resten.length - 1; r > 0; r--) {
+      var t = Math.floor(Math.random() * (r + 1)), tmp = resten[r];
+      resten[r] = resten[t]; resten[t] = tmp;
+    }
+    resten.forEach(function (i) { laggTill(i, null); });
     $('bbh-kvar-rubrik').textContent = C.kvar_rubrik;
     $('bbh-kvar-text').textContent = harKarta ? C.kvar_text : C.kvar_text_fallback;
     $('bbh-kort').innerHTML = '';

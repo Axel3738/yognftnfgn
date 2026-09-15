@@ -1,36 +1,36 @@
 {
- "hamtad": "2026-09-14",
+ "hamtad": "2026-09-15",
  "dagar": 7,
  "lista": [
   {
    "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-   "antal": 108,
-   "ordrar": 105,
+   "antal": 109,
+   "ordrar": 106,
    "pris": 1129
   },
   {
    "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
-   "antal": 87,
-   "ordrar": 58,
+   "antal": 72,
+   "ordrar": 48,
    "pris": 489
   },
   {
    "handle": "fiskespohallare-4-pack-kraftig-forvaring",
-   "antal": 62,
-   "ordrar": 43,
+   "antal": 54,
+   "ordrar": 37,
    "pris": 289
   },
   {
    "handle": "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
-   "antal": 61,
-   "ordrar": 36,
+   "antal": 48,
+   "ordrar": 30,
    "pris": 799
   },
   {
-   "handle": "batmotorskydd-420d-heltackande-for-utombordare",
-   "antal": 41,
-   "ordrar": 40,
-   "pris": 579
+   "handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+   "antal": 36,
+   "ordrar": 35,
+   "pris": 559
   },
   {
    "handle": "adventskalender-racingbilar-24-bilar-bakom-24-luckor",
@@ -39,28 +39,28 @@
    "pris": 499
   },
   {
-   "handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
-   "antal": 35,
-   "ordrar": 34,
-   "pris": 559
+   "handle": "batmotorskydd-420d-heltackande-for-utombordare",
+   "antal": 29,
+   "ordrar": 28,
+   "pris": 579
   },
   {
    "handle": "mc-kapell-220-120-regn-damm-uv",
-   "antal": 34,
-   "ordrar": 26,
+   "antal": 25,
+   "ordrar": 19,
    "pris": 349
   },
   {
-   "handle": "damasker-vandring-haller-sno-vata-grus-ute",
-   "antal": 31,
-   "ordrar": 27,
-   "pris": 389
+   "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+   "antal": 20,
+   "ordrar": 16,
+   "pris": 909
   },
   {
-   "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
-   "antal": 21,
-   "ordrar": 17,
-   "pris": 909
+   "handle": "damasker-vandring-haller-sno-vata-grus-ute",
+   "antal": 19,
+   "ordrar": 16,
+   "pris": 389
   },
   {
    "handle": "isolerad-utekattkoja-torr-och-vindtat-plats-utomhus",
@@ -76,33 +76,27 @@
   },
   {
    "handle": "marin-motorholje-420d-universellt-skydd",
-   "antal": 6,
-   "ordrar": 5,
+   "antal": 5,
+   "ordrar": 4,
    "pris": 299
   },
   {
-   "handle": "batterifranskiljare-huvudstrombrytare-12-24v",
-   "antal": 6,
-   "ordrar": 4,
-   "pris": 189
-  },
-  {
    "handle": "magnetfiskesats-320lb-neodymmagnet-med-10m-rep",
-   "antal": 5,
-   "ordrar": 3,
-   "pris": 279
-  },
-  {
-   "handle": "magnetplattor-i-storformat-byggset-i-lada-med-handtag",
-   "antal": 5,
+   "antal": 4,
    "ordrar": 2,
-   "pris": 469
+   "pris": 279
   },
   {
    "handle": "superkoppling",
    "antal": 4,
    "ordrar": 1,
    "pris": 350
+  },
+  {
+   "handle": "batterifranskiljare-huvudstrombrytare-12-24v",
+   "antal": 3,
+   "ordrar": 3,
+   "pris": 189
   },
   {
    "handle": "handdriven-kedjeslip-slipverktyg-for-motorsag",
@@ -147,6 +141,12 @@
    "pris": 669
   },
   {
+   "handle": "badshorts-med-skamttryck-rumpan-bak",
+   "antal": 2,
+   "ordrar": 2,
+   "pris": 399
+  },
+  {
    "handle": "lastnat-kraftigt-slapvagnsnat-for-saker-transport",
    "antal": 2,
    "ordrar": 1,
@@ -181,30 +181,6 @@
    "antal": 2,
    "ordrar": 1,
    "pris": 519
-  },
-  {
-   "handle": "manuell-vatskepump-borrdriven-sug-overforingspump",
-   "antal": 1,
-   "ordrar": 1,
-   "pris": 179
-  },
-  {
-   "handle": "1080p-inspektionskamera-endoskop-ip67-for-bil-ror-motor",
-   "antal": 1,
-   "ordrar": 1,
-   "pris": 699
-  },
-  {
-   "handle": "batteridriven-branslepump-barbar-vatskepump-med-flodeskontroll",
-   "antal": 1,
-   "ordrar": 1,
-   "pris": 469
-  },
-  {
-   "handle": "cargoshorts-3-pack-avslappnade-herrshorts-med-fickor",
-   "antal": 1,
-   "ordrar": 1,
-   "pris": 909
   },
   {
    "handle": "bankhylla-med-utdragbar-korg-dubbel-yta-pa-samma-bank",
@@ -319,6 +295,12 @@
    "antal": 1,
    "ordrar": 1,
    "pris": 429
+  },
+  {
+   "handle": "grasklipparslipare-for-borrmaskin-dubbelsidig-slipsten",
+   "antal": 1,
+   "ordrar": 1,
+   "pris": 189
   }
  ]
 }

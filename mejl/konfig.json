@@ -60,7 +60,8 @@
     "storsaljare_comment": "Förslagen under vinsten (Axels beslut 2026-09-13): först en till av det kunden köpte, sedan komplementen som själva når 299 kr, sedan butikens mest sålda de senaste sju dagarna över 299 kr. Läses ur ordrarna vid varje publicering och cachas i mejl/storsaljare.json för --offline. Fyra visas först, knappen Visa fler tar nästa fyra.",
     "forslag_per_visning": 4,
     "localstorage_nyckel": "bb_gratishjul",
-    "snurr_comment": "Axel 2026-09-14: hjulet 'snurrade fett långsamt och lite'. Orsak: kurvan cubic-bezier(.17,.67,.12,1) var 94 % färdig vid halva tiden och kröp de sista 2,6 s. Ny kurva cubic-bezier(.5,1,.89,1) (44/75/94/99 % vid 25/50/75/90 % av tiden) + 8 varv, och det är en div (.bbh-rotor) som roterar med will-change, inte SVG-roten — Safari rasterar annars om SVG:n varje bildruta."
+    "snurr_comment": "Axel 2026-09-14: hjulet 'snurrade fett långsamt och lite'. Orsak: kurvan cubic-bezier(.17,.67,.12,1) var 94 % färdig vid halva tiden och kröp de sista 2,6 s. Ny kurva cubic-bezier(.5,1,.89,1) (44/75/94/99 % vid 25/50/75/90 % av tiden) + 8 varv, och det är en div (.bbh-rotor) som roterar med will-change, inte SVG-roten — Safari rasterar annars om SVG:n varje bildruta.",
+    "forslag_comment": "Kön under vinsten: en till av det kunden köpte → kartans komplement → storsäljarna → resten av katalogen blandad per besök. Sista ledet lades till 2026-09-14: utan det tog kön slut vid tolv förslag och 'Visa fler' gick bara att klicka två gånger (Axel)."
   },
   "komplement": {
     "comment": "Axels beslut 2026-09-13: de tre dyraste produkterna är borta ('inte attraktiva, liten TAM'). I stället visas fyra kort under gratisprodukterna: EN TILL av produkten kunden köpte + tre produkter som passar ihop med den — enklaste vägen till 299 kr. Kartan är kurerad för hand ur katalogen 2026-09-13 (co-purchase-datan är för tunn: 96 % av 2 686 ordrar har en enda produkt; enda starka paret är axelbälte ↔ ståltrådsborsthuvuden, 25 ordrar). Ordning: per_handle → första kollektionen produkten ligger i som finns i per_kollektion → fallback (storsäljarna). Handles som saknas i butiken, saknar bild eller är gratisprodukter hoppas över vid bygget. Kartan bakas in i mallen som Liquid (`case line.product.handle`) — notis-Liquid når inte butikens produkter.",
@@ -795,7 +796,7 @@
     "hoppade_over": {
       "overgiven_kassa": "Finns inte under Inställningar → Notiser i Bäverbutiken (mätt 2026-09-12) — sköts av Shopify Email under Marknadsföring → Automatiseringar."
     },
-    "hjul_publicerad": "2026-09-14",
+    "hjul_publicerad": "2026-09-15",
     "hjul_publicerad_comment": "Sätts av node mejl/hjul-publicera.mjs när sidan /pages/din-gratisprodukt skrivits och lästs tillbaka publikt.",
     "mallbranding": "2026-09-13",
     "mallbranding_gjort": "Cowork 2026-09-13: sidan heter 'Anpassa e-postmallar' (knapp uppe till höger på Kundaviseringar). Logotyp = Namnlos_design_44_67839842-4d7e-4a47-bad7-edcdcd627348.png (samma fil som mallarna länkar), Logotypstorlek 180 → 240, Varumärkeshantering → Accentfärg #1990C6 → #dd1d1d. Bekräftat 'Inställningar sparade'.",

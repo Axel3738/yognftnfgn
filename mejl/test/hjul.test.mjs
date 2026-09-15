@@ -97,6 +97,17 @@ test('storsäljarna: ordning ur ordrarna, under gränsen/gratis/okända bort, fa
   assert.ok(ibc[1] && ibc[3].includes('_240x240'), 'namn och förminskad bild');
 });
 
+test('"Visa fler" tar hela katalogen, inte bara fallbacken', () => {
+  // Kön i skriptet är: en till + kartans lista + fallbacken + resten av
+  // katalogen blandad. Utan sista ledet tog den slut efter tolv förslag och
+  // knappen gick bara att klicka två gånger (Axel 2026-09-14).
+  const skript = byggHjulsida({ konfig, copy, produkter, alla, storsaljare });
+  assert.match(skript, /resten\.forEach/, 'resten av katalogen läggs aldrig i kön');
+  assert.match(skript, /Math\.floor\(Math\.random\(\) \* \(r \+ 1\)\)/, 'resten ska blandas per besök');
+  const klick = Math.ceil(D.komplement.katalog.length / D.perVisning) - 1;
+  assert.ok(klick >= 5, `katalogen räcker bara till ${klick} klick på Visa fler`);
+});
+
 test('utan storsäljare faller sidan tillbaka på mejlets lista, filtrerad på priset', () => {
   const D2 = hjulData({ konfig, copy, produkter, alla, storsaljare: [] });
   assert.deepEqual(D2.komplement.storsaljare, []);
