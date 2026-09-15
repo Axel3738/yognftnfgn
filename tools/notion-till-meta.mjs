@@ -255,6 +255,31 @@ async function laddaUppBild(act, fil) {
   return bild.hash;
 }
 
+/** Skapar creativen. Det ärvda Instagram-kontot kan vara ett id Meta inte längre
+ *  godtar som `instagram_actor_id` — då faller vi tillbaka på enbart sidan i
+ *  stället för att fälla hela uppladdningen. Sidan och pixeln rörs aldrig: de
+ *  ärvs precis som förut, så köpen bokförs fortfarande på rätt verksamhet.
+ *  *(Mätt 2026-09-15 på kampanjen "BÄVER Taköverdraget för Husvagn": de
+ *  befintliga annonserna bär instagram_actor_id 17841474144960111 och Meta v23
+ *  svarar "(#100) Param instagram_actor_id must be a valid Instagram account id".
+ *  Elva färdiga creatives hade annars blivit kvar i kön.)* */
+async function skapaCreative(act, namn, spec) {
+  const form = () => ({
+    name: namn,
+    object_story_spec: JSON.stringify(spec),
+    // Inga creative enhancements — samma linje som launch.md.
+    degrees_of_freedom_spec: JSON.stringify(NO_ENHANCEMENTS),
+  });
+  try {
+    return await api(`act_${act}/adcreatives`, { form: form() });
+  } catch (e) {
+    if (!spec.instagram_actor_id || !/instagram_actor_id/i.test(e.message)) throw e;
+    logg(`  ⚠ Meta avvisade det ärvda Instagram-kontot ${spec.instagram_actor_id} — annonsen skapas med enbart sidan ${spec.page_id}.`);
+    delete spec.instagram_actor_id;
+    return await api(`act_${act}/adcreatives`, { form: form() });
+  }
+}
+
 /** Sida och Instagram-konto ärvs från en befintlig creative i kampanjen.
  *  Hårdkodas ALDRIG — fel pixel/sida bokför köpen på fel verksamhet. */
 async function ärvSidaOchIg(kampanjId) {
@@ -398,14 +423,7 @@ async function main() {
   }
   if (igId) spec.instagram_actor_id = igId;
 
-  const creative = await api(`act_${act}/adcreatives`, {
-    form: {
-      name: namn,
-      object_story_spec: JSON.stringify(spec),
-      // Inga creative enhancements — samma linje som launch.md.
-      degrees_of_freedom_spec: JSON.stringify(NO_ENHANCEMENTS),
-    },
-  });
+  const creative = await skapaCreative(act, namn, spec);
 
   const annons = await api(`act_${act}/ads`, {
     form: {
