@@ -788,3 +788,33 @@ Dygn: 09-09 16 kr/0 köp · 09-10 856 kr/2 köp · 09-11 788 kr/0 köp · 09-12 
 golvet 500 kr: ingen sänkning, ingen paus** (Axels regel 2026-09-10). 0 annonspauser
 (42 annonser, alla under kill-gränsen efter budgetsänkningen). Toppspend aktiva:
 PD_14_12 257 kr/0 · SP_6_H1 196 kr/0 · CS_2 155 kr/0 · PD_1 146 kr/0 · CS_3 141 kr/0 · PD_14_15 122 kr/0. Utfall per annons läses på onsdag 16/9.
+
+---
+
+## 2026-09-15 — leveransrunda: tom kö, gårdagens tre bekräftade live
+
+Rutinen körde 11:50 UTC. **Inget nytt i kön** — hubben har ingen rad i
+`To be Reviewed` och ingen ny leverans från Jasper sedan gårdagens tre videor.
+Inget laddades upp, inget rördes i kontot.
+
+**Gårdagens tre står nu ACTIVE/ACTIVE**, alla har passerat Metas granskning:
+`BOF_10_H1`, `CI_3_H1` och `PD_16_H1`. Kampanjen kör med sex av sju adsets;
+`DRYTREK_SE_G` står kvar PAUSED sedan Axels beslut 2026-09-12. Pris 389 kr.
+
+Hubbens 79 rader har flyttat sig ordentligt sedan igår — NO-rundan har gjort
+sitt jobb:
+
+| Status | Igår | Idag |
+|---|---:|---:|
+| Draft | 40 | 38 |
+| SE-ACTIVE to be translated | 28 | 2 |
+| Approved (översatt, klart) | 0 | 29 |
+| Creative strat review | 10 | 10 |
+
+De två kvar i översättningskön tas av 15:50-rutinen.
+
+`PD_16_H1` är live men omgörningen som begärdes 2026-09-14 är inte levererad —
+briefen kräver en obruten tagning, det som ligger uppe är en trepanels split
+screen. De tio parkerade `Damasker_*`-raderna ligger orörda; frågan till Axel
+om dem har stått obesvarad sedan 2026-09-13 och rapporteras som varning utan
+ping, enligt regeln i den körningens loggpost.
