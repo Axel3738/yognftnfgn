@@ -1,10 +1,10 @@
 {
- "datum": "2026-09-14",
- "antal_svar": 47,
+ "datum": "2026-09-15",
+ "antal_svar": 55,
  "per_dom": {
-  "ja": 32,
+  "ja": 37,
   "kanske": 9,
-  "nej": 6
+  "nej": 9
  },
  "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -255,6 +255,54 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.667
+   },
+   "NYTT: Åskådarens kropp på läktaren i oktober (barnbarnets match, far-/morföräldrar 55+ sitter stilla 90 min i frost)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Händerna mellan kasten och på passet i höstkyla (fiskaren och jägaren)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Grenarna över taket (Makita-batteriet gör jobbet)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Husvagnens sidofönster (3–5 fönster per vagn; kondens, frost och UV på akrylrutorna under vinterståndet — samma ägare som Taköverdraget och Termoskyddet)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Däckbytet i oktober (Makita-batteriet gör jobbet)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
    }
   },
   "ankare_kalla": {
@@ -468,6 +516,54 @@
     "nej": 0,
     "score": 0.667
    },
+   "Medisana HB 674 3-i-1 värmefilt (poncho/filt/sjal, powerbank ingår)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "AL-KO Big Foot ordinarie pris (camping4u) / TIAB Bohlins 3 075 kr": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Härkila Driven Hunt Heat muff (Hylte Jakt & Lantman)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Makita DUA301Z stångsåg 2×18V utan batteri (Proffsmagasinet/Ahlsell/Verktygsvaruhuset)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Camping4u — Hindermann Thermomatta husvagnsfönster 'från 760 kr' (lagersaldo 0)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Makita DTW285Z mutterdragare 18V utan batteri (PriceRunner lägst 2 099 kr av 16 butiker; K-Bygg 3 499 kr)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Compass24 — Fällbar transportvagn för utombordare (upp till 15 hk, 6 kg, i lager)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Makita DUP361Z sekatör 2×18V utan batteri (PriceRunner/Prisjakt lägst 7 500–7 750 kr; DUP362Z 16 499 kr Duab)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
    "eurotrail/getcamping.se": {
     "ja": 3,
     "kanske": 0,
@@ -505,24 +601,24 @@
     "score": 0.75
    },
    "hindermann/getcamping": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.8
    }
   },
   "ankare_klass": {
    "≥ 1,6×": {
-    "ja": 9,
+    "ja": 12,
     "kanske": 4,
-    "nej": 3,
-    "score": 0.667
+    "nej": 5,
+    "score": 0.652
    },
    "1,3–1,6×": {
-    "ja": 14,
+    "ja": 17,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.912
+    "nej": 1,
+    "score": 0.881
    },
    "golv utan ankare": {
     "ja": 8,
@@ -551,10 +647,10 @@
   },
   "arketyp": {
    "A1": {
-    "ja": 8,
+    "ja": 9,
     "kanske": 1,
     "nej": 0,
-    "score": 0.864
+    "score": 0.875
    },
    "A3": {
     "ja": 4,
@@ -569,22 +665,22 @@
     "score": 0.5
    },
    "B_SKYDDA_DYRT": {
-    "ja": 7,
+    "ja": 8,
     "kanske": 0,
     "nej": 2,
-    "score": 0.727
+    "score": 0.75
    },
    "A_AGARE_FRIKTION": {
     "ja": 3,
     "kanske": 3,
-    "nej": 0,
-    "score": 0.688
+    "nej": 2,
+    "score": 0.55
    },
    "D_SNABBARE_METOD": {
-    "ja": 2,
+    "ja": 4,
     "kanske": 0,
-    "nej": 0,
-    "score": 0.75
+    "nej": 1,
+    "score": 0.714
    },
    "H_VISUELL_NYHET": {
     "ja": 3,
@@ -599,10 +695,10 @@
     "score": 0.8
    },
    "E_VADER_SASONG": {
-    "ja": 5,
+    "ja": 7,
     "kanske": 0,
     "nej": 1,
-    "score": 0.75
+    "score": 0.8
    },
    "A4": {
     "ja": 3,
@@ -631,10 +727,10 @@
     "score": 0.885
    },
    "2–6 v": {
-    "ja": 8,
+    "ja": 9,
     "kanske": 0,
     "nej": 0,
-    "score": 0.9
+    "score": 0.909
    },
    "pågående": {
     "ja": 3,
@@ -645,16 +741,16 @@
   },
   "deadline_typ": {
    "första snö": {
-    "ja": 4,
+    "ja": 5,
     "kanske": 1,
     "nej": 1,
-    "score": 0.688
+    "score": 0.722
    },
    "uppställning": {
-    "ja": 7,
+    "ja": 9,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.85
+    "nej": 1,
+    "score": 0.808
    },
    "höstregn": {
     "ja": 1,
@@ -675,10 +771,10 @@
     "score": 0.667
    },
    "vedsäsong": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 1,
     "nej": 0,
-    "score": 0.625
+    "score": 0.7
    },
    "1 december": {
     "ja": 5,
@@ -687,16 +783,16 @@
     "score": 0.857
    },
    "första frost": {
-    "ja": 6,
+    "ja": 8,
     "kanske": 0,
     "nej": 2,
-    "score": 0.7
+    "score": 0.75
    },
    "upptagning": {
     "ja": 4,
     "kanske": 0,
-    "nej": 0,
-    "score": 0.833
+    "nej": 1,
+    "score": 0.714
    },
    "vintermatning": {
     "ja": 2,
@@ -721,6 +817,12 @@
     "kanske": 2,
     "nej": 0,
     "score": 0.6
+   },
+   "vintertäckning": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
    },
    "tjäle": {
     "ja": 2,
@@ -749,10 +851,10 @@
     "score": 0.625
    },
    "överdrag": {
-    "ja": 13,
+    "ja": 15,
     "kanske": 0,
     "nej": 1,
-    "score": 0.875
+    "score": 0.889
    },
    "tak/överdrag": {
     "ja": 1,
@@ -775,8 +877,8 @@
    "annat": {
     "ja": 7,
     "kanske": 2,
-    "nej": 0,
-    "score": 0.818
+    "nej": 2,
+    "score": 0.692
    },
    "kalenderlåda": {
     "ja": 1,
@@ -815,15 +917,15 @@
     "score": 0.333
    },
    "kläder": {
-    "ja": 2,
+    "ja": 4,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.833
    },
    "verktyg": {
-    "ja": 1,
+    "ja": 3,
     "kanske": 0,
-    "nej": 0,
+    "nej": 1,
     "score": 0.667
    },
    "klämma": {
@@ -1056,6 +1158,54 @@
     "nej": 0,
     "score": 0.667
    },
+   "NYTT: Åskådarens kropp på läktaren i oktober (barnbarnets match, far-/morföräldrar 55+ sitter stilla 90 min i frost)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Händerna mellan kasten och på passet i höstkyla (fiskaren och jägaren)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Grenarna över taket (Makita-batteriet gör jobbet)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Husvagnens sidofönster (3–5 fönster per vagn; kondens, frost och UV på akrylrutorna under vinterståndet — samma ägare som Taköverdraget och Termoskyddet)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Däckbytet i oktober (Makita-batteriet gör jobbet)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
    "Staketet — stolpen": {
     "ja": 2,
     "kanske": 0,
@@ -1075,24 +1225,24 @@
     "score": 0.75
    },
    "Husbil — hytt och vindruta": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.8
    }
   },
   "prisband": {
    "500–999": {
-    "ja": 27,
+    "ja": 32,
     "kanske": 3,
-    "nej": 2,
-    "score": 0.868
+    "nej": 4,
+    "score": 0.841
    },
    "≥ 1 000": {
-    "ja": 7,
+    "ja": 8,
     "kanske": 0,
-    "nej": 1,
-    "score": 0.8
+    "nej": 2,
+    "score": 0.75
    },
    "300–499": {
     "ja": 10,
@@ -1126,12 +1276,12 @@
   "För dyr": {
    "ja": 0,
    "kanske": 0,
-   "nej": 2
+   "nej": 3
   },
   "Kedjan har den": {
    "ja": 0,
    "kanske": 0,
-   "nej": 1
+   "nej": 2
   },
   "Tråkig": {
    "ja": 0,
@@ -1167,6 +1317,7 @@
  "stopp": [],
  "lyft": [
   "ankare_kalla:eurotrail/getcamping.se",
+  "ankare_kalla:hindermann/getcamping",
   "ankare_kalla:lego.com/kedjan",
   "ankare_kalla:pricerunner.se (Kerbl/Northix)",
   "ankare_klass:1,2–1,3×",
@@ -1179,6 +1330,7 @@
   "arketyp:A4",
   "arketyp:A_AGARE_FRIKTION",
   "arketyp:B_SKYDDA_DYRT",
+  "arketyp:D_SNABBARE_METOD",
   "arketyp:E_VADER_SASONG",
   "arketyp:G_Q4_GAVA",
   "arketyp:H_VISUELL_NYHET",
@@ -1194,9 +1346,12 @@
   "deadline_typ:älgjakt",
   "form:annat",
   "form:kalender",
+  "form:kläder",
   "form:koja",
+  "form:verktyg",
   "form:överdrag",
   "objekt:Barnbarnet — adventskalendern",
+  "objekt:Husbil — hytt och vindruta",
   "objekt:Husvagn — taket",
   "objekt:Utekatten",
   "prisband:300–499",

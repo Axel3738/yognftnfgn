@@ -2593,6 +2593,36 @@
    "prisband": "500–999",
    "kalla": "produktjakt V3-batch 09-11 (kandidater) + katalog-live 2026-09-13",
    "anteckning": "Forskningsprodukt lagd i butiken 2026-09-13; BE-ROAS läses ur kampanjnamnet när kampanjen finns."
+  },
+  {
+   "nyckel": "fagelmatare-kamera",
+   "namn": "Fågelmatare Med Kamera Och Solcellspanel",
+   "kampanj_monster": [
+    "Fågelmatare Med Kamera",
+    "Fågelmatare med kamera"
+   ],
+   "pris_sek": null,
+   "be_roas": null,
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "objekt": "fågelbord",
+   "objekt_varde_band": "inget",
+   "objekt_ute": true,
+   "form": "elektronik",
+   "agare_55plus_smahus": true,
+   "old_way": "köpt produkt som fungerar",
+   "latent_behov": false,
+   "deadline_typ": "säsongsstart",
+   "timing_vid_launch": "rätt",
+   "kedjegolv_under_vart_pris": null,
+   "markesankare_kvot": null,
+   "material_klass": null,
+   "montering_app": true,
+   "variant_risk": "en variant",
+   "flerkop": false,
+   "prisband": "okänd",
+   "kalla": "produktjakt V3-batch 09-11 (lins F) + katalog-live 2026-09-15",
+   "anteckning": "Forskningsprodukt lagd i butiken 2026-09-15; pris läses ur katalogen när kampanjen finns."
   }
  ]
 }

@@ -4,29 +4,29 @@ Läses av `/produktjakt` FÖRE varje sökning. Auto-delen skrivs av `larande.py`
 Bevishierarki: Meta vid meningsfull spend > Axels klick > gamla poängkortet/DNA. UNTESTED tränas aldrig som förlorare.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 REAL LOSER · 34 INSUFFICIENT DATA · 2 UNTESTED** (per produkt, kampanjer ihopslagna). 0 produkter saknar taggrad i `facit/historik-taggar.json` och räknas inte i signalerna.
+Uppdaterad 2026-09-15. Metas facit hämtat 2026-09-15: **19 REAL WINNER · 21 REAL LOSER · 34 INSUFFICIENT DATA · 3 UNTESTED** (per produkt, kampanjer ihopslagna). 1 produkter saknar taggrad i `facit/historik-taggar.json` och räknas inte i signalerna.
 
 ## REAL WINNER PATTERNS
 
 | Produkt | Spend | Köp | ROAS/BE | Vinstbidrag | Profil |
 |---|---:|---:|---|---:|---|
-| Taköverdraget för Husvagn 6,5 × 3 m | 16109 | 79 | 5.6484/1.63 | 39714.09 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way improvisation · deadline uppställning (rätt) · golv under nej · ankare 1,2–1,6× · material okänd · variant ägarkänd parameter · flerköp nej · ≥1000 |
-| Fiskespöhållaren (spöklämma 4-pack) | 74647 | 374 | 2.1748/1.5 | 33581.46 | A_AGARE_FRIKTION · objekt ja/ute, medel 1–10tkr · form klämma · old way improvisation · deadline ingen (rätt) · golv under nej · ankare okänd · material 2 · variant en variant · flerköp ja · <300 |
+| Taköverdraget för Husvagn 6,5 × 3 m | 22024 | 100 | 5.1961/1.63 | 48184.0 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way improvisation · deadline uppställning (rätt) · golv under nej · ankare 1,2–1,6× · material okänd · variant ägarkänd parameter · flerköp nej · ≥1000 |
+| Fiskespöhållaren (spöklämma 4-pack) | 75373 | 377 | 2.1714/1.5 | 33733.96 | A_AGARE_FRIKTION · objekt ja/ute, medel 1–10tkr · form klämma · old way improvisation · deadline ingen (rätt) · golv under nej · ankare okänd · material 2 · variant en variant · flerköp ja · <300 |
 | Sätesöverdragaren (åkgräsklippare) | 62441 | 182 | 2.1084/1.47 | 27116.18 | C_LAGA_ISTALLET · objekt ja/ute, dyr>10tkr · form överdrag · old way improvisation · deadline pågående skada (rätt) · golv under nej · ankare 1,2–1,6× · material 2 · variant ägarkänd parameter · flerköp nej · 500–999 |
-| Övervakningskameran (PTZ dubbellins) | 37264 | 79 | 2.5112/1.57 | 22338.83 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form elektronik · old way köpt produkt som fungerar · deadline ingen (ingen säsong) · golv under ja · ankare ≥1,6× · material 2 · variant en variant · flerköp ja · 500–999 |
-| IBC-Tanköverdraget | 31674 | 120 | 2.438/1.51 | 19466.4 | B_SKYDDA_DYRT · objekt ja/ute, medel 1–10tkr · form överdrag · old way improvisation · deadline pågående skada (rätt) · golv under nej · ankare okänd · material 0 · variant en variant · flerköp nej · 300–499 |
+| Övervakningskameran (PTZ dubbellins) | 38240 | 82 | 2.524/1.57 | 23236.34 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form elektronik · old way köpt produkt som fungerar · deadline ingen (ingen säsong) · golv under ja · ankare ≥1,6× · material 2 · variant en variant · flerköp ja · 500–999 |
+| IBC-Tanköverdraget | 33833 | 126 | 2.4213/1.51 | 20417.04 | B_SKYDDA_DYRT · objekt ja/ute, medel 1–10tkr · form överdrag · old way improvisation · deadline pågående skada (rätt) · golv under nej · ankare okänd · material 0 · variant en variant · flerköp nej · 300–499 |
+| Båtmotorskyddet 420D | 21895 | 97 | 2.754/1.62 | 15326.97 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way improvisation · deadline uppställning (rätt) · golv under nej · ankare okänd · material okänd · variant ägarkänd parameter · flerköp nej · 500–999 |
 | Motorhöljet (Marin motorhölje 420D) | 99111 | 486 | 1.8689/1.63 | 14526.54 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way improvisation · deadline pågående skada (rätt) · golv under ja · ankare okänd · material 1 · variant ägarkänd parameter · flerköp nej · <300 |
-| Båtmotorskyddet 420D | 21105 | 93 | 2.7239/1.62 | 14380.59 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way improvisation · deadline uppställning (rätt) · golv under nej · ankare okänd · material okänd · variant ägarkänd parameter · flerköp nej · 500–999 |
-| Bälteslipmaskinen (mini bandslipare 3-i- | 29804 | 71 | 2.3703/1.73 | 11030.56 | D_SNABBARE_METOD · objekt nej/ute, billig<1tkr · form verktyg · old way köpt produkt som fungerar · deadline ingen (ingen säsong) · golv under nej · ankare ≥1,6× · material 2 · variant en variant · flerköp nej · 500–999 |
+| Bälteslipmaskinen (mini bandslipare 3-i- | 30733 | 74 | 2.3873/1.73 | 11677.2 | D_SNABBARE_METOD · objekt nej/ute, billig<1tkr · form verktyg · old way köpt produkt som fungerar · deadline ingen (ingen säsong) · golv under nej · ankare ≥1,6× · material 2 · variant en variant · flerköp nej · 500–999 |
 | Strandtofflorna (EVA-clog) | 41377 | 187 | 2.0416/1.7 | 8312.15 | X_UTANFOR · objekt ja/ute, dyr>10tkr · form kläder · old way köpt produkt som fungerar · deadline säsongsstart (rätt) · golv under ja · ankare ≥1,6× · material 1 · variant måste mäta/storlek · flerköp nej · 300–499 |
 | Damasker Vandring | 15759 | 68 | 2.2081/1.6 | 5989.44 | E_VADER_SASONG · objekt ja/ute, medel 1–10tkr · form kläder · old way köpt produkt som fungerar · deadline första snö (tidig) · golv under okänd · ankare okänd · material okänd · variant ägarkänd parameter · flerköp nej · 300–499 |
-| MC-Kapellet | 15936 | 73 | 1.9867/1.49 | 5311.48 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way köpt produkt som fungerar · deadline uppställning (sen) · golv under ja · ankare okänd · material okänd · variant måste mäta/storlek · flerköp nej · 300–499 |
-| Termoskyddet för Husbil 211 × 171 cm | 3732 | 23 | 3.5498/1.61 | 4496.5 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way ingenting · deadline uppställning (rätt) · golv under nej · ankare ≥1,6× · material okänd · variant ägarkänd parameter · flerköp nej · 500–999 |
+| Termoskyddet för Husbil 211 × 171 cm | 5499 | 32 | 3.3242/1.61 | 5854.72 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way ingenting · deadline uppställning (rätt) · golv under nej · ankare ≥1,6× · material okänd · variant ägarkänd parameter · flerköp nej · 500–999 |
+| MC-Kapellet | 16427 | 76 | 2.0059/1.49 | 5687.08 | B_SKYDDA_DYRT · objekt ja/ute, dyr>10tkr · form överdrag · old way köpt produkt som fungerar · deadline uppställning (sen) · golv under ja · ankare okänd · material okänd · variant måste mäta/storlek · flerköp nej · 300–499 |
 | Axelbältet (trimmersele) | 50235 | 158 | 1.8653/1.72 | 4243.88 | A_AGARE_FRIKTION · objekt ja/ute, medel 1–10tkr · form sele · old way improvisation · deadline säsongsstart (rätt) · golv under ja · ankare 1,2–1,6× · material 1 · variant en variant · flerköp nej · 500–999 |
 | Soptunneklistermärkena | 11255 | 83 | 1.9784/1.67 | 2078.32 | H_VISUELL_NYHET · objekt ja/ute, billig<1tkr · form dekor · old way ingenting · deadline ingen (ingen säsong) · golv under nej · ankare okänd · material 1 · variant en variant · flerköp ja · <300 |
 | Cykelshorts Herr | 8762 | 48 | 1.9988/1.68 | 1662.72 | X_UTANFOR · objekt ja/ute, medel 1–10tkr · form kläder · old way köpt produkt som fungerar · deadline ingen (rätt) · golv under ja · ankare okänd · material okänd · variant måste mäta/storlek · flerköp nej · <300 |
-| Adventskalendern Racingbilar | 7509 | 24 | 1.8777/1.62 | 1194.72 | G_Q4_GAVA · objekt nej/ute, inget · form kalender · old way köpt produkt som fungerar · deadline 1 december (rätt) · golv under ja · ankare 1,2–1,6× · material okänd · variant en variant · flerköp ja · 300–499 |
-| Isolerade Utekattkojan | 6390 | 13 | 1.6917/1.62 | 282.62 | B_SKYDDA_DYRT · objekt ja/ute, inget · form koja · old way ingenting · deadline första frost (rätt) · golv under nej · ankare 1,2–1,6× · material okänd · variant ägarkänd parameter · flerköp nej · 500–999 |
+| Adventskalendern Racingbilar | 8388 | 26 | 1.8/1.62 | 931.84 | G_Q4_GAVA · objekt nej/ute, inget · form kalender · old way köpt produkt som fungerar · deadline 1 december (rätt) · golv under ja · ankare 1,2–1,6× · material okänd · variant en variant · flerköp ja · 300–499 |
+| Isolerade Utekattkojan | 6396 | 13 | 1.6899/1.62 | 275.86 | B_SKYDDA_DYRT · objekt ja/ute, inget · form koja · old way ingenting · deadline första frost (rätt) · golv under nej · ankare 1,2–1,6× · material okänd · variant ägarkänd parameter · flerköp nej · 500–999 |
 | Kranskydd Frost 420D | 8293 | 30 | 1.4999/1.49 | 54.9 | E_VADER_SASONG · objekt ja/ute, billig<1tkr · form överdrag · old way improvisation · deadline första frost (tidig) · golv under ja · ankare okänd · material okänd · variant en variant · flerköp nej · 300–499 |
 | Vandringskängor Herr | 2026 | 5 | 1.6117/1.6 | 14.75 | X_UTANFOR · objekt nej/ute, inget · form kläder · old way köpt produkt som fungerar · deadline ingen (rätt) · golv under okänd · ankare okänd · material okänd · variant måste mäta/storlek · flerköp nej · 500–999 |
 
@@ -65,21 +65,21 @@ Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 RE
 | Signal | Vinnare | Förlorare | Otillr. | Otestat | Axel ja/kanske/nej | Konfidens | Tolkning |
 |---|---:|---:|---:|---:|---|---|---|
 | arketyp = X_UTANFOR | 3 | 9 | 16 | 1 | 0/0/0 | HÖG (förlorare) | 3 av 12 dömda vann — t.ex. Strandtofflorna, Cykelshorts Herr, Vandringskängor Herr; förlorare: Ergonomiska Tofflorna, Plyschtofflorna Herr,  |
-| arketyp = B_SKYDDA_DYRT | 8 | 1 | 3 | 0 | 11/1/2 | HÖG (vinnare) | 8 av 9 dömda vann — t.ex. Motorhöljet, Övervakningskameran, IBC-Tanköverdraget; förlorare: Gräsklippartäcket |
-| arketyp = A_AGARE_FRIKTION | 2 | 7 | 7 | 0 | 3/3/0 | HÖG (förlorare) | 2 av 9 dömda vann — t.ex. Fiskespöhållaren, Axelbältet; förlorare: Surfplattestället, Väggfästet, Golfklubbsborsten |
-| arketyp_sekundar = E_VADER_SASONG | 7 | 0 | 0 | 0 | 0/0/0 | HÖG (vinnare) | 7 av 7 dömda vann — t.ex. Motorhöljet, IBC-Tanköverdraget, Båtmotorskyddet 420D |
+| arketyp = B_SKYDDA_DYRT | 8 | 1 | 3 | 0 | 12/1/2 | HÖG (vinnare) | 8 av 9 dömda vann — t.ex. Motorhöljet, Övervakningskameran, IBC-Tanköverdraget; förlorare: Gräsklippartäcket |
+| arketyp = A_AGARE_FRIKTION | 2 | 7 | 7 | 0 | 3/3/2 | HÖG (förlorare) | 2 av 9 dömda vann — t.ex. Fiskespöhållaren, Axelbältet; förlorare: Surfplattestället, Väggfästet, Golfklubbsborsten |
+| arketyp_sekundar = E_VADER_SASONG | 7 | 0 | 0 | 0 | 0/0/0 | HÖG (vinnare) | 7 av 7 dömda vann — t.ex. Motorhöljet, IBC-Tanköverdraget, Taköverdraget för Husvagn 6,5 × 3 m |
 | arketyp_sekundar = I_FLERKOP | 3 | 0 | 0 | 0 | 0/0/0 | MEDEL (vinnare) | 3 av 3 dömda vann — t.ex. Fiskespöhållaren, Övervakningskameran, Adventskalendern Racingbilar |
 | objekt_ute = ja | 16 | 5 | 11 | 1 | 0/0/0 | HÖG (vinnare) | 16 av 21 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Gravstenspennan, Golfklubbsborsten, Ståltrådsborsth |
 | objekt_ute = nej | 3 | 16 | 23 | 1 | 0/0/0 | HÖG (förlorare) | 3 av 19 dömda vann — t.ex. Bälteslipmaskinen, Adventskalendern Racingbilar, Vandringskängor Herr; förlorare: Ergonomiska Tofflorna, Surfplat |
 | objekt_varde_band = inget | 3 | 11 | 18 | 2 | 0/0/0 | HÖG (förlorare) | 3 av 14 dömda vann — t.ex. Adventskalendern Racingbilar, Isolerade Utekattkojan, Vandringskängor Herr; förlorare: Ergonomiska Tofflorna, Ply |
 | objekt_varde_band = dyr>10tkr | 8 | 2 | 5 | 0 | 0/0/0 | HÖG (vinnare) | 8 av 10 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, Strandtofflorna; förlorare: Gravstenspennan, Golfklubbsborsten |
-| form = annat | 0 | 13 | 22 | 1 | 7/2/0 | HÖG (förlorare) | 0 av 13 dömda vann; förlorare: Gravstenspennan, Surfplattestället, Väggfästet |
-| form = överdrag | 8 | 1 | 0 | 0 | 8/0/1 | HÖG (vinnare) | 8 av 9 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, IBC-Tanköverdraget; förlorare: Gräsklippartäcket |
+| form = annat | 0 | 13 | 22 | 1 | 7/2/2 | HÖG (förlorare) | 0 av 13 dömda vann; förlorare: Gravstenspennan, Surfplattestället, Väggfästet |
+| form = överdrag | 8 | 1 | 0 | 0 | 9/0/1 | HÖG (vinnare) | 8 av 9 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, IBC-Tanköverdraget; förlorare: Gräsklippartäcket |
 | agare_55plus_smahus = nej | 3 | 14 | 20 | 1 | 0/0/0 | HÖG (förlorare) | 3 av 17 dömda vann — t.ex. Damasker Vandring, Cykelshorts Herr, Vandringskängor Herr; förlorare: Ergonomiska Tofflorna, Surfplattestället, P |
 | latent_behov = ja | 1 | 14 | 19 | 1 | 0/0/0 | HÖG (förlorare) | 1 av 15 dömda vann — t.ex. Soptunneklistermärkena; förlorare: Gravstenspennan, Surfplattestället, Väggfästet |
 | deadline_typ = ingen | 6 | 19 | 29 | 2 | 1/2/0 | HÖG (förlorare) | 6 av 25 dömda vann — t.ex. Fiskespöhållaren, Övervakningskameran, Bälteslipmaskinen; förlorare: Ergonomiska Tofflorna, Surfplattestället, Vä |
 | deadline_typ = pågående skada | 3 | 1 | 0 | 0 | 0/0/0 | MEDEL (vinnare) | 3 av 4 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, IBC-Tanköverdraget; förlorare: Gravstenspennan |
-| deadline_typ = uppställning | 4 | 0 | 0 | 0 | 2/1/0 | MEDEL (vinnare) | 4 av 4 dömda vann — t.ex. Båtmotorskyddet 420D, Taköverdraget för Husvagn 6,5 × 3 m, MC-Kapellet |
+| deadline_typ = uppställning | 4 | 0 | 0 | 0 | 3/1/1 | MEDEL (vinnare) | 4 av 4 dömda vann — t.ex. Taköverdraget för Husvagn 6,5 × 3 m, Båtmotorskyddet 420D, MC-Kapellet |
 | timing_vid_launch = ingen säsong | 3 | 9 | 17 | 0 | 0/0/0 | HÖG (förlorare) | 3 av 12 dömda vann — t.ex. Övervakningskameran, Bälteslipmaskinen, Soptunneklistermärkena; förlorare: Surfplattestället, Väggfästet, Skotvät |
 | timing_vid_launch = sen | 1 | 4 | 3 | 0 | 0/0/0 | MEDEL (förlorare) | 1 av 5 dömda vann — t.ex. MC-Kapellet; förlorare: Gräsklippartäcket, Badshorts med Skämttryck, Kasta & Fånga-settet |
 | markesankare_band = 1,2–1,6× | 5 | 0 | 0 | 0 | 0/0/0 | MEDEL (vinnare) | 5 av 5 dömda vann — t.ex. Sätesöverdragaren, Axelbältet, Taköverdraget för Husvagn 6,5 × 3 m |
@@ -89,15 +89,15 @@ Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 RE
 | material_klass = 2 | 4 | 0 | 0 | 0 | 0/0/0 | MEDEL (vinnare) | 4 av 4 dömda vann — t.ex. Fiskespöhållaren, Sätesöverdragaren, Övervakningskameran |
 | montering_app = ja | 1 | 5 | 9 | 0 | 0/0/0 | HÖG (förlorare) | 1 av 6 dömda vann — t.ex. Övervakningskameran; förlorare: Gravstenspennan, Väggfästet, Ståltrådsborsthuvuden |
 | flerkop = ja | 4 | 0 | 5 | 0 | 0/0/0 | MEDEL (vinnare) | 4 av 4 dömda vann — t.ex. Fiskespöhållaren, Övervakningskameran, Soptunneklistermärkena |
-| prisband = 500–999 | 8 | 2 | 8 | 1 | 13/2/1 | HÖG (vinnare) | 8 av 10 dömda vann — t.ex. Sätesöverdragaren, Axelbältet, Övervakningskameran; förlorare: Lättviktsryggsäcken, Uteduschen |
+| prisband = 500–999 | 8 | 2 | 8 | 1 | 17/2/3 | HÖG (vinnare) | 8 av 10 dömda vann — t.ex. Sätesöverdragaren, Axelbältet, Övervakningskameran; förlorare: Lättviktsryggsäcken, Uteduschen |
 
 ## WEAK SIGNALS (LÅG — blandat eller för få dömda)
 
 | Signal | Vinnare | Förlorare | Otillr. | Otestat | Axel ja/kanske/nej | Konfidens | Tolkning |
 |---|---:|---:|---:|---:|---|---|---|
-| arketyp = E_VADER_SASONG | 2 | 1 | 1 | 0 | 6/0/1 | LÅG (vinnare) | 2 av 3 dömda vann — t.ex. Damasker Vandring, Kranskydd Frost 420D; förlorare: Uteduschen |
+| arketyp = E_VADER_SASONG | 2 | 1 | 1 | 0 | 8/0/1 | LÅG (vinnare) | 2 av 3 dömda vann — t.ex. Damasker Vandring, Kranskydd Frost 420D; förlorare: Uteduschen |
 | arketyp = C_LAGA_ISTALLET | 1 | 1 | 2 | 0 | 0/0/0 | LÅG (blandat) | 1 av 2 dömda vann — t.ex. Sätesöverdragaren; förlorare: Gravstenspennan |
-| arketyp = D_SNABBARE_METOD | 1 | 1 | 4 | 0 | 2/0/0 | LÅG (blandat) | 1 av 2 dömda vann — t.ex. Bälteslipmaskinen; förlorare: Ståltrådsborsthuvuden |
+| arketyp = D_SNABBARE_METOD | 1 | 1 | 4 | 0 | 4/0/1 | LÅG (blandat) | 1 av 2 dömda vann — t.ex. Bälteslipmaskinen; förlorare: Ståltrådsborsthuvuden |
 | arketyp = H_VISUELL_NYHET | 1 | 0 | 0 | 0 | 3/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Soptunneklistermärkena |
 | arketyp = G_Q4_GAVA | 1 | 0 | 0 | 0 | 3/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Adventskalendern Racingbilar |
 | arketyp = F_HOBBY_IDENTITET | 0 | 1 | 1 | 1 | 0/0/0 | LÅG (förlorare) | 0 av 1 dömda vann; förlorare: Magnetfiskesatsen |
@@ -111,8 +111,8 @@ Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 RE
 | arketyp_sekundar = D_SNABBARE_METOD | 0 | 0 | 1 | 0 | 0/0/0 | LÅG (otestat) | otestat i kontot (1 för tidigt, 0 aldrig körda) |
 | objekt_varde_band = medel 1–10tkr | 5 | 6 | 7 | 0 | 0/0/0 | LÅG (blandat) | 5 av 11 dömda vann — t.ex. Fiskespöhållaren, Axelbältet, IBC-Tanköverdraget; förlorare: Surfplattestället, Väggfästet, Gräsklippartäcket |
 | objekt_varde_band = billig<1tkr | 3 | 2 | 4 | 0 | 0/0/0 | LÅG (vinnare) | 3 av 5 dömda vann — t.ex. Bälteslipmaskinen, Soptunneklistermärkena, Kranskydd Frost 420D; förlorare: Skotvättpåsen, Krananslutningen |
-| form = kläder | 4 | 3 | 2 | 1 | 2/0/0 | LÅG (blandat) | 4 av 7 dömda vann — t.ex. Strandtofflorna, Damasker Vandring, Cykelshorts Herr; förlorare: Ergonomiska Tofflorna, Plyschtofflorna Herr, Bads |
-| form = verktyg | 1 | 2 | 7 | 0 | 2/0/0 | LÅG (förlorare) | 1 av 3 dömda vann — t.ex. Bälteslipmaskinen; förlorare: Golfklubbsborsten, Ståltrådsborsthuvuden |
+| form = kläder | 4 | 3 | 2 | 1 | 4/0/0 | LÅG (blandat) | 4 av 7 dömda vann — t.ex. Strandtofflorna, Damasker Vandring, Cykelshorts Herr; förlorare: Ergonomiska Tofflorna, Plyschtofflorna Herr, Bads |
+| form = verktyg | 1 | 2 | 7 | 0 | 4/0/1 | LÅG (förlorare) | 1 av 3 dömda vann — t.ex. Bälteslipmaskinen; förlorare: Golfklubbsborsten, Ståltrådsborsthuvuden |
 | form = elektronik | 1 | 1 | 2 | 0 | 2/0/0 | LÅG (blandat) | 1 av 2 dömda vann — t.ex. Övervakningskameran; förlorare: Uteduschen |
 | form = dekor | 1 | 1 | 1 | 0 | 1/0/0 | LÅG (blandat) | 1 av 2 dömda vann — t.ex. Soptunneklistermärkena; förlorare: Luffarschacket i Trä |
 | form = klämma | 1 | 0 | 0 | 0 | 0/1/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Fiskespöhållaren |
@@ -133,16 +133,17 @@ Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 RE
 | old_way = tjänst | 0 | 1 | 0 | 0 | 0/0/0 | LÅG (förlorare) | 0 av 1 dömda vann; förlorare: Gravstenspennan |
 | latent_behov = nej | 18 | 7 | 13 | 1 | 0/0/0 | LÅG (vinnare) | 18 av 25 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Ergonomiska Tofflorna, Plyschtofflorna Herr, Golfkl |
 | deadline_typ = säsongsstart | 2 | 1 | 3 | 0 | 0/0/0 | LÅG (vinnare) | 2 av 3 dömda vann — t.ex. Axelbältet, Strandtofflorna; förlorare: Plyschtofflorna Herr |
-| deadline_typ = första frost | 2 | 0 | 2 | 0 | 3/0/1 | LÅG (vinnare) | 2 av 2 dömda vann — t.ex. Kranskydd Frost 420D, Isolerade Utekattkojan |
-| deadline_typ = första snö | 1 | 0 | 0 | 0 | 3/0/1 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Damasker Vandring |
+| deadline_typ = första frost | 2 | 0 | 2 | 0 | 5/0/1 | LÅG (vinnare) | 2 av 2 dömda vann — t.ex. Kranskydd Frost 420D, Isolerade Utekattkojan |
+| deadline_typ = första snö | 1 | 0 | 0 | 0 | 4/0/1 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Damasker Vandring |
 | deadline_typ = 1 december | 1 | 0 | 0 | 0 | 1/0/0 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Adventskalendern Racingbilar |
 | deadline_typ = jaktstart | 0 | 0 | 0 | 0 | 1/0/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 1 ja |
 | deadline_typ = älgjakt | 0 | 0 | 0 | 0 | 4/0/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 4 ja |
-| deadline_typ = upptagning | 0 | 0 | 0 | 0 | 3/0/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 3 ja |
-| deadline_typ = vedsäsong | 0 | 0 | 0 | 0 | 1/1/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 1 ja, 1 kanske |
+| deadline_typ = upptagning | 0 | 0 | 0 | 0 | 3/0/1 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 3 ja, 1 nej |
+| deadline_typ = vedsäsong | 0 | 0 | 0 | 0 | 2/1/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 2 ja, 1 kanske |
 | deadline_typ = vintermatning | 0 | 0 | 0 | 0 | 2/0/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 2 ja |
 | deadline_typ = fars dag | 0 | 0 | 0 | 0 | 1/0/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 1 ja |
 | deadline_typ = invintring | 0 | 0 | 0 | 0 | 1/0/0 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 1 ja |
+| deadline_typ = vintertäckning | 0 | 0 | 0 | 0 | 0/0/1 | LÅG (otestat) | otestat i kontot (0 för tidigt, 0 aldrig körda); Axel: 1 nej |
 | timing_vid_launch = rätt | 13 | 6 | 10 | 0 | 0/0/0 | LÅG (vinnare) | 13 av 19 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Ergonomiska Tofflorna, Magnetfiskesatsen, Golfklubb |
 | timing_vid_launch = tidig | 2 | 1 | 1 | 0 | 0/0/0 | LÅG (vinnare) | 2 av 3 dömda vann — t.ex. Damasker Vandring, Kranskydd Frost 420D; förlorare: Gravstenspennan |
 | timing_vid_launch = fel | 0 | 1 | 0 | 0 | 0/0/0 | LÅG (förlorare) | 0 av 1 dömda vann; förlorare: Plyschtofflorna Herr |
@@ -150,12 +151,12 @@ Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 RE
 | kedjegolv_under_vart_pris = nej | 9 | 4 | 4 | 0 | 0/0/0 | LÅG (vinnare) | 9 av 13 dömda vann — t.ex. Fiskespöhållaren, Sätesöverdragaren, IBC-Tanköverdraget; förlorare: Gravstenspennan, Luffarschacket i Trä, Kasta  |
 | montering_app = nej | 18 | 16 | 25 | 2 | 0/0/0 | LÅG (blandat) | 18 av 34 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Sätesöverdragaren; förlorare: Ergonomiska Tofflorna, Surfplattestället, Plyschtof |
 | variant_risk = en variant | 8 | 8 | 20 | 1 | 0/0/0 | LÅG (blandat) | 8 av 16 dömda vann — t.ex. Fiskespöhållaren, Axelbältet, Övervakningskameran; förlorare: Surfplattestället, Väggfästet, Magnetfiskesatsen |
-| variant_risk = ägarkänd parameter | 7 | 6 | 7 | 0 | 0/0/0 | LÅG (blandat) | 7 av 13 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, Båtmotorskyddet 420D; förlorare: Gravstenspennan, Magnethyllan, Lättviktsryggsäck |
+| variant_risk = ägarkänd parameter | 7 | 6 | 7 | 0 | 0/0/0 | LÅG (blandat) | 7 av 13 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, Taköverdraget för Husvagn 6,5 × 3 m; förlorare: Gravstenspennan, Magnethyllan, Lä |
 | variant_risk = måste mäta/storlek | 4 | 7 | 5 | 1 | 0/0/0 | LÅG (förlorare) | 4 av 11 dömda vann — t.ex. Strandtofflorna, MC-Kapellet, Cykelshorts Herr; förlorare: Ergonomiska Tofflorna, Plyschtofflorna Herr, Gräsklipp |
 | flerkop = nej | 15 | 21 | 29 | 2 | 0/0/0 | LÅG (blandat) | 15 av 36 dömda vann — t.ex. Motorhöljet, Sätesöverdragaren, Axelbältet; förlorare: Ergonomiska Tofflorna, Gravstenspennan, Surfplattestället |
 | prisband = 300–499 | 6 | 11 | 13 | 0 | 6/2/0 | LÅG (förlorare) | 6 av 17 dömda vann — t.ex. Strandtofflorna, IBC-Tanköverdraget, MC-Kapellet; förlorare: Ergonomiska Tofflorna, Surfplattestället, Plyschtoff |
 | prisband = <300 | 4 | 8 | 8 | 1 | 0/0/0 | LÅG (förlorare) | 4 av 12 dömda vann — t.ex. Motorhöljet, Fiskespöhållaren, Soptunneklistermärkena; förlorare: Gravstenspennan, Magnetfiskesatsen, Golfklubbsb |
-| prisband = ≥1000 | 1 | 0 | 1 | 0 | 4/0/1 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Taköverdraget för Husvagn 6,5 × 3 m |
+| prisband = ≥1000 | 1 | 0 | 1 | 0 | 5/0/2 | LÅG (vinnare) | 1 av 1 dömda vann — t.ex. Taköverdraget för Husvagn 6,5 × 3 m |
 
 ## DISPROVEN ASSUMPTIONS
 
@@ -173,7 +174,7 @@ Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 RE
 | Id | Hypotes | Status | Vinnare | Förlorare | Otillr. | Så testas den |
 |---|---|---|---|---|---:|---|
 | H01 | Ägd dyr sak ute + omedelbart väderhot + billigt skydd i formsydd form | **stärkt** | Motorhöljet, Sätesöverdragaren, Övervakningskameran, IBC-Tanköverdraget | — | 3 | fler objekt än husvagn/båt: snöslunga, robotklippare, elverk, spabad, luftvärmepump — samma struktur, nytt obj |
-| H02 | Hårt datum ingen kan flytta (1 dec, uppställning, första frost) slår 'pågående skada' — köpet görs 2–12 v före | **stärkt** | Båtmotorskyddet 420D, Taköverdraget för Husvagn 6,5 × 3 m, MC-Kapellet, Damasker Vandring | — | 2 | kandidater med datum i sasong.json NOW-fönster mot kandidater med 'pågående skada' — jämför utfall efter 5 lau |
+| H02 | Hårt datum ingen kan flytta (1 dec, uppställning, första frost) slår 'pågående skada' — köpet görs 2–12 v före | **stärkt** | Taköverdraget för Husvagn 6,5 × 3 m, Båtmotorskyddet 420D, MC-Kapellet, Damasker Vandring | — | 2 | kandidater med datum i sasong.json NOW-fönster mot kandidater med 'pågående skada' — jämför utfall efter 5 lau |
 | H03 | Svikande default som ägaren redan köpt (chokladkalender, presenning, handduk) är ett starkare köpskäl än 'inge | **aktiv** | Motorhöljet, Fiskespöhållaren, Sätesöverdragaren, Axelbältet | Ergonomiska Tofflorna, Surfplattestället, Plyschtofflorna Herr, Väggfästet | 32 | sök produkter där default-lösningen är en billig köpt vara ägaren klagar på — inte bara där default = ingentin |
 | H04 | Pris över 1 000 kr fungerar när objektet är ≥ 100× priset och formen är stor i bild (V1 1 129 kr) | **aktiv** | Taköverdraget för Husvagn 6,5 × 3 m | — | 1 | 1–2 kandidater per vecka i 1 000–1 500 kr med objekt > 100 tkr (husbil, båt, MC, traktor) |
 | H05 | Gåva med hårt datum och mottagare i relation (barnbarnet, mannen med båten) fungerar i Q4 trots att 'gåva' för | **aktiv** | Adventskalendern Racingbilar | Badshorts med Skämttryck | 0 | kalenderlådor/hobbyset till en namngiven mottagare med 1 dec eller julafton som datum — 1–3 per batch sept–nov |
@@ -189,13 +190,13 @@ Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 RE
 
 | Arketyp | Vinnare | Förlorare | Otillr. | Otestat | Spend | Vinstbidrag | Researchkoncept (lev./ja/kanske/nej/launch) |
 |---|---:|---:|---:|---:|---:|---:|---|
-| A_AGARE_FRIKTION | 2 | 7 | 7 | 0 | 157167 | 35241 | 6/3/3/0/0 |
-| B_SKYDDA_DYRT | 8 | 1 | 3 | 0 | 239309 | 120517 | 17/11/1/2/2 |
+| A_AGARE_FRIKTION | 2 | 7 | 7 | 0 | 157893 | 35394 | 8/3/3/2/0 |
+| B_SKYDDA_DYRT | 8 | 1 | 3 | 0 | 251413 | 133509 | 18/12/1/2/2 |
 | C_LAGA_ISTALLET | 1 | 1 | 2 | 0 | 77048 | 26645 | 0/0/0/0/0 |
-| D_SNABBARE_METOD | 1 | 1 | 4 | 0 | 38814 | 11031 | 2/2/0/0/1 |
-| E_VADER_SASONG | 2 | 1 | 1 | 0 | 27193 | 4881 | 9/6/0/1/1 |
+| D_SNABBARE_METOD | 1 | 1 | 4 | 0 | 39743 | 11677 | 5/4/0/1/1 |
+| E_VADER_SASONG | 2 | 1 | 1 | 0 | 27193 | 4881 | 11/8/0/1/1 |
 | F_HOBBY_IDENTITET | 0 | 1 | 1 | 1 | 3950 | -1034 | 0/0/0/0/0 |
-| G_Q4_GAVA | 1 | 0 | 0 | 0 | 7509 | 1195 | 6/3/0/0/1 |
+| G_Q4_GAVA | 1 | 0 | 0 | 0 | 8388 | 932 | 6/3/0/0/1 |
 | H_VISUELL_NYHET | 1 | 0 | 0 | 0 | 11255 | 2078 | 6/3/0/0/0 |
 | I_FLERKOP | 0 | 0 | 0 | 0 | 0 | 0 | 1/0/1/0/0 |
 | X_UTANFOR | 3 | 9 | 16 | 1 | 116096 | 1269 | 0/0/0/0/0 |
@@ -204,10 +205,10 @@ Uppdaterad 2026-09-14. Metas facit hämtat 2026-09-14: **19 REAL WINNER · 21 RE
 
 | Koncept | Arketyp | Researchen sa | Poäng | Axel | Meta-klass | Band | Spend | Köp | ROAS | Lärdom |
 |---|---|---|---:|---|---|---|---:|---:|---:|---|
-| Taköverdrag husvagn 6,5 × 3 m | B_SKYDDA_DYRT | REFUTED | — | — | REAL_WINNER | HIGH | 16109 | 79 | 5.6484 | FEL — Axel launchade 2026-09-09 för 1 129 kr (över 1 000-kronorstaket): 2 657 kr / 15 köp / ROAS 6,37 mot BE 1,63 (2026-09-11). Lagerdjupet hos ankare |
-| Adventskalender racingbilar | G_Q4_GAVA | KILL (implicit) | — | — | REAL_WINNER | HIGH | 7509 | 24 | 1.8777 | FEL — 3 298 kr / 16 köp / ROAS 3,07 mot BE 1,62 (2026-09-11). Hårt datum (1 dec) + svikande default (chokladkalender) + 24 synliga saker slog varje re |
-| Isolerad utekattkoja | E_VADER_SASONG | TEST NOW | 79 | — | REAL_WINNER | HIGH | 6390 | 13 | 1.6917 | RÄTT — launchad 2026-09-09 för 789 kr (över rekommenderade 599): 2 883 kr / 9 köp / ROAS 2,46 mot BE 1,62 (2026-09-11). Huvudrisken (look-alikes + 3 a |
-| Termoskyddet för Husbil 211 × 171 cm | B_SKYDDA_DYRT | ej researchad | — | — | REAL_WINNER | HIGH | 3732 | 23 | 3.5498 |  |
+| Taköverdrag husvagn 6,5 × 3 m | B_SKYDDA_DYRT | REFUTED | — | — | REAL_WINNER | HIGH | 22024 | 100 | 5.1961 | FEL — Axel launchade 2026-09-09 för 1 129 kr (över 1 000-kronorstaket): 2 657 kr / 15 köp / ROAS 6,37 mot BE 1,63 (2026-09-11). Lagerdjupet hos ankare |
+| Adventskalender racingbilar | G_Q4_GAVA | KILL (implicit) | — | — | REAL_WINNER | HIGH | 8388 | 26 | 1.8 | FEL — 3 298 kr / 16 köp / ROAS 3,07 mot BE 1,62 (2026-09-11). Hårt datum (1 dec) + svikande default (chokladkalender) + 24 synliga saker slog varje re |
+| Isolerad utekattkoja | E_VADER_SASONG | TEST NOW | 79 | — | REAL_WINNER | HIGH | 6396 | 13 | 1.6899 | RÄTT — launchad 2026-09-09 för 789 kr (över rekommenderade 599): 2 883 kr / 9 köp / ROAS 2,46 mot BE 1,62 (2026-09-11). Huvudrisken (look-alikes + 3 a |
+| Termoskyddet för Husbil 211 × 171 cm | B_SKYDDA_DYRT | ej researchad | — | — | REAL_WINNER | HIGH | 5499 | 32 | 3.3242 |  |
 | Solcellslarmet 2-pack | D_SNABBARE_METOD | ej researchad | — | — | INSUFFICIENT_DATA | TOO_EARLY | 1993 | 1 | 0.3859 |  |
 | Roof Ladder Stabilizer, Ladder Stand | — | ej researchad | — | — | INSUFFICIENT_DATA | EARLY_SIGNAL | 1976 | 3 | 0.9706 |  |
 | 1/2 Pack Heavy Duty Steel Fence Post | — | ej researchad | — | — | INSUFFICIENT_DATA | TOO_EARLY | 1875 | 1 | 0.9057 |  |
@@ -230,7 +231,7 @@ Dömda launcher: 4 · researchen rätt på 1 vinnare, fel (refuterade/killade vi
 |---|---:|---:|---:|---:|---|---|
 | deadline_typ = ingen | 6 | 19 | 29 | 2 | Fiskespöhållaren, Övervakningskameran, Bälteslipmaskinen | Ergonomiska Tofflorna, Surfplattestället, Väggfästet |
 | deadline_typ = pågående skada | 3 | 1 | 0 | 0 | Motorhöljet, Sätesöverdragaren, IBC-Tanköverdraget | Gravstenspennan |
-| deadline_typ = uppställning | 4 | 0 | 0 | 0 | Båtmotorskyddet 420D, Taköverdraget för Husvagn 6,5 × 3 m, MC-Kapellet |  |
+| deadline_typ = uppställning | 4 | 0 | 0 | 0 | Taköverdraget för Husvagn 6,5 × 3 m, Båtmotorskyddet 420D, MC-Kapellet |  |
 | deadline_typ = säsongsstart | 2 | 1 | 3 | 0 | Axelbältet, Strandtofflorna | Plyschtofflorna Herr |
 | deadline_typ = första frost | 2 | 0 | 2 | 0 | Kranskydd Frost 420D, Isolerade Utekattkojan |  |
 | deadline_typ = första snö | 1 | 0 | 0 | 0 | Damasker Vandring |  |
@@ -242,6 +243,7 @@ Dömda launcher: 4 · researchen rätt på 1 vinnare, fel (refuterade/killade vi
 | deadline_typ = vintermatning | 0 | 0 | 0 | 0 |  |  |
 | deadline_typ = fars dag | 0 | 0 | 0 | 0 |  |  |
 | deadline_typ = invintring | 0 | 0 | 0 | 0 |  |  |
+| deadline_typ = vintertäckning | 0 | 0 | 0 | 0 |  |  |
 
 ## CREATIVE LEARNINGS — materialklass (0 = katalogbild med text … 3 = video i bruk ≤ 3 s + hero i kontext)
 

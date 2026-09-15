@@ -3,54 +3,54 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-14. **47 svar** — ja 32, kanske 9, nej 6.
+Uppdaterad 2026-09-15. **55 svar** — ja 37, kanske 9, nej 9.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 27 ja, 3 kanske, 2 nej → score 0.868
-- ankare_klass **1,3–1,6×**: 14 ja, 1 kanske, 0 nej → score 0.912
-- form **överdrag**: 13 ja, 0 kanske, 1 nej → score 0.875
+- prisband **500–999**: 32 ja, 3 kanske, 4 nej → score 0.841
+- ankare_klass **1,3–1,6×**: 17 ja, 1 kanske, 1 nej → score 0.881
+- form **överdrag**: 15 ja, 0 kanske, 1 nej → score 0.889
+- ankare_klass **≥ 1,6×**: 12 ja, 4 kanske, 5 nej → score 0.652
 - deadline_klass **6–12 v**: 10 ja, 1 kanske, 0 nej → score 0.885
 - prisband **300–499**: 10 ja, 2 kanske, 0 nej → score 0.857
-- ankare_klass **≥ 1,6×**: 9 ja, 4 kanske, 3 nej → score 0.667
+- arketyp **A1**: 9 ja, 1 kanske, 0 nej → score 0.875
+- deadline_klass **2–6 v**: 9 ja, 0 kanske, 0 nej → score 0.909
+- deadline_typ **uppställning**: 9 ja, 1 kanske, 1 nej → score 0.808
 - ankare_klass **golv utan ankare**: 8 ja, 0 kanske, 0 nej → score 0.9
-- arketyp **A1**: 8 ja, 1 kanske, 0 nej → score 0.864
-- deadline_klass **2–6 v**: 8 ja, 0 kanske, 0 nej → score 0.9
+- arketyp **B_SKYDDA_DYRT**: 8 ja, 0 kanske, 2 nej → score 0.75
+- deadline_typ **första frost**: 8 ja, 0 kanske, 2 nej → score 0.75
+- prisband **≥ 1 000**: 8 ja, 0 kanske, 2 nej → score 0.75
 - ankare_klass **1,2–1,3×**: 7 ja, 0 kanske, 0 nej → score 0.889
-- deadline_typ **uppställning**: 7 ja, 1 kanske, 0 nej → score 0.85
-- form **annat**: 7 ja, 2 kanske, 0 nej → score 0.818
-- prisband **≥ 1 000**: 7 ja, 0 kanske, 1 nej → score 0.8
-- arketyp **B_SKYDDA_DYRT**: 7 ja, 0 kanske, 2 nej → score 0.727
-- deadline_typ **första frost**: 6 ja, 0 kanske, 2 nej → score 0.7
+- arketyp **E_VADER_SASONG**: 7 ja, 0 kanske, 1 nej → score 0.8
 
 ## Det Axel säger nej till
 
-- ankare_klass **≥ 1,6×**: 3 nej, 9 ja → score 0.667
-- deadline_typ **första frost**: 2 nej, 6 ja → score 0.7
-- arketyp **B_SKYDDA_DYRT**: 2 nej, 7 ja → score 0.727
-- prisband **500–999**: 2 nej, 27 ja → score 0.868
+- ankare_klass **≥ 1,6×**: 5 nej, 12 ja → score 0.652
+- prisband **500–999**: 4 nej, 32 ja → score 0.841
+- arketyp **A_AGARE_FRIKTION**: 2 nej, 3 ja → score 0.55
+- form **annat**: 2 nej, 7 ja → score 0.692
+- arketyp **B_SKYDDA_DYRT**: 2 nej, 8 ja → score 0.75
+- deadline_typ **första frost**: 2 nej, 8 ja → score 0.75
+- prisband **≥ 1 000**: 2 nej, 8 ja → score 0.75
 - grupp **belysning och mörker**: 1 nej, 0 ja → score 0.333
 - grupp **Gårdshunden/hundgården**: 1 nej, 0 ja → score 0.333
 - grupp **Luftvärmepumpens utedel**: 1 nej, 0 ja → score 0.333
 - grupp **Släpkärra**: 1 nej, 0 ja → score 0.333
+- grupp **NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)**: 1 nej, 0 ja → score 0.333
+- grupp **NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)**: 1 nej, 0 ja → score 0.333
+- grupp **NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)**: 1 nej, 0 ja → score 0.333
 - ankare_kalla **Kerbl Pet Levin plastkoja 99×70×75 (zooplus.se)**: 1 nej, 0 ja → score 0.333
-- ankare_kalla **Clas Ohlson Värmepumpsskydd plåt med tak 36-217, 100×80×50 cm**: 1 nej, 0 ja → score 0.333
-- ankare_kalla **Fogelsta kapellock FS1425 (formsydd kapellväv, original)**: 1 nej, 0 ja → score 0.333
-- form **hus**: 1 nej, 0 ja → score 0.333
-- objekt **Gårdshunden/hundgården**: 1 nej, 0 ja → score 0.333
-- objekt **Luftvärmepumpens utedel**: 1 nej, 0 ja → score 0.333
-- objekt **Släpkärra**: 1 nej, 0 ja → score 0.333
 
 ## Orsakerna han anger
 
 - **Känns rätt**: 0 nej, 12 ja, 0 kanske
 - **Skyddar något**: 0 nej, 8 ja, 0 kanske
 - **Deadline nu**: 0 nej, 4 ja, 0 kanske
-- **För dyr**: 2 nej, 0 ja, 0 kanske
+- **För dyr**: 3 nej, 0 ja, 0 kanske
+- **Kedjan har den**: 2 nej, 0 ja, 0 kanske
 - **Nöjd med det han har**: 2 nej, 0 ja, 0 kanske
 - **Bra ankare**: 0 nej, 1 ja, 0 kanske
 - **Snygg bild**: 0 nej, 1 ja, 0 kanske
-- **Kedjan har den**: 1 nej, 0 ja, 0 kanske
 - **Tråkig**: 1 nej, 0 ja, 0 kanske
 - **Har redan**: 1 nej, 0 ja, 0 kanske
 - **Kan bli bra**: 0 nej, 0 ja, 1 kanske
@@ -63,6 +63,7 @@ Uppdaterad 2026-09-14. **47 svar** — ja 32, kanske 9, nej 6.
 ## Lyfts i nästa körning (≥ 3 ja)
 
 - ankare_kalla:eurotrail/getcamping.se
+- ankare_kalla:hindermann/getcamping
 - ankare_kalla:lego.com/kedjan
 - ankare_kalla:pricerunner.se (Kerbl/Northix)
 - ankare_klass:1,2–1,3×
@@ -75,6 +76,7 @@ Uppdaterad 2026-09-14. **47 svar** — ja 32, kanske 9, nej 6.
 - arketyp:A4
 - arketyp:A_AGARE_FRIKTION
 - arketyp:B_SKYDDA_DYRT
+- arketyp:D_SNABBARE_METOD
 - arketyp:E_VADER_SASONG
 - arketyp:G_Q4_GAVA
 - arketyp:H_VISUELL_NYHET
@@ -90,9 +92,12 @@ Uppdaterad 2026-09-14. **47 svar** — ja 32, kanske 9, nej 6.
 - deadline_typ:älgjakt
 - form:annat
 - form:kalender
+- form:kläder
 - form:koja
+- form:verktyg
 - form:överdrag
 - objekt:Barnbarnet — adventskalendern
+- objekt:Husbil — hytt och vindruta
 - objekt:Husvagn — taket
 - objekt:Utekatten
 - prisband:300–499
