@@ -1,0 +1,34 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-13",
+  "lage": "leverans",
+  "gjort": [
+    "Queue read independently from Notion REST: 48 rows in the hub, 0 in To be Reviewed, 0 in Creative strat review - nothing finished was missed",
+    "No upload: the SE campaign is PAUSED with 2 799 SEK spend, so the queue refused it (a paused campaign with spend is a decision)",
+    "Checked Meta's activity log: you paused both AdventLane campaigns yourself today 11:05 and 11:06 Swedish time",
+    "Nothing activated, nothing paused, no Notion status touched by this run",
+    "Numbers written to the product memory (dna.md + batch-log.md) so tomorrow's run starts from facts"
+  ],
+  "siffror": {
+    "spend_7d": 2799,
+    "kop_7d": 5,
+    "roas_7d": 1.18,
+    "vinstbidrag_7d": -1185
+  },
+  "briefer": [],
+  "varningar": [
+    "SE lifetime: 2 799 SEK, 5 purchases, CPA 560 SEK, ROAS 1.18 - against break-even CPA 323 SEK that is -1 185 SEK. NO lifetime: 3 137 SEK, 3 purchases, CPA 1 046 SEK, ROAS 0.44. Both campaigns are past the gate, so the verdict stands: both lost money. Your pause matches the data.",
+    "No single ad is judgeable yet - the best one is PD_1_H1 with 847 SEK on 2 purchases. The 7 videos that went live on 12 Sep only spent 1-48 SEK each before the pause: untested, not failed. Reuse them if the store restarts.",
+    "One row is stuck in SE-ACTIVE to be translated: Adventskalender_FM_1_H1, dropped by the Norway run on 12 Sep because the voice check failed. It will be retried every day at 15:55 until it is re-rendered or dropped.",
+    "Norway has its own price (439 SEK) but no break-even of its own has ever been calculated. Do that before building any new Norwegian campaign for this product."
+  ],
+  "action_axel": [
+    "AdventLane is switched off, but the night watch ordered 21 new briefs (batch #3) from Jazz the night before you paused it. 36 rows now sit as Draft in the hub.",
+    "Decide one of three - a routine must not decide this: (1) pause the cadence and move Jazz to a store that is running, (2) let her finish so the material is ready if you restart, or (3) close the product down and remove the three routines (00:25 / 13:55 / 15:55) so they stop running empty every day.",
+    "If you restart the store: say so and the 7 untested videos from 12 Sep go live again without new work.",
+    "Time matters - the calendar is dead after 24 December, so a restart needs to happen within a couple of weeks to be worth it."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-14"
+}

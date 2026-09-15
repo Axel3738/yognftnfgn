@@ -171,6 +171,117 @@ i källan, och samma risk som mönster 1 beskriver.
 
 ---
 
+## Mönstren ur CaraShells EGEN data (avläst 2026-09-14, körning nr 2)
+
+⚠️ Alla fyra är **hypoteser**, inte bevis: 0 av 16 annonser har passerat
+signifikansgrinden (≥ 300 kr OCH ≥ 3 köp). De är grupperade utfall över
+2 435 kr och 8 köp — riktning, inte dom. `SP_2_1` ligger 3 kr från grinden.
+
+**Mönster 6 — bild slår video 3,6× på CPA (HYPOTES, egen data).**
+Bild: 531 kr, 4 köp, **CPA 133 kr**, vinstbidrag 2 241 kr — 72 % av allt
+vinstbidrag på 22 % av spenden. Video: 1 904 kr, 4 köp, CPA 476 kr,
+vinstbidrag 868 kr. Detta **bekräftar ärvd mönster 3 i CaraShells eget konto**
+och är motsatsen till HeimGuard. Produkten är visuell och statisk — ett tak med
+ett överdrag på — och det syns i datan.
+→ **Instruktion:** majoriteten av varje batch ska vara bild. Batch #2 är 4 av 7.
+
+**Mönster 7 — SP tog över från PD (HYPOTES, egen data).**
+Hos CaraShell: SP 42 % av spenden, **5 av 8 köp**, CPA 204 kr, vinstbidrag
+2 447 kr (79 % av totalen). PD 36 %, 2 köp, CPA 443 kr. I källan var ordningen
+omvänd — PD störst med 16 köp, SP svagast av de bevisade (CPA 221 kr).
+**Trolig rotorsak:** de två ändringarna mot källan drog åt olika håll. PD:s
+bärande mekanismrad byttes ut (ändring 1) och tappade; SP fick riktiga omdömen
+i stället för "fler och fler husvagnsägare" (ändring 2) och vann. Ändringen som
+gjordes för sanningens skull gjorde annonsen starkare, inte svagare.
+→ **Instruktion:** SP får flest briefer. PD-varianter bär den rättade
+mekanismen och testas i bildformat.
+
+**Mönster 8 — GT replikerade inte, men har aldrig fått chansen (HYPOTES).**
+GT: 188 kr (8 % av spenden), **0 köp** på 4 annonser. I källan är `GT_2_H1`
+bäst av allt (14–18 köp, vinstbidrag 8 202–10 135 kr); CaraShells `GT_2_H1`
+fick 54 kr och 0 köp. ⚠️ **Detta är inte en dom** — 188 kr över fyra annonser
+är långt under grinden. Frågan i ärvd mönster 2 (bar vinkeln eller creativen?)
+är fortfarande obesvarad.
+→ **Instruktion:** GT testas som bild i batch #2, och ska därefter till ett
+eget test-ABO med lika budget om CBO:n fortsätter svälta den.
+
+**Mönster 9 — CBO-svälten upprepar sig, tredje gången (BEVISAD).**
+Ärvd mönster 1 sa det om källkontot. Nu i CaraShells eget: CS (14 %) och GT
+(8 %) får tillsammans 22 % av spenden medan PD+SP tar 78 %. Samtidigt gav
+`CS_1_H1` 1 köp på 110 kr — **CPA 110 kr, bäst av alla videor** — och fick ändå
+aldrig mer än 110 kr. Metas CBO lägger pengarna där de redan ligger.
+→ **Instruktion:** detta är exakt CLAUDE.md regel 11. Nya tester hör hemma i
+eget test-ABO med lika budget per annons, aldrig i skalningens CBO.
+
+**Mönster 4 står sig (hook/hold ljuger).** `PD_1_H1` har högst hook (54 %) och
+hold (42 %) av alla videor — och **0 köp** på 266 kr. `SP_2_1` har ingen
+videometrik alls och bäst CPA i hela kontot. Använd dem som diagnos av var
+tittaren tappar, aldrig som urvalskriterium.
+
+---
+
+## Norge-runda 2026-09-14 (`/ops-oversatt carashell`) — tre fynd som gäller framåt
+
+**1. Konceptkoden heter GT i Sverige och G i Norge.** `CARASHELL_SE_Taköverdraget`
+har adsetet `- GT` för presentvinkeln; `CARASHELL_NO_Takovertrekket` har `- G`
+för exakt samma vinkel (kampanjen byggd av `/ny-annonser` ur källans norska
+kampanj). `valjAdsetForKoncept` i `tools/meta-lib.mjs` matchar på suffix och ser
+därför inte att `GT` och `G` är samma sak — den mekaniska namnöversättningen
+`CaraShellRoof_GT_4_1` → `CaraShellRoof_NO_GT_4_1` hade skapat ett ANDRA
+presentadset bredvid det som redan spenderar, och delat vinkelns budget i två i
+en CBO.
+→ **Instruktion:** presentannonser döps `CaraShellRoof_NO_G_<n>_<v>` i Norge,
+aldrig `NO_GT`. Läs alltid NO-kampanjens egna adsetnamn innan du litar på den
+mekaniska namnöversättningen. PD, SP och CS heter lika på båda marknaderna.
+
+**2. De norska annonserna landar på en sida som visar SEK.** Mätt 2026-09-14:
+`https://carashell.se/nb/products/takskyddet` svarar `"currencyCode":"SEK"` och
+1 129,00 kr, medan samma URL med `?country=NO` svarar `"currencyCode":"NOK"` och
+1 106,00 kr (jämförpris 1 382,50). NOK är alltså påslaget som Norges
+marknadsvaluta (prislistan i `factory/produkter/takskyddet.yaml`), men
+marknadsparametern måste stå i länken för att slå igenom. De nio ärvda
+NO-annonserna (`NO_PD_1–3`, `NO_SP_1–3`, `NO_G_1–3`) saknar parametern och
+skickar därför norska kunder till en SEK-sida. Samma fel som HeimGuard, se
+`products/hemvakten/dna.md`.
+→ **Instruktion:** varje ny NO-annons laddas upp med
+`--lank https://carashell.se/nb/products/takskyddet?country=NO`. De fyra
+annonserna från den här ronden har den; de nio äldre har den inte, och att göra
+om deras creatives är Axels beslut.
+
+**3. Norsk copy skrivs utan pris.** `factory/butiker/carashell.yaml` säger
+`valuta: SEK` för NO medan `factory/produkter/takskyddet.yaml` bär en
+NOK-prislista — filerna säger olika. Tills det är utrett gäller kommandots
+grundregel: ingen prissiffra i norsk copy, precis som i alla nio ärvda
+NO-annonser. CS-vinkeln (erbjudandet) bär därför villkoren — fri frakt SE/NO,
+5–10 arbetsdagar, 14 dagars ångerrätt — i stället för prisfallet, och
+**CS-annonsen i Norge kan inte läsas som ett pristest** även om den svenska
+tvillingen är det.
+
+---
+
+## Körning nr 2 — 2026-09-14 (`/notionscalercs carashell`, briefrond nr 1)
+
+Butikens **första riktiga rond** — de tre rutinerna som setup-körningen trodde
+sig ha byggt existerar inte (se nedan), så ronden kördes för hand.
+
+Gjort: budgetronden (kampanjen 1 000 → 1 200 kr, SNABB-regeln: vinst 34,4 %
+och ROAS 3,71 på både 3 och 7 dagar), feedback-loopen ovan, batch #2 med
+7 briefer, mönster 6–9 inskrivna.
+
+⚠️ **Hub-id:t var fel och stoppade allt.** Registret pekade på
+`3d9270ab-908c-819d-be0f-c6cb71320871`, som ligger i papperskorgen
+(`in_trash: true`). Rättat till `3da270ab-908c-80c4-80d1-fbdb3fefd3b4`.
+Notion svarar OK på `GET /databases/<id>` men 404 på `query`, med en text om
+att dela databasen med integrationen — den läser som ett behörighetsfel och är
+det inte. Läs fältet `in_trash`, inte feltexten.
+
+⚠️ **Rutinerna saknas.** CLAUDE.md dokumenterade tre rutiner på Axels andra
+konto; Axel kollade i Routines-vyn 2026-09-14 och såg inga. Det förklarar varför
+butiken aldrig lämnat ett spår: noll budgetloggrader, ingen `kord`-stämpel,
+ingen commit mellan 2026-09-12 och i dag.
+
+---
+
 ## Körning nr 1 — 2026-09-12 (`/notionscalercs setup carashell`)
 
 Det här är setup-körningen, inte en briefrond. Gjort: registret, Notion-hubben

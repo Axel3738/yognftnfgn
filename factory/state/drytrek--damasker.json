@@ -1,8 +1,8 @@
 {
   "butik": {
-    "domän": "i1da39-zd.myshopify.com",
-    "namn_i_shopify": "My Store 3",
-    "brand": "DryTrek"
+    "doman": "drytrek.se",
+    "namn_i_shopify": "DryTrek",
+    "myshopify": "i1da39-zd.myshopify.com"
   },
   "produkt": "damasker",
   "steg": {
@@ -55,14 +55,14 @@
     }
   },
   "datum": "2026-09-09",
-  "lage": "DELVIS KLART — butiken byggd, annonserna förberedda men inte byggda",
+  "lage": "LIVE SV+NO · SE+NO som CBO 1000 kr/dag var, aktiverade 2026-09-10 på Axels order · pixel avfyrar · recensioner inne · Discord klar",
   "kallkoppling": {
     "annonskonto": "1867947880635861",
     "kampanj_id": "120250009391470291",
     "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
     "utfall_avlast_2026_09_09": "12 198 kr spend, 58 köp, CPA 210 kr över 18 annonser. Vinnaren Damasker_PD_1: 9 638 kr, 51 köp, ROAS 2,83, CPA 189 kr — 79 % av spenden, 88 % av köpen. Näst bästa vinkel (SP) ligger på ROAS 1,42, alltså UNDER break-even 1,60."
   },
-  "uppdaterad": "2026-09-09",
+  "uppdaterad": "2026-09-10",
   "forarbete": {
     "anslutningskontroll": {
       "klar": true,
@@ -172,7 +172,7 @@
     "tid": "2026-09-09T09:35:19.674Z"
   },
   "annonsfas": {
-    "lage": "BLOCKERAD på Meta-sidan",
+    "lage": "Kampanjen byggd och tillbakaläst — PAUSED på alla tre nivåer",
     "kalla_se": {
       "kampanj": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
       "annonser": 18,
@@ -209,18 +209,101 @@
       "ren": 16,
       "okand": 2,
       "media_uppe": 16,
-      "annonser_byggda": 0,
-      "varfor": "DryTrek har ingen Meta-sida och API:t kan inte skapa en. Utan page_id går ingen creative att bygga."
-    }
+      "annonser_byggda": 16,
+      "lasta_ur_meta": 16
+    },
+    "kampanj": {
+      "id": "120249017854400172",
+      "namn": "DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "adset": "120249017855740172 (DRYTREK_SE_Test_ABO)",
+      "annonser": 16,
+      "status": "PAUSED",
+      "budget_sek_per_dag": 1000,
+      "sida": "1339381299252136",
+      "pixel": "945311424682796",
+      "lank": "https://drytrek.se/products/damasker",
+      "geo": "SE, 25-65"
+    },
+    "norge": "Byggs INTE — källans NO-kampanj (Gamasjer NO) är helt pausad, och en pausad annons är ett beslut."
   },
   "vantar_pa_manniska": [
-    "Publicera temat \"DryTrek – CRO (utkast)\" — kunden ser Horizon i dag. API-spärrat.",
-    "Sätt svenska som standardspråk — butiken står på en. API-spärrat.",
-    "Testa varukorgen i en webbläsare — molnsessionen har ingen som når ut.",
-    "Skapa Meta-sidan DryTrek i Business Manager — API:t kan inte.",
-    "Köp drytrek.se och koppla den.",
+    "Sätt kampanjen ACTIVE när granskningen är grön — fabriken startar aldrig annonser.",
+    "Testa varukorgen i en webbläsare: tom korg, 2-paket, lådan ska glida in.",
+    "Ta bort lösenordsskyddet när butiken ska ta trafik.",
     "Installera Judge.me och skicka API-token.",
-    "Sourca bonusprodukten (reflexband) så paket B kan byggas.",
-    "Lös recensionsfrågan — källan har inga."
-  ]
+    "Lös recensionsfrågan — källan har noll.",
+    "Sourca bonusprodukten (reflexband) så paket B kan byggas."
+  ],
+  "annonser": {
+    "SE": {
+      "kampanj_id": "120249020401880172",
+      "kampanj": "DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "struktur": "CBO 1000 kr/dag på kampanjen (Axels beslut 2026-09-10 — han pausade ABO-varianten själv och bad om CBO), 4 adsets PD/SP/CS/G utan egen budget, 16 annonser. Konverterad in-place med PATCH daily_budget=100000 — Meta tillät bytet ABO→CBO utan ombyggnad.",
+      "kallannonser": 18,
+      "byggda": 16,
+      "ej_byggda": [
+        "Damasker_FO_1_H1 (dom okänd: talet oläst, inget transkript)",
+        "Damasker_SP_4_H1 (dom okänd: talet oläst, inget transkript)"
+      ],
+      "notis": "Första bygget 2026-09-09 var CBO med alla 16 i ett adset (120249017854400172) — raderat samma dag med 0 kr spend, ombyggt enligt regel 11."
+    },
+    "NO": {
+      "kampanj_id": "120249020611450172",
+      "kampanj": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+      "status": "PAUSED",
+      "struktur": "CBO 1000 kr/dag på kampanjen (Axels beslut 2026-09-10 — han pausade ABO-varianten själv och bad om CBO), 4 adsets PD/SP/CS/G utan egen budget, 16 annonser. Konverterad in-place med PATCH daily_budget=100000 — Meta tillät bytet ABO→CBO utan ombyggnad.",
+      "kallannonser": 16,
+      "byggda": 16,
+      "ej_byggda": [],
+      "copy": "factory/annonscopy/damasker-no.json (bokmål, jury-workflow 30 agenter), 381/635 NOK",
+      "creatives": "Bäverbutikens egna Gamasjer_NO_* — redan dubbade, ingen HeyGen",
+      "lank": "https://drytrek.se/nb/products/damasker?country=NO (bytt 2026-09-10 på alla 16 — utan country gav /nb svenska priser och SEK-kassa; annonserna ligger i Metas omgranskning efter creative-bytet, kampanjen ACTIVE)"
+    }
+  },
+  "norge": {
+    "marknad": "aktiv, locale nb publicerad, NOK som basvaluta satt via marketUpdate (inget admin-klick)",
+    "pris_nok": {
+      "styck": 381,
+      "jamfor": 635,
+      "kalla": "läst ur /nb/products/damasker?country=NO, Shopifys egen omräkning — flyter med kursen"
+    },
+    "paketnivaer": "rabatt_procent 15/20 + procentkoder DAMASKER2PACK/DAMASKER3PACK → 647,70 / 914,40 NOK, verifierat i kundvyn",
+    "oversattning": "74 nb-rader registrerade 2026-09-09 (produkt, varianter, meny, sidor, policyer, metafält, fraktmetoder, tema-JSON, sektionsgrupper) + 2 prisrättningar i index-mallen",
+    "bilder": "klart-matt/spanne/karborre-benskydd-no.jpg i Filer, startsidans galleri + opf.media_losning pekar på dem (nb), produktgalleriet [SV]/[NO]-märkt med filter i ms-head",
+    "sprakkoll": "grön 2026-09-09 på 9 sidor (node factory/sprakkoll.mjs drytrek damasker)",
+    "kallcreatives": "Bäverbutikens egna Gamasjer_NO_* (Magiborsten NO 1050941584152547), 16/16 rena i brand-detektor-no, 16/16 media uppe i MagiBorsten DK"
+  },
+  "recensioner": {
+    "datum": "2026-09-09",
+    "kalla": "beverbutikken.no (Bäverbutikens norska tvilling): 10 recensioner à 4,4 på samma produkt. baverbutiken.se hade 0.",
+    "importerat": "16 via tools/judgeme-import.mjs: 10 svenska (översatta av sonnet-agent, svenska namn) + 6 norska original. API count 16.",
+    "datumnotis": "Judge.me v1-API skriver inte created_at — alla står som 2026-09-09. Källdatumen var 2026-08-30. CSV ligger i sessionens scratchpad om appimport önskas.",
+    "widget": "appblock review_widget + preview_badge i product.json, judgeme_core i settings_data.",
+    "klick_kvar": "gjorda av Axel 2026-09-09: Language Svenska, star color #00B77F (verifierat i storefront-CSS: .jdgm-star.jdgm-star{color:#00B77F})."
+  },
+  "pixel": {
+    "id": "945311424682796",
+    "agare": "MagiBorsten (business), delad till MagiBorsten DK",
+    "pa_sajten": "WeTracked kopplad av Axel 2026-09-09 (events.js laddas på sajten). last_fired_time ännu tom vid kontroll — verifieras när första besökaren kommit.",
+    "klick_kvar": "WeTracked → klistra in 945311424682796."
+  },
+  "discord": {
+    "status": "klar 2026-09-09",
+    "guild": "1547345265671934083",
+    "namn": "DryTrek — OPS",
+    "invite": "https://discord.gg/gP47F2vfCB",
+    "kanaler": 6,
+    "notis": "Serverikon gick inte (403, boten saknar Manage Server) — bjud in boten med permissions=268438577 nästa gång så följer ikonen med. Ingen redigerare i standby-listan."
+  },
+  "marknad_norge": {
+    "webPresence": "kopplad till marknaden Norge 2026-09-10 (drytrek.se + myshopify) via marketUpdate.webPresencesToAdd — NOK på norsk IP, SEK förblir default för övriga (verifierat)",
+    "token": "client_credentials-token förnyad 2026-09-10 (24 h livslängd)"
+  },
+  "paket": {
+    "datum": "2026-09-10",
+    "nivaer": "1 / 2 / 4 par (Axels beslut 2026-09-10 — 4-pack i stället för 3). 389 / 661,30 / 1 244,80 SEK · 381 / 647,70 / 1 219,20 NOK. Koder: DAMASKER2PACK 15 % min 2, DAMASKER4PACK 20 % min 4, DAMASKER3PACK avaktiverad, metaobjekt damasker-a3 raderat.",
+    "variantval": "Rullgardin per enhet i paketet (1/2/4 rutor) med variantbild per färg, temats pill-väljare gömd. Filer: snippets/ms-paket.liquid, assets/ms-paket.js, assets/ms-paket.css (även i factory/tema/ops-tema.zip). Verifierat i kundvyn SE+NO: rutor 1/2/4, 18 alternativ med bild, rätt priser.",
+    "incident": "paket.mjs luddiga kodsökning skrev över DAMASKER2PACK till 20 %/min 4 i några minuter 2026-09-10 — återställd, spärr på exakt kod tillagd.",
+    "kvar": "Klicktest av rullgardin + varukorg i webbläsare (går inte från molnet)."
+  }
 }

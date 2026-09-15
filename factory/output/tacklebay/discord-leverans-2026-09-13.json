@@ -1,0 +1,16 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay/fiskespohallare-4-pack",
+  "datum": "2026-09-13",
+  "lage": "leverans",
+  "gjort": [
+    "TackleBayRod_PD_46_H1 (video, 9:16) — live in TACKLEBAY_SE_Spohallaren, adset PD, ad 120249075781570172, ACTIVE/ACTIVE",
+    "Notion row moved to SE-ACTIVE to be translated — the Norway run picks it up at 16:00"
+  ],
+  "varningar": [
+    "PD_46_H1 caption typos, uploaded anyway (video, price is the only blocker): \"Angeratt.\" should be \"Angerratt.\" and \"att reppa\" should be \"att repa\"",
+    "PD_46_H1 runs 5.0 s, the brief asked for 8 s, and the briefed \"289 kr\" end card is missing",
+    "Two files were delivered (9:16 and 4:5). The 9:16 went live; the 4:5 stays in the Drive folder"
+  ],
+  "nasta_korning": "2026-09-14"
+}

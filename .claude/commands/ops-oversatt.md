@@ -50,8 +50,22 @@ gitignorerat där, JSON-filerna committas.
 ```
 node tools/ops-leveranskon.mjs <nyckel> --marknad NO --status "SE-ACTIVE to be translated" --json --ut <batch>/se > <batch>/jobb.json
 ```
-Kräver exakt en ACTIVE NO-kampanj. Saknas den: rapportera "no NO campaign
-— run /ny-annonser <butik>" under ACTION NEEDED, rör inget, avsluta med DoD.
+Kräver exakt en ACTIVE NO-kampanj. Tre olika lägen, och de får **inte**
+rapporteras likadant (rättat 2026-09-13 efter att HeimGuard fick fel råd):
+
+| Läge | Rapportera | Rör |
+|---|---|---|
+| Ingen NO-kampanj finns i kontot | `no NO campaign — run /ny-annonser <butik>` | inget |
+| Kampanjen finns men är **PAUSED med spend** | `NO paused by owner since <tid>, N rows held` + vad pausen kostar/ger | inget |
+| Flera ACTIVE NO-kampanjer | lista namnen, be om besked | inget |
+
+⚠️ **Föreslå ALDRIG `/ny-annonser` för en kampanj ägaren själv har pausat.**
+PAUSED med spend är hans beslut; `/ny-annonser` skulle bygga en andra
+NO-kampanj bredvid den pausade och dubbla spenden. Kön **hålls** i det läget:
+ingen rad flyttas, ingen status ändras i Notion, inget renderas i HeyGen.
+Raderna ligger kvar tills kampanjen är ACTIVE igen — se
+`factory/PROCESS.md`, "Marknaden är pausad av ägaren".
+
 Raden bär `mal_namn` (`HeimGuard_SP_2_1` → `HeimGuard_NO_SP_2_1`), typ,
 fil (`--ut` hämtade den ur Notion) och `finns_i_meta` (redan uppe i NO ⇒
 bara statusflytt).

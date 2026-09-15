@@ -206,14 +206,52 @@ export async function ärvSidaOchIg(kampanjId) {
 /** Adsetet med EXAKT namnet, annars en klon av ett syskon. Syskonet väljs
  *  aktivt före pausat, nyast först. Klonen får inte egen budget (CBO) och
  *  föds PAUSED. Returnerar { adset, skapad }. */
-export async function hittaEllerSkapaAdset({ kampanjId, act, namn, torr = false }) {
+/**
+ * Ren: adsetet för ett koncept bland kampanjens adsets. Exakt namn först;
+ * annars ett adset vars namn SLUTAR på konceptet efter " - " eller "_".
+ * DryTreks kampanj är byggd som DRYTREK_SE_PD (factory/kampanj.mjs), HeimGuards
+ * som "<bas> - PD" — samma koncept, två konventioner (mätt 2026-09-13). Utan
+ * den här matchningen hade varje leverans skapat ett ANDRA PD-adset bredvid
+ * det som redan spenderar. ACTIVE före PAUSED, nyast först. Ingen träff → null.
+ */
+export function valjAdsetForKoncept(adsets, namn, koncept = null) {
+  const lika = (a, b) => String(a ?? '').trim().toLowerCase() === String(b ?? '').trim().toLowerCase();
+  const exakt = (adsets ?? []).find((a) => namn && lika(a.name, namn));
+  if (exakt) return exakt;
+  if (!koncept) return null;
+  const k = String(koncept).toUpperCase().replace(/[^A-Z]/g, '');
+  if (!k) return null;
+  const re = new RegExp(`(?:\\s-\\s|_)${k}$`, 'i');
+  const träffar = (adsets ?? []).filter((a) => re.test(String(a.name ?? '').trim()));
+  träffar.sort((a, b) => (b.status === 'ACTIVE') - (a.status === 'ACTIVE') || String(b.created_time || '').localeCompare(String(a.created_time || '')));
+  return träffar[0] ?? null;
+}
+
+/**
+ * Ren: namnet på ett NYTT adset följer kampanjens egen konvention. Är alla
+ * befintliga adsets döpta `<stam>_<KOD>` med samma stam (DRYTREK_SE_PD,
+ * DRYTREK_SE_SP …) blir det `<stam>_<KONCEPT>`; annars standardnamnet.
+ */
+export function nyttAdsetnamn(adsets, standardnamn, koncept = null) {
+  if (!koncept || !adsets?.length) return standardnamn;
+  const stammar = new Set();
+  for (const a of adsets) {
+    const m = /^(.+)_([A-Z]{1,4})$/.exec(String(a.name ?? '').trim());
+    if (!m) return standardnamn;
+    stammar.add(m[1]);
+  }
+  return stammar.size === 1 ? `${[...stammar][0]}_${String(koncept).toUpperCase()}` : standardnamn;
+}
+
+export async function hittaEllerSkapaAdset({ kampanjId, act, namn, koncept = null, torr = false }) {
   const adsets = await alla(`${kampanjId}/adsets`, {
     fields: 'name,status,created_time,optimization_goal,billing_event,targeting,promoted_object,attribution_spec,destination_type,daily_budget,bid_strategy',
   }, 50);
   if (!adsets.length) throw new Error(`Kampanj ${kampanjId} har inga adsets att härma.`);
 
-  const träff = adsets.find(a => a.name.trim().toLowerCase() === namn.trim().toLowerCase());
+  const träff = valjAdsetForKoncept(adsets, namn, koncept);
   if (träff) return { adset: träff, skapad: false };
+  namn = nyttAdsetnamn(adsets, namn, koncept);
 
   const ordnade = [...adsets].sort((a, b) =>
     (b.status === 'ACTIVE') - (a.status === 'ACTIVE') ||

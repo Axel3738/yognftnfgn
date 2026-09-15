@@ -130,7 +130,7 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-15",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
@@ -141,6 +141,14 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 23
+        },
+        {
+          "date": "2026-09-14",
+          "count": 3
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -156,7 +164,7 @@
         "url": ""
       },
       "kordag_offset": 1,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-15",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-11",
       "launches": [
@@ -167,6 +175,14 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 4
+        },
+        {
+          "date": "2026-09-14",
+          "count": 7
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -199,7 +215,7 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-15",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
@@ -210,6 +226,10 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 1
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -258,24 +278,39 @@
       "senaste_brief": "2026-09-13",
       "redigerare_discord_id": "740814777374343259",
       "cycle_start": "2026-09-12",
-      "senaste_korning": "2026-09-13",
-      "redigerare": "Jazz (jazzer1522)"
+      "senaste_korning": "2026-09-15",
+      "redigerare": "Jazz (jazzer1522)",
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Butiken PAUSED av Axel 13/9 — ingen annons kan få data, 36 briefer ligger redan som Draft. Nya briefer vore spam (Axels princip från CatCabin 14/9). Släpps när Axel svarat A/B/C och kampanjen är igång igen.",
+        "satt": "2026-09-15"
+      }
     },
     "carashell/takskyddet": {
       "lage": "skala",
       "redigerare": null,
       "redigerare_discord_id": null,
       "notion": {
-        "name": "CaraShell creative hub",
-        "database_id": "3d9270ab-908c-819d-be0f-c6cb71320871",
+        "name": "Carashell creative hub",
+        "database_id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
         "foralder_page_id": "",
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "",
-      "senaste_brief": "",
-      "cycle_start": "",
-      "launches": [],
+      "senaste_korning": "2026-09-15",
+      "senaste_brief": "2026-09-14",
+      "cycle_start": "2026-09-14",
+      "launches": [
+        {
+          "date": "2026-09-14",
+          "count": 7
+        },
+        {
+          "date": "2026-09-14",
+          "count": 4
+        }
+      ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
     },
     "catcabin/utekattkojan": {
@@ -283,22 +318,22 @@
       "redigerare": null,
       "redigerare_discord_id": null,
       "notion": {
-        "name": "CatCabin creative hub",
-        "database_id": "3d9270ab-908c-8145-8538-d55aaaf4a7e2",
+        "name": "catcabin creative hub",
+        "database_id": "3da270ab-908c-80f6-9663-caff35a3c895",
         "foralder_page_id": "",
         "url": ""
       },
       "kordag_offset": 1,
-      "senaste_korning": "",
+      "senaste_korning": "2026-09-15",
       "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen.",
       "briefantal_override": {
-        "antal": 21,
-        "engang": true,
-        "motivering": "Axels beslut 2026-09-12: redigerare obestämd men första briefronden ska ändå ge 21 briefer — han fixar redigerare asap",
-        "satt": "2026-09-12"
+        "antal": 0,
+        "engang": false,
+        "motivering": "Axels beslut 2026-09-14: kampanjen har 1 köp på 13 annonser och ROAS 0,30 — ingen bedömbar data, alltså ingen feedback-loop att brieffa ur. Låt den samla data i stället för att spamma nya ads. Budgetronden går varje natt och skyddar budgeten. Släpps med briefantal auto när 3 köp finns.",
+        "satt": "2026-09-14"
       }
     }
   },

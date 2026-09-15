@@ -1,0 +1,21 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-13",
+  "lage": "oversatt",
+  "gjort": [
+    "Queue read: 1 row in SE-ACTIVE to be translated (AdventLaneRacing_FM_1_H1, skipped yesterday on the voice check)",
+    "No upload: the NO campaign ADVENTLANERACING_NO_Racingkalendern is PAUSED with 3157 kr spend - Axel paused it 11:05 today (Meta activity log). A paused campaign with spend is a decision, the routine never uploads into it",
+    "Nothing translated, nothing rendered, 0 HeyGen credits used, no Notion status changed, campaign untouched"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "AdventLaneRacing_FM_1_H1 stays in the translation queue. Even with an active NO campaign it would need a new source with more room after the last line (voice check red twice on 2026-09-12)",
+    "The 6 Norwegian ads that went live yesterday spent 1-48 kr each before the pause - untested, not judged",
+    "If Norway is switched back on, this run picks the queue up automatically at 15:55 the same day"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-14"
+}

@@ -9,4 +9,3 @@ QA kördes inte (dry-run).
 - [ ] damasker: media.gif_problem saknas (kritisk media — krävs före launch)
 - [ ] damasker: media.media_losning saknas (kritisk media — krävs före launch)
 - [ ] damasker: reviews: färre än 3 recensioner (importeras till Judge.me)
-- [ ] damasker: meta.page_id är inte satt (krävs före launch)

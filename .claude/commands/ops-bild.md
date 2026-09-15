@@ -32,9 +32,12 @@ i chatten.
 1. **Rätt konto och rätt hub.** Butiken slås upp i `factory/produkter/register.json`;
    `factory/ops-bild.mjs` vägrar allt som inte är OPS-kontot `915422744950975`.
 2. **Bara bild.** Typ `Image - Pending Approval`, alltid. Videorader rörs aldrig.
-3. **Statusen flyttas aldrig före bilden sitter i Notion OCH är granskad.**
-   Motorn lämnar raden i Draft; `--godkann` körs först efter att du tittat.
-   En dålig bild i `To be Reviewed` går live 13:40 — det är dyrare än en tom rad.
+3. **Statusen flyttas aldrig före bilden sitter i Notion OCH är granskad —
+   av sessionen, aldrig av Axel** (Axels beslut 2026-09-13: "jag ska aldrig
+   behöva gå in och verifiera bilderna, AI:n granskar och laddar upp; det
+   behöver inte vara så noggrant"). Motorn lämnar raden i Draft; `--godkann`
+   körs efter att DU tittat, i samma körning. En bild blir aldrig en uppgift
+   åt Axel och aldrig `ACTION NEEDED`.
 4. **Priset ur butiken, aldrig ur minnet** — `factory/produkter/<id>.yaml`
    `pris`, kontrollerat mot produktsidan. Inget pris PÅ bilden om idén inte
    uttryckligen säger det (bildmodeller stavar fel).
@@ -115,15 +118,17 @@ ber om det). Plan + utfall: `factory/output/<butik>/bild-$IDAG.json`
 (committas); bilderna i `factory/output/<butik>/bild-$IDAG/` (gitignorerat —
 bilagan i Notion är enda kopian).
 
-### 6. Titta — varje bild, med Read-verktyget
-- [ ] Produkten ser ut som produkten på produktsidan (form, fästen, färg = radens variant)
-- [ ] Bakgrund/motiv som idén säger; inga människor, inga ansikten, inga påhittade loggor
-- [ ] Ingen text om briefen inte kräver det; kräver den: exakt rad, å/ä/ö, inget dubblerat
-- [ ] Inget pris, ingen rabatt, ingen falsk lagerbrist
-Underkänd: skärp prompten i repots brief.md och generera om **en** gång
-(`--igen --bara <namn>` — den gamla filen byts ut i raden). Underkänd igen:
-`--underkann <namn> --skal "…"`, raden stannar i Draft med kommentaren och
-står under ACTION NEEDED.
+### 6. Titta — varje bild, med Read-verktyget (sessionen dömer, aldrig Axel)
+Lätt kontroll, tre frågor — inte en pixelgranskning (Axels beslut 2026-09-13):
+- [ ] Är det produkten, i radens variant/färg, utan påhittade loggor?
+- [ ] Inga människor eller ansikten; ingen text som inte står i briefen; inget pris, ingen rabatt, ingen falsk lagerbrist
+- [ ] Ser den ut som en annons och inte som ett fel (trasig rendering, tomt motiv, dubblerad produkt)?
+Tre ja = godkänd, direkt till steg 7. Underkänd: skärp prompten i repots
+brief.md och generera om **en** gång (`--igen --bara <namn>` — den gamla
+filen byts ut i raden). Underkänd igen: `--underkann <namn> --skal "…"`,
+raden stannar i Draft med kommentaren och står under **varningar** i
+rapporten — nästa `/ops-bild <nyckel>` (eller nattvakten) försöker igen.
+**Aldrig ACTION NEEDED för en bild** — ett bildbeslut kräver ingen ägare.
 
 ### 7. Godkänn
 ```
@@ -156,7 +161,7 @@ bild är billigt och snabbt), och steg 7 där kör `node factory/ops-bild.mjs`.
 - [ ] En brief per rad med IMAGE PROMPT-block sist; copy via subagent med tre-frågorstestet redovisat; pris ur produktfilen
 - [ ] Rader skapade i hubben (Draft, `Image - Pending Approval`) — resultat med url visat
 - [ ] `--torr` läst före skarp körning; varje bild uppladdad i `Filer och media`
-- [ ] Varje bild TITTAD på mot checklistan i steg 6; underkända redovisade med skäl
+- [ ] Varje bild TITTAD på mot den lätta checklistan i steg 6 — sessionen dömer; underkända redovisade med skäl under varningar, aldrig som Axels uppgift
 - [ ] Bara godkända rader flyttade till `To be Reviewed` via `--godkann`
 - [ ] Discord-rapport på engelska i `#ads-to-do`; ping bara under ACTION NEEDED
 - [ ] batch-log + backlog uppdaterade, `bild-$IDAG.json` committad, pushat

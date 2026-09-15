@@ -10,7 +10,17 @@
 //   yta 3  inbränd text + slutkort (frames)               arbetstid
 //   yta 4  attribution i bildannons ("baverbutiken.se")   gratis, oversatt-bild.py
 //
-//   node factory/brand-detektor.mjs --produkt <id> [--hamta] [--tathet 0.5] [--torr]
+//   node factory/brand-detektor.mjs --produkt <id> [--marknad SE|NO]
+//                                   [--hamta] [--tathet 0.5] [--torr]
+//
+//   --marknad NO  skannar den NORSKA källkampanjen i stället för den svenska.
+//             Bäverbutiken har egna norska creatives (Gamasjer_NO_…) i ett
+//             ANNAT konto — de är redan dubbade och har norsk inbränd text,
+//             så de ska brand-swappas rakt av i stället för att dubbas om.
+//             Rapporten och OCR:en skrivs då som brand-detektor-no.json /
+//             brand-ocr-no.json: de två marknaderna får aldrig skriva över
+//             varandras domar, för en ren svensk annons säger ingenting om
+//             sin norska tvilling.
 //
 //   --hamta   ladda ner media (video + bild), dra frames och OCR:a dem.
 //             Utan flaggan återanvänds den sparade OCR:en i
@@ -654,16 +664,17 @@ export function attGöra(ytor) {
   return ut;
 }
 
-function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, datum, syn, tathet }) {
+function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, datum, syn, tathet, marknad = 'SE' }) {
   const antal = (d) => rader.filter((r) => r.dom === d).length;
   const brand = produkt?.brand?.namn || produktId;
   const rad = [];
-  rad.push(`# Brand-detektor — ${brand} (${produktId})`);
+  rad.push(`# Brand-detektor — ${brand} (${produktId}) · marknad ${marknad}`);
   rad.push('');
   rad.push(`Körd ${datum} av \`factory/brand-detektor.mjs\` (Uppdrag A i \`factory/FAS2.md\`).`);
   rad.push('Läser bara. Inga krediter, ingen HeyGen, ingen kie.ai, inget skrivet i något annonskonto.');
   rad.push('');
-  rad.push(`**Källa:** ${kalla.produkt_url || kalla.produkt_handle} · annonsprefix \`${kalla.annonsprefix}_\` · konto \`${kalla.annonskonto}\` (MagiBorsten, Bäverbutiken SE).`);
+  const kallnamn = marknad === 'NO' ? 'Magiborsten NO, Bäverbutiken NO' : 'MagiBorsten, Bäverbutiken SE';
+  rad.push(`**Källa:** ${kalla.produkt_url || kalla.produkt_handle} · annonsprefix \`${kalla.annonsprefix}_\` · konto \`${kalla.annonskonto}\` (${kallnamn}).`);
   rad.push(`**Mål:** konto \`${produkt?.meta?.ad_account_id || '—'}\` (MagiBorsten DK, OPS Factory). Kontrollerat på id, aldrig på namn.`);
   rad.push('');
   rad.push(`## Läget: ${rader.length} källannonser`);
@@ -756,7 +767,20 @@ function byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, d
 async function main() {
   const produktId = flagga('produkt');
   if (!produktId) dö('Ange --produkt <id>, t.ex. --produkt tankguard.');
-  const { produkt, kalla, butik } = läsKälla(produktId);
+  const { produkt, kalla: kallaSE, butik } = läsKälla(produktId);
+
+  // Marknaden byter KONTO och PREFIX, inget annat. Konto kontrolleras på id.
+  // Butiken (villkorsjämförelsen, sjätte ytan) är densamma oavsett marknad.
+  const marknad = String(flagga('marknad', 'SE')).toUpperCase();
+  if (marknad !== 'SE' && marknad !== 'NO') dö(`--marknad ${marknad} finns inte. Välj SE eller NO.`);
+  if (marknad === 'NO' && !kallaSE.no_annonskonto) {
+    dö(`${produktId}.yaml saknar kalla.no_annonskonto — utan den vet ingen körning var de norska källannonserna ligger.`);
+  }
+  const kalla = marknad === 'NO'
+    ? { ...kallaSE, annonskonto: String(kallaSE.no_annonskonto), annonsprefix: kallaSE.no_annonsprefix || kallaSE.annonsprefix }
+    : kallaSE;
+  const suffix = marknad === 'NO' ? '-no' : '';
+
   const extraOrd = kalla.extra_brandord || [];
   if (!butik) {
     console.log('  ⚠️ ingen butikskonfig hittad — villkorsjämförelsen (sjätte ytan) körs INTE.');
@@ -769,9 +793,9 @@ async function main() {
     console.log('     har inget att jämföra mot och kan bara tiga. Fyll i dem i butiksfilen.');
   }
   const utMapp = join(ROT, 'factory', 'output', produktId);
-  const ocrFil = join(utMapp, 'brand-ocr.json');
+  const ocrFil = join(utMapp, `brand-ocr${suffix}.json`);
 
-  console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId}`);
+  console.log(`Brand-detektor — ${produkt?.brand?.namn || produktId} · marknad ${marknad}`);
   console.log(`  källkonto ${kalla.annonskonto} · prefix ${kalla.annonsprefix}_`);
 
   const annonser = (await alla(`act_${kalla.annonskonto}/ads`, {
@@ -785,7 +809,7 @@ async function main() {
 
   let tathet = Number(flagga('tathet', TATHET_SEK));
   let ocr = {};
-  let ocrKälla = `factory/output/${produktId}/brand-ocr.json`;
+  let ocrKälla = `factory/output/${produktId}/brand-ocr${suffix}.json`;
   if (finns('hamta')) {
     console.log(`  hämtar media, drar frames var ${tathet} s och OCR:ar (0 krediter):`);
     ocr = await hämtaOchLäs(annonser, kalla, tathet);
@@ -852,12 +876,12 @@ async function main() {
 
   const kampanjer = [...rader.reduce((m, r) => m.set(r.kampanj, (m.get(r.kampanj) || 0) + 1), new Map())];
   const datum = new Date().toISOString().slice(0, 10);
-  const md = byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, datum, syn, tathet });
+  const md = byggRapport({ produktId, produkt, kalla, rader, kampanjer, ocrKälla, datum, syn, tathet, marknad });
 
   if (finns('torr')) { console.log('\n' + md); return; }
   mkdirSync(utMapp, { recursive: true });
-  writeFileSync(join(utMapp, 'brand-detektor.md'), md);
-  writeFileSync(join(utMapp, 'brand-detektor.json'), JSON.stringify({ produkt: produktId, datum, kalla, annonser: rader }, null, 1));
+  writeFileSync(join(utMapp, `brand-detektor${suffix}.md`), md);
+  writeFileSync(join(utMapp, `brand-detektor${suffix}.json`), JSON.stringify({ produkt: produktId, marknad, datum, kalla, annonser: rader }, null, 1));
   if (finns('hamta')) {
     // Bara texten sparas, aldrig filerna: media är artefakter som dör med
     // containern, OCR-fynden är facit som måste gå att läsa om utan nedladdning.
@@ -867,7 +891,7 @@ async function main() {
     }]));
     writeFileSync(ocrFil, JSON.stringify({ produkt: produktId, datum, tathet, annonser: lätt }, null, 1));
   }
-  console.log(`\n✓ factory/output/${produktId}/brand-detektor.md`);
+  console.log(`\n✓ factory/output/${produktId}/brand-detektor${suffix}.md`);
   for (const d of Object.values(DOMAR)) {
     const n = rader.filter((r) => r.dom === d).length;
     if (n) console.log(`   ${d}: ${n}`);

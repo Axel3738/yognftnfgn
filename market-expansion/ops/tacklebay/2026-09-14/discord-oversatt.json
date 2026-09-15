@@ -1,0 +1,19 @@
+{
+  "brand": "TackleBay",
+  "butik": "tacklebay",
+  "datum": "2026-09-14",
+  "lage": "oversatt",
+  "gjort": [
+    "Translation queue read: 0 rows in SE-ACTIVE to be translated (hub Fish rod holder, checked across all types with a filtered query)",
+    "NO campaign found and ACTIVE: TACKLEBAY_NO_Spöhållaren (5 adsets). Yesterday's TackleBayRod_NO_PD_46_H1 is now fully ACTIVE (video processing done)",
+    "Nothing translated, nothing uploaded, campaign untouched. HeyGen credits: 8166 before, 8166 after"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "The queue is empty because today's 14:00 delivery run stopped both new videos (PD_45_H1, PD_42_H1) on the price rule and sent them back to Draft for Eric J - nothing reached SE, so nothing reaches NO. They come here the afternoon they pass the delivery run"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-15"
+}

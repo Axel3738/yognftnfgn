@@ -1,0 +1,21 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-14",
+  "lage": "budget",
+  "gjort": [
+    "Budget round: both campaigns are PAUSED by Axel since Sept 13, 11:05 — a decision, nothing touched, nothing activated",
+    "No brief day (Monday). Next brief day is Wednesday Sept 16 — the night watch will order 21 more briefs then unless told otherwise",
+    "Lifetime SE: 2 799 SEK, 5 purchases, CPA 560 SEK (break-even 323). No single ad ever passed the ad gate — the 7 videos that went live Sept 12 are untested, not failed"
+  ],
+  "siffror": { "spend_7d": 2834, "kop_7d": 5, "roas_7d": 1.18, "vinstbidrag_7d": -1185 },
+  "briefer": [],
+  "varningar": [
+    "36 briefs sit as Draft in the hub for a store that is not advertising (batch #2 leftovers + batch #3). Jazz may be producing creatives nobody will run"
+  ],
+  "action_axel": [
+    "Answer the open question from Sept 13 so the routines stop guessing. Reply with one letter: A = pause the night watch for AdventLane and move Jazz to a running store · B = let Jazz finish the 36 briefs so the material is ready if you restart before December · C = close the product — then I remove the three routines (00:25 / 13:55 / 15:55)"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-15"
+}

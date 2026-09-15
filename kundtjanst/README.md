@@ -16,10 +16,20 @@ Och sist i varje rapport: en numrerad lista till VA:n (engelska) och en till
 Axel (svenska) — SOP:er som saknas i Notion, rotorsaker att ta tag i, nycklar
 som fattas.
 
+Vid sidan av veckorapporten går **tvistkollen** varje dag: `tvistkoll.mjs` läser
+bara Shopify-tvisterna och larmar om någon har evidence-deadline inom tre dagar.
+Den finns för att veckorapporten går måndag 07:00 — en tvist som kommer in på
+tisdag med deadline på torsdag hinner annars gå ut, och **en obesvarad tvist
+förloras automatiskt** (Axels beslut 2026-09-13). Den läser inga mejl, tar
+sekunder och skriver ingenting i repot. Håll den så: bygger man in ärenden och
+ranking i den blir den långsam och slutar köras.
+
 ```bash
 node kundtjanst/run.mjs --kolla                       # vad går att läsa här?
 node kundtjanst/run.mjs --brand tacklebay --torr      # provkör ett brand, skriv inget
 node kundtjanst/run.mjs --alla --discord              # rutinen
+node kundtjanst/tvistkoll.mjs --torr                  # dagliga tvistkollen, posta inget
+node kundtjanst/tvistkoll.mjs --alla --discord        # dagliga rutinen
 node kundtjanst/setup.mjs                             # nycklar som saknas + rutinens cron
 node kundtjanst/setup.mjs --nytt-konto                # receptet för ett annat Claude-konto
 node kundtjanst/setup.mjs --mappar tacklebay          # brevlådans mappnamn (Skickat?)
@@ -36,22 +46,43 @@ kundtjanst/brands/*.yaml ┴─ brands.mjs ─ run.mjs ┼─ shopify.mjs       
                                                  ├─ llm.mjs              (valfri: "övrigt" + en mening per toppärende)
                                                  ├─ chargeback.mjs       (signaler med tak → 0–100, ranking, återkommande)
                                                  ├─ notion.mjs           (SOP-täckning, rapportsida — valfritt)
+                                                 ├─ atgardsplan.mjs      (tal → VAD VA:N SKA GÖRA, engelska)
+                                                 ├─ dashboard.mjs        (körningen som maskinläsbar data, maskerad)
                                                  └─ rapport.mjs          (svenska till Axel, engelska till VA:n/Discord)
                                                         │
                         kundtjanst/korningar/<brand>/<vecka>.md  + .en.md
+                        kundtjanst/korningar/<brand>/<vecka>.json  ← hemsidan bygger på den
                         kundtjanst/korningar/_ranking/<vecka>.md
                         kundtjanst/historik/<brand>.jsonl   ← det som gör "återkommande" mätbart
+                                                        │
+                        rapportsida.mjs → rapport-publicerad.html → Artifact (samma url)
+
+shopify.mjs ─ tvistkoll.mjs   (DAGLIGEN, eget spår: bara tvister → Discord, inga filer)
 ```
 
-**Hemsidan** (Axels beslut 2026-09-12: "en hemsida som lagrar all data"):
-`rapportsida.mjs` bakar alla rapporter i `korningar/` och alla tal i
-`historik/` till `rapport-publicerad.html` — en självbärande sida (mall:
-`rapport-sida.html`) med ett kort per brand, riskkurvan vecka för vecka,
-rankingen och varje veckas rapport på svenska (Axel) och engelska (VA:n).
-Rutinen publicerar om den varje måndag mot **samma länk** (står i
-`rapportsida.json`; utan `url` blir det en ny sida). Sidan räknar aldrig om
-något och har ingen runtime-capability, så länken funkar utan Claude-konto.
-Bygg: `node kundtjanst/rapportsida.mjs`.
+**Hemsidan** (Axels beslut 2026-09-12: "en hemsida som lagrar all data";
+byggd om 2026-09-13 till ett arbetsverktyg): `rapportsida.mjs` bakar
+`korningar/<brand>/<vecka>.json` och `historik/` till
+`rapport-publicerad.html` — en självbärande sida (mall: `rapport-sida.html`)
+som VA:n jobbar ur uppifrån och ner:
+
+1. **Läget** — risk 0–100, ärenden, obesvarade över gränsen, median svarstid,
+   chargebacks + tvistgrad, pengar i öppna tvister. Allt med skillnaden mot
+   förra veckan.
+2. **Vad som ska göras** — åtgärdsplanen i tre hinkar, varje åtgärd med steg,
+   ansvarig och de mätta talen den bygger på.
+3. **Arbetskön** — varje obesvarat ärende: kategori, maskerad kund, ordernummer,
+   hur länge det väntat, ämne. Filter: alla / obesvarade / chargeback-nära.
+4. **Tvisterna** — typ, orsak, belopp och `evidence due`-datum, öppna först.
+5. **Kategorierna** — volym, andel, SOP-status ur VA:ns Notion, återkommande.
+6. **Kurvan** och **vad som lästes** (mejl in → ärenden, och vad som filtrerades
+   bort) — svaret på "har du verkligen läst alla mejl?".
+
+⚠️ **Texten är engelsk — VA:n är den som arbetar i den.** Etiketterna går att
+växla till svenska med EN/SV-knappen (Axel). Rutinen publicerar om sidan varje
+måndag mot **samma länk** (står i `rapportsida.json`; utan `url` blir det en ny
+sida). Sidan räknar aldrig om något och har ingen runtime-capability, så länken
+funkar utan Claude-konto. Bygg: `node kundtjanst/rapportsida.mjs`.
 
 **Brands upptäcks, listas inte.** Varje `factory/butiker/<id>.yaml` är ett brand
 (namn, supportmail, myshopify-domän kommer därifrån). Butiker som fabriken inte
@@ -75,6 +106,11 @@ härleds ur brand-id:t (`tacklebay` → `TACKLEBAY`, `my-shop` → `MY_SHOP`):
 | `ANTHROPIC_NYCKEL` | modellen för "övrigt" och sammanfattningarna | nej |
 
 `node kundtjanst/setup.mjs` skriver ut exakt vilka som saknas, per brand.
+
+Heter Shopify-nycklarna något annat än `<ID>` — Bäverbutiken har en egen app bara
+för kundtjänsten, `SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER` (Axels namn
+2026-09-13) — sätt `shopify.env_suffix` i brandfilen. Bara Shopify-namnen byter
+svans; mejlens `KUNDTJANST_MAIL_PASS_<ID>` heter alltid som brandet.
 
 ## Köra på ett annat Claude-konto (samma repo, andra brands)
 
@@ -112,11 +148,19 @@ brandets egen domän eller Skickat-mappen. Obesvarat = sista inkommande utan
 senare svar; larm över `obesvarad_timmar` (48). Autosvar, nyhetsbrev och
 systemmejl (Shopify, Klarna, PostNord …) räknas aldrig.
 
+⚠️ **Perioden är `arenden_dagar` = 30 dagar, inte 7.** Fram till 2026-09-13 lästes
+bara 7 dagar, och då föll varje obesvarat ärende äldre än en vecka ur rapporten —
+precis de som hunnit bli farligast. Mätt samma dag på Bäverbutiken: 7 dagar gav
+45 ärenden / 37 obesvarade, 120 dagar gav **321 / 205**. 30 dagar matchar
+ordrarnas fönster så tvistgraden räknas på samma period. Sänk aldrig tillbaka
+fönstret för att rapporten ska se lugnare ut.
+
 **Risk** (`chargeback.mjs`), signaler med tak så ingen ensam färgar brandet:
 
 | Signal | Poäng | Tak |
 |---|---|---|
-| Tvister i perioden (Shopify Payments) | 15/st + 15 vid gul tvistgrad, +30 vid röd | 40 (+30) |
+| Chargebacks (Shopify Payments, samma fönster som ordrarna: 30 dagar) | 15/st + 15 vid gul tvistgrad, +30 vid röd | 40 (+30) |
+| Bankförfrågningar (inquiries, 30 dagar) — förvarningen, obesvarade blir chargebacks | 5/st | 15 |
 | Kunder som hotar med bank/tvist | 12/st | 36 |
 | Okänd/dubbel debitering | 10/st | 30 |
 | Aldrig levererad | 8/st | 24 |
@@ -127,9 +171,18 @@ systemmejl (Shopify, Klarna, PostNord …) räknas aldrig.
 | Obesvarade återbetalnings-/avbeställningskrav | 3/st | 12 |
 | Median första svarstid | +10 över 24 h, +20 över 48 h | 20 |
 
-Summan kapas vid 100. 🟢 < 25, 🟡 25–50, 🔴 > 50. Tvistgrad = tvister / ordrar
-senaste 30 dagarna; gult 0,5 %, rött 0,9 % (Visa varnar vid 0,9 %, Mastercard
-vid 1 %). Trösklarna ändras per brand i brandfilen.
+Summan kapas vid 100. 🟢 < 25, 🟡 25–50, 🔴 > 50. Tvistgrad = chargebacks / ordrar
+över SAMMA 30 dagar — inquiries räknas inte (mätt 2026-09-13: tvister hämtade för
+7 dagar delat med 30 dagars ordrar gav falska 0,63 %; rätt räknat är
+Bäverbutikens tal 0,11 %). Gult 0,5 %, rött 0,9 % (Visa varnar vid 0,9 %,
+Mastercard vid 1 %). Trösklarna ändras per brand i brandfilen.
+
+**Åtgärdsplanen** (`atgardsplan.mjs`): rapporten ska inte bara säga vad som är
+fel utan vad man GÖR. Varje regel tittar på ett mätt tal och skriver, när talet
+passerar sin gräns, en åtgärd med konkreta steg — i tre hinkar: `nu` (deadline,
+hot, dubbeldrag), `veckan` (backloggen och vanorna) och `process` (det som
+minskar ANTALET ärenden). Texten är engelsk, VA:n läser den. Varje åtgärd bär
+`matt` — talen den grundas på — så den går att ifrågasätta.
 
 **Återkommande** = topp 3 i minst 3 av de senaste 4 veckorna. Kräver tre veckors
 historik — innan dess säger rapporten det i stället för att gissa.
@@ -190,7 +243,7 @@ och svarstiderna mäts då bara på svar som råkar ligga i inkorgen —
 ## Tester
 
 ```bash
-node --test kundtjanst/test/*.test.mjs     # 67 tester, inget nät
+node --test kundtjanst/test/*.test.mjs     # 111 tester, inget nät
 npm test                                   # hela repot
 ```
 

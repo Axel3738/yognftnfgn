@@ -3,6 +3,14 @@
 Butik: catcabin.se (Shopify `ras1t2-2x`) · produkt `utekattkojan` ·
 annonskonto **MagiBorsten DK `915422744950975`** (OPS Factorys gemensamma).
 Break-even-ROAS 1,62 · pris 789 kr (jämförpris 1 039 kr).
+Notion-hub: `catcabin creative hub` (`3da270ab-908c-80f6-9663-caff35a3c895`).
+
+⚠️ **Hub-id:t byttes 2026-09-14.** Bygget 2026-09-12 skapade
+`3d9270ab-908c-8145-8538-d55aaaf4a7e2`; den svarar 404 på `databases/<id>/query`
+— integrationen "Bäverbutiken RUTINER" når dess metadata men inte innehållet, så
+ingen rutin kunde läsa hubben. Axel skapade 2026-09-13 en ny för hand med samma
+namn (äkta `status`-kolumn, 14 statusvärden). Mätt 2026-09-14: gammal → 404,
+ny → 200 med 0 rader, alltså gick ingen data förlorad.
 
 ---
 
@@ -86,3 +94,28 @@ avsnitt 5) och NOK-paketnivåerna är satta — då byggs `CATCABIN_NO_…`.
    kassa. Axels beslut om det ska stå kvar.
 3. **`inkopskostnad: 302`** är härledd ur källkampanjens namn, inte kvitterad
    mot Temu. Break-even 1,62 vilar på den. Bekräfta före första budgetronden.
+
+---
+
+## Nattvakten 2026-09-15 — budgetrond, första körningen
+
+Butiken hade aldrig körts före i dag (registret: "aldrig körd"). Briefronden är
+pausad sedan 2026-09-14 (Axels beslut) — bara budgetdelen gick.
+
+**Kampanjen `CATCABIN_SE_Utekattkojan`** (ACTIVE, budget 1 000 kr/dag):
+3 191 kr / 2 köp på både 3 och 7 dygn, ROAS 0,49 mot break-even 1,62.
+**Ingen budgetdom** — grinden går vid 300 kr OCH 3 köp, och köpen räcker inte.
+Budgeten står kvar orörd.
+
+**Pausad annons:** `CatCabin_PD_1_H1` — 1 220 kr spend (≥ 3 × target-CPA 290 kr),
+1 köp till CPA 1 220 kr mot break-even 487 kr. Ny annons-regeln (Axel 2026-09-10).
+Tillbakaläst ACTIVE → PAUSED.
+
+Övriga 11 aktiva annonser ligger under 350 kr spend var — alla klassade
+`for_tidigt`, ingen kill-kandidat. `CatCabin_PD_2_1` var redan PAUSED och rördes
+inte. Vinstbidrag 14 d totalt: 0 kr (ingen annons över break-even).
+
+**Ingen feedback-loop än.** Bästa signalen hittills: `CatCabin_CS_2_1`,
+333 kr / 1 köp / CPA 333 kr — under break-even 487 kr, men 1 köp är inte en dom.
+Briefpausen släpps med `node factory/register.mjs briefantal catcabin auto`
+när 3 köp finns på en annons.

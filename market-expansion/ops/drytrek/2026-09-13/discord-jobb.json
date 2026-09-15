@@ -1,0 +1,27 @@
+{
+ "brand": "DryTrek",
+ "butik": "drytrek",
+ "datum": "2026-09-13",
+ "lage": "oversatt",
+ "server": "DryTrek",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "21 Norwegian ads are live in DRYTREK_NO_Damasker Vandring, all ACTIVE.",
+  "20 went to adset DRYTREK_NO_PD, 1 to DRYTREK_NO_SP. No new adset was created.",
+  "17 colour images: the photos carry no burned-in text, so only the ad copy was translated.",
+  "4 videos: Norwegian voice-over from HeyGen, plus Norwegian burned-in captions replacing the Swedish ones.",
+  "The Swedish caption typo 380 kr in SP_7_H1 is now the correct 389 in Norwegian.",
+  "HeyGen credits 8497 before, 8315 after."
+ ],
+ "varningar": [
+  "2 videos were translated but NOT uploaded: FO_2_H1 and SP_6_H1. The voice check is red on both.",
+  "Both were re-rendered once with a shorter closing line. The measured value did not move, which points at the check reading the background music rather than the voice.",
+  "5 rows in the queue are Baverbutiken ads parked in this hub (Damasker_SP_4/SP_5/PD_8/PD_9/FO_1). They were skipped and left untouched.",
+  "The Norwegian ads already running quote 381 kr down from 635 kr. The Norwegian store page shows 389 kr and 649 kr in SEK today, so that price claim is out of date."
+ ],
+ "action_axel": [
+  "Decide what happens to the 5 parked Baverbutiken rows in the DryTrek hub: rebuilt as DryTrek versions, or archived.",
+  "The older Norwegian ads carry a price the store no longer shows (381/635 against 389/649). Say whether they should be rewritten."
+ ],
+ "nasta_korning": "2026-09-14"
+}

@@ -1,0 +1,22 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-14",
+  "lage": "leverans",
+  "gjort": [
+    "Nothing to do - unchanged since yesterday",
+    "SE campaign still PAUSED (you switched it off on 13 Sep, no status change since)",
+    "Queue empty: 0 rows in To be Reviewed and Creative strat review, checked against Notion directly",
+    "Hub has not moved in 22 hours - no editor work is being burned right now",
+    "Nothing uploaded, nothing activated, no status changed"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "Still open from yesterday: what happens to batch #3 (21 briefs, 36 Draft rows) while the store is off. No rush today since nothing has moved, but the calendar season ends 24 December.",
+    "The account read hit Meta's rate limit and needed 5 retries (~12 min) before it went through. It recovered by itself - noted, not a fault."
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-15"
+}

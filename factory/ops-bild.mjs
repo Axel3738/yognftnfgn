@@ -5,7 +5,8 @@
 // egen rutin). Det här är OPS-versionen: samma kie.ai-motor (bildannonser/kie.mjs),
 // men kön läses ur BUTIKENS hub i registret, filen läggs i Notion via REST
 // (tools/notion-fil-upp.mjs — inga mcp__Notion-verktyg) och raden lämnas i
-// Draft tills en människa/sessionen har TITTAT på bilden och godkänt den.
+// Draft tills SESSIONEN har TITTAT på bilden och godkänt den — aldrig en
+// människa (Axels beslut 2026-09-13: AI:n granskar och laddar upp, lätt kontroll).
 //
 //   node factory/ops-bild.mjs <nyckel> [--torr] [--bara <namn,namn>] [--igen] [--json]
 //       Kön = rader i butikens hub med Status "Draft", Typ "Image - Pending Approval"

@@ -1,0 +1,121 @@
+{
+ "_om": [
+  "Slutgiltig norsk dubbtext per video, /ops-oversatt drytrek 2026-09-13.",
+  "SRT-filerna sjalva ar gitignorerade i market-expansion/ops/ — det har ar kopian som committas.",
+  "FO_2_H1 block 3 och SP_6_H1 block 3 kortades efter forsta rostkollen (se batch-log)."
+ ],
+ "videor": {
+  "drytrek_FO_2_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,059 --> 00:00:07,299",
+    "no": "Samme tur, ett bein med gamasje, ett uten. Uten kryper snøen allerede inn ved støvelkanten. Gamasjen tetter glipen mellom støvelen og kneet, helt opp."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:07,359 --> 00:00:09,359",
+    "no": "Etterpå: den ene sokken våt, den andre tørr."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:09,359 --> 00:00:13,800",
+    "no": "DryTrek-gamasjer, 389 kroner paret. Fri frakt til Norge."
+   }
+  ],
+  "drytrek_PD_12_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,059 --> 00:00:10,099",
+    "no": "Sørpesnøen når over støvelkanten, snøen fyker inn ovenfra og sokken er våt etter fire kilometer. Kroken festes i snøringen, remmen går under foten. Borrelåsen lukkes hele veien oppover på utsiden."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:10,159 --> 00:00:14,039",
+    "no": "Gamasjen er førtifire centimeter høy, og den tas på uten å ta av støvelen."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:14,079 --> 00:00:19,680",
+    "no": "DryTrek-gamasjer, tre hundre og åttini kroner paret. Fjorten dagers angrerett. Velg blant atten farger."
+   }
+  ],
+  "drytrek_PD_12_H2": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,000 --> 00:00:04,819",
+    "no": "Lei av snø, væte og grus i støvlene? Snøen fyker inn ovenfra, og sokkene er våte etter fire kilometer."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:04,819 --> 00:00:07,679",
+    "no": "Kroken festes i snøringen, remmen går under foten."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:07,739 --> 00:00:16,719",
+    "no": "Borrelåsen lukkes hele veien oppover på utsiden. Gamasjen er førtifire centimeter høy, og den tas på uten å ta av støvelen. DryTrek-gamasjer, tre hundre og åttini kroner paret."
+   },
+   {
+    "nr": "4",
+    "tid": "00:00:16,719 --> 00:00:19,567",
+    "no": "Fjorten dagers angrerett. Velg blant atten farger."
+   }
+  ],
+  "drytrek_PD_13_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,059 --> 00:00:05,779",
+    "no": "En flaske vann over støvelen. Se på sokken. Vannet renner inn over støvelkanten, og sokken er våt ved kilometer fire."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:05,839 --> 00:00:09,579",
+    "no": "Vannet treffer borrelåssømmen, kroken og remmen – og renner av på utsiden."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:09,639 --> 00:00:11,339",
+    "no": "Flasken er tom, sokken er tørr nå."
+   },
+   {
+    "nr": "4",
+    "tid": "00:00:11,380 --> 00:00:16,800",
+    "no": "DryTrek-gamasjer i atten farger, tre hundre og åttini kroner paret, fri frakt og fjorten dagers angrerett."
+   }
+  ],
+  "drytrek_SP_6_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,000 --> 00:00:01,100",
+    "no": "Kroken i snøringen, sånn."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:01,100 --> 00:00:07,219",
+    "no": "Jeg var litt skeptisk, ærlig talt, men jeg tok på meg disse før turen i morges. Eh, vått, gjørmete, snø overalt."
+   },
+   {
+    "nr": "3",
+    "tid": "00:00:07,299 --> 00:00:15,659",
+    "no": "Etterpå, helt tørre sokker, ingen snø i skoene og ingen grus. De satt på plass hele veien, ikke noe som gled ned. En enkel greie som funker."
+   },
+   {
+    "nr": "4",
+    "tid": "00:00:15,679 --> 00:00:15,880",
+    "no": "Men"
+   }
+  ],
+  "drytrek_SP_7_H1": [
+   {
+    "nr": "1",
+    "tid": "00:00:00,059 --> 00:00:10,639",
+    "no": "Jeg testet disse på hundeluftingen i morges. Uten gamasjer blir sokken våt allerede på den korte runden rundt kvartalet. Borrelåsen lukkes mens støvelen står på, rett på trappa. Etter runden er hunden våt på potene, men sokken er tørr."
+   },
+   {
+    "nr": "2",
+    "tid": "00:00:10,639 --> 00:00:13,967",
+    "no": "Gamasjer til hundelufting, tre hundre og åttini kroner paret."
+   }
+  ]
+ }
+}

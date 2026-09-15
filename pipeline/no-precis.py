@@ -18,6 +18,7 @@ bara medan den syns"). Tre lager i EN ffmpeg-körning:
 konfig.json:
   {"in": "...mp4", "ut": "...mp4", "srt": "norsk.srt",
    "captions": {"zon": [850, 1040], "max_chars": 34, "font_px": 30, "standard_cy": 992,
+                "x0": 0, "x1": 1080, "bredd_max": 1080,   # pillrets sökfönster + breddtak i RIKTIGA px
                 "pad_x": 6, "pad_y": 6, "av": [[t0,t1], ...],       # "av" = inga captions då
                 "tvinga": [[t0,t1], ...],                            # "tvinga" = caption även utan hittat piller (slutkort: vitt på vitt)
                 "fyll": [{"rect": [x0,y0,x1,y1], "t": [t0,t1]}]},    # manuell vit pillerplatta (piller på vitt kollage), tvingar caption
@@ -132,7 +133,8 @@ def lokal_spann(z, r=1):
     return mx - mn
 
 
-def hitta_piller(g, zon, x0=None, x1=None, pad_x=6, pad_y=6, h_min=40, h_max=85, skala=1.0):
+def hitta_piller(g, zon, x0=None, x1=None, pad_x=6, pad_y=6, h_min=40, h_max=85, skala=1.0,
+                 bredd_max=None):
     """Ordcaption-pillret i en gråframe (Carl Vicentes mall 2026-09-05: VITT piller,
     svart/grå karaoke-text, centrerat nederst). Pillret hittas som en platt vit yta:
     per rad den längsta körningen av platta ljusa pixlar (luckor ≤ 40 px = glyfer),
@@ -142,8 +144,18 @@ def hitta_piller(g, zon, x0=None, x1=None, pad_x=6, pad_y=6, h_min=40, h_max=85,
 
     Alla mått ovan är mätta på 720×1280 (Båtmotortrekk 2026-09-05). `skala` = W/720
     räknar om dem — AdventLane-videorna 2026-09-12 är 1080×1920 med piller 105–127 px
-    höga och 150–930 px breda, och utan skalning hittades inget alls."""
+    höga och 150–930 px breda, och utan skalning hittades inget alls.
+
+    `x0`/`x1`/`bredd_max` anges i RIKTIGA bildpixlar och sätts ur konfigens
+    captions-block. De finns för att pillret inte är lika brett i alla mallar:
+    Bäverbutikens ärvda 9:16-videor (DryTrek 2026-09-13) har piller upp till
+    1079 px breda och centrerade på 539, medan standardfönstret 120–600 (×skala)
+    och breddtaket 560 (×skala) kapade dem — resultatet blev att den svenska
+    texten låg kvar som stumpar UTANFÖR den norska rutan i vänster- och
+    högerkant. Rör inte standardvärdena: de är mätta på 720×1280 och gäller
+    fortfarande för alla andra butiker."""
     s = float(skala)
+    if bredd_max is None: bredd_max = 560 * s
     if x0 is None: x0 = int(120 * s)
     if x1 is None: x1 = int(600 * s)
     h_min, h_max = int(h_min * s), int(h_max * s)
@@ -164,7 +176,7 @@ def hitta_piller(g, zon, x0=None, x1=None, pad_x=6, pad_y=6, h_min=40, h_max=85,
         a, b = bäst
         # minsta bredd 70 (inte 100): ett piller med bara "649" är ~115 px vid 1080 — AU_1_H1 2026-09-12 missade
         # prispillren och den svenska siffran låg kvar i tre frames
-        rader.append((a, b) if 70 * s <= b - a <= 560 * s and abs((a + b) / 2 - mitt) <= 90 * s else None)
+        rader.append((a, b) if 70 * s <= b - a <= bredd_max and abs((a + b) / 2 - mitt) <= 90 * s else None)
     # gruppera på radnärhet (luckor ≤ 45 px = textraderna, som inte är platta). Bredden =
     # yttersta kanterna i gruppen: står pillret mot vit båt/snö smälter kanten ihop med
     # bakgrunden, men att vitmåla vit bakgrund syns inte — därför är "för bred" ofarligt.
@@ -176,7 +188,7 @@ def hitta_piller(g, zon, x0=None, x1=None, pad_x=6, pad_y=6, h_min=40, h_max=85,
             grupper[-1] = (g0[0], y, min(g0[2], r[0]), max(g0[3], r[1]))
         else:
             grupper.append((y, y, r[0], r[1]))
-    grupper = [gr for gr in grupper if h_min <= gr[1] - gr[0] <= h_max and gr[3] - gr[2] <= 560 * s]
+    grupper = [gr for gr in grupper if h_min <= gr[1] - gr[0] <= h_max and gr[3] - gr[2] <= bredd_max]
     if grupper:
         y0, y1, a, b = grupper[-1]
         return [x0 + int(a) - pad_x, zon[0] + y0 - pad_y, x0 + int(b) + pad_x, zon[0] + y1 + 1 + pad_y]
@@ -230,7 +242,9 @@ def main():
         g = np.frombuffer(buf, dtype=np.uint8).reshape(H, W)
         t = len(boxar) / fps
         if K.get('srt') and not any(a <= t <= b for a, b in av):
-            boxar.append(hitta_piller(g, zon, pad_x=pad_x, pad_y=pad_y, skala=sk))
+            boxar.append(hitta_piller(g, zon, x0=C.get('x0'), x1=C.get('x1'),
+                                      pad_x=pad_x, pad_y=pad_y, skala=sk,
+                                      bredd_max=C.get('bredd_max')))
         else:
             boxar.append(None)
     p.wait()

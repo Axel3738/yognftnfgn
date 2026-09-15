@@ -103,6 +103,22 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Ett 🖐-steg stoppar inte; ett ❌ rättas och körs om med `--resume` eller
    `--igen <steg>`. Regel: tema-id:t är låst i state — aldrig "första
    UNPUBLISHED"; varje skrivning läses tillbaka av motorn.
+
+   **Paketregeln (Axels beslut 2026-09-10, gäller varje ny OPS-butik):**
+   nivåerna är alltid **1 / 2 / 4** (aldrig 1 / 2 / 3) — källans 3-pack byts
+   mot 4-pack, källans procent för toppnivån behålls, mitten förvald. Har
+   produkten varianter (färg, storlek …) får paketet en
+   **rullgardin per enhet**, aldrig temats pill-väljare: 1-pack = 1 rullgardin,
+   2-pack = 2, 4-pack = 4. Varje alternativ visar variantens bild + namn (som Kaching),
+   kunden får blanda varianter, köpet lägger en rad per vald variant och
+   temats variant-picker göms. Koden bor i `snippets/ms-paket.liquid`,
+   `assets/ms-paket.js` och `assets/ms-paket.css` i
+   `factory/tema/ops-tema.zip` — inget att bygga per butik; produktmallens
+   render-anrop skickar `enhet: 'par'` (eller rätt ord för produkten), och
+   `underrubrik` lämnas tom på nivåer över 1 — styckpriset räknas i temat.
+   ⚠️ `factory/tema/assets/ms-paket.js` är fabriksägd, skrivs över i varje
+   butik i steg 3 (`TEMAFILER`) och ett test håller zip:ens kopia
+   byte-identisk — rullgardinskoden ska alltså finnas i båda.
 6. **Översättningen** (steg 17): en subagent med `model: "sonnet"` översätter
    `output/<butik>/oversattning-sv.json` → `oversattning-nb.json` med samma
    nycklar (+ `docs/copy-regler.md`). Sen `--igen tema,oversatt,recensioner` —
@@ -117,6 +133,10 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Markörlistan (`markorer_sv`) får inte bära ord som stavas lika på norska
    ("taket", "fukt") — de kan aldrig skilja svenska från norska och ger bara
    falska larm.
+   "Allt" i steg 16–17 betyder 13 resurstyper (produkt, varianter, meny,
+   sidor, policyer, blogg, metaobjekt, metafält, fraktmetoder, tema-JSON,
+   sektionsgrupper, temainställningar) — och vad kunden faktiskt ser avgörs
+   av språkkollen i steg 8, inte av att raderna gick in.
 7. **Valuta- och språkklicket** (checklistans avsnitt 2): när någon skriver
    "currency and language are set", kör `--igen paket,huvudmarknad`.
    Regel: rabattkoder lagras i butikens valuta — paketsteget vägrar tills
@@ -128,6 +148,14 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Regel: utan HTML är kundvyn röd, aldrig grön. Varukorgen (tom korg → lådan
    glider in → räkna varorna) och mobilvyn är en människa i webbläsare —
    skriv "inte testad", aldrig "testad".
+   **Avsluta alltid med språkkollen:**
+   `node factory/sprakkoll.mjs <butik-id> <handle> --losenord X` läser de
+   riktiga /nb-sidorna (startsida, produktsida, alla sidor och policyer) och
+   larmar på varje svensk rest — svenska former som inte finns i bokmål och
+   svenska priser. Shopify faller tyst tillbaka på svenskan för varje
+   oöversatt sträng, så "locale nb finns" bevisar ingenting (Axels bakläxa
+   2026-09-09, DryTrek). Grönt betyder "inga svenska rester", inte
+   korrekturläst.
 9. **Checklistan OCH leveransen i chatten** (steg 19):
     `output/<butik>/CHECKLISTA.md` skrivs av motorn (EN fil per butik) —
     arkivkopian. Sen levereras TRE saker i chatten, och ingen av dem är
@@ -208,9 +236,11 @@ hoppa över steg 2–4 och kör kedjan.
 - [ ] Steg 1–4: tema uppladdat med id i state, brandat, av-brandat
 - [ ] Steg 14: källskanningen REN — ingen Matstrumpor-text i något temaläge
 - [ ] Steg 6–8: produkt ACTIVE, alla opf-sektioner, varje variant CONTINUE + tracked false
-- [ ] Steg 9–10: paket A/B med riktiga koder i butikens valuta, mitten förvald, bonus + korg-upsell
+- [ ] Steg 9–10: paket A/B med riktiga koder i butikens valuta, nivåerna 1 / 2 / 4, mitten förvald, bonus + korg-upsell
+- [ ] **Har produkten varianter: kundvyn visar 1 / 2 / 4 rullgardiner med variantbilder på produktsidan** — aldrig temats pill-väljare — innan butiken rapporteras klar
 - [ ] Steg 12–13: startsida, huvudmeny, sidor, policyer, frakt ur konfigen
 - [ ] Steg 16–17: marknad Norge + locale nb publicerad, allt registrerat, inga läckor på /nb
+- [ ] **SPRÅKKOLLEN GRÖN** (`node factory/sprakkoll.mjs <butik-id> <handle> --losenord X`, läser de riktiga /nb-sidorna): inga svenska former och inga svenska priser på startsida, produktsida, alla sidor och alla policyer — "locale nb finns" bevisar ingenting
 - [ ] Steg 18 **KUNDVYN GRÖN på riktig HTML**: brandet (inte "My Store"), loggan, egen hero, egen meny, produkt med bild och köpknapp
 - [ ] Varukorgen testad av en människa med TOM korg: lådan glider in, varorna i vagnen räknade — annars "inte testad"
 - [ ] Steg 19: CHECKLISTA.md skriven, värdena i chatten

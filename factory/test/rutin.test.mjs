@@ -289,3 +289,42 @@ function fixturkatalogMedKundtjanst() {
   writeFileSync(join(katalog, 'kundtjanst.md'), '# /kundtjanst\nCONNECTORS: inga — SHOPIFY_ADMIN_TOKEN_<ID>, NOTION_TOKEN, DISCORD_BOT_TOKEN.\n');
   return katalog;
 }
+
+// ---------------------------------------------------------------- platserna
+// Platsen gav butiken en egen minut (Meta rate limit 2026-09-12 när fem
+// nattvakter startade 00:01 samtidigt). Den räknade bara på butiksdelen, så en
+// ANDRA produkt i samma butik fick identisk cron och återinförde exakt det
+// felet — tyst, som långsamma körningar. Uppslaget går sedan 2026-09-14 på
+// hela nyckeln, med butiksdelen som fallback så enproduktsbutikerna står still.
+
+test('platsFor: enproduktsbutik ärver butiksplatsen — befintliga tider står still', async () => {
+  const { platsFor, tidFor } = await import('../rutin.mjs');
+  const p = { hemvakten: 0, drytrek: 2, tacklebay: 4, carashell: 5 };
+  assert.equal(platsFor('carashell', p).plats, 5);
+  assert.equal(platsFor('carashell/takskyddet', p).plats, 5, 'produktnyckeln ärver butikens plats');
+  assert.equal(platsFor('tacklebay/fiskespohallare-4-pack', p).plats, 4);
+  // Tiderna som står i CLAUDE.md:s rutintabell får inte flytta.
+  assert.equal(tidFor('notionscalercs', 'carashell', p), '00:41');
+  assert.equal(tidFor('ops-leverans', 'carashell/takskyddet', p), '14:05');
+  assert.equal(tidFor('ops-oversatt', 'drytrek', p), '15:50');
+});
+
+test('platsFor: flerprodukt ärver ALDRIG — produkt två får en egen minut', async () => {
+  const { platsFor, tidFor, minutkrockar } = await import('../rutin.mjs');
+  const p = { hemvakten: 0, tankguard: 1, drytrek: 2, kalender: 3, tacklebay: 4, carashell: 5, catcabin: 6 };
+  const tva = platsFor('carashell/atv-kapell', p, { flerprodukt: true });
+  assert.equal(tva.ny, true);
+  assert.notEqual(tva.plats, 5, 'får inte dela minut med butikens första produkt');
+  assert.equal(tva.plats, 7, 'första lediga heltalet');
+  assert.notEqual(tidFor('notionscalercs', 'carashell/atv-kapell', p, { flerprodukt: true }), '00:41');
+  // Exakt nyckel vinner alltid, även utan flaggan.
+  assert.equal(platsFor('carashell/atv-kapell', { ...p, 'carashell/atv-kapell': 9 }).plats, 9);
+});
+
+test('minutkrockar: pekar ut vilken rutin som skulle starta samma minut', async () => {
+  const { minutkrockar } = await import('../rutin.mjs');
+  const p = { carashell: 5, catcabin: 6 };
+  assert.deepEqual(minutkrockar('carashell/atv-kapell', ['carashell', 'catcabin'], p), ['carashell']);
+  assert.deepEqual(minutkrockar('carashell/atv-kapell', ['carashell'], p, { flerprodukt: true }), []);
+  assert.deepEqual(minutkrockar('carashell', ['carashell'], p), [], 'sig själv räknas aldrig');
+});

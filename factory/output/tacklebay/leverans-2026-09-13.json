@@ -1,0 +1,167 @@
+{
+  "butik": "TackleBay",
+  "nyckel": "tacklebay/fiskespohallare-4-pack",
+  "konto": "915422744950975",
+  "marknad": "SE",
+  "status": "To be Reviewed",
+  "cs_status": "Creative strat review",
+  "cs_lamnade": [
+    {
+      "namn": "Rodholder_PD_40_H1",
+      "page_id": "3d7270ab-908c-8127-b35f-c378373ba5e1",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_CS_6_H1",
+      "page_id": "3d7270ab-908c-815d-8f5b-e69b96e02368",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_PD_37_H1",
+      "page_id": "3d7270ab-908c-819d-bb2f-e88c673e95e3",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_PD_36_H1",
+      "page_id": "3d7270ab-908c-81ee-8d8e-d86b86c856b9",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_SP_5_H1",
+      "page_id": "3d3270ab-908c-8101-86cf-cab3762bfc04",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_PD_34_H1",
+      "page_id": "3d3270ab-908c-814f-b15d-d62b5173dce8",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_CS_5_H1",
+      "page_id": "3d3270ab-908c-818c-9b23-e72a5090aff3",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_PD_31_H1",
+      "page_id": "3d0270ab-908c-8151-ac1d-fa554d440cfc",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_GT_4_H1",
+      "page_id": "3d0270ab-908c-816a-a945-d1718a79238e",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Rodholder_CS_4_H1",
+      "page_id": "3d0270ab-908c-816c-b76e-d0cc9bdf5b18",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Rodholder\" är inte butikens brand (TackleBay) — parkerad källrad, rörs inte"
+    }
+  ],
+  "hub": {
+    "id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+    "titel": "Fish rod holder"
+  },
+  "kampanj": {
+    "id": "120249037503480172",
+    "namn": "TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10",
+    "bas": "TACKLEBAY_SE_Spöhållaren",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249037879100172",
+        "name": "TACKLEBAY_SE_Spöhållaren - SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249037645710172",
+        "name": "TACKLEBAY_SE_Spöhållaren - GT",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249037540290172",
+        "name": "TACKLEBAY_SE_Spöhållaren - CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249037504230172",
+        "name": "TACKLEBAY_SE_Spöhållaren - PD",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 17,
+  "lank_arvd": "https://tacklebay.se/products/fiskespohallare-4-pack",
+  "pris_butik": {
+    "pris": 289,
+    "min": 289,
+    "max": 289,
+    "jamforpris": 0,
+    "valuta": "SEK",
+    "titel": "Fiskespöhållare 4-Pack",
+    "handle": "fiskespohallare-4-pack",
+    "kalla": "https://tacklebay.se/products/fiskespohallare-4-pack.json"
+  },
+  "pris_skal": null,
+  "rader": [
+    {
+      "namn": "TackleBayRod_PD_46_H1",
+      "mal_namn": "TackleBayRod_PD_46_H1",
+      "page_id": "3d8270ab-908c-8159-8d95-ee5839252249",
+      "url": "https://app.notion.com/p/TackleBayRod_PD_46_H1-3d8270ab908c81598d95ee5839252249",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1x0bh23SNHQBvOnbVkHZuZezY8q8d3M0W",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1x0bh23SNHQBvOnbVkHZuZezY8q8d3M0W",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1x0bh23SNHQBvOnbVkHZuZezY8q8d3M0W?usp=drive_link"
+        }
+      ],
+      "landning": "https://tacklebay.se/products/fiskespohallare-4-pack",
+      "lank": "https://tacklebay.se/products/fiskespohallare-4-pack",
+      "prefix": "TackleBayRod",
+      "koncept": "PD",
+      "nummer": 46,
+      "variant": "H1",
+      "adset_namn": "TACKLEBAY_SE_Spöhållaren - PD",
+      "adset": {
+        "id": "120249037504230172",
+        "name": "TACKLEBAY_SE_Spöhållaren - PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": null,
+      "skapad": "2026-09-11T22:20:00.000Z",
+      "hub": "Fish rod holder",
+      "fil": "factory/output/tacklebay/leverans-2026-09-13/TackleBayRod_PD_46_H1/TackleBayRod_PD_46_H1_1.mp4",
+      "fil_alla": [
+        "factory/output/tacklebay/leverans-2026-09-13/TackleBayRod_PD_46_H1/TackleBayRod_PD_46_H1_1.mp4",
+        "factory/output/tacklebay/leverans-2026-09-13/TackleBayRod_PD_46_H1/TackleBayRod_PD_46_H1_2.mp4"
+      ],
+      "fil_fel": null
+    }
+  ],
+  "varningar": [],
+  "hamtad": "2026-09-13T12:47:36.297Z"
+}

@@ -1,0 +1,43 @@
+{
+ "in": "../video/render/drytrek_BOF_10_H1.mp4",
+ "ut": "../no/DryTrek_NO_Damasker_BOF_10_H1.mp4",
+ "srt": "../video/srt-no/drytrek_BOF_10_H1.srt",
+ "captions": {
+  "zon": [
+   854,
+   999
+  ],
+  "max_chars": 22,
+  "font_px": 52,
+  "standard_cy": 926,
+  "x0": 0,
+  "x1": 1080,
+  "bredd_max": 1080,
+  "fyll": [
+   {
+    "rect": [
+     180,
+     790,
+     900,
+     1062
+    ],
+    "t": [
+     3.3,
+     5.3
+    ]
+   },
+   {
+    "rect": [
+     185,
+     856,
+     895,
+     997
+    ],
+    "t": [
+     10.65,
+     11.2
+    ]
+   }
+  ]
+ }
+}
