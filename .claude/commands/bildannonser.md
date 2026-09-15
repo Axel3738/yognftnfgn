@@ -183,6 +183,18 @@ copy — varken rubriker, stödrader eller CTA. Det är inte en effektivisering,
 `/cs`-flödet, aldrig av en nattrutin. Saknar briefen svenska rader: **hoppa över
 raden**, lämna den i `Draft` och skriv den under "Behöver brief" i rapporten.
 
+⚠️ **Rättar du en rad mot produktsidan — skriv in rättelsen i BRIEFEN, inte
+bara som kommentar.** Leveransrundan (`/notionkorning`) jämför bildens text mot
+briefens text och studsar tillbaka varje rad som skiljer sig. En rättelse som
+bara ligger i kommentarsfältet gör därför att annonsen åker till `Draft` igen
+och arbetet är bortkastat. Byt ut den felaktiga raden i briefens egen tabell
+(`tools/notion-brief-rattelse.py`: läs blocken, byt den ordagranna strängen i
+tabellcellen, skriv tillbaka), och lägg kommentaren som förklaring ovanpå.
+Då säger brief och bild samma sak, och båda rutinerna är nöjda.
+*(Mätt 2026-09-15: `Beltgrinder_BOF_3_1` studsade med "Two lines do not match
+the brief" — rättelsen låg bara som kommentar. Nio andra rader i samma batch
+hade samma problem och hade studsat i tur och ordning.)*
+
 Tre kontroller innan prompten byggs:
 
 1. **Priset.** Står ett pris i briefen: hämta det verkliga priset från
