@@ -275,7 +275,12 @@ pekar på playbook, winning line eller swipe — annars märks det `gissning`.
 **Minst två av raderna är bildannonser** (Axels beslut 2026-09-12: bild är
 billigt och snabbt) — de räknas inom antalet, inte ovanpå, och varje
 bildbrief slutar med ett IMAGE PROMPT-block enligt `.claude/commands/ops-bild.md`
-steg 3, så att steg 7 kan generera dem samma natt.
+steg 3, så att steg 7 kan generera dem samma natt. **Texten på bilden**
+(rubrik, pris, badge …) skrivs i tabellen "Exact text" med elementnamn
+motorn känner igen — den ritas av textlagret (`factory/bild-text.py`), aldrig
+av bildmodellen; prompten säger "no text, leave clean space". *(CaraShell
+2026-09-14: fyra bildbriefer med rubrik och pris gick live som rena foton,
+för textlagret fanns inte.)*
 Ta med alla väntande items i `backlog.md` (märk `[använd i batch #N]`).
 Namn enligt `docs/naming-convention.md` med butikens prefix; lediga AD-ID:n
 läses ur OPS-kontot (analys-JSON:en) OCH ur hubbens befintliga radnamn.

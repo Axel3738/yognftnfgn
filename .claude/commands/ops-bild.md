@@ -41,8 +41,14 @@ i chatten.
 4. **Priset ur butiken, aldrig ur minnet** — `factory/produkter/<id>.yaml`
    `pris`, kontrollerat mot produktsidan. Inget pris PÅ bilden om idén inte
    uttryckligen säger det (bildmodeller stavar fel).
-5. **Ingen text på bilden om idén inte säger det.** Behövs text: max en rad,
-   svenska, exakt ur briefen, och den granskas bokstav för bokstav (å/ä/ö).
+5. **Text på bilden ritas av textlagret, aldrig av bildmodellen.** Kräver
+   briefen text (tabellen "Exact text", eller ett `TEXT LAYER`-block) lägger
+   `factory/bild-text.py` de exakta svenska raderna ovanpå fotot som
+   vektortext — å/ä/ö garanterat, brandets färger ur `factory/butiker/<id>.yaml`.
+   Prompten till bildmodellen ska då säga "no text, leave clean space" (topp
+   för rubrik, höger tredjedel för pris, botten för villkorsraden). En brief
+   med text där bilden saknar texten är **underkänd** — så gick CaraShells fyra
+   bildannonser live 2026-09-14 (bara fotot). Utan text i briefen = rent foto.
 6. **Inga genererade människor/ansikten** (hook-visual-regeln 2026-08-04).
 7. **Copy skrivs av en subagent** (regel 6 i CLAUDE.md): Agent-verktyget med
    `model` enligt butikens `copy_modell` i registret (`ab` = växla
@@ -78,7 +84,25 @@ Ny batchmapp: `products/<butik>/batch-NN/image-ads-briefs/<namn>/brief.md`
 ### 3. Briefer (engelska) — en per rad, med IMAGE PROMPT-blocket sist
 Varianter av samma koncept får en kort brief (VARIABELTAGGAR, varför, format,
 COPY CARD, hard rules, KPI); ett nytt koncept får full brief enligt
-`.claude/commands/forsta-batch.md`. Alltid **sist i filen**, på engelska:
+`.claude/commands/forsta-batch.md`.
+
+**Text på bilden** skrivs i tabellen "Exact text" (`| Element | Swedish (use
+this) | English meaning |`) med elementnamn motorn känner igen — headline,
+sub-line, badge, price, struck-through/compare price, discount, bottom line,
+left/right label, quote, attribution, stars — eller som ett block:
+```
+## TEXT LAYER
+rubrik: En present han klarar helt själv
+underrad: Taköverdrag för husvagn & husbil – skyddar mot vinterns fukt
+badge: 1 129 kr (ord. 1 469 kr) – spara 23 %
+END TEXT LAYER
+```
+Typer: `rubrik underrad botten badge pris jamforpris rabatt etikett_vanster
+etikett_hoger citat namn stjarnor`. `--torr` visar vilka element motorn läste
+ur varje brief — står det "ingen — rent foto" fast briefen har text är
+elementnamnet okänt: byt till ett av namnen ovan.
+
+IMAGE PROMPT-blocket, alltid **sist i filen**, på engelska:
 
 ```
 ## IMAGE PROMPT

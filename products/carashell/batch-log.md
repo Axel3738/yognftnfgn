@@ -236,3 +236,35 @@ pris i någon av de fyra (fynd 3). Tre-frågorstestet redovisat per annons i
 
 ⚠️ **Metas rate limit slog till genom hela rundan igen** (8-stegs backoff, upp
 till 27 minuter per anrop). Kör inte om rutinen för att den ser ut att hänga.
+
+## 2026-09-15 · Batch #2:s fyra bildannonser fick textlagret i efterhand (Axels dom "extremt keffa bildannonser")
+
+**Rotorsak:** briefarna var två-stegs-annonser (foto + rubrik/pris/badge
+"in post"), prompterna sa "no text, leave clean space for a headline in
+post" — och steget "post" fanns inte i `/ops-bild`. Fyra rena foton gick live
+2026-09-14 i SE och NO. Granskningen kollade bara att ingen *extra* text smugit
+in, inte att briefens text *fanns*. Varken bildmodellen eller strategin var
+felet: GT-fotot (paketet vid husvagnen) och PD-splitten var bra som foton.
+
+**Fix, samma dag:** `factory/bild-text.py` (textlagret, Pillow, brandets
+färger ur `factory/butiker/carashell.yaml`) + `textUrBrief` i
+`factory/ops-bild.mjs` som läser tabellen "Exact text" ur briefen, +
+`tools/ops-byt-bild.mjs` som byter bilden i en annons som redan är live utan
+att pausa (Axels beslut: "pausa inte dom utan gör bara de förra versionerna
+mycket bättre"). Basfotona återanvändes ur Notion-raderna — inga nya
+kie.ai-krediter.
+
+| Annons | Element på bilden | SE creative | NO creative | Status efter |
+|---|---|---|---|---|
+| `CS_4_1` | rubrik, pris 1 129 kr, överstruket 1 469 kr, −23 %, botten | 2068674053741533 → 1415852457318612 | 2538228876645141 → 1828264228350829 | ACTIVE/IN_PROCESS, oförändrad |
+| `GT_4_1` | rubrik, underrad, badge | 1772658683861592 → 1429535182393812 | 1409350731144052 → 1753113312579477 | ACTIVE/IN_PROCESS |
+| `PD_4_1` | rubrik, UTAN/MED-etiketter, botten | 2336281057197943 → 1592813378406653 | 2172696653279676 → 1405908404975949 | ACTIVE/IN_PROCESS |
+| `SP_4_1` | citat, – Anders, ★★★★★, botten, pris | 1126722523039617 → 963288716803649 | 1392114153086604 → 1455967989707413 | ACTIVE/IN_PROCESS |
+
+NO-versionerna bär norska rader utan pris (`products/carashell/batch-02/textlager-no.json`,
+sonnet) — "Fri frakt til Norge" i stället för SEK-priset, som NO-copyn i
+övrigt. Notion-raderna har den nya SE-bilden (gamla utbytt) + `<namn>_NO.png`.
+
+⚠️ Datan: de fyra annonserna har 1 dygn (14/9) med foto utan text och
+resten med. Vinstbidraget per annons blandar båda — döm inte 14/9-siffrorna
+som konceptets. Nästa briefdag: notera "text sedan 15/9" i feedback-loopen.

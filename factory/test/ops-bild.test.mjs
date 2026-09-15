@@ -142,3 +142,87 @@ test('nastaNummer: högsta upptagna + 1 per koncept, oavsett variant-suffix', ()
   assert.equal(nastaNummer(namn, 'DryTrek_Damasker', 'FV'), 1);
   assert.equal(annonsdel('DryTrek_Damasker_PD_13_H1 – x'), 'DryTrek_Damasker_PD_13_H1');
 });
+
+// ------------------------------------------------------------ textlagret
+import { textUrBrief, elementtyp, textFarger } from '../ops-bild.mjs';
+
+test('elementtyp: briefens elementnamn → typ, okänt ⇒ null', () => {
+  assert.equal(elementtyp('On-image headline'), 'rubrik');
+  assert.equal(elementtyp('Headline (top, across both halves)'), 'rubrik');
+  assert.equal(elementtyp('Sub-line'), 'underrad');
+  assert.equal(elementtyp('Badge'), 'badge');
+  assert.equal(elementtyp('Price'), 'pris');
+  assert.equal(elementtyp('Price (small)'), 'pris');
+  assert.equal(elementtyp('Struck through, smaller, beside price'), 'jamforpris');
+  assert.equal(elementtyp('Badge', '−23 %'), 'rabatt', 'en badge som bara är en procent är rabattchipen');
+  assert.equal(elementtyp('Bottom line'), 'botten');
+  assert.equal(elementtyp('Bottom line (unchanged from parent)'), 'botten');
+  assert.equal(elementtyp('Left label'), 'etikett_vanster');
+  assert.equal(elementtyp('Right label'), 'etikett_hoger');
+  assert.equal(elementtyp('On-image quote'), 'citat');
+  assert.equal(elementtyp('Attribution'), 'namn');
+  assert.equal(elementtyp('Stars', '★★★★★'), 'stjarnor');
+  assert.equal(elementtyp('rubrik'), 'rubrik');
+  assert.equal(elementtyp('Something odd'), null);
+});
+
+const EXACT = `## 4. Exact text (Swedish word for word, do not re-translate)
+| Element | Swedish (use this) | English meaning |
+|---|---|---|
+| On-image headline | En present han klarar helt själv | A present he manages entirely by himself |
+| Sub-line | Taköverdrag för husvagn & husbil – skyddar mot vinterns fukt | Roof cover … |
+| Badge | 1 129 kr (ord. 1 469 kr) – spara 23 % | 1 129 kr (was 1 469 kr) – save 23 % |
+
+## 5. Design brief
+- The present is the hook.
+## IMAGE PROMPT
+x
+END IMAGE PROMPT
+`;
+
+test('textUrBrief: tabellen "Exact text" i markdown', () => {
+  const { element, okanda } = textUrBrief(EXACT);
+  assert.deepEqual(element.map((e) => [e.typ, e.text]), [
+    ['rubrik', 'En present han klarar helt själv'],
+    ['underrad', 'Taköverdrag för husvagn & husbil – skyddar mot vinterns fukt'],
+    ['badge', '1 129 kr (ord. 1 469 kr) – spara 23 %'],
+  ]);
+  assert.equal(okanda.length, 0);
+  assert.equal(element[0].kalla, 'exact-text');
+});
+
+test('textUrBrief: samma tabell som Notion-dump (celler med " | ", ingen kantlinje)', () => {
+  const dump = ['4. Exact text (Swedish word for word, do not re-translate)', '  Element | Swedish (use this) | English meaning',
+    '  Price | 1 129 kr | 1 129 kr', '  Struck through, smaller, beside price | 1 469 kr | 1 469 kr', '  Badge | −23 % | −23 %',
+    '  Bottom line | Fri frakt · Leverans 5–10 arbetsdagar | Free shipping', '⚠️ No other words on the canvas.', '5. Design brief'].join('\n');
+  const { element } = textUrBrief(dump);
+  assert.deepEqual(element.map((e) => e.typ), ['pris', 'jamforpris', 'rabatt', 'botten']);
+  assert.equal(element[1].text, '1 469 kr');
+});
+
+test('textUrBrief: TEXT LAYER-blocket vinner över tabellen; okända typer rapporteras', () => {
+  const md = `${EXACT}\n## TEXT LAYER\nrubrik: Bara taket.\nbotten: 1 129 kr\nkonstigt: hej\nEND TEXT LAYER\n`;
+  const { element, okanda } = textUrBrief(md);
+  assert.deepEqual(element.map((e) => [e.typ, e.text, e.kalla]), [['rubrik', 'Bara taket.', 'text-layer'], ['botten', '1 129 kr', 'text-layer']]);
+  assert.deepEqual(okanda, [{ namn: 'konstigt', text: 'hej' }]);
+});
+
+test('textUrBrief: brief utan text ⇒ tomt (rent foto, t.ex. DryTreks färgvarianter)', () => {
+  assert.deepEqual(textUrBrief(BRIEF), { element: [], okanda: [] });
+  assert.deepEqual(textUrBrief(''), { element: [], okanda: [] });
+});
+
+test('byggJobb: jobbet bär textlagret ur briefen', () => {
+  const { jobb } = byggJobb([{ id: 'p', namn: 'CaraShellRoof_GT_4_1', filer: [], brieftext: EXACT }]);
+  assert.equal(jobb[0].text.length, 3);
+  assert.equal(jobb[0].text[0].typ, 'rubrik');
+});
+
+test('textFarger: ur brandfilen, saknade fält blir undefined (bild-text.py har standardfärger)', () => {
+  const f = textFarger({ branding: { farger: { mork: '#22282E', accent: '#1F6F8E', linje_stark: '#B3B8B0' } } });
+  assert.equal(f.mork, '#22282E');
+  assert.equal(f.accent, '#1F6F8E');
+  assert.equal(f.dampad, '#B3B8B0');
+  assert.equal(f.yta, undefined);
+  assert.deepEqual(Object.keys(textFarger(null)).length, 7);
+});
