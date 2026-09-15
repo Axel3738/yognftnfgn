@@ -958,16 +958,31 @@ hämta data: **Notion** (creative hub-databaserna), **Slack** (workspace
 Stonebite), **Meta Ads** (MagiBorsten `1867947880635861`), **Shopify**
 (bäverbutiken.se, för verklig AOV).
 
-Notion-hubbarna hittas **dynamiskt via teamspacet Bäverbutiken**
-(`3a9270ab-908c-81a8-a48c-004222d195e7`) — databaser vars titel slutar på
-`creative hub`, minus mallen `Creative hub MALL`. ⚠️ Titelregeln är inte
-vattentät: **"Damasker vandring"** och **"Fish rod holder"** är hubbar med samma
-schema men utan ordet "creative hub" (mätt 2026-09-08, två videor missades).
-Sök därför även på innehållet (statusen "SE-ACTIVE to be translated" /
-"To be Reviewed") och läs träffarnas `path`. Håll aldrig en handskriven
-lista: nya produkter ska komma med av sig själva, och teamspacet är det som
-hindrar att Grillkliniken, Matstrumpor eller Ploomi.se blandas in (de har egna
-teamspaces). `products.json` känner bara fyra av hubbarna — den är inte facit här.
+Notion-hubbarna hittas **dynamiskt**. ⚠️ **Titelregeln "slutar på `creative hub`"
+är DÖD — lita aldrig på den, och skriv aldrig hubblistan ur minnet.**
+Mätt 2026-09-08: "Damasker vandring" och "Fish rod holder" saknade orden.
+Mätt 2026-09-15: Axel döper om och skapar hubbar löpande — samma dag fanns
+`BÄVER IBC-Tanköverdraget`, `BÄVER Taköverdraget för Husvagn`,
+`BÄVER Termoskyddet för Husbil`, `BÄVER Adventskalendern Racingbilar`,
+`arkiverad Övervakningskamera` och `Arkiverad Isolerade Utekattkojan`, och en
+`/oversatt`-körning som läste sex hubbar ur minnet missade alla sex. Den
+rapporterade "30 rader, alla blockerade"; verkligheten var **57 rader, varav 20
+skulle ha gått live samma dag**. Axel fick upptäcka det själv.
+
+**Rätt sätt (MCP-vägen, utan `NOTION_TOKEN`):** `notion-search` med
+`sort: "last_edited"` först — den listar allt som faktiskt rörts, och varje
+distinkt `path` är en kandidathubb. Komplettera med sökningar på `"BÄVER"`,
+`"creative hub"` och `"arkiverad"`. Hämta `collection://`-id genom att
+`notion-fetch`:a en **sida** i hubben (`parent-data-source` står i svaret) —
+en databashämtning är flera gånger dyrare. SQL tar **max 10 data sources**
+per fråga. Räkna hubbarna i rapporten; färre än förra körningen = något
+hittades inte.
+
+Dra bort OPS-hubbarna **per id** (`node tools/lib/ops-hubbar.mjs`) och andra
+verksamheters hubbar (`Matstrumpor creative hub`, `kundsupport Grillkliniken`,
+`Bäverkoppling.se`, `Creative Hub master`) samt mallen `MALL Creative hub MALL`.
+`products.json` känner bara fyra av hubbarna — den är inte facit här.
+**En hubb som inte hittas ger aldrig ett felmeddelande, bara en kortare kö.**
 
 **Env-nycklar rutinerna behöver:** `KIE_API_KEY` (bildannonser),
 `HEYGEN_API_KEY` (`/translate`), `META_ACCESS_TOKEN`, `DISCORD_WEBHOOK_URL`
