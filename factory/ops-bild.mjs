@@ -182,14 +182,18 @@ export function elementtyp(namn, text = '') {
   if (/discount|rabatt/.test(n)) return 'rabatt';
   if (/badge|chip/.test(n)) return 'badge';
   if (/price|pris/.test(n)) return 'pris';
+  // Stjärnraden testas FÖRE rubriken: elementnamnet "Star row (under headline)"
+  // bär ordet "headline" och blev annars en andra rubrik, medan stjärnorna föll
+  // bort helt. (Mätt 2026-09-16 på CaraShell_SP_6_1 i torrkörningen.)
+  if (/star|stjärn|stjarn/.test(n) || /^[★☆ ]+$/.test(t)) return 'stjarnor';
   if (/headline|rubrik|title/.test(n)) return 'rubrik';
+  if (/call-?out|utpekning/.test(n)) return /2|höger|hoger|right/.test(n) ? 'etikett_hoger' : 'etikett_vanster';
   if (/sub-?line|subline|underrad|subhead/.test(n)) return 'underrad';
   if (/bottom|botten|footer|terms/.test(n)) return 'botten';
   if (/left label|vänster|vanster/.test(n)) return 'etikett_vanster';
   if (/right label|höger|hoger/.test(n)) return 'etikett_hoger';
   if (/quote|citat/.test(n)) return 'citat';
   if (/attribution|namn|name|author/.test(n)) return 'namn';
-  if (/star|stjärn|stjarn/.test(n) || /^[★☆ ]+$/.test(t)) return 'stjarnor';
   if (/label|etikett/.test(n)) return 'badge';
   return null;
 }

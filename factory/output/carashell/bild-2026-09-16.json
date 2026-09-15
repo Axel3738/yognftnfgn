@@ -1,0 +1,73 @@
+{
+  "datum": "2026-09-16",
+  "butik": "carashell/takskyddet",
+  "hub": "Carashell creative hub",
+  "torr": false,
+  "jobb": [
+    {
+      "namn": "CaraShellRoof_SP_6_1",
+      "typ": "Image - Pending Approval",
+      "hub": "Carashell creative hub",
+      "notion_url": "https://app.notion.com/p/CaraShellRoof_SP_6_1-3dc270ab908c812c9b84efe6a53f7397",
+      "page_id": "3dc270ab-908c-812c-9b84-efe6a53f7397",
+      "prompt": "A photorealistic exterior photograph of a white caravan parked outdoors on a gravel pitch, seen from a slightly elevated three-quarter angle so the roof fills the middle of the frame. The roof is covered by a taut black fabric cover; the cover's edge hangs about 30–40 cm down the side, with elastic straps and plastic hooks catching under the body edge. Neutral overcast daylight, calm autumn setting, dry ground, documentary style, sharp detail on the fabric weave and the hooks. Leave clear uncluttered space across the top third of the frame for a headline and a star row in post, and a clean strip along the bottom edge. No text, no people, no faces, no logos, no numbers.",
+      "bildformat": "4:5",
+      "referens_bilder": [
+        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
+      ],
+      "referens_kalla": "brief",
+      "prompt_kalla": "repo",
+      "text": [
+        {
+          "typ": "rubrik",
+          "text": "16 omdömen. Inte en stjärna under fem.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "badge",
+          "text": "★★★★★ 5,0 av 5",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "underrad",
+          "text": "Täcker bara taket. Hakar under kanten. En person sätter på det.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "botten",
+          "text": "1 129 kr (ord. 1 469 kr) · Fri frakt",
+          "kalla": "exact-text"
+        }
+      ],
+      "text_okanda": []
+    }
+  ],
+  "hoppade": [],
+  "resultat": [
+    {
+      "namn": "CaraShellRoof_SP_6_1",
+      "status": "ok",
+      "hub": "Carashell creative hub",
+      "notion_url": "https://app.notion.com/p/CaraShellRoof_SP_6_1-3dc270ab908c812c9b84efe6a53f7397",
+      "taskId": "43bfcc7b9cf1f992a9d26dedfcbadf88",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/p/43bfcc7b9cf1f992a9d26dedfcbadf88_1_1789513560_8318.png",
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/bild-2026-09-16/CaraShellRoof_SP_6_1.png",
+      "page_id": "3dc270ab-908c-812c-9b84-efe6a53f7397",
+      "textlager": {
+        "bas": "/home/user/yognftnfgn/factory/output/carashell/bild-2026-09-16/CaraShellRoof_SP_6_1.bas.png",
+        "placerade": [
+          "botten",
+          "rubrik",
+          "badge"
+        ],
+        "okanda": []
+      },
+      "notion": {
+        "file_upload_id": "3dc270ab-908c-81dc-9170-00b261c43d86",
+        "falt": "Filer och media"
+      }
+    }
+  ]
+}

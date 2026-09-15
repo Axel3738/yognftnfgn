@@ -285,3 +285,115 @@ sonnet) — "Fri frakt til Norge" i stället för SEK-priset, som NO-copyn i
 ⚠️ Datan: de fyra annonserna har 1 dygn (14/9) med foto utan text och
 resten med. Vinstbidraget per annons blandar båda — döm inte 14/9-siffrorna
 som konceptets. Nästa briefdag: notera "text sedan 15/9" i feedback-loopen.
+
+---
+
+## Avläsning 2026-09-16 (körning nr 3) — batch #1 och #2 mot sina hypoteser
+
+**Kampanjen: 7 513 kr, 20 köp, ROAS 3,10, vinst 29 % (7 dagar).** Budgeten
+2 850 → 3 400 kr. 2 av 20 annonser bedömbara. Siffrorna per variabel står i
+`dna.md`, körning nr 3.
+
+### Batch #2:s fyra frågor, besvarade
+
+1. **Passerar `SP_2_1` grinden, och håller CPA 99 kr?** **Ja på grinden, nej på
+   talet.** 846 kr, 5 köp, **CPA 169 kr** — kontots bästa annons och 58 % av allt
+   vinstbidrag, men CPA gick från 99 till 169 kr när spenden åttadubblades. Långt
+   under break-even 693 kr. Hypotesen håller.
+2. **Slår bildvarianterna videosnittet 476 kr?** **Nej — batchens egna bilder
+   gjorde det inte.** `CS_4_1`, `GT_4_1`, `PD_4_1`, `SP_4_1`: 1 793 kr, 2 köp,
+   CPA 897 kr. Bara `SP_4_1` sålde (754 kr, 2 köp, CPA 377 kr). ⚠️ Domen är inte
+   rättvis: de fyra körde **rena foton utan textlager 14/9** och rätt creative
+   först från 15/9, alltså ett dygn av två med fel annons. Läs om dem nästa rond.
+   Formatet som helhet leder fortfarande, men bara 1,2× i stället för 3,6× —
+   se mönster 10.
+3. **Ger CS utan brådska (`CS_4_1`) bättre eller sämre CPA än `CS_2_1` med den?**
+   **Obesvarad.** `CS_4_1` fick 113 kr och 0 köp, `CS_2_1` 640 kr och 1 köp.
+   Ingen av dem är i närheten av grinden. Frågan går vidare till batch #3, där
+   `CS_5_1` och `CS_6_1` båda är brådskefria och i stället isolerar
+   rabattframingen mot varandra.
+4. **Får GT spend alls?** **Ja, och det gjorde saken värre.** `GT_4_1` fick
+   338 kr helt själv — mer än hela GT-vinkeln fick förra ronden — och gav **0
+   köp**. GT totalt: 611 kr, 5 annonser, 0 köp. Se mönster 12.
+
+### Per annons i batch #2 (14d, 2026-09-16)
+
+| Annons | Typ | copy_model | Spend | Köp | CPA | Hypotesen |
+|---|---|---|---:|---:|---:|---|
+| `SP_4_1` | bild | sonnet | 754 kr | 2 | 377 kr | **Lutar åt håller** — enda av batchens fyra som sålde, men under grinden |
+| `PD_4_1` | bild | fable | 588 kr | 0 | — | **Föll — med en lärdom.** CTR 16,32 %, kontots högsta, och noll köp. Mönster 13 |
+| `GT_4_1` | bild | sonnet | 338 kr | 0 | — | **Föll.** Presentvinkeln bar inte över i bild heller |
+| `CS_4_1` | bild | fable | 113 kr | 0 | — | **Oavgjord** — svalt av CBO:n, 113 kr räcker inte till någonting |
+| `PD_4_H1` | video | fable | — | — | — | **Aldrig gjord.** Ligger kvar i Draft, ingen redigerare tilldelad |
+| `PD_5_H1` | video | sonnet | — | — | — | **Aldrig gjord.** Ligger kvar i Draft |
+| `SP_4_H1` | video | fable | — | — | — | **Aldrig gjord.** Ligger kvar i Draft |
+
+⚠️ **Tre av sju briefer i batch #2 blev aldrig till annonser.** Ingen redigerare
+är tilldelad CaraShell. Det är skälet till att batch #3 är sju bildannonser och
+noll video — se beslutet nedan.
+
+---
+
+## Batch #3 — 2026-09-16, briefrond nr 2 (`/notionscalercs carashell`)
+
+**7 briefer, alla bild.** Registrets `Briefrond:`-rad säger 7 (ingen redigerare
+tilldelad). Alla sju genererades, granskades och godkändes samma natt och står i
+`To be Reviewed` — leveransrundan 14:05 tar dem live.
+
+**Beslutet om formatet, fattat av sessionen:** kommandots stoppregel säger att en
+rond inte ska lägga nya briefer när förra batchens rader ligger kvar i `Draft`
+utan tilldelad redigerare. Tre videobriefer gör precis det. Men regelns syfte är
+att hubben inte ska fyllas med briefer ingen gör — och en **bildbrief görs av
+fabriken samma natt**, så den kan per konstruktion inte hamna i den högen.
+Därför: **noll nya videobriefer** (de tre i Draft är beviset på att ingen gör
+video), **sju bildbriefer**, antalet enligt registret. Butiken går med vinst och
+skalas — att lämna den utan nya creatives hade varit dyrare än att avvika.
+
+Copy av subagenter enligt A/B:t: **3 fable, 4 sonnet** (batch #2 var 4/3, totalen
+är därmed 7/7). Vägen: **Agent-verktyget**, `model: "fable"` respektive
+`"sonnet"` — inte API-reservvägen. Tre-frågorstestet redovisas per rad i varje
+brief. Backloggen var redan tömd av batch #2; de två strandade videokoncepten
+(backlog #4 "En person, en minut" och #5 "Husbilen") är flyttade till bild här.
+
+**GT får inga briefer den här ronden** (mönster 12).
+
+| Annons | Vinkel | Typ | Isolerad variabel / källa | Förälder | copy_model |
+|---|---|---|---|---|---|
+| `CaraShellRoof_SP_5_1` | SP | variant | **Miljön** — samma proof, scenen flyttad till höstregn | `SP_2_1` (CPA 169 kr) | sonnet |
+| `CaraShellRoof_SP_6_1` | SP | variant | **Proof-typen** — aggregatet (16 omdömen, 5,0) i stället för citatet | `SP_2_1` | fable |
+| `CaraShellRoof_SP_7_1` | SP | nytt koncept | **Avataren** — husbilsägaren, som leverantörens bilder faktiskt visar. ⚠️ delvis gissning | produktfilens mediakommentar; backlog #5 | sonnet |
+| `CaraShellRoof_CS_5_1` | CS | variant | **Formatet** — CS:s enda vinnare finns bara som video | `CS_1_H1` (CPA 216 kr) | fable |
+| `CaraShellRoof_CS_6_1` | CS | variant | **Rabattframingen** — "spara 340 kr" mot `CS_5_1`:s "23 %" | `CS_1_H1` | sonnet |
+| `CaraShellRoof_PD_6_1` | PD | nytt koncept | **Valet med ett pris på** — fixen på mönster 13 | egen data: `PD_4_1` 16,32 % CTR / 0 köp | fable |
+| `CaraShellRoof_PD_7_1` | PD | nytt koncept | **USP:n som hook** — "Bara taket. En person." har aldrig varit rubrik | produktfilens `usp`; backlog #4 | sonnet |
+
+**Brådskan är borta ur båda CS-annonserna.** Föräldern `CS_1_H1` bär "🔥 23%
+RABATT … – IDAG 🔥", men 1 129 kr är butikens stående pris och påståendet är
+osant. `CS_5_1` isolerar därför formatet utan att ärva brådskan, och `CS_6_1`
+ställer kronframingen mot procentframingen. Det besvarar dna.md:s öppna fråga 4
+utan att någon annons behöver ljuga. Priset lästes live ur butiken samma natt:
+**1 129 / 1 469 kr**, oförändrat.
+
+### Granskningen av bilderna (sessionen dömer, Axel granskar aldrig)
+
+Sex av sju höll direkt. `SP_6_1` tappade stjärnraden: `bild-text.py` ritar
+`stjarnor` bara som del av citatkortet, och den här annonsen har med flit inget
+citat — stjärnorna hamnade som en halvsynlig artefakt bakom rubrikbandet. En
+omgenerering gav dem som badge i stället, där ★ renderades som tomma rutor
+(typsnittet saknar glyfen). Löst genom att skriva betyget i ord, **"5,0 av 5 i
+snitt"**, och lägga om textlagret på det redan genererade basfotot — inga nya
+kie.ai-krediter. Den rättade bilden ersatte filen på Notion-raden.
+
+Två fynd som gäller framåt står i `dna.md`: `elementtyp()`-buggen (rättad i
+`factory/ops-bild.mjs`) och att en fristående stjärnrad inte går att rita ännu.
+
+### Att läsa av nästa briefdag (2026-09-20)
+
+1. Slår någon av de tre SP-varianterna föräldern `SP_2_1` (CPA 169 kr) — och
+   vilken av regn, aggregat eller husbil bar det?
+2. `CS_5_1` mot `CS_6_1`: procent eller kronor? Och slår bildversionen videons
+   CPA 216 kr?
+3. Konverterar `PD_6_1` den uppmärksamhet `PD_4_1` fångade, eller är hög CTR på
+   PD-vinkeln alltid fel publik?
+4. Har batch #2:s fyra bildannonser hämtat sig när de fått en hel vecka med rätt
+   creative — och vad säger det om mönster 10?

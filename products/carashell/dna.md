@@ -290,3 +290,96 @@ de tre rutinerna. **Ingen brief skriven, ingen budget ändrad.**
 
 Ingen feedback-loop går att göra: ingen CaraShell-annons är bedömbar.
 Första riktiga briefronden blir en **kallstart ur ärvd DNA** enligt mönster 1–5.
+
+---
+
+## Körning nr 3 — 2026-09-16 (`/notionscalercs carashell`, briefrond nr 2)
+
+**Butikens första rond med bedömbara annonser.** Kampanjen gick från 2 435 kr /
+8 köp (14/9) till **7 513 kr spend, 20 köp, ROAS 3,10, vinst 29 %** på 7 dagar.
+Budgeten höjdes 2 400 → 2 850 kr natten till 15/9 och **2 850 → 3 400 kr** den
+här natten, båda på snabbspårsregeln. Vinstbidrag från bedömbara annonser:
+**4 528 kr**.
+
+⚠️ **2 av 20 annonser är bedömbara** (≥ 300 kr OCH ≥ 3 köp). Rankingen nedan
+gäller dem; övriga 18 står utanför och har ingen dom.
+
+| Annons | Typ | Spend | Köp | CPA | ROAS | Vinstbidrag | Andel vinst |
+|---|---|---:|---:|---:|---:|---:|---:|
+| `SP_2_1` | bild | 846 kr | 5 | **169 kr** | 6,67 | **2 619 kr** | 57,8 % |
+| `CS_1_H1` | video | 863 kr | 4 | **216 kr** | 5,23 | **1 909 kr** | 42,2 % |
+
+### Variabeltabell (14d, hela kontot — grupperade utfall, inte domar)
+
+| Variabel | Värde | Spend | Andel | Köp | CPA | Vinstbidrag | VB per kr |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Format | **bild** | 3 401 kr | 45 % | 10 | 340 kr | 4 589 kr | **1,35** |
+| Format | video | 4 112 kr | 55 % | 10 | 411 kr | 3 745 kr | 0,91 |
+| Vinkel | **SP** | 3 188 kr | 42 % | 12 | **266 kr** | 5 128 kr | **1,61** |
+| Vinkel | CS | 1 707 kr | 23 % | 5 | 341 kr | 1 962 kr | 1,15 |
+| Vinkel | PD | 2 007 kr | 27 % | 3 | 669 kr | 1 244 kr | 0,62 |
+| Vinkel | GT | 611 kr | 8 % | **0** | — | 0 kr | **0,00** |
+| Batch | #1 | 5 720 kr | 76 % | 18 | 318 kr | 7 702 kr | 1,35 |
+| Batch | #2 | 1 793 kr | 24 % | 2 | 897 kr | 632 kr | 0,35 |
+
+---
+
+### Mönster 10 — bild leder fortfarande, men glappet krympte 3× (HYPOTES, justerad)
+
+Mönster 6 sa "bild slår video 3,6× på CPA" (133 mot 476 kr). I dag: **340 mot
+411 kr**, VB per krona 1,35 mot 0,91. Riktningen håller, styrkan gör det inte.
+
+**Rotorsaken sitter i batch #2, inte i formatet.** Batchens fyra bildannonser
+står för 1 793 kr och 2 köp (CPA 897 kr) och drar ner hela bildsnittet. De hade
+dessutom **fel creative under sitt första dygn**: rena foton utan textlager 14/9,
+rättade först 15/9 (se batch-loggen). Deras siffror blandar två olika annonser.
+→ **Instruktion:** bild är fortfarande majoriteten av varje batch, men "3,6×" ska
+inte citeras vidare. Nästa rond läser om batch #2 när den haft en hel vecka med
+rätt creative.
+
+### Mönster 11 — SP är butikens vinkel, nu med en bedömbar annons bakom sig (BEVISAD)
+
+SP: 42 % av spenden, **12 av 20 köp**, CPA 266 kr, vinstbidrag 5 128 kr, VB per
+krona 1,61 — bäst av alla fyra. `SP_2_1` ensam bär 57,8 % av allt vinstbidrag och
+är kontots enda bedömbara vinnare med CPA 169 kr. Mönster 7 (SP tog över från PD)
+är därmed inte längre bara ett grupperat utfall.
+→ **Instruktion:** SP får flest briefer varje rond. Batch #3 lägger tre.
+
+### Mönster 12 — GT har nu fått sin chans och tog den inte (HYPOTES, stärkt)
+
+GT: **611 kr över 5 annonser, 0 köp.** `GT_4_1` (bild, batch #2) fick 338 kr helt
+själv — den största GT-satsningen i butikens historia — och gav noll. I källan är
+`Takoverdrag_GT_2_H1` bäst av allt (24 köp, vinstbidrag 12 124 kr).
+Frågan i ärvd mönster 2 — bar vinkeln eller creativen? — lutar nu mot **creativen**.
+⚠️ Ingen enskild GT-annons har passerat grinden, så detta är ingen dom.
+→ **Instruktion:** GT får **inga briefer** i batch #3. Innan vinkeln döms ska den
+ärvda `GT_2_H1`-creativen återskapas så rakt som möjligt, i eget test-ABO med lika
+budget — annars dör vinkeln av CBO-svält utan att någon vet om den kunde.
+
+### Mönster 13 — högsta CTR i kontot gav noll köp (BEVISAD diagnos)
+
+`PD_4_1`: **CTR 16,32 %** (kontots högsta, näst högsta är 7,66 %), CPC 0,60 kr,
+**588 kr och 0 köp**. Bilden vinner uppmärksamhet och tappar avsikt. Det är
+mönster 5 (CTR och CPA går isär) bekräftat i CaraShells eget konto, och nu med en
+rotorsak: annonsen slutar i ett konstaterande om skada och ger läsaren inget att
+göra. `PD_6_1` i batch #3 är fixen — den sätter ett känt pris mot ett okänt.
+→ **Instruktion:** CTR får aldrig ensam motivera att en creative skalas eller
+kopieras. Läs den mot CVR i samma andetag.
+
+### A/B fable mot sonnet — ställning 2026-09-16
+
+**0 bedömbara annonser per modell.** Båda kontots bedömbara annonser (`SP_2_1`,
+`CS_1_H1`) är batch #1 och bär ingen `copy_model`-tagg. Batch #2:s sju taggade
+annonser ligger alla under grinden. Testet avgörs när båda modellerna har ≥ 5
+bedömbara; batch #3 lägger 3 fable + 4 sonnet och totalen är därmed 7 / 7.
+
+### Rotorsak i bildmotorn, hittad och rättad samma natt
+
+`elementtyp()` i `factory/ops-bild.mjs` testade `/headline/` före `/star/`, så
+elementnamnet **"Star row (under headline)"** blev en andra rubrik och stjärnraden
+föll bort. Rättat: stjärntestet ligger nu först, och `call-out 1/2` mappas till
+vänster/höger etikett. ⚠️ Kvar att veta: **`bild-text.py` ritar `stjarnor` bara
+som del av citatkortet** (citat + namn + stjärnor). En annons med stjärnor men
+utan citat får dem inte ritade, och som `badge` renderas ★ som tomma rutor —
+typsnittet saknar glyfen. `SP_6_1` löstes genom att skriva betyget i ord
+("5,0 av 5 i snitt"). Gör likadant tills motorn kan rita en fristående stjärnrad.

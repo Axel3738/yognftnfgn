@@ -27,3 +27,18 @@ Plockas ett item: märk raden `[använd i batch #N]` i stället för att radera 
 - **Påståenden om förvaringspåse eller dragsko.** Går inte att se i
   leverantörens bilder (`dna.md`, avsnittet om produkten). Källans PD-annons
   påstår dem — CaraShell gör det inte.
+
+---
+
+## Nytt i backloggen 2026-09-16 (körning nr 3)
+
+| Koncept | Varför just detta | Källa | Status |
+|---|---|---|---|
+| **GT som källans creative, i eget test-ABO** — `Takoverdrag_GT_2_H1` återskapad så rakt som möjligt, med lika budget per annons | GT har nu 611 kr och **0 köp** över 5 annonser hos CaraShell, medan samma vinkel bär 24 köp och 12 124 kr vinstbidrag i källan. Frågan "bar vinkeln eller creativen?" (mönster 2, 8, 12) går inte att svara på i en CBO som ger GT 8 % av spenden. | `dna.md` mönster 12; ärvd `Takoverdrag_GT_2_H1` CPA 188 kr, 24 köp | **väntar** — kräver ett eget ABO, alltså Axels ok på budget |
+| **`SP_2_1` som video** — kontots bästa annons i rörligt format | Bild slår video i snitt (mönster 10), men `CS_1_H1` visar att video kan vinna på den här produkten. `SP_2_1` har aldrig testats som video med CaraShells egna omdömen. | **data:** `SP_2_1` CPA 169 kr, 58 % av vinstbidraget | **väntar på redigerare** — kan inte göras av fabriken |
+| **Vad fastnar en 16,3 %-klickare på?** — samma bild som `PD_4_1` men med en landningsnära rad i stället för konsekvensraden | `PD_4_1` fångade kontots högsta CTR och sålde noll. `PD_6_1` testar ett pris mot ett okänt pris; det här testar i stället att byta ut raden och behålla bilden, så variabeln blir copyn och inte greppet. | **data:** mönster 13 | **väntar** — läggs om `PD_6_1` inte löser det |
+
+⚠️ De fem ursprungliga koncepten är alla plockade (batch #2). De två som briefades
+som video och aldrig blev gjorda — **#4 "En person, en minut"** och **#5
+"Husbilen, inte husvagnen"** — är omgjorda till bild i batch #3 (`PD_7_1` och
+`SP_7_1`) och ligger nu live-kön, inte här.
