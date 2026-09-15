@@ -885,6 +885,15 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   en anmärkning. Ingen nödbroms på antal leveranser. **Uppladdad rad flyttas till
   `SE-ACTIVE to be translated`** (översättningskön), aldrig till `Approved`.
 
+  ⚠️ **Stoppregeln gäller före uppladdning. En annons som redan är live stängs
+  aldrig av i efterhand** (Axels beslut 2026-09-15: "om annonsen redan är live så
+  ska vi inte stänga av den faktiskt alls"). Hittar en senare körning ett fel som
+  stoppregeln släppte igenom — fel siffra i en caption, ett trasigt captionspår,
+  en ful produktbild — så går det till redigeraren som en anmärkning för nästa
+  version. Det blir aldrig ett skäl att pausa något som spenderar. *(Bakgrund:
+  `IBC_CS_5_H1` säger 400 kr i bild mot 489 kr på sidan — 18,2 %, alltså innanför
+  20 %-gränsen. Den frågan ställdes till Axel och svaret blev den här regeln.)*
+
 - **Skriv aldrig en mätning som en evig lag.** Regeln ovan stod en gång som
   "`Filer och media` är tomt på samtliga rader … bygg därför aldrig". Den var falsk
   fyra minuter senare — `/bildannonser` mergades och började fylla exakt det fältet
