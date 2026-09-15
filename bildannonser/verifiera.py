@@ -19,9 +19,10 @@ import sys
 import unicodedata
 from pathlib import Path
 
-# Tecken utanför ASCII som är tillåtna i svensk annonstext. Allt annat är
-# mojibake eller ett tecken modellen hittat på.
-TILLATNA_ICKE_ASCII = set("åäöÅÄÖéÉüÜ–—→”“’…°")
+# Tecken utanför ASCII som är tillåtna i annonstext. Bäverbutiken kör svenska,
+# norska och danska marknader, så øØæÆ hör hemma här. Allt annat är mojibake
+# eller ett tecken modellen hittat på.
+TILLATNA_ICKE_ASCII = set("åäöÅÄÖøØæÆôÔéÉüÜ–—·×→”“’…°✅✓•")
 
 # Förbud ur CLAUDE.md och ramverkets steg 7. Träff = stoppfel, inte varning.
 FORBUD = [
@@ -46,23 +47,58 @@ def hitta_mojibake(text):
 
 
 def normalisera(s):
-    """Jämför utan att fastna på radbrytningar och dubbla mellanslag."""
+    """Jämför utan att fastna på radbrytningar, dubbla mellanslag eller de
+    citattecken briefen sätter runt varje rad. Stavning och ordval jämförs
+    fortfarande exakt — det är hela poängen med kontrollen."""
+    s = re.sub(r"[\"\u201c\u201d\u2018\u2019]", "", s)
     return re.sub(r"\s+", " ", s).strip()
 
 
-def granska_block(namn, text, brieftext):
+def granska_block(namn, text, brieftext, pris_verifierat=False,
+                  betyg_verifierat=False, produkt=None):
+    """Kontrollerar ett textblock rad för rad — ett block kan innehålla flera
+    rader (t.ex. en punktlista), och varje rad ska stå ordagrant i briefen.
+
+    Två undantag finns, och båda kräver att avläsningen står skriven i briefen:
+    `pris_verifierat` släpper igenom procentsatsen och ordet rabatt när de
+    vilar på ett jämförpris körningen läst på produktsidan (briefen måste bära
+    en rad som börjar med PRIS VERIFIERAT); ordet rea och påhittad knapphet
+    stoppas fortfarande, för de påstår något annat än ett jämförpris, och `betyg_verifierat` släpper igenom ett
+    stjärnbetyg som körningen räknat ur produktsidans egna recensioner (raden
+    BETYG VERIFIERAT). Siffran går därmed alltid att spåra till avläsningen.
+    Allt annat i FORBUD gäller oförändrat."""
     fel = []
+    normaliserad_brief = normalisera(brieftext)
 
-    if normalisera(text) not in normalisera(brieftext):
-        fel.append(f'strängen finns inte ordagrant i briefen: "{text}"')
+    for rad in [r for r in text.split("\n") if r.strip()]:
+        # Listbocken är ett ritat grafiskt element (text.py rita_lista), inte
+        # copy — den ska därför inte behöva stå i briefen för att raden ska
+        # räknas som ordagrann. Själva texten efter bocken kontrolleras som allt
+        # annat.
+        jamfor = rad[1:].lstrip() if rad.startswith(("\u2705", "\u2713")) else rad
+        if normalisera(jamfor) not in normaliserad_brief:
+            fel.append(f'raden finns inte ordagrant i briefen: "{rad}"')
 
-    for monster, skal in FORBUD:
-        if re.search(monster, text):
-            fel.append(f'förbjudet innehåll ({skal}) i: "{text}"')
+        for monster, skal in FORBUD:
+            # Ett belagt jämförpris bär både procentsatsen och ordet rabatt.
+            # "rea" och påhittad knapphet är andra påståenden och stoppas alltid.
+            if pris_verifierat and skal.startswith(("procentsats", "ordet rabatt")):
+                continue
+            # 636 kr är axelbältets gamla pris OCH IBC-tanköverdragets riktiga
+            # jämförpris på produktsidan. Regeln gäller därför bara när körningen
+            # inte sagt vilken produkt det är — då bannlyses talet som förr — eller
+            # när produkten faktiskt är axelbältet.
+            if (skal.startswith("förbjudet gammalt pris")
+                    and produkt is not None and produkt != "axelbaltet"):
+                continue
+            if betyg_verifierat and skal.startswith("stjärnbetyg"):
+                continue
+            if re.search(monster, rad):
+                fel.append(f'förbjudet innehåll ({skal}) i: "{rad}"')
 
-    mojibake = hitta_mojibake(text)
-    if mojibake:
-        fel.append(f'okända tecken {", ".join(mojibake)} i: "{text}"')
+        mojibake = hitta_mojibake(rad)
+        if mojibake:
+            fel.append(f'okända tecken {", ".join(mojibake)} i: "{rad}"')
 
     return fel
 
@@ -89,9 +125,29 @@ def main():
             continue
 
         brieftext = brieffil.read_text(encoding="utf-8")
+        pris_verifierat = bool(spec.get("pris_verifierat"))
+        betyg_verifierat = bool(spec.get("betyg_verifierat"))
         fel = []
+        if pris_verifierat and not re.search(r"^PRIS VERIFIERAT", brieftext, re.M):
+            fel.append("pris_verifierat är satt men briefen saknar en rad som "
+                       "börjar med PRIS VERIFIERAT — utan avläsningen i skrift "
+                       "får procentsatsen inte renderas")
+            pris_verifierat = False
+        if betyg_verifierat and not re.search(r"^BETYG VERIFIERAT", brieftext, re.M):
+            fel.append("betyg_verifierat är satt men briefen saknar en rad som "
+                       "börjar med BETYG VERIFIERAT — utan avläsningen i skrift "
+                       "får stjärnbetyget inte renderas")
+            betyg_verifierat = False
         for b in spec.get("block", []):
-            fel += granska_block(namn, b["text"], brieftext)
+            # Ritade stjärnor är ett betygspåstående som allt annat: de kräver
+            # samma skrivna avläsning som ett utskrivet stjärnbetyg.
+            if b.get("stjarnor") and not betyg_verifierat:
+                fel.append(f'blocket ritar {b["stjarnor"]} stjärnor men '
+                           "betyg_verifierat saknas — utan avläsningen i skrift "
+                           "får betyget inte renderas")
+            fel += granska_block(namn, b["text"], brieftext,
+                                 pris_verifierat, betyg_verifierat,
+                                 spec.get("produkt"))
 
         if fel:
             totalt_fel += len(fel)
