@@ -216,7 +216,7 @@ Gratis — bara ffmpeg lokalt, inga krediter. Fyra fel ger ❌:
 |---|---|---|
 | Tyst spår (medelvolym < −45 dB) | ljudet | klonen misslyckades helt |
 | Längddrift > 15 % mot källan | ljudet | HeyGen sträcker ljudet för läppsynk; rösten blir släpig eller hetsig |
-| Sista repliken slutar < 0,15 s före filmens slut | SRT | rösten hinner inte tala klart |
+| Dubben låter > 3 dB högre än källan i sina sista 100 ms | SRT + ljud | rösten hinner inte tala klart |
 | Översättningen tappade > 40 % av källans taltid | SRT | meningar har fallit bort |
 
 **En video med ❌ levereras inte.** Rendera om den i HeyGens UI eller stryk den ur
@@ -228,6 +228,28 @@ video som avhuggen — nästan varje annons har en musikbädd som ligger på hel
 så spåret tystnar aldrig. ffmpeg hör inte skillnad på tal och musik. En kontroll som
 alltid är röd är precis lika värdelös som en som aldrig är det, och den togs bort
 samma dag den skrevs. Talets tider läses därför ur SRT:en, som HeyGen ändå lämnar ut.
+
+⚠️ **Avhugget slut mäts som SLUTENERGI sedan 2026-09-15 — inte som "var slutar talet".**
+Det gamla måttet letade upp var talbandets energi sist passerade 15 % av filens topp
+och jämförde marginalen med källans. Det straffade raka motsatsen till felet det skulle
+fånga: **en dubb som säger sista ordet tydligt och sedan tystnar får en KORT marginal**,
+medan en källa som tonar ut gradvis får en lång. DryTreks `FO_2_H1` och `SP_6_H1` stod
+röda i tre dygn på exakt det — SP_6:s dubb slutar 49 dB under sin egen median, alltså i
+ren tystnad.
+
+Nya måttet frågar rakt av: **låter det fortfarande när filen tar slut?** RMS i sista
+100 ms i talbandet, mot filens egen median, i dB. Ett avhugget slut är ett ljud som
+inte hinner tona ut. Musikbädden är densamma i källa och dubb, så siffran används som
+**skillnad** mot källans — annars ser en film som slutar med musiken på likadan ut som
+en kapad.
+
+Mätt på 14 dubbar plus 14 kopior kapade mitt i ett ljud: hela dubbar −141…0,0 dB,
+kapade +0,8…+55 dB. Tröskeln 3 dB ger **0 falsklarm på de 14 och fångar 12 av 14
+kapningarna**. De två den missar är filmer vars KÄLLA själv slutar på full volym
+(`PD_13_H1`, `SP_7_H1`) — där kan differensen inte se något, och de rapporteras
+därför som **omätbara med orsak**, aldrig som gröna. Utan `--kalla` gäller samma
+princip: tonar ljudet ut i tystnad är det inte avhugget, låter det fortfarande går
+det inte att avgöra och det sägs rakt ut.
 
 ⚠️ **Grönt betyder "inga mätbara fel", inte "godkänd".** Lyssna själv på minst den
 video som ska bära mest spend, och skriv i leveransen att du gjort det.

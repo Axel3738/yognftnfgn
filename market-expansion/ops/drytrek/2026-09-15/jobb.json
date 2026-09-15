@@ -1,0 +1,169 @@
+{
+  "butik": "DryTrek",
+  "nyckel": "drytrek/damasker",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7",
+    "titel": "Damasker vandring"
+  },
+  "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249089726760172",
+        "name": "DRYTREK_NO_CI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249089595210172",
+        "name": "DRYTREK_NO_BOF",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249078373780172",
+        "name": "DRYTREK_NO_FO",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249020612580172",
+        "name": "DRYTREK_NO_SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249020612300172",
+        "name": "DRYTREK_NO_PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249020611960172",
+        "name": "DRYTREK_NO_G",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249020611560172",
+        "name": "DRYTREK_NO_CS",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 17,
+  "lank_arvd": "https://drytrek.se/nb/products/damasker?country=NO",
+  "pris_butik": {
+    "pris": 389,
+    "min": 389,
+    "max": 389,
+    "jamforpris": 649,
+    "valuta": "SEK",
+    "titel": "Gamasjer Fjelltur – Holder Snø, Vann & Grus Ute",
+    "handle": "damasker",
+    "kalla": "https://drytrek.se/nb/products/damasker.json"
+  },
+  "pris_skal": null,
+  "rader": [
+    {
+      "namn": "DryTrek_Damasker_FO_2_H1",
+      "mal_namn": "DryTrek_NO_Damasker_FO_2_H1",
+      "page_id": "3d8270ab-908c-8137-bb6b-d6854aa669de",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_FO_2_H1-3d8270ab908c8137bb6bd6854aa669de",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1pgKhcEY0Kq_2YO-5hTDle7VWNGW25RvE",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1pgKhcEY0Kq_2YO-5hTDle7VWNGW25RvE",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1pgKhcEY0Kq_2YO-5hTDle7VWNGW25RvE?usp=drive_link"
+        }
+      ],
+      "landning": "https://drytrek.se/products/damasker",
+      "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+      "prefix": "DryTrek",
+      "koncept": "FO",
+      "nummer": 2,
+      "variant": "H1",
+      "adset_namn": "DRYTREK_NO_Damasker Vandring - FO",
+      "adset": {
+        "id": "120249078373780172",
+        "name": "DRYTREK_NO_FO",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249074660690172",
+      "skapad": "2026-09-11T22:44:00.000Z",
+      "hub": "Damasker vandring",
+      "fil": "market-expansion/ops/drytrek/2026-09-15/se/DryTrek_Damasker_FO_2_H1/DryTrek_Damasker_FO_2_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/drytrek/2026-09-15/se/DryTrek_Damasker_FO_2_H1/DryTrek_Damasker_FO_2_H1_1.mp4",
+        "market-expansion/ops/drytrek/2026-09-15/se/DryTrek_Damasker_FO_2_H1/DryTrek_Damasker_FO_2_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_6_H1",
+      "mal_namn": "DryTrek_NO_Damasker_SP_6_H1",
+      "page_id": "3d8270ab-908c-816d-b461-c7d4212a0be3",
+      "url": "https://app.notion.com/p/DryTrek_Damasker_SP_6_H1-3d8270ab908c816db461c7d4212a0be3",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1qEIPYrCtaRrFKxaGzCpcKOydhsA54Heh",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1qEIPYrCtaRrFKxaGzCpcKOydhsA54Heh",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1qEIPYrCtaRrFKxaGzCpcKOydhsA54Heh?usp=drive_link"
+        }
+      ],
+      "landning": "https://drytrek.se/products/damasker",
+      "lank": "https://drytrek.se/nb/products/damasker?country=NO",
+      "prefix": "DryTrek",
+      "koncept": "SP",
+      "nummer": 6,
+      "variant": "H1",
+      "adset_namn": "DRYTREK_NO_Damasker Vandring - SP",
+      "adset": {
+        "id": "120249020612580172",
+        "name": "DRYTREK_NO_SP",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249074732640172",
+      "skapad": "2026-09-11T22:44:00.000Z",
+      "hub": "Damasker vandring",
+      "fil": "market-expansion/ops/drytrek/2026-09-15/se/DryTrek_Damasker_SP_6_H1/DryTrek_Damasker_SP_6_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/drytrek/2026-09-15/se/DryTrek_Damasker_SP_6_H1/DryTrek_Damasker_SP_6_H1_1.mp4",
+        "market-expansion/ops/drytrek/2026-09-15/se/DryTrek_Damasker_SP_6_H1/DryTrek_Damasker_SP_6_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    }
+  ],
+  "varningar": [],
+  "hamtad": "2026-09-15T13:53:24.116Z"
+}

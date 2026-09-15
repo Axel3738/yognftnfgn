@@ -818,3 +818,72 @@ briefen kräver en obruten tagning, det som ligger uppe är en trepanels split
 screen. De tio parkerade `Damasker_*`-raderna ligger orörda; frågan till Axel
 om dem har stått obesvarad sedan 2026-09-13 och rapporteras som varning utan
 ping, enligt regeln i den körningens loggpost.
+
+---
+
+## Norge 2026-09-15 — de två sista videorna live, och röstkollen lagad
+
+Rutinen triggade 13:50 UTC. Kön hade **2 rader** — `FO_2_H1` och `SP_6_H1`, de
+enda som blivit kvar. Ingen ny leverans att översätta. Fjärde dygnet de stod
+still, alla tre gånger på samma röda röstkoll.
+
+**Frågan till Axel var fel ställd och drog ut på tiden i onödan.** Att laga en
+mätbugg är inget ägarbeslut (regel 12) — det skulle ha gjorts direkt.
+
+### Rotorsaken: måttet straffade det det skulle belöna
+
+`rostkoll.py` mätte avhugget slut som **var talbandets energi sist passerade
+15 % av filens topp**, och jämförde marginalen till filmens slut med källans.
+Det är bakvänt: en dubb som säger sista ordet **tydligt och sedan tystnar** får
+en KORT marginal, medan en källa som tonar ut gradvis får en lång. Ju renare
+slut, desto rödare film.
+
+Den tidigare hypotesen — "kollen mäter musiken, inte rösten" — var **fel**, och
+mätdatan säger det rakt ut. Dubbens tail är inte musik: vid 12,80 s ligger
+FO_2:s källa på 138 och dubben på 1 471, tio gånger högre. Skillnaden ÄR rösten.
+Felet satt i tröskeln, inte i frekvensbandet.
+
+### Nya måttet: slutenergi
+
+Frågan är nu rakt av **"låter det fortfarande när filen tar slut?"** — RMS i
+sista 100 ms i talbandet, mot filens egen median, i dB. Ett avhugget slut är
+ett ljud som inte hinner tona ut. Musikbädden är gemensam mellan källa och
+dubb, så talet används som **skillnad** mot källans.
+
+Validerat på **14 dubbar + 14 kopior kapade mitt i ett ljud** (kapningen läggs
+30 ms in i det energistarkaste fönstret i slutet — en kapning som hamnar i en
+paus hörs inte och duger inte som testfall):
+
+| | hela dubbar | kapade mitt i ljud |
+|---|---|---|
+| Slutenergi mot källan | −141…0,0 dB | +0,8…+55 dB |
+| Utfall med tröskel 3 dB | **0 falsklarm av 14** | **12 fångade av 14** |
+
+De två den missar är filmer vars KÄLLA själv slutar på full volym (`PD_13_H1`
++6,3 dB, `SP_7_H1` +6,2 dB). Där har differensen inget att mäta mot, och de
+rapporteras som **omätbara med orsak** — aldrig som gröna.
+
+`pipeline/test/test_rostkoll.py` påstod tvärtom att en fil som slutar i **total
+tystnad** (−179 dB) ska bli röd, bara för att sista cue:n gick till sista
+bildrutan. Det testet kodifierade buggen och är omskrivet: en sådan fil ska bli
+GRÖN, och en video kapad mitt i ett ljud ska bli RÖD. Alla 7 testfall gröna,
+`npm test` 1 183/1 183, självtestet 9 gröna / 0 röda.
+
+### De två annonserna
+
+| Annons | Adset | Ad-id | Slutenergi mot källan | Tillbakaläst |
+|---|---|---|---|---|
+| `DryTrek_NO_Damasker_FO_2_H1` | `DRYTREK_NO_FO` | 120249106482250172 | **−12,8 dB** | ACTIVE/PENDING_REVIEW |
+| `DryTrek_NO_Damasker_SP_6_H1` | `DRYTREK_NO_SP` | 120249106502590172 | **−49,1 dB** | ACTIVE/IN_PROCESS |
+
+Inget renderades om: både dubbarna och källorna låg kvar på disken sedan 13/9,
+så de kostade **0 HeyGen-krediter**. Captionsen var redan klara.
+
+NO-kampanjen kör nu **47 annonser, samtliga ACTIVE**: PD 27, SP 8, CS 4, G 4,
+FO 2, CI 1, BOF 1. **Kön är tom.**
+
+⚠️ **Lärdomen, värd mer än de två annonserna:** en kontroll som aldrig testats
+mot ett äkta positivt fall är inte en kontroll, den är en gissning. Den här
+hade ett testfall som mätte fel sak, och det tog tre dygns produktion innan
+någon räknade på siffrorna i stället för att tro på utfallet. Bygg alltid det
+trasiga fallet på riktigt — och lägg det där det gör ont: mitt i ett ljud.

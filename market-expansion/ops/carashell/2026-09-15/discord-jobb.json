@@ -1,0 +1,18 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-15",
+  "lage": "oversatt",
+  "server": "CaraShell",
+  "gjort": [
+    "Norway round: queue empty, nothing to translate. Yesterday's four image ads were all taken and are Approved.",
+    "CARASHELL_NO_Takovertrekket is ACTIVE with 4 ad sets - the market is running, this is an empty queue and not a hold.",
+    "HeyGen credits used: 0 before -> 0 after."
+  ],
+  "varningar": [
+    "The hub holds three video briefs from batch #2 still in Draft (PD_4_H1, PD_5_H1, SP_4_H1). No editor is assigned to CaraShell, so nothing is being produced against them. They will reach Norway once someone delivers them.",
+    "Good news worth recording: the link inherited for new Norwegian ads now reads https://carashell.se/nb/products/takskyddet?country=NO, picked up from yesterday's CaraShellRoof_NO_CS_4_1. New ads get the Norwegian currency automatically from here on. The nine oldest Norwegian ads still link without the parameter."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-16"
+}
