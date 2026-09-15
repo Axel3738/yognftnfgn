@@ -22,6 +22,11 @@
 //  • Kopplingen SE-prefix → marknadens kampanj ligger i <land>/produkter.json.
 //  • Fyra utfall per kampanj: ACTIVE · PAUSED utan spend · PAUSED med spend
 //    (avvecklad, kör inte) · saknas (kör inte, bygg aldrig).
+//    ⚠️ Avvecklad kampanj = raden översätts INTE ALLS (Axels beslut 2026-09-15:
+//    "om de norska kampanjerna är avstängda kan du strunta i att ens translatea
+//    annonserna"). Ingen HeyGen-kredit, ingen bildkomposition, ingen subagent —
+//    raden hoppas här i Fas 1 och nämns en gång i briefen. Den ligger kvar i
+//    Notion-kön och tas av sig själv den dag kampanjen startas igen.
 //  • Dubblettspärr: målkontot läses EN gång; finns målnamnet → klar, hoppa tyst.
 //  • Pris ur marknadens butik vid varje körning (products.json, matchat på handle).
 
@@ -193,7 +198,7 @@ async function main() {
               adsetNamn: `${p.adset_prefix} - ${j.K}`, annonsNamn: målnamn(p, j.K, nr, rest), link: p.link, prefix: p.no_prefix };
     if (u.utfall === 'SAKNAS') { j.skal = `kampanj ${p.campaign_id} finns inte i ${M.kontonamn} (${u.fel}) — bygg aldrig här, kör /translate-no eller rätta produkter.json`; continue; }
     if (u.kampanj.account_id !== M.act) { j.skal = `kampanj ${p.campaign_id} ligger på konto ${u.kampanj.account_id}, inte ${M.act} — fel konto, rättas i produkter.json`; continue; }
-    if (u.utfall === 'AVVECKLAD') { j.skal = `"${u.kampanj.name}" är PAUSED med ${u.spend} kr spend — avvecklad, väntar`; continue; }
+    if (u.utfall === 'AVVECKLAD') { j.skal = `"${u.kampanj.name}" är PAUSED med ${u.spend} kr spend — avvecklad, översätts inte`; continue; }
 
     if (målNamn.has(j.mal.annonsNamn.toLowerCase())) { j.status = 'KLAR'; j.skal = `finns redan i ${M.kontonamn}`; continue; }
 

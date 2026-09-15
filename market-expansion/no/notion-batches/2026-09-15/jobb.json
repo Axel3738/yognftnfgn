@@ -1,7 +1,7 @@
 {
   "marknad": "NO",
   "datum": "2026-09-15",
-  "skapad": "2026-09-15T08:48:37.200Z",
+  "skapad": "2026-09-15T09:11:07.464Z",
   "kvot": {
     "heygen": null,
     "kie": 14097.2
@@ -19,7 +19,7 @@
       },
       "namn": "Beltgrinder_SP_4_H1",
       "status": "HOPPA",
-      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250117678640291",
         "status": "ACTIVE",
@@ -64,7 +64,7 @@
       },
       "namn": "Beltgrinder_REV_5_1",
       "status": "HOPPA",
-      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250147962430291",
         "status": "ACTIVE",
@@ -109,7 +109,7 @@
       },
       "namn": "Beltgrinder_REV_6_1",
       "status": "HOPPA",
-      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250148085750291",
         "status": "ACTIVE",
@@ -154,7 +154,7 @@
       },
       "namn": "Beltgrinder_PD_18_1",
       "status": "HOPPA",
-      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250148087270291",
         "status": "ACTIVE",
@@ -199,7 +199,7 @@
       },
       "namn": "Beltgrinder_PD_19_1",
       "status": "HOPPA",
-      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250148322650291",
         "status": "ACTIVE",
@@ -244,7 +244,7 @@
       },
       "namn": "Beltgrinder_PD_20_1",
       "status": "HOPPA",
-      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250148320500291",
         "status": "ACTIVE",
@@ -289,7 +289,7 @@
       },
       "namn": "Beltgrinder_PD_21_1",
       "status": "HOPPA",
-      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, väntar",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250148089660291",
         "status": "ACTIVE",
@@ -334,7 +334,7 @@
       },
       "namn": "Batmotor_GT_4_H1",
       "status": "HOPPA",
-      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, väntar",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250168704670291",
         "status": "ACTIVE",
@@ -379,7 +379,7 @@
       },
       "namn": "Batmotor_SP_1_H8",
       "status": "HOPPA",
-      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, väntar",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
       "se": {
         "annonsId": "120250168880490291",
         "status": "ACTIVE",

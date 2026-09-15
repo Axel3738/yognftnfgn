@@ -19,7 +19,13 @@ Skriv i Axels läsformat: en mening per rad, max 10 ord, inga filnamn, ingen tek
 ## Regler som aldrig bryts
 
 - **Bygg aldrig en kampanj här.** Saknas produktens NO-kampanj: rapportera (`/translate-no` bygger).
-- **PAUSED med spend = avvecklad.** Inga nya annonser dit, raden ligger kvar i kön.
+- **PAUSED med spend = avvecklad. Då översätts raden INTE ALLS** (Axels beslut
+  2026-09-15: "om de norska kampanjerna är avstängda kan du strunta i att ens
+  translatea annonserna"). Kampanjutfallet läses i Fas 1, före all översättning:
+  ingen HeyGen-rendering, ingen bildkomposition, ingen subagent, inga krediter.
+  Raden hoppas, nämns en gång i briefen och ligger kvar i Notion-kön — startar
+  Axel kampanjen igen tas den av nästa körning. Gäller även när kön "bara" har
+  sådana rader: då är rätt utfall 0 översatta, inte ett försök.
 - **Fel konto = avbryt.** Kampanjens `account_id` måste vara marknadens (`marknader.json`).
 - **Kontot är facit för dubbletter.** Finns målnamnet i målkontot är raden klar.
 - **Ingen rad hoppas tyst.** Allt som inte kördes står i briefen med skäl.

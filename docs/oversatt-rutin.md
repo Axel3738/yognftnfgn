@@ -97,7 +97,7 @@ kör/hoppa/varför.
    |---|---|
    | Kampanj **ACTIVE** | Kör. Annonsen börjar spendera direkt. |
    | Kampanj **PAUSED, 0 kr spend** | Kör, men annonsen lämnas PAUSED. |
-   | Kampanj **PAUSED med spend > 0** | **Avvecklad.** Kör inte. Raden ligger kvar i kön, rapporteras som "väntar". |
+   | Kampanj **PAUSED med spend > 0** | **Avvecklad. Raden översätts inte alls** (Axel 2026-09-15). Utfallet läses i Fas 1, före översättningen — ingen HeyGen-rendering, ingen bildkomposition, inga krediter. Raden ligger kvar i kön och tas den dag kampanjen startas igen. |
    | **Ingen kampanj** / prefix saknas i produkter.json | Kör inte. Bygg **aldrig** en kampanj här (BE-ROAS/COGS-kedjan bor i `/translate-no`). Problemmeddelande: "⚠️ MC-Kapell saknar norsk kampanj. Kör /translate-no på produkten eller lägg till raden i produktlistan." |
 
    Spend läses med `insights?date_preset=maximum`; fel ⇒ räknas som spend.
@@ -374,7 +374,8 @@ innan den drar någon slutsats.
 - **Saknas NO-kampanj:** rapportera, bygg aldrig. Produkter som bara finns i
   Notion + SE-kontot (utan Drive-mapp i LAUNCHED) blir inte kandidater i
   `/translate-no` heller — de listas i briefen tills Axel bestämmer.
-- **Kampanjer som är PAUSED med spend** får inga nya annonser, raden rapporteras
+- **Kampanjer som är PAUSED med spend** får inga nya annonser OCH raden översätts
+  inte alls (Axel 2026-09-15 — kontrollen sitter i Fas 1, före allt arbete), raden rapporteras
   som "väntar" och ligger kvar i kön.
 
 ---
