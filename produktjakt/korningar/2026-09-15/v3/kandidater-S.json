@@ -1,0 +1,218 @@
+{
+  "agent": "S — Q4-gåva + djur ute (H05/H09)",
+  "datum": "2026-09-15",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Husbilskalendern, 24 retrobussar",
+      "objekt": "Mannen med husbilen — kalendern (fars dag, jul)",
+      "form": "kalenderlåda",
+      "arketyp": "G_Q4_GAVA",
+      "arketyp_sekundar": "F_HOBBY_IDENTITET",
+      "slot": "sasong",
+      "hypotes_id": "H05",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar",
+        "delade_variabler": ["24 synliga saker bakom luckor", "hårt datum 1 december", "mottagare i relation (partnern med husbilen)", "svikande default = chokladkalendern", "prisband 300–499"],
+        "avvikelser": ["mottagaren är vuxen, inte barnbarnet", "delarna är skiktad akryl (2,5D), inte 3D-leksaker", "identitetsköp — F_HOBBY_IDENTITET är 0/1 i kontot"]
+      },
+      "sasong": {"fonster_id": "advent_1_december", "deadline_typ": "1 december", "veckor_kvar": 10.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013149476732",
+        "url": "https://www.aliexpress.com/item/1005013149476732.html",
+        "pris_usd": 16.33,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-15T07:14:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005013149476732.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant (2026-upplagan, 24 delar) enligt titel; sökträffen 2026-09-15 visar samma 16,33 USD som 2026-09-13",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "omverifierad i dag: heron är ren packshot — orange låda med tryckt titel + alla 24 delar (18 bussar, 2 campingstolar, kylbox, lykta, 2 muggar, 2 surfbrädor, ljusslinga) uppradade; ingen överlagrad text utöver lådans eget tryck"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i denna körning — svensk sökning 2026-09-15 gav Otego (bilar/traktor/lastbil-kalender), Tradera (24 bilar) och Walmart.com; ingen husbils-/campervan-kalender i SEK", "pris_sek": null, "url": "https://www.walmart.com/ip/Campervan-Advent-Calendar-2026-24-Days-Christmas-Countdown-Retro-Van-Ornaments-Acrylic-Blind-Box-Vehicles-Collectible-Mystery-Gift-Set-Kids-Adults/20883750195", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej hittat — närmast CDON 'Adventskalender för män, 24 presenter' 519 kr (sökutdrag 2026-09-15, annan form) och Otego bil/traktor-kalender (pris ej läst)", "pris_sek": 519, "url": "https://cdon.se/jul/adventskalendrar", "i_sortiment": true},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["otego.se (sökutdrag)", "tradera.com (sökutdrag)", "cdon.se/jul/adventskalendrar (sökutdrag)", "walmart.com (finns, ingen SEK)", "09-13: adventskalenderguiden.se, husbilhusvagn.se, leksaksbilar.se"]
+      },
+      "ekonomi": {"landad_sek": [212, 260], "pris_sek": 499, "brutto_sek": [239, 287], "be_cpa_sek": [239, 287], "be_roas": 1.9, "flerkop": false, "returrisk": "låg — en variant, ingen storlek"},
+      "meta_tanke": {"hook": "Har han husbilen? Här är hans kalender.", "objekt_i_bild": "lådan på husbilens bord, bussarna uppradade på hyllkanten", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "lucka öppnas, en folkabuss med pop-up-tak kommer ut och ställs bredvid de andra"},
+      "varfor": "Kontots största bevisade ägargrupp (husvagn/husbil, ägare 55+) får racingbilarnas form — 24 synliga saker + 1 december — och ingen svensk aktör säljer den; klarade grinden 09-13 och föll bara på plats. Frun köper till mannen: hårt datum + relation är exakt H05.",
+      "huvudrisk": "Delarna är platt akryl — upplevt värde kan landa under 499 kr i bild; kalendern i butiken tappade vid skalning (ROAS 1,88 → pausad).",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 3, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-15 (kalender: bara Fiskedrag + Racingbilar — annan sak)", "koncept.py sok kalender — 13 träffar, ingen husbil", "fynd 09-11…09-14: ingen husbilskalender (raden låg i backlog v38 som 'först i kön')"]},
+      "kallor": ["https://www.aliexpress.com/item/1005013149476732.html", "https://www.walmart.com/ip/Campervan-Advent-Calendar-2026-24-Days-Christmas-Countdown-Retro-Van-Ornaments-Acrylic-Blind-Box-Vehicles-Collectible-Mystery-Gift-Set-Kids-Adults/20883750195", "https://otego.se/produkt/adventskalender-bilar-traktor-lastbil-julkalender-2023/", "https://cdon.se/jul/adventskalendrar"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Fågelkalendern, 24 fåglar att hänga",
+      "objekt": "Fågelskådaren vid köksfönstret — kalendern (samma ägare som fågelmataren, fågelbadet och vattenskålen)",
+      "form": "kalenderlåda",
+      "arketyp": "G_Q4_GAVA",
+      "arketyp_sekundar": "F_HOBBY_IDENTITET",
+      "slot": "sasong",
+      "hypotes_id": "H05",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar",
+        "delade_variabler": ["24 synliga saker bakom luckor", "hårt datum 1 december", "mottagare i relation (mamman/svärmor med fågelbordet)", "svikande default = chokladkalendern", "prisband 300–499"],
+        "avvikelser": ["2D-akrylhängen, inte 3D-leksaker", "arterna är nordamerikanska (kardinal, blåskrika, vithövdad örn) — inte talgoxe/domherre", "lådan i heron är märkt 2025"]
+      },
+      "sasong": {"fonster_id": "advent_1_december", "deadline_typ": "1 december", "veckor_kvar": 10.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005010298356708",
+        "url": "https://www.aliexpress.com/item/1005010298356708.html",
+        "pris_usd": 17.65,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-15T07:18:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005010298356708.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant enligt titel (24 delar, 2D); årtal på lådan 2025 i heron",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "packshot: röd låda med tryckt 'Bird Advent Calendar 2025' + 24 målade fåglar med upphängningsöglor mot vit bakgrund med julkulor; fåglarna är detaljerade men amerikanska arter"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Amazon.se — '2025 Julkalender Havsglas Fågel Advent 2D Akryl' (sökutdrag 2026-09-15, pris ej läst; annan stil — havsglas, inte målade fåglar)", "pris_sek": null, "url": "https://www.amazon.se/Dekorativa-adventskalendrar/b?ie=UTF8&node=61027840031", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej hittat i fågelfackhandeln — vivara.se/naturbokhandeln säljer ingen fågelfigur-kalender (sökutdrag 2026-09-15); närmast Gobokhandeln 'Julkalender 24 djurfigurer + faktakort' (pris ej läst)", "pris_sek": null, "url": "https://www.gobokhandeln.se/produkter/alder/tre-ar/julkalender-for-barn-husdjur-och-skogsdjur-24-djurfigurer-och-faktakort/", "i_sortiment": true},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["vivara.se (sökutdrag: fågelskådning, klocka med fågelljud — ingen kalender)", "amazon.se (sökutdrag)", "gobokhandeln.se (sökutdrag)", "adventskalendern.se (Schleich djur, sökutdrag)"]
+      },
+      "ekonomi": {"landad_sek": [230, 281], "pris_sek": 499, "brutto_sek": [218, 269], "be_cpa_sek": [218, 269], "be_roas": 2.04, "flerkop": false, "returrisk": "låg — en variant"},
+      "meta_tanke": {"hook": "Till henne som matar fåglarna.", "objekt_i_bild": "lådan på fönsterbrädan med fågelbordet utanför fönstret, fåglarna hängda i granen", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "lucka öppnas, en fågel kommer ut och hängs i granen bredvid gårdagens"},
+      "varfor": "Fågelmatarägaren är kontots bevisade djur-ute-grupp (fågelbad ja 09-12, uppvärmd vattenskål och fågelmatare med kamera i butiken) och får racingbilarnas struktur — 24 synliga saker, 1 december, mottagare i relation. Ingen svensk fågelfackhandel säljer formen.",
+      "huvudrisk": "Arterna är nordamerikanska och lådan säger 2025 — en fågelskådare ser det på 3 sekunder; Amazon.se har en 2D-fågelkalender i annan stil till okänt pris.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 1, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-15 (fågel: matare med kamera, uppvärmd vattenskål — annan sak)", "koncept.py sok fågel/kalender — ingen fågelkalender", "fynd 09-11…09-14: ingen"]},
+      "kallor": ["https://www.aliexpress.com/item/1005010298356708.html", "https://www.amazon.se/Dekorativa-adventskalendrar/b?ie=UTF8&node=61027840031", "https://www.vivara.se/fagelskadning", "https://www.gobokhandeln.se/produkter/alder/tre-ar/julkalender-for-barn-husdjur-och-skogsdjur-24-djurfigurer-och-faktakort/"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Hundgårdsskålen, uppvärmd och hängande",
+      "objekt": "Gårdshundens vatten — hundgårdsnätet (skålen hängs på nätet/burväggen)",
+      "form": "annat",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "B_SKYDDA_DYRT",
+      "slot": "sasong",
+      "hypotes_id": "H09",
+      "vinnarlikhet": {
+        "likast": "Isolerade Utekattkojan / Uppvärmd Vattenskål 2,2 L (butiken, K0232 ja)",
+        "delade_variabler": ["objekt ute (gårdshunden)", "ägare 55+ småhus", "deadline första frost / utedjur stänger", "golv under nej (Lundhs 1 294, Sulavesi 1 690)", "ankare 1,2–1,6× (1,44)", "prisband 500–999"],
+        "avvikelser": ["form 'annat' (0 vinnare / 13 förlorare i facit)", "elektronik med sladd ute", "hero är packshot utan kontext"]
+      },
+      "sasong": {"fonster_id": "utedjur_stanger", "deadline_typ": "första frost", "veckor_kvar": 8.7, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013124440291",
+        "url": "https://www.aliexpress.com/item/1005013124440291.html",
+        "pris_usd": 25.88,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-15T07:17:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005013124440291.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant enligt titel (hängande, grå); volym står inte i titeln — ej mätt; spänning ej i titeln (troligen 230 V-adapter, ej mätt)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 0, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "packshot: grå D-formad skål med rak rygg (hängs mot nät/vägg) och stålarmerad, tuggsäker sladd — textfri men helt utan hund eller hundgård; kräver egen kontextbild"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Hylte Jakt & Lantman — Lundhs vattenskål eluppvärmd 3 L, 24 V/30 W inkl transformator, med monteringsring (kategori Hundgård)", "pris_sek": 1294, "url": "https://www.hylte-lantman.com/vattenskal-eluppvarmd-inkl-50w-transformator", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "Sulavesi uppvärmd vattenskål utomhus 2,6 L (betong, 40 W) — Arken Zoo/VetZoo, i lager", "pris_sek": 1690, "url": "https://www.arkenzoo.se/sulavesi-uppvarmd-vattenskal-for-utomhusbruk-26-liter", "i_sortiment": true},
+        "ankare_kvot": 1.44,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["hylte-lantman.com (läst 2026-09-15: 1 294 kr, webblager)", "arkenzoo.se (läst 2026-09-15: 1 690 kr, i lager)", "djurslottet.se (läst 2026-09-15: eluppvärmd golvskål 3,2 L 1 499 kr)", "jaktmarken.se 'Vattenskål 3L värmd 30w' (503 — pris ej läst)", "granngarden.se/zoo.se (sökutdrag: elvattenkoppar, inga hundgårdsskålar med värme)"]
+      },
+      "ekonomi": {"landad_sek": [337, 412], "pris_sek": 899, "brutto_sek": [487, 562], "be_cpa_sek": [487, 562], "be_roas": 1.71, "flerkop": false, "returrisk": "medel — volym och spänning ej verifierade; hängfästet måste passa nätet"},
+      "meta_tanke": {"hook": "Fryser hundens vatten i gården?", "objekt_i_bild": "skålen hängd på hundgårdens nät, rimfrost runt om, hunden dricker", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "isskorpan i den gamla skålen bredvid, öppet vatten i den hängda"},
+      "varfor": "Samma sak som kattens uppvärmda vattenskål (Axel ja, K0232, i butiken) men i hundgårdens form — hängd på nätet, tuggsäker sladd — där svenska golvet är 1 294–1 690 kr och vi kan ligga på 899 med BE-CPA ≥ 487. Rent H09-test: djur ute + första frost + ny form på nytt djur.",
+      "huvudrisk": "Volym och spänning står inte i titeln (kan vara mindre än Lundhs 3 L); form 'annat' är 0/13 i facit och heron saknar kontext — nära butikens 2,2 L-skål i funktion, skild bara i montering och djur.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-15: 'Uppvärmd Vattenskål För Vinterfåglar – 2,2 Liter' 849 kr = golvskål för fåglar/katt — annan montering (hängande) och annat djur; närheten är markerad i huvudrisken", "koncept.py sok hund — K0209 plastkoja nej, K0210–K0223 kojor/kapell; sok vattenskål — K0232 kattens 2,2 L (ja)", "fynd 09-11…09-14: ingen hundskål"]},
+      "kallor": ["https://www.aliexpress.com/item/1005013124440291.html", "https://www.hylte-lantman.com/vattenskal-eluppvarmd-inkl-50w-transformator", "https://www.arkenzoo.se/sulavesi-uppvarmd-vattenskal-for-utomhusbruk-26-liter", "https://djurslottet.se/products/eluppvarmd-vattenskal"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Fågelholken med WiFi-kamera",
+      "objekt": "Fågelholken på tomten — kameran i holken (gåva till fågelskådaren, fars dag/jul)",
+      "form": "hus",
+      "arketyp": "G_Q4_GAVA",
+      "arketyp_sekundar": "H_VISUELL_NYHET",
+      "slot": "sasong",
+      "hypotes_id": "H05",
+      "vinnarlikhet": {
+        "likast": "Övervakningskameran (PTZ) / Fågelmataren med kamera (K0242 ja, i butiken 1 659 kr)",
+        "delade_variabler": ["elektronik ute med app", "ankare ≥ 1,6× (Vivara kamera 3 399,90)", "prisband ≥ 1 000 med bevisad syster i butiken", "objekt ute"],
+        "avvikelser": ["montering = ja (holk sätts upp, kamera kopplas — 1/6 i facit)", "nyttan syns först i häckningen (april–maj) — köps som gåva nu", "hero har text- och app-overlays"]
+      },
+      "sasong": {"fonster_id": "fars_dag", "deadline_typ": "fars dag", "veckor_kvar": 7.7, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005009894758144",
+        "url": "https://www.aliexpress.com/item/1005009894758144.html",
+        "pris_usd": 46.19,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-15T07:19:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005009894758144.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant enligt titel (träholk + 4MP Tuya-kamera, SD-kort, natt-IR); strömförsörjning ej i titeln (systerlistningen 1005010688265389 samma hus, 46,19 USD)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron: träholken på en trädstam med talgoxe i bild och mobilvy med ungar i boet — i kontext och svensk-relevant art; men 'PATENTED', Tuya-loggor och kamerainset ligger ovanpå och måste beskäras"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "SmartaSaker — Fågelholk med webbkamera (holk + WiFi-kamera, 20 m strömkabel)", "pris_sek": 1545, "url": "https://www.smartasaker.se/sv/fagelholk-med-webbkamera", "exakt_samma_form": true, "kommentar": "slutsåld (lagersaldo 0) läst 2026-09-15"},
+        "premium_ankare": {"namn": "Vivara Fågelholks WiFi-kamera (bara kameran, 10 m kabel) 3 399,90 kr; solcellsdriven 3 399,90 kr — båda i lager", "pris_sek": 3399.9, "url": "https://www.vivara.se/fagelholks-kamera", "i_sortiment": true},
+        "ankare_kvot": 2.84,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["smartasaker.se (läst 2026-09-15: 1 545 kr, slutsåld)", "vivara.se/fagelholks-kamera (läst 2026-09-15: 3 399,90 kr, kamera utan holk)", "vivara.se/fagelholks-kamera-solcellsdriven (läst: 3 399,90 kr)", "green-backyard.com (paket finns, sidan svarade tomt — pris ej läst)", "letsbuyit.se (guide: 'ofta 1 000–1 500 kr', Amazon.se-produkter utan pris)", "granngarden.se (sökutdrag: holkar utan kamera)"]
+      },
+      "ekonomi": {"landad_sek": [601, 735], "pris_sek": 1199, "brutto_sek": [464, 598], "be_cpa_sek": [464, 598], "be_roas": 2.26, "flerkop": false, "returrisk": "medel — WiFi-räckvidd till holken och strömförsörjning måste stämma; app (Tuya) krävs"},
+      "meta_tanke": {"hook": "Vem bor i holken i år?", "objekt_i_bild": "holken på stammen, mobilen med ungarna i boet", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "mobilvyn: fem gapande ungar i boet inifrån holken"},
+      "varfor": "Fågelmataren med kamera (1 659 kr) står i butiken och fick ja — holken är samma ägare, samma mekanism (kamera + app) i en form ingen svensk kedja säljer i lager (SmartaSaker slutsåld, Vivara tar 3 400 för bara kameran). Fars dag 7,7 v: gåvan som packas upp nu och betalar av sig i april.",
+      "huvudrisk": "Payoffen (ungarna) kommer först i häckningen — köpet måste bäras som gåva, och montering/app/WiFi-räckvidd är förlorarsignaler i facit.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-15: 'Fågelmatare Med Kamera Och Solcellspanel' 1 659 kr = matare, annan sak; grep holk = 0", "koncept.py sok holk = 0, sok kamera = K0242 (mataren)", "fynd 09-11…09-14: ingen holk; 09-13 strök 'fågelholksbyggsats 1–5 USD' och 'övernattningsholk' — annan form"]},
+      "kallor": ["https://www.aliexpress.com/item/1005009894758144.html", "https://www.aliexpress.com/item/1005010688265389.html", "https://www.smartasaker.se/sv/fagelholk-med-webbkamera", "https://www.vivara.se/fagelholks-kamera", "https://www.vivara.se/fagelholks-kamera-solcellsdriven", "https://www.letsbuyit.se/fagelholk-med-kamera/"]
+    }
+  ],
+  "strukna": [
+    {"namn": "Hästen i hagen — hinkvärmare/trågvärmare 24 V (ankare Willab 20 L 24 V/110 W, Granngården/Hööks/Börjes 1 299–1 349)", "skal": "Fyra nya fraser i dag (24V bucket heater horse · trough de-icer 24V low voltage · heated water bucket 24V livestock · low voltage water heater horse trough 24V) gav bara DC-doppvärmarpatroner med gänga (SNDHEATER/LJXH 12–48 V, 22–24 USD), bilkokare och DC-DC-moduler — ingen hinkvärmare eller värmehink. Tolfte frasen totalt utan listning (8 i går) — raden ska ligga kvar i backlog utan fler sökningar tills en ny källa finns."},
+    {"namn": "Metallpusselkalendern 24 luckor (1005010305721102, 22,75 USD, LIVE + hero sedd)", "skal": "Coolstuff säljer exakt samma form (24 pusselknutar i rostfritt, 379 kr, i lager, 4,5 stjärnor/46 recensioner — läst 2026-09-15). Landad 300–370 kräver pris ≥ 519 = över golvet utan ankare: lucka 0. Samma dom för '24-Day Brain Teaser Advent Calendar' 37,03 USD (1005010197064402, ej öppnad)."},
+    {"namn": "Uppvärmda hundskålar 2,2 L (1005012953211203 26,09 · 1005012951725496 26,99 · 1005012917988362 26,69 USD, ej öppnade)", "skal": "Samma SAK som butikens 'Uppvärmd Vattenskål För Vinterfåglar – 2,2 Liter' (849 kr) — golvskål 2,2 L. K0 på sak. Ingen 4–5 L-variant finns: '4L Pet Suspended Water Bowl' (1005006561928364) är ouppvärmd."},
+    {"namn": "Fågelkamera-kit 'Green Box' (1005010285403772, 48,26 USD, LIVE + hero sedd)", "skal": "Heron visar bara kameran, adapter och 5 m kabel — ingen holk ingår trots 'Nest Green Box' i titeln. Ersatt av holk-med-kamera-paketet (1005009894758144) som är den form SmartaSaker/Green Backyard säljer."},
+    {"namn": "Igelkotten i trädgården — hus", "skal": "Inte sökt i dag enligt backlog (tre misslyckanden 09-12/09-13, 'sök inte igen utan ny källa', korningsvecka 42). Ingen ny källa har tillkommit."},
+    {"namn": "Survival-/golf-/fiskekalendrar (1005013167007506 62,39 · 1005012838716257 54,59 · 1005013140098197 42,09 · 1005013167451909 52,09 · 1005009814640991 22,69 USD)", "skal": "Uteslutna per order: survival = CDON under oss, golf = Fyndiq 315 (struken 09-13), fiske = butiken har Adventskalender Fiskedrag 469 kr (K0)."},
+    {"namn": "Whiskyflaska-byggkalender (1005012906333520, 41,99 USD)", "skal": "Alkoholtema — nej per order."},
+    {"namn": "BBQ-verktygskalender, skruvbits-kalender, läderhantverkskalender, hylsnyckelkalender", "skal": "Fyra fraser gav ingen kalender alls: 'bbq tools advent calendar' → survival/golf/fiske; 'screwdriver bit set advent calendar 24 days' → vanliga bitssatser 4–11 USD (Jula har dem billigt, 'sett innan'); 'leather craft kit advent calendar' → tomma kalenderlådor och broderikit; 'socket set advent calendar' → Funko-lådor och lampor. Ingen listning att verifiera."},
+    {"namn": "Modellbils-/traktor-/segelbåtskalendrar (1005007952288802 26,59 · 1005010145086858 20,19 · 1005013152206857 11,39 USD, ej öppnade)", "skal": "Bilkalendrarna är dubbletter av butikens Racingbilar; traktor finns bara som 2D-hänge (struket 09-13); 'sailing boat' gav havsdjur och dumplings — inget till mannen med båten."},
+    {"namn": "Highland Cow-kalender 13,85 USD (1005013118324824) och gnome/pug-figurkalendrar", "skal": "Highland Cow levererades 09-13 (K0265, dubblett); tomte-/mopsfigurer saknar ägargrupp i kontot."}
+  ]
+}
