@@ -185,6 +185,35 @@
         "skills": [],
         "notes": "Hittad som Ansvarig pa godkanda rader i Trimmer belt creative hub 2026-08-30. Saknar Slack-ID."
       }
+    },
+    {
+      "id": "jerzee",
+      "name": "Jerzee",
+      "role": "editor",
+      "timezone": "Asia/Manila",
+      "active": true,
+      "email": "",
+      "slackUserId": "",
+      "slackHandle": "",
+      "notionUserId": "kommentar:jerzee",
+      "notionKommentarMonster": "\\bjerz",
+      "inScalingChannel": false,
+      "profile": {
+        "defaultDailyCreativeTarget": 4,
+        "workingDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "workdayStart": "",
+        "workdayEnd": "",
+        "middayCheckTime": "18:30",
+        "endOfDayReportTime": "21:30",
+        "skills": [],
+        "notes": "Har INGET Notion-konto (Axels besked 2026-09-15) och kan darfor aldrig sta i kolumnen Ansvarig. Hans rader markeras med en kommentar - 'jerzee is working on this', 'By Jerzee' - skriven fran gastkontot 05b30396-13bd-41c1-b205-94169150bde3. notionUserId ar darfor syntetiskt och satts av commission/kommentarer.mjs. Matt 2026-09-15: 50 rader i 8 hubbar."
+      }
     }
   ]
 }

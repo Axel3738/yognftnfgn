@@ -580,6 +580,28 @@ Typ-filtret dolde hela Masterns produktion och gav 33,74 kr i stället för
 2 260 kr.)* Hubbarna står i `commission/hubbar.json` — 12 svenska över tre
 verksamheter, inte bara Bäverbutikens.
 
+⚠️ **Redigerare utan Notion-konto räknas via KOMMENTAR** (`commission/kommentarer.mjs`,
+Axels besked 2026-09-15). **Jerzee** har aldrig fått ett Notion-konto och kan därför
+aldrig stå i kolumnen Ansvarig — hans rader märks i stället med en kommentar
+("jerzee is working on this", "By Jerzee"), skriven från gästkontot
+`05b30396-13bd-41c1-b205-94169150bde3`. Han ligger i `team.json` med det syntetiska
+id:t `kommentar:jerzee` + fältet `notionKommentarMonster`. Två järnregler: **Ansvarig
+vinner alltid** (kommentaren används bara på rader där Ansvarig är tom), och **två
+personers mönster på samma rad ger ingen** — hellre okopplat än fel person.
+Mätt 2026-09-15: 50 rader i 8 hubbar. Bara rader utan Ansvarig kostar ett API-anrop.
+`--utan-kommentarer` stänger av steget.
+
+⚠️ **OPS-butikernas hubbar RÄKNAS i commission sedan 2026-09-15** — till skillnad
+från alla andra Bäverbutiks-rutiner. Commission är läs-bart och kan inte ladda upp i
+fel konto, medan spenden i OPS-kontot räknas med ändå: utan hubbarna föll de
+annonserna tillbaka på produktens ägare i `koppling.mjs`, så **Josh fick betalt för
+Jerzees, Gilz och Jaspers arbete**. Mätt samma dag, två körningar med minuters
+mellanrum: utan hubbarna Josh 442,36 kr / Jerzee 0,43 kr; med dem Josh 421,55 kr,
+Jerzee 6,12 kr, Gilz +4,60, Jasper +3,22, Carl +1,09 — alltså ~21 kr på fel person.
+`--utan-ops-hubbar` återgår till det gamla beteendet. **Rör inte spärren i de andra
+rutinerna** (`tools/lib/ops-hubbar.mjs`): där handlar den om vilket annonskonto som
+laddas upp till, och det problemet finns fortfarande.
+
 ⚠️ **De fyra skalningsprodukternas creative hubs är ARKIVERADE i Notion** och
 syns inte i en teamspace-sökning. Hubbarna måste därför alltid unionsläggas med
 `products.json`. `run.mjs` avbryter om en känd hubb saknas eller om noll godkända
