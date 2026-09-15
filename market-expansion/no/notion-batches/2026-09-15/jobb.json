@@ -1,7 +1,7 @@
 {
   "marknad": "NO",
   "datum": "2026-09-15",
-  "skapad": "2026-09-15T09:11:07.464Z",
+  "skapad": "2026-09-15T13:08:54.310Z",
   "kvot": {
     "heygen": null,
     "kie": 14097.2
@@ -9,72 +9,387 @@
   "jobb": [
     {
       "notion": {
-        "id": "3cc270ab908c8170b705cd7a9dd07746",
-        "namn": "Beltgrinder_SP_4_H1",
-        "typ": "Video - Pending Approval",
+        "id": "3dc270ab908c81728c2bf1dad2a5604b",
+        "namn": "Batmotor_BF_10_1",
+        "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
-        "hub": "Belt grinder creative hub",
-        "url": "https://app.notion.com/p/3cc270ab908c8170b705cd7a9dd07746",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c81728c2bf1dad2a5604b",
         "kalla": "rader-fil"
       },
-      "namn": "Beltgrinder_SP_4_H1",
+      "namn": "Batmotor_BF_10_1",
       "status": "HOPPA",
-      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
       "se": {
-        "annonsId": "120250117678640291",
+        "annonsId": "120250230146770291",
         "status": "ACTIVE",
-        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-        "kampanjId": "120249902177470291",
-        "adset": "Balteslipmaskin SP"
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BF | Notionrunda 2026-09-02"
       },
-      "prefix": "Beltgrinder",
-      "K": "SP",
+      "prefix": "Batmotor",
+      "K": "BF",
+      "nr": "10",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - BF",
+        "annonsNamn": "Batmotortrekk_NO_BF_10_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c8121990ffcac1be7938d",
+        "namn": "Batmotor_BF_11_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c8121990ffcac1be7938d",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_BF_11_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230020440291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BF | Notionrunda 2026-09-02"
+      },
+      "prefix": "Batmotor",
+      "K": "BF",
+      "nr": "11",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - BF",
+        "annonsNamn": "Batmotortrekk_NO_BF_11_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c8127971edb00b15bff7a",
+        "namn": "Batmotor_BF_12_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c8127971edb00b15bff7a",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_BF_12_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250229963530291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BF | Notionrunda 2026-09-02"
+      },
+      "prefix": "Batmotor",
+      "K": "BF",
+      "nr": "12",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - BF",
+        "annonsNamn": "Batmotortrekk_NO_BF_12_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c8163b6cfc4814a2810d1",
+        "namn": "Batmotor_CS_8_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c8163b6cfc4814a2810d1",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_CS_8_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250229991810291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | CS | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "CS",
+      "nr": "8",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - CS",
+        "annonsNamn": "Batmotortrekk_NO_CS_8_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81ce9d79d4143e7cc893",
+        "namn": "Batmotor_GT_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81ce9d79d4143e7cc893",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_GT_4_H1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250168704670291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | GT | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "GT",
       "nr": "4",
       "hook": "H1",
       "typ": "video",
       "produkt": {
-        "se_prefix": "Beltgrinder",
-        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-        "no_prefix": "Beltesliper",
-        "adset_prefix": "Beltesliper NO",
-        "campaign_id": "120251998498540233",
-        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
       },
       "mal": {
         "kod": "NO",
-        "kampanjId": "120251998498540233",
-        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
         "utfall": "AVVECKLAD",
-        "spend": 7110.45,
-        "adsetNamn": "Beltesliper NO - SP",
-        "annonsNamn": "Beltesliper_NO_SP_4_H1",
-        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
-        "prefix": "Beltesliper"
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - GT",
+        "annonsNamn": "Batmotortrekk_NO_GT_4_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
       }
     },
     {
       "notion": {
-        "id": "3d5270ab908c8103b233f166b763eb00",
-        "namn": "Beltgrinder_REV_5_1",
+        "id": "3dc270ab908c811eada2f5cafaa509ba",
+        "namn": "Batmotor_RV_8_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c811eada2f5cafaa509ba",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_RV_8_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250229959640291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "RV | Notionrunda 2026-09-02"
+      },
+      "prefix": "Batmotor",
+      "K": "RV",
+      "nr": "8",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - RV",
+        "annonsNamn": "Batmotortrekk_NO_RV_8_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c8171b3becfd713e2e93c",
+        "namn": "Batmotor_RV_9_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c8171b3becfd713e2e93c",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_RV_9_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230030970291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "RV | Notionrunda 2026-09-02"
+      },
+      "prefix": "Batmotor",
+      "K": "RV",
+      "nr": "9",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - RV",
+        "annonsNamn": "Batmotortrekk_NO_RV_9_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81d79a3bd7f081c867c6",
+        "namn": "Batmotor_SP_1_H8",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81d79a3bd7f081c867c6",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_SP_1_H8",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250168880490291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "1",
+      "hook": "H8",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_1_H8",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c810c96bafa4c105334ab",
+        "namn": "Beltgrinder_BOF_1_1",
         "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
         "hub": "Belt grinder creative hub",
-        "url": "https://app.notion.com/p/3d5270ab908c8103b233f166b763eb00",
+        "url": "https://app.notion.com/3dc270ab908c810c96bafa4c105334ab",
         "kalla": "rader-fil"
       },
-      "namn": "Beltgrinder_REV_5_1",
+      "namn": "Beltgrinder_BOF_1_1",
       "status": "HOPPA",
       "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
-        "annonsId": "120250147962430291",
+        "annonsId": "120250232066720291",
         "status": "ACTIVE",
         "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
         "kampanjId": "120249902177470291",
-        "adset": "REV | Notionrunda 2026-09-02"
+        "adset": "BOF | Notionrunda 2026-09-15"
       },
       "prefix": "Beltgrinder",
-      "K": "REV",
-      "nr": "5",
+      "K": "BOF",
+      "nr": "1",
       "hook": "1",
       "typ": "bild",
       "produkt": {
@@ -91,35 +406,35 @@
         "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
         "utfall": "AVVECKLAD",
         "spend": 7110.45,
-        "adsetNamn": "Beltesliper NO - REV",
-        "annonsNamn": "Beltesliper_NO_REV_5_1",
+        "adsetNamn": "Beltesliper NO - BOF",
+        "annonsNamn": "Beltesliper_NO_BOF_1_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper"
       }
     },
     {
       "notion": {
-        "id": "3d5270ab908c8174bd3bf98a6a80c1ce",
-        "namn": "Beltgrinder_REV_6_1",
+        "id": "3dc270ab908c81188710c86844087243",
+        "namn": "Beltgrinder_BOF_2_1",
         "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
         "hub": "Belt grinder creative hub",
-        "url": "https://app.notion.com/p/3d5270ab908c8174bd3bf98a6a80c1ce",
+        "url": "https://app.notion.com/3dc270ab908c81188710c86844087243",
         "kalla": "rader-fil"
       },
-      "namn": "Beltgrinder_REV_6_1",
+      "namn": "Beltgrinder_BOF_2_1",
       "status": "HOPPA",
       "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
-        "annonsId": "120250148085750291",
+        "annonsId": "120250229887480291",
         "status": "ACTIVE",
         "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
         "kampanjId": "120249902177470291",
-        "adset": "REV | Notionrunda 2026-09-02"
+        "adset": "BOF | Notionrunda 2026-09-15"
       },
       "prefix": "Beltgrinder",
-      "K": "REV",
-      "nr": "6",
+      "K": "BOF",
+      "nr": "2",
       "hook": "1",
       "typ": "bild",
       "produkt": {
@@ -136,8 +451,8 @@
         "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
         "utfall": "AVVECKLAD",
         "spend": 7110.45,
-        "adsetNamn": "Beltesliper NO - REV",
-        "annonsNamn": "Beltesliper_NO_REV_6_1",
+        "adsetNamn": "Beltesliper NO - BOF",
+        "annonsNamn": "Beltesliper_NO_BOF_2_1",
         "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
         "prefix": "Beltesliper"
       }
@@ -149,7 +464,7 @@
         "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
         "hub": "Belt grinder creative hub",
-        "url": "https://app.notion.com/p/3d5270ab908c81b9a3a2f3456d2671f1",
+        "url": "https://app.notion.com/3d5270ab908c81b9a3a2f3456d2671f1",
         "kalla": "rader-fil"
       },
       "namn": "Beltgrinder_PD_18_1",
@@ -194,7 +509,7 @@
         "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
         "hub": "Belt grinder creative hub",
-        "url": "https://app.notion.com/p/3d5270ab908c81fe8f6fff1595da5763",
+        "url": "https://app.notion.com/3d5270ab908c81fe8f6fff1595da5763",
         "kalla": "rader-fil"
       },
       "namn": "Beltgrinder_PD_19_1",
@@ -239,7 +554,7 @@
         "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
         "hub": "Belt grinder creative hub",
-        "url": "https://app.notion.com/p/3d5270ab908c81efa3c8d3277a158038",
+        "url": "https://app.notion.com/3d5270ab908c81efa3c8d3277a158038",
         "kalla": "rader-fil"
       },
       "namn": "Beltgrinder_PD_20_1",
@@ -284,7 +599,7 @@
         "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
         "hub": "Belt grinder creative hub",
-        "url": "https://app.notion.com/p/3d5270ab908c81ceaa24e9550e2e3433",
+        "url": "https://app.notion.com/3d5270ab908c81ceaa24e9550e2e3433",
         "kalla": "rader-fil"
       },
       "namn": "Beltgrinder_PD_21_1",
@@ -324,92 +639,722 @@
     },
     {
       "notion": {
-        "id": "3d5270ab908c81ce9d79d4143e7cc893",
-        "namn": "Batmotor_GT_4_H1",
-        "typ": "Video - Pending Approval",
+        "id": "3d5270ab908c8103b233f166b763eb00",
+        "namn": "Beltgrinder_REV_5_1",
+        "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
-        "hub": "Boat motor cover creative hub",
-        "url": "https://app.notion.com/p/3d5270ab908c81ce9d79d4143e7cc893",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3d5270ab908c8103b233f166b763eb00",
         "kalla": "rader-fil"
       },
-      "namn": "Batmotor_GT_4_H1",
+      "namn": "Beltgrinder_REV_5_1",
       "status": "HOPPA",
-      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
-        "annonsId": "120250168704670291",
+        "annonsId": "120250147962430291",
         "status": "ACTIVE",
-        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-        "kampanjId": "120250009325850291",
-        "adset": "Båtmotorskydd 420D | GT | 2026-08-29"
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "REV | Notionrunda 2026-09-02"
       },
-      "prefix": "Batmotor",
-      "K": "GT",
-      "nr": "4",
-      "hook": "H1",
-      "typ": "video",
+      "prefix": "Beltgrinder",
+      "K": "REV",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
       "produkt": {
-        "se_prefix": "Batmotor",
-        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-        "no_prefix": "Batmotortrekk",
-        "adset_prefix": "Båtmotortrekk NO",
-        "campaign_id": "120252047563660233",
-        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
       },
       "mal": {
         "kod": "NO",
-        "kampanjId": "120252047563660233",
-        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
         "utfall": "AVVECKLAD",
-        "spend": 20754.77,
-        "adsetNamn": "Båtmotortrekk NO - GT",
-        "annonsNamn": "Batmotortrekk_NO_GT_4_H1",
-        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
-        "prefix": "Batmotortrekk"
+        "spend": 7110.45,
+        "adsetNamn": "Beltesliper NO - REV",
+        "annonsNamn": "Beltesliper_NO_REV_5_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
       }
     },
     {
       "notion": {
-        "id": "3d5270ab908c81d79a3bd7f081c867c6",
-        "namn": "Batmotor_SP_1_H8",
-        "typ": "Video - Pending Approval",
+        "id": "3d5270ab908c8174bd3bf98a6a80c1ce",
+        "namn": "Beltgrinder_REV_6_1",
+        "typ": "Image - Pending Approval",
         "status": "SE-ACTIVE to be translated",
-        "hub": "Boat motor cover creative hub",
-        "url": "https://app.notion.com/p/3d5270ab908c81d79a3bd7f081c867c6",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3d5270ab908c8174bd3bf98a6a80c1ce",
         "kalla": "rader-fil"
       },
-      "namn": "Batmotor_SP_1_H8",
+      "namn": "Beltgrinder_REV_6_1",
       "status": "HOPPA",
-      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
       "se": {
-        "annonsId": "120250168880490291",
+        "annonsId": "120250148085750291",
         "status": "ACTIVE",
-        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-        "kampanjId": "120250009325850291",
-        "adset": "Båtmotorskydd 420D | SP | 2026-08-29"
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "REV | Notionrunda 2026-09-02"
       },
-      "prefix": "Batmotor",
-      "K": "SP",
-      "nr": "1",
-      "hook": "H8",
-      "typ": "video",
+      "prefix": "Beltgrinder",
+      "K": "REV",
+      "nr": "6",
+      "hook": "1",
+      "typ": "bild",
       "produkt": {
-        "se_prefix": "Batmotor",
-        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-        "no_prefix": "Batmotortrekk",
-        "adset_prefix": "Båtmotortrekk NO",
-        "campaign_id": "120252047563660233",
-        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
       },
       "mal": {
         "kod": "NO",
-        "kampanjId": "120252047563660233",
-        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
         "utfall": "AVVECKLAD",
-        "spend": 20754.77,
-        "adsetNamn": "Båtmotortrekk NO - SP",
-        "annonsNamn": "Batmotortrekk_NO_SP_1_H8",
-        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
-        "prefix": "Batmotortrekk"
+        "spend": 7110.45,
+        "adsetNamn": "Beltesliper NO - REV",
+        "annonsNamn": "Beltesliper_NO_REV_6_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      }
+    },
+    {
+      "notion": {
+        "id": "3cc270ab908c8170b705cd7a9dd07746",
+        "namn": "Beltgrinder_SP_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3cc270ab908c8170b705cd7a9dd07746",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_SP_4_H1",
+      "status": "HOPPA",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250117678640291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "Balteslipmaskin SP"
+      },
+      "prefix": "Beltgrinder",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "AVVECKLAD",
+        "spend": 7110.45,
+        "adsetNamn": "Beltesliper NO - SP",
+        "annonsNamn": "Beltesliper_NO_SP_4_H1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c81c1a95accdf2f0d9d99",
+        "namn": "MC-Kapell_CS_7_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c81c1a95accdf2f0d9d99",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_CS_7_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230193560291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "CS"
+      },
+      "prefix": "MC-Kapell",
+      "K": "CS",
+      "nr": "7",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - CS",
+        "annonsNamn": "MCtrekk_NO_CS_7_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81779c66d46530db9111",
+        "namn": "MC-Kapell_DE_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81779c66d46530db9111",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_DE_3_H1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231916380291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "DE | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "DE",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - DE",
+        "annonsNamn": "MCtrekk_NO_DE_3_H1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81d98557fa569bdc4e84",
+        "namn": "MC-Kapell_FT_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81d98557fa569bdc4e84",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_FT_1_H1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231955470291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "FT | Notionrunda 2026-09-15"
+      },
+      "prefix": "MC-Kapell",
+      "K": "FT",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - FT",
+        "annonsNamn": "MCtrekk_NO_FT_1_H1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c8181925bc30fe9de22aa",
+        "namn": "MC-Kapell_GA_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c8181925bc30fe9de22aa",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_GA_3_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230223410291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "GA | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "GA",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - GA",
+        "annonsNamn": "MCtrekk_NO_GA_3_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c81829887f6f776b6a052",
+        "namn": "MC-Kapell_GA_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c81829887f6f776b6a052",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_GA_4_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230289750291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "GA | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "GA",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - GA",
+        "annonsNamn": "MCtrekk_NO_GA_4_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81c4a620dc2e3d9ccda9",
+        "namn": "MC-Kapell_OB_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81c4a620dc2e3d9ccda9",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_OB_3_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230330950291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "OB | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "OB",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - OB",
+        "annonsNamn": "MCtrekk_NO_OB_3_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c815988cacce9871eb839",
+        "namn": "MC-Kapell_OB_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c815988cacce9871eb839",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_OB_4_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230374760291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "OB | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "OB",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - OB",
+        "annonsNamn": "MCtrekk_NO_OB_4_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c813ebb91fd92b9829df2",
+        "namn": "MC-Kapell_OF_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c813ebb91fd92b9829df2",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_OF_3_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230406720291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "OF | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "OF",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - OF",
+        "annonsNamn": "MCtrekk_NO_OF_3_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c813e93bef614b6c77d3c",
+        "namn": "MC-Kapell_OF_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3dc270ab908c813e93bef614b6c77d3c",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_OF_4_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230449550291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "OF | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "OF",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - OF",
+        "annonsNamn": "MCtrekk_NO_OF_4_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81deb372c39dcb9b7511",
+        "namn": "MC-Kapell_PD_8_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81deb372c39dcb9b7511",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_PD_8_H1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231983980291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "PD"
+      },
+      "prefix": "MC-Kapell",
+      "K": "PD",
+      "nr": "8",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - PD",
+        "annonsNamn": "MCtrekk_NO_PD_8_H1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81e58199fefe37197ad2",
+        "namn": "MC-Kapell_RE_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81e58199fefe37197ad2",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_RE_5_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230475400291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "RE | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "RE",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - RE",
+        "annonsNamn": "MCtrekk_NO_RE_5_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81758985c48a8c7596d9",
+        "namn": "MC-Kapell_RE_6_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81758985c48a8c7596d9",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_RE_6_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230502680291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "RE | Notionrunda 2026-09-02"
+      },
+      "prefix": "MC-Kapell",
+      "K": "RE",
+      "nr": "6",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - RE",
+        "annonsNamn": "MCtrekk_NO_RE_6_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c81a4bbc4d1c6ed946ea2",
+        "namn": "MC-Kapell_UV_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81a4bbc4d1c6ed946ea2",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_UV_1_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230544660291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "UV | Notionrunda 2026-09-15"
+      },
+      "prefix": "MC-Kapell",
+      "K": "UV",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - UV",
+        "annonsNamn": "MCtrekk_NO_UV_1_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
       }
     }
   ]
