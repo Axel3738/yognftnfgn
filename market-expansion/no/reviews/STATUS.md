@@ -3,6 +3,36 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-15 — 0 nya, allt redan klart, 31 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade **inga** nya mappar (33 +
+WINNERS med 3 — samma lista som 2026-09-14). Bygget gav identiska filer, `git
+status` var tomt efteråt, och `--dry` mot gårdagens Gjerdestolpebøyle svarade
+"har redan 8 synliga recensioner" — importen 2026-09-14 tog alltså.
+
+Butiksfeeden 200 → 201 produkter.
+
+### Alla fem överhoppade omkollade — ingen är rättad
+
+| Produkt | Läge 2026-09-15 | Ark |
+|---|---|---|
+| Taköverdrag Husvagn | title `Lars` / reviewer `Anna`, förskjutet. Bär dessutom **utekattkojans** `product_handle` | `1qz9Nt30g-fyoxgflqXJ-Wz8Doei2hfsiRDbaDkoAi34` |
+| Termoskydd Husbil | title `Anna` / reviewer `Anna` | `1qUnxNInT0Jil8ANxxovj19A5-Ele5KqiyWVCB1-8TPY` |
+| Gravstenspenna | bara `TEST – …`-rader, namn "Anna Test" osv. Produktmappen ligger i **LOSERS** (`1xnqjyv-JSa2l9eMziNf_XgQZSidhU9tY`) | `179fO_KHqNhUdCmGNHWjKW81nw3fRDIHnJtElUUue95M` |
+| Medicinask i Fickformat | bara `Exempel N – EJ KUNDRECENSION`, handle `not-a-real-product-handle-…` | `1IHyBXyhujgZi4Q3GX5DKVb5pj8jEhGcacFUNVv6BA44` |
+| Lövblåsare | beverbutikken.no har fortfarande ingen løvblåser bland sina 201 produkter (sökt på "blås", "vifte", "løv", "lov", "lauv"). Närmaste träff är fortfarande "Jetvifte for Makita-batteri" — en annan produkt | `1WQ3XiXRPKi61FzHra4iTBRsuupXdrm2kWXkqVjG7L78` |
+
+Gravsteinspenn och Medisinboks **finns** i butiken (handlen
+`gravsteinspenn-gjenoppretter-blek-tekst-pa-stein` och
+`medisinboks-i-lommeformat-7-rom-med-tettsittende-lokk`) — det är bara arken
+som saknar riktiga rader.
+
+Gamasjer/Damasker ratas fortfarande i bygget: källarket har inga betyg alls
+(10 av 10 rader bortvalda). Produkten är redan komplett i Judge.me sedan
+2026-08-30, så det är ofarligt.
+
+**Datumen:** oförändrat 27 produkter / 242 recensioner med importdagens datum.
+
 ## Läget 2026-09-14 — 8 nya, tre överhoppade, 31 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade **en** ny mapp:
