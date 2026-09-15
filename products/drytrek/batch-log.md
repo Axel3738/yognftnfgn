@@ -887,3 +887,44 @@ mot ett äkta positivt fall är inte en kontroll, den är en gissning. Den här
 hade ett testfall som mätte fel sak, och det tog tre dygns produktion innan
 någon räknade på siffrorna i stället för att tro på utfallet. Bygg alltid det
 trasiga fallet på riktigt — och lägg det där det gör ont: mitt i ett ljud.
+
+---
+
+## Nattvakten 2026-09-16 (körning nr 5, briefdag) — KAMPANJEN PAUSAD, briefronden pausad
+
+**`DRYTREK_SE` står PAUSED sedan 2026-09-15 20:52** (manuellt, ingen rutin har
+loggat det — ett ägarbeslut, rörs aldrig). 7 dagsrader: **4 656 kr, 8 köp,
+ROAS 0,73**; sista dygnet 485 kr / 1 köp. Budgetronden: 0 ändringar (inget
+ACTIVE att döma). **Bedömbara annonser: 0 av 42** — sjunde avläsningen utan
+en enda annons över grinden (≥ 300 kr OCH ≥ 3 köp).
+
+**Briefronden pausad i registret** (`briefantal drytrek/damasker paus`,
+2026-09-16) — samma prejudikat som AdventLane 2026-09-15: pausad kampanj ⇒
+inga nya briefer, budgetronden går ändå. 18 av 21 batch #3-briefer ligger
+kvar i Draft. Inga rader skapade i hubben i natt. Släpps med
+`node factory/register.mjs briefantal drytrek/damasker auto`.
+
+### Utfall batch #2 + #3 (live 13–15/9, 14d-fönster, ingen dom)
+
+| Annons | Batch | Spend | Köp | Hook 3s | Hold | CTR | CPC | Mot hypotes |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| SP_6_H1 (tyst demo-öppning) | #2 | 377 kr | 0 | 41,3 % | 16,7 % | 2,3 % | 5,4 kr | hyp: CPC < 9,18 ✔ (5,4), CVR ≥ 3 % ✘ (0 köp på 70 klick) — under grinden |
+| PD_16_H1 (en tagning — levererad som split) | #3 | 56 kr | 0 | 26,5 % | 36,7 % | 1,6 % | 9,3 kr | mäter inget: fel format |
+| CI_3_H1 (regnade inte) | #3 | 50 kr | 0 | 31,9 % | 29,3 % | 3,5 % | 5,5 kr | för tidigt |
+| PD_12_H1 (ärligt manus) | #2 | 47 kr | 0 | **47,5 %** | 17,3 % | 1,5 % | 5,8 kr | för tidigt — bästa hook rate i kampanjen |
+| FO_2_H1 (ett ben med/utan) | #2 | 36 kr | 0 | 35,2 % | 26,3 % | 3,1 % | 7,2 kr | för tidigt |
+| PD_13_H1 (vattentestet) | #2 | 21 kr | 0 | 38,8 % | 12,8 % | 0 % | — | för tidigt |
+| BOF_10_H1 (passar mina kängor?) | #3 | 12 kr | 0 | 46,0 % | 30,4 % | 0 % | — | för tidigt |
+| SP_7_H1 (hundpromenaden) | #2 | 10 kr | 0 | 29,7 % | 36,4 % | 1,4 % | 10,4 kr | för tidigt |
+| PD_12_H2 (källans fråga) | #2 | 10 kr | 0 | 41,1 % | 4,3 % | 0 % | — | för tidigt |
+| PD_14_12 Brun (bild) | #3b | 354 kr | 1 | — | — | 3,1 % | 2,8 kr | färgfamiljen: 752 kr / 2 köp på 17 bilder |
+| PD_14_15 Kamouflage grön | #3b | 163 kr | 0 | — | — | 2,2 % | 3,1 kr | |
+| PD_14_8 Ljusblå | #3b | 33 kr | 1 | — | — | 3,6 % | 3,3 kr | |
+| övriga 14 färger | #3b | < 45 kr var | 0 | | | | | |
+
+Spend per familj 14d: CS 1 317 kr/3 köp · G 1 005/0 · PD (video+bild) 798/0 ·
+PD_14 färger 752/2 · SP 685/3 · CI 50 · FO 36 · BOF 12. Kampanjen totalt
+4 656 kr / 8 köp / ROAS 0,73 mot break-even 1,60.
+
+Copy-A/B: fable-taggade live-annonser 146 kr / 0 köp, sonnet-taggade 1 175 kr
+/ 2 köp (inkl. färgbilderna). 0 bedömbara per modell.

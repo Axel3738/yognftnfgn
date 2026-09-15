@@ -130,7 +130,7 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-15",
+      "senaste_korning": "2026-09-16",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
@@ -151,7 +151,13 @@
           "count": 3
         }
       ],
-      "anteckning": "Upptäckt automatiskt ur state-filen."
+      "anteckning": "Upptäckt automatiskt ur state-filen.",
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Kampanjen DRYTREK_SE pausades manuellt 2026-09-15 20:52 (ägarbeslut, PAUSED med spend). 0 bedömbara annonser av 42, 18 av 21 batch #3-briefer ligger kvar i Draft. Inga nya briefer förrän Axel släpper pausen (briefantal auto).",
+        "satt": "2026-09-16"
+      }
     },
     "hemvakten/overvakningskameran": {
       "lage": "skala",

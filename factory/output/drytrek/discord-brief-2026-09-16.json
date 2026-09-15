@@ -1,0 +1,30 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-16",
+  "lage": "brief",
+  "siffror": {
+    "spend_7d": 4656,
+    "kop_7d": 8,
+    "roas_7d": 0.73,
+    "briefs_nya": 0
+  },
+  "gjort": [
+    "Budget round: 0 changes. The SE campaign DRYTREK_SE is PAUSED since 15 Sep 20:52 (manual — an owner decision, untouched). 7 days before the pause: 4 656 SEK, 8 purchases, ROAS 0.73 vs break-even 1.60; not one day above break-even.",
+    "Brief day, but NO new briefs: brief round paused in the register (same rule as AdventLane 15 Sep — a paused campaign gets no new briefs, the budget round keeps running). 18 of 21 batch #3 briefs are still Draft in the hub; Jasper made 3.",
+    "Feedback loop written for batch #2/#3 (9 videos + 17 colour images live 13-15 Sep): still 0 of 42 ads over the data gate. Best signals, all under 400 SEK: PD_12_H1 hook rate 47.5 %, BOF_10_H1 46 %, SP_6_H1 41 % with CPC 5.4 SEK (vs 9.2 inherited) but 0 purchases on 70 clicks. Colour images: brown 354 SEK/1, camo green 163/0, light blue 33/1.",
+    "dna.md (patterns 9-12), batch-log.md and the register updated and pushed."
+  ],
+  "briefer": [],
+  "varningar": [
+    "briefs paused: campaign DRYTREK_SE is PAUSED by the owner; 0 judgeable ads of 42; 18 batch #3 briefs waiting in Draft. Released with: node factory/register.mjs briefantal drytrek/damasker auto",
+    "Seven days, no day above break-even. Same film and price as the source store (ROAS 2.71 there). What differs: a new pixel with no history (9 Sep), zero reviews, rewritten copy, 42 ads sharing 500-1 000 SEK/day. The data cannot say which of these carries the blame.",
+    "If the campaign restarts: rule 11 says a separate test ad set with equal budget per ad — PD_12_H1, SP_6_H1, PD_1 and the three best colour images — not the 42-ad CBO."
+  ],
+  "action_axel": [
+    "You paused DRYTREK_SE last night. Tell me which way: (A) keep it paused — I keep the briefs paused and only report; (B) restart at the 500 SEK floor as it is; (C) restart as a small test ad set (6 ads, equal budget) and I release the briefs again. Reply A, B or C.",
+    "Should Jasper keep building the 18 remaining batch #3 briefs while the campaign is paused? If not, tell him — I have not pinged him tonight."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-17 (budget only — briefs paused until you decide)"
+}

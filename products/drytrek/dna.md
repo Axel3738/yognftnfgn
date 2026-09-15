@@ -1,7 +1,7 @@
 # Creative DNA — DryTrek (damasker)
 
 Skapad 2026-09-11 av `/notionscalercs setup drytrek` (körning nr 0 — setup).
-**Senast uppdaterad 2026-09-13, körning nr 2 (andra briefdagen, batch #3).** Butiks-id `drytrek`, produktnyckel `drytrek/damasker`,
+**Senast uppdaterad 2026-09-16, körning nr 5 (tredje briefdagen — kampanjen pausad, inga nya briefer).** Butiks-id `drytrek`, produktnyckel `drytrek/damasker`,
 brand **DryTrek**, drytrek.se (Shopify `i1da39-zd`).
 
 ⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken**
@@ -345,3 +345,67 @@ har ≥ 5 bedömbara.
    — ingen data".
 3. Hypotes 4 (OPS) står kvar: PD-adsetet har 317 kr när kampanjen passerat
    2 778 kr → ACTION NEEDED i natt.
+
+---
+
+## Körning nr 5 — 2026-09-16, tredje briefdagen: KAMPANJEN PAUSAD
+
+### Data (OPS-kampanjen, 14d = livstiden 2026-09-09 → 09-15, 7 dagsrader)
+
+| | Spend | Köp | ROAS | Mot BE 1,60 |
+|---|---:|---:|---:|---|
+| Hela kampanjen | 4 656 kr | 8 | 0,73 | under break-even sju dygn av sju |
+
+**`DRYTREK_SE` PAUSED 2026-09-15 20:52 — manuellt, ägarbeslut.** Budgetronden
+gjorde 0 ändringar. **Bedömbara: 0 av 42.** Ingen enskild annons har nått 3 köp
+på sju dygn; bästa är CS_2_1 (551 kr, 2 köp — pausad 09-13) och SP_2_1 (113 kr,
+2 köp). Kampanjen har aldrig haft en dag över break-even (bäst 09-12: 1,28).
+
+### Vad som syns (hypoteser, aldrig domar)
+
+- **Mönster 9 (hypotes) — batch #2/#3-hookarna stoppar scrollen bättre än
+  arvet.** Hook rate på de nya videorna: PD_12_H1 47,5 %, BOF_10_H1 46,0 %,
+  SP_6_H1 41,3 %, PD_12_H2 41,1 %, PD_13_H1 38,8 % — mot batch #1:s 25–37 %
+  och källans PD_1 38,4 %. Alla under 400 kr, så det är riktning, inte bevis.
+  **Instruktion:** när kampanjen startas om ska PD_12_H1 och SP_6_H1 ligga
+  först i kön — de har den bästa öppningen som mätts på produkten.
+- **Mönster 10 (hypotes) — SP_6_H1 bevisar halva sin hypotes.** Den tysta
+  demo-öppningen köpte klicket för 5,4 kr (SP_2 ärvd: 9,18 kr) — hypotesens
+  första halva håller. Men 0 köp på 70 klick (377 kr): CVR-halvan är obesvarad
+  och ser svag ut. Hypotes: klicket blev billigt för att öppningen lockar
+  nyfikna, inte köpare. Mäts vidare om kampanjen startas om.
+- **Mönster 11 (hypotes) — CBO:n favoriserar bilder även efter golvet.** Med
+  PD-golvet 300 kr gick PD-adsetets pengar till färgbilderna (Brun 354 kr,
+  Kamouflage 163 kr), inte till PD_1 (152 kr på sju dygn) eller PD_12_H1
+  (47 kr). Bildernas CPC 2,8–3,3 kr är kampanjens lägsta; köp: 2 på 752 kr.
+  Samma bild som mönster 7: billiga klick utan köp.
+- **Mönster 12 (data, inte hypotes) — sju dygn, ingen dag över break-even.**
+  Dagsraderna: 0,00 · 0,91 · 0,00 · 1,28 · 0,93 · 0,00 · ~0,8. Produkten har
+  ROAS 2,71 hos källan med samma film och samma pris. Skillnaderna som
+  finns: ny pixel utan historik (skapad 09-09), noll recensioner, omskriven
+  copy, 42 annonser på 500–1 000 kr/dag. Vilken av dem som bär skulden går
+  inte att säga ur den här datan.
+
+### Copy-modell A/B
+
+Live-annonser taggade fable: 146 kr / 0 köp (PD_12_H1, PD_12_H2, PD_13_H1,
+PD_16_H1, BOF_10_H1). Sonnet: 1 175 kr / 2 köp (SP_6_H1, SP_7_H1, FO_2_H1,
+CI_3_H1 + 17 färgbilder). **0 bedömbara per modell.** Testet står stilla
+medan kampanjen är pausad.
+
+### Beslut i den här körningen
+
+Briefronden **pausad i registret** (`briefantal … paus`): kampanjen är
+pausad av ägaren, 0 bedömbara annonser att brieffa ur, 18 av 21 batch
+#3-briefer ogjorda i Draft. Inga nya rader i hubben. Prejudikat: AdventLane
+2026-09-15. Släpps med `briefantal drytrek/damasker auto` när Axel bestämt
+vägen framåt (frågan ställd i Discord under ACTION NEEDED).
+
+### Instruktion till nästa körning
+
+1. Budgetronden går varje natt ändå; med kampanjen PAUSED blir den 0
+   ändringar — rapportera det kort i `#ads`, ingen ping.
+2. Startas kampanjen om: läs mönster 9–11 först. Föreslå Axel ett test-ABO
+   (regel 11) med PD_12_H1, SP_6_H1, PD_1 och de tre bäst spenderande
+   färgbilderna på lika budget — inte CBO:n med 42 annonser.
+3. Ingen ny brief förrän första bedömbara annonsen finns. Backloggen är tom.
