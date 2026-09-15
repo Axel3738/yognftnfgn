@@ -255,14 +255,20 @@ async function laddaUppBild(act, fil) {
   return bild.hash;
 }
 
-/** Skapar creativen. Det ärvda Instagram-kontot kan vara ett id Meta inte längre
- *  godtar som `instagram_actor_id` — då faller vi tillbaka på enbart sidan i
+/** Skapar creativen.
+ *
+ *  ⚠️ Fältet för Instagram-kontot heter `instagram_user_id` i v23.
+ *  `instagram_actor_id` är pensionerat och svarar "(#100) Param
+ *  instagram_actor_id must be a valid Instagram account id" — vilket LÄSER som
+ *  att kontot är fel och inte är det. *(Mätt 2026-09-15 på kampanjen "BÄVER
+ *  Taköverdraget för Husvagn": samma id, 17841474144960111, sitter på 16
+ *  ACTIVE-annonser i kampanjen och godtas direkt som `instagram_user_id`.
+ *  Med det gamla fältnamnet dog varje uppladdning dit innan creativen ens
+ *  skapades, och elva färdiga creatives blev kvar i kön.)*
+ *
+ *  Skulle Instagram-kontot ändå avvisas skapas annonsen med enbart sidan i
  *  stället för att fälla hela uppladdningen. Sidan och pixeln rörs aldrig: de
- *  ärvs precis som förut, så köpen bokförs fortfarande på rätt verksamhet.
- *  *(Mätt 2026-09-15 på kampanjen "BÄVER Taköverdraget för Husvagn": de
- *  befintliga annonserna bär instagram_actor_id 17841474144960111 och Meta v23
- *  svarar "(#100) Param instagram_actor_id must be a valid Instagram account id".
- *  Elva färdiga creatives hade annars blivit kvar i kön.)* */
+ *  ärvs precis som förut, så köpen bokförs fortfarande på rätt verksamhet. */
 async function skapaCreative(act, namn, spec) {
   const form = () => ({
     name: namn,
@@ -273,9 +279,10 @@ async function skapaCreative(act, namn, spec) {
   try {
     return await api(`act_${act}/adcreatives`, { form: form() });
   } catch (e) {
-    if (!spec.instagram_actor_id || !/instagram_actor_id/i.test(e.message)) throw e;
-    logg(`  ⚠ Meta avvisade det ärvda Instagram-kontot ${spec.instagram_actor_id} — annonsen skapas med enbart sidan ${spec.page_id}.`);
-    delete spec.instagram_actor_id;
+    const ig = spec.instagram_user_id;
+    if (!ig || !/instagram/i.test(e.message)) throw e;
+    logg(`  ⚠ Meta avvisade Instagram-kontot ${ig} — annonsen skapas med enbart sidan ${spec.page_id}.`);
+    delete spec.instagram_user_id;
     return await api(`act_${act}/adcreatives`, { form: form() });
   }
 }
@@ -284,10 +291,18 @@ async function skapaCreative(act, namn, spec) {
  *  Hårdkodas ALDRIG — fel pixel/sida bokför köpen på fel verksamhet. */
 async function ärvSidaOchIg(kampanjId) {
   const annonser = await alla(`${kampanjId}/ads`, { fields: 'creative{object_story_spec,effective_object_story_id}' });
+  let första = null;
   for (const a of annonser) {
     const spec = a.creative?.object_story_spec;
-    if (spec?.page_id) return { pageId: spec.page_id, igId: spec.instagram_actor_id || spec.instagram_user_id || null };
+    if (!spec?.page_id) continue;
+    const igId = spec.instagram_actor_id || spec.instagram_user_id || null;
+    // En annons MED Instagram-konto vinner alltid. Annars hade en enda
+    // IG-lös annons i kampanjen (t.ex. en som rutinen själv nyss lagt in)
+    // tyst gjort alla kommande annonser IG-lösa också.
+    if (igId) return { pageId: spec.page_id, igId };
+    första ??= { pageId: spec.page_id, igId: null };
   }
+  if (första) return första;
   dö(`Kunde inte läsa sida/Instagram ur någon befintlig annons i kampanj ${kampanjId}. Avbryter hellre än gissar — fel sida är fel verksamhet.`);
 }
 
@@ -421,7 +436,7 @@ async function main() {
       },
     };
   }
-  if (igId) spec.instagram_actor_id = igId;
+  if (igId) spec.instagram_user_id = igId;   // v23-namnet, se skapaCreative()
 
   const creative = await skapaCreative(act, namn, spec);
 
