@@ -1,0 +1,343 @@
+{
+  "agent": "T — formsydd form på aldrig sökta objekt (H01/H02/H04)",
+  "datum": "2026-09-15",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Husbilens tak-AC-huv",
+      "objekt": "NYTT: Husbilens takklimatanläggning (Truma Aventa / Dometic FreshJet, 15–26 tkr — FreshJet 1700 26 299 kr; sitter på taket och står ute hela vintern efter uppställningen)",
+      "form": "huv",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploitation",
+      "hypotes_id": "H02",
+      "vinnarlikhet": {
+        "likast": "Termoskyddet för Husbil 211 × 171 cm / Taköverdraget för Husvagn",
+        "delade_variabler": [
+          "exakt samma ägare som Termoskyddet och Taköverdraget (husbil 55+, bevisad köpare i kontot)",
+          "objekt ute, dyr > 10 tkr (AC 15–26 tkr på taket)",
+          "formsydd huv i stället för ingenting/presenning (old way: ingenting — som Termoskyddet)",
+          "hårt datum: uppställning 10–31 okt (NOW 3,6 v)",
+          "fackhandelsankare 795–865 kr (Hindermann/Dometic hos camping4u), inget kedjegolv"
+        ],
+        "avvikelser": [
+          "bara husbilar med tak-AC (andel ej mätt)",
+          "listningen är amerikansk (Coleman/Dometic US-mått) — passform mot Truma Aventa/Dometic FreshJet måste bekräftas"
+        ]
+      },
+      "sasong": {
+        "fonster_id": "uppstallning_husvagn",
+        "deadline_typ": "uppställning",
+        "veckor_kvar": 3.6,
+        "timing": "NOW"
+      },
+      "listning": {
+        "product_id": "1005010545161282",
+        "url": "https://www.aliexpress.com/item/1005010545161282.html",
+        "pris_usd": 17.36,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-15T07:21:03Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005010545161282.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "fyra färger (grå/brun/beige/svart) i heron; storlek ej angiven i titel — en storlek, mått måste hämtas från leverantören; alternativ listning 1005013149612512 (18,75 USD) öppnad, packshot med måttpilar utan kontext",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": false,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "heron: huven på AC:n uppe på husbilstaket i ösregn, takluckan bredvid — rätt kontext; texten 'RV Air Conditioner Cover' och färgraden nertill måste beskäras bort"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {
+          "aktor": "camping4u.se — Hindermann Skyddsöverdrag AC Dometic Freshjet 1100/1700/2200 och Truma Aventa Comfort/Eco",
+          "pris_sek": 795,
+          "url": "https://www.camping4u.se/sv/artiklar/skyddsoverdrag-ac-dometic.html",
+          "exakt_samma_form": true
+        },
+        "premium_ankare": {
+          "namn": "Dometic Skyddsöverdrag FJX/FJZ7 3000 (camping4u)",
+          "pris_sek": 865,
+          "url": "https://www.camping4u.se/sv/artiklar/skyddsoverdrag-fjx-fjz7-3000-dometic.html",
+          "i_sortiment": true
+        },
+        "ankare_kvot": 1.33,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "camping4u.se/tillbehor-klimat (Hindermann 795 kr × 4 varianter, Dometic 865 kr — läst 2026-09-15)",
+          "dometic.com FreshJet 1700 26 299 kr (objektets pris, sökutdrag)",
+          "jula.se/biltema.se: ingen tak-AC-huv i sökutdragen (kedjan saknar formen)",
+          "husvagnsbranschen.se/cision: ca 300 000 husbilar + 425 000 husvagnar i Sverige (sökutdrag); andel med tak-AC ej mätt"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [226, 276],
+        "pris_sek": 599,
+        "brutto_sek": [323, 373],
+        "be_cpa_sek": [323, 373],
+        "be_roas": 1.72,
+        "flerkop": false,
+        "returrisk": "medel — en storlek mot Truma/Dometic-mått; storlekstabell mot de tre vanligaste aggregaten krävs"
+      },
+      "meta_tanke": {
+        "hook": "Står husbilens AC ute i vinter?",
+        "objekt_i_bild": "AC-aggregatet på husbilstaket, huven dras på, regn/snö på taket runt om",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "is och löv i AC-gallret utan — torr huv med snö ovanpå med; samma bildspråk som Termoskyddet"
+      },
+      "varfor": "Termoskyddets exakta struktur en meter upp på samma husbil: dyr sak ute, uppställning om 3,6 v, formsydd huv, fackhandel tar 795–865 kr och kedjan saknar formen. Objektet har aldrig sökts i rutinen (koncept.py: 0 träffar på AC/klimat/Dometic).",
+      "huvudrisk": "Listningen är gjord för amerikanska aggregat — passar den inte Truma Aventa/Dometic FreshJet blir returerna höga; andelen husbilar med tak-AC är inte mätt.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 1, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 3},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep AC/klimat/Dometic: 0 träffar; Termoskydd Husbil 559 = annat objekt, vindrutan)", "koncept.py sok AC/luftkondition/klimat/Dometic (0 relevanta träffar)", "fynd.json 09-11…09-14 (inget AC-objekt; husbilsraderna är tak, vindruta, fönster, stödben)", "kontot 7 d: ej kollat — linsen rör inte Meta"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010545161282.html",
+        "https://www.aliexpress.com/item/1005013149612512.html",
+        "https://www.camping4u.se/sv/artiklar/husbil-husvagn/ac-ventilation/tillbehor-klimat/index.html",
+        "https://www.camping4u.se/sv/artiklar/skyddsoverdrag-ac-dometic.html",
+        "https://epi.dometic.com/sv-se/outdoor/fritidsfordon-and-skapbilar/luftkonditionering-for-fritidsfordon/dometic-freshjet-1700-151912",
+        "https://news.cision.com/se/husvagnsbranschens-riksforbund/r/antal-husbilar-och-husvagnar-fortsatter-oka,c9405676"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Husbilens cykelhållarskydd 2 cyklar",
+      "objekt": "NYTT: Elcyklarna på husbilens/husvagnens bakre cykelhållare (2 elcyklar 40–60 tkr; hänger bak i vägsmuts och höstregn under färd och när bilen står hemma mellan turerna)",
+      "form": "överdrag",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploitation",
+      "hypotes_id": "H01",
+      "vinnarlikhet": {
+        "likast": "Taköverdraget för Husvagn / Termoskyddet för Husbil",
+        "delade_variabler": [
+          "samma ägare som V1 och Termoskyddet (husbil/husvagn 55+, bevisad köpare)",
+          "objekt ute, dyr > 10 tkr (två elcyklar 40–60 tkr på hållaren)",
+          "formsydd överdrag; improvisation i dag (sopsäck/presenning med spännband)",
+          "väderhot nu: höstregn + vägsmuts 10 okt–15 nov, uppställning 10–31 okt",
+          "fackhandelsankare 707–799 kr (Fiamma, 30 thansen-butiker), inget kedjegolv (Jula/Biltema saknar formen i sökutdragen)"
+        ],
+        "avvikelser": [
+          "datumet är svagare än takets — vid uppställning tar en del av cyklarna",
+          "Fiamma-skyddet är ett känt tillbehör bland campare — 'sett innan'-risk"
+        ]
+      },
+      "sasong": {
+        "fonster_id": "uppstallning_husvagn",
+        "deadline_typ": "uppställning",
+        "veckor_kvar": 3.6,
+        "timing": "NOW"
+      },
+      "listning": {
+        "product_id": "1005012440559009",
+        "url": "https://www.aliexpress.com/item/1005012440559009.html",
+        "pris_usd": 17.19,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-15T07:19:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005012440559009.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "'For 1 Or 2 Bikes', 210D Oxford, en storlek enligt titel; alternativ listning 1005010428291230 (15,25 USD, 1–2 cyklar) öppnad och hero sedd (collage med text); 3-cykelvarianter finns på 37–40 USD (1005006030156306)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "heron: skyddet över två cyklar på hållaren bak på en husbil, stege och bakljus i bild — textfri, rätt kontext, färdig att köra"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {
+          "aktor": "Campingvaruhuset — Fiamma Bikecover 2-3 cyklar (färre än 5 i lager)",
+          "pris_sek": 707,
+          "url": "https://www.campingvaruhuset.se/sv/fiamma-bikecover-2-3-cyklar",
+          "exakt_samma_form": true
+        },
+        "premium_ankare": {
+          "namn": "Fiamma BikeCover S 2-3 cyklar (thansen.se, 30 butiker)",
+          "pris_sek": 799,
+          "url": "https://www.thansen.se/bil/biltillbehor/transportutrustning/cykelhaallare/till-campingvagn/cykelskydd-2-3-cyklar-fiamma-bikecover-s/n-585258067/pn-585137135",
+          "i_sortiment": true
+        },
+        "ankare_kvot": 1.33,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "thansen.se (Fiamma BikeCover S 799 kr, 30 butiker — läst 2026-09-15)",
+          "campingvaruhuset.se (Fiamma Bikecover 2-3 cyklar 707 kr, < 5 i lager — läst 2026-09-15)",
+          "camping4u.se (Fiamma Bike Cover Premium S 1 170 kr, sökutdrag)",
+          "thule.com Bike Cover 3-4 cyklar (finns, pris ej sett)",
+          "jula.se/biltema.se: cykelhållare men inget hållarskydd i sökutdragen",
+          "husvagnsbranschen.se/cision: ca 300 000 husbilar + 425 000 husvagnar (sökutdrag); andel med cykelhållare ej mätt"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [224, 274],
+        "pris_sek": 599,
+        "brutto_sek": [325, 375],
+        "be_cpa_sek": [325, 375],
+        "be_roas": 1.71,
+        "flerkop": false,
+        "returrisk": "låg — universal 1–2 cyklar med spännband; 3-cykelägare behöver större variant"
+      },
+      "meta_tanke": {
+        "hook": "Hänger cyklarna bak i regnet?",
+        "objekt_i_bild": "två elcyklar på husbilens bakre hållare, skyddet dras över, vägsmuts/regn",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "lerstänk på display och sadel utan — torra cyklar under skyddet med, varningsskylten i fickan"
+      },
+      "varfor": "Samma köpare som V1/Termoskyddet, dyrare objekt än husvagnstaket (två elcyklar 40–60 tkr), formsydd form, fackhandel 707–799 kr och kedjan saknar formen. Heron är textfri och i kontext. Aldrig sökt (koncept.py: 0 på cykelhållare; bike-träffarna är MC/barncykel).",
+      "huvudrisk": "'Sett innan' — Fiamma-skyddet är ett vanligt tillbehör hos campare och Axel kan säga 'alla har den'; datumet är svagare än takets.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 3, "efterfragan": 2, "lucka": 1, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep cykel/bike: Cykelshorts 259, Stänkskärm MTB 219 — annan form)", "koncept.py sok cykelhållare (0) / bike (K0088, K0145–K0189 = MC-, ATV- och barncykelkapell — annat objekt) / cykel (K0118, K0134 = elcykelbatterihylsa, K0162 = universalkapell på elcykel under skärmtak — annat objekt/form)", "fynd.json 09-11…09-14 (inget)", "kontot 7 d: ej kollat — linsen rör inte Meta"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012440559009.html",
+        "https://www.aliexpress.com/item/1005010428291230.html",
+        "https://www.thansen.se/bil/biltillbehor/transportutrustning/cykelhaallare/till-campingvagn/cykelskydd-2-3-cyklar-fiamma-bikecover-s/n-585258067/pn-585137135",
+        "https://www.campingvaruhuset.se/sv/fiamma-bikecover-2-3-cyklar",
+        "https://www.camping4u.se/sv/artiklar/skyddsoverdrag-fiamma-bike-cover-s-2-3-cyklar.html",
+        "https://www.thule.com/sv-se/rv-racks/rv-rack-accessories/thule-bike-cover-_-307335"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Vattenskoterkapellet 600D",
+      "objekt": "NYTT: Vattenskotern på trailern (80–250 tkr nypris enligt SOU 2022:49; tas upp i oktober och står på trailern på uppfarten hela vintern)",
+      "form": "överdrag",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploitation",
+      "hypotes_id": "H02",
+      "vinnarlikhet": {
+        "likast": "MC-Kapellet / Båtmotorskyddet 420D",
+        "delade_variabler": [
+          "objekt ute, dyr > 10 tkr (80–250 tkr)",
+          "formsydd överdrag (kapell) över hela farkosten",
+          "hårt datum: upptagning 10–31 okt (NOW 3,6 v)",
+          "improvisation i dag (presenning + spännband)",
+          "fackhandelsankare 1 120–1 560 kr (Oceansouth hos Marindelen), Motorbiten universal i tre storlekar"
+        ],
+        "avvikelser": [
+          "ägaren är yngre än kontots 55+-avatar (ej mätt, men vattenskoter är 30–55-segment)",
+          "liten bas: ca 30 000 skotrar (SOU 2022), 'fördubblats på fem år' enligt sökutdrag maj 2026 utan siffra",
+          "golv i annan form: SeaSea Covy Line universal båtkapell 300–360 cm 515 kr"
+        ]
+      },
+      "sasong": {
+        "fonster_id": "batupptagning",
+        "deadline_typ": "upptagning",
+        "veckor_kvar": 3.6,
+        "timing": "NOW"
+      },
+      "listning": {
+        "product_id": "1005012610141247",
+        "url": "https://www.aliexpress.com/item/1005012610141247.html",
+        "pris_usd": 31.39,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-15T07:19:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005012610141247.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "600D PU1000, tvåfärgad; storlekar ej i titeln (troligen L/XL som systerlistningarna: 1005005622616914 39,99 USD L 360×250 / XL 380×260 cm — öppnad, hero sedd; 1005013089962401 29,23 USD L/XL — öppnad, hero sedd med text)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "heron: kapellet på en skoter på Karavan-trailer, vit bakgrund, helt textfri — packshot i halv kontext; 1005013089962401 har strandkontext men inbränd rubrik"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {
+          "aktor": "SeaSea Båtkapell Covy Line 300–360 cm (universal båtkapell, nylon 300D — passar vattenskoter men är inte skoterformat)",
+          "pris_sek": 515,
+          "url": "https://www.seasea.se/uppl%C3%A4ggning/presenning/b%C3%A5tkapell-covy-line",
+          "exakt_samma_form": false
+        },
+        "premium_ankare": {
+          "namn": "Oceansouth Jet Ski Cover 2-tone 2,9–3,4 m (Marindelen; 2,5–2,9 m 1 120 kr, 3,4–3,7 m 1 560 kr — 'snart i lager igen', levtid 1–2 v)",
+          "pris_sek": 1340,
+          "url": "https://marindelen.se/fritid-outdoor/vattenskoter-jetski/kapell/",
+          "i_sortiment": true
+        },
+        "ankare_kvot": 1.49,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "marindelen.se (Oceansouth 1 120 / 1 340 / 1 560 kr — läst 2026-09-15)",
+          "seasea.se (Covy Line 300–360 cm 515 kr, sökutdrag)",
+          "hjertmans.se (Båtöverdrag/kapell 7988-0 300–360 cm 'jetski/jolle', 300D — slut i webblager, pris ej visat)",
+          "motorbiten.com (universal vattenskoterkapell i tre storlekar 2,5–3,7 m, pris ej visat)",
+          "toplift.se/hanseriksson.se (skräddarsydda/Sea-Doo-original — 403/verifieringssida, pris ej sett; sökutdrag anger 2 990–3 865 kr)",
+          "riksdagen.se SOU 2022:49: ca 30 000 vattenskotrar, nypris 80–250 tkr; 124 716 förarbevis utfärdade t.o.m. 2026-07-13 (sökutdrag)"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [409, 499],
+        "pris_sek": 899,
+        "brutto_sek": [400, 490],
+        "be_cpa_sek": [400, 490],
+        "be_roas": 2.02,
+        "flerkop": false,
+        "returrisk": "medel — L/XL mot skoterns längd; ägaren vet modellen, storlekstabell per märke krävs"
+      },
+      "meta_tanke": {
+        "hook": "Står vattenskotern ute i vinter?",
+        "objekt_i_bild": "skotern på trailern på uppfarten, kapellet dras över, spännbanden under skrovet",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "vatten i sitsen och blekt skrov utan — torrt, spänt kapell med snö ovanpå med"
+      },
+      "varfor": "MC-kapellets och båtmotorskyddets struktur på ett objekt rutinen aldrig sökt: 80–250 tkr på trailern, upptagning om 3,6 v, fackhandel tar 1 120–1 560 kr för samma tvåfärgade form och kedjan saknar den. Prisutrymmet är det största i linsen (BE-CPA 400–490).",
+      "huvudrisk": "Basen är liten (ca 30 000 skotrar, yngre ägare än kontots avatar) och SeaSea säljer ett universalkapell för 515 kr som funkar 'nästan'.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 0, "lucka": 1, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep vattenskoter/jet: bara Jetfläkt Makita 709 — annat objekt; Båtskydd uppblåsbar 1 049 och MC-Kapell 349 = andra objekt)", "koncept.py sok vattenskoter (0) / jetski (0)", "fynd.json 09-11…09-14 (Båthuven 17–19 fot 09-12 = annat objekt)", "kontot 7 d: ej kollat — linsen rör inte Meta"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012610141247.html",
+        "https://www.aliexpress.com/item/1005005622616914.html",
+        "https://www.aliexpress.com/item/1005013089962401.html",
+        "https://marindelen.se/fritid-outdoor/vattenskoter-jetski/kapell/",
+        "https://www.seasea.se/uppl%C3%A4ggning/presenning/b%C3%A5tkapell-covy-line",
+        "https://www.hjertmans.se/sv/produkt/vinterforvaring/batoverdrag-kapell-5",
+        "https://www.motorbiten.com/butik/products/vattenskoter-kapell-universal",
+        "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/statens-offentliga-utredningar/andrade-regler-for-vattenskotrar_hab349/html/"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Ekans/roddbåtens överdrag 12–14 fot (jon boat cover)", "skal": "Samma SAK som Båthuven 17–19 fot som Axel sa ja till 09-12 — bara en storleksvariant, kolliderar på objektfältet. Ekor vänds dessutom upp och ner på stranden (gratis improvisation som funkar), och fackhandeln har golv i universalform: SeaSea Covy Line 515 kr, Watski 1852 båtpressning från 609 kr. Listning 1005004502327985 (28,99 USD, 10–16 ft) och 1005005102569973 (34,22 USD) öppnade, heron sedda — tung inbränd text på båda."},
+    {"namn": "Kompakttraktorns/gårdstraktorns kapell", "skal": "Sökningen 'compact tractor cover' ger enbart åkgräsklipparkapell (1005009318771654, 1005009199578220 m.fl.) = Gräsklippartäckets form, REAL LOSER i kontot. En riktig traktor står i maskinhall (objekt_ute = nej), och sitsöverdraget (1005013086676325, 13,59 USD, öppnad) är samma SAK som Sätesöverdragaren i butiken."},
+    {"namn": "Poolens vintertäcke", "skal": "Listningarna ligger på 202–540 USD (1005005214718379, 1005012653664395, 1005012587900648) = landad 2 900–7 800 kr; formen kräver poolens exakta mått (måste mäta) och Folkpool/Poolkungen-ankaret 1 500–4 000 kr ligger under landad. H04 räddar inte en form där landad överstiger ankaret."},
+    {"namn": "Cykelgaraget/cykeltältet för två elcyklar", "skal": "Mätt: Jula Hamron Garagetält 2,2×1,57×1,63 m 'plats för tre cyklar' 1 439,20 kr exkl. moms ≈ 1 799 kr inkl. (kedjan har exakt formen). Listningar 1005012202322881 (48,65 USD) och 1005012218239671 (54,68 USD) öppnade och heron sedda — pris 1 299 gav ankare 1,38 och BE-CPA 525–665, men formen kräver montering och 55+-ägaren ställer elcykeln i garaget; hade blivit en LÅG-rad med 'Kedjan har den'."},
+    {"namn": "Robotklipparens huv", "skal": "Lägsta listning 18,59 USD (1005012954645084) / 21,36 USD (1005012527814628) — över ordens 15-dollarsgräns; Jula 499 kr i samma form."},
+    {"namn": "Luftvärmepumpens mjuka huv", "skal": "Inte 'aldrig sökt' — K0206–K0215 är kandidater i registret, K0230 (plåtlådan) nej. Utanför linsens order."},
+    {"namn": "Gasolgrillen, utemöblernas dynbox, studsmattan", "skal": "Kedjeformer enligt ordern — inte sökta."}
+  ]
+}
