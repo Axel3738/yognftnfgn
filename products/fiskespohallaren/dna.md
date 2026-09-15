@@ -489,3 +489,42 @@ felmeddelande — identisk lista för fem olika produkter. Rätt väg:
 Sju av dagens 37 brief-namn krockade med rader som redan låg i Notion-hubben
 men aldrig nått annonskontot. En avläsning av bara kontot räcker alltså inte —
 hubben äger sina nummer också.
+
+---
+
+## ✅ JÄMFÖRPRISET ÄR SATT — 2026-09-15, samma dag, senare
+
+**Läget är omvänt mot allt som står ovan.** Axel satte jämförpriset i Shopify
+efter eftermiddagens rond. Avläst live direkt efteråt ur
+`https://xn--bverbutiken-l8a.se/products/fiskespohallare-4-pack-kraftig-forvaring.json`:
+
+| Fält | Värde |
+|---|---|
+| `price` | **289,00 kr** |
+| `compare_at_price` | **482,00 kr** |
+| Rabatt | **40,0 %** |
+| Sparat | **193 kr** |
+
+**Vad det löser.** Integritetsflaggan som stått i den här filen sedan batch #3
+är borta. `Fiskespöhållare_CS_1_H1` och `CS_2_1` kör "40 % RABATT" live — det
+påståendet är **sant från och med nu**, och de två annonserna behöver inte
+längre rättas eller pausas. `CS_1_H1` är dessutom kampanjens bästa annons på
+vinstbidrag (11 610 kr), så det var en dyr sak att behöva stänga av.
+
+**Vad som gäller i NY copy från och med nu:**
+- 289 kr, jämförpris 482 kr, spara 193 kr, 40 % — alla fyra talen får skrivas ut.
+- Genomstruket jämförpris får visas.
+- "IDAG ENDAST" och annan brådska är fortfarande **förbjuden** — den delen av
+  CS-annonsernas copy är fortfarande overifierbar och blev inte sann av det här.
+
+⚠️ **Batch #6 (2026-09-15) rörs inte.** Dess sju briefer är byggda med flit på
+"värde utan rabatt" — `PD_39_H1` räknar 289 kr ÷ 4 klämmor och `SO_8_1` säljer
+på styckpriset. Det är ett isolerat test av om vinkeln bär utan rabattpåstående,
+och det testet är fortfarande värt att köra nu när rabatten finns som alternativ.
+Briefarna har fått en notis i Notion om att talet ändrats men att de ska köras
+som de står.
+
+**Lärdom värd att spara:** ett "det här går inte att göra ärligt" är ett
+läge, inte en lag. Här löstes det med ett fält i Shopify på under en dag.
+Skriv sådana fynd som *vad som saknas och vem som kan fylla det*, inte som
+ett permanent förbud.
