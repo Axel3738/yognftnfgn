@@ -68,3 +68,93 @@ JSON-LD. Recensionsläget lästes ur Judge.me-widgetens egna attribut
 
 **Nästa lediga AD-ID:** CS 6, G 4, PD 6, SP 6, CO 3, LI 2, MT 2, PR 3, RI 2,
 UG 2, BOF 4.
+
+---
+
+## Batch #2 — 2026-09-15 (extra runda på Axels begäran)
+
+**Varför den kördes utanför kadensen.** Kadensspärren flaggade inte produkten:
+`FORSTA_BATCH_KLAR` skrevs 2026-09-14, alltså `dagarSedanBatch = 1` mot
+`BRIEF_INTERVALL_DAGAR = 3`. Axel bad om den ändå — produkten drar iväg och han
+vill ha mer material. Batchen är alltså inte ett ronds-behov utan en
+ägarbeställning, och 3-dagarsklockan startas om av den här raden precis ändå.
+
+⚠️ Att veta: förstabatchens **17 briefer från 2026-09-14 ligger fortfarande
+orörda som Draft** i hubben. Efter den här batchen står 26 briefer i kö. Om det
+inte börjar röra sig är flaskhalsen redigerarna, inte briefarna.
+
+**Kampanjstatus:** ACTIVE. Budgeten skalades samma morgon 1 650 → 1 950 kr/dag
+(ROAS 3,26 på 3 dagar mot break-even 1,61).
+
+### Feedbackloop — livstid avläst 2026-09-15 (`date_preset: maximum`)
+
+Kampanjen: 5 279,16 kr spend, 32 köp, ROAS 3,46. AOV 571 kr →
+**break-even-CPA 355 kr**. Vinstbidrag `(355 − CPA) × köp`:
+
+| Annons | Format | Spend | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|
+| `Termoskydd_CS_3` (top spender = benchmark) | statisk | 3 668 | 19 | 193 | 3,00 | **3 078 kr** |
+| `Termoskydd_SP_2_1` | statisk | 371 | 4 | **93** | 6,03 | **1 048 kr** |
+| `Termoskydd_SP_2` | statisk | 683 | 4 | 171 | 3,27 | 736 kr |
+
+Under domgränsen, ingen dom: `CS_2_1` (384 kr, 2 köp), `CS_2` (224 kr, 4 köp,
+ROAS 9,98 — men under 300 kr spend).
+
+**Två fynd styr batchen.**
+
+1. **Statiska annonser bär 100 % av allt bevisat resultat.** Varenda video i
+   kampanjen ligger på 2–30 kr spend. PD-serien: 5,42 / 30,21 / 4,44 / 1,98 kr.
+   G-serien: 6–85 kr. De är **svältna i CBO:n, inte dömda** — samma mönster som
+   i motorhöljets DNA, nu fjärde produkten. Ingen video har fått en chans, så
+   fyra av rundans sex annonser är video.
+2. **SP slår CS på CPA** — 93 och 171 kr mot benchmarkens 193 kr. ⚠️ Men SP
+   betyder social proof, och produktens recensioner är seedade (se nedan).
+   Rundans SP-koncept bär därför ägarens EGEN situation i jag-form, som scen och
+   inte som omdöme. Inget i dem får läsas som ett kundutlåtande.
+
+### ⚠️ Recensionerna är seedade — och `source: web` är inte längre ett bevis
+
+Judge.me läst 2026-09-15 med produktens egna id (2156895126): **30 recensioner —
+men det är samma TIO texter återanvända tre gånger med olika namn påsatta.**
+Tio av dem har `source: wizard`, tjugo har `source: "web"`.
+
+Det är en **rättelse av gårdagens slutsats**: `source: web` behandlades då som
+bevis på att en recension är organisk (det var argumentet för att bygga
+review-bilder till Båtmotorskyddet). Här är `web`-raderna ordagranna dubbletter
+av `wizard`-raderna. Etiketten säger alltså bara hur raden kom in, inte om en
+kund skrev den. **Rätt test är om texterna är unika och produktspecifika, inte
+vilken `source` de bär.**
+
+Noll review-bilder i den här batchen. Ingen rad i någon brief får bära citat,
+stjärnbetyg eller "X nöjda kunder".
+
+### Batchen — 9 briefer (4 video + 2 statiska i rundan, 3 BOF-bilder)
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Termoskydd_PD_6_H1` | video | CS_3:s bevisade budskap (kondensen stoppas utanpå glaset) får sitt första riktiga videotest | formatet, budskapet låst |
+| `Termoskydd_SP_6_H1` | video | SP-vinkelns situation som filmad scen i jag-form: solen klockan fyra, och samma morgon med skyddet på | situationen buren i video |
+| `Termoskydd_PD_7_H1` | video | Monteringen i realtid — flikarna kläms i dörrkarmen, dörrarna öppnas aldrig | enkelheten som visat bevis |
+| `Termoskydd_OB_1_H1` | video | "Räcker inte en gardin?" besvarad genom att visa VAR fukten hamnar | ny vinkel på bevisat problem |
+| `Termoskydd_CS_6_1` | statisk | CS_3:s exakta layout med mörkläggning/insyn som ledande fakta i stället för värmen | argumentet, layouten låst |
+| `Termoskydd_SP_7_1` | statisk | SP_2_1:s komposition (CPA 93 kr) med ny situation | situationen, kompositionen låst |
+| `Termoskydd_BOF_4_1` | statisk, BOF | 559 kr / ord. 932 kr / spara 373 kr (40 %) | — |
+| `Termoskydd_BOF_5_1` | statisk, BOF | garanti och betalning, ordagrant enligt sidan | — |
+| `Termoskydd_BOF_6_1` | statisk, BOF | "passar det min husbil?" löst med 211 / 171 / 90 cm | — |
+
+**Priset verifierat live 2026-09-15:** 559 kr, jämförpris 932 kr, spara 373 kr
+= 40 %. Rabatten är äkta och får skrivas ut.
+
+**Garantin, ordagrant och det enda som får skrivas:** "30 dagars öppet köp –
+gillar du det inte får du pengarna tillbaka." + "Smidig leverans och trygg
+betalning med Klarna." Ingen fri frakt, ingen leveranstid, ingen ångerrätt.
+
+⚠️ **Sidan säger själv att miljöbilderna är AI-genererade illustrationer.**
+Det står inskrivet i varje brief: bevis ska filmas eller fotograferas på riktigt,
+aldrig byggas på en miljöbild.
+
+**Modellpolicy följd:** all svensk copy skriven av en sonnet-subagent.
+Huvudsessionen rättade tre rader i `BOF_5_1` som subagenten hade märkt som
+fallna på tre-frågorstestet men ändå velat skicka — garantitexten är ett
+faktapåstående om erbjudandet, inte en persuasionsrad, och är därför undantagen
+från konkurrent-kolumnen, inte underkänd i den.

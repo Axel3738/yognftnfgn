@@ -84,3 +84,36 @@ data source-id, aldrig på databasens titel.
 Upptagna AD-ID i kontot före batchen: CS 1–3, G 1–3, PD 1–3, SP 1–3.
 Nästa lediga efter batch #1: CS 6, G 4, PD 6, SP 6, CO 3, LI 2, MT 2, PR 3,
 RI 2, UG 2, BOF 4.
+
+---
+
+## Uppdatering 2026-09-15 (batch #2, extra runda på Axels begäran)
+
+Se `batch-log.md` för hela feedbackloopen. Två saker hör hemma här i DNA:t:
+
+### Mönster: statiska bär allt, video har aldrig fått en chans
+
+Livstid 2026-09-15: de tre bedömbara annonserna är **alla statiska**
+(`CS_3` CPA 193, `SP_2_1` CPA 93, `SP_2` CPA 171). Varenda video i kampanjen
+ligger på 2–30 kr spend. Det är CBO-svält, inte en dom över formatet — samma
+mönster som i motorhöljets DNA (mönster 5, `BEVISAD — tredje gången`).
+**Läs aldrig låg videospend här som svag creative.** Batch #2 lägger därför
+fyra av sex rundannonser på video.
+
+`SP_2_1` är produktens effektivaste annons: CPA 93 kr mot benchmarkens 193 kr,
+alltså 2,1× per krona. Dess komposition är värd att låsa och variera innehållet i.
+
+### ⚠️ Rättelse: `source: web` i Judge.me bevisar ingenting
+
+Gårdagens slutsats — att `source: "web"` skiljer organiska recensioner från
+seedade — **håller inte**. Den här produkten har 30 recensioner där samma tio
+texter återkommer tre gånger med olika namn; tio bär `wizard`, tjugo bär `web`.
+Etiketten beskriver hur raden kom in i Judge.me, inte om en kund skrev den.
+
+**Rätt test:** är texterna unika och produktspecifika? Återkommer samma
+formuleringar under olika namn är det seedat, oavsett `source`.
+
+Konsekvens: inga review-bilder för den här produkten, och Båtmotorskyddets två
+review-bilder från 2026-09-15 vilar på ett svagare argument än det såg ut —
+dess åtta citat är åtminstone unika sinsemellan, men det är inte samma sak som
+verifierat. Flaggat till Axel.
