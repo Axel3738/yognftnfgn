@@ -452,6 +452,30 @@ test('frysta produkter ger inga behov alls — inte ens första batchen', () => 
   assert.equal(annonsbehov(utanBudget, { logg, idag: '2026-08-29' }).length, 0);
 });
 
+test('briefpaus stoppar bara briefkön — budgetronden rör produkten som vanligt', () => {
+  // Axels besked 2026-09-15 om Övervakningskameran: "vi låter den köra lite och
+  // så men inga nya grejer på ett tag". Skilt från FRYST, som lyfter bort
+  // händerna helt — här fälls domen och budgeten ändras precis som vanligt,
+  // det är bara briefkön som hoppar över produkten.
+  const logg = [{ kampanj_id: 'a', kod: 'CS_BATCH_KLAR', genomford: true, datum: '2026-08-20' }];
+  const pausad = [{
+    id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, budget: 2000,
+    briefPausTill: '2026-10-15', dom: { kod: 'LAT_VARA', vinstProcent: 30 },
+  }];
+  assert.equal(annonsbehov(pausad, { logg, idag: '2026-08-29' }).length, 0);
+  // Dagen efter att pausen gått ut är produkten tillbaka i kön.
+  assert.equal(annonsbehov(pausad, { logg, idag: '2026-10-16' }).length, 1);
+  // Utan fältet påverkas ingenting.
+  const utanPaus = [{ ...pausad[0], briefPausTill: null }];
+  assert.equal(annonsbehov(utanPaus, { logg, idag: '2026-08-29' }).length, 1);
+  // Pausen stoppar också en FÖRSTA batch, inte bara rundorna.
+  const nyUtanBatch = [{
+    id: 'b', namn: 'Y | BE ROAS 1.50', spendTotal: 1850, budget: 1000,
+    briefPausTill: '2026-10-15', dom: { kod: 'LAT_VARA', vinstProcent: 30 },
+  }];
+  assert.equal(annonsbehov(nyUtanBatch, { logg: [], idag: '2026-08-29' }).length, 0);
+});
+
 test('rundkvoten är dubbla veckokvoten, aldrig under fyra (Axel 2026-09-02)', () => {
   assert.equal(rundkvot(500), 4);   // veckokvot 1 → golvet 4
   assert.equal(rundkvot(1000), 4);  // veckokvot 2 → golvet 4

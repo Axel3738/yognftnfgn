@@ -260,3 +260,27 @@ felmeddelande — identisk lista för fem olika produkter. Rätt väg:
 Sju av dagens 37 brief-namn krockade med rader som redan låg i Notion-hubben
 men aldrig nått annonskontot. En avläsning av bara kontot räcker alltså inte —
 hubben äger sina nummer också.
+
+---
+
+## ⛔ BRIEFPAUS till 2026-10-15 (Axels beslut 2026-09-15)
+
+Axels ord: *"vi låter den köra lite och så men inga nya grejer för
+övervakningskameran på ett tag nu — den är lowkey halvt död."*
+
+**Vad det betyder i praktiken:**
+- Budgetronden går som vanligt varje dag. Kampanjen skalas, sänks och stängs av
+  enligt samma regler som alla andra.
+- **Inga nya briefer.** Ingen brief-runda, ingen förstabatch, inget
+  ersättningsmaterial — inte förrän 2026-10-15 har passerat.
+- De 7 briefer som lades i hubben 2026-09-15 ligger kvar som Draft. De ska inte
+  tas bort; redigerarna får plocka dem om de vill, men ronden pushar inget mer.
+
+**Så är det byggt:** fältet `brief_paus_till` på kampanjen i
+`agent/produktkarta.json`. `annonsbehov` i `agent/rond.mjs` hoppar över
+produkten så länge dagens datum ligger på eller före det datumet — budgetdomen
+rörs inte. Det är avsiktligt skilt från `frys_till`, som lyfter bort händerna
+helt och även stoppar budgetändringar. Täckt av ett test i
+`agent/test/rond.test.mjs`.
+
+**Släpp pausen** genom att ta bort `brief_paus_till` ur produktkartan.

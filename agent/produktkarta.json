@@ -357,7 +357,9 @@
       "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
       "drive_senaste_batchmapp_id": "1xlH9j8_wwRXsy9DGMde8CLN1m2oBngke",
       "minne": "products/overvakningskameran/",
-      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte Surveillance Camera creative hub."
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte Surveillance Camera creative hub.",
+      "brief_paus_till": "2026-10-15",
+      "brief_paus_motivering": "Axels besked 2026-09-15: «sk vi låter den köra lite och så men inga nya grejer för övervakningskameran på ett tag nu». Budgetronden går som vanligt — bara briefkön hoppar över den. Släpps genom att ta bort fältet."
     },
     {
       "campaign_id": "120249989987370291",

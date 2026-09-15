@@ -108,6 +108,11 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
     roas3d,
     kop3d,
     roasTotal,
+    // Briefpaus: budgeten sköts som vanligt, men produkten får inga nya
+    // briefer förrän datumet passerat. Skilt från `frys_till`, som lyfter
+    // bort händerna helt. Axels besked 2026-09-15 om Övervakningskameran:
+    // "vi låter den köra lite och så men inga nya grejer på ett tag".
+    briefPausTill: post.brief_paus_till ?? null,
   };
 
   // Fryst på Axels order: rörs inte alls till och med frys_till-datumet.
@@ -352,6 +357,10 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
     // prishöjning på väg). En brief skriven nu skulle bygga på fel siffror
     // eller fel pris. Gäller alla behovstyper, inte bara rundorna.
     if (r.dom?.kod === 'FRYST') continue;
+    // Briefpaus: ägaren har sagt att produkten ska få köra utan nytt material
+    // ett tag. Budgetronden rör den som vanligt — bara briefkön hoppar över
+    // den. Läses ur `brief_paus_till` i agent/produktkarta.json.
+    if (r.briefPausTill && String(idag) <= String(r.briefPausTill)) continue;
     // Aldrig briefer till en produkt som ronden samma morgon stänger av eller
     // skickar till trappan. Axels larm 2026-09-02: Kranskydd Frost 420D var
     // PAUSAD och fick ändå 9 briefer — redigerarna bygger material till en
